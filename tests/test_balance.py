@@ -101,11 +101,19 @@ def test_monster_count_increased():
 def test_all_monsters_have_required_fields():
     monsters = load_json('data/monsters.json')
     required = ['name', 'symbol', 'color', 'hp', 'speed', 'ai_pattern',
-                'min_level', 'thac0', 'frequency', 'attacks',
+                'min_level', 'thac0', 'attacks',
                 'resistances', 'weaknesses', 'treasure']
+    # Spawn-weight: either legacy `frequency` OR new curve-based fields
+    # (peak_floor + spread + peak_weight). Every monster must have one or both.
     for mid, m in monsters.items():
         for field in required:
             assert field in m, f"Monster '{mid}' missing field '{field}'"
+        has_legacy = 'frequency' in m
+        has_curve  = all(k in m for k in ('peak_floor', 'spread', 'peak_weight'))
+        assert has_legacy or has_curve, (
+            f"Monster '{mid}' missing spawn-weight fields: needs `frequency` "
+            f"OR `peak_floor + spread + peak_weight`"
+        )
 
 
 def test_all_attack_dice_parseable():

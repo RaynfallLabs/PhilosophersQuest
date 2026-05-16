@@ -14,6 +14,7 @@ After BSP placement the generator runs post-processing passes for:
 
 import copy
 import json
+import math
 import random
 from dataclasses import dataclass
 from typing import List, Optional, Set, Tuple
@@ -1084,38 +1085,32 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
-    # Build weighted pool:
-    #  - L1-29: original behavior (freq decays past max_level, floor at 1)
-    #  - L30+: proximity weighting ramps up so deep floors spawn harder monsters
-    #    * Monsters past max_level can decay to 0 (no floor)
-    #    * On-level monsters get weight bonus that grows with depth
+    # Build weighted spawn pool from bell-curve probability per monster.
+    #
+    # Each monster has peak_floor/spread/peak_weight from the unified curve
+    # (tools/balance/curve.py). The bell curve gives every monster a soft,
+    # graduated spawn band — common at its peak, rare at the edges, eventually
+    # phasing out. No hard min/max gates (which would create jarring tier
+    # transitions). The lore floor (`min_level`) is still a hard physical-
+    # plausibility gate (e.g., seal demons can't appear at L1).
+    #
+    # Bosses, seal demons, and other story-locked entries carry peak_weight = 0
+    # and are placed by level_manager / boss_levels, NOT from this pool.
     eligible = {}
-    use_proximity = level >= 30
     for k, v in all_defs.items():
-        min_lv = v.get('min_level', 1)
-        if min_lv > level:
+        peak_weight = v.get('peak_weight', 0)
+        if peak_weight <= 0:
             continue
-        freq = v.get('frequency', 5)
-        if freq <= 0:
-            continue  # bosses / non-spawning
-        max_lv = v.get('max_level', None)
-        if max_lv is not None and level > max_lv:
-            over = level - max_lv
-            if use_proximity:
-                freq = freq - over  # no floor: decays to 0
-                if freq <= 0:
-                    continue
-            else:
-                freq = max(1, freq - over)  # gentle: floor at 1
-        if use_proximity:
-            distance = level - min_lv
-            # Ramp: 0 at L30, 3 at L60, 7 at L100
-            prox_scale = max(0, (level - 30) // 10)
-            if distance <= 5:
-                freq *= (2 + prox_scale)        # on-level
-            elif distance <= 15:
-                freq *= max(1, 1 + prox_scale // 2)  # near-level
-        eligible[k] = {**v, '_spawn_freq': freq}
+        if v.get('min_level', 1) > level:
+            continue
+        peak_floor = v.get('peak_floor', v.get('min_level', 1))
+        spread = max(1, v.get('spread', 10))
+        distance = level - peak_floor
+        bell = math.exp(-(distance ** 2) / (2 * spread ** 2))
+        if bell < 0.005:
+            continue  # vanishingly rare — drop entirely rather than rounding to floor
+        weight = max(0.02, peak_weight * bell)
+        eligible[k] = {**v, '_spawn_freq': weight}
     if not eligible:
         return []
 
