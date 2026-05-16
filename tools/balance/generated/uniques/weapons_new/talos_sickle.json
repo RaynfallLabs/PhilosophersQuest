@@ -1,0 +1,36 @@
+{
+  "id": "talos_sickle",
+  "name": "Sickle of Talos",
+  "category": "weapon",
+  "weapon_class": "scimitar",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.2,
+    0.55,
+    1.0,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 3.0,
+  "min_level": 25,
+  "peak_floor": 28,
+  "spread": 6,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "bleed_chance": 0.3,
+    "crit_multiplier": 1.8,
+    "ignore_armor": 1
+  },
+  "lore": "A curved bronze blade said to be ground from one of the molten drops shed when Medea pulled the brass pin from Talos's ankle. The Cretan giant bled his ichor into the sea before he fell. Whatever cooled there still cuts.",
+  "curve_note": "base_damage = curve.weapon_base_damage(25) x 1.5 unique-mult. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
+  "weapon_class_chain": "finesse"
+}

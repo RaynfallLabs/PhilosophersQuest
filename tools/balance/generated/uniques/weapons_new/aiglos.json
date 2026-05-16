@@ -1,0 +1,38 @@
+{
+  "id": "aiglos",
+  "name": "Aiglos",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce",
+    "cold"
+  ],
+  "base_damage": 34,
+  "chain_multipliers": [
+    0.75,
+    0.9,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 7.0,
+  "min_level": 86,
+  "peak_floor": 89,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 2.0,
+    "freeze_chance": 0.25,
+    "ignore_resistances": true,
+    "reach": 2
+  },
+  "lore": "Snow-point, the spear of Gil-galad the last High King of the Noldor, who fell at the Last Alliance before the gates of Barad-dur. He hewed at the Dark Lord himself with this and was burned to ash by the contact. The spear endured. It does not lose its edge and it does not warm in the hand.",
+  "curve_note": "base_damage = curve.weapon_base_damage(86) x 1.7 unique-mult. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F80-89 Fenrir-era band fill; LOTR signature.",
+  "weapon_class_chain": "heavy"
+}

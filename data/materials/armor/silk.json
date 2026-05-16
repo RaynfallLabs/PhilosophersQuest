@@ -1,0 +1,20 @@
+{
+  "id": "silk",
+  "name": "silk",
+  "material_class": "cloth",
+  "applies_to": ["armor"],
+  "peak_floor": 30,
+  "spread": 12,
+  "peak_weight": 6,
+  "weight_mult": 0.4,
+  "ac_bonus": 1,
+  "max_enchant": 3,
+  "color": [230, 200, 130],
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["light", "blessed_capable", "arrow_catching"],
+  "lore_descriptor": "pale gold silk, slick as river-water under the hand",
+  "unidentified_descriptor": "shimmering cloth",
+  "first_pickup_chronicle": "Silk. The Mongols wore silk under their armor — an arrow that pierced the mail wrapped itself in silk and could be drawn back out clean. Cheaper than a surgeon."
+}

@@ -36,7 +36,7 @@
     "effect": "mapping",
     "power": "",
     "unidentified_name": "yellowed scroll",
-    "lore": "Cartographers of the old empire inscribed these scrolls with a sympathetic mapping enchantment. Upon reading, the dungeon's layout floods into the reader's mind as a complete spatial memory \u00e2\u20ac\u201d every corridor, chamber, and stairwell within range suddenly known.",
+    "lore": "Cartographers of the old empire inscribed these scrolls with a sympathetic mapping enchantment. Upon reading, the dungeon's layout floods into the reader's mind as a complete spatial memory â€” every corridor, chamber, and stairwell within range suddenly known.",
     "read_threshold": 2
   },
   "scroll_of_identify": {
@@ -116,7 +116,7 @@
     "effect": "confuse_monsters",
     "power": "",
     "unidentified_name": "swirling scroll",
-    "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range \u00e2\u20ac\u201d their senses scramble, their movements become erratic, and their intent is lost in confusion.",
+    "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range â€” their senses scramble, their movements become erratic, and their intent is lost in confusion.",
     "read_threshold": 2
   },
   "scroll_of_the_labyrinth": {
@@ -246,7 +246,7 @@
     "effect": "sleep_monsters",
     "power": "",
     "unidentified_name": "drowsy scroll",
-    "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence, this scroll releases a wave of irresistible somnolence. Every creature in sight is swept into deep slumber \u00e2\u20ac\u201d only the reader, having spoken the words aloud, remains awake and free to act.",
+    "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence, this scroll releases a wave of irresistible somnolence. Every creature in sight is swept into deep slumber â€” only the reader, having spoken the words aloud, remains awake and free to act.",
     "read_threshold": 3
   },
   "scroll_of_haste": {
@@ -266,7 +266,7 @@
     "effect": "haste_self",
     "power": "15",
     "unidentified_name": "blurred scroll",
-    "lore": "Written in quicksilver ink by fleet-footed Hermes himself \u00e2\u20ac\u201d or so the seller claimed \u00e2\u20ac\u201d this scroll binds the speed-essence of the divine messenger into the reader's limbs. For a short time, reality slows around you while you move at twice the natural pace.",
+    "lore": "Written in quicksilver ink by fleet-footed Hermes himself â€” or so the seller claimed â€” this scroll binds the speed-essence of the divine messenger into the reader's limbs. For a short time, reality slows around you while you move at twice the natural pace.",
     "read_threshold": 3
   },
   "scroll_of_enchant_armor": {
@@ -286,7 +286,7 @@
     "effect": "enchant_armor",
     "power": "",
     "unidentified_name": "gleaming scroll",
-    "lore": "The armorers' guilds of three ages of the world spent centuries perfecting this scroll. Reading it aloud over a worn piece of armor causes the metal (or leather, or hide) to tighten, harden, and align \u00e2\u20ac\u201d one permanent layer of reinforcement added to whatever protection you bear.",
+    "lore": "The armorers' guilds of three ages of the world spent centuries perfecting this scroll. Reading it aloud over a worn piece of armor causes the metal (or leather, or hide) to tighten, harden, and align â€” one permanent layer of reinforcement added to whatever protection you bear.",
     "read_threshold": 4
   },
   "scroll_of_teleportation": {
@@ -446,7 +446,7 @@
     "effect": "identify_all",
     "power": "thoth_blessing",
     "unidentified_name": "a papyrus scroll with hieratic script",
-    "lore": "Thoth, ibis-headed god of knowledge, inscribed all wisdom into forty-two books. The priest Setna Khamwas stole this scroll from the tomb of Neferkaptah and was haunted by the dead for his theft. Those who read it understand all languages and see through all illusions \u00e2\u20ac\u201d but knowledge stolen from the dead carries a price.",
+    "lore": "Thoth, ibis-headed god of knowledge, inscribed all wisdom into forty-two books. The priest Setna Khamwas stole this scroll from the tomb of Neferkaptah and was haunted by the dead for his theft. Those who read it understand all languages and see through all illusions â€” but knowledge stolen from the dead carries a price.",
     "read_threshold": 3,
     "identified": false,
     "containerLootTier": "rare",
@@ -469,7 +469,7 @@
     "effect": "mapping",
     "power": "dead_sea_blessing",
     "unidentified_name": "a brittle parchment sealed in a clay jar",
-    "lore": "In 1947, a Bedouin shepherd threw a stone into a cave near Qumran and heard the sound of breaking pottery. Inside the jars were scrolls preserved for two thousand years. The War Scroll describes the final battle between the Sons of Light and the Sons of Darkness. Reading it reveals the battlefield \u00e2\u20ac\u201d every corridor, every room, every enemy position.",
+    "lore": "In 1947, a Bedouin shepherd threw a stone into a cave near Qumran and heard the sound of breaking pottery. Inside the jars were scrolls preserved for two thousand years. The War Scroll describes the final battle between the Sons of Light and the Sons of Darkness. Reading it reveals the battlefield â€” every corridor, every room, every enemy position.",
     "read_threshold": 3,
     "identified": false,
     "containerLootTier": "rare",
@@ -492,7 +492,7 @@
     "effect": "boss_reward",
     "power": "QUEST-WEAVER-I",
     "unidentified_name": "Scroll of Arachne",
-    "lore": "Sealed with a strand of unbreakable silk. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a strand of unbreakable silk. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -514,7 +514,7 @@
     "effect": "boss_reward",
     "power": "QUEST-SERPENT-II",
     "unidentified_name": "Scroll of Lamia",
-    "lore": "Sealed with a serpent's tear. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a serpent's tear. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -536,7 +536,7 @@
     "effect": "boss_reward",
     "power": "QUEST-BRONZE-III",
     "unidentified_name": "Scroll of Talos",
-    "lore": "Sealed with molten bronze. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with molten bronze. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -558,7 +558,7 @@
     "effect": "boss_reward",
     "power": "QUEST-MOTHER-IV",
     "unidentified_name": "Scroll of Echidna",
-    "lore": "Sealed with the mark of the Mother of Monsters. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with the mark of the Mother of Monsters. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -580,7 +580,7 @@
     "effect": "boss_reward",
     "power": "QUEST-FOREST-V",
     "unidentified_name": "Scroll of the Erlking",
-    "lore": "Sealed with a frozen leaf that never wilts. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a frozen leaf that never wilts. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -602,7 +602,7 @@
     "effect": "boss_reward",
     "power": "QUEST-NIGHT-VI",
     "unidentified_name": "Scroll of Camazotz",
-    "lore": "Sealed with a bat's wing pressed in wax. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a bat's wing pressed in wax. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -624,7 +624,7 @@
     "effect": "boss_reward",
     "power": "QUEST-FLAME-VII",
     "unidentified_name": "Scroll of Cacus",
-    "lore": "Sealed with a scorch mark that still smolders. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a scorch mark that still smolders. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -646,7 +646,7 @@
     "effect": "boss_reward",
     "power": "QUEST-RIDDLE-VIII",
     "unidentified_name": "Scroll of the Sphinx",
-    "lore": "Sealed with a riddle that answers itself. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a riddle that answers itself. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -668,7 +668,7 @@
     "effect": "boss_reward",
     "power": "QUEST-WITCH-IX",
     "unidentified_name": "Scroll of Rangda",
-    "lore": "Sealed with a lock of white hair. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a lock of white hair. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -690,7 +690,7 @@
     "effect": "boss_reward",
     "power": "QUEST-LION-X",
     "unidentified_name": "Scroll of the Nemean Lion",
-    "lore": "Sealed with an impenetrable golden hair. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with an impenetrable golden hair. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -712,13 +712,13 @@
     "effect": "boss_reward",
     "power": "QUEST-CRONE-XI",
     "unidentified_name": "Scroll of Baba Yaga",
-    "lore": "Sealed with iron teeth marks. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with iron teeth marks. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
   },
   "scroll_of_jormungandr": {
-    "name": "Scroll of J\u00c3\u00b6rmungandr",
+    "name": "Scroll of JÃ¶rmungandr",
     "symbol": "?",
     "color": [
       255,
@@ -733,8 +733,8 @@
     "quiz_threshold": 2,
     "effect": "boss_reward",
     "power": "QUEST-WYRM-XII",
-    "unidentified_name": "Scroll of J\u00c3\u00b6rmungandr",
-    "lore": "Sealed with a scale from the World Serpent. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "unidentified_name": "Scroll of JÃ¶rmungandr",
+    "lore": "Sealed with a scale from the World Serpent. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -756,7 +756,7 @@
     "effect": "boss_reward",
     "power": "QUEST-CHAOS-XIII",
     "unidentified_name": "Scroll of Set",
-    "lore": "Sealed with red sand from the desert of storms. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with red sand from the desert of storms. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -778,7 +778,7 @@
     "effect": "boss_reward",
     "power": "QUEST-GREEN-XIV",
     "unidentified_name": "Scroll of the Green Knight",
-    "lore": "Sealed with a holly branch that bleeds sap. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a holly branch that bleeds sap. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -800,7 +800,7 @@
     "effect": "boss_reward",
     "power": "QUEST-MAELSTROM-XV",
     "unidentified_name": "Scroll of Charybdis",
-    "lore": "Sealed with salt water that never dries. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with salt water that never dries. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -822,7 +822,7 @@
     "effect": "boss_reward",
     "power": "QUEST-DEMON-XVI",
     "unidentified_name": "Scroll of Ravana",
-    "lore": "Sealed with the sigil of Lanka. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with the sigil of Lanka. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -844,7 +844,7 @@
     "effect": "boss_reward",
     "power": "QUEST-HUNGER-XVII",
     "unidentified_name": "Scroll of the Wendigo",
-    "lore": "Sealed with frost that bites the fingers. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with frost that bites the fingers. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -866,7 +866,7 @@
     "effect": "boss_reward",
     "power": "QUEST-HUNT-XVIII",
     "unidentified_name": "Scroll of the Wild Hunt",
-    "lore": "Sealed with a horn blast frozen in wax. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a horn blast frozen in wax. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -888,13 +888,13 @@
     "effect": "boss_reward",
     "power": "QUEST-SPIDER-XIX",
     "unidentified_name": "Scroll of Anansi",
-    "lore": "Sealed with a web that glints like gold. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "lore": "Sealed with a web that glints like gold. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
   },
   "scroll_of_nidhoggr": {
-    "name": "Scroll of N\u00c3\u00ad\u00c3\u00b0h\u00c3\u00b6ggr",
+    "name": "Scroll of NÃ­Ã°hÃ¶ggr",
     "symbol": "?",
     "color": [
       255,
@@ -909,8 +909,8 @@
     "quiz_threshold": 2,
     "effect": "boss_reward",
     "power": "QUEST-ROOT-XX",
-    "unidentified_name": "Scroll of N\u00c3\u00ad\u00c3\u00b0h\u00c3\u00b6ggr",
-    "lore": "Sealed with bark from the World Tree. A reward scroll from Dad \u00e2\u20ac\u201d show him this code!",
+    "unidentified_name": "Scroll of NÃ­Ã°hÃ¶ggr",
+    "lore": "Sealed with bark from the World Tree. A reward scroll from Dad â€” show him this code!",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -932,7 +932,7 @@
     "effect": "boss_reward",
     "power": "MOO-MOO-FARM-I",
     "unidentified_name": "Scroll of the Pasture",
-    "lore": "Sealed with a brand shaped like a cow bell. A reward scroll from Dad \u00e2\u20ac\u201d show him this code! Moo.",
+    "lore": "Sealed with a brand shaped like a cow bell. A reward scroll from Dad â€” show him this code! Moo.",
     "read_threshold": 2,
     "item_class": "scroll",
     "identified": true
@@ -1041,5 +1041,29 @@
     "lore": "A simple but useful invocation that floods the entire level with magical light, revealing its layout.",
     "read_threshold": 2,
     "sprite_desc": "A scroll of warm yellow parchment radiating soft golden light with sun-ray patterns in the ink"
+  },
+  "book_of_thoth": {
+    "name": "Book of Thoth",
+    "symbol": "?",
+    "color": [
+      200,
+      180,
+      100
+    ],
+    "weight_lb": 0.5,
+    "min_level": 50,
+    "peak_floor": 60,
+    "spread": 12,
+    "peak_weight": 0.2,
+    "quiz_tier": 4,
+    "quiz_threshold": 4,
+    "read_threshold": 4,
+    "effect": "identify_all",
+    "power": "",
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a scroll bound in papyrus",
+    "item_class": "scroll",
+    "lore": "The book of Thoth, Egyptian god of writing. Pharaoh Neferkaptah stole it from its serpent guardian in the Nile and learned the speech of the birds and the fish and the dead; his family drowned for his audacity, and the book was buried with him. Reading it identifies what was hidden. From the Setna cycle."
   }
 }

@@ -1203,31 +1203,40 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         if gear is not None:
             _place_one([gear], room, dungeon, ground_items, rng)
 
-    # -- Uniques / accessories / wands / scrolls / spellbooks / ammo -- 25% per room --
-    # Named items with explicit JSON entries (Hrunting, Amulet of Merlin, etc.).
-    # For weapons specifically, only is_unique=True entries spawn here — the
-    # common-tier legacy weapons (iron_sword etc.) stay in weapon.json for
-    # starting-equipment lookups but DON'T spawn naturally (template+material
-    # handles common loot above).
-    legacy_pool: list = []
-    for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
+    # -- Magic items: scrolls / wands / spellbooks / accessories / ammo --
+    # 25% per room from this pool. Named uniques are explicitly EXCLUDED here
+    # and roll separately below at a much rarer rate.
+    magic_pool: list = []
+    for cls_name in ('accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
         try:
-            items_in_class = load_items(cls_name)
-            if cls_name in ('weapon', 'armor', 'shield'):
-                # Filter to uniques — common-tier spawns via template+material.
-                # Uses the is_unique flag (set on rebalanced unique entries).
-                items_in_class = [it for it in items_in_class
-                                  if getattr(it, 'is_unique', False)]
-            legacy_pool += items_in_class
+            magic_pool += load_items(cls_name)
         except FileNotFoundError:
             pass
 
-    eligible = _item_eligible_weighted(legacy_pool, level, rng)
-
+    magic_eligible = _item_eligible_weighted(magic_pool, level, rng)
     for room in rooms[1:]:
         if rng.random() > 0.25:
             continue
-        _place_one(eligible, room, dungeon, ground_items, rng)
+        _place_one(magic_eligible, room, dungeon, ground_items, rng)
+
+    # -- Named uniques (Hrunting, Excalibur, etc.) — RARE separate roll --
+    # 2.5% per room → roughly 1-in-5 floors yields a unique drop. Uniques are
+    # supposed to feel LUCKY, not constant. Bell-curve weighting (peak_floor /
+    # spread / peak_weight) ensures items only spawn near their target floor.
+    UNIQUE_DROP_CHANCE_PER_ROOM = 0.025
+    unique_pool: list = []
+    for cls_name in ('weapon', 'armor', 'shield'):
+        try:
+            items_in_class = load_items(cls_name)
+            unique_pool += [it for it in items_in_class
+                            if getattr(it, 'is_unique', False)]
+        except FileNotFoundError:
+            pass
+    unique_eligible = _item_eligible_weighted(unique_pool, level, rng)
+    for room in rooms[1:]:
+        if rng.random() > UNIQUE_DROP_CHANCE_PER_ROOM:
+            continue
+        _place_one(unique_eligible, room, dungeon, ground_items, rng)
 
     # -- Containers -- guaranteed minimum 1; diminishing extras ----------------
     try:
@@ -1893,29 +1902,60 @@ def _item_eligible_weighted(templates: list, level: int,
                             rng: random.Random | None = None) -> list:
     """Build a category-balanced weighted pool for non-food items.
 
-    Items are first grouped by class (Weapon, Armor, Scroll, ...) so that each
-    category contributes equally regardless of its raw floorSpawnWeight values.
-    Within a category, weights are normalised to SLOTS_PER_TYPE total slots so
-    that heavily-weighted items (e.g. iron swords at L1) still appear more
-    often than rare items -- but weapons can't crowd out armor 100:1.
+    Items are first grouped by class (Weapon, Armor, Scroll, ...) so each
+    category contributes equally regardless of raw spawn weights. Within a
+    category, weights are normalised to SLOTS_PER_TYPE total slots.
+
+    Weight resolution order:
+      1) peak_floor/spread/peak_weight on the item → Gaussian bell at `level`
+         (the modern unique-tier system).
+      2) legacy floor_spawn_weight dict → range-keyed lookup at `level`.
+      3) fallback weight=1.
     """
     from collections import defaultdict
+    import math
 
     SLOTS_PER_TYPE = 20   # each item class gets this many weighted slots in the pool
     if rng is None:
         rng = random.Random()
 
+    def _bell_weight(item, level: int) -> float:
+        """Gaussian weight from peak_floor/spread/peak_weight. 0 if not set or
+        outside ~2.5 standard deviations (so e.g. an F55 weapon doesn't show
+        up at F90)."""
+        pf = getattr(item, 'peak_floor', 0)
+        pw = getattr(item, 'peak_weight', 0.0)
+        if pf <= 0 or pw <= 0:
+            return 0.0
+        sp = max(1, getattr(item, 'spread', 10))
+        dist = level - pf
+        bell = math.exp(-(dist * dist) / (2 * sp * sp))
+        if bell < 0.05:   # ~2.5 SDs out → not floor-appropriate
+            return 0.0
+        return pw * bell
+
     by_type: dict[str, list] = defaultdict(list)
     for item in templates:
         if item.min_level > level:
             continue
-        fw = getattr(item, 'floor_spawn_weight', {})
-        if fw:
-            w = _food_weight(fw, level)
+        # Modern uniques use peak_floor — bell weighting is authoritative for them.
+        # If they're out of bell range at this floor, DROP (don't fall back to w=1).
+        has_bell = getattr(item, 'peak_floor', 0) > 0 and getattr(item, 'peak_weight', 0.0) > 0
+        if has_bell:
+            bw = _bell_weight(item, level)
+            if bw <= 0:
+                continue   # outside the bell — not floor-appropriate
+            w = int(round(bw * 20))
             if w <= 0:
-                continue   # aged out of this level range
+                continue   # rounded to zero — drop instead of floor at 1
         else:
-            w = 1
+            fw = getattr(item, 'floor_spawn_weight', {})
+            if fw:
+                w = _food_weight(fw, level)
+                if w <= 0:
+                    continue   # aged out of this level range
+            else:
+                w = 1
         by_type[type(item).__name__].append((item, w))
 
     if not by_type:

@@ -1,0 +1,20 @@
+{
+  "id": "worldtree",
+  "name": "worldtree wood",
+  "material_class": "exotic_organic",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 92,
+  "spread": 8,
+  "peak_weight": 2,
+  "weight_mult": 0.9,
+  "ac_bonus": 3,
+  "max_enchant": 5,
+  "color": [240, 230, 180],
+  "resistances": ["fire", "cold", "lightning"],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["divine", "elements_resist", "axis_mundi"],
+  "lore_descriptor": "wood from the axis of the world",
+  "unidentified_descriptor": "wood the eye cannot quite focus on",
+  "first_pickup_chronicle": "Worldtree shield. Yggdrasil splinter, Ashvattha branch, Eden bough — pick your myth. Behind it, the elements remember their manners."
+}

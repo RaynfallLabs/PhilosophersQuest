@@ -1,0 +1,38 @@
+{
+  "id": "anduril",
+  "name": "Anduril",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 30,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 3.5,
+  "min_level": 84,
+  "peak_floor": 87,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "undead_bonus": 2.5,
+    "on_equip_status": "fear_aura",
+    "crit_multiplier": 1.8,
+    "ignore_resistances": true
+  },
+  "lore": "Flame of the West, reforged from the shards of Narsil by the smiths of Imladris. The blade that cut the Ring from Sauron's hand, broken when Isildur fell, sleeping for an Age in Rivendell until the Heir of Elendil came to claim it. The Dead of Dunharrow followed it down the Paths and a city held the line.",
+  "curve_note": "base_damage = curve.weapon_base_damage(84) x 1.6 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F80-89 Fenrir-era band fill; signature LOTR Northern-fantasy entry.",
+  "weapon_class_chain": "normal"
+}

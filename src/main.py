@@ -609,19 +609,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player.known_item_ids.add('philosophers_shard')
 
         # -- Weapon: default dagger OR build override ----------------------
+        # _start_weapon is either a unique's str id ("excalibur") or a
+        # (template_id, material_id) tuple for template-instantiated commons.
         no_dagger     = b.get('_no_dagger', False)
         start_weapon  = b.get('_start_weapon', None)
         try:
+            from items import instantiate_weapon
             weapons = load_items('weapon')
             if start_weapon:
-                w = next((x for x in weapons if x.id == start_weapon), None)
+                if isinstance(start_weapon, tuple):
+                    w = instantiate_weapon(start_weapon[0], start_weapon[1])
+                else:
+                    w = next((x for x in weapons if x.id == start_weapon), None)
                 if w:
                     w.identified = True
                     self.player.known_item_ids.add(w.id)
                     self.player.inventory.append(w)
             elif not no_dagger:
-                sword = next((x for x in weapons if x.id == 'iron_sword'), None)
+                sword = instantiate_weapon('shortsword', 'iron')
                 if sword:
+                    sword.identified = True
                     self.player.known_item_ids.add(sword.id)
                     self.player.inventory.append(sword)
         except Exception:
@@ -644,7 +651,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         start_melee = b.get('_start_melee', None)
         if start_melee:
             try:
-                melee_w = next((x for x in weapons if x.id == start_melee), None)
+                from items import instantiate_weapon
+                if isinstance(start_melee, tuple):
+                    melee_w = instantiate_weapon(start_melee[0], start_melee[1])
+                else:
+                    melee_w = next((x for x in weapons if x.id == start_melee), None)
                 if melee_w:
                     melee_w.identified = True
                     self.player.known_item_ids.add(melee_w.id)
@@ -684,11 +695,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 pass
 
         # -- Shield (warriors) ---------------------------------------------
+        # str id = unique shield, tuple = (template_id, material_id)
         start_shield = b.get('_start_shield', None)
         if start_shield:
             try:
-                shields = load_items('shield')
-                sh = next((s for s in shields if s.id == start_shield), None)
+                from items import instantiate_shield
+                if isinstance(start_shield, tuple):
+                    sh = instantiate_shield(start_shield[0], start_shield[1])
+                else:
+                    shields = load_items('shield')
+                    sh = next((s for s in shields if s.id == start_shield), None)
                 if sh:
                     sh.identified = True
                     self.player.known_item_ids.add(sh.id)
@@ -724,11 +740,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 pass
 
         # -- Armor (headgear, etc.) -----------------------------------------
+        # str id = unique armor, tuple = (template_id, material_id)
         start_armor = b.get('_start_armor', None)
         if start_armor:
             try:
-                armors = load_items('armor')
-                arm = next((a for a in armors if a.id == start_armor), None)
+                from items import instantiate_armor
+                if isinstance(start_armor, tuple):
+                    arm = instantiate_armor(start_armor[0], start_armor[1])
+                else:
+                    armors = load_items('armor')
+                    arm = next((a for a in armors if a.id == start_armor), None)
                 if arm:
                     arm.identified = True
                     self.player.known_item_ids.add(arm.id)

@@ -1,0 +1,20 @@
+{
+  "id": "elven_silk",
+  "name": "elven silk",
+  "material_class": "cloth",
+  "applies_to": ["armor"],
+  "peak_floor": 78,
+  "spread": 12,
+  "peak_weight": 3,
+  "weight_mult": 0.3,
+  "ac_bonus": 3,
+  "max_enchant": 4,
+  "color": [180, 230, 240],
+  "resistances": ["pierce", "slash"],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["light", "blessed_capable", "lothlorien_weave"],
+  "lore_descriptor": "cloth that catches starlight, light as moth-wing",
+  "unidentified_descriptor": "cloth woven of starlight",
+  "first_pickup_chronicle": "Elven silk. The Lothlórien weave. Pippin wore a coat of it under Galadhrim mail and walked out of the Pelennor unbroken. So Tolkien said, and so the dungeon agrees."
+}

@@ -49,6 +49,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'silenced':           ('Silenced',           (120, 120, 160), 'Cannot cast spells or read scrolls'),
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     'berserk':            ('Berserk',            (220,  60,  40), 'Ríastrad — bonus STR, HP cost per turn'),
+    'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -104,6 +105,7 @@ BUFFS: frozenset = frozenset({
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
     'life_save', 'sustained', 'truesight', 'dark_vision', 'identify_sight', 'spell_turning',
+    'riposte_armed',
 })
 
 # Resistance effects that block specific debuffs from being applied

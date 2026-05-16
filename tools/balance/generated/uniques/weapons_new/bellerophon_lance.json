@@ -1,0 +1,37 @@
+{
+  "id": "bellerophon_lance",
+  "name": "Bellerophon's Lance",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce",
+    "fire"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.75,
+    0.9,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 7.0,
+  "min_level": 42,
+  "peak_floor": 45,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "burn_chance": 0.2,
+    "beast_bonus_damage": "2d6",
+    "crit_multiplier": 1.8
+  },
+  "lore": "Tipped with a lump of lead, this is the lance Bellerophon couched from the back of Pegasus when he charged the Chimera. The monster's own fire melted the lead in its throat, and the molten metal did the killing the spearhead alone could not. Pride later threw Bellerophon off the winged horse; the lance survived him.",
+  "curve_note": "base_damage = curve.weapon_base_damage(42) x 1.6 unique-mult. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F40-49 Medusa-era band fill.",
+  "weapon_class_chain": "heavy"
+}

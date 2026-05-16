@@ -1361,6 +1361,19 @@ class CombatMixin:
                                     self._on_monster_killed(_m, chain_score=chain)
                         self.add_message(
                             "Your swing carries through — adjacent foes are cleaved!", 'success')
+                    # Sling free_stones ricochet: bounce hit to an adjacent monster
+                    ricochet_dmg = kwargs.get('ricochet_dmg', 0)
+                    if ricochet_dmg:
+                        for _m in self.monsters:
+                            if _m.alive and _m is not monster \
+                                    and abs(_m.x - monster.x) <= 1 \
+                                    and abs(_m.y - monster.y) <= 1:
+                                _m.take_damage(ricochet_dmg)
+                                self.add_message(
+                                    f"The stone ricochets into the {_m.name}!", 'success')
+                                if not _m.alive:
+                                    self._on_monster_killed(_m, chain_score=chain)
+                                break
                     # Amenonuhoko: slow adjacent monsters on kill
                     w = self.player.weapon
                     if w and getattr(w, 'aoe_slow_on_kill', False):
@@ -1522,6 +1535,21 @@ class CombatMixin:
                     if m.hp <= 0 and m.alive:
                         m.alive = False
                         self._on_monster_killed(m)
+
+                # Shortsword riposte: free counter at 0.85× weapon base damage
+                # (set by combat.player_attack class_mech 'quick_riposte' at max chain)
+                if self.player.has_effect('riposte_armed') and dmg > 0 and m.alive:
+                    _w = self.player.weapon
+                    if _w and getattr(_w, 'class_mechanic', '') == 'quick_riposte':
+                        _rip = max(1, int((_w.base_damage or 4) * 0.85))
+                        _rip_actual = m.take_damage(_rip)
+                        self.add_message(
+                            f"You riposte the {m.name} for {_rip_actual}!", 'success')
+                        # Consume one charge
+                        self.player.status_effects['riposte_armed'] = max(
+                            0, self.player.status_effects.get('riposte_armed', 0) - 1)
+                        if not m.alive:
+                            self._on_monster_killed(m)
 
                 # Tarnhelm: auto-invisibility when HP drops below 30%
                 if dmg > 0 and not getattr(self, '_tarnhelm_used', False):

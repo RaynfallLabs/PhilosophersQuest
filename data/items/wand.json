@@ -1928,5 +1928,80 @@
     "unidentified_name": "pulsating wand",
     "lore": "A more potent version of the wand of wonder, crackling with unstable magical energy. Each zap is a gamble with reality itself.",
     "sprite_desc": "A dark purple rod crackling with chaotic lightning and swirling reality-warping distortions at the tip"
+  },
+  "aarons_rod": {
+    "name": "Aaron's Rod",
+    "symbol": "/",
+    "color": [
+      180,
+      120,
+      80
+    ],
+    "weight_lb": 1.5,
+    "min_level": 30,
+    "peak_floor": 40,
+    "spread": 12,
+    "peak_weight": 0.2,
+    "charges_min": 3,
+    "charges_max": 5,
+    "max_charges": 5,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "effect": "paralyze_monster",
+    "power": "",
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a budded almond-wood rod",
+    "lore": "The rod of Aaron, brother of Moses. Thrown to the ground before Pharaoh's court, it became a serpent and swallowed the serpents of Pharaoh's magicians. Later, it budded almonds overnight to settle a dispute among the tribes. From Exodus 7 and Numbers 17. Whatever an enemy raises, the rod takes the legs out from under it."
+  },
+  "circes_wand": {
+    "name": "Circe's Wand",
+    "symbol": "/",
+    "color": [
+      200,
+      180,
+      220
+    ],
+    "weight_lb": 1.0,
+    "min_level": 50,
+    "peak_floor": 60,
+    "spread": 12,
+    "peak_weight": 0.2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 4,
+    "quiz_threshold": 3,
+    "effect": "polymorph_monster",
+    "power": "",
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a slender ivory wand",
+    "lore": "Circe's wand from her hall on Aeaea. She used it on Odysseus's crew and they became swine — heads and bristles and grunts, but their minds knew themselves the whole time. Hermes gave Odysseus the herb moly to resist her; she gave up after the swine-spell failed and welcomed him. From the Odyssey, Book X."
+  },
+  "indras_vajra": {
+    "name": "Indra's Vajra",
+    "symbol": "/",
+    "color": [
+      245,
+      245,
+      100
+    ],
+    "weight_lb": 1.5,
+    "min_level": 65,
+    "peak_floor": 75,
+    "spread": 12,
+    "peak_weight": 0.2,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "quiz_tier": 5,
+    "quiz_threshold": 4,
+    "effect": "lightning_bolt",
+    "power": "6d6",
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a heavy iron rod",
+    "lore": "The thunderbolt of Indra, made by Tvastr the divine craftsman from the bones of the sage Dadhichi, who gave his body for it. Indra struck Vritra the world-drought serpent with this and freed the seven rivers. From the Rigveda, Book I. It is not lightning — it is the weapon that lightning was a memory of."
   }
 }

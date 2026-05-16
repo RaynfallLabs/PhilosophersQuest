@@ -1,0 +1,38 @@
+{
+  "id": "hofud",
+  "name": "Hofud",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 28,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 3.0,
+  "min_level": 80,
+  "peak_floor": 83,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.8,
+    "vigilance_aware": true,
+    "stun_chance": 0.15,
+    "abaddon_bonus_damage": "1d6"
+  },
+  "lore": "Hofud, called Man-Head, the sword of Heimdall the watcher at Bifrost. He hears wool growing on the backs of sheep and grass climbing out of the ground. At Ragnarok he and Loki will meet on the field and finish each other; the sword will not survive that day either, but until then nothing slips past it.",
+  "curve_note": "base_damage = curve.weapon_base_damage(80) x 1.6 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F80-89 Fenrir-era band fill; Norse signature.",
+  "weapon_class_chain": "normal"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ironwood",
+  "name": "ironwood",
+  "material_class": "rare_wood",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 38,
+  "spread": 14,
+  "peak_weight": 5,
+  "weight_mult": 1.2,
+  "ac_bonus": 1,
+  "max_enchant": 3,
+  "color": [90, 70, 50],
+  "resistances": ["fire"],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["fire_resistant", "dense"],
+  "lore_descriptor": "wood dark as iron, gives a dull thunk when struck",
+  "unidentified_descriptor": "an unnaturally dark plank",
+  "first_pickup_chronicle": "Ironwood shield. Doesn't burn. Doesn't rot. The dwarves who logged it ate well off the proceeds."
+}

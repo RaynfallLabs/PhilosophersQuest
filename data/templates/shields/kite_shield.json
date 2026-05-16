@@ -5,6 +5,13 @@
   "base_ac_value": 2,
   "_design_note": "F35-80 standard combat shield.",
   "base_weight_lb": 10.0,
-  "compatible_material_classes": ["wood", "metal", "rare_metal", "magical_metal", "dragon_material"],
+  "compatible_material_classes": [
+    "wood",
+    "rare_wood",
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material"
+  ],
   "lore_template": "A tall {material_name} kite, tapered to a point below the knee. Made for the saddle — keeps the leg covered when there is no horse to do it for you."
 }

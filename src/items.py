@@ -41,6 +41,11 @@ class Item:
         self.lore: str          = defn.get('lore', '')
         self.set_id: str        = defn.get('set_id', '')
         self.set_name: str      = defn.get('set_name', '')
+        # Bell-curve spawn fields — used by dungeon._item_eligible_weighted to
+        # weight floor-relevance. peak_floor=0 means no bell weighting (fallback).
+        self.peak_floor:  int   = int(defn.get('peak_floor', 0) or 0)
+        self.spread:      int   = int(defn.get('spread', 10) or 10)
+        self.peak_weight: float = float(defn.get('peak_weight', 0.0) or 0.0)
 
 
 class Weapon(Item):
@@ -713,11 +718,29 @@ def pick_random_weapon_for_floor(floor: int, rng) -> Weapon | None:
 
 
 def pick_random_armor_for_floor(floor: int, rng, slot: str = 'body') -> 'Armor | None':
-    """Pick a random armor template+material pair for this floor + slot."""
+    """Pick a random armor template+material pair for this floor + slot.
+    Filters templates to those that BOTH match the slot AND accept the
+    chosen material's material_class — so e.g. 'ash' (wood) only goes to
+    armor templates that accept wood, never to a steel breastplate."""
     materials = load_materials('armor')
-    weighted = [(mid, m, material_spawn_weight(m, floor))
-                for mid, m in materials.items()]
-    weighted = [(mid, m, w) for mid, m, w in weighted if w > 0]
+    # Pre-filter materials: only those usable in at least one slot-matching template
+    templates = load_templates('armor')
+    slot_templates = [(tid, t) for tid, t in templates.items()
+                      if t.get('slot', 'body') == slot]
+    if not slot_templates:
+        return None
+    # Build set of material classes accepted by any slot-matching template
+    accepted_classes: set[str] = set()
+    for _, t in slot_templates:
+        accepted_classes.update(t.get('compatible_material_classes', []))
+
+    weighted = []
+    for mid, m in materials.items():
+        if m.get('material_class', '') not in accepted_classes and accepted_classes:
+            continue
+        w = material_spawn_weight(m, floor)
+        if w > 0:
+            weighted.append((mid, m, w))
     if not weighted:
         return None
     total = sum(w for _, _, w in weighted)
@@ -729,11 +752,12 @@ def pick_random_armor_for_floor(floor: int, rng, slot: str = 'body') -> 'Armor |
         if r <= cum:
             chosen_mid, chosen_mat = mid, m
             break
-    templates = load_templates('armor')
-    compatible = [(tid, t) for tid, t in templates.items()
-                  if t.get('slot', 'body') == slot]
+    # Now narrow templates to those that accept this specific material
+    chosen_class = chosen_mat.get('material_class', '')
+    compatible = [(tid, t) for tid, t in slot_templates
+                  if chosen_class in t.get('compatible_material_classes', [])]
     if not compatible:
-        return None
+        compatible = slot_templates  # safety fallback
     tid, _ = rng.choice(compatible)
     try:
         return instantiate_armor(tid, chosen_mid)
@@ -742,12 +766,24 @@ def pick_random_armor_for_floor(floor: int, rng, slot: str = 'body') -> 'Armor |
 
 
 def pick_random_shield_for_floor(floor: int, rng) -> 'Shield | None':
-    """Pick a random shield template+material pair for this floor."""
-    # Shields use armor materials primarily
+    """Pick a random shield template+material pair for this floor. Filters
+    by template/material compatibility so e.g. 'linen' doesn't end up in a
+    tower shield."""
     materials = load_materials('armor')
-    weighted = [(mid, m, material_spawn_weight(m, floor))
-                for mid, m in materials.items()]
-    weighted = [(mid, m, w) for mid, m, w in weighted if w > 0]
+    templates = load_templates('shields')
+    if not templates:
+        return None
+    # Set of material classes accepted by any shield template
+    accepted_classes: set[str] = set()
+    for t in templates.values():
+        accepted_classes.update(t.get('compatible_material_classes', []))
+    weighted = []
+    for mid, m in materials.items():
+        if m.get('material_class', '') not in accepted_classes and accepted_classes:
+            continue
+        w = material_spawn_weight(m, floor)
+        if w > 0:
+            weighted.append((mid, m, w))
     if not weighted:
         return None
     total = sum(w for _, _, w in weighted)
@@ -759,56 +795,16 @@ def pick_random_shield_for_floor(floor: int, rng) -> 'Shield | None':
         if r <= cum:
             chosen_mid, chosen_mat = mid, m
             break
-    templates = load_templates('shields')
-    if not templates:
-        return None
-    tid = rng.choice(list(templates.keys()))
+    chosen_class = chosen_mat.get('material_class', '')
+    compatible = [tid for tid, t in templates.items()
+                  if chosen_class in t.get('compatible_material_classes', [])]
+    if not compatible:
+        compatible = list(templates.keys())
+    tid = rng.choice(compatible)
     try:
         return instantiate_shield(tid, chosen_mid)
     except ValueError:
         return None
-
-
-# Legacy weapon/armor ID alias map — old saves with "iron_longsword" etc.
-# resolve to template+material pairs via this table.
-LEGACY_WEAPON_ALIASES: dict[str, tuple[str, str]] = {
-    # iron tier (legacy F1)
-    'iron_sword':       ('shortsword', 'iron'),
-    'iron_longsword':   ('longsword', 'iron'),
-    'iron_dagger':      ('dagger', 'iron'),
-    'iron_mace':        ('mace', 'iron'),
-    'iron_axe':         ('battleaxe', 'iron'),
-    'iron_warhammer':   ('warhammer', 'iron'),
-    'iron_spear':       ('glaive', 'iron'),
-    'iron_arrow':       ('shortbow', 'iron'),     # arrow→bow approximate
-    # steel tier (legacy F21)
-    'steel_sword':      ('shortsword', 'steel'),
-    'steel_longsword':  ('longsword', 'steel'),
-    'steel_dagger':     ('dagger', 'steel'),
-    'steel_mace':       ('mace', 'steel'),
-    'steel_axe':        ('battleaxe', 'steel'),
-    # hardened gold tier (legacy F41)
-    'hardened_gold_sword':     ('shortsword', 'hardened_gold'),
-    'hardened_gold_longsword': ('longsword', 'hardened_gold'),
-    'hardened_gold_dagger':    ('dagger', 'hardened_gold'),
-    # diamond tier (legacy F61) — closest match is mithril for crystalline lore
-    'diamond_sword':     ('shortsword', 'mithril'),
-    'diamond_longsword': ('longsword', 'mithril'),
-    'diamond_dagger':    ('dagger', 'mithril'),
-    # adamantine tier (legacy F81)
-    'adamantine_sword':     ('shortsword', 'adamantine'),
-    'adamantine_longsword': ('longsword', 'adamantine'),
-    'adamantine_dagger':    ('dagger', 'adamantine'),
-}
-
-
-def resolve_legacy_weapon(legacy_id: str) -> Weapon | None:
-    """Convert an old save's weapon ID into the new template+material pair."""
-    alias = LEGACY_WEAPON_ALIASES.get(legacy_id)
-    if not alias:
-        return None
-    template_id, material_id = alias
-    return instantiate_weapon(template_id, material_id)
 
 
 def copy_at(item: Item, x: int, y: int) -> Item:

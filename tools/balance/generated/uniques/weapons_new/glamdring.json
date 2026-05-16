@@ -1,0 +1,38 @@
+{
+  "id": "glamdring",
+  "name": "Glamdring",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "magic"
+  ],
+  "base_damage": 32,
+  "chain_multipliers": [
+    0.75,
+    0.9,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 6.0,
+  "min_level": 82,
+  "peak_floor": 85,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "goblin_bonus_damage": "2d8",
+    "glows_near_orcs": true,
+    "crit_multiplier": 2.0,
+    "burn_chance": 0.2
+  },
+  "lore": "Foe-Hammer, the orc-cleaver. Forged in Gondolin during the First Age, lost when the hidden city burned, recovered from a stone-troll's hoard in the wilderlands. Gandalf carried it through Moria and into the deep where the Balrog waited. The blade glows blue when goblins are near, which is most of the time, this far down.",
+  "curve_note": "base_damage = curve.weapon_base_damage(82) x 1.8 unique-mult. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F80-89 Fenrir-era band fill.",
+  "weapon_class_chain": "heavy"
+}

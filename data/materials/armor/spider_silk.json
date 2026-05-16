@@ -1,0 +1,20 @@
+{
+  "id": "spider_silk",
+  "name": "spider silk",
+  "material_class": "cloth",
+  "applies_to": ["armor"],
+  "peak_floor": 55,
+  "spread": 12,
+  "peak_weight": 4,
+  "weight_mult": 0.35,
+  "ac_bonus": 2,
+  "max_enchant": 4,
+  "color": [200, 200, 220],
+  "resistances": ["pierce"],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["light", "pierce_resistant", "sticky"],
+  "lore_descriptor": "silver-white cloth woven from giant spider silk; tough as steel by weight",
+  "unidentified_descriptor": "an oddly-glossy fabric",
+  "first_pickup_chronicle": "Spider silk. Real-world arachnids spin a thread tougher than Kevlar; the giant ones spin worse. A shirt of this stops a spear-point on impact. Then the spear-point goes back to the spider."
+}

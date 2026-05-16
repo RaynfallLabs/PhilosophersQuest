@@ -1,0 +1,35 @@
+{
+  "id": "theseus_club",
+  "name": "Theseus's Club",
+  "category": "weapon",
+  "weapon_class": "club",
+  "template_basis": "club",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 4.0,
+  "min_level": 23,
+  "peak_floor": 26,
+  "spread": 6,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.3,
+    "crit_multiplier": 1.5
+  },
+  "lore": "The bronze club Theseus took from the corpse of Periphetes, the lame brigand of Epidaurus who beat travellers to death with it. Theseus kept the weapon for the rest of the road to Athens and carried it down into the labyrinth. The hero who walked the maze did not walk it empty-handed.",
+  "curve_note": "base_damage = curve.weapon_base_damage(23) x 1.5 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F20-29 Asterion-era band fill.",
+  "weapon_class_chain": "normal"
+}

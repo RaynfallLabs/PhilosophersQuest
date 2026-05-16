@@ -75,6 +75,24 @@ def _material_wielder_vulnerable(player, monster_attack_tags: list) -> float:
     return 1.0
 
 
+# Tag/name heuristics used by warhammer's anti_heavy_at_max bonus.
+_HEAVY_ARMORED_TAGS = {'construct', 'dragon'}
+_HEAVY_ARMORED_NAME_HINTS = (
+    'knight', 'paladin', 'samurai', 'cataphract', 'sentinel',
+    'guard', 'plate', 'golem', 'juggernaut',
+)
+
+
+def _is_heavy_armored(monster) -> bool:
+    """True for monsters whose defining trait is heavy plate / hide armor.
+    Used by anti_heavy_at_max (warhammer) and as a proxy where no AC stat exists."""
+    tags = set(getattr(monster, 'tags', []))
+    if tags & _HEAVY_ARMORED_TAGS:
+        return True
+    name = (getattr(monster, 'name', '') or '').lower()
+    return any(hint in name for hint in _HEAVY_ARMORED_NAME_HINTS)
+
+
 # Damage type advantage/disadvantage vs monster flags.
 # Monster defn can set 'resistances': ['slash'] or 'weaknesses': ['pierce']
 def _damage_multiplier(damage_types: list[str], monster) -> float:
@@ -130,6 +148,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         for slot in getattr(player, 'armor_slots', []):
             if slot and getattr(slot, 'chain_bonus', 0):
                 chain += slot.chain_bonus
+
+        # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
+        # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
+        if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
+            chain = 1
 
         # Cursed weapon backlash on miss (Tyrfing)
         if chain == 0:
@@ -192,6 +215,19 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 if weapon.petrify_on_crit:
                     current_pet = monster.status_effects.get('petrifying', 0)
                     monster.status_effects['petrifying'] = max(current_pet, 3)
+
+        # Pre-damage class-mechanic multipliers (applied at max chain):
+        # warhammer anti_heavy_at_max -> +50% vs heavy-armored monsters.
+        # shortbow armor_pierce_at_max -> +35% (treat-as-pierce; no real AC stat
+        # to subtract from, so we just bump damage as a proxy).
+        _pre_mech = getattr(weapon, 'class_mechanic', None) if weapon else None
+        if _pre_mech and weapon:
+            _max_c = weapon.max_chain_length or len(weapon.chain_multipliers)
+            if chain >= _max_c:
+                if _pre_mech == 'anti_heavy_at_max' and _is_heavy_armored(monster):
+                    mult *= 1.5
+                elif _pre_mech == 'armor_pierce_at_max':
+                    mult *= 1.35
 
         # Beowulf quirk: unarmed attacks deal +5 base damage
         if weapon is None:
@@ -362,6 +398,23 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 if random.random() < 0.30:
                     monster.add_effect('paralyzed', 1)
 
+            # Concussion at max (club) — heavy skull blow rattles the brain
+            if class_mech == 'concussion_at_max' and at_max:
+                if random.random() < 0.35:
+                    monster.add_effect('confused', 2)
+                    confused = True
+
+            # Quick riposte (shortsword) — arms a counter-attack for next turn
+            if class_mech == 'quick_riposte' and at_max:
+                player.add_effect('riposte_armed', 2)
+
+            # Returning blow (Green Chapel Axe) — beheading-game contract: max-chain
+            # blows return to the wielder for half damage. The Green Knight survives
+            # decapitation; the bearer pays the price for swinging too hard.
+            if class_mech == 'returning_blow' and at_max:
+                backlash = max(1, actual // 2)
+                player.hp = max(0, player.hp - backlash)
+
         # Cleave: max-chain kill triggers AOE to adjacent monsters
         # (greatsword cleave_at_max / great_axe cleave_at_max_plus_bleed)
         _cleave_mech = class_mech in ('cleave_at_max', 'cleave_at_max_plus_bleed')
@@ -375,6 +428,19 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked,
                         crit=crit, poisoned=poisoned, burned=burned, confused=confused,
                         petrified=petrified, healed=healed, cleave_dmg=cleave_dmg)
+            return
+
+        # Sling ricochet: at max chain, 25% chance to bounce for second hit
+        # on a monster adjacent to the original target. Caller handles adjacency.
+        _ricochet_dmg = 0
+        if class_mech == 'free_stones' and weapon and chain >= (
+                weapon.max_chain_length or len(weapon.chain_multipliers)):
+            if random.random() < 0.25 and actual > 0:
+                _ricochet_dmg = max(1, int(actual * 0.6))
+        if _ricochet_dmg:
+            on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked,
+                        crit=crit, poisoned=poisoned, burned=burned, confused=confused,
+                        petrified=petrified, healed=healed, ricochet_dmg=_ricochet_dmg)
             return
 
         on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit,

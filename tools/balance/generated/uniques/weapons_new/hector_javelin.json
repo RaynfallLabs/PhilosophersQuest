@@ -1,0 +1,35 @@
+{
+  "id": "hector_javelin",
+  "name": "Hector's Javelin",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.75,
+    0.9,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 5.0,
+  "min_level": 22,
+  "peak_floor": 25,
+  "spread": 6,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "bleed_chance": 0.25,
+    "crit_multiplier": 1.6
+  },
+  "lore": "The bronze-headed javelin of Hector, breaker of horses, last shield of Troy. He threw one like it at Ajax in the duel before the ships; it struck the boss of the shield and bent. Patroclus wore Achilles's armor when he fell to the next throw of its kind.",
+  "curve_note": "base_damage = curve.weapon_base_damage(22) x 1.4 unique-mult, rounded for heavy spear feel. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F20-29 Asterion-era band fill.",
+  "weapon_class_chain": "heavy"
+}

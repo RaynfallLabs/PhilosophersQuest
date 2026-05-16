@@ -4,6 +4,11 @@
   "category": "shield",
   "base_ac_value": 1,
   "base_weight_lb": 5.0,
-  "compatible_material_classes": ["wood", "hide", "leather"],
+  "compatible_material_classes": [
+    "wood",
+    "rare_wood",
+    "hide",
+    "leather"
+  ],
   "lore_template": "A round shield of layered {material_name} planks bound at the rim with hide cord. Light enough to carry all day, broad enough to hide behind."
 }

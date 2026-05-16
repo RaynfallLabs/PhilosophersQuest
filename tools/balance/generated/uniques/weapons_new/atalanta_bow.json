@@ -1,0 +1,35 @@
+{
+  "id": "atalanta_bow",
+  "name": "Atalanta's Bow",
+  "category": "weapon",
+  "weapon_class": "bow",
+  "template_basis": "longbow",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 7,
+  "chain_multipliers": [
+    0.2,
+    0.55,
+    1.0,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 3.0,
+  "min_level": 27,
+  "peak_floor": 30,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 2.0,
+    "first_blood_bonus": true
+  },
+  "lore": "The huntress raised by bears, fastest of mortals, who drew first blood on the Calydonian Boar before any of the heroes could land a spear. Meleager awarded her the hide, and his uncles died for the slight. Her arrow flies straight to the first thing that draws breath in her sights.",
+  "curve_note": "base_damage = curve.weapon_base_damage(27) x 1.5 unique-mult, rounded. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
+  "weapon_class_chain": "finesse"
+}

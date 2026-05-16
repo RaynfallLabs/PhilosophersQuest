@@ -26,6 +26,6 @@
   "lore_template": "A {material_name} club. Older than civilization, and never improved upon for what it does.",
   "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 2.00×. Class mechanic: Primitive: cheap and abundant — never breaks on harvest tools. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.7 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
-  "class_mechanic": "primitive",
-  "class_mechanic_desc": "Primitive: cheap and abundant — never breaks on harvest tools."
+  "class_mechanic": "concussion_at_max",
+  "class_mechanic_desc": "At max chain: 35% chance to confuse target for 2 turns. A heavy blow to the skull rattles the brain. Also: cheap, abundant, never breaks on harvest."
 }

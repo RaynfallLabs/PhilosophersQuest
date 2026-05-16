@@ -1,0 +1,20 @@
+{
+  "id": "yew",
+  "name": "yew",
+  "material_class": "wood",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 10,
+  "spread": 10,
+  "peak_weight": 8,
+  "weight_mult": 0.85,
+  "ac_bonus": 0,
+  "max_enchant": 2,
+  "color": [180, 140, 90],
+  "resistances": [],
+  "weaknesses": ["fire"],
+  "vulnerabilities": [],
+  "special_properties": ["graveyard_yew"],
+  "lore_descriptor": "tight-grained, red-hearted yew",
+  "unidentified_descriptor": "a reddish wooden board",
+  "first_pickup_chronicle": "Yew shield. Cut from the trees the Saxons planted in churchyards. The fey will not press its surface; they remember the wood."
+}

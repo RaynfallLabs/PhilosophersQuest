@@ -3265,9 +3265,7 @@
       "duration": -1
     },
     "unidentified_name": "a scorched gold ring",
-    "set_id": "dragonslayer",
-    "set_name": "The Dragonslayer's Set",
-    "lore": "Forged from gold salvaged from the hoard of a great wyrm and quenched in dragon's blood, this ring radiates intense warmth. As one of the three pieces of the Dragonslayer's Set, wearing it alongside the Dragonbone Longsword and Dragonscale Armor grants immunity to fear and +2 to all attacks against dragons — the complete set turns its wearer into the most feared dragon hunter who ever lived.",
+    "lore": "Forged from gold salvaged from the hoard of a great wyrm and quenched in dragon's blood, this ring radiates intense warmth. The dragon-hunters of the Western Reach wore one each — fitted at their guild's smithy from gold their first kill paid for. The warmth never quite leaves the hand.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
@@ -3298,9 +3296,7 @@
       "duration": -1
     },
     "unidentified_name": "a night-black signet ring",
-    "set_id": "shadow_walker",
-    "set_name": "The Shadow Walker's Set",
-    "lore": "A matte-black ring that seems to absorb light from its surroundings, worn by the leader of an ancient thieves' guild who specialized in assassinations too dangerous for ordinary operatives. As one of the three pieces of the Shadow Walker's Set, wearing it alongside the Adamantine Dagger and the Dragonscale Cloak grants a poison strike on all attacks and the ability to move silently regardless of armor worn.",
+    "lore": "A matte-black ring that seems to absorb light from its surroundings, worn by the leader of an ancient thieves' guild who specialized in assassinations too dangerous for ordinary operatives. Its gold and venom-glands were stripped from the same dead king; the band still smells faintly of nightshade. The wearer's blood stops noticing poison.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
@@ -3333,9 +3329,7 @@
       "amount2": 1
     },
     "unidentified_name": "a pale etched gold band",
-    "set_id": "philosophers",
-    "set_name": "The Philosopher's Set",
-    "lore": "Inscribed with a miniature version of the Philosopher's Shard's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Shard and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them — knowledge flowing naturally as breath.",
+    "lore": "Inscribed with a miniature version of the Philosopher's Shard's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. The metal warms to the touch when unknown things are nearby; ancient inquiry traveled through the fingers.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
@@ -3946,9 +3940,10 @@
     "identified": false,
     "lore": "Andvari's magic ring that could find gold wherever it lay hidden. Loki stole it with the rest of the dwarf's hoard to pay the wergild for killing Otr. Andvari cursed both the ring and all the gold as he surrendered them. The ring found gold. It could not find safe owners.",
     "peak_weight": 0.3,
-    "is_unique": false,
+    "is_unique": true,
     "spread": 22,
-    "peak_floor": 60
+    "peak_floor": 60,
+    "can_be_cursed": true
   },
   "draupnir": {
     "name": "Draupnir",
@@ -3965,7 +3960,8 @@
     "quiz_tier": 4,
     "effects": {
       "stat": "STR",
-      "amount": 1
+      "amount": 3,
+      "duration": -1
     },
     "gold_multiplier": 2.0,
     "can_be_cursed": false,
@@ -3977,7 +3973,7 @@
       "81-100": 1
     },
     "peak_weight": 0.3,
-    "is_unique": false,
+    "is_unique": true,
     "spread": 19,
     "peak_floor": 50
   },
@@ -4069,7 +4065,7 @@
     "identified": false,
     "lore": "Freya's necklace, forged by four dwarves over four days. She paid each one a night of her company. Loki stole it in the form of a fly; Heimdall fought him in seal-form to recover it. Freya wore it in battle and her tears became gold. The Brisingamen is the most written-about piece of Norse jewellery. The dwarves received no further acknowledgment in the sagas.",
     "peak_weight": 0.2,
-    "is_unique": false,
+    "is_unique": true,
     "spread": 25,
     "peak_floor": 70
   },
@@ -5995,5 +5991,62 @@
     "is_unique": true,
     "spread": 25,
     "peak_floor": 70
+  },
+  "megingjord": {
+    "name": "Megingjörð",
+    "slot": "ring",
+    "symbol": "=",
+    "color": [
+      180,
+      60,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 75,
+    "peak_floor": 85,
+    "spread": 10,
+    "peak_weight": 0.2,
+    "max_enchant": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 4,
+      "duration": -1
+    },
+    "can_be_cursed": false,
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a heavy iron-banded belt-clasp",
+    "lore": "Thor's belt of power. With Mjölnir alone, Thor is strong; with Megingjörð he is twice as strong. He wore it the morning he fished for Jörmungandr off Hymir's boat and would have hauled the World-Serpent ashore if Hymir hadn't cut the line. From the Hymiskviða."
+  },
+  "kavacha_kundala": {
+    "name": "Kavacha and Kundala",
+    "slot": "amulet",
+    "symbol": "\"",
+    "color": [
+      200,
+      200,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 55,
+    "peak_floor": 65,
+    "spread": 12,
+    "peak_weight": 0.2,
+    "max_enchant": 3,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {
+      "stat": "CON",
+      "amount": 3,
+      "status": "fire_resist",
+      "duration": -1
+    },
+    "can_be_cursed": true,
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "golden armor-plate and earrings",
+    "lore": "Karna was born wearing them — gifts of Surya the Sun, fused to his skin so that no weapon could harm him while he wore them. Indra came to him as a beggar and asked for them as alms; Karna cut them off and gave them, because a Brahmin's request cannot be refused. He died on the eighteenth day of Kurukshetra. From the Mahabharata, Vana Parva."
   }
 }

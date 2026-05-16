@@ -57,20 +57,25 @@ def test_hasted_timer_increases():
 # ---------------------------------------------------------------------------
 
 def test_shields_cover_every_20_levels():
-    from items import load_items
-    shields = load_items('shield')
-    levels = sorted(s.min_level for s in shields)
-    # Every 20-level band 1-100 must have at least one shield available
+    """Template+material is the shield supply: every 20-floor band must
+    produce at least one shield over a sample window."""
+    import random
+    from items import pick_random_shield_for_floor
+    rng = random.Random(2024)
     for band_start in range(1, 101, 20):
-        band = range(band_start, band_start + 20)
-        available = [lvl for lvl in levels if lvl in band]
-        assert available, f"No shield available in level band {band_start}-{band_start+19}"
+        mid = band_start + 9
+        hits = sum(1 for _ in range(100) if pick_random_shield_for_floor(mid, rng))
+        assert hits > 0, f"No shield spawned at F{mid} (band {band_start}-{band_start+19})"
 
 
 def test_shield_count():
-    from items import load_items
-    shields = load_items('shield')
-    assert len(shields) >= 10, f"Expected >= 10 shields, got {len(shields)}"
+    """Named-unique shields plus template count."""
+    from items import load_items, load_templates
+    uniques = load_items('shield')
+    templates = load_templates('shields')
+    assert len(uniques) + len(templates) >= 10, (
+        f"Expected >= 10 shield uniques+templates, got "
+        f"{len(uniques)} uniques + {len(templates)} templates")
 
 
 # ---------------------------------------------------------------------------
@@ -220,21 +225,23 @@ def test_deep_food_absent_early():
 # ---------------------------------------------------------------------------
 
 def test_weapon_spawn_weighting():
-    from items import load_items
-    from dungeon import _item_eligible_weighted
-    weapons = load_items('weapon')
-    # Sample multiple times to smooth out RNG variance from weighted sampling
-    iron_l1 = 0
-    iron_l100 = 0
-    for _ in range(50):
-        pool_l1  = _item_eligible_weighted(weapons, 1)
-        pool_l100 = _item_eligible_weighted(weapons, 100)
-        iron_l1  += sum(1 for x in pool_l1   if x.id == 'iron_sword')
-        iron_l100 += sum(1 for x in pool_l100 if x.id == 'iron_sword')
-    # iron_sword should be far more common at L1 than L100 across many samples
-    assert iron_l1 > iron_l100, (
-        f"iron_sword should be weighted down at high levels "
-        f"(L1: {iron_l1}, L100: {iron_l100} across 50 samples)"
+    """Common weapons now come from template+material. Iron material peaks at F8,
+    so it should spawn far more often at L8 than at L80 across many rolls."""
+    import random
+    from items import pick_random_weapon_for_floor
+    rng = random.Random(1234)
+    iron_l8 = 0
+    iron_l80 = 0
+    for _ in range(300):
+        w8 = pick_random_weapon_for_floor(8, rng)
+        w80 = pick_random_weapon_for_floor(80, rng)
+        if w8 and w8.material == 'iron':
+            iron_l8 += 1
+        if w80 and w80.material == 'iron':
+            iron_l80 += 1
+    assert iron_l8 > iron_l80, (
+        f"iron material should be common at L8 and rare at L80 "
+        f"(L8: {iron_l8}, L80: {iron_l80} across 300 rolls each)"
     )
 
 

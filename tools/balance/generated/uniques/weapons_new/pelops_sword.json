@@ -1,0 +1,36 @@
+{
+  "id": "pelops_sword",
+  "name": "Sword of Pelops",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "bastard_sword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 5.0,
+  "min_level": 40,
+  "peak_floor": 43,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "lifesteal_percent": 0.08,
+    "crit_multiplier": 1.7,
+    "cursed_lineage": true
+  },
+  "lore": "Pelops took the kingdom of Pisa by winning the chariot race against Oenomaus, after bribing the charioteer to remove a linchpin. The king died. The charioteer was thrown into the sea cursing the house. The sword passed down to Atreus, then to Agamemnon, and Mycenae did not stop bleeding for three generations.",
+  "curve_note": "base_damage = curve.weapon_base_damage(40) x 1.8 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F40-49 Medusa-era band fill.",
+  "weapon_class_chain": "normal"
+}

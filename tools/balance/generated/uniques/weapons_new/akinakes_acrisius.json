@@ -1,0 +1,37 @@
+{
+  "id": "akinakes_acrisius",
+  "name": "Akinakes of Acrisius",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "shortsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "slash"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.2,
+    0.55,
+    1.0,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 2.0,
+  "min_level": 48,
+  "peak_floor": 51,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 2.2,
+    "prophecy_blade": true,
+    "bleed_chance": 0.25
+  },
+  "lore": "The short, leaf-shaped blade of Acrisius, king of Argos, who locked his daughter Danae in a bronze tower because an oracle said her son would kill him. Perseus killed him anyway, by accident, with a discus throw at funeral games. The blade survived the prophecy. The blades always do.",
+  "curve_note": "base_damage = curve.weapon_base_damage(48) x 1.4 unique-mult, finesse precision (8 x 1.4 = 11.2 -> 11). Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F40-49 Medusa-era band fill.",
+  "weapon_class_chain": "finesse"
+}

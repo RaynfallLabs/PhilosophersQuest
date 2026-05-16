@@ -1,0 +1,37 @@
+{
+  "id": "cadmus_sword",
+  "name": "Sword of Cadmus",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 10,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 3.0,
+  "min_level": 44,
+  "peak_floor": 47,
+  "spread": 7,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "dragon_bonus_damage": "1d8",
+    "bleed_chance": 0.2,
+    "crit_multiplier": 1.6
+  },
+  "lore": "Cadmus of Tyre slew the great water-dragon of Ares at the spring that would water Thebes. Athena told him to sow the teeth in the furrow; the Sown Men sprang up armed and killed each other until five remained to found the city. The sword that opened the dragon is the same sword that opened the founding line.",
+  "curve_note": "base_damage = curve.weapon_base_damage(44) x 1.5 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F40-49 Medusa-era band fill.",
+  "weapon_class_chain": "normal"
+}
