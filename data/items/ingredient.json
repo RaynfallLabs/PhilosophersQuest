@@ -16038,5 +16038,1658 @@
     "sprite_desc": "An extraordinary golden-edged cut of beef wearing a tiny crown, radiating bovine majesty",
     "lore": "An exquisite cut of beef from the Cow King himself. The meat shimmers with a faint golden hue. Fit for royalty. Moo.",
     "item_class": "ingredient"
+  },
+  "archon_heart": {
+    "name": "archon heart",
+    "symbol": ",",
+    "color": [
+      180,
+      40,
+      40
+    ],
+    "weight": 1.5,
+    "min_level": 75,
+    "source_monster": "blood_archon",
+    "recipes": {
+      "0": {
+        "name": "ruined archon heart",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "archon heart broth",
+        "sp": 52,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent archon heart stew",
+        "sp": 104,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good archon heart roast",
+        "sp": 156,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great archon heart feast",
+        "sp": 208,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork archon heart cuisine",
+        "sp": 260,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A massive dark red heart in a sealed clay vessel, still slowly beating",
+    "lore": "Heart of a blood archon, still warm hours after the kill. Cooked over slow heat, it renders down to a thick crimson stock."
+  },
+  "assassin_cowl": {
+    "name": "assassin cowl",
+    "symbol": ",",
+    "color": [
+      40,
+      40,
+      50
+    ],
+    "weight": 0.4,
+    "min_level": 38,
+    "source_monster": "mage_slayer_assassin",
+    "recipes": {
+      "0": {
+        "name": "ruined assassin cowl",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "assassin cowl broth",
+        "sp": 27,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent assassin cowl stew",
+        "sp": 54,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good assassin cowl roast",
+        "sp": 81,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "DEX"
+      },
+      "4": {
+        "name": "great assassin cowl feast",
+        "sp": 108,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork assassin cowl cuisine",
+        "sp": 135,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "DEX",
+          "PER"
+        ]
+      }
+    },
+    "sprite_desc": "A dark wool hood with crimson rune-stitching along the seam",
+    "lore": "The cowl of a mage-slayer, threaded with binding-runes that resist magic. Boiled, the threads release a tasteless oil."
+  },
+  "astral_filament": {
+    "name": "astral filament",
+    "symbol": ",",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 76,
+    "source_monster": "astral_horror",
+    "recipes": {
+      "0": {
+        "name": "ruined astral filament",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "astral filament broth",
+        "sp": 53,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent astral filament stew",
+        "sp": 106,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good astral filament roast",
+        "sp": 159,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "INT"
+      },
+      "4": {
+        "name": "great astral filament feast",
+        "sp": 212,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork astral filament cuisine",
+        "sp": 265,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "INT",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A nearly-invisible thread coiled on a small black silk square",
+    "lore": "Single strand of astral plane material, harvested from a slain astral horror. Visible only at certain angles; tastes like memory."
+  },
+  "crone_voice": {
+    "name": "crone voice",
+    "symbol": ",",
+    "color": [
+      200,
+      100,
+      220
+    ],
+    "weight": 0.0,
+    "min_level": 55,
+    "source_monster": "whispering_crone",
+    "recipes": {
+      "0": {
+        "name": "ruined crone voice",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "crone voice broth",
+        "sp": 38,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent crone voice stew",
+        "sp": 76,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good crone voice roast",
+        "sp": 114,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great crone voice feast",
+        "sp": 152,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork crone voice cuisine",
+        "sp": 190,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "WIS",
+          "INT"
+        ]
+      }
+    },
+    "sprite_desc": "A small pink conch sealed with black wax, faintly vibrating",
+    "lore": "Captured in a stoppered conch — the death-whisper of the Whispering Crone. When uncapped over a simmering pot, the broth begins to mutter."
+  },
+  "deep_pearl": {
+    "name": "deep pearl",
+    "symbol": ",",
+    "color": [
+      180,
+      200,
+      220
+    ],
+    "weight": 0.3,
+    "min_level": 55,
+    "source_monster": "deep_one_priest",
+    "recipes": {
+      "0": {
+        "name": "ruined deep pearl",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "deep pearl broth",
+        "sp": 38,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent deep pearl stew",
+        "sp": 76,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good deep pearl roast",
+        "sp": 114,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great deep pearl feast",
+        "sp": 152,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork deep pearl cuisine",
+        "sp": 190,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "WIS",
+          "INT"
+        ]
+      }
+    },
+    "sprite_desc": "A blue-white pearl the size of a thumbnail, faintly luminescent",
+    "lore": "Pearl of a deep-one priest, secreted around grit from the abyssal floor. Crushed, it tastes of salt and old prayers."
+  },
+  "demon_horn": {
+    "name": "demon horn",
+    "symbol": ",",
+    "color": [
+      180,
+      60,
+      60
+    ],
+    "weight": 0.6,
+    "min_level": 55,
+    "source_monster": "demonic_trickster",
+    "recipes": {
+      "0": {
+        "name": "ruined demon horn",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "demon horn broth",
+        "sp": 38,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent demon horn stew",
+        "sp": 76,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good demon horn roast",
+        "sp": 114,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great demon horn feast",
+        "sp": 152,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork demon horn cuisine",
+        "sp": 190,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "DEX"
+        ]
+      }
+    },
+    "sprite_desc": "A curved black-red horn the length of a forearm, hollow at the base",
+    "lore": "Spiral horn of a demonic trickster, hollow and resonant. Shavings flake easily and lend a peppery heat."
+  },
+  "elemental_core": {
+    "name": "elemental core",
+    "symbol": ",",
+    "color": [
+      220,
+      90,
+      40
+    ],
+    "weight": 1.0,
+    "min_level": 68,
+    "source_monster": "lava_elemental",
+    "recipes": {
+      "0": {
+        "name": "ruined elemental core",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "elemental core broth",
+        "sp": 48,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent elemental core stew",
+        "sp": 96,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good elemental core roast",
+        "sp": 144,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great elemental core feast",
+        "sp": 192,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork elemental core cuisine",
+        "sp": 240,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A glowing red-orange stone in a thick iron cage to prevent burns",
+    "lore": "The molten heart-stone of a lava elemental, kept burning by its own residual will. Wraps food in a lasting heat-aura."
+  },
+  "executioners_iron": {
+    "name": "executioner's iron",
+    "symbol": ",",
+    "color": [
+      70,
+      70,
+      80
+    ],
+    "weight": 1.4,
+    "min_level": 85,
+    "source_monster": "pit_executioner",
+    "recipes": {
+      "0": {
+        "name": "ruined executioner's iron",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "executioner's iron broth",
+        "sp": 59,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent executioner's iron stew",
+        "sp": 118,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good executioner's iron roast",
+        "sp": 177,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great executioner's iron feast",
+        "sp": 236,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork executioner's iron cuisine",
+        "sp": 295,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A small black iron weight stamped with a single rune",
+    "lore": "A small iron weight from the pit executioner's harness, ritually heavy. Filings dropped into a soup settle to the bottom and stay warm."
+  },
+  "goblin_ear": {
+    "name": "goblin ear",
+    "symbol": ",",
+    "color": [
+      120,
+      170,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 14,
+    "source_monster": "goblin_sniper",
+    "recipes": {
+      "0": {
+        "name": "ruined goblin ear",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "goblin ear broth",
+        "sp": 10,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent goblin ear stew",
+        "sp": 20,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good goblin ear roast",
+        "sp": 30,
+        "bonus_type": "stat",
+        "bonus_amount": 1,
+        "bonus_stat": "DEX"
+      },
+      "4": {
+        "name": "great goblin ear feast",
+        "sp": 40,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork goblin ear cuisine",
+        "sp": 50,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "DEX",
+          "PER"
+        ]
+      }
+    },
+    "sprite_desc": "A wrinkled green goblin ear strung on a leather thong",
+    "lore": "Cured goblin ear, leathery and tough. Battle-trophy taken as much for sport as for stewpot — the warpriests claim chewing one preserves the taste of victory."
+  },
+  "golem_core": {
+    "name": "golem core",
+    "symbol": ",",
+    "color": [
+      120,
+      120,
+      130
+    ],
+    "weight": 1.5,
+    "min_level": 38,
+    "source_monster": "stone_golem",
+    "recipes": {
+      "0": {
+        "name": "ruined golem core",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "golem core broth",
+        "sp": 27,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent golem core stew",
+        "sp": 54,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good golem core roast",
+        "sp": 81,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "CON"
+      },
+      "4": {
+        "name": "great golem core feast",
+        "sp": 108,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork golem core cuisine",
+        "sp": 135,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A grey stone the size of a fist, faintly glowing along etched runic veins",
+    "lore": "The animating core stone of a slain golem — granite veined with sigils. Powdered into stew, it stiffens the diner's bones."
+  },
+  "herald_trumpet_brass": {
+    "name": "herald trumpet brass",
+    "symbol": ",",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 87,
+    "source_monster": "apocalypse_herald",
+    "recipes": {
+      "0": {
+        "name": "ruined herald trumpet brass",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "herald trumpet brass broth",
+        "sp": 61,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent herald trumpet brass stew",
+        "sp": 122,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good herald trumpet brass roast",
+        "sp": 183,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great herald trumpet brass feast",
+        "sp": 244,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork herald trumpet brass cuisine",
+        "sp": 305,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "WIS",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A curved sliver of yellow-gold brass with engraved scales of the apocalypse",
+    "lore": "A fragment of the apocalypse herald's trumpet, still vibrating faintly. The vibration carries through metal and into the food."
+  },
+  "horror_ichor": {
+    "name": "horror ichor",
+    "symbol": ",",
+    "color": [
+      60,
+      30,
+      80
+    ],
+    "weight": 0.3,
+    "min_level": 45,
+    "source_monster": "lurking_horror",
+    "recipes": {
+      "0": {
+        "name": "ruined horror ichor",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "horror ichor broth",
+        "sp": 31,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent horror ichor stew",
+        "sp": 62,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good horror ichor roast",
+        "sp": 93,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "CON"
+      },
+      "4": {
+        "name": "great horror ichor feast",
+        "sp": 124,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork horror ichor cuisine",
+        "sp": 155,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "CON",
+          "DEX"
+        ]
+      }
+    },
+    "sprite_desc": "A small iron vial of bubbling black liquid, the vial slightly corroded",
+    "lore": "The black blood of a lurking horror. Reacts with iron, hisses on contact with flame. Cooking it transmutes the malice into nourishment."
+  },
+  "horseman_lance_shard": {
+    "name": "horseman lance shard",
+    "symbol": ",",
+    "color": [
+      180,
+      100,
+      60
+    ],
+    "weight": 0.8,
+    "min_level": 90,
+    "source_monster": "iron_horseman",
+    "recipes": {
+      "0": {
+        "name": "ruined horseman lance shard",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "horseman lance shard broth",
+        "sp": 63,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent horseman lance shard stew",
+        "sp": 126,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good horseman lance shard roast",
+        "sp": 189,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great horseman lance shard feast",
+        "sp": 252,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork horseman lance shard cuisine",
+        "sp": 315,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A jagged iron splinter as long as a hand, edges dark with old blood",
+    "lore": "A fragment of the iron horseman's lance — cold to the touch, faintly oily. Heats slowly even in the brightest flame."
+  },
+  "inquisitor_seal": {
+    "name": "inquisitor seal",
+    "symbol": ",",
+    "color": [
+      180,
+      30,
+      30
+    ],
+    "weight": 0.3,
+    "min_level": 64,
+    "source_monster": "veiled_inquisitor",
+    "recipes": {
+      "0": {
+        "name": "ruined inquisitor seal",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "inquisitor seal broth",
+        "sp": 45,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent inquisitor seal stew",
+        "sp": 90,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good inquisitor seal roast",
+        "sp": 135,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great inquisitor seal feast",
+        "sp": 180,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork inquisitor seal cuisine",
+        "sp": 225,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "WIS",
+          "PER"
+        ]
+      }
+    },
+    "sprite_desc": "A red-brown brass disk with a stylized eye in the center",
+    "lore": "A veiled inquisitor's torture-seal: a brass coin stamped with the hierarch's name. Carrying it makes a meal feel deserved."
+  },
+  "lich_dust": {
+    "name": "lich dust",
+    "symbol": ",",
+    "color": [
+      200,
+      200,
+      220
+    ],
+    "weight": 0.1,
+    "min_level": 51,
+    "source_monster": "skeleton_lich",
+    "recipes": {
+      "0": {
+        "name": "ruined lich dust",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "lich dust broth",
+        "sp": 36,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent lich dust stew",
+        "sp": 72,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good lich dust roast",
+        "sp": 108,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "INT"
+      },
+      "4": {
+        "name": "great lich dust feast",
+        "sp": 144,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork lich dust cuisine",
+        "sp": 180,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "INT",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A handful of luminous pale-grey powder in a folded parchment packet",
+    "lore": "Bone-dust scraped from a lich's reliquary, glittering faintly under low light. The lich's name is still half-pronounceable in it."
+  },
+  "mimic_gold": {
+    "name": "mimic gold",
+    "symbol": ",",
+    "color": [
+      220,
+      200,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 58,
+    "source_monster": "gilded_mimic",
+    "recipes": {
+      "0": {
+        "name": "ruined mimic gold",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "mimic gold broth",
+        "sp": 41,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent mimic gold stew",
+        "sp": 82,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good mimic gold roast",
+        "sp": 123,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "PER"
+      },
+      "4": {
+        "name": "great mimic gold feast",
+        "sp": 164,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork mimic gold cuisine",
+        "sp": 205,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "PER",
+          "DEX"
+        ]
+      }
+    },
+    "sprite_desc": "A bright gold coin with faint tooth-marks around the edge",
+    "lore": "Solidified saliva from a mimic, indistinguishable from coin gold until you bite it. Melts in low heat and recrystallizes around food."
+  },
+  "necromantic_focus": {
+    "name": "necromantic focus",
+    "symbol": ",",
+    "color": [
+      80,
+      40,
+      100
+    ],
+    "weight": 0.4,
+    "min_level": 62,
+    "source_monster": "crypt_summoner",
+    "recipes": {
+      "0": {
+        "name": "ruined necromantic focus",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "necromantic focus broth",
+        "sp": 43,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent necromantic focus stew",
+        "sp": 86,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good necromantic focus roast",
+        "sp": 129,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great necromantic focus feast",
+        "sp": 172,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork necromantic focus cuisine",
+        "sp": 215,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "INT",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A bone finger inscribed with a single dark-purple sigil",
+    "lore": "The focus-bone of a crypt summoner — a finger-bone carved with a binding glyph. Boiled in a broth, the glyph dissolves and the broth steadies the cook's hand."
+  },
+  "patriarch_signet": {
+    "name": "patriarch signet",
+    "symbol": ",",
+    "color": [
+      180,
+      160,
+      80
+    ],
+    "weight": 0.3,
+    "min_level": 35,
+    "source_monster": "iron_patriarch",
+    "recipes": {
+      "0": {
+        "name": "ruined patriarch signet",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "patriarch signet broth",
+        "sp": 24,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent patriarch signet stew",
+        "sp": 48,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good patriarch signet roast",
+        "sp": 72,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great patriarch signet feast",
+        "sp": 96,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork patriarch signet cuisine",
+        "sp": 120,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A heavy iron signet ring stamped with four parallel bars",
+    "lore": "The signet ring of the Iron Patriarch, pried from his slain finger. Stamped with the four-bar mark of a dead order. Crushed and powdered, it lends weight to a roast."
+  },
+  "plague_phylactery": {
+    "name": "plague phylactery",
+    "symbol": ",",
+    "color": [
+      120,
+      150,
+      80
+    ],
+    "weight": 0.4,
+    "min_level": 42,
+    "source_monster": "plague_witch",
+    "recipes": {
+      "0": {
+        "name": "ruined plague phylactery",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "plague phylactery broth",
+        "sp": 29,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent plague phylactery stew",
+        "sp": 58,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good plague phylactery roast",
+        "sp": 87,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great plague phylactery feast",
+        "sp": 116,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork plague phylactery cuisine",
+        "sp": 145,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "WIS",
+          "CON"
+        ]
+      }
+    },
+    "sprite_desc": "A small clay bottle sealed with green wax, sloshing faintly",
+    "lore": "A plague-witch's reliquary bottle holding a strand of her hair and a tooth. Properly purified, it grants immunity to what killed it."
+  },
+  "rime_tusk": {
+    "name": "rime tusk",
+    "symbol": ",",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "weight": 1.0,
+    "min_level": 62,
+    "source_monster": "frostfang_giant",
+    "recipes": {
+      "0": {
+        "name": "ruined rime tusk",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "rime tusk broth",
+        "sp": 43,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent rime tusk stew",
+        "sp": 86,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good rime tusk roast",
+        "sp": 129,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "CON"
+      },
+      "4": {
+        "name": "great rime tusk feast",
+        "sp": 172,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork rime tusk cuisine",
+        "sp": 215,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "CON",
+          "STR"
+        ]
+      }
+    },
+    "sprite_desc": "A pale blue curved tusk as long as a forearm, faintly smoking with cold",
+    "lore": "Frost-permeated tusk of a frostfang giant. Never warms above ice-cold; shaving it onto a hot dish doesn't melt the shavings."
+  },
+  "sentinel_plate": {
+    "name": "sentinel plate",
+    "symbol": ",",
+    "color": [
+      140,
+      130,
+      110
+    ],
+    "weight": 1.2,
+    "min_level": 48,
+    "source_monster": "throne_sentinel",
+    "recipes": {
+      "0": {
+        "name": "ruined sentinel plate",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "sentinel plate broth",
+        "sp": 34,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent sentinel plate stew",
+        "sp": 68,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good sentinel plate roast",
+        "sp": 102,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "STR"
+      },
+      "4": {
+        "name": "great sentinel plate feast",
+        "sp": 136,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork sentinel plate cuisine",
+        "sp": 170,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "STR",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A rectangular bronze scale-plate as long as a hand, with a holed corner",
+    "lore": "A scale-plate from a throne sentinel's barding. Folded steel from a vanished smithing tradition; flakes into the pot like seasoning."
+  },
+  "serpent_venom": {
+    "name": "serpent venom",
+    "symbol": ",",
+    "color": [
+      180,
+      60,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 30,
+    "source_monster": "sable_serpent",
+    "recipes": {
+      "0": {
+        "name": "ruined serpent venom",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "serpent venom broth",
+        "sp": 21,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent serpent venom stew",
+        "sp": 42,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good serpent venom roast",
+        "sp": 63,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "DEX"
+      },
+      "4": {
+        "name": "great serpent venom feast",
+        "sp": 84,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork serpent venom cuisine",
+        "sp": 105,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "DEX",
+          "INT"
+        ]
+      }
+    },
+    "sprite_desc": "A small glass phial of dark purple venom with a wax-sealed stopper",
+    "lore": "Sable serpent venom in a stoppered phial. Lethal raw; diluted in long-simmer broths it becomes nerve tonic."
+  },
+  "shadow_quiver": {
+    "name": "shadow quiver",
+    "symbol": ",",
+    "color": [
+      40,
+      40,
+      60
+    ],
+    "weight": 0.7,
+    "min_level": 62,
+    "source_monster": "shadow_archer",
+    "recipes": {
+      "0": {
+        "name": "ruined shadow quiver",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "shadow quiver broth",
+        "sp": 43,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent shadow quiver stew",
+        "sp": 86,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good shadow quiver roast",
+        "sp": 129,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "DEX"
+      },
+      "4": {
+        "name": "great shadow quiver feast",
+        "sp": 172,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork shadow quiver cuisine",
+        "sp": 215,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "DEX",
+          "PER"
+        ]
+      }
+    },
+    "sprite_desc": "A long dark cloth tube as light as paper, edges blurring against the eye",
+    "lore": "A shadow archer's quiver, woven from solidified umbra. Holds nothing, weighs almost nothing, drinks light."
+  },
+  "stone_moss": {
+    "name": "stone moss",
+    "symbol": ",",
+    "color": [
+      80,
+      110,
+      70
+    ],
+    "weight": 0.5,
+    "min_level": 28,
+    "source_monster": "moss_sentinel",
+    "recipes": {
+      "0": {
+        "name": "ruined stone moss",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "stone moss broth",
+        "sp": 20,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent stone moss stew",
+        "sp": 40,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good stone moss roast",
+        "sp": 60,
+        "bonus_type": "stat",
+        "bonus_amount": 1,
+        "bonus_stat": "CON"
+      },
+      "4": {
+        "name": "great stone moss feast",
+        "sp": 80,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork stone moss cuisine",
+        "sp": 100,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "CON",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "Damp grey-green moss clumped into a fist-sized mat",
+    "lore": "Wet moss scraped from a moss sentinel's hide. Holds water like a sponge and tastes of cold earth."
+  },
+  "swarmlord_chitin": {
+    "name": "swarmlord chitin",
+    "symbol": ",",
+    "color": [
+      180,
+      160,
+      60
+    ],
+    "weight": 0.6,
+    "min_level": 84,
+    "source_monster": "locust_swarmlord",
+    "recipes": {
+      "0": {
+        "name": "ruined swarmlord chitin",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "swarmlord chitin broth",
+        "sp": 59,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent swarmlord chitin stew",
+        "sp": 118,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good swarmlord chitin roast",
+        "sp": 177,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "CON"
+      },
+      "4": {
+        "name": "great swarmlord chitin feast",
+        "sp": 236,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork swarmlord chitin cuisine",
+        "sp": 295,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "CON",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A curved yellow-brown chitin shield the size of a saucer",
+    "lore": "Chitin plate from a locust swarmlord, hollow and resonant. Hums faintly at certain frequencies; crushed, it crackles in the pan."
+  },
+  "vine_essence": {
+    "name": "vine essence",
+    "symbol": ",",
+    "color": [
+      80,
+      150,
+      70
+    ],
+    "weight": 0.3,
+    "min_level": 42,
+    "source_monster": "vine_horror",
+    "recipes": {
+      "0": {
+        "name": "ruined vine essence",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "vine essence broth",
+        "sp": 29,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent vine essence stew",
+        "sp": 58,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good vine essence roast",
+        "sp": 87,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "CON"
+      },
+      "4": {
+        "name": "great vine essence feast",
+        "sp": 116,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork vine essence cuisine",
+        "sp": 145,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "CON",
+          "INT"
+        ]
+      }
+    },
+    "sprite_desc": "A glass jar of viscous dark green liquid that clings to the sides",
+    "lore": "Pressed sap of the vine horror, thick and slow as molasses. Drinkers report dreams of constriction."
+  },
+  "void_feather": {
+    "name": "void feather",
+    "symbol": ",",
+    "color": [
+      40,
+      0,
+      80
+    ],
+    "weight": 0.05,
+    "min_level": 86,
+    "source_monster": "void_seraph",
+    "recipes": {
+      "0": {
+        "name": "ruined void feather",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "void feather broth",
+        "sp": 60,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent void feather stew",
+        "sp": 120,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good void feather roast",
+        "sp": 180,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "WIS"
+      },
+      "4": {
+        "name": "great void feather feast",
+        "sp": 240,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork void feather cuisine",
+        "sp": 300,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "WIS",
+          "INT"
+        ]
+      }
+    },
+    "sprite_desc": "A long black feather that seems to dissolve at the tip",
+    "lore": "A flight feather from a void seraph — black at the quill, fading into nothing at the tip. Tastes of absence."
+  },
+  "witch_finger": {
+    "name": "witch finger",
+    "symbol": ",",
+    "color": [
+      80,
+      50,
+      60
+    ],
+    "weight": 0.1,
+    "min_level": 28,
+    "source_monster": "harrow_witch",
+    "recipes": {
+      "0": {
+        "name": "ruined witch finger",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "witch finger broth",
+        "sp": 20,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent witch finger stew",
+        "sp": 40,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good witch finger roast",
+        "sp": 60,
+        "bonus_type": "stat",
+        "bonus_amount": 1,
+        "bonus_stat": "INT"
+      },
+      "4": {
+        "name": "great witch finger feast",
+        "sp": 80,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork witch finger cuisine",
+        "sp": 100,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "INT",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A blackened mummified finger curled into a hook",
+    "lore": "The desiccated finger of a harrow-witch, still curling at the joint. Witches keep their hexes in their hands; cooking burns them out."
+  },
+  "wormwood_ash": {
+    "name": "wormwood ash",
+    "symbol": ",",
+    "color": [
+      120,
+      100,
+      80
+    ],
+    "weight": 0.2,
+    "min_level": 88,
+    "source_monster": "wormwood_blight",
+    "recipes": {
+      "0": {
+        "name": "ruined wormwood ash",
+        "sp": 0,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "1": {
+        "name": "wormwood ash broth",
+        "sp": 62,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "2": {
+        "name": "decent wormwood ash stew",
+        "sp": 124,
+        "bonus_type": "none",
+        "bonus_amount": 0
+      },
+      "3": {
+        "name": "good wormwood ash roast",
+        "sp": 186,
+        "bonus_type": "stat",
+        "bonus_amount": 2,
+        "bonus_stat": "INT"
+      },
+      "4": {
+        "name": "great wormwood ash feast",
+        "sp": 248,
+        "bonus_type": "all_stats",
+        "bonus_amount": 1
+      },
+      "5": {
+        "name": "masterwork wormwood ash cuisine",
+        "sp": 310,
+        "bonus_type": "two_stats",
+        "bonus_amount": 2,
+        "bonus_stats": [
+          "INT",
+          "WIS"
+        ]
+      }
+    },
+    "sprite_desc": "A folded paper packet of fine grey-green powder smelling of bitter herbs",
+    "lore": "Bitter ash from a wormwood blight, the foundation of absinthe. Used sparingly."
   }
 }

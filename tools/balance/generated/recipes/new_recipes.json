@@ -1,0 +1,1024 @@
+{
+  "naga_kabsa": {
+    "name": "Coiled Naga Kabsa",
+    "ingredients": ["naga_scale", "ember_spice"],
+    "sp": 55,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "Naga scale shaved into spiced rice and slow-steamed with ember spice in the Arabian fashion. The grains glisten as if still breathing.",
+    "sprite_desc": "A copper platter heaped with saffron rice and dark scale shavings, a small clay cup of red oil at the rim"
+  },
+  "thoth_ink_risotto": {
+    "name": "Thoth's Scribal Ink Risotto",
+    "ingredients": ["thoth_ink", "glowing_spore"],
+    "sp": 50,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 1,
+    "description": "Squid-black risotto stirred with luminous spore until each grain absorbs the ink and brightens. Scholars say the dish remembers what you have read.",
+    "sprite_desc": "A white porcelain bowl of jet-black risotto flecked with pale glowing dots, served with a single silver spoon"
+  },
+  "cyclops_pyrgos_pie": {
+    "name": "Cyclopean Pyrgos Pie",
+    "ingredients": ["cyclops_eye", "cave_mushroom"],
+    "sp": 60,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 1,
+    "description": "A rustic Greek hill-shepherd's pie with the giant's eye whole at the center, surrounded by cave mushrooms. They say the eye keeps watching from the pan.",
+    "sprite_desc": "A round earthenware pie with a single yellow eyeball staring from the top, dark mushroom slices arranged in a ring around it"
+  },
+  "sphinx_kaiseki": {
+    "name": "Sphinx-Mane Kaiseki Course",
+    "ingredients": ["sphinx_mane", "wild_thyme"],
+    "sp": 55,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 1,
+    "description": "Twin tufts of sphinx mane plated with a single thyme sprig in the spare Japanese style. Eaters report dreaming in riddles for three nights after.",
+    "sprite_desc": "A long black lacquer tray with two small golden tufts of mane on white rice paper and one green thyme sprig"
+  },
+  "displacer_falafel": {
+    "name": "Displacer's Misdirection Falafel",
+    "ingredients": ["displacer_hide", "cave_carrot"],
+    "sp": 50,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 1,
+    "description": "Levantine falafel ground from displacer hide and pickled cave carrot. Reach for the bite, miss by an inch, taste it from the other side of the plate.",
+    "sprite_desc": "A clay plate of golden-crisp falafel balls slightly out of focus, with bright orange pickled carrot ribbons between them"
+  },
+  "mound_mulch_dolma": {
+    "name": "Shambling-Mound Dolma",
+    "ingredients": ["mound_mulch", "rosemary_sprig"],
+    "sp": 48,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 1,
+    "description": "Compost-loam from a shambling mound bound with rosemary and wrapped in grape leaves. Earthy, sour, and stubbornly nourishing.",
+    "sprite_desc": "Six dark-green dolma rolls arranged on a white plate, flecked with rosemary needles and dressed with olive oil"
+  },
+  "lindworm_paprikash": {
+    "name": "Lindworm Paprikash",
+    "ingredients": ["lindworm_skin", "serpent_pepper"],
+    "sp": 58,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 1,
+    "description": "Hungarian paprikash with lindworm skin diced into the cream. The skin still flinches in the pan; the pepper hides it.",
+    "sprite_desc": "A cast-iron pan of deep red stew with white sour-cream swirls and chunks of dark lindworm skin, a wooden spoon resting in it"
+  },
+  "anubis_funerary_loaf": {
+    "name": "Anubis Funerary Loaf",
+    "ingredients": ["embalming_resin", "void_salt"],
+    "sp": 52,
+    "bonus_type": "status",
+    "bonus_stat": "PER",
+    "bonus_amount": 10,
+    "bonus_effect": "dark_vision",
+    "description": "Egyptian funeral bread baked with embalming resin and a single grain of void salt. The crust hardens like a death mask and your eyes adjust to the dark for hours.",
+    "sprite_desc": "A small round dark-amber loaf scored with hieroglyph-like markings, a black salt crystal pressed into the top"
+  },
+  "ogre_steppe_borscht": {
+    "name": "Ogre-Bone Steppe Borscht",
+    "ingredients": ["ogre_hide", "pale_celery", "cave_carrot"],
+    "sp": 65,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "CON"],
+    "bonus_amount": 1,
+    "description": "Russian steppe borscht thickened with rendered ogre fat and a long simmer of cave roots. The cook tradition says one spoonful, one winter survived.",
+    "sprite_desc": "A wide wooden bowl of deep crimson borscht with a dollop of cream, chunks of pale celery and orange carrot, a black bread crust on the side"
+  },
+  "wyvern_pho": {
+    "name": "Wyvern Stinger Pho",
+    "ingredients": ["wyvern_stinger", "valerian_root", "rosemary_sprig"],
+    "sp": 62,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["DEX", "PER"],
+    "bonus_amount": 1,
+    "description": "Vietnamese pho broth clarified with a wyvern stinger and steeped with valerian. The numb-tingle on the tongue is the venom; the warmth in the chest is the cook.",
+    "sprite_desc": "A wide white bowl of clear amber broth with thin rice noodles, herbs, and a single dark curved stinger laid across the top"
+  },
+  "owlbear_tagine": {
+    "name": "Owlbear Tagine of Three Roots",
+    "ingredients": ["owlbear_feather", "mandrake_root", "cave_carrot", "pale_celery"],
+    "sp": 70,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "Moroccan tagine slow-cooked in a sealed conical pot with owlbear plume, three roots, and a long argument between cinnamon and ember. Comes off the fire after a full sand-glass.",
+    "sprite_desc": "A tall conical clay tagine with the lid lifted just enough to show stewed roots, feathers, and a curl of dark steam"
+  },
+  "elder_blood_sangue_marenne": {
+    "name": "Sangue Maremma alla Vampira",
+    "ingredients": ["elder_vampire_blood", "rosemary_sprig", "void_salt"],
+    "sp": 72,
+    "bonus_type": "status",
+    "bonus_stat": "WIS",
+    "bonus_amount": 14,
+    "bonus_effect": "regenerating",
+    "description": "Tuscan blood pudding from an elder nosferatu, set firm with void salt and finished with rosemary smoke. Eat it warm before the moon turns.",
+    "sprite_desc": "A dark glistening blood-pudding cut into a wedge on a white plate, a sprig of rosemary across it and a dust of black salt"
+  },
+
+  "behir_biryani": {
+    "name": "Behir Lightning Biryani",
+    "ingredients": ["behir_scale", "ember_spice"],
+    "sp": 78,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Hyderabadi-style layered biryani built around behir scale, the rice crackling faintly as the dish rests. Each bite carries a flicker of charge to the limbs.",
+    "sprite_desc": "A copper pot of layered saffron-and-white rice with dark scale chips between the layers, a faint blue spark in the steam"
+  },
+  "void_shard_kvass": {
+    "name": "Void-Shard Black Kvass",
+    "ingredients": ["void_shard", "rosemary_sprig"],
+    "sp": 70,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Slavic rye kvass fermented with a chip of void shard suspended in the cask. Tastes of pumpernickel and outer dark in equal measure.",
+    "sprite_desc": "A clay tankard of nearly-black liquid with a faint star-point in the depths, a wooden lid resting beside it"
+  },
+  "titan_polenta_aurea": {
+    "name": "Titan's Polenta Aurea",
+    "ingredients": ["titan_essence", "wild_thyme"],
+    "sp": 75,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Roman gilded polenta enriched with rendered titan essence and a finishing sprig of thyme. Heavy on the spoon, heavier in the gut, heaviest in the arm.",
+    "sprite_desc": "A golden mound of polenta on a wide stone plate, drizzled with bright oil, a single thyme sprig laid across the top"
+  },
+  "erlking_oden": {
+    "name": "Erlking's Winter Oden",
+    "ingredients": ["erlking_crown_twig", "valerian_root"],
+    "sp": 68,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Japanese oden simmered with a snapped twig of the Erlking's crown and valerian root, kept on low heat all night. The broth listens.",
+    "sprite_desc": "A square iron pot of pale dashi with a small twig and root floating among daikon and egg, a wooden ladle hanging on the rim"
+  },
+  "sea_dragon_ceviche": {
+    "name": "Sea Dragon Ceviche",
+    "ingredients": ["sea_dragon_scale", "serpent_pepper"],
+    "sp": 72,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Peruvian ceviche of sea-dragon scale-meat cured in lime, serpent pepper, and ice-cold brine. The first bite opens the eyes wider than they have ever opened.",
+    "sprite_desc": "A shallow ceramic bowl of pale dragon-meat cubes in cloudy lime juice, bright red pepper rings around the rim"
+  },
+  "void_ichor_korma": {
+    "name": "Star-Spawn Void Korma",
+    "ingredients": ["void_ichor", "mandrake_root", "ember_spice"],
+    "sp": 80,
+    "bonus_type": "status",
+    "bonus_stat": "INT",
+    "bonus_amount": 12,
+    "bonus_effect": "magic_resist",
+    "description": "Mughal-court korma with star-spawn ichor folded into the cream and mandrake ground fine for body. The dish is calm; the eater becomes calm; the spells slide off.",
+    "sprite_desc": "A small brass bowl of pale lavender-cream curry with dark flecks, a piece of warm flatbread on the side"
+  },
+  "camazotz_mole_negro": {
+    "name": "Camazotz Mole Negro",
+    "ingredients": ["camazotz_wing_membrane", "crimson_fungus", "ember_spice"],
+    "sp": 82,
+    "bonus_type": "status",
+    "bonus_stat": "PER",
+    "bonus_amount": 18,
+    "bonus_effect": "dark_vision",
+    "description": "Oaxacan mole negro built around bat-god wing membrane and a long cradle of fungus, chili, and chocolate. Black as a cave at midnight, twice as smooth.",
+    "sprite_desc": "A clay bowl of dense black mole sauce with a single bat-wing strip emerging from the surface, a tortilla folded at the rim"
+  },
+  "hydra_kabsa": {
+    "name": "Seven-Heads Kabsa",
+    "ingredients": ["hydra_bile", "ember_spice", "pale_celery"],
+    "sp": 78,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "CON"],
+    "bonus_amount": 2,
+    "description": "Saudi kabsa with hydra bile thinned into the rice stock, served on a single platter for an army. Each spoonful tastes like the head that grew it.",
+    "sprite_desc": "A wide brass tray of spiced golden rice piled high, dark stew chunks at the peak, a small bowl of green sauce in the corner"
+  },
+  "demon_heart_kofta": {
+    "name": "Nalfeshnee Heart Kofta",
+    "ingredients": ["demon_heart", "rosemary_sprig", "ember_spice"],
+    "sp": 85,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "INT"],
+    "bonus_amount": 2,
+    "description": "Persian kofta meatballs minced from demon heart, rolled in rosemary, finished on a wood grill. The fat that drips off ignites on its own.",
+    "sprite_desc": "Six dark-crusted meatballs on a long iron skewer, glossy with red oil, charred herbs scattered across them"
+  },
+  "behir_storm_feast": {
+    "name": "Behir Storm-King Feast",
+    "ingredients": ["behir_scale", "storm_feather", "void_salt", "ember_spice"],
+    "sp": 95,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "A four-course Hindustani thali built entirely on storm-charged ingredients. The plate hums when the kitchen quiets.",
+    "sprite_desc": "A round silver thali plate with five small bowls of differently colored curries and rice in the center, faint blue arcs above the surface"
+  },
+  "erlking_lamia_dolma": {
+    "name": "Erlking-Lamia Dolma Platter",
+    "ingredients": ["erlking_crown_twig", "lamia_scales", "rosemary_sprig", "cave_mushroom", "pale_celery"],
+    "sp": 100,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "A five-element forest-court platter: bound twig, scale-leaf, root, mushroom, stalk. Eaten standing, the way the old courts did.",
+    "sprite_desc": "A wide oak plank with five small piles of food arranged in a pentagram, each a different color, a single twig laid across the center"
+  },
+
+  "cacus_smoke_brisket": {
+    "name": "Cacus's Smoke-Cave Brisket",
+    "ingredients": ["cacus_ember_gut", "wild_thyme"],
+    "sp": 90,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Beef brisket smoked twelve hours in the ember-gut of the cave giant, finished with wild thyme. The smoke is the cooking; the thyme is the apology.",
+    "sprite_desc": "A long dark-bark crust of brisket sliced thin on a wooden board, smoke still curling from the cut face, thyme sprigs across the top"
+  },
+  "demi_lich_kalan": {
+    "name": "Demi-Lich Kalan",
+    "ingredients": ["demi_lich_skull", "glowing_spore"],
+    "sp": 82,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "South Indian kalan, a yogurt-coconut stew, with demi-lich skull ground into the spice paste. The bone meal sharpens thought; the coconut keeps you civil.",
+    "sprite_desc": "A small banana-leaf bowl of pale yellow curry with white coconut shreds, a single tiny bone fragment visible on top"
+  },
+  "frost_crawler_kakigori": {
+    "name": "Frost-Crawler Kakigori",
+    "ingredients": ["frost_gland", "valerian_root"],
+    "sp": 78,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Japanese shaved-ice kakigori spun from a frost gland and dusted with valerian sugar. The cold settles the mind faster than any tea.",
+    "sprite_desc": "A pale glass dish piled with translucent shaved ice, a drizzle of dark syrup, and a single root chip on top"
+  },
+  "roc_talon_pelmeni": {
+    "name": "Roc Talon Pelmeni",
+    "ingredients": ["roc_talon", "cave_carrot", "rosemary_sprig"],
+    "sp": 88,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Siberian pelmeni dumplings folded around roc-talon mince and pin-bone, boiled and served in their own broth. They say the eater hears wings for the rest of the night.",
+    "sprite_desc": "A wide pewter bowl of small crescent dumplings floating in golden broth, a sour cream dollop in the center, carrot ribbons around the edge"
+  },
+  "storm_essence_ukha": {
+    "name": "Storm-Giant Ukha",
+    "ingredients": ["storm_essence", "void_salt"],
+    "sp": 85,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Russian fisherman's ukha clarified with one drop of storm essence and seasoned only with void salt. Clear as rain, heavy as cloud.",
+    "sprite_desc": "A shallow wooden bowl of utterly clear pale broth with three small dark grains floating in the center, a wooden spoon resting across"
+  },
+  "blue_dragon_birria": {
+    "name": "Blue Dragon Birria",
+    "ingredients": ["blue_dragon_scale", "serpent_pepper", "ember_spice"],
+    "sp": 92,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Jaliscan birria stewed with blue dragon scale shaved fine. The dipping consomme crackles faintly between the lips.",
+    "sprite_desc": "A clay bowl of deep brick-red stew with cobalt scale flakes floating on top, a folded tortilla beside it and a small dipping cup of broth"
+  },
+  "cerberus_bigos": {
+    "name": "Cerberus Hunter's Bigos",
+    "ingredients": ["cerberus_saliva", "wolf_meat"],
+    "sp": 90,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Polish hunter's bigos slow-cooked three days with cerberus saliva turning the cabbage. The sauerkraut bites back; the wolf meat keeps it civil.",
+    "sprite_desc": "A heavy iron pot of dark-brown shredded cabbage stew with chunks of dark meat, a clay mug of beer beside it on a wooden table"
+  },
+  "rangda_jamu_tonic": {
+    "name": "Rangda Jamu Tonic",
+    "ingredients": ["rangda_mask_splinter", "mandrake_root"],
+    "sp": 78,
+    "bonus_type": "status",
+    "bonus_stat": "WIS",
+    "bonus_amount": 14,
+    "bonus_effect": "spell_turning",
+    "description": "Balinese jamu boiled hard with a splinter of the demon queen's mask, mandrake root, and ginger. The first sip turns spells aside; the second sip turns prayers aside.",
+    "sprite_desc": "A small dark glass jar of cloudy yellow liquid with a wooden stopper, a fragment of red lacquer mask resting beside it"
+  },
+  "sphinx_riddle_kaiseki": {
+    "name": "Sphinx Riddle Kaiseki",
+    "ingredients": ["sphinx_riddle_stone", "wild_thyme", "glowing_spore"],
+    "sp": 88,
+    "bonus_type": "status",
+    "bonus_stat": "INT",
+    "bonus_amount": 16,
+    "bonus_effect": "clairvoyant",
+    "description": "A three-element kaiseki: stone, herb, light. Each course is a single bite. By the third bite you have answered the riddle without speaking.",
+    "sprite_desc": "Three small lacquered dishes in a row, each with one tiny perfect element: a polished stone, a green sprig, a glowing dot"
+  },
+  "marilith_six_arms": {
+    "name": "Marilith's Six-Arm Mezze",
+    "ingredients": ["demon_scales", "ember_spice", "void_salt", "rosemary_sprig"],
+    "sp": 95,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "DEX"],
+    "bonus_amount": 2,
+    "description": "Levantine mezze laid out in six small dishes, each built around a demon scale prepared a different way. Eat them in any order; the result is the same.",
+    "sprite_desc": "A round brass tray with six small bowls arranged like a clock, each containing differently colored scale preparations, a single flatbread in the center"
+  },
+  "lesser_draco_haggis": {
+    "name": "Draco-Bone Haggis",
+    "ingredients": ["lesser_draco_bone", "wild_thyme", "pale_celery", "ember_spice"],
+    "sp": 98,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "Scottish haggis with undead dragon bone-marrow worked through the oats. Heavy, peaty, and unsettlingly persistent on the breath.",
+    "sprite_desc": "A round dark sphere of haggis split open on a wooden plate, the steaming oat-and-bone interior exposed, sprigs of thyme around it"
+  },
+  "chaos_essence_tagine_grand": {
+    "name": "Chaos-Glabrezu Grand Tagine",
+    "ingredients": ["chaos_essence", "demon_heart", "mandrake_root", "ember_spice", "cave_carrot"],
+    "sp": 110,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "A five-ingredient royal tagine with chaos essence stirred in last so the dish never settles the same way twice. The cook prays before lifting the lid.",
+    "sprite_desc": "A tall painted tagine with the conical lid askew, a thick dark-amber stew bubbling inside, five small piles of garnish on a board beside it"
+  },
+
+  "nightwing_cassoulet": {
+    "name": "Nightwing Cassoulet de Minuit",
+    "ingredients": ["nightwing_membrane", "wild_thyme"],
+    "sp": 100,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Languedoc cassoulet finished with nightwing membrane laid across the crust like a dark sail. The crust crackles; the beans below have remembered the sky.",
+    "sprite_desc": "A wide brown earthenware dish with deep crust on top, a sheet of dark membrane stretched across, beans visible at the cracked edges"
+  },
+  "fafnir_eisbein": {
+    "name": "Fafnir Eisbein",
+    "ingredients": ["dragon_scale", "void_salt"],
+    "sp": 105,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Bavarian pork knuckle reimagined with Fafnir-scale brined in void salt and roasted to a glass-hard crackle. Sigurd ate worse and lived shorter.",
+    "sprite_desc": "A large dark-roasted joint on a wooden board, crackling skin scored in a diamond pattern, a mound of sauerkraut beside it"
+  },
+  "lich_dragon_tezcat": {
+    "name": "Lich Dragon Tezcatlipoca",
+    "ingredients": ["lich_dragon_scale", "ember_spice"],
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Mexica obsidian-grill plate of lich dragon scale charred and folded into ember spice. Smoking-mirror cuisine: every bite you almost see something behind you.",
+    "sprite_desc": "A black volcanic-stone plate with a curl of dark charred scale on one side and a small pyramid of red spice on the other"
+  },
+  "nemean_giblet_tagine": {
+    "name": "Nemean Giblet Tagine",
+    "ingredients": ["nemean_pelt_scrap", "cave_carrot"],
+    "sp": 92,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Moroccan tagine slow-simmered with invulnerable pelt scrap broken down into impossibly tender meat. The trick is sixteen hours and no peeking.",
+    "sprite_desc": "A glazed conical tagine pot with the lid set beside it, golden carrot rings around the rim, a mass of fall-apart meat in the center"
+  },
+  "adult_dragon_heart_pho_bo": {
+    "name": "Adult Dragon-Heart Pho Bo",
+    "ingredients": ["adult_dragon_heart", "rosemary_sprig"],
+    "sp": 108,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Vietnamese pho bo where the broth is the dragon's heart simmered alone for a day, finished with a single rosemary sprig. Drink the broth first; the noodles are afterthought.",
+    "sprite_desc": "A deep ceramic bowl of clear ruby-red broth with thin rice noodles, a single rosemary sprig laid across the surface like a sword"
+  },
+  "rangda_terrine": {
+    "name": "Rangda Mask-Splinter Terrine",
+    "ingredients": ["rangda_mask_splinter", "valerian_root"],
+    "sp": 88,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "French country terrine pressed cold with rangda mask splinters layered between forcemeat. Slice thin; the splinters become tiny watchful eyes in the cut face.",
+    "sprite_desc": "A rectangular terrine sliced into rounds on a wooden board, dark flecks visible in each pale slice, cornichons in a small jar beside"
+  },
+  "fafnir_dolma_grand": {
+    "name": "Fafnir's Grand Dolma",
+    "ingredients": ["dragon_scale", "rosemary_sprig", "ember_spice"],
+    "sp": 105,
+    "bonus_type": "status",
+    "bonus_stat": "CON",
+    "bonus_amount": 16,
+    "bonus_effect": "fire_resist",
+    "description": "Anatolian dolma rolled with dragon scale rice inside vine leaves treated with rosemary smoke and ember spice. The eater stops noticing kitchen heat for the rest of the day.",
+    "sprite_desc": "A round white plate of nine tightly rolled dark-green dolma, a small bowl of yogurt in the center dusted with red spice"
+  },
+  "nightwing_kabuki_skewer": {
+    "name": "Nightwing Kabuki Skewer",
+    "ingredients": ["nightwing_membrane", "void_salt", "wild_thyme"],
+    "sp": 92,
+    "bonus_type": "status",
+    "bonus_stat": "DEX",
+    "bonus_amount": 14,
+    "bonus_effect": "displacement",
+    "description": "Yakitori-style charcoal skewer of nightwing membrane folded and pressed flat, painted with void-salt brine. Eat with the off hand; you may not be where you think.",
+    "sprite_desc": "A single charcoal-grilled skewer of dark folded membrane glistening with salt, a few thyme leaves stuck to the surface"
+  },
+  "adult_dragon_curry_grand": {
+    "name": "Adult Dragon Curry Grand Cru",
+    "ingredients": ["adult_dragon_heart", "dragon_scale", "ember_spice", "mandrake_root"],
+    "sp": 120,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "WIS"],
+    "bonus_amount": 2,
+    "description": "Sri Lankan curry built on dragon heart, scale, and root, the spice mix toasted over an open flame for an hour before grinding. The pot stains the kitchen forever.",
+    "sprite_desc": "A heavy brass curry pot blackened on the outside, deep amber curry inside, a wooden ladle with a charred handle resting on the rim"
+  },
+  "lich_dragon_smorrebrod": {
+    "name": "Lich Dragon Smorrebrod Course",
+    "ingredients": ["lich_dragon_scale", "void_salt", "pale_celery"],
+    "sp": 95,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["INT", "DEX"],
+    "bonus_amount": 2,
+    "description": "Danish open-faced rye topped with cured lich-dragon scale, void-salt pickle, and pale celery curl. The kind of lunch that ends a Scandinavian winter argument.",
+    "sprite_desc": "Three squares of dense dark rye bread on a long board, each topped with thin slices of dark scale, white pickled celery, and a sprinkle of salt"
+  },
+  "rangda_grand_kemenyan": {
+    "name": "Rangda's Kemenyan Five-Spice Roast",
+    "ingredients": ["rangda_mask_splinter", "demon_scales", "ember_spice", "rosemary_sprig", "wild_thyme"],
+    "sp": 130,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "description": "Balinese ceremonial roast scented with five aromatic woods and finished with a circle of mask splinters around the meat. Reserved for nights of new moon.",
+    "sprite_desc": "A large roasted joint on a banana leaf, a ring of red mask fragments laid around it, smoke from charcoal still curling above"
+  },
+  "nightwing_dragon_cassolette": {
+    "name": "Nightwing-Dragon Cassolette",
+    "ingredients": ["nightwing_membrane", "dragon_scale", "lich_dragon_scale", "void_salt"],
+    "sp": 118,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "A small French cassolette with three winged-beast components layered above a void-salt crust. The center sinks as it cools; the eater stays upright.",
+    "sprite_desc": "A small white ramekin with golden-brown crust on top, a single dark sheet of membrane peeled back to show layered scales beneath"
+  },
+
+  "pit_fiend_bouillabaisse": {
+    "name": "Pit Fiend Bouillabaisse",
+    "ingredients": ["pit_fiend_scale", "void_salt"],
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Marseille bouillabaisse with pit fiend scale instead of saffron and void salt instead of sea salt. The broth burns the throat the right way.",
+    "sprite_desc": "A wide enameled pot of dark crimson seafood stew, dark scale chips floating among shells, a slice of crusty bread on the side"
+  },
+  "jormungandr_lutefisk": {
+    "name": "Jormungandr Lutefisk",
+    "ingredients": ["jormungandr_scale", "rosemary_sprig"],
+    "sp": 105,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Norse lutefisk made from juvenile world-serpent flesh cured in lye-bark and rosemary smoke. Translucent, faintly electric, served with butter.",
+    "sprite_desc": "A pale translucent fillet of fish on a white plate, a pat of butter melting beside it, a sprig of rosemary across the top"
+  },
+  "sets_jackal_tagine_grand": {
+    "name": "Set's Jackal Tagine of the Red Land",
+    "ingredients": ["sets_jackal_fang", "ember_spice"],
+    "sp": 102,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Upper Egyptian desert tagine simmered with the jackal-god's fang and a heap of ember spice. The lid is sealed with bread dough; opening it takes patience the cook learned in the temple.",
+    "sprite_desc": "A clay tagine with dried bread sealing the rim, deep red stew visible through a small steam hole at the top of the cone"
+  },
+  "baba_yaga_blini": {
+    "name": "Baba Yaga's Mortar Blini",
+    "ingredients": ["baba_yaga_mortar_dust", "valerian_root"],
+    "sp": 95,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Russian blini fried in mortar dust like flour, stacked with valerian-cream between. The crone signs each plate; the signature is gone by the second bite.",
+    "sprite_desc": "A tall stack of pale-grey blini pancakes on a black plate, white cream visible between every layer, a small jar of dark jam beside"
+  },
+  "pit_fiend_garum": {
+    "name": "Pit Fiend Garum & Black Bread",
+    "ingredients": ["pit_fiend_scale", "wild_thyme"],
+    "sp": 100,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Roman garum fish-sauce fermented six months with pit-fiend scale and finished with thyme, served as a dip for hard black bread. Tiny dose, large effect.",
+    "sprite_desc": "A small glass amphora of dark amber sauce stoppered with cork, a thick slice of black bread torn in half beside it"
+  },
+  "jormungandr_kaiseki": {
+    "name": "Jormungandr Kaiseki",
+    "ingredients": ["jormungandr_scale", "valerian_root", "wild_thyme"],
+    "sp": 108,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["DEX", "WIS"],
+    "bonus_amount": 2,
+    "description": "Three small kaiseki dishes, each a single bite of world-serpent scale prepared differently: raw, seared, braised. The lacquered tray is a map of the sea.",
+    "sprite_desc": "A long dark lacquer tray with three small white dishes in a line, each holding a single morsel of differently treated scale"
+  },
+  "sets_chaos_kabsa": {
+    "name": "Set's Chaos Kabsa",
+    "ingredients": ["sets_jackal_fang", "ember_spice", "void_salt"],
+    "sp": 112,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "PER"],
+    "bonus_amount": 2,
+    "description": "Saudi kabsa darkened with void salt and a single ground jackal fang in the spice mix. Served on a brass tray big enough for a war council.",
+    "sprite_desc": "A wide brass tray of dark-brown spiced rice piled in a peak, a single fang resting on the top, three small bowls of yogurt around the edge"
+  },
+  "baba_yaga_zakuski": {
+    "name": "Baba Yaga's Zakuski Tray",
+    "ingredients": ["baba_yaga_mortar_dust", "cave_mushroom", "pale_celery"],
+    "sp": 100,
+    "bonus_type": "status",
+    "bonus_stat": "PER",
+    "bonus_amount": 18,
+    "bonus_effect": "truesight",
+    "description": "Russian zakuski of pickled mushroom, celery, and mortar dust spread across small dishes. The crone insists you take one of each before drinking.",
+    "sprite_desc": "A square wooden tray with five small ceramic bowls of pickled vegetables and a single shot glass in the center filled with clear liquid"
+  },
+  "pit_fiend_dolmas_grand": {
+    "name": "Pit Fiend Grand Dolmas",
+    "ingredients": ["pit_fiend_scale", "demon_heart", "ember_spice"],
+    "sp": 115,
+    "bonus_type": "status",
+    "bonus_stat": "STR",
+    "bonus_amount": 16,
+    "bonus_effect": "fire_shield",
+    "description": "Anatolian dolmas the size of fists, rolled with pit-fiend scale rice and demon-heart mince. The eater's silhouette warms the air for an hour.",
+    "sprite_desc": "Three large dark-green dolma the size of fists on a hammered copper plate, glistening with red oil, ember dust around the rim"
+  },
+  "jormungandr_pelmeni_grand": {
+    "name": "Jormungandr Pelmeni Grand",
+    "ingredients": ["jormungandr_scale", "world_serpent_scale", "wild_thyme"],
+    "sp": 105,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Siberian pelmeni stuffed with both juvenile and elder world-serpent scale-mince. Boiled in seawater, served with sour cream and a single thyme sprig.",
+    "sprite_desc": "A wide white bowl of crescent dumplings in salted broth, a generous dollop of sour cream in the middle, a thyme sprig laid on top"
+  },
+  "sets_pit_grand_meze": {
+    "name": "Set & Pit Fiend Grand Mezze",
+    "ingredients": ["sets_jackal_fang", "pit_fiend_scale", "ember_spice", "cave_carrot", "rosemary_sprig"],
+    "sp": 135,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "description": "Five-piece desert mezze: jackal fang shavings, pit fiend scale crisps, ember pickle, carrot relish, rosemary-flatbread. A war council's lunch.",
+    "sprite_desc": "A round brass tray with five small dishes arranged like a pentagon, a stack of warm flatbreads in the center, each dish a different color"
+  },
+  "baba_yaga_grand_solyanka": {
+    "name": "Baba Yaga's Grand Solyanka",
+    "ingredients": ["baba_yaga_mortar_dust", "sphinx_riddle_stone", "pale_celery", "void_salt"],
+    "sp": 122,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "Russian solyanka thick with mortar dust, a riddle stone steeped in the broth, pale celery and void salt. The crone says the broth is the question.",
+    "sprite_desc": "A heavy iron pot of dark sour stew with a single polished stone visible just below the surface, pale celery slices floating around"
+  },
+
+  "green_knight_pottage": {
+    "name": "Green Chapel Christmas Pottage",
+    "ingredients": ["green_knight_sap", "wild_thyme"],
+    "sp": 120,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Medieval English pottage thickened with green knight sap and finished with wild thyme. The cook chants the carving game's first line over the pot.",
+    "sprite_desc": "A wooden trencher of thick deep-green stew with herb sprigs across the surface, an iron knife resting against the bowl"
+  },
+  "charybdis_misua": {
+    "name": "Charybdis Whirl-Misua",
+    "ingredients": ["charybdis_brine", "pale_celery"],
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "Hokkien misua thread-noodle soup poured into a wide bowl while still spinning, so the broth catches the whirlpool's memory. Drink before it settles.",
+    "sprite_desc": "A round dark bowl of fine white noodles in a clear broth still moving in a slow spiral, pale green celery shreds at the edge"
+  },
+  "green_knight_smorgasbord": {
+    "name": "Green Knight's Yuletide Smorgasbord",
+    "ingredients": ["green_knight_sap", "valerian_root"],
+    "sp": 110,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Swedish smorgasbord cured with green knight sap, the valerian-pickle as the keynote dish. Tradition: eat in three rounds, light to dark.",
+    "sprite_desc": "A long pale wooden board with six small dishes of pickled, cured, and smoked items, each labeled with a tiny pine sprig"
+  },
+  "charybdis_kalan": {
+    "name": "Charybdis Kalan",
+    "ingredients": ["charybdis_brine", "glowing_spore"],
+    "sp": 118,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Keralan kalan curry built around abyssal brine and luminous spore in a yogurt-coconut base. Pale and almost glowing in the dark of the kitchen.",
+    "sprite_desc": "A copper bowl of pale yellow-green curry that emits a faint glow, white coconut shreds floating on top, banana leaf beneath"
+  },
+  "green_knight_anguria": {
+    "name": "Green Knight's Anguria al Forno",
+    "ingredients": ["green_knight_sap", "cave_mushroom"],
+    "sp": 112,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Tuscan baked-cucumber dish with green knight sap glaze and cave mushroom stuffing. Said to keep the eye sharp through midnight watches.",
+    "sprite_desc": "A long pale-green vegetable halved and stuffed, dark mushroom filling visible, a glossy green glaze across the top, a sprig on the side"
+  },
+  "charybdis_paella": {
+    "name": "Charybdis Black Paella",
+    "ingredients": ["charybdis_brine", "void_salt"],
+    "sp": 115,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Valencian paella inked black with charybdis brine and finished with void salt grains. The crust on the bottom is the prize; the broth above is the meditation.",
+    "sprite_desc": "A wide flat pan of jet-black rice with golden crust at the edges, scatters of pale shellfish, a single lemon wedge on the rim"
+  },
+  "green_knight_carbonnade": {
+    "name": "Green Knight's Carbonnade Flamande",
+    "ingredients": ["green_knight_sap", "ember_spice", "pale_celery"],
+    "sp": 122,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "CON"],
+    "bonus_amount": 2,
+    "description": "Flemish carbonnade braised in dark beer with green knight sap stirred into the gravy at the last moment. The kind of dinner that ends a long argument.",
+    "sprite_desc": "A heavy enameled pot of dark-brown stew with celery chunks floating, a wooden spoon resting in the pot, a tankard of beer beside"
+  },
+  "charybdis_thali": {
+    "name": "Charybdis Coastal Thali",
+    "ingredients": ["charybdis_brine", "ember_spice", "mandrake_root"],
+    "sp": 118,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["INT", "PER"],
+    "bonus_amount": 2,
+    "description": "Konkan coastal thali plated around a central well of charybdis brine. The brine is the dipping; the rest is the conversation.",
+    "sprite_desc": "A round banana leaf with seven small piles of colored food around a central dark-blue brine pool, a single lime wedge on the side"
+  },
+  "green_knight_hesperidum": {
+    "name": "Green Knight's Hesperidian Tart",
+    "ingredients": ["green_knight_sap", "lucky_clover", "wild_thyme"],
+    "sp": 105,
+    "bonus_type": "status",
+    "bonus_stat": "WIS",
+    "bonus_amount": 18,
+    "bonus_effect": "regenerating",
+    "description": "Late-medieval green-glazed tart with sap, clover, and thyme baked together under a lattice. They say the eater's wounds close on the walk home.",
+    "sprite_desc": "A round green tart with a golden lattice top, bright green filling visible in the gaps, a single four-leaf clover pressed onto the center"
+  },
+  "charybdis_kelp_kaeshi": {
+    "name": "Charybdis Kelp Kaeshi",
+    "ingredients": ["charybdis_brine", "sea_serpent_oil", "valerian_root"],
+    "sp": 120,
+    "bonus_type": "status",
+    "bonus_stat": "PER",
+    "bonus_amount": 20,
+    "bonus_effect": "telepathy",
+    "description": "Japanese kaeshi sauce aged with kelp, charybdis brine, sea serpent oil, and valerian. A single drop on rice; the eater hears the sea thinking.",
+    "sprite_desc": "A tiny dark glass bottle of nearly-black sauce with a wooden stopper, a single drop on a white rice grain glistening beside it"
+  },
+  "green_charybdis_grand_pottage": {
+    "name": "Green Knight & Charybdis Grand Pottage",
+    "ingredients": ["green_knight_sap", "charybdis_brine", "wild_thyme", "cave_mushroom"],
+    "sp": 138,
+    "bonus_type": "all_stats",
+    "bonus_amount": 1,
+    "description": "Half land, half sea: green knight sap stirred clockwise into the pot, charybdis brine stirred counterclockwise. The two never quite mix; both flavors arrive.",
+    "sprite_desc": "A wide black iron pot of stew swirled in two visible colors, green on one side and deep blue on the other, herbs and mushrooms floating throughout"
+  },
+
+  "ravana_lankan_kottu": {
+    "name": "Ravana's Lankan Kottu",
+    "ingredients": ["ravanas_knuckle", "rosemary_sprig"],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Sri Lankan kottu roti chopped on the iron griddle with ravana knuckle minced fine and rosemary smoke folded in at the last second. Ten-armed cooking, two-armed eating.",
+    "sprite_desc": "A heavy black iron griddle with chopped roti and dark meat piled high, two cleavers resting on the surface, steam rising"
+  },
+  "wendigo_kasha": {
+    "name": "Wendigo Cannibal Kasha",
+    "ingredients": ["wendigo_heart", "cave_mushroom"],
+    "sp": 125,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Slavic buckwheat kasha enriched with wendigo heart and rendered fat. The cook eats the first spoon to break the curse, then serves.",
+    "sprite_desc": "A small dark wooden bowl of dense buckwheat porridge with a single mushroom on top and a wisp of cold breath visible above"
+  },
+  "ravana_dolma_dasamukha": {
+    "name": "Dasamukha Dolma",
+    "ingredients": ["ravanas_knuckle", "ember_spice"],
+    "sp": 128,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 3,
+    "description": "Ten dolma rolls, one for each of the demon-king's heads, each spiced slightly differently. Eat in clockwise order to honor the king of Lanka.",
+    "sprite_desc": "Ten small dark-green dolma arranged in a circle on a brass tray, each glazed with a slightly different red-orange oil, a small dish in the center"
+  },
+  "wendigo_kazocha": {
+    "name": "Wendigo Frost-Cure Kazocha",
+    "ingredients": ["wendigo_heart", "void_salt"],
+    "sp": 122,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 3,
+    "description": "Cree-style cold-cured marrow plate, the wendigo heart slow-frozen and shaved into translucent sheets seasoned with void salt. Eaten with the fingers.",
+    "sprite_desc": "A flat slate plate with translucent shaved sheets of dark red marrow laid in a fan, single black salt grains scattered across"
+  },
+  "ravana_curry_grand": {
+    "name": "Ravana's Grand Vatha Kuzhambu",
+    "ingredients": ["ravanas_knuckle", "mandrake_root"],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "Tamil dried-curry preparation with ravana knuckle pounded into the tamarind base, mandrake root for ballast. The pot is opened only once, and only when ready.",
+    "sprite_desc": "A heavy black clay pot with a wooden lid pushed aside, dark brown-red curry visible inside, a wooden ladle resting across the rim"
+  },
+  "wendigo_sashimi_glace": {
+    "name": "Wendigo Sashimi Glace",
+    "ingredients": ["wendigo_heart", "valerian_root"],
+    "sp": 118,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Hokkaido-style frozen-raw sashimi of wendigo heart with valerian shavings and a single drop of ice-water dressing. Numbing on the tongue, sharp in the mind.",
+    "sprite_desc": "A long white plate with four perfectly thin red-pink slices laid out in a row, white root shavings between each, frost still visible at the edges"
+  },
+  "ravana_thali_dasamukha": {
+    "name": "Dasamukha Ten-Dish Thali",
+    "ingredients": ["ravanas_knuckle", "ember_spice", "mandrake_root", "cave_carrot"],
+    "sp": 138,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "INT"],
+    "bonus_amount": 3,
+    "description": "Ten small bowls of preparations from each of Ravana's heads on a brass thali. Eat them in any order; the king's heads never agreed on the right one.",
+    "sprite_desc": "A round brass thali with ten tiny bowls of differently colored foods arranged in a circle, rice in the center, a single naan folded at the rim"
+  },
+  "wendigo_smoked_zakuski": {
+    "name": "Wendigo Smoked Zakuski",
+    "ingredients": ["wendigo_heart", "void_salt", "cave_mushroom"],
+    "sp": 128,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["CON", "PER"],
+    "bonus_amount": 3,
+    "description": "Northern hunter's zakuski plate: smoked wendigo heart slices, void-salt pickle, cold mushrooms. The cook keeps the kitchen door open to the snow.",
+    "sprite_desc": "A long pine board with thin dark smoked slices on one end, a small jar of pickle in the middle, dark mushrooms on the other end"
+  },
+  "ravana_ten_curry_grand": {
+    "name": "Ravana's Ten-Curry Banquet",
+    "ingredients": ["ravanas_knuckle", "demon_heart", "ember_spice", "mandrake_root", "rosemary_sprig"],
+    "sp": 150,
+    "bonus_type": "status",
+    "bonus_stat": "STR",
+    "bonus_amount": 22,
+    "bonus_effect": "heroism",
+    "description": "Ten Sri Lankan curries served at one sitting, each a head of the demon-king. The cook does not eat with you; the cook bows out at the door.",
+    "sprite_desc": "A long banana leaf with ten small heaps of differently colored curries running its length, a tall mound of rice at one end"
+  },
+  "wendigo_sky_burial": {
+    "name": "Wendigo Sky-Burial Carpaccio",
+    "ingredients": ["wendigo_heart", "rosemary_sprig", "void_salt", "valerian_root"],
+    "sp": 132,
+    "bonus_type": "status",
+    "bonus_stat": "PER",
+    "bonus_amount": 20,
+    "bonus_effect": "truesight",
+    "description": "Tibetan-influenced raw carpaccio plated under open sky for an hour, then dressed with rosemary salt and valerian. The eater sees through their own breath.",
+    "sprite_desc": "A round slate plate with paper-thin red slices laid in a spiral, white herb dust dotted across, a single black salt grain at the center"
+  },
+  "ravana_wendigo_grand_yajna": {
+    "name": "Ravana-Wendigo Grand Yajna",
+    "ingredients": ["ravanas_knuckle", "wendigo_heart", "ember_spice", "void_salt"],
+    "sp": 145,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "description": "A fire-altar dish prepared on hot stones: demon king's knuckle and cannibal spirit's heart cooked together with a single grain of void salt between them. Two appetites, one plate.",
+    "sprite_desc": "A flat black stone slab still glowing red at the edges, two pieces of meat in the center separated by a tiny black crystal, smoke curling up"
+  },
+
+  "fenrir_jokulfeti": {
+    "name": "Fenrir's Jokulfeti Stew",
+    "ingredients": ["fenrir_fang", "void_salt"],
+    "sp": 135,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Old Norse glacier stew built around Fenrir's fang and void-salt brine, simmered eighty days on a peat fire. The chains that hold the wolf taste of this dish.",
+    "sprite_desc": "A heavy iron cauldron of pale grey stew with a single dark fang visible at the surface, ice-rime around the cauldron's rim"
+  },
+  "wild_hunt_smorgasbord": {
+    "name": "Wild Hunt Smorgasbord",
+    "ingredients": ["wild_hunt_horn", "valerian_root"],
+    "sp": 128,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "Continental hunter's smorgasbord assembled while the horn is sounding outside. The valerian keeps the diners on the ground.",
+    "sprite_desc": "A long table-board with seven small dishes of game and pickle, an antler horn laid across one end, a candle burned half down beside"
+  },
+  "anansi_jollof": {
+    "name": "Anansi's Storyteller Jollof",
+    "ingredients": ["anansi_story_thread", "ember_spice"],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 3,
+    "description": "West African jollof rice with anansi story-thread woven through the grains. Every spoonful is a different tale; the eater finishes knowing more than they did.",
+    "sprite_desc": "A wide brass pot of deep orange rice with delicate dark threads visible throughout, a wooden spoon resting in the middle"
+  },
+  "buer_plague_dosa": {
+    "name": "Buer Plague-Gland Masala Dosa",
+    "ingredients": ["buer_plague_gland", "serpent_pepper"],
+    "sp": 125,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "South Indian masala dosa with buer plague-gland mashed into the potato filling. The flavor is medicinal, the aftertaste is corrective.",
+    "sprite_desc": "A long crisp golden dosa wrap on a banana leaf, a yellow potato filling visible at one end, small bowls of chutney beside"
+  },
+  "mammon_hunger_kalbi": {
+    "name": "Mammon's Hunger Kalbi",
+    "ingredients": ["mammon_hunger_crystal", "ember_spice"],
+    "sp": 132,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Korean kalbi short rib glazed with a syrup made from ground hunger-crystal. The first bite makes you hungrier; the second satisfies; the third makes you contemplative.",
+    "sprite_desc": "Three glossy dark-glazed short ribs on a black stone plate, sesame seeds scattered, a small bowl of red dipping paste beside"
+  },
+  "amon_wrath_birria": {
+    "name": "Amon Wrath-Ember Birria",
+    "ingredients": ["amon_wrath_ember", "rosemary_sprig"],
+    "sp": 138,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 3,
+    "description": "Jaliscan birria reddened with amon's wrath ember and tempered with rosemary smoke. The dipping consomme could power a forge.",
+    "sprite_desc": "A clay bowl of nearly-luminous red stew, a folded tortilla on the rim, a small jar of dipping consomme glowing faintly beside"
+  },
+  "anansi_buer_grand_egusi": {
+    "name": "Anansi-Buer Grand Egusi",
+    "ingredients": ["anansi_story_thread", "buer_plague_gland", "ember_spice"],
+    "sp": 140,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["INT", "WIS"],
+    "bonus_amount": 3,
+    "description": "Nigerian egusi soup with story-thread woven into the seed paste and plague-gland for body. A long meal, eaten slowly, with strangers.",
+    "sprite_desc": "A wide clay bowl of dense yellow-green soup with dark threads visible, a portion of pounded yam on the side dyed faintly orange"
+  },
+  "mammon_amon_paella_grande": {
+    "name": "Mammon-Amon Paella Grande",
+    "ingredients": ["mammon_hunger_crystal", "amon_wrath_ember", "ember_spice"],
+    "sp": 142,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["STR", "DEX"],
+    "bonus_amount": 3,
+    "description": "Valencian paella charged on both axes: hunger crystal in the broth, wrath ember in the rice. Cooks itself faster than it should.",
+    "sprite_desc": "A wide flat black pan of dark-amber rice with the bottom visibly crackling, charred crust around the edges, a single lemon wedge on the rim"
+  },
+  "wild_hunt_sky_feast": {
+    "name": "Wild Hunt's Sky-Feast",
+    "ingredients": ["wild_hunt_horn", "fenrir_fang", "valerian_root", "void_salt"],
+    "sp": 150,
+    "bonus_type": "status",
+    "bonus_stat": "DEX",
+    "bonus_amount": 18,
+    "bonus_effect": "haste",
+    "description": "Continental-hunter four-element feast assembled while the riders pass overhead: horn, fang, root, salt. The plate trembles; the diner runs faster the rest of the night.",
+    "sprite_desc": "A long oak board with four small piles arranged in a line, a horn at one end and a fang at the other, the table itself slightly blurred"
+  },
+  "anansi_seven_seals": {
+    "name": "Anansi's Seven-Threads Feast",
+    "ingredients": ["anansi_story_thread", "buer_plague_gland", "mammon_hunger_crystal", "amon_wrath_ember", "ember_spice"],
+    "sp": 165,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "description": "West African storytelling feast spun around four seal-demon essences bound by anansi's thread. Seven courses, one storyteller, no interruptions.",
+    "sprite_desc": "A long banana leaf with seven small mounds of food in a row, each a different color, a single dark thread laid across all of them"
+  },
+
+  "nidhoggr_dolma_yggdrasil": {
+    "name": "Nidhoggr Yggdrasil Dolma",
+    "ingredients": ["nidhoggr_root_shard", "wild_thyme"],
+    "sp": 150,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 3,
+    "description": "Vine-leaf dolma rolled around the gnawed root of the world-tree with wild thyme. Each leaf is folded with a knot the cook never explains.",
+    "sprite_desc": "Three large dark-green dolma each tied with a single thread, glossy with dark sap, thyme sprigs scattered across the plate"
+  },
+  "samael_death_borscht": {
+    "name": "Samael's Death-Vial Borscht",
+    "ingredients": ["samael_death_vial", "pale_celery"],
+    "sp": 155,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 3,
+    "description": "Russian borscht into which a single drop of samael's death-vial is stirred at the last moment. Black-red as a coronation cloak; warm as a final word.",
+    "sprite_desc": "A deep ceramic bowl of nearly-black borscht with a single white dollop of cream and pale celery chunks, a dark glass vial empty beside"
+  },
+  "beleth_quake_loaf": {
+    "name": "Beleth Quake-Stone Loaf",
+    "ingredients": ["beleth_quake_stone", "rosemary_sprig"],
+    "sp": 145,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Mesopotamian beer-bread loaf with quake stone ground into the flour and rosemary across the top. The crust cracks like fault lines as it cools.",
+    "sprite_desc": "A round dark-brown loaf scored with deep cracks running from the center outward, rosemary needles pressed into the surface"
+  },
+  "abyzou_silence_kaiseki": {
+    "name": "Abyzou Silence Kaiseki",
+    "ingredients": ["abyzou_silence_dust", "valerian_root"],
+    "sp": 148,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 3,
+    "description": "Japanese kaiseki of two bites only, dusted with silence powder and valerian. Eaten without speaking; the cook leaves the room first.",
+    "sprite_desc": "A small white square plate with two tiny morsels in opposite corners, fine grey dust scattered around them, a single closed hand fan beside"
+  },
+  "nidhoggr_taro_pone": {
+    "name": "Nidhoggr Taro Pone",
+    "ingredients": ["nidhoggr_root_shard", "void_salt"],
+    "sp": 150,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 3,
+    "description": "Polynesian-style pounded taro pone with root shard worked through and void salt dusting the surface. Heavy in the hand, light on the tongue.",
+    "sprite_desc": "A round mound of pale grey pounded taro wrapped in a green leaf, dark salt grains across the top, a wooden mallet resting beside"
+  },
+  "samael_quake_blini": {
+    "name": "Samael-Quake Blini Stack",
+    "ingredients": ["samael_death_vial", "beleth_quake_stone", "valerian_root"],
+    "sp": 158,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["CON", "WIS"],
+    "bonus_amount": 3,
+    "description": "Russian blini stack layered with death-vial caviar and quake-stone dust between every pancake, valerian cream between every other. Eat from the top down.",
+    "sprite_desc": "A tall stack of grey-pale blini with dark beads and pale cream visible between each layer, a small dish of caviar to the side"
+  },
+  "abyzou_nidhoggr_kvass": {
+    "name": "Abyzou-Nidhoggr Silent Kvass",
+    "ingredients": ["abyzou_silence_dust", "nidhoggr_root_shard", "rosemary_sprig"],
+    "sp": 152,
+    "bonus_type": "two_stats",
+    "bonus_stats": ["INT", "PER"],
+    "bonus_amount": 3,
+    "description": "Slavic kvass fermented in absolute silence for forty days with silence dust and root shard. The bottle opens without a sound; the drinker remembers everything.",
+    "sprite_desc": "A tall dark glass bottle of deep amber liquid with a cork stopper, a single rosemary sprig in the bottle, a clay cup beside"
+  },
+  "samael_void_tagine_grand": {
+    "name": "Samael's Void Grand Tagine",
+    "ingredients": ["samael_death_vial", "void_essence", "ember_spice", "mandrake_root"],
+    "sp": 175,
+    "bonus_type": "status",
+    "bonus_stat": "CON",
+    "bonus_amount": 25,
+    "bonus_effect": "death_ward",
+    "description": "Moroccan four-element tagine sealed with bread dough for a day and a night, opened only when no one is breathing in the room. Said to keep the eater from dying once.",
+    "sprite_desc": "A tall painted tagine with the lid being lifted just an inch by hooded gloved hands, the steam inside dark and slow"
+  },
+  "beleth_abyzou_grand_kabsa": {
+    "name": "Beleth-Abyzou Silent Earthquake Kabsa",
+    "ingredients": ["beleth_quake_stone", "abyzou_silence_dust", "ember_spice", "void_salt"],
+    "sp": 168,
+    "bonus_type": "status",
+    "bonus_stat": "WIS",
+    "bonus_amount": 22,
+    "bonus_effect": "spell_turning",
+    "description": "Saudi kabsa where quake-stone is ground into the spice mix and silence dust is sprinkled at service. The rice is the ground; the spice is the tremor; the silence is the spell.",
+    "sprite_desc": "A wide brass tray of dark spiced rice piled high, a fine grey dust visible on the peak, ground visibly trembling slightly beneath the tray"
+  },
+  "nidhoggr_seal_grand_yajna": {
+    "name": "Nidhoggr Seal Grand Yajna",
+    "ingredients": ["nidhoggr_root_shard", "samael_death_vial", "beleth_quake_stone", "abyzou_silence_dust", "void_salt"],
+    "sp": 180,
+    "bonus_type": "all_stats",
+    "bonus_amount": 2,
+    "description": "Five-element fire-altar dish prepared in absolute silence on a black slab. Root, death, quake, silence, salt. The cook never speaks of it after.",
+    "sprite_desc": "A flat black stone slab with five small piles arranged in a pentagram, a single thin curl of smoke rising from the center, no kitchen visible around"
+  }
+}
