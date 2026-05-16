@@ -1,0 +1,24 @@
+{
+  "id": "seal_of_wrath",
+  "name": "Seal of Wrath",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "*",
+  "color": [
+    200,
+    60,
+    60
+  ],
+  "weight_lb": 0.1,
+  "lore": "A blood-red sigil torn from the first guardian of the Abyss. It burns with infernal heat and smells of brimstone. One of seven seals that hold the Pit closed.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "seal_demon_drop",
+    "effects": [
+      "shatter_on_pickup_with_chronicle"
+    ],
+    "spawn_method": "seal_demon_drop"
+  }
+}

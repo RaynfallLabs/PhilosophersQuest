@@ -1,0 +1,30 @@
+{
+  "id": "ring_intellect_arcane_pewter",
+  "name": "ring of intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    130,
+    100,
+    170
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "INT",
+    "amount": 2
+  },
+  "lore": "Pewter mixed with arcane reagents during casting, this ring's dull surface belies its sophisticated enchantment — worn, it noticeably improves the wearer's intellectual capacity and mana reserves.",
+  "unidentified_name": "arcane pewter ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

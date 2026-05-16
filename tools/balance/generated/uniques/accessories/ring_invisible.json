@@ -1,0 +1,30 @@
+{
+  "id": "ring_invisible",
+  "name": "ring of invisible",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    230,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "invisible",
+    "duration": -1
+  },
+  "lore": "Enchanted with a light-bending field that makes the wearer invisible to normal sight. The ring itself becomes invisible along with everything it touches — veteran wearers learn to keep close track of where they left it.",
+  "unidentified_name": "ghostly crystal ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

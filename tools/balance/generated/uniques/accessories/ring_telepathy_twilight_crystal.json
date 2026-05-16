@@ -1,0 +1,30 @@
+{
+  "id": "ring_telepathy_twilight_crystal",
+  "name": "ring of telepathy",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    100,
+    80,
+    180
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "A twilight-purple crystal that exists in an optical state between transparent and opaque, much like the boundary between private thought and spoken word — wearing it erodes that boundary for nearby minds.",
+  "unidentified_name": "twilight crystal ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "curtana",
+  "name": "Curtana",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 10,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 6.0,
+  "min_level": 45,
+  "peak_floor": 55,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.1,
+    "mercy_blunt_tip": true,
+    "crit_multiplier": 1.5,
+    "spare_low_hp_enemy": true
+  },
+  "lore": "The Sword of Mercy \u2014 its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(45) \u00d7 1.40 unique-mult = 10. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ankh_of_isis",
+  "name": "Ankh of Isis",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    220,
+    180,
+    50
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "CON",
+    "amount": 2
+  },
+  "lore": "The ankh is the key of life, held by every god in the Egyptian pantheon. This one belonged to Isis, who reassembled Osiris from fourteen scattered pieces and breathed life back into him. It carries that same power — one final breath, one last chance. When the wearer dies, the ankh shatters and Isis's magic pulls them back from the threshold. The price is the ankh itself. There are no second miracles.",
+  "unidentified_name": "a golden cross with a looped top",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

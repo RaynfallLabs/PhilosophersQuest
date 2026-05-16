@@ -1,0 +1,40 @@
+{
+  "id": "harpe",
+  "name": "Harpe",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 2.5,
+  "min_level": 55,
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "bleed_chance": 0.25,
+    "crit_multiplier": 2.2,
+    "petrify_on_crit": true
+  },
+  "lore": "Given to Perseus by Hermes to slay Medusa. Forged with an adamantine edge. Perseus used it while looking at Medusa's reflection in his shield. The weapon has a history of separating very important things.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(55) \u00d7 1.40 unique-mult = 13. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "weapon_class_chain": "finesse"
+}

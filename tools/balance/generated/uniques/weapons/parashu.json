@@ -1,0 +1,40 @@
+{
+  "id": "parashu",
+  "name": "Parashu",
+  "category": "weapon",
+  "weapon_class": "axe",
+  "template_basis": "battleaxe",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 14,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 5.0,
+  "min_level": 60,
+  "peak_floor": 70,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.2,
+    "bleed_chance": 0.15,
+    "crit_multiplier": 1.7,
+    "vs_warrior_caste_bonus": 1.5
+  },
+  "lore": "Shiva gave Parashu to Parashurama after ten thousand years of penance. Parashurama used it to exterminate the Kshatriya caste twenty-one times over, filling five lakes with blood.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(60) \u00d7 1.40 unique-mult = 14. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_warning_grey_granite",
+  "name": "ring of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    150,
+    150,
+    150
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "Grey granite holds the patience of mountains, but this enchanted band pulses with urgency when threats approach — the contrast between stone's stillness and its sudden alarm is deeply unsettling to those who encounter it the first time.",
+  "unidentified_name": "grey granite ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

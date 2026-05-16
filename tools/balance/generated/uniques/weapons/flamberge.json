@@ -1,0 +1,37 @@
+{
+  "id": "flamberge",
+  "name": "flamberge",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 15,
+  "chain_multipliers": [
+    0.7,
+    0.85,
+    1.0,
+    1.15,
+    1.4,
+    1.75
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 6.0,
+  "min_level": 62,
+  "peak_floor": 72,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "bleed_chance": 0.25,
+    "parry_disrupt": true
+  },
+  "lore": "Wave-shaped blade. The undulations created additional cutting edges and disrupted opponents' parries by vibrating their weapons uncomfortably.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(62) \u00d7 1.40 unique-mult = 15. Class: heavy 6-rung (midpoint=1.0\u00d7, peak=1.75\u00d7).",
+  "weapon_class_chain": "heavy"
+}

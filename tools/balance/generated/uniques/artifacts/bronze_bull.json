@@ -1,0 +1,23 @@
+{
+  "id": "bronze_bull",
+  "name": "Bronze Bull Idol",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "!",
+  "color": [
+    180,
+    120,
+    60
+  ],
+  "weight_lb": 0.5,
+  "lore": "A small bronze figure of a bull, worn smooth by centuries of prayer. King Minos was given such a bull by Poseidon — and his refusal to sacrifice it at the sacred waters cursed his bloodline forever. The idol still smells faintly of sea-foam.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "plot_role": "asterion_quest_layer1",
+    "effects": [
+      "pour_on_ariadne_fountain_defangs_asterion_phasing"
+    ],
+    "spawn_method": "quest_spawn_pre_asterion"
+  }
+}

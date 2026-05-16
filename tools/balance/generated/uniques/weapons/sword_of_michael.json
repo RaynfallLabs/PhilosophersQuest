@@ -1,0 +1,42 @@
+{
+  "id": "sword_of_michael",
+  "name": "Sword of Michael",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "holy",
+    "slash"
+  ],
+  "base_damage": 38,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 2.5,
+  "min_level": 9999,
+  "tier_intended": 100,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 5,
+  "spawn_method": "quest_reward",
+  "special_properties": {
+    "ignore_resistances": true,
+    "ignore_shield": true,
+    "abaddon_bonus_damage": "2d10",
+    "crit_multiplier": 2.0,
+    "crit_chance_bonus": 0.1
+  },
+  "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous \u2014 earned not by strength but by the quality of one's soul.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(100) \u00d7 1.30 unique-mult = 38. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

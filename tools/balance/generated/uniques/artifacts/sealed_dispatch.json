@@ -1,0 +1,24 @@
+{
+  "id": "sealed_dispatch",
+  "name": "Sealed Dispatch",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "*",
+  "color": [
+    140,
+    120,
+    100
+  ],
+  "weight_lb": 2.0,
+  "lore": "An iron-bound scroll case sealed with the sigil of the City Watch. It contains troop positions for an ongoing siege — thousands of lives depend on its delivery. A dying courier asked you to carry it to the surface. It is heavy and useless to you, but it is a promise.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "courier_promise",
+    "effects": [
+      "deliver_to_surface_for_karma_or_score"
+    ],
+    "spawn_method": "npc_encounter_dying_courier"
+  }
+}

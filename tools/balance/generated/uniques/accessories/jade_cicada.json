@@ -1,0 +1,30 @@
+{
+  "id": "jade_cicada",
+  "name": "Jade Cicada",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    120,
+    200,
+    120
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 1,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "poison_immune",
+    "duration": -1
+  },
+  "lore": "Placed on the tongues of the dead during the Han Dynasty to ensure resurrection. The cicada burrows into the earth and emerges reborn — the Chinese symbol of immortality. This one was never buried. It clings to life with an insect's tenacity: once per floor, when a blow would kill its wearer, the cicada intervenes. The wearer survives with a single breath left. The jade cracks — but holds.",
+  "unidentified_name": "a carved green jade insect",
+  "min_level": 20,
+  "peak_floor": 25,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 19,
+    "player_ac_target_at_min_level": 5
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "sudarshana",
+  "name": "Sudarshana Chakra",
+  "category": "weapon",
+  "weapon_class": "scimitar",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "fire",
+    "holy"
+  ],
+  "base_damage": 19,
+  "chain_multipliers": [
+    0.18,
+    0.35,
+    0.55,
+    0.8,
+    1.2,
+    1.75,
+    2.5,
+    3.3
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 2.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "knockback": true,
+    "crit_multiplier": 2.2,
+    "spinning_returns": true,
+    "burn_chance": 0.25
+  },
+  "lore": "Vishnu's spinning discus. Forged from the effulgence of the sun itself. When Shiva asked to test Vishnu's most powerful weapon, Vishnu threw it without warning and cut off one of Shiva's heads. Shiva grew a new one.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.60 unique-mult = 19. Class: finesse 8-rung (midpoint=1.0\u00d7, peak=3.30\u00d7).",
+  "weapon_class_chain": "finesse"
+}

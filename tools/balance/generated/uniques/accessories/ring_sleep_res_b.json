@@ -1,0 +1,30 @@
+{
+  "id": "ring_sleep_res_b",
+  "name": "ring of sleep resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    160,
+    160,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "sleep_resist",
+    "duration": -1
+  },
+  "lore": "Those who wear this pale lavender crystal ring report that their sleep is uncommonly vivid and lucid — but more importantly, sleep-inducing magic simply fails to take hold while the ring is worn.",
+  "unidentified_name": "lucid crystal ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

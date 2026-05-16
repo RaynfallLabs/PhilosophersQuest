@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_solomon",
+  "name": "Seal of Solomon",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    120,
+    180,
+    120
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "WIS",
+    "amount": 3,
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it.",
+  "unidentified_name": "a signet ring with a six-pointed star",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 35,
+    "player_ac_target_at_min_level": -5
+  }
+}

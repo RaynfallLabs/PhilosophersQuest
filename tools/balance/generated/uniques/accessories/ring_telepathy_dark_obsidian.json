@@ -1,0 +1,30 @@
+{
+  "id": "ring_telepathy_dark_obsidian",
+  "name": "ring of telepathy",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    40,
+    40,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "Obsidian is volcanic in origin, but this particular band was carved from a vein with unusual mental resonance properties — wearing it is like having a quiet voice in one's head that whispers the intentions of nearby creatures.",
+  "unidentified_name": "dark obsidian ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

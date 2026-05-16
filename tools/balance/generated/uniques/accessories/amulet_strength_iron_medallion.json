@@ -1,0 +1,30 @@
+{
+  "id": "amulet_strength_iron_medallion",
+  "name": "amulet of strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    120,
+    120,
+    130
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "STR",
+    "amount": 2
+  },
+  "lore": "A heavy iron medallion worn by gladiators in the old arenas, enchanted to significantly enhance physical strength. The enhancement is visible — veins cord against the skin and muscles visibly bulk while the amulet is worn.",
+  "unidentified_name": "iron medallion",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

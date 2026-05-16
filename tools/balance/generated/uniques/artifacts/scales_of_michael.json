@@ -1,0 +1,24 @@
+{
+  "id": "scales_of_michael",
+  "name": "Scales of Michael",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    255,
+    240,
+    200
+  ],
+  "weight_lb": 1.0,
+  "lore": "The golden scales of the Archangel Michael, Weigher of Souls and Prince of the Heavenly Host. In the final battle against the Destroyer, the Host answers the call of these scales. For every locust of the Abyss, an angel descends.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "abaddon_quest_layer4_heavenly_host",
+    "effects": [
+      "v_power_summon_angel_per_locust"
+    ],
+    "spawn_method": "michael_gift_karma_1_to_9"
+  }
+}

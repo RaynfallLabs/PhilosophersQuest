@@ -1,0 +1,24 @@
+{
+  "id": "seal_of_death",
+  "name": "Seal of Death",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "*",
+  "color": [
+    60,
+    60,
+    80
+  ],
+  "weight_lb": 0.1,
+  "lore": "A pale sigil cold as the grave. Your shadow darkens when you hold it. One of seven seals that hold the Pit closed.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "seal_demon_drop",
+    "effects": [
+      "shatter_on_pickup_with_chronicle"
+    ],
+    "spawn_method": "seal_demon_drop"
+  }
+}

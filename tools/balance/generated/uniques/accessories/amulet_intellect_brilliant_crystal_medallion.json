@@ -1,0 +1,30 @@
+{
+  "id": "amulet_intellect_brilliant_crystal_medallion",
+  "name": "amulet of intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    200,
+    180,
+    255
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "INT",
+    "amount": 3
+  },
+  "lore": "Faceted crystal that catches every available light and throws it back in a dozen directions — a fitting metaphor for the dramatically enhanced intellect this medallion provides. Scholars who have worn it describe the experience as thinking with an extra layer of mind.",
+  "unidentified_name": "brilliant crystal medallion",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

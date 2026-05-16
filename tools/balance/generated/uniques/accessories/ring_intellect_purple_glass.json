@@ -1,0 +1,30 @@
+{
+  "id": "ring_intellect_purple_glass",
+  "name": "ring of intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    140,
+    60,
+    180
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "INT",
+    "amount": 2
+  },
+  "lore": "Purple glass was used in ancient scrying lenses, and this ring carries an echo of that tradition — wearing it sharpens the mind significantly, improving memory, reasoning, and magical power simultaneously.",
+  "unidentified_name": "purple glass ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

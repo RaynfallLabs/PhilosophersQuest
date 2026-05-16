@@ -1,0 +1,32 @@
+{
+  "id": "philosophers_ring",
+  "name": "Philosopher's Ring",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    100
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2,
+    "stat2": "INT",
+    "amount2": 1
+  },
+  "lore": "Inscribed with a miniature version of the Philosopher's Shard's ouroboros, this ring was worn by the original dungeon philosopher on the hand that held their quill. As one of the three pieces of the Philosopher's Set, wearing it alongside the Philosopher's Shard and the Diamond Staff of Inquiry is said to grant the ability to identify items simply by touching them — knowledge flowing naturally as breath.",
+  "unidentified_name": "a pale etched gold band",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

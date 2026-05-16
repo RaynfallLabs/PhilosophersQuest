@@ -1,0 +1,32 @@
+{
+  "id": "ariadnes_thread",
+  "name": "Ariadne's Thread",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    220,
+    220,
+    255
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "searching",
+    "duration": -1,
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "Ariadne gave this thread to Theseus so he could find his way out of the Labyrinth. The thread remembers every path it has traveled and guides its bearer toward the exit. In the myth, Theseus abandoned Ariadne on Naxos — but the thread remained faithful.",
+  "unidentified_name": "a silver thread wound into a pendant",
+  "min_level": 22,
+  "peak_floor": 27,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 20,
+    "player_ac_target_at_min_level": 4
+  }
+}

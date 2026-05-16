@@ -1,0 +1,37 @@
+{
+  "id": "war_scythe",
+  "name": "war scythe",
+  "category": "weapon",
+  "weapon_class": "polearm",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 5,
+  "chain_multipliers": [
+    0.7,
+    0.85,
+    1.0,
+    1.15,
+    1.4,
+    1.75
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 7.0,
+  "min_level": 22,
+  "peak_floor": 32,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "anti_cavalry": true
+  },
+  "lore": "Weapon of desperate men \u2014 peasant armies in the Hussite Wars and Polish uprisings.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(22) \u00d7 1.20 unique-mult = 5. Class: heavy 6-rung (midpoint=1.0\u00d7, peak=1.75\u00d7).",
+  "weapon_class_chain": "heavy"
+}

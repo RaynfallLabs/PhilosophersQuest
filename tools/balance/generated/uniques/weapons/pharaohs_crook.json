@@ -1,0 +1,35 @@
+{
+  "id": "pharaohs_crook",
+  "name": "Pharaoh's Crook",
+  "category": "weapon",
+  "weapon_class": "staff",
+  "template_basis": "club",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt"
+  ],
+  "base_damage": 1,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 2.0,
+  "min_level": 3,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 2,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.25,
+    "divine_kingship": true
+  },
+  "lore": "The crook and flail were the symbols of pharaonic authority. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(3) \u00d7 1.40 unique-mult = 1. Class: normal 5-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "weapon_class_chain": "normal"
+}

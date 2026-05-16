@@ -1,0 +1,30 @@
+{
+  "id": "ring_of_gyges",
+  "name": "Ring of Gyges",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    160,
+    160,
+    180
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "invisible",
+    "duration": -1
+  },
+  "lore": "In Plato's Republic, Glaucon tells the story of Gyges the shepherd, who found a ring that turned him invisible. He used it to seduce the queen, murder the king, and seize the throne. Plato asked: would a just man behave differently from an unjust man if he could act without consequence? The ring itself does not answer. It merely grants the power — and leaves the moral question to you.",
+  "unidentified_name": "a plain band that seems to blur at the edges",
+  "min_level": 28,
+  "peak_floor": 33,
+  "spread": 14,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 22,
+    "player_ac_target_at_min_level": 3
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_constitution_garnet",
+  "name": "ring of constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    180,
+    30,
+    30
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "CON",
+    "amount": 3
+  },
+  "lore": "Deep garnet vibrates at a frequency that resonates with the body's fundamental vitality; this ring markedly improves the wearer's stamina, hit point capacity, and resistance to environmental stresses.",
+  "unidentified_name": "garnet ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

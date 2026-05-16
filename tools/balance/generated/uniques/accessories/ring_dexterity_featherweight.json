@@ -1,0 +1,30 @@
+{
+  "id": "ring_dexterity_featherweight",
+  "name": "ring of dexterity",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    240,
+    240,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "DEX",
+    "amount": 3
+  },
+  "lore": "So light it can barely be felt on the finger, this ring was enchanted by a master acrobat-mage who wanted to capture perfect physical grace in an item. The result is a dramatic enhancement to the wearer's coordination and reflexes.",
+  "unidentified_name": "featherweight ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

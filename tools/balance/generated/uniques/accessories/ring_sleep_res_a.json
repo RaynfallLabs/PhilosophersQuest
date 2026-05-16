@@ -1,0 +1,30 @@
+{
+  "id": "ring_sleep_res_a",
+  "name": "ring of sleep resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    140,
+    140,
+    220
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "sleep_resist",
+    "duration": -1
+  },
+  "lore": "Carved from dreamstone — a mineral that forms only in locations where many creatures have died in their sleep — this ring paradoxically protects against the very sleep effects its material evokes.",
+  "unidentified_name": "dreamstone ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

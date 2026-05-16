@@ -1,0 +1,30 @@
+{
+  "id": "amulet_cold_res",
+  "name": "amulet of cold resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    120,
+    200,
+    255
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "cold_resist",
+    "duration": -1
+  },
+  "lore": "A locket that is always slightly cold to the touch, as though it absorbs ambient warmth — in exchange, it provides the wearer complete protection from freezing temperatures and cold-based magical attacks.",
+  "unidentified_name": "frost-kissed locket",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

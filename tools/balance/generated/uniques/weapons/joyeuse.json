@@ -1,0 +1,40 @@
+{
+  "id": "joyeuse",
+  "name": "Joyeuse",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.35,
+    0.55,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.8,
+    2.2
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 3.0,
+  "min_level": 55,
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.25,
+    "dazzle_aura": true,
+    "crit_multiplier": 1.7
+  },
+  "lore": "Charlemagne's coronation sword changed colour thirty times per day and shone so brightly that enemies were dazzled before the first blow.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(55) \u00d7 1.40 unique-mult = 13. Class: normal 8-rung (midpoint=1.0\u00d7, peak=2.20\u00d7).",
+  "weapon_class_chain": "normal"
+}

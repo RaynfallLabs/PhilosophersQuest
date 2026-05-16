@@ -1,0 +1,30 @@
+{
+  "id": "ring_constitution_diamond",
+  "name": "ring of endurance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    245,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 4
+  },
+  "lore": "A diamond ring that channels the stone's indomitable hardness into the wearer's constitution. Those who have worn it for long periods report an unusual inability to tire, a reduced need for sleep, and a strange clarity of purpose.",
+  "unidentified_name": "a faceted crystal ring",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

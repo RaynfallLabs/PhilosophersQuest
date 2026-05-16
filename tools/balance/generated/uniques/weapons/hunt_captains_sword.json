@@ -1,0 +1,44 @@
+{
+  "id": "hunt_captains_sword",
+  "name": "Hunt Captain's Sword",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "cold"
+  ],
+  "base_damage": 20,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 4,
+  "spawn_method": "unique_drop",
+  "special_properties": {
+    "effects": {
+      "status": "bleeding",
+      "effect_chance": 0.25,
+      "effect_duration": 4
+    },
+    "can_be_cursed": false,
+    "crit_multiplier": 1.9
+  },
+  "lore": "Taken from the captain of the Wild Hunt, this blade phases between this world and the spectral realm. Its edge is impossibly sharp and its cold is the cold of the grave.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(70) \u00d7 1.40 unique-mult = 20. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "tier_intended": 70,
+  "weapon_class_chain": "normal"
+}

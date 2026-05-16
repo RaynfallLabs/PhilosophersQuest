@@ -1,0 +1,42 @@
+{
+  "id": "gandiva",
+  "name": "Gandiva",
+  "category": "weapon",
+  "weapon_class": "bow",
+  "template_basis": "longbow",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce",
+    "holy"
+  ],
+  "base_damage": 19,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 22,
+    "requires_ammo": "arrow",
+    "crit_multiplier": 2.3,
+    "stun_chance": 0.1,
+    "bleed_chance": 0.15,
+    "infinite_strings": true
+  },
+  "lore": "Arjuna's divine bow had one hundred strings; when one broke another appeared. With it Arjuna killed 100,000 soldiers in the Kurukshetra War. Krishna delivered an 18-chapter philosophical treatise to persuade him to pick it up again.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.60 unique-mult = 19. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

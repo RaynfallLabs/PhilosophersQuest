@@ -1,0 +1,40 @@
+{
+  "id": "achilles_spear",
+  "name": "Achilles's Spear",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "spear",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 4.0,
+  "min_level": 20,
+  "peak_floor": 30,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "bleed_chance": 0.15,
+    "crit_multiplier": 1.8,
+    "kill_heal_amount": 15,
+    "telephus_wound": true
+  },
+  "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed \u2014 rust scraped from its tip cured the very wound it had made.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(20) \u00d7 1.40 unique-mult = 6. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_perception_hawks_eye",
+  "name": "ring of perception",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    180,
+    140,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "PER",
+    "amount": 3
+  },
+  "lore": "Named for the raptor whose vision is legendary, this ring's enchantment provides an almost supernatural expansion of the wearer's perceptual range — at full effect, wearers describe seeing clearly in conditions that would blind ordinary adventurers entirely.",
+  "unidentified_name": "hawks-eye ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

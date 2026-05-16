@@ -1,0 +1,25 @@
+{
+  "id": "cursed_lodestone",
+  "name": "Cursed Lodestone",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "*",
+  "color": [
+    60,
+    60,
+    80
+  ],
+  "weight_lb": 20.0,
+  "lore": "A massive black stone that drinks the light around it. You accepted it willingly to save a knight's dying wife. It weighs twenty pounds and cannot be put down — the curse binds it to whoever takes it freely. Only a scroll of Remove Curse can break the bond.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "cursed": true,
+    "identified": true,
+    "plot_role": "knight_encounter_promise",
+    "effects": [
+      "heavy_20lb_cannot_drop_until_remove_curse"
+    ],
+    "spawn_method": "npc_encounter_dying_knight"
+  }
+}

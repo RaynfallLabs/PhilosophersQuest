@@ -1,0 +1,32 @@
+{
+  "id": "ouroboros_pendant",
+  "name": "Ouroboros",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    120,
+    180,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1,
+    "stat": "CON",
+    "amount": 2
+  },
+  "lore": "The oldest image of the ouroboros appears in an Egyptian royal tomb, 1350 BCE. It represents cyclical time, eternal recurrence, the universe sustaining itself. Alchemists adopted it. Jung analysed it. Kekulé claimed the image gave him the ring structure of benzene in a dream. Whether this last part is true, the benzene ring is real.",
+  "unidentified_name": "a silver pendant of a serpent eating its tail",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

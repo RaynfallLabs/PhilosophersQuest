@@ -1,0 +1,30 @@
+{
+  "id": "amulet_clairvoyant",
+  "name": "amulet of clairvoyance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    80,
+    60,
+    100
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "clairvoyant",
+    "duration": -1
+  },
+  "lore": "An eye carved in dark stone, this amulet grants awareness of the entire dungeon level simultaneously — a gift that feels like omniscience and would be mistaken for madness by anyone who didn't understand its nature.",
+  "unidentified_name": "all-seeing eye pendant",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

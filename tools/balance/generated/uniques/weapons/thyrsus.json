@@ -1,0 +1,40 @@
+{
+  "id": "thyrsus",
+  "name": "Thyrsus of Dionysus",
+  "category": "weapon",
+  "weapon_class": "staff",
+  "template_basis": "quarterstaff",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "blunt",
+    "magic"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.35,
+    0.55,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.8,
+    2.2
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 4.0,
+  "min_level": 55,
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "confuse_chance": 0.5,
+    "crit_multiplier": 1.5,
+    "madness_aura": true
+  },
+  "lore": "The Maenads carried the thyrsus. In the Bacchae, Agave kills her son Pentheus with it, believing in her madness he is a lion. Dionysus watched.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(55) \u00d7 1.40 unique-mult = 13. Class: normal 8-rung (midpoint=1.0\u00d7, peak=2.20\u00d7).",
+  "weapon_class_chain": "normal"
+}

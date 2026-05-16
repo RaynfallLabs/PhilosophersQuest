@@ -1,0 +1,27 @@
+{
+  "id": "palladium",
+  "name": "Palladium",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "&",
+  "color": [
+    180,
+    180,
+    200
+  ],
+  "weight_lb": 3.0,
+  "lore": "A small wooden statue of Athena, fallen from heaven to protect Troy. The city could not be taken while the Palladium remained within its walls — Odysseus and Diomedes had to steal it before the horse could work. It reveals the path forward: while carried, the stairs on every floor glow faintly in the bearer's mind, visible even through walls and darkness.",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "special_properties": {
+    "identified": false,
+    "stair_reveal": true,
+    "plot_role": "wonder_relic",
+    "effects": [
+      "stair_reveal_while_carried"
+    ],
+    "spawn_method": "random_lore_quest_mid_dungeon"
+  }
+}

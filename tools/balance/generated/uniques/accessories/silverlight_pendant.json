@@ -1,0 +1,32 @@
+{
+  "id": "silverlight_pendant",
+  "name": "Silverlight Pendant",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    230
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2,
+    "stat2": "PER",
+    "amount2": 1
+  },
+  "lore": "A small silver pendant on a fine chain. The metal is warm to the touch, as though someone held it very recently. The name 'ELARA' is engraved on the back in a child's unsteady hand.",
+  "unidentified_name": "delicate silver pendant",
+  "min_level": 3,
+  "peak_floor": 8,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 13,
+    "player_ac_target_at_min_level": 9
+  }
+}

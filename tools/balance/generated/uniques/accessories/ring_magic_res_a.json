@@ -1,0 +1,30 @@
+{
+  "id": "ring_magic_res_a",
+  "name": "ring of magic resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    160,
+    140,
+    200
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "magic_resist",
+    "duration": -1
+  },
+  "lore": "Every millimeter of this pewter ring's surface is engraved with layered warding formulae, creating a persistent anti-magical field that deflects directed spells before they can take full effect on the wearer.",
+  "unidentified_name": "warded pewter ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

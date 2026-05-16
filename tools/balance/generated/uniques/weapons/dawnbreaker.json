@@ -1,0 +1,42 @@
+{
+  "id": "dawnbreaker",
+  "name": "Dawnbreaker",
+  "category": "weapon",
+  "weapon_class": "warhammer",
+  "template_basis": "warhammer",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "blunt",
+    "fire",
+    "holy"
+  ],
+  "base_damage": 25,
+  "chain_multipliers": [
+    0.35,
+    0.55,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.8,
+    2.2
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 8.0,
+  "min_level": 82,
+  "peak_floor": 92,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "undead_bonus": 3.0,
+    "burn_chance": 0.3,
+    "stun_chance": 0.4,
+    "crit_multiplier": 1.8
+  },
+  "lore": "The hammer that ended the First Darkness. Its adamantine head contains a shard of preserved dawn light, visible as a faint golden gleam in pitch darkness.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(82) \u00d7 1.40 unique-mult = 25. Class: normal 8-rung (midpoint=1.0\u00d7, peak=2.20\u00d7).",
+  "weapon_class_chain": "normal"
+}

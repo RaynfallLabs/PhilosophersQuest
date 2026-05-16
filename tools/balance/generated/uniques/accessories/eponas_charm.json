@@ -1,0 +1,32 @@
+{
+  "id": "eponas_charm",
+  "name": "Epona's Charm",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    180,
+    140,
+    100
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1,
+    "stat": "PER",
+    "amount": 1
+  },
+  "lore": "Epona was the Celtic goddess of horses, travelers, and safe journeys. Her charm ensures the traveler always arrives in safe harbor — never in a dead end, never in an ambush. The Romans adopted her worship, unique among Gaulish deities.",
+  "unidentified_name": "a small horse-shaped charm",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

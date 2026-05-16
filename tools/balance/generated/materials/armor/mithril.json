@@ -1,0 +1,20 @@
+{
+  "id": "mithril",
+  "name": "mithril",
+  "material_class": "rare_metal",
+  "applies_to": ["armor", "shield", "weapon"],
+  "peak_floor": 55,
+  "spread": 14,
+  "peak_weight": 5,
+  "weight_mult": 0.5,
+  "ac_bonus": 2,
+  "max_enchant": 3,
+  "color": [185, 200, 220],
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["light", "elven_favored", "silent"],
+  "lore_descriptor": "moonlight-pale, lighter than the air around it",
+  "unidentified_descriptor": "pale silvery metal",
+  "first_pickup_chronicle": "Mithril. Elven-make. It hums against my palm — and weighs less than a memory. A full hauberk of this, and I'll forget I'm wearing it."
+}

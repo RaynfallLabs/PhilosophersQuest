@@ -1,0 +1,32 @@
+{
+  "id": "dragonslayer_ring",
+  "name": "Dragonslayer's Ring",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    220,
+    80,
+    40
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "STR",
+    "amount": 2,
+    "status": "fire_resist",
+    "duration": -1
+  },
+  "lore": "Forged from gold salvaged from the hoard of a great wyrm and quenched in dragon's blood, this ring radiates intense warmth. As one of the three pieces of the Dragonslayer's Set, wearing it alongside the Dragonbone Longsword and Dragonscale Armor grants immunity to fear and +2 to all attacks against dragons — the complete set turns its wearer into the most feared dragon hunter who ever lived.",
+  "unidentified_name": "a scorched gold ring",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

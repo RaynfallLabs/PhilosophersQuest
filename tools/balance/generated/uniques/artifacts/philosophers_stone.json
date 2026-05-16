@@ -1,0 +1,25 @@
+{
+  "id": "philosophers_stone",
+  "name": "Philosopher's Stone",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "*",
+  "color": [
+    255,
+    215,
+    0
+  ],
+  "weight_lb": 1.0,
+  "lore": "Forged in the crucible of creation when Prometheus first stole fire from the gods, the Philosopher's Stone pulses with the captured light of a thousand calcined souls, each one surrendered willingly to the Great Work. It is said that Hermes Trismegistus held it once and wept, for the Stone does not merely transmute lead into gold — it transmutes the bearer, burning away all that is base until only the quintessence remains. To carry it toward the light of the sun is to complete the Magnum Opus, the final conjunction of Sul and Luna, the perfection of matter and spirit made one.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "plot_role": "abaddon_drop_endgame_anchor",
+    "effects": [
+      "auto_identify",
+      "death_kill_ritual_component",
+      "score_bonus_50000"
+    ],
+    "spawn_method": "boss_drop_abaddon"
+  }
+}

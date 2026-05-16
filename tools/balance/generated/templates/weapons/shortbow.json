@@ -1,0 +1,31 @@
+{
+  "id": "shortbow",
+  "name": "shortbow",
+  "category": "weapon",
+  "weapon_class": "bow",
+  "hands": 2,
+  "damage_types": [
+    "pierce"
+  ],
+  "chain_multipliers": [
+    0.2,
+    0.55,
+    1.0,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 5,
+  "damage_modifier": 0.8,
+  "base_weight_lb": 2.0,
+  "speed": 12,
+  "compatible_material_classes": [
+    "wood",
+    "rare_wood",
+    "exotic_organic"
+  ],
+  "lore_template": "A {material_name} shortbow. Quick to draw, light in the hand.",
+  "design_notes": "v2 chain rebalance: finesse class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 3.00\u00d7. Class mechanic: Ranged precision: critical hits on natural 19-20. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.8 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "finesse",
+  "class_mechanic": "ranged_precision",
+  "class_mechanic_desc": "Ranged precision: critical hits on natural 19-20."
+}

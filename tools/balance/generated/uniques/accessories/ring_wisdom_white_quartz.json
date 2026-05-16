@@ -1,0 +1,30 @@
+{
+  "id": "ring_wisdom_white_quartz",
+  "name": "ring of wisdom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    225,
+    230
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "WIS",
+    "amount": 3
+  },
+  "lore": "White quartz is the stone most used in divination traditions worldwide; this ring concentrates centuries of divinatory enchantment into a permanent wisdom enhancement that provides an exceptional boost to the wearer's perceptive judgment.",
+  "unidentified_name": "white quartz ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

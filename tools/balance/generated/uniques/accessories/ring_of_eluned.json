@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_eluned",
+  "name": "Ring of Eluned",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    160,
+    200,
+    160
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "status": "invisible",
+    "duration": -1,
+    "stat": "DEX",
+    "amount": 2
+  },
+  "lore": "The Welsh Arthurian heroine Luned gave this ring to Owain when he was trapped in a portcullis. It rendered him invisible to the castle's inhabitants until he could escape. She retrieved it afterward, which is the appropriate thing to do with a ring of this power. Most people who receive such gifts do not return them.",
+  "unidentified_name": "a green ring of twisted ivy-metal",
+  "min_level": 50,
+  "peak_floor": 55,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 31,
+    "player_ac_target_at_min_level": -2
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_the_assassin",
+  "name": "Ring of the Assassin",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    100,
+    100,
+    140
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "DEX",
+    "amount": 3,
+    "status": "invisible",
+    "duration": -1
+  },
+  "lore": "The signet of the Hashshashin grandmaster, recovered after the sack of Alamut. The ring's stone refracts light around the wearer with unsettling precision. Paired with the supernatural quickness it grants, its bearer becomes effectively impossible to track in dim light.",
+  "unidentified_name": "dark ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

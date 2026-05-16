@@ -1,0 +1,41 @@
+{
+  "id": "fail_not",
+  "name": "Fail-not",
+  "category": "weapon",
+  "weapon_class": "bow",
+  "template_basis": "longbow",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.35,
+    0.55,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.8,
+    2.2
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 2.0,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 20,
+    "requires_ammo": "arrow",
+    "crit_multiplier": 2.5,
+    "duty_aim_bonus": true,
+    "anger_aim_penalty": true
+  },
+  "lore": "Tristan's bow, given by the fairy Morgain. Its name was its promise. Arrows loosed in duty flew true; arrows loosed in anger missed. Its owner learned this the hard way.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(50) \u00d7 1.40 unique-mult = 11. Class: normal 8-rung (midpoint=1.0\u00d7, peak=2.20\u00d7).",
+  "weapon_class_chain": "normal"
+}

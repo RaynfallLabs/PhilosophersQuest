@@ -1,0 +1,30 @@
+{
+  "id": "ring_curse_teleport",
+  "name": "ring of teleportitis",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    100,
+    60,
+    100
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "teleportitis",
+    "duration": -1
+  },
+  "lore": "A cursed ring with a broken teleportation enchantment that activates randomly rather than on command. The wearer finds themselves suddenly elsewhere at unpredictable intervals — occasionally useful, often catastrophic.",
+  "unidentified_name": "chaotic onyx ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

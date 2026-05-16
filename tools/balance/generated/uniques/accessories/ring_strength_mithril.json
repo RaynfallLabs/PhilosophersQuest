@@ -1,0 +1,30 @@
+{
+  "id": "ring_strength_mithril",
+  "name": "ring of strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    170,
+    200,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "STR",
+    "amount": 3
+  },
+  "lore": "Mithril's strength-to-weight ratio is legendary; this ring enhances the wearer's physical capabilities to a similar degree — extraordinary power delivered without the usual associated bulk.",
+  "unidentified_name": "mithril ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

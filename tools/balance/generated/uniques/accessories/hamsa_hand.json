@@ -1,0 +1,32 @@
+{
+  "id": "hamsa_hand",
+  "name": "Hand of Fatima",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    200,
+    180,
+    140
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 2,
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "The hamsa appears in Islamic, Jewish, and Christian traditions under different names — Hand of Fatima, Hand of Miriam, Hand of Mary. The eye in the palm deflects the evil eye. It is one of the few symbols shared without significant modification across the Mediterranean's three Abrahamic faiths. No one disputes it. Everyone claims it.",
+  "unidentified_name": "an open hand amulet with an eye in the palm",
+  "min_level": 40,
+  "peak_floor": 45,
+  "spread": 18,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 27,
+    "player_ac_target_at_min_level": 0
+  }
+}

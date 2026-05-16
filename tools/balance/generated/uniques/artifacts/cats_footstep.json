@@ -1,0 +1,26 @@
+{
+  "id": "cats_footstep",
+  "name": "Sound of a Cat's Footstep",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "~",
+  "color": [
+    180,
+    160,
+    200
+  ],
+  "weight_lb": 0.2,
+  "lore": "A tiny glass vial that makes no sound when shaken. The dwarves of Svartalfheim harvested the silence of a cat's paw to forge Gleipnir, the binding that held Fenrir.",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "fenrir_quest_layer1_gleipnir_component",
+    "effects": [
+      "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+    ],
+    "spawn_method": "quest_spawn_fenrir_components"
+  }
+}

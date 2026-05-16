@@ -1,0 +1,30 @@
+{
+  "id": "ring_clairvoy",
+  "name": "ring of clairvoyant",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    60,
+    60,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "clairvoyant",
+    "duration": -1
+  },
+  "lore": "This near-black onyx ring makes the wearer aware of the entire dungeon level simultaneously — not as a map, but as a felt spatial awareness, like having eyes in every wall. It is profoundly disorienting at first and profoundly useful once mastered.",
+  "unidentified_name": "all-seeing onyx ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_searching_silver",
+  "name": "ring of searching",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    210
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "Silver is said to reveal what is hidden from ordinary sight, and this ring sharpens the wearer's perception of concealed passages and secret doors in the dungeon's walls.",
+  "unidentified_name": "silver ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

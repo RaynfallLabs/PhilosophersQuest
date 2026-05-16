@@ -1,0 +1,30 @@
+{
+  "id": "seal_of_solomon",
+  "name": "Seal of Solomon",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    180,
+    140,
+    220
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "The ring given to Solomon by the Archangel Michael, engraved with the true name of God. With it Solomon commanded demons to build the First Temple and bound Asmodeus in a jar of brass. Its power compels obedience — nearby enemies may find themselves frozen in place, unable to act, their will subverted by a force older than anger.",
+  "unidentified_name": "a bronze ring engraved with a six-pointed star",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 35,
+    "player_ac_target_at_min_level": -5
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "bastard_sword",
+  "name": "bastard sword",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "bastard_sword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 5,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 5.0,
+  "min_level": 22,
+  "peak_floor": 32,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "versatile": true
+  },
+  "lore": "Hand-and-a-half sword: one-handed from horseback, two-handed on foot. Bridges longsword and greatsword.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(22) \u00d7 1.20 unique-mult = 5. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

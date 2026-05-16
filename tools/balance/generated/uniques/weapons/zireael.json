@@ -1,0 +1,39 @@
+{
+  "id": "zireael",
+  "name": "Zireael",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 7,
+  "chain_multipliers": [
+    0.4,
+    0.7,
+    1.0,
+    1.3,
+    1.65,
+    2.0
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 2.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 4,
+  "spawn_method": "story_drop",
+  "special_properties": {
+    "bleed_chance": 0.15,
+    "crit_multiplier": 2.0,
+    "lighter_than_steel": true,
+    "elder_blood": true
+  },
+  "lore": "Zireael \u2014 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam. Lighter than any human-forged sword yet harder than dwarven steel. She will return. She always returns.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(30) \u00d7 1.40 unique-mult = 7. Class: normal 6-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "tier_intended": 30,
+  "weapon_class_chain": "normal"
+}

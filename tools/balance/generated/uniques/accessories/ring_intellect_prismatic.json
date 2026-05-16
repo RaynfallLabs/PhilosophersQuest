@@ -1,0 +1,30 @@
+{
+  "id": "ring_intellect_prismatic",
+  "name": "ring of intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    180,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "INT",
+    "amount": 3
+  },
+  "lore": "A ring that splits incoming light into a full spectrum — a metaphor made literal for the wearer's mind, which gains the ability to analyze problems from multiple simultaneous angles. The intelligence enhancement is dramatic and immediate.",
+  "unidentified_name": "prismatic ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

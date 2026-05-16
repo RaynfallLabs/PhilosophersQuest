@@ -1,0 +1,26 @@
+{
+  "id": "saints_reliquary",
+  "name": "Saint's Reliquary",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    190,
+    160
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "WIS",
+    "amount": 1,
+    "stat2": "CON",
+    "amount2": 1
+  },
+  "lore": "A silver reliquary containing the fingerbone of a saint, set in gold. The monk who carried it crawled through the dungeon on his hands and knees to keep it safe. It radiates a quiet warmth.",
+  "unidentified_name": "a silver reliquary containing a saint's fingerbone",
+  "min_level": 0,
+  "plot_locked": true
+}

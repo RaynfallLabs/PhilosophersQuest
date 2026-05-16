@@ -1,0 +1,20 @@
+{
+  "id": "hide",
+  "name": "hide",
+  "material_class": "hide",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 6,
+  "spread": 9,
+  "peak_weight": 8,
+  "weight_mult": 1.1,
+  "ac_bonus": 0,
+  "max_enchant": 1,
+  "color": [140, 95, 60],
+  "resistances": [],
+  "weaknesses": ["fire"],
+  "vulnerabilities": [],
+  "special_properties": ["coarse"],
+  "lore_descriptor": "thick, rough, smelling faintly of the beast",
+  "unidentified_descriptor": "untanned hide",
+  "first_pickup_chronicle": "Beast-hide. Untanned, half-cured, smells of the thing it came off of. But it'll take a swing better than my old shirt did."
+}

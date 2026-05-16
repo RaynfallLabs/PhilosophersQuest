@@ -1,0 +1,32 @@
+{
+  "id": "maul",
+  "name": "maul",
+  "category": "weapon",
+  "weapon_class": "blunt",
+  "hands": 2,
+  "damage_types": [
+    "blunt"
+  ],
+  "chain_multipliers": [
+    0.75,
+    0.9,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 5,
+  "damage_modifier": 1.55,
+  "base_weight_lb": 8.0,
+  "speed": 7,
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "exotic_metal"
+  ],
+  "lore_template": "A {material_name} maul. Plate, bone, stone \u2014 it doesn't care.",
+  "design_notes": "v2 chain rebalance: heavy class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 1.75\u00d7. Class mechanic: At chain rung 4+, stun + knockdown (target loses 2 turns). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.55 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "heavy",
+  "class_mechanic": "stun_knockdown_at_max",
+  "class_mechanic_desc": "At chain rung 4+, stun + knockdown (target loses 2 turns)."
+}

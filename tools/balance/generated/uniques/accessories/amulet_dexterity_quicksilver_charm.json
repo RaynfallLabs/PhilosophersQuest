@@ -1,0 +1,30 @@
+{
+  "id": "amulet_dexterity_quicksilver_charm",
+  "name": "amulet of dexterity",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    200,
+    220,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "DEX",
+    "amount": 2
+  },
+  "lore": "A small charm containing a sealed vial of actual mercury, enchanted to transfer its liquid swiftness to the wearer — movements become fluid and precise, reflexes sharpen, and armor class improves noticeably.",
+  "unidentified_name": "quicksilver charm",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

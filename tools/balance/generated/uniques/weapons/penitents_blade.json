@@ -1,0 +1,39 @@
+{
+  "id": "penitents_blade",
+  "name": "Penitent's Blade",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 10,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 1.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 4,
+  "spawn_method": "story_drop",
+  "special_properties": {
+    "bleed_chance": 0.25,
+    "crit_multiplier": 2.0,
+    "lifesteal_percent": 0.15
+  },
+  "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood \u2014 wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(45) \u00d7 1.40 unique-mult = 10. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "tier_intended": 45,
+  "weapon_class_chain": "finesse"
+}

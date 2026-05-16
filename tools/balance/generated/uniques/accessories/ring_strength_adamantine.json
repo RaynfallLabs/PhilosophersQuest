@@ -1,0 +1,30 @@
+{
+  "id": "ring_strength_adamantine",
+  "name": "ring of strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    80,
+    90,
+    110
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "STR",
+    "amount": 3
+  },
+  "lore": "The densest metal known to mortals grants the densest strength enhancement known to ring-makers; wearers of adamantine strength rings have been known to bend iron bars with bare hands.",
+  "unidentified_name": "adamantine ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

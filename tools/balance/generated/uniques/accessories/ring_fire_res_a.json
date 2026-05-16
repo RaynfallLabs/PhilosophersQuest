@@ -1,0 +1,30 @@
+{
+  "id": "ring_fire_res_a",
+  "name": "ring of fire resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    255,
+    100,
+    30
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "fire_resist",
+    "duration": -1
+  },
+  "lore": "A fire opal set in a band of heat-treated iron, this ring was forged in a volcano's mouth by a smith who worked alongside fire elementals. It makes the wearer's skin shed flame like water sheds off oiled leather.",
+  "unidentified_name": "fire opal ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

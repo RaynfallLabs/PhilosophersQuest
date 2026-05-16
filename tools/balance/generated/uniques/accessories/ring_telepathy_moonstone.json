@@ -1,0 +1,30 @@
+{
+  "id": "ring_telepathy_moonstone",
+  "name": "ring of telepathy",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    210,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "Moonstone's eerie inner glow reflects the light of a mind-reading enchantment. Wearers report that nearby creatures' thoughts appear at the edge of their consciousness like half-remembered dreams.",
+  "unidentified_name": "moonstone ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

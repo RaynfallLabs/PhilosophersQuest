@@ -1,0 +1,20 @@
+{
+  "id": "adamantine",
+  "name": "adamantine",
+  "material_class": "magical_metal",
+  "applies_to": ["armor", "shield", "weapon"],
+  "peak_floor": 88,
+  "spread": 12,
+  "peak_weight": 3,
+  "weight_mult": 1.4,
+  "ac_bonus": 3,
+  "max_enchant": 3,
+  "color": [60, 65, 80],
+  "resistances": ["slash", "pierce", "bludgeon"],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": ["heavy", "unbreakable", "corrosion_immune"],
+  "lore_descriptor": "black-iron sheen, refuses to take a scratch",
+  "unidentified_descriptor": "dense black metal",
+  "first_pickup_chronicle": "Adamantine. The metal does not bend, does not chip, does not forgive. I tried to scratch it with my belt-knife and my belt-knife is the one with the new notch. Heavy as sin, though."
+}

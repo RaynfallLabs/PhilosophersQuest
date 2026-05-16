@@ -1,0 +1,30 @@
+{
+  "id": "ring_searching_mossy_stone",
+  "name": "ring of searching",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    100,
+    140,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "The mossy surface of this ring is actually a colony of sensing spores that have bonded with the enchantment, creating an organic early-warning system for hidden architectural features.",
+  "unidentified_name": "mossy stone ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

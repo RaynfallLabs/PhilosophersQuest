@@ -1,0 +1,30 @@
+{
+  "id": "ring_fire_res_b",
+  "name": "ring of fire resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    80,
+    20
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "fire_resist",
+    "duration": -1
+  },
+  "lore": "This iron ring was quenched not in water but in fire itself, permanently altering its magical properties. The wearer's skin becomes dramatically more resistant to flames — a vital enchantment in any dungeon where fire-breathing creatures patrol.",
+  "unidentified_name": "molten iron ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

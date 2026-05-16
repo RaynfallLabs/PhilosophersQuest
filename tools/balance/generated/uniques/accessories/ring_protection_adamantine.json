@@ -1,0 +1,30 @@
+{
+  "id": "ring_protection_adamantine",
+  "name": "ring of protection +3",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    80,
+    60,
+    170
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "AC",
+    "amount": 3
+  },
+  "lore": "A dense band of adamantine inscribed with protection formulae so complex that identifying the ring correctly requires advanced philosophical training. The field it generates is nearly impenetrable.",
+  "unidentified_name": "a dark heavy ring",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

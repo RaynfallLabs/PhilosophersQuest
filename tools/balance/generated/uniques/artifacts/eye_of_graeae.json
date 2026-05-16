@@ -1,0 +1,25 @@
+{
+  "id": "eye_of_graeae",
+  "name": "Eye of the Graeae",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "o",
+  "color": [
+    200,
+    200,
+    220
+  ],
+  "weight_lb": 0.2,
+  "lore": "A single milky eye, cold as sea-stone. The three Grey Sisters — Deino, Enyo, and Pemphredo — shared this one eye between them. Perseus stole it and refused to return it until they revealed the secret of slaying Medusa. It still seems to watch you, even from your pack. The gods rewarded his cunning at a sacred place.",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "special_properties": {
+    "plot_role": "medusa_quest_layer1",
+    "effects": [
+      "drop_on_athena_altar_produces_aegis"
+    ],
+    "spawn_method": "quest_spawn_pre_medusa"
+  }
+}

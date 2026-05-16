@@ -1,0 +1,30 @@
+{
+  "id": "torc_of_boudicca",
+  "name": "Torc of Boudicca",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    200,
+    160,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "STR",
+    "amount": 2
+  },
+  "lore": "The golden torc of Boudicca, queen of the Iceni, who burned Londinium and Camulodunum to the ground rather than submit to Rome. Her fury was greatest when surrounded — the more enemies, the fiercer she fought. The torc channels that defiance. When hemmed in on all sides, the wearer becomes harder to hit, as though Boudicca herself stands beside them.",
+  "unidentified_name": "a twisted gold neck-ring",
+  "min_level": 35,
+  "peak_floor": 40,
+  "spread": 16,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 25,
+    "player_ac_target_at_min_level": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "rope_of_izanagi",
+  "name": "Rope of Izanagi",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    255,
+    255,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "status": "searching",
+    "duration": -1,
+    "stat": "CON",
+    "amount": 2
+  },
+  "lore": "When Izanagi fled the underworld of Yomi, he sealed the entrance with a great boulder and a sacred rope. The rope divides the world of the living from the dead. Its bearer can feel the boundary thinning — every trap, every hidden passage, every secret door reveals itself to one who knows where life ends and death begins.",
+  "unidentified_name": "a shimenawa rope that hums with spiritual energy",
+  "min_level": 52,
+  "peak_floor": 57,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 32,
+    "player_ac_target_at_min_level": -3
+  }
+}

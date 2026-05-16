@@ -1,0 +1,30 @@
+{
+  "id": "amulet_curse_slow",
+  "name": "amulet of slowing",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    90,
+    90,
+    100
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "slowed",
+    "duration": -1
+  },
+  "lore": "A cursed medallion that makes the wearer feel as though every movement is performed underwater — half speed at all times, reactions delayed, and the frustrating sensation that everything around them is moving normally while they struggle through invisible resistance.",
+  "unidentified_name": "leaden-weight medallion",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

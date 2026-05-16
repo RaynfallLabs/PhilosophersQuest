@@ -1,0 +1,32 @@
+{
+  "id": "amulet_of_protection",
+  "name": "Amulet of Protection",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    140,
+    180,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 2,
+    "status": "magic_resist",
+    "duration": -1
+  },
+  "lore": "Blessed by the last high priest of Esagila, the great ziggurat of Babylon, this amulet projects an invisible ward that absorbs and dissipates magical energy before it can take hold. Even the most precisely aimed enchantments fray and fail against its steady resistance.",
+  "unidentified_name": "cool amulet",
+  "min_level": 22,
+  "peak_floor": 27,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 20,
+    "player_ac_target_at_min_level": 4
+  }
+}

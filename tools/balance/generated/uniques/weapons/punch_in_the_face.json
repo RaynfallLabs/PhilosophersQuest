@@ -1,0 +1,36 @@
+{
+  "id": "punch_in_the_face",
+  "name": "Punch in the Face",
+  "category": "weapon",
+  "weapon_class": "fist",
+  "template_basis": "unarmed",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt",
+    "physical"
+  ],
+  "base_damage": 35,
+  "chain_multipliers": [
+    0.4,
+    1.0,
+    2.4
+  ],
+  "max_chain_length": 3,
+  "weight_lb": 0.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 0,
+  "spawn_method": "cheat",
+  "special_properties": {
+    "stun_chance": 1.0,
+    "knockback": true,
+    "dad_fist": true
+  },
+  "lore": "This is Dad's fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(100) \u00d7 1.20 unique-mult = 35. Class: finesse 3-rung (midpoint=1.0\u00d7, peak=2.40\u00d7).",
+  "tier_intended": 100,
+  "weapon_class_chain": "finesse"
+}

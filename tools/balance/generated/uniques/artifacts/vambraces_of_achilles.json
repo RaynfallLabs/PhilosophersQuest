@@ -1,0 +1,33 @@
+{
+  "id": "vambraces_of_achilles",
+  "name": "Vambraces of Achilles",
+  "category": "armor",
+  "template_basis": "plate_vambraces",
+  "is_unique": true,
+  "slot": "arms",
+  "symbol": "[",
+  "color": [200, 195, 150],
+  "ac_bonus": 2,
+  "weight_lb": 2.5,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 14,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "equip_threshold": 4,
+  "quiz_tier": 4,
+  "damage_resistances": {
+    "slash": 0.20,
+    "pierce": 0.20,
+    "fire": 0.10
+  },
+  "can_be_cursed": false,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "hephaestus_forged": true,
+    "scenes_of_peace_engraved": true
+  },
+  "unidentified_name": "bronze arm-guards of divine make",
+  "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women — farmers, shepherds, dancers — as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them.",
+  "curve_note": "Template plate_vambraces base_ac=1, +1 unique-grade AC bonus. F50-60 band: player_ac_target ~ -2 to -4; arms slot contributes 1-2 of the ~12-point AC stack. Weight 2.5 lb vs template 3.0 lb because divine-forge implies lighter-than-mortal articulation."
+}

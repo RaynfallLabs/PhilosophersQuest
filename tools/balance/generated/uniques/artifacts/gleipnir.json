@@ -1,0 +1,24 @@
+{
+  "id": "gleipnir",
+  "name": "Gleipnir",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "&",
+  "color": [
+    220,
+    220,
+    255
+  ],
+  "weight_lb": 0.1,
+  "lore": "A ribbon as thin as silk and as light as nothing. It cannot be broken by any force in the Nine Realms. The dwarves of Svartalfheim forged it from six impossible things, and it held the Wolf of Ragnarok until the end of days. It whispers of binding.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "fenrir_quest_layer1_assembled",
+    "effects": [
+      "bind_fenrir_with_stat_tax_during_fight"
+    ],
+    "spawn_method": "forge_assembled"
+  }
+}

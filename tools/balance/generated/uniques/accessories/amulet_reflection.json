@@ -1,0 +1,30 @@
+{
+  "id": "amulet_reflection",
+  "name": "amulet of reflection",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    220,
+    235,
+    255
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "status": "reflecting",
+    "duration": -1
+  },
+  "lore": "The face of this medallion is a perfect silver mirror. When hostile magic contacts it, the amulet reflects a portion of the effect back at its source. Powerful spellcasters who encounter this amulet for the first time sometimes cast their second spell into their own reflection.",
+  "unidentified_name": "a mirror-faced medallion",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

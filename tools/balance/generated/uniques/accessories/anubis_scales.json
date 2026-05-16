@@ -1,0 +1,24 @@
+{
+  "id": "anubis_scales",
+  "name": "Anubis's Scales",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    180,
+    100,
+    40
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 1
+  },
+  "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead.",
+  "unidentified_name": "balanced golden scales",
+  "min_level": 0,
+  "plot_locked": true
+}

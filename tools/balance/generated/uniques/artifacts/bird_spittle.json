@@ -1,0 +1,26 @@
+{
+  "id": "bird_spittle",
+  "name": "Spittle of a Bird",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "~",
+  "color": [
+    220,
+    220,
+    180
+  ],
+  "weight_lb": 0.2,
+  "lore": "A single drop of moisture from a creature with no salivary glands. It glistens on its own, independent of any light source.",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "fenrir_quest_layer1_gleipnir_component",
+    "effects": [
+      "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+    ],
+    "spawn_method": "quest_spawn_fenrir_components"
+  }
+}

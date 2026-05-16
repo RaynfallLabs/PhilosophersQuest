@@ -1,0 +1,40 @@
+{
+  "id": "carnwennan",
+  "name": "Carnwennan",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "magic"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.18,
+    0.35,
+    0.55,
+    0.8,
+    1.2,
+    1.75,
+    2.5,
+    3.3
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 1.0,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "crit_multiplier": 2.8,
+    "on_equip_status": "invisible"
+  },
+  "lore": "Arthur's dagger that could shroud its wielder in shadow. Arthur used it to kill the Very Black Witch in the Valley of Grief after Kei and Bedivere had both tried and failed.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(50) \u00d7 1.40 unique-mult = 11. Class: finesse 8-rung (midpoint=1.0\u00d7, peak=3.30\u00d7).",
+  "weapon_class_chain": "finesse"
+}

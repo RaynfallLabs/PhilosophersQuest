@@ -1,0 +1,40 @@
+{
+  "id": "ridill",
+  "name": "Ridill",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "magic"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.18,
+    0.35,
+    0.55,
+    0.8,
+    1.2,
+    1.75,
+    2.5,
+    3.3
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 1.0,
+  "min_level": 55,
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "crit_multiplier": 2.4,
+    "potential_unrealized": true
+  },
+  "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade \u2014 a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(55) \u00d7 1.40 unique-mult = 13. Class: finesse 8-rung (midpoint=1.0\u00d7, peak=3.30\u00d7).",
+  "weapon_class_chain": "finesse"
+}

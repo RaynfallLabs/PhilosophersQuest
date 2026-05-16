@@ -1,0 +1,30 @@
+{
+  "id": "ring_displace",
+  "name": "ring of displacement",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    80,
+    80,
+    100
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "displacement",
+    "duration": -1
+  },
+  "lore": "A displacement effect makes the wearer appear to be slightly offset from their actual position — enemies targeting the image find their attacks passing through empty air while the real body remains untouched.",
+  "unidentified_name": "blurred obsidian ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

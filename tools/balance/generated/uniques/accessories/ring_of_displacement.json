@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_displacement",
+  "name": "Ring of Displacement",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    210,
+    210,
+    220
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "DEX",
+    "amount": 2,
+    "status": "displacement",
+    "duration": -1
+  },
+  "lore": "The gem in this ring is a shard of a displacer beast's crystallized nervous tissue — the organ responsible for the beast's light-bending ability. It projects a constant false image approximately one step from the wearer's true position, causing every attack to land on air.",
+  "unidentified_name": "blurring ring",
+  "min_level": 26,
+  "peak_floor": 31,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 22,
+    "player_ac_target_at_min_level": 3
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_constitution_coral",
+  "name": "ring of constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    100,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "CON",
+    "amount": 2
+  },
+  "lore": "Coral grows relentlessly despite the crushing pressures of deep water — this ring channels that stubborn vitality, significantly bolstering the wearer's endurance and resistance to harm.",
+  "unidentified_name": "coral ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

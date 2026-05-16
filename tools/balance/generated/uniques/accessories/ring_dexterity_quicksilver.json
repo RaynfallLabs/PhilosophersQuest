@@ -1,0 +1,30 @@
+{
+  "id": "ring_dexterity_quicksilver",
+  "name": "ring of dexterity",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    220,
+    220
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "DEX",
+    "amount": 1
+  },
+  "lore": "Mercury's liquid swiftness is captured in this ring's enchantment, translating the metal's effortless flow into enhanced reflexes and precision of movement for the wearer.",
+  "unidentified_name": "quicksilver ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "amulet_searching_bronze",
+  "name": "amulet of searching",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    160,
+    120,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "A bronze pendant engraved with a magnifying lens motif, this amulet continually scans the environment for concealed architectural features — its wearer detects hidden doors, traps, and passages with unusual reliability.",
+  "unidentified_name": "bronze chain amulet",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

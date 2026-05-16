@@ -1,0 +1,30 @@
+{
+  "id": "amulet_curse_teleport",
+  "name": "amulet of teleportitis",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    100,
+    60,
+    100
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "teleportitis",
+    "duration": -1
+  },
+  "lore": "A ruined teleportation amulet whose control rune has been destroyed, leaving only random teleportation at unpredictable intervals. The wearer finds themselves elsewhere without warning — an effect that is occasionally life-saving and frequently catastrophic.",
+  "unidentified_name": "chaotic silver pendant",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

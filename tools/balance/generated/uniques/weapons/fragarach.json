@@ -1,0 +1,41 @@
+{
+  "id": "fragarach",
+  "name": "Fragarach",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "magic",
+    "holy"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 2.5,
+  "min_level": 55,
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "stun_chance": 0.25,
+    "crit_multiplier": 1.9,
+    "ignore_armor": true
+  },
+  "lore": "The Answerer. No armour could stop it; no man could move once it was held to his throat. Manannan mac Lir forged it; Lugh carried it to end Fomorian tyranny.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(55) \u00d7 1.40 unique-mult = 13. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

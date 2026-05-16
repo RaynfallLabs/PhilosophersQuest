@@ -1,0 +1,32 @@
+{
+  "id": "tablet_of_gilgamesh",
+  "name": "Tablet of Gilgamesh",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    160,
+    140,
+    100
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "INT",
+    "amount": 1,
+    "stat2": "CON",
+    "amount2": 1
+  },
+  "lore": "The Epic of Gilgamesh is the oldest known work of literature — a Sumerian king's quest for immortality, written on clay tablets four thousand years ago. Gilgamesh was two-thirds god and one-third man, and his story teaches that true immortality lies not in living forever, but in the deeds that outlive you. This ring carries a fragment of that first epic — knowledge and endurance in equal measure. +1 INT, +1 CON.",
+  "unidentified_name": "a clay ring inscribed with cuneiform",
+  "min_level": 6,
+  "peak_floor": 11,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 14,
+    "player_ac_target_at_min_level": 8
+  }
+}

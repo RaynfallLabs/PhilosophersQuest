@@ -1,0 +1,38 @@
+{
+  "id": "boomstick",
+  "name": "Boomstick",
+  "category": "weapon",
+  "weapon_class": "bow",
+  "template_basis": "crossbow",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "physical",
+    "pierce"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.85,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 4,
+  "weight_lb": 5.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 2,
+  "spawn_method": "easter_egg",
+  "special_properties": {
+    "reach": 5,
+    "stun_chance": 0.35,
+    "requires_ammo": "shell",
+    "crit_multiplier": 2.5
+  },
+  "lore": "This is my BOOMSTICK! It's a twelve-gauge double-barreled Remington. S-Mart's top of the line. That's right, this sweet baby was made in Grand Rapids, Michigan. Shop smart. Shop S-Mart.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(35) \u00d7 1.20 unique-mult = 6. Class: heavy 4-rung (midpoint=1.0\u00d7, peak=1.75\u00d7).",
+  "tier_intended": 35,
+  "weapon_class_chain": "heavy"
+}

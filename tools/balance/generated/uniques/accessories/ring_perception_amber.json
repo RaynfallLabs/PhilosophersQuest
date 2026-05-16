@@ -1,0 +1,30 @@
+{
+  "id": "ring_perception_amber",
+  "name": "ring of perception",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    150,
+    40
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "PER",
+    "amount": 2
+  },
+  "lore": "Ancient amber sometimes contains preserved insects whose compound eyes saw in directions simultaneously — this ring channels that multi-directional awareness, meaningfully increasing the wearer's field of perception.",
+  "unidentified_name": "amber ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

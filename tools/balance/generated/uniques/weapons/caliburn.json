@@ -1,0 +1,39 @@
+{
+  "id": "caliburn",
+  "name": "Caliburn",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.1,
+    "crit_multiplier": 1.8,
+    "growing_power": true,
+    "kills_to_grow": 10
+  },
+  "lore": "Some scholars distinguish Caliburn \u2014 the sword in the stone \u2014 from Excalibur, the sword from the lake. The stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(50) \u00d7 1.40 unique-mult = 11. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

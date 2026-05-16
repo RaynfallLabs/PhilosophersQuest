@@ -1,0 +1,24 @@
+{
+  "id": "seal_of_silence",
+  "name": "Seal of Silence",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "*",
+  "color": [
+    180,
+    180,
+    200
+  ],
+  "weight_lb": 0.1,
+  "lore": "A sigil of pale silver that absorbs all sound around it. In its presence, even your breathing is muffled. The last and most terrible of the seven seals that hold the Pit closed.",
+  "min_level": 0,
+  "plot_locked": true,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "seal_demon_drop",
+    "effects": [
+      "shatter_on_pickup_with_chronicle"
+    ],
+    "spawn_method": "seal_demon_drop"
+  }
+}

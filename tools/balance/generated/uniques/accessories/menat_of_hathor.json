@@ -1,0 +1,30 @@
+{
+  "id": "menat_of_hathor",
+  "name": "Menat of Hathor",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    255,
+    180,
+    100
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.3,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 4
+  },
+  "lore": "Hathor's sacred necklace, shaken as a rattle in her rituals. Temple reliefs show pharaohs receiving the menat from the goddess as a guarantee of health, fertility, and joy. It was both jewellery and musical instrument. The sound of carnelian beads against each other was, in Hathor's theology, the sound of everything being well.",
+  "unidentified_name": "a beaded collar of carnelian and faience",
+  "min_level": 50,
+  "peak_floor": 55,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 31,
+    "player_ac_target_at_min_level": -2
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_regen_living_wood",
+  "name": "ring of regeneration",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    100,
+    140,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "This ring was carved from wood taken from a living tree still in the ground at the time of cutting, preserving the living essence of the plant matter. That essence drives continuous cellular regeneration in the wearer.",
+  "unidentified_name": "living wood ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

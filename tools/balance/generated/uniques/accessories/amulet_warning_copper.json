@@ -1,0 +1,30 @@
+{
+  "id": "amulet_warning_copper",
+  "name": "amulet of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    180,
+    120,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "An oxidized copper pendant hanging from a matching chain, enchanted to vibrate at the frequency of approaching hostility. The verdigris darkens further as threats draw closer — a colorful if morbid safety gauge.",
+  "unidentified_name": "copper chain amulet",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "amulet_of_the_titan",
+  "name": "Amulet of the Titan",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    220,
+    160,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "STR",
+    "amount": 3
+  },
+  "lore": "Cast from ore pulled from the bones of fallen Titans by Hephaestus as a jest, this amulet transfers a sliver of Titanic strength to the wearer. Those with the constitution to bear it find themselves capable of feats of impossible might.",
+  "unidentified_name": "heavy amulet",
+  "min_level": 22,
+  "peak_floor": 27,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 20,
+    "player_ac_target_at_min_level": 4
+  }
+}

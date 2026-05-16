@@ -1,0 +1,30 @@
+{
+  "id": "ring_of_scheherazade",
+  "name": "Ring of Scheherazade",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    160,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "INT",
+    "amount": 4
+  },
+  "lore": "Scheherazade told 1,001 stories to postpone her execution. She did not use magic; she used structure — each story nested inside another, every night's tale ending at a moment too interesting to stop. She survived by being more valuable alive than dead. This is the original argument for intellectual labour. She was also, by the end, the queen.",
+  "unidentified_name": "a ring set with a pale blue stone that swirls",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 35,
+    "player_ac_target_at_min_level": -5
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "leather_scrap",
+  "name": "leather scrap",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": ",",
+  "color": [
+    120,
+    90,
+    60
+  ],
+  "weight_lb": 0.3,
+  "lore": "Useless scrap left over from leather-working. Too small for armor, too stiff for bandages. You can't imagine why anyone would keep this.",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "fenrir_quest_layer2_vidars_sandal_component",
+    "effects": [
+      "10_assembled_at_vidars_altar_become_sandal"
+    ],
+    "spawn_method": "quest_spawn_10_scattered_floors",
+    "count_required": 10
+  }
+}

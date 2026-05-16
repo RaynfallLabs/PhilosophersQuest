@@ -1,0 +1,40 @@
+{
+  "id": "venomfang",
+  "name": "Venomfang",
+  "category": "weapon",
+  "weapon_class": "mace",
+  "template_basis": "morningstar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt",
+    "pierce"
+  ],
+  "base_damage": 22,
+  "chain_multipliers": [
+    0.35,
+    0.55,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.8,
+    2.2
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 4.0,
+  "min_level": 82,
+  "peak_floor": 92,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "poison_chance": 0.6,
+    "corrupt_bleed": true,
+    "crit_multiplier": 2.0
+  },
+  "lore": "A master poisoner's commission. Hollow spikes weep a thin dark ichor when hungry. The bleed it inflicts does not merely cut \u2014 it corrupts.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(82) \u00d7 1.20 unique-mult = 22. Class: normal 8-rung (midpoint=1.0\u00d7, peak=2.20\u00d7).",
+  "weapon_class_chain": "normal"
+}

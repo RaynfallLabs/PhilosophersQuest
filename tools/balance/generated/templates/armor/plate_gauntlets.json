@@ -1,0 +1,12 @@
+{
+  "id": "plate_gauntlets",
+  "name": "plate gauntlets",
+  "category": "armor",
+  "armor_class_tier": "heavy",
+  "slot": "hands",
+  "base_ac_value": 1,
+  "base_weight_lb": 2.0,
+  "_design_note": "F50-100 heavy hand slot. Articulated fingers + knuckle plate. Pairs with plate / full plate body.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
+  "lore_template": "{material_name} plate gauntlets with fully articulated finger protection and reinforced knuckle guards that distribute blunt impact across the entire hand structure. Blacksmiths who work near forges have been known to covet them simply as heat protection — though their martial applications are considerably more dramatic."
+}

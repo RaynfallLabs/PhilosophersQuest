@@ -1,0 +1,30 @@
+{
+  "id": "idunn_apple_charm",
+  "name": "Idunn's Apple",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    180,
+    255,
+    120
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "CON",
+    "amount": 5
+  },
+  "lore": "Idunn kept the golden apples that gave the Aesir their eternal youth. When Loki allowed the giant Thjazi to kidnap her, the gods began to age. They forced Loki to retrieve her; he turned into a falcon, turned her into a nut, and flew back. Thjazi pursued. The gods lit fires at Asgard's walls and Thjazi burned. Idunn is the one person in Norse mythology who causes a crisis by simply not being present.",
+  "unidentified_name": "a carved jade apple on a silver chain",
+  "min_level": 70,
+  "peak_floor": 75,
+  "spread": 27,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 38,
+    "player_ac_target_at_min_level": -7
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "mjolnir",
+  "name": "Mjolnir",
+  "category": "weapon",
+  "weapon_class": "warhammer",
+  "template_basis": "warhammer",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt",
+    "lightning",
+    "holy"
+  ],
+  "base_damage": 19,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 6.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "stun_chance": 0.4,
+    "knockback": true,
+    "crit_multiplier": 2.0,
+    "thrown_returns": true,
+    "lightning_arc_chance": 0.2
+  },
+  "lore": "The handle came out short due to Loki's sabotage, but Odin declared it the greatest treasure ever made. Thor wore iron gauntlets to wield it. At Ragnarok he will kill the Midgard Serpent, take nine steps, and fall.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.60 unique-mult = 19. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "vidars_sandal",
+  "name": "Vidar's Sandal",
+  "category": "armor",
+  "is_unique": true,
+  "slot": "feet",
+  "template_basis": "leather_boots",
+  "symbol": "[",
+  "color": [160, 130, 80],
+  "base_ac_value": 1,
+  "weight_lb": 2.0,
+  "min_level": 79,
+  "peak_floor": 79,
+  "spread": 1,
+  "peak_weight": 0.0,
+  "plot_locked": true,
+  "can_be_cursed": false,
+  "max_enchant": 0,
+  "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
+  "special_properties": {
+    "identified": true,
+    "plot_role": "fenrir_quest_layer2_instant_kill",
+    "vidar_instant_kill_fenrir": true,
+    "effects": [
+      "first_chain_ge_1_hit_on_fenrir_sets_hp_to_0"
+    ],
+    "spawn_method": "forge_assembled",
+    "assembly_recipe": "drop_10_leather_scraps_on_vidars_altar_L79",
+    "components_required": 10,
+    "component_id": "leather_scrap",
+    "altar_floor": 79
+  },
+  "_design_note": "MEGA-SECRET quest reward. AC is modest (1 + leather material bonus) — the value is the instant-kill on Fenrir, not the defensive line. peak_weight 0.0 ensures it never natural-spawns; the altar assembly path is the only way in. Code references: src/game_combat.py:1292-1311 (instant-kill trigger), src/game_divine.py:499-521 (altar assembly), src/dungeon.py:2145-2154 (altar carve). See tools/balance/systems/bosses_and_quests.md §Fenrir Quest Layer 2."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "amulet_shock_res",
+  "name": "amulet of shock resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    240,
+    200,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "shock_resist",
+    "duration": -1
+  },
+  "lore": "Made by a guild of storm-riders who needed protection during electrified weather events, this amulet wraps the wearer in a grounding field that routes electrical energy harmlessly into the surrounding stonework.",
+  "unidentified_name": "crackling charm",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

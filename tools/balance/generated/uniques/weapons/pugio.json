@@ -1,0 +1,37 @@
+{
+  "id": "pugio",
+  "name": "pugio",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "slash"
+  ],
+  "base_damage": 1,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 1.0,
+  "min_level": 2,
+  "peak_floor": 12,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 2,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "backstab_bonus": 1.3
+  },
+  "lore": "Personal sidearm of the Roman legions. Julius Caesar was allegedly stabbed with a pugio \u2014 or many of them.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(2) \u00d7 1.20 unique-mult = 1. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "weapon_class_chain": "finesse"
+}

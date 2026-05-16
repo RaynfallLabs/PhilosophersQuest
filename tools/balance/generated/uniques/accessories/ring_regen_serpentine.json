@@ -1,0 +1,30 @@
+{
+  "id": "ring_regen_serpentine",
+  "name": "ring of regeneration",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    80,
+    160,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "Named for its snake-skin patterning, serpentine was associated with renewal and rebirth across many ancient cultures — this ring channels that symbolic power into genuine physical regeneration.",
+  "unidentified_name": "serpentine ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

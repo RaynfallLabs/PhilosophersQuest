@@ -1,0 +1,30 @@
+{
+  "id": "ring_shock_res_b",
+  "name": "ring of shock resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    180,
+    40
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "shock_resist",
+    "duration": -1
+  },
+  "lore": "This brass ring occasionally emits small spontaneous sparks — a sign that it is actively absorbing and discharging ambient electrical energy harmlessly, protecting the wearer from lightning and shock attacks.",
+  "unidentified_name": "arc-spark brass ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

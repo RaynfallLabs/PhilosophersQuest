@@ -1,0 +1,12 @@
+{
+  "id": "great_helm",
+  "name": "great helm",
+  "category": "armor",
+  "armor_class_tier": "heavy",
+  "slot": "head",
+  "base_ac_value": 2,
+  "base_weight_lb": 5.0,
+  "_design_note": "F40-80 heavy head slot. Full-face enclosure trades vision for pierce resist. Heavier than plate_helm but no extra base AC — the tradeoff is the resist line, not the number.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
+  "lore_template": "A full-face {material_name} great helm that encloses the entire head in a shell of tempered metal, with only a narrow vision slit at the eye line. Pierce attacks find no purchase on its seamless exterior; the trade-off is severely restricted peripheral vision and hearing."
+}

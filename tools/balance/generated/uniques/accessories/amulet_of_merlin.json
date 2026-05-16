@@ -1,0 +1,30 @@
+{
+  "id": "amulet_of_merlin",
+  "name": "Amulet of Merlin",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    100,
+    100,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "INT",
+    "amount": 5
+  },
+  "lore": "Merlin was the son of an incubus and a Welsh princess, a fact that concerned his contemporaries far less than it perhaps should have. He advised three kings, built Stonehenge (in some accounts), created the Round Table, engineered the conception of Arthur, and was eventually imprisoned in a glass tower or a tree or a cave by his student Nimue. The nature of the prison varies. The imprisonment does not.",
+  "unidentified_name": "a blue pendant with a moving star inside the stone",
+  "min_level": 70,
+  "peak_floor": 75,
+  "spread": 27,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 38,
+    "player_ac_target_at_min_level": -7
+  }
+}

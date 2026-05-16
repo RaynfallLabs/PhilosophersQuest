@@ -1,0 +1,40 @@
+{
+  "id": "witcher_silver_blade",
+  "name": "Witcher's Silver Blade",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.4,
+    0.7,
+    1.0,
+    1.3,
+    1.65,
+    2.0
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 2.5,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 3,
+  "spawn_method": "story_drop",
+  "special_properties": {
+    "vs_monster_bonus": 1.5,
+    "bleed_chance": 0.1,
+    "crit_multiplier": 1.6,
+    "rune_inscribed": true
+  },
+  "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night. The runes along its edge hum faintly in the presence of dark magic.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(22) \u00d7 1.40 unique-mult = 6. Class: normal 6-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "tier_intended": 22,
+  "weapon_class_chain": "normal"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "francisca",
+  "name": "francisca",
+  "category": "weapon",
+  "weapon_class": "axe",
+  "template_basis": "battleaxe",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 1,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 4.0,
+  "min_level": 3,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 2,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "knockback": true,
+    "throwable": true
+  },
+  "lore": "Frankish throwing axe (5th-8th c.). Caromed unpredictably along the ground to knock down shields before the charge.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(3) \u00d7 1.20 unique-mult = 1. Class: normal 5-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "weapon_class_chain": "normal"
+}

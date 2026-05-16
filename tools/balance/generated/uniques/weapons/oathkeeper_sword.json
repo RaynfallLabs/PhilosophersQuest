@@ -1,0 +1,38 @@
+{
+  "id": "oathkeeper_sword",
+  "name": "Oathkeeper",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.4,
+    0.7,
+    1.0,
+    1.3,
+    1.65,
+    2.0
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 2.5,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 3,
+  "spawn_method": "story_drop",
+  "special_properties": {
+    "bleed_chance": 0.15,
+    "crit_multiplier": 1.7,
+    "kept_with_love": true
+  },
+  "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp \u2014 someone maintained it with love.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(25) \u00d7 1.40 unique-mult = 6. Class: normal 6-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "tier_intended": 25,
+  "weapon_class_chain": "normal"
+}

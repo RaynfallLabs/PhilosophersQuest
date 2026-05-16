@@ -1,0 +1,32 @@
+{
+  "id": "seal_of_agrippa",
+  "name": "Seal of Agrippa",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    100,
+    100,
+    150
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "INT",
+    "amount": 3,
+    "status": "clairvoyant",
+    "duration": -1
+  },
+  "lore": "Heinrich Cornelius Agrippa published Three Books of Occult Philosophy in 1531, systematizing all of Renaissance magic into a single framework: the elemental world, the celestial world, and the intellectual world. He was accused of heresy, employed by kings, and died in debt. His books were the most widely read magical texts of the 16th century. He himself claimed at the end that they were worthless. He was probably not being entirely honest.",
+  "unidentified_name": "a wax seal pendant with planetary symbols",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 35,
+    "player_ac_target_at_min_level": -5
+  }
+}

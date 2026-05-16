@@ -1,0 +1,32 @@
+{
+  "id": "necklace_of_harmonia",
+  "name": "Necklace of Harmonia",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    200,
+    150,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "WIS",
+    "amount": 4,
+    "second_stat": "CON",
+    "second_amount": -2
+  },
+  "lore": "Hephaestus forged it as a wedding gift for Harmonia when she married Cadmus — and cursed it, because Harmonia's mother was Aphrodite, who had cuckolded him with Ares. Every woman who wore it suffered catastrophe: Jocasta, Eriphyle (who betrayed her husband for it), Jocasta again, Callirhoe. The necklace destroyed houses. It is still beautiful.",
+  "unidentified_name": "a golden necklace of impossible craftsmanship",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

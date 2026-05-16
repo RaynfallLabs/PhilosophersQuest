@@ -1,0 +1,32 @@
+{
+  "id": "amulet_of_pythagoras",
+  "name": "Tetractys Amulet",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    160,
+    200,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "INT",
+    "amount": 3,
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "Pythagoras swore his oaths by the Tetractys — the triangular figure of ten points arranged 1-2-3-4 that represented the musical ratios and the structure of the cosmos. His brotherhood at Croton was vegetarian, banned beans, and believed the soul transmigrated between lives. They were also the first people to prove that the square root of 2 is irrational, a discovery so disturbing that Hippasus, who made it, was allegedly drowned at sea.",
+  "unidentified_name": "a bronze triangle pendant with ten points",
+  "min_level": 50,
+  "peak_floor": 55,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 31,
+    "player_ac_target_at_min_level": -2
+  }
+}

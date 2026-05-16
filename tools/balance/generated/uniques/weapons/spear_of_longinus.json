@@ -1,0 +1,42 @@
+{
+  "id": "spear_of_longinus",
+  "name": "Spear of Longinus",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "spear",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "holy"
+  ],
+  "base_damage": 22,
+  "chain_multipliers": [
+    0.6,
+    0.75,
+    0.85,
+    1.0,
+    1.15,
+    1.35,
+    1.55,
+    1.9
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 4.0,
+  "min_level": 70,
+  "peak_floor": 80,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "bleed_chance": 0.35,
+    "crit_multiplier": 2.0,
+    "vs_demon_bonus": 1.5,
+    "vs_holy_target_special": true
+  },
+  "lore": "Longinus pierced Christ's side at the crucifixion. Blood and water ran from the wound; Longinus was healed of failing eyesight. Charlemagne carried it in 47 battles. He died the one day he set it down.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(70) \u00d7 1.60 unique-mult = 22. Class: heavy 8-rung (midpoint=1.0\u00d7, peak=1.90\u00d7).",
+  "weapon_class_chain": "heavy"
+}

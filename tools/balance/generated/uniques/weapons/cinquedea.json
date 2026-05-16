@@ -1,0 +1,37 @@
+{
+  "id": "cinquedea",
+  "name": "cinquedea",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 5,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 1.5,
+  "min_level": 22,
+  "peak_floor": 32,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.4
+  },
+  "lore": "'Five fingers' wide at the ricasso. Renaissance Italian status weapon \u2014 wealthy 15th-century Ferrarans wore these as statements of intent.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(22) \u00d7 1.20 unique-mult = 5. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "weapon_class_chain": "finesse"
+}

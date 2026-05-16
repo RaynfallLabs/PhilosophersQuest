@@ -1,0 +1,30 @@
+{
+  "id": "amulet_constitution_ruby_pendant",
+  "name": "amulet of constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    220,
+    40,
+    40
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "CON",
+    "amount": 2
+  },
+  "lore": "A blood-red ruby pendant that resonates with the body's vital force, significantly enhancing the wearer's constitution — their hit points increase, their stamina improves, and minor poisons affect them less severely.",
+  "unidentified_name": "ruby pendant",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_regen_verdant_jade",
+  "name": "ring of regeneration",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    50,
+    150,
+    70
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "Deep forest-green jade carries the slow patient energy of growing things, and this ring channels that vitality into the wearer's body — wounds closing with the steady inevitability of vines reclaiming old stone.",
+  "unidentified_name": "verdant jade ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "spear_of_lugh",
+  "name": "Spear of Lugh",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "spear",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce",
+    "fire",
+    "magic"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 5.0,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "ignore_shield": true,
+    "stun_chance": 0.1,
+    "bleed_chance": 0.4,
+    "crit_multiplier": 2.0,
+    "burn_chance": 0.3,
+    "bloodthirsty": true
+  },
+  "lore": "One of the Four Treasures of the Tuatha De Danann. The Spear of Lugh was so bloodthirsty it had to be kept submerged in a cauldron of poison. Lugh used it to slay Balor of the Evil Eye at the Second Battle of Mag Tuired.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(50) \u00d7 1.60 unique-mult = 13. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

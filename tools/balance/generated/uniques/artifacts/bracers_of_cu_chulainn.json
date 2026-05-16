@@ -1,0 +1,33 @@
+{
+  "id": "bracers_of_cu_chulainn",
+  "name": "Bracers of Cu Chulainn",
+  "category": "armor",
+  "template_basis": "leather_bracers",
+  "is_unique": true,
+  "slot": "arms",
+  "symbol": "[",
+  "color": [140, 80, 40],
+  "ac_bonus": 1,
+  "weight_lb": 2.0,
+  "min_level": 18,
+  "peak_floor": 28,
+  "spread": 10,
+  "peak_weight": 0.5,
+  "max_enchant": 2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "damage_resistances": {
+    "slash": 0.10
+  },
+  "can_be_cursed": false,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "warp_spasm_echo": true,
+    "bleed_on_attack_chance": 0.15,
+    "pain_immunity": true,
+    "damage_boost_when_below_half_hp": 1.20
+  },
+  "unidentified_name": "battle-scarred leather bracers",
+  "lore": "Cu Chulainn, the Hound of Ulster, was Ireland's greatest warrior — a man who entered such battle frenzy that his body twisted and contorted, one eye bulging, his hair standing like spikes of flame. These bracers are stained with the blood of a hundred battles. They carry the warp-spasm's echo: the wearer strikes harder, bleeds enemies with every blow, and feels no pain from cuts.",
+  "curve_note": "Template leather_bracers base_ac=1 + 0 (light leather, no AC stack from material). Power lives in the warp-spasm mechanics, not raw AC. F18-28 band sits between Asterion preparation (F20) and the mid-floor identity bands. The legacy 22 min_level was right; soft-curve peak at 28."
+}

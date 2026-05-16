@@ -1,0 +1,30 @@
+{
+  "id": "ring_wisdom_ivory",
+  "name": "ring of wisdom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    240,
+    235,
+    210
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "Carved from ancient ivory of uncertain provenance, this ring carries a gravity of accumulated experience that transfers to its wearer as enhanced discernment and measured judgment.",
+  "unidentified_name": "ivory ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

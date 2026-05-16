@@ -1,0 +1,43 @@
+{
+  "id": "rod_of_moses",
+  "name": "Rod of Moses",
+  "category": "weapon",
+  "weapon_class": "staff",
+  "template_basis": "quarterstaff",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "blunt",
+    "holy",
+    "magic"
+  ],
+  "base_damage": 16,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 4.0,
+  "min_level": 60,
+  "peak_floor": 70,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 3,
+    "stun_chance": 0.15,
+    "knockback": true,
+    "crit_multiplier": 1.6,
+    "transforms_to_serpent": true,
+    "poison_chance": 0.3
+  },
+  "lore": "The rod became a serpent in Pharaoh's court; parted the Red Sea; struck the rock at Horeb. Jewish tradition gives it a provenance from Adam through Noah through Abraham.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(60) \u00d7 1.60 unique-mult = 16. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

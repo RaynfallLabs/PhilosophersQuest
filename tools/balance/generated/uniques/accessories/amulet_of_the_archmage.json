@@ -1,0 +1,32 @@
+{
+  "id": "amulet_of_the_archmage",
+  "name": "Amulet of the Archmage",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    200,
+    140,
+    255
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "INT",
+    "amount": 3,
+    "status": "fire_resist",
+    "duration": -1
+  },
+  "lore": "The ceremonial amulet of the Dean of the Arcane Faculty — a position first held by Thales, who wore it when demonstrating that fire could not harm a mind that understood its nature. Since then it has passed through the hands of thirty-seven archmages, each adding a layer of heat-resistant enchantment.",
+  "unidentified_name": "hot amulet",
+  "min_level": 28,
+  "peak_floor": 33,
+  "spread": 14,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 22,
+    "player_ac_target_at_min_level": 3
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "amulet_of_insight",
+  "name": "Amulet of Insight",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    255,
+    240,
+    140
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "WIS",
+    "amount": 3
+  },
+  "lore": "Handed down through thirty-six generations of oracle-priests at Delphi, this focus crystal was used to receive the god's voice without distortion. The priests believed wisdom was not intelligence but receptivity — and this amulet sharpens that receptivity to inhuman degree.",
+  "unidentified_name": "warm amulet",
+  "min_level": 20,
+  "peak_floor": 25,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 19,
+    "player_ac_target_at_min_level": 5
+  }
+}

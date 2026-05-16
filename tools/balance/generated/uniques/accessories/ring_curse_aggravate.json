@@ -1,0 +1,30 @@
+{
+  "id": "ring_curse_aggravate",
+  "name": "ring of aggravation",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    180,
+    140,
+    40
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "aggravated",
+    "duration": -1
+  },
+  "lore": "This cursed ring emits a low-frequency magical irritant that drives nearby creatures to aggression toward the wearer — even docile monsters become hostile, and hostile ones become frenzied. Removing it requires magical assistance.",
+  "unidentified_name": "aggravating brass ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

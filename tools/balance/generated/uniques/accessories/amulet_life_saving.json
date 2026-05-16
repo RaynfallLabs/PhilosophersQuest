@@ -1,0 +1,30 @@
+{
+  "id": "amulet_life_saving",
+  "name": "amulet of life saving",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    255,
+    230,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "status": "life_save",
+    "duration": -1
+  },
+  "lore": "A single-use death ward forged from the solidified moment of a healer's last breath. The amulet cannot be refilled — when it triggers, it is spent. But the one time it matters, no price seems too high. Necromancers have offered fortunes to study how this effect works; none have succeeded.",
+  "unidentified_name": "a warm golden medallion",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

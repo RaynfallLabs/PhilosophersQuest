@@ -1,0 +1,32 @@
+{
+  "id": "crown_of_croesus",
+  "name": "Diadem of Croesus",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    220,
+    200,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "INT",
+    "amount": 3,
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "Croesus of Lydia was the richest man in the world and knew it. He tested the Delphic Oracle with an absurd question to verify its power before asking whether he should attack Persia. It answered correctly. He attacked Persia. The Oracle had also answered correctly about that. Croesus's error was not the Oracle. It was the interpretation.",
+  "unidentified_name": "a small golden diadem fragment on a chain",
+  "min_level": 50,
+  "peak_floor": 55,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 31,
+    "player_ac_target_at_min_level": -2
+  }
+}

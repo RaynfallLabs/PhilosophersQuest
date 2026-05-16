@@ -1,0 +1,45 @@
+{
+  "id": "wendigo_fang",
+  "name": "Wendigo's Fang",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "cold",
+    "pierce"
+  ],
+  "base_damage": 17,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 1.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 4,
+  "spawn_method": "unique_drop",
+  "special_properties": {
+    "effects": {
+      "status": "slowed",
+      "effect_chance": 0.35,
+      "effect_duration": 4
+    },
+    "can_be_cursed": false,
+    "crit_multiplier": 2.0,
+    "warmth_drain": true
+  },
+  "lore": "A fang torn from the Wendigo's maw. It leaches warmth and stamina from enemies on contact. The wound never feels warm again.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.40 unique-mult = 17. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "tier_intended": 65,
+  "weapon_class_chain": "finesse"
+}

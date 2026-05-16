@@ -1,0 +1,32 @@
+{
+  "id": "brisingamen",
+  "name": "Brisingamen",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    255,
+    100,
+    150
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "WIS",
+    "amount": 3,
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "Freya's necklace, forged by four dwarves over four days. She paid each one a night of her company. Loki stole it in the form of a fly; Heimdall fought him in seal-form to recover it. Freya wore it in battle and her tears became gold. The Brisingamen is the most written-about piece of Norse jewellery. The dwarves received no further acknowledgment in the sagas.",
+  "unidentified_name": "a necklace of four interlocked golden torcs",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

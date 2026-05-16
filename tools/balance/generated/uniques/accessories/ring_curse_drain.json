@@ -1,0 +1,30 @@
+{
+  "id": "ring_curse_drain",
+  "name": "ring of life drain",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    80,
+    40,
+    120
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "draining",
+    "duration": -1
+  },
+  "lore": "This ring appears valuable and may even feel empowering when first worn. The draining effect is subtle at first — a slight weariness after long use. By the time the wearer notices the full extent of the damage, they have usually worn it for some time.",
+  "unidentified_name": "a cold purple ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

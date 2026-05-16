@@ -1,0 +1,44 @@
+{
+  "id": "vel_of_murugan",
+  "name": "Vel of Murugan",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "spear",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "fire",
+    "holy"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.5,
+  "min_level": 45,
+  "peak_floor": 55,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "crit_multiplier": 1.7,
+    "effects": {
+      "status": "burning",
+      "effect_chance": 0.3,
+      "effect_duration": 5
+    }
+  },
+  "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two \u2014 one half became a peacock, the other a rooster.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(45) \u00d7 1.60 unique-mult = 11. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

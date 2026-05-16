@@ -1,0 +1,30 @@
+{
+  "id": "ring_hasted",
+  "name": "ring of hasted",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    240,
+    230,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "hasted",
+    "duration": -1
+  },
+  "lore": "A haste enchantment locked permanently into tourmaline by a wizard who could never tolerate moving at normal speed. Wearers move at doubled pace, making combat and exploration dramatically more efficient — though hunger accelerates equally.",
+  "unidentified_name": "quickstep tourmaline ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

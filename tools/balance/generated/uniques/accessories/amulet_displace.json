@@ -1,0 +1,30 @@
+{
+  "id": "amulet_displace",
+  "name": "amulet of displacement",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    100,
+    100,
+    140
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "displacement",
+    "duration": -1
+  },
+  "lore": "A constant visual distortion surrounds whoever wears this amulet — their apparent position offset from their actual location, making aimed attacks frustratingly inaccurate. Enemies targeting the image consistently find nothing but air.",
+  "unidentified_name": "blurred shadow pendant",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

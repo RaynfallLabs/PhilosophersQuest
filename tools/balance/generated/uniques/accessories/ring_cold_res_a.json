@@ -1,0 +1,30 @@
+{
+  "id": "ring_cold_res_a",
+  "name": "ring of cold resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    120,
+    200,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "cold_resist",
+    "duration": -1
+  },
+  "lore": "Quartz formed within glacier ice over thousands of years, this ring carries the cold's patience within it — and grants the wearer an immunity to that very patience, becoming impervious to magical cold.",
+  "unidentified_name": "glacial quartz ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

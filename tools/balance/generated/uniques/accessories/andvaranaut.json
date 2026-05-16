@@ -1,0 +1,32 @@
+{
+  "id": "andvaranaut",
+  "name": "Andvaranaut",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    255,
+    215,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "INT",
+    "amount": 3,
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "Andvari's magic ring that could find gold wherever it lay hidden. Loki stole it with the rest of the dwarf's hoard to pay the wergild for killing Otr. Andvari cursed both the ring and all the gold as he surrendered them. The ring found gold. It could not find safe owners.",
+  "unidentified_name": "a golden ring that seems lighter than it should",
+  "min_level": 55,
+  "peak_floor": 60,
+  "spread": 22,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 33,
+    "player_ac_target_at_min_level": -4
+  }
+}

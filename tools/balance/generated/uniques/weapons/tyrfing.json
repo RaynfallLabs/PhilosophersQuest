@@ -1,0 +1,42 @@
+{
+  "id": "tyrfing",
+  "name": "Tyrfing",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "magic"
+  ],
+  "base_damage": 20,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 6.0,
+  "min_level": 70,
+  "peak_floor": 80,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "cursed": true,
+    "ignore_shield": true,
+    "cursed_miss_backlash": 5,
+    "bleed_chance": 0.3,
+    "crit_multiplier": 2.0,
+    "must_kill_when_drawn": true
+  },
+  "lore": "The dwarves Dvalinn and Durin forged Tyrfing under duress and cursed it: it would kill a man every time unsheathed. Three kings of the Hervarar line died by it. The curse is intrinsic to those who lack the wisdom to set it down.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(70) \u00d7 1.40 unique-mult = 20. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

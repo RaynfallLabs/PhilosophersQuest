@@ -1,0 +1,30 @@
+{
+  "id": "amulet_sleep_res",
+  "name": "amulet of sleep resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    140,
+    140,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "sleep_resist",
+    "duration": -1
+  },
+  "lore": "Enchanted by a monk who had taken a vow of wakefulness, this medallion permanently keeps its wearer from being magically induced into sleep — mundane exhaustion still applies, but no magical somnolence can take hold.",
+  "unidentified_name": "dream-ward medallion",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

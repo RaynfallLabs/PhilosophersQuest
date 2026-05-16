@@ -1,0 +1,30 @@
+{
+  "id": "ring_perception_topaz",
+  "name": "ring of perception",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    180,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "PER",
+    "amount": 1
+  },
+  "lore": "Topaz catches light from every angle simultaneously — and this ring extends that quality to the wearer's vision, expanding their effective sight radius in the darkened passages of the dungeon.",
+  "unidentified_name": "topaz ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

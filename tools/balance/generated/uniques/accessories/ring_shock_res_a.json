@@ -1,0 +1,30 @@
+{
+  "id": "ring_shock_res_a",
+  "name": "ring of shock resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    240,
+    200,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "shock_resist",
+    "duration": -1
+  },
+  "lore": "Copper is electricity's preferred path, and this ring was enchanted to make itself that path instead of the wearer — electrical energy flows harmlessly through the ring and dissipates, sparing the body entirely.",
+  "unidentified_name": "crackling copper ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

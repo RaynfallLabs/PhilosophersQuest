@@ -1,0 +1,30 @@
+{
+  "id": "ring_warning_rough_stone",
+  "name": "ring of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    140,
+    130,
+    120
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "An unpolished stone ring of obscure origin that quivers against the skin when hostile creatures are near, as though the stone itself remembers being struck.",
+  "unidentified_name": "rough stone ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

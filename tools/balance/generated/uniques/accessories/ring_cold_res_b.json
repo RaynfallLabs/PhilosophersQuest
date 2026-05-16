@@ -1,0 +1,30 @@
+{
+  "id": "ring_cold_res_b",
+  "name": "ring of cold resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    160,
+    220,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "cold_resist",
+    "duration": -1
+  },
+  "lore": "This crystal seems perpetually frosted, yet the wearer's finger never grows cold — the ring absorbs cold energy before it can harm its owner, leaving the wearer comfortable while ice storms rage around them.",
+  "unidentified_name": "frost crystal ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

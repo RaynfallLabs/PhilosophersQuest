@@ -1,0 +1,30 @@
+{
+  "id": "ring_protection_silver",
+  "name": "ring of protection +1",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    220,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "AC",
+    "amount": 1
+  },
+  "lore": "A silver ring engraved with overlapping ward-circles. The protection it offers is modest but reliable — every experienced adventurer keeps at least one.",
+  "unidentified_name": "a smooth silver ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

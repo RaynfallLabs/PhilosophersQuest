@@ -1,0 +1,27 @@
+{
+  "id": "tablet_of_destinies",
+  "name": "Tablet of Destinies",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "?",
+  "color": [
+    160,
+    140,
+    100
+  ],
+  "weight_lb": 4.0,
+  "lore": "Whoever holds the Tablet of Destinies controls the fate of all things. Enlil kept it in his sanctuary; Anzu the storm-bird stole it and plunged the world into chaos. Ninurta slew Anzu and returned it. The Tablet allows its bearer to reject fate once per floor — when a question is answered wrongly, the Tablet cracks and offers a different question. A second chance, drawn from the well of all possible futures.",
+  "min_level": 70,
+  "peak_floor": 75,
+  "spread": 27,
+  "peak_weight": 0.2,
+  "special_properties": {
+    "identified": false,
+    "quiz_reroll": true,
+    "plot_role": "wonder_relic",
+    "effects": [
+      "one_quiz_reroll_per_floor_when_wrong"
+    ],
+    "spawn_method": "random_lore_quest_deep_dungeon"
+  }
+}

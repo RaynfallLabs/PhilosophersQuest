@@ -1,0 +1,39 @@
+{
+  "id": "khopesh_of_anubis",
+  "name": "Khopesh of Anubis",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 8,
+  "chain_multipliers": [
+    0.2,
+    0.45,
+    0.75,
+    1.2,
+    2.0,
+    3.0
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 3.0,
+  "min_level": 30,
+  "peak_floor": 40,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "bleed_chance": 0.15,
+    "crit_multiplier": 1.7,
+    "kill_heal_amount": 3,
+    "kill_max_hp_bonus": 1,
+    "kill_max_hp_cap": 10
+  },
+  "lore": "A ceremonial khopesh carried by the priests of Anubis during the weighing of hearts. Those judged unworthy were consumed \u2014 their life force absorbed into the blade. Each kill strengthens the wielder permanently.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(30) \u00d7 1.60 unique-mult = 8. Class: finesse 6-rung (midpoint=1.0\u00d7, peak=3.00\u00d7).",
+  "weapon_class_chain": "finesse"
+}

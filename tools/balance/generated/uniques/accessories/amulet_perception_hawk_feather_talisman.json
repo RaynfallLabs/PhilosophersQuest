@@ -1,0 +1,30 @@
+{
+  "id": "amulet_perception_hawk_feather_talisman",
+  "name": "amulet of perception",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    200,
+    160,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "PER",
+    "amount": 3
+  },
+  "lore": "Three hawk feathers bound in copper wire and charged with an expanding-sight enchantment, this talisman dramatically increases the wearer's perceptual range — at full effect, they can monitor a radius of dungeon that most adventurers would consider an entire floor.",
+  "unidentified_name": "hawk-feather talisman",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

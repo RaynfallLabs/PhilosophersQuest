@@ -1,0 +1,26 @@
+{
+  "id": "sailors_amulet",
+  "name": "Sailor's Amulet",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    40,
+    100,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "PER",
+    "amount": 1,
+    "status": "cold_resist",
+    "duration": -1
+  },
+  "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive.",
+  "unidentified_name": "a driftwood amulet",
+  "min_level": 0,
+  "plot_locked": true
+}

@@ -1,0 +1,10 @@
+{
+  "id": "buckler",
+  "name": "buckler",
+  "category": "shield",
+  "base_ac_value": 0,
+  "_design_note": "F1-30 parry-shield. Almost no AC by itself; pairs with a fast weapon and DEX.",
+  "base_weight_lb": 2.0,
+  "compatible_material_classes": ["wood", "metal", "rare_metal", "magical_metal"],
+  "lore_template": "A small disc of {material_name}, gripped by a single central fist-bar. More a parrying tool than a wall — but in a duelist's hand, enough."
+}

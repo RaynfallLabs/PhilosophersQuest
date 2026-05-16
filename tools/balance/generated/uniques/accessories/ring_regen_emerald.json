@@ -1,0 +1,30 @@
+{
+  "id": "ring_regen_emerald",
+  "name": "ring of regeneration",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    20,
+    180,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "The living green of this emerald pulses with regenerative vitality, accelerating the body's natural healing until minor wounds close between heartbeats and major injuries mend in hours rather than days.",
+  "unidentified_name": "emerald ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

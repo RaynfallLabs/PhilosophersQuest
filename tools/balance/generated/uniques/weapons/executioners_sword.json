@@ -1,0 +1,37 @@
+{
+  "id": "executioners_sword",
+  "name": "executioner's sword",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 15,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 6.0,
+  "min_level": 62,
+  "peak_floor": 72,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.7,
+    "bleed_chance": 0.3
+  },
+  "lore": "Blunt-tipped \u2014 a stabbing weapon is useless against a kneeling target. Ground to extraordinary sharpness for a clean single-stroke execution.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(62) \u00d7 1.40 unique-mult = 15. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

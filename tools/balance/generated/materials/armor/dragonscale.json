@@ -1,0 +1,20 @@
+{
+  "id": "dragonscale",
+  "name": "dragonscale",
+  "material_class": "dragon_material",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 4,
+  "weight_mult": 0.8,
+  "ac_bonus": 2,
+  "max_enchant": 3,
+  "color": [180, 60, 50],
+  "resistances": ["fire", "pierce"],
+  "weaknesses": ["cold"],
+  "vulnerabilities": [],
+  "special_properties": ["fire_resistant", "draconic"],
+  "lore_descriptor": "overlapping scales the color of a banked forge",
+  "unidentified_descriptor": "iridescent scaled hide",
+  "first_pickup_chronicle": "Dragonscale. Still warm. The smith said the scales remember the fire that bred them — I think he meant that literally. Fire-breath rolls off it like water off oil."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_constitution_carnelian",
+  "name": "ring of constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    80,
+    40
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "CON",
+    "amount": 2
+  },
+  "lore": "Carnelian was carried by warriors for courage and physical hardiness since ancient times — this ring makes good on that tradition, providing genuine constitutional enhancement rather than mere psychological comfort.",
+  "unidentified_name": "carnelian ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

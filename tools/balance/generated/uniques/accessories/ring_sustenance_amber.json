@@ -1,0 +1,30 @@
+{
+  "id": "ring_sustenance_amber",
+  "name": "ring of sustenance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    210,
+    170,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "sustained",
+    "duration": -1
+  },
+  "lore": "An amber ring containing a preserved insect that has not aged for ten thousand years. The preservation field extends to the wearer's metabolism, slowing hunger and reducing the need for rest. Useful in deep dungeons where food is scarce.",
+  "unidentified_name": "a warm amber ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

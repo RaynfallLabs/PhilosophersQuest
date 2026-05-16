@@ -1,0 +1,30 @@
+{
+  "id": "ring_dexterity_thin_wire",
+  "name": "ring of dexterity",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    190,
+    190,
+    190
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "DEX",
+    "amount": 2
+  },
+  "lore": "This impossibly fine wire ring represents the pinnacle of delicate metalworking — wearing it transfers some of that delicacy to the wearer's fingers, greatly enhancing manual precision and overall agility.",
+  "unidentified_name": "thin wire ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

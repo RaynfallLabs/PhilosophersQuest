@@ -1,0 +1,30 @@
+{
+  "id": "amulet_telepathy_silver",
+  "name": "amulet of telepathy",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    200,
+    200,
+    210
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "A polished silver disc on a delicate chain, engraved with a mind's-eye motif. The silver amplifies the wearer's natural sensitivity to others' thoughts, making nearby creatures' intentions transparent to anyone skilled enough to interpret the impressions.",
+  "unidentified_name": "silver chain amulet",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

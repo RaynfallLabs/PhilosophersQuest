@@ -1,0 +1,30 @@
+{
+  "id": "amulet_levitate",
+  "name": "amulet of levitation",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    180,
+    200,
+    240
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "levitating",
+    "duration": -1
+  },
+  "lore": "An amulet forged from a meteorite fragment that fell slowly — impossibly slowly — to earth over the course of three days. The anti-gravity essence locked in that iron now raises the wearer silently above the dungeon floor.",
+  "unidentified_name": "cloud-iron locket",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "echidna_fang",
+  "name": "Echidna's Fang",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "template_basis": "dagger",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "poison"
+  ],
+  "base_damage": 8,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 1.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 3,
+  "spawn_method": "unique_drop",
+  "special_properties": {
+    "effects": {
+      "status": "poisoned",
+      "effect_chance": 0.4,
+      "effect_duration": 7
+    },
+    "can_be_cursed": false,
+    "crit_multiplier": 1.8
+  },
+  "lore": "A tooth from Echidna herself, mother of all monsters. Wounds from it fester with a slow-acting venom that mimics her many children's poisons.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(40) \u00d7 1.40 unique-mult = 8. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "tier_intended": 40,
+  "weapon_class_chain": "finesse"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "amulet_warning_leather",
+  "name": "amulet of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    180,
+    140,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "A simple tooth or claw strung on a leather cord, charged with a warning-sense enchantment by a dungeon shaman. The amulet grows hot against the sternum when danger approaches from any direction.",
+  "unidentified_name": "leather cord amulet",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

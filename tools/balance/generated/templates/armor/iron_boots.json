@@ -1,0 +1,12 @@
+{
+  "id": "iron_boots",
+  "name": "iron boots",
+  "category": "armor",
+  "armor_class_tier": "medium",
+  "slot": "feet",
+  "base_ac_value": 1,
+  "base_weight_lb": 3.0,
+  "_design_note": "F20-60 medium feet slot. Sabatons with articulated toe plate. Trades movement softness for ankle protection.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
+  "lore_template": "{material_name} sabatons with articulated toe plates and a riveted ankle guard. Heavy underfoot — underground creatures who try to attack the feet find the experience as productive as attacking a stone floor, though the weight makes running feel like wading through mud."
+}

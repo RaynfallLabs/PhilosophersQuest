@@ -1,0 +1,26 @@
+{
+  "id": "officers_signet",
+  "name": "Officer's Signet",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    218,
+    180,
+    50
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "STR",
+    "amount": 1,
+    "stat2": "DEX",
+    "amount2": 1
+  },
+  "lore": "A solid gold signet ring bearing the crest of the Legion. Officer-grade — only issued to those who have earned command. The previous owner pulled it off his own finger and said he didn't deserve it.",
+  "unidentified_name": "a heavy gold signet ring stamped with the Legion crest",
+  "min_level": 0,
+  "plot_locked": true
+}

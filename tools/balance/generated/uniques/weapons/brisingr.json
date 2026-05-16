@@ -1,0 +1,39 @@
+{
+  "id": "brisingr",
+  "name": "Brisingr",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "fire"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 55,
+  "peak_floor": 65,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.9,
+    "burn_chance": 0.4,
+    "warm_to_touch": true
+  },
+  "lore": "The word for fire in Old Norse. A sword that shares its name with the ancient word for flame was found in a Norse burial mound in Gotland, its blade still faintly warm centuries later.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(55) \u00d7 1.40 unique-mult = 13. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

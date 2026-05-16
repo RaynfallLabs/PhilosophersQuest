@@ -1,0 +1,30 @@
+{
+  "id": "lyre_of_orpheus",
+  "name": "Lyre of Orpheus",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    180,
+    140,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "sleep_resist",
+    "duration": -1
+  },
+  "lore": "Orpheus, son of Apollo, played music so beautiful that rocks wept, rivers paused, and the trees leaned in to listen. He descended into Hades to retrieve his beloved Eurydice, charming Cerberus and Persephone with his song. He failed only because he looked back. This tiny lyre amulet hums with that impossible music — while you wear it, no enchantment of sleep can reach you. You will never lose consciousness against your will.",
+  "unidentified_name": "an amulet shaped like a tiny lyre",
+  "min_level": 5,
+  "peak_floor": 10,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 14,
+    "player_ac_target_at_min_level": 8
+  }
+}

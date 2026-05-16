@@ -1,0 +1,30 @@
+{
+  "id": "amulet_titan_constitution",
+  "name": "amulet of titan constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    220,
+    60,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "CON",
+    "amount": 5
+  },
+  "lore": "Forged in the crater where a titan fell, this amulet radiates a palpable sense of physical authority. The CON bonus it provides is extraordinary — those who wear it describe simultaneously feeling that their body could survive almost anything and that it probably will have to.",
+  "unidentified_name": "a heavy blood-red gem pendant",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

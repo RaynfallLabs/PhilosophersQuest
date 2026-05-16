@@ -1,0 +1,42 @@
+{
+  "id": "laevateinn",
+  "name": "Laevateinn",
+  "category": "weapon",
+  "weapon_class": "staff",
+  "template_basis": "quarterstaff",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "magic",
+    "fire",
+    "holy"
+  ],
+  "base_damage": 17,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 5.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "stun_chance": 0.3,
+    "crit_multiplier": 2.0,
+    "vs_rooster_special": true,
+    "burn_chance": 0.4
+  },
+  "lore": "Loki cut it at the gates of Hel. It can destroy Vidofnir, the golden rooster atop Yggdrasil whose crowing will begin Ragnarok.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.40 unique-mult = 17. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

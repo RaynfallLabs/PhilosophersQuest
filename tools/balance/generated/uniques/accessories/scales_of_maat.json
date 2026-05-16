@@ -1,0 +1,32 @@
+{
+  "id": "scales_of_maat",
+  "name": "Scales of Ma'at",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    180,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "WIS",
+    "amount": 1,
+    "stat2": "PER",
+    "amount2": 1
+  },
+  "lore": "In the Egyptian Hall of Two Truths, the heart of the dead was weighed against the feather of Ma'at, goddess of truth and cosmic order. If the heart was lighter than the feather — free of sin — the soul passed into the Field of Reeds. If heavier, the demon Ammit devoured it. These tiny scales whisper of that judgment: see clearly, judge wisely. +1 WIS, +1 PER.",
+  "unidentified_name": "a ring with tiny golden scales",
+  "min_level": 14,
+  "peak_floor": 19,
+  "spread": 10,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 17,
+    "player_ac_target_at_min_level": 6
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "cronus_scythe",
+  "name": "Cronus's Scythe",
+  "category": "weapon",
+  "weapon_class": "scimitar",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "magic"
+  ],
+  "base_damage": 8,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 6.0,
+  "min_level": 38,
+  "peak_floor": 48,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "ignore_shield": true,
+    "bleed_chance": 0.25,
+    "crit_multiplier": 1.9,
+    "age_drain": true
+  },
+  "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. From the blood sprang the Giants and the Furies. The scythe cuts through time and matter alike.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(38) \u00d7 1.40 unique-mult = 8. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

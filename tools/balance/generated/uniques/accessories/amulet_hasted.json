@@ -1,0 +1,30 @@
+{
+  "id": "amulet_hasted",
+  "name": "amulet of speed",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    240,
+    230,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "hasted",
+    "duration": -1
+  },
+  "lore": "Forged by an artificer who studied the flight patterns of swifts, this amulet permanently accelerates the wearer's body to the edge of what flesh can sustain — every action taken at double the normal speed, every threat met and passed before slower opponents can react.",
+  "unidentified_name": "swift-wind talisman",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

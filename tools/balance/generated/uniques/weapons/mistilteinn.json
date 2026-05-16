@@ -1,0 +1,39 @@
+{
+  "id": "mistilteinn",
+  "name": "Mistilteinn",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "magic"
+  ],
+  "base_damage": 14,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 2.5,
+  "min_level": 60,
+  "peak_floor": 70,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "crit_multiplier": 2.0,
+    "bypass_immortality": true
+  },
+  "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against \u2014 his mother considered it too small to matter. The sword shares this property.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(60) \u00d7 1.40 unique-mult = 14. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

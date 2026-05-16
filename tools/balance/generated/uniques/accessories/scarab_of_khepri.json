@@ -1,0 +1,30 @@
+{
+  "id": "scarab_of_khepri",
+  "name": "Scarab of Khepri",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    60,
+    160,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "Khepri was the Egyptian god of the dawn — the sacred scarab beetle who rolled the sun across the sky each morning, renewing creation daily. The Egyptians saw in the humble dung beetle a cosmic truth: that life renews itself endlessly, that every morning the world is born again. This jade scarab hums with that eternal cycle of renewal. Wounds close. Strength returns. Dawn comes again.",
+  "unidentified_name": "a jade ring shaped like a beetle",
+  "min_level": 16,
+  "peak_floor": 21,
+  "spread": 10,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 18,
+    "player_ac_target_at_min_level": 6
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_curse_slow",
+  "name": "ring of slowing",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    90,
+    90,
+    100
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "slowed",
+    "duration": -1
+  },
+  "lore": "This ring seems heavier than iron has any right to be, and that heaviness extends to every movement of the wearer — slowed to half speed, they become easy prey for anything with patience enough to follow them.",
+  "unidentified_name": "leaden iron ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

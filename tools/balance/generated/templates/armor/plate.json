@@ -1,0 +1,12 @@
+{
+  "id": "plate",
+  "name": "plate",
+  "category": "armor",
+  "armor_class_tier": "heavy",
+  "slot": "body",
+  "base_ac_value": 5,
+  "base_weight_lb": 50.0,
+  "_design_note": "F45-80 heavy. Articulated harness.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
+  "lore_template": "Articulated plates of {material_name}, hinged at every joint a body needs to bend. The smith earned his pay twice over on this one."
+}

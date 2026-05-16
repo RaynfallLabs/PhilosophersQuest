@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_lancelot",
+  "name": "Ring of the Fallen Knight",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    255,
+    200,
+    200
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "STR",
+    "amount": 4,
+    "status": "hasted",
+    "duration": -1
+  },
+  "lore": "Lancelot was the greatest knight in the world and destroyed the Round Table by being exactly that. His affair with Guinevere was not a secret he kept — it was a secret everyone kept for him because they needed him too much to confront him. The tower on the ring is the tower of Joyous Gard, where he retreated when his virtue finally failed the test he had spent his life avoiding.",
+  "unidentified_name": "a red-gold ring with a small tower engraved on it",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

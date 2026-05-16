@@ -1,0 +1,26 @@
+{
+  "id": "fish_breath",
+  "name": "Breath of a Fish",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "~",
+  "color": [
+    140,
+    200,
+    220
+  ],
+  "weight_lb": 0.2,
+  "lore": "A sealed bubble of impossibility — air exhaled by a creature that has no lungs. It smells of deep water and cold currents.",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "special_properties": {
+    "identified": true,
+    "plot_role": "fenrir_quest_layer1_gleipnir_component",
+    "effects": [
+      "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+    ],
+    "spawn_method": "quest_spawn_fenrir_components"
+  }
+}

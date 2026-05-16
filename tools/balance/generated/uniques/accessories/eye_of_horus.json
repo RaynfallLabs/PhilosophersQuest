@@ -1,0 +1,30 @@
+{
+  "id": "eye_of_horus",
+  "name": "Eye of Horus",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    50,
+    150,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 1,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "PER",
+    "amount": 1
+  },
+  "lore": "The wedjat, the restored eye of Horus, torn out by Set and healed by Thoth. It is the oldest symbol of healing in human history. The eye watches over its wearer, mending small wounds with the patience of a god who has eternity to work with. One cannot rush divinity.",
+  "unidentified_name": "a blue faience eye pendant",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

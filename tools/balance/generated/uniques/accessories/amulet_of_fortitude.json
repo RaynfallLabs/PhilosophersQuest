@@ -1,0 +1,32 @@
+{
+  "id": "amulet_of_fortitude",
+  "name": "Amulet of Fortitude",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    80,
+    200,
+    120
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 3,
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "A gift from Asclepius to a mortal champion whose constitution had been ravaged by poison. The carved serpent at its centre channels a fraction of divine healing energy into the wearer continuously. Wounds knit, poisons fade, and exhaustion retreats in its presence.",
+  "unidentified_name": "pulsing amulet",
+  "min_level": 24,
+  "peak_floor": 29,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 4
+  }
+}

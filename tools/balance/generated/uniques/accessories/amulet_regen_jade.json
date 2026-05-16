@@ -1,0 +1,30 @@
+{
+  "id": "amulet_regen_jade",
+  "name": "amulet of regeneration",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    20,
+    180,
+    60
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "Carved in the shape of entwined healing herbs, this vivid green jade pendant pulses with restorative energy that continuously repairs the wearer's body — minor cuts closing in moments, deeper wounds mending with remarkable speed.",
+  "unidentified_name": "healing jade pendant",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

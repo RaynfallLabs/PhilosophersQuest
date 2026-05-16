@@ -1,0 +1,32 @@
+{
+  "id": "ankh_of_ra",
+  "name": "Ankh of Ra",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    255,
+    220,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 3,
+    "status": "regenerating",
+    "duration": -1
+  },
+  "lore": "Ra holds the ankh — the key of life — in all his standard depictions. He passes it to pharaohs; pharaohs pass it to other gods; everyone passes it. The ankh's shape may derive from a sandal strap, a mirror, or a feminine symbol depending on which scholar you consult. In Coptic Christianity it became the crux ansata and survived into church iconography. It is the oldest recurring symbol in Egyptian art.",
+  "unidentified_name": "a looped cross of gilded bronze",
+  "min_level": 50,
+  "peak_floor": 55,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 31,
+    "player_ac_target_at_min_level": -2
+  }
+}

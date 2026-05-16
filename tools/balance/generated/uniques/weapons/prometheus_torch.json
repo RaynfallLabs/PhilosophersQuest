@@ -1,0 +1,38 @@
+{
+  "id": "prometheus_torch",
+  "name": "Prometheus's Torch",
+  "category": "weapon",
+  "weapon_class": "staff",
+  "template_basis": "quarterstaff",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "blunt",
+    "fire"
+  ],
+  "base_damage": 1,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 4.0,
+  "min_level": 8,
+  "peak_floor": 18,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "burn_chance": 0.4,
+    "crit_multiplier": 1.6,
+    "cannot_extinguish": true,
+    "lights_dark": true
+  },
+  "lore": "Prometheus stole fire from the gods and gave it to humanity. This torch carries that stolen fire. It cannot be extinguished, and it cannot be refused \u2014 fire is humanity's birthright.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(8) \u00d7 1.40 unique-mult = 1. Class: normal 5-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "weapon_class_chain": "normal"
+}

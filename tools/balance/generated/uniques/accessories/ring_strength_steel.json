@@ -1,0 +1,30 @@
+{
+  "id": "ring_strength_steel",
+  "name": "ring of strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    150,
+    155,
+    165
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "STR",
+    "amount": 2
+  },
+  "lore": "The superior refinement of steel over iron is reflected in this ring's stronger enhancement — the muscles of the wearer cord and harden noticeably while it is worn, providing meaningful combat advantage.",
+  "unidentified_name": "steel ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

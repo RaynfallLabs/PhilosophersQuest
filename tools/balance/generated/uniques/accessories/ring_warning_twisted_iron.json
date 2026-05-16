@@ -1,0 +1,30 @@
+{
+  "id": "ring_warning_twisted_iron",
+  "name": "ring of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    130,
+    130,
+    140
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "The twisted iron band vibrates almost imperceptibly when danger nears — a subtle but unmistakable signal that experienced wearers learn to read as reliably as a shout.",
+  "unidentified_name": "twisted iron ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

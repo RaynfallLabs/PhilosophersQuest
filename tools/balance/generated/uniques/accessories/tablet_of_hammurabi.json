@@ -1,0 +1,30 @@
+{
+  "id": "tablet_of_hammurabi",
+  "name": "Tablet of Hammurabi",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    140,
+    120,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "INT",
+    "amount": 2
+  },
+  "lore": "Hammurabi, King of Babylon, created the first comprehensive written law code around 1750 BC — 282 laws carved in stone, establishing the revolutionary principle that justice should be written, public, and consistent rather than arbitrary. 'An eye for an eye' comes from his code. This tablet-shaped amulet carries the weight of that first attempt to replace chaos with order. +2 INT.",
+  "unidentified_name": "a heavy clay amulet covered in ancient script",
+  "min_level": 15,
+  "peak_floor": 20,
+  "spread": 10,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 17,
+    "player_ac_target_at_min_level": 6
+  }
+}

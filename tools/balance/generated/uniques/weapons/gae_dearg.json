@@ -1,0 +1,40 @@
+{
+  "id": "gae_dearg",
+  "name": "Gae Dearg",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "spear",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 52,
+  "peak_floor": 62,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "ignore_shield": true,
+    "bleed_chance": 0.9,
+    "crit_multiplier": 1.8,
+    "unhealing_wound": true
+  },
+  "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Gae Buidhe the Yellow wounded but could not kill. Gae Dearg the Red \u2014 from which no wound could ever heal.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(52) \u00d7 1.40 unique-mult = 11. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

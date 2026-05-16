@@ -1,0 +1,40 @@
+{
+  "id": "caladbolg",
+  "name": "Caladbolg",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 17,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 7.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "knockback": true,
+    "bleed_chance": 0.3,
+    "crit_multiplier": 2.0,
+    "aoe_arc": true
+  },
+  "lore": "Fergus mac R\u00f3ich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld. The original has no fragments because it has never broken.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.40 unique-mult = 17. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

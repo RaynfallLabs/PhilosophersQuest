@@ -1,0 +1,30 @@
+{
+  "id": "ring_drain_res_a",
+  "name": "ring of drain resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    140,
+    80,
+    160
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "drain_resist",
+    "duration": -1
+  },
+  "lore": "Carved from jasper found in an old graveyard where necromancers had worked, this ring has developed a natural hostility to life-draining magic — it wraps the wearer's vital energy in a protective shell impervious to drain effects.",
+  "unidentified_name": "soul-ward jasper ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

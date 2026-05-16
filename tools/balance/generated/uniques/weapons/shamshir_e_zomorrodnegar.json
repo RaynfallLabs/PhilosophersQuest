@@ -1,0 +1,41 @@
+{
+  "id": "shamshir_e_zomorrodnegar",
+  "name": "Shamshir-e Zomorrodnegar",
+  "category": "weapon",
+  "weapon_class": "scimitar",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "magic",
+    "holy"
+  ],
+  "base_damage": 17,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "stun_chance": 0.3,
+    "crit_multiplier": 1.9,
+    "djinn_bind": true
+  },
+  "lore": "The Emerald-Studded Sword of Solomon could bind and command djinn. Solomon used it not as a weapon but as an administrative tool, employing djinn in constructing the Temple.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.40 unique-mult = 17. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "weapon_class_chain": "finesse"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ring_searching_polished_crystal",
+  "name": "ring of searching",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    210,
+    240,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "The transparent crystal band focuses light into microscopic cracks and seams in stonework, allowing the wearer to notice hidden mechanisms that would otherwise be invisible.",
+  "unidentified_name": "polished crystal ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

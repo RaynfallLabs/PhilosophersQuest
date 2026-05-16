@@ -1,0 +1,30 @@
+{
+  "id": "amulet_wisdom_opal_locket",
+  "name": "amulet of wisdom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    200,
+    200,
+    240
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "An opal locket that opens to reveal nothing — the container is the enchantment, and what it holds is the distilled wisdom of its original owner, ready to be borrowed by whoever wears it.",
+  "unidentified_name": "opal locket",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

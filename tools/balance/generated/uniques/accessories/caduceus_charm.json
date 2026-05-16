@@ -1,0 +1,32 @@
+{
+  "id": "caduceus_charm",
+  "name": "Caduceus of Hermes",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    160,
+    220,
+    180
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "status": "regenerating",
+    "duration": -1,
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care.",
+  "unidentified_name": "a charm of two serpents coiled around a winged rod",
+  "min_level": 50,
+  "peak_floor": 55,
+  "spread": 21,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 31,
+    "player_ac_target_at_min_level": -2
+  }
+}

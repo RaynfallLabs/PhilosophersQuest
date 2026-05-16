@@ -1,0 +1,30 @@
+{
+  "id": "ring_searching_malachite",
+  "name": "ring of searching",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    60,
+    160,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "Malachite resonates with the secret nature of stone, and this banded green ring draws the wearer's eye toward inconsistencies in dungeon architecture — the telltale signs of hidden doors and concealed passages.",
+  "unidentified_name": "malachite ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "elaras_silver_ring",
+  "name": "plain silver ring",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    192,
+    192,
+    210
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {},
+  "lore": "A small ring of tarnished silver, polished smooth by a child's restless fingers. It holds no enchantment, no hidden power — only the fierce love of a little girl who believed it was the most precious thing in the world. And perhaps, in a way, she was right.",
+  "unidentified_name": "burnished silver ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

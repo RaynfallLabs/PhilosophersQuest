@@ -1,0 +1,38 @@
+{
+  "id": "durendal",
+  "name": "Durendal",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "greatsword",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "holy"
+  ],
+  "base_damage": 17,
+  "chain_multipliers": [
+    0.65,
+    0.8,
+    0.95,
+    1.1,
+    1.25,
+    1.5,
+    1.85
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 6.0,
+  "min_level": 65,
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "ignore_shield": true,
+    "crit_multiplier": 1.9
+  },
+  "lore": "Roland's sword contained a tooth of Saint Peter, blood of Saint Basil, hair of Saint Denis, and a fragment of the Virgin's raiment. At Roncevaux he struck it three times against a stone. The stone split each time. Durendal did not.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(65) \u00d7 1.40 unique-mult = 17. Class: heavy 7-rung (midpoint=1.0\u00d7, peak=1.85\u00d7).",
+  "weapon_class_chain": "heavy"
+}

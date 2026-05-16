@@ -1,0 +1,30 @@
+{
+  "id": "amulet_fire_res",
+  "name": "amulet of fire resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    255,
+    100,
+    30
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "fire_resist",
+    "duration": -1
+  },
+  "lore": "This amulet was worn by a fire-dancer who performed within actual bonfires for audiences. The enchantment protecting her skin has been maintained and strengthened into a reliable and permanent fire resistance.",
+  "unidentified_name": "fire-kissed pendant",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

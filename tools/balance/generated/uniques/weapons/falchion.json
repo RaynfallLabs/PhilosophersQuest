@@ -1,0 +1,36 @@
+{
+  "id": "falchion",
+  "name": "falchion",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 5,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 22,
+  "peak_floor": 32,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.4
+  },
+  "lore": "Common soldier's blade. Wider than a longsword, brutal against lightly armored opponents.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(22) \u00d7 1.20 unique-mult = 5. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

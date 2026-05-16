@@ -1,0 +1,26 @@
+{
+  "id": "ariadnes_thread",
+  "name": "Ariadne's Thread",
+  "category": "artifact",
+  "is_unique": true,
+  "symbol": "&",
+  "color": [
+    255,
+    215,
+    100
+  ],
+  "weight_lb": 0.1,
+  "lore": "A spool of shimmering golden thread. Ariadne gave this to Theseus so he could navigate the labyrinth and escape after slaying the Minotaur. It reveals all hidden paths.",
+  "min_level": 15,
+  "peak_floor": 20,
+  "spread": 10,
+  "peak_weight": 0.4,
+  "special_properties": {
+    "plot_role": "asterion_quest_layer1_companion",
+    "effects": [
+      "reveal_hidden_paths",
+      "consumed_at_fountain"
+    ],
+    "spawn_method": "quest_spawn_pre_asterion"
+  }
+}

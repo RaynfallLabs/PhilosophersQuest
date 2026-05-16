@@ -1,0 +1,30 @@
+{
+  "id": "amulet_intellect_amethyst_talisman",
+  "name": "amulet of intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    160,
+    80,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "INT",
+    "amount": 2
+  },
+  "lore": "An amethyst carved into a stylized brain, hung on a silver chain — a fanciful design that nonetheless delivers genuine intellectual enhancement, improving the wearer's reasoning, memory, and magical capacity significantly.",
+  "unidentified_name": "amethyst talisman",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

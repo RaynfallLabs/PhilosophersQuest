@@ -1,0 +1,30 @@
+{
+  "id": "draupnir",
+  "name": "Draupnir",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    255,
+    215,
+    0
+  ],
+  "slot": "ring",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "STR",
+    "amount": 1
+  },
+  "lore": "Forged by the dwarven brothers Brokkr and Sindri alongside Mjölnir, Draupnir drips eight new gold rings of equal weight every ninth night. Odin placed it on Baldr's funeral pyre, and Baldr sent it back from Hel as proof of his existence. Gold finds its way to the hand that wears it.",
+  "unidentified_name": "a golden ring of incredible craftsmanship",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

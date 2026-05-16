@@ -1,0 +1,10 @@
+{
+  "id": "heavy_wooden",
+  "name": "heavy wooden shield",
+  "category": "shield",
+  "base_ac_value": 1,
+  "_design_note": "F15-50 budget shield.",
+  "base_weight_lb": 10.0,
+  "compatible_material_classes": ["wood", "metal", "magical_metal"],
+  "lore_template": "A heavy disc of cross-laminated {material_name} with an iron boss at the center. You can crouch behind it and let a charge break against it."
+}

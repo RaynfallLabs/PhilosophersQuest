@@ -1,0 +1,41 @@
+{
+  "id": "kusanagi",
+  "name": "Kusanagi-no-Tsurugi",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "magic",
+    "wind"
+  ],
+  "base_damage": 16,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 2.5,
+  "min_level": 60,
+  "peak_floor": 70,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "knockback": true,
+    "wind_aoe": true,
+    "crit_multiplier": 1.9
+  },
+  "lore": "Found inside the eight-headed serpent Yamata no Orochi. Yamato Takeru used it to cut the grass and redirect the wind when surrounded by enemies who had set fire to the plain. The sword has been at the Atsuta Shrine for fourteen centuries. No one has seen it.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(60) \u00d7 1.60 unique-mult = 16. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

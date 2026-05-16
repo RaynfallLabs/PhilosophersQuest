@@ -1,0 +1,24 @@
+{
+  "id": "ring_of_iron_grip",
+  "name": "Ring of Iron Grip",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    60,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.3,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "STR",
+    "amount": 2
+  },
+  "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable.",
+  "unidentified_name": "a crude iron band",
+  "min_level": 0,
+  "plot_locked": true
+}

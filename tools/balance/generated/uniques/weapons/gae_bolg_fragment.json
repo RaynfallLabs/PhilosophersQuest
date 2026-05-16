@@ -1,0 +1,38 @@
+{
+  "id": "gae_bolg_fragment",
+  "name": "Gae Bolg Fragment",
+  "category": "weapon",
+  "weapon_class": "spear",
+  "template_basis": "spear",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "pierce"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.7,
+    0.85,
+    1.0,
+    1.15,
+    1.4,
+    1.75
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 3.0,
+  "min_level": 20,
+  "peak_floor": 30,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "crit_multiplier": 2.3,
+    "bleed_chance": 0.3,
+    "barbed_wound": true
+  },
+  "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn. Made from the bone of a sea monster \u2014 once it pierced flesh, its barbs opened inside the wound. Even this fragment carries that legacy.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(20) \u00d7 1.40 unique-mult = 6. Class: heavy 6-rung (midpoint=1.0\u00d7, peak=1.75\u00d7).",
+  "weapon_class_chain": "heavy"
+}

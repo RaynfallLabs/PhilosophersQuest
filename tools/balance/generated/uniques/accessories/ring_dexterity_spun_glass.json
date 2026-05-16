@@ -1,0 +1,30 @@
+{
+  "id": "ring_dexterity_spun_glass",
+  "name": "ring of dexterity",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    240,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "DEX",
+    "amount": 2
+  },
+  "lore": "Spun from a single unbroken thread of glass in a process requiring extraordinary patience and skill, this ring imparts the maker's mastery of precise movement to whoever wears it.",
+  "unidentified_name": "spun glass ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

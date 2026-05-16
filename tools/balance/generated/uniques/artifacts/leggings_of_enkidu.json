@@ -1,0 +1,34 @@
+{
+  "id": "leggings_of_enkidu",
+  "name": "Leggings of Enkidu",
+  "category": "armor",
+  "template_basis": "leather_leggings",
+  "is_unique": true,
+  "slot": "legs",
+  "symbol": "[",
+  "color": [140, 120, 80],
+  "ac_bonus": 2,
+  "weight_lb": 3.0,
+  "min_level": 42,
+  "peak_floor": 52,
+  "spread": 14,
+  "peak_weight": 0.4,
+  "max_enchant": 3,
+  "equip_threshold": 4,
+  "quiz_tier": 4,
+  "damage_resistances": {
+    "slash": 0.20,
+    "blunt": 0.20,
+    "pierce": 0.15
+  },
+  "can_be_cursed": false,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "wild_man_tread": true,
+    "ignores_difficult_terrain": true,
+    "speed_bonus_in_natural_caverns": 1
+  },
+  "unidentified_name": "rough-worked leather greaves from before metallurgy",
+  "lore": "Enkidu was created by the gods as a wild man to counter Gilgamesh. He lived among animals until a temple prostitute civilised him over seven days. He then challenged Gilgamesh to single combat; they fought to a draw and became friends. The Epic of Gilgamesh is the oldest known written epic. Its central subject is not the monsters they killed together but what Gilgamesh does when Enkidu dies first.",
+  "curve_note": "Template leather_leggings (not plate — lore says pre-metallurgy). base_ac=1, +1 unique-grade. F42-52 band: player_ac_target ~ 0 to -2. Wild-man theme: terrain mobility, not raw AC. Weight matches template — these are heavy hides, not light cloth."
+}

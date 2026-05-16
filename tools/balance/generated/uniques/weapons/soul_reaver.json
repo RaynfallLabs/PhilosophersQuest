@@ -1,0 +1,41 @@
+{
+  "id": "soul_reaver",
+  "name": "Soul Reaver",
+  "category": "weapon",
+  "weapon_class": "scimitar",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 25,
+  "chain_multipliers": [
+    0.18,
+    0.35,
+    0.55,
+    0.8,
+    1.2,
+    1.75,
+    2.5,
+    3.3
+  ],
+  "max_chain_length": 8,
+  "weight_lb": 3.0,
+  "min_level": 82,
+  "peak_floor": 92,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 5,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "lifesteal_percent": 0.15,
+    "selects_wielder": true,
+    "bleed_chance": 0.3,
+    "crit_multiplier": 1.7
+  },
+  "lore": "Few who have held the Soul Reaver remember doing so willingly. Wounds it inflicts do not heal without magic; the blade grows heavier if used against the innocent.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(82) \u00d7 1.40 unique-mult = 25. Class: finesse 8-rung (midpoint=1.0\u00d7, peak=3.30\u00d7).",
+  "weapon_class_chain": "finesse"
+}

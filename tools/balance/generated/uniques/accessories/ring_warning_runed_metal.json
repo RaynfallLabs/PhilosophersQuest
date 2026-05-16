@@ -1,0 +1,30 @@
+{
+  "id": "ring_warning_runed_metal",
+  "name": "ring of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    155,
+    155,
+    175
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "The runes inscribed on this metal band are a warning-sense enchantment of military origin, used by scouts who needed to detect ambushes without breaking stealth themselves.",
+  "unidentified_name": "runed metal ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

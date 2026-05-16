@@ -1,0 +1,35 @@
+{
+  "id": "sigurds_shovel",
+  "name": "Sigurd's Shovel",
+  "category": "weapon",
+  "weapon_class": "club",
+  "template_basis": "club",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt"
+  ],
+  "base_damage": 13,
+  "chain_multipliers": [
+    0.55,
+    0.95,
+    1.4,
+    2.0
+  ],
+  "max_chain_length": 4,
+  "weight_lb": 6.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 1,
+  "spawn_method": "quest_reward",
+  "special_properties": {
+    "can_dig": true,
+    "stun_chance": 0.05
+  },
+  "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below \u2014 sometimes the right tool is the humble one.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(53) \u00d7 1.40 unique-mult = 13. Class: normal 4-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "tier_intended": 53,
+  "weapon_class_chain": "normal"
+}

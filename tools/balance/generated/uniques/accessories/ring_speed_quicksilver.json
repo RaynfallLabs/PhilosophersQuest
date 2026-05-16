@@ -1,0 +1,30 @@
+{
+  "id": "ring_speed_quicksilver",
+  "name": "ring of speed",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    210,
+    230,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "hasted",
+    "duration": -1
+  },
+  "lore": "Quicksilver rings that vibrate at a specific resonance can entrain the wearer's nervous system to fire slightly faster. The effect is subtle but cumulative — the ring's owner moves, thinks, and reacts just quickly enough to survive situations that would kill others.",
+  "unidentified_name": "a vibrating quicksilver ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

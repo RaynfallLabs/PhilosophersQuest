@@ -1,0 +1,30 @@
+{
+  "id": "ring_intellect_amethyst",
+  "name": "ring of intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    160,
+    80,
+    200
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "INT",
+    "amount": 1
+  },
+  "lore": "Amethyst has been associated with clarity of thought since antiquity; this ring channels that association into a genuine enhancement of the wearer's reasoning capacity and magical aptitude.",
+  "unidentified_name": "amethyst ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

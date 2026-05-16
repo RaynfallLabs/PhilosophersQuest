@@ -1,0 +1,30 @@
+{
+  "id": "amulet_invis",
+  "name": "amulet of invisibility",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    200,
+    220,
+    240
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "invisible",
+    "duration": -1
+  },
+  "lore": "This pendant phases its wearer partially out of the visible light spectrum, making them effectively invisible to most creatures. The enchantment is more complete than ring versions — even shadows are suppressed.",
+  "unidentified_name": "mist-silver pendant",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

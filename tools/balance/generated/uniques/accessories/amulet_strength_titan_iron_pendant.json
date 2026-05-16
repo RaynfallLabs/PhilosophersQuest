@@ -1,0 +1,30 @@
+{
+  "id": "amulet_strength_titan_iron_pendant",
+  "name": "amulet of strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    80,
+    90,
+    110
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "STR",
+    "amount": 3
+  },
+  "lore": "Named for the mythological giants who could move mountains, this amulet provides a dramatic strength enhancement that leaves the wearer capable of feats of raw power that should be physically impossible for a creature their size.",
+  "unidentified_name": "titan iron pendant",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

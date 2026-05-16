@@ -1,0 +1,32 @@
+{
+  "id": "collar_of_njord",
+  "name": "Sea-Collar of Njörd",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    80,
+    180,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "CON",
+    "amount": 3,
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "Njörd ruled the winds and the seas and was responsible for the catch of fish and hunters' luck. He married Skadi, who chose him by his feet — the most beautiful feet among the gods — expecting to have chosen Baldur. They lived six days in her mountains, six by the sea, and both were miserable by turns. Nordic marriage counsellors date their profession's origin to this arrangement.",
+  "unidentified_name": "a necklace of Baltic amber and whale-bone",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

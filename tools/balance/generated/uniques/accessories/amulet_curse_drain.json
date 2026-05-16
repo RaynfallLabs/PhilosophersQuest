@@ -1,0 +1,30 @@
+{
+  "id": "amulet_curse_drain",
+  "name": "amulet of doom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    60,
+    20,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "doomed",
+    "duration": -1
+  },
+  "lore": "The amulet of doom does not harm the wearer directly. Instead, it makes the universe slightly more hostile — doors that would close slowly now close quickly; enemies that might have hesitated now strike immediately; saving throws always seem to land on the worst possible number. It has no off switch.",
+  "unidentified_name": "an ominous dark pendant",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

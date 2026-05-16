@@ -1,0 +1,39 @@
+{
+  "id": "hrunting",
+  "name": "Hrunting",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "bleed_chance": 0.4,
+    "crit_multiplier": 1.7,
+    "fails_vs_worthy_foes": true
+  },
+  "lore": "Unferth lent Hrunting to Beowulf for his descent into the mere. The poem calls it hardened in the blood of battle and says it had never failed any man who grasped it. In the underwater fight with Grendel's mother, it failed once.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(50) \u00d7 1.40 unique-mult = 11. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

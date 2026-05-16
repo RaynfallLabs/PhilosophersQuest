@@ -1,0 +1,30 @@
+{
+  "id": "amulet_magic_res",
+  "name": "amulet of magic resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    160,
+    140,
+    200
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "magic_resist",
+    "duration": -1
+  },
+  "lore": "Woven from threads of anti-magical material and charged with layered warding enchantments, this amulet provides broad-spectrum resistance to directed spells — mage opponents find their carefully prepared attacks losing significant potency.",
+  "unidentified_name": "ward-woven talisman",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

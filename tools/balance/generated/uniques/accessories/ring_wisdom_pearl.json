@@ -1,0 +1,30 @@
+{
+  "id": "ring_wisdom_pearl",
+  "name": "ring of wisdom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    240,
+    240,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, significantly improving the wearer's judgment and quiz performance.",
+  "unidentified_name": "pearl ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

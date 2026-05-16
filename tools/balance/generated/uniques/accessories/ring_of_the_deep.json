@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_the_deep",
+  "name": "Ring of the Deep",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    60,
+    140,
+    200
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "CON",
+    "amount": 2,
+    "status": "cold_resist",
+    "duration": -1
+  },
+  "lore": "Carved from a bioluminescent crystal found only at extreme ocean depth, this ring adapts the wearer's constitution to the crushing cold of the abyss. Divers of the Phoenician coast traded entire fortunes for such rings, which allowed descent to waters where no natural body could survive.",
+  "unidentified_name": "cold blue ring",
+  "min_level": 18,
+  "peak_floor": 23,
+  "spread": 11,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 19,
+    "player_ac_target_at_min_level": 5
+  }
+}

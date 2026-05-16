@@ -1,0 +1,30 @@
+{
+  "id": "ring_poison_res_b",
+  "name": "ring of poison resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    80,
+    200,
+    60
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "poison_resist",
+    "duration": -1
+  },
+  "lore": "Tourmaline naturally concentrates certain minerals that neutralize biological toxins; this enchanted ring magnifies that property dramatically, making its wearer virtually immune to ingested, injected, and contact poisons.",
+  "unidentified_name": "toxic tourmaline ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

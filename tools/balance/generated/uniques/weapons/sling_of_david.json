@@ -1,0 +1,40 @@
+{
+  "id": "sling_of_david",
+  "name": "Sling of David",
+  "category": "weapon",
+  "weapon_class": "sling",
+  "template_basis": "sling",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "blunt"
+  ],
+  "base_damage": 1,
+  "chain_multipliers": [
+    0.2,
+    0.55,
+    1.0,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 0.5,
+  "min_level": 5,
+  "peak_floor": 15,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 3,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 12,
+    "knockback": true,
+    "stun_chance": 0.2,
+    "crit_multiplier": 2.5,
+    "infinite_ammo": true,
+    "requires_ammo": "stone",
+    "giant_slayer": true
+  },
+  "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(5) \u00d7 1.40 unique-mult = 1. Class: finesse 5-rung (midpoint=1.0\u00d7, peak=3.00\u00d7).",
+  "weapon_class_chain": "finesse"
+}

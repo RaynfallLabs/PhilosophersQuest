@@ -1,0 +1,30 @@
+{
+  "id": "amulet_constitution_guardian_ruby_locket",
+  "name": "amulet of constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    180,
+    30,
+    30
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "CON",
+    "amount": 3
+  },
+  "lore": "This deep crimson locket houses a guardian spirit that constantly reinforces the wearer's physical vitality — the constitution boost is dramatic enough that seasoned fighters notice it immediately as a transformation in how punishment their body can absorb.",
+  "unidentified_name": "guardian ruby locket",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

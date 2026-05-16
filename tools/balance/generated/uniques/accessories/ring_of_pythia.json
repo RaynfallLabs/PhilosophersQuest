@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_pythia",
+  "name": "Ring of the Oracle",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    140
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "status": "clairvoyant",
+    "duration": -1,
+    "stat": "PER",
+    "amount": 2
+  },
+  "lore": "The Pythia at Delphi sat over a chasm in the earth and breathed volcanic vapour while speaking for Apollo. Her pronouncements were famously ambiguous: Croesus was told that if he attacked Persia, he would destroy a great empire. He did. The empire was his own. The Oracle was never wrong. It just required careful interpretation.",
+  "unidentified_name": "a bronze ring smelling faintly of laurel smoke",
+  "min_level": 55,
+  "peak_floor": 60,
+  "spread": 22,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 33,
+    "player_ac_target_at_min_level": -4
+  }
+}

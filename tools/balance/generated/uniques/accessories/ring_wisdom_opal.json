@@ -1,0 +1,30 @@
+{
+  "id": "ring_wisdom_opal",
+  "name": "ring of wisdom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "WIS",
+    "amount": 1
+  },
+  "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom, improving quiz timing and heightening awareness of hidden truths.",
+  "unidentified_name": "opal ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

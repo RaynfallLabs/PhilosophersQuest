@@ -1,0 +1,30 @@
+{
+  "id": "amulet_searching_bone",
+  "name": "amulet of searching",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    220,
+    210,
+    190
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "searching",
+    "duration": -1
+  },
+  "lore": "Carved from the small bones of a creature known for finding hidden caches of food, this amulet extends that natural searching ability to the wearer — detecting hidden doors and secret passages that would otherwise go unnoticed.",
+  "unidentified_name": "bone chain amulet",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

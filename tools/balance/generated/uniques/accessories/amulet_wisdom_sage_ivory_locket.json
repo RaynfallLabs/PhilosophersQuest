@@ -1,0 +1,30 @@
+{
+  "id": "amulet_wisdom_sage_ivory_locket",
+  "name": "amulet of wisdom",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    240,
+    235,
+    210
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "WIS",
+    "amount": 3
+  },
+  "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment, quiz timing, and intuitive threat assessment.",
+  "unidentified_name": "sage ivory locket",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

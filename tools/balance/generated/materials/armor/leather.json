@@ -1,0 +1,20 @@
+{
+  "id": "leather",
+  "name": "leather",
+  "material_class": "leather",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 3,
+  "spread": 8,
+  "peak_weight": 10,
+  "weight_mult": 1.0,
+  "ac_bonus": 0,
+  "max_enchant": 1,
+  "color": [160, 110, 60],
+  "resistances": [],
+  "weaknesses": ["fire"],
+  "vulnerabilities": [],
+  "special_properties": [],
+  "lore_descriptor": "supple, oiled, the color of old saddle",
+  "unidentified_descriptor": "worn hide",
+  "first_pickup_chronicle": "Leather. Cured, oiled, stitched by some hand long gone. Cheap. Quiet. The first lesson: most monsters bleed before they bite."
+}

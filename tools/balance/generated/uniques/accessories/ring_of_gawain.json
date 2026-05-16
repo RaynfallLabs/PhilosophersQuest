@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_gawain",
+  "name": "Ring of Sir Gawain",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    180,
+    220,
+    180
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "STR",
+    "amount": 3,
+    "status": "hasted",
+    "duration": -1
+  },
+  "lore": "In the Alliterative Morte Arthure, Gawain's strength grew until noon, held until three, and then diminished. In the Green Knight poem, he wore a green girdle he believed would protect him, and was ashamed when his small evasion was revealed. The shame was disproportionate; Gawain was the most courteous knight, which meant his lapses troubled him more than other men's crimes troubled them.",
+  "unidentified_name": "a plain green ring with a small enameled star",
+  "min_level": 60,
+  "peak_floor": 65,
+  "spread": 24,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 35,
+    "player_ac_target_at_min_level": -5
+  }
+}

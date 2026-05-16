@@ -1,0 +1,30 @@
+{
+  "id": "aesops_quill",
+  "name": "Aesop's Quill",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    220,
+    200,
+    140
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2
+  },
+  "lore": "Aesop was a slave in ancient Greece who earned his freedom through storytelling. His fables — The Tortoise and the Hare, The Boy Who Cried Wolf, The Fox and the Grapes — taught moral wisdom through animals. This quill-shaped ring carries that legacy: the wisdom to see truth in simple things. +2 WIS.",
+  "unidentified_name": "a feather-shaped ring",
+  "min_level": 3,
+  "peak_floor": 8,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 13,
+    "player_ac_target_at_min_level": 9
+  }
+}

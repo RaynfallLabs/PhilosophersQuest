@@ -1,0 +1,30 @@
+{
+  "id": "pectoral_of_amun",
+  "name": "Pectoral of Amun",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "\"",
+  "color": [
+    200,
+    160,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.3,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "WIS",
+    "amount": 4
+  },
+  "lore": "Amun, whose name means 'the hidden one,' was invisible by definition — his cult image was sealed inside the inner sanctum of Karnak, and even priests could not see it. His pectoral was worn by pharaohs when making decisions of state. The decisions were not actually made by the pectoral. They were, however, required to be made while wearing it.",
+  "unidentified_name": "a broad chest ornament of lapis and gold",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

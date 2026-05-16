@@ -1,0 +1,12 @@
+{
+  "id": "banded",
+  "name": "banded",
+  "category": "armor",
+  "armor_class_tier": "heavy",
+  "slot": "body",
+  "base_ac_value": 4,
+  "base_weight_lb": 35.0,
+  "_design_note": "F30-60 heavy. Roman-pattern overlapping bands.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
+  "lore_template": "Horizontal bands of {material_name} riveted in overlapping rows around the torso. The Roman legions trusted it for a reason."
+}

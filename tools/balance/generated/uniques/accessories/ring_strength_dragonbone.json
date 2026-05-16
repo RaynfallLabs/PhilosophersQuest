@@ -1,0 +1,30 @@
+{
+  "id": "ring_strength_dragonbone",
+  "name": "ring of giant strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    210,
+    200,
+    175
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "STR",
+    "amount": 4
+  },
+  "lore": "Carved from the finger-knuckle of a fire giant, this ring channels a fraction of the creature's legendary strength into the wearer. The inscription reads: 'Take from strength; do not merely borrow it.'",
+  "unidentified_name": "a massive carved bone ring",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

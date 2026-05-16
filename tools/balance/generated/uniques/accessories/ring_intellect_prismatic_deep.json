@@ -1,0 +1,30 @@
+{
+  "id": "ring_intellect_prismatic_deep",
+  "name": "ring of brilliance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    180,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "INT",
+    "amount": 4
+  },
+  "lore": "The prismatic ring contains a miniature aurora borealis in its setting — an observable phenomenon with no satisfactory mundane explanation. Wearers report accelerated thought, improved memory consolidation, and an occasional overwhelming sense of suddenly understanding something they cannot articulate.",
+  "unidentified_name": "a shifting prismatic ring",
+  "min_level": 45,
+  "peak_floor": 50,
+  "spread": 19,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 29,
+    "player_ac_target_at_min_level": -1
+  }
+}

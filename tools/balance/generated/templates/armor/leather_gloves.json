@@ -1,0 +1,12 @@
+{
+  "id": "leather_gloves",
+  "name": "leather gloves",
+  "category": "armor",
+  "armor_class_tier": "light",
+  "slot": "hands",
+  "base_ac_value": 1,
+  "base_weight_lb": 1.0,
+  "_design_note": "F1-25 light hand slot. Soft calfskin — bonus accrues to tactile feel, not just protection.",
+  "compatible_material_classes": ["cloth", "leather"],
+  "lore_template": "Soft {material_name} gloves fitted to exact finger measurements, providing excellent tactile feel and modest protection for the hands. Thieves prize gloves of this quality because they permit lock manipulation without leaving fingerprints — a practical consideration in any profession involving entry without invitation."
+}

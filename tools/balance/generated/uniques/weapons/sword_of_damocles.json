@@ -1,0 +1,38 @@
+{
+  "id": "sword_of_damocles",
+  "name": "Sword of Damocles",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 1,
+  "chain_multipliers": [
+    0.4,
+    0.7,
+    1.0,
+    1.3,
+    1.65,
+    2.0
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 3.0,
+  "min_level": 12,
+  "peak_floor": 22,
+  "spread": 8,
+  "peak_weight": 0.5,
+  "max_enchant": 2,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.8,
+    "self_damage_chance": 0.1,
+    "thread_thinning": true
+  },
+  "lore": "Dionysius II of Syracuse invited the courtier Damocles to sit on his throne. Above the throne hung a sword, suspended by a single horsehair. The blade cuts magnificently, but the thread grows thinner with every swing.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(12) \u00d7 1.40 unique-mult = 1. Class: normal 6-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "weapon_class_chain": "normal"
+}

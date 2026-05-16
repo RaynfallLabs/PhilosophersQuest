@@ -1,0 +1,26 @@
+{
+  "id": "prophets_amulet",
+  "name": "Prophet's Amulet",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    220
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "WIS",
+    "amount": 2,
+    "stat2": "PER",
+    "amount2": 1
+  },
+  "lore": "An amulet worn by a dying prophet who spent his last years carving warnings into stone tablets. It pulses with accumulated foresight — visions of the Destroyer, the Seven Seals, and the final battle. The clarity it grants is almost painful.",
+  "unidentified_name": "an amulet pulsing with gathered visions",
+  "min_level": 0,
+  "plot_locked": true
+}

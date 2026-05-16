@@ -1,0 +1,37 @@
+{
+  "id": "partisan",
+  "name": "partisan",
+  "category": "weapon",
+  "weapon_class": "polearm",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "pierce",
+    "slash"
+  ],
+  "base_damage": 8,
+  "chain_multipliers": [
+    0.7,
+    0.85,
+    1.0,
+    1.15,
+    1.4,
+    1.75
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 7.0,
+  "min_level": 42,
+  "peak_floor": 52,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "weapon_bind": true
+  },
+  "lore": "Ceremonial and combat polearm of the Renaissance. Side blades caught and bound opponents' weapons. Papal Swiss Guards carried these as marks of office.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(42) \u00d7 1.20 unique-mult = 8. Class: heavy 6-rung (midpoint=1.0\u00d7, peak=1.75\u00d7).",
+  "weapon_class_chain": "heavy"
+}

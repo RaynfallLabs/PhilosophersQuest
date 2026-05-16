@@ -1,0 +1,12 @@
+{
+  "id": "plate_helm",
+  "name": "plate helm",
+  "category": "armor",
+  "armor_class_tier": "heavy",
+  "slot": "head",
+  "base_ac_value": 2,
+  "base_weight_lb": 4.0,
+  "_design_note": "F50-100 heavy head slot. Articulated visor helm. Pair with plate / full plate body.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
+  "lore_template": "A master armourer's {material_name} plate helm with a hinged visor and articulated neck guard. The curved surfaces are calculated to deflect sword blows in any direction; the padding inside is shaped memory-leather, sized to one skull."
+}

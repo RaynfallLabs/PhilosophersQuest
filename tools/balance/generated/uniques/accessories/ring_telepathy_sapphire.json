@@ -1,0 +1,30 @@
+{
+  "id": "ring_telepathy_sapphire",
+  "name": "ring of telepathy",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    40,
+    80,
+    220
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "The sapphire's deep blue is associated with clarity of mind across many cultures; this ring leverages that association to project the wearer's perception across distance, reading the surface thoughts of nearby creatures.",
+  "unidentified_name": "sapphire ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

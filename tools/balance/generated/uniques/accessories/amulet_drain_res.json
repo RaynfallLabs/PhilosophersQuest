@@ -1,0 +1,30 @@
+{
+  "id": "amulet_drain_res",
+  "name": "amulet of drain resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    140,
+    80,
+    160
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "drain_resist",
+    "duration": -1
+  },
+  "lore": "Forged to protect against the vampiric magics that undead creatures employ, this amulet wraps the wearer's life force in a protective shell impervious to energy drain — an essential item for those venturing into undead-heavy dungeon levels.",
+  "unidentified_name": "life-ward chain",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

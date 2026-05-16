@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_far_sight",
+  "name": "Ring of Far Sight",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    200,
+    240,
+    180
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 4,
+  "effects": {
+    "stat": "PER",
+    "amount": 3,
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "Fashioned by the eagle-eyed sentinels of the Watchtower of Rhodes, worn by scouts who needed to perceive threats at inhuman range. The iris of its gem dilates and contracts like an eye, and something in that motion transmits itself to the wearer — both sight and instinct are magnified.",
+  "unidentified_name": "pale green ring",
+  "min_level": 22,
+  "peak_floor": 27,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 20,
+    "player_ac_target_at_min_level": 4
+  }
+}

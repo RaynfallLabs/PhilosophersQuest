@@ -1,0 +1,30 @@
+{
+  "id": "amulet_archmage_intellect",
+  "name": "amulet of archmage intellect",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    180,
+    140,
+    255
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 2,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "INT",
+    "amount": 5
+  },
+  "lore": "This amulet was reportedly the property of a council of arch-mages who each contributed one year of their own intelligence to its enchantment. The cumulative effect of several lifetimes of accumulated intellect is significant.",
+  "unidentified_name": "a violet crystalline pendant",
+  "min_level": 65,
+  "peak_floor": 70,
+  "spread": 25,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 37,
+    "player_ac_target_at_min_level": -6
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "naegling",
+  "name": "Naegling",
+  "category": "weapon",
+  "weapon_class": "axe",
+  "template_basis": "battleaxe",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash",
+    "blunt"
+  ],
+  "base_damage": 11,
+  "chain_multipliers": [
+    0.4,
+    0.65,
+    0.85,
+    1.1,
+    1.4,
+    1.7,
+    2.1
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 5.0,
+  "min_level": 50,
+  "peak_floor": 60,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "bleed_chance": 0.25,
+    "crit_multiplier": 1.6,
+    "shatters_on_max_strength": true
+  },
+  "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him \u2014 his grip was too strong for ordinary blades.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(50) \u00d7 1.40 unique-mult = 11. Class: normal 7-rung (midpoint=1.0\u00d7, peak=2.10\u00d7).",
+  "weapon_class_chain": "normal"
+}

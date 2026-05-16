@@ -1,0 +1,30 @@
+{
+  "id": "amulet_poison_res",
+  "name": "amulet of poison resistance",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "\"",
+  "color": [
+    60,
+    180,
+    80
+  ],
+  "slot": "amulet",
+  "weight_lb": 0.2,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "poison_resist",
+    "duration": -1
+  },
+  "lore": "A genuine serpent tooth from a venomous snake, set in silver and enchanted with an antitoxin field. The irony of using a poison-delivery mechanism as poison protection was apparently not lost on its maker.",
+  "unidentified_name": "serpent tooth pendant",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

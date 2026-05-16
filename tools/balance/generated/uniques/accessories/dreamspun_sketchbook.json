@@ -1,0 +1,27 @@
+{
+  "id": "dreamspun_sketchbook",
+  "name": "Dreamspun Sketchbook",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "+",
+  "color": [
+    200,
+    170,
+    240
+  ],
+  "slot": "none",
+  "weight_lb": 0.5,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {},
+  "lore": "A young lady's sketchbook. It's full of whimsical drawings. She used this sketchbook to bring her dreams to life. The pages shimmer with magical energy.",
+  "unidentified_name": "tattered sketchbook",
+  "min_level": 999,
+  "peak_floor": 1004,
+  "spread": 305,
+  "peak_weight": 0.2,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 50,
+    "player_ac_target_at_min_level": -14
+  }
+}

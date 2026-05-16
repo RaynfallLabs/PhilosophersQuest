@@ -1,0 +1,30 @@
+{
+  "id": "ring_levitate",
+  "name": "ring of levitating",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    200,
+    200,
+    240
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 3,
+  "effects": {
+    "status": "levitating",
+    "duration": -1
+  },
+  "lore": "This ring seems to float on the finger rather than sit against the skin — a subtle preview of the levitation it grants. Wearers drift silently above pit traps and submerged floors, untouchable by ground-level threats.",
+  "unidentified_name": "phantom silver ring",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

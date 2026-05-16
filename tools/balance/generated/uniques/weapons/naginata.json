@@ -1,0 +1,37 @@
+{
+  "id": "naginata",
+  "name": "naginata",
+  "category": "weapon",
+  "weapon_class": "polearm",
+  "template_basis": "glaive",
+  "is_unique": true,
+  "hands": 2,
+  "damage_types": [
+    "slash",
+    "pierce"
+  ],
+  "base_damage": 10,
+  "chain_multipliers": [
+    0.7,
+    0.85,
+    1.0,
+    1.15,
+    1.4,
+    1.75
+  ],
+  "max_chain_length": 6,
+  "weight_lb": 7.0,
+  "min_level": 42,
+  "peak_floor": 52,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "reach": 2,
+    "crit_multiplier": 1.5
+  },
+  "lore": "Weapon of the onna-bugeisha and Buddhist warrior monks. More difficult to master than the katana, by tradition.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(42) \u00d7 1.40 unique-mult = 10. Class: heavy 6-rung (midpoint=1.0\u00d7, peak=1.75\u00d7).",
+  "weapon_class_chain": "heavy"
+}

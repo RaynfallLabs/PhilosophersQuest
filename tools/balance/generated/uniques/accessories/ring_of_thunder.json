@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_thunder",
+  "name": "Ring of Thunder",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    180,
+    200,
+    255
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "stat": "INT",
+    "amount": 2,
+    "status": "shock_resist",
+    "duration": -1
+  },
+  "lore": "Forged in the heart of a perpetual thunderstorm by an Aztec storm-caller, this ring hums with suppressed electrical charge. Lightning that strikes the wearer grounds harmlessly through the stone, while the storm energy sharpens the intellect to razor clarity.",
+  "unidentified_name": "crackling ring",
+  "min_level": 20,
+  "peak_floor": 25,
+  "spread": 12,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 19,
+    "player_ac_target_at_min_level": 5
+  }
+}

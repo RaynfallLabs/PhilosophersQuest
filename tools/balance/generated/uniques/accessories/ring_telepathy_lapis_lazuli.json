@@ -1,0 +1,30 @@
+{
+  "id": "ring_telepathy_lapis_lazuli",
+  "name": "ring of telepathy",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    50,
+    90,
+    180
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "telepathy",
+    "duration": -1
+  },
+  "lore": "Lapis was prized by ancient mind-mages for its resonance with thought-waves; this ring's golden pyrite flecks serve as focusing elements for the telepathic enchantment locked inside.",
+  "unidentified_name": "lapis lazuli ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

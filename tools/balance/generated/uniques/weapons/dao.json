@@ -1,0 +1,36 @@
+{
+  "id": "dao",
+  "name": "dao",
+  "category": "weapon",
+  "weapon_class": "scimitar",
+  "template_basis": "scimitar",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 8,
+  "chain_multipliers": [
+    0.18,
+    0.4,
+    0.65,
+    1.0,
+    1.5,
+    2.2,
+    3.2
+  ],
+  "max_chain_length": 7,
+  "weight_lb": 3.0,
+  "min_level": 42,
+  "peak_floor": 52,
+  "spread": 12,
+  "peak_weight": 0.5,
+  "max_enchant": 4,
+  "spawn_method": "rare_drop",
+  "special_properties": {
+    "crit_multiplier": 1.5
+  },
+  "lore": "One of the four traditional weapons of Chinese martial arts. Masters achieve a 'no-mind' state where the blade becomes an extension of intent.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(42) \u00d7 1.20 unique-mult = 8. Class: finesse 7-rung (midpoint=1.0\u00d7, peak=3.20\u00d7).",
+  "weapon_class_chain": "finesse"
+}

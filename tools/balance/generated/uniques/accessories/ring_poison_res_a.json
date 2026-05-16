@@ -1,0 +1,30 @@
+{
+  "id": "ring_poison_res_a",
+  "name": "ring of poison resist",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    60,
+    180,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 2,
+  "effects": {
+    "status": "poison_resist",
+    "duration": -1
+  },
+  "lore": "Carved in the shape of a serpent devouring its own tail, this jade ring was used by venomous creature handlers who needed reliable protection against accidental bites. The antitoxin enchantment is thoroughly tested.",
+  "unidentified_name": "jade serpent ring",
+  "min_level": 8,
+  "peak_floor": 13,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 15,
+    "player_ac_target_at_min_level": 7
+  }
+}

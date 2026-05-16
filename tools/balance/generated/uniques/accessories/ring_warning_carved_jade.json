@@ -1,0 +1,30 @@
+{
+  "id": "ring_warning_carved_jade",
+  "name": "ring of warning",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    100,
+    180,
+    120
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 3,
+  "quiz_tier": 1,
+  "effects": {
+    "status": "warning",
+    "duration": -1
+  },
+  "lore": "The jade surface of this ring is cool to the touch until danger approaches, at which point it grows almost feverishly warm — a startling contrast that has saved many lives.",
+  "unidentified_name": "carved jade ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

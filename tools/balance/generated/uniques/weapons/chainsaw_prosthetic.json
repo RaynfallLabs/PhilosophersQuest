@@ -1,0 +1,38 @@
+{
+  "id": "chainsaw_prosthetic",
+  "name": "Chainsaw Prosthetic",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "template_basis": "longsword",
+  "is_unique": true,
+  "hands": 1,
+  "damage_types": [
+    "slash"
+  ],
+  "base_damage": 6,
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "weight_lb": 5.0,
+  "min_level": 9999,
+  "peak_floor": 0,
+  "spread": 0,
+  "peak_weight": 0,
+  "max_enchant": 2,
+  "spawn_method": "easter_egg",
+  "special_properties": {
+    "stun_chance": 0.15,
+    "bleed_chance": 0.4,
+    "crit_multiplier": 1.7,
+    "groovy": true
+  },
+  "lore": "A Homelite XL chainsaw, permanently bolted to the stump of a severed right hand. The original owner attached it in a moment of desperate improvisation in a remote cabin in Tennessee. Groovy.",
+  "curve_note": "v2: base_damage = curve.weapon_base_damage(35) \u00d7 1.20 unique-mult = 6. Class: normal 5-rung (midpoint=1.0\u00d7, peak=2.00\u00d7).",
+  "tier_intended": 35,
+  "weapon_class_chain": "normal"
+}

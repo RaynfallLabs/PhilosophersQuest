@@ -1,0 +1,30 @@
+{
+  "id": "ring_strength_iron",
+  "name": "ring of strength",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    120,
+    120,
+    130
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "STR",
+    "amount": 1
+  },
+  "lore": "Iron is the metal of physical labor and martial endurance; this simple band channels that essence into the wearer's muscles, granting a reliable increase to raw strength.",
+  "unidentified_name": "iron ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}

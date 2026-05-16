@@ -1,0 +1,32 @@
+{
+  "id": "ring_of_hypatia",
+  "name": "Ring of Hypatia",
+  "category": "accessory",
+  "is_unique": true,
+  "symbol": "=",
+  "color": [
+    220,
+    240,
+    200
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 4,
+  "quiz_tier": 5,
+  "effects": {
+    "stat": "INT",
+    "amount": 3,
+    "status": "truesight",
+    "duration": -1
+  },
+  "lore": "Hypatia of Alexandria was the foremost mathematician and astronomer of her age, head of the Neoplatonic school, advisor to the prefect Orestes. In 415 CE a Christian mob pulled her from her chariot, dragged her to a church, and killed her. Her father Theon had raised her to be 'a perfect human being.' What destroyed her was not her imperfection. It was that the people around her could not tolerate the example.",
+  "unidentified_name": "a thin bronze ring engraved with mathematical diagrams",
+  "min_level": 55,
+  "peak_floor": 60,
+  "spread": 22,
+  "peak_weight": 0.3,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 33,
+    "player_ac_target_at_min_level": -4
+  }
+}

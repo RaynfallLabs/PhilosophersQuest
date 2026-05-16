@@ -1,0 +1,30 @@
+{
+  "id": "ring_protection_gold",
+  "name": "ring of protection +2",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    200,
+    80
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 3,
+  "effects": {
+    "stat": "AC",
+    "amount": 2
+  },
+  "lore": "A finely wrought golden ring set with nested protection glyphs. The field it generates slightly deflects incoming attacks, as if the air itself becomes briefly solid around the wearer.",
+  "unidentified_name": "a polished gold band",
+  "min_level": 25,
+  "peak_floor": 30,
+  "spread": 13,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 21,
+    "player_ac_target_at_min_level": 3
+  }
+}

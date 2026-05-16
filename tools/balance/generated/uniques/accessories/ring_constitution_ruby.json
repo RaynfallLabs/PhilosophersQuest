@@ -1,0 +1,30 @@
+{
+  "id": "ring_constitution_ruby",
+  "name": "ring of constitution",
+  "category": "accessory",
+  "is_unique": false,
+  "symbol": "=",
+  "color": [
+    220,
+    40,
+    40
+  ],
+  "slot": "ring",
+  "weight_lb": 0.1,
+  "equip_threshold": 2,
+  "quiz_tier": 1,
+  "effects": {
+    "stat": "CON",
+    "amount": 1
+  },
+  "lore": "Rubies were believed by ancient healers to strengthen the blood and harden the body against illness and injury; this ring activates that belief as literal fact, enhancing the wearer's constitution.",
+  "unidentified_name": "ruby ring",
+  "min_level": 1,
+  "peak_floor": 6,
+  "spread": 8,
+  "peak_weight": 0.4,
+  "curve_cite": {
+    "player_hp_baseline_at_min_level": 12,
+    "player_ac_target_at_min_level": 9
+  }
+}
