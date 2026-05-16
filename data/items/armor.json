@@ -611,37 +611,6 @@
       "81-100": 2
     }
   },
-  "dragonscale_armor": {
-    "name": "dragonscale armor",
-    "symbol": "[",
-    "color": [
-      200,
-      150,
-      70
-    ],
-    "weight": 12.0,
-    "min_level": 81,
-    "slot": "body",
-    "tier": 5,
-    "material": "dragonscale",
-    "ac_bonus": 8,
-    "equip_threshold": 2,
-    "quiz_tier": 5,
-    "damage_resistances": {
-      "fire": 0.5,
-      "acid": 0.75
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "an iridescent scale harness",
-    "set_id": "dragonslayer",
-    "set_name": "The Dragonslayer's Set",
-    "lore": "Harvested from a dragon of ancient lineage, each scale on this armor is broader than a human palm and harder than forged steel. The draconic essence still saturates the scales, granting the wearer dramatic resistance to fire and acid — the dragon's own weapons turned to defense. This is one of the three pieces of the Dragonslayer's Set. When worn alongside the Dragonbone Longsword and the Dragonslayer's Ring, the wearer gains immunity to fear and +2 to all attacks against dragons.",
-    "floorSpawnWeight": {
-      "1-80": 0,
-      "81-100": 3
-    }
-  },
   "adamantine_armor": {
     "name": "adamantine armor",
     "symbol": "[",
@@ -1374,7 +1343,7 @@
     }
   },
   "dragonscale_cloak": {
-    "name": "dragonscale cloak",
+    "name": "Dragonscale Cloak",
     "symbol": "[",
     "color": [
       200,
@@ -1386,7 +1355,7 @@
     "slot": "cloak",
     "tier": 5,
     "material": "dragonscale",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "equip_threshold": 1,
     "quiz_tier": 5,
     "damage_resistances": {
@@ -1394,14 +1363,18 @@
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "set_id": "shadow_walker",
-    "set_name": "The Shadow Walker's Set",
     "lore": "This sleek cloak is fashioned from the wing membrane and smaller scales of a shadow-drake, a draconic subspecies known for their natural stealth and venomous bite. The scales absorb fire and seem to drink in ambient light, making the wearer unusually difficult to spot in dim conditions. This is one of the three pieces of the Shadow Walker's Set. When worn alongside the Adamantine Dagger and the Shadow Walker's Ring, the wearer gains a poison strike on all attacks and moves silently regardless of armor worn.",
     "unidentified_name": "an iridescent scale cloak",
     "floorSpawnWeight": {
       "1-80": 0,
       "81-100": 3
-    }
+    },
+    "is_unique": true,
+    "template_basis": "cloak",
+    "peak_floor": 88,
+    "spread": 10,
+    "peak_weight": 0.35,
+    "max_enchant": 2
   },
   "cloth_shirt": {
     "name": "cloth shirt",
@@ -4250,5 +4223,40 @@
     "peak_weight": 0.4,
     "template_basis": "iron_helm",
     "is_unique": true
+  },
+  "dragonscale_plate": {
+    "name": "Dragonscale Plate",
+    "symbol": "[",
+    "color": [
+      200,
+      150,
+      70
+    ],
+    "weight": 12.0,
+    "min_level": 81,
+    "slot": "body",
+    "tier": 5,
+    "material": "dragonscale",
+    "ac_bonus": 8,
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "fire": 0.5,
+      "acid": 0.75
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "an iridescent scale harness",
+    "lore": "Harvested from a dragon of ancient lineage, each scale on this armor is broader than a human palm and harder than forged steel. The draconic essence still saturates the scales, granting the wearer dramatic resistance to fire and acid — the dragon's own weapons turned to defense. This is one of the three pieces of the Dragonslayer's Set. When worn alongside the Dragonbone Longsword and the Dragonslayer's Ring, the wearer gains immunity to fear and +2 to all attacks against dragons.",
+    "floorSpawnWeight": {
+      "1-80": 0,
+      "81-100": 3
+    },
+    "is_unique": true,
+    "template_basis": "plate",
+    "peak_floor": 88,
+    "spread": 10,
+    "peak_weight": 0.35,
+    "max_enchant": 3
   }
 }

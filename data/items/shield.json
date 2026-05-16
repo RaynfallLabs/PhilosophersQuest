@@ -319,43 +319,6 @@
     "peak_weight": 0.4,
     "max_enchant": 2
   },
-  "svalinn_shield": {
-    "name": "Svalinn",
-    "symbol": ")",
-    "color": [
-      200,
-      255,
-      255
-    ],
-    "weight": 10.0,
-    "min_level": 55,
-    "tier": 5,
-    "material": "adamantine",
-    "ac_bonus": 4,
-    "enchant_bonus": 0,
-    "equip_threshold": 2,
-    "quiz_tier": 5,
-    "damage_resistances": {
-      "fire": 0.55,
-      "lightning": 0.3
-    },
-    "can_be_cursed": false,
-    "cursed": false,
-    "identified": false,
-    "unidentified_name": "a shield that feels cool to the touch even in heat",
-    "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
-    },
-    "value": 8000,
-    "lore": "The Poetic Edda places Svalinn — the Cooler — before the sun to shield the earth from its full heat. Without it the mountains would burn and the seas boil. It stands there and no one knows how it arrived. The name means exactly what it does. The Norse naming conventions for cosmological entities were admirably functional.",
-    "is_unique": true,
-    "template_basis": "heavy_wooden",
-    "peak_floor": 62,
-    "spread": 12,
-    "peak_weight": 0.4,
-    "max_enchant": 2
-  },
   "pridwen": {
     "name": "Pridwen",
     "symbol": ")",
@@ -632,8 +595,7 @@
     "peak_floor": 58,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2,
-    "_duplicate_of": "svalinn_shield"
+    "max_enchant": 2
   },
   "ancile": {
     "name": "Ancile",
