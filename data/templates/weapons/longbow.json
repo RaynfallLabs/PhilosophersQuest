@@ -1,0 +1,31 @@
+{
+  "id": "longbow",
+  "name": "longbow",
+  "category": "weapon",
+  "weapon_class": "bow",
+  "hands": 2,
+  "damage_types": [
+    "pierce"
+  ],
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "damage_modifier": 1.0,
+  "base_weight_lb": 3.0,
+  "speed": 11,
+  "compatible_material_classes": [
+    "wood",
+    "rare_wood",
+    "exotic_organic"
+  ],
+  "lore_template": "A {material_name} longbow. The English answer at Agincourt \u2014 and good for whatever this dungeon has to offer.",
+  "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 2.00\u00d7. Class mechanic: Range 8 tiles. STR \u2265 13 recommended for full draw. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.0 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "normal",
+  "class_mechanic": "range_8",
+  "class_mechanic_desc": "Range 8 tiles. STR \u2265 13 recommended for full draw."
+}

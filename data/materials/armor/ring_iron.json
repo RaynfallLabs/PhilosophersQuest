@@ -1,0 +1,20 @@
+{
+  "id": "ring_iron",
+  "name": "ring iron",
+  "material_class": "metal",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 22,
+  "spread": 11,
+  "peak_weight": 8,
+  "weight_mult": 1.0,
+  "ac_bonus": 0,
+  "max_enchant": 2,
+  "color": [140, 140, 145],
+  "resistances": [],
+  "weaknesses": ["rust", "acid"],
+  "vulnerabilities": [],
+  "special_properties": ["rustable"],
+  "lore_descriptor": "iron rings, dull-grey, faintly rust-spotted",
+  "unidentified_descriptor": "ring-pattern iron",
+  "first_pickup_chronicle": "Iron rings. Not the prettiest forge-work — somebody hammered each link cold and riveted it shut. But every ring is a promise that a blade will slide off."
+}

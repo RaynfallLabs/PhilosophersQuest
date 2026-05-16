@@ -300,6 +300,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # back to current dungeon_level so existing cooking remains within softcap.
             _max_lvl = getattr(state.get('level_mgr'), 'max_level_reached', None)
             self.player.deepest_floor_reached = _max_lvl or state.get('dungeon_level', 1)
+        if not hasattr(self.player, 'chronicle_seen_materials'):
+            self.player.chronicle_seen_materials = set()
         if not hasattr(self.player, 'known_spells'):
             self.player.known_spells = {}
         if not hasattr(self.player, 'lockpick_charges'):
@@ -2157,6 +2159,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'scroll_lake_of_fire': "A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
                 }
                 self._log_chronicle(_CHRONICLE_FLAVOR.get(item.id, f"Picked up something interesting: {_cname}."))
+            # Material discovery chronicle: first time the player sees each
+            # material (cold iron, mithril, etc.), log the discovery line.
+            _mat_id = getattr(item, 'material', None)
+            if _mat_id and _mat_id not in self.player.chronicle_seen_materials:
+                from items import get_material
+                _mat_defn = get_material('weapons', _mat_id) or get_material('armor', _mat_id)
+                if _mat_defn:
+                    _chronicle_line = _mat_defn.get('first_pickup_chronicle')
+                    if _chronicle_line:
+                        self._log_chronicle(_chronicle_line)
+                        self.player.chronicle_seen_materials.add(_mat_id)
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
                 self.add_message(
                     "The Philosopher's Stone! Return to the surface to win!", 'loot'

@@ -1,0 +1,12 @@
+{
+  "id": "iron_helm",
+  "name": "iron helm",
+  "category": "armor",
+  "armor_class_tier": "medium",
+  "slot": "head",
+  "base_ac_value": 1,
+  "base_weight_lb": 3.0,
+  "_design_note": "F15-40 mid head slot. Simple pot helm with nasal guard. Matches chainmail/scale body tier.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
+  "lore_template": "A simple {material_name} pot helm with a fixed nasal guard and cheek plates. The design dates back centuries and has never been improved because it has never needed to be — it protects what matters and costs little enough to leave behind if you must run."
+}

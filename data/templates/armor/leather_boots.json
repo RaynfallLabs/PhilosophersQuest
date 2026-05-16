@@ -1,0 +1,12 @@
+{
+  "id": "leather_boots",
+  "name": "leather boots",
+  "category": "armor",
+  "armor_class_tier": "light",
+  "slot": "feet",
+  "base_ac_value": 1,
+  "base_weight_lb": 2.0,
+  "_design_note": "F1-25 light feet slot. Hard-soled travel boots. Vidar's Sandal uses this as template_basis.",
+  "compatible_material_classes": ["cloth", "leather", "hide"],
+  "lore_template": "Hard-soled boots of decent {material_name}, worn smooth at the heel from long travel. They protect the feet from dungeon debris and the constant moisture of stone passages, while the flexible uppers allow silent movement when circumstances demand it."
+}

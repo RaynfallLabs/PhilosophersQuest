@@ -1,0 +1,12 @@
+{
+  "id": "scale",
+  "name": "scale",
+  "category": "armor",
+  "armor_class_tier": "medium",
+  "slot": "body",
+  "base_ac_value": 4,
+  "base_weight_lb": 30.0,
+  "_design_note": "F25-45 medium-heavy. Good vs pierce.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
+  "lore_template": "Overlapping {material_name} scales lashed to a leather coat. The scales shed point-attacks the way a fish sheds water."
+}

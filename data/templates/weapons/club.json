@@ -1,0 +1,31 @@
+{
+  "id": "club",
+  "name": "club",
+  "category": "weapon",
+  "weapon_class": "blunt",
+  "hands": 1,
+  "damage_types": [
+    "blunt"
+  ],
+  "chain_multipliers": [
+    0.5,
+    0.85,
+    1.0,
+    1.45,
+    2.0
+  ],
+  "max_chain_length": 5,
+  "damage_modifier": 0.7,
+  "base_weight_lb": 3.0,
+  "speed": 10,
+  "compatible_material_classes": [
+    "wood",
+    "rare_wood",
+    "exotic_organic"
+  ],
+  "lore_template": "A {material_name} club. Older than civilization, and never improved upon for what it does.",
+  "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 2.00\u00d7. Class mechanic: Primitive: cheap and abundant \u2014 never breaks on harvest tools. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.7 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "normal",
+  "class_mechanic": "primitive",
+  "class_mechanic_desc": "Primitive: cheap and abundant \u2014 never breaks on harvest tools."
+}

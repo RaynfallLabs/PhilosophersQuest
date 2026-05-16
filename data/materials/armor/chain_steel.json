@@ -1,0 +1,20 @@
+{
+  "id": "chain_steel",
+  "name": "chain steel",
+  "material_class": "metal",
+  "applies_to": ["armor", "shield"],
+  "peak_floor": 35,
+  "spread": 12,
+  "peak_weight": 7,
+  "weight_mult": 1.0,
+  "ac_bonus": 1,
+  "max_enchant": 2,
+  "color": [170, 175, 185],
+  "resistances": ["slash"],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": [],
+  "lore_descriptor": "fine steel, polished to a working sheen",
+  "unidentified_descriptor": "well-forged steel",
+  "first_pickup_chronicle": "Steel. The smith folded it seven times and the rings hold their shape. Slash damage slides off this like rain off slate."
+}

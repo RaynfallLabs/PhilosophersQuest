@@ -1,0 +1,12 @@
+{
+  "id": "gauntlets",
+  "name": "gauntlets",
+  "category": "armor",
+  "armor_class_tier": "medium",
+  "slot": "hands",
+  "base_ac_value": 1,
+  "base_weight_lb": 1.5,
+  "_design_note": "F20-60 medium hand slot. Chain-and-leather construction — covers chain_gauntlets, iron_gauntlets, bronze_gauntlets in existing data.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
+  "lore_template": "{material_name} gauntlets with a leather palm lining for grip, covering the hands and extending partway up the forearm. The flexible construction preserves weapon-handling dexterity while protecting the fingers and knuckles from cut damage."
+}

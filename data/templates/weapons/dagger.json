@@ -1,0 +1,33 @@
+{
+  "id": "dagger",
+  "name": "dagger",
+  "category": "weapon",
+  "weapon_class": "dagger",
+  "hands": 1,
+  "damage_types": [
+    "pierce",
+    "slash"
+  ],
+  "chain_multipliers": [
+    0.3,
+    0.8,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 4,
+  "damage_modifier": 0.7,
+  "base_weight_lb": 1.0,
+  "speed": 12,
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material",
+    "exotic_metal"
+  ],
+  "lore_template": "A {material_name} dagger \u2014 short, quick, and honest about its purpose.",
+  "design_notes": "v2 chain rebalance: finesse class, 4 rungs. Midpoint rung 2 = 0.80\u00d7 (1.0\u00d7 anchor band). Peak rung 4 = 3.00\u00d7. Class mechanic: Backstab: \u00d72 damage if the target is unaware of you. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.7 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "finesse",
+  "class_mechanic": "backstab",
+  "class_mechanic_desc": "Backstab: \u00d72 damage if the target is unaware of you."
+}

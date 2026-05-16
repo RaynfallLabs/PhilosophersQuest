@@ -4635,7 +4635,7 @@
       220,
       235
     ],
-    "weight": 3,
+    "weight": 2.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4653,11 +4653,32 @@
     },
     "containerLootTier": "common",
     "value": 120,
-    "min_level": 1,
+    "min_level": 3,
     "unidentified_name": "a short leaf-shaped sword",
     "lore": "The gladius Hispaniensis was the standard sidearm of the Roman legionary from the 2nd century BC. Its 50-60cm leaf-shaped blade excelled in close formation fighting — the legionary crouched behind his scutum and thrust upward at an exposed abdomen. It won an empire.",
     "quiz_tier": 1,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "shortsword",
+    "spread": 8,
+    "peak_floor": 13,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "normal"
   },
   "pugio": {
     "name": "pugio",
@@ -4687,7 +4708,7 @@
       210,
       220
     ],
-    "weight": 3,
+    "weight": 1.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4705,11 +4726,33 @@
     },
     "containerLootTier": "common",
     "value": 80,
-    "min_level": 1,
+    "min_level": 2,
     "unidentified_name": "a wide-bladed Roman knife",
     "lore": "The pugio was the personal sidearm of Roman soldiers and officers from the 1st century BC. Worn on the left hip as a counterweight to the gladius, it served as a last resort in close combat and a tool for camp life. Julius Caesar was allegedly stabbed with a pugio — or many of them.",
     "quiz_tier": 1,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "pierce",
+      "slash"
+    ],
+    "template_basis": "dagger",
+    "spread": 8,
+    "peak_floor": 12,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "finesse"
   },
   "kopis": {
     "name": "kopis",
@@ -4737,7 +4780,7 @@
       175,
       130
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4755,11 +4798,31 @@
     },
     "containerLootTier": "common",
     "value": 110,
-    "min_level": 1,
+    "min_level": 3,
     "unidentified_name": "a heavy curved slashing blade",
     "lore": "The kopis was favored by Greek cavalry and Persian infantry alike. Unlike the straight xiphos, its forward-curving blade was optimized for chopping downward strokes — ideal from horseback. Alexander's Macedonian cavalry carried kopis as secondary weapons alongside their sarissas.",
     "quiz_tier": 1,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "scimitar",
+    "spread": 8,
+    "peak_floor": 13,
+    "chain_multipliers": [
+      0.2,
+      0.45,
+      0.75,
+      1.2,
+      2.0,
+      3.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "finesse"
   },
   "francisca": {
     "name": "francisca",
@@ -4786,7 +4849,7 @@
       170,
       150
     ],
-    "weight": 3,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4804,11 +4867,30 @@
     },
     "containerLootTier": "common",
     "value": 130,
-    "min_level": 1,
+    "min_level": 3,
     "unidentified_name": "a strangely curved single-edged hatchet",
     "lore": "The francisca was the signature weapon of the Frankish warriors, used from the 5th to 8th centuries. Thrown just before contact, it caromed unpredictably along the ground and knocked down shields, disrupting formations. The 'knockback' effect was literal — it knocked shields away before the charge.",
     "quiz_tier": 1,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "battleaxe",
+    "spread": 8,
+    "peak_floor": 13,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "normal"
   },
   "sica": {
     "name": "sica",
@@ -4838,7 +4920,7 @@
       185,
       160
     ],
-    "weight": 3,
+    "weight": 1.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4856,11 +4938,33 @@
     },
     "containerLootTier": "common",
     "value": 100,
-    "min_level": 1,
+    "min_level": 3,
     "unidentified_name": "a curved single-edged knife",
     "lore": "The sica was the weapon of Dacian warriors and Roman gladiators. Its inward-curved blade was designed to reach behind an opponent's shield and hook around armor. Roman writers noted that wounds from the sica had an unusual tendency to reopen — a phenomenon this blade replicates.",
     "quiz_tier": 1,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "dagger",
+    "spread": 8,
+    "peak_floor": 13,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "finesse"
   },
   "falchion": {
     "name": "falchion",
@@ -4889,7 +4993,7 @@
       185,
       210
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4907,11 +5011,32 @@
     },
     "containerLootTier": "common",
     "value": 250,
-    "min_level": 21,
+    "min_level": 22,
     "unidentified_name": "a heavy curved single-edged sword",
     "lore": "The falchion was a weapon of the common soldier: cheaper to produce than a knightly sword, requiring less skill to use effectively, and brutally efficient against lightly armored opponents. The wide blade stored more momentum than a narrower sword. Medieval chroniclers described its users as 'indifferent to finesse but devoted to results.'",
     "quiz_tier": 2,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 8,
+    "peak_floor": 32,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 5,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "cinquedea": {
     "name": "cinquedea",
@@ -4941,7 +5066,7 @@
       190,
       215
     ],
-    "weight": 3,
+    "weight": 1.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -4959,11 +5084,33 @@
     },
     "containerLootTier": "common",
     "value": 220,
-    "min_level": 21,
+    "min_level": 22,
     "unidentified_name": "a very wide short blade",
     "lore": "Named for its width of 'five fingers' at the ricasso, the cinquedea was a Renaissance Italian status weapon that doubled as a serious fighting tool. Its five ridges gave structural rigidity to an unusually wide blade. Wealthy citizens of 15th-century Ferrara wore these at the hip as a statement of intent.",
     "quiz_tier": 2,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "dagger",
+    "spread": 8,
+    "peak_floor": 32,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 5,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "finesse"
   },
   "estoc": {
     "name": "estoc",
@@ -4992,7 +5139,7 @@
       200,
       225
     ],
-    "weight": 3,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5010,11 +5157,32 @@
     },
     "containerLootTier": "common",
     "value": 280,
-    "min_level": 21,
+    "min_level": 22,
     "unidentified_name": "a long stiff thrusting sword",
     "lore": "The estoc — from Old French 'estocade,' to thrust — was developed specifically to defeat plate armor. Its stiff, unsharpened blade was designed to be driven through mail rings and into gaps in plate. In the hands of an expert it bypasses all surface defenses.",
     "quiz_tier": 2,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "longsword",
+    "spread": 8,
+    "peak_floor": 32,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 5,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "kukri": {
     "name": "kukri",
@@ -5043,7 +5211,7 @@
       175,
       185
     ],
-    "weight": 3,
+    "weight": 1.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5061,11 +5229,32 @@
     },
     "containerLootTier": "common",
     "value": 200,
-    "min_level": 21,
+    "min_level": 22,
     "unidentified_name": "a forward-curved heavy blade",
     "lore": "The kukri is the national weapon of Nepal and the combat knife of the Gurkha soldiers who have earned fear and respect in every army that has faced them. The forward curve concentrates force at the tip of the blade; the narrow notch near the guard prevents blood from running onto the handle. The Gurkha saying goes: 'Never draw it without drawing blood.'",
     "quiz_tier": 2,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "dagger",
+    "spread": 8,
+    "peak_floor": 32,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 5,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "finesse"
   },
   "war_scythe": {
     "name": "war scythe",
@@ -5094,7 +5283,7 @@
       180,
       190
     ],
-    "weight": 5,
+    "weight": 7.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -5112,11 +5301,32 @@
     },
     "containerLootTier": "common",
     "value": 240,
-    "min_level": 21,
+    "min_level": 22,
     "unidentified_name": "a repurposed agricultural polearm",
     "lore": "The war scythe was the weapon of desperate men — peasant armies during the Hussite Wars, Polish nobility uprisings, and countless smaller rebellions. A blacksmith would rotate the blade 90 degrees on a long haft, transforming a harvest tool into a weapon capable of unhorsing cavalry. Inelegant but terrifyingly effective.",
     "quiz_tier": 2,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "glaive",
+    "spread": 8,
+    "peak_floor": 32,
+    "chain_multipliers": [
+      0.7,
+      0.85,
+      1.0,
+      1.15,
+      1.4,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 5,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "heavy"
   },
   "bastard_sword": {
     "name": "bastard sword",
@@ -5146,7 +5356,7 @@
       195,
       220
     ],
-    "weight": 5,
+    "weight": 5.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -5164,11 +5374,33 @@
     },
     "containerLootTier": "common",
     "value": 300,
-    "min_level": 21,
+    "min_level": 22,
     "unidentified_name": "a versatile long-gripped sword",
     "lore": "The 'bastard sword' or hand-and-a-half sword occupied the gap between a standard longsword and a full two-hander. It could be wielded one-handed from horseback or two-handed on foot. Its length gave reach; its grip options gave versatility. The name comes from its ambiguous classification in medieval catalogs.",
     "quiz_tier": 2,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "bastard_sword",
+    "spread": 8,
+    "peak_floor": 32,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 5,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "katana": {
     "name": "katana",
@@ -5197,7 +5429,7 @@
       215,
       190
     ],
-    "weight": 3,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5215,11 +5447,32 @@
     },
     "containerLootTier": "uncommon",
     "value": 600,
-    "min_level": 41,
+    "min_level": 42,
     "unidentified_name": "a gracefully curved eastern longsword",
     "lore": "The katana represents centuries of Japanese metallurgical art. The differential hardening process — clay-coating the spine before quenching — creates a blade with a hard edge and tough back. The characteristic curve (sori) develops during the quench. A perfect kata produces a strike that opponents frequently describe as not feeling until seconds after.",
     "quiz_tier": 3,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 52,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 10,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "dao": {
     "name": "dao",
@@ -5248,7 +5501,7 @@
       185,
       60
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5266,11 +5519,32 @@
     },
     "containerLootTier": "uncommon",
     "value": 580,
-    "min_level": 41,
+    "min_level": 42,
     "unidentified_name": "a curved eastern broadsword",
     "lore": "The dao is one of the four traditional weapons of Chinese martial arts. Its single-edged curved blade was the standard weapon of Chinese cavalry and infantry through multiple dynasties. Masters of the dao are said to achieve a state of 'no-mind' in which the blade becomes an extension of intent rather than arm.",
     "quiz_tier": 3,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 52,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 8,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "naginata": {
     "name": "naginata",
@@ -5299,7 +5573,7 @@
       110,
       80
     ],
-    "weight": 5,
+    "weight": 7.0,
     "twoHanded": true,
     "reach": 2,
     "stunChance": 0.0,
@@ -5317,11 +5591,32 @@
     },
     "containerLootTier": "uncommon",
     "value": 620,
-    "min_level": 41,
+    "min_level": 42,
     "unidentified_name": "a long polearm with a curved blade",
     "lore": "The naginata was the weapon of the onna-bugeisha, Japanese female warriors, and later of Buddhist warrior monks. Its long shaft and curved blade combined the reach of a spear with the cutting ability of a sword. Naginata schools still exist in Japan; the weapon is considered more difficult to master than the katana.",
     "quiz_tier": 3,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "glaive",
+    "spread": 12,
+    "peak_floor": 52,
+    "chain_multipliers": [
+      0.7,
+      0.85,
+      1.0,
+      1.15,
+      1.4,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 10,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "claymore": {
     "name": "claymore",
@@ -5350,7 +5645,7 @@
       195,
       175
     ],
-    "weight": 5,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -5368,11 +5663,32 @@
     },
     "containerLootTier": "uncommon",
     "value": 700,
-    "min_level": 41,
+    "min_level": 42,
     "unidentified_name": "a massive highland two-handed sword",
     "lore": "The Scottish claymore (claidheamh mòr, 'great sword') was the signature weapon of Highland warriors from the 15th century. Its distinctive downward-angling quillons with trefoil finials made it instantly recognizable. Swung by a Highland warrior in full charge, the claymore could cleave through leather, mail, and occasionally the man wearing it.",
     "quiz_tier": 3,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 52,
+    "chain_multipliers": [
+      0.7,
+      0.85,
+      1.0,
+      1.15,
+      1.4,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 10,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "partisan": {
     "name": "partisan",
@@ -5401,7 +5717,7 @@
       180,
       60
     ],
-    "weight": 5,
+    "weight": 7.0,
     "twoHanded": true,
     "reach": 2,
     "stunChance": 0.0,
@@ -5419,11 +5735,32 @@
     },
     "containerLootTier": "uncommon",
     "value": 580,
-    "min_level": 41,
+    "min_level": 42,
     "unidentified_name": "a long spear with side blades",
     "lore": "The partisan was a ceremonial and combat polearm of the Renaissance, featuring a main spike with two smaller side blades at the base. The side blades could catch and bind an opponent's weapon, or be used for slashing after the main thrust. Papal Swiss Guards carried partisans as marks of office.",
     "quiz_tier": 3,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "pierce",
+      "slash"
+    ],
+    "template_basis": "glaive",
+    "spread": 12,
+    "peak_floor": 52,
+    "chain_multipliers": [
+      0.7,
+      0.85,
+      1.0,
+      1.15,
+      1.4,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 8,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "mameluke_saber": {
     "name": "mameluke saber",
@@ -5452,7 +5789,7 @@
       245,
       255
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5470,11 +5807,32 @@
     },
     "containerLootTier": "rare",
     "value": 1200,
-    "min_level": 61,
+    "min_level": 62,
     "unidentified_name": "an exquisitely curved cavalry saber",
     "lore": "The mameluke saber was the weapon of the warrior-slave elite of the Islamic world. Its distinctive T-shaped cross-section and radical curve made it the deadliest cavalry saber of its era. Napoleon's guard officers adopted the style after Egypt; US Marine officers still carry a version of this blade today.",
     "quiz_tier": 4,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 72,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "flamberge": {
     "name": "flamberge",
@@ -5503,7 +5861,7 @@
       245,
       255
     ],
-    "weight": 5,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -5521,11 +5879,32 @@
     },
     "containerLootTier": "rare",
     "value": 1400,
-    "min_level": 61,
+    "min_level": 62,
     "unidentified_name": "a two-handed undulating blade",
     "lore": "The flamberge's wave-shaped blade was not merely aesthetic. The undulations created additional cutting edges along the blade's length and disrupted opponents' parries by vibrating their weapons uncomfortably. Opponents who blocked a flamberge often found their hands numbed; those it touched bore wounds that festered unusually.",
     "quiz_tier": 4,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 72,
+    "chain_multipliers": [
+      0.7,
+      0.85,
+      1.0,
+      1.15,
+      1.4,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 15,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "executioners_sword": {
     "name": "executioner's sword",
@@ -5554,7 +5933,7 @@
       240,
       255
     ],
-    "weight": 5,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -5572,11 +5951,32 @@
     },
     "containerLootTier": "rare",
     "value": 1350,
-    "min_level": 61,
+    "min_level": 62,
     "unidentified_name": "a massive blunt-tipped slashing blade",
     "lore": "The headsman's sword had no point — a stabbing weapon is useless when your target is kneeling. Instead, the blade was ground to extraordinary sharpness along its length for a clean single-stroke execution. A skilled executioner was expected to sever the head in one blow; a second stroke was considered a failure and the victim's family was entitled to demand compensation.",
     "quiz_tier": 4,
-    "identified": false
+    "identified": false,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 72,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 15,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "soul_reaver": {
     "name": "Soul Reaver",
@@ -5609,7 +6009,7 @@
       50,
       180
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5627,12 +6027,35 @@
     },
     "containerLootTier": "rare",
     "value": 5000,
-    "min_level": 81,
+    "min_level": 82,
     "unidentified_name": "a dark whispering curved blade",
     "lore": "Few who have held the Soul Reaver remember doing so willingly. The blade selects its wielders, and the criteria are opaque. What is known: wounds it inflicts do not heal without magic; the blade whispers between kills; and it grows heavier if used against the innocent. Its origin is attributed variously to a dying god, a betrayed archmage, and a particularly vengeful plague.",
     "quiz_tier": 5,
     "identified": false,
-    "lifestealPercent": 0.15
+    "lifestealPercent": 0.15,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 92,
+    "chain_multipliers": [
+      0.18,
+      0.35,
+      0.55,
+      0.8,
+      1.2,
+      1.75,
+      2.5,
+      3.3
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 25,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "finesse"
   },
   "dawnbreaker": {
     "name": "Dawnbreaker",
@@ -5665,7 +6088,7 @@
       180,
       80
     ],
-    "weight": 5,
+    "weight": 8.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.45,
@@ -5683,12 +6106,36 @@
     },
     "containerLootTier": "rare",
     "value": 5000,
-    "min_level": 81,
+    "min_level": 82,
     "unidentified_name": "a radiant two-handed hammer",
     "lore": "Dawnbreaker is the weapon that ended the First Darkness — at least, that is the oldest story. The hammer's adamantine head contains a shard of preserved dawn light, visible as a faint golden gleam even in pitch darkness. Undead creatures struck by it take triple damage from the light component, in addition to the physical devastation.",
     "quiz_tier": 5,
     "identified": false,
-    "burnChance": 0.3
+    "burnChance": 0.3,
+    "damage_types": [
+      "blunt",
+      "fire",
+      "holy"
+    ],
+    "template_basis": "warhammer",
+    "spread": 12,
+    "peak_floor": 92,
+    "chain_multipliers": [
+      0.35,
+      0.55,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.8,
+      2.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 25,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "venomfang": {
     "name": "Venomfang",
@@ -5720,7 +6167,7 @@
       130,
       70
     ],
-    "weight": 3,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5738,12 +6185,35 @@
     },
     "containerLootTier": "rare",
     "value": 4800,
-    "min_level": 81,
+    "min_level": 82,
     "unidentified_name": "a darkly gleaming spiked weapon",
     "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut — it corrupts.",
     "quiz_tier": 5,
     "identified": false,
-    "poisonChance": 0.6
+    "poisonChance": 0.6,
+    "damage_types": [
+      "blunt",
+      "pierce"
+    ],
+    "template_basis": "morningstar",
+    "spread": 12,
+    "peak_floor": 92,
+    "chain_multipliers": [
+      0.35,
+      0.55,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.8,
+      2.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 22,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "excalibur": {
     "name": "Excalibur",
@@ -5776,7 +6246,7 @@
       245,
       180
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.05,
@@ -5791,13 +6261,36 @@
     },
     "containerLootTier": "legendary",
     "value": 9500,
-    "min_level": 60,
+    "min_level": 70,
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an ornate golden-hilted blade",
     "lore": "The sword in the stone was not merely a test of strength but of worthiness — a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
     "onEquipStatus": "life_save",
-    "killHealAmount": 5
+    "killHealAmount": 5,
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 80,
+    "chain_multipliers": [
+      0.35,
+      0.55,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.8,
+      2.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 22,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "durendal": {
     "name": "Durendal",
@@ -5829,7 +6322,7 @@
       200,
       140
     ],
-    "weight": 6,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.1,
@@ -5848,7 +6341,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an impossibly keen two-handed blade",
-    "lore": "Roland's sword contained within its golden hilt a tooth of Saint Peter, blood of Saint Basil, hair of Saint Denis, and a fragment of the Virgin's raiment. At Roncevaux, rather than let it fall to the Saracens, Roland struck it three times against a stone. The stone split each time. Durendal did not."
+    "lore": "Roland's sword contained within its golden hilt a tooth of Saint Peter, blood of Saint Basil, hair of Saint Denis, and a fragment of the Virgin's raiment. At Roncevaux, rather than let it fall to the Saracens, Roland struck it three times against a stone. The stone split each time. Durendal did not.",
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 17,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "heavy"
   },
   "gram": {
     "name": "Gram",
@@ -5880,7 +6395,7 @@
       220,
       255
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5897,7 +6412,29 @@
     "identified": true,
     "unidentified_name": "a shining foreign blade of pale steel",
     "ignore_resistances": true,
-    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment — nothing can resist it."
+    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment — nothing can resist it.",
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0,
+    "base_damage": 16,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "broken_gram": {
     "name": "Broken Blade of Gram",
@@ -5922,7 +6459,7 @@
       150,
       180
     ],
-    "weight": 2.0,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -5938,7 +6475,24 @@
     "quiz_tier": 1,
     "identified": true,
     "unidentified_name": "a broken sword hilt with a jagged blade",
-    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon — but something about it still hums with dormant power."
+    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon — but something about it still hums with dormant power.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "shortsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.65,
+      1.0,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 11,
+    "max_chain_length": 3,
+    "is_unique": true,
+    "max_enchant": 0,
+    "weapon_class_chain": "normal"
   },
   "sigurds_shovel": {
     "name": "Sigurd's Shovel",
@@ -5964,7 +6518,7 @@
       120,
       80
     ],
-    "weight": 4.0,
+    "weight": 6.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.05,
@@ -5981,7 +6535,25 @@
     "identified": true,
     "unidentified_name": "a sturdy iron shovel",
     "can_dig": true,
-    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below — sometimes the right tool is the humble one."
+    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below — sometimes the right tool is the humble one.",
+    "damage_types": [
+      "blunt"
+    ],
+    "template_basis": "club",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.55,
+      0.95,
+      1.4,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 13,
+    "max_chain_length": 4,
+    "is_unique": true,
+    "max_enchant": 1,
+    "weapon_class_chain": "normal"
   },
   "tyrfing": {
     "name": "Tyrfing",
@@ -6012,7 +6584,7 @@
       60,
       60
     ],
-    "weight": 7,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -6031,7 +6603,29 @@
     "identified": false,
     "unidentified_name": "a sword that vibrates with cold malice",
     "lore": "The dwarves Dvalinn and Durin forged Tyrfing under duress and cursed it: it would kill a man every time unsheathed. The blade never rusts, never dulls, cuts through iron and stone. Three kings of the Hervarar line died by it. The curse is intrinsic to those who lack the wisdom to set it down.",
-    "cursedMissBacklash": 5
+    "cursedMissBacklash": 5,
+    "damage_types": [
+      "slash",
+      "magic"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 80,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 20,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "fragarach": {
     "name": "Fragarach",
@@ -6064,7 +6658,7 @@
       200,
       255
     ],
-    "weight": 2,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.25,
@@ -6083,7 +6677,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a slender blade with a sea-blue shimmer",
-    "lore": "The Answerer. No armour could stop it; no man could move once it was held to his throat. Manannan mac Lir forged it; Lugh carried it to end Fomorian tyranny. The Irish poets called it the Wind from the East."
+    "lore": "The Answerer. No armour could stop it; no man could move once it was held to his throat. Manannan mac Lir forged it; Lugh carried it to end Fomorian tyranny. The Irish poets called it the Wind from the East.",
+    "damage_types": [
+      "pierce",
+      "magic",
+      "holy"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "caladbolg": {
     "name": "Caladbolg",
@@ -6113,7 +6730,7 @@
       255,
       200
     ],
-    "weight": 8,
+    "weight": 7.0,
     "twoHanded": true,
     "reach": 2,
     "stunChance": 0.0,
@@ -6132,7 +6749,28 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a massive greatsword of unearthly make",
-    "lore": "Fergus mac Róich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken."
+    "lore": "Fergus mac Róich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 17,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "joyeuse": {
     "name": "Joyeuse",
@@ -6165,7 +6803,7 @@
       230,
       80
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.25,
@@ -6184,7 +6822,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a radiant blade that shifts colour in lamplight",
-    "lore": "Charlemagne's coronation sword changed colour thirty times per day and shone so brightly that enemies were dazzled before the first blow. Charlemagne was buried with it at Aachen. Or possibly wasn't. The trail goes cold in the ninth century."
+    "lore": "Charlemagne's coronation sword changed colour thirty times per day and shone so brightly that enemies were dazzled before the first blow. Charlemagne was buried with it at Aachen. Or possibly wasn't. The trail goes cold in the ninth century.",
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.35,
+      0.55,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.8,
+      2.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "hrunting": {
     "name": "Hrunting",
@@ -6216,7 +6877,7 @@
       180,
       220
     ],
-    "weight": 6,
+    "weight": 3.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -6235,7 +6896,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an ancient iron-dark blade etched with serpents",
-    "lore": "Unferth lent Hrunting to Beowulf for his descent into the mere. The poem calls it hardened in the blood of battle and says it had never failed any man who grasped it. In the underwater fight with Grendel's mother, it failed once. That was its single exception."
+    "lore": "Unferth lent Hrunting to Beowulf for his descent into the mere. The poem calls it hardened in the blood of battle and says it had never failed any man who grasped it. In the underwater fight with Grendel's mother, it failed once. That was its single exception.",
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "skofnung": {
     "name": "Skofnung",
@@ -6266,7 +6949,7 @@
       255,
       220
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -6285,7 +6968,28 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a cold grey blade with a dim inner glow",
-    "lore": "Taken from King Hrólf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone."
+    "lore": "Taken from King Hrólf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "gungnir": {
     "name": "Gungnir",
@@ -6317,7 +7021,7 @@
       180,
       255
     ],
-    "weight": 4,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.0,
@@ -6336,7 +7040,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a perfectly balanced spear of dark ash",
-    "lore": "An oath sworn on Gungnir's tip is unbreakable. Odin threw it over the Vanir's heads to begin the first war. It has never missed. At Ragnarok he will throw it at the Fenris Wolf. This will not be a contradiction."
+    "lore": "An oath sworn on Gungnir's tip is unbreakable. Odin threw it over the Vanir's heads to begin the first war. It has never missed. At Ragnarok he will throw it at the Fenris Wolf. This will not be a contradiction.",
+    "damage_types": [
+      "pierce",
+      "holy"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 19,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "heavy"
   },
   "gae_bulg": {
     "name": "Gáe Bulg",
@@ -6366,7 +7092,7 @@
       220,
       140
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.15,
@@ -6385,7 +7111,28 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a barbed spear of sea-monster bone",
-    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs — it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after."
+    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs — it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after.",
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 14,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "spear_of_longinus": {
     "name": "Spear of Longinus",
@@ -6417,7 +7164,7 @@
       100,
       255
     ],
-    "weight": 4,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.0,
@@ -6435,7 +7182,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a Roman pilum with a blackened tip",
-    "lore": "Longinus pierced Christ's side at the crucifixion. Blood and water ran from the wound; Longinus was healed of failing eyesight. Charlemagne carried it in 47 battles. He died the one day he set it down."
+    "lore": "Longinus pierced Christ's side at the crucifixion. Blood and water ran from the wound; Longinus was healed of failing eyesight. Charlemagne carried it in 47 battles. He died the one day he set it down.",
+    "damage_types": [
+      "pierce",
+      "holy"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 80,
+    "chain_multipliers": [
+      0.6,
+      0.75,
+      0.85,
+      1.0,
+      1.15,
+      1.35,
+      1.55,
+      1.9
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 22,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "heavy"
   },
   "mjolnir": {
     "name": "Mjolnir",
@@ -6468,7 +7238,7 @@
       180,
       255
     ],
-    "weight": 5,
+    "weight": 6.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.35,
@@ -6487,18 +7257,113 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a short-handled hammer of unsettling weight",
-    "lore": "The handle came out short due to Loki's sabotage, but Odin declared it the greatest treasure ever made. Thor wore iron gauntlets to wield it. At Ragnarok he will kill the Midgard Serpent, take nine steps, and fall. The hammer will survive him."
+    "lore": "The handle came out short due to Loki's sabotage, but Odin declared it the greatest treasure ever made. Thor wore iron gauntlets to wield it. At Ragnarok he will kill the Midgard Serpent, take nine steps, and fall. The hammer will survive him.",
+    "damage_types": [
+      "blunt",
+      "lightning",
+      "holy"
+    ],
+    "template_basis": "warhammer",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 19,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "sharur": {
     "name": "Sharur",
-    "class": "mace",
+    "class": "club",
     "variant": "1h",
-    "tier": 5,
-    "material": "adamantine",
-    "mathTier": 5,
-    "baseDamage": 20,
+    "tier": 4,
+    "material": "divine bronze",
+    "mathTier": 4,
+    "baseDamage": 14,
     "chainMultipliers": [
-      0.5,
+      0.8,
+      1.3,
+      1.9,
+      2.6,
+      3.4,
+      4.3
+    ],
+    "maxChainLength": 6,
+    "damageTypes": [
+      "blunt",
+      "magic"
+    ],
+    "symbol": ")",
+    "color": [
+      200,
+      170,
+      80
+    ],
+    "weight": 4.0,
+    "twoHanded": false,
+    "reach": 2,
+    "stunChance": 0.15,
+    "bleedChance": 0.0,
+    "knockback": true,
+    "ignoreShield": false,
+    "critMultiplier": 1.6,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "41-60": 1,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "containerLootTier": "very_rare",
+    "value": 5000,
+    "min_level": 55,
+    "quiz_tier": 4,
+    "identified": false,
+    "unidentified_name": "a golden mace that hums faintly",
+    "confuseChance": 0.25,
+    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak — it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless.",
+    "damage_types": [
+      "blunt",
+      "magic"
+    ],
+    "template_basis": "mace",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
+  },
+  "ruyi_jingu_bang": {
+    "name": "Ruyi Jingu Bang",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 5,
+    "material": "divine iron",
+    "mathTier": 5,
+    "baseDamage": 19,
+    "chainMultipliers": [
+      0.6,
       1.0,
       1.5,
       2.0,
@@ -6513,70 +7378,20 @@
       "blunt",
       "magic"
     ],
-    "symbol": "T",
+    "symbol": "|",
     "color": [
       255,
       200,
-      80
+      50
     ],
-    "weight": 4,
-    "twoHanded": false,
-    "reach": 1,
-    "stunChance": 0.2,
-    "bleedChance": 0.0,
-    "knockback": false,
-    "ignoreShield": false,
-    "critMultiplier": 1.5,
-    "requiresAmmo": null,
-    "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
-    },
-    "containerLootTier": "legendary",
-    "value": 7500,
-    "min_level": 55,
-    "quiz_tier": 5,
-    "identified": false,
-    "unidentified_name": "a bronze mace with a head like a lion",
-    "lore": "Ninurta's mace could fly ahead to scout and report back with intelligence. When Ninurta fought Asag the stone demon, Sharur flew ahead and counselled patience when a direct assault would have failed. The Sumerians recorded it as both weapon and advisor."
-  },
-  "ruyi_jingu_bang": {
-    "name": "Ruyi Jingu Bang",
-    "class": "staff",
-    "variant": "2h",
-    "tier": 5,
-    "material": "adamantine",
-    "mathTier": 5,
-    "baseDamage": 28,
-    "chainMultipliers": [
-      0.5,
-      1.0,
-      1.5,
-      2.2,
-      3.0,
-      4.0,
-      5.5,
-      7.0,
-      9.0
-    ],
-    "maxChainLength": 9,
-    "damageTypes": [
-      "blunt"
-    ],
-    "symbol": "|",
-    "color": [
-      200,
-      100,
-      255
-    ],
-    "weight": 9,
+    "weight": 8.0,
     "twoHanded": true,
     "reach": 3,
-    "stunChance": 0.25,
+    "stunChance": 0.2,
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.2,
+    "critMultiplier": 1.8,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -6587,8 +7402,30 @@
     "min_level": 60,
     "quiz_tier": 5,
     "identified": false,
-    "unidentified_name": "an impossibly heavy iron staff wrapped in gold",
-    "lore": "Sun Wukong found this in the Dragon King's treasury where it weighted the ocean floor. It weighed 13,500 jin. In his hand it became exactly the right size. He killed 47,000 demons with it. The Buddha imprisoned him under a mountain for five hundred years. He considered this a minor setback."
+    "unidentified_name": "a massive iron pillar banded with gold",
+    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched — enemies three paces away are within striking distance.",
+    "damage_types": [
+      "blunt",
+      "magic"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 16,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "gandiva": {
     "name": "Gandiva",
@@ -6620,7 +7457,7 @@
       220,
       100
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": true,
     "reach": 22,
     "stunChance": 0.1,
@@ -6639,7 +7476,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a great bow that hums with stored energy",
-    "lore": "Arjuna's divine bow had one hundred strings; when one broke another appeared. Its twang shook the earth. With it Arjuna killed 100,000 soldiers in the Kurukshetra War. When grief made him hesitate before battle, Krishna delivered an 18-chapter philosophical treatise to persuade him to pick it up again."
+    "lore": "Arjuna's divine bow had one hundred strings; when one broke another appeared. Its twang shook the earth. With it Arjuna killed 100,000 soldiers in the Kurukshetra War. When grief made him hesitate before battle, Krishna delivered an 18-chapter philosophical treatise to persuade him to pick it up again.",
+    "damage_types": [
+      "pierce",
+      "holy"
+    ],
+    "template_basis": "longbow",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 19,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "fail_not": {
     "name": "Fail-not",
@@ -6671,7 +7530,7 @@
       220,
       160
     ],
-    "weight": 2,
+    "weight": 2.0,
     "twoHanded": true,
     "reach": 20,
     "stunChance": 0.0,
@@ -6690,7 +7549,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a yew bow with a single carved inscription",
-    "lore": "Tristan's bow, given by the fairy Morgain. Its name was its promise. The inscription reads 'Fail not.' Arrows loosed in duty flew true; arrows loosed in anger missed. Its owner learned this the hard way."
+    "lore": "Tristan's bow, given by the fairy Morgain. Its name was its promise. The inscription reads 'Fail not.' Arrows loosed in duty flew true; arrows loosed in anger missed. Its owner learned this the hard way.",
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "longbow",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.35,
+      0.55,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.8,
+      2.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "kusanagi": {
     "name": "Kusanagi-no-Tsurugi",
@@ -6723,7 +7604,7 @@
       255,
       255
     ],
-    "weight": 3,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.0,
@@ -6742,7 +7623,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a slim blade with the scent of rain",
-    "lore": "Found inside the eight-headed serpent Yamata no Orochi. Yamato Takeru used it to cut the grass and redirect the wind when surrounded by enemies who had set fire to the plain around him. The sword has been at the Atsuta Shrine for fourteen centuries. No one has seen it."
+    "lore": "Found inside the eight-headed serpent Yamata no Orochi. Yamato Takeru used it to cut the grass and redirect the wind when surrounded by enemies who had set fire to the plain around him. The sword has been at the Atsuta Shrine for fourteen centuries. No one has seen it.",
+    "damage_types": [
+      "slash",
+      "magic",
+      "wind"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 16,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "zulfiqar": {
     "name": "Zulfiqar",
@@ -6774,7 +7678,7 @@
       230,
       180
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -6793,7 +7697,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade forked at the tip like a serpent's tongue",
-    "lore": "Given to Ali ibn Abi Talib at the Battle of Badr. 'There is no sword but Zulfiqar, and no hero but Ali.' The bifurcated tip could take two lives with one thrust. Shia tradition holds it will be wielded by the Mahdi at the end of time."
+    "lore": "Given to Ali ibn Abi Talib at the Battle of Badr. 'There is no sword but Zulfiqar, and no hero but Ali.' The bifurcated tip could take two lives with one thrust. Shia tradition holds it will be wielded by the Mahdi at the end of time.",
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 14,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "harpe": {
     "name": "Harpe",
@@ -6825,7 +7751,7 @@
       220,
       255
     ],
-    "weight": 2,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -6845,7 +7771,29 @@
     "identified": false,
     "unidentified_name": "a curved blade with a small hooked back-edge",
     "lore": "Given to Perseus by Hermes to slay Medusa. Forged with an adamantine edge. Perseus used it while looking at Medusa's reflection in his shield. Some myths say Cronus used its predecessor to castrate Uranus. The weapon has a history of separating very important things.",
-    "petrifyOnCrit": true
+    "petrifyOnCrit": true,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "trident_of_poseidon": {
     "name": "Trident of Poseidon",
@@ -6878,7 +7826,7 @@
       180,
       255
     ],
-    "weight": 5,
+    "weight": 5.0,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.15,
@@ -6897,7 +7845,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a three-pronged weapon of sea-dark metal",
-    "lore": "Poseidon struck the Acropolis and produced a saltwater spring. Athena planted an olive tree. He lost the vote and flooded the Attic plain. The trident-mark is still visible on the Erechtheion floor. He used it to attempt to drown Odysseus for an entire decade."
+    "lore": "Poseidon struck the Acropolis and produced a saltwater spring. Athena planted an olive tree. He lost the vote and flooded the Attic plain. The trident-mark is still visible on the Erechtheion floor. He used it to attempt to drown Odysseus for an entire decade.",
+    "damage_types": [
+      "pierce",
+      "cold",
+      "magic"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 19,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "heavy"
   },
   "carnwennan": {
     "name": "Carnwennan",
@@ -6930,7 +7901,7 @@
       255,
       220
     ],
-    "weight": 1,
+    "weight": 1.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -6950,7 +7921,30 @@
     "identified": false,
     "unidentified_name": "a small white-handled knife with no visible edge",
     "lore": "Arthur's dagger that could shroud its wielder in shadow. Arthur used it to kill the Very Black Witch in the Valley of Grief after Kei and Bedivere had both tried and failed. The Mabinogion records this without elaboration.",
-    "onEquipStatus": "invisible"
+    "onEquipStatus": "invisible",
+    "damage_types": [
+      "pierce",
+      "magic"
+    ],
+    "template_basis": "dagger",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.18,
+      0.35,
+      0.55,
+      0.8,
+      1.2,
+      1.75,
+      2.5,
+      3.3
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "finesse"
   },
   "mistilteinn": {
     "name": "Mistilteinn",
@@ -6982,7 +7976,7 @@
       255,
       200
     ],
-    "weight": 2,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7001,7 +7995,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade that seems to cut shadows as well as flesh",
-    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against — his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow."
+    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against — his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow.",
+    "damage_types": [
+      "slash",
+      "magic"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 14,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "curtana": {
     "name": "Curtana",
@@ -7032,7 +8048,7 @@
       200,
       200
     ],
-    "weight": 6,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.1,
@@ -7051,7 +8067,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a broad two-handed blade with a blunt squared tip",
-    "lore": "The Sword of Mercy — its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade."
+    "lore": "The Sword of Mercy — its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade.",
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "greatsword",
+    "spread": 12,
+    "peak_floor": 55,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 10,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "parashu": {
     "name": "Parashu",
@@ -7083,7 +8121,7 @@
       160,
       80
     ],
-    "weight": 4,
+    "weight": 5.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.2,
@@ -7102,7 +8140,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a divine axe of celestial bronze",
-    "lore": "Shiva gave Parashu to Parashurama after ten thousand years of penance. Parashurama used it to exterminate the Kshatriya caste twenty-one times over, filling five lakes with blood. He is considered a great teacher of martial arts."
+    "lore": "Shiva gave Parashu to Parashurama after ten thousand years of penance. Parashurama used it to exterminate the Kshatriya caste twenty-one times over, filling five lakes with blood. He is considered a great teacher of martial arts.",
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "battleaxe",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 14,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "labrys": {
     "name": "Labrys",
@@ -7133,7 +8193,7 @@
       200,
       200
     ],
-    "weight": 4,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.15,
@@ -7152,7 +8212,28 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a symmetrical double-bladed ceremonial axe",
-    "lore": "The double-headed axe of Minoan Crete — labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there."
+    "lore": "The double-headed axe of Minoan Crete — labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "battleaxe",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "chandrahas": {
     "name": "Chandrahas",
@@ -7185,7 +8266,7 @@
       220,
       255
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7204,7 +8285,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a curved blade cold as moonlight",
-    "lore": "Shiva gave the Moon's Laughter to Ravana after Ravana lifted Mount Kailash with twenty arms. Shiva added the condition that if used for evil it would return to him. Ravana used it for evil almost immediately. The sword returned. This is the problem with giving extraordinary weapons as gifts."
+    "lore": "Shiva gave the Moon's Laughter to Ravana after Ravana lifted Mount Kailash with twenty arms. Shiva added the condition that if used for evil it would return to him. Ravana used it for evil almost immediately. The sword returned. This is the problem with giving extraordinary weapons as gifts.",
+    "damage_types": [
+      "slash",
+      "cold",
+      "holy"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 14,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "laevateinn": {
     "name": "Laevateinn",
@@ -7237,7 +8341,7 @@
       120,
       80
     ],
-    "weight": 5,
+    "weight": 5.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.3,
@@ -7256,7 +8360,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a staff cut from the world-tree with a notch at the top",
-    "lore": "Loki cut it at the gates of Hel. It can destroy Vidofnir, the golden rooster atop Yggdrasil whose crowing will begin Ragnarok. Sinmara guards it and will only surrender it through a series of impossible trades. Preventing Ragnarok is bureaucratically complicated."
+    "lore": "Loki cut it at the gates of Hel. It can destroy Vidofnir, the golden rooster atop Yggdrasil whose crowing will begin Ragnarok. Sinmara guards it and will only surrender it through a series of impossible trades. Preventing Ragnarok is bureaucratically complicated.",
+    "damage_types": [
+      "magic",
+      "fire",
+      "holy"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 17,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "thyrsus": {
     "name": "Thyrsus of Dionysus",
@@ -7289,7 +8416,7 @@
       100,
       60
     ],
-    "weight": 3,
+    "weight": 4.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -7309,7 +8436,30 @@
     "identified": false,
     "unidentified_name": "a giant fennel stalk topped with a pine cone",
     "lore": "The Maenads carried the thyrsus. In the Bacchae, Agave kills her son Pentheus with it, believing in her madness he is a lion. Dionysus watched. This is the instrument of a god who believed experience was the teacher.",
-    "confuseChance": 0.5
+    "confuseChance": 0.5,
+    "damage_types": [
+      "blunt",
+      "magic"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.35,
+      0.55,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.8,
+      2.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "rod_of_moses": {
     "name": "Rod of Moses",
@@ -7342,7 +8492,7 @@
       210,
       170
     ],
-    "weight": 3,
+    "weight": 4.0,
     "twoHanded": true,
     "reach": 3,
     "stunChance": 0.15,
@@ -7361,47 +8511,68 @@
     "identified": false,
     "unidentified_name": "a plain shepherd's crook of ancient wood",
     "lore": "The rod became a serpent in Pharaoh's court; parted the Red Sea; struck the rock at Horeb. Jewish tradition gives it a provenance from Adam through Noah through Abraham. Moses used it. Aaron used it. No one is certain what happened to it afterward.",
-    "poisonChance": 0.3
+    "poisonChance": 0.3,
+    "damage_types": [
+      "blunt",
+      "holy",
+      "magic"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 16,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "amenonuhoko": {
     "name": "Amenonuhoko",
     "class": "spear",
-    "variant": "1h",
+    "variant": "2h",
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 20,
+    "baseDamage": 22,
     "chainMultipliers": [
       0.5,
       1.0,
       1.5,
-      2.0,
-      2.8,
-      3.6,
-      4.5,
+      2.2,
+      3.0,
+      4.0,
       5.5,
-      6.5
+      7.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 8,
     "damageTypes": [
       "pierce",
-      "holy",
       "magic"
     ],
     "symbol": "/",
     "color": [
-      255,
-      240,
-      180
+      180,
+      200,
+      255
     ],
-    "weight": 4,
-    "twoHanded": false,
+    "weight": 5.0,
+    "twoHanded": true,
     "reach": 2,
     "stunChance": 0.1,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
+    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "61-80": 1,
@@ -7409,11 +8580,34 @@
     },
     "containerLootTier": "legendary",
     "value": 8000,
-    "min_level": 55,
+    "min_level": 70,
     "quiz_tier": 5,
     "identified": false,
-    "unidentified_name": "a jewelled spear of heavenly metal",
-    "lore": "Given to Izanagi and Izanami to solidify the land. Standing on the Floating Bridge of Heaven, they stirred the ocean. When they lifted the spear, drops fell back and became the first islands of Japan. The island of Onogoro rose from what dripped off its tip."
+    "unidentified_name": "a jeweled spear dripping with brine",
+    "aoe_slow_on_kill": true,
+    "lore": "The Heavenly Jeweled Spear, given to Izanagi and Izanami by the elder gods. They stirred the primordial ocean with it and from the brine that dripped from its tip, the first island of Japan was born. Each kill sends a ripple of primordial stillness through nearby enemies.",
+    "damage_types": [
+      "pierce",
+      "magic"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 80,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 22,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "heavy"
   },
   "sudarshana": {
     "name": "Sudarshana Chakra",
@@ -7447,7 +8641,7 @@
       140,
       40
     ],
-    "weight": 2,
+    "weight": 2.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7467,7 +8661,31 @@
     "identified": false,
     "unidentified_name": "a spinning disc of burning light",
     "lore": "Vishnu's spinning discus. Forged from the effulgence of the sun itself. When Shiva asked to test Vishnu's most powerful weapon, Vishnu threw it without warning and cut off one of Shiva's heads. Shiva grew a new one. They considered this a satisfactory test.",
-    "burnChance": 0.2
+    "burnChance": 0.2,
+    "damage_types": [
+      "slash",
+      "fire",
+      "holy"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.18,
+      0.35,
+      0.55,
+      0.8,
+      1.2,
+      1.75,
+      2.5,
+      3.3
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 19,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "finesse"
   },
   "ridill": {
     "name": "Ridill",
@@ -7500,7 +8718,7 @@
       255,
       240
     ],
-    "weight": 1,
+    "weight": 1.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7519,7 +8737,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a short blade from the dwarf-hoard",
-    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade — a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical."
+    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade — a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical.",
+    "damage_types": [
+      "pierce",
+      "magic"
+    ],
+    "template_basis": "dagger",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.18,
+      0.35,
+      0.55,
+      0.8,
+      1.2,
+      1.75,
+      2.5,
+      3.3
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "kladenets": {
     "name": "Samosek",
@@ -7551,7 +8792,7 @@
       200,
       255
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7571,7 +8812,29 @@
     "identified": false,
     "unidentified_name": "a blade that seems to move before you do",
     "lore": "The Self-Swinger of Slavic fairy tales fights on its own. It is found in underground kingdoms guarded by Koschei or a serpent. Heroes who find it never quite understand it. The sword fights; they survive. The sword's autonomy is treated not as alarming but as practical.",
-    "counterAttackChance": 0.25
+    "counterAttackChance": 0.25,
+    "damage_types": [
+      "slash",
+      "magic"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "shamshir_e_zomorrodnegar": {
     "name": "Shamshir-e Zomorrodnegar",
@@ -7604,7 +8867,7 @@
       255,
       180
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.3,
@@ -7622,7 +8885,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an emerald-inlaid curved blade of Solomonic make",
-    "lore": "The Emerald-Studded Sword of Solomon could bind and command djinn. On each emerald a name of power was engraved. Solomon used it not as a weapon but as an administrative tool, employing djinn in constructing the Temple. Its use as a management instrument is rarely discussed in Western traditions."
+    "lore": "The Emerald-Studded Sword of Solomon could bind and command djinn. On each emerald a name of power was engraved. Solomon used it not as a weapon but as an administrative tool, employing djinn in constructing the Temple. Its use as a management instrument is rarely discussed in Western traditions.",
+    "damage_types": [
+      "slash",
+      "magic",
+      "holy"
+    ],
+    "template_basis": "scimitar",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 17,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "finesse"
   },
   "chrysaor": {
     "name": "Chrysaor",
@@ -7654,7 +8940,7 @@
       215,
       0
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7673,7 +8959,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a golden-bladed sword of divine origin",
-    "lore": "Chrysaor — the Golden Sword — sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out."
+    "lore": "Chrysaor — the Golden Sword — sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out.",
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 70,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 16,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "caliburn": {
     "name": "Caliburn",
@@ -7704,7 +9012,7 @@
       190,
       220
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.1,
@@ -7725,7 +9033,28 @@
     "unidentified_name": "a plain but perfectly balanced blade",
     "lore": "Some scholars distinguish Caliburn — the sword in the stone — from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
     "growingPower": true,
-    "killsToGrow": 10
+    "killsToGrow": 10,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "brisingr": {
     "name": "Brisingr",
@@ -7757,7 +9086,7 @@
       160,
       50
     ],
-    "weight": 3,
+    "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7777,7 +9106,29 @@
     "identified": false,
     "unidentified_name": "a blade that runs warm to the touch",
     "lore": "The word for fire in Old Norse. A sword that shares its name with the ancient word for flame was found in a Norse burial mound in Gotland, its blade still faintly warm centuries later. The metallurgists who examined it in 1947 published their findings in a paper that was subsequently lost. Three colleagues confirmed its content before it vanished. The sword itself remains in a private collection.",
-    "burnChance": 0.35
+    "burnChance": 0.35,
+    "damage_types": [
+      "slash",
+      "fire"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "fragarach_the_whisperer": {
     "name": "Whisperer",
@@ -7810,7 +9161,7 @@
       240,
       255
     ],
-    "weight": 1,
+    "weight": 1.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7829,7 +9180,30 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a dagger that makes almost no sound",
-    "lore": "A blade said to have been forged by the same smith who made Fragarach, intended as its companion. Where Fragarach answered questions loudly, this blade worked silently. Assassins across four centuries reported finding it rather than seeking it. It was present at the deaths of seven significant historical figures. Twice it was present at the survival of one."
+    "lore": "A blade said to have been forged by the same smith who made Fragarach, intended as its companion. Where Fragarach answered questions loudly, this blade worked silently. Assassins across four centuries reported finding it rather than seeking it. It was present at the deaths of seven significant historical figures. Twice it was present at the survival of one.",
+    "damage_types": [
+      "pierce",
+      "magic"
+    ],
+    "template_basis": "dagger",
+    "spread": 12,
+    "peak_floor": 65,
+    "chain_multipliers": [
+      0.18,
+      0.35,
+      0.55,
+      0.8,
+      1.2,
+      1.75,
+      2.5,
+      3.3
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 8,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "naegling": {
     "name": "Naegling",
@@ -7860,7 +9234,7 @@
       200,
       180
     ],
-    "weight": 5,
+    "weight": 5.0,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -7879,7 +9253,29 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a heavy single-bladed axe with an age-worn grip",
-    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him — his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men."
+    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him — his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men.",
+    "damage_types": [
+      "slash",
+      "blunt"
+    ],
+    "template_basis": "battleaxe",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "punch_in_the_face": {
     "name": "Punch in the Face",
@@ -7917,7 +9313,25 @@
     "identified": true,
     "unidentified_name": "Punch in the Face",
     "lore": "This is Dad’s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
-    "quiz_tier": 1
+    "quiz_tier": 1,
+    "damage_types": [
+      "blunt",
+      "physical"
+    ],
+    "template_basis": "unarmed",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      1.0,
+      2.4
+    ],
+    "peak_weight": 0,
+    "base_damage": 35,
+    "max_chain_length": 3,
+    "is_unique": true,
+    "max_enchant": 0,
+    "weapon_class_chain": "finesse"
   },
   "hunt_captains_sword": {
     "name": "Hunt Captain's Sword",
@@ -7962,7 +9376,29 @@
       "effect_chance": 0.25,
       "effect_duration": 4
     },
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "damage_types": [
+      "slash",
+      "cold"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0,
+    "base_damage": 20,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "wendigo_fang": {
     "name": "Wendigo's Fang",
@@ -7992,7 +9428,7 @@
       220,
       255
     ],
-    "weight": 1.5,
+    "weight": 1.0,
     "min_level": 9999,
     "equip_threshold": 2,
     "quiz_tier": 5,
@@ -8006,7 +9442,29 @@
       "effect_chance": 0.35,
       "effect_duration": 4
     },
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "damage_types": [
+      "cold",
+      "pierce"
+    ],
+    "template_basis": "dagger",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0,
+    "base_damage": 17,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "echidna_fang": {
     "name": "Echidna's Fang",
@@ -8051,7 +9509,29 @@
       "effect_chance": 0.4,
       "effect_duration": 7
     },
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "damage_types": [
+      "pierce",
+      "poison"
+    ],
+    "template_basis": "dagger",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0,
+    "base_damage": 8,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "finesse"
   },
   "vulcans_brand": {
     "name": "Vulcan's Brand",
@@ -8081,7 +9561,7 @@
       100,
       40
     ],
-    "weight": 4.5,
+    "weight": 3.5,
     "min_level": 9999,
     "equip_threshold": 2,
     "quiz_tier": 3,
@@ -8095,7 +9575,28 @@
       "effect_chance": 0.35,
       "effect_duration": 4
     },
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "damage_types": [
+      "slash",
+      "fire"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 8,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "sling_of_david": {
     "name": "Sling of David",
@@ -8143,7 +9644,26 @@
     "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated — it asks only for courage and accuracy. Against the mighty, it is devastating.",
     "quiz_tier": 1,
     "requiresAmmo": "stone",
-    "infiniteAmmo": true
+    "infiniteAmmo": true,
+    "damage_types": [
+      "blunt"
+    ],
+    "template_basis": "sling",
+    "spread": 8,
+    "peak_floor": 15,
+    "chain_multipliers": [
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "finesse"
   },
   "prometheus_torch": {
     "name": "Prometheus's Torch",
@@ -8171,7 +9691,7 @@
       140,
       0
     ],
-    "weight": 2.0,
+    "weight": 4.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -8192,7 +9712,27 @@
     "min_level": 8,
     "unidentified_name": "a smoldering wooden staff",
     "lore": "Prometheus stole fire from the gods and gave it to humanity, earning eternal punishment chained to a rock where an eagle devoured his liver daily. This torch carries that stolen fire. It cannot be extinguished, and it cannot be refused — fire is humanity's birthright.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "blunt",
+      "fire"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 8,
+    "peak_floor": 18,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "sword_of_damocles": {
     "name": "Sword of Damocles",
@@ -8242,7 +9782,28 @@
     "min_level": 12,
     "unidentified_name": "a jeweled blade suspended by a single horsehair",
     "lore": "Dionysius II of Syracuse invited the courtier Damocles to sit on his throne and enjoy the luxuries of power. Above the throne hung a sword, suspended by a single horsehair. Damocles understood immediately: power comes with constant peril. This blade cuts magnificently, but the thread grows thinner with every swing.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "slash",
+      "pierce"
+    ],
+    "template_basis": "longsword",
+    "spread": 8,
+    "peak_floor": 22,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "normal"
   },
   "robin_hoods_longbow": {
     "name": "Robin Hood's Longbow",
@@ -8270,7 +9831,7 @@
       139,
       34
     ],
-    "weight": 2.5,
+    "weight": 3.0,
     "twoHanded": true,
     "reach": 20,
     "stunChance": 0.0,
@@ -8290,7 +9851,27 @@
     "min_level": 14,
     "unidentified_name": "a weathered yew longbow wrapped in green cloth",
     "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows — enemies that cannot see you cannot hear its string.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "longbow",
+    "spread": 8,
+    "peak_floor": 24,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 3,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "achilles_spear": {
     "name": "Achilles's Spear",
@@ -8341,7 +9922,28 @@
     "min_level": 20,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
     "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed — rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 8,
+    "peak_floor": 30,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 6,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "heavy"
   },
   "gilgamesh_axe": {
     "name": "Gilgamesh's Axe",
@@ -8370,7 +9972,7 @@
       133,
       63
     ],
-    "weight": 6.0,
+    "weight": 7.0,
     "twoHanded": true,
     "reach": 1,
     "stunChance": 0.0,
@@ -8390,7 +9992,27 @@
     "min_level": 35,
     "unidentified_name": "a heavy bronze axe with cuneiform inscriptions",
     "lore": "Enkidu dreamed of an axe that fell from the sky — Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond — it strikes harder after its wielder has been wounded.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "battleaxe",
+    "spread": 8,
+    "peak_floor": 45,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 6,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "cronus_scythe": {
     "name": "Cronus's Scythe",
@@ -8420,7 +10042,7 @@
       0,
       128
     ],
-    "weight": 5.0,
+    "weight": 6.0,
     "twoHanded": true,
     "reach": 2,
     "stunChance": 0.0,
@@ -8439,7 +10061,29 @@
     "min_level": 38,
     "unidentified_name": "a curved blade that distorts the air around it",
     "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself — from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
-    "quiz_tier": 4
+    "quiz_tier": 4,
+    "damage_types": [
+      "slash",
+      "magic"
+    ],
+    "template_basis": "glaive",
+    "spread": 8,
+    "peak_floor": 48,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 8,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "spear_of_lugh": {
     "name": "Spear of Lugh",
@@ -8472,7 +10116,7 @@
       100,
       0
     ],
-    "weight": 4.0,
+    "weight": 5.0,
     "twoHanded": true,
     "reach": 2,
     "stunChance": 0.1,
@@ -8492,7 +10136,30 @@
     "min_level": 50,
     "unidentified_name": "a spear radiating intense heat",
     "lore": "One of the Four Treasures of the Tuatha De Danann. The Spear of Lugh was so bloodthirsty it had to be kept submerged in a cauldron of poison to prevent it from igniting everything nearby. No battle was ever sustained against it. Lugh used it to slay Balor of the Evil Eye at the Second Battle of Mag Tuired, striking through his eye and out the back of his head.",
-    "quiz_tier": 5
+    "quiz_tier": 5,
+    "damage_types": [
+      "pierce",
+      "fire",
+      "magic"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 60,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 13,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "heavy"
   },
   "gae_dearg": {
     "name": "Gae Dearg",
@@ -8541,7 +10208,28 @@
     "min_level": 52,
     "unidentified_name": "a crimson-stained spear that weeps red",
     "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered — Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
-    "quiz_tier": 5
+    "quiz_tier": 5,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 62,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "net_of_hephaestus": {
     "name": "Net of Hephaestus",
@@ -8567,7 +10255,7 @@
       200,
       200
     ],
-    "weight": 1.5,
+    "weight": 2.0,
     "twoHanded": false,
     "reach": 5,
     "stunChance": 0.8,
@@ -8586,7 +10274,25 @@
     "min_level": 30,
     "unidentified_name": "a tightly woven metallic mesh",
     "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage — but nothing escapes it.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "blunt"
+    ],
+    "template_basis": "net",
+    "spread": 8,
+    "peak_floor": 40,
+    "chain_multipliers": [
+      0.85,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 7,
+    "max_chain_length": 4,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "heavy"
   },
   "sword_of_michael": {
     "name": "Sword of Michael",
@@ -8618,7 +10324,7 @@
       255,
       220
     ],
-    "weight": 2,
+    "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.15,
@@ -8636,7 +10342,29 @@
     "unidentified_name": "a blade of blinding white radiance",
     "ignore_resistances": true,
     "abaddon_bonus_damage": "6d10",
-    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous — earned not by strength but by the quality of one's soul."
+    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous — earned not by strength but by the quality of one's soul.",
+    "damage_types": [
+      "holy",
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0,
+    "base_damage": 38,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "oathkeeper_sword": {
     "name": "Oathkeeper",
@@ -8678,7 +10406,27 @@
     "min_level": 9999,
     "quiz_tier": 2,
     "unidentified_name": "well-kept longsword",
-    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp — someone maintained it with love."
+    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp — someone maintained it with love.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 6,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "penitents_blade": {
     "name": "Penitent's Blade",
@@ -8722,7 +10470,28 @@
     "quiz_tier": 3,
     "identified": true,
     "unidentified_name": "a dark iron dagger stained with old blood",
-    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger."
+    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "dagger",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.18,
+      0.4,
+      0.65,
+      1.0,
+      1.5,
+      2.2,
+      3.2
+    ],
+    "peak_weight": 0,
+    "base_damage": 10,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "boomstick": {
     "name": "Boomstick",
@@ -8749,7 +10518,7 @@
       90,
       60
     ],
-    "weight": 4.0,
+    "weight": 5.0,
     "twoHanded": false,
     "reach": 5,
     "stunChance": 0.3,
@@ -8759,7 +10528,26 @@
     "identified": true,
     "unidentified_name": "a sawed-off double-barreled shotgun",
     "lore": "This is my BOOMSTICK! It's a twelve-gauge double-barreled Remington. S-Mart's top of the line. You can find this in the sporting goods department. That's right, this sweet baby was made in Grand Rapids, Michigan. Retails for about $109.95. It's got a walnut stock, cobalt blue steel, and a hair trigger. That's right. Shop smart. Shop S-Mart.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "physical",
+      "pierce"
+    ],
+    "template_basis": "crossbow",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.85,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "peak_weight": 0,
+    "base_damage": 6,
+    "max_chain_length": 4,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "heavy"
   },
   "chainsaw_prosthetic": {
     "name": "Chainsaw Prosthetic",
@@ -8795,7 +10583,26 @@
     "identified": true,
     "unidentified_name": "a chainsaw bolted to an arm stump",
     "lore": "A Homelite XL chainsaw, permanently bolted to the stump of a severed right hand. The original owner attached it in a moment of desperate improvisation in a remote cabin in Tennessee. It has since carved through more deadites than anyone cares to count. Groovy.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 6,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "normal"
   },
   "romulus_spear": {
     "name": "Spear of Romulus",
@@ -8822,7 +10629,7 @@
       140,
       60
     ],
-    "weight": 3.5,
+    "weight": 4.0,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.0,
@@ -8838,7 +10645,26 @@
     "min_level": 4,
     "unidentified_name": "a bronze-tipped spear with wolf-hide grip",
     "lore": "When Romulus hurled his spear from the Aventine Hill into the Palatine, it struck the earth and took root, growing into a great tree. The spear that founded Rome carries the will of a man who built a civilization from nothing — from fratricide to empire. It strikes from further than any common weapon.",
-    "quiz_tier": 1
+    "quiz_tier": 1,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 8,
+    "peak_floor": 14,
+    "chain_multipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "heavy"
   },
   "pharaohs_crook": {
     "name": "Pharaoh's Crook",
@@ -8878,7 +10704,26 @@
     "min_level": 3,
     "unidentified_name": "a gold-leafed shepherd's crook",
     "lore": "The crook and flail were the symbols of pharaonic authority in ancient Egypt — the crook representing the shepherd's duty to guide and protect, the flail representing the power to punish. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
-    "quiz_tier": 1
+    "quiz_tier": 1,
+    "damage_types": [
+      "blunt"
+    ],
+    "template_basis": "club",
+    "spread": 8,
+    "peak_floor": 13,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "normal"
   },
   "mjolnir_shard": {
     "name": "Mjolnir Shard",
@@ -8922,7 +10767,28 @@
     "min_level": 10,
     "unidentified_name": "a heavy iron fragment crackling with static",
     "lore": "A jagged fragment of Thor's legendary hammer, Mjolnir — the weapon forged by the dwarves Sindri and Brokkr in Asgard. Though only a shard, it still carries the storm. Lightning arcs between its fractures, and each blow echoes with distant thunder. To wield even a piece of Mjolnir is to hold a fraction of the storm god's wrath.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "blunt",
+      "lightning"
+    ],
+    "template_basis": "mace",
+    "spread": 8,
+    "peak_floor": 20,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 1,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "bow_of_rama": {
     "name": "Bow of Rama",
@@ -8965,7 +10831,27 @@
     "min_level": 12,
     "unidentified_name": "a recurved bow radiating faint heat",
     "lore": "The great bow of Lord Rama, hero of the Ramayana — the divine prince who bent the bow of Shiva to win Sita's hand. His arrows, guided by dharma, struck down the demon king Ravana and his armies. This bow carries that sacred fire. Arrows loosed from it burn with righteous flame, and no act of evil can stand before it.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "pierce",
+      "fire"
+    ],
+    "template_basis": "longbow",
+    "spread": 8,
+    "peak_floor": 22,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 2,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "gae_bolg_fragment": {
     "name": "Gae Bolg Fragment",
@@ -9010,7 +10896,27 @@
     "min_level": 20,
     "unidentified_name": "a barbed bone spearhead bound to a shaft",
     "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn, greatest hero of Irish mythology. The original weapon was made from the bone of a sea monster and, once it pierced flesh, its barbs opened inside the wound, making it impossible to remove without killing the victim. Even this fragment carries that terrible legacy — its strikes rend deep, and its critical blows are devastating.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 8,
+    "peak_floor": 30,
+    "chain_multipliers": [
+      0.7,
+      0.85,
+      1.0,
+      1.15,
+      1.4,
+      1.75
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 6,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "heavy"
   },
   "staff_of_moses": {
     "name": "Staff of Moses",
@@ -9039,7 +10945,7 @@
       160,
       100
     ],
-    "weight": 3.5,
+    "weight": 4.0,
     "twoHanded": true,
     "stunChance": 0.15,
     "requiresAmmo": null,
@@ -9054,7 +10960,28 @@
     "min_level": 25,
     "unidentified_name": "a weathered staff of ancient wood",
     "lore": "The staff that Moses raised to part the Red Sea, that struck the rock at Horeb to bring forth water, that became a serpent before Pharaoh. It was a simple shepherd's staff before God chose it — and that is the lesson. It is not the weapon that matters, but the hand that wields it and the faith behind it. Against the unholy, it strikes with divine authority.",
-    "quiz_tier": 3
+    "quiz_tier": 3,
+    "damage_types": [
+      "blunt",
+      "holy"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 8,
+    "peak_floor": 35,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 6,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "witcher_silver_blade": {
     "name": "Witcher's Silver Blade",
@@ -9095,7 +11022,28 @@
     "identified": true,
     "unidentified_name": "a blade of polished silver etched with runes",
     "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night — wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "slash",
+      "holy"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 6,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   },
   "zireael": {
     "name": "Zireael",
@@ -9123,7 +11071,7 @@
       230,
       255
     ],
-    "weight": 1.8,
+    "weight": 2.0,
     "twoHanded": false,
     "stunChance": 0.0,
     "bleedChance": 0.15,
@@ -9136,7 +11084,27 @@
     "identified": true,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
     "lore": "Zireael — 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative — it is a promise. She will return. She always returns.",
-    "quiz_tier": 2
+    "quiz_tier": 2,
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0,
+    "base_damage": 7,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "normal"
   },
   "vel_of_murugan": {
     "name": "Vel of Murugan",
@@ -9146,12 +11114,28 @@
     "material": "divine bronze",
     "mathTier": 4,
     "baseDamage": 18,
-    "chainMultipliers": [0.6, 1.0, 1.5, 2.2, 3.0, 4.0, 5.2],
+    "chainMultipliers": [
+      0.6,
+      1.0,
+      1.5,
+      2.2,
+      3.0,
+      4.0,
+      5.2
+    ],
     "maxChainLength": 7,
-    "damageTypes": ["pierce", "fire", "holy"],
+    "damageTypes": [
+      "pierce",
+      "fire",
+      "holy"
+    ],
     "symbol": "/",
-    "color": [255, 140, 40],
-    "weight": 3.0,
+    "color": [
+      255,
+      140,
+      40
+    ],
+    "weight": 3.5,
     "twoHanded": false,
     "reach": 2,
     "stunChance": 0.0,
@@ -9160,79 +11144,46 @@
     "ignoreShield": false,
     "critMultiplier": 1.8,
     "requiresAmmo": null,
-    "floorSpawnWeight": {"41-60": 1, "61-80": 2, "81-100": 1},
+    "floorSpawnWeight": {
+      "41-60": 1,
+      "61-80": 2,
+      "81-100": 1
+    },
     "containerLootTier": "very_rare",
     "value": 5500,
     "min_level": 45,
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a bronze lance that radiates heat",
-    "effects": {"status": "burning", "effect_chance": 0.3, "effect_duration": 5},
-    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two — one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields."
-  },
-  "amenonuhoko": {
-    "name": "Amenonuhoko",
-    "class": "spear",
-    "variant": "2h",
-    "tier": 5,
-    "material": "adamantine",
-    "mathTier": 5,
-    "baseDamage": 22,
-    "chainMultipliers": [0.5, 1.0, 1.5, 2.2, 3.0, 4.0, 5.5, 7.0],
-    "maxChainLength": 8,
-    "damageTypes": ["pierce", "magic"],
-    "symbol": "/",
-    "color": [180, 200, 255],
-    "weight": 5.0,
-    "twoHanded": true,
-    "reach": 2,
-    "stunChance": 0.1,
-    "bleedChance": 0.0,
-    "knockback": false,
-    "ignoreShield": false,
-    "critMultiplier": 2.0,
-    "requiresAmmo": null,
-    "floorSpawnWeight": {"61-80": 1, "81-100": 2},
-    "containerLootTier": "legendary",
-    "value": 8000,
-    "min_level": 70,
-    "quiz_tier": 5,
-    "identified": false,
-    "unidentified_name": "a jeweled spear dripping with brine",
-    "aoe_slow_on_kill": true,
-    "lore": "The Heavenly Jeweled Spear, given to Izanagi and Izanami by the elder gods. They stirred the primordial ocean with it and from the brine that dripped from its tip, the first island of Japan was born. Each kill sends a ripple of primordial stillness through nearby enemies."
-  },
-  "sharur": {
-    "name": "Sharur",
-    "class": "club",
-    "variant": "1h",
-    "tier": 4,
-    "material": "divine bronze",
-    "mathTier": 4,
-    "baseDamage": 14,
-    "chainMultipliers": [0.8, 1.3, 1.9, 2.6, 3.4, 4.3],
-    "maxChainLength": 6,
-    "damageTypes": ["blunt", "magic"],
-    "symbol": ")",
-    "color": [200, 170, 80],
-    "weight": 4.0,
-    "twoHanded": false,
-    "reach": 2,
-    "stunChance": 0.15,
-    "bleedChance": 0.0,
-    "knockback": true,
-    "ignoreShield": false,
-    "critMultiplier": 1.6,
-    "requiresAmmo": null,
-    "floorSpawnWeight": {"41-60": 1, "61-80": 2, "81-100": 1},
-    "containerLootTier": "very_rare",
-    "value": 5000,
-    "min_level": 45,
-    "quiz_tier": 4,
-    "identified": false,
-    "unidentified_name": "a golden mace that hums faintly",
-    "confuseChance": 0.25,
-    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak — it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless."
+    "effects": {
+      "status": "burning",
+      "effect_chance": 0.3,
+      "effect_duration": 5
+    },
+    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two — one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields.",
+    "damage_types": [
+      "pierce",
+      "fire",
+      "holy"
+    ],
+    "template_basis": "spear",
+    "spread": 12,
+    "peak_floor": 55,
+    "chain_multipliers": [
+      0.65,
+      0.8,
+      0.95,
+      1.1,
+      1.25,
+      1.5,
+      1.85
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 11,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy"
   },
   "khopesh_of_anubis": {
     "name": "Khopesh of Anubis",
@@ -9242,11 +11193,24 @@
     "material": "dark iron",
     "mathTier": 3,
     "baseDamage": 12,
-    "chainMultipliers": [0.5, 1.0, 1.6, 2.4, 3.4, 4.5],
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.6,
+      2.4,
+      3.4,
+      4.5
+    ],
     "maxChainLength": 6,
-    "damageTypes": ["slash"],
+    "damageTypes": [
+      "slash"
+    ],
     "symbol": ")",
-    "color": [60, 60, 80],
+    "color": [
+      60,
+      60,
+      80
+    ],
     "weight": 3.0,
     "twoHanded": false,
     "reach": 1,
@@ -9256,7 +11220,11 @@
     "ignoreShield": false,
     "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {"21-40": 1, "41-60": 2, "61-80": 1},
+    "floorSpawnWeight": {
+      "21-40": 1,
+      "41-60": 2,
+      "61-80": 1
+    },
     "containerLootTier": "rare",
     "value": 2500,
     "min_level": 30,
@@ -9266,7 +11234,27 @@
     "kill_heal_amount": 3,
     "kill_max_hp_bonus": 1,
     "kill_max_hp_cap": 10,
-    "lore": "A ceremonial khopesh carried by the priests of Anubis during the weighing of hearts. Those judged unworthy were consumed — their life force absorbed into the blade. Each kill strengthens the wielder permanently, as though death itself is tithing its energy."
+    "lore": "A ceremonial khopesh carried by the priests of Anubis during the weighing of hearts. Those judged unworthy were consumed — their life force absorbed into the blade. Each kill strengthens the wielder permanently, as though death itself is tithing its energy.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "scimitar",
+    "spread": 8,
+    "peak_floor": 40,
+    "chain_multipliers": [
+      0.2,
+      0.45,
+      0.75,
+      1.2,
+      2.0,
+      3.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 8,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "finesse"
   },
   "chandrahasa": {
     "name": "Chandrahasa",
@@ -9276,11 +11264,28 @@
     "material": "adamantine",
     "mathTier": 5,
     "baseDamage": 20,
-    "chainMultipliers": [0.5, 1.0, 1.5, 2.2, 3.0, 4.0, 5.5, 7.0, 9.0],
+    "chainMultipliers": [
+      0.5,
+      1.0,
+      1.5,
+      2.2,
+      3.0,
+      4.0,
+      5.5,
+      7.0,
+      9.0
+    ],
     "maxChainLength": 9,
-    "damageTypes": ["slash", "magic"],
+    "damageTypes": [
+      "slash",
+      "magic"
+    ],
     "symbol": ")",
-    "color": [200, 200, 240],
+    "color": [
+      200,
+      200,
+      240
+    ],
     "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
@@ -9290,7 +11295,10 @@
     "ignoreShield": false,
     "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {"61-80": 1, "81-100": 2},
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 65,
@@ -9298,38 +11306,29 @@
     "identified": false,
     "unidentified_name": "a crescent-shaped blade that glows faintly",
     "low_hp_damage_bonus": true,
-    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut — a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen."
-  },
-  "ruyi_jingu_bang": {
-    "name": "Ruyi Jingu Bang",
-    "class": "staff",
-    "variant": "2h",
-    "tier": 5,
-    "material": "divine iron",
-    "mathTier": 5,
-    "baseDamage": 19,
-    "chainMultipliers": [0.6, 1.0, 1.5, 2.0, 2.8, 3.6, 4.5, 5.5, 6.5],
-    "maxChainLength": 9,
-    "damageTypes": ["blunt", "magic"],
-    "symbol": "|",
-    "color": [255, 200, 50],
-    "weight": 6.0,
-    "twoHanded": true,
-    "reach": 3,
-    "stunChance": 0.2,
-    "bleedChance": 0.0,
-    "knockback": true,
-    "ignoreShield": false,
-    "critMultiplier": 1.8,
-    "requiresAmmo": null,
-    "floorSpawnWeight": {"61-80": 1, "81-100": 2},
-    "containerLootTier": "legendary",
-    "value": 9000,
-    "min_level": 65,
-    "quiz_tier": 5,
-    "identified": false,
-    "unidentified_name": "a massive iron pillar banded with gold",
-    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched — enemies three paces away are within striking distance."
+    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut — a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen.",
+    "damage_types": [
+      "slash",
+      "magic"
+    ],
+    "template_basis": "longsword",
+    "spread": 12,
+    "peak_floor": 75,
+    "chain_multipliers": [
+      0.4,
+      0.65,
+      0.85,
+      1.1,
+      1.4,
+      1.7,
+      2.1
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 19,
+    "max_chain_length": 7,
+    "is_unique": true,
+    "max_enchant": 5,
+    "weapon_class_chain": "normal"
   },
   "green_chapel_axe": {
     "name": "Green Chapel Axe",
@@ -9339,12 +11338,25 @@
     "material": "enchanted iron",
     "mathTier": 3,
     "baseDamage": 13,
-    "chainMultipliers": [0.8, 1.3, 1.9, 2.6, 3.4, 4.3],
+    "chainMultipliers": [
+      0.8,
+      1.3,
+      1.9,
+      2.6,
+      3.4,
+      4.3
+    ],
     "maxChainLength": 6,
-    "damageTypes": ["slash"],
+    "damageTypes": [
+      "slash"
+    ],
     "symbol": ")",
-    "color": [60, 180, 60],
-    "weight": 4.0,
+    "color": [
+      60,
+      180,
+      60
+    ],
+    "weight": 4.5,
     "twoHanded": false,
     "reach": 1,
     "stunChance": 0.0,
@@ -9353,7 +11365,11 @@
     "ignoreShield": false,
     "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {"21-40": 1, "41-60": 2, "61-80": 1},
+    "floorSpawnWeight": {
+      "21-40": 1,
+      "41-60": 2,
+      "61-80": 1
+    },
     "containerLootTier": "rare",
     "value": 2800,
     "min_level": 35,
@@ -9361,6 +11377,26 @@
     "identified": false,
     "unidentified_name": "a green-hafted axe with living vines",
     "on_hit_regen": 3,
-    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close — slowly, but surely."
+    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close — slowly, but surely.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "battleaxe",
+    "spread": 8,
+    "peak_floor": 45,
+    "chain_multipliers": [
+      0.4,
+      0.7,
+      1.0,
+      1.3,
+      1.65,
+      2.0
+    ],
+    "peak_weight": 0.5,
+    "base_damage": 7,
+    "max_chain_length": 6,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal"
   }
 }

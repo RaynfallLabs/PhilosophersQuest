@@ -102,6 +102,9 @@ class Player:
         self.cooking_hp_gained: int = 0    # total max HP gained from cooking (for softcap)
         self.deepest_floor_reached: int = 1  # drives floor-aware cooking softcap (synced from level_mgr)
 
+        # Material discovery: tracks which materials have triggered their first-pickup chronicle.
+        self.chronicle_seen_materials: set = set()
+
     @property
     def equipped_accessories(self):
         """Every equipped accessory item: amulet (if any) + all non-empty ring slots."""

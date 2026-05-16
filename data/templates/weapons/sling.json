@@ -1,0 +1,31 @@
+{
+  "id": "sling",
+  "name": "sling",
+  "category": "weapon",
+  "weapon_class": "sling",
+  "hands": 1,
+  "damage_types": [
+    "blunt"
+  ],
+  "chain_multipliers": [
+    0.2,
+    0.55,
+    1.0,
+    1.8,
+    3.0
+  ],
+  "max_chain_length": 5,
+  "damage_modifier": 0.6,
+  "base_weight_lb": 0.5,
+  "speed": 11,
+  "compatible_material_classes": [
+    "leather",
+    "exotic_organic",
+    "rare_wood"
+  ],
+  "lore_template": "A {material_name} sling. David's argument with Goliath.",
+  "design_notes": "v2 chain rebalance: finesse class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 3.00\u00d7. Class mechanic: Cheap ammo: sling stones are 0.1 lb and abundant. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.6 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "finesse",
+  "class_mechanic": "cheap_ammo",
+  "class_mechanic_desc": "Cheap ammo: sling stones are 0.1 lb and abundant."
+}

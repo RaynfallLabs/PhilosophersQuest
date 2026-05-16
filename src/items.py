@@ -449,6 +449,359 @@ def load_items(item_class: str) -> list:
             for item_id, defn in raw.items()]
 
 
+# ------------------------------------------------------------------
+# Template + Material system (Phase 3.1 T3)
+# Weapons, armor, and shields are now COMPOSITIONAL: a template defines the
+# SHAPE (chain, slot, mechanics) and a material defines the STATS (damage
+# multiplier, weight, max enchant, properties). Instances are produced on
+# demand by instantiate_weapon / instantiate_armor / instantiate_shield.
+# Uniques (Hrunting, Sword of Michael, etc.) keep their own JSON entries.
+# ------------------------------------------------------------------
+
+_TEMPLATES_DIR = data_path('data', 'templates')
+_MATERIALS_DIR = data_path('data', 'materials')
+
+# Cached on first load — these are read-only schema.
+_TEMPLATE_CACHE: dict[str, dict[str, dict]] = {}
+_MATERIAL_CACHE: dict[str, dict[str, dict]] = {}
+
+
+def _load_category(root: str, category: str) -> dict[str, dict]:
+    """Load every JSON file under {root}/{category}/ into a dict keyed by id."""
+    cat_dir = os.path.join(root, category)
+    if not os.path.isdir(cat_dir):
+        return {}
+    out = {}
+    for fn in os.listdir(cat_dir):
+        if not fn.endswith('.json'):
+            continue
+        with open(os.path.join(cat_dir, fn), encoding='utf-8') as f:
+            defn = json.load(f)
+        item_id = defn.get('id') or os.path.splitext(fn)[0]
+        out[item_id] = defn
+    return out
+
+
+def load_templates(category: str) -> dict[str, dict]:
+    """Return all templates for a category: 'weapons', 'armor', or 'shields'."""
+    if category not in _TEMPLATE_CACHE:
+        _TEMPLATE_CACHE[category] = _load_category(_TEMPLATES_DIR, category)
+    return _TEMPLATE_CACHE[category]
+
+
+def load_materials(category: str) -> dict[str, dict]:
+    """Return all materials for a category: 'weapons' or 'armor'."""
+    if category not in _MATERIAL_CACHE:
+        _MATERIAL_CACHE[category] = _load_category(_MATERIALS_DIR, category)
+    return _MATERIAL_CACHE[category]
+
+
+def get_template(category: str, template_id: str) -> dict | None:
+    """Look up one template by category + id."""
+    return load_templates(category).get(template_id)
+
+
+def get_material(category: str, material_id: str) -> dict | None:
+    """Look up one material by category + id."""
+    return load_materials(category).get(material_id)
+
+
+def instantiate_weapon(template_id: str, material_id: str, *,
+                       enchant: int = 0, buc: str = 'uncursed',
+                       x: int = 0, y: int = 0) -> Weapon:
+    """Build a Weapon by combining a template (shape) with a material (stats).
+    Damage is derived from curve.weapon_base_damage(material.peak_floor) × the
+    material's damage_mult × the template's damage_modifier. Chain shape comes
+    entirely from the template."""
+    import math
+    tpl = get_template('weapons', template_id)
+    mat = get_material('weapons', material_id)
+    if not tpl:
+        raise ValueError(f"Unknown weapon template: {template_id}")
+    if not mat:
+        raise ValueError(f"Unknown weapon material: {material_id}")
+
+    # Resolve curve.weapon_base_damage at the material's peak floor.
+    # Inline implementation matches tools/balance/curve.py to avoid making
+    # `src` depend on the `tools/` package.
+    peak_floor = int(mat.get('peak_floor', 1))
+    # Compressed AD&D monster HP curve: piecewise growth
+    if peak_floor <= 20:
+        mob_hp = 4 * (1.10 ** (peak_floor - 1))
+    else:
+        early_cap = 4 * (1.10 ** 19)
+        mob_hp = early_cap * (1.025 ** (peak_floor - 20))
+    # weapon_base = mob_hp / (peak_mult × kill_turns) = mob_hp / 6
+    weapon_base = max(1, int(mob_hp / 6.0))
+    base_damage = max(1, int(weapon_base
+                             * float(mat.get('damage_mult', 1.0))
+                             * float(tpl.get('damage_modifier', 1.0))))
+
+    weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
+    name = f"{mat['name']} {tpl['name']}"
+
+    defn = {
+        'id': f"{material_id}_{template_id}",
+        'name': name,
+        'symbol': '(',  # default weapon symbol; could vary by template
+        'color': mat.get('color', [180, 180, 180]),
+        'weight': weight,
+        'item_class': 'weapon',
+        'min_level': int(mat.get('peak_floor', 1) - mat.get('spread', 10)),
+        'weapon_class': tpl.get('weapon_class', 'sword'),
+        'class': tpl.get('weapon_class', 'sword'),
+        'material': material_id,
+        'tier': max(1, peak_floor // 20 + 1),
+        'base_damage': base_damage,
+        'chain_multipliers': tpl.get('chain_multipliers', [0.5, 1.0, 1.5, 2.5]),
+        'damage_types': list(tpl.get('damage_types', ['slash'])),
+        'two_handed': tpl.get('hands', 1) >= 2,
+        'reach': int(tpl.get('reach', 1)),
+        'crit_multiplier': float(tpl.get('crit_multiplier', 1.5)),
+        'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
+        'identified': False,
+        'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
+        'buc': buc,
+        'requires_ammo': tpl.get('requires_ammo', None),
+    }
+    # Bring in material-flagged special properties (silver vs undead, etc.)
+    for k in ('effective_against', 'vulnerabilities', 'special_properties'):
+        if mat.get(k):
+            defn[k] = mat[k]
+    # Heavy-class mechanic flag (cleave / stun / etc. — code-side support pending)
+    if tpl.get('class_mechanic'):
+        defn['class_mechanic'] = tpl['class_mechanic']
+    w = Weapon(defn)
+    w.x, w.y = x, y
+    # Material-specific damage type additions (e.g., silver adds 'silver' as a type)
+    if material_id not in ('iron', 'steel'):
+        if material_id not in w.damage_types:
+            w.damage_types.append(material_id)
+    return w
+
+
+def instantiate_armor(template_id: str, material_id: str, *,
+                     enchant: int = 0, buc: str = 'uncursed',
+                     x: int = 0, y: int = 0) -> 'Armor':
+    """Build an Armor instance from template + material."""
+    tpl = get_template('armor', template_id)
+    mat = get_material('armor', material_id)
+    if not tpl:
+        raise ValueError(f"Unknown armor template: {template_id}")
+    if not mat:
+        raise ValueError(f"Unknown armor material: {material_id}")
+
+    base_ac = int(tpl.get('base_ac_value', 1))
+    material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
+    weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
+
+    defn = {
+        'id': f"{material_id}_{template_id}",
+        'name': f"{mat['name']} {tpl['name']}",
+        'symbol': '[',
+        'color': mat.get('color', [180, 180, 180]),
+        'weight': weight,
+        'item_class': 'armor',
+        'min_level': int(mat.get('peak_floor', 1) - mat.get('spread', 10)),
+        'slot': tpl.get('slot', 'body'),
+        'tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        'material': material_id,
+        'ac_bonus': base_ac + material_ac,
+        'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
+        'damage_resistances': mat.get('resistances', {}) if isinstance(mat.get('resistances'), dict) else {},
+        'identified': False,
+        'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
+        'buc': buc,
+        'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+    }
+    a = Armor(defn)
+    a.x, a.y = x, y
+    return a
+
+
+def instantiate_shield(template_id: str, material_id: str, *,
+                      enchant: int = 0, buc: str = 'uncursed',
+                      x: int = 0, y: int = 0) -> 'Shield':
+    """Build a Shield instance from template + material."""
+    # Shields can pull material from either pool (weapons/armor) — try both.
+    tpl = get_template('shields', template_id)
+    mat = get_material('armor', material_id) or get_material('weapons', material_id)
+    if not tpl:
+        raise ValueError(f"Unknown shield template: {template_id}")
+    if not mat:
+        raise ValueError(f"Unknown shield material: {material_id}")
+    base_ac = int(tpl.get('base_ac_value', 1))
+    material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
+    weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
+    defn = {
+        'id': f"{material_id}_{template_id}",
+        'name': f"{mat['name']} {tpl['name']}",
+        'symbol': ')',
+        'color': mat.get('color', [180, 180, 180]),
+        'weight': weight,
+        'item_class': 'shield',
+        'min_level': int(mat.get('peak_floor', 1) - mat.get('spread', 10)),
+        'tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        'material': material_id,
+        'ac_bonus': base_ac + material_ac,
+        'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
+        'identified': False,
+        'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
+        'buc': buc,
+        'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+    }
+    s = Shield(defn)
+    s.x, s.y = x, y
+    return s
+
+
+def material_spawn_weight(material: dict, floor: int) -> float:
+    """Bell-curve spawn weight for a material at the given floor."""
+    import math
+    peak_floor = int(material.get('peak_floor', 1))
+    spread = max(1, int(material.get('spread', 10)))
+    peak_weight = float(material.get('peak_weight', 1.0))
+    if peak_weight <= 0:
+        return 0.0
+    distance = floor - peak_floor
+    bell = math.exp(-(distance ** 2) / (2 * spread ** 2))
+    if bell < 0.005:
+        return 0.0
+    return max(0.02, peak_weight * bell)
+
+
+def pick_random_weapon_for_floor(floor: int, rng) -> Weapon | None:
+    """Pick a random (template, material) pair appropriate for this floor
+    and instantiate a Weapon. Returns None if no eligible material."""
+    materials = load_materials('weapons')
+    weighted = [(mid, m, material_spawn_weight(m, floor))
+                for mid, m in materials.items()]
+    weighted = [(mid, m, w) for mid, m, w in weighted if w > 0]
+    if not weighted:
+        return None
+    total = sum(w for _, _, w in weighted)
+    r = rng.random() * total
+    cum = 0.0
+    chosen_mid, chosen_mat = weighted[0][0], weighted[0][1]
+    for mid, m, w in weighted:
+        cum += w
+        if r <= cum:
+            chosen_mid, chosen_mat = mid, m
+            break
+
+    # Pick a compatible template
+    templates = load_templates('weapons')
+    mat_classes = set(chosen_mat.get('material_class', '').split(',')) | {chosen_mat.get('material_class', '')}
+    compatible = []
+    for tid, t in templates.items():
+        accepts = set(t.get('compatible_material_classes', []))
+        if not accepts or accepts & mat_classes or chosen_mat.get('material_class') in accepts:
+            compatible.append((tid, t))
+    if not compatible:
+        compatible = list(templates.items())  # fallback
+    tid, _ = rng.choice(compatible)
+    return instantiate_weapon(tid, chosen_mid)
+
+
+def pick_random_armor_for_floor(floor: int, rng, slot: str = 'body') -> 'Armor | None':
+    """Pick a random armor template+material pair for this floor + slot."""
+    materials = load_materials('armor')
+    weighted = [(mid, m, material_spawn_weight(m, floor))
+                for mid, m in materials.items()]
+    weighted = [(mid, m, w) for mid, m, w in weighted if w > 0]
+    if not weighted:
+        return None
+    total = sum(w for _, _, w in weighted)
+    r = rng.random() * total
+    cum = 0.0
+    chosen_mid, chosen_mat = weighted[0][0], weighted[0][1]
+    for mid, m, w in weighted:
+        cum += w
+        if r <= cum:
+            chosen_mid, chosen_mat = mid, m
+            break
+    templates = load_templates('armor')
+    compatible = [(tid, t) for tid, t in templates.items()
+                  if t.get('slot', 'body') == slot]
+    if not compatible:
+        return None
+    tid, _ = rng.choice(compatible)
+    try:
+        return instantiate_armor(tid, chosen_mid)
+    except ValueError:
+        return None
+
+
+def pick_random_shield_for_floor(floor: int, rng) -> 'Shield | None':
+    """Pick a random shield template+material pair for this floor."""
+    # Shields use armor materials primarily
+    materials = load_materials('armor')
+    weighted = [(mid, m, material_spawn_weight(m, floor))
+                for mid, m in materials.items()]
+    weighted = [(mid, m, w) for mid, m, w in weighted if w > 0]
+    if not weighted:
+        return None
+    total = sum(w for _, _, w in weighted)
+    r = rng.random() * total
+    cum = 0.0
+    chosen_mid, chosen_mat = weighted[0][0], weighted[0][1]
+    for mid, m, w in weighted:
+        cum += w
+        if r <= cum:
+            chosen_mid, chosen_mat = mid, m
+            break
+    templates = load_templates('shields')
+    if not templates:
+        return None
+    tid = rng.choice(list(templates.keys()))
+    try:
+        return instantiate_shield(tid, chosen_mid)
+    except ValueError:
+        return None
+
+
+# Legacy weapon/armor ID alias map — old saves with "iron_longsword" etc.
+# resolve to template+material pairs via this table.
+LEGACY_WEAPON_ALIASES: dict[str, tuple[str, str]] = {
+    # iron tier (legacy F1)
+    'iron_sword':       ('shortsword', 'iron'),
+    'iron_longsword':   ('longsword', 'iron'),
+    'iron_dagger':      ('dagger', 'iron'),
+    'iron_mace':        ('mace', 'iron'),
+    'iron_axe':         ('battleaxe', 'iron'),
+    'iron_warhammer':   ('warhammer', 'iron'),
+    'iron_spear':       ('glaive', 'iron'),
+    'iron_arrow':       ('shortbow', 'iron'),     # arrow→bow approximate
+    # steel tier (legacy F21)
+    'steel_sword':      ('shortsword', 'steel'),
+    'steel_longsword':  ('longsword', 'steel'),
+    'steel_dagger':     ('dagger', 'steel'),
+    'steel_mace':       ('mace', 'steel'),
+    'steel_axe':        ('battleaxe', 'steel'),
+    # hardened gold tier (legacy F41)
+    'hardened_gold_sword':     ('shortsword', 'hardened_gold'),
+    'hardened_gold_longsword': ('longsword', 'hardened_gold'),
+    'hardened_gold_dagger':    ('dagger', 'hardened_gold'),
+    # diamond tier (legacy F61) — closest match is mithril for crystalline lore
+    'diamond_sword':     ('shortsword', 'mithril'),
+    'diamond_longsword': ('longsword', 'mithril'),
+    'diamond_dagger':    ('dagger', 'mithril'),
+    # adamantine tier (legacy F81)
+    'adamantine_sword':     ('shortsword', 'adamantine'),
+    'adamantine_longsword': ('longsword', 'adamantine'),
+    'adamantine_dagger':    ('dagger', 'adamantine'),
+}
+
+
+def resolve_legacy_weapon(legacy_id: str) -> Weapon | None:
+    """Convert an old save's weapon ID into the new template+material pair."""
+    alias = LEGACY_WEAPON_ALIASES.get(legacy_id)
+    if not alias:
+        return None
+    template_id, material_id = alias
+    return instantiate_weapon(template_id, material_id)
+
+
 def copy_at(item: Item, x: int, y: int) -> Item:
     """Return a shallow copy of item placed at (x, y)."""
     inst = copy.copy(item)

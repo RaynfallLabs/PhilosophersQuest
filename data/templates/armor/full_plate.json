@@ -1,0 +1,12 @@
+{
+  "id": "full_plate",
+  "name": "full plate",
+  "category": "armor",
+  "armor_class_tier": "heavy",
+  "slot": "body",
+  "base_ac_value": 6,
+  "base_weight_lb": 65.0,
+  "_design_note": "F60-100 top-tier heavy. Complete harness.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
+  "lore_template": "A complete harness of {material_name} — breastplate, faulds, pauldrons, vambraces, greaves — sized and articulated to one body. A walking castle, if you can carry it."
+}

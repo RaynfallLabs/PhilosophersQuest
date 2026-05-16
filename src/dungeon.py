@@ -1174,23 +1174,57 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
 
 def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     """Spawn items, containers, and lockpicks in dungeon rooms."""
-    from items import load_items, Container
+    from items import (load_items, Container, Weapon, Armor, Shield,
+                       pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                       pick_random_shield_for_floor)
 
     rng          = random.Random()
     ground_items = []
 
-    # -- Regular items (weapons/armor/shield/accessories/wands/scrolls/ammo) -- 33% per room --
-    templates: list = []
+    # -- Common gear (weapons / armor / shields) come from template+material
+    # composition. Picks one per room (33% chance) using bell-curve material
+    # spawn weighted by depth. The legacy weapon.json / armor.json / shield.json
+    # entries still load for UNIQUE/NAMED items, which spawn via the secondary
+    # pool below — never duplicated against the procedurally-generated set.
+    _ARMOR_SLOTS_FOR_DROP = ('body', 'head', 'hands', 'feet', 'legs', 'arms', 'cloak')
+    for room in rooms[1:]:
+        if rng.random() > 0.33:
+            continue
+        # 60% weapon, 20% armor piece, 15% shield, 5% nothing-special
+        roll = rng.random()
+        gear = None
+        if roll < 0.60:
+            gear = pick_random_weapon_for_floor(level, rng)
+        elif roll < 0.80:
+            slot = rng.choice(_ARMOR_SLOTS_FOR_DROP)
+            gear = pick_random_armor_for_floor(level, rng, slot=slot)
+        elif roll < 0.95:
+            gear = pick_random_shield_for_floor(level, rng)
+        if gear is not None:
+            _place_one([gear], room, dungeon, ground_items, rng)
+
+    # -- Uniques / accessories / wands / scrolls / spellbooks / ammo -- 25% per room --
+    # Named items with explicit JSON entries (Hrunting, Amulet of Merlin, etc.).
+    # For weapons specifically, only is_unique=True entries spawn here — the
+    # common-tier legacy weapons (iron_sword etc.) stay in weapon.json for
+    # starting-equipment lookups but DON'T spawn naturally (template+material
+    # handles common loot above).
+    legacy_pool: list = []
     for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
         try:
-            templates += load_items(cls_name)
+            items_in_class = load_items(cls_name)
+            if cls_name == 'weapon':
+                # Filter to uniques only — common-tier is handled by template+material spawn
+                items_in_class = [w for w in items_in_class if getattr(w, 'is_unique', False)
+                                  or w.name[:1].isupper()]
+            legacy_pool += items_in_class
         except FileNotFoundError:
             pass
 
-    eligible = _item_eligible_weighted(templates, level, rng)
+    eligible = _item_eligible_weighted(legacy_pool, level, rng)
 
     for room in rooms[1:]:
-        if rng.random() > 0.33:
+        if rng.random() > 0.25:
             continue
         _place_one(eligible, room, dungeon, ground_items, rng)
 

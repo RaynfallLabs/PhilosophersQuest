@@ -1,0 +1,1112 @@
+{
+  "scroll_of_heal": {
+    "name": "scroll of healing",
+    "symbol": "?",
+    "color": [
+      180,
+      255,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "heal",
+    "power": "3d6",
+    "unidentified_name": "crumpled scroll",
+    "lore": "Inscribed in the flowing script of ancient temple healers, this scroll channels divine restorative energy into the reader's body. The words dissolve into warm golden light as they are spoken aloud, leaving the parchment blank and the reader mended.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_mapping": {
+    "name": "scroll of mapping",
+    "symbol": "?",
+    "color": [
+      180,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "mapping",
+    "power": "",
+    "unidentified_name": "yellowed scroll",
+    "lore": "Cartographers of the old empire inscribed these scrolls with a sympathetic mapping enchantment. Upon reading, the dungeon's layout floods into the reader's mind as a complete spatial memory — every corridor, chamber, and stairwell within range suddenly known.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_identify": {
+    "name": "scroll of identify",
+    "symbol": "?",
+    "color": [
+      220,
+      220,
+      180
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "identify",
+    "power": "",
+    "unidentified_name": "torn scroll",
+    "lore": "The text of this scroll, penned in ink derived from truth-speaking crystals, vibrates with revealing energy. When read aloud over an unknown object, the scroll's magic strips away all disguise and false appearance, revealing the item's true name and nature.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_enchant_weapon": {
+    "name": "scroll of enchant weapon",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      100
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "enchant_weapon",
+    "power": "",
+    "unidentified_name": "silver scroll",
+    "lore": "Written in fire-silver ink by weaponsmith-mages of the dwarven academies, this scroll bonds an additional layer of enchantment into any held weapon. The runes crawl up the blade as they're spoken, burning themselves permanently into the metal.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_remove_curse": {
+    "name": "scroll of remove curse",
+    "symbol": "?",
+    "color": [
+      200,
+      180,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 5,
+    "quiz_tier": 2,
+    "quiz_threshold": 2,
+    "effect": "remove_curse",
+    "power": "",
+    "unidentified_name": "pale scroll",
+    "lore": "A liturgical text drawn from the Egyptian Book of Coming Forth by Day. When read aloud with proper pronunciation, the words sever any magical binding or malevolent enchantment attached to the reader's person or possessions, purifying them completely.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_confuse_monsters": {
+    "name": "scroll of confusion",
+    "symbol": "?",
+    "color": [
+      255,
+      180,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 2,
+    "effect": "confuse_monsters",
+    "power": "",
+    "unidentified_name": "swirling scroll",
+    "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range — their senses scramble, their movements become erratic, and their intent is lost in confusion.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_the_labyrinth": {
+    "name": "Scroll of the Labyrinth",
+    "symbol": "?",
+    "color": [
+      180,
+      80,
+      50
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "LABYRINTH-MMXXV-I",
+    "unidentified_name": "Scroll of the Labyrinth",
+    "identified": true,
+    "lore": "Sealed with the mark of the Cretan Labyrinth. A reward scroll from Dad -- show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_gorgon": {
+    "name": "Scroll of the Gorgon",
+    "symbol": "?",
+    "color": [
+      80,
+      180,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "GORGON-MMXXV-II",
+    "unidentified_name": "Scroll of the Gorgon",
+    "identified": true,
+    "lore": "Sealed with a serpent's eye. A reward scroll from Dad -- show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_hoard": {
+    "name": "Scroll of the Dragon Hoard",
+    "symbol": "?",
+    "color": [
+      200,
+      100,
+      20
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "DRAGONHOARD-MMXXV-III",
+    "unidentified_name": "Scroll of the Dragon Hoard",
+    "identified": true,
+    "lore": "Sealed with a golden dragon scale. A reward scroll from Dad -- show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_ragnarok": {
+    "name": "Scroll of Ragnarok",
+    "symbol": "?",
+    "color": [
+      180,
+      200,
+      240
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "RAGNAROK-MMXXV-IV",
+    "unidentified_name": "Scroll of Ragnarok",
+    "identified": true,
+    "lore": "Sealed with the howl of the World-Wolf. A reward scroll from Dad -- show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_abyss": {
+    "name": "Scroll of the Abyss",
+    "symbol": "?",
+    "color": [
+      160,
+      60,
+      220
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "ABYSS-MMXXV-V",
+    "unidentified_name": "Scroll of the Abyss",
+    "identified": true,
+    "lore": "Sealed with the mark of the Bottomless Pit. A reward scroll from Dad -- show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_sleep": {
+    "name": "scroll of sleep",
+    "symbol": "?",
+    "color": [
+      160,
+      160,
+      240
+    ],
+    "weight": 0.1,
+    "min_level": 5,
+    "quiz_tier": 3,
+    "quiz_threshold": 2,
+    "effect": "sleep_monsters",
+    "power": "",
+    "unidentified_name": "drowsy scroll",
+    "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence, this scroll releases a wave of irresistible somnolence. Every creature in sight is swept into deep slumber — only the reader, having spoken the words aloud, remains awake and free to act.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_haste": {
+    "name": "scroll of haste",
+    "symbol": "?",
+    "color": [
+      240,
+      240,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 8,
+    "quiz_tier": 3,
+    "quiz_threshold": 2,
+    "effect": "haste_self",
+    "power": "15",
+    "unidentified_name": "blurred scroll",
+    "lore": "Written in quicksilver ink by fleet-footed Hermes himself — or so the seller claimed — this scroll binds the speed-essence of the divine messenger into the reader's limbs. For a short time, reality slows around you while you move at twice the natural pace.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-7": 0,
+      "8-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_enchant_armor": {
+    "name": "scroll of enchant armor",
+    "symbol": "?",
+    "color": [
+      200,
+      160,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 6,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "effect": "enchant_armor",
+    "power": "",
+    "unidentified_name": "gleaming scroll",
+    "lore": "The armorers' guilds of three ages of the world spent centuries perfecting this scroll. Reading it aloud over a worn piece of armor causes the metal (or leather, or hide) to tighten, harden, and align — one permanent layer of reinforcement added to whatever protection you bear.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-5": 0,
+      "6-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_teleportation": {
+    "name": "scroll of teleportation",
+    "symbol": "?",
+    "color": [
+      100,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 12,
+    "quiz_tier": 4,
+    "quiz_threshold": 2,
+    "effect": "teleport_self",
+    "power": "",
+    "unidentified_name": "trembling scroll",
+    "lore": "The spatial theorists of Alexandria considered this scroll a philosophical as much as a practical achievement. Reading it dissolves your relationship with the current point in space and reconstitutes you at some other floor tile, selected at the whim of the dungeon.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-11": 0,
+      "12-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_charging": {
+    "name": "scroll of charging",
+    "symbol": "?",
+    "color": [
+      120,
+      200,
+      140
+    ],
+    "weight": 0.1,
+    "min_level": 15,
+    "quiz_tier": 4,
+    "quiz_threshold": 3,
+    "effect": "charging",
+    "power": "",
+    "unidentified_name": "crackling scroll",
+    "lore": "Inscribed by the artificers who first learned to trap raw magical force in crystalline matrices, this scroll rekindles exhausted power. Upon reading, ambient magical energy floods into every wand in the reader's possession, refreshing their reserves by one full charge each.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-14": 0,
+      "15-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_identify_all": {
+    "name": "scroll of mass identify",
+    "symbol": "?",
+    "color": [
+      255,
+      230,
+      130
+    ],
+    "weight": 0.1,
+    "min_level": 14,
+    "quiz_tier": 4,
+    "quiz_threshold": 2,
+    "effect": "identify_all",
+    "power": "",
+    "unidentified_name": "revealing scroll",
+    "lore": "A far more powerful version of the common identification scroll. This text requires the reader to articulate the true name of knowledge itself. Upon completion, every obscured, unnamed, and unexamined item in one's possession is simultaneously revealed in full.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-13": 0,
+      "14-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_annihilation": {
+    "name": "scroll of annihilation",
+    "symbol": "?",
+    "color": [
+      255,
+      80,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 30,
+    "quiz_tier": 5,
+    "quiz_threshold": 2,
+    "effect": "annihilate",
+    "power": "",
+    "unidentified_name": "scorched scroll",
+    "lore": "The most feared text in the dungeon archivist's catalogue. Its words were first spoken on the day the great library of Carthage burned. Reading it perfectly causes every creature in sight to dissolve in a flash of obliterating white energy, leaving only silence and ash.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
+  },
+  "scroll_of_time_stop": {
+    "name": "scroll of time stop",
+    "symbol": "?",
+    "color": [
+      200,
+      220,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 40,
+    "quiz_tier": 5,
+    "quiz_threshold": 2,
+    "effect": "time_stop_scroll",
+    "power": "10",
+    "unidentified_name": "frozen scroll",
+    "lore": "The theoretical framework for this scroll was laid by Zeno of Elea, who proved logically that motion is an illusion. Ten turns of absolute stillness surround the reader: monsters freeze mid-stride, arrows hang in mid-air, the dungeon holds its breath.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-39": 0,
+      "40-40": 3,
+      "41-60": 2,
+      "61-80": 1,
+      "81-100": 1
+    }
+  },
+  "scroll_of_great_power": {
+    "name": "scroll of great power",
+    "symbol": "?",
+    "color": [
+      255,
+      215,
+      0
+    ],
+    "weight": 0.1,
+    "min_level": 50,
+    "quiz_tier": 5,
+    "quiz_threshold": 4,
+    "effect": "great_power",
+    "power": "",
+    "unidentified_name": "blazing scroll",
+    "lore": "The capstone work of the philosopher Porphyry, who spent forty years distilling the essence of Aristotle's categories into a single transformative incantation. Those few who have read it perfectly emerge changed: stronger, hardier, swifter, keener, wiser, more perceptive. Every faculty permanently elevated by one degree.",
+    "read_threshold": 4,
+    "floorSpawnWeight": {
+      "1-49": 0,
+      "50-60": 3,
+      "61-80": 2,
+      "81-100": 1
+    }
+  },
+  "scroll_of_enchantment": {
+    "name": "scroll of enchantment",
+    "symbol": "?",
+    "color": [
+      255,
+      220,
+      100
+    ],
+    "weight": 0.1,
+    "min_level": 10,
+    "quiz_tier": 3,
+    "quiz_threshold": 2,
+    "effect": "enchant_item",
+    "power": "",
+    "unidentified_name": "glowing scroll",
+    "lore": "Written by an anonymous enchanter of the Alexandrian school, this scroll channels raw magical force into whatever equipment the reader wears. The ink shimmers gold as the spell takes hold, permanently strengthening one piece of equipment.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-9": 0,
+      "10-20": 3,
+      "21-40": 2,
+      "41-60": 1,
+      "61-100": 1
+    }
+  },
+  "scroll_of_thoth": {
+    "name": "Scroll of Thoth",
+    "effect": "identify_all",
+    "power": "thoth_blessing",
+    "quiz_tier": 4,
+    "quiz_threshold": 2,
+    "weight": 0.5,
+    "value": 4000,
+    "min_level": 35,
+    "identified": false,
+    "unidentified_name": "a papyrus scroll with hieratic script",
+    "lore": "Thoth, ibis-headed god of knowledge, inscribed all wisdom into forty-two books. The priest Setna Khamwas stole this scroll from the tomb of Neferkaptah and was haunted by the dead for his theft. Those who read it understand all languages and see through all illusions — but knowledge stolen from the dead carries a price.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {
+      "1-34": 0,
+      "35-60": 5,
+      "61-100": 3
+    },
+    "symbol": "?",
+    "color": [
+      255,
+      215,
+      100
+    ],
+    "read_threshold": 2
+  },
+  "dead_sea_scroll": {
+    "name": "Dead Sea Scroll",
+    "effect": "mapping",
+    "power": "dead_sea_blessing",
+    "quiz_tier": 3,
+    "quiz_threshold": 2,
+    "weight": 0.3,
+    "value": 3000,
+    "min_level": 30,
+    "identified": false,
+    "unidentified_name": "a brittle parchment sealed in a clay jar",
+    "lore": "In 1947, a Bedouin shepherd threw a stone into a cave near Qumran and heard the sound of breaking pottery. Inside the jars were scrolls preserved for two thousand years. The War Scroll describes the final battle between the Sons of Light and the Sons of Darkness. Reading it reveals the battlefield — every corridor, every room, every enemy position.",
+    "containerLootTier": "rare",
+    "floorSpawnWeight": {
+      "1-29": 0,
+      "30-55": 6,
+      "56-100": 3
+    },
+    "symbol": "?",
+    "color": [
+      200,
+      180,
+      140
+    ],
+    "read_threshold": 2
+  },
+  "scroll_of_arachne": {
+    "name": "Scroll of Arachne",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-WEAVER-I",
+    "unidentified_name": "Scroll of Arachne",
+    "identified": true,
+    "lore": "Sealed with a strand of unbreakable silk. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_lamia": {
+    "name": "Scroll of Lamia",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-SERPENT-II",
+    "unidentified_name": "Scroll of Lamia",
+    "identified": true,
+    "lore": "Sealed with a serpent's tear. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_talos": {
+    "name": "Scroll of Talos",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-BRONZE-III",
+    "unidentified_name": "Scroll of Talos",
+    "identified": true,
+    "lore": "Sealed with molten bronze. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_echidna": {
+    "name": "Scroll of Echidna",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-MOTHER-IV",
+    "unidentified_name": "Scroll of Echidna",
+    "identified": true,
+    "lore": "Sealed with the mark of the Mother of Monsters. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_erlking": {
+    "name": "Scroll of the Erlking",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-FOREST-V",
+    "unidentified_name": "Scroll of the Erlking",
+    "identified": true,
+    "lore": "Sealed with a frozen leaf that never wilts. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_camazotz": {
+    "name": "Scroll of Camazotz",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-NIGHT-VI",
+    "unidentified_name": "Scroll of Camazotz",
+    "identified": true,
+    "lore": "Sealed with a bat's wing pressed in wax. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_cacus": {
+    "name": "Scroll of Cacus",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-FLAME-VII",
+    "unidentified_name": "Scroll of Cacus",
+    "identified": true,
+    "lore": "Sealed with a scorch mark that still smolders. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_sphinx": {
+    "name": "Scroll of the Sphinx",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-RIDDLE-VIII",
+    "unidentified_name": "Scroll of the Sphinx",
+    "identified": true,
+    "lore": "Sealed with a riddle that answers itself. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_rangda": {
+    "name": "Scroll of Rangda",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-WITCH-IX",
+    "unidentified_name": "Scroll of Rangda",
+    "identified": true,
+    "lore": "Sealed with a lock of white hair. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_lion": {
+    "name": "Scroll of the Nemean Lion",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-LION-X",
+    "unidentified_name": "Scroll of the Nemean Lion",
+    "identified": true,
+    "lore": "Sealed with an impenetrable golden hair. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_baba_yaga": {
+    "name": "Scroll of Baba Yaga",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-CRONE-XI",
+    "unidentified_name": "Scroll of Baba Yaga",
+    "identified": true,
+    "lore": "Sealed with iron teeth marks. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_jormungandr": {
+    "name": "Scroll of Jörmungandr",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-WYRM-XII",
+    "unidentified_name": "Scroll of Jörmungandr",
+    "identified": true,
+    "lore": "Sealed with a scale from the World Serpent. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_set": {
+    "name": "Scroll of Set",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-CHAOS-XIII",
+    "unidentified_name": "Scroll of Set",
+    "identified": true,
+    "lore": "Sealed with red sand from the desert of storms. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_green": {
+    "name": "Scroll of the Green Knight",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-GREEN-XIV",
+    "unidentified_name": "Scroll of the Green Knight",
+    "identified": true,
+    "lore": "Sealed with a holly branch that bleeds sap. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_charybdis": {
+    "name": "Scroll of Charybdis",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-MAELSTROM-XV",
+    "unidentified_name": "Scroll of Charybdis",
+    "identified": true,
+    "lore": "Sealed with salt water that never dries. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_ravana": {
+    "name": "Scroll of Ravana",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-DEMON-XVI",
+    "unidentified_name": "Scroll of Ravana",
+    "identified": true,
+    "lore": "Sealed with the sigil of Lanka. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_wendigo": {
+    "name": "Scroll of the Wendigo",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-HUNGER-XVII",
+    "unidentified_name": "Scroll of the Wendigo",
+    "identified": true,
+    "lore": "Sealed with frost that bites the fingers. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_hunt": {
+    "name": "Scroll of the Wild Hunt",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-HUNT-XVIII",
+    "unidentified_name": "Scroll of the Wild Hunt",
+    "identified": true,
+    "lore": "Sealed with a horn blast frozen in wax. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_anansi": {
+    "name": "Scroll of Anansi",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-SPIDER-XIX",
+    "unidentified_name": "Scroll of Anansi",
+    "identified": true,
+    "lore": "Sealed with a web that glints like gold. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_nidhoggr": {
+    "name": "Scroll of Níðhöggr",
+    "symbol": "?",
+    "color": [
+      255,
+      200,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "QUEST-ROOT-XX",
+    "unidentified_name": "Scroll of Níðhöggr",
+    "identified": true,
+    "lore": "Sealed with bark from the World Tree. A reward scroll from Dad — show him this code!",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_the_pasture": {
+    "name": "Scroll of the Pasture",
+    "symbol": "?",
+    "color": [
+      180,
+      140,
+      80
+    ],
+    "weight": 0.1,
+    "item_class": "scroll",
+    "min_level": 9999,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "boss_reward",
+    "power": "MOO-MOO-FARM-I",
+    "unidentified_name": "Scroll of the Pasture",
+    "identified": true,
+    "lore": "Sealed with a brand shaped like a cow bell. A reward scroll from Dad — show him this code! Moo.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {}
+  },
+  "scroll_of_earth": {
+    "name": "scroll of earth",
+    "symbol": "?",
+    "color": [
+      180,
+      140,
+      80
+    ],
+    "weight": 0.1,
+    "min_level": 20,
+    "quiz_tier": 3,
+    "quiz_threshold": 3,
+    "effect": "earth",
+    "power": "4d6",
+    "unidentified_name": "rumbling scroll",
+    "lore": "Ancient druidic script that calls upon the weight of the earth itself. Boulders crash down upon every visible foe.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-60": 2,
+      "61-100": 1
+    },
+    "sprite_desc": "A scroll of rough brown parchment with glowing earth-tone runes and small pebbles embedded in the wax seal"
+  },
+  "scroll_of_protection": {
+    "name": "scroll of protection",
+    "symbol": "?",
+    "color": [
+      160,
+      200,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 10,
+    "quiz_tier": 2,
+    "quiz_threshold": 3,
+    "effect": "protection",
+    "power": "",
+    "unidentified_name": "warded scroll",
+    "lore": "A prayer of warding inscribed by temple acolytes. The words form a protective shell around the reader.",
+    "read_threshold": 3,
+    "floorSpawnWeight": {
+      "1-10": 0,
+      "11-40": 3,
+      "41-100": 2
+    },
+    "sprite_desc": "A scroll of pale blue parchment with a glowing shield symbol and silver protective sigils"
+  },
+  "scroll_of_enchant_accessory": {
+    "name": "scroll of enchant accessory",
+    "symbol": "?",
+    "color": [
+      200,
+      160,
+      255
+    ],
+    "weight": 0.1,
+    "min_level": 25,
+    "quiz_tier": 3,
+    "quiz_threshold": 2,
+    "effect": "enchant_accessory",
+    "power": "",
+    "unidentified_name": "jeweled scroll",
+    "lore": "Written by enchanter-jewelers of the elven courts, this scroll infuses additional power into a worn accessory.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-25": 0,
+      "26-60": 2,
+      "61-100": 1
+    },
+    "sprite_desc": "A scroll of lavender parchment with tiny gemstone fragments woven into the fibers and purple ink runes"
+  },
+  "scroll_of_genocide": {
+    "name": "scroll of genocide",
+    "symbol": "?",
+    "color": [
+      255,
+      40,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 40,
+    "quiz_tier": 4,
+    "quiz_threshold": 4,
+    "effect": "genocide",
+    "power": "",
+    "unidentified_name": "blood-red scroll",
+    "lore": "A terrifying scroll of absolute power. Speaking the words erases an entire species from the current level. Even reading it feels like a transgression.",
+    "read_threshold": 4,
+    "floorSpawnWeight": {
+      "1-40": 0,
+      "41-80": 1,
+      "81-100": 1
+    },
+    "sprite_desc": "A scroll of deep crimson parchment with black skull runes and a wax seal shaped like a crossed-out creature"
+  },
+  "scroll_of_light": {
+    "name": "scroll of light",
+    "symbol": "?",
+    "color": [
+      255,
+      255,
+      200
+    ],
+    "weight": 0.1,
+    "min_level": 5,
+    "quiz_tier": 1,
+    "quiz_threshold": 2,
+    "effect": "full_light",
+    "power": "",
+    "unidentified_name": "glowing scroll",
+    "lore": "A simple but useful invocation that floods the entire level with magical light, revealing its layout.",
+    "read_threshold": 2,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-60": 2,
+      "61-100": 1
+    },
+    "sprite_desc": "A scroll of warm yellow parchment radiating soft golden light with sun-ray patterns in the ink"
+  }
+}

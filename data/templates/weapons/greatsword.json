@@ -1,0 +1,33 @@
+{
+  "id": "greatsword",
+  "name": "greatsword",
+  "category": "weapon",
+  "weapon_class": "sword",
+  "hands": 2,
+  "damage_types": [
+    "slash"
+  ],
+  "chain_multipliers": [
+    0.75,
+    0.9,
+    1.0,
+    1.3,
+    1.75
+  ],
+  "max_chain_length": 5,
+  "damage_modifier": 1.45,
+  "base_weight_lb": 6.0,
+  "speed": 8,
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material",
+    "exotic_metal"
+  ],
+  "lore_template": "A {material_name} greatsword \u2014 a weapon to clear a room with one swing, or die trying.",
+  "design_notes": "v2 chain rebalance: heavy class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 1.75\u00d7. Class mechanic: At max chain, on kill: cleave damage to one adjacent foe. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.45 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "weapon_class_chain": "heavy",
+  "class_mechanic": "cleave_on_kill",
+  "class_mechanic_desc": "At max chain, on kill: cleave damage to one adjacent foe."
+}

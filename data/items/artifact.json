@@ -8,8 +8,19 @@
       0
     ],
     "weight": 1.0,
-    "min_level": 9999,
-    "lore": "Forged in the crucible of creation when Prometheus first stole fire from the gods, the Philosopher's Stone pulses with the captured light of a thousand calcined souls, each one surrendered willingly to the Great Work. It is said that Hermes Trismegistus held it once and wept, for the Stone does not merely transmute lead into gold — it transmutes the bearer, burning away all that is base until only the quintessence remains. To carry it toward the light of the sun is to complete the Magnum Opus, the final conjunction of Sul and Luna, the perfection of matter and spirit made one."
+    "min_level": 0,
+    "lore": "Forged in the crucible of creation when Prometheus first stole fire from the gods, the Philosopher's Stone pulses with the captured light of a thousand calcined souls, each one surrendered willingly to the Great Work. It is said that Hermes Trismegistus held it once and wept, for the Stone does not merely transmute lead into gold — it transmutes the bearer, burning away all that is base until only the quintessence remains. To carry it toward the light of the sun is to complete the Magnum Opus, the final conjunction of Sul and Luna, the perfection of matter and spirit made one.",
+    "special_properties": {
+      "plot_role": "abaddon_drop_endgame_anchor",
+      "effects": [
+        "auto_identify",
+        "death_kill_ritual_component",
+        "score_bonus_50000"
+      ],
+      "spawn_method": "boss_drop_abaddon"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "bronze_bull": {
     "name": "Bronze Bull Idol",
@@ -20,8 +31,17 @@
       60
     ],
     "weight": 0.5,
-    "min_level": 9999,
-    "lore": "A small bronze figure of a bull, worn smooth by centuries of prayer. King Minos was given such a bull by Poseidon — and his refusal to sacrifice it at the sacred waters cursed his bloodline forever. The idol still smells faintly of sea-foam."
+    "min_level": 0,
+    "lore": "A small bronze figure of a bull, worn smooth by centuries of prayer. King Minos was given such a bull by Poseidon — and his refusal to sacrifice it at the sacred waters cursed his bloodline forever. The idol still smells faintly of sea-foam.",
+    "special_properties": {
+      "plot_role": "asterion_quest_layer1",
+      "effects": [
+        "pour_on_ariadne_fountain_defangs_asterion_phasing"
+      ],
+      "spawn_method": "quest_spawn_pre_asterion"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -33,7 +53,19 @@
     ],
     "weight": 0.1,
     "min_level": 15,
-    "lore": "A spool of shimmering golden thread. Ariadne gave this to Theseus so he could navigate the labyrinth and escape after slaying the Minotaur. It reveals all hidden paths."
+    "lore": "A spool of shimmering golden thread. Ariadne gave this to Theseus so he could navigate the labyrinth and escape after slaying the Minotaur. It reveals all hidden paths.",
+    "spread": 10,
+    "peak_weight": 0.4,
+    "special_properties": {
+      "plot_role": "asterion_quest_layer1_companion",
+      "effects": [
+        "reveal_hidden_paths",
+        "consumed_at_fountain"
+      ],
+      "spawn_method": "quest_spawn_pre_asterion"
+    },
+    "peak_floor": 20,
+    "is_unique": true
   },
   "eye_of_graeae": {
     "name": "Eye of the Graeae",
@@ -45,7 +77,18 @@
     ],
     "weight": 0.2,
     "min_level": 25,
-    "lore": "A single milky eye, cold as sea-stone. The three Grey Sisters — Deino, Enyo, and Pemphredo — shared this one eye between them. Perseus stole it and refused to return it until they revealed the secret of slaying Medusa. It still seems to watch you, even from your pack. The gods rewarded his cunning at a sacred place."
+    "lore": "A single milky eye, cold as sea-stone. The three Grey Sisters — Deino, Enyo, and Pemphredo — shared this one eye between them. Perseus stole it and refused to return it until they revealed the secret of slaying Medusa. It still seems to watch you, even from your pack. The gods rewarded his cunning at a sacred place.",
+    "spread": 13,
+    "peak_weight": 0.4,
+    "special_properties": {
+      "plot_role": "medusa_quest_layer1",
+      "effects": [
+        "drop_on_athena_altar_produces_aegis"
+      ],
+      "spawn_method": "quest_spawn_pre_medusa"
+    },
+    "peak_floor": 30,
+    "is_unique": true
   },
   "cats_footstep": {
     "name": "Sound of a Cat's Footstep",
@@ -58,7 +101,19 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": true,
-    "lore": "A tiny glass vial that makes no sound when shaken. The dwarves of Svartalfheim harvested the silence of a cat's paw to forge Gleipnir, the binding that held Fenrir."
+    "lore": "A tiny glass vial that makes no sound when shaken. The dwarves of Svartalfheim harvested the silence of a cat's paw to forge Gleipnir, the binding that held Fenrir.",
+    "spread": 24,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_gleipnir_component",
+      "effects": [
+        "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+      ],
+      "spawn_method": "quest_spawn_fenrir_components"
+    },
+    "peak_floor": 65,
+    "is_unique": true
   },
   "womans_beard": {
     "name": "Roots of a Woman's Beard",
@@ -71,7 +126,19 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": true,
-    "lore": "Fine filaments of something that shouldn't exist. The dwarves used them because they are impossible — and impossible things make the strongest chains."
+    "lore": "Fine filaments of something that shouldn't exist. The dwarves used them because they are impossible — and impossible things make the strongest chains.",
+    "spread": 24,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_gleipnir_component",
+      "effects": [
+        "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+      ],
+      "spawn_method": "quest_spawn_fenrir_components"
+    },
+    "peak_floor": 65,
+    "is_unique": true
   },
   "mountain_root": {
     "name": "Root of a Mountain",
@@ -84,7 +151,19 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": true,
-    "lore": "A gnarled tendril of grey stone that pulses faintly with geologic patience. Mountains have roots that reach to the earth's core. The dwarves knew where to dig."
+    "lore": "A gnarled tendril of grey stone that pulses faintly with geologic patience. Mountains have roots that reach to the earth's core. The dwarves knew where to dig.",
+    "spread": 24,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_gleipnir_component",
+      "effects": [
+        "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+      ],
+      "spawn_method": "quest_spawn_fenrir_components"
+    },
+    "peak_floor": 65,
+    "is_unique": true
   },
   "fish_breath": {
     "name": "Breath of a Fish",
@@ -97,7 +176,19 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": true,
-    "lore": "A sealed bubble of impossibility — air exhaled by a creature that has no lungs. It smells of deep water and cold currents."
+    "lore": "A sealed bubble of impossibility — air exhaled by a creature that has no lungs. It smells of deep water and cold currents.",
+    "spread": 24,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_gleipnir_component",
+      "effects": [
+        "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+      ],
+      "spawn_method": "quest_spawn_fenrir_components"
+    },
+    "peak_floor": 65,
+    "is_unique": true
   },
   "bird_spittle": {
     "name": "Spittle of a Bird",
@@ -110,7 +201,19 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": true,
-    "lore": "A single drop of moisture from a creature with no salivary glands. It glistens on its own, independent of any light source."
+    "lore": "A single drop of moisture from a creature with no salivary glands. It glistens on its own, independent of any light source.",
+    "spread": 24,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_gleipnir_component",
+      "effects": [
+        "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+      ],
+      "spawn_method": "quest_spawn_fenrir_components"
+    },
+    "peak_floor": 65,
+    "is_unique": true
   },
   "bear_sinew": {
     "name": "Sinew of a Bear's Sensitivity",
@@ -123,7 +226,19 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": true,
-    "lore": "A thread of something between nerve and tendon, harvested from the concept of a bear's awareness. It twitches occasionally, sensing things you cannot."
+    "lore": "A thread of something between nerve and tendon, harvested from the concept of a bear's awareness. It twitches occasionally, sensing things you cannot.",
+    "spread": 24,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_gleipnir_component",
+      "effects": [
+        "forge_with_5_others_at_dwarven_forge_to_make_gleipnir"
+      ],
+      "spawn_method": "quest_spawn_fenrir_components"
+    },
+    "peak_floor": 65,
+    "is_unique": true
   },
   "gleipnir": {
     "name": "Gleipnir",
@@ -134,9 +249,19 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A ribbon as thin as silk and as light as nothing. It cannot be broken by any force in the Nine Realms. The dwarves of Svartalfheim forged it from six impossible things, and it held the Wolf of Ragnarok until the end of days. It whispers of binding."
+    "lore": "A ribbon as thin as silk and as light as nothing. It cannot be broken by any force in the Nine Realms. The dwarves of Svartalfheim forged it from six impossible things, and it held the Wolf of Ragnarok until the end of days. It whispers of binding.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer1_assembled",
+      "effects": [
+        "bind_fenrir_with_stat_tax_during_fight"
+      ],
+      "spawn_method": "forge_assembled"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "leather_scrap": {
     "name": "leather scrap",
@@ -146,10 +271,23 @@
       90,
       60
     ],
-    "weight": 2.0,
+    "weight": 0.3,
     "min_level": 1,
     "identified": true,
-    "lore": "Useless scrap left over from leather-working. Too small for armor, too stiff for bandages. You can't imagine why anyone would keep this."
+    "lore": "Useless scrap left over from leather-working. Too small for armor, too stiff for bandages. You can't imagine why anyone would keep this.",
+    "spread": 8,
+    "peak_weight": 0.4,
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer2_vidars_sandal_component",
+      "effects": [
+        "10_assembled_at_vidars_altar_become_sandal"
+      ],
+      "spawn_method": "quest_spawn_10_scattered_floors",
+      "count_required": 10
+    },
+    "peak_floor": 6,
+    "is_unique": true
   },
   "seal_of_wrath": {
     "name": "Seal of Wrath",
@@ -160,9 +298,19 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A blood-red sigil torn from the first guardian of the Abyss. It burns with infernal heat and smells of brimstone. One of seven seals that hold the Pit closed."
+    "lore": "A blood-red sigil torn from the first guardian of the Abyss. It burns with infernal heat and smells of brimstone. One of seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "seal_of_pestilence": {
     "name": "Seal of Pestilence",
@@ -173,9 +321,19 @@
       40
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A sickly green sigil that weeps a foul ichor. The air around it hums with plague. One of seven seals that hold the Pit closed."
+    "lore": "A sickly green sigil that weeps a foul ichor. The air around it hums with plague. One of seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "seal_of_famine": {
     "name": "Seal of Famine",
@@ -186,9 +344,19 @@
       100
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A withered sigil the color of dead grain. Holding it makes you feel hollow, as though you have not eaten in days. One of seven seals that hold the Pit closed."
+    "lore": "A withered sigil the color of dead grain. Holding it makes you feel hollow, as though you have not eaten in days. One of seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "seal_of_war": {
     "name": "Seal of War",
@@ -199,9 +367,19 @@
       40
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A crimson sigil etched with crossed swords. It vibrates with the memory of a thousand battlefields. One of seven seals that hold the Pit closed."
+    "lore": "A crimson sigil etched with crossed swords. It vibrates with the memory of a thousand battlefields. One of seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "seal_of_death": {
     "name": "Seal of Death",
@@ -212,9 +390,19 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A pale sigil cold as the grave. Your shadow darkens when you hold it. One of seven seals that hold the Pit closed."
+    "lore": "A pale sigil cold as the grave. Your shadow darkens when you hold it. One of seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "seal_of_earthquake": {
     "name": "Seal of the Earthquake",
@@ -225,9 +413,19 @@
       60
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A cracked sigil that trembles in your hand. The stone beneath your feet groans when you carry it. One of seven seals that hold the Pit closed."
+    "lore": "A cracked sigil that trembles in your hand. The stone beneath your feet groans when you carry it. One of seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "seal_of_silence": {
     "name": "Seal of Silence",
@@ -238,9 +436,19 @@
       200
     ],
     "weight": 0.1,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
-    "lore": "A sigil of pale silver that absorbs all sound around it. In its presence, even your breathing is muffled. The last and most terrible of the seven seals that hold the Pit closed."
+    "lore": "A sigil of pale silver that absorbs all sound around it. In its presence, even your breathing is muffled. The last and most terrible of the seven seals that hold the Pit closed.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "seal_demon_drop",
+      "effects": [
+        "shatter_on_pickup_with_chronicle"
+      ],
+      "spawn_method": "seal_demon_drop"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "scales_of_michael": {
     "name": "Scales of Michael",
@@ -250,10 +458,20 @@
       240,
       200
     ],
-    "weight": 0.5,
-    "min_level": 9999,
+    "weight": 1.0,
+    "min_level": 0,
     "identified": true,
-    "lore": "The golden scales of the Archangel Michael, Weigher of Souls and Prince of the Heavenly Host. In the final battle against the Destroyer, the Host answers the call of these scales. For every locust of the Abyss, an angel descends."
+    "lore": "The golden scales of the Archangel Michael, Weigher of Souls and Prince of the Heavenly Host. In the final battle against the Destroyer, the Host answers the call of these scales. For every locust of the Abyss, an angel descends.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "abaddon_quest_layer4_heavenly_host",
+      "effects": [
+        "v_power_summon_angel_per_locust"
+      ],
+      "spawn_method": "michael_gift_karma_1_to_9"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "cursed_lodestone": {
     "name": "Cursed Lodestone",
@@ -264,10 +482,21 @@
       80
     ],
     "weight": 20.0,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
     "cursed": true,
-    "lore": "A massive black stone that drinks the light around it. You accepted it willingly to save a knight's dying wife. It weighs twenty pounds and cannot be put down — the curse binds it to whoever takes it freely. Only a scroll of Remove Curse can break the bond."
+    "lore": "A massive black stone that drinks the light around it. You accepted it willingly to save a knight's dying wife. It weighs twenty pounds and cannot be put down — the curse binds it to whoever takes it freely. Only a scroll of Remove Curse can break the bond.",
+    "special_properties": {
+      "cursed": true,
+      "identified": true,
+      "plot_role": "knight_encounter_promise",
+      "effects": [
+        "heavy_20lb_cannot_drop_until_remove_curse"
+      ],
+      "spawn_method": "npc_encounter_dying_knight"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "sealed_dispatch": {
     "name": "Sealed Dispatch",
@@ -277,10 +506,20 @@
       120,
       100
     ],
-    "weight": 8.0,
-    "min_level": 9999,
+    "weight": 2.0,
+    "min_level": 0,
     "identified": true,
-    "lore": "An iron-bound scroll case sealed with the sigil of the City Watch. It contains troop positions for an ongoing siege — thousands of lives depend on its delivery. A dying courier asked you to carry it to the surface. It is heavy and useless to you, but it is a promise."
+    "lore": "An iron-bound scroll case sealed with the sigil of the City Watch. It contains troop positions for an ongoing siege — thousands of lives depend on its delivery. A dying courier asked you to carry it to the surface. It is heavy and useless to you, but it is a promise.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "courier_promise",
+      "effects": [
+        "deliver_to_surface_for_karma_or_score"
+      ],
+      "spawn_method": "npc_encounter_dying_courier"
+    },
+    "plot_locked": true,
+    "is_unique": true
   },
   "palladium": {
     "name": "Palladium",
@@ -290,11 +529,24 @@
       180,
       200
     ],
-    "weight": 2.0,
+    "weight": 3.0,
     "min_level": 45,
     "identified": false,
     "stair_reveal": true,
-    "lore": "A small wooden statue of Athena, fallen from heaven to protect Troy. The city could not be taken while the Palladium remained within its walls — Odysseus and Diomedes had to steal it before the horse could work. It reveals the path forward: while carried, the stairs on every floor glow faintly in the bearer's mind, visible even through walls and darkness."
+    "lore": "A small wooden statue of Athena, fallen from heaven to protect Troy. The city could not be taken while the Palladium remained within its walls — Odysseus and Diomedes had to steal it before the horse could work. It reveals the path forward: while carried, the stairs on every floor glow faintly in the bearer's mind, visible even through walls and darkness.",
+    "spread": 19,
+    "peak_weight": 0.3,
+    "special_properties": {
+      "identified": false,
+      "stair_reveal": true,
+      "plot_role": "wonder_relic",
+      "effects": [
+        "stair_reveal_while_carried"
+      ],
+      "spawn_method": "random_lore_quest_mid_dungeon"
+    },
+    "peak_floor": 50,
+    "is_unique": true
   },
   "tablet_of_destinies": {
     "name": "Tablet of Destinies",
@@ -304,10 +556,169 @@
       140,
       100
     ],
-    "weight": 3.0,
+    "weight": 4.0,
     "min_level": 70,
     "identified": false,
     "quiz_reroll": true,
-    "lore": "Whoever holds the Tablet of Destinies controls the fate of all things. Enlil kept it in his sanctuary; Anzu the storm-bird stole it and plunged the world into chaos. Ninurta slew Anzu and returned it. The Tablet allows its bearer to reject fate once per floor — when a question is answered wrongly, the Tablet cracks and offers a different question. A second chance, drawn from the well of all possible futures."
+    "lore": "Whoever holds the Tablet of Destinies controls the fate of all things. Enlil kept it in his sanctuary; Anzu the storm-bird stole it and plunged the world into chaos. Ninurta slew Anzu and returned it. The Tablet allows its bearer to reject fate once per floor — when a question is answered wrongly, the Tablet cracks and offers a different question. A second chance, drawn from the well of all possible futures.",
+    "spread": 27,
+    "peak_weight": 0.2,
+    "special_properties": {
+      "identified": false,
+      "quiz_reroll": true,
+      "plot_role": "wonder_relic",
+      "effects": [
+        "one_quiz_reroll_per_floor_when_wrong"
+      ],
+      "spawn_method": "random_lore_quest_deep_dungeon"
+    },
+    "peak_floor": 75,
+    "is_unique": true
+  },
+  "bracers_of_cu_chulainn": {
+    "name": "Bracers of Cu Chulainn",
+    "category": "armor",
+    "template_basis": "leather_bracers",
+    "is_unique": true,
+    "slot": "arms",
+    "symbol": "[",
+    "color": [
+      140,
+      80,
+      40
+    ],
+    "ac_bonus": 1,
+    "min_level": 18,
+    "peak_floor": 28,
+    "spread": 10,
+    "peak_weight": 0.5,
+    "max_enchant": 2,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "damage_resistances": {
+      "slash": 0.1
+    },
+    "can_be_cursed": false,
+    "spawn_method": "rare_drop",
+    "special_properties": {
+      "warp_spasm_echo": true,
+      "bleed_on_attack_chance": 0.15,
+      "pain_immunity": true,
+      "damage_boost_when_below_half_hp": 1.2
+    },
+    "unidentified_name": "battle-scarred leather bracers",
+    "lore": "Cu Chulainn, the Hound of Ulster, was Ireland's greatest warrior — a man who entered such battle frenzy that his body twisted and contorted, one eye bulging, his hair standing like spikes of flame. These bracers are stained with the blood of a hundred battles. They carry the warp-spasm's echo: the wearer strikes harder, bleeds enemies with every blow, and feels no pain from cuts.",
+    "curve_note": "Template leather_bracers base_ac=1 + 0 (light leather, no AC stack from material). Power lives in the warp-spasm mechanics, not raw AC. F18-28 band sits between Asterion preparation (F20) and the mid-floor identity bands. The legacy 22 min_level was right; soft-curve peak at 28.",
+    "weight": 2.0
+  },
+  "leggings_of_enkidu": {
+    "name": "Leggings of Enkidu",
+    "category": "armor",
+    "template_basis": "leather_leggings",
+    "is_unique": true,
+    "slot": "legs",
+    "symbol": "[",
+    "color": [
+      140,
+      120,
+      80
+    ],
+    "ac_bonus": 2,
+    "min_level": 42,
+    "peak_floor": 52,
+    "spread": 14,
+    "peak_weight": 0.4,
+    "max_enchant": 3,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "slash": 0.2,
+      "blunt": 0.2,
+      "pierce": 0.15
+    },
+    "can_be_cursed": false,
+    "spawn_method": "rare_drop",
+    "special_properties": {
+      "wild_man_tread": true,
+      "ignores_difficult_terrain": true,
+      "speed_bonus_in_natural_caverns": 1
+    },
+    "unidentified_name": "rough-worked leather greaves from before metallurgy",
+    "lore": "Enkidu was created by the gods as a wild man to counter Gilgamesh. He lived among animals until a temple prostitute civilised him over seven days. He then challenged Gilgamesh to single combat; they fought to a draw and became friends. The Epic of Gilgamesh is the oldest known written epic. Its central subject is not the monsters they killed together but what Gilgamesh does when Enkidu dies first.",
+    "curve_note": "Template leather_leggings (not plate — lore says pre-metallurgy). base_ac=1, +1 unique-grade. F42-52 band: player_ac_target ~ 0 to -2. Wild-man theme: terrain mobility, not raw AC. Weight matches template — these are heavy hides, not light cloth.",
+    "weight": 3.0
+  },
+  "vambraces_of_achilles": {
+    "name": "Vambraces of Achilles",
+    "category": "armor",
+    "template_basis": "plate_vambraces",
+    "is_unique": true,
+    "slot": "arms",
+    "symbol": "[",
+    "color": [
+      200,
+      195,
+      150
+    ],
+    "ac_bonus": 2,
+    "min_level": 50,
+    "peak_floor": 60,
+    "spread": 14,
+    "peak_weight": 0.4,
+    "max_enchant": 3,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "damage_resistances": {
+      "slash": 0.2,
+      "pierce": 0.2,
+      "fire": 0.1
+    },
+    "can_be_cursed": false,
+    "spawn_method": "rare_drop",
+    "special_properties": {
+      "hephaestus_forged": true,
+      "scenes_of_peace_engraved": true
+    },
+    "unidentified_name": "bronze arm-guards of divine make",
+    "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women — farmers, shepherds, dancers — as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them.",
+    "curve_note": "Template plate_vambraces base_ac=1, +1 unique-grade AC bonus. F50-60 band: player_ac_target ~ -2 to -4; arms slot contributes 1-2 of the ~12-point AC stack. Weight 2.5 lb vs template 3.0 lb because divine-forge implies lighter-than-mortal articulation.",
+    "weight": 2.5
+  },
+  "vidars_sandal": {
+    "name": "Vidar's Sandal",
+    "category": "armor",
+    "is_unique": true,
+    "slot": "feet",
+    "template_basis": "leather_boots",
+    "symbol": "[",
+    "color": [
+      160,
+      130,
+      80
+    ],
+    "base_ac_value": 1,
+    "min_level": 79,
+    "peak_floor": 79,
+    "spread": 1,
+    "peak_weight": 0.0,
+    "plot_locked": true,
+    "can_be_cursed": false,
+    "max_enchant": 0,
+    "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "fenrir_quest_layer2_instant_kill",
+      "vidar_instant_kill_fenrir": true,
+      "effects": [
+        "first_chain_ge_1_hit_on_fenrir_sets_hp_to_0"
+      ],
+      "spawn_method": "forge_assembled",
+      "assembly_recipe": "drop_10_leather_scraps_on_vidars_altar_L79",
+      "components_required": 10,
+      "component_id": "leather_scrap",
+      "altar_floor": 79
+    },
+    "_design_note": "MEGA-SECRET quest reward. AC is modest (1 + leather material bonus) — the value is the instant-kill on Fenrir, not the defensive line. peak_weight 0.0 ensures it never natural-spawns; the altar assembly path is the only way in. Code references: src/game_combat.py:1292-1311 (instant-kill trigger), src/game_divine.py:499-521 (altar assembly), src/dungeon.py:2145-2154 (altar carve). See tools/balance/systems/bosses_and_quests.md §Fenrir Quest Layer 2.",
+    "weight": 2.0
   }
 }

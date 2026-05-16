@@ -15,7 +15,11 @@
     "effects": {},
     "unidentified_name": "burnished silver ring",
     "lore": "A small ring of tarnished silver, polished smooth by a child's restless fingers. It holds no enchantment, no hidden power — only the fierce love of a little girl who believed it was the most precious thing in the world. And perhaps, in a way, she was right.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_oak": {
     "name": "ring of warning",
@@ -42,7 +46,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_runed_metal": {
     "name": "ring of warning",
@@ -69,7 +77,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_ancient_copper": {
     "name": "ring of warning",
@@ -96,7 +108,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_bone": {
     "name": "ring of warning",
@@ -123,7 +139,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_twisted_iron": {
     "name": "ring of warning",
@@ -150,7 +170,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_carved_jade": {
     "name": "ring of warning",
@@ -177,7 +201,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_rough_stone": {
     "name": "ring of warning",
@@ -204,7 +232,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_warning_grey_granite": {
     "name": "ring of warning",
@@ -231,7 +263,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_silver": {
     "name": "ring of searching",
@@ -258,7 +294,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_polished_crystal": {
     "name": "ring of searching",
@@ -285,7 +325,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_malachite": {
     "name": "ring of searching",
@@ -312,7 +356,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_engraved_pewter": {
     "name": "ring of searching",
@@ -339,7 +387,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_gleaming_iron": {
     "name": "ring of searching",
@@ -366,7 +418,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_pale_ivory": {
     "name": "ring of searching",
@@ -393,7 +449,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_searching_mossy_stone": {
     "name": "ring of searching",
@@ -420,7 +480,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_telepathy_sapphire": {
     "name": "ring of telepathy",
@@ -447,7 +511,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_telepathy_lapis_lazuli": {
     "name": "ring of telepathy",
@@ -474,7 +542,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_telepathy_cobalt_blue": {
     "name": "ring of telepathy",
@@ -501,7 +573,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_telepathy_dark_obsidian": {
     "name": "ring of telepathy",
@@ -528,7 +604,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_telepathy_moonstone": {
     "name": "ring of telepathy",
@@ -555,7 +635,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_telepathy_twilight_crystal": {
     "name": "ring of telepathy",
@@ -582,7 +666,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_regen_emerald": {
     "name": "ring of regeneration",
@@ -609,7 +697,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_regen_peridot": {
     "name": "ring of regeneration",
@@ -636,7 +728,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_regen_serpentine": {
     "name": "ring of regeneration",
@@ -663,7 +759,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_regen_verdant_jade": {
     "name": "ring of regeneration",
@@ -690,7 +790,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_regen_living_wood": {
     "name": "ring of regeneration",
@@ -717,7 +821,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_strength_iron": {
     "name": "ring of strength",
@@ -744,7 +852,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_strength_steel": {
     "name": "ring of strength",
@@ -771,7 +883,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_strength_adamantine": {
     "name": "ring of strength",
@@ -798,7 +914,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_strength_mithril": {
     "name": "ring of strength",
@@ -825,7 +945,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_constitution_ruby": {
     "name": "ring of constitution",
@@ -852,7 +976,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_constitution_coral": {
     "name": "ring of constitution",
@@ -879,7 +1007,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_constitution_carnelian": {
     "name": "ring of constitution",
@@ -906,7 +1038,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_constitution_garnet": {
     "name": "ring of constitution",
@@ -933,7 +1069,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_dexterity_quicksilver": {
     "name": "ring of dexterity",
@@ -960,7 +1100,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_dexterity_thin_wire": {
     "name": "ring of dexterity",
@@ -987,7 +1131,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_dexterity_spun_glass": {
     "name": "ring of dexterity",
@@ -1014,7 +1162,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_dexterity_featherweight": {
     "name": "ring of dexterity",
@@ -1041,7 +1193,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_intellect_amethyst": {
     "name": "ring of intellect",
@@ -1068,7 +1224,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_intellect_purple_glass": {
     "name": "ring of intellect",
@@ -1095,7 +1255,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_intellect_arcane_pewter": {
     "name": "ring of intellect",
@@ -1122,7 +1286,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_intellect_prismatic": {
     "name": "ring of intellect",
@@ -1149,7 +1317,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_wisdom_opal": {
     "name": "ring of wisdom",
@@ -1176,7 +1348,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_wisdom_pearl": {
     "name": "ring of wisdom",
@@ -1203,7 +1379,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_wisdom_ivory": {
     "name": "ring of wisdom",
@@ -1230,7 +1410,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_wisdom_white_quartz": {
     "name": "ring of wisdom",
@@ -1257,7 +1441,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_perception_topaz": {
     "name": "ring of perception",
@@ -1284,7 +1472,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_perception_amber": {
     "name": "ring of perception",
@@ -1311,7 +1503,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_perception_citrine": {
     "name": "ring of perception",
@@ -1338,7 +1534,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_perception_hawks_eye": {
     "name": "ring of perception",
@@ -1365,7 +1565,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_fire_res_a": {
     "name": "ring of fire resist",
@@ -1392,7 +1596,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_fire_res_b": {
     "name": "ring of fire resist",
@@ -1419,7 +1627,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_cold_res_a": {
     "name": "ring of cold resist",
@@ -1446,7 +1658,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_cold_res_b": {
     "name": "ring of cold resist",
@@ -1473,7 +1689,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_shock_res_a": {
     "name": "ring of shock resist",
@@ -1500,7 +1720,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_shock_res_b": {
     "name": "ring of shock resist",
@@ -1527,7 +1751,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_poison_res_a": {
     "name": "ring of poison resist",
@@ -1554,7 +1782,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_poison_res_b": {
     "name": "ring of poison resist",
@@ -1581,7 +1813,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_sleep_res_a": {
     "name": "ring of sleep resist",
@@ -1608,7 +1844,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_sleep_res_b": {
     "name": "ring of sleep resist",
@@ -1635,7 +1875,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_magic_res_a": {
     "name": "ring of magic resist",
@@ -1662,7 +1906,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_drain_res_a": {
     "name": "ring of drain resist",
@@ -1689,7 +1937,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_levitate": {
     "name": "ring of levitating",
@@ -1716,7 +1968,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_invisible": {
     "name": "ring of invisible",
@@ -1743,7 +1999,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_hasted": {
     "name": "ring of hasted",
@@ -1770,7 +2030,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_clairvoy": {
     "name": "ring of clairvoyant",
@@ -1797,7 +2061,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_displace": {
     "name": "ring of displacement",
@@ -1824,7 +2092,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_curse_teleport": {
     "name": "ring of teleportitis",
@@ -1851,7 +2123,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_curse_aggravate": {
     "name": "ring of aggravation",
@@ -1878,7 +2154,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_curse_fumble": {
     "name": "ring of fumbling",
@@ -1905,7 +2185,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_curse_slow": {
     "name": "ring of slowing",
@@ -1932,7 +2216,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_warning_leather": {
     "name": "amulet of warning",
@@ -1959,7 +2247,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_warning_copper": {
     "name": "amulet of warning",
@@ -1986,7 +2278,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_searching_bone": {
     "name": "amulet of searching",
@@ -2013,7 +2309,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_searching_bronze": {
     "name": "amulet of searching",
@@ -2040,7 +2340,11 @@
       "41-60": 80,
       "61-80": 40,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_telepathy_silver": {
     "name": "amulet of telepathy",
@@ -2067,7 +2371,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_telepathy_jade": {
     "name": "amulet of telepathy",
@@ -2094,7 +2402,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_regen_jade": {
     "name": "amulet of regeneration",
@@ -2121,7 +2433,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_hasted": {
     "name": "amulet of speed",
@@ -2148,7 +2464,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_invis": {
     "name": "amulet of invisibility",
@@ -2175,7 +2495,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_levitate": {
     "name": "amulet of levitation",
@@ -2202,7 +2526,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_clairvoyant": {
     "name": "amulet of clairvoyance",
@@ -2229,7 +2557,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_displace": {
     "name": "amulet of displacement",
@@ -2256,7 +2588,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_fire_res": {
     "name": "amulet of fire resistance",
@@ -2283,7 +2619,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_cold_res": {
     "name": "amulet of cold resistance",
@@ -2310,7 +2650,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_shock_res": {
     "name": "amulet of shock resistance",
@@ -2337,7 +2681,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_poison_res": {
     "name": "amulet of poison resistance",
@@ -2364,7 +2712,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_sleep_res": {
     "name": "amulet of sleep resistance",
@@ -2391,7 +2743,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_magic_res": {
     "name": "amulet of magic resistance",
@@ -2418,7 +2774,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_drain_res": {
     "name": "amulet of drain resistance",
@@ -2445,7 +2805,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_strength_iron_medallion": {
     "name": "amulet of strength",
@@ -2472,7 +2836,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_strength_titan_iron_pendant": {
     "name": "amulet of strength",
@@ -2499,7 +2867,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_constitution_ruby_pendant": {
     "name": "amulet of constitution",
@@ -2526,7 +2898,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_constitution_guardian_ruby_locket": {
     "name": "amulet of constitution",
@@ -2553,7 +2929,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_dexterity_quicksilver_charm": {
     "name": "amulet of dexterity",
@@ -2580,7 +2960,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_dexterity_air_light_locket": {
     "name": "amulet of dexterity",
@@ -2607,7 +2991,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_intellect_amethyst_talisman": {
     "name": "amulet of intellect",
@@ -2634,7 +3022,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_intellect_brilliant_crystal_medallion": {
     "name": "amulet of intellect",
@@ -2661,7 +3053,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_wisdom_opal_locket": {
     "name": "amulet of wisdom",
@@ -2688,7 +3084,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_wisdom_sage_ivory_locket": {
     "name": "amulet of wisdom",
@@ -2715,7 +3115,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_perception_eagle_eye_pendant": {
     "name": "amulet of perception",
@@ -2742,7 +3146,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "amulet_perception_hawk_feather_talisman": {
     "name": "amulet of perception",
@@ -2769,7 +3177,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_curse_teleport": {
     "name": "amulet of teleportitis",
@@ -2796,7 +3208,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_curse_slow": {
     "name": "amulet of slowing",
@@ -2823,7 +3239,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "dragonslayer_ring": {
     "name": "Dragonslayer's Ring",
@@ -2854,7 +3274,11 @@
       "41-60": 0,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "shadow_walker_ring": {
     "name": "Shadow Walker's Ring",
@@ -2883,7 +3307,11 @@
       "41-60": 0,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "philosophers_ring": {
     "name": "Philosopher's Ring",
@@ -2914,7 +3342,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_protection_silver": {
     "name": "ring of protection +1",
@@ -2942,7 +3374,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_protection_gold": {
     "name": "ring of protection +2",
@@ -2970,7 +3406,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_protection_adamantine": {
     "name": "ring of protection +3",
@@ -2998,7 +3438,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_speed_quicksilver": {
     "name": "ring of speed",
@@ -3026,7 +3470,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "ring_sustenance_amber": {
     "name": "ring of sustenance",
@@ -3054,7 +3502,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 40
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 13
   },
   "ring_strength_dragonbone": {
     "name": "ring of giant strength",
@@ -3082,7 +3534,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_constitution_diamond": {
     "name": "ring of endurance",
@@ -3110,7 +3566,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_intellect_prismatic_deep": {
     "name": "ring of brilliance",
@@ -3138,7 +3598,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "amulet_life_saving": {
     "name": "amulet of life saving",
@@ -3166,7 +3630,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "amulet_spell_turning": {
     "name": "amulet of spell turning",
@@ -3194,7 +3662,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "amulet_truesight": {
     "name": "amulet of true sight",
@@ -3222,7 +3694,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_reflection": {
     "name": "amulet of reflection",
@@ -3250,7 +3726,11 @@
       "41-60": 80,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "amulet_titan_constitution": {
     "name": "amulet of titan constitution",
@@ -3278,7 +3758,11 @@
       "41-60": 0,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.2,
+    "is_unique": false,
+    "spread": 25,
+    "peak_floor": 70
   },
   "amulet_archmage_intellect": {
     "name": "amulet of archmage intellect",
@@ -3306,7 +3790,11 @@
       "41-60": 0,
       "61-80": 80,
       "81-100": 80
-    }
+    },
+    "peak_weight": 0.2,
+    "is_unique": false,
+    "spread": 25,
+    "peak_floor": 70
   },
   "ring_curse_drain": {
     "name": "ring of life drain",
@@ -3334,7 +3822,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "amulet_curse_drain": {
     "name": "amulet of doom",
@@ -3362,7 +3854,11 @@
       "41-60": 40,
       "61-80": 30,
       "81-100": 20
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": false,
+    "spread": 8,
+    "peak_floor": 6
   },
   "ring_of_gyges": {
     "name": "Ring of Gyges",
@@ -3389,7 +3885,11 @@
       "28-45": 4,
       "46-60": 2,
       "61-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 14,
+    "peak_floor": 33
   },
   "ring_of_the_nibelung": {
     "name": "Ring of the Nibelung",
@@ -3413,7 +3913,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Andvari's gold ring, stolen by Loki and given as wergild to the giant Hreidmar. Andvari cursed it: it would destroy every owner. Hreidmar was killed by his son. Fafnir killed his brother for it. Sigurd killed Fafnir. The ring went to Gudrun, who murdered Sigurd. Wagner compressed this into four operas. The curse required no compression."
+    "lore": "Andvari's gold ring, stolen by Loki and given as wergild to the giant Hreidmar. Andvari cursed it: it would destroy every owner. Hreidmar was killed by his son. Fafnir killed his brother for it. Sigurd killed Fafnir. The ring went to Gudrun, who murdered Sigurd. Wagner compressed this into four operas. The curse required no compression.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "andvaranaut": {
     "name": "Andvaranaut",
@@ -3440,31 +3944,42 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Andvari's magic ring that could find gold wherever it lay hidden. Loki stole it with the rest of the dwarf's hoard to pay the wergild for killing Otr. Andvari cursed both the ring and all the gold as he surrendered them. The ring found gold. It could not find safe owners."
+    "lore": "Andvari's magic ring that could find gold wherever it lay hidden. Loki stole it with the rest of the dwarf's hoard to pay the wergild for killing Otr. Andvari cursed both the ring and all the gold as he surrendered them. The ring found gold. It could not find safe owners.",
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 22,
+    "peak_floor": 60
   },
   "draupnir": {
     "name": "Draupnir",
     "symbol": "=",
     "color": [
       255,
-      230,
-      100
+      215,
+      0
     ],
-    "weight": 0.3,
-    "min_level": 65,
+    "weight": 0.2,
+    "min_level": 45,
     "slot": "ring",
     "equip_threshold": 2,
-    "quiz_tier": 5,
+    "quiz_tier": 4,
     "effects": {
-      "stat": "INT",
-      "amount": 2
+      "stat": "STR",
+      "amount": 1
     },
-    "unidentified_name": "a golden arm-ring of extraordinary weight",
+    "gold_multiplier": 2.0,
+    "can_be_cursed": false,
+    "unidentified_name": "a golden ring of incredible craftsmanship",
+    "lore": "Forged by the dwarven brothers Brokkr and Sindri alongside Mjölnir, Draupnir drips eight new gold rings of equal weight every ninth night. Odin placed it on Baldr's funeral pyre, and Baldr sent it back from Hel as proof of his existence. Gold finds its way to the hand that wears it.",
     "floorSpawnWeight": {
-      "81-100": 2
+      "41-60": 1,
+      "61-80": 2,
+      "81-100": 1
     },
-    "identified": false,
-    "lore": "Odin's ring — every ninth night eight rings of equal weight dripped from it. Odin placed it on Baldur's funeral pyre. Baldur returned it from Hel as proof that he had been there. Hermod carried it back. It is the only object ever to make a round trip to the realm of the dead and return unchanged."
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_of_solomon": {
     "name": "Seal of Solomon",
@@ -3491,7 +4006,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it."
+    "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "ring_of_eluned": {
     "name": "Ring of Eluned",
@@ -3518,7 +4037,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The Welsh Arthurian heroine Luned gave this ring to Owain when he was trapped in a portcullis. It rendered him invisible to the castle's inhabitants until he could escape. She retrieved it afterward, which is the appropriate thing to do with a ring of this power. Most people who receive such gifts do not return them."
+    "lore": "The Welsh Arthurian heroine Luned gave this ring to Owain when he was trapped in a portcullis. It rendered him invisible to the castle's inhabitants until he could escape. She retrieved it afterward, which is the appropriate thing to do with a ring of this power. Most people who receive such gifts do not return them.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 21,
+    "peak_floor": 55
   },
   "brisingamen": {
     "name": "Brisingamen",
@@ -3528,7 +4051,7 @@
       100,
       150
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
     "equip_threshold": 3,
@@ -3544,7 +4067,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Freya's necklace, forged by four dwarves over four days. She paid each one a night of her company. Loki stole it in the form of a fly; Heimdall fought him in seal-form to recover it. Freya wore it in battle and her tears became gold. The Brisingamen is the most written-about piece of Norse jewellery. The dwarves received no further acknowledgment in the sagas."
+    "lore": "Freya's necklace, forged by four dwarves over four days. She paid each one a night of her company. Loki stole it in the form of a fly; Heimdall fought him in seal-form to recover it. Freya wore it in battle and her tears became gold. The Brisingamen is the most written-about piece of Norse jewellery. The dwarves received no further acknowledgment in the sagas.",
+    "peak_weight": 0.2,
+    "is_unique": false,
+    "spread": 25,
+    "peak_floor": 70
   },
   "talisman_of_troy": {
     "name": "Palladium of Troy",
@@ -3554,7 +4081,7 @@
       200,
       255
     ],
-    "weight": 0.5,
+    "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
     "equip_threshold": 4,
@@ -3569,34 +4096,43 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The Palladium — a carved image of Athena that fell from the sky — kept Troy invincible as long as it remained within the city walls. Odysseus and Diomedes stole it. Troy fell. Later, every major city of the ancient world claimed to have the original Palladium: Rome, Athens, Argos, Sparta. They cannot all be correct. They may all be correct."
+    "lore": "The Palladium — a carved image of Athena that fell from the sky — kept Troy invincible as long as it remained within the city walls. Odysseus and Diomedes stole it. Troy fell. Later, every major city of the ancient world claimed to have the original Palladium: Rome, Athens, Argos, Sparta. They cannot all be correct. They may all be correct.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "eye_of_horus": {
     "name": "Eye of Horus",
     "symbol": "\"",
     "color": [
-      80,
-      200,
-      255
+      50,
+      150,
+      200
     ],
     "weight": 0.2,
-    "min_level": 60,
+    "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 4,
-    "quiz_tier": 5,
+    "equip_threshold": 1,
+    "quiz_tier": 2,
     "effects": {
       "stat": "PER",
-      "amount": 4,
-      "status": "truesight",
-      "duration": -1
+      "amount": 1
     },
-    "unidentified_name": "a faience amulet shaped like a falcon's eye",
+    "passive_regen": 1,
+    "passive_regen_interval": 5,
+    "can_be_cursed": false,
+    "unidentified_name": "a blue faience eye pendant",
+    "lore": "The wedjat, the restored eye of Horus, torn out by Set and healed by Thoth. It is the oldest symbol of healing in human history. The eye watches over its wearer, mending small wounds with the patience of a god who has eternity to work with. One cannot rush divinity.",
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "16-30": 1,
+      "31-50": 2,
+      "51-80": 1
     },
-    "identified": false,
-    "lore": "When Set tore out Horus's eye, Thoth restored it. The restored eye — the wedjat — became the symbol of protection, health, and restored power. Egyptian physicians prescribed it; sailors wore it on boats. The mathematical fractions of the eye's components sum to 63/64. The missing 1/64 was left to Thoth to complete with magic."
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 13,
+    "peak_floor": 30
   },
   "scarab_of_khepri": {
     "name": "Scarab of Khepri",
@@ -3623,7 +4159,11 @@
       "16-30": 6,
       "31-45": 2,
       "46-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 10,
+    "peak_floor": 21
   },
   "hamsa_hand": {
     "name": "Hand of Fatima",
@@ -3650,7 +4190,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The hamsa appears in Islamic, Jewish, and Christian traditions under different names — Hand of Fatima, Hand of Miriam, Hand of Mary. The eye in the palm deflects the evil eye. It is one of the few symbols shared without significant modification across the Mediterranean's three Abrahamic faiths. No one disputes it. Everyone claims it."
+    "lore": "The hamsa appears in Islamic, Jewish, and Christian traditions under different names — Hand of Fatima, Hand of Miriam, Hand of Mary. The eye in the palm deflects the evil eye. It is one of the few symbols shared without significant modification across the Mediterranean's three Abrahamic faiths. No one disputes it. Everyone claims it.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 18,
+    "peak_floor": 45
   },
   "ouroboros_pendant": {
     "name": "Ouroboros",
@@ -3677,7 +4221,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The oldest image of the ouroboros appears in an Egyptian royal tomb, 1350 BCE. It represents cyclical time, eternal recurrence, the universe sustaining itself. Alchemists adopted it. Jung analysed it. Kekulé claimed the image gave him the ring structure of benzene in a dream. Whether this last part is true, the benzene ring is real."
+    "lore": "The oldest image of the ouroboros appears in an Egyptian royal tomb, 1350 BCE. It represents cyclical time, eternal recurrence, the universe sustaining itself. Alchemists adopted it. Jung analysed it. Kekulé claimed the image gave him the ring structure of benzene in a dream. Whether this last part is true, the benzene ring is real.",
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 19,
+    "peak_floor": 50
   },
   "necklace_of_harmonia": {
     "name": "Necklace of Harmonia",
@@ -3687,7 +4235,7 @@
       150,
       200
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
     "equip_threshold": 4,
@@ -3704,7 +4252,11 @@
     },
     "identified": false,
     "lore": "Hephaestus forged it as a wedding gift for Harmonia when she married Cadmus — and cursed it, because Harmonia's mother was Aphrodite, who had cuckolded him with Ares. Every woman who wore it suffered catastrophe: Jocasta, Eriphyle (who betrayed her husband for it), Jocasta again, Callirhoe. The necklace destroyed houses. It is still beautiful.",
-    "cursed": true
+    "cursed": true,
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "menat_of_hathor": {
     "name": "Menat of Hathor",
@@ -3714,7 +4266,7 @@
       180,
       100
     ],
-    "weight": 0.4,
+    "weight": 0.3,
     "min_level": 50,
     "slot": "amulet",
     "equip_threshold": 3,
@@ -3729,7 +4281,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Hathor's sacred necklace, shaken as a rattle in her rituals. Temple reliefs show pharaohs receiving the menat from the goddess as a guarantee of health, fertility, and joy. It was both jewellery and musical instrument. The sound of carnelian beads against each other was, in Hathor's theology, the sound of everything being well."
+    "lore": "Hathor's sacred necklace, shaken as a rattle in her rituals. Temple reliefs show pharaohs receiving the menat from the goddess as a guarantee of health, fertility, and joy. It was both jewellery and musical instrument. The sound of carnelian beads against each other was, in Hathor's theology, the sound of everything being well.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 21,
+    "peak_floor": 55
   },
   "heart_of_ahriman": {
     "name": "Heart of Ahriman",
@@ -3739,7 +4295,7 @@
       0,
       80
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
     "equip_threshold": 4,
@@ -3753,7 +4309,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Ahriman, the Zoroastrian principle of darkness and chaos, is not merely evil but anti-being — the force that unmakes. His heart, if such a thing could be extracted and held, would contain complete knowledge of all things that can be destroyed. This is a great deal of knowledge. The gem is warm. It should not be warm."
+    "lore": "Ahriman, the Zoroastrian principle of darkness and chaos, is not merely evil but anti-being — the force that unmakes. His heart, if such a thing could be extracted and held, would contain complete knowledge of all things that can be destroyed. This is a great deal of knowledge. The gem is warm. It should not be warm.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 27,
+    "peak_floor": 75
   },
   "tyet_of_isis": {
     "name": "Tyet of Isis",
@@ -3780,7 +4340,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The knot of Isis — the tyet — accompanied the dead as written in Chapter 156 of the Book of the Dead: 'You possess your blood, Isis; you possess your power.' It was always made of red jasper or red stone. Red was the colour of Isis's protective power, not of blood. This distinction mattered to Egyptian physicians."
+    "lore": "The knot of Isis — the tyet — accompanied the dead as written in Chapter 156 of the Book of the Dead: 'You possess your blood, Isis; you possess your power.' It was always made of red jasper or red stone. Red was the colour of Isis's protective power, not of blood. This distinction mattered to Egyptian physicians.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "idunn_apple_charm": {
     "name": "Idunn's Apple",
@@ -3804,7 +4368,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Idunn kept the golden apples that gave the Aesir their eternal youth. When Loki allowed the giant Thjazi to kidnap her, the gods began to age. They forced Loki to retrieve her; he turned into a falcon, turned her into a nut, and flew back. Thjazi pursued. The gods lit fires at Asgard's walls and Thjazi burned. Idunn is the one person in Norse mythology who causes a crisis by simply not being present."
+    "lore": "Idunn kept the golden apples that gave the Aesir their eternal youth. When Loki allowed the giant Thjazi to kidnap her, the gods began to age. They forced Loki to retrieve her; he turned into a falcon, turned her into a nut, and flew back. Thjazi pursued. The gods lit fires at Asgard's walls and Thjazi burned. Idunn is the one person in Norse mythology who causes a crisis by simply not being present.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 27,
+    "peak_floor": 75
   },
   "caduceus_charm": {
     "name": "Caduceus of Hermes",
@@ -3831,7 +4399,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care."
+    "lore": "Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 21,
+    "peak_floor": 55
   },
   "torque_of_lugh": {
     "name": "Torque of Lugh",
@@ -3841,7 +4413,7 @@
       200,
       80
     ],
-    "weight": 0.4,
+    "weight": 0.3,
     "min_level": 65,
     "slot": "amulet",
     "equip_threshold": 4,
@@ -3856,7 +4428,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Lugh of the Long Arm wore a golden torque as one of his divine symbols, along with Fragarach and a magic horse. He was the god of skill — every skill simultaneously — because he argued his way past the Tuatha's gatekeeper by pointing out that while they had specialists, none of them could do everything he could. The gatekeeper let him in."
+    "lore": "Lugh of the Long Arm wore a golden torque as one of his divine symbols, along with Fragarach and a magic horse. He was the god of skill — every skill simultaneously — because he argued his way past the Tuatha's gatekeeper by pointing out that while they had specialists, none of them could do everything he could. The gatekeeper let him in.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "pectoral_of_amun": {
     "name": "Pectoral of Amun",
@@ -3866,7 +4442,7 @@
       160,
       80
     ],
-    "weight": 0.5,
+    "weight": 0.3,
     "min_level": 65,
     "slot": "amulet",
     "equip_threshold": 4,
@@ -3881,7 +4457,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Amun, whose name means 'the hidden one,' was invisible by definition — his cult image was sealed inside the inner sanctum of Karnak, and even priests could not see it. His pectoral was worn by pharaohs when making decisions of state. The decisions were not actually made by the pectoral. They were, however, required to be made while wearing it."
+    "lore": "Amun, whose name means 'the hidden one,' was invisible by definition — his cult image was sealed inside the inner sanctum of Karnak, and even priests could not see it. His pectoral was worn by pharaohs when making decisions of state. The decisions were not actually made by the pectoral. They were, however, required to be made while wearing it.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "ankh_of_ra": {
     "name": "Ankh of Ra",
@@ -3908,7 +4488,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Ra holds the ankh — the key of life — in all his standard depictions. He passes it to pharaohs; pharaohs pass it to other gods; everyone passes it. The ankh's shape may derive from a sandal strap, a mirror, or a feminine symbol depending on which scholar you consult. In Coptic Christianity it became the crux ansata and survived into church iconography. It is the oldest recurring symbol in Egyptian art."
+    "lore": "Ra holds the ankh — the key of life — in all his standard depictions. He passes it to pharaohs; pharaohs pass it to other gods; everyone passes it. The ankh's shape may derive from a sandal strap, a mirror, or a feminine symbol depending on which scholar you consult. In Coptic Christianity it became the crux ansata and survived into church iconography. It is the oldest recurring symbol in Egyptian art.",
+    "peak_weight": 0.3,
+    "is_unique": false,
+    "spread": 21,
+    "peak_floor": 55
   },
   "ring_of_gawain": {
     "name": "Ring of Sir Gawain",
@@ -3935,7 +4519,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "In the Alliterative Morte Arthure, Gawain's strength grew until noon, held until three, and then diminished. In the Green Knight poem, he wore a green girdle he believed would protect him, and was ashamed when his small evasion was revealed. The shame was disproportionate; Gawain was the most courteous knight, which meant his lapses troubled him more than other men's crimes troubled them."
+    "lore": "In the Alliterative Morte Arthure, Gawain's strength grew until noon, held until three, and then diminished. In the Green Knight poem, he wore a green girdle he believed would protect him, and was ashamed when his small evasion was revealed. The shame was disproportionate; Gawain was the most courteous knight, which meant his lapses troubled him more than other men's crimes troubled them.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "ring_of_odysseus": {
     "name": "Ring of Odysseus",
@@ -3962,7 +4550,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Odysseus had no magical ring. He needed none. He was the man who thought of the wooden horse, who tied himself to the mast to hear the Sirens safely, who invented false identities with the ease of breathing. What he could not solve with cunning he solved with patience. The ring is his, in retrospect — it was always going to be found by someone who didn't go home the easy way."
+    "lore": "Odysseus had no magical ring. He needed none. He was the man who thought of the wooden horse, who tied himself to the mast to hear the Sirens safely, who invented false identities with the ease of breathing. What he could not solve with cunning he solved with patience. The ring is his, in retrospect — it was always going to be found by someone who didn't go home the easy way.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "ring_of_scheherazade": {
     "name": "Ring of Scheherazade",
@@ -3987,7 +4579,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Scheherazade told 1,001 stories to postpone her execution. She did not use magic; she used structure — each story nested inside another, every night's tale ending at a moment too interesting to stop. She survived by being more valuable alive than dead. This is the original argument for intellectual labour. She was also, by the end, the queen."
+    "lore": "Scheherazade told 1,001 stories to postpone her execution. She did not use magic; she used structure — each story nested inside another, every night's tale ending at a moment too interesting to stop. She survived by being more valuable alive than dead. This is the original argument for intellectual labour. She was also, by the end, the queen.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "amulet_of_merlin": {
     "name": "Amulet of Merlin",
@@ -3997,7 +4593,7 @@
       100,
       200
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
     "equip_threshold": 4,
@@ -4011,7 +4607,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Merlin was the son of an incubus and a Welsh princess, a fact that concerned his contemporaries far less than it perhaps should have. He advised three kings, built Stonehenge (in some accounts), created the Round Table, engineered the conception of Arthur, and was eventually imprisoned in a glass tower or a tree or a cave by his student Nimue. The nature of the prison varies. The imprisonment does not."
+    "lore": "Merlin was the son of an incubus and a Welsh princess, a fact that concerned his contemporaries far less than it perhaps should have. He advised three kings, built Stonehenge (in some accounts), created the Round Table, engineered the conception of Arthur, and was eventually imprisoned in a glass tower or a tree or a cave by his student Nimue. The nature of the prison varies. The imprisonment does not.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 27,
+    "peak_floor": 75
   },
   "ring_of_pythia": {
     "name": "Ring of the Oracle",
@@ -4038,7 +4638,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The Pythia at Delphi sat over a chasm in the earth and breathed volcanic vapour while speaking for Apollo. Her pronouncements were famously ambiguous: Croesus was told that if he attacked Persia, he would destroy a great empire. He did. The empire was his own. The Oracle was never wrong. It just required careful interpretation."
+    "lore": "The Pythia at Delphi sat over a chasm in the earth and breathed volcanic vapour while speaking for Apollo. Her pronouncements were famously ambiguous: Croesus was told that if he attacked Persia, he would destroy a great empire. He did. The empire was his own. The Oracle was never wrong. It just required careful interpretation.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 22,
+    "peak_floor": 60
   },
   "anklet_of_atalanta": {
     "name": "Anklet of Atalanta",
@@ -4062,7 +4666,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Atalanta could outrun any man alive. Her father offered her hand to whoever could beat her in a race. The losers were killed. Hippomenes won by dropping three golden apples from Aphrodite; she stopped to pick them up. She did not stop because she wanted the apples. She stopped because losing was the most interesting thing that had happened to her yet."
+    "lore": "Atalanta could outrun any man alive. Her father offered her hand to whoever could beat her in a race. The losers were killed. Hippomenes won by dropping three golden apples from Aphrodite; she stopped to pick them up. She did not stop because she wanted the apples. She stopped because losing was the most interesting thing that had happened to her yet.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "crown_of_croesus": {
     "name": "Diadem of Croesus",
@@ -4089,7 +4697,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Croesus of Lydia was the richest man in the world and knew it. He tested the Delphic Oracle with an absurd question to verify its power before asking whether he should attack Persia. It answered correctly. He attacked Persia. The Oracle had also answered correctly about that. Croesus's error was not the Oracle. It was the interpretation."
+    "lore": "Croesus of Lydia was the richest man in the world and knew it. He tested the Delphic Oracle with an absurd question to verify its power before asking whether he should attack Persia. It answered correctly. He attacked Persia. The Oracle had also answered correctly about that. Croesus's error was not the Oracle. It was the interpretation.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 21,
+    "peak_floor": 55
   },
   "collar_of_njord": {
     "name": "Sea-Collar of Njörd",
@@ -4099,7 +4711,7 @@
       180,
       220
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
     "equip_threshold": 3,
@@ -4116,7 +4728,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Njörd ruled the winds and the seas and was responsible for the catch of fish and hunters' luck. He married Skadi, who chose him by his feet — the most beautiful feet among the gods — expecting to have chosen Baldur. They lived six days in her mountains, six by the sea, and both were miserable by turns. Nordic marriage counsellors date their profession's origin to this arrangement."
+    "lore": "Njörd ruled the winds and the seas and was responsible for the catch of fish and hunters' luck. He married Skadi, who chose him by his feet — the most beautiful feet among the gods — expecting to have chosen Baldur. They lived six days in her mountains, six by the sea, and both were miserable by turns. Nordic marriage counsellors date their profession's origin to this arrangement.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_of_percival": {
     "name": "Ring of the Pure Knight",
@@ -4141,7 +4757,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Percival failed the Grail question because he was too polite to ask what was wrong with the Fisher King. He had been told not to ask too many questions. He followed the instruction and failed. When he returned and asked — Who does the Grail serve? — the king was healed. The lesson of the Grail quest is that courtesy has limits, and sometimes the correct action is to inquire."
+    "lore": "Percival failed the Grail question because he was too polite to ask what was wrong with the Fisher King. He had been told not to ask too many questions. He followed the instruction and failed. When he returned and asked — Who does the Grail serve? — the king was healed. The lesson of the Grail quest is that courtesy has limits, and sometimes the correct action is to inquire.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "ring_of_lancelot": {
     "name": "Ring of the Fallen Knight",
@@ -4167,7 +4787,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Lancelot was the greatest knight in the world and destroyed the Round Table by being exactly that. His affair with Guinevere was not a secret he kept — it was a secret everyone kept for him because they needed him too much to confront him. The tower on the ring is the tower of Joyous Gard, where he retreated when his virtue finally failed the test he had spent his life avoiding."
+    "lore": "Lancelot was the greatest knight in the world and destroyed the Round Table by being exactly that. His affair with Guinevere was not a secret he kept — it was a secret everyone kept for him because they needed him too much to confront him. The tower on the ring is the tower of Joyous Gard, where he retreated when his virtue finally failed the test he had spent his life avoiding.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "seal_of_agrippa": {
     "name": "Seal of Agrippa",
@@ -4194,7 +4818,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Heinrich Cornelius Agrippa published Three Books of Occult Philosophy in 1531, systematizing all of Renaissance magic into a single framework: the elemental world, the celestial world, and the intellectual world. He was accused of heresy, employed by kings, and died in debt. His books were the most widely read magical texts of the 16th century. He himself claimed at the end that they were worthless. He was probably not being entirely honest."
+    "lore": "Heinrich Cornelius Agrippa published Three Books of Occult Philosophy in 1531, systematizing all of Renaissance magic into a single framework: the elemental world, the celestial world, and the intellectual world. He was accused of heresy, employed by kings, and died in debt. His books were the most widely read magical texts of the 16th century. He himself claimed at the end that they were worthless. He was probably not being entirely honest.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "philosophers_ring_legendary": {
     "name": "Philosopher's Ring of Mastery",
@@ -4220,7 +4848,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The philosopher does not merely think — the philosopher perceives. Socrates described his daimon as a voice that told him what not to do; he considered this the most useful kind of guidance. The ring was found in the ruins of the Academy at Athens, described in a catalogue written three centuries after Plato's death. The description ends mid-sentence. The catalogue's final page is missing."
+    "lore": "The philosopher does not merely think — the philosopher perceives. Socrates described his daimon as a voice that told him what not to do; he considered this the most useful kind of guidance. The ring was found in the ruins of the Academy at Athens, described in a catalogue written three centuries after Plato's death. The description ends mid-sentence. The catalogue's final page is missing.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   },
   "amulet_of_pythagoras": {
     "name": "Tetractys Amulet",
@@ -4247,7 +4879,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Pythagoras swore his oaths by the Tetractys — the triangular figure of ten points arranged 1-2-3-4 that represented the musical ratios and the structure of the cosmos. His brotherhood at Croton was vegetarian, banned beans, and believed the soul transmigrated between lives. They were also the first people to prove that the square root of 2 is irrational, a discovery so disturbing that Hippasus, who made it, was allegedly drowned at sea."
+    "lore": "Pythagoras swore his oaths by the Tetractys — the triangular figure of ten points arranged 1-2-3-4 that represented the musical ratios and the structure of the cosmos. His brotherhood at Croton was vegetarian, banned beans, and believed the soul transmigrated between lives. They were also the first people to prove that the square root of 2 is irrational, a discovery so disturbing that Hippasus, who made it, was allegedly drowned at sea.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 21,
+    "peak_floor": 55
   },
   "ring_of_hypatia": {
     "name": "Ring of Hypatia",
@@ -4274,7 +4910,11 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Hypatia of Alexandria was the foremost mathematician and astronomer of her age, head of the Neoplatonic school, advisor to the prefect Orestes. In 415 CE a Christian mob pulled her from her chariot, dragged her to a church, and killed her. Her father Theon had raised her to be 'a perfect human being.' What destroyed her was not her imperfection. It was that the people around her could not tolerate the example."
+    "lore": "Hypatia of Alexandria was the foremost mathematician and astronomer of her age, head of the Neoplatonic school, advisor to the prefect Orestes. In 415 CE a Christian mob pulled her from her chariot, dragged her to a church, and killed her. Her father Theon had raised her to be 'a perfect human being.' What destroyed her was not her imperfection. It was that the people around her could not tolerate the example.",
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 22,
+    "peak_floor": 60
   },
   "ring_of_thunder": {
     "name": "Ring of Thunder",
@@ -4302,7 +4942,11 @@
       "1-20": 5,
       "21-40": 3,
       "41-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 25
   },
   "amulet_of_the_titan": {
     "name": "Amulet of the Titan",
@@ -4312,7 +4956,7 @@
       160,
       80
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 22,
     "slot": "amulet",
     "quiz_tier": 4,
@@ -4329,7 +4973,11 @@
       "22-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 27
   },
   "ring_of_the_deep": {
     "name": "Ring of the Deep",
@@ -4357,7 +5005,11 @@
       "1-20": 5,
       "21-40": 3,
       "41-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 11,
+    "peak_floor": 23
   },
   "amulet_of_insight": {
     "name": "Amulet of Insight",
@@ -4383,7 +5035,11 @@
       "1-20": 5,
       "21-40": 3,
       "41-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 25
   },
   "ring_of_the_assassin": {
     "name": "Ring of the Assassin",
@@ -4412,7 +5068,11 @@
       "25-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 13,
+    "peak_floor": 30
   },
   "amulet_of_fortitude": {
     "name": "Amulet of Fortitude",
@@ -4441,7 +5101,11 @@
       "24-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 13,
+    "peak_floor": 29
   },
   "ring_of_far_sight": {
     "name": "Ring of Far Sight",
@@ -4470,7 +5134,11 @@
       "22-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 27
   },
   "amulet_of_the_archmage": {
     "name": "Amulet of the Archmage",
@@ -4499,7 +5167,11 @@
       "28-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 14,
+    "peak_floor": 33
   },
   "ring_of_displacement": {
     "name": "Ring of Displacement",
@@ -4528,7 +5200,11 @@
       "26-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 13,
+    "peak_floor": 31
   },
   "amulet_of_protection": {
     "name": "Amulet of Protection",
@@ -4557,7 +5233,11 @@
       "22-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 27
   },
   "sphinx_crown": {
     "name": "Sphinx's Crown",
@@ -4567,8 +5247,8 @@
       180,
       100
     ],
-    "weight": 1.0,
-    "min_level": 9999,
+    "weight": 0.2,
+    "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 2,
     "quiz_tier": 4,
@@ -4579,7 +5259,9 @@
     "can_be_cursed": false,
     "unidentified_name": "a golden riddle-crown",
     "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and extends the time available for all mental challenges.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "sailors_amulet": {
     "name": "Sailor's Amulet",
@@ -4589,8 +5271,8 @@
       100,
       200
     ],
-    "weight": 0.5,
-    "min_level": 9999,
+    "weight": 0.2,
+    "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 4,
@@ -4603,7 +5285,9 @@
     "can_be_cursed": false,
     "unidentified_name": "a driftwood amulet",
     "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "anubis_scales": {
     "name": "Anubis's Scales",
@@ -4613,8 +5297,8 @@
       100,
       40
     ],
-    "weight": 0.8,
-    "min_level": 9999,
+    "weight": 0.2,
+    "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 2,
     "quiz_tier": 4,
@@ -4625,7 +5309,9 @@
     "can_be_cursed": false,
     "unidentified_name": "balanced golden scales",
     "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "ring_of_iron_grip": {
     "name": "Ring of Iron Grip",
@@ -4635,8 +5321,8 @@
       60,
       60
     ],
-    "weight": 0.2,
-    "min_level": 9999,
+    "weight": 0.3,
+    "min_level": 0,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 4,
@@ -4647,7 +5333,9 @@
     "can_be_cursed": false,
     "unidentified_name": "a crude iron band",
     "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "obsidian_talisman": {
     "name": "Obsidian Talisman",
@@ -4657,8 +5345,8 @@
       60,
       120
     ],
-    "weight": 0.4,
-    "min_level": 9999,
+    "weight": 0.2,
+    "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -4669,7 +5357,9 @@
     "can_be_cursed": false,
     "unidentified_name": "a jagged black stone",
     "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -4700,7 +5390,11 @@
       "22-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 27
   },
   "eponas_charm": {
     "name": "Epona's Charm",
@@ -4713,7 +5407,7 @@
     },
     "equip_threshold": 3,
     "quiz_tier": 1,
-    "weight": 0.3,
+    "weight": 0.2,
     "value": 800,
     "min_level": 8,
     "identified": false,
@@ -4730,7 +5424,11 @@
       "1-20": 5,
       "21-40": 3,
       "41-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 8,
+    "peak_floor": 13
   },
   "anansis_thread": {
     "name": "Anansi's Thread",
@@ -4758,7 +5456,11 @@
       "1-20": 5,
       "21-40": 3,
       "41-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 9,
+    "peak_floor": 15
   },
   "rope_of_izanagi": {
     "name": "Rope of Izanagi",
@@ -4771,7 +5473,7 @@
     },
     "equip_threshold": 3,
     "quiz_tier": 4,
-    "weight": 0.5,
+    "weight": 0.2,
     "value": 6000,
     "min_level": 52,
     "identified": false,
@@ -4789,7 +5491,11 @@
       "52-60": 5,
       "61-80": 3,
       "81-100": 1
-    }
+    },
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 21,
+    "peak_floor": 57
   },
   "girdle_of_hippolyta": {
     "name": "Girdle of Hippolyta",
@@ -4800,7 +5506,7 @@
     },
     "equip_threshold": 3,
     "quiz_tier": 3,
-    "weight": 1.0,
+    "weight": 0.2,
     "value": 4000,
     "min_level": 22,
     "identified": false,
@@ -4818,7 +5524,11 @@
       "22-40": 5,
       "41-60": 3,
       "61-100": 1
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 27
   },
   "silverlight_pendant": {
     "name": "Silverlight Pendant",
@@ -4831,7 +5541,7 @@
     },
     "equip_threshold": 2,
     "quiz_tier": 1,
-    "weight": 0.3,
+    "weight": 0.2,
     "value": 800,
     "min_level": 3,
     "unidentified_name": "delicate silver pendant",
@@ -4842,7 +5552,11 @@
       200,
       230
     ],
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 8,
+    "peak_floor": 8
   },
   "saints_reliquary": {
     "name": "Saint's Reliquary",
@@ -4855,9 +5569,9 @@
     },
     "equip_threshold": 2,
     "quiz_tier": 1,
-    "weight": 0.5,
+    "weight": 0.2,
     "value": 1200,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
     "unidentified_name": "a silver reliquary containing a saint's fingerbone",
     "lore": "A silver reliquary containing the fingerbone of a saint, set in gold. The monk who carried it crawled through the dungeon on his hands and knees to keep it safe. It radiates a quiet warmth.",
@@ -4867,7 +5581,9 @@
       190,
       160
     ],
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "officers_signet": {
     "name": "Officer's Signet",
@@ -4882,7 +5598,7 @@
     "quiz_tier": 2,
     "weight": 0.1,
     "value": 2000,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
     "unidentified_name": "a heavy gold signet ring stamped with the Legion crest",
     "lore": "A solid gold signet ring bearing the crest of the Legion. Officer-grade — only issued to those who have earned command. The previous owner pulled it off his own finger and said he didn't deserve it.",
@@ -4892,7 +5608,9 @@
       180,
       50
     ],
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "prophets_amulet": {
     "name": "Prophet's Amulet",
@@ -4905,9 +5623,9 @@
     },
     "equip_threshold": 2,
     "quiz_tier": 4,
-    "weight": 0.3,
+    "weight": 0.2,
     "value": 8000,
-    "min_level": 9999,
+    "min_level": 0,
     "identified": true,
     "unidentified_name": "an amulet pulsing with gathered visions",
     "lore": "An amulet worn by a dying prophet who spent his last years carving warnings into stone tablets. It pulses with accumulated foresight — visions of the Destroyer, the Seven Seals, and the final battle. The clarity it grants is almost painful.",
@@ -4917,7 +5635,9 @@
       200,
       220
     ],
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "is_unique": true
   },
   "aesops_quill": {
     "name": "Aesop's Quill",
@@ -4944,7 +5664,11 @@
       "4-15": 6,
       "16-30": 2,
       "31-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 8,
+    "peak_floor": 8
   },
   "lyre_of_orpheus": {
     "name": "Lyre of Orpheus",
@@ -4971,7 +5695,11 @@
       "6-18": 6,
       "19-30": 2,
       "31-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 8,
+    "peak_floor": 10
   },
   "tablet_of_gilgamesh": {
     "name": "Tablet of Gilgamesh",
@@ -4981,7 +5709,7 @@
       140,
       100
     ],
-    "weight": 0.3,
+    "weight": 0.1,
     "min_level": 6,
     "slot": "ring",
     "equip_threshold": 3,
@@ -5000,7 +5728,11 @@
       "7-18": 5,
       "19-30": 2,
       "31-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 8,
+    "peak_floor": 11
   },
   "scales_of_maat": {
     "name": "Scales of Ma'at",
@@ -5029,7 +5761,11 @@
       "14-30": 6,
       "31-45": 2,
       "46-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 10,
+    "peak_floor": 19
   },
   "tablet_of_hammurabi": {
     "name": "Tablet of Hammurabi",
@@ -5039,7 +5775,7 @@
       120,
       80
     ],
-    "weight": 0.3,
+    "weight": 0.2,
     "min_level": 15,
     "slot": "amulet",
     "equip_threshold": 3,
@@ -5056,36 +5792,42 @@
       "15-30": 6,
       "31-45": 2,
       "46-100": 0
-    }
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 10,
+    "peak_floor": 20
   },
   "torc_of_boudicca": {
     "name": "Torc of Boudicca",
-    "symbol": "=",
+    "symbol": "\"",
     "color": [
       200,
       160,
-      40
+      60
     ],
-    "weight": 0.3,
-    "min_level": 22,
+    "weight": 0.2,
+    "min_level": 35,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 3,
     "effects": {
       "stat": "STR",
-      "amount": 2,
-      "stat2": "CON",
-      "amount2": 1
+      "amount": 2
     },
-    "unidentified_name": "a twisted gold neck ring",
-    "lore": "Boudicca was queen of the Iceni tribe in Roman Britain. When the Romans flogged her and assaulted her daughters, she raised an army that burned Londinium to the ground, killed seventy thousand Romans, and nearly drove the Empire from Britain. The twisted gold torc was the Celtic symbol of nobility and warrior status — this one still carries Boudicca's fury. +2 STR, +1 CON.",
-    "containerLootTier": "rare",
+    "surrounded_ac_bonus": 2,
+    "can_be_cursed": false,
+    "unidentified_name": "a twisted gold neck-ring",
+    "lore": "The golden torc of Boudicca, queen of the Iceni, who burned Londinium and Camulodunum to the ground rather than submit to Rome. Her fury was greatest when surrounded — the more enemies, the fiercer she fought. The torc channels that defiance. When hemmed in on all sides, the wearer becomes harder to hit, as though Boudicca herself stands beside them.",
     "floorSpawnWeight": {
-      "1-21": 0,
-      "22-35": 6,
-      "36-50": 2,
-      "51-100": 0
-    }
+      "26-40": 1,
+      "41-60": 2,
+      "61-80": 1
+    },
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "spread": 16,
+    "peak_floor": 40
   },
   "rands_heart": {
     "name": "Rand's Heart",
@@ -5108,7 +5850,11 @@
     "can_be_cursed": false,
     "unidentified_name": "silver locket",
     "lore": "A simple silver locket on a leather thong. It is infused with the power of a lover's promise. He knew he could not always be by Robyn's side, but he swore to protect her, always.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 305,
+    "peak_floor": 1004
   },
   "dreamspun_sketchbook": {
     "name": "Dreamspun Sketchbook",
@@ -5118,7 +5864,7 @@
       170,
       240
     ],
-    "weight": 1.0,
+    "weight": 0.5,
     "min_level": 999,
     "slot": "none",
     "equip_threshold": 2,
@@ -5128,7 +5874,11 @@
     "can_be_cursed": false,
     "unidentified_name": "tattered sketchbook",
     "lore": "A young lady's sketchbook. It's full of whimsical drawings. She used this sketchbook to bring her dreams to life. The pages shimmer with magical energy.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 305,
+    "peak_floor": 1004
   },
   "charmander_stuffie": {
     "name": "Charmander Stuffie",
@@ -5138,7 +5888,7 @@
       140,
       50
     ],
-    "weight": 1.0,
+    "weight": 0.5,
     "min_level": 999,
     "slot": "none",
     "equip_threshold": 2,
@@ -5148,103 +5898,102 @@
     "can_be_cursed": false,
     "unidentified_name": "stuffed toy dragon",
     "lore": "A child's favorite toy and oldest friend. It looks like a small orange dragon with a burning ember on the tip of its tail. The love shown to this toy has imbued it with a shimmering magical power that protects and strengthens the bearer.",
-    "floorSpawnWeight": {}
-  },
-  "eye_of_horus": {
-    "name": "Eye of Horus",
-    "symbol": "\"",
-    "color": [50, 150, 200],
-    "weight": 0.3,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 1,
-    "quiz_tier": 2,
-    "effects": {"stat": "PER", "amount": 1},
-    "passive_regen": 1,
-    "passive_regen_interval": 5,
-    "can_be_cursed": false,
-    "unidentified_name": "a blue faience eye pendant",
-    "lore": "The wedjat, the restored eye of Horus, torn out by Set and healed by Thoth. It is the oldest symbol of healing in human history. The eye watches over its wearer, mending small wounds with the patience of a god who has eternity to work with. One cannot rush divinity.",
-    "floorSpawnWeight": {"16-30": 1, "31-50": 2, "51-80": 1}
-  },
-  "draupnir": {
-    "name": "Draupnir",
-    "symbol": "=",
-    "color": [255, 215, 0],
-    "weight": 0.2,
-    "min_level": 45,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 4,
-    "effects": {"stat": "STR", "amount": 1},
-    "gold_multiplier": 2.0,
-    "can_be_cursed": false,
-    "unidentified_name": "a golden ring of incredible craftsmanship",
-    "lore": "Forged by the dwarven brothers Brokkr and Sindri alongside Mjölnir, Draupnir drips eight new gold rings of equal weight every ninth night. Odin placed it on Baldr's funeral pyre, and Baldr sent it back from Hel as proof of his existence. Gold finds its way to the hand that wears it.",
-    "floorSpawnWeight": {"41-60": 1, "61-80": 2, "81-100": 1}
-  },
-  "torc_of_boudicca": {
-    "name": "Torc of Boudicca",
-    "symbol": "\"",
-    "color": [200, 160, 60],
-    "weight": 0.5,
-    "min_level": 35,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {"stat": "STR", "amount": 2},
-    "surrounded_ac_bonus": 2,
-    "can_be_cursed": false,
-    "unidentified_name": "a twisted gold neck-ring",
-    "lore": "The golden torc of Boudicca, queen of the Iceni, who burned Londinium and Camulodunum to the ground rather than submit to Rome. Her fury was greatest when surrounded — the more enemies, the fiercer she fought. The torc channels that defiance. When hemmed in on all sides, the wearer becomes harder to hit, as though Boudicca herself stands beside them.",
-    "floorSpawnWeight": {"26-40": 1, "41-60": 2, "61-80": 1}
+    "floorSpawnWeight": {},
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 305,
+    "peak_floor": 1004
   },
   "jade_cicada": {
     "name": "Jade Cicada",
     "symbol": "\"",
-    "color": [120, 200, 120],
+    "color": [
+      120,
+      200,
+      120
+    ],
     "weight": 0.2,
     "min_level": 20,
     "slot": "amulet",
     "equip_threshold": 1,
     "quiz_tier": 2,
-    "effects": {"status": "poison_immune", "duration": -1},
+    "effects": {
+      "status": "poison_immune",
+      "duration": -1
+    },
     "death_save": true,
     "can_be_cursed": false,
     "unidentified_name": "a carved green jade insect",
     "lore": "Placed on the tongues of the dead during the Han Dynasty to ensure resurrection. The cicada burrows into the earth and emerges reborn — the Chinese symbol of immortality. This one was never buried. It clings to life with an insect's tenacity: once per floor, when a blow would kill its wearer, the cicada intervenes. The wearer survives with a single breath left. The jade cracks — but holds.",
-    "floorSpawnWeight": {"11-25": 1, "26-50": 2, "51-80": 1}
+    "floorSpawnWeight": {
+      "11-25": 1,
+      "26-50": 2,
+      "51-80": 1
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 25
   },
   "seal_of_solomon": {
     "name": "Seal of Solomon",
     "symbol": "=",
-    "color": [180, 140, 220],
-    "weight": 0.3,
+    "color": [
+      180,
+      140,
+      220
+    ],
+    "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 5,
-    "effects": {"stat": "WIS", "amount": 2},
+    "effects": {
+      "stat": "WIS",
+      "amount": 2
+    },
     "pacify_chance": 0.2,
     "can_be_cursed": false,
     "unidentified_name": "a bronze ring engraved with a six-pointed star",
     "lore": "The ring given to Solomon by the Archangel Michael, engraved with the true name of God. With it Solomon commanded demons to build the First Temple and bound Asmodeus in a jar of brass. Its power compels obedience — nearby enemies may find themselves frozen in place, unable to act, their will subverted by a force older than anger.",
-    "floorSpawnWeight": {"51-70": 1, "71-90": 2, "91-100": 1}
+    "floorSpawnWeight": {
+      "51-70": 1,
+      "71-90": 2,
+      "91-100": 1
+    },
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65
   },
   "ankh_of_isis": {
     "name": "Ankh of Isis",
     "symbol": "\"",
-    "color": [220, 180, 50],
-    "weight": 0.4,
+    "color": [
+      220,
+      180,
+      50
+    ],
+    "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 5,
-    "effects": {"stat": "CON", "amount": 2},
+    "effects": {
+      "stat": "CON",
+      "amount": 2
+    },
     "resurrect_on_death": true,
     "can_be_cursed": false,
     "unidentified_name": "a golden cross with a looped top",
     "lore": "The ankh is the key of life, held by every god in the Egyptian pantheon. This one belonged to Isis, who reassembled Osiris from fourteen scattered pieces and breathed life back into him. It carries that same power — one final breath, one last chance. When the wearer dies, the ankh shatters and Isis's magic pulls them back from the threshold. The price is the ankh itself. There are no second miracles.",
-    "floorSpawnWeight": {"61-80": 1, "81-100": 2}
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 25,
+    "peak_floor": 70
   }
 }

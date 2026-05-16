@@ -1,0 +1,12 @@
+{
+  "id": "chain_chausses",
+  "name": "chain chausses",
+  "category": "armor",
+  "armor_class_tier": "medium",
+  "slot": "legs",
+  "base_ac_value": 1,
+  "base_weight_lb": 5.0,
+  "_design_note": "F20-70 medium legs slot. Mail leg covering, traditionally paired with hauberk. Covers chain_leggings, iron_leggings, scale_greaves from legacy data.",
+  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
+  "lore_template": "{material_name} chausses — chain mail leggings hanging from a belt at the waist and gathered at the ankle, traditionally paired with a full hauberk for unbroken coverage from collarbone to shin. The flexible weave permits a full stride and the deep kick of a stirruped cavalryman, while turning aside almost any cut not aimed with intent."
+}

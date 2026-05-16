@@ -1,0 +1,20 @@
+{
+  "id": "studded_leather",
+  "name": "studded leather",
+  "material_class": "studded_leather",
+  "applies_to": ["armor"],
+  "peak_floor": 12,
+  "spread": 10,
+  "peak_weight": 6,
+  "weight_mult": 1.1,
+  "ac_bonus": 0,
+  "max_enchant": 2,
+  "color": [120, 80, 50],
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "special_properties": [],
+  "lore_descriptor": "studded with iron rivets in offset rows",
+  "unidentified_descriptor": "rivet-studded leather",
+  "first_pickup_chronicle": "Studded leather. The rivets are what matter — they catch the edges that a clean cut would slip past. Real armor, by any honest measure."
+}
