@@ -289,7 +289,7 @@
       220,
       255
     ],
-    "weight": 4.0,
+    "weight": 8.0,
     "min_level": 65,
     "tier": 5,
     "material": "adamantine",
@@ -311,7 +311,13 @@
       "81-100": 2
     },
     "value": 9500,
-    "lore": "The aegis was not originally a shield but a goatskin breastplate — or a thundercloud — worn by Zeus and Athena. Homer describes Athena shaking it during battle to produce fear in armies. The Gorgoneion — Medusa's severed head — was mounted on it after Perseus made his gift. Athena used a weapon whose power was entirely in what it made people see, rather than what it physically did."
+    "lore": "The aegis was not originally a shield but a goatskin breastplate — or a thundercloud — worn by Zeus and Athena. Homer describes Athena shaking it during battle to produce fear in armies. The Gorgoneion — Medusa's severed head — was mounted on it after Perseus made his gift. Athena used a weapon whose power was entirely in what it made people see, rather than what it physically did.",
+    "is_unique": true,
+    "template_basis": "kite_shield",
+    "peak_floor": 70,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "max_enchant": 2
   },
   "svalinn_shield": {
     "name": "Svalinn",
@@ -321,7 +327,7 @@
       255,
       255
     ],
-    "weight": 3.0,
+    "weight": 10.0,
     "min_level": 55,
     "tier": 5,
     "material": "adamantine",
@@ -342,7 +348,13 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "The Poetic Edda places Svalinn — the Cooler — before the sun to shield the earth from its full heat. Without it the mountains would burn and the seas boil. It stands there and no one knows how it arrived. The name means exactly what it does. The Norse naming conventions for cosmological entities were admirably functional."
+    "lore": "The Poetic Edda places Svalinn — the Cooler — before the sun to shield the earth from its full heat. Without it the mountains would burn and the seas boil. It stands there and no one knows how it arrived. The name means exactly what it does. The Norse naming conventions for cosmological entities were admirably functional.",
+    "is_unique": true,
+    "template_basis": "heavy_wooden",
+    "peak_floor": 62,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "max_enchant": 2
   },
   "pridwen": {
     "name": "Pridwen",
@@ -352,7 +364,7 @@
       220,
       255
     ],
-    "weight": 3.5,
+    "weight": 9.0,
     "min_level": 55,
     "tier": 5,
     "material": "adamantine",
@@ -373,7 +385,13 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Arthur's shield, named in the Welsh poem Pa gur and the Mabinogion. The image of the Virgin Mary was painted on its inner face, so Arthur fought facing her. This was the interior side — the side that faces the bearer. The image was not for showing to enemies. It was for Arthur to look at."
+    "lore": "Arthur's shield, named in the Welsh poem Pa gur and the Mabinogion. The image of the Virgin Mary was painted on its inner face, so Arthur fought facing her. This was the interior side — the side that faces the bearer. The image was not for showing to enemies. It was for Arthur to look at.",
+    "is_unique": true,
+    "template_basis": "kite_shield",
+    "peak_floor": 60,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "max_enchant": 2
   },
   "tower_shield_of_ajax": {
     "name": "Tower Shield of Ajax",
@@ -383,7 +401,7 @@
       180,
       160
     ],
-    "weight": 9.0,
+    "weight": 30.0,
     "min_level": 65,
     "tier": 5,
     "material": "adamantine",
@@ -404,7 +422,13 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "Ajax's shield was described as a tower of seven ox-hides laminated together with bronze — the largest shield in the Iliad. He stood before the Greek ships and held back the Trojans by mass and will. Achilles was the brilliant warrior. Ajax was the one who could not be moved. When Odysseus was awarded Achilles' armour by rhetorical argument, Ajax's grief destroyed him. The shield outlasted its owner."
+    "lore": "Ajax's shield was described as a tower of seven ox-hides laminated together with bronze — the largest shield in the Iliad. He stood before the Greek ships and held back the Trojans by mass and will. Achilles was the brilliant warrior. Ajax was the one who could not be moved. When Odysseus was awarded Achilles' armour by rhetorical argument, Ajax's grief destroyed him. The shield outlasted its owner.",
+    "is_unique": true,
+    "template_basis": "tower_shield",
+    "peak_floor": 72,
+    "spread": 10,
+    "peak_weight": 0.35,
+    "max_enchant": 2
   },
   "scutum_of_aeneas": {
     "name": "Scutum of Aeneas",
@@ -414,7 +438,7 @@
       170,
       130
     ],
-    "weight": 6.0,
+    "weight": 18.0,
     "min_level": 60,
     "tier": 5,
     "material": "adamantine",
@@ -436,7 +460,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface — battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor."
+    "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface — battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor.",
+    "is_unique": true,
+    "template_basis": "tower_shield",
+    "peak_floor": 65,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "max_enchant": 2
   },
   "bronze_aegis": {
     "name": "Bronze Aegis",
@@ -446,8 +476,8 @@
       160,
       100
     ],
-    "weight": 8.0,
-    "min_level": 9999,
+    "weight": 15.0,
+    "min_level": 1,
     "tier": 2,
     "material": "bronze",
     "ac_bonus": 3,
@@ -461,7 +491,15 @@
     "enchant_bonus": 0,
     "unidentified_name": "ancient bronze shield",
     "lore": "The ceremonial shield of a bronze giant, engraved with the eye of Hephaestus. Its curved surface deflects crushing blows better than any iron shield of its age.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "is_unique": true,
+    "template_basis": "tower_shield",
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_aegis_pre",
+    "peak_floor": 1,
+    "spread": 1,
+    "peak_weight": 0.0,
+    "max_enchant": 2
   },
   "aegis_of_athena": {
     "name": "Aegis of Athena",
@@ -471,11 +509,11 @@
       200,
       140
     ],
-    "weight": 4.0,
-    "min_level": 9999,
+    "weight": 10.0,
+    "min_level": 1,
     "tier": 4,
     "material": "bronze",
-    "ac_bonus": 4,
+    "ac_bonus": 5,
     "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
@@ -485,7 +523,15 @@
     "enchant_bonus": 0,
     "unidentified_name": "mirror-bright bronze shield",
     "lore": "Athena's own shield, polished to a mirror-bright sheen. She lent it to Perseus so he could face the Gorgon without meeting her eyes. In its reflection, the monster sees only herself — and is turned to stone by her own terrible gaze.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "is_unique": true,
+    "template_basis": "kite_shield",
+    "plot_locked": true,
+    "spawn_method": "medusa_quest_athena_altar",
+    "peak_floor": 1,
+    "spread": 1,
+    "peak_weight": 0.0,
+    "max_enchant": 2
   },
   "lionheart_shield": {
     "name": "Lionheart Shield",
@@ -495,8 +541,8 @@
       180,
       100
     ],
-    "weight": 5.0,
-    "min_level": 9999,
+    "weight": 9.0,
+    "min_level": 1,
     "tier": 4,
     "material": "steel",
     "ac_bonus": 4,
@@ -507,7 +553,15 @@
     "enchant_bonus": 1,
     "unidentified_name": "battered lion shield",
     "lore": "A steel shield engraved with a roaring lion and the motto DUTY UNTO DEATH. The name MARTEN OF THE IRON VALE is inscribed on the inside rim. It was carried into the dungeon four months ago by a knight who promised his wife he would be back for supper.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "is_unique": true,
+    "template_basis": "kite_shield",
+    "plot_locked": true,
+    "spawn_method": "rare_drop",
+    "peak_floor": 1,
+    "spread": 1,
+    "peak_weight": 0.0,
+    "max_enchant": 2
   },
   "shield_of_the_spartans": {
     "name": "Shield of the Spartans",
@@ -517,7 +571,7 @@
       40,
       40
     ],
-    "weight": 6.0,
+    "weight": 10.0,
     "min_level": 12,
     "tier": 2,
     "material": "bronze",
@@ -537,44 +591,83 @@
       "12-30": 8,
       "31-45": 3,
       "46-100": 0
-    }
+    },
+    "is_unique": true,
+    "template_basis": "heavy_wooden",
+    "peak_floor": 18,
+    "spread": 10,
+    "peak_weight": 0.45,
+    "max_enchant": 2
   },
   "svalinn": {
     "name": "Svalinn",
     "symbol": ")",
-    "color": [255, 180, 50],
-    "weight": 4.0,
+    "color": [
+      255,
+      180,
+      50
+    ],
+    "weight": 10.0,
     "min_level": 50,
     "tier": 4,
     "material": "divine bronze",
     "ac_bonus": 4,
     "equip_threshold": 2,
     "quiz_tier": 4,
-    "damage_resistances": {"fire": 0.0},
+    "damage_resistances": {
+      "fire": 0.0
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "fire_reflect": 0.25,
     "unidentified_name": "a golden shield that radiates warmth",
     "lore": "In Norse myth, Svalinn stands before the sun. Without it, the mountains and the sea would burn. It drinks fire — not merely blocking it but absorbing it entirely. What it cannot absorb, it sends back. Those who strike its bearer with flame find their own fire returned to them.",
-    "floorSpawnWeight": {"41-60": 1, "61-80": 2, "81-100": 1}
+    "floorSpawnWeight": {
+      "41-60": 1,
+      "61-80": 2,
+      "81-100": 1
+    },
+    "is_unique": true,
+    "template_basis": "heavy_wooden",
+    "peak_floor": 58,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "max_enchant": 2,
+    "_duplicate_of": "svalinn_shield"
   },
   "ancile": {
     "name": "Ancile",
     "symbol": ")",
-    "color": [180, 40, 40],
-    "weight": 3.0,
+    "color": [
+      180,
+      40,
+      40
+    ],
+    "weight": 6.0,
     "min_level": 30,
     "tier": 3,
     "material": "divine bronze",
     "ac_bonus": 3,
     "equip_threshold": 1,
     "quiz_tier": 3,
-    "damage_resistances": {"blunt": 0.7},
+    "damage_resistances": {
+      "blunt": 0.7
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "quiz_timer_bonus": 2,
     "unidentified_name": "an oval bronze shield with an angular notch",
     "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve — or perhaps the original. Its divine origin sharpens the mind, granting extra time on all mental challenges.",
-    "floorSpawnWeight": {"21-40": 1, "41-60": 2, "61-80": 1}
+    "floorSpawnWeight": {
+      "21-40": 1,
+      "41-60": 2,
+      "61-80": 1
+    },
+    "is_unique": true,
+    "template_basis": "kite_shield",
+    "peak_floor": 36,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "max_enchant": 2
   }
 }
