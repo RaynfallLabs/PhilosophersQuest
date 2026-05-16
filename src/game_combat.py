@@ -1464,6 +1464,24 @@ class CombatMixin:
             if getattr(m, '_wants_locust_spawn', False) and m.kind == 'abaddon_destroyer':
                 m._wants_locust_spawn = False
                 self._spawn_abaddon_locusts(m)
+            # Summoner AI: spawn a configured minion when flagged
+            if getattr(m, '_wants_summon', False):
+                m._wants_summon = False
+                self._spawn_summoner_minion(m)
+            # Healer AI: announce heals that occurred this turn
+            heal_target = getattr(m, '_heal_target', None)
+            if heal_target is not None and (m.x, m.y) in self.visible:
+                amt = getattr(m, '_heal_amount', 0)
+                self.add_message(
+                    f"The {m.name} chants and heals the {heal_target.name} for {amt} HP!",
+                    'info')
+                m._heal_target = None
+                m._heal_amount = 0
+            # HP-threshold phase-change announcement (boss enrage)
+            enrage_msg = getattr(m, '_enrage_message', '')
+            if enrage_msg and (m.x, m.y) in self.visible:
+                self.add_message(enrage_msg, 'danger')
+                m._enrage_message = ''
             # Fenrir rage escalation message
             rage_msg = getattr(m, '_rage_message', '')
             if rage_msg and (m.x, m.y) in self.visible:

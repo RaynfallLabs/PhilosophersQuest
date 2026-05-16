@@ -92,6 +92,52 @@ class Monster:
         self._piercing_collateral: list = []   # monsters in projectile path
         self._force_piercing: bool = False      # next attack must use piercing
 
+        # --- Detection / alert overrides (default 8-tile sight, 5-tile alert) ---
+        self.perception_range: int = int(defn.get('perception_range', 8))
+        self.alert_radius:     int = int(defn.get('alert_radius', 5))
+        self.alert_all_tag:    bool = bool(defn.get('alert_all_tag', False))
+
+        # --- HP-threshold phase change (boss behaviour) ---
+        # When hp drops below enrage_at_hp_pct, ai_pattern flips to enraged_pattern
+        # (one-way; the swap is permanent for the encounter).
+        self.enrage_at_hp_pct: float = float(defn.get('enrage_at_hp_pct', 0.0))
+        self.enraged_pattern:  str   = defn.get('enraged_pattern', '')
+        self._enraged: bool = False
+        self._enrage_message: str = ''
+
+        # --- Healer AI fields ---
+        self.heal_amount_pct: float = float(defn.get('heal_amount_pct', 0.25))
+        self._heal_target = None              # set when this monster healed someone
+        self._heal_amount: int = 0
+
+        # --- Summoner AI fields ---
+        # summon_kind: str id, or list of str ids (random pick). Empty = no summon.
+        self.summon_kind = defn.get('summon_kind', '')
+        self.summon_cooldown: int = int(defn.get('summon_cooldown', 5))
+        self.summon_max:      int = int(defn.get('summon_max', 4))
+        self._summon_turn_counter: int = 0
+        self._summons_made:        int = 0
+        self._wants_summon: bool = False      # game loop polls this each turn
+
+        # --- Charge (passive damage boost on straight-line approach) ---
+        self.can_charge:        bool  = bool(defn.get('can_charge', False))
+        self.charge_bonus_mult: float = float(defn.get('charge_bonus_mult', 1.5))
+        self._charge_ready: bool = False      # set by movement when conditions met
+
+        # --- Pack-dependent (aggressive with allies, cowardly alone) ---
+        self.pack_dependent: bool = bool(defn.get('pack_dependent', False))
+        self.pack_min_allies: int = int(defn.get('pack_min_allies', 1))
+
+        # --- Flanker (prefer perpendicular approach when allies pressure player) ---
+        self.prefers_flank: bool = bool(defn.get('prefers_flank', False))
+
+        # --- Phase blink (teleport adjacent at distance) ---
+        self.can_phase_blink:     bool  = bool(defn.get('can_phase_blink', False))
+        self.phase_blink_chance:  float = float(defn.get('phase_blink_chance', 0.30))
+
+        # --- Mimic surprise flag (set when mimic springs from disguise) ---
+        self._mimic_surprise: bool = False
+
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
         '_flee_timer': 0, '_alerted': False, '_aware': False, '_slow_skip': False,
@@ -111,6 +157,19 @@ class Monster:
         'base_resistances': [],
         'is_allied': False, 'sp_drain': 0, 'is_seal_demon': False,
         '_annihilate_target': None,
+        # New AI fields (2026 dungeon-depth pass)
+        'perception_range': 8, 'alert_radius': 5, 'alert_all_tag': False,
+        'enrage_at_hp_pct': 0.0, 'enraged_pattern': '',
+        '_enraged': False, '_enrage_message': '',
+        'heal_amount_pct': 0.25,
+        '_heal_target': None, '_heal_amount': 0,
+        'summon_kind': '', 'summon_cooldown': 5, 'summon_max': 4,
+        '_summon_turn_counter': 0, '_summons_made': 0, '_wants_summon': False,
+        'can_charge': False, 'charge_bonus_mult': 1.5, '_charge_ready': False,
+        'pack_dependent': False, 'pack_min_allies': 1,
+        'prefers_flank': False,
+        'can_phase_blink': False, 'phase_blink_chance': 0.30,
+        '_mimic_surprise': False,
     }
 
     def __getattr__(self, name):
@@ -318,6 +377,21 @@ class Monster:
             for _ in range(self.rage_stacks):
                 dmg += roll(self.rage_damage_bonus)
 
+        # Charge bonus: armed by movement when monster approached along a straight
+        # line and is now adjacent. Consume one-shot.
+        charged = False
+        if self.can_charge and self._charge_ready:
+            self._charge_ready = False
+            dmg = max(1, int(dmg * self.charge_bonus_mult))
+            charged = True
+
+        # Mimic surprise: first hit after springing from disguise crits.
+        mimic_strike = False
+        if self._mimic_surprise:
+            self._mimic_surprise = False
+            dmg = int(dmg * 1.75)
+            mimic_strike = True
+
         # Weakened: this monster's attack deals half damage
         if self.has_effect('weakened'):
             dmg = max(1, dmg // 2)
@@ -325,6 +399,10 @@ class Monster:
         actual = player.take_damage(dmg, atk_type)
 
         msg = f"The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"
+        if charged:
+            msg = f"The {self.name} CHARGES! " + msg
+        if mimic_strike:
+            msg = f"The {self.name} ERUPTS from its disguise! " + msg
 
         # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
         if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
@@ -369,6 +447,10 @@ class Monster:
         Status-effect ticking happens once per game turn in Game._advance_turn, not
         here — ticking in both places would halve effect durations and double DOTs.
         """
+        # Cache the monster list so AI helpers (flanker, etc.) can inspect allies
+        # without passing it through every internal helper.
+        self._cached_all_monsters = all_monsters
+
         if not self.alive:
             return False
 
@@ -394,6 +476,29 @@ class Monster:
             if self._slow_skip:
                 return False
 
+        # --- HP-threshold phase change (boss "second phase" mechanic) ---
+        # One-way swap to enraged_pattern when HP drops below threshold.
+        if (not self._enraged
+                and self.enraged_pattern
+                and self.enrage_at_hp_pct > 0
+                and self.hp <= self.max_hp * self.enrage_at_hp_pct
+                and self.hp > 0):
+            self._enraged = True
+            old_pat = self.ai_pattern
+            self.ai_pattern = self.enraged_pattern
+            self._enrage_message = f"The {self.name} enters a new phase! ({old_pat} -> {self.enraged_pattern})"
+
+        # --- Pack-dependent: aggressive with allies nearby, cowardly alone ---
+        # Re-evaluates each turn so the pattern tracks the immediate situation.
+        if self.pack_dependent and self.ai_pattern in ('aggressive', 'cowardly'):
+            allies_near = sum(
+                1 for m in all_monsters
+                if m is not self and m.alive
+                and (m.kind == self.kind or (set(self.tags) & set(getattr(m, 'tags', []))))
+                and abs(m.x - self.x) + abs(m.y - self.y) <= 5
+            )
+            self.ai_pattern = 'aggressive' if allies_near >= self.pack_min_allies else 'cowardly'
+
         # --- Flee when hurt (non-boss aggressive monsters) ---
         is_boss = self.max_hp > 500
         if not is_boss and self.ai_pattern == 'aggressive':
@@ -404,6 +509,18 @@ class Monster:
                     self._flee_timer = 0
             elif self.hp < self.max_hp * 0.25 and self.hp > 0:
                 self._flee_timer = 8
+
+        # --- Healer AI: heal a damaged adjacent ally; fall back to ranged/aggressive ---
+        if self.ai_pattern == 'healer':
+            return self._healer_turn(player, dungeon, all_monsters, extra_occupied)
+
+        # --- Summoner AI: spawn minions on cooldown; otherwise behave as ranged ---
+        if self.ai_pattern == 'summoner':
+            return self._summoner_turn(player, dungeon, all_monsters, extra_occupied)
+
+        # --- Mimic AI: silent until player steps adjacent, then spring with surprise ---
+        if self.ai_pattern == 'mimic':
+            return self._mimic_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Hit-and-run AI (Asterion): attack then vanish through walls ---
         if self.ai_pattern == 'hit_and_run':
@@ -448,11 +565,11 @@ class Monster:
                 self.ai_pattern = 'aggressive'
                 self._aware = True
 
-        # --- Detection range: monsters only hunt within 8 tiles ---
+        # --- Detection range: per-monster perception_range (default 8) ---
         # Once a monster spots the player, it stays aware permanently.
         # Aggravated status makes ALL monsters aware immediately.
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
-        detection_range = 8
+        detection_range = getattr(self, 'perception_range', 8)
         if dist_to_player <= detection_range or player.has_effect('aggravated'):
             self._aware = True
         if not getattr(self, '_aware', False) and not self._alerted:
@@ -461,6 +578,13 @@ class Monster:
             if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
                 self._wander(dungeon, all_monsters, extra_occupied, player)
             return False
+
+        # --- Phase-blink: chance to teleport adjacent to player when at distance ---
+        # Applied AFTER detection/awareness so unaware monsters don't teleport.
+        if self.can_phase_blink and dist_to_player >= 3:
+            if random.random() < self.phase_blink_chance:
+                if self._phase_blink_to_player(player, dungeon, all_monsters, extra_occupied):
+                    return True  # adjacent now — attack this turn
 
         # --- Call for help: alert same-kind allies within 5 tiles ---
         if self._adjacent_to(player):
@@ -496,6 +620,18 @@ class Monster:
         if self.has_effect('feared'):
             self._flee_from(player, dungeon, all_monsters, extra_occupied)
             return False
+
+        # --- Charge: arm a damage bonus if approaching player on a clean straight ---
+        # Conditions: can_charge flag, distance 2-5, AND player is on a cardinal or
+        # diagonal axis (dx == 0, dy == 0, or |dx| == |dy|). Sets _charge_ready;
+        # the attack() method consumes it when the monster reaches the player.
+        if self.can_charge and not self._charge_ready:
+            dist = max(abs(self.x - player.x), abs(self.y - player.y))
+            if 2 <= dist <= 5:
+                dxp = player.x - self.x
+                dyp = player.y - self.y
+                if dxp == 0 or dyp == 0 or abs(dxp) == abs(dyp):
+                    self._charge_ready = True
 
         if self._adjacent_to(player):
             return True  # caller triggers the attack
@@ -565,14 +701,23 @@ class Monster:
                 return
 
     def alert_nearby(self, all_monsters):
-        """Wake up same-kind monsters within 5 tiles (call for help)."""
+        """Wake up nearby allies. Default: same-kind within 5 tiles.
+        alert_radius and alert_all_tag fields let warlord/horn-blower types alert
+        all same-tag allies in a wider radius."""
+        radius = getattr(self, 'alert_radius', 5)
+        use_tags = getattr(self, 'alert_all_tag', False)
+        my_tags = set(getattr(self, 'tags', []))
         for m in all_monsters:
             if m is self or not m.alive or m._alerted:
                 continue
-            if m.kind != self.kind:
-                continue
+            if use_tags:
+                if not (my_tags & set(getattr(m, 'tags', []))):
+                    continue
+            else:
+                if m.kind != self.kind:
+                    continue
             dist = abs(m.x - self.x) + abs(m.y - self.y)
-            if dist <= 5:
+            if dist <= radius:
                 m._alerted = True
                 m._aware = True
                 # Wake sleeping allies
@@ -591,6 +736,35 @@ class Monster:
         dy = 0 if self.y == player.y else (1 if player.y > self.y else -1)
         if effective_pattern == 'cowardly':
             dx, dy = -dx, -dy
+        # Flanker: when an ally is already pressuring the player from one axis,
+        # this monster prefers the perpendicular axis. Surrounds instead of
+        # stacking on the same approach line.
+        elif self.prefers_flank and (dx != 0 or dy != 0):
+            # Are we still 2+ tiles from the player? Only flank during approach.
+            if max(abs(self.x - player.x), abs(self.y - player.y)) >= 2:
+                dx, dy = self._flanker_dir(player, dx, dy)
+        return dx, dy
+
+    def _flanker_dir(self, player, dx: int, dy: int) -> tuple[int, int]:
+        """Rotate the approach direction 90° if another same-kind/tag ally
+        is already approaching on the original axis."""
+        my_tags = set(getattr(self, 'tags', []))
+        # Vectors from a few same-faction monsters to player
+        for m in getattr(self, '_cached_all_monsters', []) or []:
+            if m is self or not getattr(m, 'alive', False):
+                continue
+            if m.kind != self.kind and not (my_tags & set(getattr(m, 'tags', []))):
+                continue
+            mdx = 0 if m.x == player.x else (1 if player.x > m.x else -1)
+            mdy = 0 if m.y == player.y else (1 if player.y > m.y else -1)
+            if (mdx, mdy) == (dx, dy):
+                # Same approach line — rotate 90° (preserving axis sign as we can)
+                if dx and dy:
+                    return (dx, -dy)   # diagonal flip the y axis
+                if dx:
+                    return (0, 1 if random.random() < 0.5 else -1)
+                if dy:
+                    return (1 if random.random() < 0.5 else -1, 0)
         return dx, dy
 
     def _move_candidates(self, dx: int, dy: int) -> list[tuple[int, int]]:
@@ -981,6 +1155,102 @@ class Monster:
         hit_str = ", ".join(parts)
         msg = f"The {self.name} attacks in a frenzy! [{hit_str}] ({total} total)"
         return total, msg
+
+    # ------------------------------------------------------------------
+    # New 2026 AI patterns: healer, summoner, mimic, phase_blink, charge
+    # ------------------------------------------------------------------
+
+    def _healer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Heal a wounded adjacent ally instead of attacking.
+        Ally = same-kind monster OR any monster sharing a tag with this one.
+        Falls back to ranged_turn (if monster has multiple attacks) or
+        standard aggressive movement when no wounded ally is in reach."""
+        self._heal_target = None
+        self._heal_amount = 0
+        my_tags = set(getattr(self, 'tags', []))
+        wounded = []
+        for m in all_monsters:
+            if m is self or not m.alive:
+                continue
+            if m.hp >= m.max_hp:
+                continue
+            if m.kind != self.kind and not (my_tags & set(getattr(m, 'tags', []))):
+                continue
+            if abs(m.x - self.x) <= 1 and abs(m.y - self.y) <= 1:
+                wounded.append(m)
+        if wounded:
+            # Heal the most-damaged ally
+            target = min(wounded, key=lambda a: a.hp / max(1, a.max_hp))
+            heal = max(1, int(target.max_hp * self.heal_amount_pct))
+            actual = min(heal, target.max_hp - target.hp)
+            target.hp += actual
+            self._heal_target = target
+            self._heal_amount = actual
+            return False  # no attack — used the turn to heal
+
+        # No wounded ally to heal — behave as ranged if possible, else aggressive
+        if len(self.attacks) > 1:
+            return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
+        if self._adjacent_to(player):
+            return True
+        return self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive')
+
+    def _summoner_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Spawn a minion every summon_cooldown turns (up to summon_max total).
+        Game loop polls self._wants_summon and calls _spawn_summoner_minion() —
+        the actual JSON lookup + placement happens caller-side, mirroring the
+        existing Abaddon locust-spawn pattern."""
+        self._wants_summon = False
+        self._summon_turn_counter += 1
+        eligible_to_summon = (
+            self.summon_kind
+            and self._summons_made < self.summon_max
+            and getattr(self, '_aware', False)
+            and self._summon_turn_counter >= self.summon_cooldown
+        )
+        if eligible_to_summon:
+            self._wants_summon = True
+            self._summon_turn_counter = 0
+            self._summons_made += 1
+        # While not summoning, behave as ranged caster (or melee if no ranged)
+        if len(self.attacks) > 1:
+            return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
+        if self._adjacent_to(player):
+            return True
+        return self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive')
+
+    def _mimic_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Mimic AI: appear as terrain until player steps adjacent, then spring.
+        On reveal, switch ai_pattern to aggressive permanently and flag a
+        surprise crit for the first attack."""
+        if self._adjacent_to(player):
+            # Spring! Flag surprise so the next attack lands with a crit bonus.
+            self._mimic_surprise = True
+            self._aware = True
+            self.ai_pattern = 'aggressive'
+            return True  # attack now
+        # Still hidden — completely inert until player walks into range
+        return False
+
+    def _phase_blink_to_player(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Teleport to an empty walkable tile adjacent to the player.
+        Returns True if teleport succeeded (caller treats as attack)."""
+        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        if extra_occupied:
+            occupied |= extra_occupied
+        occupied.add((player.x, player.y))
+        # Try adjacent tiles in shuffled order
+        candidates = [(player.x + dx, player.y + dy)
+                      for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+                      if not (dx == 0 and dy == 0)]
+        random.shuffle(candidates)
+        for nx, ny in candidates:
+            if (nx, ny) in occupied:
+                continue
+            if dungeon.in_bounds(nx, ny) and self._can_move_to(dungeon, nx, ny):
+                self.x, self.y = nx, ny
+                return True
+        return False
 
     def _dancer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Dancer AI (Medusa): sidestep to a new position adjacent to player, then attack.

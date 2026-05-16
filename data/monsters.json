@@ -25727,5 +25727,3400 @@
       "item_tier": 5
     },
     "lore": "One of the lesser riders — not Famine, not Pestilence, not War, not Death, but the kind that comes with them. Armor welded shut. The horse is part of the man now."
+  },
+  "orc_archer": {
+    "name": "orc archer",
+    "symbol": "o",
+    "color": [
+      110,
+      130,
+      70
+    ],
+    "ai_pattern": "ranged",
+    "hp": "4d6+3",
+    "speed": 10,
+    "thac0": 13,
+    "attacks": [
+      {
+        "name": "shortbow",
+        "damage": "1d6+1",
+        "type": "pierce"
+      },
+      {
+        "name": "hatchet",
+        "damage": "1d4",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "orc"
+    ],
+    "min_level": 14,
+    "peak_floor": 18,
+    "spread": 10,
+    "peak_weight": 5.5,
+    "frequency": 5,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "orc_blood",
+    "treasure": {
+      "gold": [
+        4,
+        16
+      ],
+      "item_chance": 0.18,
+      "item_tier": 2
+    },
+    "lore": "Orc archers carry shortbows of yew and gut, fletched with crow feathers stained black by the smoke of their kennels. They are picked from the runts — too weak for the front line, but with the patience to hold a draw. Hitting a clergyman at sixty paces earns an extra hide for the winter."
+  },
+  "orc_priest": {
+    "name": "orc priest",
+    "symbol": "o",
+    "color": [
+      180,
+      80,
+      60
+    ],
+    "ai_pattern": "healer",
+    "hp": "4d8+3",
+    "speed": 10,
+    "thac0": 12,
+    "attacks": [
+      {
+        "name": "club",
+        "damage": "1d6",
+        "type": "blunt"
+      },
+      {
+        "name": "blood prayer",
+        "damage": "1d4+1",
+        "type": "magic",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "orc"
+    ],
+    "min_level": 18,
+    "peak_floor": 22,
+    "spread": 10,
+    "peak_weight": 5.0,
+    "frequency": 5,
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "orc_blood",
+    "treasure": {
+      "gold": [
+        6,
+        22
+      ],
+      "item_chance": 0.22,
+      "item_tier": 2
+    },
+    "lore": "Orc clergy serve no single god — they invoke whichever spirit answers loudest. This one bound a battlefield ghost into the haft of his club; the ghost screams whenever blood is spilled. Other orcs find this comforting.",
+    "heal_amount_pct": 0.3
+  },
+  "orc_marauder": {
+    "name": "orc marauder",
+    "symbol": "o",
+    "color": [
+      160,
+      60,
+      30
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "6d8+4",
+    "speed": 12,
+    "thac0": 10,
+    "attacks": [
+      {
+        "name": "boarding axe",
+        "damage": "2d4+2",
+        "type": "slash"
+      },
+      {
+        "name": "spiked shield",
+        "damage": "1d4+1",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "orc"
+    ],
+    "min_level": 26,
+    "peak_floor": 30,
+    "spread": 10,
+    "peak_weight": 5.0,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "orc_blood",
+    "treasure": {
+      "gold": [
+        12,
+        42
+      ],
+      "item_chance": 0.28,
+      "item_tier": 3
+    },
+    "lore": "Marauders are the orcs the chieftains lend out for raiding caravans and outlying farms. They train by sprinting in armor down hillsides — once committed to the charge, stopping is a worse death than the one waiting for them at the bottom.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.6
+  },
+  "orc_warbringer": {
+    "name": "orc warbringer",
+    "symbol": "o",
+    "color": [
+      210,
+      70,
+      30
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "8d8+8",
+    "speed": 10,
+    "thac0": 8,
+    "attacks": [
+      {
+        "name": "war banner",
+        "damage": "2d8+2",
+        "type": "blunt"
+      },
+      {
+        "name": "horn blast",
+        "damage": "1d6+2",
+        "type": "magic",
+        "effect": "feared",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "orc"
+    ],
+    "min_level": 38,
+    "peak_floor": 42,
+    "spread": 10,
+    "peak_weight": 2.5,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "orc_blood",
+    "treasure": {
+      "gold": [
+        35,
+        130
+      ],
+      "item_chance": 0.4,
+      "item_tier": 3
+    },
+    "lore": "Warbringers carry the warband's banner — a long pole hung with the bones of insufficient cousins — and a great curling horn taken from a southern aurochs. The horn carries through stone; an unlucky party may hear it before seeing the warbringer at all.",
+    "alert_all_tag": true,
+    "alert_radius": 12
+  },
+  "dread_orc_champion": {
+    "name": "dread orc champion",
+    "symbol": "o",
+    "color": [
+      220,
+      40,
+      20
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "13d10+22",
+    "speed": 10,
+    "thac0": 4,
+    "attacks": [
+      {
+        "name": "greatcleaver",
+        "damage": "4d8+2",
+        "type": "slash"
+      },
+      {
+        "name": "tusked headbutt",
+        "damage": "2d6+2",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "physical"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "orc"
+    ],
+    "min_level": 51,
+    "peak_floor": 55,
+    "spread": 8,
+    "peak_weight": 2.0,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "orc_blood",
+    "treasure": {
+      "gold": [
+        80,
+        260
+      ],
+      "item_chance": 0.55,
+      "item_tier": 4
+    },
+    "lore": "A champion of the dread tribes that hold the deep tunnels — chosen by single combat and then chained to the standard until killed by a successor. By the time his armor is patched with stolen breastplates, he no longer remembers the name his mother gave him.",
+    "enrage_at_hp_pct": 0.3,
+    "enraged_pattern": "fenrir_rage",
+    "rage_interval": 4,
+    "rage_damage_bonus": "1d4"
+  },
+  "goblin_sniper": {
+    "name": "goblin sniper",
+    "symbol": "g",
+    "color": [
+      120,
+      170,
+      70
+    ],
+    "ai_pattern": "ranged",
+    "hp": "4d6+3",
+    "speed": 11,
+    "thac0": 13,
+    "attacks": [
+      {
+        "name": "crossbow bolt",
+        "damage": "1d6+1",
+        "type": "pierce"
+      },
+      {
+        "name": "rusty dagger",
+        "damage": "1d3",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "goblinoid"
+    ],
+    "min_level": 14,
+    "peak_floor": 18,
+    "spread": 10,
+    "peak_weight": 5.5,
+    "frequency": 5,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "goblin_ear",
+    "treasure": {
+      "gold": [
+        3,
+        14
+      ],
+      "item_chance": 0.18,
+      "item_tier": 2
+    },
+    "lore": "Goblin snipers nest in chimneys and ceiling cracks, balancing crossbows on their knees. They will refuse to fire if their target is too close to a kinsman — not from caution but from a tradition that says a friendly-fire kill makes their bolt-mother weep for a season."
+  },
+  "goblin_warpriest": {
+    "name": "goblin warpriest",
+    "symbol": "g",
+    "color": [
+      170,
+      80,
+      50
+    ],
+    "ai_pattern": "healer",
+    "hp": "6d8+4",
+    "speed": 10,
+    "thac0": 10,
+    "attacks": [
+      {
+        "name": "censer-mace",
+        "damage": "2d4+1",
+        "type": "blunt"
+      },
+      {
+        "name": "smoke prayer",
+        "damage": "1d4+1",
+        "type": "magic",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "goblinoid"
+    ],
+    "min_level": 26,
+    "peak_floor": 30,
+    "spread": 10,
+    "peak_weight": 4.5,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "goblin_ear",
+    "treasure": {
+      "gold": [
+        12,
+        42
+      ],
+      "item_chance": 0.28,
+      "item_tier": 3
+    },
+    "lore": "Goblin warpriests serve Bargrivyek the Cooperator, a minor god whose chief commandment is that goblins not eat each other for at least three days after a feast. They carry brass censers full of smoldering kobold-hair and chant in counting-rhyme.",
+    "heal_amount_pct": 0.3
+  },
+  "hobgoblin_marshal": {
+    "name": "hobgoblin marshal",
+    "symbol": "g",
+    "color": [
+      180,
+      60,
+      60
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "9d8+10",
+    "speed": 10,
+    "thac0": 6,
+    "attacks": [
+      {
+        "name": "longsword",
+        "damage": "3d6+3",
+        "type": "slash"
+      },
+      {
+        "name": "marshal's command",
+        "damage": "1d6+2",
+        "type": "physical",
+        "effect": "feared",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "goblinoid"
+    ],
+    "min_level": 41,
+    "peak_floor": 45,
+    "spread": 10,
+    "peak_weight": 2.5,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "goblin_ear",
+    "treasure": {
+      "gold": [
+        45,
+        150
+      ],
+      "item_chance": 0.45,
+      "item_tier": 4
+    },
+    "lore": "Hobgoblin marshals run their cohorts on a strict drill — the only goblinoids who keep ranks, dress their lines, and refuse to break under pressure. Roman discipline through a cracked iron mirror. A marshal's death undoes years of careful training in a single howling minute.",
+    "alert_all_tag": true,
+    "alert_radius": 15
+  },
+  "goblin_kingslayer": {
+    "name": "goblin kingslayer",
+    "symbol": "g",
+    "color": [
+      120,
+      80,
+      200
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "14d10+23",
+    "speed": 13,
+    "thac0": 3,
+    "attacks": [
+      {
+        "name": "envenomed shortsword",
+        "damage": "3d8+3",
+        "type": "slash",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      },
+      {
+        "name": "throat slash",
+        "damage": "2d6+3",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "goblinoid"
+    ],
+    "min_level": 56,
+    "peak_floor": 60,
+    "spread": 8,
+    "peak_weight": 1.8,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "goblin_ear",
+    "treasure": {
+      "gold": [
+        95,
+        290
+      ],
+      "item_chance": 0.55,
+      "item_tier": 4
+    },
+    "lore": "Once every long generation, a goblin clutch produces one runt that survives by being smarter and more patient than the rest. The kingslayer is a regicide-by-trade — kobold pretenders pay him in slaves, hobgoblin generals in steel. He works only with two cousins present, and never alone.",
+    "prefers_flank": true,
+    "pack_dependent": true,
+    "pack_min_allies": 2
+  },
+  "skeleton_necromancer": {
+    "name": "skeleton necromancer",
+    "symbol": "Z",
+    "color": [
+      160,
+      140,
+      200
+    ],
+    "ai_pattern": "summoner",
+    "hp": "5d8+4",
+    "speed": 10,
+    "thac0": 11,
+    "attacks": [
+      {
+        "name": "withering touch",
+        "damage": "1d6+1",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "bone shard",
+        "damage": "1d4+1",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 21,
+    "peak_floor": 25,
+    "spread": 10,
+    "peak_weight": 3.5,
+    "frequency": 3,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "bone_shard",
+    "treasure": {
+      "gold": [
+        15,
+        55
+      ],
+      "item_chance": 0.35,
+      "item_tier": 3
+    },
+    "lore": "A necromancer who outlived his apprentices and then his own body. He retained the trick of binding spirits to bone, but lost the trick of speech — the calls he makes to his servants now come out as a clattering of teeth in the wrong order.",
+    "summon_kind": [
+      "skeleton",
+      "skeleton_archer"
+    ],
+    "summon_cooldown": 4,
+    "summon_max": 4
+  },
+  "bone_collector": {
+    "name": "bone collector",
+    "symbol": "Z",
+    "color": [
+      200,
+      200,
+      160
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "8d8+6",
+    "speed": 10,
+    "thac0": 7,
+    "attacks": [
+      {
+        "name": "rib-rack flail",
+        "damage": "2d8+2",
+        "type": "blunt"
+      },
+      {
+        "name": "marrow drain",
+        "damage": "1d6+2",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "necrotic",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 36,
+    "peak_floor": 40,
+    "spread": 10,
+    "peak_weight": 3.5,
+    "frequency": 3,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "bone_shard",
+    "treasure": {
+      "gold": [
+        30,
+        110
+      ],
+      "item_chance": 0.35,
+      "item_tier": 3
+    },
+    "lore": "A patchwork undead built from the bones of every adventurer who has failed in this section of dungeon — a few centuries' worth, stitched together with rawhide and dried tendon. Each rib remembers being part of a different chest; the resulting creature breathes with seventeen contradictory rhythms."
+  },
+  "skeleton_lich": {
+    "name": "skeleton lich",
+    "symbol": "Z",
+    "color": [
+      140,
+      80,
+      200
+    ],
+    "ai_pattern": "summoner",
+    "hp": "13d10+22",
+    "speed": 10,
+    "thac0": 4,
+    "attacks": [
+      {
+        "name": "lich claw",
+        "damage": "2d6+3",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      },
+      {
+        "name": "ice wave",
+        "damage": "3d6+2",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "necrotic",
+      "drain",
+      "physical"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 51,
+    "peak_floor": 55,
+    "spread": 8,
+    "peak_weight": 1.8,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "lich_dust",
+    "treasure": {
+      "gold": [
+        120,
+        340
+      ],
+      "item_chance": 0.6,
+      "item_tier": 4
+    },
+    "lore": "Not a true lich — a true lich's soul is bound to a phylactery, and this one's phylactery cracked centuries ago. What remains is muscle memory of necromancy, performed by a skeleton who can no longer remember why. The summoning still works. The cold still bites.",
+    "summon_kind": [
+      "skeleton_warrior",
+      "skeleton_archer"
+    ],
+    "summon_cooldown": 3,
+    "summon_max": 6
+  },
+  "banshee_lich": {
+    "name": "banshee lich",
+    "symbol": "Z",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "ai_pattern": "summoner",
+    "hp": "16d10+29",
+    "speed": 11,
+    "thac0": 1,
+    "attacks": [
+      {
+        "name": "soul-tearing wail",
+        "damage": "3d8+3",
+        "type": "shadow",
+        "effect": "feared",
+        "effect_chance": 0.45,
+        "effect_duration": 4
+      },
+      {
+        "name": "grave-cold touch",
+        "damage": "2d10+3",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "necrotic",
+      "drain",
+      "physical",
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 66,
+    "peak_floor": 70,
+    "spread": 8,
+    "peak_weight": 1.5,
+    "frequency": 1,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "lich_dust",
+    "treasure": {
+      "gold": [
+        180,
+        470
+      ],
+      "item_chance": 0.65,
+      "item_tier": 5
+    },
+    "lore": "A Gaelic banshee bound by accident into the bones of the dark wizard she came to mourn. The two are now one — a lich's craft running on a banshee's grief, calling forth the unburied keening of every soul she failed to warn. Adventurers who hear her wail twice rarely hear a third sound.",
+    "summon_kind": "specter",
+    "summon_cooldown": 4,
+    "summon_max": 4
+  },
+  "kobold_trapsetter": {
+    "name": "kobold trapsetter",
+    "symbol": "k",
+    "color": [
+      80,
+      160,
+      80
+    ],
+    "ai_pattern": "ambush",
+    "hp": "3d6+2",
+    "speed": 12,
+    "thac0": 14,
+    "attacks": [
+      {
+        "name": "barbed dart",
+        "damage": "1d4+1",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.45,
+        "effect_duration": 4
+      },
+      {
+        "name": "snare-knife",
+        "damage": "1d4",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "kobold"
+    ],
+    "min_level": 9,
+    "peak_floor": 12,
+    "spread": 9,
+    "peak_weight": 6.0,
+    "frequency": 6,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "kobold_scale",
+    "treasure": {
+      "gold": [
+        2,
+        11
+      ],
+      "item_chance": 0.15,
+      "item_tier": 2
+    },
+    "lore": "Kobold trapsetters are the engineers of the warren. They specialize in the kinds of injuries that bleed slowly — a hamstring nick, a forearm dart — so that a fleeing adventurer collapses far from his fellows. The rest of the warren does the cleanup."
+  },
+  "kobold_dragonshield": {
+    "name": "kobold dragonshield",
+    "symbol": "k",
+    "color": [
+      200,
+      80,
+      40
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "5d8+4",
+    "speed": 10,
+    "thac0": 11,
+    "attacks": [
+      {
+        "name": "scale-spear",
+        "damage": "2d4+1",
+        "type": "pierce"
+      },
+      {
+        "name": "shield bash",
+        "damage": "1d6+1",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "fire",
+      "physical"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "tags": [
+      "humanoid",
+      "kobold"
+    ],
+    "min_level": 22,
+    "peak_floor": 25,
+    "spread": 10,
+    "peak_weight": 4.5,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "kobold_scale",
+    "treasure": {
+      "gold": [
+        10,
+        38
+      ],
+      "item_chance": 0.3,
+      "item_tier": 3
+    },
+    "lore": "A kobold dragonshield wears overlapping plates scavenged from a dead red dragon's belly — heavy enough that he can barely run, but armored enough that he doesn't need to. He stands in front while the warren's archers shoot past his ears."
+  },
+  "kobold_pack_leader": {
+    "name": "kobold pack leader",
+    "symbol": "k",
+    "color": [
+      220,
+      60,
+      60
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "7d8+5",
+    "speed": 12,
+    "thac0": 9,
+    "attacks": [
+      {
+        "name": "dragon-tooth axe",
+        "damage": "2d6+2",
+        "type": "slash"
+      },
+      {
+        "name": "rally-whistle",
+        "damage": "1d4+1",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "tags": [
+      "humanoid",
+      "kobold"
+    ],
+    "min_level": 31,
+    "peak_floor": 35,
+    "spread": 10,
+    "peak_weight": 2.8,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "kobold_scale",
+    "treasure": {
+      "gold": [
+        25,
+        95
+      ],
+      "item_chance": 0.4,
+      "item_tier": 3
+    },
+    "lore": "A kobold pack leader is the warren's oldest survivor — too clever to die early, too small to be challenged for the role. He carries a brass whistle on a thong; one short blast means hide, two means rush, three means abandon the warren and start again somewhere downhill.",
+    "alert_all_tag": true,
+    "alert_radius": 10
+  },
+  "gnoll_archer": {
+    "name": "gnoll archer",
+    "symbol": "H",
+    "color": [
+      200,
+      170,
+      100
+    ],
+    "ai_pattern": "ranged",
+    "hp": "3d8+2",
+    "speed": 11,
+    "thac0": 14,
+    "attacks": [
+      {
+        "name": "yew longbow",
+        "damage": "1d6+2",
+        "type": "pierce"
+      },
+      {
+        "name": "scavenger bite",
+        "damage": "1d4",
+        "type": "physical"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "gnoll"
+    ],
+    "min_level": 11,
+    "peak_floor": 14,
+    "spread": 9,
+    "peak_weight": 5.5,
+    "frequency": 5,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "gnoll_hide",
+    "treasure": {
+      "gold": [
+        3,
+        12
+      ],
+      "item_chance": 0.16,
+      "item_tier": 2
+    },
+    "lore": "Gnoll archers tip their arrows with the rendered fat of last week's kill — a slow, foul poison rather than a fast one, because Yeenoghu prefers his offerings to suffer the full mile home. The bows are stolen from elves; the fletchings are hyena down."
+  },
+  "gnoll_fang_of_yeenoghu": {
+    "name": "gnoll fang of Yeenoghu",
+    "symbol": "H",
+    "color": [
+      200,
+      80,
+      40
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "6d8+6",
+    "speed": 12,
+    "thac0": 10,
+    "attacks": [
+      {
+        "name": "demon-blessed flail",
+        "damage": "2d6+2",
+        "type": "blunt"
+      },
+      {
+        "name": "fang gnash",
+        "damage": "1d6+1",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "gnoll",
+      "demon-touched"
+    ],
+    "min_level": 24,
+    "peak_floor": 28,
+    "spread": 10,
+    "peak_weight": 4.0,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "gnoll_hide",
+    "treasure": {
+      "gold": [
+        16,
+        60
+      ],
+      "item_chance": 0.32,
+      "item_tier": 3
+    },
+    "lore": "Yeenoghu, the Beast of Butchery, grants his most savage worshippers a hairline of red across the brow — the mark of a fang. A fang of Yeenoghu does not retreat from a fight, ever, on pain of having his teeth fall out one by one over the following months.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.7
+  },
+  "gnoll_alpha_of_yeenoghu": {
+    "name": "gnoll alpha of Yeenoghu",
+    "symbol": "H",
+    "color": [
+      220,
+      40,
+      30
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "10d8+10",
+    "speed": 11,
+    "thac0": 6,
+    "attacks": [
+      {
+        "name": "two-handed bone-axe",
+        "damage": "3d6+3",
+        "type": "slash"
+      },
+      {
+        "name": "demon-howl",
+        "damage": "1d6+2",
+        "type": "shadow",
+        "effect": "feared",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "gnoll",
+      "demon-touched"
+    ],
+    "min_level": 44,
+    "peak_floor": 48,
+    "spread": 10,
+    "peak_weight": 2.2,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "gnoll_hide",
+    "treasure": {
+      "gold": [
+        55,
+        175
+      ],
+      "item_chance": 0.5,
+      "item_tier": 4
+    },
+    "lore": "The alpha is the gnoll who survived eating the demon-flesh of the previous alpha. He stands a foot taller than his kin, walks on the knuckles of one hand, and speaks Abyssal in a child's voice. His axe is the femur of a stone giant, banded with iron from the cage that once held him.",
+    "alert_all_tag": true,
+    "alert_radius": 12,
+    "pack_dependent": false
+  },
+  "bandit_thug": {
+    "name": "bandit thug",
+    "symbol": "@",
+    "color": [
+      140,
+      110,
+      80
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "2d8+3",
+    "speed": 10,
+    "thac0": 16,
+    "attacks": [
+      {
+        "name": "studded club",
+        "damage": "1d6",
+        "type": "blunt"
+      },
+      {
+        "name": "boot-knife",
+        "damage": "1d4",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "bandit"
+    ],
+    "min_level": 5,
+    "peak_floor": 8,
+    "spread": 9,
+    "peak_weight": 6.5,
+    "frequency": 6,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        3,
+        12
+      ],
+      "item_chance": 0.14,
+      "item_tier": 1
+    },
+    "lore": "A bandit thug is the muscle of the gang — usually a farmhand whose lord went to war and never came back, or a town drunk who found that travelers cannot ask the watch for help. Alone he is a coward; with a kinsman at his shoulder he will fight to the last shilling.",
+    "pack_dependent": true,
+    "pack_min_allies": 1
+  },
+  "bandit_archer": {
+    "name": "bandit archer",
+    "symbol": "@",
+    "color": [
+      120,
+      130,
+      90
+    ],
+    "ai_pattern": "ranged",
+    "hp": "3d6+3",
+    "speed": 10,
+    "thac0": 14,
+    "attacks": [
+      {
+        "name": "hunting bow",
+        "damage": "1d6+1",
+        "type": "pierce"
+      },
+      {
+        "name": "skinning knife",
+        "damage": "1d4",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "bandit"
+    ],
+    "min_level": 9,
+    "peak_floor": 12,
+    "spread": 9,
+    "peak_weight": 5.5,
+    "frequency": 5,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        5,
+        20
+      ],
+      "item_chance": 0.2,
+      "item_tier": 2
+    },
+    "lore": "Bandit archers are former poachers, often the most useful members of any roadside gang — quiet, patient, and willing to spend a whole afternoon up a tree. They will not shoot a child or a priest, not out of conscience but because their grandmothers warned them how those debts get collected.",
+    "pack_dependent": true,
+    "pack_min_allies": 1
+  },
+  "bandit_thief": {
+    "name": "bandit thief",
+    "symbol": "@",
+    "color": [
+      80,
+      80,
+      120
+    ],
+    "ai_pattern": "ambush",
+    "hp": "4d6+3",
+    "speed": 13,
+    "thac0": 12,
+    "attacks": [
+      {
+        "name": "backstab",
+        "damage": "2d6+2",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "main-gauche",
+        "damage": "1d4+1",
+        "type": "slash"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "bandit"
+    ],
+    "min_level": 14,
+    "peak_floor": 18,
+    "spread": 10,
+    "peak_weight": 4.5,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        8,
+        32
+      ],
+      "item_chance": 0.3,
+      "item_tier": 2
+    },
+    "lore": "Thieves drift in and out of bandit work as the seasons demand — winter in a warm gang, spring picking pockets in a market town. They prize a quiet boot and a turned-back rather than a duel, and have a saying: the man who shows you his sword has decided he does not want to use it."
+  },
+  "bandit_kingpin": {
+    "name": "bandit kingpin",
+    "symbol": "@",
+    "color": [
+      180,
+      150,
+      50
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "8d10+12",
+    "speed": 10,
+    "thac0": 6,
+    "attacks": [
+      {
+        "name": "saber",
+        "damage": "2d8+3",
+        "type": "slash"
+      },
+      {
+        "name": "thrown wheel-lock",
+        "damage": "2d6+2",
+        "type": "pierce",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "bandit"
+    ],
+    "min_level": 36,
+    "peak_floor": 40,
+    "spread": 10,
+    "peak_weight": 2.5,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        60,
+        220
+      ],
+      "item_chance": 0.55,
+      "item_tier": 4
+    },
+    "lore": "A bandit kingpin holds his territory by the same logic as a Roman frumentarius — protection paid, debts collected, rivals removed quietly. Some are former officers cashiered for treason; some are highway preachers whose sermons soured. All can read, write, and count, and that alone is why they lead.",
+    "alert_all_tag": true,
+    "alert_radius": 10
+  },
+  "cult_initiate": {
+    "name": "cult initiate",
+    "symbol": "@",
+    "color": [
+      120,
+      80,
+      160
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "3d6+2",
+    "speed": 10,
+    "thac0": 14,
+    "attacks": [
+      {
+        "name": "ritual knife",
+        "damage": "1d4+1",
+        "type": "slash"
+      },
+      {
+        "name": "chanted hex",
+        "damage": "1d4",
+        "type": "magic",
+        "effect": "weakened",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "min_level": 9,
+    "peak_floor": 12,
+    "spread": 9,
+    "peak_weight": 6.0,
+    "frequency": 5,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        4,
+        16
+      ],
+      "item_chance": 0.18,
+      "item_tier": 2
+    },
+    "lore": "Cult initiates are usually townspeople who took the wrong cup at the wrong vigil — a year's catechism and they cannot remember the names of their own children. The robe is hempen, the dagger is brass; the conviction is borrowed but it cuts the same.",
+    "pack_dependent": true,
+    "pack_min_allies": 1
+  },
+  "cult_priest": {
+    "name": "cult priest",
+    "symbol": "@",
+    "color": [
+      150,
+      60,
+      180
+    ],
+    "ai_pattern": "healer",
+    "hp": "4d8+3",
+    "speed": 10,
+    "thac0": 12,
+    "attacks": [
+      {
+        "name": "consecrated mace",
+        "damage": "1d6+2",
+        "type": "blunt"
+      },
+      {
+        "name": "litany of pain",
+        "damage": "1d6+1",
+        "type": "shadow",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "min_level": 18,
+    "peak_floor": 22,
+    "spread": 10,
+    "peak_weight": 4.5,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        10,
+        38
+      ],
+      "item_chance": 0.3,
+      "item_tier": 3
+    },
+    "lore": "Cult priests are the second tier — initiates who have presided over enough sacrifices to no longer dream about them. They keep the cult's true name a secret even from their kinsmen; if asked, they will quote scripture they themselves do not believe and watch your face for the answer.",
+    "heal_amount_pct": 0.3
+  },
+  "cult_zealot": {
+    "name": "cult zealot",
+    "symbol": "@",
+    "color": [
+      180,
+      30,
+      60
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "7d8+8",
+    "speed": 11,
+    "thac0": 8,
+    "attacks": [
+      {
+        "name": "two-handed cleaver",
+        "damage": "2d8+2",
+        "type": "slash"
+      },
+      {
+        "name": "self-flagellation strike",
+        "damage": "1d8+2",
+        "type": "physical"
+      }
+    ],
+    "resistances": [
+      "shadow",
+      "pain"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "min_level": 31,
+    "peak_floor": 35,
+    "spread": 10,
+    "peak_weight": 3.5,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        22,
+        80
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "A zealot is an initiate who has crossed the third veil — the one where pain stops registering and conviction starts. He carries his cleaver in a permanent two-handed grip, even at table, and walks with the rolling gait of a man whose ribs have been broken and re-knit too many times.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.5,
+    "min_hit_chance": 0.2
+  },
+  "cult_hierophant": {
+    "name": "cult hierophant",
+    "symbol": "@",
+    "color": [
+      60,
+      30,
+      100
+    ],
+    "ai_pattern": "summoner",
+    "hp": "12d10+18",
+    "speed": 10,
+    "thac0": 5,
+    "attacks": [
+      {
+        "name": "obsidian dagger",
+        "damage": "2d6+2",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "void invocation",
+        "damage": "3d6+2",
+        "type": "shadow",
+        "effect": "silenced",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "shadow",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "min_level": 46,
+    "peak_floor": 50,
+    "spread": 8,
+    "peak_weight": 2.0,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        85,
+        270
+      ],
+      "item_chance": 0.55,
+      "item_tier": 4
+    },
+    "lore": "A hierophant is the cult's living memory — the only one who knows where the founder is buried and what was buried with her. He no longer eats in the company of his initiates and conducts the major sacrifices alone. When he summons his lessers to die for him, he calls them by their childhood names.",
+    "summon_kind": [
+      "cult_initiate",
+      "cult_zealot"
+    ],
+    "summon_cooldown": 4,
+    "summon_max": 5
+  },
+  "ghast_eater": {
+    "name": "ghast eater",
+    "symbol": "Z",
+    "color": [
+      80,
+      120,
+      60
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "4d8+3",
+    "speed": 11,
+    "thac0": 13,
+    "attacks": [
+      {
+        "name": "rending claw",
+        "damage": "1d6+2",
+        "type": "slash",
+        "effect": "paralyzed",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      },
+      {
+        "name": "rotting bite",
+        "damage": "1d6+1",
+        "type": "drain",
+        "effect": "diseased",
+        "effect_chance": 0.25,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "drain",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 16,
+    "peak_floor": 20,
+    "spread": 10,
+    "peak_weight": 5.0,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "ghast_ichor",
+    "treasure": {
+      "gold": [
+        6,
+        22
+      ],
+      "item_chance": 0.2,
+      "item_tier": 2
+    },
+    "lore": "A ghast is what a ghoul becomes when it has eaten enough of its own kind. The paralytic of its claws is stronger and the stench around it is so foul that even other undead give it a corridor. Tradition says a ghast remembers, faintly, the first person it killed — and avoids that one corpse forever."
+  },
+  "draugr_wight": {
+    "name": "draugr wight",
+    "symbol": "Z",
+    "color": [
+      160,
+      140,
+      200
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "7d8+8",
+    "speed": 10,
+    "thac0": 8,
+    "attacks": [
+      {
+        "name": "draining touch",
+        "damage": "2d6+2",
+        "type": "drain"
+      },
+      {
+        "name": "barrow-iron sword",
+        "damage": "2d6+1",
+        "type": "necrotic"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "necrotic",
+      "drain",
+      "physical"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 31,
+    "peak_floor": 35,
+    "spread": 10,
+    "peak_weight": 3.5,
+    "frequency": 3,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "ghast_ichor",
+    "treasure": {
+      "gold": [
+        25,
+        90
+      ],
+      "item_chance": 0.36,
+      "item_tier": 3
+    },
+    "lore": "A wight is the haunting of a barrow-king who refused his rest — a Norse draugr by another name. The sword he carries was buried with him and its edge is now part of him; severing his arm severs the blade also. His touch takes warmth from a body and gives it back to the barrow."
+  },
+  "grave_knight": {
+    "name": "grave knight",
+    "symbol": "Z",
+    "color": [
+      120,
+      120,
+      150
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "13d10+22",
+    "speed": 10,
+    "thac0": 4,
+    "attacks": [
+      {
+        "name": "rusted greatsword",
+        "damage": "3d8+3",
+        "type": "slash"
+      },
+      {
+        "name": "doom-pronouncement",
+        "damage": "2d6+2",
+        "type": "shadow",
+        "effect": "feared",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "necrotic",
+      "drain",
+      "physical",
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "min_level": 51,
+    "peak_floor": 55,
+    "spread": 8,
+    "peak_weight": 2.0,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "ghast_ichor",
+    "treasure": {
+      "gold": [
+        100,
+        320
+      ],
+      "item_chance": 0.55,
+      "item_tier": 4
+    },
+    "lore": "A grave knight is a knight who died with an oath unfulfilled and could not, would not, let the matter rest. He wakes when his cause is mentioned aloud within a mile of his cairn. The oath itself is sometimes petty — a stolen horse, an unpaid wager — but the obligation does not care.",
+    "alert_all_tag": true,
+    "alert_radius": 8,
+    "enrage_at_hp_pct": 0.25,
+    "enraged_pattern": "fenrir_rage"
+  },
+  "greater_imp": {
+    "name": "greater imp",
+    "symbol": "i",
+    "color": [
+      200,
+      60,
+      70
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "4d6+3",
+    "speed": 13,
+    "thac0": 13,
+    "attacks": [
+      {
+        "name": "barbed sting",
+        "damage": "1d6+1",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "talon swipe",
+        "damage": "1d4+1",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon"
+    ],
+    "min_level": 14,
+    "peak_floor": 18,
+    "spread": 10,
+    "peak_weight": 5.0,
+    "frequency": 5,
+    "harvest_tier": 1,
+    "harvest_threshold": 2,
+    "ingredient_id": "imp_stinger",
+    "treasure": {
+      "gold": [
+        6,
+        24
+      ],
+      "item_chance": 0.22,
+      "item_tier": 2
+    },
+    "lore": "A greater imp is what becomes of an imp that survives ten years in the mortal world without being killed or banished. The tail thickens, the wing-membranes harden, and the creature acquires the diplomatic vocabulary of a third-rate ambassador. Some retain a contractual loyalty; most do not.",
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.25
+  },
+  "demonic_imp": {
+    "name": "demonic imp",
+    "symbol": "i",
+    "color": [
+      220,
+      40,
+      30
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "6d8+4",
+    "speed": 14,
+    "thac0": 10,
+    "attacks": [
+      {
+        "name": "hellfire sting",
+        "damage": "2d6+2",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "soul-pinch",
+        "damage": "1d6+1",
+        "type": "shadow",
+        "effect": "weakened",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "cold",
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon"
+    ],
+    "min_level": 26,
+    "peak_floor": 30,
+    "spread": 10,
+    "peak_weight": 4.0,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "imp_stinger",
+    "treasure": {
+      "gold": [
+        18,
+        65
+      ],
+      "item_chance": 0.32,
+      "item_tier": 3
+    },
+    "lore": "Demonic imps no longer pretend to be familiars. They are the courier-class of a small abyssal house — sent up to settle scores their betters cannot be bothered with. The sting now carries true hellfire, and the talons can sign a contract on parchment that was minutes ago a man's chest.",
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.35
+  },
+  "imp_lord": {
+    "name": "imp lord",
+    "symbol": "i",
+    "color": [
+      180,
+      30,
+      180
+    ],
+    "ai_pattern": "summoner",
+    "hp": "9d8+10",
+    "speed": 13,
+    "thac0": 6,
+    "attacks": [
+      {
+        "name": "blackiron rapier",
+        "damage": "2d8+3",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "summoner's gesture",
+        "damage": "1d6+2",
+        "type": "shadow"
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "cold",
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon"
+    ],
+    "min_level": 41,
+    "peak_floor": 45,
+    "spread": 10,
+    "peak_weight": 2.2,
+    "frequency": 2,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "imp_stinger",
+    "treasure": {
+      "gold": [
+        60,
+        200
+      ],
+      "item_chance": 0.48,
+      "item_tier": 4
+    },
+    "lore": "An imp lord is a minor noble of a minor abyssal court — somewhere between a baronet and a bookkeeper. He has earned the right to call up other imps to do the unpleasant parts of his work, and the right to refuse a duel by claiming higher business elsewhere. He uses both rights liberally.",
+    "summon_kind": "imp",
+    "summon_cooldown": 5,
+    "summon_max": 4,
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.25
+  },
+  "snake_charmer": {
+    "name": "snake charmer",
+    "symbol": "@",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "ai_pattern": "summoner",
+    "hp": "5d8+4",
+    "speed": 10,
+    "thac0": 11,
+    "attacks": [
+      {
+        "name": "curved khanjar",
+        "damage": "1d6+1",
+        "type": "slash",
+        "effect": "poisoned",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      },
+      {
+        "name": "snake-pipe drone",
+        "damage": "1d4+1",
+        "type": "magic",
+        "effect": "hallucinating",
+        "effect_chance": 0.25,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "min_level": 22,
+    "peak_floor": 26,
+    "spread": 10,
+    "peak_weight": 3.5,
+    "frequency": 3,
+    "harvest_tier": 2,
+    "harvest_threshold": 2,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        14,
+        50
+      ],
+      "item_chance": 0.3,
+      "item_tier": 3
+    },
+    "lore": "A snake charmer's pipe is not a pipe — it is a hollowed cobra-rib, and the music it makes is heard mostly by the snakes themselves. The charmer learned the trade in the bazaars of Samarkand and went underground when the bazaars dried up. His basket goes everywhere with him; it is never empty.",
+    "summon_kind": "cobra",
+    "summon_cooldown": 5,
+    "summon_max": 3
+  },
+  "viper_priestess": {
+    "name": "viper priestess",
+    "symbol": "@",
+    "color": [
+      80,
+      180,
+      100
+    ],
+    "ai_pattern": "healer",
+    "hp": "8d8+8",
+    "speed": 10,
+    "thac0": 7,
+    "attacks": [
+      {
+        "name": "fang-staff",
+        "damage": "2d6+2",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      },
+      {
+        "name": "venom-prayer",
+        "damage": "1d8+2",
+        "type": "magic",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "serpent-cult"
+    ],
+    "min_level": 38,
+    "peak_floor": 42,
+    "spread": 10,
+    "peak_weight": 2.5,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 3,
+    "ingredient_id": "battle_ration",
+    "treasure": {
+      "gold": [
+        40,
+        145
+      ],
+      "item_chance": 0.45,
+      "item_tier": 4
+    },
+    "lore": "Viper priestesses serve a snake-goddess older than any of the gods the upper world still names — older even than the cities she once protected. Their tongues are split in childhood as the first sacrament; their eyes never blink. They heal kin with a kiss whose venom has been bred for centuries to nourish rather than kill.",
+    "heal_amount_pct": 0.3
+  },
+  "cave_troll": {
+    "name": "Cave Troll",
+    "symbol": "T",
+    "color": [
+      110,
+      130,
+      90
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "7d8+8",
+    "speed": 9,
+    "thac0": 9,
+    "attacks": [
+      {
+        "name": "boulder slam",
+        "damage": "2d6+2",
+        "type": "blunt"
+      },
+      {
+        "name": "stone hurl",
+        "damage": "1d8+1",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire",
+      "acid"
+    ],
+    "tags": [
+      "beast",
+      "humanoid"
+    ],
+    "min_level": 25,
+    "peak_floor": 35,
+    "spread": 12,
+    "peak_weight": 4.0,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "troll_hide",
+    "treasure": {
+      "gold": [
+        10,
+        35
+      ],
+      "item_chance": 0.2,
+      "item_tier": 3
+    },
+    "lore": "The cave troll grew where the dungeon's wet stone leaks. Long arms for the close work, ridged hide for the careless blow. A wound from a thrown rock heals before the warrior who threw it has finished gloating.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.6
+  },
+  "harrow_witch": {
+    "name": "Harrow Witch",
+    "symbol": "w",
+    "color": [
+      90,
+      40,
+      110
+    ],
+    "ai_pattern": "ranged",
+    "hp": "6d8+4",
+    "speed": 10,
+    "thac0": 10,
+    "attacks": [
+      {
+        "name": "hex bolt",
+        "damage": "1d6+2",
+        "type": "magic",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "rotting touch",
+        "damage": "1d6",
+        "type": "necrotic",
+        "effect": "diseased",
+        "effect_chance": 0.25,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "humanoid",
+      "caster"
+    ],
+    "min_level": 28,
+    "peak_floor": 35,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 2,
+    "harvest_threshold": 4,
+    "ingredient_id": "witch_finger",
+    "treasure": {
+      "gold": [
+        12,
+        40
+      ],
+      "item_chance": 0.3,
+      "item_tier": 3
+    },
+    "lore": "She came down from the heath when the kingdoms forgot her, and she has been working the lower halls since. Bones in her hair, a tongue for old curses. Strike from far if you must strike at all.",
+    "perception_range": 9
+  },
+  "moss_sentinel": {
+    "name": "Moss Sentinel",
+    "symbol": "S",
+    "color": [
+      60,
+      110,
+      60
+    ],
+    "ai_pattern": "sessile",
+    "hp": "8d8+10",
+    "speed": 8,
+    "thac0": 9,
+    "attacks": [
+      {
+        "name": "stone fist",
+        "damage": "2d6+1",
+        "type": "blunt"
+      },
+      {
+        "name": "thorn lash",
+        "damage": "1d8",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire",
+      "slash"
+    ],
+    "tags": [
+      "construct",
+      "plant"
+    ],
+    "min_level": 28,
+    "peak_floor": 37,
+    "spread": 10,
+    "peak_weight": 3.5,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "stone_moss",
+    "treasure": {
+      "gold": [
+        5,
+        20
+      ],
+      "item_chance": 0.25,
+      "item_tier": 3
+    },
+    "lore": "Carved as a marker on some forgotten threshold, then forgotten itself, until the moss made it a body. It stands where it was set and waits. When something nears, the moss remembers what it is for.",
+    "enrage_at_hp_pct": 0.4,
+    "enraged_pattern": "aggressive"
+  },
+  "sable_serpent": {
+    "name": "Sable Serpent",
+    "symbol": "s",
+    "color": [
+      20,
+      20,
+      40
+    ],
+    "ai_pattern": "ambush",
+    "hp": "5d8+6",
+    "speed": 12,
+    "thac0": 9,
+    "attacks": [
+      {
+        "name": "venom strike",
+        "damage": "1d6+2",
+        "type": "pierce",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      },
+      {
+        "name": "coil",
+        "damage": "1d4+1",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "cold",
+      "fire"
+    ],
+    "tags": [
+      "beast",
+      "reptile"
+    ],
+    "min_level": 30,
+    "peak_floor": 38,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 4,
+    "harvest_tier": 2,
+    "harvest_threshold": 3,
+    "ingredient_id": "serpent_venom",
+    "treasure": {
+      "gold": [
+        8,
+        30
+      ],
+      "item_chance": 0.2,
+      "item_tier": 3
+    },
+    "lore": "Black as wet coal and silent over stone. The country folk called them sable serpents and would not name them after dark. Their bite kills slow, which is the only mercy in the encounter."
+  },
+  "iron_patriarch": {
+    "name": "The Iron Patriarch",
+    "symbol": "P",
+    "color": [
+      180,
+      150,
+      70
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "18d10+30",
+    "speed": 10,
+    "thac0": 5,
+    "attacks": [
+      {
+        "name": "warhammer",
+        "damage": "3d6+4",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      },
+      {
+        "name": "gauntlet sweep",
+        "damage": "2d6+3",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "lightning",
+      "acid"
+    ],
+    "tags": [
+      "humanoid",
+      "boss"
+    ],
+    "min_level": 35,
+    "peak_floor": 42,
+    "spread": 8,
+    "peak_weight": 1.5,
+    "frequency": 1,
+    "spawn_chance": 0.3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "patriarch_signet",
+    "treasure": {
+      "gold": [
+        120,
+        240
+      ],
+      "item_chance": 0.9,
+      "item_tier": 5
+    },
+    "lore": "He was father to a line of tyrants and outlived all of them. The dungeon found him still wearing his coronation plate, still expecting an audience. He gives one, briefly, to anyone who comes within reach.",
+    "is_boss": true,
+    "is_mini_boss": false,
+    "min_hit_chance": 0.25,
+    "enrage_at_hp_pct": 0.5,
+    "enraged_pattern": "fenrir_rage",
+    "rage_interval": 4,
+    "rage_damage_bonus": "1d6",
+    "alert_radius": 8,
+    "alert_all_tag": true
+  },
+  "mage_slayer_assassin": {
+    "name": "Mage-Slayer Assassin",
+    "symbol": "a",
+    "color": [
+      80,
+      70,
+      90
+    ],
+    "ai_pattern": "ambush",
+    "hp": "7d8+6",
+    "speed": 12,
+    "thac0": 7,
+    "attacks": [
+      {
+        "name": "backstab",
+        "damage": "3d6+3",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "silenced blade",
+        "damage": "1d8+2",
+        "type": "slash",
+        "effect": "weakened",
+        "effect_chance": 0.2,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "magic"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "rogue"
+    ],
+    "min_level": 38,
+    "peak_floor": 45,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "assassin_cowl",
+    "treasure": {
+      "gold": [
+        25,
+        70
+      ],
+      "item_chance": 0.4,
+      "item_tier": 4
+    },
+    "lore": "An order trained in the towers, then turned against them. The slayer's first cut goes through a casting hand. The rest of the work is bookkeeping.",
+    "prefers_flank": true
+  },
+  "stone_golem": {
+    "name": "Stone Golem",
+    "symbol": "G",
+    "color": [
+      130,
+      130,
+      130
+    ],
+    "ai_pattern": "sessile",
+    "hp": "10d10+20",
+    "speed": 8,
+    "thac0": 7,
+    "attacks": [
+      {
+        "name": "granite fist",
+        "damage": "3d6+2",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.15,
+        "effect_duration": 2
+      },
+      {
+        "name": "earth slam",
+        "damage": "2d6+3",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "blunt",
+      "slash",
+      "pierce",
+      "cold"
+    ],
+    "weaknesses": [
+      "lightning",
+      "acid"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "min_level": 38,
+    "peak_floor": 46,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 5,
+    "ingredient_id": "golem_core",
+    "treasure": {
+      "gold": [
+        15,
+        50
+      ],
+      "item_chance": 0.3,
+      "item_tier": 4
+    },
+    "lore": "The masons built them to guard the lower stair, and the masons died. The golem still guards the lower stair. It knows nothing else, and what it knows it does very well.",
+    "enrage_at_hp_pct": 0.3,
+    "enraged_pattern": "aggressive"
+  },
+  "plague_witch": {
+    "name": "Plague Witch",
+    "symbol": "h",
+    "color": [
+      120,
+      140,
+      60
+    ],
+    "ai_pattern": "healer",
+    "hp": "8d8+6",
+    "speed": 10,
+    "thac0": 7,
+    "heal_amount_pct": 0.25,
+    "attacks": [
+      {
+        "name": "pestilent touch",
+        "damage": "1d6+2",
+        "type": "poison",
+        "effect": "diseased",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      },
+      {
+        "name": "miasma",
+        "damage": "1d8+1",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "poison",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "humanoid",
+      "caster"
+    ],
+    "min_level": 42,
+    "peak_floor": 52,
+    "spread": 12,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "plague_phylactery",
+    "treasure": {
+      "gold": [
+        25,
+        80
+      ],
+      "item_chance": 0.4,
+      "item_tier": 4
+    },
+    "lore": "She catches the sick at the gate and brings them with her. They feed her, and she keeps them upright. Kill the woman in the green hood first; everything else will fall down on its own.",
+    "perception_range": 9
+  },
+  "vine_horror": {
+    "name": "Vine Horror",
+    "symbol": "v",
+    "color": [
+      40,
+      100,
+      50
+    ],
+    "ai_pattern": "ambush",
+    "hp": "9d8+8",
+    "speed": 9,
+    "thac0": 7,
+    "attacks": [
+      {
+        "name": "grasping tendril",
+        "damage": "2d6+2",
+        "type": "slash",
+        "effect": "paralyzed",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      },
+      {
+        "name": "thorn whip",
+        "damage": "1d8+2",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "pierce",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire",
+      "slash"
+    ],
+    "tags": [
+      "plant",
+      "horror"
+    ],
+    "min_level": 42,
+    "peak_floor": 53,
+    "spread": 12,
+    "peak_weight": 3.5,
+    "frequency": 4,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "vine_essence",
+    "treasure": {
+      "gold": [
+        10,
+        35
+      ],
+      "item_chance": 0.25,
+      "item_tier": 4
+    },
+    "lore": "It grows where blood was spilled and patience was kept. Looks like a heap of dead creeper on the wall, until something warm passes underneath. Cut it root and stem; the cuttings still move."
+  },
+  "lurking_horror": {
+    "name": "Lurking Horror",
+    "symbol": "[",
+    "color": [
+      120,
+      60,
+      30
+    ],
+    "ai_pattern": "mimic",
+    "hp": "10d8+10",
+    "speed": 10,
+    "thac0": 6,
+    "attacks": [
+      {
+        "name": "engulfing maw",
+        "damage": "3d6+2",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "acid pseudopod",
+        "damage": "1d8+2",
+        "type": "acid"
+      }
+    ],
+    "resistances": [
+      "acid",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire",
+      "cold"
+    ],
+    "tags": [
+      "aberration",
+      "shapeshifter"
+    ],
+    "min_level": 45,
+    "peak_floor": 55,
+    "spread": 10,
+    "peak_weight": 2.5,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 5,
+    "ingredient_id": "horror_ichor",
+    "treasure": {
+      "gold": [
+        60,
+        140
+      ],
+      "item_chance": 0.7,
+      "item_tier": 5
+    },
+    "lore": "The greater cousin of the petty mimic, learned in patience and in chests. It can hold the shape of a locked coffer for years. Adventurers find it where they hope most to find what it pretends to be."
+  },
+  "ettin_warchief": {
+    "name": "Ettin Warchief",
+    "symbol": "E",
+    "color": [
+      160,
+      110,
+      80
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "11d8+12",
+    "speed": 10,
+    "thac0": 6,
+    "attacks": [
+      {
+        "name": "twin maul",
+        "damage": "2d8+3",
+        "type": "blunt"
+      },
+      {
+        "name": "iron club",
+        "damage": "2d6+2",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "blunt"
+    ],
+    "weaknesses": [
+      "slash",
+      "pierce"
+    ],
+    "tags": [
+      "humanoid",
+      "giant"
+    ],
+    "min_level": 45,
+    "peak_floor": 55,
+    "spread": 12,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 4,
+    "ingredient_id": "giant_bone",
+    "treasure": {
+      "gold": [
+        40,
+        110
+      ],
+      "item_chance": 0.4,
+      "item_tier": 4
+    },
+    "lore": "The two heads disagreed about everything for forty years and they led their clan to ruin together. The dungeon keeps what is left. Both heads still argue, mostly about you.",
+    "enrage_at_hp_pct": 0.5,
+    "enraged_pattern": "ranged"
+  },
+  "throne_sentinel": {
+    "name": "Throne Sentinel",
+    "symbol": "&",
+    "color": [
+      200,
+      180,
+      80
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "11d8+10",
+    "speed": 10,
+    "thac0": 5,
+    "attacks": [
+      {
+        "name": "halberd cleave",
+        "damage": "2d8+3",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "shield bash",
+        "damage": "1d8+2",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "lightning"
+    ],
+    "tags": [
+      "humanoid",
+      "construct"
+    ],
+    "min_level": 48,
+    "peak_floor": 57,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 3,
+    "harvest_threshold": 5,
+    "ingredient_id": "sentinel_plate",
+    "treasure": {
+      "gold": [
+        50,
+        140
+      ],
+      "item_chance": 0.5,
+      "item_tier": 4
+    },
+    "lore": "Animated armor cast for a king's bodyguard and never decommissioned. The smithwork is too fine for any modern foundry to copy. It still salutes when struck a clean blow.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.5,
+    "prefers_flank": true
+  },
+  "whispering_crone": {
+    "name": "The Whispering Crone",
+    "symbol": "C",
+    "color": [
+      70,
+      30,
+      100
+    ],
+    "ai_pattern": "summoner",
+    "hp": "30d10+40",
+    "speed": 9,
+    "thac0": 1,
+    "summon_kind": [
+      "specter",
+      "wraith"
+    ],
+    "summon_cooldown": 3,
+    "summon_max": 6,
+    "attacks": [
+      {
+        "name": "soul whisper",
+        "damage": "2d8+3",
+        "type": "shadow",
+        "effect": "feared",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "deathly bolt",
+        "damage": "3d6+2",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "necrotic",
+      "shadow",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "caster",
+      "boss"
+    ],
+    "min_level": 55,
+    "peak_floor": 62,
+    "spread": 8,
+    "peak_weight": 1.5,
+    "frequency": 1,
+    "spawn_chance": 0.3,
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "crone_voice",
+    "treasure": {
+      "gold": [
+        240,
+        480
+      ],
+      "item_chance": 0.95,
+      "item_tier": 5
+    },
+    "lore": "She was buried alive for telling fortunes too plainly. Decades in the dark and she found friends in the dark. They come when she calls and so will the rest of you, eventually.",
+    "is_boss": true,
+    "is_mini_boss": false,
+    "min_hit_chance": 0.25,
+    "enrage_at_hp_pct": 0.3,
+    "enraged_pattern": "fenrir_rage",
+    "rage_interval": 4,
+    "rage_damage_bonus": "1d8",
+    "perception_range": 10,
+    "alert_radius": 8,
+    "alert_all_tag": true
+  },
+  "demonic_trickster": {
+    "name": "Demonic Trickster",
+    "symbol": "d",
+    "color": [
+      180,
+      60,
+      140
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "11d8+8",
+    "speed": 12,
+    "thac0": 3,
+    "attacks": [
+      {
+        "name": "warpfire blade",
+        "damage": "2d8+3",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "mocking strike",
+        "damage": "2d6+2",
+        "type": "slash",
+        "effect": "confused",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon",
+      "fiend"
+    ],
+    "min_level": 55,
+    "peak_floor": 63,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "demon_horn",
+    "treasure": {
+      "gold": [
+        70,
+        180
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Hell sends the clever ones up to negotiate. They don't negotiate. They like the look on the face when the blade comes out of nowhere, and then comes out of nowhere again.",
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.3
+  },
+  "deep_one_priest": {
+    "name": "Deep-One Priest",
+    "symbol": "p",
+    "color": [
+      40,
+      90,
+      110
+    ],
+    "ai_pattern": "healer",
+    "hp": "12d8+10",
+    "speed": 9,
+    "thac0": 3,
+    "heal_amount_pct": 0.3,
+    "attacks": [
+      {
+        "name": "tide invocation",
+        "damage": "2d6+2",
+        "type": "cold",
+        "effect": "frozen",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      },
+      {
+        "name": "barbed staff",
+        "damage": "1d8+2",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "cold",
+      "magic"
+    ],
+    "weaknesses": [
+      "lightning",
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "aberration",
+      "caster"
+    ],
+    "min_level": 55,
+    "peak_floor": 64,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "deep_pearl",
+    "treasure": {
+      "gold": [
+        60,
+        160
+      ],
+      "item_chance": 0.45,
+      "item_tier": 5
+    },
+    "lore": "The villages on the coast bred a strain that could pass for human, almost. The priests came down the wells when the wells dried. They keep their flock standing far past when standing should be possible."
+  },
+  "gilded_mimic": {
+    "name": "Gilded Mimic",
+    "symbol": "$",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "ai_pattern": "mimic",
+    "hp": "13d8+12",
+    "speed": 10,
+    "thac0": 2,
+    "attacks": [
+      {
+        "name": "treasure maw",
+        "damage": "3d8+3",
+        "type": "physical",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "gold-strangling tongue",
+        "damage": "2d6+2",
+        "type": "blunt",
+        "effect": "weakened",
+        "effect_chance": 0.25,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "physical",
+      "acid"
+    ],
+    "weaknesses": [
+      "fire",
+      "cold"
+    ],
+    "tags": [
+      "aberration",
+      "shapeshifter"
+    ],
+    "min_level": 58,
+    "peak_floor": 66,
+    "spread": 8,
+    "peak_weight": 2.0,
+    "frequency": 2,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "mimic_gold",
+    "treasure": {
+      "gold": [
+        200,
+        420
+      ],
+      "item_chance": 0.85,
+      "item_tier": 5
+    },
+    "lore": "Old enough to have learned what adventurers actually look for. It mimics a king's hoard now, scattered open as if some other party already won. Even the false coins are gold inside, which makes the disguise expensive and reliable."
+  },
+  "frostfang_giant": {
+    "name": "Frostfang Giant",
+    "symbol": "F",
+    "color": [
+      180,
+      200,
+      230
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "14d10+12",
+    "speed": 10,
+    "thac0": 1,
+    "attacks": [
+      {
+        "name": "glacial maul",
+        "damage": "3d8+4",
+        "type": "blunt",
+        "effect": "frozen",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      },
+      {
+        "name": "frost breath",
+        "damage": "2d6+2",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "cold",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "giant",
+      "humanoid"
+    ],
+    "min_level": 62,
+    "peak_floor": 72,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "rime_tusk",
+    "treasure": {
+      "gold": [
+        80,
+        220
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Not the older sort, who keep their courts in the high passes. Frostfangs are the cast-out kin who came down to the deeps for warmth and found a different cold instead. They remember the slight.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.7
+  },
+  "crypt_summoner": {
+    "name": "Crypt Summoner",
+    "symbol": "c",
+    "color": [
+      100,
+      80,
+      130
+    ],
+    "ai_pattern": "summoner",
+    "hp": "12d8+10",
+    "speed": 9,
+    "thac0": 1,
+    "summon_kind": [
+      "rotting_zombie",
+      "specter"
+    ],
+    "summon_cooldown": 5,
+    "summon_max": 4,
+    "attacks": [
+      {
+        "name": "grave hex",
+        "damage": "2d6+3",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      },
+      {
+        "name": "bone shard",
+        "damage": "1d8+2",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.25,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "necrotic",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "caster"
+    ],
+    "min_level": 62,
+    "peak_floor": 72,
+    "spread": 10,
+    "peak_weight": 2.5,
+    "frequency": 2,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "necromantic_focus",
+    "treasure": {
+      "gold": [
+        70,
+        180
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "A graduate of a school the surface forgot. The work is plain bookkeeping: which corpse, which name, what wage. He has been doing the books a long time and they balance.",
+    "perception_range": 10
+  },
+  "shadow_archer": {
+    "name": "Shadow Archer",
+    "symbol": "a",
+    "color": [
+      40,
+      40,
+      70
+    ],
+    "ai_pattern": "ranged",
+    "hp": "10d8+8",
+    "speed": 12,
+    "thac0": 1,
+    "attacks": [
+      {
+        "name": "umbral arrow",
+        "damage": "3d6+3",
+        "type": "shadow",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "shortsword",
+        "damage": "2d6+2",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "shadow"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "humanoid",
+      "rogue"
+    ],
+    "min_level": 62,
+    "peak_floor": 73,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "shadow_quiver",
+    "treasure": {
+      "gold": [
+        55,
+        140
+      ],
+      "item_chance": 0.5,
+      "item_tier": 5
+    },
+    "lore": "Trained in towers that are not on any map. Their first lesson is the bow; their second is to stop being where the arrow came from. The third lesson the masters keep to themselves.",
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.35,
+    "perception_range": 11
+  },
+  "veiled_inquisitor": {
+    "name": "Veiled Inquisitor",
+    "symbol": "I",
+    "color": [
+      180,
+      30,
+      50
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "11d8+10",
+    "speed": 10,
+    "thac0": 1,
+    "attacks": [
+      {
+        "name": "scourge",
+        "damage": "2d8+3",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      },
+      {
+        "name": "censer swing",
+        "damage": "1d8+2",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "holy"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "tags": [
+      "humanoid",
+      "caster"
+    ],
+    "min_level": 64,
+    "peak_floor": 74,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "inquisitor_seal",
+    "treasure": {
+      "gold": [
+        60,
+        170
+      ],
+      "item_chance": 0.5,
+      "item_tier": 5
+    },
+    "lore": "Sent by an authority that no longer exists, to find heretics who no longer remember the doctrine. He has improvised. The scourge is real, the doctrine is whatever he last said it was.",
+    "alert_radius": 10,
+    "alert_all_tag": true
+  },
+  "lava_elemental": {
+    "name": "Lava Elemental",
+    "symbol": "L",
+    "color": [
+      220,
+      80,
+      30
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "12d10+12",
+    "speed": 10,
+    "thac0": 0,
+    "attacks": [
+      {
+        "name": "molten slam",
+        "damage": "3d6+3",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.5,
+        "effect_duration": 4
+      },
+      {
+        "name": "ember spray",
+        "damage": "2d6+2",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "blunt",
+      "pierce"
+    ],
+    "weaknesses": [
+      "cold",
+      "magic"
+    ],
+    "tags": [
+      "elemental"
+    ],
+    "min_level": 68,
+    "peak_floor": 76,
+    "spread": 10,
+    "peak_weight": 3.0,
+    "frequency": 3,
+    "harvest_tier": 4,
+    "harvest_threshold": 5,
+    "ingredient_id": "elemental_core",
+    "treasure": {
+      "gold": [
+        70,
+        200
+      ],
+      "item_chance": 0.5,
+      "item_tier": 5
+    },
+    "lore": "Where the dungeon presses on a magma vein, the fire forgets to be only fire. It walks. It does not know what walking is for, exactly, but it has gotten very good at the part that comes after walking up to a person."
+  },
+  "blood_archon": {
+    "name": "Blood Archon",
+    "symbol": "A",
+    "color": [
+      160,
+      30,
+      30
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "35d10+50",
+    "speed": 11,
+    "thac0": -3,
+    "attacks": [
+      {
+        "name": "exsanguinating blade",
+        "damage": "4d8+5",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.6,
+        "effect_duration": 6
+      },
+      {
+        "name": "crimson wave",
+        "damage": "3d6+4",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "necrotic",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "fiend",
+      "boss"
+    ],
+    "min_level": 75,
+    "peak_floor": 82,
+    "spread": 8,
+    "peak_weight": 1.5,
+    "frequency": 1,
+    "spawn_chance": 0.25,
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "archon_heart",
+    "treasure": {
+      "gold": [
+        400,
+        800
+      ],
+      "item_chance": 0.95,
+      "item_tier": 5
+    },
+    "lore": "An older grade of fiend, from the days when bargains were written in blood and signed in the same. He keeps a ledger. The ledger is long, the column for repayment short, and the interest is what it has always been.",
+    "is_boss": true,
+    "is_mini_boss": true,
+    "min_hit_chance": 0.25,
+    "enrage_at_hp_pct": 0.35,
+    "enraged_pattern": "fenrir_rage",
+    "rage_interval": 3,
+    "rage_damage_bonus": "2d6",
+    "perception_range": 11,
+    "alert_radius": 10,
+    "alert_all_tag": true,
+    "can_charge": true,
+    "charge_bonus_mult": 1.8
+  },
+  "astral_horror": {
+    "name": "Astral Horror",
+    "symbol": "H",
+    "color": [
+      120,
+      80,
+      200
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "13d10+10",
+    "speed": 11,
+    "thac0": -2,
+    "attacks": [
+      {
+        "name": "mind drain",
+        "damage": "3d6+3",
+        "type": "drain",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "psychic lash",
+        "damage": "2d8+3",
+        "type": "magic",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "magic",
+      "shadow",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "lightning"
+    ],
+    "tags": [
+      "aberration",
+      "outsider"
+    ],
+    "min_level": 76,
+    "peak_floor": 84,
+    "spread": 8,
+    "peak_weight": 2.5,
+    "frequency": 2,
+    "harvest_tier": 5,
+    "harvest_threshold": 5,
+    "ingredient_id": "astral_filament",
+    "treasure": {
+      "gold": [
+        120,
+        280
+      ],
+      "item_chance": 0.65,
+      "item_tier": 5
+    },
+    "lore": "It arrived through a door someone left open in a dream. It has not yet decided whether to leave. The conversation is one-sided and ends, generally, the way conversations with such things end.",
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.35,
+    "perception_range": 12
   }
 }

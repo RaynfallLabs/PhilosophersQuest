@@ -3136,6 +3136,62 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     f"{angel_count} angels of the Heavenly Host descend to answer!", 'success')
 
+    def _spawn_summoner_minion(self, summoner):
+        """Spawn one minion next to a summoner-AI monster.
+
+        Reads summoner.summon_kind (str id, or list of ids → random pick) and
+        places one instance on a walkable tile within 3 tiles. Silent on
+        failure (no walkable tile, missing kind, etc.) so the summoner just
+        loses the cooldown beat — flavor only."""
+        import json as _json
+        import random as _rng
+        from monster import Monster as _Mon
+        from paths import data_path as _dp
+
+        kinds = summoner.summon_kind
+        if not kinds:
+            return
+        if isinstance(kinds, str):
+            kinds = [kinds]
+        kind = _rng.choice(kinds)
+
+        try:
+            with open(_dp('data', 'monsters.json'), encoding='utf-8') as f:
+                _all = _json.load(f)
+        except Exception:
+            return
+        defn = _all.get(kind)
+        if not defn:
+            return
+
+        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        occupied.add((self.player.x, self.player.y))
+        candidates = []
+        for dy in range(-3, 4):
+            for dx in range(-3, 4):
+                if dx == 0 and dy == 0:
+                    continue
+                nx, ny = summoner.x + dx, summoner.y + dy
+                if not self.dungeon.in_bounds(nx, ny):
+                    continue
+                if not self.dungeon.is_walkable(nx, ny):
+                    continue
+                if (nx, ny) in occupied:
+                    continue
+                candidates.append((nx, ny))
+        if not candidates:
+            return
+        sx, sy = _rng.choice(candidates)
+        minion_def = dict(defn)
+        minion_def['id'] = kind
+        minion = _Mon(minion_def, sx, sy)
+        # The summoned minion is immediately aware of the player.
+        minion._aware = True
+        self.monsters.append(minion)
+        if (summoner.x, summoner.y) in self.visible or (sx, sy) in self.visible:
+            self.add_message(
+                f"The {summoner.name} summons a {minion.name}!", 'danger')
+
     # ------------------------------------------------------------------
     # NPC moral encounter system
     # ------------------------------------------------------------------
