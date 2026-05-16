@@ -100,6 +100,7 @@ class Player:
 
         # Cooking HP balance: diminishing returns tracking
         self.cooking_hp_gained: int = 0    # total max HP gained from cooking (for softcap)
+        self.deepest_floor_reached: int = 1  # drives floor-aware cooking softcap (synced from level_mgr)
 
     @property
     def equipped_accessories(self):
@@ -200,16 +201,41 @@ class Player:
         mp_restore = max(2, self.INT // 5)
         self.restore_mp(mp_restore)
 
-    COOKING_HP_SOFTCAP = 1000  # diminishing returns on cooking-gained max HP
+    # Floor-derived cooking softcap. Precomputed from
+    # tools/balance/curve.py:cooking_softcap_max() — the SL-profile ceiling
+    # (the diligent cook's reachable target). Replaces the broken flat 1000.
+    # Index by deepest floor reached; values rise as the player descends.
+    _COOKING_SOFTCAP_BY_FLOOR = (
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,             # F0-F10
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,                # F11-F20
+        7, 7, 7, 6, 6, 5, 5, 5, 4, 4,                # F21-F30
+        3, 3, 3, 11, 11, 11, 10, 10, 9, 9,           # F31-F40
+        9, 17, 17, 16, 16, 16, 15, 15, 24, 23,       # F41-F50
+        23, 22, 22, 22, 21, 30, 30, 29, 29, 28,      # F51-F60
+        37, 37, 36, 36, 35, 44, 44, 43, 43, 52,      # F61-F70
+        51, 51, 50, 59, 59, 58, 58, 66, 66, 66,      # F71-F80
+        74, 74, 74, 82, 82, 81, 90, 90, 98, 98,      # F81-F90
+        97, 106, 106, 114, 114, 123, 122, 131, 130, 139,  # F91-F100
+    )
+
+    def cooking_softcap(self) -> int:
+        """Current cooking HP softcap — function of deepest floor reached.
+        Replaces the broken flat 1000. Diligent cooks at L100 cap near ~139 HP
+        from cooking; that plus baseline ~50 = ~189 total (SL-profile target)."""
+        idx = max(0, min(100, self.deepest_floor_reached))
+        return max(1, self._COOKING_SOFTCAP_BY_FLOOR[idx])
 
     def increase_max_hp(self, amount: int, from_cooking: bool = False):
         """Permanently increase max HP. Also heals the amount.
 
         If from_cooking=True, applies diminishing returns: as total cooking HP
-        gained approaches COOKING_HP_SOFTCAP, the bonus shrinks (floor 20%).
+        gained approaches the floor-derived softcap, the bonus shrinks (floor 20%).
+        Softcap rises as the player descends — early game cooks add little; deep
+        descent unlocks the larger HP ceiling.
         """
         if from_cooking:
-            cap_factor = max(0.20, 1.0 - self.cooking_hp_gained / self.COOKING_HP_SOFTCAP)
+            softcap = self.cooking_softcap()
+            cap_factor = max(0.20, 1.0 - self.cooking_hp_gained / softcap)
             amount = max(1, int(amount * cap_factor))
             self.cooking_hp_gained += amount
         self.max_hp += amount

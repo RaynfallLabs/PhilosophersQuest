@@ -295,6 +295,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.power_uses = {}
         if not hasattr(self.player, 'cooking_hp_gained'):
             self.player.cooking_hp_gained = 0
+        if not hasattr(self.player, 'deepest_floor_reached'):
+            # Old save: best estimate is the level_mgr's max_level_reached, falling
+            # back to current dungeon_level so existing cooking remains within softcap.
+            _max_lvl = getattr(state.get('level_mgr'), 'max_level_reached', None)
+            self.player.deepest_floor_reached = _max_lvl or state.get('dungeon_level', 1)
         if not hasattr(self.player, 'known_spells'):
             self.player.known_spells = {}
         if not hasattr(self.player, 'lockpick_charges'):
@@ -418,6 +423,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters     = monsters
         self.ground_items = ground_items
         self.dungeon_level = new_level
+        # Track deepest floor reached for the cooking softcap (rises with descent)
+        self.player.deepest_floor_reached = max(
+            self.player.deepest_floor_reached, new_level
+        )
         self._notified_rooms = set()   # reset per-floor special room notifications
         # Chronicle: level milestones and maze entries
         _MILESTONE_FLAVOR = {
