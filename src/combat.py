@@ -4,16 +4,97 @@ from dice import roll
 # Fallback multipliers used when the player has no weapon equipped.
 _DEFAULT_MULTIPLIERS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
 
+
+# --- Material effective_against / vulnerabilities lookup ---------------------
+# Cached once. Populated lazily on first call. Generalizes the old hardcoded
+# "silver vs undead, iron vs fey" rules into a data-driven system: every
+# material in data/materials/weapons/*.json declares effective_against (tags
+# the wielder hits +50%) and vulnerabilities (tags the wielder TAKES extra
+# damage from). Gap 4.
+_MATERIAL_EFFECTIVE_AGAINST: dict[str, set] = {}
+_MATERIAL_VULNERABILITIES:   dict[str, set] = {}
+
+
+def _load_material_tags() -> None:
+    """Read all weapon-capable materials and build the effective/vulnerable maps."""
+    if _MATERIAL_EFFECTIVE_AGAINST:
+        return  # already loaded
+    import json
+    import os
+    from paths import data_path
+    mat_dir = data_path('data', 'materials', 'weapons')
+    if not os.path.isdir(mat_dir):
+        return
+    for fn in os.listdir(mat_dir):
+        if not fn.endswith('.json'):
+            continue
+        with open(os.path.join(mat_dir, fn), encoding='utf-8') as f:
+            m = json.load(f)
+        mid = m.get('id') or os.path.splitext(fn)[0]
+        _MATERIAL_EFFECTIVE_AGAINST[mid] = set(m.get('effective_against', []))
+        _MATERIAL_VULNERABILITIES[mid]   = set(m.get('vulnerabilities', []))
+
+
+def _material_effective_multiplier(weapon, monster) -> float:
+    """Return 1.5 if any of weapon's material/damage types target monster tags."""
+    if weapon is None:
+        return 1.0
+    _load_material_tags()
+    monster_tags = set(getattr(monster, 'tags', []))
+    if not monster_tags:
+        return 1.0
+    # Check every damage type that's also a known material
+    for dt in getattr(weapon, 'damage_types', []):
+        eff = _MATERIAL_EFFECTIVE_AGAINST.get(dt)
+        if eff and (eff & monster_tags):
+            return 1.5
+    # Also check explicit weapon.material if not in damage_types
+    mat = getattr(weapon, 'material', None)
+    if mat:
+        eff = _MATERIAL_EFFECTIVE_AGAINST.get(mat)
+        if eff and (eff & monster_tags):
+            return 1.5
+    return 1.0
+
+
+def _material_wielder_vulnerable(player, monster_attack_tags: list) -> float:
+    """Return >1.0 if the player's equipped weapon material is vulnerable to the
+    incoming attack's tags. Used for cold-iron-vs-demon-attacks etc."""
+    weapon = getattr(player, 'weapon', None)
+    if not weapon:
+        return 1.0
+    _load_material_tags()
+    mat = getattr(weapon, 'material', None)
+    if not mat:
+        return 1.0
+    vuln = _MATERIAL_VULNERABILITIES.get(mat)
+    if not vuln:
+        return 1.0
+    if any(t in vuln for t in monster_attack_tags):
+        return 1.25  # +25% damage taken
+    return 1.0
+
+
 # Damage type advantage/disadvantage vs monster flags.
 # Monster defn can set 'resistances': ['slash'] or 'weaknesses': ['pierce']
 def _damage_multiplier(damage_types: list[str], monster) -> float:
     """Return 0.5 for resistance, 1.5 for weakness, 1.0 otherwise.
-    If weapon has multiple types, pick the best result across all types."""
+    If weapon has multiple types, pick the best result across all types.
+
+    Material effective_against now drives this via data (see _load_material_tags).
+    The legacy hardcoded silver/iron rules are kept as a safety net for monsters
+    whose data files predate the material system."""
+    _load_material_tags()
     resistances = getattr(monster, 'resistances', [])
     weaknesses  = list(getattr(monster, 'weaknesses', []))
-    # Systemic material bonuses based on monster tags
-    tags = getattr(monster, 'tags', [])
-    if any(t in ('undead', 'demon') for t in tags):
+    tags = set(getattr(monster, 'tags', []))
+    # Data-driven material bonuses (silver vs undead, cold_iron vs fey, etc.)
+    for dt in damage_types:
+        eff = _MATERIAL_EFFECTIVE_AGAINST.get(dt)
+        if eff and (eff & tags) and dt not in weaknesses:
+            weaknesses.append(dt)
+    # Legacy hardcoded fallbacks (kept for safety while the new data lands)
+    if 'undead' in tags or 'demon' in tags:
         if 'silver' not in weaknesses:
             weaknesses.append('silver')
     if 'fey' in tags:
@@ -233,6 +314,64 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             knocked = True
 
         petrified = crit and weapon and getattr(weapon, 'petrify_on_crit', False)
+
+        # ---------------------------------------------------------------
+        # Class mechanics — fire from template-driven class_mechanic tags
+        # (Gap 3). Most check on a successful hit; some on kill or max chain.
+        # Heavy weapons rely on these for their "max chain payoff" identity.
+        # ---------------------------------------------------------------
+        class_mech = getattr(weapon, 'class_mechanic', None) if weapon else None
+        if class_mech and actual > 0:
+            max_c = (weapon.max_chain_length
+                     or len(weapon.chain_multipliers)) if weapon else 5
+            at_max = chain >= max_c
+            # ---- Bleed triggers ----
+            if class_mech in ('bleed_on_chain3', 'cleave_plus_bleed') and chain >= 3:
+                monster.add_effect('bleeding', 4)
+            # ---- Stun triggers ----
+            if class_mech == 'stun_on_chain3' and chain >= 3:
+                resist_thr = min(0.95, max(0.05, monster.max_hp / 300.0))
+                if random.random() > resist_thr:
+                    monster.add_effect('paralyzed', 2)
+                    stunned = True
+            if class_mech == 'stun_knockdown_at_max' and at_max:
+                resist_thr = min(0.90, max(0.10, monster.max_hp / 250.0))
+                if random.random() > resist_thr:
+                    monster.add_effect('paralyzed', 3)
+                    stunned = True
+                knocked = True
+            if class_mech == 'stun_plus_anti_heavy':
+                resist_thr = min(0.95, max(0.05, monster.max_hp / 300.0))
+                if random.random() > resist_thr:
+                    monster.add_effect('paralyzed', 2)
+                    stunned = True
+            # ---- Backstab (dagger) ----
+            if class_mech == 'backstab':
+                # +100% damage if monster unaware (sleeping or ambush-mode pre-aware)
+                _unaware = (monster.has_effect('sleeping')
+                            or (getattr(monster, 'ai_pattern', '') == 'ambush'
+                                and not getattr(monster, '_aware', False)))
+                if _unaware:
+                    extra = monster.take_damage(actual)  # apply the same damage AGAIN
+                    actual += extra
+            # ---- Disarm at max (scimitar, quarterstaff) ----
+            if class_mech in ('disarm_at_max', 'reach_disarm') and at_max:
+                if random.random() < 0.30:
+                    # Approximate "disarm" by stunning for 1 turn (monsters don't have
+                    # equipped weapons we can drop in this system)
+                    monster.add_effect('paralyzed', 1)
+
+        # ---- Cleave: hits all adjacent monsters when this kill happens ----
+        if monster.is_dead() and class_mech in ('cleave_on_kill', 'cleave_plus_bleed'):
+            cleave_dmg = max(1, int(actual * 0.5))
+            # The adjacent-monster lookup happens at the caller's level (game_combat
+            # has the monster list); signal via on_complete kwarg.
+            # Caller checks 'cleave_dmg' to apply AoE.
+            on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked,
+                        crit=crit, poisoned=poisoned, burned=burned, confused=confused,
+                        petrified=petrified, healed=healed, cleave_dmg=cleave_dmg)
+            return
+
         on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit,
                     poisoned=poisoned, burned=burned, confused=confused, petrified=petrified, healed=healed)
 

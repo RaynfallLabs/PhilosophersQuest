@@ -1213,10 +1213,11 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
         try:
             items_in_class = load_items(cls_name)
-            if cls_name == 'weapon':
-                # Filter to uniques only — common-tier is handled by template+material spawn
-                items_in_class = [w for w in items_in_class if getattr(w, 'is_unique', False)
-                                  or w.name[:1].isupper()]
+            if cls_name in ('weapon', 'armor', 'shield'):
+                # Filter to uniques — common-tier spawns via template+material.
+                # Uses the is_unique flag (set on rebalanced unique entries).
+                items_in_class = [it for it in items_in_class
+                                  if getattr(it, 'is_unique', False)]
             legacy_pool += items_in_class
         except FileNotFoundError:
             pass

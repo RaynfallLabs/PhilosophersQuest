@@ -96,6 +96,11 @@ class Weapon(Item):
         self.low_hp_damage_bonus: bool  = bool(defn.get('low_hp_damage_bonus', False))
         # Amenonuhoko: slow adjacent monsters on kill
         self.aoe_slow_on_kill: bool     = bool(defn.get('aoe_slow_on_kill', False))
+        # Template+material class mechanic tag (cleave_on_kill, bleed_on_chain3, etc.)
+        # — combat.py reads this to fire heavy-class effects at max chain / on kill.
+        self.class_mechanic: str        = defn.get('class_mechanic', '')
+        # True for named/legendary weapons; controls spawn pool filtering.
+        self.is_unique: bool            = bool(defn.get('is_unique', False))
         # Green Chapel Axe: heal when hit by enemy
         self.on_hit_regen: int          = int(defn.get('on_hit_regen', 0))
         # Runtime-only tracking for growing power
@@ -148,6 +153,8 @@ class Armor(Item):
         self.invisibility_power: bool = bool(defn.get('invisibility_power', False))
         self.invisibility_duration: int = int(defn.get('invisibility_duration', 0))
         self.invisibility_cooldown: int = int(defn.get('invisibility_cooldown', 0))
+        # True for named/legendary armors; controls spawn pool filtering.
+        self.is_unique: bool         = bool(defn.get('is_unique', False))
 
     @property
     def cursed(self) -> bool:
@@ -177,6 +184,8 @@ class Shield(Item):
         self.fire_reflect: float     = float(defn.get('fire_reflect', 0.0))
         # Ancile: bonus seconds on quiz timers
         self.quiz_timer_bonus: int   = int(defn.get('quiz_timer_bonus', 0))
+        # True for named/legendary shields; controls spawn pool filtering.
+        self.is_unique: bool         = bool(defn.get('is_unique', False))
 
     @property
     def cursed(self) -> bool:

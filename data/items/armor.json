@@ -2768,12 +2768,12 @@
       180,
       80
     ],
-    "weight": 6.0,
+    "weight": 16.0,
     "min_level": 65,
     "slot": "body",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 8,
+    "ac_bonus": 7,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 5,
@@ -2791,7 +2791,13 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Nemean Lion's hide could not be cut by any weapon — that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it. The hide renders its wearer virtually invulnerable to conventional weapons — only magical or divine arms can pierce it."
+    "lore": "The Nemean Lion's hide could not be cut by any weapon — that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it. The hide renders its wearer virtually invulnerable to conventional weapons — only magical or divine arms can pierce it.",
+    "max_enchant": 3,
+    "peak_floor": 72,
+    "spread": 12,
+    "peak_weight": 0.3,
+    "template_basis": "hide",
+    "is_unique": true
   },
   "carapace_of_the_hydra": {
     "name": "Carapace of the Hydra",
@@ -2801,7 +2807,7 @@
       180,
       100
     ],
-    "weight": 5.0,
+    "weight": 30.0,
     "min_level": 60,
     "slot": "body",
     "tier": 5,
@@ -2824,7 +2830,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Heracles used the Hydra's caustic blood to poison his arrows — the same arrows that killed Chiron by accident and Nessus by intention and started the chain that killed Heracles himself. The Hydra's outer scale was immune to its own venom. This is the standard configuration: weapons made from the thing they destroy are often proof against the same."
+    "lore": "Heracles used the Hydra's caustic blood to poison his arrows — the same arrows that killed Chiron by accident and Nessus by intention and started the chain that killed Heracles himself. The Hydra's outer scale was immune to its own venom. This is the standard configuration: weapons made from the thing they destroy are often proof against the same.",
+    "max_enchant": 3,
+    "peak_floor": 68,
+    "spread": 12,
+    "peak_weight": 0.35,
+    "template_basis": "scale",
+    "is_unique": true
   },
   "panoply_of_hephaestus": {
     "name": "Panoply of Hephaestus",
@@ -2834,12 +2846,12 @@
       190,
       160
     ],
-    "weight": 12.0,
+    "weight": 65.0,
     "min_level": 70,
     "slot": "body",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 9,
+    "ac_bonus": 8,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 5,
@@ -2857,7 +2869,13 @@
       "81-100": 2
     },
     "value": 9500,
-    "lore": "Hephaestus was thrown from Olympus by his mother (or his father, depending on which Homer you read) and landed on Lemnos. He survived, became the smith of the gods, and made the best things in existence: Achilles' armour, the golden automata that walked him to his forge, the chain-net that caught Aphrodite and Ares in bed, the bronze giant Talos. Everything he made was perfect. He himself walked with a limp."
+    "lore": "Hephaestus was thrown from Olympus by his mother (or his father, depending on which Homer you read) and landed on Lemnos. He survived, became the smith of the gods, and made the best things in existence: Achilles' armour, the golden automata that walked him to his forge, the chain-net that caught Aphrodite and Ares in bed, the bronze giant Talos. Everything he made was perfect. He himself walked with a limp.",
+    "max_enchant": 3,
+    "peak_floor": 78,
+    "spread": 12,
+    "peak_weight": 0.25,
+    "template_basis": "full_plate",
+    "is_unique": true
   },
   "dragon_mail_of_sigurd": {
     "name": "Dragon-Sewn Mail of Sigurd",
@@ -2867,7 +2885,7 @@
       160,
       80
     ],
-    "weight": 8.0,
+    "weight": 24.0,
     "min_level": 65,
     "slot": "body",
     "tier": 5,
@@ -2891,7 +2909,13 @@
     },
     "value": 9000,
     "lore": "After killing Fafnir, Sigurd bathed in the dragon's blood and became invulnerable — except for a leaf that fell between his shoulder blades. His eventual murder came from a spear through exactly that spot, thrown by a man told about it by a woman who loved him and was told by another man who needed Sigurd dead. The weak point was the information, not the armour.",
-    "onEquipStatus": "fire_resist"
+    "onEquipStatus": "fire_resist",
+    "max_enchant": 3,
+    "peak_floor": 72,
+    "spread": 12,
+    "peak_weight": 0.3,
+    "template_basis": "scale",
+    "is_unique": true
   },
   "breastplate_of_joan": {
     "name": "Breastplate of Joan of Arc",
@@ -2901,7 +2925,7 @@
       220,
       220
     ],
-    "weight": 7.0,
+    "weight": 20.0,
     "min_level": 55,
     "slot": "body",
     "tier": 5,
@@ -2925,7 +2949,13 @@
     },
     "value": 8000,
     "lore": "Joan of Arc described her armour as 'very good' — white-painted steel made specifically for her. She was wounded multiple times and fought on. She told her judges at her trial that her armour had been made by command of God and could not protect against what God willed. They burned her anyway. Twenty-five years later Charles VII had the verdict annulled. Joan had been dead for twenty-five years.",
-    "onEquipStatus": "blessed"
+    "onEquipStatus": "blessed",
+    "max_enchant": 3,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "breastplate",
+    "is_unique": true
   },
   "lorica_hamata_of_caesar": {
     "name": "Lorica of Caesar",
@@ -2935,7 +2965,7 @@
       180,
       160
     ],
-    "weight": 6.0,
+    "weight": 20.0,
     "min_level": 50,
     "slot": "body",
     "tier": 5,
@@ -2957,7 +2987,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Julius Caesar wore chain-mail. He also reportedly wore a special hat to cover his baldness and was sensitive about being called a king by the Senate. He was stabbed twenty-three times. The physician Antistius found only one wound fatal. The other senators had been imprecise or hesitant. Caesar had refused his bodyguard. He had been warned. He understood warnings as challenges."
+    "lore": "Julius Caesar wore chain-mail. He also reportedly wore a special hat to cover his baldness and was sensitive about being called a king by the Senate. He was stabbed twenty-three times. The physician Antistius found only one wound fatal. The other senators had been imprecise or hesitant. Caesar had refused his bodyguard. He had been warned. He understood warnings as challenges.",
+    "max_enchant": 3,
+    "peak_floor": 58,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "chain_shirt",
+    "is_unique": true
   },
   "orichalcum_breastplate": {
     "name": "Orichalcum Breastplate",
@@ -2967,7 +3003,7 @@
       200,
       80
     ],
-    "weight": 8.0,
+    "weight": 20.0,
     "min_level": 65,
     "slot": "body",
     "tier": 5,
@@ -2990,7 +3026,13 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "Orichalcum was the metal of Atlantis — mentioned by Plato in the Critias as the most prized substance in the world after gold. Its appearance was flame-red. The Atlanteans mined it everywhere, then it vanished when Atlantis sank. Modern scholars identify it as brass or a copper-zinc alloy. The identification is probably correct. Plato's text does not describe its resonance, which the surviving piece still exhibits."
+    "lore": "Orichalcum was the metal of Atlantis — mentioned by Plato in the Critias as the most prized substance in the world after gold. Its appearance was flame-red. The Atlanteans mined it everywhere, then it vanished when Atlantis sank. Modern scholars identify it as brass or a copper-zinc alloy. The identification is probably correct. Plato's text does not describe its resonance, which the surviving piece still exhibits.",
+    "max_enchant": 3,
+    "peak_floor": 72,
+    "spread": 12,
+    "peak_weight": 0.3,
+    "template_basis": "breastplate",
+    "is_unique": true
   },
   "helm_of_hades": {
     "name": "Helm of Darkness",
@@ -3005,7 +3047,7 @@
     "slot": "head",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 3,
+    "ac_bonus": 4,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 5,
@@ -3023,7 +3065,13 @@
     },
     "value": 9000,
     "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility — it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing.",
-    "onEquipStatus": "invisible"
+    "onEquipStatus": "invisible",
+    "max_enchant": 2,
+    "peak_floor": 72,
+    "spread": 12,
+    "peak_weight": 0.3,
+    "template_basis": "plate_helm",
+    "is_unique": true
   },
   "helm_of_achilles": {
     "name": "Helm of Achilles",
@@ -3038,7 +3086,7 @@
     "slot": "head",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 5,
+    "ac_bonus": 4,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 5,
@@ -3056,7 +3104,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Hephaestus forged Achilles' new armour when Patroclus died wearing the old set. The helmet had a crest of horse-hair and rang like a bell. Achilles wore it for the last weeks of his life. It was awarded after his death to Odysseus over Ajax — a decision based on rhetoric and political judgement, not martial merit. The armour was better than both arguments."
+    "lore": "Hephaestus forged Achilles' new armour when Patroclus died wearing the old set. The helmet had a crest of horse-hair and rang like a bell. Achilles wore it for the last weeks of his life. It was awarded after his death to Odysseus over Ajax — a decision based on rhetoric and political judgement, not martial merit. The armour was better than both arguments.",
+    "max_enchant": 2,
+    "peak_floor": 68,
+    "spread": 12,
+    "peak_weight": 0.35,
+    "template_basis": "plate_helm",
+    "is_unique": true
   },
   "great_helm_of_galahad": {
     "name": "Great Helm of Galahad",
@@ -3088,7 +3142,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Galahad arrived at Camelot with a plain white shield and no name. He sat in the Siege Perilous — the seat that killed anyone not pure enough — and nothing happened. He was the only knight who completed the Grail quest because he was the only one who had not already compromised himself. His father Lancelot came within inches of it. Lancelot's single lapse in virtue cost him the quest and gave the world Galahad. The Grail works through irony."
+    "lore": "Galahad arrived at Camelot with a plain white shield and no name. He sat in the Siege Perilous — the seat that killed anyone not pure enough — and nothing happened. He was the only knight who completed the Grail quest because he was the only one who had not already compromised himself. His father Lancelot came within inches of it. Lancelot's single lapse in virtue cost him the quest and gave the world Galahad. The Grail works through irony.",
+    "max_enchant": 2,
+    "peak_floor": 68,
+    "spread": 12,
+    "peak_weight": 0.35,
+    "template_basis": "great_helm",
+    "is_unique": true
   },
   "vambraces_of_achilles": {
     "name": "Vambraces of Achilles",
@@ -3098,7 +3158,7 @@
       195,
       150
     ],
-    "weight": 2.0,
+    "weight": 3.0,
     "min_level": 55,
     "slot": "arms",
     "tier": 5,
@@ -3121,7 +3181,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women — farmers, shepherds, dancers — as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them."
+    "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women — farmers, shepherds, dancers — as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them.",
+    "max_enchant": 1,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "plate_vambraces",
+    "is_unique": true
   },
   "gauntlets_of_mars": {
     "name": "Gauntlets of Mars",
@@ -3131,7 +3197,7 @@
       80,
       60
     ],
-    "weight": 2.5,
+    "weight": 2.0,
     "min_level": 55,
     "slot": "hands",
     "tier": 5,
@@ -3153,7 +3219,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Mars was the second most worshipped god in Rome after Jupiter. Unlike Ares, his Greek equivalent, he was not merely the god of war but of agriculture and the protection of boundaries — the army that defends fields is the same army that works them. His priests carried sacred shields believed to have fallen from heaven and danced with them in procession every March. The month is named for him. So is Tuesday, through Tiwaz/Tyr."
+    "lore": "Mars was the second most worshipped god in Rome after Jupiter. Unlike Ares, his Greek equivalent, he was not merely the god of war but of agriculture and the protection of boundaries — the army that defends fields is the same army that works them. His priests carried sacred shields believed to have fallen from heaven and danced with them in procession every March. The month is named for him. So is Tuesday, through Tiwaz/Tyr.",
+    "max_enchant": 1,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "plate_gauntlets",
+    "is_unique": true
   },
   "greaves_of_hermes": {
     "name": "Greaves of Hermes",
@@ -3168,7 +3240,7 @@
     "slot": "feet",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -3185,7 +3257,13 @@
       "81-100": 2
     },
     "value": 7000,
-    "lore": "Hermes' winged sandals — the Talaria — were given him by his father Zeus or possibly won in trade with Perseus or possibly always his. He carried the dead to Hades in them. Perseus borrowed them for the Medusa mission along with the Helm and Kibisis bag. The wings are the most depicted element of Hermes iconography, which is interesting because Hermes himself is most notable for what he carries between places, not the speed."
+    "lore": "Hermes' winged sandals — the Talaria — were given him by his father Zeus or possibly won in trade with Perseus or possibly always his. He carried the dead to Hades in them. Perseus borrowed them for the Medusa mission along with the Helm and Kibisis bag. The wings are the most depicted element of Hermes iconography, which is interesting because Hermes himself is most notable for what he carries between places, not the speed.",
+    "max_enchant": 1,
+    "peak_floor": 58,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "leather_boots",
+    "is_unique": true
   },
   "cloak_of_the_morrigan": {
     "name": "Cloak of the Morrigan",
@@ -3218,7 +3296,13 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "The Morrigan — the Phantom Queen — appeared as a crow or raven on the battlefield and chose who lived and died. She approached Cu Chulainn three times in disguise: as a young woman, an eel, a wolf, and a heifer. He rejected and fought each of them. Before his final battle she appeared as an old woman milking a lame cow, and he drank from her and was healed without knowing it. He died anyway. She had been kind to him; he had not recognized it."
+    "lore": "The Morrigan — the Phantom Queen — appeared as a crow or raven on the battlefield and chose who lived and died. She approached Cu Chulainn three times in disguise: as a young woman, an eel, a wolf, and a heifer. He rejected and fought each of them. Before his final battle she appeared as an old woman milking a lame cow, and he drank from her and was healed without knowing it. He died anyway. She had been kind to him; he had not recognized it.",
+    "max_enchant": 2,
+    "peak_floor": 68,
+    "spread": 12,
+    "peak_weight": 0.35,
+    "template_basis": "cloak",
+    "is_unique": true
   },
   "leggings_of_enkidu": {
     "name": "Leggings of Enkidu",
@@ -3233,7 +3317,7 @@
     "slot": "legs",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 4,
+    "ac_bonus": 2,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -3251,7 +3335,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Enkidu was created by the gods as a wild man to counter Gilgamesh. He lived among animals until a temple prostitute civilised him over seven days. He then challenged Gilgamesh to single combat; they fought to a draw and became friends. The Epic of Gilgamesh is the oldest known written epic. Its central subject is not the monsters they killed together but what Gilgamesh does when Enkidu dies first."
+    "lore": "Enkidu was created by the gods as a wild man to counter Gilgamesh. He lived among animals until a temple prostitute civilised him over seven days. He then challenged Gilgamesh to single combat; they fought to a draw and became friends. The Epic of Gilgamesh is the oldest known written epic. Its central subject is not the monsters they killed together but what Gilgamesh does when Enkidu dies first.",
+    "max_enchant": 1,
+    "peak_floor": 58,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "leather_leggings",
+    "is_unique": true
   },
   "mantle_of_elijah": {
     "name": "Mantle of Elijah",
@@ -3261,12 +3351,12 @@
       120,
       80
     ],
-    "weight": 1.5,
+    "weight": 2.0,
     "min_level": 55,
     "slot": "cloak",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 5,
@@ -3283,7 +3373,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Elijah's mantle passed to Elisha when Elijah was taken to heaven in a chariot of fire. Elisha used it to part the Jordan River on his return. In Jewish tradition it represents the transfer of prophetic authority — the mantle is the office, not the man. When Elijah threw it on Elisha's shoulders without asking, Elisha left his oxen and ran after him. He was ploughing when it happened. He finished the field first."
+    "lore": "Elijah's mantle passed to Elisha when Elijah was taken to heaven in a chariot of fire. Elisha used it to part the Jordan River on his return. In Jewish tradition it represents the transfer of prophetic authority — the mantle is the office, not the man. When Elijah threw it on Elisha's shoulders without asking, Elisha left his oxen and ran after him. He was ploughing when it happened. He finished the field first.",
+    "max_enchant": 2,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "cloak",
+    "is_unique": true
   },
   "robe_of_the_magus": {
     "name": "Robe of the Magus",
@@ -3293,12 +3389,12 @@
       60,
       160
     ],
-    "weight": 1.0,
+    "weight": 2.0,
     "min_level": 55,
     "slot": "shirt",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 1,
+    "ac_bonus": 2,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 5,
@@ -3317,7 +3413,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "The Magi of the ancient Near East were not magicians in the popular sense — they were scholars of astronomy, dream interpretation, and the hidden correspondences between celestial and earthly events. The Star they followed was either a conjunction of Jupiter and Saturn, a comet, or a nova. They brought gold, frankincense, and myrrh and went home 'another way,' having been warned in a dream not to report back to Herod."
+    "lore": "The Magi of the ancient Near East were not magicians in the popular sense — they were scholars of astronomy, dream interpretation, and the hidden correspondences between celestial and earthly events. The Star they followed was either a conjunction of Jupiter and Saturn, a comet, or a nova. They brought gold, frankincense, and myrrh and went home 'another way,' having been warned in a dream not to report back to Herod.",
+    "max_enchant": 1,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "padded_shirt",
+    "is_unique": true
   },
   "boots_of_seven_leagues": {
     "name": "Boots of Seven Leagues",
@@ -3327,12 +3429,12 @@
       100,
       60
     ],
-    "weight": 1.0,
+    "weight": 1.5,
     "min_level": 40,
     "slot": "feet",
     "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 1,
+    "ac_bonus": 2,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 4,
@@ -3349,7 +3451,13 @@
     },
     "value": 7000,
     "lore": "In European folklore, seven-league boots take their wearer seven leagues — about 35 km — per step. Hop-o'-My-Thumb stole them from an ogre. Puss in Boots wore them. They appear across French, German, and Scandinavian tales with minor variation: the boots are always disproportionately large on their original owner and always fit the hero perfectly. The folklore does not explain the sizing mechanism.",
-    "onEquipStatus": "hasted"
+    "onEquipStatus": "hasted",
+    "max_enchant": 1,
+    "peak_floor": 48,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "leather_boots",
+    "is_unique": true
   },
   "brigandine_of_william_wallace": {
     "name": "Brigandine of Wallace",
@@ -3359,7 +3467,7 @@
       160,
       120
     ],
-    "weight": 5.0,
+    "weight": 30.0,
     "min_level": 50,
     "slot": "body",
     "tier": 5,
@@ -3381,7 +3489,13 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "William Wallace was not the painted barbarian of popular cinema. He was a second son of a minor noble family who became a guerrilla commander, won the Battle of Stirling Bridge by understanding terrain better than the English generals, was eventually captured, and was executed by a method the English used specifically to maximise dishonour. He gave no speech at his death. He denied nothing. The armour is real; the speeches were invented later."
+    "lore": "William Wallace was not the painted barbarian of popular cinema. He was a second son of a minor noble family who became a guerrilla commander, won the Battle of Stirling Bridge by understanding terrain better than the English generals, was eventually captured, and was executed by a method the English used specifically to maximise dishonour. He gave no speech at his death. He denied nothing. The armour is real; the speeches were invented later.",
+    "max_enchant": 3,
+    "peak_floor": 58,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "scale",
+    "is_unique": true
   },
   "cuirass_of_hannibal": {
     "name": "Cuirass of Hannibal",
@@ -3391,7 +3505,7 @@
       140,
       80
     ],
-    "weight": 7.0,
+    "weight": 20.0,
     "min_level": 55,
     "slot": "body",
     "tier": 5,
@@ -3414,7 +3528,13 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Hannibal Barca crossed the Alps with war elephants in 218 BCE and fought Rome for sixteen years on its own soil. He won every major engagement: Trebia, Trasimene, Cannae — Cannae being the most studied battle in military history, used as a model for encirclement tactics by commanders for two millennia. He never took Rome. He was eventually called home to defend Carthage, lost one battle, and died in exile. He won the tactics and lost the war. Military academies still teach him."
+    "lore": "Hannibal Barca crossed the Alps with war elephants in 218 BCE and fought Rome for sixteen years on its own soil. He won every major engagement: Trebia, Trasimene, Cannae — Cannae being the most studied battle in military history, used as a model for encirclement tactics by commanders for two millennia. He never took Rome. He was eventually called home to defend Carthage, lost one battle, and died in exile. He won the tactics and lost the war. Military academies still teach him.",
+    "max_enchant": 3,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "breastplate",
+    "is_unique": true
   },
   "nemean_pelt": {
     "name": "Nemean Lion Pelt",
@@ -3424,12 +3544,12 @@
       180,
       80
     ],
-    "weight": 12.0,
+    "weight": 15.0,
     "min_level": 9999,
     "slot": "body",
     "tier": 4,
     "material": "hide",
-    "ac_bonus": 5,
+    "ac_bonus": 6,
     "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {
@@ -3440,7 +3560,15 @@
     "enchant_bonus": 0,
     "unidentified_name": "thick golden hide",
     "lore": "The hide of the Nemean Lion, impossible to cut or pierce. Hercules used its own claws to skin it. Wearing it is like wearing the beast itself.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 3,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "hide",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_nemean"
   },
   "green_knights_plate": {
     "name": "Green Knight's Plate",
@@ -3450,12 +3578,12 @@
       180,
       80
     ],
-    "weight": 20.0,
+    "weight": 65.0,
     "min_level": 9999,
     "slot": "body",
     "tier": 5,
     "material": "enchanted plate",
-    "ac_bonus": 6,
+    "ac_bonus": 8,
     "equip_threshold": 2,
     "quiz_tier": 5,
     "damage_resistances": {
@@ -3468,7 +3596,15 @@
     "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
     "special_effect": "regen_2",
     "onEquipStatus": "life_save",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 3,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "full_plate",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_green_knight"
   },
   "serpent_scale_mail": {
     "name": "Serpent Scale Mail",
@@ -3478,12 +3614,12 @@
       160,
       100
     ],
-    "weight": 14.0,
+    "weight": 30.0,
     "min_level": 9999,
     "slot": "body",
     "tier": 4,
     "material": "scale",
-    "ac_bonus": 4,
+    "ac_bonus": 6,
     "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {
@@ -3494,7 +3630,15 @@
     "enchant_bonus": 0,
     "unidentified_name": "iridescent scale hauberk",
     "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 3,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "scale",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_serpent"
   },
   "arachne_silk_cloak": {
     "name": "Arachne's Silk Cloak",
@@ -3509,7 +3653,7 @@
     "slot": "cloak",
     "tier": 2,
     "material": "silk",
-    "ac_bonus": 1,
+    "ac_bonus": 2,
     "equip_threshold": 1,
     "quiz_tier": 2,
     "damage_resistances": {
@@ -3519,7 +3663,15 @@
     "enchant_bonus": 0,
     "unidentified_name": "shimmering silk cloak",
     "lore": "Woven by Arachne before her transformation, this cloak is lighter than air and tougher than leather against piercing weapons. It catches arrows and slows blades.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 2,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "cloak",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_arachne"
   },
   "erlking_mantle": {
     "name": "Erlking's Mantle",
@@ -3534,7 +3686,7 @@
     "slot": "cloak",
     "tier": 3,
     "material": "enchanted cloth",
-    "ac_bonus": 1,
+    "ac_bonus": 2,
     "equip_threshold": 1,
     "quiz_tier": 3,
     "damage_resistances": {},
@@ -3543,7 +3695,15 @@
     "unidentified_name": "a green forest cloak",
     "lore": "Woven from the living branches of the Erlking's forest, this cloak sharpens the senses of the wearer. Sound and sight carry further, and hidden things become easier to discern.",
     "special_effect": "per_plus_2",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 2,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "cloak",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_erlking"
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -3558,7 +3718,7 @@
     "slot": "cloak",
     "tier": 5,
     "material": "divine silk",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "equip_threshold": 1,
     "quiz_tier": 5,
     "damage_resistances": {
@@ -3569,7 +3729,15 @@
     "enchant_bonus": 0,
     "unidentified_name": "a glittering golden web",
     "lore": "Spun by Anansi himself from the thread of a thousand stories, this cloak shifts and deceives. Attacks that should land somehow miss. Traps somehow fail to trigger.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 2,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "cloak",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_anansi"
   },
   "nidhoggr_scale": {
     "name": "Níðhöggr's Scale",
@@ -3596,14 +3764,22 @@
     "enchant_bonus": 0,
     "unidentified_name": "a vast dark-green scale",
     "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 2,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "cloak",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_nidhoggr"
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",
     "slot": "head",
     "tier": 4,
     "material": "mithril",
-    "ac_bonus": 4,
+    "ac_bonus": 3,
     "enchant_bonus": 0,
     "equip_threshold": 2,
     "quiz_tier": 4,
@@ -3629,14 +3805,20 @@
       "1-27": 0,
       "28-60": 15,
       "61-100": 8
-    }
+    },
+    "max_enchant": 2,
+    "peak_floor": 35,
+    "spread": 12,
+    "peak_weight": 0.5,
+    "template_basis": "steel_helm",
+    "is_unique": true
   },
   "winged_sandals_of_hermes": {
     "name": "Winged Sandals of Hermes",
     "slot": "feet",
     "tier": 4,
     "material": "gold",
-    "ac_bonus": 1,
+    "ac_bonus": 2,
     "enchant_bonus": 0,
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -3662,7 +3844,13 @@
       "1-24": 0,
       "25-60": 12,
       "61-100": 6
-    }
+    },
+    "max_enchant": 1,
+    "peak_floor": 30,
+    "spread": 12,
+    "peak_weight": 0.5,
+    "template_basis": "leather_boots",
+    "is_unique": true
   },
   "hermes_sandals_early": {
     "name": "Hermes's Sandals",
@@ -3694,7 +3882,13 @@
       "6-20": 15,
       "21-40": 8,
       "41-100": 2
-    }
+    },
+    "max_enchant": 1,
+    "peak_floor": 10,
+    "spread": 10,
+    "peak_weight": 0.6,
+    "template_basis": "leather_boots",
+    "is_unique": true
   },
   "blindfold": {
     "name": "blindfold",
@@ -3720,7 +3914,15 @@
       "1-29": 0,
       "30-38": 8,
       "39-100": 3
-    }
+    },
+    "weight": 0.2,
+    "min_level": 30,
+    "max_enchant": 2,
+    "peak_floor": 38,
+    "spread": 10,
+    "peak_weight": 0.4,
+    "template_basis": "leather_cap",
+    "is_unique": true
   },
   "vidars_sandal": {
     "name": "Vidar's Sandal",
@@ -3730,7 +3932,7 @@
       130,
       80
     ],
-    "weight": 1.0,
+    "weight": 2.0,
     "min_level": 9999,
     "slot": "feet",
     "tier": 5,
@@ -3747,7 +3949,15 @@
     "identified": true,
     "unidentified_name": "thick leather sandal",
     "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 1,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "leather_boots",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "quest_spawn_vidar"
   },
   "trainers_cap": {
     "name": "Trainer's Cap",
@@ -3772,7 +3982,15 @@
     "unidentified_name": "red and white cap",
     "pet_regen_bonus": 2,
     "lore": "A well-worn red and white cap, its brim shaped by countless adventures. It radiates a warm, encouraging energy that invigorates companion creatures, helping them recover from wounds more quickly. The inside of the brim reads: 'I choose you.'",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 2,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "leather_cap",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "easter_egg"
   },
   "cow_kings_horns": {
     "name": "Cow King's Horns",
@@ -3799,7 +4017,15 @@
     "unidentified_name": "a crown of golden horns",
     "chain_bonus": 1,
     "lore": "The gilded horns of the Cow King, ripped from his crowned skull by a victorious adventurer. When worn, the horns channel bovine fury into every strike, granting a free chain hit before the quiz even begins — making it impossible to miss entirely. The left horn is inscribed with a single word: 'Moo.'",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "max_enchant": 2,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "leather_cap",
+    "is_unique": true,
+    "plot_locked": true,
+    "spawn_method": "boss_drop_cow_king"
   },
   "cloth_of_penelope": {
     "name": "Cloth of Penelope",
@@ -3809,7 +4035,7 @@
       200,
       160
     ],
-    "weight": 1.0,
+    "weight": 2.0,
     "min_level": 5,
     "slot": "body",
     "tier": 1,
@@ -3829,7 +4055,13 @@
       "6-20": 6,
       "21-35": 2,
       "36-100": 0
-    }
+    },
+    "max_enchant": 3,
+    "peak_floor": 10,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "padded",
+    "is_unique": true
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
@@ -3839,7 +4071,7 @@
       80,
       40
     ],
-    "weight": 2.0,
+    "weight": 1.0,
     "min_level": 22,
     "slot": "arms",
     "tier": 3,
@@ -3860,7 +4092,13 @@
       "22-40": 6,
       "41-55": 2,
       "56-100": 0
-    }
+    },
+    "max_enchant": 1,
+    "peak_floor": 27,
+    "spread": 10,
+    "peak_weight": 0.5,
+    "template_basis": "leather_bracers",
+    "is_unique": true
   },
   "cloak_of_sun_wukong": {
     "name": "Cloak of Sun Wukong",
@@ -3870,12 +4108,12 @@
       180,
       40
     ],
-    "weight": 0.5,
+    "weight": 2.0,
     "min_level": 25,
     "slot": "cloak",
     "tier": 3,
     "material": "silk",
-    "ac_bonus": 1,
+    "ac_bonus": 2,
     "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {},
@@ -3890,21 +4128,34 @@
       "25-40": 6,
       "41-55": 2,
       "56-100": 0
-    }
+    },
+    "max_enchant": 2,
+    "peak_floor": 30,
+    "spread": 10,
+    "peak_weight": 0.5,
+    "template_basis": "cloak",
+    "is_unique": true
   },
   "coat_of_cu_chulainn": {
     "name": "Coat of Cú Chulainn",
     "symbol": "[",
-    "color": [180, 50, 50],
-    "weight": 4.0,
+    "color": [
+      180,
+      50,
+      50
+    ],
+    "weight": 14.0,
     "min_level": 40,
     "slot": "body",
     "tier": 3,
     "material": "enchanted hide",
-    "ac_bonus": 3,
+    "ac_bonus": 4,
     "equip_threshold": 2,
     "quiz_tier": 3,
-    "damage_resistances": {"slash": 0.7, "blunt": 0.8},
+    "damage_resistances": {
+      "slash": 0.7,
+      "blunt": 0.8
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "berserk_trigger": true,
@@ -3918,13 +4169,23 @@
       "31-50": 1,
       "51-70": 2,
       "71-100": 1
-    }
+    },
+    "max_enchant": 3,
+    "peak_floor": 48,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "hide",
+    "is_unique": true
   },
   "babr_e_bayan": {
     "name": "Babr-e Bayan",
     "symbol": "[",
-    "color": [200, 160, 80],
-    "weight": 5.0,
+    "color": [
+      200,
+      160,
+      80
+    ],
+    "weight": 16.0,
     "min_level": 55,
     "slot": "body",
     "tier": 4,
@@ -3932,7 +4193,11 @@
     "ac_bonus": 5,
     "equip_threshold": 2,
     "quiz_tier": 4,
-    "damage_resistances": {"slash": 0.6, "pierce": 0.6, "blunt": 0.7},
+    "damage_resistances": {
+      "slash": 0.6,
+      "pierce": 0.6,
+      "blunt": 0.7
+    },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "first_hit_absorb": true,
@@ -3942,18 +4207,28 @@
       "51-70": 1,
       "71-90": 2,
       "91-100": 1
-    }
+    },
+    "max_enchant": 3,
+    "peak_floor": 63,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "hide",
+    "is_unique": true
   },
   "tarnhelm": {
     "name": "Tarnhelm",
     "symbol": "[",
-    "color": [120, 120, 140],
-    "weight": 1.5,
+    "color": [
+      120,
+      120,
+      140
+    ],
+    "weight": 2.0,
     "min_level": 50,
     "slot": "head",
     "tier": 4,
     "material": "dwarf-forged iron",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {},
@@ -3968,6 +4243,12 @@
       "41-60": 1,
       "61-80": 2,
       "81-100": 1
-    }
+    },
+    "max_enchant": 2,
+    "peak_floor": 58,
+    "spread": 12,
+    "peak_weight": 0.4,
+    "template_basis": "iron_helm",
+    "is_unique": true
   }
 }

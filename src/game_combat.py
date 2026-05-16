@@ -1342,6 +1342,24 @@ class CombatMixin:
                         unarmed=(self.player.weapon is None),
                         hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
                     )
+                    # Heavy-class cleave: hits all adjacent live monsters when
+                    # the kill happens (greatsword cleave_on_kill / great_axe
+                    # cleave_plus_bleed). Damage is half of the killing blow.
+                    cleave_dmg = kwargs.get('cleave_dmg', 0)
+                    if cleave_dmg:
+                        _w = self.player.weapon
+                        _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_plus_bleed'
+                        for _m in self.monsters:
+                            if _m.alive and _m is not monster \
+                                    and abs(_m.x - monster.x) <= 1 \
+                                    and abs(_m.y - monster.y) <= 1:
+                                _actual = _m.take_damage(cleave_dmg)
+                                if _bleed and _actual > 0:
+                                    _m.add_effect('bleeding', 3)
+                                if not _m.alive:
+                                    self._on_monster_killed(_m, chain_score=chain)
+                        self.add_message(
+                            "Your swing carries through — adjacent foes are cleaved!", 'success')
                     # Amenonuhoko: slow adjacent monsters on kill
                     w = self.player.weapon
                     if w and getattr(w, 'aoe_slow_on_kill', False):
