@@ -9,14 +9,13 @@
     "pierce"
   ],
   "chain_multipliers": [
-    0.4,
-    0.7,
+    0.5,
+    0.85,
     1.0,
-    1.3,
-    1.65,
+    1.45,
     2.0
   ],
-  "max_chain_length": 6,
+  "max_chain_length": 5,
   "damage_modifier": 1.3,
   "base_weight_lb": 5.0,
   "speed": 9,
@@ -28,7 +27,7 @@
     "exotic_metal"
   ],
   "lore_template": "A {material_name} bastard sword. Long enough for two hands, balanced enough for one in a pinch.",
-  "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 6 = 2.00\u00d7. Class mechanic: Versatile: +20% damage when wielded two-handed (no shield). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.3 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: Versatile: +20% damage when wielded two-handed (no shield). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.3 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "versatile",
   "class_mechanic_desc": "Versatile: +20% damage when wielded two-handed (no shield)."

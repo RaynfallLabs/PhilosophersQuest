@@ -25,9 +25,9 @@
     "dragon_material",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} greatsword \u2014 a weapon to clear a room with one swing, or die trying.",
-  "design_notes": "v2 chain rebalance: heavy class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 1.75\u00d7. Class mechanic: At max chain, on kill: cleave damage to one adjacent foe. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.45 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "lore_template": "A {material_name} greatsword — a weapon to clear a room with one swing, or die trying.",
+  "design_notes": "v2 chain rebalance: heavy class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 1.75×. Class mechanic: At max chain, on kill: cleave damage to one adjacent foe. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.45 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "heavy",
-  "class_mechanic": "cleave_on_kill",
+  "class_mechanic": "cleave_at_max",
   "class_mechanic_desc": "At max chain, on kill: cleave damage to one adjacent foe."
 }

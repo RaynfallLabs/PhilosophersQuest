@@ -325,44 +325,49 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             max_c = (weapon.max_chain_length
                      or len(weapon.chain_multipliers)) if weapon else 5
             at_max = chain >= max_c
-            # ---- Bleed triggers ----
-            if class_mech in ('bleed_on_chain3', 'cleave_plus_bleed') and chain >= 3:
+            # ---- ALL class-mechanic specials fire at MAX CHAIN ONLY ----
+            # (Per developer design call: chain length uniform at 5, all specials
+            # gated on max chain regardless of weapon class.)
+
+            # Bleed at max (battleaxe, great_axe via cleave_at_max_plus_bleed)
+            if class_mech in ('bleed_at_max', 'cleave_at_max_plus_bleed') and at_max:
                 monster.add_effect('bleeding', 4)
-            # ---- Stun triggers ----
-            if class_mech == 'stun_on_chain3' and chain >= 3:
-                resist_thr = min(0.95, max(0.05, monster.max_hp / 300.0))
-                if random.random() > resist_thr:
-                    monster.add_effect('paralyzed', 2)
-                    stunned = True
-            if class_mech == 'stun_knockdown_at_max' and at_max:
-                resist_thr = min(0.90, max(0.10, monster.max_hp / 250.0))
-                if random.random() > resist_thr:
-                    monster.add_effect('paralyzed', 3)
-                    stunned = True
-                knocked = True
-            if class_mech == 'stun_plus_anti_heavy':
-                resist_thr = min(0.95, max(0.05, monster.max_hp / 300.0))
-                if random.random() > resist_thr:
-                    monster.add_effect('paralyzed', 2)
-                    stunned = True
-            # ---- Backstab (dagger) ----
-            if class_mech == 'backstab':
-                # +100% damage if monster unaware (sleeping or ambush-mode pre-aware)
+
+            # Stun at max (mace, warhammer-anti-heavy variant, maul)
+            if class_mech in ('stun_at_max', 'stun_knockdown_at_max') and at_max:
+                # Maul's stun-knockdown is the harder variant (more powerful stun)
+                if class_mech == 'stun_knockdown_at_max':
+                    resist_thr = min(0.90, max(0.10, monster.max_hp / 250.0))
+                    if random.random() > resist_thr:
+                        monster.add_effect('paralyzed', 3)
+                        stunned = True
+                    knocked = True
+                else:
+                    resist_thr = min(0.95, max(0.05, monster.max_hp / 300.0))
+                    if random.random() > resist_thr:
+                        monster.add_effect('paralyzed', 2)
+                        stunned = True
+
+            # Backstab (dagger) — now requires max chain AND unaware monster
+            if class_mech == 'backstab' and at_max:
                 _unaware = (monster.has_effect('sleeping')
                             or (getattr(monster, 'ai_pattern', '') == 'ambush'
                                 and not getattr(monster, '_aware', False)))
                 if _unaware:
                     extra = monster.take_damage(actual)  # apply the same damage AGAIN
                     actual += extra
-            # ---- Disarm at max (scimitar, quarterstaff) ----
+
+            # Disarm at max (scimitar, quarterstaff's reach_disarm)
             if class_mech in ('disarm_at_max', 'reach_disarm') and at_max:
                 if random.random() < 0.30:
-                    # Approximate "disarm" by stunning for 1 turn (monsters don't have
-                    # equipped weapons we can drop in this system)
                     monster.add_effect('paralyzed', 1)
 
-        # ---- Cleave: hits all adjacent monsters when this kill happens ----
-        if monster.is_dead() and class_mech in ('cleave_on_kill', 'cleave_plus_bleed'):
+        # Cleave: max-chain kill triggers AOE to adjacent monsters
+        # (greatsword cleave_at_max / great_axe cleave_at_max_plus_bleed)
+        _cleave_mech = class_mech in ('cleave_at_max', 'cleave_at_max_plus_bleed')
+        _cleave_eligible = _cleave_mech and weapon and chain >= (
+            weapon.max_chain_length or len(weapon.chain_multipliers))
+        if monster.is_dead() and _cleave_eligible:
             cleave_dmg = max(1, int(actual * 0.5))
             # The adjacent-monster lookup happens at the caller's level (game_combat
             # has the monster list); signal via on_complete kwarg.

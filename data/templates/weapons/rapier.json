@@ -9,13 +9,12 @@
   ],
   "chain_multipliers": [
     0.2,
-    0.45,
-    0.75,
-    1.2,
-    2.0,
+    0.55,
+    1.0,
+    1.8,
     3.0
   ],
-  "max_chain_length": 6,
+  "max_chain_length": 5,
   "damage_modifier": 0.9,
   "base_weight_lb": 2.0,
   "speed": 12,
@@ -25,8 +24,8 @@
     "magical_metal",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} rapier. The duelist's blade \u2014 every thrust must count.",
-  "design_notes": "v2 chain rebalance: finesse class, 6 rungs. Midpoint rung 3 = 0.75\u00d7 (1.0\u00d7 anchor band). Peak rung 6 = 3.00\u00d7. Class mechanic: Finesse: uses DEX instead of STR for damage bonus. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.9 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "lore_template": "A {material_name} rapier. The duelist's blade — every thrust must count.",
+  "design_notes": "v2 chain rebalance: finesse class, 6 rungs. Midpoint rung 3 = 0.75× (1.0× anchor band). Peak rung 6 = 3.00×. Class mechanic: Finesse: uses DEX instead of STR for damage bonus. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.9 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "finesse",
   "class_mechanic": "finesse_dex",
   "class_mechanic_desc": "Finesse: uses DEX instead of STR for damage bonus."

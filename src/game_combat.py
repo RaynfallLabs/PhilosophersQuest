@@ -1343,12 +1343,13 @@ class CombatMixin:
                         hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
                     )
                     # Heavy-class cleave: hits all adjacent live monsters when
-                    # the kill happens (greatsword cleave_on_kill / great_axe
-                    # cleave_plus_bleed). Damage is half of the killing blow.
+                    # a MAX-CHAIN kill lands (greatsword cleave_at_max /
+                    # great_axe cleave_at_max_plus_bleed). Damage = half of the
+                    # killing blow. The chain-max gate lives in combat.py.
                     cleave_dmg = kwargs.get('cleave_dmg', 0)
                     if cleave_dmg:
                         _w = self.player.weapon
-                        _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_plus_bleed'
+                        _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_at_max_plus_bleed'
                         for _m in self.monsters:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \

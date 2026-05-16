@@ -9,13 +9,12 @@
   ],
   "chain_multipliers": [
     0.2,
-    0.45,
-    0.75,
-    1.2,
-    2.0,
+    0.55,
+    1.0,
+    1.8,
     3.0
   ],
-  "max_chain_length": 6,
+  "max_chain_length": 5,
   "damage_modifier": 1.0,
   "base_weight_lb": 3.0,
   "speed": 11,
@@ -26,8 +25,8 @@
     "dragon_material",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} scimitar \u2014 the curve catches what the straight blade misses.",
-  "design_notes": "v2 chain rebalance: finesse class, 6 rungs. Midpoint rung 3 = 0.75\u00d7 (1.0\u00d7 anchor band). Peak rung 6 = 3.00\u00d7. Class mechanic: At max chain, 30% chance to disarm the target. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.0 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "lore_template": "A {material_name} scimitar — the curve catches what the straight blade misses.",
+  "design_notes": "v2 chain rebalance: finesse class, 6 rungs. Midpoint rung 3 = 0.75× (1.0× anchor band). Peak rung 6 = 3.00×. Class mechanic: At max chain, 30% chance to disarm the target. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.0 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "finesse",
   "class_mechanic": "disarm_at_max",
   "class_mechanic_desc": "At max chain, 30% chance to disarm the target."

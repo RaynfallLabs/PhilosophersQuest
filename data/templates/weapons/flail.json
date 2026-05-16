@@ -8,14 +8,13 @@
     "blunt"
   ],
   "chain_multipliers": [
-    0.4,
-    0.7,
+    0.5,
+    0.85,
     1.0,
-    1.3,
-    1.65,
+    1.45,
     2.0
   ],
-  "max_chain_length": 6,
+  "max_chain_length": 5,
   "damage_modifier": 1.1,
   "base_weight_lb": 3.0,
   "speed": 8,
@@ -26,8 +25,8 @@
     "exotic_metal"
   ],
   "lore_template": "A {material_name} flail. Hard to wield, harder to defend against.",
-  "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 6 = 2.00\u00d7. Class mechanic: Ignores shield AC bonus \u2014 flail wraps around defenses. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.1 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: Ignores shield AC bonus — flail wraps around defenses. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.1 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "ignores_shield",
-  "class_mechanic_desc": "Ignores shield AC bonus \u2014 flail wraps around defenses."
+  "class_mechanic_desc": "Ignores shield AC bonus — flail wraps around defenses."
 }

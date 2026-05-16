@@ -9,12 +9,13 @@
     "slash"
   ],
   "chain_multipliers": [
-    0.3,
-    0.8,
+    0.2,
+    0.55,
+    1.0,
     1.8,
     3.0
   ],
-  "max_chain_length": 4,
+  "max_chain_length": 5,
   "damage_modifier": 0.7,
   "base_weight_lb": 1.0,
   "speed": 12,
@@ -25,9 +26,9 @@
     "dragon_material",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} dagger \u2014 short, quick, and honest about its purpose.",
-  "design_notes": "v2 chain rebalance: finesse class, 4 rungs. Midpoint rung 2 = 0.80\u00d7 (1.0\u00d7 anchor band). Peak rung 4 = 3.00\u00d7. Class mechanic: Backstab: \u00d72 damage if the target is unaware of you. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.7 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "lore_template": "A {material_name} dagger — short, quick, and honest about its purpose.",
+  "design_notes": "v2 chain rebalance: finesse class, 4 rungs. Midpoint rung 2 = 0.80× (1.0× anchor band). Peak rung 4 = 3.00×. Class mechanic: Backstab: ×2 damage if the target is unaware of you. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.7 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "finesse",
   "class_mechanic": "backstab",
-  "class_mechanic_desc": "Backstab: \u00d72 damage if the target is unaware of you."
+  "class_mechanic_desc": "Backstab: ×2 damage if the target is unaware of you."
 }

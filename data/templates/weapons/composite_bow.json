@@ -23,8 +23,8 @@
     "rare_wood",
     "exotic_organic"
   ],
-  "lore_template": "A {material_name} composite bow \u2014 horn, sinew, and wood laminated by patient hands. Mongol-make in spirit.",
-  "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 2.00\u00d7. Class mechanic: Range 7 tiles. +STR modifier added to damage (composite limb power). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.15 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "lore_template": "A {material_name} composite bow — horn, sinew, and wood laminated by patient hands. Mongol-make in spirit.",
+  "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 2.00×. Class mechanic: Range 7 tiles. +STR modifier added to damage (composite limb power). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.15 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "str_bonus_range_7",
   "class_mechanic_desc": "Range 7 tiles. +STR modifier added to damage (composite limb power)."

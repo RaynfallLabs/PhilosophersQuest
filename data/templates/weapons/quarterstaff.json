@@ -8,14 +8,13 @@
     "blunt"
   ],
   "chain_multipliers": [
-    0.4,
-    0.7,
+    0.5,
+    0.85,
     1.0,
-    1.3,
-    1.65,
+    1.45,
     2.0
   ],
-  "max_chain_length": 6,
+  "max_chain_length": 5,
   "damage_modifier": 0.85,
   "base_weight_lb": 4.0,
   "speed": 10,
@@ -25,7 +24,7 @@
     "exotic_organic"
   ],
   "lore_template": "A {material_name} quarterstaff. Friar Tuck's tool. The wandering monk's first answer.",
-  "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 6 = 2.00\u00d7. Class mechanic: Reach 1; on chain rung 4+, 15% chance to disarm. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.85 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: Reach 1; on chain rung 4+, 15% chance to disarm. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.85 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "reach_disarm",
   "class_mechanic_desc": "Reach 1; on chain rung 4+, 15% chance to disarm."

@@ -26,8 +26,8 @@
     "dragon_material",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} shortsword. The legionary's choice \u2014 small enough for tight quarters, long enough to bite.",
-  "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00\u00d7 (1.0\u00d7 anchor band). Peak rung 5 = 2.00\u00d7. Class mechanic: Clean: no special. The legionary's workhorse. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.85 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4\u00d7 higher than v1 due to midpoint=1.0\u00d7 re-anchor).",
+  "lore_template": "A {material_name} shortsword. The legionary's choice — small enough for tight quarters, long enough to bite.",
+  "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 2.00×. Class mechanic: Clean: no special. The legionary's workhorse. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.85 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "clean",
   "class_mechanic_desc": "Clean: no special. The legionary's workhorse."
