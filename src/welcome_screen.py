@@ -244,7 +244,7 @@ SECRET_BUILDS: dict[str, dict] = {
     # -- New legendary builds (multi-word full names) ------------------------
     "ada augusta byron lovelace": {
         "INT": 18, "WIS": 14, "PER": 14, "DEX": 10, "STR": 6, "CON": 8,
-        "_sprite": "player_wizard_f",
+        "_sprite": "player_lovelace",
         "_no_dagger": True,
         "_start_weapon": ("rapier", "iron"),
         "_start_accessory": "ring_intellect_amethyst",
@@ -253,7 +253,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "leonardo di ser piero da vinci": {
         "INT": 16, "WIS": 14, "PER": 16, "DEX": 12, "STR": 10, "CON": 10,
-        "_sprite": "player_wizard",
+        "_sprite": "player_da_vinci",
         "_start_weapon": ("dagger", "iron"),
         "_start_accessory": "aesops_quill",
         "_start_extra_acc": ["dreamspun_sketchbook"],
@@ -261,7 +261,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "boudicca queen of the iceni": {
         "STR": 16, "CON": 17, "DEX": 12, "INT": 9, "WIS": 11, "PER": 12,
-        "_sprite": "player_warrior_f",
+        "_sprite": "player_boudicca",
         "_no_dagger": True,
         "_start_weapon": ("longsword", "iron"),
         "_start_shield": ("light_wooden", "oak"),
@@ -269,7 +269,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "saint joan of arc maid of orleans": {
         "STR": 13, "CON": 13, "DEX": 12, "INT": 10, "WIS": 16, "PER": 14,
-        "_sprite": "player_warrior_f",
+        "_sprite": "player_joan",
         "_no_dagger": True,
         "_start_weapon": ("longsword", "iron"),
         "_start_shield": ("kite_shield", "iron"),
@@ -278,7 +278,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "sir arthur conan doyle's sherlock holmes": {
         "INT": 18, "PER": 18, "WIS": 14, "DEX": 12, "STR": 9, "CON": 9,
-        "_sprite": "player_diogenes",
+        "_sprite": "player_sherlock",
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),   # the famous walking-stick
         "_start_accessory": "ring_intellect_amethyst",
@@ -286,7 +286,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "miyamoto musashi the sword saint": {
         "STR": 14, "DEX": 18, "CON": 12, "INT": 12, "WIS": 14, "PER": 14,
-        "_sprite": "player_achilles",
+        "_sprite": "player_musashi",
         "_no_dagger": True,
         "_start_weapon": ("longsword", "iron"),
         "_start_melee": ("shortsword", "iron"),
@@ -294,7 +294,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "saint hildegard von bingen": {
         "WIS": 18, "INT": 15, "CON": 12, "PER": 12, "DEX": 9, "STR": 8,
-        "_sprite": "player_wizard_f",
+        "_sprite": "player_hildegard",
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),
         "_start_accessory": "ring_wisdom_opal",
@@ -303,7 +303,7 @@ SECRET_BUILDS: dict[str, dict] = {
     },
     "nikola tesla the wizard of menlo park": {
         "INT": 18, "CON": 13, "PER": 14, "DEX": 12, "WIS": 12, "STR": 9,
-        "_sprite": "player_wizard",
+        "_sprite": "player_tesla",
         "_start_weapon": ("dagger", "iron"),
         "_start_wand": "wand_of_magic_missile",
         "_start_accessory": "ring_intellect_amethyst",

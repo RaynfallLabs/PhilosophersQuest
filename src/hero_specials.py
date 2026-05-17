@@ -443,12 +443,13 @@ HERO_JOURNAL: dict[str, str] = {
         "run out of friends.",
     "corwin":
         "Corwin the Ranger. The shortbow was a gift from Dad on my eleventh "
-        "birthday. The Stuffie was Mom's idea. Together, they make me brave.",
+        "birthday. Charmander has been with me since the beginning. "  
+	"Together, they make me brave.",
     "cain":
         "Cain the Hunter. My twin's bow is fine, but ash flexes farther than oak. "
         "I carry the same Stuffie because some traditions are worth keeping.",
     "fianna":
-        "Fianna the Wizard, age nine. I have a wand, a sketchbook, and a "
+        "Fianna the Wizard, age Thirteen. I have a wand, a sketchbook, and a "
         "questionable plan. Magic missiles are the basis of a girl's education.",
     "fluffs":
         "Fluffs the Magnificent. Like Fianna but with a real spellbook. "
@@ -457,8 +458,7 @@ HERO_JOURNAL: dict[str, str] = {
         "Robyn. Quiet feet, quick mind, quicker tongue. Sleep arrows for the rude "
         "and Rand's Heart against the worst day. We come back. We always come back.",
     "dad":
-        "Dad has arrived. The locks are checked. The tea is on. "
-        "Everything will be fine.",
+        "Dad has arrived. Everything will be fine.",
     "titivillus":
         "[QA] Titivillus the Scribe of Errors. Press Shift+I to toggle immortality, "
         "Shift+W to warp to any floor. Document well.",

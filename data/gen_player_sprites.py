@@ -256,6 +256,58 @@ CHARS = {
         legs=(50,90,55), boots=(65,45,30),
         has_bow=True, eye_col=(60,100,60),
     ),
+
+    # ── New legendary builds (Phase 3C) ─────────────────────────────────────
+    "player_lovelace": dict(   # Ada Lovelace — Victorian programmer
+        skin=(230,200,170), hair=(60,40,30),
+        robe=(80,30,60), robe2=(50,15,40),     # burgundy dress
+        legs=(40,15,30), boots=(40,30,30),
+        eye_col=(40,40,80),
+    ),
+    "player_da_vinci": dict(   # Leonardo da Vinci — Renaissance polymath
+        skin=(215,180,140), hair=(220,210,200), # long white hair
+        robe=(150,60,40), robe2=(100,35,25),    # crimson robe
+        legs=(110,40,30), boots=(70,50,30),
+        has_beard=True,
+    ),
+    "player_boudicca": dict(   # Boudicca — Iceni warrior queen
+        skin=(220,180,150), hair=(200,80,40),   # fierce red hair
+        robe=(130,40,40), robe2=(100,30,30),    # red Celtic tunic
+        legs=(80,50,30), boots=(60,40,25),
+        cape=(140,30,30), sash=(220,180,80),    # golden torque accent
+    ),
+    "player_joan": dict(   # Joan of Arc — armored maid
+        skin=(225,190,160), hair=(180,150,100),
+        robe=(190,190,210), robe2=(220,220,230),# silver armor
+        legs=(150,150,170), boots=(80,70,50),
+        helmet=(220,220,230), plume=(180,180,210),
+        cape=(220,220,230),
+    ),
+    "player_sherlock": dict(   # Sherlock Holmes — deerstalker + tweed cape
+        skin=(220,185,155), hair=(80,50,30),
+        robe=(120,90,60), robe2=(90,65,45),     # brown tweed
+        legs=(70,55,35), boots=(50,40,30),
+        helmet=(120,90,60),                     # deerstalker hat (no plume)
+        cape=(100,80,55),                       # the famous Inverness cape
+    ),
+    "player_musashi": dict(   # Miyamoto Musashi — twin-sword swordsman
+        skin=(220,185,150), hair=(40,30,25),    # black topknot
+        robe=(60,60,80), robe2=(40,40,60),      # dark blue-grey gi
+        legs=(40,40,55), boots=(35,30,30),
+        eye_col=(30,25,20),
+    ),
+    "player_hildegard": dict(   # Hildegard von Bingen — Benedictine visionary
+        skin=(225,200,175), hair=(200,200,200), # white wimple peeking
+        robe=(40,40,55), robe2=(20,20,30),      # dark habit
+        legs=(20,20,30), boots=(50,40,30),
+        has_hood=True,
+    ),
+    "player_tesla": dict(   # Nikola Tesla — formal black suit, mustache hint
+        skin=(220,185,150), hair=(40,30,25),
+        robe=(20,20,25), robe2=(220,220,230),   # black suit, white shirt trim
+        legs=(20,20,25), boots=(20,20,25),
+        eye_col=(40,40,80),
+    ),
 }
 
 # Remove placeholder
