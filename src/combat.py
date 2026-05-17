@@ -277,6 +277,28 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if getattr(player, 'status_effects', {}).get('weakened', 0):
             base = max(1, base // 2)
 
+        # Hero passive: Will to Power — +30% damage when below 30% HP.
+        hero_passives = getattr(player, 'hero_passives', set())
+        if 'will_to_power' in hero_passives and player.max_hp > 0 and \
+                player.hp <= player.max_hp * 0.3:
+            mult *= 1.3
+        # Hero passive: Witcher Mutations — +20% damage vs monsters (all).
+        if 'witcher_mutations' in hero_passives:
+            mult *= 1.2
+        # Hero passive: Niten Ichi-Ryū (Musashi) — +15% damage when dual-wielding.
+        if 'niten_ichi_ryu' in hero_passives and \
+                getattr(player, 'ranged_weapon', None) is not None and \
+                getattr(player, 'weapon', None) is not None:
+            mult *= 1.15
+        # Hero buff: crit_buff (Joan of Arc's Standard / Ash's She-Bitch) — next attack crits
+        if getattr(player, 'status_effects', {}).get('crit_buff', 0) > 0:
+            mult *= 1.5
+            # consume one charge by reducing duration; if it reaches 0, status fades naturally
+            player.status_effects['crit_buff'] = max(0, player.status_effects['crit_buff'] - 1)
+        # Hero buff: berserk — flat +30% damage while active
+        if getattr(player, 'status_effects', {}).get('berserk', 0) > 0:
+            mult *= 1.3
+
         # BUC weapon bonus: blessed +1, cursed -1
         buc_bonus = 0
         if weapon:
@@ -284,7 +306,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if wbuc == 'blessed':
                 buc_bonus = 1
             elif wbuc == 'cursed':
-                buc_bonus = -1
+                # Hero passive: Diogenes' Cynic Detachment — cursed items don't penalize.
+                if 'cynic_detachment' not in getattr(player, 'hero_passives', set()):
+                    buc_bonus = -1
 
         # Chandrahasa: bonus damage when player HP is low
         low_hp_mult = 1.0

@@ -532,6 +532,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Reset per-floor artifact states
         self._first_hit_used = False    # Babr-e Bayan
         self._death_save_used = False   # Jade Cicada
+        self.player._elder_blood_escape_used = False   # Ciri auto-teleport
         self._quiz_reroll_used = False  # Tablet of Destinies
         self._tarnhelm_used = False     # Tarnhelm
 
@@ -921,6 +922,29 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except Exception:
             pass
         self.player.inventory.sort(key=lambda i: i.name.lower())
+
+        # -- Hero specials, passives, and journal entry --------------------
+        # Pull from src/hero_specials.py based on the secret build's name.
+        try:
+            from hero_specials import (
+                get_specials_for_build, get_passives_for_build,
+                get_journal_for_build,
+            )
+            bname = (self.secret_build or {}).get('_name', '') if self.secret_build else ''
+            # The build dict is keyed by lowercased name in SECRET_BUILDS, but
+            # _give_starting_kit doesn't have direct access to the key. The
+            # player's typed name is the source of truth.
+            key = (self.player_name or '').lower().strip()
+            actives = get_specials_for_build(key)
+            passives = get_passives_for_build(key)
+            journal = get_journal_for_build(key)
+            self.player.hero_specials = list(actives)
+            self.player.hero_passives = set(passives)
+            self.player.hero_special_cooldowns = {}
+            if journal:
+                self._log_chronicle(journal)
+        except Exception:
+            pass
 
     def _refresh_fov(self):
         self.visible = calculate_fov(
@@ -1658,6 +1682,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Decrement hack reality cooldown
         if self.player.hack_reality_cooldown > 0:
             self.player.hack_reality_cooldown -= 1
+
+        # Tick hero-special cooldowns
+        for sid in list(getattr(self.player, 'hero_special_cooldowns', {})):
+            self.player.hero_special_cooldowns[sid] -= 1
+            if self.player.hero_special_cooldowns[sid] <= 0:
+                del self.player.hero_special_cooldowns[sid]
+
+        # Elder Blood escape: triggered by player.take_damage when HP <25%; teleports.
+        if self.player.status_effects.pop('_pending_elder_escape', 0):
+            self.add_message(
+                "Elder Blood ignites! Space buckles around you...", 'success')
+            self._teleport_player()
 
         # Tick monster status effects (DOT damage, duration expiry)
         for m in self.monsters:

@@ -471,14 +471,17 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_identify_menu(self):
-        # Require the Philosopher's Shard in inventory
-        has_shard = any(
-            getattr(i, 'id', '') == 'philosophers_shard'
-            for i in self.player.inventory
-        )
-        if not has_shard:
-            self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
-            return
+        # Require the Philosopher's Shard in inventory — UNLESS the player has
+        # the Plato passive (Form of Ideas — perceives items via their ideal forms).
+        plato_pass = 'plato_no_shard' in getattr(self.player, 'hero_passives', set())
+        if not plato_pass:
+            has_shard = any(
+                getattr(i, 'id', '') == 'philosophers_shard'
+                for i in self.player.inventory
+            )
+            if not has_shard:
+                self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
+                return
         def _needs_identify(i):
             # Uniques stay in the menu until their mastery has been claimed (chain-5).
             if getattr(i, 'is_unique', False):
@@ -754,6 +757,18 @@ class MenuMixin:
             }
             powers.append(('summon_heavenly_host', _scales_def, 1, 0))
 
+        # Hero specials (Phase 3B) — actives granted by the secret build,
+        # always unlocked from game start. Show alongside quirk powers.
+        for sp in getattr(pl, 'hero_specials', []) or []:
+            _h_cd = pl.hero_special_cooldowns.get(sp['id'], 0)
+            _h_def = {
+                'label': sp['name'],
+                'desc': sp.get('desc', ''),
+                'cooldown': int(sp.get('cooldown', 250)),
+                'uses': 0,
+            }
+            powers.append((sp['id'], _h_def, 0, _h_cd))
+
         if not powers:
             self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
             return
@@ -779,8 +794,15 @@ class MenuMixin:
         """Activate a power. Returns True if it defers turn advance (e.g. targeting)."""
         from quirk_system import _ACTIVE_POWER_DEFS
         from status_effects import DEBUFFS
-        pdef = _ACTIVE_POWER_DEFS.get(pid, {})
         pl = self.player
+
+        # ----- Hero special branch (Phase 3B) -----
+        # Hero special ids are prefixed 'hero_'. They open an AI escalator_chain
+        # quiz; chain depth feeds tier_effects in hero_specials.resolve_active_special.
+        if pid.startswith('hero_'):
+            return self._activate_hero_special(pid)
+
+        pdef = _ACTIVE_POWER_DEFS.get(pid, {})
         label = pdef.get('label', pid)
         # Consume uses or set cooldown
         if pdef.get('uses', 0) > 0:
@@ -1069,6 +1091,60 @@ class MenuMixin:
             self.add_message(f"Used {label}.", 'info')
 
         return False  # turn consumed immediately
+
+    # ------------------------------------------------------------------
+    # Hero specials (Phase 3B) — chain-AI-quiz triggered effects
+    # ------------------------------------------------------------------
+
+    def _activate_hero_special(self, pid: str) -> bool:
+        """Open an AI escalator_chain quiz for a hero special; on complete,
+        dispatch to the effect resolver in hero_specials.py.
+
+        Returns True (defers turn advance until quiz callback runs).
+        """
+        pl = self.player
+        # Find the special definition by id
+        special = None
+        for sp in getattr(pl, 'hero_specials', []) or []:
+            if sp.get('id') == pid:
+                special = sp
+                break
+        if special is None:
+            self.add_message("That power is not bound to you.", 'warning')
+            return False
+        if pl.hero_special_cooldowns.get(pid, 0) > 0:
+            self.add_message(
+                f"{special['name']} is cooling down "
+                f"({pl.hero_special_cooldowns[pid]} turns).",
+                'warning')
+            return False
+        # Set cooldown immediately; the quiz outcome is not relevant to gating reuse.
+        pl.hero_special_cooldowns[pid] = int(special.get('cooldown', 250))
+        self.quiz_title = f"{special['name'].upper()} — AI"
+        from game_states import STATE_QUIZ, STATE_PLAYER
+        self.state = STATE_QUIZ
+
+        def on_complete(result, sp=special):
+            self.state = STATE_PLAYER
+            from hero_specials import resolve_active_special
+            try:
+                resolve_active_special(self, sp, int(result.score))
+            except Exception as e:
+                self.add_message(f"(Special error: {e})", 'warning')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='ai',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=pl.WIS,
+            timer_modifier=pl.get_quiz_timer_modifier(),
+            extra_seconds=pl.get_quiz_extra_seconds('ai'),
+            base_seconds=pl.get_quiz_timer('ai'),
+        )
+        return True   # defer turn advance until on_complete
 
     # ------------------------------------------------------------------
     # Pet menu  (Shift+P) — roster + actions for each companion

@@ -76,6 +76,17 @@ class Player:
         # Special build flags
         self.immortal: bool = False         # Dad: cannot die
         self.qa_tools: bool = False         # Titivillus: Shift+I immortal toggle, Shift+W floor warp
+        # Hero passives — set of strings checked at relevant hook sites in
+        # combat.py / player.py / game_menus.py. Populated by the build's
+        # entry in hero_specials.HERO_PASSIVES on game start.
+        self.hero_passives: set[str] = set()
+        # Hero active specials — list of dicts (one per active). Most heroes
+        # have 0 or 1; Ash Williams has 3. Cooldowns keyed by special id.
+        self.hero_specials: list[dict] = []
+        self.hero_special_cooldowns: dict[str, int] = {}
+        # Leonidas/Joan stand-AC and crit-buff bookkeeping
+        self._stand_ac_bonus: int = 0
+        self._stand_counter_pct: int = 0
 
         # Status effects: effect_id -> turns_remaining (or -1 for permanent)
         self.status_effects: dict[str, int] = {}
@@ -147,8 +158,29 @@ class Player:
         if damage_type == 'fire' and any(
                 getattr(i, 'id', '') == 'charmander_stuffie' for i in self.inventory):
             resistance *= 0.5
+        # Hero passive: Achilles' Demigod Hide — -25% physical damage.
+        if damage_type == 'physical' and 'demigod_hide_25' in self.hero_passives:
+            resistance *= 0.75
+        # Hero passive: Witcher Mutations — +1 to all elemental resistances
+        # (additive 0.1 multiplier reduction for known element types).
+        if damage_type in ('fire', 'cold', 'lightning', 'acid', 'poison') and \
+                'witcher_resists' in self.hero_passives:
+            resistance *= 0.85
         actual = max(0, int(amount * resistance))
         self.hp = max(0, self.hp - actual)
+        # Hero passive trigger: Ciri's Elder Blood — auto-teleport when HP drops <25%
+        # once per floor (gated by the existing _elder_blood_escape_used floor flag).
+        if 'elder_blood_escape' in self.hero_passives and \
+                self.hp > 0 and self.hp <= self.max_hp * 0.25 and \
+                not getattr(self, '_elder_blood_escape_used', False):
+            self._elder_blood_escape_used = True
+            # Signal via status_effects — main.py's tick will call _teleport_player.
+            self.status_effects['_pending_elder_escape'] = 1
+        # Hero passive trigger: Boudicca's Vengeance Wakes — auto-berserk at <50%
+        if 'vengeance_wakes' in self.hero_passives and \
+                self.hp > 0 and self.hp <= self.max_hp * 0.5 and \
+                self.status_effects.get('berserk', 0) <= 0:
+            self.status_effects['berserk'] = max(self.status_effects.get('berserk', 0), 8)
 
         # Damage wakes a sleeping player
         if actual > 0 and 'sleeping' in self.status_effects:
@@ -276,6 +308,13 @@ class Player:
         if name in DEBUFFS and duration > 0:
             if getattr(self, 'quirk_progress', {}).get('perseus_active'):
                 duration = max(1, duration // 2)
+        # Hero passive: Will to Power — immune to fear/charm when below 30% HP.
+        if name in ('feared', 'charmed') and 'will_to_power' in self.hero_passives \
+                and self.max_hp > 0 and self.hp <= self.max_hp * 0.3:
+            return False
+        # Hero buff: fear_immune (Ash's berserk chain >= 3) — block fear application.
+        if name == 'feared' and self.status_effects.get('fear_immune', 0) > 0:
+            return False
         return apply_effect(self, name, duration)
 
     def tick_effects(self) -> list:
@@ -319,7 +358,11 @@ class Player:
             m = self.unlocked_masteries.get(getattr(s, 'id', None))
             if m and m.get('kind') == 'armor_ac_bonus':
                 mastery_ac += int(m.get('value', 0))
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac
+        # Leonidas Spartan Stand: +N AC while the stand_ac status holds.
+        stand_ac = 0
+        if self.status_effects.get('stand_ac', 0) > 0:
+            stand_ac = int(getattr(self, '_stand_ac_bonus', 0))
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""

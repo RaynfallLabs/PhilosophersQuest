@@ -414,6 +414,22 @@ class Monster:
             self.take_damage(refl)
             msg = f"The {self.name}'s cold reflects back! ({refl} dmg)"
 
+        # Hero passive: Tesla's Resonant Frequency — shock-counter on melee hits.
+        if actual > 0 and atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
+                'resonant_frequency' in getattr(player, 'hero_passives', set()):
+            shock = max(1, dmg // 3)
+            self.take_damage(shock)
+            msg += f" (Resonance arcs back: {shock} shock!)"
+
+        # Hero buff: Leonidas Spartan Stand counter-strike
+        if actual > 0 and player.status_effects.get('stand_ac', 0) > 0:
+            import random as _ssr
+            cpct = getattr(player, '_stand_counter_pct', 0)
+            if cpct > 0 and _ssr.randint(1, 100) <= cpct:
+                cstrike = max(1, dmg // 2)
+                self.take_damage(cstrike)
+                msg += f" (Counter-strike: {cstrike} dmg!)"
+
         # Drain attack: reduce CON if not drain_resist
         if atk_type == 'drain' and not player.has_effect('drain_resist'):
             old_con = player.CON
