@@ -17,9 +17,24 @@ _SPECIES = {
             {'name': 'Voltpaw',      'symbol': 'Z', 'msg': '{old} surges with energy and evolves into Voltpaw!'},
             {'name': 'Thundertail',  'symbol': 'Z', 'msg': '{old} roars with lightning — it has become Thundertail!'},
         ],
-        'special_name': 'Spark Bolt',
-        'special_status': 'paralyzed',
-        'special_status_chance': 0.25,
+        'specials': [
+            {
+                'id': 'spark_bolt', 'name': 'Spark Bolt', 'unlock_stage': 1,
+                'damage_mult': 1.5, 'damage_type': 'shock',
+                'targeting': 'single', 'range': 5,
+                'status': 'paralyzed', 'status_chance': 0.50, 'status_duration': 2,
+                'cooldown': 250,
+                'desc': "Range 5 single target; 1.5x damage; 50% paralyze (2 turns).",
+            },
+            {
+                'id': 'thunder_strike', 'name': 'Thunder Strike', 'unlock_stage': 2,
+                'damage_mult': 2.0, 'damage_type': 'shock',
+                'targeting': 'aoe', 'range': 4, 'aoe_radius': 1,
+                'status': 'paralyzed', 'status_chance': 0.40, 'status_duration': 1,
+                'cooldown': 400,
+                'desc': "Range 4; AoE 3x3; 2x damage; 40% paralyze all hit.",
+            },
+        ],
     },
     'water': {
         'element': 'water',
@@ -30,9 +45,26 @@ _SPECIES = {
             {'name': 'Tideshell',    'symbol': 'S', 'msg': '{old} hardens its shell and evolves into Tideshell!'},
             {'name': 'Torrentoise',  'symbol': 'S', 'msg': '{old} unleashes a tidal surge — it has become Torrentoise!'},
         ],
-        'special_name': 'Water Jet',
-        'special_status': 'slowed',
-        'special_status_chance': 0.30,
+        'specials': [
+            {
+                'id': 'water_jet', 'name': 'Water Jet', 'unlock_stage': 1,
+                'damage_mult': 1.5, 'damage_type': 'cold',
+                'targeting': 'single', 'range': 4,
+                'status': 'slowed', 'status_chance': 0.60, 'status_duration': 3,
+                'knockback': 1,
+                'cooldown': 250,
+                'desc': "Range 4 single target; 1.5x damage; knockback; 60% slow.",
+            },
+            {
+                'id': 'tidal_crash', 'name': 'Tidal Crash', 'unlock_stage': 2,
+                'damage_mult': 1.8, 'damage_type': 'cold',
+                'targeting': 'line', 'range': 4,
+                'status': 'slowed', 'status_chance': 0.50, 'status_duration': 4,
+                'knockback': 1,
+                'cooldown': 400,
+                'desc': "Line 4 tiles; 1.8x damage; knockback + 50% slow all hit.",
+            },
+        ],
     },
     'plant': {
         'element': 'plant',
@@ -43,9 +75,24 @@ _SPECIES = {
             {'name': 'Thornback',    'symbol': 'B', 'msg': '{old} blooms with thorns and evolves into Thornback!'},
             {'name': 'Bloomsaur',    'symbol': 'B', 'msg': '{old} erupts in brilliant flowers — it has become Bloomsaur!'},
         ],
-        'special_name': 'Vine Lash',
-        'special_status': 'poisoned',
-        'special_status_chance': 0.35,
+        'specials': [
+            {
+                'id': 'vine_lash', 'name': 'Vine Lash', 'unlock_stage': 1,
+                'damage_mult': 1.5, 'damage_type': 'poison',
+                'targeting': 'single', 'range': 3,
+                'status': 'immobilized', 'status_chance': 0.70, 'status_duration': 2,
+                'cooldown': 250,
+                'desc': "Range 3 single target; 1.5x damage; 70% root (2 turns).",
+            },
+            {
+                'id': 'bloomburst', 'name': 'Bloomburst', 'unlock_stage': 2,
+                'damage_mult': 0.4, 'damage_type': 'poison',
+                'targeting': 'aoe', 'range': 0, 'aoe_radius': 2,
+                'status': 'poisoned', 'status_chance': 1.0, 'status_duration': 5,
+                'cooldown': 400,
+                'desc': "Pet-centered AoE radius 2; small damage; ALWAYS poisons (5 turns).",
+            },
+        ],
     },
     'fire': {
         'element': 'fire',
@@ -56,9 +103,24 @@ _SPECIES = {
             {'name': 'Flamescale',   'symbol': 'E', 'msg': '{old} spreads fiery wings and evolves into Flamescale!'},
             {'name': 'Infernodrake', 'symbol': 'E', 'msg': '{old} roars with infernal power — it has become Infernodrake!'},
         ],
-        'special_name': 'Flame Breath',
-        'special_status': 'burning',
-        'special_status_chance': 0.30,
+        'specials': [
+            {
+                'id': 'flame_breath', 'name': 'Flame Breath', 'unlock_stage': 1,
+                'damage_mult': 1.5, 'damage_type': 'fire',
+                'targeting': 'cone', 'range': 3,
+                'status': 'burning', 'status_chance': 0.50, 'status_duration': 3,
+                'cooldown': 250,
+                'desc': "Cone 3 tiles forward; 1.5x damage; 50% burn (3 turns).",
+            },
+            {
+                'id': 'inferno_pillar', 'name': 'Inferno Pillar', 'unlock_stage': 2,
+                'damage_mult': 2.5, 'damage_type': 'fire',
+                'targeting': 'aoe', 'range': 5, 'aoe_radius': 1,
+                'status': 'burning', 'status_chance': 0.75, 'status_duration': 4,
+                'cooldown': 400,
+                'desc': "Range 5; AoE 3x3; 2.5x damage center; 75% burn (4 turns).",
+            },
+        ],
     },
 }
 
@@ -86,7 +148,6 @@ class Pet:
         self.x = x
         self.y = y
         self.alive = True
-        self._special_cooldown = 0  # turns until special attack ready
         self._regen_timer = 0       # ticks toward HP regen
         self._passive_xp_timer = 0  # ticks toward next passive XP grain
         # Player-given nickname (set via the naming popup on hatch). Empty
@@ -94,6 +155,15 @@ class Pet:
         self.nickname: str = ''
         # Lifetime kill counter (chronicle / future achievements).
         self.kills_count: int = 0
+        # Per-special cooldown tracking; key = special_id, value = turns remaining.
+        # Initialized empty; populated as specials unlock + are used.
+        self._special_cooldowns: dict[str, int] = {}
+        # AI command: 'return' (default — follow player + attack), 'stay' (hold
+        # position, attack adjacent only), 'wander' (roam aggressively within
+        # 8 tiles; don't auto-follow player).
+        self.command: str = 'return'
+        # Floor on which this pet last received a "pet" interaction (once-per-floor cooldown).
+        self.last_pet_floor: int = -1
 
         # Stats computed from level
         self.max_hp = self._calc_max_hp()
@@ -224,15 +294,63 @@ class Pet:
         mult = 0.5 + min(0.7, quiz_accuracy * 0.7)
         return max(1, int(self.base_damage * 1.5 * mult))
 
-    def can_use_special(self) -> bool:
-        return self._special_cooldown <= 0
+    def available_specials(self) -> list[dict]:
+        """Return the specials unlocked at the pet's current evolution stage.
 
-    def use_special(self):
-        self._special_cooldown = 8
+        unlock_stage 1 = available at stage 1 (level >= _EVOLVE_1);
+        unlock_stage 2 = available at stage 2 (level >= _EVOLVE_2).
+        Stage 0 pets (pre-evolution) have no specials.
+        """
+        specials = self.species.get('specials', [])
+        return [s for s in specials if s.get('unlock_stage', 1) <= self.stage]
+
+    def special_cooldown(self, special_id: str) -> int:
+        """Turns remaining until the named special is ready (0 = ready)."""
+        return self._special_cooldowns.get(special_id, 0)
+
+    def can_use_special(self, special_id: str | None = None) -> bool:
+        """True if `special_id` is unlocked AND its cooldown is 0.
+
+        Legacy compatibility: calling without an id returns True iff ANY
+        unlocked special is ready (used by Phase-1 AI code that didn't
+        target a specific attack).
+        """
+        avail = self.available_specials()
+        if not avail:
+            return False
+        if special_id is None:
+            return any(self.special_cooldown(s['id']) == 0 for s in avail)
+        return (any(s['id'] == special_id for s in avail)
+                and self.special_cooldown(special_id) == 0)
+
+    def use_special(self, special_id: str | None = None):
+        """Mark a special as just-used; sets its cooldown from the species data.
+
+        If `special_id` is None, applies to the first available special.
+        """
+        avail = self.available_specials()
+        if not avail:
+            return
+        target = None
+        if special_id is None:
+            target = avail[0]
+        else:
+            for s in avail:
+                if s['id'] == special_id:
+                    target = s
+                    break
+        if target is None:
+            return
+        self._special_cooldowns[target['id']] = int(target.get('cooldown', 250))
 
     def tick_cooldown(self):
-        if self._special_cooldown > 0:
-            self._special_cooldown -= 1
+        """Decrement every active cooldown by 1; remove zero/negative entries."""
+        if not self._special_cooldowns:
+            return
+        for sid in list(self._special_cooldowns):
+            self._special_cooldowns[sid] -= 1
+            if self._special_cooldowns[sid] <= 0:
+                del self._special_cooldowns[sid]
 
     # --- HP Regen ------------------------------------------------------------
 
@@ -261,9 +379,14 @@ class Pet:
     # --- AI ------------------------------------------------------------------
 
     def take_turn(self, player, dungeon, monsters, pets, ground_items=None) -> tuple[str, object] | None:
-        """
-        Pet AI turn. Returns (action_type, target) or None.
-        action_type: 'attack', 'special', or None (just moved/idle).
+        """Pet AI turn. Returns (action_type, target) or None.
+
+        action_type is only ever 'attack' here; specials are player-triggered
+        via the pet menu (Shift+P) post-2026-05-17. The command field
+        controls movement behavior:
+          'return' - follow player; engage enemies within 4 tiles (default)
+          'stay'   - hold position; only attack adjacent enemies
+          'wander' - aggressive: engage enemies within 8 tiles; don't auto-follow
         """
         if not self.alive:
             return None
@@ -279,22 +402,29 @@ class Pet:
                 nearest = m
                 nearest_dist = d
 
-        # Adjacent enemy: attack
+        # Adjacent enemy: always melee-attack regardless of command.
         if nearest and nearest_dist <= 1:
-            if self.can_use_special():
-                return ('special', nearest)
             return ('attack', nearest)
 
-        # Enemy within 4 tiles: move toward it
+        cmd = getattr(self, 'command', 'return')
+
+        # Stay: don't move from current tile. Only attack adjacent (handled above).
+        if cmd == 'stay':
+            return None
+
+        # Wander: engage within 8 tiles, don't auto-follow player.
+        if cmd == 'wander':
+            if nearest and nearest_dist <= 8:
+                self._move_toward(nearest.x, nearest.y, dungeon, monsters, pets, player, ground_items)
+            return None
+
+        # Default 'return': enemy within 4 tiles → engage; otherwise follow player.
         if nearest and nearest_dist <= 4:
             self._move_toward(nearest.x, nearest.y, dungeon, monsters, pets, player, ground_items)
             return None
-
-        # Otherwise: follow player (stay within 2 tiles)
         pdist = max(abs(self.x - player.x), abs(self.y - player.y))
         if pdist > 2:
             self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
-
         return None
 
     def _move_toward(self, tx, ty, dungeon, monsters, pets, player, ground_items=None):

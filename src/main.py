@@ -158,6 +158,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._observe_targeting = False    # True when using O-key observe
         self._wand_targeting    = False    # True when aiming a combat wand
         self._pending_wand      = None     # Wand being aimed
+        self._pet_special_targeting = False     # True when aiming a pet's special
+        self._pending_pet_special = None        # Special-attack dict being aimed
+        self._pending_pet_special_pet = None    # Pet that will execute the special
         self._throw_potion      = None     # Potion being thrown
         self._throw_reach       = 0        # Throw range based on STR
         # Map view toggle: 'full' = fit entire dungeon, 'close' = scrolling close-up

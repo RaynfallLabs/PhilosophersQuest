@@ -370,6 +370,19 @@ class CombatMixin:
                 self.add_message("The sphere shatters but there is no room for a creature!", 'warning')
                 return
 
+        # Bound sphere: spawn the previously-recalled pet with state intact.
+        bound = getattr(sphere, 'bound_pet', None)
+        if bound is not None:
+            bound.x, bound.y = spawn_x, spawn_y
+            bound.alive = True
+            self.pets.append(bound)
+            self.add_message(
+                f"{bound.name} bursts from the sphere — welcome back!", 'success')
+            _snd.play('player_healed')
+            self._log_chronicle(
+                f"Recalled {bound.name} from the sphere. The bond holds.")
+            return
+
         species = random_pet_species()
         pet = Pet(species, spawn_x, spawn_y)
         # Late-pickup catch-up: pets hatched deeper get an initial XP grant
@@ -1702,6 +1715,132 @@ class CombatMixin:
     # Pet turns
     # ------------------------------------------------------------------
 
+    def _begin_pet_special_targeting(self, pet, special: dict):
+        """Open targeting for a player-triggered pet special.
+
+        The cursor starts on the pet's current tile. Confirm with ENTER/SPACE/F/S.
+        Targeting envelope is enforced at resolution time, not movement time
+        (cursor can roam, but invalid confirms produce a warning).
+        """
+        from game_states import STATE_TARGET, STATE_PLAYER
+        self._pending_pet_special = special
+        self._pending_pet_special_pet = pet
+        self._pet_special_targeting = True
+        # Clear other targeting flags
+        self._throw_targeting = False
+        self._observe_targeting = False
+        self._wand_targeting = False
+        self._melee_targeting = False
+        self._power_targeting = False
+        # Start cursor on the pet, then snap to nearest visible enemy within
+        # the special's range to make the common case one-keystroke.
+        self.target_cursor_x = pet.x
+        self.target_cursor_y = pet.y
+        self._target_candidates = []
+        self._target_idx = 0
+        rng = int(special.get('range', 5))
+        for m in self.monsters:
+            if not m.alive:
+                continue
+            if (m.x, m.y) not in self.visible:
+                continue
+            if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= rng:
+                self._target_candidates.append(m)
+        if self._target_candidates:
+            # Sort by distance from pet
+            self._target_candidates.sort(
+                key=lambda m: max(abs(m.x - pet.x), abs(m.y - pet.y)))
+            self.target_cursor_x = self._target_candidates[0].x
+            self.target_cursor_y = self._target_candidates[0].y
+        self.state = STATE_TARGET
+        _ = STATE_PLAYER  # silence unused-import linter; STATE_TARGET is the active one
+
+    def _confirm_pet_special_target(self):
+        """Resolve a pet special at the cursor position. Validates range."""
+        from game_states import STATE_PLAYER
+        pet = self._pending_pet_special_pet
+        special = self._pending_pet_special
+        # Clear targeting state regardless of outcome
+        self._pet_special_targeting = False
+        self._pending_pet_special = None
+        self._pending_pet_special_pet = None
+        if pet is None or special is None or not pet.alive:
+            self.state = STATE_PLAYER
+            return
+        tx, ty = self.target_cursor_x, self.target_cursor_y
+        rng = int(special.get('range', 5))
+        # Targeting is centered on the PET, not the player.
+        if max(abs(tx - pet.x), abs(ty - pet.y)) > rng:
+            self.add_message(
+                f"{pet.name} cannot reach that distance with {special['name']}.",
+                'warning')
+            self.state = STATE_PLAYER
+            return
+        self._resolve_pet_special(pet, special, tx, ty)
+        pet.use_special(special['id'])
+        self.state = STATE_PLAYER
+        self._advance_turn()
+
+    def _resolve_pet_special(self, pet, special: dict, tx: int, ty: int):
+        """Apply a pet special's effects (damage + status) per targeting mode."""
+        import random as _rng
+        targeting = special.get('targeting', 'single')
+        base_dmg = pet.base_damage
+        dmg_mult = float(special.get('damage_mult', 1.5))
+        status = special.get('status')
+        status_chance = float(special.get('status_chance', 0.0))
+        status_duration = int(special.get('status_duration', 3))
+
+        def _apply_to(m):
+            if not m.alive:
+                return
+            dmg = max(1, int(base_dmg * dmg_mult))
+            pre_max = m.max_hp
+            m.take_damage(dmg)
+            if m.alive and status and _rng.random() < status_chance:
+                cur = m.status_effects.get(status, 0)
+                m.status_effects[status] = max(cur, status_duration)
+            if not m.alive:
+                for k_msg in pet.gain_xp_from_kill(pre_max):
+                    self.add_message(k_msg, 'success')
+                self._on_monster_killed(m)
+
+        affected = []
+        if targeting == 'single':
+            for m in self.monsters:
+                if m.alive and m.x == tx and m.y == ty:
+                    affected.append(m)
+                    break
+        elif targeting == 'aoe':
+            radius = int(special.get('aoe_radius', 1))
+            for m in self.monsters:
+                if m.alive and max(abs(m.x - tx), abs(m.y - ty)) <= radius:
+                    affected.append(m)
+        elif targeting == 'cone':
+            # Cone from pet toward (tx, ty), max range = special's range.
+            from combat import get_cone_tiles
+            cone = get_cone_tiles(pet.x, pet.y, tx, ty,
+                                  max_range=int(special.get('range', 3)))
+            for m in self.monsters:
+                if m.alive and (m.x, m.y) in cone:
+                    affected.append(m)
+        elif targeting == 'line':
+            from combat import get_line_tiles
+            line = get_line_tiles(pet.x, pet.y, tx, ty)
+            # Drop the pet's own tile from the line
+            for (lx, ly) in line[1:]:
+                for m in self.monsters:
+                    if m.alive and m.x == lx and m.y == ly and m not in affected:
+                        affected.append(m)
+
+        self.add_message(
+            f"{pet.name} unleashes {special['name']}!", 'success')
+        for m in affected:
+            _apply_to(m)
+        if not affected:
+            self.add_message(
+                f"The {special['name']} dissipates harmlessly.", 'info')
+
     def _do_pet_turns(self):
         """Process pet AI, XP, regen, cooldowns, and monster attacks on pets."""
         if not self.pets:
@@ -1730,26 +1869,7 @@ class CombatMixin:
                             self.add_message("The unicorn stamps nervously — trap sensed nearby!", 'warning')
                     continue
                 target = result[1] if len(result) > 1 else None
-                if action == 'special' and target and target.alive:
-                    dmg = pet.get_special_damage(quiz_acc)
-                    pre_max = target.max_hp
-                    actual = target.take_damage(dmg)
-                    pet.use_special()
-                    sp = pet.species
-                    self.add_message(
-                        f"{pet.name} uses {sp['special_name']} on {target.name}! ({actual} damage)",
-                        'combat'
-                    )
-                    # Apply special status effect
-                    if random.random() < sp['special_status_chance'] and target.alive:
-                        target.status_effects[sp['special_status']] = \
-                            max(target.status_effects.get(sp['special_status'], 0), 4)
-                    if not target.alive:
-                        # Pet-kill: award scaled XP to the attacker.
-                        for k_msg in pet.gain_xp_from_kill(pre_max):
-                            self.add_message(k_msg, 'success')
-                        self._on_monster_killed(target)
-                elif action == 'attack' and target.alive:
+                if action == 'attack' and target.alive:
                     dmg = pet.get_attack_damage(quiz_acc)
                     pre_max = target.max_hp
                     actual = target.take_damage(dmg)

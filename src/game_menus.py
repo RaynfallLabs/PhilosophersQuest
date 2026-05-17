@@ -29,6 +29,7 @@ from game_states import (
     STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
     STATE_POWER_MENU, STATE_THROW_MENU,
     STATE_IDENTIFY_MODE,
+    STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
 )
 
 
@@ -1068,3 +1069,275 @@ class MenuMixin:
             self.add_message(f"Used {label}.", 'info')
 
         return False  # turn consumed immediately
+
+    # ------------------------------------------------------------------
+    # Pet menu  (Shift+P) — roster + actions for each companion
+    # ------------------------------------------------------------------
+
+    def _open_pet_menu(self):
+        """Open the pet menu showing alive companions and per-pet actions.
+
+        Hides transient pets (Dad, Sketched) — they expire fast enough that
+        menuing them is just clutter.
+        """
+        from pet_system import DadPet, SketchedPet
+        eligible = [
+            p for p in getattr(self, 'pets', [])
+            if p.alive and not isinstance(p, (DadPet, SketchedPet))
+        ]
+        if not eligible:
+            self.add_message(
+                "No companions to manage. Throw a Soul Sphere to summon one.",
+                'info')
+            return
+        self.pet_menu_items = eligible
+        if not hasattr(self, '_pet_menu_selected'):
+            self._pet_menu_selected = 0
+        if self._pet_menu_selected >= len(eligible):
+            self._pet_menu_selected = 0
+        self.state = STATE_PET_MENU
+
+    def _pet_menu_selected_pet(self):
+        items = getattr(self, 'pet_menu_items', [])
+        sel = getattr(self, '_pet_menu_selected', 0)
+        if not items:
+            return None
+        sel = max(0, min(sel, len(items) - 1))
+        return items[sel]
+
+    def _pet_menu_input(self, key: int):
+        items = getattr(self, 'pet_menu_items', [])
+        if not items:
+            self.state = STATE_PLAYER
+            return
+        # a-z: switch selection between pets in the roster
+        idx = self._AZ_KEYS.get(key)
+        if idx is not None and idx < len(items):
+            self._pet_menu_selected = idx
+            return
+        if key in (pygame.K_UP, pygame.K_k):
+            self._pet_menu_selected = max(0, self._pet_menu_selected - 1)
+            return
+        if key in (pygame.K_DOWN, pygame.K_j):
+            self._pet_menu_selected = min(len(items) - 1, self._pet_menu_selected + 1)
+            return
+        pet = self._pet_menu_selected_pet()
+        if pet is None:
+            return
+        if key == pygame.K_f:
+            self._pet_open_feed(pet)
+        elif key == pygame.K_p:
+            self._pet_action_pet(pet)
+        elif key == pygame.K_h:
+            self._pet_open_heal(pet)
+        elif key == pygame.K_r:
+            self._pet_action_recall(pet)
+        elif key == pygame.K_c:
+            self._pet_action_command_cycle(pet)
+        elif key == pygame.K_s:
+            self._pet_open_specials(pet)
+
+    # ----- Pet sub-menus: Feed ---------------------------------------------
+
+    def _pet_open_feed(self, pet):
+        from items import Food, Ingredient
+        foods = [i for i in self.player.inventory if isinstance(i, (Food, Ingredient))]
+        if not foods:
+            self.add_message(
+                f"You have no food to feed {pet.name}.", 'warning')
+            return
+        self.pet_feed_items = foods
+        self._pet_feed_target = pet
+        self.state = STATE_PET_FEED
+
+    def _pet_feed_input(self, key: int):
+        items = getattr(self, 'pet_feed_items', [])
+        pet = getattr(self, '_pet_feed_target', None)
+        if pet is None or not items:
+            self.state = STATE_PET_MENU
+            return
+        idx = self._AZ_KEYS.get(key)
+        if idx is None or idx >= len(items):
+            return
+        food = items[idx]
+        self._apply_pet_feed(pet, food)
+        self.state = STATE_PET_MENU
+
+    def _apply_pet_feed(self, pet, food):
+        """Consume one unit of `food` from inventory; restore some pet HP +
+        grant XP. XP is scaled by the food's sp_restore value so cooked
+        compound recipes are stronger pet-food than raw ingredients."""
+        food_name = getattr(food, 'name', 'food')
+        # Heal: 25% of pet max HP per feed (rounded up)
+        heal = max(1, int(pet.max_hp * 0.25))
+        before_hp = pet.hp
+        pet.hp = min(pet.max_hp, pet.hp + heal)
+        gained = pet.hp - before_hp
+        # XP: half of food's sp_restore, capped 20..80
+        sp_val = int(getattr(food, 'sp_restore', 20) or 20)
+        xp_grant = max(20, min(80, sp_val // 2))
+        msgs = pet.gain_xp(xp_grant)
+        # Consume one unit from inventory (handles stacks)
+        if getattr(food, 'count', 1) > 1:
+            food.count -= 1
+        else:
+            self.player.remove_from_inventory(food)
+        self.add_message(
+            f"You feed {pet.name} the {food_name}. (+{gained} HP, +{xp_grant} XP)",
+            'success')
+        for m in msgs:
+            self.add_message(m, 'success')
+
+    # ----- Pet sub-menus: Heal (with player's healing potions) -------------
+
+    def _pet_open_heal(self, pet):
+        from items import Potion
+        potions = [i for i in self.player.inventory
+                   if isinstance(i, Potion)
+                   and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
+                   and getattr(i, 'identified', False)]
+        if not potions:
+            self.add_message(
+                f"You have no identified healing potions to use on {pet.name}.",
+                'warning')
+            return
+        self.pet_heal_items = potions
+        self._pet_heal_target = pet
+        self.state = STATE_PET_HEAL
+
+    def _pet_heal_input(self, key: int):
+        items = getattr(self, 'pet_heal_items', [])
+        pet = getattr(self, '_pet_heal_target', None)
+        if pet is None or not items:
+            self.state = STATE_PET_MENU
+            return
+        idx = self._AZ_KEYS.get(key)
+        if idx is None or idx >= len(items):
+            return
+        potion = items[idx]
+        self._apply_pet_heal(pet, potion)
+        self.state = STATE_PET_MENU
+
+    def _apply_pet_heal(self, pet, potion):
+        from dice import roll as _roll
+        effect = getattr(potion, 'effect', 'heal')
+        if effect == 'full_heal':
+            heal = pet.max_hp
+        elif effect == 'extra_heal':
+            heal = _roll(getattr(potion, 'power', '4d8+10') or '4d8+10')
+        else:
+            heal = _roll(getattr(potion, 'power', '2d8+4') or '2d8+4')
+        before = pet.hp
+        pet.hp = min(pet.max_hp, pet.hp + int(heal))
+        gained = pet.hp - before
+        pname = getattr(potion, 'name', 'potion')
+        # Consume the potion (stackable)
+        if getattr(potion, 'count', 1) > 1:
+            potion.count -= 1
+        else:
+            self.player.remove_from_inventory(potion)
+        self.add_message(
+            f"You pour the {pname} over {pet.name}. (+{gained} HP)",
+            'success')
+
+    # ----- Pet actions: Pet / Recall / Command -----------------------------
+
+    def _pet_action_pet(self, pet):
+        """Bond-building interaction. Once per floor per pet."""
+        if pet.last_pet_floor == self.dungeon_level:
+            self.add_message(
+                f"{pet.name} has already had your attention this floor.", 'info')
+            return
+        pet.last_pet_floor = self.dungeon_level
+        msgs = pet.gain_xp(5)
+        self.add_message(
+            f"You scratch {pet.name} behind the ears. It chirrs happily. (+5 XP)",
+            'success')
+        for m in msgs:
+            self.add_message(m, 'success')
+
+    def _pet_action_recall(self, pet):
+        """Return the pet to a Soul Sphere. Requires player adjacent to the pet.
+
+        The returned sphere is BOUND — throwing it later spawns this same pet
+        with all state preserved (level, XP, nickname, kills).
+        """
+        if max(abs(pet.x - self.player.x), abs(pet.y - self.player.y)) > 1:
+            self.add_message(
+                f"You must be adjacent to {pet.name} to recall it.", 'warning')
+            return
+        from items import Artifact
+        sphere = Artifact({
+            'id': 'soul_sphere',
+            'name': f"Bound Soul Sphere ({pet.name})",
+            'symbol': 'O',
+            'color': [80, 200, 255],   # cyan tint distinguishes bound spheres
+            'item_class': 'artifact',
+            'weight': 0.5,
+            'min_level': 1,
+            'identified': True,
+            'lore': (f"A Soul Sphere humming with the bound spirit of "
+                     f"{pet.name}. Hurl it to summon them back to your side."),
+        })
+        sphere.bound_pet = pet
+        self.player.add_to_inventory(sphere)
+        # Remove the pet from the active list
+        try:
+            self.pets.remove(pet)
+        except ValueError:
+            pass
+        self.add_message(
+            f"{pet.name} dissolves into the sphere — it hums with a familiar warmth.",
+            'success')
+        # Refresh the menu items
+        self.pet_menu_items = [
+            p for p in self.pets
+            if p.alive and not getattr(p, 'is_dad', False) and not getattr(p, 'is_sketch', False)
+        ]
+        if not self.pet_menu_items:
+            self.state = STATE_PLAYER
+
+    def _pet_action_command_cycle(self, pet):
+        """Cycle the pet's AI command: return -> stay -> wander -> return."""
+        order = ['return', 'stay', 'wander']
+        cur = getattr(pet, 'command', 'return')
+        try:
+            idx = order.index(cur)
+        except ValueError:
+            idx = 0
+        new_cmd = order[(idx + 1) % len(order)]
+        pet.command = new_cmd
+        label = {'return': 'Return (follow + engage)',
+                 'stay': 'Stay (hold position)',
+                 'wander': 'Wander (aggressive roam)'}[new_cmd]
+        self.add_message(f"{pet.name}: command set to {label}.", 'info')
+
+    # ----- Pet sub-menus: Specials -----------------------------------------
+
+    def _pet_open_specials(self, pet):
+        avail = pet.available_specials()
+        if not avail:
+            self.add_message(
+                f"{pet.name} has no specials yet. Evolve it to unlock them.",
+                'info')
+            return
+        self.pet_specials_items = avail
+        self._pet_specials_target = pet
+        self.state = STATE_PET_SPECIALS
+
+    def _pet_specials_input(self, key: int):
+        items = getattr(self, 'pet_specials_items', [])
+        pet = getattr(self, '_pet_specials_target', None)
+        if pet is None or not items:
+            self.state = STATE_PET_MENU
+            return
+        idx = self._AZ_KEYS.get(key)
+        if idx is None or idx >= len(items):
+            return
+        special = items[idx]
+        if pet.special_cooldown(special['id']) > 0:
+            self.add_message(
+                f"{special['name']} is on cooldown ({pet.special_cooldown(special['id'])} turns).",
+                'warning')
+            return
+        self._begin_pet_special_targeting(pet, special)

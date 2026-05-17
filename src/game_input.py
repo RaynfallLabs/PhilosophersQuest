@@ -37,6 +37,7 @@ from game_states import (
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
+    STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
 )
 
 
@@ -83,7 +84,8 @@ class InputMixin:
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
-                              STATE_IDENTIFY_MODE):
+                              STATE_IDENTIFY_MODE,
+                              STATE_PET_MENU):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 if self.state == STATE_TARGET:
@@ -94,6 +96,9 @@ class InputMixin:
                     self._pending_wand = None
                     self._power_targeting = False
                     self._pending_power = None
+                    self._pet_special_targeting = False
+                    self._pending_pet_special = None
+                    self._pending_pet_special_pet = None
                 if self.state == STATE_IDENTIFY_MODE:
                     # Backing out of the F/B popup returns to the identify menu,
                     # not the player turn (player hasn't committed to an action yet).
@@ -117,6 +122,10 @@ class InputMixin:
                 # ESC on pet-name popup: skip naming, keep default species name.
                 self._pet_name_input(key, '')
                 return True
+            if self.state in (STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS):
+                # ESC on a pet sub-menu returns to the main pet menu.
+                self.state = STATE_PET_MENU
+                return True
             return False
 
         if self.state == STATE_PLAYER:
@@ -132,6 +141,10 @@ class InputMixin:
                 return True
             if event.unicode == '@':
                 self._open_character_sheet()
+                return True
+            if event.unicode == 'P':
+                # Shift+P opens the pet menu (lowercase p is pickup/disarm).
+                self._open_pet_menu()
                 return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
@@ -178,6 +191,14 @@ class InputMixin:
             self._xyzzy_input(key, event.unicode)
         elif self.state == STATE_PET_NAME_INPUT:
             self._pet_name_input(key, event.unicode)
+        elif self.state == STATE_PET_MENU:
+            self._pet_menu_input(key)
+        elif self.state == STATE_PET_FEED:
+            self._pet_feed_input(key)
+        elif self.state == STATE_PET_HEAL:
+            self._pet_heal_input(key)
+        elif self.state == STATE_PET_SPECIALS:
+            self._pet_specials_input(key)
         elif self.state == STATE_XYZZY_CONFIRM:
             self._xyzzy_confirm_input(key)
         elif self.state == STATE_QUIRKS:
@@ -789,9 +810,14 @@ class InputMixin:
             confirm_keys = confirm_keys + (pygame.K_z,)
         if getattr(self, '_power_targeting', False):
             confirm_keys = confirm_keys + (pygame.K_v,)
+        if getattr(self, '_pet_special_targeting', False):
+            confirm_keys = confirm_keys + (pygame.K_s,)
         if key in confirm_keys:
             if getattr(self, '_power_targeting', False):
                 self._confirm_power_target()
+                return
+            if getattr(self, '_pet_special_targeting', False):
+                self._confirm_pet_special_target()
                 return
             if self._wand_targeting:
                 self._confirm_wand_target()

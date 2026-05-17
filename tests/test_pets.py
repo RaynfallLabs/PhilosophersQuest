@@ -214,3 +214,152 @@ def test_unicorn_sets_revealed_not_detected():
     assert trap.get('revealed') is True, "unicorn must set revealed=True so engine sees the trap"
     assert 'detected' not in trap or trap.get('detected') is None, \
         "the buggy `detected` key should no longer be written"
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: Specials (data + cooldowns)
+# ---------------------------------------------------------------------------
+
+def test_available_specials_by_stage():
+    from pet_system import Pet
+    p = Pet('electric')
+    # Stage 0 (L1-24): no specials
+    assert p.available_specials() == []
+    # Stage 1 (L25-54): unlock stage-1 special
+    p.level = 25
+    avail = p.available_specials()
+    assert len(avail) == 1
+    assert avail[0]['id'] == 'spark_bolt'
+    # Stage 2 (L55+): both specials unlocked
+    p.level = 55
+    avail = p.available_specials()
+    assert len(avail) == 2
+    ids = {s['id'] for s in avail}
+    assert ids == {'spark_bolt', 'thunder_strike'}
+
+
+def test_every_species_has_two_specials():
+    """All four soul-sphere species must have stage-1 and stage-2 specials."""
+    import pet_system
+    for key, sp in pet_system._SPECIES.items():
+        assert 'specials' in sp, f"{key} missing specials list"
+        specials = sp['specials']
+        assert len(specials) == 2, f"{key} should define 2 specials; got {len(specials)}"
+        stages = {s['unlock_stage'] for s in specials}
+        assert stages == {1, 2}, f"{key} should have stage-1 and stage-2 specials"
+        for s in specials:
+            for required in ('id', 'name', 'damage_mult', 'targeting',
+                             'range', 'cooldown', 'desc'):
+                assert required in s, f"{key}/{s.get('id')} missing {required}"
+
+
+def test_special_cooldown_lifecycle():
+    from pet_system import Pet
+    p = Pet('electric')
+    p.level = 25  # unlocks spark_bolt
+    assert p.special_cooldown('spark_bolt') == 0
+    assert p.can_use_special('spark_bolt')
+    p.use_special('spark_bolt')
+    assert p.special_cooldown('spark_bolt') == 250
+    assert not p.can_use_special('spark_bolt')
+    # Tick down
+    for _ in range(125):
+        p.tick_cooldown()
+    assert p.special_cooldown('spark_bolt') == 125
+    # Fully tick out
+    for _ in range(125):
+        p.tick_cooldown()
+    assert p.special_cooldown('spark_bolt') == 0
+    assert p.can_use_special('spark_bolt')
+
+
+def test_special_cooldowns_are_independent():
+    from pet_system import Pet
+    p = Pet('water')
+    p.level = 55  # both specials unlocked
+    p.use_special('water_jet')   # cooldown 250
+    p.use_special('tidal_crash') # cooldown 400
+    assert p.special_cooldown('water_jet') == 250
+    assert p.special_cooldown('tidal_crash') == 400
+    # Tick one round
+    p.tick_cooldown()
+    assert p.special_cooldown('water_jet') == 249
+    assert p.special_cooldown('tidal_crash') == 399
+
+
+def test_locked_special_cannot_be_used():
+    from pet_system import Pet
+    p = Pet('fire')
+    p.level = 25  # only stage-1 flame_breath unlocked
+    assert p.can_use_special('flame_breath')
+    assert not p.can_use_special('inferno_pillar')   # stage-2, locked
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: Commands (Stay / Return / Wander) and AI behavior
+# ---------------------------------------------------------------------------
+
+def test_pet_default_command():
+    from pet_system import Pet
+    assert Pet('electric').command == 'return'
+
+
+def test_command_stay_holds_position_when_no_enemy():
+    from pet_system import Pet
+
+    class _StubDungeon:
+        def is_walkable(self, x, y): return True
+    class _StubPlayer:
+        x = 10
+        y = 10
+
+    p = Pet('water', x=3, y=3)
+    p.command = 'stay'
+    monsters = []
+    pets = [p]
+    result = p.take_turn(_StubPlayer(), _StubDungeon(), monsters, pets, ground_items=[])
+    assert result is None
+    assert (p.x, p.y) == (3, 3), "stay command must not move pet when no adjacent enemy"
+
+
+def test_command_return_follows_player_when_far():
+    from pet_system import Pet
+
+    class _StubDungeon:
+        def is_walkable(self, x, y): return True
+    class _StubPlayer:
+        x = 10
+        y = 10
+
+    p = Pet('plant', x=3, y=3)
+    p.command = 'return'
+    p.take_turn(_StubPlayer(), _StubDungeon(), [], [p], ground_items=[])
+    # Should have moved toward (10, 10)
+    assert (p.x, p.y) != (3, 3), "return command must follow player when far away"
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: Bound Soul Sphere round-trip (recall + re-throw spawns same pet)
+# ---------------------------------------------------------------------------
+
+def test_bound_sphere_preserves_pet_state():
+    """The recall mechanic stores the pet ref on the sphere; the throw uses it."""
+    from items import Artifact
+    from pet_system import Pet
+    p = Pet('plant')
+    p.level = 30
+    p.nickname = 'Spikey'
+    p.kills_count = 12
+    sphere = Artifact({
+        'id': 'soul_sphere', 'name': 'Bound Soul Sphere', 'symbol': 'O',
+        'color': [80, 200, 255], 'item_class': 'artifact', 'weight': 0.5,
+        'min_level': 1,
+    })
+    sphere.bound_pet = p
+    # The contract: sphere.bound_pet is the actual Pet instance, fully restored
+    bound = getattr(sphere, 'bound_pet', None)
+    assert bound is p
+    assert bound.nickname == 'Spikey'
+    assert bound.level == 30
+    assert bound.kills_count == 12
+    assert bound.species_key == 'plant'

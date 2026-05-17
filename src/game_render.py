@@ -44,6 +44,7 @@ from game_states import (
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
+    STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
 )
 
 
@@ -1081,6 +1082,17 @@ class RenderMixin:
             self._draw_identify_mode_popup()
         elif self.state == STATE_PET_NAME_INPUT:
             self._draw_pet_name_popup()
+        elif self.state == STATE_PET_MENU:
+            self._draw_pet_menu()
+        elif self.state == STATE_PET_FEED:
+            self._draw_pet_menu()
+            self._draw_pet_feed_submenu()
+        elif self.state == STATE_PET_HEAL:
+            self._draw_pet_menu()
+            self._draw_pet_heal_submenu()
+        elif self.state == STATE_PET_SPECIALS:
+            self._draw_pet_menu()
+            self._draw_pet_specials_submenu()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
         elif self.state == STATE_EAT_MENU:
@@ -2307,6 +2319,154 @@ class RenderMixin:
             font_sm=self.font_sm,
             row_style='text',
         )
+
+    def _draw_pet_menu(self):
+        """Pet roster + per-pet action rows. Shift+P opens this menu."""
+        items = getattr(self, 'pet_menu_items', [])
+        sel = getattr(self, '_pet_menu_selected', 0)
+        draw_overlay(self.screen, 190)
+        bw, bh = min(820, layout.GAME_W - 40), min(560, layout.WINDOW_H - 40)
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="COMPANIONS",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+        y = by + 56
+        if not items:
+            empty = self.font_md.render(
+                "No active companions. Throw a Soul Sphere to summon one.",
+                True, FP.BODY_TEXT)
+            self.screen.blit(empty, (bx + 30, y))
+            return
+        # Pet roster
+        for idx, pet in enumerate(items[:8]):
+            tag = self._LETTERS[idx]
+            marker = "▶" if idx == sel else " "
+            cmd = getattr(pet, 'command', 'return').upper()
+            xp_to = pet._xp_to_next() if hasattr(pet, '_xp_to_next') else 0
+            line = (f"{marker} {tag}) {pet.name}  HP {pet.hp}/{pet.max_hp}  "
+                    f"L{pet.level}  XP {pet.xp}/{xp_to}  [{cmd}]")
+            col = FP.GOLD_BRIGHT if idx == sel else FP.BODY_TEXT
+            line_surf = self.font_md.render(self._fit_text(line, self.font_md, bw - 50), True, col)
+            self.screen.blit(line_surf, (bx + 25, y))
+            y += 26
+        y += 12
+        draw_divider(self.screen, bx + 20, y, bw - 40)
+        y += 12
+        # Action rows for the selected pet
+        if 0 <= sel < len(items):
+            pet = items[sel]
+            from items import Food, Ingredient, Potion
+            food_count = sum(
+                1 for i in self.player.inventory if isinstance(i, (Food, Ingredient)))
+            potion_count = sum(
+                1 for i in self.player.inventory
+                if isinstance(i, Potion)
+                and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
+                and getattr(i, 'identified', False))
+            specials_avail = pet.available_specials() if hasattr(pet, 'available_specials') else []
+            ready = sum(1 for s in specials_avail if pet.special_cooldown(s['id']) == 0)
+            cmd_label = {'return': 'RETURN', 'stay': 'STAY', 'wander': 'WANDER'}.get(
+                getattr(pet, 'command', 'return'), 'RETURN')
+            rows = [
+                ("F", f"Feed {pet.name}  ({food_count} food in pack)"),
+                ("P", f"Pet  (+5 XP; once per floor)"),
+                ("H", f"Heal with potion  ({potion_count} healing potions)"),
+                ("R", f"Recall to Soul Sphere  (requires adjacent)"),
+                ("C", f"Command: {cmd_label}  (press to cycle)"),
+                ("S", f"Specials  ({ready} ready / {len(specials_avail)} unlocked)"),
+            ]
+            for key_label, desc in rows:
+                key_surf = self.font_md.render(f"[ {key_label} ]", True, FP.GOLD_BRIGHT)
+                desc_surf = self.font_md.render(desc, True, FP.BODY_TEXT)
+                self.screen.blit(key_surf, (bx + 30, y))
+                self.screen.blit(desc_surf, (bx + 90, y))
+                y += 28
+        hint = self.font_sm.render(
+            "a-z: select pet  |  F/P/H/R/C/S: actions  |  ESC: close",
+            True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
+
+    def _draw_pet_feed_submenu(self):
+        items = getattr(self, 'pet_feed_items', [])
+        pet = getattr(self, '_pet_feed_target', None)
+        self._draw_pet_sub_picker("FEED A FOOD ITEM", items, pet, attr='sp_restore')
+
+    def _draw_pet_heal_submenu(self):
+        items = getattr(self, 'pet_heal_items', [])
+        pet = getattr(self, '_pet_heal_target', None)
+        self._draw_pet_sub_picker("USE A HEALING POTION", items, pet, attr='effect')
+
+    def _draw_pet_specials_submenu(self):
+        items = getattr(self, 'pet_specials_items', [])
+        pet = getattr(self, '_pet_specials_target', None)
+        draw_overlay(self.screen, 200)
+        bw, bh = min(700, layout.GAME_W - 80), 320
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        title = "SPECIAL ATTACKS"
+        if pet is not None:
+            title = f"{pet.name.upper()} — SPECIAL ATTACKS"
+        draw_header_bar(self.screen, (bx, by, bw, 40),
+                        text=title,
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        y = by + 54
+        if not items:
+            msg = "No specials unlocked yet. Evolve this pet to learn them."
+            s = self.font_md.render(msg, True, FP.HINT_TEXT)
+            self.screen.blit(s, (bx + (bw - s.get_width()) // 2, y))
+            return
+        for idx, sp in enumerate(items):
+            tag = self._LETTERS[idx]
+            cd = pet.special_cooldown(sp['id']) if pet else 0
+            status = "READY" if cd == 0 else f"cd {cd}t"
+            head = f" {tag}) {sp['name']}  [{status}]"
+            col = FP.GOLD_BRIGHT if cd == 0 else FP.HINT_TEXT
+            self.screen.blit(self.font_md.render(head, True, col), (bx + 25, y))
+            y += 22
+            desc_surf = self.font_sm.render("    " + sp.get('desc', ''), True, FP.BODY_TEXT)
+            self.screen.blit(desc_surf, (bx + 25, y))
+            y += 22
+        hint = self.font_sm.render("a-z: cast (opens target)  |  ESC: back",
+                                    True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 24))
+
+    def _draw_pet_sub_picker(self, title: str, items: list, pet, attr: str):
+        """Generic sub-menu renderer for feed/heal item pickers."""
+        draw_overlay(self.screen, 200)
+        bw, bh = min(640, layout.GAME_W - 80), min(420, layout.WINDOW_H - 80)
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        full_title = title
+        if pet is not None:
+            full_title = f"{title} — {pet.name.upper()}"
+        draw_header_bar(self.screen, (bx, by, bw, 40),
+                        text=full_title,
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        y = by + 54
+        if not items:
+            msg = "Nothing applicable in your inventory."
+            s = self.font_md.render(msg, True, FP.HINT_TEXT)
+            self.screen.blit(s, (bx + (bw - s.get_width()) // 2, y))
+            return
+        for idx, it in enumerate(items[:20]):
+            tag = self._LETTERS[idx]
+            iname = self._display_name(it) if hasattr(self, '_display_name') else it.name
+            detail = ''
+            if attr == 'sp_restore':
+                sp = getattr(it, 'sp_restore', 0)
+                detail = f"  (SP {sp})" if sp else ''
+            elif attr == 'effect':
+                detail = f"  ({getattr(it, 'effect', '')})"
+            line = f" {tag}) {iname}{detail}"
+            self.screen.blit(self.font_md.render(self._fit_text(line, self.font_md, bw - 50),
+                                                  True, FP.BODY_TEXT), (bx + 25, y))
+            y += 24
+        hint = self.font_sm.render("a-z: select  |  ESC: back", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 24))
 
     def _draw_pet_name_popup(self):
         """Overlay shown when a Soul Sphere hatches. Lets the player type a nickname."""
