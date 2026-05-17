@@ -209,50 +209,52 @@ def test_disarm_resolver_chain_ladder():
         return {'type': 'bear_trap', 'damage': '1d4', 'damage_type': 'physical',
                 'message': '!', 'revealed': True}
 
-    # Chain 0: trap triggers + extra turn lost (two _advance_turn calls)
+    # Chain 0: trap fires + extra turn lost (two _advance_turn calls)
     h = _Harness()
     h.dungeon.traps[(1, 1)] = _make_trap()
     main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 0)
     assert (1, 1) not in h.dungeon.traps, "trap should have fired and been consumed"
     assert h._adv_count == 2, f"chain 0 = 2 advance_turn calls; got {h._adv_count}"
 
-    # Chain 1: trap triggers, one turn
+    # Chain 1: trap fires, one turn
     h = _Harness()
     h.dungeon.traps[(1, 1)] = _make_trap()
     main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 1)
     assert (1, 1) not in h.dungeon.traps
     assert h._adv_count == 1
 
-    # Chain 2: clean disarm
+    # Chain 2: NO CHANGE — trap stays, no trigger, one turn burned
     h = _Harness()
     h.dungeon.traps[(1, 1)] = _make_trap()
     main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 2)
-    assert (1, 1) not in h.dungeon.traps
+    assert (1, 1) in h.dungeon.traps, "chain 2 must leave the trap untouched"
+    t = h.dungeon.traps[(1, 1)]
+    assert not t.get('rewired'), "chain 2 is not a rewire"
+    assert not t.get('safe_for_player'), "chain 2 leaves the trap dangerous"
     assert h._adv_count == 1
 
-    # Chain 3: rewired, trigger_count=1
+    # Chain 3: clean disarm
     h = _Harness()
     h.dungeon.traps[(1, 1)] = _make_trap()
     main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 3)
-    t = h.dungeon.traps[(1, 1)]
-    assert t.get('rewired') is True
-    assert t.get('safe_for_player') is True
-    assert t.get('trigger_count') == 1
+    assert (1, 1) not in h.dungeon.traps
+    assert h._adv_count == 1
 
-    # Chain 4: rewired + trigger_count=2 (fires twice)
+    # Chain 4: rewired
     h = _Harness()
     h.dungeon.traps[(1, 1)] = _make_trap()
     main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 4)
     t = h.dungeon.traps[(1, 1)]
     assert t.get('rewired') is True
-    assert t.get('trigger_count') == 2
+    assert t.get('safe_for_player') is True
 
-    # Chain 5: rewired + trigger_count=2 + hint recorded
+    # Chain 5: rewired + hint recorded
     h = _Harness()
     h.dungeon.traps[(1, 1)] = _make_trap()
     main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 5)
     t = h.dungeon.traps[(1, 1)]
-    assert t.get('trigger_count') == 2
+    assert t.get('rewired') is True
+    assert t.get('safe_for_player') is True
     assert len(h._recalled_hints) >= 1, "chain 5 should grant a random hint"
 
 

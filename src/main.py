@@ -2032,10 +2032,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         AI quiz outcomes by chain depth:
           0 - trap fires on you AND you lose your next turn (panicked fumble)
           1 - trap fires on you (botched but contained — no extra turn loss)
-          2 - trap removed cleanly
-          3 - trap REWIRED: re-armed, only monsters trigger it; you walk over freely
-          4 - trap rewired AND fires TWICE on whatever monster trips it
-          5 - same as 4, plus a free random hint about the world
+          2 - no change: trap stays put but does not fire. You burned a turn.
+          3 - trap removed cleanly
+          4 - trap REWIRED: re-armed, only monsters trigger it; you walk over freely
+          5 - same as 4, plus a free random hint (you learned something about the world)
         Returns True if a quiz was started (consumed the input), False otherwise.
         """
         px, py = self.player.x, self.player.y
@@ -2101,6 +2101,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
 
         if chain == 2:
+            # No change: trap untouched, no trigger, but you burned a turn.
+            self.add_message(
+                f"You hesitate over the {tname} trap. It remains armed.", 'warning')
+            self._advance_turn()
+            return
+
+        if chain == 3:
             # Clean disarm.
             del self.dungeon.traps[pos]
             self.add_message(
@@ -2113,16 +2120,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
 
-        # Chain 3+: REWIRE the trap toward monsters.
+        # Chain 4+: REWIRE the trap toward monsters.
         trap['rewired'] = True
         trap['safe_for_player'] = True
-        trap['trigger_count'] = 2 if chain >= 4 else 1
         self.add_message(
             f"You rewire the {tname} trap! It will trigger on the next monster to cross it.",
-            'success' if chain >= 4 else 'info')
-        if chain >= 4:
-            self.add_message(
-                f"The {tname} mechanism is overcharged — it will fire twice!", 'success')
+            'success')
         if not getattr(self, '_chronicle_first_rewire', False):
             self._chronicle_first_rewire = True
             self._log_chronicle(
@@ -2134,7 +2137,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if chain >= 5:
             hint = self._random_hint_for_disarm()
             if hint:
-                self.add_message("Insight blooms in your mind:", 'success')
+                self.add_message(
+                    "As you finish, the trap's geometry reveals something true:", 'success')
                 self.add_message(f'"{hint}"', 'info')
                 if hasattr(self, '_recalled_hints'):
                     self._recalled_hints.append(hint)
@@ -2143,46 +2147,39 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _fire_trap_on_monster(self, monster, trap: dict, pos: tuple) -> None:
         """Fire a rewired trap's effects on a monster. Called when a monster
         steps onto a tile that holds a rewired trap (safe_for_player=True).
-
-        Damage and status durations are multiplied by trap['trigger_count']
-        (1 for chain-3 rewires, 2 for chain-4+ "fires twice" rewires).
         """
         from dice import roll as _dice_roll
         import random as _trng
         trap_type = trap['type']
-        triggers = max(1, int(trap.get('trigger_count', 1)))
         _snd.play('trap')
         if (pos in self.visible) or monster in self.monsters:
             self.add_message(
                 f"The rewired {trap_type.replace('_', ' ')} trap snaps on the {monster.name}!",
                 'success')
 
-        # Apply damage `triggers` times. Some traps have damage 0 (status-only).
+        # Apply damage (some traps have damage 0; those are status-only).
         dmg_str = str(trap.get('damage', '0'))
         if dmg_str and dmg_str != '0':
-            for _ in range(triggers):
-                raw = _dice_roll(dmg_str)
-                monster.take_damage(raw)
-                if not monster.alive:
-                    break
+            raw = _dice_roll(dmg_str)
+            monster.take_damage(raw)
 
         # Monster-appropriate status applications (skip player-only effects).
-        def _add(name: str, duration: int):
-            cur = monster.status_effects.get(name, 0)
-            monster.status_effects[name] = max(cur, duration * triggers)
-
         if trap_type == 'pit':
-            _add('stuck_in_pit', 3)
+            monster.status_effects['stuck_in_pit'] = max(
+                monster.status_effects.get('stuck_in_pit', 0), 3)
         elif trap_type == 'acid':
-            _add('corroding', 5)
+            monster.status_effects['corroding'] = max(
+                monster.status_effects.get('corroding', 0), 5)
         elif trap_type == 'fire':
-            _add('burning', 3)
+            monster.status_effects['burning'] = max(
+                monster.status_effects.get('burning', 0), 3)
         elif trap_type == 'sleep_gas':
-            _add('sleeping', _trng.randint(3, 8))
+            monster.status_effects['sleeping'] = max(
+                monster.status_effects.get('sleeping', 0), _trng.randint(3, 8))
         elif trap_type == 'bear_trap':
-            _add('immobilized', _trng.randint(2, 4))
+            monster.status_effects['immobilized'] = max(
+                monster.status_effects.get('immobilized', 0), _trng.randint(2, 4))
         elif trap_type == 'alarm':
-            # Alerts other monsters — harmless to the triggerer (alarms call allies)
             for m in self.monsters:
                 if m.alive and abs(m.x - pos[0]) <= 10 and abs(m.y - pos[1]) <= 10:
                     if m.ai_pattern == 'sessile':
