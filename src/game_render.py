@@ -43,6 +43,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
+    STATE_PRAY,
 )
 
 
@@ -1071,6 +1072,8 @@ class RenderMixin:
             self._draw_scroll_menu()
         elif self.state == STATE_SPELL_MENU:
             self._draw_spell_menu()
+        elif self.state == STATE_PRAY:
+            self._draw_prayer_menu()
         elif self.state == STATE_IDENTIFY_MENU:
             self._draw_identify_menu()
         elif self.state == STATE_COOK_MENU:
@@ -1873,6 +1876,50 @@ class RenderMixin:
             subtitle=f"MP: {self.player.mp}/{self.player.max_mp}",
             hint="a-z: select  |  ESC: cancel",
             border_color=FP.ARCANE_BRIGHT,
+            max_width=820,
+            center_in=(layout.GAME_W, layout.WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+        )
+
+    def _draw_prayer_menu(self):
+        """8 named prayers. Show lore description only (player extrapolates
+        intent). Greyed-out entries are gate-failed or karma-refused; the
+        reason is shown in italics on the detail line."""
+        entries = []
+        items = getattr(self, '_prayer_menu_items', [])
+        for i, entry in enumerate(items[:26]):
+            avail = entry['available']
+            name_color = FP.BODY_TEXT if avail else FP.WARNING_TEXT
+            detail = entry['lore']
+            if not avail and entry.get('gate_reason'):
+                detail = f"{entry['gate_reason']}  —  {entry['lore']}"
+            # Small icon: cross / chalice
+            class _PrayerIcon:
+                def __init__(self2, color):
+                    self2.id = 'prayer_icon'
+                    self2.color = list(color)
+                    self2.symbol = '+'
+            icon = _PrayerIcon((220, 220, 180) if avail else (120, 120, 100))
+            entries.append({
+                'name': entry['name'],
+                'detail': detail,
+                'key': self._LETTERS[i],
+                'icon': icon,
+                'name_color': name_color,
+                'detail_color': FP.BODY_TEXT if avail else (140, 140, 140),
+            })
+        karma = getattr(self, 'karma', 0)
+        subtitle = f"Karma: {karma:+d}  |  Theology quiz, escalator chain (max 8)"
+        draw_menu(
+            self.screen,
+            title="PRAYER",
+            entries=entries,
+            scroll=getattr(self, '_prayer_scroll', 0),
+            subtitle=subtitle,
+            hint="a-h: select  |  ESC: cancel",
+            border_color=(220, 200, 100),
             max_width=820,
             center_in=(layout.GAME_W, layout.WINDOW_H),
             font_md=self.font_md,

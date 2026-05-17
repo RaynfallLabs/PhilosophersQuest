@@ -36,6 +36,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
+    STATE_PRAY,
 )
 
 
@@ -146,6 +147,8 @@ class InputMixin:
             self._quaff_menu_input(key)
         elif self.state == STATE_THROW_MENU:
             self._throw_menu_input(key)
+        elif self.state == STATE_PRAY:
+            self._prayer_menu_input(key)
         elif self.state == STATE_HELP:
             self._help_input(key)
         elif self.state == STATE_LORE:

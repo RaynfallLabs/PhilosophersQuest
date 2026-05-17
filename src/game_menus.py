@@ -369,6 +369,32 @@ class MenuMixin:
         self._invoke_wand(self.wand_menu_items[idx])
 
     # ------------------------------------------------------------------
+    # Prayer menu  (pray key — theology quiz; see game_divine.PRAYERS)
+    # ------------------------------------------------------------------
+
+    def _prayer_menu_input(self, key: int):
+        """a-h selects a prayer; greyed-out (gate-failed / karma-refused)
+        prayers ignore input. ESC cancels."""
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        items = getattr(self, '_prayer_menu_items', [])
+        idx = None
+        if pygame.K_a <= key <= pygame.K_z:
+            idx = key - pygame.K_a
+        if idx is None or idx >= len(items):
+            return
+        entry = items[idx]
+        if not entry['available']:
+            # Silent: greyed-out entries don't react. The reason is on screen.
+            return
+        prayer_id = entry['id']
+        # Clear menu state and start the quiz for the chosen prayer
+        self.state = STATE_PLAYER
+        self._prayer_menu_items = []
+        self._begin_specific_prayer(prayer_id)
+
+    # ------------------------------------------------------------------
     # Spell menu  (Z key)
     # ------------------------------------------------------------------
 
