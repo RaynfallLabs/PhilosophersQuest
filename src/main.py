@@ -2212,14 +2212,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item.identified = True
                 item.id_level = max(getattr(item, 'id_level', 0), 4)
                 self.player.known_item_ids.add(item.id)
-            # Pattern Recognition (75 IDs): auto-identify lesser COMMON items at depth.
+            # Pattern Recognition (75 IDs): auto-reveal name + BUC + stats (id_level=3) on
+            # lesser COMMON items at depth. Lore (id_level=4) and mastery (id_level=5)
+            # still require studying the item via the philosophy quiz from the I-menu.
             # Uniques are preserved for the chain-5 dramatic flow.
             if 75 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
                 tier_gate = 1 + (self.dungeon_level // 30)
-                if hasattr(item, 'identified') and not item.identified and \
+                if hasattr(item, 'id_level') and item.id_level < 3 and \
                         getattr(item, 'quiz_tier', 5) <= tier_gate:
-                    item.identified = True
-                    item.id_level = 5
+                    item.id_level = 3
                     item.buc_known = True
                     self.player.known_item_ids.add(item.id)
             # Philosopher's Mantle (300 IDs): auto BUC-sense on every pickup, including uniques.

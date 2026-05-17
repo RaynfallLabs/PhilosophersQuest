@@ -482,11 +482,10 @@ class MenuMixin:
             # Uniques stay in the menu until their mastery has been claimed (chain-5).
             if getattr(i, 'is_unique', False):
                 return i.id not in self.player.unlocked_masteries
-            # Non-uniques use the atomic reveal: filter by identified flag and known-types.
-            return (
-                hasattr(i, 'identified') and not i.identified
-                and i.id not in self.player.known_item_ids
-            )
+            # Non-uniques: visible while id_level < 5 so Pattern-Recognition'd items
+            # (id_level=3 from pickup) can still be studied via the quiz to unlock
+            # lore (id_level=5). Items without id_level default to 5 (always-known).
+            return getattr(i, 'id_level', 5) < 5
 
         inv_items = [i for i in self.player.inventory if _needs_identify(i)]
         ground_items = [

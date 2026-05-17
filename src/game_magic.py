@@ -2804,15 +2804,17 @@ class MagicMixin:
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).
 
-        Sets id_level=4 (lore revealed, mastery NOT auto-claimed) — players can
-        still chain-5 a unique through the identify menu to claim its mastery.
+        Non-uniques get id_level=5 (no mastery to preserve, full reveal).
+        Uniques cap at id_level=4 — lore is shown, but the chain-5 mastery still
+        requires the player to run the philosophy chain quiz from the I-menu.
         """
         def _stone_id(it):
             if not hasattr(it, 'identified'):
                 return
             it.identified = True
             if hasattr(it, 'id_level'):
-                it.id_level = max(int(getattr(it, 'id_level', 0)), 4)
+                cap = 4 if getattr(it, 'is_unique', False) else 5
+                it.id_level = max(int(getattr(it, 'id_level', 0)), cap)
             if hasattr(it, 'buc_known'):
                 it.buc_known = True
 
