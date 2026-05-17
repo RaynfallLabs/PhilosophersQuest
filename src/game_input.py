@@ -36,7 +36,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY, STATE_IDENTIFY_MODE,
+    STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
 )
 
 
@@ -113,6 +113,10 @@ class InputMixin:
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
                 return False
+            if self.state == STATE_PET_NAME_INPUT:
+                # ESC on pet-name popup: skip naming, keep default species name.
+                self._pet_name_input(key, '')
+                return True
             return False
 
         if self.state == STATE_PLAYER:
@@ -172,6 +176,8 @@ class InputMixin:
             self.state = STATE_PLAYER   # any key dismisses hack reality overlay
         elif self.state == STATE_XYZZY_INPUT:
             self._xyzzy_input(key, event.unicode)
+        elif self.state == STATE_PET_NAME_INPUT:
+            self._pet_name_input(key, event.unicode)
         elif self.state == STATE_XYZZY_CONFIRM:
             self._xyzzy_confirm_input(key)
         elif self.state == STATE_QUIRKS:
@@ -462,6 +468,53 @@ class InputMixin:
         # Accept printable characters (max 20 chars)
         if unicode_char and len(unicode_char) == 1 and unicode_char.isprintable() and len(self._xyzzy_text) < 20:
             self._xyzzy_text += unicode_char
+
+    def _pet_name_input(self, key, unicode_char):
+        """Handle typing in the pet-naming popup that opens when a Soul Sphere hatches."""
+        pet = getattr(self, '_naming_pet', None)
+        if pet is None:
+            self.state = STATE_PLAYER
+            return
+        buf = getattr(self, '_pet_name_input_buffer', '')
+        if key == pygame.K_ESCAPE:
+            # Skip naming — pet keeps its species name as default.
+            pet.nickname = ''
+            self._log_chronicle(
+                f"A soul sphere hatched. {pet.species_name} emerged. "
+                "I'm not alone anymore."
+            )
+            self._naming_pet = None
+            self._pet_name_input_buffer = ''
+            self.state = STATE_PLAYER
+            return
+        if key == pygame.K_RETURN:
+            name = buf.strip()
+            # Empty or default-species name → no nickname (just show species).
+            if name and name.lower() != pet.species_name.lower():
+                pet.nickname = name
+                self.add_message(
+                    f"You name your new companion {name} the {pet.species_name}!",
+                    'success')
+                self._log_chronicle(
+                    f"A soul sphere hatched. I named the {pet.species_name} '{name}'. "
+                    "I'm not alone anymore."
+                )
+            else:
+                pet.nickname = ''
+                self._log_chronicle(
+                    f"A soul sphere hatched. {pet.species_name} emerged. "
+                    "I'm not alone anymore."
+                )
+            self._naming_pet = None
+            self._pet_name_input_buffer = ''
+            self.state = STATE_PLAYER
+            return
+        if key == pygame.K_BACKSPACE:
+            self._pet_name_input_buffer = buf[:-1]
+            return
+        # Printable characters, capped at 16 chars to keep names readable.
+        if unicode_char and len(unicode_char) == 1 and unicode_char.isprintable() and len(buf) < 16:
+            self._pet_name_input_buffer = buf + unicode_char
 
     def _xyzzy_confirm_input(self, key):
         """Handle the Yes/No confirmation dialog."""

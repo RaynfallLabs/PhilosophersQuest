@@ -372,10 +372,17 @@ class CombatMixin:
 
         species = random_pet_species()
         pet = Pet(species, spawn_x, spawn_y)
+        # Late-pickup catch-up: pets hatched deeper get an initial XP grant
+        # so they're not uselessly underleveled relative to the floor's enemies.
+        pet.apply_late_pickup_bonus(self.dungeon_level)
         self.pets.append(pet)
         self.add_message(pet.species['stages'][0]['msg'], 'success')
         _snd.play('player_healed')
-        self._log_chronicle(f"A soul sphere hatched. {pet.name} emerged. I'm not alone anymore.")
+        # Open the naming popup so the player can give this companion a nickname.
+        self._naming_pet = pet
+        self._pet_name_input_buffer = pet.species_name   # default: species name
+        from game_states import STATE_PET_NAME_INPUT
+        self.state = STATE_PET_NAME_INPUT
 
     def _throw_unusual_sphere(self, sphere, hit_monster, tx: int, ty: int):
         """Throw the Unusual Soul Sphere — summons Dad for 5 turns."""
@@ -1725,6 +1732,7 @@ class CombatMixin:
                 target = result[1] if len(result) > 1 else None
                 if action == 'special' and target and target.alive:
                     dmg = pet.get_special_damage(quiz_acc)
+                    pre_max = target.max_hp
                     actual = target.take_damage(dmg)
                     pet.use_special()
                     sp = pet.species
@@ -1737,9 +1745,13 @@ class CombatMixin:
                         target.status_effects[sp['special_status']] = \
                             max(target.status_effects.get(sp['special_status'], 0), 4)
                     if not target.alive:
+                        # Pet-kill: award scaled XP to the attacker.
+                        for k_msg in pet.gain_xp_from_kill(pre_max):
+                            self.add_message(k_msg, 'success')
                         self._on_monster_killed(target)
                 elif action == 'attack' and target.alive:
                     dmg = pet.get_attack_damage(quiz_acc)
+                    pre_max = target.max_hp
                     actual = target.take_damage(dmg)
                     if getattr(pet, 'is_dad', False):
                         self.add_message(
@@ -1749,11 +1761,12 @@ class CombatMixin:
                         self.add_message(
                             f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat')
                     if not target.alive:
+                        for k_msg in pet.gain_xp_from_kill(pre_max):
+                            self.add_message(k_msg, 'success')
                         self._on_monster_killed(target)
 
-            # XP, regen, cooldown
-            msgs = pet.gain_xp(1)
-            for msg in msgs:
+            # Passive XP (slow trickle, every 3rd turn) + regen + cooldown
+            for msg in pet.gain_xp_passive():
                 self.add_message(msg, 'success')
             # Trainer's Cap: pet_regen_bonus from head armor
             _prb = 0

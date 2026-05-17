@@ -62,12 +62,17 @@ _SPECIES = {
     },
 }
 
-# Evolution thresholds
-_EVOLVE_1 = 33
-_EVOLVE_2 = 66
+# Evolution thresholds — major Pokémon-style milestones.
+# Stage 1 (L25): ~20 floors of dedicated bonding to achieve.
+# Stage 2 (L55): late-run / endgame achievement; rare for casual runs.
+_EVOLVE_1 = 25
+_EVOLVE_2 = 55
 
-# XP required to reach next level = current_level * 2
-# Total XP to 100 ≈ 9900 turns; ~30 turns/floor × 100 floors = reasonable
+# XP curve: xp_to_next = level * _XP_PER_LEVEL. Total to L25 ≈ 6,000 XP,
+# total to L55 ≈ 30,000 XP. Combined with passive (1/3 turns) + kill XP
+# scaling with monster max_hp, stage 1 lands around floor 20-25 of
+# pet's life, stage 2 only with deep play.
+_XP_PER_LEVEL = 20
 
 
 class Pet:
@@ -83,6 +88,12 @@ class Pet:
         self.alive = True
         self._special_cooldown = 0  # turns until special attack ready
         self._regen_timer = 0       # ticks toward HP regen
+        self._passive_xp_timer = 0  # ticks toward next passive XP grain
+        # Player-given nickname (set via the naming popup on hatch). Empty
+        # string means use the species name directly.
+        self.nickname: str = ''
+        # Lifetime kill counter (chronicle / future achievements).
+        self.kills_count: int = 0
 
         # Stats computed from level
         self.max_hp = self._calc_max_hp()
@@ -117,8 +128,18 @@ class Pet:
         return 0
 
     @property
-    def name(self) -> str:
+    def species_name(self) -> str:
+        """The species' name at the current evolution stage."""
         return self.species['stages'][self.stage]['name']
+
+    @property
+    def name(self) -> str:
+        """Display name. If the player has given a nickname, shows
+        'Nickname the Species'; otherwise just the species name."""
+        sp = self.species_name
+        if self.nickname:
+            return f"{self.nickname} the {sp}"
+        return sp
 
     @property
     def symbol(self) -> str:
@@ -139,20 +160,57 @@ class Pet:
         while self.xp >= self._xp_to_next() and self.level < 100:
             self.xp -= self._xp_to_next()
             old_stage = self.stage
-            old_name = self.name
+            old_species = self.species_name
             self.level += 1
             self._refresh_stats()
             new_stage = self.stage
             if new_stage > old_stage:
-                # Evolution!
-                msg = self.species['stages'][new_stage]['msg'].format(old=old_name)
+                # Evolution! Use species-name placeholder; the message
+                # template has {old} for the prior form.
+                new_species = self.species_name
+                if self.nickname:
+                    msg = (f"{self.nickname} the {old_species} grows brighter — "
+                           f"it has evolved into {new_species}!")
+                else:
+                    msg = self.species['stages'][new_stage]['msg'].format(old=old_species)
                 messages.append(msg)
             elif self.level % 10 == 0:
                 messages.append(f"{self.name} has reached level {self.level}!")
         return messages
 
+    def gain_xp_passive(self) -> list[str]:
+        """Passive XP — call once per pet turn. Awards 1 XP every 3rd call."""
+        if not self.alive:
+            return []
+        self._passive_xp_timer += 1
+        if self._passive_xp_timer >= 3:
+            self._passive_xp_timer = 0
+            return self.gain_xp(1)
+        return []
+
+    def gain_xp_from_kill(self, monster_max_hp: int) -> list[str]:
+        """Award XP for a kill, scaled by monster strength.
+
+        Formula: 3 + max_hp // 10 (so a 10-HP F1 monster grants 4 XP; a
+        200-HP F90 monster grants 23 XP). Combined with passive ticks and
+        late-pickup catch-up, pets level steadily through normal play.
+        """
+        self.kills_count += 1
+        xp = 3 + max(0, int(monster_max_hp)) // 10
+        return self.gain_xp(xp)
+
+    def apply_late_pickup_bonus(self, floor: int) -> None:
+        """One-time XP grant for pets hatched on deeper floors so they
+        don't start uselessly underpowered. Capped just below stage 1
+        evolution (level 25) so the late pet still has to EARN its first
+        big milestone — but it won't take 20 floors of catch-up to do so.
+        """
+        bonus = min(max(0, int(floor)) * 50, 4000)
+        if bonus > 0:
+            self.gain_xp(bonus)
+
     def _xp_to_next(self) -> int:
-        return self.level * 2
+        return self.level * _XP_PER_LEVEL
 
     # --- Combat --------------------------------------------------------------
 
@@ -586,12 +644,14 @@ class UnicornPet(Pet):
                 player.status_effects.pop(removed, None)
                 messages.append(('cleanse', removed))
 
-        # Detect traps within 3 tiles
+        # Detect traps within 3 tiles. Setting `revealed=True` is what the
+        # rest of the engine uses (renderer, _check_floor_trap, _try_disarm_trap).
+        # Pre-2026-05-17 this set `detected` which was unused — silent no-op bug.
         if hasattr(dungeon, 'traps'):
             for (tx, ty), trap in dungeon.traps.items():
                 if abs(tx - self.x) <= 3 and abs(ty - self.y) <= 3:
-                    if not trap.get('detected', False):
-                        trap['detected'] = True
+                    if not trap.get('revealed', False):
+                        trap['revealed'] = True
                         messages.append(('trap', tx, ty))
 
         # Follow player — stay within 2 tiles

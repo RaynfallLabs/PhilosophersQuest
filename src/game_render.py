@@ -43,7 +43,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY, STATE_IDENTIFY_MODE,
+    STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
 )
 
 
@@ -1079,6 +1079,8 @@ class RenderMixin:
         elif self.state == STATE_IDENTIFY_MODE:
             self._draw_identify_menu()
             self._draw_identify_mode_popup()
+        elif self.state == STATE_PET_NAME_INPUT:
+            self._draw_pet_name_popup()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
         elif self.state == STATE_EAT_MENU:
@@ -2305,6 +2307,47 @@ class RenderMixin:
             font_sm=self.font_sm,
             row_style='text',
         )
+
+    def _draw_pet_name_popup(self):
+        """Overlay shown when a Soul Sphere hatches. Lets the player type a nickname."""
+        pet = getattr(self, '_naming_pet', None)
+        buf = getattr(self, '_pet_name_input_buffer', '')
+        if pet is None:
+            return
+        draw_overlay(self.screen, 190)
+        bw, bh = min(640, layout.GAME_W - 40), 260
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text=f"A {pet.species_name.upper()} APPEARS!",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+
+        # Subtitle: invite naming.
+        sub = f"Will you give this companion a name?"
+        sub_surf = self.font_md.render(sub, True, FP.BODY_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 58))
+
+        draw_divider(self.screen, bx + 20, by + 96, bw - 40)
+
+        # Input box (similar to drop_gold_input)
+        box_rect = pygame.Rect(bx + 60, by + 116, bw - 120, 38)
+        pygame.draw.rect(self.screen, (30, 30, 50), box_rect, border_radius=4)
+        pygame.draw.rect(self.screen, FP.GOLD_BRIGHT, box_rect, 1, border_radius=4)
+        display = buf or "(unnamed)"
+        val_surf = self.font_md.render(display, True, FP.PARCHMENT_LIGHT)
+        self.screen.blit(val_surf, (box_rect.x + 10, box_rect.y + 8))
+
+        # Hint
+        hint_lines = [
+            "Type to edit  |  BACKSPACE to delete",
+            "ENTER to confirm  |  ESC to skip naming",
+        ]
+        oy = by + bh - 60
+        for line in hint_lines:
+            hsurf = self.font_sm.render(line, True, FP.HINT_TEXT)
+            self.screen.blit(hsurf, (bx + (bw - hsurf.get_width()) // 2, oy))
+            oy += 22
 
     def _draw_identify_mode_popup(self):
         """Overlay shown after picking an item in the identify menu.
