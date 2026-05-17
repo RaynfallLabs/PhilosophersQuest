@@ -178,6 +178,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 7, "CON": 9, "DEX": 10, "INT": 15, "WIS": 12, "PER": 10,
         "_sprite": "player_wizard_f",   # same sprite as Fianna
         "_no_dagger": True,
+        "_start_weapon": ("quarterstaff", "oak"),
         "_start_wand": "wand_of_magic_missile",
         "_start_book": "spellbook_magic_missile",
         "_start_extra_acc": ["dreamspun_sketchbook"],
