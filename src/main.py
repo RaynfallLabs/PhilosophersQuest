@@ -221,7 +221,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _check_philosopher_thresholds(self):
-        """Fire one-time rewards as total_identifies crosses 10/25/50/100.
+        """Fire one-time rewards as total_identifies crosses 25/75/125/200/300.
 
         Called from _on_full_identify after each successful full identification
         (chain >= 3 on uniques; threshold success on commons; corpse lore-id).
@@ -230,33 +230,40 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p = self.player
         claimed = p.philosopher_tier_claimed
         n = p.total_identifies
-        if n >= 10 and 10 not in claimed:
-            claimed.add(10)
+        if n >= 25 and 25 not in claimed:
+            claimed.add(25)
             p.INT += 1
             p.max_mp = p.BASE_MP + p.INT
             p.mp = min(p.mp + 1, p.max_mp)
             self.add_message("First Insight! Your study sharpens your mind. (+1 INT)", 'success')
-            self._log_chronicle("Reached the First Insight milestone (10 identifies). INT permanently increased.")
-        if n >= 25 and 25 not in claimed:
-            claimed.add(25)
+            self._log_chronicle("Reached the First Insight milestone (25 identifies). INT permanently increased.")
+        if n >= 75 and 75 not in claimed:
+            claimed.add(75)
             self.add_message(
                 "Pattern Recognition! You now grasp lesser items at a glance.", 'success'
             )
-            self._log_chronicle("Reached Pattern Recognition (25 identifies). Common items auto-identify at depth.")
-        if n >= 50 and 50 not in claimed:
-            claimed.add(50)
+            self._log_chronicle("Reached Pattern Recognition (75 identifies). Common items auto-identify at depth.")
+        if n >= 125 and 125 not in claimed:
+            claimed.add(125)
+            p.PER += 1
+            self.add_message(
+                "Sharper Eye! The world's small details no longer escape you. (+1 PER)", 'success'
+            )
+            self._log_chronicle("Reached Sharper Eye (125 identifies). PER permanently increased.")
+        if n >= 200 and 200 not in claimed:
+            claimed.add(200)
             p.WIS += 1
             self.add_message(
                 "Sage's Eye! Your patient study deepens your wisdom. (+1 WIS)", 'success'
             )
-            self._log_chronicle("Reached Sage's Eye (50 identifies). WIS permanently increased.")
-        if n >= 100 and 100 not in claimed:
-            claimed.add(100)
+            self._log_chronicle("Reached Sage's Eye (200 identifies). WIS permanently increased.")
+        if n >= 300 and 300 not in claimed:
+            claimed.add(300)
             p.philosophers_mantle = True
             self.add_message(
                 "The Philosopher's Mantle settles upon you. Every aura is plain to your eye.", 'success'
             )
-            self._log_chronicle("Donned the Philosopher's Mantle (100 identifies). All future pickups reveal their aura.")
+            self._log_chronicle("Donned the Philosopher's Mantle (300 identifies). All future pickups reveal their aura.")
 
     # ------------------------------------------------------------------
     # Level setup
@@ -2205,9 +2212,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item.identified = True
                 item.id_level = max(getattr(item, 'id_level', 0), 4)
                 self.player.known_item_ids.add(item.id)
-            # Pattern Recognition (25 IDs): auto-identify lesser COMMON items at depth.
+            # Pattern Recognition (75 IDs): auto-identify lesser COMMON items at depth.
             # Uniques are preserved for the chain-5 dramatic flow.
-            if 25 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
+            if 75 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
                 tier_gate = 1 + (self.dungeon_level // 30)
                 if hasattr(item, 'identified') and not item.identified and \
                         getattr(item, 'quiz_tier', 5) <= tier_gate:
@@ -2215,7 +2222,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     item.id_level = 5
                     item.buc_known = True
                     self.player.known_item_ids.add(item.id)
-            # Philosopher's Mantle (100 IDs): auto BUC-sense on every pickup, including uniques.
+            # Philosopher's Mantle (300 IDs): auto BUC-sense on every pickup, including uniques.
             if self.player.philosophers_mantle and hasattr(item, 'buc_known'):
                 item.buc_known = True
             if isinstance(item, Ammo):

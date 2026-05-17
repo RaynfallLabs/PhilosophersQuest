@@ -198,49 +198,70 @@ def _drive_check(h, n):
     _CareerHarness._check_method()(h)
 
 
-def test_career_10_grants_int_once():
+def test_career_25_grants_int_once():
     h = _CareerHarness()
     base_int = h.player.INT
-    _drive_check(h, 10)
-    assert h.player.INT == base_int + 1
-    assert 10 in h.player.philosopher_tier_claimed
-    # Second crossing is idempotent
-    _drive_check(h, 11)
-    assert h.player.INT == base_int + 1
-
-
-def test_career_25_grants_pattern_recognition():
-    h = _CareerHarness()
     _drive_check(h, 25)
+    assert h.player.INT == base_int + 1
     assert 25 in h.player.philosopher_tier_claimed
-    # No INT change at 25 (that's the 10-mark)
+    # Second crossing is idempotent
+    _drive_check(h, 26)
+    assert h.player.INT == base_int + 1
+
+
+def test_career_75_grants_pattern_recognition():
+    h = _CareerHarness()
+    _drive_check(h, 75)
+    assert 75 in h.player.philosopher_tier_claimed
     # Pattern Recognition is a flag-only — auto-id logic checked at pickup time
 
 
-def test_career_50_grants_wis_once():
+def test_career_125_grants_per_once():
+    h = _CareerHarness()
+    base_per = h.player.PER
+    _drive_check(h, 125)
+    assert h.player.PER == base_per + 1
+    assert 125 in h.player.philosopher_tier_claimed
+
+
+def test_career_200_grants_wis_once():
     h = _CareerHarness()
     base_wis = h.player.WIS
-    _drive_check(h, 50)
+    _drive_check(h, 200)
     assert h.player.WIS == base_wis + 1
-    assert 50 in h.player.philosopher_tier_claimed
+    assert 200 in h.player.philosopher_tier_claimed
 
 
-def test_career_100_grants_mantle():
+def test_career_300_grants_mantle():
     h = _CareerHarness()
-    _drive_check(h, 100)
+    _drive_check(h, 300)
     assert h.player.philosophers_mantle is True
-    assert 100 in h.player.philosopher_tier_claimed
+    assert 300 in h.player.philosopher_tier_claimed
+
+
+def test_career_below_25_grants_nothing():
+    """Sub-25 identifies should not fire any threshold."""
+    h = _CareerHarness()
+    base_int, base_wis, base_per = h.player.INT, h.player.WIS, h.player.PER
+    _drive_check(h, 24)
+    assert h.player.INT == base_int
+    assert h.player.WIS == base_wis
+    assert h.player.PER == base_per
+    assert h.player.philosopher_tier_claimed == set()
+    assert h.player.philosophers_mantle is False
 
 
 def test_career_all_thresholds_fire_in_one_sweep():
     h = _CareerHarness()
     base_int = h.player.INT
     base_wis = h.player.WIS
-    _drive_check(h, 100)
+    base_per = h.player.PER
+    _drive_check(h, 300)
     assert h.player.INT == base_int + 1
     assert h.player.WIS == base_wis + 1
+    assert h.player.PER == base_per + 1
     assert h.player.philosophers_mantle is True
-    assert {10, 25, 50, 100} <= h.player.philosopher_tier_claimed
+    assert {25, 75, 125, 200, 300} <= h.player.philosopher_tier_claimed
 
 
 # ---------------------------------------------------------------------------
