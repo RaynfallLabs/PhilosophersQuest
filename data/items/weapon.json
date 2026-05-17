@@ -73,7 +73,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 5,
+      "scope": "item",
+      "desc": "Wounds the Soul Reaver inflicts bleed for an extra 5 turns."
+    }
   },
   "dawnbreaker": {
     "name": "Dawnbreaker",
@@ -154,7 +160,16 @@
     "effective_against": [
       "undead"
     ],
-    "ignore_resistances": true
+    "ignore_resistances": true,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "undead",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "Dawnbreaker deals +35% damage to undead."
+    }
   },
   "venomfang": {
     "name": "Venomfang",
@@ -229,7 +244,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "poisoned",
+        "pct": 30,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Venomfang's hollow spikes inject distilled corruption — every hit has a 30% chance to poison the target for 3 turns."
+    }
   },
   "excalibur": {
     "name": "Excalibur",
@@ -303,7 +328,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.25,
+      "scope": "item",
+      "desc": "+0.25 to every chain multiplier when wielding Excalibur."
+    }
   },
   "durendal": {
     "name": "Durendal",
@@ -375,7 +406,16 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
-    "onEquipStatus": "blessed"
+    "onEquipStatus": "blessed",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "evil",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "Durendal's saintly relics flare against wickedness — Roland's blade deals +35% damage to evil-aligned foes."
+    }
   },
   "gram": {
     "name": "Gram",
@@ -444,7 +484,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "dragon",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "Reforged Gram remembers Fafnir — Sigurd's blade deals +50% damage to dragons."
+    }
   },
   "broken_gram": {
     "name": "Broken Blade of Gram",
@@ -504,7 +553,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 0,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "Even shattered, the Broken Blade of Gram hums with dormant power — every strike lands a little heavier."
+    }
   },
   "sigurds_shovel": {
     "name": "Sigurd's Shovel",
@@ -566,7 +621,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 1,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "dragon",
+        "pct": 25
+      },
+      "scope": "item",
+      "desc": "Sigurd's Shovel remembers the pit beneath the wyrm — it deals +25% damage to dragons."
+    }
   },
   "tyrfing": {
     "name": "Tyrfing",
@@ -637,7 +701,13 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "lifestealPercent": 0.1
+    "lifestealPercent": 0.1,
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.3,
+      "scope": "item",
+      "desc": "Tyrfing's dwarf-cursed edge never dulls — every chain multiplier rises by 0.30 when it is drawn."
+    }
   },
   "fragarach": {
     "name": "Fragarach",
@@ -713,7 +783,13 @@
     "weapon_class_chain": "normal",
     "effective_against": [
       "humanoid"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "The Answerer cannot be refused — Fragarach's first swing of every chain auto-crits."
+    }
   },
   "caladbolg": {
     "name": "Caladbolg",
@@ -781,7 +857,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.25,
+      "scope": "item",
+      "desc": "Caladbolg sheared the tops off three hills with one sweep — every chain swing carries 0.25 more of that momentum."
+    }
   },
   "joyeuse": {
     "name": "Joyeuse",
@@ -854,7 +936,17 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "onEquipStatus": "blessed"
+    "onEquipStatus": "blessed",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "confused",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Joyeuse changes colour thirty times a day — its dazzle confuses 25% of the foes it strikes for 3 turns."
+    }
   },
   "hrunting": {
     "name": "Hrunting",
@@ -924,7 +1016,13 @@
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=52, base=13 (= curve.weapon_base_damage(52) x 1.65), min_level=40, quiz_tier=3.",
-    "cursedMissBacklash": 1
+    "cursedMissBacklash": 1,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 4,
+      "scope": "item",
+      "desc": "+4 flat damage when wielding Hrunting."
+    }
   },
   "skofnung": {
     "name": "Skofnung",
@@ -996,7 +1094,13 @@
     "weapon_class_chain": "normal",
     "effective_against": [
       "humanoid"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 5,
+      "scope": "item",
+      "desc": "Wounds dealt by Skofnung will only heal at the Skofnung Stone — every cut extends bleeding by 5 turns."
+    }
   },
   "gungnir": {
     "name": "Gungnir",
@@ -1070,7 +1174,13 @@
     "effective_against": [
       "humanoid",
       "fey"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "The first hit of every chain with Gungnir is a guaranteed crit."
+    }
   },
   "gae_bulg": {
     "name": "Gáe Bulg",
@@ -1138,7 +1248,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 6,
+      "scope": "item",
+      "desc": "The Gae Bulg's thirty barbs open inside the wound — every strike extends bleeding by 6 turns."
+    }
   },
   "spear_of_longinus": {
     "name": "Spear of Longinus",
@@ -1213,7 +1329,16 @@
       "undead",
       "demon"
     ],
-    "ignore_resistances": true
+    "ignore_resistances": true,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "demon",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "The Spear of Longinus, blooded at the Crucifixion, deals +50% damage to demons."
+    }
   },
   "mjolnir": {
     "name": "Mjolnir",
@@ -1288,7 +1413,17 @@
     "burnChance": 0.25,
     "effective_against": [
       "construct"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "stunned",
+        "pct": 25,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "Mjolnir stuns the target for 2 turns on 25% of hits."
+    }
   },
   "sharur": {
     "name": "Sharur",
@@ -1355,7 +1490,17 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=45, base=10 (= curve.weapon_base_damage(45) x 1.55), min_level=37, quiz_tier=3."
+    "_curve_note": "Redistributed: peak=45, base=10 (= curve.weapon_base_damage(45) x 1.55), min_level=37, quiz_tier=3.",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "confused",
+        "pct": 30,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Sharur's strikes scramble enemy minds — 30% of its hits confuse the target for 3 turns."
+    }
   },
   "ruyi_jingu_bang": {
     "name": "Ruyi Jingu Bang",
@@ -1424,7 +1569,13 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=82, base=30 (= curve.weapon_base_damage(82) x 1.7), min_level=70, quiz_tier=5."
+    "_curve_note": "Redistributed: peak=82, base=30 (= curve.weapon_base_damage(82) x 1.7), min_level=70, quiz_tier=5.",
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 4,
+      "scope": "item",
+      "desc": "The Ruyi Jingu Bang weighs 17,550 pounds and its reach is unmatched — every blow lands with 4 more crushing weight."
+    }
   },
   "gandiva": {
     "name": "Gandiva",
@@ -1495,7 +1646,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.25,
+      "scope": "item",
+      "desc": "Gandiva's hundred strings hum in sequence — Arjuna's bow adds 0.25 to every chain multiplier."
+    }
   },
   "fail_not": {
     "name": "Fail-not",
@@ -1564,7 +1721,13 @@
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=57, base=16 (= curve.weapon_base_damage(57) x 1.65), min_level=45, quiz_tier=3.",
-    "class_mechanic": "guaranteed_hit"
+    "class_mechanic": "guaranteed_hit",
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "Fail-not's promise holds — Tristan's bow auto-crits on the first arrow of every chain."
+    }
   },
   "kusanagi": {
     "name": "Kusanagi-no-Tsurugi",
@@ -1635,7 +1798,17 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=83, base=32 (= curve.weapon_base_damage(83) x 1.7), min_level=71, quiz_tier=5."
+    "_curve_note": "Redistributed: peak=83, base=32 (= curve.weapon_base_damage(83) x 1.7), min_level=71, quiz_tier=5.",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "slowed",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Kusanagi turns the wind against your enemies — 25% of its hits slow the target for 3 turns."
+    }
   },
   "zulfiqar": {
     "name": "Zulfiqar",
@@ -1710,7 +1883,13 @@
     "effective_against": [
       "demon",
       "undead"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.3,
+      "scope": "item",
+      "desc": "Zulfiqar's bifurcated tip takes two lives with one thrust — every chain multiplier rises by 0.30."
+    }
   },
   "harpe": {
     "name": "Harpe",
@@ -1782,7 +1961,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "aberration",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "The Harpe separated Medusa from her head — it deals +40% damage to aberrations."
+    }
   },
   "trident_of_poseidon": {
     "name": "Trident of Poseidon",
@@ -1853,7 +2041,17 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
-    "_curve_note": "Redistributed: peak=85, base=34 (= curve.weapon_base_damage(85) x 1.7), min_level=73, quiz_tier=5."
+    "_curve_note": "Redistributed: peak=85, base=34 (= curve.weapon_base_damage(85) x 1.7), min_level=73, quiz_tier=5.",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "stunned",
+        "pct": 25,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "Poseidon's Trident strikes with the weight of the Aegean — 25% of its hits stun for 2 turns."
+    }
   },
   "carnwennan": {
     "name": "Carnwennan",
@@ -1925,7 +2123,13 @@
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=34, base=8 (= curve.weapon_base_damage(34) x 1.7), min_level=26, quiz_tier=2.",
-    "class_mechanic": "backstab"
+    "class_mechanic": "backstab",
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "Carnwennan shrouds its wielder in shadow — Arthur's dagger auto-crits on the opening strike of every chain."
+    }
   },
   "mistilteinn": {
     "name": "Mistilteinn",
@@ -1995,7 +2199,13 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=91, base=39 (= curve.weapon_base_damage(91) x 1.7), min_level=85, quiz_tier=5.",
-    "ignore_resistances": true
+    "ignore_resistances": true,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 5,
+      "scope": "item",
+      "desc": "Mistilteinn slips past every protection — the Mistletoe Sword adds 5 raw damage to every hit."
+    }
   },
   "curtana": {
     "name": "Curtana",
@@ -2066,7 +2276,13 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "onEquipStatus": "blessed"
+    "onEquipStatus": "blessed",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.15,
+      "scope": "item",
+      "desc": "Curtana's blunt tip teaches restraint — the Sword of Mercy grants a steady 0.15 chain bonus that never overreaches."
+    }
   },
   "parashu": {
     "name": "Parashu",
@@ -2138,7 +2354,16 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "class_mechanic": "cleave_at_max"
+    "class_mechanic": "cleave_at_max",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "humanoid",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "Parashurama's axe exterminated the Kshatriyas twenty-one times — Parashu deals +40% damage to humanoids."
+    }
   },
   "labrys": {
     "name": "Labrys",
@@ -2206,7 +2431,16 @@
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=24, base=6 (= curve.weapon_base_damage(24) x 1.65), min_level=16, quiz_tier=2.",
-    "class_mechanic": "cleave_at_max"
+    "class_mechanic": "cleave_at_max",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "beast",
+        "pct": 30
+      },
+      "scope": "item",
+      "desc": "The Labrys remembers the Minotaur in the dark — it deals +30% damage to beasts."
+    }
   },
   "chandrahas": {
     "name": "Chandrahas",
@@ -2280,7 +2514,16 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "confuseChance": 0.2
+    "confuseChance": 0.2,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "evil",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "Chandrahas was Shiva's gift, intolerant of wickedness — it deals +35% damage to evil-aligned foes."
+    }
   },
   "laevateinn": {
     "name": "Laevateinn",
@@ -2353,7 +2596,13 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=93, base=40 (= curve.weapon_base_damage(93) x 1.7), min_level=87, quiz_tier=5.",
     "burnChance": 0.45,
-    "ignore_resistances": true
+    "ignore_resistances": true,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 5,
+      "scope": "item",
+      "desc": "Laevateinn was cut to kill the rooster of Ragnarok — it adds 5 fiery damage to every blow."
+    }
   },
   "thyrsus": {
     "name": "Thyrsus of Dionysus",
@@ -2424,7 +2673,17 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=32, base=7 (= curve.weapon_base_damage(32) x 1.5), min_level=24, quiz_tier=2."
+    "_curve_note": "Redistributed: peak=32, base=7 (= curve.weapon_base_damage(32) x 1.5), min_level=24, quiz_tier=2.",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "confused",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "The Thyrsus carries Dionysian madness — 25% of its strikes confuse the target for 3 turns."
+    }
   },
   "rod_of_moses": {
     "name": "Rod of Moses",
@@ -2496,7 +2755,16 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=84, base=31 (= curve.weapon_base_damage(84) x 1.65), min_level=72, quiz_tier=5."
+    "_curve_note": "Redistributed: peak=84, base=31 (= curve.weapon_base_damage(84) x 1.65), min_level=72, quiz_tier=5.",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "evil",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "The Rod of Moses parted seas and humbled Pharaoh — it deals +40% damage to evil-aligned foes."
+    }
   },
   "amenonuhoko": {
     "name": "Amenonuhoko",
@@ -2567,7 +2835,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "stunned",
+        "pct": 20,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "Amenonuhoko stirred the primordial ocean — 20% of its hits stun foes with cosmic stillness for 2 turns."
+    }
   },
   "sudarshana": {
     "name": "Sudarshana Chakra",
@@ -2640,7 +2918,13 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "finesse",
-    "_curve_note": "Promoted to F90s: peak=93, base=39 (= curve.weapon_base_damage(93) x 1.65)."
+    "_curve_note": "Promoted to F90s: peak=93, base=39 (= curve.weapon_base_damage(93) x 1.65).",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.35,
+      "scope": "item",
+      "desc": "The Sudarshana Chakra spins eternally — Vishnu's discus adds 0.35 to every chain multiplier."
+    }
   },
   "ridill": {
     "name": "Ridill",
@@ -2710,7 +2994,13 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "_curve_note": "Redistributed: peak=55, base=13 (= curve.weapon_base_damage(55) x 1.5), min_level=43, quiz_tier=3."
+    "_curve_note": "Redistributed: peak=55, base=13 (= curve.weapon_base_damage(55) x 1.5), min_level=43, quiz_tier=3.",
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "Ridill was always the lesser blade in Fafnir's hoard, but Sigurd left it sharp — it adds 2 reliable damage to every cut."
+    }
   },
   "kladenets": {
     "name": "Samosek",
@@ -2780,7 +3070,13 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=58, base=17 (= curve.weapon_base_damage(58) x 1.7), min_level=46, quiz_tier=3."
+    "_curve_note": "Redistributed: peak=58, base=17 (= curve.weapon_base_damage(58) x 1.7), min_level=46, quiz_tier=3.",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.2,
+      "scope": "item",
+      "desc": "The Samosek swings itself in the wielder's hand — every chain multiplier rises by 0.20."
+    }
   },
   "shamshir_e_zomorrodnegar": {
     "name": "Shamshir-e Zomorrodnegar",
@@ -2855,7 +3151,16 @@
     "weapon_class_chain": "finesse",
     "effective_against": [
       "demon"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "demon",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "Solomon's emerald scimitar commands djinn and shatters the disobedient — Shamshir-e Zomorrodnegar deals +40% damage to demons."
+    }
   },
   "chrysaor": {
     "name": "Chrysaor",
@@ -2926,7 +3231,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 4,
+      "scope": "item",
+      "desc": "Chrysaor — the Golden Sword — was born of Medusa's blood and never tarnishes; it adds 4 damage to every strike."
+    }
   },
   "caliburn": {
     "name": "Caliburn",
@@ -2995,7 +3306,13 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=37, base=10 (= curve.weapon_base_damage(37) x 1.7), min_level=29, quiz_tier=2."
+    "_curve_note": "Redistributed: peak=37, base=10 (= curve.weapon_base_damage(37) x 1.7), min_level=29, quiz_tier=2.",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.2,
+      "scope": "item",
+      "desc": "Caliburn was the sword Arthur earned from the stone — every chain multiplier rises by 0.20."
+    }
   },
   "brisingr": {
     "name": "Brisingr",
@@ -3067,7 +3384,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "burning",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Brisingr's blade is still faintly warm — 25% of its strikes set the target burning for 3 turns."
+    }
   },
   "fragarach_the_whisperer": {
     "name": "Whisperer",
@@ -3137,7 +3464,13 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
-    "_curve_note": "Redistributed: peak=38, base=9 (= curve.weapon_base_damage(38) x 1.55), min_level=30, quiz_tier=2."
+    "_curve_note": "Redistributed: peak=38, base=9 (= curve.weapon_base_damage(38) x 1.55), min_level=30, quiz_tier=2.",
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "The Whisperer is always already at the throat — it auto-crits on the first strike of every chain."
+    }
   },
   "naegling": {
     "name": "Naegling",
@@ -3205,7 +3538,13 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "_curve_note": "Redistributed: peak=54, base=13 (= curve.weapon_base_damage(54) x 1.55), min_level=42, quiz_tier=3."
+    "_curve_note": "Redistributed: peak=54, base=13 (= curve.weapon_base_damage(54) x 1.55), min_level=42, quiz_tier=3.",
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 3,
+      "scope": "item",
+      "desc": "Naegling shattered in Beowulf's grip from sheer force — it adds 3 brutal damage to every hit."
+    }
   },
   "punch_in_the_face": {
     "name": "Punch in the Face",
@@ -3263,7 +3602,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 0,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "A Punch in the Face has never needed to miss twice — every chain opens with an auto-crit."
+    }
   },
   "hunt_captains_sword": {
     "name": "Hunt Captain's Sword",
@@ -3328,7 +3673,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "fey",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "The Hunt Captain's Sword phases between worlds — it deals +40% damage to fey."
+    }
   },
   "wendigo_fang": {
     "name": "Wendigo's Fang",
@@ -3392,7 +3746,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_lifesteal",
+      "value": 0.15,
+      "scope": "item",
+      "desc": "The Wendigo's Fang leaches warmth from its victims — it heals 15% of damage dealt back to the wielder."
+    }
   },
   "echidna_fang": {
     "name": "Echidna's Fang",
@@ -3457,7 +3817,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "poisoned",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Echidna's Fang weeps the venoms of all her monstrous children — 25% of its hits poison for 3 turns."
+    }
   },
   "vulcans_brand": {
     "name": "Vulcan's Brand",
@@ -3521,7 +3891,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "burning",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Vulcan's Brand never fully cools — 25% of its strikes set foes burning for 3 turns."
+    }
   },
   "sling_of_david": {
     "name": "Sling of David",
@@ -3588,7 +3968,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "giant",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "David's Sling humbled Goliath with a single stone — it deals +50% damage to giants."
+    }
   },
   "prometheus_torch": {
     "name": "Narthex of Prometheus",
@@ -3660,7 +4049,17 @@
     "weapon_class_chain": "normal",
     "effective_against": [
       "undead"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "burning",
+        "pct": 20,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "The Narthex of Prometheus still smoulders after three thousand years — 20% of its strikes ignite the target for 2 turns."
+    }
   },
   "sword_of_damocles": {
     "name": "Sword of Damocles",
@@ -3731,7 +4130,13 @@
     "is_unique": true,
     "max_enchant": 2,
     "weapon_class_chain": "normal",
-    "cursedMissBacklash": 2
+    "cursedMissBacklash": 2,
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "The Sword of Damocles hangs ready to fall — it auto-crits on the first swing of every chain."
+    }
   },
   "robin_hoods_longbow": {
     "name": "Robin Hood's Longbow",
@@ -3798,7 +4203,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "Robin Hood always struck from cover — his longbow auto-crits on the first arrow of every chain."
+    }
   },
   "achilles_spear": {
     "name": "Achilles's Spear",
@@ -3868,7 +4279,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_lifesteal",
+      "value": 0.2,
+      "scope": "item",
+      "desc": "The spear that wounded also healed — Achilles's Spear restores 20% of its damage dealt to the wielder."
+    }
   },
   "gilgamesh_axe": {
     "name": "Gilgamesh's Axe",
@@ -3939,7 +4356,13 @@
     "weapon_class_chain": "normal",
     "effective_against": [
       "construct"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 3,
+      "scope": "item",
+      "desc": "Gilgamesh's Axe remembers Enkidu's bond — it adds 3 damage to every strike."
+    }
   },
   "cronus_scythe": {
     "name": "Cronus's Scythe",
@@ -4009,7 +4432,13 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "lifestealPercent": 0.08
+    "lifestealPercent": 0.08,
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 5,
+      "scope": "item",
+      "desc": "The Scythe of Cronus cuts through time — each strike extends bleeding by 5 turns as vitality drains."
+    }
   },
   "spear_of_lugh": {
     "name": "Spear of Lugh",
@@ -4083,7 +4512,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "burning",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "The Spear of Lugh ignites unless kept in poison — 25% of its strikes set foes burning for 3 turns."
+    }
   },
   "gae_dearg": {
     "name": "Gae Dearg",
@@ -4151,7 +4590,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 6,
+      "scope": "item",
+      "desc": "From Gae Dearg's red point no wound ever heals — every hit extends bleeding by 6 turns."
+    }
   },
   "net_of_hephaestus": {
     "name": "Net of Hephaestus",
@@ -4215,7 +4660,17 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "paralyzed",
+        "pct": 30,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "The Net of Hephaestus caught Ares himself — 30% of its strikes paralyze for 2 turns."
+    }
   },
   "sword_of_michael": {
     "name": "Sword of Michael",
@@ -4285,7 +4740,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "demon",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "The Sword of Michael deals +50% damage to demonkind."
+    }
   },
   "oathkeeper_sword": {
     "name": "Oathkeeper",
@@ -4346,7 +4810,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.2,
+      "scope": "item",
+      "desc": "Oathkeeper was carried in love and maintained in love — every chain multiplier rises by 0.20."
+    }
   },
   "penitents_blade": {
     "name": "Penitent's Blade",
@@ -4409,7 +4879,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_lifesteal",
+      "value": 0.25,
+      "scope": "item",
+      "desc": "The Penitent's Blade tries to balance its long ledger — it heals 25% of damage dealt back to the wielder."
+    }
   },
   "boomstick": {
     "name": "Boomstick",
@@ -4466,7 +4942,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 5,
+      "scope": "item",
+      "desc": "S-Mart's top of the line — the Boomstick adds 5 buckshot damage to every blast. Shop smart."
+    }
   },
   "chainsaw_prosthetic": {
     "name": "Chainsaw Prosthetic",
@@ -4521,7 +5003,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 5,
+      "scope": "item",
+      "desc": "The Chainsaw Prosthetic carves and tears — every hit extends bleeding by 5 turns. Groovy."
+    }
   },
   "romulus_spear": {
     "name": "Spear of Romulus",
@@ -4586,7 +5074,13 @@
     "weapon_class_chain": "heavy",
     "effective_against": [
       "beast"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Spear of Romulus founded a city from one throw — every cast lands with 2 more weight."
+    }
   },
   "pharaohs_crook": {
     "name": "Pharaoh's Crook",
@@ -4646,7 +5140,17 @@
     "is_unique": true,
     "max_enchant": 2,
     "weapon_class_chain": "normal",
-    "onEquipStatus": "heroism"
+    "onEquipStatus": "heroism",
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "stunned",
+        "pct": 20,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "The Pharaoh's Crook carries the weight of divine kingship — 20% of its strikes stun for 2 turns."
+    }
   },
   "mjolnir_shard": {
     "name": "Mjolnir Shard",
@@ -4711,7 +5215,17 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "burnChance": 0.15
+    "burnChance": 0.15,
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "stunned",
+        "pct": 25,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "Even a shard of Mjolnir holds Thor's thunder — 25% of its strikes stun foes for 2 turns."
+    }
   },
   "bow_of_rama": {
     "name": "Bow of Rama",
@@ -4778,7 +5292,16 @@
     "effective_against": [
       "demon"
     ],
-    "critMultiplier": 1.5
+    "critMultiplier": 1.5,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "evil",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "Rama's arrows are guided by dharma — the Bow of Rama deals +40% damage to evil-aligned foes."
+    }
   },
   "gae_bolg_fragment": {
     "name": "Gae Bolg Fragment",
@@ -4842,7 +5365,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "heavy"
+    "weapon_class_chain": "heavy",
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "Even a fragment of the Gae Bolg opens like the original — it auto-crits on the first strike of every chain."
+    }
   },
   "staff_of_moses": {
     "name": "Staff of Moses",
@@ -4907,7 +5436,16 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "knockback": true
+    "knockback": true,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "undead",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "The Staff of Moses parted the sea and confronted the unholy — it deals +40% damage to undead."
+    }
   },
   "witcher_silver_blade": {
     "name": "Witcher's Silver Blade",
@@ -4968,7 +5506,16 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "undead",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "The Witcher's Silver Blade was forged for things that crawl from cursed earth — it deals +40% damage to undead."
+    }
   },
   "zireael": {
     "name": "Zireael",
@@ -5028,7 +5575,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "normal"
+    "weapon_class_chain": "normal",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.25,
+      "scope": "item",
+      "desc": "Zireael is a masterwork of gnomish steel — Swallow adds 0.25 to every chain multiplier."
+    }
   },
   "vel_of_murugan": {
     "name": "Vel of Murugan",
@@ -5108,7 +5661,17 @@
     "weapon_class_chain": "heavy",
     "effective_against": [
       "demon"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "burning",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "The Vel of Murugan burns with righteous war — 25% of its hits set foes burning for 3 turns."
+    }
   },
   "khopesh_of_anubis": {
     "name": "Khopesh of Anubis",
@@ -5178,7 +5741,13 @@
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
-    "weapon_class_chain": "finesse"
+    "weapon_class_chain": "finesse",
+    "mastery_blessing": {
+      "kind": "weapon_lifesteal",
+      "value": 0.2,
+      "scope": "item",
+      "desc": "The Khopesh of Anubis steals 20% of damage dealt as HP."
+    }
   },
   "chandrahasa": {
     "name": "Chandrahasa",
@@ -5248,7 +5817,13 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "_curve_note": "Pass 3 trim: peak=87, base=34 (= curve.weapon_base_damage(87) x 1.65)."
+    "_curve_note": "Pass 3 trim: peak=87, base=34 (= curve.weapon_base_damage(87) x 1.65).",
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.3,
+      "scope": "item",
+      "desc": "Chandrahasa laughs louder as its bearer fades — every chain multiplier rises by 0.30."
+    }
   },
   "green_chapel_axe": {
     "name": "Green Chapel Axe",
@@ -5317,7 +5892,13 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "class_mechanic": "returning_blow"
+    "class_mechanic": "returning_blow",
+    "mastery_blessing": {
+      "kind": "weapon_lifesteal",
+      "value": 0.15,
+      "scope": "item",
+      "desc": "The Green Chapel Axe remembers severed and rejoined — the wielder heals 15% of damage dealt."
+    }
   },
   "aiglos": {
     "name": "Aiglos",
@@ -5387,7 +5968,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.0,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 4,
+      "scope": "item",
+      "desc": "Aiglos pierced even Sauron's hand — Gil-galad's spear adds 4 cold-edged damage to every thrust."
+    }
   },
   "akinakes_acrisius": {
     "name": "Akinakes of Acrisius",
@@ -5457,7 +6044,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.2,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.2,
+      "scope": "item",
+      "desc": "The Akinakes of Acrisius outlasted its king's prophecy — every chain multiplier rises by 0.20."
+    }
   },
   "anduril": {
     "name": "Anduril",
@@ -5528,7 +6121,16 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "evil",
+        "pct": 45
+      },
+      "scope": "item",
+      "desc": "Reforged Anduril is the Flame of the West — it deals +45% damage to evil-aligned foes."
+    }
   },
   "atalanta_bow": {
     "name": "Atalanta's Bow",
@@ -5595,7 +6197,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.0,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "Atalanta drew first blood on the Calydonian Boar — her bow auto-crits on the first arrow of every chain."
+    }
   },
   "bellerophon_lance": {
     "name": "Bellerophon's Lance",
@@ -5665,7 +6273,17 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "burning",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "Bellerophon's lead-tipped lance melted in the Chimera's throat — 25% of its strikes set foes burning for 3 turns."
+    }
   },
   "cadmus_sword": {
     "name": "Sword of Cadmus",
@@ -5735,7 +6353,16 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.6,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "dragon",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "The Sword of Cadmus opened the dragon at Thebes's spring — it deals +35% damage to dragons."
+    }
   },
   "glamdring": {
     "name": "Glamdring",
@@ -5806,7 +6433,16 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.0,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "humanoid",
+        "pct": 40
+      },
+      "scope": "item",
+      "desc": "Glamdring is Foe-Hammer, the orc-cleaver of Gondolin — it deals +40% damage to humanoids."
+    }
   },
   "hector_javelin": {
     "name": "Hector's Javelin",
@@ -5873,7 +6509,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.6,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "Hector's bronze-headed javelin felled Patroclus — it adds 2 damage to every throw."
+    }
   },
   "heracles_club": {
     "name": "Heracles's Olive-Club",
@@ -5941,7 +6583,13 @@
     "reach": 1,
     "ignoreShield": false,
     "critMultiplier": 2.0,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 4,
+      "scope": "item",
+      "desc": "Heracles uprooted the olive-club himself and hardened it on Nemea — it adds 4 crushing damage to every blow."
+    }
   },
   "hofud": {
     "name": "Hofud",
@@ -6012,7 +6660,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_first_hit_crit",
+      "value": true,
+      "scope": "item",
+      "desc": "Heimdall's Hofud lets nothing slip past — it auto-crits on the first strike of every chain."
+    }
   },
   "meleager_spear": {
     "name": "Meleager's Boar-Spear",
@@ -6080,7 +6734,16 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.7,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "beast",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "Meleager's boar-spear pinned the Calydonian sow — it deals +35% damage to beasts."
+    }
   },
   "pelops_sword": {
     "name": "Sword of Pelops",
@@ -6148,7 +6811,13 @@
     "ignoreShield": false,
     "critMultiplier": 1.7,
     "requiresAmmo": null,
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 4,
+      "scope": "item",
+      "desc": "The Sword of Pelops cursed three generations of Mycenae — every cut extends bleeding by 4 turns."
+    }
   },
   "stormbringer": {
     "name": "Stormbringer",
@@ -6221,7 +6890,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.5,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_lifesteal",
+      "value": 0.25,
+      "scope": "item",
+      "desc": "Stormbringer drinks souls and feeds them to its bearer — it heals 25% of damage dealt to the wielder."
+    }
   },
   "talos_sickle": {
     "name": "Sickle of Talos",
@@ -6289,7 +6964,17 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "bleeding",
+        "pct": 25,
+        "duration": 3
+      },
+      "scope": "item",
+      "desc": "The Sickle of Talos was ground from a giant's bronze ichor — 25% of its strikes cause bleeding for 3 turns."
+    }
   },
   "theseus_club": {
     "name": "Theseus's Club",
@@ -6356,7 +7041,13 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.5,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 3,
+      "scope": "item",
+      "desc": "Theseus took the bronze club from Periphetes and kept it through the labyrinth — it adds 3 damage to every blow."
+    }
   },
   "cain_club": {
     "name": "Cain's Club",
@@ -6423,7 +7114,13 @@
     "lore": "The Bible does not say what Cain used. Talmudic and Quranic commentary settles on a rough club — the first murder weapon, made of nothing in particular. The mark on Cain protected him from retaliation but not from memory. The wood is the wrong colour at one end and no one has been able to wash it clean.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "cursedMissBacklash": 1
+    "cursedMissBacklash": 1,
+    "mastery_blessing": {
+      "kind": "weapon_wound_lingers",
+      "value": 3,
+      "scope": "item",
+      "desc": "Cain's Club carries the first murder — every strike extends bleeding by 3 turns."
+    }
   },
   "wepwawet_mace": {
     "name": "Mace of Wepwawet",
@@ -6490,7 +7187,17 @@
     "lore": "Wepwawet — 'Opener of the Ways' — was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "can_dig": true
+    "can_dig": true,
+    "mastery_blessing": {
+      "kind": "weapon_status_chance",
+      "value": {
+        "status": "stunned",
+        "pct": 20,
+        "duration": 2
+      },
+      "scope": "item",
+      "desc": "Wepwawet's mace opens the way before the king — 20% of its strikes stun for 2 turns."
+    }
   },
   "cuchulainn_hurley": {
     "name": "Setanta's Hurley",
@@ -6559,7 +7266,13 @@
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "effective_against": [
       "beast"
-    ]
+    ],
+    "mastery_blessing": {
+      "kind": "weapon_base_damage_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "Setanta drove a hurling ball down the throat of Culann's hound — the ash hurley adds 2 damage to every blow."
+    }
   },
   "mwindo_axe": {
     "name": "Mwindo's Conga-Scepter",
@@ -6626,6 +7339,12 @@
     "lore": "The Mwindo Epic — collected from the Banyanga of the eastern Congo in the 1950s — gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
     "template_basis": "handaxe",
     "_curve_note": "Pass 4: bumped base damage to 5 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "kill_heal_amount": 2
+    "kill_heal_amount": 2,
+    "mastery_blessing": {
+      "kind": "weapon_chain_mult_bonus",
+      "value": 0.15,
+      "scope": "item",
+      "desc": "Mwindo's Conga-Scepter was axe, wand, and flyswatter at once — every chain multiplier rises by 0.15."
+    }
   }
 }

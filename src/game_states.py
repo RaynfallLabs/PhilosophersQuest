@@ -47,3 +47,4 @@ STATE_NPC_ENCOUNTER    = 'npc_encounter'     # Moral choice encounter with NPC
 STATE_COW_ENCOUNTER    = 'cow_encounter'     # Secret cow dialog
 STATE_JUDGMENT         = 'judgment'          # Altar of Last Judgment result
 STATE_STUDY            = 'study'             # In-game missed question review
+STATE_IDENTIFY_MODE    = 'identify_mode'     # Popup: full identify vs quick-BUC after item selection

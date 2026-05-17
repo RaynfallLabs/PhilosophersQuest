@@ -41,6 +41,17 @@ class Item:
         self.lore: str          = defn.get('lore', '')
         self.set_id: str        = defn.get('set_id', '')
         self.set_name: str      = defn.get('set_name', '')
+        # Granular identification level (0-5) for the escalator-chain identify on uniques.
+        # 0 = nothing known; 1 = real name; 2 = + BUC aura; 3 = + stats; 4 = + lore; 5 = + mastery.
+        # For non-unique items going through threshold-mode identify, this jumps 0 -> 5 on success.
+        # Default matches `identified`: known items start at 5, unknown at 0.
+        self.id_level: int      = int(defn.get('id_level', 5 if self.identified else 0))
+        # Mastery blessing data for is_unique items. Shape: {'kind': str, 'value': int|float|str, 'desc': str}
+        # Granted to the player on chain-5 identify; lives on player.unlocked_masteries by item_id.
+        self.mastery_blessing: dict | None = defn.get('mastery_blessing', None)
+        # Named/legendary marker. Routes identify to escalator-chain mode and controls spawn-pool filtering.
+        # Lives on base Item so accessories/wands/scrolls/spellbooks/etc. can mark uniques in JSON.
+        self.is_unique: bool    = bool(defn.get('is_unique', False))
         # Bell-curve spawn fields — used by dungeon._item_eligible_weighted to
         # weight floor-relevance. peak_floor=0 means no bell weighting (fallback).
         self.peak_floor:  int   = int(defn.get('peak_floor', 0) or 0)
@@ -78,6 +89,7 @@ class Weapon(Item):
         self.value: int                 = int(defn.get('value', 50))
         self.enchant_bonus: int         = int(defn.get('enchant_bonus', defn.get('enchantBonus', 0)))
         self.identified: bool           = bool(defn.get('identified', False))
+        self.id_level: int              = int(defn.get('id_level', 5 if self.identified else 0))
         self.unidentified_name: str     = defn.get('unidentified_name', 'an unknown weapon')
         # On-hit effect properties
         self.poison_chance: float       = float(defn.get('poisonChance', defn.get('poison_chance', 0.0)))
@@ -140,6 +152,7 @@ class Armor(Item):
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
         self.identified: bool    = bool(defn.get('identified', False))
+        self.id_level: int       = int(defn.get('id_level', 5 if self.identified else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
@@ -182,6 +195,7 @@ class Shield(Item):
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
         self.identified: bool    = bool(defn.get('identified', False))
+        self.id_level: int       = int(defn.get('id_level', 5 if self.identified else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
@@ -210,6 +224,7 @@ class Accessory(Item):
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.id_level: int    = int(defn.get('id_level', 5 if self.identified else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         # Artifact mechanics (defaults match the getattr fallbacks used in main.py)
@@ -244,6 +259,7 @@ class Wand(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.id_level: int    = int(defn.get('id_level', 5 if self.identified else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
@@ -265,6 +281,7 @@ class Scroll(Item):
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified       = bool(defn.get('identified', False))
+        self.id_level: int    = int(defn.get('id_level', 5 if self.identified else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         # Spawn-once quest scrolls: survive a failed read so the secret-victory
@@ -290,6 +307,7 @@ class Spellbook(Item):
         self.quiz_threshold    = int(defn.get('quiz_threshold', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.identified        = bool(defn.get('identified', False))
+        self.id_level: int     = int(defn.get('id_level', 5 if self.identified else 0))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
 
@@ -405,6 +423,7 @@ class Potion(Item):
         self.duration: int = int(defn.get('duration', 0))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', {})
         self.identified: bool       = False
+        self.id_level: int          = int(defn.get('id_level', 0))
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
     @property

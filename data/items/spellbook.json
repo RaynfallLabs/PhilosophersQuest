@@ -291,7 +291,14 @@
     "mp_cost": 7,
     "unidentified_name": "a book bound in human flesh",
     "lore": "Naturom Demonto â€” roughly translated, the Book of the Dead. Bound in human flesh and inked in blood, this ancient Sumerian text contains funeral incantations, demon resurrection passages, and prophecies. It is NOT to be read aloud. Seriously. Don't.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "mastery_blessing": {
+      "kind": "spellbook_mp_discount",
+      "value": 3,
+      "scope": "item",
+      "desc": "Army of Darkness costs 3 fewer MP to cast."
+    },
+    "is_unique": true
   },
   "spellbook_cleanse": {
     "name": "Spellbook of Cleanse",
@@ -683,7 +690,13 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a tome of pale parchment",
-    "lore": "The Book of Formation. Attributed to Abraham; the oldest extant Jewish mystical text. It teaches the twenty-two letters of the Hebrew alphabet and the ten sefirot, and how the world was spoken into being. The Maharal of Prague used a copy in the sixteenth century to shape a golem of clay; the golem walked the streets of the Jewish quarter until the Maharal removed the Name from its forehead."
+    "lore": "The Book of Formation. Attributed to Abraham; the oldest extant Jewish mystical text. It teaches the twenty-two letters of the Hebrew alphabet and the ten sefirot, and how the world was spoken into being. The Maharal of Prague used a copy in the sixteenth century to shape a golem of clay; the golem walked the streets of the Jewish quarter until the Maharal removed the Name from its forehead.",
+    "mastery_blessing": {
+      "kind": "spellbook_mp_discount",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Sefer Yetzirah teaches the twenty-two letters that spoke the world into being — its spell costs 2 fewer MP."
+    }
   },
   "picatrix": {
     "name": "Picatrix",
@@ -707,7 +720,13 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a violet leather-bound tome",
-    "lore": "Picatrix — Ghayat al-Hakim, the Aim of the Sage. Composed in tenth-century al-Andalus, translated to Latin under Alfonso X, and read across Europe for the next four centuries. It teaches talismanic magic, planetary hours, and how to summon fire by naming a planet's degree of ascension. Dee owned a copy. Ficino read it carefully and pretended he hadn't."
+    "lore": "Picatrix — Ghayat al-Hakim, the Aim of the Sage. Composed in tenth-century al-Andalus, translated to Latin under Alfonso X, and read across Europe for the next four centuries. It teaches talismanic magic, planetary hours, and how to summon fire by naming a planet's degree of ascension. Dee owned a copy. Ficino read it carefully and pretended he hadn't.",
+    "mastery_blessing": {
+      "kind": "spellbook_mp_discount",
+      "value": 2,
+      "scope": "item",
+      "desc": "Picatrix systematised four centuries of talismanic magic — its spell costs 2 fewer MP."
+    }
   },
   "lemegeton": {
     "name": "Lemegeton (The Lesser Key of Solomon)",
@@ -731,7 +750,13 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a black tome sealed with sigils",
-    "lore": "The Lemegeton. Five books bound as one; the first, the Ars Goetia, lists the seventy-two demons King Solomon bound to his service. Each demon has a sigil, a number of legions, and a particular use — Bael teaches invisibility, Asmodeus answers questions truthfully, Vassago finds lost things. Crowley translated it in 1904. Read it carefully."
+    "lore": "The Lemegeton. Five books bound as one; the first, the Ars Goetia, lists the seventy-two demons King Solomon bound to his service. Each demon has a sigil, a number of legions, and a particular use — Bael teaches invisibility, Asmodeus answers questions truthfully, Vassago finds lost things. Crowley translated it in 1904. Read it carefully.",
+    "mastery_blessing": {
+      "kind": "spellbook_mp_discount",
+      "value": 3,
+      "scope": "item",
+      "desc": "The Lemegeton names all seventy-two demons of Solomon — its spell costs 3 fewer MP."
+    }
   },
   "spellbook_frost_touch": {
     "name": "Spellbook of Frost Touch",

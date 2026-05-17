@@ -1767,7 +1767,20 @@ class MagicMixin:
 
             scroll.identified = True
             self.player.known_item_ids.add(scroll.id)
-            self.player.remove_from_inventory(scroll)
+            # scroll_extra_read mastery: keep the first post-mastery read instead of consuming.
+            _scroll_mast = self.player.unlocked_masteries.get(scroll.id)
+            _save_scroll = (
+                _scroll_mast and _scroll_mast.get('kind') == 'scroll_extra_read'
+                and getattr(scroll, '_mastery_freebie_used', False) is False
+            )
+            if _save_scroll:
+                scroll._mastery_freebie_used = True
+                self.add_message(
+                    f"The words of the {scroll.name} burn into your memory; the scroll survives intact.",
+                    'success'
+                )
+            else:
+                self.player.remove_from_inventory(scroll)
             self.add_message(f"You read the {display}!", 'success')
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:
@@ -2181,6 +2194,13 @@ class MagicMixin:
     # ------------------------------------------------------------------
 
     def _identify_item(self, item):
+        if getattr(item, 'is_unique', False):
+            self._identify_unique_item(item)
+        else:
+            self._identify_common_item(item)
+
+    def _identify_common_item(self, item):
+        """Threshold-mode philosophy quiz for non-unique items. Atomic reveal on success."""
         display = self._display_name(item)
         self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
         self.state = STATE_QUIZ
@@ -2189,14 +2209,13 @@ class MagicMixin:
             self.state = STATE_PLAYER
             if result.success:
                 item.identified = True
-                item.buc_known = True  # BUC revealed on identification
+                item.buc_known = True
+                item.id_level = 5
                 self.player.known_item_ids.add(item.id)
-                # Propagate to ALL items: inventory, ground, and every stored level
                 self._propagate_identification(item.id)
                 self.add_message(
                     f"The {display} is revealed: {item.name}!", 'success'
                 )
-                # Show BUC status if non-uncursed
                 _buc = getattr(item, 'buc', 'uncursed')
                 if _buc == 'blessed':
                     self.add_message("It radiates a holy aura.", 'success')
@@ -2205,11 +2224,7 @@ class MagicMixin:
                 _qs_id = getattr(self, 'quirk_system', None)
                 if _qs_id:
                     _qs_id.on_item_identified(item.id)
-                # Chronicle legendary identifies
-                itier = getattr(item, 'quiz_tier', getattr(item, 'tier', 1))
-                if itier >= 4:
-                    self._log_chronicle(f"Identified something remarkable: {item.name}. The lore runs deep.")
-                # Show lore screen for the identified item
+                self._on_full_identify(item)
                 if item.lore:
                     self._lore_subject = item
                     self.state = STATE_LORE
@@ -2219,7 +2234,6 @@ class MagicMixin:
                 )
             self._advance_turn()
 
-        # Identification threshold scales with item tier: tier 1 -> 2/3 qs, tier 5 -> 6/9 qs
         id_tier = getattr(item, 'quiz_tier', 1)
         self.quiz_engine.start_quiz(
             mode='threshold',
@@ -2227,6 +2241,233 @@ class MagicMixin:
             tier=id_tier,
             callback=on_complete,
             threshold=id_tier + 1,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
+            base_seconds=self.player.get_quiz_timer('philosophy'),
+        )
+
+    def _identify_unique_item(self, item):
+        """Escalator-chain philosophy quiz for is_unique items.
+
+        Chain depth reveals progressively:
+          1 = real name           2 = BUC aura       3 = stats
+          4 = lore                5 = mastery bonus (one-time, permanent)
+        Each retry on a partially-identified item only raises id_level (never lowers).
+        """
+        display = self._display_name(item)
+        self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
+        self.state = STATE_QUIZ
+
+        previous_level = int(getattr(item, 'id_level', 0))
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            chain = int(result.score)
+            new_level = max(previous_level, min(chain, 5))
+            was_full_id = previous_level >= 3
+            item.id_level = new_level
+
+            if chain == 0:
+                self.add_message(
+                    f"You ponder the {display} but gain no insight.", 'warning'
+                )
+                self._advance_turn()
+                return
+
+            # Chain >= 1: real name revealed; mark identified for display purposes.
+            if new_level >= 1:
+                item.identified = True
+            # Chain >= 2: BUC aura revealed
+            if new_level >= 2:
+                item.buc_known = True
+            # Propagate identification state to all instances (same id) once name is known.
+            self.player.known_item_ids.add(item.id)
+            self._propagate_identification(item.id)
+
+            if new_level == 1:
+                self.add_message(
+                    f"Your insight pierces partway: it is the {item.name}.", 'success'
+                )
+            elif new_level == 2:
+                _buc = getattr(item, 'buc', 'uncursed')
+                aura = {'blessed': "a holy radiance", 'cursed': "a dark aura",
+                        'uncursed': "no clinging aura"}.get(_buc, "an unclear aura")
+                self.add_message(
+                    f"The {item.name} reveals itself. You sense {aura}.", 'success'
+                )
+            elif new_level == 3:
+                self.add_message(
+                    f"The {item.name} yields its workings to you.", 'success'
+                )
+            elif new_level == 4:
+                self.add_message(
+                    f"The history of the {item.name} unfolds in your mind.", 'success'
+                )
+            else:   # new_level == 5
+                self.add_message(
+                    f"You have mastered the {item.name}!", 'success'
+                )
+                self._claim_mastery(item)
+
+            # Quirk hook fires once when first crossing into full ID (level >= 3).
+            if not was_full_id and new_level >= 3:
+                _qs_id = getattr(self, 'quirk_system', None)
+                if _qs_id:
+                    _qs_id.on_item_identified(item.id)
+                self._on_full_identify(item)
+                self._log_chronicle(
+                    f"Identified something remarkable: {item.name}. The lore runs deep."
+                )
+
+            # Push lore screen at id_level >= 3 (full stats now visible).
+            if new_level >= 3 and item.lore:
+                self._lore_subject = item
+                self.state = STATE_LORE
+
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='philosophy',
+            tier=1,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus(),
+            base_seconds=self.player.get_quiz_timer('philosophy'),
+        )
+
+    def _claim_mastery(self, item):
+        """Record a mastery blessing on the player once chain 5 is achieved.
+
+        Idempotent — re-claiming an already-claimed item_id is a no-op.
+        Falls back to a class-default blessing if the item has none authored.
+        Some mastery kinds trigger one-time application here (stat bonuses,
+        max-HP bumps, wand-charge upgrades, MP discounts); the rest are
+        evaluated lazily at their use-site by querying unlocked_masteries.
+        """
+        if item.id in self.player.unlocked_masteries:
+            return
+        blessing = getattr(item, 'mastery_blessing', None) or self._default_mastery_for(item)
+        if not blessing:
+            return
+        self.player.unlocked_masteries[item.id] = blessing
+        self._apply_mastery_once(item, blessing)
+        desc = blessing.get('desc', 'A subtle resonance settles upon you.')
+        self.add_message(f"Mastery gained: {desc}", 'success')
+        self._log_chronicle(
+            f"Mastery of {item.name} attained. {desc}"
+        )
+
+    def _apply_mastery_once(self, item, blessing: dict) -> None:
+        """One-shot application for masteries whose effect is permanent stat changes.
+
+        Lazy/passive kinds (weapon_*, armor_resist_bonus, etc.) are evaluated at
+        use-sites instead.
+        """
+        kind = blessing.get('kind')
+        value = blessing.get('value')
+        p = self.player
+        if kind == 'armor_hp_bonus':
+            bump = int(value or 0)
+            if bump > 0:
+                p.max_hp += bump
+                p.hp += bump
+        elif kind == 'accessory_stat_bonus':
+            v = value or {}
+            stat = v.get('stat')
+            amount = int(v.get('amount', 0))
+            if stat and amount:
+                p.apply_stat_bonus(stat, amount)
+        elif kind == 'wand_extra_charge':
+            extra = int(value or 0)
+            if extra > 0 and hasattr(item, 'max_charges'):
+                item.max_charges += extra
+                item.charges = min(item.max_charges, getattr(item, 'charges', 0) + extra)
+        elif kind == 'spellbook_mp_discount':
+            disc = int(value or 0)
+            spell_id = getattr(item, 'spell_id', None)
+            if spell_id and disc > 0 and spell_id in p.known_spells:
+                p.known_spells[spell_id] = max(1, p.known_spells[spell_id] - disc)
+
+    def _default_mastery_for(self, item) -> dict | None:
+        """Class-default mastery for uniques that didn't author one explicitly.
+
+        Kept conservative — small bonuses tied to the item itself rather than
+        the whole item class. Should rarely be used once the authoring pass
+        is complete; this is a safety net.
+        """
+        from items import Weapon, Armor, Shield, Accessory, Wand, Scroll, Spellbook, Potion
+        if isinstance(item, Weapon):
+            return {'kind': 'weapon_chain_mult_bonus', 'value': 0.1,
+                    'desc': f"+0.1 to all chain multipliers when wielding the {item.name}."}
+        if isinstance(item, (Armor, Shield)):
+            return {'kind': 'armor_ac_bonus', 'value': 1,
+                    'desc': f"+1 AC bonus while wearing the {item.name}."}
+        if isinstance(item, Accessory):
+            return {'kind': 'accessory_buff_duration_bonus', 'value': 5,
+                    'desc': f"Buffs from the {item.name} last 5 turns longer."}
+        if isinstance(item, Wand):
+            return {'kind': 'wand_extra_charge', 'value': 1,
+                    'desc': f"The {item.name} gains +1 maximum charge."}
+        if isinstance(item, Scroll):
+            return {'kind': 'scroll_extra_read', 'value': 1,
+                    'desc': f"You have learned to recite the {item.name} from memory; one extra use this run."}
+        if isinstance(item, Spellbook):
+            return {'kind': 'spellbook_mp_discount', 'value': 1,
+                    'desc': f"The spell from the {item.name} costs 1 less MP."}
+        if isinstance(item, Potion):
+            return {'kind': 'potion_potency_bonus', 'value': 0.25,
+                    'desc': f"Potions of this type are 25% more potent."}
+        return None
+
+    def _on_full_identify(self, item) -> None:
+        """Hook called once per item when it crosses into full-ID state.
+
+        Increments the philosopher career counter and fires any threshold rewards.
+        """
+        self.player.total_identifies += 1
+        self._check_philosopher_thresholds()
+
+    def _quick_buc_check(self, item):
+        """Tier-1 philosophy threshold quiz that reveals only buc_known.
+
+        Doesn't change id_level, identified, or known_item_ids. Does NOT count
+        toward the philosopher career arc (per design — it's the cheap door).
+        """
+        display = self._display_name(item)
+        self.quiz_title = f"INSPECTING THE AURA OF {display.upper()}  --  PHILOSOPHY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            if result.success:
+                item.buc_known = True
+                _buc = getattr(item, 'buc', 'uncursed')
+                aura = {
+                    'blessed': "holy radiance.",
+                    'cursed': "a dark aura clings to it.",
+                    'uncursed': "no clinging aura.",
+                }.get(_buc, "an unclear aura.")
+                self.add_message(
+                    f"You read the aura of the {display}: {aura}",
+                    'success' if _buc != 'cursed' else 'warning',
+                )
+            else:
+                self.add_message(
+                    f"You squint at the {display} but its aura eludes you.", 'warning'
+                )
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='philosophy',
+            tier=1,
+            callback=on_complete,
+            threshold=3,
+            total_qs=5,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus(),
@@ -2561,15 +2802,28 @@ class MagicMixin:
                 inv_item.buc_known = True
 
     def _auto_identify_all(self):
-        """Identify every item in inventory and on the ground (Philosopher's Stone)."""
+        """Identify every item in inventory and on the ground (Philosopher's Stone).
+
+        Sets id_level=4 (lore revealed, mastery NOT auto-claimed) — players can
+        still chain-5 a unique through the identify menu to claim its mastery.
+        """
+        def _stone_id(it):
+            if not hasattr(it, 'identified'):
+                return
+            it.identified = True
+            if hasattr(it, 'id_level'):
+                it.id_level = max(int(getattr(it, 'id_level', 0)), 4)
+            if hasattr(it, 'buc_known'):
+                it.buc_known = True
+
         for item in self.player.inventory:
-            item.identified = True
+            _stone_id(item)
             self.player.known_item_ids.add(item.id)
         for item in self.ground_items:
-            item.identified = True
+            _stone_id(item)
             self.player.known_item_ids.add(getattr(item, 'id', ''))
         # Equipped items too
         for slot_item in self.player.get_equipped_items().values():
             if slot_item:
-                slot_item.identified = True
+                _stone_id(slot_item)
                 self.player.known_item_ids.add(slot_item.id)

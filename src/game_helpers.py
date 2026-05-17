@@ -22,6 +22,11 @@ def migrate_buc_item(item) -> None:
         item.identified = True  # old items without the field are assumed known
     if not hasattr(item, 'unidentified_name'):
         item.unidentified_name = getattr(item, 'name', '???')
+    if not hasattr(item, 'id_level'):
+        # Old saves: identified items are fully known (id_level=5); unknown stay at 0.
+        item.id_level = 5 if getattr(item, 'identified', True) else 0
+    if not hasattr(item, 'mastery_blessing'):
+        item.mastery_blessing = None
 
 
 def cycle_tab(current: int, direction: int, n_tabs: int, has_items: Callable[[int], bool]) -> int:

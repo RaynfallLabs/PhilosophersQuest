@@ -217,6 +217,48 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._chronicle.append(entry)
 
     # ------------------------------------------------------------------
+    # Philosopher career arc — milestone rewards for cumulative identifies
+    # ------------------------------------------------------------------
+
+    def _check_philosopher_thresholds(self):
+        """Fire one-time rewards as total_identifies crosses 10/25/50/100.
+
+        Called from _on_full_identify after each successful full identification
+        (chain >= 3 on uniques; threshold success on commons; corpse lore-id).
+        Quick-BUC peeks do NOT count.
+        """
+        p = self.player
+        claimed = p.philosopher_tier_claimed
+        n = p.total_identifies
+        if n >= 10 and 10 not in claimed:
+            claimed.add(10)
+            p.INT += 1
+            p.max_mp = p.BASE_MP + p.INT
+            p.mp = min(p.mp + 1, p.max_mp)
+            self.add_message("First Insight! Your study sharpens your mind. (+1 INT)", 'success')
+            self._log_chronicle("Reached the First Insight milestone (10 identifies). INT permanently increased.")
+        if n >= 25 and 25 not in claimed:
+            claimed.add(25)
+            self.add_message(
+                "Pattern Recognition! You now grasp lesser items at a glance.", 'success'
+            )
+            self._log_chronicle("Reached Pattern Recognition (25 identifies). Common items auto-identify at depth.")
+        if n >= 50 and 50 not in claimed:
+            claimed.add(50)
+            p.WIS += 1
+            self.add_message(
+                "Sage's Eye! Your patient study deepens your wisdom. (+1 WIS)", 'success'
+            )
+            self._log_chronicle("Reached Sage's Eye (50 identifies). WIS permanently increased.")
+        if n >= 100 and 100 not in claimed:
+            claimed.add(100)
+            p.philosophers_mantle = True
+            self.add_message(
+                "The Philosopher's Mantle settles upon you. Every aura is plain to your eye.", 'success'
+            )
+            self._log_chronicle("Donned the Philosopher's Mantle (100 identifies). All future pickups reveal their aura.")
+
+    # ------------------------------------------------------------------
     # Level setup
     # ------------------------------------------------------------------
 
@@ -306,6 +348,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.known_spells = {}
         if not hasattr(self.player, 'lockpick_charges'):
             self.player.lockpick_charges = 0
+        # Philosopher career arc — new fields in 2026-05-17 identify rebuild
+        if not hasattr(self.player, 'total_identifies'):
+            self.player.total_identifies = 0
+        if not hasattr(self.player, 'philosopher_tier_claimed'):
+            self.player.philosopher_tier_claimed = set()
+        if not hasattr(self.player, 'philosophers_mantle'):
+            self.player.philosophers_mantle = False
+        if not hasattr(self.player, 'unlocked_masteries'):
+            self.player.unlocked_masteries = {}
         # BUC migration: patch buc/buc_known on all items from old saves
         self._migrate_buc_all(state)
         self.player_name   = state['player_name']
@@ -1631,10 +1682,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._tick_unicorn()
         # Passive PER-based ambush detection
         self._do_passive_ambush_detection()
-        # Eye of Horus: passive HP regen every N turns
+        # Eye of Horus: passive HP regen every N turns.
+        # Mastery (accessory_passive_strength/passive_regen_bonus) adds to the regen amount.
         for _acc in self.player.equipped_accessories:
             _pr = getattr(_acc, 'passive_regen', 0)
             _pri = getattr(_acc, 'passive_regen_interval', 5)
+            _mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', None))
+            if _mast and _mast.get('kind') == 'accessory_passive_strength':
+                _mv = _mast.get('value') or {}
+                if _mv.get('kind') == 'passive_regen_bonus':
+                    _pr += int(_mv.get('value', 0))
             if _pr > 0 and self.turn_count % _pri == 0:
                 if self.player.hp < self.player.max_hp:
                     self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
@@ -2114,10 +2171,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not hasattr(self, 'player_gold'):
                 self.player_gold = 0
             _gold_amt = item.amount
-            # Draupnir: double gold pickups
+            # Draupnir: double gold pickups. Mastery overrides to a stronger multiplier.
             for _acc in self.player.equipped_accessories:
-                if getattr(_acc, 'gold_multiplier', 0) > 0:
-                    _gold_amt = int(_gold_amt * _acc.gold_multiplier)
+                _gm = getattr(_acc, 'gold_multiplier', 0)
+                _mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', None))
+                if _mast and _mast.get('kind') == 'accessory_passive_strength':
+                    _mv = _mast.get('value') or {}
+                    if _mv.get('kind') == 'gold_multiplier':
+                        _gm = max(_gm, float(_mv.get('value', _gm)))
+                if _gm > 0:
+                    _gold_amt = int(_gold_amt * _gm)
                     break
             self.player_gold += _gold_amt
             self.ground_items.remove(item)
@@ -2140,7 +2203,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Philosopher's Stone grants identify_sight — auto-identify on pickup
             if self.player.has_effect('identify_sight'):
                 item.identified = True
+                item.id_level = max(getattr(item, 'id_level', 0), 4)
                 self.player.known_item_ids.add(item.id)
+            # Pattern Recognition (25 IDs): auto-identify lesser COMMON items at depth.
+            # Uniques are preserved for the chain-5 dramatic flow.
+            if 25 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
+                tier_gate = 1 + (self.dungeon_level // 30)
+                if hasattr(item, 'identified') and not item.identified and \
+                        getattr(item, 'quiz_tier', 5) <= tier_gate:
+                    item.identified = True
+                    item.id_level = 5
+                    item.buc_known = True
+                    self.player.known_item_ids.add(item.id)
+            # Philosopher's Mantle (100 IDs): auto BUC-sense on every pickup, including uniques.
+            if self.player.philosophers_mantle and hasattr(item, 'buc_known'):
+                item.buc_known = True
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
@@ -3698,6 +3775,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     f"Your philosophical insight reveals the nature of the {corpse.monster_name}!", 'success'
                 )
+                self._on_full_identify(corpse)
             else:
                 self.add_message("You study the corpse but gain no insight.", 'warning')
             self._advance_turn()
@@ -3752,6 +3830,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     f"Your philosophical insight reveals the nature of the {corpse.monster_name}!", 'success'
                 )
+                self._on_full_identify(corpse)
             else:
                 self.add_message("You study the corpse but gain no insight.", 'warning')
             self._advance_turn()

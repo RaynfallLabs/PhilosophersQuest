@@ -36,7 +36,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY,
+    STATE_PRAY, STATE_IDENTIFY_MODE,
 )
 
 
@@ -82,7 +82,8 @@ class InputMixin:
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
-                              STATE_POWER_MENU, STATE_STUDY):
+                              STATE_POWER_MENU, STATE_STUDY,
+                              STATE_IDENTIFY_MODE):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 if self.state == STATE_TARGET:
@@ -93,6 +94,12 @@ class InputMixin:
                     self._pending_wand = None
                     self._power_targeting = False
                     self._pending_power = None
+                if self.state == STATE_IDENTIFY_MODE:
+                    # Backing out of the F/B popup returns to the identify menu,
+                    # not the player turn (player hasn't committed to an action yet).
+                    self._identify_mode_item = None
+                    self.state = STATE_IDENTIFY_MENU
+                    return True
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:
@@ -139,6 +146,8 @@ class InputMixin:
             self._spell_menu_input(key)
         elif self.state == STATE_IDENTIFY_MENU:
             self._identify_menu_input(key)
+        elif self.state == STATE_IDENTIFY_MODE:
+            self._identify_mode_input(key)
         elif self.state == STATE_COOK_MENU:
             self._cook_menu_input(key)
         elif self.state == STATE_EAT_MENU:

@@ -35,7 +35,13 @@
     "peak_floor": 70,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Greater Aegis of Athena grants an additional -2 AC."
+    }
   },
   "pridwen": {
     "name": "Pridwen",
@@ -72,7 +78,16 @@
     "peak_floor": 60,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "unholy",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "Pridwen bears the Virgin Mary on its inner face — it deflects 35% of unholy damage."
+    }
   },
   "tower_shield_of_ajax": {
     "name": "Tower Shield of Ajax",
@@ -109,7 +124,13 @@
     "peak_floor": 72,
     "spread": 10,
     "peak_weight": 0.35,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 25,
+      "scope": "item",
+      "desc": "The Tower Shield of Ajax was seven ox-hides thick — it grants a permanent 25 HP on mastery."
+    }
   },
   "scutum_of_aeneas": {
     "name": "Scutum of Aeneas",
@@ -147,7 +168,13 @@
     "peak_floor": 65,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Scutum of Aeneas bore the entire future of Rome — armor class improves by 2."
+    }
   },
   "bronze_aegis": {
     "name": "Bronze Aegis",
@@ -180,7 +207,13 @@
     "peak_floor": 1,
     "spread": 1,
     "peak_weight": 0.0,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "The Bronze Aegis is carved with Hephaestus's eye — armor class improves by 1."
+    }
   },
   "aegis_of_athena": {
     "name": "Aegis of Athena",
@@ -212,7 +245,16 @@
     "peak_floor": 1,
     "spread": 1,
     "peak_weight": 0.0,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "all_elemental",
+        "pct": 25
+      },
+      "scope": "item",
+      "desc": "Athena's mirror-polished Aegis turns Gorgon-stares to stone — it deflects 25% of all elemental damage."
+    }
   },
   "lionheart_shield": {
     "name": "Lionheart Shield",
@@ -242,7 +284,13 @@
     "peak_floor": 1,
     "spread": 1,
     "peak_weight": 0.0,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 15,
+      "scope": "item",
+      "desc": "The Lionheart Shield was sworn to duty unto death — it grants a permanent 15 HP on mastery."
+    }
   },
   "shield_of_the_spartans": {
     "name": "Shield of the Spartans",
@@ -278,7 +326,13 @@
     "peak_floor": 18,
     "spread": 10,
     "peak_weight": 0.45,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 15,
+      "scope": "item",
+      "desc": "Return with your shield, or on it — the Shield of the Spartans grants a permanent 15 HP on mastery."
+    }
   },
   "svalinn": {
     "name": "Svalinn",
@@ -313,7 +367,16 @@
     "peak_floor": 58,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "fire",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "Svalinn stands before the sun itself — it deflects 50% of fire damage."
+    }
   },
   "ancile": {
     "name": "Ancile",
@@ -348,7 +411,13 @@
     "peak_floor": 36,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2
+    "max_enchant": 2,
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Ancile fell from heaven during Numa's reign — armor class improves by 2."
+    }
   },
   "mycenaean_tower_of_telamon": {
     "name": "Mycenaean Tower of Telamon",
@@ -382,7 +451,13 @@
     "peak_weight": 0.5,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 10,
+      "scope": "item",
+      "desc": "The Mycenaean Tower of Telamon stood at Troy's first sack — it grants a permanent 10 HP on mastery."
+    }
   },
   "pelte_of_the_thracian": {
     "name": "Pelte of the Thracian",
@@ -416,7 +491,13 @@
     "peak_weight": 0.45,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "The Thracian Pelte is light enough to leave with — armor class improves by 1."
+    }
   },
   "buckler_of_the_sumerian_lugal": {
     "name": "Buckler of the Sumerian Lugal",
@@ -450,7 +531,13 @@
     "peak_weight": 0.4,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "Eannatum's Sumerian buckler is the oldest phalanx-shield in stone — armor class improves by 1."
+    }
   },
   "khopesh_breaker_of_thebes": {
     "name": "Khopesh-Breaker of Thebes",
@@ -484,7 +571,16 @@
     "peak_weight": 0.45,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "all_elemental",
+        "pct": 20
+      },
+      "scope": "item",
+      "desc": "The Khopesh-Breaker of Thebes was the answer to a single bad weapon — it deflects 20% of all elemental damage."
+    }
   },
   "hittite_chariot_guard": {
     "name": "Hittite Chariot-Guard",
@@ -518,7 +614,13 @@
     "peak_weight": 0.45,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 12,
+      "scope": "item",
+      "desc": "The Hittite Chariot-Guard's figure-eight shield protected the whole crew at Kadesh — it grants a permanent 12 HP on mastery."
+    }
   },
   "assyrian_siege_pavise": {
     "name": "Assyrian Siege-Pavise",
@@ -553,7 +655,13 @@
     "peak_weight": 0.4,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "The Assyrian Siege-Pavise stood man-high before the archers of Nineveh — armor class improves by 1."
+    }
   },
   "spartan_aspis_of_leonidas": {
     "name": "Spartan Aspis of Leonidas",
@@ -588,7 +696,13 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 15,
+      "scope": "item",
+      "desc": "Leonidas's gold-chased aspis held the Hot Gates — it grants a permanent 15 HP on mastery."
+    }
   },
   "etruscan_round_shield": {
     "name": "Etruscan Round Shield",
@@ -622,7 +736,13 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "The Etruscan Round Shield outlasted both armies — armor class improves by 1."
+    }
   },
   "scutum_of_the_legio": {
     "name": "Scutum of the Legio",
@@ -658,7 +778,13 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Scutum of the Legio formed the testudo — armor class improves by 2."
+    }
   },
   "macedonian_aspis_of_philip": {
     "name": "Macedonian Aspis of Philip",
@@ -693,7 +819,13 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "Philip's small aspis freed both hands for the sarissa — armor class improves by 1."
+    }
   },
   "celtic_oval_shield": {
     "name": "Celtic Oval Shield",
@@ -727,7 +859,13 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "The Celtic Oval Shield bears spirals the Gauls painted before they lost — armor class improves by 1."
+    }
   },
   "germanic_kriegsschild": {
     "name": "Germanic Kriegsschild",
@@ -761,7 +899,13 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 15,
+      "scope": "item",
+      "desc": "The Germanic Kriegsschild faced Arminius's Romans in the Teutoburg — it grants a permanent 15 HP on mastery."
+    }
   },
   "sarmatian_lamellar_targe": {
     "name": "Sarmatian Lamellar Targe",
@@ -795,7 +939,13 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 1,
+      "scope": "item",
+      "desc": "The Sarmatian Lamellar Targe garrisoned Hadrian's Wall — armor class improves by 1."
+    }
   },
   "battersea_votive_shield": {
     "name": "Battersea Votive Shield",
@@ -830,7 +980,16 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "psychic",
+        "pct": 30
+      },
+      "scope": "item",
+      "desc": "The Battersea Votive Shield was drowned for being beautiful — it deflects 30% of psychic damage."
+    }
   },
   "saxon_round_shield": {
     "name": "Saxon Round Shield",
@@ -866,7 +1025,13 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 15,
+      "scope": "item",
+      "desc": "The Saxon Round Shield went into Raedwald's Sutton Hoo barrow — it grants a permanent 15 HP on mastery."
+    }
   },
   "lendings_of_beowulf": {
     "name": "Lendings of Beowulf",
@@ -901,7 +1066,16 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "fire",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "Beowulf forged an iron shield knowing wood would burn — the Lendings deflect 35% of fire damage."
+    }
   },
   "sigurds_handshield": {
     "name": "Sigurd's Handshield",
@@ -936,7 +1110,16 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "fire",
+        "pct": 30
+      },
+      "scope": "item",
+      "desc": "Sigurd's Handshield bore the Fafnir story he had lived — it deflects 30% of fire damage."
+    }
   },
   "carolingian_kite": {
     "name": "Carolingian Kite",
@@ -971,7 +1154,13 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Carolingian Kite reaches down to cover the left leg in the saddle — armor class improves by 2."
+    }
   },
   "heater_of_the_black_prince": {
     "name": "Heater of the Black Prince",
@@ -1007,7 +1196,13 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_hp_bonus",
+      "value": 18,
+      "scope": "item",
+      "desc": "The Heater of the Black Prince served before it reigned — it grants a permanent 18 HP on mastery."
+    }
   },
   "mameluke_targe": {
     "name": "Mameluke Targe",
@@ -1042,7 +1237,13 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_ac_bonus",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Mameluke Targe broke the Mongols at Ain Jalut — armor class improves by 2."
+    }
   },
   "o_tate_of_the_samurai": {
     "name": "O-Tate of the Samurai",
@@ -1077,7 +1278,16 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "fire",
+        "pct": 35
+      },
+      "scope": "item",
+      "desc": "The O-Tate wins when it is not being held — at Nagashino it stood between musket-fire and cavalry, deflecting 35% of fire damage."
+    }
   },
   "skidbladnir_aegis": {
     "name": "Skidbladnir Aegis",
@@ -1113,7 +1323,16 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "cold",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "The Skidbladnir Aegis folds like Freyr's ship — cold of any kind passes through it, deflecting 50% of cold damage."
+    }
   },
   "smoking_mirror_of_tezcatlipoca": {
     "name": "Smoking Mirror of Tezcatlipoca",
@@ -1149,7 +1368,16 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "psychic",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "The Smoking Mirror of Tezcatlipoca turns spells back upon their casters — it deflects 50% of psychic damage."
+    }
   },
   "vajra_paramita": {
     "name": "Vajra Paramita",
@@ -1186,7 +1414,16 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "lightning",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "The Vajra Paramita is both lightning and diamond — it deflects 50% of lightning damage."
+    }
   },
   "horse_armor_of_the_norns": {
     "name": "Horse-Armor of the Norns",
@@ -1223,7 +1460,16 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "all_elemental",
+        "pct": 30
+      },
+      "scope": "item",
+      "desc": "The Horse-Armor of the Norns returns what was sent — it deflects 30% of all elemental damage."
+    }
   },
   "scarab_of_apophis_binding": {
     "name": "Scarab of Apophis-Binding",
@@ -1260,7 +1506,16 @@
     "peak_weight": 0.35,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "unholy",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "The Scarab of Apophis-Binding hisses back at every serpent — it deflects 50% of unholy damage."
+    }
   },
   "yamas_dharma_watch": {
     "name": "Yama's Dharma-Watch",
@@ -1298,6 +1553,15 @@
     "peak_weight": 0.35,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "mastery_blessing": {
+      "kind": "armor_resist_bonus",
+      "value": {
+        "type": "psychic",
+        "pct": 50
+      },
+      "scope": "item",
+      "desc": "Yama's Dharma-Watch measures every spell against the Mirror of Karma — it deflects 50% of psychic damage."
+    }
   }
 }

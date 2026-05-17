@@ -1952,7 +1952,13 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a budded almond-wood rod",
-    "lore": "The rod of Aaron, brother of Moses. Thrown to the ground before Pharaoh's court, it became a serpent and swallowed the serpents of Pharaoh's magicians. Later, it budded almonds overnight to settle a dispute among the tribes. From Exodus 7 and Numbers 17. Whatever an enemy raises, the rod takes the legs out from under it."
+    "lore": "The rod of Aaron, brother of Moses. Thrown to the ground before Pharaoh's court, it became a serpent and swallowed the serpents of Pharaoh's magicians. Later, it budded almonds overnight to settle a dispute among the tribes. From Exodus 7 and Numbers 17. Whatever an enemy raises, the rod takes the legs out from under it.",
+    "mastery_blessing": {
+      "kind": "wand_extra_charge",
+      "value": 3,
+      "scope": "item",
+      "desc": "Aaron's Rod gains +3 maximum charges."
+    }
   },
   "circes_wand": {
     "name": "Circe's Wand",
@@ -1977,7 +1983,13 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a slender ivory wand",
-    "lore": "Circe's wand from her hall on Aeaea. She used it on Odysseus's crew and they became swine — heads and bristles and grunts, but their minds knew themselves the whole time. Hermes gave Odysseus the herb moly to resist her; she gave up after the swine-spell failed and welcomed him. From the Odyssey, Book X."
+    "lore": "Circe's wand from her hall on Aeaea. She used it on Odysseus's crew and they became swine — heads and bristles and grunts, but their minds knew themselves the whole time. Hermes gave Odysseus the herb moly to resist her; she gave up after the swine-spell failed and welcomed him. From the Odyssey, Book X.",
+    "mastery_blessing": {
+      "kind": "wand_extra_charge",
+      "value": 2,
+      "scope": "item",
+      "desc": "Circe's Wand turned crews to swine on Aeaea — it gains 2 extra charges on mastery."
+    }
   },
   "indras_vajra": {
     "name": "Indra's Vajra",
@@ -2002,6 +2014,12 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a heavy iron rod",
-    "lore": "The thunderbolt of Indra, made by Tvastr the divine craftsman from the bones of the sage Dadhichi, who gave his body for it. Indra struck Vritra the world-drought serpent with this and freed the seven rivers. From the Rigveda, Book I. It is not lightning — it is the weapon that lightning was a memory of."
+    "lore": "The thunderbolt of Indra, made by Tvastr the divine craftsman from the bones of the sage Dadhichi, who gave his body for it. Indra struck Vritra the world-drought serpent with this and freed the seven rivers. From the Rigveda, Book I. It is not lightning — it is the weapon that lightning was a memory of.",
+    "mastery_blessing": {
+      "kind": "wand_extra_charge",
+      "value": 3,
+      "scope": "item",
+      "desc": "Indra's Vajra struck Vritra and freed the seven rivers — it gains 3 extra charges on mastery."
+    }
   }
 }

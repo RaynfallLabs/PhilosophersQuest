@@ -5,6 +5,28 @@ from dice import roll
 _DEFAULT_MULTIPLIERS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
 
 
+def _weapon_mastery(player, weapon) -> dict | None:
+    """Return the mastery blessing dict for this weapon if claimed, else None.
+
+    Used to inject chain-5-earned bonuses (Excalibur +0.25 multipliers, etc.) at
+    damage-calc time without touching the weapon's base stats.
+    """
+    if weapon is None:
+        return None
+    masteries = getattr(player, 'unlocked_masteries', None) or {}
+    return masteries.get(getattr(weapon, 'id', None))
+
+
+def _tag_match(monster, tag: str) -> bool:
+    """True if `tag` is in the monster's tags (or matches its kind)."""
+    if tag == 'all':
+        return True
+    mtags = set(getattr(monster, 'tags', []))
+    if tag in mtags:
+        return True
+    return getattr(monster, 'kind', '') == tag
+
+
 # --- Material effective_against / vulnerabilities lookup ---------------------
 # Cached once. Populated lazily on first call. Generalizes the old hardcoded
 # "silver vs undead, iron vs fey" rules into a data-driven system: every
@@ -173,11 +195,22 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         else:
             base = roll('1d4')
 
+        # Mastery hooks (chain-5 unlocks on uniques)
+        _mastery = _weapon_mastery(player, weapon)
+
+        # weapon_base_damage_bonus: flat damage add
+        if _mastery and _mastery.get('kind') == 'weapon_base_damage_bonus':
+            base += int(_mastery.get('value', 0))
+
         # Ammo damage bonus (ranged shots only)
         ammo_bonus  = ammo.damage_bonus if ammo else 0
         enchant     = weapon.enchant_bonus if weapon else 0
         multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
         mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
+
+        # weapon_chain_mult_bonus: flat add to every chain multiplier
+        if _mastery and _mastery.get('kind') == 'weapon_chain_mult_bonus':
+            mult += float(_mastery.get('value', 0.0))
         # Musashi quirk: chain-1 uses 2nd multiplier instead of weakest
         if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
             mult = multipliers[min(1, len(multipliers) - 1)]
@@ -215,6 +248,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 if weapon.petrify_on_crit:
                     current_pet = monster.status_effects.get('petrifying', 0)
                     monster.status_effects['petrifying'] = max(current_pet, 3)
+
+        # weapon_first_hit_crit mastery: guarantee crit on the FIRST hit of a chain
+        if chain == 1 and _mastery and _mastery.get('kind') == 'weapon_first_hit_crit' \
+                and _mastery.get('value') and weapon:
+            mult *= max(1.5, weapon.crit_multiplier)
+            crit = True
 
         # Pre-damage class-mechanic multipliers (applied at max chain):
         # warhammer anti_heavy_at_max -> +50% vs heavy-armored monsters.
@@ -255,7 +294,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 low_hp_mult = 1.0 + (0.5 - hp_pct) * 2.0  # up to 2x at 0% HP
 
         str_factor = 1.0 + max(0, player.STR - 10) * 0.03
-        damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
+
+        # weapon_damage_vs_tag mastery: +X% damage when target matches tag
+        tag_mult = 1.0
+        if _mastery and _mastery.get('kind') == 'weapon_damage_vs_tag':
+            tag_val = _mastery.get('value') or {}
+            if isinstance(tag_val, dict) and _tag_match(monster, tag_val.get('tag', '')):
+                tag_mult = 1.0 + (float(tag_val.get('pct', 0)) / 100.0)
+
+        damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult))
 
         # Empower spell: 3x damage on next hit, then clears
         if player.has_effect('empowered'):
@@ -316,12 +363,32 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 monster.add_effect('confused', 4)
                 confused = True
 
-        # Lifesteal mechanic (Soul Reaver)
+        # Lifesteal mechanic (Soul Reaver). Mastery: weapon_lifesteal adds % on top.
         healed = False
-        if weapon and getattr(weapon, 'lifesteal_percent', 0) > 0 and actual > 0:
-            heal = max(1, int(actual * weapon.lifesteal_percent))
+        lifesteal_pct = float(getattr(weapon, 'lifesteal_percent', 0) or 0)
+        if _mastery and _mastery.get('kind') == 'weapon_lifesteal':
+            lifesteal_pct += float(_mastery.get('value', 0.0))
+        if weapon and lifesteal_pct > 0 and actual > 0:
+            heal = max(1, int(actual * lifesteal_pct))
             player.hp = min(player.max_hp, player.hp + heal)
             healed = True
+
+        # weapon_wound_lingers mastery: extend bleeding duration on hit.
+        if _mastery and _mastery.get('kind') == 'weapon_wound_lingers' and actual > 0:
+            extra = int(_mastery.get('value', 0))
+            if extra > 0:
+                current = monster.status_effects.get('bleeding', 0)
+                monster.status_effects['bleeding'] = max(current, 3) + extra
+
+        # weapon_status_chance mastery: apply an additional on-hit status (e.g. stun)
+        if _mastery and _mastery.get('kind') == 'weapon_status_chance' and actual > 0:
+            st = _mastery.get('value') or {}
+            status = st.get('status')
+            chance_pct = float(st.get('pct', 0)) / 100.0
+            dur = int(st.get('duration', 2))
+            if status and chance_pct > 0 and random.random() < chance_pct:
+                current = monster.status_effects.get(status, 0)
+                monster.status_effects[status] = max(current, dur)
 
         # Kill heal mechanic (Excalibur, Achilles's Spear)
         if monster.is_dead() and weapon and getattr(weapon, 'kill_heal_amount', 0) > 0:

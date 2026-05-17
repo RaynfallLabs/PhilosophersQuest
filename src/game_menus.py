@@ -28,6 +28,7 @@ from game_states import (
     STATE_SPELL_MENU, STATE_LORE, STATE_EXAMINE,
     STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
     STATE_POWER_MENU, STATE_THROW_MENU,
+    STATE_IDENTIFY_MODE,
 )
 
 
@@ -477,16 +478,21 @@ class MenuMixin:
         if not has_shard:
             self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
             return
-        inv_items = [
-            i for i in self.player.inventory
-            if hasattr(i, 'identified') and not i.identified
-               and i.id not in self.player.known_item_ids
-        ]
+        def _needs_identify(i):
+            # Uniques stay in the menu until their mastery has been claimed (chain-5).
+            if getattr(i, 'is_unique', False):
+                return i.id not in self.player.unlocked_masteries
+            # Non-uniques use the atomic reveal: filter by identified flag and known-types.
+            return (
+                hasattr(i, 'identified') and not i.identified
+                and i.id not in self.player.known_item_ids
+            )
+
+        inv_items = [i for i in self.player.inventory if _needs_identify(i)]
         ground_items = [
             i for i in self.ground_items
             if i.x == self.player.x and i.y == self.player.y
-               and hasattr(i, 'identified') and not i.identified
-               and i.id not in self.player.known_item_ids
+               and _needs_identify(i)
         ]
         # Corpses on the current tile that haven't been lore-identified yet
         _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
@@ -513,12 +519,30 @@ class MenuMixin:
         idx = self._paged_menu_input(key, self.identify_menu_items)
         if idx is None:
             return
-        self.state = STATE_PLAYER
         item, is_ground, is_corpse = self.identify_menu_items[idx]
         if is_corpse:
+            self.state = STATE_PLAYER
             self._examine_corpse_direct(item)
         else:
+            # Open the F/B mode popup so the player can choose full identify vs
+            # quick BUC-only. Stash the item for the input handler.
+            self._identify_mode_item = item
+            self.state = STATE_IDENTIFY_MODE
+
+    def _identify_mode_input(self, key: int):
+        """Handle [F] full identify vs [B] quick BUC check after selection."""
+        item = getattr(self, '_identify_mode_item', None)
+        if item is None:
+            self.state = STATE_PLAYER
+            return
+        if key in (pygame.K_f,):
+            self._identify_mode_item = None
+            self.state = STATE_PLAYER
             self._identify_item(item)
+        elif key in (pygame.K_b,):
+            self._identify_mode_item = None
+            self.state = STATE_PLAYER
+            self._quick_buc_check(item)
 
     # ------------------------------------------------------------------
     # Drop menu  (d key)

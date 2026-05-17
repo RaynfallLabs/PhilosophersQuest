@@ -43,7 +43,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY,
+    STATE_PRAY, STATE_IDENTIFY_MODE,
 )
 
 
@@ -1076,6 +1076,9 @@ class RenderMixin:
             self._draw_prayer_menu()
         elif self.state == STATE_IDENTIFY_MENU:
             self._draw_identify_menu()
+        elif self.state == STATE_IDENTIFY_MODE:
+            self._draw_identify_menu()
+            self._draw_identify_mode_popup()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
         elif self.state == STATE_EAT_MENU:
@@ -2303,6 +2306,44 @@ class RenderMixin:
             row_style='text',
         )
 
+    def _draw_identify_mode_popup(self):
+        """Overlay shown after picking an item in the identify menu.
+
+        Lets the player choose [F] full identify or [B] quick BUC peek. Drawn
+        ON TOP of the existing identify menu (which is dimmed by the overlay).
+        """
+        item = getattr(self, '_identify_mode_item', None)
+        draw_overlay(self.screen, 190)
+        bw, bh = min(620, layout.GAME_W - 40), 220
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="STUDY THE ITEM",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+
+        target_name = self._display_name(item) if item else 'an item'
+        sub = f"How will you study the {target_name}?"
+        sub_surf = self.font_md.render(self._fit_text(sub, self.font_md, bw - 40), True, FP.BODY_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 58))
+
+        draw_divider(self.screen, bx + 20, by + 96, bw - 40)
+
+        opts = [
+            ("F", "Full identify (philosophy chain, full reveal)", FP.GOLD_BRIGHT),
+            ("B", "Quick aura read (tier 1 philosophy, BUC only)", FP.HINT_TEXT),
+            ("ESC", "Back to selection", FP.FADED_TEXT),
+        ]
+        oy = by + 112
+        for key_label, desc, col in opts:
+            key_surf  = self.font_md.render(f"[ {key_label} ]", True, col)
+            desc_surf = self.font_md.render(desc, True, FP.BODY_TEXT)
+            total_w   = key_surf.get_width() + 12 + desc_surf.get_width()
+            rx = bx + (bw - total_w) // 2
+            self.screen.blit(key_surf,  (rx, oy))
+            self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
+            oy += key_surf.get_height() + 6
+
     def _draw_confirm_exit(self):
         draw_overlay(self.screen, 190)
         bw, bh = min(560, layout.GAME_W - 40), 230
@@ -2944,6 +2985,10 @@ class RenderMixin:
 
         else:
             # -- ITEM IDENTIFICATION ENTRY --------------------------------
+            # id_level controls progressive reveal for uniques. Non-uniques
+            # default to 5 (full reveal) once identified. Default to 5 for
+            # back-compat when an item doesn't have the field.
+            id_level = int(getattr(subject, 'id_level', 5))
             item_class_label = subject.item_class.upper()
             title = self.font_lg.render(
                 f"{subject.name.upper()} -- {item_class_label}", True, title_col
@@ -2955,12 +3000,33 @@ class RenderMixin:
 
             stat_lines = []
 
+            # Mastery banner \u2014 top line when id_level == 5 and mastery has been claimed.
+            mastered = (id_level >= 5
+                        and getattr(self.player, 'unlocked_masteries', {}).get(subject.id))
+            if mastered:
+                stat_lines.append(f"\u2605 MASTERED  \u2605  {mastered.get('desc', '')}")
+
+            # Aura line at id_level >= 2 (BUC known).
+            if id_level >= 2:
+                _buc = getattr(subject, 'buc', 'uncursed')
+                aura_text = {
+                    'blessed': "Aura: blessed (radiates a holy light)",
+                    'cursed': "Aura: cursed (a dark aura clings to it)",
+                    'uncursed': "Aura: uncursed",
+                }.get(_buc, "Aura: unclear")
+                stat_lines.append(aura_text)
+
             # Set membership banner
             if getattr(subject, 'set_id', ''):
                 set_label = getattr(subject, 'set_name', subject.set_id)
                 stat_lines.append(f"\u2605 Part of {set_label} \u2605")
 
-            if isinstance(subject, Weapon):
+            # Stat lines below this point are only revealed at id_level >= 3.
+            # For uniques at chain 1-2, show a placeholder instead.
+            if id_level < 3:
+                stat_lines.append("Stats: not yet discerned. Study further to learn its workings.")
+
+            if id_level >= 3 and isinstance(subject, Weapon):
                 dmg_types = ', '.join(subject.damage_types) if subject.damage_types else 'physical'
                 stat_lines.append(f"Type: {subject.weapon_class}  |  Material: {subject.material}  |  Tier: {subject.tier}")
                 stat_lines.append(f"Base Damage: {subject.base_damage}  |  Damage Type: {dmg_types}")
@@ -2989,7 +3055,7 @@ class RenderMixin:
                     stat_lines.append(f"Chain Multipliers: {mult_str}")
                 stat_lines.append(f"Value: {subject.value} gold")
 
-            elif isinstance(subject, Armor):
+            elif id_level >= 3 and isinstance(subject, Armor):
                 stat_lines.append(f"Slot: {subject.slot}  |  Material: {subject.material}  |  Tier: {subject.tier}")
                 stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: +{subject.enchant_bonus}")
                 stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
@@ -2999,7 +3065,7 @@ class RenderMixin:
                 if subject.can_be_cursed:
                     stat_lines.append("WARNING: This item can be cursed.")
 
-            elif isinstance(subject, Shield):
+            elif id_level >= 3 and isinstance(subject, Shield):
                 stat_lines.append(f"Material: {subject.material}  |  Tier: {subject.tier}")
                 stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: +{subject.enchant_bonus}")
                 stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
@@ -3007,7 +3073,7 @@ class RenderMixin:
                     res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())
                     stat_lines.append(f"Resistances: {res_str}")
 
-            elif isinstance(subject, Accessory):
+            elif id_level >= 3 and isinstance(subject, Accessory):
                 stat_lines.append(f"Slot: {subject.slot}")
                 efx = subject.effects
                 if efx:
@@ -3015,25 +3081,29 @@ class RenderMixin:
                     stat_lines.append(f"Effects: {eff_str}")
                 stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
 
-            elif isinstance(subject, Wand):
+            elif id_level >= 3 and isinstance(subject, Wand):
                 stat_lines.append(f"Effect: {subject.effect.replace('_', ' ')}  |  Power: {subject.power}")
                 stat_lines.append(f"Charges: {subject.charges}/{subject.max_charges}")
                 stat_lines.append(f"Quiz Threshold: {subject.quiz_threshold} correct answers")
 
-            elif isinstance(subject, Scroll):
+            elif id_level >= 3 and isinstance(subject, Scroll):
                 stat_lines.append(f"Effect: {subject.effect.replace('_', ' ')}  |  Power: {subject.power}")
                 stat_lines.append(f"Quiz Threshold: {subject.quiz_threshold} correct answers")
 
-            elif isinstance(subject, Food):
+            elif id_level >= 3 and isinstance(subject, Food):
                 stat_lines.append(f"SP Restored: {subject.sp_restore}  |  HP Restored: {subject.hp_restore}")
                 if subject.bonus_type != 'none' and subject.bonus_amount:
                     stat_lines.append(f"Bonus: {subject.bonus_type} {subject.bonus_stat or subject.bonus_effect} +{subject.bonus_amount}")
 
-            elif isinstance(subject, Ammo):
+            elif id_level >= 3 and isinstance(subject, Ammo):
                 stat_lines.append(f"Ammo Type: {subject.ammo_type}  |  Tier: {subject.tier}")
                 stat_lines.append(f"Damage Bonus: +{subject.damage_bonus}  |  Count: {subject.count_min}-{subject.count_max}")
 
-            lore_text = subject.lore or "No further records found."
+            # Lore only at id_level >= 4. Below that, show a teaser line.
+            if id_level >= 4:
+                lore_text = subject.lore or "No further records found."
+            else:
+                lore_text = "The history of this item remains beyond your grasp. Deeper study may yet reveal it."
 
         # Draw stat lines (reserve ~120px at bottom for lore section + footer)
         max_stat_w = bw - 44

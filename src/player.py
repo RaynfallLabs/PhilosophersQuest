@@ -105,6 +105,17 @@ class Player:
         # Material discovery: tracks which materials have triggered their first-pickup chronicle.
         self.chronicle_seen_materials: set = set()
 
+        # Philosopher career arc — counter of full identifies (chain >= 3 for uniques OR threshold success
+        # for non-uniques OR corpse lore-id). Quick-BUC peeks do NOT count.
+        self.total_identifies: int = 0
+        # Career-threshold rewards already claimed (set of integers: 10, 25, 50, 100).
+        self.philosopher_tier_claimed: set[int] = set()
+        # Passive: at 100 IDs, auto-set buc_known=True on every new pickup.
+        self.philosophers_mantle: bool = False
+        # Mastery bonuses unlocked by chain-5 identify on uniques.
+        # Key: item_id (e.g. 'soul_reaver'). Value: blessing dict {'kind', 'value', 'desc'}.
+        self.unlocked_masteries: dict[str, dict] = {}
+
     @property
     def equipped_accessories(self):
         """Every equipped accessory item: amulet (if any) + all non-empty ring slots."""
@@ -299,7 +310,15 @@ class Player:
         shield_effect   = 2 if self.has_effect('shielded') else 0
         acc_bonus = getattr(self, '_accessory_ac_bonus', 0)
         surr_bonus = getattr(self, '_surrounded_ac_bonus', 0)
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus
+        # armor_ac_bonus mastery (e.g. Greater Aegis of Athena) — applies for each mastered piece worn
+        mastery_ac = 0
+        for s in (list(self.armor_slots) + [self.shield]):
+            if s is None:
+                continue
+            m = self.unlocked_masteries.get(getattr(s, 'id', None))
+            if m and m.get('kind') == 'armor_ac_bonus':
+                mastery_ac += int(m.get('value', 0))
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -307,6 +326,16 @@ class Player:
         for slot in self.armor_slots:
             if slot and hasattr(slot, 'damage_resistances'):
                 mult *= slot.damage_resistances.get(damage_type, 1.0)
+            if slot:
+                # armor_resist_bonus mastery: reduce incoming damage of `type` by `pct`
+                m = self.unlocked_masteries.get(getattr(slot, 'id', None))
+                if m and m.get('kind') == 'armor_resist_bonus':
+                    v = m.get('value') or {}
+                    t = v.get('type')
+                    pct = float(v.get('pct', 0)) / 100.0
+                    if t == damage_type or t == 'all_elemental' and damage_type in (
+                            'fire', 'cold', 'lightning', 'acid', 'poison'):
+                        mult *= max(0.0, 1.0 - pct)
         if self.shield and hasattr(self.shield, 'damage_resistances'):
             mult *= self.shield.damage_resistances.get(damage_type, 1.0)
         return mult
