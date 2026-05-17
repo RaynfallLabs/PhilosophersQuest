@@ -159,7 +159,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("shortbow", "ash"),
         "_start_melee": ("shortsword", "iron"),
         "_start_ammo": "iron_arrow",
-        "_start_accessory": "ring_protection_silver",
+        "_start_accessory": "ring_protection_iron",
         "_start_extra_acc": ["charmander_stuffie"],
         "_start_unusual_sphere": True,
         "_greeting": "Cain the Hunter moves silently into the dark. Nothing escapes him.",
@@ -246,10 +246,11 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_dad",
         "_start_weapon": ("longsword", "iron"),
         "_start_shield": ("light_wooden", "oak"),
-        "_start_wand": "wand_of_fire",
+        "_start_wand": "wand_of_light",
         "_start_book": "spellbook_magic_missile",
         "_start_ammo": "iron_arrow",
-        "_start_accessory": "ring_protection_silver",
+        "_start_accessory": "ring_protection_iron",
+        "_qa_tools": True,        # Shift+I immortal toggle, Shift+W floor warp
         "_greeting": "The Scribe of Errors descends, quill in hand, to document every flaw.",
     },
 }

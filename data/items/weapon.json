@@ -4215,10 +4215,10 @@
     "name": "Achilles's Spear",
     "class": "spear",
     "variant": "2h",
-    "tier": 2,
+    "tier": 1,
     "material": "bronze",
     "mathTier": 2,
-    "baseDamage": 10,
+    "baseDamage": 6,
     "chainMultipliers": [
       0.5,
       1.0,
@@ -4257,16 +4257,16 @@
     },
     "containerLootTier": "rare",
     "value": 3500,
-    "min_level": 20,
+    "min_level": 1,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
     "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed — rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
-    "quiz_tier": 2,
+    "quiz_tier": 1,
     "damage_types": [
       "pierce"
     ],
     "template_basis": "spear",
-    "spread": 8,
-    "peak_floor": 30,
+    "spread": 5,
+    "peak_floor": 8,
     "chain_multipliers": [
       0.75,
       0.9,
@@ -4275,7 +4275,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 6,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,

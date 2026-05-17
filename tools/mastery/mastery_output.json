@@ -1,0 +1,1957 @@
+{
+  "venomfang": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "poisoned",
+      "pct": 30,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Venomfang's hollow spikes inject distilled corruption — every hit has a 30% chance to poison the target for 3 turns."
+  },
+  "durendal": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "evil",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "Durendal's saintly relics flare against wickedness — Roland's blade deals +35% damage to evil-aligned foes."
+  },
+  "gram": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "dragon",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "Reforged Gram remembers Fafnir — Sigurd's blade deals +50% damage to dragons."
+  },
+  "broken_gram": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Even shattered, the Broken Blade of Gram hums with dormant power — every strike lands a little heavier."
+  },
+  "sigurds_shovel": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "dragon",
+      "pct": 25
+    },
+    "scope": "item",
+    "desc": "Sigurd's Shovel remembers the pit beneath the wyrm — it deals +25% damage to dragons."
+  },
+  "tyrfing": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.3,
+    "scope": "item",
+    "desc": "Tyrfing's dwarf-cursed edge never dulls — every chain multiplier rises by 0.30 when it is drawn."
+  },
+  "fragarach": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "The Answerer cannot be refused — Fragarach's first swing of every chain auto-crits."
+  },
+  "caladbolg": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.25,
+    "scope": "item",
+    "desc": "Caladbolg sheared the tops off three hills with one sweep — every chain swing carries 0.25 more of that momentum."
+  },
+  "joyeuse": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "confused",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Joyeuse changes colour thirty times a day — its dazzle confuses 25% of the foes it strikes for 3 turns."
+  },
+  "skofnung": {
+    "kind": "weapon_wound_lingers",
+    "value": 5,
+    "scope": "item",
+    "desc": "Wounds dealt by Skofnung will only heal at the Skofnung Stone — every cut extends bleeding by 5 turns."
+  },
+  "gae_bulg": {
+    "kind": "weapon_wound_lingers",
+    "value": 6,
+    "scope": "item",
+    "desc": "The Gae Bulg's thirty barbs open inside the wound — every strike extends bleeding by 6 turns."
+  },
+  "spear_of_longinus": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "demon",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Spear of Longinus, blooded at the Crucifixion, deals +50% damage to demons."
+  },
+  "sharur": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "confused",
+      "pct": 30,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Sharur's strikes scramble enemy minds — 30% of its hits confuse the target for 3 turns."
+  },
+  "ruyi_jingu_bang": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 4,
+    "scope": "item",
+    "desc": "The Ruyi Jingu Bang weighs 17,550 pounds and its reach is unmatched — every blow lands with 4 more crushing weight."
+  },
+  "gandiva": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.25,
+    "scope": "item",
+    "desc": "Gandiva's hundred strings hum in sequence — Arjuna's bow adds 0.25 to every chain multiplier."
+  },
+  "fail_not": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "Fail-not's promise holds — Tristan's bow auto-crits on the first arrow of every chain."
+  },
+  "kusanagi": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "slowed",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Kusanagi turns the wind against your enemies — 25% of its hits slow the target for 3 turns."
+  },
+  "zulfiqar": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.3,
+    "scope": "item",
+    "desc": "Zulfiqar's bifurcated tip takes two lives with one thrust — every chain multiplier rises by 0.30."
+  },
+  "harpe": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "aberration",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "The Harpe separated Medusa from her head — it deals +40% damage to aberrations."
+  },
+  "trident_of_poseidon": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "stunned",
+      "pct": 25,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "Poseidon's Trident strikes with the weight of the Aegean — 25% of its hits stun for 2 turns."
+  },
+  "carnwennan": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "Carnwennan shrouds its wielder in shadow — Arthur's dagger auto-crits on the opening strike of every chain."
+  },
+  "mistilteinn": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 5,
+    "scope": "item",
+    "desc": "Mistilteinn slips past every protection — the Mistletoe Sword adds 5 raw damage to every hit."
+  },
+  "curtana": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.15,
+    "scope": "item",
+    "desc": "Curtana's blunt tip teaches restraint — the Sword of Mercy grants a steady 0.15 chain bonus that never overreaches."
+  },
+  "parashu": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "humanoid",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "Parashurama's axe exterminated the Kshatriyas twenty-one times — Parashu deals +40% damage to humanoids."
+  },
+  "labrys": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "beast",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Labrys remembers the Minotaur in the dark — it deals +30% damage to beasts."
+  },
+  "chandrahas": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "evil",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "Chandrahas was Shiva's gift, intolerant of wickedness — it deals +35% damage to evil-aligned foes."
+  },
+  "laevateinn": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 5,
+    "scope": "item",
+    "desc": "Laevateinn was cut to kill the rooster of Ragnarok — it adds 5 fiery damage to every blow."
+  },
+  "thyrsus": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "confused",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "The Thyrsus carries Dionysian madness — 25% of its strikes confuse the target for 3 turns."
+  },
+  "rod_of_moses": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "evil",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "The Rod of Moses parted seas and humbled Pharaoh — it deals +40% damage to evil-aligned foes."
+  },
+  "amenonuhoko": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "stunned",
+      "pct": 20,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "Amenonuhoko stirred the primordial ocean — 20% of its hits stun foes with cosmic stillness for 2 turns."
+  },
+  "sudarshana": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.35,
+    "scope": "item",
+    "desc": "The Sudarshana Chakra spins eternally — Vishnu's discus adds 0.35 to every chain multiplier."
+  },
+  "ridill": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Ridill was always the lesser blade in Fafnir's hoard, but Sigurd left it sharp — it adds 2 reliable damage to every cut."
+  },
+  "kladenets": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.2,
+    "scope": "item",
+    "desc": "The Samosek swings itself in the wielder's hand — every chain multiplier rises by 0.20."
+  },
+  "shamshir_e_zomorrodnegar": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "demon",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "Solomon's emerald scimitar commands djinn and shatters the disobedient — Shamshir-e Zomorrodnegar deals +40% damage to demons."
+  },
+  "chrysaor": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 4,
+    "scope": "item",
+    "desc": "Chrysaor — the Golden Sword — was born of Medusa's blood and never tarnishes; it adds 4 damage to every strike."
+  },
+  "caliburn": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.2,
+    "scope": "item",
+    "desc": "Caliburn was the sword Arthur earned from the stone — every chain multiplier rises by 0.20."
+  },
+  "brisingr": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "burning",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Brisingr's blade is still faintly warm — 25% of its strikes set the target burning for 3 turns."
+  },
+  "fragarach_the_whisperer": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "The Whisperer is always already at the throat — it auto-crits on the first strike of every chain."
+  },
+  "naegling": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 3,
+    "scope": "item",
+    "desc": "Naegling shattered in Beowulf's grip from sheer force — it adds 3 brutal damage to every hit."
+  },
+  "punch_in_the_face": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "A Punch in the Face has never needed to miss twice — every chain opens with an auto-crit."
+  },
+  "hunt_captains_sword": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "fey",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "The Hunt Captain's Sword phases between worlds — it deals +40% damage to fey."
+  },
+  "wendigo_fang": {
+    "kind": "weapon_lifesteal",
+    "value": 0.15,
+    "scope": "item",
+    "desc": "The Wendigo's Fang leaches warmth from its victims — it heals 15% of damage dealt back to the wielder."
+  },
+  "echidna_fang": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "poisoned",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Echidna's Fang weeps the venoms of all her monstrous children — 25% of its hits poison for 3 turns."
+  },
+  "vulcans_brand": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "burning",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Vulcan's Brand never fully cools — 25% of its strikes set foes burning for 3 turns."
+  },
+  "sling_of_david": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "giant",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "David's Sling humbled Goliath with a single stone — it deals +50% damage to giants."
+  },
+  "prometheus_torch": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "burning",
+      "pct": 20,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "The Narthex of Prometheus still smoulders after three thousand years — 20% of its strikes ignite the target for 2 turns."
+  },
+  "sword_of_damocles": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "The Sword of Damocles hangs ready to fall — it auto-crits on the first swing of every chain."
+  },
+  "robin_hoods_longbow": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "Robin Hood always struck from cover — his longbow auto-crits on the first arrow of every chain."
+  },
+  "achilles_spear": {
+    "kind": "weapon_lifesteal",
+    "value": 0.2,
+    "scope": "item",
+    "desc": "The spear that wounded also healed — Achilles's Spear restores 20% of its damage dealt to the wielder."
+  },
+  "gilgamesh_axe": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 3,
+    "scope": "item",
+    "desc": "Gilgamesh's Axe remembers Enkidu's bond — it adds 3 damage to every strike."
+  },
+  "cronus_scythe": {
+    "kind": "weapon_wound_lingers",
+    "value": 5,
+    "scope": "item",
+    "desc": "The Scythe of Cronus cuts through time — each strike extends bleeding by 5 turns as vitality drains."
+  },
+  "spear_of_lugh": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "burning",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "The Spear of Lugh ignites unless kept in poison — 25% of its strikes set foes burning for 3 turns."
+  },
+  "gae_dearg": {
+    "kind": "weapon_wound_lingers",
+    "value": 6,
+    "scope": "item",
+    "desc": "From Gae Dearg's red point no wound ever heals — every hit extends bleeding by 6 turns."
+  },
+  "net_of_hephaestus": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "paralyzed",
+      "pct": 30,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "The Net of Hephaestus caught Ares himself — 30% of its strikes paralyze for 2 turns."
+  },
+  "oathkeeper_sword": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.2,
+    "scope": "item",
+    "desc": "Oathkeeper was carried in love and maintained in love — every chain multiplier rises by 0.20."
+  },
+  "penitents_blade": {
+    "kind": "weapon_lifesteal",
+    "value": 0.25,
+    "scope": "item",
+    "desc": "The Penitent's Blade tries to balance its long ledger — it heals 25% of damage dealt back to the wielder."
+  },
+  "boomstick": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 5,
+    "scope": "item",
+    "desc": "S-Mart's top of the line — the Boomstick adds 5 buckshot damage to every blast. Shop smart."
+  },
+  "chainsaw_prosthetic": {
+    "kind": "weapon_wound_lingers",
+    "value": 5,
+    "scope": "item",
+    "desc": "The Chainsaw Prosthetic carves and tears — every hit extends bleeding by 5 turns. Groovy."
+  },
+  "romulus_spear": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Spear of Romulus founded a city from one throw — every cast lands with 2 more weight."
+  },
+  "pharaohs_crook": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "stunned",
+      "pct": 20,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "The Pharaoh's Crook carries the weight of divine kingship — 20% of its strikes stun for 2 turns."
+  },
+  "mjolnir_shard": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "stunned",
+      "pct": 25,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "Even a shard of Mjolnir holds Thor's thunder — 25% of its strikes stun foes for 2 turns."
+  },
+  "bow_of_rama": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "evil",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "Rama's arrows are guided by dharma — the Bow of Rama deals +40% damage to evil-aligned foes."
+  },
+  "gae_bolg_fragment": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "Even a fragment of the Gae Bolg opens like the original — it auto-crits on the first strike of every chain."
+  },
+  "staff_of_moses": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "undead",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "The Staff of Moses parted the sea and confronted the unholy — it deals +40% damage to undead."
+  },
+  "witcher_silver_blade": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "undead",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "The Witcher's Silver Blade was forged for things that crawl from cursed earth — it deals +40% damage to undead."
+  },
+  "zireael": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.25,
+    "scope": "item",
+    "desc": "Zireael is a masterwork of gnomish steel — Swallow adds 0.25 to every chain multiplier."
+  },
+  "vel_of_murugan": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "burning",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "The Vel of Murugan burns with righteous war — 25% of its hits set foes burning for 3 turns."
+  },
+  "chandrahasa": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.3,
+    "scope": "item",
+    "desc": "Chandrahasa laughs louder as its bearer fades — every chain multiplier rises by 0.30."
+  },
+  "green_chapel_axe": {
+    "kind": "weapon_lifesteal",
+    "value": 0.15,
+    "scope": "item",
+    "desc": "The Green Chapel Axe remembers severed and rejoined — the wielder heals 15% of damage dealt."
+  },
+  "aiglos": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 4,
+    "scope": "item",
+    "desc": "Aiglos pierced even Sauron's hand — Gil-galad's spear adds 4 cold-edged damage to every thrust."
+  },
+  "akinakes_acrisius": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.2,
+    "scope": "item",
+    "desc": "The Akinakes of Acrisius outlasted its king's prophecy — every chain multiplier rises by 0.20."
+  },
+  "anduril": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "evil",
+      "pct": 45
+    },
+    "scope": "item",
+    "desc": "Reforged Anduril is the Flame of the West — it deals +45% damage to evil-aligned foes."
+  },
+  "atalanta_bow": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "Atalanta drew first blood on the Calydonian Boar — her bow auto-crits on the first arrow of every chain."
+  },
+  "bellerophon_lance": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "burning",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "Bellerophon's lead-tipped lance melted in the Chimera's throat — 25% of its strikes set foes burning for 3 turns."
+  },
+  "cadmus_sword": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "dragon",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "The Sword of Cadmus opened the dragon at Thebes's spring — it deals +35% damage to dragons."
+  },
+  "glamdring": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "humanoid",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "Glamdring is Foe-Hammer, the orc-cleaver of Gondolin — it deals +40% damage to humanoids."
+  },
+  "hector_javelin": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Hector's bronze-headed javelin felled Patroclus — it adds 2 damage to every throw."
+  },
+  "heracles_club": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 4,
+    "scope": "item",
+    "desc": "Heracles uprooted the olive-club himself and hardened it on Nemea — it adds 4 crushing damage to every blow."
+  },
+  "hofud": {
+    "kind": "weapon_first_hit_crit",
+    "value": true,
+    "scope": "item",
+    "desc": "Heimdall's Hofud lets nothing slip past — it auto-crits on the first strike of every chain."
+  },
+  "meleager_spear": {
+    "kind": "weapon_damage_vs_tag",
+    "value": {
+      "tag": "beast",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "Meleager's boar-spear pinned the Calydonian sow — it deals +35% damage to beasts."
+  },
+  "pelops_sword": {
+    "kind": "weapon_wound_lingers",
+    "value": 4,
+    "scope": "item",
+    "desc": "The Sword of Pelops cursed three generations of Mycenae — every cut extends bleeding by 4 turns."
+  },
+  "stormbringer": {
+    "kind": "weapon_lifesteal",
+    "value": 0.25,
+    "scope": "item",
+    "desc": "Stormbringer drinks souls and feeds them to its bearer — it heals 25% of damage dealt to the wielder."
+  },
+  "talos_sickle": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "bleeding",
+      "pct": 25,
+      "duration": 3
+    },
+    "scope": "item",
+    "desc": "The Sickle of Talos was ground from a giant's bronze ichor — 25% of its strikes cause bleeding for 3 turns."
+  },
+  "theseus_club": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 3,
+    "scope": "item",
+    "desc": "Theseus took the bronze club from Periphetes and kept it through the labyrinth — it adds 3 damage to every blow."
+  },
+  "cain_club": {
+    "kind": "weapon_wound_lingers",
+    "value": 3,
+    "scope": "item",
+    "desc": "Cain's Club carries the first murder — every strike extends bleeding by 3 turns."
+  },
+  "wepwawet_mace": {
+    "kind": "weapon_status_chance",
+    "value": {
+      "status": "stunned",
+      "pct": 20,
+      "duration": 2
+    },
+    "scope": "item",
+    "desc": "Wepwawet's mace opens the way before the king — 20% of its strikes stun for 2 turns."
+  },
+  "cuchulainn_hurley": {
+    "kind": "weapon_base_damage_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Setanta drove a hurling ball down the throat of Culann's hound — the ash hurley adds 2 damage to every blow."
+  },
+  "mwindo_axe": {
+    "kind": "weapon_chain_mult_bonus",
+    "value": 0.15,
+    "scope": "item",
+    "desc": "Mwindo's Conga-Scepter was axe, wand, and flyswatter at once — every chain multiplier rises by 0.15."
+  },
+  "hide_of_nemean_lion": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Hide of the Nemean Lion turns all but divine arms — armor class improves by 2."
+  },
+  "carapace_of_the_hydra": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "poison",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Carapace of the Hydra was immune to its own venom — it deflects 50% of incoming poison."
+  },
+  "panoply_of_hephaestus": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Panoply of Hephaestus is a smith-god's masterwork — armor class improves by 2."
+  },
+  "breastplate_of_joan": {
+    "kind": "armor_hp_bonus",
+    "value": 20,
+    "scope": "item",
+    "desc": "Joan of Arc fought on through every wound — her breastplate grants a permanent 20 HP on mastery."
+  },
+  "lorica_hamata_of_caesar": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "Caesar wore the chain-mail across the Rubicon and the Senate floor — the Lorica grants a permanent 15 HP on mastery."
+  },
+  "orichalcum_breastplate": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "all_elemental",
+      "pct": 20
+    },
+    "scope": "item",
+    "desc": "The Orichalcum Breastplate still resonates with the lost metal of Atlantis — it deflects 20% of all elemental damage."
+  },
+  "helm_of_hades": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Helm of Darkness prevents perception itself — armor class improves by 2."
+  },
+  "helm_of_achilles": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Helm of Achilles rang like a bell for the last weeks of his life — it grants a permanent 15 HP on mastery."
+  },
+  "great_helm_of_galahad": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "unholy",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "Galahad's purity allowed him the Grail — his great helm deflects 40% of unholy damage."
+  },
+  "vambraces_of_achilles": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Vambraces of Achilles bear scenes of working lives — armor class improves by 1."
+  },
+  "gauntlets_of_mars": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Gauntlets of Mars defend boundaries and break them — they grant a permanent 15 HP on mastery."
+  },
+  "greaves_of_hermes": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "Hermes's Greaves carried him between Olympus and Hades — armor class improves by 1."
+  },
+  "cloak_of_the_morrigan": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "unholy",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Cloak of the Morrigan chooses who lives and dies — it deflects 30% of unholy damage."
+  },
+  "leggings_of_enkidu": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "Enkidu was made wild and made friend — his leggings grant a permanent 15 HP on mastery."
+  },
+  "mantle_of_elijah": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "fire",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "Elijah was taken to heaven in a chariot of fire — his mantle deflects 30% of fire damage."
+  },
+  "robe_of_the_magus": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Robe of the Magus belonged to scholars who read the stars — it deflects 30% of psychic damage."
+  },
+  "boots_of_seven_leagues": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Boots of Seven Leagues fit their hero perfectly — armor class improves by 1."
+  },
+  "brigandine_of_william_wallace": {
+    "kind": "armor_hp_bonus",
+    "value": 20,
+    "scope": "item",
+    "desc": "Wallace's brigandine carried him through Stirling Bridge — it grants a permanent 20 HP on mastery."
+  },
+  "cuirass_of_hannibal": {
+    "kind": "armor_hp_bonus",
+    "value": 20,
+    "scope": "item",
+    "desc": "Hannibal won every major engagement in Italy — his cuirass grants a permanent 20 HP on mastery."
+  },
+  "nemean_pelt": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "all_elemental",
+      "pct": 25
+    },
+    "scope": "item",
+    "desc": "The Nemean Pelt is the unskinnable hide itself — it deflects 25% of all elemental damage."
+  },
+  "green_knights_plate": {
+    "kind": "armor_hp_bonus",
+    "value": 25,
+    "scope": "item",
+    "desc": "The Green Knight's Plate grows with its wearer — it grants a permanent 25 HP on mastery."
+  },
+  "serpent_scale_mail": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "poison",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Serpent Scale Mail repels toxins entirely — it deflects 50% of poison damage."
+  },
+  "arachne_silk_cloak": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "Arachne's Silk Cloak catches arrows and slows blades — armor class improves by 1."
+  },
+  "erlking_mantle": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Erlking's Mantle sharpens every sense — it deflects 30% of psychic damage."
+  },
+  "anansi_web_cloak": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Anansi's Web Cloak shifts and deceives — armor class improves by 2."
+  },
+  "nidhoggr_scale": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "acid",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "Níðhöggr's Scale resists all corrosion — it deflects 50% of acid damage."
+  },
+  "aegishjalmr": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Helm of Awe makes no man dare meet your eye — it deflects 30% of psychic damage."
+  },
+  "winged_sandals_of_hermes": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Winged Sandals of Hermes carry you with divine swiftness — armor class improves by 2."
+  },
+  "hermes_sandals_early": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "These votive Hermes's Sandals carry one trick from the god — armor class improves by 1."
+  },
+  "blindfold": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Blindfold severs sight from soul — it deflects 50% of psychic damage."
+  },
+  "vidars_sandal": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Vidar's Sandal tore apart the World-Wolf — armor class improves by 2."
+  },
+  "trainers_cap": {
+    "kind": "armor_hp_bonus",
+    "value": 10,
+    "scope": "item",
+    "desc": "The Trainer's Cap radiates encouragement and bond — it grants a permanent 10 HP on mastery."
+  },
+  "cow_kings_horns": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Cow King's Horns channel bovine fury — they grant a permanent 15 HP on mastery."
+  },
+  "cloth_of_penelope": {
+    "kind": "armor_hp_bonus",
+    "value": 10,
+    "scope": "item",
+    "desc": "The Cloth of Penelope was woven and unwoven for twenty years — it grants a permanent 10 HP on mastery."
+  },
+  "bracers_of_cu_chulainn": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Bracers of Cu Chulainn carry the warp-spasm — they grant a permanent 15 HP on mastery."
+  },
+  "cloak_of_sun_wukong": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Cloak of Sun Wukong shimmers and shifts — armor class improves by 1."
+  },
+  "tarnhelm": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Tarnhelm renders its wearer absent from perception — armor class improves by 2."
+  },
+  "linothorax_of_alexander": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "Alexander's Linothorax stops what punches through wood — armor class improves by 1."
+  },
+  "coif_of_beowulf": {
+    "kind": "armor_hp_bonus",
+    "value": 10,
+    "scope": "item",
+    "desc": "Beowulf's coif was 'wound with wires by a weapon-smith of cunning' — it grants a permanent 10 HP on mastery."
+  },
+  "sandals_of_perseus": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Sandals of Perseus walked the road to Medusa — armor class improves by 1."
+  },
+  "kilt_of_the_pharaoh": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "fire",
+      "pct": 25
+    },
+    "scope": "item",
+    "desc": "The Kilt of the Pharaoh is starched linen with the desert's defiance — it deflects 25% of fire damage."
+  },
+  "scale_of_dilmun": {
+    "kind": "armor_hp_bonus",
+    "value": 12,
+    "scope": "item",
+    "desc": "The Scale of Dilmun came from the Sumerian paradise — it grants a permanent 12 HP on mastery."
+  },
+  "helm_of_gilgamesh": {
+    "kind": "armor_hp_bonus",
+    "value": 12,
+    "scope": "item",
+    "desc": "The Helm of Gilgamesh remembers Uruk's king — it grants a permanent 12 HP on mastery."
+  },
+  "sandals_of_theseus": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Sandals of Theseus walked from Troezen through every Labour — armor class improves by 1."
+  },
+  "greaves_of_qin": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Greaves of the Qin Guard are lacquered to resist water and weather — armor class improves by 1."
+  },
+  "cloak_of_odin": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "Odin walked among men in this cloak and set them riddles — it deflects 30% of psychic damage."
+  },
+  "bracers_of_arjuna": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "Arjuna's Bracers held the bow through Kurukshetra — armor class improves by 1."
+  },
+  "girdle_of_hippolyta": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Girdle of Hippolyta was Ares's gift to the Amazon queen — STR rises by 2 permanently."
+  },
+  "helm_of_leonidas": {
+    "kind": "armor_hp_bonus",
+    "value": 20,
+    "scope": "item",
+    "desc": "Leonidas's transverse-crested helm held the pass for three days — it grants a permanent 20 HP on mastery."
+  },
+  "cloak_of_mulan": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "Mulan's Cloak hid her in plain sight for twelve years of war — armor class improves by 2."
+  },
+  "haramaki_of_yoshitsune": {
+    "kind": "armor_hp_bonus",
+    "value": 20,
+    "scope": "item",
+    "desc": "Yoshitsune's haramaki carried him through Ichi-no-Tani and Dan-no-ura — it grants a permanent 20 HP on mastery."
+  },
+  "boots_of_thor": {
+    "kind": "armor_hp_bonus",
+    "value": 20,
+    "scope": "item",
+    "desc": "Thor's iron boots are his ordinary working kit — they grant a permanent 20 HP on mastery."
+  },
+  "helm_of_aragorn": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "unholy",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "The Helm of the King Returned carries the line of Isildur — it deflects 35% of unholy damage."
+  },
+  "robes_of_solomon": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 40
+    },
+    "scope": "item",
+    "desc": "The Robes of Solomon are embroidered with the names of bound demons — they deflect 40% of psychic damage."
+  },
+  "armor_of_ragnarok": {
+    "kind": "armor_hp_bonus",
+    "value": 25,
+    "scope": "item",
+    "desc": "The Armor of Ragnarök is the harness for the day the gods went out to meet anyway — it grants a permanent 25 HP on mastery."
+  },
+  "crown_of_brahma": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "all_elemental",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Crown of Brahma was the creator's own — it deflects 30% of all elemental damage."
+  },
+  "pridwen": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "unholy",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "Pridwen bears the Virgin Mary on its inner face — it deflects 35% of unholy damage."
+  },
+  "tower_shield_of_ajax": {
+    "kind": "armor_hp_bonus",
+    "value": 25,
+    "scope": "item",
+    "desc": "The Tower Shield of Ajax was seven ox-hides thick — it grants a permanent 25 HP on mastery."
+  },
+  "scutum_of_aeneas": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Scutum of Aeneas bore the entire future of Rome — armor class improves by 2."
+  },
+  "bronze_aegis": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Bronze Aegis is carved with Hephaestus's eye — armor class improves by 1."
+  },
+  "aegis_of_athena": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "all_elemental",
+      "pct": 25
+    },
+    "scope": "item",
+    "desc": "Athena's mirror-polished Aegis turns Gorgon-stares to stone — it deflects 25% of all elemental damage."
+  },
+  "lionheart_shield": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Lionheart Shield was sworn to duty unto death — it grants a permanent 15 HP on mastery."
+  },
+  "shield_of_the_spartans": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "Return with your shield, or on it — the Shield of the Spartans grants a permanent 15 HP on mastery."
+  },
+  "svalinn": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "fire",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "Svalinn stands before the sun itself — it deflects 50% of fire damage."
+  },
+  "ancile": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Ancile fell from heaven during Numa's reign — armor class improves by 2."
+  },
+  "mycenaean_tower_of_telamon": {
+    "kind": "armor_hp_bonus",
+    "value": 10,
+    "scope": "item",
+    "desc": "The Mycenaean Tower of Telamon stood at Troy's first sack — it grants a permanent 10 HP on mastery."
+  },
+  "pelte_of_the_thracian": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Thracian Pelte is light enough to leave with — armor class improves by 1."
+  },
+  "buckler_of_the_sumerian_lugal": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "Eannatum's Sumerian buckler is the oldest phalanx-shield in stone — armor class improves by 1."
+  },
+  "khopesh_breaker_of_thebes": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "all_elemental",
+      "pct": 20
+    },
+    "scope": "item",
+    "desc": "The Khopesh-Breaker of Thebes was the answer to a single bad weapon — it deflects 20% of all elemental damage."
+  },
+  "hittite_chariot_guard": {
+    "kind": "armor_hp_bonus",
+    "value": 12,
+    "scope": "item",
+    "desc": "The Hittite Chariot-Guard's figure-eight shield protected the whole crew at Kadesh — it grants a permanent 12 HP on mastery."
+  },
+  "assyrian_siege_pavise": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Assyrian Siege-Pavise stood man-high before the archers of Nineveh — armor class improves by 1."
+  },
+  "spartan_aspis_of_leonidas": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "Leonidas's gold-chased aspis held the Hot Gates — it grants a permanent 15 HP on mastery."
+  },
+  "etruscan_round_shield": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Etruscan Round Shield outlasted both armies — armor class improves by 1."
+  },
+  "scutum_of_the_legio": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Scutum of the Legio formed the testudo — armor class improves by 2."
+  },
+  "macedonian_aspis_of_philip": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "Philip's small aspis freed both hands for the sarissa — armor class improves by 1."
+  },
+  "celtic_oval_shield": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Celtic Oval Shield bears spirals the Gauls painted before they lost — armor class improves by 1."
+  },
+  "germanic_kriegsschild": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Germanic Kriegsschild faced Arminius's Romans in the Teutoburg — it grants a permanent 15 HP on mastery."
+  },
+  "sarmatian_lamellar_targe": {
+    "kind": "armor_ac_bonus",
+    "value": 1,
+    "scope": "item",
+    "desc": "The Sarmatian Lamellar Targe garrisoned Hadrian's Wall — armor class improves by 1."
+  },
+  "battersea_votive_shield": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Battersea Votive Shield was drowned for being beautiful — it deflects 30% of psychic damage."
+  },
+  "saxon_round_shield": {
+    "kind": "armor_hp_bonus",
+    "value": 15,
+    "scope": "item",
+    "desc": "The Saxon Round Shield went into Raedwald's Sutton Hoo barrow — it grants a permanent 15 HP on mastery."
+  },
+  "lendings_of_beowulf": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "fire",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "Beowulf forged an iron shield knowing wood would burn — the Lendings deflect 35% of fire damage."
+  },
+  "sigurds_handshield": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "fire",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "Sigurd's Handshield bore the Fafnir story he had lived — it deflects 30% of fire damage."
+  },
+  "carolingian_kite": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Carolingian Kite reaches down to cover the left leg in the saddle — armor class improves by 2."
+  },
+  "heater_of_the_black_prince": {
+    "kind": "armor_hp_bonus",
+    "value": 18,
+    "scope": "item",
+    "desc": "The Heater of the Black Prince served before it reigned — it grants a permanent 18 HP on mastery."
+  },
+  "mameluke_targe": {
+    "kind": "armor_ac_bonus",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Mameluke Targe broke the Mongols at Ain Jalut — armor class improves by 2."
+  },
+  "o_tate_of_the_samurai": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "fire",
+      "pct": 35
+    },
+    "scope": "item",
+    "desc": "The O-Tate wins when it is not being held — at Nagashino it stood between musket-fire and cavalry, deflecting 35% of fire damage."
+  },
+  "skidbladnir_aegis": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "cold",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Skidbladnir Aegis folds like Freyr's ship — cold of any kind passes through it, deflecting 50% of cold damage."
+  },
+  "smoking_mirror_of_tezcatlipoca": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Smoking Mirror of Tezcatlipoca turns spells back upon their casters — it deflects 50% of psychic damage."
+  },
+  "vajra_paramita": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "lightning",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Vajra Paramita is both lightning and diamond — it deflects 50% of lightning damage."
+  },
+  "horse_armor_of_the_norns": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "all_elemental",
+      "pct": 30
+    },
+    "scope": "item",
+    "desc": "The Horse-Armor of the Norns returns what was sent — it deflects 30% of all elemental damage."
+  },
+  "scarab_of_apophis_binding": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "unholy",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "The Scarab of Apophis-Binding hisses back at every serpent — it deflects 50% of unholy damage."
+  },
+  "yamas_dharma_watch": {
+    "kind": "armor_resist_bonus",
+    "value": {
+      "type": "psychic",
+      "pct": 50
+    },
+    "scope": "item",
+    "desc": "Yama's Dharma-Watch measures every spell against the Mirror of Karma — it deflects 50% of psychic damage."
+  },
+  "dragonslayer_ring": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Dragonslayer's Ring carries a guildhall's worth of dragon-blood — STR rises by 1 permanently."
+  },
+  "shadow_walker_ring": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Shadow Walker's Ring still smells faintly of nightshade — DEX rises by 2 permanently."
+  },
+  "philosophers_ring": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Philosopher's Ring warms when unknown things are near — WIS rises by 2 permanently."
+  },
+  "ring_of_gyges": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Ring of Gyges lets the just and unjust act unseen — DEX rises by 2 permanently."
+  },
+  "ring_of_the_nibelung": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "gold_multiplier",
+      "value": 3.0
+    },
+    "scope": "item",
+    "desc": "The Ring of the Nibelung is the cursed dwarf-gold itself — every gold drop is multiplied by 3.0."
+  },
+  "ring_of_solomon": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Solomon's ring let him command demons and djinn — WIS rises by 2 permanently."
+  },
+  "ring_of_eluned": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Luned's ring saved Owain at the portcullis — DEX rises by 2 permanently."
+  },
+  "brisingamen": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "passive_regen_bonus",
+      "value": 2
+    },
+    "scope": "item",
+    "desc": "Brisingamen was paid for in four dwarven nights — each regen tick from it heals 2 more HP."
+  },
+  "talisman_of_troy": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "buff_duration_bonus",
+      "value": 8
+    },
+    "scope": "item",
+    "desc": "The Palladium kept Troy invincible while it stood within the walls — buffs from it last 8 turns longer."
+  },
+  "scarab_of_khepri": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "passive_regen_bonus",
+      "value": 2
+    },
+    "scope": "item",
+    "desc": "The Scarab of Khepri rolls the sun across the sky each morning — each regen tick heals 2 more HP."
+  },
+  "hamsa_hand": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Hand of Fatima's painted eye deflects the evil eye — CON rises by 1 permanently."
+  },
+  "necklace_of_harmonia": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Harmonia's necklace destroyed every house but remained beautiful — WIS rises by 2 permanently."
+  },
+  "menat_of_hathor": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Hathor's Menat sounds the goddess's promise of joy — CON rises by 2 permanently."
+  },
+  "heart_of_ahriman": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Ahriman's Heart contains complete knowledge of what can be unmade — INT rises by 2 permanently."
+  },
+  "tyet_of_isis": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "resurrect_to_full"
+    },
+    "scope": "item",
+    "desc": "Isis raised Osiris from death — the Tyet now restores its bearer to full HP on resurrection."
+  },
+  "idunn_apple_charm": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Idunn's apples kept the Aesir young — CON rises by 2 permanently."
+  },
+  "caduceus_charm": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "passive_regen_bonus",
+      "value": 2
+    },
+    "scope": "item",
+    "desc": "The Caduceus of Hermes was traded from Apollo himself — each regen tick heals 2 more HP."
+  },
+  "torque_of_lugh": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Lugh of the Long Arm was the god of every skill at once — STR rises by 2 permanently."
+  },
+  "pectoral_of_amun": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Amun's pectoral was required for every pharaonic decision — WIS rises by 2 permanently."
+  },
+  "ring_of_gawain": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Gawain's strength grew until noon — STR rises by 2 permanently."
+  },
+  "ring_of_odysseus": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Odysseus thought of the wooden horse and the mast — PER rises by 2 permanently."
+  },
+  "ring_of_scheherazade": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Scheherazade survived by being more valuable alive — INT rises by 2 permanently."
+  },
+  "amulet_of_merlin": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Merlin advised three kings and engineered Arthur's conception — INT rises by 2 permanently."
+  },
+  "ring_of_pythia": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Pythia spoke for Apollo over the chasm — PER rises by 2 permanently."
+  },
+  "anklet_of_atalanta": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Atalanta could outrun any man alive — DEX rises by 2 permanently."
+  },
+  "crown_of_croesus": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "gold_finds_pct",
+      "value": 50
+    },
+    "scope": "item",
+    "desc": "Croesus of Lydia was the richest man in the world — gold piles found on the floor are 50% larger."
+  },
+  "collar_of_njord": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Njörd's Sea-Collar grants a sailor's luck — CON rises by 2 permanently."
+  },
+  "ring_of_percival": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Percival's question healed the Fisher King — WIS rises by 2 permanently."
+  },
+  "ring_of_lancelot": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Lancelot was the greatest knight in the world — STR rises by 2 permanently."
+  },
+  "seal_of_agrippa": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Agrippa systematised all of Renaissance magic — INT rises by 2 permanently."
+  },
+  "philosophers_ring_legendary": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Philosopher's Ring of Mastery hears the daimon's voice — WIS rises by 2 permanently."
+  },
+  "amulet_of_pythagoras": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Pythagoras swore his oaths by the Tetractys — INT rises by 2 permanently."
+  },
+  "ring_of_hypatia": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Hypatia was the foremost mathematician of her age — INT rises by 2 permanently."
+  },
+  "ring_of_thunder": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Ring of Thunder grounds lightning through its stone — INT rises by 1 permanently."
+  },
+  "amulet_of_the_titan": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Amulet of the Titan was cast from Hephaestus's jest — STR rises by 2 permanently."
+  },
+  "ring_of_the_deep": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Ring of the Deep adapts its wearer to the crushing cold — CON rises by 1 permanently."
+  },
+  "amulet_of_insight": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Amulet of Insight passed through thirty-six Delphic priests — WIS rises by 2 permanently."
+  },
+  "ring_of_the_assassin": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Hashshashin grandmaster's signet sharpens every motion — DEX rises by 2 permanently."
+  },
+  "amulet_of_fortitude": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "passive_regen_bonus",
+      "value": 2
+    },
+    "scope": "item",
+    "desc": "The Amulet of Fortitude carries Asclepius's healing fire — each regen tick heals 2 more HP."
+  },
+  "ring_of_far_sight": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Ring of Far Sight magnifies both sight and instinct — PER rises by 2 permanently."
+  },
+  "amulet_of_the_archmage": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Amulet of the Archmage was Thales's first — INT rises by 2 permanently."
+  },
+  "ring_of_displacement": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Ring of Displacement projects a step-off image — DEX rises by 2 permanently."
+  },
+  "amulet_of_protection": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "Esagila's high priest blessed this amulet against enchantment — CON rises by 1 permanently."
+  },
+  "sphinx_crown": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Sphinx's Crown holds millennia of riddle-wisdom — WIS rises by 1 permanently."
+  },
+  "sailors_amulet": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Sailor's Amulet was carved from a ship that survived Charybdis — PER rises by 1 permanently."
+  },
+  "anubis_scales": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "Anubis weighs hearts against Ma'at's feather — CON rises by 1 permanently."
+  },
+  "ring_of_iron_grip": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Ring of Iron Grip was crushed from Ravana's finger — STR rises by 2 permanently."
+  },
+  "obsidian_talisman": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Obsidian Talisman carved from Xibalba's altar steadies the soul against fear — WIS rises by 1 permanently."
+  },
+  "ariadnes_thread": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Ariadne's Thread remembers every path it has travelled — PER rises by 2 permanently."
+  },
+  "eponas_charm": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "Epona's Charm guarantees safe harbor — PER rises by 1 permanently."
+  },
+  "anansis_thread": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Anansi's Thread connects every story ever earned — INT rises by 2 permanently."
+  },
+  "rope_of_izanagi": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "PER",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Izanagi's Rope divides the world of the living from the dead — PER rises by 2 permanently."
+  },
+  "silverlight_pendant": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "Elara's name is engraved on the back of the Silverlight Pendant — WIS rises by 1 permanently."
+  },
+  "saints_reliquary": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Saint's Reliquary was carried on hands and knees through the dungeon — WIS rises by 1 permanently."
+  },
+  "officers_signet": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "DEX",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Officer's Signet was earned by command and then refused — DEX rises by 1 permanently."
+  },
+  "prophets_amulet": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Prophet's Amulet pulses with carved foresight — WIS rises by 2 permanently."
+  },
+  "aesops_quill": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "Aesop's Quill carries a slave's earned freedom — WIS rises by 1 permanently."
+  },
+  "lyre_of_orpheus": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "buff_duration_bonus",
+      "value": 10
+    },
+    "scope": "item",
+    "desc": "Orpheus's lyre paused rivers and charmed Cerberus — buffs from it last 10 turns longer."
+  },
+  "tablet_of_gilgamesh": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Tablet of Gilgamesh holds the oldest epic — INT rises by 1 permanently."
+  },
+  "scales_of_maat": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 1
+    },
+    "scope": "item",
+    "desc": "The Scales of Ma'at weigh every heart against truth — WIS rises by 1 permanently."
+  },
+  "tablet_of_hammurabi": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Hammurabi's tablet replaced chaos with written law — INT rises by 2 permanently."
+  },
+  "torc_of_boudicca": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "STR",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Boudicca's Torc fights fiercest when surrounded — STR rises by 2 permanently."
+  },
+  "rands_heart": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "buff_duration_bonus",
+      "value": 6
+    },
+    "scope": "item",
+    "desc": "Rand's Heart carries a lover's promise to Robyn — buffs from it last 6 turns longer."
+  },
+  "dreamspun_sketchbook": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "INT",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Dreamspun Sketchbook brought dreams to life — INT rises by 2 permanently."
+  },
+  "charmander_stuffie": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "The Charmander Stuffie is a child's oldest friend, full of love — CON rises by 2 permanently."
+  },
+  "jade_cicada": {
+    "kind": "accessory_passive_strength",
+    "value": {
+      "kind": "resurrect_to_full"
+    },
+    "scope": "item",
+    "desc": "The Han buried jade cicadas with their dead to guarantee resurrection — the cicada now restores its bearer to full HP on resurrection."
+  },
+  "seal_of_solomon": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "WIS",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Michael gave Solomon the Seal engraved with the true name of God — WIS rises by 2 permanently."
+  },
+  "kavacha_kundala": {
+    "kind": "accessory_stat_bonus",
+    "value": {
+      "stat": "CON",
+      "amount": 2
+    },
+    "scope": "item",
+    "desc": "Karna was born wearing Kavacha and Kundala fused to his skin — CON rises by 2 permanently."
+  },
+  "circes_wand": {
+    "kind": "wand_extra_charge",
+    "value": 2,
+    "scope": "item",
+    "desc": "Circe's Wand turned crews to swine on Aeaea — it gains 2 extra charges on mastery."
+  },
+  "indras_vajra": {
+    "kind": "wand_extra_charge",
+    "value": 3,
+    "scope": "item",
+    "desc": "Indra's Vajra struck Vritra and freed the seven rivers — it gains 3 extra charges on mastery."
+  },
+  "book_of_thoth": {
+    "kind": "scroll_extra_read",
+    "value": 1,
+    "scope": "item",
+    "desc": "Thoth's book identifies what was hidden — the next reading of the Book of Thoth does not consume the scroll."
+  },
+  "sefer_yetzirah": {
+    "kind": "spellbook_mp_discount",
+    "value": 2,
+    "scope": "item",
+    "desc": "The Sefer Yetzirah teaches the twenty-two letters that spoke the world into being — its spell costs 2 fewer MP."
+  },
+  "picatrix": {
+    "kind": "spellbook_mp_discount",
+    "value": 2,
+    "scope": "item",
+    "desc": "Picatrix systematised four centuries of talismanic magic — its spell costs 2 fewer MP."
+  },
+  "lemegeton": {
+    "kind": "spellbook_mp_discount",
+    "value": 3,
+    "scope": "item",
+    "desc": "The Lemegeton names all seventy-two demons of Solomon — its spell costs 3 fewer MP."
+  }
+}

@@ -45,6 +45,7 @@ from game_states import (
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
+    STATE_QA_WARP_INPUT,
 )
 
 
@@ -1093,6 +1094,8 @@ class RenderMixin:
         elif self.state == STATE_PET_SPECIALS:
             self._draw_pet_menu()
             self._draw_pet_specials_submenu()
+        elif self.state == STATE_QA_WARP_INPUT:
+            self._draw_qa_warp_popup()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
         elif self.state == STATE_EAT_MENU:
@@ -2319,6 +2322,29 @@ class RenderMixin:
             font_sm=self.font_sm,
             row_style='text',
         )
+
+    def _draw_qa_warp_popup(self):
+        """Titivillus QA warp prompt: type a floor number."""
+        buf = getattr(self, '_qa_warp_input', '')
+        draw_overlay(self.screen, 200)
+        bw, bh = 460, 200
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+        draw_header_bar(self.screen, (bx, by, bw, 40),
+                        text="[QA] WARP TO FLOOR",
+                        font=self.font_md, text_color=(80, 230, 255))
+        sub = "Enter a floor number (1-100):"
+        sub_surf = self.font_md.render(sub, True, FP.BODY_TEXT)
+        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 56))
+        box_rect = pygame.Rect(bx + 80, by + 96, bw - 160, 38)
+        pygame.draw.rect(self.screen, (30, 30, 50), box_rect, border_radius=4)
+        pygame.draw.rect(self.screen, (80, 230, 255), box_rect, 1, border_radius=4)
+        val_surf = self.font_md.render(buf or "_", True, FP.PARCHMENT_LIGHT)
+        self.screen.blit(val_surf, (box_rect.x + 12, box_rect.y + 8))
+        hint = self.font_sm.render("ENTER to warp  |  ESC to cancel",
+                                    True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 24))
 
     def _draw_pet_menu(self):
         """Pet roster + per-pet action rows. Shift+P opens this menu."""

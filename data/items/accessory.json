@@ -6347,13 +6347,13 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 15,
+    "min_level": 1,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
     "effects": {
       "stat": "INT",
-      "amount": 2
+      "amount": 1
     },
     "unidentified_name": "a heavy clay amulet covered in ancient script",
     "lore": "Hammurabi, King of Babylon, created the first comprehensive written law code around 1750 BC — 282 laws carved in stone, establishing the revolutionary principle that justice should be written, public, and consistent rather than arbitrary. 'An eye for an eye' comes from his code. This tablet-shaped amulet carries the weight of that first attempt to replace chaos with order. +2 INT.",
@@ -6367,7 +6367,7 @@
     "peak_weight": 0.4,
     "is_unique": true,
     "spread": 10,
-    "peak_floor": 20,
+    "peak_floor": 10,
     "mastery_blessing": {
       "kind": "accessory_stat_bonus",
       "value": {
@@ -6711,5 +6711,30 @@
       "scope": "item",
       "desc": "Karna was born wearing Kavacha and Kundala fused to his skin — CON rises by 2 permanently."
     }
+  },
+  "ring_protection_iron": {
+    "name": "ring of iron protection",
+    "symbol": "=",
+    "color": [
+      200,
+      200,
+      200
+    ],
+    "weight": 0.1,
+    "slot": "ring",
+    "value": 80,
+    "effects": {
+      "stat": "AC",
+      "amount": 1
+    },
+    "equip_threshold": 2,
+    "quiz_tier": 1,
+    "peak_floor": 4,
+    "peak_weight": 0.6,
+    "spread": 6,
+    "min_level": 1,
+    "tier": 1,
+    "unidentified_name": "iron ring",
+    "lore": "A simple ring of cold-forged iron, banded for stability. Plain in design but stout in protection."
   }
 }

@@ -38,6 +38,7 @@ from game_states import (
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
+    STATE_QA_WARP_INPUT,
 )
 
 
@@ -126,6 +127,10 @@ class InputMixin:
                 # ESC on a pet sub-menu returns to the main pet menu.
                 self.state = STATE_PET_MENU
                 return True
+            if self.state == STATE_QA_WARP_INPUT:
+                self.state = STATE_PLAYER
+                self._qa_warp_input = ''
+                return True
             return False
 
         if self.state == STATE_PLAYER:
@@ -145,6 +150,17 @@ class InputMixin:
             if event.unicode == 'P':
                 # Shift+P opens the pet menu (lowercase p is pickup/disarm).
                 self._open_pet_menu()
+                return True
+            if event.unicode == 'I' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: toggle immortality. No quiz, no chronicle.
+                self.player.immortal = not getattr(self.player, 'immortal', False)
+                state_str = "ON" if self.player.immortal else "OFF"
+                self.add_message(f"[QA] Immortal mode {state_str}.", 'info')
+                return True
+            if event.unicode == 'W' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: open floor-warp prompt.
+                self._qa_warp_input = ''
+                self.state = STATE_QA_WARP_INPUT
                 return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
@@ -199,6 +215,8 @@ class InputMixin:
             self._pet_heal_input(key)
         elif self.state == STATE_PET_SPECIALS:
             self._pet_specials_input(key)
+        elif self.state == STATE_QA_WARP_INPUT:
+            self._qa_warp_input_handler(key, event.unicode)
         elif self.state == STATE_XYZZY_CONFIRM:
             self._xyzzy_confirm_input(key)
         elif self.state == STATE_QUIRKS:
@@ -489,6 +507,35 @@ class InputMixin:
         # Accept printable characters (max 20 chars)
         if unicode_char and len(unicode_char) == 1 and unicode_char.isprintable() and len(self._xyzzy_text) < 20:
             self._xyzzy_text += unicode_char
+
+    def _qa_warp_input_handler(self, key, unicode_char):
+        """Titivillus QA tool: type a floor number, ENTER to warp.
+
+        No quiz, no chronicle entry — straight debug warp.
+        """
+        buf = getattr(self, '_qa_warp_input', '')
+        if key == pygame.K_RETURN:
+            try:
+                target = int(buf)
+            except ValueError:
+                target = 0
+            if 1 <= target <= 100:
+                self.add_message(f"[QA] Warping to floor {target}...", 'info')
+                self._qa_warp_input = ''
+                self.state = STATE_PLAYER
+                # Floor change preserves saved levels; use _change_level so pets
+                # follow, level state saves, etc.
+                self._change_level(target, enter_from_top=(target >= self.dungeon_level))
+            else:
+                self.add_message("[QA] Floor must be 1-100.", 'warning')
+                self._qa_warp_input = ''
+                self.state = STATE_PLAYER
+            return
+        if key == pygame.K_BACKSPACE:
+            self._qa_warp_input = buf[:-1]
+            return
+        if unicode_char and unicode_char.isdigit() and len(buf) < 3:
+            self._qa_warp_input = buf + unicode_char
 
     def _pet_name_input(self, key, unicode_char):
         """Handle typing in the pet-naming popup that opens when a Soul Sphere hatches."""

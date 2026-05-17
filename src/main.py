@@ -297,6 +297,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Immortality flag
         self.player.immortal = bool(b.get('_immortal', False))
+        # QA tools flag (Titivillus debug build): unlocks Shift+I immortal toggle
+        # and Shift+W floor warp from the player turn.
+        self.player.qa_tools = bool(b.get('_qa_tools', False))
         # Chronicle: secret build
         if self.secret_build:
             bname = self.secret_build.get('_name', self.player_name)

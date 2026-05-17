@@ -75,6 +75,7 @@ class Player:
 
         # Special build flags
         self.immortal: bool = False         # Dad: cannot die
+        self.qa_tools: bool = False         # Titivillus: Shift+I immortal toggle, Shift+W floor warp
 
         # Status effects: effect_id -> turns_remaining (or -1 for permanent)
         self.status_effects: dict[str, int] = {}
