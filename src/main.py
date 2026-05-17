@@ -824,8 +824,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        # -- Always: starting lockpick charges ----------------------------
-        self.player.lockpick_charges += 5   # equivalent to one basic lockpick
+        # -- Always: Master Lockpick (permanent, no charges) -------------
+        # The lockpick is a fixed inventory item that never gets used up.
+        # Eco-quiz success is the gating mechanic, not consumable charges.
+        try:
+            picks = load_items('lockpick')
+            if picks:
+                master = copy.copy(picks[0])  # canonical lockpick
+                master.identified = True
+                self.player.add_to_inventory(master)
+        except Exception:
+            pass
 
         # -- Always: bread ration ------------------------------------------
         try:
@@ -1961,45 +1970,39 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 nx, ny = px + dx, py + dy
                 trap = self.dungeon.traps.get((nx, ny))
                 if trap and trap.get('revealed'):
-                    charges = getattr(self.player, 'lockpick_charges', 0)
-                    if charges <= 0:
-                        self.add_message(
-                            "You see the trap but have no lockpick tools to disarm it.", 'warning')
-                        return True
                     trap_name = trap['type'].replace('_', ' ')
                     tier, threshold = self._TRAP_DISARM.get(trap['type'], (2, 2))
-                    self.quiz_title = f"DISARMING {trap_name.upper()} -- AI"
+                    self.quiz_title = f"DISARMING {trap_name.upper()} -- ECONOMICS"
                     self.state = STATE_QUIZ
                     _trap_pos = (nx, ny)
 
                     def _on_disarm(result, pos=_trap_pos, tname=trap_name):
                         self.state = STATE_PLAYER
-                        self.player.lockpick_charges -= 1
                         if result.success:
                             if pos in self.dungeon.traps:
                                 del self.dungeon.traps[pos]
                             self.add_message(
-                                f"You carefully disarm the {tname} trap. "
-                                f"({self.player.lockpick_charges} picks remaining)", 'success')
+                                f"You carefully disarm the {tname} trap.", 'success')
                             if not getattr(self, '_chronicle_first_disarm', False):
                                 self._chronicle_first_disarm = True
                                 self._log_chronicle("Disarmed my first trap. Hands were shaking the whole time.")
                         else:
                             self.add_message(
-                                f"You fumble the disarm! The {tname} trap remains. "
-                                f"({self.player.lockpick_charges} picks remaining)", 'warning')
+                                f"You fumble the disarm! The {tname} trap remains.", 'warning')
                         self._advance_turn()
 
+                    # Trap disarm uses ECONOMICS quiz (same skill domain as
+                    # lockpicking — careful hands, knowledge of mechanisms).
                     self.quiz_engine.start_quiz(
                         mode='threshold',
-                        subject='ai',
+                        subject='economics',
                         tier=tier,
                         callback=_on_disarm,
                         threshold=threshold,
                         wisdom=self.player.WIS,
                         timer_modifier=self.player.get_quiz_timer_modifier(),
-                        extra_seconds=self.player.get_quiz_extra_seconds('ai'),
-                        base_seconds=self.player.get_quiz_timer('ai'),
+                        extra_seconds=self.player.get_quiz_extra_seconds('economics'),
+                        base_seconds=self.player.get_quiz_timer('economics'),
                     )
                     return True
         return False  # no revealed trap nearby — fall through to lockpick
@@ -2082,7 +2085,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _pickup(self):
-        from items import GoldPile
+        from items import GoldPile, add_gold_to_tile
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer -- it's fixed to the floor
         # Also skip MysteryAltar objects (not_pickable=True)
@@ -2123,14 +2126,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
         if isinstance(item, Lockpick):
-            # Lockpicks convert directly to charges -- never enter inventory
-            charges = getattr(item, 'max_durability', 5)
-            self.player.lockpick_charges = getattr(self.player, 'lockpick_charges', 0) + charges
+            # Lockpicks are no longer needed — player already has the Master
+            # Lockpick from char-creation. Treat floor picks as a small gold
+            # find so the item isn't a dead drop if old saves still have it.
+            self.player_gold += 5
             self.ground_items.remove(item)
-            self.add_message(
-                f"You pocket the {item.name}. (+{charges} lockpick charges, "
-                f"total: {self.player.lockpick_charges})", 'loot'
-            )
+            self.add_message("You don't need this — your master kit is sufficient. (+5 gold scrap value)", 'info')
             self._advance_turn()
             return
         if self.player.add_to_inventory(item):
@@ -2259,10 +2260,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
 
-        if getattr(self.player, 'lockpick_charges', 0) <= 0:
-            self.add_message("You have no lockpick charges.", 'warning')
-            return
-
+        # Master Lockpick is permanent; no charge check.
         self.quiz_title = (
             f"PICKING {container.name.upper()}  --  ECONOMICS  "
             f"(tier {container.tier}, need {container.quiz_threshold} correct)"
@@ -2292,7 +2290,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(f"You find {self._display_name(loot_item)}!", 'loot')
                 if result['gold'] > 0:
                     from items import GoldPile
-                    self.ground_items.append(GoldPile(result['gold'], cx, cy))
+                    add_gold_to_tile(self.ground_items, result['gold'], cx, cy)
                 _qs_lk = getattr(self, 'quirk_system', None)
                 if _qs_lk:
                     _qs_lk.on_lockpick_success()

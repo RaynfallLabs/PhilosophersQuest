@@ -1219,11 +1219,11 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             continue
         _place_one(magic_eligible, room, dungeon, ground_items, rng)
 
-    # -- Named uniques (Hrunting, Excalibur, etc.) — RARE separate roll --
-    # 2.5% per room → roughly 1-in-5 floors yields a unique drop. Uniques are
-    # supposed to feel LUCKY, not constant. Bell-curve weighting (peak_floor /
-    # spread / peak_weight) ensures items only spawn near their target floor.
-    UNIQUE_DROP_CHANCE_PER_ROOM = 0.025
+    # -- Named uniques (Hrunting, Excalibur, etc.) — VERY RARE floor drop --
+    # 0.5% per room → roughly 1-in-25 floors yields a floor unique. Uniques
+    # primarily spawn from chests now (container tier scales their odds).
+    # Floor finds are the lucky exception, not the rule.
+    UNIQUE_DROP_CHANCE_PER_ROOM = 0.005
     unique_pool: list = []
     for cls_name in ('weapon', 'armor', 'shield'):
         try:
@@ -1244,7 +1244,17 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     except FileNotFoundError:
         all_containers = []
 
-    _MIMIC_CHANCE = 0.08  # 8% of containers are secretly mimics
+    # Mimic chance scales with depth — keeps mimics a real threat through
+    # endgame, when players have more HP and might otherwise treat chests as
+    # free loot. F1-20 = 6%; F21-50 = 9%; F51-80 = 12%; F81+ = 15%.
+    if level <= 20:
+        _MIMIC_CHANCE = 0.06
+    elif level <= 50:
+        _MIMIC_CHANCE = 0.09
+    elif level <= 80:
+        _MIMIC_CHANCE = 0.12
+    else:
+        _MIMIC_CHANCE = 0.15
 
     eligible_containers = [c for c in all_containers if c.min_level <= level]
     if not eligible_containers:
@@ -1279,17 +1289,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             _place_one([c], room, dungeon, ground_items, rng)
         extra_chance *= 0.45   # 0.55 -> 0.25 -> 0.11 -> ...
 
-    # -- Lockpicks -- 1-2 per level, in random rooms -------------------------
-    try:
-        all_picks = load_items('lockpick')
-    except FileNotFoundError:
-        all_picks = []
-
-    eligible_picks = [p for p in all_picks if p.min_level <= level] or all_picks[:]
-    pick_count = rng.randint(1, 2)
-    rooms_for_picks = rng.sample(rooms[1:], min(pick_count, len(rooms) - 1))
-    for room in rooms_for_picks:
-        _place_one(eligible_picks, room, dungeon, ground_items, rng)
+    # Lockpicks no longer spawn — the Master Lockpick is a permanent inventory
+    # item granted at char-creation. Eco quiz is the gating mechanic.
 
     # -- Food -- 1-3 items scattered across rooms ------------------------------
     try:
@@ -1388,9 +1389,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
                              if dungeon.tiles[ty][tx] == FLOOR and
                              not any(i.x == tx and i.y == ty for i in ground_items)]
             if tiles_in_room:
-                from items import GoldPile
+                from items import GoldPile, add_gold_to_tile
                 gx, gy = rng.choice(tiles_in_room)
-                ground_items.append(GoldPile(gold_amount, gx, gy))
+                add_gold_to_tile(ground_items, gold_amount, gx, gy)
 
         elif room_type == 'library':
             try:
@@ -1422,7 +1423,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
                 if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.70:
                     amount = rng.randint(level * 2, level * 5)
                     if not any(i.x == tx and i.y == ty for i in ground_items):
-                        ground_items.append(GoldPile(amount, tx, ty))
+                        add_gold_to_tile(ground_items, amount, tx, ty)
 
         elif room_type == 'graveyard':
             # Place GRAVE tiles on ~20% of inner floor tiles; also drop 1-2 corpses
@@ -1502,7 +1503,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         for tx, ty in vault_room.inner_tiles():
             if dungeon.tiles[ty][tx] == FLOOR:
                 amount = rng.randint(level * 5, level * 15)
-                ground_items.append(GoldPile(amount, tx, ty))
+                add_gold_to_tile(ground_items, amount, tx, ty)
 
     # -- Floor traps -----------------------------------------------------------
     start_center = rooms[0].center if rooms else (0, 0)

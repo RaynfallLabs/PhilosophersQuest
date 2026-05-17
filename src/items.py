@@ -427,6 +427,25 @@ class GoldPile:
         self.x      = x
         self.y      = y
 
+    def _refresh_name(self):
+        self.name = f"{self.amount} gold coin{'s' if self.amount != 1 else ''}"
+
+
+def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int) -> 'GoldPile':
+    """Pool gold on a single tile instead of creating overlapping piles.
+    If a GoldPile already exists at (x, y), add to it; otherwise create new.
+    Returns the resulting GoldPile."""
+    if amount <= 0:
+        return None
+    for it in ground_items:
+        if isinstance(it, GoldPile) and it.x == x and it.y == y:
+            it.amount += amount
+            it._refresh_name()
+            return it
+    pile = GoldPile(amount, x, y)
+    ground_items.append(pile)
+    return pile
+
 
 # Stackable item types: identical instances (same id) merge into one stack entry.
 Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo)

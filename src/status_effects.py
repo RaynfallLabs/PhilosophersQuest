@@ -115,6 +115,10 @@ _RESIST_BLOCKS: dict[str, set] = {
     'drain_resist':  {'diseased'},
     'fire_resist':   {'burning'},
     'cold_resist':   {'frozen'},
+    # 2026: magic_resist now actively blocks mind-affecting / magical debuffs
+    # so counterspell + Magic Resist amulets become meaningful.
+    'magic_resist':  {'confused', 'charmed', 'silenced', 'feared',
+                      'hallucinating', 'hallucinating_pot'},
 }
 
 # Material immunity to acid/rust — materials that cannot corrode or rust

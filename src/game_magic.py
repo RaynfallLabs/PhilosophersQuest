@@ -1295,12 +1295,123 @@ class MagicMixin:
                 f"Brilliant light floods the area! (radius {radius}, chain {chain})", 'success')
             return
 
+        # --- 2026 SPELL EXPANSION: new self/AOE handlers --------------------
+
+        # Cone of Cold — AOE cold damage to all visible monsters within 5 tiles
+        if effect == 'cone_of_cold':
+            from dice import roll as _roll_co
+            base_dmg = _roll_co(power) if power else 14
+            scaled = self._spell_damage(base_dmg, chain)
+            px, py = self.player.x, self.player.y
+            hit = 0
+            for m in list(self.monsters):
+                if not m.alive: continue
+                if (m.x, m.y) not in self.visible: continue
+                if max(abs(m.x - px), abs(m.y - py)) > 5: continue
+                m.take_damage(scaled, 'cold')
+                # Apply frozen briefly
+                dur = max(2, int(4 * chain_scale))
+                m.add_effect('frozen', dur)
+                if not m.alive:
+                    self._on_monster_killed(m)
+                hit += 1
+            self.add_message(
+                f"A cone of cold blasts outward! {hit} creatures take {scaled} cold dmg + frozen! (chain {chain})", 'success')
+            return
+
+        # Mass Polymorph — polymorph every visible monster
+        if effect == 'mass_polymorph':
+            count = 0
+            for m in list(self.monsters):
+                if not m.alive: continue
+                if (m.x, m.y) not in self.visible: continue
+                if getattr(m, 'is_boss', False): continue   # bosses immune
+                # Crude polymorph: weaken HP + AC + speed to a "small animal"
+                m.max_hp = max(1, m.max_hp // 4)
+                m.hp = min(m.hp, m.max_hp)
+                m.thac0 = min(20, m.thac0 + 8)
+                m.speed = min(m.speed, 6)
+                count += 1
+            self.add_message(
+                f"Mass Polymorph! {count} creatures become small animals! (chain {chain})", 'success')
+            return
+
+        # Meteor Swarm — multiple meteors, each hitting all visible
+        if effect == 'meteor_swarm':
+            from dice import roll as _roll_ms
+            shots = max(2, chain)   # chain 1 = 2 meteors, chain 5 = 5 meteors
+            base_dmg = _roll_ms(power) if power else 18
+            scaled_per = self._spell_damage(base_dmg, chain)
+            total = 0
+            for _ in range(shots):
+                hit = 0
+                for m in list(self.monsters):
+                    if not m.alive: continue
+                    if (m.x, m.y) not in self.visible: continue
+                    m.take_damage(scaled_per, 'fire')
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                    hit += 1
+                total += hit
+            self.add_message(
+                f"Meteor Swarm! {shots} meteors fall — {total} hits, {scaled_per} fire dmg each! (chain {chain})", 'success')
+            return
+
+        # Storm of Vengeance — chain lightning to ALL visible monsters
+        if effect == 'storm_of_vengeance':
+            from dice import roll as _roll_sv
+            base_dmg = _roll_sv(power) if power else 20
+            scaled = self._spell_damage(base_dmg, chain)
+            hit = 0
+            for m in list(self.monsters):
+                if not m.alive: continue
+                if (m.x, m.y) not in self.visible: continue
+                m.take_damage(scaled, 'lightning')
+                # Stun chance from the thunder
+                if random.random() < 0.40:
+                    m.add_effect('stunned', max(2, int(4 * chain_scale)))
+                if not m.alive:
+                    self._on_monster_killed(m)
+                hit += 1
+            self.add_message(
+                f"Storm of Vengeance breaks overhead! {hit} creatures take {scaled} lightning + stun! (chain {chain})", 'success')
+            return
+
+        # Gate — summon a higher-tier guardian pet (boosted vs summon_guardian)
+        if effect == 'gate':
+            from pet_system import Pet, random_species
+            px, py = self.player.x, self.player.y
+            for dx in range(-2, 3):
+                for dy in range(-2, 3):
+                    nx, ny = px + dx, py + dy
+                    if (nx, ny) == (px, py): continue
+                    if not self.dungeon.is_walkable(nx, ny): continue
+                    if any(m.alive and m.x == nx and m.y == ny for m in self.monsters): continue
+                    species = random_species()
+                    pet = Pet(species, nx, ny)
+                    pet.level = max(3, self.dungeon_level // 2)   # ~2x summon_guardian level
+                    pet._refresh_stats()
+                    pet.hp = pet.max_hp
+                    self.pets.append(pet)
+                    self.add_message(
+                        f"A gate opens! {self._a_or_an(pet.name).capitalize()} (lv {pet.level}) "
+                        f"steps through to serve you! (chain {chain})", 'success')
+                    return
+            self.add_message("The gate flickers — no room nearby to manifest.", 'warning')
+            return
+
         # Scale status durations for self-buff spells
         _SELF_BUFF_DURATIONS = {
             'shield_self':       ('shielded',    12),
             'haste_self':        ('hasted',      10),
             'invisibility_self': ('invisible',   15),
             'reflect_self':      ('reflecting',  15),
+            # 2026 spell expansion — self buffs that re-use existing statuses
+            'stoneskin_self':    ('shielded',    25),    # longer shielded; "skin of stone"
+            'counterspell_self': ('magic_resist', 12),   # anti-spell shield
+            'foresight_self':    ('clairvoyant', 30),    # long detect-all
+            'resurrection_self': ('life_save',   50),    # one-shot revive
+            'greater_invis_self': ('invisible',  25),    # longer invis
         }
         if effect in _SELF_BUFF_DURATIONS:
             eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
@@ -1516,6 +1627,93 @@ class MagicMixin:
                             f"The {target.name} partially resists! {actual} damage! (chain {chain}, {int(kill_chance*100)}% missed)", 'warning')
                     if not target.alive:
                         self._on_monster_killed(target)
+            # --- 2026 SPELL EXPANSION: new targeted handlers --------------
+            elif effect == 'frost_touch':
+                base_dmg = _roll(power) if power else 4
+                scaled = self._spell_damage(base_dmg, chain)
+                actual = target.take_damage(scaled, 'cold')
+                # Slow chance from the frost
+                if random.random() < 0.50:
+                    dur = max(2, int(5 * chain_scale))
+                    dur, _ = self._boss_resist_cc(target, dur)
+                    target.add_effect('slowed', dur)
+                self.add_message(
+                    f"Frost touch chills the {target.name} for {actual} cold dmg! (chain {chain})", 'success')
+                if not target.alive:
+                    self._on_monster_killed(target)
+            elif effect == 'chain_lightning_jump':
+                # Initial hit + jumps to nearest 2 monsters within 3 tiles at reduced dmg
+                base_dmg = _roll(power) if power else 12
+                scaled = self._spell_damage(base_dmg, chain)
+                hit_targets = [target]
+                target.take_damage(scaled, 'lightning')
+                if not target.alive:
+                    self._on_monster_killed(target)
+                # Find nearest 2 monsters within 3 tiles of ANY already-hit
+                remaining = [m for m in self.monsters
+                             if m.alive and m not in hit_targets
+                             and any(abs(m.x - h.x) + abs(m.y - h.y) <= 3
+                                     for h in hit_targets)]
+                remaining.sort(key=lambda m: abs(m.x - target.x) + abs(m.y - target.y))
+                for jump_n, jm in enumerate(remaining[:2], start=1):
+                    arc_dmg = max(1, int(scaled * (0.75 if jump_n == 1 else 0.50)))
+                    jm.take_damage(arc_dmg, 'lightning')
+                    if not jm.alive:
+                        self._on_monster_killed(jm)
+                    hit_targets.append(jm)
+                self.add_message(
+                    f"Chain Lightning arcs through {len(hit_targets)} targets! (chain {chain})", 'success')
+            elif effect == 'banishment':
+                # Returns summoned/extraplanar entities — fey, demon, celestial, elemental
+                tags = set(getattr(target, 'tags', []))
+                BANISHABLE = {'fey', 'demon', 'celestial', 'elemental'}
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                if (tags & BANISHABLE) and not is_boss:
+                    target.alive = False
+                    target.hp = 0
+                    # No treasure / on_killed callback — banished, not slain
+                    self.add_message(
+                        f"The {target.name} is banished back to its home plane! (chain {chain})", 'success')
+                elif is_boss:
+                    self.add_message(
+                        f"The {target.name} is too anchored to this plane to banish.", 'warning')
+                else:
+                    # Non-extraplanar: brief paralyze as a consolation
+                    dur = max(2, int(4 * chain_scale))
+                    target.add_effect('paralyzed', dur)
+                    self.add_message(
+                        f"The {target.name} is a creature of this world — frozen in dread for {dur} turns instead. (chain {chain})", 'warning')
+            elif effect == 'power_word_kill':
+                # Instakill if target HP at or below threshold; threshold scales
+                # with player INT and chain. Bosses immune.
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                threshold = self.player.INT * chain * 4
+                if not is_boss and target.hp <= threshold:
+                    target.alive = False
+                    target.hp = 0
+                    self.add_message(
+                        f"POWER WORD: KILL! The {target.name} drops dead. (chain {chain}, threshold {threshold} HP)", 'success')
+                    self._on_monster_killed(target)
+                elif is_boss:
+                    self.add_message(
+                        f"The {target.name} resists the death-word but staggers!", 'warning')
+                    target.take_damage(self.player.INT * chain)
+                else:
+                    self.add_message(
+                        f"The {target.name} ({target.hp} HP) is too strong for the death-word "
+                        f"(threshold {threshold}). (chain {chain})", 'warning')
+            elif effect == 'imprisonment':
+                # Very long paralyze — effectively removes target from combat
+                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                dur = max(15, int(60 * chain_scale))
+                dur, resisted = self._boss_resist_cc(target, dur)
+                if resisted:
+                    self.add_message(
+                        f"The {target.name} resists imprisonment! (chain {chain})", 'warning')
+                else:
+                    target.add_effect('paralyzed', dur)
+                    self.add_message(
+                        f"The {target.name} is sealed in arcane stone for {dur} turns! (chain {chain})", 'success')
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r

@@ -26,17 +26,13 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
     Start an Economics threshold quiz to open *container*.
 
     on_complete({'status': str, 'loot': list, 'gold': int, 'messages': list[tuple]})
-      status: 'no_lockpick' | 'opened' | 'failed'
+      status: 'opened' | 'failed'
       loot:   list of Item instances (empty on failure)
       gold:   int (0 on failure)
       messages: list of (text, type) pairs
-    """
-    charges = getattr(player, 'lockpick_charges', 0)
-    if charges <= 0:
-        on_complete({'status': 'no_lockpick', 'loot': [], 'gold': 0,
-                     'messages': [('You have no lockpick charges!', 'warning')]})
-        return
 
+    The Master Lockpick is a permanent inventory item; no charges to track.
+    """
     def _callback(result):
         if result.success:
             _handle_success(player, container, dungeon, on_complete)
@@ -63,12 +59,6 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
 
 def _handle_success(player, container, dungeon, on_complete):
     messages = []
-
-    # Consume one lockpick charge
-    player.lockpick_charges = max(0, player.lockpick_charges - 1)
-    remaining = player.lockpick_charges
-    messages.append((f'Pick used. {remaining} charge{"s" if remaining != 1 else ""} remaining.', 'info'))
-
     container.opened = True
 
     gold = random.randint(container.gold[0], container.gold[1])
@@ -88,11 +78,6 @@ def _handle_failure(player, container, dungeon, monsters, on_complete):
     if container.trapped and not container.trap_triggered:
         container.trap_triggered = True
         _trigger_trap(player, container.trap, messages)
-
-    # Consume one lockpick charge on failure
-    player.lockpick_charges = max(0, player.lockpick_charges - 1)
-    remaining = player.lockpick_charges
-    messages.append((f'Pick damaged. {remaining} charge{"s" if remaining != 1 else ""} remaining.', 'info'))
 
     # 30% chance to alert nearby monsters
     if random.random() < 0.30:
@@ -139,18 +124,20 @@ def _alert_nearby(player, dungeon, monsters) -> bool:
 
 
 # Per container tier: which item categories to draw from, max quiz tier
-# allowed, and whether legendary (containerLootTier='legendary') items can appear.
+# allowed, whether legendary-flagged items appear, AND the per-item-pick chance
+# that a named unique replaces the regular loot pick (escalating with tier).
+# Uniques mostly enter the game through chests now — floor drops are 1-in-25.
 _TIER_LOOT_CFG: dict[int, dict] = {
     1: {'classes': ['weapon', 'armor', 'ammo', 'potion'],
-        'max_tier': 2, 'legendary': False},
+        'max_tier': 2, 'legendary': False, 'unique_chance': 0.00},
     2: {'classes': ['weapon', 'armor', 'ammo', 'accessory', 'shield', 'potion'],
-        'max_tier': 3, 'legendary': False},
+        'max_tier': 3, 'legendary': False, 'unique_chance': 0.02},
     3: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand'],
-        'max_tier': 4, 'legendary': False},
+        'max_tier': 4, 'legendary': False, 'unique_chance': 0.08},
     4: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand', 'spellbook'],
-        'max_tier': 5, 'legendary': False},
+        'max_tier': 5, 'legendary': False, 'unique_chance': 0.20},
     5: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand', 'spellbook'],
-        'max_tier': 5, 'legendary': True},
+        'max_tier': 5, 'legendary': True,  'unique_chance': 0.40},
 }
 
 
@@ -180,33 +167,44 @@ def _generate_loot(container, dungeon_level: int) -> list:
     effective_level = dungeon_level + level_bonus
 
     pool = []
+    unique_pool = []   # named uniques eligible at this level
     for cls_name in cfg['classes']:
         try:
             for item in load_items(cls_name):
                 itier = _item_tier(item)
-                # Skip items above the allowed tier ceiling
                 if itier > cfg['max_tier']:
                     continue
-                # Legendary items only in tier-5 containers
                 if getattr(item, 'container_loot_tier', 'common') == 'legendary' \
                         and not cfg['legendary']:
                     continue
-                # Chest bonus: items available sooner than floor spawns
                 if item.min_level > max(1, effective_level):
                     continue
-                pool.append(item)
+                if getattr(item, 'is_unique', False):
+                    # Floor-spawn uniques (those carrying peak_floor) — gated
+                    # by bell-curve relevance to the effective chest level
+                    unique_pool.append(item)
+                else:
+                    pool.append(item)
         except FileNotFoundError:
             pass
 
-    if not pool:
+    if not pool and not unique_pool:
         return []
 
     # Bias toward higher-tier items — weight by tier squared, scaled by container tier
     weights = [max(1, _item_tier(i) ** 2) if container_tier >= 3
-               else max(1, _item_tier(i)) for i in pool]
+               else max(1, _item_tier(i)) for i in pool] if pool else []
+
+    unique_chance = cfg.get('unique_chance', 0.0)
 
     def pick_one():
-        return copy.copy(random.choices(pool, weights=weights, k=1)[0])
+        # Per-pick coin flip: roll a unique if eligible + lucky
+        if unique_pool and random.random() < unique_chance:
+            return copy.copy(random.choice(unique_pool))
+        if pool:
+            return copy.copy(random.choices(pool, weights=weights, k=1)[0])
+        # No common pool — guaranteed unique
+        return copy.copy(random.choice(unique_pool))
 
     chosen = [pick_one()]
     chance = container.extra_item_chance
@@ -218,7 +216,9 @@ def _generate_loot(container, dungeon_level: int) -> list:
 
 
 def _spawn_mimic(container, monsters: list, dungeon_level: int = 1):
-    """Replace a mimic container with a level-appropriate mimic monster."""
+    """Replace a mimic container with a level-appropriate mimic monster.
+    Spans the whole floor curve — mid/late game uses the new mimic-AI
+    monsters added in the 2026 monster expansion."""
     import json
     from monster import Monster
 
@@ -227,17 +227,19 @@ def _spawn_mimic(container, monsters: list, dungeon_level: int = 1):
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
-    # Pick mimic tier based on dungeon level
-    if dungeon_level >= 51:
-        mid = 'abyssal_mimic'
-    elif dungeon_level >= 21:
-        mid = 'greater_mimic'
+    # Tiered mimic by depth — each band has a distinct visual+threat profile
+    if dungeon_level >= 80:
+        mid = 'abyssal_mimic'      # F75 peak — endgame
+    elif dungeon_level >= 60:
+        mid = 'gilded_mimic'       # F66 peak (new) — high-mid, paralyzing maw
+    elif dungeon_level >= 45:
+        mid = 'lurking_horror'     # F55 peak (new) — late-mid, mimic-AI horror
+    elif dungeon_level >= 25:
+        mid = 'greater_mimic'      # F35 peak — mid
     else:
-        mid = 'mimic'
+        mid = 'mimic'              # F8 peak — early
 
-    defn = all_defs.get(mid)
-    if defn is None:
-        defn = all_defs.get('mimic')
+    defn = all_defs.get(mid) or all_defs.get('mimic')
     if defn is None:
         return None
 
