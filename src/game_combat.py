@@ -1450,6 +1450,13 @@ class CombatMixin:
             _pos_before = (m.x, m.y)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
+            # Rewired traps (player chained AI to >=3 on a trap) trigger when a
+            # monster steps onto them. Only fires if the monster moved AND the
+            # new tile holds a trap flagged safe_for_player.
+            if m.alive and (m.x, m.y) != _pos_before:
+                _new_tile_trap = self.dungeon.traps.get((m.x, m.y))
+                if _new_tile_trap and _new_tile_trap.get('safe_for_player'):
+                    self._fire_trap_on_monster(m, _new_tile_trap, (m.x, m.y))
             # Confused friendly fire message
             _cf_hit = getattr(m, '_confused_hit', None)
             if _cf_hit:

@@ -6,7 +6,9 @@
   with tier-scaled probability
 - Mimic monster picked by depth covers F1-100 with 5 mimic kinds
 - Mimic chance scales with depth (6%/9%/12%/15%)
-- Trap disarm uses economics quiz subject (not AI)
+- Trap disarm uses AI quiz subject (post-2026-05-17 retune; reverted from a
+  brief stint on economics so that AI = "special/unusual" mechanics overall)
+- Shop haggle uses economics escalator-chain quiz, 10% discount per chain step
 """
 import os
 import random
@@ -126,3 +128,139 @@ def test_attempt_lockpick_does_not_require_charges():
     src = inspect.getsource(attempt_lockpick)
     assert 'lockpick_charges' not in src, \
         "attempt_lockpick should not gate on lockpick_charges"
+
+
+# ---------------------------------------------------------------------------
+# Shop haggle discount — 10% per escalator-chain step, capped at 50%
+# ---------------------------------------------------------------------------
+
+def test_haggle_discount_per_chain_step():
+    """Confirm the discount ladder matches the spec: 10% per chain, capped at 50%."""
+    import main
+    f = main.Game._haggle_discount_for_chain
+    assert f(0) == 0
+    assert f(1) == 10
+    assert f(2) == 20
+    assert f(3) == 30
+    assert f(4) == 40
+    assert f(5) == 50
+    # Capped at 50 even if chain somehow exceeds 5 (defensive)
+    assert f(6) == 50
+    assert f(10) == 50
+    # Negative chain (shouldn't happen, but guard against it)
+    assert f(-1) == 0
+
+
+def test_haggle_applies_discount_to_price():
+    """The full discount applied to a 200-gold item."""
+    import main
+    apply = main.Game._apply_haggle_discount
+    assert apply(200, 0) == 200      # no discount
+    assert apply(200, 1) == 180      # 10% off
+    assert apply(200, 5) == 100      # 50% off
+    # Floor of 1 — discount never zeroes the price
+    assert apply(1, 5) == 1
+
+
+# ---------------------------------------------------------------------------
+# Trap disarm — moved back to AI subject post-2026-05-17
+# ---------------------------------------------------------------------------
+
+def test_disarm_uses_ai_subject_not_economics():
+    """The disarm quiz must invoke the AI subject and escalator_chain mode."""
+    import inspect
+    import main
+    src = inspect.getsource(main.Game._try_disarm_trap)
+    assert "subject='ai'" in src, "trap disarm must use AI subject"
+    assert "escalator_chain" in src, "trap disarm must use escalator_chain mode"
+    assert "max_chain=5" in src, "trap disarm chain must cap at 5"
+
+
+def test_disarm_resolver_chain_ladder():
+    """Validate the chain -> outcome mapping in _resolve_trap_disarm.
+
+    Operates on a minimal harness — no Pygame, no level state, just dict
+    manipulation, since the resolver is a pure mapper over trap state.
+    """
+    import main
+
+    class _Harness:
+        def __init__(self):
+            self.dungeon_level = 1
+            self._chronicle = []
+            self._recalled_hints = []
+            self.player = type('P', (), {'has_effect': lambda self_, e: False,
+                                          'take_damage': lambda self_, a, t='physical': a,
+                                          'is_dead': lambda self_: False})()
+            class _D:
+                traps = {}
+                pits = set()
+            self.dungeon = _D()
+            self._adv_count = 0
+        def add_message(self, *a, **kw): pass
+        def _log_chronicle(self, *a, **kw): pass
+        def _check_floor_trap(self, x, y):
+            # Damage-only stub: pretend the trap fired and consume the dict entry.
+            self.dungeon.traps.pop((x, y), None)
+        def _advance_turn(self): self._adv_count += 1
+        def _random_hint_for_disarm(self): return "test hint"
+
+    def _make_trap():
+        return {'type': 'bear_trap', 'damage': '1d4', 'damage_type': 'physical',
+                'message': '!', 'revealed': True}
+
+    # Chain 0: trap triggers + extra turn lost (two _advance_turn calls)
+    h = _Harness()
+    h.dungeon.traps[(1, 1)] = _make_trap()
+    main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 0)
+    assert (1, 1) not in h.dungeon.traps, "trap should have fired and been consumed"
+    assert h._adv_count == 2, f"chain 0 = 2 advance_turn calls; got {h._adv_count}"
+
+    # Chain 1: trap triggers, one turn
+    h = _Harness()
+    h.dungeon.traps[(1, 1)] = _make_trap()
+    main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 1)
+    assert (1, 1) not in h.dungeon.traps
+    assert h._adv_count == 1
+
+    # Chain 2: clean disarm
+    h = _Harness()
+    h.dungeon.traps[(1, 1)] = _make_trap()
+    main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 2)
+    assert (1, 1) not in h.dungeon.traps
+    assert h._adv_count == 1
+
+    # Chain 3: rewired, trigger_count=1
+    h = _Harness()
+    h.dungeon.traps[(1, 1)] = _make_trap()
+    main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 3)
+    t = h.dungeon.traps[(1, 1)]
+    assert t.get('rewired') is True
+    assert t.get('safe_for_player') is True
+    assert t.get('trigger_count') == 1
+
+    # Chain 4: rewired + trigger_count=2 (fires twice)
+    h = _Harness()
+    h.dungeon.traps[(1, 1)] = _make_trap()
+    main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 4)
+    t = h.dungeon.traps[(1, 1)]
+    assert t.get('rewired') is True
+    assert t.get('trigger_count') == 2
+
+    # Chain 5: rewired + trigger_count=2 + hint recorded
+    h = _Harness()
+    h.dungeon.traps[(1, 1)] = _make_trap()
+    main.Game._resolve_trap_disarm(h, (1, 1), 'bear trap', 5)
+    t = h.dungeon.traps[(1, 1)]
+    assert t.get('trigger_count') == 2
+    assert len(h._recalled_hints) >= 1, "chain 5 should grant a random hint"
+
+
+def test_rewired_trap_skips_player_in_check_floor_trap():
+    """A trap flagged safe_for_player should be skipped by _check_floor_trap."""
+    import inspect
+    import main
+    src = inspect.getsource(main.Game._check_floor_trap)
+    # The early-out branch must exist.
+    assert "safe_for_player" in src, \
+        "_check_floor_trap must guard against rewired traps"

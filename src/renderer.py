@@ -227,12 +227,17 @@ class Renderer:
             if trap.get('revealed') and (tx, ty) in visible:
                 sx, sy = self.world_to_screen(tx, ty)
                 trap_type = trap.get('type', '')
-                sprite = self._get_env_sprite(f'trap_{trap_type}')
+                rewired = trap.get('safe_for_player', False)
+                sprite_key = f'trap_{trap_type}_rewired' if rewired else f'trap_{trap_type}'
+                sprite = self._get_env_sprite(sprite_key)
+                if not sprite and rewired:
+                    # No rewired-variant sprite — fall back to the standard sprite, tinted via caret.
+                    sprite = None
                 if sprite:
                     self.screen.blit(sprite, (sx, sy))
                 else:
-                    # Fallback to colored caret
-                    trap_color = trap.get('color', (255, 200, 0))
+                    # Fallback: rewired traps render cyan ^, normal traps use per-type color.
+                    trap_color = (80, 230, 255) if rewired else trap.get('color', (255, 200, 0))
                     label = self._sym_font.render('^', True, trap_color)
                     lw, lh = label.get_size()
                     self.screen.blit(label, (sx + (T - lw) // 2, sy + (T - lh) // 2))

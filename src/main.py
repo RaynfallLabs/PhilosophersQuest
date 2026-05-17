@@ -1797,6 +1797,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         trap = self.dungeon.traps.get((x, y))
         if trap is None:
             return
+        # Rewired traps (AI chain >= 3) skip the player — they're armed for monsters.
+        if trap.get('safe_for_player'):
+            return
         # Levitating players float over traps (reveals them)
         if self.player.has_effect('levitating'):
             trap['revealed'] = True
@@ -2024,52 +2027,197 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     }
 
     def _try_disarm_trap(self) -> bool:
-        """Try to disarm an adjacent revealed trap via economics quiz. Returns True if handled."""
+        """Try to defuse-or-rewire an adjacent revealed trap via AI escalator-chain quiz.
+
+        AI quiz outcomes by chain depth:
+          0 - trap fires on you AND you lose your next turn (panicked fumble)
+          1 - trap fires on you (botched but contained — no extra turn loss)
+          2 - trap removed cleanly
+          3 - trap REWIRED: re-armed, only monsters trigger it; you walk over freely
+          4 - trap rewired AND fires TWICE on whatever monster trips it
+          5 - same as 4, plus a free random hint about the world
+        Returns True if a quiz was started (consumed the input), False otherwise.
+        """
         px, py = self.player.x, self.player.y
-        # Find nearest adjacent revealed trap
         for dy in range(-1, 2):
             for dx in range(-1, 2):
                 if dx == 0 and dy == 0:
                     continue
                 nx, ny = px + dx, py + dy
                 trap = self.dungeon.traps.get((nx, ny))
-                if trap and trap.get('revealed'):
-                    trap_name = trap['type'].replace('_', ' ')
-                    tier, threshold = self._TRAP_DISARM.get(trap['type'], (2, 2))
-                    self.quiz_title = f"DISARMING {trap_name.upper()} -- ECONOMICS"
-                    self.state = STATE_QUIZ
-                    _trap_pos = (nx, ny)
+                if not trap or not trap.get('revealed'):
+                    continue
+                trap_name = trap['type'].replace('_', ' ')
+                self.quiz_title = f"DISARMING {trap_name.upper()} -- AI"
+                self.state = STATE_QUIZ
+                _trap_pos = (nx, ny)
 
-                    def _on_disarm(result, pos=_trap_pos, tname=trap_name):
-                        self.state = STATE_PLAYER
-                        if result.success:
-                            if pos in self.dungeon.traps:
-                                del self.dungeon.traps[pos]
-                            self.add_message(
-                                f"You carefully disarm the {tname} trap.", 'success')
-                            if not getattr(self, '_chronicle_first_disarm', False):
-                                self._chronicle_first_disarm = True
-                                self._log_chronicle("Disarmed my first trap. Hands were shaking the whole time.")
-                        else:
-                            self.add_message(
-                                f"You fumble the disarm! The {tname} trap remains.", 'warning')
-                        self._advance_turn()
+                def _on_disarm(result, pos=_trap_pos, tname=trap_name):
+                    self.state = STATE_PLAYER
+                    chain = result.score
+                    self._resolve_trap_disarm(pos, tname, chain)
 
-                    # Trap disarm uses ECONOMICS quiz (same skill domain as
-                    # lockpicking — careful hands, knowledge of mechanisms).
-                    self.quiz_engine.start_quiz(
-                        mode='threshold',
-                        subject='economics',
-                        tier=tier,
-                        callback=_on_disarm,
-                        threshold=threshold,
-                        wisdom=self.player.WIS,
-                        timer_modifier=self.player.get_quiz_timer_modifier(),
-                        extra_seconds=self.player.get_quiz_extra_seconds('economics'),
-                        base_seconds=self.player.get_quiz_timer('economics'),
-                    )
-                    return True
-        return False  # no revealed trap nearby — fall through to lockpick
+                self.quiz_engine.start_quiz(
+                    mode='escalator_chain',
+                    subject='ai',
+                    tier=1,
+                    callback=_on_disarm,
+                    max_chain=5,
+                    wisdom=self.player.WIS,
+                    timer_modifier=self.player.get_quiz_timer_modifier(),
+                    extra_seconds=self.player.get_quiz_extra_seconds('ai'),
+                    base_seconds=self.player.get_quiz_timer('ai'),
+                )
+                return True
+        return False  # no revealed trap nearby
+
+    def _resolve_trap_disarm(self, pos: tuple, tname: str, chain: int):
+        """Apply the chain-tiered outcome of an AI disarm attempt.
+
+        Called from _try_disarm_trap.on_complete. See that method's docstring
+        for the chain -> outcome ladder.
+        """
+        px, py = pos
+        trap = self.dungeon.traps.get(pos)
+        if trap is None:
+            self._advance_turn()
+            return
+
+        if chain == 0:
+            # Catastrophic fumble: trap fires on you and you burn an extra turn.
+            self.add_message(
+                f"You panic with the {tname} trap! It snaps as you flinch back.", 'warning')
+            self._check_floor_trap(px, py)
+            self._advance_turn()   # extra turn cost (the fumble)
+            self._advance_turn()   # normal turn for the action
+            return
+
+        if chain == 1:
+            # Botched but contained: trap fires, but no extra turn lost.
+            self.add_message(
+                f"You fumble the {tname} trap — it triggers on you.", 'warning')
+            self._check_floor_trap(px, py)
+            self._advance_turn()
+            return
+
+        if chain == 2:
+            # Clean disarm.
+            del self.dungeon.traps[pos]
+            self.add_message(
+                f"You carefully disarm the {tname} trap.", 'success')
+            if not getattr(self, '_chronicle_first_disarm', False):
+                self._chronicle_first_disarm = True
+                self._log_chronicle(
+                    "Disarmed my first trap. Hands were shaking the whole time."
+                )
+            self._advance_turn()
+            return
+
+        # Chain 3+: REWIRE the trap toward monsters.
+        trap['rewired'] = True
+        trap['safe_for_player'] = True
+        trap['trigger_count'] = 2 if chain >= 4 else 1
+        self.add_message(
+            f"You rewire the {tname} trap! It will trigger on the next monster to cross it.",
+            'success' if chain >= 4 else 'info')
+        if chain >= 4:
+            self.add_message(
+                f"The {tname} mechanism is overcharged — it will fire twice!", 'success')
+        if not getattr(self, '_chronicle_first_rewire', False):
+            self._chronicle_first_rewire = True
+            self._log_chronicle(
+                f"Rewired a {tname} trap to fire on monsters instead. The dungeon's "
+                "own teeth turned against it."
+            )
+
+        # Chain 5 bonus: pull a random hint from the lore pool.
+        if chain >= 5:
+            hint = self._random_hint_for_disarm()
+            if hint:
+                self.add_message("Insight blooms in your mind:", 'success')
+                self.add_message(f'"{hint}"', 'info')
+                if hasattr(self, '_recalled_hints'):
+                    self._recalled_hints.append(hint)
+        self._advance_turn()
+
+    def _fire_trap_on_monster(self, monster, trap: dict, pos: tuple) -> None:
+        """Fire a rewired trap's effects on a monster. Called when a monster
+        steps onto a tile that holds a rewired trap (safe_for_player=True).
+
+        Damage and status durations are multiplied by trap['trigger_count']
+        (1 for chain-3 rewires, 2 for chain-4+ "fires twice" rewires).
+        """
+        from dice import roll as _dice_roll
+        import random as _trng
+        trap_type = trap['type']
+        triggers = max(1, int(trap.get('trigger_count', 1)))
+        _snd.play('trap')
+        if (pos in self.visible) or monster in self.monsters:
+            self.add_message(
+                f"The rewired {trap_type.replace('_', ' ')} trap snaps on the {monster.name}!",
+                'success')
+
+        # Apply damage `triggers` times. Some traps have damage 0 (status-only).
+        dmg_str = str(trap.get('damage', '0'))
+        if dmg_str and dmg_str != '0':
+            for _ in range(triggers):
+                raw = _dice_roll(dmg_str)
+                monster.take_damage(raw)
+                if not monster.alive:
+                    break
+
+        # Monster-appropriate status applications (skip player-only effects).
+        def _add(name: str, duration: int):
+            cur = monster.status_effects.get(name, 0)
+            monster.status_effects[name] = max(cur, duration * triggers)
+
+        if trap_type == 'pit':
+            _add('stuck_in_pit', 3)
+        elif trap_type == 'acid':
+            _add('corroding', 5)
+        elif trap_type == 'fire':
+            _add('burning', 3)
+        elif trap_type == 'sleep_gas':
+            _add('sleeping', _trng.randint(3, 8))
+        elif trap_type == 'bear_trap':
+            _add('immobilized', _trng.randint(2, 4))
+        elif trap_type == 'alarm':
+            # Alerts other monsters — harmless to the triggerer (alarms call allies)
+            for m in self.monsters:
+                if m.alive and abs(m.x - pos[0]) <= 10 and abs(m.y - pos[1]) <= 10:
+                    if m.ai_pattern == 'sessile':
+                        m.ai_pattern = 'aggressive'
+        elif trap_type == 'squeaky_board':
+            for m in self.monsters:
+                if m.alive:
+                    m._alerted = True
+                    m.status_effects.pop('sleeping', None)
+        # rust / polymorph / teleport: skip on monsters (player-item-targeted effects)
+
+        # Trap is consumed after firing.
+        if pos in self.dungeon.traps:
+            del self.dungeon.traps[pos]
+        if not monster.alive:
+            self._on_monster_killed(monster)
+
+    def _random_hint_for_disarm(self) -> str:
+        """Pull a random hint from data/hints.json for the chain-5 disarm reward."""
+        import json as _hj
+        import random as _hrng
+        from paths import data_path
+        try:
+            with open(data_path('data', 'hints.json'), encoding='utf-8') as f:
+                hints = _hj.load(f)
+        except Exception:
+            return ''
+        # hints.json is keyed by tier ('1'..'5'); pick across all tiers
+        pool = []
+        for tier_hints in hints.values():
+            if isinstance(tier_hints, list):
+                pool.extend(tier_hints)
+        if not pool:
+            return ''
+        return _hrng.choice(pool)
 
     def _do_passive_trap_detection(self):
         """Passive PER-based detection of adjacent unrevealed traps each turn."""
@@ -4034,6 +4182,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._shop_haggled = set()
         self.state = STATE_SHOP
 
+    @staticmethod
+    def _haggle_discount_for_chain(chain: int) -> int:
+        """Return the percent discount granted by a haggle chain length.
+
+        10% per chain step (i.e., per escalator tier reached), capped at 50%.
+        Chain 0 -> 0%, chain 1 -> 10%, ..., chain 5 -> 50%, chain >5 -> 50%.
+        """
+        return min(max(0, chain) * 10, 50)
+
+    @staticmethod
+    def _apply_haggle_discount(price: int, chain: int) -> int:
+        """Return the new price after applying the chain-based haggle discount."""
+        discount = Game._haggle_discount_for_chain(chain)
+        return max(1, int(price * (100 - discount) / 100))
+
     def _haggle_item(self, sel: int):
         """Haggle over a shop item via economics escalator chain quiz."""
         m = self._shop_merchant
@@ -4051,8 +4214,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"The merchant is unimpressed. Price stays at {original_price} gold.",
                     'warning')
             else:
-                discount = min(chain * 10, 50)  # 10% per chain, max 50%
-                new_price = max(1, int(original_price * (100 - discount) / 100))
+                discount = self._haggle_discount_for_chain(chain)
+                new_price = self._apply_haggle_discount(original_price, chain)
                 m.prices[sel] = new_price
                 self.add_message(
                     f"The merchant relents! {iname}: {original_price} -> {new_price} gold ({discount}% off).",
