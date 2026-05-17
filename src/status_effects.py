@@ -50,6 +50,11 @@ EFFECT_INFO: dict[str, tuple] = {
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     'berserk':            ('Berserk',            (220,  60,  40), 'Ríastrad — bonus STR, HP cost per turn'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
+    # ---- Hero special buffs (Phase 3B) ----
+    'stand_ac':           ('Spartan Stand',      (255, 215, 80),  '+AC and counter-strike chance'),
+    'crit_buff':          ('Critical Resolve',   (255, 100, 100), 'Next attack deals +50% damage'),
+    'fear_immune':        ('Battle Rage',        (220, 60, 40),   'Immune to fear effects'),
+    'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),

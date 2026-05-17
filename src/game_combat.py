@@ -1644,11 +1644,21 @@ class CombatMixin:
                             _snd.play('player_healed')
                             break
 
-                # Ankh of Isis: resurrect on death (consumes the item)
+                # Ankh of Isis: resurrect on death (consumes the item). Mastery
+                # `resurrect_to_full` (unlocked by chain-5 identify on Ankh)
+                # restores the player to FULL HP instead of half.
                 if self.player.hp <= 0:
                     for _acc in self.player.equipped_accessories:
                         if getattr(_acc, 'resurrect_on_death', False):
-                            self.player.hp = max(1, self.player.max_hp // 2)
+                            mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', ''))
+                            full_heal = (
+                                mast is not None
+                                and mast.get('kind') == 'accessory_passive_strength'
+                                and isinstance(mast.get('value'), dict)
+                                and mast['value'].get('kind') == 'resurrect_to_full'
+                            )
+                            self.player.hp = self.player.max_hp if full_heal \
+                                else max(1, self.player.max_hp // 2)
                             # Clear the slot that held the Ankh
                             if self.player.amulet_slot is _acc:
                                 self.player.amulet_slot = None
@@ -1657,7 +1667,14 @@ class CombatMixin:
                                     if _r is _acc:
                                         self.player.accessory_slots[_i] = None
                                         break
-                            self.add_message("The Ankh of Isis shatters! Isis breathes life back into you!", 'success')
+                            if full_heal:
+                                self.add_message(
+                                    "The Ankh of Isis blazes! Isis restores you fully!",
+                                    'success')
+                            else:
+                                self.add_message(
+                                    "The Ankh of Isis shatters! Isis breathes life back into you!",
+                                    'success')
                             self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
                             _snd.play('player_healed')
                             break

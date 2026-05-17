@@ -2376,6 +2376,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if _gm > 0:
                     _gold_amt = int(_gold_amt * _gm)
                     break
+            # Andvaranaut: gold_finds_pct mastery — bonus gold on pickup (additive %).
+            _gold_finds_bonus_pct = 0
+            for _acc in self.player.equipped_accessories:
+                _mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', None))
+                if _mast and _mast.get('kind') == 'accessory_passive_strength':
+                    _mv = _mast.get('value') or {}
+                    if _mv.get('kind') == 'gold_finds_pct':
+                        _gold_finds_bonus_pct += int(_mv.get('value', 0))
+            if _gold_finds_bonus_pct > 0:
+                _bonus = int(_gold_amt * _gold_finds_bonus_pct / 100)
+                _gold_amt += _bonus
             self.player_gold += _gold_amt
             self.ground_items.remove(item)
             self.add_message(f"You pick up {_gold_amt} gold coins.", 'loot')
