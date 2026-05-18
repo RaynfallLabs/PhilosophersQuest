@@ -15,19 +15,23 @@ from fantasy_ui import FP, get_font, centered_text, draw_divider
 class StudyMode:
     """Subject/tier picker → untimed quiz → wrong answers show context."""
 
+    # Subject palette is sourced from FP.SUBJECT — see fantasy_ui.py for
+    # the canonical table. This list pairs each key with its display name.
     _SUBJECTS = [
-        ('math',       'Math',       (40, 210, 245)),
-        ('geography',  'Geography',  (40, 190, 75)),
-        ('history',    'History',    (215, 170, 0)),
-        ('animal',     'Animals',    (210, 105, 20)),
-        ('cooking',    'Cooking',    (215, 35, 170)),
-        ('science',    'Science',    (75, 90, 245)),
-        ('philosophy', 'Philosophy', (195, 190, 215)),
-        ('grammar',    'Grammar',    (210, 45, 45)),
-        ('economics',  'Economics',  (150, 210, 0)),
-        ('theology',   'Theology',   (195, 162, 70)),
-        ('trivia',     'Trivia',     (255, 200, 100)),
-        ('ai',         'AI',         (0, 220, 120)),
+        (key, label, FP.SUBJECT[key]) for key, label in [
+            ('math',       'Math'),
+            ('geography',  'Geography'),
+            ('history',    'History'),
+            ('animal',     'Animals'),
+            ('cooking',    'Cooking'),
+            ('science',    'Science'),
+            ('philosophy', 'Philosophy'),
+            ('grammar',    'Grammar'),
+            ('economics',  'Economics'),
+            ('theology',   'Theology'),
+            ('trivia',     'Trivia'),
+            ('ai',         'AI'),
+        ]
     ]
 
     def __init__(self, screen):

@@ -130,8 +130,35 @@ class FP:
     # ARCANE_ACCENT is a pale arcane purple readable on midnight bg.
     CYAN_ACCENT      = (120, 210, 240)
     ARCANE_ACCENT    = (200, 170, 255)
+    AMBER_ACCENT     = (200, 155,  80)   # warm amber for warnings / passives
 
-    # Subject accent mapping (mirrors _SUBJECT_COLOR in main.py but richer)
+    # Resource bar colors (HP / SP / MP) — used by the sidebar bars and the
+    # quiz combat HUD HP bar. Named so the bars can stay consistent if the
+    # palette is ever retuned.
+    HP_RED           = (185,  42,  42)
+    SP_GREEN         = (110, 200,  90)
+    SP_AMBER         = (200, 170,  50)   # SP hunger warning
+    SP_RED           = (210,  80,  60)   # SP starvation
+    MP_BLUE          = ( 50,  85, 205)
+
+    # Cooldown / readiness status colors (sidebar status section).
+    COOLDOWN_TEAL    = ( 80, 160, 200)
+    READY_TEAL       = (120, 200, 240)
+    COOLDOWN_ARCANE  = (140, 100, 200)   # prayer cooldown
+
+    # Passive status colors (sidebar passive list — Fire Protect, Manifest,
+    # Death Ward etc.). Named so they don't compete with each other for
+    # attention but stay readable on the midnight bg.
+    PASSIVE_FIRE     = (245, 150,  60)
+    PASSIVE_MANIFEST = (200, 170, 240)
+    PASSIVE_WARD     = (220, 220, 255)
+
+    # Empty equipment slot — the dim "no item" filler in the sidebar.
+    SLOT_EMPTY       = ( 52,  52,  70)
+
+    # Subject accent mapping — single source of truth used by the quiz
+    # panel border, welcome screen domain ring, and standalone study mode.
+    # Adding a subject? Add it here and only here.
     SUBJECT = {
         'math':       ( 40, 210, 245),
         'geography':  ( 40, 190,  75),
@@ -143,6 +170,8 @@ class FP:
         'grammar':    (210,  45,  45),
         'economics':  (150, 210,   0),
         'theology':   (195, 162,  70),
+        'trivia':     (255, 200, 100),
+        'ai':         (  0, 220, 120),
     }
 
 
@@ -607,6 +636,29 @@ ITEM_COLOR = {
 # -----------------------------------------------------------------------------
 # CHOICE BUTTON
 # -----------------------------------------------------------------------------
+
+def draw_input_box(surf: pygame.Surface, rect: tuple, value: str,
+                   font: pygame.font.Font,
+                   border_color: tuple | None = None,
+                   text_color: tuple | None = None,
+                   placeholder: str = '_') -> None:
+    """A small text/number entry box used by the drop-gold, pet-name, and
+    QA-warp popups. Shared chrome so the three look like siblings.
+
+    rect = (x, y, w, h). `value` is the current input string; if empty,
+    `placeholder` is rendered so the box never looks visually empty.
+    """
+    if border_color is None:
+        border_color = FP.GOLD_BRIGHT
+    if text_color is None:
+        text_color = FP.PARCHMENT_LIGHT
+    x, y, w, h = rect
+    pygame.draw.rect(surf, FP.MIDNIGHT_LIGHT, (x, y, w, h), border_radius=4)
+    pygame.draw.rect(surf, border_color, (x, y, w, h), 1, border_radius=4)
+    display = value if value else placeholder
+    val_surf = font.render(display, True, text_color)
+    surf.blit(val_surf, (x + 10, y + (h - val_surf.get_height()) // 2))
+
 
 def draw_choice_button(surf: pygame.Surface, rect: tuple,
                        key_label: str, text: str | list[str],

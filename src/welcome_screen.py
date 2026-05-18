@@ -529,7 +529,7 @@ class WelcomeScreen:
     def _draw_radial_glow(self, cx, cy):
         glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
         for r, alpha in [(300, 12), (240, 18), (180, 22), (130, 28), (90, 20)]:
-            pygame.draw.circle(glow, (30, 0, 80, alpha), (cx, cy), r)
+            pygame.draw.circle(glow, (*FP.ARCANE_DIM, alpha), (cx, cy), r)
         self.screen.blit(glow, (0, 0))
 
     def _draw_domain_ring(self, cx, cy, t):
@@ -723,19 +723,20 @@ class WelcomeScreen:
             pygame.draw.circle(glow_surf, col, gc, g)
         self.screen.blit(glow_surf, (cx - gc[0], cy - gc[1]))
 
-        # Octagon gem (EGA diamond feel)
+        # Octagon gem — grimoire palette (gold-dark facet, gold edge,
+        # vellum inner glow, white sparkle cross). All FP-sourced.
         r = orb_r
         oct_pts = [(cx + int(r * math.cos(math.radians(a))),
                     cy + int(r * math.sin(math.radians(a))))
                    for a in range(0, 360, 45)]
-        pygame.draw.polygon(self.screen, (180, 130, 20), oct_pts)
-        # Face highlights (EGA bevel)
-        pygame.draw.polygon(self.screen, (255, 220, 80), oct_pts, 2)
+        pygame.draw.polygon(self.screen, FP.GOLD_DARK, oct_pts)
+        # Face highlights
+        pygame.draw.polygon(self.screen, FP.GOLD_BRIGHT, oct_pts, 2)
         # Inner gem facet
         inner_pts = [(cx + int((r * 0.5) * math.cos(math.radians(a + 22))),
                       cy + int((r * 0.5) * math.sin(math.radians(a + 22))))
                      for a in range(0, 360, 45)]
-        pygame.draw.polygon(self.screen, (255, 240, 140), inner_pts)
+        pygame.draw.polygon(self.screen, FP.VELLUM, inner_pts)
         # Sparkle cross
         spark_len = int(8 + pulse * 10)
         for ang in [0, 45, 90, 135]:
@@ -744,7 +745,7 @@ class WelcomeScreen:
             ey  = cy + int(spark_len * math.sin(rad))
             ex2 = cx - int(spark_len * math.cos(rad))
             ey2 = cy - int(spark_len * math.sin(rad))
-            pygame.draw.line(self.screen, (255, 255, 200), (ex, ey), (ex2, ey2), 2)
+            pygame.draw.line(self.screen, FP.WHITE, (ex, ey), (ex2, ey2), 2)
 
     def _draw_vignette(self):
         W, H = self.W, self.H
@@ -803,7 +804,7 @@ class WelcomeScreen:
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
         if flash > 0.0:
-            del_msg = self.font_sm.render("[X] Save deleted -- press ENTER to start fresh", True, (220, 80, 80))
+            del_msg = self.font_sm.render("[X] Save deleted -- press ENTER to start fresh", True, FP.DANGER_TEXT)
             self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - 52))
         elif has_save:
             save_hint = self.font_sm.render("[S] Saved journey found -- ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
@@ -857,7 +858,7 @@ class WelcomeScreen:
             self.screen.blit(rank_s, (bx + 8, y))
             # crown
             if victory:
-                crown_s = self.font_tiny.render("[V]", True, (255, 215, 0))
+                crown_s = self.font_tiny.render("[V]", True, FP.GOLD_BRIGHT)
                 self.screen.blit(crown_s, (bx + 30, y))
             # name
             name_s = self.font_tiny.render(f"{name:<11}", True, col)
@@ -954,7 +955,7 @@ class WelcomeScreen:
             crown    = 'V' if victory else ' '
 
             # rank + crown
-            rank_s = self.font_tiny.render(f"{crown}{i+1:>3}.", True, FP.FADED_TEXT if not victory else (255, 215, 0))
+            rank_s = self.font_tiny.render(f"{crown}{i+1:>3}.", True, FP.FADED_TEXT if not victory else FP.GOLD_BRIGHT)
             self.screen.blit(rank_s, (col_x, ry))
             # name
             name_s = self.font_tiny.render(f"{name:<13}", True, text_col)

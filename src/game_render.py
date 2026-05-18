@@ -487,13 +487,13 @@ class RenderMixin:
         lines.append((f"  SP:  {p.sp} / {p.max_sp}", GREEN if p.sp > 60 else RED, font_body, False))
         lines.append((f"  MP:  {p.mp} / {p.max_mp}", CYAN, font_body, False))
         lines.append((f"  AC:  {p.get_ac()}  (lower is better)", WHITE, font_body, False))
-        lines.append((f"  Gold: {self.player_gold}", (255, 215, 80), font_body, False))
+        lines.append((f"  Gold: {self.player_gold}", FP.GOLD_BRIGHT, font_body, False))
 
         # --- Carry weight ---
         cur_w = p.get_current_weight()
         max_w = p.get_carry_limit()
         pct = cur_w / max_w if max_w > 0 else 0
-        w_color = GREEN if pct < 0.7 else (255, 200, 60) if pct < 0.9 else RED
+        w_color = GREEN if pct < 0.7 else FP.WARNING_TEXT if pct < 0.9 else RED
         lines.append((f"  Weight: {cur_w:.1f} / {max_w}  ({pct*100:.0f}%)", w_color, font_body, False))
 
         # --- Derived stats ---
@@ -557,17 +557,17 @@ class RenderMixin:
         # --- Item Passives (effects from carried items, not status effects) ---
         item_passives = []
         if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in p.inventory):
-            item_passives.append(("Fire Protection", (245, 150, 60),
+            item_passives.append(("Fire Protection", FP.PASSIVE_FIRE,
                                   "50% fire damage reduction (Charmander Stuffie)"))
             fb_cd = p.power_cooldowns.get('stuffie_fire_breath', 0)
             if fb_cd > 0:
                 item_passives.append(("Fire Breath", DIM,
                                       f"Cooling down: {fb_cd} turns"))
             else:
-                item_passives.append(("Fire Breath", (245, 130, 50),
+                item_passives.append(("Fire Breath", FP.PASSIVE_FIRE,
                                       "Ready (V key > Fire Breath)"))
         if getattr(p, 'amulet_slot', None) and getattr(p.amulet_slot, 'id', '') == 'rands_heart':
-            item_passives.append(("Death Ward", (220, 220, 255),
+            item_passives.append(("Death Ward", FP.PASSIVE_WARD,
                                   "Prevents one death, restores full HP/MP/SP, clears debuffs (Rand's Heart)"))
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in p.inventory):
             sk_cd = p.power_cooldowns.get('sketch_manifest', 0)
@@ -575,7 +575,7 @@ class RenderMixin:
                 item_passives.append(("Manifest", DIM,
                                       f"Cooling down: {sk_cd} turns"))
             else:
-                item_passives.append(("Manifest", (200, 170, 240),
+                item_passives.append(("Manifest", FP.PASSIVE_MANIFEST,
                                       "Ready (V key > Manifest)"))
         if item_passives:
             lines.append(("", DIM, font_small, False))
@@ -594,7 +594,7 @@ class RenderMixin:
                     r_color = GREEN
                 elif mult < 1.0:
                     r_str = f"{(1.0-mult)*100:.0f}% reduction"
-                    r_color = (120, 200, 160)
+                    r_color = FP.SP_GREEN
                 else:
                     r_str = f"{(mult-1.0)*100:.0f}% vulnerability"
                     r_color = RED
@@ -619,7 +619,7 @@ class RenderMixin:
             lines.append(("", DIM, font_small, False))
             lines.append(("COOLDOWNS", GOLD, font_head, True))
             for cd in cds:
-                lines.append((f"  {cd}", (200, 180, 100), font_body, False))
+                lines.append((f"  {cd}", FP.AMBER_ACCENT, font_body, False))
 
         # --- Game stats ---
         lines.append(("", DIM, font_small, False))
@@ -696,7 +696,7 @@ class RenderMixin:
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=(180, 140, 80))
         draw_header_bar(self.screen, (bx, by, bw, 44),
                         text="A COW",
-                        font=self.font_lg, text_color=(255, 215, 80))
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
         draw_divider(self.screen, bx + 20, by + 50, bw - 40)
 
         font = get_font('body', 18)
@@ -762,7 +762,7 @@ class RenderMixin:
 
         if phase == 'text':
             self._draw_npc_wordwrap(enc['text'], font, bx + 25, by + 54,
-                                    max_w, (220, 210, 190), line_h=22)
+                                    max_w, FP.PARCHMENT_LIGHT, line_h=22)
             footer = font_sm.render("Press ENTER to continue",
                                     True, FP.HINT_TEXT)
             self.screen.blit(footer,
@@ -773,7 +773,7 @@ class RenderMixin:
             # Options — all same color, no karma hints
             for i, opt in enumerate(enc['options']):
                 label = opt['label']
-                col = (210, 200, 180)
+                col = FP.PARCHMENT_LIGHT
                 prefix = f"[{i+1}] "
                 opt_text = f"{prefix}{label}"
                 # Word-wrap long labels
@@ -791,7 +791,7 @@ class RenderMixin:
 
         elif phase == 'select_item':
             y = by + 54
-            header = font.render("Choose an item to give:", True, (220, 210, 190))
+            header = font.render("Choose an item to give:", True, FP.PARCHMENT_LIGHT)
             self.screen.blit(header, (bx + 25, y))
             y += 30
 
@@ -800,7 +800,7 @@ class RenderMixin:
             for i, item in enumerate(visible):
                 dname = self._display_name(item)
                 txt = f"[{chr(97 + i)}] {dname}"
-                surf = font_sm.render(txt, True, (210, 200, 180))
+                surf = font_sm.render(txt, True, FP.PARCHMENT_LIGHT)
                 self.screen.blit(surf, (bx + 30, y))
                 y += 22
 
@@ -820,7 +820,7 @@ class RenderMixin:
         elif phase == 'outcome':
             self._draw_npc_wordwrap(self._npc_outcome_text, font,
                                     bx + 25, by + 54, max_w,
-                                    (220, 210, 190), line_h=22)
+                                    FP.PARCHMENT_LIGHT, line_h=22)
             footer = font_sm.render("Press ENTER to continue",
                                     True, FP.HINT_TEXT)
             self.screen.blit(footer,
@@ -874,11 +874,11 @@ class RenderMixin:
 
         # Gold border for positive, red for negative
         if self.karma > 0:
-            border = (255, 220, 100)
+            border = FP.GOLD
         elif self.karma < 0:
-            border = (200, 60, 60)
+            border = FP.BLOOD
         else:
-            border = (140, 140, 160)
+            border = FP.FADED_TEXT
 
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=border)
         draw_header_bar(self.screen, (bx, by, bw, 44),
@@ -911,7 +911,7 @@ class RenderMixin:
             if line:
                 lines.append(' '.join(line))
             for txt_line in lines:
-                col = border if txt_line.isupper() else (210, 200, 180)
+                col = border if txt_line.isupper() else FP.PARCHMENT_LIGHT
                 surf = font.render(txt_line, True, col)
                 self.screen.blit(surf, (bx + 30, y))
                 y += 24
@@ -1330,20 +1330,10 @@ class RenderMixin:
         self.screen.blit(label_bg, (8, layout.GAME_H - label_surf.get_height() - 16))
         self.screen.blit(label_surf, (16, layout.GAME_H - label_surf.get_height() - 12))
 
-    _SUBJECT_COLOR = {
-        'math':       (0,   220, 255),
-        'geography':  (0,   200,  80),
-        'history':    (220, 180,   0),
-        'animal':     (220, 110,  20),
-        'cooking':    (220,  40, 180),
-        'science':    (80,  100, 255),
-        'philosophy': (200, 200, 220),
-        'grammar':    (220,  50,  50),
-        'economics':  (160, 220,   0),
-        'theology':   (200, 170,  80),
-        'trivia':     (255, 200, 100),
-        'ai':         (0,   220, 120),
-    }
+    # Subject palette is sourced from FP.SUBJECT so the welcome screen,
+    # quiz panel border, and standalone study mode all show the same color
+    # for a given subject. Don't redefine this dict — edit fantasy_ui.py.
+    _SUBJECT_COLOR = FP.SUBJECT
 
     _fit_text = staticmethod(_gh_fit_text)
 
@@ -1372,11 +1362,21 @@ class RenderMixin:
         bw = min(1060, layout.GAME_W - 40)
         PAD = 24
 
-        # Question text (wrapped) -- calculate height first
+        # Question text (wrapped) -- calculate height first. Cap line count
+        # so a pathologically long question can't push the panel past the
+        # viewport. The cap leaves room for header + timer + 4 choice cards
+        # + status + (combat HUD if active) and clamps to roughly half the
+        # viewport height.
         q_font    = self.font_md
         q_text    = qe.current_question.get('question', '')
         q_lines   = self._wrap_text(q_text, q_font, bw - PAD * 2)
         q_line_h  = q_font.get_height() + 4
+        # Available vertical room for the question block alone
+        _reserved = 240 + (110 if is_combat else 0)  # chrome + cards + status
+        _q_cap = max(2, (layout.WINDOW_H - _reserved) // q_line_h)
+        if len(q_lines) > _q_cap:
+            # Truncate with an ellipsis marker on the last visible line
+            q_lines = q_lines[:_q_cap - 1] + [q_lines[_q_cap - 1] + ' …']
         q_height  = len(q_lines) * q_line_h
 
         # Choice button layout
@@ -1421,10 +1421,10 @@ class RenderMixin:
 
         # Mode / progress counter (top-right)
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
-            c_text, c_color = f"Chain x{qe.chain}", (80, 255, 140)
+            c_text, c_color = f"Chain x{qe.chain}", FP.SUCCESS_TEXT
         else:
             c_text  = f"{qe.correct_count} / {qe.required}"
-            c_color = (120, 200, 255)
+            c_color = FP.CYAN_ACCENT
         c_surf = self.font_md.render(c_text, True, c_color)
         self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
                                    by + (HEADER_H - c_surf.get_height()) // 2))
@@ -1452,22 +1452,22 @@ class RenderMixin:
 
         ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
         t_color = (
-            (40, 210, 80)  if ratio > 0.55 else
-            (210, 160, 40) if ratio > 0.28 else
-            (210, 50,  50)
+            FP.SUCCESS_TEXT if ratio > 0.55 else
+            FP.WARNING_TEXT if ratio > 0.28 else
+            FP.DANGER_TEXT
         )
-        pygame.draw.rect(self.screen, (28, 10, 10), (bar_x, ty, bar_w, bar_h), border_radius=4)
+        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (bar_x, ty, bar_w, bar_h), border_radius=4)
         if ratio > 0:
             pygame.draw.rect(self.screen, t_color,
                              (bar_x, ty, max(4, int(bar_w * ratio)), bar_h), border_radius=4)
         # Tick marks every 20%
         for tick in range(1, 5):
             tx = bar_x + int(bar_w * tick / 5)
-            pygame.draw.line(self.screen, (0, 0, 0), (tx, ty), (tx, ty + bar_h), 1)
+            pygame.draw.line(self.screen, FP.SHADOW, (tx, ty), (tx, ty + bar_h), 1)
 
         # Timer seconds label -- right-aligned inside the bar
         secs = int(qe.time_remaining)
-        t_label = self.font_sm.render(f"{secs}s", True, (255, 255, 255))
+        t_label = self.font_sm.render(f"{secs}s", True, FP.WHITE)
         lx = bar_x + bar_w - t_label.get_width() - 4
         ly = ty + (bar_h - t_label.get_height()) // 2
         self.screen.blit(t_label, (lx, ly))
@@ -1475,7 +1475,7 @@ class RenderMixin:
         # -- Question text ---------------------------------------------
         qy = ty + TIMER_H
         for line in q_lines:
-            surf = q_font.render(line, True, (255, 245, 210))
+            surf = q_font.render(line, True, FP.VELLUM)
             self.screen.blit(surf, (bx + PAD, qy))
             qy += q_line_h
         qy += SECTION_GAP
@@ -1790,48 +1790,26 @@ class RenderMixin:
     _KIT_SRC_TAG = {'equip': 'eq', 'pack': 'pk', 'floor': 'fl'}
 
     def _draw_kit_panel(self):
-        draw_overlay(self.screen)
-        bw = min(1100, layout.GAME_W - 40)
-        bh = min(layout.WINDOW_H - 60, 700)
-        bx = (layout.GAME_W - bw) // 2
-        by = max(20, (layout.WINDOW_H - bh) // 2)
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="KIT  --  YOUR PACK & WHAT LIES HERE",
-                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
-
-        tab_y = by + 56
-        tab_x = bx + 20
+        """Tabbed compare panel — routed through PanelBuilder so it shares
+        chrome with every other modal in the game.
+        """
+        from panel import PanelBuilder, SIZE_XL
         active = getattr(self, '_kit_tab', 0)
-        for i, (label, _slug) in enumerate(self._KIT_TABS):
-            tw = self.font_sm.size(label)[0] + 24
-            r = pygame.Rect(tab_x, tab_y, tw, 28)
-            bg = FP.GOLD_DARK if i == active else (40, 40, 50)
-            pygame.draw.rect(self.screen, bg, r, border_radius=4)
-            pygame.draw.rect(self.screen, FP.GOLD if i == active else FP.GOLD_PALE,
-                             r, 1, border_radius=4)
-            col = FP.GOLD_BRIGHT if i == active else FP.BODY_TEXT
-            ts = self.font_sm.render(label, True, col)
-            self.screen.blit(ts, (tab_x + 12, tab_y + 6))
-            tab_x += tw + 6
-
-        draw_divider(self.screen, bx + 20, tab_y + 36, bw - 40)
-
-        body_x = bx + 20
-        body_y = tab_y + 48
-        body_w = bw - 40
-        body_h = bh - (body_y - by) - 36  # leave room for footer hint
         slug = self._KIT_TABS[active][1]
+        p = PanelBuilder(self.screen, size=SIZE_XL,
+                         border_color=FP.GOLD, max_height=700)
+        p.set_title("KIT  --  YOUR PACK & WHAT LIES HERE",
+                    font=self.font_lg)
+        p.set_tabs([label for label, _slug in self._KIT_TABS], active=active)
+        p.set_footer_hint("Left/Right: tab   Up/Down: scroll   ESC: close")
+        body = p.body_rect()
 
         if slug == 'spells':
-            self._kit_draw_spells(body_x, body_y, body_w, body_h)
+            self._kit_draw_spells(body.x, body.y, body.w, body.h)
         else:
-            self._kit_draw_items(body_x, body_y, body_w, body_h, slug)
+            self._kit_draw_items(body.x, body.y, body.w, body.h, slug)
 
-        hint = self.font_sm.render(
-            "Left/Right: tab   Up/Down: scroll   ESC: close",
-            True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
+        p.draw()
 
     def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
         all_rows = self._kit_collect_items()
@@ -2199,18 +2177,23 @@ class RenderMixin:
         return '-'
 
     def _kit_draw_spells(self, x: int, y: int, w: int, h: int):
+        from text_layout import Column, fit_columns, truncate_label
         rows = self._kit_collect_spells()
         if not rows:
             txt = self.font_sm.render("(you have learned no spells yet)",
                                       True, FP.FADED_TEXT)
             self.screen.blit(txt, (x, y + 10))
             return
-        cols = [
-            ('Spell',      280, 'left'),
-            ('Tier',        50, 'right'),
-            ('MP',          50, 'right'),
-            ('Description', 620, 'left'),
+        # Responsive columns — Description gets all the leftover space.
+        col_defs = [
+            Column('Spell',       220, flex=2, align='left'),
+            Column('Tier',         44, flex=0, align='right'),
+            Column('MP',           44, flex=0, align='right'),
+            Column('Description', 240, flex=4, align='left'),
         ]
+        widths = fit_columns(col_defs, w)
+        cols = [(c.label, wid, c.align) for c, wid in zip(col_defs, widths)]
+
         line_h = 24
         max_visible = max(1, (h - 28) // line_h)
         scroll = max(0, min(getattr(self, '_kit_scroll', 0),
@@ -2230,13 +2213,8 @@ class RenderMixin:
                      r['desc']]
             cx = x
             for (label, cw, align), text in zip(cols, cells):
-                # Truncate long descriptions
-                surf = self.font_sm.render(text, True, FP.BODY_TEXT)
-                if surf.get_width() > cw - 8:
-                    trunc = text
-                    while len(trunc) > 1 and self.font_sm.size(trunc + '…')[0] > cw - 8:
-                        trunc = trunc[:-1]
-                    surf = self.font_sm.render(trunc + '…', True, FP.BODY_TEXT)
+                clipped = truncate_label(text, cw - 8, self.font_sm)
+                surf = self.font_sm.render(clipped, True, FP.BODY_TEXT)
                 if align == 'right':
                     self.screen.blit(surf, (cx + cw - 8 - surf.get_width(), ry))
                 else:
@@ -2254,29 +2232,26 @@ class RenderMixin:
     # ------------------------------------------------------------------
 
     def _draw_discoveries_panel(self):
-        """Player-growth record. Pure tally of what's been done. No spoilers."""
-        draw_overlay(self.screen)
-        bw = min(1100, layout.GAME_W - 40)
-        bh = min(layout.WINDOW_H - 60, 700)
-        bx = (layout.GAME_W - bw) // 2
-        by = max(20, (layout.WINDOW_H - bh) // 2)
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="DISCOVERIES  --  YOUR RECORD",
-                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
-        draw_divider(self.screen, bx + 20, by + 50, bw - 40)
+        """Player-growth record. Pure tally of what's been done. No spoilers.
+
+        Routed through PanelBuilder so it shares chrome with the Kit panel
+        and every other modal.
+        """
+        from panel import PanelBuilder, SIZE_XL
+        p = PanelBuilder(self.screen, size=SIZE_XL,
+                         border_color=FP.GOLD, max_height=700)
+        p.set_title("DISCOVERIES  --  YOUR RECORD", font=self.font_lg)
+        p.set_footer_hint("Up/Down: scroll   ESC: close")
+        body = p.body_rect()
 
         sections = self._discoveries_sections()
-
         line_h = 22
-        body_x = bx + 24
-        body_y = by + 64
-        body_h = bh - 90  # leave room for footer
-        max_visible = max(1, body_h // line_h)
+        max_visible = max(1, body.h // line_h)
+
         # Flatten sections to a scrollable line list of (kind, text, color)
         lines = []
         for header, rows in sections:
-            lines.append(('header', header, FP.GOLD_PALE))
+            lines.append(('header', header, FP.GOLD_BRIGHT))
             for r in rows:
                 lines.append(('row', r, FP.BODY_TEXT))
             lines.append(('row', '', FP.BODY_TEXT))  # spacer
@@ -2284,32 +2259,26 @@ class RenderMixin:
                             max(0, len(lines) - max_visible)))
         self._disc_scroll = scroll
 
-        ly = body_y
-        col_w = (bw - 56) // 2
+        ly = body.y
         for kind, text, col in lines[scroll:scroll + max_visible]:
             if kind == 'header':
-                if ly > body_y:
+                if ly > body.y:
                     ly += 4
-                surf = self.font_sm.render(text, True, FP.GOLD_BRIGHT)
-                self.screen.blit(surf, (body_x, ly))
+                surf = self.font_sm.render(text, True, col)
+                self.screen.blit(surf, (body.x, ly))
                 pygame.draw.line(self.screen, FP.GOLD_DARK,
-                                 (body_x, ly + 18), (body_x + bw - 48, ly + 18), 1)
+                                 (body.x, ly + 18),
+                                 (body.right - 8, ly + 18), 1)
                 ly += line_h + 4
             else:
                 if text:
                     surf = self.font_sm.render(text, True, col)
-                    self.screen.blit(surf, (body_x, ly))
+                    self.screen.blit(surf, (body.x, ly))
                 ly += line_h
 
-        hint = self.font_sm.render("Up/Down: scroll   ESC: close",
-                                   True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
-
         if len(lines) > max_visible:
-            tag = self.font_sm.render(
-                f"line {scroll + 1}/{len(lines)}",
-                True, FP.FADED_TEXT)
-            self.screen.blit(tag, (bx + 24, by + bh - 26))
+            p.set_scroll_indicator(scroll + 1, len(lines))
+        p.draw()
 
     def _discoveries_sections(self):
         """Return list of (section_title, [row_string, ...]) tuples.
@@ -2518,7 +2487,7 @@ class RenderMixin:
             scroll=getattr(self, '_prayer_scroll', 0),
             subtitle=subtitle,
             hint="a-h: select  |  ESC: cancel",
-            border_color=(220, 200, 100),
+            border_color=FP.GOLD,
             max_width=820,
             center_in=(layout.GAME_W, layout.WINDOW_H),
             font_md=self.font_md,
@@ -2603,7 +2572,8 @@ class RenderMixin:
         if ground_entries:
             _add_section(ground_entries, "ON THE GROUND:", FP.WARNING_TEXT, FP.GOLD_PALE, "  [ground]")
         if corpse_entries:
-            _add_section(corpse_entries, "CORPSES (at your feet):", (180, 130, 255), FP.FADED_TEXT)
+            _add_section(corpse_entries, "CORPSES (at your feet):",
+                         FP.ARCANE_ACCENT, FP.FADED_TEXT)
 
         draw_menu(
             self.screen,
@@ -2910,17 +2880,15 @@ class RenderMixin:
         bx = (layout.GAME_W - bw) // 2
         by = (layout.WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
-        draw_header_bar(self.screen, (bx, by, bw, 40),
+        draw_header_bar(self.screen, (bx, by, bw, 44),
                         text="[QA] WARP TO FLOOR",
-                        font=self.font_md, text_color=(80, 230, 255))
+                        font=self.font_md, text_color=FP.CYAN_ACCENT)
         sub = "Enter a floor number (1-100):"
         sub_surf = self.font_md.render(sub, True, FP.BODY_TEXT)
         self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 56))
-        box_rect = pygame.Rect(bx + 80, by + 96, bw - 160, 38)
-        pygame.draw.rect(self.screen, (30, 30, 50), box_rect, border_radius=4)
-        pygame.draw.rect(self.screen, (80, 230, 255), box_rect, 1, border_radius=4)
-        val_surf = self.font_md.render(buf or "_", True, FP.PARCHMENT_LIGHT)
-        self.screen.blit(val_surf, (box_rect.x + 12, box_rect.y + 8))
+        from fantasy_ui import draw_input_box
+        draw_input_box(self.screen, (bx + 80, by + 96, bw - 160, 38),
+                       buf, self.font_md, border_color=FP.CYAN_ACCENT)
         hint = self.font_sm.render("ENTER to warp  |  ESC to cancel",
                                     True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 24))
@@ -3014,7 +2982,7 @@ class RenderMixin:
         title = "SPECIAL ATTACKS"
         if pet is not None:
             title = f"{pet.name.upper()} — SPECIAL ATTACKS"
-        draw_header_bar(self.screen, (bx, by, bw, 40),
+        draw_header_bar(self.screen, (bx, by, bw, 44),
                         text=title,
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
         y = by + 54
@@ -3048,7 +3016,7 @@ class RenderMixin:
         full_title = title
         if pet is not None:
             full_title = f"{title} — {pet.name.upper()}"
-        draw_header_bar(self.screen, (bx, by, bw, 40),
+        draw_header_bar(self.screen, (bx, by, bw, 44),
                         text=full_title,
                         font=self.font_md, text_color=FP.GOLD_BRIGHT)
         y = by + 54
@@ -3095,13 +3063,10 @@ class RenderMixin:
 
         draw_divider(self.screen, bx + 20, by + 96, bw - 40)
 
-        # Input box (similar to drop_gold_input)
-        box_rect = pygame.Rect(bx + 60, by + 116, bw - 120, 38)
-        pygame.draw.rect(self.screen, (30, 30, 50), box_rect, border_radius=4)
-        pygame.draw.rect(self.screen, FP.GOLD_BRIGHT, box_rect, 1, border_radius=4)
-        display = buf or "(unnamed)"
-        val_surf = self.font_md.render(display, True, FP.PARCHMENT_LIGHT)
-        self.screen.blit(val_surf, (box_rect.x + 10, box_rect.y + 8))
+        # Input box — same draw_input_box helper as drop-gold + QA warp
+        from fantasy_ui import draw_input_box
+        draw_input_box(self.screen, (bx + 60, by + 116, bw - 120, 38),
+                       buf, self.font_md, placeholder="(unnamed)")
 
         # Hint
         hint_lines = [
@@ -3152,7 +3117,7 @@ class RenderMixin:
         bx = (layout.GAME_W - bw) // 2
         by = (layout.WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
-        draw_header_bar(self.screen, (bx, by, bw, 40),
+        draw_header_bar(self.screen, (bx, by, bw, 44),
                         text="COMPLETE YOUR QUEST?",
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT)
 
@@ -3179,7 +3144,7 @@ class RenderMixin:
         bx = (layout.GAME_W - bw) // 2
         by = (layout.WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
-        draw_header_bar(self.screen, (bx, by, bw, 40),
+        draw_header_bar(self.screen, (bx, by, bw, 44),
                         text="ABANDON YOUR QUEST?",
                         font=self.font_lg, text_color=FP.WARNING_TEXT)
 
@@ -3938,6 +3903,7 @@ class RenderMixin:
 
     def _draw_drop_gold_input(self):
         """Draw a numeric entry overlay to choose how much gold to drop."""
+        from fantasy_ui import draw_input_box
         draw_overlay(self.screen, 190)
         bw, bh = 400, 160
         bx = (layout.GAME_W - bw) // 2
@@ -3951,15 +3917,10 @@ class RenderMixin:
         sub = self.font_sm.render(f"You have {have} gold", True, FP.FADED_TEXT)
         self.screen.blit(sub, (bx + (bw - sub.get_width()) // 2, by + 44))
 
-        # Input box
-        box_rect = pygame.Rect(bx + 60, by + 76, bw - 120, 34)
-        pygame.draw.rect(self.screen, (30, 30, 50), box_rect, border_radius=4)
-        pygame.draw.rect(self.screen, FP.GOLD_BRIGHT, box_rect, 1, border_radius=4)
-        display = self.drop_gold_input or "0"
-        val_surf = self.font_md.render(display, True, FP.PARCHMENT_LIGHT)
-        self.screen.blit(val_surf, (box_rect.x + 8, box_rect.y + 6))
+        draw_input_box(self.screen, (bx + 60, by + 76, bw - 120, 34),
+                       self.drop_gold_input or "0", self.font_md)
 
-        hint = self.font_sm.render("ENTER to confirm  |  ESC to cancel", True, FP.FADED_TEXT)
+        hint = self.font_sm.render("ENTER to confirm  |  ESC to cancel", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
 
     def _draw_examine_menu(self):
@@ -4389,9 +4350,7 @@ class RenderMixin:
             self.screen.blit(surf, (x0 + pad, y0 + pad + i * lh))
 
     def _draw_help_screen(self):
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, alpha=190)
 
         _COMMANDS = [
             # (key_label, description, color)  -- None description = section header
@@ -4419,8 +4378,8 @@ class RenderMixin:
             ("H",              "Harvest monster corpse",           FP.BODY_TEXT),
             ("C",              "Cook ingredient",                  FP.BODY_TEXT),
             ("KNOWLEDGE & FAITH", None, FP.GOLD_PALE),
-            ("\\",             "Pray at altar",                    (200, 180, 255)),
-            ("N",              "Recall Lore (trivia)",             (120, 200, 240)),
+            ("\\",             "Pray at altar",                    FP.ARCANE_ACCENT),
+            ("N",              "Recall Lore (trivia)",             FP.CYAN_ACCENT),
             ("LOOK & RECORDS", None, FP.GOLD_PALE),
             ("O",              "Observe the world (cursor)",        FP.BODY_TEXT),
             ("X",              "Examine your pack (lore)",          FP.BODY_TEXT),
@@ -4430,7 +4389,7 @@ class RenderMixin:
             ("W",              "Quirks progress",                  FP.BODY_TEXT),
             ("V",              "Activate quirk power",             FP.BODY_TEXT),
             ("J",              "Discoveries (your record)",         FP.BODY_TEXT),
-            (";",              "Study journal (missed Qs)",         (120, 200, 240)),
+            (";",              "Study journal (missed Qs)",         FP.CYAN_ACCENT),
             ("QUIZ", None, FP.GOLD_PALE),
             ("1  2  3  4",     "Answer question during quiz",      FP.GOLD_BRIGHT),
             ("SYSTEM", None, FP.GOLD_PALE),
@@ -4468,12 +4427,9 @@ class RenderMixin:
             else:
                 ksurf = self.font_sm.render(key_label, True, FP.GOLD_BRIGHT)
                 desc_max_w = col_w - 170
-                dsurf = self.font_sm.render(desc, True, color)
-                if dsurf.get_width() > desc_max_w:
-                    trunc = desc
-                    while len(trunc) > 1 and self.font_sm.size(trunc + '\u2026')[0] > desc_max_w:
-                        trunc = trunc[:-1]
-                    dsurf = self.font_sm.render(trunc + '\u2026', True, color)
+                from text_layout import truncate_label
+                desc_fit = truncate_label(desc, desc_max_w, self.font_sm)
+                dsurf = self.font_sm.render(desc_fit, True, color)
                 self.screen.blit(ksurf, (cx_, cy_))
                 self.screen.blit(dsurf, (cx_ + 160, cy_))
 

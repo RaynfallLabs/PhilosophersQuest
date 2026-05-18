@@ -167,13 +167,13 @@ class Sidebar:
         y = self._header("VITALS", y)
         sp_r = player.sp / max(1, player.max_sp)
         sp_col = (
-            (45, 185, 45)   if sp_r > 0.50 else
-            (195, 145, 35)  if sp_r > 0.25 else
-            (195,  45,  45)
+            FP.SP_GREEN if sp_r > 0.50 else
+            FP.SP_AMBER if sp_r > 0.25 else
+            FP.SP_RED
         )
-        y = self._bar(y, "HP", player.hp, player.max_hp, (185, 42, 42))
+        y = self._bar(y, "HP", player.hp, player.max_hp, FP.HP_RED)
         y = self._bar(y, "SP", player.sp, player.max_sp, sp_col)
-        y = self._bar(y, "MP", player.mp, player.max_mp, (50, 85, 205))
+        y = self._bar(y, "MP", player.mp, player.max_mp, FP.MP_BLUE)
         return y + self.SECTION_GAP
 
     def _attributes(self, player, y: int) -> int:
@@ -201,7 +201,7 @@ class Sidebar:
         y = self._header("STATUS", y)
         ac = player.get_ac()
         # FANTASY: AC color thresholds
-        ac_color = FP.SUCCESS_TEXT if ac <= 0 else (150, 195, 150) if ac <= 5 else FP.WARNING_TEXT
+        ac_color = FP.SUCCESS_TEXT if ac <= 0 else FP.SP_GREEN if ac <= 5 else FP.WARNING_TEXT
         for text, color in [
             (f"AC     {ac}",                          ac_color),
             (f"Level  {dungeon_level}",               FP.BODY_TEXT),
@@ -218,7 +218,7 @@ class Sidebar:
         picks = getattr(player, 'lockpick_charges', 0)
         if picks > 0:
             self.screen.blit(
-                self._fsm.render(f"Picks  {picks}", True, (190, 175, 120)),
+                self._fsm.render(f"Picks  {picks}", True, FP.AMBER_ACCENT),
                 (self.x + self.PAD, y)
             )
             y += 22
@@ -227,16 +227,16 @@ class Sidebar:
         spell_count = len(getattr(player, 'known_spells', {}))
         if spell_count > 0:
             self.screen.blit(
-                self._fsm.render(f"Spells {spell_count}", True, (100, 160, 255)),
+                self._fsm.render(f"Spells {spell_count}", True, FP.MP_BLUE),
                 (self.x + self.PAD, y)
             )
             y += 22
 
-        # Prayer cooldown -- FANTASY colors
+        # Prayer cooldown
         if player.prayer_cooldown > 0:
-            pray_color = (140, 100, 200)   # cooldown: arcane purple
             self.screen.blit(
-                self._fsm.render(f"Prayer: {player.prayer_cooldown}t", True, pray_color),
+                self._fsm.render(f"Prayer: {player.prayer_cooldown}t",
+                                 True, FP.COOLDOWN_ARCANE),
                 (self.x + self.PAD, y)
             )
         else:
@@ -248,14 +248,14 @@ class Sidebar:
 
         # Recall Lore cooldown
         if player.recall_lore_cooldown > 0:
-            lore_cd_color = (80, 160, 200)   # teal: knowledge cooling
             self.screen.blit(
-                self._fsm.render(f"Lore:   {player.recall_lore_cooldown}t", True, lore_cd_color),
+                self._fsm.render(f"Lore:   {player.recall_lore_cooldown}t",
+                                 True, FP.COOLDOWN_TEAL),
                 (self.x + self.PAD, y)
             )
         else:
             self.screen.blit(
-                self._fsm.render("Lore:   Ready", True, (120, 200, 240)),
+                self._fsm.render("Lore:   Ready", True, FP.READY_TEAL),
                 (self.x + self.PAD, y)
             )
         y += 22
@@ -291,16 +291,16 @@ class Sidebar:
 
         # Item-granted passives (not status effects)
         if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
-            label = "[Fire Protect]"
-            self.screen.blit(self._fbold.render(label, True, (245, 150, 60)), (self.x + self.PAD, y))
+            self.screen.blit(self._fbold.render("[Fire Protect]", True, FP.PASSIVE_FIRE),
+                             (self.x + self.PAD, y))
             y += 22
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in player.inventory):
-            label = "[Manifest]"
-            self.screen.blit(self._fbold.render(label, True, (200, 170, 240)), (self.x + self.PAD, y))
+            self.screen.blit(self._fbold.render("[Manifest]", True, FP.PASSIVE_MANIFEST),
+                             (self.x + self.PAD, y))
             y += 22
         if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'id', '') == 'rands_heart':
-            label = "[Death Ward]"
-            self.screen.blit(self._fbold.render(label, True, (220, 220, 255)), (self.x + self.PAD, y))
+            self.screen.blit(self._fbold.render("[Death Ward]", True, FP.PASSIVE_WARD),
+                             (self.x + self.PAD, y))
             y += 22
 
         # Active status effects in a 2-column grid
@@ -362,8 +362,8 @@ class Sidebar:
                         iname += " {C}"
             else:
                 iname = "\u2014"
-            # FANTASY: Gold-pale for equipped items, dim ink for empty slots
-            ic = FP.GOLD_PALE if item else (52, 52, 70)
+            # FANTASY: Gold-pale for equipped items, SLOT_EMPTY for empty
+            ic = FP.GOLD_PALE if item else FP.SLOT_EMPTY
             # FANTASY: FADED_TEXT label color
             label_surf = self._fsm.render(f"{label}:", True, FP.FADED_TEXT)
             self.screen.blit(label_surf, (self.x + self.PAD, y))
@@ -374,7 +374,7 @@ class Sidebar:
             y += 22
         # Philosopher's Shard -- passive carry indicator (not an equip slot)
         if has_phil:
-            phil_surf = self._fsm.render("* Phil. Shard", True, (220, 200, 120))
+            phil_surf = self._fsm.render("* Phil. Shard", True, FP.GOLD_PALE)
             self.screen.blit(phil_surf, (self.x + self.PAD, y))
             y += 20
         return y + self.SECTION_GAP
@@ -384,7 +384,7 @@ class Sidebar:
         items = player.get_inventory_display()
         if not items:
             self.screen.blit(
-                self._fsm.render("(empty)", True, (55, 55, 75)),
+                self._fsm.render("(empty)", True, FP.SLOT_EMPTY),
                 (self.x + self.PAD, y)
             )
             return
