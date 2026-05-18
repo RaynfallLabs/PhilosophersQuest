@@ -292,30 +292,61 @@ def _apply_bonus(player, recipe) -> list[str]:
     bonus_amount = int(recipe.get('bonus_amount', 0))
     messages     = []
 
+    def _grant(stat: str, amt: int):
+        """Route cookable stat bonuses through the floor-softcap path.
+        Returns the actual amount applied (after diminishing returns).
+
+        Falls back to apply_stat_bonus if the player doesn't yet have the
+        cooking-cap method (old saves, harness mocks)."""
+        if hasattr(player, 'apply_cooking_stat_bonus'):
+            return player.apply_cooking_stat_bonus(stat, amt)
+        player.apply_stat_bonus(stat, amt)
+        return amt
+
     if bonus_type == 'none' or bonus_amount == 0:
         pass
     elif bonus_type == 'random_stat':
         stat = random.choice(_ALL_STATS)
-        player.apply_stat_bonus(stat, bonus_amount)
-        messages.append(f"Your {_STAT_LABELS[stat]} increases by {bonus_amount}!")
+        applied = _grant(stat, bonus_amount)
+        if applied > 0:
+            messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
+        else:
+            messages.append(f"Your {_STAT_LABELS[stat]} resists further growth.")
     elif bonus_type == 'combat_stat':
         stat = random.choice(_COMBAT_STATS)
-        player.apply_stat_bonus(stat, bonus_amount)
-        messages.append(f"Your {_STAT_LABELS[stat]} increases by {bonus_amount}!")
+        applied = _grant(stat, bonus_amount)
+        if applied > 0:
+            messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
+        else:
+            messages.append(f"Your {_STAT_LABELS[stat]} resists further growth.")
     elif bonus_type == 'two_stats':
         chosen = random.sample(_ALL_STATS, 2)
+        any_gained = False
         for stat in chosen:
-            player.apply_stat_bonus(stat, bonus_amount)
-            messages.append(f"Your {_STAT_LABELS[stat]} increases by {bonus_amount}!")
+            applied = _grant(stat, bonus_amount)
+            if applied > 0:
+                messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
+                any_gained = True
+        if not any_gained:
+            messages.append("The dish is satisfying, but your body resists further change.")
     elif bonus_type == 'all_stats':
+        any_gained = False
         for stat in _ALL_STATS:
-            player.apply_stat_bonus(stat, bonus_amount)
-        messages.append(f"All your stats increase by {bonus_amount}!")
+            applied = _grant(stat, bonus_amount)
+            if applied > 0:
+                any_gained = True
+        if any_gained:
+            messages.append(f"A glow spreads — most of your stats edge upward.")
+        else:
+            messages.append("Your body resists further change. The dish is filling, no more.")
     elif bonus_type == 'stat':
         stat = recipe.get('bonus_stat', '')
         if stat in _STAT_LABELS:
-            player.apply_stat_bonus(stat, bonus_amount)
-            messages.append(f"Your {_STAT_LABELS[stat]} increases by {bonus_amount}!")
+            applied = _grant(stat, bonus_amount)
+            if applied > 0:
+                messages.append(f"Your {_STAT_LABELS[stat]} increases by {applied}!")
+            else:
+                messages.append(f"Your {_STAT_LABELS[stat]} cannot grow further from food.")
     elif bonus_type == 'status':
         effect = recipe.get('bonus_effect', '')
         if effect:

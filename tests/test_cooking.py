@@ -340,3 +340,94 @@ def test_cooking_quiz_uses_escalator_chain():
 def test_harvest_quiz_uses_animal_subject():
     src = Path('src/food_system.py').read_text(encoding='utf-8')
     assert "subject='animal'" in src, "harvest quiz must use 'animal' subject"
+
+
+# ---------------------------------------------------------------------------
+# Cooking stat softcap — prevents stat ballooning from heavy cooking
+# ---------------------------------------------------------------------------
+
+def test_player_has_cooking_stat_gained_tracker():
+    from player import Player
+    p = Player()
+    assert hasattr(p, 'cooking_stat_gained')
+    for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+        assert p.cooking_stat_gained.get(stat, -1) == 0
+
+
+def test_cooking_stat_softcap_by_floor():
+    """Softcap increases with deepest floor reached and caps at 15."""
+    from player import Player
+    p = Player()
+    p.deepest_floor_reached = 1
+    assert p.cooking_stat_softcap() <= 2, "F1 cap should be very tight"
+    p.deepest_floor_reached = 50
+    assert 5 <= p.cooking_stat_softcap() <= 10, "F50 cap mid-range"
+    p.deepest_floor_reached = 100
+    assert p.cooking_stat_softcap() == 15, "F100 cap = 15"
+
+
+def test_apply_cooking_stat_bonus_respects_softcap():
+    """Apply +1 STR 20 times at F100; should never exceed +15 lifetime."""
+    from player import Player
+    p = Player()
+    p.deepest_floor_reached = 100
+    base_str = p.STR
+    for _ in range(20):
+        p.apply_cooking_stat_bonus('STR', 1)
+    # Cap is 15 at F100
+    assert p.cooking_stat_gained['STR'] == 15, \
+        f"Should cap at 15; got {p.cooking_stat_gained['STR']}"
+    assert p.STR == base_str + 15, \
+        f"STR should rise by exactly 15; rose by {p.STR - base_str}"
+
+
+def test_apply_cooking_stat_bonus_returns_zero_at_cap():
+    from player import Player
+    p = Player()
+    p.deepest_floor_reached = 100
+    # Fill the cap
+    p.apply_cooking_stat_bonus('STR', 15)
+    # Next attempt should yield 0
+    applied = p.apply_cooking_stat_bonus('STR', 3)
+    assert applied == 0, f"At cap, should apply 0; applied {applied}"
+
+
+def test_low_floor_stat_cap_is_tight():
+    """An F5 player can't cook themselves to +10 STR before descending."""
+    from player import Player
+    p = Player()
+    p.deepest_floor_reached = 5
+    base_str = p.STR
+    for _ in range(20):
+        p.apply_cooking_stat_bonus('STR', 1)
+    # F5 cap is 1
+    assert p.cooking_stat_gained['STR'] == 1
+    assert p.STR == base_str + 1
+
+
+def test_food_system_routes_stat_bonuses_through_softcap():
+    """The _apply_bonus path must use apply_cooking_stat_bonus, not the
+    legacy apply_stat_bonus (which is for non-cooking sources)."""
+    src = Path('src/food_system.py').read_text(encoding='utf-8')
+    idx = src.find("def _apply_bonus")
+    assert idx >= 0
+    fn = src[idx:idx + 4000]
+    assert 'apply_cooking_stat_bonus' in fn, \
+        "_apply_bonus must route through the cooking softcap path"
+
+
+def test_status_bonuses_not_capped():
+    """Status-effect cooked dishes (haste, regen, etc.) should NOT be touched
+    by the stat softcap — they're temporary, not permanent."""
+    from player import Player
+    p = Player()
+    # Status bonus path bypasses apply_cooking_stat_bonus entirely
+    src = Path('src/food_system.py').read_text(encoding='utf-8')
+    idx = src.find("def _apply_bonus")
+    fn = src[idx:idx + 4000]
+    status_branch_start = fn.find("bonus_type == 'status'")
+    status_branch_end = status_branch_start + 400
+    status_chunk = fn[status_branch_start:status_branch_end]
+    assert 'apply_cooking_stat_bonus' not in status_chunk, \
+        "status bonuses must not be capped (they're timed buffs, not permanent)"
+    _ = p  # silence unused-var

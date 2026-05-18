@@ -350,6 +350,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.power_uses = {}
         if not hasattr(self.player, 'cooking_hp_gained'):
             self.player.cooking_hp_gained = 0
+        if not hasattr(self.player, 'cooking_stat_gained'):
+            # Phase 5+ stat-cooking softcap — old saves get a zeroed tracker.
+            self.player.cooking_stat_gained = {
+                'STR': 0, 'CON': 0, 'DEX': 0, 'INT': 0, 'WIS': 0, 'PER': 0,
+            }
         if not hasattr(self.player, 'deepest_floor_reached'):
             # Old save: best estimate is the level_mgr's max_level_reached, falling
             # back to current dungeon_level so existing cooking remains within softcap.

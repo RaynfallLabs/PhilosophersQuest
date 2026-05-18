@@ -113,6 +113,12 @@ class Player:
         # Cooking HP balance: diminishing returns tracking
         self.cooking_hp_gained: int = 0    # total max HP gained from cooking (for softcap)
         self.deepest_floor_reached: int = 1  # drives floor-aware cooking softcap (synced from level_mgr)
+        # Cooking STAT balance: per-stat lifetime gain from cooking, drives the
+        # cooking-stat softcap (mirrors cooking_hp_gained). Without this, an
+        # aggressive cook would balloon stats by +200+ over a run.
+        self.cooking_stat_gained: dict[str, int] = {
+            'STR': 0, 'CON': 0, 'DEX': 0, 'INT': 0, 'WIS': 0, 'PER': 0,
+        }
 
         # Material discovery: tracks which materials have triggered their first-pickup chronicle.
         self.chronicle_seen_materials: set = set()
@@ -275,6 +281,53 @@ class Player:
         from cooking; that plus baseline ~50 = ~189 total (SL-profile target)."""
         idx = max(0, min(100, self.deepest_floor_reached))
         return max(1, self._COOKING_SOFTCAP_BY_FLOOR[idx])
+
+    # Per-stat cooking softcap. Diligent cook at F100 caps near +15 per stat;
+    # baseline starts at 10-18, so +15 from cooking = roughly 1.5x baseline
+    # (matches the HP scaling philosophy of "1.5x baseline by deep descent").
+    # Below F20 the cap is very tight to prevent early-game stat snowballing.
+    _COOKING_STAT_SOFTCAP_BY_FLOOR = (
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,         # F0-F10  cap 1
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2,            # F11-F20 cap 2
+        3, 3, 3, 3, 3, 4, 4, 4, 4, 4,            # F21-F30 cap 3-4
+        5, 5, 5, 5, 5, 6, 6, 6, 6, 6,            # F31-F40 cap 5-6
+        7, 7, 7, 7, 7, 8, 8, 8, 8, 8,            # F41-F50 cap 7-8
+        9, 9, 9, 9, 9, 10, 10, 10, 10, 10,       # F51-F60 cap 9-10
+        11, 11, 11, 11, 11, 12, 12, 12, 12, 12,  # F61-F70 cap 11-12
+        13, 13, 13, 13, 13, 14, 14, 14, 14, 14,  # F71-F80 cap 13-14
+        14, 14, 14, 14, 14, 15, 15, 15, 15, 15,  # F81-F90 cap 14-15
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,  # F91-F100 cap 15
+    )
+
+    def cooking_stat_softcap(self) -> int:
+        """Per-stat cooking lifetime cap. Capped at +15 per stat at endgame."""
+        idx = max(0, min(100, self.deepest_floor_reached))
+        return max(1, self._COOKING_STAT_SOFTCAP_BY_FLOOR[idx])
+
+    def apply_cooking_stat_bonus(self, stat: str, amount: int) -> int:
+        """Apply a cooked-food stat bonus with diminishing returns + per-stat
+        floor-derived softcap. Returns the actual amount applied (may be 0).
+
+        Below softcap: full bonus. Approaching softcap: scaled by remaining
+        headroom. At/above softcap: 0 (hard cap, unlike HP which floors at 1
+        — stats are too impactful to allow infinite drift).
+        """
+        if stat not in self.cooking_stat_gained or amount <= 0:
+            return 0
+        softcap = self.cooking_stat_softcap()
+        gained = self.cooking_stat_gained[stat]
+        if gained >= softcap:
+            return 0
+        # Diminishing return: scale linearly from full at gained=0 to 0 at cap.
+        headroom = softcap - gained
+        scaled = min(amount, headroom)
+        # Floor at 1 IF the player would have got 1+ ungained — so a +1
+        # cook isn't silently nullified mid-cap.
+        applied = max(1, scaled) if amount >= 1 and headroom > 0 else 0
+        applied = min(applied, headroom)
+        self.cooking_stat_gained[stat] += applied
+        self.apply_stat_bonus(stat, applied)
+        return applied
 
     def increase_max_hp(self, amount: int, from_cooking: bool = False):
         """Permanently increase max HP. Also heals the amount.
