@@ -32,7 +32,7 @@ from game_helpers import (
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU,
+    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_CONFIRM_EXIT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
@@ -1066,6 +1066,10 @@ class RenderMixin:
             self._draw_quiz()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
+        elif self.state == STATE_KIT:
+            self._draw_kit_panel()
+        elif self.state == STATE_DISCOVERIES:
+            self._draw_discoveries_panel()
         elif self.state == STATE_WAND_MENU:
             self._draw_wand_menu()
         elif self.state == STATE_SCROLL_MENU:
@@ -1764,6 +1768,9 @@ class RenderMixin:
                         detail = "unidentified"
                 else:
                     detail = item.item_class
+                delta = self._equip_delta_str(item)
+                if delta:
+                    detail = f"{detail}   {delta}"
                 entries.append({
                     'name': self._display_name(item),
                     'detail': detail,
@@ -1794,6 +1801,624 @@ class RenderMixin:
             font_sm=self.font_sm,
             draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
+
+    # ------------------------------------------------------------------
+    # Kit comparison panel  (K key)
+    # ------------------------------------------------------------------
+
+    _KIT_SRC_COLOR = {
+        'equip': (220, 200, 120),  # gold-ish: currently worn
+        'pack':  (200, 200, 200),  # normal
+        'floor': (140, 140, 140),  # dim: on the ground here
+    }
+    _KIT_SRC_TAG = {'equip': 'eq', 'pack': 'pk', 'floor': 'fl'}
+
+    def _draw_kit_panel(self):
+        draw_overlay(self.screen)
+        bw = min(1100, layout.GAME_W - 40)
+        bh = min(layout.WINDOW_H - 60, 700)
+        bx = (layout.GAME_W - bw) // 2
+        by = max(20, (layout.WINDOW_H - bh) // 2)
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="KIT  --  YOUR PACK & WHAT LIES HERE",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+
+        tab_y = by + 56
+        tab_x = bx + 20
+        active = getattr(self, '_kit_tab', 0)
+        for i, (label, _slug) in enumerate(self._KIT_TABS):
+            tw = self.font_sm.size(label)[0] + 24
+            r = pygame.Rect(tab_x, tab_y, tw, 28)
+            bg = FP.GOLD_DARK if i == active else (40, 40, 50)
+            pygame.draw.rect(self.screen, bg, r, border_radius=4)
+            pygame.draw.rect(self.screen, FP.GOLD if i == active else FP.GOLD_PALE,
+                             r, 1, border_radius=4)
+            col = FP.GOLD_BRIGHT if i == active else FP.BODY_TEXT
+            ts = self.font_sm.render(label, True, col)
+            self.screen.blit(ts, (tab_x + 12, tab_y + 6))
+            tab_x += tw + 6
+
+        draw_divider(self.screen, bx + 20, tab_y + 36, bw - 40)
+
+        body_x = bx + 20
+        body_y = tab_y + 48
+        body_w = bw - 40
+        body_h = bh - (body_y - by) - 36  # leave room for footer hint
+        slug = self._KIT_TABS[active][1]
+
+        if slug == 'spells':
+            self._kit_draw_spells(body_x, body_y, body_w, body_h)
+        else:
+            self._kit_draw_items(body_x, body_y, body_w, body_h, slug)
+
+        hint = self.font_sm.render(
+            "Left/Right: tab   Up/Down: scroll   ESC: close",
+            True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
+
+    def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
+        all_rows = self._kit_collect_items()
+        rows = self._kit_filter_for_tab(all_rows, [t[1] for t in self._KIT_TABS].index(slug))
+
+        # Sort: floor first (transient interest), then equipped, then pack
+        order = {'floor': 0, 'equip': 1, 'pack': 2}
+        if slug == 'weapons':
+            rows.sort(key=lambda r: (order.get(r[0], 9),
+                                     -float(self._kit_avg_damage(r[1]) or 0)))
+        elif slug in ('armor', 'shields'):
+            rows.sort(key=lambda r: (order.get(r[0], 9),
+                                     -int(getattr(r[1], 'ac_bonus', 0) or 0)))
+        else:
+            rows.sort(key=lambda r: (order.get(r[0], 9), self._display_name(r[1]).lower()))
+
+        if not rows:
+            txt = self.font_sm.render("(nothing of this kind in your pack or on this tile)",
+                                      True, FP.FADED_TEXT)
+            self.screen.blit(txt, (x, y + 10))
+            return
+
+        # Column layout per slug
+        cols = self._kit_columns(slug)
+        line_h = 24
+        max_visible = max(1, (h - 28) // line_h)
+        scroll = max(0, min(getattr(self, '_kit_scroll', 0),
+                            max(0, len(rows) - max_visible)))
+        self._kit_scroll = scroll
+
+        # Header row
+        cx = x
+        for label, cw, _align in cols:
+            hdr = self.font_sm.render(label, True, FP.GOLD_PALE)
+            self.screen.blit(hdr, (cx, y))
+            cx += cw
+        draw_divider(self.screen, x, y + 22, w)
+
+        # Body rows
+        ry = y + 28
+        for row in rows[scroll:scroll + max_visible]:
+            src, item = row
+            cells = self._kit_cells_for_item(slug, src, item)
+            cx = x
+            row_col = self._KIT_SRC_COLOR.get(src, (200, 200, 200))
+            for (label, cw, align), text in zip(cols, cells):
+                if text is None:
+                    text = ''
+                surf = self.font_sm.render(text, True, row_col)
+                if align == 'right':
+                    self.screen.blit(surf, (cx + cw - 8 - surf.get_width(), ry))
+                else:
+                    self.screen.blit(surf, (cx, ry))
+                cx += cw
+            ry += line_h
+
+        # Scrollbar hint
+        if len(rows) > max_visible:
+            tag = self.font_sm.render(
+                f"{scroll + 1}-{min(scroll + max_visible, len(rows))} of {len(rows)}",
+                True, FP.FADED_TEXT)
+            self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
+
+    def _kit_columns(self, slug: str):
+        """Return list of (label, width_px, alignment) for the given tab."""
+        if slug == 'weapons':
+            return [
+                ('Name',       310, 'left'),
+                ('Src',         38, 'left'),
+                ('Dmg',         70, 'right'),
+                ('Avg',         54, 'right'),
+                ('Material',    96, 'left'),
+                ('BUC',         70, 'left'),
+                ('Wt',          40, 'right'),
+                ('Special',    260, 'left'),
+            ]
+        if slug == 'armor':
+            return [
+                ('Name',       310, 'left'),
+                ('Src',         38, 'left'),
+                ('Slot',        90, 'left'),
+                ('AC',          46, 'right'),
+                ('Material',    96, 'left'),
+                ('BUC',         70, 'left'),
+                ('Wt',          40, 'right'),
+                ('Resists',    250, 'left'),
+            ]
+        if slug == 'shields':
+            return [
+                ('Name',       310, 'left'),
+                ('Src',         38, 'left'),
+                ('AC',          46, 'right'),
+                ('Material',    96, 'left'),
+                ('BUC',         70, 'left'),
+                ('Wt',          40, 'right'),
+                ('Resists',    330, 'left'),
+            ]
+        if slug == 'accessories':
+            return [
+                ('Name',       310, 'left'),
+                ('Src',         38, 'left'),
+                ('Slot',        90, 'left'),
+                ('BUC',         70, 'left'),
+                ('Wt',          40, 'right'),
+                ('Effect',     400, 'left'),
+            ]
+        if slug == 'consumables':
+            return [
+                ('Name',       310, 'left'),
+                ('Src',         38, 'left'),
+                ('Type',        90, 'left'),
+                ('BUC',         70, 'left'),
+                ('Wt',          40, 'right'),
+                ('Effect',     400, 'left'),
+            ]
+        return []
+
+    def _kit_cells_for_item(self, slug: str, src: str, item) -> list[str]:
+        """Return list of cell strings matching _kit_columns(slug)."""
+        idl = self._kit_visible_level(item)
+        name = self._display_name(item)
+        src_tag = self._KIT_SRC_TAG.get(src, '?')
+        wt = str(int(getattr(item, 'weight', 0) or 0))
+        mat = getattr(item, 'material', '') or ''
+
+        # BUC visibility: id_level >= 2 reveals; otherwise '?'
+        if idl >= 2:
+            buc_raw = getattr(item, 'buc', None) or ('cursed' if getattr(item, 'cursed', False) else 'uncursed')
+            buc = {'blessed': 'bless.', 'uncursed': 'unc.', 'cursed': 'CURSED'}.get(buc_raw, buc_raw)
+        else:
+            buc = '?'
+
+        if slug == 'weapons':
+            if idl >= 3:
+                dmg = self._kit_damage_str(item)
+                avg = self._kit_avg_damage(item)
+                avg_s = f"{avg:.1f}" if avg is not None else '?'
+            else:
+                dmg, avg_s = '?', '?'
+            if idl >= 4:
+                special = self._kit_weapon_special(item)
+            else:
+                special = '?' if idl < 4 else ''
+            return [name, src_tag, dmg, avg_s, mat, buc, wt, special]
+
+        if slug == 'armor':
+            slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ')
+            if idl >= 3:
+                ac = f"+{getattr(item, 'ac_bonus', 0)}"
+                resists = self._kit_resist_str(item)
+            else:
+                ac, resists = '?', '?'
+            return [name, src_tag, slot_lbl, ac, mat, buc, wt, resists]
+
+        if slug == 'shields':
+            if idl >= 3:
+                ac = f"+{getattr(item, 'ac_bonus', 0)}"
+                resists = self._kit_resist_str(item)
+            else:
+                ac, resists = '?', '?'
+            return [name, src_tag, ac, mat, buc, wt, resists]
+
+        if slug == 'accessories':
+            slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ')
+            if idl >= 3:
+                effect = self._kit_accessory_effect(item)
+            else:
+                effect = '?'
+            return [name, src_tag, slot_lbl, buc, wt, effect]
+
+        if slug == 'consumables':
+            kind = type(item).__name__
+            if idl >= 3:
+                effect = self._kit_consumable_effect(item)
+            else:
+                effect = '?'
+            # Most consumables don't carry BUC; show '-' when not applicable
+            buc_show = buc if hasattr(item, 'buc') or hasattr(item, 'cursed') else '-'
+            return [name, src_tag, kind, buc_show, wt, effect]
+
+        return [name, src_tag] + ['' for _ in range(6)]
+
+    # --- small helpers for cell formatting ---
+
+    def _kit_damage_str(self, w) -> str:
+        d = getattr(w, 'damage', None)
+        if d:
+            return str(d)
+        base = getattr(w, 'base_damage', None)
+        if base is not None:
+            return f"{base}"
+        return '?'
+
+    def _kit_avg_damage(self, w) -> float | None:
+        # Dice notation "XdY+Z"
+        d = getattr(w, 'damage', None)
+        if d and 'd' in str(d):
+            try:
+                left, rest = str(d).split('d', 1)
+                bonus = 0
+                if '+' in rest:
+                    sides, bonus_s = rest.split('+', 1)
+                    bonus = int(bonus_s)
+                elif '-' in rest:
+                    sides, bonus_s = rest.split('-', 1)
+                    bonus = -int(bonus_s)
+                else:
+                    sides = rest
+                n = int(left); s = int(sides)
+                return n * (s + 1) / 2 + bonus
+            except (ValueError, IndexError):
+                return None
+        base = getattr(w, 'base_damage', None)
+        if base is not None:
+            try:
+                return float(base)
+            except (TypeError, ValueError):
+                return None
+        return None
+
+    def _kit_weapon_special(self, w) -> str:
+        bits = []
+        dt = getattr(w, 'damage_types', None) or []
+        if dt and dt != ['slash'] and dt != ['pierce'] and dt != ['crush']:
+            bits.append('+'.join(dt))
+        if getattr(w, 'two_handed', False):
+            bits.append('2H')
+        sb = getattr(w, 'special_blessing', None) or getattr(w, 'unique_effect', None)
+        if sb:
+            bits.append(str(sb)[:32])
+        return ', '.join(bits) if bits else '-'
+
+    def _kit_resist_str(self, a) -> str:
+        r = getattr(a, 'damage_resistances', None) or {}
+        if not r:
+            return '-'
+        return ', '.join(f"{k} {int(v*100)}%" for k, v in r.items() if v)
+
+    def _kit_accessory_effect(self, a) -> str:
+        fx = getattr(a, 'effects', None) or {}
+        if not fx:
+            return '-'
+        parts = []
+        if 'stat' in fx:
+            parts.append(f"{fx['stat']} +{fx.get('amount', 0)}")
+        if 'stat2' in fx:
+            parts.append(f"{fx['stat2']} +{fx.get('amount2', 0)}")
+        if 'status' in fx:
+            parts.append(f"grants {fx['status']}")
+        return ', '.join(parts) if parts else '-'
+
+    def _equip_delta_str(self, candidate) -> str:
+        """Return a short "Δ +X dmg / -Y wt" string vs the currently equipped
+        item in this candidate's slot, or '' if no comparable item exists.
+
+        Reveals deltas only for fields the player has earned the right to see
+        (re-uses _kit_visible_level). Pure side-effect-free string builder.
+        """
+        if isinstance(candidate, Weapon):
+            equipped = self.player.weapon
+            if equipped is candidate or equipped is None:
+                return ''
+            if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
+                return ''
+            c_avg = self._kit_avg_damage(candidate)
+            e_avg = self._kit_avg_damage(equipped)
+            if c_avg is None or e_avg is None:
+                return ''
+            d = c_avg - e_avg
+            return self._fmt_delta(d, 'dmg', decimals=1)
+
+        if isinstance(candidate, Shield):
+            equipped = self.player.shield
+            if equipped is candidate or equipped is None:
+                return ''
+            if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
+                return ''
+            d = int(getattr(candidate, 'ac_bonus', 0)) - int(getattr(equipped, 'ac_bonus', 0))
+            return self._fmt_delta(d, 'AC')
+
+        if isinstance(candidate, Armor):
+            from items import ARMOR_SLOTS
+            slot = getattr(candidate, 'slot', '')
+            if slot not in ARMOR_SLOTS:
+                return ''
+            idx = ARMOR_SLOTS.index(slot)
+            equipped = self.player.armor_slots[idx]
+            if equipped is candidate or equipped is None:
+                return ''
+            if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
+                return ''
+            d = int(getattr(candidate, 'ac_bonus', 0)) - int(getattr(equipped, 'ac_bonus', 0))
+            return self._fmt_delta(d, 'AC')
+
+        if isinstance(candidate, Accessory):
+            # Only useful when comparing same-stat accessories; otherwise
+            # there's no shared dimension to compute a delta on.
+            if self._kit_visible_level(candidate) < 3:
+                return ''
+            fx_c = getattr(candidate, 'effects', None) or {}
+            stat_c = fx_c.get('stat')
+            amt_c  = fx_c.get('amount', 0)
+            if not stat_c:
+                return ''
+            # Find an equipped accessory affecting the same stat
+            for slot_item in self.player.equipped_accessories:
+                if slot_item is candidate:
+                    continue
+                if self._kit_visible_level(slot_item) < 3:
+                    continue
+                fx_e = getattr(slot_item, 'effects', None) or {}
+                if fx_e.get('stat') == stat_c:
+                    d = int(amt_c) - int(fx_e.get('amount', 0))
+                    return self._fmt_delta(d, stat_c)
+            return ''
+
+        return ''
+
+    def _fmt_delta(self, d, label: str, decimals: int = 0) -> str:
+        if decimals:
+            if abs(d) < 10 ** (-decimals):
+                return f"Δ  {label}  (no change)"
+            sign = '+' if d > 0 else '−'
+            return f"Δ {sign}{abs(d):.{decimals}f} {label}"
+        if d == 0:
+            return f"Δ  {label}  (no change)"
+        sign = '+' if d > 0 else '−'
+        return f"Δ {sign}{abs(d)} {label}"
+
+    def _kit_consumable_effect(self, c) -> str:
+        eff = getattr(c, 'effect', None)
+        if eff:
+            pw = getattr(c, 'power', '')
+            dur = getattr(c, 'duration', 0)
+            tail = []
+            if pw:
+                tail.append(str(pw))
+            if dur:
+                tail.append(f"{dur}t")
+            return f"{eff}" + (f" ({', '.join(tail)})" if tail else '')
+        # Spellbook
+        sp_id = getattr(c, 'spell_id', None)
+        if sp_id:
+            sd = LEARNABLE_SPELLS.get(sp_id, {})
+            return f"teaches {sd.get('name', sp_id)} ({sd.get('mp_cost','?')} MP)"
+        # Food
+        if hasattr(c, 'sp_restore'):
+            bits = [f"+{c.sp_restore} SP"]
+            if getattr(c, 'hp_restore', 0):
+                bits.append(f"+{c.hp_restore} HP")
+            bt = getattr(c, 'bonus_type', 'none')
+            if bt and bt != 'none':
+                bits.append(f"{bt}")
+            return ', '.join(bits)
+        return '-'
+
+    def _kit_draw_spells(self, x: int, y: int, w: int, h: int):
+        rows = self._kit_collect_spells()
+        if not rows:
+            txt = self.font_sm.render("(you have learned no spells yet)",
+                                      True, FP.FADED_TEXT)
+            self.screen.blit(txt, (x, y + 10))
+            return
+        cols = [
+            ('Spell',      280, 'left'),
+            ('Tier',        50, 'right'),
+            ('MP',          50, 'right'),
+            ('Description', 620, 'left'),
+        ]
+        line_h = 24
+        max_visible = max(1, (h - 28) // line_h)
+        scroll = max(0, min(getattr(self, '_kit_scroll', 0),
+                            max(0, len(rows) - max_visible)))
+        self._kit_scroll = scroll
+        cx = x
+        for label, cw, _align in cols:
+            hdr = self.font_sm.render(label, True, FP.GOLD_PALE)
+            self.screen.blit(hdr, (cx, y))
+            cx += cw
+        draw_divider(self.screen, x, y + 22, w)
+        ry = y + 28
+        for r in rows[scroll:scroll + max_visible]:
+            cells = [r['name'],
+                     f"T{r['quiz_tier']}" if r['quiz_tier'] else '-',
+                     str(r['mp_cost']),
+                     r['desc']]
+            cx = x
+            for (label, cw, align), text in zip(cols, cells):
+                # Truncate long descriptions
+                surf = self.font_sm.render(text, True, FP.BODY_TEXT)
+                if surf.get_width() > cw - 8:
+                    trunc = text
+                    while len(trunc) > 1 and self.font_sm.size(trunc + '…')[0] > cw - 8:
+                        trunc = trunc[:-1]
+                    surf = self.font_sm.render(trunc + '…', True, FP.BODY_TEXT)
+                if align == 'right':
+                    self.screen.blit(surf, (cx + cw - 8 - surf.get_width(), ry))
+                else:
+                    self.screen.blit(surf, (cx, ry))
+                cx += cw
+            ry += line_h
+        if len(rows) > max_visible:
+            tag = self.font_sm.render(
+                f"{scroll + 1}-{min(scroll + max_visible, len(rows))} of {len(rows)}",
+                True, FP.FADED_TEXT)
+            self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
+
+    # ------------------------------------------------------------------
+    # Discoveries panel  (J key)
+    # ------------------------------------------------------------------
+
+    def _draw_discoveries_panel(self):
+        """Player-growth record. Pure tally of what's been done. No spoilers."""
+        draw_overlay(self.screen)
+        bw = min(1100, layout.GAME_W - 40)
+        bh = min(layout.WINDOW_H - 60, 700)
+        bx = (layout.GAME_W - bw) // 2
+        by = max(20, (layout.WINDOW_H - bh) // 2)
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 44),
+                        text="DISCOVERIES  --  YOUR RECORD",
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+        draw_divider(self.screen, bx + 20, by + 50, bw - 40)
+
+        sections = self._discoveries_sections()
+
+        line_h = 22
+        body_x = bx + 24
+        body_y = by + 64
+        body_h = bh - 90  # leave room for footer
+        max_visible = max(1, body_h // line_h)
+        # Flatten sections to a scrollable line list of (kind, text, color)
+        lines = []
+        for header, rows in sections:
+            lines.append(('header', header, FP.GOLD_PALE))
+            for r in rows:
+                lines.append(('row', r, FP.BODY_TEXT))
+            lines.append(('row', '', FP.BODY_TEXT))  # spacer
+        scroll = max(0, min(getattr(self, '_disc_scroll', 0),
+                            max(0, len(lines) - max_visible)))
+        self._disc_scroll = scroll
+
+        ly = body_y
+        col_w = (bw - 56) // 2
+        for kind, text, col in lines[scroll:scroll + max_visible]:
+            if kind == 'header':
+                if ly > body_y:
+                    ly += 4
+                surf = self.font_sm.render(text, True, FP.GOLD_BRIGHT)
+                self.screen.blit(surf, (body_x, ly))
+                pygame.draw.line(self.screen, FP.GOLD_DARK,
+                                 (body_x, ly + 18), (body_x + bw - 48, ly + 18), 1)
+                ly += line_h + 4
+            else:
+                if text:
+                    surf = self.font_sm.render(text, True, col)
+                    self.screen.blit(surf, (body_x, ly))
+                ly += line_h
+
+        hint = self.font_sm.render("Up/Down: scroll   ESC: close",
+                                   True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
+
+        if len(lines) > max_visible:
+            tag = self.font_sm.render(
+                f"line {scroll + 1}/{len(lines)}",
+                True, FP.FADED_TEXT)
+            self.screen.blit(tag, (bx + 24, by + bh - 26))
+
+    def _discoveries_sections(self):
+        """Return list of (section_title, [row_string, ...]) tuples.
+
+        Reads only data the game is actually tracking; pulls from the player
+        for per-run sets (known_*, masteries, quirks) and from Game-level
+        counters (correct_answers, missed_questions, karma) for journey state.
+        """
+        p = self.player
+        sections = []
+
+        # --- Quiz performance: totals + per-subject breakdown ---
+        right_total = int(getattr(self, 'correct_answers', 0) or 0)
+        wrong_total = int(getattr(self, 'wrong_answers', 0) or 0)
+        total = right_total + wrong_total
+        acc = (right_total / total * 100) if total else 0.0
+        quiz_rows = [
+            f"  Total answered:  {total}   ({right_total} right / {wrong_total} wrong, {acc:.0f}%)",
+        ]
+        # Per-subject + per-tier breakdown if tracking is active
+        qstats = getattr(self, 'quiz_stats', {}) or {}
+        if qstats:
+            quiz_rows.append("")
+            for subj in sorted(qstats.keys()):
+                d = qstats[subj] or {}
+                r = int(d.get('correct', 0))
+                w = int(d.get('wrong', 0))
+                t = r + w
+                a = (r / t * 100) if t else 0.0
+                tier_bits = []
+                for ti in range(1, 6):
+                    tr = int(d.get(f't{ti}c', 0))
+                    tw = int(d.get(f't{ti}w', 0))
+                    if tr + tw > 0:
+                        tier_bits.append(f"T{ti} {tr}/{tr+tw}")
+                tail = f"   {' '.join(tier_bits)}" if tier_bits else ''
+                quiz_rows.append(f"  {subj:11s}  {r} / {w}   ({a:.0f}%){tail}")
+        sections.append(("QUIZ PERFORMANCE", quiz_rows))
+
+        # --- Identification ---
+        known_ids = getattr(p, 'known_item_ids', set()) or set()
+        masteries = getattr(p, 'unlocked_masteries', {}) or {}
+        total_ids = int(getattr(p, 'total_identifies', 0) or 0)
+        mantle = bool(getattr(p, 'philosophers_mantle', False))
+        id_rows = [
+            f"  Total identifies performed: {total_ids}",
+            f"  Items learned (any tier):    {len(known_ids)}",
+            f"  Mastery blessings earned:    {len(masteries)}",
+        ]
+        if mantle:
+            id_rows.append("  Mantle of the Philosopher: granted")
+        sections.append(("IDENTIFICATION", id_rows))
+
+        # --- Bestiary ---
+        seen = getattr(p, 'known_monster_ids', set()) or set()
+        studied = getattr(p, 'lore_known_monster_ids', set()) or set()
+        sections.append(("BESTIARY", [
+            f"  Monsters encountered:  {len(seen)}",
+            f"  Monsters studied:       {len(studied)}",
+        ]))
+
+        # --- Faith + Karma ---
+        boons = int(getattr(p, 'prayer_boon_count', 0) or 0)
+        karma = int(getattr(self, 'karma', 0) or 0)
+        sections.append(("FAITH & KARMA", [
+            f"  Prayer boons received: {boons}",
+            f"  Karma:                  {karma:+d}",
+        ]))
+
+        # --- Spells & magic ---
+        spells = getattr(p, 'known_spells', {}) or {}
+        hack_count = int(getattr(p, 'hack_reality_count', 0) or 0)
+        magic_rows = [
+            f"  Spells learned: {len(spells)}",
+        ]
+        if hack_count > 0:
+            magic_rows.append(f"  Reality hacks claimed: {hack_count}")
+        sections.append(("MAGIC", magic_rows))
+
+        # --- Journey ---
+        deepest = int(getattr(p, 'deepest_floor_reached',
+                              getattr(self, 'dungeon_level', 1)) or 1)
+        current = int(getattr(self, 'dungeon_level', 1) or 1)
+        sections.append(("JOURNEY", [
+            f"  Current floor:         {current}",
+            f"  Deepest floor reached: {deepest}",
+        ]))
+
+        # --- Quirks (counts only — names of unlocked quirks could spoil) ---
+        unlocked = getattr(p, 'unlocked_quirks', set()) or set()
+        sections.append(("QUIRKS", [
+            f"  Unlocked: {len(unlocked)}",
+        ]))
+
+        return sections
 
     def _draw_wand_menu(self):
         entries = []

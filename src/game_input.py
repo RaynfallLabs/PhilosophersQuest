@@ -25,7 +25,7 @@ import sound_system as _snd
 from dungeon import ALTAR, FOUNTAIN, GRAVE, THRONE
 from quiz_engine import QuizState
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU,
+    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_CONFIRM_EXIT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
@@ -70,7 +70,7 @@ class InputMixin:
                 # Cancel the active quiz — treat as chain-0 failure
                 self.quiz_engine._end(success=False)
                 return True
-            if self.state in (STATE_EQUIP_MENU,
+            if self.state in (STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
@@ -169,6 +169,10 @@ class InputMixin:
             self._quiz_input(key)
         elif self.state == STATE_EQUIP_MENU:
             self._equip_menu_input(key)
+        elif self.state == STATE_KIT:
+            self._kit_input(key)
+        elif self.state == STATE_DISCOVERIES:
+            self._discoveries_input(key)
         elif self.state == STATE_WAND_MENU:
             self._wand_menu_input(key)
         elif self.state == STATE_SCROLL_MENU:
@@ -400,6 +404,12 @@ class InputMixin:
             return
         if key == pygame.K_o:
             self._start_observe()
+            return
+        if key == pygame.K_k:
+            self._open_kit_panel()
+            return
+        if key == pygame.K_j:
+            self._open_discoveries()
             return
         if key == pygame.K_SEMICOLON:
             self._open_study_journal()

@@ -138,6 +138,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
         self.missed_questions: list = []   # [{subject, question, correct, chosen}]
+        # Per-subject quiz tracking for the Discoveries panel. Keyed by subject
+        # name; each value is a dict with 'correct', 'wrong', and 't{1-5}{c,w}'
+        # tier-specific counters (e.g. 't3c' = correct at tier 3).
+        self.quiz_stats: dict = {}
         self._score_saved       = False    # True after high score is written
         self.quiz_engine.on_answer = self._on_quiz_answer
         self.quiz_engine.on_complete = self._on_quiz_complete
@@ -405,6 +409,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.correct_answers = state.get('correct_answers', 0)
         self.wrong_answers   = state.get('wrong_answers', 0)
         self.missed_questions = state.get('missed_questions', [])
+        self.quiz_stats      = state.get('quiz_stats', {})
         self.pets            = state.get('pets', [])
         # Abaddon quest state
         self.seals_broken   = state.get('seals_broken', set())
@@ -2803,6 +2808,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _on_quiz_answer(self, is_correct: bool):
         """Fired after every individual quiz answer to tally global stats."""
+        qe = self.quiz_engine
         if is_correct:
             self.correct_answers += 1
             _snd.play('quiz_correct')
@@ -2810,7 +2816,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.wrong_answers += 1
             _snd.play('quiz_wrong')
             # Store missed question for post-death review
-            qe = self.quiz_engine
             q = qe.current_question
             if q:
                 self.missed_questions.append({
@@ -2820,6 +2825,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'chosen': qe.last_answer,
                     'context': q.get('context', ''),
                 })
+        # Per-subject + per-tier stats for the Discoveries panel.
+        subj = (qe.subject or 'unknown')
+        tier = int(getattr(qe, 'tier', 1) or 1)
+        s = self.quiz_stats.setdefault(subj, {
+            'correct': 0, 'wrong': 0,
+            't1c': 0, 't1w': 0, 't2c': 0, 't2w': 0,
+            't3c': 0, 't3w': 0, 't4c': 0, 't4w': 0,
+            't5c': 0, 't5w': 0,
+        })
+        if is_correct:
+            s['correct'] = s.get('correct', 0) + 1
+            s[f't{tier}c'] = s.get(f't{tier}c', 0) + 1
+        else:
+            s['wrong'] = s.get('wrong', 0) + 1
+            s[f't{tier}w'] = s.get(f't{tier}w', 0) + 1
         # Quirk notifications
         qe = self.quiz_engine
         qs = getattr(self, 'quirk_system', None)

@@ -36,6 +36,7 @@ def save_game(game) -> bool:
             'correct_answers':  game.correct_answers,
             'wrong_answers':    game.wrong_answers,
             'missed_questions':  getattr(game, 'missed_questions', []),
+            'quiz_stats':        getattr(game, 'quiz_stats', {}),
             'pets':             game.pets,
             'seals_broken':     game.seals_broken,
             'heavenly_host_active': getattr(game, 'heavenly_host_active', False),

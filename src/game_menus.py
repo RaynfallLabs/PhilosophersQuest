@@ -22,7 +22,7 @@ from food_system import (eat_food, eat_raw, get_available_compound_recipes)
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
                    Accessory, Wand, Scroll, Spellbook, Food, Potion)
 from game_states import (
-    STATE_PLAYER, STATE_EQUIP_MENU,
+    STATE_PLAYER, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_TARGET, STATE_EAT_MENU, STATE_QUAFF_MENU,
     STATE_SPELL_MENU, STATE_LORE, STATE_EXAMINE,
@@ -327,6 +327,187 @@ class MenuMixin:
                 self.state = STATE_PLAYER
                 slot_name, slot_item = self.equip_menu_equipped[idx]
                 self._unequip_slot(slot_name, slot_item)
+
+    # ------------------------------------------------------------------
+    # Kit comparison panel  (K key -- side-by-side view, read-only)
+    # ------------------------------------------------------------------
+    #
+    # The Kit panel shows the player's items + items on the current tile
+    # in a tabbed table. It deliberately reveals only what the player has
+    # earned: hidden columns show '?' until the relevant id_level is reached
+    # (id_level 2 -> BUC, 3 -> stats, 4 -> lore/special). No recommendations.
+
+    _KIT_TABS = [
+        ('Weapons',     'weapons'),
+        ('Armor',       'armor'),
+        ('Shields',     'shields'),
+        ('Accessories', 'accessories'),
+        ('Consumables', 'consumables'),
+        ('Spells',      'spells'),
+    ]
+
+    def _kit_visible_level(self, item) -> int:
+        """Return the highest id_level the player has 'earned' for this item.
+
+        Rules:
+          - item.identified=True -> level 5 (everything visible)
+          - item.id in player.known_item_ids -> at least level 3 (name+BUC+stats)
+          - otherwise use the item's stored id_level (advances via the i-key
+            identification chain).
+        Pure helper; no side effects.
+        """
+        base = int(getattr(item, 'id_level', 0))
+        if bool(getattr(item, 'identified', False)):
+            base = max(base, 5)
+        try:
+            if getattr(item, 'id', None) in self.player.known_item_ids:
+                base = max(base, 3)
+        except AttributeError:
+            pass
+        return base
+
+    def _kit_collect_items(self):
+        """Return list of (source_label, item) for everything the panel might show.
+
+        Source labels: 'equip' (currently equipped), 'pack' (in inventory),
+        'floor' (on the current tile). Currently-equipped items are emitted
+        only once (not duplicated as 'pack').
+        """
+        from items import ARMOR_SLOTS
+        out: list[tuple[str, object]] = []
+        equipped_ids = set()
+
+        def _push_equipped(item):
+            if item is None:
+                return
+            out.append(('equip', item))
+            equipped_ids.add(id(item))
+
+        _push_equipped(self.player.weapon)
+        _push_equipped(self.player.ranged_weapon)
+        _push_equipped(self.player.shield)
+        for slot_item in self.player.armor_slots:
+            _push_equipped(slot_item)
+        for acc in self.player.accessory_slots:
+            _push_equipped(acc)
+        _push_equipped(self.player.amulet_slot)
+
+        for it in self.player.inventory:
+            if id(it) in equipped_ids:
+                continue
+            out.append(('pack', it))
+
+        px, py = self.player.x, self.player.y
+        for it in getattr(self, 'ground_items', []):
+            if getattr(it, 'x', None) == px and getattr(it, 'y', None) == py:
+                if id(it) in equipped_ids:
+                    continue
+                out.append(('floor', it))
+
+        return out
+
+    def _kit_filter_for_tab(self, all_rows, tab_idx: int):
+        """Return rows that belong to the given tab index."""
+        from items import (Weapon, Armor, Shield, Accessory,
+                           Potion, Scroll, Spellbook, Food, Ingredient, Corpse)
+        slug = self._KIT_TABS[tab_idx][1]
+        if slug == 'spells':
+            return []  # spells are handled by _kit_collect_spells
+        type_for_slug = {
+            'weapons':     Weapon,
+            'armor':       Armor,
+            'shields':     Shield,
+            'accessories': Accessory,
+            'consumables': (Potion, Scroll, Spellbook, Food, Ingredient, Corpse),
+        }
+        cls = type_for_slug.get(slug)
+        if cls is None:
+            return []
+        return [(src, it) for src, it in all_rows if isinstance(it, cls)]
+
+    def _kit_collect_spells(self):
+        """Return rows for spells the player has learned.
+
+        Each entry: {'spell_id', 'name', 'mp_cost', 'quiz_tier', 'desc'}.
+        Pulled from spells.LEARNABLE_SPELLS keyed by player.known_spells (dict
+        spell_id -> stored mp_cost which may differ from the base after
+        discounts).
+        """
+        from spells import LEARNABLE_SPELLS
+        known = getattr(self.player, 'known_spells', {}) or {}
+        out = []
+        for sid, stored_mp in known.items():
+            sd = LEARNABLE_SPELLS.get(sid, {})
+            out.append({
+                'spell_id': sid,
+                'name':     sd.get('name', sid),
+                'mp_cost':  int(stored_mp) if isinstance(stored_mp, (int, float)) else sd.get('mp_cost', '?'),
+                'quiz_tier': int(sd.get('quiz_tier', 0)),
+                'desc':     sd.get('desc', ''),
+            })
+        out.sort(key=lambda r: (r['quiz_tier'], r['name']))
+        return out
+
+    def _open_kit_panel(self):
+        """Open the Kit (compare) panel."""
+        self._kit_tab = 0
+        self._kit_scroll = 0
+        self.state = STATE_KIT
+
+    def _kit_input(self, key: int):
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        n_tabs = len(self._KIT_TABS)
+        if key == pygame.K_LEFT:
+            self._kit_tab = (self._kit_tab - 1) % n_tabs
+            self._kit_scroll = 0
+            return
+        if key == pygame.K_RIGHT:
+            self._kit_tab = (self._kit_tab + 1) % n_tabs
+            self._kit_scroll = 0
+            return
+        if key == pygame.K_UP:
+            self._kit_scroll = max(0, self._kit_scroll - 1)
+            return
+        if key == pygame.K_DOWN:
+            self._kit_scroll += 1
+            return
+        if key == pygame.K_PAGEUP:
+            self._kit_scroll = max(0, self._kit_scroll - 10)
+            return
+        if key == pygame.K_PAGEDOWN:
+            self._kit_scroll += 10
+            return
+
+    # ------------------------------------------------------------------
+    # Discoveries panel  (J key -- player-growth record, read-only)
+    # ------------------------------------------------------------------
+    #
+    # Tracks what the player has done, never what's left. No spoilers.
+    # Implementation lives below alongside the Kit panel because both are
+    # read-only info screens.
+
+    def _open_discoveries(self):
+        self._disc_scroll = 0
+        self.state = STATE_DISCOVERIES
+
+    def _discoveries_input(self, key: int):
+        if key == pygame.K_ESCAPE:
+            self.state = STATE_PLAYER
+            return
+        if key == pygame.K_UP:
+            self._disc_scroll = max(0, self._disc_scroll - 1)
+            return
+        if key == pygame.K_DOWN:
+            self._disc_scroll += 1
+            return
+        if key == pygame.K_PAGEUP:
+            self._disc_scroll = max(0, self._disc_scroll - 10)
+            return
+        if key == pygame.K_PAGEDOWN:
+            self._disc_scroll += 10
+            return
 
     # ------------------------------------------------------------------
     # Wand menu  (u key -- science quiz)
