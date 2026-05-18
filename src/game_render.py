@@ -3722,44 +3722,24 @@ class RenderMixin:
 
         is_corpse = isinstance(subject, Corpse)
 
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
-
-        bw, bh = min(1000, layout.GAME_W - 40), min(640, layout.WINDOW_H - 40)
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-
-        # Background panel
-        pygame.draw.rect(self.screen, (8, 6, 20), (bx, by, bw, bh), border_radius=10)
+        # Palette per type — both families live in FP so refactors propagate.
         if is_corpse:
-            border_col = (160, 120, 40)
-            inner_col  = (80, 60, 20)
-            title_col  = (255, 210, 60)
-            stat_col   = (200, 185, 140)
-            lore_col   = (210, 200, 170)
+            border_col = FP.LORE_GOLD_BORDER
+            stat_col   = FP.LORE_GOLD_STAT
+            lore_col   = FP.LORE_GOLD_BODY
+            title_col  = FP.LORE_GOLD_TITLE
         else:
-            border_col = (80, 120, 200)
-            inner_col  = (40, 60, 120)
-            title_col  = (160, 210, 255)
-            stat_col   = (180, 200, 230)
-            lore_col   = (200, 215, 240)
+            border_col = FP.LORE_BLUE_BORDER
+            stat_col   = FP.LORE_BLUE_STAT
+            lore_col   = FP.LORE_BLUE_BODY
+            title_col  = FP.LORE_BLUE_TITLE
 
-        pygame.draw.rect(self.screen, border_col, (bx, by, bw, bh), 2, border_radius=10)
-        pygame.draw.rect(self.screen, inner_col,  (bx+4, by+4, bw-8, bh-8), 1, border_radius=8)
-
-        y = by + 14
+        from panel import PanelBuilder, SIZE_LG
+        from text_layout import wrap_lines
 
         if is_corpse:
-            # -- CORPSE / BESTIARY ENTRY ----------------------------------
-            title = self.font_lg.render(
-                f"{subject.monster_name.upper()} -- BESTIARY", True, title_col
-            )
-            self.screen.blit(title, (bx + (bw - title.get_width()) // 2, y))
-            y += 40
-            pygame.draw.line(self.screen, border_col, (bx+20, y), (bx+bw-20, y))
-            y += 12
-
+            # -- CORPSE / BESTIARY ENTRY: build stat_lines + lore_text ----
+            title_text = f"{subject.monster_name.upper()}  --  BESTIARY"
             mdef = subject.monster_def
             stat_lines = [
                 f"HP: {mdef.get('hp', '?')}    THAC0: {mdef.get('thac0', '?')}    Speed: {mdef.get('speed', 1)}",
@@ -3812,14 +3792,7 @@ class RenderMixin:
             # back-compat when an item doesn't have the field.
             id_level = int(getattr(subject, 'id_level', 5))
             item_class_label = subject.item_class.upper()
-            title = self.font_lg.render(
-                f"{subject.name.upper()} -- {item_class_label}", True, title_col
-            )
-            self.screen.blit(title, (bx + (bw - title.get_width()) // 2, y))
-            y += 40
-            pygame.draw.line(self.screen, border_col, (bx+20, y), (bx+bw-20, y))
-            y += 12
-
+            title_text = f"{subject.name.upper()}  --  {item_class_label}"
             stat_lines = []
 
             # Mastery banner \u2014 top line when id_level == 5 and mastery has been claimed.
@@ -3927,45 +3900,50 @@ class RenderMixin:
             else:
                 lore_text = "The history of this item remains beyond your grasp. Deeper study may yet reveal it."
 
-        # Draw stat lines (reserve ~120px at bottom for lore section + footer)
-        max_stat_w = bw - 44
-        stat_bottom = by + bh - 120
-        done = False
-        for idx, line in enumerate(stat_lines):
-            if done:
+        # --- Render through PanelBuilder ---
+        p = PanelBuilder(self.screen, size=SIZE_LG, border_color=border_col)
+        p.set_title(title_text, font=get_font('heading', 22))
+        p.set_footer_hint("ESC / ENTER / SPACE to close")
+        body = p.body_rect()
+
+        font_sm = self.font_sm
+        line_h = font_sm.get_height() + 4
+        # Stat lines fill the top ~55% of body
+        stat_bottom = body.y + int(body.h * 0.55)
+        stat_y = body.y
+        skipped_lines = 0
+        for line in stat_lines:
+            wrapped = wrap_lines(line, body.w - 8, font_sm)
+            for wl in wrapped:
+                if stat_y + line_h > stat_bottom:
+                    skipped_lines += 1
+                    continue
+                self.screen.blit(font_sm.render(wl, True, stat_col),
+                                 (body.x + 4, stat_y))
+                stat_y += line_h
+        if skipped_lines:
+            self.screen.blit(
+                font_sm.render(f"  ... {skipped_lines} more line(s)", True, FP.FADED_TEXT),
+                (body.x + 4, stat_y))
+            stat_y += line_h
+
+        ly = max(stat_y + 4, stat_bottom + 6)
+        pygame.draw.line(self.screen, border_col,
+                         (body.x, ly), (body.right, ly), 1)
+        ly += 8
+        lore_hdr = font_sm.render("-- LORE --", True, border_col)
+        self.screen.blit(lore_hdr,
+                         (body.x + (body.w - lore_hdr.get_width()) // 2, ly))
+        ly += line_h
+
+        for wl in wrap_lines(lore_text, body.w - 8, font_sm):
+            if ly + line_h > body.bottom:
                 break
-            wrapped = self._wrap_text(line, self.font_sm, max_stat_w)
-            for wl in wrapped or [line]:
-                if y + 22 > stat_bottom:
-                    remaining = len(stat_lines) - idx
-                    surf = self.font_sm.render(f"  ... and {remaining} more", True, (120, 120, 120))
-                    self.screen.blit(surf, (bx + 20, y))
-                    y += 22
-                    done = True
-                    break
-                self.screen.blit(self.font_sm.render(wl, True, stat_col), (bx + 20, y))
-                y += 22
+            self.screen.blit(font_sm.render(wl, True, lore_col),
+                             (body.x + 4, ly))
+            ly += line_h
 
-        y += 4
-        pygame.draw.line(self.screen, inner_col, (bx+20, y), (bx+bw-20, y))
-        y += 12
-
-        # Lore section header
-        lore_hdr = self.font_sm.render("-- LORE --", True, border_col)
-        self.screen.blit(lore_hdr, (bx + (bw - lore_hdr.get_width()) // 2, y))
-        y += 22
-
-        # Lore text (wrapped, with remaining space)
-        lore_lines = self._wrap_text(lore_text, self.font_sm, bw - 44)
-        for line in lore_lines:
-            if y + self.font_sm.get_height() > by + bh - 40:
-                break
-            surf = self.font_sm.render(line, True, lore_col)
-            self.screen.blit(surf, (bx + 22, y))
-            y += self.font_sm.get_height() + 3
-
-        hint = self.font_sm.render("[ ESC / ENTER / SPACE ] to close", True, (80, 80, 100))
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
+        p.draw()
 
     # ------------------------------------------------------------------
     # Examine menu  (x key)
@@ -4273,74 +4251,50 @@ class RenderMixin:
         )
 
     def _draw_hint_screen(self):
-        """Display a Recall Lore result -- parchment-style hint overlay."""
-        from fantasy_ui import get_font
+        """Display a Recall Lore result through the shared grimoire chrome."""
+        from panel import PanelBuilder, SIZE_MD
+        from text_layout import wrap_lines
+
         hint_text = getattr(self, '_lore_hint_text', None)
         chain     = getattr(self, '_lore_hint_chain', 0)
         if hint_text is None:
             self.state = STATE_PLAYER
             return
 
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
-
-        bw, bh = 760, 280
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-
-        # Parchment-warm background
-        pygame.draw.rect(self.screen, (24, 18, 8), (bx, by, bw, bh), border_radius=10)
-        pygame.draw.rect(self.screen, (160, 130, 60), (bx, by, bw, bh), 2, border_radius=10)
-        pygame.draw.rect(self.screen, (80, 65, 25), (bx+4, by+4, bw-8, bh-8), 1, border_radius=8)
-
-        font_title = get_font('heading', 20)
-        font_body  = get_font('body', 19)
-        font_small = get_font('body', 16)
-
-        # Chain quality label
         quality_labels = {1: "Vague Recollection", 2: "Useful Memory",
                           3: "Clear Knowledge", 4: "Deep Lore", 5: "Ancient Wisdom"}
         label = quality_labels.get(chain, "Lore")
-        stars = '[*] ' * chain + '[ ] ' * (5 - chain)
 
-        title_surf = font_title.render(f"RECALL LORE  --  {label}", True, (220, 180, 80))
-        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 14))
-
-        stars_surf = font_small.render(stars, True, (200, 160, 60))
-        self.screen.blit(stars_surf, (bx + (bw - stars_surf.get_width()) // 2, by + 40))
-
-        pygame.draw.line(self.screen, (100, 80, 30),
-                         (bx + 30, by + 62), (bx + bw - 30, by + 62))
-
-        # Wrap hint text
-        words = hint_text.split()
-        lines, line = [], []
-        max_w = bw - 60
-        for word in words:
-            test = ' '.join(line + [word])
-            if font_body.size(test)[0] > max_w:
-                if line:
-                    lines.append(' '.join(line))
-                line = [word]
-            else:
-                line.append(word)
-        if line:
-            lines.append(' '.join(line))
-
-        y = by + 78
-        for ln in lines:
-            surf = font_body.render(ln, True, (230, 210, 160))
-            self.screen.blit(surf, (bx + 30, y))
-            y += font_body.get_height() + 4
-
-        # Cooldown notice
         cd = self.player.recall_lore_cooldown
-        cd_surf = font_small.render(
-            f"Next recall available in {cd} turns  --  [ any key ] to close",
-            True, (100, 85, 45)
-        )
-        self.screen.blit(cd_surf, (bx + (bw - cd_surf.get_width()) // 2, by + bh - 26))
+        cd_msg = f"Next recall in {cd} turns   --   any key to close"
+
+        p = PanelBuilder(self.screen, size=SIZE_MD,
+                         border_color=FP.LORE_GOLD_BORDER, max_height=320)
+        p.set_title(f"RECALL LORE  --  {label}",
+                    font=get_font('heading', 22))
+        p.set_footer_hint(cd_msg)
+        body = p.body_rect()
+
+        # Chain stars row centered just below the header
+        stars = '★ ' * chain + '☆ ' * (5 - chain)
+        star_font = get_font('body', 16)
+        stars_surf = star_font.render(stars.strip(), True, FP.LORE_GOLD_STAT)
+        sx = body.x + (body.w - stars_surf.get_width()) // 2
+        self.screen.blit(stars_surf, (sx, body.y))
+
+        # Wrap and render the hint body
+        body_font = get_font('body', 18)
+        text_top = body.y + 28
+        text_w = body.w - 12
+        lines = wrap_lines(hint_text, text_w, body_font)
+        line_h = body_font.get_height() + 4
+        y = text_top
+        for ln in lines:
+            surf = body_font.render(ln, True, FP.LORE_GOLD_BODY)
+            self.screen.blit(surf, (body.x + 6, y))
+            y += line_h
+
+        p.draw()
 
     def _draw_debug_overlay(self):
         """Transparent debug HUD showing spawn/balance data for playtesting."""

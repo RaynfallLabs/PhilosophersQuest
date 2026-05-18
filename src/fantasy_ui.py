@@ -19,6 +19,38 @@ from paths import data_path
 # -----------------------------------------------------------------------------
 # FANTASY PALETTE  (FP namespace -- "Fantasy Palette")
 # -----------------------------------------------------------------------------
+#
+# DESIGN-SYSTEM USAGE RULES (enforced by code review; the catalog at
+# tools/audit/deliverables/beauty_screen_catalog.md identifies offenders).
+#
+#   * Never write raw (R, G, B) literals in render code outside this file.
+#     Add a named constant here and reference it. The catalog calls this
+#     'beauty-palette-bypass' and lists ~50 places it happens.
+#
+#   * Body text on any midnight panel  -> FP.BODY_TEXT
+#     Faded / secondary body text      -> FP.FADED_TEXT
+#     Accented labels                  -> FP.ACCENT_TEXT
+#     "Press X to close" footer hint   -> FP.HINT_TEXT (mandatory)
+#     "Press X" hint that needs to    -> FP.HINT_TEXT_DIM
+#       sit quieter (e.g. on dense
+#       lore screens where the hint
+#       competes with body text)
+#
+#   * Panel borders:
+#       generic modal      -> FP.GOLD
+#       arcane / magic     -> FP.ARCANE_BRIGHT  (wand, spell, scroll, identify)
+#       success outcome    -> FP.SUCCESS_TEXT   (eat menu)
+#       danger / death     -> FP.BLOOD / FP.BURGUNDY_MID
+#       lore display       -> FP.LORE_GOLD (corpse) / FP.LORE_BLUE (item)
+#
+#   * Status / damage tags follow the MessageLog mapping in ui.py:
+#       'info'    -> BODY_TEXT
+#       'success' -> SUCCESS_TEXT
+#       'warning' -> WARNING_TEXT
+#       'danger'  -> DANGER_TEXT
+#       'loot'    -> LOOT_TEXT
+#     Use these tags via add_message(); do not pick the color directly.
+#
 class FP:
     """# FANTASY: Antique gold / aged parchment / midnight blue / burgundy palette."""
 
@@ -70,10 +102,28 @@ class FP:
     FADED_TEXT      = (165, 155, 185)   # disabled / secondary text -- lavender-grey, ~6:1 on midnight
     ACCENT_TEXT     = GOLD_PALE         # accented label text
     HINT_TEXT       = (170, 165, 215)   # keyboard hint text -- boosted blue-lavender, ~7:1 on midnight
+    HINT_TEXT_DIM   = (118, 113, 158)   # dimmer hint variant for dense content screens (~4.5:1)
     DANGER_TEXT     = BLOOD
     SUCCESS_TEXT    = (110, 220, 100)
     WARNING_TEXT    = (220, 185,  45)
     LOOT_TEXT       = GOLD_BRIGHT
+
+    # Lore display palettes (used by encyclopedia detail, _draw_lore_screen,
+    # _draw_hint_screen). Two families: warm-gold for corpse/biology lore,
+    # cool-blue for item/artifact lore. Both were inline RGB before the
+    # design-system pass; centralizing them here so refactor in one place
+    # propagates everywhere.
+    LORE_GOLD_BORDER = (160, 120,  40)
+    LORE_GOLD_INNER  = ( 80,  62,  20)
+    LORE_GOLD_TITLE  = (220, 180,  80)
+    LORE_GOLD_STAT   = (200, 170,  90)
+    LORE_GOLD_BODY   = (230, 215, 180)
+
+    LORE_BLUE_BORDER = ( 80, 120, 200)
+    LORE_BLUE_INNER  = ( 40,  60, 110)
+    LORE_BLUE_TITLE  = (140, 175, 240)
+    LORE_BLUE_STAT   = (150, 175, 215)
+    LORE_BLUE_BODY   = (200, 215, 240)
 
     # Subject accent mapping (mirrors _SUBJECT_COLOR in main.py but richer)
     SUBJECT = {
@@ -96,10 +146,12 @@ class FP:
 _FONT_DIR = data_path('assets', 'fonts')
 
 # # FANTASY: TTF filenames expected in assets/fonts/
-# Download links listed in ASSETS.md
+# All shipped from Google Fonts (OFL-licensed). Cinzel is now distributed as a
+# single variable-weight TTF — pygame's synthetic-bold flag handles the title
+# role's bold rendering off the same file.
 _ROLE_FILES = {
-    'title':   'Cinzel-Bold.ttf',
-    'heading': 'Cinzel-Regular.ttf',
+    'title':   'Cinzel-Variable.ttf',
+    'heading': 'Cinzel-Variable.ttf',
     'body':    'IMFellEnglish-Regular.ttf',
     'small':   'IMFellEnglish-Regular.ttf',
     'gothic':  'UnifrakturMaguntia.ttf',
@@ -136,11 +188,15 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
         # Use Consolas for all body/small roles -- crisp and highly readable
         font = pygame.font.SysFont('consolas,courier new,monospace', size, bold=bold)
     else:
-        fname = _ROLE_FILES.get(role, 'Cinzel-Regular.ttf')
+        fname = _ROLE_FILES.get(role, 'Cinzel-Variable.ttf')
         path  = os.path.join(_FONT_DIR, fname)
         if os.path.exists(path):
             try:
                 font = pygame.font.Font(path, size)
+                # Title role is implicitly bold; heading is regular weight.
+                # Synthetic bold via pygame works on variable fonts too.
+                if role == 'title' or bold:
+                    font.bold = True
             except Exception:
                 font = pygame.font.SysFont(_FALLBACK_FAMILIES, size, bold=bold)
         else:
