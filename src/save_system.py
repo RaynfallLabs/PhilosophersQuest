@@ -57,6 +57,7 @@ def save_game(game) -> bool:
             # Ascent / Death Pursuer state
             'death_pursues': getattr(game, 'death_pursues', False),
             'death_monster': getattr(game, 'death_monster', None),
+            '_secret_victory': getattr(game, '_secret_victory', False),
             # Deep-lore item spawn tracking
             '_lore_levels': getattr(game, '_lore_levels', {}),
             '_lore_placed': getattr(game, '_lore_placed', set()),

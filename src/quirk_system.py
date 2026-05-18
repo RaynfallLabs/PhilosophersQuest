@@ -142,16 +142,18 @@ class QuirkSystem:
             self._pl.unlocked_quirks = set()
         self._pl.unlocked_quirks.add(qid)
         apply_fn(self._pl)
-        self.game.add_message(f"TRAIT UNLOCKED: {name}", 'loot')
-        self.game.add_message(f"  Reward: {_QUIRK_EFFECTS.get(qid, '')}", 'success')
-        if hasattr(self.game, '_log_chronicle'):
-            self.game._log_chronicle(f"Something changed in me. Unlocked a new trait: {name}. I'm becoming something more.")
+        effect  = _QUIRK_EFFECTS.get(qid, '')
         trigger = _QUIRK_TRIGGER.get(qid, '')
         flavor  = _QUIRK_FLAVOR.get(qid, '')
-        if trigger:
-            self.game.add_message(f"  {trigger}", 'info')
-        if flavor:
-            self.game.add_message(f'  "{flavor}"', 'info')
+        # Message-log breadcrumb (so the player has a record after dismissal)
+        self.game.add_message(f"TRAIT UNLOCKED: {name}", 'loot')
+        self.game.add_message(f"  Reward: {effect}", 'success')
+        if hasattr(self.game, '_log_chronicle'):
+            self.game._log_chronicle(f"Something changed in me. Unlocked a new trait: {name}. I'm becoming something more.")
+        # Ceremonial unlock popup — pauses the game until dismissed so the
+        # moment lands rather than scrolling past in combat.
+        if hasattr(self.game, '_show_quirk_unlock_popup'):
+            self.game._show_quirk_unlock_popup(name, effect, trigger, flavor)
 
     def _timer_bonus(self, subject: str, amount: int):
         def _apply(pl):
@@ -192,14 +194,13 @@ class QuirkSystem:
             pl.power_uses[qid] = pdef['uses']
         if pdef.get('cooldown', 0) > 0:
             pl.power_cooldowns[qid] = 0  # ready immediately
-        self.game.add_message(f"POWER UNLOCKED: {name}", 'loot')
-        self.game.add_message(f"  Effect: {_QUIRK_EFFECTS.get(qid, '')}", 'success')
+        effect  = _QUIRK_EFFECTS.get(qid, '')
         trigger = _QUIRK_TRIGGER.get(qid, '')
         flavor  = _QUIRK_FLAVOR.get(qid, '')
-        if trigger:
-            self.game.add_message(f"  {trigger}", 'info')
-        if flavor:
-            self.game.add_message(f'  "{flavor}"', 'info')
+        self.game.add_message(f"POWER UNLOCKED: {name}", 'loot')
+        self.game.add_message(f"  Effect: {effect}", 'success')
+        if hasattr(self.game, '_show_quirk_unlock_popup'):
+            self.game._show_quirk_unlock_popup(name, effect, trigger, flavor)
 
     def tick_powers(self):
         """Decrement all active power cooldowns by 1 each turn."""

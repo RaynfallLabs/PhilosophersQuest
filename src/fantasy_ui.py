@@ -125,6 +125,12 @@ class FP:
     LORE_BLUE_STAT   = (150, 175, 215)
     LORE_BLUE_BODY   = (200, 215, 240)
 
+    # Accent text colors — used by the character sheet and other detail
+    # readouts. CYAN_ACCENT lands lighter / cooler than LORE_BLUE_BODY;
+    # ARCANE_ACCENT is a pale arcane purple readable on midnight bg.
+    CYAN_ACCENT      = (120, 210, 240)
+    ARCANE_ACCENT    = (200, 170, 255)
+
     # Subject accent mapping (mirrors _SUBJECT_COLOR in main.py but richer)
     SUBJECT = {
         'math':       ( 40, 210, 245),
@@ -603,7 +609,7 @@ ITEM_COLOR = {
 # -----------------------------------------------------------------------------
 
 def draw_choice_button(surf: pygame.Surface, rect: tuple,
-                       key_label: str, text: str,
+                       key_label: str, text: str | list[str],
                        key_font: pygame.font.Font,
                        text_font: pygame.font.Font,
                        selected: bool = False,
@@ -612,6 +618,8 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     """
     # FANTASY: Ornate answer-choice button for the quiz modal.
     rect = (x, y, w, h)
+    text: single string or pre-wrapped list[str] of lines (multi-line is
+          vertically centered as a block).
     """
     x, y, w, h = rect
 
@@ -635,8 +643,11 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
 
     pygame.draw.rect(surf, border_col, (x, y, w, h), 1, border_radius=3)
 
-    # Key badge (left side)
-    badge_w = 40
+    # Inner double-stroke for grimoire flavor (matches draw_dark_panel pattern)
+    pygame.draw.rect(surf, FP.GOLD_DARK, (x + 3, y + 3, w - 6, h - 6), 1, border_radius=2)
+
+    # Key badge (left side) — bigger rune-stone block
+    badge_w = 44
     badge_s = pygame.Surface((badge_w, h), pygame.SRCALPHA)
     badge_s.fill((*FP.MIDNIGHT_MID, 200))
     surf.blit(badge_s, (x, y))
@@ -646,11 +657,20 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     surf.blit(k_surf, (x + badge_w//2 - k_surf.get_width()//2,
                        y + h//2 - k_surf.get_height()//2))
 
-    # Choice text
+    # Choice text — single string or pre-wrapped list
     t_color = FP.PARCHMENT_LIGHT if not (correct or incorrect) else border_col
-    t_surf = text_font.render(text, True, t_color)
-    surf.blit(t_surf, (x + badge_w + 10,
-                       y + h//2 - t_surf.get_height()//2))
+    if isinstance(text, list):
+        lines = text or ['']
+    else:
+        lines = [text]
+    line_h = text_font.get_height() + 3
+    block_h = len(lines) * line_h
+    ty = y + (h - block_h) // 2
+    tx = x + badge_w + 10
+    for line in lines:
+        t_surf = text_font.render(line, True, t_color)
+        surf.blit(t_surf, (tx, ty))
+        ty += line_h
 
 
 # =============================================================================

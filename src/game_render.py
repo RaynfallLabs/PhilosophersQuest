@@ -468,8 +468,8 @@ class RenderMixin:
         DIM    = FP.FADED_TEXT
         GREEN  = FP.SUCCESS_TEXT
         RED    = FP.DANGER_TEXT
-        CYAN   = (120, 210, 240)
-        PURPLE = (200, 170, 255)
+        CYAN   = FP.CYAN_ACCENT
+        PURPLE = FP.ARCANE_ACCENT
 
         # --- Stats ---
         lines.append(("PRIMARY STATS", GOLD, font_head, True))
@@ -998,6 +998,13 @@ class RenderMixin:
         self.renderer.draw_player(self.player, cam_x, cam_y, sprite_name=_pspr)
         self.screen.set_clip(None)
 
+        # Death-chase atmosphere — soft red vignette + pulsing edge glow
+        # whenever Death is on the player's tail (audit: beauty-death-chase-
+        # invisible). Subtle by design — should feel like dread, not like
+        # the screen is broken.
+        if self.death_pursues and self.death_monster is not None:
+            self._draw_death_chase_atmosphere()
+
         self.msg_log.draw(self.screen, 0, layout.GAME_H, layout.GAME_W, layout.MSG_H)
         self.sidebar.draw(self.player, self.dungeon_level, self.turn_count, self.player_gold)
 
@@ -1476,7 +1483,8 @@ class RenderMixin:
         # Thin separator
         pygame.draw.line(self.screen, accent_dim, (bx + PAD, qy - 4), (bx + bw - PAD, qy - 4))
 
-        # -- Choice cards (2 x 2 grid) ---------------------------------
+        # -- Choice cards (2 x 2 grid) — grimoire chrome via draw_choice_button --
+        from fantasy_ui import draw_choice_button
         correct_str = str(qe.current_question.get('answer', '')).strip().lower()
         selected    = qe.last_answer.strip().lower()
         in_result   = (qe.state == QuizState.RESULT)
@@ -1491,62 +1499,75 @@ class RenderMixin:
             is_correct  = c_lower == correct_str
             is_selected = bool(selected) and c_lower == selected
 
-            if in_result:
-                if is_correct:
-                    bg_c, bdr_c = (8, 52, 8),    accent if qe.last_correct else (50, 200, 50)
-                elif is_selected:
-                    bg_c, bdr_c = (62, 8, 8),    (200, 50, 50)
-                else:
-                    bg_c, bdr_c = (14, 12, 30),  (40, 35, 70)
-            else:
-                bg_c, bdr_c = (18, 14, 38), (60, 50, 100)
+            # In result phase: mark the right answer green, mark the player's
+            # wrong pick red. Mid-question: highlight only if pressed (rare —
+            # answers are usually atomic key-presses).
+            mark_correct   = in_result and is_correct
+            mark_incorrect = in_result and is_selected and not is_correct
 
-            # Card shadow
-            pygame.draw.rect(self.screen, (0, 0, 0),
-                             (cx_ + 3, cy_ + 3, cw, ch_height), border_radius=7)
-            # Card background
-            pygame.draw.rect(self.screen, bg_c, (cx_, cy_, cw, ch_height), border_radius=7)
-            # Card border
-            pygame.draw.rect(self.screen, bdr_c, (cx_, cy_, cw, ch_height), 2, border_radius=7)
-            # Inner bevel (top/left highlight)
-            bevel = tuple(min(255, v + 40) for v in bdr_c)
-            pygame.draw.line(self.screen, bevel, (cx_+2, cy_+1), (cx_+cw-3, cy_+1))
-            pygame.draw.line(self.screen, bevel, (cx_+1, cy_+2), (cx_+1, cy_+ch_height-3))
-
-            # Key hint -- rune-stone style
-            key_label = f"[{i+1}]"
-            key_surf  = self.font_md.render(key_label, True, accent if not in_result else (100, 100, 100))
-            self.screen.blit(key_surf, (cx_ + 10,
-                                         cy_ + (ch_height - key_surf.get_height()) // 2))
-
-            # Choice text (wrapped)
-            text_color = (
-                (120, 255, 120) if in_result and is_correct  else
-                (255, 100, 100) if in_result and is_selected else
-                (220, 215, 200)
+            draw_choice_button(
+                self.screen, (cx_, cy_, cw, ch_height),
+                key_label=str(i + 1),
+                text=wrapped_lines,
+                key_font=self.font_md,
+                text_font=c_font,
+                selected=is_selected and not in_result,
+                correct=mark_correct or None,
+                incorrect=mark_incorrect or None,
             )
-            text_x = cx_ + KEY_W
-            text_y = cy_ + (ch_height - len(wrapped_lines) * c_line_h) // 2
-            for line in wrapped_lines:
-                ls = c_font.render(line, True, text_color)
-                self.screen.blit(ls, (text_x, text_y))
-                text_y += c_line_h
 
         # -- Status / feedback bar -------------------------------------
         status_y = qy + 2 * (ch_height + GAP) + SECTION_GAP
 
         if in_result:
             fb_text  = "*  CORRECT!" if qe.last_correct else "*  WRONG!"
-            fb_color = (80, 255, 100) if qe.last_correct else (255, 80, 80)
+            fb_color = FP.SUCCESS_TEXT if qe.last_correct else FP.DANGER_TEXT
             fb_surf  = self.font_lg.render(fb_text, True, fb_color)
             self.screen.blit(fb_surf, (bx + (bw - fb_surf.get_width()) // 2, status_y))
         elif qe.state == QuizState.ASKING:
-            hint = self.font_sm.render("Press  1  2  3  4  to answer", True, (90, 85, 130))
+            hint = self.font_sm.render("Press  1  2  3  4  to answer", True, FP.HINT_TEXT)
             self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + 10))
 
         # -- Combat HUD ------------------------------------------------
         if is_combat:
             self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
+
+    def _draw_death_chase_atmosphere(self):
+        """Faint red vignette + edge glow when Death is in pursuit.
+
+        Intensity scales with proximity: barely visible at 8+ tiles,
+        unmistakable when Death is on top of you. Stays away from the
+        message log and sidebar so combat readouts stay legible.
+        """
+        dm = self.death_monster
+        if dm is None:
+            return
+        dist = abs(dm.x - self.player.x) + abs(dm.y - self.player.y)
+        # Falloff: 1.0 at distance 0, ~0.1 at distance 10, ~0 beyond
+        proximity = max(0.0, 1.0 - dist / 12.0)
+        if proximity <= 0.05:
+            return
+
+        # Heartbeat pulse — a quarter beat per turn so it ticks visibly
+        # without being epileptic
+        pulse = 0.65 + 0.35 * math.sin(pygame.time.get_ticks() * 0.0045)
+        alpha = int(80 * proximity * pulse)
+        if alpha < 4:
+            return
+
+        # Vignette only over the game viewport (skip sidebar + msg log)
+        gw = layout.GAME_W
+        gh = layout.GAME_H
+        vig = pygame.Surface((gw, gh), pygame.SRCALPHA)
+        # Edge glow — strong on the rim, none in the middle
+        steps = 24
+        for step in range(steps):
+            ratio = step / steps
+            inset = int(ratio * min(gw, gh) * 0.35)
+            edge_alpha = int(alpha * (1 - ratio) ** 1.6)
+            pygame.draw.rect(vig, (*FP.BLOOD, edge_alpha),
+                             (inset, inset, gw - 2 * inset, gh - 2 * inset), 2)
+        self.screen.blit(vig, (0, 0))
 
     def _draw_celebration(self):
         """MAX CHAIN celebration — full-screen grimoire moment.
@@ -1613,27 +1634,27 @@ class RenderMixin:
         lx       = bx + 22
         hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
         hp_color = (
-            (40, 200, 60)  if hp_ratio > 0.50 else
-            (210, 160, 40) if hp_ratio > 0.25 else
-            (210, 50,  50)
+            FP.SUCCESS_TEXT if hp_ratio > 0.50 else
+            FP.WARNING_TEXT if hp_ratio > 0.25 else
+            FP.DANGER_TEXT
         )
         name_surf = self.font_sm.render(
             f"{monster.name.upper()}   {monster.hp}/{monster.max_hp} HP",
-            True, (220, 185, 140)
+            True, FP.GOLD_PALE
         )
         self.screen.blit(name_surf, (lx, sy))
 
         hb_y, hb_w = sy + 18, 260
-        pygame.draw.rect(self.screen, (30, 10, 10), (lx, hb_y, hb_w, 12), border_radius=4)
+        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (lx, hb_y, hb_w, 12), border_radius=4)
         if hp_ratio > 0:
             pygame.draw.rect(self.screen, hp_color,
                              (lx, hb_y, max(3, int(hb_w * hp_ratio)), 12), border_radius=4)
-        pygame.draw.rect(self.screen, (60, 40, 40), (lx, hb_y, hb_w, 12), 1, border_radius=4)
+        pygame.draw.rect(self.screen, FP.BURGUNDY, (lx, hb_y, hb_w, 12), 1, border_radius=4)
 
         effects = [e for e, v in monster.status_effects.items() if v > 0]
         if effects:
             eff = self.font_sm.render("  ".join(f"[{e}]" for e in effects[:5]),
-                                       True, (220, 220, 60))
+                                       True, FP.WARNING_TEXT)
             self.screen.blit(eff, (lx, hb_y + 16))
 
         # -- Right: damage preview + weapon ---------------------------
@@ -1645,11 +1666,11 @@ class RenderMixin:
         dm      = _damage_multiplier(dtypes, monster)
 
         if dm >= 1.5:
-            dm_text, dm_col = "WEAKNESS!", (60, 255, 80)
+            dm_text, dm_col = "WEAKNESS!", FP.SUCCESS_TEXT
         elif dm <= 0.5:
-            dm_text, dm_col = "RESISTED",  (255, 80, 80)
+            dm_text, dm_col = "RESISTED",  FP.DANGER_TEXT
         else:
-            dm_text, dm_col = "/".join(dtypes).upper(), (160, 160, 200)
+            dm_text, dm_col = "/".join(dtypes).upper(), FP.FADED_TEXT
         self.screen.blit(self.font_sm.render(dm_text, True, dm_col), (rx, sy))
 
         # Chain table: colour each step by heat (low->high damage)
@@ -1675,7 +1696,7 @@ class RenderMixin:
 
         w_name = weapon.name if weapon else "bare hands"
         self.screen.blit(
-            self.font_sm.render(f"{w_name}", True, (150, 145, 185)), (rx, sy + 52)
+            self.font_sm.render(f"{w_name}", True, FP.FADED_TEXT), (rx, sy + 52)
         )
 
     def _draw_equip_menu(self):
@@ -3291,26 +3312,63 @@ class RenderMixin:
         self.screen.blit(prompt, (px_, by + bh - 26))
 
     def _draw_victory_screen(self):
-        # FANTASY: Illuminated manuscript victory screen
-        draw_overlay(self.screen, 190, (12, 10, 0))
+        """Victory screen — branches on `_secret_victory` to render the
+        distinct Abyss-victory variant (arcane purple, "DEATH IS DEAD"
+        headline) when the player triggered the secret ending.
+        """
+        is_secret = bool(getattr(self, '_secret_victory', False))
+
+        if is_secret:
+            # Arcane-purple Abyss palette — distinct from the gold Stone-exit
+            # victory, but stays within Christian-Crusader framing (Michael's
+            # judgment of Death, per Revelation).
+            overlay_col = (16, 6, 24)
+            ring_outer  = (*FP.ARCANE_DIM, 150)
+            ring_inner  = (*FP.ARCANE_BRIGHT, 110)
+            candle_int  = 0.6
+            fil_strong  = FP.ARCANE_BRIGHT
+            fil_subtle  = FP.ARCANE
+            title_text  = "DEATH IS DEAD"
+            sub_text    = "The Abyss has closed beneath you."
+            title_col   = FP.ARCANE_BRIGHT
+            sub_col     = FP.PARCHMENT_LIGHT
+            glow_col    = (255, 200, 255)
+        else:
+            overlay_col = (12, 10, 0)
+            ring_outer  = (*FP.GOLD_DARK, 120)
+            ring_inner  = (*FP.GOLD, 90)
+            candle_int  = 0.9
+            fil_strong  = FP.GOLD
+            fil_subtle  = FP.GOLD_DARK
+            title_text  = "VICTORY!"
+            sub_text    = "You retrieved the Philosopher's Stone!"
+            title_col   = FP.GOLD_BRIGHT
+            sub_col     = FP.PARCHMENT_LIGHT
+            glow_col    = None
+
+        draw_overlay(self.screen, 190, overlay_col)
         score = self._calc_score()
         grade, grade_col = self._get_grade(score)
         cx    = layout.GAME_W // 2
         cy    = layout.WINDOW_H // 2
 
-        # FANTASY: Animated rune circles
+        # Animated rune circles (counter-rotating)
         t = pygame.time.get_ticks() / 1000.0
-        draw_rune_circle(self.screen, cx, cy, 280, (*FP.GOLD_DARK, 120), t, 16)
-        draw_rune_circle(self.screen, cx, cy, 190, (*FP.GOLD, 90),       -t * 1.3, 10)
-        draw_candle_glow(self.screen, cx, cy, 0.9)
+        draw_rune_circle(self.screen, cx, cy, 280, ring_outer, t, 16)
+        draw_rune_circle(self.screen, cx, cy, 190, ring_inner, -t * 1.3, 10)
+        draw_candle_glow(self.screen, cx, cy, candle_int)
 
-        # Title
-        draw_filigree_bar(self.screen, cx - 320, cy - 152, 640, FP.GOLD)
-        centered_text(self.screen, self.font_xl, "VICTORY!", FP.GOLD_BRIGHT, cy - 192, shadow=True)
-        draw_glow_text(self.screen, self.font_lg,
-                       "You retrieved the Philosopher's Stone!",
-                       FP.PARCHMENT_LIGHT, (cx - 320, cy - 152))
-        draw_filigree_bar(self.screen, cx - 320, cy - 122, 640, FP.GOLD_DARK)
+        # Title block
+        draw_filigree_bar(self.screen, cx - 320, cy - 152, 640, fil_strong)
+        centered_text(self.screen, self.font_xl, title_text, title_col, cy - 192, shadow=True)
+        if is_secret and glow_col:
+            draw_glow_text(self.screen, self.font_lg, sub_text,
+                           sub_col, (cx - self.font_lg.size(sub_text)[0] // 2, cy - 152),
+                           glow_color=glow_col)
+        else:
+            draw_glow_text(self.screen, self.font_lg, sub_text,
+                           sub_col, (cx - 320, cy - 152))
+        draw_filigree_bar(self.screen, cx - 320, cy - 122, 640, fil_subtle)
 
         # Grade badge
         grade_surf = self.font_xl.render(grade, True, grade_col)
@@ -4120,7 +4178,10 @@ class RenderMixin:
             else:
                 lore_text = entry.get('lore', 'No further records found.')
 
-            stat_col = (180, 200, 230)
+            # Encyclopedia detail uses the same lore-blue palette as the
+            # _draw_lore_screen (item branch) — both live in FP now so a
+            # palette refactor propagates to both at once.
+            stat_col = FP.LORE_BLUE_STAT
             for line in stat_lines:
                 for wl in self._wrap_text(line, self.font_sm, bw - 44) or [line]:
                     surf = self.font_sm.render(wl, True, stat_col)
@@ -4128,9 +4189,10 @@ class RenderMixin:
                     y += 22
 
             y += 6
-            pygame.draw.line(self.screen, (40, 60, 120), (bx + 20, y), (bx + bw - 20, y))
+            pygame.draw.line(self.screen, FP.LORE_BLUE_INNER,
+                             (bx + 20, y), (bx + bw - 20, y))
             y += 12
-            lore_hdr = self.font_sm.render("-- LORE --", True, (80, 120, 200))
+            lore_hdr = self.font_sm.render("-- LORE --", True, FP.LORE_BLUE_BORDER)
             self.screen.blit(lore_hdr, (bx + (bw - lore_hdr.get_width()) // 2, y))
             y += 22
 
@@ -4138,7 +4200,8 @@ class RenderMixin:
             for line in lore_lines:
                 if y + self.font_sm.get_height() > by + bh - 40:
                     break
-                self.screen.blit(self.font_sm.render(line, True, (200, 215, 240)), (bx + 22, y))
+                self.screen.blit(self.font_sm.render(line, True, FP.LORE_BLUE_BODY),
+                                 (bx + 22, y))
                 y += self.font_sm.get_height() + 3
 
             hint_y = by + bh - 28

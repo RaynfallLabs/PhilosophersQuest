@@ -110,6 +110,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.dungeon_level      = 1
         self.death_pursues      = False   # True once player ascends L100 with Stone
         self.death_monster      = None    # DeathMonster instance, persists across floors
+        self._secret_victory    = False   # True after _trigger_abyss; drives the Abyss-distinct victory screen
         # Deep-lore item spawn levels (one item per range, chosen at game start)
         import random as _lore_rng
         self._lore_levels = {
@@ -434,6 +435,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Ascent / Death Pursuer state
         self.death_pursues = state.get('death_pursues', False)
         self.death_monster = state.get('death_monster', None)
+        self._secret_victory = state.get('_secret_victory', False)
         # Deep-lore item spawn tracking
         if '_lore_levels' in state:
             self._lore_levels = state['_lore_levels']
@@ -1550,6 +1552,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Destroy Death
         self.death_pursues = False
         self.death_monster = None
+        # Mark this run as the SECRET-victory path so the victory screen
+        # renders the Abyss-distinct variant (arcane purple, "DEATH IS DEAD"
+        # headline) instead of the standard gold "VICTORY!" screen.
+        self._secret_victory = True
         self._log_chronicle("I killed Death. The lake of fire opened beneath it and swallowed it whole. The silence afterwards was the loudest thing I've ever heard.")
 
         # Drop the sixth boss reward scroll
@@ -3947,6 +3953,36 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.popup_data       = data
         self.popup_next_state = next_state
         self.state            = STATE_STORY_POPUP
+
+    def _show_quirk_unlock_popup(self, name: str, effect: str,
+                                  trigger: str, flavor: str):
+        """A first-class unlock moment for a newly-earned quirk.
+
+        Reuses STATE_STORY_POPUP's chrome (overlay + dark panel + accent
+        title + filigree footer) so it feels like the same genre of
+        ceremonial moment as the boss-defeat / quest-completion popups,
+        rather than a message-log scroll-by. Per audit
+        beauty-quirk-unlock-no-moment.
+        """
+        lines = [
+            f'You have earned a new trait: "{name}".',
+            '',
+            f'Reward: {effect}',
+        ]
+        if trigger:
+            lines.append('')
+            lines.append(f'Earned by: {trigger}')
+        if flavor:
+            lines.append('')
+            lines.append(f'"{flavor}"')
+        self.popup_data = {
+            'title':  'TRAIT UNLOCKED',
+            'accent': (200, 170, 255),   # arcane lavender — matches the quirk theme
+            'lines':  lines,
+            'code':   None,
+        }
+        self.popup_next_state = self.state if self.state != STATE_STORY_POPUP else STATE_PLAYER
+        self.state = STATE_STORY_POPUP
 
 
     # ------------------------------------------------------------------

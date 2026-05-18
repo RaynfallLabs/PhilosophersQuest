@@ -120,13 +120,17 @@ class Sidebar:
     # ------------------------------------------------------------------
 
     def _header(self, text: str, y: int) -> int:
-        # FANTASY: Section header with midnight-mid bg and gold-bright text
-        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID,
-                         (self.x + self.PAD, y, self.w - self.PAD * 2, 24))
-        self.screen.blit(
-            self._fhd.render(text, True, FP.GOLD_BRIGHT),
-            (self.x + self.PAD + 3, y + 2)
-        )
+        """Section header — matches the panel-modal draw_header_bar vocabulary.
+
+        Two-tone midnight strip + gold accent line + side diamond ornaments.
+        Sidebar now reads as a sibling of every modal in the game, rather
+        than a lighter-weight cousin (per audit beauty-sidebar-status-flat).
+        """
+        from fantasy_ui import draw_header_bar
+        rect = (self.x + self.PAD, y, self.w - self.PAD * 2, 24)
+        draw_header_bar(self.screen, rect, text=text,
+                        font=self._fhd, text_color=FP.GOLD_BRIGHT,
+                        accent=FP.GOLD_DARK)
         return y + 26
 
     def _bar(self, y: int, label: str, val: int, max_val: int,
