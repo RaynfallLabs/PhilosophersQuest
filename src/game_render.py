@@ -51,67 +51,40 @@ from game_states import (
 
 class RenderMixin:
     def _draw_mystery_approach(self):
-        """Draw the mystery encounter overlay -- description, requirements, Y/N prompt."""
-        from fantasy_ui import get_font
+        """Draw the mystery encounter overlay -- through grimoire PanelBuilder."""
         altar = self._active_mystery_altar
         if altar is None:
             self.state = STATE_PLAYER
             return
 
         from mystery_system import MYSTERIES
+        from panel import PanelBuilder, SIZE_MD
+        from text_layout import wrap_lines
         m = MYSTERIES[altar.mystery_id]
 
-        # Semi-transparent background
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
-
-        bw, bh = 780, 320
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-
-        # Panel background
-        pygame.draw.rect(self.screen, (18, 12, 6), (bx, by, bw, bh), border_radius=10)
-        pygame.draw.rect(self.screen, altar.color, (bx, by, bw, bh), 2, border_radius=10)
-        pygame.draw.rect(self.screen, tuple(max(0, v - 80) for v in altar.color),
-                         (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=8)
-
-        font_title = get_font('heading', 22)
-        font_body  = get_font('body', 19)
-        font_small = get_font('body', 16)
-
-        # Title bar with symbol
         title_text = f"{altar.symbol}  {m['name'].upper()}  {altar.symbol}"
-        title_surf = font_title.render(title_text, True, altar.color)
-        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 16))
+        prompt = "[ Y / Enter ] Accept the challenge     [ N / Esc ] Leave"
 
-        pygame.draw.line(self.screen, tuple(max(0, v - 60) for v in altar.color),
-                         (bx + 30, by + 48), (bx + bw - 30, by + 48))
+        p = PanelBuilder(self.screen, size=SIZE_MD,
+                         border_color=altar.color, max_height=360)
+        p.set_title(title_text, font=get_font('heading', 22))
+        p.set_footer_hint(prompt)
+        body = p.body_rect()
+
+        font_body  = get_font('body', 18)
+        font_small = get_font('body', 16)
+        line_h_body  = font_body.get_height() + 3
+        line_h_small = font_small.get_height() + 3
 
         # Description (word-wrapped)
-        desc_text = m['description']
-        words = desc_text.split()
-        lines, line = [], []
-        max_w = bw - 70
-        for word in words:
-            test = ' '.join(line + [word])
-            if font_body.size(test)[0] > max_w:
-                if line:
-                    lines.append(' '.join(line))
-                line = [word]
-            else:
-                line.append(word)
-        if line:
-            lines.append(' '.join(line))
+        y = body.y
+        for ln in wrap_lines(m['description'], body.w - 8, font_body):
+            self.screen.blit(font_body.render(ln, True, FP.PARCHMENT_LIGHT),
+                             (body.x + 4, y))
+            y += line_h_body
 
-        y = by + 62
-        for ln in lines:
-            surf = font_body.render(ln, True, (230, 215, 180))
-            self.screen.blit(surf, (bx + 35, y))
-            y += font_body.get_height() + 3
-
-        # Requirements info
-        y += 8
+        # Requirements
+        y += line_h_small
         req_lines = []
         ch = m['challenge']
         if ch['mode'] == 'physical':
@@ -129,17 +102,12 @@ class RenderMixin:
             req_lines.append(f"Cost: {cost_desc}")
         if altar.mystery_id == 'cauldron':
             req_lines.append("Requires: 3 prepared meals in inventory")
-
         for rl in req_lines:
-            surf = font_small.render(rl, True, (180, 170, 130))
-            self.screen.blit(surf, (bx + 35, y))
-            y += font_small.get_height() + 3
+            self.screen.blit(font_small.render(rl, True, FP.FADED_TEXT),
+                             (body.x + 4, y))
+            y += line_h_small
 
-        # Prompt
-        prompt = "[ Y / Enter ] Accept the challenge     [ N / Esc ] Leave"
-        prompt_surf = font_small.render(prompt, True, (120, 180, 120))
-        self.screen.blit(prompt_surf,
-                         (bx + (bw - prompt_surf.get_width()) // 2, by + bh - 28))
+        p.draw()
 
     def _draw_page_indicator(self, items, bx, bw, y):
         """Show item count if list is long."""
@@ -394,50 +362,31 @@ class RenderMixin:
         self.screen.blit(close_surf, (bx + (bw - close_surf.get_width()) // 2, by + bh - 24))
 
     def _draw_quirks_screen(self):
-        from fantasy_ui import get_font
+        """Draw the quirks progress browser through grimoire PanelBuilder."""
+        from panel import PanelBuilder, SIZE_LG
+        from text_layout import wrap_lines
         data = getattr(self, '_quirks_data', [])
-        scroll = getattr(self, '_quirks_scroll', 0)
-
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
-
-        bw, bh = 900, 700
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-
-        # Panel background
-        pygame.draw.rect(self.screen, (16, 12, 24), (bx, by, bw, bh), border_radius=8)
-        pygame.draw.rect(self.screen, (140, 100, 200), (bx, by, bw, bh), 2, border_radius=8)
-        pygame.draw.rect(self.screen, (70, 50, 100), (bx+3, by+3, bw-6, bh-6), 1, border_radius=6)
-
-        font_title = get_font('heading', 20)
-        font_name  = get_font('body', 16)
-        font_small = get_font('body', 13)
 
         unlocked_count = sum(1 for _, _, _, u, _, _ in data if u)
-        title_surf = font_title.render(
-            f"QUIRKS  ({unlocked_count}/{len(data)} unlocked)", True, (200, 170, 255))
-        self.screen.blit(title_surf, (bx + (bw - title_surf.get_width()) // 2, by + 10))
+        title = f"QUIRKS  ({unlocked_count}/{len(data)} unlocked)"
 
-        pygame.draw.line(self.screen, (100, 70, 140),
-                         (bx + 20, by + 36), (bx + bw - 20, by + 36))
+        p = PanelBuilder(self.screen, size=SIZE_LG,
+                         border_color=FP.ARCANE_BRIGHT)
+        p.set_title(title, font=get_font('heading', 22))
+        p.set_footer_hint("Up/Down: scroll   PgUp/PgDn: jump   ESC: close")
+        body = p.body_rect()
 
-        # Calculate how many entries fit
-        # Unlocked entries: 3 lines (name+bar, effect, trigger) = ~48px
-        # Locked entries: 2 lines (name, bar) = ~32px
-        # Use fixed row height for scrolling simplicity
+        font_name  = get_font('body', 16)
+        font_small = get_font('body', 13)
         ROW_H_LOCKED = 30
-        content_top = by + 42
-        content_bot = by + bh - 28
 
-        # Clamp scroll
         max_scroll = max(0, len(data) - 1)
-        scroll = min(scroll, max_scroll)
+        scroll = min(getattr(self, '_quirks_scroll', 0), max_scroll)
         self._quirks_scroll = scroll
 
-        # Render entries
-        y = content_top
+        y = body.y
+        content_bot = body.bottom
+        wrap_w = body.w - 24
         for idx in range(scroll, len(data)):
             if y >= content_bot:
                 break
@@ -445,56 +394,48 @@ class RenderMixin:
             pct_int = int(pct * 100)
 
             if unlocked:
-                # Name in gold
-                name_surf = font_name.render(f"{name}", True, (255, 220, 100))
-                # Wrap reward and trigger lines
-                wrap_w = bw - 48
-                eff_lines = self._wrap_text(f"  Reward: {effect}", font_small, wrap_w)
-                trig_lines = self._wrap_text(f"  How: {trigger}", font_small, wrap_w)
+                eff_lines = wrap_lines(f"  Reward: {effect}", wrap_w, font_small)
+                trig_lines = wrap_lines(f"  How: {trigger}", wrap_w, font_small)
                 needed_h = 18 + len(eff_lines) * 16 + len(trig_lines) * 16 + 4
                 if y + needed_h > content_bot:
                     break
-                self.screen.blit(name_surf, (bx + 24, y))
-                # "UNLOCKED" badge
-                badge = font_small.render("UNLOCKED", True, (100, 255, 120))
-                self.screen.blit(badge, (bx + bw - 100, y + 2))
+                self.screen.blit(font_name.render(name, True, FP.GOLD_BRIGHT),
+                                 (body.x, y))
+                badge = font_small.render("UNLOCKED", True, FP.SUCCESS_TEXT)
+                self.screen.blit(badge, (body.right - badge.get_width(), y + 2))
                 y += 18
-                # Effect text (wrapped)
                 for el in eff_lines:
-                    self.screen.blit(font_small.render(el, True, (180, 220, 180)), (bx + 24, y))
+                    self.screen.blit(font_small.render(el, True, FP.PARCHMENT_LIGHT),
+                                     (body.x, y))
                     y += 16
-                # Trigger text (wrapped)
                 for tl in trig_lines:
-                    self.screen.blit(font_small.render(tl, True, (150, 150, 170)), (bx + 24, y))
+                    self.screen.blit(font_small.render(tl, True, FP.FADED_TEXT),
+                                     (body.x, y))
                     y += 16
                 y += 4
             else:
-                needed_h = ROW_H_LOCKED
-                if y + needed_h > content_bot:
+                if y + ROW_H_LOCKED > content_bot:
                     break
-                # Name in dim white
-                name_surf = font_name.render(self._fit_text(f"{name}", font_name, 650), True, (160, 150, 180))
-                self.screen.blit(name_surf, (bx + 24, y))
-                # Progress bar
-                bar_x = bx + bw - 220
-                bar_w = 150
-                bar_h = 10
+                from text_layout import truncate_label
+                trimmed = truncate_label(name, body.w - 220, font_name)
+                self.screen.blit(font_name.render(trimmed, True, FP.FADED_TEXT),
+                                 (body.x, y))
+                bar_x = body.right - 200
+                bar_w, bar_h = 150, 10
                 bar_y = y + 5
-                pygame.draw.rect(self.screen, (40, 30, 60), (bar_x, bar_y, bar_w, bar_h))
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, (bar_x, bar_y, bar_w, bar_h))
                 fill_w = int(bar_w * pct)
                 if fill_w > 0:
-                    bar_color = (140, 100, 200) if pct < 1.0 else (100, 255, 120)
-                    pygame.draw.rect(self.screen, bar_color, (bar_x, bar_y, fill_w, bar_h))
-                pygame.draw.rect(self.screen, (80, 60, 120), (bar_x, bar_y, bar_w, bar_h), 1)
-                # Percentage text
-                pct_surf = font_small.render(f"{pct_int}%", True, (120, 110, 150))
+                    bar_color = FP.ARCANE_BRIGHT if pct < 1.0 else FP.SUCCESS_TEXT
+                    pygame.draw.rect(self.screen, bar_color,
+                                     (bar_x, bar_y, fill_w, bar_h))
+                pygame.draw.rect(self.screen, FP.ARCANE_DIM,
+                                 (bar_x, bar_y, bar_w, bar_h), 1)
+                pct_surf = font_small.render(f"{pct_int}%", True, FP.FADED_TEXT)
                 self.screen.blit(pct_surf, (bar_x + bar_w + 6, y + 1))
                 y += ROW_H_LOCKED
 
-        # Footer
-        footer = font_small.render(
-            "Up/Down: scroll   PgUp/PgDn: jump   ESC: close", True, (90, 80, 120))
-        self.screen.blit(footer, (bx + (bw - footer.get_width()) // 2, by + bh - 22))
+        p.draw()
 
     def _draw_character_sheet(self):
         from fantasy_ui import FP, get_font
@@ -823,7 +764,7 @@ class RenderMixin:
             self._draw_npc_wordwrap(enc['text'], font, bx + 25, by + 54,
                                     max_w, (220, 210, 190), line_h=22)
             footer = font_sm.render("Press ENTER to continue",
-                                    True, (120, 120, 120))
+                                    True, FP.HINT_TEXT)
             self.screen.blit(footer,
                              (bx + (bw - footer.get_width()) // 2, by + bh - 35))
 
@@ -844,7 +785,7 @@ class RenderMixin:
                 y += 8
 
             footer = font_sm.render("Press 1-3 to choose, ESC to walk away",
-                                    True, (120, 120, 120))
+                                    True, FP.HINT_TEXT)
             self.screen.blit(footer,
                              (bx + (bw - footer.get_width()) // 2, by + bh - 35))
 
@@ -872,7 +813,7 @@ class RenderMixin:
                 self.screen.blit(scroll_hint, (bx + 30, y + 8))
 
             footer = font_sm.render("Press a-z to select, ESC to go back",
-                                    True, (120, 120, 120))
+                                    True, FP.HINT_TEXT)
             self.screen.blit(footer,
                              (bx + (bw - footer.get_width()) // 2, by + bh - 35))
 
@@ -881,7 +822,7 @@ class RenderMixin:
                                     bx + 25, by + 54, max_w,
                                     (220, 210, 190), line_h=22)
             footer = font_sm.render("Press ENTER to continue",
-                                    True, (120, 120, 120))
+                                    True, FP.HINT_TEXT)
             self.screen.blit(footer,
                              (bx + (bw - footer.get_width()) // 2, by + bh - 35))
 
@@ -979,7 +920,7 @@ class RenderMixin:
         # Footer
         y = by + bh - 35
         font_sm = get_font('body', 14)
-        footer = font_sm.render("Press ENTER to continue", True, (120, 120, 120))
+        footer = font_sm.render("Press ENTER to continue", True, FP.HINT_TEXT)
         self.screen.blit(footer, (bx + (bw - footer.get_width()) // 2, y))
 
     def render(self):
@@ -1611,34 +1552,51 @@ class RenderMixin:
             self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
 
     def _draw_celebration(self):
-        """Full-screen clean celebration screen for MAX CHAIN."""
+        """MAX CHAIN celebration — full-screen grimoire moment.
+
+        Joins the rune-circle + candle-glow family used by victory/death so
+        win moments share visual DNA. Pulsing intensity drives the rune
+        rotation speed and candle brightness.
+        """
+        from fantasy_ui import draw_rune_circle, draw_candle_glow, draw_glow_text, draw_filigree_bar
         qe    = self.quiz_engine
         t     = qe.celebration_timer
         pulse = abs(math.sin(t * 6))
 
-        # Pure black background -- quiz modal is gone
-        pygame.draw.rect(self.screen, (0, 0, 0), (0, 0, layout.WINDOW_W, layout.WINDOW_H))
+        # Warm overlay wash
+        draw_overlay(self.screen, alpha=int(180 + 30 * pulse), color=(40, 24, 0))
 
-        # Warm pulsing golden glow wash
-        glow_ov = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        glow_ov.fill((80, 55, 0, int(50 + 40 * pulse)))
-        self.screen.blit(glow_ov, (0, 0))
+        cx = layout.WINDOW_W // 2
+        cy = layout.WINDOW_H // 2
 
-        # Main "MAX CHAIN!" headline
+        # Counter-rotating gold rune circles + candle glow at center
+        draw_rune_circle(self.screen, cx, cy, 280,
+                         (*FP.GOLD, int(100 + 60 * pulse)),
+                         t * 1.5, 16)
+        draw_rune_circle(self.screen, cx, cy, 190,
+                         (*FP.GOLD_BRIGHT, int(80 + 60 * pulse)),
+                         -t * 2.0, 10)
+        draw_candle_glow(self.screen, cx, cy, intensity=0.8 + 0.4 * pulse)
+
+        # Filigree bars frame the headline
+        draw_filigree_bar(self.screen, cx - 320, cy - 88, 640, FP.GOLD)
+
+        # Headline
         cel_font = self.font_xl
-        glow_col = (255, int(200 + 55 * pulse), int(40 + 80 * pulse))
-        cel_surf = cel_font.render(qe.celebration_text, True, glow_col)
-        shadow   = cel_font.render(qe.celebration_text, True, (0, 0, 0))
-        cx = (layout.WINDOW_W - cel_surf.get_width())  // 2
-        cy = (layout.WINDOW_H - cel_surf.get_height()) // 2 - 40
-        self.screen.blit(shadow,   (cx + 5, cy + 5))
-        self.screen.blit(cel_surf, (cx, cy))
+        cel_text = qe.celebration_text
+        size = cel_font.size(cel_text)
+        hx = cx - size[0] // 2
+        hy = cy - size[1] // 2
+        draw_glow_text(self.screen, cel_font, cel_text,
+                       FP.GOLD_BRIGHT, (hx, hy),
+                       glow_color=(255, 230, 140), glow_r=4)
+
+        draw_filigree_bar(self.screen, cx - 320, cy + size[1] + 12, 640, FP.GOLD_DARK)
 
         # Sub-line
-        sub_surf = self.font_lg.render("PERFECT COMBO!", True, (180, 255, 180))
-        self.screen.blit(sub_surf,
-                         ((layout.WINDOW_W - sub_surf.get_width()) // 2,
-                          cy + cel_surf.get_height() + 14))
+        sub = self.font_lg.render("Perfect Combo!", True, FP.GOLD_PALE)
+        self.screen.blit(sub, (cx - sub.get_width() // 2,
+                               cy + size[1] + 24))
 
     def _draw_combat_hud(self, bx: int, strip_y: int, bw: int, accent=(80, 80, 180)):
         """Draw monster HP bar + chain damage preview inside the quiz modal."""
@@ -1878,8 +1836,8 @@ class RenderMixin:
             self.screen.blit(txt, (x, y + 10))
             return
 
-        # Column layout per slug
-        cols = self._kit_columns(slug)
+        # Column layout per slug (responsive to body width)
+        cols = self._kit_columns(slug, w)
         line_h = 24
         max_visible = max(1, (h - 28) // line_h)
         scroll = max(0, min(getattr(self, '_kit_scroll', 0),
@@ -1919,59 +1877,69 @@ class RenderMixin:
                 True, FP.FADED_TEXT)
             self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
 
-    def _kit_columns(self, slug: str):
-        """Return list of (label, width_px, alignment) for the given tab."""
+    def _kit_columns(self, slug: str, body_w: int):
+        """Compute per-tab column layout, fit to the available `body_w`.
+
+        Returns a list of (label, width_px, align) tuples sized so the row
+        does not overflow the panel at any viewport. Uses text_layout.Column
+        (min_w + flex weight); the elastic last column (Special / Resists /
+        Effect) gets the leftover space.
+        """
+        from text_layout import Column, fit_columns
         if slug == 'weapons':
-            return [
-                ('Name',       310, 'left'),
-                ('Src',         38, 'left'),
-                ('Dmg',         70, 'right'),
-                ('Avg',         54, 'right'),
-                ('Material',    96, 'left'),
-                ('BUC',         70, 'left'),
-                ('Wt',          40, 'right'),
-                ('Special',    260, 'left'),
+            cols = [
+                Column('Name',     220, flex=2, align='left'),
+                Column('Src',       36, flex=0, align='left'),
+                Column('Dmg',       66, flex=0, align='right'),
+                Column('Avg',       50, flex=0, align='right'),
+                Column('Material',  90, flex=0, align='left'),
+                Column('BUC',       64, flex=0, align='left'),
+                Column('Wt',        36, flex=0, align='right'),
+                Column('Special',  160, flex=3, align='left'),
             ]
-        if slug == 'armor':
-            return [
-                ('Name',       310, 'left'),
-                ('Src',         38, 'left'),
-                ('Slot',        90, 'left'),
-                ('AC',          46, 'right'),
-                ('Material',    96, 'left'),
-                ('BUC',         70, 'left'),
-                ('Wt',          40, 'right'),
-                ('Resists',    250, 'left'),
+        elif slug == 'armor':
+            cols = [
+                Column('Name',     220, flex=2, align='left'),
+                Column('Src',       36, flex=0, align='left'),
+                Column('Slot',      84, flex=0, align='left'),
+                Column('AC',        42, flex=0, align='right'),
+                Column('Material',  90, flex=0, align='left'),
+                Column('BUC',       64, flex=0, align='left'),
+                Column('Wt',        36, flex=0, align='right'),
+                Column('Resists',  140, flex=3, align='left'),
             ]
-        if slug == 'shields':
-            return [
-                ('Name',       310, 'left'),
-                ('Src',         38, 'left'),
-                ('AC',          46, 'right'),
-                ('Material',    96, 'left'),
-                ('BUC',         70, 'left'),
-                ('Wt',          40, 'right'),
-                ('Resists',    330, 'left'),
+        elif slug == 'shields':
+            cols = [
+                Column('Name',     220, flex=2, align='left'),
+                Column('Src',       36, flex=0, align='left'),
+                Column('AC',        42, flex=0, align='right'),
+                Column('Material',  90, flex=0, align='left'),
+                Column('BUC',       64, flex=0, align='left'),
+                Column('Wt',        36, flex=0, align='right'),
+                Column('Resists',  160, flex=3, align='left'),
             ]
-        if slug == 'accessories':
-            return [
-                ('Name',       310, 'left'),
-                ('Src',         38, 'left'),
-                ('Slot',        90, 'left'),
-                ('BUC',         70, 'left'),
-                ('Wt',          40, 'right'),
-                ('Effect',     400, 'left'),
+        elif slug == 'accessories':
+            cols = [
+                Column('Name',     220, flex=2, align='left'),
+                Column('Src',       36, flex=0, align='left'),
+                Column('Slot',      84, flex=0, align='left'),
+                Column('BUC',       64, flex=0, align='left'),
+                Column('Wt',        36, flex=0, align='right'),
+                Column('Effect',   240, flex=3, align='left'),
             ]
-        if slug == 'consumables':
-            return [
-                ('Name',       310, 'left'),
-                ('Src',         38, 'left'),
-                ('Type',        90, 'left'),
-                ('BUC',         70, 'left'),
-                ('Wt',          40, 'right'),
-                ('Effect',     400, 'left'),
+        elif slug == 'consumables':
+            cols = [
+                Column('Name',     220, flex=2, align='left'),
+                Column('Src',       36, flex=0, align='left'),
+                Column('Type',      84, flex=0, align='left'),
+                Column('BUC',       64, flex=0, align='left'),
+                Column('Wt',        36, flex=0, align='right'),
+                Column('Effect',   240, flex=3, align='left'),
             ]
-        return []
+        else:
+            return []
+        widths = fit_columns(cols, body_w)
+        return [(c.label, w, c.align) for c, w in zip(cols, widths)]
 
     def _kit_cells_for_item(self, slug: str, src: str, item) -> list[str]:
         """Return list of cell strings matching _kit_columns(slug)."""
@@ -4008,28 +3976,40 @@ class RenderMixin:
         )
 
     def _draw_shop(self):
-        """Draw the merchant shop overlay."""
-        from fantasy_ui import draw_overlay, draw_filigree_bar, centered_text, FP
+        """Draw the merchant shop overlay through grimoire PanelBuilder.
+
+        Frame: standard dark-panel chrome with filigree bars under the title
+        (keeps the "merchant tent" flourish flavor from the prior layout).
+        """
+        from fantasy_ui import draw_filigree_bar
+        from panel import PanelBuilder, SIZE_MD
         m = getattr(self, '_shop_merchant', None)
         if m is None:
             return
-        cx = layout.GAME_W // 2
-        cy = layout.WINDOW_H // 2
-        draw_overlay(self.screen, 190, (10, 8, 2))
-        draw_filigree_bar(self.screen, cx - 280, cy - 180, 560, FP.GOLD)
-        centered_text(self.screen, self.font_lg, "TRAVELLING MERCHANT", FP.GOLD_BRIGHT, cy - 165, shadow=True)
-        draw_filigree_bar(self.screen, cx - 280, cy - 145, 560, FP.GOLD_DARK)
 
-        gold_s = self.font_sm.render(f"Your gold: {self.player_gold}", True, FP.GOLD_PALE)
-        self.screen.blit(gold_s, (cx - gold_s.get_width() // 2, cy - 128))
+        p = PanelBuilder(self.screen, size=SIZE_MD, border_color=FP.GOLD,
+                         max_height=520)
+        p.set_title("TRAVELLING MERCHANT", font=get_font('heading', 22))
+        p.set_footer_hint("Up/Down navigate   ENTER buy   H haggle   ESC close")
+        body = p.body_rect()
+
+        # Filigree under title (decorative flourish)
+        draw_filigree_bar(self.screen, body.x, body.y, body.w, FP.GOLD_DARK)
+
+        # Your gold
+        gold_s = self.font_sm.render(f"Your gold: {self.player_gold}",
+                                     True, FP.GOLD_PALE)
+        self.screen.blit(gold_s, (body.x + (body.w - gold_s.get_width()) // 2,
+                                  body.y + 14))
 
         stock = m.stock
         sel   = getattr(self, '_shop_selection', 0)
-        row_y = cy - 106
+        row_y = body.y + 50
         row_h = 28
         if not stock:
             empty_s = self.font_md.render("Sold out!", True, FP.FADED_TEXT)
-            self.screen.blit(empty_s, (cx - empty_s.get_width() // 2, row_y))
+            self.screen.blit(empty_s,
+                             (body.x + (body.w - empty_s.get_width()) // 2, row_y))
         else:
             haggled = getattr(self, '_shop_haggled', set())
             for i, (item, price) in enumerate(zip(stock, m.prices)):
@@ -4039,20 +4019,20 @@ class RenderMixin:
                 tag    = " [haggled]" if i in haggled else ""
                 line   = f"  {iname}  (wt:{wt:.1f})   {price} gold{tag}"
                 fg     = FP.PARCHMENT_LIGHT if is_sel else FP.BODY_TEXT
-                bg_col = (60, 50, 20, 180) if is_sel else None
-                if bg_col:
-                    bg_r = pygame.Rect(cx - 260, row_y - 2, 520, row_h)
-                    bg_surf = pygame.Surface((bg_r.w, bg_r.h), pygame.SRCALPHA)
-                    bg_surf.fill(bg_col)
-                    self.screen.blit(bg_surf, bg_r.topleft)
+                if is_sel:
+                    bg_surf = pygame.Surface((body.w, row_h), pygame.SRCALPHA)
+                    bg_surf.fill((*FP.GOLD_DARK, 80))
+                    self.screen.blit(bg_surf, (body.x, row_y - 2))
                 prefix = "> " if is_sel else "  "
-                line_s = self.font_md.render(self._fit_text(prefix + line, self.font_md, 500), True, fg)
-                self.screen.blit(line_s, (cx - 260, row_y))
+                from text_layout import truncate_label
+                trimmed = truncate_label(prefix + line, body.w - 8, self.font_md)
+                line_s = self.font_md.render(trimmed, True, fg)
+                self.screen.blit(line_s, (body.x + 4, row_y))
                 row_y += row_h
 
-        draw_filigree_bar(self.screen, cx - 280, row_y + 8, 560, FP.GOLD_DARK)
-        hint = self.font_sm.render("^v navigate   ENTER buy   H haggle   ESC close", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (cx - hint.get_width() // 2, row_y + 16))
+        # Bottom filigree above the footer hint
+        draw_filigree_bar(self.screen, body.x, body.bottom - 6, body.w, FP.GOLD_DARK)
+        p.draw()
 
     def _draw_encyclopedia(self):
         """Draw the encyclopedia overlay -- category, list, or detail view."""

@@ -131,8 +131,10 @@ class StudyMode:
                             self._idx = 0
                         self._phase = 'quiz'
 
-            # Draw
+            # Draw — paint the grimoire frame first so all phase drawers
+            # land their content inside the panel body.
             self.screen.fill(FP.MIDNIGHT)
+            self._draw_frame(W, H)
             if self._phase == 'subject':
                 self._draw_subject_picker(W, H)
             elif self._phase == 'tier':
@@ -143,11 +145,31 @@ class StudyMode:
                 self._draw_result(W, H)
             pygame.display.flip()
 
-    def _draw_subject_picker(self, W, H):
-        centered_text(self.screen, self.font_lg, "STUDY MODE", FP.GOLD_BRIGHT, 30, shadow=True)
-        centered_text(self.screen, self.font_sm, "Choose a subject to study", FP.BODY_TEXT, 70)
+    def _draw_frame(self, W, H):
+        """Paint the full-viewport grimoire panel that frames every phase."""
+        from fantasy_ui import draw_dark_panel, draw_header_bar, draw_divider
+        margin = 24
+        rect = (margin, margin, W - 2 * margin, H - 2 * margin)
+        draw_dark_panel(self.screen, rect, border_color=FP.GOLD)
+        # Header bar with the current phase's title baked in
+        titles = {
+            'subject': 'STUDY MODE',
+            'tier':    'STUDY: CHOOSE DIFFICULTY',
+            'quiz':    'STUDY: QUIZ',
+            'result':  'STUDY: RESULT',
+        }
+        title = titles.get(self._phase, 'STUDY MODE')
+        draw_header_bar(self.screen, (margin, margin, W - 2 * margin, 44),
+                        text=title, font=self.font_lg,
+                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD)
+        draw_divider(self.screen, margin + 20, margin + 50,
+                     W - 2 * margin - 40)
 
-        y = 120
+    def _draw_subject_picker(self, W, H):
+        # Panel header is painted by _draw_frame; just the sub-line + list here.
+        centered_text(self.screen, self.font_sm, "Choose a subject to study", FP.BODY_TEXT, 100)
+
+        y = 140
         for i, (sid, name, color) in enumerate(self._SUBJECTS):
             sel = i == self._selected
             bg = FP.MIDNIGHT_MID if sel else FP.MIDNIGHT
@@ -165,8 +187,9 @@ class StudyMode:
 
     def _draw_tier_picker(self, W, H):
         subj_name = next(n for s, n, _ in self._SUBJECTS if s == self._subject)
-        centered_text(self.screen, self.font_lg, f"STUDY: {subj_name.upper()}", FP.GOLD_BRIGHT, 30, shadow=True)
-        centered_text(self.screen, self.font_sm, "Choose difficulty tier", FP.BODY_TEXT, 70)
+        # Panel header shows phase title; we add subject sub-line.
+        centered_text(self.screen, self.font_md, subj_name.upper(), FP.GOLD_PALE, 90)
+        centered_text(self.screen, self.font_sm, "Choose difficulty tier", FP.BODY_TEXT, 124)
 
         tier_labels = ["Tier 1 — Easy", "Tier 2 — Medium", "Tier 3 — Hard",
                        "Tier 4 — Expert", "Tier 5 — Master"]

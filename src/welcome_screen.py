@@ -11,8 +11,10 @@ import sys
 
 import pygame
 
-from fantasy_ui import (FP, get_font, draw_panel, draw_header_bar,
-                        draw_filigree_bar, draw_shadow_text, centered_text)
+from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
+                        draw_header_bar, draw_filigree_bar, draw_shadow_text,
+                        draw_overlay, draw_rune_circle, draw_candle_glow,
+                        draw_divider, centered_text)
 
 
 # ------------------------------------------------------------------
@@ -333,21 +335,23 @@ class WelcomeScreen:
     _TITLE_LINE2 = "QUEST"
     _PROMPT      = "Enter your name, seeker:"
 
-    # (label, base_angle_deg, EGA-style color, quiz subject symbol)
+    # Domain ring — colors pulled from FP.SUBJECT so the welcome teaches the
+    # visual language the rest of the game uses (geography green stays
+    # geography green inside the quiz panel, etc.).
     _DOMAINS = [
-        # (label, degree_offset, color, symbol) — 12 subjects, 30° apart
-        ("MATH",        0, (85, 255, 255),  "#"),
-        ("GEOGRAPHY",  30, (85, 255, 85),   "G"),
-        ("HISTORY",    60, (255, 215, 0),   "H"),
-        ("ANIMAL",     90, (255, 140, 0),   "A"),
-        ("COOKING",   120, (255, 85, 255),  "C"),
-        ("SCIENCE",   150, (85, 85, 255),   "?"),
-        ("PHILOSOPHY",180, (200, 200, 255), "P"),
-        ("GRAMMAR",   210, (255, 85, 85),   "Q"),
-        ("ECONOMICS", 240, (170, 255, 0),   "$"),
-        ("THEOLOGY",  270, (200, 170, 80),  "+"),
-        ("TRIVIA",    300, (255, 200, 100), "T"),
-        ("AI",        330, (0, 220, 120),   "W"),
+        # (label, degree_offset, FP.SUBJECT key, symbol) — 12 subjects, 30° apart
+        ("MATH",        0, 'math',       "#"),
+        ("GEOGRAPHY",  30, 'geography',  "G"),
+        ("HISTORY",    60, 'history',    "H"),
+        ("ANIMAL",     90, 'animal',     "A"),
+        ("COOKING",   120, 'cooking',    "C"),
+        ("SCIENCE",   150, 'science',    "?"),
+        ("PHILOSOPHY",180, 'philosophy', "P"),
+        ("GRAMMAR",   210, 'grammar',    "Q"),
+        ("ECONOMICS", 240, 'economics',  "$"),
+        ("THEOLOGY",  270, 'theology',   "+"),
+        ("TRIVIA",    300, None,         "T"),   # no FP.SUBJECT entry — fallback
+        ("AI",        330, None,         "W"),   # ditto
     ]
 
     def __init__(self, screen: pygame.Surface, version: str):
@@ -375,20 +379,39 @@ class WelcomeScreen:
         self._bg = self._make_stone_bg()
 
     def _make_stone_bg(self):
+        """Build the grimoire welcome background: midnight gradient + drifting
+        motes of light + faint rune-traces in the dark corners.
+
+        Pre-rendered once into a surface so the per-frame draw is cheap.
+        The drifting motes that move over time are drawn live in _draw().
+        """
+        import random as _rng
+        rng = _rng.Random(0xCAFE57)
         surf = pygame.Surface((self.W, self.H))
-        surf.fill((4, 5, 14))
-        block = 48
-        for row in range(self.H // block + 2):
-            for col in range(self.W // block + 2):
-                x, y = col * block, row * block
-                shade = 10 + ((row ^ col) & 3) * 3
-                pygame.draw.rect(surf, (shade, shade, shade + 5),
-                                 (x + 2, y + 2, block - 3, block - 3))
-                # mortar lines
-                pygame.draw.line(surf, (shade + 8, shade + 8, shade + 14),
-                                 (x + 2, y + 2), (x + block - 3, y + 2))
-                pygame.draw.line(surf, (shade + 8, shade + 8, shade + 14),
-                                 (x + 2, y + 2), (x + 2, y + block - 3))
+        # Vertical gradient from MIDNIGHT (top) to a deeper black-purple bottom
+        for y in range(self.H):
+            t = y / max(1, self.H)
+            r = int(FP.MIDNIGHT[0] * (1 - t) + 6 * t)
+            g = int(FP.MIDNIGHT[1] * (1 - t) + 4 * t)
+            b = int(FP.MIDNIGHT[2] * (1 - t) + 18 * t)
+            pygame.draw.line(surf, (r, g, b), (0, y), (self.W, y))
+        # Faint star-dust scattered across the field — small dim dots
+        for _ in range(160):
+            sx = rng.randint(0, self.W - 1)
+            sy = rng.randint(0, self.H - 1)
+            shade = rng.randint(35, 70)
+            sr = rng.choice([1, 1, 1, 2])
+            pygame.draw.circle(surf, (shade, shade, shade + 12), (sx, sy), sr)
+        # Subtle rune marks in the far corners — diamond glyphs at ~5% alpha
+        rune_surf = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
+        for _ in range(8):
+            rx = rng.randint(0, self.W - 1)
+            ry = rng.randint(0, self.H - 1)
+            d  = rng.randint(8, 18)
+            a  = rng.randint(8, 22)
+            pts = [(rx, ry - d), (rx + d, ry), (rx, ry + d), (rx - d, ry)]
+            pygame.draw.polygon(rune_surf, (*FP.GOLD_DARK, a), pts, 1)
+        surf.blit(rune_surf, (0, 0))
         return surf
 
     def run(self, clock: pygame.time.Clock) -> tuple[str, dict | None]:
@@ -462,8 +485,18 @@ class WelcomeScreen:
         t  = self._anim_t
         cx, cy = self.cx, self.cy
 
+        # Static background (gradient + stars + faint runes), then the layered
+        # animated grimoire elements over the top.
         self.screen.blit(self._bg, (0, 0))
         self._draw_radial_glow(cx, cy)
+        # Counter-rotating rune circles — slow, hypnotic. Pulsing intensity
+        # from a sine of the anim time so the candle glow breathes.
+        pulse = 0.5 + 0.5 * math.sin(t * 0.9)
+        draw_rune_circle(self.screen, cx, cy, int(min(cx, cy) * 0.78),
+                         (*FP.GOLD_DARK, int(80 + 50 * pulse)), t * 0.4, 16)
+        draw_rune_circle(self.screen, cx, cy, int(min(cx, cy) * 0.36),
+                         (*FP.GOLD, int(60 + 60 * pulse)), -t * 0.7, 12)
+        draw_candle_glow(self.screen, cx, cy, intensity=0.6 + 0.4 * pulse)
         self._draw_domain_ring(cx, cy, t)
         self._draw_vortex(cx, cy, t)
         self._draw_stone(cx, cy, t)
@@ -478,23 +511,20 @@ class WelcomeScreen:
             self._draw_god_prompt()
 
     def _draw_god_prompt(self):
-        overlay = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
-
-        bw, bh = 380, 120
+        """The 'Did you mean Dad?' easter-egg confirm — now in grimoire chrome."""
+        draw_overlay(self.screen, alpha=200)
+        bw, bh = 420, 150
         bx = (self.W - bw) // 2
         by = (self.H - bh) // 2
-        pygame.draw.rect(self.screen, (12, 10, 25), (bx, by, bw, bh))
-        pygame.draw.rect(self.screen, (200, 170, 80), (bx, by, bw, bh), 2)
-        # Inner bevel
-        pygame.draw.rect(self.screen, (160, 130, 60), (bx+2, by+2, bw-4, bh-4), 1)
-
-        msg = self.font_lg.render("Did you mean, 'Dad'?", True, (255, 240, 200))
-        self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 25))
-
-        hint = self.font_md.render("(Y)es  /  (N)o", True, (180, 170, 140))
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + 72))
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, 36),
+                        text="A Question of Address",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+        msg = self.font_lg.render("Did you mean, 'Dad'?",
+                                  True, FP.PARCHMENT_LIGHT)
+        self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 56))
+        hint = self.font_md.render("(Y)es   /   (N)o", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 32))
 
     def _draw_radial_glow(self, cx, cy):
         glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
@@ -507,35 +537,58 @@ class WelcomeScreen:
         orbit_speed = 0.018   # radians/sec -- very slow orbit
         base_angle  = t * orbit_speed
 
-        for i, (label, deg_off, color, symbol) in enumerate(self._DOMAINS):
+        # Helper: domain key -> color via FP.SUBJECT with a sensible fallback
+        # for trivia/AI which aren't in the SUBJECT map.
+        def _domain_color(key):
+            if key is None:
+                return FP.GOLD_PALE
+            return FP.SUBJECT.get(key, FP.GOLD_PALE)
+
+        for i, (label, deg_off, subject_key, symbol) in enumerate(self._DOMAINS):
+            color = _domain_color(subject_key)
             angle  = base_angle + math.radians(deg_off)
             ix = cx + int(ring_r * math.cos(angle))
             iy = cy + int(ring_r * math.sin(angle))
 
-            # Energy tendril from icon to center (3 fading lines)
-            for w, frac in [(3, 0.25), (2, 0.45), (1, 0.75)]:
+            # Energy tendril from icon toward center — three fading lines so
+            # the eye reads "the domains feed the Stone".
+            for w, frac in [(3, 0.18), (2, 0.36), (1, 0.62)]:
                 c = tuple(int(v * frac) for v in color)
                 pygame.draw.line(self.screen, c, (ix, iy), (cx, cy), w)
 
-            # Icon background panel (EGA-style bordered box)
+            # Mini grimoire-panel as the icon backdrop. The double-border +
+            # diamond accents match the rest of the game's modal chrome at
+            # icon scale.
             box_w, box_h = 68, 58
             bx, by = ix - box_w // 2, iy - box_h // 2
-            pygame.draw.rect(self.screen, (8, 8, 20), (bx, by, box_w, box_h))
+            # Translucent midnight fill
+            inner = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
+            inner.fill((*FP.MIDNIGHT, 220))
+            self.screen.blit(inner, (bx, by))
+            # Double border (outer subject-color, inner gold-dark)
             pygame.draw.rect(self.screen, color, (bx, by, box_w, box_h), 2)
-            # Inner highlight line (top and left -- classic 90s bevel)
-            bright = tuple(min(255, v + 80) for v in color)
-            pygame.draw.line(self.screen, bright, (bx+1, by+1), (bx+box_w-2, by+1))
-            pygame.draw.line(self.screen, bright, (bx+1, by+1), (bx+1, by+box_h-2))
+            pygame.draw.rect(self.screen, FP.GOLD_DARK,
+                             (bx + 3, by + 3, box_w - 6, box_h - 6), 1)
+            # Mid-edge diamond ornaments — same vocabulary as draw_dark_panel
+            for px, py, vert in [
+                (bx + box_w // 2, by, False),
+                (bx + box_w // 2, by + box_h - 1, False),
+            ]:
+                d = 3
+                pts = ([(px, py - d), (px + d, py), (px, py + d), (px - d, py)]
+                       if not vert else
+                       [(px - d, py), (px, py - d), (px + d, py), (px, py + d)])
+                pygame.draw.polygon(self.screen, color, pts)
 
-            # Domain symbol (large glyph)
-            sym_surf = self.font_icon.render(symbol, True, color)
+            # Domain symbol (large glyph) — gold-bright so the eye finds it
+            sym_surf = self.font_icon.render(symbol, True, FP.GOLD_BRIGHT)
             self.screen.blit(sym_surf, (ix - sym_surf.get_width() // 2, iy - 18))
 
-            # Domain-specific mini pixel art shape
+            # Domain-specific mini pixel art shape (drawn in subject color)
             self._draw_domain_detail(ix, iy, label, color, t)
 
-            # Label below box
-            lbl = self.font_tiny.render(label, True, color)
+            # Label below box — pale gold so it sits as caption, not headline
+            lbl = self.font_tiny.render(label, True, FP.GOLD_PALE)
             self.screen.blit(lbl, (ix - lbl.get_width() // 2, by + box_h + 3))
 
     def _draw_domain_detail(self, cx, cy, label, color, t):
@@ -631,8 +684,11 @@ class WelcomeScreen:
 
         for arm in range(num_arms):
             arm_base = arm * (2 * math.pi / num_arms)
-            # Alternate arm colors from domain palette
-            domain_color = self._DOMAINS[arm % len(self._DOMAINS)][2]
+            # Alternate arm colors from domain palette — fall back to gold
+            # for the two non-FP-mapped subjects (trivia, AI).
+            subject_key = self._DOMAINS[arm % len(self._DOMAINS)][2]
+            domain_color = (FP.SUBJECT.get(subject_key, FP.GOLD_PALE)
+                            if subject_key else FP.GOLD_PALE)
 
             for step in range(steps):
                 frac  = step / steps
@@ -740,8 +796,9 @@ class WelcomeScreen:
         text = "[ ENTER ] begin your quest     [ F3 ] study mode     [ ESC ] quit"
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
-        # Version number — bottom-right corner
-        ver = self.font_tiny.render(f"v{self.version}", True, (60, 58, 70))
+        # Version number — bottom-right corner (FP.FADED_TEXT keeps it
+        # legible without competing with the title)
+        ver = self.font_tiny.render(f"v{self.version}", True, FP.FADED_TEXT)
         self.screen.blit(ver, (self.W - ver.get_width() - 10, self.H - 20))
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
@@ -772,18 +829,11 @@ class WelcomeScreen:
         bh       = header_h + 6 + n * row_h + 10 + 26
         by       = max(130, H // 2 - bh // 2)
 
-        # Semi-transparent background
-        panel = pygame.Surface((bw, bh), pygame.SRCALPHA)
-        panel.fill((6, 4, 18, 215))
-        self.screen.blit(panel, (bx, by))
-        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx, by, bw, bh), 1, border_radius=6)
-
-        # Header bar
-        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, (bx, by, bw, header_h), border_radius=6)
-        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx, by + header_h, bw, 1))
-        hdr = self.font_sm.render("TOP RUNS", True, FP.GOLD_BRIGHT)
-        self.screen.blit(hdr, (bx + bw // 2 - hdr.get_width() // 2,
-                                by + (header_h - hdr.get_height()) // 2))
+        # Grimoire panel chrome (matches every other modal in the game)
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        draw_header_bar(self.screen, (bx, by, bw, header_h),
+                        text="TOP RUNS", font=self.font_sm,
+                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD)
 
         # Column header line
         y = by + header_h + 4
@@ -844,25 +894,17 @@ class WelcomeScreen:
 
         W, H = self.W, self.H
 
-        # Dim overlay
-        overlay = pygame.Surface((W, H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 10, 235))
-        self.screen.blit(overlay, (0, 0))
-
+        # Dim overlay + grimoire panel chrome
+        draw_overlay(self.screen, alpha=220)
         bw, bh = min(1380, W - 40), min(830, H - 40)
         bx = (W - bw) // 2
         by = (H - bh) // 2
-
-        pygame.draw.rect(self.screen, (8, 6, 22), (bx, by, bw, bh), border_radius=8)
-        pygame.draw.rect(self.screen, FP.GOLD, (bx, by, bw, bh), 2, border_radius=8)
-        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
-
-        # Header
-        header_h = 42
-        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, (bx, by, bw, header_h), border_radius=8)
-        title = self.font_md.render("ALL-TIME HIGH SCORES", True, FP.GOLD_BRIGHT)
-        self.screen.blit(title, (bx + bw // 2 - title.get_width() // 2,
-                                  by + (header_h - title.get_height()) // 2))
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
+        header_h = 44
+        draw_header_bar(self.screen, (bx, by, bw, header_h),
+                        text="ALL-TIME HIGH SCORES",
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT,
+                        accent=FP.GOLD)
 
         # Footer
         footer_h = 28
