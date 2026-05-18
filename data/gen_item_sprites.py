@@ -1381,6 +1381,74 @@ def _make_sprite(category, item_id, item):
     return None
 
 
+def _iter_template_combos(template_category, material_categories, draw_category):
+    """Yield (item_id, fake_item_dict) for every template × material combo.
+
+    `template_category` is the subfolder under data/templates/ (weapons/armor/shields).
+    `material_categories` is a list of subfolders under data/materials/ to iterate
+    (shields draw from BOTH 'weapons' and 'armor' material pools per items.py).
+    `draw_category` is the routing key for _make_sprite ('weapon'/'armor'/'shield').
+    """
+    tpl_dir = os.path.join(ROOT, 'data', 'templates', template_category)
+    if not os.path.isdir(tpl_dir):
+        return
+    templates = {}
+    for fn in os.listdir(tpl_dir):
+        if not fn.endswith('.json'):
+            continue
+        with open(os.path.join(tpl_dir, fn), encoding='utf-8') as f:
+            templates[fn[:-5]] = json.load(f)
+    materials = {}
+    for mat_cat in material_categories:
+        mat_dir = os.path.join(ROOT, 'data', 'materials', mat_cat)
+        if not os.path.isdir(mat_dir):
+            continue
+        for fn in os.listdir(mat_dir):
+            if not fn.endswith('.json'):
+                continue
+            with open(os.path.join(mat_dir, fn), encoding='utf-8') as f:
+                # Same material name in two folders — last write wins, fine.
+                materials[fn[:-5]] = json.load(f)
+    for tpl_id, tpl in templates.items():
+        for mat_id, mat in materials.items():
+            # ID format matches items.instantiate_*: "{material_id}_{template_id}".
+            item_id = f"{mat_id}_{tpl_id}"
+            fake_item = {
+                'color': mat.get('color', [180, 180, 180]),
+                'tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+                # Carry through extra hints the draw functions key on
+                'slot': tpl.get('slot', ''),
+            }
+            yield item_id, fake_item, draw_category
+
+
+def process_template_combos(ok_count, err_count):
+    """Generate PNGs for every template × material combination.
+
+    These items don't exist in any JSON — they're created at runtime by
+    items.instantiate_weapon / _armor / _shield. The PNG resolver looks for
+    files named "{material_id}_{template_id}.png", so we need to pre-render
+    them all to disk.
+    """
+    combos = []
+    combos.extend(_iter_template_combos('weapons', ['weapons'], 'weapon'))
+    combos.extend(_iter_template_combos('armor',   ['armor'],   'armor'))
+    # Shields pull from BOTH material pools per items.py:680.
+    combos.extend(_iter_template_combos('shields', ['armor', 'weapons'], 'shield'))
+    for item_id, fake_item, draw_cat in combos:
+        try:
+            img = _make_sprite(draw_cat, item_id, fake_item)
+            if img is None:
+                continue
+            out = os.path.join(OUT_DIR, f'{item_id}.png')
+            img.save(out)
+            ok_count += 1
+        except Exception as e:
+            print(f'  WARN {item_id}: {e}')
+            err_count += 1
+    return ok_count, err_count
+
+
 def main():
     categories = [
         'weapon','armor','shield','scroll','wand',
@@ -1391,6 +1459,11 @@ def main():
     ok = err = 0
     for cat in categories:
         ok, err = process_file(cat, ok, err)
+    # ALSO render every template × material combo — these are instantiated
+    # at runtime via items.instantiate_*(template_id, material_id) and have
+    # no JSON entry, so the JSON loop above misses them entirely. Without
+    # this, "iron longsword" displays as a `)` glyph in the player's hand.
+    ok, err = process_template_combos(ok, err)
     print(f'Generated {ok} item sprites ({err} warnings) -> {OUT_DIR}')
 
 

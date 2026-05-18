@@ -181,7 +181,10 @@ class StudyMode:
             pygame.draw.rect(self.screen, bg, rect, border_radius=4)
             if sel:
                 pygame.draw.rect(self.screen, color, rect, 2, border_radius=4)
-            text_col = color if sel else FP.BODY_TEXT
+            # Don't use raw subject color as text — some (science, grammar)
+            # are too dark on the panel bg. Keep text as BODY/GOLD_BRIGHT
+            # and let the BORDER carry the subject signal.
+            text_col = FP.GOLD_BRIGHT if sel else FP.BODY_TEXT
             surf = self.font_md.render(name, True, text_col)
             self.screen.blit(surf, (rect.x + 20, rect.y + 4))
             y += 38

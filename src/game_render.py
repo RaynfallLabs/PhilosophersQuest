@@ -243,7 +243,7 @@ class RenderMixin:
         self.screen.blit(input_surf, (bx + 40, by + 80))
 
         # Bottom hint
-        hint_surf = font_hint.render("[Enter] to submit  //  [Esc] to cancel", True, (0, 80, 40))
+        hint_surf = font_hint.render("[Enter] to submit  //  [Esc] to cancel", True, (0, 180, 80))
         self.screen.blit(hint_surf, (bx + (bw - hint_surf.get_width()) // 2, by + bh - 30))
 
     def _draw_xyzzy_confirm(self):
@@ -294,7 +294,7 @@ class RenderMixin:
                 pygame.draw.rect(self.screen, (0, 60, 30),
                                  (bx_btn - 10, btn_y - 4, 100, 32), border_radius=4)
             else:
-                color = (80, 80, 80)
+                color = (170, 170, 170)
             surf = font_btn.render(label, True, color)
             self.screen.blit(surf, (bx_btn, btn_y))
 
@@ -357,7 +357,7 @@ class RenderMixin:
         # Close prompt (no cooldown shown — keep it hidden)
         close_surf = font_small.render(
             "[ any key ] to close",
-            True, (0, 100, 50)
+            True, (0, 200, 80)
         )
         self.screen.blit(close_surf, (bx + (bw - close_surf.get_width()) // 2, by + bh - 24))
 
@@ -809,7 +809,7 @@ class RenderMixin:
                     f"({self._npc_item_scroll + 1}-"
                     f"{min(self._npc_item_scroll + 9, len(items))}"
                     f" of {len(items)}, arrows to scroll)",
-                    True, (120, 120, 120))
+                    True, FP.HINT_TEXT)
                 self.screen.blit(scroll_hint, (bx + 30, y + 8))
 
             footer = font_sm.render("Press a-z to select, ESC to go back",
@@ -1682,14 +1682,16 @@ class RenderMixin:
         row1_x  = rx
         for label, dmg in parts[:3]:
             heat  = dmg / max_dmg
-            col   = (int(40 + 215 * heat), int(200 - 150 * heat), int(80 - 60 * heat))
+            # Heat gradient lifted so all values stay > 4.5:1 contrast on midnight.
+            col   = (int(80 + 175 * heat), int(220 - 130 * heat), int(120 - 80 * heat))
             surf  = self.font_sm.render(label, True, col)
             self.screen.blit(surf, (row1_x, sy + 18))
             row1_x += surf.get_width() + 14
         row2_x = rx
         for label, dmg in parts[3:]:
             heat  = dmg / max_dmg
-            col   = (int(40 + 215 * heat), int(200 - 150 * heat), int(80 - 60 * heat))
+            # Heat gradient lifted so all values stay > 4.5:1 contrast on midnight.
+            col   = (int(80 + 175 * heat), int(220 - 130 * heat), int(120 - 80 * heat))
             surf  = self.font_sm.render(label, True, col)
             self.screen.blit(surf, (row2_x, sy + 34))
             row2_x += surf.get_width() + 14
@@ -1717,8 +1719,10 @@ class RenderMixin:
                     'detail': detail,
                     'key': self._LETTERS[i],
                     'icon': item,
-                    'name_color': FP.DANGER_TEXT if cursed else FP.GOLD_PALE,
-                    'detail_color': FP.DANGER_TEXT if cursed else FP.FADED_TEXT,
+                    # DANGER_TEXT_LIGHT for in-menu text (DANGER_TEXT is too
+                    # dark on MIDNIGHT_MID and SELECTED row backgrounds).
+                    'name_color': FP.DANGER_TEXT_LIGHT if cursed else FP.GOLD_PALE,
+                    'detail_color': FP.DANGER_TEXT_LIGHT if cursed else FP.FADED_TEXT,
                     'key_color': FP.WARNING_TEXT,
                 })
         else:
@@ -2381,7 +2385,7 @@ class RenderMixin:
             charge_color = (
                 FP.SUCCESS_TEXT if item.charges > item.max_charges // 2
                 else FP.WARNING_TEXT if item.charges > 0
-                else FP.DANGER_TEXT
+                else FP.DANGER_TEXT_LIGHT
             )
             charge_text = f"charges: {item.charges}/{item.max_charges}"
             if item.identified or item.id in self.player.known_item_ids:
@@ -2431,10 +2435,10 @@ class RenderMixin:
                 'detail': f"tier {tier}  |  {mp_cost} MP  |  {spell.get('desc','')}",
                 'key': self._LETTERS[i],
                 'icon': icon_obj,
-                'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT,
+                'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
                 'detail_color': tier_color,
                 'badge': f"{mp_cost} MP",
-                'badge_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT,
+                'badge_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
             })
         draw_menu(
             self.screen,
@@ -2469,14 +2473,14 @@ class RenderMixin:
                     self2.id = 'prayer_icon'
                     self2.color = list(color)
                     self2.symbol = '+'
-            icon = _PrayerIcon((220, 220, 180) if avail else (120, 120, 100))
+            icon = _PrayerIcon((220, 220, 180) if avail else FP.PARCHMENT_DARK)
             entries.append({
                 'name': entry['name'],
                 'detail': detail,
                 'key': self._LETTERS[i],
                 'icon': icon,
                 'name_color': name_color,
-                'detail_color': FP.BODY_TEXT if avail else (140, 140, 140),
+                'detail_color': FP.BODY_TEXT if avail else FP.FADED_TEXT,
             })
         karma = getattr(self, 'karma', 0)
         subtitle = f"Karma: {karma:+d}  |  Theology quiz, escalator chain (max 8)"
@@ -2572,8 +2576,10 @@ class RenderMixin:
         if ground_entries:
             _add_section(ground_entries, "ON THE GROUND:", FP.WARNING_TEXT, FP.GOLD_PALE, "  [ground]")
         if corpse_entries:
+            # PARCHMENT (not FADED_TEXT) — FADED_TEXT survives MIDNIGHT alone
+            # but dips below AA on the SELECTED row bg (40,55,110).
             _add_section(corpse_entries, "CORPSES (at your feet):",
-                         FP.ARCANE_ACCENT, FP.FADED_TEXT)
+                         FP.ARCANE_ACCENT, FP.PARCHMENT)
 
         draw_menu(
             self.screen,
@@ -2763,7 +2769,7 @@ class RenderMixin:
                 dur = f"  ({item.duration} turns)" if item.duration else ""
                 is_good = item.effect in self._BENEFICIAL_EFFECTS
                 detail_text = f"{'*' if is_good else 'X'} {eff}{dur}"
-                detail_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT
+                detail_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT_LIGHT
             else:
                 detail_text = "effect unknown -- identify to reveal"
                 detail_col = FP.FADED_TEXT
@@ -2842,10 +2848,10 @@ class RenderMixin:
             # Badge
             if pdef.get('uses', 0) > 0:
                 badge_txt = f"x{uses_rem} left" if uses_rem > 0 else "USED UP"
-                badge_col = FP.SUCCESS_TEXT if uses_rem > 0 else FP.DANGER_TEXT
+                badge_col = FP.SUCCESS_TEXT if uses_rem > 0 else FP.DANGER_TEXT_LIGHT
             else:
                 badge_txt = "READY" if cooldown == 0 else f"CD:{cooldown}t"
-                badge_col = FP.SUCCESS_TEXT if cooldown == 0 else (200, 160, 80)
+                badge_col = FP.SUCCESS_TEXT if cooldown == 0 else FP.AMBER_ACCENT
             entries.append({
                 'name': pdef.get('label', pid),
                 'detail': pdef.get('desc', ''),

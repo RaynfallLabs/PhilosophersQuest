@@ -804,7 +804,7 @@ class WelcomeScreen:
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
         if flash > 0.0:
-            del_msg = self.font_sm.render("[X] Save deleted -- press ENTER to start fresh", True, FP.DANGER_TEXT)
+            del_msg = self.font_sm.render("[X] Save deleted -- press ENTER to start fresh", True, FP.DANGER_TEXT_LIGHT)
             self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - 52))
         elif has_save:
             save_hint = self.font_sm.render("[S] Saved journey found -- ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)

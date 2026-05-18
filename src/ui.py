@@ -402,7 +402,7 @@ class Sidebar:
         for letter, item in items:
             if y > self.screen.get_height() - 20:
                 self.screen.blit(
-                    self._fsm.render("...", True, (85, 85, 105)),
+                    self._fsm.render("...", True, FP.FADED_TEXT),
                     (self.x + self.PAD, y)
                 )
                 break

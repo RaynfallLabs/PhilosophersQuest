@@ -104,6 +104,11 @@ class FP:
     HINT_TEXT       = (170, 165, 215)   # keyboard hint text -- boosted blue-lavender, ~7:1 on midnight
     HINT_TEXT_DIM   = (118, 113, 158)   # dimmer hint variant for dense content screens (~4.5:1)
     DANGER_TEXT     = BLOOD
+    # DANGER_TEXT_LIGHT — for danger text rendered ON dark backgrounds (cursed
+    # items in menu rows, harmful potions, wrong-answer choice cards). The
+    # canonical DANGER_TEXT/BLOOD is too dark on MIDNIGHT_MID and on the
+    # incorrect-answer card bg (70,14,14) — contrast 2.67, invisible.
+    DANGER_TEXT_LIGHT = (255, 150, 150)
     SUCCESS_TEXT    = (110, 220, 100)
     WARNING_TEXT    = (220, 185,  45)
     LOOT_TEXT       = GOLD_BRIGHT
@@ -157,9 +162,9 @@ class FP:
     PASSIVE_WARD     = (220, 220, 255)
 
     # Empty equipment slot — the dim "no item" filler in the sidebar.
-    # Must still be legible. (52,52,70) on midnight = ~2:1 contrast = unreadable;
-    # bumped to (110,110,135) ~ 4.0:1, dim but visible.
-    SLOT_EMPTY       = (110, 110, 135)
+    # Must still be legible. Original (52,52,70) was ~2:1 contrast (unreadable);
+    # (140,140,165) reaches 4.7:1 — clears WCAG AA while staying visibly muted.
+    SLOT_EMPTY       = (140, 140, 165)
 
     # Subject accent mapping — single source of truth used by the quiz
     # panel border, welcome screen domain ring, and standalone study mode.
@@ -626,7 +631,7 @@ ITEM_COLOR = {
     'armor':      ( 80, 148, 215),   # steel blue
     'shield':     ( 80, 168, 215),
     'ingredient': (140, 210, 100),   # herb green
-    'corpse':     (148,  68,  68),   # dried blood
+    'corpse':     (230, 130, 130),   # blood-red (lifted from 148,68,68 — was unreadable as sidebar text)
     'accessory':  (208, 102, 208),   # arcane violet
     'wand':       ( 90, 185, 230),   # arcane blue
     'scroll':     (225, 215, 150),   # parchment yellow
@@ -714,8 +719,13 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     surf.blit(k_surf, (x + badge_w//2 - k_surf.get_width()//2,
                        y + h//2 - k_surf.get_height()//2))
 
-    # Choice text — single string or pre-wrapped list
-    t_color = FP.PARCHMENT_LIGHT if not (correct or incorrect) else border_col
+    # Choice text — single string or pre-wrapped list. Always render in
+    # PARCHMENT_LIGHT regardless of correct/incorrect state. The BORDER does
+    # the color signaling (green/red). Using DANGER_TEXT (200,18,18) as the
+    # text color on the incorrect-answer red bg (70,14,14) collapses contrast
+    # to 2.67 — invisible. The user reported this as "dark text on blue
+    # background" in the identify quiz.
+    t_color = FP.PARCHMENT_LIGHT
     if isinstance(text, list):
         lines = text or ['']
     else:
