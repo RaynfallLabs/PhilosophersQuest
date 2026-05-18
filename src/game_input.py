@@ -25,7 +25,7 @@ import sound_system as _snd
 from dungeon import ALTAR, FOUNTAIN, GRAVE, THRONE
 from quiz_engine import QuizState
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
+    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_CONFIRM_EXIT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
@@ -70,7 +70,7 @@ class InputMixin:
                 # Cancel the active quiz — treat as chain-0 failure
                 self.quiz_engine._end(success=False)
                 return True
-            if self.state in (STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
+            if self.state in (STATE_EQUIP_MENU,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
                               STATE_CONFIRM_EXIT, STATE_TARGET,
@@ -169,8 +169,6 @@ class InputMixin:
             self._quiz_input(key)
         elif self.state == STATE_EQUIP_MENU:
             self._equip_menu_input(key)
-        elif self.state == STATE_ACCESSORY_MENU:
-            self._accessory_menu_input(key)
         elif self.state == STATE_WAND_MENU:
             self._wand_menu_input(key)
         elif self.state == STATE_SCROLL_MENU:
@@ -268,10 +266,10 @@ class InputMixin:
     # ------------------------------------------------------------------
 
     _MOVE_KEYS = {
-        pygame.K_UP:    (0, -1), pygame.K_k: (0, -1),
-        pygame.K_DOWN:  (0,  1), pygame.K_j: (0,  1),
+        pygame.K_UP:    (0, -1),
+        pygame.K_DOWN:  (0,  1),
         pygame.K_LEFT:  (-1, 0),
-        pygame.K_RIGHT: (1,  0), pygame.K_l: (1,  0),
+        pygame.K_RIGHT: (1,  0),
     }
 
     def _player_input(self, key: int):
@@ -325,9 +323,6 @@ class InputMixin:
             return
         if key == pygame.K_m:
             self._open_spell_menu()
-            return
-        if key == pygame.K_s:
-            self._open_accessory_menu()
             return
         if key == pygame.K_i:
             self._open_identify_menu()
@@ -608,9 +603,9 @@ class InputMixin:
         if key in (pygame.K_ESCAPE, pygame.K_w, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
             return
-        if key in (pygame.K_UP, pygame.K_k):
+        if key == pygame.K_UP:
             self._quirks_scroll = max(0, self._quirks_scroll - 1)
-        elif key in (pygame.K_DOWN, pygame.K_j):
+        elif key == pygame.K_DOWN:
             self._quirks_scroll += 1
         elif key == pygame.K_PAGEUP:
             self._quirks_scroll = max(0, self._quirks_scroll - 10)
@@ -625,9 +620,9 @@ class InputMixin:
         if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
             return
-        if key in (pygame.K_UP, pygame.K_k):
+        if key == pygame.K_UP:
             self._charsheet_scroll = max(0, self._charsheet_scroll - 1)
-        elif key in (pygame.K_DOWN, pygame.K_j):
+        elif key == pygame.K_DOWN:
             self._charsheet_scroll += 1
         elif key == pygame.K_PAGEUP:
             self._charsheet_scroll = max(0, self._charsheet_scroll - 10)
@@ -768,9 +763,9 @@ class InputMixin:
                     return
 
             # Scroll
-            if key in (pygame.K_DOWN, pygame.K_j) and self._npc_item_scroll + 9 < len(items):
+            if key == pygame.K_DOWN and self._npc_item_scroll + 9 < len(items):
                 self._npc_item_scroll += 1
-            elif key in (pygame.K_UP, pygame.K_k) and self._npc_item_scroll > 0:
+            elif key == pygame.K_UP and self._npc_item_scroll > 0:
                 self._npc_item_scroll -= 1
             return
 
@@ -794,10 +789,10 @@ class InputMixin:
     # ------------------------------------------------------------------
 
     _TARGET_MOVE_KEYS = {
-        pygame.K_UP:    (0, -1), pygame.K_k: (0, -1),
-        pygame.K_DOWN:  (0,  1), pygame.K_j: (0,  1),
-        pygame.K_LEFT:  (-1, 0), pygame.K_h: (-1, 0),
-        pygame.K_RIGHT: (1,  0), pygame.K_l: (1,  0),
+        pygame.K_UP:    (0, -1),
+        pygame.K_DOWN:  (0,  1),
+        pygame.K_LEFT:  (-1, 0),
+        pygame.K_RIGHT: (1,  0),
         pygame.K_KP7:   (-1,-1), pygame.K_KP8: (0,-1), pygame.K_KP9: (1,-1),
         pygame.K_KP4:   (-1, 0), pygame.K_KP6: (1, 0),
         pygame.K_KP1:   (-1, 1), pygame.K_KP2: (0, 1), pygame.K_KP3: (1, 1),
@@ -989,9 +984,9 @@ class InputMixin:
             self.state = STATE_PLAYER
             return
         sel = getattr(self, '_shop_selection', 0)
-        if key == pygame.K_UP or key == pygame.K_k:
+        if key == pygame.K_UP:
             self._shop_selection = (sel - 1) % len(stock)
-        elif key == pygame.K_DOWN or key == pygame.K_j:
+        elif key == pygame.K_DOWN:
             self._shop_selection = (sel + 1) % len(stock)
         elif key == pygame.K_h:
             sel = self._shop_selection
@@ -1064,10 +1059,10 @@ class InputMixin:
             self.encyclopedia_selection = 0
             self._encyclopedia_entry = None
             return
-        if key in (pygame.K_UP, pygame.K_k):
+        if key == pygame.K_UP:
             self.encyclopedia_selection = max(0, self.encyclopedia_selection - 1)
             return
-        if key in (pygame.K_DOWN, pygame.K_j):
+        if key == pygame.K_DOWN:
             self.encyclopedia_selection = min(len(self.encyclopedia_entries) - 1,
                                               self.encyclopedia_selection + 1)
             return

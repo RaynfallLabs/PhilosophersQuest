@@ -32,7 +32,7 @@ from game_helpers import (
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
+    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_CONFIRM_EXIT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
@@ -1066,8 +1066,6 @@ class RenderMixin:
             self._draw_quiz()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
-        elif self.state == STATE_ACCESSORY_MENU:
-            self._draw_accessory_menu()
         elif self.state == STATE_WAND_MENU:
             self._draw_wand_menu()
         elif self.state == STATE_SCROLL_MENU:
@@ -1789,36 +1787,6 @@ class RenderMixin:
             active_tab=self._menu_tab,
             tab_counts=_equip_counts,
             hint="Arrows: tab  |  a-z: select  |  ESC: cancel",
-            border_color=FP.GOLD,
-            max_width=760,
-            center_in=(layout.GAME_W, layout.WINDOW_H),
-            font_md=self.font_md,
-            font_sm=self.font_sm,
-            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
-        )
-
-    def _draw_accessory_menu(self):
-        slots_used = sum(1 for s in self.player.accessory_slots if s is not None)
-        entries = []
-        for i, item in enumerate(self.accessory_menu_items[:26]):
-            if item.identified or item.id in self.player.known_item_ids:
-                fx = item.effects
-                detail_text = f"grants {fx['status']}" if 'status' in fx else f"{fx.get('stat','?')} +{fx.get('amount',0)}"
-            else:
-                detail_text = "unidentified"
-            entries.append({
-                'name': self._display_name(item),
-                'detail': detail_text,
-                'key': self._LETTERS[i],
-                'icon': item,
-            })
-        draw_menu(
-            self.screen,
-            title="EQUIP ACCESSORY",
-            entries=entries,
-            scroll=getattr(self, '_accessory_scroll', 0),
-            subtitle=f"Accessory slots: {slots_used}/4",
-            hint="a-z: select  |  ESC: cancel",
             border_color=FP.GOLD,
             max_width=760,
             center_in=(layout.GAME_W, layout.WINDOW_H),
@@ -3846,43 +3814,45 @@ class RenderMixin:
 
         _COMMANDS = [
             # (key_label, description, color)  -- None description = section header
-            ("MOVEMENT", None, FP.GOLD_PALE),
-            ("Arrows / hjkl",  "Move / attack",                   FP.BODY_TEXT),
-            ("ITEMS & EQUIPMENT", None, FP.GOLD_PALE),
+            ("MOVEMENT & TURN", None, FP.GOLD_PALE),
+            ("Arrows",         "Move / attack adjacent",           FP.BODY_TEXT),
+            (".",              "Wait / Meditate (regain MP if no enemies adjacent)", FP.BODY_TEXT),
+            (">  or  <",       "Use stairs (up / down)",            FP.BODY_TEXT),
+            ("Tab",            "Cycle zoom: full / medium / close", FP.BODY_TEXT),
+            ("INTERACTION", None, FP.GOLD_PALE),
             ("G  or  ,",       "Pick up item",                    FP.BODY_TEXT),
-            ("E",              "Equip armor / weapon",             FP.BODY_TEXT),
-            ("S",              "Equip accessory (ring/amulet)",    FP.BODY_TEXT),
-            ("I",              "Identify items + read corpse lore",FP.BODY_TEXT),
+            ("A",              "Attack (melee target)",            FP.BODY_TEXT),
+            ("F",              "Fire ranged weapon",               FP.BODY_TEXT),
+            ("T",              "Throw item",                       FP.BODY_TEXT),
+            ("D",              "Drop / Interact with tile (fountain/grave/throne/altar)", FP.BODY_TEXT),
+            ("Y",              "Visit merchant shop",              FP.BODY_TEXT),
+            ("P",              "Pick lock / Disarm trap",           FP.BODY_TEXT),
+            ("INVENTORY", None, FP.GOLD_PALE),
+            ("E",              "Equip / Unequip (weapons / armor / shields / accessories)", FP.BODY_TEXT),
+            ("I",              "Identify item / Read corpse lore", FP.BODY_TEXT),
             ("R",              "Read scroll / spellbook",          FP.BODY_TEXT),
             ("M",              "Cast spell",                       FP.BODY_TEXT),
             ("Z",              "Zap wand",                         FP.BODY_TEXT),
             ("U",              "Eat food",                         FP.BODY_TEXT),
             ("Q",              "Quaff potion",                     FP.BODY_TEXT),
-            ("D",              "Drop item / Interact (fountain/grave/throne)", FP.BODY_TEXT),
-            ("COMBAT & EXPLORATION", None, FP.GOLD_PALE),
             ("H",              "Harvest monster corpse",           FP.BODY_TEXT),
             ("C",              "Cook ingredient",                  FP.BODY_TEXT),
-            ("F",              "Fire ranged weapon",               FP.BODY_TEXT),
-            ("T",              "Throw item (potion / weapon / sphere)", FP.BODY_TEXT),
-            ("A",              "Melee target (attack / interact)",  FP.BODY_TEXT),
-            ("P",              "Pick lock",                        FP.BODY_TEXT),
-            (">  or  <",       "Use stairs",                       FP.BODY_TEXT),
-            ("Y",              "Visit merchant shop",              FP.BODY_TEXT),
-            ("INFORMATION", None, FP.GOLD_PALE),
-            ("O",              "Observe (look at things)",          FP.BODY_TEXT),
-            ("X",              "Examine inventory items",          FP.BODY_TEXT),
+            ("KNOWLEDGE & FAITH", None, FP.GOLD_PALE),
+            ("\\",             "Pray at altar",                    (200, 180, 255)),
+            ("N",              "Recall Lore (trivia)",             (120, 200, 240)),
+            ("LOOK & RECORDS", None, FP.GOLD_PALE),
+            ("O",              "Observe the world (cursor)",        FP.BODY_TEXT),
+            ("X",              "Examine your pack (lore)",          FP.BODY_TEXT),
+            ("K",              "Kit comparison (weapons/armor/etc.)", FP.BODY_TEXT),
             ("@",              "Character sheet",                  FP.BODY_TEXT),
             ("B",              "Encyclopedia",                     FP.BODY_TEXT),
             ("W",              "Quirks progress",                  FP.BODY_TEXT),
             ("V",              "Activate quirk power",             FP.BODY_TEXT),
-            ("KNOWLEDGE", None, FP.GOLD_PALE),
-            ("\\",             "Pray at altar",                    (200, 180, 255)),
-            ("N",              "Recall Lore",                      (120, 200, 240)),
-            (";",              "Study Journal (review missed Qs)",  (120, 200, 240)),
+            ("J",              "Discoveries (your record)",         FP.BODY_TEXT),
+            (";",              "Study journal (missed Qs)",         (120, 200, 240)),
             ("QUIZ", None, FP.GOLD_PALE),
             ("1  2  3  4",     "Answer question during quiz",      FP.GOLD_BRIGHT),
             ("SYSTEM", None, FP.GOLD_PALE),
-            ("Tab",            "Cycle zoom: full / medium / close", FP.BODY_TEXT),
             ("?",              "This help screen",                 FP.BODY_TEXT),
             ("ESC",            "Cancel / close menu",              FP.BODY_TEXT),
         ]

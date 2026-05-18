@@ -22,7 +22,7 @@ from food_system import (eat_food, eat_raw, get_available_compound_recipes)
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
                    Accessory, Wand, Scroll, Spellbook, Food, Potion)
 from game_states import (
-    STATE_PLAYER, STATE_EQUIP_MENU, STATE_ACCESSORY_MENU,
+    STATE_PLAYER, STATE_EQUIP_MENU,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_TARGET, STATE_EAT_MENU, STATE_QUAFF_MENU,
     STATE_SPELL_MENU, STATE_LORE, STATE_EXAMINE,
@@ -327,27 +327,6 @@ class MenuMixin:
                 self.state = STATE_PLAYER
                 slot_name, slot_item = self.equip_menu_equipped[idx]
                 self._unequip_slot(slot_name, slot_item)
-
-    # ------------------------------------------------------------------
-    # Accessory menu  (r key -- history quiz)
-    # ------------------------------------------------------------------
-
-    def _open_accessory_menu(self):
-        self.accessory_menu_items = [
-            i for i in self.player.inventory
-            if isinstance(i, Accessory)
-        ]
-        if not self.accessory_menu_items:
-            self.add_message("You have no rings or amulets to equip.", 'info')
-            return
-        self.state = STATE_ACCESSORY_MENU
-
-    def _accessory_menu_input(self, key: int):
-        idx = self._AZ_KEYS.get(key)
-        if idx is None or idx >= len(self.accessory_menu_items):
-            return
-        self.state = STATE_PLAYER
-        self._equip_accessory(self.accessory_menu_items[idx])
 
     # ------------------------------------------------------------------
     # Wand menu  (u key -- science quiz)
@@ -1191,10 +1170,10 @@ class MenuMixin:
         if idx is not None and idx < len(items):
             self._pet_menu_selected = idx
             return
-        if key in (pygame.K_UP, pygame.K_k):
+        if key == pygame.K_UP:
             self._pet_menu_selected = max(0, self._pet_menu_selected - 1)
             return
-        if key in (pygame.K_DOWN, pygame.K_j):
+        if key == pygame.K_DOWN:
             self._pet_menu_selected = min(len(items) - 1, self._pet_menu_selected + 1)
             return
         pet = self._pet_menu_selected_pet()

@@ -83,7 +83,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.equip_menu_equipped: list   = []   # (slot_name, item) pairs for unequip section
         self._menu_tab: int              = 0    # current tab index for tabbed menus
         self._menu_page: int             = 0    # page offset for paginated menus
-        self.accessory_menu_items: list  = []
         self.wand_menu_items: list       = []
         self.scroll_menu_items: list     = []
         self.spell_menu_items: list      = []   # list of spell_ids known to player

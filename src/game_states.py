@@ -8,7 +8,6 @@ creating a circular dependency with main.
 STATE_PLAYER         = 'player'
 STATE_QUIZ           = 'quiz'
 STATE_EQUIP_MENU     = 'equip_menu'
-STATE_ACCESSORY_MENU = 'accessory_menu'
 STATE_WAND_MENU      = 'wand_menu'
 STATE_SCROLL_MENU    = 'scroll_menu'
 STATE_IDENTIFY_MENU  = 'identify_menu'
