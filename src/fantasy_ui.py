@@ -132,29 +132,34 @@ class FP:
     ARCANE_ACCENT    = (200, 170, 255)
     AMBER_ACCENT     = (200, 155,  80)   # warm amber for warnings / passives
 
-    # Resource bar colors (HP / SP / MP) — used by the sidebar bars and the
-    # quiz combat HUD HP bar. Named so the bars can stay consistent if the
-    # palette is ever retuned.
+    # Resource bar colors (HP / SP / MP) — used as BAR FILLS in the sidebar
+    # and the quiz combat HUD. Some values run dark on purpose so the bars
+    # read as bars, not text. Use the *_TEXT variants below when rendering
+    # the corresponding label / readout TEXT on the midnight panel — the
+    # contrast on dark blue bg needs ~4.5:1 to be legible.
     HP_RED           = (185,  42,  42)
     SP_GREEN         = (110, 200,  90)
     SP_AMBER         = (200, 170,  50)   # SP hunger warning
     SP_RED           = (210,  80,  60)   # SP starvation
     MP_BLUE          = ( 50,  85, 205)
+    MP_BLUE_TEXT     = (130, 175, 255)   # readable on midnight (text use)
 
     # Cooldown / readiness status colors (sidebar status section).
-    COOLDOWN_TEAL    = ( 80, 160, 200)
-    READY_TEAL       = (120, 200, 240)
-    COOLDOWN_ARCANE  = (140, 100, 200)   # prayer cooldown
+    COOLDOWN_TEAL    = (120, 195, 230)   # cooldown text — bumped from (80,160,200) for contrast
+    READY_TEAL       = (140, 215, 245)   # ready text   — bumped from (120,200,240)
+    COOLDOWN_ARCANE  = (185, 140, 235)   # prayer cooldown — bumped from (140,100,200) for contrast
 
     # Passive status colors (sidebar passive list — Fire Protect, Manifest,
     # Death Ward etc.). Named so they don't compete with each other for
     # attention but stay readable on the midnight bg.
     PASSIVE_FIRE     = (245, 150,  60)
-    PASSIVE_MANIFEST = (200, 170, 240)
+    PASSIVE_MANIFEST = (210, 180, 245)
     PASSIVE_WARD     = (220, 220, 255)
 
     # Empty equipment slot — the dim "no item" filler in the sidebar.
-    SLOT_EMPTY       = ( 52,  52,  70)
+    # Must still be legible. (52,52,70) on midnight = ~2:1 contrast = unreadable;
+    # bumped to (110,110,135) ~ 4.0:1, dim but visible.
+    SLOT_EMPTY       = (110, 110, 135)
 
     # Subject accent mapping — single source of truth used by the quiz
     # panel border, welcome screen domain ring, and standalone study mode.

@@ -227,7 +227,7 @@ class Sidebar:
         spell_count = len(getattr(player, 'known_spells', {}))
         if spell_count > 0:
             self.screen.blit(
-                self._fsm.render(f"Spells {spell_count}", True, FP.MP_BLUE),
+                self._fsm.render(f"Spells {spell_count}", True, FP.MP_BLUE_TEXT),
                 (self.x + self.PAD, y)
             )
             y += 22
