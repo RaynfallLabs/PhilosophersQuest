@@ -133,6 +133,14 @@ class Player:
         # Mastery bonuses unlocked by chain-5 identify on uniques.
         # Key: item_id (e.g. 'soul_reaver'). Value: blessing dict {'kind', 'value', 'desc'}.
         self.unlocked_masteries: dict[str, dict] = {}
+        # Class-level mastery for commons — mastering one Ring of Strength applies
+        # to ALL rings of strength. Key: mastery_class slug (e.g. 'ring_of_strength').
+        # Computed by class_masteries.get_mastery_class(item).
+        self.unlocked_class_masteries: dict[str, dict] = {}
+        # Item-class names the player has identified by their class (tier-1
+        # of the escalator). Lets us name "Ring of Strength" for all variants
+        # in the player's pack regardless of material.
+        self.known_class_ids: set[str] = set()
 
     @property
     def equipped_accessories(self):

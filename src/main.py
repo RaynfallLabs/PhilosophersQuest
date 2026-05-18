@@ -379,6 +379,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.philosophers_mantle = False
         if not hasattr(self.player, 'unlocked_masteries'):
             self.player.unlocked_masteries = {}
+        # Class-level mastery (commons): added 2026-05-18 with the unified
+        # escalator-chain identify path. Older saves get empty defaults.
+        if not hasattr(self.player, 'unlocked_class_masteries'):
+            self.player.unlocked_class_masteries = {}
+        if not hasattr(self.player, 'known_class_ids'):
+            self.player.known_class_ids = set()
         # Phase 3 hero specials — new fields in 2026-05-17 build rebuild
         if not hasattr(self.player, 'hero_passives'):
             self.player.hero_passives = set()
@@ -3615,16 +3621,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _display_name(self, item) -> str:
         """Return the name to show for an item, including stack count when > 1.
 
-        Type known  (item.id in known_item_ids OR item.identified) -> item.name
-        Type unknown                                                -> item.unidentified_name
-        BUC tag shown when buc_known=True: {blessed} or {cursed}. Uncursed = no tag.
+        Type known (any of: identified flag, id in known_item_ids, OR the
+        item's mastery_class is in known_class_ids) -> item.name.
+        Otherwise -> item.unidentified_name.
+
+        The mastery_class check is what lets one Ring of Strength
+        identification name ALL ring-of-strength variants in the pack.
         """
+        from class_masteries import get_mastery_class
         if not hasattr(item, 'identified'):
             base = self._fix_name_case(item.name)
-        elif item.identified or item.id in self.player.known_item_ids:
-            base = self._fix_name_case(item.name)
         else:
-            base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
+            known_by_class = (get_mastery_class(item)
+                              in getattr(self.player, 'known_class_ids', set()))
+            if item.identified or item.id in self.player.known_item_ids or known_by_class:
+                base = self._fix_name_case(item.name)
+            else:
+                base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
         # BUC prefix when known
         buc = getattr(item, 'buc', 'uncursed')
         buc_known = getattr(item, 'buc_known', False)

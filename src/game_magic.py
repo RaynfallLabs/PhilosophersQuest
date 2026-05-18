@@ -2205,58 +2205,11 @@ class MagicMixin:
     # ------------------------------------------------------------------
 
     def _identify_item(self, item):
-        if getattr(item, 'is_unique', False):
-            self._identify_unique_item(item)
-        else:
-            self._identify_common_item(item)
-
-    def _identify_common_item(self, item):
-        """Threshold-mode philosophy quiz for non-unique items. Atomic reveal on success."""
-        display = self._display_name(item)
-        self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
-        self.state = STATE_QUIZ
-
-        def on_complete(result):
-            self.state = STATE_PLAYER
-            if result.success:
-                item.identified = True
-                item.buc_known = True
-                item.id_level = 5
-                self.player.known_item_ids.add(item.id)
-                self._propagate_identification(item.id)
-                self.add_message(
-                    f"The {display} is revealed: {item.name}!", 'success'
-                )
-                _buc = getattr(item, 'buc', 'uncursed')
-                if _buc == 'blessed':
-                    self.add_message("It radiates a holy aura.", 'success')
-                elif _buc == 'cursed':
-                    self.add_message("A dark aura clings to it.", 'warning')
-                _qs_id = getattr(self, 'quirk_system', None)
-                if _qs_id:
-                    _qs_id.on_item_identified(item.id)
-                self._on_full_identify(item)
-                if item.lore:
-                    self._lore_subject = item
-                    self.state = STATE_LORE
-            else:
-                self.add_message(
-                    f"You ponder the {display} but gain no insight.", 'warning'
-                )
-            self._advance_turn()
-
-        id_tier = getattr(item, 'quiz_tier', 1)
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='philosophy',
-            tier=id_tier,
-            callback=on_complete,
-            threshold=id_tier + 1,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
-            base_seconds=self.player.get_quiz_timer('philosophy'),
-        )
+        """All items now run the escalator-chain ID. Uniques key mastery by
+        item.id; commons key mastery by mastery_class (Ring of Strength
+        regardless of material). See class_masteries.get_mastery_class().
+        """
+        self._identify_unique_item(item)
 
     def _identify_unique_item(self, item):
         """Escalator-chain philosophy quiz for is_unique items.
@@ -2353,30 +2306,60 @@ class MagicMixin:
     def _claim_mastery(self, item):
         """Record a mastery blessing on the player once chain 5 is achieved.
 
-        Idempotent — re-claiming an already-claimed item_id is a no-op.
-        Falls back to a class-default blessing if the item has none authored.
+        Idempotent — re-claiming an already-claimed item OR class is a no-op.
+        Uniques key the blessing by item.id (legacy behavior); commons key
+        by mastery_class so all ring-of-strength variants share the bonus.
         Some mastery kinds trigger one-time application here (stat bonuses,
         max-HP bumps, wand-charge upgrades, MP discounts); the rest are
-        evaluated lazily at their use-site by querying unlocked_masteries.
+        evaluated lazily at their use-site by querying the mastery stores.
         """
-        if item.id in self.player.unlocked_masteries:
-            return
-        blessing = getattr(item, 'mastery_blessing', None) or self._default_mastery_for(item)
-        if not blessing:
-            return
-        self.player.unlocked_masteries[item.id] = blessing
-        self._apply_mastery_once(item, blessing)
+        from class_masteries import (get_mastery_class,
+                                       CLASS_MASTERY_BLESSINGS,
+                                       default_blessing_for_class)
+        is_unique = bool(getattr(item, 'is_unique', False))
+
+        if is_unique:
+            # Legacy per-id path for legendaries
+            if item.id in self.player.unlocked_masteries:
+                return
+            blessing = (getattr(item, 'mastery_blessing', None)
+                        or self._default_mastery_for(item))
+            if not blessing:
+                return
+            self.player.unlocked_masteries[item.id] = blessing
+            self._apply_mastery_once(item, blessing)
+        else:
+            # Class-level path for commons — apply once per CLASS
+            class_id = get_mastery_class(item)
+            if class_id in self.player.unlocked_class_masteries:
+                return
+            blessing = (CLASS_MASTERY_BLESSINGS.get(class_id)
+                        or default_blessing_for_class(class_id, item))
+            if not blessing:
+                return
+            self.player.unlocked_class_masteries[class_id] = blessing
+            # Two kinds of retroactive application for class mastery:
+            #  (1) PER-ITEM effects (wand_extra_charge, spellbook_mp_discount):
+            #      walk inventory and apply each match.
+            #  (2) CLASS-ONCE effects (stat_bonus, ac_bonus, regen_bonus, etc.):
+            #      apply directly to the player a single time.
+            kind = blessing.get('kind', '')
+            if kind in ('wand_extra_charge', 'spellbook_mp_discount'):
+                for inv_item in self.player.inventory:
+                    if get_mastery_class(inv_item) == class_id:
+                        self._apply_mastery_once(inv_item, blessing)
+            else:
+                self._apply_mastery_once(item, blessing)
+
         desc = blessing.get('desc', 'A subtle resonance settles upon you.')
         self.add_message(f"Mastery gained: {desc}", 'success')
-        self._log_chronicle(
-            f"Mastery of {item.name} attained. {desc}"
-        )
+        self._log_chronicle(f"Mastery of {item.name} attained. {desc}")
 
     def _apply_mastery_once(self, item, blessing: dict) -> None:
         """One-shot application for masteries whose effect is permanent stat changes.
 
-        Lazy/passive kinds (weapon_*, armor_resist_bonus, etc.) are evaluated at
-        use-sites instead.
+        Lazy/passive kinds (weapon_*, armor_resist_bonus, class_acc_ac_bonus,
+        etc.) are evaluated at use-sites instead.
         """
         kind = blessing.get('kind')
         value = blessing.get('value')
@@ -2386,7 +2369,9 @@ class MagicMixin:
             if bump > 0:
                 p.max_hp += bump
                 p.hp += bump
-        elif kind == 'accessory_stat_bonus':
+        elif kind in ('accessory_stat_bonus', 'class_acc_stat_bonus'):
+            # class_acc_stat_bonus mirrors accessory_stat_bonus but is
+            # class-scoped — applied once when the class is mastered.
             v = value or {}
             stat = v.get('stat')
             amount = int(v.get('amount', 0))
@@ -2402,6 +2387,12 @@ class MagicMixin:
             spell_id = getattr(item, 'spell_id', None)
             if spell_id and disc > 0 and spell_id in p.known_spells:
                 p.known_spells[spell_id] = max(1, p.known_spells[spell_id] - disc)
+        # Other class kinds (class_acc_ac_bonus, class_acc_regen_bonus,
+        # class_acc_passive_radius, class_acc_resist_bonus, class_acc_sp_burn_bonus,
+        # class_acc_quirk, class_scroll_*, potion_*) are all lazy/passive — they
+        # query player.unlocked_class_masteries at use-site rather than mutating
+        # state here. See use-site comments in player.py / food_system.py /
+        # game_magic.py wand+scroll+potion handlers.
 
     def _default_mastery_for(self, item) -> dict | None:
         """Class-default mastery for uniques that didn't author one explicitly.
@@ -2800,16 +2791,39 @@ class MagicMixin:
                 break
 
     def _propagate_identification(self, item_id: str):
-        """Record that the player now recognises this item type by ID.
+        """Record that the player now recognises this item type by ID — and
+        by mastery_class if applicable.
 
-        We do NOT set item.identified = True on other instances -- that flag
-        means 'this specific copy has been examined and modifiers are known'.
-        Type recognition is tracked solely via player.known_item_ids.
-        Also propagate buc_known to all same-id items in inventory.
+        Type recognition for the exact id goes into known_item_ids. Class-
+        level recognition goes into known_class_ids; both are checked at
+        display time so "Ring of Strength" names all variants in the pack
+        once any one is identified.
+
+        Also propagates buc_known across inventory copies that share the
+        same id OR the same mastery_class.
         """
+        from class_masteries import get_mastery_class
         self.player.known_item_ids.add(item_id)
+        # Find the canonical class for any inventory or ground item with
+        # this id, then propagate class-recognition.
+        seed_class = None
         for inv_item in self.player.inventory:
-            if inv_item.id == item_id and hasattr(inv_item, 'buc_known'):
+            if inv_item.id == item_id:
+                seed_class = get_mastery_class(inv_item)
+                break
+        if seed_class is None:
+            for g in getattr(self, 'ground_items', []):
+                if getattr(g, 'id', None) == item_id:
+                    seed_class = get_mastery_class(g)
+                    break
+        if seed_class:
+            self.player.known_class_ids.add(seed_class)
+
+        for inv_item in self.player.inventory:
+            same_id = inv_item.id == item_id
+            same_class = (seed_class is not None
+                          and get_mastery_class(inv_item) == seed_class)
+            if (same_id or same_class) and hasattr(inv_item, 'buc_known'):
                 inv_item.buc_known = True
 
     def _auto_identify_all(self):
