@@ -203,6 +203,9 @@ class Monster:
                     disease_tick = True
                 elif name == 'burning':
                     burning_dmg = max(1, self.max_hp // 20)
+            # Permanent effects (duration == -1) do NOT tick down or expire.
+            if self.status_effects[name] < 0:
+                continue
             self.status_effects[name] -= 1
             if self.status_effects[name] <= 0:
                 del self.status_effects[name]

@@ -612,20 +612,25 @@ def _eff_self_aoe_fire(game, special, tier, chain):
 
 def _eff_self_buff_stand(game, special, tier, chain):
     """Leonidas. Apply a stand_ac (custom) effect for `duration` turns.
-    Also stores counter_pct on the player's status_effects via a sentinel."""
+    Also stores counter_pct on the player's status_effects via a sentinel.
+    Re-casting takes the MAX of each value so a weaker cast doesn't reduce
+    a stronger active buff."""
     dur = int(tier.get('duration', 0))
     if dur == 0:
         game.add_message("You waver and step back.", 'warning')
         return
     ac_bonus = int(tier.get('ac', 0))
     counter_pct = int(tier.get('counter_pct', 0))
-    # Reuse existing 'shielded' status (-2 AC) by stacking; plus our own marker
     game.player.status_effects['stand_ac'] = max(
         game.player.status_effects.get('stand_ac', 0), dur)
-    game.player._stand_ac_bonus = ac_bonus
-    game.player._stand_counter_pct = counter_pct
+    # Refresh-only-if-better: never weaken an active buff with a worse cast.
+    game.player._stand_ac_bonus = max(
+        int(getattr(game.player, '_stand_ac_bonus', 0)), ac_bonus)
+    game.player._stand_counter_pct = max(
+        int(getattr(game.player, '_stand_counter_pct', 0)), counter_pct)
     game.add_message(
-        f"Spartan Stand! AC -{ac_bonus} and {counter_pct}% counter, {dur} turns.",
+        f"Spartan Stand! AC -{game.player._stand_ac_bonus} and "
+        f"{game.player._stand_counter_pct}% counter, {dur} turns.",
         'success')
 
 

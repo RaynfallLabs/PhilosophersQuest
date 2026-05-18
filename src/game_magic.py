@@ -451,7 +451,12 @@ class MagicMixin:
                     self.add_message(f"The {target.name} begins to turn to stone! ({dur} turns)", 'success')
 
             elif effect == 'cancellation':
-                target.status_effects.clear()
+                # Strip BUFFS only — don't save the monster from player-applied
+                # DoTs (poison/bleed/burn/petrify etc. are the player's investment).
+                from status_effects import BUFFS as _BUFFS
+                for _e in list(target.status_effects):
+                    if _e in _BUFFS:
+                        target.status_effects.pop(_e, None)
                 self.add_message(
                     f"The {target.name}'s abilities and effects are cancelled!", 'success'
                 )
@@ -708,11 +713,17 @@ class MagicMixin:
                     self.add_message(f"The {target.name} seems diminished. ({dur} turns)", 'success')
 
             elif effect == 'drain_magic':
-                target.status_effects.clear()
+                from status_effects import BUFFS as _BUFFS
+                for _e in list(target.status_effects):
+                    if _e in _BUFFS:
+                        target.status_effects.pop(_e, None)
                 self.add_message(f"The {target.name}'s magical effects are drained away!", 'success')
 
             elif effect == 'dispel_magic':
-                target.status_effects.clear()
+                from status_effects import BUFFS as _BUFFS
+                for _e in list(target.status_effects):
+                    if _e in _BUFFS:
+                        target.status_effects.pop(_e, None)
                 self.add_message(f"All enchantments on the {target.name} are dispelled!", 'success')
 
         # ---- Effects that don't require a target OR handle mass effects ----

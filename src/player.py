@@ -222,8 +222,12 @@ class Player:
     def restore_sp(self, amount: int):
         self.sp = min(self.max_sp, self.sp + amount)
 
-    def restore_hp(self, amount: int):
+    def restore_hp(self, amount: int) -> int:
+        """Restore HP up to max. Returns actual HP gained (callers use the
+        delta for messages like 'you heal N HP')."""
+        before = self.hp
         self.hp = min(self.max_hp, self.hp + amount)
+        return self.hp - before
 
     HP_PER_LEVEL = 0   # No auto max HP on stairs (HP comes from cooking)
     STAIR_REST_CAP_DESC = 0    # NO stair-rest HP healing on descent (damage accumulates)

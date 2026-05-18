@@ -1292,10 +1292,17 @@ class CombatMixin:
             qs.on_combat_started()
         self._combat_hp_pct_before = self.player.hp / max(1, self.player.max_hp)
 
+        # Floating eye: paralyzing gaze on melee attack (the eye's signature
+        # mechanic). Honor sleep_resist and blindness like monster.attack does.
         if monster.kind == 'floating_eye':
-            cur = self.player.status_effects.get('paralyzed', 0)
-            self.player.status_effects['paralyzed'] = max(cur, 3)
-            self.add_message("The floating eye's gaze paralyzes you!", 'danger')
+            if not self.player.has_effect('sleep_resist') and \
+                    not self.player.has_effect('blinded'):
+                cur = self.player.status_effects.get('paralyzed', 0)
+                self.player.status_effects['paralyzed'] = max(cur, 3)
+                self.add_message("The floating eye's gaze paralyzes you!", 'danger')
+            else:
+                self.add_message(
+                    "Your gaze meets the floating eye's, but nothing happens.", 'info')
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
                         knocked: bool = False, crit: bool = False, **kwargs):
@@ -1930,6 +1937,10 @@ class CombatMixin:
                 continue
             for pet in self.pets:
                 if not pet.alive:
+                    continue
+                # Unicorn pet design contract: enemies do not target her in melee
+                # (AoE/traps can still hit, but adjacent monsters ignore her).
+                if getattr(pet, 'is_unicorn', False):
                     continue
                 if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= 1:
                     # Monster swipes at pet — use a fraction of its normal damage

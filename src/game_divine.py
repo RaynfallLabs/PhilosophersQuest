@@ -428,7 +428,7 @@ class DivineMixin:
             subject='ai',
             tier=1,
             callback=on_complete,
-            max_chain=6,
+            max_chain=5,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('ai'),
@@ -739,7 +739,7 @@ class DivineMixin:
             subject='history',
             tier=1,
             callback=on_complete,
-            max_chain=6,
+            max_chain=5,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('history'),
@@ -929,7 +929,7 @@ class DivineMixin:
                     self.add_message(
                         "Holy fire blazes forth but finds no target.", 'info')
                 self._l100_altars_used.add(pos)
-                self._show_prayer_verse(karma_tier, min(chain, 8))
+                self._show_prayer_verse(karma_tier, min(chain, 5))
                 p.prayer_cooldown = max(100, 80 + effective * 25)
                 return
             else:
@@ -984,7 +984,10 @@ class DivineMixin:
             self.add_message(m, 'success')
 
         # Karma-tiered verse
-        self._show_prayer_verse(karma_tier, min(effective, 8))
+        # Cap verse lookup at chain 5 (the table's highest key); deeper
+        # effective values still grant mechanical bonuses but reuse the
+        # chain-5 verse for the player-visible flavor text.
+        self._show_prayer_verse(karma_tier, min(effective, 5))
 
     def _apply_prayer_cooldown_quirks(self):
         """Fisher King quirks halve cooldown (stacking)."""

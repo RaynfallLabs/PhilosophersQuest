@@ -370,6 +370,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.philosophers_mantle = False
         if not hasattr(self.player, 'unlocked_masteries'):
             self.player.unlocked_masteries = {}
+        # Phase 3 hero specials — new fields in 2026-05-17 build rebuild
+        if not hasattr(self.player, 'hero_passives'):
+            self.player.hero_passives = set()
+        if not hasattr(self.player, 'hero_specials'):
+            self.player.hero_specials = []
+        if not hasattr(self.player, 'hero_special_cooldowns'):
+            self.player.hero_special_cooldowns = {}
+        if not hasattr(self.player, 'qa_tools'):
+            self.player.qa_tools = False
+        if not hasattr(self.player, '_stand_ac_bonus'):
+            self.player._stand_ac_bonus = 0
+        if not hasattr(self.player, '_stand_counter_pct'):
+            self.player._stand_counter_pct = 0
+        if not hasattr(self.player, '_elder_blood_escape_used'):
+            self.player._elder_blood_escape_used = False
         # BUC migration: patch buc/buc_known on all items from old saves
         self._migrate_buc_all(state)
         self.player_name   = state['player_name']
@@ -2572,7 +2587,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.ground_items.append(loot_item)
                     self.add_message(f"You find {self._display_name(loot_item)}!", 'loot')
                 if result['gold'] > 0:
-                    from items import GoldPile
+                    from items import add_gold_to_tile
                     add_gold_to_tile(self.ground_items, result['gold'], cx, cy)
                 _qs_lk = getattr(self, 'quirk_system', None)
                 if _qs_lk:

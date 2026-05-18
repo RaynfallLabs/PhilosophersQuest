@@ -111,6 +111,8 @@ BUFFS: frozenset = frozenset({
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
     'life_save', 'sustained', 'truesight', 'dark_vision', 'identify_sight', 'spell_turning',
     'riposte_armed',
+    # Hero special buffs (Phase 3B) — these are beneficial timed effects.
+    'stand_ac', 'crit_buff', 'fear_immune', 'boomstick_aoe_next', 'berserk',
 })
 
 # Resistance effects that block specific debuffs from being applied
@@ -416,6 +418,10 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         elif effect == 'brilliance':
             player.apply_stat_bonus('INT', -1)
             player.apply_stat_bonus('WIS', -1)
+        elif effect == 'stand_ac':
+            # Leonidas Spartan Stand expiry — clear the AC + counter bonuses.
+            player._stand_ac_bonus = 0
+            player._stand_counter_pct = 0
         elif effect == 'berserk':
             # Berserk uses direct STR write (not apply_stat_bonus) because
             # it's a combat damage bonus, not a full stat buff — no max_sp gain.
