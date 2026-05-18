@@ -302,7 +302,8 @@
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "lore": "The apex of dungeon cuisine. Every great cook dreams of this dish. Most die attempting it.",
-    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of chimera heart, Dragon Scale, and necromancer phylactery, garnished with edible flowers and earthy sauce"
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of chimera heart, Dragon Scale, and necromancer phylactery, garnished with edible flowers and earthy sauce",
+    "description": "The apex of dungeon cuisine: chimera heart and dragon scale plated atop the rendered essence of a lich's own phylactery. Edible flowers crown a meal most cooks die attempting."
   },
   "abyssal_midnight_feast": {
     "name": "Abyssal Midnight Feast",
@@ -371,7 +372,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 1,
     "lore": "A foul but filling stew suited to the dungeon's low standards. Two scrawny survivors boiled together — their toughness transfers to whoever is desperate enough to eat.",
-    "sprite_desc": "A battered tin pot of chunky brown stew with visible meat pieces and a greasy surface"
+    "sprite_desc": "A battered tin pot of chunky brown stew with visible meat pieces and a greasy surface",
+    "description": "A battered tin pot of stringy goblin and stringier rat, simmered together until the grease floats in a thick gold film. Crude camp food, but it stays with you."
   },
   "serpent_frog_bisque": {
     "name": "Serpent and Frog Bisque",
@@ -384,7 +386,8 @@
     "bonus_stat": "DEX",
     "bonus_amount": 1,
     "lore": "Two slippery creatures make a surprisingly agile meal.",
-    "sprite_desc": "A smooth creamy pale-green soup in a stone bowl with a coiled garnish of thin snake skin"
+    "sprite_desc": "A smooth creamy pale-green soup in a stone bowl with a coiled garnish of thin snake skin",
+    "description": "Snake flesh and frog legs pureed into a pale, creamy bisque the color of pond water. A coiled garnish gives it a sly, fenland elegance."
   },
   "bat_rat_soup": {
     "name": "Cave Creature Broth",
@@ -397,7 +400,8 @@
     "bonus_stat": "DEX",
     "bonus_amount": 1,
     "lore": "The dungeon's most common inhabitants, simmered together.",
-    "sprite_desc": "A stone bowl filled with smooth earthy broth made from bat wing and rat meat, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from bat wing and rat meat, wisps of fragrant steam curling above",
+    "description": "A muddy cave-broth of rat and bat, smelling faintly of guano and iron. Trogs and tomb-robbers swear by it; everyone else holds their nose and swallows."
   },
   "chitin_bone_crisps": {
     "name": "Chitin and Bone Crisps",
@@ -410,7 +414,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 1,
     "lore": "Crunchy. Nutritionally dubious. Surprisingly addictive.",
-    "sprite_desc": "A ceramic plate of beautifully prepared insect carapace and bone shard, plated with a warm russet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared insect carapace and bone shard, plated with a warm russet reduction drizzled on top",
+    "description": "Insect plates and shards of bone roasted until they shatter sweetly under the tooth. A crackling, unsettling little dish that eats like brittle peanut brittle gone wrong."
   },
   "goblin_bone_pottage": {
     "name": "Goblin Bone Pottage",
@@ -423,7 +428,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 1,
     "lore": "A thick, grim pottage. Goblins eat this themselves, apparently.",
-    "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh and bone shard, plated with a verdant reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh and bone shard, plated with a verdant reduction drizzled on top",
+    "description": "A pottage of goblin meat and marrow-cracked bone, plated like real cuisine in defiance of its source. Earthy, grimy, and undeniably warming to the bones."
   },
   "spider_silk_jelly": {
     "name": "Spider Silk Aspic",
@@ -436,7 +442,8 @@
     "bonus_stat": "PER",
     "bonus_amount": 1,
     "lore": "The silk dissolves into a trembling, iridescent aspic that sharpens the senses to an uncanny edge.",
-    "sprite_desc": "A ceramic plate of beautifully prepared spider silk and eye jelly, plated with a pale violet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared spider silk and eye jelly, plated with a pale violet reduction drizzled on top",
+    "description": "Spider silk dissolved into a quivering aspic studded with eye-jelly cubes. The silk gives it an unnerving spring; the eyes watch you eat them."
   },
   "orc_bat_broth": {
     "name": "Orcish Cave Broth",
@@ -449,7 +456,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 1,
     "lore": "Orcs brew this on long campaigns when rations run dry. It is not good, but it keeps warriors upright and moving.",
-    "sprite_desc": "A stone bowl filled with smooth verdant broth made from orc blood and bat wing, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from orc blood and bat wing, wisps of fragrant steam curling above",
+    "description": "Orcish blood thinned with cave-bat into a smooth verdant broth. Tastes coppery and feral, like a war drum simmered down to liquid."
   },
   "gnoll_lion_ragout": {
     "name": "Gnoll and Lion Ragout",
@@ -462,7 +470,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 1,
     "lore": "Two apex predators rendered down together, the ragout smells of blood, musk, and the savage hierarchy of the deep wilds.",
-    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from gnoll hide and lion meat, steam rising from the surface"
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from gnoll hide and lion meat, steam rising from the surface",
+    "description": "Gnoll shank and lion meat braised together until the two predators surrender into one russet gravy. Savage on the plate, gentle in the mouth."
   },
   "death_knight_broth": {
     "name": "Death Knight's Black Broth",
@@ -475,7 +484,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 1,
     "lore": "The Spartans drank their black broth to harden themselves for death. This broth is darker, colder, and carries the faint iron taste of something that no longer fears it.",
-    "sprite_desc": "A stone bowl filled with smooth dark broth made from charred bone and zombie flesh, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth dark broth made from charred bone and zombie flesh, wisps of fragrant steam curling above",
+    "description": "A funerary broth of charred bone and zombie flesh, black as wet ash and twice as silent. It drinks like cold iron and lingers like a held breath."
   },
   "hobgoblin_orc_stew": {
     "name": "Regimental Stew",
@@ -488,7 +498,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 1,
     "lore": "When goblinoid armies march, both bloods end up in the pot. Soldier's strength.",
-    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from hobgoblin blood and orc blood, steam rising from the surface"
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from hobgoblin blood and orc blood, steam rising from the surface",
+    "description": "A regimental stew of mixed greenskin blood thickened over a long fire, the way orcish quartermasters do it in the field. Brutish, hot, and effective."
   },
   "lizard_frog_ragout": {
     "name": "Cave Amphibian Ragout",
@@ -501,7 +512,8 @@
     "bonus_stat": "DEX",
     "bonus_amount": 1,
     "lore": "Surprisingly delicate, if you can get past the skin.",
-    "sprite_desc": "A bubbling iron pot of thick verdant stew made from lizard meat and frog legs, steam rising from the surface"
+    "sprite_desc": "A bubbling iron pot of thick verdant stew made from lizard meat and frog legs, steam rising from the surface",
+    "description": "Lizard and frog stewed together in a swampy green sauce. Light and springing on the tongue, the kind of dish that makes you quicker on your feet by lunch."
   },
   "bear_troll_haunch": {
     "name": "Monstrous Meat Haunch",
@@ -514,7 +526,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 2,
     "lore": "Troll flesh regenerates even during cooking. The combined vitality is extraordinary.",
-    "sprite_desc": "A wooden platter bearing a glistening roast of bear meat and troll hide, seared to a warm russet crust with herb garnish"
+    "sprite_desc": "A wooden platter bearing a glistening roast of bear meat and troll hide, seared to a warm russet crust with herb garnish",
+    "description": "A glistening haunch of bear roasted with troll hide woven through it like marbling. The troll meat keeps weeping back together until the salt finally sets it."
   },
   "hobgoblin_ogre_feast": {
     "name": "Warlord's War Feast",
@@ -527,7 +540,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 2,
     "lore": "The spoils of two brutal commanders, cooked together. Raw dominance in every bite.",
-    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of hobgoblin blood and ogre hide, garnished with edible flowers and warm russet sauce"
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of hobgoblin blood and ogre hide, garnished with edible flowers and warm russet sauce",
+    "description": "A warlord's spread of hobgoblin blood reduced with ogre hide and laid out on a banquet platter. Eat it before a campaign and your shoulders feel wider."
   },
   "spectral_eye_consomme": {
     "name": "Spectral Eye ConsommÃ©",
@@ -540,7 +554,8 @@
     "bonus_stat": "WIS",
     "bonus_amount": 2,
     "lore": "You can see beyond the veil after eating this. The dead share what the living cannot know.",
-    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from spectral essence and eye jelly, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from spectral essence and eye jelly, wisps of fragrant steam curling above",
+    "description": "A pale violet consomme clarified through spectral essence until the broth itself seems to hover above the bowl. Each spoonful sharpens the inner eye."
   },
   "shadow_crystal_broth": {
     "name": "Shadow-Walker's Broth",
@@ -553,7 +568,8 @@
     "bonus_effect": "invisible",
     "bonus_amount": 10,
     "lore": "Solid shadows dissolved in darkness. Grants brief invisibility.",
-    "sprite_desc": "A stone bowl filled with smooth earthy broth made from shadow essence and shadow crystal, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth earthy broth made from shadow essence and shadow crystal, wisps of fragrant steam curling above",
+    "description": "Shadow essence steeped around a chip of black crystal until the broth swallows its own light. Drink it and the room forgets exactly where you were standing."
   },
   "wisp_soul_risotto": {
     "name": "Will-o-Wisp Risotto",
@@ -566,7 +582,8 @@
     "bonus_stat": "INT",
     "bonus_amount": 2,
     "lore": "Ethereal ingredients merge at the boundary of thought and existence. Understanding comes unbidden.",
-    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence and soul fragment, plated with a pale violet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence and soul fragment, plated with a pale violet reduction drizzled on top",
+    "description": "A pale risotto suspended in wisp-light, every grain holding a fragment of soul. It glows on the spoon and answers questions you forgot you were asking."
   },
   "bugbear_troll_roast": {
     "name": "Brute's Double Roast",
@@ -579,7 +596,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 2,
     "lore": "Two of the dungeon's most feared brutes, slow-roasted until the rage leaves them and enters you.",
-    "sprite_desc": "A wooden platter bearing a glistening roast of bugbear pelt and troll hide, seared to a warm russet crust with herb garnish"
+    "sprite_desc": "A wooden platter bearing a glistening roast of bugbear pelt and troll hide, seared to a warm russet crust with herb garnish",
+    "description": "Bugbear pelt and troll hide spit-roasted back to back, the bugbear meat smoky, the troll meat threatening to knit shut. Brute food, plated for a chieftain."
   },
   "spider_phase_silk_dish": {
     "name": "Phased Silk Noodles",
@@ -592,7 +610,8 @@
     "bonus_stat": "DEX",
     "bonus_amount": 2,
     "lore": "Normal and phase silk twined together. Your movements become as fluid as the phasing itself.",
-    "sprite_desc": "A ceramic plate of beautifully prepared spider silk and phase silk, plated with a pale violet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared spider silk and phase silk, plated with a pale violet reduction drizzled on top",
+    "description": "Noodles of ordinary spider silk braided with phase silk, served before they slip out of this layer of reality. The first bite is here; the second tasted of somewhere else."
   },
   "demon_heart_roast": {
     "name": "Demon Heart Roast",
@@ -604,7 +623,8 @@
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "You should not be cooking this. And yet here you are. Infernal power floods through you.",
-    "sprite_desc": "A wooden platter bearing a glistening roast of nalfeshnee heart and hezrou demon bile, seared to a warm russet crust with herb garnish"
+    "sprite_desc": "A wooden platter bearing a glistening roast of nalfeshnee heart and hezrou demon bile, seared to a warm russet crust with herb garnish",
+    "description": "A glistening roast carved from a nalfeshnee's heart and basted with hezrou bile. The fat hisses on the platter in a language no cook should learn."
   },
   "elder_vampire_phylactery_elixir": {
     "name": "Undeath Synthesis Elixir",
@@ -617,7 +637,8 @@
     "bonus_stat": "WIS",
     "bonus_amount": 2,
     "lore": "Centuries of accumulated vampire cunning and a lich's distilled intellect. Ancient wisdom absorbed.",
-    "sprite_desc": "A glass flask of shimmering warm russet liquid distilled from elder vampire blood and necromancer phylactery, tiny bubbles rising within"
+    "sprite_desc": "A glass flask of shimmering warm russet liquid distilled from elder vampire blood and necromancer phylactery, tiny bubbles rising within",
+    "description": "Elder vampire blood distilled together with a necromancer's phylactery into a single shimmering russet draught. An ugly union, beautifully bottled."
   },
   "cerebral_eye_pudding": {
     "name": "Mind Flayer's Pudding",
@@ -630,7 +651,8 @@
     "bonus_stat": "INT",
     "bonus_amount": 3,
     "lore": "Mind flayers eat brains. You eat their fluid. The alien intelligence floods your thoughts, and you are sharper for it.",
-    "sprite_desc": "A ceramic plate of beautifully prepared cerebral fluid and eye jelly, plated with a earthy reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared cerebral fluid and eye jelly, plated with a earthy reduction drizzled on top",
+    "description": "Cerebral fluid set with eye-jelly into a trembling grey pudding that thinks faintly at the diner. Refined mind flayer fare, served cold."
   },
   "death_essence_soul_stew": {
     "name": "Death's Harvest Stew",
@@ -643,7 +665,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 2,
     "lore": "Harvested from the boundary of life and death. Reinforces your hold on existence.",
-    "sprite_desc": "A bubbling iron pot of thick earthy stew made from death essence and soul fragment, steam rising from the surface"
+    "sprite_desc": "A bubbling iron pot of thick earthy stew made from death essence and soul fragment, steam rising from the surface",
+    "description": "An earthy stew of distilled death essence and tethered soul fragments, simmered until the bowl hums on its own. Funeral food for those who plan to return."
   },
   "troll_ogre_regeneration_broth": {
     "name": "Regeneration Broth",
@@ -656,7 +679,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 2,
     "lore": "The troll gland still twitches in the pot. That's how you know it's working.",
-    "sprite_desc": "A stone bowl filled with smooth verdant broth made from troll regeneration gland and ogre hide, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth verdant broth made from troll regeneration gland and ogre hide, wisps of fragrant steam curling above",
+    "description": "A verdant broth pulled from a troll's regeneration gland and an ogre's tough hide. It knits the diner shut as quickly as the troll healed in life."
   },
   "dragon_fire_gland_elixir": {
     "name": "Dragon Blood Elixir",
@@ -674,7 +698,8 @@
       "bonus_effect": "fire_shield",
       "bonus_amount": 40,
       "description": "Dragon-bone vapor lingers on your skin. Flame turns aside."
-    }
+    },
+    "description": "Dragon scale dissolved in melted fire-gland and decanted into a glass flask that radiates heat. A sip of liquid wyrmfire, cellared into elegance."
   },
   "chaos_void_brew": {
     "name": "Void Chaos Brew",
@@ -686,7 +711,8 @@
     "bonus_type": "random_stat",
     "bonus_amount": 2,
     "lore": "The effects are unpredictable, like everything touched by chaos and void.",
-    "sprite_desc": "A ceramic plate of beautifully prepared chaos essence and void shard, plated with a earthy reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared chaos essence and void shard, plated with a earthy reduction drizzled on top",
+    "description": "Chaos essence stirred against a void shard until the plate stops agreeing with itself. Every bite is a different dish; every diner becomes someone slightly new."
   },
   "cultist_arcane_tincture": {
     "name": "Arcane Cultist Tincture",
@@ -699,7 +725,8 @@
     "bonus_stat": "INT",
     "bonus_amount": 2,
     "lore": "Dark sorcery and ancient bone powder. The forbidden knowledge seeps in with every drop.",
-    "sprite_desc": "A ceramic plate of beautifully prepared cultist reagent and arcane bone dust, plated with a earthy reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared cultist reagent and arcane bone dust, plated with a earthy reduction drizzled on top",
+    "description": "A dark tincture of cultist reagent ground with arcane bone dust, drunk in a single bitter swallow. Tastes like chalk and forbidden books."
   },
   "changeling_puca_illusion_soup": {
     "name": "Fae Illusion Soup",
@@ -712,7 +739,8 @@
     "bonus_effect": "invisible",
     "bonus_amount": 8,
     "lore": "The fae have always known secrets of concealment. This soup smells of both mischief and magic.",
-    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from changeling glamour and puca hair, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth pale violet broth made from changeling glamour and puca hair, wisps of fragrant steam curling above",
+    "description": "A pale violet broth that wears a different face from every angle of the bowl. Changeling glamour and puca hair conspire to unstitch you from sight."
   },
   "drow_venom_tincture": {
     "name": "Drow Venom Tincture",
@@ -725,7 +753,8 @@
     "bonus_stat": "DEX",
     "bonus_amount": 2,
     "lore": "Drow spend centuries perfecting their venoms. Neutralized and taken as a tincture, the body learns their precision.",
-    "sprite_desc": "A ceramic plate of beautifully prepared drow poison extract and paralytic venom, plated with a earthy reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared drow poison extract and paralytic venom, plated with a earthy reduction drizzled on top",
+    "description": "Drow poison extract neutralized with paralytic venom into a cold, mineral tincture. The hand that pours it stays steady; the hand that drinks it gets steadier."
   },
   "basilisk_medusa_grand_feast": {
     "name": "Gorgon's Grand Feast",
@@ -737,7 +766,8 @@
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Both creatures turn things to stone with a glance. Cooked together, they give you eyes like theirs.",
-    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of basilisk eye and Medusa's Blood, garnished with edible flowers and warm russet sauce"
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of basilisk eye and Medusa's Blood, garnished with edible flowers and warm russet sauce",
+    "description": "A grand platter of basilisk eye and medusa blood, plated with edible flowers in defiance of their petrifying source. To eat it is to stare back."
   },
   "chimera_dragon_roast": {
     "name": "Chimera and Dragon Roast",
@@ -755,7 +785,8 @@
       "bonus_effect": "fire_shield",
       "bonus_amount": 40,
       "description": "Dragon-bone vapor lingers on your skin. Flame turns aside."
-    }
+    },
+    "description": "Chimera heart and dragon scale roasted together over coals that refuse to die. The platter hisses in three voices and the meal lands in every stat at once."
   },
   "lich_vampire_death_banquet": {
     "name": "The Undying Banquet",
@@ -767,7 +798,8 @@
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Lich and vampire — two forms of cheating death. Together they may share their secret with you.",
-    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of necromancer phylactery and elder vampire blood, garnished with edible flowers and earthy sauce"
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of necromancer phylactery and elder vampire blood, garnished with edible flowers and earthy sauce",
+    "description": "An undying banquet of necromancer phylactery and elder vampire blood, the two great refusals of death plated side by side. Each course makes the next less final."
   },
   "devourer_soul_judges_feast": {
     "name": "Ammit's Judgment Feast",
@@ -779,7 +811,8 @@
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Ammit, the Egyptian devourer of unworthy hearts, weighed souls against the feather of Ma'at. To consume her essence alongside her quarry is to inherit the terrible wisdom of judgment.",
-    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of devourer tooth and soul fragment, garnished with edible flowers and warm russet sauce"
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of devourer tooth and soul fragment, garnished with edible flowers and warm russet sauce",
+    "description": "A funerary platter of devourer tooth and bound soul fragments, plated as if for judgement. Eat in silence; the dish keeps its own balance."
   },
   "pit_fiend_void_supremacy": {
     "name": "Infernal Void Supremacy",
@@ -791,7 +824,8 @@
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "The deepest evil and the deepest void. Those who survive eating this are changed forever.",
-    "sprite_desc": "A ceramic plate of beautifully prepared pit fiend scale and void ichor, plated with a warm russet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared pit fiend scale and void ichor, plated with a warm russet reduction drizzled on top",
+    "description": "Pit fiend scale glazed with void ichor and plated with infernal precision. The plate is hot under the hand and colder than the abyss beneath the food."
   },
   "troll_demon_brain_undying": {
     "name": "The Undying Formula",
@@ -804,7 +838,8 @@
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "lore": "Regeneration, infernal fire, and the essence of death itself. The ultimate tonic of survival.",
-    "sprite_desc": "A ceramic plate of beautifully prepared troll regeneration gland, nalfeshnee heart, and death essence, plated with a verdant reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared troll regeneration gland, nalfeshnee heart, and death essence, plated with a verdant reduction drizzled on top",
+    "description": "Troll regeneration gland folded into demon heart and bound with death essence. A formula, not a meal: three refusals of dying eaten in one sitting."
   },
   "shadow_bat_stew": {
     "name": "Cave Shadow Stew",
@@ -817,7 +852,8 @@
     "bonus_effect": "invisible",
     "bonus_amount": 6,
     "lore": "Shadow hound and bat — both creatures of darkness. Their essence grants temporary concealment.",
-    "sprite_desc": "A bubbling iron pot of thick dark stew made from shadow fur and bat wing, steam rising from the surface"
+    "sprite_desc": "A bubbling iron pot of thick dark stew made from shadow fur and bat wing, steam rising from the surface",
+    "description": "A thick dark stew of shadow fur and bat wing, the steam unwilling to rise straight. Two bowls in, the cook's apprentice cannot remember serving you."
   },
   "grub_goblin_bake": {
     "name": "Grub and Goblin Bake",
@@ -830,7 +866,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 1,
     "lore": "Goblins eat grubs regularly. You're just cutting out the middleman.",
-    "sprite_desc": "A ceramic plate of beautifully prepared insect carapace and goblin flesh, plated with a warm russet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared insect carapace and goblin flesh, plated with a warm russet reduction drizzled on top",
+    "description": "Insect carapace and goblin flesh baked under a hard crust until the whole thing crackles open like roadside roast. Filling in a way no one wants to think about."
   },
   "lycan_troll_broth": {
     "name": "Feral Broth",
@@ -842,7 +879,8 @@
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Werewolf ferocity and troll vitality. Two natures of unstoppable savagery, one broth.",
-    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from lycanthrope blood and troll hide, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth warm russet broth made from lycanthrope blood and troll hide, wisps of fragrant steam curling above",
+    "description": "Lycanthrope blood and troll hide rendered together into a russet broth that smells of wet pelt and forest. It growls quietly on the way down."
   },
   "raven_eagle_consomme": {
     "name": "Sky Hunter's ConsommÃ©",
@@ -855,7 +893,8 @@
     "bonus_stat": "PER",
     "bonus_amount": 2,
     "lore": "The raven sees omens. The eagle sees clearly. Both feathers boiled grant exceptional sight.",
-    "sprite_desc": "A stone bowl filled with smooth dark broth made from raven feather and eagle feather, wisps of fragrant steam curling above"
+    "sprite_desc": "A stone bowl filled with smooth dark broth made from raven feather and eagle feather, wisps of fragrant steam curling above",
+    "description": "A dark, clarified consomme drawn from raven and eagle feathers, sharp with sky and altitude. The sight clears almost before the first spoon finishes."
   },
   "naga_python_scales": {
     "name": "Serpent Scales Supreme",
@@ -868,7 +907,8 @@
     "bonus_stat": "DEX",
     "bonus_amount": 2,
     "lore": "Two magnificent serpents. One divine, one natural. Their serpentine grace becomes yours.",
-    "sprite_desc": "A ceramic plate of beautifully prepared naga scale and python scales, plated with a verdant reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared naga scale and python scales, plated with a verdant reduction drizzled on top",
+    "description": "Naga and python scales braised tender and plated like roof tiles, glazed in their own oils. Supple to chew, suppler still in the legs afterward."
   },
   "owlbear_griffin_feast": {
     "name": "Chimeric Predator Feast",
@@ -880,7 +920,8 @@
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Two hybrid predators that shouldn't exist — their impossible power becomes inexplicably yours.",
-    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of owlbear feather and griffin feather, garnished with edible flowers and warm russet sauce"
+    "sprite_desc": "A large ornate platter laden with an elaborate arrangement of owlbear feather and griffin feather, garnished with edible flowers and warm russet sauce",
+    "description": "Owlbear and griffin feathers crowning a platter built like a hunt-trophy. The kitchen reeks of woodsmoke and beak; the diner leaves wider in the shoulder."
   },
   "barrow_embalming_stew": {
     "name": "Tomb Guardian Stew",
@@ -893,7 +934,8 @@
     "bonus_stat": "CON",
     "bonus_amount": 2,
     "lore": "Ancient preservatives that kept corpses intact for centuries. Renders the living nearly as indestructible.",
-    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from barrow dust and embalming resin, steam rising from the surface"
+    "sprite_desc": "A bubbling iron pot of thick warm russet stew made from barrow dust and embalming resin, steam rising from the surface",
+    "description": "A russet stew of barrow dust and embalming resin, sweet and bituminous in alternating spoonfuls. Tomb-keepers cook it to teach their bodies how to last."
   },
   "wisp_shadow_brew": {
     "name": "Twilight Brew",
@@ -906,7 +948,8 @@
     "bonus_stat": "WIS",
     "bonus_amount": 2,
     "lore": "Light and shadow at the boundary between worlds. Only the wise understand both â€” and after this, you will.",
-    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence and shadow essence, plated with a pale violet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared wisp essence and shadow essence, plated with a pale violet reduction drizzled on top",
+    "description": "Wisp essence and shadow essence whisked into a brew the color of late dusk. Drink it between the lamp going out and the candle catching, and the mind sits cleaner."
   },
   "orc_bugbear_conquest": {
     "name": "Conqueror's Pottage",
@@ -919,7 +962,8 @@
     "bonus_stat": "STR",
     "bonus_amount": 1,
     "lore": "Goblinoid warriors eat together before battle. You eat them after. Conqueror's strength.",
-    "sprite_desc": "A ceramic plate of beautifully prepared orc blood and bugbear pelt, plated with a verdant reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared orc blood and bugbear pelt, plated with a verdant reduction drizzled on top",
+    "description": "Orc blood thickened with bugbear pelt into a marching-pottage the conqueror's kitchen perfected over generations. It feeds the arm before it feeds the heart."
   },
   "spider_web_stew": {
     "name": "Spider-Silk Mushroom Stew",
@@ -1359,7 +1403,8 @@
       "bonus_effect": "death_ward",
       "bonus_amount": 60,
       "description": "The meal's underworld essence wards you against the final ending."
-    }
+    },
+    "description": "Fenrir's fang spitted with dragon scale and crusted with void salt, served on a wooden platter that smolders quietly at the corners. Wolf-meat for the end of the world."
   },
   "void_destroyer_feast": {
     "name": "Void Destroyer's Feast",
@@ -1377,7 +1422,8 @@
       "bonus_type": "all_stats",
       "bonus_amount": 1,
       "description": "Persephone smiles on your perfect work — every stat strengthens further."
-    }
+    },
+    "description": "A banquet platter of void essence, dragon scale, and chimera heart, arranged with the calm of a verdict. Each bite undoes a small piece of whatever you used to be."
   },
   "destroyers_arcane_essence": {
     "name": "Destroyer's Arcane Essence",
@@ -1397,7 +1443,8 @@
       "bonus_effect": "death_ward",
       "bonus_amount": 60,
       "description": "The meal's underworld essence wards you against the final ending."
-    }
+    },
+    "description": "Void essence bound to a necromancer's phylactery and crystallized with void salt. The diner wears the meal's protection like a held breath."
   },
   "death_march_reduction": {
     "name": "Death March Reduction",
@@ -1414,7 +1461,8 @@
       "bonus_type": "all_stats",
       "bonus_amount": 1,
       "description": "Persephone smiles on your perfect work — every stat strengthens further."
-    }
+    },
+    "description": "Fenrir's fang reduced down with void essence until almost nothing remains except weight. A single spoon of it walks you another mile past the end."
   },
   "rat_dragon_paradox": {
     "name": "Rat-Dragon Paradox Broth",
@@ -1433,7 +1481,8 @@
       "bonus_effect": "fire_shield",
       "bonus_amount": 40,
       "description": "Dragon-bone vapor lingers on your skin. Flame turns aside."
-    }
+    },
+    "description": "Rat meat simmered with dragon scale and a pinch of void salt, the cheapest and the costliest ingredient meeting in one warm bowl. The paradox sits well in the stomach."
   },
   "snake_medusa_lineage": {
     "name": "Serpent Lineage Consomme",
@@ -1459,7 +1508,8 @@
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Fire and frost, predator and beast, elemental and ancient. To balance all opposites is to transcend them.",
-    "sprite_desc": "A ceramic plate of beautifully prepared fire gland, frost gland, manticore spine, and Dragon Scale, plated with a warm russet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared fire gland, frost gland, manticore spine, and Dragon Scale, plated with a warm russet reduction drizzled on top",
+    "description": "Fire gland, frost gland, manticore spine, and dragon scale plated together as a single hush of contradicting heat. The first bite burns; the second freezes; the third forgets both."
   },
   "goblin_chimera_revelation": {
     "name": "Goblin-Chimera Revelation",
@@ -1490,7 +1540,8 @@
       "bonus_type": "all_stats",
       "bonus_amount": 1,
       "description": "Persephone smiles on your perfect work — every stat strengthens further."
-    }
+    },
+    "description": "Rat meat, void essence, and void salt: the humblest harvest and the final ingredients, laid out on one plate. Alpha and omega, served warm."
   },
   "bone_of_ages": {
     "name": "Bone of Ages",
@@ -1504,7 +1555,8 @@
     "bonus_stat": "INT",
     "bonus_amount": 3,
     "lore": "Bone from levels one, ten, and sixty. The dead across all depths share their accumulated wisdom.",
-    "sprite_desc": "A ceramic plate of beautifully prepared bone shard, warrior bone, and necromancer phylactery, plated with a warm russet reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared bone shard, warrior bone, and necromancer phylactery, plated with a warm russet reduction drizzled on top",
+    "description": "Bone shard, hero's bone, and necromancer phylactery ground and recombined into a single cold, intelligent dish. It tastes of libraries and grave dust."
   },
   "hunters_trophy_roast": {
     "name": "Hunter's Trophy Roast",
@@ -1534,7 +1586,8 @@
     "bonus_stat": "WIS",
     "bonus_amount": 2,
     "lore": "Four transformative substances - the ooze that dissolves, the stone that petrifies, the heart that merges, the blood that turns. Wisdom distilled.",
-    "sprite_desc": "A ceramic plate of beautifully prepared slime core, basilisk stone, chimera heart, and Medusa's Blood, plated with a verdant reduction drizzled on top"
+    "sprite_desc": "A ceramic plate of beautifully prepared slime core, basilisk stone, chimera heart, and Medusa's Blood, plated with a verdant reduction drizzled on top",
+    "description": "Slime core, basilisk stone, chimera heart, and medusa blood beaten together into the foundation stock every great alchemist eventually attempts. A meal that doubles as a thesis."
   },
   "elemental_triad": {
     "name": "Elemental Triad Soup",
@@ -6081,5 +6134,379 @@
     "bonus_amount": 2,
     "description": "Five-element fire-altar dish prepared in absolute silence on a black slab. Root, death, quake, silence, salt. The cook never speaks of it after.",
     "sprite_desc": "A flat black stone slab with five small piles arranged in a pentagram, a single thin curl of smoke rising from the center, no kitchen visible around"
+  },
+  "goblin_ear_thyme_canape": {
+    "name": "Goblin Ear Canape with Wild Thyme",
+    "ingredients": [
+      "goblin_ear",
+      "wild_thyme"
+    ],
+    "sp": 35,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 1,
+    "description": "Thinly sliced goblin ear cartilage seared over thyme branches. The ridged texture sharpens the diner's own hearing for hours.",
+    "sprite_desc": "A small wooden board with thin curling slices of pale greenish ear meat fanned over fresh thyme sprigs, drizzled with brown jus"
+  },
+  "stone_moss_celery_tisane": {
+    "name": "Stone Moss and Pale Celery Tisane",
+    "ingredients": [
+      "stone_moss",
+      "pale_celery"
+    ],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Petrified moss steeped with pale celery in slow-simmered broth. The earthen mineral note lingers and steadies the mind.",
+    "sprite_desc": "A pale stone cup of cloudy moss-green tisane with curled celery ribbons and flecks of grey moss floating at the surface"
+  },
+  "witch_finger_nightshade_terrine": {
+    "name": "Witch Finger Terrine",
+    "ingredients": [
+      "witch_finger",
+      "nightshade_leaf"
+    ],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Witch finger bone pressed with nightshade leaf into a dark terrine. Bitter, sharp, and unsettlingly clarifying.",
+    "sprite_desc": "A glossy black terrine slice on a slate plate, ringed by violet nightshade leaves, a single pale finger-bone fragment protruding"
+  },
+  "serpent_venom_pepper_reduction": {
+    "name": "Sable Serpent Venom Reduction",
+    "ingredients": [
+      "serpent_venom",
+      "serpent_pepper"
+    ],
+    "sp": 140,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Sable serpent venom carefully neutralized in a reduction of serpent pepper and wine. Bright heat, no bite.",
+    "sprite_desc": "A small obsidian dish holding a glistening crimson reduction, a coiled garnish of pepper husk perched on the rim"
+  },
+  "patriarch_signet_rosemary_consomme": {
+    "name": "Patriarch Signet Consomme",
+    "ingredients": [
+      "patriarch_signet",
+      "rosemary_sprig"
+    ],
+    "sp": 150,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "The seal-ring of an iron patriarch melted into clear consomme, infused with rosemary. The dish carries an air of solemn authority.",
+    "sprite_desc": "A polished pewter bowl holding a clear amber broth, a faintly molten signet ring resting at the bottom, rosemary sprig floating"
+  },
+  "assassin_cowl_valerian_dumplings": {
+    "name": "Cowl-Wrapped Valerian Dumplings",
+    "ingredients": [
+      "assassin_cowl",
+      "valerian_root"
+    ],
+    "sp": 160,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 18,
+    "description": "Dumplings wrapped in fibres torn from a slain mage-slayer's cowl, stuffed with valerian. The diner fades from notice as they eat.",
+    "sprite_desc": "Three dark cloth-wrapped dumplings on a black slate plate, dusted with grey ash, faintly translucent at the edges"
+  },
+  "golem_core_mushroom_pottage": {
+    "name": "Golem Core Pottage",
+    "ingredients": [
+      "golem_core",
+      "cave_mushroom"
+    ],
+    "sp": 160,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "The animating sigil-stone of a stone golem ground into a thick mushroom pottage. Heavy, mineral, and unshakable.",
+    "sprite_desc": "A heavy clay bowl of dense grey-brown pottage with chunks of mushroom and a single faintly glowing stone shard at center"
+  },
+  "plague_phylactery_garlic_broth": {
+    "name": "Plague Phylactery Cleansing Broth",
+    "ingredients": [
+      "plague_phylactery",
+      "valerian_root"
+    ],
+    "sp": 165,
+    "bonus_type": "status",
+    "bonus_effect": "poison_resist",
+    "bonus_amount": 50,
+    "description": "A plague witch's phylactery cracked and boiled into broth with valerian root. The sickness it once held now wards the diner from poison.",
+    "sprite_desc": "A pitted iron bowl of milky greenish broth with a cracked black phylactery shell at the bottom, faint sickly vapors rising"
+  },
+  "vine_essence_thyme_salad": {
+    "name": "Vine Essence and Thyme Salad",
+    "ingredients": [
+      "vine_essence",
+      "wild_thyme"
+    ],
+    "sp": 165,
+    "bonus_type": "status",
+    "bonus_effect": "regenerating",
+    "bonus_amount": 30,
+    "description": "Tendrils of vine horror dressed raw over wild thyme. The plant's hunger for sunlight is repurposed as the eater's hunger for healing.",
+    "sprite_desc": "A wooden salad bowl piled with twisting deep-green vine tendrils, thyme sprigs, and a glossy oil dressing"
+  },
+  "horror_ichor_void_salt_souffle": {
+    "name": "Horror Ichor Souffle",
+    "ingredients": [
+      "horror_ichor",
+      "void_salt"
+    ],
+    "sp": 170,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Lurking-horror ichor folded into egg with a pinch of void salt. The souffle quivers between visible and not.",
+    "sprite_desc": "A trembling pale-violet souffle in a ceramic ramekin, faintly translucent crust, tiny dark flecks of salt scattered on top"
+  },
+  "sentinel_plate_mandrake_steak": {
+    "name": "Sentinel Plate Steak",
+    "ingredients": [
+      "sentinel_plate",
+      "mandrake_root"
+    ],
+    "sp": 175,
+    "bonus_type": "combat_stat",
+    "bonus_stat": "ac",
+    "bonus_amount": 2,
+    "description": "A slab of throne-sentinel armor scale slow-braised with mandrake root until tender. Eats like steel and protects like steel.",
+    "sprite_desc": "A square dark-grey scale of meat-textured plate on a stone slab, halved to show pinkish marbling, mandrake garnish"
+  },
+  "lich_dust_nightshade_dust_loaf": {
+    "name": "Lich Dust Funeral Loaf",
+    "ingredients": [
+      "lich_dust",
+      "nightshade_leaf"
+    ],
+    "sp": 180,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Powdered remains of a skeleton-lich kneaded into a dark loaf with nightshade. Dense with arcane memory.",
+    "sprite_desc": "A dense black loaf on a funerary stone, sliced to reveal grey marbling and dark purple leaf flecks throughout"
+  },
+  "demon_horn_ember_skewer": {
+    "name": "Demon Horn and Ember Skewer",
+    "ingredients": [
+      "demon_horn",
+      "ember_spice"
+    ],
+    "sp": 185,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Spirals of trickster-demon horn grilled until charred, dusted with ember spice. Each bite burns and bolsters.",
+    "sprite_desc": "A blackened iron skewer of spiraling charred horn pieces glowing with embers, fine red spice dusted along the length"
+  },
+  "deep_pearl_celery_chowder": {
+    "name": "Deep Pearl Abyssal Chowder",
+    "ingredients": [
+      "deep_pearl",
+      "pale_celery"
+    ],
+    "sp": 185,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "A deep-one priest's pearl cracked and stewed with pale celery in milk-thick broth. The diner hears the tide in the back of their skull.",
+    "sprite_desc": "A bone-white bowl of pale milky chowder, halved iridescent pearl resting on top, celery ribbons curling around it"
+  },
+  "crone_voice_valerian_tea": {
+    "name": "Crone Voice Whispering Tea",
+    "ingredients": [
+      "crone_voice",
+      "valerian_root"
+    ],
+    "sp": 185,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "The harvested whisper-organ of a crone steeped in valerian. The tea murmurs faint advice as it is sipped.",
+    "sprite_desc": "A black clay teacup of murky violet tea, faintly luminous vapor rising in shapes that almost resemble script"
+  },
+  "mimic_gold_ember_glaze": {
+    "name": "Glazed Mimic Gold Bites",
+    "ingredients": [
+      "mimic_gold",
+      "ember_spice"
+    ],
+    "sp": 195,
+    "bonus_type": "random_stat",
+    "bonus_amount": 2,
+    "description": "Coin-shaped flesh of a gilded mimic glazed in ember spice until the metallic sheen runs. You never know which faculty it sharpens.",
+    "sprite_desc": "Six small disc-shaped golden bites on a dark plate, each wearing a glossy red glaze, faint coin-faces visible beneath"
+  },
+  "necromantic_focus_mandrake_terrine": {
+    "name": "Necromantic Focus Terrine",
+    "ingredients": [
+      "necromantic_focus",
+      "mandrake_root"
+    ],
+    "sp": 200,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "A crypt-summoner's focus crystal layered with mandrake root in a chilled terrine. Cold to the tongue, cold to the soul, lucid to the mind.",
+    "sprite_desc": "A rectangular slice of dark layered terrine on slate, a faintly glowing purple crystal core visible in cross-section"
+  },
+  "rime_tusk_frost_glaze": {
+    "name": "Rime Tusk Frost-Glazed Cut",
+    "ingredients": [
+      "rime_tusk",
+      "frost_gland"
+    ],
+    "sp": 200,
+    "bonus_type": "status",
+    "bonus_effect": "cold_shield",
+    "bonus_amount": 35,
+    "description": "A frostfang giant's tusk shaved and glazed with frost-gland ice. The cold settles in the bones and pushes other cold away.",
+    "sprite_desc": "Pale shaved tusk-meat curls fanned across a frosted stone plate, glistening with bluish ice crystals"
+  },
+  "shadow_quiver_void_skewer": {
+    "name": "Shadow Quiver Skewer",
+    "ingredients": [
+      "shadow_quiver",
+      "void_salt"
+    ],
+    "sp": 200,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Arrow-shafts of woven shadow grilled briefly and salted with void salt. The diner's hand learns the quiver's quickness.",
+    "sprite_desc": "A row of slender dark shaft-shaped skewer pieces on charred iron, dusted with crystalline black salt, faintly indistinct edges"
+  },
+  "inquisitor_seal_rosemary_loaf": {
+    "name": "Inquisitor Seal Loaf",
+    "ingredients": [
+      "inquisitor_seal",
+      "rosemary_sprig"
+    ],
+    "sp": 210,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 3,
+    "description": "A veiled inquisitor's wax seal kneaded into a heavy loaf with rosemary. The diner sees clearly what others would hide.",
+    "sprite_desc": "A heavy oblong loaf with a deep red wax seal pressed into the crust, a sprig of rosemary tucked beside it"
+  },
+  "elemental_core_dragon_salt_consomme": {
+    "name": "Elemental Core Consomme",
+    "ingredients": [
+      "elemental_core",
+      "dragon_salt"
+    ],
+    "sp": 220,
+    "bonus_type": "status",
+    "bonus_effect": "fire_shield",
+    "bonus_amount": 35,
+    "description": "A lava-elemental's molten core clarified into searing consomme with dragon salt. The eater carries inner flame for an hour.",
+    "sprite_desc": "A black iron bowl of glowing orange consomme, faintly bubbling, a single white-hot core fragment sinking at center"
+  },
+  "archon_heart_mandrake_braise": {
+    "name": "Archon Heart Braise",
+    "ingredients": [
+      "archon_heart",
+      "mandrake_root"
+    ],
+    "sp": 230,
+    "bonus_type": "two_stats",
+    "bonus_amount": 3,
+    "description": "The blood archon's heart braised in red wine with mandrake. A meal of imperial weight, lifting both body and bearing.",
+    "sprite_desc": "A heavy crimson roast on a brass platter swimming in dark wine sauce, mandrake roots fanned around the rim"
+  },
+  "astral_filament_silk_consomme": {
+    "name": "Astral Filament Consomme",
+    "ingredients": [
+      "astral_filament",
+      "spider_silk"
+    ],
+    "sp": 235,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "Threads of an astral horror spun together with cave spider silk into a translucent broth. The diner's thoughts walk further than their feet.",
+    "sprite_desc": "A glass bowl of nearly transparent broth, suspended within it a fine silvery web of intersecting filaments"
+  },
+  "swarmlord_chitin_pepper_crisps": {
+    "name": "Swarmlord Chitin Crisps",
+    "ingredients": [
+      "swarmlord_chitin",
+      "serpent_pepper"
+    ],
+    "sp": 240,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Locust-swarmlord plate fried into shattering crisps, dusted with serpent pepper. The eater's reflexes hum like a swarm.",
+    "sprite_desc": "A ceramic plate piled with translucent amber crisps the shape of insect plating, dusted bright red, faintly buzzing"
+  },
+  "executioners_iron_void_steak": {
+    "name": "Executioner's Iron Steak",
+    "ingredients": [
+      "executioners_iron",
+      "void_salt"
+    ],
+    "sp": 245,
+    "bonus_type": "combat_stat",
+    "bonus_stat": "to_hit",
+    "bonus_amount": 3,
+    "description": "A pit executioner's iron rendered down into a black steak crusted with void salt. Eats like guilt, strikes like judgment.",
+    "sprite_desc": "A dark slab of iron-black steak on a stained block, charred crust glittering with crystalline black salt"
+  },
+  "void_feather_thyme_souffle": {
+    "name": "Void Feather Souffle",
+    "ingredients": [
+      "void_feather",
+      "wild_thyme"
+    ],
+    "sp": 250,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 3,
+    "description": "A void seraph's feather whipped into a souffle over wild thyme. The diner's sight reaches places light cannot.",
+    "sprite_desc": "A tall dark-grey souffle in a white ramekin, faintly absorbing light at the edges, thyme sprig laid across the crust"
+  },
+  "herald_trumpet_brass_glaze": {
+    "name": "Herald Trumpet Brass Glaze",
+    "ingredients": [
+      "herald_trumpet_brass",
+      "ember_spice"
+    ],
+    "sp": 260,
+    "bonus_type": "all_stats",
+    "bonus_amount": 3,
+    "description": "An apocalypse herald's trumpet mouthpiece glazed in ember spice and roasted whole. Each bite peals through the body like a distant horn.",
+    "sprite_desc": "A polished brass mouthpiece roasted to deep amber on a red-glowing iron platter, ember spice flickering across the surface"
+  },
+  "wormwood_ash_valerian_loaf": {
+    "name": "Wormwood Ash Bitter Loaf",
+    "ingredients": [
+      "wormwood_ash",
+      "valerian_root"
+    ],
+    "sp": 270,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 4,
+    "description": "Ash of a wormwood blight kneaded with valerian root into a black, bitter loaf. The mind clears the way a fire-cleared field clears.",
+    "sprite_desc": "A scorched-black loaf on a stone slab, fissures glowing faintly red, pale valerian flowers pressed into the crust"
+  },
+  "horseman_lance_shard_grand_feast": {
+    "name": "Horseman Lance Shard Grand Feast",
+    "ingredients": [
+      "horseman_lance_shard",
+      "dragon_scale",
+      "ember_spice"
+    ],
+    "sp": 285,
+    "bonus_type": "all_stats",
+    "bonus_amount": 3,
+    "description": "An iron horseman's shattered lance shard plated with dragon scale and ember spice. The grandest of late-game feasts; the diner rides into battle.",
+    "sprite_desc": "An ornate brass platter laden with a long iron shard centerpiece, ringed by glittering dragon-scale crisps and red-spice flames"
   }
 }

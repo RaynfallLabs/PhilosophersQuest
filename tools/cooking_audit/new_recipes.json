@@ -1,0 +1,376 @@
+{
+  "goblin_ear_thyme_canape": {
+    "name": "Goblin Ear Canape with Wild Thyme",
+    "ingredients": [
+      "goblin_ear",
+      "wild_thyme"
+    ],
+    "sp": 35,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 1,
+    "description": "Thinly sliced goblin ear cartilage seared over thyme branches. The ridged texture sharpens the diner's own hearing for hours.",
+    "sprite_desc": "A small wooden board with thin curling slices of pale greenish ear meat fanned over fresh thyme sprigs, drizzled with brown jus"
+  },
+  "stone_moss_celery_tisane": {
+    "name": "Stone Moss and Pale Celery Tisane",
+    "ingredients": [
+      "stone_moss",
+      "pale_celery"
+    ],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "Petrified moss steeped with pale celery in slow-simmered broth. The earthen mineral note lingers and steadies the mind.",
+    "sprite_desc": "A pale stone cup of cloudy moss-green tisane with curled celery ribbons and flecks of grey moss floating at the surface"
+  },
+  "witch_finger_nightshade_terrine": {
+    "name": "Witch Finger Terrine",
+    "ingredients": [
+      "witch_finger",
+      "nightshade_leaf"
+    ],
+    "sp": 130,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Witch finger bone pressed with nightshade leaf into a dark terrine. Bitter, sharp, and unsettlingly clarifying.",
+    "sprite_desc": "A glossy black terrine slice on a slate plate, ringed by violet nightshade leaves, a single pale finger-bone fragment protruding"
+  },
+  "serpent_venom_pepper_reduction": {
+    "name": "Sable Serpent Venom Reduction",
+    "ingredients": [
+      "serpent_venom",
+      "serpent_pepper"
+    ],
+    "sp": 140,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 2,
+    "description": "Sable serpent venom carefully neutralized in a reduction of serpent pepper and wine. Bright heat, no bite.",
+    "sprite_desc": "A small obsidian dish holding a glistening crimson reduction, a coiled garnish of pepper husk perched on the rim"
+  },
+  "patriarch_signet_rosemary_consomme": {
+    "name": "Patriarch Signet Consomme",
+    "ingredients": [
+      "patriarch_signet",
+      "rosemary_sprig"
+    ],
+    "sp": 150,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "The seal-ring of an iron patriarch melted into clear consomme, infused with rosemary. The dish carries an air of solemn authority.",
+    "sprite_desc": "A polished pewter bowl holding a clear amber broth, a faintly molten signet ring resting at the bottom, rosemary sprig floating"
+  },
+  "assassin_cowl_valerian_dumplings": {
+    "name": "Cowl-Wrapped Valerian Dumplings",
+    "ingredients": [
+      "assassin_cowl",
+      "valerian_root"
+    ],
+    "sp": 160,
+    "bonus_type": "status",
+    "bonus_effect": "invisible",
+    "bonus_amount": 18,
+    "description": "Dumplings wrapped in fibres torn from a slain mage-slayer's cowl, stuffed with valerian. The diner fades from notice as they eat.",
+    "sprite_desc": "Three dark cloth-wrapped dumplings on a black slate plate, dusted with grey ash, faintly translucent at the edges"
+  },
+  "golem_core_mushroom_pottage": {
+    "name": "Golem Core Pottage",
+    "ingredients": [
+      "golem_core",
+      "cave_mushroom"
+    ],
+    "sp": 160,
+    "bonus_type": "stat",
+    "bonus_stat": "CON",
+    "bonus_amount": 2,
+    "description": "The animating sigil-stone of a stone golem ground into a thick mushroom pottage. Heavy, mineral, and unshakable.",
+    "sprite_desc": "A heavy clay bowl of dense grey-brown pottage with chunks of mushroom and a single faintly glowing stone shard at center"
+  },
+  "plague_phylactery_garlic_broth": {
+    "name": "Plague Phylactery Cleansing Broth",
+    "ingredients": [
+      "plague_phylactery",
+      "valerian_root"
+    ],
+    "sp": 165,
+    "bonus_type": "status",
+    "bonus_effect": "poison_resist",
+    "bonus_amount": 50,
+    "description": "A plague witch's phylactery cracked and boiled into broth with valerian root. The sickness it once held now wards the diner from poison.",
+    "sprite_desc": "A pitted iron bowl of milky greenish broth with a cracked black phylactery shell at the bottom, faint sickly vapors rising"
+  },
+  "vine_essence_thyme_salad": {
+    "name": "Vine Essence and Thyme Salad",
+    "ingredients": [
+      "vine_essence",
+      "wild_thyme"
+    ],
+    "sp": 165,
+    "bonus_type": "status",
+    "bonus_effect": "regenerating",
+    "bonus_amount": 30,
+    "description": "Tendrils of vine horror dressed raw over wild thyme. The plant's hunger for sunlight is repurposed as the eater's hunger for healing.",
+    "sprite_desc": "A wooden salad bowl piled with twisting deep-green vine tendrils, thyme sprigs, and a glossy oil dressing"
+  },
+  "horror_ichor_void_salt_souffle": {
+    "name": "Horror Ichor Souffle",
+    "ingredients": [
+      "horror_ichor",
+      "void_salt"
+    ],
+    "sp": 170,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 2,
+    "description": "Lurking-horror ichor folded into egg with a pinch of void salt. The souffle quivers between visible and not.",
+    "sprite_desc": "A trembling pale-violet souffle in a ceramic ramekin, faintly translucent crust, tiny dark flecks of salt scattered on top"
+  },
+  "sentinel_plate_mandrake_steak": {
+    "name": "Sentinel Plate Steak",
+    "ingredients": [
+      "sentinel_plate",
+      "mandrake_root"
+    ],
+    "sp": 175,
+    "bonus_type": "combat_stat",
+    "bonus_stat": "ac",
+    "bonus_amount": 2,
+    "description": "A slab of throne-sentinel armor scale slow-braised with mandrake root until tender. Eats like steel and protects like steel.",
+    "sprite_desc": "A square dark-grey scale of meat-textured plate on a stone slab, halved to show pinkish marbling, mandrake garnish"
+  },
+  "lich_dust_nightshade_dust_loaf": {
+    "name": "Lich Dust Funeral Loaf",
+    "ingredients": [
+      "lich_dust",
+      "nightshade_leaf"
+    ],
+    "sp": 180,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 2,
+    "description": "Powdered remains of a skeleton-lich kneaded into a dark loaf with nightshade. Dense with arcane memory.",
+    "sprite_desc": "A dense black loaf on a funerary stone, sliced to reveal grey marbling and dark purple leaf flecks throughout"
+  },
+  "demon_horn_ember_skewer": {
+    "name": "Demon Horn and Ember Skewer",
+    "ingredients": [
+      "demon_horn",
+      "ember_spice"
+    ],
+    "sp": 185,
+    "bonus_type": "stat",
+    "bonus_stat": "STR",
+    "bonus_amount": 2,
+    "description": "Spirals of trickster-demon horn grilled until charred, dusted with ember spice. Each bite burns and bolsters.",
+    "sprite_desc": "A blackened iron skewer of spiraling charred horn pieces glowing with embers, fine red spice dusted along the length"
+  },
+  "deep_pearl_celery_chowder": {
+    "name": "Deep Pearl Abyssal Chowder",
+    "ingredients": [
+      "deep_pearl",
+      "pale_celery"
+    ],
+    "sp": 185,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "A deep-one priest's pearl cracked and stewed with pale celery in milk-thick broth. The diner hears the tide in the back of their skull.",
+    "sprite_desc": "A bone-white bowl of pale milky chowder, halved iridescent pearl resting on top, celery ribbons curling around it"
+  },
+  "crone_voice_valerian_tea": {
+    "name": "Crone Voice Whispering Tea",
+    "ingredients": [
+      "crone_voice",
+      "valerian_root"
+    ],
+    "sp": 185,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 2,
+    "description": "The harvested whisper-organ of a crone steeped in valerian. The tea murmurs faint advice as it is sipped.",
+    "sprite_desc": "A black clay teacup of murky violet tea, faintly luminous vapor rising in shapes that almost resemble script"
+  },
+  "mimic_gold_ember_glaze": {
+    "name": "Glazed Mimic Gold Bites",
+    "ingredients": [
+      "mimic_gold",
+      "ember_spice"
+    ],
+    "sp": 195,
+    "bonus_type": "random_stat",
+    "bonus_amount": 2,
+    "description": "Coin-shaped flesh of a gilded mimic glazed in ember spice until the metallic sheen runs. You never know which faculty it sharpens.",
+    "sprite_desc": "Six small disc-shaped golden bites on a dark plate, each wearing a glossy red glaze, faint coin-faces visible beneath"
+  },
+  "necromantic_focus_mandrake_terrine": {
+    "name": "Necromantic Focus Terrine",
+    "ingredients": [
+      "necromantic_focus",
+      "mandrake_root"
+    ],
+    "sp": 200,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "A crypt-summoner's focus crystal layered with mandrake root in a chilled terrine. Cold to the tongue, cold to the soul, lucid to the mind.",
+    "sprite_desc": "A rectangular slice of dark layered terrine on slate, a faintly glowing purple crystal core visible in cross-section"
+  },
+  "rime_tusk_frost_glaze": {
+    "name": "Rime Tusk Frost-Glazed Cut",
+    "ingredients": [
+      "rime_tusk",
+      "frost_gland"
+    ],
+    "sp": 200,
+    "bonus_type": "status",
+    "bonus_effect": "cold_shield",
+    "bonus_amount": 35,
+    "description": "A frostfang giant's tusk shaved and glazed with frost-gland ice. The cold settles in the bones and pushes other cold away.",
+    "sprite_desc": "Pale shaved tusk-meat curls fanned across a frosted stone plate, glistening with bluish ice crystals"
+  },
+  "shadow_quiver_void_skewer": {
+    "name": "Shadow Quiver Skewer",
+    "ingredients": [
+      "shadow_quiver",
+      "void_salt"
+    ],
+    "sp": 200,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Arrow-shafts of woven shadow grilled briefly and salted with void salt. The diner's hand learns the quiver's quickness.",
+    "sprite_desc": "A row of slender dark shaft-shaped skewer pieces on charred iron, dusted with crystalline black salt, faintly indistinct edges"
+  },
+  "inquisitor_seal_rosemary_loaf": {
+    "name": "Inquisitor Seal Loaf",
+    "ingredients": [
+      "inquisitor_seal",
+      "rosemary_sprig"
+    ],
+    "sp": 210,
+    "bonus_type": "stat",
+    "bonus_stat": "WIS",
+    "bonus_amount": 3,
+    "description": "A veiled inquisitor's wax seal kneaded into a heavy loaf with rosemary. The diner sees clearly what others would hide.",
+    "sprite_desc": "A heavy oblong loaf with a deep red wax seal pressed into the crust, a sprig of rosemary tucked beside it"
+  },
+  "elemental_core_dragon_salt_consomme": {
+    "name": "Elemental Core Consomme",
+    "ingredients": [
+      "elemental_core",
+      "dragon_salt"
+    ],
+    "sp": 220,
+    "bonus_type": "status",
+    "bonus_effect": "fire_shield",
+    "bonus_amount": 35,
+    "description": "A lava-elemental's molten core clarified into searing consomme with dragon salt. The eater carries inner flame for an hour.",
+    "sprite_desc": "A black iron bowl of glowing orange consomme, faintly bubbling, a single white-hot core fragment sinking at center"
+  },
+  "archon_heart_mandrake_braise": {
+    "name": "Archon Heart Braise",
+    "ingredients": [
+      "archon_heart",
+      "mandrake_root"
+    ],
+    "sp": 230,
+    "bonus_type": "two_stats",
+    "bonus_amount": 3,
+    "description": "The blood archon's heart braised in red wine with mandrake. A meal of imperial weight, lifting both body and bearing.",
+    "sprite_desc": "A heavy crimson roast on a brass platter swimming in dark wine sauce, mandrake roots fanned around the rim"
+  },
+  "astral_filament_silk_consomme": {
+    "name": "Astral Filament Consomme",
+    "ingredients": [
+      "astral_filament",
+      "spider_silk"
+    ],
+    "sp": 235,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 3,
+    "description": "Threads of an astral horror spun together with cave spider silk into a translucent broth. The diner's thoughts walk further than their feet.",
+    "sprite_desc": "A glass bowl of nearly transparent broth, suspended within it a fine silvery web of intersecting filaments"
+  },
+  "swarmlord_chitin_pepper_crisps": {
+    "name": "Swarmlord Chitin Crisps",
+    "ingredients": [
+      "swarmlord_chitin",
+      "serpent_pepper"
+    ],
+    "sp": 240,
+    "bonus_type": "stat",
+    "bonus_stat": "DEX",
+    "bonus_amount": 3,
+    "description": "Locust-swarmlord plate fried into shattering crisps, dusted with serpent pepper. The eater's reflexes hum like a swarm.",
+    "sprite_desc": "A ceramic plate piled with translucent amber crisps the shape of insect plating, dusted bright red, faintly buzzing"
+  },
+  "executioners_iron_void_steak": {
+    "name": "Executioner's Iron Steak",
+    "ingredients": [
+      "executioners_iron",
+      "void_salt"
+    ],
+    "sp": 245,
+    "bonus_type": "combat_stat",
+    "bonus_stat": "to_hit",
+    "bonus_amount": 3,
+    "description": "A pit executioner's iron rendered down into a black steak crusted with void salt. Eats like guilt, strikes like judgment.",
+    "sprite_desc": "A dark slab of iron-black steak on a stained block, charred crust glittering with crystalline black salt"
+  },
+  "void_feather_thyme_souffle": {
+    "name": "Void Feather Souffle",
+    "ingredients": [
+      "void_feather",
+      "wild_thyme"
+    ],
+    "sp": 250,
+    "bonus_type": "stat",
+    "bonus_stat": "PER",
+    "bonus_amount": 3,
+    "description": "A void seraph's feather whipped into a souffle over wild thyme. The diner's sight reaches places light cannot.",
+    "sprite_desc": "A tall dark-grey souffle in a white ramekin, faintly absorbing light at the edges, thyme sprig laid across the crust"
+  },
+  "herald_trumpet_brass_glaze": {
+    "name": "Herald Trumpet Brass Glaze",
+    "ingredients": [
+      "herald_trumpet_brass",
+      "ember_spice"
+    ],
+    "sp": 260,
+    "bonus_type": "all_stats",
+    "bonus_amount": 3,
+    "description": "An apocalypse herald's trumpet mouthpiece glazed in ember spice and roasted whole. Each bite peals through the body like a distant horn.",
+    "sprite_desc": "A polished brass mouthpiece roasted to deep amber on a red-glowing iron platter, ember spice flickering across the surface"
+  },
+  "wormwood_ash_valerian_loaf": {
+    "name": "Wormwood Ash Bitter Loaf",
+    "ingredients": [
+      "wormwood_ash",
+      "valerian_root"
+    ],
+    "sp": 270,
+    "bonus_type": "stat",
+    "bonus_stat": "INT",
+    "bonus_amount": 4,
+    "description": "Ash of a wormwood blight kneaded with valerian root into a black, bitter loaf. The mind clears the way a fire-cleared field clears.",
+    "sprite_desc": "A scorched-black loaf on a stone slab, fissures glowing faintly red, pale valerian flowers pressed into the crust"
+  },
+  "horseman_lance_shard_grand_feast": {
+    "name": "Horseman Lance Shard Grand Feast",
+    "ingredients": [
+      "horseman_lance_shard",
+      "dragon_scale",
+      "ember_spice"
+    ],
+    "sp": 285,
+    "bonus_type": "all_stats",
+    "bonus_amount": 3,
+    "description": "An iron horseman's shattered lance shard plated with dragon scale and ember spice. The grandest of late-game feasts; the diner rides into battle.",
+    "sprite_desc": "An ornate brass platter laden with a long iron shard centerpiece, ringed by glittering dragon-scale crisps and red-spice flames"
+  }
+}
