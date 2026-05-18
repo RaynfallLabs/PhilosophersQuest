@@ -166,3 +166,40 @@ def test_slot_empty_is_above_minimum_contrast():
     from fantasy_ui import FP
     c = _contrast(FP.SLOT_EMPTY, _midnight())
     assert c >= 4.0, f"FP.SLOT_EMPTY contrast={c:.2f} on midnight — too dim"
+
+
+def test_panel_builder_paints_background_eagerly():
+    """REGRESSION (2026-05-18): PanelBuilder used to paint the panel background
+    in draw() AFTER the caller had rendered body content. Result: the 90%
+    opaque midnight panel painted OVER the body text, reducing it to ~10%
+    bleed-through (dark blue ghost text). User reported this multiple times.
+
+    Fix moved overlay + dark_panel painting to __init__. This test pins that
+    behavior in: instantiating a PanelBuilder must paint the panel bg
+    immediately so the caller's body content lands on top, not under.
+    """
+    import pygame
+    if not pygame.get_init():
+        pygame.init()
+    pygame.font.init()
+    surf = pygame.Surface((1600, 900))
+    # Fill with a sentinel color so we can detect what was painted over it
+    surf.fill((255, 0, 255))   # magenta
+
+    # Sanity: the surface starts magenta in the panel area
+    assert surf.get_at((400, 400))[:3] == (255, 0, 255)
+
+    import layout
+    layout.update(1600, 900)
+
+    from panel import PanelBuilder, SIZE_MD
+    PanelBuilder(surf, size=SIZE_MD)
+
+    # After construction (BEFORE draw()), the panel area must already have
+    # the midnight background painted. If the magenta is still showing,
+    # the bg was deferred to draw() and the body bug is back.
+    px = surf.get_at((400, 400))[:3]
+    assert px != (255, 0, 255), \
+        f"PanelBuilder did NOT paint bg in __init__ — body content will get covered. Got {px}"
+    # And it should be in the midnight family (not bright)
+    assert sum(px) < 200, f"Panel bg should be dark (midnight-family), got {px}"

@@ -85,6 +85,18 @@ class PanelBuilder:
         # Compute the outer rect now so callers can ask for body_rect() early
         self._compute_geometry(max_height)
 
+        # PAINT THE BACKGROUND IMMEDIATELY (overlay + midnight panel + border).
+        # The body content the caller renders next will sit ON TOP of this bg.
+        # If we deferred this to draw(), the panel's 90%-opaque midnight fill
+        # would paint OVER the caller's body content and reduce it to ~10%
+        # bleed-through — looking like faint dark-blue ghost text. This was
+        # the "DARK blue text in identify quiz / Recall Lore" bug reported
+        # on 2026-05-18.
+        draw_overlay(self.surf, alpha=self.overlay_alpha)
+        draw_dark_panel(self.surf,
+                        (self.bx, self.by, self.bw, self.bh),
+                        border_color=self.border_color)
+
     # ----- builder API -----
 
     def set_title(self, text: str, font=None) -> 'PanelBuilder':
@@ -158,21 +170,21 @@ class PanelBuilder:
     # ----- drawing -----
 
     def draw(self) -> None:
-        """Paint overlay + panel + header + tabs + footer hint.
+        """Paint the chrome (header / tabs / divider / footer / scrollbar)
+        OVER the body content the caller already rendered.
 
-        Body content must be drawn by the caller *between* body_rect()
-        and this call — the order is:
-            1) build the PanelBuilder
-            2) get body_rect()
-            3) draw body content into the rect
-            4) call panel.draw() to paint chrome ON TOP (so chrome
-               always wins z-order)
+        Order of operations the caller should follow:
+            1) build the PanelBuilder      <-- paints overlay + panel bg
+            2) call set_title / set_tabs / set_footer_hint
+            3) get body_rect()
+            4) draw body content into the rect
+            5) call panel.draw()           <-- paints chrome on top of body
+
+        Background painting moved into __init__ on 2026-05-18 to fix a bug
+        where calling draw() at the end would paint the 90%-opaque midnight
+        panel over the caller's body content, making it appear as faint
+        dark-blue ghost text.
         """
-        draw_overlay(self.surf, alpha=self.overlay_alpha)
-        draw_dark_panel(self.surf,
-                        (self.bx, self.by, self.bw, self.bh),
-                        border_color=self.border_color)
-
         title_font = self._title_font or get_font('heading', 22)
 
         if self._title:
