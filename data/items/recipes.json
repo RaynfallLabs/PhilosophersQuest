@@ -6141,7 +6141,7 @@
       "goblin_ear",
       "wild_thyme"
     ],
-    "sp": 35,
+    "sp": 55,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
@@ -6274,7 +6274,7 @@
     "sp": 175,
     "bonus_type": "combat_stat",
     "bonus_stat": "ac",
-    "bonus_amount": 2,
+    "bonus_amount": 3,
     "description": "A slab of throne-sentinel armor scale slow-braised with mandrake root until tender. Eats like steel and protects like steel.",
     "sprite_desc": "A square dark-grey scale of meat-textured plate on a stone slab, halved to show pinkish marbling, mandrake garnish"
   },
@@ -6351,7 +6351,7 @@
     "sp": 200,
     "bonus_type": "stat",
     "bonus_stat": "INT",
-    "bonus_amount": 3,
+    "bonus_amount": 2,
     "description": "A crypt-summoner's focus crystal layered with mandrake root in a chilled terrine. Cold to the tongue, cold to the soul, lucid to the mind.",
     "sprite_desc": "A rectangular slice of dark layered terrine on slate, a faintly glowing purple crystal core visible in cross-section"
   },
@@ -6361,7 +6361,7 @@
       "rime_tusk",
       "frost_gland"
     ],
-    "sp": 200,
+    "sp": 170,
     "bonus_type": "status",
     "bonus_effect": "cold_shield",
     "bonus_amount": 35,
@@ -6377,7 +6377,7 @@
     "sp": 200,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
-    "bonus_amount": 3,
+    "bonus_amount": 2,
     "description": "Arrow-shafts of woven shadow grilled briefly and salted with void salt. The diner's hand learns the quiver's quickness.",
     "sprite_desc": "A row of slender dark shaft-shaped skewer pieces on charred iron, dusted with crystalline black salt, faintly indistinct edges"
   },
@@ -6390,7 +6390,7 @@
     "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
-    "bonus_amount": 3,
+    "bonus_amount": 2,
     "description": "A veiled inquisitor's wax seal kneaded into a heavy loaf with rosemary. The diner sees clearly what others would hide.",
     "sprite_desc": "A heavy oblong loaf with a deep red wax seal pressed into the crust, a sprig of rosemary tucked beside it"
   },
@@ -6425,7 +6425,7 @@
       "astral_filament",
       "spider_silk"
     ],
-    "sp": 235,
+    "sp": 200,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -6477,9 +6477,9 @@
       "herald_trumpet_brass",
       "ember_spice"
     ],
-    "sp": 260,
+    "sp": 250,
     "bonus_type": "all_stats",
-    "bonus_amount": 3,
+    "bonus_amount": 2,
     "description": "An apocalypse herald's trumpet mouthpiece glazed in ember spice and roasted whole. Each bite peals through the body like a distant horn.",
     "sprite_desc": "A polished brass mouthpiece roasted to deep amber on a red-glowing iron platter, ember spice flickering across the surface"
   },
@@ -6489,10 +6489,10 @@
       "wormwood_ash",
       "valerian_root"
     ],
-    "sp": 270,
+    "sp": 250,
     "bonus_type": "stat",
     "bonus_stat": "INT",
-    "bonus_amount": 4,
+    "bonus_amount": 3,
     "description": "Ash of a wormwood blight kneaded with valerian root into a black, bitter loaf. The mind clears the way a fire-cleared field clears.",
     "sprite_desc": "A scorched-black loaf on a stone slab, fissures glowing faintly red, pale valerian flowers pressed into the crust"
   },
@@ -6503,9 +6503,9 @@
       "dragon_scale",
       "ember_spice"
     ],
-    "sp": 285,
+    "sp": 237,
     "bonus_type": "all_stats",
-    "bonus_amount": 3,
+    "bonus_amount": 2,
     "description": "An iron horseman's shattered lance shard plated with dragon scale and ember spice. The grandest of late-game feasts; the diner rides into battle.",
     "sprite_desc": "An ornate brass platter laden with a long iron shard centerpiece, ringed by glittering dragon-scale crisps and red-spice flames"
   }
