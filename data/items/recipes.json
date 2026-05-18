@@ -5,7 +5,7 @@
       "rat_meat",
       "ember_spice"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -18,7 +18,7 @@
       "snake_meat",
       "rosemary_sprig"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -31,7 +31,7 @@
       "frog_legs",
       "serpent_pepper"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -44,7 +44,7 @@
       "goblin_flesh",
       "cave_mushroom"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -57,7 +57,7 @@
       "bear_meat",
       "wild_thyme"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -70,7 +70,7 @@
       "lizard_meat",
       "pale_celery"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -83,7 +83,7 @@
       "bullywug_leg",
       "cave_carrot"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -96,7 +96,7 @@
       "spider_silk",
       "glowing_spore"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -110,7 +110,7 @@
       "wild_thyme",
       "cave_carrot"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
     "description": "Gnoll rendered low and slow with aromatic herbs and root vegetables. A warrior's reward.",
@@ -123,7 +123,7 @@
       "serpent_pepper",
       "cave_mushroom"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -137,7 +137,7 @@
       "ember_spice",
       "pale_celery"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -151,7 +151,7 @@
       "valerian_root",
       "cave_mushroom"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -165,7 +165,7 @@
       "pale_celery",
       "rosemary_sprig"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -179,7 +179,7 @@
       "glowing_spore",
       "crimson_fungus"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -193,7 +193,7 @@
       "valerian_root",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
     "description": "Raven feather extract distilled with valerian and nightshade. A scholar's midnight draught.",
@@ -207,7 +207,7 @@
       "wild_thyme",
       "bear_meat"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -228,7 +228,7 @@
       "serpent_pepper",
       "cave_mushroom"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "Medusa blood carefully neutralized and simmered with pepper and mushroom. Sharpens eyes and mind alike.",
@@ -242,7 +242,7 @@
       "mandrake_root",
       "cave_carrot"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "The tripartite heart of a chimera reduced with root herbs. Every stat improves. Every sense sharpens.",
@@ -256,7 +256,7 @@
       "pale_celery",
       "cave_carrot"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "Petrified basilisk gaze dissolved by rosemary acid into a clarified, terrifyingly good broth.",
@@ -270,7 +270,7 @@
       "crimson_fungus",
       "valerian_root"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "Frost gland essence crystallized by void salt, balanced by crimson fungus. Clarity in every spoonful.",
@@ -284,7 +284,7 @@
       "petrified_mushroom",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 3,
@@ -298,7 +298,7 @@
       "dragon_scale",
       "lord_phylactery"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "lore": "The apex of dungeon cuisine. Every great cook dreams of this dish. Most die attempting it.",
@@ -314,7 +314,7 @@
       "void_salt",
       "valerian_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
     "description": "A forbidden dish from the deep places. The ingredients are vile. The result is transcendent.",
@@ -334,7 +334,7 @@
       "dragon_salt",
       "rosemary_sprig"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "The pinnacle of venom-cuisine. Snake, spine, and stone distilled into a sublime crescendo.",
@@ -349,7 +349,7 @@
       "ember_spice",
       "mandrake_root"
     ],
-    "sp": 158,
+    "sp": 356,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
     "description": "The ultimate warrior's feast. A red dragon's heart braised in blue dragon brine. Legendary strength.",
@@ -367,7 +367,7 @@
       "goblin_flesh",
       "rat_meat"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -381,7 +381,7 @@
       "snake_meat",
       "frog_legs"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -395,7 +395,7 @@
       "bat_wing",
       "rat_meat"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -409,7 +409,7 @@
       "insect_carapace",
       "bone_shard"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -423,7 +423,7 @@
       "goblin_flesh",
       "bone_shard"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -437,7 +437,7 @@
       "spider_silk",
       "eye_jelly"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
@@ -451,7 +451,7 @@
       "orc_blood",
       "bat_wing"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -465,7 +465,7 @@
       "gnoll_hide",
       "lion_meat"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -479,7 +479,7 @@
       "charred_bone",
       "zombie_flesh"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -493,7 +493,7 @@
       "hobgoblin_blood",
       "orc_blood"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -507,7 +507,7 @@
       "lizard_meat",
       "frog_legs"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -521,7 +521,7 @@
       "bear_meat",
       "troll_hide"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -535,7 +535,7 @@
       "hobgoblin_blood",
       "ogre_hide"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -549,7 +549,7 @@
       "spectral_essence",
       "eye_jelly"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -563,7 +563,7 @@
       "shadow_essence",
       "shadow_crystal"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 10,
@@ -577,7 +577,7 @@
       "wisp_essence",
       "soul_fragment"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -591,7 +591,7 @@
       "bugbear_pelt",
       "troll_hide"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -605,7 +605,7 @@
       "spider_silk",
       "phase_silk"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -619,7 +619,7 @@
       "demon_heart",
       "demon_bile"
     ],
-    "sp": 132,
+    "sp": 297,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "You should not be cooking this. And yet here you are. Infernal power floods through you.",
@@ -632,7 +632,7 @@
       "elder_vampire_blood",
       "lord_phylactery"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -646,7 +646,7 @@
       "cerebral_fluid",
       "eye_jelly"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -660,7 +660,7 @@
       "death_essence",
       "soul_fragment"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -674,7 +674,7 @@
       "troll_regeneration_gland",
       "ogre_hide"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -688,7 +688,7 @@
       "dragon_scale",
       "fire_gland"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Fire and scale â€” the draconic essence distilled into one supremely dangerous drink.",
@@ -707,7 +707,7 @@
       "chaos_essence",
       "void_shard"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "random_stat",
     "bonus_amount": 2,
     "lore": "The effects are unpredictable, like everything touched by chaos and void.",
@@ -720,7 +720,7 @@
       "cultist_reagent",
       "arcane_bone_dust"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -734,7 +734,7 @@
       "changeling_glamour",
       "puca_hair"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 8,
@@ -748,7 +748,7 @@
       "drow_poison_extract",
       "paralytic_venom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -762,7 +762,7 @@
       "basilisk_eye",
       "medusa_blood"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Both creatures turn things to stone with a glance. Cooked together, they give you eyes like theirs.",
@@ -775,7 +775,7 @@
       "chimera_heart",
       "dragon_scale"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Two of the most terrible predators in the deep. Their flesh combined is beyond transcendent.",
@@ -794,7 +794,7 @@
       "lord_phylactery",
       "elder_vampire_blood"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Lich and vampire — two forms of cheating death. Together they may share their secret with you.",
@@ -807,7 +807,7 @@
       "devourer_tooth",
       "soul_fragment"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Ammit, the Egyptian devourer of unworthy hearts, weighed souls against the feather of Ma'at. To consume her essence alongside her quarry is to inherit the terrible wisdom of judgment.",
@@ -820,7 +820,7 @@
       "pit_fiend_scale",
       "void_ichor"
     ],
-    "sp": 185,
+    "sp": 278,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "The deepest evil and the deepest void. Those who survive eating this are changed forever.",
@@ -834,7 +834,7 @@
       "demon_heart",
       "death_essence"
     ],
-    "sp": 132,
+    "sp": 297,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "lore": "Regeneration, infernal fire, and the essence of death itself. The ultimate tonic of survival.",
@@ -847,7 +847,7 @@
       "shadow_fur",
       "bat_wing"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 6,
@@ -861,7 +861,7 @@
       "insect_carapace",
       "goblin_flesh"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -875,7 +875,7 @@
       "lycanthrope_blood",
       "troll_hide"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Werewolf ferocity and troll vitality. Two natures of unstoppable savagery, one broth.",
@@ -888,7 +888,7 @@
       "raven_feather",
       "eagle_feather"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -902,7 +902,7 @@
       "naga_scale",
       "python_scales"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -916,7 +916,7 @@
       "owlbear_feather",
       "griffin_feather"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "lore": "Two hybrid predators that shouldn't exist — their impossible power becomes inexplicably yours.",
@@ -929,7 +929,7 @@
       "barrow_dust",
       "embalming_resin"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -943,7 +943,7 @@
       "wisp_essence",
       "shadow_essence"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -957,7 +957,7 @@
       "orc_blood",
       "bugbear_pelt"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -971,7 +971,7 @@
       "spider_silk",
       "cave_mushroom"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 12,
@@ -984,7 +984,7 @@
       "bat_wing",
       "wild_thyme"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "status",
     "bonus_effect": "haste",
     "bonus_amount": 15,
@@ -997,7 +997,7 @@
       "goblin_flesh",
       "slime_core"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "status",
     "bonus_effect": "poison_resist",
     "bonus_amount": 40,
@@ -1010,7 +1010,7 @@
       "bone_shard",
       "cave_carrot"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "status",
     "bonus_effect": "regenerating",
     "bonus_amount": 30,
@@ -1023,7 +1023,7 @@
       "rat_meat",
       "goblin_flesh"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "The foundational recipe of the dungeon underclass. Filling, cheap, and surprisingly nutritious.",
@@ -1035,7 +1035,7 @@
       "slime_core",
       "frost_gland"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "status",
     "bonus_effect": "cold_shield",
     "bonus_amount": 25,
@@ -1048,7 +1048,7 @@
       "rat_meat",
       "fire_gland"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "status",
     "bonus_effect": "fire_shield",
     "bonus_amount": 25,
@@ -1061,7 +1061,7 @@
       "troll_hide",
       "bear_meat"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "status",
     "bonus_effect": "regenerating",
     "bonus_amount": 60,
@@ -1075,7 +1075,7 @@
       "wild_thyme",
       "rosemary_sprig"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A woodland hunter's meal of slow-roasted wolf with aromatic mountain herbs. Strengthens the body for battle.",
@@ -1087,7 +1087,7 @@
       "hollow_bone",
       "cave_carrot"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "status",
     "bonus_effect": "haste",
     "bonus_amount": 30,
@@ -1100,7 +1100,7 @@
       "snake_meat",
       "troll_hide"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "status",
     "bonus_effect": "poison_resist",
     "bonus_amount": 50,
@@ -1114,7 +1114,7 @@
       "gnoll_hide",
       "cave_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -1128,7 +1128,7 @@
       "slime_core",
       "valerian_root"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "status",
     "bonus_effect": "arcane_shield",
     "bonus_amount": 25,
@@ -1141,7 +1141,7 @@
       "fire_gland",
       "frost_gland"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "random_stat",
     "bonus_amount": 2,
     "description": "Opposing elements in one pot create chaotic energy. The resulting meal unpredictably strengthens the body.",
@@ -1154,7 +1154,7 @@
       "warrior_bone",
       "cave_mushroom"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -1168,7 +1168,7 @@
       "bear_meat",
       "void_salt"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -1182,7 +1182,7 @@
       "cave_carrot",
       "wild_thyme"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "status",
     "bonus_effect": "blind_resist",
     "bonus_amount": 60,
@@ -1196,7 +1196,7 @@
       "frost_gland",
       "cave_carrot"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
     "description": "Wyvern venom neutralized by frost creates a potent double-tonic. Two attributes improve at once.",
@@ -1208,7 +1208,7 @@
       "thrall_blood",
       "nightshade_leaf"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "status",
     "bonus_effect": "arcane_shield",
     "bonus_amount": 40,
@@ -1221,7 +1221,7 @@
       "shadow_essence",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 30,
@@ -1234,7 +1234,7 @@
       "troll_hide",
       "manticore_spine"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
     "description": "Regenerative troll hide combined with venomous manticore spine. Two attributes improve permanently.",
@@ -1247,7 +1247,7 @@
       "manticore_spine",
       "ember_spice"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "Three-natured chimera heart with predatory spine and spice. Every aspect of the body improves.",
@@ -1260,7 +1260,7 @@
       "warrior_bone",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -1274,7 +1274,7 @@
       "bear_meat",
       "frost_gland"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
     "description": "The marrow of giants rendered with bear meat in frost. Imparts some of their tremendous constitution.",
@@ -1286,7 +1286,7 @@
       "medusa_blood",
       "basilisk_stone"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -1300,7 +1300,7 @@
       "void_salt",
       "ember_spice"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -1320,7 +1320,7 @@
       "nightshade_leaf",
       "valerian_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -1333,7 +1333,7 @@
       "storm_essence",
       "void_salt"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -1346,7 +1346,7 @@
       "medusa_blood",
       "dragon_scale"
     ],
-    "sp": 165,
+    "sp": 206,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
@@ -1366,7 +1366,7 @@
       "void_salt",
       "valerian_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "status",
     "bonus_effect": "death_ward",
     "bonus_amount": 40,
@@ -1379,7 +1379,7 @@
       "chimera_heart",
       "basilisk_stone"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -1393,7 +1393,7 @@
       "dragon_scale",
       "void_salt"
     ],
-    "sp": 223,
+    "sp": 279,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
     "lore": "The fang of Fenrir, world-ender bound until Ragnarök, fused with the scale of a dragon. Two apex predators whose hunger knows no ceiling — and now, neither does yours.",
@@ -1413,7 +1413,7 @@
       "dragon_scale",
       "chimera_heart"
     ],
-    "sp": 250,
+    "sp": 312,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "lore": "The destroyer of worlds, the king of beasts, the chimera of creation. All stats improve.",
@@ -1432,7 +1432,7 @@
       "lord_phylactery",
       "void_salt"
     ],
-    "sp": 250,
+    "sp": 312,
     "bonus_type": "status",
     "bonus_effect": "arcane_shield",
     "bonus_amount": 60,
@@ -1471,7 +1471,7 @@
       "dragon_scale",
       "void_salt"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "The humblest creature and the mightiest combined. Even a rat's meat, prepared with dragon scale, holds wonder. All stats improve.",
@@ -1490,7 +1490,7 @@
       "snake_meat",
       "medusa_blood"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "two_stats",
     "bonus_amount": 1,
     "description": "The lowly snake and its ancient cousin the gorgon, bound by blood. Their combined wisdom flows inward.",
@@ -1504,7 +1504,7 @@
       "manticore_spine",
       "dragon_scale"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "lore": "Fire and frost, predator and beast, elemental and ancient. To balance all opposites is to transcend them.",
@@ -1518,7 +1518,7 @@
       "slime_core",
       "chimera_heart"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "The first creature you faced and the chimera of later depths. Combining beginning and middle reveals hidden potential.",
@@ -1531,7 +1531,7 @@
       "void_essence",
       "void_salt"
     ],
-    "sp": 250,
+    "sp": 312,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "lore": "The first creature of the dungeon and its final guardian. Alpha and omega. Cooking this takes mastery beyond reason.",
@@ -1550,7 +1550,7 @@
       "warrior_bone",
       "lord_phylactery"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -1566,7 +1566,7 @@
       "bear_meat",
       "manticore_spine"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -1581,7 +1581,7 @@
       "chimera_heart",
       "medusa_blood"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -1596,7 +1596,7 @@
       "frost_gland",
       "storm_essence"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -1610,7 +1610,7 @@
       "wyvern_stinger",
       "dragon_scale"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -1623,7 +1623,7 @@
       "bronze_feather",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -1636,7 +1636,7 @@
       "quasit_claw",
       "rosemary_sprig"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining quasit claw with rosemary sprig.",
@@ -1648,7 +1648,7 @@
       "green_slime_extract",
       "wild_thyme"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining green slime extract with wild thyme.",
@@ -1660,7 +1660,7 @@
       "satyr_horn",
       "wild_thyme"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining satyr horn with wild thyme.",
@@ -1672,7 +1672,7 @@
       "scarab_shell",
       "ember_spice"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining scarab shell with ember spice.",
@@ -1684,7 +1684,7 @@
       "dretch_gland",
       "mandrake_root"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1697,7 +1697,7 @@
       "imp_stinger",
       "rosemary_sprig"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1710,7 +1710,7 @@
       "troglodyte_musk",
       "ember_spice"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining troglodyte musk with ember spice.",
@@ -1722,7 +1722,7 @@
       "bone_marrow",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1735,7 +1735,7 @@
       "yellow_spores",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1748,7 +1748,7 @@
       "beetle_shell",
       "mandrake_root"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -1761,7 +1761,7 @@
       "sea_snake_venom",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining sea snake venom with nightshade leaf.",
@@ -1773,7 +1773,7 @@
       "pixie_dust",
       "valerian_root"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining pixie dust with valerian root.",
@@ -1785,7 +1785,7 @@
       "myconid_spore",
       "mandrake_root"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -1798,7 +1798,7 @@
       "empusa_ichor",
       "cave_mushroom"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -1811,7 +1811,7 @@
       "grave_dust",
       "mandrake_root"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -1824,7 +1824,7 @@
       "demon_claw",
       "ember_spice"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -1837,7 +1837,7 @@
       "homunculus_blood",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining homunculus blood with nightshade leaf.",
@@ -1849,7 +1849,7 @@
       "gray_slime",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining gray slime with void salt.",
@@ -1861,7 +1861,7 @@
       "piercer_shell",
       "rosemary_sprig"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -1874,7 +1874,7 @@
       "lizardfolk_scale",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining lizardfolk scale with dragon salt.",
@@ -1886,7 +1886,7 @@
       "frost_bone",
       "ember_spice"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1899,7 +1899,7 @@
       "plague_flesh",
       "serpent_pepper"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1912,7 +1912,7 @@
       "brown_mold_patch",
       "petrified_mushroom"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining brown mold patch with petrified mushroom.",
@@ -1924,7 +1924,7 @@
       "wasp_venom",
       "valerian_root"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining wasp venom with valerian root.",
@@ -1936,7 +1936,7 @@
       "mud_crawler_hide",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining mud crawler hide with nightshade leaf.",
@@ -1948,7 +1948,7 @@
       "lucky_clover",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -1961,7 +1961,7 @@
       "toxic_thorn",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -1974,7 +1974,7 @@
       "spore_cloud_vial",
       "ember_spice"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -1987,7 +1987,7 @@
       "goblin_crown_dust",
       "ember_spice"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining goblin crown dust with ember spice.",
@@ -1999,7 +1999,7 @@
       "khepri_carapace",
       "nightshade_leaf"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2012,7 +2012,7 @@
       "enchanted_wood",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining enchanted wood with dragon salt.",
@@ -2024,7 +2024,7 @@
       "kobold_scale",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining kobold scale with nightshade leaf.",
@@ -2036,7 +2036,7 @@
       "darkmantle_membrane",
       "nightshade_leaf"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2049,7 +2049,7 @@
       "cairn_stone",
       "rosemary_sprig"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining cairn stone with rosemary sprig.",
@@ -2061,7 +2061,7 @@
       "bone_arrow",
       "mandrake_root"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2074,7 +2074,7 @@
       "crystal_residue",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining crystal residue with void salt.",
@@ -2086,7 +2086,7 @@
       "toxic_jelly_sac",
       "rosemary_sprig"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining toxic jelly sac with rosemary sprig.",
@@ -2098,7 +2098,7 @@
       "scorpion_venom_sac",
       "ember_spice"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2111,7 +2111,7 @@
       "swamp_serpent_fang",
       "cave_mushroom"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2124,7 +2124,7 @@
       "violet_fungus_cap",
       "ember_spice"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining violet fungus cap with ember spice.",
@@ -2136,7 +2136,7 @@
       "lamia_scales",
       "rosemary_sprig"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining lamia scales with rosemary sprig.",
@@ -2148,7 +2148,7 @@
       "wolf_pelt",
       "rosemary_sprig"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining wolf pelt with rosemary sprig.",
@@ -2160,7 +2160,7 @@
       "nothic_eye",
       "nightshade_leaf"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining nothic eye with nightshade leaf.",
@@ -2172,7 +2172,7 @@
       "enchanted_plate",
       "petrified_mushroom"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining enchanted plate with petrified mushroom.",
@@ -2184,7 +2184,7 @@
       "shaman_totem",
       "ember_spice"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2197,7 +2197,7 @@
       "kuo_toa_slime",
       "serpent_pepper"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2210,7 +2210,7 @@
       "cockatrice_beak",
       "ember_spice"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining cockatrice beak with ember spice.",
@@ -2222,7 +2222,7 @@
       "grick_hide",
       "valerian_root"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining grick hide with valerian root.",
@@ -2234,7 +2234,7 @@
       "ghast_ichor",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining ghast ichor with void salt.",
@@ -2246,7 +2246,7 @@
       "false_holy_relic",
       "petrified_mushroom"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2259,7 +2259,7 @@
       "heartwood_sap",
       "nightshade_leaf"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2272,7 +2272,7 @@
       "assassin_vine_sap",
       "valerian_root"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2285,7 +2285,7 @@
       "carbuncle_gem",
       "rosemary_sprig"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2298,7 +2298,7 @@
       "bronze_hide_strip",
       "serpent_pepper"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2311,7 +2311,7 @@
       "world_serpent_scale",
       "nightshade_leaf"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining world serpent scale with nightshade leaf.",
@@ -2323,7 +2323,7 @@
       "solar_venom",
       "mandrake_root"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining solar venom with mandrake root.",
@@ -2335,7 +2335,7 @@
       "hero_hound_pelt",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2348,7 +2348,7 @@
       "ochre_extract",
       "serpent_pepper"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2361,7 +2361,7 @@
       "pack_lord_skull",
       "cave_mushroom"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining pack lord skull with cave mushroom.",
@@ -2373,7 +2373,7 @@
       "ettercap_silk",
       "mandrake_root"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2386,7 +2386,7 @@
       "jiangshi_essence",
       "wild_thyme"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2399,7 +2399,7 @@
       "hollow_essence",
       "ember_spice"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2412,7 +2412,7 @@
       "charnel_fang",
       "rosemary_sprig"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2425,7 +2425,7 @@
       "mantis_foreleg",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2438,7 +2438,7 @@
       "winter_wolf_pelt",
       "cave_mushroom"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2451,7 +2451,7 @@
       "death_dog_fang",
       "rosemary_sprig"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2464,7 +2464,7 @@
       "tengu_feather",
       "valerian_root"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2477,7 +2477,7 @@
       "musk_pollen",
       "cave_mushroom"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2490,7 +2490,7 @@
       "cyclops_eye",
       "rosemary_sprig"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2503,7 +2503,7 @@
       "corrupted_elf_dust",
       "cave_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2516,7 +2516,7 @@
       "crocodile_hide",
       "cave_mushroom"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining crocodile hide with cave mushroom.",
@@ -2528,7 +2528,7 @@
       "desert_sand_essence",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2541,7 +2541,7 @@
       "demon_ichor",
       "valerian_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining demon ichor with valerian root.",
@@ -2553,7 +2553,7 @@
       "mouther_ichor",
       "cave_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining mouther ichor with cave mushroom.",
@@ -2565,7 +2565,7 @@
       "clockwork_gear",
       "petrified_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2578,7 +2578,7 @@
       "otyugh_organ",
       "petrified_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2591,7 +2591,7 @@
       "phase_spider_venom",
       "rosemary_sprig"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2604,7 +2604,7 @@
       "vrykolakas_heart",
       "mandrake_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2617,7 +2617,7 @@
       "thrall_bone",
       "mandrake_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining thrall bone with mandrake root.",
@@ -2629,7 +2629,7 @@
       "witch_bone",
       "valerian_root"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining witch bone with valerian root.",
@@ -2641,7 +2641,7 @@
       "crypt_dust",
       "mandrake_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining crypt dust with mandrake root.",
@@ -2653,7 +2653,7 @@
       "guardian_bone",
       "cave_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining guardian bone with cave mushroom.",
@@ -2665,7 +2665,7 @@
       "gibbering_essence",
       "valerian_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining gibbering essence with valerian root.",
@@ -2677,7 +2677,7 @@
       "komodo_venom_gland",
       "rosemary_sprig"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2690,7 +2690,7 @@
       "roc_egg_fragment",
       "valerian_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining roc egg fragment with valerian root.",
@@ -2702,7 +2702,7 @@
       "redcap_blood",
       "rosemary_sprig"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2715,7 +2715,7 @@
       "elemental_air_core",
       "petrified_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2728,7 +2728,7 @@
       "peryton_antler",
       "rosemary_sprig"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining peryton antler with rosemary sprig.",
@@ -2740,7 +2740,7 @@
       "giant_marrow",
       "wild_thyme"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2753,7 +2753,7 @@
       "yuan_ti_venom_sac",
       "dragon_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining yuan-ti venom sac with dragon salt.",
@@ -2765,7 +2765,7 @@
       "winged_mane",
       "serpent_pepper"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining winged mane with serpent pepper.",
@@ -2777,7 +2777,7 @@
       "lindworm_skin",
       "mandrake_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining lindworm skin with mandrake root.",
@@ -2789,7 +2789,7 @@
       "each_uisce_mane",
       "dragon_salt"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2802,7 +2802,7 @@
       "ugallu_claw",
       "mandrake_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2815,7 +2815,7 @@
       "kusarikku_horn",
       "nightshade_leaf"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2828,7 +2828,7 @@
       "grell_tentacle",
       "petrified_mushroom"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2841,7 +2841,7 @@
       "infernal_perfume",
       "petrified_mushroom"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining infernal perfume with petrified mushroom.",
@@ -2853,7 +2853,7 @@
       "devil_glaive_shard",
       "ember_spice"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining devil glaive shard with ember spice.",
@@ -2865,7 +2865,7 @@
       "lurker_skin",
       "serpent_pepper"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2878,7 +2878,7 @@
       "mineral_shard",
       "petrified_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining mineral shard with petrified mushroom.",
@@ -2890,7 +2890,7 @@
       "hook_horror_hook",
       "valerian_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining hook horror hook with valerian root.",
@@ -2902,7 +2902,7 @@
       "strigoi_fang",
       "petrified_mushroom"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2915,7 +2915,7 @@
       "death_mage_phylactery",
       "petrified_mushroom"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -2928,7 +2928,7 @@
       "mohrg_organ",
       "cave_mushroom"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining mohrg organ with cave mushroom.",
@@ -2940,7 +2940,7 @@
       "death_beetle_ichor",
       "petrified_mushroom"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining death beetle ichor with petrified mushroom.",
@@ -2952,7 +2952,7 @@
       "hag_eye",
       "cave_mushroom"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -2965,7 +2965,7 @@
       "elemental_water_core",
       "nightshade_leaf"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -2978,7 +2978,7 @@
       "minotaur_horn",
       "ember_spice"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining Minotaur Horn with ember spice.",
@@ -2990,7 +2990,7 @@
       "sphinx_mane",
       "mandrake_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining sphinx mane with mandrake root.",
@@ -3002,7 +3002,7 @@
       "corruption_scale",
       "rosemary_sprig"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining corruption scale with rosemary sprig.",
@@ -3014,7 +3014,7 @@
       "sphinx_dust_gold",
       "mandrake_root"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3027,7 +3027,7 @@
       "thoth_ink",
       "void_salt"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3040,7 +3040,7 @@
       "fomorian_bone",
       "void_salt"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3053,7 +3053,7 @@
       "cath_palug_claw",
       "petrified_mushroom"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3066,7 +3066,7 @@
       "primordial_clay",
       "petrified_mushroom"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3079,7 +3079,7 @@
       "brain_lobe",
       "ember_spice"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining brain lobe with ember spice.",
@@ -3091,7 +3091,7 @@
       "cloaker_hide",
       "mandrake_root"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining cloaker hide with mandrake root.",
@@ -3103,7 +3103,7 @@
       "enchanted_clay",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3116,7 +3116,7 @@
       "displacer_hide",
       "nightshade_leaf"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining displacer hide with nightshade leaf.",
@@ -3128,7 +3128,7 @@
       "black_ooze",
       "wild_thyme"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3141,7 +3141,7 @@
       "trapper_membrane",
       "mandrake_root"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining trapper membrane with mandrake root.",
@@ -3153,7 +3153,7 @@
       "revenant_heart",
       "serpent_pepper"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining revenant heart with serpent pepper.",
@@ -3165,7 +3165,7 @@
       "tomb_stone_fragment",
       "nightshade_leaf"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining tomb stone fragment with nightshade leaf.",
@@ -3177,7 +3177,7 @@
       "elemental_ice_core",
       "wild_thyme"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3190,7 +3190,7 @@
       "mound_mulch",
       "dragon_salt"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining mound mulch with dragon salt.",
@@ -3202,7 +3202,7 @@
       "corrupted_wing_feather",
       "petrified_mushroom"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining corrupted wing feather with petrified mushroom.",
@@ -3214,7 +3214,7 @@
       "nue_tail_quill",
       "mandrake_root"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3227,7 +3227,7 @@
       "ember_ash",
       "serpent_pepper"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3240,7 +3240,7 @@
       "sea_serpent_oil",
       "ember_spice"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining sea serpent oil with ember spice.",
@@ -3252,7 +3252,7 @@
       "anzu_feather",
       "rosemary_sprig"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3265,7 +3265,7 @@
       "eyestalk",
       "mandrake_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3278,7 +3278,7 @@
       "devil_chain_link",
       "wild_thyme"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining devil chain link with wild thyme.",
@@ -3290,7 +3290,7 @@
       "shield_core",
       "wild_thyme"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining shield guardian core with wild thyme.",
@@ -3302,7 +3302,7 @@
       "roper_strand",
       "valerian_root"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3315,7 +3315,7 @@
       "pale_master_essence",
       "ember_spice"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3328,7 +3328,7 @@
       "wight_essence",
       "void_salt"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining wight essence with void salt.",
@@ -3340,7 +3340,7 @@
       "dread_plate",
       "petrified_mushroom"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining dread plate fragment with petrified mushroom.",
@@ -3352,7 +3352,7 @@
       "storm_feather",
       "ember_spice"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining storm feather with ember spice.",
@@ -3364,7 +3364,7 @@
       "sovereign_spore_cap",
       "void_salt"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3377,7 +3377,7 @@
       "sphinx_claw",
       "nightshade_leaf"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3390,7 +3390,7 @@
       "stone_giant_core",
       "serpent_pepper"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining stone giant core with serpent pepper.",
@@ -3402,7 +3402,7 @@
       "black_dragon_scale",
       "void_salt"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3415,7 +3415,7 @@
       "hydra_bile",
       "mandrake_root"
     ],
-    "sp": 117,
+    "sp": 264,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3428,7 +3428,7 @@
       "devil_barb",
       "dragon_salt"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3441,7 +3441,7 @@
       "golem_stone",
       "nightshade_leaf"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3454,7 +3454,7 @@
       "catoblepas_horn",
       "valerian_root"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3467,7 +3467,7 @@
       "nightshade_essence",
       "rosemary_sprig"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3480,7 +3480,7 @@
       "queen_venom_gland",
       "serpent_pepper"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3493,7 +3493,7 @@
       "elemental_magma_core",
       "cave_mushroom"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3506,7 +3506,7 @@
       "corrupted_horn_fragment",
       "void_salt"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining corrupted unicorn horn with void salt.",
@@ -3518,7 +3518,7 @@
       "red_dragon_scale",
       "valerian_root"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3531,7 +3531,7 @@
       "scylla_fang",
       "void_salt"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining scylla fang with void salt.",
@@ -3543,7 +3543,7 @@
       "titan_essence",
       "petrified_mushroom"
     ],
-    "sp": 117,
+    "sp": 264,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A hearty dish combining titanspawn essence with petrified mushroom.",
@@ -3555,7 +3555,7 @@
       "vrock_feather",
       "petrified_mushroom"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining vrock feather with petrified mushroom.",
@@ -3567,7 +3567,7 @@
       "erinyes_feather",
       "ember_spice"
     ],
-    "sp": 86,
+    "sp": 194,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3580,7 +3580,7 @@
       "behir_scale",
       "petrified_mushroom"
     ],
-    "sp": 125,
+    "sp": 282,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3593,7 +3593,7 @@
       "ossuary_shard",
       "wild_thyme"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining ossuary shard with wild thyme.",
@@ -3605,7 +3605,7 @@
       "alpha_lycanthrope_blood",
       "ember_spice"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining alpha lycanthrope blood with ember spice.",
@@ -3617,7 +3617,7 @@
       "wyvern_venom_gland",
       "mandrake_root"
     ],
-    "sp": 86,
+    "sp": 194,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3630,7 +3630,7 @@
       "aboleth_mucus",
       "void_salt"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3643,7 +3643,7 @@
       "devil_venom",
       "wild_thyme"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3656,7 +3656,7 @@
       "giant_bone",
       "rosemary_sprig"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining skeletal giant bone with rosemary sprig.",
@@ -3668,7 +3668,7 @@
       "sea_dragon_scale",
       "mandrake_root"
     ],
-    "sp": 125,
+    "sp": 282,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3681,7 +3681,7 @@
       "night_hag_heartstone",
       "valerian_root"
     ],
-    "sp": 93,
+    "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3694,7 +3694,7 @@
       "cloudstuff",
       "mandrake_root"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3707,7 +3707,7 @@
       "cerberus_saliva",
       "mandrake_root"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -3720,7 +3720,7 @@
       "demon_scales",
       "valerian_root"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3733,7 +3733,7 @@
       "lesser_draco_bone",
       "serpent_pepper"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -3746,7 +3746,7 @@
       "demi_lich_skull",
       "void_salt"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3759,7 +3759,7 @@
       "nightwing_membrane",
       "ember_spice"
     ],
-    "sp": 158,
+    "sp": 237,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3772,7 +3772,7 @@
       "roc_talon",
       "valerian_root"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -3785,7 +3785,7 @@
       "lich_dragon_scale",
       "serpent_pepper"
     ],
-    "sp": 167,
+    "sp": 250,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A complex dish combining lich dragon scale with serpent pepper.",
@@ -3803,7 +3803,7 @@
       "battle_ration",
       "rosemary_sprig"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining battle ration with rosemary sprig.",
@@ -3815,7 +3815,7 @@
       "frost_sac",
       "rosemary_sprig"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "A simple dish combining frost sac with rosemary sprig.",
@@ -3827,7 +3827,7 @@
       "arachne_silk_gland",
       "spider_silk"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -3840,7 +3840,7 @@
       "lamia_scales",
       "echidna_venom_sac"
     ],
-    "sp": 96,
+    "sp": 144,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "Two mothers of Greek myth, combined into one fearsome pot. The taste is legendary.",
@@ -3852,7 +3852,7 @@
       "talos_bronze_shard",
       "fire_gland"
     ],
-    "sp": 86,
+    "sp": 194,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -3865,7 +3865,7 @@
       "echidna_venom_sac",
       "manticore_spine"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -3878,7 +3878,7 @@
       "erlking_crown_twig",
       "enchanted_wood"
     ],
-    "sp": 111,
+    "sp": 166,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -3891,7 +3891,7 @@
       "camazotz_wing_membrane",
       "bat_wing"
     ],
-    "sp": 125,
+    "sp": 188,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -3904,7 +3904,7 @@
       "cacus_ember_gut",
       "lion_meat"
     ],
-    "sp": 136,
+    "sp": 204,
     "bonus_type": "combat_stat",
     "bonus_amount": 2,
     "description": "The fire-breathing giant's gut roasted with lion meat. A hero's reward after the labor.",
@@ -3916,7 +3916,7 @@
       "sphinx_riddle_stone",
       "sphinx_mane"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -3929,7 +3929,7 @@
       "rangda_mask_splinter",
       "enchanted_wood"
     ],
-    "sp": 158,
+    "sp": 237,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "The demon queen's mask balanced with sacred wood. Good and evil find harmony in flavor.",
@@ -3941,7 +3941,7 @@
       "nemean_pelt_scrap",
       "lion_meat"
     ],
-    "sp": 167,
+    "sp": 250,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -3954,7 +3954,7 @@
       "baba_yaga_mortar_dust",
       "hag_eye"
     ],
-    "sp": 176,
+    "sp": 264,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
@@ -3967,7 +3967,7 @@
       "jormungandr_scale",
       "world_serpent_scale"
     ],
-    "sp": 185,
+    "sp": 231,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
     "description": "Juvenile and adult world-serpent scales united. The ocean itself trembles at the aroma.",
@@ -3984,7 +3984,7 @@
       "sets_jackal_fang",
       "desert_sand_essence"
     ],
-    "sp": 190,
+    "sp": 238,
     "bonus_type": "combat_stat",
     "bonus_amount": 3,
     "description": "Set's fang dissolved in desert essence. The red land's power concentrated to a single drop.",
@@ -3996,7 +3996,7 @@
       "green_knight_sap",
       "heartwood_sap"
     ],
-    "sp": 198,
+    "sp": 248,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
@@ -4009,7 +4009,7 @@
       "charybdis_brine",
       "scylla_fang"
     ],
-    "sp": 206,
+    "sp": 258,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
     "description": "Between Scylla and Charybdis lies this chowder. Surviving both monsters earns you this meal.",
@@ -4026,7 +4026,7 @@
       "ravanas_knuckle",
       "ember_spice"
     ],
-    "sp": 209,
+    "sp": 261,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -4039,7 +4039,7 @@
       "wendigo_heart",
       "frost_gland"
     ],
-    "sp": 216,
+    "sp": 270,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
@@ -4052,7 +4052,7 @@
       "wild_hunt_horn",
       "wolf_pelt"
     ],
-    "sp": 223,
+    "sp": 279,
     "bonus_type": "combat_stat",
     "bonus_amount": 3,
     "description": "The horn of the hunt's captain paired with wolf hide. The stormy ride made edible.",
@@ -4064,7 +4064,7 @@
       "anansi_story_thread",
       "spider_silk"
     ],
-    "sp": 230,
+    "sp": 288,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
@@ -4160,7 +4160,7 @@
       "beleth_quake_stone",
       "stone_giant_core"
     ],
-    "sp": 241,
+    "sp": 301,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -4173,7 +4173,7 @@
       "arachne_silk_gland",
       "echidna_venom_sac"
     ],
-    "sp": 96,
+    "sp": 144,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -4186,7 +4186,7 @@
       "talos_bronze_shard",
       "cacus_ember_gut"
     ],
-    "sp": 136,
+    "sp": 204,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -4199,7 +4199,7 @@
       "sphinx_riddle_stone",
       "baba_yaga_mortar_dust"
     ],
-    "sp": 176,
+    "sp": 220,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
@@ -4212,7 +4212,7 @@
       "talos_bronze_shard",
       "enchanted_clay"
     ],
-    "sp": 86,
+    "sp": 194,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -4225,7 +4225,7 @@
       "echidna_venom_sac",
       "snake_meat"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -4238,7 +4238,7 @@
       "erlking_crown_twig",
       "heartwood_sap"
     ],
-    "sp": 111,
+    "sp": 166,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 1,
@@ -4251,7 +4251,7 @@
       "camazotz_wing_membrane",
       "bat_wing"
     ],
-    "sp": 125,
+    "sp": 188,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
@@ -4264,7 +4264,7 @@
       "cacus_ember_gut",
       "fire_gland"
     ],
-    "sp": 136,
+    "sp": 204,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -4277,7 +4277,7 @@
       "sphinx_riddle_stone",
       "sphinx_mane"
     ],
-    "sp": 147,
+    "sp": 220,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -4290,7 +4290,7 @@
       "rangda_mask_splinter",
       "witch_bone"
     ],
-    "sp": 158,
+    "sp": 237,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -4303,7 +4303,7 @@
       "nemean_pelt_scrap",
       "lion_meat"
     ],
-    "sp": 167,
+    "sp": 250,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -4316,7 +4316,7 @@
       "sets_jackal_fang",
       "scarab_shell"
     ],
-    "sp": 190,
+    "sp": 238,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
@@ -4329,7 +4329,7 @@
       "green_knight_sap",
       "troll_regeneration_gland"
     ],
-    "sp": 198,
+    "sp": 248,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -4342,7 +4342,7 @@
       "charybdis_brine",
       "sea_serpent_oil"
     ],
-    "sp": 206,
+    "sp": 258,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -4355,7 +4355,7 @@
       "ravanas_knuckle",
       "demon_heart"
     ],
-    "sp": 209,
+    "sp": 261,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -4368,7 +4368,7 @@
       "anansi_story_thread",
       "spider_silk"
     ],
-    "sp": 230,
+    "sp": 288,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 1,
@@ -4449,7 +4449,7 @@
       "prime_beef",
       "royal_beef"
     ],
-    "sp": 136,
+    "sp": 170,
     "bonus_type": "all_stats",
     "bonus_amount": 3,
     "description": "A legendary dish combining prime Hell Bovine beef with the Cow King's royal cut. The flavors are transcendent. Moo.",
@@ -4461,7 +4461,7 @@
       "bear_meat",
       "frost_gland"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "status",
     "bonus_amount": 30,
     "description": "Bear haunch braised with a chilled frost gland — paradoxically, it warms.",
@@ -4474,7 +4474,7 @@
       "snake_meat",
       "fire_gland"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "stat",
     "bonus_amount": 2,
     "description": "Coiled serpent flesh seared over a still-glowing fire gland.",
@@ -4488,7 +4488,7 @@
       "ember_spice",
       "cave_carrot"
     ],
-    "sp": 35,
+    "sp": 78,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "A workmanlike stew: goblin, carrot, and ember spice in a rough red broth.",
@@ -4500,7 +4500,7 @@
       "troll_hide",
       "wild_thyme"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "status",
     "bonus_amount": 20,
     "description": "Troll hide rendered down to crisp cracklings with wild thyme.",
@@ -4513,7 +4513,7 @@
       "bear_meat",
       "mandrake_root"
     ],
-    "sp": 66,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_amount": 2,
     "description": "Bear meat slow-roasted around a mandrake root — sleep within waking.",
@@ -4526,7 +4526,7 @@
       "dragon_scale",
       "ember_spice"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "combat_stat",
     "bonus_amount": 2,
     "description": "Dragon scales fried until they shatter like glass, dusted with ember spice.",
@@ -4544,7 +4544,7 @@
       "manticore_spine",
       "serpent_pepper"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_amount": 2,
     "description": "Manticore spine marrow drawn out and grilled on skewers.",
@@ -4558,7 +4558,7 @@
       "wild_thyme",
       "pale_celery"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "two_stats",
     "bonus_amount": 2,
     "description": "Three-natured chimera heart simmered with herbs into a pure French pot-au-feu.",
@@ -4570,7 +4570,7 @@
       "bone_shard",
       "cave_mushroom"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "Bone shards boiled into a marrow-rich broth, mushrooms floating on top.",
@@ -4582,7 +4582,7 @@
       "frog_legs",
       "wild_thyme"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "stat",
     "bonus_amount": 1,
     "description": "Crisp-skinned frog legs sauteed in butter with fresh thyme. A classic.",
@@ -4595,7 +4595,7 @@
       "wolf_pelt",
       "bone_shard"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_amount": 1,
     "description": "A trail-rough broth of bone shards simmered in a wolf-pelt-lined pot.",
@@ -4608,7 +4608,7 @@
       "owlbear_feather",
       "wild_thyme"
     ],
-    "sp": 96,
+    "sp": 216,
     "bonus_type": "combat_stat",
     "bonus_amount": 1,
     "description": "Owlbear breast roasted on a 'pillow' of its own down and thyme.",
@@ -4620,7 +4620,7 @@
       "rotted_flesh",
       "nightshade_leaf"
     ],
-    "sp": 43,
+    "sp": 96,
     "bonus_type": "status",
     "bonus_amount": 30,
     "description": "Rotted flesh stewed with nightshade leaves — fights poison with poison.",
@@ -4633,7 +4633,7 @@
       "soul_fragment",
       "bone_shard"
     ],
-    "sp": 61,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_amount": 2,
     "description": "A clear bone broth steeped with a captured soul fragment.",
@@ -4646,7 +4646,7 @@
       "demon_heart",
       "ember_spice"
     ],
-    "sp": 132,
+    "sp": 297,
     "bonus_type": "combat_stat",
     "bonus_amount": 2,
     "description": "Demon heart braised in spice-fortified wine until tender and red-black.",
@@ -4658,7 +4658,7 @@
       "sphinx_mane",
       "wild_thyme"
     ],
-    "sp": 79,
+    "sp": 177,
     "bonus_type": "stat",
     "bonus_amount": 2,
     "description": "Sphinx-mane hair steeped with thyme — a clarity broth, with riddles included.",
@@ -4671,7 +4671,7 @@
       "storm_feather",
       "frost_gland"
     ],
-    "sp": 147,
+    "sp": 330,
     "bonus_type": "status",
     "bonus_amount": 40,
     "description": "Storm-charged feather dredged in frost gland and flash-fried. Sparks on bite.",
@@ -4685,7 +4685,7 @@
       "cave_mushroom",
       "bone_shard"
     ],
-    "sp": 25,
+    "sp": 57,
     "bonus_type": "random_stat",
     "bonus_amount": 1,
     "description": "The first-floor classic — whatever you can scavenge, chopped and griddled together.",
@@ -4697,7 +4697,7 @@
       "naga_scale",
       "ember_spice"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -4710,7 +4710,7 @@
       "thoth_ink",
       "glowing_spore"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 1,
@@ -4723,7 +4723,7 @@
       "cyclops_eye",
       "cave_mushroom"
     ],
-    "sp": 60,
+    "sp": 135,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
@@ -4736,7 +4736,7 @@
       "sphinx_mane",
       "wild_thyme"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 1,
@@ -4749,7 +4749,7 @@
       "displacer_hide",
       "cave_carrot"
     ],
-    "sp": 50,
+    "sp": 112,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 1,
@@ -4762,7 +4762,7 @@
       "mound_mulch",
       "rosemary_sprig"
     ],
-    "sp": 48,
+    "sp": 108,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 1,
@@ -4775,7 +4775,7 @@
       "lindworm_skin",
       "serpent_pepper"
     ],
-    "sp": 58,
+    "sp": 130,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 1,
@@ -4788,7 +4788,7 @@
       "embalming_resin",
       "void_salt"
     ],
-    "sp": 52,
+    "sp": 117,
     "bonus_type": "status",
     "bonus_stat": "PER",
     "bonus_amount": 10,
@@ -4803,7 +4803,7 @@
       "pale_celery",
       "cave_carrot"
     ],
-    "sp": 65,
+    "sp": 147,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -4820,7 +4820,7 @@
       "valerian_root",
       "rosemary_sprig"
     ],
-    "sp": 62,
+    "sp": 140,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "DEX",
@@ -4838,7 +4838,7 @@
       "cave_carrot",
       "pale_celery"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "Moroccan tagine slow-cooked in a sealed conical pot with owlbear plume, three roots, and a long argument between cinnamon and ember. Comes off the fire after a full sand-glass.",
@@ -4851,7 +4851,7 @@
       "rosemary_sprig",
       "void_salt"
     ],
-    "sp": 72,
+    "sp": 162,
     "bonus_type": "status",
     "bonus_stat": "WIS",
     "bonus_amount": 14,
@@ -4865,7 +4865,7 @@
       "behir_scale",
       "ember_spice"
     ],
-    "sp": 78,
+    "sp": 176,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -4878,7 +4878,7 @@
       "void_shard",
       "rosemary_sprig"
     ],
-    "sp": 70,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -4891,7 +4891,7 @@
       "titan_essence",
       "wild_thyme"
     ],
-    "sp": 75,
+    "sp": 168,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -4904,7 +4904,7 @@
       "erlking_crown_twig",
       "valerian_root"
     ],
-    "sp": 68,
+    "sp": 102,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -4917,7 +4917,7 @@
       "sea_dragon_scale",
       "serpent_pepper"
     ],
-    "sp": 72,
+    "sp": 162,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -4931,7 +4931,7 @@
       "mandrake_root",
       "ember_spice"
     ],
-    "sp": 80,
+    "sp": 180,
     "bonus_type": "status",
     "bonus_stat": "INT",
     "bonus_amount": 12,
@@ -4946,7 +4946,7 @@
       "crimson_fungus",
       "ember_spice"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "status",
     "bonus_stat": "PER",
     "bonus_amount": 18,
@@ -4961,7 +4961,7 @@
       "ember_spice",
       "pale_celery"
     ],
-    "sp": 78,
+    "sp": 176,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -4978,7 +4978,7 @@
       "rosemary_sprig",
       "ember_spice"
     ],
-    "sp": 85,
+    "sp": 192,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -4996,7 +4996,7 @@
       "void_salt",
       "ember_spice"
     ],
-    "sp": 95,
+    "sp": 213,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "A four-course Hindustani thali built entirely on storm-charged ingredients. The plate hums when the kitchen quiets.",
@@ -5011,7 +5011,7 @@
       "cave_mushroom",
       "pale_celery"
     ],
-    "sp": 100,
+    "sp": 225,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "A five-element forest-court platter: bound twig, scale-leaf, root, mushroom, stalk. Eaten standing, the way the old courts did.",
@@ -5023,7 +5023,7 @@
       "cacus_ember_gut",
       "wild_thyme"
     ],
-    "sp": 90,
+    "sp": 135,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -5036,7 +5036,7 @@
       "demi_lich_skull",
       "glowing_spore"
     ],
-    "sp": 82,
+    "sp": 184,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -5049,7 +5049,7 @@
       "frost_gland",
       "valerian_root"
     ],
-    "sp": 78,
+    "sp": 176,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -5063,7 +5063,7 @@
       "cave_carrot",
       "rosemary_sprig"
     ],
-    "sp": 88,
+    "sp": 198,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -5076,7 +5076,7 @@
       "storm_essence",
       "void_salt"
     ],
-    "sp": 85,
+    "sp": 192,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -5090,7 +5090,7 @@
       "serpent_pepper",
       "ember_spice"
     ],
-    "sp": 92,
+    "sp": 207,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -5103,7 +5103,7 @@
       "cerberus_saliva",
       "wolf_meat"
     ],
-    "sp": 90,
+    "sp": 202,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -5116,7 +5116,7 @@
       "rangda_mask_splinter",
       "mandrake_root"
     ],
-    "sp": 78,
+    "sp": 117,
     "bonus_type": "status",
     "bonus_stat": "WIS",
     "bonus_amount": 14,
@@ -5131,7 +5131,7 @@
       "wild_thyme",
       "glowing_spore"
     ],
-    "sp": 88,
+    "sp": 132,
     "bonus_type": "status",
     "bonus_stat": "INT",
     "bonus_amount": 16,
@@ -5147,7 +5147,7 @@
       "void_salt",
       "rosemary_sprig"
     ],
-    "sp": 95,
+    "sp": 213,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -5165,7 +5165,7 @@
       "pale_celery",
       "ember_spice"
     ],
-    "sp": 98,
+    "sp": 220,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "Scottish haggis with undead dragon bone-marrow worked through the oats. Heavy, peaty, and unsettlingly persistent on the breath.",
@@ -5180,7 +5180,7 @@
       "ember_spice",
       "cave_carrot"
     ],
-    "sp": 110,
+    "sp": 248,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "A five-ingredient royal tagine with chaos essence stirred in last so the dish never settles the same way twice. The cook prays before lifting the lid.",
@@ -5192,7 +5192,7 @@
       "nightwing_membrane",
       "wild_thyme"
     ],
-    "sp": 100,
+    "sp": 150,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -5205,7 +5205,7 @@
       "dragon_scale",
       "void_salt"
     ],
-    "sp": 105,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -5218,7 +5218,7 @@
       "lich_dragon_scale",
       "ember_spice"
     ],
-    "sp": 95,
+    "sp": 142,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -5231,7 +5231,7 @@
       "nemean_pelt_scrap",
       "cave_carrot"
     ],
-    "sp": 92,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -5244,7 +5244,7 @@
       "adult_dragon_heart",
       "rosemary_sprig"
     ],
-    "sp": 108,
+    "sp": 162,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -5257,7 +5257,7 @@
       "rangda_mask_splinter",
       "valerian_root"
     ],
-    "sp": 88,
+    "sp": 132,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -5271,7 +5271,7 @@
       "rosemary_sprig",
       "ember_spice"
     ],
-    "sp": 105,
+    "sp": 158,
     "bonus_type": "status",
     "bonus_stat": "CON",
     "bonus_amount": 16,
@@ -5286,7 +5286,7 @@
       "void_salt",
       "wild_thyme"
     ],
-    "sp": 92,
+    "sp": 207,
     "bonus_type": "status",
     "bonus_stat": "DEX",
     "bonus_amount": 14,
@@ -5302,7 +5302,7 @@
       "ember_spice",
       "mandrake_root"
     ],
-    "sp": 120,
+    "sp": 180,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -5319,7 +5319,7 @@
       "void_salt",
       "pale_celery"
     ],
-    "sp": 95,
+    "sp": 213,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "INT",
@@ -5338,7 +5338,7 @@
       "rosemary_sprig",
       "wild_thyme"
     ],
-    "sp": 130,
+    "sp": 195,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "description": "Balinese ceremonial roast scented with five aromatic woods and finished with a circle of mask splinters around the meat. Reserved for nights of new moon.",
@@ -5352,7 +5352,7 @@
       "lich_dragon_scale",
       "void_salt"
     ],
-    "sp": 118,
+    "sp": 177,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "A small French cassolette with three winged-beast components layered above a void-salt crust. The center sinks as it cools; the eater stays upright.",
@@ -5364,7 +5364,7 @@
       "pit_fiend_scale",
       "void_salt"
     ],
-    "sp": 110,
+    "sp": 165,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -5377,7 +5377,7 @@
       "jormungandr_scale",
       "rosemary_sprig"
     ],
-    "sp": 105,
+    "sp": 131,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -5390,7 +5390,7 @@
       "sets_jackal_fang",
       "ember_spice"
     ],
-    "sp": 102,
+    "sp": 128,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -5403,7 +5403,7 @@
       "baba_yaga_mortar_dust",
       "valerian_root"
     ],
-    "sp": 95,
+    "sp": 142,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -5416,7 +5416,7 @@
       "pit_fiend_scale",
       "wild_thyme"
     ],
-    "sp": 100,
+    "sp": 150,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -5430,7 +5430,7 @@
       "valerian_root",
       "wild_thyme"
     ],
-    "sp": 108,
+    "sp": 162,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "DEX",
@@ -5447,7 +5447,7 @@
       "ember_spice",
       "void_salt"
     ],
-    "sp": 112,
+    "sp": 168,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -5464,7 +5464,7 @@
       "cave_mushroom",
       "pale_celery"
     ],
-    "sp": 100,
+    "sp": 150,
     "bonus_type": "status",
     "bonus_stat": "PER",
     "bonus_amount": 18,
@@ -5479,7 +5479,7 @@
       "demon_heart",
       "ember_spice"
     ],
-    "sp": 115,
+    "sp": 172,
     "bonus_type": "status",
     "bonus_stat": "STR",
     "bonus_amount": 16,
@@ -5494,7 +5494,7 @@
       "world_serpent_scale",
       "wild_thyme"
     ],
-    "sp": 105,
+    "sp": 158,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -5510,7 +5510,7 @@
       "cave_carrot",
       "rosemary_sprig"
     ],
-    "sp": 135,
+    "sp": 202,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "description": "Five-piece desert mezze: jackal fang shavings, pit fiend scale crisps, ember pickle, carrot relish, rosemary-flatbread. A war council's lunch.",
@@ -5524,7 +5524,7 @@
       "pale_celery",
       "void_salt"
     ],
-    "sp": 122,
+    "sp": 183,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "Russian solyanka thick with mortar dust, a riddle stone steeped in the broth, pale celery and void salt. The crone says the broth is the question.",
@@ -5536,7 +5536,7 @@
       "green_knight_sap",
       "wild_thyme"
     ],
-    "sp": 120,
+    "sp": 150,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -5549,7 +5549,7 @@
       "charybdis_brine",
       "pale_celery"
     ],
-    "sp": 115,
+    "sp": 144,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -5562,7 +5562,7 @@
       "green_knight_sap",
       "valerian_root"
     ],
-    "sp": 110,
+    "sp": 138,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -5575,7 +5575,7 @@
       "charybdis_brine",
       "glowing_spore"
     ],
-    "sp": 118,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -5588,7 +5588,7 @@
       "green_knight_sap",
       "cave_mushroom"
     ],
-    "sp": 112,
+    "sp": 140,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -5601,7 +5601,7 @@
       "charybdis_brine",
       "void_salt"
     ],
-    "sp": 115,
+    "sp": 144,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -5615,7 +5615,7 @@
       "ember_spice",
       "pale_celery"
     ],
-    "sp": 122,
+    "sp": 183,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -5632,7 +5632,7 @@
       "ember_spice",
       "mandrake_root"
     ],
-    "sp": 118,
+    "sp": 177,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "INT",
@@ -5649,7 +5649,7 @@
       "lucky_clover",
       "wild_thyme"
     ],
-    "sp": 105,
+    "sp": 158,
     "bonus_type": "status",
     "bonus_stat": "WIS",
     "bonus_amount": 18,
@@ -5664,7 +5664,7 @@
       "sea_serpent_oil",
       "valerian_root"
     ],
-    "sp": 120,
+    "sp": 180,
     "bonus_type": "status",
     "bonus_stat": "PER",
     "bonus_amount": 20,
@@ -5680,7 +5680,7 @@
       "wild_thyme",
       "cave_mushroom"
     ],
-    "sp": 138,
+    "sp": 172,
     "bonus_type": "all_stats",
     "bonus_amount": 1,
     "description": "Half land, half sea: green knight sap stirred clockwise into the pot, charybdis brine stirred counterclockwise. The two never quite mix; both flavors arrive.",
@@ -5692,7 +5692,7 @@
       "ravanas_knuckle",
       "rosemary_sprig"
     ],
-    "sp": 130,
+    "sp": 162,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -5705,7 +5705,7 @@
       "wendigo_heart",
       "cave_mushroom"
     ],
-    "sp": 125,
+    "sp": 156,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -5718,7 +5718,7 @@
       "ravanas_knuckle",
       "ember_spice"
     ],
-    "sp": 128,
+    "sp": 160,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
@@ -5731,7 +5731,7 @@
       "wendigo_heart",
       "void_salt"
     ],
-    "sp": 122,
+    "sp": 152,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 3,
@@ -5744,7 +5744,7 @@
       "ravanas_knuckle",
       "mandrake_root"
     ],
-    "sp": 130,
+    "sp": 162,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -5757,7 +5757,7 @@
       "wendigo_heart",
       "valerian_root"
     ],
-    "sp": 118,
+    "sp": 148,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -5772,7 +5772,7 @@
       "mandrake_root",
       "cave_carrot"
     ],
-    "sp": 138,
+    "sp": 207,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -5789,7 +5789,7 @@
       "void_salt",
       "cave_mushroom"
     ],
-    "sp": 128,
+    "sp": 192,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "CON",
@@ -5808,7 +5808,7 @@
       "mandrake_root",
       "rosemary_sprig"
     ],
-    "sp": 150,
+    "sp": 225,
     "bonus_type": "status",
     "bonus_stat": "STR",
     "bonus_amount": 22,
@@ -5824,7 +5824,7 @@
       "void_salt",
       "valerian_root"
     ],
-    "sp": 132,
+    "sp": 198,
     "bonus_type": "status",
     "bonus_stat": "PER",
     "bonus_amount": 20,
@@ -5840,7 +5840,7 @@
       "ember_spice",
       "void_salt"
     ],
-    "sp": 145,
+    "sp": 181,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "description": "A fire-altar dish prepared on hot stones: demon king's knuckle and cannibal spirit's heart cooked together with a single grain of void salt between them. Two appetites, one plate.",
@@ -5852,7 +5852,7 @@
       "fenrir_fang",
       "void_salt"
     ],
-    "sp": 135,
+    "sp": 169,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 3,
@@ -5865,7 +5865,7 @@
       "wild_hunt_horn",
       "valerian_root"
     ],
-    "sp": 128,
+    "sp": 160,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -5878,7 +5878,7 @@
       "anansi_story_thread",
       "ember_spice"
     ],
-    "sp": 130,
+    "sp": 162,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 3,
@@ -5891,7 +5891,7 @@
       "buer_plague_gland",
       "serpent_pepper"
     ],
-    "sp": 125,
+    "sp": 156,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -5904,7 +5904,7 @@
       "mammon_hunger_crystal",
       "ember_spice"
     ],
-    "sp": 132,
+    "sp": 165,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 3,
@@ -5917,7 +5917,7 @@
       "amon_wrath_ember",
       "rosemary_sprig"
     ],
-    "sp": 138,
+    "sp": 172,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -5931,7 +5931,7 @@
       "buer_plague_gland",
       "ember_spice"
     ],
-    "sp": 140,
+    "sp": 175,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "INT",
@@ -5948,7 +5948,7 @@
       "amon_wrath_ember",
       "ember_spice"
     ],
-    "sp": 142,
+    "sp": 178,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "STR",
@@ -5966,7 +5966,7 @@
       "valerian_root",
       "void_salt"
     ],
-    "sp": 150,
+    "sp": 188,
     "bonus_type": "status",
     "bonus_stat": "DEX",
     "bonus_amount": 18,
@@ -5995,7 +5995,7 @@
       "nidhoggr_root_shard",
       "wild_thyme"
     ],
-    "sp": 150,
+    "sp": 188,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 3,
@@ -6008,7 +6008,7 @@
       "samael_death_vial",
       "pale_celery"
     ],
-    "sp": 155,
+    "sp": 194,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 3,
@@ -6021,7 +6021,7 @@
       "beleth_quake_stone",
       "rosemary_sprig"
     ],
-    "sp": 145,
+    "sp": 181,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 3,
@@ -6034,7 +6034,7 @@
       "abyzou_silence_dust",
       "valerian_root"
     ],
-    "sp": 148,
+    "sp": 185,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 3,
@@ -6047,7 +6047,7 @@
       "nidhoggr_root_shard",
       "void_salt"
     ],
-    "sp": 150,
+    "sp": 188,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 3,
@@ -6061,7 +6061,7 @@
       "beleth_quake_stone",
       "valerian_root"
     ],
-    "sp": 158,
+    "sp": 198,
     "bonus_type": "two_stats",
     "bonus_stats": [
       "CON",
@@ -6096,7 +6096,7 @@
       "ember_spice",
       "mandrake_root"
     ],
-    "sp": 175,
+    "sp": 219,
     "bonus_type": "status",
     "bonus_stat": "CON",
     "bonus_amount": 25,
@@ -6112,7 +6112,7 @@
       "ember_spice",
       "void_salt"
     ],
-    "sp": 168,
+    "sp": 210,
     "bonus_type": "status",
     "bonus_stat": "WIS",
     "bonus_amount": 22,
@@ -6141,7 +6141,7 @@
       "goblin_ear",
       "wild_thyme"
     ],
-    "sp": 55,
+    "sp": 123,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 1,
@@ -6154,7 +6154,7 @@
       "stone_moss",
       "pale_celery"
     ],
-    "sp": 130,
+    "sp": 195,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -6167,7 +6167,7 @@
       "witch_finger",
       "nightshade_leaf"
     ],
-    "sp": 130,
+    "sp": 195,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -6180,7 +6180,7 @@
       "serpent_venom",
       "serpent_pepper"
     ],
-    "sp": 140,
+    "sp": 210,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -6193,7 +6193,7 @@
       "patriarch_signet",
       "rosemary_sprig"
     ],
-    "sp": 150,
+    "sp": 225,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -6206,7 +6206,7 @@
       "assassin_cowl",
       "valerian_root"
     ],
-    "sp": 160,
+    "sp": 240,
     "bonus_type": "status",
     "bonus_effect": "invisible",
     "bonus_amount": 18,
@@ -6219,7 +6219,7 @@
       "golem_core",
       "cave_mushroom"
     ],
-    "sp": 160,
+    "sp": 240,
     "bonus_type": "stat",
     "bonus_stat": "CON",
     "bonus_amount": 2,
@@ -6232,7 +6232,7 @@
       "plague_phylactery",
       "valerian_root"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "status",
     "bonus_effect": "poison_resist",
     "bonus_amount": 50,
@@ -6245,7 +6245,7 @@
       "vine_essence",
       "wild_thyme"
     ],
-    "sp": 165,
+    "sp": 248,
     "bonus_type": "status",
     "bonus_effect": "regenerating",
     "bonus_amount": 30,
@@ -6258,7 +6258,7 @@
       "horror_ichor",
       "void_salt"
     ],
-    "sp": 170,
+    "sp": 255,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 2,
@@ -6271,7 +6271,7 @@
       "sentinel_plate",
       "mandrake_root"
     ],
-    "sp": 175,
+    "sp": 262,
     "bonus_type": "combat_stat",
     "bonus_stat": "ac",
     "bonus_amount": 3,
@@ -6284,7 +6284,7 @@
       "lich_dust",
       "nightshade_leaf"
     ],
-    "sp": 180,
+    "sp": 270,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -6297,7 +6297,7 @@
       "demon_horn",
       "ember_spice"
     ],
-    "sp": 185,
+    "sp": 278,
     "bonus_type": "stat",
     "bonus_stat": "STR",
     "bonus_amount": 2,
@@ -6310,7 +6310,7 @@
       "deep_pearl",
       "pale_celery"
     ],
-    "sp": 185,
+    "sp": 278,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -6323,7 +6323,7 @@
       "crone_voice",
       "valerian_root"
     ],
-    "sp": 185,
+    "sp": 278,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -6336,7 +6336,7 @@
       "mimic_gold",
       "ember_spice"
     ],
-    "sp": 195,
+    "sp": 292,
     "bonus_type": "random_stat",
     "bonus_amount": 2,
     "description": "Coin-shaped flesh of a gilded mimic glazed in ember spice until the metallic sheen runs. You never know which faculty it sharpens.",
@@ -6348,7 +6348,7 @@
       "necromantic_focus",
       "mandrake_root"
     ],
-    "sp": 200,
+    "sp": 250,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 2,
@@ -6361,7 +6361,7 @@
       "rime_tusk",
       "frost_gland"
     ],
-    "sp": 170,
+    "sp": 212,
     "bonus_type": "status",
     "bonus_effect": "cold_shield",
     "bonus_amount": 35,
@@ -6374,7 +6374,7 @@
       "shadow_quiver",
       "void_salt"
     ],
-    "sp": 200,
+    "sp": 250,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 2,
@@ -6387,7 +6387,7 @@
       "inquisitor_seal",
       "rosemary_sprig"
     ],
-    "sp": 210,
+    "sp": 262,
     "bonus_type": "stat",
     "bonus_stat": "WIS",
     "bonus_amount": 2,
@@ -6400,7 +6400,7 @@
       "elemental_core",
       "dragon_salt"
     ],
-    "sp": 220,
+    "sp": 275,
     "bonus_type": "status",
     "bonus_effect": "fire_shield",
     "bonus_amount": 35,
@@ -6413,7 +6413,7 @@
       "archon_heart",
       "mandrake_root"
     ],
-    "sp": 230,
+    "sp": 288,
     "bonus_type": "two_stats",
     "bonus_amount": 3,
     "description": "The blood archon's heart braised in red wine with mandrake. A meal of imperial weight, lifting both body and bearing.",
@@ -6425,7 +6425,7 @@
       "astral_filament",
       "spider_silk"
     ],
-    "sp": 200,
+    "sp": 250,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -6438,7 +6438,7 @@
       "swarmlord_chitin",
       "serpent_pepper"
     ],
-    "sp": 240,
+    "sp": 300,
     "bonus_type": "stat",
     "bonus_stat": "DEX",
     "bonus_amount": 3,
@@ -6451,7 +6451,7 @@
       "executioners_iron",
       "void_salt"
     ],
-    "sp": 245,
+    "sp": 306,
     "bonus_type": "combat_stat",
     "bonus_stat": "to_hit",
     "bonus_amount": 3,
@@ -6464,7 +6464,7 @@
       "void_feather",
       "wild_thyme"
     ],
-    "sp": 250,
+    "sp": 312,
     "bonus_type": "stat",
     "bonus_stat": "PER",
     "bonus_amount": 3,
@@ -6477,7 +6477,7 @@
       "herald_trumpet_brass",
       "ember_spice"
     ],
-    "sp": 250,
+    "sp": 312,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "description": "An apocalypse herald's trumpet mouthpiece glazed in ember spice and roasted whole. Each bite peals through the body like a distant horn.",
@@ -6489,7 +6489,7 @@
       "wormwood_ash",
       "valerian_root"
     ],
-    "sp": 250,
+    "sp": 312,
     "bonus_type": "stat",
     "bonus_stat": "INT",
     "bonus_amount": 3,
@@ -6503,7 +6503,7 @@
       "dragon_scale",
       "ember_spice"
     ],
-    "sp": 237,
+    "sp": 296,
     "bonus_type": "all_stats",
     "bonus_amount": 2,
     "description": "An iron horseman's shattered lance shard plated with dragon scale and ember spice. The grandest of late-game feasts; the diner rides into battle.",
