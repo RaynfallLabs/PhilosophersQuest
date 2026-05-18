@@ -28,7 +28,6 @@ from game_states import (
     STATE_SPELL_MENU, STATE_LORE, STATE_EXAMINE,
     STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
     STATE_POWER_MENU, STATE_THROW_MENU,
-    STATE_IDENTIFY_MODE,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
 )
 
@@ -679,33 +678,22 @@ class MenuMixin:
         self.state = STATE_IDENTIFY_MENU
 
     def _identify_menu_input(self, key: int):
+        """Pick an item to identify — go straight to the (escalator-chain
+        for uniques / threshold for commons) philosophy quiz.
+
+        Per design: one quiz, tiered results. No pre-quiz chooser. Quick-BUC
+        peeking lives on the altar D-press path (_altar_buc_identify), not
+        here.
+        """
         idx = self._paged_menu_input(key, self.identify_menu_items)
         if idx is None:
             return
         item, is_ground, is_corpse = self.identify_menu_items[idx]
+        self.state = STATE_PLAYER
         if is_corpse:
-            self.state = STATE_PLAYER
             self._examine_corpse_direct(item)
         else:
-            # Open the F/B mode popup so the player can choose full identify vs
-            # quick BUC-only. Stash the item for the input handler.
-            self._identify_mode_item = item
-            self.state = STATE_IDENTIFY_MODE
-
-    def _identify_mode_input(self, key: int):
-        """Handle [F] full identify vs [B] quick BUC check after selection."""
-        item = getattr(self, '_identify_mode_item', None)
-        if item is None:
-            self.state = STATE_PLAYER
-            return
-        if key in (pygame.K_f,):
-            self._identify_mode_item = None
-            self.state = STATE_PLAYER
             self._identify_item(item)
-        elif key in (pygame.K_b,):
-            self._identify_mode_item = None
-            self.state = STATE_PLAYER
-            self._quick_buc_check(item)
 
     # ------------------------------------------------------------------
     # Drop menu  (d key)

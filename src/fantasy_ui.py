@@ -431,8 +431,11 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
     for ax in [x + 14, x + w - 15]:
         _edge_diamond(surf, ax, y + h//2, accent, vertical=True, size=4)
 
-    # Title text
+    # Title text — truncate with ellipsis if wider than the header so the
+    # text never overflows the panel sides. Mid-edge diamonds + side padding
+    # = 28px each side, so usable interior is w - 56.
     if text and font:
+        text = fit_text(text, font, max(20, w - 56))
         ts = font.render(text, True, text_color)
         sx = x + w//2 - ts.get_width()//2
         sy = y + h//2 - ts.get_height()//2
@@ -827,6 +830,7 @@ def draw_menu(
 
     if subtitle:
         sc = subtitle_color or FP.BODY_TEXT
+        subtitle = fit_text(subtitle, font_sm, bw - 40)
         surf.blit(font_sm.render(subtitle, True, sc), (bx + 20, cy))
         cy += subtitle_h
 
@@ -870,6 +874,7 @@ def draw_menu(
                 draw_divider(surf, bx + 10, cy + 2, bw - 20)
                 cy += 8
             sec_col = entry.get('section_color', FP.GOLD_BRIGHT)
+            sec = fit_text(sec, font_sm, bw - 36)
             surf.blit(font_sm.render(sec, True, sec_col), (bx + 18, cy))
             cy += 24
 
@@ -899,19 +904,22 @@ def draw_menu(
             if icon_src and draw_icon_fn:
                 draw_icon_fn(surf, icon_src, bx + 56, cy + 4)
 
-            # Name
-            tx = bx + (110 if draw_icon_fn else 60)
-            name_max = bw - (tx - bx) - 20
-            nc = entry.get('name_color', FP.BODY_TEXT)
-            name_text = fit_text(entry['name'], font_md, name_max)
-            surf.blit(font_md.render(name_text, True, nc), (tx, cy + 8))
-
-            # Badge (right-aligned on name line)
+            # Badge (right-aligned on name line) — measured first so the
+            # name's max width accounts for it and they never collide.
             badge = entry.get('badge', '')
+            badge_w = 0
             if badge:
                 bc = entry.get('badge_color', FP.FADED_TEXT)
                 b_surf = font_sm.render(badge, True, bc)
+                badge_w = b_surf.get_width() + 12
                 surf.blit(b_surf, (bx + bw - 25 - b_surf.get_width(), cy + 10))
+
+            # Name — fitted to leave room for the badge
+            tx = bx + (110 if draw_icon_fn else 60)
+            name_max = bw - (tx - bx) - 20 - badge_w
+            nc = entry.get('name_color', FP.BODY_TEXT)
+            name_text = fit_text(entry['name'], font_md, name_max)
+            surf.blit(font_md.render(name_text, True, nc), (tx, cy + 8))
 
             # Detail
             det_y = cy + 4 + _ICON_SIZE + 6

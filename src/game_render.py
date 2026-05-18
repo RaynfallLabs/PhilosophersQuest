@@ -43,7 +43,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY, STATE_IDENTIFY_MODE, STATE_PET_NAME_INPUT,
+    STATE_PRAY, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT,
 )
@@ -1021,9 +1021,6 @@ class RenderMixin:
             self._draw_prayer_menu()
         elif self.state == STATE_IDENTIFY_MENU:
             self._draw_identify_menu()
-        elif self.state == STATE_IDENTIFY_MODE:
-            self._draw_identify_menu()
-            self._draw_identify_mode_popup()
         elif self.state == STATE_PET_NAME_INPUT:
             self._draw_pet_name_popup()
         elif self.state == STATE_PET_MENU:
@@ -3095,44 +3092,6 @@ class RenderMixin:
             hsurf = self.font_sm.render(line, True, FP.HINT_TEXT)
             self.screen.blit(hsurf, (bx + (bw - hsurf.get_width()) // 2, oy))
             oy += 22
-
-    def _draw_identify_mode_popup(self):
-        """Overlay shown after picking an item in the identify menu.
-
-        Lets the player choose [F] full identify or [B] quick BUC peek. Drawn
-        ON TOP of the existing identify menu (which is dimmed by the overlay).
-        """
-        item = getattr(self, '_identify_mode_item', None)
-        draw_overlay(self.screen, 190)
-        bw, bh = min(620, layout.GAME_W - 40), 220
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-        draw_dark_panel(self.screen, (bx, by, bw, bh))
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text="STUDY THE ITEM",
-                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
-
-        target_name = self._display_name(item) if item else 'an item'
-        sub = f"How will you study the {target_name}?"
-        sub_surf = self.font_md.render(self._fit_text(sub, self.font_md, bw - 40), True, FP.BODY_TEXT)
-        self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 58))
-
-        draw_divider(self.screen, bx + 20, by + 96, bw - 40)
-
-        opts = [
-            ("F", "Full identify (philosophy chain, full reveal)", FP.GOLD_BRIGHT),
-            ("B", "Quick aura read (tier 1 philosophy, BUC only)", FP.HINT_TEXT),
-            ("ESC", "Back to selection", FP.FADED_TEXT),
-        ]
-        oy = by + 112
-        for key_label, desc, col in opts:
-            key_surf  = self.font_md.render(f"[ {key_label} ]", True, col)
-            desc_surf = self.font_md.render(desc, True, FP.BODY_TEXT)
-            total_w   = key_surf.get_width() + 12 + desc_surf.get_width()
-            rx = bx + (bw - total_w) // 2
-            self.screen.blit(key_surf,  (rx, oy))
-            self.screen.blit(desc_surf, (rx + key_surf.get_width() + 12, oy))
-            oy += key_surf.get_height() + 6
 
     def _draw_confirm_exit(self):
         draw_overlay(self.screen, 190)

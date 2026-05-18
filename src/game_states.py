@@ -48,7 +48,6 @@ STATE_NPC_ENCOUNTER    = 'npc_encounter'     # Moral choice encounter with NPC
 STATE_COW_ENCOUNTER    = 'cow_encounter'     # Secret cow dialog
 STATE_JUDGMENT         = 'judgment'          # Altar of Last Judgment result
 STATE_STUDY            = 'study'             # In-game missed question review
-STATE_IDENTIFY_MODE    = 'identify_mode'     # Popup: full identify vs quick-BUC after item selection
 STATE_PET_NAME_INPUT   = 'pet_name_input'    # Naming popup when a new pet hatches from a Soul Sphere
 STATE_PET_MENU         = 'pet_menu'          # Shift+P: pet roster + actions (feed/pet/heal/recall/command/specials)
 STATE_PET_FEED         = 'pet_feed'          # Sub-menu: pick a food item to feed selected pet
