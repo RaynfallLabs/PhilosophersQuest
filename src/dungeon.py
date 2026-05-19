@@ -1629,7 +1629,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
 
     # -- Vault items (gold piles) -----------------------------------------------
     if dungeon.vault is not None:
-        from items import GoldPile
+        from items import GoldPile, add_gold_to_tile
         vault_room = dungeon.vault['room']
         for tx, ty in vault_room.inner_tiles():
             if dungeon.tiles[ty][tx] == FLOOR:

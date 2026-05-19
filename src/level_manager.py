@@ -41,9 +41,15 @@ class LevelManager:
 
         dungeon = generate_dungeon(80, 50, level_num)
 
-        # Monster count scales with depth -- matches balance targets (L1:2-3, L20:3-5, L50:5-9)
-        min_m = min(2 + level_num // 15, 7)
-        max_m = min(3 + level_num // 8, 11)
+        # Monster count scales with ROOM COUNT and depth (2026-05-19 density rebuild).
+        # Density grows from 0.50 mob/room at L1 to 0.95 at L75+. Base count is
+        # 70-110% of (rooms_excluding_start * density). Pack-spawning adds extras
+        # on top, so on heavy-pack floors total mobs may exceed max_m here.
+        n_rooms_spawnable = max(1, len(dungeon.rooms) - 1)  # exclude start room
+        density = min(0.50 + level_num / 130, 0.95)
+        target = max(3, int(n_rooms_spawnable * density))
+        min_m = max(3, int(target * 0.70))
+        max_m = max(5, min(int(target * 1.10), 20))
         monsters = spawn_monsters(dungeon.rooms, level_num, dungeon, min_m, max_m)
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)
