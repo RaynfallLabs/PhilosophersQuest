@@ -1,0 +1,39 @@
+{
+  "id": "soulsteel",
+  "name": "soulsteel",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 57,
+  "spread": 11,
+  "peak_weight": 8,
+  "min_level": 42,
+  "damage_mult": 1.15,
+  "weight_mult": 0.95,
+  "max_enchant": 6,
+  "color": [
+    180,
+    200,
+    220
+  ],
+  "armor_ac_bonus": 1,
+  "resistances": [
+    "drain"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "undead",
+    "ghost"
+  ],
+  "special_properties": [
+    "spirit_forged"
+  ],
+  "lore_descriptor": "forged with a name spoken into the quench",
+  "unidentified_descriptor": "a blade that hums faintly",
+  "first_pickup_chronicle": "Soulsteel. Forged with a name spoken into the quench — the metal remembers. Undead and ghosts feel it differently from other steel; some say the weapon answers when its true bearer is found.",
+  "design_notes": "Fills pf 57 gap. Anti-undead/ghost. Magical-favorite (max_enchant 6)."
+}

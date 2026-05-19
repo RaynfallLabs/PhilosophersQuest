@@ -2,21 +2,38 @@
   "id": "adamantine",
   "name": "adamantine",
   "material_class": "magical_metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 65,
   "spread": 14,
   "peak_weight": 5,
   "min_level": 40,
-  "damage_mult": 1.40,
-  "weight_mult": 1.40,
-  "max_enchant": 5,
-  "color": [80, 90, 110],
+  "damage_mult": 1.4,
+  "weight_mult": 1.4,
+  "max_enchant": 3,
+  "color": [
+    80,
+    90,
+    110
+  ],
   "armor_ac_bonus": 2,
-  "resistances": ["physical", "corrosion", "rust"],
+  "resistances": [
+    "physical",
+    "corrosion",
+    "rust"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
   "effective_against": [],
-  "special_properties": ["unbreakable", "cannot_be_destroyed", "rust_proof", "blessed_capable"],
+  "special_properties": [
+    "unbreakable",
+    "cannot_be_destroyed",
+    "rust_proof",
+    "blessed_capable"
+  ],
   "lore_descriptor": "blue-black, unnaturally cold, mirror-smooth",
   "unidentified_descriptor": "a midnight-dark blade that shows no edge wear",
   "first_pickup_chronicle": "Adamantine. The metal does not bend, does not chip, does not forgive. Every legendary smith dreams about this metal and dies without ever working a forge hot enough.",

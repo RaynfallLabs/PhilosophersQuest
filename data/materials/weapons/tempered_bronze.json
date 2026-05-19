@@ -1,0 +1,37 @@
+{
+  "id": "tempered_bronze",
+  "name": "tempered bronze",
+  "material_class": "metal",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 33,
+  "spread": 11,
+  "peak_weight": 9,
+  "min_level": 22,
+  "damage_mult": 1.15,
+  "weight_mult": 1.0,
+  "max_enchant": 3,
+  "color": [
+    200,
+    130,
+    70
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "construct",
+    "golem"
+  ],
+  "special_properties": [
+    "anti_construct"
+  ],
+  "lore_descriptor": "warm copper-gold, hammered hot",
+  "unidentified_descriptor": "a bronze blade older than it should be",
+  "first_pickup_chronicle": "Tempered bronze. The old Bronze Age smiths could match much of what later iron-workers achieved — and against constructs, they could exceed it. Stone and metal answer this metal differently.",
+  "design_notes": "Fills pf 33 gap. Mundane bias (max_enchant 3) — anti-construct/golem bonus. Reforged bronze of a forgotten era."
+}

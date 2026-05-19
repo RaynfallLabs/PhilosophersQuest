@@ -2,21 +2,33 @@
   "id": "bronze",
   "name": "bronze",
   "material_class": "metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 5,
   "spread": 7,
   "peak_weight": 6,
   "min_level": 1,
   "damage_mult": 0.85,
   "weight_mult": 1.05,
-  "max_enchant": 1,
-  "color": [180, 130, 60],
+  "max_enchant": 2,
+  "color": [
+    180,
+    130,
+    60
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["fey"],
-  "special_properties": ["older_than_iron"],
+  "effective_against": [
+    "fey"
+  ],
+  "special_properties": [
+    "older_than_iron"
+  ],
   "lore_descriptor": "warm-toned, smelling faintly of tin",
   "unidentified_descriptor": "tarnished blade",
   "first_pickup_chronicle": "Bronze. Older than iron. The Iliad was written for soldiers who carried this. It is not the strongest metal — it is the FIRST metal. That matters somehow.",

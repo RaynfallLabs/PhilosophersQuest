@@ -2,21 +2,34 @@
   "id": "steel",
   "name": "steel",
   "material_class": "metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 18,
   "spread": 12,
   "peak_weight": 10,
   "min_level": 8,
   "damage_mult": 1.15,
   "weight_mult": 0.95,
-  "max_enchant": 2,
-  "color": [200, 210, 220],
+  "max_enchant": 3,
+  "color": [
+    200,
+    210,
+    220
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["fey", "demon_minor"],
-  "special_properties": ["edge_holds"],
+  "effective_against": [
+    "fey",
+    "demon_minor"
+  ],
+  "special_properties": [
+    "edge_holds"
+  ],
   "lore_descriptor": "blued and well-tempered",
   "unidentified_descriptor": "a well-balanced blade",
   "first_pickup_chronicle": "Steel. Iron grew up. Properly tempered, it holds an edge longer than I'll need it to — assuming I survive long enough to dull it.",

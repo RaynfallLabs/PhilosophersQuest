@@ -2,18 +2,30 @@
   "id": "oak",
   "name": "oak",
   "material_class": "wood",
-  "applies_to": ["armor", "shield"],
+  "applies_to": [
+    "armor",
+    "shield"
+  ],
   "peak_floor": 2,
   "spread": 8,
   "peak_weight": 10,
   "weight_mult": 0.9,
   "ac_bonus": 0,
-  "max_enchant": 1,
-  "color": [140, 100, 60],
+  "max_enchant": 2,
+  "color": [
+    140,
+    100,
+    60
+  ],
   "resistances": [],
-  "weaknesses": ["fire"],
+  "weaknesses": [
+    "fire"
+  ],
   "vulnerabilities": [],
-  "special_properties": ["common", "burnable"],
+  "special_properties": [
+    "common",
+    "burnable"
+  ],
   "lore_descriptor": "honest planks, smelling of forest air",
   "unidentified_descriptor": "a wooden plank",
   "first_pickup_chronicle": "Oak shield. Ten thousand years of warriors carried these. The wood splinters before it lets you die. Sometimes."

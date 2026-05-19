@@ -2,21 +2,35 @@
   "id": "oak",
   "name": "oak",
   "material_class": "wood",
-  "applies_to": ["weapon", "shield"],
+  "applies_to": [
+    "weapon",
+    "shield"
+  ],
   "peak_floor": 2,
   "spread": 8,
   "peak_weight": 10,
   "min_level": 1,
   "damage_mult": 0.85,
   "weight_mult": 0.9,
-  "max_enchant": 1,
-  "color": [140, 100, 60],
+  "max_enchant": 2,
+  "color": [
+    140,
+    100,
+    60
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
-  "weaknesses": ["fire"],
-  "vulnerabilities": ["fire"],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
   "effective_against": [],
-  "special_properties": ["common", "burnable"],
+  "special_properties": [
+    "common",
+    "burnable"
+  ],
   "lore_descriptor": "honest grain, smelling of forest air",
   "unidentified_descriptor": "a wooden haft",
   "first_pickup_chronicle": "Oak. The first tool any tribe makes. A club, a staff, a bow — oak does all three.",

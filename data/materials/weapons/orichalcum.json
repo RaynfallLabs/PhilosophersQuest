@@ -2,21 +2,45 @@
   "id": "orichalcum",
   "name": "orichalcum",
   "material_class": "magical_metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 90,
   "spread": 6,
   "peak_weight": 2,
   "min_level": 78,
   "damage_mult": 1.55,
   "weight_mult": 0.95,
-  "max_enchant": 6,
-  "color": [255, 150, 50],
+  "max_enchant": 7,
+  "color": [
+    255,
+    150,
+    50
+  ],
   "armor_ac_bonus": 2,
-  "resistances": ["fire", "lightning", "force"],
+  "resistances": [
+    "fire",
+    "lightning",
+    "force"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["aberration", "outsider", "fiend", "demon_minor", "demon_major"],
-  "special_properties": ["atlantean", "magic_synergy", "spell_damage_bonus_15pct", "blessed_capable", "rare_to_find"],
+  "effective_against": [
+    "aberration",
+    "outsider",
+    "fiend",
+    "demon_minor",
+    "demon_major"
+  ],
+  "special_properties": [
+    "atlantean",
+    "magic_synergy",
+    "spell_damage_bonus_15pct",
+    "blessed_capable",
+    "rare_to_find"
+  ],
   "lore_descriptor": "copper-rose flickering to bronze when shadowed",
   "unidentified_descriptor": "an impossible alloy, color shifting in firelight",
   "first_pickup_chronicle": "Orichalcum. Atlantis was real, then. Or my memory of it just became real. The metal is warm to the touch and hums when held near a spell. Plato saw one of these once. He didn't believe it either.",

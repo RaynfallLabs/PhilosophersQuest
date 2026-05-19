@@ -2,18 +2,31 @@
   "id": "dragonwood",
   "name": "dragonwood",
   "material_class": "rare_wood",
-  "applies_to": ["armor", "shield"],
+  "applies_to": [
+    "armor",
+    "shield"
+  ],
   "peak_floor": 60,
   "spread": 14,
   "peak_weight": 4,
   "weight_mult": 1.0,
   "ac_bonus": 1,
-  "max_enchant": 4,
-  "color": [120, 60, 50],
-  "resistances": ["fire", "cold"],
+  "max_enchant": 5,
+  "color": [
+    120,
+    60,
+    50
+  ],
+  "resistances": [
+    "fire",
+    "cold"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
-  "special_properties": ["fire_resistant", "cold_resistant"],
+  "special_properties": [
+    "fire_resistant",
+    "cold_resistant"
+  ],
   "lore_descriptor": "scaled bark, warm to the touch, smelling of smoke",
   "unidentified_descriptor": "a scarlet wooden plank",
   "first_pickup_chronicle": "Dragonwood shield. Cut from trees that drank a dragon's breath and lived. The wood remembers fire and will not flinch."

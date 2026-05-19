@@ -1,0 +1,35 @@
+{
+  "id": "damascus_steel",
+  "name": "damascus steel",
+  "material_class": "rare_metal",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 28,
+  "spread": 12,
+  "peak_weight": 10,
+  "min_level": 16,
+  "damage_mult": 1.25,
+  "weight_mult": 0.9,
+  "max_enchant": 4,
+  "color": [
+    180,
+    180,
+    200
+  ],
+  "armor_ac_bonus": 1,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "pattern_welded",
+    "crit_chance_5"
+  ],
+  "lore_descriptor": "patterned with wave-grain in the polished steel",
+  "unidentified_descriptor": "a finely-patterned blade",
+  "first_pickup_chronicle": "Damascus. Pattern-welded steel — folded a hundred times by smiths whose names are lost. The wave-grain in the metal is a signature: this was made with patience.",
+  "design_notes": "Fills pf 28 gap. Premium steel. Slight crit bonus. Magical-friendly (max_enchant 4) — its forging process leaves the metal receptive to enchantment."
+}

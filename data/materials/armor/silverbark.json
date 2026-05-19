@@ -2,18 +2,28 @@
   "id": "silverbark",
   "name": "silverbark",
   "material_class": "rare_wood",
-  "applies_to": ["armor", "shield"],
+  "applies_to": [
+    "armor",
+    "shield"
+  ],
   "peak_floor": 75,
   "spread": 12,
   "peak_weight": 4,
   "weight_mult": 0.8,
   "ac_bonus": 2,
-  "max_enchant": 4,
-  "color": [220, 220, 200],
+  "max_enchant": 6,
+  "color": [
+    220,
+    220,
+    200
+  ],
   "resistances": [],
   "weaknesses": [],
   "vulnerabilities": [],
-  "special_properties": ["blessed_capable", "lothlorien_wood"],
+  "special_properties": [
+    "blessed_capable",
+    "lothlorien_wood"
+  ],
   "lore_descriptor": "pale silver bark, almost luminous",
   "unidentified_descriptor": "a wooden plank that gleams faintly",
   "first_pickup_chronicle": "Silverbark shield. Galadhrim work. The wood refuses the dead, the fey, the lesser demons. They cannot bring themselves to strike it."

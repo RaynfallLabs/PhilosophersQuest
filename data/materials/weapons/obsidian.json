@@ -1,0 +1,35 @@
+{
+  "id": "obsidian",
+  "name": "obsidian",
+  "material_class": "exotic_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 14,
+  "spread": 8,
+  "peak_weight": 6,
+  "min_level": 6,
+  "damage_mult": 1.25,
+  "weight_mult": 0.7,
+  "max_enchant": 1,
+  "color": [
+    30,
+    25,
+    40
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "demon_minor"
+  ],
+  "special_properties": [
+    "razor_edge",
+    "brittle"
+  ],
+  "lore_descriptor": "volcanic glass, polished to a black mirror",
+  "unidentified_descriptor": "a glittering black blade",
+  "first_pickup_chronicle": "Obsidian. Volcanic glass shaped into an edge sharper than steel could ever hold. It cuts deeper than it should — but I can feel the brittleness in my grip.",
+  "design_notes": "Fills peak_floor 14 gap. High damage_mult (1.25) but brittle and magic-resistant (max_enchant 1). Weapon-only — no armor/shield use historically."
+}

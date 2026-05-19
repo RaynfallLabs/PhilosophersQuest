@@ -1,0 +1,38 @@
+{
+  "id": "petrified_dragon",
+  "name": "petrified dragon",
+  "material_class": "dragon_material",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 88,
+  "spread": 10,
+  "peak_weight": 9,
+  "min_level": 75,
+  "damage_mult": 1.5,
+  "weight_mult": 1.1,
+  "max_enchant": 5,
+  "color": [
+    70,
+    60,
+    80
+  ],
+  "armor_ac_bonus": 2,
+  "resistances": [
+    "fire"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "dragon"
+  ],
+  "special_properties": [
+    "fossilized_drake"
+  ],
+  "lore_descriptor": "fossilised dragon-bone, dark and impossible",
+  "unidentified_descriptor": "a weapon of impossible weight and beauty",
+  "first_pickup_chronicle": "Petrified dragon. The bone of a thing that died older than gods. Worked by hands that did not survive the working. Dragons feel it before they see it.",
+  "design_notes": "Fills pf 88 gap. Premium tier, fire resistance, anti-dragon. Highest damage_mult (1.5) outside void_touched."
+}

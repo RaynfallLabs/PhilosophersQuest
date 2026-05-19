@@ -2,21 +2,36 @@
   "id": "yew",
   "name": "yew",
   "material_class": "wood",
-  "applies_to": ["weapon"],
+  "applies_to": [
+    "weapon"
+  ],
   "peak_floor": 10,
   "spread": 10,
   "peak_weight": 8,
   "min_level": 3,
   "damage_mult": 0.95,
   "weight_mult": 0.85,
-  "max_enchant": 2,
-  "color": [180, 140, 90],
+  "max_enchant": 3,
+  "color": [
+    180,
+    140,
+    90
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
-  "weaknesses": ["fire"],
-  "vulnerabilities": ["fire"],
-  "effective_against": ["fey"],
-  "special_properties": ["bow_capable", "graveyard_yew"],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [
+    "fey"
+  ],
+  "special_properties": [
+    "bow_capable",
+    "graveyard_yew"
+  ],
   "lore_descriptor": "tight-grained, red-hearted; smells faintly of churchyards",
   "unidentified_descriptor": "a dark reddish wood",
   "first_pickup_chronicle": "Yew. The English longbow wood. Planted in graveyards because the wood took longer to grow than the people buried under it. Fey hate it.",

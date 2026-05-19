@@ -1,0 +1,35 @@
+{
+  "id": "quicksilver",
+  "name": "quicksilver",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 52,
+  "spread": 11,
+  "peak_weight": 7,
+  "min_level": 38,
+  "damage_mult": 0.95,
+  "weight_mult": 0.7,
+  "max_enchant": 6,
+  "color": [
+    200,
+    220,
+    230
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "liquid_metal",
+    "finesse_friendly"
+  ],
+  "lore_descriptor": "flowing silver that hardens only when wielded",
+  "unidentified_descriptor": "a weapon that seems to shimmer",
+  "first_pickup_chronicle": "Quicksilver — alchemists' silver. The metal flows in the forge but locks in the hand. It will not hold a strike unless you mean it; for a careful wielder, it teaches its own dances.",
+  "design_notes": "Fills pf 52 gap. Finesse-friendly: lower damage_mult (0.95) but very light + magical (max_enchant 6). Slightly weaker raw, but huge enchant ceiling."
+}

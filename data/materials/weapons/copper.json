@@ -2,21 +2,30 @@
   "id": "copper",
   "name": "copper",
   "material_class": "metal",
-  "applies_to": ["weapon"],
+  "applies_to": [
+    "weapon"
+  ],
   "peak_floor": 2,
   "spread": 5,
   "peak_weight": 4,
   "min_level": 1,
   "damage_mult": 0.7,
   "weight_mult": 1.0,
-  "max_enchant": 1,
-  "color": [200, 110, 70],
+  "max_enchant": 2,
+  "color": [
+    200,
+    110,
+    70
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
   "weaknesses": [],
   "vulnerabilities": [],
   "effective_against": [],
-  "special_properties": ["bends_easily", "no_iron_resistance_bypass"],
+  "special_properties": [
+    "bends_easily",
+    "no_iron_resistance_bypass"
+  ],
   "lore_descriptor": "ruddy and soft, the metal of beginnings",
   "unidentified_descriptor": "reddish blade",
   "first_pickup_chronicle": "Copper. Soft. It will bend before it breaks — and at the rate this place is going, it will break. But it cuts, for now.",

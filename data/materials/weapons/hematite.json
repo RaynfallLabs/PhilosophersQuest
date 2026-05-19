@@ -1,0 +1,39 @@
+{
+  "id": "hematite",
+  "name": "hematite",
+  "material_class": "rare_metal",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 16,
+  "spread": 10,
+  "peak_weight": 8,
+  "min_level": 8,
+  "damage_mult": 1.05,
+  "weight_mult": 1.1,
+  "max_enchant": 3,
+  "color": [
+    120,
+    50,
+    50
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [
+    "cold",
+    "drain"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "undead"
+  ],
+  "special_properties": [
+    "bloodstone_aura"
+  ],
+  "lore_descriptor": "streaked deep red, the bloodstone metal",
+  "unidentified_descriptor": "a dull red-grey metal",
+  "first_pickup_chronicle": "Hematite. The bloodstone. Cold things shy from it; undead falter against it. The old healers swore by it before steel was understood.",
+  "design_notes": "Fills pf 16 gap. Modest damage but anti-undead and cold-resistant. Magical-friendly (max_enchant 3) — the legends called it a soul-anchor metal."
+}

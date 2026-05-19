@@ -1,0 +1,36 @@
+{
+  "id": "petrified_wood",
+  "name": "petrified wood",
+  "material_class": "rare_wood",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 12,
+  "spread": 10,
+  "peak_weight": 8,
+  "min_level": 5,
+  "damage_mult": 1.0,
+  "weight_mult": 1.3,
+  "max_enchant": 1,
+  "color": [
+    140,
+    110,
+    90
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [
+    "fire"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "stone_grain"
+  ],
+  "lore_descriptor": "streaked with stone-grain and mineral veins",
+  "unidentified_descriptor": "a wood that seems too heavy",
+  "first_pickup_chronicle": "Petrified wood. The grain runs straight but the weight is wrong — a forest that became stone and kept its shape. Fire troubles it less than it should.",
+  "design_notes": "Fills peak_floor 12 gap. Dense rare wood that resists fire. Mundane (max_enchant 1) — its weight is its magic."
+}

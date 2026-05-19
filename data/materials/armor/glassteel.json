@@ -1,0 +1,41 @@
+{
+  "id": "glassteel",
+  "name": "glassteel",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
+  "peak_floor": 70,
+  "spread": 12,
+  "peak_weight": 9,
+  "min_level": 55,
+  "damage_mult": 1.2,
+  "weight_mult": 0.85,
+  "max_enchant": 5,
+  "color": [
+    210,
+    220,
+    240
+  ],
+  "armor_ac_bonus": 1,
+  "resistances": [
+    "fire",
+    "cold",
+    "lightning"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "elemental"
+  ],
+  "special_properties": [
+    "crystal_alloy",
+    "anti_elemental"
+  ],
+  "lore_descriptor": "a crystal alloy that shines through itself",
+  "unidentified_descriptor": "a blade that looks like clear glass",
+  "first_pickup_chronicle": "Glassteel. Alloyed in a forge that burned no fuel — the cold flame, the magicians called it. Elements bow to it; mortal damage feels almost incidental.",
+  "design_notes": "Fills pf 70 gap. Anti-elemental — three resistances. Magical-friendly (max_enchant 5)."
+}

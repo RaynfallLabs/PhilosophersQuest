@@ -2,21 +2,48 @@
   "id": "void_touched",
   "name": "void-touched",
   "material_class": "exotic_metal",
-  "applies_to": ["weapon"],
+  "applies_to": [
+    "weapon"
+  ],
   "peak_floor": 95,
   "spread": 8,
   "peak_weight": 1.5,
   "min_level": 85,
-  "damage_mult": 1.70,
-  "weight_mult": 0.70,
-  "max_enchant": 7,
-  "color": [60, 20, 80],
+  "damage_mult": 1.7,
+  "weight_mult": 0.7,
+  "max_enchant": 6,
+  "color": [
+    60,
+    20,
+    80
+  ],
   "armor_ac_bonus": 0,
-  "resistances": ["necrotic", "void", "psychic"],
-  "weaknesses": ["holy", "light"],
-  "vulnerabilities": ["holy"],
-  "effective_against": ["celestial", "angel", "outsider", "aberration"],
-  "special_properties": ["void_aligned", "cannot_be_blessed", "drain_sanity_per_turn", "abaddon_resistance_bypass", "anti_heaven", "secret_path"],
+  "resistances": [
+    "necrotic",
+    "void",
+    "psychic"
+  ],
+  "weaknesses": [
+    "holy",
+    "light"
+  ],
+  "vulnerabilities": [
+    "holy"
+  ],
+  "effective_against": [
+    "celestial",
+    "angel",
+    "outsider",
+    "aberration"
+  ],
+  "special_properties": [
+    "void_aligned",
+    "cannot_be_blessed",
+    "drain_sanity_per_turn",
+    "abaddon_resistance_bypass",
+    "anti_heaven",
+    "secret_path"
+  ],
   "lore_descriptor": "absent — the eye refuses to focus on it",
   "unidentified_descriptor": "a blade that hurts to look at",
   "first_pickup_chronicle": "Void-touched. I don't want to write this down. It bypasses Abaddon's resistances. It cuts angels. It cuts the Host. I know what I am holding. I know what side this puts me on. Whether I have a choice anymore — that I do not know.",

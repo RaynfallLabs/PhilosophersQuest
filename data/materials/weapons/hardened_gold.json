@@ -2,21 +2,38 @@
   "id": "hardened_gold",
   "name": "hardened gold",
   "material_class": "rare_metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 38,
   "spread": 14,
   "peak_weight": 5,
   "min_level": 22,
-  "damage_mult": 1.20,
+  "damage_mult": 1.2,
   "weight_mult": 1.25,
-  "max_enchant": 3,
-  "color": [220, 180, 60],
+  "max_enchant": 5,
+  "color": [
+    220,
+    180,
+    60
+  ],
   "armor_ac_bonus": 1,
-  "resistances": ["corrosion"],
+  "resistances": [
+    "corrosion"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["undead", "fiend"],
-  "special_properties": ["valuable", "merchant_price_double", "blessed_capable"],
+  "effective_against": [
+    "undead",
+    "fiend"
+  ],
+  "special_properties": [
+    "valuable",
+    "merchant_price_double",
+    "blessed_capable"
+  ],
   "lore_descriptor": "warm yellow, surprisingly heavy",
   "unidentified_descriptor": "an ostentatious yellow blade",
   "first_pickup_chronicle": "Hardened gold. The dwarves did something with the alloy — beat the softness out of it. It still glows like a coin. Whoever I face will know what I'm worth.",
