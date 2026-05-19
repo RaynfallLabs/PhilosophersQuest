@@ -1173,6 +1173,69 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     return monsters
 
 
+# ---------------------------------------------------------------------------
+# Chest-template helpers (2026-05-19 rebuild)
+# ---------------------------------------------------------------------------
+
+def _floor_band(level: int) -> str:
+    """Map a floor number to the band key used in chest_templates.json.
+    Bands match the proposal's spawn-weight buckets exactly."""
+    if level <= 15:
+        return 'L1_15'
+    if level <= 30:
+        return 'L16_30'
+    if level <= 50:
+        return 'L31_50'
+    if level <= 70:
+        return 'L51_70'
+    if level <= 90:
+        return 'L71_90'
+    return 'L91_100'
+
+
+# A small per-tier trap pool — kept inline so the chest rebuild doesn't depend
+# on an external trap JSON. Damage and effect scale with floor depth.
+_CHEST_TRAPS_BY_TIER: dict[int, list[dict]] = {
+    1: [
+        {'type': 'needle',    'damage': '1d4', 'effect': 'poisoned', 'effect_duration': 5,
+         'message': 'A poisoned needle springs from the lock!'},
+        {'type': 'spring',    'damage': '1d6', 'effect': '',          'effect_duration': 0,
+         'message': 'A coiled spring smacks your hand!'},
+    ],
+    2: [
+        {'type': 'blade',     'damage': '2d4', 'effect': 'stunned',  'effect_duration': 4,
+         'message': 'Hidden blades slash your hand!'},
+        {'type': 'gas',       'damage': '1d6', 'effect': 'confused', 'effect_duration': 6,
+         'message': 'A puff of dazing gas billows out!'},
+    ],
+    3: [
+        {'type': 'shock',     'damage': '2d6', 'effect': 'stunned',  'effect_duration': 5,
+         'message': 'A bolt of electricity surges through you!'},
+        {'type': 'frost',     'damage': '2d6', 'effect': 'slowed',   'effect_duration': 6,
+         'message': 'A freezing mist clamps around you!'},
+    ],
+    4: [
+        {'type': 'curse',     'damage': '1d6', 'effect': 'confused', 'effect_duration': 8,
+         'message': 'Dark energy erupts from the lock!'},
+        {'type': 'fire',      'damage': '3d6', 'effect': 'blinded',  'effect_duration': 5,
+         'message': 'A gout of flame washes over you!'},
+    ],
+    5: [
+        {'type': 'fire',      'damage': '3d8', 'effect': 'blinded',  'effect_duration': 6,
+         'message': 'Flames erupt from the chest, searing you!'},
+        {'type': 'death',     'damage': '4d6', 'effect': 'paralyzed','effect_duration': 4,
+         'message': 'A killing rune flares — your limbs lock up!'},
+    ],
+}
+
+
+def _roll_trap_for_level(level: int, rng: random.Random) -> dict:
+    """Pick a trap dict appropriate for the given dungeon level."""
+    tier = max(1, min(5, (level - 1) // 20 + 1))
+    pool = _CHEST_TRAPS_BY_TIER.get(tier) or _CHEST_TRAPS_BY_TIER[1]
+    return dict(rng.choice(pool))
+
+
 def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     """Spawn items, containers, and lockpicks in dungeon rooms."""
     from items import (load_items, Container, Weapon, Armor, Shield,
@@ -1221,10 +1284,12 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         _place_one(magic_eligible, room, dungeon, ground_items, rng)
 
     # -- Named uniques (Hrunting, Excalibur, etc.) — VERY RARE floor drop --
-    # 0.5% per room → roughly 1-in-25 floors yields a floor unique. Uniques
-    # primarily spawn from chests now (container tier scales their odds).
+    # 0.15% per room → roughly 1-in-80 floors yields a floor unique. Uniques
+    # primarily spawn from chests now (template rare% scales their odds).
     # Floor finds are the lucky exception, not the rule.
-    UNIQUE_DROP_CHANCE_PER_ROOM = 0.005
+    # Trimmed 2026-05-19 from 0.005 to 0.0015 alongside the chest template
+    # rebuild — chest uniques now carry the bulk of per-run unique drops.
+    UNIQUE_DROP_CHANCE_PER_ROOM = 0.0015
     unique_pool: list = []
     for cls_name in ('weapon', 'armor', 'shield'):
         try:
@@ -1240,10 +1305,12 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         _place_one(unique_eligible, room, dungeon, ground_items, rng)
 
     # -- Containers -- guaranteed minimum 1; diminishing extras ----------------
-    try:
-        all_containers = load_items('container')
-    except FileNotFoundError:
-        all_containers = []
+    # 2026-05-19 rebuild: chests are now picked from data/chest_templates.json
+    # using floor-band spawn weights. The Container instance carries a
+    # template_id which container_system reads to drive escalator-chain loot.
+    from items import load_chest_templates
+    chest_templates = load_chest_templates()
+    band = _floor_band(level)
 
     # Mimic chance scales with depth — keeps mimics a real threat through
     # endgame, when players have more HP and might otherwise treat chests as
@@ -1257,20 +1324,47 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     else:
         _MIMIC_CHANCE = 0.15
 
-    eligible_containers = [c for c in all_containers if c.min_level <= level]
-    if not eligible_containers:
-        eligible_containers = all_containers[:]
+    # Pre-filter templates to those that spawn in this floor band
+    _band_pool: list[tuple[str, dict, int]] = []
+    for tid, tdef in chest_templates.items():
+        w = int(tdef.get('spawn_weight_by_band', {}).get(band, 0))
+        if w > 0:
+            _band_pool.append((tid, tdef, w))
 
     def pick_container() -> Optional[Container]:
-        if not eligible_containers:
+        if not _band_pool:
             return None
-        # Weight by inverse tier: lower-tier containers spawn more often
-        weights = [max(1, 6 - getattr(c, 'tier', 1)) for c in eligible_containers]
-        chosen  = rng.choices(eligible_containers, weights=weights, k=1)[0]
-        inst    = copy.copy(chosen)
-        # Map dungeon level 1-100 to container tier 1-5, with +/-1 variance
-        base_tier = max(1, min(5, (level - 1) // 20 + 1))
-        inst.tier = max(1, min(5, base_tier + rng.randint(-1, 1)))
+        weights = [w for _, _, w in _band_pool]
+        tid, tdef, _ = rng.choices(_band_pool, weights=weights, k=1)[0]
+        # Build a Container instance from the template + per-spawn rolls
+        trap_chance = float(tdef.get('trap_chance', 0.0))
+        trapped     = rng.random() < trap_chance
+        # Trap details: pick a generic level-appropriate trap entry. Keep it
+        # simple — the existing trap dict format (damage / effect / message)
+        # is what _trigger_trap expects.
+        trap = None
+        if trapped:
+            trap = _roll_trap_for_level(level, rng)
+        gold_range = tdef.get('gold_range', [0, 0])
+        defn = {
+            'id':           tid,
+            'name':         tdef.get('name', tid),
+            'symbol':       tdef.get('symbol', '&'),
+            'color':        tdef.get('color', [180, 140, 60]),
+            'weight':       30.0,
+            'min_level':    1,
+            'item_class':   'container',
+            'tier':         int(tdef.get('tier', 1)),
+            'quiz_tier':    int(tdef.get('quiz_tier', tdef.get('tier', 1))),
+            'quiz_threshold': max(2, int(tdef.get('quiz_tier', 1)) + 1),
+            'trapped':      trapped,
+            'trap':         trap,
+            'gold':         gold_range,
+            'extra_item_chance': 0.40,
+            'template_id':  tid,
+            'lore':         tdef.get('lore', ''),
+        }
+        inst = Container(defn)
         inst.is_mimic = rng.random() < _MIMIC_CHANCE
         return inst
 
@@ -1440,7 +1534,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
 
         elif room_type == 'zoo':
             # Gold piles on most inner tiles; message handled in main.py via special_rooms
-            from items import GoldPile
+            from items import GoldPile, add_gold_to_tile
             for tx, ty in special_room.inner_tiles():
                 if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.70:
                     amount = rng.randint(level * 2, level * 5)

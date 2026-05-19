@@ -1,20 +1,63 @@
 """
 Container / lockpicking system.
 
-Flow:
+Flow (post-2026-05-19 template rebuild):
   attempt_lockpick(player, container, quiz_engine, dungeon, monsters, callback)
-    -> starts economics threshold quiz
-    -> on success: opens container, generates loot, returns items + gold
-    -> on failure: triggers trap (first failure only), damages lockpick,
-                  30% chance to alert nearby monsters
+    -> starts an Economics ESCALATOR_CHAIN quiz starting at container.quiz_tier.
+    -> on chain >= 1: chest opens, generates loot via template, returns items + gold
+    -> on chain == 0: chest opens visually but yields NO loot; trap fires if present;
+                      no retry — chest is marked opened.
+
+  Chain curve scales rare/unique odds AND item count:
+      chain 1 (Pried)         0.25x rare, 1 item
+      chain 2 (Cracked)       0.50x rare, 2 items
+      chain 3 (Opened)        1.00x rare, 2-3 items   (baseline; matches template rare%)
+      chain 4 (Picked clean)  1.50x rare, 3 items
+      chain 5 (Master thief)  2.00x rare, 3-4 items + 1 guaranteed bonus common
 
 Mimic check:
   Handled directly in main.py via _spawn_mimic(container, monsters)
 """
 
+import copy
 import random
 
 from dice import roll
+
+
+# ---------------------------------------------------------------------------
+# Chain → loot curve (escalator-chain Economics)
+# ---------------------------------------------------------------------------
+
+CHAIN_RARE_MULT: dict[int, float] = {
+    0: 0.0,
+    1: 0.25,
+    2: 0.50,
+    3: 1.00,
+    4: 1.50,
+    5: 2.00,
+}
+
+# Per chain rung: minimum and maximum loot slot count. Chain 5 also gets +1
+# bonus item, added on top of whatever sample falls in the (min,max) range.
+CHAIN_ITEM_COUNT: dict[int, tuple[int, int]] = {
+    0: (0, 0),
+    1: (1, 1),
+    2: (2, 2),
+    3: (2, 3),
+    4: (3, 3),
+    5: (3, 4),
+}
+
+# Labels that describe the chain rung — surfaced in messages and tests.
+CHAIN_LABELS: dict[int, str] = {
+    0: 'Failed',
+    1: 'Pried',
+    2: 'Cracked',
+    3: 'Opened',
+    4: 'Picked clean',
+    5: 'Master thief',
+}
 
 
 # ---------------------------------------------------------------------------
@@ -23,28 +66,35 @@ from dice import roll
 
 def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_complete):
     """
-    Start an Economics threshold quiz to open *container*.
+    Start an Economics escalator-chain quiz to open *container*.
 
     on_complete({'status': str, 'loot': list, 'gold': int, 'messages': list[tuple]})
-      status: 'opened' | 'failed'
-      loot:   list of Item instances (empty on failure)
-      gold:   int (0 on failure)
+      status: 'opened' (always — chain 0 yields opened-but-empty)
+      loot:   list of Item instances (empty when chain 0)
+      gold:   int (0 when chain 0)
       messages: list of (text, type) pairs
 
     The Master Lockpick is a permanent inventory item; no charges to track.
     """
     def _callback(result):
-        if result.success:
-            _handle_success(player, container, dungeon, on_complete)
-        else:
+        # In escalator-chain mode, `result.score` carries the peak chain
+        # length reached. After a wrong answer the engine resets `.chain`
+        # back to 0, so score is the correct field to read for the loot
+        # curve. Clamp to 0..5 (engine caps at max_chain=5 above).
+        chain = int(getattr(result, 'score', 0))
+        chain = max(0, min(5, chain))
+        if chain == 0:
             _handle_failure(player, container, dungeon, monsters, on_complete)
+        else:
+            _handle_success(player, container, dungeon, chain, on_complete)
 
+    quiz_tier = int(getattr(container, 'quiz_tier', getattr(container, 'tier', 1)))
     quiz_engine.start_quiz(
-        mode='threshold',
+        mode='escalator_chain',
         subject='economics',
-        tier=container.tier,
+        tier=max(1, min(5, quiz_tier)),
         callback=_callback,
-        threshold=container.quiz_threshold,
+        max_chain=5,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('economics'),
@@ -54,38 +104,65 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
 
 
 # ---------------------------------------------------------------------------
-# Internal helpers
+# Outcome handlers
 # ---------------------------------------------------------------------------
 
-def _handle_success(player, container, dungeon, on_complete):
+def _handle_success(player, container, dungeon, chain: int, on_complete):
     messages = []
     container.opened = True
 
-    gold = random.randint(container.gold[0], container.gold[1])
-    loot = _generate_loot(container, dungeon.level)
+    # Reset gold_bonus accumulator before loot generation populates it
+    container._gold_bonus_accum = 0
 
-    messages.insert(0, ('The lock clicks open!', 'success'))
+    # Gold scales softly with chain — chain 5 gives the top of range; chain 1
+    # gives the bottom. Stay within the template's gold_range either way.
+    gmin, gmax = (container.gold[0], container.gold[1]) if container.gold else (0, 0)
+    if gmax > 0:
+        # Bias the roll by chain: chain 1 = min, chain 5 = max, chain 3 = mid.
+        bias = (chain - 1) / 4.0  # 0..1 across chain 1..5
+        bias = max(0.0, min(1.0, bias))
+        lo = int(gmin + (gmax - gmin) * max(0.0, bias - 0.25))
+        hi = int(gmin + (gmax - gmin) * min(1.0, bias + 0.25))
+        gold = random.randint(min(lo, hi), max(lo, hi)) if hi >= lo else gmin
+    else:
+        gold = 0
+
+    loot = _generate_loot_from_template(container, dungeon.level, chain)
+
+    # Roll-up any gold_bonus slots that fired during loot generation
+    gold += int(getattr(container, '_gold_bonus_accum', 0))
+
+    # Lead message reflects the chain rung
+    label = CHAIN_LABELS.get(chain, 'Opened')
+    if chain >= 4:
+        messages.insert(0, (f'{label}! The lock yields gracefully.', 'success'))
+    else:
+        messages.insert(0, ('The lock clicks open!', 'success'))
     if gold:
         messages.append((f'You find {gold} gold coins!', 'loot'))
 
-    on_complete({'status': 'opened', 'loot': loot, 'gold': gold, 'messages': messages})
+    on_complete({'status': 'opened', 'loot': loot, 'gold': gold,
+                 'messages': messages, 'chain': chain})
 
 
 def _handle_failure(player, container, dungeon, monsters, on_complete):
-    messages = [('The lock resists your attempt.', 'warning')]
+    """Chain 0: chest visually opens but yields no loot. Trap fires if present."""
+    messages = [('You fumble the lock -- the chest pops open, empty.', 'warning')]
+    container.opened = True
 
-    # Trap: triggers only on first failure
+    # Trap: triggers on the empty open if present
     if container.trapped and not container.trap_triggered:
         container.trap_triggered = True
         _trigger_trap(player, container.trap, messages)
 
-    # 30% chance to alert nearby monsters
+    # 30% chance to alert nearby monsters (scraping noise)
     if random.random() < 0.30:
         alerted = _alert_nearby(player, dungeon, monsters)
         if alerted:
             messages.append(('The scraping noise alerts nearby monsters!', 'danger'))
 
-    on_complete({'status': 'failed', 'loot': [], 'gold': 0, 'messages': messages})
+    on_complete({'status': 'opened', 'loot': [], 'gold': 0,
+                 'messages': messages, 'chain': 0})
 
 
 def _trigger_trap(player, trap: dict, messages: list):
@@ -123,122 +200,289 @@ def _alert_nearby(player, dungeon, monsters) -> bool:
     return alerted
 
 
-# Per container tier: which item categories to draw from, max quiz tier
-# allowed, whether legendary-flagged items appear, AND the per-item-pick chance
-# that a named unique replaces the regular loot pick (escalating with tier).
-# Uniques mostly enter the game through chests now — floor drops are 1-in-25.
-_TIER_LOOT_CFG: dict[int, dict] = {
-    1: {'classes': ['weapon', 'armor', 'ammo', 'potion'],
-        'max_tier': 2, 'legendary': False, 'unique_chance': 0.00},
-    2: {'classes': ['weapon', 'armor', 'ammo', 'accessory', 'shield', 'potion'],
-        'max_tier': 3, 'legendary': False, 'unique_chance': 0.02},
-    3: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand'],
-        'max_tier': 4, 'legendary': False, 'unique_chance': 0.08},
-    4: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand', 'spellbook'],
-        'max_tier': 5, 'legendary': False, 'unique_chance': 0.20},
-    5: {'classes': ['weapon', 'armor', 'accessory', 'shield', 'potion', 'scroll', 'wand', 'spellbook'],
-        'max_tier': 5, 'legendary': True,  'unique_chance': 0.40},
+# ---------------------------------------------------------------------------
+# Loot generation — template-driven
+# ---------------------------------------------------------------------------
+
+# Mapping from template loot-table category to (load_items class, common_filter)
+# 'magic' = wand+scroll+spellbook combo (template flag); 'gear' = weapon+armor+shield combo.
+_COMMON_CATEGORIES: dict[str, list[str]] = {
+    'potion':         ['potion'],
+    'scroll':         ['scroll'],
+    'wand':           ['wand'],
+    'spellbook':      ['spellbook'],
+    'accessory':      ['accessory'],
+    'ammo':           ['ammo'],
+    'ingredient':     ['ingredient'],
+    'artifact':       ['artifact'],
+    'magic':          ['wand', 'scroll', 'spellbook'],
+    # Gear bucket: weapon + armor + shield (all common, instantiated below)
+    'gear':           ['weapon_common', 'armor_common', 'shield_common'],
 }
 
 
-def _item_tier(item) -> int:
-    """Return the effective quiz/difficulty tier of an item (1-5)."""
-    return int(getattr(item, 'quiz_tier',
-               getattr(item, 'tier', 1)))
+def _floor_level_cap(container, dungeon_level: int) -> int:
+    """Chest sees a small amount of floors ahead of the player. Kept modest
+    since CHAIN is the new dial — chest_tier scales the lookahead bonus."""
+    chest_tier = max(1, min(5, int(getattr(container, 'tier', 1))))
+    return dungeon_level + chest_tier * 2
 
 
-def _generate_loot(container, dungeon_level: int) -> list:
-    """
-    Pick 1+ items whose tier and class match the container's tier.
-    Higher-tier containers draw from more categories, allow higher-tier
-    items, and bias toward the best items in the pool.
+def _pull_common_gear(category: str, level_cap: int, rng) -> object | None:
+    """Instantiate a common gear item for one of the gear categories."""
+    from items import (pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                       pick_random_shield_for_floor)
+    if category == 'weapon_common':
+        return pick_random_weapon_for_floor(level_cap, rng)
+    if category == 'armor_common':
+        return pick_random_armor_for_floor(level_cap, rng)
+    if category == 'shield_common':
+        return pick_random_shield_for_floor(level_cap, rng)
+    return None
 
-    Chests give loot from up to 10 levels ahead of floor spawns — the
-    bonus scales with container tier (T1: +2, T2: +4, T3: +6, T4: +8, T5: +10).
-    """
-    import copy
+
+def _build_common_pool(template: dict, level_cap: int) -> list:
+    """Build a pool of NON-UNIQUE items eligible for this chest's loot.
+    Gear (weapon/armor/shield) is template+material rolled at draw-time, not
+    pooled here — those categories are handled by _pull_common_gear."""
     from items import load_items
+    pool: list = []
+    for raw_cat in template.get('loot_table', {}):
+        if raw_cat in ('gold_bonus',):
+            continue
+        sub_cats: list[str] = []
+        if raw_cat in _COMMON_CATEGORIES:
+            sub_cats = _COMMON_CATEGORIES[raw_cat]
+        elif raw_cat in ('weapon_common', 'armor_common', 'shield_common'):
+            sub_cats = [raw_cat]
+        else:
+            # Unknown category — try loading directly (in case JSON adds new ones)
+            sub_cats = [raw_cat]
+        for sc in sub_cats:
+            if sc in ('weapon_common', 'armor_common', 'shield_common'):
+                continue  # handled by _pull_common_gear at draw-time
+            try:
+                for it in load_items(sc):
+                    if getattr(it, 'is_unique', False):
+                        continue
+                    if it.min_level > level_cap:
+                        continue
+                    pool.append(it)
+            except (FileNotFoundError, KeyError):
+                pass
+    return pool
 
-    container_tier = max(1, min(5, getattr(container, 'tier', 1)))
-    cfg = _TIER_LOOT_CFG[container_tier]
 
-    # Chest bonus: items can come from ahead of the current dungeon level
-    level_bonus = container_tier * 2  # T1: +2, T2: +4, ... T5: +10
-    effective_level = dungeon_level + level_bonus
-
-    pool = []
-    unique_pool = []   # named uniques eligible at this level
-    for cls_name in cfg['classes']:
+def _build_unique_pool(template: dict, level_cap: int) -> list:
+    """Build a pool of UNIQUE items appropriate to this template's category mix."""
+    from items import load_items
+    # Map loot-table categories to the unique item classes that could fit.
+    # Gear categories => weapon/armor/shield uniques. Magic => wand/scroll/spellbook.
+    cat_classes: dict[str, list[str]] = {
+        'weapon_common':  ['weapon'],
+        'armor_common':   ['armor'],
+        'shield_common':  ['shield'],
+        'gear':           ['weapon', 'armor', 'shield'],
+        'magic':          ['wand', 'scroll', 'spellbook'],
+        'accessory':      ['accessory'],
+        'wand':           ['wand'],
+        'scroll':         ['scroll'],
+        'spellbook':      ['spellbook'],
+        'potion':         ['potion'],
+        'ingredient':     ['ingredient'],
+        'artifact':       ['artifact', 'accessory'],   # artifacts overlap accessories
+        'ammo':           ['ammo'],
+    }
+    classes: set[str] = set()
+    for raw_cat in template.get('loot_table', {}):
+        if raw_cat == 'gold_bonus':
+            continue
+        for cls_name in cat_classes.get(raw_cat, []):
+            classes.add(cls_name)
+    pool: list = []
+    for cls_name in classes:
         try:
-            for item in load_items(cls_name):
-                itier = _item_tier(item)
-                if itier > cfg['max_tier']:
+            for it in load_items(cls_name):
+                if not getattr(it, 'is_unique', False):
                     continue
-                if getattr(item, 'container_loot_tier', 'common') == 'legendary' \
-                        and not cfg['legendary']:
+                if it.min_level > level_cap:
                     continue
-                if item.min_level > max(1, effective_level):
-                    continue
-                if getattr(item, 'is_unique', False):
-                    # Floor-spawn uniques (those carrying peak_floor) — gated
-                    # by bell-curve relevance to the effective chest level
-                    unique_pool.append(item)
-                else:
-                    pool.append(item)
-        except FileNotFoundError:
+                pool.append(it)
+        except (FileNotFoundError, KeyError):
             pass
+    return pool
 
-    # weapon/armor/shield commons are template-instantiated, not in the JSON
-    # uniques files. Inject a few template-rolled samples per class so chests
-    # don't fall through to unique_pool when the JSON-derived common pool is
-    # empty for those categories.
-    from items import (pick_random_weapon_for_floor,
-                        pick_random_armor_for_floor,
-                        pick_random_shield_for_floor)
-    samples_per_class = max(2, container_tier + 1)
-    for cls_name in cfg['classes']:
-        if cls_name == 'weapon':
-            for _ in range(samples_per_class):
-                w = pick_random_weapon_for_floor(effective_level, random)
-                if w is not None:
-                    pool.append(w)
-        elif cls_name == 'armor':
-            for _ in range(samples_per_class):
-                a = pick_random_armor_for_floor(effective_level, random)
-                if a is not None:
-                    pool.append(a)
-        elif cls_name == 'shield':
-            for _ in range(samples_per_class):
-                s = pick_random_shield_for_floor(effective_level, random)
-                if s is not None:
-                    pool.append(s)
 
-    if not pool and not unique_pool:
+def _weighted_pick_category(loot_table: dict, rng) -> str:
+    """Pick a loot-table category using its weight."""
+    cats = list(loot_table.items())
+    if not cats:
+        return ''
+    total = sum(max(0, w) for _, w in cats)
+    if total <= 0:
+        return cats[0][0]
+    r = rng.random() * total
+    cum = 0.0
+    for cat, w in cats:
+        cum += max(0, w)
+        if r <= cum:
+            return cat
+    return cats[-1][0]
+
+
+def _pull_common_from_category(category: str, common_pool: list, level_cap: int, rng) -> object | None:
+    """Draw a common item for the given loot-table category."""
+    # Gear categories are instantiated, not pooled
+    if category in ('weapon_common', 'armor_common', 'shield_common'):
+        return _pull_common_gear(category, level_cap, rng)
+    # 'gear' = weighted gear instantiation
+    if category == 'gear':
+        sub = rng.choice(['weapon_common', 'armor_common', 'shield_common'])
+        return _pull_common_gear(sub, level_cap, rng)
+    # For pool-backed categories, filter pool by item_class
+    sub_cats = _COMMON_CATEGORIES.get(category, [category])
+    # Exclude gear sub-cats from pool filter (already handled)
+    sub_cats = [sc for sc in sub_cats if sc not in ('weapon_common', 'armor_common', 'shield_common')]
+    if not sub_cats:
+        return None
+    eligible = [it for it in common_pool
+                if getattr(it, 'item_class', '') in sub_cats]
+    if not eligible:
+        return None
+    return copy.copy(rng.choice(eligible))
+
+
+def _pull_unique_from_category(category: str, unique_pool: list, rng) -> object | None:
+    """Draw a unique item compatible with the given loot-table category."""
+    cat_classes: dict[str, set[str]] = {
+        'weapon_common':  {'weapon'},
+        'armor_common':   {'armor'},
+        'shield_common':  {'shield'},
+        'gear':           {'weapon', 'armor', 'shield'},
+        'magic':          {'wand', 'scroll', 'spellbook'},
+        'accessory':      {'accessory'},
+        'wand':           {'wand'},
+        'scroll':         {'scroll'},
+        'spellbook':      {'spellbook'},
+        'potion':         {'potion'},
+        'ingredient':     {'ingredient'},
+        'artifact':       {'artifact', 'accessory'},
+        'ammo':           {'ammo'},
+    }
+    classes = cat_classes.get(category, set())
+    if not classes:
+        return None
+    eligible = [it for it in unique_pool
+                if getattr(it, 'item_class', '') in classes]
+    if not eligible:
+        return None
+    return copy.copy(rng.choice(eligible))
+
+
+def _generate_loot_from_template(container, dungeon_level: int, chain: int) -> list:
+    """Generate loot for a chest using its template + the player's chain rung.
+
+    Chain 0 is handled by _handle_failure (returns []). chain 1..5 lands here.
+    """
+    from items import get_chest_template, add_gold_to_tile  # noqa: F401  (kept for import-side-effect parity)
+    if chain <= 0:
+        return []
+    template_id = getattr(container, 'template_id', '')
+    template = get_chest_template(template_id) if template_id else None
+    if not template:
+        # No template — legacy fallback: empty loot. The 12-template rebuild
+        # is the intended path; legacy containers should never reach here.
         return []
 
-    # Bias toward higher-tier items — weight by tier squared, scaled by container tier
-    weights = [max(1, _item_tier(i) ** 2) if container_tier >= 3
-               else max(1, _item_tier(i)) for i in pool] if pool else []
+    rng = random
+    level_cap = _floor_level_cap(container, dungeon_level)
 
-    unique_chance = cfg.get('unique_chance', 0.0)
+    # Pre-build pools per chest open (template categories often overlap)
+    common_pool  = _build_common_pool(template, level_cap)
+    unique_pool  = _build_unique_pool(template, level_cap)
 
-    def pick_one():
-        # Per-pick coin flip: roll a unique if eligible + lucky
-        if unique_pool and random.random() < unique_chance:
-            return copy.copy(random.choice(unique_pool))
-        if pool:
-            return copy.copy(random.choices(pool, weights=weights, k=1)[0])
-        # No common pool — guaranteed unique
-        return copy.copy(random.choice(unique_pool))
+    # Item count for this chain rung
+    cmin, cmax = CHAIN_ITEM_COUNT.get(chain, (1, 1))
+    n_items = rng.randint(cmin, cmax)
 
-    chosen = [pick_one()]
-    chance = container.extra_item_chance
-    while chance > 0.05 and random.random() < chance:
-        chosen.append(pick_one())
-        chance *= 0.40
+    # Effective rare chance, scaled by chain rung. SINGLE roll per chest:
+    # the chest is one lottery ticket. If rare_roll succeeds, ONE slot of
+    # the chest becomes a unique; otherwise all slots are commons. This
+    # bounds endgame uniques (target ~17/run at chain 3) and makes the
+    # "I got a unique!" moment discrete and exciting for players.
+    base_rare = float(template.get('rare_chance_chain3', 0.0))
+    rare_mult = CHAIN_RARE_MULT.get(chain, 1.0)
+    eff_rare  = min(1.0, base_rare * rare_mult)
 
-    return chosen
+    # Chain 5: one bonus item, guaranteed common (never the rare slot)
+    bonus_slots = 1 if chain == 5 else 0
+    total_slots = n_items + bonus_slots
 
+    loot: list = []
+    loot_table = template.get('loot_table', {})
+
+    # Decide UP FRONT whether this chest carries a unique, and which slot it
+    # occupies. Bonus slot is always common — only the "real" slots are
+    # eligible for the unique.
+    rare_slot_index = -1
+    if unique_pool and rng.random() < eff_rare and n_items > 0:
+        rare_slot_index = rng.randrange(n_items)
+
+    def draw_common() -> object | None:
+        category = _weighted_pick_category(loot_table, rng)
+        if not category:
+            return None
+        if category == 'gold_bonus':
+            extra = rng.randint(1, 10) * max(1, dungeon_level)
+            container._gold_bonus_accum = getattr(container, '_gold_bonus_accum', 0) + extra
+            return None
+        return _pull_common_from_category(category, common_pool, level_cap, rng)
+
+    def draw_unique() -> object | None:
+        # Pick a category from the loot table that has a unique counterpart
+        category = _weighted_pick_category(loot_table, rng)
+        if not category or category == 'gold_bonus':
+            return None
+        it = _pull_unique_from_category(category, unique_pool, rng)
+        if it is not None:
+            return it
+        # No unique in that category — try a free pick from the unique_pool
+        if unique_pool:
+            return copy.copy(rng.choice(unique_pool))
+        return None
+
+    for i in range(n_items):
+        if i == rare_slot_index:
+            it = draw_unique()
+            # Fall through to common if no unique materialized
+            if it is None:
+                it = draw_common()
+        else:
+            it = draw_common()
+        if it is not None:
+            loot.append(it)
+
+    for _ in range(bonus_slots):
+        it = draw_common()
+        if it is not None:
+            loot.append(it)
+
+    # If template has pre_identified=True (merchant_strongbox), identify all loot
+    if template.get('pre_identified'):
+        for it in loot:
+            if hasattr(it, 'identified'):
+                it.identified = True
+            if hasattr(it, 'id_level'):
+                it.id_level = 5
+            if hasattr(it, 'buc_known'):
+                it.buc_known = True
+
+    return loot
+
+
+# ---------------------------------------------------------------------------
+# Mimic spawn (unchanged — kept here for module locality)
+# ---------------------------------------------------------------------------
 
 def _spawn_mimic(container, monsters: list, dungeon_level: int = 1):
     """Replace a mimic container with a level-appropriate mimic monster.

@@ -351,11 +351,18 @@ class Container(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
         self.tier           = int(defn.get('tier', 1))
+        self.quiz_tier      = int(defn.get('quiz_tier', defn.get('tier', 1)))
+        # Legacy threshold field kept for back-compat; new chests use chain mode
+        # and gate on `chain` (0-5). quiz_threshold is unused by the new flow.
         self.quiz_threshold = int(defn.get('quiz_threshold', 2))
         self.trapped        = bool(defn.get('trapped', False))
         self.trap           = defn.get('trap', None)   # dict or None
-        self.gold           = defn.get('gold', [0, 0]) # [min, max]
+        self.gold           = defn.get('gold', defn.get('gold_range', [0, 0])) # [min, max]
         self.extra_item_chance = float(defn.get('extra_item_chance', 0.40))
+        # New: template_id ties the container to a chest_templates.json entry.
+        # Set by dungeon.pick_container() at spawn time. Empty string = legacy
+        # container (no template); container_system falls back to legacy loot.
+        self.template_id: str = defn.get('template_id', '')
         # Runtime state (not from JSON)
         self.trap_triggered = False
         self.opened         = False
@@ -549,6 +556,31 @@ def load_items(item_class: str) -> list:
     cls = _CLASS_MAP[item_class]
     return [cls({**defn, 'id': item_id, 'item_class': item_class})
             for item_id, defn in raw.items()]
+
+
+# ------------------------------------------------------------------
+# Chest templates -- 12 named chest archetypes with thematic loot
+# (data/chest_templates.json). dungeon.spawn_items() picks a template by
+# floor band and stamps `template_id` onto the Container instance. The
+# container_system reads the template to drive escalator-chain loot.
+# ------------------------------------------------------------------
+
+_CHEST_TEMPLATE_CACHE: dict | None = None
+
+
+def load_chest_templates() -> dict[str, dict]:
+    """Return the dict of chest templates keyed by id. Cached on first load."""
+    global _CHEST_TEMPLATE_CACHE
+    if _CHEST_TEMPLATE_CACHE is None:
+        path = data_path('data', 'chest_templates.json')
+        with open(path, encoding='utf-8') as f:
+            _CHEST_TEMPLATE_CACHE = json.load(f)
+    return _CHEST_TEMPLATE_CACHE
+
+
+def get_chest_template(template_id: str) -> dict | None:
+    """Look up one chest template by id."""
+    return load_chest_templates().get(template_id)
 
 
 # ------------------------------------------------------------------

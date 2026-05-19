@@ -60,23 +60,35 @@ def test_zero_or_negative_gold_creates_nothing():
 
 
 # ---------------------------------------------------------------------------
-# Container loot — uniques appear in chests with tier-scaled probability
+# Container loot — chest TEMPLATES (post-2026-05-19 rebuild) replace tier table
 # ---------------------------------------------------------------------------
 
-def test_unique_chance_escalates_with_chest_tier():
-    """T1 chest: 0% unique; T5: 40%."""
-    from container_system import _TIER_LOOT_CFG
-    chances = [_TIER_LOOT_CFG[t]['unique_chance'] for t in (1, 2, 3, 4, 5)]
-    assert chances == sorted(chances), f"unique_chance should escalate: {chances}"
-    assert _TIER_LOOT_CFG[1]['unique_chance'] == 0.00
-    assert _TIER_LOOT_CFG[5]['unique_chance'] == 0.40
+def test_rare_chance_climbs_across_chest_templates():
+    """Higher-tier templates carry higher base rare%.
+
+    Earlier this asserted the tier-1..5 unique_chance ladder; the rebuild
+    moved that dial onto the per-template `rare_chance_chain3` field. The
+    ladder still holds in aggregate (wooden_chest ~1% << reliquary 35%).
+    """
+    from items import load_chest_templates
+    tpls = load_chest_templates()
+    assert tpls['wooden_chest']['rare_chance_chain3']   == 0.01
+    assert tpls['reliquary']['rare_chance_chain3']      == 0.35
+    assert tpls['dragon_hoard']['rare_chance_chain3']   == 0.40
+    # End-tier templates strictly exceed early-tier templates
+    assert tpls['reliquary']['rare_chance_chain3'] > tpls['wooden_chest']['rare_chance_chain3']
+    assert tpls['dragon_hoard']['rare_chance_chain3'] > tpls['iron_lockbox']['rare_chance_chain3']
 
 
-def test_tier_5_chest_legendary_flag_only_tier():
-    from container_system import _TIER_LOOT_CFG
-    for t in (1, 2, 3, 4):
-        assert not _TIER_LOOT_CFG[t]['legendary'], f"T{t} should not allow legendary"
-    assert _TIER_LOOT_CFG[5]['legendary'] is True
+def test_high_tier_templates_only_spawn_late():
+    """reliquary + dragon_hoard must be locked out of early floor bands."""
+    from items import load_chest_templates
+    tpls = load_chest_templates()
+    for tid in ('reliquary', 'dragon_hoard'):
+        bands = tpls[tid]['spawn_weight_by_band']
+        # Early bands should be ZERO weight for end-tier templates
+        assert bands.get('L1_15', 0) == 0, f"{tid} must not spawn in L1-15"
+        assert bands.get('L16_30', 0) == 0, f"{tid} must not spawn in L16-30"
 
 
 # ---------------------------------------------------------------------------

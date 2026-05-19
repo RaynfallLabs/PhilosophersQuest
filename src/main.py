@@ -2584,9 +2584,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
 
         # Master Lockpick is permanent; no charge check.
+        # Post-2026-05-19: escalator-chain quiz. Chain reached drives loot
+        # quality (chain 0 = empty open; chain 5 = master thief, bonus item).
+        _q_tier = int(getattr(container, 'quiz_tier', getattr(container, 'tier', 1)))
         self.quiz_title = (
             f"PICKING {container.name.upper()}  --  ECONOMICS  "
-            f"(tier {container.tier}, need {container.quiz_threshold} correct)"
+            f"(starts tier {_q_tier}, chain for better loot)"
         )
         self.state = STATE_QUIZ
 
@@ -2595,6 +2598,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for text, mtype in result['messages']:
                 self.add_message(text, mtype)
 
+            # Post-2026-05-19 rebuild: chain 0 reports status='opened' with
+            # empty loot list (chest visually opens but yields nothing). The
+            # quirk hooks distinguish on result['chain'] == 0 vs >= 1.
+            chain = int(result.get('chain', 0))
             if result['status'] == 'opened':
                 # Remove container, scatter loot at its position
                 cx, cy = container.x, container.y
@@ -2616,16 +2623,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     add_gold_to_tile(self.ground_items, result['gold'], cx, cy)
                 _qs_lk = getattr(self, 'quirk_system', None)
                 if _qs_lk:
-                    _qs_lk.on_lockpick_success()
-            elif result['status'] == 'failed':
-                _qs_lock = getattr(self, 'quirk_system', None)
-                if _qs_lock and getattr(container, 'trapped', False):
-                    _qs_lock.on_lockpick_fail(container.id, self.dungeon_level)
-                # Trap trigger check
-                if _qs_lock and getattr(container, 'trap', None):
-                    trap_type = container.trap.get('type', '') if isinstance(container.trap, dict) else ''
-                    if trap_type:
-                        _qs_lock.on_trap_triggered(trap_type)
+                    if chain >= 1:
+                        _qs_lk.on_lockpick_success()
+                    else:
+                        # Chain 0 fumble: log as lockpick fail for quirk progress
+                        if getattr(container, 'trapped', False):
+                            _qs_lk.on_lockpick_fail(container.id, self.dungeon_level)
+                        if getattr(container, 'trap', None):
+                            trap_type = container.trap.get('type', '') if isinstance(container.trap, dict) else ''
+                            if trap_type:
+                                _qs_lk.on_trap_triggered(trap_type)
 
             self._advance_turn()
 

@@ -1,0 +1,320 @@
+{
+  "wooden_chest": {
+    "id": "wooden_chest",
+    "name": "wooden chest",
+    "symbol": "&",
+    "color": [120, 80, 40],
+    "lore": "A simple traveler's box. Iron hasp, water-stained planks.",
+    "tier": 1,
+    "quiz_tier": 1,
+    "gold_range": [5, 25],
+    "trap_chance": 0.10,
+    "loot_table": {
+      "weapon_common": 25,
+      "armor_common": 25,
+      "shield_common": 10,
+      "potion": 20,
+      "ammo": 10,
+      "scroll": 10
+    },
+    "rare_chance_chain3": 0.01,
+    "spawn_weight_by_band": {
+      "L1_15":   60,
+      "L16_30":  30,
+      "L31_50":   0,
+      "L51_70":   0,
+      "L71_90":   0,
+      "L91_100":  0
+    }
+  },
+  "iron_lockbox": {
+    "id": "iron_lockbox",
+    "name": "iron lockbox",
+    "symbol": "&",
+    "color": [160, 160, 175],
+    "lore": "Mid-tier locked storage. Bolted strapping, a heavy ward-key plate.",
+    "tier": 2,
+    "quiz_tier": 2,
+    "gold_range": [20, 60],
+    "trap_chance": 0.15,
+    "loot_table": {
+      "weapon_common": 20,
+      "armor_common":  20,
+      "shield_common": 10,
+      "magic":         30,
+      "accessory":     20
+    },
+    "rare_chance_chain3": 0.03,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":  30,
+      "L31_50":  30,
+      "L51_70":  20,
+      "L71_90":   0,
+      "L91_100":  0
+    }
+  },
+  "jewelry_box": {
+    "id": "jewelry_box",
+    "name": "jewelry box",
+    "symbol": "&",
+    "color": [210, 170, 90],
+    "lore": "Small and ornate. Rings, amulets, the kind of trinket noble houses hide.",
+    "tier": 2,
+    "quiz_tier": 2,
+    "gold_range": [30, 90],
+    "trap_chance": 0.10,
+    "loot_table": {
+      "accessory":   70,
+      "gold_bonus":  30
+    },
+    "rare_chance_chain3": 0.05,
+    "spawn_weight_by_band": {
+      "L1_15":   10,
+      "L16_30":  10,
+      "L31_50":  10,
+      "L51_70":  10,
+      "L71_90":  10,
+      "L91_100":  0
+    }
+  },
+  "apothecary_chest": {
+    "id": "apothecary_chest",
+    "name": "apothecary chest",
+    "symbol": "&",
+    "color": [120, 200, 110],
+    "lore": "Wax-sealed bottles in oiled wood. The smell of camphor and willow-bark.",
+    "tier": 1,
+    "quiz_tier": 1,
+    "gold_range": [10, 40],
+    "trap_chance": 0.08,
+    "loot_table": {
+      "potion":      50,
+      "ingredient":  40,
+      "scroll":      10
+    },
+    "rare_chance_chain3": 0.02,
+    "spawn_weight_by_band": {
+      "L1_15":   25,
+      "L16_30":  25,
+      "L31_50":  25,
+      "L51_70":  25,
+      "L71_90":  25,
+      "L91_100":  0
+    }
+  },
+  "scholar_satchel": {
+    "id": "scholar_satchel",
+    "name": "scholar satchel",
+    "symbol": "&",
+    "color": [180, 130, 80],
+    "lore": "Leather and brass clasps. Ink-stains, blotted pages, dog-eared spellbooks.",
+    "tier": 3,
+    "quiz_tier": 2,
+    "gold_range": [15, 50],
+    "trap_chance": 0.05,
+    "loot_table": {
+      "spellbook":  40,
+      "scroll":     40,
+      "wand":       20
+    },
+    "rare_chance_chain3": 0.04,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":  15,
+      "L31_50":  15,
+      "L51_70":  15,
+      "L71_90":  15,
+      "L91_100": 10
+    }
+  },
+  "warlord_warchest": {
+    "id": "warlord_warchest",
+    "name": "warlord warchest",
+    "symbol": "&",
+    "color": [140, 70, 60],
+    "lore": "Iron-bound campaigner's chest. Dented on every corner. Smells of oil and old blood.",
+    "tier": 3,
+    "quiz_tier": 3,
+    "gold_range": [40, 120],
+    "trap_chance": 0.20,
+    "loot_table": {
+      "weapon_common":  50,
+      "armor_common":   30,
+      "shield_common":  20
+    },
+    "rare_chance_chain3": 0.06,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":  10,
+      "L31_50":  15,
+      "L51_70":  15,
+      "L71_90":  10,
+      "L91_100": 10
+    }
+  },
+  "merchant_strongbox": {
+    "id": "merchant_strongbox",
+    "name": "merchant strongbox",
+    "symbol": "&",
+    "color": [120, 100, 60],
+    "lore": "A trader's lockbox. Whatever's inside has been weighed, labelled, and priced — already identified.",
+    "tier": 2,
+    "quiz_tier": 2,
+    "gold_range": [40, 100],
+    "trap_chance": 0.10,
+    "loot_table": {
+      "weapon_common":  15,
+      "armor_common":   15,
+      "shield_common":  10,
+      "potion":         15,
+      "scroll":         15,
+      "wand":           10,
+      "accessory":      20
+    },
+    "rare_chance_chain3": 0.03,
+    "spawn_weight_by_band": {
+      "L1_15":    5,
+      "L16_30":   5,
+      "L31_50":   5,
+      "L51_70":   5,
+      "L71_90":   5,
+      "L91_100":  0
+    },
+    "pre_identified": true
+  },
+  "crypt_chest": {
+    "id": "crypt_chest",
+    "name": "crypt chest",
+    "symbol": "&",
+    "color": [110, 100, 130],
+    "lore": "Bone-clasped, decaying iron. Cold to the touch. Something inside expects to be disturbed.",
+    "tier": 3,
+    "quiz_tier": 3,
+    "gold_range": [25, 80],
+    "trap_chance": 0.30,
+    "loot_table": {
+      "scroll":      30,
+      "potion":      30,
+      "accessory":   20,
+      "weapon_common": 20
+    },
+    "rare_chance_chain3": 0.05,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":  10,
+      "L31_50":  10,
+      "L51_70":  10,
+      "L71_90":  10,
+      "L91_100":  0
+    }
+  },
+  "ornate_chest": {
+    "id": "ornate_chest",
+    "name": "ornate chest",
+    "symbol": "&",
+    "color": [200, 140, 220],
+    "lore": "Engraved with filigree and gilded inlay. Whoever owned this had more taste than caution.",
+    "tier": 4,
+    "quiz_tier": 4,
+    "gold_range": [80, 200],
+    "trap_chance": 0.20,
+    "loot_table": {
+      "wand":           20,
+      "scroll":         20,
+      "accessory":      30,
+      "weapon_common":  10,
+      "armor_common":   10,
+      "shield_common":  10
+    },
+    "rare_chance_chain3": 0.12,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":   0,
+      "L31_50":  15,
+      "L51_70":  15,
+      "L71_90":  15,
+      "L91_100": 15
+    }
+  },
+  "gilded_chest": {
+    "id": "gilded_chest",
+    "name": "gilded chest",
+    "symbol": "&",
+    "color": [255, 215, 80],
+    "lore": "Gold-leafed, heavy beyond what its frame should allow. The hinges are silent.",
+    "tier": 4,
+    "quiz_tier": 4,
+    "gold_range": [150, 350],
+    "trap_chance": 0.25,
+    "loot_table": {
+      "magic":          40,
+      "weapon_common":  15,
+      "armor_common":   10,
+      "shield_common":   5,
+      "accessory":      20,
+      "gold_bonus":     10
+    },
+    "rare_chance_chain3": 0.20,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":   0,
+      "L31_50":   5,
+      "L51_70":  10,
+      "L71_90":  20,
+      "L91_100": 25
+    }
+  },
+  "reliquary": {
+    "id": "reliquary",
+    "name": "reliquary",
+    "symbol": "&",
+    "color": [220, 220, 255],
+    "lore": "Bone, iron, sealing wax. A relic-cask. The seal hums when you brush it.",
+    "tier": 5,
+    "quiz_tier": 5,
+    "gold_range": [50, 200],
+    "trap_chance": 0.15,
+    "loot_table": {
+      "accessory":   50,
+      "scroll":      30,
+      "artifact":    20
+    },
+    "rare_chance_chain3": 0.35,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":   0,
+      "L31_50":   0,
+      "L51_70":   5,
+      "L71_90":  10,
+      "L91_100": 20
+    }
+  },
+  "dragon_hoard": {
+    "id": "dragon_hoard",
+    "name": "dragon hoard",
+    "symbol": "&",
+    "color": [255, 200, 30],
+    "lore": "A coin-piled cask the size of a small wagon. The lid is dented from inside.",
+    "tier": 5,
+    "quiz_tier": 5,
+    "gold_range": [300, 800],
+    "trap_chance": 0.25,
+    "loot_table": {
+      "gold_bonus":     30,
+      "weapon_common":  20,
+      "armor_common":   10,
+      "shield_common":  10,
+      "magic":          30
+    },
+    "rare_chance_chain3": 0.40,
+    "spawn_weight_by_band": {
+      "L1_15":    0,
+      "L16_30":   0,
+      "L31_50":   0,
+      "L51_70":   3,
+      "L71_90":   8,
+      "L91_100": 15
+    }
+  }
+}
