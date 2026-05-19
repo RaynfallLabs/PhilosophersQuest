@@ -693,10 +693,14 @@ class CombatMixin:
                 'resistances': monster.resistances,
                 'weaknesses': monster.weaknesses,
                 'speed': monster.speed,
+                # tags drive family identification for chain-3 propagation
+                # and chain-5 monster_classes mastery — must be on the corpse.
+                'tags': list(getattr(monster, 'tags', []) or []),
             },
         )
         if monster.kind in getattr(self.player, 'lore_known_monster_ids', set()):
-            c.lore_identified = True
+            # Pre-studied family: drop straight into lore-tier (4+).
+            c.id_level = max(int(getattr(c, 'id_level', 0)), 4)
         return c
 
     def _spawn_treasure_item(self, x: int, y: int, tier: int):

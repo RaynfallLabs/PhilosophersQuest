@@ -110,7 +110,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "insect_carapace",
@@ -144,7 +146,9 @@
     "attacks": [],
     "resistances": [],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 4,
     "ingredient_id": "eye_jelly",
@@ -335,7 +339,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 4,
     "ingredient_id": "toxic_jelly_sac",
@@ -447,7 +453,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "changeling_glamour",
@@ -503,7 +511,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "changeling_glamour",
@@ -1072,7 +1082,9 @@
     "weaknesses": [
       "cold"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "black_ooze",
@@ -1306,7 +1318,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "mineral_shard",
@@ -9050,7 +9064,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "black_ooze",
@@ -9096,7 +9112,9 @@
       "fire"
     ],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 2,
     "ingredient_id": "gray_slime",
@@ -9145,7 +9163,9 @@
       "fire",
       "cold"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "ochre_extract",
@@ -9185,7 +9205,9 @@
     ],
     "resistances": [],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "piercer_shell",
@@ -9230,7 +9252,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "lurker_skin",
@@ -9276,7 +9300,9 @@
       "fire",
       "cold"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "trapper_membrane",
@@ -9329,7 +9355,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "roper_strand",
@@ -9479,7 +9507,9 @@
       "poison"
     ],
     "weaknesses": [],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 3,
     "ingredient_id": "otyugh_organ",
@@ -13683,7 +13713,9 @@
       "fire",
       "lightning"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "crystal_residue",
@@ -13731,7 +13763,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "slime_core",
@@ -13779,7 +13813,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "yellow_spores",
@@ -13827,7 +13863,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "brown_mold_patch",
@@ -13883,7 +13921,9 @@
     "weaknesses": [
       "lightning"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "gibbering_essence",
@@ -13931,7 +13971,9 @@
       "fire",
       "cold"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "toxic_jelly_sac",
@@ -16721,7 +16763,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "assassin_vine_sap",
@@ -16768,7 +16812,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "toxic_thorn",
@@ -16815,7 +16861,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "myconid_spore",
@@ -16877,7 +16925,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 5,
     "harvest_threshold": 5,
     "ingredient_id": "sovereign_spore_cap",
@@ -16934,7 +16984,9 @@
       "fire",
       "cold"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 3,
     "harvest_threshold": 4,
     "ingredient_id": "musk_pollen",
@@ -16982,7 +17034,9 @@
       "fire",
       "physical"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 1,
     "harvest_threshold": 2,
     "ingredient_id": "spore_cloud_vial",
@@ -17035,7 +17089,9 @@
     "weaknesses": [
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "plant"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "violet_fungus_cap",
@@ -22882,7 +22938,9 @@
       "cold",
       "fire"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 2,
     "harvest_threshold": 3,
     "ingredient_id": "toxic_jelly_sac",
@@ -24757,7 +24815,9 @@
       "fire",
       "cold"
     ],
-    "tags": [],
+    "tags": [
+      "aberration"
+    ],
     "harvest_tier": 4,
     "harvest_threshold": 4,
     "ingredient_id": "toxic_jelly_sac",
@@ -29033,7 +29093,8 @@
     ],
     "tags": [
       "fiend",
-      "boss"
+      "boss",
+      "demon"
     ],
     "min_level": 75,
     "peak_floor": 82,

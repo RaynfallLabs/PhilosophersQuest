@@ -2553,7 +2553,8 @@ class RenderMixin:
         def _add_section(src, label, label_color, name_color, detail_suffix=''):
             for idx, (i, item) in enumerate(src):
                 if isinstance(item, Corpse):
-                    lore_status = "[EXAMINED]" if item.lore_identified else "[UNEXAMINED]"
+                    _il = int(getattr(item, 'id_level', 0) or 0)
+                    lore_status = f"[STUDIED {_il}/5]" if _il > 0 else "[UNSTUDIED]"
                     detail_text = f"Corpse  {lore_status}"
                 else:
                     type_label = item.item_class.replace('_', ' ').title()
@@ -3694,52 +3695,103 @@ class RenderMixin:
         from text_layout import wrap_lines
 
         if is_corpse:
-            # -- CORPSE / BESTIARY ENTRY: build stat_lines + lore_text ----
-            title_text = f"{subject.monster_name.upper()}  --  BESTIARY"
-            mdef = subject.monster_def
-            stat_lines = [
-                f"HP: {mdef.get('hp', '?')}    THAC0: {mdef.get('thac0', '?')}    Speed: {mdef.get('speed', 1)}",
-            ]
-            res = mdef.get('resistances', [])
-            wks = mdef.get('weaknesses', [])
-            if res:
-                stat_lines.append(f"Resists: {', '.join(res)}")
-            if wks:
-                stat_lines.append(f"Weak to: {', '.join(wks)}")
-            for atk in mdef.get('attacks', []):
-                line = f"  \u2022 {atk.get('name','?').replace('_', ' ')}: {atk.get('damage','?')} ({atk.get('type','physical')})"
-                eff = atk.get('effect')
-                if eff:
-                    line += f"  \u2192 {eff.replace('_', ' ')} {int(atk.get('effect_chance',0)*100)}%"
-                stat_lines.append(line)
+            # -- CORPSE / BESTIARY ENTRY: progressive reveal by id_level ----
+            # 1: name + symbol (always visible in the title)
+            # 2: basic stats (HP, THAC0, speed, attacks)
+            # 3: resistances + weaknesses + family tag
+            # 4: full lore text
+            # 5: family mastery banner
+            id_level = int(getattr(subject, 'id_level', 0) or 0)
+            title_text = f"{subject.monster_name.upper()}  --  BESTIARY (level {id_level}/5)"
+            mdef = subject.monster_def or {}
+            stat_lines: list[str] = []
 
-            # -- Ingredient & recipe hints ---------------------------------
-            from food_system import load_ingredient_for, get_recipes_for_ingredient
-            ing_id = subject.ingredient_id
-            if ing_id:
-                ing = load_ingredient_for(ing_id)
-                if ing:
-                    stat_lines.append(f"Ingredient: {ing.name}  (harvest with H)")
-                    # Best solo cook result
-                    best_solo = ing.recipes.get('5', ing.recipes.get('3', {}))
-                    if best_solo.get('name'):
-                        stat_lines.append(f"Solo cook: {best_solo['name']}  ({best_solo.get('sp',0)} SP)")
-                    # Compound recipes using this ingredient
-                    compound = get_recipes_for_ingredient(ing_id)
-                    if compound:
-                        from food_system import _raw_ingredients as _ri2
-                        _ings2 = _ri2()
-                        def _iname(iid): return _ings2.get(iid, {}).get('name', iid)
-                        stat_lines.append("Used in recipes:")
-                        for r in compound[:4]:
-                            ing_str = ', '.join(_iname(iid) for iid in r.get('ingredients', []))
-                            stat_lines.append(f"  \u2022 {r['name']}  ({ing_str})")
-                        if len(compound) > 4:
-                            stat_lines.append(f"  ... and {len(compound)-4} more")
+            # Family mastery banner \u2014 top line once mastered (id_level == 5).
+            if id_level >= 5:
+                from monster_classes import (get_monster_family,
+                                              MONSTER_FAMILY_BLESSINGS)
+                fam = get_monster_family(subject)
+                if fam:
+                    blessing = (getattr(self.player,
+                                        'unlocked_monster_class_masteries', {})
+                                .get(fam))
+                    if blessing:
+                        stat_lines.append(
+                            f">> MASTERED ({fam}) <<  {blessing.get('desc', '')}"
+                        )
+
+            # Basic stats are revealed at level 2+.
+            if id_level >= 2:
+                stat_lines.append(
+                    f"HP: {mdef.get('hp', '?')}    THAC0: {mdef.get('thac0', '?')}    "
+                    f"Speed: {mdef.get('speed', 1)}"
+                )
+                for atk in mdef.get('attacks', []) or []:
+                    line = (f"  \u2022 {atk.get('name','?').replace('_', ' ')}: "
+                            f"{atk.get('damage','?')} ({atk.get('type','physical')})")
+                    eff = atk.get('effect')
+                    if eff:
+                        line += (f"  \u2192 {eff.replace('_', ' ')} "
+                                 f"{int(atk.get('effect_chance',0)*100)}%")
+                    stat_lines.append(line)
             else:
-                stat_lines.append("Ingredient: none (not harvestable)")
+                stat_lines.append("Stats: not yet discerned. Study further to learn.")
 
-            lore_text = subject.lore or "No lore recorded."
+            # Resistances, weaknesses, and family tag at level 3+.
+            if id_level >= 3:
+                res = mdef.get('resistances', []) or []
+                wks = mdef.get('weaknesses', []) or []
+                tags = mdef.get('tags', []) or []
+                if res:
+                    stat_lines.append(f"Resists: {', '.join(res)}")
+                if wks:
+                    stat_lines.append(f"Weak to: {', '.join(wks)}")
+                if tags:
+                    from monster_classes import get_monster_family
+                    fam = get_monster_family(subject)
+                    fam_str = f"  [family: {fam}]" if fam else ""
+                    stat_lines.append(f"Tags: {', '.join(tags)}{fam_str}")
+            elif id_level >= 2:
+                stat_lines.append("Weaknesses & family: study further to reveal.")
+
+            # Ingredient & recipe hints (utility info; gated at id_level >= 2
+            # so the player knows whether a corpse is harvestable basically).
+            if id_level >= 2:
+                from food_system import (load_ingredient_for,
+                                          get_recipes_for_ingredient)
+                ing_id = subject.ingredient_id
+                if ing_id:
+                    ing = load_ingredient_for(ing_id)
+                    if ing:
+                        stat_lines.append(f"Ingredient: {ing.name}  (harvest with H)")
+                        best_solo = ing.recipes.get('5', ing.recipes.get('3', {}))
+                        if best_solo.get('name'):
+                            stat_lines.append(
+                                f"Solo cook: {best_solo['name']}  "
+                                f"({best_solo.get('sp',0)} SP)"
+                            )
+                        compound = get_recipes_for_ingredient(ing_id)
+                        if compound:
+                            from food_system import _raw_ingredients as _ri2
+                            _ings2 = _ri2()
+                            def _iname(iid): return _ings2.get(iid, {}).get('name', iid)
+                            stat_lines.append("Used in recipes:")
+                            for r in compound[:4]:
+                                ing_str = ', '.join(
+                                    _iname(iid) for iid in r.get('ingredients', [])
+                                )
+                                stat_lines.append(f"  \u2022 {r['name']}  ({ing_str})")
+                            if len(compound) > 4:
+                                stat_lines.append(f"  ... and {len(compound)-4} more")
+                else:
+                    stat_lines.append("Ingredient: none (not harvestable)")
+
+            # Lore at level 4+; below that, show a teaser.
+            if id_level >= 4:
+                lore_text = subject.lore or "No lore recorded."
+            else:
+                lore_text = ("The history of this creature remains beyond your "
+                             "grasp. Study deeper to uncover its tale.")
 
         else:
             # -- ITEM IDENTIFICATION ENTRY --------------------------------

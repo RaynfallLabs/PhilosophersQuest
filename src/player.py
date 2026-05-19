@@ -137,6 +137,10 @@ class Player:
         # to ALL rings of strength. Key: mastery_class slug (e.g. 'ring_of_strength').
         # Computed by class_masteries.get_mastery_class(item).
         self.unlocked_class_masteries: dict[str, dict] = {}
+        # Per-family monster mastery — unlocked by chain-5 corpse-identify.
+        # Key: family tag (e.g. 'dragon', 'undead'). Value: blessing dict.
+        # See monster_classes.MONSTER_FAMILY_BLESSINGS for the schema.
+        self.unlocked_monster_class_masteries: dict[str, dict] = {}
         # Item-class names the player has identified by their class (tier-1
         # of the escalator). Lets us name "Ring of Strength" for all variants
         # in the player's pack regardless of material.

@@ -171,6 +171,17 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if slot and getattr(slot, 'chain_bonus', 0):
                 chain += slot.chain_bonus
 
+        # Monster-family tohit_vs_tag mastery (humanoid Anatomist): +N chain
+        # rungs when striking a matching-family target. This is the chain
+        # equivalent of "+1 to-hit" in a system that has no separate to-hit roll.
+        fam_masteries_pre = getattr(player, 'unlocked_monster_class_masteries', {}) or {}
+        for _fb_pre in fam_masteries_pre.values():
+            if _fb_pre.get('kind') == 'tohit_vs_tag':
+                _tag_pre = _fb_pre.get('tag', '')
+                _val_pre = int(_fb_pre.get('value', 0) or 0)
+                if _tag_pre and _val_pre and _tag_match(monster, _tag_pre):
+                    chain += _val_pre
+
         # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
         # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
         if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
@@ -348,12 +359,28 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if isinstance(tag_val, dict) and _tag_match(monster, tag_val.get('tag', '')):
                 tag_mult = 1.0 + (float(tag_val.get('pct', 0)) / 100.0)
 
+        # Monster-family mastery (chain-5 corpse-id):
+        #   damage_vs_tag (dragon/demon/undead/construct/plant/reptile): +N flat
+        #   tohit_vs_tag  (humanoid): +N chain bonus (acts as a guaranteed-hit
+        #     promotion when chain == 0; otherwise irrelevant — chain length
+        #     already drives accuracy via the chain mechanic).
+        family_dmg_bonus = 0
+        fam_masteries = getattr(player, 'unlocked_monster_class_masteries', {}) or {}
+        for _fb in fam_masteries.values():
+            _kind = _fb.get('kind')
+            _tag = _fb.get('tag', '')
+            _val = int(_fb.get('value', 0) or 0)
+            if not _tag or not _val:
+                continue
+            if _kind == 'damage_vs_tag' and _tag_match(monster, _tag):
+                family_dmg_bonus += _val
+
         # round (not int-truncate): chain damage gradient must survive at
         # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
         # across chain levels — invisible progression. round() preserves
         # the half-step damage differences that the chain ladder is designed
         # to deliver.
-        damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult))
+        damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult) + family_dmg_bonus)
 
         # Empower spell: 3x damage on next hit, then clears
         if player.has_effect('empowered'):
