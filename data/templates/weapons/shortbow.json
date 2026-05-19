@@ -26,6 +26,6 @@
   "lore_template": "A {material_name} shortbow. Quick to draw, light in the hand.",
   "design_notes": "v2 chain rebalance: finesse class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 3.00×. Class mechanic: Ranged precision: critical hits on natural 19-20. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.8 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "finesse",
-  "class_mechanic": "armor_pierce_at_max",
-  "class_mechanic_desc": "At max chain: ignores 50% of target's armor. A drawn shortbow at close range was the Mongol horse-archer's answer to mail."
+  "class_mechanic": "rapid_shot_at_max",
+  "class_mechanic_desc": "At max chain, fire a follow-up arrow at half damage on the same target. The shortbow's signature was speed of release — the Mongol horse-archer's rapid fire."
 }

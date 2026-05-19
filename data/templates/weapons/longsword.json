@@ -29,6 +29,6 @@
   "lore_template": "A {material_name} longsword, balanced for one-handed wielding. The knight's lifelong companion.",
   "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: Reach 1: can strike diagonally adjacent foes with full effect. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.0 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
-  "class_mechanic": "reach_1",
-  "class_mechanic_desc": "Reach 1: can strike diagonally adjacent foes with full effect."
+  "class_mechanic": "master_strike",
+  "class_mechanic_desc": "At chain 3+, every hit treats target AC as 1 lower — the longsword's signature Meisterhau, a diagonal cut that defeats defensive guards."
 }

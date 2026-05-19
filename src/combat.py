@@ -326,7 +326,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if isinstance(tag_val, dict) and _tag_match(monster, tag_val.get('tag', '')):
                 tag_mult = 1.0 + (float(tag_val.get('pct', 0)) / 100.0)
 
-        damage = max(1, int((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult))
+        # round (not int-truncate): chain damage gradient must survive at
+        # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
+        # across chain levels — invisible progression. round() preserves
+        # the half-step damage differences that the chain ladder is designed
+        # to deliver.
+        damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult))
 
         # Empower spell: 3x damage on next hit, then clears
         if player.has_effect('empowered'):

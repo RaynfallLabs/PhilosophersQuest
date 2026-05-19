@@ -28,6 +28,6 @@
   "lore_template": "A {material_name} scimitar — the curve catches what the straight blade misses.",
   "design_notes": "v2 chain rebalance: finesse class, 6 rungs. Midpoint rung 3 = 0.75× (1.0× anchor band). Peak rung 6 = 3.00×. Class mechanic: At max chain, 30% chance to disarm the target. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.0 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "finesse",
-  "class_mechanic": "disarm_at_max",
-  "class_mechanic_desc": "At max chain, 30% chance to disarm the target."
+  "class_mechanic": "bleed_at_max",
+  "class_mechanic_desc": "At max chain, curved blade inflicts a deep bleeding wound — 4 turns of DOT."
 }

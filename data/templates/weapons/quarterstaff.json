@@ -26,6 +26,6 @@
   "lore_template": "A {material_name} quarterstaff. Friar Tuck's tool. The wandering monk's first answer.",
   "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: Reach 1; on chain rung 4+, 15% chance to disarm. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.85 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
-  "class_mechanic": "reach_disarm",
-  "class_mechanic_desc": "Reach 1; on chain rung 4+, 15% chance to disarm."
+  "class_mechanic": "defensive_parry",
+  "class_mechanic_desc": "At max chain, gain +2 AC for 2 turns — the quarterstaff's defensive timing turns each riposte into shelter."
 }

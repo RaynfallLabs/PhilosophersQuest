@@ -3,21 +3,21 @@
   "name": "warhammer",
   "category": "weapon",
   "weapon_class": "blunt",
-  "hands": 1,
+  "hands": 2,
   "damage_types": [
     "blunt",
     "pierce"
   ],
   "chain_multipliers": [
-    0.5,
-    0.85,
+    0.75,
+    0.9,
     1.0,
-    1.45,
-    2.0
+    1.3,
+    1.75
   ],
   "max_chain_length": 5,
-  "damage_modifier": 1.1,
-  "base_weight_lb": 4.0,
+  "damage_modifier": 1.4,
+  "base_weight_lb": 5.5,
   "speed": 9,
   "compatible_material_classes": [
     "metal",
@@ -27,7 +27,7 @@
   ],
   "lore_template": "A {material_name} warhammer. One side crushes; the other punches through plate.",
   "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: On chain rung 3+, 20% chance to stun. +25% damage vs heavy armor. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.1 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
-  "weapon_class_chain": "normal",
+  "weapon_class_chain": "heavy",
   "class_mechanic": "anti_heavy_at_max",
   "class_mechanic_desc": "At max chain: +50% damage vs heavy-armored monsters. The hammer's spike was designed to punch through plate when swords could not."
 }

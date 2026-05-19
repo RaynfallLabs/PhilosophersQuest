@@ -573,21 +573,36 @@ def instantiate_weapon(template_id: str, material_id: str, *,
     if not mat:
         raise ValueError(f"Unknown weapon material: {material_id}")
 
-    # Resolve curve.weapon_base_damage at the material's peak floor.
-    # Inline implementation matches tools/balance/curve.py to avoid making
-    # `src` depend on the `tools/` package.
+    # Re-anchored 2026-05-18: weapon_base is chosen so that a chain-5 hit
+    # at the material's peak floor equals one trash-mob HP. This makes the
+    # chain ladder legible at every tier (no more 1,1,1,1,2 at iron level)
+    # and gives an explicit, design-grounded relationship between weapon
+    # damage and monster HP.
+    #
+    #   chain_5_mult = template.chain_multipliers[-1]
+    #   weapon_base  = mob_hp(peak_floor) / chain_5_mult
+    #
+    # Then base_damage applies material's damage_mult + template's
+    # damage_modifier as before, and round (not int-truncate) keeps the
+    # chain-1..5 gradient visible at low tiers.
     peak_floor = int(mat.get('peak_floor', 1))
-    # Compressed AD&D monster HP curve: piecewise growth
     if peak_floor <= 20:
         mob_hp = 4 * (1.10 ** (peak_floor - 1))
     else:
         early_cap = 4 * (1.10 ** 19)
         mob_hp = early_cap * (1.025 ** (peak_floor - 20))
-    # weapon_base = mob_hp / (peak_mult × kill_turns) = mob_hp / 6
-    weapon_base = max(1, int(mob_hp / 6.0))
-    base_damage = max(1, int(weapon_base
-                             * float(mat.get('damage_mult', 1.0))
-                             * float(tpl.get('damage_modifier', 1.0))))
+    chain_mults = tpl.get('chain_multipliers') or [0.5, 0.85, 1.0, 1.45, 2.0]
+    chain_5_mult = float(chain_mults[-1])
+    weapon_base = max(1, round(mob_hp / chain_5_mult))
+    # Floor of 2 (not 1) on final base damage. This is universal — it
+    # guarantees a LEGIBLE chain-1..5 gradient at every weapon × material
+    # combo, including weak materials (copper, oak rapier) where the math
+    # would otherwise produce base 1 and a flat 1,1,1,1,2 chain. The 2-floor
+    # doesn't break differentiation between materials because high-tier
+    # materials produce base values 3+ naturally.
+    base_damage = max(2, round(weapon_base
+                               * float(mat.get('damage_mult', 1.0))
+                               * float(tpl.get('damage_modifier', 1.0))))
 
     weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
     name = f"{mat['name']} {tpl['name']}"
