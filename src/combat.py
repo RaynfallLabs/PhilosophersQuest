@@ -2,7 +2,12 @@ import random
 from dice import roll
 
 # Fallback multipliers used when the player has no weapon equipped.
-_DEFAULT_MULTIPLIERS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
+# Bare-hand chain table. Caps at the universal 5-chain like every common
+# template; values are deliberately weaker than the weakest template
+# (shortsword peak 2.0x) so unarmed combat is the LAST resort, not a
+# stronger alternative. Was incorrectly 8-entry with 5.0x peak — caused
+# unarmed players to out-chain wielded weapons. Fixed 2026-05-19.
+_DEFAULT_MULTIPLIERS = [0.3, 0.5, 0.7, 0.9, 1.2]
 
 
 def _weapon_mastery(player, weapon) -> dict | None:

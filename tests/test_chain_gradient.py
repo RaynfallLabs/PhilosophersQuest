@@ -228,6 +228,27 @@ def test_no_super_weapon_uniques():
 # baseDamage floor
 # ---------------------------------------------------------------------------
 
+def test_bare_hand_chain_caps_at_5_and_under_weapon_curve():
+    """Regression: combat.py _DEFAULT_MULTIPLIERS (used when player has no
+    weapon equipped) was 8 entries with a 5.0x peak — making bare-hand
+    combat STRONGER than wielded weapons. Caught by user playtest 2026-05-19.
+
+    Now must be 5 entries with peak strictly below any common weapon's peak.
+    """
+    import combat
+    mults = combat._DEFAULT_MULTIPLIERS
+    assert len(mults) == 5, (
+        f'bare-hand chain must be capped at 5 (universal weapon cap). '
+        f'Got {len(mults)} entries: {mults}'
+    )
+    # Peak should be weaker than the weakest weapon template
+    # (shortsword peak = 2.0). Bare hand is last-resort.
+    assert mults[-1] < 2.0, (
+        f'bare-hand peak {mults[-1]} should be < weakest weapon peak (2.0). '
+        'Otherwise unarmed > armed at chain peak.'
+    )
+
+
 def test_base_damage_floor_at_2():
     """No instantiated weapon can have baseDamage < 2."""
     templates = load_templates()
