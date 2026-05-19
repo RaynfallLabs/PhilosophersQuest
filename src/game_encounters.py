@@ -124,6 +124,12 @@ class EncountersMixin:
             return
         if enc['tag'] in self._encountered_npcs:
             return
+        # Don't double-spawn if the NPC is already on the floor (e.g., the
+        # player descended past it without bumping, then returned — the saved
+        # floor still has the NPC, and we'd otherwise add a duplicate).
+        for _m in self.monsters:
+            if getattr(_m, '_npc_encounter_tag', None) == enc['tag']:
+                return
         # For triggered encounters, only spawn if the player has the trigger item
         if enc.get('trigger_item'):
             if enc['trigger_item'] not in self._npc_triggered_items:
@@ -172,6 +178,10 @@ class EncountersMixin:
         encountered = getattr(self, '_encountered_flavor_npcs', set())
         if enc['tag'] in encountered:
             return
+        # Don't double-spawn — match the moral-NPC guard above.
+        for _m in self.monsters:
+            if getattr(_m, '_flavor_encounter_tag', None) == enc['tag']:
+                return
 
         from monster import Monster
         npc_def = {
