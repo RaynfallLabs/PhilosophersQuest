@@ -2021,5 +2021,382 @@
       "scope": "item",
       "desc": "Indra's Vajra struck Vritra and freed the seven rivers — it gains 3 extra charges on mastery."
     }
+  },
+  "wand_of_wonder_legendary": {
+    "name": "Wand of Wonder",
+    "symbol": "/",
+    "color": [
+      200,
+      180,
+      240
+    ],
+    "weight_lb": 0.8,
+    "min_level": 22,
+    "peak_floor": 45,
+    "spread": 15,
+    "peak_weight": 0.4,
+    "charges_min": 8,
+    "charges_max": 10,
+    "max_charges": 12,
+    "quiz_tier": 3,
+    "quiz_mode": "chain",
+    "use_quiz_subject": "science",
+    "effect": "wonder",
+    "power": "chaos",
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a swirling iridescent wand",
+    "wonder_table": {
+      "1": [
+        {
+          "roll": 1,
+          "effect": "heal_target",
+          "amount": "2d6",
+          "desc": "Heal the target 2d6 (if hostile, this helps them -- the wand wanted to help)."
+        },
+        {
+          "roll": 2,
+          "effect": "heal_self",
+          "amount": "1d6",
+          "desc": "Heal yourself 1d6."
+        },
+        {
+          "roll": 3,
+          "effect": "identify_one_random",
+          "desc": "Identify ONE random unidentified item in your inventory."
+        },
+        {
+          "roll": 4,
+          "effect": "polymorph_target_mouse",
+          "duration": 10,
+          "desc": "Polymorph the target into a mouse for 10 turns."
+        },
+        {
+          "roll": 5,
+          "effect": "teleport_target_random",
+          "desc": "Teleport the target to a random tile within sight."
+        },
+        {
+          "roll": 6,
+          "effect": "nothing_happens",
+          "desc": "Nothing happens (the wand giggles silently)."
+        }
+      ],
+      "2": [
+        {
+          "roll": 1,
+          "effect": "heal_target",
+          "amount": "2d6",
+          "desc": "Heal the target 2d6."
+        },
+        {
+          "roll": 2,
+          "effect": "heal_self",
+          "amount": "1d6",
+          "desc": "Heal yourself 1d6."
+        },
+        {
+          "roll": 3,
+          "effect": "identify_one_random",
+          "desc": "Identify ONE random unidentified item in your inventory."
+        },
+        {
+          "roll": 4,
+          "effect": "polymorph_target_mouse",
+          "duration": 10,
+          "desc": "Polymorph the target into a mouse for 10 turns."
+        },
+        {
+          "roll": 5,
+          "effect": "teleport_target_random",
+          "desc": "Teleport the target to a random tile within sight."
+        },
+        {
+          "roll": 6,
+          "effect": "nothing_happens",
+          "desc": "Nothing happens (the wand giggles silently)."
+        },
+        {
+          "roll": 7,
+          "effect": "charm_target",
+          "duration": 10,
+          "desc": "Charm the target for 10 turns."
+        },
+        {
+          "roll": 8,
+          "effect": "heal_self",
+          "amount": "2d6",
+          "desc": "Heal yourself 2d6."
+        }
+      ],
+      "3": [
+        {
+          "roll": 1,
+          "effect": "heal_target",
+          "amount": "2d6",
+          "desc": "Heal the target 2d6."
+        },
+        {
+          "roll": 2,
+          "effect": "heal_self",
+          "amount": "1d6",
+          "desc": "Heal yourself 1d6."
+        },
+        {
+          "roll": 3,
+          "effect": "identify_one_random",
+          "desc": "Identify ONE random unidentified item in your inventory."
+        },
+        {
+          "roll": 4,
+          "effect": "polymorph_target_mouse",
+          "duration": 10,
+          "desc": "Polymorph the target into a mouse for 10 turns."
+        },
+        {
+          "roll": 5,
+          "effect": "teleport_target_random",
+          "desc": "Teleport the target to a random tile within sight."
+        },
+        {
+          "roll": 6,
+          "effect": "nothing_happens",
+          "desc": "Nothing happens (the wand giggles silently)."
+        },
+        {
+          "roll": 7,
+          "effect": "charm_target",
+          "duration": 10,
+          "desc": "Charm the target for 10 turns."
+        },
+        {
+          "roll": 8,
+          "effect": "heal_self",
+          "amount": "2d6",
+          "desc": "Heal yourself 2d6."
+        },
+        {
+          "roll": 9,
+          "effect": "aoe_mixed_damage",
+          "amount": "3d6",
+          "radius": 3,
+          "friendly_fire": true,
+          "desc": "Burst of mixed elemental damage 3d6 in a 3-tile radius (friendly fire -- chaos is real)."
+        },
+        {
+          "roll": 10,
+          "effect": "spawn_common_item_adjacent",
+          "desc": "A random common item appears on a tile adjacent to the target."
+        }
+      ],
+      "4": [
+        {
+          "roll": 1,
+          "effect": "heal_target",
+          "amount": "2d6",
+          "desc": "Heal the target 2d6."
+        },
+        {
+          "roll": 2,
+          "effect": "heal_self",
+          "amount": "1d6",
+          "desc": "Heal yourself 1d6."
+        },
+        {
+          "roll": 3,
+          "effect": "identify_one_random",
+          "desc": "Identify ONE random unidentified item in your inventory."
+        },
+        {
+          "roll": 4,
+          "effect": "polymorph_target_mouse",
+          "duration": 10,
+          "desc": "Polymorph the target into a mouse for 10 turns."
+        },
+        {
+          "roll": 5,
+          "effect": "teleport_target_random",
+          "desc": "Teleport the target to a random tile within sight."
+        },
+        {
+          "roll": 6,
+          "effect": "nothing_happens",
+          "desc": "Nothing happens (the wand giggles silently)."
+        },
+        {
+          "roll": 7,
+          "effect": "charm_target",
+          "duration": 10,
+          "desc": "Charm the target for 10 turns."
+        },
+        {
+          "roll": 8,
+          "effect": "heal_self",
+          "amount": "2d6",
+          "desc": "Heal yourself 2d6."
+        },
+        {
+          "roll": 9,
+          "effect": "aoe_mixed_damage",
+          "amount": "3d6",
+          "radius": 3,
+          "friendly_fire": true,
+          "desc": "Burst of mixed elemental damage 3d6 in a 3-tile radius (friendly fire)."
+        },
+        {
+          "roll": 10,
+          "effect": "spawn_common_item_adjacent",
+          "desc": "A random common item appears on a tile adjacent to the target."
+        },
+        {
+          "roll": 11,
+          "effect": "lightning_bolt",
+          "amount": "6d6",
+          "desc": "Lightning bolt 6d6 to the target."
+        },
+        {
+          "roll": 12,
+          "effect": "summon_friendly_imp",
+          "duration": 50,
+          "desc": "Summon a friendly imp for 50 turns (counts as a temporary pet)."
+        }
+      ],
+      "5": [
+        {
+          "roll": 1,
+          "effect": "heal_target",
+          "amount": "2d6",
+          "desc": "Heal the target 2d6."
+        },
+        {
+          "roll": 2,
+          "effect": "heal_self",
+          "amount": "1d6",
+          "desc": "Heal yourself 1d6."
+        },
+        {
+          "roll": 3,
+          "effect": "identify_one_random",
+          "desc": "Identify ONE random unidentified item in your inventory."
+        },
+        {
+          "roll": 4,
+          "effect": "polymorph_target_mouse",
+          "duration": 10,
+          "desc": "Polymorph the target into a mouse for 10 turns."
+        },
+        {
+          "roll": 5,
+          "effect": "teleport_target_random",
+          "desc": "Teleport the target to a random tile within sight."
+        },
+        {
+          "roll": 6,
+          "effect": "nothing_happens",
+          "desc": "Nothing happens (the wand giggles silently)."
+        },
+        {
+          "roll": 7,
+          "effect": "charm_target",
+          "duration": 10,
+          "desc": "Charm the target for 10 turns."
+        },
+        {
+          "roll": 8,
+          "effect": "heal_self",
+          "amount": "2d6",
+          "desc": "Heal yourself 2d6."
+        },
+        {
+          "roll": 9,
+          "effect": "aoe_mixed_damage",
+          "amount": "3d6",
+          "radius": 3,
+          "friendly_fire": true,
+          "desc": "Burst of mixed elemental damage 3d6 in a 3-tile radius (friendly fire)."
+        },
+        {
+          "roll": 10,
+          "effect": "spawn_common_item_adjacent",
+          "desc": "A random common item appears on a tile adjacent to the target."
+        },
+        {
+          "roll": 11,
+          "effect": "lightning_bolt",
+          "amount": "6d6",
+          "desc": "Lightning bolt 6d6 to the target."
+        },
+        {
+          "roll": 12,
+          "effect": "summon_friendly_imp",
+          "duration": 50,
+          "desc": "Summon a friendly imp for 50 turns."
+        },
+        {
+          "roll": 13,
+          "effect": "mass_charm_sight",
+          "duration": 10,
+          "desc": "Mass-charm -- all hostile monsters in sight are charmed for 10 turns."
+        },
+        {
+          "roll": 14,
+          "effect": "heal_self_full",
+          "desc": "Heal to full -- HP and SP restored to maximum."
+        },
+        {
+          "roll": 15,
+          "effect": "identify_all_inventory",
+          "desc": "Identify all -- every unidentified item in your inventory is identified."
+        },
+        {
+          "roll": 16,
+          "effect": "levitating",
+          "duration": 30,
+          "desc": "Levitation -- you gain Levitating for 30 turns (ignore traps and water)."
+        },
+        {
+          "roll": 17,
+          "effect": "reveal_next_floor_map",
+          "desc": "Future preview -- next floor's mini-map is revealed (one-time vision)."
+        },
+        {
+          "roll": 18,
+          "effect": "stat_color_cosmetic",
+          "duration": 50,
+          "desc": "Stat-color -- one of your stats glows a random color for 50 turns (cosmetic only)."
+        },
+        {
+          "roll": 19,
+          "effect": "open_all_chests_floor",
+          "desc": "Open all chests -- every unopened chest on the floor opens at once (trapped chests still trigger)."
+        },
+        {
+          "roll": 20,
+          "effect": "wonder_unbounded",
+          "hp_cost": 5,
+          "buff_duration": 50,
+          "buff_pool": [
+            "hasted",
+            "protected",
+            "clairvoyant",
+            "regenerating",
+            "truesight"
+          ],
+          "desc": "Wonder unbounded -- lose 5 HP, gain 50 turns of a random rolling buff (hasted / protected / clairvoyant / regenerating / truesight)."
+        }
+      ]
+    },
+    "special_properties": {
+      "rolls_on_wonder_table_per_chain": true,
+      "wonder_bias_positive": true,
+      "fresh_roll_per_chain_step": true
+    },
+    "mastery_blessing": {
+      "kind": "wand_extra_charge",
+      "value": 2,
+      "scope": "item",
+      "desc": "The Wand of Wonder gains +2 maximum charges on mastery -- wonder begets wonder."
+    },
+    "lore": "An iridescent wand that swirls with colors no language has names for. It is a tabletop fixture -- the AD&D Wand of Wonder, the wand whose effect is rolled fresh each cast. Some sages claim each Wand of Wonder is sentient and wants very much to be helpful; the misfires are not malice, only enthusiasm imperfectly executed. The longer you sustain the chain, the broader its repertoire becomes -- and the rarer the truly extraordinary outcomes appear."
   }
 }

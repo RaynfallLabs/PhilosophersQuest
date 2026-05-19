@@ -720,5 +720,306 @@
     },
     "_design_note": "MEGA-SECRET quest reward. AC is modest (1 + leather material bonus) — the value is the instant-kill on Fenrir, not the defensive line. peak_weight 0.0 ensures it never natural-spawns; the altar assembly path is the only way in. Code references: src/game_combat.py:1292-1311 (instant-kill trigger), src/game_divine.py:499-521 (altar assembly), src/dungeon.py:2145-2154 (altar carve). See tools/balance/systems/bosses_and_quests.md §Fenrir Quest Layer 2.",
     "weight": 2.0
+  },
+  "pandoras_box": {
+    "name": "Pandora's Box",
+    "symbol": "?",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "weight": 3.0,
+    "min_level": 30,
+    "peak_floor": 50,
+    "spread": 15,
+    "peak_weight": 0.3,
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a sealed pithos",
+    "consumed_on_use": true,
+    "use_quiz_subject": "theology",
+    "use_quiz_mode": "threshold",
+    "use_quiz_tier": 3,
+    "use_quiz_threshold": 3,
+    "use_quiz_total": 4,
+    "chaos_table": [
+      {
+        "roll": 1,
+        "effect": "poisoned",
+        "duration": 30,
+        "aoe": "self_and_sight",
+        "desc": "Plague released -- you and all enemies in sight are poisoned for 30 turns."
+      },
+      {
+        "roll": 2,
+        "effect": "enemy_chain_buff",
+        "duration": 50,
+        "amount": 1,
+        "self_penalty": -1,
+        "desc": "Toil released -- enemies in sight gain +1 attack chain capacity; you lose 1 for 50 turns."
+      },
+      {
+        "roll": 3,
+        "effect": "monster_strife",
+        "duration": 50,
+        "desc": "Strife released -- a random monster in sight turns hostile to all others (and you)."
+      },
+      {
+        "roll": 4,
+        "effect": "hunger_drop",
+        "amount": 25,
+        "desc": "Famine released -- hunger meter drops 25%."
+      },
+      {
+        "roll": 5,
+        "effect": "lose_random_stat",
+        "amount": -1,
+        "duration": 100,
+        "desc": "Madness released -- a random stat drops by 1 for 100 turns."
+      },
+      {
+        "roll": 6,
+        "effect": "false_flavor_item",
+        "duration": 100,
+        "desc": "Lies released -- one unidentified item gains a false flavor description for 100 turns."
+      },
+      {
+        "roll": 7,
+        "effect": "dex_debuff",
+        "amount": -2,
+        "duration": 50,
+        "desc": "Old Age released -- DEX -2 for 50 turns."
+      },
+      {
+        "roll": 8,
+        "effect": "sp_drain_and_silence",
+        "sp_loss": 5,
+        "duration": 20,
+        "desc": "Despair released -- lose 5 SP and cannot SP-cast for 20 turns."
+      },
+      {
+        "roll": 9,
+        "effect": "random_lightning",
+        "damage": "4d6",
+        "desc": "Tempest released -- a lightning bolt strikes a random tile in sight (4d6)."
+      },
+      {
+        "roll": 10,
+        "effect": "polymorph_one_enemy",
+        "duration": 30,
+        "form": "small_harmless",
+        "desc": "Polymorph one -- a random hostile in sight becomes a mouse for 30 turns."
+      },
+      {
+        "roll": 11,
+        "effect": "clairvoyant",
+        "duration": 50,
+        "desc": "Foresight kept -- you gain Clairvoyant for 50 turns."
+      },
+      {
+        "roll": 12,
+        "effect": "quiz_chain_capacity_buff",
+        "amount": 1,
+        "duration": 50,
+        "desc": "Toil-mastery -- +1 chain capacity on all quizzes for 50 turns."
+      },
+      {
+        "roll": 13,
+        "effect": "gain_random_stat",
+        "amount": 1,
+        "duration": 50,
+        "desc": "Memory of Eden -- +1 to a random stat for 50 turns."
+      },
+      {
+        "roll": 14,
+        "effect": "charm_nearest_enemy",
+        "duration": 30,
+        "desc": "Friendship -- the nearest hostile monster is charmed for 30 turns."
+      },
+      {
+        "roll": 15,
+        "effect": "identify_all_inventory",
+        "desc": "Curiosity rewarded -- all unidentified items in inventory are identified."
+      },
+      {
+        "roll": 16,
+        "effect": "pacify_aura",
+        "duration": 5,
+        "radius": 2,
+        "desc": "Beauty unleashed -- monsters within 2 tiles cannot attack you for 5 turns."
+      },
+      {
+        "roll": 17,
+        "effect": "full_heal_hp_and_sp",
+        "desc": "Health restored -- HP and SP refilled to full."
+      },
+      {
+        "roll": 18,
+        "effect": "reveal_floor_map",
+        "desc": "Foreknowledge -- full mini-map for current floor revealed."
+      },
+      {
+        "roll": 19,
+        "effect": "protected_and_hasted",
+        "protected_duration": 3,
+        "hasted_duration": 50,
+        "desc": "Strength of will -- 3 turns of Protected and 50 turns of Hasted."
+      },
+      {
+        "roll": 20,
+        "effect": "permanent_random_stat",
+        "amount": 1,
+        "desc": "Hope -- permanent +1 to a random stat."
+      }
+    ],
+    "chaos_table_failure_skew": {
+      "description": "On quiz failure, re-roll a 1d20 with the lower half mapped to negative effects (rolls 1-14 = rolls 1-14 of chaos_table) and rolls 15-20 mapped to chaos_table rolls 11-16. The 'Hope' roll (20) is unavailable on failure -- you cannot grasp Hope by sloppy theology.",
+      "available_rolls_remap": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 1,
+        "11": 2,
+        "12": 3,
+        "13": 4,
+        "14": 5,
+        "15": 11,
+        "16": 12,
+        "17": 13,
+        "18": 14,
+        "19": 15,
+        "20": 16
+      }
+    },
+    "special_properties": {
+      "single_use_consumable": true,
+      "rolls_on_chaos_table": "pandora",
+      "score_bonus_on_use": 5000,
+      "plot_role": "wonder_relic"
+    },
+    "lore": "A small clay pithos sealed with wax and rope, painted with figures fleeing. The gods gave it to Pandora as a wedding gift and told her not to open it. She did, of course -- the lid lifted easily and out flew Plague, Toil, Strife, Famine, Madness, Lies, Old Age, Despair, Tempest. Hesiod says she clapped the lid shut just in time, and Hope alone remained inside. Whether that was mercy or the cruellest trick of all is for the bearer to decide."
+  },
+  "aladdins_lamp": {
+    "name": "Aladdin's Lamp",
+    "symbol": "(",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "weight": 2.0,
+    "min_level": 35,
+    "peak_floor": 60,
+    "spread": 15,
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "identified": false,
+    "unidentified_name": "a tarnished brass lamp",
+    "consumed_on_use": true,
+    "use_quiz_subject": "theology",
+    "use_quiz_mode": "escalator_threshold",
+    "use_quiz_tier": 5,
+    "use_quiz_threshold": 4,
+    "use_quiz_total": 5,
+    "wish_categories": [
+      "item",
+      "power",
+      "entity"
+    ],
+    "wish_menu": {
+      "item": {
+        "desc": "Wish for an item. The player names a category (weapon / armor / shield / accessory / artifact / wand / scroll / spellbook / potion). The djinn generates a random item of that category at ONE TIER ABOVE the current floor's normal loot tier. For 'artifact', the djinn produces a random non-quest artifact not currently in the player's inventory.",
+        "categories": [
+          "weapon",
+          "armor",
+          "shield",
+          "accessory",
+          "artifact",
+          "wand",
+          "scroll",
+          "spellbook",
+          "potion"
+        ],
+        "tier_offset": 1
+      },
+      "power": {
+        "desc": "Wish for a power. Choose ONE: permanent +1 to any single stat (player picks STR/CON/DEX/INT/WIS/PER, no cap override), OR a permanent status immunity (player picks from the immunity list).",
+        "stats": [
+          "STR",
+          "CON",
+          "DEX",
+          "INT",
+          "WIS",
+          "PER"
+        ],
+        "immunities": [
+          "poison",
+          "paralysis",
+          "fear",
+          "sleep",
+          "blindness",
+          "confusion"
+        ]
+      },
+      "entity": {
+        "desc": "Wish for a named entity. Choose ONE: summon a powerful ally for 50 turns (paladin, archmage, or holy warrior -- equivalent to a tier-5 charmed monster), OR reveal the location, name, and weakness of the next boss/unique-monster on a future floor.",
+        "allies": [
+          "paladin",
+          "archmage",
+          "holy_warrior"
+        ],
+        "ally_duration": 50,
+        "reveal_includes": [
+          "location_floor",
+          "name",
+          "weakness"
+        ]
+      }
+    },
+    "wish_fallback_effects": [
+      {
+        "id": "fallback_item_below_tier",
+        "desc": "A random item from a randomly chosen category appears, but at ONE TIER BELOW the current floor's normal loot tier.",
+        "tier_offset": -1
+      },
+      {
+        "id": "fallback_random_stat",
+        "desc": "Permanent +1 to a RANDOM stat (not player's choice).",
+        "amount": 1
+      },
+      {
+        "id": "fallback_temp_immunity",
+        "desc": "100 turns of a random temporary status immunity (poison, paralysis, fear, sleep, blindness, or confusion).",
+        "duration": 100
+      },
+      {
+        "id": "fallback_short_ally",
+        "desc": "Summon a random tier-3 ally for 25 turns (half normal duration).",
+        "duration": 25,
+        "tier": 3
+      },
+      {
+        "id": "fallback_boss_hint_only",
+        "desc": "Reveal only the next boss's floor location -- no name, no weakness.",
+        "reveal_includes": [
+          "location_floor"
+        ]
+      }
+    ],
+    "special_properties": {
+      "single_use_consumable": true,
+      "djinn_wish_menu": true,
+      "fallback_on_failure": "half_potency_random_wish",
+      "score_bonus_on_use": 7500,
+      "plot_role": "wonder_relic"
+    },
+    "lore": "A brass oil-lamp, dented and tarnished, worth nothing at market. Aladdin found one like it in a cave under the earth, sent there by a sorcerer who promised it was 'just a lamp.' The djinn bound inside grants ONE wish to whoever rubs the lamp and proves themselves worthy. Not three -- one. The other tales got it wrong. The djinn keeps count and is patient and exact, and an unworthy rub earns a half-answered prayer rather than a full one. Make the wish count."
   }
 }

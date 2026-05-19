@@ -176,6 +176,44 @@
     "peak_weight": 0.3,
     "template_basis": "scale",
     "is_unique": true,
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 4,
+        "resistance_fire": 1,
+        "resistance_slash": 1
+      },
+      "2": {
+        "ac_bonus": 5,
+        "resistance_fire": 2,
+        "resistance_slash": 1,
+        "resistance_pierce": 1
+      },
+      "3": {
+        "ac_bonus": 5,
+        "resistance_fire": 2,
+        "resistance_slash": 1,
+        "resistance_pierce": 1,
+        "passive_back_attack_weakness": 1.5
+      },
+      "4": {
+        "ac_bonus": 6,
+        "resistance_fire": 2,
+        "resistance_slash": 2,
+        "resistance_pierce": 1,
+        "passive_back_attack_weakness": 1.5,
+        "status_fire_resist": 999
+      },
+      "5": {
+        "ac_bonus": 6,
+        "resistance_fire": 2,
+        "resistance_slash": 2,
+        "resistance_pierce": 2,
+        "passive_back_attack_weakness": 1.5,
+        "status_fire_resist": 999,
+        "passive_dragon_blood_bath": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -361,6 +399,34 @@
     "peak_weight": 0.3,
     "template_basis": "plate_helm",
     "is_unique": true,
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 2
+      },
+      "2": {
+        "ac_bonus": 2,
+        "passive_stealth_in_dark": true
+      },
+      "3": {
+        "ac_bonus": 3,
+        "passive_stealth_in_dark": true,
+        "passive_invisible_to_undead": true
+      },
+      "4": {
+        "ac_bonus": 3,
+        "passive_stealth_in_dark": true,
+        "passive_invisible_to_undead": true,
+        "passive_phase_step_once_per_floor": true
+      },
+      "5": {
+        "ac_bonus": 4,
+        "passive_stealth_in_dark": true,
+        "passive_invisible_to_undead": true,
+        "passive_phase_step_once_per_floor": true,
+        "passive_unseen_when_still": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_ac_bonus",
       "value": 2,
@@ -629,6 +695,37 @@
     "peak_weight": 0.35,
     "template_basis": "cloak",
     "is_unique": true,
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 2,
+        "resistance_magic": 1
+      },
+      "2": {
+        "ac_bonus": 3,
+        "resistance_magic": 1,
+        "resistance_poison": 1
+      },
+      "3": {
+        "ac_bonus": 3,
+        "resistance_magic": 1,
+        "resistance_poison": 1,
+        "passive_raven_scout": true
+      },
+      "4": {
+        "ac_bonus": 3,
+        "resistance_magic": 2,
+        "resistance_poison": 1,
+        "passive_raven_scout_extended": true
+      },
+      "5": {
+        "ac_bonus": 4,
+        "resistance_magic": 2,
+        "resistance_poison": 1,
+        "passive_raven_scout_extended": true,
+        "passive_death_omen_mark": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -767,6 +864,45 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 1,
+        "passive_mp_bonus": 5,
+        "stat_bonus_INT": 1,
+        "resistance_magic": 1
+      },
+      "2": {
+        "ac_bonus": 2,
+        "passive_mp_bonus": 10,
+        "stat_bonus_INT": 1,
+        "resistance_magic": 1
+      },
+      "3": {
+        "ac_bonus": 2,
+        "passive_mp_bonus": 15,
+        "stat_bonus_INT": 2,
+        "resistance_magic": 2,
+        "passive_free_cast_once_per_floor": true
+      },
+      "4": {
+        "ac_bonus": 2,
+        "passive_mp_bonus": 15,
+        "stat_bonus_INT": 2,
+        "resistance_magic": 2,
+        "passive_free_cast_once_per_floor": true,
+        "passive_spell_crit": 10
+      },
+      "5": {
+        "ac_bonus": 2,
+        "passive_mp_bonus": 20,
+        "stat_bonus_INT": 3,
+        "resistance_magic": 2,
+        "passive_free_cast_once_per_floor": true,
+        "passive_spell_crit": 10,
+        "passive_double_cast_at_max_chain": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -988,6 +1124,39 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_green_knight",
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 5,
+        "regen_bonus": 2
+      },
+      "2": {
+        "ac_bonus": 6,
+        "regen_bonus": 2,
+        "resistance_slash": 2
+      },
+      "3": {
+        "ac_bonus": 7,
+        "regen_bonus": 2,
+        "resistance_slash": 2,
+        "resistance_physical": 2
+      },
+      "4": {
+        "ac_bonus": 7,
+        "regen_bonus": 2,
+        "resistance_slash": 2,
+        "resistance_physical": 2,
+        "status_life_save": 999
+      },
+      "5": {
+        "ac_bonus": 8,
+        "regen_bonus": 2,
+        "resistance_slash": 2,
+        "resistance_physical": 2,
+        "status_life_save": 999,
+        "passive_second_beheading_returns": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_hp_bonus",
       "value": 25,
@@ -1240,6 +1409,38 @@
     "peak_weight": 0.5,
     "template_basis": "steel_helm",
     "is_unique": true,
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 2,
+        "resistance_fear": 1
+      },
+      "2": {
+        "ac_bonus": 3,
+        "resistance_fear": 2
+      },
+      "3": {
+        "ac_bonus": 3,
+        "resistance_fear": 2,
+        "resistance_magic": 1,
+        "passive_fafnirs_glare": true
+      },
+      "4": {
+        "ac_bonus": 3,
+        "resistance_fear": 2,
+        "resistance_magic": 1,
+        "resistance_fire": 1,
+        "passive_fafnirs_glare": true
+      },
+      "5": {
+        "ac_bonus": 4,
+        "resistance_fear": 2,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "passive_fafnirs_glare": true,
+        "passive_no_man_dares": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -1288,6 +1489,39 @@
     "peak_weight": 0.5,
     "template_basis": "leather_boots",
     "is_unique": true,
+    "equip_chain_mode": "chain",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 1,
+        "status_hasted": 999
+      },
+      "2": {
+        "ac_bonus": 2,
+        "status_hasted": 999,
+        "resistance_magic": 1
+      },
+      "3": {
+        "ac_bonus": 2,
+        "status_hasted": 999,
+        "resistance_magic": 1,
+        "passive_no_attack_of_opportunity": true
+      },
+      "4": {
+        "ac_bonus": 2,
+        "status_hasted": 999,
+        "resistance_magic": 1,
+        "passive_no_attack_of_opportunity": true,
+        "passive_free_escape_once_per_floor": true
+      },
+      "5": {
+        "ac_bonus": 2,
+        "status_hasted": 999,
+        "resistance_magic": 1,
+        "passive_no_attack_of_opportunity": true,
+        "passive_free_escape_once_per_floor": true,
+        "passive_psychopomp_step": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_ac_bonus",
       "value": 2,
@@ -2136,6 +2370,42 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 2,
+        "resistance_magic": 1
+      },
+      "2": {
+        "ac_bonus": 2,
+        "resistance_magic": 1,
+        "resistance_cold": 1,
+        "passive_identify_one_per_floor_free": true
+      },
+      "3": {
+        "ac_bonus": 3,
+        "resistance_magic": 1,
+        "resistance_cold": 1,
+        "passive_identify_one_per_floor_free": true,
+        "passive_huginn_muninn": true
+      },
+      "4": {
+        "ac_bonus": 3,
+        "resistance_magic": 2,
+        "resistance_cold": 1,
+        "passive_identify_one_per_floor_free": true,
+        "passive_huginn_muninn": true,
+        "passive_wisdom_at_a_price": true
+      },
+      "5": {
+        "ac_bonus": 3,
+        "resistance_magic": 2,
+        "resistance_cold": 2,
+        "passive_identify_one_per_floor_free": true,
+        "passive_huginn_muninn": true,
+        "passive_wisdom_at_a_price": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -2440,6 +2710,43 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 3,
+        "resistance_magic": 1,
+        "resistance_fear": 1
+      },
+      "2": {
+        "ac_bonus": 4,
+        "resistance_magic": 1,
+        "resistance_fear": 2
+      },
+      "3": {
+        "ac_bonus": 4,
+        "resistance_magic": 1,
+        "resistance_fear": 2,
+        "resistance_slash": 1,
+        "status_blessed": 999
+      },
+      "4": {
+        "ac_bonus": 5,
+        "resistance_magic": 2,
+        "resistance_fear": 2,
+        "resistance_slash": 1,
+        "status_blessed": 999,
+        "passive_command_undead": true
+      },
+      "5": {
+        "ac_bonus": 5,
+        "resistance_magic": 2,
+        "resistance_fear": 2,
+        "resistance_slash": 1,
+        "status_blessed": 999,
+        "passive_command_undead": true,
+        "passive_paths_of_the_dead": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -2488,6 +2795,52 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 3,
+        "stat_bonus_INT": 1,
+        "resistance_magic": 1,
+        "resistance_fire": 1
+      },
+      "2": {
+        "ac_bonus": 4,
+        "stat_bonus_INT": 2,
+        "resistance_magic": 1,
+        "resistance_fire": 1,
+        "resistance_cold": 1
+      },
+      "3": {
+        "ac_bonus": 5,
+        "stat_bonus_INT": 2,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "resistance_cold": 1,
+        "resistance_poison": 1,
+        "status_blessed": 999
+      },
+      "4": {
+        "ac_bonus": 5,
+        "stat_bonus_INT": 3,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "resistance_cold": 1,
+        "resistance_poison": 1,
+        "status_blessed": 999,
+        "passive_demon_command_one_per_floor": true
+      },
+      "5": {
+        "ac_bonus": 5,
+        "stat_bonus_INT": 3,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "resistance_cold": 1,
+        "resistance_poison": 1,
+        "status_blessed": 999,
+        "passive_demon_command_one_per_floor": true,
+        "passive_seventy_two_seals": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -2537,6 +2890,46 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 4,
+        "resistance_fire": 1,
+        "resistance_cold": 1
+      },
+      "2": {
+        "ac_bonus": 5,
+        "resistance_fire": 2,
+        "resistance_cold": 1,
+        "resistance_slash": 1
+      },
+      "3": {
+        "ac_bonus": 6,
+        "resistance_fire": 2,
+        "resistance_cold": 2,
+        "resistance_slash": 1,
+        "resistance_pierce": 1
+      },
+      "4": {
+        "ac_bonus": 6,
+        "resistance_fire": 2,
+        "resistance_cold": 2,
+        "resistance_slash": 2,
+        "resistance_pierce": 1,
+        "resistance_blunt": 1,
+        "passive_first_hit_absorb": true
+      },
+      "5": {
+        "ac_bonus": 6,
+        "resistance_fire": 2,
+        "resistance_cold": 2,
+        "resistance_slash": 2,
+        "resistance_pierce": 1,
+        "resistance_blunt": 1,
+        "passive_first_hit_absorb": true,
+        "passive_doom_of_the_gods": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_hp_bonus",
       "value": 25,
@@ -2581,6 +2974,35 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
+    "equip_chain_mode": "chain",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 3,
+        "stat_bonus_INT": 1
+      },
+      "2": {
+        "ac_bonus": 4,
+        "stat_bonus_INT": 2,
+        "passive_mp_bonus": 10
+      },
+      "3": {
+        "ac_bonus": 5,
+        "stat_bonus_INT": 2,
+        "passive_mp_bonus": 15,
+        "status_regenerating": 999,
+        "resistance_magic": 1
+      },
+      "4": {
+        "ac_bonus": 6,
+        "stat_bonus_INT": 3,
+        "passive_mp_bonus": 25,
+        "status_regenerating": 999,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "resistance_lightning": 1,
+        "passive_four_faces_360_fov": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {

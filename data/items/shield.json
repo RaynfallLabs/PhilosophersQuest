@@ -36,6 +36,39 @@
     "spread": 12,
     "peak_weight": 0.4,
     "max_enchant": 2,
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 4,
+        "resistance_petrifying": 2
+      },
+      "2": {
+        "ac_bonus": 5,
+        "resistance_petrifying": 2,
+        "resistance_fear": 1
+      },
+      "3": {
+        "ac_bonus": 5,
+        "resistance_petrifying": 2,
+        "resistance_fear": 2,
+        "resistance_magic": 1
+      },
+      "4": {
+        "ac_bonus": 6,
+        "resistance_petrifying": 2,
+        "resistance_fear": 2,
+        "resistance_magic": 2,
+        "passive_reflect_spell": 20
+      },
+      "5": {
+        "ac_bonus": 6,
+        "resistance_petrifying": 2,
+        "resistance_fear": 2,
+        "resistance_magic": 2,
+        "passive_reflect_spell": 20,
+        "passive_gorgoneion_petrify_on_hit": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_ac_bonus",
       "value": 2,
@@ -246,6 +279,34 @@
     "spread": 1,
     "peak_weight": 0.0,
     "max_enchant": 2,
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 3
+      },
+      "2": {
+        "ac_bonus": 4,
+        "resistance_fear": 1
+      },
+      "3": {
+        "ac_bonus": 5,
+        "resistance_fear": 2,
+        "resistance_magic": 1
+      },
+      "4": {
+        "ac_bonus": 5,
+        "resistance_fear": 2,
+        "resistance_magic": 2,
+        "passive_reflect_spell": 10
+      },
+      "5": {
+        "ac_bonus": 6,
+        "resistance_fear": 2,
+        "resistance_magic": 2,
+        "passive_reflect_spell": 15,
+        "passive_aura_of_awe": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {
@@ -1369,6 +1430,36 @@
     "max_enchant": 3,
     "containerLootTier": "rare",
     "floorSpawnWeight": {},
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "ac_bonus": 2,
+        "resistance_magic": 1
+      },
+      "2": {
+        "ac_bonus": 3,
+        "resistance_magic": 2
+      },
+      "3": {
+        "ac_bonus": 3,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "passive_spell_reflect": 20
+      },
+      "4": {
+        "ac_bonus": 4,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "passive_spell_reflect": 30
+      },
+      "5": {
+        "ac_bonus": 4,
+        "resistance_magic": 2,
+        "resistance_fire": 1,
+        "passive_spell_reflect": 30,
+        "passive_mirror_of_souls": true
+      }
+    },
     "mastery_blessing": {
       "kind": "armor_resist_bonus",
       "value": {

@@ -4059,6 +4059,41 @@
       "status": "telepathy",
       "duration": -1
     },
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_INT": 1,
+        "stat_bonus_WIS": 1
+      },
+      "2": {
+        "stat_bonus_INT": 2,
+        "stat_bonus_WIS": 2,
+        "passive_detect_magic": true
+      },
+      "3": {
+        "stat_bonus_INT": 2,
+        "stat_bonus_WIS": 3,
+        "passive_detect_magic": true,
+        "passive_pacify_demon_chance": 0.15
+      },
+      "4": {
+        "stat_bonus_INT": 3,
+        "stat_bonus_WIS": 3,
+        "passive_detect_magic": true,
+        "passive_pacify_demon_chance": 0.2,
+        "status_telepathy": 999,
+        "passive_weaken_summoned": true
+      },
+      "5": {
+        "stat_bonus_INT": 3,
+        "stat_bonus_WIS": 3,
+        "passive_detect_magic": true,
+        "passive_pacify_demon_chance": 0.2,
+        "status_telepathy": 999,
+        "passive_weaken_summoned": true,
+        "passive_solomonic_key": true
+      }
+    },
     "unidentified_name": "a signet ring with a six-pointed star",
     "floorSpawnWeight": {
       "61-80": 1,
@@ -4368,6 +4403,33 @@
       "second_stat": "CON",
       "second_amount": -2
     },
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_WIS": 2,
+        "stat_bonus_CON": -1
+      },
+      "2": {
+        "stat_bonus_WIS": 3,
+        "stat_bonus_CON": -1
+      },
+      "3": {
+        "stat_bonus_WIS": 4,
+        "stat_bonus_CON": -1,
+        "passive_max_mp_bonus": 1
+      },
+      "4": {
+        "stat_bonus_WIS": 4,
+        "stat_bonus_CON": -2,
+        "passive_max_mp_bonus": 2
+      },
+      "5": {
+        "stat_bonus_WIS": 5,
+        "stat_bonus_CON": -2,
+        "passive_max_mp_bonus": 2,
+        "passive_beautiful_ruin": true
+      }
+    },
     "unidentified_name": "a golden necklace of impossible craftsmanship",
     "floorSpawnWeight": {
       "81-100": 2
@@ -4444,6 +4506,32 @@
       "stat": "INT",
       "amount": 5
     },
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_INT": 2
+      },
+      "2": {
+        "stat_bonus_INT": 3,
+        "passive_spell_damage_bonus": 0.1
+      },
+      "3": {
+        "stat_bonus_INT": 4,
+        "passive_spell_damage_bonus": 0.15,
+        "passive_unmaking_sense": true
+      },
+      "4": {
+        "stat_bonus_INT": 5,
+        "passive_spell_damage_bonus": 0.2,
+        "passive_unmaking_sense": true
+      },
+      "5": {
+        "stat_bonus_INT": 5,
+        "passive_spell_damage_bonus": 0.25,
+        "passive_unmaking_sense": true,
+        "passive_anti_being": true
+      }
+    },
     "unidentified_name": "a deep red gem that seems to pulse",
     "floorSpawnWeight": {
       "81-100": 2
@@ -4483,6 +4571,34 @@
       "stat": "WIS",
       "amount": 2
     },
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_WIS": 2
+      },
+      "2": {
+        "stat_bonus_WIS": 2,
+        "status_life_save": 999
+      },
+      "3": {
+        "stat_bonus_WIS": 2,
+        "status_life_save": 999,
+        "passive_death_save_bonus": 1
+      },
+      "4": {
+        "stat_bonus_WIS": 3,
+        "status_life_save": 999,
+        "passive_death_save_bonus": 1,
+        "passive_life_save_resets_per_floor": true
+      },
+      "5": {
+        "stat_bonus_WIS": 3,
+        "status_life_save": 999,
+        "passive_death_save_bonus": 1,
+        "passive_life_save_resets_per_floor": true,
+        "passive_reassembly": true
+      }
+    },
     "unidentified_name": "a knotted red jasper amulet like a tied sash",
     "floorSpawnWeight": {
       "61-80": 1,
@@ -4519,6 +4635,32 @@
     "effects": {
       "stat": "CON",
       "amount": 5
+    },
+    "equip_chain_mode": "chain",
+    "equip_chain_subject": "cooking",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_CON": 2
+      },
+      "2": {
+        "stat_bonus_CON": 3,
+        "passive_hunger_slow": 0.33
+      },
+      "3": {
+        "stat_bonus_CON": 4,
+        "passive_hunger_slow": 0.5
+      },
+      "4": {
+        "stat_bonus_CON": 5,
+        "passive_hunger_slow": 0.5,
+        "passive_death_save_bonus": 1
+      },
+      "5": {
+        "stat_bonus_CON": 5,
+        "passive_hunger_slow": 0.66,
+        "passive_death_save_bonus": 1,
+        "passive_aesir_young": true
+      }
     },
     "unidentified_name": "a carved jade apple on a silver chain",
     "floorSpawnWeight": {
@@ -4706,6 +4848,32 @@
       "status": "hasted",
       "duration": -1
     },
+    "equip_chain_mode": "chain",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_STR": 1
+      },
+      "2": {
+        "stat_bonus_STR": 2,
+        "passive_attack_chain_cap_bonus": 1
+      },
+      "3": {
+        "stat_bonus_STR": 4,
+        "passive_attack_chain_cap_bonus": 1,
+        "status_hasted": 999
+      },
+      "4": {
+        "stat_bonus_STR": 5,
+        "passive_attack_chain_cap_bonus": 1,
+        "status_hasted": 999
+      },
+      "5": {
+        "stat_bonus_STR": 3,
+        "passive_attack_chain_cap_bonus": 1,
+        "status_hasted": 999,
+        "passive_three_oclock": true
+      }
+    },
     "unidentified_name": "a plain green ring with a small enameled star",
     "floorSpawnWeight": {
       "61-80": 1,
@@ -4783,6 +4951,34 @@
     "effects": {
       "stat": "INT",
       "amount": 4
+    },
+    "equip_chain_mode": "chain",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_INT": 2
+      },
+      "2": {
+        "stat_bonus_INT": 3,
+        "passive_grammar_chain_cap_bonus": 1
+      },
+      "3": {
+        "stat_bonus_INT": 3,
+        "passive_grammar_chain_cap_bonus": 1,
+        "passive_scroll_save_on_fail": true
+      },
+      "4": {
+        "stat_bonus_INT": 4,
+        "passive_grammar_chain_cap_bonus": 1,
+        "passive_scroll_save_on_fail": true,
+        "passive_spellbook_chain_bonus": 1
+      },
+      "5": {
+        "stat_bonus_INT": 4,
+        "passive_grammar_chain_cap_bonus": 1,
+        "passive_scroll_save_on_fail": true,
+        "passive_spellbook_chain_bonus": 1,
+        "passive_one_thousand_and_one": true
+      }
     },
     "unidentified_name": "a ring set with a pale blue stone that swirls",
     "floorSpawnWeight": {
@@ -4898,6 +5094,32 @@
     "effects": {
       "stat": "DEX",
       "amount": 5
+    },
+    "equip_chain_mode": "chain",
+    "equip_chain_subject": "math",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_DEX": 2
+      },
+      "2": {
+        "stat_bonus_DEX": 3,
+        "passive_free_move_every_10": true
+      },
+      "3": {
+        "stat_bonus_DEX": 4,
+        "passive_free_move_every_10": true
+      },
+      "4": {
+        "stat_bonus_DEX": 5,
+        "passive_free_move_every_10": true,
+        "passive_three_apples": true
+      },
+      "5": {
+        "stat_bonus_DEX": 5,
+        "passive_free_move_every_10": true,
+        "passive_three_apples": true,
+        "passive_atalantas_choice": true
+      }
     },
     "unidentified_name": "a delicate runner's anklet of pale silver",
     "floorSpawnWeight": {
@@ -6697,6 +6919,35 @@
       "status": "fire_resist",
       "duration": -1
     },
+    "equip_chain_mode": "escalator",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_CON": 3,
+        "status_fire_resist": 999
+      },
+      "2": {
+        "stat_bonus_CON": 4,
+        "status_fire_resist": 999
+      },
+      "3": {
+        "stat_bonus_CON": 4,
+        "status_fire_resist": 999,
+        "resistance_fire": 2
+      },
+      "4": {
+        "stat_bonus_CON": 5,
+        "status_fire_resist": 999,
+        "resistance_fire": 2,
+        "passive_suryas_gift": true
+      },
+      "5": {
+        "stat_bonus_CON": 5,
+        "status_fire_resist": 999,
+        "resistance_fire": 2,
+        "passive_suryas_gift": true,
+        "passive_cut_and_given": true
+      }
+    },
     "can_be_cursed": true,
     "is_unique": true,
     "identified": false,
@@ -6710,6 +6961,47 @@
       },
       "scope": "item",
       "desc": "Karna was born wearing Kavacha and Kundala fused to his skin — CON rises by 2 permanently."
+    }
+  },
+  "hand_of_glory": {
+    "name": "Hand of Glory",
+    "slot": "amulet",
+    "symbol": "\"",
+    "color": [
+      80,
+      70,
+      60
+    ],
+    "weight": 0.5,
+    "min_level": 25,
+    "peak_floor": 30,
+    "spread": 10,
+    "peak_weight": 0.5,
+    "is_unique": true,
+    "can_be_cursed": true,
+    "cursed": true,
+    "equip_threshold": 3,
+    "quiz_tier": 2,
+    "effects": {
+      "stat": "PER",
+      "amount": -1
+    },
+    "paralyze_charges": 3,
+    "paralyze_duration": 10,
+    "passive_silent_walk": true,
+    "passive_dark_vision": true,
+    "expended_curse": true,
+    "floorSpawnWeight": {
+      "21-40": 1
+    },
+    "identified": false,
+    "unidentified_name": "a wax-dipped severed hand",
+    "lore": "A mummified hand, cut from a hanged thief at midnight, dipped in wax. Lights the way for those who walk the wrong path. The wax holds a candle in each finger — three lit, two unlit. When all five have burned, the hand will not let go.",
+    "mastery_blessing": {
+      "kind": "accessory_passive_strength",
+      "value": 1,
+      "desc": "A fourth wax-tipped finger rises from the palm. +1 paralyze charge per Hand of Glory.",
+      "scope": "item"
     }
   },
   "ring_protection_iron": {
