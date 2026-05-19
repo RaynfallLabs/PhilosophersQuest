@@ -554,3 +554,56 @@ def test_apply_equip_ring_when_all_slots_full_does_not_double_apply():
     p._apply_equip(r5)
     # Hardening: STR must NOT have gained from r5 since no slot was free
     assert p.STR == str_before, "5th ring effects applied with no slot available"
+
+
+
+# ---------------------------------------------------------------------------
+# Regression: every STATE_* must have ESC handling. ESC in an unhandled state
+# falls through to handle_event() returning False which means "quit game."
+# User playtest 2026-05-19 caught STATE_PRAY exiting the game on ESC.
+# ---------------------------------------------------------------------------
+
+def test_every_state_has_esc_handling():
+    """No STATE_* may be missing from the ESC handler in game_input.py.
+
+    The handler must either:
+      - Include the state in the big closeable-menu tuple
+      - Have a dedicated if-branch (STATE_QUIZ, STATE_NPC_ENCOUNTER, etc.)
+      - Be in the ignore-set (STATE_DEAD/STATE_VICTORY return False intentionally)
+    """
+    import re
+    states = re.findall(r'STATE_\w+', open('src/game_states.py').read())
+    states = sorted(set(s for s in states if s.startswith('STATE_')))
+
+    src = open('src/game_input.py').read()
+    # Slice the ESC handler — from the `if key == pygame.K_ESCAPE:` line to
+    # the end of the function. The terminating `return False` is the bug:
+    # an unhandled state hits that and the caller treats False as "quit game."
+    esc_start = src.index('if key == pygame.K_ESCAPE')
+    # End: stop at the first instance of "if self.state == STATE_PLAYER:" that
+    # is OUTSIDE the ESC block (i.e., the non-ESC key handling for STATE_PLAYER)
+    after_player_state = src.find('\n        if self.state == STATE_PLAYER:', esc_start)
+    esc_section = src[esc_start:after_player_state]
+
+    # Find ALL `state in (...)` tuples in the ESC section (there are two:
+    # the big closeable-menu tuple and the small pet-submenu tuple).
+    in_tuples = re.findall(r'self\.state in \((.*?)\)\s*:', esc_section, re.DOTALL)
+    in_tuple: set = set()
+    for tup in in_tuples:
+        in_tuple |= set(re.findall(r'STATE_\w+', tup))
+    # Plus all states with their own if-branches
+    specific = set(re.findall(r'self\.state == (STATE_\w+)', esc_section))
+
+    handled = in_tuple | specific
+    # Intentional ignores
+    handled.add('STATE_PLAYER')  # ESC opens the save/exit prompt
+    handled.add('STATE_DEAD')
+    handled.add('STATE_VICTORY')
+    handled.add('STATE_LOCKPICK')  # dead state, retained for now
+
+    missing = [s for s in states if s not in handled]
+    assert not missing, (
+        f'STATE_* without ESC handling: {missing}. '
+        f'ESC in these states will QUIT THE GAME. Add to the big tuple '
+        f'in game_input.py or give them a dedicated branch.'
+    )

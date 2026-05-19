@@ -85,7 +85,8 @@ class InputMixin:
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
-                              STATE_PET_MENU):
+                              STATE_PET_MENU,
+                              STATE_PRAY, STATE_JUDGMENT):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 if self.state == STATE_TARGET:
@@ -103,6 +104,16 @@ class InputMixin:
                 return True
             if self.state == STATE_STORY_POPUP:
                 self.state = self.popup_next_state
+                return True
+            if self.state == STATE_NPC_ENCOUNTER:
+                # Cancel the moral encounter cleanly — the NPC stays on the
+                # floor so the player can return later. _close_npc_encounter
+                # (with resolved=False) clears all overlay state without
+                # consuming the encounter.
+                if hasattr(self, '_close_npc_encounter'):
+                    self._close_npc_encounter(resolved=False)
+                else:
+                    self.state = STATE_PLAYER
                 return True
             if self.state == STATE_PLAYER:
                 self.state = STATE_CONFIRM_EXIT
