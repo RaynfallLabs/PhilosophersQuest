@@ -562,6 +562,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters     = monsters
         self.ground_items = ground_items
         self.dungeon_level = new_level
+        # class_scroll_persist (scroll_of_mapping mastery): auto-map every
+        # newly-entered floor. The mapped state already persists per-floor via
+        # level_manager save/load; this extends that to floors the player has
+        # never set foot on, so the mastered scroll's effect persists in the
+        # design sense (you carry the reveal forward).
+        _map_mastery = self.player.unlocked_class_masteries.get('scroll_of_mapping')
+        if _map_mastery and _map_mastery.get('kind') == 'class_scroll_persist':
+            for _y in range(self.dungeon.height):
+                for _x in range(self.dungeon.width):
+                    self.dungeon.explored.add((_x, _y))
         # Track deepest floor reached for the cooking softcap (rises with descent)
         self.player.deepest_floor_reached = max(
             self.player.deepest_floor_reached, new_level
@@ -2279,12 +2289,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         if random.random() < _acc.pacify_chance:
                             m.add_effect('paralyzed', 1)
 
-        # Clairvoyant: reveal tiles within 10-tile radius each turn
+        # Clairvoyant: reveal tiles within 10-tile radius each turn.
+        # class_acc_passive_radius (ring_of_clairvoyance): mastered class adds
+        # +N tiles to the reveal radius.
         if self.player.has_effect('clairvoyant'):
             px, py = self.player.x, self.player.y
-            for cy in range(max(0, py - 10), min(self.dungeon.height, py + 11)):
-                for cx in range(max(0, px - 10), min(self.dungeon.width, px + 11)):
-                    if abs(cx - px) + abs(cy - py) <= 10:
+            radius = 10 + self.player.get_class_mastery_passive_radius_bonus('clairvoyance')
+            for cy in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
+                for cx in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
+                    if abs(cx - px) + abs(cy - py) <= radius:
                         self.dungeon.explored.add((cx, cy))
 
         # Torc of Boudicca: AC bonus when surrounded by 3+ enemies
@@ -2502,13 +2515,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         return
 
     def _do_warning(self):
-        """Warn if monsters are within 5 tiles when player has the warning effect."""
+        """Warn if monsters are within 5 tiles when player has the warning effect.
+
+        class_acc_passive_radius (ring/amulet_of_warning): mastered class
+        extends the warning radius by +N tiles.
+        """
         if not self.player.has_effect('warning'):
             return
         px, py = self.player.x, self.player.y
+        radius = 5 + self.player.get_class_mastery_passive_radius_bonus('warning')
         nearby = [
             m for m in self.monsters
-            if m.alive and abs(m.x - px) <= 5 and abs(m.y - py) <= 5
+            if m.alive and abs(m.x - px) <= radius and abs(m.y - py) <= radius
             and (m.x, m.y) not in self.visible
         ]
         if nearby:
@@ -2518,12 +2536,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             )
 
     def _do_searching(self):
-        """Auto-reveal adjacent tiles, secret doors, and traps when player is searching."""
+        """Auto-reveal adjacent tiles, secret doors, and traps when player is searching.
+
+        class_acc_passive_radius (ring/amulet_of_searching): mastered class
+        extends the searching radius by +N tiles around the player.
+        """
         if not self.player.has_effect('searching'):
             return
         px, py = self.player.x, self.player.y
-        for dy in range(-1, 2):
-            for dx in range(-1, 2):
+        radius = 1 + self.player.get_class_mastery_passive_radius_bonus('searching')
+        for dy in range(-radius, radius + 1):
+            for dx in range(-radius, radius + 1):
                 nx, ny = px + dx, py + dy
                 if 0 <= nx < self.dungeon.width and 0 <= ny < self.dungeon.height:
                     self.dungeon.explored.add((nx, ny))
@@ -2537,11 +2560,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         trap['revealed'] = True
                         self.add_message(
                             f"Searching reveals a {trap['type'].replace('_', ' ')} trap!", 'success')
-        # Also reveal adjacent ambush monsters
+        # Also reveal adjacent ambush monsters (radius scales with the mastery)
         for m in self.monsters:
             if (m.alive and m.ai_pattern == 'ambush'
                     and not getattr(m, '_aware', False)
-                    and abs(m.x - px) <= 1 and abs(m.y - py) <= 1):
+                    and abs(m.x - px) <= radius and abs(m.y - py) <= radius):
                 m._aware = True
                 self.add_message(f"Searching reveals a hidden {m.name}!", 'warning')
 
@@ -2821,6 +2844,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 drain_interval = max(2, int(round(drain_interval * (1.0 + hs))))
         except ImportError:
             pass
+        # class_acc_sp_burn_bonus: mastered ring of sustenance equipped adds
+        # (1 + value) multiplier to the drain interval (slower drain).
+        _sp_factor = self.player.get_class_mastery_sp_burn_factor()
+        if _sp_factor > 0:
+            drain_interval = max(2, int(round(drain_interval * (1.0 + _sp_factor))))
         if self._sp_drain_tick % drain_interval != 0:
             return
         if self.player.sp > 0:
@@ -2863,6 +2891,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         interval = max(10, 20 - max(0, self.player.CON - 12))
         if self.turn_count % interval == 0:
             base_regen = 1 + max(0, getattr(self.player, 'regen_bonus', 0))
+            # class_acc_regen_bonus: equipped ring/amulet of regeneration
+            # adds +N HP per tick when its class is mastered.
+            base_regen += self.player.get_class_mastery_regen_bonus()
             self.player.restore_hp(base_regen)
 
     # ------------------------------------------------------------------

@@ -1426,6 +1426,178 @@ class MagicMixin:
             self.add_message("The gate flickers — no room nearby to manifest.", 'warning')
             return
 
+        # --- Mapping: reveal the entire floor (chain_scale ignored - all-or-nothing) ---
+        if effect == 'mapping':
+            for y in range(self.dungeon.height):
+                for x in range(self.dungeon.width):
+                    self.dungeon.explored.add((x, y))
+            self.add_message(
+                f"The full layout of this floor floods your mind! (chain {chain})", 'success')
+            return
+
+        # --- Turn Undead: holy damage + fear to visible undead ---
+        if effect == 'turn_undead':
+            from dice import roll as _roll_tu
+            base_dmg = _roll_tu(power) if power else 8
+            scaled = self._spell_damage(base_dmg, chain)
+            _UNDEAD_WORDS = {'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'wight',
+                             'spectre', 'vampire', 'mummy', 'revenant', 'death', 'undead',
+                             'ghoul', 'ghast', 'shade', 'banshee', 'draugr', 'barrow',
+                             'bone', 'corpse', 'vrykolakas', 'strigoi', 'mohrg', 'demi_lich'}
+            undead = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+                and (any(w in m.kind.lower() for w in _UNDEAD_WORDS)
+                     or 'undead' in set(getattr(m, 'tags', []) or []))
+            ]
+            if undead:
+                fear_dur = max(3, int(8 * chain_scale))
+                for m in undead:
+                    m.take_damage(scaled, 'holy')
+                    m.add_effect('feared', fear_dur)
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                self.add_message(
+                    f"Holy light blazes! {len(undead)} undead take {scaled} holy damage "
+                    f"and flee in terror! (chain {chain})", 'success')
+            else:
+                self.add_message(
+                    "Holy light flares but no undead are present.", 'info')
+            return
+
+        # --- Annihilation: kill all non-boss monsters in sight below HP threshold ---
+        # Threshold scales with chain: 15% @ chain 1, 35% @ chain 5.
+        if effect == 'annihilate':
+            threshold_pct = 0.10 + chain * 0.05   # 0.15 .. 0.35
+            visible_monsters = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            slain, struck = 0, 0
+            for m in visible_monsters:
+                is_boss = getattr(m, 'is_boss', False) or m.max_hp > 500
+                if is_boss:
+                    # Bosses take heavy fixed damage but are never instakilled
+                    actual = m.take_damage(max(20, m.max_hp // 4))
+                    if actual > 0:
+                        struck += 1
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                elif m.hp <= m.max_hp * threshold_pct:
+                    m.hp = 0
+                    m.alive = False
+                    self._on_monster_killed(m)
+                    slain += 1
+                else:
+                    # Above threshold: take a large bite (max_hp // 3)
+                    actual = m.take_damage(max(10, m.max_hp // 3))
+                    if actual > 0:
+                        struck += 1
+                    if not m.alive:
+                        self._on_monster_killed(m)
+                        slain += 1
+            self.add_message(
+                f"ANNIHILATION! {slain} weakened creatures vaporized, "
+                f"{struck - slain if struck > slain else 0} more crippled. "
+                f"(threshold {int(threshold_pct*100)}%, chain {chain})", 'success')
+            return
+
+        # --- Mass Sleep / Mass Paralyze: lock all visible monsters ---
+        # Both `sleep_mass_spell` (T2) and `mass_paralyze_spell` (T4) share this
+        # effect. T2 applies sleeping (breaks on damage); T4 applies paralyzed
+        # (the stronger lock, fitting an archmage-tier slot). Duration scales
+        # with chain.
+        if effect == 'mass_sleep':
+            # Higher-tier spell = stronger status. quiz_tier 4+ = paralyzed.
+            status_name = 'paralyzed' if spell.get('quiz_tier', 2) >= 4 else 'sleeping'
+            base_dur = 10 if status_name == 'sleeping' else 8
+            dur = max(3, int(base_dur * chain_scale))
+            visible_monsters = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            affected = 0
+            for m in visible_monsters:
+                applied_dur, resisted = self._boss_resist_cc(m, dur)
+                if resisted:
+                    continue
+                m.add_effect(status_name, applied_dur)
+                affected += 1
+            self.add_message(
+                f"{spell['name']}! {affected}/{len(visible_monsters)} creatures "
+                f"{status_name} for {dur} turns! (chain {chain})", 'success')
+            return
+
+        # --- Detect Magic: reveal magical items in FOV (BUC + name reveal) ---
+        # Distinct from the identify_item wand effect: this only marks magical
+        # gear (wand/scroll/spellbook) and flags their BUC, similar to the
+        # Ring of Solomon's detect_magic chain passive.
+        if effect == 'identify_item':
+            from items import Wand, Scroll, Spellbook
+            revealed = 0
+            for it in self.ground_items:
+                if (it.x, it.y) in self.visible and isinstance(it, (Wand, Scroll, Spellbook)):
+                    if hasattr(it, 'buc_known'):
+                        it.buc_known = True
+                    revealed += 1
+            # Also reveal carried magical items' BUC (chain-scaled bonus)
+            inv_reveals = 0
+            if chain >= 3:
+                for it in self.player.inventory:
+                    if (isinstance(it, (Wand, Scroll, Spellbook))
+                            and hasattr(it, 'buc_known')
+                            and not it.buc_known):
+                        it.buc_known = True
+                        inv_reveals += 1
+            if revealed or inv_reveals:
+                self.add_message(
+                    f"Magical auras shimmer! {revealed} item(s) on the floor revealed"
+                    + (f", {inv_reveals} in your pack" if inv_reveals else "")
+                    + f". (chain {chain})", 'success')
+            else:
+                self.add_message("No magical auras detected nearby.", 'info')
+            return
+
+        # --- Wish: bounded grab-bag of high-value boons ---
+        # Not infinite wish (that would break the curve). One of:
+        #   * full restore (HP+SP+MP)
+        #   * +1 to a random primary stat
+        #   * permanent buff (regenerating 50, life_save, etc.)
+        if effect == 'wish':
+            outcomes = [
+                ('full_restore', 'You feel utterly whole -- HP, SP, and MP restored to full!'),
+                ('stat_bonus',   None),  # message generated dynamically
+                ('strong_buff',  None),  # message generated dynamically
+            ]
+            kind, _msg = random.choice(outcomes)
+            if kind == 'full_restore':
+                self.player.hp = self.player.max_hp
+                self.player.sp = self.player.max_sp
+                self.player.mp = self.player.max_mp
+                self.add_message(
+                    "WISH GRANTED! You feel utterly whole -- "
+                    f"HP, SP, and MP restored! (chain {chain})",
+                    'success')
+            elif kind == 'stat_bonus':
+                stat = random.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
+                old = getattr(self.player, stat)
+                self.player.apply_stat_bonus(stat, 1)
+                self.add_message(
+                    f"WISH GRANTED! {stat}: {old} -> {getattr(self.player, stat)} "
+                    f"(chain {chain})", 'success')
+            else:  # strong_buff
+                buff, dur, label = random.choice([
+                    ('regenerating', 50, 'Regenerating'),
+                    ('life_save',    50, 'Life Save'),
+                    ('shielded',     30, 'Shielded'),
+                    ('hasted',       20, 'Hasted'),
+                    ('reflecting',   25, 'Reflecting'),
+                ])
+                self.player.add_effect(buff, dur)
+                self.add_message(
+                    f"WISH GRANTED! {label} for {dur} turns! (chain {chain})", 'success')
+            return
+
         # Scale status durations for self-buff spells
         _SELF_BUFF_DURATIONS = {
             'shield_self':       ('shielded',    12),
@@ -1438,6 +1610,9 @@ class MagicMixin:
             'foresight_self':    ('clairvoyant', 30),    # long detect-all
             'resurrection_self': ('life_save',   50),    # one-shot revive
             'greater_invis_self': ('invisible',  25),    # longer invis
+            # Missing-handler audit: phase_door + levitate were falling through.
+            'phase_self':        ('phasing',     15),    # walk through walls
+            'levitation_self':   ('levitating',  12),    # float over floor traps
         }
         if effect in _SELF_BUFF_DURATIONS:
             eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
@@ -1740,6 +1915,22 @@ class MagicMixin:
                     target.add_effect('paralyzed', dur)
                     self.add_message(
                         f"The {target.name} is sealed in arcane stone for {dur} turns! (chain {chain})", 'success')
+            elif effect == 'dispel_magic':
+                # Strip ALL buffs from target. Player-applied DoTs (poison, bleed,
+                # petrifying, burning) survive — those are the player's investment.
+                from status_effects import BUFFS as _BUFFS
+                stripped = 0
+                for _e in list(target.status_effects):
+                    if _e in _BUFFS:
+                        target.status_effects.pop(_e, None)
+                        stripped += 1
+                if stripped:
+                    self.add_message(
+                        f"{stripped} enchantment(s) on the {target.name} are dispelled! (chain {chain})",
+                        'success')
+                else:
+                    self.add_message(
+                        f"The {target.name} has no magical buffs to dispel.", 'info')
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r
@@ -1804,7 +1995,8 @@ class MagicMixin:
 
             scroll.identified = True
             self.player.known_item_ids.add(scroll.id)
-            # scroll_extra_read mastery: keep the first post-mastery read instead of consuming.
+            # scroll_extra_read mastery (uniques): keep the first post-mastery
+            # read instead of consuming.
             _scroll_mast = self.player.unlocked_masteries.get(scroll.id)
             _save_scroll = (
                 _scroll_mast and _scroll_mast.get('kind') == 'scroll_extra_read'
@@ -1817,6 +2009,23 @@ class MagicMixin:
                     'success'
                 )
             else:
+                # class_scroll_extra_uses (commons: scroll_of_identify,
+                # scroll_of_teleport): mastery gives N extra reads per scroll
+                # instance. Counter tracked on the scroll; once it reaches the
+                # bonus, the scroll consumes normally.
+                from class_masteries import get_mastery_class as _gmc_scr
+                _class_mast = self.player.unlocked_class_masteries.get(_gmc_scr(scroll))
+                if _class_mast and _class_mast.get('kind') == 'class_scroll_extra_uses':
+                    _bonus_uses = int(_class_mast.get('value', 0))
+                    _used = int(getattr(scroll, '_class_extra_uses_used', 0))
+                    if _used < _bonus_uses:
+                        scroll._class_extra_uses_used = _used + 1
+                        _save_scroll = True
+                        self.add_message(
+                            f"You recall the {scroll.name} from memory; the scroll survives intact.",
+                            'success'
+                        )
+            if not _save_scroll:
                 self.player.remove_from_inventory(scroll)
             self.add_message(f"You read the {display}!", 'success')
             _qs_scroll = getattr(self, 'quirk_system', None)
@@ -1848,11 +2057,20 @@ class MagicMixin:
 
     def _apply_scroll_effect(self, scroll: 'Scroll'):
         from dice import roll
+        from class_masteries import get_mastery_class
         effect = scroll.effect
         _scroll_buc = getattr(scroll, 'buc', 'uncursed')
+        # class_scroll_potency: heal/extra-heal masteries boost healing scrolls
+        # by a fractional multiplier. Lookup is by scroll class (id-based).
+        _scroll_pot_mast = self.player.unlocked_class_masteries.get(
+            get_mastery_class(scroll))
+        _scroll_pot_mult = 1.0
+        if _scroll_pot_mast and _scroll_pot_mast.get('kind') == 'class_scroll_potency':
+            _scroll_pot_mult = 1.0 + float(_scroll_pot_mast.get('value', 0))
 
         if effect == 'heal':
             amount = roll(scroll.power) if scroll.power else 10
+            amount = max(1, int(amount * _scroll_pot_mult))
             self.player.restore_hp(amount)
             self.add_message(f"Healing light washes over you -- {amount} HP restored!", 'success')
 

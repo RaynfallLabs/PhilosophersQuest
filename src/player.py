@@ -418,6 +418,39 @@ class Player:
                 duration = max(1, duration // 2)
             if name in ('charmed', 'confused') and fams.get('aberration', {}).get('value'):
                 duration = max(1, duration - int(fams['aberration']['value']))
+        # class_acc_quirk mastery: matching ring class extends its signature
+        # buff duration. Applies for non-permanent (>0) buffs only — permanent
+        # ring statuses already last forever.
+        if duration > 0:
+            _CLASS_QUIRK_EFFECT_MAP = {
+                'speed_extend':     ('hasted',       ('ring_of_speed', 'amulet_of_speed')),
+                'invis_extend':     ('invisible',    ('ring_of_invisibility', 'amulet_of_invisibility')),
+                'levitate_extend':  ('levitating',   ('ring_of_levitation', 'amulet_of_levitation')),
+                'displace_extend':  ('displacement', ('ring_of_displacement', 'amulet_of_displacement')),
+            }
+            for _cls_id, _b in getattr(self, 'unlocked_class_masteries', {}).items():
+                if _b.get('kind') != 'class_acc_quirk':
+                    continue
+                _slug = _b.get('value', '')
+                _mapped = _CLASS_QUIRK_EFFECT_MAP.get(_slug)
+                if _mapped and name == _mapped[0] and _cls_id in _mapped[1]:
+                    duration = int(duration) + 4
+        # class_acc_buff_duration_bonus mastery (default fallback for
+        # accessories): +N turns to any buff added while a mastered ring/
+        # amulet of that class is equipped.
+        if duration > 0:
+            try:
+                from class_masteries import get_mastery_class as _gmc_b
+            except ImportError:
+                _gmc_b = None
+            if _gmc_b is not None:
+                _bonus = 0
+                for _acc in self.equipped_accessories:
+                    _m = self.unlocked_class_masteries.get(_gmc_b(_acc))
+                    if _m and _m.get('kind') == 'class_acc_buff_duration_bonus':
+                        _bonus += int(_m.get('value', 0))
+                if _bonus > 0:
+                    duration = int(duration) + _bonus
         return apply_effect(self, name, duration)
 
     def tick_effects(self) -> list:
@@ -461,6 +494,17 @@ class Player:
             m = self.unlocked_masteries.get(getattr(s, 'id', None))
             if m and m.get('kind') == 'armor_ac_bonus':
                 mastery_ac += int(m.get('value', 0))
+        # class_acc_ac_bonus mastery (Ring of Protection class): +N AC for each
+        # equipped ring of that class. Only fires while the ring is worn.
+        try:
+            from class_masteries import get_mastery_class as _gmc_ac
+        except ImportError:
+            _gmc_ac = None
+        if _gmc_ac is not None:
+            for s in self.equipped_accessories:
+                m = self.unlocked_class_masteries.get(_gmc_ac(s))
+                if m and m.get('kind') == 'class_acc_ac_bonus':
+                    mastery_ac += int(m.get('value', 0))
         # Leonidas Spartan Stand: +N AC while the stand_ac status holds.
         stand_ac = 0
         if self.status_effects.get('stand_ac', 0) > 0:
@@ -487,6 +531,22 @@ class Player:
                         mult *= max(0.0, 1.0 - pct)
         if self.shield and hasattr(self.shield, 'damage_resistances'):
             mult *= self.shield.damage_resistances.get(damage_type, 1.0)
+        # class_acc_resist_bonus mastery: matching equipped resist-ring applies
+        # an extra fractional reduction to the matching damage type.
+        try:
+            from class_masteries import get_mastery_class as _gmc_r
+        except ImportError:
+            _gmc_r = None
+        if _gmc_r is not None:
+            for acc in self.equipped_accessories:
+                m = self.unlocked_class_masteries.get(_gmc_r(acc))
+                if not m or m.get('kind') != 'class_acc_resist_bonus':
+                    continue
+                v = m.get('value') or {}
+                t = v.get('type')
+                amt = float(v.get('amount', 0))
+                if t == damage_type and amt > 0:
+                    mult *= max(0.0, 1.0 - amt)
         return mult
 
     def get_sight_radius(self) -> int:
@@ -541,6 +601,66 @@ class Player:
         if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
             base += shld.quiz_timer_bonus
         return base
+
+    def get_class_mastery_regen_bonus(self) -> int:
+        """Sum of class_acc_regen_bonus mastery values for currently equipped
+        ring/amulet of regeneration. Returns extra HP per regen tick.
+
+        Wired at the regen-tick site (main._tick_hp_regen) so the bonus only
+        fires while the regen accessory is worn — matches the intent of the
+        blessing description (per-ring class).
+        """
+        try:
+            from class_masteries import get_mastery_class as _gmc_re
+        except ImportError:
+            return 0
+        bonus = 0
+        for acc in self.equipped_accessories:
+            m = self.unlocked_class_masteries.get(_gmc_re(acc))
+            if m and m.get('kind') == 'class_acc_regen_bonus':
+                bonus += int(m.get('value', 0))
+        return bonus
+
+    def get_class_mastery_sp_burn_factor(self) -> float:
+        """Fractional reduction to SP drain rate from class_acc_sp_burn_bonus.
+
+        Returns 0.0 by default; e.g. 0.10 means SP drains 10% slower while a
+        mastered ring/amulet of sustenance is equipped. Wired at the SP-tick
+        site (main._tick_sp) — see drain_interval scaling.
+        """
+        try:
+            from class_masteries import get_mastery_class as _gmc_sp
+        except ImportError:
+            return 0.0
+        factor = 0.0
+        for acc in self.equipped_accessories:
+            m = self.unlocked_class_masteries.get(_gmc_sp(acc))
+            if m and m.get('kind') == 'class_acc_sp_burn_bonus':
+                factor += float(m.get('value', 0.0))
+        return factor
+
+    def get_class_mastery_passive_radius_bonus(self, class_slug: str) -> int:
+        """Extra search/warning/clairvoyance radius from class_acc_passive_radius.
+
+        class_slug is one of: 'searching', 'warning', 'clairvoyance',
+        'telepathy'. Returns total bonus from BOTH ring + amulet variants when
+        both are mastered + equipped.
+        """
+        try:
+            from class_masteries import get_mastery_class as _gmc_pr
+        except ImportError:
+            return 0
+        bonus = 0
+        ring_id = f'ring_of_{class_slug}'
+        amu_id = f'amulet_of_{class_slug}'
+        for acc in self.equipped_accessories:
+            cid = _gmc_pr(acc)
+            if cid not in (ring_id, amu_id):
+                continue
+            m = self.unlocked_class_masteries.get(cid)
+            if m and m.get('kind') == 'class_acc_passive_radius':
+                bonus += int(m.get('value', 0))
+        return bonus
 
     def get_carry_limit(self) -> int:
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR

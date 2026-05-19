@@ -392,6 +392,7 @@ def drink_potion(player, potion) -> list[str]:
     No quiz required. Effect applied immediately.
     """
     from dice import roll as roll_dice
+    from class_masteries import get_mastery_class
 
     effect   = potion.effect
     power    = potion.power
@@ -407,6 +408,16 @@ def drink_potion(player, potion) -> list[str]:
     _heal_mult = 1.5 if buc == 'blessed' else (0.5 if buc == 'cursed' else 1.0)
     _buff_mult = 1.5 if buc == 'blessed' else (0.5 if buc == 'cursed' else 1.0)
     _harm_mult = 0.0 if buc == 'blessed' else (1.5 if buc == 'cursed' else 1.0)
+
+    # --- Class mastery multipliers (commons) ---
+    # potion_potency_bonus: heal/extra_heal/full_heal amounts scaled up.
+    # potion_duration_bonus: matching potion class extends the buff duration.
+    _pot_class_mast = player.unlocked_class_masteries.get(
+        get_mastery_class(potion))
+    if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_potency_bonus':
+        _heal_mult *= 1.0 + float(_pot_class_mast.get('value', 0))
+    if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_duration_bonus':
+        duration = int(duration) + int(_pot_class_mast.get('value', 0))
 
     # --- Identification on use ---
     potion.identified = True

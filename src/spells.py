@@ -57,7 +57,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     'detect_magic_spell': {
         'name': 'Detect Magic', 'effect': 'identify_item', 'power': '',
         'mp_cost': 3, 'quiz_tier': 1, 'needs_target': False,
-        'desc': 'Identify one carried item.',
+        'desc': 'Reveal BUC of all wands/scrolls/spellbooks in sight (and pack at chain 3+).',
     },
     'blink_spell': {
         'name': 'Blink', 'effect': 'teleport_self', 'power': '',

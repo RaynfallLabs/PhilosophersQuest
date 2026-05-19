@@ -291,13 +291,13 @@ CLASS_MASTERY_BLESSINGS: dict[str, dict] = {
         'kind': 'potion_potency_bonus', 'value': 0.15, 'scope': 'class',
         'desc': 'Potions of full healing are 15% more potent in your hands.',
     },
-    'potion_of_speed': {
+    'potion_of_haste': {
         'kind': 'potion_duration_bonus', 'value': 4, 'scope': 'class',
-        'desc': 'Potions of speed last 4 turns longer when you drink them.',
+        'desc': 'Potions of haste last 4 turns longer when you drink them.',
     },
-    'potion_of_strength': {
+    'potion_of_heroism': {
         'kind': 'potion_duration_bonus', 'value': 4, 'scope': 'class',
-        'desc': 'Potions of strength last 4 turns longer in your bloodstream.',
+        'desc': 'Potions of heroism last 4 turns longer in your bloodstream.',
     },
 
     # -- Spellbooks (each id is its own class) --
