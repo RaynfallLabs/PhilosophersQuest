@@ -59,10 +59,10 @@ TRAP_TYPES = [
 # BSP tuning
 # ---------------------------------------------------------------------------
 
-_BSP_MIN_LEAF   = 7    # minimum region dimension before splitting stops
-_ROOM_PAD       = 1    # minimum tiles between room edge and region edge
+_BSP_MIN_LEAF   = 8    # minimum region dimension before splitting stops
+_ROOM_PAD       = 0    # rooms fill their leaf to the wall (denser packing)
 _ROOM_MIN_INNER = 3    # minimum interior (floor) tiles per axis
-_ROOM_MAX_INNER = 11   # maximum interior tiles per axis
+_ROOM_MAX_INNER = 18   # maximum interior tiles per axis (lets 'great hall' rooms appear)
 
 # Boss levels — skip maze generation and special terrain on these
 _BOSS_LEVELS = {20, 40, 60, 80, 100}
@@ -278,7 +278,8 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
     # -- 1. BSP partitioning --------------------------------------------------
     root   = _BSPNode(1, 1, width - 2, height - 2)
     queue  = [root]
-    target = min(7 + level, 16)
+    # Room count cap raised 16 -> 20 (2026-05-19) as part of room-density bump.
+    target = min(7 + level, 20)
 
     for _ in range(target * 6):
         leaves = [n for n in queue if n.is_leaf and max(n.w, n.h) >= _BSP_MIN_LEAF * 2]
