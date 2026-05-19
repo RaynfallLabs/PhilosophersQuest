@@ -1471,13 +1471,24 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     except Exception:
         pass  # merchant is optional; don't crash dungeon gen on error
 
-    # -- Special rooms ---------------------------------------------------------
-    SPECIAL_ROOM_CHANCE = 0.35
-    if rng.random() < SPECIAL_ROOM_CHANCE and len(rooms) > 3:
-        special_room = rng.choice(rooms[2:])
+    # -- Special rooms (up to 2 per floor) -------------------------------------
+    # First-roll: 40% chance. Second-roll: 25% chance (after first succeeded).
+    # Second special room picks a DIFFERENT room and a DIFFERENT type for variety.
+    _used_special_rooms: set = set()
+    _used_special_types: set = set()
+    _SPECIAL_ROOM_CHANCES = (0.40, 0.25)
+    for _attempt_idx, _attempt_chance in enumerate(_SPECIAL_ROOM_CHANCES):
+        if rng.random() >= _attempt_chance or len(rooms) <= 3:
+            continue
+        _available_rooms = [r for r in rooms[2:]
+                            if (r.x, r.y) not in _used_special_rooms]
+        if not _available_rooms:
+            continue
+        special_room = rng.choice(_available_rooms)
+        _used_special_rooms.add((special_room.x, special_room.y))
         cx, cy = special_room.center
 
-        # Build level-gated candidate list
+        # Build level-gated candidate list, excluding already-used types
         candidates = ['treasury', 'library', 'shrine', 'monster_den']
         if level >= 5:
             candidates.append('zoo')
@@ -1491,8 +1502,12 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             candidates.append('swamp')
         if level >= 18:
             candidates.append('throne_room')
+        candidates = [c for c in candidates if c not in _used_special_types]
+        if not candidates:
+            continue
 
         room_type = rng.choice(candidates)
+        _used_special_types.add(room_type)
         dungeon.special_rooms[(cx, cy)] = room_type
 
         if room_type == 'treasury':
