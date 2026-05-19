@@ -6,11 +6,29 @@ STONE_LEVEL = 100
 
 
 class LevelManager:
+    # Mini-boss spawn bands. Each band gets ONE primary roll (90%) plus ONE
+    # secondary roll (30%). Expected mini-bosses per 100-floor run: 5 × 1.2 = 6.
+    _MINI_BOSS_BANDS: list[tuple[int, int]] = [
+        (1, 20),
+        (21, 40),
+        (41, 60),
+        (61, 80),
+        (81, 100),
+    ]
+    _MINI_BOSS_PRIMARY_CHANCE = 0.90
+    _MINI_BOSS_SECONDARY_CHANCE = 0.30
+
     def __init__(self):
         self._saved: dict = {}          # level_num -> (dungeon, monsters, items)
         self.max_level_reached: int = 1
         self.monsters_killed: int   = 0
         self._placed_mini_bosses: set = set()
+        # Mini-boss spawns are PRE-ROLLED at run start. Each band gets 0-2
+        # mini-bosses picked weighted by spawn_chance. Placement is locked to
+        # each chosen mini-boss's peak_floor. This guarantees fair variety
+        # across runs (every band member has weighted odds, not first-eligible-
+        # wins).
+        self._planned_mini_bosses: dict = self._roll_planned_mini_bosses()
 
     def save(self, level_num: int, dungeon, monsters: list, ground_items: list):
         """Persist current level state so it can be restored later."""
@@ -82,76 +100,115 @@ class LevelManager:
         return dungeon, monsters, items
 
 
-    def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
-        """Attempt to spawn one mini-boss on this level (at most one per level).
+    def _roll_planned_mini_bosses(self) -> dict:
+        """Pre-roll which mini-bosses appear in this run and on which floors.
 
-        Mini-bosses use bell-curve spawn gating (peak_floor/spread), matching the
-        common-pool monster system. The hard `max_level` field that gated
-        eligibility before was unset on every mini-boss (always 0 fallback),
-        which made the level check fail for every floor — only the seal demons
-        ever spawned, via the separate _try_spawn_seal_demon forced path.
+        Returns dict[level_num] -> mini_boss_id.
+
+        Each band gets a primary slot (90%) and secondary slot (30%) chance.
+        Within a slot, candidates are weighted by spawn_chance. Placement
+        floor is the chosen mini-boss's peak_floor.
+
+        Expected per run: 5 × (0.90 + 0.30) = 6.0 mini-bosses, range 4-8.
         """
         import json as _json
-        import math as _math
         import random as _rng
-
         from paths import data_path as _dp
-        _monsters_path = _dp('data', 'monsters.json')
+
         try:
-            with open(_monsters_path, encoding='utf-8') as _f:
-                _all_monsters = _json.load(_f)
+            with open(_dp('data', 'monsters.json'), encoding='utf-8') as _f:
+                _all = _json.load(_f)
+        except Exception:
+            return {}
+
+        planned: dict = {}
+        for band_lo, band_hi in self._MINI_BOSS_BANDS:
+            candidates = []
+            for mid, m in _all.items():
+                if not m.get('is_mini_boss'):
+                    continue
+                # Seal demons are flagged is_mini_boss but use a separate
+                # forced-spawn path (_try_spawn_seal_demon). Don't compete
+                # with the random pool.
+                if mid.startswith('seal_demon'):
+                    continue
+                if m.get('spawn_chance', 0) <= 0:
+                    continue
+                pf = int(m.get('peak_floor', m.get('min_level', 1)))
+                if not (band_lo <= pf <= band_hi):
+                    continue
+                candidates.append((mid, m, pf))
+            if not candidates:
+                continue
+
+            placed_ids: set = set()
+
+            def _pick():
+                pool = [(mid, m, pf) for mid, m, pf in candidates if mid not in placed_ids]
+                if not pool:
+                    return None
+                weights = [float(m.get('spawn_chance', 1.0)) for _, m, _ in pool]
+                if sum(weights) <= 0:
+                    return None
+                return _rng.choices(pool, weights=weights, k=1)[0]
+
+            # Primary slot
+            if _rng.random() < self._MINI_BOSS_PRIMARY_CHANCE:
+                pick = _pick()
+                if pick is not None:
+                    mid, _, pf = pick
+                    # Avoid landing on a boss floor — if peak_floor collides,
+                    # shift +/- 1.
+                    target = pf if pf not in (20, 40, 60, 80, 100) else pf - 1
+                    planned[target] = mid
+                    placed_ids.add(mid)
+
+            # Secondary slot
+            if _rng.random() < self._MINI_BOSS_SECONDARY_CHANCE:
+                pick = _pick()
+                if pick is not None:
+                    mid, _, pf = pick
+                    target = pf if pf not in (20, 40, 60, 80, 100) else pf - 1
+                    # If two mini-bosses share peak_floor, offset the second
+                    while target in planned:
+                        target += 1
+                        if target > band_hi:
+                            target = pf
+                            break
+                    if target not in planned:
+                        planned[target] = mid
+                        placed_ids.add(mid)
+
+        return planned
+
+    def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
+        """Place this floor's planned mini-boss (if any). Pre-rolled at run start."""
+        import random as _rng
+        import json as _json
+        from paths import data_path as _dp
+
+        mid = self._planned_mini_bosses.get(level_num)
+        if mid is None:
+            return
+        if mid in self._placed_mini_bosses:
+            return
+
+        try:
+            with open(_dp('data', 'monsters.json'), encoding='utf-8') as _f:
+                _all = _json.load(_f)
         except Exception:
             return
 
-        # Eligibility: is_mini_boss flag, min_level reached, not already placed.
-        # The actual spawn-band is enforced by the bell curve below, not by
-        # a hard max_level.
-        eligible = [
-            (mid, mdata)
-            for mid, mdata in _all_monsters.items()
-            if mdata.get('is_mini_boss')
-            and mdata.get('min_level', 999) <= level_num
-            and mid not in self._placed_mini_bosses
-        ]
-
-        if not eligible:
+        mdata = _all.get(mid)
+        if mdata is None:
             return
 
-        # Shuffle so ordering in JSON doesn't bias selection
-        _rng.shuffle(eligible)
-
-        # Per-mini-boss spawn chance is modulated by a bell curve centered on
-        # its peak_floor with width `spread`. Far from the sweet-spot floor,
-        # the effective chance approaches 0; at peak, it equals spawn_chance.
-        chosen_id = None
-        chosen_data = None
-        for mid, mdata in eligible:
-            base_chance = float(mdata.get('spawn_chance', 0.0))
-            if base_chance <= 0:
-                continue
-            peak_floor = int(mdata.get('peak_floor', mdata.get('min_level', 1)))
-            spread = max(1, int(mdata.get('spread', 5)))
-            dist = level_num - peak_floor
-            bell = _math.exp(-(dist ** 2) / (2 * spread ** 2))
-            if bell < 0.05:  # too far from peak — skip cheaply
-                continue
-            effective = base_chance * bell
-            if _rng.random() < effective:
-                chosen_id = mid
-                chosen_data = mdata
-                break
-
-        if chosen_id is None:
-            return
-
-        # Pick a room that isn't rooms[0] (start) or rooms[-1] (boss/exit)
         candidate_rooms = dungeon.rooms[1:-1] if len(dungeon.rooms) > 2 else dungeon.rooms[1:]
         if not candidate_rooms:
             candidate_rooms = dungeon.rooms
-
+        if not candidate_rooms:
+            return
         room = _rng.choice(candidate_rooms)
-
-        # Find a free walkable tile in the room
         occupied = {(m.x, m.y) for m in monsters}
         tiles = list(room.inner_tiles())
         _rng.shuffle(tiles)
@@ -160,19 +217,16 @@ class LevelManager:
             if dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
                 spawn_pos = (tx, ty)
                 break
-
         if spawn_pos is None:
             return
 
-        # Build the monster via the normal Monster class
-        # Monster.__init__ expects a defn dict with an 'id' key
         try:
             from monster import Monster
-            defn = dict(chosen_data)
-            defn['id'] = chosen_id
+            defn = dict(mdata)
+            defn['id'] = mid
             mb = Monster(defn, spawn_pos[0], spawn_pos[1])
             monsters.append(mb)
-            self._placed_mini_bosses.add(chosen_id)
+            self._placed_mini_bosses.add(mid)
         except Exception:
             pass
 

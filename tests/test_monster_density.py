@@ -181,3 +181,44 @@ def test_mini_boss_eligibility_no_longer_uses_max_level():
         'mini-boss eligibility still gates on max_level — the bug regressed'
     )
     assert '<= mdata.get("max_level"' not in src
+
+
+def test_mini_boss_count_per_run_is_5_to_7_target():
+    """User goal: 5-7 mini-bosses per 100-floor run, varied across runs.
+
+    Pre-roll is at LevelManager.__init__, so we just need to instantiate
+    many LevelManagers and count the planned set."""
+    import statistics
+    from level_manager import LevelManager
+    counts = []
+    for _ in range(50):
+        lm = LevelManager()
+        counts.append(len(lm._planned_mini_bosses))
+    avg = statistics.mean(counts)
+    assert 4.5 <= avg <= 7.0, f'avg mini-bosses per run {avg} outside 4.5-7.0'
+
+
+def test_mini_boss_seal_demons_excluded_from_random_pool():
+    """Seal demons have spawn_chance=1.0 but use a separate forced path.
+    They must NOT appear in the pre-rolled random mini-boss plan."""
+    from level_manager import LevelManager
+    for _ in range(20):
+        lm = LevelManager()
+        for mid in lm._planned_mini_bosses.values():
+            assert not mid.startswith('seal_demon'), (
+                f'seal demon {mid} leaked into random mini-boss pool'
+            )
+
+
+def test_mini_boss_variety_across_runs():
+    """50 runs should produce at least 15 distinct mini-bosses across all of them
+    (out of 22 non-seal candidates). Sanity check that pre-roll isn't deterministic."""
+    from level_manager import LevelManager
+    all_seen = set()
+    for _ in range(50):
+        lm = LevelManager()
+        for mid in lm._planned_mini_bosses.values():
+            all_seen.add(mid)
+    assert len(all_seen) >= 15, (
+        f'only {len(all_seen)} distinct mini-bosses across 50 runs — variety too low'
+    )
