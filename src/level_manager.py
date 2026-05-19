@@ -83,8 +83,16 @@ class LevelManager:
 
 
     def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
-        """Attempt to spawn one mini-boss on this level (at most one per level)."""
+        """Attempt to spawn one mini-boss on this level (at most one per level).
+
+        Mini-bosses use bell-curve spawn gating (peak_floor/spread), matching the
+        common-pool monster system. The hard `max_level` field that gated
+        eligibility before was unset on every mini-boss (always 0 fallback),
+        which made the level check fail for every floor — only the seal demons
+        ever spawned, via the separate _try_spawn_seal_demon forced path.
+        """
         import json as _json
+        import math as _math
         import random as _rng
 
         from paths import data_path as _dp
@@ -95,12 +103,14 @@ class LevelManager:
         except Exception:
             return
 
-        # Filter to eligible mini-bosses for this level that haven't been placed
+        # Eligibility: is_mini_boss flag, min_level reached, not already placed.
+        # The actual spawn-band is enforced by the bell curve below, not by
+        # a hard max_level.
         eligible = [
             (mid, mdata)
             for mid, mdata in _all_monsters.items()
             if mdata.get('is_mini_boss')
-            and mdata.get('min_level', 999) <= level_num <= mdata.get('max_level', 0)
+            and mdata.get('min_level', 999) <= level_num
             and mid not in self._placed_mini_bosses
         ]
 
@@ -110,11 +120,23 @@ class LevelManager:
         # Shuffle so ordering in JSON doesn't bias selection
         _rng.shuffle(eligible)
 
-        # Roll spawn chance for each, stop at first success
+        # Per-mini-boss spawn chance is modulated by a bell curve centered on
+        # its peak_floor with width `spread`. Far from the sweet-spot floor,
+        # the effective chance approaches 0; at peak, it equals spawn_chance.
         chosen_id = None
         chosen_data = None
         for mid, mdata in eligible:
-            if _rng.random() < mdata.get('spawn_chance', 0.0):
+            base_chance = float(mdata.get('spawn_chance', 0.0))
+            if base_chance <= 0:
+                continue
+            peak_floor = int(mdata.get('peak_floor', mdata.get('min_level', 1)))
+            spread = max(1, int(mdata.get('spread', 5)))
+            dist = level_num - peak_floor
+            bell = _math.exp(-(dist ** 2) / (2 * spread ** 2))
+            if bell < 0.05:  # too far from peak — skip cheaply
+                continue
+            effective = base_chance * bell
+            if _rng.random() < effective:
                 chosen_id = mid
                 chosen_data = mdata
                 break

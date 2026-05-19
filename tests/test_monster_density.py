@@ -139,3 +139,45 @@ def test_l75_dungeon_has_dense_monster_count():
         counts.append(len([m for m in monsters if m.alive]))
     avg = statistics.mean(counts)
     assert avg >= 15, f'L75 avg monster count too low: {avg}'
+
+
+# ---------------------------------------------------------------------------
+# Mini-boss spawn (regression: max_level:0 used to gate everyone out)
+# ---------------------------------------------------------------------------
+
+def test_mini_bosses_can_spawn():
+    """Regression: prior to the bell-curve gating fix, every mini-boss was
+    blocked by a `level <= max_level (0)` check, so only seal demons ever
+    spawned. This sanity-checks that non-seal mini-bosses actually appear."""
+    from level_manager import LevelManager
+    seen_any = False
+    for trial in range(30):
+        lm = LevelManager()
+        for level in [9, 15, 25, 40, 55, 70, 85]:  # peak bands for various mini-bosses
+            _, monsters, _ = lm.generate(level)
+            for m in monsters:
+                if getattr(m, 'kind', '') in (
+                    'arachne', 'lamia', 'talos', 'echidna', 'erlking',
+                    'camazotz', 'cacus', 'the_sphinx', 'rangda',
+                    'nemean_lion', 'baba_yaga', 'green_knight', 'wendigo',
+                    'anansi', 'nidhoggr_fragment'
+                ):
+                    seen_any = True
+                    break
+            if seen_any:
+                break
+        if seen_any:
+            break
+    assert seen_any, '30 trials and no non-seal mini-boss spawned — gate is broken again'
+
+
+def test_mini_boss_eligibility_no_longer_uses_max_level():
+    """Lock in: the buggy `<= max_level` check has been removed from eligibility."""
+    import inspect
+    from level_manager import LevelManager
+    src = inspect.getsource(LevelManager._try_spawn_mini_boss)
+    # The bad pattern was: `level_num <= mdata.get('max_level', 0)`
+    assert "<= mdata.get('max_level'" not in src, (
+        'mini-boss eligibility still gates on max_level — the bug regressed'
+    )
+    assert '<= mdata.get("max_level"' not in src
