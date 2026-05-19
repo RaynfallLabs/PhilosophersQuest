@@ -1032,6 +1032,10 @@ class MagicMixin:
         if not spell:
             return
         mp_cost = spell['mp_cost']
+        from chain_passives import consume_passive_charge
+        if consume_passive_charge(self.player, 'free_cast_once_per_floor'):
+            mp_cost = 0
+            self.add_message("The Robe of the Magus drinks the spell's cost!", 'success')
         if self.player.mp < mp_cost:
             self.add_message(
                 f"Not enough MP to cast {spell['name']}! "
@@ -1106,9 +1110,12 @@ class MagicMixin:
     _SPELL_CHAIN_MULTS = [0.5, 1.0, 1.8, 2.8, 4.0]
 
     def _spell_damage(self, base_dmg: int, chain: int) -> int:
-        """Scale spell damage by chain multiplier AND INT."""
+        """Scale spell damage by chain multiplier + INT + chain-equip passives."""
+        from chain_passives import apply_spell_damage_passives
         mult = self._SPELL_CHAIN_MULTS[min(chain - 1, len(self._SPELL_CHAIN_MULTS) - 1)]
-        return max(1, int(base_dmg * mult * (1.0 + self.player.INT * 0.1)))
+        dmg, c, a = apply_spell_damage_passives(self.player, base_dmg * mult * (1.0 + self.player.INT * 0.1))
+        self._last_spell_crit, self._last_spell_anti_being = c, a
+        return max(1, int(dmg))
 
     def _apply_spell_effect(self, spell: dict, chain: int, target=None):
         """Apply a learned spell's effect. Chain 1-5 scales damage/duration."""
@@ -1749,10 +1756,17 @@ class MagicMixin:
             self.state = STATE_PLAYER
 
             if not result.success:
+                # Chain-equip passive: scroll_save_on_fail (Ring of Scheherazade).
+                # On quiz fail, the scroll survives but is not identified.
+                try:
+                    from chain_passives import player_has_passive
+                    _saved = player_has_passive(self.player, 'scroll_save_on_fail')
+                except ImportError:
+                    _saved = False
                 # Quest scrolls (single-copy) survive a bad read AND keep their
                 # mystery — the scroll's purpose is too heavy to be uncovered
                 # by a half-read. Each one gets its own lore-flavored refusal.
-                if getattr(scroll, 'single_copy', False):
+                if getattr(scroll, 'single_copy', False) or _saved:
                     if scroll.id == 'scroll_lake_of_fire':
                         self.add_message(
                             "The words swim across the page. They are not for this hour, "
@@ -1762,6 +1776,10 @@ class MagicMixin:
                         self.add_message(
                             "The names of Death grow heavy on the page. Steady your breath. "
                             "Try again when the words will hold.", 'warning')
+                    elif _saved:
+                        self.add_message(
+                            "The Ring of Scheherazade steadies the page -- the scroll survives, unread.",
+                            'warning')
                     else:
                         self.add_message(
                             "The page resists you. Its time is not now.", 'warning')
@@ -1799,12 +1817,20 @@ class MagicMixin:
             self._apply_scroll_effect(scroll)
             self._advance_turn()
 
+        # Chain-equip passive: grammar_chain_cap_bonus lowers scroll threshold.
+        _threshold = scroll.quiz_threshold
+        try:
+            from chain_passives import get_grammar_chain_cap_bonus
+            _threshold = max(1, _threshold - get_grammar_chain_cap_bonus(self.player))
+        except ImportError:
+            pass
+
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='grammar',
             tier=scroll.quiz_tier,
             callback=on_complete,
-            threshold=scroll.quiz_threshold,
+            threshold=_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
@@ -2526,12 +2552,20 @@ class MagicMixin:
                     "The text resists your understanding. Try again.", 'warning')
             self._advance_turn()
 
+        # Chain-equip passive: spellbook_chain_bonus lowers the threshold required.
+        _threshold = book.quiz_threshold
+        try:
+            from chain_passives import get_spellbook_chain_bonus
+            _threshold = max(1, _threshold - get_spellbook_chain_bonus(self.player))
+        except ImportError:
+            pass
+
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='grammar',
             tier=book.quiz_tier,
             callback=on_complete,
-            threshold=book.quiz_threshold,
+            threshold=_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus(),

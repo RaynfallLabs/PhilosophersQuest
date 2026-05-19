@@ -1663,16 +1663,32 @@ class CombatMixin:
                             m.alive = False
                             self._on_monster_killed(m)
 
-                # Babr-e Bayan: absorb first hit per floor
+                # Babr-e Bayan: absorb first hit per floor.
+                # Also handles chain-equip passive `first_hit_absorb` (Armor of Ragnarok).
                 if dmg > 0 and not getattr(self, '_first_hit_used', False):
+                    _absorbed = False
                     for _arm_slot in self.player.armor_slots:
                         if _arm_slot and getattr(_arm_slot, 'first_hit_absorb', False):
                             self.player.hp = min(self.player.max_hp, self.player.hp + dmg)
                             self._first_hit_used = True
                             self.add_message("The tiger-skin absorbs the blow completely!", 'success')
+                            _absorbed = True
                             break
+                    if not _absorbed:
+                        try:
+                            from chain_passives import player_has_passive
+                            if player_has_passive(self.player, 'first_hit_absorb'):
+                                self.player.hp = min(self.player.max_hp, self.player.hp + dmg)
+                                self._first_hit_used = True
+                                self.add_message(
+                                    "Your armor turns aside the first blow!", 'success')
+                        except ImportError:
+                            pass
 
-                # Jade Cicada: death save (once per floor)
+                # Jade Cicada: death save (once per floor).
+                # death_save_bonus (chain-equip) adds to the d20 roll determining
+                # whether non-Cicada death-saves succeed — and `life_save_resets_per_floor`
+                # refreshes the `life_save` status effect each floor.
                 if self.player.hp <= 0 and not getattr(self, '_death_save_used', False):
                     for _acc in self.player.equipped_accessories:
                         if getattr(_acc, 'death_save', False):
@@ -1681,6 +1697,51 @@ class CombatMixin:
                             self.add_message("The jade cicada cracks — but holds! You cling to life!", 'success')
                             _snd.play('player_healed')
                             break
+
+                # Chain-equip passive: reassembly (Tyet of Isis T5) — once per run,
+                # restore to full HP + 10 turns regen on lethal damage.
+                if self.player.hp <= 0:
+                    try:
+                        from chain_passives import consume_run_passive
+                        if consume_run_passive(self.player, 'reassembly'):
+                            self.player.hp = self.player.max_hp
+                            self.player._reassembly_regen_remaining = 10
+                            self.add_message(
+                                "The Tyet of Isis reassembles you from death!", 'success')
+                    except ImportError:
+                        pass
+
+                # Chain-equip passive: second_beheading_returns (Green Knight's Plate).
+                # On death, revive at full HP next floor; armor is broken.
+                if self.player.hp <= 0:
+                    try:
+                        from chain_passives import (
+                            consume_run_passive, find_passive_item,
+                        )
+                        if consume_run_passive(self.player, 'second_beheading_returns'):
+                            self.player.hp = self.player.max_hp
+                            self.add_message(
+                                "GREEN KNIGHT'S OATH: your second beheading returns!", 'success')
+                            # Break the armor: clear its chain bonuses
+                            _src = find_passive_item(self.player, 'second_beheading_returns')
+                            if _src is not None and _src in self.player.armor_slots:
+                                idx = self.player.armor_slots.index(_src)
+                                self.player.armor_slots[idx] = None
+                    except ImportError:
+                        pass
+
+                # Chain-equip passive: psychopomp_step (Winged Sandals of Hermes T5).
+                # On death, ascend one floor with 1 HP. Once per run.
+                if self.player.hp <= 0 and self.dungeon_level > 1:
+                    try:
+                        from chain_passives import consume_run_passive
+                        if consume_run_passive(self.player, 'psychopomp_step'):
+                            self.player.hp = 1
+                            self.add_message(
+                                "WINGED SANDALS OF HERMES: a psychopomp's step pulls you back!", 'success')
+                            self._change_level(self.dungeon_level - 1, enter_from_top=False)
+                    except ImportError:
+                        pass
 
                 # Ankh of Isis: resurrect on death (consumes the item). Mastery
                 # `resurrect_to_full` (unlocked by chain-5 identify on Ankh)

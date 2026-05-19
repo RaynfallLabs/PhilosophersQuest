@@ -209,6 +209,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._encountered_flavor_npcs: set = set()
 
         self._new_level(1)
+        # Per-run trackers for chain-equip passives. Per-floor charges are
+        # initialised here so first-floor access doesn't AttributeError.
+        from chain_passives import reset_per_floor_charges
+        reset_per_floor_charges(self.player)
+        self.player._chain_passive_once_per_run = set()
+        self.player._gorgoneion_used_this_floor = False
+        self.player._chain_move_counter = 0
+        self.player._chain_no_move_counter = 0
+        self.player._reassembly_regen_remaining = 0
+        self.player._dragon_blood_active = False
+        self.player._death_omen_target = None
+        self.player._anti_being_charged = False
         self._show_story_popup('dungeon_entrance', STATE_PLAYER)
 
     # ------------------------------------------------------------------
@@ -413,6 +425,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player._stand_counter_pct = 0
         if not hasattr(self.player, '_elder_blood_escape_used'):
             self.player._elder_blood_escape_used = False
+        # Chain-equip passive tracking (per-floor charges + per-run flags).
+        if not hasattr(self.player, '_chain_passive_charges'):
+            self.player._chain_passive_charges = {}
+        if not hasattr(self.player, '_chain_passive_once_per_run'):
+            self.player._chain_passive_once_per_run = set()
+        for _attr, _default in (
+            ('_gorgoneion_used_this_floor', False),
+            ('_chain_move_counter', 0),
+            ('_chain_no_move_counter', 0),
+            ('_reassembly_regen_remaining', 0),
+            ('_dragon_blood_active', False),
+            ('_death_omen_target', None),
+            ('_anti_being_charged', False),
+        ):
+            if not hasattr(self.player, _attr):
+                setattr(self.player, _attr, _default)
         # BUC migration: patch buc/buc_known on all items from old saves
         self._migrate_buc_all(state)
         self.player_name   = state['player_name']
@@ -580,6 +608,30 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._elder_blood_escape_used = False   # Ciri auto-teleport
         self._quiz_reroll_used = False  # Tablet of Destinies
         self._tarnhelm_used = False     # Tarnhelm
+        # Chain-equip per-floor passive charges (free_cast, free_escape,
+        # huginn_muninn, demon_command, etc.) reset on every floor change.
+        from chain_passives import reset_per_floor_charges
+        reset_per_floor_charges(self.player)
+        # Per-floor mechanic markers used by named passives (greater Aegis
+        # gorgoneion, identify-free, etc.). Cheap to reset every time.
+        self.player._gorgoneion_used_this_floor = False
+        # Counter for free_move_every_10 (anklet_of_atalanta).
+        if not hasattr(self.player, '_chain_move_counter'):
+            self.player._chain_move_counter = 0
+        # Reassembly buffer used by tyet_of_isis T5.
+        self.player._reassembly_regen_remaining = 0
+        # Three apples (anklet_of_atalanta) per-floor charge — see consume_passive_charge.
+        # Dragon-blood bath (dragon_mail_of_sigurd) is once per floor toggle.
+        self.player._dragon_blood_active = False
+        # Mark of doom (death_omen_mark): updated lazily by EncountersMixin/turn tick.
+        if not hasattr(self.player, '_death_omen_target'):
+            self.player._death_omen_target = None
+        # Anti-being charged spell (heart_of_ahriman): True if next destructive
+        # spell deals 2x damage; consumed on spell cast.
+        if not hasattr(self.player, '_anti_being_charged'):
+            self.player._anti_being_charged = False
+        # No-move tracker for unseen_when_still (Helm of Hades T5).
+        self.player._chain_no_move_counter = 0
 
         # Abaddon empowered by negative karma: boost HP on first entry to L100
         if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
@@ -1116,6 +1168,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         nx, ny = self.player.x + dx, self.player.y + dy
 
+        # Track player facing direction (used by back_attack_weakness passive).
+        if dx != 0 or dy != 0:
+            self.player._facing_dx = dx
+            self.player._facing_dy = dy
+
         target = next(
             (m for m in self.monsters if m.alive and m.x == nx and m.y == ny), None
         )
@@ -1251,7 +1308,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.state != STATE_DEAD:
                 self._notify_stairs(self.player.x, self.player.y)
                 self._notify_ground(self.player.x, self.player.y)
-                self._advance_turn()
+                # Chain-equip passive: free_move_every_10 (Anklet of Atalanta).
+                # Every 10th move is a free action — skip advance_turn entirely.
+                _free_move = False
+                try:
+                    from chain_passives import player_has_passive
+                    if player_has_passive(self.player, 'free_move_every_10'):
+                        self.player._chain_move_counter = (
+                            getattr(self.player, '_chain_move_counter', 0) + 1
+                        )
+                        if self.player._chain_move_counter >= 10:
+                            self.player._chain_move_counter = 0
+                            _free_move = True
+                            self.add_message(
+                                "Atalanta's anklet gives you a free step!", 'success')
+                except ImportError:
+                    pass
+                if not _free_move:
+                    self._advance_turn()
                 # Haste: grant a free second step in the same direction
                 if (self.player.has_effect('hasted') and self.state == STATE_PLAYER
                         and not getattr(self, '_haste_active', False)):
@@ -2348,8 +2422,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _tick_sp(self):
         # Base SP drain: 1 per 2 moves (0.5/move effective)
         # Ring of Sustenance halves again (1 per 4 moves)
+        # Beast-family mastery (sp_regen): adds Nx more turns between drains.
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
         drain_interval = 4 if self.player.has_effect('sustained') else 2
+        fams = getattr(self.player, 'unlocked_monster_class_masteries', {})
+        beast = fams.get('beast')
+        if beast and beast.get('kind') == 'sp_regen':
+            drain_interval += int(beast.get('value', 0))
+        # Chain-equip passive: hunger_slow (Idunn Apple Charm). Multiplier
+        # on the drain interval -- 0.33 adds 33% more ticks between drains.
+        try:
+            from chain_passives import get_hunger_slow_factor
+            hs = get_hunger_slow_factor(self.player)
+            if hs > 0:
+                drain_interval = max(2, int(round(drain_interval * (1.0 + hs))))
+        except ImportError:
+            pass
         if self._sp_drain_tick % drain_interval != 0:
             return
         if self.player.sp > 0:
@@ -2374,7 +2462,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         Chain-equip tier_bonuses can set `player.regen_bonus`, which adds extra
         HP per tick (e.g. Cloak of the Morrigan T2+, Helm of Aragorn T3+).
+
+        Reassembly (chain-equip Tyet T5) grants a 10-turn aggressive-regen
+        window after a near-death save; ticks down here.
         """
+        # Reassembly regen: fast HP regen window after Tyet T5 save.
+        if getattr(self.player, '_reassembly_regen_remaining', 0) > 0:
+            self.player._reassembly_regen_remaining -= 1
+            self.player.restore_hp(max(1, self.player.max_hp // 20))
+            return
+
         if self.player.hp >= self.player.max_hp:
             return
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
@@ -3435,8 +3532,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 )
             self._advance_turn()
 
+        # Engine accepts 'escalator_chain' and 'chain'. JSON uses these names
+        # directly; the lenient fallback exists for legacy data only.
+        if mode not in ('escalator_chain', 'chain'):
+            mode = 'escalator_chain'
         self.quiz_engine.start_quiz(
-            mode=mode if mode in ('escalator_chain', 'chain') else 'escalator_chain',
+            mode=mode,
             subject=subject,
             tier=int(getattr(item, 'quiz_tier', 1)),
             callback=on_complete,

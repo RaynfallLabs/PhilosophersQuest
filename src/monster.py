@@ -399,6 +399,26 @@ class Monster:
         if self.has_effect('weakened'):
             dmg = max(1, dmg // 2)
 
+        # Chain-equip passive: back_attack_weakness (dragon_mail_of_sigurd).
+        # Multiplier on incoming damage when monster is in the player's "rear arc"
+        # (opposite to the player's facing). Treated as 1.5x by default.
+        try:
+            from chain_passives import get_back_attack_multiplier
+            back_mult = get_back_attack_multiplier(player)
+            if back_mult > 1.0:
+                fx = getattr(player, '_facing_dx', 0)
+                fy = getattr(player, '_facing_dy', 0)
+                if fx or fy:
+                    # Vector from player to attacker
+                    rx = self.x - player.x
+                    ry = self.y - player.y
+                    # "Behind" if the dot product of facing and monster-direction
+                    # is negative (monster lies opposite to where we're facing).
+                    if (fx * rx + fy * ry) < 0:
+                        dmg = max(1, int(dmg * back_mult))
+        except ImportError:
+            pass
+
         actual = player.take_damage(dmg, atk_type)
 
         msg = f"The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"

@@ -610,6 +610,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     if _max_chain and weapon:
         if getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id') == weapon.id:
             _max_chain += 1
+    # Chain-equip passive: attack_chain_cap_bonus (Ring of Gawain etc.)
+    try:
+        from chain_passives import get_attack_chain_cap_bonus
+        _max_chain += get_attack_chain_cap_bonus(player)
+    except ImportError:
+        pass
 
     quiz_engine.start_quiz(
         mode='chain',

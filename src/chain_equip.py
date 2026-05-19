@@ -135,6 +135,15 @@ def apply_tier_bonuses(player, item, tier: int) -> None:
         elif key.startswith('passive_'):
             flag = key[len('passive_'):]
             item._chain_passives[flag] = value
+            # Stat-like passives that need to mutate player state on equip.
+            # (Keeping the flag in _chain_passives too lets lookup helpers
+            # surface them in tooltips and tests.)
+            if flag in ('mp_bonus', 'max_mp_bonus'):
+                bonus = int(value)
+                player.max_mp = getattr(player, 'max_mp', 0) + bonus
+                player.mp = min(getattr(player, 'mp', 0) + bonus,
+                                player.max_mp)
+                item._chain_mp_bonus = bonus
         elif key.startswith('status_'):
             status_name = key[len('status_'):]
             duration = int(value) if isinstance(value, (int, float)) else 1
@@ -175,6 +184,13 @@ def revert_tier_bonuses(player, item) -> None:
     regen = getattr(item, '_chain_regen', 0)
     if regen and hasattr(player, 'regen_bonus'):
         player.regen_bonus -= regen
+
+    # Revert mp_bonus / max_mp_bonus
+    mp_bonus = getattr(item, '_chain_mp_bonus', 0)
+    if mp_bonus and hasattr(player, 'max_mp'):
+        player.max_mp = max(0, player.max_mp - mp_bonus)
+        player.mp = min(player.mp, player.max_mp)
+        item._chain_mp_bonus = 0
 
     # Drop statuses
     for status_name in getattr(item, '_chain_statuses', []):
