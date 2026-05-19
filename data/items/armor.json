@@ -176,7 +176,7 @@
     "peak_weight": 0.3,
     "template_basis": "scale",
     "is_unique": true,
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 4,
@@ -399,7 +399,7 @@
     "peak_weight": 0.3,
     "template_basis": "plate_helm",
     "is_unique": true,
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 2
@@ -695,7 +695,7 @@
     "peak_weight": 0.35,
     "template_basis": "cloak",
     "is_unique": true,
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 2,
@@ -864,7 +864,7 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 1,
@@ -1124,7 +1124,7 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_green_knight",
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 5,
@@ -1409,7 +1409,7 @@
     "peak_weight": 0.5,
     "template_basis": "steel_helm",
     "is_unique": true,
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 2,
@@ -2329,7 +2329,7 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 2,
@@ -2669,7 +2669,7 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 3,
@@ -2754,7 +2754,7 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 3,
@@ -2849,7 +2849,7 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "ac_bonus": 4,

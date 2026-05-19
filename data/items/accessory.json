@@ -4059,7 +4059,7 @@
       "status": "telepathy",
       "duration": -1
     },
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "stat_bonus_INT": 1,
@@ -4403,7 +4403,7 @@
       "second_stat": "CON",
       "second_amount": -2
     },
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "stat_bonus_WIS": 2,
@@ -4506,7 +4506,7 @@
       "stat": "INT",
       "amount": 5
     },
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "stat_bonus_INT": 2
@@ -4571,7 +4571,7 @@
       "stat": "WIS",
       "amount": 2
     },
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "stat_bonus_WIS": 2
@@ -6209,48 +6209,6 @@
       "desc": "Izanagi's Rope divides the world of the living from the dead — PER rises by 2 permanently."
     }
   },
-  "girdle_of_hippolyta": {
-    "name": "Girdle of Hippolyta",
-    "slot": "amulet",
-    "effects": {
-      "stat": "STR",
-      "amount": 3
-    },
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "weight": 0.2,
-    "value": 4000,
-    "min_level": 22,
-    "identified": false,
-    "unidentified_name": "a wide golden war-belt",
-    "lore": "Hippolyta, queen of the Amazons, wore this girdle as proof of her supremacy among warriors. Ares himself gave it to her. Heracles took it as his ninth labor — though whether by force or diplomacy depends on which version you trust. The belt makes its wearer formidable in close combat.",
-    "containerLootTier": "rare",
-    "symbol": "=",
-    "color": [
-      255,
-      200,
-      50
-    ],
-    "floorSpawnWeight": {
-      "1-21": 0,
-      "22-40": 5,
-      "41-60": 3,
-      "61-100": 1
-    },
-    "peak_weight": 0.4,
-    "is_unique": true,
-    "spread": 12,
-    "peak_floor": 27,
-    "mastery_blessing": {
-      "kind": "accessory_stat_bonus",
-      "value": {
-        "stat": "STR",
-        "amount": 2
-      },
-      "scope": "item",
-      "desc": "The Girdle of Hippolyta was Ares's gift to the Amazon queen — STR rises by 2 permanently."
-    }
-  },
   "silverlight_pendant": {
     "name": "Silverlight Pendant",
     "slot": "amulet",
@@ -6919,7 +6877,7 @@
       "status": "fire_resist",
       "duration": -1
     },
-    "equip_chain_mode": "escalator",
+    "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
         "stat_bonus_CON": 3,
@@ -7028,5 +6986,48 @@
     "tier": 1,
     "unidentified_name": "iron ring",
     "lore": "A simple ring of cold-forged iron, banded for stability. Plain in design but stout in protection."
+  },
+  "amulet_of_hippolyta": {
+    "name": "Amulet of Hippolyta",
+    "slot": "amulet",
+    "effects": {
+      "stat": "STR",
+      "amount": 3
+    },
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "weight": 0.2,
+    "value": 4000,
+    "min_level": 22,
+    "identified": false,
+    "unidentified_name": "a wide golden war-belt",
+    "lore": "Hippolyta, queen of the Amazons, wore this girdle as proof of her supremacy among warriors. Ares himself gave it to her. Heracles took it as his ninth labor — though whether by force or diplomacy depends on which version you trust. The belt makes its wearer formidable in close combat.",
+    "containerLootTier": "rare",
+    "symbol": "=",
+    "color": [
+      255,
+      200,
+      50
+    ],
+    "floorSpawnWeight": {
+      "1-21": 0,
+      "22-40": 5,
+      "41-60": 3,
+      "61-100": 1
+    },
+    "peak_weight": 0.4,
+    "is_unique": true,
+    "spread": 12,
+    "peak_floor": 27,
+    "mastery_blessing": {
+      "kind": "accessory_stat_bonus",
+      "value": {
+        "stat": "STR",
+        "amount": 2
+      },
+      "scope": "item",
+      "desc": "The Girdle of Hippolyta was Ares's gift to the Amazon queen — STR rises by 2 permanently."
+    },
+    "id": "amulet_of_hippolyta"
   }
 }
