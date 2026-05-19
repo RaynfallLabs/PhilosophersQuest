@@ -2996,7 +2996,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Chronicle notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
                 'philosophers_stone', 'ariadnes_thread', 'bronze_bull',
-                'eye_of_the_graeae', 'broken_blade_of_gram', 'gleipnir',
+                'eye_of_graeae', 'broken_gram', 'gleipnir',
                 'vidars_sandal', 'scales_of_michael', 'sword_of_michael',
                 'magic_dungeon_carrot',
                 'cats_footstep', 'womans_beard', 'mountain_root',
@@ -3010,8 +3010,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'philosophers_stone': "Found the Philosopher's Stone. My hands are shaking. Time to get out of here.",
                     'ariadnes_thread': "Picked up a strange golden thread. It feels warm, almost alive.",
                     'bronze_bull': "Found a bronze idol shaped like a bull. Heavy. Old. Feels important.",
-                    'eye_of_the_graeae': "A milky white eye, still wet. I don't want to think about where it came from.",
-                    'broken_blade_of_gram': "Half a legendary sword. Even broken, the edge could shave a thought.",
+                    'eye_of_graeae': "A milky white eye, still wet. I don't want to think about where it came from.",
+                    'broken_gram': "Half a legendary sword. Even broken, the edge could shave a thought.",
                     'gleipnir': "Gleipnir. Thin as a ribbon but I can't break it. Nothing can.",
                     'vidars_sandal': "A sandal made for a god. It's enormous. And somehow, it fits.",
                     'scales_of_michael': "The Scales hover in my hands. I feel the weight of every choice I've made.",
