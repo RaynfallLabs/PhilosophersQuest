@@ -173,6 +173,13 @@ class Armor(Item):
         self.invisibility_cooldown: int = int(defn.get('invisibility_cooldown', 0))
         # True for named/legendary armors; controls spawn pool filtering.
         self.is_unique: bool         = bool(defn.get('is_unique', False))
+        # Chain-equip fields (legendary uniques only). When equip_chain_mode is set
+        # to 'escalator' or 'chain', equipping triggers that quiz mode instead of
+        # threshold. tier_bonuses maps chain-rung (1-5) -> bonus dict.
+        self.equip_chain_mode: str   = defn.get('equip_chain_mode', '')
+        self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
+        self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
+        self.achieved_tier: int      = 0   # runtime — set after equip quiz
 
     @property
     def cursed(self) -> bool:
@@ -205,6 +212,11 @@ class Shield(Item):
         self.quiz_timer_bonus: int   = int(defn.get('quiz_timer_bonus', 0))
         # True for named/legendary shields; controls spawn pool filtering.
         self.is_unique: bool         = bool(defn.get('is_unique', False))
+        # Chain-equip fields (see Armor)
+        self.equip_chain_mode: str   = defn.get('equip_chain_mode', '')
+        self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
+        self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
+        self.achieved_tier: int      = 0
 
     @property
     def cursed(self) -> bool:
@@ -235,6 +247,13 @@ class Accessory(Item):
         self.pacify_chance: float        = float(defn.get('pacify_chance', 0.0))       # Seal of Solomon
         self.death_save: bool            = bool(defn.get('death_save', False))         # Jade Cicada
         self.resurrect_on_death: bool    = bool(defn.get('resurrect_on_death', False)) # Ankh of Isis
+        # Chain-equip fields (legendary uniques only). When equip_chain_mode is set
+        # to 'escalator' or 'chain', equipping triggers that quiz mode. Default
+        # subject for accessories is 'history' if equip_chain_subject is empty.
+        self.equip_chain_mode: str   = defn.get('equip_chain_mode', '')
+        self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
+        self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
+        self.achieved_tier: int      = 0
 
     @property
     def cursed(self) -> bool:
@@ -377,9 +396,40 @@ class Corpse(Item):
         self.ingredient_id     = ingredient_id
         self.lore              = lore
         self.monster_def       = monster_def or {}   # full definition for stat display
-        self.lore_identified   = False
+        # Escalator-chain identify level (0..5):
+        #   0 nothing, 1 name+symbol, 2 basic stats, 3 weak/resist/tags,
+        #   4 full lore, 5 family mastery unlocked. lore_identified is a
+        #   property reflecting id_level >= 4 (backward compat).
+        self.id_level: int     = 0
         self.x = x
         self.y = y
+
+    @property
+    def lore_identified(self) -> bool:
+        """True once id_level >= 4 (lore tier achieved). Back-compat shim."""
+        return int(getattr(self, 'id_level', 0)) >= 4
+
+    @lore_identified.setter
+    def lore_identified(self, value: bool):
+        """Legacy setter: True bumps id_level to >=4; False resets to 0."""
+        if value:
+            self.id_level = max(int(getattr(self, 'id_level', 0)), 4)
+        else:
+            self.id_level = 0
+
+    def __setstate__(self, state):
+        """Migrate old pickled corpses to the new id_level field.
+
+        Old saves stored `lore_identified` as a plain instance attribute that
+        would shadow the new property. Drop it from __dict__ and translate to
+        id_level >= 4 if it was set.
+        """
+        legacy = bool(state.pop('lore_identified', False))
+        if 'id_level' not in state:
+            state['id_level'] = 4 if legacy else 0
+        elif legacy and int(state.get('id_level', 0)) < 4:
+            state['id_level'] = max(int(state['id_level']), 4)
+        self.__dict__.update(state)
 
 
 class Ammo(Item):

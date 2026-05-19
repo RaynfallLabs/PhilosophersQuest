@@ -385,6 +385,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.unlocked_class_masteries = {}
         if not hasattr(self.player, 'known_class_ids'):
             self.player.known_class_ids = set()
+        # Per-family monster mastery (corpse-identify chain 5): added with
+        # the corpse-identify rebuild. Older saves default to empty.
+        if not hasattr(self.player, 'unlocked_monster_class_masteries'):
+            self.player.unlocked_monster_class_masteries = {}
         # Phase 3 hero specials — new fields in 2026-05-17 build rebuild
         if not hasattr(self.player, 'hero_passives'):
             self.player.hero_passives = set()
@@ -3194,10 +3198,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _unequip_slot(self, slot_name: str, item):
         """Remove an equipped item and return it to inventory."""
         from items import ARMOR_SLOTS
+        from chain_equip import is_chain_equip, revert_tier_bonuses
         ok, msg = self.player.try_unequip_slot(item)
         if not ok:
             self.add_message(msg, 'warning')
             return
+        # Revert chain-equip tier bonuses BEFORE slot bookkeeping so player
+        # state reflects baseline by the time the item returns to inventory.
+        if is_chain_equip(item) and getattr(item, 'achieved_tier', 0) > 0:
+            revert_tier_bonuses(self.player, item)
         # Remove from the appropriate slot
         if slot_name == 'weapon':
             self.player.weapon = None
@@ -3243,7 +3252,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._advance_turn()
 
     def _start_armor_quiz(self, item):
-        """Launch geography threshold quiz to equip armor or shield."""
+        """Launch geography threshold quiz to equip armor or shield.
+
+        Legendary uniques with `equip_chain_mode` route to chain-equip instead.
+        """
+        from chain_equip import is_chain_equip
+        if is_chain_equip(item):
+            self._start_chain_equip_quiz(item, item_type='armor')
+            return
         item_name = self._display_name(item)
         cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  GEOGRAPHY"
@@ -3303,6 +3319,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message("All ring slots are full!", 'warning')
             return
 
+        # Legendary uniques with `equip_chain_mode` route to chain-equip
+        from chain_equip import is_chain_equip
+        if is_chain_equip(item):
+            self._start_chain_equip_quiz(item, item_type='accessory')
+            return
+
         item_name = self._display_name(item)
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  HISTORY"
         self.state = STATE_QUIZ
@@ -3339,6 +3361,66 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('history'),
             base_seconds=self.player.get_quiz_timer('history'),
+        )
+
+    # ------------------------------------------------------------------
+    # Chain-equip: legendary uniques with escalator/chain mode equip-quiz
+    # ------------------------------------------------------------------
+
+    def _start_chain_equip_quiz(self, item, item_type: str = 'armor'):
+        """Launch escalator-chain or chain quiz to equip a legendary unique.
+
+        The chain length achieved determines tier_bonuses applied via
+        chain_equip.apply_tier_bonuses(). Fresh quiz every equip — no
+        sticky state. On failure the item is NOT equipped.
+        """
+        from chain_equip import get_chain_subject, get_chain_mode, apply_tier_bonuses
+        item_name = self._display_name(item)
+        cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
+        subject = get_chain_subject(item)
+        mode = get_chain_mode(item)
+        self.quiz_title = f"ATTUNING TO {item_name.upper()}  --  {subject.upper()}"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            chain = int(getattr(result, 'chain', 0))
+            # In chain mode you can fail rung 1 (chain=0). In escalator-chain
+            # you must pass tier 1 to start the chain (chain >= 1 = success).
+            if chain >= 1:
+                apply_tier_bonuses(self.player, item, chain)
+                # Now actually equip
+                self.player._apply_equip(item)
+                self.player.remove_from_inventory(item)
+                ac = self.player.get_ac()
+                self.add_message(
+                    f"You attune to the {item_name}{cursed_tag} at tier {chain}/5. AC is now {ac}.",
+                    'success'
+                )
+                _qs = getattr(self, 'quirk_system', None)
+                if _qs:
+                    if item_type == 'armor':
+                        from items import Shield
+                        slot_type = 'shield' if isinstance(item, Shield) else 'armor'
+                        _qs.on_item_equipped(item.id, slot_type, getattr(item, 'slot', slot_type))
+                    else:
+                        _qs.on_item_equipped(item.id, 'accessory', getattr(item, 'slot', 'accessory'))
+            else:
+                self.add_message(
+                    f"The {item_name} does not recognize you. Try again.", 'warning'
+                )
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode=mode if mode in ('escalator_chain', 'chain') else 'escalator_chain',
+            subject=subject,
+            tier=int(getattr(item, 'quiz_tier', 1)),
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds(subject),
+            base_seconds=self.player.get_quiz_timer(subject),
         )
 
 
@@ -4040,46 +4122,83 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     # ------------------------------------------------------------------
-    # Examine corpse  (via I identify menu -> philosophy quiz -> lore)
+    # Examine corpse  (escalator-chain philosophy quiz, 5-tier reveal)
+    # ------------------------------------------------------------------
+    # Layers per chain rung:
+    #   1: name+symbol            (always known)
+    #   2: HP, AC, damage         (basic stats)
+    #   3: weaknesses, resists,   tags (family) -> propagates to kin
+    #   4: full lore text         (lore_identified property True)
+    #   5: family mastery unlock  (one blessing per family tag, idempotent)
     # ------------------------------------------------------------------
 
-    def _examine_corpse_direct(self, corpse):
-        """Called when player selects a corpse from the identify menu."""
-        if corpse.lore_identified:
+    def _start_corpse_identify(self, corpse, after_advance_turn: bool = True):
+        """Escalator-chain identify on a corpse. Chain reached -> corpse.id_level.
+
+        Already at level 5 -> skip the quiz and just open the lore screen.
+        """
+        if int(getattr(corpse, 'id_level', 0)) >= 5:
             self._lore_subject = corpse
             self.state = STATE_LORE
             return
-        self.quiz_title = f"EXAMINING {corpse.monster_name.upper()} CORPSE  --  PHILOSOPHY"
+        self.quiz_title = f"STUDYING {corpse.monster_name.upper()} CORPSE  --  PHILOSOPHY"
         self.state = STATE_QUIZ
+
+        previous_level = int(getattr(corpse, 'id_level', 0))
 
         def on_complete(result):
             self.state = STATE_PLAYER
-            if result.success:
-                corpse.lore_identified = True
-                self.player.lore_known_monster_ids.add(corpse.monster_id)
-                # Propagate to all existing corpses of this type
-                for obj in self.ground_items:
-                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
-                        obj.lore_identified = True
-                for obj in self.player.inventory:
-                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
-                        obj.lore_identified = True
+            chain = int(getattr(result, 'score', 0) or 0)
+            new_level = min(5, max(previous_level, chain))
+            if new_level > previous_level:
+                corpse.id_level = new_level
+                # Propagate full id_level to all corpses of the same monster_id
+                from items import Corpse as _Corpse
+                for obj in self.ground_items + list(self.player.inventory):
+                    if isinstance(obj, _Corpse) and obj.monster_id == corpse.monster_id:
+                        obj.id_level = max(int(getattr(obj, 'id_level', 0)), new_level)
+                # At level 3+, you now recognize the family at a glance: bump
+                # all same-family corpses (in pack or on ground) to id_level >= 3.
+                if new_level >= 3:
+                    from monster_classes import get_monster_family
+                    fam = get_monster_family(corpse)
+                    if fam:
+                        for obj in self.ground_items + list(self.player.inventory):
+                            if (isinstance(obj, _Corpse) and obj is not corpse
+                                    and get_monster_family(obj) == fam):
+                                obj.id_level = max(int(getattr(obj, 'id_level', 0)), 3)
+                # Level 4+: lore now known (drives lore_identified property and
+                # the auto-reveal-on-pickup behavior in _make_corpse).
+                if new_level >= 4:
+                    self.player.lore_known_monster_ids.add(corpse.monster_id)
+                # Level 5: grant the family mastery blessing.
+                if new_level >= 5:
+                    self._claim_monster_family_mastery(corpse)
+                # Chronicle + career arc only on first crossing into "full ID"
+                # (level >= 4) — this mirrors how items count for total_identifies.
+                if previous_level < 4 and new_level >= 4:
+                    self._on_full_identify(corpse)
                 self._lore_subject = corpse
                 self.state = STATE_LORE
                 self.add_message(
-                    f"Your philosophical insight reveals the nature of the {corpse.monster_name}!", 'success'
+                    f"You study the {corpse.monster_name} (level {new_level}/5).",
+                    'success'
                 )
-                self._on_full_identify(corpse)
             else:
-                self.add_message("You study the corpse but gain no insight.", 'warning')
-            self._advance_turn()
+                self.add_message(
+                    f"You study but learn nothing new (still level "
+                    f"{previous_level}/5).",
+                    'warning'
+                )
+            if after_advance_turn:
+                self._advance_turn()
 
         self.quiz_engine.start_quiz(
-            mode='threshold',
+            mode='escalator_chain',
             subject='philosophy',
-            tier=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)),
+            tier=1,
             callback=on_complete,
-            threshold=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)) + 1,
+            max_chain=5,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
@@ -4087,7 +4206,41 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
+    def _claim_monster_family_mastery(self, corpse):
+        """Grant the per-family mastery blessing on chain-5 corpse-id. Idempotent."""
+        from monster_classes import (get_monster_family,
+                                      MONSTER_FAMILY_BLESSINGS)
+        fam = get_monster_family(corpse)
+        if not fam:
+            return
+        store = self.player.unlocked_monster_class_masteries
+        if fam in store:
+            return
+        blessing = MONSTER_FAMILY_BLESSINGS.get(fam)
+        if not blessing:
+            return
+        store[fam] = blessing
+        # Permanent stat increases are applied here; everything else is
+        # queried lazily at the use-site (combat damage, regen tick, etc.).
+        kind = blessing.get('kind')
+        if kind == 'wisdom_bonus':
+            self.player.WIS += int(blessing.get('value', 0) or 0)
+        elif kind == 'int_bonus':
+            self.player.INT += int(blessing.get('value', 0) or 0)
+            # Recompute INT-derived MP cap
+            self.player.max_mp = self.player.BASE_MP + self.player.INT
+        desc = blessing.get('desc', 'A subtle insight settles upon you.')
+        self.add_message(f"Mastery of {fam} family attained! {desc}", 'success')
+        self._log_chronicle(
+            f"Mastered the {fam} family of monsters. {desc}"
+        )
+
+    def _examine_corpse_direct(self, corpse):
+        """Called when player selects a corpse from the identify menu."""
+        self._start_corpse_identify(corpse, after_advance_turn=True)
+
     def _examine_corpse(self):
+        """Called when player presses the examine key on a corpse on their tile."""
         px, py = self.player.x, self.player.y
         corpse = next(
             (i for i in self.ground_items if i.x == px and i.y == py
@@ -4097,50 +4250,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to examine.", 'info')
             return
-        # Auto-identify if this monster type has already been lore-studied
+        # Auto-bump to lore tier if this monster type has already been studied
+        # to that depth in a prior corpse (legacy lore_known_monster_ids set).
         if corpse.monster_id in getattr(self.player, 'lore_known_monster_ids', set()):
-            corpse.lore_identified = True
-        if corpse.lore_identified:
-            self.state = STATE_LORE
-            self._lore_subject = corpse
-            return
-        self.quiz_title = f"EXAMINING {corpse.monster_name.upper()} CORPSE  --  PHILOSOPHY"
-        self.state = STATE_QUIZ
-
-        def on_complete(result):
-            self.state = STATE_PLAYER
-            if result.success:
-                corpse.lore_identified = True
-                self.player.lore_known_monster_ids.add(corpse.monster_id)
-                # Propagate to all existing corpses of this type
-                for obj in self.ground_items:
-                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
-                        obj.lore_identified = True
-                for obj in self.player.inventory:
-                    if getattr(obj, 'monster_id', None) == corpse.monster_id:
-                        obj.lore_identified = True
-                self._lore_subject = corpse
-                self.state = STATE_LORE
-                self.add_message(
-                    f"Your philosophical insight reveals the nature of the {corpse.monster_name}!", 'success'
-                )
-                self._on_full_identify(corpse)
-            else:
-                self.add_message("You study the corpse but gain no insight.", 'warning')
-            self._advance_turn()
-
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='philosophy',
-            tier=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)),
-            callback=on_complete,
-            threshold=max(1, min(5, getattr(corpse, 'harvest_tier', 1) + 1)) + 1,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus() +
-                          self.player.get_quiz_extra_seconds('philosophy'),
-            base_seconds=self.player.get_quiz_timer('philosophy'),
-        )
+            corpse.id_level = max(int(getattr(corpse, 'id_level', 0)), 4)
+        self._start_corpse_identify(corpse, after_advance_turn=True)
 
     class _GoldDropEntry:
         """Sentinel shown in the drop menu when player has gold to drop."""
