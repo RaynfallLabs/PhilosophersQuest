@@ -92,6 +92,11 @@ class Player:
         self.status_effects: dict[str, int] = {}
         # Fractional damage resistances: damage_type -> multiplier (0.0=immune,1.0=normal)
         self.resistances: dict[str, float] = {}
+        # Flat damage resistances from chain-equip tier_bonuses + similar.
+        # damage_type -> integer (subtracted from incoming damage at damage-calc site).
+        self.damage_resistances: dict[str, int] = {}
+        # Flat HP-regen bonus per tick (chain-equip / accessory passives).
+        self.regen_bonus: int = 0
         # Item IDs the player has identified this run
         self.known_item_ids: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)
