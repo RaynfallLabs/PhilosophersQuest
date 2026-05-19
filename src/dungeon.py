@@ -1304,6 +1304,27 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in food_rooms:
         _place_one(eligible_food, room, dungeon, ground_items, rng)
 
+    # -- Plant ingredients -- 1-3 per floor (mushrooms, herbs, fungi, sap, etc.)
+    # Monster-derived ingredients (meat, glands, hides) STILL come from
+    # harvest-corpse only; plant-source ingredients can grow in the dungeon.
+    try:
+        all_ingredients = load_items('ingredient')
+    except FileNotFoundError:
+        all_ingredients = []
+    _PLANT_KEYWORDS = ('mushroom','herb','berry','leaf','root','fungus','moss',
+                       'flower','seed','grain','wheat','grass','vine','spice',
+                       'lichen','bark','sap')
+    plant_ingredients = [
+        ing for ing in all_ingredients
+        if any(w in getattr(ing, 'name', '').lower() for w in _PLANT_KEYWORDS)
+        and ing.min_level <= level
+    ]
+    if plant_ingredients:
+        ing_count = rng.randint(1, 3)
+        ing_rooms = rng.sample(rooms[1:], min(ing_count, len(rooms) - 1))
+        for room in ing_rooms:
+            _place_one(plant_ingredients, room, dungeon, ground_items, rng)
+
     # -- Potions -- 1-2 per level, weighted by floorSpawnWeight ----------------
     try:
         all_potions = load_items('potion')
