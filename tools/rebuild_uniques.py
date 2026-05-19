@@ -150,7 +150,20 @@ def compute_base_damage(entry: dict, chain_for_calc: list | None = None) -> int 
     dmg_mod = entry.get("damage_modifier")
     if dmg_mod is None:
         dmg_mod = TEMPLATE_DMG_MOD.get(entry.get("template_basis"), 1.0)
-    dmg_mult = float(entry.get("damage_mult", 1.0))
+    # Look up damage_mult from the MATERIAL file, not the unique entry. The
+    # original buggy version read entry.get('damage_mult', 1.0) which always
+    # returned 1.0 (uniques don't carry it) — leaving adamantine et al at
+    # baseline instead of the 1.4× material boost. Fixed 2026-05-19.
+    material_id = entry.get('material')
+    dmg_mult = 1.0
+    if material_id:
+        mat_path = Path(f'data/materials/weapons/{material_id}.json')
+        if mat_path.exists():
+            try:
+                mat = json.loads(mat_path.read_text(encoding='utf-8'))
+                dmg_mult = float(mat.get('damage_mult', 1.0))
+            except Exception:
+                dmg_mult = 1.0
     weapon_base = max(1, round(mob_hp(pf) / chain_5))
     base_damage = max(2, round(weapon_base * dmg_mult * float(dmg_mod)))
     return base_damage

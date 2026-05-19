@@ -20,7 +20,7 @@
     "lore": "The first spell every apprentice masters. An unerring dart of pure magical force.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_sleep": {
     "name": "Spellbook of Sleep",
@@ -43,7 +43,7 @@
     "lore": "A gentle enchantment that sends living creatures into sudden slumber.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_light": {
     "name": "Spellbook of Light",
@@ -66,7 +66,7 @@
     "lore": "Banishes shadows. Simple, essential, and often the spell that saves lives.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_shield": {
     "name": "Spellbook of Magic Shield",
@@ -89,7 +89,7 @@
     "lore": "A shimmering barrier that halves physical blows and improves your defenses.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_fire_bolt": {
     "name": "Spellbook of Fire Bolt",
@@ -112,7 +112,7 @@
     "lore": "A bolt of concentrated flame. Dangerous to fire-resistant creatures, devastating to the rest.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_haste": {
     "name": "Spellbook of Haste",
@@ -135,7 +135,7 @@
     "lore": "Accelerates your body to superhuman speed, granting a free second action each turn.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_heal": {
     "name": "Spellbook of Heal",
@@ -158,7 +158,7 @@
     "lore": "Channels restorative energy. The deeper the mastery, the more HP recovered.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_invisibility": {
     "name": "Spellbook of Invisibility",
@@ -181,7 +181,7 @@
     "lore": "Bends light around you. Invisibility is not invulnerability, but it is close.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_lightning": {
     "name": "Spellbook of Chain Lightning",
@@ -204,7 +204,7 @@
     "lore": "Lightning that arcs between targets, chaining to nearby enemies.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_confusion": {
     "name": "Spellbook of Confusion",
@@ -227,7 +227,7 @@
     "lore": "Scrambles a monster's senses. A confused enemy attacks randomly and loses coordination.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_displacement": {
     "name": "Spellbook of Displacement",
@@ -250,7 +250,7 @@
     "lore": "Projects a false image of you, causing attackers to strike at empty air 30% of the time.",
     "read_threshold": 5,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_ice_storm": {
     "name": "Spellbook of Ice Storm",
@@ -273,7 +273,7 @@
     "lore": "Freezing shards blast every visible monster. A battlefield-clearing spell.",
     "read_threshold": 5,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_paralyze": {
     "name": "Spellbook of Paralysis",
@@ -296,7 +296,7 @@
     "lore": "Locks a monster in magical stasis. Even the most fearsome creatures cannot move while paralyzed.",
     "read_threshold": 5,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "necronomicon": {
     "name": "The Necronomicon",
@@ -326,7 +326,7 @@
     },
     "is_unique": true,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_cleanse": {
     "name": "Spellbook of Cleanse",
@@ -349,7 +349,7 @@
     "lore": "A healer's primer on purification magic. The spells within were developed by temple physicians who needed to cure plague victims without touching them. One incantation removes any single affliction â€” poison, paralysis, disease, curse. Simple, reliable, life-saving.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_empower": {
     "name": "Spellbook of Empower",
@@ -372,7 +372,7 @@
     "lore": "A war-mage's secret: channel arcane energy into a physical weapon for a single devastating strike. The technique was perfected by the battlemages of Carthage, who could shatter siege gates with an empowered hammer blow. Cast it, then strike â€” the next melee attack deals triple damage.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_smite": {
     "name": "Spellbook of Smite",
@@ -395,7 +395,7 @@
     "lore": "The word of divine judgment, written in letters of fire. This spell calls down holy wrath upon a single target, bypassing all mortal resistances. It was said to be the weapon of archangels against demons â€” pure righteous force that recognizes no shield, no armor, no magical ward.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_summon_guardian": {
     "name": "Spellbook of Summon Guardian",
@@ -418,7 +418,7 @@
     "lore": "Druids of the ancient groves could call spirit-beasts from the aether to fight alongside them. The guardian manifests for a brief time â€” drawn from the essence of creatures the caster has encountered. It fights, it protects, and then it fades. But in those precious moments, you are not alone.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_meteor": {
     "name": "Spellbook of Meteor",
@@ -441,7 +441,7 @@
     "lore": "The most destructive evocation known to mortal spellcraft. A fragment of a dying star is summoned from the void and hurled into the material plane. Everything in sight burns. The original text was recovered from the Library of Alexandria â€” one of the few scrolls to survive the fire, ironically.",
     "read_threshold": 5,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_time_freeze": {
     "name": "Spellbook of Time Freeze",
@@ -464,7 +464,7 @@
     "lore": "To freeze time itself â€” this is the ambition that drove the greatest chronomancers to madness. The spell does not stop time; it suspends causality for all beings except the caster. For five heartbeats, nothing moves, nothing thinks, nothing acts. Use it to flee, to heal, to strike. It is the ultimate emergency â€” and finding this book may be the rarest stroke of fortune in your entire journey.",
     "read_threshold": 5,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_fireball": {
     "name": "Spellbook of Fireball",
@@ -488,7 +488,7 @@
     "read_threshold": 3,
     "sprite_desc": "A leather-bound spellbook with flame motifs and glowing orange runes on a charred cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_slow": {
     "name": "Spellbook of Slow Monster",
@@ -512,7 +512,7 @@
     "read_threshold": 3,
     "sprite_desc": "A slate-blue spellbook with a stylized hourglass embossed in silver on the cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_knock": {
     "name": "Spellbook of Knock",
@@ -536,7 +536,7 @@
     "read_threshold": 3,
     "sprite_desc": "A brass-bound spellbook with a skeleton key motif on the cover and glowing keyhole symbol",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_teleport_away": {
     "name": "Spellbook of Teleport Away",
@@ -560,7 +560,7 @@
     "read_threshold": 3,
     "sprite_desc": "A violet spellbook with swirling portal imagery and silver spatial runes on the cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_acid_arrow": {
     "name": "Spellbook of Acid Arrow",
@@ -584,7 +584,7 @@
     "read_threshold": 4,
     "sprite_desc": "A green-tinged spellbook with acid-etched designs and bubbling liquid trapped in the cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_drain_life": {
     "name": "Spellbook of Drain Life",
@@ -608,7 +608,7 @@
     "read_threshold": 4,
     "sprite_desc": "A dark crimson spellbook with veins of red light pulsing across its leather binding",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_fear": {
     "name": "Spellbook of Fear",
@@ -632,7 +632,7 @@
     "read_threshold": 4,
     "sprite_desc": "A shadowy purple spellbook with a screaming face embossed in tarnished silver on the cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_detect": {
     "name": "Spellbook of Detect Monsters",
@@ -656,7 +656,7 @@
     "read_threshold": 4,
     "sprite_desc": "A teal spellbook with an open eye symbol radiating concentric circles on the cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_polymorph": {
     "name": "Spellbook of Polymorph",
@@ -680,7 +680,7 @@
     "read_threshold": 4,
     "sprite_desc": "An iridescent spellbook whose cover shifts between animal shapes when viewed from different angles",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_reflect": {
     "name": "Spellbook of Reflect",
@@ -704,7 +704,7 @@
     "read_threshold": 5,
     "sprite_desc": "A silver-white spellbook with a polished mirror fragment set into the center of its cover",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "spellbook_disintegrate": {
     "name": "Spellbook of Disintegrate",
@@ -728,7 +728,7 @@
     "read_threshold": 5,
     "sprite_desc": "A black obsidian spellbook with cracks of molten red light and ash drifting from its pages",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "sefer_yetzirah": {
     "name": "Sefer Yetzirah (The Book of Formation)",

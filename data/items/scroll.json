@@ -19,7 +19,7 @@
     "lore": "Inscribed in the flowing script of ancient temple healers, this scroll channels divine restorative energy into the reader's body. The words dissolve into warm golden light as they are spoken aloud, leaving the parchment blank and the reader mended.",
     "read_threshold": 2,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_mapping": {
     "name": "scroll of mapping",
@@ -41,7 +41,7 @@
     "lore": "Cartographers of the old empire inscribed these scrolls with a sympathetic mapping enchantment. Upon reading, the dungeon's layout floods into the reader's mind as a complete spatial memory â€” every corridor, chamber, and stairwell within range suddenly known.",
     "read_threshold": 2,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_identify": {
     "name": "scroll of identify",
@@ -63,7 +63,7 @@
     "lore": "The text of this scroll, penned in ink derived from truth-speaking crystals, vibrates with revealing energy. When read aloud over an unknown object, the scroll's magic strips away all disguise and false appearance, revealing the item's true name and nature.",
     "read_threshold": 2,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_enchant_weapon": {
     "name": "scroll of enchant weapon",
@@ -85,7 +85,7 @@
     "lore": "Written in fire-silver ink by weaponsmith-mages of the dwarven academies, this scroll bonds an additional layer of enchantment into any held weapon. The runes crawl up the blade as they're spoken, burning themselves permanently into the metal.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_remove_curse": {
     "name": "scroll of remove curse",
@@ -107,7 +107,7 @@
     "lore": "A liturgical text drawn from the Egyptian Book of Coming Forth by Day. When read aloud with proper pronunciation, the words sever any magical binding or malevolent enchantment attached to the reader's person or possessions, purifying them completely.",
     "read_threshold": 2,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_confuse_monsters": {
     "name": "scroll of confusion",
@@ -129,7 +129,7 @@
     "lore": "This scroll was used by arena tamers to disorient multiple beasts simultaneously. The text is written in a spiraling pattern that, when read, projects a psychic dissonance affecting every creature in range â€” their senses scramble, their movements become erratic, and their intent is lost in confusion.",
     "read_threshold": 2,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_the_labyrinth": {
     "name": "Scroll of the Labyrinth",
@@ -271,7 +271,7 @@
     "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence, this scroll releases a wave of irresistible somnolence. Every creature in sight is swept into deep slumber â€” only the reader, having spoken the words aloud, remains awake and free to act.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_haste": {
     "name": "scroll of haste",
@@ -293,7 +293,7 @@
     "lore": "Written in quicksilver ink by fleet-footed Hermes himself â€” or so the seller claimed â€” this scroll binds the speed-essence of the divine messenger into the reader's limbs. For a short time, reality slows around you while you move at twice the natural pace.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_enchant_armor": {
     "name": "scroll of enchant armor",
@@ -315,7 +315,7 @@
     "lore": "The armorers' guilds of three ages of the world spent centuries perfecting this scroll. Reading it aloud over a worn piece of armor causes the metal (or leather, or hide) to tighten, harden, and align â€” one permanent layer of reinforcement added to whatever protection you bear.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_teleportation": {
     "name": "scroll of teleportation",
@@ -337,7 +337,7 @@
     "lore": "The spatial theorists of Alexandria considered this scroll a philosophical as much as a practical achievement. Reading it dissolves your relationship with the current point in space and reconstitutes you at some other floor tile, selected at the whim of the dungeon.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_charging": {
     "name": "scroll of charging",
@@ -359,7 +359,7 @@
     "lore": "Inscribed by the artificers who first learned to trap raw magical force in crystalline matrices, this scroll rekindles exhausted power. Upon reading, ambient magical energy floods into every wand in the reader's possession, refreshing their reserves by one full charge each.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_identify_all": {
     "name": "scroll of mass identify",
@@ -381,7 +381,7 @@
     "lore": "A far more powerful version of the common identification scroll. This text requires the reader to articulate the true name of knowledge itself. Upon completion, every obscured, unnamed, and unexamined item in one's possession is simultaneously revealed in full.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_annihilation": {
     "name": "scroll of annihilation",
@@ -410,7 +410,7 @@
     },
     "is_unique": true,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_time_stop": {
     "name": "scroll of time stop",
@@ -432,7 +432,7 @@
     "lore": "The theoretical framework for this scroll was laid by Zeno of Elea, who proved logically that motion is an illusion. Ten turns of absolute stillness surround the reader: monsters freeze mid-stride, arrows hang in mid-air, the dungeon holds its breath.",
     "read_threshold": 3,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_great_power": {
     "name": "scroll of great power",
@@ -454,7 +454,7 @@
     "lore": "The capstone work of the philosopher Porphyry, who spent forty years distilling the essence of Aristotle's categories into a single transformative incantation. Those few who have read it perfectly emerge changed: stronger, hardier, swifter, keener, wiser, more perceptive. Every faculty permanently elevated by one degree.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_enchantment": {
     "name": "scroll of enchantment",
@@ -476,7 +476,7 @@
     "lore": "Written by an anonymous enchanter of the Alexandrian school, this scroll channels raw magical force into whatever equipment the reader wears. The ink shimmers gold as the spell takes hold, permanently strengthening one piece of equipment.",
     "read_threshold": 4,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_thoth": {
     "name": "Scroll of Thoth",
@@ -501,7 +501,7 @@
     "containerLootTier": "rare",
     "value": 4000,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "dead_sea_scroll": {
     "name": "Dead Sea Scroll",
@@ -526,7 +526,7 @@
     "containerLootTier": "rare",
     "value": 3000,
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_arachne": {
     "name": "Scroll of Arachne",
@@ -1053,7 +1053,7 @@
     "read_threshold": 3,
     "sprite_desc": "A scroll of rough brown parchment with glowing earth-tone runes and small pebbles embedded in the wax seal",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_protection": {
     "name": "scroll of protection",
@@ -1076,7 +1076,7 @@
     "read_threshold": 2,
     "sprite_desc": "A scroll of pale blue parchment with a glowing shield symbol and silver protective sigils",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_enchant_accessory": {
     "name": "scroll of enchant accessory",
@@ -1099,7 +1099,7 @@
     "read_threshold": 4,
     "sprite_desc": "A scroll of lavender parchment with tiny gemstone fragments woven into the fibers and purple ink runes",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_genocide": {
     "name": "scroll of genocide",
@@ -1122,7 +1122,7 @@
     "read_threshold": 4,
     "sprite_desc": "A scroll of deep crimson parchment with black skull runes and a wax seal shaped like a crossed-out creature",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "scroll_of_light": {
     "name": "scroll of light",
@@ -1145,7 +1145,7 @@
     "read_threshold": 2,
     "sprite_desc": "A scroll of warm yellow parchment radiating soft golden light with sun-ray patterns in the ink",
     "weight": 0.3,
-    "peak_weight": 0.5
+    "peak_weight": 0.25
   },
   "book_of_thoth": {
     "name": "Book of Thoth",

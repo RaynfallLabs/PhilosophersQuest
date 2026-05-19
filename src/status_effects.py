@@ -50,6 +50,8 @@ EFFECT_INFO: dict[str, tuple] = {
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     'berserk':            ('Berserk',            (220,  60,  40), 'Ríastrad — bonus STR, HP cost per turn'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
+    'parry_armed':        ('Parry Armed',        (200, 210, 180), 'Quarterstaff defensive stance: +2 AC for 2 turns'),
+    'see_invisible':      ('See Invisible',      (200, 200, 255), 'You can perceive invisible creatures'),
     # ---- Hero special buffs (Phase 3B) ----
     'stand_ac':           ('Spartan Stand',      (255, 215, 80),  '+AC and counter-strike chance'),
     'crit_buff':          ('Critical Resolve',   (255, 100, 100), 'Next attack deals +50% damage'),
@@ -110,7 +112,7 @@ BUFFS: frozenset = frozenset({
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
     'life_save', 'sustained', 'truesight', 'dark_vision', 'identify_sight', 'spell_turning',
-    'riposte_armed',
+    'riposte_armed', 'parry_armed', 'see_invisible',
     # Hero special buffs (Phase 3B) — these are beneficial timed effects.
     'stand_ac', 'crit_buff', 'fear_immune', 'boomstick_aoe_next', 'berserk',
 })
