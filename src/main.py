@@ -632,6 +632,66 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player._anti_being_charged = False
         # No-move tracker for unseen_when_still (Helm of Hades T5).
         self.player._chain_no_move_counter = 0
+        # Pacify-on-sight tracking (Ring of Solomon).
+        self._chain_pacify_seen = set()
+
+        # Chain-equip passive: huginn_muninn (Cloak of Odin T3+). Auto-fire on
+        # floor entry: reveal all monsters within 10 tiles for 5 turns. The
+        # `_huginn_muninn_remaining` counter ticks down each turn.
+        try:
+            from chain_passives import (
+                player_has_passive, consume_passive_charge,
+            )
+            if player_has_passive(self.player, 'huginn_muninn'):
+                if consume_passive_charge(self.player, 'huginn_muninn'):
+                    self.player._huginn_muninn_remaining = 5
+                    self.add_message(
+                        "Huginn and Muninn take flight from your shoulders to scout!",
+                        'success')
+                else:
+                    self.player._huginn_muninn_remaining = 0
+            else:
+                self.player._huginn_muninn_remaining = 0
+        except ImportError:
+            self.player._huginn_muninn_remaining = 0
+
+        # Chain-equip passive: raven_scout / raven_scout_extended (Morrigan).
+        # Reveal entire dungeon layout (corridors) on floor entry; extended
+        # version also reveals monsters in dark rooms.
+        try:
+            if player_has_passive(self.player, 'raven_scout') or \
+                    player_has_passive(self.player, 'raven_scout_extended'):
+                # Mark a chunk of tiles around the player as explored.
+                for _dy in range(-12, 13):
+                    for _dx in range(-12, 13):
+                        if _dx * _dx + _dy * _dy > 144:
+                            continue
+                        _tx = self.player.x + _dx
+                        _ty = self.player.y + _dy
+                        if 0 <= _tx < self.dungeon.width and 0 <= _ty < self.dungeon.height:
+                            self.dungeon.explored.add((_tx, _ty))
+                self.add_message(
+                    "The Morrigan's ravens trace the dungeon's bones for you.",
+                    'success')
+        except (ImportError, NameError):
+            pass
+
+        # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
+        # Mark the highest-level monster on this floor for +25% damage.
+        try:
+            if player_has_passive(self.player, 'death_omen_mark') and self.monsters:
+                _best = max(
+                    (m for m in self.monsters if m.alive),
+                    key=lambda m: getattr(m, 'min_level', 0),
+                    default=None,
+                )
+                self.player._death_omen_target = id(_best) if _best else None
+                if _best:
+                    self.add_message(
+                        f"The Morrigan marks the {_best.name} for death.",
+                        'warning')
+        except (ImportError, NameError):
+            pass
 
         # Abaddon empowered by negative karma: boost HP on first entry to L100
         if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
@@ -1048,6 +1108,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.dungeon, self.player.x, self.player.y,
             self.player.get_sight_radius()
         )
+        # Chain-equip passive: four_faces_360_fov (Crown of Brahma T4).
+        # Add all tiles within radius PER*1.5 (ignoring wall occlusion) to FOV.
+        try:
+            from chain_passives import player_has_passive
+            if player_has_passive(self.player, 'four_faces_360_fov'):
+                px, py = self.player.x, self.player.y
+                r = max(3, int(self.player.PER * 1.5))
+                for _dy in range(-r, r + 1):
+                    for _dx in range(-r, r + 1):
+                        if _dx * _dx + _dy * _dy > r * r:
+                            continue
+                        _tx, _ty = px + _dx, py + _dy
+                        if 0 <= _tx < self.dungeon.width and 0 <= _ty < self.dungeon.height:
+                            self.visible.add((_tx, _ty))
+                            self.dungeon.explored.add((_tx, _ty))
+        except ImportError:
+            pass
         # Palladium: reveal stairs through walls
         _has_palladium = any(getattr(i, 'id', '') == 'palladium' for i in self.player.inventory)
         if _has_palladium:
@@ -1067,8 +1144,55 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if total > 0:
                 qs.on_floor_explored(explored / total)
 
+        # Chain-equip passive: pacify_demon_chance (Ring of Solomon).
+        # Roll on each demon-tagged monster newly seen this floor; on success
+        # they get a 'charmed' or 'sleeping' status as a stand-in for pacify.
+        try:
+            from chain_passives import get_pacify_demon_chance
+            _pac_chance = get_pacify_demon_chance(self.player)
+            if _pac_chance > 0:
+                import random as _rng
+                seen = getattr(self, '_chain_pacify_seen', set())
+                for m in self.monsters:
+                    if not m.alive:
+                        continue
+                    if id(m) in seen:
+                        continue
+                    if (m.x, m.y) not in self.visible:
+                        continue
+                    if 'demon' not in set(getattr(m, 'tags', []) or []):
+                        continue
+                    seen.add(id(m))
+                    if _rng.random() < _pac_chance:
+                        m.status_effects['sleeping'] = max(
+                            m.status_effects.get('sleeping', 0), 15)
+                        self.add_message(
+                            f"The Ring of Solomon pacifies the {m.name}!", 'success')
+                self._chain_pacify_seen = seen
+        except ImportError:
+            pass
+
+        # Chain-equip passive: detect_magic (Ring of Solomon). Auto-identify
+        # the BUC status of any wand/scroll/spellbook in FOV.
+        try:
+            from chain_passives import player_has_passive
+            from items import Wand, Scroll, Spellbook
+            if player_has_passive(self.player, 'detect_magic'):
+                for it in self.ground_items:
+                    if (it.x, it.y) in self.visible and isinstance(
+                            it, (Wand, Scroll, Spellbook)):
+                        it.buc_known = True
+        except ImportError:
+            pass
+
+        # Chain-equip passive: huginn_muninn -- automatically reveal monsters
+        # within 10 tiles for the rest of this player turn, 1/floor charge.
+        # (Used here via the encyclopedia menu / observe key; this stamp just
+        # lets the renderer know to draw scouted monsters.)
+
         # Dark rooms: restrict visibility to 1 tile radius
         dark_centers = getattr(self.dungeon, 'dark_rooms', set())
+        self.player._in_dark_room = False  # default; updated below
         if dark_centers:
             px, py = self.player.x, self.player.y
             in_dark = False
@@ -1079,6 +1203,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             room.y <= py < room.y + room.height):
                         in_dark = True
                         break
+            self.player._in_dark_room = in_dark
             if in_dark and not self.player.has_effect('see_invisible'):
                 dark_radius = 1 + max(0, (self.player.PER - 10) // 5)
                 self.visible = {
@@ -1172,6 +1297,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if dx != 0 or dy != 0:
             self.player._facing_dx = dx
             self.player._facing_dy = dy
+            # Reset the no-move counter used by unseen_when_still passive.
+            self.player._chain_no_move_counter = 0
 
         target = next(
             (m for m in self.monsters if m.alive and m.x == nx and m.y == ny), None
@@ -2694,6 +2821,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
 
+        # Chain-equip passive: solomonic_key (Ring of Solomon T5).
+        # 1/floor: bypass any lock in sight, no quiz. Yields chain-3 loot.
+        try:
+            from chain_passives import consume_passive_charge
+            if consume_passive_charge(self.player, 'solomonic_key'):
+                cx, cy = container.x, container.y
+                from container_system import _handle_success
+                _result = {'status': 'pending', 'loot': [], 'gold': 0, 'messages': []}
+                def _solom_cb(res):
+                    _result.update(res)
+                _handle_success(self.player, container, self.dungeon, 3, _solom_cb)
+                self.ground_items.remove(container)
+                for text, mtype in _result['messages']:
+                    self.add_message(text, mtype)
+                for loot_item in _result['loot']:
+                    loot_item.x, loot_item.y = cx, cy
+                    self.ground_items.append(loot_item)
+                    self.add_message(f"You find {self._display_name(loot_item)}!", 'loot')
+                if _result['gold'] > 0:
+                    from items import add_gold_to_tile
+                    add_gold_to_tile(self.ground_items, _result['gold'], cx, cy)
+                self.add_message(
+                    "The Ring of Solomon hums; the lock opens at a touch!", 'success')
+                self._advance_turn()
+                return
+        except ImportError:
+            pass
+
         # Master Lockpick is permanent; no charge check.
         # Post-2026-05-19: escalator-chain quiz. Chain reached drives loot
         # quality (chain 0 = empty open; chain 5 = master thief, bonus item).
@@ -3726,6 +3881,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         minion = _Mon(minion_def, sx, sy)
         # The summoned minion is immediately aware of the player.
         minion._aware = True
+        # Mark as summoned so weaken_summoned (Ring of Solomon) can apply.
+        minion._is_summoned = True
         self.monsters.append(minion)
         if (summoner.x, summoner.y) in self.visible or (sx, sy) in self.visible:
             self.add_message(

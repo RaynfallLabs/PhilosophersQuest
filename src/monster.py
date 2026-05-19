@@ -399,6 +399,16 @@ class Monster:
         if self.has_effect('weakened'):
             dmg = max(1, dmg // 2)
 
+        # Chain-equip passive: weaken_summoned (Ring of Solomon).
+        # Summoned monsters (marked _is_summoned=True at spawn) deal half damage.
+        if getattr(self, '_is_summoned', False):
+            try:
+                from chain_passives import player_has_passive
+                if player_has_passive(player, 'weaken_summoned'):
+                    dmg = max(1, dmg // 2)
+            except ImportError:
+                pass
+
         # Chain-equip passive: back_attack_weakness (dragon_mail_of_sigurd).
         # Multiplier on incoming damage when monster is in the player's "rear arc"
         # (opposite to the player's facing). Treated as 1.5x by default.
@@ -436,6 +446,43 @@ class Monster:
             refl = max(1, dmg // 2)
             self.take_damage(refl)
             msg = f"The {self.name}'s cold reflects back! ({refl} dmg)"
+
+        # Chain-equip passive: reflect_spell / spell_reflect (Aegis of Athena,
+        # Smoking Mirror). Magical/elemental damage rolls % chance to reflect
+        # full damage back at the attacker.
+        if atk_type in ('fire', 'cold', 'lightning', 'magic', 'acid', 'poison',
+                        'force', 'necrotic', 'radiant', 'psychic') and actual > 0:
+            try:
+                from chain_passives import get_reflect_spell_chance
+                chance = get_reflect_spell_chance(player)
+                if chance > 0 and random.random() < chance:
+                    refl = max(1, dmg)
+                    self.take_damage(refl)
+                    msg += f" The {atk_type} damage reflects back! ({refl} dmg)"
+            except ImportError:
+                pass
+
+        # Chain-equip passive: mirror_of_souls (Smoking Mirror of Tezcatlipoca).
+        # 20% chance an incoming melee attacker takes the same damage they dealt.
+        if atk_type in ('physical', 'pierce', 'slash', 'blunt') and actual > 0:
+            try:
+                from chain_passives import roll_mirror_of_souls
+                refl = roll_mirror_of_souls(player, self, actual)
+                if refl:
+                    self.take_damage(refl)
+                    msg += f" The Mirror of Souls turns the blow against you! ({refl} dmg)"
+            except ImportError:
+                pass
+
+        # Chain-equip passive: gorgoneion_petrify_on_hit (Greater Aegis of Athena).
+        # First melee striker each floor saves vs petrification (paralyzed proxy).
+        if atk_type in ('physical', 'pierce', 'slash', 'blunt') and actual > 0:
+            try:
+                from chain_passives import roll_gorgoneion_petrify
+                if roll_gorgoneion_petrify(player, self):
+                    msg += f" The Gorgoneion meets the {self.name}'s eyes! Petrified!"
+            except ImportError:
+                pass
 
         # Hero passive: Tesla's Resonant Frequency — shock-counter on melee hits.
         if actual > 0 and atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
@@ -609,8 +656,22 @@ class Monster:
         # Aggravated status makes ALL monsters aware immediately.
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
         detection_range = getattr(self, 'perception_range', 8)
-        if dist_to_player <= detection_range or player.has_effect('aggravated'):
+        # Chain-equip passives: invisible_to_undead / stealth_in_dark /
+        # unseen_when_still — if any applies, the monster cannot acquire
+        # the player this turn (existing _aware/_alerted is preserved).
+        try:
+            from chain_passives import is_player_hidden_from
+            hidden = is_player_hidden_from(player, self, dungeon)
+        except ImportError:
+            hidden = False
+        if not hidden and (dist_to_player <= detection_range or player.has_effect('aggravated')):
             self._aware = True
+        if hidden and not self._alerted:
+            # Player is hidden from this monster: it wanders / stays put even
+            # if it had previously seen the player.
+            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
+                self._wander(dungeon, all_monsters, extra_occupied, player)
+            return False
         if not getattr(self, '_aware', False) and not self._alerted:
             # Beyond detection range and never spotted the player.
             # Behavior depends on base AI: sessile/ambush wait, others wander.

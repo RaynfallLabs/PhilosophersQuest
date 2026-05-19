@@ -407,7 +407,7 @@ def test_roll_mirror_of_souls_no_passive_returns_zero():
 def test_roll_mirror_of_souls_deterministic_with_seed(monkeypatch):
     from chain_equip import apply_tier_bonuses
     from chain_passives import roll_mirror_of_souls
-    import random as _r
+    import chain_passives as _cp
 
     class FakeMon: pass
     p = _new_player()
@@ -416,8 +416,132 @@ def test_roll_mirror_of_souls_deterministic_with_seed(monkeypatch):
     apply_tier_bonuses(p, s, 5)
     p.shield = s
     # Force a roll < 0.20 so the reflect fires.
-    monkeypatch.setattr(_r, 'random', lambda: 0.05)
+    monkeypatch.setattr(_cp.random, 'random', lambda: 0.05)
     assert roll_mirror_of_souls(p, FakeMon(), 10) == 10
     # And > 0.20 should fail.
-    monkeypatch.setattr(_r, 'random', lambda: 0.99)
+    monkeypatch.setattr(_cp.random, 'random', lambda: 0.99)
     assert roll_mirror_of_souls(p, FakeMon(), 10) == 0
+
+
+# ---------------------------------------------------------------------------
+# Hidden-from-monster lookup
+# ---------------------------------------------------------------------------
+
+
+def test_is_player_hidden_from_no_passive_returns_false():
+    from chain_passives import is_player_hidden_from
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.tags = 10, 10, ['undead']
+    p = _new_player()
+    p.x, p.y = 5, 5
+    assert is_player_hidden_from(p, FakeMon()) is False
+
+
+def test_is_player_hidden_from_invisible_to_undead():
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import is_player_hidden_from
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.tags = 10, 10, ['undead']
+    p = _new_player()
+    p.x, p.y = 5, 5
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {'passive_invisible_to_undead': True}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    assert is_player_hidden_from(p, FakeMon()) is True
+
+
+def test_is_player_hidden_from_undead_not_hidden_when_adjacent():
+    """Adjacent monsters always perceive the player."""
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import is_player_hidden_from
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.tags = 5, 6, ['undead']
+    p = _new_player()
+    p.x, p.y = 5, 5
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {'passive_invisible_to_undead': True}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    assert is_player_hidden_from(p, FakeMon()) is False
+
+
+def test_is_player_hidden_from_living_monster_not_hidden():
+    """invisible_to_undead doesn't hide from living monsters."""
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import is_player_hidden_from
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.tags = 10, 10, ['beast']
+    p = _new_player()
+    p.x, p.y = 5, 5
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {'passive_invisible_to_undead': True}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    assert is_player_hidden_from(p, FakeMon()) is False
+
+
+def test_is_player_hidden_from_unseen_when_still():
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import is_player_hidden_from
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.tags = 10, 10, []
+    p = _new_player()
+    p.x, p.y = 5, 5
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {'passive_unseen_when_still': True}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    # No-move counter = 0 -> still visible
+    p._chain_no_move_counter = 0
+    assert is_player_hidden_from(p, FakeMon()) is False
+    # After 1 wait turn -> hidden
+    p._chain_no_move_counter = 1
+    assert is_player_hidden_from(p, FakeMon()) is True
+
+
+# ---------------------------------------------------------------------------
+# Spell damage passive plumbing
+# ---------------------------------------------------------------------------
+
+
+def test_apply_spell_damage_passives_no_passives():
+    from chain_passives import apply_spell_damage_passives
+    p = _new_player()
+    dmg, c, a = apply_spell_damage_passives(p, 10.0)
+    assert dmg == 10.0
+    assert c is False
+    assert a is False
+
+
+def test_apply_spell_damage_passives_with_bonus():
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import apply_spell_damage_passives
+    p = _new_player()
+    a = _make_accessory(equip_chain_mode='escalator',
+                        tier_bonuses={'5': {'passive_spell_damage_bonus': 0.5}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_acc(p, a)
+    dmg, c, anti = apply_spell_damage_passives(p, 10.0)
+    assert dmg == 15.0
+    assert c is False
+    assert anti is False
+
+
+def test_apply_spell_damage_passives_anti_being_consumed():
+    from chain_passives import apply_spell_damage_passives
+    p = _new_player()
+    p._anti_being_charged = True
+    dmg, c, anti = apply_spell_damage_passives(p, 10.0)
+    assert dmg == 20.0
+    assert anti is True
+    # Charge consumed
+    assert p._anti_being_charged is False
+    dmg2, c2, anti2 = apply_spell_damage_passives(p, 10.0)
+    assert dmg2 == 10.0
+    assert anti2 is False

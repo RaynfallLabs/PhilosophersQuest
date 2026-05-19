@@ -280,6 +280,42 @@ def get_pacify_demon_chance(player) -> float:
 # ---------------------------------------------------------------------------
 
 
+def is_player_hidden_from(player, monster, dungeon=None) -> bool:
+    """Should ``monster`` fail to see the player this turn?
+
+    Checks these chain-equip passives:
+      - invisible_to_undead (Helm of Hades): monsters tagged 'undead' don't see.
+      - stealth_in_dark (Helm of Hades): in a dark room, monsters don't see.
+      - unseen_when_still (Helm of Hades T5): after >=1 no-move turn, monsters
+        lose target for one turn.
+
+    Defensive: if the monster is already adjacent (dist 1) we DON'T hide,
+    so the player can't permanently camp in a wall.
+    """
+    if player is None or monster is None:
+        return False
+    # Adjacent monsters always perceive the player.
+    try:
+        if abs(monster.x - player.x) + abs(monster.y - player.y) <= 1:
+            return False
+    except AttributeError:
+        return False
+    tags = set(getattr(monster, 'tags', []) or [])
+    # invisible_to_undead
+    if 'undead' in tags and player_has_passive(player, 'invisible_to_undead'):
+        return True
+    # stealth_in_dark: requires the player to currently be in a dark room
+    if player_has_passive(player, 'stealth_in_dark'):
+        in_dark = bool(getattr(player, '_in_dark_room', False))
+        if in_dark:
+            return True
+    # unseen_when_still: after at least 1 skipped move, monsters lose target
+    if player_has_passive(player, 'unseen_when_still'):
+        if getattr(player, '_chain_no_move_counter', 0) >= 1:
+            return True
+    return False
+
+
 def apply_spell_damage_passives(player, dmg: float):
     """Layer chain-equip passives onto a base spell damage value.
 

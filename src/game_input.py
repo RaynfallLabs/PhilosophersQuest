@@ -295,6 +295,10 @@ class InputMixin:
                 self.add_message("You meditate briefly. (+1 MP)", 'info')
             else:
                 self.add_message("You wait.", 'info')
+            # Chain-equip passive: unseen_when_still (Helm of Hades T5) increments
+            # the no-move counter; reset by any subsequent _do_move.
+            self.player._chain_no_move_counter = (
+                getattr(self.player, '_chain_no_move_counter', 0) + 1)
             self._advance_turn()
             return
 

@@ -2246,6 +2246,25 @@ class MagicMixin:
         Each retry on a partially-identified item only raises id_level (never lowers).
         """
         display = self._display_name(item)
+        # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin T2+).
+        # Skip the quiz entirely and grant level-3 identify, 1/floor.
+        try:
+            from chain_passives import consume_passive_charge
+            if int(getattr(item, 'id_level', 0)) < 3 and \
+                    consume_passive_charge(self.player, 'identify_one_per_floor_free'):
+                item.id_level = max(int(getattr(item, 'id_level', 0)), 3)
+                item.identified = True
+                item.buc_known = True
+                self.player.known_item_ids.add(item.id)
+                self._propagate_identification(item.id)
+                self.add_message(
+                    f"Odin's wisdom illuminates the {item.name}!", 'success')
+                self._on_full_identify(item)
+                self._advance_turn()
+                return
+        except ImportError:
+            pass
+
         self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
         self.state = STATE_QUIZ
 

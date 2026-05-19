@@ -401,6 +401,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             bonus = _ab_roll(weapon.abaddon_bonus_damage)
             damage += bonus
 
+        # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
+        # +25% damage against the floor's highest-level monster.
+        if getattr(player, '_death_omen_target', None) == id(monster):
+            damage = int(damage * 1.25)
+
         actual = monster.take_damage(damage)
 
         # Stun mechanic (staves only, or any weapon with stunChance > 0)
