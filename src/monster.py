@@ -230,7 +230,8 @@ class Monster:
 
     # --- Combat ---
 
-    def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
+    def take_damage(self, amount: int, damage_type: str = 'physical',
+                    ignore_resistance: bool = False) -> int:
         """Apply damage to this monster, consulting resistances/weaknesses for non-physical types.
 
         Melee callers (combat.player_attack) pre-scale damage with dragon_scales and the
@@ -239,10 +240,15 @@ class Monster:
 
         Spell/wand callers pass the elemental type (fire/cold/lightning/acid/holy/...)
         and let take_damage apply the resistance lookup.
+
+        ignore_resistance: when True, weaknesses still apply but resistances do not.
+        Used by chain-equip unmaking_sense passive (Heart of Ahriman) on spell crits.
         """
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)
+            if ignore_resistance and mult < 1.0:
+                mult = 1.0
             amount = int(amount * mult)
         actual = max(0, amount)
         self.hp = max(0, self.hp - actual)

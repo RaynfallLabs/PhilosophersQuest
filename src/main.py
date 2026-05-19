@@ -637,6 +637,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Fear-aura "saved already" tracking (Aegis of Athena, etc.).
         self.player._chain_seen_fear = set()
 
+        # Chain-equip passive: wisdom_at_a_price (Cloak of Odin T4+). On floor
+        # entry, exchange 1 max HP for +1 WIS, 1/floor. Auto-fires only when
+        # the player has at least 20 max HP to spare (to avoid lethal early-game).
+        try:
+            from chain_passives import (
+                player_has_passive, consume_passive_charge,
+            )
+            if (player_has_passive(self.player, 'wisdom_at_a_price')
+                    and self.player.max_hp >= 20
+                    and consume_passive_charge(self.player, 'wisdom_at_a_price')):
+                self.player.max_hp -= 1
+                self.player.hp = min(self.player.hp, self.player.max_hp)
+                self.player.WIS += 1
+                self.add_message(
+                    "Odin's sacrifice: 1 HP for 1 WIS. Knowledge is bought.",
+                    'success')
+        except ImportError:
+            pass
+
         # Chain-equip passive: huginn_muninn (Cloak of Odin T3+). Auto-fire on
         # floor entry: reveal all monsters within 10 tiles for 5 turns. The
         # `_huginn_muninn_remaining` counter ticks down each turn.
@@ -675,6 +694,47 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     "The Morrigan's ravens trace the dungeon's bones for you.",
                     'success')
+        except (ImportError, NameError):
+            pass
+
+        # Chain-equip passive: atalantas_choice (Anklet T5). On floor entry
+        # below 30% HP, freeze all visible monsters for 10 turns. 1/floor.
+        try:
+            from chain_passives import (
+                player_has_passive, consume_passive_charge,
+            )
+            if (player_has_passive(self.player, 'atalantas_choice')
+                    and self.player.hp <= self.player.max_hp * 0.30
+                    and consume_passive_charge(self.player, 'atalantas_choice')):
+                for m in self.monsters:
+                    if m.alive and (m.x, m.y) in self.visible:
+                        m.add_effect('paralyzed', 10)
+                self.add_message(
+                    "Atalanta's choice! Time itself pauses for you to breathe.",
+                    'success')
+        except ImportError:
+            pass
+
+        # Chain-equip passive: anti_being (Heart of Ahriman T5).
+        # On floor entry, queue the next destructive spell for 2x damage.
+        try:
+            from chain_passives import (
+                player_has_passive, consume_passive_charge,
+            )
+            if player_has_passive(self.player, 'anti_being') and \
+                    consume_passive_charge(self.player, 'anti_being'):
+                self.player._anti_being_charged = True
+                self.add_message(
+                    "Heart of Ahriman trembles -- your next destructive spell will rend the unmaking.",
+                    'success')
+        except ImportError:
+            pass
+
+        # Chain-equip passive: life_save_resets_per_floor (Tyet of Isis T2+).
+        # Refresh the life_save status effect each floor entry.
+        try:
+            if player_has_passive(self.player, 'life_save_resets_per_floor'):
+                self.player.add_effect('life_save', -1)
         except (ImportError, NameError):
             pass
 
@@ -1344,6 +1404,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 flee_dy = 0 if nearest.y == self.player.y else (-1 if nearest.y > self.player.y else 1)
                 dx, dy = flee_dx, flee_dy
                 self.add_message("You flee in terror!", 'danger')
+                # Chain-equip passive: three_apples (Anklet of Atalanta T4+).
+                # 1/floor, when fleeing, the next 3 moves cost no turn.
+                try:
+                    from chain_passives import consume_passive_charge
+                    if not getattr(self.player, '_three_apples_remaining', 0):
+                        if consume_passive_charge(self.player, 'three_apples'):
+                            self.player._three_apples_remaining = 3
+                            self.add_message(
+                                "Atalanta's three apples scatter behind you!",
+                                'success')
+                except ImportError:
+                    pass
 
         # Sleep: skip turn
         if self.player.has_effect('sleeping'):
@@ -1562,6 +1634,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             _free_move = True
                             self.add_message(
                                 "Atalanta's anklet gives you a free step!", 'success')
+                    # three_apples free-move stack (set when player fled this turn).
+                    if getattr(self.player, '_three_apples_remaining', 0) > 0:
+                        self.player._three_apples_remaining -= 1
+                        _free_move = True
                 except ImportError:
                     pass
                 if not _free_move:
