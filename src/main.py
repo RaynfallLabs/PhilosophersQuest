@@ -1479,6 +1479,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Reset the no-move counter used by unseen_when_still passive.
             self.player._chain_no_move_counter = 0
 
+        # Chain-equip passive: no_attack_of_opportunity (Sandals of Hermes
+        # T3+) re-purposed as "free disengage". Capture which hostiles were
+        # adjacent BEFORE the move; after the move lands, any that are no
+        # longer adjacent take a -2 penalty on their next attack roll.
+        from chain_passives import player_has_passive
+        _aoo_active = player_has_passive(self.player, 'no_attack_of_opportunity')
+        _aoo_pre_adjacent: list = []
+        if _aoo_active:
+            px, py = self.player.x, self.player.y
+            for _m in self.monsters:
+                if not _m.alive or getattr(_m, 'is_allied', False):
+                    continue
+                if abs(_m.x - px) <= 1 and abs(_m.y - py) <= 1:
+                    _aoo_pre_adjacent.append(_m)
+
         target = next(
             (m for m in self.monsters if m.alive and m.x == nx and m.y == ny), None
         )
@@ -1510,6 +1525,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Bump-to-open: open the door and step through in one action
             self.dungeon.open_door(nx, ny)
             self.player.x, self.player.y = nx, ny
+            self._apply_aoo_disengage(_aoo_pre_adjacent)
             self._check_floor_trap(nx, ny)
             _qs_move = getattr(self, 'quirk_system', None)
             if _qs_move:
@@ -1543,6 +1559,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             and self.dungeon.tiles[ny][nx] not in (WATER, LAVA)
         ):
             self.player.x, self.player.y = nx, ny
+            self._apply_aoo_disengage(_aoo_pre_adjacent)
             # Ice sliding: keep moving in the same direction until hitting non-ice
             if self.dungeon.tiles[ny][nx] == ICE and not self.player.has_effect('levitating'):
                 # Check trap on entry tile first
@@ -1679,6 +1696,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._notify_ground(tx, ty)
         self._advance_turn()
         return True
+
+    def _apply_aoo_disengage(self, pre_adjacent: list):
+        """Mark monsters that the player just stepped AWAY from for an AOO
+        penalty on their next attack. Used by the chain-equip passive
+        no_attack_of_opportunity (Sandals of Hermes T3+) — re-purposed as
+        'free disengage'."""
+        if not pre_adjacent:
+            return
+        px, py = self.player.x, self.player.y
+        for m in pre_adjacent:
+            if not m.alive:
+                continue
+            still_adjacent = abs(m.x - px) <= 1 and abs(m.y - py) <= 1
+            if not still_adjacent:
+                m._aoo_disengage_pending = True
 
     def _notify_stairs(self, x: int, y: int):
         tile = self.dungeon.tiles[y][x]

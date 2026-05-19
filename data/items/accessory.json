@@ -4518,18 +4518,18 @@
       "3": {
         "stat_bonus_INT": 4,
         "passive_spell_damage_bonus": 0.15,
-        "passive_unmaking_sense": true
+        "passive_spell_crit": 0.05
       },
       "4": {
         "stat_bonus_INT": 5,
         "passive_spell_damage_bonus": 0.2,
-        "passive_unmaking_sense": true
+        "passive_spell_crit": 0.08
       },
       "5": {
         "stat_bonus_INT": 5,
-        "passive_spell_damage_bonus": 0.25,
-        "passive_unmaking_sense": true,
-        "passive_anti_being": true
+        "passive_spell_damage_bonus": 0.3,
+        "passive_anti_being": true,
+        "passive_spell_crit": 0.12
       }
     },
     "unidentified_name": "a deep red gem that seems to pulse",
@@ -6903,7 +6903,8 @@
         "status_fire_resist": 999,
         "resistance_fire": 2,
         "passive_suryas_gift": true,
-        "passive_cut_and_given": true
+        "passive_first_hit_absorb": true,
+        "passive_death_save_bonus": 2
       }
     },
     "can_be_cursed": true,

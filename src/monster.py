@@ -350,6 +350,13 @@ class Monster:
         d20 = random.randint(1, 20)
         player_ac = player.get_ac()
         to_hit = self.thac0 - player_ac   # roll must be >= this to hit
+        # Chain-equip passive: no_attack_of_opportunity (Sandals of Hermes T3+)
+        # re-purposed as "free disengage" — if the player stepped away from
+        # this monster's adjacent tile last turn, the monster's next attack
+        # is at -2 to hit (effectively +2 player AC for this swing).
+        if getattr(self, '_aoo_disengage_pending', False):
+            to_hit += 2
+            self._aoo_disengage_pending = False
 
         # Minimum hit chance: intrinsic to the monster (bosses 25%, regular 5%)
         is_boss = getattr(self, 'is_boss', False)
