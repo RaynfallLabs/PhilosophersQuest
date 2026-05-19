@@ -21,7 +21,8 @@ STATE_CHICKEN        = 'chicken'         # McFly popup
 STATE_VICTORY        = 'victory'
 STATE_DEAD           = 'dead'
 STATE_REVIEW_MISSED  = 'review_missed'   # post-death missed question review
-STATE_LOCKPICK       = 'lockpick'
+# (STATE_LOCKPICK removed 2026-05-19 — lockpicking now routes through STATE_QUIZ
+# directly via the chain-mode Economics quiz on chest open.)
 STATE_TARGET         = 'target'          # ranged targeting cursor
 STATE_EAT_MENU       = 'eat_menu'        # eat food / raw ingredient
 STATE_QUAFF_MENU     = 'quaff_menu'      # quaff a potion

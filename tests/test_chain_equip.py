@@ -253,3 +253,39 @@ def test_round_trip_leaves_player_unchanged():
     after = (p.STR, p.CON, p.DEX, p.INT, p.WIS, p.PER,
              dict(p.damage_resistances), p.regen_bonus)
     assert baseline == after
+
+
+# ---------------------------------------------------------------------------
+# Regression: main.py:_start_chain_equip_quiz reads result.score (NOT .chain).
+# QuizResult dataclass only has success/score/correct/asked. A previous version
+# read result.chain which silently always returned 0, breaking all 24 uniques.
+# ---------------------------------------------------------------------------
+
+def test_quiz_result_score_not_chain():
+    """The quiz result attribute is `.score`, not `.chain`. Lock this in."""
+    from quiz_engine import QuizResult
+    # QuizResult is a dataclass; instantiate one and confirm fields
+    qr = QuizResult(success=True, score=4, correct=4, asked=4)
+    assert qr.score == 4
+    assert not hasattr(qr, 'chain'), (
+        'QuizResult gained a .chain attribute — main.py:_start_chain_equip_quiz '
+        'previously read .chain which always returned 0 default. If you add '
+        '.chain, update the callback to prefer it or this comment becomes stale.'
+    )
+
+
+def test_chain_equip_callback_uses_score_attribute():
+    """The chain-equip on_complete callback in main.py must read result.score
+    (not .chain). String-grep test that catches the regression directly."""
+    import os
+    main_py = os.path.join(os.path.dirname(__file__), '..', 'src', 'main.py')
+    with open(main_py, encoding='utf-8') as f:
+        src = f.read()
+    # Find the chain-equip on_complete body. The callback lives inside
+    # _start_chain_equip_quiz; we just want to confirm `getattr(result, 'chain'`
+    # does NOT appear in that file.
+    assert "getattr(result, 'chain'" not in src, (
+        'main.py reads result.chain — this attribute does not exist on '
+        'QuizResult. Use result.score instead. See commit history for context.'
+    )
+    assert 'getattr(result, "chain"' not in src

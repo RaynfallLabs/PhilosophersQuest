@@ -174,6 +174,11 @@ class Player:
         if shield_effect and self.has_effect(shield_effect):
             return 0
 
+        # Flat damage reduction from chain-equip tier_bonuses (resistance_<type>).
+        # Each "level" subtracts 1 damage of the matching type; clamped to >=0.
+        flat_reduction = int(getattr(self, 'damage_resistances', {}).get(damage_type, 0))
+        amount = max(0, amount - flat_reduction)
+
         # Fractional resistance: status/accessory effects x armor resistances
         resistance = self.resistances.get(damage_type, 1.0)
         resistance *= self.get_armor_resistance(damage_type)

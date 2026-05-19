@@ -389,6 +389,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # the corpse-identify rebuild. Older saves default to empty.
         if not hasattr(self.player, 'unlocked_monster_class_masteries'):
             self.player.unlocked_monster_class_masteries = {}
+        # Chain-equip tier_bonuses targets: flat damage reduction + HP regen.
+        # Added 2026-05-18 with the legendary-uniques chain-equip mechanic.
+        if not hasattr(self.player, 'damage_resistances'):
+            self.player.damage_resistances = {}
+        if not hasattr(self.player, 'regen_bonus'):
+            self.player.regen_bonus = 0
+        # LevelManager pre-rolls mini-bosses at __init__; old saves predate that.
+        if hasattr(self, 'level_mgr') and not hasattr(self.level_mgr, '_planned_mini_bosses'):
+            self.level_mgr._planned_mini_bosses = self.level_mgr._roll_planned_mini_bosses()
         # Phase 3 hero specials — new fields in 2026-05-17 build rebuild
         if not hasattr(self.player, 'hero_passives'):
             self.player.hero_passives = set()
@@ -2361,7 +2370,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _tick_hp_regen(self):
-        """Regen 1 HP every 15 turns (faster with high CON). Blocked by bleeding/poisoned."""
+        """Regen 1 HP every 15 turns (faster with high CON). Blocked by bleeding/poisoned.
+
+        Chain-equip tier_bonuses can set `player.regen_bonus`, which adds extra
+        HP per tick (e.g. Cloak of the Morrigan T2+, Helm of Aragorn T3+).
+        """
         if self.player.hp >= self.player.max_hp:
             return
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
@@ -2369,7 +2382,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
         interval = max(10, 20 - max(0, self.player.CON - 12))
         if self.turn_count % interval == 0:
-            self.player.restore_hp(1)
+            base_regen = 1 + max(0, getattr(self.player, 'regen_bonus', 0))
+            self.player.restore_hp(base_regen)
 
     # ------------------------------------------------------------------
     # Pickup
@@ -3391,7 +3405,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         def on_complete(result):
             self.state = STATE_PLAYER
-            chain = int(getattr(result, 'chain', 0))
+            # QuizResult.score is the peak chain reached (.chain doesn't exist).
+            # Matches container_system._handle_success which reads the same field.
+            chain = int(getattr(result, 'score', 0))
+            chain = max(0, min(5, chain))
             # In chain mode you can fail rung 1 (chain=0). In escalator-chain
             # you must pass tier 1 to start the chain (chain >= 1 = success).
             if chain >= 1:
