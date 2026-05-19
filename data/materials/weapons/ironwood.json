@@ -2,21 +2,33 @@
   "id": "ironwood",
   "name": "ironwood",
   "material_class": "rare_wood",
-  "applies_to": ["weapon", "shield"],
+  "applies_to": [
+    "weapon",
+    "shield"
+  ],
   "peak_floor": 38,
   "spread": 14,
-  "peak_weight": 5,
+  "peak_weight": 5.0,
   "min_level": 22,
   "damage_mult": 1.15,
   "weight_mult": 1.2,
   "max_enchant": 3,
-  "color": [90, 70, 50],
+  "color": [
+    90,
+    70,
+    50
+  ],
   "armor_ac_bonus": 0,
-  "resistances": ["fire"],
+  "resistances": [
+    "fire"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
   "effective_against": [],
-  "special_properties": ["fire_resistant", "dense"],
+  "special_properties": [
+    "fire_resistant",
+    "dense"
+  ],
   "lore_descriptor": "dark and heavy as iron, dulls the woodcutter's axe",
   "unidentified_descriptor": "an unnaturally dark wood",
   "first_pickup_chronicle": "Ironwood. Heavier than oak should be, harder than yew should be. Doesn't burn. Doesn't rot. The dungeon grows it where it shouldn't.",

@@ -2,21 +2,34 @@
   "id": "ash",
   "name": "ash",
   "material_class": "wood",
-  "applies_to": ["weapon"],
+  "applies_to": [
+    "weapon"
+  ],
   "peak_floor": 20,
   "spread": 12,
-  "peak_weight": 7,
+  "peak_weight": 7.0,
   "min_level": 6,
   "damage_mult": 1.0,
   "weight_mult": 0.95,
   "max_enchant": 2,
-  "color": [200, 180, 140],
+  "color": [
+    200,
+    180,
+    140
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
-  "weaknesses": ["fire"],
-  "vulnerabilities": ["fire"],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
   "effective_against": [],
-  "special_properties": ["shock_resistant", "spear_shaft"],
+  "special_properties": [
+    "shock_resistant",
+    "spear_shaft"
+  ],
   "lore_descriptor": "pale, straight-grained; the wood of warriors",
   "unidentified_descriptor": "a pale fibrous wood",
   "first_pickup_chronicle": "Ash. Yggdrasil was an ash. So was every Viking spear-shaft. Springy and unsplittable under shock — what hardwood ought to be.",

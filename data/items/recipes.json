@@ -986,7 +986,7 @@
     ],
     "sp": 57,
     "bonus_type": "status",
-    "bonus_effect": "haste",
+    "bonus_effect": "hasted",
     "bonus_amount": 15,
     "description": "Crisped bat wing with thyme. Something about the hollowness of the bones quickens the legs.",
     "sprite_desc": "A wooden platter bearing a glistening roast of bat wing and wild thyme, seared to a earthy crust with herb garnish"
@@ -1089,7 +1089,7 @@
     ],
     "sp": 112,
     "bonus_type": "status",
-    "bonus_effect": "haste",
+    "bonus_effect": "hasted",
     "bonus_amount": 30,
     "description": "Hollow harpy bones dissolved in root vegetable broth. The lightness of flight passes to the eater.",
     "sprite_desc": "A stone bowl filled with smooth warm russet broth made from hollow bone and cave carrot, wisps of fragrant steam curling above"
@@ -1130,7 +1130,7 @@
     ],
     "sp": 78,
     "bonus_type": "status",
-    "bonus_effect": "arcane_shield",
+    "bonus_effect": "magic_resist",
     "bonus_amount": 25,
     "description": "The alchemical properties of slime, tempered by goblin constitution and root herbs, resist magical forces.",
     "sprite_desc": "A ceramic plate of beautifully prepared goblin flesh, slime core, and valerian root, plated with a verdant reduction drizzled on top"
@@ -1184,7 +1184,7 @@
     ],
     "sp": 225,
     "bonus_type": "status",
-    "bonus_effect": "blind_resist",
+    "bonus_effect": "truesight",
     "bonus_amount": 60,
     "description": "The stone gaze of the basilisk, processed with herbs, teaches the eyes to resist petrifying sight.",
     "sprite_desc": "A stone bowl filled with smooth earthy broth made from basilisk stone, cave carrot, and wild thyme, wisps of fragrant steam curling above"
@@ -1210,7 +1210,7 @@
     ],
     "sp": 112,
     "bonus_type": "status",
-    "bonus_effect": "arcane_shield",
+    "bonus_effect": "magic_resist",
     "bonus_amount": 40,
     "description": "Clarified vampire blood with nightshade. Darkly beautiful. Provides resistance to magical forces.",
     "sprite_desc": "A stone bowl filled with smooth warm russet broth made from thrall blood and nightshade leaf, wisps of fragrant steam curling above"
@@ -1368,7 +1368,7 @@
     ],
     "sp": 148,
     "bonus_type": "status",
-    "bonus_effect": "death_ward",
+    "bonus_effect": "life_save",
     "bonus_amount": 40,
     "description": "A spirit dissolved in void-salt brine with calming herbs. Temporarily wards against death itself.",
     "sprite_desc": "A stone bowl filled with smooth pale violet broth made from spectral essence, void salt, and valerian root, wisps of fragrant steam curling above"
@@ -1434,7 +1434,7 @@
     ],
     "sp": 312,
     "bonus_type": "status",
-    "bonus_effect": "arcane_shield",
+    "bonus_effect": "magic_resist",
     "bonus_amount": 60,
     "lore": "The raw force of Abaddon with the lich's immortal will. Magic cannot touch you for a very long time.",
     "sprite_desc": "A ceramic plate of beautifully prepared Void Essence, necromancer phylactery, and void salt, plated with a earthy reduction drizzled on top",
@@ -5970,7 +5970,7 @@
     "bonus_type": "status",
     "bonus_stat": "DEX",
     "bonus_amount": 18,
-    "bonus_effect": "haste",
+    "bonus_effect": "hasted",
     "description": "Continental-hunter four-element feast assembled while the riders pass overhead: horn, fang, root, salt. The plate trembles; the diner runs faster the rest of the night.",
     "sprite_desc": "A long oak board with four small piles arranged in a line, a horn at one end and a fang at the other, the table itself slightly blurred"
   },
@@ -6100,7 +6100,7 @@
     "bonus_type": "status",
     "bonus_stat": "CON",
     "bonus_amount": 25,
-    "bonus_effect": "death_ward",
+    "bonus_effect": "life_save",
     "description": "Moroccan four-element tagine sealed with bread dough for a day and a night, opened only when no one is breathing in the room. Said to keep the eater from dying once.",
     "sprite_desc": "A tall painted tagine with the lid being lifted just an inch by hooded gloved hands, the steam inside dark and slow"
   },

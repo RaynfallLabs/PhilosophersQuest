@@ -2,21 +2,35 @@
   "id": "rawhide",
   "name": "rawhide",
   "material_class": "leather",
-  "applies_to": ["weapon", "armor"],
+  "applies_to": [
+    "weapon",
+    "armor"
+  ],
   "peak_floor": 5,
   "spread": 10,
-  "peak_weight": 8,
+  "peak_weight": 8.0,
   "min_level": 1,
   "damage_mult": 0.8,
   "weight_mult": 0.6,
   "max_enchant": 1,
-  "color": [150, 110, 80],
+  "color": [
+    150,
+    110,
+    80
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
-  "weaknesses": ["acid"],
-  "vulnerabilities": ["acid"],
+  "weaknesses": [
+    "acid"
+  ],
+  "vulnerabilities": [
+    "acid"
+  ],
   "effective_against": [],
-  "special_properties": ["light", "supple"],
+  "special_properties": [
+    "light",
+    "supple"
+  ],
   "lore_descriptor": "rough untanned hide, smells of animal",
   "unidentified_descriptor": "a strip of rough hide",
   "first_pickup_chronicle": "Rawhide. Untanned. Smells. Works. Shepherds have killed kings with less.",

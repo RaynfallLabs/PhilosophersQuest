@@ -2,21 +2,46 @@
   "id": "sunsteel",
   "name": "sunsteel",
   "material_class": "magical_metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 80,
   "spread": 12,
-  "peak_weight": 3,
+  "peak_weight": 3.0,
   "min_level": 55,
-  "damage_mult": 1.50,
-  "weight_mult": 1.00,
+  "damage_mult": 1.5,
+  "weight_mult": 1.0,
   "max_enchant": 5,
-  "color": [255, 220, 120],
+  "color": [
+    255,
+    220,
+    120
+  ],
   "armor_ac_bonus": 1,
-  "resistances": ["fire", "darkness"],
-  "weaknesses": ["cold"],
+  "resistances": [
+    "fire",
+    "darkness"
+  ],
+  "weaknesses": [
+    "cold"
+  ],
   "vulnerabilities": [],
-  "effective_against": ["undead", "fiend", "demon_minor", "demon_major", "shadow"],
-  "special_properties": ["radiates_warmth", "fire_damage_bonus", "blessed_capable", "holy_aspect", "undead_dread"],
+  "effective_against": [
+    "undead",
+    "fiend",
+    "demon_minor",
+    "demon_major",
+    "shadow"
+  ],
+  "special_properties": [
+    "radiates_warmth",
+    "fire_damage_bonus",
+    "blessed_capable",
+    "holy_aspect",
+    "undead_dread"
+  ],
   "lore_descriptor": "gold-touched steel, warm under bare hand",
   "unidentified_descriptor": "a gleaming blade that doesn't go cold",
   "first_pickup_chronicle": "Sunsteel. They forged it from a vein the sun touched at solstice. I can feel the warmth even through the leather wrap. The undead are afraid of this and they should be.",

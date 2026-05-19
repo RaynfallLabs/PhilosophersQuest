@@ -19,7 +19,9 @@
     "effect": "heal",
     "power": "2d4",
     "unidentified_name": "oak wand",
-    "lore": "Carved from the heartwood of a healing oak that grows only near druidic shrines, this wand channels the tree's life-giving essence into whoever is struck by its beam."
+    "lore": "Carved from the heartwood of a healing oak that grows only near druidic shrines, this wand channels the tree's life-giving essence into whoever is struck by its beam.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_extra_healing": {
     "name": "wand of extra healing",
@@ -41,7 +43,9 @@
     "effect": "extra_heal",
     "power": "5d4",
     "unidentified_name": "pine wand",
-    "lore": "Pine resin preserves, and this wand applies that principle to the body â€” the healing it channels is deeper and more thorough than ordinary healing magic, mending tissue at the cellular level."
+    "lore": "Pine resin preserves, and this wand applies that principle to the body â€” the healing it channels is deeper and more thorough than ordinary healing magic, mending tissue at the cellular level.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_restore_body": {
     "name": "wand of restore body",
@@ -63,7 +67,9 @@
     "effect": "restore_body",
     "power": "",
     "unidentified_name": "ash wand",
-    "lore": "Ash has long been associated with restoration and renewal; this wand uses that symbolism to literal effect, repairing even deeply damaged body systems that conventional healing fails to address."
+    "lore": "Ash has long been associated with restoration and renewal; this wand uses that symbolism to literal effect, repairing even deeply damaged body systems that conventional healing fails to address.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_sleep": {
     "name": "wand of sleep",
@@ -85,7 +91,9 @@
     "effect": "sleep_monster",
     "power": "",
     "unidentified_name": "birch wand",
-    "lore": "Birch's pale wood seems almost to glow with an inner calm; this wand projects that soporific tranquility outward, enveloping nearby creatures in an irresistible magical drowsiness."
+    "lore": "Birch's pale wood seems almost to glow with an inner calm; this wand projects that soporific tranquility outward, enveloping nearby creatures in an irresistible magical drowsiness.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_deep_sleep": {
     "name": "wand of deep sleep",
@@ -107,7 +115,9 @@
     "effect": "sleep_monster",
     "power": "",
     "unidentified_name": "willow wand",
-    "lore": "The weeping willow droops with a heaviness that speaks of deep exhaustion; this wand channels that quality into a more profound sleep effect, sending targets into slumber that's difficult to break."
+    "lore": "The weeping willow droops with a heaviness that speaks of deep exhaustion; this wand channels that quality into a more profound sleep effect, sending targets into slumber that's difficult to break.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_slow": {
     "name": "wand of slowing",
@@ -129,7 +139,9 @@
     "effect": "slow_monster",
     "power": "",
     "unidentified_name": "ebony wand",
-    "lore": "Dense ebony absorbs light and movement alike; this wand projects a slowing field that saps the target's speed, turning combatants into sluggish obstacles easily avoided or dispatched."
+    "lore": "Dense ebony absorbs light and movement alike; this wand projects a slowing field that saps the target's speed, turning combatants into sluggish obstacles easily avoided or dispatched.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_torpor": {
     "name": "wand of torpor",
@@ -151,7 +163,9 @@
     "effect": "slow_monster",
     "power": "",
     "unidentified_name": "walnut wand",
-    "lore": "A walnut wand carved by a mage who wanted to study the behavior of slowed monsters â€” this wand's torpor effect is more persistent than ordinary slowing, lingering even after the wand's initial discharge."
+    "lore": "A walnut wand carved by a mage who wanted to study the behavior of slowed monsters â€” this wand's torpor effect is more persistent than ordinary slowing, lingering even after the wand's initial discharge.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_confusion": {
     "name": "wand of confusion",
@@ -173,7 +187,9 @@
     "effect": "confuse_monster",
     "power": "",
     "unidentified_name": "cedar wand",
-    "lore": "Cedar's aromatic quality has historically been associated with mental clarity â€” this wand inverts that association, projecting a confusion field that dismantles the target's spatial reasoning and combat instincts."
+    "lore": "Cedar's aromatic quality has historically been associated with mental clarity â€” this wand inverts that association, projecting a confusion field that dismantles the target's spatial reasoning and combat instincts.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_madness": {
     "name": "wand of madness",
@@ -195,7 +211,9 @@
     "effect": "confuse_monster",
     "power": "",
     "unidentified_name": "rosewood wand",
-    "lore": "The madness this wand induces goes beyond ordinary confusion into a genuine psychic break â€” affected creatures become completely unpredictable, attacking allies, fleeing randomly, or standing motionless in apparent existential crisis."
+    "lore": "The madness this wand induces goes beyond ordinary confusion into a genuine psychic break â€” affected creatures become completely unpredictable, attacking allies, fleeing randomly, or standing motionless in apparent existential crisis.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_paralysis": {
     "name": "wand of paralysis",
@@ -217,7 +235,9 @@
     "effect": "paralyze_monster",
     "power": "",
     "unidentified_name": "bamboo wand",
-    "lore": "Bamboo is simultaneously rigid and flexible â€” a perfect material for a paralysis wand whose effect locks the target in place with absolute rigidity while the caster remains free to act."
+    "lore": "Bamboo is simultaneously rigid and flexible â€” a perfect material for a paralysis wand whose effect locks the target in place with absolute rigidity while the caster remains free to act.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_blindness": {
     "name": "wand of blindness",
@@ -239,7 +259,9 @@
     "effect": "blind_monster",
     "power": "",
     "unidentified_name": "twisted branch wand",
-    "lore": "Twisted from a branch struck by lightning and recovered still smoldering, this wand blinds targets by overloading their visual processing â€” a bright flash that leaves lasting afterimages and effectively removes sight."
+    "lore": "Twisted from a branch struck by lightning and recovered still smoldering, this wand blinds targets by overloading their visual processing â€” a bright flash that leaves lasting afterimages and effectively removes sight.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_fear": {
     "name": "wand of fear",
@@ -261,7 +283,9 @@
     "effect": "fear_monster",
     "power": "",
     "unidentified_name": "ivory wand",
-    "lore": "Made from the tusk of a creature that preyed on predators, this wand projects existential terror that bypasses all courage â€” even the bravest monster will flee when confronted with fear this fundamental."
+    "lore": "Made from the tusk of a creature that preyed on predators, this wand projects existential terror that bypasses all courage â€” even the bravest monster will flee when confronted with fear this fundamental.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_terror": {
     "name": "wand of terror",
@@ -283,7 +307,9 @@
     "effect": "fear_monster",
     "power": "",
     "unidentified_name": "etched bone wand",
-    "lore": "The extreme fear wand â€” targets enter a state of panicked rout. The psychological signature this produces can linger as trauma even after the magical effect fades. Some dungeon scholars consider this one of the more ethically concerning wands."
+    "lore": "The extreme fear wand â€” targets enter a state of panicked rout. The psychological signature this produces can linger as trauma even after the magical effect fades. Some dungeon scholars consider this one of the more ethically concerning wands.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_charm_monster": {
     "name": "wand of charm monster",
@@ -305,7 +331,9 @@
     "effect": "charm_monster",
     "power": "",
     "unidentified_name": "charred bone wand",
-    "lore": "A softly glowing wand that projects a field of magical sympathy. Charmed monsters do not become allies exactly â€” they become convinced that the caster is a friend, which limits their hostility but does not guarantee cooperation."
+    "lore": "A softly glowing wand that projects a field of magical sympathy. Charmed monsters do not become allies exactly â€” they become convinced that the caster is a friend, which limits their hostility but does not guarantee cooperation.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_fire": {
     "name": "wand of fire",
@@ -327,7 +355,9 @@
     "effect": "fire_bolt",
     "power": "2d4",
     "unidentified_name": "clear crystal wand",
-    "lore": "A heat-scarred wand that projects bolts of magical flame. The fire it produces burns hotter than natural fire and ignores moisture, making it effective even in the damp lower dungeon levels."
+    "lore": "A heat-scarred wand that projects bolts of magical flame. The fire it produces burns hotter than natural fire and ignores moisture, making it effective even in the damp lower dungeon levels.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_flame": {
     "name": "wand of flame",
@@ -349,7 +379,9 @@
     "effect": "fire_bolt",
     "power": "2d8",
     "unidentified_name": "glowing crystal wand",
-    "lore": "A wand producing sustained flame rather than single bolts â€” the fire stream can be swept across multiple targets. The design emerged from alchemists who studied the continuous fire production of fire-breathing creatures."
+    "lore": "A wand producing sustained flame rather than single bolts â€” the fire stream can be swept across multiple targets. The design emerged from alchemists who studied the continuous fire production of fire-breathing creatures.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_inferno": {
     "name": "wand of inferno",
@@ -371,7 +403,9 @@
     "effect": "fire_bolt",
     "power": "5d6",
     "unidentified_name": "pulsing crystal wand",
-    "lore": "The most devastating fire wand produces explosions of concentrated flame. The blast radius means users must maintain significant distance. Particularly effective against undead and creatures resistant to physical damage."
+    "lore": "The most devastating fire wand produces explosions of concentrated flame. The blast radius means users must maintain significant distance. Particularly effective against undead and creatures resistant to physical damage.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_embers": {
     "name": "wand of embers",
@@ -393,7 +427,9 @@
     "effect": "fire_bolt",
     "power": "1d4",
     "unidentified_name": "dark crystal wand",
-    "lore": "An unusual fire wand that produces slow-burning coals rather than active flame. The embers deal ongoing fire damage and are difficult to extinguish. Originally developed to mark positions in smoke-filled environments."
+    "lore": "An unusual fire wand that produces slow-burning coals rather than active flame. The embers deal ongoing fire damage and are difficult to extinguish. Originally developed to mark positions in smoke-filled environments.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_frost": {
     "name": "wand of frost",
@@ -415,7 +451,9 @@
     "effect": "cold_bolt",
     "power": "2d4",
     "unidentified_name": "smoked glass wand",
-    "lore": "An extended-range cold wand that coats targets in frost, slowing them through temperature reduction as well as magical effect. Frost damage accumulates differently from fire damage â€” slower to appear, but longer-lasting."
+    "lore": "An extended-range cold wand that coats targets in frost, slowing them through temperature reduction as well as magical effect. Frost damage accumulates differently from fire damage â€” slower to appear, but longer-lasting.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_ice": {
     "name": "wand of ice",
@@ -437,7 +475,9 @@
     "effect": "cold_bolt",
     "power": "2d8",
     "unidentified_name": "cracked glass wand",
-    "lore": "This wand encases targets in ice, both damaging them and physically restraining them. The ice is magical and resists normal heat to melt it. Particularly brutal against creatures with fire-based biology."
+    "lore": "This wand encases targets in ice, both damaging them and physically restraining them. The ice is magical and resists normal heat to melt it. Particularly brutal against creatures with fire-based biology.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_glaciation": {
     "name": "wand of glaciation",
@@ -459,7 +499,9 @@
     "effect": "cold_bolt",
     "power": "5d6",
     "unidentified_name": "hollow glass wand",
-    "lore": "The extreme cold wand can reduce temperatures in an area to levels that damage even cold-resistant targets. Its side effect â€” flash-freezing ambient moisture â€” creates icy floors that cause movement problems."
+    "lore": "The extreme cold wand can reduce temperatures in an area to levels that damage even cold-resistant targets. Its side effect â€” flash-freezing ambient moisture â€” creates icy floors that cause movement problems.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_lightning": {
     "name": "wand of lightning",
@@ -481,7 +523,9 @@
     "effect": "lightning_bolt",
     "power": "2d4",
     "unidentified_name": "spun glass wand",
-    "lore": "A crackling wand that delivers lightning bolts with the force of a direct strike. Lightning wands are particularly dangerous to use in metal-reinforced dungeon sections, where the current chains unpredictably."
+    "lore": "A crackling wand that delivers lightning bolts with the force of a direct strike. Lightning wands are particularly dangerous to use in metal-reinforced dungeon sections, where the current chains unpredictably.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_thunder": {
     "name": "wand of thunder",
@@ -503,7 +547,9 @@
     "effect": "lightning_bolt",
     "power": "4d4",
     "unidentified_name": "quartz wand",
-    "lore": "A concussive lightning wand that produces thunderclaps alongside its electrical discharge. The sonic component stuns targets independently of the lightning â€” double threat from a single wand use."
+    "lore": "A concussive lightning wand that produces thunderclaps alongside its electrical discharge. The sonic component stuns targets independently of the lightning â€” double threat from a single wand use.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_storm": {
     "name": "wand of storms",
@@ -525,7 +571,9 @@
     "effect": "lightning_bolt",
     "power": "4d8",
     "unidentified_name": "amethyst wand",
-    "lore": "A storm wand produces a localized electrical tempest â€” multiple lightning strikes in a small area. Extraordinarily effective against clustered targets. The electromagnetic disruption also interferes with certain magical effects."
+    "lore": "A storm wand produces a localized electrical tempest â€” multiple lightning strikes in a small area. Extraordinarily effective against clustered targets. The electromagnetic disruption also interferes with certain magical effects.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_acid": {
     "name": "wand of acid",
@@ -547,7 +595,9 @@
     "effect": "acid_spray",
     "power": "1d8",
     "unidentified_name": "sapphire wand",
-    "lore": "A corrosive green wand that projects streams of magical acid. Particularly effective against armored targets â€” the acid dissolves metal and degrades magical enchantments on armor before beginning to damage the wearer."
+    "lore": "A corrosive green wand that projects streams of magical acid. Particularly effective against armored targets â€” the acid dissolves metal and degrades magical enchantments on armor before beginning to damage the wearer.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_corrosion": {
     "name": "wand of corrosion",
@@ -569,7 +619,9 @@
     "effect": "acid_spray",
     "power": "3d4",
     "unidentified_name": "ruby wand",
-    "lore": "An intensified acid wand that produces acid specifically designed to attack magical bindings as well as physical material. Enchanted items struck by corrosion wand effects often lose their enchantment entirely."
+    "lore": "An intensified acid wand that produces acid specifically designed to attack magical bindings as well as physical material. Enchanted items struck by corrosion wand effects often lose their enchantment entirely.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_dissolution": {
     "name": "wand of dissolution",
@@ -591,7 +643,9 @@
     "effect": "acid_spray",
     "power": "5d4",
     "unidentified_name": "emerald wand",
-    "lore": "The extreme acid wand produces a substance that dissolves virtually any material. Particularly effective against constructs and golems, whose magical bodies have no special resistance to chemical attack."
+    "lore": "The extreme acid wand produces a substance that dissolves virtually any material. Particularly effective against constructs and golems, whose magical bodies have no special resistance to chemical attack.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_magic_missile": {
     "name": "wand of magic missile",
@@ -613,7 +667,9 @@
     "effect": "magic_missile",
     "power": "1d4",
     "unidentified_name": "topaz wand",
-    "lore": "A simple but reliable wand projecting bolts of pure magical force. Unlike elemental wands, magic missiles are not resisted by elemental resistances â€” what they lack in spectacular effect they compensate with universal applicability."
+    "lore": "A simple but reliable wand projecting bolts of pure magical force. Unlike elemental wands, magic missiles are not resisted by elemental resistances â€” what they lack in spectacular effect they compensate with universal applicability.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_force": {
     "name": "wand of force",
@@ -635,7 +691,9 @@
     "effect": "magic_missile",
     "power": "2d4",
     "unidentified_name": "onyx wand",
-    "lore": "Larger magic missiles that produce visible impact waves on contact. Against physically resistant targets â€” stone golems, iron constructs â€” force wands are significantly more effective than elemental alternatives."
+    "lore": "Larger magic missiles that produce visible impact waves on contact. Against physically resistant targets â€” stone golems, iron constructs â€” force wands are significantly more effective than elemental alternatives.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_annihilation": {
     "name": "wand of annihilation",
@@ -657,7 +715,9 @@
     "effect": "magic_missile",
     "power": "3d6",
     "unidentified_name": "jade wand",
-    "lore": "The extreme force wand produces blasts of pure destructive energy. Targets are not burned, frozen, or shocked â€” they are simply reduced. The precision of the effect means it works equally against any physical target."
+    "lore": "The extreme force wand produces blasts of pure destructive energy. Targets are not burned, frozen, or shocked â€” they are simply reduced. The precision of the effect means it works equally against any physical target.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_striking": {
     "name": "wand of striking",
@@ -679,7 +739,9 @@
     "effect": "striking",
     "power": "1d4",
     "unidentified_name": "malachite wand",
-    "lore": "A physical impact wand that projects kinetic force rather than magical energy. Particularly effective against magically resistant targets that shrug off enchantment-based damage."
+    "lore": "A physical impact wand that projects kinetic force rather than magical energy. Particularly effective against magically resistant targets that shrug off enchantment-based damage.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_crushing": {
     "name": "wand of crushing",
@@ -701,7 +763,9 @@
     "effect": "striking",
     "power": "2d6",
     "unidentified_name": "lapis lazuli wand",
-    "lore": "An intensified striking wand that produces enough force to break bones through armor. The impact wave can knock targets back, potentially off edges or into other hazards."
+    "lore": "An intensified striking wand that produces enough force to break bones through armor. The impact wave can knock targets back, potentially off edges or into other hazards.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_smiting": {
     "name": "wand of smiting",
@@ -723,7 +787,9 @@
     "effect": "striking",
     "power": "3d6",
     "unidentified_name": "pearl wand",
-    "lore": "The extreme striking wand produces impacts approaching those of boulders. Used by some dungeon explorers as a structural demolition tool as well as a weapon."
+    "lore": "The extreme striking wand produces impacts approaching those of boulders. Used by some dungeon explorers as a structural demolition tool as well as a weapon.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_drain_life": {
     "name": "wand of drain life",
@@ -745,7 +811,9 @@
     "effect": "drain_life",
     "power": "2d6",
     "unidentified_name": "coral wand",
-    "lore": "A black wand that extracts life force from targets and transfers some of it to the wielder. The drain causes weakness and exhaustion in targets; the return provides the wielder with temporary vitality."
+    "lore": "A black wand that extracts life force from targets and transfers some of it to the wielder. The drain causes weakness and exhaustion in targets; the return provides the wielder with temporary vitality.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_vampirism": {
     "name": "wand of vampirism",
@@ -767,7 +835,9 @@
     "effect": "drain_life",
     "power": "3d6",
     "unidentified_name": "moonstone wand",
-    "lore": "An intensified life drain wand that extracts vitality more efficiently. Wielders report feeling temporarily invigorated after use â€” the feeling passes, but it makes this wand popular despite the ethical concerns it raises."
+    "lore": "An intensified life drain wand that extracts vitality more efficiently. Wielders report feeling temporarily invigorated after use â€” the feeling passes, but it makes this wand popular despite the ethical concerns it raises.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_death": {
     "name": "wand of death",
@@ -789,7 +859,9 @@
     "effect": "death_ray",
     "power": "",
     "unidentified_name": "sunstone wand",
-    "lore": "The extreme drain wand can strip vitality entirely from a target. Against powerful undead â€” which have no natural vitality â€” this effect is limited, but against living targets it is one of the most feared wand effects in existence."
+    "lore": "The extreme drain wand can strip vitality entirely from a target. Against powerful undead â€” which have no natural vitality â€” this effect is limited, but against living targets it is one of the most feared wand effects in existence.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_stoning": {
     "name": "wand of stoning",
@@ -811,7 +883,9 @@
     "effect": "stoning",
     "power": "",
     "unidentified_name": "bloodstone wand",
-    "lore": "A wand specialized for inducing petrification in a targeted manner. Unlike the more general petrification wand, this focuses the effect for more rapid transformation."
+    "lore": "A wand specialized for inducing petrification in a targeted manner. Unlike the more general petrification wand, this focuses the effect for more rapid transformation.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_disintegration": {
     "name": "wand of disintegration",
@@ -833,7 +907,9 @@
     "effect": "disintegrate",
     "power": "",
     "unidentified_name": "tiger eye wand",
-    "lore": "The most destructive targeted wand â€” its discharge unravels the molecular structure of the target. The process is not gradual; disintegration occurs in a fraction of a second. What remains is dust."
+    "lore": "The most destructive targeted wand â€” its discharge unravels the molecular structure of the target. The process is not gradual; disintegration occurs in a fraction of a second. What remains is dust.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_speed": {
     "name": "wand of speed",
@@ -855,7 +931,9 @@
     "effect": "haste_self",
     "power": "",
     "unidentified_name": "citrine wand",
-    "lore": "A quickening wand that accelerates the target's nervous system and muscle response. The wielder acts and reacts faster while the wand's effect lasts. The energy cost to the body is significant â€” hunger follows."
+    "lore": "A quickening wand that accelerates the target's nervous system and muscle response. The wielder acts and reacts faster while the wand's effect lasts. The energy cost to the body is significant â€” hunger follows.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_invisibility": {
     "name": "wand of invisibility",
@@ -877,7 +955,9 @@
     "effect": "invisibility_self",
     "power": "",
     "unidentified_name": "tourmaline wand",
-    "lore": "A translucent wand that bends light around the target, rendering them optically invisible. It does not suppress sound or scent, leaving the invisible user detectable through other means to creatures that rely on them."
+    "lore": "A translucent wand that bends light around the target, rendering them optically invisible. It does not suppress sound or scent, leaving the invisible user detectable through other means to creatures that rely on them.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_flight": {
     "name": "wand of flight",
@@ -899,7 +979,9 @@
     "effect": "levitation_self",
     "power": "",
     "unidentified_name": "bronze wand",
-    "lore": "An intensified levitation wand that provides true directed flight. Users report that the sensation differs from levitation â€” there is a sense of push behind the movement rather than absence of weight."
+    "lore": "An intensified levitation wand that provides true directed flight. Users report that the sensation differs from levitation â€” there is a sense of push behind the movement rather than absence of weight.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_teleport": {
     "name": "wand of teleportation",
@@ -921,7 +1003,9 @@
     "effect": "teleport_self",
     "power": "",
     "unidentified_name": "iron wand",
-    "lore": "A wand that folds space around the wielder, moving them instantly to a random nearby location. The destination is not fully controlled, making this a wand of last resort rather than tactical transport."
+    "lore": "A wand that folds space around the wielder, moving them instantly to a random nearby location. The destination is not fully controlled, making this a wand of last resort rather than tactical transport.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_shielding": {
     "name": "wand of shielding",
@@ -943,7 +1027,9 @@
     "effect": "shield_self",
     "power": "",
     "unidentified_name": "steel wand",
-    "lore": "A protective wand that generates a brief field of force around the wielder, deflecting incoming attacks. The field is stronger against fast-moving projectiles than slow-moving melee weapons."
+    "lore": "A protective wand that generates a brief field of force around the wielder, deflecting incoming attacks. The field is stronger against fast-moving projectiles than slow-moving melee weapons.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_fire_shield": {
     "name": "wand of fire shield",
@@ -965,7 +1051,9 @@
     "effect": "fire_shield",
     "power": "",
     "unidentified_name": "gold wand",
-    "lore": "A wand that wraps the wielder in a thin layer of protective flame. Melee attackers take fire damage when they strike the shielded target. The heat makes this wand inadvisable in environments with flammable materials."
+    "lore": "A wand that wraps the wielder in a thin layer of protective flame. Melee attackers take fire damage when they strike the shielded target. The heat makes this wand inadvisable in environments with flammable materials.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_cold_shield": {
     "name": "wand of cold shield",
@@ -987,7 +1075,9 @@
     "effect": "cold_shield",
     "power": "",
     "unidentified_name": "brass wand",
-    "lore": "A wand that envelops the wielder in a shell of cold air. Melee attackers take cold damage; the chill also slightly slows the nervous conduction of attackers, making their strikes marginally less effective."
+    "lore": "A wand that envelops the wielder in a shell of cold air. Melee attackers take cold damage; the chill also slightly slows the nervous conduction of attackers, making their strikes marginally less effective.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_empowerment": {
     "name": "wand of empowerment",
@@ -1009,7 +1099,9 @@
     "effect": "boost_str",
     "power": "",
     "unidentified_name": "pewter wand",
-    "lore": "A wand that temporarily amplifies the wielder's physical capabilities, providing a surge of strength and endurance. The effect is popular with warriors who encounter unexpected challenges."
+    "lore": "A wand that temporarily amplifies the wielder's physical capabilities, providing a surge of strength and endurance. The effect is popular with warriors who encounter unexpected challenges.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_fortitude": {
     "name": "wand of fortitude",
@@ -1031,7 +1123,9 @@
     "effect": "boost_con",
     "power": "",
     "unidentified_name": "runed metal wand",
-    "lore": "An intensified empowerment wand that provides greater physical enhancement. The physiological stress it places on the body means it should not be used frequently."
+    "lore": "An intensified empowerment wand that provides greater physical enhancement. The physiological stress it places on the body means it should not be used frequently.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_acuity": {
     "name": "wand of acuity",
@@ -1053,7 +1147,9 @@
     "effect": "boost_int",
     "power": "",
     "unidentified_name": "engraved metal wand",
-    "lore": "A wand that temporarily sharpens mental processing, improving focus and reaction time. Quiz timers feel extended to wielders â€” not because time slows, but because the mind moves faster."
+    "lore": "A wand that temporarily sharpens mental processing, improving focus and reaction time. Quiz timers feel extended to wielders â€” not because time slows, but because the mind moves faster.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_digging": {
     "name": "wand of digging",
@@ -1075,7 +1171,9 @@
     "effect": "digging",
     "power": "",
     "unidentified_name": "polished metal wand",
-    "lore": "A useful exploration wand that disintegrates stone. Dungeon explorers use digging wands to open new passages, bypass locked doors, and escape enclosed spaces."
+    "lore": "A useful exploration wand that disintegrates stone. Dungeon explorers use digging wands to open new passages, bypass locked doors, and escape enclosed spaces.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_light": {
     "name": "wand of light",
@@ -1097,7 +1195,9 @@
     "effect": "light",
     "power": "",
     "unidentified_name": "twisted metal wand",
-    "lore": "A wand that produces bright illumination, revealing hidden features of dungeon walls and floors. Useful for detecting traps and secret passages. The light has a pinkish quality that some find soothing."
+    "lore": "A wand that produces bright illumination, revealing hidden features of dungeon walls and floors. Useful for detecting traps and secret passages. The light has a pinkish quality that some find soothing.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_cancellation": {
     "name": "wand of cancellation",
@@ -1119,7 +1219,9 @@
     "effect": "cancellation",
     "power": "",
     "unidentified_name": "white metal wand",
-    "lore": "A null-field wand that temporarily suppresses magical effects on its target. Useful for dispelling ongoing enchantments or neutralizing magically protected creatures."
+    "lore": "A null-field wand that temporarily suppresses magical effects on its target. Useful for dispelling ongoing enchantments or neutralizing magically protected creatures.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_create_monster": {
     "name": "wand of create monster",
@@ -1141,7 +1243,9 @@
     "effect": "create_monster",
     "power": "",
     "unidentified_name": "mithril wand",
-    "lore": "A chaotic wand that draws creatures from elsewhere â€” monsters appear from thin air near the target area. The type of monster summoned is somewhat random, making this wand dangerous to use in small spaces."
+    "lore": "A chaotic wand that draws creatures from elsewhere â€” monsters appear from thin air near the target area. The type of monster summoned is somewhat random, making this wand dangerous to use in small spaces.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_detect_monster": {
     "name": "wand of detect monsters",
@@ -1163,7 +1267,9 @@
     "effect": "detect_monsters",
     "power": "",
     "unidentified_name": "grey stone wand",
-    "lore": "A sensing wand that reveals the position of nearby monsters as a psychic impression. The range and precision of detection improves with quiz performance."
+    "lore": "A sensing wand that reveals the position of nearby monsters as a psychic impression. The range and precision of detection improves with quiz performance.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_detect_treasure": {
     "name": "wand of detect treasure",
@@ -1185,7 +1291,9 @@
     "effect": "detect_treasure",
     "power": "",
     "unidentified_name": "red stone wand",
-    "lore": "A sensing wand that locates valuable objects in the surrounding area. Some treasure is magically shielded and not detectable; this wand finds mundane valuables and many magical ones."
+    "lore": "A sensing wand that locates valuable objects in the surrounding area. Some treasure is magically shielded and not detectable; this wand finds mundane valuables and many magical ones.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_mapping": {
     "name": "wand of mapping",
@@ -1207,7 +1315,9 @@
     "effect": "mapping",
     "power": "",
     "unidentified_name": "blue stone wand",
-    "lore": "A wand that produces a psychic map impression of the current dungeon level. The detail level depends on quiz performance â€” full success reveals the complete layout."
+    "lore": "A wand that produces a psychic map impression of the current dungeon level. The detail level depends on quiz performance â€” full success reveals the complete layout.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_clairvoyance": {
     "name": "wand of clairvoyance",
@@ -1229,7 +1339,9 @@
     "effect": "clairvoyance",
     "power": "",
     "unidentified_name": "green stone wand",
-    "lore": "An intensified mapping wand that reveals not just the layout but the contents of nearby areas â€” monsters, items, and hazards visible as psychic impressions."
+    "lore": "An intensified mapping wand that reveals not just the layout but the contents of nearby areas â€” monsters, items, and hazards visible as psychic impressions.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_polymorph": {
     "name": "wand of polymorph",
@@ -1251,7 +1363,9 @@
     "effect": "polymorph_monster",
     "power": "",
     "unidentified_name": "black stone wand",
-    "lore": "A wand of radical transformation that changes the physical form of its target. The new form is random. Polymorphed creatures retain their original intellect but have the physical capabilities of their new form."
+    "lore": "A wand of radical transformation that changes the physical form of its target. The new form is random. Polymorphed creatures retain their original intellect but have the physical capabilities of their new form.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_identify": {
     "name": "wand of identification",
@@ -1273,7 +1387,9 @@
     "effect": "identify_item",
     "power": "",
     "unidentified_name": "lacquered wood wand",
-    "lore": "A wand that reveals the true nature of unknown items. Unlike the Philosopher's Shard method, this wand requires no quiz â€” it simply reveals. Charges are limited, making the Shard superior for regular identification."
+    "lore": "A wand that reveals the true nature of unknown items. Unlike the Philosopher's Shard method, this wand requires no quiz â€” it simply reveals. Charges are limited, making the Shard superior for regular identification.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_enchantment": {
     "name": "wand of enchantment",
@@ -1295,7 +1411,9 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "gilded wood wand",
-    "lore": "A wand that imbues any item it strikes with a potent magical bonus, its tip trailing motes of silver light. The enchantment layers atop existing properties, deepening their power rather than supplanting them. Artificers covet these wands above all tools of their craft."
+    "lore": "A wand that imbues any item it strikes with a potent magical bonus, its tip trailing motes of silver light. The enchantment layers atop existing properties, deepening their power rather than supplanting them. Artificers covet these wands above all tools of their craft.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_curse": {
     "name": "wand of cursing",
@@ -1317,7 +1435,9 @@
     "effect": "curse_monster",
     "power": "",
     "unidentified_name": "scorched wood wand",
-    "lore": "A wand wreathed in a sickly aura that binds malefic enchantments to whatever it touches. Items so cursed cling to their bearer with an unnatural tenacity, resisting all mundane attempts at removal; creatures struck suffer grinding, relentless penalties."
+    "lore": "A wand wreathed in a sickly aura that binds malefic enchantments to whatever it touches. Items so cursed cling to their bearer with an unnatural tenacity, resisting all mundane attempts at removal; creatures struck suffer grinding, relentless penalties.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_teleport_monster": {
     "name": "wand of teleport monster",
@@ -1339,7 +1459,9 @@
     "effect": "teleport_monster",
     "power": "",
     "unidentified_name": "frozen wood wand",
-    "lore": "A wand that tears a monster from its place and casts it to some distant, random corner of the dungeon. Invaluable for shattering the cohesion of a pack or banishing a singular terror before it can close the distance."
+    "lore": "A wand that tears a monster from its place and casts it to some distant, random corner of the dungeon. Invaluable for shattering the cohesion of a pack or banishing a singular terror before it can close the distance.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_poison": {
     "name": "wand of poison",
@@ -1361,7 +1483,9 @@
     "effect": "poison_monster",
     "power": "",
     "unidentified_name": "painted wood wand",
-    "lore": "A venomous wand that drives magical toxin into its target, igniting a slow burn of ongoing damage that no suit of armor can deflect. The poison works from within, and only a sufficiently resilient constitution can hope to resist it."
+    "lore": "A venomous wand that drives magical toxin into its target, igniting a slow burn of ongoing damage that no suit of armor can deflect. The poison works from within, and only a sufficiently resilient constitution can hope to resist it.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_disease": {
     "name": "wand of disease",
@@ -1383,7 +1507,9 @@
     "effect": "disease_monster",
     "power": "",
     "unidentified_name": "hollow reed wand",
-    "lore": "A wand that conjures specific, targeted afflictions rather than blunt poison â€” each disease a precisely crafted assault on a different biological system. Its victims may not feel the full horror of its work until it is far too late."
+    "lore": "A wand that conjures specific, targeted afflictions rather than blunt poison â€” each disease a precisely crafted assault on a different biological system. Its victims may not feel the full horror of its work until it is far too late.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_regeneration": {
     "name": "wand of regeneration",
@@ -1405,7 +1531,9 @@
     "effect": "regeneration_self",
     "power": "",
     "unidentified_name": "serpentine wand",
-    "lore": "A healing wand that works not in a single brilliant flash but in a steady, persistent tide, coaxing the body to rebuild itself at remarkable speed. In the hands of the patient, it can close wounds faster than even a desperate fight can open them."
+    "lore": "A healing wand that works not in a single brilliant flash but in a steady, persistent tide, coaxing the body to rebuild itself at remarkable speed. In the hands of the patient, it can close wounds faster than even a desperate fight can open them.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_earthquake": {
     "name": "wand of earthquake",
@@ -1427,7 +1555,9 @@
     "effect": "earthquake",
     "power": "",
     "unidentified_name": "pyrite wand",
-    "lore": "A devastating wand that sets the very ground shuddering and groaning, sending cracks racing through dungeon floors and bringing ancient stonework crashing down. In enclosed spaces its use is an act of reckless courage â€” or simple madness."
+    "lore": "A devastating wand that sets the very ground shuddering and groaning, sending cracks racing through dungeon floors and bringing ancient stonework crashing down. In enclosed spaces its use is an act of reckless courage â€” or simple madness.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_explosion": {
     "name": "wand of explosion",
@@ -1449,7 +1579,9 @@
     "effect": "explosion",
     "power": "4d8",
     "unidentified_name": "magnetite wand",
-    "lore": "A wand that births a concussive bloom of force at whatever point it is aimed, scattering friend and foe alike in a wave of indiscriminate destruction. It does not distinguish between allegiances, and neither do its consequences."
+    "lore": "A wand that births a concussive bloom of force at whatever point it is aimed, scattering friend and foe alike in a wave of indiscriminate destruction. It does not distinguish between allegiances, and neither do its consequences.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_drain_magic": {
     "name": "wand of drain magic",
@@ -1471,7 +1603,9 @@
     "effect": "drain_magic",
     "power": "",
     "unidentified_name": "petrified wood wand",
-    "lore": "A wand that hungers for magical energy, drinking it from wands, scrolls, and enchantments with equal appetite. Against creatures sustained by sorcery alone, this feeding translates directly into grievous harm."
+    "lore": "A wand that hungers for magical energy, drinking it from wands, scrolls, and enchantments with equal appetite. Against creatures sustained by sorcery alone, this feeding translates directly into grievous harm.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_dispelling": {
     "name": "wand of dispelling",
@@ -1493,7 +1627,9 @@
     "effect": "dispel_magic",
     "power": "",
     "unidentified_name": "arcane oak wand",
-    "lore": "An amplified drain that tears ongoing enchantments away entirely rather than merely diminishing them, leaving its targets bare and mundane. It strips the war-blessings from enemies as readily as it unravels a long-carried curse."
+    "lore": "An amplified drain that tears ongoing enchantments away entirely rather than merely diminishing them, leaving its targets bare and mundane. It strips the war-blessings from enemies as readily as it unravels a long-carried curse.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_aging": {
     "name": "wand of aging",
@@ -1515,7 +1651,9 @@
     "effect": "weaken_monster",
     "power": "",
     "unidentified_name": "runed birch wand",
-    "lore": "A disturbing wand that seizes upon the natural passage of time and twists it to murderous purpose, forcing years â€” sometimes decades â€” upon its target in a matter of moments. The ravages manifest as progressive, terrible weakening, as though life itself is being steadily withdrawn."
+    "lore": "A disturbing wand that seizes upon the natural passage of time and twists it to murderous purpose, forcing years â€” sometimes decades â€” upon its target in a matter of moments. The ravages manifest as progressive, terrible weakening, as though life itself is being steadily withdrawn.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_time_stop": {
     "name": "wand of time stop",
@@ -1537,7 +1675,9 @@
     "effect": "time_stop",
     "power": "",
     "unidentified_name": "gold-banded ebony wand",
-    "lore": "One of the rarest wands, capable of briefly halting time for everything except the wielder. In that frozen moment, the wielder can act freely. The temporal stress costs charges rapidly."
+    "lore": "One of the rarest wands, capable of briefly halting time for everything except the wielder. In that frozen moment, the wielder can act freely. The temporal stress costs charges rapidly.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_wishing": {
     "name": "wand of wishing",
@@ -1559,7 +1699,9 @@
     "effect": "wish",
     "power": "",
     "unidentified_name": "crystal-core iron wand",
-    "lore": "The legendary wand â€” able to grant a genuine wish to the wielder. The scope of the wish is limited by the wand's power level, and overreaching causes the wand to produce unintended results. Experienced users ask for specific, modest things."
+    "lore": "The legendary wand â€” able to grant a genuine wish to the wielder. The scope of the wish is limited by the wand's power level, and overreaching causes the wand to produce unintended results. Experienced users ask for specific, modest things.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_mirroring": {
     "name": "wand of mirroring",
@@ -1581,7 +1723,9 @@
     "effect": "reflect_self",
     "power": "",
     "unidentified_name": "frost-laced steel wand",
-    "lore": "An intensified reflection wand that reflects both magical and physical projectiles. The barrier is visible as a shimmer, allowing tactical use as a partial shield."
+    "lore": "An intensified reflection wand that reflects both magical and physical projectiles. The barrier is visible as a shimmer, allowing tactical use as a partial shield.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_phasing": {
     "name": "wand of phasing",
@@ -1603,7 +1747,9 @@
     "effect": "phase_self",
     "power": "",
     "unidentified_name": "storm-scarred copper wand",
-    "lore": "A wand that temporarily makes the wielder partially non-physical, allowing them to pass through solid objects. The phased state is unstable â€” extended use is dangerous."
+    "lore": "A wand that temporarily makes the wielder partially non-physical, allowing them to pass through solid objects. The phased state is unstable â€” extended use is dangerous.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_mass_confusion": {
     "name": "wand of mass confusion",
@@ -1625,7 +1771,9 @@
     "effect": "mass_confuse",
     "power": "",
     "unidentified_name": "prismatic crystal wand",
-    "lore": "An area effect confusion wand affecting all targets in range simultaneously. Useful for escaping surrounded situations."
+    "lore": "An area effect confusion wand affecting all targets in range simultaneously. Useful for escaping surrounded situations.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_mass_sleep": {
     "name": "wand of mass sleep",
@@ -1647,7 +1795,9 @@
     "effect": "mass_sleep",
     "power": "",
     "unidentified_name": "lightning-forged brass wand",
-    "lore": "An area effect sleep wand that can drop entire groups of opponents simultaneously. One of the most tactically useful wands for non-combat exploration."
+    "lore": "An area effect sleep wand that can drop entire groups of opponents simultaneously. One of the most tactically useful wands for non-combat exploration.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_mass_slow": {
     "name": "wand of mass slow",
@@ -1669,7 +1819,9 @@
     "effect": "mass_slow",
     "power": "",
     "unidentified_name": "sea-glass wand",
-    "lore": "An area effect slowing wand that significantly reduces the speed of all targets in range. Creates windows of safety for a group."
+    "lore": "An area effect slowing wand that significantly reduces the speed of all targets in range. Creates windows of safety for a group.",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_nova": {
     "name": "wand of nova",
@@ -1693,7 +1845,9 @@
     "unidentified_name": "blazing wand",
     "lore": "Recovered from the ruins of the great star-mages' observatory, this wand releases a burst of stellar energy that radiates to every corner of the floor. No creature on the level is safe when it fires. The light of a dying star, compressed and redirected.",
     "containerLootTier": "legendary",
-    "identified": false
+    "identified": false,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_life_force": {
     "name": "wand of life force",
@@ -1717,7 +1871,9 @@
     "unidentified_name": "pulsing wand",
     "lore": "Forged by necromancers who believed that life energy is conserved rather than destroyed, this wand creates a conduit between wielder and target. The target's vitality flows directly into the user. The more wounded your enemy, the more you gain.",
     "containerLootTier": "legendary",
-    "identified": false
+    "identified": false,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_abjuration": {
     "name": "wand of abjuration",
@@ -1741,7 +1897,9 @@
     "unidentified_name": "clear wand",
     "lore": "A masterwork of defensive magic theory. This wand simultaneously strips all applied enchantments from a target and purges the wielder of their own afflictions. Wielded in desperation or with surgical precision, it can turn the tide of a losing battle by resetting the magical state of both combatants.",
     "containerLootTier": "legendary",
-    "identified": false
+    "identified": false,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "iron_mortar_wand": {
     "name": "Baba Yaga's Iron Mortar",
@@ -1764,7 +1922,9 @@
     "power": "",
     "unidentified_name": "a heavy iron pestle",
     "lore": "Baba Yaga grinds the bones of heroes in this mortar before eating them. When wielded as a wand, it channels chaotic magic â€” the effect is never the same twice.",
-    "identified": false
+    "identified": false,
+    "weight": 0.3,
+    "peak_weight": 0
   },
   "lantern_of_diogenes": {
     "name": "Lantern of Diogenes",
@@ -1788,7 +1948,9 @@
     "unidentified_name": "a battered bronze lantern",
     "lore": "Diogenes of Sinope carried a lantern through the streets of Athens in broad daylight. When asked why, he said: 'I am looking for an honest man.' He lived in a barrel, owned nothing, and told Alexander the Great to move because he was blocking the sun. This lantern still burns with that relentless search for truth â€” its light reveals hidden things and never seems to run out.",
     "containerLootTier": "rare",
-    "identified": false
+    "identified": false,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "caduceus_wand": {
     "name": "Caduceus of Hermes",
@@ -1812,7 +1974,9 @@
     "unidentified_name": "a golden rod entwined with two serpents",
     "lore": "The caduceus â€” two serpents wound around a winged staff â€” was carried by Hermes, messenger of the gods. Often confused with the Rod of Asclepius (the true medical symbol, with one snake), the caduceus nonetheless became the emblem of healing across the Western world. This wand channels that borrowed authority: each charge restores the body as if guided by divine medicine.",
     "containerLootTier": "rare",
-    "identified": false
+    "identified": false,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_locksmithing": {
     "name": "wand of locksmithing",
@@ -1835,7 +1999,9 @@
     "power": "",
     "unidentified_name": "ornate gold wand",
     "lore": "Crafted by the legendary locksmith-mages of the Thieves' Guild, this wand can defeat even the most complex locks with a casual flick.",
-    "sprite_desc": "An ornate gold wand with intricate lock mechanism engravings and a jeweled keyhole at the tip"
+    "sprite_desc": "An ornate gold wand with intricate lock mechanism engravings and a jeweled keyhole at the tip",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_turning": {
     "name": "wand of undead turning",
@@ -1858,7 +2024,9 @@
     "power": "2d4",
     "unidentified_name": "holy wand",
     "lore": "Blessed by high priests and inscribed with sacred wards. Its light is anathema to the undead, searing their flesh and scattering their will.",
-    "sprite_desc": "A white wooden wand with golden holy symbols and a softly glowing sunburst at the tip"
+    "sprite_desc": "A white wooden wand with golden holy symbols and a softly glowing sunburst at the tip",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_banishment": {
     "name": "wand of banishment",
@@ -1881,7 +2049,9 @@
     "power": "4d4",
     "unidentified_name": "radiant wand",
     "lore": "A relic of the Grand Temple, this wand channels the purest holy energy. Undead caught in its beam are not merely turned but unmade.",
-    "sprite_desc": "A radiant white-gold wand with angelic wings at the hilt and blazing holy light at the tip"
+    "sprite_desc": "A radiant white-gold wand with angelic wings at the hilt and blazing holy light at the tip",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "wand_of_wonder": {
     "name": "wand of wonder",
@@ -1904,7 +2074,9 @@
     "power": "",
     "unidentified_name": "chaotic wand",
     "lore": "Nobody knows what this wand will do next. It might heal you, blast your foes, or do something entirely unexpected. The chaos is the point.",
-    "sprite_desc": "A multicolored swirling wand that shifts hues constantly with question marks floating around the tip"
+    "sprite_desc": "A multicolored swirling wand that shifts hues constantly with question marks floating around the tip",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "rod_of_chaos": {
     "name": "rod of chaos",
@@ -1927,7 +2099,9 @@
     "power": "",
     "unidentified_name": "pulsating wand",
     "lore": "A more potent version of the wand of wonder, crackling with unstable magical energy. Each zap is a gamble with reality itself.",
-    "sprite_desc": "A dark purple rod crackling with chaotic lightning and swirling reality-warping distortions at the tip"
+    "sprite_desc": "A dark purple rod crackling with chaotic lightning and swirling reality-warping distortions at the tip",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "aarons_rod": {
     "name": "Aaron's Rod",
@@ -1958,7 +2132,8 @@
       "value": 3,
       "scope": "item",
       "desc": "Aaron's Rod gains +3 maximum charges."
-    }
+    },
+    "weight": 0.3
   },
   "circes_wand": {
     "name": "Circe's Wand",
@@ -1989,7 +2164,8 @@
       "value": 2,
       "scope": "item",
       "desc": "Circe's Wand turned crews to swine on Aeaea — it gains 2 extra charges on mastery."
-    }
+    },
+    "weight": 0.3
   },
   "indras_vajra": {
     "name": "Indra's Vajra",
@@ -2020,7 +2196,8 @@
       "value": 3,
       "scope": "item",
       "desc": "Indra's Vajra struck Vritra and freed the seven rivers — it gains 3 extra charges on mastery."
-    }
+    },
+    "weight": 0.3
   },
   "wand_of_wonder_legendary": {
     "name": "Wand of Wonder",
@@ -2397,6 +2574,7 @@
       "scope": "item",
       "desc": "The Wand of Wonder gains +2 maximum charges on mastery -- wonder begets wonder."
     },
-    "lore": "An iridescent wand that swirls with colors no language has names for. It is a tabletop fixture -- the AD&D Wand of Wonder, the wand whose effect is rolled fresh each cast. Some sages claim each Wand of Wonder is sentient and wants very much to be helpful; the misfires are not malice, only enthusiasm imperfectly executed. The longer you sustain the chain, the broader its repertoire becomes -- and the rarer the truly extraordinary outcomes appear."
+    "lore": "An iridescent wand that swirls with colors no language has names for. It is a tabletop fixture -- the AD&D Wand of Wonder, the wand whose effect is rolled fresh each cast. Some sages claim each Wand of Wonder is sentient and wants very much to be helpful; the misfires are not malice, only enthusiasm imperfectly executed. The longer you sustain the chain, the broader its repertoire becomes -- and the rarer the truly extraordinary outcomes appear.",
+    "weight": 0.3
   }
 }

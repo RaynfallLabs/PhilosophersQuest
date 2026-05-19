@@ -2,21 +2,37 @@
   "id": "dragonhide",
   "name": "dragonhide",
   "material_class": "leather",
-  "applies_to": ["weapon", "armor"],
+  "applies_to": [
+    "weapon",
+    "armor"
+  ],
   "peak_floor": 62,
   "spread": 14,
-  "peak_weight": 4,
+  "peak_weight": 4.0,
   "min_level": 45,
   "damage_mult": 1.25,
   "weight_mult": 0.9,
   "max_enchant": 4,
-  "color": [200, 90, 60],
+  "color": [
+    200,
+    90,
+    60
+  ],
   "armor_ac_bonus": 0,
-  "resistances": ["fire", "cold"],
+  "resistances": [
+    "fire",
+    "cold"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["dragon"],
-  "special_properties": ["fire_resistant", "cold_resistant", "supple"],
+  "effective_against": [
+    "dragon"
+  ],
+  "special_properties": [
+    "fire_resistant",
+    "cold_resistant",
+    "supple"
+  ],
   "lore_descriptor": "scaled leather still warm from the kill",
   "unidentified_descriptor": "a leather that gleams with hidden colors",
   "first_pickup_chronicle": "Dragonhide. A sling stone hurled from a dragonhide pouch flies farther than a sling stone has any right to. Ask David. Ask the Mongols. Ask anyone who has actually killed a giant.",

@@ -18,7 +18,9 @@
     "mp_cost": 4,
     "unidentified_name": "slim blue tome",
     "lore": "The first spell every apprentice masters. An unerring dart of pure magical force.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_sleep": {
     "name": "Spellbook of Sleep",
@@ -39,7 +41,9 @@
     "mp_cost": 4,
     "unidentified_name": "dusty violet tome",
     "lore": "A gentle enchantment that sends living creatures into sudden slumber.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_light": {
     "name": "Spellbook of Light",
@@ -60,7 +64,9 @@
     "mp_cost": 2,
     "unidentified_name": "thin yellow tome",
     "lore": "Banishes shadows. Simple, essential, and often the spell that saves lives.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_shield": {
     "name": "Spellbook of Magic Shield",
@@ -81,7 +87,9 @@
     "mp_cost": 7,
     "unidentified_name": "thick blue tome",
     "lore": "A shimmering barrier that halves physical blows and improves your defenses.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_fire_bolt": {
     "name": "Spellbook of Fire Bolt",
@@ -102,7 +110,9 @@
     "mp_cost": 7,
     "unidentified_name": "scorched red tome",
     "lore": "A bolt of concentrated flame. Dangerous to fire-resistant creatures, devastating to the rest.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_haste": {
     "name": "Spellbook of Haste",
@@ -123,7 +133,9 @@
     "mp_cost": 7,
     "unidentified_name": "green-veined tome",
     "lore": "Accelerates your body to superhuman speed, granting a free second action each turn.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_heal": {
     "name": "Spellbook of Heal",
@@ -144,7 +156,9 @@
     "mp_cost": 10,
     "unidentified_name": "worn green tome",
     "lore": "Channels restorative energy. The deeper the mastery, the more HP recovered.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_invisibility": {
     "name": "Spellbook of Invisibility",
@@ -165,7 +179,9 @@
     "mp_cost": 10,
     "unidentified_name": "semi-transparent tome",
     "lore": "Bends light around you. Invisibility is not invulnerability, but it is close.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_lightning": {
     "name": "Spellbook of Chain Lightning",
@@ -186,7 +202,9 @@
     "mp_cost": 10,
     "unidentified_name": "crackling silver tome",
     "lore": "Lightning that arcs between targets, chaining to nearby enemies.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_confusion": {
     "name": "Spellbook of Confusion",
@@ -207,7 +225,9 @@
     "mp_cost": 10,
     "unidentified_name": "swirling purple tome",
     "lore": "Scrambles a monster's senses. A confused enemy attacks randomly and loses coordination.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_displacement": {
     "name": "Spellbook of Displacement",
@@ -228,7 +248,9 @@
     "mp_cost": 13,
     "unidentified_name": "shimmering indigo tome",
     "lore": "Projects a false image of you, causing attackers to strike at empty air 30% of the time.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_ice_storm": {
     "name": "Spellbook of Ice Storm",
@@ -249,7 +271,9 @@
     "mp_cost": 16,
     "unidentified_name": "frost-rimed tome",
     "lore": "Freezing shards blast every visible monster. A battlefield-clearing spell.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_paralyze": {
     "name": "Spellbook of Paralysis",
@@ -270,7 +294,9 @@
     "mp_cost": 13,
     "unidentified_name": "amber-bound tome",
     "lore": "Locks a monster in magical stasis. Even the most fearsome creatures cannot move while paralyzed.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "necronomicon": {
     "name": "The Necronomicon",
@@ -298,7 +324,9 @@
       "scope": "item",
       "desc": "Army of Darkness costs 3 fewer MP to cast."
     },
-    "is_unique": true
+    "is_unique": true,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_cleanse": {
     "name": "Spellbook of Cleanse",
@@ -319,7 +347,9 @@
     "mp_cost": 2,
     "unidentified_name": "pale green tome",
     "lore": "A healer's primer on purification magic. The spells within were developed by temple physicians who needed to cure plague victims without touching them. One incantation removes any single affliction â€” poison, paralysis, disease, curse. Simple, reliable, life-saving.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_empower": {
     "name": "Spellbook of Empower",
@@ -340,7 +370,9 @@
     "mp_cost": 7,
     "unidentified_name": "gold-edged battle tome",
     "lore": "A war-mage's secret: channel arcane energy into a physical weapon for a single devastating strike. The technique was perfected by the battlemages of Carthage, who could shatter siege gates with an empowered hammer blow. Cast it, then strike â€” the next melee attack deals triple damage.",
-    "read_threshold": 3
+    "read_threshold": 3,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_smite": {
     "name": "Spellbook of Smite",
@@ -361,7 +393,9 @@
     "mp_cost": 13,
     "unidentified_name": "radiant ivory tome",
     "lore": "The word of divine judgment, written in letters of fire. This spell calls down holy wrath upon a single target, bypassing all mortal resistances. It was said to be the weapon of archangels against demons â€” pure righteous force that recognizes no shield, no armor, no magical ward.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_summon_guardian": {
     "name": "Spellbook of Summon Guardian",
@@ -382,7 +416,9 @@
     "mp_cost": 13,
     "unidentified_name": "moss-green tome with claw marks",
     "lore": "Druids of the ancient groves could call spirit-beasts from the aether to fight alongside them. The guardian manifests for a brief time â€” drawn from the essence of creatures the caster has encountered. It fights, it protects, and then it fades. But in those precious moments, you are not alone.",
-    "read_threshold": 4
+    "read_threshold": 4,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_meteor": {
     "name": "Spellbook of Meteor",
@@ -403,7 +439,9 @@
     "mp_cost": 16,
     "unidentified_name": "charred obsidian tome",
     "lore": "The most destructive evocation known to mortal spellcraft. A fragment of a dying star is summoned from the void and hurled into the material plane. Everything in sight burns. The original text was recovered from the Library of Alexandria â€” one of the few scrolls to survive the fire, ironically.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_time_freeze": {
     "name": "Spellbook of Time Freeze",
@@ -424,7 +462,9 @@
     "mp_cost": 20,
     "unidentified_name": "crystalline tome that hums faintly",
     "lore": "To freeze time itself â€” this is the ambition that drove the greatest chronomancers to madness. The spell does not stop time; it suspends causality for all beings except the caster. For five heartbeats, nothing moves, nothing thinks, nothing acts. Use it to flee, to heal, to strike. It is the ultimate emergency â€” and finding this book may be the rarest stroke of fortune in your entire journey.",
-    "read_threshold": 5
+    "read_threshold": 5,
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_fireball": {
     "name": "Spellbook of Fireball",
@@ -446,7 +486,9 @@
     "unidentified_name": "scorched crimson tome",
     "lore": "The quintessential battle mage's spell. A rolling sphere of flame engulfs everything in sight.",
     "read_threshold": 3,
-    "sprite_desc": "A leather-bound spellbook with flame motifs and glowing orange runes on a charred cover"
+    "sprite_desc": "A leather-bound spellbook with flame motifs and glowing orange runes on a charred cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_slow": {
     "name": "Spellbook of Slow Monster",
@@ -468,7 +510,9 @@
     "unidentified_name": "heavy leaden tome",
     "lore": "Temporal magic that saps the speed from a creature, leaving it sluggish and vulnerable.",
     "read_threshold": 3,
-    "sprite_desc": "A slate-blue spellbook with a stylized hourglass embossed in silver on the cover"
+    "sprite_desc": "A slate-blue spellbook with a stylized hourglass embossed in silver on the cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_knock": {
     "name": "Spellbook of Knock",
@@ -490,7 +534,9 @@
     "unidentified_name": "brass-clasped tome",
     "lore": "A locksmith's nightmare. This spell opens any mundane lock with a burst of arcane force.",
     "read_threshold": 3,
-    "sprite_desc": "A brass-bound spellbook with a skeleton key motif on the cover and glowing keyhole symbol"
+    "sprite_desc": "A brass-bound spellbook with a skeleton key motif on the cover and glowing keyhole symbol",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_teleport_away": {
     "name": "Spellbook of Teleport Away",
@@ -512,7 +558,9 @@
     "unidentified_name": "shimmering violet tome",
     "lore": "Spatial magic that hurls a creature to a random location on the level. Or yourself, if you prefer.",
     "read_threshold": 3,
-    "sprite_desc": "A violet spellbook with swirling portal imagery and silver spatial runes on the cover"
+    "sprite_desc": "A violet spellbook with swirling portal imagery and silver spatial runes on the cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_acid_arrow": {
     "name": "Spellbook of Acid Arrow",
@@ -534,7 +582,9 @@
     "unidentified_name": "corroded green tome",
     "lore": "An arrow of pure acid that burns on impact and continues to corrode flesh over time.",
     "read_threshold": 4,
-    "sprite_desc": "A green-tinged spellbook with acid-etched designs and bubbling liquid trapped in the cover"
+    "sprite_desc": "A green-tinged spellbook with acid-etched designs and bubbling liquid trapped in the cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_drain_life": {
     "name": "Spellbook of Drain Life",
@@ -556,7 +606,9 @@
     "unidentified_name": "blood-red tome",
     "lore": "Vampiric magic that tears life force from a creature and channels it into the caster.",
     "read_threshold": 4,
-    "sprite_desc": "A dark crimson spellbook with veins of red light pulsing across its leather binding"
+    "sprite_desc": "A dark crimson spellbook with veins of red light pulsing across its leather binding",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_fear": {
     "name": "Spellbook of Fear",
@@ -578,7 +630,9 @@
     "unidentified_name": "unsettling dark tome",
     "lore": "Projects raw terror into a creature's mind, sending it fleeing in panic.",
     "read_threshold": 4,
-    "sprite_desc": "A shadowy purple spellbook with a screaming face embossed in tarnished silver on the cover"
+    "sprite_desc": "A shadowy purple spellbook with a screaming face embossed in tarnished silver on the cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_detect": {
     "name": "Spellbook of Detect Monsters",
@@ -600,7 +654,9 @@
     "unidentified_name": "luminous teal tome",
     "lore": "Expands the caster's awareness to sense every living creature on the level.",
     "read_threshold": 4,
-    "sprite_desc": "A teal spellbook with an open eye symbol radiating concentric circles on the cover"
+    "sprite_desc": "A teal spellbook with an open eye symbol radiating concentric circles on the cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_polymorph": {
     "name": "Spellbook of Polymorph",
@@ -622,7 +678,9 @@
     "unidentified_name": "shifting iridescent tome",
     "lore": "Warps reality around a creature, transforming it into something else entirely. Results vary.",
     "read_threshold": 4,
-    "sprite_desc": "An iridescent spellbook whose cover shifts between animal shapes when viewed from different angles"
+    "sprite_desc": "An iridescent spellbook whose cover shifts between animal shapes when viewed from different angles",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_reflect": {
     "name": "Spellbook of Reflect",
@@ -644,7 +702,9 @@
     "unidentified_name": "mirror-bound tome",
     "lore": "Creates a shimmering aura that bounces hostile magic and status effects back at their source.",
     "read_threshold": 5,
-    "sprite_desc": "A silver-white spellbook with a polished mirror fragment set into the center of its cover"
+    "sprite_desc": "A silver-white spellbook with a polished mirror fragment set into the center of its cover",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "spellbook_disintegrate": {
     "name": "Spellbook of Disintegrate",
@@ -666,7 +726,9 @@
     "unidentified_name": "ash-flecked obsidian tome",
     "lore": "The ultimate destruction spell. Reduces a creature to dust with a single word of power.",
     "read_threshold": 5,
-    "sprite_desc": "A black obsidian spellbook with cracks of molten red light and ash drifting from its pages"
+    "sprite_desc": "A black obsidian spellbook with cracks of molten red light and ash drifting from its pages",
+    "weight": 0.3,
+    "peak_weight": 0.5
   },
   "sefer_yetzirah": {
     "name": "Sefer Yetzirah (The Book of Formation)",
@@ -696,7 +758,8 @@
       "value": 2,
       "scope": "item",
       "desc": "The Sefer Yetzirah teaches the twenty-two letters that spoke the world into being — its spell costs 2 fewer MP."
-    }
+    },
+    "weight": 0.3
   },
   "picatrix": {
     "name": "Picatrix",
@@ -726,7 +789,8 @@
       "value": 2,
       "scope": "item",
       "desc": "Picatrix systematised four centuries of talismanic magic — its spell costs 2 fewer MP."
-    }
+    },
+    "weight": 0.3
   },
   "lemegeton": {
     "name": "Lemegeton (The Lesser Key of Solomon)",
@@ -756,7 +820,8 @@
       "value": 3,
       "scope": "item",
       "desc": "The Lemegeton names all seventy-two demons of Solomon — its spell costs 3 fewer MP."
-    }
+    },
+    "weight": 0.3
   },
   "spellbook_frost_touch": {
     "name": "Spellbook of Frost Touch",
@@ -779,7 +844,8 @@
     "mp_cost": 4,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Bound in seal-skin, the pages still cold to the touch decades after copying. The first ice-cantrip every Lapp shaman learned."
+    "lore": "Bound in seal-skin, the pages still cold to the touch decades after copying. The first ice-cantrip every Lapp shaman learned.",
+    "weight": 0.3
   },
   "spellbook_cure_wounds": {
     "name": "Spellbook of Cure Wounds",
@@ -802,7 +868,8 @@
     "mp_cost": 5,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Field-medicine compendium from a battlefield priest. The pages are stained with what looks like wine but smells like older liquid."
+    "lore": "Field-medicine compendium from a battlefield priest. The pages are stained with what looks like wine but smells like older liquid.",
+    "weight": 0.3
   },
   "spellbook_mage_armor": {
     "name": "Spellbook of Mage Armor",
@@ -825,7 +892,8 @@
     "mp_cost": 4,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Mage Armor: the most fundamental defensive cantrip. Every wizards' college copy is dog-eared at this page."
+    "lore": "Mage Armor: the most fundamental defensive cantrip. Every wizards' college copy is dog-eared at this page.",
+    "weight": 0.3
   },
   "spellbook_detect_magic": {
     "name": "Spellbook of Detect Magic",
@@ -848,7 +916,8 @@
     "mp_cost": 3,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Dee's earliest divination tract — translation from the original Enochian, partial fragments only."
+    "lore": "Dee's earliest divination tract — translation from the original Enochian, partial fragments only.",
+    "weight": 0.3
   },
   "spellbook_blink": {
     "name": "Spellbook of Blink",
@@ -871,7 +940,8 @@
     "mp_cost": 3,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "An apprentice's first teleportation primer. Includes a footnote warning against blinking over deep water."
+    "lore": "An apprentice's first teleportation primer. Includes a footnote warning against blinking over deep water.",
+    "weight": 0.3
   },
   "spellbook_lightning_bolt": {
     "name": "Spellbook of Lightning Bolt",
@@ -894,7 +964,8 @@
     "mp_cost": 8,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Tesla's diary copy of the bolt-line incantation. Margin notes question whether the chalk was the resonator."
+    "lore": "Tesla's diary copy of the bolt-line incantation. Margin notes question whether the chalk was the resonator.",
+    "weight": 0.3
   },
   "spellbook_mass_sleep": {
     "name": "Spellbook of Mass Sleep",
@@ -917,7 +988,8 @@
     "mp_cost": 10,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Lullaby of the Watchman of Antioch — read aloud, every sleeper in the room dreams of the same hill."
+    "lore": "Lullaby of the Watchman of Antioch — read aloud, every sleeper in the room dreams of the same hill.",
+    "weight": 0.3
   },
   "spellbook_detect_monsters_t2": {
     "name": "Spellbook of Greater Detection",
@@ -940,7 +1012,8 @@
     "mp_cost": 6,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Detection cantrip transcribed from a Sufi divinatory manual. Each page bears a single eye in gold leaf."
+    "lore": "Detection cantrip transcribed from a Sufi divinatory manual. Each page bears a single eye in gold leaf.",
+    "weight": 0.3
   },
   "spellbook_levitate": {
     "name": "Spellbook of Levitation",
@@ -963,7 +1036,8 @@
     "mp_cost": 6,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "St Joseph of Cupertino's confessional notes — the saint who could not stop floating. Several editions, all repudiated."
+    "lore": "St Joseph of Cupertino's confessional notes — the saint who could not stop floating. Several editions, all repudiated.",
+    "weight": 0.3
   },
   "spellbook_cone_of_cold": {
     "name": "Spellbook of Cone of Cold",
@@ -986,7 +1060,8 @@
     "mp_cost": 14,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Annals of Norilsk: thirty years of arctic-mage observations bound by the Soviet Academy and promptly classified."
+    "lore": "Annals of Norilsk: thirty years of arctic-mage observations bound by the Soviet Academy and promptly classified.",
+    "weight": 0.3
   },
   "spellbook_greater_heal": {
     "name": "Spellbook of Greater Heal",
@@ -1009,7 +1084,8 @@
     "mp_cost": 14,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Galen's Greater Healing — recovered from the Library of Alexandria fire by an apprentice who lost his arm carrying it out."
+    "lore": "Galen's Greater Healing — recovered from the Library of Alexandria fire by an apprentice who lost his arm carrying it out.",
+    "weight": 0.3
   },
   "spellbook_stoneskin": {
     "name": "Spellbook of Stoneskin",
@@ -1032,7 +1108,8 @@
     "mp_cost": 12,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Dwarven Cantor's diary — describes the breath-technique that hardens the body to stone for one full breath cycle of seconds."
+    "lore": "Dwarven Cantor's diary — describes the breath-technique that hardens the body to stone for one full breath cycle of seconds.",
+    "weight": 0.3
   },
   "spellbook_counterspell": {
     "name": "Spellbook of Counterspell",
@@ -1055,7 +1132,8 @@
     "mp_cost": 11,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Mordenkainen's Argument — a single chapter on undoing another's working before it lands."
+    "lore": "Mordenkainen's Argument — a single chapter on undoing another's working before it lands.",
+    "weight": 0.3
   },
   "spellbook_dispel_magic": {
     "name": "Spellbook of Dispel Magic",
@@ -1078,7 +1156,8 @@
     "mp_cost": 12,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "The Latin original of the rite — late-Renaissance, copied off a folio Dee burned but didn't burn well enough."
+    "lore": "The Latin original of the rite — late-Renaissance, copied off a folio Dee burned but didn't burn well enough.",
+    "weight": 0.3
   },
   "spellbook_mapping": {
     "name": "Spellbook of Mapping",
@@ -1101,7 +1180,8 @@
     "mp_cost": 10,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Geomancer's pocket-folio: ink lines that reveal themselves when held over candle smoke."
+    "lore": "Geomancer's pocket-folio: ink lines that reveal themselves when held over candle smoke.",
+    "weight": 0.3
   },
   "spellbook_chain_lightning_t4": {
     "name": "Spellbook of Forked Lightning",
@@ -1124,7 +1204,8 @@
     "mp_cost": 17,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Storm-singer's grimoire — the sequel to Lightning Bolt. The arc-jump math is in the appendix."
+    "lore": "Storm-singer's grimoire — the sequel to Lightning Bolt. The arc-jump math is in the appendix.",
+    "weight": 0.3
   },
   "spellbook_greater_invis": {
     "name": "Spellbook of Greater Invisibility",
@@ -1147,7 +1228,8 @@
     "mp_cost": 18,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Tarnhelm research notes from the Bayreuth Festival library — three Wagner-era scholars vanished while reading it."
+    "lore": "Tarnhelm research notes from the Bayreuth Festival library — three Wagner-era scholars vanished while reading it.",
+    "weight": 0.3
   },
   "spellbook_mass_paralyze": {
     "name": "Spellbook of Mass Paralysis",
@@ -1170,7 +1252,8 @@
     "mp_cost": 20,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Carpathian witch's recipe — paralysis was always her preferred technique, never the killing blow."
+    "lore": "Carpathian witch's recipe — paralysis was always her preferred technique, never the killing blow.",
+    "weight": 0.3
   },
   "spellbook_banishment": {
     "name": "Spellbook of Banishment",
@@ -1193,7 +1276,8 @@
     "mp_cost": 18,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Solomon's binding-rite, distilled to the essentials. Useful only against what came from elsewhere."
+    "lore": "Solomon's binding-rite, distilled to the essentials. Useful only against what came from elsewhere.",
+    "weight": 0.3
   },
   "spellbook_phase_door": {
     "name": "Spellbook of Phase Door",
@@ -1216,7 +1300,8 @@
     "mp_cost": 16,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Bilocation manual by the unknown St-Germain. The author's name still spreads slowly through the table of contents."
+    "lore": "Bilocation manual by the unknown St-Germain. The author's name still spreads slowly through the table of contents.",
+    "weight": 0.3
   },
   "spellbook_turn_undead": {
     "name": "Spellbook of Turn Undead",
@@ -1239,7 +1324,8 @@
     "mp_cost": 14,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Vesper-prayer compendium — clerical, but the working incantation is the same one wizards use."
+    "lore": "Vesper-prayer compendium — clerical, but the working incantation is the same one wizards use.",
+    "weight": 0.3
   },
   "spellbook_meteor_swarm": {
     "name": "Spellbook of Meteor Swarm",
@@ -1262,7 +1348,8 @@
     "mp_cost": 32,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Recovered from the Tunguska crater. Pages charred at edges; the central diagram is intact."
+    "lore": "Recovered from the Tunguska crater. Pages charred at edges; the central diagram is intact.",
+    "weight": 0.3
   },
   "spellbook_storm_of_vengeance": {
     "name": "Spellbook of Storm of Vengeance",
@@ -1285,7 +1372,8 @@
     "mp_cost": 30,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Zeus-rite copied by an Athenian heretic in 320 BCE. He was struck by lightning shortly after. The book was not."
+    "lore": "Zeus-rite copied by an Athenian heretic in 320 BCE. He was struck by lightning shortly after. The book was not.",
+    "weight": 0.3
   },
   "spellbook_wish": {
     "name": "Spellbook of Wish",
@@ -1308,7 +1396,8 @@
     "mp_cost": 40,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "A single page. The page is blank. Read it anyway."
+    "lore": "A single page. The page is blank. Read it anyway.",
+    "weight": 0.3
   },
   "spellbook_power_word_kill": {
     "name": "Spellbook of Power Word Kill",
@@ -1331,7 +1420,8 @@
     "mp_cost": 24,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "The Vorpal Word, the cantrip the headsmen kept secret. One syllable. Several deaths."
+    "lore": "The Vorpal Word, the cantrip the headsmen kept secret. One syllable. Several deaths.",
+    "weight": 0.3
   },
   "spellbook_resurrection": {
     "name": "Spellbook of Resurrection",
@@ -1354,7 +1444,8 @@
     "mp_cost": 30,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Lazarus liturgy — full text, with the rabbinical disclaimer that nobody who has tried it has reported their experience usefully."
+    "lore": "Lazarus liturgy — full text, with the rabbinical disclaimer that nobody who has tried it has reported their experience usefully.",
+    "weight": 0.3
   },
   "spellbook_foresight": {
     "name": "Spellbook of Foresight",
@@ -1377,7 +1468,8 @@
     "mp_cost": 22,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Cassandra's notes, copied centuries later by a librarian who later refused to admit knowing what was in them."
+    "lore": "Cassandra's notes, copied centuries later by a librarian who later refused to admit knowing what was in them.",
+    "weight": 0.3
   },
   "spellbook_gate": {
     "name": "Spellbook of Gate",
@@ -1400,7 +1492,8 @@
     "mp_cost": 28,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Crowley's annotated translation of the Lemegeton gate-rite. Several entries in the index are crossed out by a different hand."
+    "lore": "Crowley's annotated translation of the Lemegeton gate-rite. Several entries in the index are crossed out by a different hand.",
+    "weight": 0.3
   },
   "spellbook_imprisonment": {
     "name": "Spellbook of Imprisonment",
@@ -1423,7 +1516,8 @@
     "mp_cost": 26,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Persian source-text on binding-into-stone — used originally against a particular djinn who was getting out of hand."
+    "lore": "Persian source-text on binding-into-stone — used originally against a particular djinn who was getting out of hand.",
+    "weight": 0.3
   },
   "spellbook_mass_polymorph": {
     "name": "Spellbook of Mass Polymorph",
@@ -1446,7 +1540,8 @@
     "mp_cost": 26,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Circe's school-notes from her time on Aeaea. Footnotes mention various species considered for the conversion."
+    "lore": "Circe's school-notes from her time on Aeaea. Footnotes mention various species considered for the conversion.",
+    "weight": 0.3
   },
   "spellbook_annihilation": {
     "name": "Spellbook of Annihilation",
@@ -1469,6 +1564,7 @@
     "mp_cost": 35,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Final chapter of the Liber Nihili — only the final chapter survives, and reads as a list of what no longer is."
+    "lore": "Final chapter of the Liber Nihili — only the final chapter survives, and reads as a list of what no longer is.",
+    "weight": 0.3
   }
 }

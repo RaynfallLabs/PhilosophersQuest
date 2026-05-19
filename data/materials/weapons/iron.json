@@ -2,21 +2,35 @@
   "id": "iron",
   "name": "iron",
   "material_class": "metal",
-  "applies_to": ["weapon", "armor", "shield"],
+  "applies_to": [
+    "weapon",
+    "armor",
+    "shield"
+  ],
   "peak_floor": 8,
   "spread": 12,
-  "peak_weight": 10,
+  "peak_weight": 10.0,
   "min_level": 1,
   "damage_mult": 1.0,
   "weight_mult": 1.0,
   "max_enchant": 2,
-  "color": [180, 180, 180],
+  "color": [
+    180,
+    180,
+    180
+  ],
   "armor_ac_bonus": 0,
   "resistances": [],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["fey", "demon_minor"],
-  "special_properties": ["common", "reliable"],
+  "effective_against": [
+    "fey",
+    "demon_minor"
+  ],
+  "special_properties": [
+    "common",
+    "reliable"
+  ],
   "lore_descriptor": "honest gray, with the faint ring of a forge",
   "unidentified_descriptor": "a plain blade",
   "first_pickup_chronicle": "Iron. Solid. Honest. The dungeon's first lesson in trust. If I lose this, I have lost worse than a weapon — I have lost the floor under my feet.",

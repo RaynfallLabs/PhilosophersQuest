@@ -20,7 +20,8 @@
       "61-80": 30,
       "81-100": 20
     },
-    "lore": "Brewed from cave moss and blessed spring water by wandering hedge-witches, this potion knits torn flesh with a gentle warmth that spreads from the stomach outward. The blue fizz is a sign of freshness — flat potions still work, but carry a faintly sour aftertaste. Adventurers the world over consider it as essential as a good pair of boots."
+    "lore": "Brewed from cave moss and blessed spring water by wandering hedge-witches, this potion knits torn flesh with a gentle warmth that spreads from the stomach outward. The blue fizz is a sign of freshness — flat potions still work, but carry a faintly sour aftertaste. Adventurers the world over consider it as essential as a good pair of boots.",
+    "peak_weight": 0.5
   },
   "potion_of_extra_healing": {
     "name": "potion of extra healing",
@@ -43,7 +44,8 @@
       "61-80": 50,
       "81-100": 30
     },
-    "lore": "Where ordinary healing potions merely close wounds, this viscous crimson draught reaches deeper — mending cracked bone, soothing bruised organs, and flooding the blood with stolen vitality. It tastes of iron and overripe cherries, and leaves the throat faintly numb for an hour. Apothecaries who make it regularly develop red-stained fingers that never quite wash clean."
+    "lore": "Where ordinary healing potions merely close wounds, this viscous crimson draught reaches deeper — mending cracked bone, soothing bruised organs, and flooding the blood with stolen vitality. It tastes of iron and overripe cherries, and leaves the throat faintly numb for an hour. Apothecaries who make it regularly develop red-stained fingers that never quite wash clean.",
+    "peak_weight": 0.5
   },
   "potion_of_full_healing": {
     "name": "potion of full healing",
@@ -66,7 +68,8 @@
       "61-80": 20,
       "81-100": 30
     },
-    "lore": "Said to contain a single tear wept by a dying god, suspended in distilled sunlight and carried in amber so the radiance does not escape. Drinking it is like swallowing a sunrise — every wound closes, every ache vanishes, and for a moment the drinker glimpses what it feels like to be whole. Theologians argue whether this constitutes a miracle or a theft."
+    "lore": "Said to contain a single tear wept by a dying god, suspended in distilled sunlight and carried in amber so the radiance does not escape. Drinking it is like swallowing a sunrise — every wound closes, every ache vanishes, and for a moment the drinker glimpses what it feels like to be whole. Theologians argue whether this constitutes a miracle or a theft.",
+    "peak_weight": 0.5
   },
   "potion_of_stamina": {
     "name": "potion of stamina",
@@ -89,7 +92,8 @@
       "61-80": 40,
       "81-100": 30
     },
-    "lore": "Made from the rendered fat of deep-cave beetles mixed with powdered gingerroot and something the recipe only ever calls 'the green,' this thick, bubbling draught replenishes stamina with startling efficiency. It smells appalling and tastes worse, but dungeon runners swear by it — particularly the ones who survive long enough to swear at all. The bubbles are a byproduct of fermentation and serve no known purpose."
+    "lore": "Made from the rendered fat of deep-cave beetles mixed with powdered gingerroot and something the recipe only ever calls 'the green,' this thick, bubbling draught replenishes stamina with startling efficiency. It smells appalling and tastes worse, but dungeon runners swear by it — particularly the ones who survive long enough to swear at all. The bubbles are a byproduct of fermentation and serve no known purpose.",
+    "peak_weight": 0.5
   },
   "potion_of_cure_poison": {
     "name": "potion of cure poison",
@@ -112,7 +116,8 @@
       "61-80": 50,
       "81-100": 40
     },
-    "lore": "Alchemists discovered this formula by accident when a batch of rose-water cordial was contaminated with antivenom bark from the Thornwood forests. The resulting pink effervescence neutralises most natural venoms within seconds of reaching the bloodstream. It is one of the few potions considered safe to give to children — though the circumstances that make it necessary for a child are considerably less safe."
+    "lore": "Alchemists discovered this formula by accident when a batch of rose-water cordial was contaminated with antivenom bark from the Thornwood forests. The resulting pink effervescence neutralises most natural venoms within seconds of reaching the bloodstream. It is one of the few potions considered safe to give to children — though the circumstances that make it necessary for a child are considerably less safe.",
+    "peak_weight": 0.5
   },
   "potion_of_cure_disease": {
     "name": "potion of cure disease",
@@ -135,7 +140,8 @@
       "61-80": 50,
       "81-100": 40
     },
-    "lore": "The oily sheen on this liquid comes from the rendered bladder-sac of a marsh lizard, which produces compounds hostile to bacterial and fungal infections alike. Field healers carry these in padded satchels alongside bandages and bone-saws, knowing that in the deep places of the world, disease kills more adventurers than monsters do. It works best administered within the first hour of infection, but late is vastly preferable to never."
+    "lore": "The oily sheen on this liquid comes from the rendered bladder-sac of a marsh lizard, which produces compounds hostile to bacterial and fungal infections alike. Field healers carry these in padded satchels alongside bandages and bone-saws, knowing that in the deep places of the world, disease kills more adventurers than monsters do. It works best administered within the first hour of infection, but late is vastly preferable to never.",
+    "peak_weight": 0.5
   },
   "potion_of_cure_all": {
     "name": "potion of cure all",
@@ -158,7 +164,8 @@
       "61-80": 40,
       "81-100": 45
     },
-    "lore": "No single alchemist claims credit for this formula — it appears in a dozen traditions simultaneously, as if the ingredients themselves decided to cooperate. The silver shimmer comes from dissolved moonstone suspended in purified quicksilver, and drinking it scours the body clean of poison, plague, corruption, and a handful of maladies that do not yet have names. Physicians who have witnessed its effect describe the colour returning to a dying patient's face as the most beautiful thing they have ever seen."
+    "lore": "No single alchemist claims credit for this formula — it appears in a dozen traditions simultaneously, as if the ingredients themselves decided to cooperate. The silver shimmer comes from dissolved moonstone suspended in purified quicksilver, and drinking it scours the body clean of poison, plague, corruption, and a handful of maladies that do not yet have names. Physicians who have witnessed its effect describe the colour returning to a dying patient's face as the most beautiful thing they have ever seen.",
+    "peak_weight": 0.5
   },
   "potion_of_haste": {
     "name": "potion of haste",
@@ -181,7 +188,8 @@
       "61-80": 60,
       "81-100": 55
     },
-    "lore": "Flavoured with citrus peel and frothed by the sheer kinetic energy building inside it, this potion unlocks something in the nervous system that most practitioners consider better left locked. Time does not slow — the drinker simply moves faster through it, heartbeat hammering, thoughts sparking. The crash afterward is legendary: users sleep for twelve hours and wake starving."
+    "lore": "Flavoured with citrus peel and frothed by the sheer kinetic energy building inside it, this potion unlocks something in the nervous system that most practitioners consider better left locked. Time does not slow — the drinker simply moves faster through it, heartbeat hammering, thoughts sparking. The crash afterward is legendary: users sleep for twelve hours and wake starving.",
+    "peak_weight": 0.5
   },
   "potion_of_invisibility": {
     "name": "potion of invisibility",
@@ -204,7 +212,8 @@
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "This liquid is almost impossible to see even before it is drunk — the bottle appears empty, the fluid detectable only by its weight and a faint sparkle when light hits it at precisely the right angle. Rogues who use it regularly report a creeping philosophical unease: if no one can see you, they ask, in what sense are you truly there? The potion does not answer. Neither does anyone else."
+    "lore": "This liquid is almost impossible to see even before it is drunk — the bottle appears empty, the fluid detectable only by its weight and a faint sparkle when light hits it at precisely the right angle. Rogues who use it regularly report a creeping philosophical unease: if no one can see you, they ask, in what sense are you truly there? The potion does not answer. Neither does anyone else.",
+    "peak_weight": 0.5
   },
   "potion_of_regeneration": {
     "name": "potion of regeneration",
@@ -227,7 +236,8 @@
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "Distilled from the blood of creatures too stubborn to die — cave trolls, deep-sea worms, creatures that regrow limbs with cheerful indifference — this dark brew infuses the drinker's cells with borrowed persistence. Wounds close at the edge of perception, like watching ice melt but in reverse. Those who consume it regularly begin to notice their scars fading, then their old injuries, then sometimes memories attached to both."
+    "lore": "Distilled from the blood of creatures too stubborn to die — cave trolls, deep-sea worms, creatures that regrow limbs with cheerful indifference — this dark brew infuses the drinker's cells with borrowed persistence. Wounds close at the edge of perception, like watching ice melt but in reverse. Those who consume it regularly begin to notice their scars fading, then their old injuries, then sometimes memories attached to both.",
+    "peak_weight": 0.5
   },
   "potion_of_heroism": {
     "name": "potion of heroism",
@@ -250,7 +260,8 @@
       "61-80": 50,
       "81-100": 45
     },
-    "lore": "Thick as honey and nearly as sweet, this golden draught floods the muscles with something between courage and delusion, temporarily granting the kind of brute strength that moves boulders and bends iron bars. Epic poems have been written about battles won while under its influence. Fewer poems celebrate the aftermath, when the potion wears off and the hero is left holding a door they somehow ripped from its hinges."
+    "lore": "Thick as honey and nearly as sweet, this golden draught floods the muscles with something between courage and delusion, temporarily granting the kind of brute strength that moves boulders and bends iron bars. Epic poems have been written about battles won while under its influence. Fewer poems celebrate the aftermath, when the potion wears off and the hero is left holding a door they somehow ripped from its hinges.",
+    "peak_weight": 0.5
   },
   "potion_of_brilliance": {
     "name": "potion of brilliance",
@@ -273,7 +284,8 @@
       "61-80": 14,
       "81-100": 12
     },
-    "lore": "A concentrated masterwork of alchemical art, this shimmering potion floods the drinker's arcane pathways with a torrent of pure magical energy. Unlike the milder mana potion, brilliance fully saturates every magical channel, restoring a far greater portion of MP. It is said the formula was devised by a philosopher who mapped the inner architecture of the human soul."
+    "lore": "A concentrated masterwork of alchemical art, this shimmering potion floods the drinker's arcane pathways with a torrent of pure magical energy. Unlike the milder mana potion, brilliance fully saturates every magical channel, restoring a far greater portion of MP. It is said the formula was devised by a philosopher who mapped the inner architecture of the human soul.",
+    "peak_weight": 0.5
   },
   "potion_of_levitation": {
     "name": "potion of levitation",
@@ -296,7 +308,8 @@
       "61-80": 45,
       "81-100": 35
     },
-    "lore": "The violet mist inside this vial is not actually liquid — it is a suspension of lighter-than-air particles in a carrier fluid, and drinking it briefly inverts the drinker's relationship with gravity. Used wisely it grants passage over hazards that would be lethal to traverse on foot. Used unwisely, it lifts the drinker to the ceiling where they wait in embarrassed suspension until the effect expires."
+    "lore": "The violet mist inside this vial is not actually liquid — it is a suspension of lighter-than-air particles in a carrier fluid, and drinking it briefly inverts the drinker's relationship with gravity. Used wisely it grants passage over hazards that would be lethal to traverse on foot. Used unwisely, it lifts the drinker to the ceiling where they wait in embarrassed suspension until the effect expires.",
+    "peak_weight": 0.5
   },
   "potion_of_restore_strength": {
     "name": "potion of restore strength",
@@ -319,7 +332,8 @@
       "61-80": 45,
       "81-100": 40
     },
-    "lore": "The bronze tinge comes from trace minerals drawn from iron-rich cave springs, and the potion works by repairing the subtle cellular damage that disease inflicts on muscle tissue. Fighters who have suffered the wasting sickness clutch these with a desperation that goes beyond tactical — there is something uniquely terrible about watching your own strength drain away, and something uniquely comforting about getting it back."
+    "lore": "The bronze tinge comes from trace minerals drawn from iron-rich cave springs, and the potion works by repairing the subtle cellular damage that disease inflicts on muscle tissue. Fighters who have suffered the wasting sickness clutch these with a desperation that goes beyond tactical — there is something uniquely terrible about watching your own strength drain away, and something uniquely comforting about getting it back.",
+    "peak_weight": 0.5
   },
   "potion_of_gain_level": {
     "name": "potion of gain level",
@@ -342,7 +356,8 @@
       "61-80": 8,
       "81-100": 10
     },
-    "lore": "Something in this potion resonates with the invisible threads that bind the dungeon's architecture together, and drinking it severs the ones holding the drinker to the current floor — propelling them upward, closer to daylight, closer to safety. The stars swirling in the depths of the liquid are not a decoration. Scholars who have studied them claim they form a map, but no one has yet determined what it leads to."
+    "lore": "Something in this potion resonates with the invisible threads that bind the dungeon's architecture together, and drinking it severs the ones holding the drinker to the current floor — propelling them upward, closer to daylight, closer to safety. The stars swirling in the depths of the liquid are not a decoration. Scholars who have studied them claim they form a map, but no one has yet determined what it leads to.",
+    "peak_weight": 0.5
   },
   "potion_of_fire_resistance": {
     "name": "potion of fire resistance",
@@ -365,7 +380,8 @@
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "This deceptively cold-looking white potion does not lower your body temperature — it raises the threshold at which your cells begin to suffer from heat damage, a subtle but crucial distinction. Dwarven fire-dancers have used versions of this formula for centuries before sharing it with surface alchemists. Under its protection a brief immersion in ordinary fire produces only warmth; deeper fires remain lethal, but the margin before that point widens considerably."
+    "lore": "This deceptively cold-looking white potion does not lower your body temperature — it raises the threshold at which your cells begin to suffer from heat damage, a subtle but crucial distinction. Dwarven fire-dancers have used versions of this formula for centuries before sharing it with surface alchemists. Under its protection a brief immersion in ordinary fire produces only warmth; deeper fires remain lethal, but the margin before that point widens considerably.",
+    "peak_weight": 0.5
   },
   "potion_of_cold_resistance": {
     "name": "potion of cold resistance",
@@ -388,7 +404,8 @@
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "The ember glow of this vial comes from volcanic stone dust suspended in a warm-compress compound — the alchemist's attempt to bottle the feeling of sitting by a fire in the deep cold. Under its effect the body generates heat with preternatural efficiency, and cold that would ordinarily be agonising registers only as mild discomfort. Ice-giants who have encountered adventurers protected by this potion reportedly find it personally offensive."
+    "lore": "The ember glow of this vial comes from volcanic stone dust suspended in a warm-compress compound — the alchemist's attempt to bottle the feeling of sitting by a fire in the deep cold. Under its effect the body generates heat with preternatural efficiency, and cold that would ordinarily be agonising registers only as mild discomfort. Ice-giants who have encountered adventurers protected by this potion reportedly find it personally offensive.",
+    "peak_weight": 0.5
   },
   "potion_of_shock_resistance": {
     "name": "potion of shock resistance",
@@ -411,7 +428,8 @@
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "Brewed using the shed skin of electric eels and the hollow bones of lightning-birds, this copper-coloured draught insulates the nervous system against electrical discharge with a thoroughness that makes practitioners of storm magic extremely frustrated. The copper taste lingers for hours and leaves the tongue feeling slightly numb. Users report that being struck by lightning while under its protection feels remarkably similar to being patted firmly on the back."
+    "lore": "Brewed using the shed skin of electric eels and the hollow bones of lightning-birds, this copper-coloured draught insulates the nervous system against electrical discharge with a thoroughness that makes practitioners of storm magic extremely frustrated. The copper taste lingers for hours and leaves the tongue feeling slightly numb. Users report that being struck by lightning while under its protection feels remarkably similar to being patted firmly on the back.",
+    "peak_weight": 0.5
   },
   "potion_of_confusion": {
     "name": "potion of confusion",
@@ -434,7 +452,8 @@
       "61-80": 30,
       "81-100": 25
     },
-    "lore": "At some point between brewing and bottling this murky concoction something went terribly wrong — or perhaps terribly right, depending on who prepared it and for whom. The confusion it induces is profound: cardinal directions lose meaning, faces blur into one another, and simple decisions become agonising labyrinths. Unscrupulous merchants have been known to sell it labelled as something else entirely."
+    "lore": "At some point between brewing and bottling this murky concoction something went terribly wrong — or perhaps terribly right, depending on who prepared it and for whom. The confusion it induces is profound: cardinal directions lose meaning, faces blur into one another, and simple decisions become agonising labyrinths. Unscrupulous merchants have been known to sell it labelled as something else entirely.",
+    "peak_weight": 0.5
   },
   "potion_of_blindness": {
     "name": "potion of blindness",
@@ -457,7 +476,8 @@
       "61-80": 25,
       "81-100": 20
     },
-    "lore": "The smoke trapped inside this vial is not decorative — it is the active ingredient, a condensed extract of cave-blind fish eye that, when absorbed through the stomach lining, temporarily disables the optical nerve's ability to interpret light. Assassins use it as a trap, leaving these among valuable items. In the dark of the dungeon, adding blindness to darkness feels like the universe making a particularly cruel joke."
+    "lore": "The smoke trapped inside this vial is not decorative — it is the active ingredient, a condensed extract of cave-blind fish eye that, when absorbed through the stomach lining, temporarily disables the optical nerve's ability to interpret light. Assassins use it as a trap, leaving these among valuable items. In the dark of the dungeon, adding blindness to darkness feels like the universe making a particularly cruel joke.",
+    "peak_weight": 0.5
   },
   "potion_of_poison": {
     "name": "potion of poison",
@@ -480,7 +500,8 @@
       "61-80": 25,
       "81-100": 20
     },
-    "lore": "It takes genuine skill to brew something this actively hostile and make it look drinkable, but whoever formulated this slimy concoction was clearly a professional in the worst possible sense. The purple colour comes from concentrated spider toxin, the sliminess from a binder that ensures the poison sticks to whatever it touches. Some dungeon ecologists believe these spawn naturally, as if the dungeon itself wanted to thin the adventurer population."
+    "lore": "It takes genuine skill to brew something this actively hostile and make it look drinkable, but whoever formulated this slimy concoction was clearly a professional in the worst possible sense. The purple colour comes from concentrated spider toxin, the sliminess from a binder that ensures the poison sticks to whatever it touches. Some dungeon ecologists believe these spawn naturally, as if the dungeon itself wanted to thin the adventurer population.",
+    "peak_weight": 0.5
   },
   "potion_of_paralysis": {
     "name": "potion of paralysis",
@@ -503,7 +524,8 @@
       "61-80": 20,
       "81-100": 15
     },
-    "lore": "Ground from the ash of a particular deep-cave mushroom that the locals call the Stillness Cap, this draught interrupts signals between brain and body with terrifying efficiency. The effect is mercifully brief — the drinker's mind remains active, aware of every detail of their paralysed predicament, while their body refuses to cooperate. Survivors describe it as the longest eight seconds of their lives."
+    "lore": "Ground from the ash of a particular deep-cave mushroom that the locals call the Stillness Cap, this draught interrupts signals between brain and body with terrifying efficiency. The effect is mercifully brief — the drinker's mind remains active, aware of every detail of their paralysed predicament, while their body refuses to cooperate. Survivors describe it as the longest eight seconds of their lives.",
+    "peak_weight": 0.5
   },
   "potion_of_hallucination": {
     "name": "potion of hallucination",
@@ -526,7 +548,8 @@
       "61-80": 25,
       "81-100": 20
     },
-    "lore": "Every colour of the spectrum is represented in the suspended particles of this flask, which drift and rearrange in patterns that should not be possible in a static liquid. After drinking it, every shadow becomes a lurching creature, every wall a moving tapestry, every monster an ally or vice versa. Long-term users sometimes report that the sober world never quite recovers its ordinary dullness, and are divided on whether this is a gift or a curse."
+    "lore": "Every colour of the spectrum is represented in the suspended particles of this flask, which drift and rearrange in patterns that should not be possible in a static liquid. After drinking it, every shadow becomes a lurching creature, every wall a moving tapestry, every monster an ally or vice versa. Long-term users sometimes report that the sober world never quite recovers its ordinary dullness, and are divided on whether this is a gift or a curse.",
+    "peak_weight": 0.5
   },
   "potion_of_sleep": {
     "name": "potion of sleep",
@@ -549,7 +572,8 @@
       "61-80": 20,
       "81-100": 15
     },
-    "lore": "There is something fundamentally wrong about a flask that is warm to the touch when no fire has touched it — the warmth comes from a slow exothermic reaction between dreamwood extract and poppy reduction, which in combination produce a soporific effect that overwhelms even the most determined effort to remain awake. The warmth is comforting. That is the problem."
+    "lore": "There is something fundamentally wrong about a flask that is warm to the touch when no fire has touched it — the warmth comes from a slow exothermic reaction between dreamwood extract and poppy reduction, which in combination produce a soporific effect that overwhelms even the most determined effort to remain awake. The warmth is comforting. That is the problem.",
+    "peak_weight": 0.5
   },
   "potion_of_weakness": {
     "name": "potion of weakness",
@@ -572,7 +596,8 @@
       "61-80": 22,
       "81-100": 18
     },
-    "lore": "The smell alone should be sufficient warning — this grey ooze reeks of rot and old iron, and the smell intensifies after consumption as the active compounds propagate through the lymphatic system. Muscles that functioned perfectly well an hour ago begin to feel like they belong to someone else, weaker and reluctant. Scholars who study potion warfare note that this formula has ended more dungeon careers than almost anything else in the catalogue."
+    "lore": "The smell alone should be sufficient warning — this grey ooze reeks of rot and old iron, and the smell intensifies after consumption as the active compounds propagate through the lymphatic system. Muscles that functioned perfectly well an hour ago begin to feel like they belong to someone else, weaker and reluctant. Scholars who study potion warfare note that this formula has ended more dungeon careers than almost anything else in the catalogue.",
+    "peak_weight": 0.5
   },
   "potion_of_slow": {
     "name": "potion of slow",
@@ -595,7 +620,8 @@
       "61-80": 22,
       "81-100": 18
     },
-    "lore": "The potion earns its informal name from its behaviour when poured — it moves with agonising slowness, as though time itself has already begun to slow around it before even being consumed. The effect on the drinker is the same: every movement becomes an exercise in frustrated urgency, the body lagging behind the mind's commands by an interval that grows maddening over time. Dungeon creatures that use this on adventurers have learned to be patient."
+    "lore": "The potion earns its informal name from its behaviour when poured — it moves with agonising slowness, as though time itself has already begun to slow around it before even being consumed. The effect on the drinker is the same: every movement becomes an exercise in frustrated urgency, the body lagging behind the mind's commands by an interval that grows maddening over time. Dungeon creatures that use this on adventurers have learned to be patient.",
+    "peak_weight": 0.5
   },
   "potion_of_teleportation": {
     "name": "potion of teleportation",
@@ -618,7 +644,8 @@
       "61-80": 22,
       "81-100": 18
     },
-    "lore": "The liquid pulses with its own rhythm, as if something inside is trying to get out. Drinking it produces a moment of total spatial disorientation followed by the drinker being elsewhere — where, exactly, depends entirely on the dungeon's mood, which is notoriously poor. Surface alchemists sometimes market these as utility items. Dungeon survivors call them 'the terror in a bottle' and advise carrying them only as a desperate last resort."
+    "lore": "The liquid pulses with its own rhythm, as if something inside is trying to get out. Drinking it produces a moment of total spatial disorientation followed by the drinker being elsewhere — where, exactly, depends entirely on the dungeon's mood, which is notoriously poor. Surface alchemists sometimes market these as utility items. Dungeon survivors call them 'the terror in a bottle' and advise carrying them only as a desperate last resort.",
+    "peak_weight": 0.5
   },
   "potion_of_drain_strength": {
     "name": "potion of drain strength",
@@ -641,7 +668,8 @@
       "61-80": 15,
       "81-100": 15
     },
-    "lore": "Clouds seem to move inside this vial, compressed into liquid and angry about it. The drain it inflicts is not a weakening of the muscles — it is a permanent diminishment of the nervous pathways that command them. Ancient combat manuals list it as a war crime in at least three jurisdictions. In the dungeon, jurisdictions do not apply, and the formula continues to circulate among those who have both the knowledge and the ethics deficiency to produce it."
+    "lore": "Clouds seem to move inside this vial, compressed into liquid and angry about it. The drain it inflicts is not a weakening of the muscles — it is a permanent diminishment of the nervous pathways that command them. Ancient combat manuals list it as a war crime in at least three jurisdictions. In the dungeon, jurisdictions do not apply, and the formula continues to circulate among those who have both the knowledge and the ethics deficiency to produce it.",
+    "peak_weight": 0.5
   },
   "potion_of_drain_constitution": {
     "name": "potion of drain constitution",
@@ -664,7 +692,8 @@
       "61-80": 14,
       "81-100": 14
     },
-    "lore": "This brackish, brackwater-smelling draught works on the body's fundamental resilience — the deep biological stubbornness that keeps organisms alive when they have no business being so. Alchemists who have studied it describe the mechanism as 'arguing the body out of caring,' which makes it sound almost philosophical. For those it has been used against, the permanent reduction in hardiness is a wound that heals everything except itself."
+    "lore": "This brackish, brackwater-smelling draught works on the body's fundamental resilience — the deep biological stubbornness that keeps organisms alive when they have no business being so. Alchemists who have studied it describe the mechanism as 'arguing the body out of caring,' which makes it sound almost philosophical. For those it has been used against, the permanent reduction in hardiness is a wound that heals everything except itself.",
+    "peak_weight": 0.5
   },
   "potion_of_drain_wisdom": {
     "name": "potion of drain wisdom",
@@ -687,7 +716,8 @@
       "61-80": 14,
       "81-100": 14
     },
-    "lore": "The stoppered bottle is a patchwork of mismatched materials — part stone, part ceramic, part something that might be cured skin — as if assembled by someone whose judgment was already compromised. Its contents attack the very capacity for judgment itself. Those who have partially recovered from its effects report that the worst part is knowing you are less wise than you were, while simultaneously being less wise enough to compensate properly."
+    "lore": "The stoppered bottle is a patchwork of mismatched materials — part stone, part ceramic, part something that might be cured skin — as if assembled by someone whose judgment was already compromised. Its contents attack the very capacity for judgment itself. Those who have partially recovered from its effects report that the worst part is knowing you are less wise than you were, while simultaneously being less wise enough to compensate properly.",
+    "peak_weight": 0.5
   },
   "potion_of_drain_intelligence": {
     "name": "potion of drain intelligence",
@@ -710,7 +740,8 @@
       "61-80": 14,
       "81-100": 14
     },
-    "lore": "The mottled discolouration of this bottle mirrors the discolouration it produces in higher cognitive function — the formula attacks the structures responsible for abstract reasoning, pattern recognition, and the capacity to understand consequences. Ironically, the drinker is often too affected to fully appreciate what has been taken from them, which is perhaps the one mercy the formula offers, and a fittingly cruel one."
+    "lore": "The mottled discolouration of this bottle mirrors the discolouration it produces in higher cognitive function — the formula attacks the structures responsible for abstract reasoning, pattern recognition, and the capacity to understand consequences. Ironically, the drinker is often too affected to fully appreciate what has been taken from them, which is perhaps the one mercy the formula offers, and a fittingly cruel one.",
+    "peak_weight": 0.5
   },
   "potion_of_sickness": {
     "name": "potion of sickness",
@@ -733,7 +764,8 @@
       "61-80": 25,
       "81-100": 20
     },
-    "lore": "The sulfur stench that escapes even through the sealed stopper is not the active ingredient — it is merely a byproduct of the brewing process, which involves cultivating and concentrating dungeon pathogens in a medium of processed alchemical waste. The disease it induces is artificial in origin but indistinguishable in effect from the natural variety. The smell, dungeon runners note grimly, is at least an honest warning."
+    "lore": "The sulfur stench that escapes even through the sealed stopper is not the active ingredient — it is merely a byproduct of the brewing process, which involves cultivating and concentrating dungeon pathogens in a medium of processed alchemical waste. The disease it induces is artificial in origin but indistinguishable in effect from the natural variety. The smell, dungeon runners note grimly, is at least an honest warning.",
+    "peak_weight": 0.5
   },
   "potion_of_fumbling": {
     "name": "potion of fumbling",
@@ -756,7 +788,8 @@
       "61-80": 22,
       "81-100": 18
     },
-    "lore": "It is a bitter irony that a potion whose entire purpose is to cause the drinker to drop things is itself extremely slippery. The turquoise slickness is caused by a film-forming compound that coats every surface it touches, including fingers, weapon grips, and dignity. Dungeon runners who have survived a fumbling episode uniformly describe the experience of watching their weapon clatter away during a fight as formative in ways they prefer not to elaborate on."
+    "lore": "It is a bitter irony that a potion whose entire purpose is to cause the drinker to drop things is itself extremely slippery. The turquoise slickness is caused by a film-forming compound that coats every surface it touches, including fingers, weapon grips, and dignity. Dungeon runners who have survived a fumbling episode uniformly describe the experience of watching their weapon clatter away during a fight as formative in ways they prefer not to elaborate on.",
+    "peak_weight": 0.5
   },
   "potion_of_fear": {
     "name": "potion of fear",
@@ -779,7 +812,8 @@
       "61-80": 20,
       "81-100": 15
     },
-    "lore": "The deep wine colour of this phial is deceptive — it looks like something that might accompany a meal. The fear it induces is neither rational nor controllable: it is pure adrenal terror, the kind that bypasses the higher mind entirely and reaches directly into the oldest parts of the brain. Those who have experienced it report that the worst part is not the fear itself but the absolute certainty, while it is happening, that the fear is completely justified."
+    "lore": "The deep wine colour of this phial is deceptive — it looks like something that might accompany a meal. The fear it induces is neither rational nor controllable: it is pure adrenal terror, the kind that bypasses the higher mind entirely and reaches directly into the oldest parts of the brain. Those who have experienced it report that the worst part is not the fear itself but the absolute certainty, while it is happening, that the fear is completely justified.",
+    "peak_weight": 0.5
   },
   "potion_of_mana": {
     "name": "potion of mana",
@@ -802,7 +836,8 @@
       "61-80": 16,
       "81-100": 12
     },
-    "lore": "Distilled from luminescent cave fungi and alchemised under the light of a new moon, this azure liquid restores a substantial portion of magical reserves. Philosophers of the arcane tradition have long argued whether it merely accelerates natural mana recovery or taps into a deeper metaphysical reservoir — either way, the effect on an exhausted mage is profoundly welcome."
+    "lore": "Distilled from luminescent cave fungi and alchemised under the light of a new moon, this azure liquid restores a substantial portion of magical reserves. Philosophers of the arcane tradition have long argued whether it merely accelerates natural mana recovery or taps into a deeper metaphysical reservoir — either way, the effect on an exhausted mage is profoundly welcome.",
+    "peak_weight": 0.5
   },
   "soma": {
     "name": "Soma",
@@ -827,7 +862,8 @@
       255,
       215,
       100
-    ]
+    ],
+    "peak_weight": 0.5
   },
   "water_of_lethe": {
     "name": "Water of Lethe",
@@ -851,7 +887,8 @@
       200,
       220,
       255
-    ]
+    ],
+    "peak_weight": 0.5
   },
   "elixir_of_gilgamesh": {
     "name": "Elixir of Gilgamesh",
@@ -875,7 +912,8 @@
       50,
       150,
       50
-    ]
+    ],
+    "peak_weight": 0.5
   },
   "fafnirs_blood": {
     "name": "Fafnir's Blood",
@@ -892,6 +930,7 @@
     "power": "0",
     "duration": 0,
     "floorSpawnWeight": {},
-    "lore": "The scalding blood of the dragon Fafnir, said to grant understanding of the speech of birds and visions of hidden truths. In the old tales, Sigurd tasted the blood and gained wisdom beyond mortal ken — including knowledge of how the gods reforge what is broken. Those who drink deeply may glimpse echoes of that ancient craft: a blade unmade, hurled skyward over a sacred place, and caught by divine hands."
+    "lore": "The scalding blood of the dragon Fafnir, said to grant understanding of the speech of birds and visions of hidden truths. In the old tales, Sigurd tasted the blood and gained wisdom beyond mortal ken — including knowledge of how the gods reforge what is broken. Those who drink deeply may glimpse echoes of that ancient craft: a blade unmade, hurled skyward over a sacred place, and caught by divine hands.",
+    "peak_weight": 0
   }
 }

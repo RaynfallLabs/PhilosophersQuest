@@ -2,21 +2,41 @@
   "id": "dragonbone",
   "name": "dragonbone",
   "material_class": "dragon_material",
-  "applies_to": ["weapon", "shield"],
+  "applies_to": [
+    "weapon",
+    "shield"
+  ],
   "peak_floor": 60,
   "spread": 14,
-  "peak_weight": 4,
+  "peak_weight": 4.0,
   "min_level": 35,
-  "damage_mult": 1.30,
-  "weight_mult": 0.80,
+  "damage_mult": 1.3,
+  "weight_mult": 0.8,
   "max_enchant": 4,
-  "color": [240, 230, 200],
+  "color": [
+    240,
+    230,
+    200
+  ],
   "armor_ac_bonus": 1,
-  "resistances": ["fire", "cold"],
+  "resistances": [
+    "fire",
+    "cold"
+  ],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": ["dragon", "wyrm", "reptilian"],
-  "special_properties": ["draconic_aspect", "fire_resist", "cold_resist", "blessed_capable", "fafnir_quest_relevant"],
+  "effective_against": [
+    "dragon",
+    "wyrm",
+    "reptilian"
+  ],
+  "special_properties": [
+    "draconic_aspect",
+    "fire_resist",
+    "cold_resist",
+    "blessed_capable",
+    "fafnir_quest_relevant"
+  ],
   "lore_descriptor": "ivory-white shading to amber, faintly warm",
   "unidentified_descriptor": "a yellowed blade like polished bone",
   "first_pickup_chronicle": "Dragonbone. Whoever harvested this lived to drag it out. Fire glances off it. Cold ignores it. It remembers what it used to be — and I think the dragons remember too.",

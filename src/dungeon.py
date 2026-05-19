@@ -1408,7 +1408,12 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         all_ingredients = []
     _PLANT_KEYWORDS = ('mushroom','herb','berry','leaf','root','fungus','moss',
                        'flower','seed','grain','wheat','grass','vine','spice',
-                       'lichen','bark','sap')
+                       'lichen','bark','sap',
+                       # 2026-05-19 audit: ingredients whose names lack the
+                       # above tokens but ARE plant-sourced (no monster drop).
+                       # Without these, ~190 compound recipes are uncookable.
+                       'thyme','rosemary','celery','carrot','spore',
+                       'pepper','salt','sprig','celery')
     plant_ingredients = [
         ing for ing in all_ingredients
         if any(w in getattr(ing, 'name', '').lower() for w in _PLANT_KEYWORDS)

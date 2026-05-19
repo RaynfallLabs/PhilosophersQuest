@@ -752,7 +752,7 @@
         "sp": 57,
         "bonus_type": "status",
         "bonus_amount": 20,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       }
     },
     "sprite_desc": "A long metallic bronze feather with a lethal serrated edge, gleaming like polished weaponry",
@@ -1077,7 +1077,7 @@
         "sp": 57,
         "bonus_type": "status",
         "bonus_amount": 15,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       }
     },
     "sprite_desc": "A pair of plump pale-green frog legs tied together at the ankle, fresh and ready to cook",
@@ -2903,7 +2903,7 @@
         "sp": 76,
         "bonus_type": "status",
         "bonus_amount": 20,
-        "bonus_effect": "blind_resist"
+        "bonus_effect": "truesight"
       },
       "5": {
         "name": "gas spore master's elixir",
@@ -3272,7 +3272,7 @@
         "sp": 68,
         "bonus_type": "status",
         "bonus_amount": 20,
-        "bonus_effect": "blind_resist"
+        "bonus_effect": "truesight"
       },
       "4": {
         "name": "shadow-cloak essence tonic",
@@ -4557,14 +4557,14 @@
         "sp": 87,
         "bonus_type": "status",
         "bonus_amount": 15,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "4": {
         "name": "abyss-salt elixir",
         "sp": 117,
         "bonus_type": "status",
         "bonus_amount": 25,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "5": {
         "name": "primordial void essence",
@@ -4741,14 +4741,14 @@
         "sp": 90,
         "bonus_type": "status",
         "bonus_amount": 20,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       },
       "5": {
         "name": "planar-hound's draught",
         "sp": 112,
         "bonus_type": "status",
         "bonus_amount": 35,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       }
     },
     "sprite_desc": "A pulsating lavender organ that flickers in and out of visibility",
@@ -5273,7 +5273,7 @@
         "sp": 75,
         "bonus_type": "status",
         "bonus_amount": 20,
-        "bonus_effect": "blind_resist"
+        "bonus_effect": "truesight"
       },
       "4": {
         "name": "fanatic-ooze consomme",
@@ -5327,7 +5327,7 @@
         "sp": 75,
         "bonus_type": "status",
         "bonus_amount": 25,
-        "bonus_effect": "blind_resist"
+        "bonus_effect": "truesight"
       },
       "4": {
         "name": "cockatrice crown stew",
@@ -6518,7 +6518,7 @@
         "sp": 108,
         "bonus_type": "status",
         "bonus_amount": 30,
-        "bonus_effect": "blind_resist"
+        "bonus_effect": "truesight"
       },
       "5": {
         "name": "basilisk oracle's draught",
@@ -6740,7 +6740,7 @@
         "sp": 138,
         "bonus_type": "status",
         "bonus_amount": 25,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       }
     },
     "sprite_desc": "A pouch of brilliant yellow pollen that induces euphoria and suggestibility when inhaled",
@@ -6995,7 +6995,7 @@
         "sp": 87,
         "bonus_type": "status",
         "bonus_amount": 25,
-        "bonus_effect": "blind_resist"
+        "bonus_effect": "truesight"
       },
       "4": {
         "name": "desert-veil consomme",
@@ -7918,7 +7918,7 @@
         "sp": 148,
         "bonus_type": "status",
         "bonus_amount": 30,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       }
     },
     "sprite_desc": "A swirling sphere of compressed wind contained in a thin crystal shell, humming",
@@ -8093,7 +8093,7 @@
     ],
     "weight": 1.0,
     "min_level": 10,
-    "source_monster": "pegasus_corrupted",
+    "source_monster": "pegasus",
     "recipes": {
       "0": {
         "name": "tangled sky-mane mess",
@@ -8438,14 +8438,14 @@
         "sp": 94,
         "bonus_type": "status",
         "bonus_amount": 15,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "4": {
         "name": "shock-tentacle essence draught",
         "sp": 126,
         "bonus_type": "status",
         "bonus_amount": 28,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "5": {
         "name": "lightning brain feast",
@@ -8927,7 +8927,7 @@
         "sp": 126,
         "bonus_type": "status",
         "bonus_amount": 28,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "5": {
         "name": "doom-beetle essence feast",
@@ -9893,7 +9893,7 @@
         "sp": 76,
         "bonus_type": "status",
         "bonus_amount": 35,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "5": {
         "name": "black ooze supreme elixir",
@@ -10048,14 +10048,14 @@
         "sp": 105,
         "bonus_type": "status",
         "bonus_amount": 20,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "4": {
         "name": "pharaoh's tomb draught",
         "sp": 141,
         "bonus_type": "status",
         "bonus_amount": 35,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "5": {
         "name": "ancient death ward elixir",
@@ -10536,7 +10536,7 @@
         "sp": 166,
         "bonus_type": "status",
         "bonus_amount": 30,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "5": {
         "name": "divine storm-bird feast",
@@ -10696,7 +10696,7 @@
         "sp": 141,
         "bonus_type": "status",
         "bonus_amount": 30,
-        "bonus_effect": "arcane_shield"
+        "bonus_effect": "magic_resist"
       },
       "5": {
         "name": "shield-master's elixir",
@@ -10904,7 +10904,7 @@
         "sp": 87,
         "bonus_type": "status",
         "bonus_amount": 22,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "4": {
         "name": "wight drain draught",
@@ -11064,7 +11064,7 @@
         "sp": 105,
         "bonus_type": "status",
         "bonus_amount": 28,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "4": {
         "name": "thunderbird flight draught",
@@ -11604,7 +11604,7 @@
         "sp": 174,
         "bonus_type": "status",
         "bonus_amount": 30,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "5": {
         "name": "catoblepas lord's elixir",
@@ -12185,7 +12185,7 @@
         "sp": 168,
         "bonus_type": "status",
         "bonus_amount": 30,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "4": {
         "name": "storm-serpent draught",
@@ -12291,7 +12291,7 @@
         "sp": 126,
         "bonus_type": "status",
         "bonus_amount": 25,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "4": {
         "name": "tomb shards draught",
@@ -12345,14 +12345,14 @@
         "sp": 68,
         "bonus_type": "status",
         "bonus_amount": 25,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "4": {
         "name": "lesser death draught",
         "sp": 90,
         "bonus_type": "status",
         "bonus_amount": 40,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "5": {
         "name": "essence of mortality elixir",
@@ -12939,7 +12939,7 @@
         "sp": 174,
         "bonus_type": "status",
         "bonus_amount": 35,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "5": {
         "name": "storm throne supreme elixir",
@@ -13198,7 +13198,7 @@
         "sp": 118,
         "bonus_type": "status",
         "bonus_amount": 35,
-        "bonus_effect": "death_ward"
+        "bonus_effect": "life_save"
       },
       "4": {
         "name": "nihility draught",
@@ -13463,7 +13463,7 @@
         "sp": 132,
         "bonus_type": "status",
         "bonus_amount": 38,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "4": {
         "name": "adult blue drake feast",
@@ -13576,7 +13576,7 @@
         "sp": 177,
         "bonus_type": "status",
         "bonus_amount": 40,
-        "bonus_effect": "lightning_resist"
+        "bonus_effect": "shock_resist"
       },
       "5": {
         "name": "tempest sovereign elixir",
@@ -14396,7 +14396,7 @@
         "sp": 75,
         "bonus_type": "status",
         "bonus_amount": 10,
-        "bonus_effect": "haste"
+        "bonus_effect": "hasted"
       },
       "4": {
         "name": "wolf hunter's feast",
