@@ -704,19 +704,46 @@ class CombatMixin:
         return c
 
     def _spawn_treasure_item(self, x: int, y: int, tier: int):
-        """Place a random item of up to `tier` at (x,y)."""
+        """Place a random COMMON item of up to `tier` at (x,y).
+
+        Uniques are explicitly excluded — they come from `unique_drop_id`
+        (mini-boss fixed drops) and rare chest rolls, not from regular
+        monster treasure. Weapon/armor/shield commons are template-
+        instantiated; the JSON files only hold uniques.
+        """
         import random as _rng
-        from items import load_items, copy_at
-        candidates = []
-        for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll'):
-            try:
-                for item in load_items(cls_name):
-                    if item.min_level <= tier * 5:
-                        candidates.append(item)
-            except Exception:
-                pass
-        if candidates:
-            chosen = copy_at(_rng.choice(candidates), x, y)
+        from items import (load_items, copy_at,
+                            pick_random_weapon_for_floor,
+                            pick_random_armor_for_floor,
+                            pick_random_shield_for_floor)
+        effective_floor = max(1, tier * 5)
+
+        # 50% weapon/armor/shield (template+material common), 50% magic item pool
+        roll = _rng.random()
+        if roll < 0.30:
+            gear = pick_random_weapon_for_floor(effective_floor, _rng)
+        elif roll < 0.40:
+            gear = pick_random_armor_for_floor(effective_floor, _rng)
+        elif roll < 0.50:
+            gear = pick_random_shield_for_floor(effective_floor, _rng)
+        else:
+            gear = None
+            candidates = []
+            for cls_name in ('accessory', 'wand', 'scroll', 'potion', 'ammo'):
+                try:
+                    for item in load_items(cls_name):
+                        if getattr(item, 'is_unique', False):
+                            continue
+                        if item.min_level <= effective_floor:
+                            candidates.append(item)
+                except Exception:
+                    pass
+            if candidates:
+                gear = _rng.choice(candidates)
+
+        if gear is not None:
+            chosen = copy_at(gear, x, y) if hasattr(gear, 'id') else gear
+            chosen.x, chosen.y = x, y
             self.ground_items.append(chosen)
             self.add_message(f"It drops {self._display_name(chosen)}!", 'loot')
 

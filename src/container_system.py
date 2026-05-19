@@ -188,6 +188,31 @@ def _generate_loot(container, dungeon_level: int) -> list:
         except FileNotFoundError:
             pass
 
+    # weapon/armor/shield commons are template-instantiated, not in the JSON
+    # uniques files. Inject a few template-rolled samples per class so chests
+    # don't fall through to unique_pool when the JSON-derived common pool is
+    # empty for those categories.
+    from items import (pick_random_weapon_for_floor,
+                        pick_random_armor_for_floor,
+                        pick_random_shield_for_floor)
+    samples_per_class = max(2, container_tier + 1)
+    for cls_name in cfg['classes']:
+        if cls_name == 'weapon':
+            for _ in range(samples_per_class):
+                w = pick_random_weapon_for_floor(effective_level, random)
+                if w is not None:
+                    pool.append(w)
+        elif cls_name == 'armor':
+            for _ in range(samples_per_class):
+                a = pick_random_armor_for_floor(effective_level, random)
+                if a is not None:
+                    pool.append(a)
+        elif cls_name == 'shield':
+            for _ in range(samples_per_class):
+                s = pick_random_shield_for_floor(effective_level, random)
+                if s is not None:
+                    pool.append(s)
+
     if not pool and not unique_pool:
         return []
 
