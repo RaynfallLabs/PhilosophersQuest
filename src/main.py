@@ -1553,7 +1553,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(
             "Take this code to your father proudly -- you have shown true Wisdom and Courage.", 'success'
         )
-        self.add_message("\u2605 A scroll materializes from the void. \u2605", 'loot')
+        self.add_message(">> A scroll materializes from the void. <<", 'loot')
 
         # Destroy Death
         self.death_pursues = False
@@ -3361,7 +3361,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     item = copy_at(template, x, y)
                     item.identified = False
                     self.ground_items.append(item)
-                    self.add_message("\u2605 A remarkable item falls from the defeated foe!", 'loot')
+                    self.add_message(">> A remarkable item falls from the defeated foe!", 'loot')
                     return
             except Exception:
                 pass

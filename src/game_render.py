@@ -3755,7 +3755,7 @@ class RenderMixin:
             mastered = (id_level >= 5
                         and getattr(self.player, 'unlocked_masteries', {}).get(subject.id))
             if mastered:
-                stat_lines.append(f"\u2605 MASTERED  \u2605  {mastered.get('desc', '')}")
+                stat_lines.append(f">> MASTERED <<  {mastered.get('desc', '')}")
 
             # Aura line at id_level >= 2 (BUC known).
             if id_level >= 2:
@@ -3770,7 +3770,7 @@ class RenderMixin:
             # Set membership banner
             if getattr(subject, 'set_id', ''):
                 set_label = getattr(subject, 'set_name', subject.set_id)
-                stat_lines.append(f"\u2605 Part of {set_label} \u2605")
+                stat_lines.append(f">> Part of {set_label} <<")
 
             # Stat lines below this point are only revealed at id_level >= 3.
             # For uniques at chain 1-2, show a placeholder instead.
@@ -4244,8 +4244,8 @@ class RenderMixin:
         p.set_footer_hint(cd_msg)
         body = p.body_rect()
 
-        # Chain stars row centered just below the header
-        stars = '★ ' * chain + '☆ ' * (5 - chain)
+        # Chain stars row centered just below the header (ASCII for font compat)
+        stars = '[*] ' * chain + '[ ] ' * (5 - chain)
         star_font = get_font('body', 16)
         stars_surf = star_font.render(stars.strip(), True, FP.LORE_GOLD_STAT)
         sx = body.x + (body.w - stars_surf.get_width()) // 2

@@ -20,13 +20,13 @@ class Player:
         'grammar':    (20, 1.0),   # sentence-level analysis
         'trivia':     (26, 1.2),   # general knowledge, varied lengths
         'geography':  (28, 1.2),   # moderate reading, detailed choices
-        'history':    (32, 1.6),   # paragraph-length choices with scene-setting
-        'animal':     (32, 1.6),   # descriptive species questions
-        'ai':         (40, 1.5),   # technical concepts need room to teach
-        'philosophy': (40, 1.5),   # abstract reasoning + scaffolded definitions
+        'history':    (34, 1.6),   # paragraph-length choices with scene-setting (+2 from playtest)
+        'animal':     (34, 1.6),   # descriptive species questions (+2 from playtest)
+        'ai':         (45, 1.5),   # technical concepts need room to teach (+5 from playtest)
+        'philosophy': (50, 1.5),   # abstract reasoning + scaffolded definitions (+10 from playtest)
         'cooking':    (44, 1.6),   # full-sentence choices, recipe context
-        'theology':   (48, 1.7),   # dense doctrinal text, scaffolded
-        'economics':  (48, 1.7),   # detailed economic concepts with definitions
+        'theology':   (50, 1.7),   # dense doctrinal text, scaffolded (+2)
+        'economics':  (50, 1.7),   # detailed economic concepts with definitions (+2)
     }
 
     def __init__(self):
