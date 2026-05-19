@@ -222,3 +222,67 @@ def test_mini_boss_variety_across_runs():
     assert len(all_seen) >= 15, (
         f'only {len(all_seen)} distinct mini-bosses across 50 runs — variety too low'
     )
+
+
+# ---------------------------------------------------------------------------
+# Fixed-spawn entities: all 7 seal demons and all 5 main bosses must always
+# spawn at their designated level.
+# ---------------------------------------------------------------------------
+
+_SEAL_DEMONS = {
+    83: 'seal_demon_wrath',
+    85: 'seal_demon_pestilence',
+    87: 'seal_demon_famine',
+    89: 'seal_demon_war',
+    91: 'seal_demon_death',
+    93: 'seal_demon_earthquake',
+    97: 'seal_demon_silence',
+}
+
+_BOSSES = {
+    20: 'asterion_minotaur',
+    40: 'medusa_gorgon',
+    60: 'fafnir_dragon',
+    80: 'fenrir_wolf',
+    100: 'abaddon_destroyer',
+}
+
+
+def test_all_seal_demons_always_spawn_at_fixed_level():
+    """Each of the 7 seal demons must spawn on its specific floor every run.
+    They use _try_spawn_seal_demon (forced), independent of the random
+    mini-boss pre-roll."""
+    from level_manager import LevelManager
+    for level, expected_id in _SEAL_DEMONS.items():
+        for trial in range(3):
+            lm = LevelManager()
+            _, monsters, _ = lm.generate(level)
+            kinds = [getattr(m, 'kind', '') for m in monsters]
+            assert expected_id in kinds, (
+                f'L{level} did not spawn {expected_id} (trial {trial+1}). '
+                f'Monsters present: {kinds[:8]}'
+            )
+
+
+def test_all_main_bosses_always_spawn_at_fixed_level():
+    """L20/40/60/80/100 must always have their respective boss."""
+    from level_manager import LevelManager
+    for level, expected_id in _BOSSES.items():
+        for trial in range(3):
+            lm = LevelManager()
+            _, monsters, _ = lm.generate(level)
+            kinds = [getattr(m, 'kind', '') for m in monsters]
+            assert expected_id in kinds, (
+                f'L{level} did not spawn boss {expected_id} (trial {trial+1}). '
+                f'Monsters present: {kinds[:8]}'
+            )
+
+
+def test_death_monster_class_exists():
+    """Death is event-triggered (ascending L100 with Stone), not floor-spawned.
+    Just confirm the class is present and starts at 50% speed."""
+    from monster import DeathMonster
+    d = DeathMonster()
+    assert d is not None
+    # Death starts slow and accelerates as player ascends
+    assert getattr(d, '_speed_pct', 0) == 50
