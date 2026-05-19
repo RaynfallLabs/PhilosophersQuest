@@ -427,7 +427,9 @@ class Player:
         stand_ac = 0
         if self.status_effects.get('stand_ac', 0) > 0:
             stand_ac = int(getattr(self, '_stand_ac_bonus', 0))
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac
+        # Quarterstaff defensive_parry chain-5 effect: +2 AC for 2 turns
+        parry_ac = 2 if self.status_effects.get('parry_armed', 0) > 0 else 0
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac - parry_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""

@@ -638,6 +638,11 @@ def instantiate_weapon(template_id: str, material_id: str, *,
     # Heavy-class mechanic flag (cleave / stun / etc. — code-side support pending)
     if tpl.get('class_mechanic'):
         defn['class_mechanic'] = tpl['class_mechanic']
+        # Convert the 'ignores_shield' class mechanic into the explicit
+        # ignore_shield weapon attribute. The bypass is checked at use-site
+        # via weapon.ignore_shield, not via class_mechanic string.
+        if tpl['class_mechanic'] == 'ignores_shield':
+            defn['ignoreShield'] = True
     w = Weapon(defn)
     w.x, w.y = x, y
     # Material-specific damage type additions (e.g., silver adds 'silver' as a type)

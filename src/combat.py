@@ -255,18 +255,40 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             mult *= max(1.5, weapon.crit_multiplier)
             crit = True
 
-        # Pre-damage class-mechanic multipliers (applied at max chain):
-        # warhammer anti_heavy_at_max -> +50% vs heavy-armored monsters.
-        # shortbow armor_pierce_at_max -> +35% (treat-as-pierce; no real AC stat
-        # to subtract from, so we just bump damage as a proxy).
+        # Pre-damage class-mechanic multipliers. Apply to mult before damage
+        # is rolled. Several mechanics fire ONLY at max chain (the chain-5
+        # payoff identity); some fire on every hit (versatile, master_strike).
         _pre_mech = getattr(weapon, 'class_mechanic', None) if weapon else None
         if _pre_mech and weapon:
             _max_c = weapon.max_chain_length or len(weapon.chain_multipliers)
-            if chain >= _max_c:
+            _at_max = chain >= _max_c
+
+            # versatile (bastard_sword) — +20% damage when wielded 2H (no shield).
+            # Fires on EVERY hit, not just max chain.
+            if _pre_mech == 'versatile' and player.shield is None:
+                mult *= 1.20
+
+            # master_strike (longsword) — the Meisterhau. At chain 3+, +15%
+            # damage representing the diagonal cut that defeats defensive guards.
+            if _pre_mech == 'master_strike' and chain >= 3:
+                mult *= 1.15
+
+            # AT-MAX-CHAIN damage multipliers
+            if _at_max:
                 if _pre_mech == 'anti_heavy_at_max' and _is_heavy_armored(monster):
                     mult *= 1.5
                 elif _pre_mech == 'armor_pierce_at_max':
                     mult *= 1.35
+                elif _pre_mech == 'ignores_all_armor':
+                    # heavy_crossbow signature — bypass all resistance.
+                    # Sets dtype_mult to 1.0 if resisted, but boosts via mult.
+                    if dtype_mult < 1.0:
+                        mult *= (1.0 / dtype_mult)
+                        dtype_mult = 1.0
+                elif _pre_mech == 'ignores_half_armor':
+                    # light_crossbow — halve the resistance penalty
+                    if dtype_mult < 1.0:
+                        dtype_mult = (dtype_mult + 1.0) / 2.0
 
         # Beowulf quirk: unarmed attacks deal +5 base damage
         if weapon is None:
@@ -510,6 +532,20 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if class_mech == 'returning_blow' and at_max:
                 backlash = max(1, actual // 2)
                 player.hp = max(0, player.hp - backlash)
+
+            # Defensive parry (quarterstaff) — at max chain, gain +2 AC for 2
+            # turns. The quarterstaff's defensive identity: master fighters
+            # used it to time strikes from a position of safety.
+            if class_mech == 'defensive_parry' and at_max:
+                cur = player.status_effects.get('parry_armed', 0)
+                player.status_effects['parry_armed'] = max(cur, 2)
+
+            # Rapid shot (shortbow) — at max chain, fire a second arrow at the
+            # same target for half damage. Mongol horse-archer signature speed.
+            if class_mech == 'rapid_shot_at_max' and at_max and not monster.is_dead():
+                followup = max(1, actual // 2)
+                extra = monster.take_damage(followup)
+                actual += extra
 
         # Cleave: max-chain kill triggers AOE to adjacent monsters
         # (greatsword cleave_at_max / great_axe cleave_at_max_plus_bleed)
