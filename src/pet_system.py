@@ -486,6 +486,14 @@ class FenrirPet(Pet):
         self.alive = True
         self._special_cooldown = 0
         self._regen_timer = 0
+        # Required by base Pet methods called every turn from game_combat
+        # (gain_xp_passive, tick_cooldown, name property, command-aware AI).
+        self._passive_xp_timer = 0
+        self._special_cooldowns: dict[str, int] = {}
+        self.nickname: str = ''
+        self.kills_count: int = 0
+        self.command: str = 'return'
+        self.last_pet_floor: int = -1
 
         self.max_hp = 500
         self.hp = 500
@@ -552,6 +560,13 @@ class SketchedPet(Pet):
         self.alive = True
         self._special_cooldown = 999  # no special attack
         self._regen_timer = 0
+        # Required by base Pet methods called every turn from game_combat.
+        self._passive_xp_timer = 0
+        self._special_cooldowns: dict[str, int] = {}
+        self.nickname: str = ''
+        self.kills_count: int = 0
+        self.command: str = 'return'
+        self.last_pet_floor: int = -1
 
         # Scale from monster stats
         self.max_hp = max(10, int(monster.max_hp * self.SCALE))
@@ -635,6 +650,13 @@ class DadPet(Pet):
         self.alive = True
         self._special_cooldown = 999
         self._regen_timer = 0
+        # Required by base Pet methods called every turn from game_combat.
+        self._passive_xp_timer = 0
+        self._special_cooldowns: dict[str, int] = {}
+        self.nickname: str = ''
+        self.kills_count: int = 0
+        self.command: str = 'return'
+        self.last_pet_floor: int = -1
 
         self.max_hp = 99999
         self.hp = 99999
@@ -708,6 +730,13 @@ class UnicornPet(Pet):
         self._heal_timer = 0
         self._cleanse_timer = 0
         self.is_unicorn = True
+        # Required by base Pet methods called every turn from game_combat.
+        self._passive_xp_timer = 0
+        self._special_cooldowns: dict[str, int] = {}
+        self.nickname: str = ''
+        self.kills_count: int = 0
+        self.command: str = 'return'
+        self.last_pet_floor: int = -1
 
         self.max_hp = 120
         self.hp = 120

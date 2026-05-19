@@ -332,6 +332,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._maybe_spawn_flavor_npc(level)
         self._maybe_spawn_magic_carrot(level)
         self._maybe_spawn_unicorn(level)
+        # Place deep-lore items targeted to this floor (e.g. abyssal_shimmer
+        # when _lore_levels['shimmer'] == 1). Without this, lore items on L1
+        # only spawn if the player descends and returns — and a save/reload
+        # at that point could double-spawn (the lore-placed guard relies on
+        # the set surviving the round trip).
+        self._maybe_place_lore_items(dungeon, level)
 
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
@@ -408,8 +414,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not hasattr(self.player, 'regen_bonus'):
             self.player.regen_bonus = 0
         # LevelManager pre-rolls mini-bosses at __init__; old saves predate that.
-        if hasattr(self, 'level_mgr') and not hasattr(self.level_mgr, '_planned_mini_bosses'):
-            self.level_mgr._planned_mini_bosses = self.level_mgr._roll_planned_mini_bosses()
+        # NOTE: check state['level_mgr'] (the one being restored) — not self.level_mgr,
+        # which is still the constructor's fresh manager and always has the field.
+        _saved_lm = state.get('level_mgr')
+        if _saved_lm is not None and not hasattr(_saved_lm, '_planned_mini_bosses'):
+            _saved_lm._planned_mini_bosses = _saved_lm._roll_planned_mini_bosses()
         # Phase 3 hero specials — new fields in 2026-05-17 build rebuild
         if not hasattr(self.player, 'hero_passives'):
             self.player.hero_passives = set()
@@ -496,6 +505,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cow_level_done = state.get('_cow_level_done', False)
         self._cow_spawned = state.get('_cow_spawned', False)
         self._cow_level = state.get('_cow_level', 35)
+        # Magic carrot + ethereal unicorn one-shot spawn state (added 2026-05-19
+        # save-lifecycle audit). Without these, reload re-rolls the spawn
+        # target floor; if the new target is on a floor the player hasn't
+        # visited yet, a SECOND carrot/unicorn can spawn in the same run.
+        if state.get('_magic_carrot_spawned') is not None:
+            self._magic_carrot_spawned = state['_magic_carrot_spawned']
+        if state.get('_magic_carrot_target_level') is not None:
+            self._magic_carrot_target_level = state['_magic_carrot_target_level']
+        if state.get('_unicorn_spawned') is not None:
+            self._unicorn_spawned = state['_unicorn_spawned']
+        if state.get('_unicorn_target_level') is not None:
+            self._unicorn_target_level = state['_unicorn_target_level']
         # Chronicle & Lore Hints
         self._chronicle = state.get('_chronicle', [])
         self._recalled_hints = state.get('_recalled_hints', [])
@@ -2234,6 +2255,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         if self.state == STATE_DEAD:
             return
+
+        # Phasing safety net: if phasing expired this tick and the player
+        # is standing on a non-walkable tile (wall), bump them to the
+        # nearest walkable neighbor so movement isn't soft-locked. Floor
+        # tiles always cover this — only triggers on the rare wall-stand.
+        if (not self.player.has_effect('phasing')
+                and self.dungeon.in_bounds(self.player.x, self.player.y)
+                and not self.dungeon.is_walkable(self.player.x, self.player.y)):
+            for _dy in range(-2, 3):
+                for _dx in range(-2, 3):
+                    _nx, _ny = self.player.x + _dx, self.player.y + _dy
+                    if self.dungeon.is_walkable(_nx, _ny):
+                        self.player.x, self.player.y = _nx, _ny
+                        self.add_message(
+                            "You feel solid again — the wall pushes you back into open space.",
+                            'info')
+                        break
+                else:
+                    continue
+                break
 
         # Warning: alert for nearby monsters
         self._do_warning()

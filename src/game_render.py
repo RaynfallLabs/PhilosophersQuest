@@ -4438,6 +4438,8 @@ class RenderMixin:
             ("KNOWLEDGE & FAITH", None, FP.GOLD_PALE),
             ("\\",             "Pray at altar",                    FP.ARCANE_ACCENT),
             ("N",              "Recall Lore (trivia)",             FP.CYAN_ACCENT),
+            ("COMPANIONS", None, FP.GOLD_PALE),
+            ("Shift+P",        "Pet menu (feed/heal/recall/command/specials)", FP.BODY_TEXT),
             ("LOOK & RECORDS", None, FP.GOLD_PALE),
             ("O",              "Observe the world (cursor)",        FP.BODY_TEXT),
             ("X",              "Examine your pack (lore)",          FP.BODY_TEXT),

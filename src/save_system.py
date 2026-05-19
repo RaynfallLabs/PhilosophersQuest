@@ -68,6 +68,13 @@ def save_game(game) -> bool:
             '_cow_level_done': getattr(game, '_cow_level_done', False),
             '_cow_spawned': getattr(game, '_cow_spawned', False),
             '_cow_level': getattr(game, '_cow_level', 35),
+            # Magic carrot (L1-19) + ethereal unicorn (L21-39) one-shot spawns.
+            # Without these, reload re-randomizes the target floor and can
+            # spawn a SECOND carrot/unicorn within the same run.
+            '_magic_carrot_spawned': getattr(game, '_magic_carrot_spawned', False),
+            '_magic_carrot_target_level': getattr(game, '_magic_carrot_target_level', None),
+            '_unicorn_spawned': getattr(game, '_unicorn_spawned', False),
+            '_unicorn_target_level': getattr(game, '_unicorn_target_level', None),
             # Chronicle & Lore Hints (Encyclopedia tabs)
             '_chronicle': getattr(game, '_chronicle', []),
             '_recalled_hints': getattr(game, '_recalled_hints', []),

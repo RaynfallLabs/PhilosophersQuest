@@ -363,3 +363,206 @@ def test_bound_sphere_preserves_pet_state():
     assert bound.level == 30
     assert bound.kills_count == 12
     assert bound.species_key == 'plant'
+
+
+# ---------------------------------------------------------------------------
+# Legacy-systems audit (2026-05-19): custom Pet subclasses must initialize all
+# base-class attributes touched by the per-turn combat loop. Previously each
+# subclass (Fenrir / Sketched / Dad / Unicorn) bypassed Pet.__init__ entirely
+# and crashed with AttributeError on the first turn after summoning.
+# ---------------------------------------------------------------------------
+
+def test_fenrir_per_turn_methods_dont_crash():
+    """FenrirPet must survive a full game_combat per-pet turn sequence."""
+    from pet_system import FenrirPet
+    f = FenrirPet(5, 5)
+    # Name property reads self.nickname -- crashed before the fix.
+    assert f.name == 'Fenrir'
+    # Per-turn methods all touch attributes the base Pet sets in __init__.
+    f.gain_xp_passive()
+    f.tick_cooldown()
+    f.tick_regen()
+    # Combat loop also tries gain_xp_from_kill after kills
+    f.gain_xp_from_kill(50)
+
+
+def test_unicorn_per_turn_methods_dont_crash():
+    from pet_system import UnicornPet
+    u = UnicornPet(5, 5)
+    assert u.name == 'Ethereal Unicorn'
+    u.gain_xp_passive()
+    u.tick_cooldown()
+
+
+def test_dad_per_turn_methods_dont_crash():
+    from pet_system import DadPet
+    d = DadPet(5, 5)
+    assert d.name == 'Dad'
+    d.gain_xp_passive()
+    d.tick_cooldown()
+
+
+def test_sketched_per_turn_methods_dont_crash():
+    from pet_system import SketchedPet
+
+    class _FakeMonster:
+        name = 'orc'
+        symbol = 'o'
+        kind = 'orc'
+        min_level = 5
+        max_hp = 30
+        attacks = [{'damage': '1d6'}]
+
+    s = SketchedPet(_FakeMonster(), 5, 5, 10)
+    assert s.name == 'Sketched orc'
+    s.gain_xp_passive()
+    s.tick_cooldown()
+
+
+def test_all_pet_subclasses_have_required_attrs():
+    """All Pet subclasses must initialize every attribute the combat loop reads."""
+    from pet_system import FenrirPet, UnicornPet, DadPet, SketchedPet
+
+    class _FakeMonster:
+        name = 'orc'; symbol = 'o'; kind = 'orc'; min_level = 5; max_hp = 30
+        attacks = [{'damage': '1d6'}]
+
+    pets = [
+        FenrirPet(0, 0),
+        UnicornPet(0, 0),
+        DadPet(0, 0),
+        SketchedPet(_FakeMonster(), 0, 0, 10),
+    ]
+    required = ['nickname', 'kills_count', 'command', 'last_pet_floor',
+                '_special_cooldowns', '_passive_xp_timer', '_regen_timer']
+    for p in pets:
+        for attr in required:
+            assert hasattr(p, attr), \
+                f"{type(p).__name__} missing required attr {attr!r}"
+
+
+# ---------------------------------------------------------------------------
+# Legacy-systems audit: bones system
+# ---------------------------------------------------------------------------
+
+def test_bones_corrupt_file_is_cleaned_up(tmp_path, monkeypatch):
+    """A corrupt bones JSON must be removed on next load so it doesn't
+    permanently occupy a slot under _MAX_BONES."""
+    import bones, random
+
+    # Redirect bones dir to a tmp location
+    monkeypatch.setattr(bones, 'save_dir', lambda: str(tmp_path))
+
+    # Force the 50% gate to always trigger
+    class _AlwaysOpen:
+        def random(self): return 0.0
+        def choice(self, lst): return lst[0]
+        def shuffle(self, lst): pass
+    monkeypatch.setattr(bones, 'random', _AlwaysOpen())
+
+    bd = bones._bones_dir()
+    bad_path = os.path.join(bd, 'bones_L5.json')
+    with open(bad_path, 'w') as f:
+        f.write('{not valid json')
+    assert os.path.exists(bad_path)
+    result = bones.load_bones(5)
+    assert result is None
+    assert not os.path.exists(bad_path), \
+        "corrupt bones file must be removed so it doesn't waste a slot"
+
+
+# ---------------------------------------------------------------------------
+# Legacy-systems audit: highscore system
+# ---------------------------------------------------------------------------
+
+def test_highscore_handles_missing_file(tmp_path, monkeypatch):
+    import highscore_system as hs
+    monkeypatch.setattr(hs, '_SCORE_FILE', str(tmp_path / 'nonexistent.json'))
+    assert hs.get_scores() == []
+    assert hs.get_top(5) == []
+
+
+def test_highscore_handles_corrupt_json(tmp_path, monkeypatch):
+    import highscore_system as hs
+    score_path = tmp_path / 'highscores.json'
+    score_path.write_text('{not valid json')
+    monkeypatch.setattr(hs, '_SCORE_FILE', str(score_path))
+    assert hs.get_scores() == []
+
+
+def test_highscore_truncates_to_max_entries(tmp_path, monkeypatch):
+    import highscore_system as hs
+    monkeypatch.setattr(hs, '_SCORE_FILE', str(tmp_path / 'highscores.json'))
+    for i in range(hs.MAX_ENTRIES + 50):
+        hs.add_score(f'Pl{i}', i * 10, 'B', 10, 5, 100, victory=False)
+    assert len(hs.get_scores()) == hs.MAX_ENTRIES
+
+
+# ---------------------------------------------------------------------------
+# Legacy-systems audit: welcome-screen / SECRET_BUILDS data integrity
+# ---------------------------------------------------------------------------
+
+def test_secret_build_spells_all_resolve():
+    """Every spell id listed in _start_spells must exist in LEARNABLE_SPELLS."""
+    from welcome_screen import SECRET_BUILDS
+    from spells import LEARNABLE_SPELLS
+    spell_ids = set(LEARNABLE_SPELLS.keys())
+    missing = []
+    for name, build in SECRET_BUILDS.items():
+        for sid in build.get('_start_spells', []):
+            if sid not in spell_ids:
+                missing.append((name, sid))
+    assert not missing, \
+        f"SECRET_BUILDS reference unknown spells: {missing}"
+
+
+def test_secret_build_items_all_resolve():
+    """Every item id referenced in SECRET_BUILDS must exist in its item pool."""
+    from welcome_screen import SECRET_BUILDS
+    from items import load_items
+
+    pools = {}
+    for cls in ('weapon', 'armor', 'shield', 'accessory', 'wand',
+                'spellbook', 'potion', 'ammo'):
+        try:
+            pools[cls] = {i.id for i in load_items(cls)}
+        except Exception:
+            pools[cls] = set()
+
+    missing = []
+    for name, build in SECRET_BUILDS.items():
+        for key, val in build.items():
+            if key in ('_start_weapon', '_start_melee') and isinstance(val, str):
+                if val not in pools['weapon']:
+                    missing.append((name, key, val))
+            elif key == '_start_armor' and isinstance(val, str):
+                if val not in pools['armor']:
+                    missing.append((name, key, val))
+            elif key == '_start_shield' and isinstance(val, str):
+                if val not in pools['shield']:
+                    missing.append((name, key, val))
+            elif key == '_start_accessory' and val not in pools['accessory']:
+                missing.append((name, key, val))
+            elif key == '_start_extra_acc':
+                for a in val:
+                    if a not in pools['accessory']:
+                        missing.append((name, key, a))
+            elif key == '_start_wand' and val not in pools['wand']:
+                missing.append((name, key, val))
+            elif key == '_start_book' and val not in pools['spellbook']:
+                missing.append((name, key, val))
+            elif key == '_start_potions':
+                for p in val:
+                    if p not in pools['potion']:
+                        missing.append((name, key, p))
+            elif key == '_start_ammo' and val not in pools['ammo']:
+                missing.append((name, key, val))
+    assert not missing, \
+        f"SECRET_BUILDS reference unknown items: {missing}"
+
+
+def test_secret_build_keys_all_lowercase():
+    """Welcome screen looks up names via .lower() -- keys must already be lowercase."""
+    from welcome_screen import SECRET_BUILDS
+    not_lower = [k for k in SECRET_BUILDS if k != k.lower()]
+    assert not not_lower, f"SECRET_BUILDS keys must be lowercase; bad keys: {not_lower}"

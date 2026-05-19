@@ -844,11 +844,16 @@ class Player:
                         self.apply_stat_bonus(old_fx['stat2'], -old_fx.get('amount2', 0))
                 self.amulet_slot = item
             else:
-                # Find first empty ring slot
-                for i in range(len(self.accessory_slots)):
-                    if self.accessory_slots[i] is None:
-                        self.accessory_slots[i] = item
-                        break
+                # Find first empty ring slot. If none free, bail out — the
+                # game-level _equip_accessory blocks this, but harden here too
+                # so direct callers don't silently double-apply effects.
+                slot_idx = next(
+                    (i for i, s in enumerate(self.accessory_slots) if s is None),
+                    None,
+                )
+                if slot_idx is None:
+                    return  # all rings full — refuse silently
+                self.accessory_slots[slot_idx] = item
             # Apply the accessory's effect permanently
             fx = item.effects
             if 'status' in fx:

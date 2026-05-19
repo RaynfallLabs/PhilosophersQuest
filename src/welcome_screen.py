@@ -139,7 +139,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_wand": "wand_of_magic_missile",
         "_start_book": "spellbook_magic_missile",
-        "_start_spells": ["heal_spell", "shield_spell"],
+        "_start_spells": ["heal_spell", "magic_shield_spell"],
         "_greeting": "Merlin descends with staff in hand and stars in his robe.",
     },
     # -- New characters --------------------------------------------------------
@@ -350,8 +350,8 @@ class WelcomeScreen:
         ("GRAMMAR",   210, 'grammar',    "Q"),
         ("ECONOMICS", 240, 'economics',  "$"),
         ("THEOLOGY",  270, 'theology',   "+"),
-        ("TRIVIA",    300, None,         "T"),   # no FP.SUBJECT entry — fallback
-        ("AI",        330, None,         "W"),   # ditto
+        ("TRIVIA",    300, 'trivia',     "T"),
+        ("AI",        330, 'ai',         "W"),
     ]
 
     def __init__(self, screen: pygame.Surface, version: str):

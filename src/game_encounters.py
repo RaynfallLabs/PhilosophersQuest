@@ -449,6 +449,7 @@ class EncountersMixin:
             subject='ai',
             tier=1,
             callback=on_complete,
+            max_chain=5,    # cap chain at 5 — matches the 0-5 chain comment in _apply_unicorn_boons
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('ai'),

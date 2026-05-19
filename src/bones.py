@@ -91,6 +91,12 @@ def load_bones(dungeon_level: int):
         os.remove(path)
         return bones
     except (OSError, json.JSONDecodeError):
+        # Corrupt bones file -- remove so it doesn't permanently occupy a slot
+        # under the _MAX_BONES cap.
+        try:
+            os.remove(path)
+        except OSError:
+            pass
         return None
 
 

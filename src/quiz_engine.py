@@ -88,9 +88,9 @@ class QuizEngine:
             try:
                 with open(path, encoding='utf-8') as f:
                     self._cache[subject] = json.load(f)
-            except FileNotFoundError:
+            except (FileNotFoundError, json.JSONDecodeError) as e:
                 import sys
-                print(f"WARNING: Question file not found: {path}", file=sys.stderr)
+                print(f"WARNING: Question file unusable: {path} ({e})", file=sys.stderr)
                 self._cache[subject] = []
         return self._cache[subject]
 
@@ -166,6 +166,17 @@ class QuizEngine:
         # Resume from where the persistent deck left off.
         self._pool     = self._decks[deck_key]
         self._pool_idx = self._deck_idx[deck_key]
+        # If the question bank for this subject is empty (missing/malformed
+        # JSON, or a brand-new subject without data), fail gracefully instead
+        # of crashing on _pool[0]. Marks the quiz as failed and invokes
+        # callback so the caller can recover (e.g. return to STATE_PLAYER).
+        if not self._pool:
+            import sys
+            print(f"WARNING: No questions available for subject={subject!r} tier={tier} -- aborting quiz",
+                  file=sys.stderr)
+            self.current_question = None
+            self._end(success=False)
+            return
         self._next_question()
 
     def answer(self, choice: str) -> bool:
@@ -232,6 +243,14 @@ class QuizEngine:
     def _next_question(self):
         deck_key = (self.subject, self.tier)
         last = self._last_q.get(deck_key)
+
+        # Defensive: empty pool would crash on _pool[0] below. Should already
+        # be caught at start_quiz, but escalator paths could also reach here
+        # if a fallback tier ends up empty. Fail gracefully.
+        if not self._pool:
+            self.current_question = None
+            self._end(success=False)
+            return
 
         if self._pool_idx >= len(self._pool):
             # Deck exhausted -- reshuffle with unseen questions first.
