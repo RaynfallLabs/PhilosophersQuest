@@ -634,6 +634,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._chain_no_move_counter = 0
         # Pacify-on-sight tracking (Ring of Solomon).
         self._chain_pacify_seen = set()
+        # Fear-aura "saved already" tracking (Aegis of Athena, etc.).
+        self.player._chain_seen_fear = set()
 
         # Chain-equip passive: huginn_muninn (Cloak of Odin T3+). Auto-fire on
         # floor entry: reveal all monsters within 10 tiles for 5 turns. The
@@ -673,6 +675,30 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     "The Morrigan's ravens trace the dungeon's bones for you.",
                     'success')
+        except (ImportError, NameError):
+            pass
+
+        # Chain-equip passive: paths_of_the_dead (Helm of Aragorn T5).
+        # On floor entry below 50% HP, summon a spectral ally for 30 turns. Once per run.
+        try:
+            from chain_passives import (
+                player_has_passive, consume_run_passive,
+            )
+            if (player_has_passive(self.player, 'paths_of_the_dead')
+                    and self.player.hp <= self.player.max_hp * 0.5
+                    and consume_run_passive(self.player, 'paths_of_the_dead')):
+                # Use SketchedPet machinery: borrow a strong monster template.
+                from monster_classes import get_monster_family
+                # Find ANY strong allied template within visible monsters; if
+                # none, just charm a random visible foe as a stand-in.
+                _candidates = [m for m in self.monsters
+                               if m.alive and (m.x, m.y) in self.visible]
+                if _candidates:
+                    _ally = max(_candidates, key=lambda m: m.max_hp)
+                    _ally.add_effect('charmed', 30)
+                    self.add_message(
+                        f"The Paths of the Dead open -- the {_ally.name} bends to your service for 30 turns!",
+                        'success')
         except (ImportError, NameError):
             pass
 
@@ -1144,6 +1170,87 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if total > 0:
                 qs.on_floor_explored(explored / total)
 
+        # Chain-equip passive: beautiful_ruin (Necklace of Harmonia T5).
+        # On every turn, the strongest visible monster is marked aware + seeks player.
+        try:
+            from chain_passives import player_has_passive
+            if player_has_passive(self.player, 'beautiful_ruin') and self.monsters:
+                _visible_alive = [m for m in self.monsters
+                                  if m.alive and (m.x, m.y) in self.visible]
+                if _visible_alive:
+                    _strongest = max(_visible_alive, key=lambda m: m.max_hp)
+                    _strongest._aware = True
+        except ImportError:
+            pass
+
+        # Chain-equip passive: three_oclock (Ring of Gawain T5 counterpart).
+        # STR decays per turn, resets on rest (handled in _tick_sp).
+        try:
+            from chain_passives import player_has_passive
+            if player_has_passive(self.player, 'three_oclock'):
+                _ctr = getattr(self.player, '_three_oclock_decay', 0) + 1
+                self.player._three_oclock_decay = _ctr
+                if _ctr % 30 == 0 and self.player.STR > 8:
+                    self.player.STR -= 1
+                    self.add_message(
+                        "The 3 o'clock hour wanes. Your strength fades.",
+                        'warning')
+        except ImportError:
+            pass
+
+        # Chain-equip passive: fear auras (aura_of_awe, fafnirs_glare, no_man_dares).
+        try:
+            from chain_passives import apply_fear_auras
+            _n_feared = apply_fear_auras(self.player, self.monsters, self.visible)
+            if _n_feared:
+                self.add_message(
+                    f"The aura of dread breaks {_n_feared} foe(s)!", 'success')
+        except ImportError:
+            pass
+
+        # Chain-equip passives: demon/undead command (auto-fire on first sight).
+        # demon_command_one_per_floor (Robes of Solomon T2+) -> charm 1 demon 20t.
+        # seventy_two_seals (Robes of Solomon T5) -> charm 1 demon 50t + loot drops.
+        # command_undead (Helm of Aragorn) -> charm 1 undead in sight.
+        try:
+            from chain_passives import (
+                player_has_passive, consume_passive_charge,
+            )
+            for _tag, _flag, _dur, _msg in (
+                ('demon', 'seventy_two_seals', 50,
+                 "By the Seventy-Two Seals, the {name} is bound to your will!"),
+                ('demon', 'demon_command_one_per_floor', 20,
+                 "Solomon's seal compels the {name} to your service!"),
+                ('undead', 'command_undead', 15,
+                 "Aragorn's helm overawes the {name}!"),
+            ):
+                if not player_has_passive(self.player, _flag):
+                    continue
+                # Find an unclaimed target in FOV with the tag.
+                _target = None
+                for m in self.monsters:
+                    if not m.alive:
+                        continue
+                    if (m.x, m.y) not in self.visible:
+                        continue
+                    if _tag not in set(getattr(m, 'tags', []) or []):
+                        continue
+                    if m.has_effect('charmed'):
+                        continue
+                    _target = m
+                    break
+                if _target is None:
+                    continue
+                if not consume_passive_charge(self.player, _flag):
+                    continue
+                _target.add_effect('charmed', _dur)
+                self.add_message(_msg.format(name=_target.name), 'success')
+                # 72 Seals additionally marks the demon for guaranteed loot drop.
+                if _flag == 'seventy_two_seals':
+                    _target._seal_marked = True
+        except ImportError:
+            pass
+
         # Chain-equip passive: pacify_demon_chance (Ring of Solomon).
         # Roll on each demon-tagged monster newly seen this floor; on success
         # they get a 'charmed' or 'sleeping' status as a stand-in for pacify.
@@ -1353,6 +1460,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             else:
                 self.add_message("You feel something odd about this wall...", 'info')
             self._advance_turn()
+        elif (tile_at_dest == WALL and self.dungeon.in_bounds(nx, ny)
+              and self._try_phase_step(nx, ny, dx, dy)):
+            # Chain-equip passive: phase_step_once_per_floor (Helm of Hades T3+).
+            # _try_phase_step moved the player one tile past the wall (or
+            # cancelled the move if no opening). Return — turn already handled.
+            return
         elif self.dungeon.is_walkable(nx, ny) or (
             self.player.has_effect('phasing') and self.dungeon.in_bounds(nx, ny)
             and self.dungeon.tiles[ny][nx] not in (WATER, LAVA)
@@ -1460,6 +1573,36 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._haste_active = True
                     self._do_move(dx, dy)
                     self._haste_active = False
+
+    def _try_phase_step(self, wx: int, wy: int, dx: int, dy: int) -> bool:
+        """Attempt to step one tile through a wall (chain-equip phase_step passive).
+
+        Returns True if a phase-step was performed (charge consumed, turn spent);
+        False if no charge available or there's no walkable tile past the wall.
+        """
+        try:
+            from chain_passives import is_charge_available, consume_passive_charge
+        except ImportError:
+            return False
+        if not is_charge_available(self.player, 'phase_step_once_per_floor'):
+            return False
+        # The "destination" is one tile past the wall in the same direction.
+        tx, ty = wx + dx, wy + dy
+        if not self.dungeon.in_bounds(tx, ty):
+            return False
+        if not self.dungeon.is_walkable(tx, ty):
+            return False
+        if any(m.alive and m.x == tx and m.y == ty for m in self.monsters):
+            return False
+        consume_passive_charge(self.player, 'phase_step_once_per_floor')
+        self.player.x, self.player.y = tx, ty
+        self._refresh_fov()
+        self._tick_sp()
+        self.add_message("You step THROUGH the stone like Hades' helm. The wall does not see you.", 'success')
+        self._notify_stairs(tx, ty)
+        self._notify_ground(tx, ty)
+        self._advance_turn()
+        return True
 
     def _notify_stairs(self, x: int, y: int):
         tile = self.dungeon.tiles[y][x]
@@ -1943,6 +2086,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.player.status_effects.pop('_pending_elder_escape', 0):
             self.add_message(
                 "Elder Blood ignites! Space buckles around you...", 'success')
+            self._teleport_player()
+        # Chain-equip passive: free_escape_once_per_floor — same trigger, distinct slot.
+        if self.player.status_effects.pop('_pending_chain_escape', 0):
+            self.add_message(
+                "Winged Sandals flare! You leap clear of danger!", 'success')
             self._teleport_player()
 
         # Tick monster status effects (DOT damage, duration expiry)
@@ -3673,6 +3821,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"You attune to the {item_name}{cursed_tag} at tier {chain}/5. AC is now {ac}.",
                     'success'
                 )
+                # Chain-equip passive auto-fires at equip time:
+                #   dragon_blood_bath -> permanent elemental resist statuses
+                #   aesir_young -> 5t protected when newly re-equipped
+                _passives = getattr(item, '_chain_passives', {}) or {}
+                if 'dragon_blood_bath' in _passives and not getattr(
+                        self.player, '_dragon_blood_active', False):
+                    self.player._dragon_blood_active = True
+                    for _stat in ('fire_resist', 'cold_resist', 'shock_resist'):
+                        self.player.add_effect(_stat, -1)
+                    self.add_message(
+                        "You bathe in the dragon's blood. Elements turn aside!", 'success')
+                if 'aesir_young' in _passives:
+                    # Grant a brief shielded buff as a stand-in for "protected".
+                    self.player.add_effect('shielded', 5)
+                    self.add_message(
+                        "Idunn's apples wash years away. You are young again.", 'info')
                 _qs = getattr(self, 'quirk_system', None)
                 if _qs:
                     if item_type == 'armor':

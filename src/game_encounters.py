@@ -730,6 +730,17 @@ class EncountersMixin:
         # ── Apply reward ──────────────────────────────────────────
         if reward:
             self._apply_npc_reward(reward)
+            # Chain-equip passive: suryas_gift (Kavacha-Kundala). Good-karma
+            # rewards are doubled — apply the reward a second time when karma
+            # delta was positive.
+            try:
+                from chain_passives import player_has_passive
+                if karma_delta > 0 and player_has_passive(self.player, 'suryas_gift'):
+                    self._apply_npc_reward(reward)
+                    self.add_message(
+                        "Surya's gift doubles the bounty of your good deed!", 'success')
+            except ImportError:
+                pass
         # Bonus reward (e.g., Cowering Goblin gives two items)
         bonus = opt.get('bonus_reward')
         if bonus:

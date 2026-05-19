@@ -1087,6 +1087,14 @@ class MagicMixin:
             else:
                 _snd.play('spell_cast')
                 self._apply_spell_effect(spell, chain, target)
+                # Chain-equip passive: double_cast_at_max_chain (Robe of the Magus T5).
+                if chain >= 5:
+                    from chain_passives import player_has_passive
+                    if player_has_passive(self.player, 'double_cast_at_max_chain'):
+                        self.add_message(
+                            "The Robe of the Magus weaves the spell a second time!",
+                            'success')
+                        self._apply_spell_effect(spell, chain, target)
                 _qs_spell = getattr(self, 'quirk_system', None)
                 if _qs_spell:
                     hp_pct = self.player.hp / max(1, self.player.max_hp)

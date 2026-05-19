@@ -177,6 +177,13 @@ class Player:
         # Flat damage reduction from chain-equip tier_bonuses (resistance_<type>).
         # Each "level" subtracts 1 damage of the matching type; clamped to >=0.
         flat_reduction = int(getattr(self, 'damage_resistances', {}).get(damage_type, 0))
+        # Monster-family mastery: elemental blessing reduces fire/cold/lightning
+        # damage by value as flat subtraction.
+        if damage_type in ('fire', 'cold', 'lightning'):
+            fams = getattr(self, 'unlocked_monster_class_masteries', {})
+            elem = fams.get('elemental')
+            if elem and elem.get('kind') == 'resist_elemental':
+                flat_reduction += int(elem.get('value', 0))
         amount = max(0, amount - flat_reduction)
 
         # Fractional resistance: status/accessory effects x armor resistances
@@ -204,6 +211,15 @@ class Player:
             self._elder_blood_escape_used = True
             # Signal via status_effects — main.py's tick will call _teleport_player.
             self.status_effects['_pending_elder_escape'] = 1
+        # Chain-equip passive: free_escape_once_per_floor (Winged Sandals).
+        # Auto-fires at HP <=25% if equipped + per-floor charge not yet spent.
+        if self.hp > 0 and self.hp <= self.max_hp * 0.25:
+            try:
+                from chain_passives import consume_passive_charge
+                if consume_passive_charge(self, 'free_escape_once_per_floor'):
+                    self.status_effects['_pending_chain_escape'] = 1
+            except ImportError:
+                pass
         # Hero passive trigger: Boudicca's Vengeance Wakes — auto-berserk at <50%
         if 'vengeance_wakes' in self.hero_passives and \
                 self.hp > 0 and self.hp <= self.max_hp * 0.5 and \
@@ -394,6 +410,14 @@ class Player:
         # Hero buff: fear_immune (Ash's berserk chain >= 3) — block fear application.
         if name == 'feared' and self.status_effects.get('fear_immune', 0) > 0:
             return False
+        # Monster-family mastery: fey blessing reduces charm/illusion durations.
+        # Aberration blessing reduces mind-effect durations (charmed/confused).
+        fams = getattr(self, 'unlocked_monster_class_masteries', {})
+        if duration > 0:
+            if name == 'charmed' and fams.get('fey', {}).get('kind') == 'resist_charm':
+                duration = max(1, duration // 2)
+            if name in ('charmed', 'confused') and fams.get('aberration', {}).get('value'):
+                duration = max(1, duration - int(fams['aberration']['value']))
         return apply_effect(self, name, duration)
 
     def tick_effects(self) -> list:

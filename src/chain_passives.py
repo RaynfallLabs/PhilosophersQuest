@@ -316,6 +316,61 @@ def is_player_hidden_from(player, monster, dungeon=None) -> bool:
     return False
 
 
+def apply_fear_auras(player, monsters, visible) -> int:
+    """For each visible monster, roll vs fear if the player has any fear-aura passive.
+
+    Returns the number of monsters who were just freshly feared (for messaging).
+    The chain-equip passives recognised:
+      - aura_of_awe (Aegis of Athena): newly-spotted monsters save vs fear.
+      - fafnirs_glare (Aegishjalmr T3+): each visible enemy saves vs fear every turn.
+      - no_man_dares (Aegishjalmr T5): same as fafnirs_glare but stronger duration.
+
+    `_chain_seen_fear` set on player tracks which monsters have already saved vs
+    `aura_of_awe` this floor (each gets one save attempt on first sight).
+    """
+    if player is None:
+        return 0
+    has_awe = player_has_passive(player, 'aura_of_awe')
+    has_glare = player_has_passive(player, 'fafnirs_glare')
+    has_no_man = player_has_passive(player, 'no_man_dares')
+    if not (has_awe or has_glare or has_no_man):
+        return 0
+    seen = getattr(player, '_chain_seen_fear', None)
+    if seen is None:
+        seen = set()
+        player._chain_seen_fear = seen
+    feared = 0
+    duration = 3 if has_awe else 2
+    if has_no_man:
+        duration = max(duration, 4)
+    elif has_glare:
+        duration = max(duration, 3)
+    for m in monsters:
+        if not getattr(m, 'alive', False):
+            continue
+        try:
+            pos = (m.x, m.y)
+        except AttributeError:
+            continue
+        if pos not in visible:
+            continue
+        if has_awe and id(m) not in seen:
+            seen.add(id(m))
+            # 50% save vs fear; failures get a brief fear
+            if random.random() < 0.50:
+                if hasattr(m, 'add_effect'):
+                    m.add_effect('feared', duration)
+                    feared += 1
+        if has_glare or has_no_man:
+            # Glare/no_man fires every turn at 25% / 40% chance
+            base = 0.40 if has_no_man else 0.25
+            if random.random() < base:
+                if hasattr(m, 'add_effect') and not m.has_effect('feared'):
+                    m.add_effect('feared', duration)
+                    feared += 1
+    return feared
+
+
 def apply_spell_damage_passives(player, dmg: float):
     """Layer chain-equip passives onto a base spell damage value.
 

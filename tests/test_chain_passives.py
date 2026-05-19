@@ -545,3 +545,155 @@ def test_apply_spell_damage_passives_anti_being_consumed():
     dmg2, c2, anti2 = apply_spell_damage_passives(p, 10.0)
     assert dmg2 == 10.0
     assert anti2 is False
+
+
+# ---------------------------------------------------------------------------
+# Fear aura helper
+# ---------------------------------------------------------------------------
+
+
+def test_apply_fear_auras_does_nothing_without_passive():
+    from chain_passives import apply_fear_auras
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.alive = 10, 10, True
+            self.status_effects = {}
+        def add_effect(self, n, d):
+            self.status_effects[n] = d
+        def has_effect(self, n):
+            return self.status_effects.get(n, 0) > 0
+    p = _new_player()
+    p.x, p.y = 5, 5
+    n = apply_fear_auras(p, [FakeMon()], {(10, 10)})
+    assert n == 0
+
+
+def test_apply_fear_auras_aura_of_awe_attempts(monkeypatch):
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import apply_fear_auras
+    import chain_passives as _cp
+
+    class FakeMon:
+        def __init__(self):
+            self.x, self.y, self.alive = 10, 10, True
+            self.status_effects = {}
+        def add_effect(self, n, d):
+            self.status_effects[n] = d
+        def has_effect(self, n):
+            return self.status_effects.get(n, 0) > 0
+
+    p = _new_player()
+    p.x, p.y = 5, 5
+    s = _make_shield(equip_chain_mode='escalator',
+                     tier_bonuses={'5': {'passive_aura_of_awe': True}})
+    apply_tier_bonuses(p, s, 5)
+    p.shield = s
+    monkeypatch.setattr(_cp.random, 'random', lambda: 0.10)  # < 0.5 -> fail save
+    mons = [FakeMon()]
+    n = apply_fear_auras(p, mons, {(10, 10)})
+    assert n == 1
+    assert mons[0].has_effect('feared')
+
+
+# ---------------------------------------------------------------------------
+# Career arc / regression: equipped chain-equip items expose passives via
+# all three player slot types (armor / shield / amulet / ring).
+# ---------------------------------------------------------------------------
+
+
+def test_lookup_finds_passive_in_amulet_slot():
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import player_has_passive
+    p = _new_player()
+    a = _make_accessory(slot='amulet', equip_chain_mode='escalator',
+                        tier_bonuses={'5': {'passive_beautiful_ruin': True}})
+    apply_tier_bonuses(p, a, 5)
+    p.amulet_slot = a
+    assert player_has_passive(p, 'beautiful_ruin')
+
+
+def test_lookup_finds_passive_in_shield_slot():
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import player_has_passive
+    p = _new_player()
+    s = _make_shield(equip_chain_mode='escalator',
+                     tier_bonuses={'5': {'passive_gorgoneion_petrify_on_hit': True}})
+    apply_tier_bonuses(p, s, 5)
+    p.shield = s
+    assert player_has_passive(p, 'gorgoneion_petrify_on_hit')
+
+
+def test_lookup_finds_passive_in_armor_slot():
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import player_has_passive
+    p = _new_player()
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {'passive_huginn_muninn': True}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    assert player_has_passive(p, 'huginn_muninn')
+
+
+# ---------------------------------------------------------------------------
+# Coverage smoke: every known passive flag has a lookup helper or query path
+# ---------------------------------------------------------------------------
+
+
+_KNOWN_PASSIVES = (
+    'aesir_young', 'anti_being', 'atalantas_choice', 'attack_chain_cap_bonus',
+    'aura_of_awe', 'back_attack_weakness', 'beautiful_ruin', 'command_undead',
+    'cut_and_given', 'death_omen_mark', 'death_save_bonus',
+    'demon_command_one_per_floor', 'detect_magic', 'doom_of_the_gods',
+    'double_cast_at_max_chain', 'dragon_blood_bath', 'fafnirs_glare',
+    'first_hit_absorb', 'four_faces_360_fov', 'free_cast_once_per_floor',
+    'free_escape_once_per_floor', 'free_move_every_10',
+    'gorgoneion_petrify_on_hit', 'grammar_chain_cap_bonus', 'huginn_muninn',
+    'hunger_slow', 'identify_one_per_floor_free', 'invisible_to_undead',
+    'life_save_resets_per_floor', 'max_mp_bonus', 'mirror_of_souls',
+    'mp_bonus', 'no_attack_of_opportunity', 'no_man_dares',
+    'one_thousand_and_one', 'pacify_demon_chance', 'paths_of_the_dead',
+    'phase_step_once_per_floor', 'psychopomp_step', 'raven_scout',
+    'raven_scout_extended', 'reassembly', 'reflect_spell',
+    'scroll_save_on_fail', 'second_beheading_returns', 'seventy_two_seals',
+    'solomonic_key', 'spell_crit', 'spell_damage_bonus', 'spell_reflect',
+    'spellbook_chain_bonus', 'stealth_in_dark', 'suryas_gift',
+    'three_apples', 'three_oclock', 'unmaking_sense', 'unseen_when_still',
+    'weaken_summoned', 'wisdom_at_a_price',
+)
+
+
+def test_all_59_passives_have_lookup_path():
+    """Every passive flag listed in the JSON should be reachable via player_has_passive."""
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import player_has_passive
+    p = _new_player()
+    # Stack every known passive onto one armor piece for the lookup test.
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {f'passive_{flag}': True for flag in _KNOWN_PASSIVES}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    missing = [f for f in _KNOWN_PASSIVES if not player_has_passive(p, f)]
+    assert not missing, f"Lookup miss for: {missing}"
+
+
+def test_consume_passive_charge_works_for_every_per_floor_flag():
+    """Every per-floor charge flag flips when consumed."""
+    from chain_equip import apply_tier_bonuses
+    from chain_passives import consume_passive_charge, is_charge_available
+    per_floor_flags = (
+        'free_cast_once_per_floor', 'free_escape_once_per_floor',
+        'phase_step_once_per_floor', 'demon_command_one_per_floor',
+        'identify_one_per_floor_free', 'huginn_muninn', 'solomonic_key',
+        'three_apples', 'atalantas_choice', 'one_thousand_and_one',
+        'seventy_two_seals', 'command_undead',
+    )
+    p = _new_player()
+    a = _make_armor(equip_chain_mode='escalator',
+                    tier_bonuses={'5': {f'passive_{f}': True for f in per_floor_flags}})
+    apply_tier_bonuses(p, a, 5)
+    _equip_armor(p, a)
+    for f in per_floor_flags:
+        assert is_charge_available(p, f), f"{f} not available at start"
+        assert consume_passive_charge(p, f) is True, f"{f} couldn't consume"
+        assert not is_charge_available(p, f), f"{f} still available after consume"
+        assert consume_passive_charge(p, f) is False, f"{f} double-consumed"

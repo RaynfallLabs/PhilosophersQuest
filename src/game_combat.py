@@ -1297,8 +1297,17 @@ class CombatMixin:
                     )
             self._advance_turn()
 
-        # Tablet of Destinies: allow quiz reroll if not used this floor
-        self.quiz_engine._reroll_flag = self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False)
+        # Tablet of Destinies: allow quiz reroll if not used this floor.
+        # Chain-equip passive one_thousand_and_one (Ring of Scheherazade T5) also grants reroll.
+        try:
+            from chain_passives import is_charge_available
+            _scheh_reroll = is_charge_available(self.player, 'one_thousand_and_one')
+        except ImportError:
+            _scheh_reroll = False
+        self.quiz_engine._reroll_flag = (
+            (self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False))
+            or _scheh_reroll
+        )
         player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
 
     # ------------------------------------------------------------------
@@ -1339,10 +1348,21 @@ class CombatMixin:
                         knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
-            # Tablet of Destinies: mark reroll as used this floor
+            # Tablet of Destinies: mark reroll as used this floor.
+            # Chain-equip passive one_thousand_and_one consumes its per-floor charge when reroll fires.
             if getattr(self.quiz_engine, 'reroll_was_used', False):
-                self._quiz_reroll_used = True
-                self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
+                if self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False):
+                    self._quiz_reroll_used = True
+                    self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
+                else:
+                    try:
+                        from chain_passives import consume_passive_charge
+                        if consume_passive_charge(self.player, 'one_thousand_and_one'):
+                            self.add_message(
+                                "Scheherazade whispers another tale -- one more chance.",
+                                'info')
+                    except ImportError:
+                        pass
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at the {monster.name} and miss!", 'warning'
@@ -1441,8 +1461,17 @@ class CombatMixin:
                         self.add_message("A wave of primordial stillness ripples outward.", 'info')
             self._advance_turn()
 
-        # Tablet of Destinies: allow quiz reroll if not used this floor
-        self.quiz_engine._reroll_flag = self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False)
+        # Tablet of Destinies: allow quiz reroll if not used this floor.
+        # Chain-equip passive one_thousand_and_one also grants reroll.
+        try:
+            from chain_passives import is_charge_available
+            _scheh_reroll = is_charge_available(self.player, 'one_thousand_and_one')
+        except ImportError:
+            _scheh_reroll = False
+        self.quiz_engine._reroll_flag = (
+            (self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False))
+            or _scheh_reroll
+        )
         player_attack(self.player, monster, self.quiz_engine, on_complete)
 
     # ------------------------------------------------------------------
@@ -1724,6 +1753,36 @@ class CombatMixin:
                                 "GREEN KNIGHT'S OATH: your second beheading returns!", 'success')
                             # Break the armor: clear its chain bonuses
                             _src = find_passive_item(self.player, 'second_beheading_returns')
+                            if _src is not None and _src in self.player.armor_slots:
+                                idx = self.player.armor_slots.index(_src)
+                                self.player.armor_slots[idx] = None
+                    except ImportError:
+                        pass
+
+                # Chain-equip passive: doom_of_the_gods (Armor of Ragnarok T5).
+                # On player death, fire a massive AoE blast — last stand against everyone.
+                if self.player.hp <= 0:
+                    try:
+                        from chain_passives import (
+                            consume_run_passive, find_passive_item,
+                        )
+                        if consume_run_passive(self.player, 'doom_of_the_gods'):
+                            px, py = self.player.x, self.player.y
+                            _hits = 0
+                            for mm in list(self.monsters):
+                                if not mm.alive:
+                                    continue
+                                d = abs(mm.x - px) + abs(mm.y - py)
+                                if d <= 6:
+                                    mm.take_damage(max(20, self.player.max_hp))
+                                    if not mm.alive:
+                                        self._on_monster_killed(mm)
+                                    _hits += 1
+                            self.add_message(
+                                f"DOOM OF THE GODS! Your armor erupts -- {_hits} foes annihilated!",
+                                'success')
+                            # Break the armor that was carrying the passive.
+                            _src = find_passive_item(self.player, 'doom_of_the_gods')
                             if _src is not None and _src in self.player.armor_slots:
                                 idx = self.player.armor_slots.index(_src)
                                 self.player.armor_slots[idx] = None
