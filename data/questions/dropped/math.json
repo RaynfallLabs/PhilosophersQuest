@@ -1,0 +1,4337 @@
+[
+  {
+    "tier": 2,
+    "question": "Archimedes' famous shout when he discovered displacement?",
+    "answer": "Eureka",
+    "choices": [
+      "Eureka",
+      "Quod erat",
+      "Aha",
+      "Cogito"
+    ],
+    "context": "Greek for 'I have found it' — from the bathtub.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Euclid's book on geometry was called?",
+    "answer": "Elements",
+    "choices": [
+      "Elements",
+      "Principia",
+      "Almagest",
+      "Conics"
+    ],
+    "context": "Standard geometry text for over 2,000 years.",
+    "_dropped_reason": [
+      "DROP:euclid's book"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Number e is approximately…",
+    "answer": "2.718",
+    "choices": [
+      "2.718",
+      "3.141",
+      "1.618",
+      "1.414"
+    ],
+    "context": "Base of natural log; e ≈ 2.71828.",
+    "_dropped_reason": [
+      "DROP:number e is"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Gauss as a child quickly summed 1 to 100. The total?",
+    "answer": "5050",
+    "choices": [
+      "5050",
+      "1000",
+      "10000",
+      "5500"
+    ],
+    "context": "He paired 1+100, 2+99, … fifty pairs of 101.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Euclid proved that the number of prime numbers is…",
+    "answer": "infinite",
+    "choices": [
+      "infinite",
+      "exactly 100",
+      "only finite",
+      "unknown"
+    ],
+    "context": "Euclid's classic proof by contradiction.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Babylonians knew this c.1800 BC; Greeks gave it a proof. Statement?",
+    "answer": "a² + b² = c²",
+    "choices": [
+      "a² + b² = c²",
+      "a² × b² = c²",
+      "  a + b = c²",
+      "a × b = c²"
+    ],
+    "context": "Plimpton 322 (Babylon) lists Pythagorean triples 1000+ years before Pythagoras' school furnished the first axiomatic proof.",
+    "_dropped_reason": [
+      "DROP:greeks gave"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Euclid proved that the primes ___.",
+    "answer": "are infinite",
+    "choices": [
+      "are infinite",
+      "are all odd",
+      "stop at 1,000",
+      "follow rule N"
+    ],
+    "context": "Euclid's proof (c. 300 BC): assume finite list, multiply, add 1 — yields a new prime.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Famous teen calculation: 1 + 2 + ... + 100 = ?",
+    "answer": "5050",
+    "choices": [
+      "5050",
+      "0550",
+      "1010",
+      "9999"
+    ],
+    "context": "Young Gauss reportedly paired 1+100, 2+99, … : 50 pairs × 101 = 5050.",
+    "_dropped_reason": [
+      "DROP:famous teen"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Archimedes' first estimate of π was between which bounds?",
+    "answer": "3 10/71 and 3 1/7",
+    "choices": [
+      "3 10/71 and 3 1/7",
+      "exactly 22/7",
+      "between 3 and 4",
+      "3.10 and 3.20"
+    ],
+    "context": "Archimedes inscribed and circumscribed 96-gons to bound π between 223/71 and 22/7.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "How long was Fermat's Last Theorem an open problem?",
+    "answer": "about 358 years",
+    "choices": [
+      "about 358 years",
+      "about 100 years",
+      "about 050 years",
+      "about 1000 yrs"
+    ],
+    "context": "Stated by Fermat in 1637; finally proved by Andrew Wiles in 1995.",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "The Four Color Theorem says any planar map needs at most ___ colors.",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ],
+    "context": "Proved 1976 by Appel and Haken — the first major theorem proved by computer.",
+    "_dropped_reason": [
+      "DROP:four color"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "π is what kind of number?",
+    "answer": "Transcendental",
+    "choices": [
+      "Transcendental",
+      "An odd integer",
+      "A whole number",
+      "Rational, m/n"
+    ],
+    "context": "Lindemann proved π transcendental in 1882 — it is not the root of any polynomial with integer coefficients.",
+    "_dropped_reason": [
+      "DROP:what kind of number"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Hypatia of Alexandria taught what subject?",
+    "answer": "math and astronomy",
+    "choices": [
+      "math and astronomy",
+      "rhetoric in Greek",
+      "medicine in Egypt",
+      "Coptic theology"
+    ],
+    "context": "Late-4th/early-5th century Neoplatonist who taught Euclid, Apollonius, and Ptolemy. Killed in 415 CE.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Cantor proved that the infinity of ___ is larger than that of ___.",
+    "answer": "the reals; the integers",
+    "choices": [
+      "the reals; the integers",
+      "primes; even numbers",
+      "natural; rational nums",
+      "rationals; reals"
+    ],
+    "context": "Cantor's diagonal argument: reals are uncountably infinite — strictly larger than the countable infinity of integers.",
+    "_dropped_reason": [
+      "DROP:cantor"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "What is Euler's identity?",
+    "answer": "e^(iπ) + 1 = 0",
+    "choices": [
+      "e^(iπ) + 1 = 0",
+      "e^(iπ) − 1 = 0",
+      "e^(iπ) − π = 0",
+      "e^(1π) − 1 = 0"
+    ],
+    "context": "Ties five constants — e, i, π, 1, 0 — and the operations +, ×, exponentiation in one short equation.",
+    "_dropped_reason": [
+      "DROP:euler's identity"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Angles in the same position at each intersection of a transversal:",
+    "answer": "Corresponding",
+    "choices": [
+      "Corresponding",
+      "Alternate interior",
+      "Vertical",
+      "Co-interior"
+    ],
+    "context": "Corresponding angles: a defining feature of parallel-line geometry.",
+    "_dropped_reason": [
+      "DROP:rsa"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Angles on opposite sides of the transversal, between the parallel lines:",
+    "answer": "Alternate interior",
+    "choices": [
+      "Alternate interior",
+      "Corresponding",
+      "Co-interior",
+      "Vertical"
+    ],
+    "context": "Alternate interior angles: a defining feature of parallel-line geometry.",
+    "_dropped_reason": [
+      "DROP:rsa"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "Angles on the same side of the transversal, between the parallel lines, that sum to 180°:",
+    "answer": "Co-interior",
+    "choices": [
+      "Co-interior",
+      "Corresponding",
+      "Alternate exterior",
+      "Vertical"
+    ],
+    "context": "Co-interior angles: a defining feature of parallel-line geometry.",
+    "_dropped_reason": [
+      "DROP:rsa"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Compute: 17 mod 5",
+    "answer": "2",
+    "choices": [
+      "2",
+      "3",
+      "12",
+      "1"
+    ],
+    "context": "17 = 3·5 + 2, so 17 mod 5 = 2.",
+    "_dropped_reason": [
+      "DROP: mod 5"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Compute: (3·5) mod 7",
+    "answer": "1",
+    "choices": [
+      "1",
+      "8",
+      "15",
+      "5"
+    ],
+    "context": "15 ÷ 7 = 2 remainder 1, so 15 mod 7 = 1.",
+    "_dropped_reason": [
+      "DROP: mod 7"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Smallest n > 0 such that 7n ≡ 1 (mod 12)?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "5",
+      "12",
+      "11"
+    ],
+    "context": "7·7 = 49 = 4·12 + 1, so 49 ≡ 1 (mod 12). 7 is its own inverse mod 12.",
+    "_dropped_reason": [
+      "DROP:(mod "
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Fermat's Last Theorem says aⁿ + bⁿ = cⁿ has no positive integer solutions for n > ___?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "3",
+      "1",
+      "4"
+    ],
+    "context": "Fermat scribbled the claim ~1637; Andrew Wiles proved it in 1994 after 358 years.",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Who proved Fermat's Last Theorem in 1994?",
+    "answer": "Andrew Wiles",
+    "choices": [
+      "Andrew Wiles",
+      "Pierre de Fermat",
+      "Andrew Beal",
+      "Grigori Perelman"
+    ],
+    "context": "Wiles worked in secret in his Princeton attic for seven years. (Perelman proved the Poincaré conjecture.)",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pythagoras's school was scandalized by what discovery?",
+    "answer": "√2 is irrational",
+    "choices": [
+      "√2 is irrational",
+      "π is irrational",
+      "The number 0 exists",
+      "Negative numbers exist"
+    ],
+    "context": "Legend: Hippasus, who proved √2 wasn't a ratio of integers, was drowned for revealing it.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Archimedes' famous shout 'Eureka!' came while solving what?",
+    "answer": "A volume-by-displacement problem",
+    "choices": [
+      "A volume-by-displacement problem",
+      "A geometry proof",
+      "Fermat's last theorem",
+      "Squaring the circle"
+    ],
+    "context": "He realized in the bath he could test a crown's purity by measuring water displaced.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Gauss summed 1 to 100 as a schoolboy. He got:",
+    "answer": "5050",
+    "choices": [
+      "5050",
+      "10000",
+      "550",
+      "1010"
+    ],
+    "context": "He noticed 50 pairs each summing to 101: 50 · 101 = 5050. n(n+1)/2.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Gödel's First Incompleteness Theorem says any consistent formal system rich enough for arithmetic contains:",
+    "answer": "True statements it cannot prove",
+    "choices": [
+      "True statements it cannot prove",
+      "Statements that are both true and false",
+      "Only provable statements",
+      "No theorems"
+    ],
+    "context": "Gödel 1931, age 25. Destroyed Russell & Whitehead's program to ground math in pure logic.",
+    "_dropped_reason": [
+      "DROP:incompleteness theorem"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Cantor showed real numbers are 'more infinite' than integers. His method:",
+    "answer": "Diagonal argument",
+    "choices": [
+      "Diagonal argument",
+      "Pigeonhole",
+      "Induction",
+      "Reductio"
+    ],
+    "context": "Cantor 1891: assume a list of reals; build a new real differing in the n-th digit from the n-th listed.",
+    "_dropped_reason": [
+      "DROP:cantor"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Euler's identity ties which five constants?",
+    "answer": "e, i, π, 1, 0",
+    "choices": [
+      "e, i, π, 1, 0",
+      "e, π, i, 1, ∞",
+      "e, i, π, √2, 0",
+      "π, e, i, 2, 1"
+    ],
+    "context": "e^(iπ) + 1 = 0. Often called the most beautiful equation in mathematics.",
+    "_dropped_reason": [
+      "DROP:euler's identity"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "π is which type of number?",
+    "answer": "Transcendental",
+    "choices": [
+      "Transcendental",
+      "Algebraic",
+      "Rational",
+      "Imaginary"
+    ],
+    "context": "π isn't the root of any nonzero polynomial with rational coefficients. Lindemann proved it in 1882.",
+    "_dropped_reason": [
+      "DROP:which type of number"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Four Color Theorem was the first major theorem proved with:",
+    "answer": "Computer assistance",
+    "choices": [
+      "Computer assistance",
+      "Pure pencil-and-paper proof",
+      "Topology alone",
+      "Number theory"
+    ],
+    "context": "Appel and Haken, 1976: every planar map is 4-colorable; proof required computer case-checking.",
+    "_dropped_reason": [
+      "DROP:four color"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Ramanujan, with little formal training, sent his theorems to which English mathematician?",
+    "answer": "G. H. Hardy",
+    "choices": [
+      "G. H. Hardy",
+      "Bertrand Russell",
+      "Alan Turing",
+      "Andrew Wiles"
+    ],
+    "context": "1913: Hardy recognized the genius behind the unsigned theorems and brought Ramanujan to Cambridge.",
+    "_dropped_reason": [
+      "DROP:ramanujan"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Newton and Leibniz are co-credited with inventing:",
+    "answer": "Calculus",
+    "choices": [
+      "Calculus",
+      "Algebra",
+      "Analytic geometry",
+      "Set theory"
+    ],
+    "context": "Independently, late 1600s. The priority dispute poisoned English-Continental math for a century.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "What is the smallest Mersenne prime? (2ᵖ - 1 with p prime)",
+    "answer": "3",
+    "choices": [
+      "3",
+      "7",
+      "1",
+      "2"
+    ],
+    "context": "2² - 1 = 3. Then 2³-1 = 7, 2⁵-1 = 31, 2⁷-1 = 127. Note 2 itself is prime but isn't a Mersenne form.",
+    "_dropped_reason": [
+      "DROP:mersenne prime"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Riemann Hypothesis concerns the zeros of which function?",
+    "answer": "The Riemann zeta function",
+    "choices": [
+      "The Riemann zeta function",
+      "The exponential function",
+      "The gamma function",
+      "Euler's totient function"
+    ],
+    "context": "$1 million Clay Prize problem; conjectured nontrivial zeros all have real part 1/2.",
+    "_dropped_reason": [
+      "DROP:riemann hypothesis"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Hilbert's 1900 list of 23 problems shaped 20th-century math. Which problem asked to formalize axioms?",
+    "answer": "Problem 2 (consistency of arithmetic)",
+    "choices": [
+      "Problem 2 (consistency of arithmetic)",
+      "Problem 1 (continuum hypothesis)",
+      "Problem 8 (Riemann)",
+      "Problem 23 (calculus of variations)"
+    ],
+    "context": "Gödel later showed Hilbert's program couldn't be completed — arithmetic can't prove its own consistency.",
+    "_dropped_reason": [
+      "DROP:23 problems"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Évariste Galois died young after a duel at 20, leaving notes that founded:",
+    "answer": "Group theory",
+    "choices": [
+      "Group theory",
+      "Calculus",
+      "Probability",
+      "Non-Euclidean geometry"
+    ],
+    "context": "1832: He wrote feverishly the night before his duel. His work resolved which polynomials are solvable by radicals.",
+    "_dropped_reason": [
+      "DROP:galois"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Banach-Tarski paradox lets you cut a solid ball into pieces and reassemble them into:",
+    "answer": "Two balls each the same size as the original",
+    "choices": [
+      "Two balls each the same size as the original",
+      "A ball with twice the volume but same shape",
+      "An infinite line",
+      "A cube of the same volume"
+    ],
+    "context": "Requires the Axiom of Choice; the pieces aren't measurable, which is why this doesn't break physics.",
+    "_dropped_reason": [
+      "DROP:banach-tarski"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Fermat's Last Theorem says aⁿ + bⁿ = cⁿ has no positive integer solutions for?",
+    "answer": "n > 2",
+    "choices": [
+      "n > 2",
+      "n = 2",
+      "All n",
+      "n < 2"
+    ],
+    "context": "Fermat scribbled the claim in 1637; Wiles proved it in 1995, 358 years later.",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Four-Color Theorem says any planar map can be colored with how many colors so no adjacent regions share one?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ],
+    "context": "Conjectured 1852, proved 1976 by Appel and Haken using a computer.",
+    "_dropped_reason": [
+      "DROP:four-color"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Who proved Fermat's Last Theorem?",
+    "answer": "Andrew Wiles (1995)",
+    "choices": [
+      "Andrew Wiles (1995)",
+      "Pierre de Fermat (1637)",
+      "Évariste Galois",
+      "Gottfried Leibniz"
+    ],
+    "context": "Wiles worked seven years in secret in Princeton.",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pythagoras' theorem applies to which triangles?",
+    "answer": "Right triangles only",
+    "choices": [
+      "Right triangles only",
+      "All triangles",
+      "Equilateral triangles",
+      "Obtuse triangles"
+    ],
+    "context": "It is the defining property of a right triangle.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Fermat's Last Theorem stayed open for how long?",
+    "answer": "≈ 358 years",
+    "choices": [
+      "≈ 358 years",
+      "≈ 100 years",
+      "≈ 50 years",
+      "Still open"
+    ],
+    "context": "Conjectured 1637; proved 1995.",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Four-Color Theorem was the first major result proved using?",
+    "answer": "A computer search",
+    "choices": [
+      "A computer search",
+      "Galois theory",
+      "Group theory only",
+      "Topology only"
+    ],
+    "context": "1976 Appel-Haken proof reduced to 1,936 cases checked by computer.",
+    "_dropped_reason": [
+      "DROP:four-color"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pythagoras allegedly sacrificed how many oxen on discovering his theorem?",
+    "answer": "100 (legend)",
+    "choices": [
+      "100 (legend)",
+      "0",
+      "12",
+      "1"
+    ],
+    "context": "The 'hecatomb' story is ancient legend, probably embellished.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Gauss as a child summed 1 to 100. The answer is?",
+    "answer": "5050",
+    "choices": [
+      "5050",
+      "10000",
+      "5000",
+      "5500"
+    ],
+    "context": "n(n+1)/2 = 100·101/2 = 5050. Gauss noticed pairs sum to 101.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Fundamental Theorem of Arithmetic states every integer > 1 has?",
+    "answer": "A unique prime factorization",
+    "choices": [
+      "A unique prime factorization",
+      "Two prime factorizations",
+      "No prime factor",
+      "Only one factor"
+    ],
+    "context": "Up to order, the prime factorization is unique. Foundational to number theory.",
+    "_dropped_reason": [
+      "DROP:fundamental theorem"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Fundamental Theorem of Algebra says every nonconstant polynomial has?",
+    "answer": "At least one complex root",
+    "choices": [
+      "At least one complex root",
+      "At least one real root",
+      "Only rational roots",
+      "No roots"
+    ],
+    "context": "Gauss gave the first rigorous proof; the complex numbers are 'algebraically closed.'",
+    "_dropped_reason": [
+      "DROP:fundamental theorem of algebra"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pythagorean theorem is a special case of which more general law?",
+    "answer": "Law of cosines",
+    "choices": [
+      "Law of cosines",
+      "Law of sines",
+      "Sine rule",
+      "Tangent half-angle"
+    ],
+    "context": "c² = a² + b² − 2ab·cos(C). When C = 90°, cos C = 0, recovering Pythagoras.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Wiles' proof of Fermat went through which deep result first?",
+    "answer": "Modularity (Taniyama–Shimura)",
+    "choices": [
+      "Modularity (Taniyama–Shimura)",
+      "Riemann hypothesis",
+      "Goldbach",
+      "Four-color theorem"
+    ],
+    "context": "Wiles proved enough of the modularity conjecture for semistable elliptic curves to imply Fermat.",
+    "_dropped_reason": [
+      "DROP:wiles"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Pythagorean theorem has how many known distinct proofs?",
+    "answer": "Hundreds (370+ catalogued)",
+    "choices": [
+      "Hundreds (370+ catalogued)",
+      "Just one",
+      "Exactly 5",
+      "10"
+    ],
+    "context": "Loomis's 1927 collection had 370+; the count has grown since.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pierre de Fermat lived in which century?",
+    "answer": "17th century",
+    "choices": [
+      "17th century",
+      "16th century",
+      "18th century",
+      "19th century"
+    ],
+    "context": "Fermat (1607–1665). A jurist who did mathematics as a hobby.",
+    "_dropped_reason": [
+      "DROP:lived in which century"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Pythagoras' school was located in?",
+    "answer": "Croton (southern Italy)",
+    "choices": [
+      "Croton (southern Italy)",
+      "Athens",
+      "Alexandria",
+      "Miletus"
+    ],
+    "context": "He founded a religious-mathematical community in Magna Graecia c. 530 BCE.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Four-Color Theorem requires the map to be on what surface?",
+    "answer": "A plane (or sphere)",
+    "choices": [
+      "A plane (or sphere)",
+      "A torus (donut)",
+      "A Möbius strip",
+      "Any surface"
+    ],
+    "context": "On a torus, the chromatic number is 7. The 4 comes from planar topology.",
+    "_dropped_reason": [
+      "DROP:four-color"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Brahmagupta's identity generalizes Pythagoras to?",
+    "answer": "Quadrilaterals inscribed in a circle",
+    "choices": [
+      "Quadrilaterals inscribed in a circle",
+      "Spheres",
+      "Pentagons",
+      "Tetrahedra"
+    ],
+    "context": "Brahmagupta (7th century India) found the area formula for cyclic quadrilaterals.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Pythagorean theorem fails on which kind of surface?",
+    "answer": "Curved (non-Euclidean)",
+    "choices": [
+      "Curved (non-Euclidean)",
+      "Flat (Euclidean)",
+      "Polygonal",
+      "Convex"
+    ],
+    "context": "On a sphere or saddle, the sum of squared legs doesn't equal squared hypotenuse.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Number of primitive Pythagorean triples?",
+    "answer": "Infinite",
+    "choices": [
+      "Infinite",
+      "Finite, ≈ 100",
+      "Exactly 12",
+      "16"
+    ],
+    "context": "Parametrized by coprime m > n: (m²−n², 2mn, m²+n²).",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Fundamental Theorem of Arithmetic was first stated rigorously by?",
+    "answer": "Euclid (Elements Book IX)",
+    "choices": [
+      "Euclid (Elements Book IX)",
+      "Pythagoras",
+      "Gauss alone",
+      "Cantor"
+    ],
+    "context": "Euclid showed unique prime factorization; Gauss gave the modern proof in Disquisitiones.",
+    "_dropped_reason": [
+      "DROP:fundamental theorem"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Gödel's incompleteness theorems show, for any consistent formal system rich enough for arithmetic?",
+    "answer": "It contains true statements it cannot prove",
+    "choices": [
+      "It contains true statements it cannot prove",
+      "It can prove every true statement",
+      "It contains no theorems",
+      "It is inconsistent"
+    ],
+    "context": "1931, when Gödel was 25. The dream of complete formal foundations died that year.",
+    "_dropped_reason": [
+      "DROP:incompleteness theorem"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "Russell's paradox concerns the set of?",
+    "answer": "Sets that do not contain themselves",
+    "choices": [
+      "Sets that do not contain themselves",
+      "All sets",
+      "Empty sets",
+      "Infinite sets"
+    ],
+    "context": "If R contains itself iff it does not — contradiction. Demolished naive set theory.",
+    "_dropped_reason": [
+      "DROP:russell's paradox"
+    ]
+  },
+  {
+    "tier": 4,
+    "question": "The Four-Color Theorem was conjectured by?",
+    "answer": "Francis Guthrie (1852)",
+    "choices": [
+      "Francis Guthrie (1852)",
+      "Henri Poincaré",
+      "Bernhard Riemann",
+      "Évariste Galois"
+    ],
+    "context": "A young law student wondering whether four colors suffice for any map.",
+    "_dropped_reason": [
+      "DROP:four-color"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euclid proved infinitely many primes. Multiply any finite list of primes and add 1. What does the result force?",
+    "answer": "It is prime, or has a prime factor outside the list",
+    "choices": [
+      "It is prime, or has a prime factor outside the list",
+      "It is always prime, since adding 1 breaks divisibility",
+      "It is always composite, with factors above every prime",
+      "It is divisible by every prime in the original listing"
+    ],
+    "context": "Proof by contradiction: a finite list of primes must miss one. The construction (p1·p2·…·pn)+1 is not always itself prime — 2·3·5·7·11·13+1 = 30031 = 59·509 — but it must introduce a new prime.",
+    "_dropped_reason": [
+      "DROP:infinitely many primes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Fermat's Last Theorem says x^n + y^n = z^n has no positive integer solutions for n > 2. How long did the problem stand open?",
+    "answer": "About 358 years, proved by Andrew Wiles in 1995",
+    "choices": [
+      "About 358 years, proved by Andrew Wiles in 1995",
+      "About 200 years, proved by Sophie Germain in 1820s",
+      "About 100 years, proved by Carl Gauss around 1810",
+      "About 50 years, proved by David Hilbert near 1900"
+    ],
+    "context": "Fermat wrote his famous margin note around 1637. Wiles, working largely alone for seven years, proved the modularity conjecture for semistable elliptic curves, which implied Fermat's Last Theorem.",
+    "_dropped_reason": [
+      "DROP:fermat's last"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Riemann Hypothesis concerns the zeros of the zeta function. A proof carries a $1 million Clay prize. What does it claim?",
+    "answer": "All nontrivial zeros lie on the critical line Re(s) = 1/2",
+    "choices": [
+      "All nontrivial zeros lie on the critical line Re(s) = 1/2",
+      "Infinitely many zeros exist and all of them are real",
+      "The zeros encode every prime as a power of base two",
+      "Every zero is a transcendental real number above one"
+    ],
+    "context": "Posed by Bernhard Riemann in 1859, the hypothesis governs how irregularly primes are distributed. Verified for trillions of zeros computationally — but a general proof remains the most famous open problem in mathematics.",
+    "_dropped_reason": [
+      "DROP:clay prize"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Goldbach's conjecture (1742): every even integer above 2 is a sum of two primes. What is its status today?",
+    "answer": "Unproven, but verified by computer for very large ranges",
+    "choices": [
+      "Unproven, but verified by computer for very large ranges",
+      "Proven rigorously by Hardy and Littlewood in the 1920s",
+      "Disproven by computer counterexamples at extreme values",
+      "Proven equivalent to Riemann hypothesis by Vinogradov"
+    ],
+    "context": "Goldbach wrote to Euler in 1742. Every even number tested up to about 4·10^18 confirms it, yet a proof has resisted for nearly three centuries. The weak Goldbach conjecture was proved by Helfgott in 2013.",
+    "_dropped_reason": [
+      "DROP:goldbach"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Twin primes are pairs differing by 2: (3,5), (5,7), (11,13). Are there infinitely many?",
+    "answer": "Unknown, but Zhang proved infinitely many small-gap pairs",
+    "choices": [
+      "Unknown, but Zhang proved infinitely many small-gap pairs",
+      "Yes, Euclid's argument extends directly to all twin pairs",
+      "No, Erdős showed twin primes form a finite collection",
+      "Yes, this was proven by the Green-Tao theorem in 2004"
+    ],
+    "context": "Zhang's 2013 breakthrough: infinitely many prime pairs differ by at most 70 million. The Polymath project later drove the bound down to 246. Whether the true bound is 2 remains the Twin Prime Conjecture.",
+    "_dropped_reason": [
+      "DROP:twin prime"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "RSA cryptography depends on a famous hard problem. What problem is its security based on?",
+    "answer": "Factoring the product of two large primes is computationally hard",
+    "choices": [
+      "Factoring the product of two large primes is computationally hard",
+      "Determining whether a given integer is prime is undecidable",
+      "Computing the discrete logarithm over the integers is hard",
+      "Generating random primes uses an unsolvable computer routine"
+    ],
+    "context": "Multiplying two huge primes is fast. Recovering the primes from their product is, as far as is known, infeasible for classical computers. Shor's quantum algorithm threatens this — but practical quantum factoring of RSA-sized numbers remains far off.",
+    "_dropped_reason": [
+      "DROP:rsa"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A Mersenne prime has the form 2^p - 1 where p is prime. Why are the largest known primes usually of this kind?",
+    "answer": "The Lucas-Lehmer test makes them very efficient to check",
+    "choices": [
+      "The Lucas-Lehmer test makes them very efficient to check",
+      "Every prime over a billion digits is necessarily Mersenne",
+      "They are denser than ordinary primes at very large values",
+      "Euclid proved 2^p - 1 is always prime when exponent p is"
+    ],
+    "context": "Not every 2^p - 1 with p prime is itself prime — 2^11 - 1 = 2047 = 23·89. But Lucas-Lehmer offers a fast deterministic primality test that exists for no other family, so the largest known primes are nearly always Mersenne.",
+    "_dropped_reason": [
+      "DROP:mersenne prime"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Collatz conjecture: pick any positive integer; if even, halve it; if odd, triple it and add 1. What does it claim?",
+    "answer": "Every starting number eventually reaches the value one",
+    "choices": [
+      "Every starting number eventually reaches the value one",
+      "Every starting number eventually reaches a prime value",
+      "Every starting number enters some infinite repeating cycle",
+      "Some starting number eventually grows beyond every bound"
+    ],
+    "context": "Lothar Collatz posed this in 1937. Tested up to roughly 2^68 — every number reaches 1. Paul Erdős said: 'Mathematics is not yet ready for such problems.' Simple to state and known to no proof technique.",
+    "_dropped_reason": [
+      "DROP:collatz conjecture"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Pythagorean theorem says a² + b² = c² for a right triangle. Did the Greeks originate it?",
+    "answer": "No, Babylonian tablets used it well before Pythagoras",
+    "choices": [
+      "No, Babylonian tablets used it well before Pythagoras",
+      "Yes, Pythagoras first proved it around 530 BC in Croton",
+      "No, Egyptians proved the general theorem before Babylon",
+      "Yes, Greeks first found only the simple 3-4-5 case"
+    ],
+    "context": "Plimpton 322, a Babylonian tablet from about 1800 BC, lists Pythagorean triples. Indian and Chinese texts also describe the relation. Pythagoras (or his school) may have given an early proof, but the theorem itself is far older.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euclid's parallel postulate says exactly one parallel passes through a given point. What replaces it in non-Euclidean geometry?",
+    "answer": "Hyperbolic has infinite parallels; spherical has none",
+    "choices": [
+      "Hyperbolic has infinite parallels; spherical has none",
+      "Each non-Euclidean geometry has exactly two parallels",
+      "Such geometries discard the very idea of straight lines",
+      "The postulate follows from the first four; no alternates"
+    ],
+    "context": "Bolyai and Lobachevsky (independently, 1830s) developed hyperbolic geometry. Riemann generalized further. Einstein's general relativity uses Riemannian geometry — spacetime is curved, and the parallel postulate fails on a cosmic scale.",
+    "_dropped_reason": [
+      "DROP:non-euclidean"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Four-Color Theorem: any planar map needs at most 4 colors. What is unusual about its 1976 proof?",
+    "answer": "First major theorem proved with essential computer help",
+    "choices": [
+      "First major theorem proved with essential computer help",
+      "Proved with Greek-only geometric methods, without algebra",
+      "Proved by an amateur cartographer rather than a math PhD",
+      "Its complete formal proof fits on a single index card now"
+    ],
+    "context": "Appel and Haken reduced the problem to 1,936 cases that a computer checked exhaustively. Some philosophers objected: can a proof be a proof if no human can survey it? The result stands, but the question lingers.",
+    "_dropped_reason": [
+      "DROP:four-color"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Al-Khwarizmi's 9th-century book 'al-jabr w'al-muqabala' gave us a word still used in math today. What word?",
+    "answer": "Algebra",
+    "choices": [
+      "Algebra",
+      "Algorithm",
+      "Arithmetic",
+      "Geometry"
+    ],
+    "context": "Al-jabr means 'restoring' — moving a subtracted term to the other side. The mathematician's name, Latinized as Algoritmi, also gave us 'algorithm.' Two words from one Persian scholar in Baghdad.",
+    "_dropped_reason": [
+      "DROP:'al-jabr"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Diophantus of Alexandria asked for whole-number solutions, not real ones. What equations are named for him?",
+    "answer": "Polynomial equations sought over the integers only",
+    "choices": [
+      "Polynomial equations sought over the integers only",
+      "Polynomial equations sought over the rationals alone",
+      "Polynomial equations using imaginary coefficients",
+      "Polynomial equations involving infinite power series"
+    ],
+    "context": "Diophantus, around 250 AD, asked questions whose answers had to be whole numbers. Fermat read his Arithmetica and scribbled his Last Theorem in the margin. Hilbert's 10th problem asked for a general algorithm — proved impossible in 1970.",
+    "_dropped_reason": [
+      "DROP:named for"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Galois died in a duel at 20 in 1832. The night before, he wrote a letter. What did it contain?",
+    "answer": "Theory showing which polynomials are solvable by radicals",
+    "choices": [
+      "Theory showing which polynomials are solvable by radicals",
+      "A proof of Fermat's Last Theorem, before Lamé's attempt",
+      "The first non-Euclidean geometry, parallel to Bolyai's",
+      "A complete solution of the Riemann Hypothesis, 12 pages"
+    ],
+    "context": "Galois showed the symmetries of a polynomial's roots — its 'Galois group' — determine whether a formula like the quadratic formula exists for it. There is no quintic formula. Group theory was born in those frantic margins.",
+    "_dropped_reason": [
+      "DROP:galois"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Niels Henrik Abel proved a famous impossibility in 1824. What did he show?",
+    "answer": "No general formula in radicals solves quintic equations",
+    "choices": [
+      "No general formula in radicals solves quintic equations",
+      "No formula in radicals solves complex-coef quadratics",
+      "No general formula gives the roots of cubic equations",
+      "No polynomial of any degree has multiple real roots"
+    ],
+    "context": "Tartaglia and Cardano found formulas for cubics and quartics in 16th-century Italy — sometimes through duels and broken promises. Abel proved the quintic admits no analogous formula, ending 300 years of searching.",
+    "_dropped_reason": [
+      "DROP:niels henrik"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Fundamental Theorem of Algebra states what about polynomials?",
+    "answer": "Every non-constant polynomial has a complex root",
+    "choices": [
+      "Every non-constant polynomial has a complex root",
+      "Every polynomial has real roots equal to its degree",
+      "Every polynomial with real coefs has only real roots",
+      "Every polynomial factors over the integers completely"
+    ],
+    "context": "Gauss gave the first reasonably rigorous proof in his 1799 dissertation. A polynomial of degree n has exactly n complex roots, counting multiplicity. Real numbers do not suffice — but complex numbers always do.",
+    "_dropped_reason": [
+      "DROP:fundamental theorem of algebra"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Lindemann proved in 1882 that π is what kind of number?",
+    "answer": "Transcendental — not a root of any rational polynomial",
+    "choices": [
+      "Transcendental — not a root of any rational polynomial",
+      "Rational with non-terminating, non-repeating decimals",
+      "Algebraic of degree exactly two over rational numbers",
+      "Imaginary — like the constant i in complex arithmetic"
+    ],
+    "context": "Lindemann's proof settled an ancient question: squaring the circle (constructing a square with the area of a given circle using compass and straightedge) is impossible. Compass-and-straightedge constructions yield only algebraic numbers, and π is not algebraic.",
+    "_dropped_reason": [
+      "DROP:lindemann"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The number e ≈ 2.71828. Where does it come from?",
+    "answer": "The limit of (1 + 1/n)^n as n grows without bound",
+    "choices": [
+      "The limit of (1 + 1/n)^n as n grows without bound",
+      "The ratio of a circle's circumference to its radius",
+      "The smallest prime number strictly greater than two",
+      "The sum of reciprocals of every prime in sequence"
+    ],
+    "context": "Discovered by Jacob Bernoulli around 1683 studying compound interest. At 100% annual rate, the more frequently you compound — yearly, monthly, daily, continuously — the more your dollar grows toward e dollars. Euler later showed e = Σ 1/n!.",
+    "_dropped_reason": [
+      "DROP:number e ≈"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Gauss as a schoolboy summed 1 + 2 + ... + 100 instantly. What was the answer, and how?",
+    "answer": "5050, by pairing 1+100, 2+99 — fifty pairs of 101",
+    "choices": [
+      "5050, by pairing 1+100, 2+99 — fifty pairs of 101",
+      "10050, by squaring 100, halving it, and adding fifty",
+      "5000, by averaging 50 across one hundred total terms",
+      "5500, applying a sum-of-squares closed-form formula"
+    ],
+    "context": "The general formula: 1 + 2 + ... + n = n(n+1)/2. For n=100: 100·101/2 = 5050. Gauss's teacher had hoped to get an hour's quiet.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Birthday Paradox: how many random people give >50% chance two share a birthday?",
+    "answer": "23",
+    "choices": [
+      "23",
+      "183",
+      "60",
+      "100"
+    ],
+    "context": "Intuition expects ~183 (half of 365). But with 23 people, there are C(23,2) = 253 pairs, and the cumulative probability that no pair matches drops below 50%. By 70 people, the probability exceeds 99.9%.",
+    "_dropped_reason": [
+      "DROP:birthday paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Monty Hall: 3 doors, car behind one. You pick door 1; Monty opens door 3 showing a goat. Should you switch?",
+    "answer": "Yes — switching wins two-thirds of the games played",
+    "choices": [
+      "Yes — switching wins two-thirds of the games played",
+      "No — it is now a fifty-fifty between the two doors",
+      "It does not matter — both choices win one-third",
+      "Switch only if Monty chose his door entirely randomly"
+    ],
+    "context": "When Marilyn vos Savant gave the correct answer in 1990, thousands of PhDs wrote in to dispute it. The key: Monty's choice is constrained — he never opens the car door. Your original 1/3 chance is fixed; the other 2/3 collapses to the remaining door.",
+    "_dropped_reason": [
+      "DROP:monty hall"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cardano (1500s) wrote on the math of gambling. What did Pascal and Fermat add in 1654?",
+    "answer": "A systematic theory of probability via correspondence",
+    "choices": [
+      "A systematic theory of probability via correspondence",
+      "An algorithm for optimal play in any dice game in use",
+      "The first published table of binomial coefficient rows",
+      "A proof that all games of chance are fair in the long"
+    ],
+    "context": "Asked by a gambler (the Chevalier de Méré) about how to split stakes in an interrupted game, Pascal wrote to Fermat. Their letters laid the foundations of probability — expectations, the principle of indifference, the structure of conditional reasoning.",
+    "_dropped_reason": [
+      "DROP:cardano"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Simpson's Paradox occurs when:",
+    "answer": "A trend in groups reverses once they are combined",
+    "choices": [
+      "A trend in groups reverses once they are combined",
+      "A random sample fails to represent the population",
+      "Correlation is reported without confidence margins",
+      "Categorical data is treated as continuous in error"
+    ],
+    "context": "Berkeley's 1973 admissions data showed apparent gender bias against women. Department-by-department analysis revealed the opposite — within each department, women were admitted at higher rates. Women applied disproportionately to more competitive programs.",
+    "_dropped_reason": [
+      "DROP:simpson's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Central Limit Theorem: what does it say about sample means?",
+    "answer": "Their distribution tends to normal as the sample grows",
+    "choices": [
+      "Their distribution tends to normal as the sample grows",
+      "They equal the population mean exactly for any sample",
+      "They share the same distribution as the population",
+      "They are uniformly distributed when sampled randomly"
+    ],
+    "context": "The reason normal distributions appear everywhere: most things measured are sums or averages of many small effects. The CLT explains why bell curves are ubiquitous — and is the foundation of confidence intervals and hypothesis tests.",
+    "_dropped_reason": [
+      "DROP:central limit theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does p-hacking mean?",
+    "answer": "Running many tests until one crosses significance",
+    "choices": [
+      "Running many tests until one crosses significance",
+      "Inflating dataset size to lower p-values mechanically",
+      "Computing the p-value with the wrong test statistic",
+      "Sharing private p-values via unauthorized release"
+    ],
+    "context": "If you test 20 unrelated hypotheses at p < 0.05, you expect 1 to pass by chance. P-hacking exploits this — running many tests and reporting only the significant one. A major driver of the replication crisis.",
+    "_dropped_reason": [
+      "DROP:p-hacking"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Selection bias occurs when:",
+    "answer": "The sample doesn't represent the target population",
+    "choices": [
+      "The sample doesn't represent the target population",
+      "The researcher uses the wrong statistical formula",
+      "The sample size is far too small for inference",
+      "Outliers are not removed before computing the mean"
+    ],
+    "context": "Abraham Wald's WWII study: looking at bullet holes on returning planes, the Air Force wanted to armor the most-hit areas. Wald said armor the unhit areas — planes hit there never came back. Surveys miss the people who don't take surveys.",
+    "_dropped_reason": [
+      "DROP:selection bias"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler's identity ties five fundamental constants in one short relation. What does it state?",
+    "answer": "e^(iπ) + 1 = 0",
+    "choices": [
+      "e^(iπ) + 1 = 0",
+      "e^π + i = 1",
+      "π · e = i² + 1",
+      "e^i + π = 0"
+    ],
+    "context": "Five constants in one equation: e, i, π, 1, 0. Plus the three core operations: addition, multiplication, exponentiation. Often called the most beautiful equation in mathematics. Feynman called it 'our jewel.'",
+    "_dropped_reason": [
+      "DROP:euler's identity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor showed which set is LARGER, in his sense of size?",
+    "answer": "The real numbers (uncountably infinite)",
+    "choices": [
+      "The real numbers (uncountably infinite)",
+      "The integers (countably infinite total)",
+      "They are equal — both infinite, the same",
+      "Infinity has no size; the question fails"
+    ],
+    "context": "Cantor's diagonal argument (1891): assume the reals are listed; construct a real that differs from each in the nth digit. The list missed at least one real — contradiction. Infinities come in different sizes.",
+    "_dropped_reason": [
+      "DROP:cantor"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Banach-Tarski paradox: split a solid ball into pieces and ___?",
+    "answer": "Rearrange them into TWO balls identical to original",
+    "choices": [
+      "Rearrange them into TWO balls identical to original",
+      "Make the ball vanish into negative or null volume",
+      "Reduce the ball to exactly half its starting volume",
+      "Convert the ball into a cube of the same volume"
+    ],
+    "context": "Banach and Tarski, 1924. The trick: the pieces are non-measurable sets — pathological objects that 'have no volume.' The construction requires the Axiom of Choice. Some mathematicians reject Choice partly because of this result.",
+    "_dropped_reason": [
+      "DROP:banach-tarski"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Gödel's First Incompleteness Theorem (1931) showed what?",
+    "answer": "Formal systems with arithmetic have unprovable truths",
+    "choices": [
+      "Formal systems with arithmetic have unprovable truths",
+      "Arithmetic has been proven entirely complete in theory",
+      "Some equations admit neither real nor complex answers",
+      "The set of theorems in mathematics is finite in number"
+    ],
+    "context": "A 25-year-old Kurt Gödel destroyed Russell and Whitehead's project to derive all mathematics from logic. The second theorem is sharper: no consistent system rich enough for arithmetic can prove its own consistency.",
+    "_dropped_reason": [
+      "DROP:incompleteness theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Hilbert's Hotel has infinitely many rooms, all full. A new guest arrives. What does the manager do?",
+    "answer": "Shifts every guest one room over, freeing room one",
+    "choices": [
+      "Shifts every guest one room over, freeing room one",
+      "Sends the new arrival away — the hotel is at full",
+      "Combines two existing guests into one shared room",
+      "Adds an infinity-th room beyond the existing ones"
+    ],
+    "context": "Hilbert's parable illustrates how counting infinities defies finite intuition. Even an infinite bus of new guests can be accommodated: shift each existing guest to twice their room number, freeing all odd rooms.",
+    "_dropped_reason": [
+      "DROP:hilbert's hotel"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Russell's paradox shook set theory's foundations. What does it concern?",
+    "answer": "The set of sets that don't contain themselves",
+    "choices": [
+      "The set of sets that don't contain themselves",
+      "The barber who shaves only the village customers",
+      "The integer whose square equals minus one exactly",
+      "The largest cardinal — Cantor showed none exists"
+    ],
+    "context": "Russell wrote to Frege in 1902 as Frege's life work was at press. Let R = {sets x : x ∉ x}. Then R ∈ R iff R ∉ R — a contradiction. Modern set theory (ZFC) avoids it by restricting what counts as a set.",
+    "_dropped_reason": [
+      "DROP:russell's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Why is √2 famously irrational, per the Pythagorean discovery?",
+    "answer": "No fraction p/q satisfies (p/q)² = 2 in lowest terms",
+    "choices": [
+      "No fraction p/q satisfies (p/q)² = 2 in lowest terms",
+      "Its value lies between one and two, never a fraction",
+      "Its decimal expansion repeats with a fixed period two",
+      "It cannot be drawn on a number line with compass tool"
+    ],
+    "context": "Assume √2 = p/q in lowest terms, so 2q² = p². Then p² is even, so p is even (p = 2k). So 2q² = 4k², meaning q² = 2k² — so q is also even. Contradicts 'lowest terms.' Discovered by the Pythagoreans.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Graham's number is famous for what reputational claim?",
+    "answer": "Largest finite number ever used seriously in a proof",
+    "choices": [
+      "Largest finite number ever used seriously in a proof",
+      "Equal to 10^100, the original googol by Edward Kasner",
+      "Smallest number with no known prime factorization yet",
+      "Largest number expressible in standard decimal format"
+    ],
+    "context": "Used in Ronald Graham's 1971 bound in Ramsey theory. So vast it cannot be written even with stacked exponents — Knuth's up-arrow notation was invented partly to express it. The right answer is now thought to be 13 or so.",
+    "_dropped_reason": [
+      "DROP:graham's number"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Why was the Pythagorean theorem revolutionary, by Greek standards?",
+    "answer": "It gave a general truth provable from axioms abstractly",
+    "choices": [
+      "It gave a general truth provable from axioms abstractly",
+      "It was the first geometry result found outside of Egypt",
+      "It established that every triangle has a right angle in",
+      "It proved that squares are drawn on rational coordinates"
+    ],
+    "context": "Babylonians had numerical examples (Plimpton 322, c. 1800 BC). The Greek innovation: proof. Euclid's Elements proves the theorem from axioms — turning particular truths into universal ones. That shift remains the bedrock of mathematics.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Ramanujan's deathbed letter to Hardy mentioned the number 1729. Why is 1729 special?",
+    "answer": "Smallest sum of two cubes in two distinct ways at all",
+    "choices": [
+      "Smallest sum of two cubes in two distinct ways at all",
+      "Smallest prime whose digit sum is itself a prime found",
+      "Smallest number not expressible as a sum of two squares",
+      "Smallest counterexample to the abc conjecture identified"
+    ],
+    "context": "1729 = 1³ + 12³ = 9³ + 10³. Hardy mentioned the cab number on a visit; Ramanujan replied at once. Hardy: 'It seemed a rather dull number.' Ramanujan saw the structure no one had noticed. Now called taxicab numbers.",
+    "_dropped_reason": [
+      "DROP:ramanujan's"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Zeno's Achilles paradox: by halving the gap each step, can Achilles catch the tortoise?",
+    "answer": "Yes — the infinite sum of halving gaps is finite",
+    "choices": [
+      "Yes — the infinite sum of halving gaps is finite",
+      "No — infinitely many tasks mean infinitely much time",
+      "Only if Achilles runs faster than the speed of light",
+      "Only if the tortoise voluntarily stops at some point"
+    ],
+    "context": "Calculus resolves Zeno: 1/2 + 1/4 + 1/8 + ... = 1, finite. Achilles spends fractional time on each halving, summing to a finite catch-up moment. Aristotle's prose answer is sharper than it looks.",
+    "_dropped_reason": [
+      "DROP:achilles paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Aleph-null (ℵ₀) is what?",
+    "answer": "The smallest infinite cardinal, the size of N",
+    "choices": [
+      "The smallest infinite cardinal, the size of N",
+      "The size of the real numbers, the continuum",
+      "The number of provable theorems in arithmetic",
+      "The first uncomputable real number, by Turing"
+    ],
+    "context": "Cantor's hierarchy: ℵ₀ < ℵ₁ < ℵ₂ < ... Each is the cardinality of an infinite set, strictly larger than the last. The Continuum Hypothesis asks whether the cardinality of the reals is ℵ₁ — proven independent of ZFC by Cohen (1963).",
+    "_dropped_reason": [
+      "DROP:ℵ"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Poincaré Conjecture, proven by Perelman (2003), asks about what?",
+    "answer": "Every simply-connected closed 3-manifold is a sphere",
+    "choices": [
+      "Every simply-connected closed 3-manifold is a sphere",
+      "Whether the physical universe is finite in space",
+      "Whether 3-space hides extra-dimensional structure",
+      "Whether the Earth's gravity field is exactly round"
+    ],
+    "context": "Perelman used Hamilton's Ricci flow to deform manifolds. He refused both the Fields Medal and the $1 million Millennium Prize. 'If everybody is honest, there is no need.' One of the Clay Millennium problems, now solved.",
+    "_dropped_reason": [
+      "DROP:poincaré conjecture"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Continuum Hypothesis ask?",
+    "answer": "Is any infinity strictly between Z and R?",
+    "choices": [
+      "Is any infinity strictly between Z and R?",
+      "Are transcendental numbers finitely many?",
+      "Is every real number itself rational?",
+      "Does every set have a strictly bigger one?"
+    ],
+    "context": "Cantor conjectured no such intermediate infinity exists. Gödel (1940) showed it cannot be disproved in ZFC. Cohen (1963) showed it cannot be proved. The hypothesis is independent of the standard axioms — neither true nor false within them.",
+    "_dropped_reason": [
+      "DROP:continuum hypothesis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Andrew Wiles spent seven years secretly working on what theorem?",
+    "answer": "Fermat's Last Theorem, via modular elliptic curves",
+    "choices": [
+      "Fermat's Last Theorem, via modular elliptic curves",
+      "The Riemann Hypothesis, by analytic number theory",
+      "The Goldbach conjecture, with sieve-based methods",
+      "The Twin Prime conjecture, with analytic toolkits"
+    ],
+    "context": "Wiles announced in Cambridge in June 1993. An error was found; he repaired it with Richard Taylor over the next year. Final proof: 1995. A problem open for over three centuries — solved in a Princeton attic.",
+    "_dropped_reason": [
+      "DROP:wiles"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Brahmagupta (628 AD) gave the first systematic treatment of which number?",
+    "answer": "Zero, treated as a full number with arithmetic rules",
+    "choices": [
+      "Zero, treated as a full number with arithmetic rules",
+      "Infinity, defined as a particular fixed quantity",
+      "Negative numbers, but treated as merely imaginary",
+      "Complex numbers, complete with imaginary parts also"
+    ],
+    "context": "Brahmagupta's Brahmasphutasiddhanta gave rules for arithmetic with zero — addition, subtraction, negative numbers. (He famously got 0/0 wrong.) The numeral and concept entered Arab mathematics, then Europe through Fibonacci's 1202 Liber Abaci.",
+    "_dropped_reason": [
+      "DROP:first systematic treatment"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Hardy in his Apology made an oddly proud claim about his work. What?",
+    "answer": "His pure math would never be of any practical use",
+    "choices": [
+      "His pure math would never be of any practical use",
+      "Pure math was the only real math, applied was not",
+      "His pure work was directly used in WWI cryptograms",
+      "His pure work proved Fermat's Last in some cases"
+    ],
+    "context": "G.H. Hardy, A Mathematician's Apology (1940). His number theory now underlies RSA cryptography securing every credit-card transaction. Sometimes the deepest 'useless' research is the most-used eventually.",
+    "_dropped_reason": [
+      "DROP:apology"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Newton and Leibniz developed calculus independently. What was the controversy?",
+    "answer": "Each claimed priority, fracturing math for decades",
+    "choices": [
+      "Each claimed priority, fracturing math for decades",
+      "The two versions gave different answers always",
+      "Only Newton's version was fully logically rigorous",
+      "Their dispute was over which symbol to use for d"
+    ],
+    "context": "Newton developed his version (fluxions) in the 1660s but didn't publish until later. Leibniz published first (1684) with the dx/dy notation we still use. The Royal Society sided with Newton; British math fell decades behind Continental math as a result.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Hilbert's 10th problem (1900) asked for what?",
+    "answer": "Algorithm to test if a Diophantine equation has solutions",
+    "choices": [
+      "Algorithm to test if a Diophantine equation has solutions",
+      "Proof that every prime is the sum of two prime numbers",
+      "Unified geometry of all possible non-Euclidean spaces",
+      "Constructive proof for Cantor's Continuum Hypothesis"
+    ],
+    "context": "Matiyasevich proved in 1970 that no such algorithm exists, building on Davis, Putnam, and Robinson. The problem is undecidable. Hilbert had hoped 'in mathematics there is no ignorabimus' — we shall not be ignorant. Gödel and Turing disagreed.",
+    "_dropped_reason": [
+      "DROP:hilbert's 10th"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler's identity follows from a deeper formula. What is the deeper formula?",
+    "answer": "e^(iθ) = cos(θ) + i·sin(θ)",
+    "choices": [
+      "e^(iθ) = cos(θ) + i·sin(θ)",
+      "e^(iθ) = sin(θ) + i·cos(θ)",
+      "e^(iθ) = θ·(cos + i·sin)",
+      "e^(iθ) = cos(θ) - i·sin(θ)"
+    ],
+    "context": "At θ = π: cos(π) + i·sin(π) = -1 + 0 = -1. The formula ties complex exponentials to trigonometry — making complex numbers indispensable in physics, signal processing, and electrical engineering.",
+    "_dropped_reason": [
+      "DROP:euler's identity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Mandelbrot set is famous for which visual property?",
+    "answer": "Endlessly intricate fractal structure at every scale",
+    "choices": [
+      "Endlessly intricate fractal structure at every scale",
+      "Perfectly symmetric reflection along a single axis",
+      "Identical pattern at all scales — exact repetition",
+      "Finite boundary visible only at extreme zoom levels"
+    ],
+    "context": "Defined by iterating z → z² + c. The set is connected and bounded but has a fractal boundary. Mandelbrot coined 'fractal' in 1975. Self-similar but never exactly repeating — a window into the strangeness of dynamical systems.",
+    "_dropped_reason": [
+      "DROP:mandelbrot set"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "How long is Britain's coastline? Mandelbrot's 1967 paper concluded what?",
+    "answer": "It depends on the ruler — finer rulers find more",
+    "choices": [
+      "It depends on the ruler — finer rulers find more",
+      "Exactly 12,429 km, measured precisely by satellite",
+      "Approximately 11,000 km, plus or minus 50 km away",
+      "Finite, but only if the ruler is at most one meter"
+    ],
+    "context": "The coastline paradox. Each finer ruler picks up more nooks, more inlets, more rocky bays. Coastlines exhibit fractal scaling. Mandelbrot's paper launched fractal geometry — and a new way of measuring rough natural shapes.",
+    "_dropped_reason": [
+      "DROP:mandelbrot's"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Königsberg bridge problem (Euler 1736) asked what?",
+    "answer": "Can you cross all seven bridges exactly once on a walk?",
+    "choices": [
+      "Can you cross all seven bridges exactly once on a walk?",
+      "What is the shortest tour visiting each bridge once?",
+      "How many bridges are needed to connect every island?",
+      "Which bridge can be removed without disconnecting any?"
+    ],
+    "context": "Euler's 1736 solution founded graph theory. Each landmass is a node, each bridge an edge. Königsberg had four nodes with odd degree — an Euler walk needs 0 or 2 such nodes. The bridges were destroyed in WWII; the math remains.",
+    "_dropped_reason": [
+      "DROP:königsberg"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Emmy Noether's theorem (1915) connects what two things?",
+    "answer": "Continuous symmetries and conservation laws",
+    "choices": [
+      "Continuous symmetries and conservation laws",
+      "Eigenvalues and characteristic polynomials",
+      "Topological invariants and homotopy groups",
+      "Prime gaps and Riemann zeta function zeros"
+    ],
+    "context": "Every continuous symmetry corresponds to a conserved quantity. Time symmetry → energy conservation. Space symmetry → momentum conservation. Rotational symmetry → angular momentum. Einstein called Noether the most important woman in math history.",
+    "_dropped_reason": [
+      "DROP:emmy noether"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cardano's cubic formula surprised Renaissance mathematicians. What was the surprise?",
+    "answer": "It required square roots of negatives, yet gave real results",
+    "choices": [
+      "It required square roots of negatives, yet gave real results",
+      "It worked only for cubics with exactly two real roots given",
+      "It produced answers in radicals never seen for quadratics",
+      "It revealed every cubic has exactly one real root, no more"
+    ],
+    "context": "The 'casus irreducibilis': a cubic with three real roots forces the formula through complex numbers. Bombelli (1572) followed the rules anyway and got the right real answers. Complex numbers entered math because the algebra demanded them.",
+    "_dropped_reason": [
+      "DROP:cardano"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Prime Number Theorem, proved 1896, says π(x) ~ what?",
+    "answer": "x / ln(x) — primes thin out logarithmically",
+    "choices": [
+      "x / ln(x) — primes thin out logarithmically",
+      "x / 2 — primes are exactly half of integers",
+      "x exactly — primes grow as fast as the count",
+      "Constant — primes saturate at large enough x"
+    ],
+    "context": "Conjectured by Gauss and Legendre in the 1790s, proved by Hadamard and de la Vallée Poussin in 1896 using complex analysis. The proof eventually became an entry point into the Riemann Hypothesis.",
+    "_dropped_reason": [
+      "DROP:prime number theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does the Riemann zeta function ζ(s) = Σ 1/n^s encode (per Riemann)?",
+    "answer": "Its zeros encode prime distribution information",
+    "choices": [
+      "Its zeros encode prime distribution information",
+      "It is the only function with no zeros anywhere",
+      "It evaluates to e at s=1 by Euler's old result",
+      "It is finite only when s is positive and integer"
+    ],
+    "context": "Euler proved ζ(s) = Π 1/(1 - 1/p^s) over primes — connecting the zeta function to primes. Riemann (1859) extended ζ to complex s, conjectured all nontrivial zeros have real part 1/2. A proof would refine prime gap knowledge.",
+    "_dropped_reason": [
+      "DROP:ζ(s)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Klein bottle: what makes it remarkable?",
+    "answer": "Closed surface with no separate inside or outside",
+    "choices": [
+      "Closed surface with no separate inside or outside",
+      "Glass shape holding infinite volume in finite space",
+      "A torus with two handles instead of just one",
+      "First object proven not to fit into 3D Euclidean"
+    ],
+    "context": "Felix Klein, 1882. Like a Möbius strip stretched into a closed surface. Cannot be embedded in 3D without self-intersection — it lives properly in 4D. Touch one side; without lifting your finger you trace both. There is only one side.",
+    "_dropped_reason": [
+      "DROP:klein bottle"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Möbius strip: what is unusual about it?",
+    "answer": "It is one-sided with a single continuous edge",
+    "choices": [
+      "It is one-sided with a single continuous edge",
+      "It is the simplest known 4-dimensional object",
+      "It has zero area but infinite total perimeter",
+      "It is the densest packing of unit-radius disks"
+    ],
+    "context": "Take a strip of paper; give it a half-twist; glue the ends. Walk an ant along the surface — it returns to its start on the 'other side' without crossing an edge. Discovered independently by Möbius and Listing in 1858.",
+    "_dropped_reason": [
+      "DROP:möbius strip"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Brachistochrone problem (Bernoulli 1696): the curve of fastest descent is?",
+    "answer": "A cycloid — traced by a point on a rolling circle",
+    "choices": [
+      "A cycloid — traced by a point on a rolling circle",
+      "A straight line — the shortest possible path",
+      "A parabola — like the path of a thrown projectile",
+      "A circular arc — symmetric and visually graceful"
+    ],
+    "context": "Johann Bernoulli challenged Europe's mathematicians. Newton solved it overnight (and sent in his answer anonymously — Bernoulli recognized 'the lion by his claw'). Birth of the calculus of variations; cousin to least-action in physics.",
+    "_dropped_reason": [
+      "DROP:brachistochrone"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Erdős, the wandering mathematician, is famously associated with what number?",
+    "answer": "His 'Erdős number' — collaboration distance to him",
+    "choices": [
+      "His 'Erdős number' — collaboration distance to him",
+      "His 'Erdős number' — count of unsolved problems",
+      "His 'Erdős number' — sum of his prime conjectures",
+      "His 'Erdős number' — age at which he stopped travel"
+    ],
+    "context": "Paul Erdős wrote 1,500+ papers with 500+ collaborators, no fixed home. Direct co-authors have Erdős number 1; their co-authors have 2; and so on. Most active mathematicians have an Erdős number under 10.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler famously solved the Basel problem. He showed Σ 1/n² equals what?",
+    "answer": "π²/6, a beautiful surprise from a 1734 proof",
+    "choices": [
+      "π²/6, a beautiful surprise from a 1734 proof",
+      "e, the natural-log base, by deep coincidence",
+      "Exactly 2, since the series is plainly small",
+      "ln(2), the natural log of two in the limit"
+    ],
+    "context": "The Basel problem stumped the Bernoullis. Euler at 28 solved it with a beautiful non-rigorous argument: pretend sin(x) factors like a polynomial; match coefficients. Why π appears in a sum of integer reciprocals is still wondrous.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Maryam Mirzakhani (1977-2017), first woman Fields medalist, worked on what?",
+    "answer": "Dynamics and geometry of Riemann surface moduli",
+    "choices": [
+      "Dynamics and geometry of Riemann surface moduli",
+      "The first published proof of Riemann's hypothesis",
+      "A new construction of the Banach-Tarski paradox",
+      "Algorithm to find prime gaps in polynomial time"
+    ],
+    "context": "Mirzakhani was the first woman and the first Iranian to win the Fields Medal — math's highest honor. She drew dynamics on hyperbolic surfaces with rare geometric intuition. She died of cancer at 40, a decade after winning.",
+    "_dropped_reason": [
+      "DROP:fields medal"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The derivative of x² is what?",
+    "answer": "2x",
+    "choices": [
+      "2x",
+      "x",
+      "x²/2",
+      "x³/3"
+    ],
+    "context": "Power rule: d/dx(x^n) = n·x^(n-1). For n=2: 2·x^1 = 2x. Each point on the parabola y = x² has slope 2x — flat at the origin, steeper as you move out.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The integral of 2x dx (indefinite) is what?",
+    "answer": "x² + C",
+    "choices": [
+      "x² + C",
+      "2x² + C",
+      "x + C",
+      "x²/2 + C"
+    ],
+    "context": "Integration reverses differentiation. The +C (constant of integration) reflects that the derivative of any constant is 0 — so infinitely many functions have derivative 2x, differing by a constant.",
+    "_dropped_reason": [
+      "DROP:integral"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The limit of (sin x)/x as x approaches 0 equals what?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "Undefined",
+      "Infinite"
+    ],
+    "context": "Both numerator and denominator approach 0, but their ratio approaches 1. Proven from the squeeze theorem using inscribed and circumscribed triangles in a unit circle. The cornerstone for differentiating trig functions: d/dx(sin x) = cos x.",
+    "_dropped_reason": [
+      "DROP:limit of ("
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does a derivative represent geometrically?",
+    "answer": "Slope of the tangent line at a curve point",
+    "choices": [
+      "Slope of the tangent line at a curve point",
+      "Area under the curve from zero to x coordinate",
+      "The y-intercept of the curve at the given point",
+      "Arc length of the curve from origin to a point"
+    ],
+    "context": "The derivative f'(x) is the limit of the slope of a secant line as the two points merge. Instantaneous rate of change. Foundational image: at every point on a smooth curve, there is one tangent — the derivative names its slope.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does a definite integral represent geometrically?",
+    "answer": "Signed area between the curve and the x-axis",
+    "choices": [
+      "Signed area between the curve and the x-axis",
+      "Slope of the tangent at the curve's midpoint",
+      "Number of crossings of the x-axis on interval",
+      "Maximum value of the function on the interval"
+    ],
+    "context": "Riemann's idea: divide the interval into thin rectangles, sum their areas, take the limit. Areas below the x-axis count negatively. The integral ∫a^b f(x) dx is the net signed area.",
+    "_dropped_reason": [
+      "DROP:integral"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Fundamental Theorem of Calculus links what?",
+    "answer": "Differentiation and integration as inverses",
+    "choices": [
+      "Differentiation and integration as inverses",
+      "Real and complex numbers under a single rule",
+      "Continuous and discrete functions in detail",
+      "Limits and series via convergence test laws"
+    ],
+    "context": "Newton and Leibniz independently saw the connection. If F'(x) = f(x), then ∫a^b f(x) dx = F(b) - F(a). One of the most stunning unifications in mathematics — derivatives and integrals are two sides of the same coin.",
+    "_dropped_reason": [
+      "DROP:fundamental theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the derivative of e^x?",
+    "answer": "e^x",
+    "choices": [
+      "e^x",
+      "x·e^x",
+      "e^x/x",
+      "1"
+    ],
+    "context": "Among continuous functions, e^x is essentially the only one whose derivative equals itself (up to scaling). Out of this falls all of exponential growth and decay, the natural logarithm, compound interest, and the equation for an LRC circuit.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The chain rule says d/dx[f(g(x))] equals what?",
+    "answer": "f'(g(x)) · g'(x)",
+    "choices": [
+      "f'(g(x)) · g'(x)",
+      "f'(x) · g'(x)",
+      "f'(g(x)) + g'(x)",
+      "f(g'(x)) · g(x)"
+    ],
+    "context": "The cornerstone rule for composite functions. To differentiate sin(x²), let f(u) = sin u and g(x) = x². Then derivative = cos(x²) · 2x. Without the chain rule, calculus stops short of most real-world functions.",
+    "_dropped_reason": [
+      "DROP:d/dx"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If v(t) is velocity, what does ∫₀^T v(t) dt represent?",
+    "answer": "Total displacement from time 0 to T",
+    "choices": [
+      "Total displacement from time 0 to T",
+      "Total acceleration over the interval",
+      "The maximum velocity reached on path",
+      "Instantaneous velocity at the end time"
+    ],
+    "context": "Velocity is the rate of change of position; position is the accumulation of velocity. This is the physical version of the Fundamental Theorem of Calculus. Newton's law F = ma is integrated to find motion.",
+    "_dropped_reason": [
+      "DROP:∫₀"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The product rule: d/dx[f(x)·g(x)] equals what?",
+    "answer": "f'(x)·g(x) + f(x)·g'(x)",
+    "choices": [
+      "f'(x)·g(x) + f(x)·g'(x)",
+      "f'(x) · g'(x)",
+      "f(x) · g(x) + 1",
+      "(f(x) + g(x))'"
+    ],
+    "context": "A common student trap: assuming the derivative distributes over multiplication like it does over addition. It doesn't. The cross-terms matter. Leibniz proved the product rule in his early work on calculus.",
+    "_dropped_reason": [
+      "DROP:d/dx"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Evaluate ∫₀¹ x dx.",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "1",
+      "0",
+      "2"
+    ],
+    "context": "Antiderivative of x is x²/2. Evaluate at bounds: (1²/2) - (0²/2) = 1/2. Geometrically, this is the area of the triangle under y = x from 0 to 1 — base 1, height 1, area 1/2.",
+    "_dropped_reason": [
+      "DROP:∫₀"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the derivative of a constant function?",
+    "answer": "Zero — a flat function never changes",
+    "choices": [
+      "Zero — a flat function never changes",
+      "One — the basic identity derivative",
+      "The constant itself, by self-mapping",
+      "Undefined — derivatives don't exist"
+    ],
+    "context": "A constant function has zero slope everywhere — its graph is a horizontal line. So d/dx(c) = 0 for any constant c. This is why integration has +C: any constant added to an antiderivative still differentiates back to the same function.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Why is Leibniz's calculus notation more common today than Newton's?",
+    "answer": "dy/dx makes the chain rule and substitution intuitive",
+    "choices": [
+      "dy/dx makes the chain rule and substitution intuitive",
+      "Newton's notation was lost in a Royal Society fire",
+      "Continental scholars refused all British conventions",
+      "Newton himself preferred the German notation in life"
+    ],
+    "context": "Newton used dots over variables (ẋ, ẍ). Leibniz used dy/dx and ∫. Cambridge clung to Newton; Continental Europe moved with Leibniz. British math lagged by decades. The notation does mathematics; this is one of the clearest examples.",
+    "_dropped_reason": [
+      "DROP:leibniz's calculus"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cauchy's central contribution to calculus was what?",
+    "answer": "Rigorous ε-δ definitions of limit and continuity",
+    "choices": [
+      "Rigorous ε-δ definitions of limit and continuity",
+      "The first published statement of the chain rule",
+      "Practical methods for integrating trig functions",
+      "Geometric interpretation of derivative as a slope"
+    ],
+    "context": "Calculus in the 1700s relied on shaky 'infinitesimals.' Cauchy in the 1820s reformulated limits without them. Weierstrass tightened the bolts further. The ε-δ apparatus is still standard — a logical foundation for what Newton and Leibniz had used intuitively.",
+    "_dropped_reason": [
+      "DROP:cauchy"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What is the second derivative used for?",
+    "answer": "Measuring concavity and finding inflection points",
+    "choices": [
+      "Measuring concavity and finding inflection points",
+      "Finding the function's average value on a range",
+      "Detecting where the function equals zero exactly",
+      "Counting the number of local maxima on a domain"
+    ],
+    "context": "f'' > 0: curve bends up (concave). f'' < 0: bends down. Where f'' changes sign: inflection. In physics, the second derivative of position is acceleration. The third (rare) is called jerk; the fourth, jounce.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Why did Newton invent calculus partly to do physics?",
+    "answer": "Mechanics needs derivatives (rate) and integrals (sum)",
+    "choices": [
+      "Mechanics needs derivatives (rate) and integrals (sum)",
+      "He needed to solve puzzles in a Royal Society leaflet",
+      "He sought to discredit Descartes's analytical methods",
+      "He wanted a unified theory of algebra and old geometry"
+    ],
+    "context": "Position changes; the rate is velocity. Velocity changes; the rate is acceleration. Force = mass × acceleration. To predict planetary orbits or falling apples, you have to handle rates of changing rates. Newton's calculus made the Principia possible.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A function f is continuous at a point a if:",
+    "answer": "The limit as x→a equals f(a), and f(a) exists",
+    "choices": [
+      "The limit as x→a equals f(a), and f(a) exists",
+      "The function is defined for every value of x",
+      "The function never crosses zero in a neighborhood",
+      "The function's derivative is defined at point a"
+    ],
+    "context": "Three requirements: f(a) is defined, lim_{x→a} f(x) exists, the two are equal. A continuous function can still have non-differentiable cusps (e.g., |x| at 0). Differentiability implies continuity, but not the reverse.",
+    "_dropped_reason": [
+      "DROP:continuous at"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does L'Hôpital's rule help compute?",
+    "answer": "Limits of indeterminate form 0/0 or ∞/∞",
+    "choices": [
+      "Limits of indeterminate form 0/0 or ∞/∞",
+      "Sums of infinite geometric power series",
+      "Derivatives of every implicit equation",
+      "Integrals of all trigonometric products"
+    ],
+    "context": "If lim f(x) = lim g(x) = 0 (or both → ∞), and both functions are differentiable, then lim f/g = lim f'/g'. Named for L'Hôpital but discovered by Johann Bernoulli, who let his patron publish it.",
+    "_dropped_reason": [
+      "DROP:l'hôpital"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x²?",
+    "answer": "2x",
+    "choices": [
+      "2x",
+      "x",
+      "2",
+      "x²/2"
+    ],
+    "context": "Power rule: d/dx[xⁿ] = n·xⁿ⁻¹. For n=2: 2x.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x³?",
+    "answer": "3x²",
+    "choices": [
+      "3x²",
+      "x²",
+      "3x",
+      "x³/3"
+    ],
+    "context": "Power rule: n=3 gives 3x².",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x⁴?",
+    "answer": "4x³",
+    "choices": [
+      "4x³",
+      "x³",
+      "4x²",
+      "x⁴/4"
+    ],
+    "context": "n=4: 4·x³.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "x",
+      "0",
+      "2x"
+    ],
+    "context": "x = x¹; derivative is 1·x⁰ = 1.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of a constant, c?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "c",
+      "1",
+      "x"
+    ],
+    "context": "Constants don't change; rate of change is 0.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 5x?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "x",
+      "5x",
+      "10x"
+    ],
+    "context": "Coefficient stays; derivative of x is 1.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x² + 3x?",
+    "answer": "2x + 3",
+    "choices": [
+      "2x + 3",
+      "2x",
+      "3",
+      "x² + 3"
+    ],
+    "context": "Sum rule: take derivative term by term.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x³ − x²?",
+    "answer": "3x² − 2x",
+    "choices": [
+      "3x² − 2x",
+      "3x − 2x",
+      "x² − x",
+      "3x² + 2x"
+    ],
+    "context": "Term by term: 3x² for x³, −2x for −x².",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 7?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "7",
+      "1",
+      "x"
+    ],
+    "context": "Derivative of any constant is 0.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 4x⁵?",
+    "answer": "20x⁴",
+    "choices": [
+      "20x⁴",
+      "4x⁴",
+      "5x⁴",
+      "20x⁵"
+    ],
+    "context": "Power rule with coefficient: 4·5·x⁴ = 20x⁴.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x² − 2x + 7?",
+    "answer": "2x − 2",
+    "choices": [
+      "2x − 2",
+      "2x + 2",
+      "x − 2",
+      "x²"
+    ],
+    "context": "Term-by-term differentiation; constant vanishes.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x⁶?",
+    "answer": "6x⁵",
+    "choices": [
+      "6x⁵",
+      "x⁵",
+      "6x⁴",
+      "x⁶/6"
+    ],
+    "context": "n=6: 6x⁵.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 3x² + 5?",
+    "answer": "6x",
+    "choices": [
+      "6x",
+      "6x + 5",
+      "3x + 5",
+      "6"
+    ],
+    "context": "Power-rule on 3x², constant differentiates to 0.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x^(1/2)?",
+    "answer": "1/(2√x)",
+    "choices": [
+      "1/(2√x)",
+      "√x/2",
+      "2√x",
+      "x^(-1/2)·2"
+    ],
+    "context": "Power rule: (1/2)·x^(-1/2) = 1/(2√x).",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 1/x (= x⁻¹)?",
+    "answer": "−1/x²",
+    "choices": [
+      "−1/x²",
+      "1/x²",
+      "−1/x",
+      "ln x"
+    ],
+    "context": "Power rule with n = -1: -1·x⁻² = -1/x².",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x²·x = x³ via simplification then differentiation?",
+    "answer": "3x²",
+    "choices": [
+      "3x²",
+      "2x",
+      "x², then 2x",
+      "3x"
+    ],
+    "context": "Simplify first to x³, then power-rule.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of (2x + 1)² expanded then differentiated?",
+    "answer": "8x + 4",
+    "choices": [
+      "8x + 4",
+      "4x + 1",
+      "2(2x + 1)",
+      "4x² + 4x"
+    ],
+    "context": "Expand: 4x² + 4x + 1. Derivative: 8x + 4.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Second derivative of x³?",
+    "answer": "6x",
+    "choices": [
+      "6x",
+      "3x",
+      "3x²",
+      "6"
+    ],
+    "context": "First derivative: 3x². Differentiate again: 6x.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Second derivative of x²?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "2x",
+      "x",
+      "0"
+    ],
+    "context": "First: 2x. Second: 2 (constant).",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x³/3?",
+    "answer": "x²",
+    "choices": [
+      "x²",
+      "x³",
+      "3x²",
+      "1/3"
+    ],
+    "context": "Coefficient 1/3, power-rule gives (1/3)·3x² = x².",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 10x − 7?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "10 − 7",
+      "10x",
+      "3"
+    ],
+    "context": "Linear function: derivative is the slope.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x² + x⁻¹?",
+    "answer": "2x − x⁻²",
+    "choices": [
+      "2x − x⁻²",
+      "2x + x⁻²",
+      "x + 1",
+      "2x + 1/x"
+    ],
+    "context": "Differentiate term by term using the power rule.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 6x⁴ − 2x²?",
+    "answer": "24x³ − 4x",
+    "choices": [
+      "24x³ − 4x",
+      "24x³ + 4x",
+      "6x³ − 2x",
+      "24x² − 4"
+    ],
+    "context": "Apply power rule to each term.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of 1/x² (= x⁻²)?",
+    "answer": "−2/x³",
+    "choices": [
+      "−2/x³",
+      "2/x³",
+      "−2x³",
+      "1/x"
+    ],
+    "context": "Power rule: -2·x⁻³ = -2/x³.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of √x at x = 4?",
+    "answer": "1/4",
+    "choices": [
+      "1/4",
+      "1/2",
+      "2",
+      "4"
+    ],
+    "context": "d/dx[x^(1/2)] = 1/(2√x); at x=4, 1/(2·2) = 1/4.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of sin x?",
+    "answer": "cos x",
+    "choices": [
+      "cos x",
+      "−cos x",
+      "−sin x",
+      "tan x"
+    ],
+    "context": "Standard transcendental derivative.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of cos x?",
+    "answer": "−sin x",
+    "choices": [
+      "−sin x",
+      "sin x",
+      "−cos x",
+      "tan x"
+    ],
+    "context": "Note the sign — a common error source.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of tan x?",
+    "answer": "sec² x",
+    "choices": [
+      "sec² x",
+      "cot² x",
+      "−sec² x",
+      "sec x · tan x"
+    ],
+    "context": "Quotient rule on sin/cos gives sec²x.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of eˣ?",
+    "answer": "eˣ",
+    "choices": [
+      "eˣ",
+      "x·eˣ⁻¹",
+      "ln x",
+      "1/eˣ"
+    ],
+    "context": "eˣ is the unique function (up to constant) equal to its own derivative.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of ln x?",
+    "answer": "1/x",
+    "choices": [
+      "1/x",
+      "ln x",
+      "x",
+      "eˣ"
+    ],
+    "context": "ln x and 1/x are inverses-in-spirit through differentiation.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of e^(2x)?",
+    "answer": "2·e^(2x)",
+    "choices": [
+      "2·e^(2x)",
+      "e^(2x)",
+      "2x·e^(2x)",
+      "e^x"
+    ],
+    "context": "Chain rule: derivative of inner (2x) times eᵘ.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of sec x?",
+    "answer": "sec x · tan x",
+    "choices": [
+      "sec x · tan x",
+      "−csc x · cot x",
+      "tan² x",
+      "sec² x"
+    ],
+    "context": "Standard transcendental derivative.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of e^(x²)?",
+    "answer": "2x · e^(x²)",
+    "choices": [
+      "2x · e^(x²)",
+      "e^(x²)",
+      "x² · e^(x²)⁻¹",
+      "2x"
+    ],
+    "context": "Chain rule: outer eᵘ × inner derivative 2x.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of x · eˣ (product rule)?",
+    "answer": "(x + 1)eˣ",
+    "choices": [
+      "(x + 1)eˣ",
+      "eˣ",
+      "x·eˣ + 1",
+      "x²·eˣ"
+    ],
+    "context": "Product rule: x·eˣ + 1·eˣ = (x+1)eˣ.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of sin x · cos x?",
+    "answer": "cos 2x",
+    "choices": [
+      "cos 2x",
+      "−sin 2x",
+      "sin 2x",
+      "1"
+    ],
+    "context": "Product rule yields cos²x − sin²x = cos 2x.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Derivative of arctan x?",
+    "answer": "1/(1 + x²)",
+    "choices": [
+      "1/(1 + x²)",
+      "1/(1 − x²)",
+      "1/√(1 − x²)",
+      "−1/(1 + x²)"
+    ],
+    "context": "Standard inverse-trig derivative.",
+    "_dropped_reason": [
+      "DROP:derivative"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ x dx = ?",
+    "answer": "x²/2 + C",
+    "choices": [
+      "x²/2 + C",
+      "x² + C",
+      "2x + C",
+      "1 + C"
+    ],
+    "context": "Power rule: ∫xⁿdx = xⁿ⁺¹/(n+1) + C.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ x² dx = ?",
+    "answer": "x³/3 + C",
+    "choices": [
+      "x³/3 + C",
+      "x³ + C",
+      "2x + C",
+      "x²/2 + C"
+    ],
+    "context": "n=2: xⁿ⁺¹/(n+1) = x³/3.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ x³ dx = ?",
+    "answer": "x⁴/4 + C",
+    "choices": [
+      "x⁴/4 + C",
+      "3x² + C",
+      "x⁴ + C",
+      "x³/3 + C"
+    ],
+    "context": "n=3: x⁴/4.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ 1 dx = ?",
+    "answer": "x + C",
+    "choices": [
+      "x + C",
+      "0 + C",
+      "1 + C",
+      "x² + C"
+    ],
+    "context": "Integrand is x⁰; antiderivative is x.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ 2x dx = ?",
+    "answer": "x² + C",
+    "choices": [
+      "x² + C",
+      "2x² + C",
+      "x²/2 + C",
+      "2 + C"
+    ],
+    "context": "Constant 2 stays; ∫x dx = x²/2; total x².",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ (3x² + 2x) dx = ?",
+    "answer": "x³ + x² + C",
+    "choices": [
+      "x³ + x² + C",
+      "3x³ + 2x² + C",
+      "x³ + x + C",
+      "6x + 2 + C"
+    ],
+    "context": "Term by term.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ x⁴ dx = ?",
+    "answer": "x⁵/5 + C",
+    "choices": [
+      "x⁵/5 + C",
+      "x⁵ + C",
+      "4x³ + C",
+      "x⁴/4 + C"
+    ],
+    "context": "n=4: x⁵/5.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ 5 dx = ?",
+    "answer": "5x + C",
+    "choices": [
+      "5x + C",
+      "5 + C",
+      "x + C",
+      "x² + 5 + C"
+    ],
+    "context": "Constant integrates to constant·x.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ x⁻² dx = ?",
+    "answer": "−x⁻¹ + C",
+    "choices": [
+      "−x⁻¹ + C",
+      "x⁻³/3 + C",
+      "x⁻¹ + C",
+      "−x⁻³ + C"
+    ],
+    "context": "n=-2: xⁿ⁺¹/(n+1) = x⁻¹/(-1) = -1/x.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫ √x dx (= x^(1/2))?",
+    "answer": "(2/3)x^(3/2) + C",
+    "choices": [
+      "(2/3)x^(3/2) + C",
+      "x^(3/2) + C",
+      "(1/2)x^(-1/2) + C",
+      "x^(1/2)·2 + C"
+    ],
+    "context": "n=1/2: xⁿ⁺¹/(n+1) = x^(3/2)/(3/2) = (2/3)x^(3/2).",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫₀¹ x dx = ?",
+    "answer": "1/2",
+    "choices": [
+      "1/2",
+      "1",
+      "0",
+      "2"
+    ],
+    "context": "Antiderivative x²/2 evaluated at 1 minus 0: 1/2.",
+    "_dropped_reason": [
+      "DROP:∫₀"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫₀¹ x² dx = ?",
+    "answer": "1/3",
+    "choices": [
+      "1/3",
+      "1/2",
+      "1",
+      "2/3"
+    ],
+    "context": "x³/3 from 0 to 1 = 1/3.",
+    "_dropped_reason": [
+      "DROP:∫₀"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫₀² x dx = ?",
+    "answer": "2",
+    "choices": [
+      "2",
+      "1",
+      "4",
+      "1/2"
+    ],
+    "context": "x²/2 evaluated: 4/2 − 0 = 2.",
+    "_dropped_reason": [
+      "DROP:∫₀"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "∫₁² 2x dx = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "1"
+    ],
+    "context": "x² from 1 to 2 = 4 − 1 = 3.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What does ∫f(x)dx represent geometrically (for nonneg f)?",
+    "answer": "Area under the curve",
+    "choices": [
+      "Area under the curve",
+      "Slope at a point",
+      "Length of the curve",
+      "Maximum value"
+    ],
+    "context": "Riemann's definition: limit of summed rectangle areas as widths shrink.",
+    "_dropped_reason": [
+      "DROP:∫"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→2 of x² = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "0",
+      "Undefined"
+    ],
+    "context": "Polynomial is continuous; just substitute.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→0 of (sin x)/x = ?",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "Undefined",
+      "∞"
+    ],
+    "context": "Famous limit; basis for d/dx[sin x] = cos x.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→∞ of 1/x = ?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "∞",
+      "Undefined"
+    ],
+    "context": "As x grows without bound, the reciprocal shrinks to 0.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→0 of (x² − 4)/(x − 2)?",
+    "answer": "Not relevant — limit is at x=2 not 0",
+    "choices": [
+      "Not relevant — limit is at x=2 not 0",
+      "0",
+      "4",
+      "-2"
+    ],
+    "context": "At x=0 the function equals 2; question's framing teaches careful reading.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→2 of (x² − 4)/(x − 2) = ?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "0",
+      "Undefined",
+      "2"
+    ],
+    "context": "Factor numerator: (x−2)(x+2)/(x−2) = x+2 → 4. Removable discontinuity.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→3 of (x² − 9)/(x − 3)?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "0",
+      "Undefined",
+      "3"
+    ],
+    "context": "(x−3)(x+3)/(x−3) → x+3 → 6. Removable singularity.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A removable discontinuity occurs when?",
+    "answer": "The limit exists but the function value disagrees",
+    "choices": [
+      "The limit exists but the function value disagrees",
+      "The function is unbounded",
+      "There is no limit",
+      "The function is constant"
+    ],
+    "context": "Plug-and-fix: define f at the missing point as the limit value.",
+    "_dropped_reason": [
+      "DROP:removable discontinuity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→∞ of (3x + 1)/(x + 2) = ?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "1/2",
+      "0",
+      "∞"
+    ],
+    "context": "Divide top and bottom by x: leading-coefficient ratio.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→0⁺ of 1/x = ?",
+    "answer": "+∞",
+    "choices": [
+      "+∞",
+      "−∞",
+      "0",
+      "1"
+    ],
+    "context": "From the right, 1/x grows positively without bound.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A function is continuous at a point when?",
+    "answer": "Limit equals function value",
+    "choices": [
+      "Limit equals function value",
+      "Function value exists",
+      "Limit exists",
+      "Function is differentiable"
+    ],
+    "context": "All three required: limit exists, value exists, they agree.",
+    "_dropped_reason": [
+      "DROP:continuous at"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim n→∞ of (1 + 1/n)ⁿ = ?",
+    "answer": "e",
+    "choices": [
+      "e",
+      "1",
+      "∞",
+      "π"
+    ],
+    "context": "Definition of e via continuous compounding.",
+    "_dropped_reason": [
+      "DROP:lim n→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→∞ of (eˣ)/x²?",
+    "answer": "∞",
+    "choices": [
+      "∞",
+      "0",
+      "1",
+      "e"
+    ],
+    "context": "Exponential beats any polynomial.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "lim x→∞ of (ln x)/x?",
+    "answer": "0",
+    "choices": [
+      "0",
+      "1",
+      "∞",
+      "ln 1"
+    ],
+    "context": "Logarithm grows slower than linear; ratio shrinks to 0.",
+    "_dropped_reason": [
+      "DROP:lim x→"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cauchy's epsilon-delta definition of limit requires?",
+    "answer": "For every ε > 0, a δ > 0 such that |x−a|<δ ⇒ |f(x)−L|<ε",
+    "choices": [
+      "For every ε > 0, a δ > 0 such that |x−a|<δ ⇒ |f(x)−L|<ε",
+      "Only that f(a) exists",
+      "Continuity",
+      "Differentiability"
+    ],
+    "context": "Cauchy and Weierstrass made limits rigorous in the 19th century.",
+    "_dropped_reason": [
+      "DROP:epsilon-delta"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Birthday paradox: minimum group size for >50% shared-birthday chance?",
+    "answer": "23",
+    "choices": [
+      "23",
+      "183",
+      "365",
+      "12"
+    ],
+    "context": "Probability is counterintuitive — pairs grow quadratically.",
+    "_dropped_reason": [
+      "DROP:birthday paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Fermat's Little Theorem says, for prime p and a not divisible by p?",
+    "answer": "aᵖ⁻¹ ≡ 1 (mod p)",
+    "choices": [
+      "aᵖ⁻¹ ≡ 1 (mod p)",
+      "aᵖ ≡ 0 (mod p)",
+      "aᵖ ≡ a (mod p−1)",
+      "aᵖ⁻¹ ≡ p (mod a)"
+    ],
+    "context": "Stated by Fermat (1640), proved later by Euler. Underlies RSA cryptography.",
+    "_dropped_reason": [
+      "DROP:fermat's little"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 2¹⁰ mod 11 by Fermat's Little Theorem.",
+    "answer": "1",
+    "choices": [
+      "1",
+      "0",
+      "2",
+      "10"
+    ],
+    "context": "p=11 prime, a=2; 2¹⁰ ≡ 1 (mod 11).",
+    "_dropped_reason": [
+      "DROP: mod 11"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Wilson's Theorem says, for prime p?",
+    "answer": "(p−1)! ≡ −1 (mod p)",
+    "choices": [
+      "(p−1)! ≡ −1 (mod p)",
+      "(p−1)! ≡ 0 (mod p)",
+      "(p−1)! ≡ 1 (mod p)",
+      "(p−1)! ≡ p−1 (mod p)"
+    ],
+    "context": "John Wilson stated it 1770; Lagrange proved it 1771.",
+    "_dropped_reason": [
+      "DROP:wilson's theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 7 mod 4.",
+    "answer": "3",
+    "choices": [
+      "3",
+      "1",
+      "0",
+      "7"
+    ],
+    "context": "7 = 1·4 + 3.",
+    "_dropped_reason": [
+      "DROP: mod 4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 23 mod 5.",
+    "answer": "3",
+    "choices": [
+      "3",
+      "4",
+      "2",
+      "1"
+    ],
+    "context": "23 = 4·5 + 3.",
+    "_dropped_reason": [
+      "DROP: mod 5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 100 mod 7.",
+    "answer": "2",
+    "choices": [
+      "2",
+      "3",
+      "1",
+      "0"
+    ],
+    "context": "100 = 14·7 + 2.",
+    "_dropped_reason": [
+      "DROP: mod 7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 2⁵ mod 7.",
+    "answer": "4",
+    "choices": [
+      "4",
+      "5",
+      "2",
+      "32"
+    ],
+    "context": "32 = 4·7 + 4.",
+    "_dropped_reason": [
+      "DROP: mod 7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If a ≡ b (mod n), and c ≡ d (mod n), then a+c ≡ ?",
+    "answer": "b+d (mod n)",
+    "choices": [
+      "b+d (mod n)",
+      "b·d (mod n)",
+      "a+d (mod n)",
+      "n (mod n)"
+    ],
+    "context": "Congruences add term by term — a property of modular arithmetic.",
+    "_dropped_reason": [
+      "DROP:(mod "
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 3¹⁰⁰ mod 5 using Fermat's Little Theorem.",
+    "answer": "1",
+    "choices": [
+      "1",
+      "3",
+      "0",
+      "4"
+    ],
+    "context": "5 prime; 3⁴ ≡ 1 (mod 5); 100 = 4·25, so 3¹⁰⁰ ≡ 1.",
+    "_dropped_reason": [
+      "DROP: mod 5"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Chinese Remainder Theorem allows you to?",
+    "answer": "Combine congruences with coprime moduli",
+    "choices": [
+      "Combine congruences with coprime moduli",
+      "Divide modular numbers",
+      "Solve quadratic congruences",
+      "Find prime factors"
+    ],
+    "context": "If moduli pairwise coprime, system x ≡ aᵢ (mod nᵢ) has a unique solution mod product.",
+    "_dropped_reason": [
+      "DROP:chinese remainder"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 5⁶ mod 7.",
+    "answer": "1",
+    "choices": [
+      "1",
+      "5",
+      "6",
+      "0"
+    ],
+    "context": "By Fermat: 5⁶ ≡ 1 (mod 7).",
+    "_dropped_reason": [
+      "DROP: mod 7"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute 11 mod 4.",
+    "answer": "3",
+    "choices": [
+      "3",
+      "1",
+      "2",
+      "0"
+    ],
+    "context": "11 = 2·4 + 3.",
+    "_dropped_reason": [
+      "DROP: mod 4"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Fermat's Little Theorem fails when?",
+    "answer": "p is composite",
+    "choices": [
+      "p is composite",
+      "a = 1",
+      "p = 2",
+      "a is even"
+    ],
+    "context": "Theorem requires p prime; composite moduli need Euler's theorem with φ(n).",
+    "_dropped_reason": [
+      "DROP:fermat's little"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler's φ(n) counts?",
+    "answer": "Integers in [1,n] coprime to n",
+    "choices": [
+      "Integers in [1,n] coprime to n",
+      "Divisors of n",
+      "Primes < n",
+      "n itself"
+    ],
+    "context": "Generalizes Fermat: aφ(n) ≡ 1 (mod n) when gcd(a,n)=1.",
+    "_dropped_reason": [
+      "DROP:φ(n)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Compute φ(10).",
+    "answer": "4",
+    "choices": [
+      "4",
+      "5",
+      "10",
+      "3"
+    ],
+    "context": "Coprime to 10 in [1,10]: 1, 3, 7, 9 — four numbers.",
+    "_dropped_reason": [
+      "DROP:φ(10)"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler's identity ties together which five constants?",
+    "answer": "e, i, π, 1, 0",
+    "choices": [
+      "e, i, π, 1, 0",
+      "e, π, 1, 0, ∞",
+      "i, π, 1, 0, 2",
+      "e, i, π, φ, 0"
+    ],
+    "context": "e^(iπ) + 1 = 0. Often called the most beautiful equation in mathematics.",
+    "_dropped_reason": [
+      "DROP:euler's identity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler's identity in equation form?",
+    "answer": "e^(iπ) + 1 = 0",
+    "choices": [
+      "e^(iπ) + 1 = 0",
+      "e^(πi) − 1 = 0",
+      "e^π + i = 0",
+      "e^i + π = 0"
+    ],
+    "context": "Five constants, one operation each, equals zero.",
+    "_dropped_reason": [
+      "DROP:euler's identity"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "e is what kind of number?",
+    "answer": "Transcendental",
+    "choices": [
+      "Transcendental",
+      "Rational",
+      "Algebraic",
+      "Imaginary"
+    ],
+    "context": "Hermite proved e transcendental in 1873.",
+    "_dropped_reason": [
+      "DROP:what kind of number"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A transcendental number is one that is NOT?",
+    "answer": "A root of any polynomial with integer coefficients",
+    "choices": [
+      "A root of any polynomial with integer coefficients",
+      "Rational",
+      "Irrational",
+      "Real"
+    ],
+    "context": "Algebraic = root of a polynomial; transcendental = not algebraic.",
+    "_dropped_reason": [
+      "DROP:transcendental"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Are all transcendental numbers irrational?",
+    "answer": "Yes",
+    "choices": [
+      "Yes",
+      "No",
+      "Only some",
+      "Only π"
+    ],
+    "context": "Rationals are roots of bx − a = 0, hence algebraic. Transcendentals must therefore be irrational.",
+    "_dropped_reason": [
+      "DROP:transcendental"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Liouville showed in 1844?",
+    "answer": "Transcendental numbers exist",
+    "choices": [
+      "Transcendental numbers exist",
+      "π is transcendental",
+      "e is transcendental",
+      "Real numbers are uncountable"
+    ],
+    "context": "Liouville constructed an explicit example, proving the category nonempty.",
+    "_dropped_reason": [
+      "DROP:liouville"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor showed the set of transcendentals is?",
+    "answer": "Uncountable (most reals are transcendental)",
+    "choices": [
+      "Uncountable (most reals are transcendental)",
+      "Countable",
+      "Finite",
+      "Empty"
+    ],
+    "context": "Algebraics are countable; reals are not; so transcendentals are uncountable.",
+    "_dropped_reason": [
+      "DROP:transcendental"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "e is approximately?",
+    "answer": "2.71828",
+    "choices": [
+      "2.71828",
+      "3.14159",
+      "1.41421",
+      "1.61803"
+    ],
+    "context": "Euler's number; base of natural logarithms.",
+    "_dropped_reason": [
+      "DROP:e is approximately"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "e is the limit of what expression as n→∞?",
+    "answer": "(1 + 1/n)ⁿ",
+    "choices": [
+      "(1 + 1/n)ⁿ",
+      "1 + 1/n",
+      "n^(1/n)",
+      "n·ln n"
+    ],
+    "context": "Continuous-compounding interest derivation; Bernoulli first noticed it.",
+    "_dropped_reason": [
+      "DROP:e is the limit"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Is φ (golden ratio) transcendental?",
+    "answer": "No — it's algebraic (root of x² − x − 1)",
+    "choices": [
+      "No — it's algebraic (root of x² − x − 1)",
+      "Yes",
+      "Unknown",
+      "Only for certain definitions"
+    ],
+    "context": "Algebraic numbers can still be irrational (like √2 or φ).",
+    "_dropped_reason": [
+      "DROP:transcendental"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler discovered e^(iθ) = ?",
+    "answer": "cos θ + i sin θ",
+    "choices": [
+      "cos θ + i sin θ",
+      "sin θ + i cos θ",
+      "tan θ",
+      "θ + i"
+    ],
+    "context": "Euler's formula. Setting θ = π gives the famous identity.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "π is irrational. Who first proved it?",
+    "answer": "Lambert (1761)",
+    "choices": [
+      "Lambert (1761)",
+      "Archimedes",
+      "Newton",
+      "Euler"
+    ],
+    "context": "Lambert showed π's continued-fraction expansion is infinite, proving irrationality.",
+    "_dropped_reason": [
+      "DROP:irrational. who"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Russell's paradox concerns the set R = {sets that do not contain themselves}. The problem?",
+    "answer": "R contains itself iff it does not",
+    "choices": [
+      "R contains itself iff it does not",
+      "R is empty",
+      "R is infinite",
+      "R has no elements"
+    ],
+    "context": "Russell 1901 — destroyed Frege's logical foundation of arithmetic.",
+    "_dropped_reason": [
+      "DROP:russell's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Russell's paradox forced what reformulation?",
+    "answer": "Axiomatic (Zermelo-Fraenkel) set theory",
+    "choices": [
+      "Axiomatic (Zermelo-Fraenkel) set theory",
+      "The end of set theory",
+      "Use of finite sets only",
+      "Removal of the empty set"
+    ],
+    "context": "Naive comprehension was replaced with restricted axioms.",
+    "_dropped_reason": [
+      "DROP:russell's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Banach-Tarski paradox says a solid ball can be?",
+    "answer": "Decomposed and reassembled into two balls of equal size",
+    "choices": [
+      "Decomposed and reassembled into two balls of equal size",
+      "Stretched to twice its volume",
+      "Squared",
+      "Made into a torus"
+    ],
+    "context": "Banach-Tarski 1924; uses the Axiom of Choice; pieces are non-measurable.",
+    "_dropped_reason": [
+      "DROP:banach-tarski"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Banach-Tarski uses which controversial axiom?",
+    "answer": "Axiom of Choice",
+    "choices": [
+      "Axiom of Choice",
+      "Pairing",
+      "Power set",
+      "Infinity"
+    ],
+    "context": "Without choice, the construction fails; with it, you can do the impossible-looking trick.",
+    "_dropped_reason": [
+      "DROP:banach-tarski"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Birthday paradox: in a group of 23, the probability of two sharing a birthday is at least?",
+    "answer": "≈ 50%",
+    "choices": [
+      "≈ 50%",
+      "≈ 6.3% (23/365)",
+      "≈ 23%",
+      "≈ 99%"
+    ],
+    "context": "Counts pairs (253), not individuals — most people underestimate.",
+    "_dropped_reason": [
+      "DROP:birthday paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Zeno's paradox of Achilles says?",
+    "answer": "Achilles can never catch the tortoise because each gap is half the previous",
+    "choices": [
+      "Achilles can never catch the tortoise because each gap is half the previous",
+      "Achilles runs forever in a circle",
+      "The tortoise is faster",
+      "Motion is impossible"
+    ],
+    "context": "Resolved by understanding convergent infinite series.",
+    "_dropped_reason": [
+      "DROP:zeno's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Zeno's paradoxes were resolved by understanding?",
+    "answer": "Convergent infinite series",
+    "choices": [
+      "Convergent infinite series",
+      "Set theory",
+      "Logic",
+      "Quantum mechanics"
+    ],
+    "context": "An infinite sum of decreasing terms can equal a finite quantity (e.g., 1/2 + 1/4 + 1/8 + ... = 1).",
+    "_dropped_reason": [
+      "DROP:zeno's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Hilbert's Hotel paradox: a fully-occupied infinite hotel can still accommodate?",
+    "answer": "Infinitely many more guests",
+    "choices": [
+      "Infinitely many more guests",
+      "No more guests",
+      "Just one more guest",
+      "Only finite groups"
+    ],
+    "context": "Move guest in room n to room 2n; odd rooms become free.",
+    "_dropped_reason": [
+      "DROP:hilbert's hotel"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Liar's paradox: 'This statement is false.' If true?",
+    "answer": "It is false",
+    "choices": [
+      "It is false",
+      "It is true",
+      "It is meaningless",
+      "It is both"
+    ],
+    "context": "Self-referential contradiction; major motivation for Tarski's truth definition.",
+    "_dropped_reason": [
+      "DROP:liar's paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor's diagonal argument shows?",
+    "answer": "The reals are uncountable",
+    "choices": [
+      "The reals are uncountable",
+      "The naturals are countable",
+      "The rationals are uncountable",
+      "All infinities are equal"
+    ],
+    "context": "List any countable list of reals; construct one not on the list by diagonalization.",
+    "_dropped_reason": [
+      "DROP:diagonal argument"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor's theorem says |2^S| > |S|. So?",
+    "answer": "There is no largest infinity",
+    "choices": [
+      "There is no largest infinity",
+      "All sets are finite",
+      "Infinity is exactly 1",
+      "Power set is countable"
+    ],
+    "context": "Hierarchy of infinities never ends — Cantor's astonishing result.",
+    "_dropped_reason": [
+      "DROP:|2^s|"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Banach-Tarski's pieces have the property of?",
+    "answer": "Being non-measurable (no defined volume)",
+    "choices": [
+      "Being non-measurable (no defined volume)",
+      "Being negative volume",
+      "Being countable",
+      "Being open sets"
+    ],
+    "context": "If they had volume, the volumes would have to add up consistently.",
+    "_dropped_reason": [
+      "DROP:banach-tarski"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Monty Hall paradox conclusion?",
+    "answer": "Switching doubles your chance of winning (1/3 → 2/3)",
+    "choices": [
+      "Switching doubles your chance of winning (1/3 → 2/3)",
+      "Switching doesn't matter",
+      "Switching hurts you",
+      "Probabilities are equal"
+    ],
+    "context": "Conditional probability: the host's reveal updates the distribution.",
+    "_dropped_reason": [
+      "DROP:monty hall"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Burali-Forti paradox concerns the set of?",
+    "answer": "All ordinal numbers",
+    "choices": [
+      "All ordinal numbers",
+      "All cardinals",
+      "Empty sets",
+      "Rationals"
+    ],
+    "context": "The set of all ordinals would itself be an ordinal, larger than any ordinal — contradiction.",
+    "_dropped_reason": [
+      "DROP:burali-forti"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor's hierarchy: |ℕ| = ?",
+    "answer": "ℵ₀ (aleph-null)",
+    "choices": [
+      "ℵ₀ (aleph-null)",
+      "ℵ₁",
+      "ℵ₂",
+      "Finite"
+    ],
+    "context": "The smallest infinite cardinal, size of the natural numbers.",
+    "_dropped_reason": [
+      "DROP:|ℕ|"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "|ℝ| (size of real numbers) = ?",
+    "answer": "2^ℵ₀ (= 𝔠, the continuum)",
+    "choices": [
+      "2^ℵ₀ (= 𝔠, the continuum)",
+      "ℵ₀",
+      "ℵ₁ definitely",
+      "Same as |ℕ|"
+    ],
+    "context": "Cardinality of the continuum. Continuum Hypothesis: is it ℵ₁?",
+    "_dropped_reason": [
+      "DROP:|ℝ|"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Continuum hypothesis is?",
+    "answer": "Independent of ZFC (Gödel-Cohen)",
+    "choices": [
+      "Independent of ZFC (Gödel-Cohen)",
+      "Proven true",
+      "Proven false",
+      "Trivial"
+    ],
+    "context": "Cohen 1963 proved it independent — neither provable nor refutable from standard axioms.",
+    "_dropped_reason": [
+      "DROP:continuum hypothesis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The grandfather paradox is a paradox of?",
+    "answer": "Time-travel logic (causal closure)",
+    "choices": [
+      "Time-travel logic (causal closure)",
+      "Set theory",
+      "Arithmetic",
+      "Topology"
+    ],
+    "context": "Often invoked philosophically but isn't a paradox of mathematics proper.",
+    "_dropped_reason": [
+      "DROP:grandfather paradox"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor's revolutionary discovery was?",
+    "answer": "Different sizes of infinity exist",
+    "choices": [
+      "Different sizes of infinity exist",
+      "Infinity does not exist",
+      "All infinities are equal",
+      "Real numbers don't exist"
+    ],
+    "context": "1874: the reals are 'larger' than the naturals. Mathematicians initially recoiled.",
+    "_dropped_reason": [
+      "DROP:cantor"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor's continuum proof method is called?",
+    "answer": "The diagonal argument",
+    "choices": [
+      "The diagonal argument",
+      "Cauchy convergence",
+      "Direct construction",
+      "Contradiction by induction"
+    ],
+    "context": "Construct a real not on any proposed enumeration by differing on the n-th digit.",
+    "_dropped_reason": [
+      "DROP:cantor"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Évariste Galois was famously?",
+    "answer": "Killed in a duel at age 20",
+    "choices": [
+      "Killed in a duel at age 20",
+      "An exiled mathematician living to 80",
+      "Pope of mathematics",
+      "Trained as an engineer"
+    ],
+    "context": "Galois wrote his foundational work on group theory the night before the duel that killed him.",
+    "_dropped_reason": [
+      "DROP:galois"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Galois theory addresses which question?",
+    "answer": "Which polynomial equations can be solved by radicals",
+    "choices": [
+      "Which polynomial equations can be solved by radicals",
+      "Infinite series",
+      "Geometric construction",
+      "Topology of surfaces"
+    ],
+    "context": "Quintic and higher cannot in general — Galois proved this via group theory.",
+    "_dropped_reason": [
+      "DROP:galois"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Srinivasa Ramanujan was discovered by which Cambridge mathematician?",
+    "answer": "G.H. Hardy",
+    "choices": [
+      "G.H. Hardy",
+      "Bertrand Russell",
+      "Alan Turing",
+      "John Conway"
+    ],
+    "context": "Hardy received Ramanujan's letter from Madras in 1913 and recognized exceptional intuitive genius.",
+    "_dropped_reason": [
+      "DROP:ramanujan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Ramanujan made deep contributions to?",
+    "answer": "Number theory and infinite series",
+    "choices": [
+      "Number theory and infinite series",
+      "Topology only",
+      "Geometry only",
+      "Algebra only"
+    ],
+    "context": "Partitions, mock theta functions, the Ramanujan tau function, and more.",
+    "_dropped_reason": [
+      "DROP:ramanujan"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Gödel's First Incompleteness Theorem says?",
+    "answer": "Any consistent system rich enough for arithmetic has true statements it cannot prove",
+    "choices": [
+      "Any consistent system rich enough for arithmetic has true statements it cannot prove",
+      "All math is provable",
+      "No math is provable",
+      "Arithmetic is undecidable in all senses"
+    ],
+    "context": "1931, age 25. The dream of complete formal foundations died that year.",
+    "_dropped_reason": [
+      "DROP:incompleteness theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Gödel's Second Incompleteness Theorem says?",
+    "answer": "Such a system cannot prove its own consistency",
+    "choices": [
+      "Such a system cannot prove its own consistency",
+      "Consistency is automatic",
+      "All systems are inconsistent",
+      "Truth is unprovable"
+    ],
+    "context": "A system cannot demonstrate its own freedom from contradiction from within.",
+    "_dropped_reason": [
+      "DROP:incompleteness theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Newton and Leibniz independently invented?",
+    "answer": "Calculus",
+    "choices": [
+      "Calculus",
+      "Algebra",
+      "Geometry",
+      "Probability"
+    ],
+    "context": "Late 17th century, with priority dispute that fractured European mathematics.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Pierre de Fermat is best known for?",
+    "answer": "His Last Theorem and number theory",
+    "choices": [
+      "His Last Theorem and number theory",
+      "Calculus",
+      "Optics",
+      "Statistics"
+    ],
+    "context": "A jurist who did mathematics by mail with Pascal and Mersenne.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Emmy Noether's theorem relates?",
+    "answer": "Symmetries to conservation laws",
+    "choices": [
+      "Symmetries to conservation laws",
+      "Sets to subsets",
+      "Limits to continuity",
+      "Triangles to circles"
+    ],
+    "context": "1918, foundational in physics: every continuous symmetry has a corresponding conservation law.",
+    "_dropped_reason": [
+      "DROP:emmy noether"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Alan Turing's halting-problem result shows?",
+    "answer": "No algorithm decides whether arbitrary programs halt",
+    "choices": [
+      "No algorithm decides whether arbitrary programs halt",
+      "All programs halt",
+      "No programs halt",
+      "Halting is decidable in some cases only"
+    ],
+    "context": "1936; provides a concrete undecidable problem and grounds theoretical computer science.",
+    "_dropped_reason": [
+      "DROP:halting-problem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Archimedes' famous computation was?",
+    "answer": "An accurate approximation of π via inscribed polygons",
+    "choices": [
+      "An accurate approximation of π via inscribed polygons",
+      "Calculus",
+      "The number e",
+      "The Pythagorean theorem"
+    ],
+    "context": "Archimedes bounded π between 223/71 and 22/7 using 96-sided polygons (3rd century BCE).",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euler is famous for prolific output and which constant?",
+    "answer": "e (Euler's number)",
+    "choices": [
+      "e (Euler's number)",
+      "π",
+      "i alone",
+      "φ"
+    ],
+    "context": "Euler systematized e and connected it to π and i in the identity.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euclid's Elements (c. 300 BCE) is foundational for?",
+    "answer": "Axiomatic mathematics",
+    "choices": [
+      "Axiomatic mathematics",
+      "Calculus",
+      "Statistics",
+      "Set theory"
+    ],
+    "context": "Definitions, postulates, and propositions in rigorous deductive form.",
+    "_dropped_reason": [
+      "DROP:elements (c"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Gauss as a child was famously asked to sum 1 to 100. He used?",
+    "answer": "Pairing: (1+100)+(2+99)+...= 50·101",
+    "choices": [
+      "Pairing: (1+100)+(2+99)+...= 50·101",
+      "Long addition",
+      "Modular arithmetic",
+      "Estimation"
+    ],
+    "context": "Famous (possibly embellished) story illustrating Gauss's youthful insight.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Ada Lovelace is credited with?",
+    "answer": "Writing the first algorithm for a computer",
+    "choices": [
+      "Writing the first algorithm for a computer",
+      "Inventing the integral",
+      "Founding modern algebra",
+      "Discovering π"
+    ],
+    "context": "Her notes on Babbage's Analytical Engine (1843) describe a Bernoulli-number algorithm.",
+    "_dropped_reason": [
+      "DROP:ada lovelace"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Sofia Kovalevskaya was the first woman to receive?",
+    "answer": "A doctorate in mathematics (Göttingen 1874)",
+    "choices": [
+      "A doctorate in mathematics (Göttingen 1874)",
+      "A Nobel Prize",
+      "A Fields Medal",
+      "A knighthood"
+    ],
+    "context": "Pioneer in partial differential equations and rigid-body mechanics.",
+    "_dropped_reason": [
+      "DROP:kovalevskaya"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Henri Poincaré formulated which famous conjecture?",
+    "answer": "Every simply-connected closed 3-manifold is a 3-sphere",
+    "choices": [
+      "Every simply-connected closed 3-manifold is a 3-sphere",
+      "Twin prime conjecture",
+      "Riemann hypothesis",
+      "Goldbach"
+    ],
+    "context": "1904 conjecture; proved by Perelman in 2003 using Ricci flow.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Grigori Perelman declined which honor for proving the Poincaré conjecture?",
+    "answer": "The Fields Medal",
+    "choices": [
+      "The Fields Medal",
+      "The Abel Prize only",
+      "The Wolf Prize",
+      "Knighthood"
+    ],
+    "context": "Also declined the $1 million Millennium Prize.",
+    "_dropped_reason": [
+      "DROP:poincaré conjecture"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Pierre-Simon Laplace claimed his work made which assumption unnecessary?",
+    "answer": "A divine intervention to stabilize planetary orbits",
+    "choices": [
+      "A divine intervention to stabilize planetary orbits",
+      "Calculus",
+      "Conservation of energy",
+      "Newton's first law"
+    ],
+    "context": "Famously told Napoleon, 'I had no need of that hypothesis.'",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Joseph-Louis Lagrange is known for reformulating mechanics using?",
+    "answer": "The Lagrangian (variational principle)",
+    "choices": [
+      "The Lagrangian (variational principle)",
+      "Matrices alone",
+      "Quaternions",
+      "Discrete operators"
+    ],
+    "context": "Lagrangian mechanics (1788) recasts Newton's laws as minimization of action.",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Augustin-Louis Cauchy is foundational for?",
+    "answer": "Rigorous definitions of limit and continuity",
+    "choices": [
+      "Rigorous definitions of limit and continuity",
+      "Calculus invention",
+      "Probability axioms",
+      "Topology"
+    ],
+    "context": "Brought rigor to analysis in early 19th century; epsilon-delta language formalized later by Weierstrass.",
+    "_dropped_reason": [
+      "DROP:cauchy"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Karl Weierstrass is credited with?",
+    "answer": "Making analysis fully rigorous (ε-δ formalism)",
+    "choices": [
+      "Making analysis fully rigorous (ε-δ formalism)",
+      "Invention of e",
+      "Discovery of π",
+      "Foundations of geometry"
+    ],
+    "context": "Mid-19th-century rigor program — the 'arithmetization of analysis.'",
+    "_dropped_reason": [
+      "DROP:history-prose"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Mary Cartwright pioneered which field with John Littlewood?",
+    "answer": "Chaos theory (nonlinear dynamics)",
+    "choices": [
+      "Chaos theory (nonlinear dynamics)",
+      "Set theory",
+      "Statistics",
+      "Group theory"
+    ],
+    "context": "Cartwright-Littlewood work in the 1940s on radio oscillators preceded the chaos theory boom.",
+    "_dropped_reason": [
+      "DROP:mary cartwright"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Riemann hypothesis concerns the zeros of?",
+    "answer": "The Riemann zeta function ζ(s)",
+    "choices": [
+      "The Riemann zeta function ζ(s)",
+      "The exponential function",
+      "Polynomials",
+      "Trigonometric functions"
+    ],
+    "context": "Conjectures all non-trivial zeros have real part 1/2. Unsolved. $1M Millennium prize.",
+    "_dropped_reason": [
+      "DROP:riemann hypothesis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Riemann hypothesis is connected to the distribution of?",
+    "answer": "Prime numbers",
+    "choices": [
+      "Prime numbers",
+      "Composite numbers",
+      "Even numbers",
+      "Squares"
+    ],
+    "context": "Its proof would refine the prime-counting function π(x) precisely.",
+    "_dropped_reason": [
+      "DROP:riemann hypothesis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Who proved there are infinitely many primes?",
+    "answer": "Euclid (c. 300 BCE)",
+    "choices": [
+      "Euclid (c. 300 BCE)",
+      "Gauss",
+      "Riemann",
+      "Erdős"
+    ],
+    "context": "Elegant proof by contradiction: multiply all 'finitely many' primes, add 1, find a contradiction.",
+    "_dropped_reason": [
+      "DROP:infinitely many primes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Euclid's proof of infinitude of primes assumes finitely many primes p₁,...,pₙ and considers?",
+    "answer": "N = p₁·p₂···pₙ + 1",
+    "choices": [
+      "N = p₁·p₂···pₙ + 1",
+      "N = p₁ + p₂ + ... + pₙ",
+      "N = p₁ · p₂ · ... · pₙ",
+      "N = pₙ²"
+    ],
+    "context": "N has a prime factor not on the list — contradiction.",
+    "_dropped_reason": [
+      "DROP:infinitude of primes"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Fundamental Theorem of Algebra (FTA) states?",
+    "answer": "Every nonconstant polynomial has a complex root",
+    "choices": [
+      "Every nonconstant polynomial has a complex root",
+      "Every polynomial has a real root",
+      "Every polynomial has rational roots",
+      "Polynomial roots are unique"
+    ],
+    "context": "Gauss's doctoral dissertation gave the first rigorous proof (1799).",
+    "_dropped_reason": [
+      "DROP:fundamental theorem of algebra"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "FTA implies a polynomial of degree n has exactly?",
+    "answer": "n complex roots (counting multiplicity)",
+    "choices": [
+      "n complex roots (counting multiplicity)",
+      "n real roots",
+      "1 root only",
+      "n rational roots"
+    ],
+    "context": "Factor out roots one by one over ℂ — degree-n polynomial splits into linear factors.",
+    "_dropped_reason": [
+      "DROP:fta implies"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Riemann hypothesis is one of the Millennium Prize Problems. How many remain unsolved?",
+    "answer": "Six (out of seven; only Poincaré is solved)",
+    "choices": [
+      "Six (out of seven; only Poincaré is solved)",
+      "All seven",
+      "Just two",
+      "None"
+    ],
+    "context": "Poincaré conjecture was settled by Perelman; the rest remain open.",
+    "_dropped_reason": [
+      "DROP:millennium prize"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Goldbach's conjecture says every even integer > 2 is the sum of?",
+    "answer": "Two primes",
+    "choices": [
+      "Two primes",
+      "Two squares",
+      "Three primes",
+      "A prime and an odd"
+    ],
+    "context": "Stated 1742; computationally verified to enormous bounds; proof unknown.",
+    "_dropped_reason": [
+      "DROP:goldbach"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Twin Prime Conjecture says there are?",
+    "answer": "Infinitely many primes p with p+2 also prime",
+    "choices": [
+      "Infinitely many primes p with p+2 also prime",
+      "Finitely many twin primes",
+      "Exactly 1000 twin primes",
+      "No twin primes above 100"
+    ],
+    "context": "(3,5), (5,7), (11,13) ... Zhang's 2013 bound was first major progress.",
+    "_dropped_reason": [
+      "DROP:twin prime"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Cantor's theorem: |P(S)| > |S| for every set. Therefore?",
+    "answer": "There is an infinite hierarchy of infinities",
+    "choices": [
+      "There is an infinite hierarchy of infinities",
+      "All infinities are equal",
+      "Only one infinity",
+      "Power sets are finite"
+    ],
+    "context": "Iterating power-set gives strictly larger cardinalities forever.",
+    "_dropped_reason": [
+      "DROP:|p(s)|"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Gödel's incompleteness theorem was proved in?",
+    "answer": "1931",
+    "choices": [
+      "1931",
+      "1900",
+      "1950",
+      "1879"
+    ],
+    "context": "Gödel age 25; published 'On Formally Undecidable Propositions of Principia Mathematica.'",
+    "_dropped_reason": [
+      "DROP:incompleteness theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Bayes' theorem expresses conditional probability as?",
+    "answer": "P(A|B) = P(B|A)·P(A)/P(B)",
+    "choices": [
+      "P(A|B) = P(B|A)·P(A)/P(B)",
+      "P(A|B) = P(A)·P(B)",
+      "P(A|B) = P(A) + P(B)",
+      "P(A|B) = P(B) − P(A)"
+    ],
+    "context": "Published posthumously 1763. Foundational for modern statistical inference.",
+    "_dropped_reason": [
+      "DROP:bayes' theorem"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Heisenberg uncertainty (math statement) says?",
+    "answer": "Δx · Δp ≥ ℏ/2",
+    "choices": [
+      "Δx · Δp ≥ ℏ/2",
+      "Δx · Δp = 0",
+      "Δx + Δp = ℏ",
+      "Δx − Δp = ℏ²"
+    ],
+    "context": "A theorem about Fourier-conjugate variables; physical-formula version of an L² inequality.",
+    "_dropped_reason": [
+      "DROP:heisenberg"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Riemann hypothesis was first stated in?",
+    "answer": "1859",
+    "choices": [
+      "1859",
+      "1900",
+      "1931",
+      "1950"
+    ],
+    "context": "Riemann's eight-page paper 'On the Number of Primes Less Than a Given Magnitude.'",
+    "_dropped_reason": [
+      "DROP:riemann hypothesis"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Poincaré conjecture was proved (after a century) by?",
+    "answer": "Grigori Perelman (2003)",
+    "choices": [
+      "Grigori Perelman (2003)",
+      "Andrew Wiles",
+      "John Nash",
+      "Terence Tao"
+    ],
+    "context": "Perelman used Hamilton's Ricci flow. He declined the Fields Medal and the $1M Millennium Prize.",
+    "_dropped_reason": [
+      "DROP:poincaré conjecture"
+    ]
+  }
+]

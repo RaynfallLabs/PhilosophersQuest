@@ -1,0 +1,542 @@
+[
+  {
+    "tier": 1,
+    "question": "Which dictionary triggered a controversy when it accepted \"ain't\" as informal usage in 1961?",
+    "answer": "Webster's Third New International",
+    "choices": [
+      "Webster's Third New International",
+      "Oxford English Dictionary",
+      "American Heritage",
+      "Random House"
+    ],
+    "context": "Webster's Third (1961) — its descriptive approach (including \"ain't\") triggered prescriptivist backlash.",
+    "_drop_reason": "drop_signal:\\bwebster's third\\b",
+    "_fk": 12.63,
+    "_old_tier": 1
+  },
+  {
+    "tier": 2,
+    "question": "The Oxford English Dictionary's first editor was:",
+    "answer": "James Murray",
+    "choices": [
+      "James Murray",
+      "Samuel Johnson",
+      "Noah Webster",
+      "Henry Fowler"
+    ],
+    "context": "Murray ran the project from 1879 until his death in 1915. His Scriptorium received thousands of volunteer entries.",
+    "_drop_reason": "drop_signal:\\bjames murray\\b",
+    "_fk": 10.74,
+    "_old_tier": 2
+  },
+  {
+    "tier": 3,
+    "question": "Aldus Manutius, in 1494 Venice, popularized which punctuation mark?",
+    "answer": "Semicolon",
+    "choices": [
+      "Semicolon",
+      "Comma",
+      "Period",
+      "Exclamation point"
+    ],
+    "context": "Aldus, founder of the Aldine Press, was a master printer who refined many punctuation marks for printed Latin and Italian texts. Italics also originated in his workshop.",
+    "_drop_reason": "drop_signal:\\baldus manutius\\b",
+    "_fk": 12.83,
+    "_old_tier": 3
+  },
+  {
+    "tier": 4,
+    "question": "The semicolon — that vertical-stack of dot and comma — was introduced into printed text by the Venetian humanist printer Aldus Manutius in 1494, in Pietro Bembo's De Aetna. Aldus was also the man behind italic type, the pocket-book format, and the standardization of the comma. His goal was helping silent readers parse classical Latin. What grammatical job does the semicolon do today?",
+    "answer": "Joins related independent clauses; separates list items with internal commas",
+    "choices": [
+      "Joins related independent clauses; separates list items with internal commas",
+      "Marks the absolute end of a sentence with finality",
+      "Introduces a quotation or a list of items",
+      "Indicates strong interruption or a parenthetical aside"
+    ],
+    "context": "Aldus's contribution: a punctuation mark stronger than a comma, weaker than a period — for clauses too closely related to fully separate.",
+    "_drop_reason": "drop_signal:\\baldus manutius\\b",
+    "_fk": 11.16,
+    "_old_tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "Performative verbs perform an action by being uttered. 'I promise to be there' — saying it makes the promise. 'I declare the meeting open' — saying it opens the meeting. 'I name this ship Queen Elizabeth' — saying it names it. J.L. Austin coined 'performative' for these in 'How to Do Things with Words' (1962). Which is performative?",
+    "answer": "I apologize for being late.",
+    "choices": [
+      "I apologize for being late.",
+      "I noticed that I was late.",
+      "I was sorry for being late.",
+      "She was apologizing yesterday."
+    ],
+    "context": "Saying 'I apologize' IS the apology. Saying 'I noticed' merely reports. Austin's performatives include promise, declare, name, christen, bet, vow, sentence, pronounce, warn, request, thank, forgive.",
+    "_drop_reason": "drop_signal:\\bj\\.l\\.?\\s*austin\\b",
+    "_fk": 4.63,
+    "_old_tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "Sound symbolism (or phonosemantics) holds that some sounds have inherent meanings or feelings. Edward Sapir's 1929 experiment: people consistently associated 'mil' with smaller objects, 'mal' with larger ones. Higher vowels (ee, i) suggest smallness/lightness; lower vowels (ah, o) suggest largeness/heaviness. Which word's sound suggests its meaning?",
+    "answer": "Itty-bitty (small, with high vowels)",
+    "choices": [
+      "Itty-bitty (small, with high vowels)",
+      "Enormous (small, with high vowels)",
+      "Tiny (large, with low vowels)",
+      "Huge (small, with high vowels)"
+    ],
+    "context": "High front vowels (ee, i) = small; low back vowels (oo, o) = large is a real cross-linguistic tendency. Children prefer 'kiki' for sharp shapes, 'bouba' for round shapes (Köhler 1929). Sound and meaning correlate weakly but reliably.",
+    "_drop_reason": "drop_signal:\\bedward sapir\\b",
+    "_fk": 10.48,
+    "_old_tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "The Oxford English Dictionary (OED) is the historical dictionary of English. Work began in 1857; the first complete edition was published in 1928. The project took 71 years and involved James Murray as chief editor (from 1879), thousands of volunteer readers, and Murray's famous 'Scriptorium' shed where he and his assistants worked. The dictionary documents over 600,000 word forms. What does 'historical principles' mean?",
+    "answer": "Each word's entry traces its history through quotations from various centuries",
+    "choices": [
+      "Each word's entry traces its history through quotations from various centuries",
+      "Words are listed in order of historical importance",
+      "Only words from before 1900 are included",
+      "The dictionary is updated every 100 years on principle"
+    ],
+    "context": "OED entries include quotations showing the word's first attested use and changes through centuries. The 'New English Dictionary on Historical Principles' (its formal name) is a documentary record of English's vocabulary.",
+    "_drop_reason": "drop_signal:\\bjames murray\\b",
+    "_fk": 9.81,
+    "_old_tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "Generative grammar is Chomsky's framework. It treats grammar as a system of rules that 'generate' all and only the grammatical sentences of a language. Within generative grammar, syntactic trees represent the hierarchical structure of sentences. What's an essential feature of natural language structure?",
+    "answer": "Recursion — the same grammatical structure can embed inside itself",
+    "choices": [
+      "Recursion — the same grammatical structure can embed inside itself",
+      "Linearity — sentences are flat sequences without hierarchy",
+      "Randomness — no structure at all",
+      "Fixed length — sentences have a maximum number of words"
+    ],
+    "context": "Recursion: a noun phrase can contain a noun phrase ('the book that the man wrote'); a sentence can contain a sentence ('I think that you know that he said...'). Chomsky calls recursion central to human language.",
+    "_drop_reason": "drop_signal:\\b(structuralism|generative grammar)\\b.{0,80}\\b(school|tradi",
+    "_fk": 11.65,
+    "_old_tier": 4
+  },
+  {
+    "tier": 4,
+    "question": "Leonard Bloomfield (1887-1949) was the leading American structuralist linguist of the early 20th century. His 'Language' (1933) systematized descriptive linguistics in the U.S. Bloomfield emphasized observation over speculation; he was anti-mentalist (rejecting psychological theorizing). His framework dominated American linguistics until Chomsky's 1957 revolution. What's a Bloomfieldian principle?",
+    "answer": "Linguistic analysis should be based on observable forms, not mental processes",
+    "choices": [
+      "Linguistic analysis should be based on observable forms, not mental processes",
+      "Languages are universally identical at the deep level",
+      "Latin grammar is the model for all linguistics",
+      "Grammar should be prescriptive only"
+    ],
+    "context": "Bloomfield's behaviorist-influenced approach prioritized form over meaning. Phonology, morphology, syntax all analyzed observationally. Chomsky's 1957 critique rejected this anti-mentalism, ushering in cognitive linguistics.",
+    "_drop_reason": "drop_signal:\\bleonard bloomfield\\b",
+    "_fk": 14.09,
+    "_old_tier": 4
+  },
+  {
+    "tier": 5,
+    "question": "Noam Chomsky's 1957 monograph 'Syntactic Structures' inaugurated what became known as the cognitive revolution in linguistics. The book was barely 100 pages and revolutionized the field by formalizing grammar as a system of recursive rules generating an infinity of possible sentences. The terminology of 'deep structure' versus 'surface structure' Chomsky popularized came slightly later — in the early 1960s — in his subsequent work. What did transformational grammar fundamentally argue?",
+    "answer": "Surface sentences derive from deeper underlying structures via transformational rules",
+    "choices": [
+      "Surface sentences derive from deeper underlying structures via transformational rules",
+      "Language is a learned behavior shaped entirely by reinforcement from caregivers",
+      "Linguistic meaning is determined by the cultural context in which a word is spoken",
+      "All human languages share an identical vocabulary inherited from a primordial mother tongue"
+    ],
+    "context": "Chomsky's three-component model in Syntactic Structures (phrase-structure, transformational, and morphophonemic) replaced Bloomfield's behaviorist structuralism. The deep/surface terminology became central in 'Aspects of the Theory of Syntax' (1965).",
+    "_drop_reason": "drop_signal:\\bchomsk\\w+\\b.{0,200}\\b(poverty|merge|minimalist|principles|",
+    "_fk": 15.16,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Chomsky's poverty-of-the-stimulus argument supports what claim about language acquisition?",
+    "answer": "Children acquire grammar faster than environmental input alone can explain, suggesting innate language-acquisition capacity",
+    "choices": [
+      "Children acquire grammar faster than environmental input alone can explain, suggesting innate language-acquisition capacity",
+      "Children imitate adult speech exclusively and require no biological mechanism for language",
+      "Children fail to acquire grammar unless explicitly taught the rules of syntax by age six",
+      "Children develop language only when raised in environments rich with formal grammar lessons"
+    ],
+    "context": "Chomsky argued that the input children receive is too fragmentary and error-filled to account for the systematic grammar they construct. The proposed solution: a Universal Grammar — a biologically given framework constraining possible human languages.",
+    "_drop_reason": "drop_signal:\\bchomsk\\w+\\b.{0,200}\\b(poverty|merge|minimalist|principles|",
+    "_fk": 13.67,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Ferdinand de Saussure died in 1913 having never published his lectures on general linguistics. His students reconstructed them from notes and published the Course in General Linguistics posthumously in 1916. The book established the foundation of structuralism and semiotics. What pair of concepts did Saussure use to describe the linguistic sign?",
+    "answer": "Signifier and signified",
+    "choices": [
+      "Signifier and signified",
+      "Surface and deep structure",
+      "Syntax and semantics",
+      "Speech and writing"
+    ],
+    "context": "The signifier is the sound-image (the word as heard or read); the signified is the concept it points to. Saussure argued the relationship is arbitrary — there is no natural reason 'tree' means a tree.",
+    "_drop_reason": "drop_signal:\\bferdinand de saussure\\b",
+    "_fk": 10.9,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Saussure distinguished two ways of studying language. One looks at language as a system at a single moment in time; the other tracks how the system changes across centuries. What are the technical terms for this contrast?",
+    "answer": "Synchronic vs. diachronic",
+    "choices": [
+      "Synchronic vs. diachronic",
+      "Phonetic vs. phonemic",
+      "Etic vs. emic",
+      "Surface vs. deep"
+    ],
+    "context": "Synchronic = at one point in time; diachronic = through time. Saussure argued synchronic analysis was being neglected in favor of historical (diachronic) work and helped establish modern structural linguistics by reversing the emphasis.",
+    "_drop_reason": "drop_signal:\\bsaussure\\b.{0,200}\\b(langue|parole|synchronic|diachronic|s",
+    "_fk": 6.76,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Saussure contrasted langue (the abstract system of a language shared by a speech community) with parole (an individual act of speech). What modern distinction is Chomsky's competence-versus-performance most closely descended from?",
+    "answer": "Saussure's langue-versus-parole",
+    "choices": [
+      "Saussure's langue-versus-parole",
+      "Bloomfield's stimulus-and-response model",
+      "Grimm's first and second sound shifts",
+      "Whorf's strong and weak hypotheses"
+    ],
+    "context": "Chomsky's competence (the speaker's underlying knowledge of grammar) versus performance (actual utterances, with their hesitations and errors) closely mirrors Saussure's langue/parole, though the theoretical commitments differ.",
+    "_drop_reason": "drop_signal:\\bsaussure\\b.{0,200}\\b(langue|parole|synchronic|diachronic|s",
+    "_fk": 12.3,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Leonard Bloomfield's 1933 book 'Language' shaped American linguistics for decades. He explicitly adopted a behaviorist framework, defining meaning as the situation in which a speaker utters a form plus the hearer's response. His school dominated until Chomsky's 1957 revolt. What is Bloomfield's approach called?",
+    "answer": "American structuralism",
+    "choices": [
+      "American structuralism",
+      "Transformational generative grammar",
+      "Cognitive linguistics",
+      "Generative semantics"
+    ],
+    "context": "Bloomfieldian structuralism prized methodological rigor and behaviorist objectivity — meanings were 'situations,' not mental states. Chomsky's cognitivist turn rejected this antipsychologism in the 1950s-60s.",
+    "_drop_reason": "drop_signal:\\bleonard bloomfield\\b",
+    "_fk": 10.96,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Edward Sapir and Benjamin Lee Whorf — neither of whom ever formulated their views as a single hypothesis — gave their names to a claim about language and thought. A student of Sapir's, Harry Hoijer, coined the label in the 1950s. What does the so-called Sapir-Whorf hypothesis assert?",
+    "answer": "The structure of a person's language influences (or in strong versions determines) how they think",
+    "choices": [
+      "The structure of a person's language influences (or in strong versions determines) how they think",
+      "All human languages can be translated into one another without any loss of meaning",
+      "Languages with more vocabulary words produce smarter speakers than languages with less",
+      "Bilingual children inevitably suffer reduced cognitive performance compared to monolingual ones"
+    ],
+    "context": "Roger Brown distinguished the weak version (language influences cognition — widely supported) from the strong version (language determines worldview — almost universally rejected). Whorf's most famous example, that Hopi speakers conceived time differently, has not held up under scrutiny.",
+    "_drop_reason": "drop_signal:\\b(sapir-whorf|sapir.{0,30}whorf hypothesis)\\b",
+    "_fk": 9.09,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "In September 1961, Webster's Third New International Dictionary appeared after 757 editor-years and $3.5 million in costs, edited by Philip Babcock Gove. It included 'ain't' without condemnation and recorded usage rather than legislating it. Dwight Macdonald in The New Yorker (March 1962) called it a 'scandal and a disaster'; Wilson Follett attacked it in The Atlantic (January 1962). What broader debate did Webster's Third crystallize?",
+    "answer": "Descriptivism vs. prescriptivism in lexicography",
+    "choices": [
+      "Descriptivism vs. prescriptivism in lexicography",
+      "Phonetics vs. phonology in pronunciation guides",
+      "Synchronic vs. diachronic linguistics",
+      "Native speaker intuition vs. corpus data"
+    ],
+    "context": "Gove's editorial principle was explicit: record language as used, do not prescribe. Critics treated dictionaries as authorities setting standards. The fight made 'descriptivist' a household word in American letters.",
+    "_drop_reason": "drop_signal:\\bphilip babcock gove\\b",
+    "_fk": 10.77,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "What did Macdonald and other prescriptivist critics most object to in Webster's Third?",
+    "answer": "Its refusal to label nonstandard usages as 'illiterate' or 'incorrect'",
+    "choices": [
+      "Its refusal to label nonstandard usages as 'illiterate' or 'incorrect'",
+      "Its inclusion of obscene words for the first time in any major dictionary",
+      "Its decision to drop all etymological information for words of foreign origin",
+      "Its physical size, which made it impractical for office use in most American workplaces"
+    ],
+    "context": "Earlier Merriam-Websters had used labels like 'illit.' or 'erron.' Gove abandoned most of these in favor of descriptive notes ('substandard,' 'nonstandard') and let usage speak. To prescriptivists this was abdication.",
+    "_drop_reason": "drop_signal:\\bwebster's third\\b",
+    "_fk": 9.45,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "James Murray, a Scottish autodidact, took over editing what would become the Oxford English Dictionary in 1879. He set up a corrugated-iron shed in his back garden — the Scriptorium — and recruited thousands of volunteer readers worldwide to send slips with example quotations. One especially prolific contributor, Dr. W.C. Minor, sent in many thousands from inside Broadmoor Criminal Lunatic Asylum. When was the first complete edition finally published?",
+    "answer": "April 1928, 71 years after the project began",
+    "choices": [
+      "April 1928, 71 years after the project began",
+      "December 1899, 42 years after the project began",
+      "March 1947, 90 years after the project began",
+      "October 1971, on the centenary of Murray's birth"
+    ],
+    "context": "The Philological Society proposed the dictionary in 1857. Murray died in 1915 before completion. The finished 1928 edition ran to 10 volumes, 250,000 main entries, and nearly 2 million quotations. The 'Surgeon of Crowthorne' (Minor) is the subject of Simon Winchester's 'The Professor and the Madman.'",
+    "_drop_reason": "drop_signal:\\bjames murray\\b",
+    "_fk": 9.97,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Sir William Jones, a British judge serving in Calcutta and a polyglot fluent in many languages, delivered a now-famous address to the Asiatic Society on February 2, 1786. He observed that Sanskrit bore to Greek and Latin a closer affinity 'than could possibly have been produced by accident' — and proposed a then-radical solution. What did he hypothesize?",
+    "answer": "Sanskrit, Greek, and Latin descended from a common parent language no longer in existence",
+    "choices": [
+      "Sanskrit, Greek, and Latin descended from a common parent language no longer in existence",
+      "Sanskrit was the original mother tongue from which Greek and Latin had degenerated",
+      "Greek was the original mother tongue and had spread eastward to produce Sanskrit",
+      "The three languages independently developed identical structures by sheer coincidence"
+    ],
+    "context": "Earlier scholars had assumed one known language was the ancestor of the others. Jones's insight — a common ancestor 'which, perhaps, no longer exists' — founded comparative Indo-European linguistics. The proto-language he postulated is what scholars now call Proto-Indo-European.",
+    "_drop_reason": "drop_signal:\\bsir william jones\\b",
+    "_fk": 12.88,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "In 1822, Jacob Grimm — yes, the same Grimm of the fairy-tale brothers — published the second edition of his 'Deutsche Grammatik,' systematizing a sound shift that had been noted earlier by Rasmus Rask (1818). The law describes how Proto-Indo-European stop consonants developed in Proto-Germanic, explaining why Latin 'pater' corresponds to English 'father.' What kind of correspondence does Grimm's Law describe?",
+    "answer": "Voiceless stops became fricatives (p→f, t→th, k→h) and voiced stops became voiceless",
+    "choices": [
+      "Voiceless stops became fricatives (p→f, t→th, k→h) and voiced stops became voiceless",
+      "All vowels shifted one position upward in the mouth in Proto-Germanic only",
+      "Long vowels became short vowels and short vowels became diphthongs in all branches",
+      "All medial consonants disappeared, leaving Germanic words shorter than Indo-European ones"
+    ],
+    "context": "Three shifts: (1) PIE *p, *t, *k → Germanic *f, *þ, *h (Latin pes/Germanic foot); (2) *b, *d, *g → *p, *t, *k (Latin decem/Germanic ten); (3) *bh, *dh, *gh → *b, *d, *g. Grimm's Law was the first widely accepted demonstration that sound change is systematic, founding historical phonology.",
+    "_drop_reason": "drop_signal:\\bGrimm('s)?\\s+law\\b",
+    "_fk": 12.45,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Karl Verner in 1875 explained certain apparent exceptions to Grimm's Law (such as why 'father' has 'th' but 'brother' has 'dh' in older Germanic). What insight did Verner's Law add?",
+    "answer": "The original Indo-European accent position determined whether some consonants voiced or stayed voiceless",
+    "choices": [
+      "The original Indo-European accent position determined whether some consonants voiced or stayed voiceless",
+      "Grimm's Law applied to consonants only at the start of words, never in the middle",
+      "Loanwords from Latin were exempt because they entered Germanic too late to undergo the shift",
+      "Female speakers preserved older pronunciations longer, creating dialectal variation"
+    ],
+    "context": "Verner discovered that when the accent in Proto-Indo-European fell on a different syllable, the resulting Germanic consonant voiced. This explained the residue Grimm's Law left unaccounted for and reinforced the Neogrammarian principle that sound laws have no exceptions.",
+    "_drop_reason": "drop_signal:\\bGrimm('s)?\\s+law\\b",
+    "_fk": 7.96,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "The neogrammarian hypothesis, articulated by a group of late-19th-century German linguists, held that sound changes happen without exception. Why is this principle methodologically powerful in historical linguistics?",
+    "answer": "If sound change is exceptionless, then every apparent exception demands an explanation — which exposes borrowings, analogy, or further laws",
+    "choices": [
+      "If sound change is exceptionless, then every apparent exception demands an explanation — which exposes borrowings, analogy, or further laws",
+      "It allows linguists to reconstruct any extinct language with absolute certainty",
+      "It eliminates the need for written records when comparing language families",
+      "It proves that all human languages share a single common ancestor by sound correspondence"
+    ],
+    "context": "The principle 'Lautgesetze kennen keine Ausnahme' (sound laws know no exceptions) was the working hypothesis that yielded Verner's Law. Modern historical linguistics has softened it but kept its spirit: regular sound change is the default; deviations need accounting.",
+    "_drop_reason": "drop_signal:\\bneogrammarian\\b",
+    "_fk": 15.29,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Linguists distinguish 'competence' (a speaker's underlying knowledge of grammar) from 'performance' (actual utterances, with hesitations and errors). Who introduced this terminological pair, and how does it relate to a similar distinction by Saussure?",
+    "answer": "Chomsky introduced it in 'Aspects' (1965), echoing Saussure's earlier langue/parole distinction",
+    "choices": [
+      "Chomsky introduced it in 'Aspects' (1965), echoing Saussure's earlier langue/parole distinction",
+      "Saussure introduced it in the Course (1916) and Chomsky borrowed the labels unchanged",
+      "Bloomfield introduced it in Language (1933) as a way to operationalize behaviorism",
+      "Whorf introduced it in the 1930s and Chomsky later renamed Saussure's distinction"
+    ],
+    "context": "The competence/performance split is Chomsky's reformulation. It justifies a grammar focused on idealized native-speaker intuition rather than corpus error patterns. Critics argue it conveniently exempts the theory from real-speech data.",
+    "_drop_reason": "drop_signal:\\bsaussure\\b.{0,200}\\b(langue|parole|synchronic|diachronic|s",
+    "_fk": 14.8,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Charles Hockett's 1960 list of 'design features of language' tried to capture what makes human language distinct. One feature — that linguistic signs do not resemble what they refer to — was named what?",
+    "answer": "Arbitrariness",
+    "choices": [
+      "Arbitrariness",
+      "Discreteness",
+      "Productivity",
+      "Displacement"
+    ],
+    "context": "Hockett's full list (arbitrariness, duality of patterning, productivity, displacement, etc.) refined ideas already in Saussure. 'Tree,' 'arbre,' 'Baum,' and '木' all refer to trees with no acoustic resemblance — the link is conventional. Onomatopoeia is the partial exception.",
+    "_drop_reason": "drop_signal:\\b(hockett|design features)\\b.{0,40}\\blanguage\\b",
+    "_fk": 8.72,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "'Duality of patterning' — another of Hockett's design features — refers to which property of human language?",
+    "answer": "Meaningless units (phonemes) combine into meaningful units (morphemes/words)",
+    "choices": [
+      "Meaningless units (phonemes) combine into meaningful units (morphemes/words)",
+      "Every sentence can express two distinct meanings simultaneously",
+      "Speakers produce language while simultaneously perceiving it from others",
+      "Written and spoken language have different grammars within a single dialect"
+    ],
+    "context": "Phonemes like /b/, /a/, /t/ are themselves meaningless. Recombining them gives 'bat,' 'tab,' 'bath' — meaningful. Two layers of pattern from a finite inventory of sounds. This feature gives language its productive infinity.",
+    "_drop_reason": "drop_signal:\\bduality of patterning\\b",
+    "_fk": 13.86,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Modern syntactic theory describes phrase structure using 'X-bar theory,' originated by Chomsky in the 1970s. The core claim is that every phrase has a parallel internal structure built around what?",
+    "answer": "A head (X) that takes complements and specifiers in a consistent pattern across phrase types",
+    "choices": [
+      "A head (X) that takes complements and specifiers in a consistent pattern across phrase types",
+      "A subject, predicate, and object in strict left-to-right order",
+      "A topic and a comment, with the topic always coming first",
+      "A noun and a verb, with all other parts being optional"
+    ],
+    "context": "NP, VP, PP, AP all share the X-bar template: [Specifier [X' Head Complement]]. The schema unified noun phrases ('the [book of poems]'), verb phrases, prep phrases, and adj phrases under one structural pattern.",
+    "_drop_reason": "drop_signal:\\b(government and binding|x-bar theory|principles and parame",
+    "_fk": 10.63,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Aldus Manutius, the Venetian printer whose Aldine Press began publishing in 1494, introduced one specific punctuation mark that we still use. What did he invent?",
+    "answer": "The semicolon — first appearing in a 1494 Aldine publication of a Latin tract by Pietro Bembo",
+    "choices": [
+      "The semicolon — first appearing in a 1494 Aldine publication of a Latin tract by Pietro Bembo",
+      "The exclamation point — coined as a Latin abbreviation for 'io'",
+      "The em dash — introduced for line-end break in Greek printing",
+      "The asterisk — to mark editorial notes in classical texts"
+    ],
+    "context": "Manutius also helped standardize the modern comma. The italic typeface (1500-1501) was a separate Aldine innovation, designed by Francesco Griffo. The Aldine Press also introduced the small portable book format we now call 'pocket' books.",
+    "_drop_reason": "drop_signal:\\baldus manutius\\b",
+    "_fk": 9.58,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Beowulf, the longest Old English poem (~3,182 lines), survives in a single manuscript — the Nowell Codex, dating to around 1000 CE. It nearly didn't survive at all. What happened to the manuscript?",
+    "answer": "It was damaged in the 1731 Ashburnham House fire, which destroyed many books in Sir Robert Cotton's library",
+    "choices": [
+      "It was damaged in the 1731 Ashburnham House fire, which destroyed many books in Sir Robert Cotton's library",
+      "It was lost during the Norman invasion and only rediscovered in 1962",
+      "It was burned by Henry VIII during the Dissolution of the Monasteries (1536)",
+      "It was bombed during the London Blitz of 1940 and reconstructed from photographs"
+    ],
+    "context": "The Cotton Library fire of 1731 damaged the manuscript's edges; pages have crumbled progressively since. The poem was first transcribed in 1815 by Grimur Jonsson Thorkelin — capturing readings now lost. The British Library holds the original.",
+    "_drop_reason": "drop_signal:\\bbeowulf\\b.{0,120}\\b(manuscript|nowell codex|ashburnham|fir",
+    "_fk": 6.94,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "The 'fictional' language Klingon, created by linguist Marc Okrand for Star Trek III (1984), was designed with specific unusual features. What was deliberately strange about Klingon's grammar?",
+    "answer": "OVS (Object-Verb-Subject) word order, which is one of the rarest patterns in natural human languages",
+    "choices": [
+      "OVS (Object-Verb-Subject) word order, which is one of the rarest patterns in natural human languages",
+      "Lack of any verbs, with all actions expressed as noun phrases",
+      "Only three vowels but 47 consonants, mostly clicks",
+      "All sentences must end with one of seven obligatory tone markers"
+    ],
+    "context": "Okrand chose OVS specifically because it sounded alien. Klingon also uses retroflex consonants and uvular stops uncommon in English. The Klingon Language Institute has translated Hamlet ('taH pagh, taHbe' = 'to be or not to be').",
+    "_drop_reason": "drop_signal:\\bklingon\\b",
+    "_fk": 11.53,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "J.R.R. Tolkien — a professional philologist before he was a novelist — constructed at least 15 languages for Middle-earth. His two most developed were Quenya and Sindarin. What real-world languages did Tolkien base them on?",
+    "answer": "Quenya on Finnish (especially its phonology); Sindarin on Welsh",
+    "choices": [
+      "Quenya on Finnish (especially its phonology); Sindarin on Welsh",
+      "Quenya on Latin; Sindarin on Greek",
+      "Quenya on Old Norse; Sindarin on Old English",
+      "Quenya on Esperanto; Sindarin on Klingon"
+    ],
+    "context": "Tolkien wrote: 'The invention of languages is the foundation. The 'stories' were made rather to provide a world for the languages than the reverse.' His Oxford day job was Anglo-Saxon literature. Mythopoeic art followed philology, not the other way around.",
+    "_drop_reason": "drop_signal:\\btolkien.{0,80}\\b(quenya|sindarin|elvish|professional philo",
+    "_fk": 5.95,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Steven Pinker's 1994 book 'The Language Instinct' popularized a Chomskyan view of language for a general audience. What central claim did Pinker defend?",
+    "answer": "Language is a biological adaptation — an instinct — produced by natural selection, not just a cultural invention",
+    "choices": [
+      "Language is a biological adaptation — an instinct — produced by natural selection, not just a cultural invention",
+      "Language is uniquely human and unique to one specific population on Earth",
+      "Language is fundamentally identical to nonverbal animal communication",
+      "Language exists only because of education systems and would vanish without them"
+    ],
+    "context": "Pinker argued against Chomsky on one point: Chomsky has been ambiguous about whether language is an adaptation by natural selection, while Pinker (with Paul Bloom in a 1990 paper) argued it must be. The 'language instinct' phrase recalls Darwin's claim that humans have an instinctive tendency to acquire language.",
+    "_drop_reason": "drop_signal:\\bsteven pinker\\b.{0,200}\\b(language instinct|chomsky|biolog",
+    "_fk": 8.9,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Steven Pinker's 1999 book 'Words and Rules' argues that the English past tense reveals two distinct mental mechanisms. What are they?",
+    "answer": "A rule (add -ed) for regular verbs, and rote memorization of stored forms for irregular ones (went, ran, swam)",
+    "choices": [
+      "A rule (add -ed) for regular verbs, and rote memorization of stored forms for irregular ones (went, ran, swam)",
+      "Two separate brain regions for present and past tense regardless of regularity",
+      "Two ways of pronouncing -ed (voiced /d/ and voiceless /t/) hardwired into the cortex",
+      "Two grammatical genders that English used to have but lost"
+    ],
+    "context": "Pinker's dual-mechanism theory was a major challenge to single-mechanism connectionist models (which proposed one neural network handles both). The debate remains active. Words-and-rules predicts the past tense of a novel verb 'to spling' will be 'splinged' (regular rule), not 'splung' (irregular analogy).",
+    "_drop_reason": "drop_signal:\\bsteven pinker\\b.{0,200}\\b(language instinct|chomsky|biolog",
+    "_fk": 5.92,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "The 'wug test,' designed by linguist Jean Berko in 1958, has children name pictures of made-up creatures and produce plural forms ('This is a wug. Now there are two ___ '). What does the test demonstrate?",
+    "answer": "Children apply pluralization rules generatively — they know the rule, not memorized plurals",
+    "choices": [
+      "Children apply pluralization rules generatively — they know the rule, not memorized plurals",
+      "Children mostly fail to produce 'wugs' until age eight",
+      "Children prefer irregular plurals over regular ones in invented words",
+      "Children invent new plural endings ('wugii,' 'wugen') for unfamiliar words"
+    ],
+    "context": "Most preschool children say 'wugs' without prompting. The test is foundational in developmental linguistics: children clearly internalize productive rules, not just memorize specific forms. Berko's PhD work was at Harvard; the wug image (a small blue blob with feet) is iconic.",
+    "_drop_reason": "drop_signal:\\bwug test\\b",
+    "_fk": 5.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "J.L. Austin's 1955 lectures (published posthumously in 1962 as 'How to Do Things with Words') introduced what concept?",
+    "answer": "Speech acts — utterances that perform actions rather than describe them ('I now pronounce you married,' 'I promise')",
+    "choices": [
+      "Speech acts — utterances that perform actions rather than describe them ('I now pronounce you married,' 'I promise')",
+      "Synchronic grammar — language at a single moment of time",
+      "Generative phonology — the system of rules deriving surface pronunciations",
+      "Universal grammar — the innate language acquisition device"
+    ],
+    "context": "Austin distinguished locution (literal meaning), illocution (the act performed in saying), and perlocution (the act's effect on hearers). 'I do' at a wedding performs the marriage — it doesn't describe one. John Searle later developed and systematized speech-act theory.",
+    "_drop_reason": "drop_signal:\\bj\\.l\\.?\\s*austin\\b",
+    "_fk": 6.13,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'comparative method' in historical linguistics?",
+    "answer": "Systematic comparison of cognate words across related languages to reconstruct the parent (proto-) language",
+    "choices": [
+      "Systematic comparison of cognate words across related languages to reconstruct the parent (proto-) language",
+      "Polling speakers to rate which language they consider most prestigious",
+      "Comparing the frequencies of grammatical structures across language families",
+      "Comparing literacy rates between countries that share an alphabet"
+    ],
+    "context": "The comparative method was developed in the 19th century. From systematic correspondences (Latin p ~ English f, in pater/father), linguists reconstruct Proto-Indo-European forms (*pətēr). The method does not allow reaching back beyond about 8,000-10,000 years; older relationships are debated.",
+    "_drop_reason": "drop_signal:\\bcomparative method\\b.{0,40}\\b(historical linguistics|recon",
+    "_fk": 12.61,
+    "_old_tier": 5
+  }
+]
