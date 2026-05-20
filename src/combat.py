@@ -226,6 +226,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         else:
             base = roll('1d4')
 
+        # Weakened / frozen: halve player attack damage. Both effects
+        # describe "attack damage halved" / "encased in ice." Previously
+        # NEITHER was wired for the player — applied by 30+ monsters but
+        # did nothing.
+        if player.has_effect('weakened') or player.has_effect('frozen'):
+            base = max(1, base // 2)
+
         # Mastery hooks (chain-5 unlocks on uniques)
         _mastery = _weapon_mastery(player, weapon)
 

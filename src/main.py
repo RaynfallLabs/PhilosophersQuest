@@ -1577,6 +1577,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._advance_turn()
                 return
 
+        # Frozen: encased in ice — skip every other turn (same as slowed).
+        # Also halves attack damage at combat use-site (see combat.player_attack).
+        if self.player.has_effect('frozen'):
+            self._frozen_skip = not getattr(self, '_frozen_skip', False)
+            if self._frozen_skip:
+                self.add_message("Ice locks your limbs — you cannot move!", 'warning')
+                self._advance_turn()
+                return
+
         # Fumbling: 20% chance to waste turn
         if self.player.has_effect('fumbling') and random.random() < 0.20:
             self.add_message("You stumble and waste your turn!", 'warning')
