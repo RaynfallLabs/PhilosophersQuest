@@ -15,11 +15,26 @@ def _weapon_mastery(player, weapon) -> dict | None:
 
     Used to inject chain-5-earned bonuses (Excalibur +0.25 multipliers, etc.) at
     damage-calc time without touching the weapon's base stats.
+
+    Checks BOTH per-id masteries (uniques) AND class masteries (commons —
+    iron shortsword etc. get +1 damage via class blessing).
     """
     if weapon is None:
         return None
+    # Per-id mastery first (uniques)
     masteries = getattr(player, 'unlocked_masteries', None) or {}
-    return masteries.get(getattr(weapon, 'id', None))
+    m = masteries.get(getattr(weapon, 'id', None))
+    if m:
+        return m
+    # Fall back to class mastery (commons)
+    class_masteries = getattr(player, 'unlocked_class_masteries', None) or {}
+    if class_masteries:
+        try:
+            from class_masteries import get_mastery_class
+            return class_masteries.get(get_mastery_class(weapon))
+        except Exception:
+            return None
+    return None
 
 
 def _tag_match(monster, tag: str) -> bool:

@@ -341,14 +341,17 @@ def default_blessing_for_class(class_id: str, item) -> dict | None:
     """
     from items import Accessory, Wand, Scroll, Spellbook, Potion, Weapon, Armor, Shield
     if isinstance(item, Weapon):
-        # Small, lazy bonus: +5% damage from any weapon of this exact id+material
-        # class. Evaluated at use-site (combat.py) by checking
-        # unlocked_class_masteries.
-        return {'kind': 'class_weapon_damage_bonus', 'value': 0.05, 'scope': 'class',
-                'desc': f"You know the {class_id.replace('_', ' ')} — its damage is 5% sharper in your hands."}
+        # Flat +1 damage per hit. Multiplicative bonuses round to zero on
+        # low-damage weapons; flat +1 is always visible. Reuses the existing
+        # 'weapon_base_damage_bonus' kind handler in combat._weapon_mastery
+        # path (extended to read class masteries too).
+        return {'kind': 'weapon_base_damage_bonus', 'value': 1, 'scope': 'class',
+                'desc': f"You know the {class_id.replace('_', ' ')} — +1 flat damage on every hit."}
     if isinstance(item, Armor):
-        return {'kind': 'class_armor_resist_bonus', 'value': 0.05, 'scope': 'class',
-                'desc': f"You wear the {class_id.replace('_', ' ')} as if born to it — +5% physical resistance."}
+        # Flat -1 incoming damage reduction. Same reasoning — multiplicative
+        # rounding makes 5% invisible at low damage.
+        return {'kind': 'class_armor_damage_reduction', 'value': 1, 'scope': 'class',
+                'desc': f"You wear the {class_id.replace('_', ' ')} as if born to it — -1 incoming damage."}
     if isinstance(item, Shield):
         return {'kind': 'class_shield_ac_bonus', 'value': 1, 'scope': 'class',
                 'desc': f"The {class_id.replace('_', ' ')} sits true on your arm — +1 AC bonus when held."}

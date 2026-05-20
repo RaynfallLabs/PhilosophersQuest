@@ -184,6 +184,20 @@ class Player:
             elem = fams.get('elemental')
             if elem and elem.get('kind') == 'resist_elemental':
                 flat_reduction += int(elem.get('value', 0))
+        # Class-mastery flat reduction from equipped armor — physical-only.
+        # Each equipped armor piece of a mastered class contributes its value.
+        if damage_type == 'physical':
+            class_masteries = getattr(self, 'unlocked_class_masteries', {}) or {}
+            if class_masteries:
+                try:
+                    from class_masteries import get_mastery_class
+                    for armor_piece in getattr(self, 'armor_slots', []) or []:
+                        if armor_piece:
+                            m = class_masteries.get(get_mastery_class(armor_piece))
+                            if m and m.get('kind') == 'class_armor_damage_reduction':
+                                flat_reduction += int(m.get('value', 0))
+                except Exception:
+                    pass
         amount = max(0, amount - flat_reduction)
 
         # Fractional resistance: status/accessory effects x armor resistances
@@ -473,6 +487,16 @@ class Player:
             getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
             if self.shield else 0
         )
+        # Class-mastery: +1 AC if shield's class has been mastered.
+        if self.shield:
+            try:
+                from class_masteries import get_mastery_class
+                cls_m = (getattr(self, 'unlocked_class_masteries', {}) or {}).get(
+                    get_mastery_class(self.shield))
+                if cls_m and cls_m.get('kind') == 'class_shield_ac_bonus':
+                    shield_bonus += int(cls_m.get('value', 0))
+            except Exception:
+                pass
         # Blessed armor/shield: +1 AC per blessed piece
         blessed_bonus = sum(
             1 for s in self.armor_slots
