@@ -13980,5 +13980,905 @@
       "Fallacies divide into formal logical errors remaining real and informal linguistic ones that dissolve. Diagnosing formal refutes; informal shows confusion. Both kinds remain distinct without further interaction."
     ],
     "context": "Cavell on Wittgenstein: philosophical disagreements often turn out to be disagreements about what should count as a relevant consideration. McDowell on disjunctivism: rivals often share 'fallacy' charges that mask a deeper dispute about how to carve up the conceptual terrain at issue."
+  },
+  {
+    "tier": 1,
+    "question": "Sam says 'we should eat raw meat because cavemen ate it that way.' What is the problem with his reason?",
+    "answer": "Just because something is old or 'natural' does not make it a good idea.",
+    "choices": [
+      "Just because something is old or 'natural' does not make it a good idea.",
+      "Cavemen ate the wrong kinds of meat for kids who are still growing up.",
+      "Sam should be vegan instead, since plants are better than any meat is.",
+      "Cavemen are not real and never ate any kind of food in the past at all."
+    ],
+    "context": "Saying 'it is natural' or 'people used to do it' is not a real reason. Lots of natural things hurt us. Lots of new ideas are great."
+  },
+  {
+    "tier": 1,
+    "question": "An ad says 'this drink is 100% natural, so it must be healthy.' Why is this NOT a strong reason to drink it?",
+    "answer": "Lots of natural things, like poison berries, are very bad for you.",
+    "choices": [
+      "Lots of natural things, like poison berries, are very bad for you.",
+      "The drink might taste bad even though it is healthy in the end.",
+      "The drink should also be cold, not just natural, to be any good.",
+      "Most drinks in stores are made up of water, so the ad is lying."
+    ],
+    "context": "'Natural' on a label means almost nothing. Some natural things help you. Some hurt you. The word by itself is not a reason."
+  },
+  {
+    "tier": 1,
+    "question": "Lily has been in line for an hour. The line still has not moved. She says 'I waited so long, I can't leave now!' What is wrong with that thinking?",
+    "answer": "The hour she spent is already gone — staying longer will not bring it back.",
+    "choices": [
+      "The hour she spent is already gone — staying longer will not bring it back.",
+      "She should have brought a book, but it is too late to go grab one.",
+      "She is correct — once you start a line, you can never leave at all.",
+      "She is wrong because lines are bad and nobody should ever wait in any."
+    ],
+    "context": "This trap is called sunk cost. The hour is gone no matter what she picks. The real question is what is best to do NOW."
+  },
+  {
+    "tier": 1,
+    "question": "Ben starts a puzzle. After an hour, it is clear half the pieces are missing. He says 'I already started, so I HAVE to finish.' Is this good thinking?",
+    "answer": "No — if the puzzle cannot finish, his time is better spent on something else.",
+    "choices": [
+      "No — if the puzzle cannot finish, his time is better spent on something else.",
+      "Yes — once you start any puzzle, the rules say you have to finish.",
+      "No — he should keep trying because missing pieces will show up later.",
+      "Yes — quitting puzzles makes you weak at every other game in life."
+    ],
+    "context": "Time you already spent is gone. The smart question is 'what is the best use of my time RIGHT NOW?', not 'how much did I already spend?'"
+  },
+  {
+    "tier": 1,
+    "question": "A shirt is marked $100, then says 'ON SALE for $40.' You don't really need a shirt. Is $40 a good deal?",
+    "answer": "Not really — if you don't need it, $40 is still $40 out of your pocket.",
+    "choices": [
+      "Not really — if you don't need it, $40 is still $40 out of your pocket.",
+      "Yes — any sale is a good deal, no matter what the item really is.",
+      "Yes — saving $60 is the same as earning $60, so you are richer.",
+      "No — the shirt is still too cheap and the store is tricking you."
+    ],
+    "context": "The big $100 'before' price is a trick to make $40 feel small. The right question is 'do I need this for $40?', not 'is it on sale?'"
+  },
+  {
+    "tier": 1,
+    "question": "A kid asks 'can I have 50 cookies?' Mom says no. He says 'how about 20?' Mom says yes — but 20 is still a lot! What did the kid do?",
+    "answer": "He used a big first number to make a smaller number feel okay.",
+    "choices": [
+      "He used a big first number to make a smaller number feel okay.",
+      "He used his words wisely and made his mom feel happy in the end.",
+      "He did the right thing because asking for less is always polite.",
+      "He used math to figure out exactly how many cookies were fair."
+    ],
+    "context": "Starting with a huge number makes the smaller second number look small. Stop and ask: would 20 cookies feel like a lot without the first big number?"
+  },
+  {
+    "tier": 1,
+    "question": "Pat thinks 'dogs hate cats.' He sees one dog chase one cat and says 'see, I was right!' But he ignored three dogs that ignored cats yesterday. What is he doing?",
+    "answer": "He is only counting what fits his idea and skipping what does not.",
+    "choices": [
+      "He is only counting what fits his idea and skipping what does not.",
+      "He is right because once you see a dog chase a cat the rule is proved.",
+      "He is wrong because cats actually hate dogs, not the other way around.",
+      "He is being smart by ignoring boring days when nothing happened at all."
+    ],
+    "context": "We tend to notice what fits our ideas and miss what doesn't. Real thinkers force themselves to look at what does NOT fit."
+  },
+  {
+    "tier": 1,
+    "question": "Maya is sure her lucky shirt helps her score in soccer. She lists the games she won wearing it. She forgets the games she lost in it. What is she doing?",
+    "answer": "She is remembering only the wins that match her idea about the shirt.",
+    "choices": [
+      "She is remembering only the wins that match her idea about the shirt.",
+      "She is being smart, because winning games is what matters to her.",
+      "She is wrong because the lucky shirt only works on rainy days too.",
+      "She is using her shirt to show off and the other kids are jealous."
+    ],
+    "context": "If you only count the times your idea worked, you can prove almost any silly idea. You have to count the misses too."
+  },
+  {
+    "tier": 1,
+    "question": "You flip a coin five times and get tails every time. Does this mean heads is 'due' on the next flip?",
+    "answer": "No — each flip is fresh. The coin does not remember what just happened.",
+    "choices": [
+      "No — each flip is fresh. The coin does not remember what just happened.",
+      "Yes — five tails in a row is too much, so heads has to come next.",
+      "Yes — the coin owes you a heads after making you wait so long.",
+      "No — five tails proves the coin can only show tails from now on."
+    ],
+    "context": "Coins, dice, and lottery balls have no memory. A run of one result does not change what comes next. Each flip is its own thing."
+  },
+  {
+    "tier": 1,
+    "question": "Asher rolls a die six times and never gets a 6. He says 'a 6 has to come up next, it is owed to me!' Is he right?",
+    "answer": "No — the die does not know what just rolled. Each roll is the same chance.",
+    "choices": [
+      "No — the die does not know what just rolled. Each roll is the same chance.",
+      "Yes — the die owes him a 6 since he has been waiting so long now.",
+      "Yes — six rolls without a 6 means the die is broken and needs fixed.",
+      "No — but only because he is using the wrong die for the game."
+    ],
+    "context": "Dice do not 'owe' anyone. Past rolls do not change future rolls. The die is just as likely to roll any number every single time."
+  },
+  {
+    "tier": 1,
+    "question": "Two kids broke a window. One did it on purpose. One did it by accident. Should they get the same punishment?",
+    "answer": "Probably not — what they MEANT matters when we decide what is fair.",
+    "choices": [
+      "Probably not — what they MEANT matters when we decide what is fair.",
+      "Yes — broken is broken, and the result is the only thing that matters.",
+      "Yes — both kids are equally bad because windows are equal to each other.",
+      "No — the one who broke it on purpose should be sent home for one week."
+    ],
+    "context": "Two things that LOOK the same can be very different when you ask 'what was the person thinking when they did it?' Same result, different cases."
+  },
+  {
+    "tier": 1,
+    "question": "Riley says 'I yelled at my sister, and Mom yelled at me. So we both did the same thing!' What is Riley missing?",
+    "answer": "Mom was correcting Riley. Riley was being mean. Yelling is not always the same.",
+    "choices": [
+      "Mom was correcting Riley. Riley was being mean. Yelling is not always the same.",
+      "Riley is right — any time two people yell, the yelling is exactly equal.",
+      "Riley is wrong because moms are not allowed to yell at kids at all.",
+      "Riley is right — because the louder yell is always the meaner one."
+    ],
+    "context": "Two actions can LOOK the same on the outside but be very different in why they happened. Calling them equal hides what really went on."
+  },
+  {
+    "tier": 1,
+    "question": "The new kid used to live in another country. Some kids say his ideas don't count because 'he's not from here.' What is wrong with that?",
+    "answer": "Where an idea CAME FROM does not tell you if the idea is right or wrong.",
+    "choices": [
+      "Where an idea CAME FROM does not tell you if the idea is right or wrong.",
+      "His ideas don't count, because only kids from here can have good ideas.",
+      "His ideas count more, because new kids always know more than old kids do.",
+      "His ideas should be ignored until he learns to talk like the other kids."
+    ],
+    "context": "An idea is good or bad on its own. Who said it, or where they came from, does not change whether it is true."
+  },
+  {
+    "tier": 1,
+    "question": "Jen says 'this rule was made by the boring teacher, so it must be a boring rule.' What is wrong with the way she is thinking?",
+    "answer": "The rule could be smart or silly. WHO made it does not decide.",
+    "choices": [
+      "The rule could be smart or silly. WHO made it does not decide.",
+      "She is right because boring people only make boring rules in their lives.",
+      "She is wrong because boring teachers cannot make rules at any school.",
+      "She is right but only on days when the teacher is feeling extra tired."
+    ],
+    "context": "Judging an idea by who said it skips the real question: is the idea any good? Even people you don't like can have good ideas."
+  },
+  {
+    "tier": 1,
+    "question": "Lee broke a vase. When his sister tells Mom, Lee yells 'YEAH, but what about when SHE broke the lamp!?' Is that a good defense?",
+    "answer": "No — his sister's old mistake does not undo what Lee just did.",
+    "choices": [
+      "No — his sister's old mistake does not undo what Lee just did.",
+      "Yes — bringing up her past lamp means his vase does not count at all.",
+      "Yes — moms are only allowed to be mad at one kid each day, not two.",
+      "No — but only because his sister broke a more expensive lamp than his."
+    ],
+    "context": "Pointing at someone else's mistake does not fix yours. This trick is called 'whataboutism' — it dodges the real question."
+  },
+  {
+    "tier": 1,
+    "question": "Mom asks Tim to clean his room. Tim says 'but my brother's room is messy TOO!' Is this a good reply?",
+    "answer": "No — what his brother does is a different question from Tim's own room.",
+    "choices": [
+      "No — what his brother does is a different question from Tim's own room.",
+      "Yes — if one kid is messy, no other kid has to clean their own room.",
+      "Yes — brothers must always be in the same trouble at the same time.",
+      "No — but only if his brother's room is way messier than Tim's is."
+    ],
+    "context": "Pointing at another person to get out of doing your part is a classic dodge. The real question — 'is Tim's room messy?' — is still right there."
+  },
+  {
+    "tier": 1,
+    "question": "Carlos says 'prove dragons aren't real.' You say nobody has ever found one. He says 'well, maybe they hide.' You say there is no sign anywhere. He says 'maybe they're invisible.' What is Carlos doing?",
+    "answer": "He keeps changing the test so nothing can ever count as proof.",
+    "choices": [
+      "He keeps changing the test so nothing can ever count as proof.",
+      "He is being very smart and asking great questions about dragons today.",
+      "He is right because we can never prove anything about anything at all.",
+      "He is wrong because dragons used to be real and only stopped recently."
+    ],
+    "context": "When every answer you give gets met with a new excuse, the other person is 'moving the goalposts.' They never planned to be convinced."
+  },
+  {
+    "tier": 1,
+    "question": "Sara doubts her brother saw a deer in the yard. He shows a photo. She says 'photos can be faked.' He shows hoof prints. She says 'a dog could make those.' What is Sara doing?",
+    "answer": "She is changing what would count as proof every time he brings some.",
+    "choices": [
+      "She is changing what would count as proof every time he brings some.",
+      "She is being smart by not believing everything she sees in life today.",
+      "She is right because deer are not real and her brother is making it up.",
+      "She is wrong because deer in yards is the most normal thing on Earth."
+    ],
+    "context": "If no answer is ever good enough, you cannot really win the talk. Honest thinkers say upfront what would change their minds."
+  },
+  {
+    "tier": 1,
+    "question": "'Why do we do it this way?' 'Because we have ALWAYS done it this way.' Is that a strong reason by itself?",
+    "answer": "No — old habits can be smart, but 'we always have' is not a real reason.",
+    "choices": [
+      "No — old habits can be smart, but 'we always have' is not a real reason.",
+      "Yes — old habits are always smart, just because they have lasted long.",
+      "Yes — only doing new things is for kids and silly people, never us.",
+      "No — we should only do brand-new things and skip every old habit."
+    ],
+    "context": "Some old habits are wise. Some are silly. 'We always have' does not tell you which one this is. You still have to ask WHY."
+  },
+  {
+    "tier": 1,
+    "question": "A town has a rule that boys cannot bake. People say 'we have done it that way for 100 years.' Is the rule a good rule?",
+    "answer": "Not just because it is old — old rules can still be wrong and unfair.",
+    "choices": [
+      "Not just because it is old — old rules can still be wrong and unfair.",
+      "Yes — any rule that is 100 years old must be right by now today.",
+      "Yes — boys really cannot bake, no matter what they do or learn or try.",
+      "No — but only because we should also stop girls from baking too soon."
+    ],
+    "context": "Old does not mean right. Lots of old rules turned out to be unfair. Lots of new ideas turned out to be better. Age is not the test."
+  },
+  {
+    "tier": 1,
+    "question": "Dad asks 'have you stopped sneaking cookies before dinner?' You never DID sneak cookies. Why is this question tricky?",
+    "answer": "Saying yes OR no makes it sound like you used to sneak cookies.",
+    "choices": [
+      "Saying yes OR no makes it sound like you used to sneak cookies.",
+      "It is a normal question and you should answer yes very quickly.",
+      "Dad is testing you and you should give him a hug to dodge it.",
+      "The right answer is 'cookies,' since cookies were named in the question."
+    ],
+    "context": "A loaded question hides a guess inside it. The fair move is to step out of the trap: 'I never sneaked cookies in the first place.'"
+  },
+  {
+    "tier": 1,
+    "question": "A reporter asks the mayor 'why do you hate our schools so much?' The mayor does NOT hate the schools. Why is the question unfair?",
+    "answer": "It sneaks in a claim — that he hates schools — before he can answer it.",
+    "choices": [
+      "It sneaks in a claim — that he hates schools — before he can answer it.",
+      "Reporters are not allowed to ask any mayor any questions in any state.",
+      "The mayor should answer the question quickly with a yes or with a no.",
+      "Schools are boring and the question is not really about schools at all."
+    ],
+    "context": "A loaded question forces the other person to either accept a claim or look like they're dodging. The right move is to call out the hidden claim first."
+  },
+  {
+    "tier": 1,
+    "question": "Tim met one rude kid from Oakville. He says 'I guess kids in Oakville are all rude!' What is wrong with this?",
+    "answer": "One kid is not enough to make a rule about a whole town of people.",
+    "choices": [
+      "One kid is not enough to make a rule about a whole town of people.",
+      "He is right — one kid is a perfect sample of every other person there.",
+      "He is wrong — kids in Oakville are very nice, not rude, you know.",
+      "He should meet two kids from Oakville before he is allowed to decide."
+    ],
+    "context": "Judging a whole group by one person is a hasty leap. Even a few people are not enough to know what a whole group is like."
+  },
+  {
+    "tier": 1,
+    "question": "Jenna tried two video games last year and didn't like either. She says 'I HATE all video games!' What is wrong with this jump?",
+    "answer": "Two games are not enough to know about every game in the world.",
+    "choices": [
+      "Two games are not enough to know about every game in the world.",
+      "She is right — two tries is plenty to know what all games are like.",
+      "She is wrong — she liked one of them, so she is lying to herself.",
+      "She should try three more games and then say it loudly all again."
+    ],
+    "context": "Two games out of thousands is a tiny sample. Saying 'all of them' after trying so few is a hasty jump."
+  },
+  {
+    "tier": 1,
+    "question": "Owen's plant died after watering it twice. He says 'I can't grow ANYTHING!' What might his big sister say?",
+    "answer": "Two times is not enough to learn — give it more tries before you decide.",
+    "choices": [
+      "Two times is not enough to learn — give it more tries before you decide.",
+      "She should agree, because two tries is plenty for any kid to learn.",
+      "She should say 'plants always die,' so he should not try again at all.",
+      "She should say he should never water plants and try only sunlight next."
+    ],
+    "context": "Drawing a big rule from two tries is hasty. You usually need more tries — and to think about WHY each one went the way it did."
+  },
+  {
+    "tier": 1,
+    "question": "Dad says 'if I let you stay up ONE late night, soon you'll be up all night EVERY night and your grades will fail!' What is wrong with how he is thinking?",
+    "answer": "He is skipping all the small steps and jumping to the worst ending.",
+    "choices": [
+      "He is skipping all the small steps and jumping to the worst ending.",
+      "He is right — one late night really does ruin every school year ahead.",
+      "He is right — kids who stay up late always grow up to drop out fast.",
+      "He is wrong because late nights are great for kids and parents both."
+    ],
+    "context": "A slippery slope says one small step leads straight to a terrible end, with no stops along the way. Most slopes are not that slick."
+  },
+  {
+    "tier": 1,
+    "question": "'If we let kids wear hats in class, soon they'll wear costumes, then they'll bring pets, then nobody will learn anything!' What is the problem with this?",
+    "answer": "Each step is treated like it must happen — but each step is its own choice.",
+    "choices": [
+      "Each step is treated like it must happen — but each step is its own choice.",
+      "It is correct — once hats are allowed, costumes always follow soon after.",
+      "It is correct — pets in class is one tiny step past hats in class.",
+      "It is wrong because hats are great and pets in class would also be great."
+    ],
+    "context": "A slippery slope skips the brakes. In real life, we can stop at any step we want. The big bad ending is not a sure thing."
+  },
+  {
+    "tier": 1,
+    "question": "Every kid in class is wearing the new sneaker. Sara thinks the shoe is ugly. Her friend says 'just get them, EVERYONE has them!' Is 'everyone has them' a good reason for Sara to buy?",
+    "answer": "No — what other kids do says nothing about whether the shoe is right for her.",
+    "choices": [
+      "No — what other kids do says nothing about whether the shoe is right for her.",
+      "Yes — once enough kids do a thing, every other kid has to do it too.",
+      "Yes — fitting in is the only thing that ever matters in life at all.",
+      "No — but only because she should pick shoes that are even more ugly."
+    ],
+    "context": "'Everyone is doing it' is called the bandwagon. It can feel strong, but a big crowd doing something dumb does not make the thing smart."
+  },
+  {
+    "tier": 1,
+    "question": "A video has a million likes. Tom says 'a million people like it, so it MUST be good.' What is wrong with using likes this way?",
+    "answer": "Lots of people liking a thing does not prove the thing is any good.",
+    "choices": [
+      "Lots of people liking a thing does not prove the thing is any good.",
+      "He is right — once a video gets a million likes, the video is great.",
+      "He is right because likes are how truth gets measured online nowadays.",
+      "He is wrong because likes always mean the video is bad and dumb forever."
+    ],
+    "context": "Crowds can be wrong. Lots of likes mean lots of people clicked — not that the thing is good. You still have to think for yourself."
+  },
+  {
+    "tier": 1,
+    "question": "Two kids talk about saving water. One says 'we should turn off the tap when we brush.' The other says 'who CARES — your sneakers are ugly!' What just happened?",
+    "answer": "He attacked the kid's shoes instead of answering the water idea.",
+    "choices": [
+      "He attacked the kid's shoes instead of answering the water idea.",
+      "He made a great point about how shoes change how water works at home.",
+      "He won the argument by being the louder person in the room today.",
+      "He is right because kids with ugly shoes can never have good ideas."
+    ],
+    "context": "Attacking the person instead of the idea is a dodge. It feels like winning, but it skips the real question."
+  },
+  {
+    "tier": 1,
+    "question": "A kid suggests a new lunch game. Another kid says 'we shouldn't play it — YOUR DAD is weird!' What did he just do?",
+    "answer": "He attacked the kid's dad instead of saying anything about the game.",
+    "choices": [
+      "He attacked the kid's dad instead of saying anything about the game.",
+      "He made a great point because weird dads cannot have good game ideas.",
+      "He told the truth, and the truth always wins any argument right away.",
+      "He is the winner because his own dad is less weird than the other dad."
+    ],
+    "context": "Attacking someone's family, looks, or mood instead of their idea is a way of saying 'I can't beat your idea, so I'll dodge it instead.'"
+  },
+  {
+    "tier": 1,
+    "question": "Liz tells a joke during class. The teacher says 'you laugh too much, so your joke wasn't funny.' Why is this a strange reply?",
+    "answer": "Whether the joke was funny does not depend on how often Liz laughs.",
+    "choices": [
+      "Whether the joke was funny does not depend on how often Liz laughs.",
+      "The teacher is right because kids who laugh a lot never tell good jokes.",
+      "The teacher is right because Liz should not have told a joke in class.",
+      "The teacher is wrong because teachers cannot ever talk about jokes today."
+    ],
+    "context": "Attacking a person's habits or mood — instead of looking at the thing they said — sidesteps the real point."
+  },
+  {
+    "tier": 1,
+    "question": "Mia says 'let's save some allowance.' Her brother yells 'YOU WANT US TO HAVE NO FUN EVER!' What did he just do?",
+    "answer": "He twisted her words into something bigger and sillier than she said.",
+    "choices": [
+      "He twisted her words into something bigger and sillier than she said.",
+      "He read her mind perfectly and got the real meaning of her plan.",
+      "He told the truth — saving any money means no fun is ever allowed.",
+      "He was kind and helpful and showed her what saving really means."
+    ],
+    "context": "This dodge is called a strawman. You make the other person's idea sound silly, then knock down the silly version instead of the real one."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says 'maybe we should have less candy at lunch.' Another kid yells 'YOU WANT TO BAN ALL CANDY FOREVER!' What is wrong?",
+    "answer": "The second kid made a small idea ('less') into a giant one ('ban all').",
+    "choices": [
+      "The second kid made a small idea ('less') into a giant one ('ban all').",
+      "Nothing — that is exactly what the first kid said in her clear words.",
+      "Everything — but only because no candy is the right answer in school.",
+      "Nothing — kids are not allowed to talk about candy at any meal today."
+    ],
+    "context": "Twisting a small idea into a giant scary one is a way to knock down something nobody actually said. Listen to the real idea first."
+  },
+  {
+    "tier": 1,
+    "question": "Every time Asher wears his red socks, his team wins. He says 'my red socks make us win!' What is the problem?",
+    "answer": "Two things happening together does not mean one of them caused the other.",
+    "choices": [
+      "Two things happening together does not mean one of them caused the other.",
+      "He is right — socks are the strongest thing in any soccer game ever.",
+      "He should also wear a red hat to double the power of the win effect.",
+      "He is wrong because his socks are blue, not red, in the first place."
+    ],
+    "context": "Just because two things happen near each other does not mean one caused the other. The wins probably came from playing well."
+  },
+  {
+    "tier": 1,
+    "question": "Mia ate cereal, then aced her test. She says 'cereal makes you smart!' What is wrong with her reason?",
+    "answer": "One breakfast on one day does not prove cereal made her smart.",
+    "choices": [
+      "One breakfast on one day does not prove cereal made her smart.",
+      "She is right — cereal is the smartest food and makes kids get an A.",
+      "She is wrong because cereal makes kids dumb, not smart, in the morning.",
+      "She is right but only because she ate cereal with extra sugar in it."
+    ],
+    "context": "Two things happening one after the other does not prove one caused the other. A test score depends on many things, not just breakfast."
+  },
+  {
+    "tier": 1,
+    "question": "Sam says 'this book is the best because it is the best.' Why is this NOT a real reason?",
+    "answer": "He used the thing he was supposed to prove as his own reason for it.",
+    "choices": [
+      "He used the thing he was supposed to prove as his own reason for it.",
+      "He is right because saying it twice makes a thing twice as true now.",
+      "He is wrong because the book is the worst, not the best, on the shelf.",
+      "He is right because all best things have to be the best to start with."
+    ],
+    "context": "Saying 'X is true because X is true' goes in a circle. A real reason would step OUT of the claim and bring in something else."
+  },
+  {
+    "tier": 1,
+    "question": "Deep thinkers — sometimes called thinkers about thinking — ask big questions: what is real? what is fair? what is true? What kind of thing IS this kind of asking?",
+    "answer": "Stepping back from a day to ask why we live the way we do.",
+    "choices": [
+      "Stepping back from a day to ask why we live the way we do.",
+      "Looking up answers in a book that has been written long ago by people.",
+      "Memorizing a list of right and wrong answers as fast as you can do.",
+      "Watching what other people say and copying them so you fit in better."
+    ],
+    "context": "Deep thinkers do not just want facts — they want to step back and ask why we live the way we do, and what we should care about."
+  },
+  {
+    "tier": 1,
+    "question": "Why do deep thinkers keep asking big questions, even when they can't always reach a final answer?",
+    "answer": "The asking itself helps you live in a smarter and more thoughtful way.",
+    "choices": [
+      "The asking itself helps you live in a smarter and more thoughtful way.",
+      "They are paid by the government to ask questions, even silly ones.",
+      "They want to win a prize for asking the most questions in a row.",
+      "They have nothing else to do all day and want to look very busy."
+    ],
+    "context": "An answer can be useful. But thinking about a hard question can change HOW you look at the world, even when you never reach the end."
+  },
+  {
+    "tier": 1,
+    "question": "Mia says 'I just KNOW broccoli is the worst!' Her dad asks her WHY. What is her dad really asking for?",
+    "answer": "A reason — the thinking behind her view, not just the view by itself.",
+    "choices": [
+      "A reason — the thinking behind her view, not just the view by itself.",
+      "He wants her to shout louder so he can really hear her words today.",
+      "He wants her to copy what her older brother thinks about broccoli now.",
+      "He wants her to change her view right away with no time to think."
+    ],
+    "context": "An opinion is what you think. A reason is WHY you think it. Without a reason, an opinion is just a feeling. WITH a reason, you have something other people can think about with you."
+  },
+  {
+    "tier": 1,
+    "question": "Why do deep thinkers say a good question can be more useful than a quick answer?",
+    "answer": "A good question keeps you open to new ideas. A quick answer can shut you down.",
+    "choices": [
+      "A good question keeps you open to new ideas. A quick answer can shut you down.",
+      "A quick answer is illegal in school and only adults can give them out.",
+      "A quick answer is always wrong, no matter what the topic is about.",
+      "A good question is shorter than an answer and saves a lot of time."
+    ],
+    "context": "Quick answers can settle you into one view too soon. A good question makes you stop and look — and sometimes find a better view."
+  },
+  {
+    "tier": 1,
+    "question": "Why do we call helping a hurt friend 'the right thing to do'?",
+    "answer": "Because it cares for someone in need without harming anyone else.",
+    "choices": [
+      "Because it cares for someone in need without harming anyone else.",
+      "Because helping a friend gets you a prize at the end of every day.",
+      "Because the adult in the room said helping was fine in this one case.",
+      "Because it happened to make you feel happy this week for any reason."
+    ],
+    "context": "Calling something 'right' usually means it took care of people and treated them with respect. It is more than 'I got praised for it' or 'I felt good after.'"
+  },
+  {
+    "tier": 1,
+    "question": "Why do we call stealing 'wrong,' even when nobody catches the thief?",
+    "answer": "Because it hurts the person who lost the thing, whether they find out or not.",
+    "choices": [
+      "Because it hurts the person who lost the thing, whether they find out or not.",
+      "Because the police always show up at last and arrest every thief alive.",
+      "Because the thief feels guilty later and his face will turn red on him.",
+      "Because grown-ups have decided that taking things makes their day grumpy."
+    ],
+    "context": "Calling something 'wrong' usually means it hurt or cheated a real person without good cause. The harm is real even if no one is watching."
+  },
+  {
+    "tier": 1,
+    "question": "What is a value?",
+    "answer": "Something you care about deeply, like kindness, honesty, or fairness.",
+    "choices": [
+      "Something you care about deeply, like kindness, honesty, or fairness.",
+      "A number printed on a shirt tag that tells you how much it costs you.",
+      "A grade you get in school based on the answers you wrote down right.",
+      "A toy you keep in your closet because it is too special to play with now."
+    ],
+    "context": "A value is what you treat as important. Different people have different values. Naming yours helps you live in a way that fits what you care about."
+  },
+  {
+    "tier": 1,
+    "question": "A school rule says 'do not run inside.' Why is honesty NOT a rule in the same way?",
+    "answer": "A rule tells you WHAT to do. Honesty is WHY you would do right with no one watching.",
+    "choices": [
+      "A rule tells you WHAT to do. Honesty is WHY you would do right with no one watching.",
+      "Honesty is loud and rules are quiet, that is the only big difference for kids.",
+      "Honesty is for adults. Rules are for kids. Kids cannot really be honest yet.",
+      "Honesty and rules are the exact same thing said in two different voices today."
+    ],
+    "context": "Rules can change, get bent, or run out. A deep value like honesty is INSIDE you — it can guide you even when no rule fits the moment you are in."
+  },
+  {
+    "tier": 1,
+    "question": "What is conscience?",
+    "answer": "The quiet inside voice that says 'this feels right' or 'this feels wrong.'",
+    "choices": [
+      "The quiet inside voice that says 'this feels right' or 'this feels wrong.'",
+      "A small tool used by doctors to listen to your heart in their office.",
+      "A list of rules taped to the wall of your school that everyone follows.",
+      "A test you take in fifth grade to see if you can grow up to be a kid."
+    ],
+    "context": "Your conscience is that little voice you hear when nobody else is watching. People disagree about WHERE it comes from, but most agree it matters to listen."
+  },
+  {
+    "tier": 1,
+    "question": "Dad gives a small slice of pizza to the tiny baby and a bigger slice to the big sister. Is this 'fair'?",
+    "answer": "Yes — sizes that fit each kid's appetite is one way of being fair.",
+    "choices": [
+      "Yes — sizes that fit each kid's appetite is one way of being fair.",
+      "No — fair always means giving everyone the same size, no matter who.",
+      "No — the baby should get more so the big sister learns a lesson now.",
+      "Yes — but only if the big sister has had no lunch all the day so far."
+    ],
+    "context": "Being fair is not always 'same for everyone.' Sometimes it means giving each person what fits what they need. Each case asks for thought."
+  },
+  {
+    "tier": 1,
+    "question": "Can two people disagree about what is right and both be a LITTLE right?",
+    "answer": "Yes — many cases have more than one side, and both can hold some truth.",
+    "choices": [
+      "Yes — many cases have more than one side, and both can hold some truth.",
+      "No — only one person can ever be right about any thing at any time.",
+      "Yes — but only on Tuesdays, because that is the day for being unsure.",
+      "No — once two kids disagree, they have to fight until one of them gives in."
+    ],
+    "context": "Lots of real cases are not 'one right answer.' Two people can each see part of the truth. Talking is how we put the parts together."
+  },
+  {
+    "tier": 1,
+    "question": "What is a reason?",
+    "answer": "Something that helps explain WHY you think the thing you said is true.",
+    "choices": [
+      "Something that helps explain WHY you think the thing you said is true.",
+      "A loud noise you make when you want a person to stop talking to you.",
+      "A list of facts you write down to save for school the next day.",
+      "A way of making people scared of you so they will let you win an argument."
+    ],
+    "context": "A reason is the work behind a claim. 'I think X' is just a thought. 'I think X because Y' is a real reason. The Y is what we can talk about."
+  },
+  {
+    "tier": 1,
+    "question": "Tom picks the cup with the prize under it on his first try. He says 'I am the smartest!' Did he really know — or did he just GUESS?",
+    "answer": "He guessed. A guess can be right, but it does not show real work behind it.",
+    "choices": [
+      "He guessed. A guess can be right, but it does not show real work behind it.",
+      "He really knew, because anyone who picks correctly must have known it.",
+      "He guessed, which means the prize does not really count and he must redo.",
+      "He really knew, but only because he was the oldest kid in the room there."
+    ],
+    "context": "A guess can be lucky and land on the right answer. But a real reason shows your thinking — others can check it, push back, or find what is missing."
+  },
+  {
+    "tier": 1,
+    "question": "What does the word 'evidence' mean?",
+    "answer": "Things you can point to that help show your idea is likely to be true.",
+    "choices": [
+      "Things you can point to that help show your idea is likely to be true.",
+      "A feeling you get in your tummy when you know something for sure already.",
+      "A list of names of people who agree with you about what you said today.",
+      "A thing you say loudly so other people stop disagreeing with you on it."
+    ],
+    "context": "Evidence is what we point to: a photo, a fact, a thing we saw happen. It is what makes a thought more than just a guess."
+  },
+  {
+    "tier": 1,
+    "question": "Two things happen together. Does that mean one CAUSED the other?",
+    "answer": "Not always — they could both be caused by a third thing, or just happen at once.",
+    "choices": [
+      "Not always — they could both be caused by a third thing, or just happen at once.",
+      "Yes — anything that happens at the same time as another thing causes it.",
+      "Yes — but only if both things happen on the same day of the week.",
+      "No — and nothing ever causes anything else, that idea is made up."
+    ],
+    "context": "Confusing 'happens with' and 'caused by' is one of the most common thinking mistakes. Roosters crow before sunrise — but they do not make the sun rise."
+  },
+  {
+    "tier": 1,
+    "question": "What is the difference between a FACT and an OPINION?",
+    "answer": "A fact can be checked. An opinion is what someone thinks or feels about it.",
+    "choices": [
+      "A fact can be checked. An opinion is what someone thinks or feels about it.",
+      "A fact is loud and an opinion is quiet. That is the only big difference.",
+      "A fact is on TV and an opinion is in a book. The TV is more correct.",
+      "A fact is for grown-ups and opinions are for kids who are still little."
+    ],
+    "context": "'Water freezes at 32 F' is a fact — you can check it. 'Winter is the best season' is an opinion — different people will feel differently. Both can be true, in different ways."
+  },
+  {
+    "tier": 1,
+    "question": "The moon is up there even when clouds cover it. We say the moon is REAL. What does that tell us about real things?",
+    "answer": "Real things are there whether anyone is looking at them or not.",
+    "choices": [
+      "Real things are there whether anyone is looking at them or not.",
+      "Only things kids can see are real, and grown-ups see different things.",
+      "Real things must cost money in a store and have a price tag on them now.",
+      "A thing is only real when every person in the world agrees it is there."
+    ],
+    "context": "Calling a thing 'real' means it is there whether or not we see it. The moon is real even when clouds hide it. A dream you had last night is real in a way too — but a different way."
+  },
+  {
+    "tier": 1,
+    "question": "Can something be real even if you cannot see it?",
+    "answer": "Yes — wind, love, and numbers are all real but cannot be seen with eyes.",
+    "choices": [
+      "Yes — wind, love, and numbers are all real but cannot be seen with eyes.",
+      "No — only things you can see right now can really be called real ever.",
+      "Yes — but only ghosts, and nothing else at all, in any other way.",
+      "No — once a thing is hidden, it stops being real in every way at once."
+    ],
+    "context": "Lots of real things cannot be seen. Wind moves leaves. A friend's love changes how she acts. Five plus five is ten even when no kid is doing math. 'Real' is bigger than 'can be seen.'"
+  },
+  {
+    "tier": 1,
+    "question": "What is an IDEA?",
+    "answer": "A thought inside your head that can be shared with other people.",
+    "choices": [
+      "A thought inside your head that can be shared with other people.",
+      "A small bug that lives in your hair and gives you good thoughts at night.",
+      "A toy you can hold in your hand and play with on the floor by yourself.",
+      "A test you take in third grade to find out if you have any thoughts at all."
+    ],
+    "context": "An idea is something you can think — and something you can pass to another person by talking, writing, or drawing. Ideas are not things you can touch, but they can still move the world."
+  },
+  {
+    "tier": 1,
+    "question": "Where do ideas LIVE?",
+    "answer": "In minds — yours, mine, and the minds of people who share them with others.",
+    "choices": [
+      "In minds — yours, mine, and the minds of people who share them with others.",
+      "In a special box at school that holds all the ideas safely each night.",
+      "In the sky, where they wait to be picked up by smart people on holidays.",
+      "In your shoes, which is why people get good ideas when they go for walks."
+    ],
+    "context": "An idea has no body — but it lives wherever minds are thinking it. Once an idea is shared, it can keep living even after the person who first had it is gone."
+  },
+  {
+    "tier": 1,
+    "question": "What does it mean to KNOW something?",
+    "answer": "To believe it AND have good reasons AND have it really be true.",
+    "choices": [
+      "To believe it AND have good reasons AND have it really be true.",
+      "To feel very sure about it, even if no real reasons back it up at all.",
+      "To shout it loudly so the other kids in the room stop talking back.",
+      "To learn it once in school and then forget it for the rest of your life."
+    ],
+    "context": "Knowing is more than just guessing right. Most thinkers say you need to believe it, have good reasons, AND have it really be true. All three parts matter."
+  },
+  {
+    "tier": 1,
+    "question": "What is the difference between BELIEVING and KNOWING?",
+    "answer": "You can believe a thing without checking it. To know, you also need real reasons.",
+    "choices": [
+      "You can believe a thing without checking it. To know, you also need real reasons.",
+      "Believing is in the morning and knowing is in the afternoon, each day.",
+      "Believing is for kids and knowing is for adults who have stopped guessing.",
+      "Believing is louder than knowing — that is the only difference between them."
+    ],
+    "context": "We believe lots of things without proof. Some of those turn out true; some don't. To know, you need to back up your belief with reasons that hold up."
+  },
+  {
+    "tier": 1,
+    "question": "How can you tell if something is true?",
+    "answer": "By checking the reasons, looking at evidence, and listening to people who disagree.",
+    "choices": [
+      "By checking the reasons, looking at evidence, and listening to people who disagree.",
+      "By asking how it makes you feel and going with the warmest answer right away.",
+      "By picking the answer that the most popular kid in your class believes.",
+      "By saying the answer out loud three times until it starts to sound right."
+    ],
+    "context": "Truth-checking takes work. You look at evidence, ask if the reasons fit together, and try hard to listen to people who see it the other way. That is how you weed out mistakes."
+  },
+  {
+    "tier": 1,
+    "question": "Two smart kids see the same thing happen. Later, they remember it in different ways. Why might that be?",
+    "answer": "Each kid noticed different parts, and memory fills in the rest from what they expected.",
+    "choices": [
+      "Each kid noticed different parts, and memory fills in the rest from what they expected.",
+      "One of the kids is lying on purpose and the other kid is telling the truth.",
+      "The thing did not really happen and both kids are just making it up now.",
+      "Smart kids always remember things exactly the same way as each other."
+    ],
+    "context": "We do not record events like cameras. We notice what stands out to US, and our minds fill in gaps later. Two honest people can remember the same thing very differently."
+  },
+  {
+    "tier": 1,
+    "question": "What is beauty?",
+    "answer": "A kind of feeling, when something pleases you in how it looks, sounds, or feels.",
+    "choices": [
+      "A kind of feeling, when something pleases you in how it looks, sounds, or feels.",
+      "A score given by a judge to decide which thing wins a contest today.",
+      "A test you take in school to find out if you are pretty or not at all.",
+      "A rule that says only one kind of face or shape can ever be called pretty."
+    ],
+    "context": "Beauty is one of those words that is hard to pin down. People for thousands of years have asked: is it in the thing, or in how I feel? Both, probably."
+  },
+  {
+    "tier": 1,
+    "question": "Is something beautiful just because MOST people say it is?",
+    "answer": "Not always — crowds can miss beauty, and small details can be lovely too.",
+    "choices": [
+      "Not always — crowds can miss beauty, and small details can be lovely too.",
+      "Yes — once enough kids say a thing is pretty, the thing is pretty for real.",
+      "Yes — a vote by the whole class is the right way to decide every time.",
+      "No — beauty does not exist at all, it is only a word adults made up."
+    ],
+    "context": "Crowds can be right about beauty. They can also miss it. A song many people skipped once becomes a favorite ten years later. Tastes shift, even on what looks lovely."
+  },
+  {
+    "tier": 1,
+    "question": "Can a thing be ugly AND still be valuable?",
+    "answer": "Yes — a beat-up old book can hold a story that changes your life forever.",
+    "choices": [
+      "Yes — a beat-up old book can hold a story that changes your life forever.",
+      "No — once a thing is ugly, it has no use to any person ever again.",
+      "Yes — but only if it used to be pretty before it got broken or torn.",
+      "No — only pretty things can be useful, that is the rule of life today."
+    ],
+    "context": "Pretty and valuable are not the same. A scarred-up pan in a kitchen cooks great food. An old book full of notes can teach you more than a fresh, untouched one."
+  },
+  {
+    "tier": 1,
+    "question": "What is fairness?",
+    "answer": "Treating people in a way that fits what they did and what they need.",
+    "choices": [
+      "Treating people in a way that fits what they did and what they need.",
+      "Letting the biggest kid get the most of everything, every single time.",
+      "Picking a winner before the game starts to save everyone some time today.",
+      "Giving the kid who whines the loudest whatever he asks his mom for that day."
+    ],
+    "context": "Fairness is one of the oldest big ideas. It is not just 'same for everyone' — it is treating people in a way that fits what is going on."
+  },
+  {
+    "tier": 1,
+    "question": "What is a RULE?",
+    "answer": "A clear statement of what people in a group are supposed to do or not do.",
+    "choices": [
+      "A clear statement of what people in a group are supposed to do or not do.",
+      "A loud noise an adult makes when a kid is doing the wrong thing at all.",
+      "A toy passed around in class to remind kids to stop talking right away.",
+      "A test you take at the end of fifth grade to see if you have grown up."
+    ],
+    "context": "Rules tell us what is expected. Some rules are written down. Some are not, but everyone knows them. Rules let groups work together without endless arguing."
+  },
+  {
+    "tier": 1,
+    "question": "Why do we have laws?",
+    "answer": "So people can live together safely with shared limits everyone agrees to.",
+    "choices": [
+      "So people can live together safely with shared limits everyone agrees to.",
+      "So police officers can have something to do in their jobs every day.",
+      "So judges in court can wear black robes and look very serious at work.",
+      "So kids in school have something to read about during their boring classes."
+    ],
+    "context": "Laws are big shared rules for a whole town or country. They are how strangers can live near each other and know what to expect. Without them, life gets a lot harder."
+  },
+  {
+    "tier": 1,
+    "question": "What is the difference between being TOLD what to do, and CHOOSING to do it?",
+    "answer": "When you choose, the action is yours — when you are told, the action is someone else's.",
+    "choices": [
+      "When you choose, the action is yours — when you are told, the action is someone else's.",
+      "Being told is faster and choosing is slower, that is the only difference.",
+      "Being told is for kids and choosing is for adults — and that is final.",
+      "Being told and choosing are the same exact thing in any house or any place."
+    ],
+    "context": "When you choose a kind thing, the kindness is yours. When you are forced to do something kind, the thing happens but the choice did not come from you. People notice the difference."
+  },
+  {
+    "tier": 1,
+    "question": "What makes YOU 'you'?",
+    "answer": "Your memories, your choices, your habits, and how you treat other people.",
+    "choices": [
+      "Your memories, your choices, your habits, and how you treat other people.",
+      "Your shoes — once you change shoes, you become a totally new person.",
+      "Your last name — only your last name decides who you really are inside.",
+      "Your height — short kids and tall kids are different people each day."
+    ],
+    "context": "Bodies change. Hair grows. Shoes wear out. The 'you' that lasts is more about what you remember, what you choose, and how you treat people — not what you look like."
+  },
+  {
+    "tier": 1,
+    "question": "What is a THOUGHT?",
+    "answer": "Something that happens inside your mind — like a picture, a word, or a feeling.",
+    "choices": [
+      "Something that happens inside your mind — like a picture, a word, or a feeling.",
+      "A small bug that crawls into your ear at night and whispers things to you.",
+      "A test you take in third grade to see if you have any thoughts at all.",
+      "A book you have to read for school that nobody in the class likes at all."
+    ],
+    "context": "Thoughts are wonderful, mysterious things. We have them all day. But where do they come from? Where do they go? That question has been asked for thousands of years."
+  },
+  {
+    "tier": 1,
+    "question": "Is your dog thinking? How could you even start to tell?",
+    "answer": "By watching her — her body, her habits, what she does when nobody is looking.",
+    "choices": [
+      "By watching her — her body, her habits, what she does when nobody is looking.",
+      "By reading her mind through a special hat that all dogs wear at home.",
+      "By asking her out loud and waiting for her to say yes or no in English.",
+      "By giving her a test on paper, like the ones you take at school each day."
+    ],
+    "context": "We cannot climb inside another mind — not a dog's, and not even another person's. We have to GUESS from what we see them do. That is true for animals AND for the kid sitting next to you in class."
+  },
+  {
+    "tier": 1,
+    "question": "Two friends say 'we are best friends!' Years later they grow apart. Were they REALLY best friends back then?",
+    "answer": "Yes — they really were, even though things changed later in their lives.",
+    "choices": [
+      "Yes — they really were, even though things changed later in their lives.",
+      "No — best friends never grow apart, so they were not really best friends.",
+      "Yes — but only if they wrote it down on paper somewhere at the time.",
+      "No — friendship is not real until you have been friends for many years."
+    ],
+    "context": "A real thing can still end. Best friends can grow apart and STILL have been best friends back then. Things being real and things lasting forever are not the same."
+  },
+  {
+    "tier": 1,
+    "question": "When you feel happy, what is HAPPINESS — a thing, a feeling, or something else?",
+    "answer": "A feeling inside you that shows when something good happens or you do a good thing.",
+    "choices": [
+      "A feeling inside you that shows when something good happens or you do a good thing.",
+      "A small toy that lives in your head and only comes out on your birthday.",
+      "A test you pass in fourth grade that lets you be allowed to smile in life.",
+      "A book on a shelf that only some kids get to take home for the weekend."
+    ],
+    "context": "Happiness is one of those words everybody uses but few stop to look at. Thinkers across history have asked: is it a feeling? a habit? a kind of life? Each answer has its own followers."
+  },
+  {
+    "tier": 1,
+    "question": "What is the difference between a thought you say OUT LOUD, and a thought you keep INSIDE?",
+    "answer": "The out-loud one can be heard by others; the inside one stays just yours for now.",
+    "choices": [
+      "The out-loud one can be heard by others; the inside one stays just yours for now.",
+      "Out-loud thoughts are bigger and inside thoughts are smaller, all the time.",
+      "Out-loud thoughts are right and inside thoughts are wrong by themselves.",
+      "Out-loud thoughts are real and inside thoughts are made up by your head."
+    ],
+    "context": "Both kinds of thoughts are real. The difference is whether you share them. Some thinkers say even thoughts you never say out loud can change who you become."
+  },
+  {
+    "tier": 1,
+    "question": "What does it mean to be HONEST with yourself?",
+    "answer": "Telling yourself the truth about how you feel and what you did, even when it hurts.",
+    "choices": [
+      "Telling yourself the truth about how you feel and what you did, even when it hurts.",
+      "Telling other people the truth about what your friend has been doing.",
+      "Telling yourself nice things all day so you never feel bad about anything.",
+      "Telling other people about a thing you did that made you feel proud."
+    ],
+    "context": "Lying to OTHERS is one kind of dishonesty. Lying to YOURSELF — telling yourself you weren't really afraid, or it wasn't really your fault — is a quieter kind that can do a lot of harm over time."
   }
 ]
