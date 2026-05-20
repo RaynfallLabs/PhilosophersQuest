@@ -16732,5 +16732,820 @@
       "reason": "dangling_pronoun",
       "date": "2026-05-20"
     }
+  },
+  {
+    "tier": 3,
+    "question": "Turing in 1950 proposed a game. A judge types to a hidden human and a hidden machine. If the judge cannot tell which is which, the machine passes. What did he claim this settled?",
+    "answer": "Whether to call something a thinker is a question about behavior, not inner mechanism.",
+    "choices": [
+      "Whether to call something a thinker is a question about behavior, not inner mechanism.",
+      "Whether a machine truly understands — indistinguishable replies must rest on understanding.",
+      "Whether a machine is conscious — fluent conversation could only come from inner experience.",
+      "Whether a machine has a soul — any being that could fool a careful judge must possess one."
+    ],
+    "context": "Turing's 'Computing Machinery and Intelligence' (1950) deliberately replaced the metaphysical question with an operational one. Critics — Searle most famously — argue passing the test would not settle understanding, consciousness, or anything else. The distractors are exactly those inflations.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "Turing",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Pinker in The Blank Slate (2002) argued against the view that had dominated 20th-century social science: that the mind is born empty, shaped only by environment. What did he claim instead?",
+    "answer": "The mind comes with structure built by evolution; culture writes onto a slate not really blank.",
+    "choices": [
+      "The mind comes with structure built by evolution; culture writes onto a slate not really blank.",
+      "The mind comes from a soul implanted at conception; biology shapes the body, not what is thought.",
+      "The mind reflects whichever class the person is born into; material conditions explain the rest.",
+      "The mind has no real structure at all — what we call human nature is a name for habit alone."
+    ],
+    "context": "Pinker named the dominant view 'the Blank Slate' (Locke), with 'the Noble Savage' (Rousseau) and 'the Ghost in the Machine' (Descartes) as its companions. The distractors map onto the second and third of those, plus a Marxist-environmentalist variant.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_work",
+      "detected_name": "Pinker",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 1,
+    "question": "Havel described a Prague greengrocer who hangs in his window the sign Workers of the World, Unite. He does not believe it. The customers know he does not. Havel asked what the sign really says. What is his answer?",
+    "answer": "It says: I know what I am supposed to do, and I am doing it — please leave me alone.",
+    "choices": [
+      "It says: I know what I am supposed to do, and I am doing it — please leave me alone.",
+      "It says the regime is failing; only failing regimes need slogans in every window pane.",
+      "It says workers should unite; the man agrees, even if his customers are uncertain too.",
+      "It says nothing at all; shop-window slogans are background noise the neighborhood ignores."
+    ],
+    "context": "Havel's 1978 essay The Power of the Powerless called this post-totalitarianism — a regime sustained not by terror but by the ritual self-implication of citizens in a story none of them believes. The distractors include the regime's reading, a sincere reading, and a denial that signs do anything.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Havel",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "King in 1963 dreamed of a day when his children would be judged 'not by the color of their skin but by the content of their character.' What older argument was he extending?",
+    "answer": "The founders' natural-rights claim — Declaration promises must apply to every American.",
+    "choices": [
+      "The founders' natural-rights claim — Declaration promises must apply to every American.",
+      "The Marxist class-struggle claim — legal equality is hollow until economics is transformed.",
+      "The black-nationalist claim — the rights of black Americans must come from a separate polity.",
+      "The progressive social-engineering claim — government must reshape attitudes through policy."
+    ],
+    "context": "King grounded the speech in the American founding documents and the prophets — Lincoln, Jefferson, Isaiah, Amos. The distractors are three real rival traditions of mid-20th-century black political thought (CPUSA-aligned Marxism, Garveyite nationalism, technocratic progressivism), each of which King knew and rejected.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "King",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Dostoevsky's Underground Man rejects the 'crystal palace' — the reformers' idea that a society arranged by reason would make us happy. What does he insist on instead?",
+    "answer": "The right to act against his own interest — to prove, by spiteful choice, that he is a man and not a piano key.",
+    "choices": [
+      "The right to act against his own interest — to prove, by spiteful choice, that he is a man and not a piano key.",
+      "The right to private property — a sphere the rational planners cannot enter, where conscience remains his own affair.",
+      "The right to traditional faith — only the inherited ritual of the village church can shield man from the engineer.",
+      "The right to revolution — only seizing the palace and remaking it on workers' terms answers the engineer on his ground."
+    ],
+    "context": "Notes from Underground (1864) opens Dostoevsky's mature work. The target is Chernyshevsky's What Is to Be Done? and the broader Russian rational-egoist current, which held that man, properly enlightened about his real interest, will choose it. The Underground Man's reply: even if you proved my interest was X, I would choose not-X, simply to show I am free. The novel inaugurates a century of philosophical fiction.",
+    "_dropped": {
+      "reason": "structural_name_pattern_names_book_title",
+      "detected_name": "Dostoevsky",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Sextus Empiricus catalogued ten 'modes' for suspending judgment. One observed that the same honey tastes sweet to the healthy and bitter to a person with jaundice. From this fact, what did the Skeptic say followed?",
+    "answer": "Opposing reports from different perceivers leave no neutral standpoint — so suspend judgment.",
+    "choices": [
+      "Opposing reports from different perceivers leave no neutral standpoint — so suspend judgment.",
+      "Perception co-creates its object; sweetness is partly produced by the tasting, not just received.",
+      "The contrast is a divine sign — providence sends bitterness to the sick, sweetness to the well.",
+      "Only the healthy organ reports truth about its proper kind of thing; the jaundiced report is invalid."
+    ],
+    "context": "The Pyrrhonian modes are gymnasium exercises in argument: for every claim, find the equal and opposite report. If experience does not settle which observer is right, the Skeptic says, the honest move is to withhold the verdict. The mode of disagreement is the engine — once internalized, the urge to pronounce loosens its grip.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "One",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Origen drew controversy in his century and after it for a doctrine called apokatastasis. What did the word claim?",
+    "answer": "That every rational creature — every soul, even the devil — would in the end be restored to God; nothing made would be lost forever.",
+    "choices": [
+      "That every rational creature — every soul, even the devil — would in the end be restored to God; nothing made would be lost forever.",
+      "That every soul existed before its body, its station in this world decided by choices already made in a prior state.",
+      "That the visible cosmos would be consumed by fire and re-created identically, the same souls repeating the same acts.",
+      "That scripture could be read on three levels at once, the literal yielding to the moral and the moral to the spiritual."
+    ],
+    "context": "Apokatastasis means restoration of all things. Origen took New Testament passages on God being all in all and read them universally — no rational being, however fallen, was finally beyond return. The doctrine was condemned at the Second Council of Constantinople in 553. It still has serious defenders today; the debate has never closed.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Origen",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "John Mbiti wrote that African religions treat time as deepening backward: past events crowd a vast region (Zamani); the present forms a short zone (Sasa). What followed about being?",
+    "answer": "A person grows more real by passing into Zamani through ancestral memory; existence deepens by accumulation.",
+    "choices": [
+      "A person grows more real by passing into Zamani through ancestral memory; existence deepens by accumulation.",
+      "Reality reduces to the present instant; remembered past and imagined future are fictions with no real standing.",
+      "Each soul climbs through cycles of rebirth toward release; the future holds the only real goal worth pursuing.",
+      "History unfolds by a providential plan ending in judgment; the present gains meaning only by orienting to that end."
+    ],
+    "context": "Mbiti's African Religions and Philosophy (1969) contrasts a backward-deepening ontology with Heidegger's being-toward-future. Distractors are presentism, samsara, and Augustinian eschatology. The reading is contested by Wiredu.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "John Mbiti",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Watsuji Tetsuro noted ningen, the word for human, held nin (person) and gen (between). Ethics, he said, lived in the gen. What did he mean?",
+    "answer": "A person is made by relations — child, neighbor, citizen — and ethics is the practice of those betweens, not of one will.",
+    "choices": [
+      "A person is made by relations — child, neighbor, citizen — and ethics is the practice of those betweens, not of one will.",
+      "A person owes duties up a hierarchy — ruler over subject, father over son — ethics keeps each station faithfully.",
+      "A person aggregates the preferences of a group — ethics is the calculus by which a community sums its welfare.",
+      "A person realizes universal reason alone — ethics is the maxim each rational will legislates, bonds secondary."
+    ],
+    "context": "Rinrigaku (1937). Watsuji read Heidegger and thought Sein und Zeit had stranded the human as a solitary Dasein. The aidagara, the between, is prior: I become a son in being one, a teacher in teaching. Distractors are real rivals — Neo-Confucian station-ethics, utilitarian aggregation, Kantian autonomy.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Watsuji Tetsuro",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Motoori Norinaga drew mono no aware from the Tale of Genji. Western readers gloss it as melancholy. What did the 18th-century scholar say it was?",
+    "answer": "A trained sensitivity to things as they pass — knowing the cherry falls is what makes seeing it bloom matter so.",
+    "choices": [
+      "A trained sensitivity to things as they pass — knowing the cherry falls is what makes seeing it bloom matter so.",
+      "A sorrow at impermanence the Buddhist path teaches one to overcome — aware the affliction, detachment the cure.",
+      "A romantic melancholy at the gap between ideal and real — what German Sehnsucht and Portuguese saudade name.",
+      "A samurai composure in the face of death — readiness to die at any hour, hardened by training and tested in war."
+    ],
+    "context": "Motoori spent decades on Genji and rejected the standing Confucian and Buddhist readings. Aware is the moved response of one who notices. Buddhist sorrow-to-be-cured, Sehnsucht and saudade as supposed equivalents, and the bushido reading are real positions on similar terrain — none is Motoori's. The claim is not uniqueness; it is what Motoori meant.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Motoori Norinaga",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Kirk in The Conservative Mind (1953) listed six canons of conservative thought, and said one was the keystone the other five rested on. Which canon did he name as foundational?",
+    "answer": "A transcendent moral order to which custom, convention, and the laws of any people are finally answerable.",
+    "choices": [
+      "A transcendent moral order to which custom, convention, and the laws of any people are finally answerable.",
+      "A natural hierarchy of classes and orders; trying to flatten society always produces a worse tyranny in its place.",
+      "A jealous defense of private property as the one shield that keeps a citizen from the reach of arbitrary power.",
+      "An English common-law inheritance whose precedents bind any reform that would invent rights from theory alone."
+    ],
+    "context": "Kirk drew the canons from Burke and the English-American conservative line through Adams. The transcendent-order canon was the keystone: without it, he thought, the others collapsed into mere prudence. The book gave American conservatism a self-conscious philosophical genealogy.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_work",
+      "detected_name": "Kirk",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "In Power of the Powerless, Havel describes a greengrocer who hangs a sign reading Workers of the World, Unite. The sign, Havel insists, is not about ideology. What is the man doing?",
+    "answer": "Signaling compliance so he will be left alone, while pretending the slogan stands for a belief he holds.",
+    "choices": [
+      "Signaling compliance so he will be left alone, while pretending the slogan stands for a belief he holds.",
+      "Performing a civic duty he believes in, since the slogan names a real solidarity the regime preserves.",
+      "Bargaining for small favors, having learned a visible sign in the window means easier permits later on.",
+      "Mocking the regime through a slogan so worn that any literate passerby reads the irony in the gesture."
+    ],
+    "context": "Havel called this post-totalitarianism: a regime no longer holding power by terror alone but by the ritual self-implication of every citizen in a story no one believes. The sign does not say what it appears to say. It says, I know what I am required to do, and I am doing it. The greengrocer keeps his job; the lie keeps the regime.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Havel",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "McWhorter in Woke Racism argued one strand of antiracism functions as a religion. Which religion-shaped feature did he center as its core?",
+    "answer": "Original sin assigned by group membership, with no atonement that can ever fully clear the charge in this life.",
+    "choices": [
+      "Original sin assigned by group membership, with no atonement that can ever fully clear the charge in this life.",
+      "Esoteric texts and a priesthood; only credentialed initiates may speak authoritatively on what justice requires.",
+      "Heretics ritually excommunicated; dissent is treated as apostasy, not as honest disagreement with the doctrine.",
+      "Communal rites of confession; adherents gather to recite shared faults, then return to ordinary life unchanged."
+    ],
+    "context": "McWhorter borrowed Eric Hoffer's lens: a true-believer movement furnishes meaning, belonging, and a moral universe. His objection was philosophical — treating a political program as a faith disables the very arguments needed to test it.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Woke Racism",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Haidt in The Righteous Mind ran moral surveys across cultures and political camps. He argued the two camps read different moral maps. How did they differ?",
+    "answer": "Progressives weight care and fairness; conservatives those plus loyalty, authority, sanctity — overlap, but different shape.",
+    "choices": [
+      "Progressives weight care and fairness; conservatives those plus loyalty, authority, sanctity — overlap, but different shape.",
+      "Conservatives reason from religious premises, progressives from secular ones; conclusions follow from different foundations.",
+      "Progressives are guided by abstract universal principles; conservatives by local attachments to family and place.",
+      "Conservatives are more loss-averse; any proposed change is weighed differently by each before reasoning starts."
+    ],
+    "context": "Haidt's image was a tongue with five taste buds: care/harm, fairness/cheating, loyalty/betrayal, authority/subversion, sanctity/degradation. His point was descriptive — each side is literally tasting fewer of the flavors the other registers as moral.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "He",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Mackie pressed the logical problem of evil: a perfectly good, omnipotent God cannot coexist with any evil. Plantinga's Free Will Defense answered. What did Plantinga argue?",
+    "answer": "A world with free creatures who sometimes choose wrongly is possible; so no contradiction has been shown.",
+    "choices": [
+      "A world with free creatures who sometimes choose wrongly is possible; so no contradiction has been shown.",
+      "Evil is the privation of being, not a positive thing; so a good God creates only goods, some of which fail.",
+      "Suffering is corrective discipline that shapes souls toward virtue; the evils we see serve a hidden pedagogy.",
+      "Our minds are too limited to see God's reasons; appearances of pointless evil are weak evidence at best."
+    ],
+    "context": "Mackie argued in 1955 that 'God is omnipotent,' 'God is omnibenevolent,' and 'evil exists' form an inconsistent set. Plantinga's reply, sharpened in the 1970s, was modest but decisive on the logical version: a possible world where God and evil coexist suffices. Most philosophers now grant the logical problem fails; the live debate sits on Rowe's evidential version.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Mackie",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Al-Ghazali looked at fire touching cotton, then at the cotton turning black. He denied anyone had ever seen the link philosophers call causation. What did he say instead?",
+    "answer": "God acts directly each moment — cotton blackens because he wills it, not because fire has power of its own.",
+    "choices": [
+      "God acts directly each moment — cotton blackens because he wills it, not because fire has power of its own.",
+      "Causes act through hidden powers — fire holds in itself a real principle of burning the senses do not show.",
+      "Causes are habits of mind — we have seen the pair so often we project a felt necessity onto a sequence.",
+      "Causes are necessary connections — once fire meets dry cotton, no further intervention is needed at all."
+    ],
+    "context": "Al-Ghazali's occasionalism, defended in the Seventeenth Discussion of the Incoherence, made every event a fresh act of God. Hume reached a similar empirical critique seven centuries later, but stopped at psychology; Ghazali pushed on to theology. Averroes thought the move destroyed the very possibility of science.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "He",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Ibn Tufayl wrote a 12th-century tale of a boy named Hayy who grows up alone on a desert island, with no language, no scripture, no teachers. What did the tale mean to show?",
+    "answer": "Unaided reason in time reaches the same truths as revelation — and recognizes them when revelation arrives.",
+    "choices": [
+      "Unaided reason in time reaches the same truths as revelation — and recognizes them when revelation arrives.",
+      "The unaided mind ends in error — without prophetic guidance, Hayy would build a false picture of the world.",
+      "Solitude alone fits the philosopher — only the desert island shields the thinker from corruptions of society.",
+      "Natural human wickedness needs law — Hayy stays good only because no fellow human is there to tempt him."
+    ],
+    "context": "Hayy ibn Yaqzan watches his goat-mother die, dissects the body to find the missing animating principle, and reasons his way from soul to first cause to mystical union. When a pious visitor from the mainland arrives with revealed religion, Hayy finds it confirms what he already knows. Translated into Latin in 1671 and read by Locke, Spinoza, and Leibniz.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Ibn Tufayl",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Lewontin in 1972 found ~85% of human genetic variance sits within populations, ~15% between, concluding race had no biological basis. Edwards in 2003 called this a fallacy. Why?",
+    "answer": "Correlations across many loci let you infer ancestry reliably, even where single loci barely distinguish.",
+    "choices": [
+      "Correlations across many loci let you infer ancestry reliably, even where single loci barely distinguish.",
+      "Lewontin's figures were wrong; the true between-population share is much higher than the 15% he reported.",
+      "Lewontin's metric was correct but irrelevant; only single-gene effects matter, not aggregate variance.",
+      "His samples missed Indigenous isolates; including them lifts between-population variance well above 15%."
+    ],
+    "context": "Lewontin's 85/15 figure is robust and not disputed. Edwards (a population geneticist) accepted it and pressed a separate point: an individual locus is a poor classifier, but combining information across thousands of loci is not, because allele frequencies covary. The within-population variance is indeed larger; the inference that ancestry is therefore unidentifiable does not follow. Both sides reject extrapolation to claims about moral worth.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "Lewontin",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Pure Land broke with Chan on one point. Chan said wake up here, by your own effort. What was Pure Land's claim?",
+    "answer": "Self-power in this age is bankrupt — Amida's vow has done the work; one is carried by entrusting, not climbing.",
+    "choices": [
+      "Self-power in this age is bankrupt — Amida's vow has done the work; one is carried by entrusting, not climbing.",
+      "Self-effort works only once a teacher's transmission has cleared the way — the koan finishes the work begun.",
+      "The bodhisattva defers awakening for all — nirvana is refused until every sentient creature is carried across.",
+      "Esoteric mantra and mudra tune body and speech to the buddha's — the rite makes this body the buddha's own."
+    ],
+    "context": "Pure Land's move is tariki — other-power. For Shinran, Honen's pupil, the recitation of Amida's name (nembutsu) is not a technique that earns rebirth in the Pure Land; it is the trusting response to a salvation already accomplished. The structural parallel to Lutheran sola fide is real and was noted by 20th-century comparativists — present it as comparison, not identification. Chan, bodhisattva path, and Shingon esoteric distractors are live Buddhist alternatives.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Chan",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Mary Astell asked in 1700: 'If all men are born free, how is it that all women are born slaves?' What was her philosophical move?",
+    "answer": "Apply consent-of-the-governed symmetrically — if tyranny is unjust in a state, it is unjust in a household.",
+    "choices": [
+      "Apply consent-of-the-governed symmetrically — if tyranny is unjust in a state, it is unjust in a household.",
+      "Reject natural-rights theory as a screen for property holders — real emancipation requires abolishing dominion.",
+      "Defer to Scripture on the household — wifely submission is a divine command, not a claim open to philosophy.",
+      "Argue from sentiment, not principle — sympathy between the sexes will reform marriage once manners are gentler."
+    ],
+    "context": "Some Reflections upon Marriage (1700) used Locke's own premises against the era's settled view that the family was a 'natural' monarchy. Astell, a Tory and Anglican, was not arguing from Whig first principles she shared — she was pressing Locke's tradition for consistency. The move is immanent critique.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Mary Astell",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Murdoch told of a woman who first sees her son's wife as vulgar, then over years sees her as fresh. Nothing outward changed. What was Murdoch's claim?",
+    "answer": "Moral life is mostly seeing rightly — by the time a choice arrives, the work has been done in attention.",
+    "choices": [
+      "Moral life is mostly seeing rightly — by the time a choice arrives, the work has been done in attention.",
+      "Moral life is the giving of universalizable maxims — what counts is the rule the will sets for itself in advance.",
+      "Moral life is the calculation of outcomes — vision is decoration once each option's consequences become clear.",
+      "Moral life is the resolute decision of an authentic self — values are projected by the chooser, not found out there."
+    ],
+    "context": "Murdoch's 'The Idea of Perfection' (1964) gave this case, called M and D, against the mid-century picture of ethics as decision among given options. The relevant moral fact is that M can change how D appears — and that re-seeing, carried out alone against habit, is itself moral work.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Murdoch",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "Friedman gave four ways money can be spent: yours on you, yours on others, others on you, others on others. He said one combination was reliably the worst. Which?",
+    "answer": "Spending others' money on others — neither care for cost nor care for value applies, so waste compounds without check.",
+    "choices": [
+      "Spending others' money on others — neither care for cost nor care for value applies, so waste compounds without check.",
+      "Spending your own money on yourself — selfish use produces gain for no party beyond the narrow circle of one.",
+      "Spending your own money on others — the giver risks bias, since affection chooses badly compared to a fair rule.",
+      "Spending others' money on yourself — pride takes the gift as owed and gratitude shrinks the moral character of both."
+    ],
+    "context": "Friedman built the four-way table to explain why government spending tends to be wasteful — not because officials are corrupt, but because the structure of the transaction strips away both the buyer's care about price and the recipient's care about fit. Charity by neighbor outperforms charity by stranger for the same reason.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "He",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Havel told a parable of a greengrocer who places a sign in his shop window reading 'Workers of the world, unite!' He did not write the slogan. He did not even read it. What did Havel say the act did?",
+    "answer": "It signaled obedience — the greengrocer's compliance, not his belief, kept the system running, and that compliance was the system's real power.",
+    "choices": [
+      "It signaled obedience — the greengrocer's compliance, not his belief, kept the system running, and that compliance was the system's real power.",
+      "It signaled solidarity — the greengrocer joined an imagined community of workers across borders, even if he had no belief in its program.",
+      "It signaled fear — the greengrocer responded to the threat of denunciation, and the regime read the sign as evidence of his vulnerability.",
+      "It signaled ignorance — the greengrocer's failure to question the slogan revealed how thoroughly his thinking had been shaped by propaganda."
+    ],
+    "context": "Havel's 'Power of the Powerless' (1978) made the greengrocer's window the central image of post-totalitarian rule. The sign meant nothing to the greengrocer, the regime, or any passerby — yet without it, and a hundred million like it, the regime could not stand. The dictatorship was a network of small compliances.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Havel",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "Sharansky in The Case for Democracy proposed the 'town square test' for whether a society is free. What was the test?",
+    "answer": "Can a person walk to the town square and say what they think without fearing arrest, imprisonment, or harm — if yes, that society is free.",
+    "choices": [
+      "Can a person walk to the town square and say what they think without fearing arrest, imprisonment, or harm — if yes, that society is free.",
+      "Can a person vote in the town square's elections without intimidation — voting freedom marks the line between free and unfree societies.",
+      "Can a person assemble peacefully in the town square — public assembly is the operative freedom from which others flow naturally.",
+      "Can a person enter the town square at any hour — physical freedom of movement reveals what other freedoms are formally present."
+    ],
+    "context": "Sharansky spent nine years in a Soviet prison for trying to emigrate to Israel. His test cuts through formal-rights talk: most regimes claim some freedoms on paper. The real question is whether ordinary citizens, in ordinary public places, can speak ordinary truths without fearing what comes after. Few of history's regimes have passed.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Democracy",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Ryle in 1949 called the Cartesian picture 'the dogma of the ghost in the machine.' What was his core objection?",
+    "answer": "It commits a category mistake — treating the mind as a thing of the same kind as the body, when minds are dispositions to behavior, not inner objects.",
+    "choices": [
+      "It commits a category mistake — treating the mind as a thing of the same kind as the body, when minds are dispositions to behavior, not inner objects.",
+      "It rests on outdated science — modern neuroscience has shown the brain to be unified, so the dualist picture has been empirically refuted.",
+      "It produces moral confusion — calling the body a mere vehicle leads to neglect of bodily flourishing in favor of pure intellectual pursuits.",
+      "It misreads Descartes — Descartes himself never held the view; the picture is a product of his less subtle later commentators."
+    ],
+    "context": "Ryle's The Concept of Mind argued that dualism arose from misreading the grammar of mental talk. If 'mind' appears in subject position in our sentences, we slip into treating it as a thing. Ryle's example: someone visits a university, sees the buildings, and asks 'but where is the university?' The university is not another building — it is the arrangement of all of them.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "Ryle",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Habermas in 1962 traced what he called the bourgeois public sphere: 18th-century coffeehouses and journals where private citizens debated common concerns. He argued this sphere had declined. What was his thesis?",
+    "answer": "Mass media and the welfare state turned reasoned public debate into staged spectacle and managed opinion, eroding the space for rational consensus.",
+    "choices": [
+      "Mass media and the welfare state turned reasoned public debate into staged spectacle and managed opinion, eroding the space for rational consensus.",
+      "The bourgeois public sphere was always a fiction concealing exclusion; its 'decline' is just previously silenced voices entering the wider discourse.",
+      "The public sphere has only flourished as commercial media expand; the wider the audience reach, the more vigorous and inclusive deliberation becomes.",
+      "The public sphere was destroyed mainly by state censorship and totalitarian propaganda; once those are lifted, free deliberation returns intact."
+    ],
+    "context": "Habermas saw a narrow historical window where private people gathered as a reasoning public — neither subjects of the state nor consumers in a market. He thought modern conditions had largely closed that window, though he believed reopening it remained possible.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "Habermas",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Goldman, 1979. A working thermometer's reading is knowledge; a broken one's lucky correct reading is not. He said the difference lies not in the believer's reasons but in the process behind the belief. What was the move?",
+    "answer": "A belief is justified when produced by a process that reliably yields truths, regardless of access",
+    "choices": [
+      "A belief is justified when produced by a process that reliably yields truths, regardless of access",
+      "A belief is justified when the believer holds evidence open to introspection and defense",
+      "A belief is justified when it coheres with the rest of the believer's web of beliefs",
+      "A belief is justified when it traces by inference to self-supporting foundational beliefs"
+    ],
+    "context": "Process reliabilism. The move is externalist: justification depends on world-facts (the process's track record) the believer need not access. A child or an animal can know without articulating why. Distractors map onto access-internalism, coherentism, foundationalism, and social-practice views.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "He",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Saadia Gaon, in tenth-century Baghdad, opened his *Book of Beliefs and Opinions* by listing the roads to certain knowledge. He named four. What were they?",
+    "answer": "Sense perception, self-evident truths of intellect, logical inference, and reliable transmitted tradition.",
+    "choices": [
+      "Sense perception, self-evident truths of intellect, logical inference, and reliable transmitted tradition.",
+      "Direct revelation, prophetic vision, ecstatic contemplation, and assent of the gathered community of Israel.",
+      "Mystical union, contemplative ascent, scriptural exegesis, and inner illumination of the rational soul.",
+      "Mathematical demonstration, scientific induction, lawyerly cross-examination, consensus of authorities."
+    ],
+    "context": "Saadia (882–942), Gaon of Sura, wrote the *Kitab al-Amanat* in Arabic to defend rabbinic Judaism against Karaites, Muslims, Christians, and skeptics. The four roads — sense, reason, inference, and *naql* (reliable report) — let him put revelation on the same epistemic shelf as everyday knowing. The move is structurally parallel to the Mu'tazila kalam he learned from, and prepared the ground Maimonides would later till.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "He",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Calhoun's 1837 'Positive Good' speech rejected the Founders' embarrassment about slavery and defended it on its own terms. What was his central philosophical claim?",
+    "answer": "Liberty is a privilege earned by a capable race, not a natural right of every human being — so the Declaration's premise is itself false.",
+    "choices": [
+      "Liberty is a privilege earned by a capable race, not a natural right of every human being — so the Declaration's premise is itself false.",
+      "Slavery is a transitional institution suited to a stage of development, to be replaced by free labor as economies grow more complex.",
+      "Slavery is a private matter for the states; federal philosophy has no standing to evaluate the moral worth of any local arrangement.",
+      "Slavery is unfortunate but unavoidable, since the cost of immediate emancipation would impose suffering greater than the institution itself."
+    ],
+    "context": "Calhoun's break with the Founders' apologetic stance shaped the Confederate philosophical position. The Declaration's claim that all men are created equal, he held, was 'the most dangerous of all political errors.' Lincoln and Douglass each replied by refusing to surrender the premise.",
+    "_dropped": {
+      "reason": "structural_name_pattern_names_year_book",
+      "detected_name": "Calhoun",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Michael Sandel argued against germline gene editing on grounds independent of safety or fairness. What did he say it threatened?",
+    "answer": "The 'giftedness' of the child — the parent's openness to what arrives, without which love bends toward inspection and design.",
+    "choices": [
+      "The 'giftedness' of the child — the parent's openness to what arrives, without which love bends toward inspection and design.",
+      "The species-level genetic diversity — the variety on which evolution depends, which uniform editing would slowly erode away.",
+      "The natural-law foundation of human dignity — which Sandel grounded in the unmodified body as a token of divine creation.",
+      "The principle of consent of future persons — who cannot, by the temporal structure of the case, ever agree to their own design."
+    ],
+    "context": "Sandel's The Case Against Perfection turned the question away from safety and equity, where most policy debates lived. The deeper change, he argued, was in the parent — between welcoming what comes and ordering what you wanted. The latter, he thought, was a kind of love that cannot survive the practice it shapes.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Michael Sandel",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Functionalists argued that mental states are not identical to brain states. They proposed a different identity claim. What did they say a mental state was?",
+    "answer": "Whatever role plays the right causal part — taking inputs, producing outputs, and connecting to other mental states in characteristic ways.",
+    "choices": [
+      "Whatever role plays the right causal part — taking inputs, producing outputs, and connecting to other mental states in characteristic ways.",
+      "Whatever neural substrate the human brain uses — pain is a kind of brain firing, even if some other creature realizes pain otherwise.",
+      "Whatever pattern of behavior the agent reliably exhibits — pain just is wincing, withdrawal, complaint, and the rest of pain-behavior.",
+      "Whatever feels a certain way from inside — the felt quality of pain is itself what pain is, with brain talk being incidental to the matter."
+    ],
+    "context": "Functionalism's appeal was that it cut across substrates. Silicon, neurons, ancient slime molds — if the causal pattern matched, the mental state was there. The view dominated philosophy of mind for decades and lies behind much of contemporary cognitive science. Searle and Chalmers attacked it from opposite directions.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Functionalists",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Mary Midgley reviewed Dawkins's The Selfish Gene and made an objection she returned to for decades. What did she charge his metaphors had done?",
+    "answer": "They smuggled moral character into descriptions of genes — 'selfish' is a verdict on agents, and genes are not agents at all.",
+    "choices": [
+      "They smuggled moral character into descriptions of genes — 'selfish' is a verdict on agents, and genes are not agents at all.",
+      "They smuggled empirical mechanisms into philosophical claims — genes do many things, but 'replication strategy' is a story, not data.",
+      "They smuggled species into individuals — what 'the gene' does is what populations do, and the singular usage obscures the level.",
+      "They smuggled physics into biology — talk of 'forces' shaping selection borrows authority from a discipline that did not vouch for it."
+    ],
+    "context": "Midgley argued that Dawkins's poetic vocabulary kept slipping from useful description into evaluative pretension. Beasts and Man, Wickedness, and later works pressed this against scientism more broadly. Calling a gene 'selfish' was not innocent shorthand; it imported the language of moral persons onto bits of DNA that had no morals at all.",
+    "_dropped": {
+      "reason": "structural_name_pattern_names_book_title",
+      "detected_name": "Dawkins",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Dickie formalized Danto: art is what the artworld confers art-status on. Carroll pressed back. What did he say the institutional theory could not explain about how art moves?",
+    "answer": "Historical narrative — new art is recognized as art by its intelligible relation to earlier art, not by an institutional fiat that could pick anything at all.",
+    "choices": [
+      "Historical narrative — new art is recognized as art by its intelligible relation to earlier art, not by an institutional fiat that could pick anything at all.",
+      "Formal beauty — institutions can confer status, but beauty itself is a perceptual property that anyone can recognize without theory or training at all.",
+      "Aesthetic experience — institutions describe how art gets gallery space, but they cannot explain why a viewer would care to look once it is there.",
+      "Moral seriousness — institutions can canonize whatever they please, but only works that engage genuine human concerns reach the status of real art."
+    ],
+    "context": "Carroll's historical-narrative theory in Beyond Aesthetics (2001) argues that something counts as art when it stands in an intelligible historical line — extending, repudiating, or commenting on prior art. The institutional theory's circularity (art is what the artworld treats as art) collapses on Carroll's reading. Beardsley's aesthetic-experience theory and Scruton's moralism are the other live rivals in the cell.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Carroll",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Turing in 1950 proposed a test for whether a machine could 'think.' He framed the question in a specific way to avoid one philosophical trap. What did the framing avoid?",
+    "answer": "It avoided defining 'thinking' first — replacing the unanswerable definitional question with a question about indistinguishable behavior in conversation.",
+    "choices": [
+      "It avoided defining 'thinking' first — replacing the unanswerable definitional question with a question about indistinguishable behavior in conversation.",
+      "It avoided giving the machine an unfair advantage — the human judge could ask any question, and the test was symmetric between parties.",
+      "It avoided requiring physical embodiment — confining the test to text meant the machine's lack of a body would not betray its nature.",
+      "It avoided privileging adult intelligence — the test could be run with a child or an adult, and the same indistinguishability question would apply."
+    ],
+    "context": "Turing's move was philosophical-methodological. 'Can machines think?' was, he said, 'too meaningless to deserve discussion.' Replace it with a clear question — can a machine be indistinguishable from a human in extended written conversation? — and the question becomes tractable. Critics from Searle on argued the replacement changed the subject; defenders say that was the methodological point.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "Turing",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Walter Benjamin in 1936 argued that the technology of reproduction had changed art at a deep level. What did he say it had withered?",
+    "answer": "The 'aura' of the work — the unique presence of a thing here and now, which copies by definition cannot have however perfect their reproduction.",
+    "choices": [
+      "The 'aura' of the work — the unique presence of a thing here and now, which copies by definition cannot have however perfect their reproduction.",
+      "The audience for the work — mass reproduction democratized art, leaving original works without the public who once attended them.",
+      "The skill of the work — mechanical reproduction made craft training optional, and over time the underlying craftsmanship declined.",
+      "The economic value of the work — once anything could be copied, no one would pay the original artists what they had earned before."
+    ],
+    "context": "Benjamin's 'The Work of Art in the Age of Mechanical Reproduction' argued the original's authority — its unrepeatable presence in a specific tradition — could not survive a print run of a million identical posters. The loss was not nostalgic complaint. Some hoped this would liberate art from cultic deference; others mourned what reproduction took from the encounter. Benjamin held both at once.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_year",
+      "detected_name": "Walter Benjamin",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "A river flows down a hill. Nobody told the river to do that. The river just DOES it. Does this mean the river has a mind?",
+    "answer": "Probably not — the river follows gravity, not a choice it makes itself.",
+    "choices": [
+      "Probably not — the river follows gravity, not a choice it makes itself.",
+      "Yes — anything that moves on its own must have a mind inside of it.",
+      "No — minds only exist in cats and dogs, never in any other things.",
+      "Yes — rivers have small minds, while oceans have very big minds."
+    ],
+    "context": "Just because something MOVES does not mean it CHOOSES. A river does what gravity asks. Choice is something different.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Nobody",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "G.E. Moore in Principia Ethica (1903) charged moral theorists with the 'naturalistic fallacy': defining 'good' as any natural property (pleasure, fitness, desire). Why did Moore think this was a fallacy?",
+    "answer": "For any natural N proposed as identical with good, one can coherently ask 'but is N really good?' The question stays open, showing the identification was never a real definition.",
+    "choices": [
+      "For any natural N proposed as identical with good, one can coherently ask 'but is N really good?' The question stays open, showing the identification was never a real definition.",
+      "For any natural N proposed as identical with good, the identification yields a contradiction once any negation of N is introduced, so the proposal falls of its own logical weight.",
+      "For any natural N proposed as identical with good, empirical evidence refutes it: surveys consistently fail to find N tracking what people call good in actual cases of use.",
+      "For any natural N proposed as identical with good, the identification is too narrow: cases of goodness lack N entirely, so the proposed identity fails by counterexample."
+    ],
+    "context": "Moore's 'open-question argument' takes any candidate definition of 'good' and asks whether 'is this good?' remains coherently open. If yes, the identification isn't a definition. Cornell realists challenged this; the argument framed the debate for a century.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_in_work",
+      "detected_name": "Moore",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 1,
+    "question": "A kid asks 'can I have 50 cookies?' Mom says no. He says 'how about 20?' Mom says yes — but 20 is still a lot! What did the kid do?",
+    "answer": "He used a big first number to make a smaller number feel okay.",
+    "choices": [
+      "He used a big first number to make a smaller number feel okay.",
+      "He used his words wisely and made his mom feel happy in the end.",
+      "He did the right thing because asking for less is always polite.",
+      "He used math to figure out exactly how many cookies were fair."
+    ],
+    "context": "Starting with a huge number makes the smaller second number look small. Stop and ask: would 20 cookies feel like a lot without the first big number?",
+    "_dropped": {
+      "reason": "structural_name_pattern_quote_attribution",
+      "detected_name": "'can I have 50 cookies?' Mom says",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "Anna says: 'we should turn off lights to save power.' Tim says: 'so you want us to live in the DARK like cave people?' What did Tim do?",
+    "answer": "He took 'save power' and stretched it into 'live in the dark' -- much further.",
+    "choices": [
+      "He took 'save power' and stretched it into 'live in the dark' -- much further.",
+      "He may be right that turning off lights all the time will hurt how we see at night.",
+      "He should ask Anna if her family has saved a lot of power so far this past year.",
+      "He thinks cave people are bad, so we should not be like them in any way today."
+    ],
+    "context": "Always check the actual claim. Anna said 'turn off LIGHTS' -- not 'have NO light at all.' Tim turned a small idea into a big easy-to-knock one.",
+    "_dropped": {
+      "reason": "structural_name_pattern_quote_attribution",
+      "detected_name": "'we should turn off lights to save power.' Tim says",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "Sam says: 'there is a dragon in my closet.' Lily says: 'PROVE there is not!' What did Lily get backwards?",
+    "answer": "Sam claimed the dragon -- HE has to show it, not Lily prove the empty closet.",
+    "choices": [
+      "Sam claimed the dragon -- HE has to show it, not Lily prove the empty closet.",
+      "Lily should have asked first if the dragon has a name or a kind home in there.",
+      "Sam said it nice, so Lily should trust him until she has time to look in herself.",
+      "Both kids are wrong because dragons are not real and they should know this fact."
+    ],
+    "context": "Shifting the burden of proof = pushing the work of proving onto the person who did NOT make the claim. The maker of the claim has to bring the evidence.",
+    "_dropped": {
+      "reason": "structural_name_pattern_quote_attribution",
+      "detected_name": "'there is a dragon in my closet.' Lily says",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "Mom says: 'do the RIGHT thing.' Brother says: 'turn RIGHT at the corner.' Could a kid mix up these two meanings of 'right'?",
+    "answer": "Yes -- one means good or proper; the other means a side opposite to left.",
+    "choices": [
+      "Yes -- one means good or proper; the other means a side opposite to left.",
+      "No way -- a kid knows that mom means a moral thing, not a direction on the map.",
+      "Yes always -- words with two meanings are very tricky and kids cannot use them.",
+      "No -- mom should always use one kind of meaning when she talks to her kid today."
+    ],
+    "context": "Equivocation slides between two meanings of a word in one talk. Most puns are fun uses of equivocation. The FALLACY is when the slide tricks a real argument.",
+    "_dropped": {
+      "reason": "structural_name_pattern_quote_attribution",
+      "detected_name": "'do the RIGHT thing.' Brother says",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Hardwig argued modern knowledge rests on testimony in ways that cannot be broken down to direct seeing. What follows for the ideal of solo verification?",
+    "answer": "It is impossible -- no single mind can verify even most of what an educated person rightly believes.",
+    "choices": [
+      "It is impossible -- no single mind can verify even most of what an educated person rightly believes.",
+      "It is achievable in some narrow fields like pure math but not in the empirical sciences anywhere.",
+      "It is realized by experts in each field who can verify their own corner but trust on others' work.",
+      "It is achievable for any individual who is willing to spend enough years studying many subjects."
+    ],
+    "context": "Hardwig's claim is unsettling for Enlightenment epistemology. The Cartesian solo verifier was always a fiction; in practice, science and learning are deeply social. We trust to know.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Hardwig",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Plantinga's Reformed Epistemology argues that belief in God can be 'properly basic.' What does 'basic' mean here?",
+    "answer": "Not inferred from other beliefs -- held directly, the way perceptual or memorial beliefs are held.",
+    "choices": [
+      "Not inferred from other beliefs -- held directly, the way perceptual or memorial beliefs are held.",
+      "Simple in vocabulary -- a basic belief is one that uses no technical or theological words.",
+      "Compatible with reason -- a basic belief is one that does not contradict any scientific finding.",
+      "Held by most people -- a basic belief is one widely shared across cultures and historical times."
+    ],
+    "context": "Classical foundationalism allowed only sense experience and self-evident truths as basic. Plantinga argued there's no principled reason to deny religious experience the same status. The move was philosophically explosive.",
+    "_dropped": {
+      "reason": "structural_name_pattern_names_book_title",
+      "detected_name": "Plantinga",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Teammate insists: 'I wore lucky socks Friday and we won. Wore them Saturday and we won. So my socks are causing all of our wins this season.' What is the issue with this argument?",
+    "answer": "Two wins after wearing socks is sequence, not cause; lots of other things decide a game's outcome each weekend.",
+    "choices": [
+      "Two wins after wearing socks is sequence, not cause; lots of other things decide a game's outcome each weekend.",
+      "The teammate is right because lucky socks are well documented to cause wins in sports going back many decades.",
+      "The issue is socks cannot cause wins in basketball, only in soccer, where shoes truly matter much more than tops.",
+      "Socks always cause wins when worn during games, so the teammate has captured exactly how sports really work."
+    ],
+    "context": "Post hoc ergo propter hoc -- 'after this, therefore because of this.' Sequence does not prove cause. Skill, practice, and the other team matter far more than laundry.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Teammate",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Comment war: 'No real gamer plays on easy mode.' Someone says: 'I have 2000 hours on easy.' Reply: 'Then you are not a real gamer.' What is the trick in this kind of reply?",
+    "answer": "The replier shifted what 'real gamer' means once a counterexample appeared, rather than fixing the original broad rule.",
+    "choices": [
+      "The replier shifted what 'real gamer' means once a counterexample appeared, rather than fixing the original broad rule.",
+      "The replier is right because real gamers all play on hard mode, so the 2000-hour player does not count as a gamer.",
+      "The trick is in the number; 2000 hours is too few to count as a real gamer, so the example does not hold up well.",
+      "Easy mode disqualifies anyone from being a gamer for life, so the replier captures the universal rule of gaming."
+    ],
+    "context": "No true Scotsman. The replier's claim is unfalsifiable -- anyone who breaks the rule gets reclassified out. That is the fingerprint of the move: no evidence can knock it down.",
+    "_dropped": {
+      "reason": "structural_name_pattern_quote_attribution",
+      "detected_name": "'No real gamer plays on easy mode.' Someone says",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Captain insists: 'Our team is the best because we play better than everyone else on the field every weekend during this whole season.' What is the issue with this argument?",
+    "answer": "'Being the best' and 'playing better than everyone' are almost the same claim; the reason just rewords the conclusion.",
+    "choices": [
+      "'Being the best' and 'playing better than everyone' are almost the same claim; the reason just rewords the conclusion.",
+      "The captain is right because the team really is the best around, so the reason given works as a clear explanation.",
+      "The issue is that the team is not actually the best; the captain is just bragging without any kind of real evidence here.",
+      "Best and better are simply different words in English, so the argument is solid because no rewording is happening here."
+    ],
+    "context": "Circular reasoning. To support 'best,' you would need scores, head-to-head results, or rankings. 'Plays better' just restates the claim. The captain has not given a reason.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Captain",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "A news article describes a 'tax CUT for the middle class.' Another describes the same plan as a 'tax HIKE for working people.' What's going on between these two stories?",
+    "answer": "Framing — the same fact is being presented in different lights to push the reader toward different and opposing conclusions.",
+    "choices": [
+      "Framing — the same fact is being presented in different lights to push the reader toward different and opposing conclusions.",
+      "Framing — but only one of the two stories is actually using the technique of framing here, and the other one is honest.",
+      "Inconsistency between two stories that disagree only because one of them is true and the other one is completely false.",
+      "Statistical confusion in which the two stories are clearly about completely different tax bills with no real overlap at all."
+    ],
+    "context": "Framing effects are everywhere in news. The choice of words ('cut,' 'hike,' 'reform,' 'overhaul') shapes how readers feel before they reach the facts. Noticing framing is a first defense against being steered.",
+    "_dropped": {
+      "reason": "structural_name_pattern_name_verb_saying",
+      "detected_name": "Another",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "For two thousand years, philosophers said knowledge was justified true belief. In 1963, Gettier published a three-page paper that ended the consensus. What did he show?",
+    "answer": "You can have a justified true belief that is true only by luck — and luck is not knowledge.",
+    "choices": [
+      "You can have a justified true belief that is true only by luck — and luck is not knowledge.",
+      "You can have a justified false belief that becomes knowledge once the world matches it.",
+      "You can have a true belief without justification, and call it knowledge by convention.",
+      "You can have knowledge that you cannot justify, since some truths exceed reasoned argument."
+    ],
+    "context": "Gettier's 1963 paper offered cases where someone believes something true, has good reason for the belief, yet the reason and the truth come together only by accident. The field has spent sixty years trying to repair the definition. Three pages, lasting fallout.",
+    "_dropped": {
+      "reason": "final_check_gettier_in_year",
+      "date": "2026-05-20"
+    }
   }
 ]
