@@ -4,6 +4,8 @@
   "category": "weapon",
   "weapon_class": "bow",
   "hands": 2,
+  "requires_ammo": "arrow",
+  "reach": 6,
   "damage_types": [
     "pierce"
   ],

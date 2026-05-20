@@ -185,8 +185,8 @@
         "damage": "1d2",
         "type": "physical",
         "effect": "confused",
-        "effect_chance": 0.25,
-        "effect_duration": 4
+        "effect_chance": 0.1,
+        "effect_duration": "1d4"
       }
     ],
     "resistances": [],
@@ -3563,7 +3563,15 @@
         10
       ],
       "item_chance": 0.1,
-      "item_tier": 2
+      "item_tier": 2,
+      "ammo_drop": {
+        "ammo_id": "iron_arrow",
+        "count_range": [
+          3,
+          7
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Skeletal archers are the reanimated remains of warriors who were skilled with the bow in life. The necromantic animation preserves their martial memory, allowing them to draw and fire with mechanical precision. They prefer to maintain distance, riddling targets with arrows before retreating behind their melee companions.",
     "frequency": 5
@@ -13160,7 +13168,15 @@
         18
       ],
       "item_chance": 0.15,
-      "item_tier": 2
+      "item_tier": 2,
+      "ammo_drop": {
+        "ammo_id": "iron_arrow",
+        "count_range": [
+          4,
+          8
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Skeletal archers animated with the sole purpose of providing undead ranged fire support. Their arrows are carved from the same bones that compose their fingers, magically regenerating after each shot. Bone archers prefer elevated positions and will attempt to maintain distance from melee opponents.",
     "frequency": 6
@@ -18497,7 +18513,15 @@
         70
       ],
       "item_chance": 0.4,
-      "item_tier": 3
+      "item_tier": 3,
+      "ammo_drop": {
+        "ammo_id": "iron_bolt",
+        "count_range": [
+          4,
+          8
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Drow warriors are trained from birth in the fighting arts of the Underdark. Their equipment is of exquisite quality, though much of it crumbles in surface air. They favor poison-laced crossbow bolts to disable opponents for capture — drow prefer prisoners over corpses when possible.",
     "frequency": 4
@@ -25839,7 +25863,15 @@
         16
       ],
       "item_chance": 0.18,
-      "item_tier": 2
+      "item_tier": 2,
+      "ammo_drop": {
+        "ammo_id": "iron_arrow",
+        "count_range": [
+          5,
+          10
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Orc archers carry shortbows of yew and gut, fletched with crow feathers stained black by the smoke of their kennels. They are picked from the runts — too weak for the front line, but with the patience to hold a draw. Hitting a clergyman at sixty paces earns an extra hide for the winter."
   },
@@ -26103,7 +26135,15 @@
         14
       ],
       "item_chance": 0.18,
-      "item_tier": 2
+      "item_tier": 2,
+      "ammo_drop": {
+        "ammo_id": "iron_bolt",
+        "count_range": [
+          4,
+          8
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Goblin snipers nest in chimneys and ceiling cracks, balancing crossbows on their knees. They will refuse to fire if their target is too close to a kinsman — not from caution but from a tradition that says a friendly-fire kill makes their bolt-mother weep for a season."
   },
@@ -26729,7 +26769,15 @@
         12
       ],
       "item_chance": 0.16,
-      "item_tier": 2
+      "item_tier": 2,
+      "ammo_drop": {
+        "ammo_id": "iron_arrow",
+        "count_range": [
+          5,
+          10
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Gnoll archers tip their arrows with the rendered fat of last week's kill — a slow, foul poison rather than a fast one, because Yeenoghu prefers his offerings to suffer the full mile home. The bows are stolen from elves; the fletchings are hyena down."
   },
@@ -26944,7 +26992,15 @@
         20
       ],
       "item_chance": 0.2,
-      "item_tier": 2
+      "item_tier": 2,
+      "ammo_drop": {
+        "ammo_id": "iron_arrow",
+        "count_range": [
+          5,
+          10
+        ],
+        "chance": 0.65
+      }
     },
     "lore": "Bandit archers are former poachers, often the most useful members of any roadside gang — quiet, patient, and willing to spend a whole afternoon up a tree. They will not shoot a child or a priest, not out of conscience but because their grandmothers warned them how those debts get collected.",
     "pack_dependent": true,
@@ -28924,7 +28980,15 @@
         140
       ],
       "item_chance": 0.5,
-      "item_tier": 5
+      "item_tier": 5,
+      "ammo_drop": {
+        "ammo_id": "diamond_arrow",
+        "count_range": [
+          4,
+          8
+        ],
+        "chance": 0.7
+      }
     },
     "lore": "Trained in towers that are not on any map. Their first lesson is the bow; their second is to stop being where the arrow came from. The third lesson the masters keep to themselves.",
     "can_phase_blink": true,

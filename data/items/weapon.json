@@ -6061,11 +6061,11 @@
     "_curve_note": "base_damage = curve.weapon_base_damage(27) x 1.5 unique-mult, rounded. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
     "stunChance": 0.0,
     "bleedChance": 0.0,
-    "reach": 1,
+    "reach": 10,
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.0,
-    "requiresAmmo": null,
+    "requiresAmmo": "arrow",
     "mastery_blessing": {
       "kind": "weapon_first_hit_crit",
       "value": true,

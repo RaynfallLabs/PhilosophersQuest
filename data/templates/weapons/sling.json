@@ -4,6 +4,9 @@
   "category": "weapon",
   "weapon_class": "sling",
   "hands": 1,
+  "requires_ammo": "stone",
+  "infinite_ammo": true,
+  "reach": 4,
   "damage_types": [
     "blunt"
   ],

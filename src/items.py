@@ -712,6 +712,7 @@ def instantiate_weapon(template_id: str, material_id: str, *,
         'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
         'buc': buc,
         'requires_ammo': tpl.get('requires_ammo', None),
+        'infinite_ammo': bool(tpl.get('infinite_ammo', False)),
     }
     # Bring in material-flagged special properties (silver vs undead, etc.)
     for k in ('effective_against', 'vulnerabilities', 'special_properties'):

@@ -1267,11 +1267,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         if gear is not None:
             _place_one([gear], room, dungeon, ground_items, rng)
 
-    # -- Magic items: scrolls / wands / spellbooks / accessories / ammo --
+    # -- Magic items: scrolls / wands / spellbooks / accessories --
     # 25% per room from this pool. Named uniques are explicitly EXCLUDED here
     # and roll separately below at a much rarer rate.
+    # NOTE: ammo was split out of this pool 2026-05-20 — when it lived here,
+    # the 14 ammo items competed against 419 magic items at <1% per room,
+    # making ranged builds unviable. Ammo now rolls independently below.
     magic_pool: list = []
-    for cls_name in ('accessory', 'wand', 'scroll', 'spellbook', 'ammo'):
+    for cls_name in ('accessory', 'wand', 'scroll', 'spellbook'):
         try:
             magic_pool += load_items(cls_name)
         except FileNotFoundError:
@@ -1282,6 +1285,21 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         if rng.random() > 0.25:
             continue
         _place_one(magic_eligible, room, dungeon, ground_items, rng)
+
+    # -- Ammo: independent 8% per-room roll so ranged builds can sustain.
+    # Named ammo uniques (Arrows of Eros/Artemis, Bolts of Zeus) are
+    # excluded from this pool — they spawn via chests or rare floor finds.
+    try:
+        ammo_pool = [it for it in load_items('ammo')
+                     if it.id not in {'arrows_of_eros', 'arrows_of_artemis',
+                                      'bolts_of_zeus', 'shotgun_shell'}]
+    except FileNotFoundError:
+        ammo_pool = []
+    ammo_eligible = _item_eligible_weighted(ammo_pool, level, rng)
+    for room in rooms[1:]:
+        if rng.random() > 0.08:
+            continue
+        _place_one(ammo_eligible, room, dungeon, ground_items, rng)
 
     # -- Named uniques (Hrunting, Excalibur, etc.) — VERY RARE floor drop --
     # 0.15% per room → roughly 1-in-80 floors yields a floor unique. Uniques

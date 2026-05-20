@@ -2544,9 +2544,10 @@ class RenderMixin:
         )
 
     def _draw_identify_menu(self):
-        inv_entries    = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if not is_g and not is_c]
-        ground_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_g and not is_c]
-        corpse_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_c]
+        # Inventory vs. ground. Corpses are flagged is_g=True too, so they
+        # fold into ground_entries (no separate corpses section per 2026-05-20).
+        inv_entries    = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if not is_g]
+        ground_entries = [(i, item) for i, (item, is_g, is_c) in enumerate(self.identify_menu_items) if is_g]
 
         entries = []
 
@@ -2576,11 +2577,6 @@ class RenderMixin:
             _add_section(inv_entries, "INVENTORY:", FP.GOLD_BRIGHT, FP.BODY_TEXT)
         if ground_entries:
             _add_section(ground_entries, "ON THE GROUND:", FP.WARNING_TEXT, FP.GOLD_PALE, "  [ground]")
-        if corpse_entries:
-            # PARCHMENT (not FADED_TEXT) — FADED_TEXT survives MIDNIGHT alone
-            # but dips below AA on the SELECTED row bg (40,55,110).
-            _add_section(corpse_entries, "CORPSES (at your feet):",
-                         FP.ARCANE_ACCENT, FP.PARCHMENT)
 
         draw_menu(
             self.screen,
@@ -3642,15 +3638,16 @@ class RenderMixin:
             y += 28
         y += 10
 
-        # Your answer vs correct
-        self.screen.blit(
-            self.font_sm.render(f"Your answer:    {q['chosen']}", True, FP.DANGER_TEXT),
-            (bx + 25, y))
-        y += 24
-        self.screen.blit(
-            self.font_sm.render(f"Correct answer: {q['correct']}", True, FP.SUCCESS_TEXT),
-            (bx + 25, y))
-        y += 30
+        # Your answer vs correct (wrap to panel width)
+        chosen_lines = self._wrap_text(f"Your answer:    {q['chosen']}", self.font_sm, bw - 50)
+        for line in chosen_lines:
+            self.screen.blit(self.font_sm.render(line, True, FP.DANGER_TEXT), (bx + 25, y))
+            y += 22
+        correct_lines = self._wrap_text(f"Correct answer: {q['correct']}", self.font_sm, bw - 50)
+        for line in correct_lines:
+            self.screen.blit(self.font_sm.render(line, True, FP.SUCCESS_TEXT), (bx + 25, y))
+            y += 22
+        y += 8
 
         # Context
         context = q.get('context', '')

@@ -3864,18 +3864,6 @@
     "context": "Marcel, the Catholic existentialist often left out of secular surveys, argued that modernity confused two kinds of question. A problem (how an engine works) the questioner can stand outside of, manipulate, and solve. A mystery (love, evil, faith, my own existence) is one in which the questioner is already implicated; objective distance is not even possible in principle. Mystery is not 'unsolved problem.' It is a different order of question."
   },
   {
-    "tier": 4,
-    "question": "Kierkegaard wrote under pseudonyms, broke his engagement to Regine, and refused to let Hegel's system absorb the individual. In 1946 Sartre claimed the line — minus the Christianity. What did he keep?",
-    "answer": "The human being is what it makes of itself by free choice; no essence is given before the act of existing.",
-    "choices": [
-      "The human being is what it makes of itself by free choice; no essence is given before the act of existing.",
-      "Language and reason cannot reach the inner life; only image and indirect speech reach true subjectivity.",
-      "The individual stands in permanent despair until reconciled; only a leap of faith cures the divided self.",
-      "The ethical sphere finally yields to the religious; moral life is a stage left behind for a higher one."
-    ],
-    "context": "Kierkegaard wrote against Hegel's systematic march of Spirit, insisting the existing individual cannot be folded into a logical totality. Sartre kept that anti-systematic root — the priority of existing over any essence — and dropped the religious framework Kierkegaard built on it. The three rejected options are genuinely Kierkegaardian — but each carries the Christianity Sartre dropped."
-  },
-  {
     "tier": 3,
     "question": "Aquinas's Third Way begins with a plain observation: things in the world come into being and pass away. From this he reaches a striking conclusion. What is it?",
     "answer": "If all things were merely possible, at some past time nothing existed; so something must exist necessarily.",
@@ -3958,18 +3946,6 @@
       "Virtue ethics — the agent's stable character traits, not outcomes, determine the moral worth of any act"
     ],
     "context": "Foot's 1967 paper, 'The Problem of Abortion and the Doctrine of the Double Effect,' used the trolley case to defend double effect: redirecting the trolley to one track foresees the death but does not intend it, whereas pushing a man off a bridge intends his death as the means of stopping the trolley. The commuter-puzzle reading came later, with Judith Jarvis Thomson. Foot's original aim was to rescue an Aquinas-era doctrine that had been under analytic suspicion."
-  },
-  {
-    "tier": 4,
-    "question": "Avicenna drew a sharp line between what a thing is and that a thing is. A unicorn has a definite essence; a horse adds something more. What did he say the horse adds?",
-    "answer": "Existence — not part of any essence but a separate gift, added to it by something already existing.",
-    "choices": [
-      "Existence — not part of any essence but a separate gift, added to it by something already existing.",
-      "Matter — for any nature in the mind to become a horse in the field, it must be clothed in some stuff.",
-      "Form — the essence in the soul is bare; the horse abroad is shaped by the active intellect from outside.",
-      "Accidents — color, age, place; without these added marks an essence remains a generality with no instance."
-    ],
-    "context": "Ibn Sina's essence/existence distinction reshaped medieval metaphysics. No finite thing's existence is contained in its essence — knowing what a horse is tells you nothing about whether there are any. Aquinas built much of his natural theology on this; Averroes thought Avicenna had reified existence into a strange accident."
   },
   {
     "tier": 3,
@@ -4308,18 +4284,6 @@
     "context": "In the *Summa* (I-II, q. 91), Aquinas orders law top-down: God's eternal plan is the source; creatures participate in it as natural inclinations (the natural law); humans codify those inclinations into positive law for specific communities; and divine law (Scripture) supplements where natural reason is insufficient or unreliable. The doctrine became the spine of the Salamanca School's defense of Indigenous rights in the 1500s — Vitoria and Suárez built international law on this foundation."
   },
   {
-    "tier": 3,
-    "question": "Avicenna distinguished essence from existence in created things. Aquinas pushed the move further to ground a specific claim about God. What did the move yield?",
-    "answer": "In every creature essence and existence differ; in God alone they are identical, so God is self-subsisting being.",
-    "choices": [
-      "In every creature essence and existence differ; in God alone they are identical, so God is self-subsisting being.",
-      "In every creature form and matter combine; in God alone form subsists pure, so God is unmoved pure actuality.",
-      "In every creature potency and act mix; in God alone potency is excluded, so God lacks all unrealized capacity.",
-      "In every creature being is participated; in God alone being is bestowed by grace, so God is the fount of being."
-    ],
-    "context": "The essence/existence distinction is one of Aquinas's deepest debts to Islamic philosophy. Avicenna (Ibn Sina) saw that 'what a thing is' and 'that it is' come apart for everything contingent — a phoenix has an essence whether or not any phoenix exists. Aquinas takes the next step: only in God is essence *identical* with existence, which is what 'I AM' means in Exodus 3:14 on his reading. The doctrine is the heart of *De Ente et Essentia*."
-  },
-  {
     "tier": 4,
     "question": "Abelard argued that if you do an outwardly wicked deed believing it right, you are not guilty as you would be knowingly. What does that imply about where moral guilt sits?",
     "answer": "Guilt sits in inward consent to what one believes is wrong; the external act adds nothing morally on its own.",
@@ -4573,18 +4537,6 @@
   },
   {
     "tier": 4,
-    "question": "Karl Popper said science advances by one valid form: 'If the theory is true, P holds. P failed. So the theory is not true.' Aristotle named the form long before. What is it?",
-    "answer": "Modus tollens — denying the consequent of a conditional lets you deny its antecedent, the form Popper used for falsification.",
-    "choices": [
-      "Modus tollens — denying the consequent of a conditional lets you deny its antecedent, the form Popper used for falsification.",
-      "Modus ponens — affirming the antecedent lets you affirm the consequent, the basic forward step in any deductive chain.",
-      "Affirming the consequent — concluding the antecedent from the consequent, a famous fallacy that mimics modus tollens.",
-      "Denying the antecedent — concluding the consequent is false from the antecedent's falsity, a fallacy mirroring modus ponens."
-    ],
-    "context": "Popper turned modus tollens into a philosophy of science: theories are scientific to the extent they make predictions whose failure would refute them."
-  },
-  {
-    "tier": 4,
     "question": "Logicians distinguish valid from sound arguments. An argument can be one without the other. What does soundness demand that mere validity does not?",
     "answer": "Validity means the conclusion follows from the premises; soundness adds that the premises themselves are true, so the conclusion is guaranteed true.",
     "choices": [
@@ -4618,18 +4570,6 @@
       "Anchoring — letting an early irrelevant number drag your final estimate toward itself by a measurable systematic margin."
     ],
     "context": "Bayes's theorem fixes this. With a 1-in-1000 prior, 99% accurate test, 1% false-positive rate, the actual probability you have the disease given a positive result is about 9%."
-  },
-  {
-    "tier": 4,
-    "question": "In Plato's Theaetetus, Socrates examines three definitions of knowledge before each fails. The third — justified true belief — stood until 1963, when Gettier broke it. What was Plato's own worry?",
-    "answer": "He could not specify 'justification' without already presupposing the notion of knowledge it was supposed to analyze, so circularity loomed.",
-    "choices": [
-      "He could not specify 'justification' without already presupposing the notion of knowledge it was supposed to analyze, so circularity loomed.",
-      "He could not see how true belief could be reached without recollection of a prior life, so knowledge reduced to mere remembering.",
-      "He could not accept knowledge as propositional, since Forms were directly grasped by intellect rather than through subject-predicate sentences.",
-      "He could not reconcile knowledge with change, since true belief about appearances kept shifting while real knowledge required stable objects."
-    ],
-    "context": "The Theaetetus ends in aporia — no working definition of knowledge survives. Gettier's 1963 cases (true beliefs justified only by accident) confirmed Plato's instinct that something was missing."
   },
   {
     "tier": 3,
@@ -4678,18 +4618,6 @@
       "Spiritual deprivation experienced by those who lack access to dharma teachers — a kind of religious hunger met only by joining the monastic community."
     ],
     "context": "Dukkha (Pali; duhkha in Sanskrit) is sometimes glossed as 'unease' or 'wobble' — its root suggests a wheel out of true. It covers the obvious suffering of pain and loss but also the subtler discontent inside pleasure, the way any state we cling to is already shifting away. Mistranslating it as plain 'suffering' makes the first noble truth sound like pessimism it is not."
-  },
-  {
-    "tier": 4,
-    "question": "Avicenna argued the world's existence cries out for explanation: every finite thing could fail to exist, so why does anything at all? His answer pointed at one specific being. What was unique about it?",
-    "answer": "Its essence and existence are one — it cannot be conceived as not existing, the only candidate to ground a chain of contingent beings.",
-    "choices": [
-      "Its essence and existence are one — it cannot be conceived as not existing, the only candidate to ground a chain of contingent beings.",
-      "Its power and knowledge are infinite — it can do anything not strictly contradictory, the only candidate able to explain why our finite world exists.",
-      "Its goodness and beauty are perfect — it draws all other beings toward itself, the only candidate able to give the universe a final purpose.",
-      "Its eternity and changelessness are absolute — it stands outside time entirely, the only candidate left standing once contingent things have passed."
-    ],
-    "context": "Ibn Sina's Necessary Existent (wajib al-wujud) is the centerpiece of his metaphysics. Where ordinary things have essences that do not include existence, the Necessary Existent's essence simply is its existence — there is nothing to it but the sheer fact of being. Aquinas later took this distinction into Christian theology, calling God Ipsum Esse Subsistens — Subsistent Being Itself."
   },
   {
     "tier": 5,
@@ -5112,18 +5040,6 @@
     "context": "Groundwork (1785). The means/ends formula does not forbid all use of others — only use that bypasses their rational agreement."
   },
   {
-    "tier": 4,
-    "question": "Kant argued space and time are not features the world has in itself — they are the mind's own way of arranging what it receives. He called them the forms of intuition. What did this odd claim explain?",
-    "answer": "Why geometry's necessary truths fit the spatial world — space comes pre-structured by the mind, so the mind's a priori findings always match.",
-    "choices": [
-      "Why geometry's necessary truths fit the spatial world — space comes pre-structured by the mind, so the mind's a priori findings always match.",
-      "Why objects appear three-dimensional — the mind constructs the third dimension from the two-dimensional retinal images the eye delivers.",
-      "Why memory preserves earlier experiences — time as a mental form binds past states to present awareness, securing personal identity.",
-      "Why moral duties feel binding — the mind imposes a temporal structure on action, locating obligation in the future rather than the past."
-    ],
-    "context": "Transcendental Aesthetic. Kant makes mathematics necessarily applicable to nature — at the cost of denying space and time describe things in themselves."
-  },
-  {
     "tier": 5,
     "question": "Kant's table of categories lists twelve pure concepts — unity, plurality, cause, substance, possibility, necessity, and others. He insisted the list was complete, drawn from one principle. What was the principle?",
     "answer": "The forms of judgment — every category is the rule the understanding uses to make one of twelve standard kinds of judgment about objects.",
@@ -5158,18 +5074,6 @@
       "Whether the action follows from a moral law the agent accepts — the free internalize universal duty; the unfree obey external commands as imposed."
     ],
     "context": "Ethics V, propositions 38–42. Spinoza's compatibilism — freedom as understanding — runs through Hobbes, Hume, and on into Dennett and Frankfurt."
-  },
-  {
-    "tier": 3,
-    "question": "Leibniz held reality is composed of countless simple substances he called monads. Each is windowless — none can be acted on from outside. Yet the world is orderly. How?",
-    "answer": "Each monad unfolds by its own internal program, and God arranged the programs in advance so they all line up — pre-established harmony.",
-    "choices": [
-      "Each monad unfolds by its own internal program, and God arranged the programs in advance so they all line up — pre-established harmony.",
-      "Each monad reflects the whole universe from its own angle, and the consistent reflections give one shared picture — a ballroom of mirrors.",
-      "Each monad sends perceptions that influence neighbors at a distance, and the influences produce the coordinated motions of the world.",
-      "Each monad is moved by a divine spirit at every moment, and what looks like inner development is in fact continuous divine intervention."
-    ],
-    "context": "Monadology (1714). The image is two perfect clocks: each runs by its own works, yet they always agree without any connection between them."
   },
   {
     "tier": 3,
@@ -5386,18 +5290,6 @@
       "Moral terms shift meaning across cultures, so no universal proposition could ever capture an ethical fact that holds for everyone everywhere alike"
     ],
     "context": "Tractatus 6.42–6.421. For Wittgenstein, propositions are pictures of possible states of affairs — they say how things stand. \"Murder is wrong\" tries to say something else: how things ought to stand. That isn't picturable. He concluded ethics is \"transcendental\" — it shows itself in how a life is lived, not in what can be said. Crucially, he held ethics is *more* important than the sayable, not less."
-  },
-  {
-    "tier": 4,
-    "question": "Wittgenstein asked what all games share — chess, solitaire, ring-a-ring-a-roses, Olympic sport. He found no single feature shared by every game. What did this show about most concepts?",
-    "answer": "They are held together by overlapping similarities like family resemblances — not by a hidden essence every instance of the concept must share",
-    "choices": [
-      "They are held together by overlapping similarities like family resemblances — not by a hidden essence every instance of the concept must share",
-      "They are vague because ordinary language evolved without scientific precision, but careful philosophical analysis can in principle yield sharp definitions",
-      "They cluster around a single prototypical case, and other instances count as members by their measurable degree of similarity to that prototype",
-      "They are cultural constructs with no extension in reality — a word like \"game\" picks out no genuine kind, only a contingent grouping of practices"
-    ],
-    "context": "Philosophical Investigations §§66–71. The point is aimed at the Socratic-Platonic search for the \"essence\" of justice, beauty, knowledge — the assumption every meaningful word must name a hidden common feature. Wittgenstein: look closely and you find a network of overlapping similarities, like the way siblings share features without any single feature being common to all of them. No essence is needed for the word to work."
   },
   {
     "tier": 4,
@@ -6120,18 +6012,6 @@
     "context": "The Gay Science §125. The 'tremendous event' is, for Nietzsche, still on its way — the cultural consequences had not yet caught up."
   },
   {
-    "tier": 4,
-    "question": "Nietzsche's 'will to power' is often read as a license for cruelty — strong people dominate weak ones, end of story. In Beyond Good and Evil §13 he is more careful. Living things, he writes, do not aim primarily at self-preservation. What did he say they actually aim at?",
-    "answer": "Discharging strength — life itself is the expansion and exercise of power, with self-preservation arising as a consequence rather than the aim.",
-    "choices": [
-      "Discharging strength — life itself is the expansion and exercise of power, with self-preservation arising as a consequence rather than the aim.",
-      "Maximizing pleasure — every living thing acts to seek pleasant sensation and avoid pain, with all other motives reducing to this old calculus.",
-      "Survival of the species — every act is ultimately bent on passing on genes, with apparent self-interest being a tool of reproductive fitness.",
-      "Following received custom — animals and humans both inherit behaviors from groups, and individual action only channels what was already there."
-    ],
-    "context": "Beyond Good and Evil §13: 'life itself is will to power; self-preservation is only one of the indirect and most frequent results.'"
-  },
-  {
     "tier": 5,
     "question": "In the Genealogy of Morals (1887), Nietzsche traced the words 'good' and 'evil' to a historical event he called the slave revolt in values. The earlier aristocratic vocabulary — 'good' meant noble, strong — was overturned. Who, on his account, were the agents of that revolt?",
     "answer": "Resentful priestly cultures — above all the prophets of ancient Israel and early Christianity — who recoded weakness as virtue and mastery as sin.",
@@ -6154,18 +6034,6 @@
       "Mistaking the future for the present — promises bind the will of a later self who never consented to what an earlier self pledged."
     ],
     "context": "Twilight of the Idols, 'The Four Great Errors.' Part of a broader campaign against the picture of a free agent standing behind action."
-  },
-  {
-    "tier": 4,
-    "question": "Nietzsche collapsed on a street in Turin in January 1889, throwing his arms around the neck of a horse being beaten by its driver. He never recovered. His sister Elisabeth controlled the archive until 1935. What did she do that distorted his reputation?",
-    "answer": "She edited his unpublished notes into a book she called The Will to Power and tied his thought to her own German nationalist and antisemitic politics.",
-    "choices": [
-      "She edited his unpublished notes into a book she called The Will to Power and tied his thought to her own German nationalist and antisemitic politics.",
-      "She destroyed most of the unpublished manuscripts after his death, fearing they contained material that would damage the family's reputation.",
-      "She forbade any translation of his works into French or English, so his thought reached the wider European public only after she had died.",
-      "She published his letters and diaries unredacted, exposing personal material that overshadowed his philosophical work for two generations."
-    ],
-    "context": "Nietzsche's actual letters break sharply with antisemitism (his break with Wagner partly turned on it). The Will to Power as 'a book' is her montage."
   },
   {
     "tier": 3,
@@ -7512,18 +7380,6 @@
     "context": "The classic self-refutation move: a perspectivist who claims perspectivism is true universally contradicts himself. Hansen, Graham, and Ziporyn have all debated whether Zhuangzi's text actually makes the unrestricted claim the worry assumes, or whether he speaks at a different level. Distractors are real adjacent objections — communicative, performative, theological — but the structural worry is the canonical one."
   },
   {
-    "tier": 4,
-    "question": "Nagarjuna taught emptiness — no thing has its own being. Critics said he had made emptiness itself a hidden essence. His answer pressed the move further. What?",
-    "answer": "Emptiness is empty too — not a higher essence behind appearances but a way of speaking about them, set aside once it has done its conceptual work for the seeker.",
-    "choices": [
-      "Emptiness is empty too — not a higher essence behind appearances but a way of speaking about them, set aside once it has done its conceptual work for the seeker.",
-      "Emptiness is the one true essence — appearances are misreadings of it, and the doctrine of two truths collapses into a single ultimate the sage finally reaches.",
-      "Emptiness applies only to compounded things — the simple elements still hold inherent natures, and the Abhidharma analysis stands intact behind the doctrine.",
-      "Emptiness is pure negation — every claim about anything must be denied without qualification, and silence is the only consistent conclusion to draw at the end."
-    ],
-    "context": "MMK 13.8 and 22.11. Nagarjuna anticipated the charge that emptiness was the new essence — and answered that the doctrine is a raft, not a destination. Garfield, Westerhoff, and Siderits debate whether this makes Madhyamaka a global anti-realism, a deflationary semantic move, or a soteriological device. Distractors track real rival readings — substance-monist, Abhidharma-Sarvastivada, nihilist."
-  },
-  {
     "tier": 3,
     "question": "Dogen wrote uji — being-time. Many read him as saying beings are temporal. He pressed the hyphen harder than that. What was the precise philosophical claim?",
     "answer": "Each being is its timing — the pine standing now is its present pining, with no underlying being that endures while its times pass over it from outside the pine.",
@@ -7858,18 +7714,6 @@
       "Programming goals at design time freezes them; safe systems must update goals from public feedback rather than relying on initial specification."
     ],
     "context": "Russell's Human Compatible argued the King Midas problem is built into the standard AI paradigm: tell a powerful optimizer exactly what you want, and you will get exactly that, not what you needed. The proposed fix is to design systems whose objective includes a learned, uncertain model of human values, with deference baked in when the model is unsure."
-  },
-  {
-    "tier": 4,
-    "question": "Kripke argued in Naming and Necessity that proper names are 'rigid designators.' What did the term pick out?",
-    "answer": "A name refers to the same individual in every possible world where that individual exists — not to whoever fits a given description.",
-    "choices": [
-      "A name refers to the same individual in every possible world where that individual exists — not to whoever fits a given description.",
-      "A name's meaning is the description most associated with it — 'Aristotle' just means 'the philosopher who taught Alexander.'",
-      "A name's meaning is its present use — what speakers mean by 'Aristotle' is whatever current conversation makes the term refer to.",
-      "A name refers ambiguously across worlds — 'Aristotle' picks out different individuals depending on which world we are considering."
-    ],
-    "context": "Kripke's case: imagine a world where Aristotle never went into philosophy. Description theories say 'Aristotle' in that world refers to whoever did do philosophy. Rigid-designator theory says 'Aristotle' still refers to Aristotle — the same man, just a different career. The distinction reshaped modal metaphysics through the 1970s."
   },
   {
     "tier": 4,
@@ -12505,18 +12349,6 @@
   },
   {
     "tier": 2,
-    "question": "Leibniz said this world is 'the BEST of all possible worlds.' Voltaire mocked the idea. Why is the claim hard to swallow?",
-    "answer": "There is so much real harm in the world -- earthquakes, illness, war -- this is BEST?",
-    "choices": [
-      "There is so much real harm in the world -- earthquakes, illness, war -- this is BEST?",
-      "Leibniz had never been outside of his own home, so he had not seen any other lands.",
-      "Leibniz could not give a single reason for his claim and so people did not trust him.",
-      "Voltaire was a poet and not a thinker, so he made fun of any serious idea around him."
-    ],
-    "context": "Leibniz argued logically: God is good and chose THIS world. So this world must be best -- evils included. Voltaire's Candide piled up real harms to question this."
-  },
-  {
-    "tier": 2,
     "question": "Locke said the mind of a newborn is like a BLANK SLATE -- no ideas yet written on it. What follows from this view?",
     "answer": "We learn EVERYTHING through experience -- ideas are not built into us at our birth.",
     "choices": [
@@ -13177,18 +13009,6 @@
   },
   {
     "tier": 5,
-    "question": "Leibniz proposed 'monads' with no windows on each other -- yet they mirror each other perfectly. How could this be, with no contact between them?",
-    "answer": "Pre-established harmony -- God so coordinates each monad that their states match without contact.",
-    "choices": [
-      "Pre-established harmony -- God so coordinates each monad that their states match without contact.",
-      "The monads do interact through fine connections that are too small for any human to see.",
-      "The mirroring is metaphorical, and the monads actually share the same single information state.",
-      "Each monad reads what the others are doing through some kind of subtle telepathic process."
-    ],
-    "context": "Leibniz's solution to the mind-body problem and the broader interaction problem: God set up all monads so they harmonize from the start -- no causal links between them needed at all."
-  },
-  {
-    "tier": 5,
     "question": "Spinoza identified God with Nature ('deus sive natura'). Why did he insist this was NOT atheism, even though it denied a personal creator?",
     "answer": "He preserved divine attributes -- infinity, necessity, eternity -- and worship as intellectual love of nature.",
     "choices": [
@@ -13234,18 +13054,6 @@
       "Identity is too vague to be useful and should be replaced with simpler everyday concepts."
     ],
     "context": "Reasons and Persons (1984) used fission cases: a person's psychology branched into two equally continuous successors. Both can't be 'you' under identity, yet what you cared about is preserved in each."
-  },
-  {
-    "tier": 5,
-    "question": "Kripke said names are 'rigid' -- they pick out the same person in every possible world where that person exists. How does this break Russell's older view of names?",
-    "answer": "Names need not abbreviate descriptions; their reference is fixed by a baptism and a causal chain.",
-    "choices": [
-      "Names need not abbreviate descriptions; their reference is fixed by a baptism and a causal chain.",
-      "Names work in just the way Russell said, but only for fictional characters and not for real people.",
-      "Names depend on the language being spoken; in another language they refer to different individuals.",
-      "Russell was correct about names but wrong about other expressions like 'the,' 'a,' and 'some.'"
-    ],
-    "context": "Naming and Necessity (1980): 'Aristotle' refers to Aristotle in every world he exists -- not to 'whoever happens to be the teacher of Alexander' in that world. A revolution in semantics."
   },
   {
     "tier": 5,
@@ -13390,18 +13198,6 @@
       "Economic collapse leading to chaos and the rise of small warlords across the territory."
     ],
     "context": "Democracy in America Volume II: the new despotism would not strike at men's lives but at their energies -- it would 'enervate' rather than break. A condition Tocqueville thought no past society had known."
-  },
-  {
-    "tier": 5,
-    "question": "Aristotle's account of practical wisdom (phronesis) says moral sight cannot be boiled down to rules. Why not, on his view?",
-    "answer": "Particulars vary indefinitely; the prudent agent reads situations no codified rule can fully anticipate.",
-    "choices": [
-      "Particulars vary indefinitely; the prudent agent reads situations no codified rule can fully anticipate.",
-      "Rules are too long and the agent has not memorized all of them in detail before acting.",
-      "Rules are written by lawmakers who do not really understand what real life is like for kids.",
-      "Rules conflict with each other often and so agents must just pick one rule arbitrarily."
-    ],
-    "context": "Phronesis is the virtue of seeing what THIS situation calls for. A rule says 'be brave'; the prudent agent sees what bravery is here, now, given these people -- something no algorithm matches."
   },
   {
     "tier": 5,
@@ -13666,5 +13462,857 @@
       "Rulers should reverse the practices of their enemies to gain advantage in any kind of competition."
     ],
     "context": "Lao Tzu's wisdom is dynamic. Things at extreme become their opposite. A wise ruler reads this rhythm and acts BEFORE the swing -- yielding, retreating, softening when others would clench."
+  },
+  {
+    "tier": 1,
+    "question": "Maya says, 'All my friends have phones, so I should get one too.' What is wrong with that as the WHOLE reason?",
+    "choices": [
+      "What other people have doesn't show what is best for HER.",
+      "The friends have probably stolen their phones from each other.",
+      "Maya is simply not old enough to ever own such a device.",
+      "Phones are evil objects that destroy the souls of all kids."
+    ],
+    "answer": "What other people have doesn't show what is best for HER.",
+    "context": "This is the bandwagon move — assuming popularity proves a thing is right. The truth depends on Maya's situation, not the crowd's. Also called 'appeal to popularity.'"
+  },
+  {
+    "tier": 1,
+    "question": "A boy says, 'Everyone is making fun of the new kid, so it must be okay.' Where is his thinking off?",
+    "choices": [
+      "Crowds can be wrong — being cruel is cruel even when many do it.",
+      "The new kid actually deserves the teasing because of his shoes.",
+      "Group rules always work better than individual decisions and morals.",
+      "Making fun is fine as long as the teacher isn't in the room watching."
+    ],
+    "answer": "Crowds can be wrong — being cruel is cruel even when many do it.",
+    "context": "Bandwagon fallacy. 'Many people do X' is not evidence X is right. The size of the crowd doesn't change the action."
+  },
+  {
+    "tier": 1,
+    "question": "Sara hears, 'This song sold a million copies, so it must be good.' What is sneaky about that claim?",
+    "choices": [
+      "Sales count how many bought it, not whether it is actually good.",
+      "A million is actually a small number for popular music sales.",
+      "Songs never sell — most streaming today is free for everyone.",
+      "Sara should not listen to popular music made by any artist."
+    ],
+    "answer": "Sales count how many bought it, not whether it is actually good.",
+    "context": "Popularity is not quality. Many things sell well because of marketing or trends, not because they are excellent."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says, 'Lots of kids cheat on this teacher's tests, so cheating is fine.' What is wrong with the reasoning?",
+    "choices": [
+      "What others do does not change whether YOUR action is right.",
+      "The teacher made the tests too hard, so cheating is justified.",
+      "Cheating is fine because the kid won't get caught this time.",
+      "Most kids actually do not cheat — the kid is exaggerating numbers."
+    ],
+    "answer": "What others do does not change whether YOUR action is right.",
+    "context": "Bandwagon defense. Ethics is about your own act, not the crowd's. The number of people doing wrong does not make it right."
+  },
+  {
+    "tier": 1,
+    "question": "Aiden argues, 'My YouTuber has 5 million followers, so he must be telling the truth.' Where is the flaw?",
+    "choices": [
+      "Followers measure popularity, not whether the words are true.",
+      "Five million followers is too small to count as proof of trust.",
+      "YouTubers are paid for views, so they always say false things.",
+      "Aiden should follow only YouTubers with ten million or more."
+    ],
+    "answer": "Followers measure popularity, not whether the words are true.",
+    "context": "Popularity does not equal truth. A creator can be widely followed AND wrong about the facts at the same time."
+  },
+  {
+    "tier": 1,
+    "question": "'Everyone is wearing baggy jeans this year, so they must be the best style.' What is wrong with that as a reason?",
+    "choices": [
+      "Trends change — what is popular today is not always best.",
+      "Baggy jeans are objectively the worst clothing item invented.",
+      "Style is decided by famous fashion designers in big cities only.",
+      "The speaker should wear baggy jeans every day until next year."
+    ],
+    "answer": "Trends change — what is popular today is not always best.",
+    "context": "Bandwagon plus a side helping of trend-following. What is fashionable now will look silly later — that fact alone shows popularity is not quality."
+  },
+  {
+    "tier": 1,
+    "question": "'My whole class is going to the dance, so my parents should let me go.' What is the WEAKEST part of that argument?",
+    "choices": [
+      "The class going does not show the dance is right for ME.",
+      "The kid's class is actually too small to count as a real group.",
+      "Parents should let kids go wherever the school says is allowed.",
+      "Dances are universally good for every kid in every grade level."
+    ],
+    "answer": "The class going does not show the dance is right for ME.",
+    "context": "Bandwagon again. The crowd's plans do not change YOUR family's reasons. The argument should focus on the dance itself, not on who else is going."
+  },
+  {
+    "tier": 1,
+    "question": "Pia says, 'Half the school plays this game, so it must be safe.' What is she missing?",
+    "choices": [
+      "Lots of people doing a thing does not prove the thing is safe.",
+      "Pia is mistaken — only a third of the school actually plays it.",
+      "The game has been tested by professional safety inspectors yearly.",
+      "Pia is too young and small to know what counts as safe for kids."
+    ],
+    "answer": "Lots of people doing a thing does not prove the thing is safe.",
+    "context": "Bandwagon meets safety claims. Many people can do something risky without realizing it. Popularity gives no real evidence about danger."
+  },
+  {
+    "tier": 1,
+    "question": "A girl says, 'It must be a real story — millions of people are sharing it!' What does that miss?",
+    "choices": [
+      "Stories can spread because they're exciting, not because they're true.",
+      "Millions of people would never share a story if it was untrue.",
+      "Sharing means each person has verified all facts independently.",
+      "Only stories with proof get shared more than a million total times."
+    ],
+    "answer": "Stories can spread because they're exciting, not because they're true.",
+    "context": "False stories often spread FASTER than true ones because they're shocking. Popularity online is not evidence at all."
+  },
+  {
+    "tier": 1,
+    "question": "'Nobody on the team thinks it's a foul, so it isn't one.' What is the trouble with that?",
+    "choices": [
+      "The team agreeing does not change what actually happened on the play.",
+      "The referee should let the team decide all fouls by majority vote.",
+      "Teams know the rules better than the people in striped uniforms.",
+      "Fouls are made up by referees to slow down good winning teams."
+    ],
+    "answer": "The team agreeing does not change what actually happened on the play.",
+    "context": "Bandwagon over evidence. Group agreement is comforting but it doesn't replace looking at what actually happened."
+  },
+  {
+    "tier": 1,
+    "question": "Dad tells Lily not to leave dishes in the sink. Lily replies, 'YOU left dishes there yesterday!' What is wrong with her reply?",
+    "choices": [
+      "Even if Dad did it, that doesn't make HER dishes okay to leave.",
+      "Dad is a complete hypocrite, so nothing he says counts as fair.",
+      "Lily is allowed to break the rule whenever she sees Dad break it.",
+      "Yesterday's dishes are way worse than today's dishes ever could be."
+    ],
+    "answer": "Even if Dad did it, that doesn't make HER dishes okay to leave.",
+    "context": "This is 'tu quoque' — the 'you too' move. It changes the subject. The original question (should Lily leave dishes?) doesn't depend on what Dad did."
+  },
+  {
+    "tier": 1,
+    "question": "Marco breaks a vase and says, 'My brother broke one last week!' Why is this NOT a defense?",
+    "choices": [
+      "What his brother did doesn't change that Marco broke the vase NOW.",
+      "His brother should be punished first before anyone looks at Marco.",
+      "Two broken vases proves the family has cheap and breakable items.",
+      "Marco's brother is the one truly responsible for both of the vases."
+    ],
+    "answer": "What his brother did doesn't change that Marco broke the vase NOW.",
+    "context": "'You-too' defense. Pointing at someone else's mistake doesn't undo yours. The question is still: what should Marco do about THIS vase?"
+  },
+  {
+    "tier": 1,
+    "question": "When told not to interrupt, Beth says, 'But Sam interrupts all the time!' What is the flaw?",
+    "choices": [
+      "Sam's behavior doesn't decide whether BETH should interrupt.",
+      "Sam's interrupting is much worse than Beth's interrupting today.",
+      "Adults should always punish Sam first before they punish Beth.",
+      "Interrupting is fine if there is at least one other person doing it."
+    ],
+    "answer": "Sam's behavior doesn't decide whether BETH should interrupt.",
+    "context": "Tu quoque. The right question is about Beth's own action. Sam can be wrong AND Beth can also be wrong — two separate issues."
+  },
+  {
+    "tier": 1,
+    "question": "A coach tells Theo to stop showing off. Theo replies, 'But COACH yells all game!' Why isn't that an answer?",
+    "choices": [
+      "Pointing at the coach doesn't address whether THEO is showing off.",
+      "The coach should stop yelling first before correcting any player.",
+      "Showing off is allowed for any player whose coach also makes noise.",
+      "Coaches are supposed to set the example, so Theo wins this argument."
+    ],
+    "answer": "Pointing at the coach doesn't address whether THEO is showing off.",
+    "context": "Tu quoque dodges the question by accusing the accuser. It's a popular move because it FEELS like a defense — but it doesn't actually answer."
+  },
+  {
+    "tier": 1,
+    "question": "When caught lying, Reggie says, 'Adults lie too!' How is that NOT a good defense?",
+    "choices": [
+      "Whether others lie has nothing to do with whether HE lied.",
+      "Adults lying is much worse, so kid lies should be ignored entirely.",
+      "Kids are always allowed to copy the bad habits they see in adults.",
+      "Reggie is too young to understand the harm that his lying causes."
+    ],
+    "answer": "Whether others lie has nothing to do with whether HE lied.",
+    "context": "Tu quoque. The question on the table is Reggie's lie, right now. Other people's lies are separate questions, even if also worth examining."
+  },
+  {
+    "tier": 1,
+    "question": "Jamie says we should eat less candy because sugar hurts teeth. Mike replies, 'Jamie is bad at math!' What's wrong with Mike's reply?",
+    "choices": [
+      "Mike attacks Jamie, not the argument about sugar and teeth.",
+      "Jamie being bad at math means her claim about sugar must be wrong.",
+      "Only kids who are great at math are allowed to talk about teeth.",
+      "Mike should have attacked Jamie's reading score instead of math."
+    ],
+    "answer": "Mike attacks Jamie, not the argument about sugar and teeth.",
+    "context": "This is 'ad hominem' — Latin for 'to the person.' Attacking the person doesn't disprove their argument."
+  },
+  {
+    "tier": 1,
+    "question": "Mia argues recess should be longer. Tom replies, 'You can't trust Mia — she wears weird socks.' What's wrong?",
+    "choices": [
+      "Tom attacks Mia's clothes, not her actual argument.",
+      "Mia's weird socks prove her recess ideas are silly.",
+      "Only normal-clothed kids should propose new rules.",
+      "Tom should have insulted her hair instead of socks."
+    ],
+    "answer": "Tom attacks Mia's clothes, not her actual argument.",
+    "context": "Ad hominem. Mia's socks have nothing to do with whether recess should be longer. Tom dodged the real question."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says, 'My teacher's homework idea is dumb because she's old.' What is the flaw?",
+    "choices": [
+      "How old the teacher is doesn't tell us if the idea is good or bad.",
+      "Old teachers can never have good or useful ideas about homework.",
+      "Young teachers always have the better ideas because of newness.",
+      "The kid should attack the teacher's clothes too for completeness."
+    ],
+    "answer": "How old the teacher is doesn't tell us if the idea is good or bad.",
+    "context": "Ad hominem aimed at age. The idea has to be checked on its OWN merits. Age is irrelevant to whether the homework plan works."
+  },
+  {
+    "tier": 1,
+    "question": "Sam says his game plan is fair. Lucas yells, 'You always wear that ugly hat — your plan is dumb!' What is wrong?",
+    "choices": [
+      "Lucas talked about Sam's hat, not whether the game plan is fair.",
+      "Sam's hat is so distractingly ugly that it makes everything else bad.",
+      "Plans made by hat wearers are typically less fair than other plans.",
+      "Lucas should have insulted Sam's shoes, which are even uglier."
+    ],
+    "answer": "Lucas talked about Sam's hat, not whether the game plan is fair.",
+    "context": "Ad hominem. Lucas needed to attack the PLAN — show what's unfair about it. Attacking the hat dodges the real argument."
+  },
+  {
+    "tier": 1,
+    "question": "Lily says screens late at night make sleep worse. Her brother says, 'You don't even have a phone, so you can't talk!' What is the flaw?",
+    "choices": [
+      "Whether Lily has a phone doesn't change if her CLAIM is true.",
+      "People without phones cannot have opinions about phones, ever.",
+      "Lily should buy a phone first and then form an opinion about them.",
+      "Her brother is right because he is older and uses more screens."
+    ],
+    "answer": "Whether Lily has a phone doesn't change if her CLAIM is true.",
+    "context": "Ad hominem in disguise — attacking Lily's standing rather than her argument. Even people without phones can be right about phones."
+  },
+  {
+    "tier": 1,
+    "question": "Ben proposes a kinder cafeteria rule. A classmate replies, 'But you got a C in Math!' Why is this a poor response?",
+    "choices": [
+      "His math grade has nothing to do with whether the rule would be kinder.",
+      "Only students with A grades are allowed to propose any new rules.",
+      "Math grades are the official measure of who deserves to be heard.",
+      "Ben should have proposed a math rule instead of a cafeteria one."
+    ],
+    "answer": "His math grade has nothing to do with whether the rule would be kinder.",
+    "context": "Ad hominem aimed at school performance. The classmate didn't address the rule itself. Math grades don't change whether a rule is fair."
+  },
+  {
+    "tier": 1,
+    "question": "Sophie says we should walk more for our health. A boy laughs, 'You're not even fast!' What is wrong with his response?",
+    "choices": [
+      "His joke is about Sophie, not about whether walking is healthy.",
+      "Slow people give bad health advice that should never be trusted.",
+      "Only fast runners are allowed to speak about exercise of any kind.",
+      "Walking is only healthy for people who can also run very fast."
+    ],
+    "answer": "His joke is about Sophie, not about whether walking is healthy.",
+    "context": "Ad hominem. The health claim is separate from how fast Sophie can move. Walking can be good for everyone regardless of any single person's speed."
+  },
+  {
+    "tier": 1,
+    "question": "Ravi argues the science fair should be longer. Another kid sneers, 'You smell like fish.' Why doesn't this answer Ravi?",
+    "choices": [
+      "How Ravi smells has nothing to do with the fair's length.",
+      "Smelly kids are not allowed to suggest changes to school events.",
+      "The science fair should be shorter to keep smelly kids away faster.",
+      "Ravi should bathe before being allowed to propose any school changes."
+    ],
+    "answer": "How Ravi smells has nothing to do with the fair's length.",
+    "context": "Crude ad hominem. The mockery dodges the actual proposal. To beat Ravi's argument, the kid would need to say WHY the fair is fine at its current length."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says, 'Either you love my idea or you hate me.' Why is this UNFAIR?",
+    "choices": [
+      "Most people can disagree with an idea AND still like the person.",
+      "Loving the idea is the only way to show you care about a friend.",
+      "Hating someone is the natural result of disliking their ideas.",
+      "Ideas and people are exactly the same thing, so you must agree."
+    ],
+    "answer": "Most people can disagree with an idea AND still like the person.",
+    "context": "False dilemma — pretending only two choices exist when there are more. Real life has lots of in-between options."
+  },
+  {
+    "tier": 1,
+    "question": "Mom says, 'Eat your spinach or you don't love me.' What kind of trap is in this question?",
+    "choices": [
+      "It pretends only two choices exist — eat or not love mom.",
+      "Spinach is the only proper food for kids to eat at dinner time.",
+      "Loving mom always requires eating exactly what she serves you.",
+      "Refusing spinach is the same thing as openly hating your parents."
+    ],
+    "answer": "It pretends only two choices exist — eat or not love mom.",
+    "context": "False dilemma. The kid can love mom AND not love spinach. The question forces a false either-or."
+  },
+  {
+    "tier": 1,
+    "question": "Dad says, 'You're either the best in class or you're a loser.' What's the trick in that?",
+    "choices": [
+      "Most kids are neither the best NOR losers — there is a wide middle.",
+      "Being second-best counts as losing in any classroom comparison.",
+      "Class rankings are the only way to measure a kid's true value.",
+      "Losers are kids who do not try hard enough to be the very best."
+    ],
+    "answer": "Most kids are neither the best NOR losers — there is a wide middle.",
+    "context": "False dilemma plus a side of harsh judgment. Most of life has more than two boxes. Pretending otherwise is a trap."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says, 'You either play my game or you're not my friend.' What's wrong with the choice?",
+    "choices": [
+      "Friends often want different games and stay friends.",
+      "Refusing one game always ends a real friendship.",
+      "Friendship requires matching every single activity.",
+      "Game-pickers always decide who counts as friends."
+    ],
+    "answer": "Friends often want different games and stay friends.",
+    "context": "False dilemma. The two choices given aren't the only options. A real friend can decline a game AND still be a friend."
+  },
+  {
+    "tier": 1,
+    "question": "A speaker says, 'You're either with us or you're against us.' Why might this be unfair?",
+    "choices": [
+      "Many people are in between — agreeing on some things, not others.",
+      "Everyone must pick a complete side because no middle ground exists.",
+      "Disagreement on any single issue means total opposition forever.",
+      "Speakers always know which side is right, so listeners should obey."
+    ],
+    "answer": "Many people are in between — agreeing on some things, not others.",
+    "context": "Forced binary. Most real disagreements have lots of degrees. Pretending there are only two sides is a way to bully people into choosing."
+  },
+  {
+    "tier": 1,
+    "question": "Coach yells, 'Either you win this game or you're worthless!' What is the false choice?",
+    "choices": [
+      "Worth isn't decided by winning ONE game.",
+      "Losers never have any worth in life.",
+      "Winning is the only measure of value.",
+      "Coaches always know who is worthless."
+    ],
+    "answer": "Worth isn't decided by winning ONE game.",
+    "context": "False dilemma about identity. There are many ways to be valuable that don't depend on the score of a single game."
+  },
+  {
+    "tier": 1,
+    "question": "Mom says, 'If we let the dog on the couch, soon he'll sleep in our beds, then eat off our plates, then run the house!' What is wrong?",
+    "choices": [
+      "Each big step needs its OWN reason — not just 'one led to the other.'",
+      "Dogs always take over houses once you let them on the couch.",
+      "The couch is a sacred space that no animal should ever touch.",
+      "Letting a dog up is the first step in a totally unstoppable chain."
+    ],
+    "answer": "Each big step needs its OWN reason — not just 'one led to the other.'",
+    "context": "Slippery slope. The first step (couch) doesn't FORCE the last step (house). Without showing the connection, it's just scary guessing."
+  },
+  {
+    "tier": 1,
+    "question": "Dad says, 'If I let you stay up late tonight, soon you'll be up till dawn every night!' What is the flaw?",
+    "choices": [
+      "One late night doesn't make every night late — each night is its own choice.",
+      "Late nights snowball into total all-night habits without exception.",
+      "Kids who stay up once will lose the ability to sleep early forever.",
+      "Sleep schedules are like dominoes — push one and they all fall."
+    ],
+    "answer": "One late night doesn't make every night late — each night is its own choice.",
+    "context": "Slippery slope. The argument skips from tonight to 'every night' without showing why one must lead to the other."
+  },
+  {
+    "tier": 1,
+    "question": "A coach says, 'If we let players take breaks, soon nobody will train at all!' What's missing?",
+    "choices": [
+      "He skipped showing why one break makes everyone stop training.",
+      "Allowing any break is the first step toward total team laziness.",
+      "Players who rest once will permanently lose all desire to practice.",
+      "Breaks during practice always lead to teams quitting their sport."
+    ],
+    "answer": "He skipped showing why one break makes everyone stop training.",
+    "context": "Slippery slope. Reasonable breaks and no-training are NOT the same thing. The middle ground exists."
+  },
+  {
+    "tier": 1,
+    "question": "A teacher warns: 'If I let one kid skip homework, soon NOBODY will turn it in!' What is wrong with this?",
+    "choices": [
+      "One kid's situation doesn't force everyone else's behavior to change.",
+      "Kids always copy any rule break they see another student get away with.",
+      "Allowing one exception to homework rules destroys the whole class system.",
+      "Teachers should never adjust homework rules for any individual student."
+    ],
+    "answer": "One kid's situation doesn't force everyone else's behavior to change.",
+    "context": "Slippery slope. A single exception doesn't trigger a flood — unless someone shows EVIDENCE for that link, the prediction is just fear."
+  },
+  {
+    "tier": 1,
+    "question": "An older kid says, 'If you say no to this small thing, you'll be saying no to everything fun!' What is wrong?",
+    "choices": [
+      "One 'no' doesn't decide every future 'no' — each choice stands alone.",
+      "Saying no even once permanently makes a kid into a no-fun person.",
+      "Refusing one small request leads to refusing every fun thing in life.",
+      "Older kids always know the consequences of small refusals best."
+    ],
+    "answer": "One 'no' doesn't decide every future 'no' — each choice stands alone.",
+    "context": "Slippery slope used to pressure someone. The 'one no leads to all nos' chain isn't supported. It's a guilt trick."
+  },
+  {
+    "tier": 1,
+    "question": "A speaker says, 'If kids get phones in 6th grade, soon they'll get phones in kindergarten!' What's the gap?",
+    "choices": [
+      "6th-grade decisions don't automatically apply to kindergartners.",
+      "Phone-giving spreads down through the grades like a contagious cold.",
+      "Once any kid gets a phone, every younger kid will demand one too.",
+      "Parents have no ability to stop the slide once 6th graders have phones."
+    ],
+    "answer": "6th-grade decisions don't automatically apply to kindergartners.",
+    "context": "Slippery slope without the slope. The argument assumes one rule will keep sliding to younger ages — but each age can be its own decision."
+  },
+  {
+    "tier": 1,
+    "question": "'If we shorten one test by 10 minutes, soon kids will have NO TESTS at all!' How is this off?",
+    "choices": [
+      "Each rule change is its own decision — they don't keep happening on their own.",
+      "Shortening any test once will lead to all tests disappearing this year.",
+      "Time-related rule changes are impossible to control once they start.",
+      "Teachers always cave to test pressure and remove more time every year."
+    ],
+    "answer": "Each rule change is its own decision — they don't keep happening on their own.",
+    "context": "Slippery slope. Without a real mechanism linking 'shorter test' to 'no tests,' the argument is just scary speculation."
+  },
+  {
+    "tier": 1,
+    "question": "Mom warns: 'If you skip one piano practice, soon you'll quit piano entirely.' Why is this NOT a sure thing?",
+    "choices": [
+      "Skipping once doesn't mean quitting — most kids skip and come back.",
+      "All quitters in the world started with skipping just one practice.",
+      "Piano teachers consider one skipped practice a clear sign of giving up.",
+      "Practice habits are so fragile that one miss destroys all future work."
+    ],
+    "answer": "Skipping once doesn't mean quitting — most kids skip and come back.",
+    "context": "Slippery slope plus a false certainty. The 'one skip → quit' line is a fear, not a proven path. Real practice has bad days mixed with good ones."
+  },
+  {
+    "tier": 1,
+    "question": "Tim says, 'My grandpa smoked for 50 years and lived to 90. So smoking can't be bad.' What's the trouble?",
+    "choices": [
+      "One person doesn't show what's true for everyone.",
+      "Grandfathers prove the truth about cigarettes.",
+      "Smoking is fine because Tim's grandpa lived long.",
+      "His grandpa must have used the safer tobacco."
+    ],
+    "answer": "One person doesn't show what's true for everyone.",
+    "context": "Hasty generalization — drawing a big rule from one case. Grandpa's life is one data point. Studies of millions of smokers show different overall odds."
+  },
+  {
+    "tier": 1,
+    "question": "After one bad pizza, Kim says, 'I'm never eating pizza again — it's all gross!' Where is her reasoning off?",
+    "choices": [
+      "One bad pizza doesn't tell her about every pizza.",
+      "Pizza is gross — Kim has finally seen the truth.",
+      "All pizzas come from one giant factory in town.",
+      "Bad first tries should always be trusted forever."
+    ],
+    "answer": "One bad pizza doesn't tell her about every pizza.",
+    "context": "Hasty generalization. One sample isn't enough to judge a whole category. Other pizzas might be wonderful — Kim's experience can't predict that."
+  },
+  {
+    "tier": 1,
+    "question": "A boy says, 'I met two rude tourists, so tourists are all rude.' Why isn't this fair?",
+    "choices": [
+      "Two people can't speak for millions of others.",
+      "Two rude tourists prove a clear group pattern.",
+      "Tourists are nearly all rude across the world.",
+      "Polite tourists are too rare to ever count here."
+    ],
+    "answer": "Two people can't speak for millions of others.",
+    "context": "Hasty generalization across a huge group. Even ten bad experiences don't tell you about the millions you haven't met."
+  },
+  {
+    "tier": 1,
+    "question": "A girl says, 'My uncle is bald. My dad is bald. So all men go bald.' What is the trouble?",
+    "choices": [
+      "Two relatives isn't enough to say something about ALL men.",
+      "Family baldness is the perfect test of what happens to every man.",
+      "All men go bald eventually — her family is just catching it earlier.",
+      "Her dad and uncle are the average examples for the entire male population."
+    ],
+    "answer": "Two relatives isn't enough to say something about ALL men.",
+    "context": "Hasty generalization from family. Genes vary widely. Looking at two cases (especially related ones) won't tell you about everyone."
+  },
+  {
+    "tier": 1,
+    "question": "After one bad game, a coach says, 'This team can't play — they're hopeless.' What's missing?",
+    "choices": [
+      "One game isn't enough to judge a whole season's potential.",
+      "Bad games always perfectly predict the rest of a sports season.",
+      "Hopeless teams give themselves away in their very first weak game.",
+      "Coaches are paid to make quick judgments after one performance only."
+    ],
+    "answer": "One game isn't enough to judge a whole season's potential.",
+    "context": "Hasty generalization in sports. One performance — good or bad — doesn't tell you what the team can do across many games."
+  },
+  {
+    "tier": 1,
+    "question": "'I tried one science book and it was boring, so science books are all boring.' What's the flaw?",
+    "choices": [
+      "Trying one book can't tell you about every book on a subject.",
+      "Science books are nearly all boring — one is plenty to prove this.",
+      "Books on the same topic always share the same level of fun or boring.",
+      "Boring first samples always represent the entire category accurately."
+    ],
+    "answer": "Trying one book can't tell you about every book on a subject.",
+    "context": "Hasty generalization. Books vary hugely. To judge a whole topic, you'd need to read several, especially the well-loved ones."
+  },
+  {
+    "tier": 1,
+    "question": "'My one friend who plays violin practices a lot, so all violin players must be obsessed.' What is the gap?",
+    "choices": [
+      "One friend doesn't speak for everyone who picks up the instrument.",
+      "Violin players are obsessive — the friend is showing the typical case.",
+      "Practicing a lot is the defining trait of every single violin student.",
+      "His one friend is the standard example of all string instrument players."
+    ],
+    "answer": "One friend doesn't speak for everyone who picks up the instrument.",
+    "context": "Hasty generalization from one person. Music students vary — some practice hours, some just enough. One friend's habits don't define the group."
+  },
+  {
+    "tier": 1,
+    "question": "'It snowed twice this week, so winter must be the snowiest ever!' What's the trouble?",
+    "choices": [
+      "Two snowfalls in a week can't show what a whole season will do.",
+      "Weather patterns within one week predict the entire winter ahead.",
+      "The earliest snow each year always tells us the season's total amount.",
+      "Snowy weeks always continue snowing through the rest of the season."
+    ],
+    "answer": "Two snowfalls in a week can't show what a whole season will do.",
+    "context": "Hasty generalization in weather. Short patterns don't predict seasons. Real climate data looks at many months across many years."
+  },
+  {
+    "tier": 1,
+    "question": "'You HAVE to give me a phone — if you don't, I'll cry for a week!' Why isn't this a real reason?",
+    "choices": [
+      "Tears are a feeling — they don't show the phone is the right choice.",
+      "Crying for a long time is the best argument any kid can make.",
+      "Parents are required to give in to any threat involving prolonged tears.",
+      "Tears prove that the thing being asked for is genuinely needed now."
+    ],
+    "answer": "Tears are a feeling — they don't show the phone is the right choice.",
+    "context": "Appeal to emotion. Strong feelings are real, but they don't replace reasons. The phone question has to be answered by looking at facts, not tears."
+  },
+  {
+    "tier": 1,
+    "question": "A speaker says, 'If you don't agree with me, this poor puppy will be sad.' Why is this trick UNFAIR?",
+    "choices": [
+      "Puppy sadness doesn't make a bad argument good.",
+      "Puppies suffer harm whenever people disagree.",
+      "Disagreement should cause pain to nearby pets.",
+      "Speakers can use pets to win any kind of argument."
+    ],
+    "answer": "Puppy sadness doesn't make a bad argument good.",
+    "context": "Appeal to emotion using sympathy. The puppy is being used to push you past your real thinking. A bad argument stays bad even when wrapped in cuteness."
+  },
+  {
+    "tier": 1,
+    "question": "'You should buy this game — imagine how SAD you'll be missing out!' What's the trick?",
+    "choices": [
+      "It uses sadness to push you, not facts about whether the game is good.",
+      "Missing out is the worst possible feeling and must always be avoided.",
+      "Games are proven to prevent sadness in every kid who buys them.",
+      "Sales pitches that promise sadness are the most honest type of ad."
+    ],
+    "answer": "It uses sadness to push you, not facts about whether the game is good.",
+    "context": "Appeal to fear-of-missing-out. The pitch never tells you why the game is GOOD — only that not having it would feel bad. Two different things."
+  },
+  {
+    "tier": 1,
+    "question": "Mom says, 'If you don't visit Grandma, she'll be heartbroken.' How could this be misleading?",
+    "choices": [
+      "Guilt is a feeling — it shouldn't be the ONLY reason to do a thing.",
+      "Grandmothers control all family decisions through their broken hearts.",
+      "Visits are required whenever any grandparent might feel disappointed.",
+      "Heartbreak is the only valid measure of when family visits should happen."
+    ],
+    "answer": "Guilt is a feeling — it shouldn't be the ONLY reason to do a thing.",
+    "context": "Appeal to guilt. The visit might be a good idea, but the REASON to visit should be about real connection, not pure pressure."
+  },
+  {
+    "tier": 1,
+    "question": "'Vote for my idea or you'll be lonely at lunch!' What's the trick?",
+    "choices": [
+      "It threatens a feeling instead of giving a reason the idea is good.",
+      "Loneliness during lunch is the strongest possible argument anywhere.",
+      "Lunch tables decide which ideas in school are valid and which are not.",
+      "Threatening other kids is the most reliable way to win a class vote."
+    ],
+    "answer": "It threatens a feeling instead of giving a reason the idea is good.",
+    "context": "Appeal to fear. The argument never says WHY the idea is good — it just threatens an unpleasant feeling if you don't agree."
+  },
+  {
+    "tier": 1,
+    "question": "An ad says, 'You'll feel SO HAPPY if you buy this!' Why might this not prove the thing is good?",
+    "choices": [
+      "Promising happiness doesn't make the product actually work or be worth it.",
+      "Ads are required by law to only promise feelings that the product gives.",
+      "Happiness is the same thing as the actual value of any product sold.",
+      "Buyers always feel exactly the way the ads predict they will feel afterward."
+    ],
+    "answer": "Promising happiness doesn't make the product actually work or be worth it.",
+    "context": "Appeal to emotion in ads. Most ads promise feelings rather than describe what the thing actually does. Real evaluation has to look past the feelings."
+  },
+  {
+    "tier": 1,
+    "question": "Sam promised to help Tom rake leaves. A friend invites Sam to a movie. Sam goes to the movie. What's the moral wrong?",
+    "choices": [
+      "Breaking a promise treats the other person's trust as worthless.",
+      "Movies are always more important than helping with yard chores.",
+      "Promises only count if the other person reminds you of them.",
+      "Tom should have raked his leaves earlier so Sam wouldn't be needed."
+    ],
+    "answer": "Breaking a promise treats the other person's trust as worthless.",
+    "context": "Promises are commitments. When you make one and then drop it, you tell the other person their trust didn't matter to you — that's the real cost."
+  },
+  {
+    "tier": 1,
+    "question": "A kid breaks a window playing ball. He says, 'I'll just say a stranger did it.' Why is this wrong even if no one finds out?",
+    "choices": [
+      "A lie hides what really happened — others deserve the truth.",
+      "Lies that are not discovered cause no harm to anyone involved.",
+      "Strangers in a neighborhood should take blame for any broken windows.",
+      "Windows are not valuable enough to justify telling the truth about them."
+    ],
+    "answer": "A lie hides what really happened — others deserve the truth.",
+    "context": "Lies harm even when undiscovered. They build a false picture of the world for the people you lied to. The harm is real even if the lie is never exposed."
+  },
+  {
+    "tier": 1,
+    "question": "Two friends find a wallet full of cash. One says, 'No one saw — let's keep it!' What kind of question is this?",
+    "choices": [
+      "An ethical one — about right and wrong even when nobody is watching.",
+      "A finder's question, which is decided by old playground keeping rules.",
+      "A math question about how much each friend should get from the wallet.",
+      "A simple question about how fast they can leave before being seen."
+    ],
+    "answer": "An ethical one — about right and wrong even when nobody is watching.",
+    "context": "Ethics is what you do when nobody's watching. The wallet's owner is still real, still lost it, still wants it back — whether or not they can see you."
+  },
+  {
+    "tier": 1,
+    "question": "Mia says, 'Everyone lies sometimes, so MY lie isn't a big deal.' What's wrong with that?",
+    "choices": [
+      "Common doesn't equal okay — many people lie AND lying still hurts people.",
+      "Lies are completely normal and so they cause no harm to anyone ever.",
+      "Mia's lie matters less because she rarely tells lies during the week.",
+      "Other people's lies set the rules for whether Mia's lying counts as bad."
+    ],
+    "answer": "Common doesn't equal okay — many people lie AND lying still hurts people.",
+    "context": "Mixing 'what's common' with 'what's right.' A behavior can be widespread AND wrong at the same time. Ethics asks about the act, not the frequency."
+  },
+  {
+    "tier": 1,
+    "question": "A kid is told, 'You can have ONE cookie before dinner.' She takes three. She says, 'I just took an extra TWO.' What is the trouble?",
+    "choices": [
+      "She broke the rule — describing it as 'extra' doesn't change what she did.",
+      "Two cookies extra is fine because the kid called it a small addition.",
+      "Rules about cookies do not count when there are more than one available.",
+      "Dinner is overrated, so taking cookies before it should be totally allowed."
+    ],
+    "answer": "She broke the rule — describing it as 'extra' doesn't change what she did.",
+    "context": "Renaming a rule break doesn't undo it. The action is the same regardless of how you phrase it. Honest reasoning requires honest labeling."
+  },
+  {
+    "tier": 1,
+    "question": "'EVERYONE knows reading at night ruins your eyes.' What might be wrong with 'everyone knows'?",
+    "choices": [
+      "Things 'everyone knows' aren't always true — many are just old guesses.",
+      "Reading in dim light truly damages eyes permanently every single time.",
+      "Common ideas are usually correct because so many adults have repeated them.",
+      "Knowledge spreads only when it is true, so common ideas are reliable facts."
+    ],
+    "answer": "Things 'everyone knows' aren't always true — many are just old guesses.",
+    "context": "'Common knowledge' often turns out wrong on a second look. Real evidence beats 'everyone knows' every time."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says, 'Most people would lie to get out of trouble, so it's fine for me to lie.' What is the flaw?",
+    "choices": [
+      "What's common doesn't decide what's right.",
+      "Most people lying makes lying morally fine.",
+      "Lying to escape trouble is universally allowed.",
+      "Common acts are the most ethical kind of acts."
+    ],
+    "answer": "What's common doesn't decide what's right.",
+    "context": "Mixing common with right. Many people doing a thing tells us about HABITS, not about whether the thing is good or harmful."
+  },
+  {
+    "tier": 1,
+    "question": "'Most kids think homework is pointless, so homework MUST be pointless.' Where is the gap?",
+    "choices": [
+      "Lots of kids agreeing doesn't show the homework is actually useless.",
+      "Kid opinions are the most reliable way to measure schoolwork value.",
+      "Homework is genuinely pointless and most kids are correctly noticing it.",
+      "Teachers should always trust majority kid opinions about homework worth."
+    ],
+    "answer": "Lots of kids agreeing doesn't show the homework is actually useless.",
+    "context": "Appeal to popularity. Whether homework helps learning is a question about results, not about how many kids dislike it."
+  },
+  {
+    "tier": 1,
+    "question": "A coach says, 'All the best players use this drink, so it must make you better.' What's missing?",
+    "choices": [
+      "Lots of players using the drink doesn't show the drink is what makes them good.",
+      "Top athletes always know exactly which sports drink truly boosts performance.",
+      "Drinks chosen by champions are guaranteed to make any user a champion too.",
+      "Coaches always recommend drinks that have been scientifically proven to work."
+    ],
+    "answer": "Lots of players using the drink doesn't show the drink is what makes them good.",
+    "context": "Mixing popularity with cause. The best players got good through long practice. The drink they happen to use isn't the reason."
+  },
+  {
+    "tier": 1,
+    "question": "'Five out of six adults agree that this cereal is healthiest.' How might this not prove the cereal IS healthiest?",
+    "choices": [
+      "An opinion poll measures what people think, not what's true.",
+      "Most adults studied nutrition deeply and can name the healthiest cereal.",
+      "Five out of six adults is a flawless sample for testing health claims.",
+      "Health is whatever most adults agree to call healthy in any given year."
+    ],
+    "answer": "An opinion poll measures what people think, not what's true.",
+    "context": "Popularity is not nutrition. To know if a cereal is healthy, you check what's in it — not the opinion poll."
+  },
+  {
+    "tier": 1,
+    "question": "A kid is caught pushing in line. He says, 'What about LAST week when SOMEONE ELSE pushed?' Why doesn't this answer the question?",
+    "choices": [
+      "It changes the subject — last week's pushing doesn't excuse today's.",
+      "Last week's pusher should be punished first before anyone else is.",
+      "Lines are unfair places, so pushing is always justified for any kid.",
+      "Whoever pushed first should bear the full blame for all future pushing."
+    ],
+    "answer": "It changes the subject — last week's pushing doesn't excuse today's.",
+    "context": "Whataboutism — answering a question by pointing at someone else's behavior. It's a way to dodge without admitting wrong."
+  },
+  {
+    "tier": 1,
+    "question": "When asked about her messy room, Ava says, 'But MOM's car is dirty!' Why isn't this a defense?",
+    "choices": [
+      "Mom's car isn't Ava's room — different question, no real answer.",
+      "Mom's messy car is much worse and should be addressed before any room.",
+      "Cars and rooms have the same cleaning rules in every family everywhere.",
+      "Ava is allowed to keep messes as long as some grown-up has a bigger one."
+    ],
+    "answer": "Mom's car isn't Ava's room — different question, no real answer.",
+    "context": "Whataboutism switches topics. The question about Ava's room stands on its own — Mom's car is a separate issue, even if also worth talking about."
+  },
+  {
+    "tier": 1,
+    "question": "'My homework is late, but Joey's was late LAST month — talk to him first!' What's wrong with this defense?",
+    "choices": [
+      "Joey's lateness was a different time and a different question.",
+      "Joey deserves all the blame for late homework everywhere.",
+      "Late homework is allowed in every class with any late history.",
+      "Teachers must investigate older lates before newer lates first."
+    ],
+    "answer": "Joey's lateness was a different time and a different question.",
+    "context": "Whataboutism. Each lateness is its own event. Pointing at Joey can't undo the question about TODAY's missing work."
+  },
+  {
+    "tier": 1,
+    "question": "When told he interrupted, Mike says, 'But what about that time YOU interrupted ME in 3rd grade?' Why is this off?",
+    "choices": [
+      "An old event doesn't change what just happened now.",
+      "Third-grade events excuse all later interruptions.",
+      "All interrupting throughout life counts the same.",
+      "Remembering old wrongs counts as solving them now."
+    ],
+    "answer": "An old event doesn't change what just happened now.",
+    "context": "Whataboutism reaching far back. Even if the old event was real and bad, it doesn't excuse the new one. Each moment is its own."
+  },
+  {
+    "tier": 1,
+    "question": "'YOU never share, so I don't have to either!' Why doesn't this work as an excuse?",
+    "choices": [
+      "If someone else is wrong, that's a separate issue — it doesn't make YOUR refusal right.",
+      "Sharing must always be mutual or it does not count as real sharing.",
+      "Two wrong refusals to share will somehow balance out into one fair situation.",
+      "Refusing to share is fine whenever another kid has refused to share earlier."
+    ],
+    "answer": "If someone else is wrong, that's a separate issue — it doesn't make YOUR refusal right.",
+    "context": "Whataboutism. Their not-sharing and YOUR not-sharing are TWO problems, not a cancellation. Solving one doesn't address the other."
+  },
+  {
+    "tier": 1,
+    "question": "Theo says, 'I WANT it to be true that this candy is healthy — so it IS healthy.' What's wrong?",
+    "choices": [
+      "Wanting a thing to be true doesn't change whether it actually IS.",
+      "Strong wishing has been shown to change candy nutrition in many studies.",
+      "Candy becomes healthy whenever a kid wants it to be a healthier food.",
+      "Wishing makes things real in any case where the wisher believes strongly."
+    ],
+    "answer": "Wanting a thing to be true doesn't change whether it actually IS.",
+    "context": "Wishful thinking. Reality doesn't bend to our wishes. Candy stays candy whether we want it to be healthy or not."
+  },
+  {
+    "tier": 1,
+    "question": "A boy hopes it won't rain tomorrow. He says, 'I'm SURE it won't rain.' How is his certainty off?",
+    "choices": [
+      "Hoping for no rain doesn't predict the actual weather.",
+      "Strong certainty can change weather patterns directly.",
+      "Hope is the most reliable forecasting tool around.",
+      "Boys can confidently predict weather from their wishes."
+    ],
+    "answer": "Hoping for no rain doesn't predict the actual weather.",
+    "context": "Wishful thinking about the future. The weather happens for its own reasons — our hopes are not one of them."
+  },
+  {
+    "tier": 1,
+    "question": "Lila says, 'I really want to be picked first, so I will be picked first.' What is missing?",
+    "choices": [
+      "Wanting it doesn't give a reason it will actually happen.",
+      "Strong wishing always brings the result the wisher wants.",
+      "Picking order is decided by the kid who hopes the hardest.",
+      "Being picked first is owed to whoever wants it the most."
+    ],
+    "answer": "Wanting it doesn't give a reason it will actually happen.",
+    "context": "Wishful thinking about an outcome. Real reasons for being picked first (skill, the picker's preferences, luck) are separate from our wish."
+  },
+  {
+    "tier": 1,
+    "question": "A kid says, 'I don't WANT the test to be hard, so it must be easy.' What is the flaw?",
+    "choices": [
+      "Wanting one thing doesn't decide what the test will actually be like.",
+      "Tests are required to match the difficulty level the students hope for.",
+      "Easy tests appear whenever a kid genuinely does not want a hard one.",
+      "Hard is unfair, so any test a kid dislikes will always turn out easy."
+    ],
+    "answer": "Wanting one thing doesn't decide what the test will actually be like.",
+    "context": "Wishful thinking about facts. The test is what it is, regardless of our wishes. Better to study than to hope."
+  },
+  {
+    "tier": 1,
+    "question": "'I love my puppy SO MUCH that he MUST be the smartest dog ever.' Where's the wishful thinking?",
+    "choices": [
+      "Loving the puppy doesn't make him the smartest — that's a separate question.",
+      "Affection makes dogs smarter than the dogs that get less daily love.",
+      "Puppies become the smartest in the world when their owners adore them.",
+      "Love is the official measure of dog intelligence used by all vets and trainers."
+    ],
+    "answer": "Loving the puppy doesn't make him the smartest — that's a separate question.",
+    "context": "Wishful thinking mixes our feelings with facts about the world. The puppy's intelligence is one thing; how much we love him is another."
   }
 ]

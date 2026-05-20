@@ -525,9 +525,60 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         quiz_deck_state = state.get('quiz_deck_state')
         if quiz_deck_state:
             self.quiz_engine.restore_deck_state(quiz_deck_state)
+        # Save compat: weapons created before 2026-05-20 had requires_ammo=None
+        # on bow/crossbow/sling templates, so they equipped to the melee slot.
+        # Heal in-flight saves: patch the field on every Weapon in player gear,
+        # inventory, and ground; relocate any equipped ranged weapon from
+        # weapon -> ranged_weapon.
+        self._migrate_ranged_weapons()
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.GAME_W, layout.GAME_H)
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')
+
+    def _migrate_ranged_weapons(self):
+        """One-shot save migration. Old saves have bows with requires_ammo=None
+        because the templates lacked the field at instantiation time. Walk all
+        Weapons we can reach and re-derive requires_ammo from weapon_class."""
+        from items import Weapon
+        AMMO_FOR_CLASS = {'bow': 'arrow', 'crossbow': 'bolt', 'sling': 'stone'}
+
+        def _patch(w):
+            if not isinstance(w, Weapon):
+                return
+            if getattr(w, 'requires_ammo', None):
+                return  # already correct
+            wcls = getattr(w, 'weapon_class', '') or ''
+            ammo = AMMO_FOR_CLASS.get(wcls)
+            if ammo:
+                w.requires_ammo = ammo
+                if wcls == 'sling':
+                    w.infinite_ammo = True
+
+        # Walk every weapon-bearing slot
+        for slot in (self.player.weapon, self.player.ranged_weapon):
+            _patch(slot)
+        for it in self.player.inventory:
+            _patch(it)
+        for it in self.ground_items:
+            _patch(it)
+
+        # If a ranged weapon ended up in the melee slot, relocate it
+        w = self.player.weapon
+        if isinstance(w, Weapon) and getattr(w, 'requires_ammo', None):
+            if self.player.ranged_weapon is None:
+                self.player.ranged_weapon = w
+                self.player.weapon = None
+                self.add_message(
+                    f"Your {w.name} was a ranged weapon all along -- moved to bow slot.",
+                    'info'
+                )
+            else:
+                self.player.inventory.append(w)
+                self.player.weapon = None
+                self.add_message(
+                    f"Your {w.name} is a ranged weapon -- returned to inventory (bow slot occupied).",
+                    'info'
+                )
 
     _migrate_buc_item = staticmethod(migrate_buc_item)
 

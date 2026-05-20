@@ -5014,5 +5014,294 @@
     "_drop_reason": "fk>10 (audit 2026-05-19)",
     "_fk": 12.11,
     "_old_tier": 5
+  },
+  {
+    "tier": 4,
+    "question": "Kierkegaard wrote under pseudonyms, broke his engagement to Regine, and refused to let Hegel's system absorb the individual. In 1946 Sartre claimed the line — minus the Christianity. What did he keep?",
+    "answer": "The human being is what it makes of itself by free choice; no essence is given before the act of existing.",
+    "choices": [
+      "The human being is what it makes of itself by free choice; no essence is given before the act of existing.",
+      "Language and reason cannot reach the inner life; only image and indirect speech reach true subjectivity.",
+      "The individual stands in permanent despair until reconciled; only a leap of faith cures the divided self.",
+      "The ethical sphere finally yields to the religious; moral life is a stage left behind for a higher one."
+    ],
+    "context": "Kierkegaard wrote against Hegel's systematic march of Spirit, insisting the existing individual cannot be folded into a logical totality. Sartre kept that anti-systematic root — the priority of existing over any essence — and dropped the religious framework Kierkegaard built on it. The three rejected options are genuinely Kierkegaardian — but each carries the Christianity Sartre dropped.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Avicenna drew a sharp line between what a thing is and that a thing is. A unicorn has a definite essence; a horse adds something more. What did he say the horse adds?",
+    "answer": "Existence — not part of any essence but a separate gift, added to it by something already existing.",
+    "choices": [
+      "Existence — not part of any essence but a separate gift, added to it by something already existing.",
+      "Matter — for any nature in the mind to become a horse in the field, it must be clothed in some stuff.",
+      "Form — the essence in the soul is bare; the horse abroad is shaped by the active intellect from outside.",
+      "Accidents — color, age, place; without these added marks an essence remains a generality with no instance."
+    ],
+    "context": "Ibn Sina's essence/existence distinction reshaped medieval metaphysics. No finite thing's existence is contained in its essence — knowing what a horse is tells you nothing about whether there are any. Aquinas built much of his natural theology on this; Averroes thought Avicenna had reified existence into a strange accident.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Avicenna distinguished essence from existence in created things. Aquinas pushed the move further to ground a specific claim about God. What did the move yield?",
+    "answer": "In every creature essence and existence differ; in God alone they are identical, so God is self-subsisting being.",
+    "choices": [
+      "In every creature essence and existence differ; in God alone they are identical, so God is self-subsisting being.",
+      "In every creature form and matter combine; in God alone form subsists pure, so God is unmoved pure actuality.",
+      "In every creature potency and act mix; in God alone potency is excluded, so God lacks all unrealized capacity.",
+      "In every creature being is participated; in God alone being is bestowed by grace, so God is the fount of being."
+    ],
+    "context": "The essence/existence distinction is one of Aquinas's deepest debts to Islamic philosophy. Avicenna (Ibn Sina) saw that 'what a thing is' and 'that it is' come apart for everything contingent — a phoenix has an essence whether or not any phoenix exists. Aquinas takes the next step: only in God is essence *identical* with existence, which is what 'I AM' means in Exodus 3:14 on his reading. The doctrine is the heart of *De Ente et Essentia*.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Karl Popper said science advances by one valid form: 'If the theory is true, P holds. P failed. So the theory is not true.' Aristotle named the form long before. What is it?",
+    "answer": "Modus tollens — denying the consequent of a conditional lets you deny its antecedent, the form Popper used for falsification.",
+    "choices": [
+      "Modus tollens — denying the consequent of a conditional lets you deny its antecedent, the form Popper used for falsification.",
+      "Modus ponens — affirming the antecedent lets you affirm the consequent, the basic forward step in any deductive chain.",
+      "Affirming the consequent — concluding the antecedent from the consequent, a famous fallacy that mimics modus tollens.",
+      "Denying the antecedent — concluding the consequent is false from the antecedent's falsity, a fallacy mirroring modus ponens."
+    ],
+    "context": "Popper turned modus tollens into a philosophy of science: theories are scientific to the extent they make predictions whose failure would refute them.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "In Plato's Theaetetus, Socrates examines three definitions of knowledge before each fails. The third — justified true belief — stood until 1963, when Gettier broke it. What was Plato's own worry?",
+    "answer": "He could not specify 'justification' without already presupposing the notion of knowledge it was supposed to analyze, so circularity loomed.",
+    "choices": [
+      "He could not specify 'justification' without already presupposing the notion of knowledge it was supposed to analyze, so circularity loomed.",
+      "He could not see how true belief could be reached without recollection of a prior life, so knowledge reduced to mere remembering.",
+      "He could not accept knowledge as propositional, since Forms were directly grasped by intellect rather than through subject-predicate sentences.",
+      "He could not reconcile knowledge with change, since true belief about appearances kept shifting while real knowledge required stable objects."
+    ],
+    "context": "The Theaetetus ends in aporia — no working definition of knowledge survives. Gettier's 1963 cases (true beliefs justified only by accident) confirmed Plato's instinct that something was missing.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Avicenna argued the world's existence cries out for explanation: every finite thing could fail to exist, so why does anything at all? His answer pointed at one specific being. What was unique about it?",
+    "answer": "Its essence and existence are one — it cannot be conceived as not existing, the only candidate to ground a chain of contingent beings.",
+    "choices": [
+      "Its essence and existence are one — it cannot be conceived as not existing, the only candidate to ground a chain of contingent beings.",
+      "Its power and knowledge are infinite — it can do anything not strictly contradictory, the only candidate able to explain why our finite world exists.",
+      "Its goodness and beauty are perfect — it draws all other beings toward itself, the only candidate able to give the universe a final purpose.",
+      "Its eternity and changelessness are absolute — it stands outside time entirely, the only candidate left standing once contingent things have passed."
+    ],
+    "context": "Ibn Sina's Necessary Existent (wajib al-wujud) is the centerpiece of his metaphysics. Where ordinary things have essences that do not include existence, the Necessary Existent's essence simply is its existence — there is nothing to it but the sheer fact of being. Aquinas later took this distinction into Christian theology, calling God Ipsum Esse Subsistens — Subsistent Being Itself.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Kant argued space and time are not features the world has in itself — they are the mind's own way of arranging what it receives. He called them the forms of intuition. What did this odd claim explain?",
+    "answer": "Why geometry's necessary truths fit the spatial world — space comes pre-structured by the mind, so the mind's a priori findings always match.",
+    "choices": [
+      "Why geometry's necessary truths fit the spatial world — space comes pre-structured by the mind, so the mind's a priori findings always match.",
+      "Why objects appear three-dimensional — the mind constructs the third dimension from the two-dimensional retinal images the eye delivers.",
+      "Why memory preserves earlier experiences — time as a mental form binds past states to present awareness, securing personal identity.",
+      "Why moral duties feel binding — the mind imposes a temporal structure on action, locating obligation in the future rather than the past."
+    ],
+    "context": "Transcendental Aesthetic. Kant makes mathematics necessarily applicable to nature — at the cost of denying space and time describe things in themselves.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 3,
+    "question": "Leibniz held reality is composed of countless simple substances he called monads. Each is windowless — none can be acted on from outside. Yet the world is orderly. How?",
+    "answer": "Each monad unfolds by its own internal program, and God arranged the programs in advance so they all line up — pre-established harmony.",
+    "choices": [
+      "Each monad unfolds by its own internal program, and God arranged the programs in advance so they all line up — pre-established harmony.",
+      "Each monad reflects the whole universe from its own angle, and the consistent reflections give one shared picture — a ballroom of mirrors.",
+      "Each monad sends perceptions that influence neighbors at a distance, and the influences produce the coordinated motions of the world.",
+      "Each monad is moved by a divine spirit at every moment, and what looks like inner development is in fact continuous divine intervention."
+    ],
+    "context": "Monadology (1714). The image is two perfect clocks: each runs by its own works, yet they always agree without any connection between them.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Wittgenstein asked what all games share — chess, solitaire, ring-a-ring-a-roses, Olympic sport. He found no single feature shared by every game. What did this show about most concepts?",
+    "answer": "They are held together by overlapping similarities like family resemblances — not by a hidden essence every instance of the concept must share",
+    "choices": [
+      "They are held together by overlapping similarities like family resemblances — not by a hidden essence every instance of the concept must share",
+      "They are vague because ordinary language evolved without scientific precision, but careful philosophical analysis can in principle yield sharp definitions",
+      "They cluster around a single prototypical case, and other instances count as members by their measurable degree of similarity to that prototype",
+      "They are cultural constructs with no extension in reality — a word like \"game\" picks out no genuine kind, only a contingent grouping of practices"
+    ],
+    "context": "Philosophical Investigations §§66–71. The point is aimed at the Socratic-Platonic search for the \"essence\" of justice, beauty, knowledge — the assumption every meaningful word must name a hidden common feature. Wittgenstein: look closely and you find a network of overlapping similarities, like the way siblings share features without any single feature being common to all of them. No essence is needed for the word to work.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Nietzsche's 'will to power' is often read as a license for cruelty — strong people dominate weak ones, end of story. In Beyond Good and Evil §13 he is more careful. Living things, he writes, do not aim primarily at self-preservation. What did he say they actually aim at?",
+    "answer": "Discharging strength — life itself is the expansion and exercise of power, with self-preservation arising as a consequence rather than the aim.",
+    "choices": [
+      "Discharging strength — life itself is the expansion and exercise of power, with self-preservation arising as a consequence rather than the aim.",
+      "Maximizing pleasure — every living thing acts to seek pleasant sensation and avoid pain, with all other motives reducing to this old calculus.",
+      "Survival of the species — every act is ultimately bent on passing on genes, with apparent self-interest being a tool of reproductive fitness.",
+      "Following received custom — animals and humans both inherit behaviors from groups, and individual action only channels what was already there."
+    ],
+    "context": "Beyond Good and Evil §13: 'life itself is will to power; self-preservation is only one of the indirect and most frequent results.'",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Nietzsche collapsed on a street in Turin in January 1889, throwing his arms around the neck of a horse being beaten by its driver. He never recovered. His sister Elisabeth controlled the archive until 1935. What did she do that distorted his reputation?",
+    "answer": "She edited his unpublished notes into a book she called The Will to Power and tied his thought to her own German nationalist and antisemitic politics.",
+    "choices": [
+      "She edited his unpublished notes into a book she called The Will to Power and tied his thought to her own German nationalist and antisemitic politics.",
+      "She destroyed most of the unpublished manuscripts after his death, fearing they contained material that would damage the family's reputation.",
+      "She forbade any translation of his works into French or English, so his thought reached the wider European public only after she had died.",
+      "She published his letters and diaries unredacted, exposing personal material that overshadowed his philosophical work for two generations."
+    ],
+    "context": "Nietzsche's actual letters break sharply with antisemitism (his break with Wagner partly turned on it). The Will to Power as 'a book' is her montage.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Nagarjuna taught emptiness — no thing has its own being. Critics said he had made emptiness itself a hidden essence. His answer pressed the move further. What?",
+    "answer": "Emptiness is empty too — not a higher essence behind appearances but a way of speaking about them, set aside once it has done its conceptual work for the seeker.",
+    "choices": [
+      "Emptiness is empty too — not a higher essence behind appearances but a way of speaking about them, set aside once it has done its conceptual work for the seeker.",
+      "Emptiness is the one true essence — appearances are misreadings of it, and the doctrine of two truths collapses into a single ultimate the sage finally reaches.",
+      "Emptiness applies only to compounded things — the simple elements still hold inherent natures, and the Abhidharma analysis stands intact behind the doctrine.",
+      "Emptiness is pure negation — every claim about anything must be denied without qualification, and silence is the only consistent conclusion to draw at the end."
+    ],
+    "context": "MMK 13.8 and 22.11. Nagarjuna anticipated the charge that emptiness was the new essence — and answered that the doctrine is a raft, not a destination. Garfield, Westerhoff, and Siderits debate whether this makes Madhyamaka a global anti-realism, a deflationary semantic move, or a soteriological device. Distractors track real rival readings — substance-monist, Abhidharma-Sarvastivada, nihilist.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 4,
+    "question": "Kripke argued in Naming and Necessity that proper names are 'rigid designators.' What did the term pick out?",
+    "answer": "A name refers to the same individual in every possible world where that individual exists — not to whoever fits a given description.",
+    "choices": [
+      "A name refers to the same individual in every possible world where that individual exists — not to whoever fits a given description.",
+      "A name's meaning is the description most associated with it — 'Aristotle' just means 'the philosopher who taught Alexander.'",
+      "A name's meaning is its present use — what speakers mean by 'Aristotle' is whatever current conversation makes the term refer to.",
+      "A name refers ambiguously across worlds — 'Aristotle' picks out different individuals depending on which world we are considering."
+    ],
+    "context": "Kripke's case: imagine a world where Aristotle never went into philosophy. Description theories say 'Aristotle' in that world refers to whoever did do philosophy. Rigid-designator theory says 'Aristotle' still refers to Aristotle — the same man, just a different career. The distinction reshaped modal metaphysics through the 1970s.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 2,
+    "question": "Leibniz said this world is 'the BEST of all possible worlds.' Voltaire mocked the idea. Why is the claim hard to swallow?",
+    "answer": "There is so much real harm in the world -- earthquakes, illness, war -- this is BEST?",
+    "choices": [
+      "There is so much real harm in the world -- earthquakes, illness, war -- this is BEST?",
+      "Leibniz had never been outside of his own home, so he had not seen any other lands.",
+      "Leibniz could not give a single reason for his claim and so people did not trust him.",
+      "Voltaire was a poet and not a thinker, so he made fun of any serious idea around him."
+    ],
+    "context": "Leibniz argued logically: God is good and chose THIS world. So this world must be best -- evils included. Voltaire's Candide piled up real harms to question this.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Leibniz proposed 'monads' with no windows on each other -- yet they mirror each other perfectly. How could this be, with no contact between them?",
+    "answer": "Pre-established harmony -- God so coordinates each monad that their states match without contact.",
+    "choices": [
+      "Pre-established harmony -- God so coordinates each monad that their states match without contact.",
+      "The monads do interact through fine connections that are too small for any human to see.",
+      "The mirroring is metaphorical, and the monads actually share the same single information state.",
+      "Each monad reads what the others are doing through some kind of subtle telepathic process."
+    ],
+    "context": "Leibniz's solution to the mind-body problem and the broader interaction problem: God set up all monads so they harmonize from the start -- no causal links between them needed at all.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Kripke said names are 'rigid' -- they pick out the same person in every possible world where that person exists. How does this break Russell's older view of names?",
+    "answer": "Names need not abbreviate descriptions; their reference is fixed by a baptism and a causal chain.",
+    "choices": [
+      "Names need not abbreviate descriptions; their reference is fixed by a baptism and a causal chain.",
+      "Names work in just the way Russell said, but only for fictional characters and not for real people.",
+      "Names depend on the language being spoken; in another language they refer to different individuals.",
+      "Russell was correct about names but wrong about other expressions like 'the,' 'a,' and 'some.'"
+    ],
+    "context": "Naming and Necessity (1980): 'Aristotle' refers to Aristotle in every world he exists -- not to 'whoever happens to be the teacher of Alexander' in that world. A revolution in semantics.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
+  },
+  {
+    "tier": 5,
+    "question": "Aristotle's account of practical wisdom (phronesis) says moral sight cannot be boiled down to rules. Why not, on his view?",
+    "answer": "Particulars vary indefinitely; the prudent agent reads situations no codified rule can fully anticipate.",
+    "choices": [
+      "Particulars vary indefinitely; the prudent agent reads situations no codified rule can fully anticipate.",
+      "Rules are too long and the agent has not memorized all of them in detail before acting.",
+      "Rules are written by lawmakers who do not really understand what real life is like for kids.",
+      "Rules conflict with each other often and so agents must just pick one rule arbitrarily."
+    ],
+    "context": "Phronesis is the virtue of seeing what THIS situation calls for. A rule says 'be brave'; the prudent agent sees what bravery is here, now, given these people -- something no algorithm matches.",
+    "_dropped": {
+      "reason": "doctrine_fragment_phase2",
+      "phase": "PHILOSOPHY_REWRITE_PLAN phase 2",
+      "date": "2026-05-20"
+    }
   }
 ]

@@ -2,6 +2,19 @@ import re
 import random
 
 
+def roll_duration(spec) -> int:
+    """Resolve an effect duration that may be either a plain int (fixed)
+    or a dice-notation string like '1d4' (variable).
+
+    Returns the rolled integer. -1 is preserved (permanent effect sentinel).
+    """
+    if isinstance(spec, int):
+        return spec
+    if isinstance(spec, str):
+        return roll(spec)
+    raise TypeError(f"duration must be int or dice string, got {type(spec).__name__}")
+
+
 def roll(notation: str) -> int:
     """Parse and roll dice notation like '2d6+3', '1d20', 'd6'.
 

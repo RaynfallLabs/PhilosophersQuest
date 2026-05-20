@@ -4,6 +4,8 @@
   "category": "weapon",
   "weapon_class": "crossbow",
   "hands": 2,
+  "requires_ammo": "bolt",
+  "reach": 9,
   "damage_types": [
     "pierce"
   ],

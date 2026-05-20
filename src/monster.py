@@ -1,5 +1,5 @@
 import random
-from dice import roll
+from dice import roll, roll_duration
 from combat import _line_of_sight
 from status_effects import MAX_EFFECT_DURATION
 
@@ -524,7 +524,7 @@ class Monster:
         effect_id = atk.get('effect')
         if effect_id:
             chance   = atk.get('effect_chance', 0.30)
-            duration = atk.get('effect_duration', 5)
+            duration = roll_duration(atk.get('effect_duration', 5))
             if random.random() < chance:
                 # Reflecting: 50% chance to bounce effect back at attacker
                 if player.has_effect('reflecting') and random.random() < 0.50:

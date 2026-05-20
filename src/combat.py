@@ -678,14 +678,15 @@ def can_ranged_attack(player, monster, dungeon) -> bool:
     dist = max(dx, dy)
     if dist > reach:
         return False
-    # Check ammo in inventory
-    ammo_type = weapon.requires_ammo
-    has_ammo = any(
-        getattr(i, 'ammo_type', None) == ammo_type
-        for i in player.inventory
-    )
-    if not has_ammo:
-        return False
+    # Check ammo in inventory (skip for infinite-ammo weapons — sling/stones)
+    if not getattr(weapon, 'infinite_ammo', False):
+        ammo_type = weapon.requires_ammo
+        has_ammo = any(
+            getattr(i, 'ammo_type', None) == ammo_type
+            for i in player.inventory
+        )
+        if not has_ammo:
+            return False
     # Line of sight: check no solid tiles block the path (Bresenham)
     return _line_of_sight(player.x, player.y, monster.x, monster.y, dungeon)
 

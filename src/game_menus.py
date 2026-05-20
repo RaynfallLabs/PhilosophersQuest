@@ -651,12 +651,18 @@ class MenuMixin:
             return getattr(i, 'id_level', 5) < 5
 
         inv_items = [i for i in self.player.inventory if _needs_identify(i)]
+        # Ground items at player's tile — EXCLUDE corpses so they don't get
+        # double-listed (once as ground, once as corpse). Corpses get their
+        # own section below.
         ground_items = [
             i for i in self.ground_items
             if i.x == self.player.x and i.y == self.player.y
+               and not isinstance(i, Corpse)
                and _needs_identify(i)
         ]
-        # Corpses on the current tile that haven't been lore-identified yet
+        # Corpses on the current tile that haven't been lore-identified yet.
+        # Flatten into ground_entries — no separate "CORPSES" section per
+        # 2026-05-20 playtest feedback (felt redundant alongside "ON THE GROUND").
         _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
         corpses = [
             i for i in self.ground_items
@@ -665,7 +671,9 @@ class MenuMixin:
                and not i.lore_identified
                and getattr(i, 'monster_id', '') not in _lore_known
         ]
-        # Store as (item, is_ground, is_corpse) tuples
+        # Store as (item, is_ground, is_corpse) tuples.
+        # Corpses now flagged is_ground=True so they share the ON THE GROUND
+        # section with regular items.
         self.identify_menu_items = (
             [(i, False, False) for i in inv_items]
             + [(i, True,  False) for i in ground_items]

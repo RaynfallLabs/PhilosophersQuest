@@ -667,6 +667,16 @@ class CombatMixin:
             item_tier = int(treasure.get('item_tier', 1))
             self._spawn_treasure_item(monster.x, monster.y, item_tier)
 
+        # Archer ammo drop: monsters with bows/crossbows in their attack
+        # profile carry their own ammo. Per-profile chance + count_range
+        # tuned in data/monsters.json under treasure.ammo_drop.
+        ammo_drop = treasure.get('ammo_drop')
+        if ammo_drop and _rng.random() < float(ammo_drop.get('chance', 0.65)):
+            cmin, cmax = ammo_drop.get('count_range', [3, 8])
+            count = _rng.randint(int(cmin), int(cmax))
+            self._spawn_archer_ammo(monster.x, monster.y,
+                                    ammo_drop['ammo_id'], count)
+
         # Boss reward scroll
         boss_scroll_id = treasure.get('boss_scroll_id')
         if boss_scroll_id:
@@ -676,6 +686,20 @@ class CombatMixin:
         unique_drop_id = treasure.get('unique_drop_id')
         if unique_drop_id:
             self._spawn_unique_item(monster.x, monster.y, unique_drop_id)
+
+    def _spawn_archer_ammo(self, x: int, y: int, ammo_id: str, count: int):
+        """Drop a stack of `count` ammo items at (x, y). Used by archer
+        monsters whose treasure profile names an ammo_id."""
+        from items import load_items, copy_at
+        try:
+            ammos = load_items('ammo')
+            template = next((a for a in ammos if a.id == ammo_id), None)
+            if template:
+                stack = copy_at(template, x, y)
+                stack.count = count
+                self.ground_items.append(stack)
+        except Exception:
+            pass
 
     def _make_corpse(self, monster):
         """Create a Corpse for a monster, auto-identifying it if the type is already known."""

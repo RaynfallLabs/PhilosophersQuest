@@ -22,7 +22,7 @@ Mimic check:
 import copy
 import random
 
-from dice import roll
+from dice import roll, roll_duration
 
 
 # ---------------------------------------------------------------------------
@@ -176,7 +176,7 @@ def _trigger_trap(player, trap: dict, messages: list):
         messages.append((f'You take {actual} damage!', 'danger'))
 
     effect     = trap.get('effect')
-    effect_dur = int(trap.get('effect_duration', 5))
+    effect_dur = roll_duration(trap.get('effect_duration', 5))
 
     if effect:
         applied = player.add_effect(effect, effect_dur)
