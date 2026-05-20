@@ -522,17 +522,25 @@ class Player:
             m = self.unlocked_masteries.get(getattr(s, 'id', None))
             if m and m.get('kind') == 'armor_ac_bonus':
                 mastery_ac += int(m.get('value', 0))
-        # class_acc_ac_bonus mastery (Ring of Protection class): +N AC for each
-        # equipped ring of that class. Only fires while the ring is worn.
+        # class_acc_ac_bonus mastery (Ring of Protection class): +N AC.
+        # CAPPED ONCE PER MASTERED CLASS (not per equipped ring) so that
+        # wearing 4 Rings of Protection doesn't multiply the mastery bonus.
+        # The base ring AC already stacks per-piece; mastery is a one-time
+        # 'you understand this class' nod.
         try:
             from class_masteries import get_mastery_class as _gmc_ac
         except ImportError:
             _gmc_ac = None
         if _gmc_ac is not None:
+            credited_classes = set()
             for s in self.equipped_accessories:
-                m = self.unlocked_class_masteries.get(_gmc_ac(s))
+                cls_id = _gmc_ac(s)
+                if cls_id in credited_classes:
+                    continue
+                m = self.unlocked_class_masteries.get(cls_id)
                 if m and m.get('kind') == 'class_acc_ac_bonus':
                     mastery_ac += int(m.get('value', 0))
+                    credited_classes.add(cls_id)
         # Leonidas Spartan Stand: +N AC while the stand_ac status holds.
         stand_ac = 0
         if self.status_effects.get('stand_ac', 0) > 0:
@@ -560,14 +568,20 @@ class Player:
         if self.shield and hasattr(self.shield, 'damage_resistances'):
             mult *= self.shield.damage_resistances.get(damage_type, 1.0)
         # class_acc_resist_bonus mastery: matching equipped resist-ring applies
-        # an extra fractional reduction to the matching damage type.
+        # an extra fractional reduction. CAPPED ONCE PER MASTERED CLASS so
+        # wearing 4 Rings of Fire Resistance doesn't multiply the mastery
+        # contribution. The base ring resistance still stacks per-piece.
         try:
             from class_masteries import get_mastery_class as _gmc_r
         except ImportError:
             _gmc_r = None
         if _gmc_r is not None:
+            credited_resist = set()
             for acc in self.equipped_accessories:
-                m = self.unlocked_class_masteries.get(_gmc_r(acc))
+                cid = _gmc_r(acc)
+                if cid in credited_resist:
+                    continue
+                m = self.unlocked_class_masteries.get(cid)
                 if not m or m.get('kind') != 'class_acc_resist_bonus':
                     continue
                 v = m.get('value') or {}
@@ -575,6 +589,7 @@ class Player:
                 amt = float(v.get('amount', 0))
                 if t == damage_type and amt > 0:
                     mult *= max(0.0, 1.0 - amt)
+                    credited_resist.add(cid)
         return mult
 
     def get_sight_radius(self) -> int:
@@ -638,15 +653,22 @@ class Player:
         fires while the regen accessory is worn — matches the intent of the
         blessing description (per-ring class).
         """
+        # CAPPED ONCE PER MASTERED CLASS — wearing 4 Rings of Regeneration
+        # doesn't multiply the per-tick regen mastery bonus.
         try:
             from class_masteries import get_mastery_class as _gmc_re
         except ImportError:
             return 0
         bonus = 0
+        credited = set()
         for acc in self.equipped_accessories:
-            m = self.unlocked_class_masteries.get(_gmc_re(acc))
+            cid = _gmc_re(acc)
+            if cid in credited:
+                continue
+            m = self.unlocked_class_masteries.get(cid)
             if m and m.get('kind') == 'class_acc_regen_bonus':
                 bonus += int(m.get('value', 0))
+                credited.add(cid)
         return bonus
 
     def get_class_mastery_sp_burn_factor(self) -> float:
@@ -655,24 +677,31 @@ class Player:
         Returns 0.0 by default; e.g. 0.10 means SP drains 10% slower while a
         mastered ring/amulet of sustenance is equipped. Wired at the SP-tick
         site (main._tick_sp) — see drain_interval scaling.
+
+        CAPPED ONCE PER MASTERED CLASS.
         """
         try:
             from class_masteries import get_mastery_class as _gmc_sp
         except ImportError:
             return 0.0
         factor = 0.0
+        credited = set()
         for acc in self.equipped_accessories:
-            m = self.unlocked_class_masteries.get(_gmc_sp(acc))
+            cid = _gmc_sp(acc)
+            if cid in credited:
+                continue
+            m = self.unlocked_class_masteries.get(cid)
             if m and m.get('kind') == 'class_acc_sp_burn_bonus':
                 factor += float(m.get('value', 0.0))
+                credited.add(cid)
         return factor
 
     def get_class_mastery_passive_radius_bonus(self, class_slug: str) -> int:
         """Extra search/warning/clairvoyance radius from class_acc_passive_radius.
 
         class_slug is one of: 'searching', 'warning', 'clairvoyance',
-        'telepathy'. Returns total bonus from BOTH ring + amulet variants when
-        both are mastered + equipped.
+        'telepathy'. Returns ONE bonus per matching mastered class — wearing
+        two Rings of Searching does NOT double the radius.
         """
         try:
             from class_masteries import get_mastery_class as _gmc_pr
@@ -681,13 +710,17 @@ class Player:
         bonus = 0
         ring_id = f'ring_of_{class_slug}'
         amu_id = f'amulet_of_{class_slug}'
+        credited = set()
         for acc in self.equipped_accessories:
             cid = _gmc_pr(acc)
             if cid not in (ring_id, amu_id):
                 continue
+            if cid in credited:
+                continue
             m = self.unlocked_class_masteries.get(cid)
             if m and m.get('kind') == 'class_acc_passive_radius':
                 bonus += int(m.get('value', 0))
+                credited.add(cid)
         return bonus
 
     def get_carry_limit(self) -> int:
