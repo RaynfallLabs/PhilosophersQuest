@@ -31,6 +31,22 @@ situation and identify what move survives scrutiny, it has succeeded.
 5. **Doctrine fragments without scaffolding** — "Avicenna drew a line
    between essence and existence. What did the horse add?" The reader has
    no foothold; they're either trained on Avicenna or they're guessing.
+6. **Multiple-legit-answers without a forcing constraint.** If three of
+   the four choices are all legitimate moves a careful thinker would
+   consider, the player has no way to pick the "right" one without trivia
+   knowledge of which philosopher held which view. The stem MUST include a
+   forcing constraint — a phrase, detail, or pre-stated condition in the
+   scenario that only ONE option logically completes. Examples:
+   - "If God is just..." forces a *justice* answer, not a virtue answer.
+   - A scenario stating "motive, multiple witnesses, and contemporary
+     record are all satisfied" forces a *prior-probability* answer.
+   - A scenario showing "years lost to postponement" forces a *time-now*
+     answer, not a wealth/gossip/duty answer.
+   Without the forcing constraint, the question is name-recall in disguise.
+7. **Doctrine jargon in choices** — *"synthetic a priori"*, *"analytic
+   a posteriori"*, *"empirical a priori"*. If the player needs to know
+   technical terminology to decode the choices, the question is
+   nomenclature recall, not reasoning.
 
 ## Where philosopher names belong
 
