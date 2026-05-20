@@ -348,10 +348,10 @@ def default_blessing_for_class(class_id: str, item) -> dict | None:
         return {'kind': 'weapon_base_damage_bonus', 'value': 1, 'scope': 'class',
                 'desc': f"You know the {class_id.replace('_', ' ')} — +1 flat damage on every hit."}
     if isinstance(item, Armor):
-        # Flat -1 incoming damage reduction. Same reasoning — multiplicative
-        # rounding makes 5% invisible at low damage.
+        # Flat -1 incoming physical. Capped at 1 total in player.take_damage
+        # (eight armor slots × -1 each would be game-breaking).
         return {'kind': 'class_armor_damage_reduction', 'value': 1, 'scope': 'class',
-                'desc': f"You wear the {class_id.replace('_', ' ')} as if born to it — -1 incoming damage."}
+                'desc': f"You wear the {class_id.replace('_', ' ')} as if born to it — -1 incoming physical (capped: 1 max from any mastered armor)."}
     if isinstance(item, Shield):
         return {'kind': 'class_shield_ac_bonus', 'value': 1, 'scope': 'class',
                 'desc': f"The {class_id.replace('_', ' ')} sits true on your arm — +1 AC bonus when held."}

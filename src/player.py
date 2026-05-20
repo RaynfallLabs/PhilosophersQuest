@@ -185,7 +185,10 @@ class Player:
             if elem and elem.get('kind') == 'resist_elemental':
                 flat_reduction += int(elem.get('value', 0))
         # Class-mastery flat reduction from equipped armor — physical-only.
-        # Each equipped armor piece of a mastered class contributes its value.
+        # CAPPED AT 1 total (not per-piece): with 8 armor slots, stacking
+        # would let a fully-decked player approach physical immunity. The
+        # bonus represents 'you've learned the geometry of armor,' not
+        # eight independent achievements.
         if damage_type == 'physical':
             class_masteries = getattr(self, 'unlocked_class_masteries', {}) or {}
             if class_masteries:
@@ -196,6 +199,7 @@ class Player:
                             m = class_masteries.get(get_mastery_class(armor_piece))
                             if m and m.get('kind') == 'class_armor_damage_reduction':
                                 flat_reduction += int(m.get('value', 0))
+                                break  # ONLY ONCE — cap at 1 total
                 except Exception:
                     pass
         amount = max(0, amount - flat_reduction)
