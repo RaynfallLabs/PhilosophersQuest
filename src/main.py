@@ -531,6 +531,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # inventory, and ground; relocate any equipped ranged weapon from
         # weapon -> ranged_weapon.
         self._migrate_ranged_weapons()
+        # Save compat: common weapons/armor/shields created before 2026-05-20
+        # had empty `lore` fields. Recompose from template + material so the
+        # examine panel shows lore.
+        self._migrate_common_item_lore()
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.GAME_W, layout.GAME_H)
         self._refresh_fov()
         self.add_message("Welcome back, seeker. Your journey continues...", 'success')
@@ -557,6 +561,54 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Walk every weapon-bearing slot
         for slot in (self.player.weapon, self.player.ranged_weapon):
             _patch(slot)
+        for it in self.player.inventory:
+            _patch(it)
+        for it in self.ground_items:
+            _patch(it)
+
+    def _migrate_common_item_lore(self):
+        """One-shot save migration. Common Weapons/Armor/Shields created
+        before the 2026-05-20 lore generation pass have empty .lore fields.
+        Recompose lore from the item's stored template + material."""
+        from items import (Weapon, Armor, Shield, get_template, get_material,
+                            _compose_common_lore, item_noun_for_weapon)
+        def _patch(it):
+            if not isinstance(it, (Weapon, Armor, Shield)):
+                return
+            if getattr(it, 'lore', '') or getattr(it, 'is_unique', False):
+                return  # already has lore, or it's a unique (don't overwrite)
+            material_id = getattr(it, 'material', '')
+            iid = getattr(it, 'id', '')
+            # Item id format: '{material}_{template}'
+            if not material_id or '_' not in iid:
+                return
+            template_id = iid.split('_', 1)[1] if iid.startswith(material_id) else ''
+            if not template_id:
+                return
+            # Try the right template directory based on item class
+            tpl_dir = {Weapon: 'weapons', Armor: 'armor', Shield: 'shields'}.get(type(it))
+            if not tpl_dir:
+                return
+            try:
+                tpl = get_template(tpl_dir, template_id)
+                # Material can come from weapons or armor pool
+                mat = get_material(tpl_dir, material_id) or get_material('armor', material_id) or get_material('weapons', material_id)
+                if not tpl or not mat:
+                    return
+                if isinstance(it, Weapon):
+                    noun = item_noun_for_weapon(tpl)
+                elif isinstance(it, Armor):
+                    noun = 'plate' if 'plate' in template_id else 'piece'
+                else:
+                    noun = 'face'
+                it.lore = _compose_common_lore(tpl, mat, getattr(it, 'name', iid), noun)
+            except Exception:
+                pass
+
+        for slot in (self.player.weapon, self.player.ranged_weapon, self.player.shield):
+            _patch(slot)
+        for s in self.player.armor_slots or []:
+            _patch(s)
         for it in self.player.inventory:
             _patch(it)
         for it in self.ground_items:

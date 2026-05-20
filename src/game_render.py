@@ -3923,6 +3923,14 @@ class RenderMixin:
                 stat_lines.append(f"Ammo Type: {subject.ammo_type}  |  Tier: {subject.tier}")
                 stat_lines.append(f"Damage Bonus: +{subject.damage_bonus}  |  Count: {subject.count_min}-{subject.count_max}")
 
+            elif id_level >= 3 and isinstance(subject, Spellbook):
+                spell_name = getattr(subject, 'spell_name', subject.name)
+                mp_cost = getattr(subject, 'mp_cost', '?')
+                stat_lines.append(f"Spell: {spell_name}  |  MP Cost: {mp_cost}")
+                quiz_thr = getattr(subject, 'quiz_threshold', None)
+                if quiz_thr is not None:
+                    stat_lines.append(f"Quiz Threshold: {quiz_thr} correct answers to learn")
+
             # Lore only at id_level >= 4. Below that, show a teaser line.
             if id_level >= 4:
                 lore_text = subject.lore or "No further records found."

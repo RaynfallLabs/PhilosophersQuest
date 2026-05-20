@@ -688,45 +688,7 @@ def instantiate_weapon(template_id: str, material_id: str, *,
 
     weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
     name = f"{mat['name']} {tpl['name']}"
-
-    # Compose lore from template's lore_template + material's lore_descriptor.
-    # Templates may start with "A {material_name}..." — fix article if the
-    # material name starts with a vowel.
-    def _fix_article(text, material_name):
-        """Fix 'A iron' -> 'An iron' if material starts with a vowel."""
-        if material_name and material_name[0].lower() in 'aeiou':
-            text = re.sub(r'\bA\s+' + re.escape(material_name), f'An {material_name}', text)
-        return text
-    import re
-
-    lore_template = tpl.get('lore_template', '')
-    material_descriptor = mat.get('lore_descriptor', '')
-    lore = ''
-    if lore_template:
-        try:
-            lore = lore_template.format(material_name=mat['name'])
-        except (KeyError, IndexError):
-            lore = lore_template
-        lore = _fix_article(lore, mat['name'])
-    if material_descriptor:
-        item_noun = {
-            'sword': 'blade', 'dagger': 'blade', 'rapier': 'blade',
-            'scimitar': 'blade', 'axe': 'head', 'mace': 'head',
-            'maul': 'head', 'hammer': 'head', 'club': 'shaft',
-            'staff': 'shaft', 'flail': 'head', 'glaive': 'blade',
-            'spear': 'point', 'bow': 'wood', 'crossbow': 'limb',
-            'sling': 'leather', 'whip': 'cord',
-        }.get(tpl.get('weapon_class', ''), 'weapon')
-        if lore and not lore.endswith('.'):
-            lore = lore + '.'
-        if lore:
-            lore = f"{lore} The {item_noun} is {material_descriptor}."
-        else:
-            lore = f"An everyday {name}. The {item_noun} is {material_descriptor}."
-            lore = _fix_article(lore, mat['name'])
-    if not lore:
-        lore = f"A common {name} — a reliable weapon of its class, no more, no less."
-        lore = _fix_article(lore, mat['name'])
+    lore = _compose_common_lore(tpl, mat, name, item_noun_for_weapon(tpl))
 
     defn = {
         'id': f"{material_id}_{template_id}",
@@ -775,6 +737,53 @@ def instantiate_weapon(template_id: str, material_id: str, *,
     return w
 
 
+def _fix_article(text, material_name):
+    """Fix 'A iron' -> 'An iron' if material name starts with a vowel."""
+    import re as _re
+    if material_name and material_name[0].lower() in 'aeiou':
+        text = _re.sub(r'\bA\s+' + _re.escape(material_name),
+                       f'An {material_name}', text)
+    return text
+
+
+def item_noun_for_weapon(tpl):
+    return {
+        'sword': 'blade', 'dagger': 'blade', 'rapier': 'blade',
+        'scimitar': 'blade', 'axe': 'head', 'mace': 'head',
+        'maul': 'head', 'hammer': 'head', 'club': 'shaft',
+        'staff': 'shaft', 'flail': 'head', 'glaive': 'blade',
+        'spear': 'point', 'bow': 'wood', 'crossbow': 'limb',
+        'sling': 'leather', 'whip': 'cord',
+    }.get(tpl.get('weapon_class', ''), 'weapon')
+
+
+def _compose_common_lore(tpl, mat, name, item_noun):
+    """Compose lore for a common item from template.lore_template +
+    material.lore_descriptor. Returns a non-empty lore string.
+    """
+    lore_template = tpl.get('lore_template', '')
+    material_descriptor = mat.get('lore_descriptor', '')
+    lore = ''
+    if lore_template:
+        try:
+            lore = lore_template.format(material_name=mat['name'])
+        except (KeyError, IndexError):
+            lore = lore_template
+        lore = _fix_article(lore, mat['name'])
+    if material_descriptor:
+        if lore and not lore.endswith('.'):
+            lore = lore + '.'
+        if lore:
+            lore = f"{lore} The {item_noun} is {material_descriptor}."
+        else:
+            lore = f"An everyday {name}. The {item_noun} is {material_descriptor}."
+            lore = _fix_article(lore, mat['name'])
+    if not lore:
+        lore = f"A common {name} — reliable enough for the work."
+        lore = _fix_article(lore, mat['name'])
+    return lore
+
+
 def instantiate_armor(template_id: str, material_id: str, *,
                      enchant: int = 0, buc: str = 'uncursed',
                      x: int = 0, y: int = 0) -> 'Armor':
@@ -789,10 +798,12 @@ def instantiate_armor(template_id: str, material_id: str, *,
     base_ac = int(tpl.get('base_ac_value', 1))
     material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
+    name = f"{mat['name']} {tpl['name']}"
 
     defn = {
         'id': f"{material_id}_{template_id}",
-        'name': f"{mat['name']} {tpl['name']}",
+        'name': name,
+        'lore': _compose_common_lore(tpl, mat, name, 'plate' if 'plate' in template_id else 'piece'),
         'symbol': '[',
         'color': mat.get('color', [180, 180, 180]),
         'weight': weight,
@@ -828,9 +839,11 @@ def instantiate_shield(template_id: str, material_id: str, *,
     base_ac = int(tpl.get('base_ac_value', 1))
     material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
+    name = f"{mat['name']} {tpl['name']}"
     defn = {
         'id': f"{material_id}_{template_id}",
-        'name': f"{mat['name']} {tpl['name']}",
+        'name': name,
+        'lore': _compose_common_lore(tpl, mat, name, 'face' if 'shield' in template_id.lower() or 'buckler' in template_id.lower() else 'shield'),
         'symbol': ')',
         'color': mat.get('color', [180, 180, 180]),
         'weight': weight,
