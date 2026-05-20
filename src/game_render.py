@@ -3800,9 +3800,21 @@ class RenderMixin:
             title_text = f"{subject.name.upper()}  --  {item_class_label}"
             stat_lines = []
 
-            # Mastery banner \u2014 top line when id_level == 5 and mastery has been claimed.
-            mastered = (id_level >= 5
-                        and getattr(self.player, 'unlocked_masteries', {}).get(subject.id))
+            # Mastery banner \u2014 top line when id_level == 5 and mastery has
+            # been claimed. Uniques key on item.id (unlocked_masteries); commons
+            # key on mastery_class (unlocked_class_masteries).
+            mastered = None
+            if id_level >= 5:
+                mastered = (getattr(self.player, 'unlocked_masteries', {})
+                            .get(subject.id))
+                if not mastered:
+                    try:
+                        from class_masteries import get_mastery_class
+                        cls_id = get_mastery_class(subject)
+                        mastered = (getattr(self.player, 'unlocked_class_masteries', {})
+                                    .get(cls_id))
+                    except Exception:
+                        pass
             if mastered:
                 stat_lines.append(f">> MASTERED <<  {mastered.get('desc', '')}")
 
@@ -3894,6 +3906,18 @@ class RenderMixin:
                 stat_lines.append(f"SP Restored: {subject.sp_restore}  |  HP Restored: {subject.hp_restore}")
                 if subject.bonus_type != 'none' and subject.bonus_amount:
                     stat_lines.append(f"Bonus: {subject.bonus_type} {subject.bonus_stat or subject.bonus_effect} +{subject.bonus_amount}")
+
+            elif id_level >= 3 and isinstance(subject, Potion):
+                # Effect line: 'heal', 'cure_poison', 'gain_str', etc.
+                # Power is a dice expression like '2d8+4' for healing.
+                eff_label = subject.effect.replace('_', ' ').title() if subject.effect else 'Unknown'
+                stat_lines.append(f"Effect: {eff_label}")
+                if subject.power:
+                    stat_lines.append(f"Magnitude: {subject.power}  (rolled when quaffed)")
+                if subject.duration:
+                    stat_lines.append(f"Duration: {subject.duration} turns")
+                else:
+                    stat_lines.append("Duration: instant")
 
             elif id_level >= 3 and isinstance(subject, Ammo):
                 stat_lines.append(f"Ammo Type: {subject.ammo_type}  |  Tier: {subject.tier}")
