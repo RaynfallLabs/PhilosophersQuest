@@ -232,7 +232,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
-        "effect_duration": 8
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
@@ -279,7 +279,7 @@
         "type": "physical",
         "effect": "diseased",
         "effect_chance": 0.3,
-        "effect_duration": 15
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [],
@@ -334,7 +334,7 @@
         "type": "acid",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 8
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [],
@@ -432,7 +432,7 @@
     "peak_floor": 8,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 4,
+    "min_level": 6,
     "attacks": [
       {
         "name": "bite",
@@ -448,7 +448,7 @@
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6
+        "effect_duration": "1d6"
       }
     ],
     "resistances": [],
@@ -485,7 +485,7 @@
     "peak_floor": 35,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 31,
+    "min_level": 33,
     "attacks": [
       {
         "name": "crushing maw",
@@ -543,7 +543,7 @@
     "peak_floor": 75,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 71,
+    "min_level": 73,
     "attacks": [
       {
         "name": "devouring embrace",
@@ -612,7 +612,7 @@
         "type": "physical",
         "effect": "teleportitis",
         "effect_chance": 0.4,
-        "effect_duration": 10
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [],
@@ -699,8 +699,8 @@
         "damage": "1d2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.35,
-        "effect_duration": 6
+        "effect_chance": 0.25,
+        "effect_duration": "1d4"
       }
     ],
     "resistances": [
@@ -1026,7 +1026,7 @@
         "type": "physical",
         "effect": "diseased",
         "effect_chance": 0.2,
-        "effect_duration": 10
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [],
@@ -1114,7 +1114,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claw",
@@ -1165,7 +1165,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "axe",
@@ -1207,7 +1207,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "dart",
@@ -1252,7 +1252,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "drain",
@@ -1305,7 +1305,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "antenna",
@@ -1313,7 +1313,7 @@
         "type": "acid",
         "effect": "weakened",
         "effect_chance": 0.5,
-        "effect_duration": 10
+        "effect_duration": "1d10"
       }
     ],
     "resistances": [],
@@ -1350,7 +1350,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claw",
@@ -1397,7 +1397,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "club",
@@ -1441,7 +1441,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "touch",
@@ -1495,7 +1495,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "slam",
@@ -1503,7 +1503,7 @@
         "type": "blunt",
         "effect": "diseased",
         "effect_chance": 0.5,
-        "effect_duration": 20
+        "effect_duration": "1d12"
       },
       {
         "name": "rot",
@@ -1555,7 +1555,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "bite",
@@ -1610,7 +1610,7 @@
     "peak_floor": 25,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 13,
     "attacks": [
       {
         "name": "club_left",
@@ -1660,7 +1660,7 @@
     "peak_floor": 25,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 13,
     "attacks": [
       {
         "name": "claw",
@@ -1715,7 +1715,7 @@
     "peak_floor": 25,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 13,
     "attacks": [
       {
         "name": "touch",
@@ -1778,7 +1778,7 @@
     "peak_floor": 25,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 13,
     "attacks": [
       {
         "name": "bite",
@@ -1791,7 +1791,7 @@
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 1.0,
-        "effect_duration": 8
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
@@ -1830,7 +1830,7 @@
     "peak_floor": 25,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 13,
     "attacks": [
       {
         "name": "claw",
@@ -1893,7 +1893,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "gore",
@@ -1942,7 +1942,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "bite",
@@ -1996,7 +1996,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "snake_bite",
@@ -2052,7 +2052,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "bite",
@@ -2118,7 +2118,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "fire_slam",
@@ -2169,7 +2169,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "stone_fist",
@@ -2218,7 +2218,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "lightning_bolt",
@@ -2268,7 +2268,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "cold_bolt",
@@ -2323,7 +2323,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "mind_blast",
@@ -2377,7 +2377,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "bite",
@@ -2439,7 +2439,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "sword",
@@ -2496,7 +2496,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "slam",
@@ -2546,7 +2546,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "claw",
@@ -2599,7 +2599,7 @@
     "peak_floor": 55,
     "spread": 13,
     "peak_weight": 2.0,
-    "min_level": 29,
+    "min_level": 42,
     "attacks": [
       {
         "name": "claw",
@@ -2667,7 +2667,7 @@
     "peak_floor": 55,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 29,
+    "min_level": 42,
     "attacks": [
       {
         "name": "paralyzing_ray",
@@ -2751,7 +2751,7 @@
     "peak_floor": 55,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 29,
+    "min_level": 42,
     "attacks": [
       {
         "name": "bite",
@@ -2764,7 +2764,7 @@
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.5,
-        "effect_duration": 20
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [
@@ -2811,7 +2811,7 @@
     "peak_floor": 55,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 29,
+    "min_level": 42,
     "attacks": [
       {
         "name": "death_touch",
@@ -2876,7 +2876,7 @@
     "peak_floor": 72,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 44,
+    "min_level": 58,
     "attacks": [
       {
         "name": "claw",
@@ -2936,7 +2936,7 @@
     "peak_floor": 72,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 44,
+    "min_level": 58,
     "attacks": [
       {
         "name": "slam",
@@ -2988,7 +2988,7 @@
     "peak_floor": 72,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 44,
+    "min_level": 58,
     "attacks": [
       {
         "name": "death_bolt",
@@ -3049,7 +3049,7 @@
     "peak_floor": 72,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 44,
+    "min_level": 58,
     "attacks": [
       {
         "name": "hellfire",
@@ -3105,7 +3105,7 @@
     "peak_floor": 90,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 66,
+    "min_level": 78,
     "attacks": [
       {
         "name": "claw",
@@ -3123,7 +3123,7 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.8,
-        "effect_duration": 10,
+        "effect_duration": "1d12",
         "piercing": true
       },
       {
@@ -3182,7 +3182,7 @@
     "peak_floor": 90,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 86,
+    "min_level": 88,
     "attacks": [
       {
         "name": "death_ray",
@@ -3195,7 +3195,7 @@
         "type": "physical",
         "effect": "weakened",
         "effect_chance": 1.0,
-        "effect_duration": 30
+        "effect_duration": "1d12"
       },
       {
         "name": "cold_nova",
@@ -3253,7 +3253,7 @@
     "peak_floor": 90,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 66,
+    "min_level": 78,
     "attacks": [
       {
         "name": "soul_rend",
@@ -3261,7 +3261,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.8,
-        "effect_duration": 20
+        "effect_duration": "1d12"
       },
       {
         "name": "fear_aura",
@@ -3269,7 +3269,7 @@
         "type": "physical",
         "effect": "feared",
         "effect_chance": 1.0,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       },
       {
         "name": "death_gaze",
@@ -3277,7 +3277,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.8,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [
@@ -3324,7 +3324,7 @@
     "peak_floor": 90,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 66,
+    "min_level": 78,
     "attacks": [
       {
         "name": "chaos_touch",
@@ -3332,7 +3332,7 @@
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.8,
-        "effect_duration": 15
+        "effect_duration": "1d12"
       },
       {
         "name": "void_claw",
@@ -3378,7 +3378,7 @@
     "peak_floor": 90,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 66,
+    "min_level": 78,
     "attacks": [
       {
         "name": "soul_drain",
@@ -3386,7 +3386,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 1.0,
-        "effect_duration": 20
+        "effect_duration": "1d12"
       },
       {
         "name": "terror",
@@ -3394,7 +3394,7 @@
         "type": "physical",
         "effect": "feared",
         "effect_chance": 0.9,
-        "effect_duration": 12
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [
@@ -3591,7 +3591,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "tongue lash",
@@ -3642,7 +3642,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "dagger",
@@ -3689,7 +3689,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "bite",
@@ -3742,7 +3742,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "slam",
@@ -3796,7 +3796,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "talon rake",
@@ -3814,7 +3814,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": "1d10"
       }
     ],
     "resistances": [],
@@ -3854,7 +3854,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "death bolt",
@@ -4010,7 +4010,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claw",
@@ -4079,7 +4079,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.4,
-        "effect_duration": 6
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
@@ -4123,7 +4123,7 @@
     "peak_floor": 15,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 11,
+    "min_level": 13,
     "attacks": [
       {
         "name": "bite",
@@ -4184,7 +4184,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "spear thrust",
@@ -4240,7 +4240,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "boulder hurl",
@@ -4296,7 +4296,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "claw",
@@ -4349,7 +4349,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "talon strike",
@@ -4400,7 +4400,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "hoof strike",
@@ -4452,7 +4452,7 @@
     "peak_floor": 31,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 7,
+    "min_level": 19,
     "attacks": [
       {
         "name": "multi-bite",
@@ -4460,7 +4460,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.65,
-        "effect_duration": 12
+        "effect_duration": "1d12"
       },
       {
         "name": "acid spit",
@@ -4509,7 +4509,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "triple bite",
@@ -4574,7 +4574,7 @@
     "peak_floor": 31,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 7,
+    "min_level": 19,
     "attacks": [
       {
         "name": "six-headed strike",
@@ -4630,7 +4630,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "whirlpool drag",
@@ -4680,7 +4680,7 @@
     "peak_floor": 31,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 7,
+    "min_level": 19,
     "attacks": [
       {
         "name": "stone fist",
@@ -4737,7 +4737,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "ice club",
@@ -4792,7 +4792,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "flaming sword",
@@ -4847,7 +4847,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "spectral spear",
@@ -4905,7 +4905,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "savage bite",
@@ -4954,7 +4954,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "constrict",
@@ -4970,7 +4970,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
-        "effect_duration": 10
+        "effect_duration": "1d10"
       }
     ],
     "resistances": [
@@ -5069,7 +5069,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "phantom blade",
@@ -5125,7 +5125,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "corpse gnaw",
@@ -5229,7 +5229,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "serpent bite",
@@ -5287,7 +5287,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "frenzy blow",
@@ -5343,7 +5343,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "light lance",
@@ -5398,7 +5398,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "coil crush",
@@ -5457,7 +5457,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "jackal bite",
@@ -5511,7 +5511,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "solar bite",
@@ -5574,7 +5574,7 @@
         "damage": "1d2",
         "type": "physical",
         "effect": "poisoned",
-        "effect_chance": 0.25,
+        "effect_chance": 0.2,
         "effect_duration": 5
       }
     ],
@@ -5618,7 +5618,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "paw crush",
@@ -5674,7 +5674,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "devour soul",
@@ -5730,7 +5730,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "khopesh slash",
@@ -5786,7 +5786,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "life leech",
@@ -5897,7 +5897,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "scribal blade",
@@ -5952,7 +5952,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "shadow touch",
@@ -6003,7 +6003,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "desert wind",
@@ -6016,7 +6016,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": "1d10"
       }
     ],
     "resistances": [
@@ -6061,7 +6061,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "death wail",
@@ -6120,7 +6120,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "chaos smash",
@@ -6183,8 +6183,8 @@
         "damage": "1d2",
         "type": "magic",
         "effect": "confused",
-        "effect_chance": 0.45,
-        "effect_duration": 6
+        "effect_chance": 0.44,
+        "effect_duration": "1d8"
       },
       {
         "name": "glamour bite",
@@ -6232,7 +6232,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "trample",
@@ -6288,7 +6288,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "arcane claw",
@@ -6343,7 +6343,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "hero's bite",
@@ -6405,7 +6405,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
-        "effect_duration": 7
+        "effect_duration": "1d6"
       }
     ],
     "resistances": [
@@ -6446,7 +6446,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "death name call",
@@ -6507,7 +6507,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "soul rend",
@@ -6565,7 +6565,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "wind slash",
@@ -6578,7 +6578,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
-        "effect_duration": 10,
+        "effect_duration": "1d10",
         "piercing": true
       }
     ],
@@ -6622,7 +6622,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "primordial crush",
@@ -6679,7 +6679,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "storm talons",
@@ -6737,7 +6737,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "demon strike",
@@ -6793,7 +6793,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "bull gore",
@@ -6848,7 +6848,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "bite",
@@ -6908,7 +6908,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "slam",
@@ -6968,7 +6968,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "tentacles",
@@ -6984,7 +6984,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.6,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [
@@ -7026,7 +7026,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "bites",
@@ -7082,7 +7082,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "claws",
@@ -7135,7 +7135,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claws",
@@ -7187,7 +7187,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "tentacles",
@@ -7239,7 +7239,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "envelops",
@@ -7291,7 +7291,7 @@
     "peak_floor": 31,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 19,
     "attacks": [
       {
         "name": "slams",
@@ -7348,7 +7348,7 @@
     "peak_floor": 50,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 24,
+    "min_level": 37,
     "attacks": [
       {
         "name": "vorpal sword",
@@ -7410,7 +7410,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "slashes",
@@ -7471,7 +7471,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "talons",
@@ -7534,7 +7534,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "bites",
@@ -7589,7 +7589,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "pincers",
@@ -7651,7 +7651,7 @@
     "peak_floor": 37,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 13,
+    "min_level": 25,
     "attacks": [
       {
         "name": "tusks",
@@ -7830,7 +7830,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "shadow claws",
@@ -7883,7 +7883,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "claws",
@@ -7896,7 +7896,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.55,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       },
       {
         "name": "draining kiss",
@@ -7945,7 +7945,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "claws",
@@ -7958,7 +7958,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.6,
-        "effect_duration": 8
+        "effect_duration": "1d12"
       },
       {
         "name": "soul kiss",
@@ -8117,7 +8117,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "chain lash",
@@ -8176,7 +8176,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "glaive",
@@ -8235,7 +8235,7 @@
     "peak_floor": 20,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 8,
     "attacks": [
       {
         "name": "claws",
@@ -8296,7 +8296,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "claws",
@@ -8357,7 +8357,7 @@
     "peak_floor": 25,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 13,
     "attacks": [
       {
         "name": "longsword",
@@ -8516,7 +8516,7 @@
     "peak_floor": 66,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 38,
+    "min_level": 52,
     "attacks": [
       {
         "name": "bites",
@@ -8590,7 +8590,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "slams",
@@ -8647,7 +8647,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "slams",
@@ -8746,7 +8746,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "gauntlet strikes",
@@ -8802,7 +8802,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "slams",
@@ -8897,7 +8897,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "saw limbs",
@@ -8950,7 +8950,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "tentacle lash",
@@ -9004,7 +9004,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "claws",
@@ -9056,7 +9056,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "pseudopod",
@@ -9152,7 +9152,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "pseudopod",
@@ -9203,7 +9203,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "drops",
@@ -9245,7 +9245,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "smothers",
@@ -9292,7 +9292,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "envelops",
@@ -9340,7 +9340,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "strands",
@@ -9454,8 +9454,8 @@
         "damage": "1d2",
         "type": "physical",
         "effect": "poisoned",
-        "effect_chance": 0.55,
-        "effect_duration": 10
+        "effect_chance": 0.25,
+        "effect_duration": "1d6"
       }
     ],
     "resistances": [],
@@ -9495,7 +9495,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "tentacles",
@@ -9547,7 +9547,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "claws",
@@ -9601,7 +9601,7 @@
     "peak_floor": 15,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 5,
     "attacks": [
       {
         "name": "glaive",
@@ -9697,7 +9697,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "staff",
@@ -9905,7 +9905,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 7.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "spear",
@@ -9959,7 +9959,7 @@
     "peak_floor": 34,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 22,
     "attacks": [
       {
         "name": "bite",
@@ -10019,7 +10019,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "death gaze",
@@ -10073,7 +10073,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "beak",
@@ -10081,7 +10081,7 @@
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.5,
-        "effect_duration": 10
+        "effect_duration": "1d10"
       },
       {
         "name": "petrifying_touch",
@@ -10089,7 +10089,7 @@
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.6,
-        "effect_duration": 12
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [],
@@ -10133,7 +10133,7 @@
         "damage": "1d2",
         "type": "physical",
         "effect": "blinded",
-        "effect_chance": 0.7,
+        "effect_chance": 0.4,
         "effect_duration": 5
       },
       {
@@ -10178,7 +10178,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "bite",
@@ -10240,7 +10240,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "tentacles",
@@ -10291,7 +10291,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "hook",
@@ -10340,7 +10340,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "bite",
@@ -10348,7 +10348,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.6,
-        "effect_duration": 8
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
@@ -10389,7 +10389,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "claws",
@@ -10402,7 +10402,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.7,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [
@@ -10793,7 +10793,7 @@
         "damage": "1d2",
         "type": "physical",
         "effect": "poisoned",
-        "effect_chance": 0.45,
+        "effect_chance": 0.4,
         "effect_duration": 5
       },
       {
@@ -10802,7 +10802,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
-        "effect_duration": 6
+        "effect_duration": "1d6"
       }
     ],
     "resistances": [
@@ -10896,7 +10896,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claw",
@@ -11066,7 +11066,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "throttle",
@@ -11125,7 +11125,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "babble",
@@ -11237,7 +11237,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "mimic",
@@ -11350,7 +11350,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "shock",
@@ -11403,7 +11403,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "siphon",
@@ -11575,7 +11575,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "claw",
@@ -11636,7 +11636,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "bite",
@@ -11696,7 +11696,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "absorb",
@@ -11757,7 +11757,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "crush",
@@ -11817,7 +11817,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "wail",
@@ -11880,7 +11880,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "cast",
@@ -11939,7 +11939,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "necrotic_bolt",
@@ -12000,7 +12000,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "hex",
@@ -12059,7 +12059,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "death_ray",
@@ -12119,7 +12119,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "necrotic_touch",
@@ -12181,7 +12181,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "drain",
@@ -12241,7 +12241,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "drain",
@@ -12353,7 +12353,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "teleport",
@@ -12412,7 +12412,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "smash",
@@ -12473,7 +12473,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "cleave",
@@ -12533,7 +12533,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "bone_lash",
@@ -12595,7 +12595,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "slam",
@@ -12654,7 +12654,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claw",
@@ -12705,7 +12705,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "reap",
@@ -12768,7 +12768,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "strength_drain",
@@ -12830,7 +12830,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "desecrate",
@@ -12951,7 +12951,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "grasp",
@@ -13010,7 +13010,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "bite",
@@ -13069,7 +13069,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "dread_strike",
@@ -13196,7 +13196,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "stomp",
@@ -13257,7 +13257,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "bite",
@@ -13329,7 +13329,7 @@
     "peak_floor": 55,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 29,
+    "min_level": 42,
     "attacks": [
       {
         "name": "death_bite",
@@ -13403,7 +13403,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "steal",
@@ -13455,7 +13455,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "terror",
@@ -13516,7 +13516,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "consume",
@@ -13578,7 +13578,7 @@
     "peak_floor": 31,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 19,
     "attacks": [
       {
         "name": "life_drain",
@@ -13640,7 +13640,7 @@
     "peak_floor": 50,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 24,
+    "min_level": 37,
     "attacks": [
       {
         "name": "wing_buffet",
@@ -13818,7 +13818,7 @@
         "damage": "1d2",
         "type": "poison",
         "effect": "confused",
-        "effect_chance": 0.6,
+        "effect_chance": 0.4,
         "effect_duration": 5
       }
     ],
@@ -13911,7 +13911,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "pseudopod",
@@ -13976,7 +13976,7 @@
         "damage": "1d2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.40,
+        "effect_chance": 0.4,
         "effect_duration": "1d8"
       }
     ],
@@ -14071,7 +14071,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 7.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "sting",
@@ -14164,7 +14164,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "raptorial strike",
@@ -14214,7 +14214,7 @@
     "peak_floor": 20,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 8,
     "attacks": [
       {
         "name": "venomous bite",
@@ -14271,7 +14271,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "phase bite",
@@ -14325,7 +14325,7 @@
         "damage": "1d2",
         "type": "physical",
         "effect": "slowed",
-        "effect_chance": 0.6,
+        "effect_chance": 0.38,
         "effect_duration": 4
       },
       {
@@ -14375,7 +14375,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "crushing bite",
@@ -14480,7 +14480,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "bite",
@@ -14532,7 +14532,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "constrict",
@@ -14584,7 +14584,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "rend",
@@ -14597,7 +14597,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
-        "effect_duration": 8
+        "effect_duration": "1d10"
       }
     ],
     "resistances": [
@@ -14688,7 +14688,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 7.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claw",
@@ -14745,8 +14745,8 @@
         "damage": "1d2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.45,
-        "effect_duration": 7
+        "effect_chance": 0.44,
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
@@ -14832,7 +14832,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "pounce",
@@ -14882,7 +14882,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "claw",
@@ -14932,7 +14932,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "bite",
@@ -14982,7 +14982,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "claw",
@@ -15038,7 +15038,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "savage claw",
@@ -15103,7 +15103,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "bear hug",
@@ -15158,7 +15158,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "bite",
@@ -15213,7 +15213,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "pounce",
@@ -15277,7 +15277,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "bite",
@@ -15376,7 +15376,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "bite",
@@ -15483,7 +15483,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "beak peck",
@@ -15533,7 +15533,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "talon crush",
@@ -15601,7 +15601,7 @@
         "damage": "1d2",
         "type": "drain",
         "effect": "slowed",
-        "effect_chance": 0.4,
+        "effect_chance": 0.25,
         "effect_duration": 3
       }
     ],
@@ -15645,7 +15645,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "katana strike",
@@ -15697,7 +15697,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "talon shock",
@@ -15758,8 +15758,8 @@
         "damage": "1d2",
         "type": "magic",
         "effect": "sleeping",
-        "effect_chance": 0.45,
-        "effect_duration": 6
+        "effect_chance": 0.44,
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
@@ -15798,7 +15798,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "iron boot kick",
@@ -15900,7 +15900,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "claw",
@@ -15955,7 +15955,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claw",
@@ -16010,7 +16010,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "crushing claw",
@@ -16074,7 +16074,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "corrupting touch",
@@ -16133,7 +16133,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "ram",
@@ -16185,7 +16185,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "entangle",
@@ -16201,7 +16201,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": "1d10"
       }
     ],
     "resistances": [
@@ -16244,7 +16244,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "shillelagh",
@@ -16360,7 +16360,7 @@
         "damage": "1d2",
         "type": "magic",
         "effect": "confused",
-        "effect_chance": 0.5,
+        "effect_chance": 0.4,
         "effect_duration": 5
       }
     ],
@@ -16402,7 +16402,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "wave crash",
@@ -16462,7 +16462,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "wind slash",
@@ -16518,7 +16518,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "ice shard",
@@ -16576,7 +16576,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "lava spit",
@@ -16636,7 +16636,7 @@
     "peak_floor": 37,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 13,
+    "min_level": 25,
     "attacks": [
       {
         "name": "void touch",
@@ -16697,7 +16697,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "slam",
@@ -16756,7 +16756,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "constrict",
@@ -16764,7 +16764,7 @@
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.65,
-        "effect_duration": 6
+        "effect_duration": "1d8"
       },
       {
         "name": "vine whip",
@@ -16909,7 +16909,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "mind spore",
@@ -16973,15 +16973,15 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "musk cloud",
         "damage": "1d2",
         "type": "poison",
         "effect": "confused",
-        "effect_chance": 0.7,
-        "effect_duration": 8,
+        "effect_chance": 0.67,
+        "effect_duration": "1d8",
         "piercing": true
       },
       {
@@ -17039,7 +17039,7 @@
         "damage": "1d2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.45,
+        "effect_chance": 0.4,
         "effect_duration": 5
       }
     ],
@@ -17090,7 +17090,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
-        "effect_duration": 8
+        "effect_duration": "1d6"
       },
       {
         "name": "tendril whip",
@@ -17137,7 +17137,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "shadow hoof",
@@ -17194,7 +17194,7 @@
     "peak_floor": 20,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 8,
     "attacks": [
       {
         "name": "dark horn gore",
@@ -17202,7 +17202,7 @@
         "type": "shadow",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       },
       {
         "name": "trample",
@@ -17253,7 +17253,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "claw",
@@ -17305,7 +17305,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "chimeric bite",
@@ -17363,7 +17363,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "antler gore",
@@ -17417,7 +17417,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "gem flash",
@@ -17471,7 +17471,7 @@
     "peak_floor": 34,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 22,
     "attacks": [
       {
         "name": "bite",
@@ -17632,7 +17632,7 @@
     "peak_floor": 11,
     "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "slash",
@@ -17682,7 +17682,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "great axe",
@@ -17777,7 +17777,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "morningstar",
@@ -17869,7 +17869,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "war hammer",
@@ -18020,7 +18020,7 @@
     "peak_floor": 13,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "longsword",
@@ -18070,7 +18070,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "fire bolt",
@@ -18125,7 +18125,7 @@
     "peak_floor": 21,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "greatclub",
@@ -18172,7 +18172,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "stone fist",
@@ -18227,7 +18227,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "morningstar",
@@ -18279,7 +18279,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "greatsword",
@@ -18332,7 +18332,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "fist smash",
@@ -18379,7 +18379,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "left club",
@@ -18426,7 +18426,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "frozen claw",
@@ -18481,7 +18481,7 @@
     "peak_floor": 16,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 1,
+    "min_level": 6,
     "attacks": [
       {
         "name": "shortsword",
@@ -18541,7 +18541,7 @@
     "peak_floor": 20,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 8,
     "attacks": [
       {
         "name": "shadow bolt",
@@ -18599,7 +18599,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "whip strike",
@@ -18657,7 +18657,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "battleaxe",
@@ -18707,7 +18707,7 @@
     "peak_floor": 17,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 7,
     "attacks": [
       {
         "name": "claw",
@@ -18773,7 +18773,7 @@
     "peak_floor": 24,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 12,
     "attacks": [
       {
         "name": "claw",
@@ -18841,7 +18841,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "claw",
@@ -18915,7 +18915,7 @@
     "peak_floor": 50,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 24,
+    "min_level": 37,
     "attacks": [
       {
         "name": "claw",
@@ -18991,7 +18991,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claw",
@@ -19045,7 +19045,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claw",
@@ -19100,7 +19100,7 @@
     "peak_floor": 14,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 4,
     "attacks": [
       {
         "name": "scimitar",
@@ -19153,7 +19153,7 @@
     "peak_floor": 23,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "claw",
@@ -19166,7 +19166,7 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 12
+        "effect_duration": "1d12"
       }
     ],
     "resistances": [
@@ -19205,7 +19205,7 @@
     "peak_floor": 22,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 1,
+    "min_level": 10,
     "attacks": [
       {
         "name": "bite",
@@ -19269,7 +19269,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "shadow_claw",
@@ -19327,7 +19327,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "tentacle",
@@ -19383,7 +19383,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "flame_slash",
@@ -19442,7 +19442,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "slam",
@@ -19499,7 +19499,7 @@
     "peak_floor": 44,
     "spread": 12,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 32,
     "attacks": [
       {
         "name": "bite",
@@ -19555,7 +19555,7 @@
     "peak_floor": 46,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 20,
+    "min_level": 33,
     "attacks": [
       {
         "name": "hellfire_blade",
@@ -19611,7 +19611,7 @@
     "peak_floor": 48,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 22,
+    "min_level": 35,
     "attacks": [
       {
         "name": "colossal_slam",
@@ -19666,7 +19666,7 @@
     "peak_floor": 50,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 24,
+    "min_level": 37,
     "attacks": [
       {
         "name": "soul_siphon",
@@ -19725,7 +19725,7 @@
     "peak_floor": 52,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 26,
+    "min_level": 39,
     "attacks": [
       {
         "name": "rend",
@@ -19775,7 +19775,7 @@
     "peak_floor": 54,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 28,
+    "min_level": 41,
     "attacks": [
       {
         "name": "claw",
@@ -19830,7 +19830,7 @@
     "peak_floor": 57,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 31,
+    "min_level": 44,
     "attacks": [
       {
         "name": "psionic_blast",
@@ -19838,7 +19838,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.7,
-        "effect_duration": 12,
+        "effect_duration": "1d12",
         "piercing": true
       },
       {
@@ -19892,7 +19892,7 @@
     "peak_floor": 60,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 34,
+    "min_level": 47,
     "attacks": [
       {
         "name": "void_bite",
@@ -19948,7 +19948,7 @@
     "peak_floor": 64,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 36,
+    "min_level": 50,
     "attacks": [
       {
         "name": "death_ray",
@@ -19977,7 +19977,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.8,
-        "effect_duration": 10
+        "effect_duration": "1d12"
       },
       {
         "name": "charm_ray",
@@ -19985,7 +19985,7 @@
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.7,
-        "effect_duration": 12
+        "effect_duration": "1d12"
       },
       {
         "name": "bite",
@@ -20034,7 +20034,7 @@
     "peak_floor": 67,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 39,
+    "min_level": 53,
     "attacks": [
       {
         "name": "crushing_bite",
@@ -20098,7 +20098,7 @@
     "peak_floor": 70,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 42,
+    "min_level": 56,
     "attacks": [
       {
         "name": "hellfire_slam",
@@ -20163,7 +20163,7 @@
     "peak_floor": 74,
     "spread": 14,
     "peak_weight": 1.0,
-    "min_level": 46,
+    "min_level": 60,
     "attacks": [
       {
         "name": "crushing_claw",
@@ -20240,7 +20240,7 @@
     "peak_floor": 76,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 50,
+    "min_level": 63,
     "attacks": [
       {
         "name": "death_lance",
@@ -20308,7 +20308,7 @@
     "peak_floor": 81,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 55,
+    "min_level": 68,
     "attacks": [
       {
         "name": "unholy_blade",
@@ -20371,7 +20371,7 @@
     "peak_floor": 85,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 59,
+    "min_level": 72,
     "attacks": [
       {
         "name": "venomous_bite",
@@ -20379,7 +20379,7 @@
         "type": "poison",
         "effect": "slowed",
         "effect_chance": 0.7,
-        "effect_duration": 12
+        "effect_duration": "1d12"
       },
       {
         "name": "world_crush",
@@ -20436,7 +20436,7 @@
     "peak_floor": 88,
     "spread": 13,
     "peak_weight": 1.0,
-    "min_level": 62,
+    "min_level": 75,
     "attacks": [
       {
         "name": "entropy_touch",
@@ -20449,7 +20449,7 @@
         "type": "cold",
         "effect": "confused",
         "effect_chance": 0.6,
-        "effect_duration": 12
+        "effect_duration": "1d12"
       },
       {
         "name": "unmaking",
@@ -20500,7 +20500,7 @@
     "peak_floor": 20,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 16,
+    "min_level": 18,
     "attacks": [
       {
         "damage": "2d4+1",
@@ -20553,7 +20553,7 @@
     "peak_floor": 40,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 36,
+    "min_level": 38,
     "attacks": [
       {
         "damage": "2d8+3",
@@ -20616,7 +20616,7 @@
     "peak_floor": 60,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 56,
+    "min_level": 58,
     "attacks": [
       {
         "damage": "3d8+8",
@@ -20679,7 +20679,7 @@
     "peak_floor": 80,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 76,
+    "min_level": 78,
     "attacks": [
       {
         "damage": "4d10+12",
@@ -20739,7 +20739,7 @@
     "peak_floor": 100,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 96,
+    "min_level": 98,
     "attacks": [
       {
         "damage": "4d10+34",
@@ -20825,7 +20825,7 @@
     "peak_floor": 9,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 5,
+    "min_level": 7,
     "attacks": [
       {
         "name": "bite",
@@ -20883,7 +20883,7 @@
     "peak_floor": 21,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 17,
+    "min_level": 19,
     "attacks": [
       {
         "name": "crush",
@@ -20935,7 +20935,7 @@
     "peak_floor": 24,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 20,
+    "min_level": 22,
     "attacks": [
       {
         "name": "bite",
@@ -20995,7 +20995,7 @@
     "peak_floor": 29,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 25,
+    "min_level": 27,
     "attacks": [
       {
         "name": "lure",
@@ -21055,7 +21055,7 @@
     "peak_floor": 34,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 30,
+    "min_level": 32,
     "attacks": [
       {
         "name": "wing buffet",
@@ -21116,7 +21116,7 @@
     "peak_floor": 39,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 35,
+    "min_level": 37,
     "attacks": [
       {
         "name": "fire breath",
@@ -21174,7 +21174,7 @@
     "peak_floor": 44,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 40,
+    "min_level": 42,
     "attacks": [
       {
         "name": "rake",
@@ -21230,7 +21230,7 @@
     "peak_floor": 50,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 46,
+    "min_level": 48,
     "attacks": [
       {
         "name": "hex",
@@ -21291,7 +21291,7 @@
     "peak_floor": 55,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 51,
+    "min_level": 53,
     "attacks": [
       {
         "name": "claw",
@@ -21347,7 +21347,7 @@
     "peak_floor": 60,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 56,
+    "min_level": 58,
     "attacks": [
       {
         "name": "iron bite",
@@ -21417,7 +21417,7 @@
     "peak_floor": 66,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 62,
+    "min_level": 64,
     "attacks": [
       {
         "name": "venom cloud",
@@ -21481,7 +21481,7 @@
     "peak_floor": 69,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 65,
+    "min_level": 67,
     "attacks": [
       {
         "name": "shadow strike",
@@ -21541,7 +21541,7 @@
     "peak_floor": 74,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 70,
+    "min_level": 72,
     "attacks": [
       {
         "name": "greataxe",
@@ -21603,7 +21603,7 @@
     "peak_floor": 78,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 74,
+    "min_level": 76,
     "attacks": [
       {
         "name": "vortex pull",
@@ -21661,7 +21661,7 @@
     "peak_floor": 80,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 76,
+    "min_level": 78,
     "attacks": [
       {
         "name": "slam",
@@ -21733,7 +21733,7 @@
     "peak_floor": 85,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 81,
+    "min_level": 83,
     "attacks": [
       {
         "name": "ice claw",
@@ -21798,7 +21798,7 @@
     "peak_floor": 90,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 86,
+    "min_level": 88,
     "attacks": [
       {
         "name": "spectral blade",
@@ -21863,7 +21863,7 @@
     "peak_floor": 92,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 88,
+    "min_level": 90,
     "attacks": [
       {
         "name": "web trick",
@@ -21938,7 +21938,7 @@
     "peak_floor": 95,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 91,
+    "min_level": 93,
     "attacks": [
       {
         "name": "acid bite",
@@ -22004,7 +22004,7 @@
     "peak_floor": 83,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 79,
+    "min_level": 81,
     "attacks": [
       {
         "name": "blazing fist",
@@ -22065,7 +22065,7 @@
     "peak_floor": 85,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 81,
+    "min_level": 83,
     "attacks": [
       {
         "name": "plague touch",
@@ -22127,7 +22127,7 @@
     "peak_floor": 87,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 83,
+    "min_level": 85,
     "attacks": [
       {
         "name": "draining grasp",
@@ -22189,7 +22189,7 @@
     "peak_floor": 89,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 85,
+    "min_level": 87,
     "attacks": [
       {
         "name": "war blade",
@@ -22256,7 +22256,7 @@
     "peak_floor": 91,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 87,
+    "min_level": 89,
     "attacks": [
       {
         "name": "death touch",
@@ -22318,7 +22318,7 @@
     "peak_floor": 93,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 89,
+    "min_level": 91,
     "attacks": [
       {
         "name": "earth shatter",
@@ -22380,7 +22380,7 @@
     "peak_floor": 97,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 93,
+    "min_level": 95,
     "attacks": [
       {
         "name": "void whisper",
@@ -22445,7 +22445,7 @@
     "peak_floor": 100,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 96,
+    "min_level": 98,
     "attacks": [
       {
         "name": "gnaw",
@@ -22498,7 +22498,7 @@
     "peak_floor": 100,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 96,
+    "min_level": 98,
     "attacks": [],
     "resistances": [
       "holy",
@@ -22541,7 +22541,7 @@
     "peak_floor": 34,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 30,
+    "min_level": 32,
     "attacks": [
       {
         "name": "halberd swing",
@@ -22593,7 +22593,7 @@
     "peak_floor": 35,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 31,
+    "min_level": 33,
     "attacks": [
       {
         "name": "royal halberd",
@@ -22652,7 +22652,7 @@
     "peak_floor": 36,
     "spread": 11,
     "peak_weight": 5.0,
-    "min_level": 14,
+    "min_level": 25,
     "attacks": [
       {
         "name": "ancient_blade",
@@ -22700,7 +22700,7 @@
     "peak_floor": 35,
     "spread": 10,
     "peak_weight": 6.0,
-    "min_level": 15,
+    "min_level": 25,
     "attacks": [
       {
         "name": "savage_bite",
@@ -22747,7 +22747,7 @@
     "peak_floor": 38,
     "spread": 11,
     "peak_weight": 4.0,
-    "min_level": 16,
+    "min_level": 27,
     "attacks": [
       {
         "name": "smash",
@@ -22798,7 +22798,7 @@
     "peak_floor": 38,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 16,
+    "min_level": 27,
     "attacks": [
       {
         "name": "petrifying_bite",
@@ -22845,7 +22845,7 @@
     "peak_floor": 40,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 18,
+    "min_level": 29,
     "attacks": [
       {
         "name": "boulder_slam",
@@ -22894,7 +22894,7 @@
     "peak_floor": 37,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 17,
+    "min_level": 27,
     "attacks": [
       {
         "name": "spore_burst",
@@ -22943,7 +22943,7 @@
     "peak_floor": 35,
     "spread": 10,
     "peak_weight": 4.0,
-    "min_level": 15,
+    "min_level": 25,
     "attacks": [
       {
         "name": "dissolve",
@@ -22994,7 +22994,7 @@
     "peak_floor": 49,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 25,
+    "min_level": 37,
     "attacks": [
       {
         "name": "warlord_axe",
@@ -23046,7 +23046,7 @@
     "peak_floor": 49,
     "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 25,
+    "min_level": 37,
     "attacks": [
       {
         "name": "longsword_combo",
@@ -23095,7 +23095,7 @@
     "peak_floor": 50,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 28,
+    "min_level": 39,
     "attacks": [
       {
         "name": "inferno_touch",
@@ -23146,7 +23146,7 @@
     "peak_floor": 50,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 28,
+    "min_level": 39,
     "attacks": [
       {
         "name": "lion_bite",
@@ -23202,7 +23202,7 @@
     "peak_floor": 50,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 28,
+    "min_level": 39,
     "attacks": [
       {
         "name": "bone_crush",
@@ -23257,7 +23257,7 @@
     "peak_floor": 52,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 30,
+    "min_level": 41,
     "attacks": [
       {
         "name": "hellfire_sword",
@@ -23309,7 +23309,7 @@
     "peak_floor": 48,
     "spread": 11,
     "peak_weight": 2.0,
-    "min_level": 26,
+    "min_level": 37,
     "attacks": [
       {
         "name": "engulf",
@@ -23360,7 +23360,7 @@
     "peak_floor": 49,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 29,
+    "min_level": 39,
     "attacks": [
       {
         "name": "phase_bite",
@@ -23417,7 +23417,7 @@
     "peak_floor": 49,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 29,
+    "min_level": 39,
     "attacks": [
       {
         "name": "tail_spike_volley",
@@ -23466,7 +23466,7 @@
     "peak_floor": 60,
     "spread": 11,
     "peak_weight": 4.0,
-    "min_level": 38,
+    "min_level": 49,
     "attacks": [
       {
         "name": "warclub",
@@ -23517,7 +23517,7 @@
     "peak_floor": 62,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 40,
+    "min_level": 51,
     "attacks": [
       {
         "name": "ice_greataxe",
@@ -23568,7 +23568,7 @@
     "peak_floor": 62,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 40,
+    "min_level": 51,
     "attacks": [
       {
         "name": "molten_hammer",
@@ -23619,7 +23619,7 @@
     "peak_floor": 60,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 38,
+    "min_level": 49,
     "attacks": [
       {
         "name": "drain_bite",
@@ -23674,7 +23674,7 @@
     "peak_floor": 62,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 40,
+    "min_level": 51,
     "attacks": [
       {
         "name": "soul_blade",
@@ -23729,7 +23729,7 @@
     "peak_floor": 63,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 51,
     "attacks": [
       {
         "name": "force_fist",
@@ -23782,7 +23782,7 @@
     "peak_floor": 60,
     "spread": 11,
     "peak_weight": 5.0,
-    "min_level": 38,
+    "min_level": 49,
     "attacks": [
       {
         "name": "hellfire_bite",
@@ -23836,7 +23836,7 @@
     "peak_floor": 61,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 41,
+    "min_level": 51,
     "attacks": [
       {
         "name": "riddle_curse",
@@ -23890,7 +23890,7 @@
     "peak_floor": 64,
     "spread": 11,
     "peak_weight": 2.0,
-    "min_level": 42,
+    "min_level": 53,
     "attacks": [
       {
         "name": "death_bolt",
@@ -23948,7 +23948,7 @@
     "peak_floor": 59,
     "spread": 10,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 49,
     "attacks": [
       {
         "name": "slam",
@@ -24004,7 +24004,7 @@
     "peak_floor": 59,
     "spread": 10,
     "peak_weight": 5.0,
-    "min_level": 39,
+    "min_level": 49,
     "attacks": [
       {
         "name": "mass_strike",
@@ -24059,7 +24059,7 @@
     "peak_floor": 64,
     "spread": 11,
     "peak_weight": 2.0,
-    "min_level": 42,
+    "min_level": 53,
     "attacks": [
       {
         "name": "ghostfire_breath",
@@ -24113,7 +24113,7 @@
     "peak_floor": 62,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 40,
+    "min_level": 51,
     "attacks": [
       {
         "name": "hellforged_blade",
@@ -24166,7 +24166,7 @@
     "peak_floor": 62,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 40,
+    "min_level": 51,
     "attacks": [
       {
         "name": "iron_fist",
@@ -24222,7 +24222,7 @@
     "peak_floor": 75,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 63,
     "attacks": [
       {
         "name": "sovereign_drain",
@@ -24278,7 +24278,7 @@
     "peak_floor": 75,
     "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 63,
     "attacks": [
       {
         "name": "storm_hammer",
@@ -24329,7 +24329,7 @@
     "peak_floor": 75,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 51,
+    "min_level": 63,
     "attacks": [
       {
         "name": "solar_flare",
@@ -24380,7 +24380,7 @@
     "peak_floor": 77,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 53,
+    "min_level": 65,
     "attacks": [
       {
         "name": "absolute_zero",
@@ -24431,7 +24431,7 @@
     "peak_floor": 77,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 53,
+    "min_level": 65,
     "attacks": [
       {
         "name": "doom_blade",
@@ -24490,7 +24490,7 @@
     "peak_floor": 74,
     "spread": 11,
     "peak_weight": 4.0,
-    "min_level": 52,
+    "min_level": 63,
     "attacks": [
       {
         "name": "mass_claw",
@@ -24545,7 +24545,7 @@
     "peak_floor": 77,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 53,
+    "min_level": 65,
     "attacks": [
       {
         "name": "death_breath",
@@ -24601,7 +24601,7 @@
     "peak_floor": 75,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 51,
+    "min_level": 63,
     "attacks": [
       {
         "name": "multi_bite",
@@ -24660,7 +24660,7 @@
     "peak_floor": 77,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 53,
+    "min_level": 65,
     "attacks": [
       {
         "name": "fallen_blade",
@@ -24712,7 +24712,7 @@
     "peak_floor": 79,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 55,
+    "min_level": 67,
     "attacks": [
       {
         "name": "titan_fist",
@@ -24765,7 +24765,7 @@
     "peak_floor": 74,
     "spread": 11,
     "peak_weight": 4.0,
-    "min_level": 52,
+    "min_level": 63,
     "attacks": [
       {
         "name": "shadow_blade",
@@ -24819,7 +24819,7 @@
     "peak_floor": 74,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 52,
+    "min_level": 63,
     "attacks": [
       {
         "name": "plague_touch",
@@ -24871,7 +24871,7 @@
     "peak_floor": 79,
     "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 55,
+    "min_level": 67,
     "attacks": [
       {
         "name": "ruin_slam",
@@ -24924,7 +24924,7 @@
     "peak_floor": 92,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 70,
+    "min_level": 81,
     "attacks": [
       {
         "name": "annihilation_ray",
@@ -24988,7 +24988,7 @@
     "peak_floor": 93,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 73,
+    "min_level": 83,
     "attacks": [
       {
         "name": "void_breath",
@@ -25050,7 +25050,7 @@
     "peak_floor": 92,
     "spread": 11,
     "peak_weight": 2.0,
-    "min_level": 70,
+    "min_level": 81,
     "attacks": [
       {
         "name": "world_breaker",
@@ -25104,7 +25104,7 @@
     "peak_floor": 93,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 73,
+    "min_level": 83,
     "attacks": [
       {
         "name": "reality_bolt",
@@ -25159,7 +25159,7 @@
     "peak_floor": 92,
     "spread": 11,
     "peak_weight": 2.0,
-    "min_level": 70,
+    "min_level": 81,
     "attacks": [
       {
         "name": "hellfire_greatsword",
@@ -25219,7 +25219,7 @@
     "peak_floor": 94,
     "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 76,
+    "min_level": 85,
     "attacks": [
       {
         "name": "holy_smite",
@@ -25273,7 +25273,7 @@
     "peak_floor": 93,
     "spread": 10,
     "peak_weight": 2.0,
-    "min_level": 73,
+    "min_level": 83,
     "attacks": [
       {
         "name": "entropy_touch",
@@ -25328,7 +25328,7 @@
     "peak_floor": 92,
     "spread": 11,
     "peak_weight": 3.0,
-    "min_level": 70,
+    "min_level": 81,
     "attacks": [
       {
         "name": "legion_charge",
@@ -25384,7 +25384,7 @@
     "peak_floor": 94,
     "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 76,
+    "min_level": 85,
     "attacks": [
       {
         "name": "chaos_breath",
@@ -25444,7 +25444,7 @@
     "peak_floor": 92,
     "spread": 11,
     "peak_weight": 2.0,
-    "min_level": 70,
+    "min_level": 81,
     "attacks": [
       {
         "name": "slam",
@@ -25501,7 +25501,7 @@
     "peak_floor": 92,
     "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 84,
+    "min_level": 88,
     "attacks": [
       {
         "name": "chitin scythe",
@@ -25556,7 +25556,7 @@
     "peak_floor": 93,
     "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 85,
+    "min_level": 89,
     "attacks": [
       {
         "name": "great cleaver",
@@ -25611,7 +25611,7 @@
     "peak_floor": 94,
     "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 86,
+    "min_level": 90,
     "attacks": [
       {
         "name": "void lance",
@@ -25667,7 +25667,7 @@
     "peak_floor": 95,
     "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 87,
+    "min_level": 91,
     "attacks": [
       {
         "name": "trumpet blast",
@@ -25721,7 +25721,7 @@
     "peak_floor": 96,
     "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 88,
+    "min_level": 92,
     "attacks": [
       {
         "name": "bitter spore",
@@ -25778,7 +25778,7 @@
     "peak_floor": 98,
     "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 90,
+    "min_level": 94,
     "attacks": [
       {
         "name": "lance charge",
@@ -28966,7 +28966,7 @@
       "humanoid",
       "rogue"
     ],
-    "min_level": 62,
+    "min_level": 63,
     "peak_floor": 73,
     "spread": 10,
     "peak_weight": 3.0,
