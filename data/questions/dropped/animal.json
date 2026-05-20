@@ -15509,5 +15509,509 @@
       ],
       "from_tier": 4
     }
+  },
+  {
+    "tier": 2,
+    "question": "Charles Cruft's first dog show was held in:",
+    "answer": "1891",
+    "choices": [
+      "1891",
+      "1791",
+      "1991",
+      "1841"
+    ],
+    "context": "Cruft was originally a dog-food salesman who realized the marketing potential of competition.",
+    "_dropped_reason": "date-recall-dog-show-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "The world's first animal cruelty law — the UK Cruel Treatment of Cattle Act — passed in:",
+    "answer": "1822",
+    "choices": [
+      "1822",
+      "1922",
+      "1722",
+      "1622"
+    ],
+    "context": "Sponsored by Richard Martin ('Humanity Dick'). Predates much UK child-welfare legislation.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "Dog fighting in the U.S. became a felony in all 50 states by:",
+    "answer": "2007",
+    "choices": [
+      "2007",
+      "1957",
+      "1907",
+      "2027"
+    ],
+    "context": "Michael Vick's federal case (2007) raised public awareness of the underground industry.",
+    "_dropped_reason": "date-recall-felony-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "Border Collie is classified in which AKC group?",
+    "answer": "Herding",
+    "choices": [
+      "Herding",
+      "Working",
+      "Sporting",
+      "Hound"
+    ],
+    "context": "Most intelligent breed per Stanley Coren; herds via 'eye'.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "German Shepherd is classified in which AKC group?",
+    "answer": "Herding",
+    "choices": [
+      "Herding",
+      "Working",
+      "Sporting",
+      "Hound"
+    ],
+    "context": "Max von Stephanitz 1899; police + military + service.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "Greyhound is classified in which AKC group?",
+    "answer": "Hound",
+    "choices": [
+      "Hound",
+      "Herding",
+      "Toy",
+      "Working"
+    ],
+    "context": "Fastest dog breed; ancient Egyptian + Greek origin.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "Rottweiler is classified in which AKC group?",
+    "answer": "Working",
+    "choices": [
+      "Working",
+      "Herding",
+      "Sporting",
+      "Hound"
+    ],
+    "context": "Roman drover-dog descent; German butcher's dog.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "Saint Bernard is classified in which AKC group?",
+    "answer": "Working",
+    "choices": [
+      "Working",
+      "Herding",
+      "Sporting",
+      "Hound"
+    ],
+    "context": "Swiss Great St. Bernard Pass monks; avalanche rescue.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "The Dodo was driven to extinction by what year?",
+    "answer": "1681",
+    "choices": [
+      "1681",
+      "1768",
+      "1844",
+      "1865"
+    ],
+    "context": "Mauritius — sailors, dogs, pigs; flightless + fearless.",
+    "_dropped_reason": "date-recall-extinction-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "The Steller's sea cow was driven to extinction by what year?",
+    "answer": "1768",
+    "choices": [
+      "1768",
+      "1681",
+      "1844",
+      "1865"
+    ],
+    "context": "Extinct only 27 years after Georg Steller described them (1741).",
+    "_dropped_reason": "date-recall-extinction-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "The Western black rhino was driven to extinction by what year?",
+    "answer": "2011",
+    "choices": [
+      "2011",
+      "1681",
+      "1768",
+      "1844"
+    ],
+    "context": "Declared extinct 2011 — poaching for horn.",
+    "_dropped_reason": "date-recall-extinction-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "The Lacey Act was enacted in:",
+    "answer": "1900",
+    "choices": [
+      "1900",
+      "1918",
+      "1934",
+      "1937"
+    ],
+    "context": "First federal US wildlife law; banned trafficking of illegally taken wildlife.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "The Duck Stamp Act was enacted in:",
+    "answer": "1934",
+    "choices": [
+      "1934",
+      "1900",
+      "1918",
+      "1937"
+    ],
+    "context": "Federal Migratory Bird Hunting + Conservation Stamp; funds wetlands.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "This event occurred in: Martin's Act (UK).",
+    "answer": "1822",
+    "choices": [
+      "1822",
+      "1824",
+      "1866",
+      "1966"
+    ],
+    "context": "First animal cruelty law — Richard Martin 'Humanity Dick' authored.",
+    "_dropped_reason": "date-recall-event-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 2,
+    "question": "This event occurred in: Five Freedoms (UK).",
+    "answer": "1965",
+    "choices": [
+      "1965",
+      "1822",
+      "1824",
+      "1866"
+    ],
+    "context": "UK Farm Animal Welfare Council — Brambell Committee.",
+    "_dropped_reason": "date-recall-event-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 3,
+    "question": "Belgian Malinois is classified in which AKC group?",
+    "answer": "Herding",
+    "choices": [
+      "Herding",
+      "Working",
+      "Sporting",
+      "Hound"
+    ],
+    "context": "Most common modern US military working dog.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 3,
+    "question": "Siberian Husky is classified in which AKC group?",
+    "answer": "Working",
+    "choices": [
+      "Working",
+      "Herding",
+      "Sporting",
+      "Hound"
+    ],
+    "context": "Chukchi origin; sled racing; thick double coat.",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 3,
+    "question": "The Wilderness Act was enacted in:",
+    "answer": "1964",
+    "choices": [
+      "1964",
+      "1900",
+      "1918",
+      "1934"
+    ],
+    "context": "Protected wilderness designation system; Howard Zahniser primary author.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 3,
+    "question": "This event occurred in: RSPCA founded.",
+    "answer": "1824",
+    "choices": [
+      "1824",
+      "1822",
+      "1866",
+      "1966"
+    ],
+    "context": "World's first animal welfare charity; royal patronage 1840.",
+    "_dropped_reason": "date-recall-event-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 4,
+    "question": "Cher Ami was famously the animal of:",
+    "answer": "US Army Signal Corps",
+    "choices": [
+      "US Army Signal Corps",
+      "Alexander the Great",
+      "Polish 22nd Artillery",
+      "Leonhard Seppala"
+    ],
+    "context": "Carrier pigeon, WWI, saved 194 men of Lost Battalion.",
+    "_dropped_reason": "rote-name-lookup",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 4,
+    "question": "Mister Ed was famously the animal of:",
+    "answer": "Allan Lane",
+    "choices": [
+      "Allan Lane",
+      "Bill Wynne",
+      "Roy Rogers",
+      "Barack Obama"
+    ],
+    "context": "Palomino who 'talked' in the 1960s American sitcom.",
+    "_dropped_reason": "rote-name-lookup",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 4,
+    "question": "The Pyrenean ibex was driven to extinction by what year?",
+    "answer": "2000",
+    "choices": [
+      "2000",
+      "1681",
+      "1768",
+      "1844"
+    ],
+    "context": "Last died January 2000; later cloned but offspring died within minutes.",
+    "_dropped_reason": "date-recall-extinction-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 4,
+    "question": "The famous fossil 'Tiktaalik' is:",
+    "answer": "First tetrapod-like fish",
+    "choices": [
+      "First tetrapod-like fish",
+      "Earliest whale ancestor",
+      "Australopithecus afarensis",
+      "Bird-dinosaur transitional"
+    ],
+    "context": "2004 Ellesmere Island, Neil Shubin; predicted location + age.",
+    "_dropped_reason": "famous-fossil-name-lookup",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 4,
+    "question": "When was the Sheep domesticated?",
+    "answer": "~11,000 BP",
+    "choices": [
+      "~11,000 BP",
+      "~10,500 BP",
+      "~9,000 BP",
+      "~9,500 BP"
+    ],
+    "context": "Fertile Crescent + Iran; among first agricultural domesticates.",
+    "_dropped_reason": "date-recall-domestication-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "Established by Harrison Weir with the first breed standards, the first Crystal Palace Cat Show was held in what year?",
+    "answer": "1871",
+    "choices": [
+      "1871",
+      "1851",
+      "1901",
+      "1925"
+    ],
+    "context": "Harrison Weir established breed standards. Origin of the modern cat fancy.",
+    "_dropped_reason": "date-recall-cat-show-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "Hudson's Bay Company was chartered in:",
+    "answer": "1670",
+    "choices": [
+      "1670",
+      "1770",
+      "1870",
+      "1570"
+    ],
+    "context": "Still operating — one of the oldest continuously operating companies in the world.",
+    "_dropped_reason": "date-recall-chartered-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "Sergeant Stubby was famously the animal of:",
+    "answer": "Robert Conroy",
+    "choices": [
+      "Robert Conroy",
+      "Gunnar Kaasen",
+      "Penny Chenery",
+      "Barack Obama"
+    ],
+    "context": "Most decorated dog of WWI; 17 engagements with 102nd Infantry.",
+    "_dropped_reason": "rote-name-lookup",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "Wojtek was famously the animal of:",
+    "answer": "Polish 22nd Artillery",
+    "choices": [
+      "Polish 22nd Artillery",
+      "US Army Signal Corps",
+      "Alexander the Great",
+      "Leonhard Seppala"
+    ],
+    "context": "Syrian brown bear officially enlisted; carried shells at Monte Cassino 1944.",
+    "_dropped_reason": "rote-name-lookup",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "Labrador Retriever is classified in which AKC group?",
+    "answer": "Sporting",
+    "choices": [
+      "Sporting",
+      "Herding",
+      "Working",
+      "Hound"
+    ],
+    "context": "Long-time most popular AKC breed (until 2022).",
+    "_dropped_reason": "rote-akc-classification",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "The Carolina parakeet was driven to extinction by what year?",
+    "answer": "1918",
+    "choices": [
+      "1918",
+      "1681",
+      "1768",
+      "1844"
+    ],
+    "context": "Incas died at Cincinnati Zoo; only North American native parrot.",
+    "_dropped_reason": "date-recall-extinction-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "The famous fossil 'Pakicetus' is:",
+    "answer": "Earliest whale ancestor",
+    "choices": [
+      "Earliest whale ancestor",
+      "First tetrapod-like fish",
+      "Australopithecus afarensis",
+      "Bird-dinosaur transitional"
+    ],
+    "context": "1981 Pakistan; dog-sized; transitional to modern cetaceans.",
+    "_dropped_reason": "famous-fossil-name-lookup",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "The Migratory Bird Treaty Act was enacted in:",
+    "answer": "1918",
+    "choices": [
+      "1918",
+      "1900",
+      "1934",
+      "1937"
+    ],
+    "context": "Between US and UK (Canada); protected migratory birds across borders.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "The Dingell-Johnson Act was enacted in:",
+    "answer": "1950",
+    "choices": [
+      "1950",
+      "1900",
+      "1918",
+      "1934"
+    ],
+    "context": "Sport Fish Restoration; analog to Pittman-Robertson for fisheries.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "The Endangered Species Act was enacted in:",
+    "answer": "1973",
+    "choices": [
+      "1973",
+      "1900",
+      "1918",
+      "1934"
+    ],
+    "context": "Nixon-signed; designed to prevent extinction of imperiled species.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "The Marine Mammal Protection Act was enacted in:",
+    "answer": "1972",
+    "choices": [
+      "1972",
+      "1900",
+      "1918",
+      "1934"
+    ],
+    "context": "Banned harassment + hunting of all marine mammals in US waters.",
+    "_dropped_reason": "date-recall-law-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
+  },
+  {
+    "tier": 5,
+    "question": "This event occurred in: Animal Welfare Act (US).",
+    "answer": "1966",
+    "choices": [
+      "1966",
+      "1822",
+      "1824",
+      "1866"
+    ],
+    "context": "Federal regulation of treatment in research + commercial transport.",
+    "_dropped_reason": "date-recall-event-year",
+    "_dropped_audit": "v2_audit_2026_05_19"
   }
 ]

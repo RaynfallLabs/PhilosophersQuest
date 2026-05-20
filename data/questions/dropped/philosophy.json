@@ -4549,5 +4549,470 @@
     "_fk": 15.57,
     "_jargon": 120.8,
     "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Jeremy Bentham left instructions that his body be dissected, preserved, and displayed at University College London — where it still sits in a glass case. What ethical view did this gesture express?",
+    "answer": "That the only things with inherent value are pleasure and pain, not bodies or rituals.",
+    "choices": [
+      "That the only things with inherent value are pleasure and pain, not bodies or rituals.",
+      "That bodies belong to the state, which may dispose of them however serves the common good.",
+      "That the dead can still teach the living, and so corpses should remain near students always.",
+      "That immortality is real, and a preserved body keeps the soul anchored to its old home."
+    ],
+    "context": "Bentham called the display his 'auto-icon.' He thought funeral customs were sentimental waste; if a corpse could be useful — for anatomy, for memory, for argument — that was the only question worth asking. The wax-headed figure still gets wheeled into university meetings on rare occasions. The minutes record him as 'present but not voting.'",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.25,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Kierkegaard published most of his major works under invented names like Johannes Climacus and Victor Eremita — not as a hidden author but openly so. Why use the pseudonyms?",
+    "answer": "Each name held a view he thought worth voicing without claiming as his own conclusion.",
+    "choices": [
+      "Each name held a view he thought worth voicing without claiming as his own conclusion.",
+      "He feared arrest by the Danish church and needed the names to confuse the authorities.",
+      "He thought philosophical authority required anonymity — true ideas should not bear a face.",
+      "He wished to be remembered by all his names and saw fame as the chief aim of writing."
+    ],
+    "context": "Kierkegaard wanted readers to wrestle with positions, not with his biography. Climacus argued one way about Christianity; Eremita compiled the aesthetic Either/Or. The names were transparent in Copenhagen — everyone knew it was him — but they signaled that the views were experiments in a way of life, not the author's settled creed.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 11.36,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Schopenhauer thought life was mostly suffering — striving leads to disappointment, satisfaction leads to boredom, then more striving. What did he say offered any relief?",
+    "answer": "Losing oneself in art, compassion for others, or the silencing of the will the saints practiced.",
+    "choices": [
+      "Losing oneself in art, compassion for others, or the silencing of the will the saints practiced.",
+      "Steady civic effort — building institutions that ease the burdens of the next generation along.",
+      "Drinking and good company — Schopenhauer recommended convivial Frankfurt life as the cure.",
+      "Belief in a benevolent God — only the certainty of heaven could outweigh present suffering."
+    ],
+    "context": "Schopenhauer's pessimism is famous; his escape routes are less so. Aesthetic experience momentarily lifts us out of striving (we contemplate without wanting); compassion recognizes the same Will at work in every sufferer; ascetic denial — Buddhist or Christian — quiets the Will at the source. He thought all three were real, partial reliefs.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.23,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Adorno and Horkheimer fled Nazi Germany in the 1930s and ended up in Los Angeles — staring at Hollywood film studios. What did they decide mass entertainment was actually doing to its audience?",
+    "answer": "Producing satisfaction in standard packages that left consumers easier to manage",
+    "choices": [
+      "Producing satisfaction in standard packages that left consumers easier to manage",
+      "Reflecting back the genuine creative interests of the working classes that bought tickets",
+      "Distracting the public from culture but leaving political judgment essentially untouched",
+      "Replacing live theatre with cheaper substitutes but not changing the audience's inner life"
+    ],
+    "context": "Dialectic of Enlightenment (1944, written in California exile). The 'Culture Industry' chapter argued that Hollywood, radio, and popular magazines were not democratic culture but industrial production: songs, films, and stars built to a formula, delivering predictable pleasure that trained people to accept what they were given. Adorno and Horkheimer had watched Weimar's politicized public collapse into Nazi spectacle; they saw American mass culture as a softer cousin of the same process.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.19,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Kuhn noticed something the textbooks hide. Quiet stretches of puzzle-solving are interrupted by sudden upheavals — Copernicus, Newton, Einstein. What did he call these upheavals?",
+    "answer": "Paradigm shifts — moments when scientists argue about the framework, not just the puzzles.",
+    "choices": [
+      "Paradigm shifts — moments when scientists argue about the framework, not just the puzzles.",
+      "Crucial experiments — single tests so decisive they put a long-standing question to rest.",
+      "Research programmes — hard cores protected by adjustable auxiliary hypotheses around them.",
+      "Anomalous discoveries — surprising results absorbed into existing theory without disruption."
+    ],
+    "context": "Kuhn's 1962 Structure of Scientific Revolutions argued science is not steady accumulation. Normal science works inside a paradigm; revolutions are when the paradigm itself breaks. Lakatos's 'research programmes' is the most serious rival picture.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Xenophanes mocked his contemporaries for picturing gods in their own image — Greeks made Greek-looking gods, Thracians red-haired ones. What larger point was he driving at?",
+    "answer": "That human ideas of the divine reflect the humans more than the divine, and so must be sharply distrusted.",
+    "choices": [
+      "That human ideas of the divine reflect the humans more than the divine, and so must be sharply distrusted.",
+      "That the gods of different peoples are real but local, each one ruling only the land where it is worshipped.",
+      "That the gods do not exist at all, and stories of them are tools used by rulers to control their subjects.",
+      "That the gods, while real, lack any moral character and care nothing about how humans choose to act."
+    ],
+    "context": "Xenophanes drove the point home with a joke: if horses and oxen had hands, he said, they would draw their gods as horses and oxen. He was not quite an atheist — he believed in one supreme deity, unlike anything human — but he was the first systematic critic of religious projection.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.05,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Anaximenes proposed that everything comes from air — but he gave a specific mechanism his teacher Anaximander had not. How did he say one substance became all the others?",
+    "answer": "By condensing or thinning: rarefied air becomes fire, thickened it becomes wind, cloud, water, earth, stone.",
+    "choices": [
+      "By condensing or thinning: rarefied air becomes fire, thickened it becomes wind, cloud, water, earth, stone.",
+      "By the action of mind on matter: a cosmic intellect imposes form on a passive, formless underlying stuff.",
+      "By love drawing things together and strife pulling them apart in repeating cycles across the long ages.",
+      "By the constant motion of countless invisible particles whose shape determines what we see and touch."
+    ],
+    "context": "Anaximenes is sometimes treated as the dullest of the Milesians, but he did something his teacher had not: he gave a process. Compression and rarefaction are quantitative changes producing qualitative ones — the seed of every later atomic theory.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.94,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Tocqueville feared democratic peoples would love equality so deeply they would accept any condition, even servitude, so long as shared. What did he say it did to liberty?",
+    "answer": "Sap it, since citizens would prefer a level chain to an uneven freedom enjoyed by their neighbors alone.",
+    "choices": [
+      "Sap it, since citizens would prefer a level chain to an uneven freedom enjoyed by their neighbors alone.",
+      "Sharpen it, since equal political voice would force rulers to respect each citizen's private freedoms in turn.",
+      "Replace it, since the older language of rights would give way to a newer language of welfare and provision.",
+      "Reform it, since equal starting conditions alone would let each individual exercise their freedoms in full."
+    ],
+    "context": "Tocqueville thought liberty and equality were both democratic instincts, but unequal partners. Liberty demands effort, courage, and the toleration of difference; equality offers comfort and a kind of moral simplicity. When the two collide, he warned, the comfortable instinct usually wins.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.52,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Environmental philosophers split: human-centered ethics protects nature because humans need it; nature-centered ethics says nature has its own worth. Bryan Norton noticed something odd: when each camp wrote out actual policies, they kept recommending the same things. He called this the 'convergence hypothesis.' What did he infer?",
+    "answer": "The intrinsic-value debate has little payoff; long-run human interest protects what nature-first ethics protects.",
+    "choices": [
+      "The intrinsic-value debate has little payoff; long-run human interest protects what nature-first ethics protects.",
+      "Only intrinsic-value ethics can justify protection; human reasoning leaves loopholes that pressure exploits.",
+      "The camps recommend opposite policies, so environmental philosophy must pick a foundation before advice.",
+      "Neither camp justifies policy without religious premises, since secular ethics has no reason to value the unowned."
+    ],
+    "context": "Norton's 1991 Toward Unity Among Environmentalists argued the fight between Rolston-style realists and human-centered pragmatists is largely beside the point: a long-term, multi-generational anthropocentrism converges on the same recommendations. Callicott argued the foundations still matter.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 11.09,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Reading other moralists, Hume noticed authors slip without warning from sentences using 'is' to sentences using 'ought.' What did he say this transition demanded?",
+    "answer": "An explanation: how a new relation, 'ought,' is derived from claims that contain only 'is' is never shown.",
+    "choices": [
+      "An explanation: how a new relation, 'ought,' is derived from claims that contain only 'is' is never shown.",
+      "A refutation: the transition is a fallacy and moral claims must be reduced to descriptions of natural facts.",
+      "A definition: every 'ought' must be analyzed as shorthand for an 'is' about the speaker's own preferences.",
+      "A foundation: morals require revealed law, since reason alone never carries us from world to obligation."
+    ],
+    "context": "In a famous paragraph at the close of Treatise III.i.1, Hume marks the leap from is to ought and asks for an account. He does not say the leap can never be made — only that no writer he has read has shown how. The challenge has driven moral philosophy ever since.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.23,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Al-Farabi wrote The Virtuous City to complete Plato's Republic — adapted for a world that had received prophetic revelation. What did he say the ideal ruler must be?",
+    "answer": "A philosopher and a prophet at once — joined to the active intellect so truth reaches him as vivid image.",
+    "choices": [
+      "A philosopher and a prophet at once — joined to the active intellect so truth reaches him as vivid image.",
+      "A jurist and a warrior at once — Quranic law in one hand and the sword in the other, defending the city.",
+      "A theologian and a king at once — versed in Ash'ari doctrine and ready to enforce orthodoxy on subjects.",
+      "A poet and a statesman at once — moving the people through eloquence while administering the laws."
+    ],
+    "context": "Al-Farabi (Alfarabius to the Latins) read Plato's philosopher-king through Aristotle's De Anima and the Quranic prophet. The same truth reaches the rare reasoner through demonstration and the many through imagination; the ideal ruler has both. The result was the first systematic Islamic political philosophy and a major influence on Avicenna and Maimonides.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.22,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Mill argued political safeguards — votes, courts, elections — could not by themselves secure liberty. A second tyranny remained. What was it?",
+    "answer": "Tyranny of social opinion — informal pressure to conform that punishes dissent without passing a law.",
+    "choices": [
+      "Tyranny of social opinion — informal pressure to conform that punishes dissent without passing a law.",
+      "Tyranny of the educated class — expert consensus that blocks reform faster than electorates can approve it.",
+      "Tyranny of the bureaucracy — administrators whose tenure outlasts elections and whose discretion law cannot reach.",
+      "Tyranny of inherited wealth — concentrations of capital that distort political choice before any vote is cast."
+    ],
+    "context": "Tocqueville used the phrase first; Mill in On Liberty pressed it past the ballot. Custom, ridicule, and exclusion enforce conformity where statute cannot reach, and the victim has no court of appeal. Mill thought this informal coercion was doing more damage to original character than any law on the books.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.02,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Montesquieu argued, against pure theorists, that republican government required small states. What was his empirical claim?",
+    "answer": "Public virtue depends on citizens knowing each other; a vast republic loses the shared mores that sustain free rule.",
+    "choices": [
+      "Public virtue depends on citizens knowing each other; a vast republic loses the shared mores that sustain free rule.",
+      "Public credit depends on a single market; a small republic alone can hold the trust that backs its paper money.",
+      "Public order depends on a strong executive; a small republic alone can be ruled by one magistrate without abuse.",
+      "Public justice depends on a uniform legal code; a small republic alone can be governed by one body of statute."
+    ],
+    "context": "Montesquieu's Spirit of the Laws (1748) reasoned from cases — Sparta, Rome, the Italian republics — rather than from first principles. Madison answered him in Federalist 10, arguing that a large republic could remedy the very factions Montesquieu thought small size prevented. The dispute shaped the American founding.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 11.13,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Foot late in her career compared the human virtues to the natural properties of plants. She thought the comparison was philosophically substantive, not poetic. What did the comparison establish?",
+    "answer": "That moral 'good' for a human works the same way as 'good' for an oak — naming what a thing of that kind needs to flourish.",
+    "choices": [
+      "That moral 'good' for a human works the same way as 'good' for an oak — naming what a thing of that kind needs to flourish.",
+      "That ethics rests on intuitions of beauty — humans recognize virtue the way they recognize a fine specimen of any natural form.",
+      "That morality is reducible to biology — what counts as virtue is whatever evolutionary success in our species has favored historically.",
+      "That moral language is metaphorical — talk of human flourishing borrows its sense from plant cases where the term applies literally."
+    ],
+    "context": "Foot's Natural Goodness (2001) re-grounded virtue ethics in species-typical functioning. A defective root system makes for a defective oak; a defective courage or honesty makes for a defective human. The judgment is not arbitrary or sentimental — it picks out what beings of that kind characteristically need to live well.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Hughes in The End of Race Politics defended an older civil rights position the contemporary debate had largely abandoned. What did he argue for?",
+    "answer": "Color blindness — treating individuals according to character and choice, with race as a feature of biography but not the central one.",
+    "choices": [
+      "Color blindness — treating individuals according to character and choice, with race as a feature of biography but not the central one.",
+      "Racial preferences — affirmative measures must continue indefinitely until aggregate group outcomes are statistically equivalent.",
+      "Race neutrality through reparation — direct payments would resolve historical injustice, after which neutral rules could prevail.",
+      "Group representation — institutions should adopt quotas matching national demographics, ending racial politics by making them fair."
+    ],
+    "context": "Hughes argued the color-blind position of Martin Luther King had been wrongly recast in recent decades as either naive or reactionary. He pressed it as the only stable settlement for a multi-racial republic — one where individuals are judged on their own terms and race is a fact about them, not a verdict on them.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.23,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Hume noticed every prediction trusts the sun will rise tomorrow because it has risen each prior day. He pressed: what justifies the move from past regularity to future expectation?",
+    "answer": "Nothing demonstrative — only habit; reason cannot show the future must resemble the past, since that very rule is what we tried to prove.",
+    "choices": [
+      "Nothing demonstrative — only habit; reason cannot show the future must resemble the past, since that very rule is what we tried to prove.",
+      "Deep laws of nature — physics shows the universe is regular, and induction is justified by the metaphysical regularity it has discovered.",
+      "Pragmatic necessity — without inductive trust no creature could survive, so the move is licensed by the demands of practical life.",
+      "Divine guarantee — God's providence ensures the world's order, so trust in tomorrow rests on faith in the constancy of the Creator."
+    ],
+    "context": "The problem of induction has shaped philosophy of science ever since. Popper tried to escape it through falsification; Goodman sharpened it with the 'grue' puzzle.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.41,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Adorno coined 'the culture industry' to describe Hollywood, radio, and pop music under mid-century capitalism. He insisted the phrase was not interchangeable with 'mass culture.' What was he claiming?",
+    "answer": "Mass culture is administered from above as a standardized product, then sold back to people as if it expressed their own spontaneous taste.",
+    "choices": [
+      "Mass culture is administered from above as a standardized product, then sold back to people as if it expressed their own spontaneous taste.",
+      "Mass culture is the authentic voice of working people, debased only when intellectuals impose their own elitist standards of taste from outside.",
+      "Mass culture is morally degraded because it abandons the classical canon; restoring that great tradition would lift the public out of its decline.",
+      "Mass culture is a neutral medium reflecting audience preferences; its producers simply give viewers and listeners what they have freely demanded."
+    ],
+    "context": "Adorno chose 'industry' precisely to reject the romantic image of culture rising spontaneously from the people. The product was, in his view, manufactured — and the appearance of free choice was part of the manufacturing.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Singer grounded animal moral status in sentience — capacity for suffering. Tom Regan thought this missed the deeper point and proposed a different criterion. What did Regan say grounded an animal's moral standing?",
+    "answer": "Being a subject-of-a-life — having beliefs, desires, memory, and a welfare that fares well or badly from the inside, regardless of utility",
+    "choices": [
+      "Being a subject-of-a-life — having beliefs, desires, memory, and a welfare that fares well or badly from the inside, regardless of utility",
+      "Membership in a species capable of forming social bonds, since cooperation grounds the entire framework of cross-species moral obligation",
+      "Possession of an immortal soul, which Regan argued natural theology could establish for higher mammals on philosophical grounds alone",
+      "Capacity to reciprocate moral treatment, on the contractualist line that rights arise only among parties who can offer them in return"
+    ],
+    "context": "In *The Case for Animal Rights* (1983), Regan rejected Singer's preference-utilitarian framework: aggregating welfare across creatures can still justify sacrificing one for many. Regan's deontological alternative says a subject-of-a-life has inherent value — beliefs, memory, a perspective from which life goes well or badly. That value cannot be traded against utility, putting his view closer to Kant than to Bentham.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.33,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Hasdai Crescas, writing in Spain after the 1391 massacres, attacked Aristotelian physics — and on that back ranked something above intellect as the soul's deepest faculty. What did he raise?",
+    "answer": "Love — *ahavah* — above intellect: the soul's union with God is fundamentally loving, not contemplative.",
+    "choices": [
+      "Love — *ahavah* — above intellect: the soul's union with God is fundamentally loving, not contemplative.",
+      "Will — the free choosing power — above intellect: the soul images God through its sheer self-direction.",
+      "Imagination — the prophetic faculty — above intellect: the soul rises to God through its inner vision.",
+      "Memory — the keeper of covenant — above intellect: the soul holds God by remembering Torah from Sinai."
+    ],
+    "context": "In *Or Adonai* (*Light of the Lord*), Crescas (c.1340–1410) demolishes Aristotelian arguments for the finiteness of space, the impossibility of vacuum, and the unmoved mover — anticipating moves Spinoza would later make. On that physics he rebuilds Jewish thought: the rational intellect is not the soul's highest part. The capacity to love God, and through Him neighbor, is. The move would shape later Jewish piety from Luzzatto to Soloveitchik.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.41,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "The Buddha taught that everything arises in dependence on conditions — no thing has its own self-standing being. He called this pratityasamutpada, dependent origination. Why does this not collapse into a chain of causes like physics?",
+    "answer": "Each link conditions the next without producing it as cause produces effect — relations of mutual dependence, not one-way physical causation across time.",
+    "choices": [
+      "Each link conditions the next without producing it as cause produces effect — relations of mutual dependence, not one-way physical causation across time.",
+      "Physical causation is one of the twelve links and is the same kind of process, but only the early portion of the Wheel is recognized by modern science.",
+      "Physical causation moves matter while dependent origination moves karma — two separate streams of events that never touch one another in any given life.",
+      "Physical causation is illusion at the conventional level; only mental events have real causal power and these alone constitute the twelve links of the chain."
+    ],
+    "context": "The twelve nidanas describe how ignorance, formations, consciousness, name-and-form, the senses, contact, feeling, craving, clinging, becoming, birth, and aging-and-death condition one another. Buddhaghosa's Visuddhimagga distinguishes paccaya (condition) from hetu (cause) for exactly this reason — the relations are mutual and structural, not unidirectional event-by-event causation.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.54,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Al-Farabi proposed an ideal city in his Mabadi Ara Ahl al-Madina al-Fadila. He inherited the structure from Plato but added a feature that responded to a question Plato had not faced directly. What did Al-Farabi add?",
+    "answer": "A prophet-philosopher at the top who receives demonstrative truth through reason and shapes it into images for the citizens — uniting Plato's philosopher-king with the Abrahamic prophet.",
+    "choices": [
+      "A prophet-philosopher at the top who receives demonstrative truth through reason and shapes it into images for the citizens — uniting Plato's philosopher-king with the Abrahamic prophet.",
+      "A judicial assembly to check the ruler's decisions through deliberation — Al-Farabi shared Aristotle's worry about Plato's monarchical concentration and built in republican safeguards.",
+      "A council of merchant guilds to manage commerce alongside the philosopher's rule — Al-Farabi recognized the rising power of trade in his Baghdad and accommodated it institutionally.",
+      "A senate of religious scholars to interpret revealed law for the philosopher-king — Al-Farabi held that without scriptural advisors no ruler could navigate the questions of his own age."
+    ],
+    "context": "Al-Farabi (c. 870-950), called the Second Teacher (Aristotle being the First), wrote the first systematic Islamic political philosophy. His ideal ruler is what classical Islamic philosophy would call the prophet — someone whose active intellect is so attuned that demonstrative truths reach him along with the imaginative capacity to shape those truths into the symbols a wider population can grasp. The synthesis profoundly influenced Avicenna, Maimonides, and through them later European political philosophy.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 11.71,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Integrated information theory says consciousness is a quantity. What is the rough idea behind the proposal?",
+    "answer": "A system is conscious to the degree its parts work together as a unified whole — separable subsystems contribute less than tightly integrated ones.",
+    "choices": [
+      "A system is conscious to the degree its parts work together as a unified whole — separable subsystems contribute less than tightly integrated ones.",
+      "A system is conscious to the degree it shows external behavior typical of human conscious subjects — the criterion remains behavioral throughout.",
+      "A system is conscious to the degree its components store information — large memory capacity is the measure of phenomenal richness.",
+      "A system is conscious to the degree it can run programs of any complexity — universal computation is the threshold for any inner life."
+    ],
+    "context": "Giulio Tononi's theory was provocative because it implied even simple physical systems possess some small degree of experience, and disconnected systems possess none. Phi (φ) measures the irreducibility of a system's information structure. Critics charged the formalism with mistaking a mathematical property for a metaphysical claim; defenders said the proposal was at least a real candidate.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.39,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Kripke asked: when we say 'Aristotle could have died in infancy,' what makes the counterfactual about Aristotle and not about whoever fits the textbook description of him? His answer reshaped how names work.",
+    "answer": "A name is a rigid designator — it picks out the same individual in every possible world where that person exists, whatever descriptions he satisfies there.",
+    "choices": [
+      "A name is a rigid designator — it picks out the same individual in every possible world where that person exists, whatever descriptions he satisfies there.",
+      "A name abbreviates a cluster of descriptions speakers attach to it; in each world it refers to whichever individual best satisfies the cluster as a whole.",
+      "A name is shorthand for one defining description chosen by the community; in any world it refers to whoever uniquely satisfies that description there.",
+      "A name's reference is fixed by sense — the mode of presentation grasped by competent speakers settles which individual the name picks out across worlds."
+    ],
+    "context": "If 'Aristotle' just meant 'the teacher of Alexander,' then 'Aristotle might never have taught Alexander' would say of that teacher he might not have been that teacher — incoherent or trivially false. Kripke argued the name reaches through descriptions to the man himself. In other worlds he is still Aristotle even when every famous fact about him fails.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Yablo's paradox lists infinitely many sentences, each saying 'every later sentence is false.' It is paradoxical with no sentence referring to itself. What does Stephen Yablo argue this proves?",
+    "answer": "That self-reference is not necessary for paradox — circularity in the underlying pattern of truth-attributions is enough on its own.",
+    "choices": [
+      "That self-reference is not necessary for paradox — circularity in the underlying pattern of truth-attributions is enough on its own.",
+      "That all semantic paradoxes can be eliminated by banning infinite sequences of sentences from any formally adequate language.",
+      "That Kripke's fixed-point construction was mistaken to allow ungrounded sentences any classical truth-value whatsoever.",
+      "That paraconsistent logic is required because the infinite list has no last sentence on which to ground its truth-values."
+    ],
+    "context": "Roy Sorensen and Graham Priest pushed back: Yablo's list, they argue, smuggles in self-reference through the universal quantifier over later sentences. Yablo and Hardy reply that the dependency graph is genuinely non-circular. The dispute matters — diagnoses of the Liar that pin everything on self-reference look wrong if Yablo is right.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Commodity fetishism, in Capital Volume I, is not the worship of commodities. Marx uses the term in a precise technical sense. What does he claim happens under generalized commodity production?",
+    "answer": "Social relations between producers appear as objective properties of things — value seems to belong to the commodity itself rather than to labor relations.",
+    "choices": [
+      "Social relations between producers appear as objective properties of things — value seems to belong to the commodity itself rather than to labor relations.",
+      "Consumers form irrational emotional attachments to brands and goods — projecting personality onto inanimate objects through advertising and habit.",
+      "Capital takes on a life of its own — accumulating without conscious direction because its movement obeys laws no individual planner can control.",
+      "Workers identify with the products they make — finding meaning in commodities because their labor has been alienated from its own creative activity."
+    ],
+    "context": "The fetishism passage is the bridge between Marx's economic analysis and his theory of ideology. Lukács turned it into a theory of reification; the Frankfurt School made it the heart of cultural critique. Recent scholars — Moishe Postone, Michael Heinrich — argue the standard Marxist reception missed Marx's actual claim, which is structural, not psychological. The dispute is again the heart of Marx scholarship.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.73,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Plantinga's parity argument went further: applied fairly, the evidentialist demand cannot meet its own standard. Where did he say the demand failed?",
+    "answer": "The demand is not itself supported by argument from prior beliefs — by its own rule it must be rejected, since no proof of evidentialism survives its standard.",
+    "choices": [
+      "The demand is not itself supported by argument from prior beliefs — by its own rule it must be rejected, since no proof of evidentialism survives its standard.",
+      "The demand cannot apply to ordinary perception — for nothing argues from prior beliefs to the chair I see, yet refusing belief in the chair seems unreasonable.",
+      "The demand presupposes a theory of evidence the evidentialist has never spelled out — until one is given, the rule remains a slogan, not a workable principle.",
+      "The demand was historically tied to one religious tradition — Clifford wrote against Christian dogmatism, and the rule does not generalize beyond that quarrel."
+    ],
+    "context": "Plantinga's self-referential turn: if evidentialism demands all beliefs be supported by argument from other beliefs, then evidentialism itself must be so supported — and no such argument exists. The principle violates its own rule. Distractors are real adjacent critiques — perceptual, theoretical-vagueness, historical-genetic — each pressed by some philosopher (Alston, Wolterstorff, Westphal).",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Nietzsche's eternal recurrence is sometimes read as cosmological speculation about endless universes. Most scholars now read it instead as a thought experiment with one job. What is the job?",
+    "answer": "To force you to face whether you would affirm your own life as it actually is — the test of whether you have made your existence one you can love.",
+    "choices": [
+      "To force you to face whether you would affirm your own life as it actually is — the test of whether you have made your existence one you can love.",
+      "To force you to face the finitude of human existence — the test of whether you would still choose your life if you knew exactly when it would end.",
+      "To force you to face the existence of objective values — the test of whether your choices presuppose moral facts you officially deny.",
+      "To force you to face the limits of human freedom — the test of whether you would still feel like an agent if your life had been entirely fixed."
+    ],
+    "context": "The Gay Science §341 and Zarathustra. Nietzsche calls the response — being able to say 'yes, again' — amor fati.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.15,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Block distinguished 'access consciousness' from 'phenomenal consciousness.' Many philosophers had run them together. What did the distinction force them to confront?",
+    "answer": "A system might be access-conscious (its information is available for reasoning and report) without there being anything it is like to be that system.",
+    "choices": [
+      "A system might be access-conscious (its information is available for reasoning and report) without there being anything it is like to be that system.",
+      "A system might be phenomenally conscious without any access — pure unreportable experience could occur in regions of the brain reasoning never reaches.",
+      "A system might be conscious in either mode only intermittently — the two modes occur in pulses that cannot be active simultaneously.",
+      "A system might be conscious in only one mode in any moment — the brain switches between access and phenomenal as task demands shift."
+    ],
+    "context": "Block's 1995 paper warned that conflating the two makes the hard problem look like an easy one. Show that information is globally available — easy problem solved. But that does not yet say why there is something it is like to undergo any of it. Block's distinction kept the harder question from being hidden behind the easier work.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.18,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "All these philosophers — Socrates, Plato, Confucius, Buddha, Marcus Aurelius — lived in DIFFERENT places at DIFFERENT times. What do they have in common?",
+    "answer": "They all asked big questions about how to live a good life and treat others well.",
+    "choices": [
+      "They all asked big questions about how to live a good life and treat others well.",
+      "They all lived in the same village and were close friends at school.",
+      "They all spoke Latin and English and wrote together as a big team.",
+      "They all said the exact same things and were really one single person."
+    ],
+    "context": "All over the world, in different times, people have asked the same kinds of questions. Philosophy is something humans have always cared about, in every culture.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 11.23,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Begging the question (Latin: petitio principii) assumes the conclusion inside one of its premises. Which case below commits this circular move?",
+    "answer": "The medium says her gift is real because spirits told her so during a seance; the spirits' existence is exactly what was at issue.",
+    "choices": [
+      "The medium says her gift is real because spirits told her so during a seance; the spirits' existence is exactly what was at issue.",
+      "The medium says her gift is real because thousands of clients agree she has it; many people's agreement is offered as the reason.",
+      "The medium says her gift is real because skeptics cannot prove she lacks it; the absence of disproof is offered as the evidence.",
+      "The medium says her gift is real because her grandmother had the gift; one family inheritance is offered as evidence of the claim."
+    ],
+    "context": "The phrase 'begs the question' now often means 'raises the question' in everyday speech, but in logic it remains this specific circular move.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 10.42,
+    "_old_tier": 5
+  },
+  {
+    "tier": 5,
+    "question": "Equivocation slides between two senses of a word inside one argument. Which case below uses 'right' equivocally between premises and conclusion?",
+    "answer": "'You have a right to free speech. So speaking your mind must be the right thing to do.' 'Right' shifts from legal-entitlement to morally-correct.",
+    "choices": [
+      "'You have a right to free speech. So speaking your mind must be the right thing to do.' 'Right' shifts from legal-entitlement to morally-correct.",
+      "'You have a right to free speech. So the government cannot lawfully prevent you from speaking.' 'Right' keeps its legal sense throughout.",
+      "'You have a right to free speech. So you can choose to remain silent if you wish.' 'Right' keeps its sense of legal protection throughout.",
+      "'You have a right to free speech. So your employer also has rights regarding company time.' 'Right' keeps its legal sense throughout."
+    ],
+    "context": "Equivocation is the workhorse fallacy of clever-sounding nonsense. The fix: pin down each key term's meaning and check it stays fixed across the argument.",
+    "_drop_reason": "fk>10 (audit 2026-05-19)",
+    "_fk": 12.11,
+    "_old_tier": 5
   }
 ]

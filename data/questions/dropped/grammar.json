@@ -538,5 +538,187 @@
     "_drop_reason": "drop_signal:\\bcomparative method\\b.{0,40}\\b(historical linguistics|recon",
     "_fk": 12.61,
     "_old_tier": 5
+  },
+  {
+    "tier": 4,
+    "question": "Pāṇini's *Aṣṭādhyāyī* contains roughly:",
+    "answer": "Around 4,000 rules (sutras)",
+    "choices": [
+      "Around 4,000 rules (sutras)",
+      "Around 100 rules",
+      "Around a million rules",
+      "Just a list of words"
+    ],
+    "context": "3,959 sutras. Pāṇini's rule-system anticipated modern formal grammar by 2,400 years.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 4,
+    "question": "Pāṇini's *Aṣṭādhyāyī* — the world's most rigorous early grammar — analyzed which language?",
+    "answer": "Sanskrit",
+    "choices": [
+      "Sanskrit",
+      "Greek",
+      "Latin",
+      "Persian"
+    ],
+    "context": "Pāṇini wrote ~4th century BC — 2,400 years ago — with rule-based detail not matched in Europe for millennia.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 4,
+    "question": "Pāṇini's Aṣṭādhyāyī (c. 4th century BC) was a grammar of:",
+    "answer": "Sanskrit",
+    "choices": [
+      "Sanskrit",
+      "Latin",
+      "Greek",
+      "Hebrew"
+    ],
+    "context": "8 chapters, 3,959 sutras. So rigorous that 19th-century European linguists called it more systematic than any Western grammar before Chomsky. Established that grammar can be formally described.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 4,
+    "question": "Pāṇini's Aṣṭādhyāyī (अष्टाध्यायी) — literally 'Eight Chapters' — is the foundational treatise on Sanskrit grammar, composed in ancient India somewhere between the 6th and 4th century BCE. The work contains nearly 4,000 sutras (rules) in eight chapters, each subdivided into four sections. Pāṇini's analysis was so rigorous that no Western linguistic work matched it until:",
+    "answer": "The 19th-20th century (Bloomfield, Chomsky)",
+    "choices": [
+      "The 19th-20th century (Bloomfield, Chomsky)",
+      "Roman Latin grammar (4th-6th c)",
+      "Medieval scholastic grammar",
+      "Renaissance humanist grammar"
+    ],
+    "context": "Pāṇini's sutras describe Sanskrit's grammar in a meta-language that anticipated modern formal grammar. Western linguistics only caught up with his rigor in the 20th century. Chomsky has acknowledged the debt.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 4,
+    "question": "Pāṇini, a Sanskrit grammarian who probably lived in the 6th-4th centuries BCE in what is now northwestern Pakistan, composed the Aṣṭādhyāyī ('Eight Chapters'). It contains roughly 4,000 sūtras — extremely compressed rules — describing Sanskrit phonology and morphology with formal rigor that Western scholars did not match for over two millennia. What modern computing concept does Pāṇini's grammar foreshadow?",
+    "answer": "Formal generative rule systems, which Chomsky and others later applied to natural language",
+    "choices": [
+      "Formal generative rule systems, which Chomsky and others later applied to natural language",
+      "Statistical machine learning, since Pāṇini used frequency counts from a Sanskrit corpus",
+      "Binary computer encoding, since each sūtra represents a yes-or-no rule",
+      "Object-oriented programming, since each rule is bound to a class of words"
+    ],
+    "context": "Pāṇini's metalanguage, ordered rules, and explicit handling of exceptions anticipate generative grammar by 2,400 years. Bloomfield called him 'one of the greatest monuments of human intelligence.' The system is so compact that printing the rules takes about 40 pages.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 5,
+    "question": "Alonzo Reed and Brainerd Kellogg published 'Graded Lessons in English' in 1875 and 'Higher Lessons in English' in 1877. The latter introduced their sentence-diagramming system, which uses horizontal and slanted lines to display grammatical relationships visually. Reed-Kellogg diagrams dominated American grammar instruction for nearly a century. Why did diagramming decline?",
+    "answer": "Pedagogical shifts away from formal grammar in the mid-to-late 20th century",
+    "choices": [
+      "Pedagogical shifts away from formal grammar in the mid-to-late 20th century",
+      "The diagrams were proven incorrect by linguists",
+      "Computer programs replaced sentence diagrams",
+      "Reed and Kellogg were discredited after 1950"
+    ],
+    "context": "American schools largely abandoned sentence diagramming by the 1980s, following broader pedagogical shifts away from formal grammar teaching. Some homeschool and classical-school curricula still use it.",
+    "_drop_reason": "redundant_with_kept_variant"
+  },
+  {
+    "tier": 5,
+    "question": "Linguistics distinguishes phonetics (the physical production and perception of speech sounds) from phonology (the abstract sound patterns of a language). Phonetics studies how sounds are physically produced (lips, tongue, vocal cords); phonology studies how sounds function within a language system. Which is a phonological question?",
+    "answer": "Why does English have aspirated /p/ in 'pin' but not in 'spin'?",
+    "choices": [
+      "Why does English have aspirated /p/ in 'pin' but not in 'spin'?",
+      "What is the acoustic frequency of the vowel in 'pin'?",
+      "How long does it take to produce a /p/ sound physically?",
+      "Which muscles in the mouth produce a /p/ sound?"
+    ],
+    "context": "Phonetics: physical sound production. Phonology: abstract patterns of contrast within a language. The aspirated/unaspirated /p/ distinction is phonological (a rule of English); the acoustic frequencies are phonetic.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 5,
+    "question": "Pāṇini's Aṣṭādhyāyī is organized in eight chapters (adhyāyas), each with four sections (pādas), totaling 32 pādas. Why is the order of the sūtras important?",
+    "answer": "Later rules can override earlier ones; the order encodes default-and-exception logic",
+    "choices": [
+      "Later rules can override earlier ones; the order encodes default-and-exception logic",
+      "The rules are arranged alphabetically by the Sanskrit words they discuss",
+      "The order matches the order in which children naturally acquire Sanskrit",
+      "The order is purely aesthetic; rules can be applied in any sequence"
+    ],
+    "context": "Pāṇini's system uses explicit rule precedence — a more specific rule blocks a more general one. This 'elsewhere principle' is a foundational idea in modern phonology and morphology, often credited to Pāṇini directly.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 5,
+    "question": "Reed-Kellogg sentence diagrams use horizontal and slanted lines to display grammatical relationships. The subject sits on the left of the horizontal baseline; the verb on the right; a vertical line separates them. Adjectives slope down from the noun they modify. Direct objects sit on the baseline after the verb. What's the pedagogical justification?",
+    "answer": "Visual representation helps students see grammar's underlying structure",
+    "choices": [
+      "Visual representation helps students see grammar's underlying structure",
+      "Diagrams replace all other grammar instruction",
+      "Diagrams are easier than writing sentences",
+      "Diagrams are required by all American schools"
+    ],
+    "context": "Reed-Kellogg's visual approach was innovative in 1877 — showing grammar's invisible relationships. Critics later argued the diagrams were too rigid; supporters argued they revealed structure. The technique declined in late 20th-c American schools.",
+    "_drop_reason": "redundant_with_kept_variant"
+  },
+  {
+    "tier": 5,
+    "question": "Reed-Kellogg sentence diagrams were invented in approximately:",
+    "answer": "The late 19th century",
+    "choices": [
+      "The late 19th century",
+      "The 17th century",
+      "The 1950s",
+      "The Middle Ages"
+    ],
+    "context": "Alonzo Reed + Brainerd Kellogg, 1877 — visual map of sentence structure.",
+    "_drop_reason": "redundant_with_kept_variant"
+  },
+  {
+    "tier": 5,
+    "question": "Semantics is the study of:",
+    "answer": "Meaning in language",
+    "choices": [
+      "Meaning in language",
+      "Sounds in language",
+      "Word origins",
+      "Spelling"
+    ],
+    "context": "Syntax = structure. Semantics = meaning. Phonology = sounds. Pragmatics = context.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 5,
+    "question": "Some languages have an extra slot in their verb system for grammatical 'evidentiality' — they require speakers to mark how they came to know what they're saying. What might an evidentiality marker indicate?",
+    "answer": "Whether information is firsthand, hearsay, inference, or general knowledge",
+    "choices": [
+      "Whether information is firsthand, hearsay, inference, or general knowledge",
+      "Whether the speaker has university education",
+      "Whether the listener has met the people being discussed",
+      "Whether the action happened today or before today"
+    ],
+    "context": "Tuyuca (Amazon) has at least five evidential markers: visual, non-visual sensory, apparent, secondhand, assumed. English has approximate equivalents in modal adverbs ('apparently,' 'reportedly') but no obligatory grammatical category. Quechua, Turkish, and Bulgarian also mark evidentiality.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 5,
+    "question": "Verbs can be classified by their argument structure. Avalent verbs need no argument ('It rains' — 'it' is a dummy subject). Monovalent (intransitive): one argument. Divalent (transitive): two. Trivalent (ditransitive): three. The English avalent class is very small. Which is avalent?",
+    "answer": "Snow (it snows, with no real subject)",
+    "choices": [
+      "Snow (it snows, with no real subject)",
+      "Walk (someone walks)",
+      "Build (someone builds something)",
+      "Give (someone gives something to someone)"
+    ],
+    "context": "Weather verbs (rain, snow, hail) are classic avalent verbs. The 'it' is a syntactic placeholder ('weather it', sometimes called). Some languages allow them with no subject at all.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
+  },
+  {
+    "tier": 5,
+    "question": "What is the 'critical period' hypothesis in language acquisition?",
+    "answer": "The claim that there is a biologically constrained window (roughly birth to puberty) for acquiring native-speaker competence",
+    "choices": [
+      "The claim that there is a biologically constrained window (roughly birth to puberty) for acquiring native-speaker competence",
+      "The claim that all languages must be learned during a country's specific historical 'critical period'",
+      "The claim that grammar can only be acquired during a one-hour daily critical period",
+      "The claim that humans lose the ability to speak after a critical age of dementia onset"
+    ],
+    "context": "Proposed by Eric Lenneberg in 1967. Evidence: feral children like Genie (discovered 1970, age 13) never fully acquired language. Late second-language learners rarely reach native-like phonology. The strong version is contested; the weak version (declining plasticity with age) is well supported.",
+    "_drop_reason": "linguistics_theory_beyond_grade10"
   }
 ]

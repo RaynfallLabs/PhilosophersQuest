@@ -21197,5 +21197,395 @@
       ],
       "from_tier": 1
     }
+  },
+  {
+    "tier": 2,
+    "question": "To clean narrow vessels like blender jars and sippy cups, what tool is needed?",
+    "answer": "Narrow vessels like blender jars",
+    "choices": [
+      "Narrow vessels like blender jars",
+      "Open frying pans and skillets",
+      "Flat dinner plates and saucers",
+      "Wooden boards and cheese slabs"
+    ],
+    "context": "A bottle brush reaches surfaces a sponge can't — sippy cups, blender bases, vases.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 3,
+    "question": "Onion, carrot, and celery have been sweating in butter for ten minutes — soft, glossy, no color. Adding flour and stirring makes a roux. Cooking the roux dark before stock goes in produces what?",
+    "answer": "Tempering it",
+    "choices": [
+      "Tempering it",
+      "Deglazing it",
+      "Emulsifying",
+      "Reducing it"
+    ],
+    "context": "Roux color = blonde, brown, dark. The darker it cooks, the less it thickens but the more flavor it adds. Cajun cooks take roux nearly black.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 4,
+    "question": "A cook plans to chop raw chicken, then vegetables for salad. The safest sequence on one board is:",
+    "answer": "The dissolved starch helps the sauce cling and emulsify with the oil",
+    "choices": [
+      "The dissolved starch helps the sauce cling and emulsify with the oil",
+      "The boiled water has been sterilized perfectly safe for the food use",
+      "Hot pasta water raises the temperature of the sauce before the plate",
+      "The salt content seasons the prepared sauce evenly throughout each bite"
+    ],
+    "context": "Best is separate boards. If using one, do raw poultry last and sanitize after. Order matters — bacteria moves forward in time, not backward.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 4,
+    "question": "A bowl of beans and a side of rice. Each is incomplete on its own — neither has all essential amino acids in good ratio. Together they make a complete protein because:",
+    "answer": "Lactobacillus and Bifidobacterium",
+    "choices": [
+      "Lactobacillus and Bifidobacterium",
+      "Aspergillus and Saccharomyces",
+      "Streptococcus pyogenes and E. coli",
+      "Salmonella and Listeria everywhere"
+    ],
+    "context": "Classic complementary pairing across cultures — beans-and-rice, lentil-and-bread, tofu-and-rice. They do not need to be eaten in the same meal, just the same day.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "A loaf of white bread, a bowl of brown rice, and a side of quinoa all supply carbohydrates. Of the three, the white bread differs in being:",
+    "answer": "Calcium element",
+    "choices": [
+      "Calcium element",
+      "Magnesium element",
+      "Iron element",
+      "Zinc element"
+    ],
+    "context": "Refining strips out fiber, B vitamins, and minerals. Enrichment puts some back but not the fiber. Whole grain = the bran, germ, and endosperm together.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 1,
+    "question": "A label reads 'Made with whole grains.' That phrase does not legally guarantee much. To know it is mostly whole grain, the cook should look for:",
+    "answer": "Straining out the whey",
+    "choices": [
+      "Straining out the whey",
+      "Adding extra protein powder",
+      "Using cream instead of milk",
+      "Fermenting with a strain"
+    ],
+    "context": "Ingredients are listed by weight. If 'enriched wheat flour' comes first and 'whole wheat' fifth, the product is mostly refined. The Whole Grain Council's stamp is more reliable than slogans.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 4,
+    "question": "A neighbor swears by raw milk; the FDA warns against it. The honest two-sided summary is:",
+    "answer": "Iron absorption from the plant source",
+    "choices": [
+      "Iron absorption from the plant source",
+      "Calcium absorption from the leafy greens",
+      "Vitamin D synthesis from sunlight on skin",
+      "Fat-soluble vitamin uptake in the gut"
+    ],
+    "context": "Pasteurization kills pathogens but also some heat-sensitive components. Raw-milk outbreaks are documented; so are millennia of traditional consumption. The debate is real and ongoing.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 3,
+    "question": "A child's lunchbox holds a peanut-butter sandwich on whole-grain bread, an apple, baby carrots, and milk. The lunch supplies all major macronutrients. What is mostly missing?",
+    "answer": "They are minimally processed, traditionally consumed fats from real foods",
+    "choices": [
+      "They are minimally processed, traditionally consumed fats from real foods",
+      "They are calorie-free and have zero impact on the weight gain of a person",
+      "They contain no saturated fat compared to factory oils on the supermarket shelf",
+      "They are USDA-approved as the absolute healthiest fat choices on the market today"
+    ],
+    "context": "Macros are covered; what is thin is the variety of plant micronutrients. Adding cucumber slices, bell pepper strips, or grapes diversifies the spectrum.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "Bone broth has had a moment in the wellness aisle. Honest assessment of its nutritional profile is:",
+    "answer": "Potential carcinogens in animal studies and some human research",
+    "choices": [
+      "Potential carcinogens in animal studies and some human research",
+      "Essential umami flavor molecules with great taste at high heat",
+      "Heat-resistant proteins of no concern for any current research",
+      "Antioxidants created by smoke exposure to grilled meat tissue"
+    ],
+    "context": "Long simmering does extract gelatin, glycine, proline, and minerals. Specific medicinal claims (gut healing, joint repair) outpace the current evidence. It is good food, not magic.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "Spinach gets cooked down from a huge bowl to a small heap. Comparing the two on iron, the cooked version has:",
+    "answer": "A green or colorful vegetable to broaden the nutrient profile",
+    "choices": [
+      "A green or colorful vegetable to broaden the nutrient profile",
+      "Saturated fat from animal sources to round out the macronutrients",
+      "Added simple sugar for energy needed by a growing schoolchild",
+      "Highly processed grain content with the standard lunchbox favorites"
+    ],
+    "context": "Raw spinach contains oxalic acid, which binds iron and reduces uptake. Cooking softens oxalate's grip, freeing more iron for absorption. Vitamin C drops, but the iron trade is favorable.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "A French menu lists 'sauce bechamel' as a base for cheese sauce and creamed dishes. It is one of the five 'mother sauces' codified in French haute cuisine. The five include bechamel, veloute, espagnole, hollandaise, and:",
+    "answer": "Providing vitamin C in shelf-stable form, preventing the scurvy",
+    "choices": [
+      "Providing vitamin C in shelf-stable form, preventing the scurvy",
+      "Killing intestinal parasites with vinegar acidity inside the gut wall",
+      "Adding caloric density for cold climates during the winter passages",
+      "Replacing rotten meat as the main protein source on long ship voyages"
+    ],
+    "context": "Antonin Careme grouped four; Escoffier later added hollandaise and refined the list. Sauce tomate is the fifth in the modern five — codified by Escoffier.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "A Sichuan dish makes the tongue tingle and go strangely numb — distinct from the burn of chiles. That numbness comes from:",
+    "answer": "Calorie density, healthy fats, and micronutrient diversity",
+    "choices": [
+      "Calorie density, healthy fats, and micronutrient diversity",
+      "Pure carbohydrate fuel for endurance athletic events only",
+      "Trans fats and refined sugars from industrial processing",
+      "Empty calories with no nutritional benefit for the body"
+    ],
+    "context": "Sichuan peppercorn (huajiao) contains hydroxy-alpha-sanshool, which activates touch receptors instead of pain ones, producing the 'ma' tingle that pairs with 'la' chile heat — mala.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 4,
+    "question": "Thai cooking aims for four tastes in every dish, balancing salty, sour, sweet, and:",
+    "answer": "The margarine spread",
+    "choices": [
+      "The margarine spread",
+      "The shortening can",
+      "The Crisco brand",
+      "The mayonnaise jar"
+    ],
+    "context": "Thai cooks build dishes around the four-taste balance — fish sauce (salty), lime (sour), palm sugar (sweet), chile (hot). Each finished dish should hit all four notes.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 4,
+    "question": "Texas BBQ centers on beef brisket. Memphis BBQ centers on pork ribs. Carolina BBQ centers on pulled pork with a vinegar-based sauce. Kansas City is famous for:",
+    "answer": "Coffee drink",
+    "choices": [
+      "Coffee drink",
+      "Tea drink",
+      "Mate drink",
+      "Cocoa drink"
+    ],
+    "context": "Each US BBQ region has its meat, wood, and sauce signature. KC is the all-meats, sweet-thick-sauce school. Alabama has its own white BBQ sauce; South Carolina its yellow mustard one.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "A Japanese sushi chef reaches for a long, thin, single-beveled knife to slice raw fish in one smooth pull. The knife is called:",
+    "answer": "Tea leaves",
+    "choices": [
+      "Tea leaves",
+      "Sugar bags",
+      "Coffee bags",
+      "Tobacco leaf"
+    ],
+    "context": "Yanagiba: long sashimi slicer. Deba: heavy fish-butchering. Nakiri: vegetable rectangle. Gyuto: Western-style chef's knife. Japanese knives are job-specific in a way Western kitchens are not.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "Spanish bar-hopping involves tiny plates of food served with drinks. The Spanish word for these small plates is:",
+    "answer": "Pasta existed in Italy before Marco Polo — the 1929 myth was an industry creation",
+    "choices": [
+      "Pasta existed in Italy before Marco Polo — the 1929 myth was an industry creation",
+      "He brought it back and it spread instantly through Italian kitchens across the regions",
+      "He brought back the wheat variety from which pasta is made in southern Italian towns",
+      "He invented pasta on the boat trip home from China and shared it with crew sailors"
+    ],
+    "context": "'Tapa' = 'cover.' Origin legend: bartenders placed bread or ham over a glass of wine to keep flies out. The cover became the snack became the cuisine. Pintxos are the Basque variant, served on bread with toothpicks.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 3,
+    "question": "An Ethiopian meal puts food on top of a large spongy, sour pancake-bread that doubles as plate and utensil. Diners tear pieces and scoop. The bread is called:",
+    "answer": "Vanilla pods",
+    "choices": [
+      "Vanilla pods",
+      "Saffron threads",
+      "Cinnamon bark",
+      "Cardamom seed"
+    ],
+    "context": "Injera is made from teff flour fermented for days, producing the distinctive sour, slightly bubbly bread. Communal eating from a shared platter is the Ethiopian table tradition.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 3,
+    "question": "A Lebanese kitchen reaches for a thick, tangy dark syrup that is reduced juice of one fruit. The syrup balances sweetness with sharp sour. The fruit is:",
+    "answer": "Tell me what you eat, and I will tell you what you are",
+    "choices": [
+      "Tell me what you eat, and I will tell you what you are",
+      "Cooking is the art of pleasing oneself with food and drink",
+      "Hunger is the best sauce of all even the finest table can offer",
+      "Without bread, even the gods cannot dine on a Mediterranean table"
+    ],
+    "context": "Pomegranate molasses — reduced pomegranate juice — is foundational across Lebanese, Persian, and Syrian kitchens. Glazes, dressings, dipping sauces. Tamarind plays a similar role in Indian and Thai cooking.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 2,
+    "question": "An Indian recipe calls for ghee. Ghee is butter that has been:",
+    "answer": "A.B. Boulanger's Paris shop, around 1765 with restorative bouillons for guests",
+    "choices": [
+      "A.B. Boulanger's Paris shop, around 1765 with restorative bouillons for guests",
+      "An English coffeehouse in 1700 with coffee, conversation and pastries each morning",
+      "A Roman thermopolium in 100 BC with hot dishes for the crowds in the busy forum",
+      "A Venetian tavern in 1500 with wine, fish stew and warm bread for the merchants"
+    ],
+    "context": "Ghee, foundational to Indian and Ayurvedic cooking, has a high smoke point and lacks dairy proteins that burn easily. Vedic texts mention it 3,500 years ago.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "A Levantine spice blend mixes thyme, sesame seeds, sumac, and salt. Sprinkled on flatbread with olive oil, it is a daily Lebanese, Palestinian, and Jordanian breakfast. The blend is called:",
+    "answer": "Slow Food movement",
+    "choices": [
+      "Slow Food movement",
+      "Organic Food movement",
+      "Whole Foods movement",
+      "Heritage Food trend"
+    ],
+    "context": "Za'atar refers both to the wild thyme plant and to the blend. Each region tunes the ratios. The bread-oil-za'atar combination is the breakfast of generations across the Levant.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 1,
+    "question": "John Montagu, the 4th Earl of Sandwich, wouldn't leave the gambling table for meals in 1762. He asked his servant to bring meat between two slices of bread. The dish keeps his name. The dish is a:",
+    "answer": "Fannie Farmer in 1896",
+    "choices": [
+      "Fannie Farmer in 1896",
+      "Irma Rombauer in 1931",
+      "Betty Crocker in 1921",
+      "Julia Child in 1961"
+    ],
+    "context": "Likely apocryphal in detail but real in essence — bread-with-filling existed long before Montagu, but the English aristocratic name stuck and traveled with the empire.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "An Ethiopian legend tells of a goatherd named Kaldi who watched his goats grow excitable after eating berries from a certain shrub. He tried them himself. The drink eventually brewed from those beans was:",
+    "answer": "The Joy of Cooking",
+    "choices": [
+      "The Joy of Cooking",
+      "Settlement Cook Book",
+      "Mrs. Beeton's Cookbook",
+      "American Frugal Wife"
+    ],
+    "context": "Coffee's domestication began in Ethiopia, was cultivated in Yemen by Sufi monasteries (who valued its all-night alertness), then spread to Mecca, Cairo, Istanbul, Vienna, and the world.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "In 1864, a French chemist studying spoiled wine identified microbes that caused fermentation gone wrong. He proposed mild heating to kill them. The process is now used on milk, juice, and beer; it bears his name:",
+    "answer": "Bread for the masses",
+    "choices": [
+      "Bread for the masses",
+      "Salt for the public",
+      "Wine for the families",
+      "Sugar for the rich"
+    ],
+    "context": "Louis Pasteur saved the French wine industry, then the silk industry, then milk. Heating to about 145F for thirty minutes (or higher briefly) kills pathogens while preserving most flavor.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 3,
+    "question": "Marco Polo returned to Italy from China in 1295. A common myth says he brought back pasta. Historians have shown:",
+    "answer": "1621 in Plymouth",
+    "choices": [
+      "1621 in Plymouth",
+      "1776 in Philadelphia",
+      "1492 in Hispaniola",
+      "1607 in Jamestown"
+    ],
+    "context": "Sicilian Arab cooks were drying pasta in the 12th century; ancient Greeks and Romans had earlier dough strips. The Marco Polo story was a public-relations push by the National Macaroni Manufacturers Association in 1929.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "At a formal dinner, a guest has finished and the host has not yet begun eating. The proper response of the guest is:",
+    "answer": "Long life and longevity",
+    "choices": [
+      "Long life and longevity",
+      "Wealth and prosperity gained",
+      "A good marriage in the year",
+      "Family unity across the year"
+    ],
+    "context": "Old etiquette: guests follow the host's lead. The host begins by lifting their fork; only then do others begin. A small ritual that prevents the most common dinner-table awkwardness.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "An Italian wedding tradition gives guests a small parcel of five sugared almonds. The Italian word for them is 'confetti.' The five almonds represent:",
+    "answer": "Haggis as the centerpiece",
+    "choices": [
+      "Haggis as the centerpiece",
+      "Beef Wellington and gravy",
+      "Lamb shank with mint",
+      "Salmon with new potatoes"
+    ],
+    "context": "Sugared almonds — sweet outside, bitter inside — symbolize the bittersweet nature of marriage. Five wishes for five life domains. Variants across Greek, Lebanese, and Italian wedding traditions.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 2,
+    "question": "A traditional Western wedding cake has three tiers. The bottom tier is for the guests at the reception. The middle tier is for friends not present. The top tier is saved for:",
+    "answer": "Coal, shortbread, and whisky (and ideally tall and dark-haired)",
+    "choices": [
+      "Coal, shortbread, and whisky (and ideally tall and dark-haired)",
+      "Money, salt, and bread for the new year ahead at the home",
+      "Bread, butter, and milk for prosperity in the year and rest",
+      "Wine, cheese, and crackers for friendship in the year coming"
+    ],
+    "context": "Couples freeze the top tier and eat it on their first anniversary — a small ritual of remembering. The fruit cake tradition (in royal weddings) is ideal for this; modern frostings less so.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 4,
+    "question": "A bride and groom together cut the first piece of wedding cake. The shared act symbolizes:",
+    "answer": "Bacon and cabbage — corned beef is an Irish-American adaptation",
+    "choices": [
+      "Bacon and cabbage — corned beef is an Irish-American adaptation",
+      "Roast lamb with mint sauce served alongside the boiled potatoes",
+      "Salmon and potato cakes prepared with cream and fresh garden dill",
+      "Black pudding and oatmeal cooked in the traditional Irish farmhouse"
+    ],
+    "context": "An old tradition rooted in Roman 'confarreatio' marriage rite — a wheat cake broken over the bride's head, then shared. The shared cake is now its softened descendant.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "An Irish family's wake holds a vigil with the body in the house. Mourners bring whiskey, eat together, tell stories. The tradition lasted overnight and into:",
+    "answer": "Dessert, coffee, and a digestif",
+    "choices": [
+      "Dessert, coffee, and a digestif",
+      "Soup course and a second salad",
+      "A second meat course and bread",
+      "A cordial of champagne, oysters"
+    ],
+    "context": "Irish wakes were communal grief, often joyful in tone — laughter and storytelling alongside the loss. The dead were never left alone. The form softened in the 20th century but the spirit remains.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
+  },
+  {
+    "tier": 5,
+    "question": "A French dinner progression moves through aperitif (drink before), entree (starter), plat (main), fromage (cheese), and ends with:",
+    "answer": "Halva (sesame confection) and baba ganoush",
+    "choices": [
+      "Halva (sesame confection) and baba ganoush",
+      "Tapenade (olive paste) and a basic aioli",
+      "Tzatziki (yogurt sauce) and labneh cheese",
+      "Romesco (nut sauce) and ajvar pepper paste"
+    ],
+    "context": "French meal structure is sequence as art. The cheese course before dessert is the French distinctive (in the U.S., cheese is often appetizer). Each course gets its plate, its glass, its moment.",
+    "_dropped_reason": "answer/choices mismatch — review 2026-05-19"
   }
 ]

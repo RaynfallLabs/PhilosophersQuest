@@ -27326,5 +27326,201 @@
     "_fk": 14.38,
     "_jargon": 20,
     "_old_tier": 5
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest continent by land area?",
+    "answer": "Asia",
+    "choices": [
+      "Asia",
+      "Europe",
+      "Australia",
+      "Antarctica"
+    ],
+    "context": "Asia covers about 30 percent of Earth's land.",
+    "_drop_reason": "rote: superlative trivia, largest-continent recall",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "Which is the largest ocean?",
+    "answer": "The Pacific",
+    "choices": [
+      "The Pacific",
+      "The Atlantic",
+      "The Arctic",
+      "The Indian"
+    ],
+    "context": "The Pacific covers about a third of Earth's surface.",
+    "_drop_reason": "rote: superlative trivia, largest-ocean recall",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "What is the capital city of the United States?",
+    "answer": "Washington, D.C.",
+    "choices": [
+      "Washington, D.C.",
+      "Sunny Sydney",
+      "Tokyo Tower",
+      "Cairo Square"
+    ],
+    "context": "Washington, D.C. is the U.S. capital.",
+    "_drop_reason": "rote: capital-of-USA recall (anti-rote pattern target)",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "The longest river that flows through the United States is the what?",
+    "answer": "Mississippi River",
+    "choices": [
+      "Mississippi River",
+      "Nile River",
+      "Amazon River",
+      "Thames River"
+    ],
+    "context": "The Mississippi flows from Minnesota to the Gulf of Mexico.",
+    "_drop_reason": "rote: longest-US-river definition",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "Of all the rivers on Earth, the longest is the what?",
+    "answer": "The Nile in Africa",
+    "choices": [
+      "The Nile in Africa",
+      "A backyard pond",
+      "A long garden hose",
+      "A tiny puddle"
+    ],
+    "context": "The Nile in Africa stretches over 6,000 km.",
+    "_drop_reason": "rote: longest-river-on-Earth definition",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "Which is the world's largest hot desert, in northern Africa?",
+    "answer": "The Sahara",
+    "choices": [
+      "The Sahara",
+      "Times Square",
+      "A snow globe",
+      "A flower pot"
+    ],
+    "context": "The Sahara covers most of northern Africa.",
+    "_drop_reason": "rote: largest-hot-desert definition",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "The world's tallest mountain is called what?",
+    "answer": "Mount Everest",
+    "choices": [
+      "Mount Everest",
+      "A traffic cone",
+      "A tall ladder",
+      "A skyscraper"
+    ],
+    "context": "Mount Everest rises about 8,849 meters.",
+    "_drop_reason": "rote: tallest-mountain definition",
+    "_old_tier": 1
+  },
+  {
+    "tier": 1,
+    "question": "Out of the planets, we humans live on the one called what?",
+    "answer": "Earth",
+    "choices": [
+      "Earth",
+      "Mars",
+      "Saturn",
+      "Pluto"
+    ],
+    "context": "We live on Earth, the third planet from the sun.",
+    "_drop_reason": "rote: trivial planet name (geography stance fail)",
+    "_old_tier": 1
+  },
+  {
+    "tier": 2,
+    "question": "Florida is famous for its beaches and theme parks. Its capital city is:",
+    "answer": "Tallahassee",
+    "choices": [
+      "Tallahassee",
+      "Miami",
+      "Orlando",
+      "Jacksonville"
+    ],
+    "context": "Tallahassee sits in the Florida panhandle, not on the coast.",
+    "_drop_reason": "rote: state-capital trivia (FL)",
+    "_old_tier": 2
+  },
+  {
+    "tier": 2,
+    "question": "Colorado is known for its part of the Rocky Mountains. Its capital city is:",
+    "answer": "Denver",
+    "choices": [
+      "Denver",
+      "Boulder",
+      "Colorado Springs",
+      "Aspen"
+    ],
+    "context": "Denver sits exactly one mile above sea level at the foot of the Rockies.",
+    "_drop_reason": "rote: state-capital trivia (CO)",
+    "_old_tier": 2
+  },
+  {
+    "tier": 2,
+    "question": "Maps usually mark north at the top. The four basic directions are called compass directions or:",
+    "answer": "Cardinal directions",
+    "choices": [
+      "Cardinal directions",
+      "Equator directions",
+      "Tropical directions",
+      "Polar directions"
+    ],
+    "context": "The four cardinal directions are north, south, east, and west.",
+    "_drop_reason": "rote: cardinal-directions definition, no scene",
+    "_old_tier": 2
+  },
+  {
+    "tier": 2,
+    "question": "The four basic directions on a compass — north, south, east, and west — are called the:",
+    "answer": "Cardinal directions",
+    "choices": [
+      "Cardinal directions",
+      "Polar directions",
+      "Equatorial directions",
+      "Tropical directions"
+    ],
+    "context": "Between them lie the intercardinal directions: northeast, southeast, southwest, northwest.",
+    "_drop_reason": "duplicate of T2 1722 — both teach cardinal directions definition",
+    "_old_tier": 2
+  },
+  {
+    "tier": 4,
+    "question": "The capital of the state of Ohio, sitting in the middle of the state, is which city?",
+    "answer": "Columbus",
+    "choices": [
+      "Columbus",
+      "Cleveland",
+      "Cincinnati",
+      "Dayton"
+    ],
+    "context": "Ohio is in the American Midwest and was the seventeenth state admitted to the union.",
+    "_drop_reason": "rote: state-capital trivia (OH), no wonder hook",
+    "_old_tier": 4
+  },
+  {
+    "tier": 2,
+    "question": "About 1.5 billion people now speak this language as either a first or a second language. The language is:",
+    "answer": "English",
+    "choices": [
+      "English",
+      "Mandarin Chinese",
+      "Spanish",
+      "Hindi"
+    ],
+    "context": "Mandarin has the most native speakers; English has the most total speakers when learners are included.",
+    "_drop_reason": "rote: near-duplicate of 1733 (1.5B English speakers) — drop the duplicate",
+    "_old_tier": 2
   }
 ]

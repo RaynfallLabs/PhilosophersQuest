@@ -4333,5 +4333,275 @@
     "_dropped_reason": [
       "DROP:poincaré conjecture"
     ]
+  },
+  {
+    "tier": 5,
+    "question": "Pythagoras's theorem: a² + b² = ?",
+    "answer": "c²",
+    "choices": [
+      "c²",
+      "c³",
+      "2c",
+      "ab"
+    ],
+    "context": "Right triangles: legs² + legs² = hypotenuse².",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "The Pythagorean theorem: a² + b² = ?",
+    "answer": "c²",
+    "choices": [
+      "c²",
+      "c",
+      "2c",
+      "abc"
+    ],
+    "context": "In a right triangle, c is the hypotenuse.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Zero as a written numeral was developed by…",
+    "answer": "Indian mathematicians",
+    "choices": [
+      "Indian mathematicians",
+      "Greek philosophers",
+      "Roman engineers",
+      "Egyptian priests"
+    ],
+    "context": "The positional zero comes from India, transmitted via Arabic scholars.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Newton's calculus rival was ___.",
+    "answer": "Leibniz",
+    "choices": [
+      "Leibniz",
+      "Euler",
+      "Gauss",
+      "Pascal"
+    ],
+    "context": "Newton and Leibniz developed calculus independently in the 1660s–70s. Leibniz's notation (dy/dx) is what we still use.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Sophie Germain corresponded with Gauss under what guise?",
+    "answer": "A male pseudonym (M. Le Blanc)",
+    "choices": [
+      "A male pseudonym (M. Le Blanc)",
+      "Her own name from the start",
+      "Anonymously and only in writing",
+      "Through her brother"
+    ],
+    "context": "Paris in 1804: women couldn't enroll at the École Polytechnique. She made major progress on Fermat's Last Theorem.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Who named imaginary numbers 'imaginary'?",
+    "answer": "Descartes (dismissively)",
+    "choices": [
+      "Descartes (dismissively)",
+      "Gauss (proudly)",
+      "Newton (formally)",
+      "Cardano (privately)"
+    ],
+    "context": "Descartes called them imaginaire to suggest they were not real numbers.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "A function f is increasing on an interval if:",
+    "answer": "Whenever a < b in it, then f(a) < f(b)",
+    "choices": [
+      "Whenever a < b in it, then f(a) < f(b)",
+      "The function value is positive throughout",
+      "The function's average rises across the run",
+      "The function maps each input larger than x"
+    ],
+    "context": "Increasing means order-preserving. The function 5x + 1 is increasing; sin(x) is increasing on (-π/2, π/2). Calculus connects this to derivatives: f is increasing where f'(x) > 0.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "What are the asymptotes of y = 1/x?",
+    "answer": "The x-axis and the y-axis",
+    "choices": [
+      "The x-axis and the y-axis",
+      "Only the x-axis at infinity",
+      "Only the y-axis near origin",
+      "The diagonal line y = x"
+    ],
+    "context": "y = 1/x has a horizontal asymptote at y = 0 (as |x| → ∞) and a vertical asymptote at x = 0 (as x → 0). Asymptotes describe long-run or limiting behavior — the territory where calculus picks up.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Why is the number e called the 'natural' base for exponentials?",
+    "answer": "The derivative of e^x is e^x — uniquely simple growth",
+    "choices": [
+      "The derivative of e^x is e^x — uniquely simple growth",
+      "It appears naturally in counting branches of any tree",
+      "It is the only base where ln equals log base ten flat",
+      "It is the smallest base whose powers are all rational"
+    ],
+    "context": "Other bases have proportional derivatives but only e^x equals its own. This makes e the natural choice for continuous growth (interest, decay, population). It is also irrational and transcendental — proved transcendental by Hermite in 1873.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "Limits formalize what intuitive notion?",
+    "answer": "Approaching a value without necessarily reaching",
+    "choices": [
+      "Approaching a value without necessarily reaching",
+      "Reaching a value in finitely many concrete steps",
+      "Avoiding a singularity by jumping over it cleanly",
+      "Restricting a function to its smallest output set"
+    ],
+    "context": "Cauchy and Weierstrass gave the rigorous ε-δ definition in the 1800s: for every ε > 0, there is a δ > 0 such that |f(x) - L| < ε whenever 0 < |x - a| < δ. Made calculus rigorous without invoking infinitesimals.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "If a function has a local maximum at x = c and is smooth there, what is f'(c)?",
+    "answer": "Zero — the tangent there is horizontal",
+    "choices": [
+      "Zero — the tangent there is horizontal",
+      "Positive — the function rises through",
+      "Negative — the function falls past it",
+      "Equal to c — the slope matches location"
+    ],
+    "context": "At a smooth peak, the tangent line is horizontal. Fermat's theorem on extrema. Note: f'(c) = 0 is necessary but not sufficient — at f(x) = x³, x = 0 has zero derivative but is not an extremum (it's an inflection).",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 5,
+    "question": "e was first studied by Bernoulli through which problem?",
+    "answer": "Compound interest",
+    "choices": [
+      "Compound interest",
+      "Pendulums",
+      "Light refraction",
+      "Optics"
+    ],
+    "context": "Bernoulli 1683: how does continuous compounding affect a 100% interest rate?",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 3,
+    "question": "How many digits of π are known computed by current records?",
+    "answer": "Trillions",
+    "choices": [
+      "Trillions",
+      "About 100",
+      "About 1 million",
+      "All of them"
+    ],
+    "context": "Records grow yearly; the digits never repeat (irrational).",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Who proved the parallel postulate independent of Euclid's other axioms?",
+    "answer": "Bolyai, Lobachevsky, Gauss (independently)",
+    "choices": [
+      "Bolyai, Lobachevsky, Gauss (independently)",
+      "Euclid himself",
+      "Riemann alone",
+      "Klein"
+    ],
+    "context": "Each constructed consistent non-Euclidean geometries in the early 19th century.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Riemann generalized Euclidean geometry to?",
+    "answer": "Curved manifolds (Riemannian geometry)",
+    "choices": [
+      "Curved manifolds (Riemannian geometry)",
+      "Discrete spaces",
+      "Linear algebra only",
+      "Topological surfaces only"
+    ],
+    "context": "1854 lecture; foundational for Einstein's general relativity 60 years later.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "Carl Friedrich Gauss called number theory the?",
+    "answer": "Queen of mathematics",
+    "choices": [
+      "Queen of mathematics",
+      "Empress of physics",
+      "Foundation of geometry",
+      "King of analysis"
+    ],
+    "context": "His Disquisitiones Arithmeticae (1801) shaped modern number theory.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 1,
+    "question": "David Hilbert's 1900 address listed how many open problems?",
+    "answer": "23",
+    "choices": [
+      "23",
+      "10",
+      "50",
+      "100"
+    ],
+    "context": "The Hilbert problems shaped 20th-century mathematics. Several remain open.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
+  },
+  {
+    "tier": 2,
+    "question": "Bernhard Riemann's 1859 paper introduced?",
+    "answer": "The Riemann hypothesis",
+    "choices": [
+      "The Riemann hypothesis",
+      "The Riemann sum",
+      "Riemannian geometry",
+      "Riemann surfaces"
+    ],
+    "context": "Conjecture about zeros of the zeta function; still open.",
+    "_dropped_reason": [
+      "math_audit_2026_05_19: history/biography/calculus/near-dup"
+    ]
   }
 ]

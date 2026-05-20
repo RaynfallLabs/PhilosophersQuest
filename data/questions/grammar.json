@@ -15133,66 +15133,6 @@
   },
   {
     "tier": 4,
-    "question": "Pāṇini's *Aṣṭādhyāyī* contains roughly:",
-    "answer": "Around 4,000 rules (sutras)",
-    "choices": [
-      "Around 4,000 rules (sutras)",
-      "Around 100 rules",
-      "Around a million rules",
-      "Just a list of words"
-    ],
-    "context": "3,959 sutras. Pāṇini's rule-system anticipated modern formal grammar by 2,400 years."
-  },
-  {
-    "tier": 4,
-    "question": "Pāṇini's *Aṣṭādhyāyī* — the world's most rigorous early grammar — analyzed which language?",
-    "answer": "Sanskrit",
-    "choices": [
-      "Sanskrit",
-      "Greek",
-      "Latin",
-      "Persian"
-    ],
-    "context": "Pāṇini wrote ~4th century BC — 2,400 years ago — with rule-based detail not matched in Europe for millennia."
-  },
-  {
-    "tier": 4,
-    "question": "Pāṇini's Aṣṭādhyāyī (c. 4th century BC) was a grammar of:",
-    "answer": "Sanskrit",
-    "choices": [
-      "Sanskrit",
-      "Latin",
-      "Greek",
-      "Hebrew"
-    ],
-    "context": "8 chapters, 3,959 sutras. So rigorous that 19th-century European linguists called it more systematic than any Western grammar before Chomsky. Established that grammar can be formally described."
-  },
-  {
-    "tier": 4,
-    "question": "Pāṇini's Aṣṭādhyāyī (अष्टाध्यायी) — literally 'Eight Chapters' — is the foundational treatise on Sanskrit grammar, composed in ancient India somewhere between the 6th and 4th century BCE. The work contains nearly 4,000 sutras (rules) in eight chapters, each subdivided into four sections. Pāṇini's analysis was so rigorous that no Western linguistic work matched it until:",
-    "answer": "The 19th-20th century (Bloomfield, Chomsky)",
-    "choices": [
-      "The 19th-20th century (Bloomfield, Chomsky)",
-      "Roman Latin grammar (4th-6th c)",
-      "Medieval scholastic grammar",
-      "Renaissance humanist grammar"
-    ],
-    "context": "Pāṇini's sutras describe Sanskrit's grammar in a meta-language that anticipated modern formal grammar. Western linguistics only caught up with his rigor in the 20th century. Chomsky has acknowledged the debt."
-  },
-  {
-    "tier": 4,
-    "question": "Pāṇini, a Sanskrit grammarian who probably lived in the 6th-4th centuries BCE in what is now northwestern Pakistan, composed the Aṣṭādhyāyī ('Eight Chapters'). It contains roughly 4,000 sūtras — extremely compressed rules — describing Sanskrit phonology and morphology with formal rigor that Western scholars did not match for over two millennia. What modern computing concept does Pāṇini's grammar foreshadow?",
-    "answer": "Formal generative rule systems, which Chomsky and others later applied to natural language",
-    "choices": [
-      "Formal generative rule systems, which Chomsky and others later applied to natural language",
-      "Statistical machine learning, since Pāṇini used frequency counts from a Sanskrit corpus",
-      "Binary computer encoding, since each sūtra represents a yes-or-no rule",
-      "Object-oriented programming, since each rule is bound to a class of words"
-    ],
-    "context": "Pāṇini's metalanguage, ordered rules, and explicit handling of exceptions anticipate generative grammar by 2,400 years. Bloomfield called him 'one of the greatest monuments of human intelligence.' The system is so compact that printing the rules takes about 40 pages."
-  },
-  {
-    "tier": 4,
     "question": "Quotation marks have an Atlantic divide. In American style, periods and commas always go INSIDE the closing quotation mark, even when not technically part of the quoted material. In British style, they go outside unless part of the quoted material. Which line follows American style?",
     "answer": "She said, 'I'll be there.' Then she added, 'Maybe.'",
     "choices": [
@@ -17725,18 +17665,6 @@
   },
   {
     "tier": 5,
-    "question": "Alonzo Reed and Brainerd Kellogg published 'Graded Lessons in English' in 1875 and 'Higher Lessons in English' in 1877. The latter introduced their sentence-diagramming system, which uses horizontal and slanted lines to display grammatical relationships visually. Reed-Kellogg diagrams dominated American grammar instruction for nearly a century. Why did diagramming decline?",
-    "answer": "Pedagogical shifts away from formal grammar in the mid-to-late 20th century",
-    "choices": [
-      "Pedagogical shifts away from formal grammar in the mid-to-late 20th century",
-      "The diagrams were proven incorrect by linguists",
-      "Computer programs replaced sentence diagrams",
-      "Reed and Kellogg were discredited after 1950"
-    ],
-    "context": "American schools largely abandoned sentence diagramming by the 1980s, following broader pedagogical shifts away from formal grammar teaching. Some homeschool and classical-school curricula still use it."
-  },
-  {
-    "tier": 5,
     "question": "Aspectual coercion happens when verbs that don't normally take certain aspects appear in them anyway. 'I'm understanding now' (stative verb in progressive) — usually understanding is a state not a process, but the progressive forces a momentary interpretation. McDonald's 'I'm lovin' it' deliberately uses this. What does the coercion accomplish?",
     "answer": "Forces a temporary, just-now interpretation onto a usually-stative verb",
     "choices": [
@@ -17833,18 +17761,6 @@
   },
   {
     "tier": 5,
-    "question": "Linguistics distinguishes phonetics (the physical production and perception of speech sounds) from phonology (the abstract sound patterns of a language). Phonetics studies how sounds are physically produced (lips, tongue, vocal cords); phonology studies how sounds function within a language system. Which is a phonological question?",
-    "answer": "Why does English have aspirated /p/ in 'pin' but not in 'spin'?",
-    "choices": [
-      "Why does English have aspirated /p/ in 'pin' but not in 'spin'?",
-      "What is the acoustic frequency of the vowel in 'pin'?",
-      "How long does it take to produce a /p/ sound physically?",
-      "Which muscles in the mouth produce a /p/ sound?"
-    ],
-    "context": "Phonetics: physical sound production. Phonology: abstract patterns of contrast within a language. The aspirated/unaspirated /p/ distinction is phonological (a rule of English); the acoustic frequencies are phonetic."
-  },
-  {
-    "tier": 5,
     "question": "Many English military and government words come from Old French, brought by the Norman invaders. Which group is most heavily Norman-French in origin?",
     "answer": "Government, justice, parliament, jury, treason, sovereign, attorney, court",
     "choices": [
@@ -17880,43 +17796,7 @@
     "context": "New England colonists adopted dozens of Algonquian words for unfamiliar species and places: moose, raccoon, opossum, chipmunk, woodchuck, skunk. Place names: Massachusetts, Connecticut, Mississippi, Ohio."
   },
   {
-    "tier": 5,
-    "question": "Pāṇini's Aṣṭādhyāyī is organized in eight chapters (adhyāyas), each with four sections (pādas), totaling 32 pādas. Why is the order of the sūtras important?",
-    "answer": "Later rules can override earlier ones; the order encodes default-and-exception logic",
-    "choices": [
-      "Later rules can override earlier ones; the order encodes default-and-exception logic",
-      "The rules are arranged alphabetically by the Sanskrit words they discuss",
-      "The order matches the order in which children naturally acquire Sanskrit",
-      "The order is purely aesthetic; rules can be applied in any sequence"
-    ],
-    "context": "Pāṇini's system uses explicit rule precedence — a more specific rule blocks a more general one. This 'elsewhere principle' is a foundational idea in modern phonology and morphology, often credited to Pāṇini directly."
-  },
-  {
-    "tier": 5,
-    "question": "Reed-Kellogg sentence diagrams use horizontal and slanted lines to display grammatical relationships. The subject sits on the left of the horizontal baseline; the verb on the right; a vertical line separates them. Adjectives slope down from the noun they modify. Direct objects sit on the baseline after the verb. What's the pedagogical justification?",
-    "answer": "Visual representation helps students see grammar's underlying structure",
-    "choices": [
-      "Visual representation helps students see grammar's underlying structure",
-      "Diagrams replace all other grammar instruction",
-      "Diagrams are easier than writing sentences",
-      "Diagrams are required by all American schools"
-    ],
-    "context": "Reed-Kellogg's visual approach was innovative in 1877 — showing grammar's invisible relationships. Critics later argued the diagrams were too rigid; supporters argued they revealed structure. The technique declined in late 20th-c American schools."
-  },
-  {
-    "tier": 5,
-    "question": "Reed-Kellogg sentence diagrams were invented in approximately:",
-    "answer": "The late 19th century",
-    "choices": [
-      "The late 19th century",
-      "The 17th century",
-      "The 1950s",
-      "The Middle Ages"
-    ],
-    "context": "Alonzo Reed + Brainerd Kellogg, 1877 — visual map of sentence structure."
-  },
-  {
-    "tier": 5,
+    "tier": 3,
     "question": "Saying \"the White House announced...\" — using a building for the government inside it — is:",
     "answer": "Metonymy",
     "choices": [
@@ -17929,18 +17809,6 @@
   },
   {
     "tier": 5,
-    "question": "Semantics is the study of:",
-    "answer": "Meaning in language",
-    "choices": [
-      "Meaning in language",
-      "Sounds in language",
-      "Word origins",
-      "Spelling"
-    ],
-    "context": "Syntax = structure. Semantics = meaning. Phonology = sounds. Pragmatics = context."
-  },
-  {
-    "tier": 5,
     "question": "Sentence diagramming, invented by Alonzo Reed and Brainerd Kellogg in their 1877 'Higher Lessons in English', uses lines to show grammatical relationships. The subject sits on the left of a horizontal line; the verb sits on the right; a vertical line separates them. Adjectives slope down from the noun they modify. The diagram's purpose was:",
     "answer": "To make the abstract grammatical relationships visible at a glance",
     "choices": [
@@ -17950,18 +17818,6 @@
       "To prove that English has no real structure"
     ],
     "context": "Reed-Kellogg diagrams dominated American grammar instruction for nearly a century. Their decline (mostly by the 1980s) accompanied broader pedagogical shifts away from formal grammar teaching."
-  },
-  {
-    "tier": 5,
-    "question": "Some languages have an extra slot in their verb system for grammatical 'evidentiality' — they require speakers to mark how they came to know what they're saying. What might an evidentiality marker indicate?",
-    "answer": "Whether information is firsthand, hearsay, inference, or general knowledge",
-    "choices": [
-      "Whether information is firsthand, hearsay, inference, or general knowledge",
-      "Whether the speaker has university education",
-      "Whether the listener has met the people being discussed",
-      "Whether the action happened today or before today"
-    ],
-    "context": "Tuyuca (Amazon) has at least five evidential markers: visual, non-visual sensory, apparent, secondhand, assumed. English has approximate equivalents in modal adverbs ('apparently,' 'reportedly') but no obligatory grammatical category. Quechua, Turkish, and Bulgarian also mark evidentiality."
   },
   {
     "tier": 5,
@@ -18037,30 +17893,6 @@
   },
   {
     "tier": 5,
-    "question": "Verbs can be classified by their argument structure. Avalent verbs need no argument ('It rains' — 'it' is a dummy subject). Monovalent (intransitive): one argument. Divalent (transitive): two. Trivalent (ditransitive): three. The English avalent class is very small. Which is avalent?",
-    "answer": "Snow (it snows, with no real subject)",
-    "choices": [
-      "Snow (it snows, with no real subject)",
-      "Walk (someone walks)",
-      "Build (someone builds something)",
-      "Give (someone gives something to someone)"
-    ],
-    "context": "Weather verbs (rain, snow, hail) are classic avalent verbs. The 'it' is a syntactic placeholder ('weather it', sometimes called). Some languages allow them with no subject at all."
-  },
-  {
-    "tier": 5,
-    "question": "What is the 'critical period' hypothesis in language acquisition?",
-    "answer": "The claim that there is a biologically constrained window (roughly birth to puberty) for acquiring native-speaker competence",
-    "choices": [
-      "The claim that there is a biologically constrained window (roughly birth to puberty) for acquiring native-speaker competence",
-      "The claim that all languages must be learned during a country's specific historical 'critical period'",
-      "The claim that grammar can only be acquired during a one-hour daily critical period",
-      "The claim that humans lose the ability to speak after a critical age of dementia onset"
-    ],
-    "context": "Proposed by Eric Lenneberg in 1967. Evidence: feral children like Genie (discovered 1970, age 13) never fully acquired language. Late second-language learners rarely reach native-like phonology. The strong version is contested; the weak version (declining plasticity with age) is well supported."
-  },
-  {
-    "tier": 5,
     "question": "What is the etymology of 'utopia'?",
     "answer": "Coined by Thomas More in 1516 from Greek 'ou' (not) + 'topos' (place) — literally 'no-place'",
     "choices": [
@@ -18072,7 +17904,7 @@
     "context": "More's Latin pun: 'ou-topos' (no place) and 'eu-topos' (good place) sound alike in Latinized Greek. His 1516 book 'Utopia' depicted a fictional island society. 'Dystopia' (bad place) is a 19th-century coinage on the same Greek pattern."
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Which palindrome is famously said to have been written about Napoleon's exile?",
     "answer": "Able was I ere I saw Elba",
     "choices": [
@@ -18082,5 +17914,2945 @@
       "Race fast, safe car"
     ],
     "context": "Attributed (perhaps apocryphally) to Napoleon — Elba was his first island exile (1814)."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses the subjunctive correctly?",
+    "answer": "If I were taller, I would reach it.",
+    "choices": [
+      "If I were taller, I would reach it.",
+      "If I was taller, I would reach it.",
+      "If I am taller, I would reach it.",
+      "If I be taller, I would reach it."
+    ],
+    "context": "Counterfactual 'if' clauses use the subjunctive 'were' for all persons, not 'was'. Formal usage requires 'were'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the mandative subjunctive form.",
+    "answer": "I insist that he be on time.",
+    "choices": [
+      "I insist that he be on time.",
+      "I insist that he is on time.",
+      "I insist that he was on time.",
+      "I insist that he were on time."
+    ],
+    "context": "After verbs like insist, demand, require, suggest, the base form (bare infinitive) is used — the mandative subjunctive."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the formulaic subjunctive?",
+    "answer": "God save the Queen.",
+    "choices": [
+      "God save the Queen.",
+      "God saved the Queen.",
+      "God is saving the Queen.",
+      "God will save the Queen."
+    ],
+    "context": "Fixed expressions like 'God save the Queen', 'long live the King', 'be that as it may' preserve the older subjunctive form."
+  },
+  {
+    "tier": 5,
+    "question": "Complete: 'The judge demanded that the witness ___ the truth.'",
+    "answer": "tell",
+    "choices": [
+      "tell",
+      "tells",
+      "told",
+      "telling"
+    ],
+    "context": "Mandative subjunctive after 'demand' uses the bare infinitive: tell, not tells or told."
+  },
+  {
+    "tier": 5,
+    "question": "Which sentence uses subjunctive for a wish?",
+    "answer": "I wish I were on vacation.",
+    "choices": [
+      "I wish I were on vacation.",
+      "I wish I was on vacation.",
+      "I wish I am on vacation.",
+      "I wish I being on vacation."
+    ],
+    "context": "After 'I wish', the counterfactual subjunctive 'were' (not 'was') is the formal choice for all persons."
+  },
+  {
+    "tier": 5,
+    "question": "Complete: 'If only she ___ here now.'",
+    "answer": "were",
+    "choices": [
+      "were",
+      "was",
+      "is",
+      "be"
+    ],
+    "context": "'If only' triggers the same counterfactual subjunctive as 'I wish' — 'were' for all persons."
+  },
+  {
+    "tier": 5,
+    "question": "Which is mandative subjunctive after 'recommend'?",
+    "answer": "She recommended that he leave early.",
+    "choices": [
+      "She recommended that he leave early.",
+      "She recommended that he leaves early.",
+      "She recommended that he left early.",
+      "She recommended that he is leaving early."
+    ],
+    "context": "Verbs of urging (recommend, suggest, propose, ask) trigger the bare-infinitive subjunctive in formal usage."
+  },
+  {
+    "tier": 5,
+    "question": "Which preserves an old subjunctive?",
+    "answer": "Be that as it may, we proceed.",
+    "choices": [
+      "Be that as it may, we proceed.",
+      "It is what it is, we proceed.",
+      "That may be true, but we proceed.",
+      "Whatever the case, we proceed."
+    ],
+    "context": "'Be that as it may' is a frozen subjunctive expression — the 'be' marks the older mood form."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the subjunctive in a conditional.",
+    "answer": "Were he to ask, I would help.",
+    "choices": [
+      "Were he to ask, I would help.",
+      "If he asks, I will help.",
+      "He asks, I help.",
+      "If he asked, I help."
+    ],
+    "context": "Inverted conditional 'were he to ask' is a formal subjunctive variant of 'if he were to ask'."
+  },
+  {
+    "tier": 5,
+    "question": "Complete formally: 'The teacher asked that each student ___ a poem.'",
+    "answer": "memorize",
+    "choices": [
+      "memorize",
+      "memorizes",
+      "memorized",
+      "memorizing"
+    ],
+    "context": "Mandative subjunctive after 'ask that': bare form 'memorize', not 'memorizes'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is subjunctive after 'lest'?",
+    "answer": "Speak softly lest you wake the baby.",
+    "choices": [
+      "Speak softly lest you wake the baby.",
+      "Speak softly lest you woke the baby.",
+      "Speak softly lest you waking the baby.",
+      "Speak softly lest you wakes the baby."
+    ],
+    "context": "'Lest' triggers the subjunctive: 'wake' (bare), not 'woke' or 'wakes'. A literary/formal connector."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the present subjunctive form.",
+    "answer": "It is essential that he attend the meeting.",
+    "choices": [
+      "It is essential that he attend the meeting.",
+      "It is essential that he attends the meeting.",
+      "It is essential that he attended the meeting.",
+      "It is essential that he is attending the meeting."
+    ],
+    "context": "After 'it is essential/necessary/important that', the bare form (attend) is used — present subjunctive."
+  },
+  {
+    "tier": 5,
+    "question": "Which clause uses subjunctive 'were' for a hypothetical?",
+    "answer": "Even if it were free, I wouldn't take it.",
+    "choices": [
+      "Even if it were free, I wouldn't take it.",
+      "Even if it was free, I wouldn't take it.",
+      "Even if it is free, I wouldn't take it.",
+      "Even if it be free, I wouldn't take it."
+    ],
+    "context": "Hypothetical counterfactual after 'even if' takes 'were' in formal style."
+  },
+  {
+    "tier": 5,
+    "question": "Complete: 'I move that the motion ___ tabled.'",
+    "answer": "be",
+    "choices": [
+      "be",
+      "is",
+      "was",
+      "being"
+    ],
+    "context": "Parliamentary motions use the mandative subjunctive: 'I move that X be done', with the bare 'be'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is present perfect?",
+    "answer": "I have finished my homework.",
+    "choices": [
+      "I have finished my homework.",
+      "I finished my homework.",
+      "I had finished my homework.",
+      "I will finish my homework."
+    ],
+    "context": "Present perfect uses 'has/have' + past participle — emphasizes a past action with present relevance."
+  },
+  {
+    "tier": 5,
+    "question": "Which is future perfect?",
+    "answer": "By Friday, I will have finished the report.",
+    "choices": [
+      "By Friday, I will have finished the report.",
+      "By Friday, I will finish the report.",
+      "By Friday, I have finished the report.",
+      "By Friday, I am finishing the report."
+    ],
+    "context": "Future perfect ('will have' + past participle) describes an action completed before a future moment."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses perfect aspect to show duration?",
+    "answer": "I have lived here for ten years.",
+    "choices": [
+      "I have lived here for ten years.",
+      "I live here for ten years.",
+      "I lived here for ten years.",
+      "I am living here for ten years."
+    ],
+    "context": "Present perfect with 'for/since' shows duration up to now — action started in the past and continues."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the past perfect progressive.",
+    "answer": "She had been studying for hours when I arrived.",
+    "choices": [
+      "She had been studying for hours when I arrived.",
+      "She has been studying for hours when I arrived.",
+      "She studied for hours when I arrived.",
+      "She was studying for hours when I arrived."
+    ],
+    "context": "Past perfect progressive ('had been' + -ing) marks an extended past action that continued up to another past point."
+  },
+  {
+    "tier": 5,
+    "question": "Which sentence requires past perfect, not simple past?",
+    "answer": "When I arrived, the train had already left.",
+    "choices": [
+      "When I arrived, the train had already left.",
+      "When I arrived, the train already left.",
+      "When I arrived, the train left already.",
+      "When I arrived, the train leaves already."
+    ],
+    "context": "The earlier-of-two-past-actions needs past perfect to keep the time order clear."
+  },
+  {
+    "tier": 5,
+    "question": "Which is present perfect progressive?",
+    "answer": "I have been waiting for an hour.",
+    "choices": [
+      "I have been waiting for an hour.",
+      "I have waited for an hour.",
+      "I was waiting for an hour.",
+      "I am waiting for an hour."
+    ],
+    "context": "Present perfect progressive (have/has been + -ing) stresses ongoing recent activity with present relevance."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the perfect infinitive.",
+    "answer": "She seems to have finished early.",
+    "choices": [
+      "She seems to have finished early.",
+      "She seems to finish early.",
+      "She seemed to finish early.",
+      "She seems finishing early."
+    ],
+    "context": "The perfect infinitive (to have + past participle) shows that the action is past relative to the main verb."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the present perfect with 'already'.",
+    "answer": "I have already eaten lunch.",
+    "choices": [
+      "I have already eaten lunch.",
+      "I already eat lunch.",
+      "I am eating lunch already.",
+      "I will already eat lunch."
+    ],
+    "context": "Adverbs like 'already', 'just', 'yet' commonly accompany the present perfect to indicate completion."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses past perfect for backshifted reported speech?",
+    "answer": "She said she had seen the movie.",
+    "choices": [
+      "She said she had seen the movie.",
+      "She said she has seen the movie.",
+      "She said she sees the movie.",
+      "She said she was seeing the movie."
+    ],
+    "context": "Reported speech backshifts present perfect ('has seen') to past perfect ('had seen')."
+  },
+  {
+    "tier": 5,
+    "question": "Choose the future perfect progressive.",
+    "answer": "By June, I will have been working here for ten years.",
+    "choices": [
+      "By June, I will have been working here for ten years.",
+      "By June, I will work here for ten years.",
+      "By June, I work here for ten years.",
+      "By June, I will be working here for ten years."
+    ],
+    "context": "Future perfect progressive ('will have been' + -ing) marks an ongoing action that will continue up to a future point."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the perfect participle?",
+    "answer": "Having finished her work, she went home.",
+    "choices": [
+      "Having finished her work, she went home.",
+      "Finishing her work, she went home.",
+      "After she finishes her work, she went home.",
+      "Finished her work, she went home."
+    ],
+    "context": "Perfect participle ('having' + past participle) opens a clause marking a completed prior action."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the present perfect (NOT simple past).",
+    "answer": "I have visited Paris three times.",
+    "choices": [
+      "I have visited Paris three times.",
+      "I visited Paris three times.",
+      "I am visiting Paris three times.",
+      "I visit Paris three times."
+    ],
+    "context": "Present perfect with 'three times' (life-experience to now) — past visits viewed from the present."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses 'have' + past participle correctly?",
+    "answer": "She has written three novels.",
+    "choices": [
+      "She has written three novels.",
+      "She has wrote three novels.",
+      "She have written three novels.",
+      "She has writing three novels."
+    ],
+    "context": "Present perfect with third-singular subject takes 'has' + past participle 'written'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is past perfect after 'by the time'?",
+    "answer": "By the time we arrived, the show had ended.",
+    "choices": [
+      "By the time we arrived, the show had ended.",
+      "By the time we arrived, the show ended.",
+      "By the time we arrived, the show ends.",
+      "By the time we arrived, the show was ending."
+    ],
+    "context": "'By the time' + past tense triggers past perfect in the main clause — earlier of two past events."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the 'zero' conditional (general truth)?",
+    "answer": "If you heat ice, it melts.",
+    "choices": [
+      "If you heat ice, it melts.",
+      "If you heat ice, it will melt.",
+      "If you heated ice, it would melt.",
+      "If you had heated ice, it would have melted."
+    ],
+    "context": "Zero conditional: if + present simple, present simple. Used for general truths and scientific facts."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the 'first' conditional (real future)?",
+    "answer": "If it rains, we will stay home.",
+    "choices": [
+      "If it rains, we will stay home.",
+      "If it rains, we stay home.",
+      "If it rained, we would stay home.",
+      "If it had rained, we would have stayed home."
+    ],
+    "context": "First conditional: if + present simple, will + base verb. Used for likely future events."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the 'second' conditional (unlikely / counterfactual present)?",
+    "answer": "If I had a million dollars, I would buy a house.",
+    "choices": [
+      "If I had a million dollars, I would buy a house.",
+      "If I have a million dollars, I will buy a house.",
+      "If I have a million dollars, I buy a house.",
+      "If I had had a million dollars, I would have bought a house."
+    ],
+    "context": "Second conditional: if + past simple, would + base. Used for hypothetical/unlikely present situations."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the 'third' conditional (past counterfactual)?",
+    "answer": "If I had studied, I would have passed.",
+    "choices": [
+      "If I had studied, I would have passed.",
+      "If I studied, I would have passed.",
+      "If I studied, I would pass.",
+      "If I study, I will pass."
+    ],
+    "context": "Third conditional: if + past perfect, would have + past participle. Past events that didn't happen."
+  },
+  {
+    "tier": 5,
+    "question": "Which is a 'mixed' conditional (past cause, present result)?",
+    "answer": "If I had taken the job, I would be rich now.",
+    "choices": [
+      "If I had taken the job, I would be rich now.",
+      "If I take the job, I will be rich now.",
+      "If I took the job, I would have been rich now.",
+      "If I had taken the job, I would have been rich now."
+    ],
+    "context": "Mixed conditional: past perfect 'if' clause + present conditional 'would' — a past cause with a present result."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the type: 'If you mix red and blue, you get purple.'",
+    "answer": "Zero conditional",
+    "choices": [
+      "Zero conditional",
+      "First conditional",
+      "Second conditional",
+      "Third conditional"
+    ],
+    "context": "Zero conditional: present simple in both clauses; states a timeless truth."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the type: 'If we leave now, we will catch the train.'",
+    "answer": "First conditional",
+    "choices": [
+      "First conditional",
+      "Second conditional",
+      "Zero conditional",
+      "Third conditional"
+    ],
+    "context": "First conditional: real and likely future event — 'if + present, will + base'."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the type: 'If I were rich, I would travel the world.'",
+    "answer": "Second conditional",
+    "choices": [
+      "Second conditional",
+      "First conditional",
+      "Third conditional",
+      "Mixed conditional"
+    ],
+    "context": "Second conditional: counterfactual / hypothetical present, often with 'were' for first-person subject."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the type: 'If she had known, she would have called.'",
+    "answer": "Third conditional",
+    "choices": [
+      "Third conditional",
+      "Mixed conditional",
+      "Second conditional",
+      "First conditional"
+    ],
+    "context": "Third conditional: 'if + past perfect, would have + past participle'. Past unreal events."
+  },
+  {
+    "tier": 5,
+    "question": "Complete the second conditional: 'If I ___ you, I would apologize.'",
+    "answer": "were",
+    "choices": [
+      "were",
+      "was",
+      "am",
+      "be"
+    ],
+    "context": "Second conditional standard: 'were' (subjunctive) is the formal choice for all persons."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the right 'mixed' conditional.",
+    "answer": "If you had listened, you wouldn't be lost now.",
+    "choices": [
+      "If you had listened, you wouldn't be lost now.",
+      "If you listened, you wouldn't be lost now.",
+      "If you had listened, you wouldn't have been lost now.",
+      "If you listen, you wouldn't be lost now."
+    ],
+    "context": "Mixed: past condition ('had listened') → present consequence ('wouldn't be lost now')."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses an inverted conditional (formal style)?",
+    "answer": "Had I known, I would have helped.",
+    "choices": [
+      "Had I known, I would have helped.",
+      "If I knew, I would have helped.",
+      "Had I knew, I would have helped.",
+      "Knew I, I would have helped."
+    ],
+    "context": "Formal/literary style inverts: 'had I known' = 'if I had known'. Same with 'were I to know' and 'should you ask'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the first conditional with 'unless'.",
+    "answer": "I won't go unless you come too.",
+    "choices": [
+      "I won't go unless you come too.",
+      "I won't go unless you came too.",
+      "I wouldn't go unless you come too.",
+      "I don't go unless you came too."
+    ],
+    "context": "'Unless' = 'if ... not' in conditionals. First conditional: present + 'won't' future."
+  },
+  {
+    "tier": 5,
+    "question": "Identify: 'If she should call, please tell her I'm out.'",
+    "answer": "First conditional with 'should' softener",
+    "choices": [
+      "First conditional with 'should' softener",
+      "Standard second conditional form",
+      "Standard third conditional form",
+      "Standard zero conditional form"
+    ],
+    "context": "'Should' in the 'if' clause softens the likelihood — a formal first-conditional variant."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the second conditional with implied advice?",
+    "answer": "If I were you, I would not say that.",
+    "choices": [
+      "If I were you, I would not say that.",
+      "If I am you, I would not say that.",
+      "If I was you, I would say that.",
+      "If I had been you, I had not said that."
+    ],
+    "context": "Formal second conditional 'if I were you' is a standard frame for offering advice."
+  },
+  {
+    "tier": 5,
+    "question": "Which sentence has parallel structure?",
+    "answer": "She likes hiking, swimming, and biking.",
+    "choices": [
+      "She likes hiking, swimming, and biking.",
+      "She likes hiking, swimming, and to bike.",
+      "She likes to hike, swimming, and biking.",
+      "She likes to hike, swims, and biking."
+    ],
+    "context": "Parallel: three gerunds (hiking, swimming, biking). Non-parallel mixes gerunds and infinitives."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the parallel sentence.",
+    "answer": "He was strong, brave, and loyal.",
+    "choices": [
+      "He was strong, brave, and loyal.",
+      "He was strong, brave, and acted loyally.",
+      "He was strong, was brave, and had loyalty.",
+      "He was strong, with bravery, and loyal."
+    ],
+    "context": "Three adjectives in series: strong, brave, loyal. Same grammatical form throughout."
+  },
+  {
+    "tier": 5,
+    "question": "Which avoids faulty parallelism?",
+    "answer": "I came to learn, to grow, and to lead.",
+    "choices": [
+      "I came to learn, to grow, and to lead.",
+      "I came to learn, growing, and to lead.",
+      "I came for learning, to grow, and leading.",
+      "I came to learn, growing, leadership."
+    ],
+    "context": "Three matching infinitives: to learn, to grow, to lead. Parallel infinitive phrases."
+  },
+  {
+    "tier": 5,
+    "question": "Fix the faulty parallelism: 'Either you go or staying here.'",
+    "answer": "Either you go or you stay here.",
+    "choices": [
+      "Either you go or you stay here.",
+      "Either you go or staying here.",
+      "Either go you or you stay here.",
+      "Either to go you or stay here."
+    ],
+    "context": "Correlative 'either ... or' must join parallel forms: 'you go' / 'you stay' (both clauses)."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses parallel correlative conjunctions?",
+    "answer": "Not only did she sing, but she also danced.",
+    "choices": [
+      "Not only did she sing, but she also danced.",
+      "Not only she sang, but also dancing.",
+      "Not only singing, but she danced too.",
+      "Not only she sings, but also dances."
+    ],
+    "context": "Correlative 'not only ... but also' must join parallel structures (here, past-tense verbs)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the version with parallel clauses.",
+    "answer": "We came, we saw, and we conquered.",
+    "choices": [
+      "We came, we saw, and we conquered.",
+      "We came, seeing, and we conquered.",
+      "We came, we saw, and conquering.",
+      "We coming, we saw, and we conquered."
+    ],
+    "context": "Three short independent clauses, all in past tense — classical parallel rhythm (Caesar)."
+  },
+  {
+    "tier": 5,
+    "question": "Which list is parallel?",
+    "answer": "The job requires patience, focus, and creativity.",
+    "choices": [
+      "The job requires patience, focus, and creativity.",
+      "The job requires patience, to focus, and being creative.",
+      "The job requires patience, focusing, and creativity.",
+      "The job requires patient people, focus, and creativity."
+    ],
+    "context": "Three abstract nouns: patience, focus, creativity. Same grammatical form."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses parallel infinitive phrases?",
+    "answer": "To love, to laugh, and to learn — that is the goal.",
+    "choices": [
+      "To love, to laugh, and to learn — that is the goal.",
+      "To love, laughing, and learning — that is the goal.",
+      "Loving, to laugh, and learning — that is the goal.",
+      "To love, laughing, to learn — that is the goal."
+    ],
+    "context": "Three 'to + verb' infinitives in parallel — common rhetorical pattern."
+  },
+  {
+    "tier": 5,
+    "question": "Which fixes the faulty parallelism: 'She likes coffee more than to drink tea.'?",
+    "answer": "She likes coffee more than tea.",
+    "choices": [
+      "She likes coffee more than tea.",
+      "She likes coffee more than to drink tea.",
+      "She likes to drink coffee more than tea.",
+      "She likes coffee more than the drinking of tea."
+    ],
+    "context": "Compare like to like: coffee to tea. Adding 'to drink' to one side breaks the parallel."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses parallel structure in 'both ... and'?",
+    "answer": "He is both intelligent and hardworking.",
+    "choices": [
+      "He is both intelligent and hardworking.",
+      "He is both intelligent and works hard.",
+      "He is both intelligence and hardworking.",
+      "He both is intelligent and works hard."
+    ],
+    "context": "Correlative 'both ... and' must join parallel forms — here, two adjectives."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the parallel sentence in 'neither ... nor'.",
+    "answer": "She is neither rich nor famous.",
+    "choices": [
+      "She is neither rich nor famous.",
+      "She neither is rich nor famous.",
+      "She is neither rich nor has fame.",
+      "Neither she is rich nor famous."
+    ],
+    "context": "'Neither ... nor' joins parallel parts of speech (both adjectives here)."
+  },
+  {
+    "tier": 5,
+    "question": "Which fixes parallelism: 'He likes to ski, hiking, and swimming.'?",
+    "answer": "He likes skiing, hiking, and swimming.",
+    "choices": [
+      "He likes skiing, hiking, and swimming.",
+      "He likes to ski, to hike, and swimming.",
+      "He likes skiing, hiking, and to swim.",
+      "He likes to ski, to hike, and to swimming."
+    ],
+    "context": "All three gerunds in parallel: skiing, hiking, swimming. Or all three infinitives. Don't mix forms."
+  },
+  {
+    "tier": 5,
+    "question": "Which has parallel verb phrases?",
+    "answer": "The candidate listened carefully and spoke confidently.",
+    "choices": [
+      "The candidate listened carefully and spoke confidently.",
+      "The candidate listened carefully and was speaking confidently.",
+      "The candidate, listening carefully, spoke confidently.",
+      "The candidate listened carefully and to speak confidently."
+    ],
+    "context": "Two past-tense verb phrases: listened carefully, spoke confidently. Same tense, same form."
+  },
+  {
+    "tier": 5,
+    "question": "Pick parallel adjective lists.",
+    "answer": "The cake was light, sweet, and moist.",
+    "choices": [
+      "The cake was light, sweet, and moist.",
+      "The cake was light, with sweetness, and moist.",
+      "The cake was lightness, sweet, and moist.",
+      "The cake was light, sweet, and had moisture."
+    ],
+    "context": "Three adjectives modifying 'cake' — all parallel in form."
+  },
+  {
+    "tier": 5,
+    "question": "When do you use a semicolon to join sentences?",
+    "answer": "When two independent clauses are closely related.",
+    "choices": [
+      "When two independent clauses are closely related.",
+      "When you need to start a list.",
+      "When you want to mark direct speech.",
+      "When you need a longer comma."
+    ],
+    "context": "A semicolon joins two independent clauses that are closely related but not connected by a conjunction."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses a semicolon correctly?",
+    "answer": "I love coffee; she prefers tea.",
+    "choices": [
+      "I love coffee; she prefers tea.",
+      "I love coffee; loves tea.",
+      "I love coffee; with tea.",
+      "I love coffee; tea."
+    ],
+    "context": "Semicolon joins two independent clauses (each could stand alone as a sentence)."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses semicolons correctly in a complex list?",
+    "answer": "The board includes Mary, the CEO; John, the CFO; and Sue, the COO.",
+    "choices": [
+      "The board includes Mary, the CEO; John, the CFO; and Sue, the COO.",
+      "The board includes Mary, the CEO, John, the CFO, and Sue, the COO.",
+      "The board includes Mary; the CEO; John; the CFO; Sue; the COO.",
+      "The board includes: Mary the CEO, John the CFO, and Sue the COO."
+    ],
+    "context": "Semicolons replace commas in lists where items already contain commas — keeps the structure clear."
+  },
+  {
+    "tier": 5,
+    "question": "What do the em-dashes do in 'The villain — pale and grinning — drew his sword.'?",
+    "answer": "Set off an emphatic parenthetical.",
+    "choices": [
+      "Set off an emphatic parenthetical.",
+      "Mark a hyphenated word.",
+      "Join two clauses formally.",
+      "Connect parts of a compound noun."
+    ],
+    "context": "Em-dashes mark a dramatic interruption — stronger than commas, less formal than parentheses."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the correct semicolon use with a conjunctive adverb?",
+    "answer": "It was raining; however, we went out.",
+    "choices": [
+      "It was raining; however, we went out.",
+      "It was raining, however, we went out.",
+      "It was raining however, we went out.",
+      "It was raining; however we went out."
+    ],
+    "context": "Semicolon before, comma after conjunctive adverb (however, therefore, moreover, thus) joining two independent clauses."
+  },
+  {
+    "tier": 5,
+    "question": "What's the rule for the Oxford (serial) comma?",
+    "answer": "It's the comma before 'and' in a list of three or more.",
+    "choices": [
+      "It's the comma before 'and' in a list of three or more.",
+      "It's the comma that ends a quotation.",
+      "It's the comma after a date.",
+      "It's the comma in a compound adjective."
+    ],
+    "context": "Oxford comma: 'apples, oranges, and bananas'. Optional in some styles, required in others; reduces ambiguity."
+  },
+  {
+    "tier": 5,
+    "question": "Which sentence proves the Oxford comma matters?",
+    "answer": "I love my parents, Lady Gaga and Humpty Dumpty.",
+    "choices": [
+      "I love my parents, Lady Gaga and Humpty Dumpty.",
+      "I love bread, butter and jam and tea.",
+      "I drink water, juice and coffee daily.",
+      "I read books, papers and magazines."
+    ],
+    "context": "Without the Oxford comma, this reads as: my parents [who are] Lady Gaga and Humpty Dumpty. The comma prevents misreading."
+  },
+  {
+    "tier": 5,
+    "question": "When do you use a colon (not a semicolon) between clauses?",
+    "answer": "When the second clause explains the first.",
+    "choices": [
+      "When the second clause explains the first.",
+      "When the two clauses are unrelated topics.",
+      "When the second clause is a question.",
+      "When both clauses are very short."
+    ],
+    "context": "Colon between independent clauses signals the second explains the first: 'I was late: the bus broke down.'"
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct em-dash usage.",
+    "answer": "She had one rule — never give up.",
+    "choices": [
+      "She had one rule — never give up.",
+      "She had one rule, never give up.",
+      "She had one rule; never give up.",
+      "She had one rule: never give up too."
+    ],
+    "context": "Em-dash can introduce an emphatic explanation or appositive — sharper effect than colon or comma."
+  },
+  {
+    "tier": 5,
+    "question": "Which is correct with an ellipsis?",
+    "answer": "He said, 'I came... I saw... I conquered.'",
+    "choices": [
+      "He said, 'I came... I saw... I conquered.'",
+      "He said, 'I came..I saw..I conquered.'",
+      "He said, 'I came . . . I saw . . . I conquered.'",
+      "He said, 'I came . I saw . I conquered.'"
+    ],
+    "context": "Ellipsis is three dots (with or without spaces) marking trailing off, omission, or hesitation."
+  },
+  {
+    "tier": 5,
+    "question": "Which sentence correctly punctuates a parenthetical clause?",
+    "answer": "The book — long, dense, and gripping — won the prize.",
+    "choices": [
+      "The book — long, dense, and gripping — won the prize.",
+      "The book, long, dense, and gripping, won the prize.",
+      "The book long, dense, and gripping won the prize.",
+      "The book - long dense and gripping - won the prize."
+    ],
+    "context": "Em-dashes set off a parenthetical that already contains commas (the inner list). Commas would be confusing."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the right colon use after 'as follows'.",
+    "answer": "The steps are as follows: gather, mix, bake.",
+    "choices": [
+      "The steps are as follows: gather, mix, bake.",
+      "The steps are as follows; gather, mix, bake.",
+      "The steps are as follows, gather, mix, bake.",
+      "The steps are as follows — gather, mix, bake — done."
+    ],
+    "context": "Colon after 'as follows' or 'the following' is standard before a list."
+  },
+  {
+    "tier": 5,
+    "question": "Which is correct with quotation marks (American style)?",
+    "answer": "She said, 'Hello,' and waved.",
+    "choices": [
+      "She said, 'Hello,' and waved.",
+      "She said, 'Hello', and waved.",
+      "She said 'Hello,' and waved.",
+      "She said 'Hello', and waved."
+    ],
+    "context": "American style puts commas and periods inside quotation marks. British style places them outside if not part of the quote."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct comma use with a non-restrictive clause.",
+    "answer": "My brother, who lives in Texas, is a doctor.",
+    "choices": [
+      "My brother, who lives in Texas, is a doctor.",
+      "My brother who lives in Texas is a doctor.",
+      "My brother who, lives in Texas, is a doctor.",
+      "My brother, who lives in Texas is a doctor."
+    ],
+    "context": "Non-restrictive (extra info, not needed to identify) takes commas. If you had only one brother, 'who lives in Texas' is extra."
+  },
+  {
+    "tier": 5,
+    "question": "Which figure: 'Ask not what your country can do for you...'?",
+    "answer": "Chiasmus (reversal of structure)",
+    "choices": [
+      "Chiasmus (reversal of structure)",
+      "Anaphora (repetition at start)",
+      "Epistrophe (repetition at end)",
+      "Metaphor"
+    ],
+    "context": "Kennedy's line reverses the structure: ABBA. 'Country / can do' ... 'can do / country' — chiasmus."
+  },
+  {
+    "tier": 5,
+    "question": "Which is zeugma?",
+    "answer": "She broke his car and his heart.",
+    "choices": [
+      "She broke his car and his heart.",
+      "Time is a thief.",
+      "Life is a journey.",
+      "He came, he saw, he conquered."
+    ],
+    "context": "Zeugma: one verb pulls two objects in different senses (literal car + figurative heart)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the polysyndeton.",
+    "answer": "He ran and laughed and shouted and danced.",
+    "choices": [
+      "He ran and laughed and shouted and danced.",
+      "He ran, laughed, shouted, danced.",
+      "He ran, laughed, shouted, and danced.",
+      "He ran; laughed; shouted; danced."
+    ],
+    "context": "Polysyndeton: extra conjunctions ('and ... and ... and') for emphasis or rhythm. Opposite of asyndeton."
+  },
+  {
+    "tier": 5,
+    "question": "Which is anaphora?",
+    "answer": "I have a dream... I have a dream... I have a dream...",
+    "choices": [
+      "I have a dream... I have a dream... I have a dream...",
+      "Dreams I have, dreams of yesterday.",
+      "I dream, you dream, we dream.",
+      "Last night I had a dream of a dream of dreams."
+    ],
+    "context": "Anaphora: same opening repeated across clauses or sentences. King's signature rhetorical device."
+  },
+  {
+    "tier": 5,
+    "question": "Which is litotes (understatement via negation)?",
+    "answer": "She is not unkind.",
+    "choices": [
+      "She is not unkind.",
+      "She is very kind.",
+      "She is the kindest person.",
+      "She is kind, very kind."
+    ],
+    "context": "Litotes affirms by negating the opposite: 'not unkind' = kind. Modest, ironic emphasis."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the antithesis.",
+    "answer": "It was the best of times, it was the worst of times.",
+    "choices": [
+      "It was the best of times, it was the worst of times.",
+      "Time flies when you're having fun.",
+      "Time is money, and money is power.",
+      "Times change, and we change with them."
+    ],
+    "context": "Antithesis: balanced contrast (best/worst). Dickens's opening: parallel structure with opposed ideas."
+  },
+  {
+    "tier": 5,
+    "question": "Which is hyperbaton (unusual word order for effect)?",
+    "answer": "Patience you must have, my young Padawan.",
+    "choices": [
+      "Patience you must have, my young Padawan.",
+      "You must have patience, my young Padawan.",
+      "Patience is what you must have.",
+      "My young Padawan, you must have patience."
+    ],
+    "context": "Hyperbaton: deliberately disordered syntax. Yoda's style — fronting the object for emphasis."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the isocolon (parallel clauses of equal length).",
+    "answer": "Veni, vidi, vici.",
+    "choices": [
+      "Veni, vidi, vici.",
+      "I came and saw and won.",
+      "I arrived and looked around and won the battle.",
+      "Arriving, I saw the battle and won."
+    ],
+    "context": "Isocolon: parallel phrases of nearly equal length and structure. Caesar's tricolon is a famous example."
+  },
+  {
+    "tier": 5,
+    "question": "Which is tricolon?",
+    "answer": "Life, liberty, and the pursuit of happiness.",
+    "choices": [
+      "Life, liberty, and the pursuit of happiness.",
+      "Life and liberty.",
+      "Life, liberty.",
+      "The whole of life and liberty in pursuit."
+    ],
+    "context": "Tricolon: three parallel words or phrases — three-beat rhythm common in oratory."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the parataxis.",
+    "answer": "I came. I saw. I conquered.",
+    "choices": [
+      "I came. I saw. I conquered.",
+      "After I came, having seen what was there, I conquered.",
+      "I came, and then I saw, and then I conquered.",
+      "While I came, I saw, and so I conquered."
+    ],
+    "context": "Parataxis: short clauses set side by side without subordinating conjunctions. Hypotaxis is the opposite."
+  },
+  {
+    "tier": 5,
+    "question": "Which is hypotaxis (subordinated clauses)?",
+    "answer": "Although tired, she kept working because the deadline loomed.",
+    "choices": [
+      "Although tired, she kept working because the deadline loomed.",
+      "She was tired. She kept working. The deadline loomed.",
+      "Tired. Still working. Deadline.",
+      "Tired and working and a deadline."
+    ],
+    "context": "Hypotaxis: clauses arranged in hierarchy with subordinators (although, because, when). Opposite of parataxis."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the apostrophe (rhetorical address).",
+    "answer": "O Death, where is thy sting?",
+    "choices": [
+      "O Death, where is thy sting?",
+      "She lost her sting.",
+      "The bee stung him.",
+      "Stinging words from the speaker."
+    ],
+    "context": "Rhetorical apostrophe: direct address to an absent person, object, or abstract idea ('O Death!')."
+  },
+  {
+    "tier": 5,
+    "question": "Which is synecdoche?",
+    "answer": "All hands on deck.",
+    "choices": [
+      "All hands on deck.",
+      "The pen is mightier than the sword.",
+      "Time flies.",
+      "Strike while the iron is hot."
+    ],
+    "context": "Synecdoche: part stands for whole ('hands' = sailors). Distinct from metonymy (associated whole, not literal part)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the oxymoron.",
+    "answer": "Deafening silence",
+    "choices": [
+      "Deafening silence",
+      "Loud voice",
+      "Quiet whisper",
+      "Heavy thunder"
+    ],
+    "context": "Oxymoron: paired terms that contradict ('deafening' + 'silence'). Compresses paradox into two words."
+  },
+  {
+    "tier": 5,
+    "question": "Which is paradox?",
+    "answer": "The more you know, the more you realize you don't know.",
+    "choices": [
+      "The more you know, the more you realize you don't know.",
+      "Knowledge is power and ignorance is the enemy of progress.",
+      "True wisdom comes only through long study and quiet thought.",
+      "A book a day keeps the mind busy and the spirit lifted always."
+    ],
+    "context": "Paradox: seemingly contradictory but containing a deeper truth. Socrates: 'I know that I know nothing.'"
+  },
+  {
+    "tier": 5,
+    "question": "Which figure pairs repetition at the START and END of successive clauses?",
+    "answer": "Symploce",
+    "choices": [
+      "Symploce",
+      "Asyndeton",
+      "Polysyndeton",
+      "Anaphora"
+    ],
+    "context": "Symploce: same opening AND ending repeated. Less common; anaphora is start-only, epistrophe is end-only."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the subordinate (dependent) clause.",
+    "answer": "Because she was tired",
+    "choices": [
+      "Because she was tired",
+      "She was tired.",
+      "She slept well.",
+      "Tomorrow she rests."
+    ],
+    "context": "Subordinate clause starts with a subordinator (because, although, when, if, while) — needs an independent clause to complete it."
+  },
+  {
+    "tier": 5,
+    "question": "Which has both an independent and subordinate clause?",
+    "answer": "Although it rained, we went out.",
+    "choices": [
+      "Although it rained, we went out.",
+      "It rained. We went out.",
+      "It rained and we went out.",
+      "Rain and going out."
+    ],
+    "context": "Subordinate 'although it rained' + independent 'we went out' = complex sentence."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the compound-complex sentence.",
+    "answer": "Although she was tired, she finished the race, and she even smiled.",
+    "choices": [
+      "Although she was tired, she finished the race, and she even smiled.",
+      "Although she was tired, she finished the race and went home.",
+      "She was very tired but she finished the race and smiled.",
+      "She was tired and she finished the race and she even smiled."
+    ],
+    "context": "Compound-complex: at least two independent clauses + at least one subordinate. Three clauses total here."
+  },
+  {
+    "tier": 5,
+    "question": "Which is a restrictive (essential) relative clause?",
+    "answer": "The book that I borrowed is overdue.",
+    "choices": [
+      "The book that I borrowed is overdue.",
+      "The book, that I borrowed, is overdue.",
+      "The book — which I borrowed — is overdue.",
+      "The book, which I borrowed, is overdue."
+    ],
+    "context": "Restrictive clauses identify (which book?) — no commas, often uses 'that'. Non-restrictive uses 'which' with commas."
+  },
+  {
+    "tier": 5,
+    "question": "Which is a non-restrictive relative clause?",
+    "answer": "My car, which I bought last year, broke down.",
+    "choices": [
+      "My car, which I bought last year, broke down.",
+      "My car which I bought last year broke down.",
+      "My car that I bought last year broke down.",
+      "The car that I bought last year broke down."
+    ],
+    "context": "Non-restrictive adds extra info (the car you already know about). Set off by commas; uses 'which', not 'that'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the noun clause (acts as a noun).",
+    "answer": "What she said surprised me.",
+    "choices": [
+      "What she said surprised me.",
+      "She said something surprising.",
+      "Surprised, she said something.",
+      "She surprised me with her saying."
+    ],
+    "context": "'What she said' is the subject of 'surprised' — a noun clause functioning as a single noun."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the adverb clause.",
+    "answer": "She left after the meeting ended.",
+    "choices": [
+      "She left after the meeting ended.",
+      "The meeting ended.",
+      "She is leaving.",
+      "After-meeting departure."
+    ],
+    "context": "'After the meeting ended' modifies 'left' (when?) — adverb clause introduced by 'after'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the adjective (relative) clause.",
+    "answer": "The man who called is my uncle.",
+    "choices": [
+      "The man who called is my uncle.",
+      "My uncle called.",
+      "The man is my uncle.",
+      "Calling the uncle yesterday."
+    ],
+    "context": "'Who called' modifies 'man' (which man?) — adjective/relative clause."
+  },
+  {
+    "tier": 5,
+    "question": "Which subordinator marks contrast?",
+    "answer": "Although",
+    "choices": [
+      "Although",
+      "Because",
+      "If",
+      "When"
+    ],
+    "context": "'Although' marks contrast. 'Because' marks cause. 'If' marks condition. 'When' marks time."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the subordinator of cause.",
+    "answer": "Since",
+    "choices": [
+      "Since",
+      "Although",
+      "If",
+      "Where"
+    ],
+    "context": "'Since' can mark time or cause. 'Although' = contrast. 'If' = condition. 'Where' = place."
+  },
+  {
+    "tier": 5,
+    "question": "Which sentence uses 'that' restrictively?",
+    "answer": "The phone that I lost was new.",
+    "choices": [
+      "The phone that I lost was new.",
+      "The phone, that I lost, was new.",
+      "The phone — that I lost — was new.",
+      "The phone (that I lost) was new."
+    ],
+    "context": "Restrictive 'that' clause: no commas — necessary to identify which phone."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the non-restrictive 'which' clause.",
+    "answer": "The Empire State Building, which opened in 1931, dominates the skyline.",
+    "choices": [
+      "The Empire State Building, which opened in 1931, dominates the skyline.",
+      "The Empire State Building which opened in 1931 dominates the skyline.",
+      "The Empire State Building that opened in 1931 dominates the skyline.",
+      "The Empire State Building, that opened in 1931, dominates the skyline."
+    ],
+    "context": "Non-restrictive: the building is already identified — 1931 is bonus info. 'Which' + commas."
+  },
+  {
+    "tier": 5,
+    "question": "How many clauses in 'When she arrived, the show had started, but she didn't mind'?",
+    "answer": "Three",
+    "choices": [
+      "Three",
+      "Two",
+      "Four",
+      "One"
+    ],
+    "context": "Subordinate: 'when she arrived'. Independent 1: 'the show had started'. Independent 2: 'she didn't mind'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is a sentence fragment, not a clause?",
+    "answer": "Running through the park.",
+    "choices": [
+      "Running through the park.",
+      "She ran through the park.",
+      "Through the park, she ran.",
+      "The park where she ran is large."
+    ],
+    "context": "Fragment lacks a finite verb and/or subject. 'Running through the park' is a participial phrase, not a clause."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the type: 'I read; she wrote.'",
+    "answer": "Compound sentence",
+    "choices": [
+      "Compound sentence",
+      "Simple sentence",
+      "Complex sentence",
+      "Sentence fragment"
+    ],
+    "context": "Two independent clauses joined by a semicolon = compound. No subordinator = not complex."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the type: 'When she sings, she beams.'",
+    "answer": "Complex sentence",
+    "choices": [
+      "Complex sentence",
+      "Simple sentence",
+      "Compound sentence",
+      "Compound-complex"
+    ],
+    "context": "'When she sings' (subordinate) + 'she beams' (independent) = complex sentence."
+  },
+  {
+    "tier": 5,
+    "question": "Identify: 'She read the book and finished it quickly.'",
+    "answer": "Simple with compound verb",
+    "choices": [
+      "Simple with compound verb",
+      "Compound sentence",
+      "Complex sentence",
+      "Compound-complex"
+    ],
+    "context": "One subject ('she'), two verbs ('read', 'finished') — simple sentence with compound predicate, not two clauses."
+  },
+  {
+    "tier": 5,
+    "question": "Identify: 'After he left, I locked the door and turned off the lights.'",
+    "answer": "Complex sentence",
+    "choices": [
+      "Complex sentence",
+      "Compound sentence",
+      "Simple sentence",
+      "Compound-complex"
+    ],
+    "context": "Subordinate 'after he left' + independent 'I locked... and turned off' (one subject, compound verb) = complex."
+  },
+  {
+    "tier": 5,
+    "question": "How many independent clauses in 'She sang and he danced'?",
+    "answer": "Two",
+    "choices": [
+      "Two",
+      "One",
+      "Three",
+      "Four"
+    ],
+    "context": "'She sang' and 'he danced' are both independent — joined by 'and' = compound sentence."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the periodic sentence (main clause held to the end).",
+    "answer": "Through wind and rain and fire and storm, she ran.",
+    "choices": [
+      "Through wind and rain and fire and storm, she ran.",
+      "She ran through wind, rain, fire, and storm.",
+      "She ran and ran in storm.",
+      "Wind, rain, fire — she ran."
+    ],
+    "context": "Periodic: subordinate elements first, main clause delayed for suspense. Opposite of loose/cumulative sentences."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the loose (cumulative) sentence.",
+    "answer": "She ran, panting, eyes wild, hair flying, lungs burning.",
+    "choices": [
+      "She ran, panting, eyes wild, hair flying, lungs burning.",
+      "Panting and wild-eyed, she ran with all her strength.",
+      "Despite the burning in her lungs, she ran toward home.",
+      "Through panting breaths and wild eyes, she just kept running."
+    ],
+    "context": "Cumulative/loose: main clause first, modifiers piled on after — opposite of periodic."
+  },
+  {
+    "tier": 5,
+    "question": "Which is an it-cleft sentence?",
+    "answer": "It was John who broke the vase.",
+    "choices": [
+      "It was John who broke the vase.",
+      "John broke the vase.",
+      "The vase was broken by John.",
+      "Breaking the vase was John."
+    ],
+    "context": "Cleft sentences (it + be + X + relative clause) emphasize a particular element. Here, 'John' is highlighted."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the pseudo-cleft (wh-cleft).",
+    "answer": "What he wanted was respect.",
+    "choices": [
+      "What he wanted was respect.",
+      "He wanted respect.",
+      "He was wanting respect.",
+      "Wanting respect, he did."
+    ],
+    "context": "Pseudo-cleft: 'what ... was/is X' shifts emphasis to X. 'It-cleft' uses 'it', wh-cleft uses 'what'."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the formal inversion: 'Rarely have I seen such talent.'",
+    "answer": "Negative-adverb inversion for emphasis",
+    "choices": [
+      "Negative-adverb inversion for emphasis",
+      "Standard subject-verb order",
+      "Imperative inversion",
+      "Question inversion"
+    ],
+    "context": "Negative adverbs fronted (rarely, never, seldom, hardly) invert subject and auxiliary: 'rarely have I seen' (not 'I have rarely seen')."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the locative inversion.",
+    "answer": "Down the hill rolled the ball.",
+    "choices": [
+      "Down the hill rolled the ball.",
+      "The ball rolled down the hill.",
+      "Rolling, the ball went down the hill.",
+      "Down the hill, the ball rolled."
+    ],
+    "context": "Locative inversion: place phrase fronted, verb before subject. Common in narrative/literary style."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the imperative inversion (rhetorical)?",
+    "answer": "Would that I were younger!",
+    "choices": [
+      "Would that I were younger!",
+      "I wish I were younger.",
+      "If only I were younger.",
+      "I would be younger if I could."
+    ],
+    "context": "Formal wish-inversion: 'would that X were Y' is a literary equivalent of 'I wish'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the conditional inversion.",
+    "answer": "Should you need help, call me.",
+    "choices": [
+      "Should you need help, call me.",
+      "If you need help, call me.",
+      "When you need help, call me.",
+      "You need help, call me."
+    ],
+    "context": "Formal conditional inversion: 'should you need' = 'if you should need' = 'if you need'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is a simple sentence (one independent clause)?",
+    "answer": "The lazy cat slept by the warm fire.",
+    "choices": [
+      "The lazy cat slept by the warm fire.",
+      "When the cat slept, the dog kept watch.",
+      "The cat slept and the dog also watched.",
+      "The cat that slept yesterday is hungry now."
+    ],
+    "context": "Simple: one independent clause, no subordinates. Subject + verb (with modifiers fine)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the cumulative-sentence opening modifier.",
+    "answer": "Exhausted but determined, she crossed the line.",
+    "choices": [
+      "Exhausted but determined, she crossed the line.",
+      "She crossed the line.",
+      "She was exhausted and determined.",
+      "Crossing the line was exhausting."
+    ],
+    "context": "Cumulative sentence loads modifiers BEFORE or AFTER main clause; the modifying phrases enrich the main idea."
+  },
+  {
+    "tier": 5,
+    "question": "Transform to passive: 'The chef baked the cake.'",
+    "answer": "The cake was baked by the chef.",
+    "choices": [
+      "The cake was baked by the chef.",
+      "The cake baked the chef.",
+      "The cake had baked the chef.",
+      "The chef was baked by the cake."
+    ],
+    "context": "Passive voice: object becomes subject, verb takes form of 'to be' + past participle, original subject becomes 'by'-agent."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the agentless passive?",
+    "answer": "Mistakes were made.",
+    "choices": [
+      "Mistakes were made.",
+      "Someone made mistakes.",
+      "The committee made mistakes.",
+      "Mistakes are bad."
+    ],
+    "context": "Agentless passive omits the doer — common in formal/evasive writing. 'Mistakes were made' famously hides who erred."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the active version of 'The play was written by Shakespeare.'",
+    "answer": "Shakespeare wrote the play.",
+    "choices": [
+      "Shakespeare wrote the play.",
+      "Shakespeare writes the play.",
+      "Shakespeare had wrote the play.",
+      "Shakespeare was writing the play."
+    ],
+    "context": "Active: Shakespeare (subject) + wrote (verb) + the play (object). Drop 'by' and reorder."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the voice: 'The window was broken during the game.'",
+    "answer": "Passive voice",
+    "choices": [
+      "Passive voice",
+      "Active voice",
+      "Subjunctive mood",
+      "Imperative mood"
+    ],
+    "context": "Passive: 'was broken' (be + past participle). The agent is implied or unstated."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the passive that keeps the agent.",
+    "answer": "The novel was written by an unknown author.",
+    "choices": [
+      "The novel was written by an unknown author.",
+      "An unknown author wrote the novel.",
+      "The novel writes by an unknown author.",
+      "The novel had been writing by an author."
+    ],
+    "context": "Passive with 'by'-agent: subject (novel) + be + past participle + 'by' + agent."
+  },
+  {
+    "tier": 5,
+    "question": "Transform 'They are building a bridge' to passive.",
+    "answer": "A bridge is being built.",
+    "choices": [
+      "A bridge is being built.",
+      "A bridge was built.",
+      "A bridge has been built.",
+      "A bridge will be built."
+    ],
+    "context": "Present progressive passive: 'is/are being' + past participle. Matches active 'is/are + -ing'."
+  },
+  {
+    "tier": 5,
+    "question": "Which passive uses 'has been'?",
+    "answer": "The report has been finished.",
+    "choices": [
+      "The report has been finished.",
+      "The report had been finished.",
+      "The report was finished.",
+      "The report will be finished."
+    ],
+    "context": "Present perfect passive: 'has/have been' + past participle. Matches active 'has/have + past participle'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the future passive?",
+    "answer": "The decision will be announced tomorrow.",
+    "choices": [
+      "The decision will be announced tomorrow.",
+      "The decision is announced tomorrow.",
+      "The decision was announced tomorrow.",
+      "The decision has been announced tomorrow."
+    ],
+    "context": "Future passive: 'will be' + past participle. Subject receives the future action."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the modal passive.",
+    "answer": "The work must be done by Friday.",
+    "choices": [
+      "The work must be done by Friday.",
+      "The work must do by Friday.",
+      "The work must has done by Friday.",
+      "The work is done by Friday must."
+    ],
+    "context": "Modal passive: modal + 'be' + past participle. 'Must be done', 'should be finished', 'can be solved'."
+  },
+  {
+    "tier": 5,
+    "question": "What does 'must' mean in 'The lights are on, so he must be home.'?",
+    "answer": "Inference about likelihood",
+    "choices": [
+      "Inference about likelihood",
+      "Required by official rules",
+      "Permitted by official rules",
+      "Indication of past ability"
+    ],
+    "context": "Epistemic 'must' = inferential certainty: 'I conclude that' rather than 'is required to'."
+  },
+  {
+    "tier": 5,
+    "question": "What does 'must' mean in 'Students must wear uniforms.'?",
+    "answer": "Obligation imposed by rules",
+    "choices": [
+      "Obligation imposed by rules",
+      "Inference about a likely fact",
+      "Possibility of an event",
+      "Ability or past skill"
+    ],
+    "context": "Deontic 'must' = obligation imposed by rules or authority."
+  },
+  {
+    "tier": 5,
+    "question": "Which 'can' expresses ability?",
+    "answer": "She can play the piano beautifully.",
+    "choices": [
+      "She can play the piano beautifully.",
+      "You can leave early today.",
+      "It can rain later.",
+      "Can I have some water?"
+    ],
+    "context": "Dynamic 'can' = ability/capability. The other examples show permission, possibility, and request."
+  },
+  {
+    "tier": 5,
+    "question": "Which 'may' expresses possibility?",
+    "answer": "It may rain later.",
+    "choices": [
+      "It may rain later.",
+      "You may leave the room.",
+      "May I sit here?",
+      "She may come if she wishes."
+    ],
+    "context": "Epistemic 'may' = possibility ('it's possible that'). Deontic 'may' would mean permission."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the 'should' of moral obligation.",
+    "answer": "You should respect your elders.",
+    "choices": [
+      "You should respect your elders.",
+      "He should be home by now.",
+      "She should arrive soon.",
+      "It should rain tomorrow."
+    ],
+    "context": "Deontic 'should' = moral or social obligation. Epistemic 'should' would mean expected probability."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the epistemic 'should'.",
+    "answer": "She should arrive by noon.",
+    "choices": [
+      "She should arrive by noon.",
+      "You should call your mother.",
+      "Children should obey parents.",
+      "She should be more careful."
+    ],
+    "context": "Epistemic 'should' = expected likelihood ('I expect she will arrive')."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the past form of 'must' for obligation?",
+    "answer": "had to",
+    "choices": [
+      "had to",
+      "musted",
+      "would must",
+      "must have"
+    ],
+    "context": "'Must' has no past form; use 'had to' for past obligation. 'Must have' = past epistemic inference."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the past epistemic 'must'.",
+    "answer": "She must have left early.",
+    "choices": [
+      "She must have left early.",
+      "She had to leave early.",
+      "She musts have leave early.",
+      "She musted to leave early."
+    ],
+    "context": "Past epistemic uses 'must have' + past participle for inference about a past event."
+  },
+  {
+    "tier": 5,
+    "question": "What is 'could' doing in 'Could you pass the salt?'?",
+    "answer": "Softening a polite request",
+    "choices": [
+      "Softening a polite request",
+      "Marking a past ability",
+      "Indicating future possibility",
+      "Granting formal permission"
+    ],
+    "context": "'Could' here softens a request — pragmatic politeness, not literal past ability or possibility."
+  },
+  {
+    "tier": 5,
+    "question": "Which modal expresses moral duty?",
+    "answer": "ought to",
+    "choices": [
+      "ought to",
+      "can",
+      "may",
+      "could"
+    ],
+    "context": "'Ought to' expresses moral or social duty — slightly more formal than 'should'."
+  },
+  {
+    "tier": 5,
+    "question": "Convert to reported: 'I am tired,' she said.",
+    "answer": "She said she was tired.",
+    "choices": [
+      "She said she was tired.",
+      "She said she am tired.",
+      "She said I was tired.",
+      "She said she is tired."
+    ],
+    "context": "Reported speech backshifts present → past, and shifts pronouns. 'I am' → 'she was'."
+  },
+  {
+    "tier": 5,
+    "question": "Convert to reported: 'I will go,' she said.",
+    "answer": "She said she would go.",
+    "choices": [
+      "She said she would go.",
+      "She said she will go.",
+      "She said she went.",
+      "She said she goes."
+    ],
+    "context": "'Will' backshifts to 'would' in past-reported speech."
+  },
+  {
+    "tier": 5,
+    "question": "Convert: 'Don't be late,' he told them.",
+    "answer": "He told them not to be late.",
+    "choices": [
+      "He told them not to be late.",
+      "He told them don't be late.",
+      "He told them they don't be late.",
+      "He told them they be not late."
+    ],
+    "context": "Imperative becomes 'told someone (not) to do X'. Negative imperative → 'not to + verb'."
+  },
+  {
+    "tier": 5,
+    "question": "Convert: 'Where are you going?' she asked.",
+    "answer": "She asked where I was going.",
+    "choices": [
+      "She asked where I was going.",
+      "She asked where am I going.",
+      "She asked where I going.",
+      "She asked where was I going."
+    ],
+    "context": "Reported wh-question: keep statement word order (subject + verb), backshift tense."
+  },
+  {
+    "tier": 5,
+    "question": "Convert: 'Do you like it?' he asked.",
+    "answer": "He asked if I liked it.",
+    "choices": [
+      "He asked if I liked it.",
+      "He asked do I liked it.",
+      "He asked if did I like it.",
+      "He asked do I like it."
+    ],
+    "context": "Reported yes/no question: 'if' or 'whether' + statement word order, backshift tense."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the correct backshift of 'must' (obligation)?",
+    "answer": "He said I had to leave.",
+    "choices": [
+      "He said I had to leave.",
+      "He said I must leave.",
+      "He said I musted leave.",
+      "He said I will must leave."
+    ],
+    "context": "'Must' (obligation) backshifts to 'had to'. 'Must' (inference) often stays the same or becomes 'must have'."
+  },
+  {
+    "tier": 5,
+    "question": "Convert: 'I'm going to the store,' Tom said.",
+    "answer": "Tom said he was going to the store.",
+    "choices": [
+      "Tom said he was going to the store.",
+      "Tom said he is going to the store.",
+      "Tom said I'm going to the store.",
+      "Tom said he be going to the store."
+    ],
+    "context": "Present progressive backshifts to past progressive: 'am going' → 'was going'. Pronoun shifts."
+  },
+  {
+    "tier": 5,
+    "question": "Convert: 'I had already eaten,' he said.",
+    "answer": "He said he had already eaten.",
+    "choices": [
+      "He said he had already eaten.",
+      "He said he has already eaten.",
+      "He said I had already eaten.",
+      "He said he ate already."
+    ],
+    "context": "Past perfect doesn't shift further — it's already the 'past of the past'."
+  },
+  {
+    "tier": 5,
+    "question": "When does reported speech NOT backshift?",
+    "answer": "When the original statement is still true now.",
+    "choices": [
+      "When the original statement is still true now.",
+      "When the speaker is angry.",
+      "When the listener is a child.",
+      "When the speech is formal."
+    ],
+    "context": "If the reported fact is still true ('Water boils at 100°C'), backshift is optional: 'She said water boils at 100°C.'"
+  },
+  {
+    "tier": 5,
+    "question": "Which uses a gerund as subject?",
+    "answer": "Swimming is good exercise.",
+    "choices": [
+      "Swimming is good exercise.",
+      "She swims daily.",
+      "To swim is fun.",
+      "She is swimming now."
+    ],
+    "context": "Gerund: -ing form functioning as a noun. Here 'swimming' is the subject of 'is'."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses an infinitive as subject?",
+    "answer": "To err is human.",
+    "choices": [
+      "To err is human.",
+      "Erring is human.",
+      "He erred.",
+      "The error was human."
+    ],
+    "context": "Infinitive ('to err') as subject. Note: gerund 'erring' would also work — both are noun-acting verbals."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses a participial phrase?",
+    "answer": "Tired from the journey, she slept.",
+    "choices": [
+      "Tired from the journey, she slept.",
+      "She was tired from the journey and slept.",
+      "Because she was tired, she slept.",
+      "She slept because tired."
+    ],
+    "context": "Participial phrase opens with a participle ('tired') and modifies the subject like an adjective."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the dangling modifier.",
+    "answer": "Walking down the street, the trees were beautiful.",
+    "choices": [
+      "Walking down the street, the trees were beautiful.",
+      "Walking down the street, I saw beautiful trees.",
+      "The trees were beautiful as I walked.",
+      "I walked and saw beautiful trees."
+    ],
+    "context": "Dangling modifier: the trees weren't walking. The participle must refer to the subject of the main clause."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct gerund possessive.",
+    "answer": "I appreciate your helping me.",
+    "choices": [
+      "I appreciate your helping me.",
+      "I appreciate you helping me.",
+      "I appreciate you to help me.",
+      "I appreciate yours helping me."
+    ],
+    "context": "Before a gerund, formal English uses possessive: 'your helping' (not 'you helping'). The gerund acts like a noun."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses an absolute phrase?",
+    "answer": "Her hands trembling, she opened the door.",
+    "choices": [
+      "Her hands trembling, she opened the door.",
+      "With trembling hands, she opened the door.",
+      "She opened the door with hands trembling.",
+      "When her hands trembled, she opened the door."
+    ],
+    "context": "Absolute phrase: noun + participle, modifies the whole clause. Independent of any specific word in the main clause."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the infinitive of purpose.",
+    "answer": "She went to study.",
+    "choices": [
+      "She went to study.",
+      "She went studying.",
+      "She went and studied.",
+      "She went, study."
+    ],
+    "context": "Infinitive of purpose answers 'why': 'to study' = 'in order to study'."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses 'to + verb' as a noun?",
+    "answer": "To leave now would be rude.",
+    "choices": [
+      "To leave now would be rude.",
+      "She left rudely.",
+      "Leaving was rude.",
+      "Rude, she left."
+    ],
+    "context": "Infinitive 'to leave' functions as subject — a noun-acting verbal."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the verb that requires a gerund, not infinitive.",
+    "answer": "She enjoys reading.",
+    "choices": [
+      "She enjoys reading.",
+      "She enjoys to read.",
+      "She wants reading.",
+      "She decides reading."
+    ],
+    "context": "Some verbs (enjoy, finish, avoid, mind, suggest, consider) take only gerunds. Others (want, decide) take only infinitives."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'bene' mean (as in benefit, benevolent)?",
+    "answer": "Good or well",
+    "choices": [
+      "Good or well",
+      "Bad or ill",
+      "Big or large",
+      "Fast or quick"
+    ],
+    "context": "'Bene' = good/well. Pairs: bene/mal (good/bad), as in benefactor/malefactor."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'mal' mean (as in malice, malady, malfunction)?",
+    "answer": "Bad or ill",
+    "choices": [
+      "Bad or ill",
+      "Good or fine",
+      "Fast or quick",
+      "Strong or firm"
+    ],
+    "context": "'Mal' = bad. Malice, malady, malware, malfunction, malevolent — all carry the 'bad' meaning."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'auto' mean (as in autograph, automatic)?",
+    "answer": "Self",
+    "choices": [
+      "Self",
+      "Other",
+      "Hand",
+      "Quick"
+    ],
+    "context": "'Auto' = self. Autograph = self-writing. Automatic = self-acting. Autonomy = self-rule."
+  },
+  {
+    "tier": 5,
+    "question": "Greek 'bio' means life. What does 'biography' literally mean?",
+    "answer": "Life-writing",
+    "choices": [
+      "Life-writing",
+      "Death-writing",
+      "Life-story",
+      "Life-history"
+    ],
+    "context": "Bio (life) + graph (write) = life-writing. Greek combining forms remain productive in English."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'circum' mean (as in circumference, circumstance)?",
+    "answer": "Around",
+    "choices": [
+      "Around",
+      "Through",
+      "Above",
+      "Below"
+    ],
+    "context": "'Circum' = around. Circumference = the around-line. Circumstance = around-standing condition."
+  },
+  {
+    "tier": 5,
+    "question": "Greek 'tele' means far. What does 'telephone' literally mean?",
+    "answer": "Far-sound",
+    "choices": [
+      "Far-sound",
+      "Loud sound",
+      "Quick sound",
+      "Light sound"
+    ],
+    "context": "Tele (far) + phone (sound) = far-sound. Telegraph = far-writing. Telescope = far-seeing."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'aqua' mean?",
+    "answer": "Water",
+    "choices": [
+      "Water",
+      "Air",
+      "Earth",
+      "Fire"
+    ],
+    "context": "'Aqua' = water. Aquarium, aqueduct, aquatic, aqualung. Greek equivalent: 'hydro'."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'logos' (suffix '-logy') mean?",
+    "answer": "Word or study",
+    "choices": [
+      "Word or study",
+      "Speech only",
+      "Sound",
+      "Light"
+    ],
+    "context": "'-Logy' = study of. Biology, geology, theology, mythology, psychology. Originally 'logos' = word/reason."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'phil' mean (as in philosophy, philanthropy)?",
+    "answer": "Love",
+    "choices": [
+      "Love",
+      "Wisdom",
+      "Fear",
+      "Hate"
+    ],
+    "context": "'Phil' = love. Philosophy = love of wisdom. Philanthropy = love of humanity. Bibliophile = book-lover."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'phobia' mean?",
+    "answer": "Fear",
+    "choices": [
+      "Fear",
+      "Love",
+      "Hate",
+      "Sickness"
+    ],
+    "context": "'Phobia' = fear. Arachnophobia (spiders), claustrophobia (closed spaces), agoraphobia (open spaces)."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'omni' mean (as in omnipresent, omnivore)?",
+    "answer": "All",
+    "choices": [
+      "All",
+      "Many",
+      "Some",
+      "Few"
+    ],
+    "context": "'Omni' = all. Omniscient = all-knowing. Omnipotent = all-powerful. Omnivore = all-eater."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'sub' mean (as in submarine, subway)?",
+    "answer": "Under or below",
+    "choices": [
+      "Under or below",
+      "Over or above",
+      "Around or near",
+      "Between or among"
+    ],
+    "context": "'Sub' = under. Submarine, subway, subordinate, submerge, submit (literally 'send under')."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'micro' mean?",
+    "answer": "Small",
+    "choices": [
+      "Small",
+      "Large",
+      "Hot",
+      "Cold"
+    ],
+    "context": "'Micro' = small. Microscope, microorganism, microwave. Opposite: macro = large."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'pan' mean (as in pandemic, panacea)?",
+    "answer": "All",
+    "choices": [
+      "All",
+      "None",
+      "Some",
+      "Half"
+    ],
+    "context": "'Pan' = all. Pandemic = all-people. Panacea = all-heal. Panorama = all-view."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'ante' mean (as in antebellum, anteroom)?",
+    "answer": "Before",
+    "choices": [
+      "Before",
+      "After",
+      "Against",
+      "Within"
+    ],
+    "context": "'Ante' = before. Antebellum = before the war. Anteroom = entry room before a main one. Don't confuse with 'anti' = against."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'post' mean (as in postwar, postscript)?",
+    "answer": "After",
+    "choices": [
+      "After",
+      "Before",
+      "Against",
+      "Within"
+    ],
+    "context": "'Post' = after. Postscript = written after. Postwar = after the war. Postpone = after-place."
+  },
+  {
+    "tier": 5,
+    "question": "What does Latin 'ex' mean (as in exit, exhale)?",
+    "answer": "Out of",
+    "choices": [
+      "Out of",
+      "Into",
+      "Above",
+      "Below"
+    ],
+    "context": "'Ex' = out of. Exit = goes out. Exhale = breathe out. Extract = pull out."
+  },
+  {
+    "tier": 5,
+    "question": "What does Greek 'sym/syn' mean (as in symphony, sympathy)?",
+    "answer": "With or together",
+    "choices": [
+      "With or together",
+      "Against or apart",
+      "Above or upper",
+      "Below or lower"
+    ],
+    "context": "'Sym/syn' = with. Symphony = sounding together. Sympathy = feeling with. Synonym = same-name."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct usage: 'I have ___ apples than you.'",
+    "answer": "fewer",
+    "choices": [
+      "fewer",
+      "less",
+      "least",
+      "lesser"
+    ],
+    "context": "'Fewer' for countable nouns (apples). 'Less' for uncountable (sugar, water, time)."
+  },
+  {
+    "tier": 5,
+    "question": "Which is correct: 'Between you and ___, the plan is risky.'?",
+    "answer": "me",
+    "choices": [
+      "me",
+      "I",
+      "myself",
+      "my"
+    ],
+    "context": "'Between' is a preposition; its object takes objective case. 'You and me'. 'I' is subjective."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct usage of 'who' vs 'whom'.",
+    "answer": "Whom did you see?",
+    "choices": [
+      "Whom did you see?",
+      "Who did you see?",
+      "Whomever did you see?",
+      "Whose did you see?"
+    ],
+    "context": "'Whom' is the object of 'see'. Test: you saw HIM, not 'you saw HE'. Therefore 'whom'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is correct: 'She and ___ went to the store.'?",
+    "answer": "I (subject)",
+    "choices": [
+      "I (subject)",
+      "me (object)",
+      "myself (reflexive)",
+      "mine (possessive)"
+    ],
+    "context": "Subject pronouns: I, he, she, we, they. After 'and' as part of the subject, use 'I'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'Lay' vs 'Lie'.",
+    "answer": "I lie down for a nap.",
+    "choices": [
+      "I lie down for a nap.",
+      "I lay down for a nap now.",
+      "I am laying down for a nap.",
+      "I laid down for a nap now."
+    ],
+    "context": "'Lie' = recline (intransitive, no object). 'Lay' = place (transitive, takes object). Present: lie, lay; past: lay, laid; past part.: lain, laid."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'affect' vs 'effect'.",
+    "answer": "Coffee affects my sleep.",
+    "choices": [
+      "Coffee affects my sleep.",
+      "Coffee effects my sleep.",
+      "Coffee affect my sleep.",
+      "Coffee is effecting my sleep."
+    ],
+    "context": "'Affect' (usually verb) = to influence. 'Effect' (usually noun) = the result. Coffee affects sleep; the effect is insomnia."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'fewer' vs 'less'.",
+    "answer": "There are fewer cars on the road today.",
+    "choices": [
+      "There are fewer cars on the road today.",
+      "There are less cars on the road today.",
+      "There are fewer of car today.",
+      "There are lesser cars on the road today."
+    ],
+    "context": "Countable items (cars, books, students) take 'fewer'. Uncountable (water, sugar, traffic) takes 'less'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'farther' vs 'further'.",
+    "answer": "He ran farther than I did.",
+    "choices": [
+      "He ran farther than I did.",
+      "He ran further than I did.",
+      "He further ran than I did.",
+      "He ran more far than I did."
+    ],
+    "context": "'Farther' = physical distance. 'Further' = figurative or additional. Conservative usage; modern often blurs."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'principal' vs 'principle'.",
+    "answer": "The school principal is a man of high principles.",
+    "choices": [
+      "The school principal is a man of high principles.",
+      "The school principle is a man of high principals.",
+      "The school principal is a man of high principals.",
+      "The school principle is a man of high principles."
+    ],
+    "context": "'Principal' (noun) = head person; (adj) = main. 'Principle' = rule or standard."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'compose' vs 'comprise'.",
+    "answer": "The team comprises ten members.",
+    "choices": [
+      "The team comprises ten members.",
+      "The team is comprised of ten members.",
+      "Ten members comprise the team.",
+      "The team comprises of ten members."
+    ],
+    "context": "Traditional rule: the whole comprises the parts ('the team comprises ten players'). 'Comprised of' is widely used but disputed."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'i.e.' vs 'e.g.'.",
+    "answer": "Use 'i.e.' for 'that is' and 'e.g.' for 'for example'.",
+    "choices": [
+      "Use 'i.e.' for 'that is' and 'e.g.' for 'for example'.",
+      "Use 'i.e.' for 'for example' and 'e.g.' for 'that is'.",
+      "They mean the same thing.",
+      "Use 'i.e.' only in lists."
+    ],
+    "context": "'I.e.' (id est) = that is/in other words. 'E.g.' (exempli gratia) = for example. Don't swap them."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'historic' vs 'historical'.",
+    "answer": "The signing was a historic moment.",
+    "choices": [
+      "The signing was a historic moment.",
+      "The signing was a historical moment.",
+      "The signing was an historic moment in history.",
+      "The signing was historic and historical."
+    ],
+    "context": "'Historic' = important in history. 'Historical' = related to history (often factual/research)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'continual' vs 'continuous'.",
+    "answer": "His continual interruptions annoyed her.",
+    "choices": [
+      "His continual interruptions annoyed her.",
+      "His continuous interruptions annoyed her.",
+      "His continual interruption annoyed her.",
+      "His continuously interruption annoyed her."
+    ],
+    "context": "'Continual' = repeated, with breaks. 'Continuous' = without breaks. Interruptions are intermittent."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the correct: 'discreet' vs 'discrete'.",
+    "answer": "Be discreet about discrete data points.",
+    "choices": [
+      "Be discreet about discrete data points.",
+      "Be discrete about discreet data points.",
+      "Be discreet about discreet data.",
+      "Be discrete about discrete data."
+    ],
+    "context": "'Discreet' = careful, tactful. 'Discrete' = separate, distinct. Different spellings, different meanings."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the metonymy.",
+    "answer": "The crown decreed it.",
+    "choices": [
+      "The crown decreed it.",
+      "The king was strong.",
+      "The throne broke.",
+      "Crown jewels shone."
+    ],
+    "context": "Metonymy: 'crown' stands for the monarch. Associated thing substitutes for the actual referent."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the personification.",
+    "answer": "The wind whispered secrets through the trees.",
+    "choices": [
+      "The wind whispered secrets through the trees.",
+      "The wind blew hard against the trees.",
+      "Trees swayed wildly in the strong wind.",
+      "Wind and trees together made noise."
+    ],
+    "context": "Personification: non-human (wind) given human action (whispering secrets)."
+  },
+  {
+    "tier": 5,
+    "question": "Which is metaphor (not simile)?",
+    "answer": "Life is a journey.",
+    "choices": [
+      "Life is a journey.",
+      "Life is like a journey.",
+      "Life resembles a journey.",
+      "Life and journey are similar."
+    ],
+    "context": "Metaphor: direct identification (X IS Y). Simile uses 'like' or 'as'."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the extended metaphor.",
+    "answer": "All the world's a stage, and all the men and women merely players...",
+    "choices": [
+      "All the world's a stage, and all the men and women merely players...",
+      "The world rotates on its axis as the moon orbits Earth.",
+      "Men and women sometimes act in plays at the theater.",
+      "All the stages of life come and go in their proper turn."
+    ],
+    "context": "Extended metaphor: a single comparison sustained through multiple lines or paragraphs. Shakespeare's As You Like It."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the alliteration.",
+    "answer": "Peter Piper picked a peck of pickled peppers.",
+    "choices": [
+      "Peter Piper picked a peck of pickled peppers.",
+      "Sue saw seven sparrows.",
+      "She sells seashells.",
+      "All bright birds boldly sang."
+    ],
+    "context": "Alliteration: repeated initial consonant sound (P sound throughout the famous tongue-twister)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the assonance.",
+    "answer": "Fleet feet sweep by sleeping geese.",
+    "choices": [
+      "Fleet feet sweep by sleeping geese.",
+      "Peter Piper picked a peck.",
+      "Rough and ready.",
+      "Heat haze rising."
+    ],
+    "context": "Assonance: repeated vowel sound (long 'e' here). Different from alliteration (consonants)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the onomatopoeia.",
+    "answer": "The bees buzzed in the meadow.",
+    "choices": [
+      "The bees buzzed in the meadow.",
+      "The bees flew quickly.",
+      "The bees were active.",
+      "Meadows have bees."
+    ],
+    "context": "Onomatopoeia: word imitates sound. 'Buzz' sounds like a bee. Also: hiss, crash, whisper, murmur, pop."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the simile.",
+    "answer": "She was as quiet as a mouse.",
+    "choices": [
+      "She was as quiet as a mouse.",
+      "She was very quiet.",
+      "She was a mouse.",
+      "Quietness is mouse-like."
+    ],
+    "context": "Simile: comparison with 'like' or 'as'. Metaphor would say 'she was a mouse'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the irony (verbal).",
+    "answer": "What a lovely day! (during a thunderstorm)",
+    "choices": [
+      "What a lovely day! (during a thunderstorm)",
+      "What a lovely day! (during sunny weather)",
+      "Today is rainy.",
+      "The weather is bad."
+    ],
+    "context": "Verbal irony: meaning the opposite of what's literally said. Requires context (storm) to read the inversion."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the situational irony.",
+    "answer": "A fire station burns down.",
+    "choices": [
+      "A fire station burns down.",
+      "A house catches fire.",
+      "Firefighters put out a fire.",
+      "A fire station is built."
+    ],
+    "context": "Situational irony: an outcome that defies expectation (a fire station, of all places, burning)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the dramatic irony.",
+    "answer": "The audience knows Romeo and Juliet are doomed; the characters don't.",
+    "choices": [
+      "The audience knows Romeo and Juliet are doomed; the characters don't.",
+      "The audience and characters both know everything.",
+      "The actors forget their lines.",
+      "The play has a happy ending."
+    ],
+    "context": "Dramatic irony: audience knows what characters don't. Shakespeare's tragedies depend heavily on this."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the euphemism.",
+    "answer": "He passed away peacefully.",
+    "choices": [
+      "He passed away peacefully.",
+      "He died peacefully.",
+      "He went to a better place suddenly.",
+      "He left this world."
+    ],
+    "context": "Euphemism: softer phrasing for unpleasant reality. 'Passed away' for 'died'. (Note: B is direct, not euphemism.)"
+  },
+  {
+    "tier": 5,
+    "question": "Pick the pun.",
+    "answer": "A bicycle can't stand on its own — it's two-tired.",
+    "choices": [
+      "A bicycle can't stand on its own — it's two-tired.",
+      "A bicycle is fast on the open road.",
+      "A bicycle needs two wheels to roll.",
+      "Bicycles are popular all over the place."
+    ],
+    "context": "Pun: play on words exploiting double meaning. 'Two-tired' / 'too tired'."
+  },
+  {
+    "tier": 5,
+    "question": "Which is allusion?",
+    "answer": "She had the patience of Job.",
+    "choices": [
+      "She had the patience of Job.",
+      "She was very patient.",
+      "She waited a long time.",
+      "Patience is a virtue."
+    ],
+    "context": "Allusion: reference to a famous text or figure (Job, from the Bible). Activates shared cultural knowledge."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the apostrophe (figure of speech, not punctuation).",
+    "answer": "O Captain! My Captain!",
+    "choices": [
+      "O Captain! My Captain!",
+      "The captain is brave.",
+      "Captain's orders.",
+      "He was a fine captain."
+    ],
+    "context": "Apostrophe (figure): direct address to an absent or dead person, abstraction, or thing. Whitman's poem on Lincoln."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'The number of students ___ growing.'",
+    "answer": "is",
+    "choices": [
+      "is",
+      "are",
+      "be",
+      "being"
+    ],
+    "context": "'The number' is singular (refers to one count). 'A number' is plural ('a number of students are leaving')."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Either Tom or his sisters ___ coming.'",
+    "answer": "are",
+    "choices": [
+      "are",
+      "is",
+      "be",
+      "being"
+    ],
+    "context": "With 'either ... or' / 'neither ... nor', the verb agrees with the nearer subject. 'Sisters' (plural) → 'are'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Half of the cake ___ gone.'",
+    "answer": "is",
+    "choices": [
+      "is",
+      "are",
+      "be",
+      "being"
+    ],
+    "context": "Fractions agree with their referent. 'Cake' is singular (a thing) → 'is'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'The committee ___ divided in its opinions.'",
+    "answer": "is",
+    "choices": [
+      "is",
+      "are",
+      "were",
+      "be"
+    ],
+    "context": "Collective nouns (committee, team, family) are singular in American English when acting as one unit; plural in British when members act separately."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Five years ___ a long time.'",
+    "answer": "is",
+    "choices": [
+      "is",
+      "are",
+      "were",
+      "be"
+    ],
+    "context": "Time, money, and distance can be singular when expressing one amount/period: 'five years is...' (one span)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'There ___ many reasons to celebrate.'",
+    "answer": "are",
+    "choices": [
+      "are",
+      "is",
+      "was",
+      "be"
+    ],
+    "context": "'There' construction: verb agrees with the real subject after it. 'Reasons' is plural → 'are'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Mathematics ___ my favorite subject.'",
+    "answer": "is",
+    "choices": [
+      "is",
+      "are",
+      "be",
+      "were"
+    ],
+    "context": "Some -s ending nouns (mathematics, physics, news, economics, statistics as field) are singular despite -s ending."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'The data ___ inconclusive.'",
+    "answer": "is or are (both work)",
+    "choices": [
+      "is or are (both work)",
+      "is (singular only)",
+      "are (plural only)",
+      "be (subjunctive only)"
+    ],
+    "context": "'Data' was Latin plural ('datum' singular) — strict: 'are'. Modern usage often treats as mass noun ('is'). Both accepted."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'My family ___ very supportive.'",
+    "answer": "is",
+    "choices": [
+      "is",
+      "are",
+      "be",
+      "are being"
+    ],
+    "context": "Collective noun 'family' = singular in American English (acting as one unit). British English may use 'are'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Each of the boys ___ his own room.'",
+    "answer": "has",
+    "choices": [
+      "has",
+      "have",
+      "having",
+      "had been having"
+    ],
+    "context": "'Each' is singular: 'each of X has...'. Don't be misled by the plural noun 'boys' in the modifier."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Everyone ___ their best.'",
+    "answer": "tries",
+    "choices": [
+      "tries",
+      "try",
+      "trying",
+      "tried"
+    ],
+    "context": "'Everyone' is grammatically singular ('everyone tries'). Pronoun agreement is contested: 'his/her best' (formal) vs 'their best' (now accepted)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the habitual past tense.",
+    "answer": "She used to walk to school every day.",
+    "choices": [
+      "She used to walk to school every day.",
+      "She walks to school every day.",
+      "She is walking to school every day.",
+      "She has walked to school every day."
+    ],
+    "context": "'Used to + verb' marks past habit or repeated action no longer true. Common past-habitual form."
+  },
+  {
+    "tier": 5,
+    "question": "Which expresses an unfulfilled past habit?",
+    "answer": "He would smoke before he quit.",
+    "choices": [
+      "He would smoke before he quit.",
+      "He smokes before quitting.",
+      "He has smoked before he quit.",
+      "He is smoking before quitting."
+    ],
+    "context": "'Would + verb' (with past time context) marks past repeated action — habitual past, often contrasted with present."
+  },
+  {
+    "tier": 5,
+    "question": "What does 'I'm finishing my book this week' express?",
+    "answer": "Present progressive for planned future",
+    "choices": [
+      "Present progressive for planned future",
+      "Future perfect ongoing duration",
+      "Past progressive in narration",
+      "Habitual present repeated action"
+    ],
+    "context": "Present progressive often signals a planned/arranged future event. Common conversational form."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the 'going to' future for an intention.",
+    "answer": "I am going to start a new project.",
+    "choices": [
+      "I am going to start a new project.",
+      "I will start a new project.",
+      "I start a new project.",
+      "I started a new project."
+    ],
+    "context": "'Be going to + verb' signals intention or arranged future. 'Will' often signals decision-at-moment or prediction."
+  },
+  {
+    "tier": 5,
+    "question": "Which uses 'will' for prediction (not intention)?",
+    "answer": "It will rain tomorrow.",
+    "choices": [
+      "It will rain tomorrow.",
+      "I will go now.",
+      "She will be a doctor.",
+      "We will have dinner."
+    ],
+    "context": "'Will' for impersonal prediction. 'Going to' would also work but emphasizes evidence-based prediction."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the stative verb.",
+    "answer": "know",
+    "choices": [
+      "know",
+      "run",
+      "jump",
+      "swim"
+    ],
+    "context": "Stative verbs (know, believe, love, want, understand, seem) describe states, not actions. Usually NOT used in progressive."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the dynamic (action) verb.",
+    "answer": "build",
+    "choices": [
+      "build",
+      "know",
+      "love",
+      "believe"
+    ],
+    "context": "Dynamic verbs describe actions. Stative verbs describe states. Dynamic can be progressive ('is building'); stative usually can't."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the inchoative aspect (beginning of action)?",
+    "answer": "She began to sing.",
+    "choices": [
+      "She began to sing.",
+      "She sang.",
+      "She had sung.",
+      "She sings."
+    ],
+    "context": "Inchoative/ingressive aspect marks the start of an action. 'Begin to', 'start to', 'set out to' — all inchoative."
+  },
+  {
+    "tier": 5,
+    "question": "Which is the iterative aspect (repeated action)?",
+    "answer": "She kept knocking on the door.",
+    "choices": [
+      "She kept knocking on the door.",
+      "She knocked once.",
+      "She is knocking now.",
+      "She had knocked."
+    ],
+    "context": "Iterative aspect marks repeated action: 'kept + -ing', 'would + verb' (in past habituals)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the habitual aspect.",
+    "answer": "She used to drink coffee every morning.",
+    "choices": [
+      "She used to drink coffee every morning.",
+      "She is drinking coffee.",
+      "She drank coffee yesterday.",
+      "She has drunk coffee."
+    ],
+    "context": "Habitual aspect: regular repeated activity over a time period. 'Used to' or 'would' (past) or simple present (present habits)."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the perfective vs imperfective.",
+    "answer": "'Walked' is perfective; 'was walking' is imperfective.",
+    "choices": [
+      "'Walked' is perfective; 'was walking' is imperfective.",
+      "'Walked' is imperfective; 'was walking' is perfective.",
+      "Both are perfective.",
+      "Both are imperfective."
+    ],
+    "context": "Perfective (simple past) views an action as a whole. Imperfective (progressive) views it as ongoing."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the direct object in 'She gave him a book.'",
+    "answer": "a book",
+    "choices": [
+      "a book",
+      "him",
+      "she",
+      "gave"
+    ],
+    "context": "Direct object: 'a book' (receives the action). Indirect object: 'him' (receives the book)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the indirect object in 'I sent Mary a letter.'",
+    "answer": "Mary",
+    "choices": [
+      "Mary",
+      "letter",
+      "sent",
+      "I"
+    ],
+    "context": "Indirect object 'Mary' = recipient. Direct object 'a letter' = thing sent."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the subject complement in 'She is a doctor.'",
+    "answer": "a doctor",
+    "choices": [
+      "a doctor",
+      "she is",
+      "the she",
+      "is a"
+    ],
+    "context": "Subject complement (after linking verb 'is') renames or describes subject. 'A doctor' renames 'she'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the object complement in 'They elected her president.'",
+    "answer": "president",
+    "choices": [
+      "president",
+      "her",
+      "they",
+      "elected"
+    ],
+    "context": "Object complement renames or describes the direct object. 'President' describes 'her' (the direct object)."
+  },
+  {
+    "tier": 5,
+    "question": "Which is a linking verb?",
+    "answer": "seem",
+    "choices": [
+      "seem",
+      "run",
+      "throw",
+      "build"
+    ],
+    "context": "Linking verbs (be, seem, become, feel, look, sound, taste, appear, grow) connect subject to complement. Don't take direct objects."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the transitive verb.",
+    "answer": "She wrote a letter.",
+    "choices": [
+      "She wrote a letter.",
+      "The bird flew.",
+      "She slept.",
+      "He arrived."
+    ],
+    "context": "Transitive verb takes a direct object ('wrote' + 'letter'). Intransitive doesn't (flew, slept, arrived)."
+  },
+  {
+    "tier": 5,
+    "question": "Which verb is ditransitive (takes two objects)?",
+    "answer": "give",
+    "choices": [
+      "give",
+      "sleep",
+      "be",
+      "seem"
+    ],
+    "context": "Ditransitive: takes both direct + indirect object. 'Give him a book': him = indirect, book = direct."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the appositive.",
+    "answer": "My brother, a doctor, lives nearby.",
+    "choices": [
+      "My brother, a doctor, lives nearby.",
+      "My brother lives nearby.",
+      "A doctor lives nearby.",
+      "The doctor is nearby."
+    ],
+    "context": "Appositive: noun phrase that renames or explains another noun. 'A doctor' renames 'my brother'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the relative pronoun in 'The book that I read was great.'",
+    "answer": "that",
+    "choices": [
+      "that",
+      "the",
+      "I",
+      "great"
+    ],
+    "context": "Relative pronouns (who, whom, whose, which, that) introduce relative clauses modifying nouns."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the conjunctive adverb.",
+    "answer": "however",
+    "choices": [
+      "however",
+      "because",
+      "whenever",
+      "although"
+    ],
+    "context": "Conjunctive adverbs (however, therefore, moreover, consequently) link ideas across independent clauses. Use semicolons, not just commas."
+  },
+  {
+    "tier": 5,
+    "question": "Identify the coordinating conjunction.",
+    "answer": "but",
+    "choices": [
+      "but",
+      "yet",
+      "and",
+      "for"
+    ],
+    "context": "Coordinating conjunctions (FANBOYS: for, and, nor, but, or, yet, so) join equal-rank elements. Subordinating ones (although, since, if) introduce dependent clauses."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the subordinating conjunction.",
+    "answer": "although",
+    "choices": [
+      "although",
+      "however",
+      "yet",
+      "for"
+    ],
+    "context": "Subordinating conjunctions (although, because, since, when, if, while, unless, after) introduce dependent clauses."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the prepositional phrase in 'She walked through the woods.'",
+    "answer": "through the woods",
+    "choices": [
+      "through the woods",
+      "the woods",
+      "walked through",
+      "she walked"
+    ],
+    "context": "Prepositional phrase = preposition + object. 'Through' + 'the woods'. Modifies the verb (adverbially)."
+  },
+  {
+    "tier": 5,
+    "question": "Pick the formal subject pronoun for 'It was ___ who called.'",
+    "answer": "I (formal)",
+    "choices": [
+      "I (formal)",
+      "me (informal)",
+      "myself (emphatic)",
+      "mine (possessive)"
+    ],
+    "context": "After 'it is/was' (linking verb), use subject pronoun in formal English: 'It was I'. Informal: 'It was me.'"
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: '___ does he think he is?'",
+    "answer": "Who",
+    "choices": [
+      "Who",
+      "Whom",
+      "Whose",
+      "Which"
+    ],
+    "context": "'Who' is the subject of 'is'. 'Whom' would be the object — but here 'he' is the subject of 'is'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'The award goes to ___ wins.'",
+    "answer": "whoever",
+    "choices": [
+      "whoever",
+      "whomever",
+      "whosever",
+      "which"
+    ],
+    "context": "Within the relative clause, 'whoever' is the subject of 'wins'. The whole clause is the object of 'to'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Give it to ___ wants it.'",
+    "answer": "whoever",
+    "choices": [
+      "whoever",
+      "whomever",
+      "whosever",
+      "whose"
+    ],
+    "context": "'Whoever' = subject of 'wants'. The whole clause 'whoever wants it' is the object of 'to'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'I will help ___ I can.'",
+    "answer": "whomever",
+    "choices": [
+      "whomever",
+      "whoever",
+      "whosever",
+      "whose"
+    ],
+    "context": "Object of 'help' is the whole clause; within the clause, 'whomever' is the object of 'help'. (Note: subjects of 'I can' is 'I'.)"
+  },
+  {
+    "tier": 5,
+    "question": "Pick the reflexive form for 'He hurt ___.' (subject = object)",
+    "answer": "himself",
+    "choices": [
+      "himself",
+      "him there",
+      "his own",
+      "the man"
+    ],
+    "context": "Reflexive pronoun (himself, herself, themselves) when subject and object are the same."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Mary and ___ went to the store.'",
+    "answer": "I (subject)",
+    "choices": [
+      "I (subject)",
+      "me (object)",
+      "myself (reflexive)",
+      "mine (possessive)"
+    ],
+    "context": "Subject pronouns after 'and' in compound subjects: 'Mary and I'. Test: drop 'Mary and' — 'I went' sounds right."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'They invited Mary and ___.'",
+    "answer": "me (object)",
+    "choices": [
+      "me (object)",
+      "I (subject)",
+      "myself (reflexive)",
+      "mine (possessive)"
+    ],
+    "context": "Object pronouns after 'and' in compound objects: 'Mary and me'. Test: 'They invited me' sounds right."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct usage of 'myself'.",
+    "answer": "I made it myself.",
+    "choices": [
+      "I made it myself.",
+      "Myself made it.",
+      "Mary and myself made it.",
+      "Send it to myself and Mary."
+    ],
+    "context": "Reflexive 'myself' refers back to the subject 'I'. Used for emphasis (I myself) or as object of action whose subject is 'I'."
+  },
+  {
+    "tier": 5,
+    "question": "Pick correct: 'Whom did you see at the party?'",
+    "answer": "Whom did you see at the party?",
+    "choices": [
+      "Whom did you see at the party?",
+      "Who did you see at the party?",
+      "Whose did you see at the party?",
+      "What did you see at the party?"
+    ],
+    "context": "'You saw HIM' — object — therefore 'whom' in the question. Informal use accepts 'who'."
   }
 ]

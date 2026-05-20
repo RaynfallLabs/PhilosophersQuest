@@ -710,12 +710,12 @@
   {
     "tier": 2,
     "question": "Larger: −02 or −10?",
-    "answer": "−02",
+    "answer": "−2",
     "choices": [
-      "−02",
+      "−2",
       "−10",
-      "−05",
-      "−08"
+      "−5",
+      "−8"
     ],
     "context": "−2 > −10. Closer to 0 means larger for negatives."
   },
@@ -738,8 +738,8 @@
     "choices": [
       "+12",
       "−12",
-      "−02",
-      "+02"
+      "−2",
+      "+2"
     ],
     "context": "|x| strips the sign — distance from 0."
   },
@@ -905,9 +905,9 @@
     "answer": "−10",
     "choices": [
       "−10",
-      "−02",
+      "−2",
       "+10",
-      "+02"
+      "+2"
     ],
     "context": "Subtracting a positive moves left: −6 → −10."
   },
@@ -965,7 +965,7 @@
     "answer": "1001",
     "choices": [
       "1001",
-      "0999",
+      "999",
       "9991",
       "1009"
     ],
@@ -1243,7 +1243,7 @@
       "1.0",
       "0.1",
       "0.0",
-      "10."
+      "10"
     ],
     "context": "Multiplying by 10 shifts the decimal point right."
   },
@@ -1409,9 +1409,9 @@
     "answer": "11",
     "choices": [
       "11",
-      "04",
-      "06",
-      "09"
+      "4",
+      "6",
+      "9"
     ],
     "context": "11 has only 1 and itself. The others all factor."
   },
@@ -1554,7 +1554,7 @@
     "choices": [
       "20",
       "18",
-      "09",
+      "9",
       "25"
     ],
     "context": "Area = length × width."
@@ -1709,7 +1709,7 @@
     "answer": "24",
     "choices": [
       "24",
-      "09",
+      "9",
       "12",
       "26"
     ],
@@ -1723,7 +1723,7 @@
       "12",
       "24",
       "10",
-      "06"
+      "6"
     ],
     "context": "Area = ½ × base × height = ½ × 24."
   },
@@ -1906,18 +1906,6 @@
       "3.14"
     ],
     "context": "φ ≈ 1.618 — appears in art, shells, and Fibonacci."
-  },
-  {
-    "tier": 5,
-    "question": "Pythagoras's theorem: a² + b² = ?",
-    "answer": "c²",
-    "choices": [
-      "c²",
-      "c³",
-      "2c",
-      "ab"
-    ],
-    "context": "Right triangles: legs² + legs² = hypotenuse²."
   },
   {
     "tier": 3,
@@ -4561,7 +4549,7 @@
   },
   {
     "tier": 2,
-    "question": "How many sides does a octagon have?",
+    "question": "How many sides does an octagon have?",
     "answer": "8",
     "choices": [
       "8",
@@ -5772,7 +5760,7 @@
     "context": "Volume of a cube = side³."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Point (3, 5) — which quadrant?",
     "answer": "I",
     "choices": [
@@ -5880,7 +5868,7 @@
     "context": "Multiply each term inside by 2."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "If x − 4 = 10, x = ?",
     "answer": "14",
     "choices": [
@@ -6204,18 +6192,6 @@
     "context": "Pi ≈ 3.14159… (2.72 is e; 1.41 is √2; 1.62 is φ)."
   },
   {
-    "tier": 5,
-    "question": "The Pythagorean theorem: a² + b² = ?",
-    "answer": "c²",
-    "choices": [
-      "c²",
-      "c",
-      "2c",
-      "abc"
-    ],
-    "context": "In a right triangle, c is the hypotenuse."
-  },
-  {
     "tier": 3,
     "question": "The golden ratio φ is approximately…",
     "answer": "1.618",
@@ -6262,18 +6238,6 @@
       "120°"
     ],
     "context": "Euclidean geometry: 180° always."
-  },
-  {
-    "tier": 1,
-    "question": "Zero as a written numeral was developed by…",
-    "answer": "Indian mathematicians",
-    "choices": [
-      "Indian mathematicians",
-      "Greek philosophers",
-      "Roman engineers",
-      "Egyptian priests"
-    ],
-    "context": "The positional zero comes from India, transmitted via Arabic scholars."
   },
   {
     "tier": 3,
@@ -13669,7 +13633,7 @@
   },
   {
     "tier": 2,
-    "question": "What defines an scalene triangle?",
+    "question": "What defines a scalene triangle?",
     "answer": "No sides equal",
     "choices": [
       "No sides equal",
@@ -14112,7 +14076,7 @@
     "context": "Operation vocabulary: Remainder."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "If a÷b = c with r left, c is the:",
     "answer": "Quotient",
     "choices": [
@@ -14124,7 +14088,7 @@
     "context": "Operation vocabulary: Quotient."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "If a÷b = c with r left, a is the:",
     "answer": "Dividend",
     "choices": [
@@ -14136,7 +14100,7 @@
     "context": "Operation vocabulary: Dividend."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "If a÷b = c with r left, b is the:",
     "answer": "Divisor",
     "choices": [
@@ -14232,7 +14196,7 @@
     "context": "Fraction vocabulary: 3/2."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Property that says a + b = b + a:",
     "answer": "Commutative",
     "choices": [
@@ -14292,7 +14256,7 @@
     "context": "Property: −7."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "The multiplicative inverse of 4 is:",
     "answer": "1/4",
     "choices": [
@@ -14304,7 +14268,7 @@
     "context": "Property: 1/4."
   },
   {
-    "tier": 1,
+    "tier": 3,
     "question": "Is subtraction commutative?",
     "answer": "No",
     "choices": [
@@ -14690,12 +14654,12 @@
   {
     "tier": 2,
     "question": "Evaluate the expression: (8 + 4) ÷ 2 + 3",
-    "answer": "= 09",
+    "answer": "9",
     "choices": [
-      "= 09",
-      "= 07",
-      "= 05",
-      "= 11"
+      "9",
+      "7",
+      "5",
+      "11"
     ],
     "context": "Parentheses first: 8+4=12. Then 12÷2=6, then 6+3=9."
   },
@@ -14750,17 +14714,17 @@
   {
     "tier": 3,
     "question": "Mixed-operations problem: 5 + 18 ÷ 3 − 2",
-    "answer": "= 09",
+    "answer": "9",
     "choices": [
-      "= 09",
-      "= 05",
-      "= 07",
-      "= 11"
+      "9",
+      "5",
+      "7",
+      "11"
     ],
     "context": "Divide first: 18÷3=6. Then 5+6−2=9."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Resolve both parens first: (9 − 4) × (3 + 2)",
     "answer": "25",
     "choices": [
@@ -14786,12 +14750,12 @@
   {
     "tier": 3,
     "question": "What is |−7| + |3|?",
-    "answer": "= 10",
+    "answer": "10",
     "choices": [
-      "= 10",
-      "= −4",
-      "= −10",
-      "==  4"
+      "10",
+      "−4",
+      "−10",
+      "4"
     ],
     "context": "Absolute values strip the sign: |−7|=7 and |3|=3. Sum: 7+3=10."
   },
@@ -14827,31 +14791,31 @@
       "300",
       "330",
       "303",
-      "030"
+      "30"
     ],
     "context": "The 3 is in the hundreds column, so it stands for 3×100 = 300."
   },
   {
     "tier": 3,
     "question": "Signed-integer subtraction: −6 − (−4)",
-    "answer": "= −02",
+    "answer": "−2",
     "choices": [
-      "= −02",
-      "= −10",
-      "= +02",
-      "= +10"
+      "−2",
+      "−10",
+      "+2",
+      "+10"
     ],
     "context": "Subtracting a negative is adding: −6 − (−4) = −6 + 4 = −2."
   },
   {
     "tier": 2,
     "question": "What is the opposite of −9 plus 5?",
-    "answer": "= +14",
+    "answer": "+14",
     "choices": [
-      "= +14",
-      "= −04",
-      "= −14",
-      "= +04"
+      "+14",
+      "−4",
+      "−14",
+      "+4"
     ],
     "context": "Opposite of −9 is 9. Then 9+5 = 14."
   },
@@ -14861,9 +14825,9 @@
     "answer": "11/12",
     "choices": [
       "11/12",
-      "08/12",
-      "03/07",
-      "05/08"
+      "8/12",
+      "3/7",
+      "5/8"
     ],
     "context": "Common denominator 12: ⅔=8/12, ¼=3/12. Sum: 8/12+3/12=11/12."
   },
@@ -14874,8 +14838,8 @@
     "choices": [
       "5/12",
       "1/12",
-      "2/07",
-      "1/02"
+      "2/7",
+      "1/2"
     ],
     "context": "LCD 12: ¾=9/12, ⅓=4/12. Difference: 9/12−4/12=5/12."
   },
@@ -14894,12 +14858,12 @@
   {
     "tier": 2,
     "question": "Divide the fractions: ⅗ ÷ ½",
-    "answer": "6/05",
+    "answer": "6/5",
     "choices": [
-      "6/05",
+      "6/5",
       "3/10",
-      "5/06",
-      "3/07"
+      "5/6",
+      "3/7"
     ],
     "context": "Dividing by ½ is multiplying by 2: ⅗ × 2 = 6/5 (or 1⅕)."
   },
@@ -14909,9 +14873,9 @@
     "answer": "9/20",
     "choices": [
       "9/20",
-      "4/09",
-      "1/02",
-      "1/05"
+      "4/9",
+      "1/2",
+      "1/5"
     ],
     "context": "0.45 = 45/100 = 9/20 after dividing by GCD 5."
   },
@@ -14942,10 +14906,10 @@
   {
     "tier": 3,
     "question": "Mixed: 2⅓ + 1⅔ = ?",
-    "answer": "= 4",
+    "answer": "4",
     "choices": [
-      "= 4",
-      "= 3",
+      "4",
+      "3",
       "3 ⅓",
       "4 ⅓"
     ],
@@ -14959,19 +14923,19 @@
       "37.5%",
       "30.0%",
       "38.0%",
-      "03.8%"
+      "3.8%"
     ],
     "context": "⅜ = 0.375 = 37.5%."
   },
   {
     "tier": 2,
     "question": "Compute: 7/10 − 1/5",
-    "answer": "1/02",
+    "answer": "1/2",
     "choices": [
-      "1/02",
-      "6/05",
+      "1/2",
+      "6/5",
       "6/15",
-      "2/05"
+      "2/5"
     ],
     "context": "Common denominator 10: 7/10 − 2/10 = 5/10 = 1/2."
   },
@@ -14990,11 +14954,11 @@
   {
     "tier": 2,
     "question": "Compute: ⅞ + ⅛",
-    "answer": "01/1",
+    "answer": "1/1",
     "choices": [
-      "01/1",
-      "09/8",
-      "08/8",
+      "1/1",
+      "9/8",
+      "8/8",
       "7/16"
     ],
     "context": "Same denominator: 7/8+1/8 = 8/8 = 1."
@@ -15002,10 +14966,10 @@
   {
     "tier": 2,
     "question": "Convert 0.125 to a fraction.",
-    "answer": "1/08",
+    "answer": "1/8",
     "choices": [
-      "1/08",
-      "1/04",
+      "1/8",
+      "1/4",
       "1/16",
       "1/12"
     ],
@@ -15043,7 +15007,7 @@
       "6.0",
       "5.0",
       "8.0",
-      "12."
+      "12"
     ],
     "context": "12% of 50 = 0.12 × 50 = 6."
   },
@@ -15074,11 +15038,11 @@
   {
     "tier": 2,
     "question": "What percent of 50 is 30?",
-    "answer": "060%",
+    "answer": "60%",
     "choices": [
-      "060%",
-      "030%",
-      "020%",
+      "60%",
+      "30%",
+      "20%",
       "150%"
     ],
     "context": "30/50 = 0.6 = 60%."
@@ -15091,18 +15055,18 @@
       "16",
       "15",
       "20",
-      "09"
+      "9"
     ],
     "context": "Scale 3→12 means multiply by 4. So 4×4 = 16."
   },
   {
     "tier": 5,
     "question": "Price rose from 40 to 50. Percent increase?",
-    "answer": "025%",
+    "answer": "25%",
     "choices": [
-      "025%",
-      "020%",
-      "010%",
+      "25%",
+      "20%",
+      "10%",
       "125%"
     ],
     "context": "Change = 10. Percent = 10/40 = 0.25 = 25%."
@@ -15139,7 +15103,7 @@
       "10",
       "15",
       "12",
-      "05"
+      "5"
     ],
     "context": "Parts: 2+3=5. Each part = 25/5 = 5. Red = 2×5 = 10."
   },
@@ -15182,12 +15146,12 @@
   {
     "tier": 3,
     "question": "Recipe needs flour:sugar = 5:2. With 10 cups flour, sugar?",
-    "answer": "= 4",
+    "answer": "4",
     "choices": [
-      "= 4",
-      "= 5",
-      "= 2",
-      "20."
+      "4",
+      "5",
+      "2",
+      "20"
     ],
     "context": "Scale 5→10 means multiply by 2. So 2×2 = 4 cups sugar."
   },
@@ -15197,7 +15161,7 @@
     "answer": "12",
     "choices": [
       "12",
-      "06",
+      "6",
       "24",
       "72"
     ],
@@ -15228,7 +15192,7 @@
     "context": "Divisible-by-9 rule: digit sum divisible by 9. 7+2+9=18, yes."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Use the alternating-digits rule — which is a multiple of 11?",
     "answer": "264",
     "choices": [
@@ -15247,19 +15211,19 @@
       "2² × 3 × 5",
       "2¹ × 3 × 5",
       "2³ × 3 × 5",
-      "2² × 03 × 4"
+      "2² × 3 × 4"
     ],
     "context": "60 = 4×15 = 2² × 3 × 5."
   },
   {
     "tier": 2,
     "question": "How many factors does 12 have?",
-    "answer": "06",
+    "answer": "6",
     "choices": [
-      "06",
-      "04",
+      "6",
+      "4",
       "12",
-      "05"
+      "5"
     ],
     "context": "Factors of 12: 1, 2, 3, 4, 6, 12. Six factors."
   },
@@ -15278,10 +15242,10 @@
   {
     "tier": 3,
     "question": "What is GCD(18, 30)?",
-    "answer": "06",
+    "answer": "6",
     "choices": [
-      "06",
-      "03",
+      "6",
+      "3",
       "12",
       "90"
     ],
@@ -15295,7 +15259,7 @@
       "20",
       "40",
       "14",
-      "02"
+      "2"
     ],
     "context": "4=2², 10=2·5. LCM = 2²·5 = 20."
   },
@@ -15306,8 +15270,8 @@
     "choices": [
       "10",
       "30",
-      "09",
-      "08"
+      "9",
+      "8"
     ],
     "context": "30 = 2·3·5. Sum 2+3+5 = 10."
   },
@@ -15353,7 +15317,7 @@
     "answer": "12",
     "choices": [
       "12",
-      "06",
+      "6",
       "18",
       "30"
     ],
@@ -15367,7 +15331,7 @@
       "78.5",
       "31.4",
       "25.0",
-      "157."
+      "157"
     ],
     "context": "Area = πr² = 3.14 × 25 = 78.5."
   },
@@ -15384,13 +15348,13 @@
     "context": "Circumference = 2πr = 2 × 3.14 × 5 = 31.4."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Rectangular box 4 × 5 × 6. Volume?",
     "answer": "120",
     "choices": [
       "120",
-      "060",
-      "074",
+      "60",
+      "74",
       "100"
     ],
     "context": "Volume = l × w × h = 4 × 5 × 6 = 120."
@@ -15398,10 +15362,10 @@
   {
     "tier": 2,
     "question": "Square area = 49. Side length?",
-    "answer": "07.0",
+    "answer": "7.0",
     "choices": [
-      "07.0",
-      "09.0",
+      "7.0",
+      "9.0",
       "14.0",
       "24.5"
     ],
@@ -15414,7 +15378,7 @@
     "choices": [
       "180°",
       "360°",
-      "090°",
+      "90°",
       "270°"
     ],
     "context": "Any plane triangle's interior angles sum to 180°."
@@ -15474,18 +15438,18 @@
     "choices": [
       "5.0",
       "2.5",
-      "10.",
-      "20."
+      "10",
+      "20"
     ],
     "context": "Radius is half the diameter: 10/2 = 5."
   },
   {
     "tier": 2,
     "question": "A right triangle has legs 3 and 4 cm. Hypotenuse?",
-    "answer": "05",
+    "answer": "5",
     "choices": [
-      "05",
-      "07",
+      "5",
+      "7",
       "12",
       "25"
     ],
@@ -15494,11 +15458,11 @@
   {
     "tier": 3,
     "question": "Find the diagonal: right triangle with legs of 5 and 12.",
-    "answer": "013",
+    "answer": "13",
     "choices": [
-      "013",
-      "017",
-      "060",
+      "13",
+      "17",
+      "60",
       "169"
     ],
     "context": "c² = 25 + 144 = 169. c = 13. The 5-12-13 triple."
@@ -15506,11 +15470,11 @@
   {
     "tier": 5,
     "question": "Pythagoras: 8 & 15 are legs. Find side c.",
-    "answer": "017",
+    "answer": "17",
     "choices": [
-      "017",
-      "023",
-      "021",
+      "17",
+      "23",
+      "21",
       "120"
     ],
     "context": "c² = 64 + 225 = 289. c = 17. The 8-15-17 triple."
@@ -15518,10 +15482,10 @@
   {
     "tier": 2,
     "question": "Right triangle leg 6, hypotenuse 10. Other leg?",
-    "answer": "08",
+    "answer": "8",
     "choices": [
-      "08",
-      "04",
+      "8",
+      "4",
       "16",
       "14"
     ],
@@ -15530,36 +15494,36 @@
   {
     "tier": 5,
     "question": "sin(30°) = ?",
-    "answer": "= 1/2",
+    "answer": "1/2",
     "choices": [
-      "= 1/2",
+      "1/2",
       "√3/2",
       "√2/2",
-      "= 1.0"
+      "1.0"
     ],
     "context": "Standard value: sin(30°) = ½ from the 30-60-90 right triangle."
   },
   {
     "tier": 5,
     "question": "cos(60°) = ?",
-    "answer": "= 1/2",
+    "answer": "1/2",
     "choices": [
-      "= 1/2",
+      "1/2",
       "√3/2",
       "√2/2",
-      "= 1.0"
+      "1.0"
     ],
     "context": "cos(60°) = sin(30°) = ½ (complementary angles)."
   },
   {
     "tier": 5,
     "question": "tan(45°) = ?",
-    "answer": "= 1.0",
+    "answer": "1.0",
     "choices": [
-      "= 1.0",
-      "= √3",
+      "1.0",
+      "√3",
       "1/√3",
-      "= 0.0"
+      "0.0"
     ],
     "context": "At 45°, sine equals cosine, so tan = sin/cos = 1."
   },
@@ -15571,7 +15535,7 @@
       "36",
       "12",
       "16",
-      "09"
+      "9"
     ],
     "context": "Area scales by the square of the ratio: 3² = 9. So 4×9 = 36."
   },
@@ -15582,7 +15546,7 @@
     "choices": [
       "a² + b² = c²",
       "a² × b² = c²",
-      "  a + b = c²",
+      "a + b = c²",
       "a × b = c²"
     ],
     "context": "Legs a, b and hypotenuse c satisfy a² + b² = c²."
@@ -15594,8 +15558,8 @@
     "choices": [
       "√2",
       "√3",
-      "1.",
-      "2."
+      "1",
+      "2"
     ],
     "context": "c² = 1+1 = 2, so c = √2. The 45-45-90 triangle's hypotenuse rule."
   },
@@ -15606,20 +15570,20 @@
     "choices": [
       "√3",
       "√2",
-      "2.",
-      "3."
+      "2",
+      "3"
     ],
     "context": "30-60-90 sides ratio: 1 : √3 : 2 (short leg : long leg : hypotenuse)."
   },
   {
     "tier": 3,
     "question": "Inscribed angle theorem: inscribed angle = ___ central angle.",
-    "answer": "= half × the",
+    "answer": "half × the",
     "choices": [
-      "= half × the",
-      "= twice × the",
-      "= equal to a",
-      "= one-third"
+      "half × the",
+      "twice × the",
+      "equal to a",
+      "one-third"
     ],
     "context": "Any inscribed angle is half the central angle subtending the same arc."
   },
@@ -15666,7 +15630,7 @@
     "choices": [
       "x = 21",
       "x = 10",
-      "x = 04",
+      "x = 4",
       "x = 73"
     ],
     "context": "Multiply both sides by 3: x = 21."
@@ -15866,12 +15830,12 @@
   {
     "tier": 4,
     "question": "Cube root of twenty-seven: ∛27 = ?",
-    "answer": "= 3",
+    "answer": "3",
     "choices": [
-      "= 3",
-      "= 6",
-      "= 9",
-      "27."
+      "3",
+      "6",
+      "9",
+      "27"
     ],
     "context": "3³ = 27, so ∛27 = 3."
   },
@@ -15890,11 +15854,11 @@
   {
     "tier": 3,
     "question": "Simplify: 5⁶ ÷ 5⁴",
-    "answer": "025",
+    "answer": "25",
     "choices": [
-      "025",
-      "005",
-      "001",
+      "25",
+      "5",
+      "1",
       "125"
     ],
     "context": "Quotient rule: 5⁶⁻⁴ = 5² = 25."
@@ -15905,9 +15869,9 @@
     "answer": "729",
     "choices": [
       "729",
-      "027",
+      "27",
       "243",
-      "009"
+      "9"
     ],
     "context": "Power-of-a-power: 3⁶ = 729."
   },
@@ -15918,7 +15882,7 @@
     "choices": [
       "4.3 × 10³",
       "4.3 × 10²",
-      "043 × 10²",
+      "43 × 10²",
       "0.4 × 10⁴"
     ],
     "context": "Standard form: one digit before the decimal. 4.3 × 1000 = 4,300."
@@ -15930,7 +15894,7 @@
     "choices": [
       "13",
       "97",
-      "09",
+      "9",
       "10"
     ],
     "context": "√81 = 9, √16 = 4. Sum = 13."
@@ -15941,8 +15905,8 @@
     "answer": "144",
     "choices": [
       "144",
-      "036",
-      "072",
+      "36",
+      "72",
       "100"
     ],
     "context": "16 × 9 = 144. Different bases, multiply the values."
@@ -16034,12 +15998,12 @@
   {
     "tier": 3,
     "question": "Common ratio? 5, 15, 45, 135, ...",
-    "answer": "= 3",
+    "answer": "3",
     "choices": [
-      "= 3",
-      "= 5",
-      "10.",
-      "15."
+      "3",
+      "5",
+      "10",
+      "15"
     ],
     "context": "15/5 = 3, 45/15 = 3, 135/45 = 3."
   },
@@ -16070,12 +16034,12 @@
   {
     "tier": 5,
     "question": "6th Fibonacci number (starting 1, 1)?",
-    "answer": "08",
+    "answer": "8",
     "choices": [
-      "08",
-      "05",
+      "8",
+      "5",
       "13",
-      "06"
+      "6"
     ],
     "context": "1, 1, 2, 3, 5, 8. Sixth term is 8."
   },
@@ -16086,7 +16050,7 @@
     "choices": [
       "125",
       "100",
-      "081",
+      "81",
       "216"
     ],
     "context": "Cubes: 1³, 2³, 3³, 4³. Next is 5³ = 125."
@@ -16130,10 +16094,10 @@
   {
     "tier": 3,
     "question": "Standard deck. P(drawing a heart)?",
-    "answer": "01/4",
+    "answer": "1/4",
     "choices": [
-      "01/4",
-      "01/2",
+      "1/4",
+      "1/2",
       "1/13",
       "13/4"
     ],
@@ -16166,12 +16130,12 @@
   {
     "tier": 3,
     "question": "Two dice. P(sum = 7)?",
-    "answer": "01/06",
+    "answer": "1/6",
     "choices": [
-      "01/06",
-      "01/09",
-      "01/12",
-      "07/36"
+      "1/6",
+      "1/9",
+      "1/12",
+      "7/36"
     ],
     "context": "Sums of 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 of 36 = 1/6."
   },
@@ -16202,12 +16166,12 @@
   {
     "tier": 3,
     "question": "Deck. P(drawing a face card: J, Q, K)?",
-    "answer": "03/13",
+    "answer": "3/13",
     "choices": [
-      "03/13",
-      "01/13",
+      "3/13",
+      "1/13",
       "12/52",
-      "01/04"
+      "1/4"
     ],
     "context": "12 face cards in 52: 12/52 = 3/13."
   },
@@ -16238,22 +16202,22 @@
   {
     "tier": 3,
     "question": "Bag: 4 red, 4 blue, 2 green. P(green)?",
-    "answer": "01/05",
+    "answer": "1/5",
     "choices": [
-      "01/05",
-      "01/10",
-      "02/08",
-      "01/03"
+      "1/5",
+      "1/10",
+      "2/8",
+      "1/3"
     ],
     "context": "2 of 10 = 2/10 = ⅕."
   },
   {
     "tier": 3,
     "question": "Arithmetic average of {4, 6, 8, 10, 12}?",
-    "answer": "08",
+    "answer": "8",
     "choices": [
-      "08",
-      "07",
+      "8",
+      "7",
       "10",
       "40"
     ],
@@ -16291,18 +16255,18 @@
       "40",
       "10",
       "14",
-      "04"
+      "4"
     ],
     "context": "Mean × count = sum: 10 × 4 = 40."
   },
   {
     "tier": 3,
     "question": "Range of 100, 95, 102, 88?",
-    "answer": "014",
+    "answer": "14",
     "choices": [
-      "014",
-      "012",
-      "020",
+      "14",
+      "12",
+      "20",
       "100"
     ],
     "context": "Max 102, min 88. Range = 14."
@@ -16422,7 +16386,7 @@
     "choices": [
       "Horizontal line",
       "Vertical line",
-      " Curving line",
+      "Curving line",
       "Diagonal line"
     ],
     "context": "Slope 0 means no rise; the line is horizontal."
@@ -16452,7 +16416,7 @@
     "context": "f(0) = 3·0 + 2 = 2 — the y-intercept."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Pencils cost 25¢ each. 8 pencils?",
     "answer": "$2.00",
     "choices": [
@@ -16488,11 +16452,11 @@
     "context": "Speed = distance/time = 12/3 = 4 km/h."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Sue is 5 years older than Tim. Sum of ages 23. Tim's age?",
-    "answer": "Tim = 09",
+    "answer": "Tim = 9",
     "choices": [
-      "Tim = 09",
+      "Tim = 9",
       "Tim = 11",
       "Tim = 14",
       "Tim = 18"
@@ -16502,11 +16466,11 @@
   {
     "tier": 2,
     "question": "Buy at $20, sell at $25. Percent profit?",
-    "answer": "025%",
+    "answer": "25%",
     "choices": [
-      "025%",
-      "020%",
-      "005%",
+      "25%",
+      "20%",
+      "5%",
       "125%"
     ],
     "context": "Profit 5, on cost 20: 5/20 = 25%."
@@ -16526,11 +16490,11 @@
   {
     "tier": 3,
     "question": "Tank holds 50 gal. Fills 2 gal/min. Full time?",
-    "answer": "025 min",
+    "answer": "25 min",
     "choices": [
-      "025 min",
-      "010 min",
-      "050 min",
+      "25 min",
+      "10 min",
+      "50 min",
       "100 min"
     ],
     "context": "50/2 = 25 minutes."
@@ -16538,11 +16502,11 @@
   {
     "tier": 3,
     "question": "Anna has twice as many marbles as Ben. Total 18. Ben's?",
-    "answer": "Ben = 06",
+    "answer": "Ben = 6",
     "choices": [
-      "Ben = 06",
-      "Ben = 08",
-      "Ben = 09",
+      "Ben = 6",
+      "Ben = 8",
+      "Ben = 9",
       "Ben = 12"
     ],
     "context": "b + 2b = 18, 3b = 18, b = 6."
@@ -16602,22 +16566,10 @@
     "choices": [
       "always 180°",
       "always 360°",
-      "always 090°",
+      "always 90°",
       "varies w size"
     ],
     "context": "An axiomatic consequence of Euclid's parallel postulate — violated on curved surfaces."
-  },
-  {
-    "tier": 1,
-    "question": "Newton's calculus rival was ___.",
-    "answer": "Leibniz",
-    "choices": [
-      "Leibniz",
-      "Euler",
-      "Gauss",
-      "Pascal"
-    ],
-    "context": "Newton and Leibniz developed calculus independently in the 1660s–70s. Leibniz's notation (dy/dx) is what we still use."
   },
   {
     "tier": 4,
@@ -16764,7 +16716,7 @@
     "context": "PEMDAS: parentheses, exponents, multiply/divide L→R, add/subtract L→R. Result 25."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Evaluate: (7 − 3)²",
     "answer": "16",
     "choices": [
@@ -16884,7 +16836,7 @@
     "context": "PEMDAS: parentheses, exponents, multiply/divide L→R, add/subtract L→R. Result 13."
   },
   {
-    "tier": 1,
+    "tier": 2,
     "question": "Evaluate: (5 + 3)²",
     "answer": "64",
     "choices": [
@@ -22488,7 +22440,7 @@
     "context": "a² + b² = c²: 121+3600=3721. c = 61."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 2 × 3 × 4. Volume?",
     "answer": "24",
     "choices": [
@@ -22500,7 +22452,7 @@
     "context": "V = l × w × h = 2×3×4 = 24."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 3 × 5 × 6. Volume?",
     "answer": "90",
     "choices": [
@@ -22512,7 +22464,7 @@
     "context": "V = l × w × h = 3×5×6 = 90."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 4 × 5 × 7. Volume?",
     "answer": "140",
     "choices": [
@@ -22524,7 +22476,7 @@
     "context": "V = l × w × h = 4×5×7 = 140."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 2 × 6 × 8. Volume?",
     "answer": "96",
     "choices": [
@@ -22536,7 +22488,7 @@
     "context": "V = l × w × h = 2×6×8 = 96."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 3 × 4 × 9. Volume?",
     "answer": "108",
     "choices": [
@@ -22548,7 +22500,7 @@
     "context": "V = l × w × h = 3×4×9 = 108."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 5 × 6 × 8. Volume?",
     "answer": "240",
     "choices": [
@@ -22560,7 +22512,7 @@
     "context": "V = l × w × h = 5×6×8 = 240."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 4 × 7 × 9. Volume?",
     "answer": "252",
     "choices": [
@@ -22572,7 +22524,7 @@
     "context": "V = l × w × h = 4×7×9 = 252."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 3 × 5 × 10. Volume?",
     "answer": "150",
     "choices": [
@@ -22584,7 +22536,7 @@
     "context": "V = l × w × h = 3×5×10 = 150."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 6 × 7 × 8. Volume?",
     "answer": "336",
     "choices": [
@@ -22596,7 +22548,7 @@
     "context": "V = l × w × h = 6×7×8 = 336."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 5 × 8 × 10. Volume?",
     "answer": "400",
     "choices": [
@@ -22608,7 +22560,7 @@
     "context": "V = l × w × h = 5×8×10 = 400."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 4 × 5 × 12. Volume?",
     "answer": "240",
     "choices": [
@@ -22620,7 +22572,7 @@
     "context": "V = l × w × h = 4×5×12 = 240."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 6 × 8 × 9. Volume?",
     "answer": "432",
     "choices": [
@@ -22632,7 +22584,7 @@
     "context": "V = l × w × h = 6×8×9 = 432."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 3 × 7 × 10. Volume?",
     "answer": "210",
     "choices": [
@@ -22644,7 +22596,7 @@
     "context": "V = l × w × h = 3×7×10 = 210."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 5 × 6 × 12. Volume?",
     "answer": "360",
     "choices": [
@@ -22656,7 +22608,7 @@
     "context": "V = l × w × h = 5×6×12 = 360."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Box 4 × 9 × 11. Volume?",
     "answer": "396",
     "choices": [
@@ -22692,7 +22644,7 @@
     "context": "1,4,9,16,25..."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Which is a perfect number?",
     "answer": "28",
     "choices": [
@@ -22704,7 +22656,7 @@
     "context": "Perfect: equals sum of proper divisors. 6, 28, 496..."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "First perfect number:",
     "answer": "6",
     "choices": [
@@ -22836,7 +22788,7 @@
     "context": "Whole = 0, 1, 2, 3..."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Two shapes the same size AND shape are:",
     "answer": "Congruent",
     "choices": [
@@ -22848,7 +22800,7 @@
     "context": "Congruent = same; similar = scaled."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Two shapes the same shape but possibly different sizes are:",
     "answer": "Similar",
     "choices": [
@@ -23208,7 +23160,7 @@
     "context": "From 50 back to 100 is +50/50 = 100%. The base after a drop is smaller, so recovery % > drop %."
   },
   {
-    "tier": 1,
+    "tier": 4,
     "question": "Which is a perfect number? (equals sum of its proper divisors)",
     "answer": "28",
     "choices": [
@@ -24072,7 +24024,7 @@
     "context": "4! = 24. All letters distinct."
   },
   {
-    "tier": 1,
+    "tier": 5,
     "question": "How many ways to choose 3 books from 8? (order doesn't matter)",
     "answer": "56",
     "choices": [
@@ -24156,7 +24108,7 @@
     "context": "Independent → multiply: (1/2)³ = 1/8. Adding gives 3/2 (impossible since > 1)."
   },
   {
-    "tier": 1,
+    "tier": 5,
     "question": "How many ways to seat 5 people in a row?",
     "answer": "120",
     "choices": [
@@ -24682,18 +24634,6 @@
       "1.414"
     ],
     "context": "φ = (1 + √5)/2. Limit of consecutive Fibonacci ratios. (2.718 is e; 1.414 is √2.)"
-  },
-  {
-    "tier": 1,
-    "question": "Sophie Germain corresponded with Gauss under what guise?",
-    "answer": "A male pseudonym (M. Le Blanc)",
-    "choices": [
-      "A male pseudonym (M. Le Blanc)",
-      "Her own name from the start",
-      "Anonymously and only in writing",
-      "Through her brother"
-    ],
-    "context": "Paris in 1804: women couldn't enroll at the École Polytechnique. She made major progress on Fermat's Last Theorem."
   },
   {
     "tier": 5,
@@ -26497,18 +26437,6 @@
   },
   {
     "tier": 5,
-    "question": "Who named imaginary numbers 'imaginary'?",
-    "answer": "Descartes (dismissively)",
-    "choices": [
-      "Descartes (dismissively)",
-      "Gauss (proudly)",
-      "Newton (formally)",
-      "Cardano (privately)"
-    ],
-    "context": "Descartes called them imaginaire to suggest they were not real numbers."
-  },
-  {
-    "tier": 5,
     "question": "(0 + 1i)² = ?",
     "answer": "−1",
     "choices": [
@@ -27653,8 +27581,8 @@
     "answer": "-b",
     "choices": [
       "-b",
-      " b",
-      " c",
+      "b",
+      "c",
       "-c"
     ],
     "context": "Vieta's formulas, from François Viète, 16th century. For x² + bx + c with roots r and s: r + s = -b and r·s = c. A quick check of any factored quadratic: compare coefficients."
@@ -28068,18 +27996,6 @@
     "context": "An inverse undoes a function: f(f⁻¹(x)) = x. Since e^(ln x) = x, ln is the inverse of e^x. The graphs are mirror images across the line y = x — a key visual identity."
   },
   {
-    "tier": 5,
-    "question": "A function f is increasing on an interval if:",
-    "answer": "Whenever a < b in it, then f(a) < f(b)",
-    "choices": [
-      "Whenever a < b in it, then f(a) < f(b)",
-      "The function value is positive throughout",
-      "The function's average rises across the run",
-      "The function maps each input larger than x"
-    ],
-    "context": "Increasing means order-preserving. The function 5x + 1 is increasing; sin(x) is increasing on (-π/2, π/2). Calculus connects this to derivatives: f is increasing where f'(x) > 0."
-  },
-  {
     "tier": 4,
     "question": "What does the y-intercept of a graph tell you?",
     "answer": "The function's value at x = 0",
@@ -28114,18 +28030,6 @@
       "y = f(x)-1"
     ],
     "context": "Negating outputs flips the graph vertically. Negating inputs (y = f(-x)) flips horizontally. Together: y = -f(-x) rotates 180° about the origin. These transformations let you read complicated functions from simple ones."
-  },
-  {
-    "tier": 5,
-    "question": "What are the asymptotes of y = 1/x?",
-    "answer": "The x-axis and the y-axis",
-    "choices": [
-      "The x-axis and the y-axis",
-      "Only the x-axis at infinity",
-      "Only the y-axis near origin",
-      "The diagonal line y = x"
-    ],
-    "context": "y = 1/x has a horizontal asymptote at y = 0 (as |x| → ∞) and a vertical asymptote at x = 0 (as x → 0). Asymptotes describe long-run or limiting behavior — the territory where calculus picks up."
   },
   {
     "tier": 4,
@@ -28321,42 +28225,6 @@
   },
   {
     "tier": 5,
-    "question": "Why is the number e called the 'natural' base for exponentials?",
-    "answer": "The derivative of e^x is e^x — uniquely simple growth",
-    "choices": [
-      "The derivative of e^x is e^x — uniquely simple growth",
-      "It appears naturally in counting branches of any tree",
-      "It is the only base where ln equals log base ten flat",
-      "It is the smallest base whose powers are all rational"
-    ],
-    "context": "Other bases have proportional derivatives but only e^x equals its own. This makes e the natural choice for continuous growth (interest, decay, population). It is also irrational and transcendental — proved transcendental by Hermite in 1873."
-  },
-  {
-    "tier": 5,
-    "question": "Limits formalize what intuitive notion?",
-    "answer": "Approaching a value without necessarily reaching",
-    "choices": [
-      "Approaching a value without necessarily reaching",
-      "Reaching a value in finitely many concrete steps",
-      "Avoiding a singularity by jumping over it cleanly",
-      "Restricting a function to its smallest output set"
-    ],
-    "context": "Cauchy and Weierstrass gave the rigorous ε-δ definition in the 1800s: for every ε > 0, there is a δ > 0 such that |f(x) - L| < ε whenever 0 < |x - a| < δ. Made calculus rigorous without invoking infinitesimals."
-  },
-  {
-    "tier": 5,
-    "question": "If a function has a local maximum at x = c and is smooth there, what is f'(c)?",
-    "answer": "Zero — the tangent there is horizontal",
-    "choices": [
-      "Zero — the tangent there is horizontal",
-      "Positive — the function rises through",
-      "Negative — the function falls past it",
-      "Equal to c — the slope matches location"
-    ],
-    "context": "At a smooth peak, the tangent line is horizontal. Fermat's theorem on extrema. Note: f'(c) = 0 is necessary but not sufficient — at f(x) = x³, x = 0 has zero derivative but is not an extremum (it's an inflection)."
-  },
-  {
-    "tier": 5,
     "question": "Sum of arithmetic series 1+2+3+...+100?",
     "answer": "5050",
     "choices": [
@@ -28416,7 +28284,7 @@
     "context": "50 terms; average is 51; sum = 50·51 = 2550."
   },
   {
-    "tier": 1,
+    "tier": 5,
     "question": "Sum of finite geometric: 1 + 2 + 4 + 8 + 16 = ?",
     "answer": "31",
     "choices": [
@@ -28644,7 +28512,7 @@
     "context": "Only one way to choose nothing: take nothing."
   },
   {
-    "tier": 1,
+    "tier": 5,
     "question": "nCn = ?",
     "answer": "1",
     "choices": [
@@ -28680,7 +28548,7 @@
     "context": "8!/(4!·4!) = 70."
   },
   {
-    "tier": 1,
+    "tier": 5,
     "question": "How many distinct anagrams of 'BOOK'?",
     "answer": "12",
     "choices": [
@@ -28728,18 +28596,6 @@
     "context": "C = πd = 2πr."
   },
   {
-    "tier": 5,
-    "question": "e was first studied by Bernoulli through which problem?",
-    "answer": "Compound interest",
-    "choices": [
-      "Compound interest",
-      "Pendulums",
-      "Light refraction",
-      "Optics"
-    ],
-    "context": "Bernoulli 1683: how does continuous compounding affect a 100% interest rate?"
-  },
-  {
     "tier": 4,
     "question": "φ (the golden ratio) equals?",
     "answer": "(1 + √5)/2 ≈ 1.618",
@@ -28765,18 +28621,6 @@
   },
   {
     "tier": 3,
-    "question": "How many digits of π are known computed by current records?",
-    "answer": "Trillions",
-    "choices": [
-      "Trillions",
-      "About 100",
-      "About 1 million",
-      "All of them"
-    ],
-    "context": "Records grow yearly; the digits never repeat (irrational)."
-  },
-  {
-    "tier": 3,
     "question": "Galileo's paradox: there are as many perfect squares as integers?",
     "answer": "True — both sets are countably infinite",
     "choices": [
@@ -28786,66 +28630,6 @@
       "True only for finite sets"
     ],
     "context": "Galileo 1638. Countable sets can be put in 1-1 correspondence."
-  },
-  {
-    "tier": 1,
-    "question": "Who proved the parallel postulate independent of Euclid's other axioms?",
-    "answer": "Bolyai, Lobachevsky, Gauss (independently)",
-    "choices": [
-      "Bolyai, Lobachevsky, Gauss (independently)",
-      "Euclid himself",
-      "Riemann alone",
-      "Klein"
-    ],
-    "context": "Each constructed consistent non-Euclidean geometries in the early 19th century."
-  },
-  {
-    "tier": 2,
-    "question": "Riemann generalized Euclidean geometry to?",
-    "answer": "Curved manifolds (Riemannian geometry)",
-    "choices": [
-      "Curved manifolds (Riemannian geometry)",
-      "Discrete spaces",
-      "Linear algebra only",
-      "Topological surfaces only"
-    ],
-    "context": "1854 lecture; foundational for Einstein's general relativity 60 years later."
-  },
-  {
-    "tier": 1,
-    "question": "Carl Friedrich Gauss called number theory the?",
-    "answer": "Queen of mathematics",
-    "choices": [
-      "Queen of mathematics",
-      "Empress of physics",
-      "Foundation of geometry",
-      "King of analysis"
-    ],
-    "context": "His Disquisitiones Arithmeticae (1801) shaped modern number theory."
-  },
-  {
-    "tier": 1,
-    "question": "David Hilbert's 1900 address listed how many open problems?",
-    "answer": "23",
-    "choices": [
-      "23",
-      "10",
-      "50",
-      "100"
-    ],
-    "context": "The Hilbert problems shaped 20th-century mathematics. Several remain open."
-  },
-  {
-    "tier": 2,
-    "question": "Bernhard Riemann's 1859 paper introduced?",
-    "answer": "The Riemann hypothesis",
-    "choices": [
-      "The Riemann hypothesis",
-      "The Riemann sum",
-      "Riemannian geometry",
-      "Riemann surfaces"
-    ],
-    "context": "Conjecture about zeros of the zeta function; still open."
   },
   {
     "tier": 1,

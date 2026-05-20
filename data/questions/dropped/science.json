@@ -15348,5 +15348,665 @@
       ],
       "from_tier": 5
     }
+  },
+  {
+    "tier": 3,
+    "question": "Equal to one kilogram-meter per second squared, this SI unit measures force. What is it called?",
+    "answer": "Newton",
+    "choices": [
+      "Newton",
+      "Joule",
+      "Pascal",
+      "Watt"
+    ],
+    "context": "1 N = 1 kg·m/s². Named for Isaac Newton."
+  },
+  {
+    "tier": 2,
+    "question": "Equal to one newton-meter, this SI unit measures energy and work. What is it called?",
+    "answer": "Joule",
+    "choices": [
+      "Joule",
+      "Newton",
+      "Watt",
+      "Volt"
+    ],
+    "context": "1 J = 1 N·m. Named for James Prescott Joule."
+  },
+  {
+    "tier": 2,
+    "question": "Equal to one joule per second, this SI unit measures power. What is it called?",
+    "answer": "Watt",
+    "choices": [
+      "Watt",
+      "Joule",
+      "Ampere",
+      "Ohm"
+    ],
+    "context": "1 W = 1 J/s. Named for James Watt."
+  },
+  {
+    "tier": 3,
+    "question": "Equal to one cycle per second and named for Heinrich Hertz, this SI unit measures frequency. What is it called?",
+    "answer": "Hertz",
+    "choices": [
+      "Hertz",
+      "Watt",
+      "Newton",
+      "Tesla"
+    ],
+    "context": "1 Hz = 1 cycle per second. Named for Heinrich Hertz."
+  },
+  {
+    "tier": 2,
+    "question": "Equal to one newton per square meter and named for Blaise Pascal, this SI unit measures pressure. What is it called?",
+    "answer": "Pascal",
+    "choices": [
+      "Pascal",
+      "Newton",
+      "Bar",
+      "Torr"
+    ],
+    "context": "1 Pa = 1 N/m². Named for Blaise Pascal."
+  },
+  {
+    "tier": 5,
+    "question": "Equal to the proton count in a neutral atom, the number of electrons in a neutral carbon atom is what?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "4",
+      "8",
+      "12"
+    ],
+    "context": "Same as proton count for a neutral atom."
+  },
+  {
+    "tier": 2,
+    "question": "A pure substance made of only one type of atom is:",
+    "answer": "An element",
+    "choices": [
+      "An element",
+      "A compound",
+      "A mixture",
+      "A solution"
+    ],
+    "context": "A compound has two or more elements bonded chemically. A mixture has multiple substances physically combined without chemical bonding."
+  },
+  {
+    "tier": 2,
+    "question": "How many genes are in the human genome? The number turned out to be:",
+    "answer": "About 20,000 protein-coding genes — far fewer than once expected",
+    "choices": [
+      "About 20,000 protein-coding genes — far fewer than once expected",
+      "About 2,000",
+      "About 100,000",
+      "About 1 million (a common misconception)"
+    ],
+    "context": "Pre-project estimates ran as high as 100,000. The actual number is comparable to a roundworm's. Complexity comes from regulation and alternative splicing, not gene count alone."
+  },
+  {
+    "tier": 2,
+    "question": "The element with symbol H is:",
+    "answer": "Hydrogen",
+    "choices": [
+      "Hydrogen",
+      "Helium",
+      "Lithium",
+      "Beryllium"
+    ],
+    "context": "Lightest element; most abundant in universe."
+  },
+  {
+    "tier": 2,
+    "question": "The SI unit of length is the:",
+    "answer": "meter",
+    "choices": [
+      "meter",
+      "kilogram",
+      "second",
+      "ampere"
+    ],
+    "context": "Defined by speed of light since 1983."
+  },
+  {
+    "tier": 2,
+    "question": "The SI unit of mass is the:",
+    "answer": "kilogram",
+    "choices": [
+      "kilogram",
+      "meter",
+      "second",
+      "ampere"
+    ],
+    "context": "Redefined 2019 using Planck constant."
+  },
+  {
+    "tier": 2,
+    "question": "The SI unit of electric current is the:",
+    "answer": "ampere",
+    "choices": [
+      "ampere",
+      "meter",
+      "kilogram",
+      "second"
+    ],
+    "context": "Defined by elementary charge."
+  },
+  {
+    "tier": 2,
+    "question": "The SI unit of temperature is the:",
+    "answer": "kelvin",
+    "choices": [
+      "kelvin",
+      "meter",
+      "kilogram",
+      "second"
+    ],
+    "context": "0 K is absolute zero."
+  },
+  {
+    "tier": 2,
+    "question": "The SI unit of amount of substance is the:",
+    "answer": "mole",
+    "choices": [
+      "mole",
+      "meter",
+      "kilogram",
+      "second"
+    ],
+    "context": "6.022 × 10²³ entities (Avogadro)."
+  },
+  {
+    "tier": 5,
+    "question": "The SI unit of luminous intensity is the:",
+    "answer": "candela",
+    "choices": [
+      "candela",
+      "meter",
+      "kilogram",
+      "second"
+    ],
+    "context": "Approximately one candle."
+  },
+  {
+    "tier": 2,
+    "question": "The SI unit of force is the:",
+    "answer": "newton",
+    "choices": [
+      "newton",
+      "meter",
+      "kilogram",
+      "second"
+    ],
+    "context": "kg·m/s² — named for Isaac Newton."
+  },
+  {
+    "tier": 2,
+    "question": "The SI prefix 'kilo-' means:",
+    "answer": "10³ (1,000)",
+    "choices": [
+      "10³ (1,000)",
+      "10⁶ (1,000,000)",
+      "10⁹ (1 billion)",
+      "10¹² (1 trillion)"
+    ],
+    "context": "Kilometer = 1,000 meters."
+  },
+  {
+    "tier": 2,
+    "question": "The SI prefix 'mega-' means:",
+    "answer": "10⁶ (1,000,000)",
+    "choices": [
+      "10⁶ (1,000,000)",
+      "10³ (1,000)",
+      "10⁹ (1 billion)",
+      "10¹² (1 trillion)"
+    ],
+    "context": "Megabyte = ~1 million bytes."
+  },
+  {
+    "tier": 2,
+    "question": "Isaac Newton is best known for:",
+    "answer": "Laws of motion + universal gravitation",
+    "choices": [
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection",
+      "Laws of genetic inheritance"
+    ],
+    "context": "1687. *Principia Mathematica* — foundational classical mechanics."
+  },
+  {
+    "tier": 2,
+    "question": "Albert Einstein is best known for:",
+    "answer": "Theory of relativity",
+    "choices": [
+      "Theory of relativity",
+      "Laws of motion + universal gravitation",
+      "Theory of natural selection",
+      "Laws of genetic inheritance"
+    ],
+    "context": "1905 + 1915. Special (1905) + general (1915)."
+  },
+  {
+    "tier": 2,
+    "question": "Charles Darwin is best known for:",
+    "answer": "Theory of natural selection",
+    "choices": [
+      "Theory of natural selection",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Laws of genetic inheritance"
+    ],
+    "context": "1859. *On the Origin of Species*."
+  },
+  {
+    "tier": 2,
+    "question": "Gregor Mendel is best known for:",
+    "answer": "Laws of genetic inheritance",
+    "choices": [
+      "Laws of genetic inheritance",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1866. Pea plant experiments; ignored until 1900."
+  },
+  {
+    "tier": 2,
+    "question": "Marie Curie is best known for:",
+    "answer": "Radioactivity + polonium + radium",
+    "choices": [
+      "Radioactivity + polonium + radium",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1898-1911. Only person Nobel'd in two sciences (Physics 1903, Chemistry 1911)."
+  },
+  {
+    "tier": 2,
+    "question": "James Clerk Maxwell is best known for:",
+    "answer": "Equations unifying electricity, magnetism, light",
+    "choices": [
+      "Equations unifying electricity, magnetism, light",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1865. Foundation of classical electromagnetism."
+  },
+  {
+    "tier": 3,
+    "question": "Galileo Galilei is best known for:",
+    "answer": "Telescopic astronomy + falling bodies",
+    "choices": [
+      "Telescopic astronomy + falling bodies",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1609-1610. Found Jupiter's moons + Venus phases."
+  },
+  {
+    "tier": 2,
+    "question": "Johannes Kepler is best known for:",
+    "answer": "Three laws of planetary motion",
+    "choices": [
+      "Three laws of planetary motion",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1609-1619. Ellipses + equal areas + T²∝a³."
+  },
+  {
+    "tier": 5,
+    "question": "Nicolaus Copernicus is best known for:",
+    "answer": "Heliocentric model of solar system",
+    "choices": [
+      "Heliocentric model of solar system",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1543. *De Revolutionibus Orbium Coelestium*."
+  },
+  {
+    "tier": 2,
+    "question": "Dmitri Mendeleev is best known for:",
+    "answer": "Periodic table of elements",
+    "choices": [
+      "Periodic table of elements",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1869. Predicted undiscovered elements via gaps."
+  },
+  {
+    "tier": 2,
+    "question": "Antoine Lavoisier is best known for:",
+    "answer": "Founder of modern chemistry",
+    "choices": [
+      "Founder of modern chemistry",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1789. *Traité élémentaire de chimie*; guillotined 1794."
+  },
+  {
+    "tier": 2,
+    "question": "Louis Pasteur is best known for:",
+    "answer": "Germ theory + first rabies vaccine",
+    "choices": [
+      "Germ theory + first rabies vaccine",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1860s-1885. Vaccination + pasteurization."
+  },
+  {
+    "tier": 2,
+    "question": "Robert Koch is best known for:",
+    "answer": "Koch's postulates + anthrax + TB + cholera bacteria",
+    "choices": [
+      "Koch's postulates + anthrax + TB + cholera bacteria",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1876-1890. Founded medical bacteriology."
+  },
+  {
+    "tier": 2,
+    "question": "Edward Jenner is best known for:",
+    "answer": "First successful vaccination (smallpox)",
+    "choices": [
+      "First successful vaccination (smallpox)",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1796. Cowpox protects against smallpox."
+  },
+  {
+    "tier": 2,
+    "question": "Jonas Salk is best known for:",
+    "answer": "Inactivated polio vaccine",
+    "choices": [
+      "Inactivated polio vaccine",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1955. Refused to patent it."
+  },
+  {
+    "tier": 2,
+    "question": "Maurice Hilleman is best known for:",
+    "answer": "Developed 40+ vaccines including MMR + hepatitis B",
+    "choices": [
+      "Developed 40+ vaccines including MMR + hepatitis B",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1950s-1990s. Considered the most prolific vaccine developer in history."
+  },
+  {
+    "tier": 2,
+    "question": "Norman Borlaug is best known for:",
+    "answer": "Green Revolution wheat varieties",
+    "choices": [
+      "Green Revolution wheat varieties",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1940s-1970s. 1970 Nobel Peace; estimated 1 billion lives saved."
+  },
+  {
+    "tier": 2,
+    "question": "Tu Youyou is best known for:",
+    "answer": "Discovery of artemisinin (antimalarial)",
+    "choices": [
+      "Discovery of artemisinin (antimalarial)",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1972. 2015 Nobel; from ancient Chinese medical text."
+  },
+  {
+    "tier": 2,
+    "question": "Barry Marshall is best known for:",
+    "answer": "H. pylori causes peptic ulcers (not stress)",
+    "choices": [
+      "H. pylori causes peptic ulcers (not stress)",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1984. 2005 Nobel; drank H. pylori to prove it."
+  },
+  {
+    "tier": 2,
+    "question": "James Watson + Francis Crick is best known for:",
+    "answer": "DNA double-helix structure",
+    "choices": [
+      "DNA double-helix structure",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1953. Photo 51 by Rosalind Franklin was essential."
+  },
+  {
+    "tier": 2,
+    "question": "Rosalind Franklin is best known for:",
+    "answer": "X-ray crystallography of DNA (Photo 51)",
+    "choices": [
+      "X-ray crystallography of DNA (Photo 51)",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1952. Died 1958 before 1962 Nobel; Nobel excludes posthumous."
+  },
+  {
+    "tier": 3,
+    "question": "Richard Feynman is best known for:",
+    "answer": "Quantum electrodynamics (QED)",
+    "choices": [
+      "Quantum electrodynamics (QED)",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1965 Nobel. Feynman diagrams; Manhattan Project; Challenger O-ring."
+  },
+  {
+    "tier": 2,
+    "question": "Alfred Wegener is best known for:",
+    "answer": "Continental drift hypothesis",
+    "choices": [
+      "Continental drift hypothesis",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1912. Rejected for 50 years; vindicated by 1960s seafloor data."
+  },
+  {
+    "tier": 2,
+    "question": "Lynn Margulis is best known for:",
+    "answer": "Endosymbiotic theory of mitochondria",
+    "choices": [
+      "Endosymbiotic theory of mitochondria",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1967. Initially rejected; now standard biology."
+  },
+  {
+    "tier": 2,
+    "question": "Ignaz Semmelweis is best known for:",
+    "answer": "Handwashing reduces obstetric fever",
+    "choices": [
+      "Handwashing reduces obstetric fever",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1847. Rejected by Vienna establishment; institutionalized 1865."
+  },
+  {
+    "tier": 2,
+    "question": "Edwin Hubble is best known for:",
+    "answer": "Universe is expanding",
+    "choices": [
+      "Universe is expanding",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1929. Galaxies receding; faster the farther."
+  },
+  {
+    "tier": 2,
+    "question": "Niels Bohr is best known for:",
+    "answer": "Atomic model with quantized electron orbits",
+    "choices": [
+      "Atomic model with quantized electron orbits",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1913. 1922 Nobel; Copenhagen Interpretation of quantum mechanics."
+  },
+  {
+    "tier": 3,
+    "question": "Werner Heisenberg is best known for:",
+    "answer": "Uncertainty principle",
+    "choices": [
+      "Uncertainty principle",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1927. Δx · Δp ≥ ℏ/2."
+  },
+  {
+    "tier": 3,
+    "question": "Max Planck is best known for:",
+    "answer": "Quantization of energy (quanta)",
+    "choices": [
+      "Quantization of energy (quanta)",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1900. Started quantum mechanics; 1918 Nobel."
+  },
+  {
+    "tier": 2,
+    "question": "Michael Faraday is best known for:",
+    "answer": "Electromagnetic induction + electrolysis",
+    "choices": [
+      "Electromagnetic induction + electrolysis",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1831. Self-taught; Royal Institution."
+  },
+  {
+    "tier": 2,
+    "question": "John Dalton is best known for:",
+    "answer": "Atomic theory",
+    "choices": [
+      "Atomic theory",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1803. Modern atomic theory of matter."
+  },
+  {
+    "tier": 2,
+    "question": "J.J. Thomson is best known for:",
+    "answer": "Electron discovery",
+    "choices": [
+      "Electron discovery",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1897. Cathode ray tubes; 1906 Nobel."
+  },
+  {
+    "tier": 2,
+    "question": "Ernest Rutherford is best known for:",
+    "answer": "Atomic nucleus + gold foil experiment",
+    "choices": [
+      "Atomic nucleus + gold foil experiment",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "1911. 1908 Nobel for radioactivity."
+  },
+  {
+    "tier": 2,
+    "question": "Steven Koonin is best known for:",
+    "answer": "Climate skepticism + nuance from IPCC reports",
+    "choices": [
+      "Climate skepticism + nuance from IPCC reports",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "2021. *Unsettled?*; former Obama administration DOE Undersecretary for Science."
+  },
+  {
+    "tier": 2,
+    "question": "Martin Kulldorff is best known for:",
+    "answer": "Great Barrington Declaration co-author",
+    "choices": [
+      "Great Barrington Declaration co-author",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "2020. Harvard biostatistician at the time; fired from Mass General over vaccine-mandate dissent."
+  },
+  {
+    "tier": 2,
+    "question": "John Ioannidis is best known for:",
+    "answer": "Why Most Published Research Findings Are False",
+    "choices": [
+      "Why Most Published Research Findings Are False",
+      "Laws of motion + universal gravitation",
+      "Theory of relativity",
+      "Theory of natural selection"
+    ],
+    "context": "2005. Foundational replication-crisis paper; Stanford."
+  },
+  {
+    "tier": 2,
+    "question": "An animal that eats only plants is what kind of consumer?",
+    "answer": "Herbivore",
+    "choices": [
+      "Herbivore",
+      "Carnivore",
+      "Omnivore",
+      "Producer"
+    ],
+    "context": "Herbivores eat plants. Carnivores eat meat. Omnivores eat both."
   }
 ]

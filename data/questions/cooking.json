@@ -2952,18 +2952,6 @@
     "context": "Scrub off food, rinse hot, dry fully, then wipe with a thin oil film to protect."
   },
   {
-    "tier": 2,
-    "question": "To clean narrow vessels like blender jars and sippy cups, what tool is needed?",
-    "answer": "Narrow vessels like blender jars",
-    "choices": [
-      "Narrow vessels like blender jars",
-      "Open frying pans and skillets",
-      "Flat dinner plates and saucers",
-      "Wooden boards and cheese slabs"
-    ],
-    "context": "A bottle brush reaches surfaces a sponge can't — sippy cups, blender bases, vases."
-  },
-  {
     "tier": 4,
     "question": "Cooking gently in fat at low temperature, like duck legs in their own fat, is called what?",
     "answer": "Confit",
@@ -5281,18 +5269,6 @@
   },
   {
     "tier": 3,
-    "question": "Onion, carrot, and celery have been sweating in butter for ten minutes — soft, glossy, no color. Adding flour and stirring makes a roux. Cooking the roux dark before stock goes in produces what?",
-    "answer": "Tempering it",
-    "choices": [
-      "Tempering it",
-      "Deglazing it",
-      "Emulsifying",
-      "Reducing it"
-    ],
-    "context": "Roux color = blonde, brown, dark. The darker it cooks, the less it thickens but the more flavor it adds. Cajun cooks take roux nearly black."
-  },
-  {
-    "tier": 3,
     "question": "A cook removes a pot of pasta from the stove and saves a cup of the cooking water before draining. That water gets added to the sauce for what reason?",
     "answer": "The dissolved starch helps the sauce cling and emulsify with the oil",
     "choices": [
@@ -5302,18 +5278,6 @@
       "The salt content seasons the sauce evenly throughout"
     ],
     "context": "Starch + fat + a little water = a glossy emulsion that hugs each strand. Skipping the pasta water is the home cook's most common pasta sin."
-  },
-  {
-    "tier": 4,
-    "question": "A cook plans to chop raw chicken, then vegetables for salad. The safest sequence on one board is:",
-    "answer": "The dissolved starch helps the sauce cling and emulsify with the oil",
-    "choices": [
-      "The dissolved starch helps the sauce cling and emulsify with the oil",
-      "The boiled water has been sterilized perfectly safe for the food use",
-      "Hot pasta water raises the temperature of the sauce before the plate",
-      "The salt content seasons the prepared sauce evenly throughout each bite"
-    ],
-    "context": "Best is separate boards. If using one, do raw poultry last and sanitize after. Order matters — bacteria moves forward in time, not backward."
   },
   {
     "tier": 2,
@@ -5424,18 +5388,6 @@
     "context": "Non-heme (plant) iron has low default absorption. Vitamin C in the same meal can double or triple uptake. Coffee and tea inhibit it; pair fruits or peppers instead."
   },
   {
-    "tier": 4,
-    "question": "A bowl of beans and a side of rice. Each is incomplete on its own — neither has all essential amino acids in good ratio. Together they make a complete protein because:",
-    "answer": "Lactobacillus and Bifidobacterium",
-    "choices": [
-      "Lactobacillus and Bifidobacterium",
-      "Aspergillus and Saccharomyces",
-      "Streptococcus pyogenes and E. coli",
-      "Salmonella and Listeria everywhere"
-    ],
-    "context": "Classic complementary pairing across cultures — beans-and-rice, lentil-and-bread, tofu-and-rice. They do not need to be eaten in the same meal, just the same day."
-  },
-  {
     "tier": 5,
     "question": "A pat of grass-fed butter and a tablespoon of cold-pressed olive oil sit on the counter. A 'traditional foods' school — the Weston A. Price tradition — would celebrate both because:",
     "answer": "It is a live scientific debate with strong points on both sides",
@@ -5448,54 +5400,6 @@
     "context": "The Weston Price tradition emphasizes ancestrally consumed fats — butter, lard, tallow, olive oil — over industrially refined seed oils. It is one school among several in nutrition."
   },
   {
-    "tier": 5,
-    "question": "A loaf of white bread, a bowl of brown rice, and a side of quinoa all supply carbohydrates. Of the three, the white bread differs in being:",
-    "answer": "Calcium element",
-    "choices": [
-      "Calcium element",
-      "Magnesium element",
-      "Iron element",
-      "Zinc element"
-    ],
-    "context": "Refining strips out fiber, B vitamins, and minerals. Enrichment puts some back but not the fiber. Whole grain = the bran, germ, and endosperm together."
-  },
-  {
-    "tier": 1,
-    "question": "A label reads 'Made with whole grains.' That phrase does not legally guarantee much. To know it is mostly whole grain, the cook should look for:",
-    "answer": "Straining out the whey",
-    "choices": [
-      "Straining out the whey",
-      "Adding extra protein powder",
-      "Using cream instead of milk",
-      "Fermenting with a strain"
-    ],
-    "context": "Ingredients are listed by weight. If 'enriched wheat flour' comes first and 'whole wheat' fifth, the product is mostly refined. The Whole Grain Council's stamp is more reliable than slogans."
-  },
-  {
-    "tier": 4,
-    "question": "A neighbor swears by raw milk; the FDA warns against it. The honest two-sided summary is:",
-    "answer": "Iron absorption from the plant source",
-    "choices": [
-      "Iron absorption from the plant source",
-      "Calcium absorption from the leafy greens",
-      "Vitamin D synthesis from sunlight on skin",
-      "Fat-soluble vitamin uptake in the gut"
-    ],
-    "context": "Pasteurization kills pathogens but also some heat-sensitive components. Raw-milk outbreaks are documented; so are millennia of traditional consumption. The debate is real and ongoing."
-  },
-  {
-    "tier": 3,
-    "question": "A child's lunchbox holds a peanut-butter sandwich on whole-grain bread, an apple, baby carrots, and milk. The lunch supplies all major macronutrients. What is mostly missing?",
-    "answer": "They are minimally processed, traditionally consumed fats from real foods",
-    "choices": [
-      "They are minimally processed, traditionally consumed fats from real foods",
-      "They are calorie-free and have zero impact on the weight gain of a person",
-      "They contain no saturated fat compared to factory oils on the supermarket shelf",
-      "They are USDA-approved as the absolute healthiest fat choices on the market today"
-    ],
-    "context": "Macros are covered; what is thin is the variety of plant micronutrients. Adding cucumber slices, bell pepper strips, or grapes diversifies the spectrum."
-  },
-  {
     "tier": 3,
     "question": "A glass of skim milk and a glass of whole milk sit side by side. Beyond fat content, the whole milk supplies more of:",
     "answer": "Fat-soluble vitamins A, D, E, K",
@@ -5506,66 +5410,6 @@
       "Probiotic bacteria in active form"
     ],
     "context": "Fat-soluble vitamins ride along with the fat. Skim milk usually has A and D added back via fortification. Whole-fat dairy's role in chronic disease is now more contested than in the 1990s."
-  },
-  {
-    "tier": 5,
-    "question": "Bone broth has had a moment in the wellness aisle. Honest assessment of its nutritional profile is:",
-    "answer": "Potential carcinogens in animal studies and some human research",
-    "choices": [
-      "Potential carcinogens in animal studies and some human research",
-      "Essential umami flavor molecules with great taste at high heat",
-      "Heat-resistant proteins of no concern for any current research",
-      "Antioxidants created by smoke exposure to grilled meat tissue"
-    ],
-    "context": "Long simmering does extract gelatin, glycine, proline, and minerals. Specific medicinal claims (gut healing, joint repair) outpace the current evidence. It is good food, not magic."
-  },
-  {
-    "tier": 5,
-    "question": "Spinach gets cooked down from a huge bowl to a small heap. Comparing the two on iron, the cooked version has:",
-    "answer": "A green or colorful vegetable to broaden the nutrient profile",
-    "choices": [
-      "A green or colorful vegetable to broaden the nutrient profile",
-      "Saturated fat from animal sources to round out the macronutrients",
-      "Added simple sugar for energy needed by a growing schoolchild",
-      "Highly processed grain content with the standard lunchbox favorites"
-    ],
-    "context": "Raw spinach contains oxalic acid, which binds iron and reduces uptake. Cooking softens oxalate's grip, freeing more iron for absorption. Vitamin C drops, but the iron trade is favorable."
-  },
-  {
-    "tier": 5,
-    "question": "A French menu lists 'sauce bechamel' as a base for cheese sauce and creamed dishes. It is one of the five 'mother sauces' codified in French haute cuisine. The five include bechamel, veloute, espagnole, hollandaise, and:",
-    "answer": "Providing vitamin C in shelf-stable form, preventing the scurvy",
-    "choices": [
-      "Providing vitamin C in shelf-stable form, preventing the scurvy",
-      "Killing intestinal parasites with vinegar acidity inside the gut wall",
-      "Adding caloric density for cold climates during the winter passages",
-      "Replacing rotten meat as the main protein source on long ship voyages"
-    ],
-    "context": "Antonin Careme grouped four; Escoffier later added hollandaise and refined the list. Sauce tomate is the fifth in the modern five — codified by Escoffier."
-  },
-  {
-    "tier": 5,
-    "question": "A Sichuan dish makes the tongue tingle and go strangely numb — distinct from the burn of chiles. That numbness comes from:",
-    "answer": "Calorie density, healthy fats, and micronutrient diversity",
-    "choices": [
-      "Calorie density, healthy fats, and micronutrient diversity",
-      "Pure carbohydrate fuel for endurance athletic events only",
-      "Trans fats and refined sugars from industrial processing",
-      "Empty calories with no nutritional benefit for the body"
-    ],
-    "context": "Sichuan peppercorn (huajiao) contains hydroxy-alpha-sanshool, which activates touch receptors instead of pain ones, producing the 'ma' tingle that pairs with 'la' chile heat — mala."
-  },
-  {
-    "tier": 4,
-    "question": "Thai cooking aims for four tastes in every dish, balancing salty, sour, sweet, and:",
-    "answer": "The margarine spread",
-    "choices": [
-      "The margarine spread",
-      "The shortening can",
-      "The Crisco brand",
-      "The mayonnaise jar"
-    ],
-    "context": "Thai cooks build dishes around the four-taste balance — fish sauce (salty), lime (sour), palm sugar (sweet), chile (hot). Each finished dish should hit all four notes."
   },
   {
     "tier": 2,
@@ -5593,18 +5437,6 @@
   },
   {
     "tier": 4,
-    "question": "Texas BBQ centers on beef brisket. Memphis BBQ centers on pork ribs. Carolina BBQ centers on pulled pork with a vinegar-based sauce. Kansas City is famous for:",
-    "answer": "Coffee drink",
-    "choices": [
-      "Coffee drink",
-      "Tea drink",
-      "Mate drink",
-      "Cocoa drink"
-    ],
-    "context": "Each US BBQ region has its meat, wood, and sauce signature. KC is the all-meats, sweet-thick-sauce school. Alabama has its own white BBQ sauce; South Carolina its yellow mustard one."
-  },
-  {
-    "tier": 4,
     "question": "A bowl of Indian chai tea brewed with milk, black tea, and a warming spice blend almost always contains:",
     "answer": "Cardamom, ginger, cloves, and cinnamon",
     "choices": [
@@ -5614,102 +5446,6 @@
       "Saffron, rose, vanilla, and lavender"
     ],
     "context": "Masala chai is a daily ritual across India. The Hindi 'chai' simply means tea; 'chai tea' is redundant. Variations are infinite — every household its own balance."
-  },
-  {
-    "tier": 5,
-    "question": "A Japanese sushi chef reaches for a long, thin, single-beveled knife to slice raw fish in one smooth pull. The knife is called:",
-    "answer": "Tea leaves",
-    "choices": [
-      "Tea leaves",
-      "Sugar bags",
-      "Coffee bags",
-      "Tobacco leaf"
-    ],
-    "context": "Yanagiba: long sashimi slicer. Deba: heavy fish-butchering. Nakiri: vegetable rectangle. Gyuto: Western-style chef's knife. Japanese knives are job-specific in a way Western kitchens are not."
-  },
-  {
-    "tier": 5,
-    "question": "Spanish bar-hopping involves tiny plates of food served with drinks. The Spanish word for these small plates is:",
-    "answer": "Pasta existed in Italy before Marco Polo — the 1929 myth was an industry creation",
-    "choices": [
-      "Pasta existed in Italy before Marco Polo — the 1929 myth was an industry creation",
-      "He brought it back and it spread instantly through Italian kitchens across the regions",
-      "He brought back the wheat variety from which pasta is made in southern Italian towns",
-      "He invented pasta on the boat trip home from China and shared it with crew sailors"
-    ],
-    "context": "'Tapa' = 'cover.' Origin legend: bartenders placed bread or ham over a glass of wine to keep flies out. The cover became the snack became the cuisine. Pintxos are the Basque variant, served on bread with toothpicks."
-  },
-  {
-    "tier": 3,
-    "question": "An Ethiopian meal puts food on top of a large spongy, sour pancake-bread that doubles as plate and utensil. Diners tear pieces and scoop. The bread is called:",
-    "answer": "Vanilla pods",
-    "choices": [
-      "Vanilla pods",
-      "Saffron threads",
-      "Cinnamon bark",
-      "Cardamom seed"
-    ],
-    "context": "Injera is made from teff flour fermented for days, producing the distinctive sour, slightly bubbly bread. Communal eating from a shared platter is the Ethiopian table tradition."
-  },
-  {
-    "tier": 3,
-    "question": "A Lebanese kitchen reaches for a thick, tangy dark syrup that is reduced juice of one fruit. The syrup balances sweetness with sharp sour. The fruit is:",
-    "answer": "Tell me what you eat, and I will tell you what you are",
-    "choices": [
-      "Tell me what you eat, and I will tell you what you are",
-      "Cooking is the art of pleasing oneself with food and drink",
-      "Hunger is the best sauce of all even the finest table can offer",
-      "Without bread, even the gods cannot dine on a Mediterranean table"
-    ],
-    "context": "Pomegranate molasses — reduced pomegranate juice — is foundational across Lebanese, Persian, and Syrian kitchens. Glazes, dressings, dipping sauces. Tamarind plays a similar role in Indian and Thai cooking."
-  },
-  {
-    "tier": 2,
-    "question": "An Indian recipe calls for ghee. Ghee is butter that has been:",
-    "answer": "A.B. Boulanger's Paris shop, around 1765 with restorative bouillons for guests",
-    "choices": [
-      "A.B. Boulanger's Paris shop, around 1765 with restorative bouillons for guests",
-      "An English coffeehouse in 1700 with coffee, conversation and pastries each morning",
-      "A Roman thermopolium in 100 BC with hot dishes for the crowds in the busy forum",
-      "A Venetian tavern in 1500 with wine, fish stew and warm bread for the merchants"
-    ],
-    "context": "Ghee, foundational to Indian and Ayurvedic cooking, has a high smoke point and lacks dairy proteins that burn easily. Vedic texts mention it 3,500 years ago."
-  },
-  {
-    "tier": 5,
-    "question": "A Levantine spice blend mixes thyme, sesame seeds, sumac, and salt. Sprinkled on flatbread with olive oil, it is a daily Lebanese, Palestinian, and Jordanian breakfast. The blend is called:",
-    "answer": "Slow Food movement",
-    "choices": [
-      "Slow Food movement",
-      "Organic Food movement",
-      "Whole Foods movement",
-      "Heritage Food trend"
-    ],
-    "context": "Za'atar refers both to the wild thyme plant and to the blend. Each region tunes the ratios. The bread-oil-za'atar combination is the breakfast of generations across the Levant."
-  },
-  {
-    "tier": 1,
-    "question": "John Montagu, the 4th Earl of Sandwich, wouldn't leave the gambling table for meals in 1762. He asked his servant to bring meat between two slices of bread. The dish keeps his name. The dish is a:",
-    "answer": "Fannie Farmer in 1896",
-    "choices": [
-      "Fannie Farmer in 1896",
-      "Irma Rombauer in 1931",
-      "Betty Crocker in 1921",
-      "Julia Child in 1961"
-    ],
-    "context": "Likely apocryphal in detail but real in essence — bread-with-filling existed long before Montagu, but the English aristocratic name stuck and traveled with the empire."
-  },
-  {
-    "tier": 5,
-    "question": "An Ethiopian legend tells of a goatherd named Kaldi who watched his goats grow excitable after eating berries from a certain shrub. He tried them himself. The drink eventually brewed from those beans was:",
-    "answer": "The Joy of Cooking",
-    "choices": [
-      "The Joy of Cooking",
-      "Settlement Cook Book",
-      "Mrs. Beeton's Cookbook",
-      "American Frugal Wife"
-    ],
-    "context": "Coffee's domestication began in Ethiopia, was cultivated in Yemen by Sufi monasteries (who valued its all-night alertness), then spread to Mecca, Cairo, Istanbul, Vienna, and the world."
   },
   {
     "tier": 4,
@@ -5722,30 +5458,6 @@
       "Sous-vide cooking technique"
     ],
     "context": "Slow freezing forms big ice crystals that rupture cells; flash freezing keeps crystals small. Birdseye scaled the Inuit method into the entire frozen-food aisle by 1930."
-  },
-  {
-    "tier": 5,
-    "question": "In 1864, a French chemist studying spoiled wine identified microbes that caused fermentation gone wrong. He proposed mild heating to kill them. The process is now used on milk, juice, and beer; it bears his name:",
-    "answer": "Bread for the masses",
-    "choices": [
-      "Bread for the masses",
-      "Salt for the public",
-      "Wine for the families",
-      "Sugar for the rich"
-    ],
-    "context": "Louis Pasteur saved the French wine industry, then the silk industry, then milk. Heating to about 145F for thirty minutes (or higher briefly) kills pathogens while preserving most flavor."
-  },
-  {
-    "tier": 3,
-    "question": "Marco Polo returned to Italy from China in 1295. A common myth says he brought back pasta. Historians have shown:",
-    "answer": "1621 in Plymouth",
-    "choices": [
-      "1621 in Plymouth",
-      "1776 in Philadelphia",
-      "1492 in Hispaniola",
-      "1607 in Jamestown"
-    ],
-    "context": "Sicilian Arab cooks were drying pasta in the 12th century; ancient Greeks and Romans had earlier dough strips. The Marco Polo story was a public-relations push by the National Macaroni Manufacturers Association in 1929."
   },
   {
     "tier": 5,
@@ -5772,18 +5484,6 @@
     "context": "Foundational Western dining etiquette. When leaving the table during the meal, the napkin goes on the chair; at the end of the meal, loosely folded to the left of the plate."
   },
   {
-    "tier": 5,
-    "question": "At a formal dinner, a guest has finished and the host has not yet begun eating. The proper response of the guest is:",
-    "answer": "Long life and longevity",
-    "choices": [
-      "Long life and longevity",
-      "Wealth and prosperity gained",
-      "A good marriage in the year",
-      "Family unity across the year"
-    ],
-    "context": "Old etiquette: guests follow the host's lead. The host begins by lifting their fork; only then do others begin. A small ritual that prevents the most common dinner-table awkwardness."
-  },
-  {
     "tier": 2,
     "question": "A diner needs the salt, which is across the table. Proper etiquette says they should:",
     "answer": "Ask politely for it to be passed",
@@ -5794,66 +5494,6 @@
       "Tap their fork to signal the request"
     ],
     "context": "Reaching across the table is the cardinal sin of family dining. 'Could you please pass the salt' is the model phrase children learn early in households that teach table manners."
-  },
-  {
-    "tier": 5,
-    "question": "An Italian wedding tradition gives guests a small parcel of five sugared almonds. The Italian word for them is 'confetti.' The five almonds represent:",
-    "answer": "Haggis as the centerpiece",
-    "choices": [
-      "Haggis as the centerpiece",
-      "Beef Wellington and gravy",
-      "Lamb shank with mint",
-      "Salmon with new potatoes"
-    ],
-    "context": "Sugared almonds — sweet outside, bitter inside — symbolize the bittersweet nature of marriage. Five wishes for five life domains. Variants across Greek, Lebanese, and Italian wedding traditions."
-  },
-  {
-    "tier": 2,
-    "question": "A traditional Western wedding cake has three tiers. The bottom tier is for the guests at the reception. The middle tier is for friends not present. The top tier is saved for:",
-    "answer": "Coal, shortbread, and whisky (and ideally tall and dark-haired)",
-    "choices": [
-      "Coal, shortbread, and whisky (and ideally tall and dark-haired)",
-      "Money, salt, and bread for the new year ahead at the home",
-      "Bread, butter, and milk for prosperity in the year and rest",
-      "Wine, cheese, and crackers for friendship in the year coming"
-    ],
-    "context": "Couples freeze the top tier and eat it on their first anniversary — a small ritual of remembering. The fruit cake tradition (in royal weddings) is ideal for this; modern frostings less so."
-  },
-  {
-    "tier": 4,
-    "question": "A bride and groom together cut the first piece of wedding cake. The shared act symbolizes:",
-    "answer": "Bacon and cabbage — corned beef is an Irish-American adaptation",
-    "choices": [
-      "Bacon and cabbage — corned beef is an Irish-American adaptation",
-      "Roast lamb with mint sauce served alongside the boiled potatoes",
-      "Salmon and potato cakes prepared with cream and fresh garden dill",
-      "Black pudding and oatmeal cooked in the traditional Irish farmhouse"
-    ],
-    "context": "An old tradition rooted in Roman 'confarreatio' marriage rite — a wheat cake broken over the bride's head, then shared. The shared cake is now its softened descendant."
-  },
-  {
-    "tier": 5,
-    "question": "An Irish family's wake holds a vigil with the body in the house. Mourners bring whiskey, eat together, tell stories. The tradition lasted overnight and into:",
-    "answer": "Dessert, coffee, and a digestif",
-    "choices": [
-      "Dessert, coffee, and a digestif",
-      "Soup course and a second salad",
-      "A second meat course and bread",
-      "A cordial of champagne, oysters"
-    ],
-    "context": "Irish wakes were communal grief, often joyful in tone — laughter and storytelling alongside the loss. The dead were never left alone. The form softened in the 20th century but the spirit remains."
-  },
-  {
-    "tier": 5,
-    "question": "A French dinner progression moves through aperitif (drink before), entree (starter), plat (main), fromage (cheese), and ends with:",
-    "answer": "Halva (sesame confection) and baba ganoush",
-    "choices": [
-      "Halva (sesame confection) and baba ganoush",
-      "Tapenade (olive paste) and a basic aioli",
-      "Tzatziki (yogurt sauce) and labneh cheese",
-      "Romesco (nut sauce) and ajvar pepper paste"
-    ],
-    "context": "French meal structure is sequence as art. The cheese course before dessert is the French distinctive (in the U.S., cheese is often appetizer). Each course gets its plate, its glass, its moment."
   },
   {
     "tier": 2,
@@ -13162,5 +12802,1637 @@
       "Doubling a recipe automatically adds harmful bacteria"
     ],
     "context": "Big cakes bake more slowly through and may need a lower oven temperature."
+  },
+  {
+    "tier": 2,
+    "question": "A cook holds an onion firmly in their guiding hand. To protect the fingertips, what shape does the hand make against the blade?",
+    "answer": "Knuckles bent forward, fingertips tucked back",
+    "choices": [
+      "Knuckles bent forward, fingertips tucked back",
+      "Fingers stretched flat with palm pressed down",
+      "Thumb extended along the food being cut",
+      "Pinkie wrapped tight around the food's base"
+    ],
+    "context": "The claw grip — knuckles ride the blade, tips never face the steel."
+  },
+  {
+    "tier": 2,
+    "question": "A chef sets out every chopped onion, measured spice, and prepped meat before turning on the stove. The French phrase for this discipline is:",
+    "answer": "Mise en place",
+    "choices": [
+      "Mise en place",
+      "Bon appétit",
+      "À la carte",
+      "Coup de feu"
+    ],
+    "context": "Literally 'put in place.' The bedrock kitchen habit — prep first, cook second."
+  },
+  {
+    "tier": 2,
+    "question": "A new cook flips a stir-fry every two seconds and the vegetables steam in their own juice. The pan is too crowded. What is the right move next time?",
+    "answer": "Cook in smaller batches with the pan hot",
+    "choices": [
+      "Cook in smaller batches with the pan hot",
+      "Add water to make the pan sizzle louder",
+      "Use a deep pot and stir less often",
+      "Lower the heat and cover the pan"
+    ],
+    "context": "Crowded pans drop the temperature and produce steam, not sear."
+  },
+  {
+    "tier": 2,
+    "question": "A baker measures flour by dipping the cup into the bag and packing it down. The same recipe with a spooned-and-leveled cup makes lighter cookies. Why does packing matter?",
+    "answer": "Packed flour adds 25–30% more weight per cup",
+    "choices": [
+      "Packed flour adds 25–30% more weight per cup",
+      "Packed flour activates the gluten too early",
+      "Packed flour loses its leavening power",
+      "Packed flour scorches in the oven first"
+    ],
+    "context": "Bakers weigh in grams to avoid this. Spoon and level is the rescue measure."
+  },
+  {
+    "tier": 2,
+    "question": "A cook puts olive oil and butter into the same pan. Why is this a common move for sautéing aromatics?",
+    "answer": "Oil raises butter's smoke point so it browns less",
+    "choices": [
+      "Oil raises butter's smoke point so it browns less",
+      "Butter floats on the oil and never touches food",
+      "The combination doubles the calories on purpose",
+      "Olive oil dissolves the milk solids in butter"
+    ],
+    "context": "Butter alone burns near 350°F. With oil mixed in, you keep butter's flavor at higher heat."
+  },
+  {
+    "tier": 2,
+    "question": "A baker brushes melted butter on a warm dinner roll. What technique just happened?",
+    "answer": "Glazing the surface for shine and softness",
+    "choices": [
+      "Glazing the surface for shine and softness",
+      "Proofing the dough one more time briefly",
+      "Tempering the bread before slicing into it",
+      "Deglazing the pan that the rolls baked in"
+    ],
+    "context": "A butter glaze softens the crust and adds rich color. Egg wash glaze adds shine."
+  },
+  {
+    "tier": 2,
+    "question": "A cook drops broccoli florets into rapidly boiling salted water for 90 seconds, then plunges them into ice water. The technique is called what?",
+    "answer": "Blanching and shocking",
+    "choices": [
+      "Blanching and shocking",
+      "Braising and resting",
+      "Tempering and curing",
+      "Sweating and finishing"
+    ],
+    "context": "Locks in bright green color and stops cooking sharply. Used before stir-fries, salads, and freezing."
+  },
+  {
+    "tier": 2,
+    "question": "A cook simmers stock for hours until a half-cup remains. The result is dark, syrupy, intensely savory. The kitchen word for this process is:",
+    "answer": "Reduction",
+    "choices": [
+      "Reduction",
+      "Deglazing",
+      "Emulsion",
+      "Liaison"
+    ],
+    "context": "Water leaves as steam; flavor compounds and gelatin concentrate behind. The simplest sauce-builder."
+  },
+  {
+    "tier": 2,
+    "question": "A baker measures three eggs at room temperature versus three cold ones. Cake batter with room-temperature eggs incorporates more air. Why?",
+    "answer": "Warm yolks emulsify smoothly with butter and sugar",
+    "choices": [
+      "Warm yolks emulsify smoothly with butter and sugar",
+      "Cold eggs contain less protein than warm ones",
+      "Warmth makes eggs heavier per gram measured",
+      "Cold eggs have lower fat content overall"
+    ],
+    "context": "Cold eggs can seize cold butter, breaking the airy creamed mixture. Take eggs out 30 minutes ahead."
+  },
+  {
+    "tier": 2,
+    "question": "A cook makes mashed potatoes by whipping them aggressively in a stand mixer. The mash turns gluey and stiff. What went wrong?",
+    "answer": "Overworking released too much starch",
+    "choices": [
+      "Overworking released too much starch",
+      "The potatoes were undercooked at start",
+      "The butter was too cold when added",
+      "Salt was added too early in the mix"
+    ],
+    "context": "Starch granules burst with mechanical agitation. Use a ricer or masher for fluffy potatoes."
+  },
+  {
+    "tier": 2,
+    "question": "A cook puts a single pinch of baking soda in a tomato sauce that has gotten too acidic. The soda does what?",
+    "answer": "Neutralizes some of the acid, mellowing sharpness",
+    "choices": [
+      "Neutralizes some of the acid, mellowing sharpness",
+      "Adds extra salt to balance the sour notes",
+      "Thickens the sauce by removing the water",
+      "Brightens the flavor through fermentation"
+    ],
+    "context": "Sodium bicarbonate is an alkali. A tiny pinch tames acid without leaving a soapy taste."
+  },
+  {
+    "tier": 2,
+    "question": "A chef carefully cuts an onion into uniform cubes about ¼-inch on a side. The French name for this medium cube cut is:",
+    "answer": "Dice cut",
+    "choices": [
+      "Dice cut",
+      "Brunoise",
+      "Julienne",
+      "Mince"
+    ],
+    "context": "Brunoise is finer (⅛-inch). Mince is irregular. Dice is the workhorse medium cube."
+  },
+  {
+    "tier": 2,
+    "question": "A chef stacks basil leaves, rolls them tight as a cigar, and slices them into thin ribbons. What is the technique called?",
+    "answer": "Chiffonade",
+    "choices": [
+      "Chiffonade",
+      "Brunoise",
+      "Julienne",
+      "Concassé"
+    ],
+    "context": "Chiffonade — 'made of rags' in French — keeps leafy herbs from bruising. Used on basil, mint, and tender greens."
+  },
+  {
+    "tier": 2,
+    "question": "A cook lays a steak on the counter for thirty minutes before searing. Why bother letting cold meat warm up first?",
+    "answer": "Even cooking — cold center reaches doneness slower",
+    "choices": [
+      "Even cooking — cold center reaches doneness slower",
+      "Cold meat sticks to the pan more aggressively",
+      "Warm meat absorbs salt better than cold meat",
+      "Warm meat loses moisture during searing"
+    ],
+    "context": "A 60°F steak cooks much more evenly than a 35°F one — less gray rim, more pink interior."
+  },
+  {
+    "tier": 2,
+    "question": "A grandmother kneads bread by folding it over, pressing with the heel of her hand, turning a quarter, and folding again. What is she developing?",
+    "answer": "Gluten — the stretchy protein network",
+    "choices": [
+      "Gluten — the stretchy protein network",
+      "Yeast colonies in the dough",
+      "Sugar crystals from the flour",
+      "Air pockets from the baking soda"
+    ],
+    "context": "Pressing aligns the wheat proteins (gliadin + glutenin) into long elastic chains. Underkneaded bread is dense; well-kneaded bread springs back."
+  },
+  {
+    "tier": 2,
+    "question": "A jar of dried oregano sits at the back of a pantry for three years. The recipe calls for a tablespoon but the herb has lost most of its punch. The reason:",
+    "answer": "Volatile aromatic oils have evaporated over time",
+    "choices": [
+      "Volatile aromatic oils have evaporated over time",
+      "Bacteria have consumed the herb's flavor",
+      "The jar was probably never sealed fully",
+      "Dried oregano needs sunlight to ripen flavor"
+    ],
+    "context": "Dried herbs lose strength after about a year. Smell the jar — if it barely registers, the herb is past its prime."
+  },
+  {
+    "tier": 2,
+    "question": "A child asks why a basket of tomatoes from the Italian grandmother's garden tastes so different from the supermarket ones. The most honest answer:",
+    "answer": "Garden tomatoes ripened on the vine; market ones are picked green",
+    "choices": [
+      "Garden tomatoes ripened on the vine; market ones are picked green",
+      "Garden tomatoes are organic; market ones are not",
+      "Italian tomato varieties contain more sugar",
+      "Garden soil is naturally redder than commercial soil"
+    ],
+    "context": "Vine-ripening develops flavor compounds (and sugar) that picked-green never gain. Bred-for-shipping varieties trade flavor for shelf life."
+  },
+  {
+    "tier": 2,
+    "question": "A recipe calls for kosher salt and a young cook only has table salt. They measure equal volumes. The dish tastes way too salty. Why?",
+    "answer": "Table salt grains are smaller and pack tighter per spoon",
+    "choices": [
+      "Table salt grains are smaller and pack tighter per spoon",
+      "Table salt is chemically different from kosher",
+      "Kosher salt actually has less sodium per gram",
+      "Iodized salt is fortified with extra salt"
+    ],
+    "context": "A teaspoon of kosher salt has roughly half the sodium of table salt by volume. Recipes assume kosher unless they specify."
+  },
+  {
+    "tier": 2,
+    "question": "A cook reaches for a stick of butter from the fridge for cookie dough. The recipe says 'softened' but the butter is hard. Microwaving for ten seconds turns the corners liquid. The trick instead:",
+    "answer": "Cut into small cubes and let sit at room temperature",
+    "choices": [
+      "Cut into small cubes and let sit at room temperature",
+      "Heat the whole stick in the microwave longer",
+      "Beat the cold stick directly with the sugar",
+      "Run the stick under warm water for a minute"
+    ],
+    "context": "Cubes soften evenly. Partial melting changes the chemistry — cookies spread too thin and turn greasy."
+  },
+  {
+    "tier": 2,
+    "question": "A baker realizes she's out of baking powder mid-recipe. She has baking soda and vinegar. Can she substitute? What's the principle?",
+    "answer": "Soda + acid gives the same CO2 lift as baking powder",
+    "choices": [
+      "Soda + acid gives the same CO2 lift as baking powder",
+      "Soda alone works fine without any acid",
+      "Vinegar cannot replace cream of tartar",
+      "Powder and soda are not interchangeable at all"
+    ],
+    "context": "Baking powder is just soda + dry acid + cornstarch. Soda + acid is the same reaction — but balance carefully (¼ tsp soda + ½ tsp vinegar ≈ 1 tsp powder)."
+  },
+  {
+    "tier": 2,
+    "question": "A cook tastes an avocado oil before deciding to fry steak in it. The oil has almost no flavor — a clean, slightly grassy note. That neutrality is useful because:",
+    "answer": "It won't compete with the meat's own flavor when seared",
+    "choices": [
+      "It won't compete with the meat's own flavor when seared",
+      "It keeps the steak from sticking to the pan",
+      "It contains more vitamin E than olive oil",
+      "It carries fat-soluble flavors more cleanly"
+    ],
+    "context": "Neutral oils (avocado, peanut, grapeseed) let other ingredients shine. Extra virgin olive oil contributes its own flavor — sometimes a feature, sometimes a problem."
+  },
+  {
+    "tier": 2,
+    "question": "A child watches a parent crack open a vanilla bean and scrape the tiny black seeds into custard. Why use the bean instead of vanilla extract?",
+    "answer": "Whole seeds release flavor slowly and powerfully",
+    "choices": [
+      "Whole seeds release flavor slowly and powerfully",
+      "Extract is chemically synthetic and unsafe",
+      "Beans contain more sugar than extract does",
+      "Beans add fiber to the finished custard"
+    ],
+    "context": "A vanilla bean has hundreds of flavor compounds; extract concentrates the main ones. For showcase dishes (crème brûlée, ice cream), the bean wins."
+  },
+  {
+    "tier": 2,
+    "question": "A cook wonders why honey at the back of the pantry crystallized into a solid block. They worry it's spoiled. What's actually happening?",
+    "answer": "Glucose naturally crystallizes; the honey is still good",
+    "choices": [
+      "Glucose naturally crystallizes; the honey is still good",
+      "Bacteria have formed colonies in the jar",
+      "The honey absorbed moisture and fermented",
+      "The honey is past its safe expiration date"
+    ],
+    "context": "Honey crystallizes when glucose precipitates out of solution. Warm the jar gently in water — liquid honey returns. Honey is one of the few foods with no real expiration."
+  },
+  {
+    "tier": 2,
+    "question": "An Italian grandmother grates a hard cheese — pale yellow, crystalline, intensely savory — over every plate of pasta. The cheese is:",
+    "answer": "Parmigiano-Reggiano",
+    "choices": [
+      "Parmigiano-Reggiano",
+      "Mozzarella di Bufala",
+      "Pecorino Romano",
+      "Gorgonzola Dolce"
+    ],
+    "context": "Parmigiano ages 12-36 months. The crystals are tyrosine — amino acid that crystallizes in long-aged cheese, signaling depth of flavor."
+  },
+  {
+    "tier": 2,
+    "question": "A cook bites into a fresh leaf from the garden and tastes a bright sharp licorice-anise punch. The herb is:",
+    "answer": "Basil",
+    "choices": [
+      "Basil",
+      "Cilantro",
+      "Parsley",
+      "Sage"
+    ],
+    "context": "Genovese basil — the classic pesto leaf — has more anethole and methyl-chavicol than its cousins. Thai basil's anise note is stronger still."
+  },
+  {
+    "tier": 2,
+    "question": "A pinch of bright orange-red threads steeps in warm milk and turns it gold. The most expensive spice by weight, the threads come from a crocus flower. The spice is:",
+    "answer": "Saffron",
+    "choices": [
+      "Saffron",
+      "Turmeric",
+      "Annatto",
+      "Paprika"
+    ],
+    "context": "150 crocus flowers yield about one gram. Iran is the largest producer. Used in paella, biryani, risotto Milanese, bouillabaisse."
+  },
+  {
+    "tier": 2,
+    "question": "A cook is making chocolate chip cookies and the recipe calls for both brown sugar and white. The brown sugar contributes:",
+    "answer": "Molasses moisture and chewy texture",
+    "choices": [
+      "Molasses moisture and chewy texture",
+      "Extra sweetness compared to white sugar",
+      "Bright color from caramelized notes",
+      "Crispness from its higher fat content"
+    ],
+    "context": "Brown sugar is white sugar plus molasses. Molasses brings moisture, acid, and caramel notes. All-white sugar gives crisp cookies; all-brown gives chewy ones."
+  },
+  {
+    "tier": 2,
+    "question": "A cook reaches for unsweetened cocoa powder labeled 'Dutched.' How does Dutch-process cocoa differ from natural cocoa?",
+    "answer": "It's been alkalized to reduce bitterness and acid",
+    "choices": [
+      "It's been alkalized to reduce bitterness and acid",
+      "It's been roasted at much higher temperatures",
+      "It's been freeze-dried to remove all moisture",
+      "It's been mixed with milk powder for color"
+    ],
+    "context": "Dutched cocoa pairs with baking powder. Natural cocoa pairs with baking soda. Swap one for the other and the recipe's chemistry breaks."
+  },
+  {
+    "tier": 2,
+    "question": "A baker measures a cup of cake flour and a cup of bread flour. Both are wheat. What's the structural difference between them?",
+    "answer": "Bread flour has more protein than cake flour",
+    "choices": [
+      "Bread flour has more protein than cake flour",
+      "Cake flour is milled from a different grain",
+      "Bread flour contains baking powder built-in",
+      "Cake flour has been bleached with bromate"
+    ],
+    "context": "Cake flour ~ 7-9% protein. Bread flour ~ 12-14%. More protein = more gluten = chewier crumb. Use the right flour for the right texture."
+  },
+  {
+    "tier": 2,
+    "question": "A child unwraps a tiny green knob of fresh ginger and grates it. Compared to the powder in the spice rack, fresh ginger has:",
+    "answer": "A brighter, sharper, more complex flavor",
+    "choices": [
+      "A brighter, sharper, more complex flavor",
+      "Less flavor since drying concentrates it",
+      "More heat from the capsaicin compound",
+      "A more bitter flavor due to its peel"
+    ],
+    "context": "Drying converts ginger's gingerol into shogaol — different molecules, different flavors. Fresh and powdered are complementary, not interchangeable."
+  },
+  {
+    "tier": 2,
+    "question": "An Italian family pours a slow-cooked meat sauce over wide flat egg noodles. The sauce — meat, vegetables, wine, milk — is named for which northern Italian city?",
+    "answer": "Bologna",
+    "choices": [
+      "Bologna",
+      "Naples",
+      "Venice",
+      "Palermo"
+    ],
+    "context": "Bolognese (ragù alla bolognese) traditionally goes over tagliatelle, not spaghetti. The 'spaghetti bolognese' served abroad is an Anglo invention."
+  },
+  {
+    "tier": 2,
+    "question": "A Mexican family fills warm corn tortillas with carnitas, salsa, onion, and cilantro. The simple dish is called:",
+    "answer": "Tacos",
+    "choices": [
+      "Tacos",
+      "Burritos",
+      "Quesadillas",
+      "Tamales"
+    ],
+    "context": "Soft-tortilla tacos are the original Mexican format. The hard-shell version is a 1950s Tex-Mex innovation by Glen Bell (later Taco Bell)."
+  },
+  {
+    "tier": 2,
+    "question": "A Vietnamese family ladles fragrant beef broth over rice noodles, raw beef slices, scallions, and fresh herbs. The famous noodle soup is called:",
+    "answer": "Pho noodle soup",
+    "choices": [
+      "Pho noodle soup",
+      "Bun bo Hue stew",
+      "Hu tieu broth",
+      "Mi Quang dish"
+    ],
+    "context": "Pho broth simmers hours with charred onion, ginger, star anise, cinnamon, clove. Northern Vietnam invented it; southern Vietnam spread it abroad."
+  },
+  {
+    "tier": 2,
+    "question": "A British family eats a Sunday meal of roast beef, Yorkshire pudding, roasted potatoes, peas, and gravy. The tradition is called:",
+    "answer": "Sunday roast",
+    "choices": [
+      "Sunday roast",
+      "Cottage pie",
+      "Ploughman's lunch",
+      "Bangers and mash"
+    ],
+    "context": "Originated as a midday meal cooked while the family was at church. The Yorkshire pudding originally caught dripping fat from the roast above."
+  },
+  {
+    "tier": 2,
+    "question": "A French baker rolls and folds butter into dough seven times before baking. The flaky, crescent-shaped pastry that emerges is called:",
+    "answer": "Croissant",
+    "choices": [
+      "Croissant",
+      "Brioche",
+      "Pain au chocolat",
+      "Madeleine"
+    ],
+    "context": "The lamination creates hundreds of butter-dough layers. The shape supposedly commemorates the 1683 Vienna victory over the Ottomans — though that origin is folklore."
+  },
+  {
+    "tier": 2,
+    "question": "A Japanese cook lays raw fish over vinegared rice, sometimes wrapping with nori seaweed. The general dish category is:",
+    "answer": "Sushi",
+    "choices": [
+      "Sushi",
+      "Sashimi",
+      "Tempura",
+      "Yakitori"
+    ],
+    "context": "Sashimi is raw fish alone. Sushi requires the vinegared rice. Originally sushi was a preservation method — rice was the medium, fish the prize."
+  },
+  {
+    "tier": 2,
+    "question": "A Greek-American grandmother layers thin sheets of phyllo dough with chopped nuts, butter, and cinnamon, then soaks the baked pastry in honey syrup. The dessert is called:",
+    "answer": "Baklava",
+    "choices": [
+      "Baklava",
+      "Galaktoboureko",
+      "Spanakopita",
+      "Bougatsa"
+    ],
+    "context": "Layered phyllo soaked in honey or simple syrup. Origin disputed between Turkey, Greece, and the Levant — likely Byzantine."
+  },
+  {
+    "tier": 2,
+    "question": "A Spanish family stirs rice with saffron and seafood in a wide flat pan over open fire. The shared dish is called:",
+    "answer": "Paella",
+    "choices": [
+      "Paella",
+      "Risotto",
+      "Jambalaya",
+      "Pilaf"
+    ],
+    "context": "Valencia origin. Traditional paella has rabbit, chicken, snails, and green beans — not seafood. The seafood version came later, mostly for tourists."
+  },
+  {
+    "tier": 2,
+    "question": "A Polish grandmother stuffs cabbage leaves with rice and meat, simmers them in tomato sauce. The dish is called:",
+    "answer": "Gołąbki (cabbage rolls)",
+    "choices": [
+      "Gołąbki (cabbage rolls)",
+      "Pierogi (dumplings)",
+      "Bigos (hunter's stew)",
+      "Kielbasa (sausage)"
+    ],
+    "context": "Variants exist across Eastern Europe (sarma, holubtsi) and the Middle East (dolma). Slow simmer dissolves the cabbage's bite."
+  },
+  {
+    "tier": 2,
+    "question": "An Italian cook simmers tomatoes, onion, garlic, basil, and olive oil into a simple red sauce. The base sauce is called:",
+    "answer": "Marinara",
+    "choices": [
+      "Marinara",
+      "Alfredo",
+      "Bolognese",
+      "Carbonara"
+    ],
+    "context": "Marinara — 'sailor-style' — was a quick sauce that kept on long sea voyages. No cheese, no cream — just tomato, oil, garlic, herbs."
+  },
+  {
+    "tier": 2,
+    "question": "A Cajun cook simmers chicken, sausage, vegetables, and a dark roux into a thick stew served over rice. The dish is called:",
+    "answer": "Gumbo",
+    "choices": [
+      "Gumbo",
+      "Jambalaya",
+      "Étouffée",
+      "Boudin"
+    ],
+    "context": "Gumbo combines French roux, West African okra (from 'ki ngombo'), Spanish trade, and Choctaw filé powder — all in one Louisiana pot."
+  },
+  {
+    "tier": 2,
+    "question": "An Indian grandmother layers spiced meat with saffron-perfumed rice and slow-cooks the dish under a sealed dough lid. The result is called:",
+    "answer": "Biryani",
+    "choices": [
+      "Biryani",
+      "Pulao",
+      "Khichdi",
+      "Korma"
+    ],
+    "context": "Biryani came to India with Mughal cooks. Each region (Hyderabadi, Lucknowi, Sindhi) has its signature variation."
+  },
+  {
+    "tier": 2,
+    "question": "A Russian grandmother ladles a steaming red soup of beets, cabbage, and beef over a dollop of sour cream. The soup is called:",
+    "answer": "Borscht",
+    "choices": [
+      "Borscht",
+      "Solyanka",
+      "Schi",
+      "Okroshka"
+    ],
+    "context": "Ukrainian and Russian variants exist; Ukraine's is often called the original. The sour-cream dollop is mandatory; eaten with dark rye bread."
+  },
+  {
+    "tier": 2,
+    "question": "A Moroccan cook layers spiced meat, almonds, and saffron in a conical clay pot for slow steaming. The dish takes its name from the pot:",
+    "answer": "Tagine",
+    "choices": [
+      "Tagine",
+      "Couscous",
+      "Pastilla",
+      "Harira"
+    ],
+    "context": "The pot's tall cone traps and condenses steam, basting the meat below. Lamb-prune-almond is a classic combination."
+  },
+  {
+    "tier": 2,
+    "question": "An Argentine cook grills meat slowly over wood embers and serves it with a bright herb sauce of parsley, garlic, oregano, and vinegar. The sauce is called:",
+    "answer": "Chimichurri",
+    "choices": [
+      "Chimichurri",
+      "Sofrito",
+      "Mojo",
+      "Salsa verde"
+    ],
+    "context": "Argentine asado tradition. The acid in chimichurri cuts the richness of grilled beef. Found on every parrilla (grill) in Argentina."
+  },
+  {
+    "tier": 2,
+    "question": "A cook unwraps deli meat that has sat in the fridge for two weeks. It smells normal but looks slightly slimy. The safest move:",
+    "answer": "Discard it without tasting",
+    "choices": [
+      "Discard it without tasting",
+      "Microwave it briefly to be safe",
+      "Rinse the slime off and eat",
+      "Cook it through and use immediately"
+    ],
+    "context": "Deli meats are a Listeria risk — and Listeria doesn't always smell. Tossing a $5 package beats food poisoning."
+  },
+  {
+    "tier": 2,
+    "question": "A child wants to lick the spoon after making cookie dough that contains raw flour. The CDC warns against this. Why is raw flour a risk?",
+    "answer": "Flour can carry E. coli that baking would kill",
+    "choices": [
+      "Flour can carry E. coli that baking would kill",
+      "Raw flour blocks vitamin absorption",
+      "Flour expands in the stomach dangerously",
+      "Flour causes immediate allergic reaction"
+    ],
+    "context": "2016 General Mills recall traced E. coli outbreaks to raw flour. Treat flour like raw egg until baked. Edible cookie-dough recipes use heat-treated flour."
+  },
+  {
+    "tier": 2,
+    "question": "A grandmother stores leftover lasagna in the warm oven overnight. By morning the lasagna is room temperature. Should it be eaten?",
+    "answer": "No — it was in the bacterial danger zone for hours",
+    "choices": [
+      "No — it was in the bacterial danger zone for hours",
+      "Yes — the oven is sealed and safe overnight",
+      "Yes — reheating to 165°F kills any bacteria",
+      "Yes — pasta dishes are safe at room temp"
+    ],
+    "context": "40–140°F is the danger zone. Two hours max for cooked food at room temperature; one hour if room is above 90°F."
+  },
+  {
+    "tier": 2,
+    "question": "A cook uses one cutting board for raw chicken, then realizes they need to chop salad on the same board. The right move next is:",
+    "answer": "Wash with hot soap then sanitize before reuse",
+    "choices": [
+      "Wash with hot soap then sanitize before reuse",
+      "Rinse with cold water and continue cutting",
+      "Flip the board to its other side and use",
+      "Wipe with a dry towel and use immediately"
+    ],
+    "context": "Salmonella and Campylobacter survive on a wet board. Best practice is two boards (one for raw protein, one for produce)."
+  },
+  {
+    "tier": 2,
+    "question": "A grocery shopper buys a rotisserie chicken at noon and runs errands for three hours before getting home. The chicken sat in a warm car. The food-safety verdict:",
+    "answer": "Risky — the meat passed through the danger zone too long",
+    "choices": [
+      "Risky — the meat passed through the danger zone too long",
+      "Fine — rotisserie chicken is sterilized by the spit",
+      "Fine — chicken is safe at any temperature",
+      "Risky — but only if eaten cold instead of hot"
+    ],
+    "context": "Hot foods should be refrigerated within two hours, less if the environment is hot. Plan rotisserie chicken pickup as the last stop, not the first."
+  },
+  {
+    "tier": 2,
+    "question": "A cook reheats yesterday's chicken soup. The CDC and USDA agree on the safe internal temperature for reheated leftovers:",
+    "answer": "165°F (74°C)",
+    "choices": [
+      "165°F (74°C)",
+      "140°F (60°C)",
+      "100°F (38°C)",
+      "180°F (82°C)"
+    ],
+    "context": "Same as cooking poultry from raw. Stir to even the heat; an instant-read thermometer is the only sure check."
+  },
+  {
+    "tier": 2,
+    "question": "A toddler is helping make sandwiches. They sneeze, then start to handle the bread. The food-safe response:",
+    "answer": "Wash hands before continuing to handle food",
+    "choices": [
+      "Wash hands before continuing to handle food",
+      "Rinse hands quickly under cold water",
+      "Wipe hands on the kitchen towel",
+      "Continue — the bread will be eaten anyway"
+    ],
+    "context": "Norovirus and influenza spread through hand contact with food. Twenty seconds of soap and warm water is the rule the CDC has tested."
+  },
+  {
+    "tier": 2,
+    "question": "A cook reaches into the fridge for an open carton of milk that has been there ten days. The 'sell-by' date passed last week. The realistic check:",
+    "answer": "Smell and taste a small amount first",
+    "choices": [
+      "Smell and taste a small amount first",
+      "Discard immediately — past the date",
+      "Pour through a fine sieve to check",
+      "Microwave briefly to kill any bacteria"
+    ],
+    "context": "Sell-by dates are quality, not safety. Milk often lasts 5–7 days past the date if refrigerated properly. Sour smell or taste is the real signal."
+  },
+  {
+    "tier": 2,
+    "question": "A cook smells a slightly off aroma from a package of ground beef. The package looks fine and is within the date. The smarter move:",
+    "answer": "Trust the nose — discard the beef",
+    "choices": [
+      "Trust the nose — discard the beef",
+      "Cook it well done and eat anyway",
+      "Mix it with fresh meat to dilute",
+      "Marinate it heavily to cover smell"
+    ],
+    "context": "Ground beef has more exposed surface than steak — bacteria multiply faster. A sour or 'off' smell is the spoilage signal even before the date."
+  },
+  {
+    "tier": 2,
+    "question": "A young guest sits down at a formal dinner and is unsure which fork to pick up first. The standard rule across Western place settings:",
+    "answer": "Start with the outermost utensil and work in",
+    "choices": [
+      "Start with the outermost utensil and work in",
+      "Start with the innermost utensil and work out",
+      "Use the largest fork for every course",
+      "Wait for the host to point one out"
+    ],
+    "context": "Each course uses the outermost utensil. Hosts set utensils in order of use — outside fork for salad, inner fork for the main."
+  },
+  {
+    "tier": 2,
+    "question": "A child watches a Thanksgiving dinner and wonders why the turkey is the centerpiece. The historical reason — the 1621 Plymouth feast — featured:",
+    "answer": "Wild fowl (including turkey), venison, and corn",
+    "choices": [
+      "Wild fowl (including turkey), venison, and corn",
+      "Beef roast and white bread potatoes",
+      "Lamb and fresh cabbage salad",
+      "Salt cod and dried biscuits only"
+    ],
+    "context": "The 1621 harvest feast with the Wampanoag lasted three days. Wild turkey was likely served; venison was the main meat. Pumpkin pie came later."
+  },
+  {
+    "tier": 2,
+    "question": "A British grandmother lays out scones, jam, clotted cream, finger sandwiches, and tea at 4 PM. The tradition began in 1840 with whom?",
+    "answer": "Anna Maria Russell, Duchess of Bedford",
+    "choices": [
+      "Anna Maria Russell, Duchess of Bedford",
+      "Queen Victoria of England",
+      "Princess Margaret of Hesse",
+      "Mrs. Beeton, the cookbook author"
+    ],
+    "context": "Long gap between breakfast and 8pm dinner left Anna hungry. She started inviting friends to tea + sandwiches in her sitting room. Aristocratic adoption spread the custom."
+  },
+  {
+    "tier": 2,
+    "question": "An Italian family ends every Sunday meal with a small bitter or strong drink — amaro, grappa, limoncello. The custom is called:",
+    "answer": "Digestivo",
+    "choices": [
+      "Digestivo",
+      "Aperitivo",
+      "Sobremesa",
+      "Espresso shot"
+    ],
+    "context": "An aperitivo opens the meal (whetting appetite); a digestivo closes it (aiding digestion). The bitter herbs in amaro have a long medicinal history."
+  },
+  {
+    "tier": 2,
+    "question": "A Jewish family lights two candles every Friday at sundown to welcome the Sabbath. The meal includes a braided bread called:",
+    "answer": "Challah",
+    "choices": [
+      "Challah",
+      "Matzah",
+      "Babka",
+      "Bagel"
+    ],
+    "context": "The braided egg-rich loaf is blessed and broken at every Shabbat dinner. Two challot remember the double portion of manna that fell on Friday in the wilderness."
+  },
+  {
+    "tier": 2,
+    "question": "A Chinese family gathers for the most important meal of the year on Lunar New Year's Eve. The shared centerpiece often includes a whole fish because:",
+    "answer": "The word for fish (yu) sounds like the word for surplus",
+    "choices": [
+      "The word for fish (yu) sounds like the word for surplus",
+      "Fish is the cheapest celebration food in China",
+      "Fish symbolizes the four seasons of the year",
+      "Fish was the emperor's favorite food"
+    ],
+    "context": "Homophonic luck words are central to New Year food choices. Dumplings (jiaozi) resemble ancient gold ingots — wealth. Long uncut noodles = long life."
+  },
+  {
+    "tier": 2,
+    "question": "A Mexican family in late October sets up an altar with marigolds, candles, photos, and the favorite foods of departed relatives. The two-day festival is:",
+    "answer": "Día de los Muertos",
+    "choices": [
+      "Día de los Muertos",
+      "Cinco de Mayo",
+      "Las Posadas",
+      "Día de la Independencia"
+    ],
+    "context": "November 1-2. The ofrenda (altar) welcomes ancestors home with their favorite foods. The pan de muerto (round sweet bread with bone-shaped dough on top) sits among the offerings."
+  },
+  {
+    "tier": 2,
+    "question": "At a Western table, where should the bread plate sit relative to the dinner plate?",
+    "answer": "Above the forks, on the upper left",
+    "choices": [
+      "Above the forks, on the upper left",
+      "Above the knives, on the upper right",
+      "Directly above the dinner plate",
+      "Below the dinner plate, near the chair"
+    ],
+    "context": "Mnemonic: BMW — Bread Meal Water. Bread plate left, meal center, water glass right."
+  },
+  {
+    "tier": 2,
+    "question": "A child finishes eating at a Western dinner. To signal the server they're done, the fork and knife should be placed how on the plate?",
+    "answer": "Parallel together at the 4 o'clock position",
+    "choices": [
+      "Parallel together at the 4 o'clock position",
+      "Crossed in an X on the center of the plate",
+      "Resting on each side of the plate edge",
+      "Returned to the tablecloth as set originally"
+    ],
+    "context": "Parallel handles at 4 o'clock = 'finished' in continental service. Crossed = 'still eating, just taking a break.' Servers worldwide recognize both signals."
+  },
+  {
+    "tier": 3,
+    "question": "A baker pulls a sourdough starter from the fridge after two weeks dormant. The top has a brown liquid layer. The cook calls this 'hooch.' What is it?",
+    "answer": "Alcohol byproduct of hungry yeast",
+    "choices": [
+      "Alcohol byproduct of hungry yeast",
+      "Mold colony forming on starter",
+      "Spoiled starter that must be discarded",
+      "Acid wash from the lactobacillus"
+    ],
+    "context": "Hooch — ethanol + water — means the yeast ate everything available. Pour off (or stir back in), feed with flour and water, and the starter revives."
+  },
+  {
+    "tier": 3,
+    "question": "A cook making custard pours hot cream slowly into beaten eggs, whisking constantly, before returning the mixture to heat. The technique prevents what specific disaster?",
+    "answer": "Scrambled eggs in the custard",
+    "choices": [
+      "Scrambled eggs in the custard",
+      "Sugar caramelizing too quickly",
+      "Cream losing its cold consistency",
+      "Butter separating into oil and milk"
+    ],
+    "context": "Egg yolks coagulate around 158°F. Pouring hot liquid into cold eggs at once cooks the bottom-layer eggs instantly. Tempering raises eggs gradually."
+  },
+  {
+    "tier": 3,
+    "question": "A roast chicken pulls from the oven at 160°F internal temperature. The cook tents it with foil. Ten minutes later it reads 168°F. The cook didn't add heat — what raised it?",
+    "answer": "Carryover cooking from residual heat",
+    "choices": [
+      "Carryover cooking from residual heat",
+      "Steam trapped under the foil tent",
+      "Salt drawing out internal moisture",
+      "The bird cooling slowly from outside in"
+    ],
+    "context": "A whole roast carries about 10°F of residual cooking. Pull at 5–10°F below your target. Same principle applies to steak, fish, and rare beef roast."
+  },
+  {
+    "tier": 3,
+    "question": "A French cook builds a soup base by sweating diced onion, carrot, and celery in butter at low heat. The vegetables stay soft and translucent — never brown. The 2:1:1 ratio mix is called:",
+    "answer": "Mirepoix",
+    "choices": [
+      "Mirepoix",
+      "Sofrito",
+      "Battuto",
+      "Holy trinity"
+    ],
+    "context": "Spanish sofrito uses tomato + garlic; Italian battuto adds pancetta; Cajun 'holy trinity' swaps carrot for bell pepper. All build aromatic foundations."
+  },
+  {
+    "tier": 3,
+    "question": "A cook lays a steak on a wire rack uncovered in the fridge 24 hours before searing. The surface dries and gets slightly tacky. The next-day sear builds a deeper crust because:",
+    "answer": "A dry surface browns faster than a wet one",
+    "choices": [
+      "A dry surface browns faster than a wet one",
+      "Salt has tenderized the steak through and through",
+      "The fridge cured the steak with cold smoke",
+      "Bacteria have been killed by the dry air"
+    ],
+    "context": "Maillard browning needs heat above ~280°F. A wet surface stays at 212°F (water boiling) until dry. Dry brining season AND prepares the crust."
+  },
+  {
+    "tier": 3,
+    "question": "A baker makes pie crust and the recipe insists on cold butter, cold water, and minimal handling. Why does cold butter make a flakier crust?",
+    "answer": "Butter chunks melt in the oven, leaving flaky layers",
+    "choices": [
+      "Butter chunks melt in the oven, leaving flaky layers",
+      "Cold butter prevents sugar from caramelizing",
+      "Cold dough holds salt better than warm dough",
+      "Cold butter slows the gluten from developing"
+    ],
+    "context": "Pebble-sized butter chunks vaporize their water in the oven, separating dough layers. Warm butter blends into dough, producing crumbly-not-flaky crust."
+  },
+  {
+    "tier": 3,
+    "question": "A cook reaches into a hot oven without thinking and burns a hand. The first-aid rule from grandmother says 'cool water for ten minutes.' What does the running water actually do?",
+    "answer": "Stops residual heat damage to deeper tissue",
+    "choices": [
+      "Stops residual heat damage to deeper tissue",
+      "Rinses away the bacteria from the burn",
+      "Soothes pain by numbing the nerve endings",
+      "Restores moisture to the burned skin layer"
+    ],
+    "context": "Heat keeps damaging cells after the initial burn. Cool (not ice) water for 10–20 minutes is the modern burn-care standard. No butter, no ice."
+  },
+  {
+    "tier": 3,
+    "question": "A baker pulls puff pastry from the oven. The dough rose into hundreds of paper-thin layers. The cook folded butter into the dough multiple times. The technique is called:",
+    "answer": "Lamination",
+    "choices": [
+      "Lamination",
+      "Tempering",
+      "Proofing",
+      "Reduction"
+    ],
+    "context": "Six folds (turns) yield 729 butter sheets between 730 dough sheets in puff pastry. Water in the butter flashes to steam, lifting each layer."
+  },
+  {
+    "tier": 3,
+    "question": "A French baker pours boiling water + butter into a saucepan, stirs in flour all at once, and beats in eggs until glossy. The dough goes into the oven and puffs hollow without yeast or baking powder. What lifts it?",
+    "answer": "Steam from the water flashing to vapor",
+    "choices": [
+      "Steam from the water flashing to vapor",
+      "Yeast hidden inside the egg whites",
+      "Baking powder mixed with the flour",
+      "Air whisked into the egg yolks"
+    ],
+    "context": "Pâte à choux: éclairs, cream puffs, gougères, profiteroles. The high water content + egg protein structure makes steam-leavening possible."
+  },
+  {
+    "tier": 3,
+    "question": "A cook adds a glug of acid (lemon, vinegar) to whipped cream once it just reaches peaks. The cream becomes firmer and holds longer. The chemistry:",
+    "answer": "Acid stabilizes the protein-fat network",
+    "choices": [
+      "Acid stabilizes the protein-fat network",
+      "Acid kills bacteria that would deflate it",
+      "Acid evaporates and concentrates the cream",
+      "Acid melts the fat into a smooth gel"
+    ],
+    "context": "Same principle as cream of tartar in meringue. A small pH shift helps proteins denature and re-bond into stable foam."
+  },
+  {
+    "tier": 3,
+    "question": "A cook tempers chocolate by holding it precisely at 88°F (31°C) after a cooldown. The temperature window controls which crystal type forms. The 'right' crystal — glossy, snappy, stable — is:",
+    "answer": "Form V (beta) crystal",
+    "choices": [
+      "Form V (beta) crystal",
+      "Form I (alpha) crystal",
+      "Form VI (beta-prime) crystal",
+      "Form II crystal"
+    ],
+    "context": "Six crystal forms exist; only Form V produces shiny, snappy chocolate. Above 33°C the seed crystals melt; below 28°C Form IV (dull, soft) takes over."
+  },
+  {
+    "tier": 3,
+    "question": "A cook making caramel watches sugar melt: clear, gold, amber, mahogany. Past about 360°F the sauce starts smoking and smells acrid. What chemistry just took over?",
+    "answer": "Pyrolysis — sugar carbons combusting",
+    "choices": [
+      "Pyrolysis — sugar carbons combusting",
+      "Maillard reaction starts at this stage",
+      "Sugar caramelization continuing normally",
+      "Crystallization reversing the melt"
+    ],
+    "context": "Caramelization is sugar rearranging. Pyrolysis is sugar burning. The window between deep mahogany and burnt-bad is under 30 seconds — watch closely."
+  },
+  {
+    "tier": 3,
+    "question": "A cook stirs equal parts flour and butter in a pan. After 15 minutes the paste goes from pale yellow to peanut tan to chocolate brown. Cajun cooks take it nearly black. The trade-off as the roux darkens:",
+    "answer": "Flavor deepens but thickening power weakens",
+    "choices": [
+      "Flavor deepens but thickening power weakens",
+      "Color deepens but flavor stays the same",
+      "Thickening grows while flavor stays mild",
+      "Texture firms up but flavor disappears"
+    ],
+    "context": "Heat breaks starch into smaller fragments that can't form gel networks. Cajun cooks accept thin gumbo for the deep flavor a chocolate roux brings."
+  },
+  {
+    "tier": 3,
+    "question": "A cook reads a label: corn, sugar, salt, vitamins, malt extract. Beside it is a label with 30+ ingredients including hydrogenated oils, dextrose, corn syrup, emulsifiers, dyes, BHT. The NOVA system would call the first NOVA-3 and the second:",
+    "answer": "NOVA-4 (ultra-processed)",
+    "choices": [
+      "NOVA-4 (ultra-processed)",
+      "NOVA-1 (whole foods)",
+      "NOVA-2 (culinary ingredients)",
+      "NOVA-5 (sterile foods)"
+    ],
+    "context": "NOVA-4 = industrial formulations of ingredients not used in home kitchens (HFCS, hydrolyzed proteins, modified starches). NOVA-3 = recognizable food + salt/sugar/oil."
+  },
+  {
+    "tier": 3,
+    "question": "A cook adds a teaspoon of sugar to homemade tomato sauce that tasted too sharp. The sugar does what?",
+    "answer": "Balances the acid without adding sweetness",
+    "choices": [
+      "Balances the acid without adding sweetness",
+      "Thickens the sauce by binding water",
+      "Caramelizes and adds brown color",
+      "Neutralizes lycopene in the tomatoes"
+    ],
+    "context": "Acid and sugar suppress each other on the palate. A teaspoon of sugar in tomato sauce removes the sharp edge without making the sauce sweet."
+  },
+  {
+    "tier": 3,
+    "question": "A Mexican-American grandmother soaks dried corn in alkaline water (lime water or wood ash) before grinding it for masa. The process unlocks niacin (B3) — preventing pellagra. The process is called:",
+    "answer": "Nixtamalization",
+    "choices": [
+      "Nixtamalization",
+      "Fermentation",
+      "Caramelization",
+      "Pasteurization"
+    ],
+    "context": "Without nixtamalization, corn-based diets caused pellagra in 19th-century Europe and the US South. Mesoamerican cooks figured it out 3,500 years ago."
+  },
+  {
+    "tier": 3,
+    "question": "A jar of sauerkraut bubbles quietly for two weeks on the counter. The cabbage is being fermented. The bacteria doing the work are mostly:",
+    "answer": "Lactobacillus species",
+    "choices": [
+      "Lactobacillus species",
+      "Salmonella varieties",
+      "Saccharomyces yeasts",
+      "Botulinum spores"
+    ],
+    "context": "Lacto-fermentation: bacteria eat sugars and exhale CO2 + lactic acid. The acid preserves the cabbage. Kimchi, kefir, yogurt all use related Lactobacillus."
+  },
+  {
+    "tier": 3,
+    "question": "A cook adds yogurt to a chicken marinade. The yogurt does what to the meat?",
+    "answer": "Tenderizes through mild acid action",
+    "choices": [
+      "Tenderizes through mild acid action",
+      "Tenderizes through enzyme digestion",
+      "Adds extra protein to the surface",
+      "Sterilizes the chicken's exterior"
+    ],
+    "context": "Yogurt's lactic acid (much milder than lemon or vinegar) tenderizes without turning meat mushy over hours. Tandoori chicken marinates in yogurt overnight."
+  },
+  {
+    "tier": 3,
+    "question": "A cook compares a fresh leaf of cilantro to dried coriander seeds. They share the plant of origin but taste completely different. Why?",
+    "answer": "Different parts of the plant carry different oils",
+    "choices": [
+      "Different parts of the plant carry different oils",
+      "Drying converts cilantro into coriander chemically",
+      "Coriander comes from a different plant species",
+      "Drying always makes herbs taste more pungent"
+    ],
+    "context": "Cilantro (leaves) tastes bright and herbaceous. Coriander (seeds) tastes warm, citrus, woody. Same Coriandrum sativum, different compounds concentrate in each part."
+  },
+  {
+    "tier": 3,
+    "question": "A cook reads that egg whites whipped in copper bowls form firmer peaks than in glass. The chemistry behind this trick:",
+    "answer": "Copper ions stabilize ovotransferrin proteins",
+    "choices": [
+      "Copper ions stabilize ovotransferrin proteins",
+      "Copper conducts heat that thickens whites",
+      "Copper absorbs water from the egg whites",
+      "Copper kills bacteria that destabilize foam"
+    ],
+    "context": "Trace copper bonds with sulfur in ovotransferrin, slowing protein over-coagulation. Cream of tartar achieves the same effect chemically — more accessible to home cooks."
+  },
+  {
+    "tier": 3,
+    "question": "A baker substitutes whole-wheat flour 1:1 for all-purpose flour in a sandwich-loaf recipe. The bread comes out dense and short. The whole-wheat brings:",
+    "answer": "Bran particles that cut the gluten network",
+    "choices": [
+      "Bran particles that cut the gluten network",
+      "Too much sugar fermenting too fast",
+      "More moisture than the dough needs",
+      "Less protein than all-purpose flour"
+    ],
+    "context": "Sharp bran particles slice through developing gluten strands. Best practice: substitute partially (25-50%), or add extra liquid + extra rise time."
+  },
+  {
+    "tier": 3,
+    "question": "A cook chops red chiles into salsa. The capsaicin stings their fingers for an hour after washing. What kind of compound is capsaicin, and why does soap fail?",
+    "answer": "Oil-soluble — needs fat or alcohol to remove",
+    "choices": [
+      "Oil-soluble — needs fat or alcohol to remove",
+      "Water-soluble — needs more water washing",
+      "Acidic — needs alkaline soap to remove",
+      "Volatile — evaporates without help"
+    ],
+    "context": "Capsaicin is hydrophobic. Soap helps, but oil (vegetable, olive) lifts it faster. Same reason milk soothes the burn better than water — fat dissolves the molecule."
+  },
+  {
+    "tier": 3,
+    "question": "A cook squeezes lemon juice over cut apple slices. The slices stay white longer. The chemistry:",
+    "answer": "Acid lowers the pH where browning enzymes work",
+    "choices": [
+      "Acid lowers the pH where browning enzymes work",
+      "Citric acid kills the surface bacteria",
+      "Lemon adds vitamin C to apple flesh",
+      "Acid coats the apple in protective film"
+    ],
+    "context": "Browning enzymes (polyphenol oxidase) need a higher pH. Lemon juice acidifies the surface, shutting them down. Cold and oxygen-exclusion (water bath) work too."
+  },
+  {
+    "tier": 3,
+    "question": "A bottle of extra-virgin olive oil sits next to a bottle of 'light' or 'pure' olive oil. Both are olive oil. The differences are:",
+    "answer": "Extra-virgin is cold-pressed; light is refined and filtered",
+    "choices": [
+      "Extra-virgin is cold-pressed; light is refined and filtered",
+      "Extra-virgin has more calories per tablespoon",
+      "Light has more antioxidants than extra-virgin",
+      "Extra-virgin contains added flavoring agents"
+    ],
+    "context": "EVOO retains flavor compounds, polyphenols, antioxidants. 'Light' olive oil is heavily refined — neutral flavor, higher smoke point, lower nutritional value."
+  },
+  {
+    "tier": 3,
+    "question": "A pinch of salt goes into a chocolate cookie recipe. The cake is sweet, not salty. Why does the salt belong?",
+    "answer": "Salt suppresses bitter notes, letting sweet shine",
+    "choices": [
+      "Salt suppresses bitter notes, letting sweet shine",
+      "Salt thickens the cookie batter slightly",
+      "Salt activates the leavening agents",
+      "Salt browns the cookies in the oven"
+    ],
+    "context": "Salt acts on the bitter and metallic receptors more than sweet. A pinch removes muddiness and lets chocolate's flavor read clearly."
+  },
+  {
+    "tier": 3,
+    "question": "A cook reads that 'cooking with red wine' loses much of the alcohol but not all. After a half-hour simmer, roughly what percentage of the alcohol remains?",
+    "answer": "Around 35% of the original alcohol",
+    "choices": [
+      "Around 35% of the original alcohol",
+      "About 5% remaining at most",
+      "Almost none — fully evaporated",
+      "Around 75% still in the dish"
+    ],
+    "context": "USDA data: 30-minute simmer leaves ~35% alcohol. Flaming retains ~75%. Two-hour braise leaves ~10%. Only multi-hour cooking fully removes it."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian family in Bologna disputes 'spaghetti bolognese' on menus abroad. The traditional Bolognese ragù is served on which pasta?",
+    "answer": "Tagliatelle",
+    "choices": [
+      "Tagliatelle",
+      "Spaghetti",
+      "Penne",
+      "Rigatoni"
+    ],
+    "context": "Tagliatelle's wide flat ribbons hold the meat sauce better than round spaghetti. Bologna's chamber of commerce registered the official ragù recipe in 1982."
+  },
+  {
+    "tier": 3,
+    "question": "A French family pours a thick, golden broth into bowls of fish: rockfish, monkfish, conger. They serve it with rouille (red pepper-garlic mayo) on toast. The Marseille dish is called:",
+    "answer": "Bouillabaisse",
+    "choices": [
+      "Bouillabaisse",
+      "Cioppino",
+      "Cassoulet",
+      "Pot-au-feu"
+    ],
+    "context": "Mediterranean rockfish, saffron, fennel, orange peel. Originally fisherman food — unsellable bony fish boiled at the dock."
+  },
+  {
+    "tier": 3,
+    "question": "A Spanish cook fills a small clay pot with bread, garlic, paprika, and a poached egg in olive oil. The simple peasant dish is named for the main aromatic. Its name in Spanish begins with sopa de:",
+    "answer": "Ajo (garlic)",
+    "choices": [
+      "Ajo (garlic)",
+      "Pollo (chicken)",
+      "Pescado (fish)",
+      "Mariscos (seafood)"
+    ],
+    "context": "Sopa de ajo — Castilian peasant garlic soup, centuries old. The egg poaches in the hot broth. Comfort food across central Spain."
+  },
+  {
+    "tier": 3,
+    "question": "A Chinese cook stir-fries tofu and ground pork with chile bean paste, Sichuan peppercorn, and scallion. The dish makes the tongue tingle and burn together. The Sichuan classic is called:",
+    "answer": "Mapo tofu",
+    "choices": [
+      "Mapo tofu",
+      "Kung pao chicken",
+      "Lo mein",
+      "Wonton soup"
+    ],
+    "context": "Created 1862 in Chengdu by a woman known as Pock-marked Grandma Chen. Doubanjiang (fermented broad bean paste) is the soul of the dish."
+  },
+  {
+    "tier": 3,
+    "question": "A Korean family layers seasoned rice with vegetables, an egg, and gochujang in a hot stone bowl. The bottom rice crackles into a crispy crust. The stone bowl is called:",
+    "answer": "Dolsot (hot stone)",
+    "choices": [
+      "Dolsot (hot stone)",
+      "Ttukbaegi clay",
+      "Banchan bowl",
+      "Hotteok press"
+    ],
+    "context": "Bibimbap in a dolsot means crackled-rice nurungji at the bottom — the prize. Same dish in a plain bowl is just bibimbap."
+  },
+  {
+    "tier": 3,
+    "question": "A Filipino grandmother braises pork in vinegar, soy sauce, garlic, peppercorns, and bay leaves until the meat falls apart and the sauce is salty-sour-savory. The dish is called:",
+    "answer": "Adobo",
+    "choices": [
+      "Adobo",
+      "Sinigang",
+      "Kare-kare",
+      "Lechon"
+    ],
+    "context": "Vinegar-braising predates the Spanish — pre-Hispanic preservation method. 'Adobo' is what the Spanish called it; the technique was already indigenous."
+  },
+  {
+    "tier": 3,
+    "question": "A Thai cook simmers galangal, lemongrass, kaffir lime leaves, chile, fish sauce, and coconut milk with chicken. The fragrant soup is called:",
+    "answer": "Tom kha gai",
+    "choices": [
+      "Tom kha gai",
+      "Tom yum goong",
+      "Pad see ew",
+      "Khao soi"
+    ],
+    "context": "Tom = boil, kha = galangal, gai = chicken. Coconut-milk soup balanced across the Thai five-taste palette. Tom yum is the sour broth version."
+  },
+  {
+    "tier": 3,
+    "question": "A West African family simmers rice with tomato, onion, garlic, scotch bonnet, and seasoned stock until each grain is bright orange and infused with spice. The dish is called:",
+    "answer": "Jollof rice",
+    "choices": [
+      "Jollof rice",
+      "Waakye",
+      "Egusi stew",
+      "Fufu"
+    ],
+    "context": "Ghanaian and Nigerian families fiercely debate whose jollof is best. Both descend from the Senegambian Wolof people's thieboudienne — rice with fish."
+  },
+  {
+    "tier": 3,
+    "question": "A Greek grandmother layers eggplant, ground lamb, and béchamel sauce into a deep dish before baking. The dish is called:",
+    "answer": "Moussaka",
+    "choices": [
+      "Moussaka",
+      "Pastitsio",
+      "Gyros",
+      "Spanakopita"
+    ],
+    "context": "Greek moussaka shares the name with Levantine versions but uses béchamel — added by Nikolaos Tselementes in the 1920s to 'Frenchify' Greek cuisine."
+  },
+  {
+    "tier": 3,
+    "question": "A Brazilian family slow-cooks black beans with pork (often pig's feet, ears, sausage). The dish is the national stew of Brazil — called:",
+    "answer": "Feijoada",
+    "choices": [
+      "Feijoada",
+      "Moqueca",
+      "Picadinho",
+      "Acarajé"
+    ],
+    "context": "Popular history credits enslaved Africans cooking pork scraps with beans. Historians dispute the origin story — bean stews were widespread in Iberian peasant cooking too."
+  },
+  {
+    "tier": 3,
+    "question": "A Peruvian cook 'cooks' raw fish in lime juice with chile, red onion, salt, and cilantro for fifteen minutes. The dish is called:",
+    "answer": "Ceviche",
+    "choices": [
+      "Ceviche",
+      "Tiradito",
+      "Anticucho",
+      "Causa"
+    ],
+    "context": "Acid denatures fish protein the way heat does — opaque, firm, safe (with quality fish). UNESCO recognized Peruvian ceviche as intangible cultural heritage in 2023."
+  },
+  {
+    "tier": 3,
+    "question": "An Ethiopian family scoops stewed lentils, spiced chicken, and greens off a shared platter using torn pieces of a sour, spongy bread. The bread is called:",
+    "answer": "Injera",
+    "choices": [
+      "Injera",
+      "Pita",
+      "Naan",
+      "Lavash"
+    ],
+    "context": "Injera is fermented teff flour batter, cooked on a clay plate. Bread + plate + utensil at once. Communal eating is the Ethiopian table tradition."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian family pours a creamy egg-and-cheese sauce over hot pasta with crispy cured pork. Romans insist there's no cream — just egg, cheese, pasta water, and the cured pork's fat. The dish is called:",
+    "answer": "Carbonara",
+    "choices": [
+      "Carbonara",
+      "Cacio e pepe",
+      "Amatriciana",
+      "Alfredo"
+    ],
+    "context": "Authentic carbonara: guanciale (cured pork jowl), pecorino romano, egg yolks, black pepper, pasta water. No cream. Postwar American GIs got cream added; the rest of the world followed."
+  },
+  {
+    "tier": 3,
+    "question": "A cook's fridge holds raw chicken, milk, cheese, deli ham, lettuce, and leftover soup. To minimize cross-contamination risk, the chicken belongs on which shelf?",
+    "answer": "Bottom shelf, separate from ready-to-eat",
+    "choices": [
+      "Bottom shelf, separate from ready-to-eat",
+      "Top shelf, near the cold spot",
+      "Middle shelf, between dairy and produce",
+      "Door bin, where temperature varies most"
+    ],
+    "context": "Bottom shelf prevents any drips from contaminating foods below. Door bins fluctuate too much in temperature for high-risk items like milk and eggs."
+  },
+  {
+    "tier": 3,
+    "question": "A pregnant woman asks her doctor about which cheeses to avoid. The doctor lists soft cheeses made from unpasteurized milk. The pathogen of concern is:",
+    "answer": "Listeria monocytogenes",
+    "choices": [
+      "Listeria monocytogenes",
+      "Salmonella enteritidis",
+      "E. coli O157:H7",
+      "Norovirus genogroup"
+    ],
+    "context": "Listeria can cross the placenta and cause miscarriage or stillbirth — the CDC's strongest pregnancy-food warning. Hard aged cheeses (parmesan, aged cheddar) are safe even from raw milk."
+  },
+  {
+    "tier": 3,
+    "question": "A cook plans to thaw a 12-pound turkey for Sunday dinner. The USDA's safest method requires the most lead time. The rule of thumb:",
+    "answer": "About 24 hours per 4–5 pounds in the fridge",
+    "choices": [
+      "About 24 hours per 4–5 pounds in the fridge",
+      "About 12 hours per pound on counter",
+      "Cold water bath in 4 hours total",
+      "Microwave defrost in 30 minutes"
+    ],
+    "context": "A 12-pound bird needs 3 days in the fridge. The other approved methods (cold water bath with 30-minute changes; microwave defrost) require immediate cooking after."
+  },
+  {
+    "tier": 3,
+    "question": "A cook reuses a jar of mayonnaise that has been opened for two months. The label says 'refrigerate after opening.' What is the food-safety risk if mayo has sat at room temperature?",
+    "answer": "Salmonella growth in the egg base",
+    "choices": [
+      "Salmonella growth in the egg base",
+      "Oil oxidation making mayo rancid",
+      "Vinegar evaporation removing acid",
+      "Sugar fermentation in the recipe"
+    ],
+    "context": "Commercial mayo is acidic enough to slow growth but not prevent it. Once opened and contaminated by a knife or spoon, bacteria need only a few hours warm to multiply."
+  },
+  {
+    "tier": 3,
+    "question": "A child wants to crack and lick a raw egg. The CDC warns against raw eggs because of Salmonella. The bacteria contaminate eggs through what main route?",
+    "answer": "Inside the shell during hen's egg formation",
+    "choices": [
+      "Inside the shell during hen's egg formation",
+      "Surface contamination from the nest",
+      "Crack penetration after laying",
+      "Transmission from another egg"
+    ],
+    "context": "Salmonella enteritidis lives in the hen's reproductive tract and contaminates the egg before the shell forms. Pasteurized eggs and proper cooking are the only sure protection."
+  },
+  {
+    "tier": 3,
+    "question": "A cook tastes homemade canned green beans straight from the jar. The lid was vacuum-sealed. The bigger concern with home canning of low-acid vegetables:",
+    "answer": "Botulism — Clostridium botulinum thrives anaerobically",
+    "choices": [
+      "Botulism — Clostridium botulinum thrives anaerobically",
+      "Salmonella growth in the brine solution",
+      "Listeria contamination of the lid seal",
+      "E. coli from the soil on the beans"
+    ],
+    "context": "Botulinum spores survive boiling-water canning. Pressure canning (240°F+) is required for low-acid foods. High-acid foods (tomatoes, pickles) are safer in boiling water bath."
+  },
+  {
+    "tier": 3,
+    "question": "A buffet at a wedding has been set out for four hours. The chicken Marsala sits in a chafing dish with a tepid sterno underneath. Why is this a concern?",
+    "answer": "Hot food below 140°F enters the danger zone",
+    "choices": [
+      "Hot food below 140°F enters the danger zone",
+      "Buffet chafing dishes contaminate easily",
+      "Sterno fuel produces unsafe fumes",
+      "Marsala wine prevents proper heating"
+    ],
+    "context": "Hot foods must stay above 140°F; cold foods below 40°F. Weak sternos let chafing dishes drop into the danger zone — major buffet food-safety failure."
+  },
+  {
+    "tier": 3,
+    "question": "A cook handles raw shrimp, then touches the salt cellar to season vegetables next. Vibrio bacteria from shellfish can contaminate the salt. The food-safe move was:",
+    "answer": "Wash hands between raw protein and other tasks",
+    "choices": [
+      "Wash hands between raw protein and other tasks",
+      "Use a dedicated shrimp-handling glove",
+      "Pour salt from the cellar directly",
+      "Skip the shrimp seasoning entirely"
+    ],
+    "context": "Cross-contamination through hands is the most common kitchen pathway. Soap-and-water washing between raw protein and any other task is the standard."
+  },
+  {
+    "tier": 3,
+    "question": "A cook reads about the 'two-hour rule' for cooked food at room temperature. On a hot summer day above 90°F, the rule tightens to:",
+    "answer": "One hour maximum at room temperature",
+    "choices": [
+      "One hour maximum at room temperature",
+      "Three hours since heat is dry",
+      "Four hours since cooked is safe",
+      "No time limit — heat kills bacteria"
+    ],
+    "context": "USDA: 2 hours under 90°F, 1 hour above. Bacteria double every 20-30 minutes in the danger zone. Picnics, BBQs, and tailgates need a cooler for cooked food."
+  },
+  {
+    "tier": 3,
+    "question": "An Italian family unwraps Easter colombe — dove-shaped sweet bread similar to Christmas panettone. The dove shape symbolizes:",
+    "answer": "Peace and the Holy Spirit",
+    "choices": [
+      "Peace and the Holy Spirit",
+      "Wealth and harvest abundance",
+      "Spring and new growth",
+      "Italy's national bird"
+    ],
+    "context": "Colomba pasquale ('Easter dove'). Like panettone, it ferments long with natural yeast. Sweet bread punctuates major Christian holidays across Catholic Italy."
+  },
+  {
+    "tier": 3,
+    "question": "A Western three-tier wedding cake follows a tradition: bottom for reception guests, middle for friends not present, and top tier reserved for:",
+    "answer": "The first anniversary or first child's christening",
+    "choices": [
+      "The first anniversary or first child's christening",
+      "The honeymoon meal the same night",
+      "The mother of the bride's birthday",
+      "The bridesmaid party next morning"
+    ],
+    "context": "Victorian tradition. Originally fruit cake — alcohol-soaked, capable of preservation for a year. Modern frostings less suited to the practice."
+  },
+  {
+    "tier": 3,
+    "question": "A French family at New Year shares a galette des rois on January 6 (Epiphany). A small charm is baked inside; whoever finds it becomes:",
+    "answer": "King or queen for the day with paper crown",
+    "choices": [
+      "King or queen for the day with paper crown",
+      "Required to host next year's party",
+      "Granted three wishes for the year",
+      "First to receive the next slice"
+    ],
+    "context": "Almond pastry. The hidden fève (originally a real broad bean, now a porcelain figurine). Wear the paper crown all day — that's the joy of the find."
+  },
+  {
+    "tier": 3,
+    "question": "A medieval European banquet seated guests by rank along the long table. A particular object marked the social divide — sitting 'above' or 'below' it indicated your status. The object was:",
+    "answer": "The salt cellar",
+    "choices": [
+      "The salt cellar",
+      "The water pitcher",
+      "The bread basket",
+      "The candelabra"
+    ],
+    "context": "Salt was expensive enough to mark social geography. 'Above the salt' = honored guests. 'Below the salt' = lower rank. The idiom survives in English."
+  },
+  {
+    "tier": 3,
+    "question": "A Spanish family lingers at the table for two hours after lunch — coffee, conversation, no urge to leave. The cultural practice has a specific name:",
+    "answer": "Sobremesa",
+    "choices": [
+      "Sobremesa",
+      "Aperitivo",
+      "Tertulia",
+      "Siesta"
+    ],
+    "context": "Literally 'over-table.' The conversation is part of the meal — sometimes the most important part. Pressure from multinational work schedules has shortened the practice but not killed it."
+  },
+  {
+    "tier": 3,
+    "question": "A Catholic family observes Lent — 40 days of fasting and abstinence before Easter. Friday dinners traditionally drop one major food category:",
+    "answer": "Land-animal meat (fish allowed)",
+    "choices": [
+      "Land-animal meat (fish allowed)",
+      "Dairy and all egg products",
+      "Sugar and sweet desserts",
+      "Wine and all alcohol"
+    ],
+    "context": "Catholic fish-on-Friday tradition. The category exclusion built whole regional fish-and-chips industries — including Filet-O-Fish at McDonald's, created for Friday Catholics in 1962."
+  },
+  {
+    "tier": 3,
+    "question": "A British family lays out 'afternoon tea' versus 'high tea.' The common confusion abroad is the difference. Historically, high tea was:",
+    "answer": "A working-class evening meal at a tall table",
+    "choices": [
+      "A working-class evening meal at a tall table",
+      "An aristocratic 4pm light snack",
+      "A royal court banquet event",
+      "A Sunday-only church tradition"
+    ],
+    "context": "Afternoon tea: aristocratic, 4pm, light. High tea: working-class, after work, full meal at high (dining) table. The terms get conflated in modern usage."
+  },
+  {
+    "tier": 3,
+    "question": "A Hindu family observes Diwali (Festival of Lights) with sweets, prayers, and lit lamps. The festival celebrates:",
+    "answer": "Light's victory over darkness, good over evil",
+    "choices": [
+      "Light's victory over darkness, good over evil",
+      "The harvest of the autumn rice",
+      "The marriage of Krishna and Radha",
+      "The end of the monsoon season"
+    ],
+    "context": "Diwali — Deepavali, 'row of lamps' — celebrates dharma over adharma. Lord Rama's return from exile is the Northern Indian narrative; regional variants differ. Sweets (mithai) are central."
+  },
+  {
+    "tier": 3,
+    "question": "A Cantonese family invites visitors to 'yum cha' (drink tea) at a teahouse on Sunday morning. Carts roll past with small dishes the family picks from. The food tradition is called:",
+    "answer": "Dim sum",
+    "choices": [
+      "Dim sum",
+      "Kaiseki",
+      "Banchan",
+      "Mezze"
+    ],
+    "context": "Dim sum literally 'touch the heart.' Originally workers' tea-shop snacks; became a Hong Kong-Cantonese family tradition. Har gow (shrimp dumpling) and siu mai (pork) are the classical pair."
+  },
+  {
+    "tier": 3,
+    "question": "A Mexican family celebrates a 15-year-old daughter's quinceañera with a Mass and a large family banquet. The celebration originated from:",
+    "answer": "Aztec coming-of-age ceremonies merged with Catholic ritual",
+    "choices": [
+      "Aztec coming-of-age ceremonies merged with Catholic ritual",
+      "Spanish colonial debutante tradition only",
+      "Mid-20th-century American Sweet 16 imports",
+      "Catholic Confirmation rites adapted for girls"
+    ],
+    "context": "Pre-Hispanic Mexica girls aged 15 went through a rite marking adult status. Spanish colonists overlaid Catholic Mass. The modern quinceañera fuses both — the white dress, the chambelán, the waltz."
+  },
+  {
+    "tier": 4,
+    "question": "In 1810, the Russian ambassador to Paris, Prince Aleksandr Kurakin, hosted a dinner that broke from the French custom of placing all dishes on the table at once. His servers brought courses one at a time, plated for each guest, removed and replaced plates between courses. The new style swept European fine dining over the next century. What was it called?",
+    "answer": "Service à la russe (Russian service)",
+    "choices": [
+      "Service à la russe (Russian service)",
+      "Service à la française (French service)",
+      "Service à l'anglaise (English service)",
+      "Service à la moderne (modern service)"
+    ],
+    "context": "Service à la russe replaced service à la française (everything on the table at once). Plated courses brought course-by-course, hot, in sequence. Modern restaurant plating descends from Kurakin's 1810 Paris debut."
+  },
+  {
+    "tier": 4,
+    "question": "Auguste Escoffier (1846-1935) restructured the chaotic 19th-century professional kitchen into a hierarchy of specialized stations. Each station had its chef de partie (head): saucier (sauce), poissonnier (fish), grillardin (grill), entremétier (vegetables/eggs), pâtissier (pastry). The system, still standard in fine-dining kitchens worldwide, is called what?",
+    "answer": "The brigade de cuisine (kitchen brigade) system",
+    "choices": [
+      "The brigade de cuisine (kitchen brigade) system",
+      "The mise en place hierarchy of execution",
+      "The escarcot order of service workflow",
+      "The cordon bleu council of teaching chefs"
+    ],
+    "context": "Escoffier's military-inspired brigade put each task in a specialist's hands. The same five stations + executive chef + sous-chef + commis structure dominates modern fine-dining kitchens."
+  },
+  {
+    "tier": 4,
+    "question": "In 1912, French chemist Louis-Camille Maillard described a reaction between amino acids and reducing sugars under heat that produces brown color, hundreds of new flavor compounds, and the seared crust of meat. The same reaction explains toasted bread, roasted coffee, and the depth of brown stock. The reaction is named for him because he documented:",
+    "answer": "The chemistry of browning during cooking, not just the appearance",
+    "choices": [
+      "The chemistry of browning during cooking, not just the appearance",
+      "The single best protein for sustained slow-cooking applications",
+      "The maximum temperature steel pans can endure unharmed",
+      "The original recipe for caramel candy used by French chefs"
+    ],
+    "context": "Maillard's 1912 paper laid out the amino-acid-sugar reaction. Caramelization (sugar alone) is a separate chemistry. Modern food science traces hundreds of distinct flavor compounds to Maillard products."
+  },
+  {
+    "tier": 4,
+    "question": "Marie-Antoine Carême (1784-1833) was nicknamed 'the king of chefs and chef of kings.' He served Talleyrand, Tsar Alexander I, Prince Regent (later George IV), and the Rothschilds. He codified the four 'mother sauces' (béchamel, velouté, espagnole, allemande). Escoffier later refined the list to five. The fifth — added in Escoffier's 'Le Guide Culinaire' (1903) — was:",
+    "answer": "Tomato sauce (sauce tomate)",
+    "choices": [
+      "Tomato sauce (sauce tomate)",
+      "Brown butter (beurre noisette)",
+      "Mayonnaise (sauce mayonnaise)",
+      "Worcestershire (sauce anglaise)"
+    ],
+    "context": "Escoffier's five mother sauces: béchamel, velouté, espagnole, hollandaise, tomate. Carême's original four had allemande (egg-yolk-thickened velouté) instead of hollandaise. Each mother sauce launches a family of derivatives."
+  },
+  {
+    "tier": 4,
+    "question": "Versailles under Louis XIV (1638-1715) staged a daily dinner ritual called the grand couvert. The king dined alone at table — sometimes for an hour or more — while courtiers, ticketed visitors, and ambassadors stood watching. Saint-Simon's memoirs preserve the procedure in detail. What was the political function of this performance?",
+    "answer": "Royal vigor + legitimacy + access displayed as theater of state",
+    "choices": [
+      "Royal vigor + legitimacy + access displayed as theater of state",
+      "Practical preservation of king's appetite under court pressures",
+      "Religious devotion to Saint Louis through public consumption",
+      "Economic accounting of royal kitchen's daily expenditure publicly"
+    ],
+    "context": "The king's body = the body politic. Public consumption demonstrated royal health, the state's bounty, and access to the monarch as currency of court favor. Modern state dinners are an attenuated descendant."
+  },
+  {
+    "tier": 4,
+    "question": "A medieval English banquet hall would not have used plates as we know them. The lord and his guests ate from thick slabs of stale bread, cut from a day-old loaf — soaked through with the meal's juices over the course of dinner. After the meal these were typically:",
+    "answer": "Given as alms to the poor or fed to the dogs at the hall door",
+    "choices": [
+      "Given as alms to the poor or fed to the dogs at the hall door",
+      "Cleaned thoroughly and reused at the next day's meal",
+      "Burned in a special ceremony at the meal's end",
+      "Kept by the cook as the kitchen's evening dinner"
+    ],
+    "context": "Trenchers (Old French tranchier, 'to cut') were thick slabs of day-old bread. The grease and gravy soaked in. Lords with pewter or wooden plates beneath the trencher; lower-status guests ate the trencher directly. Tradition declined as ceramic plates became cheap in the 17th century."
+  },
+  {
+    "tier": 4,
+    "question": "A Victorian-era formal dinner party followed exhaustive codes of behavior: timing of guest arrival, sequence of cocktail conversation, length of each course, table-talk subjects, departure timing. Mrs. Beeton's 'Book of Household Management' (1861) codified the rules for the rising middle class. What was the social purpose of these elaborate codes?",
+    "answer": "Sorting acceptable society from the merely rich or aspirational",
+    "choices": [
+      "Sorting acceptable society from the merely rich or aspirational",
+      "Reducing food waste through precisely measured portions",
+      "Speeding meals through structured timing of courses",
+      "Adapting French haute cuisine to British home kitchens"
+    ],
+    "context": "Etiquette books taught new-money industrialists how to act 'aristocratic' enough for old-money society. The fork-and-knife dance, the soup-spoon angle, the dinner-jacket rules — all signaled membership. Edith Wharton's novels turn on this anxious sorting."
+  },
+  {
+    "tier": 4,
+    "question": "A British royal wedding cake traditionally uses heavy fruit cake — alcohol-soaked, capable of preservation for decades. William + Kate (2011) kept tradition with an 8-tier fruit cake. Harry + Meghan (2018) broke from tradition. What did they choose, and what did the press read into the choice?",
+    "answer": "Lemon-elderflower sponge — signaling modernizing royal preferences",
+    "choices": [
+      "Lemon-elderflower sponge — signaling modernizing royal preferences",
+      "Three-layer chocolate ganache — signaling Americanization",
+      "Vanilla buttercream sponge — signaling traditionalist reversion",
+      "Honey-saffron cake — signaling Middle Eastern diplomatic outreach"
+    ],
+    "context": "Claire Ptak of Violet Bakery made the Harry-Meghan cake. Lemon-elderflower (springtime, English garden flavors) over fruit-cake-with-brandy (Victorian aristocratic) signaled new royal generation. Royal-wedding food choices are deliberate cultural messaging."
+  },
+  {
+    "tier": 4,
+    "question": "The British 'Sunday roast' — meat (beef, pork, lamb) with Yorkshire pudding, roasted potatoes, vegetables, gravy — emerged in 18th-century working-class England. Families set the meat to cook before church and returned to a finished dinner. What does the Sunday roast illustrate about pre-modern food + family + religious time?",
+    "answer": "Slow oven cooking allowed religious observance and family meal to share Sunday",
+    "choices": [
+      "Slow oven cooking allowed religious observance and family meal to share Sunday",
+      "Beef was the only meat preserved well enough for weekly Sunday cooking",
+      "Yorkshire pudding required oven temperatures only available on Sunday",
+      "British families could only afford meat once weekly — Sundays preferred"
+    ],
+    "context": "The roast cooked while the family was at church. Yorkshire pudding (originally cooked under the roast to catch dripping fat) anchored the meal. The tradition extended to the British Commonwealth — Australian, Canadian, South African families of British descent kept it."
+  },
+  {
+    "tier": 4,
+    "question": "A typical American Thanksgiving dinner includes turkey, stuffing, mashed potatoes, gravy, cranberry sauce, sweet potato dish, and pumpkin pie. The menu has been roughly stable since the 1860s. Sarah Josepha Hale lobbied four presidents over 17 years to make Thanksgiving a national holiday. Which president finally proclaimed it in 1863?",
+    "answer": "Abraham Lincoln during the Civil War",
+    "choices": [
+      "Abraham Lincoln during the Civil War",
+      "Ulysses S. Grant during Reconstruction",
+      "Andrew Jackson early in his presidency",
+      "Theodore Roosevelt early in the 20th century"
+    ],
+    "context": "Lincoln proclaimed Thanksgiving a national holiday in October 1863 — during the Civil War. Sarah Hale, editor of 'Godey's Lady's Book,' had lobbied Pierce, Buchanan, Fillmore, and Lincoln. The 1621 Plymouth feast became the canonical 'first' Thanksgiving in subsequent national memory."
+  },
+  {
+    "tier": 4,
+    "question": "A Catholic family observes specific Friday-fast traditions during Lent. The Latin Church requires fasting and abstinence — no meat — on Ash Wednesday and Good Friday, with abstinence (no meat) on Fridays during Lent. Eastern Catholic and Orthodox traditions are stricter. What's the underlying theological reason?",
+    "answer": "Penance — voluntary self-denial joins the suffering of Christ",
+    "choices": [
+      "Penance — voluntary self-denial joins the suffering of Christ",
+      "Hygiene — meat spoiled fastest in pre-refrigeration Friday markets",
+      "Economy — fish was cheaper, supporting fishing-village livelihoods",
+      "Custom — Friday was the historic weekly food-distribution day"
+    ],
+    "context": "Friday commemorates Christ's death (Good Friday). Meat abstinence is voluntary self-denial. The economic effect built whole fish industries (English fish-and-chips, Catholic-friendly fast-food fish sandwich at McDonald's, 1962)."
+  },
+  {
+    "tier": 4,
+    "question": "A traditional Italian Christmas Eve dinner ('La Vigilia') includes seven seafood courses. The Italian-American Catholic family has eaten this same menu for generations. The seven courses originate from:",
+    "answer": "Seven sacraments / seven hills of Rome / no exact answer agreed",
+    "choices": [
+      "Seven sacraments / seven hills of Rome / no exact answer agreed",
+      "Seven days of Christmas described in Italian custom",
+      "Seven major Catholic saints named at Christmas vespers",
+      "Seven varieties of fish available in southern Italian markets"
+    ],
+    "context": "The 'Feast of the Seven Fishes' is more Italian-American than Italian. In Italy, La Vigilia is observed across the south but seven specifically is American codification. The number's symbolism (Catholic sacraments, days of creation, hills of Rome) is folk explanation, not formal doctrine."
+  },
+  {
+    "tier": 4,
+    "question": "A grandmother in Brooklyn keeps her grandmother's recipe for tomato 'gravy' — slow-simmered meat sauce that takes all Sunday. Italian-American families call it gravy; Italian-Italian families call it sugo or ragù. The Italian-American term comes from:",
+    "answer": "Italian immigrants' English translation of meat-enriched sauce",
+    "choices": [
+      "Italian immigrants' English translation of meat-enriched sauce",
+      "Anglo-American influence on Italian-American cooking",
+      "Confusion with British roast-meat gravy from English neighbors",
+      "Marketing renaming by 20th-century jarred-sauce companies"
+    ],
+    "context": "'Gravy' described any thick meat-juice-based sauce. Italian immigrants, learning English, used the available word for what they made. 'Sunday gravy' or 'Sunday sauce' is a Mafia-novel staple precisely because of this immigrant linguistic moment."
+  },
+  {
+    "tier": 4,
+    "question": "A French dinner party progresses through aperitif → entrée (starter) → plat (main) → fromage (cheese course) → dessert → café and digestif. The cheese-before-dessert order is the French distinctive — American meals often have cheese at the appetizer or skip it. The order's logic:",
+    "answer": "Cheese eases the palate from savory to sweet via salt-and-fat bridge",
+    "choices": [
+      "Cheese eases the palate from savory to sweet via salt-and-fat bridge",
+      "Cheese requires red wine, which precedes dessert white wines",
+      "Cheese must be served alone after the main protein course",
+      "Cheese substitutes for dessert in lower-class French households"
+    ],
+    "context": "French sequencing puts cheese (savory, dense, salty-fatty) just before dessert (sweet). The palate transitions smoothly. The same wine often pairs both courses. American 'cheese plate as appetizer' loses this bridging function."
+  },
+  {
+    "tier": 4,
+    "question": "Le Cordon Bleu, founded 1895 in Paris by journalist Marthe Distel and chef Henri-Paul Pellaprat, became the world's most famous culinary school. Julia Child enrolled in 1949 and famously struggled before mastering the curriculum. Cordon Bleu translates literally as:",
+    "answer": "Blue ribbon — the highest French chivalric order",
+    "choices": [
+      "Blue ribbon — the highest French chivalric order",
+      "Cordoned chef — military-style hierarchy",
+      "Blue cord — kitchen apron-tie tradition",
+      "Cordon's blue — founder's signature color"
+    ],
+    "context": "L'Ordre du Saint-Esprit (Order of the Holy Spirit) was France's highest chivalric order; its blue ribbon (cordon bleu) symbolized excellence. The culinary school took the name to claim that level of mastery. 'Cordon bleu chicken' is a separate dish named for the same ribbon."
   }
 ]
