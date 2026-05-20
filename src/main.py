@@ -2356,6 +2356,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             else:
                 self.add_message(text, mtype)
 
+        # Status-effect damage (poison, bleeding, strangulation, doomed) can
+        # reduce HP to 0 — must trigger death. Previously only _petrify_death
+        # was caught here, so a player poisoned to 0 HP kept walking.
+        if self.state != STATE_DEAD and self.player.is_dead():
+            self.defeat_reason = 'died'
+            self._on_game_over()
+            self.state = STATE_DEAD
+            # Distinguish cause for the death-screen tone
+            if self.player.has_effect('poisoned'):
+                self.add_message("The poison stops your heart. You collapse.", 'danger')
+            elif self.player.has_effect('bleeding'):
+                self.add_message("You bleed out. The dungeon is silent.", 'danger')
+            elif self.player.has_effect('strangulation'):
+                self.add_message("The strangling grip closes — you cannot breathe.", 'danger')
+            elif self.player.has_effect('doomed'):
+                self.add_message("The doom curse takes its toll. You fall.", 'danger')
+            else:
+                self.add_message("You have died! Press ESC to quit.", 'danger')
+
         if self.state == STATE_DEAD:
             return
 

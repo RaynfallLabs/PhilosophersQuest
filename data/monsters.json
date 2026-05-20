@@ -13761,15 +13761,15 @@
     "peak_floor": 7,
     "spread": 9,
     "peak_weight": 10.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "drip",
         "damage": "1d2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.5,
-        "effect_duration": 6
+        "effect_chance": 0.35,
+        "effect_duration": "1d6"
       }
     ],
     "resistances": [
@@ -13969,15 +13969,15 @@
     "peak_floor": 10,
     "spread": 9,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 3,
     "attacks": [
       {
         "name": "engulf",
         "damage": "1d2",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.65,
-        "effect_duration": 8
+        "effect_chance": 0.40,
+        "effect_duration": "1d8"
       }
     ],
     "resistances": [
