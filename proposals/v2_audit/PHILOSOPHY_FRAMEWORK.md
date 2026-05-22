@@ -256,6 +256,65 @@ These are MAXIMUMS, not targets. Median should sit at 60-70% of cap.
 - Christian-Crusader framework: theology overlap content respects
   the framework (single God, no pantheons in the THEOLOGY overlap rows).
 
+## Substantive moral vision (learned from 2026-05-22 rebuild)
+
+The following positions are SUBSTANTIVE views the bank teaches, not "interesting alternatives" to be neutrally balanced against opposing schools. The pedagogical method stays neutral (students follow chains of reasoning to recognize moves; no verdicts declared in answers). The CONTENT selection is not neutral — these are the questions worth asking.
+
+### Care ethics: harsh treatment, not endorsement
+- Care ethics is the feel-good default position humans naturally hold. The bank's job is to TEACH the LOGICAL CRITIQUES of it.
+- 1-2 questions per tier define care ethics so students recognize the school. The remaining T2-T5 ethics questions on care SHOULD challenge it from real philosophical angles: enabling dependency, neglect of root causes, scaling failures, parochialism.
+- The bank does NOT moralize at the player ("you should help your friend"). It teaches the student to RECOGNIZE the philosophical positions and their structural critiques.
+
+### Parental and local partiality is JUST AND RIGHT
+- Cottingham (Partiality and the Virtues, 1998) and Williams ("one thought too many") defend agent-relative obligations as morally grounded — not as bias to be corrected.
+- Singer's drowning-child impartialism is the abstract demand being CHALLENGED, not the default to defend.
+- Parents preferring their own children, communities preferring their own members, citizens preferring their countrymen — all morally grounded under this view.
+- Frame impartialism as the implausibly abstract foil; partiality as the substantive position.
+
+### Men and women ARE different
+- Christina Hoff Sommers (Who Stole Feminism?, 1994) distinguishes EQUITY feminism (fair treatment of individuals on their merits; acknowledges real differences between the sexes) from GENDER feminism (insists men and women are interchangeable, frames any difference as oppression).
+- The bank teaches equity feminism as the substantive view. Gender feminism appears as a position to be scrutinized.
+- Celebrating difference between the sexes does NOT diminish individuals. The bank does not pretend men and women are interchangeable.
+
+### Hayekian-style critique as substantive
+- When the bank treats welfare-as-scaled-care, central-planning critiques, or social-justice rhetoric, the Hayekian view (The Use of Knowledge in Society, 1945; The Mirage of Social Justice, 1976) is the substantive winner of the structural argument. Adjacent traditions (Bastiat, Friedman, Sowell, Buchanan, Olson, Stigler, Mises) work in the same tradition.
+- The bank teaches students to RECOGNIZE the reasoning moves these thinkers use — Bastiat's seen-vs-unseen, Hayek's knowledge problem, public-choice incentive analysis, moral hazard, regulatory capture, Sowell's "compared to what?", Friedman's "judge by results not intentions" — without declaring policies "wrong" or schools "correct."
+
+### Surface-good critique frame (pedagogical method)
+- Many modern policy proposals sound good on the surface but produce predictable harms. The bank teaches students to LOOK FOR these patterns, not to memorize verdicts.
+- Question shape: advocate proposes feel-good policy → critic articulates a specific reasoning move → student identifies which reasoning move the critic is making.
+- Choices are competing REASONING MOVES (with inline definitions), not school names alone.
+- Whether the student accepts the critic's conclusion is left open. They have learned to SEE the move.
+
+### Coercion-beneath-consent frame (pedagogical method)
+- Modern political language softens coercion ("asking the wealthy to pay their fair share", "society decides", "we the people"). The bank teaches students to RECOGNIZE the gap between rhetoric and mechanism — without declaring "taxation is theft" or any verdict.
+- Question shape: speaker uses softening language → critic identifies a specific distinction the language obscures → student identifies which distinction.
+- Distinctions taught: voluntary vs compelled, specific actors vs abstract collective, consent vs majority decision (Mill, Tocqueville), just law vs legal plunder (Bastiat), conditional vs unconditional cooperation, procedural vs substantive justice, public choice vs benevolent planner.
+
+## Wonder bias — scenario aesthetics
+
+When choosing scenarios, prefer GRAND / WONDROUS / CANONICAL framings over mundane modern ones. Logic stays the same; scenery upgrades. The wonder framing serves two purposes: (a) the Christian-Crusader game setting feels coherent, (b) kids encountering canonical scenarios later in life recognize them.
+
+**Prefer:**
+- Knights, squires, paladins, generals, captains
+- Battles, sieges, single combat, tournaments, training yards
+- Creatures: dragons, gryphons, basilisks, manticores, wyverns
+- Mysteries: alchemical labs, oracles, prophecies, hidden ruins, ancient texts
+- Mythology: Greek, Norse, Arthurian, biblical heroes
+- Fortresses, citadels, monasteries, scriptoriums, refectories, great libraries
+- Bards, scribes, messengers, heralds, merchants of the realm
+- Named canonical thought experiments: Ship of Theseus, Mary's Room, Chinese Room, Brain in a Vat, Trolley Problem, Ring of Gyges, Newcomb's Paradox, Buridan's Ass, Sorites Paradox, Statue and the Lump, Black's Spheres, Experience Machine
+
+**Avoid:**
+- "Theo's bike", "Maya's group chat", "Pop star endorses energy drink", "Sleepover snack", "Bake sale rules", "Pizza place", "Soccer practice", "School newspaper" — these scenarios diminish the philosophical weight of the question and don't anchor students to a tradition.
+- Exception: T1 lived-situation framings (family dinner rules, classroom rules) are acceptable when the philosophical content genuinely belongs in lived experience (e.g., basic political-authority questions).
+
+## How to use this framework
+
+Future bank rebuilds: read this document FIRST. Read PHILOSOPHY_TEMPLATES.md SECOND for the concrete patterns. Generators instantiate templates that conform to this framework.
+
+If a generation pass produces content that violates the substantive moral vision above (e.g., presents care ethics under no critical pressure, or treats Hayek as merely "an interesting alternative", or frames sex differences as inherently oppressive), the pass is wrong on the framework — not just on the templates.
+
 ## The implementation pattern
 
 Every batch of new questions goes through this pipeline:
