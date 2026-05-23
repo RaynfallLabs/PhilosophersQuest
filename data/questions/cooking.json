@@ -5932,24 +5932,24 @@
   {
     "tier": 4,
     "question": "A French gratin (potatoes, cream, cheese, baked) and a similar-looking Italian lasagna both finish with a brown bubbling top. The Italian dish has pasta sheets; the French has only thin potato. Both develop a savory crust by the same chemistry. What chemistry, and what differs in finish?",
-    "answer": "Both rely on Maillard browning of dairy proteins; gratin's crust is mostly milk solids and butter on potato",
+    "answer": "Maillard browning of dairy proteins; gratin's crust is milk solids on potato; lasagna's is parmesan and bechamel browning on pasta",
     "choices": [
-      "Both rely on Maillard browning of dairy proteins; gratin's crust is mostly milk solids and butter on potato",
-      "Both rely on caramelization of dairy sugars; gratin's depends on milk lactose; lasagna's depends on tomato",
-      "Both rely on protein denaturation forming a skin; gratin's skin is mostly potato starch set firm",
-      "Both rely on starch gelation locking the structure; gratin's is potato starch; lasagna's is wheat pasta starch"
+      "Maillard browning of dairy proteins; gratin's crust is milk solids on potato; lasagna's is parmesan and bechamel browning on pasta",
+      "Caramelization of sugars alone in both; gratin and lasagna brown via simple sucrose breakdown above 160C with no protein chemistry involved",
+      "Smoke compounds in oven air; gratin and lasagna both pick up char from convective smoke deposit, with browning unrelated to surface chemistry",
+      "Surface dehydration only; gratin and lasagna crusts are dried-out top layers with no chemical change beyond water loss producing the color"
     ],
     "context": "Both top crusts are Maillard reactions — dairy proteins (casein from cheese, plus milk solids) react with reducing sugars (lactose). Cheese melts, surface dries, Maillard runs. The grain in lasagna adds wheat-protein Maillard contribution. Same chemistry runs across mac-and-cheese, parmesan crust, French onion soup gratinée, croque-monsieur."
   },
   {
     "tier": 4,
     "question": "Italian gelato has noticeably lower fat (~6-8%) than American ice cream (~15-18%) and is served warmer (~10-12C vs ~-15C). The choices are not random. What qualities follow from lower-fat-and-warmer-serving, and what does Italian tradition prize that American does not?",
-    "answer": "Lower fat and warmer service release flavor on the tongue — flavor compounds release at warmer temperatures; less fat doesn't coat receptors",
+    "answer": "Italian gelato's lower fat lets flavor release on the tongue; warmer service vaporizes volatiles; American ice cream's fat coats receptors and cold blunts",
     "choices": [
-      "Lower fat and warmer service release flavor on the tongue — flavor compounds release at warmer temperatures; less fat doesn't coat receptors",
-      "Lower fat and warmer service make the dessert lighter for daily eating — Italian tradition includes gelato in regular meals",
-      "Lower fat and warmer service let dairy proteins remain perceptible — Italian tradition prizes the protein contribution",
-      "Lower fat and warmer service preserve gelato's color — pigments degrade at very cold temperatures; lower fat does not block visual brightness"
+      "Italian gelato's lower fat lets flavor release on the tongue; warmer service vaporizes volatiles; American ice cream's fat coats receptors and cold blunts",
+      "Italian gelato and American ice cream are chemically identical; temperature and fat are presentation choices with no real effect on flavor perception",
+      "American ice cream's high fat carries more flavor than Italian gelato; warmer Italian service simply compensates for the lower-fat recipe used by makers",
+      "Italian gelato is naturally sweeter due to lower fat; American ice cream needs extra sugar to compensate, which then dulls the cream base perception"
     ],
     "context": "Lower fat lets flavor compounds reach the tongue (fat coats taste receptors); warmer service releases more volatile aroma. Italian gelato is built around flavor intensity — pistachio tastes like pistachio. American ice cream's higher fat gives a richer mouthfeel but mutes flavor and demands lower service temperature to hold structure."
   },
@@ -6004,14 +6004,14 @@
   {
     "tier": 4,
     "question": "A Chinese steamed whole fish (ginger, scallion, soy, hot oil drizzle) and a Mediterranean grilled whole fish (lemon, herbs, olive oil) both showcase whole-fish cookery. Both judge freshness the same way. Why do the cuisines settle on different methods for similar fish?",
-    "answer": "Steaming preserves delicate flavor where the fish is the star (Chinese tradition)",
+    "answer": "Chinese tradition prizes the fish's clean flavor (steam minimizes interference); Mediterranean prizes flavor layers from char and herbs (grill adds smoke)",
     "choices": [
-      "Steaming preserves delicate flavor where the fish is the star (Chinese tradition)",
-      "Steaming is faster than grilling and suits the high-volume Chinese restaurant kitchen",
-      "Steaming requires fewer ingredients than grilling; Chinese tradition prizes minimal interventions",
-      "Steaming preserves more nutrients than grilling; Chinese tradition prioritizes nutrition over flavor"
+      "Chinese tradition prizes the fish's clean flavor (steam minimizes interference); Mediterranean prizes flavor layers from char and herbs (grill adds smoke)",
+      "Chinese cooking uses steam because grilling is forbidden by Confucian classics; Mediterranean cooking uses grill because steaming was unknown there",
+      "Chinese cooks steam because their fish are smaller; Mediterranean cooks grill because their fish are larger and need direct radiant heat to cook through",
+      "Chinese steaming and Mediterranean grilling produce identical flavor results; the difference is cultural habit alone with no real culinary distinction"
     ],
-    "context": "Chinese tradition: steaming preserves the fish's own flavor — soy and ginger are accents, the fish is the dish. Mediterranean tradition: grilling adds smoke and char as flavor layers, with herbs and olive oil enhancing the burn. Both judge freshness by eye, gill, and smell. Different cultural answers to what showcases a fish best — both legitimate."
+    "context": "Chinese tradition: steaming preserves the fish's clean flavor — soy and ginger are accents, the fish is the dish. Mediterranean tradition: grilling adds smoke and char as flavor layers, with herbs and olive oil amplifying them. Both judge freshness by eye, gill, and smell. Two cultures, two legitimate answers."
   },
   {
     "tier": 4,
@@ -8572,14 +8572,14 @@
   {
     "tier": 3,
     "question": "A breakfast sausage patty must be cooked before eating. A slice of salami can be eaten raw. Both are ground seasoned pork. What lets one be eaten raw and the other not?",
-    "answer": "Salami is cured fermented and dried; breakfast sausage is none of these",
+    "answer": "Salami is cured, fermented, and dried; breakfast sausage is none of these",
     "choices": [
-      "Salami is cured fermented and dried; breakfast sausage is none of these",
+      "Salami is cured, fermented, and dried; breakfast sausage is none of these",
       "Salami is hot-smoked; the breakfast sausage is raw and never sees smoke",
       "Salami is from a different species; breakfast sausage uses normal pork",
       "Salami is irradiated to kill pathogens; breakfast sausage is sold un-rad"
     ],
-    "context": "Fresh sausages (breakfast, fresh Italian, fresh chorizo): raw, must cook. Cured sausages (salami, soppressata, dry chorizo, saucisson sec): cured, fermented, dried, Aw dropped. Chemistry decides."
+    "context": "Fresh sausages (breakfast, fresh Italian, fresh chorizo) are raw and must be cooked. Cured sausages (salami, soppressata, dry chorizo, saucisson sec) are cured, fermented, dried, with water activity (Aw) dropped — chemistry decides whether a sausage can be eaten raw."
   },
   {
     "tier": 3,
@@ -8703,15 +8703,15 @@
   },
   {
     "tier": 4,
-    "question": "American 'streaky' bacon, British 'back' bacon, Italian pancetta, and Italian guanciale all come from cured pork. They occupy the same slot — fatty cured pork to render and crisp. Each tradition picks a different cut and cure. What is the axis of difference?",
-    "answer": "Cut and cure differ; streaky belly with smoke; back loin-belly with smoke; pancetta belly air-cure; guanciale jowl air-cure",
+    "question": "Italian pancetta and Italian guanciale are both air-cured pork — no smoke, no cooking, salt and time only. They differ in the cut of pork used. Pancetta is belly; guanciale uses which cut?",
+    "answer": "Jowl — fattier, denser, melts into pasta sauces (the canonical carbonara fat)",
     "choices": [
-      "Cut and cure differ; streaky belly with smoke; back loin-belly with smoke; pancetta belly air-cure; guanciale jowl air-cure",
-      "All four are identical pork-belly cures; the names are regional marketing for the same product sold to different ethnic groups at prices",
-      "All four differ only in the spice rub; the pork cut and the cure chemistry are the same across all four traditions in every region",
-      "Cut and species differ; streaky pork; back lamb; pancetta goat; guanciale boar; each tradition uses a different animal entirely here"
+      "Jowl — fattier, denser, melts into pasta sauces (the canonical carbonara fat)",
+      "Loin — leaner muscle from along the back, similar to pork chops uncooked",
+      "Shoulder — well-marbled muscle from the foreleg, the basis of pulled pork",
+      "Trotter — gelatinous foot meat used for soup stocks, never as cured pork"
     ],
-    "context": "American streaky bacon: belly + cure + smoke. British back bacon: loin-and-belly + cure + smoke. Pancetta: belly + air-cure, no smoke. Guanciale: jowl + air-cure, no smoke. Different cuts mean different fat-to-meat ratios; different cure traditions mean different finished textures. Not interchangeable."
+    "context": "Guanciale comes from the jowl (cheek) — fattier and denser than belly. The rendered fat is what makes a true Roman carbonara silky. Pancetta (belly) is leaner; American streaky bacon (belly + smoke) is leaner still. Italian salumi distinguish cuts with care: the cut determines the role."
   },
   {
     "tier": 4,
@@ -9172,9 +9172,9 @@
   {
     "tier": 5,
     "question": "European sausage families divide regionally with remarkable specificity: Italian salami (north and south differ), French saucisson, German Wurst (regional dozens — Weisswurst, Bratwurst, Leberwurst, Blutwurst), Spanish chorizo and sobrasada, Polish kielbasa, Hungarian kolbasz, Czech klobasy. What does the dense regional sausage map reveal?",
-    "answer": "Pre-refrigeration whole-animal-use was so universal every farming household slaughtered preserved and consumed pigs annually regional dialects",
+    "answer": "Pre-refrigeration whole-animal-use was so universal every farming household slaughtered, preserved, and consumed pigs annually regional dialects",
     "choices": [
-      "Pre-refrigeration whole-animal-use was so universal every farming household slaughtered preserved and consumed pigs annually regional dialects",
+      "Pre-refrigeration whole-animal-use was so universal every farming household slaughtered, preserved, and consumed pigs annually regional dialects",
       "Pre-industrial sausage was a luxury food limited to nobility the regional density reflects court cuisines competing for prestige across",
       "Pre-industrial sausage was a religious offering used in liturgical observance the regional density reflects diocesan boundaries of Church",
       "Pre-industrial sausage was an industrial product even in medieval period the regional density reflects city-level guild monopolies on prod"
@@ -9592,12 +9592,12 @@
   {
     "tier": 2,
     "question": "Two green herb sauces sit on European tables. Italian salsa verde uses parsley, capers, anchovy, garlic, vinegar, and oil. Basque salsa verde uses parsley, garlic, oil, and white wine for fish. What is the main difference?",
-    "answer": "Italian salsa verde has anchovy and caper depth; Spanish version focuses on wine and oil",
+    "answer": "Anchovy and capers anchor the Italian; the Basque omits both and uses wine and oil for fish",
     "choices": [
-      "Italian salsa verde has anchovy and caper depth; Spanish version focuses on wine and oil",
-      "Italian salsa verde is sweet and Spanish is salty; both use anchovy and caper bases",
-      "Italian salsa verde is served only with bread; Spanish version is served only with meat",
-      "Italian salsa verde is fermented for weeks; Spanish version is mixed fresh at the meal"
+      "Anchovy and capers anchor the Italian; the Basque omits both and uses wine and oil for fish",
+      "Anchovy and basil define the Italian; the Basque uses cilantro and tomato for grilled meat",
+      "Both use anchovy as a base; the Basque adds pepper while the Italian adds wine and lemon zest",
+      "Both omit anchovy and capers; Italian uses oregano, Basque uses tarragon for the aromatic difference"
     ],
     "context": "Italian salsa verde carries anchovy-and-caper salinity. Basque salsa verde (for hake and clams) is a lighter wine-parsley fish sauce. Mexican salsa verde (tomatillo, chile, cilantro) is a third unrelated family."
   },
@@ -9760,12 +9760,12 @@
   {
     "tier": 3,
     "question": "Italian pesto alla genovese uses a stone mortar to crush basil, pine nuts, garlic, hard cheese, and olive oil. French hollandaise uses a whisk to emulsify warm butter into beaten egg yolks. Both are emulsions. What is different about their emulsifiers?",
-    "answer": "Pesto's emulsifier is the plant-cell debris and protein from crushed nut and garlic, not egg yolk",
+    "answer": "Italian pesto: crushed-plant debris and nut protein emulsify; French hollandaise: egg-yolk lecithin coats warm butter droplets",
     "choices": [
-      "Pesto's emulsifier is the plant-cell debris and protein from crushed nut and garlic, not egg yolk",
-      "Pesto uses lecithin from the basil leaves and hollandaise uses lecithin from the egg yolk for similar effect",
-      "Pesto is a suspension not an emulsion, so it does not actually need an emulsifier of any kind",
-      "Pesto's emulsifier is the olive oil itself, which functions both as oil and emulsifier in pesto"
+      "Italian pesto: crushed-plant debris and nut protein emulsify; French hollandaise: egg-yolk lecithin coats warm butter droplets",
+      "Italian pesto and French hollandaise both use egg-yolk lecithin; methods differ only in temperature and finishing herbs",
+      "Italian pesto emulsifies via olive-oil oxidation at room temp; French hollandaise via butter denaturation in heat alone",
+      "Italian pesto is a cold suspension that breaks fast; French hollandaise is a true emulsion holding for hours of service"
     ],
     "context": "Pesto is held together by plant proteins, cell-wall fragments, and starches from the nut and garlic — broken open by the mortar's mechanical work. Hollandaise depends on egg-yolk lecithin and proteins. Both are emulsions, but the emulsifier source is botanical in one and animal in the other."
   },
@@ -10168,12 +10168,12 @@
   {
     "tier": 5,
     "question": "Italian battuto, French mirepoix, Spanish sofrito, and Cajun trinity are all slow-cooked aromatic bases with different ingredient sets. What unites the four chemically, and what does each tradition's specific ingredient set say about its broader cuisine and pantry history?",
-    "answer": "Slow caramelization and Maillard in fat across all four; pantry choices reflect region (Italian adds cured pork, Spanish adds post-1492 tomato, Cajun swaps pepper for carrot)",
+    "answer": "Slow Maillard in fat unifies all four; Italian battuto adds pork, French mirepoix stays austere, Spanish sofrito adds tomato, Cajun swaps carrot for pepper",
     "choices": [
-      "Slow caramelization and Maillard in fat across all four; pantry choices reflect region (Italian adds cured pork, Spanish adds post-1492 tomato, Cajun swaps pepper for carrot)",
-      "Identical chemistry of vegetable softening through heat in all four; the ingredient differences are cosmetic and reflect supermarket availability not cuisine differences",
-      "Simple onion-and-garlic bases with regional flavorings added; the ingredient variation is decorative; flavor comes from later ingredients, not the base, which is the same",
-      "Long-simmered tomato-based vegetables sweated together; the apparent differences (sofrito has tomato, mirepoix has carrot) are insignificant against shared tomato chemistry"
+      "Slow Maillard in fat unifies all four; Italian battuto adds pork, French mirepoix stays austere, Spanish sofrito adds tomato, Cajun swaps carrot for pepper",
+      "All four are chemically identical; names are marketing variants of one Mediterranean technique that traveled to the Americas with herb substitutions in each region",
+      "All four differ chemically: French uses thermolysis, Italian uses fermentation, Spanish uses oxidation, Cajun uses Maillard; no underlying technique is shared at all",
+      "All four are pre-Maillard infusions: slow cook softens vegetables without browning them, and no chemistry beyond hot-water extraction operates in these preparations"
     ],
     "context": "All four exploit slow Maillard + caramelization in fat for concentrated flavor. Mirepoix uses European root vegetables (carrot domesticated from Afghanistan but established in Europe by 1500); battuto adds cured pork; sofrito adds tomato (post-1492 Columbian Exchange); Cajun trinity substitutes green pepper for carrot scarce in Louisiana. Each base tells regional pantry history."
   },
@@ -11493,12 +11493,12 @@
     "pattern": "F. Comparative wonder",
     "question": "A Mexican corn tortilla and an Indian roti both look like simple flatbread — grain ground to flour, mixed with water, pressed thin, cooked on a hot surface. But corn tortilla requires a step the wheat roti does not. What step?",
     "choices": [
-      "Nixtamalization — corn soaked in alkaline lime water before grinding to release niacin and bind the dough",
-      "Sourdough fermentation — corn dough must ferment overnight with wild yeast before being elastic enough",
-      "Lamination — corn dough is folded with lard between layers so the tortilla puffs in the dry skillet",
-      "Sun-drying — corn dough is partially dried in the sun before final cooking to develop the right texture"
+      "Mexican tortilla needs nixtamalization (lime soak) to bind dough and release niacin; Indian roti binds via wheat gluten alone",
+      "Mexican tortilla ferments overnight for flavor; Indian roti also ferments but uses sourdough culture instead of lactic bacteria",
+      "Mexican tortilla needs high-heat milling to develop starch; Indian roti uses whole-wheat flour keeping its enzymes and proteins",
+      "Mexican tortilla and Indian roti use identical processing; the difference is purely grain and climate of historical development"
     ],
-    "answer": "Nixtamalization — corn soaked in alkaline lime water before grinding to release niacin and bind the dough",
+    "answer": "Mexican tortilla needs nixtamalization (lime soak) to bind dough and release niacin; Indian roti binds via wheat gluten alone",
     "context": "Corn (Zea mays) is missing usable niacin and the dough-binding proteins of wheat. Nixtamalization (Nahuatl nixtli + tamalli) — soaking corn in lime water — releases niacin, loosens hulls, lets corn grind into elastic masa. Without it, corn-only diets cause pellagra."
   },
   {
@@ -12543,12 +12543,12 @@
     "pattern": "H. Cultural / historical / lens",
     "question": "American food culture has unusual regional depth. New England, Mid-Atlantic, Southern, Midwestern, Southwestern, Pacific Northwest, and California traditions are each substantive. What does this regional depth tell us about American food identity?",
     "choices": [
-      "American food culture has real regional depth from immigrant settlement, indigenous heritage, and climate; no single dish unifies America, but the diversity is the cuisine",
-      "American food culture is essentially derivative of European cuisines without genuine American regional development; the regional story is 20th-century marketing",
-      "American food culture is fundamentally fast food and chain restaurants; regional cooking exists only as tourist preservation in a few destinations across the country",
-      "American food culture is exclusively immigrant; there is no 'American' regional cooking distinct from source cuisines; regional variation reflects only which immigrants settled"
+      "Immigrant settlement, indigenous heritage, and varied climate created distinct foodways in each region; no single dish unifies the country and the diversity is the cuisine",
+      "Federal food programs (USDA school lunch, food stamps) standardized American eating; regional variation is largely a marketing layer over uniform industrial food",
+      "Cookbook publishing in the 19th century (Beecher, Beeton variants) created the regional traditions retroactively; before that, American cooking was undifferentiated colonial fare",
+      "Television cooking shows from Julia Child onward invented the regional traditions for entertainment; few are older than 1960 in their current form across the country"
     ],
-    "answer": "American food culture has real regional depth from immigrant settlement, indigenous heritage, and climate; no single dish unifies America, but the diversity is the cuisine",
+    "answer": "Immigrant settlement, indigenous heritage, and varied climate created distinct foodways in each region; no single dish unifies the country and the diversity is the cuisine",
     "context": "American regional cuisine is real and substantive. Settlement history, climate, indigenous heritage, and immigration patterns produced genuine regional traditions. Edna Lewis on Southern, James Beard Foundation, and modern food media document the depth. The 'no American cuisine' claim is a foreigner's misperception — there's no single unifying dish, but the regional diversity IS the cuisine."
   },
   {

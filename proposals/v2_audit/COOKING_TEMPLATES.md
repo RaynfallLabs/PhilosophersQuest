@@ -219,6 +219,14 @@ These ARE fine as distractors, in context, or in stems setting up a wonder quest
 | **forcing_constraint** | Stem has scenario detail to pick one answer |
 | **wonder_bias_check** | Stem has chemistry, technique, ingredient, cultural, or historical signal |
 | **context_no_meta_references** | No template-section refs, pattern names, tier labels in context |
+| **subject_named** | Non-D patterns must NAME the subject of analysis in the stem (not withhold it) |
+| **stem_answer_overlap** | Answer should not telegraph by reusing stem's distinctive content tokens (>65%) or opening with a verbatim stem phrase. EXEMPTS Pattern-I/D answers leading with `[Term] —` |
+| **comparative_completeness** | If stem explicitly compares 2+ named cuisines, answer must address all (supertype-subtype exemption + named-dish equivalence applied) |
+| **list_comma_lint** | Flag 3-item participial lists missing serial commas (e.g. "cured fermented and dried"); excludes preposition leads (during, including) and common past-tense main verbs |
+
+**Known false-positive patterns (acknowledged limitations):**
+- `comparative_completeness` can misfire when the stem mentions cuisines as ANCESTRAL INFLUENCES rather than comparison subjects ("Creole descended from Spanish, French, African, Caribbean traditions"). The real comparison subjects are usually the first 2 cuisines.
+- `stem_answer_overlap` can fire on legitimate comparative answers where the overlap is necessary content (Italian salsa verde vs Basque salsa verde — answer must reference both cuisines + their distinguishing ingredients).
 
 ### 8.2 Judgment gates (Opus subagent)
 
