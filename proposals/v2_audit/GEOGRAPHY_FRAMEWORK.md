@@ -1,5 +1,7 @@
 # Geography Bank Framework (2026-05-23)
 
+> This doc is subordinate to `docs/quiz/moral_vision.md` (the bank's soul, supreme authority) and `proposals/v2_audit/SHARED_PRINCIPLES.md` (cross-subject universal rules). Both override anything here. Read them FIRST.
+
 This is the rule set for what a good Philosopher's Quest *geography* question looks like. The bank teaches **wonder + scientific accuracy + human adaptation + how the land shaped the people who lived there** — anchored in Western tradition with honest substantive coverage of communist regime geography, American achievement geography, and the geographic determinism debate (Diamond's argument + Sowell's critique).
 
 ## Core principle
@@ -29,11 +31,13 @@ A 5th-10th grader should leave this bank with:
 
 ## What this framework REQUIRES
 
-1. **Wonder hook on every question** — bizarre fact, named feature, adaptive logic chain, civilizational link, or geographic mystery
+1. **Wonder hook on every question** — bizarre fact, named feature, adaptive logic chain, civilizational link, or geographic mystery. **The wonder must live in the STEM, not be deferred to context.** Stem leads with the amazing; the question asks something specific (use, mechanism, breakthrough) that adds depth. Anti-pattern: stem describes a setup with named wondrous features, then asks for a rote proportion/number/date as the test while the amazing facts sit unused in context. See SHARED_PRINCIPLES.md §8 and [[feedback_no_rote_wonder]].
 2. **Place-name-in-geographic-context** — when a place name carries historical weight, the question is about the geographic feature/function that made it relevant (Kolyma's permafrost + isolation; the Khyber's mountain pass; Constantinople's Bosphorus position)
 3. **Forcing constraint** — stem includes the detail that picks out exactly one answer
 4. **Steelman distractors** — wrong, but plausibly-wrong. Real places / real facts / real biology, not absurd.
 5. **Scientifically accurate** — real plate tectonics, real climate science, real biomes, real demography
+6. **Place-anchoring rule** — when a stem names a place as *scaffolding* (not as the answer being tested), the stem must include enough geographic anchor (mountain range, continent, country, region) for a first-time reader to ground it. "K2" alone is free-floating; "K2 (8,611m, Karakoram on the Pakistan-China border)" is grounded. Recognition-type questions where the place IS the answer are exempt — but the *description* must still let the player ground without the name.
+7. **No theory-stacking** — when a question references named theories or theory-laden concepts, the stem must anchor at least one in a concrete scenario (named person making a specific argument, specific historical event, specific named place). Pure theory-vs-theory abstraction at T5 is banned. Pattern J examples must show concrete movement — a recognizable person doing a recognizable analytical move — not an abstract framing-vs-framing battle.
 
 ## Where philosopher / explorer / dates / capital names belong
 

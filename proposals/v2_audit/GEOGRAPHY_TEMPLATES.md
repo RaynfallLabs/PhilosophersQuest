@@ -4,9 +4,11 @@ This document is the recipe every geography question is built from. `GEOGRAPHY_F
 
 The chain of authority:
 1. The user's stance (conversation + memory) — highest authority
-2. `GEOGRAPHY_FRAMEWORK.md` — long-form principles + substantive moral vision
-3. **`GEOGRAPHY_TEMPLATES.md` (this doc)** — concrete patterns
-4. Generator scripts
+2. `docs/quiz/moral_vision.md` — SUPREME rubric; the soul of the bank
+3. `SHARED_PRINCIPLES.md` — cross-subject universal rules
+4. `GEOGRAPHY_FRAMEWORK.md` — long-form principles + substantive moral vision
+5. **`GEOGRAPHY_TEMPLATES.md` (this doc)** — concrete patterns
+6. Generator scripts
 
 Generators do not invent patterns. They instantiate patterns from this doc.
 
@@ -17,6 +19,8 @@ Generators do not invent patterns. They instantiate patterns from this doc.
 - Choices must be parallel in shape
 - Stem must contain a **forcing constraint** picking out one answer
 - **Place-name-in-geographic-context** — when a place carries historical weight, the question is about the geographic feature that made it relevant, not the history-as-trivia
+- **Place-anchoring rule** — when a place is named in the stem as scaffolding (not the answer), anchor it: range, region, country, continent. A first-time reader who doesn't already know the place must still be able to ground the question. Recognition-type questions are exempt (where the place IS the answer), but the stem's *description* must let the player ground without the name.
+- **No theory-stacking** — when a question references named theories or theory-laden concepts, the stem must ground at least one in a concrete scenario: a named person making a specific argument, a specific historical event, a specific place. Pattern J questions must demonstrate the move concretely, never as abstract framing-vs-framing.
 - T4-T5 questions on the geographic determinism debate use the **Sowell vs Diamond recognize-the-move pattern** (parallel to care ethics)
 - No environmental moralism; climate-change-as-policy only as T5 recognize-the-move
 - Religious geography is DESCRIPTIVE cultural fact (Christian centerline + other religions substantial)
@@ -73,7 +77,7 @@ T-range: T2-T5. (NOT capital recall; this asks for the country via its geographi
 T-range: T3-T5. **Place name anchored to GEOGRAPHIC features that made the history possible** — not history-as-trivia.
 
 ### F. Comparative wonder
-> *"K2 (8,611m) is shorter than Everest (8,849m). Yet K2's summit fatality rate is roughly 25%, vs Everest's roughly 4%. Which geographic feature of K2 explains the lethality difference?"*
+> *"K2 (8,611m, Karakoram on the Pakistan-China border) is shorter than Mt Everest (8,849m, Himalaya on the Nepal-Tibet border). Yet K2's summit fatality rate is roughly 25%, vs Everest's roughly 4%. Which geographic feature of K2 explains the lethality difference?"*
 
 T-range: T3-T5.
 
@@ -137,6 +141,9 @@ Parity: max/min ≤ 1.30; max deviation ≤ 15%.
 - *"Is climate change real?"* / *"Should we adopt [policy]?"* — policy moralizing
 - *"Is colonialism evil?"* — anti-anti-white framing
 - *"Just spot it."* / *"Which one is it?"* — kindergarten
+- *"K2 is shorter than Everest..."* — both peaks named with no range/country anchor for a first-time reader. Free-floating place names need anchors (range, region, country) in the stem unless they ARE the answer (recognition-type).
+- *"Pleistocene climate cycles produced ice ages... modern policy debates inherit a different framing... Which move is the geographer making?"* — theory-stacking. Stem references multiple theory-laden frameworks without grounding any in a concrete scenario. Pattern J requires a named figure making a specific argument the player can picture.
+- *"An island off Yemen has dragon blood trees... about what fraction of its plant species are found nowhere else?"* — **wonder-deferred-to-context.** Stem describes wondrous named features (dragon blood trees, bottle trees), then asks for a rote proportion. The amazing facts (6 million years of isolation, Italian violin varnish trade) sit unused in context. The wonder MUST live in the stem; the question must test something specific about the wonder (use, mechanism, breakthrough), not a rote number. Per SHARED_PRINCIPLES.md §8 and [[feedback_no_rote_wonder]].
 
 ### 7.2 Toddler-banned answers
 
@@ -158,6 +165,7 @@ These are fine as DISTRACTORS, in CONTEXT, or in stems setting up a wonder quest
 
 ### 7.3 Choice anti-patterns
 - Citation skim-tells (only correct answer has date/citation)
+- Decoration mismatch (only correct answer has parens with examples, quoted phrases, citations, or in-line lists; others use straight prose). The em-dash gate catches the dash, but within-shape decoration must also match across all four choices.
 - Absurd distractors (no "the moon" as a country)
 - One choice conspicuously longer
 
@@ -187,6 +195,8 @@ These are fine as DISTRACTORS, in CONTEXT, or in stems setting up a wonder quest
 | **list_comma_lint** | Flag 3-item participial lists missing serial commas |
 | **no_capital_recall** (NEW for geography) | Correct answer is not a capital city name being tested as recall (e.g., "What is the capital of X" → "Paris") |
 | **no_climate_policy_verdict** (NEW for geography) | Stems can't ask "Is climate change real?" / "Should we adopt X policy?" — climate-change-as-policy only as recognize-the-move J pattern |
+| **place_anchor_check** (NEW for geography) | When stem names a specific place (city, mountain, river, etc.), check stem also contains a geographic anchor (continent, country, region, mountain range). Soft-warn — recognition-type Qs legitimately defer to choices. Human-review flag, not hard reject. |
+| **no_theory_stacking_check** (NEW for geography) | When stem contains 2+ named theories or theory-laden concept tokens (e.g., "epistemic," "framing," "thesis," "doctrine," named -isms) without a concrete-scenario anchor (named person, specific event, quoted argument), flag for human review. Pattern J questions must demonstrate the move concretely. Soft-warn. **Deterministic counterpart to philosophy's `inline_teaching` judgment gate** (PHILOSOPHY_TEMPLATES.md §8.2); both implement SHARED_PRINCIPLES.md §1. |
 
 ### 8.2 Judgment gates (Opus subagent)
 
