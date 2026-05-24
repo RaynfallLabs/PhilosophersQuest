@@ -1,16 +1,34 @@
 """Duplicate-detection gate: flag near-identical questions.
 
-v1 uses normalized exact match + difflib.SequenceMatcher.ratio() for fuzzy
-near-rewordings. This catches the bulk of in-bank dupes (which tend to be
-verbatim or near-verbatim) without external dependencies.
+Two-stage detector:
 
-v2 (later) will swap in sentence-transformer embeddings for true semantic
-dedup — needed when generated content paraphrases existing questions in
-ways difflib won't catch.
+1. **Candidate generation** — for each question, pre-compute a set of word
+   bigrams ("shingles") and build an inverted index `bigram -> [idx, ...]`.
+   At query time, walk the query's bigrams through the index and tally
+   overlap per candidate. Candidates whose bigram-Jaccard with the query
+   clears `JACCARD_CANDIDATE_THRESHOLD` advance to stage 2.
 
-Performance note: difflib is O(n*m) per comparison. For 615 questions
-that's ~378k pairwise checks. We short-circuit using `real_quick_ratio`
-(O(1) length-based upper bound) before doing the full ratio.
+2. **Confirmation** — run `difflib.SequenceMatcher.ratio()` on the survivors
+   and report any whose ratio meets the caller's `threshold`. This preserves
+   the historical similarity semantics (callers still tune via the same
+   threshold; math still uses 0.97; everything else still 0.85).
+
+The inverted index turns the intra-bank scan from O(n²) full-string ratios
+into O(n × avg_postings) cheap dict lookups plus a small number of
+SequenceMatcher calls per question. On the 882-question philosophy bank
+this cuts validation from ~280s to <10s on Windows/Python 3.14.
+
+Why bigrams and not MinHash? At the scale we run (≤10k questions per bank),
+exact bigram-Jaccard on a Python dict is already orders of magnitude faster
+than the SequenceMatcher second stage. MinHash would add hash-function
+tuning and probabilistic miss risk for no real speedup in this regime.
+
+The Jaccard threshold is deliberately loose. Bigram overlap and SequenceMatcher
+ratio aren't tightly coupled — e.g. a single-word swap in a 9-word question
+drops bigram-Jaccard to ~0.5 while SeqMatcher stays >0.9. A low cutoff
+(0.18) keeps the candidate set generous so we don't drop pairs the
+SequenceMatcher stage would have caught. If a future false-negative surfaces,
+lower it further before reaching for MinHash.
 """
 from __future__ import annotations
 
@@ -23,6 +41,7 @@ from tools.quizgen.deterministic.types import GateResult, GateStatus, Question
 
 DEFAULT_SIMILARITY_THRESHOLD = 0.85
 EXACT_MATCH_THRESHOLD = 0.999  # treated as duplicate even before fuzzy
+JACCARD_CANDIDATE_THRESHOLD = 0.18
 
 _PUNCT_RE = re.compile(r"[^\w\s]")
 _SPACE_RE = re.compile(r"\s+")
@@ -38,21 +57,60 @@ def _normalize(text: str) -> str:
     return text
 
 
+def _shingles(norm_text: str) -> frozenset[str]:
+    """Word bigrams as `"w1\\x00w2"` strings; falls back to unigrams for
+    1-word inputs so very short questions still produce a non-empty set."""
+    words = norm_text.split()
+    if len(words) < 2:
+        return frozenset(words)
+    return frozenset(f"{a}\x00{b}" for a, b in zip(words, words[1:]))
+
+
 @dataclass
 class DuplicateIndex:
-    """Pre-normalized question texts for fast similarity lookup."""
+    """Pre-normalized question texts + bigram inverted index for fast lookup."""
 
     normalized: list[str] = field(default_factory=list)
     originals: list[str] = field(default_factory=list)
+    shingles: list[frozenset[str]] = field(default_factory=list)
     exact_to_idx: dict[str, list[int]] = field(default_factory=dict)
+    _postings: dict[str, list[int]] = field(default_factory=dict)
 
     def add(self, question_text: str) -> int:
         idx = len(self.normalized)
         norm = _normalize(question_text)
+        shings = _shingles(norm)
         self.normalized.append(norm)
         self.originals.append(question_text)
+        self.shingles.append(shings)
         self.exact_to_idx.setdefault(norm, []).append(idx)
+        for g in shings:
+            self._postings.setdefault(g, []).append(idx)
         return idx
+
+    def _candidates(
+        self,
+        query_shings: frozenset[str],
+        exclude_idx: int | None,
+    ) -> list[int]:
+        """Return indices whose bigram-Jaccard with `query_shings` is at
+        or above JACCARD_CANDIDATE_THRESHOLD."""
+        if not query_shings:
+            return []
+        overlap: dict[int, int] = {}
+        for g in query_shings:
+            for idx in self._postings.get(g, ()):
+                if idx == exclude_idx:
+                    continue
+                overlap[idx] = overlap.get(idx, 0) + 1
+        q_size = len(query_shings)
+        out: list[int] = []
+        for idx, n_overlap in overlap.items():
+            other_size = len(self.shingles[idx])
+            union = q_size + other_size - n_overlap
+            if union and n_overlap / union >= JACCARD_CANDIDATE_THRESHOLD:
+                out.append(idx)
+        return out
 
     def find_matches(
         self,
@@ -76,13 +134,17 @@ class DuplicateIndex:
         if hits:
             return sorted(hits, key=lambda t: -t[1])
 
-        # fuzzy fallback
+        # candidate generation via inverted bigram index
+        query_shings = _shingles(norm)
+        candidates = self._candidates(query_shings, exclude_idx)
+        if not candidates:
+            return []
+
+        # confirmation: SequenceMatcher on survivors only
         matcher = SequenceMatcher(a=norm, autojunk=False)
-        for idx, other in enumerate(self.normalized):
-            if idx == exclude_idx:
-                continue
+        for idx in candidates:
+            other = self.normalized[idx]
             matcher.set_seq2(other)
-            # quick filter: length-based upper bound
             if matcher.real_quick_ratio() < threshold:
                 continue
             if matcher.quick_ratio() < threshold:

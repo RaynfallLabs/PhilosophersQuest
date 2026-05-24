@@ -363,21 +363,20 @@ def test_pipeline_calibrate_matches_prior_findings(tmp_path, seed):
     assert "moral_vision_sha" in data
 
 
-def test_pipeline_full_bank_runs_under_300_seconds():
+def test_pipeline_full_bank_runs_under_30_seconds():
     """Sanity check: full deterministic pass on the philosophy bank completes."""
     import time
     t0 = time.time()
     report = run_deterministic(subject="philosophy")
     elapsed = time.time() - t0
-    # Dedup is O(n^2); historical bumps tracked bank growth:
-    #   60s @ 949 (2026-04), 90s @ 1159 (2026-05-19 retier + fallacy supp).
-    # 2026-05-24: bank back at 882 questions (post-dropped/ trims) yet
-    # wall-clock crept to ~200s on this hardware. Per-gate microbench shows
-    # the new §12 trailing_tokens gate adds ~40ms total (negligible); the
-    # cost is dominated by duplicate (O(n²)) on this CPU. Threshold bumped
-    # to 300s as a sanity ceiling, not a perf SLA. A perf-investigation
-    # task is overdue: see proposals/v2_audit/post_geography work for context.
-    assert elapsed < 300.0, f"Full bank validation took {elapsed:.1f}s — too slow"
+    # Dedup was O(n^2) on raw SequenceMatcher; historical bumps tracked bank
+    # growth: 60s @ 949 (2026-04), 90s @ 1159 (2026-05-19), 300s @ 882
+    # (2026-05-24, wall-clock had crept to ~270s). 2026-05-24: rewrote
+    # DuplicateIndex to use a word-bigram inverted index with Jaccard
+    # candidate filtering — the SequenceMatcher stage now sees ~60 pairs
+    # instead of ~150k, full bank lands in <1s. 30s leaves comfortable
+    # CI headroom while still catching any future regression to O(n²).
+    assert elapsed < 30.0, f"Full bank validation took {elapsed:.1f}s — too slow"
     # The bank size grows as new questions are added; only require a
     # reasonable lower bound here.
     assert report.n_questions >= 500, f"Bank shrank unexpectedly to {report.n_questions}"
