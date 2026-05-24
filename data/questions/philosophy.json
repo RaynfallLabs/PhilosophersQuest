@@ -1301,9 +1301,9 @@
     "answer": "No — a chain of 'someone heard from someone' is weak evidence; the belief outruns what supports it.",
     "choices": [
       "No — a chain of 'someone heard from someone' is weak evidence; the belief outruns what supports it.",
-      "Yes — if other kids are saying it, that is enough for a reasonable belief about lunch tomorrow.",
-      "Yes — any claim a classmate sincerely passes along should count as reasonable to accept and repeat.",
-      "No — only what a teacher says in class can ever be reasonable; classmates never count as sources."
+      "Yes — if other squires are saying it, that is enough for a reasonable belief about the feast tomorrow.",
+      "Yes — any claim a fellow squire sincerely passes along should count as reasonable to accept and repeat.",
+      "No — only what the steward announces in hall can ever be reasonable; fellow squires never count as sources."
     ],
     "context": "Long testimony chains lose reliability with each step. A belief is reasonable only when the evidence behind it can actually hold the weight — a 'heard from someone' chain is too thin to carry much."
   },
@@ -1586,14 +1586,14 @@
   {
     "tier": 2,
     "question": "After tasting one cup at the new tavern in the realm, Devon declares: 'I KNOW that place is amazing. This is the best ale in the kingdom.' Did Devon really KNOW the new tavern was the best?",
-    "answer": "No — one slice supports liking that slice, not a comparison; ranking all pizza in town needs trying many places fairly.",
+    "answer": "No — one cup supports liking that cup, not a comparison; ranking all ale in the kingdom needs trying many taverns fairly.",
     "choices": [
-      "No — one slice supports liking that slice, not a comparison; ranking all pizza in town needs trying many places fairly.",
-      "Yes — Devon's slice was good and he was honest about it, so his ranking is grounded in a real personal experience.",
-      "Yes — taste claims are about feeling, so if Devon felt the pizza was the best, then for him that genuinely counts.",
-      "No — only food critics can ever really know about restaurants; what kids think about pizza never counts as actual knowing."
+      "No — one cup supports liking that cup, not a comparison; ranking all ale in the kingdom needs trying many taverns fairly.",
+      "Yes — Devon's cup was good and he was honest about it, so his ranking is grounded in a real personal experience.",
+      "Yes — taste claims are about feeling, so if Devon felt the ale was the best, then for him that genuinely counts.",
+      "No — only royal tasters can ever really know about taverns; what apprentices think about ale never counts as actual knowing."
     ],
-    "context": "One sample doesn't ground a ranking claim. Devon could legitimately say 'I liked that slice,' but 'best in town' compares many places, and he's only been to one. The size of the evidence has to match the size of the claim — that's the basic epistemic match."
+    "context": "One sample doesn't ground a ranking claim. Devon could legitimately say 'I liked that cup,' but 'best in the kingdom' compares many taverns, and he's only been to one. The size of the evidence has to match the size of the claim — that's the basic epistemic match."
   },
   {
     "tier": 2,
@@ -3734,9 +3734,9 @@
   {
     "tier": 1,
     "question": "Standing watch with the night-guard, Riley tells the company: 'Either we tell the ghost-story tonight, or the whole vigil is ruined.' Riley's framing commits which logical fallacy?",
-    "answer": "False dilemma — Riley pretends the sleepover is either scary-movie-tonight or ruined.",
+    "answer": "False dilemma — Riley pretends the vigil is either ghost-story-tonight or ruined.",
     "choices": [
-      "False dilemma — Riley pretends the sleepover is either scary-movie-tonight or ruined.",
+      "False dilemma — Riley pretends the vigil is either ghost-story-tonight or ruined.",
       "Slippery slope — claiming one small step must somehow trigger a chain of much worse outcomes.",
       "Hasty generalization — drawing a sweeping rule from a small handful of examples that can't carry it.",
       "Straw man — twisting an opponent's claim into a wilder version that's easier to knock down."
@@ -3758,9 +3758,9 @@
   {
     "tier": 1,
     "question": "Tess insists her alchemist's tonic is healthy because her favorite bard sings of drinking it from the great market. Her older brother asks what a bard knows of nutrition. Tess's reasoning commits which logical fallacy?",
-    "answer": "Appeal to authority — Tess takes the pop star's commercial as proof her energy drink is healthy.",
+    "answer": "Appeal to authority — Tess takes the bard's song at the market as proof her alchemist's tonic is healthy.",
     "choices": [
-      "Appeal to authority — Tess takes the pop star's commercial as proof her energy drink is healthy.",
+      "Appeal to authority — Tess takes the bard's song at the market as proof her alchemist's tonic is healthy.",
       "Bandwagon — treating popularity as if widespread agreement proved the claim must be true.",
       "Genetic fallacy — judging an argument by where it came from rather than by what it actually says.",
       "Hasty generalization — drawing a sweeping rule from a small handful of examples that can't carry it."
@@ -3782,9 +3782,9 @@
   {
     "tier": 1,
     "question": "When the captain asks why Marcus skipped two squire-training drills, Marcus answers: 'Well, Jake forgot his sword last Tuesday and nobody yelled at him.' Marcus's reply commits which logical fallacy?",
-    "answer": "Red herring — Marcus drags Jake's forgotten cleats in to dodge the question about skipped practices.",
+    "answer": "Red herring — Marcus drags Jake's forgotten sword in to dodge the question about skipped drills.",
     "choices": [
-      "Red herring — Marcus drags Jake's forgotten cleats in to dodge the question about skipped practices.",
+      "Red herring — Marcus drags Jake's forgotten sword in to dodge the question about skipped drills.",
       "Tu quoque — deflecting criticism by accusing the critic of having the very same fault.",
       "Straw man — twisting an opponent's claim into a wilder version that's easier to knock down.",
       "Ad hominem — attacking the person making the argument instead of the argument's actual content."
@@ -3866,9 +3866,9 @@
   {
     "tier": 1,
     "question": "Eli tries one bite from a new tavern in the realm and declares: 'This whole tavern is terrible — none of their food is any good.' Eli's claim commits which logical fallacy?",
-    "answer": "Hasty generalization — Eli judges the whole restaurant's menu from a single slice of pizza.",
+    "answer": "Hasty generalization — Eli judges the whole tavern's spread from a single bite of one dish.",
     "choices": [
-      "Hasty generalization — Eli judges the whole restaurant's menu from a single slice of pizza.",
+      "Hasty generalization — Eli judges the whole tavern's spread from a single bite of one dish.",
       "Ad hominem — attacking the person making the argument instead of the argument's actual content.",
       "False dilemma — pretending only two choices exist when several other real options are present.",
       "Appeal to authority — treating a famous name's say-so as proof that whatever they backed is true."
@@ -3902,9 +3902,9 @@
   {
     "tier": 1,
     "question": "Trying to skip his stable duties, Max tells the steward: 'Either I get to ride at the quintain right now, or you don't actually love me.' Max's framing commits which logical fallacy?",
-    "answer": "False dilemma — Max squeezes the chores question into either video games right now or 'you don't love me.'",
+    "answer": "False dilemma — Max squeezes stable duties into either the quintain right now or 'you don't love me.'",
     "choices": [
-      "False dilemma — Max squeezes the chores question into either video games right now or 'you don't love me.'",
+      "False dilemma — Max squeezes stable duties into either the quintain right now or 'you don't love me.'",
       "Straw man — twisting an opponent's claim into a wilder version that's easier to knock down.",
       "Slippery slope — claiming one small step must somehow trigger a chain of much worse outcomes.",
       "Tu quoque — deflecting criticism by accusing the critic of having the very same fault."
@@ -4010,9 +4010,9 @@
   {
     "tier": 2,
     "question": "Asked why she wants to attempt the rope-walk between the high towers, Tess shrugs: 'Every traveling minstrel sings of it, and the heralds all approve — it has to be safe by now.' Tess's argument commits which logical fallacy?",
-    "answer": "Bandwagon — Tess treats the challenge's TikTok popularity and comment count as evidence that it must actually be safe.",
+    "answer": "Bandwagon — Tess treats the rope-walk's minstrel renown and herald approval as evidence that it must actually be safe.",
     "choices": [
-      "Bandwagon — Tess treats the challenge's TikTok popularity and comment count as evidence that it must actually be safe.",
+      "Bandwagon — Tess treats the rope-walk's minstrel renown and herald approval as evidence that it must actually be safe.",
       "Appeal to authority — treating a famous or impressive name's say-so as proof that whatever they backed must therefore be true.",
       "Hasty generalization — drawing a sweeping rule from a small handful of examples that are too few to ground the larger claim.",
       "Slippery slope — claiming one small step must somehow trigger a chain of much worse outcomes without showing each link."
@@ -4034,9 +4034,9 @@
   {
     "tier": 2,
     "question": "Planning the watch-night vigil in a sealed missive, Riley writes: 'Either we tell a ghost-story or this whole weekend is officially RUINED for everyone.' Riley's framing commits which logical fallacy?",
-    "answer": "False dilemma — Riley squeezes the whole sleepover into either horror-movie-tonight or 'ruined,' hiding every other plan.",
+    "answer": "False dilemma — Riley squeezes the whole vigil into either ghost-story-tonight or 'ruined,' hiding every other plan.",
     "choices": [
-      "False dilemma — Riley squeezes the whole sleepover into either horror-movie-tonight or 'ruined,' hiding every other plan.",
+      "False dilemma — Riley squeezes the whole vigil into either ghost-story-tonight or 'ruined,' hiding every other plan.",
       "Slippery slope — claiming one small step must somehow trigger a chain of much worse outcomes without showing each link.",
       "Straw man — twisting an opponent's claim into a wilder version so the easier-to-mock version can be knocked down.",
       "Appeal to emotion — using strong feelings (fear, pity, anger) to push a conclusion that the actual evidence does not support."
@@ -4046,9 +4046,9 @@
   {
     "tier": 2,
     "question": "The squire-captain Ben warns that letting one trainee help themselves to a fair-day honey-cake without paying would somehow snowball into the whole company stealing food from every market the rest of the year. Ben's argument commits which logical fallacy?",
-    "answer": "Slippery slope — Ben treats one unpaid cookie as if it must trigger year-long, class-wide fundraiser stealing.",
+    "answer": "Slippery slope — Ben treats one unpaid honey-cake as if it must trigger year-long, company-wide market stealing.",
     "choices": [
-      "Slippery slope — Ben treats one unpaid cookie as if it must trigger year-long, class-wide fundraiser stealing.",
+      "Slippery slope — Ben treats one unpaid honey-cake as if it must trigger year-long, company-wide market stealing.",
       "Hasty generalization — drawing a sweeping rule from a small handful of examples that are too few to ground the larger claim.",
       "False dilemma — pretending only two choices exist when several other real options are present in the actual situation.",
       "Appeal to authority — treating a famous or impressive name's say-so as proof that whatever they backed must therefore be true."
@@ -4058,14 +4058,14 @@
   {
     "tier": 2,
     "question": "Trying to convince her parents about a new alchemist's tonic, Layla holds up the flask and announces: 'A famed actor swears by these between epic verses at court, so they obviously must work.' Layla's argument commits which logical fallacy?",
-    "answer": "Appeal to authority — Layla takes a podcasting actor's say-so on supplements as proof the pills actually work.",
+    "answer": "Appeal to authority — Layla takes a famed actor's say-so on the alchemist's tonic as proof the flask's contents actually work.",
     "choices": [
-      "Appeal to authority — Layla takes a podcasting actor's say-so on supplements as proof the pills actually work.",
+      "Appeal to authority — Layla takes a famed actor's say-so on the alchemist's tonic as proof the flask's contents actually work.",
       "Bandwagon — treating popularity or how many people agree as if it were evidence that the claim must actually be true.",
       "Genetic fallacy — judging an argument by where it came from or who said it rather than by what the argument actually says.",
       "Hasty generalization — drawing a sweeping rule from a small handful of examples that are too few to ground the larger claim."
     ],
-    "context": "Appeal to authority can be legitimate when the cited authority is a real expert in the right field — but an actor talking nutrition on a podcast isn't a doctor. Fame, not expertise."
+    "context": "Appeal to authority can be legitimate when the cited authority is a real expert in the right field — but a famed actor reciting verses at court isn't an alchemist or healer. Fame, not expertise."
   },
   {
     "tier": 2,
@@ -4226,9 +4226,9 @@
   {
     "tier": 2,
     "question": "By sealed letter, Wesley drops a wild claim to his fellow squires: 'There's a secret tunnel under the citadel.' When they ask for any evidence at all, he fires back: 'Prove there ISN'T — that's on you, not me.' Wesley's reply commits which logical fallacy?",
-    "answer": "Burden of proof — Wesley pushes the work of proving the gym tunnel onto skeptics instead of supporting his own claim.",
+    "answer": "Burden of proof — Wesley pushes the work of proving the citadel tunnel onto skeptics instead of supporting his own claim.",
     "choices": [
-      "Burden of proof — Wesley pushes the work of proving the gym tunnel onto skeptics instead of supporting his own claim.",
+      "Burden of proof — Wesley pushes the work of proving the citadel tunnel onto skeptics instead of supporting his own claim.",
       "Appeal to ignorance — treating the absence of any disproof as if it were positive proof that the claim being made is true.",
       "Tu quoque — deflecting criticism back at the critic by accusing them of the same fault they originally pointed out.",
       "Red herring — changing the subject to dodge the actual question being asked, dragging in something unrelated to it."
@@ -4274,9 +4274,9 @@
   {
     "tier": 2,
     "question": "Trying one bite from a new tavern in the realm, Theo declares to his household by messenger: 'This whole tavern is awful — NONE of their food is worth eating, ever, by anyone.' Theo's claim commits which logical fallacy?",
-    "answer": "Hasty generalization — Theo jumps from a single pizza slice to a sweeping verdict about every dish on the whole restaurant's menu.",
+    "answer": "Hasty generalization — Theo jumps from a single bite to a sweeping verdict about every dish on the whole tavern's spread.",
     "choices": [
-      "Hasty generalization — Theo jumps from a single pizza slice to a sweeping verdict about every dish on the whole restaurant's menu.",
+      "Hasty generalization — Theo jumps from a single bite to a sweeping verdict about every dish on the whole tavern's spread.",
       "False dilemma — pretending only two choices exist when several other real options are present in the actual situation.",
       "Bandwagon — treating popularity or how many people agree as if it were evidence that the claim must actually be true.",
       "Appeal to emotion — using strong feelings (fear, pity, anger) to push a conclusion that the actual evidence does not support."
@@ -4334,9 +4334,9 @@
   {
     "tier": 2,
     "question": "Asked about a thoughtful idea for the company's market fund, Jordan sneers in his sealed reply: 'That idea came from the squire who never even joined our company last year, so we should just ignore it.' Jordan's response commits which logical fallacy?",
-    "answer": "Genetic fallacy — Jordan rejects the fundraiser idea based on its source (a kid who skipped last year) instead of its merits.",
+    "answer": "Genetic fallacy — Jordan rejects the market-fund idea by its source (a squire who skipped last year) instead of its merits.",
     "choices": [
-      "Genetic fallacy — Jordan rejects the fundraiser idea based on its source (a kid who skipped last year) instead of its merits.",
+      "Genetic fallacy — Jordan rejects the market-fund idea by its source (a squire who skipped last year) instead of its merits.",
       "Ad hominem — attacking the person making the argument instead of engaging the actual content of the argument itself.",
       "Bandwagon — treating popularity or how many people agree as if it were evidence that the claim must actually be true.",
       "Hasty generalization — drawing a sweeping rule from a small handful of examples that are too few to ground the larger claim."
@@ -8186,12 +8186,12 @@
   {
     "tier": 2,
     "question": "The training master sets a pre-tournament meal rule. Asked why it binds the company, Captain Devon says: 'Master studied the warrior's diet for ten years. She knows what we don't — that's what gives her rule force.' Which view of authority is Devon defending?",
-    "answer": "Authority-by-merit — a rule binds because the maker has special knowledge; the coach's expertise is its source.",
+    "answer": "Authority-by-merit — a rule binds because the maker has special knowledge; the training master's expertise is its source.",
     "choices": [
-      "Authority-by-merit — a rule binds because the maker has special knowledge; the coach's expertise is its source.",
-      "Consent theory — a rule binds because those affected agreed; until the team votes, the policy has no real claim.",
-      "Tradition theory — a rule binds because soccer teams have long eaten this way; custom gives the rule its weight.",
-      "Strength theory — a rule binds because the coach can bench players; her power to sit kids out makes it stick."
+      "Authority-by-merit — a rule binds because the maker has special knowledge; the training master's expertise is its source.",
+      "Consent theory — a rule binds because those affected agreed; until the company votes, the policy has no real claim.",
+      "Tradition theory — a rule binds because warriors have long eaten this way; custom gives the rule its weight.",
+      "Strength theory — a rule binds because the training master can bench warriors; her power to sit squires out makes it stick."
     ],
     "context": "Authority-by-merit (Plato's Republic, Book VI, 'rule of philosopher-kings') grounds legitimate rule in superior knowledge of the good. Critics say expertise isn't the same as the right to bind — even a wise doctor can't force her diet on you."
   },
@@ -8213,9 +8213,9 @@
     "answer": "Strength theory — a rule binds because the powerful can enforce it; ability to dominate is the real source of authority.",
     "choices": [
       "Strength theory — a rule binds because the powerful can enforce it; ability to dominate is the real source of authority.",
-      "Consent theory — a rule binds because those affected agreed; the recess kids' silence is itself a form of acceptance.",
-      "Tradition theory — a rule binds because games have long been picked this way; custom of recess is what carries weight.",
-      "Authority-by-merit — a rule binds because the most skilled player decides; athletic ability gives him the right to call it."
+      "Consent theory — a rule binds because those affected agreed; the other squires' silence is itself a form of acceptance.",
+      "Tradition theory — a rule binds because yard contests have long been picked this way; custom of the yard is what carries weight.",
+      "Authority-by-merit — a rule binds because the most skilled fighter decides; combat skill gives him the right to call it."
     ],
     "context": "Strength theory ('might makes right') is voiced by Thrasymachus in Plato's Republic, Book I, defining justice as 'the advantage of the stronger.' Socrates' reply: what power CAN do and what authority is RIGHT to do are different questions."
   },
