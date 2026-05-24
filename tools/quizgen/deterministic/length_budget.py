@@ -34,7 +34,7 @@ SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
     "animal":    {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "science":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "ai":        {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
-    "geography": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
+    "geography": {1: 500, 2: 620, 3: 770, 4: 900, 5: 1000},  # recalibrated 2026-05-23 to match exemplar density (T1 416 avg / T2 543 avg etc.); see SHARED_PRINCIPLES §10
     "history":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "theology":  {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "economics": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},

@@ -49,31 +49,31 @@ A 5th-10th grader should leave this bank with:
 - **Scope**: vivid wonder facts a kid can picture. Why is the Sahara so dry? Why does Iceland have so many volcanoes? Why do Inuit live in igloos?
 - **Voice**: "Did you know?" energy. Concrete features.
 - **Content**: continents and oceans by FEATURE (not by recall), basic biomes, bizarre places (Door to Hell, Salar de Uyuni), simple adaptation stories (igloos, sod houses)
-- **Form**: ≤200 char stem, ≤90 char choice, ≤200 char context
+- **Form**: ≤200 char stem, ≤90 char choice, context uncapped (teaching depth allowed)
 
 ### T2 — 6th grade (11-12)
 - **Scope**: specific physical features + adaptation traditions. Why monsoons happen, why deserts exist, why mountains form, why Vikings settled Greenland and then abandoned it
 - **Voice**: introduces "plate," "climate," "biome," "current" with brief inline meaning
 - **Content**: Ring of Fire, Mid-Atlantic Ridge, named ocean currents, mountain ranges, biome boundaries, Polynesian wayfinding
-- **Form**: ≤240 char stem, ≤110 char choice, ≤240 char context
+- **Form**: ≤240 char stem, ≤110 char choice, context uncapped
 
 ### T3 — 7th grade (12-13)
 - **Scope**: geographic systems + how geography shapes culture
 - **Voice**: scientific vocabulary ("tectonic," "subduction," "rainshadow," "trophic," "watershed") with inline def first use
 - **Content**: trophic cascades in ecosystems, niche climates, the Nile's predictable flood enabling Egyptian agriculture, Persian qanats, Roman aqueducts, mountain-monastery siting
-- **Form**: ≤280 char stem, ≤130 char choice, ≤300 char context
+- **Form**: ≤280 char stem, ≤130 char choice, context uncapped
 
 ### T4 — 8th grade (13-14)
 - **Scope**: deeper geographic mechanisms + civilizational geography. Holy Land geography, Crusader-era Mediterranean, Florence's trade geography producing Renaissance, the British isolation thesis, the Russian plains thesis
 - **Voice**: scientist + historian register
 - **Content**: Hadley cell mechanics, Milankovitch cycles, glacial cycle climate, Sowell on geographic-vs-cultural explanations
-- **Form**: ≤320 char stem, ≤160 char choice, ≤360 char context
+- **Form**: ≤320 char stem, ≤160 char choice, context uncapped
 
 ### T5 — 9-10th grade (14-16)
 - **Scope**: substantive moral vision content + specialist geographic facts. Diamond's argument + Sowell's critique. Communist regime geography (Gulag, Great Leap, Aral Sea) as honest historical fact. American achievement geography (Louisiana Purchase, transcontinental, Panama, Apollo). Christian heritage geography deep.
 - **Voice**: analyst-grade with specialist terms parenthetical
 - **Content**: thermohaline circulation; Koppen zone shifts; Sowell *Conquests and Cultures* / *Migrations and Cultures*; American Manifest Destiny as substantive historical claim; communist regime geography honestly
-- **Form**: ≤360 char stem, ≤180 char choice, ≤420 char context
+- **Form**: ≤360 char stem, ≤180 char choice, context uncapped
 
 ## Topic taxonomy — 8 branches × 5 tiers
 

@@ -147,7 +147,38 @@ See [[feedback_no_content_warping]] for the full subject-fit rough hierarchy (wh
 
 **Discovered explicitly**: 2026-05-23 user flag during geography exemplar review. Pattern was already implicit across all subjects but never structurally codified.
 
-### 9. Substantive moral vision (not false equivalence)
+### 9. Context is uncapped — teaching depth allowed
+**Principle**: The `context` field of each question is **uncapped in length**. Stems and choices have per-tier caps (they govern reading time during play); context does not (it's teaching content shown after the answer, read at the player's pace). Capping context forces shallow educational depth, which conflicts with moral_vision §"What we celebrate — Beauty of mechanism" and §"Curiosity over completion."
+
+**Failure mode if capped**: agents tighten context past readability or drop important named anchors (figures, dates, mechanisms) to fit cap. Loss of teaching depth.
+
+**Implementations**:
+- **Geography**: `gate_length_budget` overridden locally to skip context check (2026-05-23 directive); GEOGRAPHY_TEMPLATES.md §6 updated; GEOGRAPHY_FRAMEWORK.md tier sections updated
+- **Cooking/Animal/Philosophy**: still cap context per their original gates — KNOWN GAP, candidate for re-audit per [[project_post_geography_audits]]
+
+**Discovered**: 2026-05-23 during geography bulk-gen recovery. 357 of 890 length_budget hard-fails resolved by removing context cap; pass rate jumped from 27.5% to 56.6%.
+
+### 10. Length caps must be calibrated, not copied
+**Principle**: Per-tier length budgets for stems + choices must be **calibrated against the canonical analysis** (subject timer + chain target + reading speed), NOT blindly copied from another subject's gate file. Each subject has its own SUBJECT_TIMER in `src/player.py:12-27` — a math question on a 16s combat timer needs a tighter stem than a theology question on a 46s prayer timer. Inheriting another subject's caps without reviewing the timer asymmetry produces a mismatch.
+
+**Failure mode**: Geography's `geography_structural_gates.py` was built by copying cooking's per-field caps (200/240/280/320/360 stem caps). But geography's timer (40s) differs from cooking's (60s), and the canonical TOTAL budget in `tools/quizgen/deterministic/length_budget.py` had STILL OLDER values for geography (280/480/680/900/1100) that hadn't been refreshed when the 2026-05-11 philosophy bump happened. Result: three inconsistent caps systems, none matching the actual quality bar of the user-approved exemplars.
+
+**Calibration sources** (in priority order):
+1. **Empirical**: user-approved exemplars are the quality bar. Compute their total-char distribution per tier; the budget should fit them with ~15% headroom.
+2. **Analytical**: subject timer (player.py:12-27) ÷ chain target × reading speed (~30-50 chars/sec skim). Gives a derived budget independent of exemplars.
+3. **Canonical**: `tools/quizgen/llm_jobs/validate_gameplay.md` + `tools/quizgen/deterministic/length_budget.py` SUBJECT_TIER_BUDGETS. The pipeline's actual gate.
+
+**Reconciliation rule**: empirical + analytical must agree before updating canonical. If they don't, surface the contradiction to the user.
+
+**Discovered**: 2026-05-23 during geography bulk-gen recovery. Exemplars T1 avg 416 chars vs canonical 280 budget — 2/8 passed. Geography canonical updated to {500, 620, 770, 900, 1000} to match exemplar density. `geography_structural_gates.py` switched from per-field caps to total budget for consistency with canonical.
+
+**Implementations**:
+- **Geography**: total-budget gate in `geography_structural_gates.py` (matches canonical in `length_budget.py`); per-field caps retained as advisory; GEOGRAPHY_TEMPLATES.md §6 documents both
+- **Cooking/Animal/Philosophy**: still on per-field caps; canonical budgets in `length_budget.py` may be stale (geography pre-update was 280/480/680/900/1100; check if others were also bumped or are stale). **Backport audit candidate** per [[project_post_geography_audits]].
+
+See also [[feedback_cap_calibration_logic]] (saved 2026-05-23) for the full reasoning chain.
+
+### 11. Substantive moral vision (not false equivalence)
 **Principle**: The bank teaches with substantive moral content where appropriate — honest communist death-toll record, serious Austrian-econ coverage, Western tradition celebrated, serious critics included. False equivalence is the failure mode. Implementation is subject-specific; the *commitment* is universal.
 
 **Implementations**:

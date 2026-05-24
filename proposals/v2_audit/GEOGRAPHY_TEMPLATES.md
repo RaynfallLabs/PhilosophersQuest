@@ -119,13 +119,21 @@ Short noun-phrase or clause-form choices. Distractors are plausible-wrong facts/
 
 ## 6. Length envelopes
 
-| Tier | Stem ≤ | Each choice ≤ | Context ≤ |
-|---|---:|---:|---:|
-| T1 | 200 | 90 | 200 |
-| T2 | 240 | 110 | 240 |
-| T3 | 280 | 130 | 300 |
-| T4 | 320 | 160 | 360 |
-| T5 | 360 | 180 | 420 |
+**Total budget** (stem + 4 choices combined) per tier, with +5% grace:
+
+| Tier | Total budget | Hard cap (+5%) | Per-field advisory (stem / each choice) |
+|---|---:|---:|---|
+| T1 | 500 | 525 | ~200 / ~75 |
+| T2 | 620 | 651 | ~240 / ~95 |
+| T3 | 770 | 808 | ~280 / ~125 |
+| T4 | 900 | 945 | ~320 / ~145 |
+| T5 | 1000 | 1050 | ~360 / ~160 |
+
+**Context is uncapped** — context is teaching content shown AFTER the player answers; capping it forces shallow educational depth (conflicts with moral_vision §"What we celebrate — Beauty of mechanism"). See SHARED_PRINCIPLES §9.
+
+**Why total-budget not per-field**: total reading time governs playability. Per-field caps can be hit independently without exceeding total. The canonical analysis (tools/quizgen/llm_jobs/validate_gameplay.md + tools/quizgen/deterministic/length_budget.py) settled on total-budget as the operative gate. Per-field figures above are advisory targets, not gates.
+
+**Budget calibration** (changed 2026-05-23): these match exemplar density (user-approved 40 exemplars). T1-T2 were bumped from canonical defaults (280/480) to match the actual quality bar (avg 416/543) at +15% headroom. Geography timer (28s + 1.2*WIS = 40s at WIS 10) supports this density at chain target ~3-5 questions per timer (medium-frequency action: armor/shield equipping). See SHARED_PRINCIPLES §10 and [[feedback_cap_calibration_logic]].
 
 Parity: max/min ≤ 1.30; max deviation ≤ 15%.
 
