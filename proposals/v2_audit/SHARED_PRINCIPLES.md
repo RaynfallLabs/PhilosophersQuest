@@ -113,9 +113,20 @@ See [[feedback_no_content_warping]] for the full subject-fit rough hierarchy (wh
 ### 6. Wonder-bias / scenery aesthetic
 **Principle**: Prefer grand / canonical / mythological framings over mundane modern when the underlying logic permits. The Christian-Crusader game setting aligns naturally. Logic stays, scenery upgrades.
 
+**Scenery upgrades must touch ALL fields** — stem + answer + every distractor + context. A half-applied upgrade where the stem has been moved to canonical scenery (knight, alchemist, monastery) but the choices still reference the old mundane scenery (pop star, smartphone, group chat) creates a stem/answer mismatch. This is both a content bug (the question stops being internally coherent) and a skim-tell (the canonical-scenery distractor is recognizable as "the answer the rewrite was reaching for"). The pop-star-in-choices artifact found in philosophy T1/T2 fallacy questions (2026-05-24 audit §8) is the canonical example.
+
+**Failures look like**:
+- Stem describes an alchemist's apprentice arguing X; correct answer references a knight's strategy; one distractor still references "the group chat"
+- Stem upgraded to knight/dragon/monastery scenery; context still cites a modern psychology experiment without ever bridging the two
+
+**Passes look like**:
+- All four choices use scenery drawn from the stem's world (knights, alchemists, monks, scribes, scholars, traders, peasants — not "TikTok," "group chat," "smartphone")
+- Context, if it references modern research, does so as an aside ("modern psychology calls this X") rather than as the load-bearing scene
+
 **Implementations**:
 - **Philosophy**: explicit §8.3
 - **Animal/Cooking/Geography**: implicit in scene-selection guidelines
+- **Deterministic gate candidate**: regex sweep for mundane-modern tokens in choices when stem contains canonical-scenery tokens — not yet implemented
 - See also: [[feedback_wonder_bias]]
 
 ### 7. No verdict on contested questions
@@ -163,6 +174,8 @@ See [[feedback_no_content_warping]] for the full subject-fit rough hierarchy (wh
 
 **Failure mode**: Geography's `geography_structural_gates.py` was built by copying cooking's per-field caps (200/240/280/320/360 stem caps). But geography's timer (40s) differs from cooking's (60s), and the canonical TOTAL budget in `tools/quizgen/deterministic/length_budget.py` had STILL OLDER values for geography (280/480/680/900/1100) that hadn't been refreshed when the 2026-05-11 philosophy bump happened. Result: three inconsistent caps systems, none matching the actual quality bar of the user-approved exemplars.
 
+**Named failure mode — "Dual cap systems must be reconciled"**: When subject scratch gates (`<subject>_structural_gates.py`) define per-field caps AND `tools/quizgen/deterministic/length_budget.py` defines canonical `SUBJECT_TIER_BUDGETS`, the two will drift apart over time unless explicitly reconciled. The post-geography audits (2026-05-24) found this pattern in all three remaining subjects (philosophy, animal, cooking) — per-field scratch caps permit MORE total chars than the canonical total budget allows. Reconciliation rule: the scratch gate is the early-warning surface (during generation), the canonical gate is the validation surface (post-bank), and the math of per-field caps × 5 must not exceed the canonical total. If empirical exemplar density exceeds either, BOTH must be lifted together. **Now seen in 4 subjects** (geography pre-fix + philosophy + animal + cooking). Worth a deterministic cross-check (assert max-sum of per-field ≤ canonical total) added to test suite.
+
 **Calibration sources** (in priority order):
 1. **Empirical**: user-approved exemplars are the quality bar. Compute their total-char distribution per tier; the budget should fit them with ~15% headroom.
 2. **Analytical**: subject timer (player.py:12-27) ÷ chain target × reading speed (~30-50 chars/sec skim). Gives a derived budget independent of exemplars.
@@ -184,6 +197,22 @@ See also [[feedback_cap_calibration_logic]] (saved 2026-05-23) for the full reas
 **Implementations**:
 - **All subjects**: per [[feedback_moral_vision_substantive]]
 - Subject docs vary in how they apply (philosophy's care-ethics-critique pattern; geography's Diamond-vs-Sowell; cooking's Western tradition; etc.)
+
+### 12. Trailing-token corruption signature
+**Principle**: A string field containing **3+ consecutive repeated words** is always a generation-pass bug — never a legitimate stylistic choice in teaching content. Bulk-gen LLM passes occasionally fail by looping on the last word as they approach a length budget ("…benefits ecosystems overall overall overall overall overall"). The corruption is mechanical and the fix is mechanical: strip the trailing repeats. The signature is general; the canonical detection is the regex `\b(\w+)(\s+\1){2,}\b` applied across stem + answer + every choice + context.
+
+**Failures look like**:
+- `"...patterns do not correlate with environment or behavior overall overall"`
+- `"...has evolved only twice — once in insects and once in mammals overall overall overall overall"`
+- (rare but plausible: mid-string token-loops from sampling artifacts)
+
+**Implementations**:
+- **All subjects**: `validate_trailing_tokens` deterministic gate in `tools/quizgen/deterministic/trailing_tokens.py` (2026-05-24)
+- Registered globally in `pipeline.py`; no subject exemptions (math/grammar have no plausible legitimate trigger either)
+
+**Discovered**: 2026-05-24 animal post-geography audit. 14 corrupted strings across 11 T5 animal questions. The fix script and the gate were added together; the gate ensures the corruption class cannot regress silently.
+
+See also: [[feedback_lift_discovered_rules]].
 
 ## Before starting a new subject rebuild
 

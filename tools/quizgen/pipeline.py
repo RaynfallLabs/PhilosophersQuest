@@ -30,6 +30,7 @@ from tools.quizgen.deterministic import (
     validate_length_parity,
     validate_math_correctness,
     validate_schema,
+    validate_trailing_tokens,
 )
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -193,6 +194,7 @@ def run_deterministic(
             q, dup_index, threshold=dup_threshold, self_idx=local_idx
         )
         qr.gates["math_correctness"] = validate_math_correctness(q, subject=subject)
+        qr.gates["trailing_tokens"] = validate_trailing_tokens(q, subject=subject)
 
         for gate_name, gate_result in qr.gates.items():
             if gate_result.status == GateStatus.FAIL:
