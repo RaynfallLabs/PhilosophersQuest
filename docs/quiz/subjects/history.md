@@ -24,13 +24,17 @@ Generous — scaffolded story content needs room to read. Many T4/T5 questions a
 
 ## 2. Per-tier char budgets (answer-outlier 1.6× rule applies)
 
+Total budget = stem + 4 choices. **Context is uncapped** per SHARED_PRINCIPLES §9.
+
 | Tier | Hard cap | Voice |
 |---|---:|---|
-| T1 | ≤ 280 | Crisp moment + person/place + the wonder |
-| T2 | ≤ 480 | One scene + named figure + the action |
-| T3 | ≤ 680 | Scene + stakes + the decisive moment |
-| T4 | ≤ 900 | Setup + tension + named details + payoff |
-| T5 | ≤ 1100 | Deep story with pressure + moral weight + the consequence |
+| T1 | ≤ 500 | Crisp scene + named figure/moment + cool-fact-is-answer |
+| T2 | ≤ 620 | One scene + named figure + dramatic stake + cool-fact-is-answer |
+| T3 | ≤ 770 | Scene + stakes + decisive context + cool-fact-is-answer |
+| T4 | ≤ 900 | Multi-sentence setup + named details + impact + cool-fact-is-answer |
+| T5 | ≤ 1100 | Deep story + moral weight + consequence + cool-fact-is-answer |
+
+**Recalibrated 2026-05-24 rebuild** to match cooking/animal/geography profile. Old {280, 480, 680, 900, 1100} was structurally incompatible with the story-led PERSON/MOMENT voice. 50s subject timer (34 + 1.6×WIS @ WIS 10) supports the new range. See HISTORY_FRAMEWORK.md + HISTORY_TEMPLATES.md.
 
 ## 3. The PERSON/MOMENT → STORY → WONDER pattern (core voice)
 
