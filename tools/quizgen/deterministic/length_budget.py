@@ -30,11 +30,12 @@ DEFAULT_TIER_BUDGETS: dict[int, int] = {
 # Per-subject budget overrides. Where not listed, default applies.
 # Cooking budgets come from `docs/quiz/subjects/cooking.md` §2.
 SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
-    "cooking":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
+    "cooking":   {1: 500, 2: 620, 3: 770, 4: 900, 5: 1100},  # recalibrated 2026-05-24 per cooking audit §1 — 60s timer + bank density (T1 avg ~420 / T2 avg ~530) make old 280/480 unreachable; geography pattern lifted, T5 stays 1100 (60s timer easily supports it)
     "animal":    {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "science":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "ai":        {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "geography": {1: 500, 2: 620, 3: 770, 4: 900, 5: 1000},  # recalibrated 2026-05-23 to match exemplar density (T1 416 avg / T2 543 avg etc.); see SHARED_PRINCIPLES §10
+    "philosophy":{1: 660, 2: 770, 3: 930, 4: 1100, 5: 1200},  # added 2026-05-24 per philosophy audit §1 — was falling through to DEFAULT (600/700/750/950/1000) but PHILOSOPHY_TEMPLATES.md §6 per-field caps imply 660/770/930/1100/1320 totals. 65s timer (50+1.5*WIS) easily supports; T5 cap held at 1200 (covers >95% of bank with reading-comfort margin)
     "history":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "theology":  {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "economics": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
