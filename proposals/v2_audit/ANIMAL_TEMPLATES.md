@@ -177,17 +177,21 @@ For moral-vision T4-T5 questions, use the same recognition-of-the-move pedagogy 
 
 ## 6. Length envelopes
 
-| Tier | Stem ≤ | Each choice ≤ | Context ≤ |
-|---|---:|---:|---:|
-| T1 | 200 | 90 | 200 |
-| T2 | 240 | 110 | 240 |
-| T3 | 280 | 130 | 300 |
-| T4 | 320 | 160 | 360 |
-| T5 | 360 | 180 | 420 |
+| Tier | Stem ≤ | Each choice ≤ | Context |
+|---|---:|---:|---|
+| T1 | 200 | 90 | **uncapped** |
+| T2 | 240 | 110 | **uncapped** |
+| T3 | 280 | 130 | **uncapped** |
+| T4 | 320 | 160 | **uncapped** |
+| T5 | 360 | 180 | **uncapped** |
+
+**Canonical pipeline total budgets** (`tools/quizgen/deterministic/length_budget.py`): {T1=280, T2=480, T3=680, T4=900, T5=1100}. Animal kept at these values per its own audit recommendation 2026-05-24 — the bank's heterogeneous distribution fits the existing tiered shape (no geography-style recalibration needed).
+
+**Context is uncapped** per SHARED_PRINCIPLES §9 — context is teaching content shown AFTER the answer, read at the player's pace. The previous T1-T5 context caps (200/240/300/360/420) were lifted 2026-05-24 (mirroring geography 2026-05-23 + philosophy/cooking same-day).
 
 **Length-parity rule**: longest/shortest choice ratio ≤ 1.30, max deviation ≤ 15%.
 
-These are MAXIMUMS — median should sit at 60-70% of cap.
+These are MAXIMUMS for stem and choices — median should sit at 60-70% of cap.
 
 ## 7. Anti-patterns (banned)
 

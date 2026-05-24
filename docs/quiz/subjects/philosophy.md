@@ -28,13 +28,17 @@ Philosophy is the flagship wonder subject. Questions here are the calibration se
 
 The pipeline's pilot calibration confirmed that the binding gameplay constraint is **total record character count**, not a strict parse-time formula. Reason: real players scan four-choice questions at ~400 wpm (not the 240 wpm cold-read assumption) and skim-recognize repeats from deck rotation. The strict "words / 4 wps" formula rejects every spec-exemplar question, including the Foucault Panopticon and Russell+Whitehead/Gödel models in §4 — so we trust the char cap as the operative gate and treat parse-time as informational.
 
+Total budget = stem + 4 choices. **Context is uncapped** per SHARED_PRINCIPLES §9 (teaching content read AFTER the answer; not under timer pressure).
+
 | Tier | Expected WIS | Total timer @ that WIS | Per-Q budget @ chain-5 | **Max record chars (gate)** | Density flag if over |
 |---|---|---|---|---|---|
-| 1 | 10–12 | 55–58s | 11–12s | **≤ 600** | 110 words |
-| 2 | 12–15 | 58–63s | 12–13s | **≤ 700** | 130 words |
-| 3 | 15–18 | 63–67s | 13–13s | **≤ 750** | 140 words |
-| 4 | 18–22 | 67–73s | 13–15s | **≤ 950** | 175 words |
-| 5 | 22+ | 73s+ | 15s+ | **≤ 1000** | 185 words |
+| 1 | 10–12 | 55–58s | 11–12s | **≤ 660** | 120 words |
+| 2 | 12–15 | 58–63s | 12–13s | **≤ 770** | 145 words |
+| 3 | 15–18 | 63–67s | 13–13s | **≤ 930** | 175 words |
+| 4 | 18–22 | 67–73s | 13–15s | **≤ 1100** | 200 words |
+| 5 | 22+ | 73s+ | 15s+ | **≤ 1200** | 220 words |
+
+**Recalibrated 2026-05-24** per philosophy post-geography audit §1. Old canonical {600, 700, 750, 950, 1000} (which philosophy was falling through to from DEFAULT_TIER_BUDGETS) didn't match PHILOSOPHY_TEMPLATES.md §6 per-field implied totals {660, 770, 930, 1100, 1320}. New canonical aligns the two systems per SHARED_PRINCIPLES §10 ("Dual cap systems must be reconciled"). T5 held at 1200 rather than full 1320 for reading-comfort margin; 65s subject timer easily supports.
 
 **Timer bumped 2026-05-11**: `SUBJECT_TIMER['philosophy']` changed from `(26, 1.2)` to `(40, 1.5)` for learning-focused gameplay. Char caps raised in parallel so writers can scaffold unfamiliar concepts inline rather than compress them out. **Scaffolding > compression** is the new priority — see moral_vision.md §6.
 

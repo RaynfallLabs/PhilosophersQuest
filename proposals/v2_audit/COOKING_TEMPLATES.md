@@ -141,13 +141,17 @@ Short noun-phrase or clause-form choices. No "X — Y" structure required.
 
 ## 6. Length envelopes
 
-| Tier | Stem ≤ | Each choice ≤ | Context ≤ |
-|---|---:|---:|---:|
-| T1 | 200 | 90 | 200 |
-| T2 | 240 | 110 | 240 |
-| T3 | 280 | 130 | 300 |
-| T4 | 320 | 160 | 360 |
-| T5 | 360 | 180 | 420 |
+| Tier | Stem ≤ | Each choice ≤ | Context |
+|---|---:|---:|---|
+| T1 | 200 | 90 | **uncapped** |
+| T2 | 240 | 110 | **uncapped** |
+| T3 | 280 | 130 | **uncapped** |
+| T4 | 320 | 160 | **uncapped** |
+| T5 | 360 | 180 | **uncapped** |
+
+**Canonical pipeline total budgets** (`tools/quizgen/deterministic/length_budget.py`): {T1=500, T2=620, T3=770, T4=900, T5=1100}. Recalibrated 2026-05-24 per SHARED_PRINCIPLES §10 — the old canonical {280, 480, 680, 900, 1100} was structurally incompatible with the bank's empirical T1 avg ~420 / T2 avg ~530. Cooking's 60s timer (vs geography's 40s) supports T5 staying at 1100 rather than dropping to 1000.
+
+**Context is uncapped** per SHARED_PRINCIPLES §9 — context is teaching content shown AFTER the answer, read at the player's pace. The previous T1-T5 context caps (200/240/300/360/420) were lifted 2026-05-24 (mirroring geography 2026-05-23 + philosophy/animal same-day).
 
 Length-parity: max/min ratio ≤ 1.30; max deviation ≤ 15%.
 

@@ -32,15 +32,17 @@ Cooking pulls weight on FIVE pillars (per `docs/quiz/cooking_strategies.md`):
 
 ## 2. Per-tier char budgets
 
+Total budget = stem + 4 choices. **Context is uncapped** per SHARED_PRINCIPLES §9 (teaching content read AFTER the answer; not under timer pressure).
+
 | Tier | Hard cap | Word count guideline | Voice |
 |---|---:|---|---|
-| T1 | **≤ 280** | ~30 words | Symbol-led or single-fact recall. "Sharp knife or dull knife — which is safer?" |
-| T2 | **≤ 480** | ~70 words | One-line scene + question. "A chef arranges all chopped ingredients before turning on heat. The French term is ___?" |
-| T3 | **≤ 680** | ~110 words | Scene + technique-with-consequence. Brief setup permitted. |
+| T1 | **≤ 500** | ~50 words | Symbol-led or single-fact recall. "Sharp knife or dull knife — which is safer?" |
+| T2 | **≤ 620** | ~80 words | One-line scene + question. "A chef arranges all chopped ingredients before turning on heat. The French term is ___?" |
+| T3 | **≤ 770** | ~120 words | Scene + technique-with-consequence. Brief setup permitted. |
 | T4 | **≤ 900** | ~150 words | Multi-sentence setup + judgment / chemistry / history-context required. |
 | T5 | **≤ 1100** | ~180 words | Wonder-led; deep history; contested-topic balanced framing; science detail. |
 
-Hard cap = target × 1.05 per the standard grace zone.
+Hard cap = target × 1.05 per the standard grace zone. Recalibrated 2026-05-24 per cooking post-geography audit §1 (T1-T3 bumped from {280, 480, 680} to {500, 620, 770} to match bank's empirical density; T4-T5 unchanged). Cooking's 60s timer (vs geography's 40s) is why T5 stays at 1100 rather than dropping to geography's 1000.
 
 ## 3. Per-tier content profile
 

@@ -31,7 +31,8 @@ DEFAULT_TIER_BUDGETS: dict[int, int] = {
 # Cooking budgets come from `docs/quiz/subjects/cooking.md` §2.
 SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
     "cooking":   {1: 500, 2: 620, 3: 770, 4: 900, 5: 1100},  # recalibrated 2026-05-24 per cooking audit §1 — 60s timer + bank density (T1 avg ~420 / T2 avg ~530) make old 280/480 unreachable; geography pattern lifted, T5 stays 1100 (60s timer easily supports it)
-    "animal":    {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
+    "animal":    {1: 500, 2: 620, 3: 770, 4: 900, 5: 1100},  # recalibrated 2026-05-24 — empirical post-rebuild density (T1 median 350/p95 447, T2 median 491/p95 582) overflowed old {280, 480} 82% / 39% of bank. Audit estimate (made before rebuild) undercounted; using empirical numbers, animal needs same profile as cooking. Subject timer 30+1.0×WIS = 40s @ WIS 10 — comfortable for 500-1100 range
+
     "science":   {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "ai":        {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "geography": {1: 500, 2: 620, 3: 770, 4: 900, 5: 1000},  # recalibrated 2026-05-23 to match exemplar density (T1 416 avg / T2 543 avg etc.); see SHARED_PRINCIPLES §10

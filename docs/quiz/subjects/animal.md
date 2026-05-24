@@ -28,13 +28,19 @@ Five pillars from `docs/quiz/animal_strategies.md`:
 
 ## 2. Per-tier char budgets
 
+Total budget = stem + 4 choices. **Context is uncapped** per SHARED_PRINCIPLES §9 (teaching content read AFTER the answer; not under timer pressure).
+
 | Tier | Hard cap | Voice |
 |---|---:|---|
-| T1 | ≤ 280 | Symbol-led / single-fact recall. "Largest animal alive today?" |
-| T2 | ≤ 480 | One-line scene + question. "Egyptian goddess depicted as a cat..." |
-| T3 | ≤ 680 | Scene + biology/history with consequence. |
+| T1 | ≤ 500 | Symbol-led / single-fact recall. "Largest animal alive today?" |
+| T2 | ≤ 620 | One-line scene + question. "Egyptian goddess depicted as a cat..." |
+| T3 | ≤ 770 | Scene + biology/history with consequence. |
 | T4 | ≤ 900 | Multi-sentence setup + chemistry/evolution/history context. |
 | T5 | ≤ 1100 | Wonder-led; deep paleontology; contested debate framing. |
+
+**Recalibrated 2026-05-24** to match cooking's profile. Audit §1 estimated the old {280, 480, 680, 900, 1100} fit the bank, but that estimate predated the 2026-05-22 full-rebuild (which raised density). Empirical post-rebuild measurement: T1 median 350 / p95 447, T2 median 491 / p95 582 — old caps would have flagged 82% of T1 and 39% of T2 as REPAIR despite the content being on-spec for the rebuilt voice. New caps fit empirically with margin.
+
+Context cap removed 2026-05-24 per audit §2 alongside cooking + philosophy + geography.
 
 ## 3. Stance summary
 

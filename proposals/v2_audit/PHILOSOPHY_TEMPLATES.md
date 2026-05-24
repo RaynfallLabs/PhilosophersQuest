@@ -217,13 +217,17 @@ This means the student learns multiple ethical positions per question. Distracto
 
 Looser than the previous framework's caps — generous enough to define concepts inline at lower tiers, capped to prevent paragraph-style answers.
 
-| Tier | Stem ≤ | Each choice ≤ | Context ≤ |
-|---|---:|---:|---:|
-| T1 | 220 | 110 | 250 |
-| T2 | 250 | 130 | 290 |
-| T3 | 290 | 160 | 340 |
-| T4 | 340 | 190 | 400 |
-| T5 | 400 | 230 | 480 |
+| Tier | Stem ≤ | Each choice ≤ | Implied total (stem + 4×choice) | Context |
+|---|---:|---:|---:|---|
+| T1 | 220 | 110 | 660 | **uncapped** |
+| T2 | 250 | 130 | 770 | **uncapped** |
+| T3 | 290 | 160 | 930 | **uncapped** |
+| T4 | 340 | 190 | 1100 | **uncapped** |
+| T5 | 400 | 230 | 1320 | **uncapped** |
+
+**Canonical pipeline budgets** (`tools/quizgen/deterministic/length_budget.py`) match the implied totals at {660, 770, 930, 1100, 1200} — T5 held at 1200 rather than full 1320 for reading-comfort margin. Per SHARED_PRINCIPLES §10 ("Dual cap systems must be reconciled"), the two systems are now aligned (2026-05-24).
+
+**Context is uncapped** per SHARED_PRINCIPLES §9 — context is teaching content shown AFTER the answer, read at the player's pace, and capping it forces shallow educational depth. The previous T1-T5 context caps (250/290/340/400/480) were lifted 2026-05-24 alongside cooking and animal (mirroring geography 2026-05-23).
 
 **Length-parity rule still applies**: longest/shortest choice ratio ≤ 1.30, max deviation ≤ 15%.
 
