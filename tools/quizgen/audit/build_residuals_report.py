@@ -17,7 +17,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(REPO))
 
-from tools.quizgen.scratch._validate_rewrite import (  # noqa: E402
+from tools.quizgen.audit.validate import (  # noqa: E402
     build_bank_indices,
     validate_rewrite,
 )
@@ -25,7 +25,7 @@ from tools.quizgen.scratch._validate_rewrite import (  # noqa: E402
 
 def main() -> int:
     records = []
-    for subject in ["history", "philosophy", "cooking", "animal"]:
+    for subject in ["history", "philosophy", "cooking", "animal", "grammar"]:
         bank = json.loads((REPO / "data" / "questions" / f"{subject}.json").read_text(encoding="utf-8"))
         dup_index, answer_index = build_bank_indices(bank)
         for i, q in enumerate(bank):
