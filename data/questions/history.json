@@ -936,16 +936,16 @@
     "context": "Franklin wrote under the pen name Richard Saunders. The almanac sold about 10,000 copies a year — a bestseller for the time. Many famous phrases come from it: 'Early to bed and early to rise makes a man healthy, wealthy, and wise'; 'A penny saved is a penny earned'; 'Fish and visitors stink in three days.' Franklin retired from the printing business in 1748, at age 42, and devoted the rest of his life to science, invention, and politics."
   },
   {
-    "tier": 1,
-    "question": "On March 9 1862, during the Civil War, two strange-looking iron-armored ships fought each other for the first time in history at Hampton Roads, Virginia — the wooden warship era was over. The Union ship was the USS Monitor; the Confederate one was originally the captured USS Merrimack, rebuilt with iron plating. What had the Confederates renamed her?",
-    "answer": "The CSS Virginia",
+    "tier": 2,
+    "question": "On March 9 1862 at Hampton Roads, Virginia, the Union ironclad USS Monitor (a flat platform with a single rotating gun turret — sailors called it 'a cheesebox on a raft') fought the Confederate ironclad CSS Virginia (rebuilt from the wooden USS Merrimack with 5-inch iron plating). The two ships pounded each other at point-blank range for about four hours. What was the outcome?",
+    "answer": "A draw — neither could sink the other, but the wooden-warship era was over",
     "choices": [
-      "The CSS Virginia",
-      "The CSS Carolina",
-      "The CSS Liberty",
-      "The CSS Dixie"
+      "A draw — neither could sink the other, but the wooden-warship era was over",
+      "The Monitor sank the Virginia with a shot through her boiler",
+      "The Virginia rammed the Monitor; both went down in the channel",
+      "Both fled when their ammunition ran out; nothing was decided"
     ],
-    "context": "The Monitor had a flat low deck and a single revolving gun turret — an entirely new design by Swedish engineer John Ericsson. The Virginia was a converted wooden frigate covered in iron plates. They fought for four hours at point-blank range without seriously damaging each other; the battle was a draw. But every navy in the world started replacing wooden ships with iron ones. The Monitor sank in a storm off Cape Hatteras nine months later."
+    "context": "Neither ship could pierce the other's iron armor. Both crews fought exhausted in gun-smoke-filled compartments where temperatures topped 120°F. Within hours of the battle the news reached every naval power on Earth: every wooden warship in every navy was instantly obsolete. The Monitor sank in a storm off Cape Hatteras nine months later; the Virginia was blown up by her own crew to prevent capture when Norfolk fell to Union forces in May 1862."
   },
   {
     "tier": 1,
@@ -1177,15 +1177,15 @@
   },
   {
     "tier": 1,
-    "question": "On September 17 1862 along a Maryland creek, Union and Confederate armies fought a one-day battle that produced more American casualties than any other single day in U.S. history — about 23,000 killed, wounded, or missing. The Union victory gave Lincoln the political opening to issue the Emancipation Proclamation. What is this battle called?",
-    "answer": "The Battle of Antietam",
+    "question": "On September 17 1862 along Antietam Creek in Maryland, Union and Confederate armies fought a one-day battle that produced more American casualties than any other single day in U.S. history. The shock of the Union 'victory' (technically a draw, but Lee withdrew) gave Lincoln the political opening to issue the Emancipation Proclamation five days later. About how many Americans were killed, wounded, or missing in that single day?",
+    "answer": "About 23,000",
     "choices": [
-      "The Battle of Antietam",
-      "The Battle of Bull Run",
-      "The Battle of Chickamauga",
-      "The Battle of Shiloh"
+      "About 23,000",
+      "About 8,500",
+      "About 45,000",
+      "About 80,000"
     ],
-    "context": "Confederate General Robert E. Lee had invaded Maryland hoping to win a battle on Northern soil that would bring foreign recognition for the Confederacy. A copy of his battle plan was found wrapped around three cigars in a captured Union camp, helping Union General George McClellan position his forces. Lee retreated back to Virginia. Lincoln issued the preliminary Emancipation Proclamation five days later."
+    "context": "About 3,650 killed outright, about 17,300 wounded, about 1,770 missing or captured — combined for both sides. Lee invaded the North hoping a battlefield victory would bring British and French diplomatic recognition for the Confederacy. The Union's tactical draw was enough for Lincoln; recognition never came; and the Emancipation Proclamation reframed the war as a war against slavery, making European intervention politically impossible."
   },
   {
     "tier": 1,
@@ -1272,16 +1272,16 @@
     "context": "Cannae is the most-studied battle in Western military history. The German general Schlieffen modeled his 1905 plan for invading France on it. The Roman force was about 86,000; Hannibal's was about 50,000. After Cannae the Romans lost more men in one day than the U.S. lost in the entire Vietnam War. Hannibal never received reinforcements from Carthage; he stayed in Italy 15 more years but could not take Rome itself."
   },
   {
-    "tier": 1,
-    "question": "In 331 BC the 25-year-old Alexander of Macedon faced the Persian king Darius III on a flat plain in what is now Iraq. Darius had perhaps 250,000 troops including scythed chariots; Alexander had perhaps 47,000. Alexander won decisively, smashing the largest empire on earth in a single afternoon. What is this battle called?",
-    "answer": "The Battle of Gaugamela",
+    "tier": 2,
+    "question": "In 331 BC the 25-year-old Alexander of Macedon faced the Persian king Darius III on a flat plain near what is now Mosul, Iraq. Darius had brought scythed chariots and war elephants — and a vastly larger army. Alexander won decisively, smashing the largest empire on Earth in a single afternoon at the Battle of Gaugamela. About how outnumbered was Alexander?",
+    "answer": "About 5 to 1 — perhaps 250,000 Persians vs 47,000 Macedonians",
     "choices": [
-      "The Battle of Gaugamela",
-      "The Battle of Issus",
-      "The Battle of the Granicus",
-      "The Battle of the Hydaspes"
+      "About 5 to 1 — perhaps 250,000 Persians vs 47,000 Macedonians",
+      "About even — roughly 50,000 on each side that day",
+      "About 2 to 1 — perhaps 100,000 Persians vs 50,000 Macedonians",
+      "About 10 to 1 — perhaps 500,000 Persians vs 50,000 Macedonians"
     ],
-    "context": "Alexander's cavalry charge punched through Persia's center toward Darius himself. The Persian king fled the field, ending the battle. The Persian Empire collapsed within months. Alexander pursued Darius to his death (assassinated by his own satrap) and was proclaimed King of Asia. He went on conquering all the way to the Indus River before his troops finally refused to march any further east in 326 BC."
+    "context": "Ancient estimates of Persian strength may be inflated; modern historians often guess ~120,000 Persians. Either way Alexander was vastly outnumbered. He won by an oblique advance to the right that drew the Persian line out of shape, then drove his Companion Cavalry in a wedge straight at Darius. Darius fled the field. Alexander chased him across Asia but Darius was murdered by his own satraps in 330 BC. Alexander would die at Babylon at age 32."
   },
   {
     "tier": 1,
@@ -1392,16 +1392,16 @@
     "context": "About 3,000 RAF pilots flew in the Battle of Britain — 'the Few.' About 544 were killed. They shot down 1,887 German aircraft for 1,547 British losses. Roughly 20% of the RAF pilots were not even British — Polish, Czech, Canadian, and others. The Polish No. 303 Squadron was the highest-scoring RAF squadron of the entire battle. The September 1940 Blitz bombing of London continued for 57 nights in a row."
   },
   {
-    "tier": 1,
-    "question": "On January 22-23 1879 during the Anglo-Zulu War in southern Africa, about 150 British soldiers at an isolated mission station fought off about 3,000-4,000 Zulu warriors over 11 hours. Eleven British soldiers were awarded the Victoria Cross for the action — the most ever given for a single battle. Where was this battle?",
-    "answer": "Rorke's Drift, South Africa",
+    "tier": 2,
+    "question": "On January 22-23 1879 during the Anglo-Zulu War, about 150 British soldiers at an isolated mission station called Rorke's Drift in southern Africa fought off 3,000-4,000 Zulu warriors over 11 hours of close combat. The defenders held. How many British soldiers received the Victoria Cross — Britain's highest military honor — for that single night?",
+    "answer": "Eleven — the most ever awarded for a single action",
     "choices": [
-      "Rorke's Drift, South Africa",
-      "Isandlwana, South Africa",
-      "Mafeking, South Africa",
-      "Kimberley, South Africa"
+      "Eleven — the most ever awarded for a single action",
+      "Three — the commanding officer and two privates",
+      "Forty-seven — every surviving defender",
+      "One — a posthumous award to the field hospital surgeon"
     ],
-    "context": "The same day a Zulu army of 20,000 had annihilated a separate British column of 1,300 at Isandlwana — Britain's worst defeat against a non-Western army. The handful of British survivors retreated toward Rorke's Drift. Most of the defenders were Welsh soldiers of the 24th Regiment. The Zulu attacks finally faded at dawn after eleven straight hours; the British were down to perhaps 200 rounds of ammunition. The 1964 film Zulu dramatized the battle."
+    "context": "The defenders barricaded themselves with sacks of mealie corn and boxes of biscuits between the storehouse and hospital buildings. Surgeon Reynolds operated through the entire battle. Private Henry Hook (a teetotaler farm laborer the public imagined as a hard-drinking Cockney after the movie) dragged patients out of the burning hospital one by one through holes he chopped in the walls. Eleven VCs were awarded — including some to soldiers who had been in the hospital themselves. The day before, the main British column had been annihilated at Isandlwana — 1,300 dead."
   },
   {
     "tier": 1,
@@ -1428,16 +1428,16 @@
     "context": "The Battle of Verdun lasted 303 days and cost about 700,000 casualties on both sides combined. About 60 million artillery shells were fired into a small area — even today French farmers around Verdun still turn up unexploded shells when they plow. The phrase 'they shall not pass' became a worldwide symbol of defiance — used by Spanish Republicans in the Spanish Civil War ('No pasarán!') and many others since."
   },
   {
-    "tier": 1,
-    "question": "On the morning of July 1 1916, after a week-long artillery bombardment, the British army climbed out of its trenches and walked across no-man's land toward German lines in northern France. German machine guns mowed them down. The British army suffered about 60,000 casualties on that single day — the bloodiest day in British military history. What is this battle called?",
-    "answer": "The Battle of the Somme",
+    "tier": 2,
+    "question": "On the morning of July 1 1916 in northern France, after a week-long British artillery bombardment that was supposed to have destroyed the German trenches, the British army climbed out of its own trenches and walked across no-man's-land toward German lines. The German machine guns were intact. About how many British casualties were there on that single day — still the bloodiest day in British military history?",
+    "answer": "About 60,000 — including roughly 20,000 killed",
     "choices": [
-      "The Battle of the Somme",
-      "The Battle of Passchendaele",
-      "The Battle of Cambrai",
-      "The Battle of Loos"
+      "About 60,000 — including roughly 20,000 killed",
+      "About 8,000 — heavy but recoverable losses",
+      "About 200,000 — half the British army's strength",
+      "About 500,000 — the entire British Expeditionary Force"
     ],
-    "context": "The Battle of the Somme dragged on until November 1916; total casualties on both sides may have reached 1.5 million. The British advanced about 7 miles in five months. The first tanks ever used in battle were British tanks at the Somme in September 1916. The Battle of the Somme is a touchstone in British memory for the futility and slaughter of trench warfare."
+    "context": "The Battle of the Somme dragged on for another 141 days. Total Allied casualties: about 600,000. Total German: about 450,000. Total ground gained: about 6 miles. The day-one British losses remain unmatched — the closest modern parallel is the September 11 2001 attack (~2,977 deaths). On the German side, July 1 was the first day a young corporal named Adolf Hitler experienced British attack on a major scale; he was wounded later in the battle and decorated for bravery."
   },
   {
     "tier": 1,
@@ -1452,16 +1452,16 @@
     "context": "About 850 boats took part, from Royal Navy destroyers to little fishing trawlers, weekend pleasure yachts, and Thames riverboats. Many of the 'little ships of Dunkirk' were sailed by civilian volunteers across the dangerous Channel under German air attack. Without Dunkirk the British Army would have been destroyed. Churchill warned Parliament: 'Wars are not won by evacuations.' But Britain survived to fight on."
   },
   {
-    "tier": 1,
-    "question": "In September-October 1777, an American army under Horatio Gates and Benedict Arnold beat a British army under General John Burgoyne in upstate New York. Burgoyne surrendered with about 6,200 men — a stunning American victory that convinced France to enter the war on the American side. What is this battle called?",
-    "answer": "The Battle of Saratoga",
+    "tier": 2,
+    "question": "In September-October 1777 an American army in upstate New York forced British General John Burgoyne to surrender his entire army — about 6,200 men — at the Battle of Saratoga. The stunning American victory had one immediate political consequence that probably won the entire Revolution. What did Saratoga accomplish diplomatically?",
+    "answer": "Convinced France to enter the war openly on the American side",
     "choices": [
-      "The Battle of Saratoga",
-      "The Battle of Bunker Hill",
-      "The Battle of Brandywine",
-      "The Battle of Long Island"
+      "Convinced France to enter the war openly on the American side",
+      "Forced King George III to begin direct peace negotiations within six months",
+      "Triggered a slave uprising in the British West Indies that drained Royal Navy strength",
+      "Persuaded Spain to land an invasion army on the New England coast"
     ],
-    "context": "Saratoga is considered the turning point of the Revolutionary War. France formally allied with the Americans in February 1778, and France's fleet, money, and troops were essential to the eventual victory at Yorktown in 1781. Spain and the Netherlands later joined against Britain too, turning the colonial rebellion into a worldwide war. Benedict Arnold, who fought brilliantly at Saratoga, would later betray the American cause and try to hand West Point to the British."
+    "context": "Benjamin Franklin had been in Paris for over a year trying to convince France's King Louis XVI that the Americans could actually win. Saratoga was the proof. The Franco-American alliance was signed February 6 1778 — France brought money, ships, troops, and (eventually at Yorktown 1781) the trapping of Cornwallis. Spain and the Dutch Republic also joined the war against Britain. The British ended up fighting three European powers and the Americans simultaneously."
   },
   {
     "tier": 1,
@@ -1477,15 +1477,15 @@
   },
   {
     "tier": 1,
-    "question": "In October 732 AD a Frankish army led by Charles Martel ('Charles the Hammer') stopped a Muslim army that had advanced 1,000 miles north from Spain into what is now central France. The Frankish victory is often credited with halting the Muslim conquest of Western Europe. What is this battle called?",
-    "answer": "The Battle of Tours",
+    "question": "In October 732 AD a Frankish king named Charles 'Martel' stopped a Muslim army that had advanced 1,000 miles north from Spain into what is now central France at the Battle of Tours. The 'Martel' nickname stuck so hard it became his defining title — his grandson Charlemagne ('Charles the Great') built his empire on the family's military reputation. What does 'Martel' mean in Old French?",
+    "answer": "'The Hammer'",
     "choices": [
-      "The Battle of Tours",
-      "The Battle of Yarmouk",
-      "The Battle of Lepanto",
-      "The Battle of Vienna"
+      "'The Hammer'",
+      "'The Sword'",
+      "'The Lion'",
+      "'The Wall'"
     ],
-    "context": "Charles Martel was the grandfather of Charlemagne. The exact strategic importance of the Battle of Tours is debated — some historians think the Muslim army was a raiding force, not a full conquest army — but the battle has been remembered for centuries as the moment Christian Europe turned back the Muslim advance. Edward Gibbon wrote in 1776 that without Tours, 'the Koran would now be taught in the schools of Oxford.'"
+    "context": "The Muslim army was led by Abd al-Rahman, governor of al-Andalus. The Battle of Tours (also called Poitiers) is often credited with halting the Muslim conquest of Western Europe — though modern historians note the Muslim advance had probably reached its logistical limit anyway. Charles Martel founded the Carolingian dynasty: his son Pepin the Short deposed the last Merovingian king in 751, and his grandson Charlemagne would be crowned Emperor of the Romans by the Pope on Christmas Day 800 AD."
   },
   {
     "tier": 1,
@@ -1524,16 +1524,16 @@
     "context": "The German emissary did not understand the word; McAuliffe's officer explained it meant 'Go to hell.' The siege of Bastogne held until General Patton's Third Army arrived to break through to the surrounded Americans. The Battle of the Bulge cost about 19,000 American dead — the costliest U.S. battle of WWII. The 'bulge' refers to the shape of the German breakthrough on Allied lines in the Ardennes Forest. By late January 1945 the line had been pushed back to where it started."
   },
   {
-    "tier": 1,
-    "question": "In September 9 AD the Roman general Publius Quinctilius Varus was leading three Roman legions — about 20,000 soldiers — through a forest in what is now northwestern Germany. A German chieftain named Arminius, who had been raised in Rome and had served in the Roman army, ambushed and destroyed all three legions over three days. What is this battle called?",
-    "answer": "The Battle of the Teutoburg Forest",
+    "tier": 2,
+    "question": "In September 9 AD a German chieftain named Arminius — raised in Rome and trained as a Roman officer — ambushed three Roman legions in the forests of what is now northwestern Germany. About 20,000 Roman soldiers were destroyed over three days at the Battle of the Teutoburg Forest. When the news reached Rome, the elderly emperor Augustus reportedly beat his head against the palace doors for months crying out the same anguished question. What did Augustus cry?",
+    "answer": "'Quintilius Varus, give me back my legions!'",
     "choices": [
-      "The Battle of the Teutoburg Forest",
-      "The Battle of the Catalaunian Fields",
-      "The Battle of Cannae",
-      "The Battle of Adrianople"
+      "'Quintilius Varus, give me back my legions!'",
+      "'Brutus, Brutus, why have you betrayed me?'",
+      "'Where now stands the eagle of Rome?'",
+      "'Strike the head from Germania!'"
     ],
-    "context": "When the Emperor Augustus heard of the disaster he reportedly beat his head against the walls of his palace and cried 'Quintili Vare, legiones redde!' — 'Quinctilius Varus, give me back my legions!' Varus killed himself on the battlefield. Augustus permanently abandoned plans to conquer Germany beyond the Rhine. The three lost legions — XVII, XVIII, XIX — were never reconstituted; their numbers were considered cursed. The battlefield was found by archaeologists in 1987 in Kalkriese."
+    "context": "Augustus dissolved the three legion numbers (XVII, XVIII, XIX) and never used them again — they were considered cursed. The Rhine became the permanent northeastern border of the Roman Empire; Rome never seriously tried to absorb Germany again. Arminius is honored in modern Germany as 'Hermann' — there is a giant 19th-century statue of him in the Teutoburg Forest near Detmold. He was eventually assassinated by his own in-laws around 21 AD."
   },
   {
     "tier": 1,
@@ -1560,16 +1560,16 @@
     "context": "MacArthur's staff considered Inchon almost impossible — narrow approaches, extreme tides, mudflats that would strand landing craft. MacArthur insisted on it precisely because the enemy thought it impossible. The landing succeeded brilliantly. Seoul was recaptured within two weeks. MacArthur then pushed into North Korea — provoking Chinese intervention in November 1950 and a brutal counter-offensive that pushed the U.N. back south. MacArthur was fired by President Truman in April 1951 for publicly defying his orders."
   },
   {
-    "tier": 1,
-    "question": "On September 2 31 BC a Roman naval battle off the western coast of Greece decided who would rule the Roman world: Octavian (the future emperor Augustus) or Mark Antony, with his Egyptian ally and lover Cleopatra. Cleopatra's fleet fled mid-battle; Antony followed her. Both killed themselves the next year. What is this battle called?",
-    "answer": "The Battle of Actium",
+    "tier": 2,
+    "question": "On September 2 31 BC, a Roman naval battle off the western coast of Greece (the Battle of Actium) would decide who ruled the Roman world: Octavian (the future emperor Augustus), or Mark Antony with his Egyptian ally and lover Cleopatra. During the battle Cleopatra did something unexpected that effectively ended the fight. What did Cleopatra do?",
+    "answer": "Fled with her 60 ships in the middle of the battle; Antony followed her",
     "choices": [
-      "The Battle of Actium",
-      "The Battle of Philippi",
-      "The Battle of Pharsalus",
-      "The Battle of Munda"
+      "Fled with her 60 ships in the middle of the battle; Antony followed her",
+      "Had Antony killed on his flagship to negotiate her own peace with Octavian",
+      "Rammed Octavian's flagship and was killed in the collision",
+      "Ordered her own fleet to attack Antony's ships from behind"
     ],
-    "context": "Octavian won decisively at Actium and became the unchallenged ruler of Rome. He took the title Augustus in 27 BC and ruled until 14 AD, founding the Roman Empire and ending the Republic. Cleopatra killed herself in 30 BC, supposedly by letting an Egyptian cobra (asp) bite her — the legend is questionable since other accounts mention poison. Egypt became a Roman province. Cleopatra was the last pharaoh of Egypt — the 3,000-year Egyptian pharaonic line ended with her."
+    "context": "Antony abandoned his army to chase Cleopatra back to Egypt. The leaderless army surrendered to Octavian a week later. Octavian marched on Alexandria the following summer. Antony killed himself by sword; Cleopatra famously killed herself in August 30 BC, probably (per ancient sources) by allowing an asp — an Egyptian cobra — to bite her. She was 39. Octavian became Augustus, the first Roman emperor, and ruled for 41 years. Egypt became a personal possession of the Roman emperors for 600 years."
   },
   {
     "tier": 1,
@@ -2628,16 +2628,16 @@
     "context": "Ada Lovelace (1815-1852) had been raised by her mother to study mathematics specifically to keep her away from the wild artistic temperament of her father, Lord Byron, whom she never knew (he died when she was eight). She translated and annotated an Italian paper about Babbage's Analytical Engine, adding her own program. The U.S. Department of Defense named its programming language Ada (1980) in her honor. She died of cancer at age 36."
   },
   {
-    "tier": 1,
-    "question": "Around 415 AD the female mathematician and Neoplatonist philosopher Hypatia of Alexandria was murdered by a Christian mob in the streets of the Egyptian city. They tore her apart with sharpened shells or roof tiles. Her death is often used as a symbol of the end of antique scholarship. Approximately how old was Hypatia when she was killed?",
-    "answer": "About 60 years old",
+    "tier": 2,
+    "question": "Hypatia of Alexandria was a famous female mathematician and Neoplatonist philosopher, teaching at the Mouseion of Alexandria around 400 AD. In March 415 AD, during a political feud between the city's Christian Patriarch Cyril and the prefect Orestes (whose adviser she was), a mob ambushed her chariot, dragged her into a church, and killed her. What did the mob reportedly use as weapons?",
+    "answer": "Sharpened oyster shells or roof tiles",
     "choices": [
-      "About 60 years old",
-      "About 25 years old",
-      "About 40 years old",
-      "About 80 years old"
+      "Sharpened oyster shells or roof tiles",
+      "Long ceremonial daggers from the temple of Serapis",
+      "Their bare hands and stones from the road",
+      "Hot iron tongs taken from a nearby blacksmith's forge"
     ],
-    "context": "Hypatia (born ~360, died 415) was the daughter of the mathematician Theon and headed the Neoplatonic school of philosophy in Alexandria. She was widely respected by both pagans and Christians for her teaching and her commentaries on Greek mathematicians like Diophantus and Apollonius. Her death came in the midst of a violent power struggle between the local Roman governor Orestes and the Christian patriarch Cyril. Hypatia is sometimes called 'the last librarian of Alexandria,' though the famous Library had already been destroyed centuries earlier."
+    "context": "The historian Socrates Scholasticus (a Christian writing within decades of the event) records the oyster-shell or roof-tile detail. Hypatia's murder is often used as a symbol of the end of antique scholarship — though the Library of Alexandria had been declining for centuries by then. Her killing was not ordered by Cyril (who was eventually made a saint), but the political climate he had fostered is generally held responsible. She was probably around 50-60 years old. Edward Gibbon's 'Decline and Fall' (1776) helped make her a major figure in Enlightenment anticlerical writing."
   },
   {
     "tier": 1,
@@ -2785,15 +2785,15 @@
   },
   {
     "tier": 1,
-    "question": "On May 24 1738 a 34-year-old English Anglican preacher named John Wesley attended a small religious meeting in London. While someone was reading the introduction to a book by Luther, Wesley had a powerful religious experience. He wrote in his journal that his heart was 'strangely' something. What did Wesley say happened to his heart?",
-    "answer": "It was 'strangely warmed'",
+    "question": "John Wesley founded the Methodist movement, riding on horseback across England, Wales, and the American colonies for 50 years. He preached up to 40,000 sermons in his lifetime — sometimes to crowds of 20,000 in the open air. About how many total miles did Wesley travel on horseback?",
+    "answer": "About 250,000 miles — roughly 10 times around the Earth",
     "choices": [
-      "It was 'strangely warmed'",
-      "It was 'strangely lightened'",
-      "It was 'strangely opened'",
-      "It was 'strangely shaken'"
+      "About 250,000 miles — roughly 10 times around the Earth",
+      "About 25,000 miles — once around the Earth",
+      "About 800,000 miles — three times to the Moon",
+      "About 50,000 miles — twice across America"
     ],
-    "context": "The Aldersgate experience launched Wesley's career as an evangelical preacher. He went on to travel about 250,000 miles on horseback over the next 50 years, preaching as many as 40,000 sermons — sometimes to crowds of 20,000 in the open air. His followers were nicknamed 'Methodists' for their disciplined methodical approach to Christian practice. The Methodist movement eventually became one of the largest Protestant denominations in the world, especially strong in the United States."
+    "context": "Wesley's Aldersgate experience on May 24 1738 launched his career as an evangelical preacher. He averaged about 5,000 miles per year on horseback for 50 years. His followers were called 'Methodists' for their disciplined methodical approach to Christian practice. The Methodist movement eventually became one of the largest Protestant denominations in the world, especially strong in the United States."
   },
   {
     "tier": 1,
