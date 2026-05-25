@@ -116,6 +116,39 @@ This passes the Dinner Test (kid retells: "Mom did you know Rosa Parks wasn't th
 
 **The kid's takeaway**: "Movements work through strategy. Photos are sometimes staged. Public stories are sometimes constructed. History rewards looking closer."
 
+### Tier ≠ just a character budget — it's a CONCEPTUAL COMPLEXITY level
+
+Tiers are NOT only about length budgets. Each tier targets a specific reading and conceptual level:
+
+| Tier | Age | Reading | Conceptual demand |
+|---|---|---|---|
+| **T1** | 5th grade (10-11) | Crisp scene-led prose | **Concepts a 5th-grader has already met or can grasp in one sentence.** Famous people, named places, vivid actions, dramatic moments, simple physical objects. NOT specialist terminology, NOT scientific theories, NOT graduate-level historiography. |
+| **T2** | 6th grade (11-12) | One scene + named figure | Introduces "republic," "empire," "covenant," "monastery" with brief inline meaning. Specialist terms allowed if defined in stem. |
+| **T3** | 7th grade (12-13) | Scene + stakes + decisive context | Scientific/historical vocabulary ("samizdat," "investiture," "satrap") defined on first use. Real political/scientific complexity OK. |
+| **T4** | 8th grade (13-14) | Multi-sentence setup + impact | Substantive complexity — competing theories, primary-source disputes, real moral weight. |
+| **T5** | 9-10th grade (14-16) | Deep story + moral weight | Analyst-grade. Specialist concepts, theory debates, full historiographic depth. |
+
+**The tier conceptual test**: Before shipping any question, ask:
+> *Would a typical kid at this tier's grade level know enough to even read the stem, let alone evaluate the answer choices?*
+
+If the answer concept (or any distractor) requires graduate-level knowledge while the tier is supposed to be 5th grade, **you have wrong-tiered the question**. Either:
+1. **Promote to a higher tier** where the concept fits naturally, AND
+2. **Find a different, kid-accessible cool fact** for the original tier
+
+**Real failure mode discovered 2026-05-24 (user-flagged):** A T1 Lavoisier question was rewritten from `"What element did Lavoisier name?" → "Oxygen"` (kid-accessible) to `"What older theory did Lavoisier overturn?" → "The phlogiston theory"` (graduate chemistry history). The agent fixed a "name-the-element" violation with a Wonder Pattern answer but didn't check that **phlogiston is not a 5th-grade concept**. The fix: revert to the oxygen question at T1 (which actually has its own Tier-1 cool fact — "oxygen" means "acid-maker" in Greek, because Lavoisier mistakenly thought it was the key ingredient in all acids; he was wrong but the name stuck), and let the phlogiston angle live at T4 where it belongs.
+
+**The rule**: A correct rewrite must satisfy BOTH the Wonder Pattern AND the tier's conceptual level. Optimizing only the first is what produced the phlogiston-at-T1 error. Future audits MUST check both.
+
+### Cross-tier same-answer duplicates — a real failure mode of parallel-tier-agent rebuilds
+
+When multiple tier agents independently rebuild a bank in parallel (T1-T5 each on their own), they may both reach for the SAME famous cool fact about a historical figure, producing two-to-four questions across tiers with **identical or near-identical answers**. The dedup gate uses string similarity of *stems*, not answers, so different-stem-same-answer slips through.
+
+**Discovered 2026-05-24**: 4 Lavoisier questions across T2/T3/T4 all had `"'The Republic has no need of savants'"` as the answer. Different stems, same payload.
+
+**Fix**: Keep ONE version (highest tier with richest context) and remove the others, OR rewrite them to use a DIFFERENT cool fact about the same figure (Lavoisier has many — oxygen etymology, phlogiston, conservation of mass, the Treatise of 1789, Lagrange's eulogy line about a head/century, his wife Marie-Anne the illustrator, etc.).
+
+**Future check**: After a parallel rebuild, scan for cross-tier same-answer collisions before declaring the bank done. Simple grouping by answer-text reveals them.
+
 ### Fixing a choice-shape parity violation — the right way and the WRONG way
 
 When you spot a decoration mismatch (parens on answer only, em-dash on answer only, etc.), the fix is to **equalize UP, not strip DOWN**. In priority order:

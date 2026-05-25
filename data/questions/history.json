@@ -541,15 +541,15 @@
   },
   {
     "tier": 1,
-    "question": "Around 1778 the French chemist Antoine Lavoisier worked out that burning is a chemical reaction with oxygen in the air. By careful measurement he overturned an older, mysterious-sounding theory that had explained burning for almost a century — saying burning released a substance from inside the fuel. What was this older theory called?",
-    "answer": "The phlogiston theory",
+    "question": "Around 1778 the French chemist Antoine Lavoisier identified a gas in the air that combines with metals and fuels when they burn. He gave it a name from Greek words meaning ACID-MAKER — because he mistakenly believed this gas was the key ingredient in all acids. He was wrong about the acid part, but the name stuck. What did Lavoisier name this gas?",
+    "answer": "Oxygen",
     "choices": [
-      "The phlogiston theory",
-      "The aether theory",
-      "The vital flame theory",
-      "The fire-spirit theory"
+      "Oxygen",
+      "Hydrogen",
+      "Nitrogen",
+      "Carbon"
     ],
-    "context": "Phlogiston (from Greek for 'burnt up') was proposed by Georg Stahl around 1703. Substances were supposed to contain phlogiston and release it as they burned, leaving behind 'calx' (the ash). Lavoisier's careful weighing experiments showed metals actually GAIN weight when burned (because they combine with oxygen) — destroying phlogiston theory. Lavoisier is called the father of modern chemistry. He was guillotined during the Reign of Terror on May 8 1794 because he had also been a tax collector for the French crown. The judge reportedly said: 'The Republic has no need of savants.'"
+    "context": "Lavoisier (1743-1794) is called the father of modern chemistry. He proved through careful weighing experiments that burning is a chemical reaction with oxygen, NOT the release of a mysterious substance called \"phlogiston\" as scientists had believed for a century. Lavoisier also gave systematic names to compounds (the naming system we still use) and proved the law of conservation of mass. He was guillotined during the Reign of Terror on May 8 1794 because he had also been a tax collector for the French crown. The mathematician Lagrange said the next day: \"It took them only an instant to cut off that head, and a hundred years may not give us another like it.\""
   },
   {
     "tier": 1,
@@ -5605,18 +5605,6 @@
   },
   {
     "tier": 2,
-    "question": "Antoine Lavoisier was the father of modern chemistry — he established combustion as a reaction with oxygen, gave systematic names to compounds, and proved conservation of mass through careful quantitative experiments. He was also a tax collector for the French crown. The Reign of Terror swept him up. He was sent to the guillotine on May 8, 1794. According to a famous (if disputed) account, what did the presiding judge say?",
-    "answer": "'The Republic has no need of savants'",
-    "choices": [
-      "'The Republic has no need of savants'",
-      "'Science kneels before the Republic'",
-      "'No labor exempts a man from justice'",
-      "'The chemist's measurements cannot weigh treason'"
-    ],
-    "context": "The exact quote is disputed — historians of the Revolution doubt it was spoken at the actual trial — but it has become the symbolic phrase for revolutionary anti-intellectualism. The mathematician Joseph-Louis Lagrange said the next day: 'It took them only an instant to cut off that head, and a hundred years may not give us another like it.' Lavoisier was 50. His wife Marie-Anne survived and published his collected works."
-  },
-  {
-    "tier": 2,
     "question": "On December 12, 1901, the Italian inventor Guglielmo Marconi, working at a temporary station in St. John's, Newfoundland, received the first transatlantic radio signal — three dots transmitted from his station in Cornwall, England, about 2,200 miles away. What letter does Morse code's three-dot signal represent?",
     "answer": "The letter S",
     "choices": [
@@ -5938,18 +5926,6 @@
       "It was the first statue Donatello signed on the base with his full Christian name"
     ],
     "context": "Donatello had earlier carved a marble David in 1408, but it was clothed. The bronze nude broke a thousand-year absence — medieval Christian art avoided the nude form. The work passed through the hands of the Medici, the Republic, and the Signoria. It now stands in the Bargello Museum in Florence. Michelangelo's larger marble David (1504) directly answered Donatello's bronze."
-  },
-  {
-    "tier": 3,
-    "question": "Antoine Lavoisier was the father of modern chemistry — he established combustion as a reaction with oxygen, named hydrogen, and proved conservation of mass. He was also a fermier général, a private tax collector for the French crown. The Reign of Terror swept him up. Sentenced to death on May 8 1794, the judge reportedly dismissed pleas for the great scientist's life with a famous line. What did the judge supposedly say?",
-    "answer": "'The Republic has no need of savants'",
-    "choices": [
-      "'The Republic has no need of savants'",
-      "'Science kneels before the Republic's law'",
-      "'No labor exempts a man from the guillotine'",
-      "'A chemist's measurements cannot weigh treason'"
-    ],
-    "context": "The exact quote is disputed by historians — but it has become the symbolic phrase for revolutionary anti-intellectualism. The mathematician Joseph-Louis Lagrange said the next day: 'It took them only an instant to cut off that head, and a hundred years may not give us another like it.' Lavoisier was 50. His wife Marie-Anne survived and edited his collected works for publication."
   },
   {
     "tier": 3,
@@ -7942,18 +7918,6 @@
       "'Causa vincet tempore' — 'The cause will win in time'"
     ],
     "context": "The story is almost certainly apocryphal — first appearing in print in 1757, 115 years after Galileo's death — but has become the symbolic phrase for scientific truth surviving institutional pressure. Galileo lived under house arrest at Arcetri until his death in 1642, going blind in his final years. The Catholic Church formally acknowledged the error in 1992 under John Paul II."
-  },
-  {
-    "tier": 4,
-    "question": "Antoine Lavoisier was the father of modern chemistry — he established combustion as a reaction with oxygen, gave systematic names to compounds, and proved conservation of mass. He was also a fermier général, a private tax collector for the crown. The Reign of Terror swept him up. At his trial his defenders pleaded for the scientist's life; the judge gave a now-famous one-sentence reply before sending him to the guillotine on May 8 1794. What did the judge reportedly say?",
-    "answer": "'The Republic has no need of savants'",
-    "choices": [
-      "'The Republic has no need of savants'",
-      "'Science kneels before the Republic'",
-      "'No labor exempts a man from justice'",
-      "'The chemist's measure cannot weigh treason'"
-    ],
-    "context": "The mathematician Joseph-Louis Lagrange remarked the day after the execution: 'It took them only an instant to cut off that head, and a hundred years may not give us another like it.' Lavoisier was 50. His widow Marie-Anne later published his collected works. The exact quote is disputed by historians but has become the symbol of revolutionary anti-intellectualism."
   },
   {
     "tier": 4,
