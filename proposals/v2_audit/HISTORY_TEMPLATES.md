@@ -45,6 +45,18 @@ T5 — *Brunelleschi laid his last brick in 1436. **What record does the dome st
 
 **Format**: The question is the last sentence of the stem, ending with `?`. No "Q:" prefix. Matches the JSON `question` field shape.
 
+### Two extra discipline rules (2026-05-24, user-flagged)
+
+**1. Pick the MOST memorable cool fact, not just A cool fact.** For a famous event with multiple memorable details, choose the one most likely to *surprise* the kid on first read and *stick* in memory. Surprise + stick is the test. Example: Nelson at Trafalgar said both "Thank God I have done my duty" and "Kiss me, Hardy." Both are real. The dutiful one is forgettable; the "Kiss me, Hardy" is shocking-on-first-read (and the context-reveal — older English used "kiss" between men to mean farewell embrace — is the payoff). Always pick the surprising one. Kids will tell their friends.
+
+**2. No paraphrased distractors of the real answer.** If your "correct answer" is a famous quote/phrase/fact, none of your distractors may be a paraphrase or near-quote of the same fact. Otherwise the kid has two right answers and the wonder payoff is broken. Examples of the failure:
+- Answer: `"Kiss me, Hardy"` with distractor `"Hardy, give me a kiss"` → fail (same fact)
+- Answer: `"Victory or Death"` with distractor `"Death or Victory"` → fail
+- Answer: `"I have not time"` with distractor `"Time is short"` → fail
+- Answer: `"23,000"` with distractor `"about 22,500"` → fail (same fact)
+
+Distractors must be **genuinely different alternatives** — different people, different events, different specific facts. Reader judgment required; this can't be deterministically gated.
+
 ## 2. The six pillars + topic breakdown
 
 ### Pillar 1 — Western tradition unbroken (HEAVIEST)
