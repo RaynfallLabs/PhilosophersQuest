@@ -570,3 +570,64 @@ def test_trailing_tokens_case_insensitive():
     q["choices"][0] = q["answer"]
     r = validate_trailing_tokens(q, subject="philosophy")
     assert r.status == GateStatus.FAIL
+
+
+# ----------------------------------------------------------------------
+# answer_collision — catch same-answer questions across the bank
+# ----------------------------------------------------------------------
+from tools.quizgen.deterministic import (  # noqa: E402
+    build_answer_collision_index,
+    validate_answer_collision,
+)
+
+
+def test_answer_collision_pass_unique_answer():
+    qs = [
+        make_question(answer="Reality is in constant flux; nothing stays the same"),
+        make_question(answer="Knowledge requires both reason and sensory experience"),
+        make_question(answer="Time is an illusion created by human consciousness"),
+    ]
+    idx = build_answer_collision_index(qs)
+    r = validate_answer_collision(qs[0], idx, self_idx=0, subject="philosophy")
+    assert r.status == GateStatus.PASS
+
+
+def test_answer_collision_fail_same_answer_diff_stems():
+    # Two questions with very different stems but the SAME canonical answer
+    # — the exact pattern the dedup gate misses.
+    q1 = make_question(
+        question="Galileo was forced to recant his belief that the Earth moves. What did he mutter as he stood up?",
+        answer="'Eppur si muove' — 'And yet it moves'",
+    )
+    q1["choices"][0] = q1["answer"]
+    q2 = make_question(
+        question="On June 22 1633 the 69-year-old astronomer Galileo Galilei knelt before the Roman Inquisition and recanted his teaching that the Earth moves around the Sun. As he rose from his knees, legend says he muttered something in Italian. What did he say?",
+        answer="'Eppur si muove' — 'And yet it moves'",
+    )
+    q2["choices"][0] = q2["answer"]
+    idx = build_answer_collision_index([q1, q2])
+    r1 = validate_answer_collision(q1, idx, self_idx=0, subject="philosophy")
+    r2 = validate_answer_collision(q2, idx, self_idx=1, subject="philosophy")
+    assert r1.status == GateStatus.FAIL
+    assert r2.status == GateStatus.FAIL
+
+
+def test_answer_collision_exempt_math():
+    # Math has templated drills that legitimately recur ("5+7=?" → "12" etc)
+    q1 = make_question(answer="12")
+    q2 = make_question(answer="12")
+    q1["choices"][0] = q1["answer"]
+    q2["choices"][0] = q2["answer"]
+    idx = build_answer_collision_index([q1, q2])
+    r = validate_answer_collision(q1, idx, self_idx=0, subject="math")
+    assert r.status == GateStatus.NA
+
+
+def test_answer_collision_exempt_grammar():
+    q1 = make_question(answer="past tense")
+    q2 = make_question(answer="past tense")
+    q1["choices"][0] = q1["answer"]
+    q2["choices"][0] = q2["answer"]
+    idx = build_answer_collision_index([q1, q2])
+    r = validate_answer_collision(q1, idx, self_idx=0, subject="grammar")
+    assert r.status == GateStatus.NA

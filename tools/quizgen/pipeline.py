@@ -23,7 +23,9 @@ from tools.quizgen import specs
 from tools.quizgen.deterministic import (
     GateResult,
     GateStatus,
+    build_answer_collision_index,
     build_duplicate_index,
+    validate_answer_collision,
     validate_anti_rote,
     validate_duplicate,
     validate_length_budget,
@@ -163,6 +165,10 @@ def run_deterministic(
     # duplicate index built over the sample's questions (so dup-detection
     # is intra-sample for calibration runs, and intra-bank for full runs).
     dup_index = build_duplicate_index([q for _, q in targets])
+    # Answer-collision index — separate from stem dedup. Catches same-answer
+    # questions even when stems differ. Discovered 2026-05-25 after the
+    # history rebuild surfaced 64 cross-tier same-answer collisions.
+    answer_index = build_answer_collision_index([q for _, q in targets])
 
     started_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
     report = RunReport(
@@ -192,6 +198,9 @@ def run_deterministic(
         qr.gates["anti_rote"] = validate_anti_rote(q, subject=subject)
         qr.gates["duplicate"] = validate_duplicate(
             q, dup_index, threshold=dup_threshold, self_idx=local_idx
+        )
+        qr.gates["answer_collision"] = validate_answer_collision(
+            q, answer_index, self_idx=local_idx, subject=subject
         )
         qr.gates["math_correctness"] = validate_math_correctness(q, subject=subject)
         qr.gates["trailing_tokens"] = validate_trailing_tokens(q, subject=subject)
