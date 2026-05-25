@@ -92,6 +92,16 @@ When you have an event to write about, the question becomes: **what KIND of cool
 - Country / state names
 - Generic identifications (`"What is this called?"`)
 
+### Fixing a choice-shape parity violation — the right way and the WRONG way
+
+When you spot a decoration mismatch (parens on answer only, em-dash on answer only, etc.), the fix is to **equalize UP, not strip DOWN**. In priority order:
+
+1. **Substantively rewrite the whole question** to a Wonder Pattern answer (escapes the shape issue entirely). This is usually the right move because shape mismatches often co-occur with weak underlying questions.
+2. **Add comparable info to the distractors** so everyone has the parenthetical / em-dash / decoration.
+3. **NEVER strip info from the correct answer to match impoverished distractors.**
+
+The failure mode (real example from 2026-05-24 overnight audit): question `"Who was the last emperor of China?"` had answer `"Pu Yi (Aisin Gioro)"` and distractors `"Sun Yat-sen" / "Mao Zedong" / "Chiang Kai-shek"`. The audit agent stripped the parenthetical to `"Pu Yi"` AND truncated distractors to `"Sun" / "Mao" / "Chiang"` — making everything WORSE while "fixing" the parity. The right move was a substantive rewrite to `"After his communist re-education, what job did the last emperor of China hold?" → "A gardener at the Beijing Botanical Garden"`.
+
 ### What FAILS the test (anti-patterns — do NOT ship)
 
 1. **Generic labels as answers** — battle names, place names, dates, country names. ALWAYS banned as the primary answer. (Tier 5 of the hierarchy.)
