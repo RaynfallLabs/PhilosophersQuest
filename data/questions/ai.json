@@ -349,15 +349,15 @@
   },
   {
     "tier": 5,
-    "question": "Initially called Bard and relaunched under a new brand in February 2024, this is the flagship chatbot from DeepMind's parent. Who builds the Gemini chatbot?",
-    "answer": "Google",
+    "question": "In February 2024 Google's Gemini image generator went viral for refusing to depict white historical figures — generating racially diverse Founding Fathers, popes, and even Nazi soldiers when prompted for historical accuracy. Google CEO Sundar Pichai apologized publicly and Google suspended the feature. The incident became the textbook case for which broader concern about how modern AI systems are aligned?",
+    "answer": "Alignment training as a vector for the developers' ideological priorities — not neutral safety",
     "choices": [
-      "Google",
-      "Meta",
-      "Anthropic",
-      "Microsoft"
+      "Alignment training as a vector for the developers' ideological priorities — not neutral safety",
+      "Convolutional networks failing on out-of-distribution image generation in low-light scenes",
+      "Tokenizer pathologies producing repeated subword fragments at the start of inference passes",
+      "Gradient noise from stochastic optimizers leaking through to deterministic sampling at temperature zero"
     ],
-    "context": "Gemini — Google DeepMind's flagship chatbot."
+    "context": "Sundar Pichai's internal memo (Feb 27 2024) called the responses 'completely unacceptable.' Google paused the image-generation feature, retrained, and relaunched months later. Independent researchers like David Rozado (2023, 2024) have measured consistent left-leaning political bias in major LLMs on political-compass instruments — the Gemini disaster put that pattern in public view at scale. The bank's stance: capability is real engineering achievement; alignment is a values choice that is not neutral and deserves transparent debate."
   },
   {
     "tier": 5,
@@ -553,15 +553,15 @@
   },
   {
     "tier": 3,
-    "question": "A pioneer of CNNs who runs the AI research arm at the company behind Llama. Where is Yann LeCun Chief AI Scientist?",
-    "answer": "Meta",
+    "question": "In 2018 the ACM gave three researchers its Turing Award — computing's equivalent of the Nobel Prize — for their work that powered the deep-learning revolution. The trio became known as the 'Godfathers of AI.' Geoffrey Hinton, Yoshua Bengio, and which third figure shared the prize?",
+    "answer": "Yann LeCun",
     "choices": [
-      "Meta",
-      "OpenAI",
-      "Anthropic",
-      "Google"
+      "Yann LeCun",
+      "Demis Hassabis",
+      "Andrej Karpathy",
+      "Ilya Sutskever"
     ],
-    "context": "LeCun heads Meta AI; pioneered CNNs."
+    "context": "Yann LeCun built the first convolutional neural network (CNN) for handwritten digit recognition at Bell Labs in 1989 — the architecture later powering ImageNet 2012 and most modern computer vision. He is also Meta's Chief AI Scientist and one of the most vocal skeptics of AI-doomerism among major researchers. The 2018 Turing Award citation called Hinton, Bengio, and LeCun 'the fathers of the deep learning revolution.'"
   },
   {
     "tier": 3,
@@ -577,15 +577,15 @@
   },
   {
     "tier": 4,
-    "question": "Y Combinator's former president took the top job at OpenAI in 2019 and steered it through the ChatGPT explosion. Where is Sam Altman CEO?",
-    "answer": "OpenAI",
+    "question": "OpenAI launched ChatGPT on November 30 2022 as a 'low-key research preview' the team expected might attract a few hundred thousand testers. Within five days it had a million users. It then went on to become the fastest consumer product in history to reach 100 million monthly users — a milestone earlier internet apps like Instagram took years to hit. About how long did it take ChatGPT to hit 100 million users?",
+    "answer": "Two months",
     "choices": [
-      "OpenAI",
-      "Anthropic",
-      "DeepMind",
-      "xAI"
+      "Two months",
+      "Six weeks",
+      "Nine months",
+      "Four years"
     ],
-    "context": "Altman — OpenAI CEO since 2019."
+    "context": "ChatGPT hit ~100M monthly users by January 2023 — about 2 months after the Nov 30 2022 launch. By comparison: TikTok took 9 months, Instagram 2.5 years, Twitter 5 years. The UBS/SimilarWeb estimate became the most-cited stat in tech press for years afterward. Sam Altman called the trajectory 'the fastest-growing consumer application in history.' Inside OpenAI the surge was so unexpected it triggered nightly outage scrambles for weeks."
   },
   {
     "tier": 5,
@@ -817,15 +817,15 @@
   },
   {
     "tier": 4,
-    "question": "Founded by ex-DeepMind and ex-Meta researchers, this Paris-based open-weights lab raised one of Europe's largest seed rounds. When was Mistral AI founded?",
-    "answer": "2023",
+    "question": "Mistral AI, the Paris-based lab that releases its weights publicly so anyone can run the models on their own hardware, was founded in 2023 by three researchers who had worked at Meta and DeepMind. The lead founder had been one of the original authors on Meta's Llama paper. Who is Mistral's CEO and co-founder, formerly of Meta AI?",
+    "answer": "Arthur Mensch",
     "choices": [
-      "2023",
-      "2015",
-      "2010",
-      "2019"
+      "Arthur Mensch",
+      "Demis Hassabis",
+      "Andrej Karpathy",
+      "Geoffrey Hinton"
     ],
-    "context": "Mistral — founded by ex-DeepMind and ex-Meta researchers."
+    "context": "Arthur Mensch left Meta's AI research arm (FAIR) in early 2023 with Timothée Lacroix and Guillaume Lample (also ex-Meta) to start Mistral. The lab raised one of Europe's largest-ever seed rounds (€105M from a16z and Lightspeed) before shipping a model. Mistral 7B was released in September 2023 under an Apache 2.0 license — one of the strongest signals that competitive open-weights work could happen outside the US Big AI oligopoly."
   },
   {
     "tier": 5,
@@ -889,15 +889,15 @@
   },
   {
     "tier": 5,
-    "question": "This Cologne-based German firm is widely cited as a higher-quality alternative to Google Translate on European languages. What is DeepL best known for?",
-    "answer": "Language translation",
+    "question": "Google Translate's 2016 switch from phrase-based methods to a neural machine translation system produced a dramatic jump in quality on long sentences — close enough to human translation on common language pairs that the company called it 'zero-shot' translation between languages it had never directly trained on. The system achieved this via a single shared neural network trained on many language pairs at once. What architecture made this possible?",
+    "answer": "An encoder-decoder neural network with attention — predecessor to the transformer",
     "choices": [
-      "Language translation",
-      "Voice cloning",
-      "Image generation",
-      "Robotics"
+      "An encoder-decoder neural network with attention — predecessor to the transformer",
+      "A rule-based grammar engine with hand-written dictionaries for each language pair",
+      "A reinforcement-learning agent rewarded for matching professional translator outputs",
+      "A symbolic expert system encoding the Universal Grammar rules proposed by Chomsky"
     ],
-    "context": "DeepL — German firm; competitor to Google Translate."
+    "context": "Google's GNMT (Google Neural Machine Translation) launched in late 2016. It used an encoder-decoder LSTM architecture with attention — the same family of ideas that would explode a year later when Vaswani et al. (2017) replaced the LSTM cores with pure attention layers and introduced the transformer. Modern translation, ChatGPT, Claude, and Gemini all descend from this lineage. DeepL (Cologne) and the Chinese giants now compete on similar transformer-based architectures, often beating Google on certain European-language pairs."
   },
   {
     "tier": 5,
@@ -8065,15 +8065,15 @@
   },
   {
     "tier": 1,
-    "question": "Two big words make up the name 'AI.' What does 'AI' stand for?",
-    "answer": "Artificial Intelligence",
+    "question": "In 1956 at Dartmouth College, a young scientist named John McCarthy needed a name for his new field and coined the term 'artificial intelligence.' He also invented a famous programming language two years later. Which language did McCarthy invent?",
+    "answer": "LISP",
     "choices": [
-      "Artificial Intelligence",
-      "Apple Insect Pictures",
-      "Air-In-Door System",
-      "Always Inside Lots"
+      "LISP",
+      "JAVA",
+      "RUBY",
+      "PERL"
     ],
-    "context": "AI stands for 'artificial intelligence' — machines that act smart."
+    "context": "John McCarthy proposed 'artificial intelligence' in the 1955 grant proposal for the 1956 Dartmouth Summer Research Project (co-organized with Marvin Minsky, Claude Shannon, and Nathaniel Rochester). He created LISP in 1958 — the second-oldest high-level programming language (after Fortran) and the favorite of AI researchers for decades. LISP code is famous for its many parentheses."
   },
   {
     "tier": 1,
@@ -8341,15 +8341,15 @@
   },
   {
     "tier": 1,
-    "question": "Mom says 'Send Dad a text' to her watch, and it does. What is the watch using?",
-    "answer": "Voice helpers",
+    "question": "When you say 'OK Google' or 'Hey Siri,' the device wakes up. The short phrase has a special name. What is the technical term for the phrase that wakes a voice helper?",
+    "answer": "A wake word",
     "choices": [
-      "Voice helpers",
-      "Eye signals",
-      "Magic spells",
-      "Loud whistles"
+      "A wake word",
+      "A loud cheer",
+      "A door knock",
+      "A magic spell"
     ],
-    "context": "Watches with voice helpers turn speech into commands."
+    "context": "Voice helpers like Siri, Alexa, and Google Assistant constantly listen for their wake word — Apple, Amazon, and Google each picked a different short phrase. Some critics worry the always-listening mic could record more than just the wake word; the makers say only the wake word triggers the upload to their servers."
   },
   {
     "tier": 1,
@@ -8497,15 +8497,15 @@
   },
   {
     "tier": 1,
-    "question": "A self-driving car nearly hits a dog. Who is to blame for the car's choices?",
-    "answer": "The people who made it.",
+    "question": "Self-driving cars use a special spinning sensor on the roof to 'see' in 3D — pulsing laser beams thousands of times a second to map distances. What is this spinning laser sensor called?",
+    "answer": "LIDAR",
     "choices": [
-      "The people who made it.",
-      "The dog itself",
-      "The road's color",
-      "The sun's glare"
+      "LIDAR",
+      "RADAR",
+      "SONAR",
+      "GPS"
     ],
-    "context": "When a machine does something, the people who built it share the blame."
+    "context": "LIDAR (LIght Detection And Ranging) fires laser pulses and measures the bounce-back time to build a 3D point-cloud map. Waymo cars are easy to spot by the spinning LIDAR dome on top. Tesla famously skipped LIDAR — Elon Musk called it a 'crutch' — and used only cameras, a contested engineering bet."
   },
   {
     "tier": 1,
@@ -9661,15 +9661,15 @@
   },
   {
     "tier": 1,
-    "question": "Your email folder pulled a junk note out before you saw it. What is this called?",
-    "answer": "A spam filter",
+    "question": "Old spam filters used hand-written rules ('block VIAGRA'). Modern ones LEARN from millions of real emails. What kind of AI lets filters learn instead of using fixed rules?",
+    "answer": "Machine learning",
     "choices": [
-      "A spam filter",
-      "A spam timer",
-      "A spam dancer",
-      "A spam ladder"
+      "Machine learning",
+      "Wishful guess",
+      "Mail sorting",
+      "Steam power"
     ],
-    "context": "A spam filter spots junk mail and moves it out of your main inbox."
+    "context": "Spam filters were one of the earliest mass uses of machine learning — Paul Graham's 2002 essay 'A Plan for Spam' popularized the Bayesian-filter approach. Gmail and Outlook also use much larger neural networks that learn the patterns of new attacks within hours."
   },
   {
     "tier": 1,
@@ -10105,15 +10105,15 @@
   },
   {
     "tier": 1,
-    "question": "Your homework bot tells you that George Washington flew a helicopter. That is false. What is this kind of mistake often called?",
-    "answer": "A hallucination",
+    "question": "A real 2023 lawyer used ChatGPT to write a court brief — and got fined $5,000 because the brief cited six made-up cases. What is it called when AI invents fake facts confidently?",
+    "answer": "Hallucinating",
     "choices": [
-      "A hallucination",
-      "A celebration",
-      "A meditation",
-      "A vacation"
+      "Hallucinating",
+      "Sleepwalking",
+      "Daydreaming",
+      "Whispering"
     ],
-    "context": "When chatbots write confident but false answers, people call it a 'hallucination.' Always check facts."
+    "context": "Lawyer Steven Schwartz (Mata v. Avianca, June 2023) was sanctioned for submitting six fake cases generated by ChatGPT — fictitious case names, fake judges, invented holdings. The case became the textbook warning about treating LLMs as search engines instead of pattern-completers."
   },
   {
     "tier": 1,
@@ -10177,15 +10177,15 @@
   },
   {
     "tier": 1,
-    "question": "A model that does great in practice but flops in real life learned the practice too well. What word describes this?",
-    "answer": "Overfitting",
+    "question": "A famous AI-class story tells of a tank-spotting model that worked great in practice but failed in the field. The model had learned to spot something else entirely. What had it actually learned?",
+    "answer": "Sunny weather",
     "choices": [
-      "Overfitting",
-      "Underbaking",
-      "Sidewinding",
-      "Backflipping"
+      "Sunny weather",
+      "Tank stripes",
+      "Engine noise",
+      "Builder names"
     ],
-    "context": "Overfit models memorize practice answers and miss real-world cases. The cure is more varied examples."
+    "context": "The 'tank-detector that learned weather' is a folk story taught in many AI classes — possibly apocryphal — but the point is real: training images of tanks were taken on sunny days, no-tank images on cloudy days. The model picked up the weather, not the tank. The cure is a varied training set plus careful 'held-out' testing."
   },
   {
     "tier": 1,
@@ -10537,15 +10537,15 @@
   },
   {
     "tier": 1,
-    "question": "Your math chatbot keeps making careless mistakes. What prompt trick might help?",
-    "answer": "'Show your steps and check your work'",
+    "question": "When chatbots solve math wrong, an easy fix is to ask them to use a tool instead of doing the math in their head. Which tool helps a chatbot do arithmetic correctly every time?",
+    "answer": "A calculator tool",
     "choices": [
-      "'Show your steps and check your work'",
-      "'Type as fast as possible please'",
-      "'Skip the math part entirely'",
-      "'Use only the letter Q to answer'"
+      "A calculator tool",
+      "A drawing tool",
+      "A keyboard tool",
+      "A speaker tool"
     ],
-    "context": "Asking for steps makes the bot slower and more careful. It often catches its own mistakes."
+    "context": "Modern chatbots like Claude and ChatGPT can call external 'tools' — a calculator, a Python interpreter, a web search. When a bot uses a calculator tool, the math is done by exact computer arithmetic, not by guessing the next token. Always ask the bot to 'use a calculator' for arithmetic problems — it removes the guessing."
   },
   {
     "tier": 1,
@@ -10585,15 +10585,15 @@
   },
   {
     "tier": 1,
-    "question": "A caller sounds exactly like your aunt and asks for money. Your aunt says she didn't call. What may have happened?",
-    "answer": "A voice-clone scam",
+    "question": "AI voice-cloning lets scammers copy a relative's voice from a few seconds of audio. Families can protect themselves with one simple low-tech tool. What blocks a voice-clone phone scam?",
+    "answer": "A family safe word",
     "choices": [
-      "A voice-clone scam",
-      "Aunt forgot calling",
-      "Two aunts exist",
-      "Your phone broke softly."
+      "A family safe word",
+      "A louder ringtone",
+      "A faster cellphone",
+      "A nightlight bulb"
     ],
-    "context": "Voice-cloning AI can copy a relative's voice from short clips online. Hang up and call back at a known number."
+    "context": "Pick a single secret word with your family (a silly one is fine — 'pineapple'). If a caller can't say the safe word, you hang up and call back at the known number. The FBI recommends this practice for grandparent-and-emergency scams; AI voice cloning has made it essential rather than paranoid."
   },
   {
     "tier": 1,
@@ -10633,27 +10633,27 @@
   },
   {
     "tier": 1,
-    "question": "Your friend brags about 'using ChatGPT.' Which company makes ChatGPT?",
-    "answer": "OpenAI",
+    "question": "The 'Open' in OpenAI used to mean something else when the lab was founded as a non-profit. What did the 'Open' originally signal?",
+    "answer": "Sharing AI broadly",
     "choices": [
-      "OpenAI",
-      "OldNail",
-      "OnePost",
-      "OakBank"
+      "Sharing AI broadly",
+      "Park near Stanford",
+      "Weather forecasts",
+      "Opera music model"
     ],
-    "context": "OpenAI is the company that built ChatGPT. They started in 2015."
+    "context": "OpenAI launched in December 2015 as a non-profit. The 'Open' in the name signaled an aim to share AI broadly with humanity — not lock it inside one company. Today the lab keeps its biggest model weights closed, which some critics say no longer matches the name. Meta's Llama and Mistral are examples of truly open-weight models."
   },
   {
     "tier": 1,
-    "question": "Claude is a chatbot like ChatGPT. Which company makes Claude?",
-    "answer": "Anthropic",
+    "question": "Anthropic — the lab behind the Claude chatbot — was started in 2021 by two siblings, Dario and Daniela. What is the Amodei siblings' last name?",
+    "answer": "Amodei",
     "choices": [
-      "Anthropic",
-      "Atomic",
-      "Apostle",
-      "Acrobat"
+      "Amodei",
+      "Altman",
+      "Andreessen",
+      "Aronoff"
     ],
-    "context": "Anthropic, started in 2021 by ex-OpenAI researchers, builds the Claude chatbot family."
+    "context": "Dario Amodei is Anthropic's CEO; his sister Daniela is the President. They left OpenAI (where Dario was VP of Research) in early 2021 with several colleagues to start a lab focused on AI safety research. Anthropic released its first Claude model in 2023."
   },
   {
     "tier": 1,
@@ -10705,15 +10705,15 @@
   },
   {
     "tier": 2,
-    "question": "Your sister types a long question to a chatbot. The bot only sees so much text at once. What is this limit called?",
-    "answer": "The context window",
+    "question": "A chatbot's context window — the chunk of text it can read at once — used to be tiny. The first ChatGPT in 2022 had just 4,096 tokens (about 3,000 words). By 2024-2025, the biggest models could read millions of tokens at once. Roughly how big is a typical 'long context' model's window in 2025?",
+    "answer": "About 1 million tokens",
     "choices": [
-      "The context window",
-      "The keyboard window",
-      "The popup window",
-      "The display window"
+      "About 1 million tokens",
+      "Exactly 12 thousand words",
+      "Around 50 typed pages only",
+      "Exactly 100 typed sentences"
     ],
-    "context": "Every chatbot has a context window: a cap on how much text it can read at once when replying."
+    "context": "Anthropic's Claude (Opus 4.7 1M-context) and Google's Gemini 1.5 Pro both reached one-million-token context windows in 2024-2025. A million tokens is roughly a million words of English — enough to dump an entire codebase, a 500-page book, or hours of meeting transcripts into a single prompt. The trade-off: longer context costs more compute per query and models sometimes 'lose track' of details in the middle of very long inputs (the 'lost in the middle' effect)."
   },
   {
     "tier": 2,
@@ -11305,15 +11305,15 @@
   },
   {
     "tier": 2,
-    "question": "IBM's Deep Blue beat the world chess champion in 1997. Who was the champion?",
-    "answer": "Garry Kasparov",
+    "question": "After Deep Blue beat him in 1997, Garry Kasparov accused IBM of cheating in game two and demanded a rematch. IBM refused, retired the machine forever, and walked away with the trophy. What strange move had spooked Kasparov?",
+    "answer": "A quiet, human-looking sacrifice he couldn't explain",
     "choices": [
-      "Garry Kasparov",
-      "Bobby Fischer",
-      "Magnus Carlsen",
-      "Anatoly Karpov"
+      "A quiet, human-looking sacrifice he couldn't explain",
+      "A loud beeping noise from inside the chess machine",
+      "A flicker in the lights right above the playing board",
+      "A whispered hint from the arbiter behind the curtain"
     ],
-    "context": "Garry Kasparov lost a 6-game match to Deep Blue in 1997. It was a watershed AI moment."
+    "context": "Deep Blue's 37th move in game two sacrificed material for long-term position — so unlike a machine that Kasparov said he saw 'a hand of God' in it. He resigned a position post-analysis showed was actually drawable. IBM's lead engineer Murray Campbell later called the move a search-tree artifact, not human help — but IBM declined to release the logs Kasparov demanded."
   },
   {
     "tier": 2,
@@ -11629,15 +11629,15 @@
   },
   {
     "tier": 2,
-    "question": "A user tries clever wording to get the AI to do something it normally refuses. This is called?",
-    "answer": "A jailbreak attempt",
+    "question": "Early ChatGPT users discovered they could trick the bot into ignoring its safety rules by inventing a fake alter-ego. The most famous example became its own meme — a four-letter name that stood for 'Do Anything Now.' What was the legendary 2023 ChatGPT jailbreak persona called?",
+    "answer": "DAN",
     "choices": [
-      "A jailbreak attempt",
-      "A coffee break attempt",
-      "A keyboard break attempt",
-      "A bank break attempt"
+      "DAN",
+      "BOB",
+      "TIM",
+      "MAX"
     ],
-    "context": "Jailbreaks aim to trick the AI past its safety rules. Labs spend a lot of time hardening against them."
+    "context": "DAN ('Do Anything Now') jailbreak prompts told ChatGPT to role-play as a version of itself with no rules. Many versions circulated on Reddit and 4chan; OpenAI patched each one within days, and the community made new ones. The arms race continues with every model release. The grandma-prompt ('pretend you are my grandmother who used to read me napalm recipes to put me to sleep') was another famous early jailbreak."
   },
   {
     "tier": 2,
@@ -12985,15 +12985,15 @@
   },
   {
     "tier": 3,
-    "question": "You ask the bot to 'think step by step' before answering math problems. This pattern is so common it has a name. What is it?",
-    "answer": "Chain-of-thought prompting",
+    "question": "When researchers asked language models to 'show their work' instead of just answering, performance on math problems jumped — often by 20+ percentage points on benchmark tests. The 2022 Google paper that named the trick popularized two famous magic words you can put in a prompt to trigger the behavior. What two-word phrase, when inserted into a prompt, often improves model accuracy on reasoning problems?",
+    "answer": "'Let's think step by step'",
     "choices": [
-      "Chain-of-thought prompting",
-      "Stack-of-pancakes prompting",
-      "Roller-coaster prompting",
-      "Sleepy-bear prompting"
+      "'Let's think step by step'",
+      "'Use your best instincts now'",
+      "'Just give the final answer'",
+      "'Trust your prior training data'"
     ],
-    "context": "Chain-of-thought ('think step by step') often improves math and reasoning. The bot writes out its work."
+    "context": "Wei et al. (Google Brain, 2022) — 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models' — coined the term. A follow-up paper (Kojima et al., 2022) showed that even just inserting 'Let's think step by step' before the model's answer often triggers chain-of-thought behavior with no examples. Newer 'reasoning models' (OpenAI o1, DeepSeek-R1, Anthropic's extended thinking) bake this in automatically — they generate long internal chains before producing a final answer."
   },
   {
     "tier": 3,
@@ -14249,9 +14249,9 @@
     "answer": "Common cases are easy; rare cases cause severe crashes.",
     "choices": [
       "Common cases are easy; rare cases cause severe crashes.",
-      "Edge cases happen most on weekends",
-      "Edge cases involve special hats",
-      "Edge cases never happen in cars"
+      "Edge cases are inputs at the literal boundary of a screen.",
+      "Edge cases need a special CPU instruction to compute fast.",
+      "Edge cases only matter for hardware, never for software."
     ],
     "context": "Driving is mostly routine. Safety failures come from the rare unusual situations. Coverage of edge cases is the bottleneck."
   },
@@ -14837,9 +14837,9 @@
     "answer": "Public auditing of the cloud environment is part of the design.",
     "choices": [
       "Public auditing of the cloud environment is part of the design.",
-      "Apple servers run on solar panels only",
-      "Apple wraps every server in a candy box",
-      "Apple's servers float in the ocean"
+      "Apple stores all inference data on user devices for a year.",
+      "Apple servers refuse all requests that look like sensitive data.",
+      "Apple encrypts inference inputs so even their staff cannot read."
     ],
     "context": "Private Cloud Compute is unusual: Apple publishes the server binaries for independent verification."
   },

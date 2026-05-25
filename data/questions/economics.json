@@ -181,15 +181,15 @@
   },
   {
     "tier": 5,
-    "question": "Ludwig von Mises was approximately what age at his death in 1973?",
-    "answer": "92",
+    "question": "Ludwig von Mises was born in 1881 in a city then called Lemberg, in the Austro-Hungarian crown land of Galicia. He fled Vienna in 1934 ahead of the Nazi threat, taught for years in Geneva, and finally crossed the Atlantic in 1940. What is that city — his birthplace — called today, and in what country?",
+    "answer": "Lviv, in western Ukraine",
     "choices": [
-      "92",
-      "76",
-      "84",
-      "100"
+      "Lviv, in western Ukraine",
+      "Lvov, in southeastern Poland",
+      "Lemberg, still in modern Austria",
+      "Kosice, in eastern Slovakia"
     ],
-    "context": "Born September 29, 1881, in Lemberg (then Austrian Galicia, now Lviv). He outlived all his Vienna seminar regulars and saw his ideas spread to the next generation."
+    "context": "Lemberg was multilingual Habsburg territory — Polish, Ruthenian (Ukrainian), German, and Yiddish all spoken on the same streets. The city changed hands repeatedly across the 20th century: Polish Lwow between the wars, Soviet Lvov after 1945, and Ukrainian Lviv after 1991. Mises represented the cosmopolitan Austrian-Jewish intellectual world that the wars and totalitarianism would destroy."
   },
   {
     "tier": 3,
@@ -385,15 +385,15 @@
   },
   {
     "tier": 3,
-    "question": "The maxim warning that coins held on an exchange or custodian are not really yours is:",
-    "answer": "Not your keys, not your coins",
+    "question": "Andreas Antonopoulos popularized a custody rule that became Bitcoin's defining lesson. If you don't hold the private keys, what do you actually have when your coins sit on an exchange?",
+    "answer": "A counterparty claim — an IOU from the exchange, not Bitcoin",
     "choices": [
-      "Not your keys, not your coins",
-      "Be your own bank.",
-      "Verify, don't trust",
-      "Stay humble, stack sats"
+      "A counterparty claim — an IOU from the exchange, not Bitcoin",
+      "Direct ownership of those exact coins on the blockchain",
+      "A federally insured deposit equivalent to a savings account",
+      "A receipt that automatically transfers ownership at any time"
     ],
-    "context": "Andreas Antonopoulos popularized the phrase. Mt. Gox, QuadrigaCX, Celsius, BlockFi, FTX — each collapse vindicated the maxim. Self-custody is core to Bitcoin's purpose."
+    "context": "When you 'buy' Bitcoin on an exchange, the exchange holds the keys; you hold a claim on the exchange. Mt. Gox, QuadrigaCX, Celsius, and FTX all proved what that means when the firm fails — users became unsecured creditors. Self-custody (your own seed phrase, your own keys) is the only way to actually own Bitcoin."
   },
   {
     "tier": 4,
@@ -1489,15 +1489,15 @@
   },
   {
     "tier": 4,
-    "question": "Carl Menger's 1871 founding work was titled in German Grundsatze der Volkswirtschaftslehre. What did the title translate to in English?",
-    "answer": "Principles of Economics",
+    "question": "Carl Menger published his Grundsatze in Vienna in 1871. He was an unusual figure for a young academic economist — by 1876, the Habsburg court had asked him to take a particular educational role. What teaching position did Menger hold from 1876 to 1879?",
+    "answer": "Personal economics tutor to Crown Prince Rudolf of Austria",
     "choices": [
-      "Principles of Economics",
-      "Foundations of Political Economy",
-      "Elements of Subjective Value Theory",
-      "Lectures on Economic Theory"
+      "Personal economics tutor to Crown Prince Rudolf of Austria",
+      "Director of the Imperial Bank of Austria under Franz Joseph",
+      "Senior economist for the Habsburg Finance Ministry in Vienna",
+      "Chair of monetary economics at the University of Berlin"
     ],
-    "context": "The English translation appeared only in 1950, decades after the original. James Dingwall and Bert Hoselitz translated. Menger's German prose is dense; the wait until English speakers could read him slowed Austrian school spread."
+    "context": "Crown Prince Rudolf — the future heir, who would later die in the Mayerling incident — traveled Europe with Menger from 1876 to 1879. They co-wrote economic critiques of the Habsburg court's policies. Menger's German prose remained dense; the English translation of Grundsatze did not appear until 1950, slowing the Austrian school's spread beyond German-speaking Europe."
   },
   {
     "tier": 5,
@@ -1573,15 +1573,15 @@
   },
   {
     "tier": 4,
-    "question": "A widely-shared phrase summarizing the lesson of Mt. Gox, FTX, and many other exchange collapses warns Bitcoin holders against trusting third parties with their coins. What is the phrase?",
-    "answer": "Not your keys, not your coins",
+    "question": "Mt. Gox was the world's largest Bitcoin exchange — handling roughly 70% of all Bitcoin transactions — when it collapsed in February 2014. The CEO announced bankruptcy after discovering customer Bitcoin had been quietly drained for years. Approximately how many bitcoins did Mt. Gox lose?",
+    "answer": "About 850,000 BTC — worth roughly half a billion dollars at the time",
     "choices": [
-      "Not your keys, not your coins",
-      "Not your wallet, not your money",
-      "Not your seed, not your stack",
-      "Not your address, not your asset"
+      "About 850,000 BTC — worth roughly half a billion dollars at the time",
+      "About 21,000 BTC — a single afternoon's trading volume in early 2014",
+      "About 5 million BTC — nearly a quarter of all coins that would ever exist",
+      "About 100 BTC — a small loss that triggered an outsized media reaction"
     ],
-    "context": "Andreas Antonopoulos popularized the phrase. Custody risk is real and recurring: Mt. Gox 2014, QuadrigaCX 2018, Celsius 2022, FTX 2022. Self-custody hardware wallets eliminate the counterparty risk entirely — that's the point."
+    "context": "Mt. Gox (Tokyo, run by Mark Karpeles) had been hemorrhaging coins to attackers since 2011 — slowly enough that the books still 'looked' right. When the truth surfaced, 850,000 BTC were gone. Around 200,000 were later recovered. The collapse vindicated the self-custody principle and became the first great cautionary tale of Bitcoin exchanges — the lesson FTX would repeat eight years later."
   },
   {
     "tier": 5,
@@ -4585,27 +4585,27 @@
   },
   {
     "tier": 1,
-    "question": "What is a 'sale' at a store?",
-    "answer": "When prices are lower than usual.",
+    "question": "A toy store has a sign: 'Buy one, get one free.' You pick out two stuffed animals that cost $6 each on the tag. How much do you pay at the register?",
+    "answer": "Six dollars total — one is free",
     "choices": [
-      "When prices are lower than usual.",
-      "When everything is free.",
-      "When the store is closed.",
-      "When you must buy something."
+      "Six dollars total — one is free",
+      "Twelve dollars — both at full price",
+      "Three dollars — half off each one",
+      "Nothing — both are free today"
     ],
-    "context": "Stores have sales to attract shoppers. A $20 shirt 'on sale' for $15 means you pay $15 today."
+    "context": "'Buy one, get one free' (often shortened to BOGO) is a common store deal: you pay for one item, the second is free. Two stuffed animals at $6 each: you pay $6 for one and the second is free, so $6 total. Stores use BOGO to clear inventory and bring shoppers in the door."
   },
   {
     "tier": 1,
-    "question": "What is a receipt?",
-    "answer": "A paper showing what you bought and paid",
+    "question": "You bought a shirt at the store. Two days later you decide you don't want it. What lets the store know you really did pay for it?",
+    "answer": "The receipt — proof of what you paid",
     "choices": [
-      "A paper showing what you bought and paid",
-      "A kind of paper money you can spend.",
-      "A small toy that you can play with.",
-      "A type of food found in the kitchen"
+      "The receipt — proof of what you paid",
+      "The price tag still attached to the shirt",
+      "The bag the cashier put it in",
+      "A photo of the store from outside"
     ],
-    "context": "Receipts prove you paid. Save them if you might need to return something."
+    "context": "Stores ask for the receipt before they take an item back. The receipt shows the date, the price, and the item. Save your receipts in case you need to return something or check a price was rung up correctly."
   },
   {
     "tier": 1,
@@ -4765,15 +4765,15 @@
   },
   {
     "tier": 1,
-    "question": "You sell ten cups of lemonade for $1 each. How much did you earn before counting the cost of lemons?",
-    "answer": "$10",
+    "question": "You sell pencils for 50 cents each. A kid hands you $5 for ten pencils. How much change do you give back?",
+    "answer": "Nothing — they paid exactly the right amount",
     "choices": [
-      "$10",
-      "$1",
-      "$100",
-      "Nothing"
+      "Nothing — they paid exactly the right amount",
+      "Fifty cents — they overpaid by half a dollar",
+      "One dollar — they overpaid by a full dollar",
+      "Two dollars — they overpaid by double the rest"
     ],
-    "context": "Ten cups times one dollar is ten dollars. Some of that pays for the lemons and sugar — what's left is profit."
+    "context": "Ten pencils times 50 cents each is $5.00. No change is needed. Checking the customer's math (and your own) before you give back money is good practice — it keeps the line honest."
   },
   {
     "tier": 1,
@@ -5029,15 +5029,15 @@
   },
   {
     "tier": 1,
-    "question": "What is a 'budget'?",
-    "answer": "A plan for how to use your money",
+    "question": "Your allowance is $20. You write a list: snacks $8, comics $5, save $5, extra $2. What did you just make?",
+    "answer": "A budget — a plan made before you spend",
     "choices": [
-      "A plan for how to use your money",
-      "A type of writing pencil",
-      "A song people sing along to",
-      "A kind of warm soup"
+      "A budget — a plan made before you spend",
+      "A receipt — a paper showing what you bought",
+      "A bank account — money kept at a real bank",
+      "An investment — money set aside to grow"
     ],
-    "context": "A budget tracks what comes in and what goes out — so you don't run out before the next paycheck or allowance."
+    "context": "Writing your money plan down before the cash arrives is what a budget really IS — not just a total, but the choices you make ahead. People who budget tend to be less surprised by bills and actually save the savings they planned for."
   },
   {
     "tier": 1,
@@ -5201,9 +5201,9 @@
     "answer": "Few of the old ones are left and people want them.",
     "choices": [
       "Few of the old ones are left and people want them.",
-      "Old ones print themselves daily",
-      "Old cards taste better",
-      "New cards are illegal."
+      "A central authority quietly raises every collectible's price.",
+      "Old cards have a hidden ink coating that gets more shiny.",
+      "New card production was paused by the postal service."
     ],
     "context": "Old, rare, in-demand items can fetch big prices. Damaged or common old cards are still cheap."
   },
@@ -5677,15 +5677,15 @@
   },
   {
     "tier": 3,
-    "question": "The famous 1936 book on jobs and money was written by which man?",
-    "answer": "John Maynard Keynes",
+    "question": "Keynes argued that economic booms and busts run on something deeper than calm calculation — a name he gave for the volatile psychology that drives investment when nobody actually knows what the future holds. What did he call it?",
+    "answer": "'Animal spirits'",
     "choices": [
-      "John Maynard Keynes",
-      "Plato of Athens",
-      "Karl Marx of Trier",
-      "Adam Smith of Kirkcaldy"
+      "'Animal spirits'",
+      "'Rational expectations'",
+      "'Long-run equilibrium'",
+      "'Marginal propensity'"
     ],
-    "context": "The book is called 'The General Theory'. Keynes wrote it in England."
+    "context": "From The General Theory (1936), chapter 12. Keynes meant the irrational urges that move investors to act despite radical uncertainty about returns. The phrase has stuck — Robert Shiller borrowed it for his 2009 book on the financial crisis. Austrian economists agree the urges exist but disagree that the right response is government stimulus; they argue the boom-bust pattern is created by central-bank credit expansion in the first place."
   },
   {
     "tier": 3,
@@ -6001,15 +6001,15 @@
   },
   {
     "tier": 4,
-    "question": "Germany in 1923 had what kind of inflation?",
-    "answer": "Hyperinflation",
+    "question": "Hungary's 1946 hyperinflation broke the world record for inflation severity. To keep the financial system running, the central bank had to print bills in denominations that have never been matched anywhere. What was the largest single banknote Hungary issued?",
+    "answer": "One hundred quintillion pengo — a 1 followed by 20 zeros",
     "choices": [
-      "Hyperinflation",
-      "Deflation",
-      "Stable prices",
-      "Falling prices"
+      "One hundred quintillion pengo — a 1 followed by 20 zeros",
+      "One hundred billion pengo — a 1 followed by 11 zeros",
+      "One hundred million pengo — a 1 followed by 8 zeros",
+      "One hundred thousand pengo — a 1 followed by 5 zeros"
     ],
-    "context": "By late 1923, a loaf cost billions of marks. People burned cash for heat."
+    "context": "The 100,000,000,000,000,000,000 pengo note (issued July 1946) is the highest-denomination banknote ever printed by a real-world government. It barely bought a loaf of bread for one day. Hungary replaced the pengo with the forint in August 1946 at a conversion ratio of 400 octillion pengo to 1 forint. Prices doubled roughly every 15 hours at the peak — fast enough that workers were paid twice daily and bought goods on the way home."
   },
   {
     "tier": 3,
@@ -6301,15 +6301,15 @@
   },
   {
     "tier": 4,
-    "question": "When did Bitcoin start?",
-    "answer": "2009",
+    "question": "When the first Bitcoin block was mined on January 3, 2009, Satoshi Nakamoto embedded a permanent message in the block — a phrase the network would carry forever. The phrase was a headline copied verbatim from a newspaper of that day. What did it say?",
+    "answer": "'Chancellor on brink of second bailout for banks' — from The Times of London",
     "choices": [
-      "2009",
-      "1999",
-      "2015",
-      "2021"
+      "'Chancellor on brink of second bailout for banks' — from The Times of London",
+      "'Federal Reserve cuts rates to historic low' — from The Wall Street Journal",
+      "'Banking crisis deepens as markets plunge' — from the Financial Times",
+      "'New currency challenges global banking' — from The Economist"
     ],
-    "context": "The first block was made in January 2009. It was new and small at the time."
+    "context": "The Times of London headline (January 3, 2009) referenced Britain's second round of bailouts for failing banks. Satoshi embedded it in the Bitcoin Genesis Block's coinbase field — both a timestamp (proving the block was not pre-mined) and a political statement about the financial system Bitcoin was designed to circumvent. The 50 BTC mining reward from the Genesis Block remains unspendable to this day."
   },
   {
     "tier": 5,
@@ -6817,15 +6817,15 @@
   },
   {
     "tier": 1,
-    "question": "If you spend half of your $10 on candy, you have:",
-    "answer": "$5 left",
+    "question": "Three kids each chip in $4 to buy a $12 board game for their classroom. After they buy it, how much money do they have left as a group?",
+    "answer": "$0",
     "choices": [
-      "$5 left",
-      "$0 left",
-      "$10 left",
-      "$20 left"
+      "$0",
+      "$4",
+      "$12",
+      "$36"
     ],
-    "context": "Half of $10 is $5. The other half is still in your pocket. Half-and-half is a kid budget trick."
+    "context": "Three times $4 equals $12. The board game costs $12. They spent exactly their pooled money, so nothing is left over. Splitting a cost between people is one of the oldest tricks for buying things you couldn't afford alone — and one of the oldest reasons groups need to trust each other."
   },
   {
     "tier": 1,
@@ -10037,9 +10037,9 @@
     "answer": "Rivals push each other to do better and charge less.",
     "choices": [
       "Rivals push each other to do better and charge less.",
-      "Competition makes shoppers tired",
-      "Stores hate competing for buyers",
-      "Buyers cannot tell stores apart"
+      "Stores must collude on prices set by an industry group.",
+      "A new rival forces customers to pay more right away.",
+      "Buyers always pay whatever the first store asks them."
     ],
     "context": "Two coffee shops on the same block charge less and try harder than one alone. Buyers win. Sellers must improve to survive. That's the market test."
   },
@@ -10093,15 +10093,15 @@
   },
   {
     "tier": 3,
-    "question": "Murray Rothbard, an Austrian economist who taught at UNLV until 1995, wrote a short 1962 book that explained why the dollar has lost most of its value. What was the title?",
-    "answer": "What Has Government Done to Our Money?",
+    "question": "Murray Rothbard's 1962 pamphlet on sound money is famous for its compact length — many readers finish it in a single afternoon. Roughly how long is it?",
+    "answer": "About 100 pages — a true pamphlet, not a treatise",
     "choices": [
-      "What Has Government Done to Our Money?",
-      "How the Stock Market Really Works",
-      "Why Communism Failed in Russia",
-      "Why We Should All Trade Cattle."
+      "About 100 pages — a true pamphlet, not a treatise",
+      "About 1,200 pages — Rothbard's standard treatise length",
+      "About 5,000 pages — across multiple volumes like Mises's Human Action",
+      "About 20 pages — a single-essay length, like Bastiat's broken-window piece"
     ],
-    "context": "Rothbard's pamphlet traces money from market origin to fiat. He shows how each step away from sound money helped the state and hurt savers. Free PDFs are still widely available online."
+    "context": "Rothbard's What Has Government Done to Our Money? traces money from market emergence (Mengerian origin) through state debasement, central banking, and finally fiat — all in roughly 100 pages. Its brevity is the reason it became the standard Austrian introduction to monetary theory. The Mises Institute makes the full PDF freely available; millions have downloaded it."
   },
   {
     "tier": 3,
@@ -10381,15 +10381,15 @@
   },
   {
     "tier": 3,
-    "question": "The Federal Reserve has a 'dual mandate' set by Congress in 1978. What two goals must it pursue?",
-    "answer": "Maximum employment and stable prices",
+    "question": "Most major central banks — the European Central Bank, the Bank of England, the Bank of Japan — have a single mandate focused on stable prices. The Federal Reserve is unusual: Congress assigns it TWO goals that can pull in opposite directions. In what economic situation do the two Fed goals most clearly conflict?",
+    "answer": "Stagflation — high inflation and high unemployment at once",
     "choices": [
-      "Maximum employment and stable prices",
-      "Stable prices and a balanced budget",
-      "Maximum employment and free trade",
-      "Stable prices and rapid stock growth"
+      "Stagflation — high inflation and high unemployment at once",
+      "A normal recession with low inflation and rising unemployment",
+      "A speculative boom with steady prices and full employment",
+      "A balanced expansion with mild inflation and falling unemployment"
     ],
-    "context": "The Humphrey-Hawkins Act gave the Fed both goals. Critics say they conflict (stagflation in the 1970s). The Bank of England, ECB, and BOJ have narrower mandates focused on inflation alone."
+    "context": "In a normal recession, fighting unemployment (cutting rates) and fighting inflation point the same direction — the inflation rate is low. In stagflation (the 1970s, briefly in 2022), they point opposite ways: cutting rates to fight unemployment makes inflation worse. Volcker chose to break inflation in 1979-82 by accepting high unemployment as the cost. Friedman had predicted stagflation in 1968 — arguing the Phillips-curve trade-off the dual mandate assumes would eventually break."
   },
   {
     "tier": 3,
@@ -10477,15 +10477,15 @@
   },
   {
     "tier": 3,
-    "question": "Jerome Powell, the current Federal Reserve chair, has a background that is unusual for the role. What is his training?",
-    "answer": "Lawyer and investment banker — not an academic economist",
+    "question": "Before joining the Federal Reserve as a governor in 2012, Jerome Powell spent years as a partner at one of the largest private-equity firms in Washington — the same firm that briefly bought back-office defense contractor United Defense for a billion-dollar profit. At what firm did Powell make his fortune?",
+    "answer": "The Carlyle Group — a major Washington-based private-equity firm",
     "choices": [
-      "Lawyer and investment banker — not an academic economist",
-      "Academic economist from Harvard with PhD",
-      "Career US Treasury official for decades",
-      "Former CEO of a major US bank firm"
+      "The Carlyle Group — a major Washington-based private-equity firm",
+      "Goldman Sachs — the New York investment bank and Treasury pipeline",
+      "Bridgewater Associates — the Connecticut macro-hedge-fund founded by Dalio",
+      "Berkshire Hathaway — Buffett's Omaha holding company"
     ],
-    "context": "Powell is the first Fed chair without a PhD in economics in decades. Critics say he leans too heavily on staff models. Defenders praise his communication and pragmatism. He was reappointed by Biden after first appointment by Trump."
+    "context": "Powell worked at Carlyle from 1997 to 2005, building personal wealth estimated above $50 million. His private-equity background — buying and turning around companies — gives him an operational rather than academic perspective on credit markets. Critics say this leaves him too dependent on staff economic models. Defenders say his deal-making instincts proved valuable in the March 2020 emergency, when the Fed had to invent rescue programs in days."
   },
   {
     "tier": 3,
@@ -11533,15 +11533,15 @@
   },
   {
     "tier": 4,
-    "question": "The Coinage Act of 1873 demonetized silver in the US. Silver advocates later called it:",
-    "answer": "The Crime of '73 — silver demonetization by stealth",
+    "question": "The 1873 demonetization of silver fueled a Free Silver movement that exploded at the 1896 Democratic convention. A 36-year-old Nebraska lawyer named William Jennings Bryan won the nomination on the strength of a single closing line — comparing the gold standard to a religious instrument of torture. What was the phrase?",
+    "answer": "'You shall not crucify mankind upon a cross of gold'",
     "choices": [
-      "The Crime of '73 — silver demonetization by stealth",
-      "The Great Silver Reform — beneficial currency modernization",
-      "The Bimetallic Compromise — fair gold-silver balance",
-      "The Sherman Act — anti-monopoly silver regulation"
+      "'You shall not crucify mankind upon a cross of gold'",
+      "'Let the working man weigh silver against fool's gold'",
+      "'The yellow metal is the chain that binds the farmer'",
+      "'Our nation will not bow to the moneyed interests'"
     ],
-    "context": "Silver miners and inflation-leaning farmers viewed the act as a banker's conspiracy. It fueled the Free Silver movement that produced Bryan's 1896 'Cross of Gold' speech. Mainstream historians dispute the conspiracy framing; the political resentment was real."
+    "context": "Bryan's speech ended: 'You shall not press down upon the brow of labor this crown of thorns; you shall not crucify mankind upon a cross of gold.' He won the nomination on the spot. He lost the general election to McKinley (51% to 47%), but the speech remains one of the most famous in American oratory. The Free Silver position eventually faded — gold strikes in the Klondike (1896) and South Africa expanded the gold-backed money supply enough to ease the deflationary pressure on farmers."
   },
   {
     "tier": 4,
@@ -11785,15 +11785,15 @@
   },
   {
     "tier": 4,
-    "question": "In March 2008, Bear Stearns collapsed in a classic shadow-banking run. The Fed-arranged Sunday-night sale to JPMorgan Chase was initially at:",
-    "answer": "$2 per share (later raised to $10 after pushback)",
+    "question": "When the Fed engineered Bear Stearns' Sunday-night sale to JPMorgan in March 2008, it accepted $30 billion of Bear's worst mortgage-backed assets onto its own balance sheet through a newly created vehicle. What was the vehicle called?",
+    "answer": "Maiden Lane — named for the street behind the New York Fed",
     "choices": [
-      "$2 per share (later raised to $10 after pushback)",
-      "$15 per share — a more market-aligned price",
-      "$30 per share — close to recent trading range",
-      "$172 per share — Bear's price a year earlier"
+      "Maiden Lane — named for the street behind the New York Fed",
+      "Liberty Vault — named for the New York Fed's gold-storage room",
+      "Pearl Street — named for the New York Fed's original 1914 location",
+      "Wall Trust — a generic vehicle name used since the 1930s"
     ],
-    "context": "JPMorgan initially agreed to $2; outraged Bear shareholders forced a renegotiation to $10. Bear had traded at $172 a year earlier. The Fed took $30B of Bear's worst assets via the Maiden Lane vehicle. The Bear deal foreshadowed the September crisis."
+    "context": "Maiden Lane LLC ran from March 2008 to 2012, slowly liquidating the Bear Stearns assets. Two more Maiden Lanes (II and III) followed in November 2008 for AIG's portfolio. The vehicles were a major precedent: the Fed had never before owned mortgage securities directly. The 2008-22 era would see the Fed's balance sheet expand from $900 billion to roughly $9 trillion at peak — a transformation of central-bank purpose Austrians called the natural endpoint of fiat money."
   },
   {
     "tier": 4,
@@ -11989,15 +11989,15 @@
   },
   {
     "tier": 4,
-    "question": "Israel Kirzner's contribution to Austrian theory was framing the entrepreneur as:",
-    "answer": "Alert discoverer of price differentials and unmet needs",
+    "question": "Israel Kirzner spent his career as a Mises student — his 1973 book Competition and Entrepreneurship advanced the Austrian theory of how entrepreneurs work. He learned the framework not in a classroom but in a particular setting Mises ran for decades. What was the setting?",
+    "answer": "Mises's weekly seminar at NYU — informal, unpaid, running from the 1940s into the 1960s",
     "choices": [
-      "Alert discoverer of price differentials and unmet needs",
-      "Calculated risk-taker with insurance against losses",
-      "Employer-creator of jobs for working-class workers",
-      "Inventor of new physical products and technology only"
+      "Mises's weekly seminar at NYU — informal, unpaid, running from the 1940s into the 1960s",
+      "A formal economics PhD program at the University of Vienna postwar",
+      "A correspondence course Mises produced through the Mises Institute in Auburn",
+      "A series of public lectures at the London School of Economics in the 1950s"
     ],
-    "context": "Kirzner's 1973 book argued the entrepreneur isn't a daredevil but someone who notices what others miss. A $5 car wash where neighboring towns charge $15. Alertness, not gambling. Markets are constantly in disequilibrium; entrepreneurs close the gaps. Connects classical economics to real business practice."
+    "context": "Mises taught at NYU as an unpaid visiting professor from 1945 to 1969, paid by donors. The seminar drew Rothbard, Kirzner, Hans Sennholz, George Reisman, Ralph Raico, and others — preserving the Austrian tradition through decades when mainstream economics ignored it. Kirzner went on to chair NYU's economics department; his Mises-derived entrepreneurial theory eventually mainstreamed back into business-school curricula in the 2000s."
   },
   {
     "tier": 4,
@@ -12637,15 +12637,15 @@
   },
   {
     "tier": 3,
-    "question": "Why did Warren Buffett bet against hedge funds for ten years (2008-2017)?",
-    "answer": "He believed index funds would beat hedge funds after fees.",
+    "question": "Warren Buffett's 2008-2017 bet against hedge funds settled with the S&P 500 index fund earning roughly 7.1% per year while the hedge funds earned about 2.2%. Buffett argued the gap was not bad stock-picking — it was something simpler that the hedge funds couldn't avoid. What was it?",
+    "answer": "Fees — hedge funds charge '2 and 20' (2% of assets, 20% of profits) on top of trading costs",
     "choices": [
-      "He believed index funds would beat hedge funds after fees.",
-      "He owned all the hedge funds in America",
-      "He had personal grudges with hedge fund managers.",
-      "Buffett ran a hedge fund of his own at the time."
+      "Fees — hedge funds charge '2 and 20' (2% of assets, 20% of profits) on top of trading costs",
+      "Taxes — hedge funds owe far higher capital-gains taxes than index funds",
+      "Regulation — new SEC rules in 2008 required hedge funds to hold lower-return assets",
+      "Liquidity — hedge funds lost money keeping cash on hand for redemptions"
     ],
-    "context": "Buffett's S&P 500 fund returned 7.1%/year; the hedge funds returned 2.2%. The $1M went to Girls Inc. of Omaha. A vivid lesson in passive investing. Buffett's 2017 letter detailed how fees ate hedge fund returns. The bet became iconic in finance circles."
+    "context": "Buffett's 2017 shareholder letter walked through the math: a 2% annual asset fee compounds catastrophically over a decade. Add a 20% performance fee on any gains, and the fund needs to beat the index by roughly 4% per year just to break even versus the index after fees. Few do. The bet's $1 million went to Girls Inc. of Omaha. The case for low-fee index investing has been one of the most empirically vindicated insights in modern finance."
   },
   {
     "tier": 3,
@@ -12697,15 +12697,15 @@
   },
   {
     "tier": 3,
-    "question": "Why did the Terra/Luna stablecoin collapse in May 2022 wipe out tens of billions?",
-    "answer": "Its 'stable' value relied on a separate coin that crashed",
+    "question": "Terra's UST was advertised as an 'algorithmic stablecoin' — instead of being backed by real dollars, it was kept at $1 by a mechanism. The mechanism let users always trade $1 of UST for $1 worth of a separate coin (Luna), and vice versa. What broke this design in May 2022?",
+    "answer": "A bank-run loop — UST holders dumped, Luna's price crashed, breaking the $1 peg, triggering more dumping",
     "choices": [
-      "Its 'stable' value relied on a separate coin that crashed",
-      "Terra was hacked by foreign government agents.",
-      "All Terra users withdrew their coins at once",
-      "Terra was outlawed in every major country."
+      "A bank-run loop — UST holders dumped, Luna's price crashed, breaking the $1 peg, triggering more dumping",
+      "A coding bug — the smart contract failed to redeem coins for several hours",
+      "A regulatory order — US authorities froze the system overnight in mid-May",
+      "A foreign-government hack — the cold-storage wallets were drained"
     ],
-    "context": "Terra's UST stablecoin was 'backed' by Luna — but Luna's price relied on faith in UST. When the loop broke, both crashed to near zero. $40B+ vaporized. The Korean founder, Do Kwon, was arrested in Montenegro on a forged passport. Algorithmic stablecoins fell out of fashion."
+    "context": "The Terra-Luna design relied on Luna having real market value. When confidence in UST cracked, holders rushed to redeem, which mass-minted Luna, which crashed Luna's price toward zero, which removed the only backing UST had — a feedback loop that wiped $40 billion in days. Algorithmic stablecoins fell out of fashion. Tether and USDC (fiat-backed) survived because they actually held dollar reserves. The episode confirmed an old Austrian point: claims-on-nothing eventually behave like nothing."
   },
   {
     "tier": 3,
