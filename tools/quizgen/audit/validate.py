@@ -57,6 +57,7 @@ _GATE_MODULES = {
     "animal":     "tools.quizgen.gates.animal",
     "geography":  "tools.quizgen.gates.geography",
     "grammar":    "tools.quizgen.gates.grammar",
+    "ai":         "tools.quizgen.gates.ai",
 }
 
 
