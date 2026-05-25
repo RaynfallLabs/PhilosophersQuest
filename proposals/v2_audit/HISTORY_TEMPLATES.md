@@ -26,19 +26,41 @@ A great history question is built on a HUMAN MOMENT — a specific thing a perso
 4. **MULTIPLE ANCHORS** — producing the answer locks in WHO + WHEN + WHERE + WHY simultaneously. One question teaches Nelson + Hardy + Trafalgar + 1805 + dying-admiral. One question teaches Washington + Continental Army + Delaware + Christmas 1776 + password-in-the-dark.
 5. **TELLABILITY** — the kid will retell this to a friend, sibling, or parent. **This is the operational test.** If you can't picture a 5th grader telling their family at dinner ("Mom, did you know Nelson asked his captain to KISS HIM as he was dying? But it actually meant…"), the question isn't wonder.
 
-### The two-question test (every question must pass before shipping)
+### The three-question test (every question must pass before shipping)
 
-**Test 1 — "Is this retellable?"**
-> If a kid answers this correctly, will they tell someone about it within 24 hours?
-> 
-> YES → ship.
-> NO → rewrite.
+**Test 1 — "The Dinner Test"**
+> Imagine the kid saying ONLY the answer (not the stem) to a parent at dinner. Does it make the parent ask "wait — why?" or "what happened?"
+>
+> - Answer = `"Victory or Death"` → "WAIT, what?" → ship.
+> - Answer = `"Kiss me, Hardy"` → "Hahaha — what?" → ship.
+> - Answer = `"Threw her ashes into the Seine"` → "Whose ashes? Why?" → ship.
+> - Answer = `"Rouen, France"` → "...OK." → REWRITE.
+> - Answer = `"The Battle of Actium"` → "...OK." → REWRITE.
+> - Answer = `"Ford's Theatre"` → "...OK." → REWRITE.
+>
+> If the answer alone, said aloud, stops the conversation cold — the question has failed.
 
 **Test 2 — "Is the answer the most memorable detail available?"**
 > Across all the cool facts I know about this event, am I asking for THE most memorable one? Or am I asking for something forgettable while burying the gold in context?
-> 
-> Most memorable → ship.
-> Better detail exists → rewrite to ask for THAT detail instead.
+>
+> - Most memorable → ship.
+> - Better detail exists → rewrite to ask for THAT detail instead.
+
+**Test 3 — "The Drama-Available rule"** ⚠ THIS IS THE STRICTEST RULE OF THE BANK ⚠
+> If your stem contains any of: **death, fire, blood, ashes, suicide, betrayal, escape, prison, torture, drowning, last words, secret messages, code phrases, dramatic acts, surrender, treason, love, jealousy, murder** — and your question is asking for a **place name, a battle name, a date, or a generic "what was this called"** — **STOP. You are asking the wrong question.**
+>
+> The drama in the stem IS the cool fact. Ask about THAT.
+>
+> Examples of the failure (and the fix):
+>
+> | Stem contains | Bad question | Bad answer | Good question | Good answer |
+> |---|---|---|---|---|
+> | Joan burned alive + ashes in river + last word "Jesus" | Where was she executed? | "Rouen, France" | What did the English do with her body? | "Threw her ashes into the Seine" |
+> | Antony + Cleopatra + lover + fleet fled + both killed themselves | What is this battle called? | "Actium" | What did Antony and Cleopatra do after fleeing? | "Killed themselves the following year — Antony by sword, Cleopatra by an asp" |
+> | Lincoln shot + Booth leaped down to stage + breaking his leg + shouted Latin | Where was Lincoln shot? | "Ford's Theatre" | What did Booth shout as he leaped from the box? | "'Sic semper tyrannis' — 'Thus always to tyrants'" |
+> | Lee surrenders + Grant offers generous terms + practical concession | Where did Lee surrender? | "Appomattox Court House" | What did Grant let the Confederates keep? | "Their horses — for spring plowing back home" |
+>
+> **The rule's mnemonic**: if the stem has fire, blood, or last words, the answer cannot be a venue, date, or label. Period.
 
 ### What FAILS the test (anti-patterns — do NOT ship)
 
