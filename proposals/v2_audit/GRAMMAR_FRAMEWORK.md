@@ -182,10 +182,25 @@ Per-tier per-pillar question counts are the strategies doc's targets
 |---|---:|---:|---:|---:|---:|---:|
 | **1. Parts of speech + sentence structure** | 100 | 150 | 150 | 100 | 30 | 530 |
 | **2. Verb forms + tense + agreement** | 50 | 100 | 150 | 100 | 50 | 450 |
-| **3. Etymology + how English came to be** | 60 | 150 | 200 | 150 | 100 | 660 |
+| **3. Etymology + how English came to be** ★ | 60 | 150 | 200 | 150 | 100 | **660** |
 | **4. Figurative language + word play** | 60 | 150 | 150 | 100 | 60 | 520 |
 | **5. Grammar history + usage rules + style** | 50 | 100 | 200 | 200 | 150 | 700 |
 | **Total target** | **320** | **650** | **850** | **650** | **390** | **~2860** |
+
+★ **Etymology is a priority pillar** (user-flagged 2026-05-25 as "great
+knowledge for kids"). Within Pillar 3, especially favor the
+**meaning-shift voice** — questions where a familiar word USED to mean
+something different or opposite. These are etymology's punchline
+equivalents to the Comma-Saves-Lives Pattern: "wait, *nice* used to
+mean *foolish*?" is the same dinner-table-retellable surprise as the
+Grandma comma. Other meaning-shift hooks: *awful* (awe-inspiring →
+terrible), *silly* (blessed → foolish), *terrific* (causing terror →
+wonderful), *decimate* (kill 1 in 10 → devastate broadly), *fond*
+(foolish → loving), *literally* (literally → figuratively). Pair these
+with the existing Pillar 3 angles (loanword maps, Norman cow/beef,
+fake-etymology myth-busting, Great Vowel Shift, Latin/Greek root
+families like *manus* → manual/manuscript/manipulate, the *go/went*
+suppletion puzzle) and Pillar 3 becomes the most engaging in the bank.
 
 Current bank state (2026-05-25): 1738 questions. T1=434, T2=314, T3=305,
 T4=421, T5=264. Several pillar/tier slots are UNDER target (T2 by 336,
