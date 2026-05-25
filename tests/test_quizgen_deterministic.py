@@ -588,7 +588,7 @@ def test_answer_collision_pass_unique_answer():
         make_question(answer="Time is an illusion created by human consciousness"),
     ]
     idx = build_answer_collision_index(qs)
-    r = validate_answer_collision(qs[0], idx, self_idx=0, subject="philosophy")
+    r = validate_answer_collision(qs[0], idx, self_idx=0, subject="history")
     assert r.status == GateStatus.PASS
 
 
@@ -606,8 +606,8 @@ def test_answer_collision_fail_same_answer_diff_stems():
     )
     q2["choices"][0] = q2["answer"]
     idx = build_answer_collision_index([q1, q2])
-    r1 = validate_answer_collision(q1, idx, self_idx=0, subject="philosophy")
-    r2 = validate_answer_collision(q2, idx, self_idx=1, subject="philosophy")
+    r1 = validate_answer_collision(q1, idx, self_idx=0, subject="history")
+    r2 = validate_answer_collision(q2, idx, self_idx=1, subject="history")
     assert r1.status == GateStatus.FAIL
     assert r2.status == GateStatus.FAIL
 
@@ -630,4 +630,18 @@ def test_answer_collision_exempt_grammar():
     q2["choices"][0] = q2["answer"]
     idx = build_answer_collision_index([q1, q2])
     r = validate_answer_collision(q1, idx, self_idx=0, subject="grammar")
+    assert r.status == GateStatus.NA
+
+
+def test_answer_collision_exempt_philosophy():
+    # Philosophy answers ARE canonical position names ("Memory continuity —
+    # you're the same person if memory carries forward"). Multiple legitimate
+    # thought-experiment scenes can — and pedagogically should — test the
+    # same position. User-confirmed 2026-05-25.
+    q1 = make_question(answer="Memory continuity — you're the same person if memory carries forward")
+    q2 = make_question(answer="Memory continuity — you're the same person if memory carries forward")
+    q1["choices"][0] = q1["answer"]
+    q2["choices"][0] = q2["answer"]
+    idx = build_answer_collision_index([q1, q2])
+    r = validate_answer_collision(q1, idx, self_idx=0, subject="philosophy")
     assert r.status == GateStatus.NA
