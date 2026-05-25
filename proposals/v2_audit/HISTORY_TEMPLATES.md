@@ -12,50 +12,114 @@ The chain of authority:
 
 Generators do not invent patterns. They instantiate patterns from this doc.
 
-## 1. The controlling voice rule — "cool fact is the answer"
+## 1. The Wonder Pattern (the controlling rule of the bank)
 
-**THIS RULE OVERRIDES EVERYTHING ELSE IN STEM CONSTRUCTION.**
+**THIS PATTERN OVERRIDES EVERYTHING ELSE IN QUESTION CONSTRUCTION.**
 
-The stem provides MINIMUM scene-setting + dramatic stakes + impact. The question asks for the wondrous specific. The answer IS the cool fact. The kid produces the memorable detail by picking it against plausible distractors — that's where the learning happens.
+A great history question is built on a HUMAN MOMENT — a specific thing a person said, did, made, or witnessed. Not a statistic. Not an aggregate. Not a name-of-thing. A *moment*. The stem provides minimum scene-setting + dramatic stakes + impact. The question asks for the wondrous specific. The answer IS the cool fact. The kid produces the memorable detail by picking it against plausible distractors — that's where the learning happens.
 
-**Bad pattern** (what we will NOT ship):
+### The five marks of wonder (every great question hits all five)
+
+1. **HUMAN MOMENT** — the answer is a specific quote, object, action, gesture, or witnessed image. NOT a name of a battle, NOT a casualty count, NOT a date. Something a *person* did or said.
+2. **SURPRISE-ON-FIRST-READ** — the kid's first reaction is "wait, really?" or "haha what?" or "whoa." The answer breaks expectation: darker than expected ("Victory or Death"), funnier than expected ("Kiss me, Hardy"), more specific than expected ("Tycho's metal nose attached with sticky paste every morning").
+3. **CONTEXT REVEAL** — the answer's surface is striking; the context field unfolds *why*. "Kiss me, Hardy" sounds romantic until context reveals older English used "kiss" between men to mean farewell embrace. The reveal is the payoff that turns surprise into understanding.
+4. **MULTIPLE ANCHORS** — producing the answer locks in WHO + WHEN + WHERE + WHY simultaneously. One question teaches Nelson + Hardy + Trafalgar + 1805 + dying-admiral. One question teaches Washington + Continental Army + Delaware + Christmas 1776 + password-in-the-dark.
+5. **TELLABILITY** — the kid will retell this to a friend, sibling, or parent. **This is the operational test.** If you can't picture a 5th grader telling their family at dinner ("Mom, did you know Nelson asked his captain to KISS HIM as he was dying? But it actually meant…"), the question isn't wonder.
+
+### The two-question test (every question must pass before shipping)
+
+**Test 1 — "Is this retellable?"**
+> If a kid answers this correctly, will they tell someone about it within 24 hours?
+> 
+> YES → ship.
+> NO → rewrite.
+
+**Test 2 — "Is the answer the most memorable detail available?"**
+> Across all the cool facts I know about this event, am I asking for THE most memorable one? Or am I asking for something forgettable while burying the gold in context?
+> 
+> Most memorable → ship.
+> Better detail exists → rewrite to ask for THAT detail instead.
+
+### What FAILS the test (anti-patterns — do NOT ship)
+
+1. **Name-picking** — "Which battle is this?" with similar battle names as distractors. Kid memorizes a label, learns nothing distinctive. ("Battle of Antietam" picked from Bull Run / Chickamauga / Shiloh.)
+2. **Number-picking when the number isn't shocking** — "How many casualties?" with similar nearby numbers. Numbers CAN work when they're shocking and single (Joan of Arc dying at 19, Wright Brothers flying for 12 seconds, Halley's Comet every 76 years), but they're weaker than quotes/objects/actions. Default to non-number when possible.
+3. **Date-picking** — "What year?" Kid never knew, will never know. Banned.
+4. **Generic identification** — "What is this called?" "Who did this?" "Where did this happen?" The kid produces a name with no narrative grip.
+5. **Paraphrased distractors** — any distractor that restates the real answer in different words. Kid has two right answers; wonder payoff destroyed. ("Kiss me, Hardy" with distractor "Hardy, give me a kiss" — fail.)
+6. **Cool facts stuffed in the stem with a generic question on top** — see Brunelleschi worked example below. If your stem has 3+ cool facts and you're asking "what is this?", you're spoiling 4 future questions to write 1 bad one.
+
+### Three worked examples
+
+**Trenton (T1):**
+> *On Christmas night 1776, with his army nearly destroyed and enlistments expiring in a week, George Washington led 2,400 Continentals across the ice-choked Delaware in a snowstorm to surprise the Hessians at Trenton. The complete dawn victory saved the Revolution. Washington had given his men a three-word password to identify each other in the predawn darkness. What was the password?*
+> answer: `"Victory or Death"`
+> distractors: `"Liberty or Slavery"` / `"God and Country"` / `"Live Free or Die"`
+
+Why this lands:
+- HUMAN MOMENT ✓ (a specific phrase Washington chose)
+- SURPRISE ✓ (darker than expected — most people expect something inspirational)
+- CONTEXT REVEAL ✓ (context explains the desperate stakes — "Ten Crucial Days," 900 Hessian prisoners for two American dead frozen on the march)
+- ANCHORS ✓ (Washington + 1776 + Christmas + Delaware + Trenton + Hessians + the Revolution-was-dying stakes — all locked in by producing the password)
+- TELLABILITY ✓ (kid retells: "Did you know on Christmas night Washington's password was 'Victory or Death'? His army was about to fall apart.")
+- Distractors are real Revolutionary-era slogans (Patrick Henry, Live Free or Die, etc.), not paraphrases
+
+**Trafalgar (T1):**
+> *On October 21 1805 the British navy under Admiral Horatio Nelson crushed the combined fleets of France and Spain off the Spanish cape of Trafalgar, ending Napoleon's hopes of invading Britain. As the battle ended, a French sniper shot Nelson on his quarterdeck. As he lay dying, Nelson said "Thank God I have done my duty." He then made one final request of his flag captain, Thomas Hardy. What did Nelson ask Hardy to do?*
+> answer: `"Kiss me, Hardy"`
+> distractors: `"Take me home to England"` / `"Bury me with my crew"` / `"Send word to Lady Hamilton"`
+
+Why this lands:
+- HUMAN MOMENT ✓ (a specific request Nelson made on his deathbed)
+- SURPRISE ✓ (funnier than expected on first read — kid laughs)
+- CONTEXT REVEAL ✓ ("kiss" between men in older English meant farewell embrace; Hardy was Nelson's closest friend; the body preserved in brandy for the four-month return voyage)
+- ANCHORS ✓ (Nelson + Hardy + Trafalgar + 1805 + Napoleon-invasion-threat + the dying-admiral moment)
+- TELLABILITY ✓ (kid retells: "Mom did you know Nelson asked his captain to KISS HIM as he was dying? But it meant farewell back then.")
+- Distractors are plausible deathbed requests but distinct facts (not paraphrases of "Kiss me, Hardy")
+
+**Brunelleschi (one event → five questions across tiers):**
+- T1: *Why had the dome been impossible for 130 years?* → `"The Romans had built domes this size in concrete, but the formula had been lost for over 1,000 years"`
+- T2: *What brick pattern did Brunelleschi use?* → `"Herringbone"`
+- T3: *What did Brunelleschi do with the egg?* → `"Tapped it on marble to flatten the bottom so it stood upright; told judges they could have built his dome too if he had told them his method first"`
+- T4: *What was Brunelleschi's original trade?* → `"Goldsmith"`
+- T5: *What record does the dome still hold today?* → `"Largest masonry dome in the world — no later builder has matched the span without steel reinforcement or modern concrete"`
+
+Why this lands: each cool fact about Brunelleschi gets to be ONE answer in ONE question. Five high-quality questions instead of one stuffed bad one.
+
+### Format notes (mechanics)
+
+The question is the last sentence of the stem, ending with `?`. No "Q:" prefix. Matches the JSON `question` field shape.
+
+### Full Brunelleschi walk-through (one event → five questions, with rejected bad version)
+
+**The BAD version** (what we will NOT ship — stuffs five cool facts into the stem and asks the kid to pick a generic building name):
+
 > *In 1418 Florence held a competition: the cathedral had stood unfinished for 130 years because nobody knew how to top it with a dome the size called for — larger than any since the Roman Pantheon, and the Romans had built theirs with concrete that was now lost. A goldsmith named Filippo Brunelleschi won the commission by building a model with no centering scaffold. Eight years later he was laying the four millionth brick in a herringbone pattern that locked each course in place as it rose. What structure did he complete in 1436?*
 > answer: "The dome of Santa Maria del Fiore — Florence's cathedral"
 
-This stuffs five cool facts into the stem (130 years unfinished, Roman concrete lost, refused to disclose, 4M bricks, herringbone pattern) and asks the kid to pick a generic building name. The kid READ cool stuff but PRODUCED nothing memorable. **Forbidden.**
+The kid READ cool stuff but PRODUCED nothing memorable. **Forbidden.** The five cool facts above each get to be the answer to a separate question:
 
-**Good pattern** (the same figure → five separate questions, each with a different cool fact as answer):
+**T1 — the lost-knowledge cool fact:**
+> *Florence's cathedral had stood unfinished for 130 years when Brunelleschi won the commission in 1418. The dome was the problem. Why had no one been able to build it for so long?*
+> → "The Romans had built domes this size in concrete, but the formula had been lost for over 1,000 years"
 
-T1 — *Florence's cathedral had stood unfinished for 130 years when Brunelleschi won the commission in 1418. The dome was the problem. **Why had no one been able to build it for so long?***
-→ "The Romans had built domes this size in concrete, but the formula had been lost for over 1,000 years"
+**T2 — the herringbone cool fact:**
+> *Brunelleschi built his dome without scaffolding from below — the opening was too vast to span. His four million bricks locked each course in place as the dome rose. What brick pattern did he use?*
+> → "Herringbone"
 
-T2 — *Brunelleschi built his dome without scaffolding from below — the opening was too vast to span. His four million bricks locked each course in place as the dome rose. **What brick pattern did he use?***
-→ "Herringbone"
+**T3 — the egg cool fact:**
+> *When the Opera del Duomo panel asked Brunelleschi to disclose his method before awarding him the commission, he refused. He challenged them with an egg demonstration instead. What did he do with the egg?*
+> → "Tapped it on a marble slab to flatten the bottom so it stood upright; when judges said they could have done that, he said 'yes, and you could have built my dome too if I had told you my method first'"
 
-T3 — *When the Opera del Duomo panel asked Brunelleschi to disclose his method before awarding him the commission, he refused. He challenged them with an egg demonstration instead. **What did he do with the egg?***
-→ "Tapped it on a marble slab to flatten the bottom so it stood upright; when judges said they could have done that, he said 'yes, and you could have built my dome too if I had told you my method first'"
+**T4 — the goldsmith cool fact:**
+> *The man who solved Florence's dome had no architectural training. What was Brunelleschi's original trade?*
+> → "Goldsmith"
 
-T4 — *The man who solved Florence's dome had no architectural training. **What was Brunelleschi's original trade?***
-→ "Goldsmith"
+**T5 — the still-standing-record cool fact:**
+> *Brunelleschi laid his last brick in 1436. What record does the dome still hold today, nearly 600 years later?*
+> → "It remains the largest masonry dome in the world — no later builder has matched the span without steel or modern concrete"
 
-T5 — *Brunelleschi laid his last brick in 1436. **What record does the dome still hold today, nearly 600 years later?***
-→ "It remains the largest masonry dome in the world — no later builder has matched the span without steel or modern concrete"
-
-**Application rule**: If your stem has more than one cool fact in it, you're spoiling future questions to write one bad one. Split the cool facts across separate questions. The Brunelleschi example yields 5 high-quality questions instead of 1 weak one.
-
-**Format**: The question is the last sentence of the stem, ending with `?`. No "Q:" prefix. Matches the JSON `question` field shape.
-
-### Two extra discipline rules (2026-05-24, user-flagged)
-
-**1. Pick the MOST memorable cool fact, not just A cool fact.** For a famous event with multiple memorable details, choose the one most likely to *surprise* the kid on first read and *stick* in memory. Surprise + stick is the test. Example: Nelson at Trafalgar said both "Thank God I have done my duty" and "Kiss me, Hardy." Both are real. The dutiful one is forgettable; the "Kiss me, Hardy" is shocking-on-first-read (and the context-reveal — older English used "kiss" between men to mean farewell embrace — is the payoff). Always pick the surprising one. Kids will tell their friends.
-
-**2. No paraphrased distractors of the real answer.** If your "correct answer" is a famous quote/phrase/fact, none of your distractors may be a paraphrase or near-quote of the same fact. Otherwise the kid has two right answers and the wonder payoff is broken. Examples of the failure:
-- Answer: `"Kiss me, Hardy"` with distractor `"Hardy, give me a kiss"` → fail (same fact)
-- Answer: `"Victory or Death"` with distractor `"Death or Victory"` → fail
-- Answer: `"I have not time"` with distractor `"Time is short"` → fail
-- Answer: `"23,000"` with distractor `"about 22,500"` → fail (same fact)
-
-Distractors must be **genuinely different alternatives** — different people, different events, different specific facts. Reader judgment required; this can't be deterministically gated.
+Five high-quality questions from one historical figure, each one passing the five marks of wonder + the two-question test.
 
 ## 2. The six pillars + topic breakdown
 
