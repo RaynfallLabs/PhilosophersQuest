@@ -92,6 +92,30 @@ When you have an event to write about, the question becomes: **what KIND of cool
 - Country / state names
 - Generic identifications (`"What is this called?"`)
 
+### Behind-the-scenes wonder — popular myth vs. historical reality
+
+When the public/textbook version of an event differs from the actual historical record, **the gap itself is often the most memorable cool fact.** These questions teach kids something deeper than the facts of the event: they teach that public narratives are CONSTRUCTED — by strategic actors, press, and retrospective storytelling — not just observed.
+
+The Wonder Pattern at this level: pick the fact that **exposes the gap** between myth and reality. Don't write the textbook version; write the "wait, the actual story is even cooler" version.
+
+**Worked example — Rosa Parks (T3):**
+
+> *On December 1 1955 Rosa Parks refused to give up her seat on a Montgomery bus and was arrested, sparking the year-long boycott that launched Martin Luther King Jr. and the modern civil rights movement. But the NAACP had already considered using a different person for the same kind of test case nine months earlier — and quietly rejected her despite her doing the same brave thing. Why did the NAACP pass over 15-year-old Claudette Colvin?*
+> answer: `"She was 15, pregnant, and unmarried — NAACP leaders feared the press would use it to discredit the movement"`
+
+This passes the Dinner Test (kid retells: "Mom did you know Rosa Parks wasn't the FIRST? There was a 15-year-old named Claudette Colvin nine months earlier, and the NAACP didn't pick her because she got pregnant!"). It teaches strategic curation as part of how movements actually work. Context further notes that the iconic Parks-on-bus photograph is a December 21 1956 reenactment, not the actual December 1 1955 moment — another behind-the-scenes wonder fact stacked into the same question.
+
+**Other behind-the-scenes wonder opportunities** (use when the popular story is incomplete):
+- The iconic Iwo Jima flag-raising photo (Feb 23 1945) is of the SECOND flag — first one was too small, swapped for a bigger one for visibility. The photograph was real but the moment was staged for press.
+- The "Pheidippides ran 26 miles to Athens crying NENIKEKAMEN" story conflates two historical events Herodotus actually described separately — partial 19th-century construction.
+- Paul Revere's ride wasn't completed by Paul Revere — Samuel Prescott was the one who actually made it to Concord; Longfellow's poem (1860) edited Prescott out for narrative cleanness.
+- Edison "invented" many things that his employees or competitors invented first; what he was good at was patent strategy and commercialization.
+- Marie Antoinette never said "Let them eat cake" — the line predates her by decades, originally attributed to "a great princess" by Rousseau in 1765 (when Marie Antoinette was 9).
+
+**Caution**: don't slip into cynicism. The bank's stance is HONEST history — neither uncritically heroic nor reflexively debunking. The Colvin question doesn't demean Rosa Parks; it ENRICHES her by showing the movement around her was strategic and serious. Same with Iwo Jima — the photograph is staged but the battle was real and brutal. Tell the truer story, don't tear down the heroes.
+
+**The kid's takeaway**: "Movements work through strategy. Photos are sometimes staged. Public stories are sometimes constructed. History rewards looking closer."
+
 ### Fixing a choice-shape parity violation — the right way and the WRONG way
 
 When you spot a decoration mismatch (parens on answer only, em-dash on answer only, etc.), the fix is to **equalize UP, not strip DOWN**. In priority order:
