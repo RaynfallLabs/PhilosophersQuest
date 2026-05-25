@@ -31,10 +31,16 @@ from tools.quizgen.deterministic.types import GateResult, GateStatus, Question
 # tyrannis" vs "Veni vidi vici" should not (~0.0).
 DEFAULT_ANSWER_JACCARD_THRESHOLD = 0.70
 
-# Subjects where templated drills legitimately produce many same-answer
-# questions ("5 + 7 = ?" → "12" recurs; "verb tense of 'ran'" → "past
-# tense" recurs). Skip the collision check for these.
-EXEMPT_SUBJECTS = frozenset({"math", "grammar"})
+# Subjects where same-answer recurrence is legitimately by-design:
+#  - math / grammar — templated drills ("5 + 7 = ?" → "12" recurs;
+#    "verb tense of 'ran'" → "past tense" recurs).
+#  - philosophy — the answer IS a canonical position name
+#    ("Memory continuity — the same person if memories carry forward").
+#    Multiple legitimate scenes (Ship of Theseus, Parfit teletransporter,
+#    monastery thought-experiment) can — and pedagogically should — test
+#    the same position. User-confirmed 2026-05-25: dedup philosophy by
+#    SCENE variety, not by answer text.
+EXEMPT_SUBJECTS = frozenset({"math", "grammar", "philosophy"})
 
 _PUNCT_RE = re.compile(r"[^\w\s]")
 _SPACE_RE = re.compile(r"\s+")

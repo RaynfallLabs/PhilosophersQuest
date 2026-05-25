@@ -265,15 +265,15 @@
   },
   {
     "tier": 1,
-    "question": "A flock of larks rising in song at sunrise shares one of the loveliest collective nouns in English, from medieval falconry vocabulary. What is the word?",
-    "answer": "An exaltation of larks, drawn from the bird's high song flight at dawn",
+    "question": "A flock of larks rising in song at sunrise shares one of the loveliest collective nouns in English, drawn from medieval falconry vocabulary. What is the word?",
+    "answer": "An exaltation of larks, drawn from the bird's high song flight at dawn light",
     "choices": [
-      "An exaltation of larks, drawn from the bird's high song flight at dawn",
+      "An exaltation of larks, drawn from the bird's high song flight at dawn light",
       "A choir of larks, drawn from the bird's high song flight at dawn light",
       "An anthem of larks, drawn from the bird's high song flight at dawn light",
       "A jubilee of larks, drawn from the bird's high song flight at dawn light"
     ],
-    "context": "A group of larks is an 'exaltation,' from the bird's high-rising song flight. The name dates to medieval English hunting and bird-keeping vocabulary."
+    "context": "A group of larks is an 'exaltation,' from the bird's high-rising dawn song flight. The name dates to medieval English hunting and bird-keeping vocabulary, the same source as 'parliament of owls' and 'murder of crows.'"
   },
   {
     "tier": 2,
@@ -1572,28 +1572,28 @@
     "context": "Liaoning fossils preserve feathers around small theropods. Feathers came first for warmth and showing off, way before flight. Modern birds are surviving dinosaurs."
   },
   {
-    "tier": 1,
-    "question": "A back-plated plant-eater has four giant spikes on the end of a swinging tail. The spikes were strong enough to punch a hole right through a meat-eater's bones. Which dinosaur is this?",
-    "answer": "The Stegosaurus",
+    "tier": 3,
+    "question": "Stegosaurus had four big spikes on the end of its swinging tail — strong enough to punch holes in an Allosaurus. For a long time paleontologists had no real name for the tail-spike weapon. What name from a Far Side cartoon did they finally adopt?",
+    "answer": "The thagomizer",
     "choices": [
-      "The Stegosaurus",
-      "The Triceratops",
-      "The Allosaurus",
-      "The Iguanodon"
+      "The thagomizer",
+      "The clubfork",
+      "The spiketail",
+      "The thrashion"
     ],
-    "context": "The Stegosaurus tail spikes are called a 'thagomizer' — a joke name from a Far Side cartoon that paleontologists liked so much it stuck. Punctured Allosaurus bones prove they worked."
+    "context": "Cartoonist Gary Larson drew a caveman professor in 1982 saying the tail spikes were 'named after the late Thag Simmons.' Paleontologists liked the joke and adopted 'thagomizer' as the real anatomical term. Punctured Allosaurus bones prove the weapon worked."
   },
   {
-    "tier": 1,
-    "question": "A wide squat plant-eater is covered in armor plates and ends in a heavy club of fused bone. One swing of that club could crack the leg of a T. rex. Which dinosaur is this?",
-    "answer": "The Ankylosaurus",
+    "tier": 2,
+    "question": "Ankylosaurus carried a heavy club at the end of its tail that could crack the leg bone of a T. rex. The club was not just a lump stuck on — it was made in an unusual way. What was the tail club actually made of?",
+    "answer": "Several vertebrae fused into one solid block of bone",
     "choices": [
-      "The Ankylosaurus",
-      "The Stegosaurus",
-      "The Allosaurus",
-      "The Iguanodon"
+      "Several vertebrae fused into one solid block of bone",
+      "A round stone the dinosaur swallowed and carried inside the skin",
+      "A growth of tough cartilage like a giant shark's nose",
+      "Thick keratin scale like a rhinoceros horn or fingernail"
     ],
-    "context": "Ankylosaurus carried a tail club of fused bone weighing many pounds. Studies show it could swing hard enough to break large bones. Almost no predator could safely flip it over."
+    "context": "The Ankylosaurus tail club is real fused bone — the last several vertebrae welded together into a single mass. Studies estimate one swing could break the leg of a T. rex. Almost no predator could safely flip an Ankylosaurus over to reach its soft belly."
   },
   {
     "tier": 1,
@@ -1609,15 +1609,15 @@
   },
   {
     "tier": 1,
-    "question": "A giant shark from the past called Megalodon went extinct millions of years ago. Its teeth keep washing up on beaches today. About how long was a full-grown Megalodon?",
-    "answer": "About 50 to 60 feet — longer than a school bus",
+    "question": "Megalodon was the giant shark from the past — extinct three million years ago. Its triangular fossil teeth still wash up on Florida beaches today. About how big could one tooth be?",
+    "answer": "About the size of a grown adult's whole hand",
     "choices": [
-      "About 50 to 60 feet — longer than a school bus",
-      "About 10 feet — about the size of a small modern shark",
-      "About 200 feet — longer than a blue whale alive today",
-      "About 5 feet — about the size of a large modern dolphin"
+      "About the size of a grown adult's whole hand",
+      "About the size of a US silver dollar coin",
+      "About the size of a small kitchen knife blade",
+      "About the size of a young child's two fingernails"
     ],
-    "context": "Megalodon teeth can be the size of a human hand. Its jaws could swallow a person whole. It died out about 3.6 million years ago, long after the dinosaurs."
+    "context": "Megalodon teeth reach about 18 cm (7 inches) from base to tip — roughly the span of a human hand from wrist to fingertip. By comparison, a great white shark's largest teeth are only about 5 cm. Many Megalodon teeth wash out of Florida and Carolina rivers and beaches; fossil hunters find them regularly."
   },
   {
     "tier": 1,
@@ -1680,16 +1680,16 @@
     "context": "Ibrahim et al. (2014, 2020) showed Spinosaurus had a paddle-tail, dense bones for diving, and crocodile-shaped jaws. It was the most aquatic dinosaur known and ate fish like a giant heron."
   },
   {
-    "tier": 1,
-    "question": "A small feathered dinosaur from China had long feathers on both arms AND legs — four wings, not two. It probably glided from tree to tree like a flying squirrel. What is it called?",
-    "answer": "Microraptor",
+    "tier": 3,
+    "question": "Microraptor was a tiny dinosaur from China with long feathers on both arms AND legs — four wings instead of two. From microscopic structures left in the fossil feathers, scientists figured out one more striking detail. What did they find?",
+    "answer": "It shone iridescent black, like a modern starling",
     "choices": [
-      "Microraptor",
-      "Velociraptor",
-      "Allosaurus",
-      "Stegosaurus"
+      "It shone iridescent black, like a modern starling",
+      "It changed color with the seasons, brown to forest green",
+      "It glowed faintly in dim light, like a deep-sea fish",
+      "Its feathers were pale gray with no pattern at all"
     ],
-    "context": "Microraptor was about the size of a crow. Each leg had long flight feathers, like the arms. Melanosomes in the feathers show its body shimmered iridescent black, like a starling."
+    "context": "Li et al. (2012) studied melanosome shape in Microraptor feathers and matched it to the structurally iridescent melanosomes of modern starlings — the same microscopic geometry that gives starlings their oil-slick sheen. Microraptor's plumage glittered black-with-rainbow-shimmer in sunlight, exactly like a starling today."
   },
   {
     "tier": 1,
@@ -1980,16 +1980,16 @@
     "context": "Paterson et al. (2011) found Anomalocaris eyes preserved with about 16,000 lenses each — extraordinary visual resolution for a Cambrian animal. It was almost certainly an active visual predator."
   },
   {
-    "tier": 2,
-    "question": "An Ice Age bear was much bigger than today's brown bear. It lived mainly in European caves where its bones piled up over generations. From tooth wear, it ate mostly plants. Which animal is this?",
-    "answer": "The cave bear kind",
+    "tier": 4,
+    "question": "Ice Age cave bears in Europe hibernated in the same caves generation after generation for tens of thousands of years. Cubs that didn't survive winter were left behind. One Austrian cave alone — the Drachenhöhle near Mixnitz — contains how many cave bear skeletons stacked across its floor?",
+    "answer": "About 30,000 cave bear skeletons",
     "choices": [
-      "The cave bear kind",
-      "The short-faced bear",
-      "The dire wolf kind",
-      "The Smilodon cat type"
+      "About 30,000 cave bear skeletons",
+      "About 50 partial cave bear skeletons",
+      "About 500 partial cave bear skeletons",
+      "About 3 million cave bear skeletons"
     ],
-    "context": "Ursus spelaeus (the cave bear) was a mostly plant-eating European cave hibernator. Thousands of skeletons accumulated in European caves over thousands of years of winter denning."
+    "context": "The Drachenhöhle (\"Dragon Cave\") near Mixnitz, Austria, holds an estimated 30,000-50,000 cave bear (Ursus spelaeus) skeletons, accumulated as cubs and weak adults died during winter hibernation over 60,000+ years. Medieval Europeans thought the bones were from dragons; modern paleontology identified them in the 1800s."
   },
   {
     "tier": 2,
@@ -2052,16 +2052,16 @@
     "context": "Zimov et al.'s 'mammoth steppe' hypothesis: heavy grazing recycled nutrients, packed snow, and kept the soil productive. When megafauna died, mossy tundra replaced the grassland. Climate alone doesn't explain the speed."
   },
   {
-    "tier": 3,
-    "question": "A 375-million-year-old fossil from Arctic Canada has fish-like gills and scales but a flexible neck, ribs strong enough to support body weight on land, and bones in its front fins arranged like a wrist. Which animal is this?",
-    "answer": "It is Tiktaalik",
+    "tier": 5,
+    "question": "A 375-million-year-old fossil from Arctic Canada has fish-like gills and scales but a flexible neck, ribs strong enough to support body weight on land, and bones in its front fins arranged like a wrist with finger-like rays. Paleontologists found it on Ellesmere Island in 2004. Which species is this?",
+    "answer": "It is Tiktaalik roseae",
     "choices": [
-      "It is Tiktaalik",
-      "Ichthyostega genus",
-      "Eusthenopteron taxa",
-      "It is Acanthostega"
+      "It is Tiktaalik roseae",
+      "It is Acanthostega gunnari",
+      "It is Eusthenopteron foordi",
+      "It is Ichthyostega stensioei"
     ],
-    "context": "Shubin, Daeschler, Jenkins (2006) reported Tiktaalik roseae from Ellesmere Island — fish-tetrapod transitional. They predicted the age and rock type, searched, and found the fossil. Featured in Your Inner Fish (2008)."
+    "context": "Tiktaalik roseae (Daeschler, Shubin, and Jenkins 2006) bridges lobe-finned fish and the first land vertebrates. The name is Inuktitut for \"large freshwater fish.\" Its wrist-like fin bones make it the iconic \"fish with limbs\" intermediate; the neck (absent in fish) lets it lift its head out of water like a modern crocodile."
   },
   {
     "tier": 3,
@@ -2929,15 +2929,15 @@
   },
   {
     "tier": 1,
-    "question": "This biome has cold winters with deep snow, short cool summers, and dense forests of spruce and fir. It stretches across Canada, Russia, and Scandinavia. What is it?",
-    "answer": "The taiga, or boreal forest",
+    "question": "This biome has cold winters with deep snow, short cool summers, and dense forests of spruce and fir. It stretches in a giant band across Canada, Russia, and Scandinavia. What is it?",
+    "answer": "The taiga, also called the boreal forest",
     "choices": [
-      "The taiga, or boreal forest",
-      "The tundra, treeless and frozen",
-      "The temperate rainforest",
-      "The Mediterranean shrubland"
+      "The taiga, also called the boreal forest",
+      "The tundra, the treeless frozen north",
+      "The temperate rainforest, cool and dripping",
+      "The Mediterranean shrubland, hot and dry"
     ],
-    "context": "The taiga (boreal forest) is Earth's largest land biome. Cold, snowy winters; brief summers; conifers dominate because they shed snow and survive frozen ground."
+    "context": "The taiga (boreal forest) is Earth's largest land biome. Conifers dominate because they shed snow and survive frozen ground. Moose, lynx, wolves, brown bears, and migrating wood warblers all depend on it."
   },
   {
     "tier": 1,
@@ -3048,16 +3048,16 @@
     "context": "Arctic foxes molt twice a year. The trigger is day length, not temperature. White against snow and brown against summer tundra both serve camouflage from prey and from larger predators."
   },
   {
-    "tier": 1,
-    "question": "An animal builds a dam across a stream. The dam floods the area behind it. New ponds form where frogs, ducks, and fish settle in. What animal does all this?",
-    "answer": "A river beaver",
+    "tier": 3,
+    "question": "A beaver builds a dam across a stream. The dam floods the area behind it, creating new ponds where frogs, ducks, fish, and moose all settle in. Biologists have a special name for animals like the beaver that reshape entire habitats. What is the term?",
+    "answer": "An ecosystem engineer",
     "choices": [
-      "A river beaver",
-      "A river muskrat",
-      "A river otter",
-      "A river mink"
+      "An ecosystem engineer",
+      "A keystone predator",
+      "An apex food consumer",
+      "A trophic specialist"
     ],
-    "context": "Beavers (Castor canadensis) are ecosystem engineers — they reshape streams into wetland habitat by damming. Their ponds host frogs, ducks, fish, moose, and many other species."
+    "context": "The term 'ecosystem engineer' (Jones, Lawton, and Shachak, 1994) names organisms that create, modify, or maintain habitat for other species. Beavers are the textbook case: their dams flood valleys, transforming streams into wetlands and bringing in fish, amphibians, waterfowl, and moose."
   },
   {
     "tier": 2,
@@ -4368,16 +4368,16 @@
     "context": "A group of jellyfish is a 'smack' (or sometimes a 'bloom'). Some species can carpet the surface for miles after warm currents and excess nutrients spark a population boom."
   },
   {
-    "tier": 1,
-    "question": "A blue whale is the largest animal that has ever lived — bigger than any dinosaur. About how big is its heart?",
-    "answer": "About the size of a small car",
+    "tier": 2,
+    "question": "When a blue whale dives deep — three football fields straight down for krill — its heart slows dramatically. A sensor on a diving whale counted the heartbeats at the bottom. About how many times per minute did it beat?",
+    "answer": "Around 2 beats per minute at the deepest point",
     "choices": [
-      "About the size of a small car",
-      "About the size of a soccer ball",
-      "About the size of a basketball",
-      "About the size of a microwave"
+      "Around 2 beats per minute at the deepest point",
+      "Around 20 beats per minute at the deepest point",
+      "Around 50 beats per minute at the deepest point",
+      "Around 90 beats per minute at the deepest point"
     ],
-    "context": "A blue whale's heart weighs about 400 pounds and is about the size of a small car. It pumps slow steady beats — only about four to eight times a minute when the whale is resting."
+    "context": "Goldbogen et al. (2019, PNAS) attached a heart-rate sensor to a blue whale off California and recorded a low of 2 beats per minute during deep dives, with surface recovery rates around 37 bpm. The slow dive-rate conserves oxygen for the lunge feed; the high recovery rate may be near the physical limit of a mammal heart that big."
   },
   {
     "tier": 1,
@@ -8544,28 +8544,28 @@
     "context": "A polar bear's hairs are actually clear, not white. They look white because they scatter light. The skin underneath is black to soak up sun heat."
   },
   {
-    "tier": 1,
-    "question": "A blue whale's heart is so huge a child could crawl through its biggest blood vessel. About how big is the heart itself?",
-    "answer": "About the size of a small car",
+    "tier": 2,
+    "question": "A blue whale's heart is so huge a child could crawl through its biggest blood vessel. When the whale dives deep, its heart slows way down. About how many times a minute does the heart beat during a deep dive?",
+    "answer": "About 2 beats per minute — slower than a sleeping human",
     "choices": [
-      "About the size of a small car",
-      "About the size of a basketball",
-      "About the size of a microwave oven",
-      "About the size of a bowling ball"
+      "About 2 beats per minute — slower than a sleeping human",
+      "About 60 beats per minute — same as a calm adult human",
+      "About 200 beats per minute — same as a sprinting cheetah",
+      "About 800 beats per minute — same as a hovering hummingbird"
     ],
-    "context": "A blue whale's heart weighs about 400 pounds — roughly the size of a small car. It beats only a few times per minute when the whale dives deep."
+    "context": "A diving blue whale's heart drops to about 2 beats per minute, surging back to ~30 when it surfaces to breathe. Researchers (Goldbogen et al. 2019) measured it with a suction-cup tag on a Monterey Bay whale — the first time anyone had recorded a wild blue whale's heart rate."
   },
   {
     "tier": 1,
-    "question": "A bat hunts moths in pitch darkness by sending out clicks and listening for echoes that bounce back. Scientists call the skill 'seeing with sound.' What is the proper name for it?",
-    "answer": "Echolocation by sound",
+    "question": "A bat hunts moths in pitch darkness by sending out clicks and listening for the echoes that bounce back off the moth. Scientists call this skill 'seeing with sound.' What is the proper name for it?",
+    "answer": "Echolocation — using sound echoes to map the world",
     "choices": [
-      "Echolocation by sound",
-      "Sonography by sight",
-      "Magnetic tracking",
-      "Acoustic chaining"
+      "Echolocation — using sound echoes to map the world",
+      "Infrared vision — seeing the heat that warm prey gives off",
+      "Magnetoreception — sensing Earth's magnetic field for direction",
+      "Electroreception — picking up tiny voltages from muscles"
     ],
-    "context": "Bats and dolphins both use echolocation. A bat clicks, the sound bounces off a moth, and the bat hears the echo and knows exactly where to strike."
+    "context": "Bats and dolphins both use echolocation. A bat clicks, the sound bounces off a moth, and the bat hears the echo and knows where to strike. Some moths have evolved their own counter-trick — they hear bat clicks and dive sharply when one gets close. The other senses on the list are real too: snakes use heat pits, pigeons use Earth's magnetic field, and platypuses use electroreception."
   },
   {
     "tier": 1,
@@ -8677,15 +8677,15 @@
   },
   {
     "tier": 1,
-    "question": "It has a hard outer shell of bony plates. It can roll into a ball when scared. It digs with strong claws. It is the only mammal with armor like this. What is it?",
-    "answer": "An armadillo",
+    "question": "An armadillo has armor in its skin — but the armor isn't made of horn or fingernail material like a pangolin's scales. It's something more surprising. What is an armadillo's armor actually made of?",
+    "answer": "Real bone — plates of bone grown right inside the skin",
     "choices": [
-      "An armadillo",
-      "A pangolin",
-      "A porcupine",
-      "An echidna"
+      "Real bone — plates of bone grown right inside the skin",
+      "Keratin — the same stuff as our fingernails and hair",
+      "Hard wax — the same stuff that coats a duck's feathers",
+      "Tough cartilage — the same stuff in the tip of our nose"
     ],
-    "context": "Armadillos have bony plates in their skin — true armor. The three-banded armadillo can roll into a perfect ball. The name means 'little armored one' in Spanish."
+    "context": "Armadillo armor is made of true bone (called osteoderms) that grows inside the skin. They are the only living mammal that builds armor out of bone. Pangolins are armored too, but with keratin scales like our fingernails. The three-banded armadillo can roll into a perfect ball."
   },
   {
     "tier": 1,
@@ -8701,15 +8701,15 @@
   },
   {
     "tier": 1,
-    "question": "It is a mammal but it lays eggs. It has a long sticky tongue. It eats ants and termites. Spikes cover its back. What is it?",
-    "answer": "An echidna",
+    "question": "An echidna lays eggs even though it's a mammal. The platypus does the same. Together they are the only two living kinds of mammals that lay eggs. What do scientists call this special group?",
+    "answer": "Monotremes",
     "choices": [
-      "An echidna",
-      "A platypus",
-      "An armadillo",
-      "An anteater"
+      "Monotremes",
+      "Marsupials",
+      "Placentals",
+      "Pinnipeds"
     ],
-    "context": "Echidnas and platypuses are the only egg-laying mammals. An echidna has a beak-like snout and a long tongue, perfect for an ant nest, and back spines like a hedgehog."
+    "context": "Monotremes are the egg-laying mammals — only echidnas and the platypus survive. They split from other mammals more than 160 million years ago. Marsupials (kangaroos, opossums) carry babies in pouches; placentals (dogs, humans, whales) grow babies inside the body."
   },
   {
     "tier": 1,

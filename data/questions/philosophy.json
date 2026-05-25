@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "Mom tells Ben: 'Most kids find baby animals cute — that isn't random taste, but it isn't a fact you'd measure either. It's how our minds work.' Which view of beauty is Mom defending?",
+    "question": "David Hume writes from Edinburgh in 1757: 'Beauty is not in objects like weight is — but not a private dream either. Humans share eyes and brains, so trained observers mostly agree about what moves us.' Which view is Hume defending?",
     "answer": "Response-dependent view — beauty is real but tracks shared human response, not a measurable feature of things.",
     "choices": [
       "Response-dependent view — beauty is real but tracks shared human response, not a measurable feature of things.",
@@ -153,11 +153,11 @@
       "Subjectivism — 'cute' just reports personal liking; there is no shared fact across people about cuteness.",
       "Cultural relativism — what counts as cute is set by a given culture; standards never cross between cultures."
     ],
-    "context": "Response-dependent views treat aesthetic properties like color: real and shareable, but only because creatures like us perceive a certain way. Cognitive science shows wide cross-cultural agreement on many basic responses."
+    "context": "Response-dependent views (Hume, 'Of the Standard of Taste,' 1757) treat aesthetic properties like color: real and shareable, but only because creatures like us perceive a certain way. Modern cognitive science backs the picture — there is wide cross-cultural agreement on many basic aesthetic responses."
   },
   {
     "tier": 1,
-    "question": "In life-drawing class, Owen says of a classmate's portrait: 'You can SEE who the model is — that kind of skill at capturing a real face is what makes a drawing good.' Which view is Owen defending?",
+    "question": "Before a marble bust of the emperor, a senator tells his nephew: 'See how truly the sculptor caught him. That skill at capturing a real face is what makes art good.' Which view is the senator defending?",
     "answer": "Imitative theory — art is valuable when it skillfully depicts reality; faithful representation grounds value.",
     "choices": [
       "Imitative theory — art is valuable when it skillfully depicts reality; faithful representation grounds value.",
@@ -165,7 +165,7 @@
       "Expressionism — what makes a work good is how powerfully it expresses feeling, not technical likeness alone.",
       "Cultural relativism — what counts as good drawing is set by a given culture; standards never cross traditions."
     ],
-    "context": "Aristotle saw mimesis (imitation) as a deep human pleasure: we delight in skilled likeness even of unpleasant things. Modern philosophers ask whether photography or AI imagery threatens the imitative theory's importance."
+    "context": "Aristotle's Poetics treated mimesis (imitation) as a deep human pleasure: we delight in skilled likeness even of unpleasant things. Roman portrait busts are the imitative theory at its most committed — every wart, every line preserved exactly. Modern philosophers ask whether photography and AI imagery threaten the theory's standing."
   },
   {
     "tier": 1,
@@ -325,7 +325,7 @@
   },
   {
     "tier": 2,
-    "question": "Arguing with his older brother, Jake insists: 'That solo isn't just MY favorite. The phrasing, the timing, the way it climbs — those qualities make it genuinely great, whether anyone notices or not.' Which view of aesthetic value is Jake defending?",
+    "question": "A cathedral master mason argues with the bishop's secretary about a rival's vaulting: 'It is not what I prefer. The proportions, the spring of the ribs — these are real strengths of the work, whether anyone notices them or not.' Which view of aesthetic value is the mason defending?",
     "answer": "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
     "choices": [
       "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
@@ -333,7 +333,7 @@
       "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
       "Hume's standard of taste — trained judges converge on real merit even though personal taste varies between listeners."
     ],
-    "context": "Aesthetic realism treats works as having real qualities that ground judgments of merit beyond individual taste. Critics press: how do we settle disagreements between sincere listeners? Hume (1757) replies that trained listeners converge over time — consistent with realism, not proof of it."
+    "context": "Aesthetic realism treats works as having real qualities — craft, structure, originality — beyond personal taste. Critics press: how do we settle disagreements? Hume's 1757 essay 'Of the Standard of Taste' offers a middle path: trained judges converge on real merit even as taste varies."
   },
   {
     "tier": 2,
@@ -361,7 +361,7 @@
   },
   {
     "tier": 2,
-    "question": "Watching a tightly-choreographed dance, Layla nods: 'Whether or not it's about anything, the SHAPES the dancers make and the patterns the group forms together — that's where the beauty lives.' Which view of art is Layla defending?",
+    "question": "Tracing the arches of a Norman chapter house, an abbot defends its austere geometry: 'Whether or not it represents anything, the rhythm of the columns and the balance of the bays is where the beauty lives. The arrangement IS the point.' Which view of art is the abbot defending?",
     "answer": "Formalism — art's value lies in its formal structure (shape, balance) and the satisfaction of seeing how parts fit.",
     "choices": [
       "Formalism — art's value lies in its formal structure (shape, balance) and the satisfaction of seeing how parts fit.",
@@ -369,11 +369,11 @@
       "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
       "Subjectivism — 'better' just means 'pleases me'; there is no fact about merit outside the listener's own response."
     ],
-    "context": "Formalism (Clive Bell, 1914) treats the arrangement of parts — the 'significant form' of a work — as the seat of aesthetic value. The view fits dance and abstract art well. Expressionists argue that form without felt content is hollow; the two views often judge the same work differently."
+    "context": "Formalism (Clive Bell's 'significant form,' 1914) treats the arrangement of parts as the seat of aesthetic value. Romanesque architecture is a textbook case — austere, rhythmic, mathematically proportioned. Expressionists argue form without felt content is hollow; the two views judge the same work differently."
   },
   {
     "tier": 2,
-    "question": "Defending a song she loves that her friends call simple, Tess argues: 'Listen — when it lands, you FEEL exactly what the singer felt. The carrying-the-feeling part is what makes it real art.' Which view is Tess defending?",
+    "question": "Tolstoy defends a peasant lament his literary friends call crude: 'When it lands, you FEEL exactly what the singer felt as he buried his son. That carrying-the-feeling between humans is what makes it real art. Without it, only technique remains.' Which view is Tolstoy defending?",
     "answer": "Expressionism — art's value lies in what it expresses emotionally; technique without feeling is skill, not art.",
     "choices": [
       "Expressionism — art's value lies in what it expresses emotionally; technique without feeling is skill, not art.",
@@ -381,11 +381,11 @@
       "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
       "Subjectivism — 'better' just means 'pleases me'; there is no fact about merit outside the listener's own response."
     ],
-    "context": "Expressionism (Tolstoy, 'What Is Art?', 1897; Collingwood, 'Principles of Art', 1938) holds art succeeds when felt experience passes from artist to audience. Technique serves transmission. Formalists reply that structure, not feeling, carries aesthetic value — the two views often clash."
+    "context": "Expressionism (Tolstoy, 'What Is Art?', 1897; Collingwood, 'Principles of Art', 1938) holds art succeeds when felt experience passes from artist to audience. Tolstoy explicitly preferred a peasant lament over Beethoven's late quartets on this view — they did the job better. Formalists reply structure, not feeling, carries the value."
   },
   {
     "tier": 2,
-    "question": "Hearing her uncle dismiss a popular show, Hannah pushes back: 'It's not bad — it's just from a culture you don't know. What counts as a great show depends on where you're standing. There isn't one global rule.' Which view is Hannah defending?",
+    "question": "A Mongol envoy at the Florentine court dismisses a Tuscan fresco as 'flat and pious.' His host replies: 'You've never lived in the tradition that taught us to see this seriousness. What counts as great painting depends on where you're standing.' Which view is the host defending?",
     "answer": "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
     "choices": [
       "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 2,
-    "question": "Asked why everyone praises an old painting she finds boring, Maya thinks: 'Generations of careful viewers have agreed it's great. Maybe they're seeing something my untrained eye is missing.' Which view of aesthetic value is Maya leaning on?",
+    "question": "An apprentice illuminator finds her abbey's Book of Hours dull. Her teacher answers: 'Generations of careful eyes rank this book among the greats. Maybe trained vision is seeing something yours still misses.' Which view is the teacher leaning on?",
     "answer": "Hume's standard of taste — trained judges converge on real merit even though personal taste varies between listeners.",
     "choices": [
       "Hume's standard of taste — trained judges converge on real merit even though personal taste varies between listeners.",
@@ -405,11 +405,11 @@
       "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
       "Aesthetic skepticism — no claim about better or worse can be settled, because every standard rests on an untested assumption."
     ],
-    "context": "Hume's 'Standard of Taste' (1757) treats the convergent judgment of trained, attentive observers across time as the standard. Personal taste varies; trained taste varies less. The view explains why some works survive critically for centuries without collapsing into pure objectivism."
+    "context": "Hume's 'Standard of Taste' (1757) treats trained, attentive observers across time as the practical standard. Personal taste varies; trained taste varies less. The view explains why some works survive critically for centuries without collapsing into pure objectivism."
   },
   {
     "tier": 2,
-    "question": "Praising a book over her friend's eye-roll, Ana says: 'It's not just my opinion. The plotting, the sentences, the way every scene pays off — those are real strengths the book has, whether you noticed them or not.' Which view is Ana defending?",
+    "question": "Defending Dante to a Latin tutor, an apprentice scribe insists: 'It is not just MY enthusiasm. The Comedy's plotting, the precision of every line — these are real strengths the work has, whether the reader perceives them or not.' Which view is the scribe defending?",
     "answer": "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
     "choices": [
       "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
@@ -433,7 +433,7 @@
   },
   {
     "tier": 2,
-    "question": "Arguing about an album's cover art, Ben shrugs: 'It's pretty to me, ugly to you. End of story. Calling either of us right or wrong about art is a confused way to talk; there's no fact underneath.' Which view of aesthetic value is Ben defending?",
+    "question": "Two herald-painters argue about a rival's new banner. One shrugs: 'It's striking to me, garish to you. End of story. Calling either of us right or wrong about art is a confused way to talk — there is no fact underneath, only our two reactions.' Which view is the herald defending?",
     "answer": "Subjectivism — 'better' just means 'pleases me'; there is no fact about merit outside the listener's own response.",
     "choices": [
       "Subjectivism — 'better' just means 'pleases me'; there is no fact about merit outside the listener's own response.",
@@ -441,11 +441,11 @@
       "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
       "Aesthetic skepticism — no claim about better or worse can be settled, because every standard rests on an untested assumption."
     ],
-    "context": "Subjectivism reduces 'beautiful' or 'ugly' to reports about the speaker's response. It is simple and avoids hard metaphysics. Critics ask why we argue about art at all and why trained reviewers' judgments seem to weigh more. Hume (1757) tries to answer both without giving up on real merit."
+    "context": "Subjectivism reduces 'beautiful' or 'ugly' to reports about the speaker's response. It is simple and avoids hard metaphysics. Critics ask why we argue about art at all, and why trained reviewers' judgments seem to weigh more. Hume (1757) tries to answer both without giving up on real merit."
   },
   {
     "tier": 2,
-    "question": "Looking at an abstract painting her brother calls 'random,' Reyna corrects him: 'It's not random — look at the balance of the shapes and how the colors are weighted. The arrangement is the whole point.' Which view of art is Reyna defending?",
+    "question": "Reading a Bach fugue at the harpsichord, an apprentice corrects her brother who calls it 'dry math.' 'Look at how the voices weave — the balance of answer against subject, the way each entry weights the texture. The arrangement is the whole point.' Which view is she defending?",
     "answer": "Formalism — art's value lies in its formal structure (shape, balance) and the satisfaction of seeing how parts fit.",
     "choices": [
       "Formalism — art's value lies in its formal structure (shape, balance) and the satisfaction of seeing how parts fit.",
@@ -453,11 +453,11 @@
       "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
       "Subjectivism — 'better' just means 'pleases me'; there is no fact about merit outside the listener's own response."
     ],
-    "context": "Formalism (Clive Bell, 1914) fits abstract art naturally: with no representational content to evaluate, what remains is structure — balance, color weight, internal echo. Bell's 'significant form' was developed for post-impressionist painting, where formalism's strengths are clearest."
+    "context": "Formalism (Clive Bell, 1914) fits Bach naturally: counterpoint is the play of voices in formal relation. Bell's 'significant form' was developed for post-Impressionist painting but his framework was meant to extend to music and architecture too. Expressionists object that fugues do have an emotional weight Bell undervalues."
   },
   {
     "tier": 2,
-    "question": "When her friend says a popular show from another country 'just isn't funny,' Layla disagrees: 'Funny isn't universal. What lands as funny depends on what the audience grew up with. Different crowd, different standard.' Which view is Layla defending?",
+    "question": "A wandering minstrel argues with a court tutor about a song from the eastern caliphate. 'It isn't NOT music — you've never sat in the courts where this scale grew up. Different tradition, different standard.' Which view is the minstrel defending?",
     "answer": "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
     "choices": [
       "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal.",
@@ -465,11 +465,11 @@
       "Aesthetic realism — real qualities (craft, structure, depth) make a work genuinely better than another, beyond taste.",
       "Hume's standard of taste — trained judges converge on real merit even though personal taste varies between listeners."
     ],
-    "context": "Cultural relativism in aesthetics treats the standards of judgment as community-relative. Humor is a strong test case because translation often fails. Critics still ask whether trained cross-cultural critics converge on quality more than naive viewers — a Humean pressure on the relativist."
+    "context": "Cultural relativism treats aesthetic standards as community-relative. Music is a strong test case because tunings, scales, and rhythms vary widely between traditions. Critics still ask whether trained cross-cultural ears converge on quality more than naive ones — a Humean pressure on the relativist."
   },
   {
     "tier": 2,
-    "question": "Arguing about whose fan art is best in the school art club, Ana says: 'The seniors who've been drawing for years tend to agree on which pieces are strong. Their agreement isn't proof, but it's tracking real differences.' Which view is Ana defending?",
+    "question": "Two squires argue about tournament heraldry. The captain of the lists rules: 'Senior heralds — who've judged a thousand banners — converge on which paintings are strong. Their convergence isn't proof, but it tracks something real.' Which view is the captain defending?",
     "answer": "Hume's standard of taste — trained judges converge on real merit even though personal taste varies between listeners.",
     "choices": [
       "Hume's standard of taste — trained judges converge on real merit even though personal taste varies between listeners.",
@@ -477,7 +477,7 @@
       "Subjectivism — 'better' just means 'pleases me'; there is no fact about merit outside the listener's own response.",
       "Cultural relativism — quality is whatever a culture treats as quality; standards are internal to a community, not universal."
     ],
-    "context": "Hume's 'Standard of Taste' (1757) treats trained judges' convergence as the practical mark of real merit. The seniors' experience plays the role Hume assigns to skilled critics: wide exposure, careful attention, fair temperament. The view lies between subjectivism and pure realism."
+    "context": "Hume's 'Standard of Taste' (1757) treats convergent skilled judgment as the practical mark of real merit. The senior heralds play the role Hume assigns to skilled critics: wide exposure, careful attention, fair temperament. The view lies between subjectivism and pure realism."
   },
   {
     "tier": 3,
@@ -5497,7 +5497,7 @@
   },
   {
     "tier": 1,
-    "question": "Looking at a home video of himself at four, Owen says, 'That's me — I remember being him, even fuzzy bits. The memory line connects right up to today.' Which view of identity is Owen defending?",
+    "question": "A pilgrim stares at his boyhood portrait in the abbey gallery. 'That child IS me — even if I can't recall the day he sat, my memories run forward without a break.' Which view of identity is the pilgrim defending?",
     "answer": "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
     "choices": [
       "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
@@ -5505,11 +5505,11 @@
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Owen leans on remembered scenes as the bond. This is the Lockean intuition: a chain of memories linking past selves to the present self is what makes the past self the SAME person as the present."
+    "context": "Memory-continuity views (Locke, Essay Concerning Human Understanding, 1689) make personal identity ride on connected memories. Critics note the gaps — infancy, sleep, illness — and rival views step in: the body, the soul, or no enduring self at all."
   },
   {
     "tier": 1,
-    "question": "Looking at a hospital photo of herself as a newborn, Ana says, 'I don't remember any of that — but it's still me. My body grew right out of that baby.' Which view of identity is Ana defending?",
+    "question": "An old knight points to a scar on his arm. 'I took this at fifteen at the river crossing — I don't recall the day. Still ME, though: same body kept growing.' Which view of identity is the knight defending?",
     "answer": "Bodily continuity — you're the same person if one physical body has persisted through all the years of change.",
     "choices": [
       "Bodily continuity — you're the same person if one physical body has persisted through all the years of change.",
@@ -5517,7 +5517,7 @@
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Ana explicitly RULES OUT the memory bond — she doesn't remember — and grounds identity in the continuous body. This is the standard reply to gaps in memory: the body line never breaks."
+    "context": "Bodily-continuity views (Bernard Williams; animalists like Eric Olson) anchor identity in the same organism persisting through change. The knight's scar is one piece of evidence the body line never broke — even where the memory line is patchy."
   },
   {
     "tier": 1,
@@ -5545,7 +5545,7 @@
   },
   {
     "tier": 1,
-    "question": "Running into an old kindergarten classmate at the store, Ben says, 'You're the same kid I sat next to in story circle — I remember it and so do you.' Which view of identity is Ben defending?",
+    "question": "A returning crusader meets his old squire. 'You're the lad who held my horse at the gate ten winters ago — the thread of memory runs from then to now, through both of us.' Which view of identity is the crusader defending?",
     "answer": "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
     "choices": [
       "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
@@ -5553,7 +5553,7 @@
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Shared memories of a past episode are Ben's evidence the two of them are still the SAME people they were in kindergarten. The memory-link runs back through both of them to the same shared scene."
+    "context": "Locke's memory view (1689) makes shared remembered episodes the bond of identity across people and time. Reid pressed it hard with the 'brave officer' case — a memory chain with broken links — and the view has been refined ever since (Parfit, 1984)."
   },
   {
     "tier": 1,
@@ -5569,7 +5569,7 @@
   },
   {
     "tier": 1,
-    "question": "Asked if she's the same kid as her first-grade school photo, Ava says, 'No — that girl liked totally different stuff and thought differently. There's no SAME me running through.' Which view is she defending?",
+    "question": "A wandering monk sits with the novice by a river. 'The boy at dawn is gone — the man at dusk is a NEW self. Each moment's self stands on its own; nothing SAME runs through.' Which view of identity is the monk defending?",
     "answer": "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart.",
     "choices": [
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart.",
@@ -5577,7 +5577,7 @@
       "Bodily continuity — you're the same person if one physical body has persisted through all the years of change.",
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change."
     ],
-    "context": "The no-self position takes change seriously: a self that liked different things and thought differently isn't the same self. Personal identity is a useful story; what's real is a chain of distinct selves."
+    "context": "The no-self view (anatta) is central to Buddhist thought: the river image (Heraclitus echoes it: 'you cannot step in the same river twice') captures the same intuition. Hume (1739) looked inward and reported finding only a bundle of changing perceptions — never a continuous self behind them."
   },
   {
     "tier": 1,
@@ -5605,7 +5605,7 @@
   },
   {
     "tier": 1,
-    "question": "A Sunday school teacher tells the class, 'Even if scientists copied your body exactly, the copy wouldn't be YOU — your soul makes you who you are.' Which view of identity is she defending?",
+    "question": "In Plato's Phaedo, Socrates faces death calmly. 'The body returns to dust, but the soul departs whole. Even a perfect copy of my flesh would not be me — the soul is.' Which view is Socrates defending?",
     "answer": "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
     "choices": [
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
@@ -5613,7 +5613,7 @@
       "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Body-copy thought experiments are the classic place soul theory pushes back: if a duplicate body and duplicate memories don't yield YOU, something else (the soul) must be doing the identity work."
+    "context": "Soul views (Plato's Phaedo; Descartes' Meditations; Aquinas; much of religious tradition) say what makes you YOU is an immaterial soul, not your body or memories. The Phaedo is the founding text — Socrates argues this on his last day, in 399 BC, before drinking the hemlock."
   },
   {
     "tier": 1,
@@ -5748,8 +5748,8 @@
     "context": "Material identity holds that sameness tracks the matter, not the shape or the role. On Eli's view, total parts turnover means the old skateboard is gone and a new one wears the old name. This is the side Hobbes pushed in De Corpore (1655) to sharpen the puzzle."
   },
   {
-    "tier": 2,
-    "question": "Lila tells the group: 'I'm still ME because I can remember being the kid I was in fourth grade — that unbroken thread of remembering is what carries me forward.' What makes Lila the same person, on her view?",
+    "tier": 1,
+    "question": "Locke imagines a prince's mind transferred into a cobbler's body, carrying all the prince's memories with it. The cobbler-bodied figure remembers being the prince. On Locke's view, which position does the prince-and-cobbler case defend?",
     "answer": "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
     "choices": [
       "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
@@ -5757,11 +5757,11 @@
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Locke's memory view is what Lila is voicing: not the body, not a soul, but the chain of remembered experience is what makes a person one across time. Critics (Parfit, Reasons and Persons, 1984) press hard on cases of memory loss, where the chain breaks."
+    "context": "Locke's prince-and-cobbler thought experiment (Essay II.27, 1694) is the founding case for the memory view: if memory makes the person, the cobbler-bodied figure with the prince's memories IS the prince. Reid and Butler objected on circularity grounds; Parfit (1984) refined the view in light of split-brain and teletransporter cases."
   },
   {
     "tier": 2,
-    "question": "Tess has tracked her cat Pixel's life in a notebook since he was a kitten. She says Pixel is the same cat because one continuous body has lived through every page. Which view of identity is Tess defending?",
+    "question": "A village healer points to a tree growing where her grandmother planted an acorn sixty years ago. 'It's the same oak — every cell long since replaced, but ONE continuous living body has grown from acorn to canopy.' Which view of identity is the healer defending?",
     "answer": "Bodily continuity — you're the same person if one physical body has persisted through all the years of change.",
     "choices": [
       "Bodily continuity — you're the same person if one physical body has persisted through all the years of change.",
@@ -5769,7 +5769,7 @@
       "Form identity — what makes a thing itself is its persistent structure and role, not the particular matter inside.",
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Bodily continuity is the standard view of identity for animals: the persisting body and its life is what carries the animal through time. Aristotle's biology assumed something like this; modern animalism (Eric Olson) argues even human identity is best explained this way."
+    "context": "Bodily continuity handles trees, animals, and humans alike: one continuous organism persisting through total cellular turnover. Aristotle's biology and modern animalism (Olson) both lean on the persisting living body as the bearer of identity."
   },
   {
     "tier": 2,
@@ -5796,20 +5796,20 @@
     "context": "The argument relies on memory continuity: if the chain of remembered experience is what makes a person one across time, then breaking the chain breaks identity. Critics of the memory view (Reid, Parfit) press exactly this case — many take the bodily view to handle it better."
   },
   {
-    "tier": 2,
-    "question": "The barn was rebuilt twice, the fields rotated, every animal replaced. Yet neighbors call it the same Karlsen farm. Mr. Karlsen says it's because the role of the place hasn't changed. What makes the farm the same, on his view?",
+    "tier": 3,
+    "question": "An old master mason points to the cathedral. 'Every original block of stone has been replaced over six centuries — patched, recut, refaced. Yet it remains the cathedral it was. What persists is the structure, not the matter.' Which position is the mason defending?",
     "answer": "Form identity — what makes a thing itself is its persistent structure and role, not the particular matter inside.",
     "choices": [
       "Form identity — what makes a thing itself is its persistent structure and role, not the particular matter inside.",
       "Material identity — same matter equals same thing; change every part and you have a different thing with the old name.",
       "Convention identity — there is no real fact about sameness; calling it 'the same' is a habit of speech, not a truth.",
-      "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
+      "Bundle theory — the cathedral is just a bundle of properties at each moment, with no underlying continuant beneath them."
     ],
-    "context": "The form view explains how institutions, places, and ongoing practices stay the 'same' through total turnover of matter and members. The role and structure persist while the substance changes. This is also how modern philosophers (Wiggins) handle ordinary-object identity."
+    "context": "The form view (Aristotle's 'substantial form'; modern Wiggins) handles persisting institutions and places naturally: cathedrals, ships, rivers, schools survive the turnover of their matter. The Ship of Theseus puzzle (Plutarch, Theseus 23) is the canonical test; Hobbes added the duplicate-from-saved-planks twist."
   },
   {
     "tier": 2,
-    "question": "After a rough morning, Layla tells a friend: 'The me from this morning is genuinely gone. The me now isn't her continued — it's a new self that just remembers some of her stuff.' Which view of identity is Layla defending?",
+    "question": "An alchemist's apprentice closes the journal she kept last winter. 'The girl who wrote this is gone — really gone. The me reading it now is a NEW self that shares some content with hers, not the same person continued.' Which view is she defending?",
     "answer": "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart.",
     "choices": [
       "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart.",
@@ -5817,19 +5817,19 @@
       "Bundle theory (Hume) — the self is just a bundle of changing experiences; there is no extra inner core holding them.",
       "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change."
     ],
-    "context": "The no-self view (Buddhist anatta; Hume in a softer key) denies a single self persisting across moments. Each 'self' is genuinely new and only shares some content with the last. The view is in real tension with the memory and bodily continuity views, both of which insist on persistence."
+    "context": "Buddhist anatta and Hume's bundle theory (Treatise, 1739) both deny an enduring self running through time. Each 'self' is genuinely new and shares only content with the last. The view is in real tension with both memory-continuity and bodily-continuity views."
   },
   {
-    "tier": 2,
-    "question": "Reconnecting after a year apart, Aiden's best friend says: 'You're you — one continuous thread of memories links the kid I knew last year and the kid I'm talking to now.' Which view of identity is the friend defending?",
+    "tier": 3,
+    "question": "Parfit imagines a teleporter that scans your body atom-by-atom, destroys it, and rebuilds a perfect copy on Mars with all your memories intact. The Mars-copy steps out remembering boarding the pod. 'The Mars person is YOU,' Parfit claims. Which position is Parfit defending?",
     "answer": "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
     "choices": [
       "Memory continuity — you're the same person if an unbroken chain of memory connects past and present selves.",
-      "Bundle theory (Hume) — the self is just a bundle of changing experiences; there is no extra inner core holding them.",
       "Bodily continuity — you're the same person if one physical body has persisted through all the years of change.",
-      "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change."
+      "Soul theory — you're the same person if one immaterial soul has carried through every outer and inner change.",
+      "No-self view — there is no enduring 'same person'; each moment's self is genuinely new and stands apart."
     ],
-    "context": "Memory continuity is Locke's classic answer (1689): what makes a person the same is the unbroken chain of remembering. Bundle theory (Hume) denies there's any one thread — only the bundle. Bodily and soul views ground sameness in body or soul rather than memory."
+    "context": "Parfit's teletransporter (his 1984 book) is the modern version of Locke's prince-and-cobbler. The memory view says the Mars-copy IS you. Bodily continuity says it cannot be — your original body was destroyed. Parfit himself eventually concluded personal identity matters less than mental continuity across the moments."
   },
   {
     "tier": 2,
@@ -6973,19 +6973,19 @@
   },
   {
     "tier": 2,
-    "question": "Owen's older sister is under anesthesia for a quick procedure. Her body is here; she breathes and her heart beats. Owen wonders: is there anything she's EXPERIENCING right now in there at all?",
+    "question": "An apprentice apothecary watches her master administer ether to a knight before a leg operation. The body breathes; the heart beats. She wonders: is there anything the knight is EXPERIENCING in there at all right now?",
     "answer": "Probably nothing — but what makes the difference between feeling and no-feeling inside a brain is still a hard problem of mind.",
     "choices": [
       "Probably nothing — but what makes the difference between feeling and no-feeling inside a brain is still a hard problem of mind.",
       "Yes — the body is here and the brain is alive, so experience must be going on; experience just IS biological brain activity.",
-      "Yes — under anesthesia she dreams without remembering it; the dream experiences continue and only the memory gets switched off.",
+      "Yes — under anesthesia he dreams without remembering it; the dream experiences continue and only the memory gets switched off.",
       "No — anesthesia turns off the soul's link to the body; the soul is elsewhere during surgery and returns when the patient wakes."
     ],
-    "context": "Anesthesia is interesting because it seems to switch experience OFF without switching the body off. What in the brain makes the difference between experience and its absence is the 'hard problem' of consciousness (Chalmers, 1995) — still unresolved."
+    "context": "Anesthesia is striking because it seems to switch experience OFF without switching the body off. What in the brain makes the difference between experience and its absence is the 'hard problem' of consciousness (David Chalmers, 1995). The puzzle remains unresolved in current neuroscience and philosophy of mind."
   },
   {
     "tier": 2,
-    "question": "Sara's mom is a nurse. When Sara complains of a headache her mom says: 'That ache you're feeling just IS certain nerves firing in your brain — nothing extra is going on.' Which view of mind is Sara's mom defending?",
+    "question": "A natural-philosopher writes from the Royal Society: 'When you feel the chill of November, that feeling just IS motions of fibers in your nerves and brain. Not a separate thing joined to the body — the motions themselves ARE what feeling is.' Which view of mind is the philosopher defending?",
     "answer": "Brain-activity view — mental events ARE brain events; there's nothing to a mind beyond underlying physical activity.",
     "choices": [
       "Brain-activity view — mental events ARE brain events; there's nothing to a mind beyond underlying physical activity.",
@@ -6993,11 +6993,11 @@
       "Mind-as-pattern view — mind is what the brain DOES; any system that runs the same pattern would have a mind too.",
       "Behavior-pattern view — mind is just patterns of behavior; having a mind means behaving as a mind-having thing behaves."
     ],
-    "context": "Physicalism (or mind-brain identity theory: Smart, Place, 1950s) says mental events ARE brain events. The headache and the firing are not two things linked, but one thing under two descriptions. Critics ask whether felt qualities can really be the firings."
+    "context": "Physicalism (or mind-brain identity theory: Smart, Place, 1950s) says mental events ARE brain events. Hobbes anticipated the view in Leviathan (1651) — sensation IS motion in the nerves. Critics ask whether felt qualities can really be the firings."
   },
   {
     "tier": 2,
-    "question": "Watching her little brother react to a scary movie, Hannah says: 'When we say he's scared we just MEAN he's flinching and covering his eyes. There's no extra hidden 'scared' inside besides all that.' Which view of mind is Hannah defending?",
+    "question": "Gilbert Ryle writes in 1949 about a soldier called 'brave.' 'To call him brave is not to name a hidden inner state. It just IS to say he runs toward fire, holds steady under shelling, keeps his men together. There is no extra inner bravery behind all that.' Which view is Ryle defending?",
     "answer": "Behavior-pattern view — mind is just patterns of behavior; having a mind means behaving as a mind-having thing behaves.",
     "choices": [
       "Behavior-pattern view — mind is just patterns of behavior; having a mind means behaving as a mind-having thing behaves.",
@@ -7005,11 +7005,11 @@
       "Mind-as-pattern view — mind is what the brain DOES; any system that runs the same pattern would have a mind too.",
       "Brain-activity view — mental events ARE brain events; there's nothing to a mind beyond underlying physical activity."
     ],
-    "context": "Behaviorism in philosophy of mind (Ryle, 1949) reduces talk of mental states to talk about behavior patterns. Hannah's reduction of 'scared' to flinching-and-covering is the classic move. Critics: what about a stoic kid who hides every sign of fear?"
+    "context": "Logical behaviorism (Gilbert Ryle, The Concept of Mind, 1949) reduces talk of mental states to talk about behavioral dispositions. Ryle called Descartes's picture 'the ghost in the machine' — his anti-Cartesian polemic shaped mid-20th-century philosophy of mind. Critics: what about a stoic soldier who hides every sign of fear?"
   },
   {
     "tier": 2,
-    "question": "Telling her friend about a lucid dream, Reyna says: 'In the dream I could DECIDE what happened next. It felt like my mind was its own thing — separate from my sleeping body.' Which view of mind is Reyna leaning on?",
+    "question": "Working alone by lamplight, Descartes writes: 'I can imagine my body away — its arms, legs, even the brain in my skull. But I cannot imagine away the I doing the imagining. Mind and body must be two distinct kinds of thing.' Which view is Descartes defending?",
     "answer": "Mind-separate view — mind and body are two distinct kinds of thing; the mental and physical follow different rules.",
     "choices": [
       "Mind-separate view — mind and body are two distinct kinds of thing; the mental and physical follow different rules.",
@@ -7017,11 +7017,11 @@
       "Mind-as-pattern view — mind is what the brain DOES; any system that runs the same pattern would have a mind too.",
       "Behavior-pattern view — mind is just patterns of behavior; having a mind means behaving as a mind-having thing behaves."
     ],
-    "context": "Dualism (Descartes) takes the felt-separateness of mind and body as data. Lucid dreaming sharpens the intuition — the body is still, the mind active. Physicalists reply the brain is doing the deciding too; the felt-separateness is misleading on its own."
+    "context": "Descartes's argument in Meditations II and VI (1641) is the founding case for substance dualism. Princess Elisabeth of Bohemia pressed him by letter in 1643: HOW does a non-physical mind push a physical hand? Descartes never gave a satisfying answer — the interaction problem remains the standard objection."
   },
   {
     "tier": 2,
-    "question": "Looking at her baby cousin sleeping, Layla wonders aloud: babies can't tell anyone what they feel, but they cry and smile. Do babies actually EXPERIENCE feelings, the way older kids do?",
+    "question": "Sitting by her newborn nephew, a young abbess watches him sleep. He cannot speak yet, but flinches at a crash, smiles when warmed. She asks her novice: do babies actually EXPERIENCE feelings, the way older people do?",
     "answer": "Yes — but HOW we'd ever fully confirm what a non-speaking being experiences is among the deeper open puzzles about minds today.",
     "choices": [
       "Yes — but HOW we'd ever fully confirm what a non-speaking being experiences is among the deeper open puzzles about minds today.",
@@ -7029,7 +7029,7 @@
       "Yes — every living mammal has rich inner feelings from birth; the feelings are just like adult feelings in every respect.",
       "No — babies only run instinctive routines; experience switches on later, only when self-talk in the head begins to develop."
     ],
-    "context": "The 'other minds' problem (Russell, Problems of Philosophy, 1912): we cannot directly observe anyone's experience except our own. Babies and animals make the puzzle vivid: we infer from behavior but cannot confirm from inside. The puzzle is genuinely open."
+    "context": "The 'other minds' problem (Russell, Problems of Philosophy, 1912) bites hardest for non-speaking beings — babies, animals, anyone we cannot ask. We infer experience from behavior but cannot confirm from inside. The puzzle is genuinely open in contemporary philosophy of mind."
   },
   {
     "tier": 2,
@@ -7069,7 +7069,7 @@
   },
   {
     "tier": 2,
-    "question": "When Tess says she feels nervous before her piano recital, her older brother nods: 'That nervous feeling? It just IS certain chemicals in your brain. Nothing else.' Which view of mind is the brother defending?",
+    "question": "A 19th-century neurologist tells his student over a brain dissection: 'When a patient reports terror, the terror just IS certain electrical activity in this organ. Nothing additional is going on — the firing IS the fear.' Which view of mind is the neurologist defending?",
     "answer": "Brain-activity view — mental events ARE brain events; there's nothing to a mind beyond underlying physical activity.",
     "choices": [
       "Brain-activity view — mental events ARE brain events; there's nothing to a mind beyond underlying physical activity.",
@@ -7077,7 +7077,7 @@
       "Mind-as-pattern view — mind is what the brain DOES; any system that runs the same pattern would have a mind too.",
       "Behavior-pattern view — mind is just patterns of behavior; having a mind means behaving as a mind-having thing behaves."
     ],
-    "context": "Physicalism identifies mental states with physical brain states (Smart, Place; later neuro-philosophers like Churchland). The nervousness IS the chemistry — not caused by it, but it. Critics ask whether felt nervousness can really just be molecules."
+    "context": "Identity theory (Smart, 1959; Place, 1956) holds mental states ARE brain states — not caused by, but identical to, under different descriptions. The dissection scene is the kind of evidence that fed the view's rise in the mid-20th century. Critics: can the felt redness of pain really be the firing?"
   },
   {
     "tier": 2,
@@ -7237,7 +7237,7 @@
   },
   {
     "tier": 3,
-    "question": "On her YouTube channel, a creator argues: 'Talking about a hidden inner mind is confused. When you say someone is angry, all you really MEAN is that they're shouting, slamming doors, glaring. There's no extra hidden anger besides all that.' Which view of mind is the creator defending?",
+    "question": "In a public disputation against the Cartesians, Gilbert Ryle argues: 'Talking about a hidden inner mind is confused. When you say someone is angry, all you really MEAN is that they shout, slam doors, and glare. There is no extra hidden anger besides all that.' Which view of mind is Ryle defending?",
     "answer": "Behavior-only view -- having a mental state just means behaving as a mental-state-having thing behaves; there's nothing inner beyond the outward behavior.",
     "choices": [
       "Behavior-only view -- having a mental state just means behaving as a mental-state-having thing behaves; there's nothing inner beyond the outward behavior.",
@@ -7245,7 +7245,7 @@
       "Mind-as-pattern view -- mind is what the brain DOES; any system running the same input-output pattern would have a mind regardless of stuff.",
       "Brain-state view -- mental events ARE brain events; there's no mind apart from the underlying physical activity of a biological brain at all."
     ],
-    "context": "Logical behaviorism (Ryle, 1949) treats mental-state talk as behavior-pattern talk. The creator's anger-equals-shouting move is textbook. The classic objection: someone in real pain who hides every sign perfectly seems to refute the view -- a hidden feeling without the behavior."
+    "context": "Logical behaviorism (Ryle, 1949) treats mental-state talk as behavior-pattern talk. The anger-equals-shouting move is textbook Ryle. He coined 'the ghost in the machine' as his epithet for Cartesian dualism. The classic objection: someone in real pain who hides every sign perfectly seems to refute the view — a hidden feeling without the behavior."
   },
   {
     "tier": 3,
@@ -7309,7 +7309,7 @@
   },
   {
     "tier": 3,
-    "question": "On a debate panel about thinking machines, a senior argues: 'A mind isn't tied to brains or bodies. If a future AI runs the same patterns of input, processing, and output a person runs, that AI has a mind — and what it's built of doesn't matter.' Which view of mind is the senior defending?",
+    "question": "Alan Turing argues in his 1950 paper 'Computing Machinery and Intelligence': 'A machine is not tied to any particular stuff. If it can imitate a human's conversational patterns well enough that an honest interrogator cannot tell them apart, then we have no good reason to deny it thought. What it is built of is the wrong question.' Which view of mind is Turing defending?",
     "answer": "Mind-as-pattern view -- a mind is what the brain DOES; any system running the same input-output pattern would have a mind, regardless of stuff.",
     "choices": [
       "Mind-as-pattern view -- a mind is what the brain DOES; any system running the same input-output pattern would have a mind, regardless of stuff.",
@@ -7317,7 +7317,7 @@
       "Brain-state view -- mental events ARE brain events; there's no mind apart from the underlying physical activity of a biological brain.",
       "Behavior-only view -- having a mind just means behaving as a mind-having thing behaves; there's nothing inner beyond the outward behavior."
     ],
-    "context": "Functionalism (Putnam, 1960s) is the standard view in cognitive science: minds are individuated by causal-functional role, not by material. The view supports the idea of multiple realizability — minds running on biology, silicon, or anything else that runs the right pattern."
+    "context": "Turing's 1950 paper 'Computing Machinery and Intelligence' introduced the imitation game (the Turing test) and anticipated much of functionalism. Putnam (1960s) and Fodor (1968) formalized the philosophical position. The view has been central to cognitive science: it lets minds run on biology OR silicon, in principle."
   },
   {
     "tier": 3,
@@ -7333,7 +7333,7 @@
   },
   {
     "tier": 3,
-    "question": "On a podcast about meditation, a guest reports: 'When I sit quietly, my thoughts feel like their own thing — separate from my body. The body sits still; the mind goes elsewhere. The two seem to be two different kinds of thing.' Which view of mind is the guest leaning on?",
+    "question": "Augustine writes in the Confessions: 'When I withdraw into the inner room of the mind, I find my thoughts moving by their own light, distinct from the body sitting still in this garden. The two seem to be two different kinds of thing — one extended, one not.' Which view is Augustine leaning on?",
     "answer": "Mind-separate view -- mind and body are two distinct kinds of thing; the mental and physical operate by different rules in their own ways.",
     "choices": [
       "Mind-separate view -- mind and body are two distinct kinds of thing; the mental and physical operate by different rules in their own ways.",
@@ -7341,7 +7341,7 @@
       "Mind-as-pattern view -- mind is what the brain DOES; any system running the same input-output pattern would have a mind regardless of stuff.",
       "Behavior-only view -- having a mind just means behaving as a mind-having thing behaves; there is nothing inner beyond outward behavior."
     ],
-    "context": "Descartes (Meditation VI, 1641) takes the felt-separateness of mind and body as data. Meditation reports sharpen the intuition; physicalists reply that the brain is doing the meditating too, and the felt-separateness is misleading on its own as evidence about reality."
+    "context": "Augustine (Confessions X, ~400 AD) sharpened a felt-separateness between mind and body that Descartes (Meditation VI, 1641) would later make philosophically explicit. Physicalists reply that the brain is doing the inward turn too — felt-separateness is misleading evidence about underlying reality."
   },
   {
     "tier": 3,
@@ -7380,16 +7380,16 @@
     "context": "David Chalmers ('Facing Up to the Problem of Consciousness,' 1995) distinguishes the 'easy problems' (explaining cognitive functions) from the 'hard problem' (explaining why any of it is accompanied by experience). Property dualism is one way of taking the gap seriously."
   },
   {
-    "tier": 4,
-    "question": "A philosopher describes the Chinese Room: a person who speaks no Chinese sits in a room following an enormous rulebook that maps Chinese symbols to other Chinese symbols. From outside the room, the answers look fluent. The philosopher argues: 'The room passes the test but understands nothing.' What does this thought experiment expose?",
-    "answer": "Functionalism faces a syntax/semantics gap -- the room's behavior matches a Chinese speaker's, yet symbol-shuffling by itself does not constitute understanding the meaning of the symbols.",
+    "tier": 5,
+    "question": "A defender of strong AI replies to Searle's Chinese Room: 'You're focused on the wrong level. The person inside is one component, like a single neuron. The WHOLE SYSTEM — person plus rulebook plus paper — understands Chinese, though no individual part does.' Which standard reply to Searle is this?",
+    "answer": "The Systems Reply — understanding belongs to the whole room-plus-rulebook system, not to any individual part; pointing out that the person alone does not understand misses the level at which understanding is supposed to occur.",
     "choices": [
-      "Functionalism faces a syntax/semantics gap -- the room's behavior matches a Chinese speaker's, yet symbol-shuffling by itself does not constitute understanding the meaning of the symbols.",
-      "Behaviorism is vindicated -- since the room's behavior is indistinguishable from understanding, behavior is the only honest standard for crediting any system with comprehension at all.",
-      "Eliminative materialism is supported -- 'understanding' is a folk-psychology term with no real referent, so the question of whether the room understands has no determinate answer.",
-      "Type physicalism is too narrow -- only systems made of the same brain-state types as ours could understand, and the room's physical implementation is plainly the wrong stuff entirely."
+      "The Systems Reply — understanding belongs to the whole room-plus-rulebook system, not to any individual part; pointing out that the person alone does not understand misses the level at which understanding is supposed to occur.",
+      "The Robot Reply — the room would understand if embedded in a robot body with sensors and actuators; the case shows only that disembodied symbol-shuffling is insufficient for genuine grasp of meaning.",
+      "The Brain Simulator Reply — the room would understand if its rulebook simulated a real Chinese speaker's neuron-by-neuron brain activity, in which case the relevant biological process is present in formal guise.",
+      "The Other Minds Reply — we credit other humans with understanding only on behavioral grounds, so denying the room understanding on the same grounds would commit us to denying it of every speaker except ourselves."
     ],
-    "context": "John Searle's 'Minds, Brains, and Programs' (1980) introduces the Chinese Room to argue that syntax (symbol manipulation) is not sufficient for semantics (meaning / understanding). Searle's positive view is 'biological naturalism': only the right kind of biology yields semantic content."
+    "context": "John Searle anticipated four major replies in 'Minds, Brains, and Programs' (1980): the Systems Reply (Berkeley), the Robot Reply (Yale), the Brain Simulator Reply (Berkeley and MIT), and the Other Minds Reply. Searle answered each in turn; the Systems Reply remains the most widely defended of the four."
   },
   {
     "tier": 4,
@@ -7404,100 +7404,100 @@
     "context": "Frank Jackson's 'Epiphenomenal Qualia' (1982) presents Mary's Room as the knowledge argument against physicalism. The pro-physicalist 'ability hypothesis' (Lewis, Nemirow) is option B. Jackson himself later moved away from the argument, but the case remains a central debate."
   },
   {
-    "tier": 4,
-    "question": "A seminar discusses philosophical zombies: a being physically identical to you down to the last neuron, behaving exactly as you do, but with no inner experience at all. A guest argues: 'Even if no such being could exist, it seems coherently CONCEIVABLE -- and that alone says something important.' What does the zombie case expose?",
-    "answer": "Phenomenal facts are not entailed by physical facts -- if zombies are coherently conceivable, the physical story leaves consciousness undetermined, which counts against type physicalism.",
+    "tier": 5,
+    "question": "A physicalist replies to Chalmers's zombie argument: 'Conceivability is not a reliable guide to possibility. People once conceived water that is not H2O — and were wrong. Coherent conceivability is no proof of metaphysical possibility.' Which reply to the zombie argument is this?",
+    "answer": "Conceivability does not entail possibility — Kripkean a posteriori necessity (water = H2O is necessary but knowable only empirically) blocks Chalmers's premise.",
     "choices": [
-      "Phenomenal facts are not entailed by physical facts -- if zombies are coherently conceivable, the physical story leaves consciousness undetermined, which counts against type physicalism.",
-      "Conceivability tracks possibility unreliably -- we can conceive impossible things (water not H2O), so zombie-conceivability does not show consciousness is metaphysically extra.",
-      "Eliminative materialism is the natural conclusion -- once 'phenomenal experience' allows such bizarre cases, we should suspect the category is incoherent and drop it from theory.",
-      "Functionalism is supported -- since the zombie functions exactly as you do, it must be in the same mental states, so 'no inner experience' is just a contradiction in terms here."
+      "Conceivability does not entail possibility — Kripkean a posteriori necessity (water = H2O is necessary but knowable only empirically) blocks Chalmers's premise.",
+      "Zombies are conceptually incoherent — anything functionally identical to a conscious being must be conscious; the case is a hidden contradiction.",
+      "Phenomenal facts are over and above physical facts — Chalmers's zombie argument succeeds, refuting type physicalism in one step.",
+      "Functionalism is vindicated — once we explain cognitive functions, no consciousness-extra remains to explain; the zombie case asks about a non-thing."
     ],
-    "context": "David Chalmers (The Conscious Mind, 1996) uses the zombie argument: zombies are conceivable, so possible, so physical facts do not entail phenomenal facts, so physicalism is false. The standard reply (Dennett, Yablo) is option B -- conceivability is a weak guide to possibility."
+    "context": "The Kripkean conceivability-vs-possibility reply (Yablo 1993; Stoljar 2006; Dennett) is the leading physicalist response to Chalmers. Saul Kripke (Naming and Necessity, 1980) argued necessary identities can be discovered empirically — so coherent conceivability of their failure is no proof those failures are possible. Chalmers's reply (2002) refines the conceivability premise to dodge this objection."
+  },
+  {
+    "tier": 5,
+    "question": "A functionalist replies to inverted-spectrum cases: 'If the supposed inverts share every functional relation — same effects of red light on heart rate, sweating, aesthetic ratings — then there IS no fact about which one inverts. Talk of an inner 'what-it-is-like' that floats free of every functional relation is talk about nothing.' Which reply is this?",
+    "answer": "Verificationist / eliminative reply — without any functional or behavioral difference, there is no fact of inversion; the alleged phenomenal residue is a non-existent entity.",
+    "choices": [
+      "Verificationist / eliminative reply — without any functional or behavioral difference, there is no fact of inversion; the alleged phenomenal residue is a non-existent entity.",
+      "Type physicalist reply — the brain states of the supposed inverts would necessarily differ; the scenario is incoherent at the physical level and not genuinely possible.",
+      "Higher-order reply — what makes a quale the quale it is depends on its higher-order representation; identical functional roles guarantee identical qualia.",
+      "Property-dualist reply — the case shows qualia and functional roles can diverge, so any role-based theory is incomplete; consciousness is more than function."
+    ],
+    "context": "Inverted-spectrum cases (Locke, Essay II.32; Shoemaker 1981; Block 1990) are the canonical pressure on functionalism. The eliminative reply (Dennett, 'Quining Qualia,' 1988) takes Wittgensteinian aim at the supposed phenomenal residue: if no functional or behavioral test could discriminate the inverts, the alleged phenomenal difference is a fiction."
   },
   {
     "tier": 4,
-    "question": "On a philosophy of mind panel, a guest describes inverted spectrum: two people raised identically, both calling fire engines 'red' and grass 'green' -- but one inwardly experiences what the other would call green when looking at fire, and vice versa. No behavior would distinguish them. What does the thought experiment expose?",
-    "answer": "Functional role does not fully fix phenomenal character -- two systems can be functionally identical yet differ in what their inner experiences are LIKE; this counts against functionalism.",
+    "question": "Jackson's Mary has lived her life in a black-and-white room. She knows every physical fact about wavelengths and neural responses to red. The day she leaves the room and sees a red rose, she says: 'Oh — so THIS is what red is like.' What does the Mary case expose?",
+    "answer": "The knowledge argument — physical knowledge does not include phenomenal knowledge; learning what red LOOKS like is gaining a fact no complete physical description contained.",
     "choices": [
-      "Functional role does not fully fix phenomenal character -- two systems can be functionally identical yet differ in what their inner experiences are LIKE; this counts against functionalism.",
-      "Behaviorism is vindicated -- since no behavior would distinguish the two, there is no genuine fact about which inverts, and the case is best dissolved as a pseudo-question entirely.",
-      "Type physicalism handles the case -- the brain states would be identical by stipulation, so the inverts are impossible, and the conceivability of inversion is just confused intuition.",
-      "Eliminative materialism is supported -- 'what experience is like' relies on a folk category with no scientific anchor, so the case shows the category should be abandoned, not puzzled."
+      "The knowledge argument — physical knowledge does not include phenomenal knowledge; learning what red LOOKS like is gaining a fact no complete physical description contained.",
+      "The ability hypothesis — Mary gains new abilities (to imagine, recognize, remember red) rather than new facts; the case shows know-how, not new propositional knowledge.",
+      "The acquaintance reply — Mary gains a new mode of access to a fact she already knew; the fact is the same, only the way of grasping it is new.",
+      "Eliminative materialism — 'what red looks like' is a folk-psychology category mature neuroscience will dissolve; the case shows the category fails."
     ],
-    "context": "Inverted spectrum cases (Locke, Essay II.32; Sydney Shoemaker 1981; Ned Block 1990) press the gap between functional role and phenomenal quale. The case is meant to show that two systems could share all functional and behavioral properties yet differ phenomenally."
+    "context": "Frank Jackson's 'Epiphenomenal Qualia' (1982) introduced Mary's room as the knowledge argument against physicalism. Jackson himself later (1998) abandoned the argument in favor of physicalism — the ability hypothesis (Lewis, Nemirow) was one of the considerations that moved him. Nagel's bat (1974) is in the same family of anti-reductive thought experiments."
   },
   {
     "tier": 4,
-    "question": "Thomas Nagel asks: what is it like to be a bat? Bats navigate by sonar -- a sense we lack. On a podcast, a guest summarizes Nagel: 'We can describe the bat's neurology completely and STILL not know what its experience is like from the inside. The subjective is missed by the objective story.' Which view does the guest defend?",
-    "answer": "Property dualism / irreducibility of the subjective -- phenomenal character (the what-it-is-likeness) is a property not captured by any third-person physical description of the system.",
+    "question": "Ned Block's 'China brain' thought experiment: imagine a billion Chinese citizens coordinated via radios so they collectively realize the functional pattern of a human brain. A functionalist must say: the whole nation has a unified mind. Block argues this is absurd. Which view is Block's argument supporting against functionalism?",
+    "answer": "Type physicalism with the absent-qualia worry — mental states are identical to specific brain-state types; functionalism's promiscuous realizability lets in systems we would not credit with minds.",
     "choices": [
-      "Property dualism / irreducibility of the subjective -- phenomenal character (the what-it-is-likeness) is a property not captured by any third-person physical description of the system.",
-      "Higher-order theory -- consciousness is a state's being the object of a higher-order representation; the bat is unknowable to us because we lack the higher-order access to its states.",
-      "Functionalism -- mental states are individuated by functional roles; we can in principle simulate the bat's functional architecture and thereby gain full access to what its experience is.",
-      "Eliminative materialism -- 'what it is like' relies on folk-psychological intuitions mature neuroscience will discard; the bat case poses no problem once the category is dropped."
+      "Type physicalism with the absent-qualia worry — mental states are identical to specific brain-state types; functionalism's promiscuous realizability lets in systems we would not credit with minds.",
+      "Behaviorism — mental-state talk reduces to behavioral dispositions; the functionalist's appeal to inner architecture imports unneeded ontology over and above the dispositions.",
+      "Property dualism — functional roles can be filled by physically identical systems that differ phenomenally; this counts against functionalism but for non-physical properties, not type physicalism.",
+      "Eliminative materialism — 'pain' is a folk-psychology term mature neuroscience will discard; the dispute between functionalism and rivals presupposes a category that may not survive theory."
     ],
-    "context": "Thomas Nagel's 'What Is It Like to Be a Bat?' (1974) argues that the subjective character of experience cannot be captured by any objective, third-person account. The paper is an ancestor of Chalmers's hard problem and of property dualism more broadly."
+    "context": "Ned Block's 'Troubles with Functionalism' (1978) introduced the 'China brain' or 'nation of China' thought experiment: a billion Chinese citizens coordinated via radios could in principle realize the functional pattern of a human brain. Block argued it is implausible to credit the population with a unified mind, which counts against functionalism's promiscuous realizability."
   },
   {
-    "tier": 4,
-    "question": "A cognitive scientist argues on a podcast: 'Pain is not just a particular brain state. An octopus, a human, and a hypothetical silicon-based alien could all be in pain -- what makes a state pain is what it DOES, the role it plays in the creature's life, not what it is made of.' Which view of mind is the cognitive scientist defending?",
-    "answer": "Functionalism -- mental states are individuated by causal-functional role (inputs, outputs, internal transitions); the same role can be 'realized' in many different physical substrates.",
+    "tier": 5,
+    "question": "A defender of strong AI replies to Searle: 'You say only the right BIOLOGY could be conscious — but that's the old vitalist claim that only the right BIOLOGY could be alive, refuted by chemistry. You give consciousness the same special status with no better evidence.' Which standard objection is this?",
+    "answer": "The neo-vitalism objection — biological naturalism marks consciousness as substrate-specific in the way vitalism marked life; chemistry refuted vitalism and consciousness deserves no different fate.",
     "choices": [
-      "Functionalism -- mental states are individuated by causal-functional role (inputs, outputs, internal transitions); the same role can be 'realized' in many different physical substrates.",
-      "Type physicalism -- every mental-state type is identical to a particular brain-state type; pain in octopus and human cannot be 'the same' state since their brains differ in their type.",
-      "Behaviorism -- mental-state talk reduces to talk of behavioral dispositions; pain is just the disposition to wince and avoid, with no inner functional architecture doing extra work.",
-      "Biological naturalism -- only certain biological systems (specifically, brains of the right sort) can have mental states; silicon-based aliens could not be in pain on this account."
+      "The neo-vitalism objection — biological naturalism marks consciousness as substrate-specific in the way vitalism marked life; chemistry refuted vitalism and consciousness deserves no different fate.",
+      "The systems objection — Searle's Chinese Room tacitly assumes understanding belongs to the person not the system; his rejection of strong AI rests on a level-mistake.",
+      "The phenomenal-only objection — biological naturalism handles function but cannot explain phenomenal consciousness; it inherits the hard problem without solving it.",
+      "The eliminativist objection — 'consciousness' is a folk-psychology category neuroscience will replace; biological naturalism doubles down on a category that may not survive."
     ],
-    "context": "Functionalism (Hilary Putnam 1967; Jerry Fodor 1968) was motivated by multiple realizability: the same psychological state can be 'realized' in different physical systems. The view dominated philosophy of mind for decades; Chalmers, Searle, and Block press different challenges."
+    "context": "Searle's biological naturalism (The Rediscovery of the Mind, 1992) holds consciousness is a biological feature of the right kind of brain, not a substrate-independent computational pattern. Critics from Daniel Dennett onward press the neo-vitalism analogy: vitalism said only 'organic' chemistry could be alive, and was refuted. Why should consciousness be any different?"
   },
   {
-    "tier": 4,
-    "question": "On a panel, John Searle's position is summarized: 'Consciousness is a biological phenomenon, like digestion or photosynthesis. Real brains made of real neurons cause it. A computer running the same program would not literally be conscious, any more than a simulation of a storm is a real storm.' Which view is being summarized?",
-    "answer": "Biological naturalism -- consciousness is a biological feature of certain physical systems (brains) and cannot be replicated by a system merely implementing the same program elsewhere.",
+    "tier": 5,
+    "question": "A philosopher replies to Churchland: 'Saying BELIEF will be eliminated from mature theory is self-undermining — to ASSERT eliminative materialism is to express a BELIEF in it and invite the audience to BELIEVE. The view cannot be coherently asserted; the very act presupposes the category it asks us to eliminate.' Which objection is this?",
+    "answer": "The self-refutation objection — assertion and belief are themselves folk-psychological categories, so any claim that 'folk psychology is eliminable' tacitly relies on the categories it claims will be eliminated.",
     "choices": [
-      "Biological naturalism -- consciousness is a biological feature of certain physical systems (brains) and cannot be replicated by a system merely implementing the same program elsewhere.",
-      "Functionalism -- mental states are fixed by functional role, not physical substrate; any system implementing the right program will have the same mental states a brain has by stipulation.",
-      "Property dualism -- consciousness is a non-physical property arising wherever certain physical conditions are met; substrate is irrelevant so long as the right functional conditions hold.",
-      "Eliminative materialism -- 'consciousness' is folk psychology that mature neuroscience will replace; substrate-dependence presupposes a category that will not survive mature theory."
+      "The self-refutation objection — assertion and belief are themselves folk-psychological categories, so any claim that 'folk psychology is eliminable' tacitly relies on the categories it claims will be eliminated.",
+      "The empirical-track-record objection — folk psychology has predicted human behavior reliably for millennia; no theory with such a track record has ever been eliminated rather than reduced.",
+      "The reductive alternative — folk categories should be REDUCED to neural-state types rather than eliminated; their predictive success suggests they pick out real kinds at a higher level.",
+      "The phenomenal residue — even if propositional attitudes are eliminable, qualia remain; eliminative materialism leaves the hard problem of consciousness untouched."
     ],
-    "context": "John Searle (The Rediscovery of the Mind, 1992) defends biological naturalism: consciousness is caused by and realized in brain processes, and not by 'computation' per se. The view rejects both substance dualism and any form of functionalism that allows substrate-independence."
+    "context": "The self-refutation objection (Lynne Rudder Baker, Saving Belief 1987; Jerry Fodor) is the most influential critique of eliminative materialism. Churchland's reply: future neuroscience will provide a successor concept for belief-and-assertion, just as chemistry provided successors to phlogiston-talk. The dispute remains live."
   },
   {
-    "tier": 4,
-    "question": "A class debates Paul Churchland. One student summarizes: 'Beliefs, desires, hopes, fears -- these are categories of folk psychology, an old theory we use to predict each other. As neuroscience matures, those categories will be replaced by brain-level ones, much as caloric and phlogiston were dropped.' What view is this?",
-    "answer": "Eliminative materialism -- folk-psychological categories (belief, desire, feeling) form a defective theory mature neuroscience will replace; the categories will be eliminated, not reduced.",
+    "tier": 5,
+    "question": "A first-order theorist objects to higher-order theory: 'If a state is conscious only when it is the OBJECT of a higher-order state, then the higher-order state itself must either be unconscious — in which case consciousness is built from unconscious parts you have not explained — or itself conscious, requiring yet another higher-order state, and so on.' Which objection is this?",
+    "answer": "The regress objection — every higher-order state requires a further higher-order representation; stopping the regress concedes consciousness is built from the non-conscious, unexplained.",
     "choices": [
-      "Eliminative materialism -- folk-psychological categories (belief, desire, feeling) form a defective theory mature neuroscience will replace; the categories will be eliminated, not reduced.",
-      "Reductive type physicalism -- folk-psychological categories are real but identical to brain-state types; mature neuroscience will REDUCE belief and desire to neural states, not eliminate.",
-      "Instrumentalism about belief -- belief talk is a useful predictive stance toward systems but lacks deep metaphysical reality; categories are kept for utility, not dropped from theory.",
-      "Functionalism -- mental states are individuated by causal-functional role; folk psychology captures real functional kinds and survives neuroscience as a higher-level psychological theory."
+      "The regress objection — every higher-order state requires a further higher-order representation; stopping the regress concedes consciousness is built from the non-conscious, unexplained.",
+      "The mismatch objection — empirical cases show first-order representations being conscious without higher-order accompaniment; the theory's empirical predictions about co-occurrence fail repeatedly.",
+      "The phenomenal-character objection — higher-order theories explain WHY a state is conscious but leave UNEXPLAINED what the conscious state is LIKE; the hard problem remains entirely untouched.",
+      "The eliminativist objection — 'consciousness' is a folk-psychology category mature neuroscience will eliminate; the higher-order dispute presupposes a category that may not survive theory."
     ],
-    "context": "Paul and Patricia Churchland (Paul Churchland, 'Eliminative Materialism and the Propositional Attitudes,' 1981) argue that folk psychology is a theory, and a poor one. The standard rivals are reductive physicalism (option A reducing rather than eliminating) and instrumentalism (Dennett)."
+    "context": "The regress objection to higher-order theories was pressed by John Searle and Fred Dretske. Rosenthal's reply allows that the higher-order state itself can be unconscious — only when itself the object of a yet-further higher-order representation does it become conscious. Critics worry this concedes the central explanatory burden."
   },
   {
-    "tier": 4,
-    "question": "On a podcast on consciousness, a guest argues: 'A mental state is conscious not because of anything intrinsic to it, but because it is the object of another, higher-order state that REPRESENTS it. When you become aware of your headache, what makes that pain conscious is your awareness of having it.' Which view of consciousness is this?",
-    "answer": "Higher-order theory -- a mental state is conscious when, and only when, suitably represented by a distinct higher-order state (a thought about, or perception of, the lower-order state).",
+    "tier": 5,
+    "question": "A philosopher objects to Tononi's IIT: 'It predicts a large 2D grid of XOR gates would be MORE conscious than you are — and that a brain SIMULATED in a computer would be UNCONSCIOUS while functionally identical to a real brain. These are absurd, and a theory whose own predictions diverge so sharply from any independent evidence should be doubted.' Which objection is this?",
+    "answer": "The absurd-predictions objection — IIT yields predictions (XOR grids conscious; functional brain simulations not) that diverge sharply from common sense and any independent evidence we have.",
     "choices": [
-      "Higher-order theory -- a mental state is conscious when, and only when, suitably represented by a distinct higher-order state (a thought about, or perception of, the lower-order state).",
-      "First-order intrinsicalism -- a state is conscious in virtue of intrinsic features of the state itself; nothing more is needed beyond the state's phenomenal character to make it conscious.",
-      "Functionalism (broad) -- a state is conscious in virtue of its overall functional role in cognition; higher-order representation is one role among several, not the constitutive feature.",
-      "Eliminative materialism -- 'conscious' is a folk-psychology term future neuroscience will discard; what makes a state conscious presupposes a category that will not survive mature theory."
+      "The absurd-predictions objection — IIT yields predictions (XOR grids conscious; functional brain simulations not) that diverge sharply from common sense and any independent evidence we have.",
+      "The eliminativist objection — 'consciousness' is a folk-psychology category neuroscience will replace; tying it to a mathematical quantity buys into a category that may not survive theory.",
+      "The functionalist objection — Tononi identifies consciousness with a structural property of any physical system, but consciousness is individuated by functional role, not integrated information.",
+      "The biological-naturalist objection — consciousness is a biological brain feature; treating it as a substrate-independent information-theoretic measure ignores the substrate dependence."
     ],
-    "context": "Higher-order theories (David Rosenthal 1986, 'Two Concepts of Consciousness'; Peter Carruthers 2000) hold that a state is conscious iff it is represented by a higher-order state. First-order theorists (Dretske, Tye) deny this -- consciousness is intrinsic to the right first-order state."
-  },
-  {
-    "tier": 4,
-    "question": "A neuroscientist on a podcast describes Giulio Tononi: 'Consciousness is integrated information -- the quantity called phi. A system is conscious to the extent that its parts together carry more information than the parts considered separately. On this view, even a thermostat has a tiny flicker of consciousness.' What view is this?",
-    "answer": "Integrated information theory (IIT) -- consciousness IS integrated information (phi); any physical system with positive phi is conscious to that degree, so consciousness comes in degrees.",
-    "choices": [
-      "Integrated information theory (IIT) -- consciousness IS integrated information (phi); any physical system with positive phi is conscious to that degree, so consciousness comes in degrees.",
-      "Functionalism -- consciousness consists in the functional roles a system's states play; a thermostat lacks the rich functional architecture associated with mind, so it is unconscious.",
-      "Biological naturalism -- consciousness is a feature of biological systems and cannot arise in non-biological devices like thermostats, regardless of any information-theoretic measure.",
-      "Higher-order theory -- a state is conscious iff suitably represented by a higher-order state; a thermostat has no higher-order representations of its own states, so it lacks consciousness."
-    ],
-    "context": "Giulio Tononi's Integrated Information Theory (Phi, 2012; updated versions through 2020s) identifies consciousness with integrated information. The view's panpsychist tendency (positive phi anywhere = some consciousness) is one of the controversial features of the theory."
+    "context": "The absurd-predictions objection to IIT was crystallized by Scott Aaronson ('Why I Am Not An Integrated Information Theorist,' 2014), who showed that simple expander graphs and XOR networks have very high phi by IIT's own definitions. Tononi responded by refining the theory's exclusion postulates, but the objection is widely considered live."
   },
   {
     "tier": 4,
@@ -7536,28 +7536,28 @@
     "context": "Donald Davidson's 'Mental Events' (1970) presents anomalous monism: token physicalism without psychophysical laws. The view tries to keep physicalism while respecting the irreducibility (anomalousness) of the mental as a domain of explanation -- a delicate balance."
   },
   {
-    "tier": 4,
-    "question": "On a philosophy of mind podcast, a guest argues: 'The mind and the body are two distinct substances. The mind is non-physical, indivisible, and capable of existing without the body. The body is physical, extended in space, and divisible. They interact, but they are not the same kind of thing.' Which view of mind is the guest defending?",
-    "answer": "Substance dualism -- the mind is a non-physical substance distinct from the body; mental and physical are two basic kinds of stuff, capable in principle of existing apart from one another.",
+    "tier": 5,
+    "question": "Princess Elisabeth of Bohemia writes to Descartes in May 1643 with the question that would haunt substance dualism for centuries: 'I beg you to tell me how the soul of a man — being only a thinking substance — can determine the bodily spirits to perform voluntary actions.' What objection is she pressing?",
+    "answer": "The interaction problem — if mind is non-physical and body is physical, no coherent mechanism explains how mental events could cause physical motions; dualism postulates causation across a gap it cannot bridge.",
     "choices": [
-      "Substance dualism -- the mind is a non-physical substance distinct from the body; mental and physical are two basic kinds of stuff, capable in principle of existing apart from one another.",
-      "Property dualism -- mental and physical properties are distinct, but one kind of substance (physical) bears both; mental properties do not exist apart from a physical bearer on this view.",
-      "Type physicalism -- mental states ARE brain states under a different description; appeal to a non-physical substance smuggles in an entity for which no evidence has been produced at all.",
-      "Functionalism -- mental states are functional roles realizable in many substrates; treating mind as a special substance confuses high-level functional architecture with basic stuff entirely."
+      "The interaction problem — if mind is non-physical and body is physical, no coherent mechanism explains how mental events could cause physical motions; dualism postulates causation across a gap it cannot bridge.",
+      "The conservation objection — physical conservation laws leave no causal room for non-physical influences on the brain; mental causation would violate physical conservation principles.",
+      "The simplicity objection — substance dualism doubles fundamental kinds without explanatory gain; methodological parsimony favors physicalism wherever a physical account is available.",
+      "The phenomenal-only objection — what dualists actually need is non-physical PROPERTIES of physical substances (property dualism), not a second kind of substance entirely."
     ],
-    "context": "Rene Descartes (Meditations on First Philosophy, 1641) defends substance dualism: res cogitans (thinking substance) and res extensa (extended substance) are distinct kinds. Princess Elisabeth's interaction objection (1643) and contemporary physicalist arguments make the view a minority position today."
+    "context": "Princess Elisabeth of Bohemia's letter of May 6, 1643 (and the five-year correspondence that followed) is the founding statement of the interaction problem. Descartes's responses — the pineal gland, the appeal to mind-body union as a 'primitive notion' — have struck most philosophers as unsatisfying. The problem remains the standard objection to substance dualism."
   },
   {
-    "tier": 4,
-    "question": "On a podcast on consciousness, a guest argues: 'Consciousness IS produced by the brain. But we may be cognitively closed to understanding HOW. Human minds may be the wrong shape to grasp the mind-body link, the way a dog cannot grasp calculus. There is a real answer; we just cannot know it.' Which view is the guest defending?",
-    "answer": "Mysterianism -- consciousness has a natural explanation that human minds are cognitively closed to grasping; the hard problem is real but reflects our limits, not a metaphysical gap.",
+    "tier": 5,
+    "question": "A philosopher objects to McGinn's mysterianism: 'You claim consciousness has a natural explanation we are cognitively closed to grasping. But how could you KNOW that? To claim such closure, you would need exactly the God's-eye view your thesis says we cannot have. The view is self-defeating.' Which objection is this?",
+    "answer": "The self-defeat objection — mysterianism asserts cognitive closure about consciousness; but knowing we are closed to a natural explanation would itself require the kind of knowledge the thesis says we cannot have.",
     "choices": [
-      "Mysterianism -- consciousness has a natural explanation that human minds are cognitively closed to grasping; the hard problem is real but reflects our limits, not a metaphysical gap.",
-      "Eliminative materialism -- 'consciousness' is a folk-psychological category future science will discard; appealing to cognitive closure assumes a category that may not survive mature theory.",
-      "Property dualism -- the gap between physical and phenomenal facts is metaphysical, not epistemic; the puzzle reflects a real feature of reality, not just a limit on human comprehension.",
-      "Functionalism -- consciousness is fully captured by functional architecture, and once we map that architecture there is no further puzzle; the cognitive-closure move is needlessly mysterian."
+      "The self-defeat objection — mysterianism asserts cognitive closure about consciousness; but knowing we are closed to a natural explanation would itself require the kind of knowledge the thesis says we cannot have.",
+      "The empirical-progress objection — neuroscience has made steady progress on consciousness; declaring it beyond human grasp ignores the track record of actual inquiry.",
+      "The dualist objection — if we cannot grasp the mind-body link, we should suspect the link is metaphysically gappy not merely obscure; the case favors property dualism over mysterianism.",
+      "The eliminativist objection — 'consciousness' as posed by mysterianism is a folk-psychology category neuroscience will replace; treating it as unsolvable perpetuates a category that may not survive."
     ],
-    "context": "Colin McGinn ('Can We Solve the Mind-Body Problem?,' 1989; The Problem of Consciousness, 1991) argues for 'transcendental naturalism' or 'new mysterianism': consciousness is natural, but our minds are not equipped to understand it. The view tries to be a third option between physicalism and dualism."
+    "context": "Colin McGinn's mysterianism (Can We Solve the Mind-Body Problem? 1989) draws on Chomsky's distinction between problems (within our cognitive grasp) and mysteries (beyond it). The self-defeat objection was pressed by Owen Flanagan, Daniel Dennett, and others. McGinn's reply: we can know our cognitive faculties are LIMITED without knowing exactly where the limit falls — the way we know color-blind people miss something without knowing what."
   },
   {
     "tier": 4,
@@ -7573,15 +7573,15 @@
   },
   {
     "tier": 4,
-    "question": "On a philosophy podcast, a guest argues: 'Consciousness does not come from nothing. Either it emerges magically at some threshold of complexity, or it is present, in tiny degrees, in the basic constituents of matter. The second is less mysterious -- consciousness is fundamental and ubiquitous, like mass.' Which view of mind is this?",
-    "answer": "Panpsychism -- consciousness is a fundamental and ubiquitous feature of physical reality; complex consciousness in brains is built from the proto-conscious properties of basic constituents.",
+    "question": "A philosopher objects to panpsychism: 'If micro-entities have proto-conscious properties, how do those TINY experiences COMBINE into the unified macro-experience you have looking at a sunset? The unified-experience problem is unsolved — and the view's appeal depends on solving it.' Which objection is this?",
+    "answer": "The combination problem — no panpsychist has explained HOW proto-conscious properties of fundamental constituents combine to yield the unified macro-experience of a single conscious moment.",
     "choices": [
-      "Panpsychism -- consciousness is a fundamental and ubiquitous feature of physical reality; complex consciousness in brains is built from the proto-conscious properties of basic constituents.",
-      "Property dualism with strong emergence -- consciousness appears at certain levels of physical organization, not predictable from lower-level facts; basic matter has no proto-conscious side.",
-      "Eliminative materialism -- 'consciousness' is a folk-psychology category future science will replace; treating it as ubiquitous extends a defective category rather than dissolving it.",
-      "Functionalism -- mental states are functional roles realized by complex architectures; consciousness is not in basic matter but only in systems sophisticated enough to play the right roles."
+      "The combination problem — no panpsychist has explained HOW proto-conscious properties of fundamental constituents combine to yield the unified macro-experience of a single conscious moment.",
+      "The phenomenal-bonding problem — panpsychism conflates physical bonding with experiential bonding; physical forces that hold neurons together cannot also hold proto-experiences together.",
+      "The eliminativist objection — 'experience' is a folk-psychology category neuroscience will eliminate; extending it to fundamental matter doubles down on a fragile category.",
+      "The biological-naturalist objection — consciousness is a feature of brains specifically; locating it at fundamental physics ignores substrate dependence."
     ],
-    "context": "Panpsychism (William James, Bertrand Russell; recently revived by Galen Strawson 2006, Philip Goff, Hedda Hassel Morch) takes consciousness as fundamental to physical reality. The view faces the 'combination problem': how do micro-experiences combine into a unified macro-experience like yours?"
+    "context": "The combination problem was pressed against William James in 1890 by Stumpf, and given modern form by Sam Coleman ('The Combination Problem,' 2014). Galen Strawson, Philip Goff, and Hedda Hassel Morch have proposed solutions (constitutive panpsychism, cosmopsychism, phenomenal bonding) — none yet universally accepted. The problem remains the central challenge for the panpsychist revival."
   },
   {
     "tier": 4,
@@ -7596,16 +7596,16 @@
     "context": "Franz Brentano (Psychology from an Empirical Standpoint, 1874) revived the medieval term 'intentionality' to capture the directedness of mental states toward objects. Naturalizing intentionality (Fodor, Dretske, Millikan) is one of the central projects in contemporary philosophy of mind."
   },
   {
-    "tier": 4,
-    "question": "On a podcast, a guest argues: 'Consciousness is real and non-physical, but it does no work. Your decision to lift your arm FELT like it caused the lift, but the real causation ran through the brain. Mental experience is like steam from a train -- real, but not what is pulling the cars.' Which view of mind is the guest defending?",
-    "answer": "Epiphenomenalism -- mental states are real non-physical effects of brain states but exert no causal influence on the physical world; felt 'because of my decision' is a phenomenal byproduct.",
+    "tier": 5,
+    "question": "A philosopher objects to epiphenomenalism: 'On your view, mental states do no causal work. But then how could BELIEF in epiphenomenalism — itself a mental state — have produced the very book you wrote arguing for it? If your theory is true, your theory could not have caused you to publish it.' Which objection is this?",
+    "answer": "The self-stultification objection — if mental states have no causal power, no belief (including in epiphenomenalism) could have caused the speech-acts asserting it; the view undermines its assertion-conditions.",
     "choices": [
-      "Epiphenomenalism -- mental states are real non-physical effects of brain states but exert no causal influence on the physical world; felt 'because of my decision' is a phenomenal byproduct.",
-      "Property dualism with mental causation -- mental properties are non-physical and DO cause physical effects; denying mental causation would make experience pointless, which this view resists.",
-      "Eliminative materialism -- mental states do not exist as a distinct kind; saying they exist but lack causal power keeps a category future science will discard, which the view rejects.",
-      "Functionalism -- mental states are causal-functional roles by definition; calling them real but inert is contradiction, since 'mental state' just IS being part of a causal architecture."
+      "The self-stultification objection — if mental states have no causal power, no belief (including in epiphenomenalism) could have caused the speech-acts asserting it; the view undermines its assertion-conditions.",
+      "The evolutionary objection — consciousness has been selected for across evolutionary time; this would be impossible if it conferred no causal benefit, so a causally-inert feature could not be entrenched.",
+      "The phenomenal-only objection — what dualists need is non-physical properties WITH causal influence; epiphenomenalism withholds that influence and so undermines what made dualism appealing.",
+      "The eliminativist objection — 'mental states' as posed by epiphenomenalism is a folk-psychology category neuroscience will eliminate; treating them as real-but-inert keeps a fragile category."
     ],
-    "context": "Epiphenomenalism (T.H. Huxley 1874; Frank Jackson 1982 -- before his later move) holds that mental events are caused by physical events but cause nothing themselves. The view faces the 'self-stultifying' worry: if mental states do no work, how could belief in epiphenomenalism have caused this very sentence?"
+    "context": "The self-stultification objection has been pressed against epiphenomenalism since William James (Principles of Psychology, 1890). Frank Jackson, who defended epiphenomenalism in his Mary's-room paper (1982), later abandoned it partly on these grounds. The evolutionary objection (Popper, Eccles) is the second major worry — consciousness's pervasive presence across species would be inexplicable if it did no causal work."
   },
   {
     "tier": 4,
@@ -7993,15 +7993,15 @@
   },
   {
     "tier": 1,
-    "question": "Grandma keeps the no-phones-at-Sunday-dinner rule. She tells her grandkids: 'Four generations have done it this way — that's why it stands.' Which view of authority is Grandma defending?",
-    "answer": "Tradition theory — a rule binds because the family has always lived by it; custom is what makes it valid.",
+    "question": "The senior knight defends the morning-watch rotation: 'The company has kept it for seven generations — that is what binds us. Custom carries knowledge no captain could write in a manual.' Which view is the knight defending?",
+    "answer": "Tradition theory — a rule binds because the group has always lived by it; custom is what makes it valid.",
     "choices": [
-      "Tradition theory — a rule binds because the family has always lived by it; custom is what makes it valid.",
+      "Tradition theory — a rule binds because the group has always lived by it; custom is what makes it valid.",
       "Consent theory — a rule binds those affected because they agreed to it; agreement is what confers it.",
       "Strength theory — a rule binds because those in charge can enforce it; power is what makes it stand.",
-      "Anarchism — no household rule has real authority; obeying is always optional, even when you choose it."
+      "Anarchism — no rule has real authority; obeying is always optional, even when you choose it."
     ],
-    "context": "Conservative political philosophy (Edmund Burke, Roger Scruton) defends inherited custom as a source of authority. Unlike consent theory, which grounds rules in agreement, tradition theory grounds them in accumulated practice."
+    "context": "Tradition theory (Edmund Burke, Reflections on the Revolution in France, 1790; Roger Scruton in our day) defends inherited custom as authority. Long-standing practice carries collective knowledge that no single person could design from scratch. Burke's reply to the Jacobins was exactly this argument."
   },
   {
     "tier": 1,
@@ -8065,7 +8065,7 @@
   },
   {
     "tier": 1,
-    "question": "Older sister Talia defends the no-gifts-on-the-trip family rule: 'It's how our family has traveled for as long as anyone remembers — that's why it stands.' Which view of authority is she defending?",
+    "question": "A clan elder explains the vigil at the standing stones each equinox: 'It is how our people have kept the season as long as anyone remembers. Generations of practice know what we cannot put in words.' Which view is the elder defending?",
     "answer": "Tradition theory — a rule binds because the family has always lived by it; custom is what makes it valid.",
     "choices": [
       "Tradition theory — a rule binds because the family has always lived by it; custom is what makes it valid.",
@@ -8073,7 +8073,7 @@
       "Strength theory — a rule binds because those in charge can enforce it; force itself is what makes it stand.",
       "Authority-by-merit — a rule binds because the wisest member designed it; expert judgment is what confers it."
     ],
-    "context": "Tradition theory holds that long-running customs carry collective wisdom. Burke argued reforms should respect what generations of practice have shown to work, even when no one can fully explain WHY it does."
+    "context": "Burke argued reforms should respect what generations of practice have shown to work, even when no one can fully explain WHY it does. Long-running customs carry collective wisdom — they are 'the latent wisdom that prevails in them' (Reflections, 1790)."
   },
   {
     "tier": 1,
@@ -8089,15 +8089,15 @@
   },
   {
     "tier": 1,
-    "question": "Coach Hill never explains his calls — he just yells them. He tells his team: 'I'm in charge because nobody can argue when the coach is in charge, period.' Which view of authority is Coach defending?",
+    "question": "Thrasymachus faces Socrates with a hard line: 'Justice is the advantage of the stronger. A rule binds because the powerful enforce it. That is the only authority — every other story dresses up force.' Which view is Thrasymachus defending?",
     "answer": "Strength theory — a rule binds only because the powerful can enforce it; force itself is what makes it valid.",
     "choices": [
       "Strength theory — a rule binds only because the powerful can enforce it; force itself is what makes it valid.",
       "Consent theory — a rule binds those affected because they agreed to it; agreement is what gives it force.",
-      "Tradition theory — a rule binds because the team has always lived by it; custom is what makes the rule stand.",
-      "Authority-by-merit — a rule binds because the best-trained adult is the one making the call for the group."
+      "Tradition theory — a rule binds because the group has always lived by it; custom is what makes the rule stand.",
+      "Authority-by-merit — a rule binds because the best-qualified person makes the call for the group."
     ],
-    "context": "Strength theory was Thrasymachus' view in Plato's Republic. Socrates' reply: if might alone made right, then a powerful thief would be just. Genuine authority needs more than the ability to overpower others."
+    "context": "Thrasymachus stated the strength theory in Republic I (Plato, ~380 BC). Socrates' reply was that if might alone made right, a powerful thief would be just — which absurdity refutes the theory. Genuine authority needs more than the ability to overpower others. The exchange has shaped political philosophy for 2,400 years."
   },
   {
     "tier": 1,
@@ -8125,7 +8125,7 @@
   },
   {
     "tier": 1,
-    "question": "Before the sleepover, the four friends sit down and write a list of ground rules together. Mia tells a latecomer: 'We worked these out together — that's why they bind us.' Which view of authority is Mia defending?",
+    "question": "Four pilgrim-knights write a charter together for the journey ahead. The youngest tells a passing monk: 'We worked these rules out together — that is what binds us, not strength, not custom.' Which view is the knight defending?",
     "answer": "Consent theory — a rule binds those affected because they agreed to it; agreement is what makes it valid.",
     "choices": [
       "Consent theory — a rule binds those affected because they agreed to it; agreement is what makes it valid.",
@@ -8133,7 +8133,7 @@
       "Strength theory — a rule binds because those in charge can enforce it; power is what makes it stand.",
       "Authority-by-merit — a rule binds because the best-qualified person designs it; expert judgment confers it."
     ],
-    "context": "Rousseau, in The Social Contract, argued legitimate rule begins when free people deliberate together and agree. The friends' sit-down meeting is the social contract in miniature — agreement creating duty."
+    "context": "Rousseau, in The Social Contract (1762), argued legitimate rule begins when free people deliberate together and agree. The pilgrim-knights' written charter is the social contract in miniature — agreement creating duty. Locke (Second Treatise, 1689) developed the same idea earlier in the natural-rights tradition that shaped the American founding."
   },
   {
     "tier": 1,
@@ -9505,15 +9505,15 @@
   },
   {
     "tier": 1,
-    "question": "Your friend Ana tells you: 'When I felt called at the retreat, that experience itself was the reason I changed — it doesn't need outside backup.' Which view of religious experience is Ana defending?",
+    "question": "After forty days in the desert, an anchorite tells her novice: 'I felt His presence beyond what argument could give me. That experience itself is why I believe — not a step toward the reason.' Which view is the anchorite defending?",
     "answer": "Experientialism — a vivid religious experience itself counts as evidence; the encounter is the reason.",
     "choices": [
       "Experientialism — a vivid religious experience itself counts as evidence; the encounter is the reason.",
       "Evidentialism — feelings alone can't settle religious truth; you need shareable reasons beyond the feeling.",
       "Fideism — religious truth comes by faith alone; demanding evidence misunderstands what faith is.",
-      "Skepticism — religious claims can't be settled either way; arguments and experiences both fall short."
+      "Skepticism — religious claims can't be settled either way; feelings and arguments both fall short."
     ],
-    "context": "Experientialism treats religious experience as analogous to sense perception — defeasible but real. Alston argued the burden of proof falls on the doubter, not the experiencer. Evidentialists put the burden the other way."
+    "context": "Experientialism (William Alston, Perceiving God, 1991) argues some religious experiences function like ordinary perceptions — they justify belief unless we have reason to doubt them. The mystical and monastic traditions across Christianity, Islam (Sufism), and Hinduism (bhakti) all rely on this kind of evidence."
   },
   {
     "tier": 1,
@@ -9529,7 +9529,7 @@
   },
   {
     "tier": 1,
-    "question": "Grandpa tells little Ben: 'I don't believe because I worked it out — I believe because my heart trusts. The reasons aren't really the point of faith.' Which view of faith is Grandpa defending?",
+    "question": "Tertullian writes in 2nd-century Carthage: 'I believe because it is absurd. Faith is not a step in an argument — demanding proof confuses what faith is.' Which view of faith is Tertullian defending?",
     "answer": "Fideism — religious truth comes by faith alone; the demand for proof confuses what faith really is.",
     "choices": [
       "Fideism — religious truth comes by faith alone; the demand for proof confuses what faith really is.",
@@ -9537,11 +9537,11 @@
       "Reasonable faith — religious belief without absolute proof is fine, as it is for many important beliefs.",
       "Pragmatism — what matters is whether the belief actually works in your life, not whether it's proved."
     ],
-    "context": "Kierkegaard's Fear and Trembling defended a fideist reading: faith involves a 'leap' precisely because reasons run out. Aquinas, in contrast, thought reason and faith complement each other rather than oppose."
+    "context": "Tertullian's 'credo quia absurdum' ('I believe because it is absurd') is the founding statement of strong fideism (~200 AD). Kierkegaard developed it in Fear and Trembling (1843): faith involves a 'leap' precisely because reasons run out. Aquinas, in contrast, thought reason and faith complement each other rather than oppose."
   },
   {
     "tier": 1,
-    "question": "In class, Priya says: 'I can't prove my mom loves me the way you'd prove a math problem — that doesn't make my trust silly. Faith in God can work the same way.' Which view of faith is Priya defending?",
+    "question": "Alvin Plantinga argues: 'Belief in God can be properly basic — held without proof, like belief in other minds, memory, or the past. Religious belief need clear no higher bar than these.' Which view is Plantinga defending?",
     "answer": "Reasonable faith — religious belief without absolute proof is fine, as it is for many important beliefs.",
     "choices": [
       "Reasonable faith — religious belief without absolute proof is fine, as it is for many important beliefs.",
@@ -9549,7 +9549,7 @@
       "Fideism — religious truth comes by faith alone; demanding evidence misunderstands what faith is.",
       "Pragmatism — what matters is whether the belief actually works in your life, not whether it's proved."
     ],
-    "context": "Reasonable-faith philosophers (Alvin Plantinga's Reformed Epistemology, Richard Swinburne's cumulative case) argue religious belief can be 'properly basic' — held without proof, like belief in other minds or the past."
+    "context": "Plantinga's Reformed Epistemology (Faith and Rationality, 1983; Warranted Christian Belief, 2000) argues belief in God can be 'properly basic' — held without inference, like belief in other minds. Plantinga drew on Thomas Reid's common-sense philosophy. Strict evidentialists (W. K. Clifford) reject the view."
   },
   {
     "tier": 1,
@@ -9577,7 +9577,7 @@
   },
   {
     "tier": 1,
-    "question": "Older brother Theo tells Aisha: 'A reason that only you can see isn't really a reason — it has to be the kind of thing two people could check.' Which view of religious experience is Theo defending?",
+    "question": "Clifford writes in 1877: 'It is wrong always and everywhere to believe anything on insufficient evidence.' A private feeling cannot settle religious truth — only reasons others can check. Which view is Clifford defending?",
     "answer": "Evidentialism — a private feeling can't settle religious truth; reasons must be the kind others can check.",
     "choices": [
       "Evidentialism — a private feeling can't settle religious truth; reasons must be the kind others can check.",
@@ -9585,11 +9585,11 @@
       "Fideism — religious truth comes by faith alone; demanding evidence misunderstands what faith is.",
       "Pragmatism — what matters is whether the belief actually works in your life, not whether it's proved."
     ],
-    "context": "Evidentialism makes 'shareability' a hard test: what only one person can see may still be true, but it cannot do public work. Many religious thinkers accept the test and offer arguments meant to meet it (Aquinas' Five Ways)."
+    "context": "W. K. Clifford's 'The Ethics of Belief' (1877) is the founding text of strict evidentialism: it is wrong to believe on insufficient evidence. William James's reply in 'The Will to Believe' (1896) is the canonical counter — some beliefs cannot wait for proof and have to be made now. The Clifford-James exchange shapes the contemporary debate over religious epistemology."
   },
   {
     "tier": 1,
-    "question": "Mia tells her dad after a long retreat: 'I know what I felt — it was real to me, and that feeling itself is part of why I believe.' Which view of religious experience is Mia defending?",
+    "question": "A Sufi master in 12th-century Cairo tells his student: 'When in dhikr I came to know Him beyond what argument could give me — that knowing was my reason. The encounter is the ground, not a step toward the ground.' Which view is the master defending?",
     "answer": "Experientialism — a vivid religious experience itself counts as evidence; the encounter is the reason.",
     "choices": [
       "Experientialism — a vivid religious experience itself counts as evidence; the encounter is the reason.",
@@ -9597,11 +9597,11 @@
       "Fideism — religious truth comes by faith alone; demanding evidence misunderstands what faith is.",
       "Skepticism — religious claims can't be settled either way; arguments and experiences both fall short."
     ],
-    "context": "William Alston compared religious experience to seeing colors — neither is sharable in the way a measurement is, but both can be genuinely informative. Skeptics push back that religious experiences vary widely across traditions."
+    "context": "William Alston (Perceiving God, 1991) compared religious experience to seeing colors — neither is sharable in the way a measurement is, but both can be genuinely informative. The view fits the testimony of mystics across traditions: al-Ghazali, Teresa of Avila, John of the Cross, the Hesychasts, the bhakti poets."
   },
   {
     "tier": 1,
-    "question": "Aiden asks his older cousin why God lets bullies be cruel. The cousin says: 'If God blocked every wrong choice, no one would really be free to choose.' Which view is the cousin defending?",
+    "question": "Augustine writes: 'God could have made beings who could not sin — but they would not really CHOOSE the good. Real freedom needs the real possibility of going wrong.' Which response is Augustine defending?",
     "answer": "Free-will defense — God permits human freedom; without the real possibility of wrong, freedom isn't real.",
     "choices": [
       "Free-will defense — God permits human freedom; without the real possibility of wrong, freedom isn't real.",
@@ -9609,11 +9609,11 @@
       "Skeptical theism — humans lack the perspective to judge whether God has any reason for a given hardship.",
       "Atheist reply — the cruelty is evidence no good God exists; a good God would not allow this kind of harm."
     ],
-    "context": "Augustine framed the free-will defense in the fourth century; Plantinga gave its sharpest modern form. It's a 'defense' not a 'theodicy' — it shows belief is logically possible, not that we can name God's actual reasons."
+    "context": "Augustine framed the free-will defense in the 5th century (City of God; On the Free Choice of the Will). Alvin Plantinga gave its sharpest modern form in God, Freedom, and Evil (1974). It is a 'defense' not a 'theodicy' — it shows belief is logically possible, not that we can name God's actual reasons for any given evil."
   },
   {
     "tier": 1,
-    "question": "Cousin Diego tells his uncle: 'I can't prove what I believe — but praying every morning has kept me sober for two years. That outcome is reason enough for me.' Which view of faith is Diego defending?",
+    "question": "William James writes in 1896: 'I cannot prove the worth of my faith by logic. But it has shaped my life — my work, my students, my choices at hard hours. That outcome is reason enough.' Which view is James defending?",
     "answer": "Pragmatic faith — what matters is whether the belief actually shapes your life for the better, not proof.",
     "choices": [
       "Pragmatic faith — what matters is whether the belief actually shapes your life for the better, not proof.",
@@ -9621,7 +9621,7 @@
       "Experientialism — some religious experiences themselves count as evidence; the encounter is the reason.",
       "Skepticism — religious claims can't be settled either way; arguments and experiences both fall short."
     ],
-    "context": "James argued some beliefs are 'live, forced, and momentous' — you can't wait for proof, because not deciding is itself a decision. AA's Twelve-Step tradition leans pragmatic: a 'Higher Power' is described by what it does."
+    "context": "William James (The Will to Believe, 1896) argued some beliefs are 'live, forced, and momentous' — you cannot wait for proof, because not deciding is itself a decision. James's pragmatism is the founding statement of the view. Critics (W. K. Clifford) reply that pragmatic usefulness and truth can come apart in important cases."
   },
   {
     "tier": 2,

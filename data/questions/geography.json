@@ -2761,15 +2761,15 @@
   },
   {
     "tier": 3,
-    "question": "A regional weather pattern over the South Atlantic Ocean steers severe drought into northeast Brazil while the western Amazon floods. The pattern shifts when ocean temperatures slightly change. Researchers call this dipole the South Atlantic equivalent of El Nino. What name does it carry?",
+    "question": "A regional weather pattern over the equatorial Atlantic Ocean steers severe drought into northeast Brazil while the western Amazon floods. The pattern shifts when ocean temperatures change by a fraction of a degree. Researchers call this dipole the South Atlantic equivalent of El Niño. What name does it carry?",
+    "answer": "The Atlantic Equatorial Mode — a Pacific El Niño analog with weaker but real Atlantic impacts",
     "choices": [
-      "The Atlantic Multidecadal Oscillation — a long-period SST pattern affecting Atlantic hurricane activity",
+      "The Atlantic Equatorial Mode — a Pacific El Niño analog with weaker but real Atlantic impacts",
       "The Tropical Atlantic Meridional Mode — a north-south SST dipole shifting the ITCZ across the Atlantic",
-      "The Atlantic Equatorial Mode — a Pacific El Nino analog with weaker but real Atlantic impacts",
+      "The Atlantic Multidecadal Oscillation — a 50-80 year SST pattern affecting Atlantic hurricane activity",
       "The South Atlantic Convergence Zone — a stationary cloud band over Brazil during austral summer rains"
     ],
-    "answer": "The Atlantic Multidecadal Oscillation — a long-period SST pattern affecting Atlantic hurricane activity",
-    "context": "The Atlantic Equatorial Mode (sometimes called Atlantic Nino) is a SST dipole in the equatorial Atlantic — weaker than ENSO but real. It modulates northeast Brazilian drought, West African monsoon timing, and Sahel rainfall. Its weaker amplitude reflects the Atlantic's smaller basin."
+    "context": "The Atlantic Equatorial Mode (sometimes called Atlantic Niño) is an SST dipole in the equatorial Atlantic — weaker than ENSO but real. It modulates northeast Brazilian drought, West African monsoon timing, and Sahel rainfall. Its weaker amplitude reflects the Atlantic's smaller basin. The AMO (distractor 3) operates on a 50-80 year timescale in the North Atlantic — a different phenomenon. The Meridional Mode and the SACZ describe other Atlantic features."
   },
   {
     "tier": 3,
@@ -3529,15 +3529,15 @@
   },
   {
     "tier": 5,
-    "question": "An old meteorological term, the 'whoodogeddon,' has resurfaced — describing a North Atlantic storm system explosively deepening at 24 mb/24 h or faster. The threshold is called a 'meteorological bomb.' What single dynamical condition is necessary for a bomb cyclone?",
+    "question": "Frederick Sanders and John Gyakum coined the term 'bombogenesis' in 1980 for a North Atlantic storm system explosively deepening at 24 millibars in 24 hours or faster. The threshold defines a 'bomb cyclone' or 'meteorological bomb.' What single dynamical condition is necessary for a bomb cyclone to form?",
+    "answer": "Strong upper-tropospheric jet stream divergence over a developing surface low pumps air out of the storm column, lowering surface pressure rapidly",
     "choices": [
-      "Strong upper-tropospheric jet stream divergence over a developing surface low pumps air out of the storm column, lowering pressure rapidly",
-      "Weak upper-tropospheric jet stream divergence over a developing surface low traps air in the storm column, lowering pressure rapidly",
-      "Strong stratospheric warming over the polar vortex pulls air upward through the storm column, lowering pressure rapidly",
-      "Weak stratospheric warming over the polar vortex pushes air downward into the storm column, lowering pressure rapidly"
+      "Strong upper-tropospheric jet stream divergence over a developing surface low pumps air out of the storm column, lowering surface pressure rapidly",
+      "Weak upper-tropospheric jet stream divergence over a developing surface low traps air in the storm column, lowering surface pressure rapidly",
+      "Strong stratospheric warming over the polar vortex pulls air upward through the storm column, lowering surface pressure rapidly",
+      "Weak stratospheric warming over the polar vortex pushes air downward into the storm column, lowering surface pressure rapidly"
     ],
-    "answer": "Strong upper-tropospheric jet stream divergence over a developing surface low pumps air out of the storm column, lowering pressure rapidly",
-    "context": "Bomb cyclone (or bombogenesis, Sanders and Gyakum 1980) requires central pressure to drop 24 mb in 24 hours at 60 N. The mechanism: strong upper-tropospheric divergence (especially in the left exit region of a jet stream) pumps mass out of the column above a surface low, dropping surface pressure rapidly. The 1978 New England Blizzard is a textbook case."
+    "context": "Bombogenesis (Sanders and Gyakum, Monthly Weather Review 1980) requires central pressure to drop 24 mb in 24 hours at 60° N (the threshold scales with latitude via sin(lat)/sin(60°)). The mechanism: strong upper-tropospheric divergence — especially in the left exit region of a jet streak — pumps mass out of the column above a surface low, dropping surface pressure rapidly. The 1978 New England Blizzard, the 1993 Storm of the Century, and the 2018 Bomb Cyclone are textbook cases. Bomb cyclones are common over the Gulf Stream where strong SST gradients provide the baroclinicity to fuel the system."
   },
   {
     "tier": 1,
@@ -3877,15 +3877,15 @@
   },
   {
     "tier": 2,
-    "question": "On a remote volcanic island in Japan, a small village sits inside an active volcano's caldera — and inside that caldera is a smaller volcano. Fewer than 200 people live there; ferries depend on weather. Which island?",
+    "question": "On Aogashima — a tiny volcanic island 358 km south of Tokyo with fewer than 200 residents — the entire village sits inside the outer caldera, with a smaller volcano cone rising right next to the houses. The villagers use the geothermal heat for something every day. What do they use it for?",
+    "answer": "Salt-steamed saunas and ground-pit ovens that cook food slowly using the volcano's heat",
     "choices": [
-      "Aogashima — a double-caldera volcanic island 358 km south of Tokyo in the Philippine Sea",
-      "Hachijojima — a twin-peak volcanic island 287 km south of Tokyo in the Philippine Sea region",
-      "Miyakejima — a single-cone volcanic island 180 km south of Tokyo in the Izu chain regularly active",
-      "Iwo Jima — a sulfur-rich volcanic island 1,200 km south of Tokyo, famous for WWII battle 1945"
+      "Salt-steamed saunas and ground-pit ovens that cook food slowly using the volcano's heat",
+      "Bathhouses heated by piped hot spring water carried up from a coastal vent only",
+      "Sulfur extraction sold to the Japanese mainland through quarterly cargo helicopter runs",
+      "Geothermal electricity that supplies the whole island and is exported by undersea cable"
     ],
-    "answer": "Aogashima — a double-caldera volcanic island 358 km south of Tokyo in the Philippine Sea",
-    "context": "Aogashima is the southernmost inhabited Izu island. The outer caldera is ~2 km wide; the inner cone (Maruyama) last erupted 1781-85. ~170 residents; reachable by helicopter or weather-dependent ferry. Saunas use the volcano's steam."
+    "context": "Aogashima is the southernmost inhabited Izu island. The outer caldera (~2 km wide) was carved by an eruption that killed half the population in 1785. The inner cone (Maruyama) last erupted 1781-85. About 170 residents remain. The island's geothermal steam vents feed salt-water saunas and ground ovens (called 'fumarole cooking') — slow-cooking meat and root vegetables overnight in the steam. Reachable only by helicopter or weather-dependent ferry; ferries are cancelled roughly half the year due to swell."
   },
   {
     "tier": 2,
@@ -4729,15 +4729,15 @@
   },
   {
     "tier": 2,
-    "question": "The Suez Canal cuts through Egypt, between the Mediterranean and the Red Sea, with no locks because both seas sit at roughly the same elevation. A ship sailing from London to Mumbai through Suez instead of around Africa saves about how much distance?",
+    "question": "The Suez Canal in Egypt links the Mediterranean and Red Sea. When Nasser closed it in 1967 by sinking blockships, 14 cargo ships from eight different nations were already inside and got trapped. The crews stayed aboard for 8 years as desert dust turned everything yellow. What did the world come to call them?",
+    "answer": "The Yellow Fleet — fourteen ships trapped together in the Bitter Lakes from 1967 to 1975",
     "choices": [
-      "About 6,000 nautical miles — roughly two weeks of steaming time at typical speeds",
-      "About 1,500 nautical miles — a small but useful saving for tightly scheduled cargo runs",
-      "About 12,000 nautical miles — more than half the total distance from London to Mumbai",
-      "About 500 nautical miles — a modest gain compared to the southern route's huge length"
+      "The Yellow Fleet — fourteen ships trapped together in the Bitter Lakes from 1967 to 1975",
+      "The Ghost Fleet — fourteen abandoned ships finally salvaged for scrap during the 1980s",
+      "The Stranded Fleet — fourteen ships that flooded and sank under desert sandstorms",
+      "The Egyptian Fleet — fourteen ships seized by Nasser as compensation for the war"
     ],
-    "answer": "About 6,000 nautical miles — roughly two weeks of steaming time at typical speeds",
-    "context": "The Suez Canal (opened 1869, Ferdinand de Lesseps) shortens London-Mumbai from ~10,800 nautical miles via the Cape of Good Hope to ~6,300 via Suez — roughly a 6,000-mile cut. Tolls are a major source of Egyptian revenue. Closures (1956, 1967-75) reshape global shipping."
+    "context": "When the Six-Day War began on 5 June 1967, Egypt sank blockships in the canal and 14 cargo vessels were stranded in the Great Bitter Lake. The crews rotated home but skeleton watches stayed aboard for eight years. They formed the Great Bitter Lake Association — their own postal service, soccer matches between ship crews, Olympic-style games on Polish freighter Jakarta in 1968. Desert dust coated the ships yellow. The canal reopened 1975; only the German ships Münsterland and Nordwind sailed out under their own power. Suez normally shortens London-Mumbai from ~10,800 to ~6,300 nautical miles."
   },
   {
     "tier": 2,
@@ -6120,16 +6120,16 @@
     "context": "Henry the Navigator (1394-1460) founded the school at Sagres in Portugal. His captains rounded Cape Bojador (1434) and pushed steadily south, laying the groundwork for Dias (1488) and da Gama (1498)."
   },
   {
-    "tier": 1,
-    "question": "In January 1960 two men crammed into a steel ball under a Swiss submersible called Trieste and dropped 11 km straight down — to the deepest point on Earth, west of Guam. What is that deep point called?",
+    "tier": 2,
+    "question": "In January 1960 two men crammed into a steel ball under a Swiss engineer's bathyscaphe and descended seven miles to the deepest spot in the ocean - the Challenger Deep at the Mariana Trench. Something dramatic happened during the descent. What was it?",
+    "answer": "A window in the entry tube cracked — they continued the dive anyway",
     "choices": [
-      "The Mariana Trench, at a point known as Challenger Deep",
-      "The Java Trench, at a point known as the Diamantina Deep",
-      "The Tonga Trench, at a point known as the Horizon Deep",
-      "The Puerto Rico Trench, at a point known as the Milwaukee Deep"
+      "A window in the entry tube cracked — they continued the dive anyway",
+      "A ballast hopper jammed open — they fell faster than planned for minutes",
+      "A cross-current pushed them sideways — they brushed the trench wall briefly",
+      "A heat exchanger failed entirely — the cabin temperature dropped near freezing"
     ],
-    "answer": "The Mariana Trench, at a point known as Challenger Deep",
-    "context": "Piccard and Walsh dove Trieste to Challenger Deep (10,916 m) on 23 January 1960. Only Cameron's 2012 solo dive matched it for decades. The Mariana Trench is the deepest ocean trench, west of Guam."
+    "context": "Jacques Piccard and Don Walsh piloted the bathyscaphe Trieste to 10,916 m on 23 January 1960. A Plexiglas window in the entrance tunnel cracked at around 9,000 m, shaking the cabin; they decided the pressure hull (separate from the entry tube) was still sound and continued to the bottom. They spent 20 minutes on the seafloor and saw a flatfish before silt clouded the view."
   },
   {
     "tier": 1,
@@ -6228,16 +6228,16 @@
     "context": "Rongbuk Monastery (5,009 m) in Tibet looks directly at Everest's north face. Built ~1902 on older monastic sites. Climbers on the north route still use it as a staging point for the climb up to base camp."
   },
   {
-    "tier": 1,
-    "question": "In 1909 a US Navy explorer claimed to have reached the North Pole over Arctic sea ice with five companions. Another American claimed to have arrived a year earlier. The dispute has never been settled. Who was the Navy man?",
+    "tier": 4,
+    "question": "In 1909 a US Navy explorer claimed to have reached the North Pole by dogsled with a small party. His claim is widely doubted today. Skeptics point to one specific thing he stopped doing in the final days of the dash. What did he abandon?",
+    "answer": "Taking sun sightings to confirm his position — so no one can verify it",
     "choices": [
-      "Robert Peary, who led a US Navy push to the North Pole across the ice",
-      "Robert Scott, who led a British Navy push to the South Pole across the ice",
-      "Robert Falcon, who led a US Navy push to the Arctic before the war began",
-      "Roald Amundsen, who led a Norwegian push by ship through the Northwest Passage"
+      "Taking sun sightings to confirm his position — so no one can verify it",
+      "Carrying his American flag for the planting — caching it behind to save weight",
+      "Letting his sled dogs rest at noon as planned — driving them straight through",
+      "Writing English entries in his expedition diary — switching to a private shorthand"
     ],
-    "answer": "Robert Peary, who led a US Navy push to the North Pole across the ice",
-    "context": "Robert Peary claimed the North Pole 6 April 1909. Frederick Cook claimed 21 April 1908; doubted. Modern review suggests Peary came close but missed the pole. Amundsen's South Pole party (1911) is uncontested."
+    "context": "Robert Peary's 1909 dash to the Pole averaged claimed daily distances that exceeded his own previous best by a factor of two, yet he took no celestial sightings during the final five-day push - the only way at the time to verify polar latitude. The 1989 National Geographic re-analysis concluded Peary likely came within 5 nautical miles but cannot have stood on the exact Pole."
   },
   {
     "tier": 1,
@@ -7057,15 +7057,15 @@
   },
   {
     "tier": 4,
-    "question": "A Danish-born officer in Russian service led two expeditions for Peter the Great and his successors (1725-30, 1733-43). His second voyage proved a strait separated Asia from America; sighted Alaska in 1741; lost his flagship in the Aleutians; and died on a small treeless island with most of his crew dead of scurvy. Which captain?",
+    "question": "Vitus Bering, Danish-born officer in Russian service, was leading his St Peter back from the Alaskan coast in November 1741 when the ship wrecked on a small treeless island in the Aleutians. Bering and 30 men died of scurvy that winter. The 46 survivors then did something extraordinary in spring. What did they do?",
+    "answer": "Built a smaller boat from the wreckage of the St Peter and sailed her 1,200 km to Kamchatka",
     "choices": [
-      "Vitus Bering, whose Great Northern Expedition mapped Siberia's Arctic coast and Pacific approaches for the Russian empire and reached Alaska in 1741",
-      "Alexei Chirikov, whose voyages mapped Siberia's Arctic coast and Pacific approaches for the Russian empire and reached Alaska in 1741 separately",
-      "Semyon Dezhnev, whose voyages mapped Siberia's Arctic coast and Pacific approaches for the Russian empire and rounded the Chukotka Peninsula in 1648",
-      "Yermak Timofeyevich, whose voyages mapped Siberia's Arctic coast and Pacific approaches for the Russian empire and crossed the Urals into Siberia in 1582"
+      "Built a smaller boat from the wreckage of the St Peter and sailed her 1,200 km to Kamchatka",
+      "Walked across the sea ice to the Aleutian chain mainland and trekked overland to Kamchatka",
+      "Lit signal fires nightly until a passing Russian whaler spotted them and rescued the survivors",
+      "Sent two volunteers across the open Pacific by lifeboat to bring back a rescue ship from Russia"
     ],
-    "answer": "Vitus Bering, whose Great Northern Expedition mapped Siberia's Arctic coast and Pacific approaches for the Russian empire and reached Alaska in 1741",
-    "context": "Vitus Bering (1681-1741), Danish-born officer in Russian Navy from 1704. First Kamchatka Expedition (1725-30) — sailed north through what's now Bering Strait. Great Northern Expedition (1733-43, Russia's largest scientific project to date) employed 3,000 men over a decade. Bering's St Peter sighted Alaska's Mt St Elias 16 July 1741; Chirikov in the St Paul sighted what's now Prince of Wales Island. The St Peter wrecked on Bering Island in the Commander Islands; Bering and ~30 crew died of scurvy that winter. Survivors built a smaller boat from the wreckage and reached Kamchatka. The Russian-American Company (1799) followed; Alaska sold to the US in 1867 (Seward's 'icebox')."
+    "context": "Vitus Bering (1681-1741), Danish-born officer in the Russian Navy from 1704. The Great Northern Expedition (1733-43) was Russia's largest scientific project to date — 3,000 men over a decade. Bering's St Peter sighted Alaska's Mt St Elias 16 July 1741. On the return the ship was driven onto Bering Island in the Commander Islands; Bering and ~30 crew died of scurvy that winter. The survivors broke up the wreck of the St Peter, used her timbers and fittings to build a smaller two-masted boat (~12 m long), and sailed her 1,200 km west to Kamchatka in summer 1742. They brought back the sea-otter pelts that started the Russian-American fur trade (Russian-American Company, 1799). Alaska sold to the US in 1867 (Seward's 'icebox')."
   },
   {
     "tier": 4,
@@ -7129,15 +7129,15 @@
   },
   {
     "tier": 4,
-    "question": "In 1324 Mansa Musa, ninth emperor of Mali, left Niani for Mecca with a Hajj caravan: 60,000 men, 12,000 slaves carrying 4 lbs of gold each, 80 camels with 50-300 lbs of gold dust each. Three months in Cairo crashed the local gold price for over a decade. What geography did this expose?",
+    "question": "In 1324 Mansa Musa, ninth emperor of Mali, passed through Cairo on his way to Mecca with a Hajj caravan of 60,000 men, 12,000 slaves carrying 4 pounds of gold each, and 80 camels with up to 300 lbs of gold dust each. His generous spending wrecked Cairo's economy for over a decade. What did he then do on the way home that historians find most striking?",
+    "answer": "Borrowed gold back from Cairo merchants at high interest, trying to slow the inflation he had caused",
     "choices": [
-      "Mali's Bambuk and Bure goldfields supplied much of the medieval Old World's gold; Saharan caravan routes carried it north through Timbuktu and Gao",
-      "Mali's Hausa-belt rice corridor supplied much of the medieval Old World's traded grain; Saharan caravan routes carried it north through Timbuktu and Gao",
-      "Mali's Atlantic salt-pan industry supplied much of the medieval Old World's circulating salt; Saharan caravan routes carried it north through Timbuktu and Gao",
-      "Mali's Niger-Delta cotton plantations supplied much of the medieval Old World's traded cotton; Saharan caravan routes carried it north through Timbuktu and Gao"
+      "Borrowed gold back from Cairo merchants at high interest, trying to slow the inflation he had caused",
+      "Confiscated all gold from the Cairo treasury to refill his own caravan stores",
+      "Banned Mali subjects from carrying gold abroad to prevent further damage to foreign markets",
+      "Refused to leave Cairo until the price returned to normal, waiting for over six months there"
     ],
-    "answer": "Mali's Bambuk and Bure goldfields supplied much of the medieval Old World's gold; Saharan caravan routes carried it north through Timbuktu and Gao",
-    "context": "Mansa Musa I (r. 1312-37) is regularly cited as the wealthiest individual in human history (modern estimates of his wealth are largely speculative but the contemporary Arabic and European sources are vivid). The 1324 Hajj passed through Cairo and Mecca; Al-Umari (writing 1340s) reported the gold dump crashed Cairo's gold price for 12 years. The geography: Mali controlled the Niger bend and trade routes south to the Bambuk and Bure goldfields (modern Senegal-Mali border zone) — the source of perhaps two-thirds of medieval Old World gold. Trans-Saharan caravans carried it north to Sijilmasa and Cairo. The 1375 Catalan Atlas shows Mansa Musa on his throne with a gold nugget. Mali declined under Songhai pressure by ~1500."
+    "context": "Mansa Musa I (r. 1312-37) is regularly cited as the wealthiest individual in human history (modern estimates of his wealth are largely speculative but contemporary Arabic and European sources are vivid). The 1324 Hajj passed through Cairo and Mecca; Al-Umari (writing 1340s) reported the gold dump crashed Cairo's gold price for about 12 years. On the return journey, Musa attempted to borrow gold back from Cairo lenders at high interest — historians cite this as the first recorded large-scale market-stabilization intervention, an effort to slow the inflation he had caused. The geography behind the wealth: Mali controlled the Niger bend and trade routes south to the Bambuk and Bure goldfields (modern Senegal-Mali border zone) — the source of perhaps two-thirds of medieval Old World gold. The 1375 Catalan Atlas shows Mansa Musa on his throne holding a gold nugget."
   },
   {
     "tier": 4,
@@ -11461,15 +11461,15 @@
   },
   {
     "tier": 1,
-    "question": "A white marble tomb in Agra, India, has four minarets and a dome that reflects in a long pool. Mughal emperor Shah Jahan built it in the 1600s for his wife. What is it called?",
+    "question": "A white marble tomb in Agra, India, rises above a long reflecting pool. Mughal emperor Shah Jahan built the Taj Mahal in the 1600s for one specific person. Whose tomb is it?",
+    "answer": "His wife Mumtaz Mahal, who died giving birth to their fourteenth child",
     "choices": [
-      "The Taj Mahal — a Mughal marble tomb at Agra in northern India",
-      "The Red Fort — a Mughal fortified palace at Delhi in northern India",
-      "The Forbidden City — an imperial Chinese palace at Beijing in the north",
-      "The Golden Temple — a Sikh holy shrine at Amritsar in northwest India"
+      "His wife Mumtaz Mahal, who died giving birth to their fourteenth child",
+      "His mother Jodha Bai, who had unified two religions through her marriage",
+      "His father Jahangir, who had expanded the empire across northern India",
+      "His son Dara Shikoh, killed in the war of succession over the throne"
     ],
-    "answer": "The Taj Mahal — a Mughal marble tomb at Agra in northern India",
-    "context": "The Taj Mahal (1632-53) was built by Mughal emperor Shah Jahan for his wife Mumtaz Mahal. Designed by Ustad Ahmad Lahori, it is the high point of Mughal architectural tradition — a substantive non-Western civilizational achievement."
+    "context": "Mumtaz Mahal (1593-1631) was Shah Jahan's third wife and constant companion; she died at age 38 in childbirth with their fourteenth child. The Taj Mahal (built 1632-53, ~20,000 workers, ~22 years) is her tomb. Shah Jahan was later deposed by his son Aurangzeb and spent his last years imprisoned in the Red Fort at Agra, with a window view of the Taj across the river. He was buried beside Mumtaz on his death in 1666. The Taj Mahal is the high point of Mughal architectural tradition — a substantive non-Western civilizational achievement."
   },
   {
     "tier": 1,

@@ -3502,18 +3502,16 @@
     "context": "The samovar (Russian, 'self-boiler') is a tea urn with a charcoal chimney. Russian tea culture grew from 17th-century caravan trade with China; the trip from Beijing to Moscow took ~16 months."
   },
   {
-    "tier": 1,
-    "topic": "Food history & culture",
-    "pattern": "I. Non-obvious term",
-    "question": "A French Catholic tradition has people eat very simply for 40 days before Easter. They give up rich foods and meat - only bread, vegetables, fish, and water. What is this called?",
-    "answer": "Lent, the 40-day Christian fast before Easter Sunday",
+    "tier": 2,
+    "question": "Catholic Lent — the 40-day fast before Easter — forbids eggs, butter, sugar, fat. Catholics ate one rich meal the day before to use up the forbidden foods. French Catholics named the festival after that final indulgence. What is it called?",
+    "answer": "Mardi Gras — French for 'Fat Tuesday', the final rich meal before Lent",
     "choices": [
-      "Lent, the 40-day Christian fast before Easter Sunday",
-      "Advent, the 40-day Christian fast before Christmas Day",
-      "Vespers, the 40-day Christian fast before Pentecost",
-      "Epiphany, the 40-day Christian fast before Ash Wednesday"
+      "Mardi Gras — French for 'Fat Tuesday', the final rich meal before Lent",
+      "Epiphany — the Magi's arrival twelve days after Christmas Day",
+      "Palm Sunday — Christ entering Jerusalem the week before Easter",
+      "Pentecost — the Holy Spirit's coming fifty days after Easter Sunday"
     ],
-    "context": "Lent is the 40-day period from Ash Wednesday to Easter. Christians traditionally abstained from meat, dairy, and rich foods. Lenten breads (pretzels, hot cross buns) and fish dishes are tradition."
+    "context": "Mardi Gras (literally 'Fat Tuesday' in French) is the day before Ash Wednesday. Catholic families used up their eggs, butter, sugar, and fat — forbidden during Lent — in one rich feast. English families call this Pancake Day or Shrove Tuesday; pancakes use exactly these ingredients. New Orleans turned the tradition into a famous carnival parade (1857). Lent itself runs 40 days from Ash Wednesday to Easter Sunday, mirroring Christ's wilderness fast in the Gospels."
   },
   {
     "tier": 1,
@@ -3797,17 +3795,15 @@
   },
   {
     "tier": 2,
-    "topic": "Food history & culture",
-    "pattern": "I. Non-obvious term",
-    "question": "A French Catholic tradition begins each meal with a short prayer - a moment of pause before eating. The same custom is common in Protestant American homes. The word itself names the prayer. What is it?",
+    "question": "A French Catholic tradition begins each meal with a short prayer - a moment of pause before eating. The same custom is common in Protestant American homes. The word itself names the prayer. What is it called?",
     "answer": "Grace - a brief thanks before the meal, traditional in Christian families across denominations",
     "choices": [
       "Grace - a brief thanks before the meal, traditional in Christian families across denominations",
-      "Vespers - a brief thanks before the meal, traditional only in Catholic monasteries on fasts",
-      "Compline - a brief thanks before the meal, traditional only in Anglican homes on holidays",
-      "Matins - a brief thanks before the meal, traditional only in Eastern Orthodox households"
+      "Vespers - the evening prayer hour recited in Catholic monasteries each day at sunset time",
+      "Compline - the late-night closing prayer recited at the very end of the Catholic liturgy day",
+      "Matins - the early-morning prayer hour kept in monastic Catholic communities each day at dawn"
     ],
-    "context": "Grace before meals is a brief prayer of thanks. Christian in origin, common across denominations. Wording varies - some formal, others extemporaneous. Non-religious families may keep a moment of silent pause."
+    "context": "Grace before meals appears across Christian denominations: a brief thanksgiving for the food. Vespers, Compline, and Matins are hours of the Divine Office (sunset, late-night, early-morning) that Catholic monks pray daily but are NOT mealtime prayers. The distinction matters: Grace ties the meal itself to gratitude."
   },
   {
     "tier": 2,
@@ -6363,15 +6359,15 @@
   },
   {
     "tier": 1,
-    "question": "A pinch of saffron costs more by weight than gold. The red threads turn broth a brilliant yellow-orange. They are not seeds or peel. What part of which plant gives us saffron?",
-    "answer": "The three red stigmas of a purple crocus flower, picked by hand at dawn",
+    "question": "Saffron costs more by weight than gold. Each tiny red thread is the dried stigma of one purple crocus, plucked by hand. How many crocuses must be picked to make a single pound of spice?",
+    "answer": "Around 150,000 of them",
     "choices": [
-      "The three red stigmas of a purple crocus flower, picked by hand at dawn",
-      "The dried red bark of a Mediterranean shrub, sliced into hair-thin strands",
-      "The seeds inside the orange fruit of a saffron tree, dried and split fine",
-      "The dried tongues of a yellow-flowered mountain herb, threaded together"
+      "Around 150,000 of them",
+      "Around 5,000 of them",
+      "Around 20,000 of them",
+      "Around 600,000 of them"
     ],
-    "context": "Each Crocus sativus flower yields three red stigmas. About 150,000 flowers make one kilogram of dried saffron, picked by hand at first light. Centers: Iran, Spain, Kashmir."
+    "context": "Saffron yield is about 1 g of dried spice per 150 crocus flowers, so a single pound (~453 g) needs roughly 150,000 hand-picked blooms — all gathered in a 1-2 week window when the crocuses open. This is why even a pinch is so expensive."
   },
   {
     "tier": 1,
