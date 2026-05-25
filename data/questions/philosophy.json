@@ -1061,9 +1061,9 @@
     "answer": "Sibley's aesthetic concepts — Sibley argues aesthetic properties (grace, balance) supervene on non-aesthetic features but are not condition-governed by them; perception requires trained sensitivity.",
     "choices": [
       "Sibley's aesthetic concepts — Sibley argues aesthetic properties (grace, balance) supervene on non-aesthetic features but are not condition-governed by them; perception requires trained sensitivity.",
-      "Formalism — Bell holds significant form is the property in virtue of which a work is art and beautiful; the view fixes aesthetic value in formal structure, whereas Sibley's concern is the conceptual shape of aesthetic terms.",
-      "Aesthetic empiricism — Beardsley holds only the work itself constitutes its aesthetic object; the position is about what makes something an aesthetic object, whereas Sibley concerns the logical structure of aesthetic predicates.",
-      "Goodman's symbolic theory — Goodman analyzes artworks as symbol systems with characteristic syntactic and semantic properties; the framework analyzes art in semiotic terms, not the structure of evaluative aesthetic concepts."
+      "Formalism — Bell holds significant form is the property by which a work is art and beautiful; the view fixes value in formal structure, whereas Sibley's concern is the conceptual shape of aesthetic terms.",
+      "Aesthetic empiricism — Beardsley holds only the work itself constitutes its aesthetic object; the position is about what makes something aesthetic, whereas Sibley concerns the logical structure of aesthetic predicates.",
+      "Goodman's symbolic theory — Goodman analyzes artworks as symbol systems with characteristic syntactic and semantic properties; the framework treats art in semiotic terms, not the structure of evaluative aesthetic concepts."
     ],
     "context": "Frank Sibley's 'Aesthetic Concepts' (Philosophical Review, 1959) introduces the distinction between aesthetic and non-aesthetic concepts and argues for the supervenience-without-entailment thesis. Aesthetic properties are perceived through trained sensitivity, but no rule-governed inference takes you from the non-aesthetic facts to the aesthetic conclusion. Critics include Kivy and Cohen."
   },
@@ -1141,13 +1141,13 @@
   },
   {
     "tier": 5,
-    "question": "An art historian writes about a perfect Vermeer forgery: 'Even granting that the forgery is visually indistinguishable from authentic Vermeers, it lacks aesthetic value the authentic works have — what counts as achievement in a work depends on what it was for the maker to do, and the forger performed a quite different achievement.' Which view of art is she defending?",
+    "question": "An art historian writes about a perfect Vermeer forgery: 'Even granting that the forgery is visually indistinguishable from authentic Vermeers, it lacks aesthetic value the authentic works have — what counts as achievement depends on what it was for the maker to do, and the forger performed a quite different achievement.' Which view of art is she defending?",
     "answer": "Intentionalism about achievement — Wollheim and Levinson hold the maker's intention and historical achievement are partly constitutive of the work's aesthetic value, so forgeries and originals can differ despite looking alike.",
     "choices": [
       "Intentionalism about achievement — Wollheim and Levinson hold the maker's intention and historical achievement are partly constitutive of the work's aesthetic value, so forgeries and originals can differ despite looking alike.",
-      "Aesthetic empiricism — Beardsley holds only the work's perceptible features constitute its aesthetic object; the perfect forgery has identical aesthetic value to the original, since the difference lies outside the work itself.",
-      "Institutional theory — Dickie holds art-status is conferred within the artworld; forgery and original may differ in conferred status, but the question of intrinsic aesthetic value is not what the institutional theory settles.",
-      "Functionalism — Beardsley and Gaut hold art is defined by the capacity to afford aesthetic experience; if forgery and original afford identical experience, they have identical functional value, with authenticity then bracketed."
+      "Aesthetic empiricism — Beardsley holds only the work's perceptible features constitute its aesthetic object; the perfect forgery has identical aesthetic value to the original, since difference lies outside the work itself.",
+      "Institutional theory — Dickie holds art-status is conferred within the artworld; forgery and original may differ in conferred status, but intrinsic aesthetic value is not what the institutional theory settles.",
+      "Functionalism — Beardsley and Gaut hold art is defined by the capacity to afford aesthetic experience; if forgery and original afford identical experience, they have identical value, with authenticity bracketed."
     ],
     "context": "The forgery debate (Goodman's Languages of Art, 1968; Alfred Lessing, 'What Is Wrong with a Forgery', 1965; Denis Dutton's work on authenticity) tests whether aesthetic value depends on perceptible features alone. The intentionalist makes achievement-history constitutive of value; the empiricist denies this; the dispute remains central to authenticity and originality questions across the arts."
   },
@@ -1166,12 +1166,12 @@
   {
     "tier": 5,
     "question": "A philosopher writes in a journal: 'When two people sincerely disagree about whether a song is beautiful, neither is making a mistake about any property in the song — each is reporting how the song strikes them. There is no fact of the matter beyond the responses; aesthetic predicates do not pick out shared mind-independent properties at all.' Which view of aesthetic value is she defending?",
-    "answer": "Aesthetic subjectivism — the view treats aesthetic predicates as expressing individual response rather than tracking mind-independent properties, so sincere disagreement reflects different responses, not differing accuracy.",
+    "answer": "Aesthetic subjectivism — aesthetic predicates express individual response rather than track mind-independent properties, so sincere disagreement reflects different responses, not differing accuracy.",
     "choices": [
-      "Aesthetic subjectivism — the view treats aesthetic predicates as expressing individual response rather than tracking mind-independent properties, so sincere disagreement reflects different responses, not differing accuracy.",
-      "Humean response-dependence — Hume grounds objectivity in the converging verdicts of qualified judges of practiced delicacy; the position is response-dependent without being individualistic, weighing trained judgments more.",
-      "Aesthetic realism — beauty is a real property in the object, independent of any response; sincere disagreement must mean at least one party is mistaken about the property, even when the mistake cannot be settled by demonstration.",
-      "Error theory — aesthetic predicates purport to refer to mind-independent properties but no such properties exist, so all sincere aesthetic claims are uniformly false; this differs sharply from subjectivism on what claims purport."
+      "Aesthetic subjectivism — aesthetic predicates express individual response rather than track mind-independent properties, so sincere disagreement reflects different responses, not differing accuracy.",
+      "Humean response-dependence — Hume grounds objectivity in the converging verdicts of qualified judges of practiced delicacy; the position is response-dependent without being individualistic, weighing trained judgment.",
+      "Aesthetic realism — beauty is a real property in the object, independent of any response; sincere disagreement must mean at least one party is mistaken, even when the mistake cannot be settled by demonstration.",
+      "Error theory — aesthetic predicates purport to refer to mind-independent properties but no such properties exist, so all sincere aesthetic claims are uniformly false; this differs sharply from subjectivism on purport."
     ],
     "context": "Pure aesthetic subjectivism has had defenders from Hutcheson's response-grounded account through some readings of A.J. Ayer's emotivism. Standard alternatives include Hume's qualified-judges response-dependence, Kant's universal-validity transcendental account, and various realist positions (Mothersill, Beauty Restored, 1984). The disagreement-from-shared-experience problem motivates each."
   },
@@ -3625,13 +3625,13 @@
   },
   {
     "tier": 5,
-    "question": "A philosopher argues that parents are morally obligated to favor their own children over strangers — that this preference is not bias for impartial reason to correct but a duty grounded in what parents ARE. The view stands against William Godwin's claim that, between saving Fenelon and saving a relative, impartial reason commands saving Fenelon. Which view is being defended?",
+    "question": "A philosopher argues that parents are morally obligated to favor their own children over strangers — that this preference is not a bias for impartial reason to correct but a duty grounded in what parents ARE. The view stands against William Godwin's claim that, between saving Fenelon and saving a relative, impartial reason commands saving Fenelon. Which view is being defended?",
     "answer": "Agent-relative partiality — constitutive attachments (parenthood, friendship, ground projects) generate duties of preference impartial reasoning cannot dissolve; they aren't biases but the soil moral agency grows from.",
     "choices": [
       "Agent-relative partiality — constitutive attachments (parenthood, friendship, ground projects) generate duties of preference impartial reasoning cannot dissolve; they aren't biases but the soil moral agency grows from.",
-      "Godwinian impartialism — moral reasoning, properly conducted, weighs all rational beings symmetrically; the parent's preference for their own child is exactly the sentiment philosophy should expose as bias, not ratify as duty.",
-      "Care ethics as relational — duties arise from the actual ongoing relationships parents have with their children; were the relation absent, the duty would be absent, so obligation rests on the tie, not on parenthood as such.",
-      "Strict consequentialism — parental partiality is justified only where it tracks welfare; preferring one's own children is a general policy that produces good outcomes, with no agent-relative standing in moral reasoning."
+      "Godwinian impartialism — moral reasoning weighs all rational beings symmetrically; the parent's preference for their own child is the sentiment philosophy should expose as bias, not ratify as duty.",
+      "Care ethics as relational — duties arise from the ongoing relationships parents have with their children; were the relation absent, the duty would be absent, so obligation rests on the tie, not on parenthood as such.",
+      "Strict consequentialism — parental partiality is justified only where it tracks welfare; preferring one's own children is a general policy that produces good outcomes, with no agent-relative standing."
     ],
     "context": "John Cottingham (Partiality and the Virtues, 1998) and Bernard Williams (Moral Luck, 1981) defend agent-relative duties against the Godwinian impartialism running from Political Justice (1793) through Singer's Famine, Affluence, and Morality (1972). Constitutive attachments aren't biases to dissolve — they're constituent of being a moral agent."
   },
@@ -7525,15 +7525,15 @@
   },
   {
     "tier": 4,
-    "question": "A philosophy class debates Donald Davidson. One student summarizes: 'Every particular mental event is some particular physical event -- there is no extra ghostly stuff. But there are no strict laws linking mental TYPES (belief, desire) to physical types. Mind is physical token-by-token, but no mental type reduces.' What view is this?",
-    "answer": "Token physicalism / anomalous monism -- each particular mental event is identical to some particular physical event, but no lawful type-type bridges link mental kinds to physical kinds.",
+    "question": "A philosophy class discusses Hilary Putnam. One student summarizes: 'What makes something a pain isn't what it's MADE of — it's the role it plays. A signal that gets triggered by tissue damage, prompts withdrawal, causes complaint, makes you avoid the cause next time — anything with that role IS pain, whether it runs on neurons, silicon, or anything else.' What view of mind is this?",
+    "answer": "Functionalism — mental states are individuated by their causal role (inputs, internal interactions, behavioral outputs), so the same state can be 'multiply realized' across different physical substrates.",
     "choices": [
-      "Token physicalism / anomalous monism -- each particular mental event is identical to some particular physical event, but no lawful type-type bridges link mental kinds to physical kinds.",
-      "Type physicalism -- each type of mental state is strictly identical to a brain-state type; belief and desire reduce to specific neural-state types under a complete neuroscience of mind.",
-      "Property dualism -- physical events have both physical and irreducible mental properties; mental properties are real features over and above the physical, with no token-token identity.",
-      "Eliminative materialism -- mental categories like belief and desire form a defective folk theory and will be eliminated; type-type or token-token reduction does not even arise here."
+      "Functionalism — mental states are individuated by their causal role (inputs, internal interactions, behavioral outputs), so the same state can be 'multiply realized' across different physical substrates.",
+      "Type physicalism — each type of mental state is strictly identical to a single physical (brain-state) type; pain just IS C-fiber firing, and a creature without C-fibers cannot be in pain.",
+      "Behaviorism — mental states reduce to dispositions to behavior; being in pain just means being disposed to wince and withdraw, with no internal state required for the analysis to work.",
+      "Property dualism — pain is a non-physical property attached to physical events; mental properties exist over and above brain properties and the causal-role description misses the extra dimension."
     ],
-    "context": "Donald Davidson's 'Mental Events' (1970) presents anomalous monism: token physicalism without psychophysical laws. The view tries to keep physicalism while respecting the irreducibility (anomalousness) of the mental as a domain of explanation -- a delicate balance."
+    "context": "Hilary Putnam's 'The Nature of Mental States' (1967) introduced functionalism as the dominant alternative to behaviorism and type-identity theory. The multiple-realizability argument — that the same mental state could be implemented by very different physical systems — became the cornerstone of philosophy of mind for decades. Putnam himself later moved away from functionalism, but the view (sometimes called the 'standard model' of philosophy of mind) remains widely held in various refined forms. Critics include the qualia-based objections of Frank Jackson's 'What Mary Didn't Know' (1986) and Ned Block's 'China brain' thought experiment."
   },
   {
     "tier": 5,

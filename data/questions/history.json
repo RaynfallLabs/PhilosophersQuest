@@ -757,13 +757,13 @@
   },
   {
     "tier": 3,
-    "question": "On December 1 1955 Rosa Parks refused to give up her seat on a Montgomery bus and was arrested, sparking the year-long boycott that launched Martin Luther King Jr. and the modern civil rights movement. But the NAACP had already considered using a different person for the same kind of test case nine months earlier — and quietly rejected her despite her doing the same brave thing. Why did the NAACP pass over 15-year-old Claudette Colvin?",
+    "question": "On December 1 1955 Rosa Parks refused to give up her bus seat in Montgomery and was arrested, sparking the year-long boycott that launched Martin Luther King Jr. and the civil rights movement. But the NAACP had quietly rejected a different test-case candidate nine months earlier despite her doing the same brave thing. Why did the NAACP pass over 15-year-old Claudette Colvin?",
     "answer": "She was 15, pregnant, and unmarried — NAACP leaders feared the press would use it to discredit the movement",
     "choices": [
       "She was 15, pregnant, and unmarried — NAACP leaders feared the press would use it to discredit the movement",
-      "She was a minor and Alabama required parental consent for federal civil-rights cases",
-      "Her arrest happened without physical contact, weakening the constitutional argument",
-      "Her family had given the story to Northern newspapers, exposing the legal strategy"
+      "She was a minor — Alabama required parental consent for federal civil-rights test cases at the time",
+      "Her arrest involved no physical contact — the constitutional argument needed a clearer violation on tape",
+      "Her family had gone to Northern newspapers — NAACP lawyers feared the legal strategy was already exposed"
     ],
     "context": "Claudette Colvin (b. 1939) refused to give up her seat on a Montgomery bus on March 2 1955 — NINE MONTHS BEFORE Rosa Parks. She was 15, dragged off the bus by police, and charged with violating segregation laws, disturbing the peace, and assault. The NAACP initially considered using her case as the test of bus segregation, but rejected her after she became pregnant by a married man later that year — the leadership knew Southern newspapers would destroy her credibility. Rosa Parks was chosen instead: 42 years old, married, respectable, a trained NAACP organizer (Montgomery chapter secretary since 1943, recently trained at the Highlander Folk School). The iconic photograph of Parks on the bus — looking out the window with a stern white man in the seat behind her — is a posed reenactment taken December 21 1956, the day after segregation officially ended, NOT on the day of her arrest. Colvin's case was ultimately included in Browder v. Gayle (June 5 1956), the Supreme Court decision that actually struck down bus segregation. She moved to New York in 1958 and worked as a nurse's aide for 35 years; history largely forgot her until the 2000s. The lesson: civil rights victories were strategic campaigns, not spontaneous moments. The movement chose its symbols deliberately."
   },
@@ -937,13 +937,13 @@
   },
   {
     "tier": 2,
-    "question": "On March 9 1862 at Hampton Roads, Virginia, the Union ironclad USS Monitor (a flat platform with a single rotating gun turret — sailors called it 'a cheesebox on a raft') fought the Confederate ironclad CSS Virginia (rebuilt from the wooden USS Merrimack with 5-inch iron plating). The two ships pounded each other at point-blank range for about four hours. What was the outcome?",
+    "question": "On March 9 1862 at Hampton Roads, Virginia, the Union ironclad USS Monitor (a flat hull with a rotating gun turret — 'a cheesebox on a raft') fought the Confederate CSS Virginia, rebuilt from the wooden USS Merrimack with 5-inch plating. They pounded each other at point-blank range for four hours. What was the outcome?",
     "answer": "A draw — neither could sink the other, but the wooden-warship era was over",
     "choices": [
       "A draw — neither could sink the other, but the wooden-warship era was over",
-      "The Monitor sank the Virginia with a shot through her boiler",
-      "The Virginia rammed the Monitor; both went down in the channel",
-      "Both fled when their ammunition ran out; nothing was decided"
+      "Decisive Monitor win — her turret shot pierced the Virginia's boiler and sank her",
+      "Decisive Virginia win — she rammed the Monitor and both ironclads went down",
+      "Mutual withdrawal — both fled when ammunition ran out, leaving nothing decided"
     ],
     "context": "Neither ship could pierce the other's iron armor. Both crews fought exhausted in gun-smoke-filled compartments where temperatures topped 120°F. Within hours of the battle the news reached every naval power on Earth: every wooden warship in every navy was instantly obsolete. The Monitor sank in a storm off Cape Hatteras nine months later; the Virginia was blown up by her own crew to prevent capture when Norfolk fell to Union forces in May 1862."
   },
@@ -953,7 +953,7 @@
     "answer": "Their horses — for spring plowing back home",
     "choices": [
       "Their horses — for spring plowing back home",
-      "Their full uniforms with officer side arms and dress swords",
+      "Their full uniforms — with officer side arms and dress swords",
       "Their rifles — to be turned in only at home counties",
       "Their pay arrears — Union would honor Confederate back wages"
     ],
@@ -1189,7 +1189,7 @@
   },
   {
     "tier": 1,
-    "question": "On March 4 1933, in the middle of the Great Depression with banks closing and a quarter of Americans unemployed, the new President Franklin D. Roosevelt gave his first inaugural speech. He calmed the country with a now-famous phrase about the only thing the nation needed to fear. What did Roosevelt say?",
+    "question": "On March 4 1933, with a quarter of Americans unemployed and banks failing across the country, Franklin D. Roosevelt took the presidential oath. His first inaugural address tried to calm a nation in panic. He coined a line about national courage that became one of the most-quoted sentences in American political speech. What did he say?",
     "answer": "'The only thing we have to fear is fear itself'",
     "choices": [
       "'The only thing we have to fear is fear itself'",
@@ -1373,9 +1373,9 @@
     "answer": "Surrendered — becoming the first German field marshal ever taken prisoner alive",
     "choices": [
       "Surrendered — becoming the first German field marshal ever taken prisoner alive",
-      "Killed himself with his ceremonial dagger in his command bunker",
-      "Led a final breakout attempt; was killed by Soviet snipers within hours",
-      "Refused promotion and continued fighting until killed by a stray shell"
+      "Killed himself — with his ceremonial dagger inside his command bunker",
+      "Led a final breakout attempt — and was killed by Soviet snipers within hours",
+      "Refused the promotion — and continued fighting until killed by a stray shell"
     ],
     "context": "Hitler had expected Paulus to commit suicide. About 91,000 starving German troops surrendered with Paulus on January 31 1943. Only about 5,000 ever returned to Germany — the rest died in Soviet captivity. The battle cost approximately 1.1 million Soviet casualties and 750,000-850,000 Axis casualties. Stalingrad was the turning point of the Eastern Front; from this point Germany was strategically on the defensive. Paulus spent the rest of the war in Soviet hands and eventually made anti-Nazi radio broadcasts. He died in East Germany in 1957."
   },
@@ -1681,7 +1681,7 @@
   },
   {
     "tier": 1,
-    "question": "In April-May 1940 the Soviet secret police murdered about 22,000 Polish military officers, policemen, and educated professionals in a forest in western Russia. Each victim was shot in the back of the head, then buried in mass graves. The Soviet Union blamed the Nazis for the massacre for 50 years. What is this atrocity called?",
+    "question": "In April-May 1940 the Soviet secret police shot about 22,000 Polish military officers, policemen, and educated professionals in a wooded area of western Russia. Each prisoner was killed with a single bullet to the back of the head, then buried in mass graves. The Soviet Union blamed the Nazis for the killings for 50 years. What is this atrocity called?",
     "answer": "The Katyn Forest Massacre",
     "choices": [
       "The Katyn Forest Massacre",
@@ -2329,7 +2329,7 @@
   },
   {
     "tier": 1,
-    "question": "Polish-French physicist Marie Curie discovered the radioactive elements polonium (named for her homeland Poland) and radium. She worked for years with samples of pitchblende ore and had no idea what the radiation was doing to her body. Her laboratory notebooks from the early 1900s are so dangerous they are kept in lead-lined boxes today. About how long until they are safe to handle without protection?",
+    "question": "Polish-French physicist Marie Curie discovered the radioactive elements polonium (named for her homeland Poland) and radium. She worked for years with samples of pitchblende ore and had no idea what the radiation was doing to her body. Her laboratory notebooks from the early 1900s are so dangerous they are kept in lead-lined boxes at the French national archive. When will scholars finally be able to handle them safely?",
     "answer": "About 1,500 more years",
     "choices": [
       "About 1,500 more years",
@@ -2521,13 +2521,13 @@
   },
   {
     "tier": 1,
-    "question": "After Howard Carter opened King Tutankhamun's tomb in November 1922, his patron Lord Carnarvon died five months later in Cairo of an infection that began with a mosquito bite. Newspapers seized on the story of an ancient curse. Was Carnarvon's death from a curse on the tomb?",
-    "answer": "No — it was an infected mosquito bite",
+    "question": "After Howard Carter opened King Tutankhamun's tomb in November 1922, his patron Lord Carnarvon died five months later in Cairo. Newspapers ran sensational stories about a curse of the pharaohs. What actually killed Carnarvon?",
+    "answer": "An infected mosquito bite — nicked while shaving, then blood poisoning",
     "choices": [
-      "No — it was an infected mosquito bite",
-      "Yes — the tomb's air contained ancient toxins",
-      "Yes — the gold of the tomb was deeply radioactive",
-      "Yes — a slow virus from the mummy infected him"
+      "An infected mosquito bite — nicked while shaving, then blood poisoning",
+      "An ancient airborne toxin — released when the sealed door was breached",
+      "Slow gold-borne radioactivity — emitted by rich grave goods nearby",
+      "A latent fungal pathogen — preserved in mummy wrappings, reactivated"
     ],
     "context": "Most members of Carter's expedition lived long lives. Howard Carter himself lived another 17 years and died in 1939. The 'curse of the pharaohs' became a tabloid sensation but had no real basis. Modern epidemiologists have found that mortality rates among the team who entered the tomb were no different from a control group of similar background. The tomb contained over 5,000 objects, including the famous solid-gold death mask. King Tut had died around 1323 BC at about age 19."
   },
@@ -2545,7 +2545,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1705 the English astronomer Edmond Halley realized that several historical comet sightings were actually the same comet returning on a regular schedule. He predicted it would return in 1758. The comet did return — 16 years after Halley's death. About how often does Halley's Comet return?",
+    "question": "In 1705 the English astronomer Edmond Halley realized that several historical comet sightings were actually the same comet returning on a regular schedule. He predicted it would return in 1758. The comet did return — 16 years after Halley's death. What is the interval between visits of Halley's Comet?",
     "answer": "About every 76 years",
     "choices": [
       "About every 76 years",
@@ -2765,9 +2765,9 @@
     "answer": "His secret has never been duplicated — no one knows what made them sing",
     "choices": [
       "His secret has never been duplicated — no one knows what made them sing",
-      "Modern luthiers match their tone exactly but cannot match their projection",
-      "A 2019 Tokyo laboratory finally cracked the formula and is now mass-producing",
-      "His method was an open trade secret in Cremona that any modern maker can replicate"
+      "Modern luthiers match the tone — but cannot match the carrying projection across a concert hall",
+      "A 2019 Tokyo laboratory cracked the formula — and is now mass-producing identical instruments",
+      "His method was an open trade secret in Cremona — and any modern maker can replicate it"
     ],
     "context": "Theories for the Stradivari sound: (1) the varnish — but spectroscopic analysis hasn't found anything special; (2) the wood — possibly Alpine spruce that grew slowly during the Maunder Minimum mini-ice-age of the late 1600s, with uniquely dense growth rings; (3) the geometry — Stradivari's personal templates and arching curves; (4) the ear — his maker's intuition for the wood he chose. The most likely answer is a combination, lost to history. His main rival was Giuseppe 'del Gesù' Guarneri (Cremona, 1698-1744); Paganini's favorite violin was a Guarneri called 'Il Cannone' ('The Cannon') for its sound. Andrea Amati (c.1505-1577) was Stradivari's teacher's teacher's teacher."
   },
@@ -3133,15 +3133,15 @@
   },
   {
     "tier": 2,
-    "question": "In September 1519, Ferdinand Magellan led five Spanish ships westward to find a route to the Spice Islands by sailing around South America. Three years later, one ship limped back to Spain — but Magellan was not on it. He had been killed in 1521 in the Philippines. What was the historic significance of that one returning ship?",
-    "answer": "It completed the first circumnavigation of the globe",
+    "question": "Ferdinand Magellan never finished the round-the-world voyage he started in 1519 — he was killed in April 1521 wading ashore at the small Philippine island of Mactan, in a fight he had picked while trying to convert local people to Christianity. The chieftain who led the warriors against Magellan that day is now a Filipino national hero. What is his name?",
+    "answer": "Lapu-Lapu — the chieftain of Mactan who killed Magellan in the surf",
     "choices": [
-      "It completed the first circumnavigation of the globe",
-      "It carried the first map of the Pacific Ocean",
-      "It returned with the first potatoes brought to Europe",
-      "It was the only ship to discover the South Pole"
+      "Lapu-Lapu — the chieftain of Mactan who killed Magellan in the surf",
+      "Humabon — the Cebu rajah who had been baptized two weeks earlier",
+      "Datu Sikatuna — the Bohol chief who had pledged Spanish friendship in blood",
+      "Datu Kalantiaw — the Negros judge who codified pre-colonial Visayan law"
     ],
-    "context": "The ship was the Victoria, captained by Juan Sebastián Elcano after Magellan's death. Of the roughly 270 men who sailed in 1519, only 18 returned in September 1522 — about 7% survival. Magellan was killed in the Battle of Mactan by warriors loyal to a local chieftain named Lapu-Lapu, who is honored as a Filipino national hero. The voyage proved the Americas were a separate continent (not the eastern edge of Asia) and showed how vast the Pacific actually was."
+    "context": "Magellan led about 60 men ashore at Mactan on April 27 1521 against roughly 1,500 warriors loyal to Lapu-Lapu, who had refused to pay tribute to the rival Cebu rajah Humabon. Magellan was hit by a poisoned arrow in his unarmored leg, then surrounded and hacked down in the surf. His body was never recovered. Lapu-Lapu is honored today with a statue in Mactan, a major Philippine city named for him (Lapu-Lapu City), and a place on the modern 5-peso coin. The expedition was completed by Juan Sebastián Elcano aboard the Victoria, which limped back to Spain in September 1522 with 18 survivors of the original 270 men."
   },
   {
     "tier": 2,
@@ -3745,13 +3745,13 @@
   },
   {
     "tier": 2,
-    "question": "On April 12 1861 Confederate guns in Charleston Harbor opened fire on Fort Sumter, beginning the American Civil War. The bombardment lasted 34 hours and forced the federal surrender. Something remarkable happened with the actual death count. What was striking about deaths at Fort Sumter?",
+    "question": "On April 12 1861 Confederate guns in Charleston Harbor opened fire on Fort Sumter, beginning the Civil War. The bombardment lasted 34 hours and forced the federal surrender. Something remarkable happened with the death count. What was striking about deaths at Fort Sumter?",
     "answer": "No one was killed in the bombardment — a Union soldier died accidentally during the surrender salute",
     "choices": [
       "No one was killed in the bombardment — a Union soldier died accidentally during the surrender salute",
-      "All 85 of the federal garrison were killed in the final Confederate assault",
-      "The Confederate gunners suffered no casualties at all in 34 hours",
-      "Charleston civilians suffered more casualties than the garrison did"
+      "The full Union garrison was killed — all 85 federal troops died in the final Confederate assault",
+      "Confederate gunners suffered nothing — not a single Southern casualty across 34 hours of fire",
+      "Charleston civilians took the worst — more townspeople died than soldiers inside the fort"
     ],
     "context": "Major Robert Anderson, the federal commander, had been Beauregard's artillery instructor at West Point years earlier. The accidental death came when a cannon misfired during the formal 100-gun surrender salute. Within days Lincoln called for 75,000 volunteers; four more states (Virginia, North Carolina, Tennessee, Arkansas) seceded. By the war's end in 1865, roughly 750,000 Americans had died — more than in all other U.S. wars combined until Vietnam. A war that opened with no battle deaths would become the bloodiest in American history."
   },
@@ -4477,7 +4477,7 @@
   },
   {
     "tier": 2,
-    "question": "In 490 BC, on a coastal plain about 26 miles northeast of Athens, an outnumbered Athenian hoplite army under the general Miltiades defeated a much larger Persian invading force sent by Darius I. The Athenians charged at a run across the last 200 meters under arrow fire — something Greek hoplites had never done before. About how many Persians died compared to Athenians?",
+    "question": "In 490 BC, on a coastal plain about 26 miles northeast of Athens, an outnumbered Athenian hoplite army under the general Miltiades defeated a much larger Persian invading force sent by Darius I. The hoplites charged at a run across the last 200 meters under arrow fire — something Greek heavy infantry had never done before. What was the lopsided final body count?",
     "answer": "About 6,400 Persians to 192 Athenians",
     "choices": [
       "About 6,400 Persians to 192 Athenians",
@@ -4717,7 +4717,7 @@
   },
   {
     "tier": 2,
-    "question": "From 1936 to 1938, Joseph Stalin's NKVD secret police carried out the Great Purge — arresting, deporting, or executing about 1 million people including most of the original Bolshevik leadership. Famous Old Bolsheviks publicly confessed to absurd crimes in public trials in Moscow before being shot. What were these trials called?",
+    "question": "From 1936 to 1938, Joseph Stalin's NKVD secret police carried out the Great Purge — arresting, deporting, or executing about 1 million people including most of the original Bolshevik leadership. Famous Old Bolsheviks publicly confessed to absurd crimes in staged Kremlin proceedings before being shot. What were these proceedings called?",
     "answer": "The Moscow Show Trials",
     "choices": [
       "The Moscow Show Trials",
@@ -5005,7 +5005,7 @@
   },
   {
     "tier": 2,
-    "question": "The Atlantic slave trade was suppressed by the Royal Navy's West Africa Squadron starting in 1808; British full abolition came in 1833. But the East African slave trade, fed by African slavers selling to Arab buyers on Zanzibar, continued through the 1890s. The most notorious African slave-trader of the late 19th century — operating from his base on Zanzibar — was Tippu Tip. What name did Tippu Tip's Zanzibar-end network bear in shorthand?",
+    "question": "The Royal Navy's West Africa Squadron suppressed the Atlantic traffic in human beings starting in 1808; Britain ended slavery throughout its empire in 1833. But on Africa's other coast, traffic from the African interior to buyers on Zanzibar continued through the 1890s. The most notorious dealer of the late 19th century — operating from his Zanzibar base — was Tippu Tip. What name does this east-coast network bear in shorthand?",
     "answer": "The Swahili Arab slave trade",
     "choices": [
       "The Swahili Arab slave trade",
@@ -5137,7 +5137,7 @@
   },
   {
     "tier": 2,
-    "question": "On March 12, 1930, the 60-year-old Indian nationalist leader Mohandas Gandhi began a 24-day, 240-mile march from his ashram at Sabarmati to the Arabian Sea coast to protest the British salt monopoly. He and about 80 followers walked across western India; by the time he reached the sea, the march had become a national movement. What was the protest called?",
+    "question": "On March 12, 1930, the 60-year-old Indian nationalist Mohandas Gandhi began a 24-day, 240-mile walk from his ashram at Sabarmati to the Arabian Sea coast to protest the British monopoly on a single mineral that every Indian household needed for cooking. He and about 80 followers crossed western India on foot; by the time he reached the sea, the action had become a national movement. What is this protest called?",
     "answer": "The Salt March (or Dandi March)",
     "choices": [
       "The Salt March (or Dandi March)",
@@ -5185,7 +5185,7 @@
   },
   {
     "tier": 2,
-    "question": "Around 1271, a 17-year-old Venetian merchant named Marco Polo set out with his father and uncle on a journey overland to China. He spent roughly 17 years in the East, much of it in the service of Kublai Khan, ruler of the Mongol Yuan dynasty. His account of his travels became one of the most influential books of the European Middle Ages. What is the book typically called?",
+    "question": "Around 1271, a 17-year-old Venetian merchant named Marco Polo set out with his father and uncle on a journey overland to China. He spent roughly 17 years in the East, much of it in the service of Kublai Khan, ruler of the Mongol Yuan dynasty. His written account became one of the most influential books of the European Middle Ages. By what name is the book most often known?",
     "answer": "The Travels of Marco Polo (also called Il Milione)",
     "choices": [
       "The Travels of Marco Polo (also called Il Milione)",
@@ -5413,7 +5413,7 @@
   },
   {
     "tier": 2,
-    "question": "Apollo 11's crew placed an American flag on the lunar surface, along with patches from Apollo 1 (which had killed three astronauts in a 1967 launch-pad fire) and medals honoring two Soviet cosmonauts who had died in space accidents. About how long did Armstrong and Aldrin's first moonwalk outside the lunar module last?",
+    "question": "Apollo 11's crew placed an American flag on the Moon's surface, along with patches from Apollo 1 (which had killed three astronauts in a 1967 launch-pad fire) and medals honoring two Soviet cosmonauts who had died in space accidents. Once Armstrong and Aldrin had climbed back inside their landing craft, how long had they spent on Tranquility Base's surface taking samples and planting equipment?",
     "answer": "About 2.5 hours outside the lunar module on the first moonwalk",
     "choices": [
       "About 2.5 hours outside the lunar module on the first moonwalk",
@@ -7213,7 +7213,7 @@
   },
   {
     "tier": 3,
-    "question": "From roughly 1994 to 1998, North Korea suffered a catastrophic famine called by the regime the 'Arduous March' (or 'March of Suffering'). The Soviet collapse had ended subsidized aid; collectivized agriculture had collapsed; floods compounded the disaster. About how many North Koreans died in the famine, of a population of about 22 million?",
+    "question": "From 1994 to 1998, North Korea suffered a catastrophic famine called by the regime the 'Arduous March' (or 'March of Suffering'). The Soviet collapse had ended subsidized aid; collectivized agriculture had collapsed; floods compounded the disaster. What share of the country starved to death?",
     "answer": "Roughly 600,000 to 2.5 million — about 3 to 11 percent of the population",
     "choices": [
       "Roughly 600,000 to 2.5 million — about 3 to 11 percent of the population",
@@ -7465,7 +7465,7 @@
   },
   {
     "tier": 3,
-    "question": "On May 29 1453 the Ottoman Sultan Mehmed II conquered Constantinople, ending the 1,000-year Byzantine Empire. The fall completed an Ottoman dream that several previous sultans had failed to achieve. How old was Mehmed at his victory?",
+    "question": "On May 29 1453 the Ottoman Sultan conquered Constantinople, ending the 1,000-year Byzantine Empire. The capture completed a project several earlier sultans had failed to finish. How young was the conqueror at his victory?",
     "answer": "Mehmed was 21 years old at the fall of Constantinople",
     "choices": [
       "Mehmed was 21 years old at the fall of Constantinople",
@@ -7525,7 +7525,7 @@
   },
   {
     "tier": 3,
-    "question": "On the evening of April 6 1994, the airplane carrying the Hutu Rwandan president Juvénal Habyarimana was shot down on approach to Kigali airport. Within hours organized killings began against Tutsi civilians and moderate Hutus, planned and coordinated by Hutu extremists. About how many people died in roughly 100 days?",
+    "question": "On the evening of April 6 1994, the airplane carrying the Hutu Rwandan president Juvénal Habyarimana was shot down on approach to Kigali airport. Within hours, organized killings began against the Tutsi minority and against political moderates, planned and coordinated by Hutu extremists. What was the death toll of the genocide that followed?",
     "answer": "About 800,000 Tutsi and moderate Hutus killed in roughly 100 days",
     "choices": [
       "About 800,000 Tutsi and moderate Hutus killed in roughly 100 days",
@@ -7765,7 +7765,7 @@
   },
   {
     "tier": 3,
-    "question": "After Themistocles tricked Xerxes into entering the narrow strait of Salamis on September 25 480 BC, the Greek fleet attacked the disorganized Persian ships at dawn. How many Persian ships were destroyed compared to Greek losses?",
+    "question": "After Themistocles tricked Xerxes into entering the narrow strait of Salamis on September 25 480 BC, the Greek fleet attacked the disorganized Persian columns at dawn. What was the lopsided cost on each side?",
     "answer": "About 200-300 Persian ships destroyed against about 40 Greek losses",
     "choices": [
       "About 200-300 Persian ships destroyed against about 40 Greek losses",
@@ -7813,7 +7813,7 @@
   },
   {
     "tier": 3,
-    "question": "On September 13 1759 the British general James Wolfe and the French commander Louis-Joseph de Montcalm fought a battle on the Plains of Abraham above Quebec City. The 30-minute engagement decided the French and Indian War (and the European Seven Years' War in North America). What was unusual about the fates of the two commanders?",
+    "question": "On September 13 1759 the British general James Wolfe and the French commander Louis-Joseph de Montcalm clashed on the Plains of Abraham above Quebec City. The 30-minute engagement decided the French and Indian War (and the European Seven Years' War in North America). What was unusual about the fates of the two opposing generals?",
     "answer": "Both Wolfe and Montcalm were killed in the battle",
     "choices": [
       "Both Wolfe and Montcalm were killed in the battle",
@@ -7957,13 +7957,13 @@
   },
   {
     "tier": 4,
-    "question": "Isaac Newton had worked out universal gravitation by 1666 but never published. When Edmond Halley visited Cambridge in August 1684 and asked what curve a planet would follow under inverse-square attraction, Newton answered 'an ellipse — I have calculated it.' Over the next two years he rewrote it as the Philosophiae Naturalis Principia Mathematica (1687). The Royal Society had agreed to publish but at the last moment could not pay the printing bill. Why was the publication budget exhausted?",
+    "question": "Isaac Newton had worked out universal gravitation by 1666 but never published. When Edmond Halley visited Cambridge in August 1684 and asked what curve a planet would follow under inverse-square attraction, Newton answered 'an ellipse — I have calculated it.' Over the next two years he rewrote it as the Philosophiae Naturalis Principia Mathematica (1687). The Royal Society had agreed to publish but at the last moment could not pay the printing bill. Why was the budget exhausted?",
     "answer": "It had been spent on Francis Willughby's History of Fishes — a lavishly illustrated book that flopped commercially",
     "choices": [
       "It had been spent on Francis Willughby's History of Fishes — a lavishly illustrated book that flopped commercially",
-      "It had been spent on John Flamsteed's Royal Observatory star catalog, paid ahead of completion",
-      "It had been spent on Robert Hooke's pension settlement after his dispute with Newton",
-      "It had been spent on rebuilding the Society's Crane Court premises after the 1666 fire"
+      "It had been spent on Flamsteed's Royal Observatory star catalog — paid ahead of completion years before delivery",
+      "It had been spent on Hooke's pension settlement — owed after his bitter priority dispute with Newton",
+      "It had been spent on Wren's restoration plans — for the Society's Crane Court premises after the 1666 fire"
     ],
     "context": "The History of Fishes (1686, by Francis Willughby and edited by John Ray) was lavishly illustrated and commercially disastrous; the Society's accounts show staff briefly paid in unsold copies of the book. Halley personally paid the printing costs of the Principia out of pocket despite a modest income. The Principia is widely regarded as the most important scientific work ever published. Newton was 44 at publication. Halley would later predict (correctly, but posthumously) the return of the comet that bears his name (1758). The famous Newton apple-in-the-plague-year story was told by Newton in his old age to William Stukeley and others; the Woolsthorpe tree (a Flower of Kent variety) still stands."
   },
@@ -8477,9 +8477,9 @@
     "answer": "A trained civil-rights organizer — NAACP secretary since 1943, recently trained at the Highlander Folk School in Tennessee",
     "choices": [
       "A trained civil-rights organizer — NAACP secretary since 1943, recently trained at the Highlander Folk School in Tennessee",
-      "A Tuskegee Institute social-work professor — on sabbatical research leave in Alabama that year",
-      "An assistant pastor under E. D. Nixon at the African Methodist Episcopal Zion Church",
-      "A Spelman-College graduate and junior NAACP lawyer trained under Thurgood Marshall"
+      "A Tuskegee Institute social-work professor — on sabbatical research leave in Alabama through that academic year",
+      "An assistant pastor under E. D. Nixon — serving the African Methodist Episcopal Zion Church in central Montgomery",
+      "A Spelman-College graduate and junior NAACP lawyer — trained personally under Thurgood Marshall in the late 1940s"
     ],
     "context": "Parks had been Montgomery NAACP secretary since 1943; she had attended a two-week interracial-organizing workshop at Myles Horton's Highlander Folk School in summer 1955. Earlier in 1955 a pregnant 15-year-old, Claudette Colvin, had been arrested for the same offense, but movement leaders judged her circumstances bad for a test case. Parks's refusal on December 1 was at least partly planned. The Browder v. Gayle Supreme Court ruling (December 17 1956) struck down Alabama bus segregation. The boycott made Martin Luther King a national figure. Parks lived until 2005; she lay in honor in the U.S. Capitol Rotunda, the first woman to receive that honor."
   },
@@ -9005,9 +9005,9 @@
     "answer": "Reassigned him to the Pacific theater — with explicit orders not to speak publicly about Katyn",
     "choices": [
       "Reassigned him to the Pacific theater — with explicit orders not to speak publicly about Katyn",
-      "Retired him quietly from the diplomatic service with a pension and a private letter of thanks",
-      "Promoted him to ambassador in Argentina, where his findings could be safely buried",
-      "Court-martialed him for unauthorized contact with the Polish government-in-exile in London"
+      "Retired him quietly from the diplomatic service — with a pension and a private letter of thanks from FDR",
+      "Promoted him to ambassador in Argentina — where his Katyn findings could be safely buried at distance",
+      "Court-martialed him for the unauthorized contact — naming the Polish government-in-exile in London as the channel"
     ],
     "context": "George H. Earle III — former Pennsylvania governor and FDR's special envoy on Polish-Soviet relations — reported in 1944 that the Soviets had clearly committed the Katyn massacre. Roosevelt ordered Earle silenced and reassigned him to Samoa as assistant governor; FDR personally wrote forbidding publication of Earle's findings. The Soviets blamed the Germans until April 1990, when Mikhail Gorbachev finally admitted Soviet responsibility. The Polish president Lech Kaczyński and 95 others died in a plane crash near Smolensk in April 2010 en route to a Katyn anniversary commemoration. The Andrzej Wajda film Katyń (2007) is the major Polish artistic treatment."
   },
@@ -9205,7 +9205,7 @@
   },
   {
     "tier": 4,
-    "question": "In the years after the 1948-49 Berlin Blockade, an estimated 2.5 to 3 million East Germans escaped to West Berlin and from there to West Germany — a hemorrhage the regime could not afford to sustain. On the night of August 12-13 1961, East German construction workers under armed guard began stringing barbed wire across the inter-Berlin border. Within a few months barbed wire was replaced with concrete. About 140 people died trying to cross the Berlin Wall. How long did the Wall stand?",
+    "question": "In the years after the 1948-49 Berlin Blockade, an estimated 2.5 to 3 million East Germans escaped to West Berlin and from there to West Germany — a hemorrhage the regime could not afford to sustain. On the night of August 12-13 1961, East German construction workers under armed guard began stringing barbed wire across the inter-Berlin border. Within a few months barbed wire was replaced with concrete. Roughly 140 people died trying to cross. How long did the Berlin Wall stand before it came down?",
     "answer": "About 28 years — from August 1961 to November 1989",
     "choices": [
       "About 28 years — from August 1961 to November 1989",
@@ -10015,7 +10015,7 @@
       "Francis Willughby's History of Fishes — a lavishly illustrated 1686 book that flopped, leaving staff briefly paid in unsold copies",
       "John Flamsteed's Royal Observatory star catalog — paid for ahead of completion and never delivered on time",
       "Robert Hooke's annual pension and lecture series — owed in arrears across the 1680s",
-      "Christopher Wren's restoration plans for the Society's Crane Court premises after the 1666 fire"
+      "Christopher Wren's restoration plans — for the Society's Crane Court premises after the 1666 fire"
     ],
     "context": "Willughby's De Historia Piscium (1686) was the Royal Society's flagship publication of the decade — elaborately illustrated, expensive to produce, and a commercial disaster. The Society's accounts show staff briefly paid in unsold copies. Halley personally underwrote the Principia despite a modest income. Newton was 44 at publication and so reclusive that Halley handled every aspect of production — negotiating with the printer, correcting proofs, mediating the Hooke priority dispute that nearly stopped the project. The Principia is widely considered the most important scientific work ever published. Halley would later predict the return of the comet that bears his name (predicted 1705, returned 1758, 16 years after Halley's death)."
   },
@@ -10181,9 +10181,9 @@
     "answer": "Persuade the Council to behead Servetus instead of burning him — a quicker, less painful death; the Council refused",
     "choices": [
       "Persuade the Council to behead Servetus instead of burning him — a quicker, less painful death; the Council refused",
-      "Persuade the Council to commute the sentence to permanent banishment from Reformed lands",
-      "Persuade the Council to permit Servetus's recantation in exchange for life imprisonment",
-      "Persuade the Council to delay execution while a Reformed synod could review the theology"
+      "Persuade the Council to commute the sentence — to permanent banishment from all Reformed lands",
+      "Persuade the Council to accept Servetus's recantation — in exchange for indefinite life imprisonment",
+      "Persuade the Council to delay the execution — while a Reformed synod could review the theology"
     ],
     "context": "Calvin had tried to persuade the Council to behead Servetus rather than burn him — a swifter, less painful death — but the Council insisted on the customary execution by fire. Servetus was burned with copies of his book chained to him, protesting his orthodoxy as the flames rose. The execution was applauded by virtually all Reformers (Melanchthon wrote Calvin his congratulations) and by Catholic authorities. Sebastian Castellio's anonymous Concerning Heretics (1554) was the first major argument that putting a man to death for his beliefs was itself a sin — an early articulation of religious freedom. Calvin remained the towering figure of the Reformed tradition; Servetus's anti-Trinitarianism survived in the Unitarian movements of the 17th–18th centuries."
   },
@@ -10693,7 +10693,7 @@
   },
   {
     "tier": 5,
-    "question": "On November 24 1859, John Murray's London bookshop released Charles Darwin's On the Origin of Species. Darwin had delayed publication for more than two decades since his Galapagos voyage of 1835, refining his theory of evolution by natural selection in private and anxiously corresponding with friends about how to present it. A 1858 letter from Alfred Russel Wallace describing essentially the same theory finally forced Darwin's hand. The first print run sold out on the publication day. How many copies did that first edition contain?",
+    "question": "On November 24 1859, John Murray's London bookshop released Charles Darwin's On the Origin of Species. Darwin had delayed publication for more than two decades since his Galapagos voyage of 1835, refining his theory of evolution by natural selection in private and anxiously corresponding with friends about how to present it. A 1858 letter from Alfred Russel Wallace describing essentially the same theory finally forced Darwin's hand. The initial print run vanished from booksellers' shelves within a single day. What was the size of that opening run?",
     "answer": "1,250 copies — sold out to booksellers on the first day",
     "choices": [
       "1,250 copies — sold out to booksellers on the first day",
@@ -10873,7 +10873,7 @@
   },
   {
     "tier": 5,
-    "question": "On May 14 1804 Captains Meriwether Lewis and William Clark left St. Charles, Missouri with about 33 men and the teenage Shoshone interpreter Sacagawea — the Corps of Discovery commissioned by Thomas Jefferson to explore the lands the United States had just bought from France through the Louisiana Purchase. They returned to St. Louis on September 23 1806 — two years and four months later. Only one man died on the expedition (probably of a ruptured appendix). About how many miles did the Corps cover on its round trip?",
+    "question": "On May 14 1804 Captains Meriwether Lewis and William Clark left St. Charles, Missouri with around 33 men and the teenage Shoshone interpreter Sacagawea — the Corps of Discovery commissioned by Thomas Jefferson to explore lands the United States had just bought through the Louisiana Purchase. They returned to St. Louis on September 23 1806, two years and four months later. Only one man died on the expedition (probably of a ruptured appendix). What distance had the Corps covered on its round trip?",
     "answer": "About 8,000 miles — from St. Louis to the Pacific and back",
     "choices": [
       "About 8,000 miles — from St. Louis to the Pacific and back",
@@ -11185,15 +11185,15 @@
   },
   {
     "tier": 5,
-    "question": "By January 1943 the German 6th Army was trapped in Stalingrad, encircled by Soviet forces since November, starving and frostbitten. On January 30 Hitler promoted commander Friedrich Paulus to the rank of Generalfeldmarschall with a specific message attached. Hitler had calculated something specific from German military tradition. The promotion was a signal to Paulus about what was expected of him personally rather than as a tribute. What was Hitler signaling Paulus to do?",
-    "answer": "To commit suicide rather than surrender — no German field marshal had ever been taken alive in the history of the rank",
+    "question": "Friedrich Paulus surrendered the German 6th Army at Stalingrad on January 31 1943 — the first German field marshal ever taken prisoner alive. Hitler raged on hearing the news. But Paulus's most damaging act against the regime came two years later, in 1944, after a long propaganda effort by the Soviets and the cataclysm of the July 20 assassination plot against Hitler back in Germany. What did Paulus then publicly do from his Soviet captivity?",
+    "answer": "Began broadcasting on Moscow radio — calling on German soldiers and civilians to overthrow Hitler and end the war",
     "choices": [
-      "To commit suicide rather than surrender — no German field marshal had ever been taken alive in the history of the rank",
-      "To break out westward — only a field marshal could rally the army for one more desperate attack",
-      "To negotiate surrender terms — only a field marshal had rank to deal with Soviet army commanders",
-      "To fly out personally — a field marshal could not be left to suffer a soldier's fate in captivity"
+      "Began broadcasting on Moscow radio — calling on German soldiers and civilians to overthrow Hitler and end the war",
+      "Wrote a confession denouncing Bolshevism — smuggled to a Wehrmacht resistance cell through Swedish diplomats",
+      "Personally led a captive German regiment east — to fight alongside the Red Army at the gates of Berlin in 1945",
+      "Escaped from a Volga camp by river barge — was recaptured ten days later and never made it home"
     ],
-    "context": "Paulus surrendered the following day, January 31 1943, becoming the first German field marshal ever taken prisoner alive. About 91,000 starving German troops surrendered at Stalingrad; only about 5,000 survived Soviet captivity and returned to Germany after the war. The siege had cost roughly 750,000 German + Axis casualties and possibly 1.1 million Soviet. Paulus eventually broadcast anti-Nazi radio addresses from Soviet captivity. He died in East Germany in 1957. Stalingrad is widely regarded as the strategic turning point of WWII in Europe."
+    "context": "Paulus joined the Bund Deutscher Offiziere (League of German Officers) in Moscow in August 1944 and signed an appeal calling on the German army and people to remove Hitler and end the war. Recordings of his speeches were broadcast back into Germany on Soviet radio and dropped as leaflets — Goebbels's propaganda apparatus called him a traitor. His wife, who had not heard from him in nearly two years, was placed under house arrest by the Gestapo (Sippenhaft — clan custody) and remained so until war's end; she died in 1949 having never seen him again. Paulus testified for the prosecution at Nuremberg in 1946. The Soviets eventually released him to East Germany in 1953, where he gave occasional university lectures and quietly died in 1957. Of about 91,000 men surrendered with him, only 5,000 survived to return home."
   },
   {
     "tier": 5,
@@ -11225,9 +11225,9 @@
     "answer": "57,000 German prisoners marched through Moscow under guard — street-cleaners followed with hoses to wash the streets behind them",
     "choices": [
       "57,000 German prisoners marched through Moscow under guard — street-cleaners followed with hoses to wash the streets behind them",
-      "Three hundred captured German tanks dragged through Red Square by trucks for the Moscow crowds",
-      "Forty captured German divisional standards burned in a public ceremony on Red Square",
-      "Twelve captured German generals exhibited in cages in the Park of Culture for a month"
+      "Three hundred captured German tanks — dragged through Red Square by trucks for the Moscow crowds",
+      "Forty captured German divisional standards — burned in a public ceremony on Red Square at sunset",
+      "Twelve captured German generals — exhibited in cages in the Park of Culture for a month"
     ],
     "context": "The march of 57,000 German prisoners — including 19 generals — through central Moscow on July 17 1944 was orchestrated to display the destruction of Army Group Center. Street-cleaning trucks with high-pressure hoses followed the column to symbolically wash German contamination from Soviet ground. Hitler had forbidden withdrawal from the Belarusian salient; the Soviet maskirovka (deception) had focused German attention south toward Ukraine. Operation Bagration destroyed roughly 28 German divisions in two months — a worse single defeat than Stalingrad in raw scale — and tied down German reserves that could not move west to oppose D-Day (which had begun two weeks earlier)."
   },
@@ -11497,7 +11497,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert Conquest's revised estimates and the post-Soviet archives of the Memorial society in Moscow have established roughly the scale of the Soviet labor camp system over its 1918-1956 active period. The system imprisoned, exiled, or otherwise sentenced an enormous number of Soviet citizens; the death rate was high but most prisoners survived their sentence. About how many people are estimated to have passed through the Gulag during its main period of operation?",
+    "question": "Robert Conquest's revised estimates and the post-Soviet archives compiled by the Memorial society in Moscow have established roughly the scale of the Soviet labor-camp system over its 1918-1956 active period. The system imprisoned, exiled, or otherwise sentenced an enormous number of Soviet citizens; the death rate was high but most prisoners survived their sentence. What is the standard scholarly estimate of total inmates over that span?",
     "answer": "About 18 million people passed through the Gulag — with roughly 1.5 to 1.7 million dying in the camps",
     "choices": [
       "About 18 million people passed through the Gulag — with roughly 1.5 to 1.7 million dying in the camps",
@@ -11621,9 +11621,9 @@
     "answer": "The Soviet invasion of Afghanistan — which had begun on December 24 1979, three weeks earlier",
     "choices": [
       "The Soviet invasion of Afghanistan — which had begun on December 24 1979, three weeks earlier",
-      "The Soviet boycott of the 1980 Moscow Olympics torch-relay route over Western Europe",
-      "The Soviet shoot-down of a South Korean civilian airliner near Sakhalin Island in 1978",
-      "The Polish Solidarity strikes at the Lenin Shipyards in Gdańsk in late 1979"
+      "The Soviet boycott of the 1980 Moscow Olympics — over the torch-relay route through Western Europe",
+      "The Soviet shoot-down of a civilian airliner — a South Korean flight near Sakhalin Island in 1978",
+      "The Polish Solidarity strikes — at the Lenin Shipyards in Gdańsk during late 1979"
     ],
     "context": "Sakharov was deported to Gorky on January 22 1980, days after publicly demanding Soviet withdrawal from Afghanistan in interviews with Western correspondents. His wife Elena Bonner was his sole conduit to the outside world during the six-year exile. He conducted hunger strikes through the early 1980s to demand his wife's permission to travel abroad for medical treatment. Gorbachev personally phoned him in December 1986 to restore him to Moscow. He served briefly in the Congress of People's Deputies and died of a heart attack on December 14 1989. The European Parliament's Sakharov Prize for Freedom of Thought (annual since 1988) is named for him. Bonner later emigrated to Boston, where she lived until her death in 2011."
   },
@@ -11923,7 +11923,7 @@
       "Stinger man-portable anti-aircraft missiles — first delivered in 1986, shot down roughly 270 Soviet helicopters and jets",
       "TOW anti-tank missiles — fired from concealed mountain positions against Soviet armored columns",
       "Modified American M16 rifles — distributed in tens of thousands through the Khyber Pass",
-      "Soviet-pattern Strela-2 missiles bought from Egyptian and Syrian stocks for deniability"
+      "Soviet-pattern Strela-2 missiles — bought from Egyptian and Syrian stocks for plausible deniability"
     ],
     "context": "About 2,500 Stingers were supplied to the mujahideen 1986–89; their first confirmed kill (three Soviet Mi-24 'Hind' gunships at Jalalabad on September 25 1986) ended Soviet helicopter dominance over the Afghan countryside. Soviet casualties spiked, morale collapsed, and Gorbachev announced withdrawal within a year. The withdrawal completed in February 1989. The mujahideen networks the U.S. and Saudi Arabia had armed — particularly the Arab volunteers around Osama bin Laden — became the seed of al-Qaeda. The war contributed substantially to the Soviet collapse in 1991. Svetlana Alexievich's Zinky Boys (1989) captures the Soviet veterans' experience."
   },
@@ -12217,7 +12217,7 @@
   },
   {
     "tier": 5,
-    "question": "Ibn Battuta (1304-1377) of Tangier in modern Morocco set out in 1325 at age 21 on what was intended as a one-year pilgrimage to Mecca. He returned home about 24 years later, having traveled across most of the known Islamic world plus China, Sumatra, and parts of West Africa. His travels covered an estimated distance unprecedented in pre-modern times for an individual traveler. About how many miles did Ibn Battuta cover across his travel career?",
+    "question": "Ibn Battuta (1304-1377), born in the Moroccan port of Tangier, set out in 1325 at age 21 on what was intended as a one-year pilgrimage to Mecca. He returned home about 24 years later, having traveled most of the known Islamic world plus the Far East, Sumatra, and parts of West Africa. His total distance was unprecedented in pre-modern times for an individual traveler. What is the standard scholarly estimate of his lifetime road and sea distance?",
     "answer": "About 75,000 miles — across about 44 modern countries from Tangier to China",
     "choices": [
       "About 75,000 miles — across about 44 modern countries from Tangier to China",

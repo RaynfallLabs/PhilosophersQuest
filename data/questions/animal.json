@@ -3037,15 +3037,15 @@
   },
   {
     "tier": 1,
-    "question": "An arctic fox grows a thick white coat in winter and sheds to a brown summer coat. Why does its fur change color with the seasons?",
-    "answer": "White blends with snow and brown with tundra",
+    "question": "An arctic fox can sleep on bare snow at temperatures that would freeze a human in minutes. Tests show it does not even start to shiver until about -70°C (-94°F). What lets it tolerate such cold?",
+    "answer": "The warmest fur of any mammal — short dense underfur with long guard hairs",
     "choices": [
-      "White blends with snow and brown with tundra",
-      "White reflects winter heat and brown takes summer",
-      "Males prefer white in winter and brown in summer",
-      "White scares off summer flies and brown lets bugs"
+      "The warmest fur of any mammal — short dense underfur with long guard hairs",
+      "A second beating heart in its tail — keeping the extremities warm year-round",
+      "An ability to drop body temperature near freezing — like a shallow hibernation",
+      "A blubber layer like seals and whales — built up under the skin in autumn"
     ],
-    "context": "Arctic foxes molt twice a year. The trigger is day length, not temperature. White against snow and brown against summer tundra both serve camouflage from prey and from larger predators."
+    "context": "The arctic fox (Vulpes lagopus) has the lowest critical temperature of any mammal — about -70°C (-94°F). Below that, its metabolism finally has to burn extra fuel to stay warm. The trick is fur structure: a dense underfur traps still air, long guard hairs shed wind and snow, and even the paw pads grow fur in winter (no other dog species does this). The fox curls into a ball with its tail over its nose and can sleep through Arctic storms. In summer it sheds about half its coat and looks like a small brown dog. The species ranges across the entire Arctic — Canada, Alaska, Russia, Greenland, Iceland — and is the only land mammal that lives on the Arctic sea ice in winter."
   },
   {
     "tier": 3,
@@ -8189,9 +8189,9 @@
     "answer": "Selection acts on replicators wherever those replicator effects raise fitness — the so-called host body becomes part of the parasite's extended phenotype",
     "choices": [
       "Selection acts on replicators wherever those replicator effects raise fitness — the so-called host body becomes part of the parasite's extended phenotype",
-      "Selection acts only at the organismal level — the parasite/host system is one organism with two parts, and extended-phenotype framing is biological poetry than substan",
-      "Selection acts at the group level — Sacculina selects for crab groups that quite tolerate parasitism most efficiently for the parasite's reproduction",
-      "Selection cannot act on extended-phenotype traits — they are by-products and never directly under selection"
+      "Selection acts only at the organismal level — the parasite/host system is one organism in two parts, and extended-phenotype framing is biological poetry not substance",
+      "Selection acts at the group level — Sacculina selects for crab groups that tolerate parasitism most efficiently, raising the parasite's reproduction rate at group scale",
+      "Selection cannot act on extended-phenotype traits — they are mere by-products of host biology and never directly under selection in the technical sense Dawkins meant"
     ],
     "context": "Dawkins, The Extended Phenotype (1982): the replicator's reach extends beyond cell membranes. Parasite genes shape host behavior; beaver genes shape dam architecture. The conceptual move dissolves naive 'organism = unit of selection' framing. Sacculina, Toxoplasma, and Ophiocordyceps remain canonical illustrations."
   },
@@ -8234,12 +8234,12 @@
   {
     "tier": 5,
     "question": "Conservation policy on pollinators sometimes presents 'save the bees' as a moral imperative. Scrutinizing the slogan: which framing matches the best evidence and most coherent ethical reasoning across native and managed pollinators?",
-    "answer": "Honeybees are not 'saved' like wild species — habitat for diverse native pollinators benefits ecosystems",
+    "answer": "Honeybees are not 'saved' like wild species — they are managed livestock; habitat for diverse native pollinators (Bombus, mason bees, others) is the substantive conservation work",
     "choices": [
-      "Honeybees are not 'saved' like wild species — habitat for diverse native pollinators benefits ecosystems",
-      "All bees must be protected equally — distinguishing native bees from managed honeybees is a distraction from the broader pollinator emergency that demands immediate policy action",
-      "Beekeeping is morally suspect — the use of honeybees for agricultural pollination is a form of exploitation that conservation policy should phase out over the next decade in",
-      "Bee declines are exaggerated — honeybee colonies in the US have grown over the last decade, and 'save the bees' is largely a marketing campaign promoted by environmental groups"
+      "Honeybees are not 'saved' like wild species — they are managed livestock; habitat for diverse native pollinators (Bombus, mason bees, others) is the substantive conservation work",
+      "All bees must be protected equally — distinguishing native bees from managed honeybees is a distraction from a broader pollinator emergency that demands immediate policy action",
+      "Beekeeping is morally suspect — the use of honeybees for agricultural pollination is a form of exploitation that conservation policy should phase out over the next decade",
+      "Bee declines are exaggerated — honeybee colonies in the US have grown over the last decade, and 'save the bees' is a marketing campaign promoted by environmental advocacy groups"
     ],
     "context": "The substantive ecological framing: honeybees are introduced managed livestock — colony losses are an economic problem with policy implications, not an extinction. Native bee declines (Bombus, several ESA-listed species) are conservation concerns. Pure 'save the bees' campaigns can mask the distinction."
   },
@@ -8270,12 +8270,12 @@
   {
     "tier": 5,
     "question": "Tardigrades survive radiation doses that would kill humans many times over. Researchers identified a protein in tardigrade chromatin that protects DNA against radiation damage. What does this discovery suggest about possible biotechnology applications?",
-    "answer": "Hashimoto et al. (2016) identified Dsup — expressed in human cells, Dsup reduces radiation-induced DNA damage",
+    "answer": "Hashimoto et al. (2016) identified Dsup — expressed in human HEK293 cells, Dsup binds DNA and reduces radiation-induced damage by about 40%",
     "choices": [
-      "Hashimoto et al. (2016) identified Dsup — expressed in human cells, Dsup reduces radiation-induced DNA damage",
-      "The protein protects only tardigrade DNA — it has no effect at all when transferred to other organisms because chromatin structures taxa differ too much for the func",
-      "Tardigrade radiation tolerance comes purely from desiccation — no specific protein contributes beyond the so-called general cellular dehydration response",
-      "Dsup has been shown to be actively harmful in human cell lines — and the original Hashimoto study has now been formally retracted by the publishing journal"
+      "Hashimoto et al. (2016) identified Dsup — expressed in human HEK293 cells, Dsup binds DNA and reduces radiation-induced damage by about 40%",
+      "The protein protects only tardigrade DNA — it has no effect when transferred to other organisms because chromatin structures across taxa differ too much",
+      "Tardigrade radiation tolerance comes purely from desiccation — no specific protein contributes beyond the general cellular dehydration response in anhydrobiotes",
+      "Dsup has been shown to be actively harmful in human cell lines — and the original Hashimoto study has been formally retracted by the publishing journal Nature"
     ],
     "context": "Hashimoto et al. (Nature Communications, 2016): Dsup (Damage suppressor) protein binds DNA, attenuates radiation-induced damage. Expressed in human HEK293 cells, it reduces DNA breaks by ~40%. Potential applications in radiotherapy and biotechnology — though far from clinical use. A genuine biotech-translation case."
   },
@@ -8318,12 +8318,12 @@
   {
     "tier": 5,
     "question": "Toxoplasma gondii latent infection occurs in roughly a third of humans. Studies have linked it to small increases in risk-taking, traffic accidents, and schizophrenia incidence. How should a careful reader summarize this body of evidence?",
-    "answer": "Animal-model causality is solid; human correlation is suggestive but mixed — meta-analyses find real but small associations overall",
+    "answer": "Animal-model causality is solid; human correlation is suggestive but mixed — Sutterland (2017) meta-analyses find real but small associations in carrier populations",
     "choices": [
-      "Animal-model causality is solid; human correlation is suggestive but mixed — meta-analyses find real but small associations overall",
+      "Animal-model causality is solid; human correlation is suggestive but mixed — Sutterland (2017) meta-analyses find real but small associations in carrier populations",
       "Effects fail to replicate in cleaner-design studies — Sugden et al. (2016) Dunedin cohort found no Toxoplasma-behavior associations in adults at any age stratum tested",
       "Toxoplasma fully controls human behavior in carriers — making them measurably more reckless, aggressive, and prone to mental illness in confirmed clinical fashion",
-      "Human-behavior associations are correlational only — observational designs cannot separate parasite effects from cat-exposure and socioeconomic confounders systematically"
+      "Human-behavior associations are correlational only — observational designs cannot separate parasite effects from cat-exposure and socioeconomic confounders in cohort data"
     ],
     "context": "Flegr's career has been built on correlational findings; Sutterland et al. meta-analyses (2017) confirm small effect sizes for schizophrenia and traffic accidents. Animal-model causality is solid (rat fear-of-cat reversal). Honest summary: real population-level signal, modest individual-level effects, sensational framings exceed the evidence."
   },
@@ -8333,9 +8333,9 @@
     "answer": "Corals operate near their thermal limit at most reef sites — small persistent temperature rises trigger zooxanthellae expulsion; without symbiont return in weeks the coral starves",
     "choices": [
       "Corals operate near their thermal limit at most reef sites — small persistent temperature rises trigger zooxanthellae expulsion; without symbiont return in weeks the coral starves",
-      "Corals are evolving heat tolerance faster than the climate is warming — most reefs will adapt within the next decade and bleaching events will become an artifact of the past",
-      "Coral reefs are not declining — bleaching events recover fully each season and reef cover is stable globally for the foreseeable future according to most ongoing monitoring efforts",
-      "Coral symbiosis is unrelated to temperature stress at all — bleaching is caused entirely by ocean acidification than by warming"
+      "Corals are evolving heat tolerance faster than the climate is warming — most reefs will adapt within the next decade and bleaching will become an artifact of the past",
+      "Coral reefs are not declining — bleaching events recover fully each season and reef cover is stable globally for the foreseeable future according to most monitoring efforts",
+      "Coral symbiosis is unrelated to temperature stress at all — bleaching is caused entirely by ocean acidification, a separate carbonate-chemistry process on a longer timescale"
     ],
     "context": "Hoegh-Guldberg, Hughes, others — coral-zooxanthellae symbiosis is heat-sensitive (Symbiodinium photosystem II breakdown above ~30°C in many reefs). Expulsion ('bleaching') is reversible only if heat eases within weeks. Repeated bleaching has converted GBR sections to algae-dominated. Conservation stakes are real."
   },
@@ -8357,9 +8357,9 @@
     "answer": "The model is weaker for invertebrates — no equivalent excise-tax stream funds insect conservation; ESA listings and Farm Bill programs supply most invertebrate stewardship instead",
     "choices": [
       "The model is weaker for invertebrates — no equivalent excise-tax stream funds insect conservation; ESA listings and Farm Bill programs supply most invertebrate stewardship instead",
-      "The model fully covers invertebrates — Pittman-Robertson taxes are collected on insect-collecting equipment and the funding stream is identical to that for vertebrate",
-      "The model excludes invertebrates entirely by design — Roosevelt and Leopold both rejected applying conservation principles to insects",
-      "Invertebrate conservation requires a separate global treaty — no national-level Western framework can apply to insects policy way without ratifying international agreements first"
+      "The model fully covers invertebrates — Pittman-Robertson taxes are collected on insect-collecting equipment and the funding stream is identical to the vertebrate one in practice",
+      "The model excludes invertebrates entirely by design — Roosevelt and Leopold both rejected applying the conservation principles of their day to insects on philosophical grounds",
+      "Invertebrate conservation requires a separate global treaty — no national Western framework can apply to insects in any meaningful way without ratifying international agreements"
     ],
     "context": "Pittman-Robertson (1937) and Dingell-Johnson (1950) excise-tax funding covers hunting/fishing gear — vertebrate game. Invertebrate conservation tools: ESA listings (Karner blue, American burying beetle, freshwater mussel species), USDA pollinator programs, Farm Bill conservation reserve programs, state strategies. Less robust funding."
   },
@@ -8389,13 +8389,13 @@
   },
   {
     "tier": 5,
-    "question": "Eusociality is famous in bees, ants, and termites — but is also documented in some shrimp, certain rodents, and a single bird species. What does the diversity of eusocial origins reveal about the trait and its evolutionary requirements?",
-    "answer": "Eusociality has evolved independently 20+ times — convergent on the same recipe (overlapping generations, cooperative care",
+    "question": "Eusociality is famous in bees, ants, and termites — but is also documented in some shrimp, certain rodents, and at least one bird species. What does the diversity of eusocial origins reveal about the trait and its evolutionary requirements?",
+    "answer": "Eusociality has evolved independently more than 20 times — convergent on the same recipe of overlapping generations, cooperative brood care, and reproductive division of labor",
     "choices": [
-      "Eusociality has evolved independently 20+ times — convergent on the same recipe (overlapping generations, cooperative care",
-      "Eusociality has evolved only twice — once in insects and once in mammals",
-      "Eusociality is also also impossible without haplodiploidy — and the reported diploid cases (termites, mole rats overall",
-      "Eusociality is not a real biological category at all — the term should be retired by mainstream biology because the documented ca"
+      "Eusociality has evolved independently more than 20 times — convergent on the same recipe of overlapping generations, cooperative brood care, and reproductive division of labor",
+      "Eusociality has evolved only twice in total — once in the insect Hymenoptera and once again in the mammalian naked mole rats of the East African arid zone",
+      "Eusociality is impossible without haplodiploidy — and the reported diploid cases (termites, mole rats, snapping shrimp) must be misclassified by current behavioral ecologists",
+      "Eusociality is not a real biological category — the term should be retired by mainstream biology because the documented cases differ too much in their underlying mechanisms"
     ],
     "context": "Eusociality documented in: bees, ants, wasps, termites, naked mole rats, Damaraland mole rats, Synalpheus snapping shrimp, possibly some thrips, certain aphids. Cooperative breeders (red-cockaded woodpecker, scrub-jay) are intermediate. Strong selection where precursors align. Crespi and Yanega frame the diversity."
   },
@@ -8462,24 +8462,24 @@
   {
     "tier": 5,
     "question": "The UK Animal Welfare (Sentience) Act 2022 recognized cephalopod mollusks and decapod crustaceans as sentient beings — the first time invertebrates were given this legal status in a major jurisdiction. What does this development most accurately reflect about science and policy together?",
-    "answer": "Accumulating evidence — octopuses, lobsters, and crabs show learning, pain responses",
+    "answer": "Accumulating evidence — octopuses, lobsters, and crabs show learning, pain responses, and tool use; the Birch et al. (2021) LSE report synthesized it for policy",
     "choices": [
-      "Accumulating evidence — octopuses, lobsters, and crabs show learning, pain responses",
-      "A definitive scientific resolution — sentience in cephalopods and decapods has been conclusively proven overall",
-      "A purely political decision — there is also no behavioral or neurological evidence to support cephalopod or decapod sentience at all",
-      "A reversal of the entire animal-welfare tradition — extending sentience to invertebrates rejects the Western husbandry framework outright"
+      "Accumulating evidence — octopuses, lobsters, and crabs show learning, pain responses, and tool use; the Birch et al. (2021) LSE report synthesized it for policy",
+      "A definitive scientific resolution — sentience in cephalopods and decapods has been conclusively proven and is no longer a contested empirical or philosophical question",
+      "A purely political decision — there is no significant behavioral or neurological evidence to support cephalopod or decapod sentience as a real scientific category at all",
+      "A reversal of the animal-welfare tradition — extending sentience to invertebrates rejects the Western husbandry framework that has guided UK practice since the 19th century"
     ],
     "context": "LSE Foundations of Animal Sentience report (Birch et al., 2021) reviewed evidence for sentience in cephalopod mollusks and decapod crustaceans — sufficient for inclusion in UK Animal Welfare (Sentience) Act 2022. The Western husbandry tradition has long required humane treatment; legislation extends specific protections without dissolving the broader framework."
   },
   {
     "tier": 5,
     "question": "The 2007 FOTON-M3 mission exposed tardigrades to open space — vacuum, ionizing radiation, and temperature extremes — for ten days. A subset survived and rehydrated successfully back on Earth. What was the scientific significance of this experiment?",
-    "answer": "First demonstration any animal can survive direct space exposure — adds tardigrades to the small list of extremophiles tolerating vacuum and radiation",
+    "answer": "First demonstration any animal can survive direct space exposure — adds tardigrades to the small list of extremophiles tolerating vacuum and radiation in real conditions",
     "choices": [
-      "First demonstration any animal can survive direct space exposure — adds tardigrades to the small list of extremophiles tolerating vacuum and radiation",
-      "Showed tardigrades evolved in space — proving the panspermia hypothesis that life arrived on Earth from interstellar origins and that tardigrades are descendants o",
-      "Demonstrated humans could survive space without suits — if they hydrated tardigrade DNA into their cells before the so-called journey out into vacuum",
-      "Refuted the existence of tardigrade cryptobiosis altogether — the tardigrades died from the radiation and vacuum"
+      "First demonstration any animal can survive direct space exposure — adds tardigrades to the small list of extremophiles tolerating vacuum and radiation in real conditions",
+      "Showed tardigrades evolved in space — proving the panspermia hypothesis that life arrived on Earth from interstellar origins and that tardigrades are descendants of that arrival",
+      "Demonstrated humans could survive space without suits — if they hydrated tardigrade DNA into their cells before the so-called journey out into the vacuum of orbit",
+      "Refuted the existence of tardigrade cryptobiosis altogether — tardigrades died from radiation and vacuum exposure, ending decades of anhydrobiotic survival research"
     ],
     "context": "Jönsson et al. (Current Biology, 2008): TARDIS experiment on FOTON-M3 — adult tardigrades exposed to space vacuum, solar UV, and ionizing radiation for 10 days. Substantial survival. Adds tardigrades to the small set of extremophile animals tolerating space conditions. Not proof of interstellar life transport."
   },
@@ -8498,12 +8498,12 @@
   {
     "tier": 5,
     "question": "Plants produce alkaloids, terpenoids, and tannins as defenses against insect herbivores. Specialized herbivores often evolve detoxification or sequestration of those plant chemicals. What is the standard evolutionary framework for this pattern of escalating chemical interactions?",
-    "answer": "Coevolutionary arms race — in fact — plant chemical defenses select for herbivore detoxification",
+    "answer": "Coevolutionary arms race — plant chemical defenses select for herbivore detoxification, which in turn selects for stronger plant defenses (Ehrlich and Raven, 1964)",
     "choices": [
-      "Coevolutionary arms race — in fact — plant chemical defenses select for herbivore detoxification",
-      "One-way evolution from plants alone — herbivores never evolve in response",
-      "Random co-occurrence — plant defenses and insect detoxification evolved entirely independently of each other",
-      "Designed compatibility — plants and herbivores are matched at creation in their chemical interactions"
+      "Coevolutionary arms race — plant chemical defenses select for herbivore detoxification, which in turn selects for stronger plant defenses (Ehrlich and Raven, 1964)",
+      "One-way evolution from the plant side alone — herbivores never evolve in response to plant chemistry; insect physiology is fixed across geological timescales",
+      "Random co-occurrence with no causal link — plant defenses and insect detoxification systems evolved entirely independently of each other across taxa",
+      "Designed compatibility at the start — plants and herbivores are matched at creation in their chemical interactions, with no subsequent evolutionary change"
     ],
     "context": "Ehrlich and Raven (Evolution, 1964) 'Butterflies and Plants: A Study in Coevolution' — foundational paper. Plant chemical defenses select for herbivore detoxification (e.g. cardiac glycoside sequestration in monarchs from milkweed). Counter-selection on plants for stronger or novel defenses. A canonical coevolutionary framework."
   },
@@ -8522,12 +8522,12 @@
   {
     "tier": 5,
     "question": "A teacher argues: 'We should treat invertebrates with serious moral attention — not as identical to humans, but as fellow creatures within a biotic community we steward. Humane treatment, habitat support, refusing both Singer impartialism and Cartesian instrumentalism.' Which tradition fits the teacher's view?",
-    "answer": "Stewardship synthesis — Aquinas's dominion as responsibility, Leopold's land ethic of biotic community, husbandry that refuses both Singer's species-blind impartialis",
+    "answer": "Stewardship synthesis — Aquinas's dominion as responsibility, Leopold's land ethic of biotic community, husbandry refusing both Singer's impartialism and Descartes's automaton view",
     "choices": [
-      "Stewardship synthesis — Aquinas's dominion as responsibility, Leopold's land ethic of biotic community, husbandry that refuses both Singer's species-blind impartialis",
-      "Singer's impartialist ethics — in fact — animals and humans weighed identically in any moral calculus, with no special weight given to species membership",
-      "Cartesian instrumentalism — animals as machines without inner life and as instruments for human use",
-      "Indigenous animism — wildlife treated as ensouled persons requiring ritual acknowledgment of each killing as the substantive framing of the proper human relationship"
+      "Stewardship synthesis — Aquinas's dominion as responsibility, Leopold's land ethic of biotic community, husbandry refusing both Singer's impartialism and Descartes's automaton view",
+      "Singer's impartialist ethics — animals and humans weighed identically in any moral calculus, with no special weight given to species membership in standard utilitarian reasoning",
+      "Cartesian instrumentalism — animals as machines without inner life, instruments for human use, the dominant view in 17th-century French rationalism that Bentham later argued",
+      "Indigenous animism — wildlife treated as ensouled persons requiring ritual acknowledgment of each killing as the substantive framing of the proper human relationship with nature"
     ],
     "context": "The stewardship synthesis: Aquinas's account of dominion as responsibility, the Genesis 'tilling and keeping' tradition, Aristotle's hierarchical-but-related view of animals, Leopold's biotic-community framework. Distinguished from Singer's animal-liberation impartialism, Descartes's automaton view, and animism. Western Christian stewardship is a substantive third position."
   },

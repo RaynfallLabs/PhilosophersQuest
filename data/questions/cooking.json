@@ -4157,17 +4157,15 @@
   },
   {
     "tier": 4,
-    "topic": "Food history & culture",
-    "pattern": "H. Cultural / historical / lens",
-    "question": "After 1492, plants moved between Old and New World on a scale never seen. One specific transfer reshaped European demography for three centuries: caloric density and cold tolerance let Northern Europe support far larger populations than wheat alone. Which crop?",
-    "answer": "An Andean tuber - adopted by 1700, tripled caloric yield per acre; the Irish population doubled then famine struck",
+    "question": "When Spanish explorers brought a strange New World fruit to southern Europe after 1492, Italians planted it as a curiosity — botanists thought it might be poisonous. By the 18th century it had transformed Naples and Sicily cuisine, displacing earlier garlic-and-fish sauces. Pizza depends on it. Which fruit?",
+    "answer": "Aztec xitomatl, the New World tomato — reached Italy by 1548, named pomodoro ('golden apple'); first pizza sauce in Naples by the late 1700s",
     "choices": [
-      "An Andean tuber - adopted by 1700, tripled caloric yield per acre; the Irish population doubled then famine struck",
-      "A Mexican fruit - Italian cuisine acquired its signature ingredient, replacing earlier sauces with bright acid",
-      "A Mexican chile - Asian and African cuisines gained their defining heat, displacing traditional pepper trade",
-      "A South American root - African populations gained a famine-resistant staple supporting two centuries of growth"
+      "Aztec xitomatl, the New World tomato — reached Italy by 1548, named pomodoro ('golden apple'); first pizza sauce in Naples by the late 1700s",
+      "Aztec bell pepper, Capsicum annuum — became the base of Spanish romesco and Hungarian paprika cooking by the early 1700s, sweetening older stews",
+      "Aztec cacao bean, Theobroma cacao — moved from Mesoamerica to Spain by 1528 as a drink, then to confection across Italian and French courts",
+      "Aztec maize, the New World grain — transformed Italian cuisine as polenta in the Po valley by the 1620s, replacing wheat-and-barley porridges of Lombardy"
     ],
-    "context": "The potato (Solanum tuberosum) reached Europe ~1570 and was widely adopted by 1700. Roughly triple the caloric yield per acre vs. wheat. Northern European populations rose sharply. Ireland's deep dependence on a few varieties produced the Great Famine (1845-49) when Phytophthora infestans struck. Crosby's The Columbian Exchange (1972)."
+    "context": "Tomatoes (Solanum lycopersicum, originally Aztec xitomatl) reached Spain by 1521 and Italy by 1548 through Cosimo de' Medici's Florence garden. Botanists noted the plant was a nightshade and warned of poison; Italian peasants ignored the warning and ate them for two centuries before they entered noble cuisine. The first recorded tomato pasta sauce recipe appears in Antonio Latini's 1692 Lo scalco alla moderna ('The Modern Steward'). Pizza Margherita — basil, mozzarella, tomato in the colors of the new Italian flag — was created in Naples in 1889 for Queen Margherita of Savoy. The Columbian Exchange (Crosby 1972) is the standard study of this transfer."
   },
   {
     "tier": 4,
@@ -9587,12 +9585,12 @@
   },
   {
     "tier": 2,
-    "question": "Two green herb sauces sit on European tables. Italian salsa verde uses parsley, capers, anchovy, garlic, vinegar, and oil. Basque salsa verde uses parsley, garlic, oil, and white wine for fish. What is the main difference?",
+    "question": "Two herb sauces share the name salsa verde. The Italian version is a salty condiment built on small dried fish and pickled flower buds. The Basque version, served with hake and clams, is a lighter wine-parsley sauce. What separates them?",
     "answer": "Anchovy and capers anchor the Italian; the Basque omits both and uses wine and oil for fish",
     "choices": [
       "Anchovy and capers anchor the Italian; the Basque omits both and uses wine and oil for fish",
       "Anchovy and basil define the Italian; the Basque uses cilantro and tomato for grilled meat",
-      "Both use anchovy as a base; the Basque adds pepper while the Italian adds wine and lemon zest",
+      "Both use anchovy as a base; the Basque adds pepper while Italian adds wine and lemon zest",
       "Both omit anchovy and capers; Italian uses oregano, Basque uses tarragon for the aromatic difference"
     ],
     "context": "Italian salsa verde carries anchovy-and-caper salinity. Basque salsa verde (for hake and clams) is a lighter wine-parsley fish sauce. Mexican salsa verde (tomatillo, chile, cilantro) is a third unrelated family."
@@ -12115,16 +12113,14 @@
   },
   {
     "tier": 4,
-    "topic": "World cuisines as heritage",
-    "pattern": "F. Comparative wonder",
-    "question": "Cajun and Creole cuisines both come from Louisiana but are not the same. Cajun is rural Acadian-descended; Creole is urban New Orleans descended from Spanish, French, African, and Caribbean traditions. What signal distinguishes their cooking?",
+    "question": "Cajun and Creole cuisines both come from Louisiana but are not the same. Cajun is rural Acadian-descended (the bayou refugees from 1755). Creole is urban New Orleans, born from many traditions blending around the old Quarter. What signal distinguishes their cooking on a plate?",
+    "answer": "Creole uses tomato widely (Sicilian-Italian-Caribbean influence) and dairy and elaborate sauces; Cajun is tomato-light, dairy-light, one-pot",
     "choices": [
       "Creole uses tomato widely (Sicilian-Italian-Caribbean influence) and dairy and elaborate sauces; Cajun is tomato-light, dairy-light, one-pot",
-      "Cajun uses tomato widely (French Provençal influence) and dairy and elaborate sauces; Creole is tomato-light, dairy-light, one-pot rural style",
+      "Cajun uses tomato widely (Provençal-Mediterranean influence) and dairy and elaborate sauces; Creole is tomato-light, dairy-light, one-pot rural style",
       "Both use the holy trinity (onion, celery, bell pepper) interchangeably; difference is geographic naming; same kitchen under two labels",
       "Cajun and Creole differ only in spice level; Creole is mild and Cajun is hot, but recipes, ingredients, and techniques are otherwise identical"
     ],
-    "answer": "Creole uses tomato widely (Sicilian-Italian-Caribbean influence) and dairy and elaborate sauces; Cajun is tomato-light, dairy-light, one-pot",
     "context": "Creole (urban New Orleans: Spanish + French + African + Caribbean + Italian) uses tomato widely (jambalaya rouge, shrimp Creole), more dairy, elaborate French-influenced sauces, wider Mediterranean palette. Cajun (rural Acadian-French southwest Louisiana) is tomato-light, dairy-light, one-pot, built on dark roux and slow-rendered pork fat."
   },
   {
