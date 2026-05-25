@@ -214,6 +214,43 @@ See also [[feedback_cap_calibration_logic]] (saved 2026-05-23) for the full reas
 
 See also: [[feedback_lift_discovered_rules]].
 
+### 13. The Wonder Pattern — cool-fact-is-answer + Drama-Available + Hierarchy
+**Principle (refined through five iterations of user-flagged failures during the 2026-05-24 history rebuild)**: The answer to every question must be the **most memorable specific cool fact** available about the event. Walking up from weakest answer-types to strongest:
+
+**Hierarchy of Cool-Fact Types** — always prefer higher tiers when the event supports them:
+- **TIER 1 — NAMED THINGS** (strongest): specific quotes (`"Victory or Death"`, `"Kiss me, Hardy"`, `"Sic semper tyrannis"`), cultural terms (`"lotus foot"`, `"samizdat"`, `"kamikaze"`), titles/epithets (`"the Hammer"`), named objects (the True Cross, the Cyrus Cylinder)
+- **TIER 2 — VIVID ACTIONS**: specific physical acts (Pascal sewing parchment into his coat; Brunelleschi tapping the egg flat; Cleopatra fleeing with 60 ships)
+- **TIER 3 — OBJECTS / MATERIALS**: items with memorable properties (obsidian knives, Tycho's silver nose, herringbone bricks)
+- **TIER 4 — NUMBERS**: weak — use ONLY when SINGULAR and UNFORGETTABLE (Wright Brothers 12 seconds, Lincoln 272 words, Joan at 19, Mandela 27 years, Halley's Comet 76 years). **Never as a magnitude-pick** (`"about how many millions"`) when a Tier-1 named thing exists.
+- **TIER 5 — GENERIC LABELS** (BANNED as primary answers): battle names, place names, dates, country names, generic "what is this called?"
+
+**The three-question test** (every question must pass before shipping):
+1. **The Dinner Test** — does the ANSWER ALONE (not the stem) make a parent ask "wait, why?" If "Rouen, France" stops conversation cold but "Threw her ashes into the Seine" makes them ask "WHOSE ashes?", you wrote the wrong question.
+2. **Most-memorable-detail test** — across all the cool facts available about this event, am I asking for THE most memorable? Or burying it in context?
+3. **Drama-Available Rule** ⚠ STRICTEST RULE ⚠ — if stem contains drama (fire, blood, death, escape, suicide, last words, betrayal, ashes, prison, torture, code phrases, dramatic acts) AND question asks for venue/date/label → STOP. The drama IS the cool fact. Ask about THAT.
+
+**Failures look like** (these are the actual user-flagged cases that taught the rule):
+- Wesley/Aldersgate "strangely warmed" — obscure figure + trivial single-word distinction = delete or repurpose around horseback miles
+- Nelson at Trafalgar / "Thank God I have done my duty" — chose the dutiful line over the funnier "Kiss me, Hardy"; ALSO had a distractor paraphrasing the real "Kiss me, Hardy" line
+- Joan of Arc at Rouen / "Where was she executed?" — burned alive + ashes in Seine + last word "Jesus" in stem; asked the venue
+- Battle of Actium / "What is this battle called?" — Cleopatra fleeing with her lover and both killing themselves in stem; asked the venue
+- Chinese foot binding / "Approximately how many millions?" — `"lotus foot"` is the Tier-1 cultural term sitting right there; asked the magnitude pick
+
+**Passes look like**:
+- Trenton: stem has Christmas-night-crossing + Hessians-at-dawn; answer is `"Victory or Death"` (password). Tier-1 phrase.
+- Trafalgar: stem has Nelson-dying + Hardy-kneeling; answer is `"Kiss me, Hardy"`. Tier-1 quote + context-reveal of older English usage.
+- Joan: stem has burned-alive + 19-years-old + ashes; answer is `"Threw her ashes into the Seine"`. Tier-2 vivid action + context-reveal of WHY (deny French any relic).
+- Lotus foot: stem has 1000-years + broken-toes + tens-of-millions-suffered; answer is `"A lotus foot (golden/silver/iron by size)"`. Tier-1 cultural term + named gradations + context-reveal of Western interventions that ended it.
+
+**Implementations**:
+- **History**: explicit in `HISTORY_TEMPLATES.md` §1 (THE controlling rule of the bank); five worked examples (Trenton, Trafalgar, Joan, Actium, lotus foot, Brunelleschi-as-5-questions); applied during 2026-05-24 history rebuild quality passes
+- **All subjects (going forward)**: this principle generalizes. Future rebuilds and audits should treat the three-question test + the hierarchy as the universal voice rule. The Wonder Pattern is to history what `inline_teaching` is to philosophy + what `no_capital_recall` is to geography.
+- **Cannot be deterministically gated** — requires reading judgment. The closest auto-detection is the Drama-Available scan (regex for drama keywords in stem + WH-word question structure) and the magnitude-pick scan (`how many` / `approximately how many` + all-numeric distractors). Both produce many false positives; human judgment required on the candidates.
+
+**Discovered**: 2026-05-24 in five user-flagged cases during the history rebuild sample review. The rule was iteratively refined — each user push revealed a deeper version of the same underlying pattern. The final shape (Hierarchy + three tests) is the most-stable formulation discovered to date.
+
+See also: `HISTORY_TEMPLATES.md` §1 (worked examples); [[feedback_lift_discovered_rules]].
+
 ## Before starting a new subject rebuild
 
 Required reading order:

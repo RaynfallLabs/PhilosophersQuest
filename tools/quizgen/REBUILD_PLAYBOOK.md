@@ -26,6 +26,28 @@ tools/quizgen/state/queue/<subject>_final_repair.json # gate failures (gitignore
 tools/quizgen/scratch/_build_<subject>_t<N>.py        # agent build scripts (gitignored)
 ```
 
+## THE WONDER PATTERN (most important rule for any subject build, 2026-05-24)
+
+**Read first**: `proposals/v2_audit/SHARED_PRINCIPLES.md` §13 + `proposals/v2_audit/HISTORY_TEMPLATES.md` §1.
+
+Discovered/refined through five user-flagged failures during the 2026-05-24 history rebuild (Wesley, Nelson, Joan, Actium, lotus foot). The principle:
+
+**The answer to every question must be the MOST memorable specific cool fact available.**
+
+Hierarchy (always prefer higher tiers):
+1. **NAMED THINGS** — quotes, cultural terms, titles, named objects (`"Victory or Death"`, `"lotus foot"`, `"Sic semper tyrannis"`)
+2. **VIVID ACTIONS** — specific physical acts (Pascal sewing parchment into coat; Cleopatra fleeing with 60 ships)
+3. **OBJECTS / MATERIALS** — items with memorable properties (Tycho's silver nose, herringbone bricks, the asp)
+4. **NUMBERS** (weak) — ONLY when singular + unforgettable (Wright 12 sec, Lincoln 272 words). NEVER magnitude picks.
+5. **GENERIC LABELS** (BANNED) — battle names, place names, dates, country names.
+
+Three-question test (every question must pass):
+1. **Dinner Test** — does the answer ALONE make a parent ask "wait, why?"
+2. **Most-memorable** — is THIS the most memorable detail available about the event?
+3. **Drama-Available Rule** ⚠ STRICTEST — if stem has drama (fire/blood/death/escape/last-words/etc.) and question asks for venue/date/label, the question is WRONG. Ask about the drama.
+
+**Every tier-agent prompt must include**: "Read SHARED_PRINCIPLES.md §13 + HISTORY_TEMPLATES.md §1 — The Wonder Pattern. Every q() call must pass the three-question test."
+
 ## The double-assert pattern (CRITICAL)
 
 The `q()` helper used by every agent must enforce BOTH budget and parity:
