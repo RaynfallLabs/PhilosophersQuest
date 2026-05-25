@@ -722,12 +722,12 @@
   {
     "tier": 1,
     "question": "'Awful' once meant:",
-    "answer": "Inspiring awe (positive — used of God in old Bibles)",
+    "answer": "Inspiring awe (positive — used of God)",
     "choices": [
-      "Inspiring awe (positive — used of God in old Bibles)",
-      "Terrible — its current sense, present from the 1800s onward",
-      "Beautiful — never a sense the word has carried in English",
-      "Mysterious — never a documented historical meaning of awful"
+      "Inspiring awe (positive — used of God)",
+      "Terrible (its current meaning)",
+      "Beautiful",
+      "Mysterious"
     ],
     "context": "Old Bible translations: 'an awful God' meant a God who inspires awe. Shifted negatively in 19th century. Now 'awful' = bad. 'Awesome' kept the positive sense but was unused for a century, then revived."
   },
@@ -758,12 +758,12 @@
   {
     "tier": 1,
     "question": "'I and Maria went to the store' is criticized because:",
-    "answer": "Convention places oneself second — 'Maria and I went...' is standard",
+    "answer": "Convention places oneself second: 'Maria and I went...'",
     "choices": [
-      "Convention places oneself second — 'Maria and I went...' is standard",
+      "Convention places oneself second: 'Maria and I went...'",
       "'I' should be 'me' — 'me and Maria went'",
-      "There's no error — both orderings are equally accepted in standard English",
-      "'Went' should be 'going' — past tense is wrong after the subject pronouns"
+      "There's no error",
+      "'Went' should be 'going'"
     ],
     "context": "Courtesy convention, not grammar. Note that 'me and Maria' shifts to object case (wrong as subject). 'Between you and me' is correct; 'between you and I' is hypercorrection."
   },
@@ -2750,12 +2750,12 @@
   {
     "tier": 1,
     "question": "In an imperative sentence like \"Close the door,\" the subject is:",
-    "answer": "Implied 'you' — commands have an understood subject",
+    "answer": "Implied \"you\"",
     "choices": [
-      "Implied 'you' — commands have an understood subject",
-      "'Door' — supposedly the subject because it's first content noun",
-      "'Close' — supposedly the subject as the verb's identity itself",
-      "Missing — no subject is structurally present in imperatives"
+      "Implied \"you\"",
+      "\"Door\"",
+      "\"Close\"",
+      "Missing — no subject"
     ],
     "context": "Commands have an understood \"you\" — \"(You) close the door.\""
   },
@@ -3101,9 +3101,9 @@
     "answer": "From 'Gênes' — Genoa, Italy — where the durable cotton-twill fabric was traditionally made",
     "choices": [
       "From 'Gênes' — Genoa, Italy — where the durable cotton-twill fabric was traditionally made",
-      "From an English coin called the 'jean' — supposedly funded textile manufacture",
-      "From the name of Levi Strauss's wife, Jean — a 19th-century American invention story",
-      "From the French girl's name Jeanne — a folk-etymology with no documentary support"
+      "From an English coin called the 'jean' that funded textile manufacture",
+      "From the name of Levi Strauss's wife, Jean",
+      "From the French girl's name Jeanne"
     ],
     "context": "'Denim' has a parallel origin — 'de Nîmes' (from the French city of Nîmes). Genoese sailors wore the fabric; Levi Strauss used the imported cloth to make work pants for California Gold Rush miners. The place-name origin is invisible in modern usage."
   },
@@ -3906,8 +3906,8 @@
     "choices": [
       "'Rule of thumb' — from a law allowing wife-beating with sticks no thicker than a thumb",
       "'Rule of thumb' — from informal measurement using the thumb (carpentry, brewing)",
-      "Origin is uncertain — but documented across measurement contexts since the 1600s",
-      "Appears in 17th-c. usage — about practical measurement, never about violence"
+      "Origin is uncertain but documented in measurement contexts",
+      "Appears in 17th-c. usage about practical measurement"
     ],
     "context": "Domestic-violence origin is a 19th-century legal misattribution, repeated as fact. No such legal precedent exists. Real origin: practical measurement (a thumb's width). Snopes-type myth that persists despite being demolished."
   },
@@ -5129,9 +5129,9 @@
     "answer": "'Want' is stative — standard English doesn't progressivize it",
     "choices": [
       "'Want' is stative — standard English doesn't progressivize it",
-      "Only formal English allows progressive — informal English forbids it entirely",
-      "Past tense is required after 'I'm' — present forms are ungrammatical here",
-      "British English uses the progressive — American English doesn't, by convention"
+      "Only formal English allows progressive",
+      "Past tense required",
+      "British uses progressive; American doesn't"
     ],
     "context": "Many speakers, especially in Indian English, do use 'I'm wanting' for current desire. Standard British/American prefers 'I want.' Same with 'I'm needing,' 'I'm preferring.' Aspect convention is dialect-sensitive."
   },
@@ -5345,9 +5345,9 @@
     "answer": "Dutch *ijsberg* — \"ice mountain\"",
     "choices": [
       "Dutch *ijsberg* — \"ice mountain\"",
-      "German *Eisberg* — \"ice mountain\" too",
-      "Norwegian *isfjell* — \"ice-fell\"",
-      "Old English *ice-burg* — a non-word"
+      "German *Eisberg*",
+      "Norwegian *isfjell*",
+      "Old English *ice-burg*"
     ],
     "context": "Both Dutch and German have parallel forms; English entered via Dutch trade."
   },
@@ -5501,9 +5501,9 @@
     "answer": "Metaphor — useful but limited",
     "choices": [
       "Metaphor — useful but limited",
-      "Literal — actually a hardware claim",
-      "Onomatopoeia — sound-imitating word",
-      "Pun — a play on double meaning"
+      "Literal description",
+      "Onomatopoeia",
+      "Pun"
     ],
     "context": "Modern metaphors borrow from technology; medieval ones borrowed from craftsmen and farms."
   },
@@ -5513,9 +5513,9 @@
     "answer": "Children is an irregular plural — apostrophe before s",
     "choices": [
       "Children is an irregular plural — apostrophe before s",
-      "Children ends in n — that's the trigger, not the irregularity",
-      "All possessives need 's — including regular plurals like cats's",
-      "It looks better that way — pure aesthetic, no rule behind it"
+      "Children ends in n, so it's special",
+      "All possessives need 's",
+      "It looks better that way"
     ],
     "context": "Plurals NOT ending in -s take 's: children's, women's, men's, geese's."
   },
@@ -5621,9 +5621,9 @@
     "answer": "A printer's stereotype block — the metallic plate cast for repeated impressions",
     "choices": [
       "A printer's stereotype block — the metallic plate cast for repeated impressions",
-      "A Parisian fashion magazine of the 1820s — a folk-etymology with no support",
-      "A type of French opera popular among the bourgeoisie — invented connection",
-      "A small French coin no longer in circulation — fake numismatic origin"
+      "A Parisian fashion magazine of the 1820s",
+      "A type of French opera popular among the bourgeoisie",
+      "A small French coin no longer in circulation"
     ],
     "context": "'Clicher' in French was an onomatopoeic word for the click of a printing matrix striking molten metal. The resulting reusable plate is a 'cliché.' Used figuratively for any over-reproduced phrase — itself a kind of recycled type. 'Stereotype' has the same printing origin: a one-piece printing plate."
   },
@@ -5669,9 +5669,9 @@
     "answer": "'Gentlemen Only, Ladies Forbidden' — fictional acronym",
     "choices": [
       "'Gentlemen Only, Ladies Forbidden' — fictional acronym",
-      "Scots 'goff' — the real source, related to Dutch 'kolf' (club)",
-      "Old Scottish word for the game — vague genuine etymology",
-      "Medieval game played with curved sticks — the real medieval origin"
+      "Scots 'goff' (a stick or club, related to Dutch 'kolf')",
+      "Old Scottish word for the game",
+      "Medieval game played with curved sticks"
     ],
     "context": "Another fake acronym. Golf came into English from Scots 'goff' or Middle Dutch 'kolf' (club, stick). Acronym origin would have to be modern (acronymic words proliferated 20th century, not 15th c.)."
   },
@@ -5681,9 +5681,9 @@
     "answer": "Run-on — two complete clauses with no punctuation between",
     "choices": [
       "Run-on — two complete clauses with no punctuation between",
-      "Subject-verb agreement error in 'came' — but 'came' agrees fine here",
-      "Missing pronoun before 'raining' — though 'it' is correctly present",
-      "Misspelled word — 'raining' is actually spelled correctly"
+      "Subject-verb agreement error in 'came'",
+      "Missing pronoun before the second verb 'raining'",
+      "Misspelled word ('raining' should be 'rainy')"
     ],
     "context": "A run-on (also called a fused sentence) jams two independent clauses together without a connector. Fix with a period, semicolon, or comma + coordinating conjunction."
   },
@@ -5694,8 +5694,8 @@
     "choices": [
       "Have gone — speaker is still in Paris (or on the way)",
       "Have been — speaker is still in Paris",
-      "They mean the same — fully interchangeable in standard English",
-      "Have gone is incorrect — only 'have been' takes destinations"
+      "They mean the same",
+      "Have gone is incorrect"
     ],
     "context": "'Been' (return implied) vs. 'gone' (not yet returned). 'My sister has been to Paris three times' (return). 'My sister has gone to Paris' (she's there now). Small but real distinction in English."
   },
@@ -5753,9 +5753,9 @@
     "answer": "Punctuation drives grammatical structure — proper commas/quotation make it parseable",
     "choices": [
       "Punctuation drives grammatical structure — proper commas/quotation make it parseable",
-      "The verb 'had' carries eleven tenses simultaneously — a unique English feature",
-      "English allows infinite recursion of a single word — without any grammatical limit",
-      "The sentence is actually ungrammatical — it only seems valid because of repetition"
+      "The verb 'had' has eleven different tenses simultaneously",
+      "English allows infinite recursion of a single word",
+      "The sentence is actually ungrammatical and only seems valid"
     ],
     "context": "Punctuated: 'James, while John had had \"had,\" had had \"had had\"; \"had had\" had had a better effect on the teacher.' Two students wrote essays using 'had' and 'had had'; their teacher preferred 'had had.' The bare-word version is a wordplay classic that teaches punctuation's structural role."
   },
@@ -5777,9 +5777,9 @@
     "answer": "Change meaning entirely — direct address vs. cannibalism joke",
     "choices": [
       "Change meaning entirely — direct address vs. cannibalism joke",
-      "Indicate tone of voice — but with no effect on meaning",
-      "Be added or removed — without any consequence to the sentence",
-      "Mark pauses in speech — purely a rhythm or breathing signal"
+      "Indicate tone of voice only",
+      "Be added or removed without consequence",
+      "Only mark pauses in speech"
     ],
     "context": "The comma of direct address marks a person being spoken to. Without it, 'Grandma' becomes the direct object. Internet meme proverb: 'Punctuation saves lives.'"
   },
@@ -5898,8 +5898,8 @@
     "choices": [
       "'Are' — 'data' is the Latin plural of 'datum'",
       "'Is' — 'data' is a singular mass noun in English",
-      "Both equally formal — usage has fully merged across registers",
-      "British uses 'is' — American uses 'are', by transatlantic split"
+      "Both are equally formal",
+      "British uses 'is'; American uses 'are'"
     ],
     "context": "Strict: 'data' plural, 'datum' singular. Modern English largely treats 'data' as mass noun ('the data shows'). Both common; scientific writing often plural, journalism often singular."
   },
@@ -5981,9 +5981,9 @@
     "answer": "Dangling modifier — rain can't walk",
     "choices": [
       "Dangling modifier — rain can't walk",
-      "Subject-verb mismatch — but 'rain started' fits",
-      "Missing comma — though the comma is in place",
-      "Misspelling — but 'walking' is spelled right"
+      "Subject-verb agreement issue",
+      "Missing comma after 'store'",
+      "Misspelled word in 'walking'"
     ],
     "context": "'Walking to the store' should modify a person, not 'the rain.' Fix: 'Walking to the store, I noticed it had started raining.'"
   },
@@ -6217,7 +6217,7 @@
   },
   {
     "tier": 2,
-    "question": "Fill the blank correctly: Don't let it ___ your day.",
+    "question": "Fill the blank correctly: Don't let it ___ your mood.",
     "answer": "affect",
     "choices": [
       "affect",
@@ -6986,9 +6986,9 @@
   {
     "tier": 2,
     "question": "Shakespeare's plays (~1590-1613) helped fix Early Modern English in print. Did Shakespeare invent the thousands of words he is sometimes credited with?",
-    "answer": "Most were probably circulating in spoken English already — Shakespeare is the first written attestation but not the inventor",
+    "answer": "Most were probably circulating in spoken English already; Shakespeare is the first written attestation but not the inventor",
     "choices": [
-      "Most were probably circulating in spoken English already — Shakespeare is the first written attestation but not the inventor",
+      "Most were probably circulating in spoken English already; Shakespeare is the first written attestation but not the inventor",
       "Yes — Shakespeare invented over 17,000 new English words himself",
       "No — every word Shakespeare uses had been written down by some earlier author",
       "Yes — Shakespeare deliberately coined Latin- and Greek-derived neologisms for theatrical effect"
@@ -7020,7 +7020,7 @@
     "context": "*La mesa* (the table, feminine) seems arbitrary because we've forgotten the system."
   },
   {
-    "tier": 4,
+    "tier": 2,
     "question": "Tense backshift in reported speech: 'She said \"I am hungry\"' becomes:",
     "answer": "She said she was hungry.",
     "choices": [
@@ -7037,9 +7037,9 @@
     "answer": "From Latin 'io' (an interjection of joy) written as a vertical I over a small o — eventually becoming !",
     "choices": [
       "From Latin 'io' (an interjection of joy) written as a vertical I over a small o — eventually becoming !",
-      "From Greek 'ek' — abbreviated as the symbol ! by medieval scribes",
-      "From Old English 'ah!' — written as a stylized initial letter A",
-      "Invented by Italian printers — with no historical basis in any prior language"
+      "From Greek 'ek' (out) abbreviated as the symbol !",
+      "From Old English 'ah!' written as a stylized initial letter A",
+      "Invented by Italian printers in the 15th century with no historical basis"
     ],
     "context": "The 'io' hypothesis is the standard etymology — though some scholars are skeptical. F. Scott Fitzgerald reportedly said 'An exclamation point is like laughing at your own joke.' Modern usage warns against overuse, but the mark has spread in digital communication."
   },
@@ -7361,9 +7361,9 @@
     "answer": "From Old English 'scot' meaning 'tax' or 'payment' — to be scot-free is to avoid paying one's share",
     "choices": [
       "From Old English 'scot' meaning 'tax' or 'payment' — to be scot-free is to avoid paying one's share",
-      "From the Scottish refusal to pay English taxes — supposedly after the 1707 Act of Union",
-      "From a 16th-century criminal named Sir Walter Scot — who allegedly escaped trial in 1565",
-      "From the Scottish legal verdict 'not proven' — a distinctly Scottish jurisprudential outcome"
+      "From the Scottish refusal to pay English taxes after 1707",
+      "From a 16th-century criminal named Sir Walter Scot who escaped trial",
+      "From the Scottish legal verdict 'not proven'"
     ],
     "context": "Old English 'scot' (related to 'shot' — both from Old Norse 'skot') named a contribution one paid into a common pool. 'Scot and lot' was a medieval tax system. The Scottish association is folk etymology — completely unrelated."
   },
@@ -7373,9 +7373,9 @@
     "answer": "From Latin 'denigrare' (to blacken) — 'de-' + 'niger' (black)",
     "choices": [
       "From Latin 'denigrare' (to blacken) — 'de-' + 'niger' (black)",
-      "From French 'denier' — to deny, with an intensifier suffix added",
-      "From a Greek word meaning to cast down — supposedly into a pit",
-      "From a medieval surname — a notorious slanderer named Denigratus"
+      "From French 'denier' (to deny) + intensifier suffix",
+      "From a Greek word meaning to 'cast down'",
+      "From a medieval surname of a notorious slanderer"
     ],
     "context": "The Latin metaphor was 'to blacken a reputation' — the same metaphor as English 'blackball' or 'blacklist.' English absorbed 'denigrate' in the 16th century. Other words from 'niger': enigma (Greek 'ainigma' is unrelated despite the resemblance), and many words with negative connotation from medieval Latin culture's color symbolism."
   },
@@ -7385,8 +7385,8 @@
     "answer": "From Greek 'ostrakon' (potsherd) — Athenians voted to exile a dangerous citizen by writing the name on a piece of broken pottery",
     "choices": [
       "From Greek 'ostrakon' (potsherd) — Athenians voted to exile a dangerous citizen by writing the name on a piece of broken pottery",
-      "From the surname of a banished Greek aristocrat — supposedly a 5th-century BC nobleman named Ostracus",
-      "From Latin 'ostracus' — supposedly meaning 'a hidden person' or 'one in exile'",
+      "From the surname of a banished Greek aristocrat named Ostracus",
+      "From Latin 'ostracus' meaning 'a hidden person'",
       "From Old English 'oster-cysm' (oyster-banquet) — the formal banquet preceding exile"
     ],
     "context": "Athenian ostracism was a formal democratic procedure (5th c. BCE): if enough citizens voted, the named person was exiled for 10 years without loss of property. Thousands of ostraka have been found in excavations. The English meaning broadened to general social exclusion."
@@ -7410,8 +7410,8 @@
     "choices": [
       "From the Greek god Pan — sudden inexplicable fear was thought to come from his lonely presence in the wild",
       "From Latin 'panicum' (a kind of grain) — losing the harvest caused fear",
-      "From Italian 'panico' — supposedly meaning bread-shortage in medieval markets",
-      "From Old Norse 'panaki' — supposedly meaning sudden flight from danger"
+      "From Italian 'panico' meaning bread-shortage",
+      "From Old Norse 'panaki' (sudden flight)"
     ],
     "context": "Pan, the rural Greek god of shepherds and forests, was thought to cause inexplicable terror in solitary travelers — 'panic fear.' From the same source: 'pandemonium' (Milton's word, 1667, 'place of all the demons,' where Pan is in the prefix sense but the Greek is 'pan-' = all + 'daimon' = spirit)."
   },
@@ -7454,11 +7454,11 @@
   {
     "tier": 2,
     "question": "Where does 'cereal' come from?",
-    "answer": "From Ceres — Roman goddess of agriculture, grain, and harvest",
+    "answer": "From Ceres, Roman goddess of agriculture, grain, and harvest",
     "choices": [
-      "From Ceres — Roman goddess of agriculture, grain, and harvest",
-      "From Latin 'serere' — meaning 'to plant in rows', supposedly the source",
-      "From a brand name 'Cereal' — coined by John Kellogg in the late 1800s",
+      "From Ceres, Roman goddess of agriculture, grain, and harvest",
+      "From Latin 'serere' meaning 'to plant in rows'",
+      "From a 19th-century brand name 'Cereal' coined by John Kellogg",
       "From Greek 'keras' (horn) — referring to the horn-shape of ancient grain ears"
     ],
     "context": "Ceres was the Italian counterpart of Greek Demeter. The festival in her honor (Cerealia) gave us the adjective 'cerealis' (pertaining to grain), which became 'cereal' in English. Breakfast cereal as a brand category got its modern shape only after John Kellogg invented cornflakes in 1894."
@@ -7469,9 +7469,9 @@
     "answer": "From French 'de Nîmes' — of the city of Nîmes, where serge fabric was woven",
     "choices": [
       "From French 'de Nîmes' — of the city of Nîmes, where serge fabric was woven",
-      "From the Spanish word 'denim' — supposedly meaning 'work-pants'",
-      "From the surname of weaver Antoine Denim — a fictional 1684 inventor",
-      "From a Dutch word for sailcloth — repurposed for landlubber clothing"
+      "From the Spanish word 'denim' meaning 'work-pants'",
+      "From the surname of weaver Antoine Denim (1684)",
+      "From a Dutch word for sailcloth"
     ],
     "context": "'Serge de Nîmes' was a strong woven cloth made in Nîmes. By the 17th century, 'serge de Nîmes' was being imitated in Lancashire. The fabric name compressed to 'denim.' Jeans (from Genoa) and denim (from Nîmes) — two place-name origins in everyday clothing vocabulary."
   },
@@ -8081,9 +8081,9 @@
     "answer": "'Posh' is an acronym for 'Port Out, Starboard Home' — cruise ship cabin assignments",
     "choices": [
       "'Posh' is an acronym for 'Port Out, Starboard Home' — cruise ship cabin assignments",
-      "Possibly from Romani 'posh' — meaning half, referring to a coin",
-      "Possibly from 'posh' — an older 19th-century word meaning fancy",
-      "Etymology is debated — but not the cruise-ship story, which is folk myth"
+      "Possibly from Romani 'posh' (half) referring to half a coin",
+      "Possibly from 'posh' meaning fancy or smart",
+      "Etymology is debated but not the cruise-ship story"
     ],
     "context": "P.O.S.H. acronym story is folk etymology — no cruise lines actually used it. Real origin is uncertain; possibly Romani slang for 'money' or a 19th-c term for a dandy. Acronymic origins for old common words = usually myth."
   },
@@ -8093,9 +8093,9 @@
     "answer": "It stands for 'To Insure Promptness' — an acronym from 17th-c coffee houses",
     "choices": [
       "It stands for 'To Insure Promptness' — an acronym from 17th-c coffee houses",
-      "From a Germanic root — meaning a gift or small thing",
-      "Means a slight push or touch — a separate sense with shared form",
-      "Has nothing to do with restaurants originally — a thieves'-cant origin"
+      "From a Germanic root meaning a gift or small thing",
+      "Means a slight push or touch",
+      "Has nothing to do with restaurants originally"
     ],
     "context": "'TIP' as acronym is a back-formation — false. The word came into English in early 1600s as thieves' cant. 'Acronymic origin' for old words is almost always folklore. 'Posh,' 'fuck,' 'golf' — all victims of fake-acronym etymology."
   },
@@ -8237,9 +8237,9 @@
     "answer": "Octopuses (octopus is Greek, not Latin — Latin plural pattern doesn't apply)",
     "choices": [
       "Octopuses (octopus is Greek, not Latin — Latin plural pattern doesn't apply)",
-      "Octopi (Latin -i plural) — but octopus isn't actually a Latin word",
-      "Octopodes (Greek -odes plural) — pedantically correct but rarely used",
-      "All three are defensible — modern usage accepts any of them"
+      "Octopi (Latin -i plural)",
+      "Octopodes (Greek -odes plural — pedantically correct)",
+      "All three are defensible"
     ],
     "context": "Most defensible: 'octopuses' (English regular). 'Octopi' is hypercorrection — treats Greek root as Latin. 'Octopodes' is technically Greek correct but obscure. Style guides vary. Most modern usage: octopuses."
   },
@@ -8742,7 +8742,7 @@
     "choices": [
       "A well-known author",
       "A well known author",
-      "A well--known author",
+      "A well — known author",
       "A well; known author"
     ],
     "context": "Hyphenated compound modifiers come before a noun: well-known, twenty-five, all-time."
@@ -8909,9 +8909,9 @@
     "answer": "From Latin 'salarium' (salary, originally salt money) — worth their pay",
     "choices": [
       "From Latin 'salarium' (salary, originally salt money) — worth their pay",
-      "Because they preserved food — folk metaphor from kitchen labor",
-      "Because they were valuable like salt — generic comparative metaphor",
-      "Random idiomatic origin — no documented Latin etymology behind it"
+      "Because they preserved food",
+      "Because they were valuable like salt to the body",
+      "Random idiomatic origin"
     ],
     "context": "Same salt-money origin as 'salary.' Compliment originally meant: earning the salt they're paid in. Linguistic preservation of ancient labor terms."
   },
@@ -8921,9 +8921,9 @@
     "answer": "Spelling froze when Caxton standardized print (~1476), but pronunciation kept changing — silent letters preserve sounds that have been lost",
     "choices": [
       "Spelling froze when Caxton standardized print (~1476), but pronunciation kept changing — silent letters preserve sounds that have been lost",
-      "Silent letters were added by 18th-century printers — to make English look more like Latin",
-      "Silent letters were inserted at random by medieval scribes — for aesthetic reasons",
-      "English originally had no silent letters — modern spelling errors created them"
+      "Silent letters were added by 18th-century printers to make English look more like Latin",
+      "Silent letters were inserted at random by medieval scribes for aesthetic reasons",
+      "English originally had no silent letters; modern spelling errors created them"
     ],
     "context": "In Middle English, 'knight' was pronounced approximately 'k-nicht' with a German-style ch sound. The k and the ch sound both dropped after about 1500; the spelling did not. The Great Vowel Shift further widened the mismatch."
   },
@@ -9185,9 +9185,9 @@
     "answer": "Synecdoche — part (hands) stands for whole (sailors)",
     "choices": [
       "Synecdoche — part (hands) stands for whole (sailors)",
-      "Metonymy — associated word substitution, not part-for-whole",
-      "Hyperbole — exaggeration for emphasis, unrelated to the body-part standing in",
-      "Allegory — extended symbolic narrative, far broader than this phrase"
+      "Metonymy — associated word substitution",
+      "Hyperbole — exaggeration",
+      "Allegory"
     ],
     "context": "Synecdoche: part for whole, or whole for part. 'Hands' (workers' useful parts) stand for the workers. 'Wheels' for cars. 'Bread' for food generally. Tightly related to metonymy but slightly different mechanism."
   },
@@ -9257,9 +9257,9 @@
     "answer": "Ambiguous modifier — who is crying, mother or baby?",
     "choices": [
       "Ambiguous modifier — who is crying, mother or baby?",
-      "Subject-verb disagreement — between 'mother' and 'picked'",
-      "Missing serial comma — somewhere in the participial phrase",
-      "Wrong relative pronoun — 'whom' would be required here"
+      "Subject-verb disagreement between mother/picked",
+      "Missing serial comma in the participial phrase",
+      "Wrong relative pronoun should be 'whom' here"
     ],
     "context": "The participial phrase 'Crying loudly' attaches to the closest subject, which is 'the mother' — but readers likely picture the baby crying. Clearer: 'The mother picked up the baby, who was crying loudly.'"
   },
@@ -9338,12 +9338,12 @@
   {
     "tier": 3,
     "question": "'I like swimming' (gerund) vs. 'I like to swim' (infinitive). Are they identical in meaning?",
-    "answer": "Often interchangeable — but some verbs select one or the other; nuances differ",
+    "answer": "Often interchangeable, but some verbs select one or the other; nuances differ",
     "choices": [
-      "Often interchangeable — but some verbs select one or the other; nuances differ",
+      "Often interchangeable, but some verbs select one or the other; nuances differ",
       "Always identical — pure stylistic choice",
       "Always different — gerund = general, infinitive = specific",
-      "British uses infinitive — American uses gerund, a dialect split"
+      "British uses infinitive; American uses gerund"
     ],
     "context": "'Stop smoking' (gerund: cease the habit) ≠ 'stop to smoke' (infinitive: pause in order to smoke). Some verbs allow only one. Subtle pattern English learners must memorize."
   },
@@ -9384,7 +9384,7 @@
     "context": "Greek 'oxys' (sharp) + 'moros' (dull) — itself an oxymoron. Two terms that seem opposed: bittersweet, deafening silence, original copy, virtual reality, military intelligence (used satirically)."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "'Litotes' is a figure of speech using understatement, often double-negative, to assert something positively. What is the famous Anglo-Saxon example?",
     "answer": "Old English poetry's habit of describing battles as 'not unbloody' or heroes as 'no slouch'",
     "choices": [
@@ -9690,8 +9690,8 @@
     "choices": [
       "Singular — 'The jury was unanimous.'",
       "Plural — 'The jury were unanimous.'",
-      "Plural in both dialects — American matches British convention here",
-      "Either form — only with explicit collective determiners like 'each'"
+      "Always plural in both American and British English",
+      "Either, but only with collective determiners"
     ],
     "context": "American English usually treats jury/team/family/audience as singular grammatical units. British English often uses plural when stressing the individual members."
   },
@@ -9797,9 +9797,9 @@
     "answer": "American: inside ('Stop.') — British: outside ('Stop'.)",
     "choices": [
       "American: inside ('Stop.') — British: outside ('Stop'.)",
-      "Both styles inside — a fully unified transatlantic convention",
-      "Both styles outside — both follow strict logical-quotation rules",
-      "American: outside — British: inside, a reversed convention"
+      "Both styles place it inside",
+      "Both styles place it outside",
+      "American: outside — British: inside"
     ],
     "context": "American convention puts commas and periods inside closing quotation marks regardless of logic. British 'logical quotation' puts them inside only if they belong to the quoted material."
   },
@@ -9845,9 +9845,9 @@
     "answer": "I swear, if you do that again I'll — never mind.",
     "choices": [
       "I swear, if you do that again I'll — never mind.",
-      "I swear, if you do that again — I will punish you severely without delay.",
-      "I swear, you should never do that thing again — and I mean never.",
-      "I would prefer that you not do that — ever again, please."
+      "I swear, if you do that again I will punish you severely.",
+      "I swear, you should never do that thing again.",
+      "I would prefer that you not do that ever again."
     ],
     "context": "The dash and abrupt halt signal aposiopesis. The threat is left to imagination — more powerful than specification. Drama and dialogue use it constantly."
   },
@@ -9929,9 +9929,9 @@
     "answer": "Their/there/they're — the three-way homophonic confusion",
     "choices": [
       "Their/there/they're — the three-way homophonic confusion",
-      "All confusable pairs are equally rare — they appear at the same frequency",
-      "Only formal documents see these confusions — casual writing is unaffected",
-      "Children write more clearly than adults — always, in every register"
+      "All confusable pairs are equally rare",
+      "Only formal documents see these confusions",
+      "Children write more clearly than adults always"
     ],
     "context": "Their/there/they're appear constantly in online writing. The three words sound identical, leading to frequent substitution. Spelling checkers don't catch them (all three are valid words). Practice helps."
   },
@@ -10178,9 +10178,9 @@
   {
     "tier": 3,
     "question": "English verbs that share form between noun and verb often shift stress. 'CON-duct' (noun, behavior) vs. 'con-DUCT' (verb, lead). 'PER-mit' (noun, license) vs. 'per-MIT' (verb, allow). 'RE-cord' vs. 're-CORD'. This stress alternation is so productive it can be applied to new words. Which pair shows this pattern?",
-    "answer": "PRES-ent (noun, gift) vs. pre-SENT (verb, give) — the stress shifts position",
+    "answer": "PRES-ent (noun, gift) vs. pre-SENT (verb, give)",
     "choices": [
-      "PRES-ent (noun, gift) vs. pre-SENT (verb, give) — the stress shifts position",
+      "PRES-ent (noun, gift) vs. pre-SENT (verb, give)",
       "WORD (noun) vs. WORD (verb) — same stress always",
       "GOLD (noun) vs. GOLD (verb) — invariant stress",
       "GREEN (noun) vs. GREEN (verb) — same pattern"
@@ -10370,9 +10370,9 @@
   {
     "tier": 3,
     "question": "Gerunds (verb + -ing used as nouns: 'Swimming is fun') and infinitives (to + verb: 'To swim is fun') overlap in many uses but not all. Some verbs require one or the other. Which choice changes meaning here?",
-    "answer": "'I stopped smoking' vs. 'I stopped to smoke' — quit smoking vs. paused in order to smoke",
+    "answer": "'I stopped smoking' (quit smoking) vs. 'I stopped to smoke' (paused in order to smoke)",
     "choices": [
-      "'I stopped smoking' vs. 'I stopped to smoke' — quit smoking vs. paused in order to smoke",
+      "'I stopped smoking' (quit smoking) vs. 'I stopped to smoke' (paused in order to smoke)",
       "'I love swimming' vs. 'I love to swim' — completely identical",
       "'I want going' vs. 'I want to go' — both grammatical",
       "'I enjoy to read' vs. 'I enjoy reading' — both standard"
@@ -10440,7 +10440,7 @@
     "context": "Spelling adjustments: double final consonant after short vowel ('run' → 'running'). Drop silent 'e' ('make' → 'making'). Present participle marks progressive aspect and acts as gerund/modifier."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "Hyperbaton inverts the normal word order for emphasis. 'This I cannot allow' (instead of 'I cannot allow this'). 'Beautiful is the morning' (instead of 'The morning is beautiful'). 'Yoda speech' is a kind of hyperbaton. The inversion draws attention to the moved element. Which uses hyperbaton?",
     "answer": "Mighty is the pen of the prophet.",
     "choices": [
@@ -10913,9 +10913,9 @@
     "answer": "The Norman Conquest of 1066 — the start of Middle English",
     "choices": [
       "The Norman Conquest of 1066 — the start of Middle English",
-      "Caxton's printing press in 1476 — actually the start of Early Modern English",
-      "The Black Death of 1346 — devastating, but not the linguistic boundary marker",
-      "Webster's American Dictionary in 1828 — far too late for the Old English transition"
+      "Caxton's printing press in 1476",
+      "The Black Death of 1346",
+      "Webster's American Dictionary in 1828"
     ],
     "context": "The conquest brought French to England and set in motion the collapse of Old English's elaborate inflection. By 1150, Middle English was emerging; by 1400, Chaucer was writing recognizable English."
   },
@@ -11172,7 +11172,7 @@
     "context": "American convention: aesthetic placement (inside). British: logical placement (outside unless part of quotation). Both have rationales; consistency within a piece matters more than which convention."
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "Reported speech (indirect speech) shifts tense backwards. Original: 'I am happy'. Reported: 'She said she WAS happy' (back-shift from present to past). Original: 'I have eaten'. Reported: 'He said he HAD eaten' (back-shift from present perfect to past perfect). Which is correctly back-shifted from 'I will leave tomorrow'?",
     "answer": "He said he would leave the next day.",
     "choices": [
@@ -11333,9 +11333,9 @@
     "answer": "Testing typewriter keys and font rendering — and later for handwriting practice and font samples",
     "choices": [
       "Testing typewriter keys and font rendering — and later for handwriting practice and font samples",
-      "Identifying secret cipher keys — supposedly in WWI intelligence work",
-      "Teaching English to non-native speakers — in Edwardian-era classrooms",
-      "Selecting a printing press's most worn types — for replacement and recasting"
+      "Identifying secret cipher keys in WWI intelligence work",
+      "Teaching English to non-native speakers in Edwardian classrooms",
+      "Selecting a printing press's most worn types"
     ],
     "context": "First documented in an 1888 Michigan newspaper. 'The five boxing wizards jump quickly' is a more compact pangram. Other languages have their own: 'Voyez le brick géant que j'examine près du wharf' (French); 'Pchnąć w tę łódź jeża lub ośm skrzyń fig' (Polish)."
   },
@@ -11381,9 +11381,9 @@
     "answer": "At least three Indo-European roots — *bheue (be), *es (am/is), *wes (was/were)",
     "choices": [
       "At least three Indo-European roots — *bheue (be), *es (am/is), *wes (was/were)",
-      "One Old English root — with irregular phonological development over time",
-      "Two Anglo-Norman roots — that merged after the Conquest of 1066",
-      "Five distinct Latin loans — that replaced an Old English single-root verb"
+      "One Old English root that has irregular phonological development",
+      "Two Anglo-Norman roots that merged after the Conquest",
+      "Five distinct Latin loans that replaced an Old English single-root verb"
     ],
     "context": "Indo-European *es- gives 'is,' 'am,' 'are' (and Latin 'est,' Sanskrit 'asti'). *bheue- gives 'be,' 'been,' 'being' (Latin 'fui,' Sanskrit 'bhū'). *wes- gives 'was,' 'were.' The merger of three roots into one paradigm is unusually deep."
   },
@@ -11418,8 +11418,8 @@
     "choices": [
       "Damask (from Damascus, Syria — silk fabric)",
       "Wool (Old English 'wull' — Germanic root)",
-      "Silk (Greek 'serikos' — from China, via Latin trade routes)",
-      "Linen (Latin 'linum' — meaning flax, the plant fiber)"
+      "Silk (Greek 'serikos' from China via Latin)",
+      "Linen (Latin 'linum' = flax)"
     ],
     "context": "Textile-trade words from Arabic/Persian: cotton (Arabic), damask (Damascus), muslin (Mosul), satin (Chinese via Arabic), taffeta (Persian). Trade brought goods AND words."
   },
@@ -11453,9 +11453,9 @@
     "answer": "Death-pledge (Old French 'mort' + 'gage' — the deal dies either when paid off or when default forfeits the property)",
     "choices": [
       "Death-pledge (Old French 'mort' + 'gage' — the deal dies either when paid off or when default forfeits the property)",
-      "House-bond — Old French 'mort' (house) plus 'gage' (bond), supposedly combined",
-      "Land-tax — Old French 'mort' (land) plus 'gage' (tax), per folk etymology",
-      "Long-payment — Old French 'mort' (long) plus 'gage' (payment), invented"
+      "House-bond (Old French 'mort' meaning 'house' + 'gage' meaning 'bond')",
+      "Land-tax (Old French 'mort' meaning 'land' + 'gage' meaning 'tax')",
+      "Long-payment (Old French 'mort' meaning 'long' + 'gage' meaning 'payment')"
     ],
     "context": "Edward Coke's 17th-century explanation: the property 'mort' (dies) to the borrower if condition is broken, and 'mort' to the lender if condition is fulfilled. The same root gives French 'mourir' (to die) and English 'mortal,' 'mortuary,' 'mortify.'"
   },
@@ -11465,9 +11465,9 @@
     "answer": "Words can chain through layers — geography to person to building to attribute",
     "choices": [
       "Words can chain through layers — geography to person to building to attribute",
-      "Palace and Palatine are coincidental — no historical or etymological link",
-      "The Palatine Hill was named after the word — a reversal of the actual history",
-      "Pales the deity was invented to explain the word — a 19th-century back-formation"
+      "Palace and Palatine are purely coincidental similarity",
+      "The Palatine Hill was named after the English word palace",
+      "Pales the deity was invented to explain the word"
     ],
     "context": "Roman geographical names shaped Western vocabulary: palace (Palatine), capitol (Capitoline), forum (Forum), senate (older Latin tradition). Geography became architecture became metaphor."
   },
@@ -11486,12 +11486,12 @@
   {
     "tier": 3,
     "question": "The Great Vowel Shift (~1400-1700) systematically changed English long-vowel pronunciation. Chaucer's 'time' was pronounced 'teem'; modern 'time' is 'tahym'. The shift began around the time of the Black Death (1346-1353) and continued for ~300 years. What's NOT a likely cause?",
-    "answer": "A government decree by Henry VIII in 1530 — sound shifts don't work that way",
+    "answer": "A government decree by Henry VIII in 1530",
     "choices": [
-      "A government decree by Henry VIII in 1530 — sound shifts don't work that way",
+      "A government decree by Henry VIII in 1530",
       "Post-plague social mobility — new dialects merging in London",
-      "Influence of immigration patterns — dialect contact spreading change",
-      "Internal linguistic restructuring — chain shift, vowel slots reorganizing"
+      "Influence of immigration patterns and dialect contact",
+      "Internal linguistic restructuring (chain shift)"
     ],
     "context": "Linguistic shifts are not legislated — they happen below conscious awareness. The Great Vowel Shift began in southern English and spread; precise causes are debated but no royal decree caused it."
   },
@@ -11501,9 +11501,9 @@
     "answer": "Hundreds of phrases entered everyday English from its language — 'salt of the earth,' 'fly in the ointment,' 'powers that be,' 'go the extra mile'",
     "choices": [
       "Hundreds of phrases entered everyday English from its language — 'salt of the earth,' 'fly in the ointment,' 'powers that be,' 'go the extra mile'",
-      "It first introduced the participle as a distinct grammatical category in English — a claim with no historical basis whatever",
-      "It first capitalized common nouns broadly — a practice English later abandoned, per a popular legend with no documentary support",
-      "It standardized English spelling for the entire English-speaking world overnight — a feat no single book in history has achieved"
+      "It introduced the present participle and the past participle as distinct grammatical categories",
+      "It first capitalized common nouns, a practice English later abandoned",
+      "It standardized English spelling for the entire English-speaking world"
     ],
     "context": "Other KJV phrases: 'scapegoat,' 'broken heart,' 'fall by the wayside,' 'wolf in sheep's clothing,' 'lamb to the slaughter,' 'a thorn in the flesh.' Tyndale's translation (1525-1530, partial) contributed many phrases used in KJV. KJV's English was somewhat archaic even in 1611, lending it durable solemnity."
   },
@@ -11642,12 +11642,12 @@
   {
     "tier": 3,
     "question": "The phenomenon called 'lexical doublets' occurs when English borrows the same root word twice at different times, producing two distinct modern words. Which of these is a true doublet pair?",
-    "answer": "Hospital (from Latin via Old French) and hotel (from Latin via Modern French) — same root, different eras",
+    "answer": "Hospital (from Latin via Old French) and hotel (from Latin via Modern French)",
     "choices": [
-      "Hospital (from Latin via Old French) and hotel (from Latin via Modern French) — same root, different eras",
-      "Hospital and clinic — borrowed from different Greek roots entirely",
-      "Hospital and infirmary — borrowed from different Latin roots entirely",
-      "Hospital and asylum — borrowed at the same time from a single Latin root"
+      "Hospital (from Latin via Old French) and hotel (from Latin via Modern French)",
+      "Hospital and clinic — borrowed from different Greek roots",
+      "Hospital and infirmary — borrowed from different Latin roots",
+      "Hospital and asylum — borrowed at the same time from Latin"
     ],
     "context": "Both 'hospital' and 'hotel' descend from Latin 'hospitale' but entered English at different periods, giving two pronunciations and meanings. Other doublets: regal/royal, secure/sure, fragile/frail, captain/chieftain — first form from Latin/learned borrowing, second from spoken French."
   },
@@ -11693,9 +11693,9 @@
     "answer": "Re- (rewrite, retweet, rebook, restart — works on most new verbs)",
     "choices": [
       "Re- (rewrite, retweet, rebook, restart — works on most new verbs)",
-      "Un- (works only on positive adjectives — limited productivity overall)",
-      "Pre- (limited to temporal-relation verbs — narrowly scoped today)",
-      "Dis- (works only with Latin-derived verbs — restricted to a fixed set)"
+      "Un- (works only on positive adjectives, limited productivity)",
+      "Pre- (limited to temporal-relation verbs only)",
+      "Dis- (works only with Latin-derived verbs)"
     ],
     "context": "Re- is one of English's most productive prefixes. New verbs almost automatically accept it: retweet, reboot, reblog, reshare, reframe, reset. The prefix is from Latin re- (back, again)."
   },
@@ -11789,9 +11789,9 @@
     "answer": "Adieu (French 'à Dieu' = to God) — bidding someone to God's care",
     "choices": [
       "Adieu (French 'à Dieu' = to God) — bidding someone to God's care",
-      "Ciao (Italian) — from 'sciavo' meaning slave/servant, no religion",
-      "Bye — purely a shortening of 'goodbye' with no other source",
-      "Farewell — originally a curse meaning 'fare badly' or wishing harm"
+      "Ciao (Italian — from 'sciavo' meaning slave/servant)",
+      "Bye (purely a shortening of 'goodbye' with no other source)",
+      "Farewell (originally a curse meaning 'fare badly')"
     ],
     "context": "Many European farewells embed God or fortune: French 'adieu' (to God), Spanish 'adiós' (to God), Italian 'addio' (to God). English 'goodbye' is in the same religious-farewell tradition."
   },
@@ -11849,9 +11849,9 @@
     "answer": "Forced labor, drudgery — specifically the unpaid labor a serf owed a feudal lord",
     "choices": [
       "Forced labor, drudgery — specifically the unpaid labor a serf owed a feudal lord",
-      "A mechanical doll or windup toy — common in Bohemian craft villages",
-      "An obedient son — used as a metaphor for a perfectly trained servant",
-      "A small clockwork bird — kept in Habsburg-era Czech parlors and dining rooms"
+      "A mechanical doll or windup toy, common in Bohemian craft villages",
+      "An obedient son, used as a metaphor for a perfectly trained servant",
+      "A small clockwork bird kept in Habsburg-era Czech parlors"
     ],
     "context": "Karel's brother Josef Čapek suggested the word. R.U.R. was translated into more than 30 languages within a decade. The Czech root 'rab' means slave; 'robota' is the labor of a serf. In R.U.R. the robots eventually revolt."
   },
@@ -11861,9 +11861,9 @@
     "answer": "An expression meaning to earn one's pay — directly from the salarium tradition",
     "choices": [
       "An expression meaning to earn one's pay — directly from the salarium tradition",
-      "A phrase invented by Webster in 1828 — for his American Dictionary",
-      "An expression from medieval England — without any Roman-origin connection",
-      "A modern coinage from the 20th century — popularized in industrial-era English"
+      "A phrase invented by Webster in 1828 for his dictionary",
+      "An expression from medieval England without Roman origin",
+      "A modern coinage from the 20th century"
     ],
     "context": "Salt was so valuable in antiquity that Roman soldiers were sometimes paid partly in it; this 'salarium' became the word for any payment. 'Worth one's salt' preserves the historical link."
   },
@@ -11893,15 +11893,15 @@
   },
   {
     "tier": 3,
-    "question": "Some verbs take just a subject ('Snow falls'); some take a subject and an object ('She eats apples'); a few take a subject AND two objects ('She gives him a book' — Mary gives [a book] to [him]). Which verb naturally takes the most parts — a subject, a thing being given, AND a recipient?",
-    "answer": "Give (X gives Y to Z) — three roles: giver, gift, recipient",
+    "question": "Verb valency (or valence) is the number of arguments (subjects, objects, complements) a verb requires. 'Snow' (sleeps, dies) = valency 1 (just subject). 'Eat' (eats X) = valency 2. 'Give' (gives X to Y) = valency 3. The same verb can have different valencies: 'He eats' (1) vs. 'He eats apples' (2). Which is a 3-valency verb?",
+    "answer": "Give (X gives Y to Z)",
     "choices": [
-      "Give (X gives Y to Z) — three roles: giver, gift, recipient",
-      "Sleep (X sleeps) — needs only one role: the sleeper",
-      "Smile (X smiles) — needs only one role: the smiler",
-      "Arrive (X arrives) — needs only one role: the arriver"
+      "Give (X gives Y to Z)",
+      "Sleep (X sleeps)",
+      "Smile (X smiles)",
+      "Arrive (X arrives)"
     ],
-    "context": "Three-role verbs are rare in English: give, send, tell, show, teach, offer, lend, owe. They take a subject (the doer), a direct object (the thing), and an indirect object (the recipient). Most English verbs take just one or two roles. Counting roles is a useful way to predict whether a verb needs an object — 'She gives' alone feels incomplete; 'She sleeps' feels finished."
+    "context": "Three-place verbs are rare: give, send, tell, show, teach, offer. They take subject, direct object, and indirect object. Most verbs are 1- or 2-valent."
   },
   {
     "tier": 3,
@@ -11954,12 +11954,12 @@
   {
     "tier": 3,
     "question": "What's 'will' in 'I will go tomorrow' technically classified as?",
-    "answer": "Modal auxiliary — expressing futurity, not a tense marker",
+    "answer": "Modal auxiliary expressing futurity",
     "choices": [
-      "Modal auxiliary — expressing futurity, not a tense marker",
-      "Tense marker — future tense, with 'will' as the inflection itself",
-      "Main verb — 'will' is the action being performed in the sentence",
-      "Adverb — modifying 'go' the way 'quickly' or 'soon' would"
+      "Modal auxiliary expressing futurity",
+      "Tense marker — future tense",
+      "Main verb",
+      "Adverb"
     ],
     "context": "Linguistic argument: English has no morphological future tense (no inflection like Latin 'amabo'). 'Will' is a modal that happens to express futurity. Some linguists prefer 'will + bare infinitive' to 'future tense.'"
   },
@@ -11990,12 +11990,12 @@
   {
     "tier": 3,
     "question": "When joining two independent clauses with \"and,\" what punctuation comes first?",
-    "answer": "A comma before 'and' — standard for two independent clauses",
+    "answer": "A comma before \"and\"",
     "choices": [
-      "A comma before 'and' — standard for two independent clauses",
-      "A semicolon before 'and' — but 'and' makes the semicolon redundant",
-      "A colon before 'and' — colons introduce lists, not coordinations",
-      "Nothing — and is enough by itself, no comma needed"
+      "A comma before \"and\"",
+      "A semicolon before \"and\"",
+      "A colon before \"and\"",
+      "Nothing — and is enough"
     ],
     "context": "Comma before coordinating conjunction in a compound sentence."
   },
@@ -12235,7 +12235,7 @@
       "I love coffee; it keeps me alert",
       "I love coffee; and it keeps me alert",
       "I love coffee, it keeps me alert",
-      "I love coffee (it keeps me alert)"
+      "I love coffee — it keeps me alert"
     ],
     "context": "Semicolon joins two related independent clauses. Don't add a conjunction."
   },
@@ -12590,21 +12590,21 @@
   {
     "tier": 3,
     "question": "Why does the verb 'must' have no past tense?",
-    "answer": "Modals are defective — 'must' uses 'had to' for past obligation",
+    "answer": "Modals are defective; 'must' uses 'had to' for past obligation",
     "choices": [
-      "Modals are defective — 'must' uses 'had to' for past obligation",
-      "It does — 'musted' is the correct past form",
-      "Recently lost — the past tense was alive into the 1900s",
-      "British has past 'must' — American doesn't, a transatlantic split"
+      "Modals are defective; 'must' uses 'had to' for past obligation",
+      "It does — 'musted'",
+      "Recently lost",
+      "British has past 'must'; American doesn't"
     ],
     "context": "Modal verbs lack many forms. No past, no infinitive, no participle. English fills the gaps with alternatives: 'must → had to'; 'can → was able to'; 'may → was allowed to.' Workaround vocabulary."
   },
   {
     "tier": 3,
     "question": "Why is this sentence wrong? 'The committee disagree on the proposal.'",
-    "answer": "American style usually treats 'committee' as singular — 'disagrees'",
+    "answer": "American style usually treats 'committee' as singular: 'disagrees'",
     "choices": [
-      "American style usually treats 'committee' as singular — 'disagrees'",
+      "American style usually treats 'committee' as singular: 'disagrees'",
       "Should be 'disagreed' — past tense",
       "Should be 'disagreeing' — present participle",
       "Need 'a committee' — missing article"
@@ -12833,9 +12833,9 @@
     "answer": "Formal writing — academic, legal, and edited journalism",
     "choices": [
       "Formal writing — academic, legal, and edited journalism",
-      "Spoken English in all registers — formal and casual alike",
-      "Children's books exclusively — never in adult writing of any kind",
-      "Only British English — American has dropped the distinction entirely"
+      "Spoken English in all registers",
+      "Children's books exclusively",
+      "Only British English; American has dropped it"
     ],
     "context": "The 'less/fewer' distinction is one prescriptive grammarians have not entirely lost. Edited writing still distinguishes. Spoken English freely uses 'less' for both. Strunk would correct the sign."
   },
@@ -12893,9 +12893,9 @@
     "answer": "Pejoration then amelioration — first negative weight increased, then softened",
     "choices": [
       "Pejoration then amelioration — first negative weight increased, then softened",
-      "Continuous pejoration — the word has only gotten more negative across centuries",
-      "Continuous amelioration — the word has only gotten more positive across centuries",
-      "Specialization — narrowing of meaning with no shift in evaluative weight"
+      "Continuous pejoration — the word has only gotten more negative",
+      "Continuous amelioration — the word has only gotten more positive",
+      "Specialization with no value change"
     ],
     "context": "From 'having nothing' (neutral economic) → 'wicked' (strongly moral negative) → 'mischievous' (light moral negative) → 'flirtatious or risqué' (often playful). Each step happens over centuries; the word's history is unusually full."
   },
@@ -12917,9 +12917,9 @@
     "answer": "Cunning, crafty (Old English 'prættig' — clever)",
     "choices": [
       "Cunning, crafty (Old English 'prættig' — clever)",
-      "Attractive — its current meaning, present from the start of English",
-      "Beautiful — its modern aesthetic sense, supposedly the original meaning",
-      "Decorative — a parallel meaning supposedly present alongside cleverness"
+      "Attractive (its current meaning)",
+      "Beautiful",
+      "Decorative"
     ],
     "context": "Sense shift: clever → skillfully made → fine → attractive. Old English 'prættig' had a slightly devious undertone. The aesthetic meaning grew, gradually replacing the trick connotation. Amelioration over centuries."
   },
@@ -12977,9 +12977,9 @@
     "answer": "Ambiguous — does 'often' modify 'study' or 'get'?",
     "choices": [
       "Ambiguous — does 'often' modify 'study' or 'get'?",
-      "Clearly correct — with no ambiguity at any reading position",
-      "A sentence fragment — missing a main clause or finite verb",
-      "A comma splice — joining clauses with only a comma between them"
+      "Clearly correct with no ambiguity",
+      "A sentence fragment",
+      "A comma splice"
     ],
     "context": "Called a squinting modifier: 'often' could attach left ('study often') or right ('often get better grades'). Fix by relocating: 'Students who often study...' or 'Students who study get better grades often.'"
   },
@@ -13205,9 +13205,9 @@
     "answer": "Removes the agent — no one in particular made the mistakes",
     "choices": [
       "Removes the agent — no one in particular made the mistakes",
-      "Increases verb-tense complexity — adding density for rhetorical emphasis",
-      "Adds formality — without affecting the sentence's meaning at all",
-      "Marks the sentence as a question — rather than a declarative statement"
+      "Increases verb tense complexity for emphasis",
+      "Adds formality without changing meaning at all",
+      "Marks the sentence as a question rather than statement"
     ],
     "context": "The grammatical 'mistakes were made' construction is structurally fine but rhetorically evasive. Strunk's 'Use the active voice' is a stylistic, not grammatical, rule."
   },
@@ -13325,9 +13325,9 @@
     "answer": "Length and function — em is longer (breaks); en connects ranges",
     "choices": [
       "Length and function — em is longer (breaks); en connects ranges",
-      "Only length — the two serve identical grammatical functions",
-      "Only function — the two are the same length when typeset",
-      "Em dashes are British — en dashes are American, by convention"
+      "Only in length; they serve the same function",
+      "Only in function; they're the same length",
+      "Em dashes are British; en dashes are American"
     ],
     "context": "Em (—) ≈ width of letter 'M' — strong interruption. En (–) ≈ width of 'N' — number/date ranges (1995–2025). Hyphen (-) joins compound words."
   },
@@ -13361,9 +13361,9 @@
     "answer": "The letters must be reused exactly once each — no additions or removals",
     "choices": [
       "The letters must be reused exactly once each — no additions or removals",
-      "Anagrams allow free addition of letters — bringing in extras as needed",
-      "Anagrams can use the same letter multiple times — beyond the originals",
-      "Anagrams must always be in English — never crossing language lines"
+      "Anagrams allow free addition of letters",
+      "Anagrams can use the same letter multiple times beyond originals",
+      "Anagrams must always be in English"
     ],
     "context": "Strict anagram = exact letter rearrangement. Famous: 'Eleven plus two' = 'Twelve plus one' (also anagrammatic). 'Mother-in-law' = 'Woman Hitler'. Many writers (Nabokov, Tom Riddle) hide anagrams in plain sight."
   },
@@ -13397,9 +13397,9 @@
     "answer": "Short, parallel, balanced — often with antithesis or chiasmus",
     "choices": [
       "Short, parallel, balanced — often with antithesis or chiasmus",
-      "Long, verbose, complex — with multiple subordinate clauses stacking",
-      "Always rhymed in iambic pentameter — a strict metrical requirement",
-      "Always in the form of a question — leaving the answer to the reader"
+      "Long, verbose, complex with multiple subordinate clauses",
+      "Always rhymed in iambic pentameter",
+      "Always in the form of a question"
     ],
     "context": "Aphorisms favor balanced grammar for memory. 'A bird in the hand is worth two in the bush' — parallel comparison. 'When in Rome, do as the Romans do' — chiasmic structure. Form aids memory."
   },
@@ -13421,9 +13421,9 @@
     "answer": "Get out, or I'll —",
     "choices": [
       "Get out, or I'll —",
-      "Get out — I will hurt you.",
-      "Leave — without arguing now.",
-      "Please leave — and respect that."
+      "Get out, or I'll hurt you.",
+      "Please leave my house now.",
+      "I asked you politely to go."
     ],
     "context": "The dash or ellipsis marks aposiopesis. The unspoken threat is more powerful than any specific one. Classical rhetoric named this figure; modern dialogue uses it constantly."
   },
@@ -13434,8 +13434,8 @@
     "choices": [
       "My brother John lives in Chicago.",
       "My brother, John, lives in Chicago.",
-      "My brother (John) lives in Chicago.",
-      "My, brother John, lives in Chicago."
+      "My brother — John — lives in Chicago.",
+      "My brother (John) lives in Chicago."
     ],
     "context": "If the speaker has multiple brothers, the name 'John' restricts which one — no commas. If only one brother, commas would be appropriate. The unmarked form implies restriction."
   },
@@ -13445,9 +13445,9 @@
     "answer": "The Arabic definite article 'the' — fossilized in the English word",
     "choices": [
       "The Arabic definite article 'the' — fossilized in the English word",
-      "A signal of 19th-century English invention — for newly coined scientific terms",
-      "A scientific marker for chemical compounds — in the Latin scholastic tradition",
-      "A French prefix meaning 'always' or 'continuously' — a romance-language source"
+      "A signal that the word was invented in 19th-century England",
+      "A scientific marker for chemical compounds in the Latin tradition",
+      "A French prefix meaning 'always' or 'continuously'"
     ],
     "context": "Many 'al-' English words from Arabic preserve the article as part of the noun: algorithm, alcohol, alchemy, alkali, almanac. English speakers don't recognize it as 'the' — but in Arabic it's clear."
   },
@@ -13718,12 +13718,12 @@
   {
     "tier": 4,
     "question": "Conjunctive sentences ('and...and...') and asyndetic structures ('came, saw, conquered') differ in how items are joined. Polysyndeton uses many conjunctions ('and the rain and the wind and the cold'); asyndeton uses none, just commas. Both are rhetorical figures. Which is polysyndeton?",
-    "answer": "We have ships and men and money and supplies and time — every resource needed for the campaign",
+    "answer": "We have ships and men and money and supplies and time.",
     "choices": [
-      "We have ships and men and money and supplies and time — every resource needed for the campaign",
-      "We have ships, men, money, supplies, time — pure asyndeton, no conjunctions at all",
-      "We have ships, men, money, supplies, and time — standard list with Oxford comma",
-      "Ships, men, money — we have them all in this fight"
+      "We have ships and men and money and supplies and time.",
+      "We have ships, men, money, supplies, time.",
+      "We have ships, men, money, supplies, and time.",
+      "Ships, men, money — we have them all."
     ],
     "context": "Polysyndeton repeats conjunctions for cumulative emphasis or solemnity. Hemingway used it; the King James Bible loved it ('and...and...and'). Asyndeton accelerates; polysyndeton expands."
   },
@@ -13922,12 +13922,12 @@
   {
     "tier": 4,
     "question": "English has the largest vocabulary of any major language, with the OED listing roughly 600,000 main entries and the active vocabulary of an educated speaker around 30,000 words. Why is English vocabulary so big?",
-    "answer": "It's a Germanic language extensively borrowed into — from Norse, French, Latin, Greek, and every colonial contact language",
+    "answer": "It's a Germanic language extensively borrowed into from Norse, French, Latin, Greek, and every colonial contact language",
     "choices": [
-      "It's a Germanic language extensively borrowed into — from Norse, French, Latin, Greek, and every colonial contact language",
+      "It's a Germanic language extensively borrowed into from Norse, French, Latin, Greek, and every colonial contact language",
       "English speakers refuse to forget any word — old words are preserved by law",
-      "English's grammatical simplicity forces lexical complexity — compensating with raw vocabulary",
-      "Most other languages are statistically equal — English entries just have more historical variants"
+      "English's grammatical simplicity forces lexical complexity to compensate",
+      "Most other languages are statistically equal; English entries just have more variants"
     ],
     "context": "The size depends on counting conventions. English's openness to loans, plus the doublet structure (germanic 'house,' French 'mansion,' Latin 'edifice'), gives it semantic gradients other languages get from inflection. The 'biggest vocabulary' claim is contested but reasonable."
   },
@@ -13985,9 +13985,9 @@
     "answer": "More words doesn't necessarily mean more expressive — different languages organize vocabulary differently",
     "choices": [
       "More words doesn't necessarily mean more expressive — different languages organize vocabulary differently",
-      "English has the most vocabulary — and is therefore the most expressive language of all",
-      "All languages have exactly 100,000 words — a fixed cross-linguistic ceiling",
-      "Vocabulary size doesn't matter — it has no relevance to language study whatsoever"
+      "English has the most vocabulary and is therefore the most expressive language",
+      "All languages have exactly 100,000 words",
+      "Vocabulary size doesn't matter at all in linguistics"
     ],
     "context": "Inuit languages have many morphemes for snow conditions — does that mean they 'have more snow words'? Depends how you count. Languages express different distinctions; raw word count is a crude measure."
   },
@@ -14429,9 +14429,9 @@
     "answer": "No — most style guides accept it",
     "choices": [
       "No — most style guides accept it",
-      "Yes — every guide forbids it always",
-      "Only Strunk forbids it — others allow",
-      "Only AP forbids it — others permit it"
+      "Yes — every style guide forbids it",
+      "Only Strunk forbids it",
+      "Only AP forbids it"
     ],
     "context": "Lowth (1762) imported the rule from Latin. Modern style — including Fowler, Garner — accepts the ending."
   },
@@ -14453,23 +14453,23 @@
     "answer": "Widespread adult second-language learning — adults shed difficult features, simplifying the grammar across the speaker community",
     "choices": [
       "Widespread adult second-language learning — adults shed difficult features, simplifying the grammar across the speaker community",
-      "Government language policy enforcing simplified spelling — top-down standardization",
-      "The invention of writing — which always reduces grammatical complexity, in McWhorter's view",
-      "Sustained isolation from other languages — which removes the pressure to be expressive"
+      "Government language policy enforcing simplified spelling",
+      "The invention of writing, which always reduces grammatical complexity",
+      "Sustained isolation from other languages, which removes the pressure to be expressive"
     ],
     "context": "McWhorter argues English's relatively simple morphology (compared to Old English) results partly from adult Norse and Norman speakers learning it imperfectly — children of mixed marriages then internalized the simplified version. Isolated languages, by contrast, tend to accumulate complexity."
   },
   {
     "tier": 4,
-    "question": "Language change is inevitable — no human language is static. Sound shifts (the Great Vowel Shift, 1400-1700), grammatical drift (loss of case endings in English, 1000-1400), semantic drift ('nice' meaning foolish → kind), vocabulary turnover (new words constantly entering, old ones falling out). Prescriptive rules can slow but not stop this process. What's the modern view of language change?",
+    "question": "Language change is inevitable — no human language is static. Sound shifts (the Great Vowel Shift, 1400-1700), grammatical drift (loss of case endings in English, 1000-1400), semantic drift (nice meaning foolish → kind), vocabulary turnover (new words constantly entering, old ones falling out). Prescriptive rules can slow but not stop this process. What's the modern descriptive-linguistic insight?",
     "answer": "Language change is normal, observable, and consistent — not decay or error",
     "choices": [
       "Language change is normal, observable, and consistent — not decay or error",
-      "Language change is always decay — a fall from a pure ancestral state of the language",
-      "All modern English is identical to medieval English — only spelling has changed visibly",
-      "Languages can be frozen permanently — given enough governmental effort and academic vigilance"
+      "Language change is always decay from a pure ancestral state",
+      "All modern English is identical to medieval English",
+      "Languages can be frozen permanently by enough effort"
     ],
-    "context": "Modern linguists document language change as observable fact. Prescriptivists sometimes treat change as decay (Strunk-era guides occasionally show this attitude). Modern style guides (Garner, Fowler, Chicago) acknowledge change while maintaining usage standards — they don't pretend the language is frozen."
+    "context": "Descriptive linguists since Bloomfield document change as fact. Prescriptivists sometimes treat change as decay. Modern style guides acknowledge change while maintaining standards."
   },
   {
     "tier": 4,
@@ -14477,9 +14477,9 @@
     "answer": "House (Old English 'hus' — Germanic root)",
     "choices": [
       "House (Old English 'hus' — Germanic root)",
-      "Construct (Latin 'construere' — to build together)",
-      "Liberate (Latin 'liberare' — to free)",
-      "Conclude (Latin 'concludere' — to shut up, close off)"
+      "Construct (Latin 'construere' to build together)",
+      "Liberate (Latin 'liberare' to free)",
+      "Conclude (Latin 'concludere' to shut up)"
     ],
     "context": "Germanic-Latin doublets are common in English: house/mansion, freedom/liberty, kingly/regal, fatherly/paternal. Germanic words are usually shorter, plainer, everyday; Latin equivalents formal."
   },
@@ -14525,9 +14525,9 @@
     "answer": "They allow for grammatical flexibility — easy modification of the action via adjectives",
     "choices": [
       "They allow for grammatical flexibility — easy modification of the action via adjectives",
-      "They sound more formal than simple verbs — in every register and context",
-      "They are required by all English style guides — without any exceptions today",
-      "They make sentences shorter — than using a single specific verb instead"
+      "They sound more formal than simple verbs in all contexts",
+      "They are required by all English style guides today",
+      "They make sentences shorter than using a single verb"
     ],
     "context": "'Take a careful walk' vs. 'walk carefully' — the noun version permits more sophisticated modification. Strunk warns against overuse; Garner notes their legitimate functions."
   },
@@ -14609,9 +14609,9 @@
     "answer": "Metaphors are not just decorative — they shape how we understand abstract concepts",
     "choices": [
       "Metaphors are not just decorative — they shape how we understand abstract concepts",
-      "Metaphors are purely decorative — they have no influence on thought, only style",
-      "Lakoff's argument was rejected by all linguistic scholars — and has no living adherents",
-      "All metaphors compare physical objects only — never abstract ideas or concepts"
+      "Metaphors are purely decorative and have no influence on thought",
+      "Lakoff's argument was rejected by all linguistic scholars",
+      "All metaphors compare physical objects only, never abstract ideas"
     ],
     "context": "Lakoff and Johnson revolutionized metaphor study. 'Argument is war', 'Time is money', 'Life is a journey' aren't just sayings — they're the conceptual structures we use to think."
   },
@@ -14813,9 +14813,9 @@
     "answer": "His proposed 'foto' for 'photo' and 'kemikal' for 'chemical' — these didn't stick",
     "choices": [
       "His proposed 'foto' for 'photo' and 'kemikal' for 'chemical' — these didn't stick",
-      "Color, center, behavior — these all stuck successfully in American English",
-      "The 1828 dictionary used pictures only — supposedly avoiding text entirely",
-      "Webster's spelling changes were all rejected — leaving American spelling unchanged"
+      "Color, center, behavior — these all stuck successfully",
+      "The 1828 dictionary used pictures only, not text",
+      "Webster's spelling changes were all rejected"
     ],
     "context": "Webster's more radical phonetic simplifications (omitting silent letters generally) didn't catch on. Some that did: 'plow' (not plough), 'check' (not cheque). Most British-American spelling differences trace to Webster."
   },
@@ -14990,12 +14990,12 @@
   {
     "tier": 4,
     "question": "Pidgins and creoles are languages that emerge when speakers of different languages must communicate. A pidgin is a simplified contact language; a creole is a pidgin that has become a native tongue for a new generation. Hawaiian Pidgin, Tok Pisin (Papua New Guinea), and Haitian Creole are major examples. Which English word is itself from a pidgin/creole context?",
-    "answer": "Chowder (likely from French 'chaudière' = cauldron) — via Newfoundland fishing pidgin",
+    "answer": "Chowder (likely from French 'chaudière' = cauldron, via Newfoundland fishing pidgin)",
     "choices": [
-      "Chowder (likely from French 'chaudière' = cauldron) — via Newfoundland fishing pidgin",
-      "Chicken (Old English origin) — no pidgin connection at all",
+      "Chowder (likely from French 'chaudière' = cauldron, via Newfoundland fishing pidgin)",
+      "Chicken (Old English origin, no pidgin connection)",
       "Mountain (Latin 'montanus' via French — direct loanword)",
-      "Whisper (Old English 'hwisprian' — native word with no pidgin route)"
+      "Whisper (Old English 'hwisprian' — native word)"
     ],
     "context": "Pidgin and creole contributions are scattered: chowder (Atlantic fishing), 'long time no see' (Chinese pidgin), 'mafia' (Sicilian dialect), 'jubilee' (Hebrew origin via several languages). Contact languages enrich the donor."
   },
@@ -15029,9 +15029,9 @@
     "answer": "Mixes — adjectives go before, but prepositional phrases and relative clauses go after",
     "choices": [
       "Mixes — adjectives go before, but prepositional phrases and relative clauses go after",
-      "All modifiers always come before the noun — without any postnominal exceptions",
-      "All modifiers always come after the noun — every adjective and relative alike",
-      "Modifiers can go in either position — freely, without any restrictions on placement"
+      "All modifiers always come before the noun in English",
+      "All modifiers always come after the noun in English",
+      "Modifiers can go in either position freely without restriction"
     ],
     "context": "English's noun phrase mixes the two patterns. Adjectives (and most determiners) precede; participial phrases, prepositional phrases, and relative clauses follow."
   },
@@ -15041,9 +15041,9 @@
     "answer": "Most style guides blend both — prescribing standards while acknowledging real usage",
     "choices": [
       "Most style guides blend both — prescribing standards while acknowledging real usage",
-      "All style guides are purely prescriptive — without exception or any descriptive moments",
-      "All style guides are purely descriptive — without prescribing any standard whatsoever",
-      "Style guides have nothing to do with prescriptive grammar — they only describe usage"
+      "All style guides are purely prescriptive without exception",
+      "All style guides are purely descriptive without exception",
+      "Style guides have nothing to do with prescriptive grammar"
     ],
     "context": "Fowler, Garner, Chicago all blend prescription and description. They acknowledge usage changes while maintaining standards. Pure prescriptivism (Lowth) and pure descriptivism (Webster's Third) are extreme positions."
   },
@@ -15314,12 +15314,12 @@
   {
     "tier": 4,
     "question": "Some English words mean opposite things — like 'sanction' (to approve / to penalize) and 'cleave' (to split / to stick to). What is the technical term for such a word?",
-    "answer": "Contranym — or auto-antonym, Janus word, contronym; multiple names for the same phenomenon",
+    "answer": "Contranym (or auto-antonym, Janus word, or contronym)",
     "choices": [
-      "Contranym — or auto-antonym, Janus word, contronym; multiple names for the same phenomenon",
-      "Homophone — words that sound alike but mean different things",
-      "Synonym — words that mean the same as one another",
-      "Antinomy — a logical contradiction between two laws or principles"
+      "Contranym (or auto-antonym, Janus word, or contronym)",
+      "Homophone — words that sound alike",
+      "Synonym — words that mean the same",
+      "Antinomy — a logical contradiction"
     ],
     "context": "Other contranyms: dust (apply dust / remove dust), seed (sow seeds / remove seeds), trim (cut off / add as decoration), bolt (secure shut / flee), oversight (supervision / inadvertent omission). The two senses usually arose from different historical paths."
   },
@@ -15389,9 +15389,9 @@
     "answer": "The Oxford (serial) comma — Strunk and Chicago require it; AP omits it unless ambiguity demands it",
     "choices": [
       "The Oxford (serial) comma — Strunk and Chicago require it; AP omits it unless ambiguity demands it",
-      "Whether to use a comma before 'because' — the three guides actually align on this",
-      "Whether the comma always goes inside quotation marks — settled American convention",
-      "Whether to capitalize the word after a colon — broadly agreed: lowercase for fragments"
+      "Whether to use a comma before subordinate clauses introduced by 'because'",
+      "Whether the comma always goes inside quotation marks in American English",
+      "Whether to capitalize the word after a colon when introducing a list"
     ],
     "context": "'I'd like to thank my parents, Ayn Rand and God' shows why the Oxford comma matters. The AP's anti-Oxford position dates partly to print economy — fewer characters per line on newspaper presses."
   },
@@ -15497,9 +15497,9 @@
     "answer": "AP allows Oxford comma when needed to avoid confusion — its rule is 'use only when needed'",
     "choices": [
       "AP allows Oxford comma when needed to avoid confusion — its rule is 'use only when needed'",
-      "AP forbids Oxford commas in all contexts — without any exception whatsoever",
-      "AP requires Oxford commas in every list — matching Chicago's strictest position",
-      "AP has no position on Oxford commas — leaving it entirely to writer preference"
+      "AP forbids Oxford commas in all contexts without exception",
+      "AP requires Oxford commas in every list, period",
+      "AP has no position on Oxford commas at all"
     ],
     "context": "AP's compromise: drop the serial comma in simple lists ('red, white and blue'); use it when ambiguity would result. Chicago and Strunk recommend always using it. The Oxford comma is the most-discussed style-guide divergence."
   },
@@ -15641,9 +15641,9 @@
     "answer": "'Fort' (one syllable) — the French fencing term meaning strong point",
     "choices": [
       "'Fort' (one syllable) — the French fencing term meaning strong point",
-      "'FOR-tay' (two syllables) — the Italian musical term meaning loudly",
-      "Both etymologically correct — French and Italian share the source",
-      "Neither — both pronunciations are recent inventions of 20th-c English"
+      "'FOR-tay' (two syllables) — the Italian musical term",
+      "Both are equally etymologically correct from the start",
+      "Neither — both pronunciations are recent inventions"
     ],
     "context": "Garner notes both are now accepted; 'FOR-tay' has won by sheer frequency despite being a confusion with the unrelated Italian word. Etymology rarely wins against common use."
   },
@@ -15701,9 +15701,9 @@
     "answer": "Salad (Latin 'salata' = salted things — vegetables seasoned with salt)",
     "choices": [
       "Salad (Latin 'salata' = salted things — vegetables seasoned with salt)",
-      "Salt itself — Germanic in origin, with no further reconstructed etymology",
-      "Salvage (from 'salvus' = safe — unrelated, despite the surface 'sal-')",
-      "Salient (from 'salire' = to leap — unrelated, despite the apparent 'sal-')"
+      "Salt itself (Germanic, no further etymology)",
+      "Salvage (from 'salvus' = safe, unrelated)",
+      "Salient (from 'salire' = to leap, unrelated)"
     ],
     "context": "Salt = sal in Latin, prominently in: salary, salad, sausage, salami, salsa, sauce, salty. Salt's economic and culinary importance preserved in vocabulary."
   },
@@ -15797,9 +15797,9 @@
     "answer": "'Ask not what your country can do for you — ask what you can do for your country'",
     "choices": [
       "'Ask not what your country can do for you — ask what you can do for your country'",
-      "'We shall fight on the beaches — we shall fight on the landing grounds, on the hills'",
-      "'Government of the people — by the people, for the people, shall not perish'",
-      "'I have a dream — that one day this nation will rise up and live out its creed'"
+      "'We shall fight on the beaches, we shall fight on the landing grounds'",
+      "'Government of the people, by the people, for the people'",
+      "'I have a dream that one day this nation will rise up'"
     ],
     "context": "Chiasmus: A-B...B-A. Other examples: 'Eat to live, not live to eat' (Socrates); 'When the going gets tough, the tough get going.' The Greek root is from 'chi' (Χ), suggesting a crossover."
   },
@@ -15809,9 +15809,9 @@
     "answer": "We're not sure exactly why 'fig-shower' became 'flatterer' — multiple competing theories exist",
     "choices": [
       "We're not sure exactly why 'fig-shower' became 'flatterer' — multiple competing theories exist",
-      "The fig was a sacred symbol of flattery — supposedly in ancient Roman religion",
-      "Sycophants were paid in figs — by Greek government officials, per legend",
-      "Figs and flattery share no historical connection — the etymology is fully fabricated"
+      "The fig was a sacred symbol of flattery in ancient Rome",
+      "Sycophants were paid in figs by the Greek government officially",
+      "Figs and flattery share no historical or etymological connection"
     ],
     "context": "The fig connection in 'sycophant' is uncertain. Some etymologies are clear; others are guesswork at best. Honest etymology acknowledges where we're guessing."
   },
@@ -15830,12 +15830,12 @@
   {
     "tier": 4,
     "question": "The MLA Handbook (Modern Language Association) is the preferred style for humanities scholarship — literature, foreign languages, and cultural studies. First published in 1977. MLA uses parenthetical in-text citations (author + page number) and a Works Cited list. The MLA approach differs from APA (sciences) and Chicago (book publishing). What's the key MLA principle?",
-    "answer": "Author-page citations within text — and detailed Works Cited at the end",
+    "answer": "Author-page citations within text and detailed Works Cited at the end",
     "choices": [
-      "Author-page citations within text — and detailed Works Cited at the end",
-      "Numbered footnotes with full bibliographic detail — in each footnote completely",
-      "No citations whatsoever — original authorship is all that MLA requires",
-      "Citations require submission to MLA — for approval before any work appears"
+      "Author-page citations within text and detailed Works Cited at the end",
+      "Numbered footnotes with full bibliographic detail in each",
+      "No citations whatsoever — original authorship only",
+      "Citations require submission to MLA for approval first"
     ],
     "context": "MLA Handbook is updated every decade or so; the 9th edition (2021) is current. Different academic fields use different styles: MLA (humanities), APA (sciences), Chicago (mixed). Each has its own conventions."
   },
@@ -16061,7 +16061,7 @@
     "answer": "She lived 1850–1920 — a long life by any measure — in her well-loved cottage.",
     "choices": [
       "She lived 1850–1920 — a long life by any measure — in her well-loved cottage.",
-      "She lived 1850-1920 -- a long life by any measure -- in her well loved cottage.",
+      "She lived 1850-1920 - a long life by any measure - in her well loved cottage.",
       "She lived 1850—1920 – a long life by any measure – in her well–loved cottage.",
       "She lived 1850 to 1920 — a long-life-by-any-measure — in her well—loved cottage."
     ],
@@ -16121,9 +16121,9 @@
     "answer": "Pre-anesthesia battlefield medicine — a historical fact embedded in the language",
     "choices": [
       "Pre-anesthesia battlefield medicine — a historical fact embedded in the language",
-      "Civil War combat tactics — specifically the way rifles were loaded from a pouch",
-      "Hunting practice from Native American tribes — passed into English through soldiers",
-      "A purely fictional invention — with no historical or medical basis whatsoever"
+      "Civil War combat tactics with rifles",
+      "Hunting practice from Native American tribes",
+      "A purely fictional invention with no historical basis"
     ],
     "context": "Battlefield amputations without anesthesia were standard pre-1850. The bullet (or piece of leather, or stick) was the patient's coping tool. The idiom preserves a brutal practical reality of pre-modern medicine."
   },
@@ -16325,9 +16325,9 @@
     "answer": "A reanalyzed mishearing that produces a new, plausibly-meaningful phrase — like 'eggcorn' itself for 'acorn'",
     "choices": [
       "A reanalyzed mishearing that produces a new, plausibly-meaningful phrase — like 'eggcorn' itself for 'acorn'",
-      "A misprint that becomes accepted — through repeated copying across editions",
-      "A neologism produced by autocorrect — a 21st-century mobile-messaging phenomenon",
-      "A word invented by a child — and adopted by the family without correction"
+      "A misprint that becomes accepted into the language through repeated copying",
+      "A neologism produced by an autocorrect error in mobile messaging",
+      "A word invented by a child and adopted by their family without correction"
     ],
     "context": "Other eggcorns: 'for all intensive purposes' (intents and purposes), 'old-timer's disease' (Alzheimer's), 'mute point' (moot point), 'free reign' (free rein). Eggcorns differ from malapropisms in that the new phrase is semantically coherent on its own terms."
   },
@@ -16493,9 +16493,9 @@
     "answer": "Rule by the wealthy — from Greek 'ploutos' (wealth)",
     "choices": [
       "Rule by the wealthy — from Greek 'ploutos' (wealth)",
-      "Rule by the planet Pluto — supposedly in astrological tradition",
-      "Rule by intelligent persons — from a folk-connection to 'philosophy'",
-      "Rule by elected officials — from a folk-connection to 'plurality'"
+      "Rule by the planet Pluto in astrology",
+      "Rule by intelligent persons, from 'philosophy'",
+      "Rule by elected officials, from 'plurality'"
     ],
     "context": "Greek 'ploutos' (wealth) gives plutocracy. Note: the planet Pluto is named after the Roman god of the underworld (same root). The wealth god is connected — underworld wealth, in mining."
   },
@@ -16553,9 +16553,9 @@
     "answer": "The Aztec version of chocolate was bitter — sugar-sweetening was a European addition",
     "choices": [
       "The Aztec version of chocolate was bitter — sugar-sweetening was a European addition",
-      "The Aztecs preferred chocolate without any flavoring — taking it absolutely plain",
-      "Chocolate was named after a river — supposedly where cacao trees grew abundantly",
-      "The Aztec word for chocolate also meant 'bird' — a coincidence shared with Quechua"
+      "The Aztecs preferred chocolate without any flavoring of any kind",
+      "Chocolate was named after the river where it was found",
+      "The Aztec word for chocolate also meant 'bird'"
     ],
     "context": "Aztecs drank chocolate with chili, vanilla, and achiote. Cortés took it home; Spanish added sugar and refined it into the sweet version. The Aztec original would surprise modern chocoholics."
   },
@@ -16625,9 +16625,9 @@
     "answer": "Embarrassment is metaphorical immobilization — being unable to escape socially",
     "choices": [
       "Embarrassment is metaphorical immobilization — being unable to escape socially",
-      "Embarrass originally meant 'to be in love' — supposedly in Old French",
-      "The word is from Greek 'embraso' — supposedly meaning to shame openly",
-      "Embarrass is unrelated to bars or obstacles — purely a French abstract noun"
+      "Embarrass originally meant 'to be in love' in Old French",
+      "The word is from Greek 'embraso' = to shame openly",
+      "Embarrass is unrelated to bars or obstacles in any way"
     ],
     "context": "Many emotion words have physical-obstruction etymologies. 'Encumber' (block), 'thwart' (cross), 'frustrate' (Latin 'frustra' = in vain), 'mortify' (make dead). The body teaches us our emotional vocabulary."
   },
@@ -16742,12 +16742,12 @@
   {
     "tier": 4,
     "question": "The word 'maverick' comes from Samuel Maverick (1803-1870), a Texas rancher whose cattle were unbranded — so unbranded cattle came to be called 'mavericks'. The figurative use ('independent, unconventional person') is from the late 19th century. Which other proper-noun-derived word follows this pattern?",
-    "answer": "Boycott — from Charles Boycott, an Irish land agent ostracized in 1880",
+    "answer": "Boycott (from Charles Boycott, an Irish land agent ostracized in 1880)",
     "choices": [
-      "Boycott — from Charles Boycott, an Irish land agent ostracized in 1880",
-      "Saxophone — from inventor Adolphe Sax, instrument names follow different pattern",
-      "Pasteurize — from Louis Pasteur, technical term not personality",
-      "Sandwich — from the Earl of Sandwich, food name not personality"
+      "Boycott (from Charles Boycott, an Irish land agent ostracized in 1880)",
+      "Saxophone (from inventor Adolphe Sax — instrument names follow different pattern)",
+      "Pasteurize (from Louis Pasteur — technical term, not personality)",
+      "Sandwich (from the Earl of Sandwich — food name, not personality)"
     ],
     "context": "Eponymous words: maverick, boycott, lynch (Charles Lynch), guillotine (Joseph Guillotin), saxophone, mausoleum (King Mausolus). Some name behaviors; some name objects; some name techniques."
   },
@@ -16770,8 +16770,8 @@
     "choices": [
       "Echo (the nymph who could only repeat others — gave us 'echo' meaning reverberation)",
       "Atlas (the titan supporting the heavens — gave us 'atlas' for map collection)",
-      "Sisyphus (the king condemned to roll a boulder — gave us 'sisyphean' for futile labor)",
-      "Pandora (whose box released evils into the world — gave us 'Pandora's box' as warning)"
+      "Sisyphus (the king condemned to roll a boulder — gave us 'sisyphean')",
+      "Pandora (whose box released evils into the world)"
     ],
     "context": "Greek myth supplied many English words. Sisyphean (futile), narcissistic (self-loving), atlas (book of maps), tantalize (tease), echo (repetition). The myths are themselves a vocabulary."
   },
@@ -16865,9 +16865,9 @@
     "answer": "From Romani 'posh' (half) — used in monetary terms like 'posh-houri' (half-penny)",
     "choices": [
       "From Romani 'posh' (half) — used in monetary terms like 'posh-houri' (half-penny)",
-      "The acronym 'Port Out, Starboard Home' — supposedly from British India shipping routes",
-      "From Latin 'positus' — supposedly meaning 'placed in society' or socially elevated",
-      "From Old French 'posche' — supposedly meaning pocket, by metaphorical extension"
+      "The acronym 'Port Out, Starboard Home' is the actual etymology",
+      "From Latin 'positus' meaning placed in society",
+      "From Old French 'posche' meaning pocket"
     ],
     "context": "False acronym etymologies (POSH, TIPS, GOLF, SHIT) are folk-creations from the 20th century onward. Real word histories rarely involve acronyms before 1900. 'Posh' from Romani is the leading scholarly theory."
   },
@@ -16889,9 +16889,9 @@
     "answer": "It was thought medically sufficient AND had religious resonance — 40 days of Noah's flood, Christ's fast, Lent",
     "choices": [
       "It was thought medically sufficient AND had religious resonance — 40 days of Noah's flood, Christ's fast, Lent",
-      "The number 40 was a Roman legal requirement — for any quarantine, by ancient statute",
-      "Forty days was the precise incubation period — for bubonic plague, per Venetian doctors",
-      "'Quarantena' originally meant forty hours — before being arbitrarily extended to days"
+      "The number 40 was a Roman legal requirement for any quarantine",
+      "Forty days was the precise incubation period for bubonic plague",
+      "Quarantena originally meant 'forty hours' before being changed to days"
     ],
     "context": "Christian symbolism of forty — Lent, the Flood, Christ in the wilderness, Moses on Sinai — gave the period religious weight beyond pure medical reasoning. Forty days became canonical."
   },
@@ -16949,9 +16949,9 @@
     "answer": "As an action of physical aggression — sarcasm is metaphorically biting or tearing",
     "choices": [
       "As an action of physical aggression — sarcasm is metaphorically biting or tearing",
-      "As gentle teasing — supposedly without any aggressive intent at all",
-      "As pure philosophical discourse — separate from emotion in the Greek tradition",
-      "As the highest form of polite Greek conversation — supposedly the most elevated mode"
+      "As gentle teasing without any aggressive intent",
+      "As pure philosophical discourse separate from emotion",
+      "As the highest form of polite Greek conversation"
     ],
     "context": "'Sarcastic' carries violence in its etymology. To 'cut someone down with sarcasm' is etymologically apt — the word means flesh-tearing. Greek vocabulary for sharp speech is physical."
   },
@@ -17045,9 +17045,9 @@
     "answer": "The phenomenon's most distinctive feature — small at sea, devastating at the coast",
     "choices": [
       "The phenomenon's most distinctive feature — small at sea, devastating at the coast",
-      "The Japanese mythology of a sea-god — supposedly a deity literally named Tsunami",
-      "The fact that tsunami waves only happen near Japan — a geographically false claim",
-      "The literal translation 'tidal wave' — the English phrase used before adoption"
+      "The Japanese mythology of a sea-god named Tsunami",
+      "The fact that tsunami waves only happen near Japan",
+      "The literal translation 'tidal wave' that English used previously"
     ],
     "context": "Earlier English used 'tidal wave', which was inaccurate (tsunamis aren't from tides). Japanese sailors observed the phenomenon for centuries; Western science adopted the precise term in the 20th century."
   },
@@ -17082,8 +17082,8 @@
     "choices": [
       "Dystopia (Greek 'dys-' bad + 'topos' place — bad place)",
       "Atopic (Greek 'a-' not + 'topos' place — but means 'unusual')",
-      "Topiary (Latin 'topia' = landscape — but unrelated to Greek topos here)",
-      "Topology (Greek 'topos' + 'logia' — a mathematical branch, not a place-word)"
+      "Topiary (Latin 'topia' = landscape, but unrelated)",
+      "Topology (Greek 'topos' + 'logia' — branch of mathematics)"
     ],
     "context": "More's coined word generated a whole vocabulary: utopia, dystopia, utopian, utopianism. The 'good place that is no place' pun is preserved in the spelling. Words can be deliberately invented and stick."
   },
@@ -17210,12 +17210,12 @@
   {
     "tier": 4,
     "question": "Voice in grammar refers to whether the subject acts (active) or is acted upon (passive). 'The cat chased the mouse' (active). 'The mouse was chased by the cat' (passive). Both are grammatical; both are useful. Strunk says use the active voice; Pinker reminds us the passive has its uses. When is the passive preferable?",
-    "answer": "When the agent is unknown — unimportant, or deliberately obscured",
+    "answer": "When the agent is unknown, unimportant, or deliberately obscured",
     "choices": [
-      "When the agent is unknown — unimportant, or deliberately obscured",
+      "When the agent is unknown, unimportant, or deliberately obscured",
       "Always — Strunk's rule has no exceptions whatsoever",
       "Never — the active voice is always grammatically better",
-      "Only in legal contracts — and scientific papers exclusively"
+      "Only in legal contracts and scientific papers exclusively"
     ],
     "context": "'The window was broken' (unknown agent). 'Penicillin was discovered in 1928' (the agent is less important than the event). 'Mistakes were made' (deliberately obscured — politicians)."
   },
@@ -17345,9 +17345,9 @@
     "answer": "'If she comes' — present in if-clause for future condition",
     "choices": [
       "'If she comes' — present in if-clause for future condition",
-      "'If she will come' — future requires 'will' in the if-clause too",
-      "Both equally correct — modern English allows free variation here",
-      "Past tense required — only 'If she came' is conditional in English"
+      "'If she will come' — future requires 'will'",
+      "Both are equally correct",
+      "Past tense required"
     ],
     "context": "English first conditional: present in if-clause + future in main clause. Standard 'if she comes, I'll tell her.' 'If she will come' has different meaning (= 'if she's willing to come')."
   },
@@ -17357,9 +17357,9 @@
     "answer": "'be' — mandative subjunctive after 'suggest'",
     "choices": [
       "'be' — mandative subjunctive after 'suggest'",
-      "'is' — only indicative is grammatical in that-clauses",
-      "Either is fine — modern English has dropped the subjunctive entirely",
-      "'was' is correct — past tense is required in indirect commands"
+      "'is' — only indicative is grammatical",
+      "Either is fine",
+      "'was' is correct"
     ],
     "context": "Mandative subjunctive used after verbs of request, command, suggestion (demand, insist, recommend, propose, ask). American English preserves it more than British, which often uses 'should be.'"
   },
@@ -17561,9 +17561,9 @@
     "answer": "Agentless passive — hides who made the mistakes",
     "choices": [
       "Agentless passive — hides who made the mistakes",
-      "Active voice would be ungrammatical — making the passive structurally required",
-      "It's a British-only construction — American English avoids it entirely",
-      "It uses subjunctive mood — a counterfactual or mandative usage of 'be'"
+      "Active voice would be ungrammatical",
+      "It's a British-only construction",
+      "It uses subjunctive mood"
     ],
     "context": "Passive without 'by' phrase = no agent named. Famous as political evasion ('mistakes were made' attributed to various Washington officials). Useful linguistically when actor is unknown; misused when actor is hidden."
   },
@@ -17585,9 +17585,9 @@
     "answer": "Omit needless words — clear, direct, concise prose",
     "choices": [
       "Omit needless words — clear, direct, concise prose",
-      "Use long words wherever possible — favoring Latinate vocabulary for sophistication",
-      "Always write in the passive voice — preserving formality through agentless construction",
-      "Avoid all metaphors at all costs — preferring strictly literal descriptive prose"
+      "Use long words wherever possible",
+      "Always write in the passive voice",
+      "Avoid all metaphors at all costs"
     ],
     "context": "Strunk: 'Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences.' White's 1959 expansions added the famous opening chapter and 'An Approach to Style'."
   },
@@ -17633,9 +17633,9 @@
     "answer": "After the Norse borrowing, the two forms specialized — Old English 'shirt' for the upper garment, Norse 'skirt' for the lower",
     "choices": [
       "After the Norse borrowing, the two forms specialized — Old English 'shirt' for the upper garment, Norse 'skirt' for the lower",
-      "The two forms are unrelated — the similarity is a pure coincidence of sound",
-      "Modern English created the distinction in the 18th century — a deliberate fashion-vocabulary fix",
-      "The two forms originally meant the same thing — and still do, in some English dialects"
+      "The two forms are unrelated; the similarity is coincidence",
+      "Modern English created the distinction in the 18th century to clarify fashion vocabulary",
+      "The two forms originally meant the same thing and still do; the distinction is dialectal"
     ],
     "context": "Same root *skurt-. The 'sk-' sound is preserved in Norse; in Old English it palatalized to 'sh-' before front vowels. Other near-doublets from this pattern: shatter/scatter, ship/skipper, fish/skipjack."
   },
@@ -17729,9 +17729,9 @@
     "answer": "Sushi (Japanese — 'su' rice + 'shi' meaning fish)",
     "choices": [
       "Sushi (Japanese — 'su' rice + 'shi' meaning fish)",
-      "Ketchup (probably Hokkien Chinese — from 'ke-tsiap' meaning fish sauce)",
-      "Tycoon (originally Japanese — ultimately built on Chinese characters)",
-      "Kowtow (Chinese 'koutou' — literally 'knock head' as a deep bow)"
+      "Ketchup (probably Hokkien Chinese origin)",
+      "Tycoon (originally Japanese, ultimately Chinese characters)",
+      "Kowtow (Chinese 'koutou' meaning bow head)"
     ],
     "context": "Chinese borrowings tend to be old (tea, ketchup from Ming-era trade) or martial (kung fu, gung ho). Sushi is purely Japanese though uses Chinese-derived characters."
   },
@@ -17774,12 +17774,12 @@
   {
     "tier": 5,
     "question": "Modal auxiliaries can be used in epistemic or deontic senses. Epistemic: about likelihood/possibility/inference ('He must be home — his car is here'). Deontic: about obligation/permission ('He must be home by 10 — his curfew'). The same modal serves both functions. Which is deontic 'must'?",
-    "answer": "Students must wear uniforms to school — school rule, obligation imposed externally",
+    "answer": "Students must wear uniforms to school.",
     "choices": [
-      "Students must wear uniforms to school — school rule, obligation imposed externally",
-      "They must be tired after that long trip — inference about their state",
-      "It must be raining — inference from wet hair",
-      "She must have left already — inference from missing coat"
+      "Students must wear uniforms to school.",
+      "They must be tired after that long trip.",
+      "It must be raining; my hair is wet.",
+      "She must have left already — her coat is gone."
     ],
     "context": "Deontic = obligation/permission/prohibition. Epistemic = inference/likelihood/possibility. Same modal, different shading. Children acquire deontic uses first; epistemic uses later."
   },
@@ -17834,9 +17834,9 @@
   {
     "tier": 5,
     "question": "The English vocabulary doubled after the Norman Conquest of 1066. French-speaking nobles brought thousands of words, often Latin in origin, into English. Estimates: 10,000+ Norman-French words entered English in the centuries following 1066. Modern English vocabulary is roughly 30% French-derived. Which French-origin English word is most universally used today?",
-    "answer": "Beauty (Old French 'bealte') — abstract, culturally elevated",
+    "answer": "Beauty (Old French 'bealte', from Latin 'bellus' = lovely)",
     "choices": [
-      "Beauty (Old French 'bealte') — abstract, culturally elevated",
+      "Beauty (Old French 'bealte', from Latin 'bellus' = lovely)",
       "House (Old English 'hus' — Germanic, not French)",
       "Eat (Old English 'etan' — Germanic, not French)",
       "Mother (Old English 'modor' — Germanic, not French)"
@@ -17897,9 +17897,9 @@
     "answer": "Coined by Thomas More in 1516 from Greek 'ou' (not) + 'topos' (place) — literally 'no-place'",
     "choices": [
       "Coined by Thomas More in 1516 from Greek 'ou' (not) + 'topos' (place) — literally 'no-place'",
-      "From Latin 'utopium' — supposedly meaning 'a high ideal' or 'lofty aspiration'",
-      "From a Greek philosopher named Utopius — who supposedly described an ideal city",
-      "From Mayan 'u-topi-a' — supposedly meaning 'over-the-mountain home' or 'distant land'"
+      "From Latin 'utopium' meaning 'a high ideal'",
+      "From a Greek philosopher named Utopius who described an ideal city",
+      "From Mayan 'u-topi-a' meaning 'over-the-mountain home'"
     ],
     "context": "More's Latin pun: 'ou-topos' (no place) and 'eu-topos' (good place) sound alike in Latinized Greek. His 1516 book 'Utopia' depicted a fictional island society. 'Dystopia' (bad place) is a 19th-century coinage on the same Greek pattern."
   },
@@ -18701,9 +18701,9 @@
     "answer": "She had one rule — never give up.",
     "choices": [
       "She had one rule — never give up.",
-      "She had one rule, never give up — comma fails.",
-      "She had one rule; never give up — no semicolon.",
-      "She had one rule: never give up too — 'too' clutters."
+      "She had one rule, never give up.",
+      "She had one rule; never give up.",
+      "She had one rule: never give up too."
     ],
     "context": "Em-dash can introduce an emphatic explanation or appositive — sharper effect than colon or comma."
   },
@@ -18725,9 +18725,9 @@
     "answer": "The book — long, dense, and gripping — won the prize.",
     "choices": [
       "The book — long, dense, and gripping — won the prize.",
-      "The book, long, dense, and gripping, won the prize — too many commas.",
-      "The book long, dense, and gripping won the prize — no parenthetical marking at all.",
-      "The book - long dense and gripping - won the prize — hyphens, not em-dashes."
+      "The book, long, dense, and gripping, won the prize.",
+      "The book long, dense, and gripping won the prize.",
+      "The book - long dense and gripping - won the prize."
     ],
     "context": "Em-dashes set off a parenthetical that already contains commas (the inner list). Commas would be confusing."
   },
@@ -18739,7 +18739,7 @@
       "The steps are as follows: gather, mix, bake.",
       "The steps are as follows; gather, mix, bake.",
       "The steps are as follows, gather, mix, bake.",
-      "The steps are as follows (gather, mix, bake)"
+      "The steps are as follows — gather, mix, bake — done."
     ],
     "context": "Colon after 'as follows' or 'the following' is standard before a list."
   },
@@ -19002,7 +19002,7 @@
     "choices": [
       "The book that I borrowed is overdue.",
       "The book, that I borrowed, is overdue.",
-      "The book (which I borrowed) is overdue.",
+      "The book — which I borrowed — is overdue.",
       "The book, which I borrowed, is overdue."
     ],
     "context": "Restrictive clauses identify (which book?) — no commas, often uses 'that'. Non-restrictive uses 'which' with commas."
@@ -19021,7 +19021,7 @@
   },
   {
     "tier": 5,
-    "question": "A noun clause is a full clause (subject + verb) that fills a noun's job — subject, direct object, or complement. They're introduced by words like 'that,' 'what,' 'whoever,' or 'whether,' and you can usually substitute a single noun in their place ('Something surprised me.'). Which sentence contains a noun clause functioning as the subject?",
+    "question": "Pick the noun clause (acts as a noun).",
     "answer": "What she said surprised me.",
     "choices": [
       "What she said surprised me.",
@@ -19029,7 +19029,7 @@
       "Surprised, she said something.",
       "She surprised me with her saying."
     ],
-    "context": "'What she said' is itself a complete clause (she = subject, said = verb) that acts as the subject of 'surprised' — that's a noun clause. The substitution test: replace 'What she said' with a single word ('Something surprised me') and the sentence still works. Noun clauses can also serve as objects ('I know what she said') or as complements ('The truth is what she said')."
+    "context": "'What she said' is the subject of 'surprised' — a noun clause functioning as a single noun."
   },
   {
     "tier": 5,
@@ -19045,7 +19045,7 @@
   },
   {
     "tier": 5,
-    "question": "A relative clause (also called an adjective clause) acts like an adjective: it modifies a noun by adding identifying information. It's introduced by a relative pronoun — 'who,' 'whom,' 'whose,' 'which,' or 'that' — and the relative pronoun's antecedent is the noun being modified. Which sentence uses a relative clause to specify which person is being discussed?",
+    "question": "Pick the adjective (relative) clause.",
     "answer": "The man who called is my uncle.",
     "choices": [
       "The man who called is my uncle.",
@@ -19053,7 +19053,7 @@
       "The man is my uncle.",
       "Calling the uncle yesterday."
     ],
-    "context": "'Who called' is a relative clause modifying 'man' — the answer to 'which man?' Relative clauses can be restrictive (no commas; essential — 'The man who called') or non-restrictive (set off by commas; extra information — 'My uncle, who called, is here'). The relative pronoun 'who' here refers back to its antecedent 'man'; 'whom' would be wrong because 'who' is the subject of 'called.'"
+    "context": "'Who called' modifies 'man' (which man?) — adjective/relative clause."
   },
   {
     "tier": 5,
@@ -19086,8 +19086,8 @@
     "choices": [
       "The phone that I lost was new.",
       "The phone, that I lost, was new.",
-      "The phone (that I lost) was new.",
-      "The phone, which I lost, was new."
+      "The phone — that I lost — was new.",
+      "The phone (that I lost) was new."
     ],
     "context": "Restrictive 'that' clause: no commas — necessary to identify which phone."
   },
@@ -19190,12 +19190,12 @@
   {
     "tier": 5,
     "question": "Pick the periodic sentence (main clause held to the end).",
-    "answer": "Through wind and rain and fire and storm — she ran, never stopping",
+    "answer": "Through wind and rain and fire and storm, she ran.",
     "choices": [
-      "Through wind and rain and fire and storm — she ran, never stopping",
-      "She ran through wind, rain, fire, and storm — a loose listing pattern",
-      "She ran and ran in storm — a simple subject-verb structure",
-      "Wind, rain, fire — she ran from them all"
+      "Through wind and rain and fire and storm, she ran.",
+      "She ran through wind, rain, fire, and storm.",
+      "She ran and ran in storm.",
+      "Wind, rain, fire — she ran."
     ],
     "context": "Periodic: subordinate elements first, main clause delayed for suspense. Opposite of loose/cumulative sentences."
   },
@@ -19741,7 +19741,7 @@
   },
   {
     "tier": 5,
-    "question": "Some English verbs take only a gerund complement ('-ing' form: 'I enjoy reading'); others take only an infinitive ('to + verb': 'I want to read'); a few accept either, sometimes with a meaning change ('I stopped smoking' = quit vs. 'I stopped to smoke' = paused). The pattern isn't predictable from meaning — it's lexically fixed for each verb. Which sentence is correct because its verb requires a gerund, not an infinitive?",
+    "question": "Pick the verb that requires a gerund, not infinitive.",
     "answer": "She enjoys reading.",
     "choices": [
       "She enjoys reading.",
@@ -19749,7 +19749,7 @@
       "She wants reading.",
       "She decides reading."
     ],
-    "context": "Gerund-only verbs: enjoy, finish, avoid, mind, suggest, consider, deny, mention, postpone, practice, quit, recommend, risk. Infinitive-only verbs: want, decide, agree, choose, hope, manage, offer, plan, refuse, seem. Either-OK verbs (often with meaning shift): start, begin, continue, like, love, hate, prefer, stop/remember/forget/try (these last four change meaning between the two)."
+    "context": "Some verbs (enjoy, finish, avoid, mind, suggest, consider) take only gerunds. Others (want, decide) take only infinitives."
   },
   {
     "tier": 5,
@@ -20285,9 +20285,9 @@
     "answer": "A bicycle can't stand on its own — it's two-tired.",
     "choices": [
       "A bicycle can't stand on its own — it's two-tired.",
-      "A bicycle is fast on the open road — a literal sentence with no word-play at all.",
-      "A bicycle needs two wheels to roll — purely informative, with no double meaning.",
-      "Bicycles are popular all over the place — a general claim without puns or word-play."
+      "A bicycle is fast on the open road.",
+      "A bicycle needs two wheels to roll.",
+      "Bicycles are popular all over the place."
     ],
     "context": "Pun: play on words exploiting double meaning. 'Two-tired' / 'too tired'."
   },
