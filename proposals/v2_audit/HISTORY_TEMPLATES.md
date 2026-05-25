@@ -62,14 +62,44 @@ A great history question is built on a HUMAN MOMENT — a specific thing a perso
 >
 > **The rule's mnemonic**: if the stem has fire, blood, or last words, the answer cannot be a venue, date, or label. Period.
 
+### THE HIERARCHY OF COOL-FACT TYPES (walk top-to-bottom; use the highest one available)
+
+When you have an event to write about, the question becomes: **what KIND of cool fact am I asking for?** Walk this hierarchy from top to bottom. Stop at the highest tier where the event provides material. *Always prefer a higher tier over a lower one.*
+
+**TIER 1 — NAMED THINGS** *(strongest; always prefer when available)*
+- Specific quotes / phrases (`"Victory or Death"`, `"Kiss me, Hardy"`, `"Sic semper tyrannis"`, `"I have not time"`, `"Eppur si muove"`)
+- Specific cultural terms (`"lotus foot"`, `"samizdat"`, `"kamikaze"`, `"shogun"`, `"satyagraha"`, `"glasnost"`, `"perestroika"`)
+- Specific code phrases / signals / passwords
+- Specific titles or epithets (`"the Hammer"`, `"the Lion-Hearted"`, `"the Great"`, `"the Confessor"`)
+- Specific named objects with cultural weight (the True Cross, the Bayeux Tapestry, the Cyrus Cylinder, the Rosetta Stone)
+
+**TIER 2 — VIVID ACTIONS** *(strong; use when no Tier-1 named thing exists)*
+- Specific physical acts a person did (Pascal sewing parchment into his coat; Brunelleschi tapping the egg flat; Cleopatra fleeing with 60 ships)
+- Specific methods / rituals / techniques (heart extraction with obsidian; ashes thrown into the Seine)
+- Specific moves with names (double envelopment, oblique advance) — these are also Tier-1-ish
+
+**TIER 3 — OBJECTS / MATERIALS** *(strong; use when no Tier-1/2 available)*
+- Specific items with memorable properties (obsidian knives, Tycho's silver nose, herringbone bricks, the asp/cobra)
+
+**TIER 4 — NUMBERS** *(weak; use only when SINGULAR and UNFORGETTABLE, never as a guess-the-magnitude pick)*
+- WORKS: Wright Brothers `"12 seconds"`, Halley's Comet `"every 76 years"`, Joan of Arc dying `"at 19"`, Lincoln's Gettysburg `"272 words"`, Mandela `"27 years"` in prison
+- FAILS: `"approximately how many millions"` (when a cultural NAME exists — like "lotus foot"); `"about how many casualties"` (when a specific story-detail exists — like the lost orders wrapped around three cigars); any guess-between-similar-magnitudes (`"about 8,500 / 23,000 / 45,000 / 80,000"`) when something nameable is available
+
+**TIER 5 — GENERIC LABELS** *(BANNED as primary answers)*
+- Battle names (`"Battle of Antietam"`)
+- Place names (`"Rouen, France"`, `"Ford's Theatre"`)
+- Date / year (`"In 1453 AD"`)
+- Country / state names
+- Generic identifications (`"What is this called?"`)
+
 ### What FAILS the test (anti-patterns — do NOT ship)
 
-1. **Name-picking** — "Which battle is this?" with similar battle names as distractors. Kid memorizes a label, learns nothing distinctive. ("Battle of Antietam" picked from Bull Run / Chickamauga / Shiloh.)
-2. **Number-picking when the number isn't shocking** — "How many casualties?" with similar nearby numbers. Numbers CAN work when they're shocking and single (Joan of Arc dying at 19, Wright Brothers flying for 12 seconds, Halley's Comet every 76 years), but they're weaker than quotes/objects/actions. Default to non-number when possible.
-3. **Date-picking** — "What year?" Kid never knew, will never know. Banned.
-4. **Generic identification** — "What is this called?" "Who did this?" "Where did this happen?" The kid produces a name with no narrative grip.
-5. **Paraphrased distractors** — any distractor that restates the real answer in different words. Kid has two right answers; wonder payoff destroyed. ("Kiss me, Hardy" with distractor "Hardy, give me a kiss" — fail.)
-6. **Cool facts stuffed in the stem with a generic question on top** — see Brunelleschi worked example below. If your stem has 3+ cool facts and you're asking "what is this?", you're spoiling 4 future questions to write 1 bad one.
+1. **Generic labels as answers** — battle names, place names, dates, country names. ALWAYS banned as the primary answer. (Tier 5 of the hierarchy.)
+2. **Number-picking when a NAMED THING exists** — if the event has a specific term (`"lotus foot"`, `"samizdat"`), use the term, not a magnitude. (Tier 4 below Tier 1.)
+3. **Number-picking among similar magnitudes** — `"several thousand / several hundred thousand / tens of millions"` is a guess-game. Even when no Tier-1 thing exists, prefer a SINGULAR unforgettable number to a magnitude pick.
+4. **Paraphrased distractors** — any distractor that restates the real answer in different words. (`"Kiss me, Hardy"` with distractor `"Hardy, give me a kiss"` — fail.)
+5. **Cool facts stuffed in the stem with a generic question on top** — see Brunelleschi worked example. If your stem has 3+ cool facts and you're asking "what is this?", you're spoiling 4 future questions to write 1 bad one.
+6. **The Drama-Available violation** (see Test 3 above) — drama in stem + venue/date/label question = always wrong.
 
 ### Three worked examples
 
