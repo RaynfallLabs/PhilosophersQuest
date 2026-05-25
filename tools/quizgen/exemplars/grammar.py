@@ -41,7 +41,7 @@ P1_T1 = {
     "question": "In 'The cat sat on the mat,' which word is a noun?",
     "answer": "cat",
     "choices": ["cat", "sat", "on", "the"],
-    "context": "A noun names a person, place, thing, or idea. In this sentence, 'cat' is a thing — and 'mat' is too. ('Sat' is a verb; 'on' is a preposition; 'the' is an article.)",
+    "context": "A noun names a person, place, thing, or idea. 'Cat' is a thing — a noun. ('Sat' is a verb; 'on' is a preposition; 'the' is an article.) The word 'mat' in the sentence is also a noun, but it isn't among the choices here.",
 }
 
 P1_T2 = {
@@ -320,7 +320,7 @@ P4_T2 = {
         "Hyperbole (deliberate exaggeration for emphasis)",
         "Metaphor (direct comparison without 'like' or 'as')",
     ],
-    "context": "A pun (also called paronomasia) exploits a word with two meanings or two words that sound alike. Groucho Marx's famous joke works because the first clause sets up 'flies' as a verb ('Time moves quickly, like an arrow'), then the second clause forces you to re-read 'flies' as a noun ('Fruit flies, the insect, are fond of bananas'). The double-take IS the joke.",
+    "context": "A pun (also called paronomasia) exploits a word with two meanings or two words that sound alike. This famous joke (often attributed to Groucho Marx but probably originating with linguist Anthony Oettinger around 1966) works because the first clause sets up 'flies' as a verb ('Time moves quickly, like an arrow'), then the second clause forces you to re-read 'flies' as a noun ('Fruit flies, the insect, are fond of bananas'). The double-take IS the joke.",
 }
 
 P4_T3 = {
