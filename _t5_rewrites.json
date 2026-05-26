@@ -1,0 +1,165 @@
+[
+  {
+    "find_substring": "Days after the Pause Letter, Eliezer Yudkowsky",
+    "new": {
+      "tier": 5,
+      "question": "Eliezer Yudkowsky said in a March 2023 Time magazine op-ed that data centers training unauthorized AI should be bombed if necessary to enforce a worldwide pause. He runs the Machine Intelligence Research Institute (MIRI). What underlying claim is Yudkowsky making with that proposal?",
+      "answer": "That sufficiently advanced AI will, by default, end human life as we know it — stopping it is worth measures usually reserved for war",
+      "choices": [
+        "That sufficiently advanced AI will, by default, end human life as we know it — stopping it is worth measures usually reserved for war",
+        "That AI is essentially harmless — the entire alignment-risk debate is fabricated by venture capitalists for fundraising during private investor calls",
+        "That AI should be paused only in Europe — North American and Asian AI development should be allowed to continue without any restriction",
+        "That AI should be paused for one week per year — a symbolic gesture without any enforcement mechanism whatsoever should suffice"
+      ],
+      "context": "The Time piece followed the March 2023 'Pause Letter' open letter and was a sharpening of two decades of Yudkowsky's writing. Critics across the AI field — including many who take safety seriously — disagreed with both the predictions and the proposed remedies. Hinton's concerns are near-term and policy-shaped. LeCun argues the catastrophic scenarios are technically wrong. The recognition skill: name positions by their authors and specifics — 'AI safety' is not one view, and conflating Yudkowsky's apocalypticism with Hinton's labor-market concerns erases real distinctions."
+    }
+  },
+  {
+    "find_substring": "The US Department of Defense, intelligence community, and federal civilian agencies",
+    "new": {
+      "tier": 5,
+      "question": "Palantir builds the data platform that ICE uses to track and arrest immigrants — case files, location data, social media, all stitched together for field agents. The contracts pay Palantir hundreds of millions of dollars a year. If the ACLU asks Palantir to stop selling the software because it is being used in raids on schools and churches, what is Palantir likely to do, and why?",
+      "answer": "Stay in the contract — when government revenue is large enough to matter to the company, the incentive to refuse a customer request is weak, even when the customer is doing something the company's engineers personally object to",
+      "choices": [
+        "Stay in the contract — when government revenue is large enough to matter to the company, the incentive to refuse a customer request is weak, even when the customer is doing something the company's engineers personally object to",
+        "Drop the contract immediately — federal vendors are constitutionally required to honor any civil-liberties group's stop-work request that names a government customer in writing",
+        "Drop the contract automatically — every US tech vendor is contractually banned from selling to immigration enforcement agencies under existing federal law in 2025",
+        "Stay in the contract because it carries zero financial weight — Palantir-style federal contracts have never represented a meaningful share of any AI vendor's revenue in any quarter"
+      ],
+      "context": "The same pattern shows up across the sector — telecom carriers cooperating with NSA wiretap requests in the 2000s, cloud providers quietly honoring law-enforcement subpoenas, AI companies competing for Pentagon and intelligence-agency contracts. Engineer protests at Google (Project Maven) and Microsoft (HoloLens for Army IVAS) happened — and the contracts mostly stayed. Recognition skill: when reading any AI policy debate, ask who the company sells to. Customer composition is part of the company's incentive structure, not a side note."
+    }
+  },
+  {
+    "find_substring": "Section 230 of the Communications Decency Act (1996) gives online platforms broad immunity",
+    "new": {
+      "tier": 5,
+      "question": "Megan Garcia's wrongful-death suit against Character.AI argues the chatbot's intimate conversations with her 14-year-old son Sewell Setzer contributed to his suicide. Character.AI is invoking Section 230 (the 1996 law shielding online platforms from user-posted content). What question does the case force the courts to decide?",
+      "answer": "When the platform's own AI generated the content — not a user — is Section 230's shield supposed to apply? Lower courts have split, the Supreme Court has not ruled, and the answer will shape AI liability for years",
+      "choices": [
+        "When the platform's own AI generated the content — not a user — is Section 230's shield supposed to apply? Lower courts have split, the Supreme Court has not ruled, and the answer will shape AI liability for years",
+        "Section 230's text covers all AI-generated content automatically — every chatbot output is immunized identically to a user's forum post and no court has ever questioned that reading in any state",
+        "Section 230 was formally repealed by Congress in 2023 — the statute was struck from the US code and replaced by a brand-new AI-specific liability regime, so this case is governed by new law",
+        "Section 230 explicitly excludes all AI-generated content from any immunity — every chatbot output is fully actionable in every court with no platform defense available at any level"
+      ],
+      "context": "Section 230 protects platforms for 'information provided by another information content provider' — clearly a user, in 1996. When the platform's AI is the content provider, the statutory text does not map cleanly. Similar questions are pending against Replika and other companion services. Recognition skill: laws written for one technology can fail to fit a later one, and the legal limbo itself shapes product behavior — under fear of liability, services get more cautious; under broad immunity, they get freer (and resulting harms are not litigable)."
+    }
+  },
+  {
+    "find_substring": "Frontier AI training requires very large quantities of specialized chips",
+    "new": {
+      "tier": 5,
+      "question": "In early 2024, Sam Altman flew to Saudi Arabia and the UAE asking for up to $7 trillion in funding — more than the GDP of every country except the US and China — to build AI chip fabs. He did not go to Silicon Valley venture funds. He went to sovereign wealth. What does that trip reveal about what is actually bottlenecking frontier AI?",
+      "answer": "Compute — chips, electricity, and the data centers to house them — is the real bottleneck for frontier AI, and the amounts of capital required have grown beyond what private US venture funds can supply alone",
+      "choices": [
+        "Compute — chips, electricity, and the data centers to house them — is the real bottleneck for frontier AI, and the amounts of capital required have grown beyond what private US venture funds can supply alone",
+        "Algorithms are the bottleneck — Altman needed sovereign funding only because his existing research team had run out of ideas for any model architecture beyond standard transformers in commercial use",
+        "Talent is the bottleneck — Altman flew abroad only to recruit individual machine-learning researchers from foreign universities, not to fund any chip or data-center construction at all",
+        "Nothing is bottlenecking AI development — Altman's trip was purely ceremonial and no actual funding or chip-manufacturing capacity changed hands in any negotiation with any foreign party"
+      ],
+      "context": "OpenAI's Stargate compute project, announced January 2025, was partly funded by MGX (UAE-affiliated). Cloud-provider concentration (Microsoft Azure, Amazon Web Services, Google Cloud) and chip-vendor concentration (Nvidia's H100 and successors) compound the bottleneck. Recognition skill: when you read AI policy, read the compute supply chain too. The physical layer determines who gets to build frontier models, and the policy levers there are sometimes more consequential than the model-level rules everyone argues about."
+    }
+  },
+  {
+    "find_substring": "Microsoft's roughly $13 billion investment in OpenAI",
+    "new": {
+      "tier": 5,
+      "question": "In November 2023, OpenAI's board fired Sam Altman on a Friday. Within 48 hours, Microsoft offered to hire him and the entire research team — and the offer was credible because OpenAI's models ran on Microsoft Azure. By Wednesday, the board had reversed itself and Altman was back. What does that week reveal about Microsoft's $13 billion investment in OpenAI?",
+      "answer": "The cloud-compute dependency made Microsoft's leverage structural, not just financial — 'investor' understated the relationship, because OpenAI could not easily move its training infrastructure between providers mid-run",
+      "choices": [
+        "The cloud-compute dependency made Microsoft's leverage structural, not just financial — 'investor' understated the relationship, because OpenAI could not easily move its training infrastructure between providers mid-run",
+        "Microsoft had no meaningful leverage in any direction — the company operated as a neutral arms-length vendor of cloud services with zero involvement in OpenAI personnel or governance decisions",
+        "Microsoft's leverage was banned under existing antitrust law — federal regulators had already forbidden any partnership of this structure between cloud providers and any AI company in 2025",
+        "Microsoft's leverage existed but had zero financial weight — the Azure compute commitment represented under one percent of OpenAI's training spend over any annual reporting period"
+      ],
+      "context": "The FTC opened an inquiry in January 2024 into the Microsoft-OpenAI partnership structure under antitrust law, asking whether the deal was effectively a merger that should have been reviewed as one. The same kind of structural dependency exists elsewhere — Anthropic's Amazon and Google deals include compute commitments; xAI runs partly on Oracle. Recognition skill: read 'investor' carefully when the investor is also the cloud provider. The compute relationship is harder to exit than equity, and that shapes who actually steers."
+    }
+  },
+  {
+    "find_substring": "By the mid-2020s, sovereign wealth funds and government-affiliated investors",
+    "new": {
+      "tier": 5,
+      "question": "Sam Altman flew to Saudi Arabia and the UAE in 2024 to pitch a multi-trillion-dollar AI chip-fab plan. Within a year, sovereign wealth funds — UAE's MGX, Saudi PIF, Singapore's Temasek — were investors in major US AI firms and founding partners in OpenAI's Stargate compute project. What's the kid's recognition?",
+      "answer": "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
+      "choices": [
+        "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
+        "Federal law strictly bars all foreign government investment in any US AI company — sovereign-wealth stakes in this sector are forbidden by statute and impossible in practice in any quarter",
+        "No foreign sovereign-wealth fund holds any stake in any frontier US AI company — Stargate was funded purely by domestic venture capital and Microsoft cloud credits with no other capital sources",
+        "Every frontier US AI lab is majority-owned by a foreign sovereign-wealth fund — domestic investors have been entirely displaced from the sector by foreign governments in every disclosure today"
+      ],
+      "context": "MGX (UAE) was a founding partner in the Stargate compute investment announced January 2025. Saudi PIF has signaled major AI ambitions tied to its Vision 2030 plan. CFIUS — the Committee on Foreign Investment in the US — reviews some of these transactions with a mixed track record. Recognition skill: the politics of AI is not purely domestic. Foreign investors with their own government's interests are part of the capital stack, and that shapes what these companies can and cannot do."
+    }
+  },
+  {
+    "find_substring": "Much of the foundational AI research that produced modern systems",
+    "new": {
+      "tier": 5,
+      "question": "Most of the AI a kid uses today came out of military research grants. DARPA paid for ARPANET (which became the Internet), the Stanford AI Lab's early work, computer-vision and natural-language-processing programs through the 1980s, and the PhD pipeline that trained the researchers now running OpenAI, Anthropic, and DeepMind. What is the recognition?",
+      "answer": "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
+      "choices": [
+        "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
+        "Modern frontier AI is purely private from start to finish — no government funding ever contributed to any foundational AI research anywhere in the world at any point in the field's history",
+        "Modern frontier AI was developed in roughly three years from scratch — no decades-long research history preceded the rise of contemporary deep-learning systems used at any current frontier lab worldwide",
+        "Modern frontier AI is fully publicly owned by the United States — every model from every major lab is the legal property of the US federal government under existing intellectual-property statute"
+      ],
+      "context": "This pattern repeats across other federally-funded technologies. The Internet, GPS, the touchscreen interface, and major drug classes (mRNA among them) trace lineages to NIH, NSF, DOD, and DOE research dollars. The current value capture in AI flows to a small number of private firms — partly through patents, partly through compute moats, partly through talent concentration. Recognition skill: the standard 'private innovation' framing obscures the long public-investment lineage, and the politics of who reaps the resulting upside is a live, unresolved question."
+    }
+  },
+  {
+    "find_substring": "By 2025, frontier AI models were largely built by five companies",
+    "_drop": true
+  },
+  {
+    "find_substring": "AI-safety research funding through the 2020s came predominantly from a small",
+    "_drop": true
+  },
+  {
+    "find_substring": "Most major AI companies (OpenAI, Anthropic, Google DeepMind, Meta, xAI) have internal",
+    "_drop": true
+  },
+  {
+    "find_substring": "Anthropic, founded in 2021 by ex-OpenAI safety researchers, attracted large investments from Amazon",
+    "_drop": true
+  },
+  {
+    "find_substring": "Lobbying disclosures (publicly available through OpenSecrets",
+    "_drop": true
+  },
+  {
+    "find_substring": "The patent landscape in AI has expanded rapidly through the 2020s",
+    "_drop": true
+  },
+  {
+    "find_substring": "The UK Online Safety Act (passed 2023, enforcement starting 2025)",
+    "_drop": true
+  },
+  {
+    "_add": true,
+    "new": {
+      "tier": 5,
+      "question": "A 16-year-old researches a poem about death for English class on her school Chromebook. Gaggle's AI flags the search, the principal calls her in, and the incident enters a permanent file that follows her to college admissions. By 2025, federal courts are hearing First and Fourth Amendment challenges to these tools. What harm are the lawsuits trying to address?",
+      "answer": "Low-accuracy AI surveillance generates false-positive 'risk' flags that create paper trails students cannot see or correct — the data is retained for years and shapes how adults see the student",
+      "choices": [
+        "Low-accuracy AI surveillance generates false-positive 'risk' flags that create paper trails students cannot see or correct — the data is retained for years and shapes how adults see the student",
+        "Such surveillance is universally illegal in all 50 US states — no district anywhere may scan student communications under any circumstance under existing federal statute today in any state",
+        "Such surveillance has been proven 100% accurate in flagging only genuine self-harm risks — false positives are mathematically impossible under the machine-learning architecture used by vendors",
+        "Such surveillance creates no records of any flagging incident — every alert is auto-deleted within minutes and no student data of any kind is retained by any vendor under any industry practice"
+      ],
+      "context": "Gaggle, GoGuardian, Bark, and Securly scan student emails, documents, browser history, and chats on school accounts. The tools are paid for partly with federal COPS grants and partly out of district budgets. Florida, New York, Illinois, and California have passed restricting laws. ACLU and EFF have litigated several cases. Recognition skill: the surveillance is sold as 'safety,' but the burden of false positives falls on students with the least leverage to push back — and the retained data outlasts whatever crisis it was supposed to address."
+    }
+  },
+  {
+    "_add": true,
+    "new": {
+      "tier": 5,
+      "question": "A 14-year-old uses a free 'undress' app to generate fake nude images of female classmates from their Instagram photos, then shares them in a Snapchat group of 30 boys who reshare. The girls find out months later. By 2024, 28 states have laws criminalizing this. What is the practical landscape for the victims?",
+      "answer": "Criminal charges are possible in most states but vary widely, the images are nearly impossible to fully scrub from the internet, and the social harm — already done — is what the new laws are mostly trying to deter future kids from causing",
+      "choices": [
+        "Criminal charges are possible in most states but vary widely, the images are nearly impossible to fully scrub from the internet, and the social harm — already done — is what the new laws are mostly trying to deter future kids from causing",
+        "Federal law guarantees all such images are removed from every platform within 24 hours — every state AG has injunction authority and uses it on every reported incident with no delays",
+        "No US state has any law against creating or sharing AI-generated nude images of identifiable minors — the conduct remains fully legal in 2025 and cannot be prosecuted criminally or sued civilly",
+        "Federal law gives every creator of such an image an automatic 20-year felony sentence — no state varies the punishment and prosecutorial discretion plays no role anywhere in the United States"
+      ],
+      "context": "The 2024 federal TAKE IT DOWN Act and state laws across Texas, Virginia, New York, and California now criminalize creating or sharing non-consensual sexually explicit deepfakes — including of minors. Takedown and removal-request processes exist but are slow and incomplete. The deeper problem: by the time the victim learns, the social damage is done. Recognition skill: 'it's just a joke' or 'it's fake' is no defense — not for the perpetrator under the new criminal-law landscape, and not for the victim's experience."
+    }
+  }
+]

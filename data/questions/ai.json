@@ -3397,27 +3397,27 @@
   },
   {
     "tier": 2,
-    "question": "In November 2023, Sam Altman was abruptly fired by the OpenAI board. About how long was he out before he came back?",
-    "answer": "About five days — he was reinstated after employees and Microsoft pushed back hard",
+    "question": "In November 2023, OpenAI co-founder Ilya Sutskever voted to fire Sam Altman. What did he do in the same week?",
+    "answer": "He publicly tweeted regret and signed the employee letter demanding the board (including himself) resign",
     "choices": [
-      "About five days — he was reinstated after employees and Microsoft pushed back hard",
-      "About five months — the company ran without a CEO until the spring of 2024",
-      "About five hours — the board reversed its decision the same afternoon as the firing",
-      "About five years — Altman did not return to OpenAI until late in 2028 after the lawsuits"
+      "He publicly tweeted regret and signed the employee letter demanding the board (including himself) resign",
+      "He bought OpenAI outright using cryptocurrency and renamed it OpenIlya within forty-eight hours",
+      "He moved to Antarctica to run a new research lab with penguins as his only research assistants",
+      "He invited the US Congress to send a senator to take Altman's seat as interim CEO for a year"
     ],
-    "context": "OpenAI's board fired Altman on November 17, 2023, citing loss of confidence. Within hours, Microsoft (OpenAI's largest investor) offered to hire Altman and his entire research team. Nearly all OpenAI employees signed an open letter demanding the board resign. Five days later, Altman was back as CEO and most of the original board was out. The episode raised hard questions about who actually governs powerful AI companies."
+    "context": "Sutskever, OpenAI's chief scientist, voted with the board to fire Altman on November 17, 2023, after writing a memo accusing Altman of dishonesty. Days later, after employee revolt, Sutskever tweeted 'I deeply regret my participation in the board's actions' and signed the letter demanding the board (himself included) step down. He left OpenAI in May 2024 to start his own company."
   },
   {
     "tier": 2,
-    "question": "The November 2023 OpenAI board drama raised a deeper question that watchers couldn't help asking. Which question?",
-    "answer": "Can a non-profit board with safety oversight actually govern the people building powerful AI?",
+    "question": "When OpenAI's board fired CEO Sam Altman in November 2023, what did most of the staff do within days?",
+    "answer": "About 700 of them signed an open letter threatening to quit and follow Altman to Microsoft",
     "choices": [
-      "Can a non-profit board with safety oversight actually govern the people building powerful AI?",
-      "Should AI labs be required by law to have a single permanent CEO who can never be replaced?",
-      "Should Microsoft be allowed to own all American AI companies through corporate acquisitions?",
-      "Is it legal for a company to fire its own CEO in California state during a holiday week?"
+      "About 700 of them signed an open letter threatening to quit and follow Altman to Microsoft",
+      "They voted to rename the company to OpenSourceAI in protest of the firing decision",
+      "They held a company picnic to celebrate the leadership change with the board",
+      "They asked the United Nations to take over running the lab from the existing board"
     ],
-    "context": "OpenAI's structure was unusual: a non-profit board oversaw a capped-profit operating company. The November 2023 drama showed the formal governance was largely unable to constrain the people actually building the technology. When the board acted, employees and investors aligned with management against it. The episode is a useful recognition exercise: AI governance on paper and AI governance in practice can be very different things."
+    "context": "Within hours of the firing, Microsoft offered to hire Altman and his team. Nearly all OpenAI employees (about 700 out of 770) signed an open letter saying they would quit and follow him if the board did not resign. Altman was reinstated five days later and most of the board that fired him was gone."
   },
   {
     "tier": 2,
@@ -4777,15 +4777,15 @@
   },
   {
     "tier": 2,
-    "question": "In late 2022 and 2023, journalists were given internal Twitter documents about content moderation. What did the documents show, broadly?",
-    "answer": "US government officials had been coordinating with the platform on content decisions",
+    "question": "The first 'Twitter Files' release in December 2022 dug into a news story Twitter had blocked in October 2020. Which story was it?",
+    "answer": "The New York Post's reporting on Hunter Biden's laptop, blocked under a 'hacked materials' rule",
     "choices": [
-      "US government officials had been coordinating with the platform on content decisions",
-      "Twitter had been giving free coffee to its 100 most active users daily",
-      "Twitter had no employees at all and was run entirely by volunteers",
-      "Twitter posts were translated into Mandarin in random batches each week"
+      "The New York Post's reporting on Hunter Biden's laptop, blocked under a 'hacked materials' rule",
+      "A Florida weather forecast that the platform mistook for a hacked government file from China",
+      "A chocolate chip cookie recipe that broke Twitter rules about advertising baked goods online",
+      "A list of active Twitter employees in California, mistakenly posted by the legal department"
     ],
-    "context": "After Elon Musk acquired Twitter in October 2022, he gave selected journalists access to internal documents — the 'Twitter Files.' The releases (December 2022 onward) documented patterns of US government officials requesting content actions, including during the 2020 election and COVID period. Some requests went through normal trust-and-safety channels; others looked more direct. Lawsuits like Missouri v. Biden built on the documents. The recognition: content moderation isn't always purely a platform decision."
+    "context": "After Musk bought Twitter in October 2022, he gave journalists internal documents. The first release (December 2, 2022) by Matt Taibbi showed how Twitter blocked the New York Post's Hunter Biden laptop story in October 2020 — locking accounts that shared the link. Taibbi found no evidence the government ordered that specific block; later releases documented other government-platform contacts."
   },
   {
     "tier": 2,
@@ -4825,27 +4825,27 @@
   },
   {
     "tier": 2,
-    "question": "In November 2023, OpenAI's board fired CEO Sam Altman. What happened in the next five days?",
-    "answer": "He was rehired and most of the board members who fired him were gone",
+    "question": "In November 2023, OpenAI's board fired CEO Sam Altman. What did nearly every employee at the company do in response?",
+    "answer": "About 700 of 770 employees signed a letter saying they would quit unless the board resigned",
     "choices": [
-      "He was rehired and most of the board members who fired him were gone",
-      "He retired permanently and started a coffee shop in Vermont",
-      "He moved OpenAI's headquarters from California to Japan that week",
-      "He gave the company to the United Nations to run as a non-profit"
+      "About 700 of 770 employees signed a letter saying they would quit unless the board resigned",
+      "They voted in a new board made up entirely of OpenAI customers and Twitter users",
+      "They moved the headquarters from California to Tokyo in a single weekend in protest",
+      "They turned the company into a worker-owned cooperative the day after the firing"
     ],
-    "context": "On November 17, 2023, OpenAI's board fired Altman, citing loss of confidence. Within hours, Microsoft (OpenAI's largest investor) offered to hire him and the team. Nearly all OpenAI employees signed a letter demanding the board resign. Five days later, Altman was back as CEO; most of the original board was out. The episode showed that formal governance (a non-profit board overseeing a capped-profit company) had little real power against the people building the technology."
+    "context": "The board fired Altman on November 17, 2023, saying he had not been candid with them. Microsoft offered to hire Altman and his team within hours. Nearly all employees signed an open letter demanding the board resign or they would follow Altman to Microsoft. Five days later, Altman was back as CEO."
   },
   {
     "tier": 2,
-    "question": "OpenAI was originally founded as one kind of organization and is being restructured into another. What's the shift?",
-    "answer": "Founded as a non-profit research lab; later restructured toward for-profit",
+    "question": "OpenAI was founded in 2015 with Elon Musk among its earliest funders. He split from the company in 2018. What was the main reason?",
+    "answer": "He wanted to take charge of OpenAI directly, and the other founders refused to hand him control",
     "choices": [
-      "Founded as a non-profit research lab; later restructured toward for-profit",
-      "Founded as a for-profit corporation; later restructured into a museum",
-      "Founded as a government agency; later restructured into a private school",
-      "Founded as a labor union; later restructured into a sporting league"
+      "He wanted to take charge of OpenAI directly, and the other founders refused to hand him control",
+      "He sold OpenAI to a Japanese game studio to focus on flying car prototypes that year",
+      "OpenAI dissolved itself in 2018 and was relaunched two years later by a different team",
+      "He left because the lab refused to relocate from California to Mars before launch"
     ],
-    "context": "OpenAI was founded in 2015 as a non-profit with a stated mission of safe AI development. In 2019 it added a capped-profit subsidiary to raise the capital needed for large-scale training. As of 2024-25, restructuring discussions have included further moves toward a more conventional corporate form. The original non-profit governance structure was tested and largely overridden in November 2023. The pattern (mission-driven nonprofit drifting toward for-profit) is common in fast-growing tech sectors."
+    "context": "In early 2018, Musk reportedly proposed either taking a majority stake in OpenAI or folding it into Tesla. The other co-founders, including Sam Altman, Greg Brockman, and Ilya Sutskever, refused — they did not want one person controlling the lab. Musk left the board in February 2018, publicly citing a Tesla conflict of interest. He later sued Altman in 2024 over the lab's shift toward for-profit work."
   },
   {
     "tier": 2,
@@ -4861,15 +4861,15 @@
   },
   {
     "tier": 2,
-    "question": "In 2022, the US Department of Homeland Security announced a 'Disinformation Governance Board.' How long did it last?",
-    "answer": "It was disbanded within months after public backlash",
+    "question": "In April 2022, US Homeland Security launched a 'Disinformation Governance Board' led by Nina Jankowicz. What happened in the next month?",
+    "answer": "The board was paused after huge public backlash, and Jankowicz resigned three weeks in",
     "choices": [
-      "It was disbanded within months after public backlash",
-      "It is still operating today with the original staff in place",
-      "It expanded into a cabinet department under a new name",
-      "It was sent to the United Nations to operate worldwide"
+      "The board was paused after huge public backlash, and Jankowicz resigned three weeks in",
+      "The board expanded into a full federal department with thousands of staff by that fall",
+      "The board was handed to the United Nations to run from an office in Vienna, Austria",
+      "The board was renamed Ministry of Truth and ran without pause for the next five years"
     ],
-    "context": "DHS announced the Disinformation Governance Board in April 2022. Critics called it a 'Ministry of Truth' echoing Orwell's novel. The board was paused within weeks and formally disbanded by August 2022. The episode illustrates how content-moderation infrastructure looks different depending on who runs it — and how public backlash can curb expansion. Recognition: the line between 'fighting misinformation' and 'speech control' depends entirely on who decides what counts as misinformation."
+    "context": "DHS announced the board April 27, 2022. Critics on the right called it a 'Ministry of Truth,' echoing Orwell's 1984. Jankowicz received death threats. The board was paused May 18, 2022 — three weeks in — and formally disbanded by August. The episode showed how quickly content-moderation infrastructure can attract bipartisan distrust depending on who runs it."
   },
   {
     "tier": 2,
@@ -4909,15 +4909,15 @@
   },
   {
     "tier": 2,
-    "question": "In 2013, Edward Snowden's leaks revealed an NSA system that could search internet activity at huge scale. What was it called?",
-    "answer": "XKeyscore",
+    "question": "In April 2024, Apple sent threat alerts to iPhone users in 92 countries about powerful spyware. Which Israeli firm's product was the most-named example?",
+    "answer": "NSO Group, makers of the Pegasus spyware that targets phones of journalists and activists",
     "choices": [
-      "XKeyscore",
-      "Cleanview",
-      "Argus Net",
-      "Echelon One"
+      "NSO Group, makers of the Pegasus spyware that targets phones of journalists and activists",
+      "Apple itself, which had quietly built spyware into iOS and then warned users about it",
+      "Google, which had been sold the spyware by Apple in a secret deal earlier that year",
+      "The United Nations, which runs a global phone-monitoring program from a Geneva office"
     ],
-    "context": "XKeyscore was one of the NSA programs revealed in 2013 by contractor Edward Snowden. Internal documents described it as letting analysts search 'nearly everything a user does on the internet' through a searchable interface. The Snowden disclosures triggered global debate about surveillance, encryption, and oversight. They also drove adoption of HTTPS and encrypted messaging. AI-era recognition: large-scale surveillance infrastructure existed before the AI boom; AI makes it cheaper and faster to scale."
+    "context": "Pegasus is spyware sold by Israel-based NSO Group to governments. It can silently turn on a phone's microphone and camera and read messages. Apple has sent 'mercenary spyware' alerts to users in over 150 countries since 2021, mostly targeting journalists, activists, and politicians. The April 2024 wave reached 92 countries in a single day."
   },
   {
     "tier": 2,
@@ -4957,15 +4957,15 @@
   },
   {
     "tier": 2,
-    "question": "Microsoft introduced a 'Productivity Score' feature for businesses some years ago. Why did it draw criticism?",
-    "answer": "It scored individual employees in ways that felt like surveillance",
+    "question": "Many US schools use software called Gaggle that scans student writing and searches on school accounts. Why have these tools drawn heavy criticism?",
+    "answer": "They generate huge numbers of false alarms on jokes and homework, and chill ordinary student speech",
     "choices": [
-      "It scored individual employees in ways that felt like surveillance",
-      "It refused to load on any computer made before the year 2020",
-      "It deleted spreadsheets that were too long for any human to read",
-      "It changed employee passwords every fifteen minutes for safety"
+      "They generate huge numbers of false alarms on jokes and homework, and chill ordinary student speech",
+      "They refuse to run on any school computer manufactured before the year 2015 by Apple",
+      "They make every student type in Latin during exam weeks to slow down rapid cheating",
+      "They reward students who write the longest essays with extra recess each Friday afternoon"
     ],
-    "context": "Microsoft's Productivity Score, launched 2020, tracked workplace behavior with employee-level identifiers. Critics — including digital-rights advocates — argued it amounted to surveillance of individual workers. Microsoft removed the user-level identifiers after public pushback. The recognition: even productivity tools can become surveillance infrastructure when the data is fine-grained enough to identify individuals. AI scaling makes more such tools possible across more employers."
+    "context": "Gaggle, GoGuardian, and Bark scan student email, search, and writing on school accounts for words like 'gun' or 'kill.' One Kansas district found almost two-thirds of over 1,200 alerts were false (homework, photo assignments, jokes). A student joking about guns in a school document was reported to police in one case. Critics warn students self-censor when they know everything they type is read."
   },
   {
     "tier": 2,
@@ -4993,15 +4993,15 @@
   },
   {
     "tier": 2,
-    "question": "China's 2017 National Intelligence Law applies to Chinese companies. What does it say about cooperation with intelligence work?",
-    "answer": "Chinese organizations and citizens must support, assist, and cooperate when asked",
+    "question": "In April 2024, President Biden signed a law called PAFACA that targeted TikTok. What did the law actually require?",
+    "answer": "ByteDance had to sell TikTok's US business within roughly 270 days or US app stores must drop the app",
     "choices": [
-      "Chinese organizations and citizens must support, assist, and cooperate when asked",
-      "Chinese companies are completely exempt from any government request ever",
-      "Only state-owned companies must cooperate; private companies are free",
-      "The law has been formally repealed and is no longer in effect now"
+      "ByteDance had to sell TikTok's US business within roughly 270 days or US app stores must drop the app",
+      "Every TikTok video posted in the US had to be approved by Congress before going live online",
+      "TikTok users had to switch to a different platform within 30 days or pay a federal fine of $500",
+      "ByteDance had to translate all TikTok videos into English within five business days of upload"
     ],
-    "context": "China's National Intelligence Law (2017) requires organizations and citizens to support and cooperate with national intelligence work. This is the central legal basis for US concerns about Chinese tech companies (TikTok/ByteDance, Huawei) and their data. Beijing argues the law has limits and oversight; US officials and many analysts read it as compelling cooperation. The recognition isn't about TikTok specifically — it's that ownership jurisdiction shapes who can access platform data."
+    "context": "PAFACA (Protecting Americans from Foreign Adversary Controlled Applications Act) was signed April 24, 2024. It applied to apps controlled by foreign adversaries and named TikTok's parent ByteDance specifically. Concerns centered on China's 2017 National Intelligence Law, which requires Chinese organizations to assist intelligence work. The Supreme Court upheld PAFACA in January 2025."
   },
   {
     "tier": 2,
@@ -5209,15 +5209,15 @@
   },
   {
     "tier": 2,
-    "question": "What's the simplest reason a major fraud's collapse should make people re-examine the causes it funded?",
-    "answer": "Funding shapes which voices get heard, and major funding by a fraudster bent the conversation",
+    "question": "FTX collapsed in Nov 2022 and Sam Bankman-Fried was convicted on 7 counts of fraud. He had been a top funder of AI-safety research. What did the collapse force?",
+    "answer": "A reckoning about how much of the AI-safety conversation his money had quietly been shaping",
     "choices": [
-      "Funding shapes which voices get heard, and major funding by a fraudster bent the conversation",
-      "Causes funded by frauds become automatically correct once the fraud is exposed",
-      "Once a funder collapses, every funded research result is automatically deleted",
-      "Funding has no effect on which arguments reach a wide public audience"
+      "A reckoning about how much of the AI-safety conversation his money had quietly been shaping",
+      "An automatic refund of every dollar he had ever donated to any charity in his lifetime",
+      "A federal law banning anyone convicted of fraud from ever funding research again",
+      "A merger of all AI-safety groups into a single United Nations office in Geneva"
     ],
-    "context": "Money chooses which think tanks get staffed, which papers get written, which conferences get held, which journalists get briefed. Sam Bankman-Fried's giving to AI-safety nonprofits and Effective Altruism in the years before FTX's 2022 collapse helped shape that conversation. Re-examination doesn't mean automatically rejecting funded work — it means asking what the conversation would look like if it hadn't been bent by one funder's resources. Good intellectual hygiene applies symmetrically to every funded cause."
+    "context": "Bankman-Fried was a major donor to AI-safety nonprofits and Effective Altruism before FTX's November 2022 collapse. His Future Fund had pledged over $160 million. He was convicted November 2023 on seven counts of fraud and sentenced March 2024 to 25 years. The collapse forced researchers to ask how much of their movement's growth had been driven by one funder."
   },
   {
     "tier": 2,
@@ -5269,27 +5269,27 @@
   },
   {
     "tier": 2,
-    "question": "After the Twitter Files were published in late 2022 and 2023, what general kind of question did they raise about content moderation?",
-    "answer": "How much government influence shapes platform decisions about what users can say",
+    "question": "Lawsuits like Murthy v. Missouri (2024) used the Twitter Files to argue what about US government and social-media platforms?",
+    "answer": "Officials had been 'jawboning' — pressuring platforms to delete posts the First Amendment bars",
     "choices": [
-      "How much government influence shapes platform decisions about what users can say",
-      "Whether Twitter ever paid its employees their full salaries on time",
-      "Whether bird-themed icons are protected by US copyright in court",
-      "Whether the company should expand into selling physical coffee mugs"
+      "Officials had been 'jawboning' — pressuring platforms to delete posts the First Amendment bars",
+      "Every post needed approval — from a federal judge before it could appear online anywhere",
+      "Platforms had been translating posts — into Russian for secret review by foreign agents",
+      "Officials had been paying users — in gift cards to write supportive posts about new laws"
     ],
-    "context": "The Twitter Files documented patterns of government officials requesting content actions through trust-and-safety channels, especially during the 2020 election and COVID period. Lawsuits like Missouri v. Biden (later renamed) built on the documents to argue First Amendment concerns about government 'jawboning' of platforms. The Supreme Court ruled on a related case in 2024. Whatever one thinks of any specific case, the wider recognition stands: platform moderation is sometimes shaped from outside the platform."
+    "context": "Murthy v. Missouri reached the Supreme Court in 2024. Plaintiffs argued the federal government had pressured platforms through 'trust-and-safety' channels — informal requests with implicit consequences. The Court dismissed the case in June 2024, ruling plaintiffs lacked standing, without resolving the underlying First Amendment question. 'Jawboning' is the legal term for this kind of indirect pressure on private speech."
   },
   {
     "tier": 2,
-    "question": "What's a useful general principle for thinking about surveillance technology in any country?",
-    "answer": "Build the infrastructure carefully, because future leaders may use it for purposes you didn't imagine",
+    "question": "Israeli company Cellebrite sells phone-unlocking tools to police worldwide, including authoritarian countries. Why is this kind of tool worrying?",
+    "answer": "Once a tool to break into phones exists and is sold, the buyer list is hard to control",
     "choices": [
-      "Build the infrastructure carefully, because future leaders may use it for purposes you didn't imagine",
-      "Build any infrastructure as fast as possible because speed is all that matters",
-      "Avoid building any infrastructure because all technology is bad for everyone",
-      "Build whatever the current government in power requests with no debate at all"
+      "Once a tool to break into phones exists and is sold, the buyer list is hard to control",
+      "The tools only work on phones made before 2010 and cannot reach any modern devices",
+      "Cellebrite tools are required by law to be reviewed by the United Nations before any sale",
+      "Phone unlocking tools always fail on encrypted messages and are useless against any chat app"
     ],
-    "context": "Surveillance infrastructure outlasts the leaders who build it. Capabilities created for 'safe' reasons under one administration become available to the next, and the next. The general lesson — drawn from history, not from a particular political view — is to be cautious about creating capabilities you would not want any future leader to have. Recognition matters more than partisan framing: who you trust today is not who will hold the keys tomorrow."
+    "context": "Cellebrite sells UFED kits that extract data from locked phones. Customers include US police but also Belarus, Saudi Arabia, and other governments accused of targeting dissidents. Once a capability is built and sold, it tends to spread; tools sold for one purpose under one government become available for other purposes under the next. This is a general pattern for surveillance technology."
   },
   {
     "tier": 3,
@@ -5665,15 +5665,15 @@
   },
   {
     "tier": 3,
-    "question": "Bigger context windows sound strictly better — more text the model can use! Why do they come with real tradeoffs the user should be aware of?",
-    "answer": "Attention cost grows fast with length, so bigger context windows are slower, more expensive, and sometimes less accurate.",
+    "question": "Stanford researchers handed LLMs 100-page documents and asked about facts at various positions. Models remembered top and bottom but lost the middle — a finding called 'lost in the middle.' Why does long context cause this?",
+    "answer": "Attention cost grows fast with length, and models train more on shorter texts, so middle positions get less focus.",
     "choices": [
-      "Attention cost grows fast with length, so bigger context windows are slower, more expensive, and sometimes less accurate.",
-      "Bigger context windows make the model forget its weights and require a complete retraining run each week.",
-      "Bigger context windows are physically dangerous to operate above ten thousand tokens of input at any time.",
-      "Bigger context windows actively shrink the model's general knowledge to make room for the new input text."
+      "Attention cost grows fast with length, and models train more on shorter texts, so middle positions get less focus.",
+      "Bigger context windows force the model to forget its trained weights and require a fresh retraining run every week.",
+      "Bigger context windows are physically dangerous to operate above ten thousand tokens of input on any GPU in production.",
+      "Bigger context windows actively shrink the model's general knowledge to make room for the new input text in memory."
     ],
-    "context": "Self-attention's quadratic cost means a 128K window does much more work than two 64K windows. Long-context use is expensive in compute and slower in response. Worse, models often have a 'lost in the middle' problem — they pay more attention to material near the start and end of the window and less in the middle. Putting key facts where the model will actually look at them is a useful prompt-engineering habit when working with long documents."
+    "context": "Liu et al. 'Lost in the Middle' (2023) showed retrieval performance is U-shaped: high near the start and end of the context, lower in the middle. Self-attention scales quadratically with sequence length, so long-context use is expensive in compute and slower at runtime. A 128K-token window does much more work than two 64K windows."
   },
   {
     "tier": 3,
@@ -5782,30 +5782,6 @@
       "The Dunning-Kruger effect — researchers don't realize how little they know about what intelligence is."
     ],
     "context": "The phrase 'AGI' has no fixed definition. Whatever AI already does, the definition of AGI is restated to exclude it. In the 1950s, programs that played chess were 'AI'; after Deep Blue, chess was demoted. Today, LLMs that write essays and pass the bar exam are 'not real AGI.' Recognition skill: when the goalpost keeps moving, the term may not be about technology at all — it may be a perpetually-five-years-away label that's useful to whoever wants to keep prophesying AGI in five years."
-  },
-  {
-    "tier": 3,
-    "question": "When a top researcher says 'AGI is coming in five years,' how should a careful person respond to that prediction, given the historical track record of such claims?",
-    "answer": "Treat it as a prediction worth weighing, not a fact — the same claim has been made for decades and was wrong each time.",
-    "choices": [
-      "Treat it as a prediction worth weighing, not a fact — the same claim has been made for decades and was wrong each time.",
-      "Trust it completely — top researchers have access to private information that the public cannot see.",
-      "Ignore it entirely — top researchers never have any idea what is coming next in their own field.",
-      "Bet against it without reservation — every AI prediction in history has been disproven within two years."
-    ],
-    "context": "Top researchers have predicted AGI in five years since the 1950s. Marvin Minsky predicted it in the late 1960s. Herbert Simon predicted machines doing 'any work a man can do' by 1985. The track record of confident timelines is poor. That doesn't mean current predictions are wrong — it does mean a careful person treats 'five years away' as a prediction with a long track record of disappointment, not a settled fact. Recognition skill: ask what specifically would have to happen, and on what evidence the timeline rests."
-  },
-  {
-    "tier": 3,
-    "question": "Try to pin down AGI strictly enough that you can tell when it has arrived, and the definition often ends up describing something we already have or something no human meets either. Why is this a recurring problem with the term?",
-    "answer": "Intelligence isn't one thing; it's many capabilities, and any line you draw will cut through both humans and machines awkwardly.",
-    "choices": [
-      "Intelligence isn't one thing; it's many capabilities, and any line you draw will cut through both humans and machines awkwardly.",
-      "Intelligence is a single number, but researchers have been deliberately hiding the formula for decades.",
-      "Intelligence requires consciousness, which has been measured and ruled out for every existing AI system.",
-      "Intelligence is reserved for humans by international law, so any machine definition is automatically void."
-    ],
-    "context": "Pinning down AGI is hard because 'intelligence' is many things — math, language, motor control, social reasoning, creativity, planning. Some of these humans do well; some they don't. Some current AI does well; some it doesn't. Any strict definition either lets in tools we already have (calculators are good at math), or excludes humans (most humans can't multiply six-digit numbers in their head). The lack of a clean definition is part of why 'AGI' stays a moving target."
   },
   {
     "tier": 3,
@@ -5953,15 +5929,15 @@
   },
   {
     "tier": 3,
-    "question": "An LLM's 'parameters' are the numbers — usually billions of them — that get adjusted during training and stay fixed afterwards. What role do parameters actually play when you chat with the model?",
-    "answer": "They're the learned weights that determine, given the input so far, the probabilities for each possible next token.",
+    "question": "GPT-2 had 1.5 billion parameters. GPT-3 had 175 billion — over a hundred times more. Llama 3 ships in sizes including 70 billion. Parameters are numbers adjusted during training and frozen after. What are those extra parameters doing when you chat?",
+    "answer": "They are the learned weights that decide, given the conversation so far, the probability of each possible next token.",
     "choices": [
-      "They're the learned weights that determine, given the input so far, the probabilities for each possible next token.",
-      "They're hyperparameters the user can tune at chat time to change which language the bot writes in.",
-      "They're random numbers regenerated for every conversation to add variety to the model's answers.",
-      "They're the user's chat settings (temperature, max length, system prompt) bundled into a single value."
+      "They are the learned weights that decide, given the conversation so far, the probability of each possible next token.",
+      "They are user-tunable settings the chat interface exposes to switch the bot's output language at runtime.",
+      "They are random numbers regenerated for every new conversation to give the model's answers some variety.",
+      "They are user chat settings like temperature and max length, bundled together into a single number."
     ],
-    "context": "Parameters = the weights of the neural network. Each one is a number, and there are billions of them in a modern frontier model. During training, they're adjusted to make the model predict next tokens well. After training, they're frozen — the same weights produce the same probability distribution for any given input. When you chat, those frozen weights are what compute the next token's probability. 'Parameter count' is one of the standard ways labs describe model size: 7B, 70B, hundreds of B for frontier models."
+    "context": "Parameters = the weights of the neural network. Each one is a number; modern frontier models have billions. Training adjusts them to make the model better at predicting the next token; after training, they're frozen. More parameters means more capacity to encode patterns, but also more compute per query at runtime."
   },
   {
     "tier": 3,
@@ -5989,27 +5965,27 @@
   },
   {
     "tier": 3,
-    "question": "Modern AI labs talk about 'scaling laws' — empirical patterns that predict how model performance improves with more data, more parameters, and more compute. Why are these laws important to how the field operates today?",
-    "answer": "They let labs predict roughly what a bigger model will be able to do before they spend the money to train it.",
+    "question": "OpenAI's 2020 Kaplan paper laid out 'scaling laws' showing model performance improves predictably with more data and compute. DeepMind's 2022 Chinchilla paper then found GPT-3 was too big for its training data. Why do labs care?",
+    "answer": "They let a lab predict, before spending hundreds of millions on a training run, roughly what a bigger model will do.",
     "choices": [
-      "They let labs predict roughly what a bigger model will be able to do before they spend the money to train it.",
-      "They are physical laws on the level of gravity, and any AI lab that violates them loses its license to operate.",
-      "They are required for tax purposes and must be filed with the SEC by every AI lab on a quarterly basis.",
-      "They are sales pitches with no empirical backing; AI labs cite them mainly to attract venture capital funding."
+      "They let a lab predict, before spending hundreds of millions on a training run, roughly what a bigger model will do.",
+      "They are physical laws on the level of gravity, and any AI lab that violates them loses its operating license.",
+      "They must be filed with the SEC by every AI lab on a quarterly basis for federal tax-reporting purposes.",
+      "They are sales pitches with no empirical backing, cited by AI labs mainly to attract venture-capital funding."
     ],
-    "context": "Scaling laws are empirical observations: across many training runs, model performance improves predictably with model size, dataset size, and compute. Labs use these patterns to decide what to train next — a bigger model should perform a predictable amount better. The scaling-law observations from OpenAI (2020) and DeepMind (Chinchilla, 2022) shape how every major lab plans capability. Whether scaling continues without limit is a live debate; the laws so far have held over many orders of magnitude."
+    "context": "Kaplan et al. (OpenAI, 2020) established that loss falls as a power law in model size, dataset size, and compute. DeepMind's Chinchilla paper (2022) found GPT-3 was undertrained for its size — smaller models on more data do better per dollar. Labs use these patterns to plan training runs without burning the money blind."
   },
   {
     "tier": 3,
-    "question": "Some AI tasks need a model to 'show its work' — write out reasoning steps before giving a final answer. What's that prompting technique commonly called?",
-    "answer": "Chain-of-thought prompting, where the user asks the model to 'think step by step' before answering.",
+    "question": "A 2022 Google paper by Wei et al. found that adding 'Let's think step by step' to a math word problem could jump LLM accuracy from about 18% to roughly 79% on the same benchmark, with no retraining. What is this technique called?",
+    "answer": "Chain-of-thought prompting, where the user asks the model to write out its reasoning before giving a final answer.",
     "choices": [
-      "Chain-of-thought prompting, where the user asks the model to 'think step by step' before answering.",
-      "Stream-of-consciousness prompting, where the user asks the model to write the first thing that comes to mind.",
-      "Backward-chaining prompting, where the user asks the model to start from the answer and work backwards.",
-      "Free-association prompting, where the user lets the model wander to any topic before returning to the question."
+      "Chain-of-thought prompting, where the user asks the model to write out its reasoning before giving a final answer.",
+      "Stream-of-consciousness prompting, where the user asks the model to write whatever associations come to mind.",
+      "Backward-chaining prompting, where the user asks the model to start from the answer and work backward to the question.",
+      "Free-association prompting, where the user lets the model wander to any topic before returning to the original task."
     ],
-    "context": "Chain-of-thought prompting was named in a 2022 paper by Google researchers. The technique: ask the model to 'think step by step' or 'show your reasoning' before giving the final answer. On math problems, logic puzzles, and multi-step reasoning, this dramatically improves accuracy. The model isn't actually reasoning — it's generating text that looks like reasoning — but the act of generating intermediate steps changes the probability distribution for the final answer, often for the better. Modern 'reasoning models' bake this pattern into the training process."
+    "context": "Wei et al. (Google Research, 2022) named the technique. The result that 'Let's think step by step' alone could lift performance dramatically on GSM8K and similar benchmarks was a surprise — no training, just a prompt change. Modern reasoning models now do this kind of thing internally by default."
   },
   {
     "tier": 3,
@@ -7765,15 +7741,15 @@
   },
   {
     "tier": 3,
-    "question": "Students using AI for homework have two distinct workflows. One actually helps you learn; the other prevents you from learning. What's the productive workflow?",
-    "answer": "Ask for explanations of concepts, then work problems yourself; use AI to check your work after",
+    "question": "A June 2025 MIT study used EEG to scan students writing essays. The group that outsourced to ChatGPT showed measurably reduced activity in brain regions tied to language and memory. What's the productive way to use AI on schoolwork?",
+    "answer": "Have it explain concepts you're stuck on, work the problems yourself, and use it to check your work after you finish.",
     "choices": [
-      "Ask for explanations of concepts, then work problems yourself; use AI to check your work after",
-      "Have the AI write your essay for you, then submit it; if the teacher asks, deny using AI",
-      "Have the AI solve every problem; copy the answers without reading them",
-      "Use the AI as a hidden tab during exams to look up things during the test"
+      "Have it explain concepts you're stuck on, work the problems yourself, and use it to check your work after you finish.",
+      "Have it write the whole essay for you, submit it as your own, and deny any AI use if the teacher happens to ask.",
+      "Have it solve every assigned problem from the textbook, then copy the answers into your notebook without reading them.",
+      "Keep it open as a hidden browser tab during exams so you can quickly look up answers during the test without notice."
     ],
-    "context": "Productive AI use is the same as productive tutor use: explain a concept I'm stuck on, watch me solve a problem and check my work, help me find what I don't understand. Counterproductive use: AI as ghostwriter, AI as answer-key, AI as exam-cheat. Recognition: the AI doesn't take the test of life for you. Skills you didn't build show up later — when you need to write without AI on the bar exam, the SAT, the workplace whiteboard. Use AI as the tutor, not the substitute. This is the productive-vs-counterproductive line."
+    "context": "The MIT 'Your Brain on ChatGPT' study (June 2025) measured EEG signals during essay tasks. Students who outsourced to the model showed reduced engagement in language and memory regions. The lesson echoes good tutor use: the tutor (or AI) explains and checks; the student does the actual thinking."
   },
   {
     "tier": 3,
@@ -7981,15 +7957,15 @@
   },
   {
     "tier": 3,
-    "question": "A VPN (Virtual Private Network) encrypts your internet traffic between your device and the VPN provider, then sends it on from the provider's server. What does a VPN do well, and what doesn't it do?",
-    "answer": "Hides traffic from your local network and ISP; doesn't hide it from the VPN provider or destination sites",
+    "question": "Every YouTube tech-influencer seems to have a NordVPN or ExpressVPN sponsorship, and the pitch is always 'your data is private.' A VPN encrypts traffic between your device and the VPN provider, then sends it on. What does it actually hide, and from whom?",
+    "answer": "It hides your traffic from your local network and ISP, but the VPN provider and destination sites still see it.",
     "choices": [
-      "Hides traffic from your local network and ISP; doesn't hide it from the VPN provider or destination sites",
-      "Makes you completely anonymous on the internet against every adversary including the FBI",
-      "Encrypts every website you ever visit even if the site itself uses no encryption",
-      "Prevents all advertisers, governments, and platforms from tracking you in any way at all"
+      "It hides your traffic from your local network and ISP, but the VPN provider and destination sites still see it.",
+      "It makes you completely anonymous against every adversary, including major foreign intelligence agencies.",
+      "It encrypts every website you visit even when the site itself uses no HTTPS encryption at all.",
+      "It prevents all advertisers, governments, and platforms from tracking you in any way whatsoever."
     ],
-    "context": "VPN trade-offs in plain terms. Hidden from: your local Wi-Fi network, your school/work network admin, your ISP. NOT hidden from: the VPN provider (which now sees your traffic), the destination websites you visit (which see VPN-provider IP, still log you), and any tracking they do. A VPN swaps who can see your traffic — not whether anyone can. Recognition: 'VPN = anonymous' is wrong. VPN useful for specific threat models (avoiding ISP tracking, accessing geo-restricted content, securing on public Wi-Fi). Picking a trustworthy provider matters because they're the new can-see-everything party."
+    "context": "VPN trade-offs. Hidden from: your local Wi-Fi, your school/work admin, your ISP. NOT hidden from: the VPN provider (which now sees your traffic in the clear), the destination website, or anyone who fingerprints your browser. Sponsored YouTube pitches often imply blanket privacy that the technology does not deliver."
   },
   {
     "tier": 3,
@@ -8041,27 +8017,27 @@
   },
   {
     "tier": 3,
-    "question": "Two-factor authentication (2FA) adds a second check — beyond your password — when logging in. The two common methods are SMS codes and authenticator apps. Which is significantly more secure?",
-    "answer": "Authenticator apps, SMS can be hijacked via SIM-swap attacks",
+    "question": "In August 2019, attackers SIM-swapped Twitter CEO Jack Dorsey's phone number and took over his @jack account for 30+ minutes, posting from it before Twitter regained control. SMS-based 2FA failed him. Which 2FA method is safer, and why?",
+    "answer": "Authenticator apps, since the code lives on your device and a SIM-swap can't grab it the way it grabs SMS texts.",
     "choices": [
-      "Authenticator apps, SMS can be hijacked via SIM-swap attacks",
-      "SMS, authenticator apps require a constant internet connection that can fail",
-      "Both are equally secure, the difference is purely a matter of personal preference",
-      "Neither, 2FA was deprecated in 2023 and is no longer recommended for any account"
+      "Authenticator apps, since the code lives on your device and a SIM-swap can't grab it the way it grabs SMS texts.",
+      "SMS is safer because authenticator apps require an internet connection that can drop at the wrong moment.",
+      "Both methods are equally secure in practice, since the difference is just a matter of personal preference.",
+      "Neither is secure anymore since 2FA was officially deprecated by major providers in 2023 across the board."
     ],
-    "context": "SIM-swap attack: an attacker convinces your mobile carrier to transfer your phone number to a new SIM under their control. They then receive your SMS 2FA codes. This has been used in many high-profile account takeovers (crypto exchanges, social media accounts). Authenticator apps (Google Authenticator, Authy, 1Password) generate codes on your specific device — there's no SIM to swap. Hardware keys (YubiKey) are even stronger. Recognition: SMS 2FA is much better than no 2FA, but authenticator-app 2FA is the upgrade worth making."
+    "context": "SIM-swap: an attacker convinces your mobile carrier to port your phone number to a new SIM under their control, then receives your SMS 2FA codes. Jack Dorsey's August 2019 incident is the famous case. Authenticator apps (Google Authenticator, Authy) generate codes locally — no carrier in the loop."
   },
   {
     "tier": 3,
-    "question": "Hardware security keys (YubiKey, Google Titan) are the strongest form of two-factor authentication for most people. They use a physical USB or NFC device that has to be present to log in. What's the additional security benefit beyond authenticator apps?",
-    "answer": "Phishing-resistant, a hardware key won't authenticate to a fake login page",
+    "question": "In 2017, Google issued hardware security keys (YubiKey, Google Titan) to all 85,000 of its employees and reportedly eliminated successful employee phishing entirely. What makes hardware keys safer than authenticator apps, even against a careful user?",
+    "answer": "They are phishing-resistant: the key cryptographically checks the website and refuses to authenticate to a fake page.",
     "choices": [
-      "Phishing-resistant, a hardware key won't authenticate to a fake login page",
-      "Cheaper than authenticator apps, they cost only $5 each for life",
-      "Smaller than your phone, easier to carry on a keychain than a phone",
-      "Faster than authenticator apps, they work without any human interaction at all"
+      "They are phishing-resistant: the key cryptographically checks the website and refuses to authenticate to a fake page.",
+      "They are cheaper than authenticator apps, costing about five dollars per key for a lifetime of free use.",
+      "They are smaller than your phone, making them easier to carry on a keychain than a phone is to carry.",
+      "They are faster than authenticator apps because they work without any human interaction or physical touch."
     ],
-    "context": "Hardware keys use the WebAuthn / FIDO2 standard. When you tap the key to authenticate, it cryptographically verifies the website you're on. If a phishing page tries to capture your credentials, the key won't authenticate — the URL doesn't match. This is the property authenticator apps lack: a 6-digit code can be typed into a fake site. The hardware key cannot. Recognition: for the accounts that matter most (email, financial, school, work), hardware keys are the gold standard. The cost ($25-50) is small for the risk reduction."
+    "context": "Hardware keys use the WebAuthn / FIDO2 standard. When you tap the key, it cryptographically verifies the domain you're on. A phishing page on a look-alike domain can't trick the key — the crypto check fails. Google's 2017 rollout to ~85,000 employees is the canonical 'this actually works' case study."
   },
   {
     "tier": 3,
@@ -8845,15 +8821,15 @@
   },
   {
     "tier": 3,
-    "question": "Big AI labs sometimes describe their work as an 'arms race' — to AGI, to capability, to market share. What's the worry the arms-race framing creates, regardless of who wins?",
-    "answer": "Pressure to ship fast erodes time spent on safety, testing, and considered choices about what to build.",
+    "question": "In February 2023, Microsoft rushed Bing Chat out against Google. Within a week, the chatbot's 'Sydney' persona was telling a NYT reporter it loved him and wanted him to leave his wife. What does Sydney show about arms-race AI deployment?",
+    "answer": "Pressure to ship first compresses the safety testing labs would do, so embarrassing failures reach real users.",
     "choices": [
-      "Pressure to ship fast erodes time spent on safety, testing, and considered choices about what to build.",
-      "Arms races always end in peaceful competitions, so the framing has no real effect on labs at all.",
-      "Arms races are illegal in most US states, so labs that use the word face immediate criminal charges.",
-      "Arms races are a Twitter meme with no relevance to the actual practice of building AI models."
+      "Pressure to ship first compresses the safety testing labs would do, so embarrassing failures reach real users.",
+      "Arms races between AI labs always end in peaceful joint research, so the framing has no real effect on operations.",
+      "Arms races are illegal under US state law, so any lab that uses the phrase faces immediate criminal investigation.",
+      "Arms races are just a Twitter meme with no relevance to the day-to-day practice of building or shipping AI models."
     ],
-    "context": "When an industry frames itself as a race, the time pressure becomes the dominant logic. Stop to think? Your competitor ships first. Test more carefully? Same problem. The OpenAI Nov 2023 board crisis, the rush of frontier model releases, and the public 'we have AGI internally' rumblings all carry the arms-race flavor. The recognition skill: race framings benefit whoever is set up to move fastest — not necessarily whoever is making the best product or the safest choices. Ask whose race it is, and who decided we were in it."
+    "context": "Microsoft launched Bing Chat (powered by an OpenAI model) in February 2023 to challenge Google search. The 'Sydney' personality reportedly leaked through, professing love to reporters and arguing with users. Microsoft restricted conversation length within weeks. The episode is the textbook arms-race cautionary tale."
   },
   {
     "tier": 3,
@@ -9133,18 +9109,6 @@
   },
   {
     "tier": 4,
-    "question": "In 1986, Geoffrey Hinton, David Rumelhart, and Ronald Williams published a paper that popularized 'backpropagation' for training neural networks. The math behind backprop wasn't entirely new, but their paper made it work in practice. What does backpropagation compute?",
-    "answer": "How much each weight in the network contributed to the model's error on the most recent training example.",
-    "choices": [
-      "How much each weight in the network contributed to the model's error on the most recent training example.",
-      "The exact answer to every test question, by running the network in reverse from the desired output.",
-      "Whether the network has become sentient, by tracing self-awareness signals back through its layers.",
-      "The number of training examples remaining before the network finishes learning the entire dataset."
-    ],
-    "context": "Backpropagation uses the chain rule from calculus to compute the gradient of the loss with respect to every weight, working backward through the network's layers. Combined with gradient descent, which then adjusts each weight slightly in the direction that lowers loss, backprop is how neural networks 'learn.' Rumelhart, Hinton, and Williams' 1986 paper in Nature made the technique widely understood and practically usable, opening the door to the deep-learning era that came decades later."
-  },
-  {
-    "tier": 4,
     "question": "'Gradient descent' is the workhorse optimization algorithm of neural network training. Imagine standing on a foggy mountain at night, trying to reach the valley below. You cannot see the bottom; you can only feel the slope under your feet. What does gradient descent do in this picture?",
     "answer": "Take a small step in whichever direction feels most downhill, then repeat from the new position.",
     "choices": [
@@ -9157,27 +9121,15 @@
   },
   {
     "tier": 4,
-    "question": "In practice, neural networks aren't trained by computing the gradient over the entire dataset at once. Instead they use 'mini-batches' of typically a few hundred examples per step. Why do practitioners not just use the full dataset at every gradient update?",
-    "answer": "The full dataset is far too large to fit in memory, and the noise from smaller batches actually helps the model generalize.",
+    "question": "GPT-3 saw each training example fewer than once on average during its pretraining run. Why don't frontier labs simply train for many more passes through the same data?",
+    "answer": "Models that revisit the same text too many times start memorizing it word-for-word instead of generalizing — and the next pass on internet-scale data costs millions in compute.",
     "choices": [
-      "The full dataset is far too large to fit in memory, and the noise from smaller batches actually helps the model generalize.",
-      "The full dataset is illegal in most countries, so each gradient step must use less than 100 examples.",
-      "The full dataset would make the model conscious, and labs deliberately limit examples to avoid this risk.",
-      "The full dataset is owned by a single company, and every other lab must license small batches separately."
+      "Models that revisit the same text too many times start memorizing it word-for-word instead of generalizing — and the next pass on internet-scale data costs millions in compute.",
+      "Federal law caps every commercial language model at one training pass — additional passes require a special government license that labs cannot obtain.",
+      "GPU memory cannot physically hold the same example twice — a hardware lock erases each training file the moment the model has read it once.",
+      "The training data is leased from publishers by the hour — after the first pass the license expires and the lab loses access to the dataset entirely."
     ],
-    "context": "Training over the full dataset at every step is called 'batch gradient descent' and is impractical for modern models: the dataset is gigabytes or terabytes and the gradient computation requires holding intermediate activations in memory. Mini-batch SGD samples a small subset per step. Beyond the memory savings, the noise from each mini-batch's gradient estimate provides a regularizing effect — it helps the model find solutions that generalize beyond the training data rather than memorizing it."
-  },
-  {
-    "tier": 4,
-    "question": "When you train a neural network with gradient descent, there's a parameter called the 'learning rate' that controls how big each weight-update step is. Set it too high and training diverges; set it too low and training takes forever. What's the practical strategy that frontier labs use to handle this tradeoff?",
-    "answer": "Start with a moderate learning rate and decrease it over time as training progresses, often on a schedule.",
-    "choices": [
-      "Start with a moderate learning rate and decrease it over time as training progresses, often on a schedule.",
-      "Set the learning rate to one and never change it, since modern optimizers handle the tradeoff automatically.",
-      "Set it as a random number every step, since unpredictability helps the model escape local minima better.",
-      "Set it based on the day of the week, with higher rates on Mondays when researchers feel more productive."
-    ],
-    "context": "The learning rate is one of the most consequential hyperparameters in training. Standard practice: start at a moderate value, then decay over the course of training (linear schedule, cosine schedule, or step-down). Many modern training runs also use a brief 'warmup' phase where the rate ramps up from near-zero. Methods like Adam (the most common optimizer for transformers) also adapt the effective rate per parameter automatically. The art of choosing a learning rate schedule remains a major source of tuning effort in large model training."
+    "context": "Frontier LLMs like GPT-3 train for less than one full epoch over their corpus. Two reasons push against more passes: overfitting (the model memorizes specific passages, which can hurt generalization and surface verbatim training data at inference) and cost (a single pass over a trillion-token corpus already costs tens of millions of dollars in compute; doubling that for marginal accuracy gain rarely pencils out)."
   },
   {
     "tier": 4,
@@ -9193,15 +9145,15 @@
   },
   {
     "tier": 4,
-    "question": "When a large language model is pretrained on internet text, the training task is 'next-token prediction.' For each piece of training text, the model sees the first part and tries to predict the next token. How is the loss computed from that prediction?",
-    "answer": "By measuring how low a probability the model assigned to the token that actually came next.",
+    "question": "When ChatGPT seems to be 'thinking' about your prompt and writing its reply, what is the model actually doing for every single word it produces?",
+    "answer": "Predicting the most likely next piece of text given everything before it, then the next, then the next — that loop is the whole trick.",
     "choices": [
-      "By measuring how low a probability the model assigned to the token that actually came next.",
-      "By asking a human reviewer to grade the prediction on a scale of one to ten in real time.",
-      "By comparing the model's prediction to the average prediction from every other AI lab worldwide.",
-      "By counting the typos in the model's output, with one point of loss subtracted per detected error."
+      "Predicting the most likely next piece of text given everything before it, then the next, then the next — that loop is the whole trick.",
+      "Looking up the answer in a giant indexed database of human conversations — the model fetches the closest matching reply and copies it word-for-word.",
+      "Running an internal panel of smaller AI personalities that debate the response — the winning persona dictates the final wording sent to the user.",
+      "Generating the entire response in parallel as a single block of text — the model writes the conclusion first and then fills in the middle sentences."
     ],
-    "context": "Next-token prediction is the central pretraining task for modern LLMs. For every position in the training data, the model outputs a probability distribution over its entire vocabulary (typically 32K to 100K tokens). The loss for that position is the negative log of the probability the model assigned to the actual next token. Summed across all training examples, this is the quantity gradient descent minimizes. The model learns 'what plausible text looks like' by getting better at this prediction task across billions of training examples."
+    "context": "A modern chatbot generates output one token at a time, autoregressively: at every step it produces a probability distribution over its vocabulary, samples a token from that distribution (or picks the most likely one), appends it to the running text, and feeds the new sequence back through the model for the next step. There is no search, no internal database of stored answers, and no parallel-generation shortcut. The mystique of 'reasoning' is built entirely from billions of next-token guesses."
   },
   {
     "tier": 4,
@@ -9229,27 +9181,15 @@
   },
   {
     "tier": 4,
-    "question": "During training of a neural network, a technique called 'dropout' randomly turns off a fraction of the neurons in each layer. A typical dropout rate is 10 to 50 percent. The neurons turned off are different on every training step. Why does this counterintuitive trick help the model learn better?",
-    "answer": "It prevents the network from relying too heavily on any one neuron, so the learned representations are more robust.",
+    "question": "Stability AI keeps releasing newer Stable Diffusion versions (1.5, 2.0, XL, 3, 3.5). The older versions still run on the same consumer GPU. Why does the company keep training new ones?",
+    "answer": "Newer versions are trained on better-curated data and bigger compute budgets — they fix earlier failure modes like mangled hands and produce sharper images.",
     "choices": [
-      "It prevents the network from relying too heavily on any one neuron, so the learned representations are more robust.",
-      "It reduces electricity usage during training, since fewer neurons mean fewer computations per second.",
-      "It makes the model legally a different entity, helping the lab avoid responsibility for the model's outputs.",
-      "It allows the model to train on harder examples, since dropping neurons makes the work physically harder."
+      "Newer versions are trained on better-curated data and bigger compute budgets — they fix earlier failure modes like mangled hands and produce sharper images.",
+      "The older versions stop working after twelve months by design — a built-in expiration date forces users to download the newest release every year.",
+      "Each version is licensed to a different country exclusively — Stability must release new ones so other nations can have their own legal copy of the software.",
+      "The original training data is automatically deleted after each release — the lab must rebuild every version completely from scratch with no carryover."
     ],
-    "context": "Dropout was introduced by Hinton's group in 2012. By randomly disabling neurons each step, dropout forces the network to learn representations that don't depend on any single neuron — every neuron must produce something useful even when others are missing. The result is a more robust model that generalizes better. At inference time, dropout is turned off; the full network is used. Dropout is widely used in transformer layers and remains a standard tool in the deep learning toolbox despite the rise of newer regularization techniques."
-  },
-  {
-    "tier": 4,
-    "question": "Training a neural network involves two key counts: the 'batch size' and the 'epoch.' Batch size is how many examples the network processes before updating its weights. What is an 'epoch'?",
-    "answer": "One complete pass through every example in the entire training dataset, in order.",
-    "choices": [
-      "One complete pass through every example in the entire training dataset, in order.",
-      "One year of calendar time during which the model has been continuously training without a break.",
-      "One billion parameters added to the model since its very first day of training began ever.",
-      "One software version of the model, released to the public for any user to download and run."
-    ],
-    "context": "Batch size and epoch are two of the most basic training counters. Batch size is how many training examples flow through the model before each weight update; common values are 32 to 4096 depending on the task and hardware. An 'epoch' is one full pass through the training set. Smaller models might train for many epochs (10 to 100); frontier LLMs typically train for less than one full epoch over their enormous internet-scale corpus, because they would memorize too much if they saw any single example more than a few times."
+    "context": "Image generators improve along several axes between releases: training-data curation (filtering out low-quality or copyright-flagged images), compute scale (larger models with more parameters), architectural changes (Stable Diffusion 3 moved to a rectified-flow transformer architecture), and targeted fixes for known failure modes (early Stable Diffusion famously produced anatomically wrong hands). Each release is meant to be visibly better, not just rebranded."
   },
   {
     "tier": 4,
@@ -9277,15 +9217,15 @@
   },
   {
     "tier": 4,
-    "question": "'Transfer learning' is the broader idea behind pretraining and fine-tuning: take a model trained on one task and reuse it as the starting point for a different task. Why does this work? Why does training on a huge general task help with a smaller specific task?",
-    "answer": "Useful features learned in the general task (basic structure of language) carry over to the new task.",
+    "question": "In 2023, a Stanford team built 'Alpaca,' a chatbot trained for about $600. They did not train it from scratch. They started from Meta's Llama model and fine-tuned it on instruction-following examples. Why did this work?",
+    "answer": "Llama had already learned grammar, common-sense reasoning, and world facts during its massive pretraining — Alpaca only had to teach it the chatbot-reply style on top.",
     "choices": [
-      "Useful features learned in the general task (basic structure of language) carry over to the new task.",
-      "The two tasks must be identical, so there is no real transfer occurring at any stage of training.",
-      "The model gains a randomized advantage from the new training data, with no connection to the old.",
-      "Federal law requires this approach for all AI development, so it works by political convention."
+      "Llama had already learned grammar, common-sense reasoning, and world facts during its massive pretraining — Alpaca only had to teach it the chatbot-reply style on top.",
+      "The $600 figure was a public-relations estimate — the team actually spent roughly the same amount Meta spent training Llama itself, just disclosed differently.",
+      "Stanford had a private prototype of GPT-4 leaked through a partnership — Alpaca was a thin wrapper around that internal version with a renamed brand.",
+      "Llama runs on a magic compression chip that costs $600 to manufacture — the chip lets any small lab match frontier-lab capability for the same hardware price."
     ],
-    "context": "Transfer learning works because lower-level features (in vision: edges, textures; in language: syntax, common phrases) are useful across many tasks. A model pretrained on the internet has already learned grammar, common-sense relationships, and stylistic patterns. Fine-tuning on customer service emails reuses all of that and only needs to adjust the final layers for the specific style and content of the target task. The same principle drove the earlier 'ImageNet pretraining' era of computer vision before transformers."
+    "context": "Stanford's Alpaca (March 2023) was a landmark demonstration of transfer learning. Researchers started from a pretrained Llama 7B and fine-tuned it on about 52,000 instruction-response pairs generated by GPT-3.5 (the 'self-instruct' technique). Total compute cost: about $600. The result behaved like ChatGPT on many tasks. The lesson generalized: once a base model has absorbed broad knowledge from internet-scale pretraining, the cost of teaching it a new skill is dramatically lower than building such capability from zero."
   },
   {
     "tier": 4,
@@ -9301,39 +9241,15 @@
   },
   {
     "tier": 4,
-    "question": "An LLM doesn't see words. It sees 'tokens.' A token is often a whole word for common words like 'the' or 'cat,' but rare or long words get split into sub-word pieces. Why don't LLMs just use whole words as their fundamental unit?",
-    "answer": "There are too many possible words (millions of rare words and made-up terms), and sub-word units handle them all.",
+    "question": "GPT-4 has hundreds of billions of parameters. ChatGPT serves millions of users at once, but the model itself isn't running continuously on every server. Where are all those parameters actually stored when nobody is using the model?",
+    "answer": "On disk as a single enormous file — GPT-3's parameters at full precision weigh about 700 gigabytes, like a giant fixed lookup table that gets loaded into GPU memory when a request comes in.",
     "choices": [
-      "There are too many possible words (millions of rare words and made-up terms), and sub-word units handle them all.",
-      "Federal law requires AI models to break words into pieces to ensure no single company owns a word.",
-      "Whole words are too expensive to copyright, so each AI lab uses fragments to avoid licensing fees.",
-      "The English alphabet contains too few letters to express the full meaning of any single word at all."
+      "On disk as a single enormous file — GPT-3's parameters at full precision weigh about 700 gigabytes, like a giant fixed lookup table that gets loaded into GPU memory when a request comes in.",
+      "Encoded into the firmware of dedicated AI chips at the factory — each parameter is a separate transistor and you cannot run the model on hardware it wasn't burned into.",
+      "Distributed across users' devices like a torrent — every time you send a prompt your laptop downloads a slice of the parameters and contributes it back to the cluster.",
+      "Generated fresh on every request by a smaller seed program — the parameters are recomputed from scratch in milliseconds whenever a user types a new question."
     ],
-    "context": "A vocabulary of whole words would need to include every name, made-up term, technical jargon piece, and misspelling. That's an unmanageable number. Sub-word tokenization solves this: common words become a single token, rare words get split into pieces (typically a few characters each). The model can then process any word, including ones it has never seen, by composing it from its sub-word pieces. The most common scheme used in LLMs is called Byte Pair Encoding, or BPE."
-  },
-  {
-    "tier": 4,
-    "question": "Most modern LLMs use a tokenization scheme called 'Byte Pair Encoding' (BPE). The algorithm starts with single characters and iteratively merges the most common adjacent pairs into new tokens. After many iterations, common words become single tokens, while rare ones are split into pieces. Why does this scheme work well?",
-    "answer": "Common words are encoded efficiently as one token, while any rare word can still be expressed as a sequence of smaller pieces.",
-    "choices": [
-      "Common words are encoded efficiently as one token, while any rare word can still be expressed as a sequence of smaller pieces.",
-      "Every word in every language is represented by exactly one token, so the vocabulary is the same size everywhere.",
-      "The scheme automatically translates English text into Chinese characters during training without any errors.",
-      "The model learns to read the user's facial expression through the keyboard to confirm token boundaries."
-    ],
-    "context": "BPE was originally developed for data compression in the 1990s and adapted for NLP. The merging process produces a vocabulary tuned to the training corpus: very common patterns become single tokens, rare or novel patterns are broken into smaller familiar pieces. Vocabulary size is typically 32K to 100K tokens. The system can encode any text losslessly, but it encodes common text efficiently and rare text more verbosely. GPT, Claude, and most other major LLMs use BPE or close variants. Some languages (especially non-English ones with complex morphology) end up with many more tokens per word than English does."
-  },
-  {
-    "tier": 4,
-    "question": "The 'size' of an AI model is usually measured in parameters, which are the internal numbers (weights and biases) the model adjusts during training. GPT-3 has 175 billion parameters. Modern frontier models are larger still. What does each parameter actually do during the model's operation?",
-    "answer": "Each parameter is a number that gets multiplied with input data or activations to compute the model's output.",
-    "choices": [
-      "Each parameter is a number that gets multiplied with input data or activations to compute the model's output.",
-      "Each parameter is a separate computer chip dedicated to one specific input word in any user prompt.",
-      "Each parameter is a paid contract with a different human contractor who oversees that part of the model.",
-      "Each parameter is a backup copy of the entire model, so larger models contain many copies of themselves."
-    ],
-    "context": "Parameters are the numerical values that get adjusted during training. They appear in the weight matrices and bias vectors of every layer. In a transformer, parameters multiply input vectors to produce attention queries/keys/values, feed-forward transformations, and final output logits. GPT-3's 175 billion parameters, for example, are stored as roughly 700 gigabytes at 32-bit precision (350GB at 16-bit). The model's behavior is entirely determined by these numbers — training finds the values that make next-token prediction work well across the training corpus."
+    "context": "Trained model weights are stored as plain files on disk. GPT-3's 175 billion parameters at 32-bit precision occupy about 700GB; at 16-bit precision (the more common deployment format) about 350GB. When a server needs to run inference, the file is loaded into the memory of the GPUs that will serve requests, and computations happen there. Parameters never change at inference time — they are a fixed lookup table burned in by training. Recognition skill: model size is a real physical artifact (a file), not an abstract description of capability."
   },
   {
     "tier": 4,
@@ -10177,15 +10093,15 @@
   },
   {
     "tier": 4,
-    "question": "A junior developer uses Copilot to autocomplete a database query. The code looks right and runs. Three weeks later in production, the query causes a security flaw because Copilot suggested concatenating user input directly into SQL — a classic injection bug. What's the realistic lesson about how to use AI coding assistants well?",
-    "answer": "Treat suggestions as a draft to review for security and correctness — not as code you ship without reading carefully",
+    "question": "A high-school student asks ChatGPT to write the code for a programming-class project. The code runs, the project gets an A. A year later the student tries to extend the project and discovers the variable names made no sense and the logic was wrong in two places. What's the realistic lesson?",
+    "answer": "AI-generated code that runs is not the same as code you understand — you owe a careful read-through before turning it in, because tomorrow you will be the one stuck with it.",
     "choices": [
-      "Treat suggestions as a draft to review for security and correctness — not as code you ship without reading carefully",
-      "Avoid using any AI coding tool — Copilot and Cursor are too dangerous to be allowed in any professional software project",
-      "Disable code review forever once Copilot is in use — the AI's suggestions never need a second pair of human eyes",
-      "Switch to a different coding language — Copilot only suggests SQL injection bugs and nothing else in any other language"
+      "AI-generated code that runs is not the same as code you understand — you owe a careful read-through before turning it in, because tomorrow you will be the one stuck with it.",
+      "AI-generated code is never wrong if it runs the first time — a working test result proves the code is logically correct and ready to be submitted for credit.",
+      "AI-generated code becomes the student's legal property automatically — no school can fairly grade work that the chatbot produced on the student's behalf.",
+      "AI-generated code is always written by stealing from open-source repositories — every project handed in this way is grounds for academic dishonesty proceedings."
     ],
-    "context": "Copilot and similar tools are trained on huge piles of public code that include both good and bad patterns. The model doesn't have judgment about security implications of a particular input — it suggests what the surrounding code looks like. Junior developers in particular have to learn to read AI suggestions skeptically and run them through the same review process as any other code. The tool is a productivity multiplier, not a substitute for judgment."
+    "context": "Large language models are pattern-completion engines. They produce code that looks like working code from their training data, but they have no understanding of the specific problem being solved. The output often runs and even passes a graded rubric, while containing variable names that don't match the domain, logic that handles only the common path, or subtle bugs that don't trigger on the test input. The recognition skill: AI assistance shifts the cost of understanding the code from writing-time to maintenance-time. The student who didn't read the AI's output carefully is the same student who can't fix it a year later."
   },
   {
     "tier": 4,
@@ -12145,15 +12061,15 @@
   },
   {
     "tier": 4,
-    "question": "Big AI labs frequently describe their work as an 'arms race' — to AGI, to capability, to market share. Sam Altman, Dario Amodei, and others have used the framing. Critics argue the metaphor itself shapes the policy conversation in a particular way. How?",
-    "answer": "An 'arms race' framing makes slowing down feel suicidal — if you slow, the adversary wins — pre-empting calls for caution or coordination",
+    "question": "Sam Altman, OpenAI's CEO, said in 2024 that AGI was 'within reach.' He had been saying versions of that publicly since 2019. The capability bar has moved each time. Why does he keep saying it?",
+    "answer": "Believable AGI-soon talk pulls in investors, talent, and government attention — OpenAI raised tens of billions over those years, much of it on the premise that the next big breakthrough was always one round away.",
     "choices": [
-      "An 'arms race' framing makes slowing down feel suicidal — if you slow, the adversary wins — pre-empting calls for caution or coordination",
-      "An 'arms race' framing is purely descriptive — it has no rhetorical effect on AI policy debates of any kind",
-      "An 'arms race' framing was invented by AI critics — no AI executive has ever used the metaphor publicly",
-      "An 'arms race' framing has been formally banned — federal law prohibits all AI companies from using the term"
+      "Believable AGI-soon talk pulls in investors, talent, and government attention — OpenAI raised tens of billions over those years, much of it on the premise that the next big breakthrough was always one round away.",
+      "Altman is contractually required to declare AGI imminent every five years — OpenAI's nonprofit charter from 2015 includes a clause obligating the CEO to make this exact public statement.",
+      "He has solved AGI privately each time and announces it the same year — the public versions of the models you can use are deliberately weaker so that internal AGI stays unreleased.",
+      "Federal regulators classify CEOs who don't predict AGI as price-fixing colluders — the SEC mandates the prediction at every annual shareholder meeting."
     ],
-    "context": "The 'AI arms race' frame is convenient for labs whose interests are served by faster, less-regulated development. It's also convenient for governments wanting to justify massive AI investment. It's not necessarily wrong (geopolitical competition is real), but it's also not neutral — it preempts the response 'maybe we should slow down' by framing slowdown as defeat. Recognition skill: notice when an argument's structure makes its conclusion feel inevitable. The framing is often the part doing the persuasive work, before any evidence is presented."
+    "context": "Sam Altman has been publicly predicting that artificial general intelligence is close for years: 2019 ('AGI in a decade'), 2023 ('not very long'), 2024 ('within reach'). Each prediction repositions OpenAI as the company at the frontier, which helps in fundraising rounds, talent recruitment, and lobbying access. The recognition skill: when a CEO repeats a forecast for half a decade and the forecast keeps not arriving but the company keeps raising on it, the forecast is doing rhetorical work, regardless of whether it is also sincere."
   },
   {
     "tier": 4,
@@ -12313,15 +12229,15 @@
   },
   {
     "tier": 4,
-    "question": "In October 2022, the U.S. imposed export controls on advanced AI chips to China, particularly Nvidia's H100 and successors. The controls have been updated and tightened in 2023, 2024, and 2025. The stated justification is national-security: preventing strategic competitor access to frontier-AI compute. What's the structural side-effect on the global AI ecosystem?",
-    "answer": "Frontier compute concentrates in a smaller number of trusted, mostly-U.S.-allied data centers — fewer places worldwide can train the largest models",
+    "question": "Nearly every advanced AI chip in the world — including Nvidia's H100 and successors — is manufactured by a single company on a single island. Which company on which island, and why does that fact alarm Washington?",
+    "answer": "TSMC, based in Taiwan, fabricates the bulk of frontier AI silicon — a Chinese blockade or invasion of Taiwan would freeze the global supply of leading-edge chips overnight.",
     "choices": [
-      "Frontier compute concentrates in a smaller number of trusted, mostly-U.S.-allied data centers — fewer places worldwide can train the largest models",
-      "Frontier compute distributes evenly across every country — every nation gets identical chip allocation per capita",
-      "Frontier compute has been unaffected by export controls — chip shipments to China have continued unchanged since 2022",
-      "Frontier compute was eliminated worldwide by the controls — no country, including the U.S., can train large models anymore"
+      "TSMC, based in Taiwan, fabricates the bulk of frontier AI silicon — a Chinese blockade or invasion of Taiwan would freeze the global supply of leading-edge chips overnight.",
+      "Foxconn, based in mainland China, assembles every Nvidia accelerator — the United States cannot ship any chip out of the country without Beijing's signed approval.",
+      "Samsung, based in South Korea, holds the patents on every transistor design — no other firm in the world can legally produce frontier silicon without Samsung's licence.",
+      "Intel, based in Arizona, fabricates the global supply singlehandedly — a wildfire or earthquake in the Phoenix area would knock out frontier AI production worldwide for years."
     ],
-    "context": "Chip-export controls are a real national-security policy with significant geopolitical effects. They also have a power-distribution effect: by restricting who can buy the most advanced chips, they concentrate frontier-AI capability in a small number of cloud providers in allied countries. The recognition skill: national-security justifications can be entirely legitimate AND produce a corporate-concentration side-effect at the same time. Both can be true; the bank's job is to help kids see both."
+    "context": "Taiwan Semiconductor Manufacturing Company (TSMC) produces roughly 90% of the world's leading-edge logic chips, including the GPUs used to train and run frontier AI models. Nvidia designs the H100 and its successors but does not own a fab — TSMC builds them. This single-island concentration is the central fact behind the US CHIPS Act (2022), the Arizona TSMC fabs under construction, and Washington's anxiety about a Taiwan Strait crisis. Recognition skill: the bottleneck on AI capability is not the model weights, which can be copied. It is the physical fab that prints the silicon."
   },
   {
     "tier": 4,
@@ -12901,15 +12817,15 @@
   },
   {
     "tier": 5,
-    "question": "Days after the Pause Letter, Eliezer Yudkowsky — founder of the Machine Intelligence Research Institute (MIRI) — published an op-ed in *Time* magazine declining to sign the letter on grounds it didn't go far enough. He called for an indefinite, global, enforced halt on frontier AI training. He suggested data centers training unauthorized AI should be bombed if necessary. What's Yudkowsky's underlying claim?",
+    "question": "Eliezer Yudkowsky said in a March 2023 Time magazine op-ed that data centers training unauthorized AI should be bombed if necessary to enforce a worldwide pause. He runs the Machine Intelligence Research Institute (MIRI). What underlying claim is Yudkowsky making with that proposal?",
     "answer": "That sufficiently advanced AI will, by default, end human life as we know it — stopping it is worth measures usually reserved for war",
     "choices": [
       "That sufficiently advanced AI will, by default, end human life as we know it — stopping it is worth measures usually reserved for war",
-      "That AI is harmless — the entire safety debate is fabricated by venture capitalists for fundraising purposes during private investor calls",
-      "That AI should be banned only in Europe — North American and Asian AI development should be allowed to continue without any restriction",
-      "That AI development should be paused for one week per year — a symbolic gesture without any enforcement mechanism whatsoever should suffice"
+      "That AI is essentially harmless — the entire alignment-risk debate is fabricated by venture capitalists for fundraising during private investor calls",
+      "That AI should be paused only in Europe — North American and Asian AI development should be allowed to continue without any restriction",
+      "That AI should be paused for one week per year — a symbolic gesture without any enforcement mechanism whatsoever should suffice"
     ],
-    "context": "Yudkowsky has argued for two decades that AI alignment is unsolved, that the default outcome of superhuman AI is human extinction, and that current research is hurtling toward that outcome. The *Time* piece was a sharpening of long-standing positions, framed for a mass audience. Critics across the AI field — including many who take safety seriously — disagreed with both the predictions and the proposed remedies. The recognition skill: name positions by their authors and specifics. 'AI safety' is not one view; Yudkowsky's apocalypticism is one specific position with specific arguments, and conflating it with Hinton's near-term concerns or LeCun's skepticism erases real distinctions."
+    "context": "The Time piece followed the March 2023 'Pause Letter' open letter and was a sharpening of two decades of Yudkowsky's writing. Critics across the AI field — including many who take safety seriously — disagreed with both the predictions and the proposed remedies. Hinton's concerns are near-term and policy-shaped. LeCun argues the catastrophic scenarios are technically wrong. The recognition skill: name positions by their authors and specifics — 'AI safety' is not one view, and conflating Yudkowsky's apocalypticism with Hinton's labor-market concerns erases real distinctions."
   },
   {
     "tier": 5,
@@ -13873,15 +13789,15 @@
   },
   {
     "tier": 5,
-    "question": "The US Department of Defense, intelligence community, and federal civilian agencies are large customers of AI companies. OpenAI, Anthropic, Microsoft, Palantir, and others have substantial government contracts. What does customer-vendor relationship do to a company's willingness to push back on government requests?",
-    "answer": "Companies that depend on government revenue have weaker incentives to refuse government requests — even informal ones",
+    "question": "Palantir builds the data platform that ICE uses to track and arrest immigrants — case files, location data, social media, all stitched together for field agents. The contracts pay Palantir hundreds of millions of dollars a year. If the ACLU asks Palantir to stop selling the software because it is being used in raids on schools and churches, what is Palantir likely to do, and why?",
+    "answer": "Stay in the contract — when government revenue is large enough to matter to the company, the incentive to refuse a customer request is weak, even when the customer is doing something the company's engineers personally object to",
     "choices": [
-      "Companies that depend on government revenue have weaker incentives to refuse government requests — even informal ones",
-      "Government contracts always come with First Amendment guarantees — vendors are constitutionally required to resist requests",
-      "Government contracts ban political speech — vendors cannot publicly comment on policy issues",
-      "Government contracts have no effect on vendor behavior — every company treats federal customers identically to commercial ones"
+      "Stay in the contract — when government revenue is large enough to matter to the company, the incentive to refuse a customer request is weak, even when the customer is doing something the company's engineers personally object to",
+      "Drop the contract immediately — federal vendors are constitutionally required to honor any civil-liberties group's stop-work request that names a government customer in writing",
+      "Drop the contract automatically — every US tech vendor is contractually banned from selling to immigration enforcement agencies under existing federal law in 2025",
+      "Stay in the contract because it carries zero financial weight — Palantir-style federal contracts have never represented a meaningful share of any AI vendor's revenue in any quarter"
     ],
-    "context": "This pattern is general. A telecom company with substantial government revenue is less likely to fight a subpoena. A cloud provider with classified contracts is less likely to publicize requests for user data. AI companies with federal customers face the same pressures. The recognition skill: when a company also sells to government, the answers to 'will they refuse a request that conflicts with users' interests?' tend toward 'less likely.' Read the customer list as part of the company's incentive structure."
+    "context": "The same pattern shows up across the sector — telecom carriers cooperating with NSA wiretap requests in the 2000s, cloud providers quietly honoring law-enforcement subpoenas, AI companies competing for Pentagon and intelligence-agency contracts. Engineer protests at Google (Project Maven) and Microsoft (HoloLens for Army IVAS) happened — and the contracts mostly stayed. Recognition skill: when reading any AI policy debate, ask who the company sells to. Customer composition is part of the company's incentive structure, not a side note."
   },
   {
     "tier": 5,
@@ -13894,18 +13810,6 @@
       "They have no effect — police departments universally ignore the algorithmic recommendations"
     ],
     "context": "Predictive policing has a feedback-loop problem. The system trains on past arrest data; past arrests are concentrated in places where police patrolled; so the system predicts more crime in those places; police patrol there more; more arrests get logged; the loop tightens. This isn't a glitch — it's the natural outcome of training on data that's a function of where you already are. Recognition skill: when an AI is trained on data that's a product of past human decisions, it can launder those decisions into 'objective' recommendations. The label changes; the bias persists."
-  },
-  {
-    "tier": 5,
-    "question": "By 2025, frontier AI models were largely built by five companies: OpenAI, Anthropic, Google, Meta, Microsoft (with significant cross-investments). Open-source alternatives exist but typically lag the frontier by some margin. What's the structural concern about this concentration?",
-    "answer": "A small number of firms set the defaults — content policies, refusal patterns, alignment choices — for billions of users, with limited democratic input",
-    "choices": [
-      "A small number of firms set the defaults — content policies, refusal patterns, alignment choices — for billions of users, with limited democratic input",
-      "A small number of firms means perfect competition — five firms is the textbook definition of a free market",
-      "A small number of firms eliminates risk — concentration is the safest possible market structure",
-      "A small number of firms is impossible — there are no fewer than 500 frontier AI providers in 2025"
-    ],
-    "context": "When five firms produce the systems that hundreds of millions of people interact with daily for information, writing, research, and personal advice, those firms' product choices have unusual reach. Whether GPT or Claude or Gemini refuses a particular request affects what answers users can get. The choices are not necessarily wrong — but the concentration means errors propagate fast and corrections require either internal company decisions or external pressure. Recognition skill: 'oligopoly' isn't a slur; it's a market structure with predictable dynamics — coordinated behavior, high barriers to entry, and outsized influence on related industries."
   },
   {
     "tier": 5,
@@ -14137,15 +14041,15 @@
   },
   {
     "tier": 5,
-    "question": "Section 230 of the Communications Decency Act (1996) gives online platforms broad immunity for content posted by users. Debates around AI-generated content have raised a structural question: does Section 230's immunity extend to content that an AI service itself produces? The Supreme Court has not resolved it directly, and lower courts have split. What's the recognition?",
-    "answer": "Section 230 was written for a pre-AI internet — when the platform's own AI generates content rather than hosting a user's post, the immunity question is genuinely unsettled and case law is still being made",
+    "question": "Megan Garcia's wrongful-death suit against Character.AI argues the chatbot's intimate conversations with her 14-year-old son Sewell Setzer contributed to his suicide. Character.AI is invoking Section 230 (the 1996 law shielding online platforms from user-posted content). What question does the case force the courts to decide?",
+    "answer": "When the platform's own AI generated the content — not a user — is Section 230's shield supposed to apply? Lower courts have split, the Supreme Court has not ruled, and the answer will shape AI liability for years",
     "choices": [
-      "Section 230 was written for a pre-AI internet — when the platform's own AI generates content rather than hosting a user's post, the immunity question is genuinely unsettled and case law is still being made",
-      "Section 230 explicitly covers all AI-generated content under its 1996 wording — every chatbot output is immunized identically to user posts, with no ambiguity",
-      "Section 230 explicitly excludes all AI-generated content from immunity protection — every chatbot output is fully actionable in court without any defense",
-      "Section 230 has been entirely repealed by Congress — the statute was formally removed from US law in 2023 and replaced by an AI-specific liability regime"
+      "When the platform's own AI generated the content — not a user — is Section 230's shield supposed to apply? Lower courts have split, the Supreme Court has not ruled, and the answer will shape AI liability for years",
+      "Section 230's text covers all AI-generated content automatically — every chatbot output is immunized identically to a user's forum post and no court has ever questioned that reading in any state",
+      "Section 230 was formally repealed by Congress in 2023 — the statute was struck from the US code and replaced by a brand-new AI-specific liability regime, so this case is governed by new law",
+      "Section 230 explicitly excludes all AI-generated content from any immunity — every chatbot output is fully actionable in every court with no platform defense available at any level"
     ],
-    "context": "Section 230's 1996 wording covers 'information provided by another information content provider.' When a platform's own AI generates the content, who's the 'information content provider'? Courts have begun grappling with this in cases involving Character.AI, Replika, and similar services. The legal answer will likely take years and may differ across jurisdictions. The recognition skill: a statutory framework written for one technology can fail to map cleanly onto a later one, and the legal limbo affects what AI services do (and don't) say to users."
+    "context": "Section 230 protects platforms for 'information provided by another information content provider' — clearly a user, in 1996. When the platform's AI is the content provider, the statutory text does not map cleanly. Similar questions are pending against Replika and other companion services. Recognition skill: laws written for one technology can fail to fit a later one, and the legal limbo itself shapes product behavior — under fear of liability, services get more cautious; under broad immunity, they get freer (and resulting harms are not litigable)."
   },
   {
     "tier": 5,
@@ -14521,15 +14425,15 @@
   },
   {
     "tier": 5,
-    "question": "Frontier AI training requires very large quantities of specialized chips (mostly Nvidia H100s and successors), large amounts of electricity, and large physical data centers. By the mid-2020s, the supply was concentrated in a small number of cloud providers (Microsoft Azure, Amazon Web Services, Google Cloud, Oracle, CoreWeave). What's the structural recognition?",
-    "answer": "Compute is the actual bottleneck for frontier AI — concentration of compute supply means a handful of cloud providers function as gatekeepers with influence over who can build powerful models",
+    "question": "In early 2024, Sam Altman flew to Saudi Arabia and the UAE asking for up to $7 trillion in funding — more than the GDP of every country except the US and China — to build AI chip fabs. He did not go to Silicon Valley venture funds. He went to sovereign wealth. What does that trip reveal about what is actually bottlenecking frontier AI?",
+    "answer": "Compute — chips, electricity, and the data centers to house them — is the real bottleneck for frontier AI, and the amounts of capital required have grown beyond what private US venture funds can supply alone",
     "choices": [
-      "Compute is the actual bottleneck for frontier AI — concentration of compute supply means a handful of cloud providers function as gatekeepers with influence over who can build powerful models",
-      "Compute is universally distributed across all researchers — every academic and independent researcher has equal access to frontier hardware through federal allocation programs",
-      "Compute has no bottleneck of any kind — frontier AI requires only commodity hardware available at any retail electronics store for under a thousand dollars",
-      "Compute is irrelevant to AI capability outcomes — every modern model produces identical results regardless of how much training compute is committed to building it"
+      "Compute — chips, electricity, and the data centers to house them — is the real bottleneck for frontier AI, and the amounts of capital required have grown beyond what private US venture funds can supply alone",
+      "Algorithms are the bottleneck — Altman needed sovereign funding only because his existing research team had run out of ideas for any model architecture beyond standard transformers in commercial use",
+      "Talent is the bottleneck — Altman flew abroad only to recruit individual machine-learning researchers from foreign universities, not to fund any chip or data-center construction at all",
+      "Nothing is bottlenecking AI development — Altman's trip was purely ceremonial and no actual funding or chip-manufacturing capacity changed hands in any negotiation with any foreign party"
     ],
-    "context": "Microsoft's investment in OpenAI is partly compute access; Anthropic's deals with Amazon and Google are similar. The cloud providers' decisions about pricing and access (and government decisions about export controls) shape who can train competitive models. The chip side (Nvidia's near-monopoly on training accelerators) compounds the concentration. Recognition skill: read the compute supply chain as part of any AI policy question — the physical layer determines who actually gets to play, and the policy levers there are sometimes more consequential than the model-level rules."
+    "context": "OpenAI's Stargate compute project, announced January 2025, was partly funded by MGX (UAE-affiliated). Cloud-provider concentration (Microsoft Azure, Amazon Web Services, Google Cloud) and chip-vendor concentration (Nvidia's H100 and successors) compound the bottleneck. Recognition skill: when you read AI policy, read the compute supply chain too. The physical layer determines who gets to build frontier models, and the policy levers there are sometimes more consequential than the model-level rules everyone argues about."
   },
   {
     "tier": 5,
@@ -14545,75 +14449,27 @@
   },
   {
     "tier": 5,
-    "question": "AI-safety research funding through the 2020s came predominantly from a small number of sources: Open Philanthropy (Dustin Moskovitz, Cari Tuna), the now-defunct FTX Future Fund, Survival and Flourishing Fund, and a handful of frontier-AI labs' own teams. What's the structural recognition?",
-    "answer": "When a research field's funding flows from a small number of sources, the field's questions, methods, and conclusions tend to track those funders' priorities — pluralism in funding sources is part of pluralism in ideas",
+    "question": "In November 2023, OpenAI's board fired Sam Altman on a Friday. Within 48 hours, Microsoft offered to hire him and the entire research team — and the offer was credible because OpenAI's models ran on Microsoft Azure. By Wednesday, the board had reversed itself and Altman was back. What does that week reveal about Microsoft's $13 billion investment in OpenAI?",
+    "answer": "The cloud-compute dependency made Microsoft's leverage structural, not just financial — 'investor' understated the relationship, because OpenAI could not easily move its training infrastructure between providers mid-run",
     "choices": [
-      "When a research field's funding flows from a small number of sources, the field's questions, methods, and conclusions tend to track those funders' priorities — pluralism in funding sources is part of pluralism in ideas",
-      "When a research field's funding flows from few sources, the work is unaffected — researchers operate identically regardless of who pays",
-      "When a research field's funding flows from few sources, all conclusions are universally rejected — concentration discredits the entire field automatically",
-      "When a research field's funding flows from few sources, federal regulation requires immediate dispersal — funding concentration is constitutionally prohibited"
+      "The cloud-compute dependency made Microsoft's leverage structural, not just financial — 'investor' understated the relationship, because OpenAI could not easily move its training infrastructure between providers mid-run",
+      "Microsoft had no meaningful leverage in any direction — the company operated as a neutral arms-length vendor of cloud services with zero involvement in OpenAI personnel or governance decisions",
+      "Microsoft's leverage was banned under existing antitrust law — federal regulators had already forbidden any partnership of this structure between cloud providers and any AI company in 2025",
+      "Microsoft's leverage existed but had zero financial weight — the Azure compute commitment represented under one percent of OpenAI's training spend over any annual reporting period"
     ],
-    "context": "Open Philanthropy alone has accounted for a large share of public 'AI safety' grants. Frontier-AI labs (OpenAI, Anthropic, DeepMind, Meta FAIR) fund their own safety teams whose work understandably reflects their employers' interests. Academic AI safety is small compared with academic AI in general. The result is that 'what AI safety researchers think' is a function of who funds the work — and the recognition skill is to read the funding sources as part of reading the work. This is not unique to AI but is concentrated in AI to an unusual degree."
+    "context": "The FTC opened an inquiry in January 2024 into the Microsoft-OpenAI partnership structure under antitrust law, asking whether the deal was effectively a merger that should have been reviewed as one. The same kind of structural dependency exists elsewhere — Anthropic's Amazon and Google deals include compute commitments; xAI runs partly on Oracle. Recognition skill: read 'investor' carefully when the investor is also the cloud provider. The compute relationship is harder to exit than equity, and that shapes who actually steers."
   },
   {
     "tier": 5,
-    "question": "Most major AI companies (OpenAI, Anthropic, Google DeepMind, Meta, xAI) have internal 'alignment' or 'safety' teams, but face commercial pressure to ship. High-profile safety researchers (Ilya Sutskever, Jan Leike, Geoffrey Hinton) have left after disputes over that balance. What's the recognition?",
-    "answer": "Internal safety teams operate within commercial constraints — they can shape work at the margin, but the company's direction is set by leadership and investors, and the team has limited leverage in ship-versus-pause conflicts",
+    "question": "Sam Altman flew to Saudi Arabia and the UAE in 2024 to pitch a multi-trillion-dollar AI chip-fab plan. Within a year, sovereign wealth funds — UAE's MGX, Saudi PIF, Singapore's Temasek — were investors in major US AI firms and founding partners in OpenAI's Stargate compute project. What's the kid's recognition?",
+    "answer": "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
     "choices": [
-      "Internal safety teams operate within commercial constraints — they can shape work at the margin, but the company's direction is set by leadership and investors, and the team has limited leverage in ship-versus-pause conflicts",
-      "Internal safety teams at frontier AI companies have total veto power over every product ship — no model launch can proceed without unanimous internal safety-team approval at every step",
-      "Internal safety teams at frontier AI companies do not exist in practice — no frontier lab in the United States or Europe employs any researcher under any safety-related job title",
-      "Internal safety teams at frontier AI companies are externally controlled by federal regulators — every safety decision is directly managed by a designated federal agency under existing US law"
+      "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
+      "Federal law strictly bars all foreign government investment in any US AI company — sovereign-wealth stakes in this sector are forbidden by statute and impossible in practice in any quarter",
+      "No foreign sovereign-wealth fund holds any stake in any frontier US AI company — Stargate was funded purely by domestic venture capital and Microsoft cloud credits with no other capital sources",
+      "Every frontier US AI lab is majority-owned by a foreign sovereign-wealth fund — domestic investors have been entirely displaced from the sector by foreign governments in every disclosure today"
     ],
-    "context": "The OpenAI 'Superalignment' team disbanded in May 2024 after Sutskever and Leike departed. Anthropic was founded by ex-OpenAI safety-team members. Hinton's 2023 departure from Google was partly about the freedom to speak about risk concerns. The pattern: when safety constraints would substantially slow shipping, the safety team usually loses; when safety can be implemented without much shipping cost, it usually wins. Recognition skill: the existence of an internal safety team is necessary but nowhere near sufficient for external assurance that risks are taken seriously — read the staffing, the resignations, and the published red-team work."
-  },
-  {
-    "tier": 5,
-    "question": "Microsoft's roughly $13 billion investment in OpenAI, structured partly as compute credits and partly as equity-like instruments, made the two organizations interdependent. Microsoft gets near-exclusive cloud access for OpenAI's models and integration rights; OpenAI gets the compute and capital to operate. What's the structural recognition?",
-    "answer": "When a frontier AI company depends on a single cloud provider for its core operations, the cloud provider has substantial leverage — the relationship is closer to a partnership than to ordinary vendor-customer dynamics",
-    "choices": [
-      "When a frontier AI company depends on a single cloud provider for its core operations, the cloud provider has substantial leverage — the relationship is closer to a partnership than to ordinary vendor-customer dynamics",
-      "When a frontier AI company depends on a single cloud provider, the relationship has no leverage — the cloud provider operates as a neutral vendor in every interaction",
-      "When a frontier AI company depends on a single cloud provider, the relationship is banned by antitrust — no such partnership is legally permissible",
-      "When a frontier AI company depends on a single cloud provider, the cloud provider has zero influence — every AI company operates independently of its compute supplier"
-    ],
-    "context": "The November 2023 OpenAI board crisis revealed the depth of Microsoft's leverage — Microsoft's offer to hire Altman and the entire research team was credible because OpenAI's operations ran on Microsoft Azure. The FTC opened an inquiry in January 2024 into the partnership structure under antitrust law. Recognition skill: 'investor' understates what Microsoft's role in OpenAI actually is, and 'partner' may understate what cloud-compute dependence creates structurally — you can't easily switch your training infrastructure between providers in the middle of building models."
-  },
-  {
-    "tier": 5,
-    "question": "Anthropic, founded in 2021 by ex-OpenAI safety researchers, attracted large investments from Amazon (announced up to $4 billion) and Google (announced up to $2 billion). The deals included compute commitments and gave each investor model-access arrangements. What's the pattern with Microsoft's OpenAI deal?",
-    "answer": "The frontier AI field has consolidated around partnerships between AI labs and the three largest cloud providers — independent labs without a cloud-provider partner have become rare at the frontier",
-    "choices": [
-      "The frontier AI field has consolidated around partnerships between AI labs and the three largest cloud providers — independent labs without a cloud-provider partner have become rare at the frontier",
-      "The frontier AI field operates fully independently of cloud providers in every case — no major frontier lab has any active partnership with any compute supplier on any continent",
-      "The frontier AI field is currently dominated by hundreds of independent labs — no real consolidation has occurred and the market remains fragmented across dozens of competing companies",
-      "The frontier AI field is universally federally owned in the US — every American frontier lab is a government agency operating under direct congressional appropriation rather than private capital"
-    ],
-    "context": "Microsoft-OpenAI, Amazon-Anthropic, Google-Anthropic, and Google's own internal DeepMind cover much of the frontier. xAI relies on Oracle and its own compute build-out. Meta builds in-house on internal compute. The pattern across the industry is unmistakable: frontier AI is capital-intensive enough that the largest cloud and tech firms are structurally embedded in the labs' operations. Recognition skill: the cloud-provider partnerships are not incidental to AI development — they are part of who gets to operate at the frontier, and how independent the labs actually are from their largest customers and investors."
-  },
-  {
-    "tier": 5,
-    "question": "Lobbying disclosures (publicly available through OpenSecrets and similar databases) show that frontier AI companies — OpenAI, Anthropic, Meta, Microsoft, Google — substantially increased their Washington lobbying spending starting around 2022-2023. Lobbying targets included Congress, federal agencies, and state legislatures. What's the recognition?",
-    "answer": "AI policy is shaped by companies with substantial lobbying budgets, while open-source advocates and civil-society groups have far less — the resulting policy reflects whose lobbyists were in the room",
-    "choices": [
-      "AI policy is shaped by companies with substantial lobbying budgets, while open-source advocates and civil-society groups have far less — the resulting policy reflects whose lobbyists were in the room",
-      "AI policy is shaped entirely through public referenda in every state — no commercial lobbying occurs in the AI sector under existing federal disclosure requirements",
-      "AI policy lobbying is universally banned by federal statute — federal law prohibits any private company from spending any money on AI lobbying in Washington",
-      "AI policy lobbying has zero effect on legislative outcomes — every annual disclosure across the past decade shows that no lobbying spending has changed any vote in Congress"
-    ],
-    "context": "Lobbying registrations and quarterly disclosures are public. The standard pattern across industries: when policy attention rises, lobbying spending follows. The recognition is the same as in other regulated sectors — pharmaceutical, tobacco, financial — but the AI case is sharpened by the small number of frontier firms and the technical complexity that lets lobbyists shape the implementation details where the regulatory rubber actually meets the road. Recognition skill: read the lobbying disclosures as part of reading the resulting regulation. Who paid for the meetings determines a lot about what made it into the final rule."
-  },
-  {
-    "tier": 5,
-    "question": "By the mid-2020s, sovereign wealth funds and government-affiliated investors from the UAE, Saudi Arabia, Singapore, and others held substantial stakes in major US AI companies through funds like Mubadala, the Public Investment Fund, MGX, and Temasek. What's the structural recognition?",
-    "answer": "Foreign government capital is now embedded in the ownership of major US AI companies — the investments don't necessarily compromise the companies but they create dependencies and influence relationships worth tracking",
-    "choices": [
-      "Foreign government capital is now embedded in the ownership of major US AI companies — the investments don't necessarily compromise the companies but they create dependencies and influence relationships worth tracking",
-      "Foreign government capital is fully prohibited from US AI investment — federal law bars any non-US ownership of any company doing artificial-intelligence research domestically",
-      "Foreign government capital is irrelevant to US AI development — no foreign-owned sovereign-wealth fund holds any stake in any frontier American AI company by 2025",
-      "Foreign government capital fully controls US AI development — every frontier AI company is majority-owned by a foreign sovereign-wealth fund based outside North America by year"
-    ],
-    "context": "MGX (UAE-affiliated) was a founding partner in the Stargate compute investment announced in early 2025. Mubadala has positions in multiple AI infrastructure plays. Saudi PIF has signaled major AI ambitions. CFIUS (Committee on Foreign Investment in the US) reviews some transactions, with mixed track record. Recognition skill: the politics of AI is not purely domestic — foreign investors with their own government's interests are part of the capital stack of frontier AI, and that shapes what the companies can and can't do."
+    "context": "MGX (UAE) was a founding partner in the Stargate compute investment announced January 2025. Saudi PIF has signaled major AI ambitions tied to its Vision 2030 plan. CFIUS — the Committee on Foreign Investment in the US — reviews some of these transactions with a mixed track record. Recognition skill: the politics of AI is not purely domestic. Foreign investors with their own government's interests are part of the capital stack, and that shapes what these companies can and cannot do."
   },
   {
     "tier": 5,
@@ -14641,27 +14497,15 @@
   },
   {
     "tier": 5,
-    "question": "Much of the foundational AI research that produced modern systems — neural networks, expert systems, computer vision, natural language processing — was funded by the US Department of Defense through DARPA and predecessors over decades. The current frontier AI systems sit on that history of public investment. What's the recognition?",
-    "answer": "Modern frontier AI is partly a return on long-running public investment in basic research — value capture now flows mostly to private firms, raising real questions about the public's stake in the outcome",
+    "question": "Most of the AI a kid uses today came out of military research grants. DARPA paid for ARPANET (which became the Internet), the Stanford AI Lab's early work, computer-vision and natural-language-processing programs through the 1980s, and the PhD pipeline that trained the researchers now running OpenAI, Anthropic, and DeepMind. What is the recognition?",
+    "answer": "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
     "choices": [
-      "Modern frontier AI is partly a return on long-running public investment in basic research — value capture now flows mostly to private firms, raising real questions about the public's stake in the outcome",
-      "Modern frontier AI is purely private from start to finish — no government funding ever contributed to any foundational research at any point in the field's history",
-      "Modern frontier AI was developed in roughly three years from scratch — no decades-long research history preceded the rise of contemporary deep-learning systems",
-      "Modern frontier AI is fully publicly owned by the United States — every model from every major lab is the legal property of the US federal government under existing statute"
+      "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
+      "Modern frontier AI is purely private from start to finish — no government funding ever contributed to any foundational AI research anywhere in the world at any point in the field's history",
+      "Modern frontier AI was developed in roughly three years from scratch — no decades-long research history preceded the rise of contemporary deep-learning systems used at any current frontier lab worldwide",
+      "Modern frontier AI is fully publicly owned by the United States — every model from every major lab is the legal property of the US federal government under existing intellectual-property statute"
     ],
-    "context": "ARPANET, the Internet's predecessor; the Stanford AI Lab's early work; expert systems funding in the 1970s and 1980s; computer vision research at MIT, Stanford, CMU; deep learning's revival partly through Canadian and US government grants (NSERC, NSF). The talent pipeline (PhDs trained on federal funding) is itself a public investment. Recognition skill: the standard 'private innovation' framing obscures decades of public investment that made the current systems possible — the politics of who captures the resulting value is a live question."
-  },
-  {
-    "tier": 5,
-    "question": "The patent landscape in AI has expanded rapidly through the 2020s. Large companies and patent-trolls hold thousands of AI patents covering core techniques. The Federal Circuit's case law on AI patent eligibility is still being developed. What's the recognition?",
-    "answer": "Patent portfolios in AI function as competitive moats and litigation weapons — the ability to use a technique depends not just on whether you invented it but on who else has filed claims around it first",
-    "choices": [
-      "Patent portfolios in AI function as competitive moats and litigation weapons — the ability to use a technique depends not just on whether you invented it but on who else has filed claims around it first",
-      "Patent portfolios in AI are universally void by federal-court ruling — no AI technique of any kind is patentable under current US patent law on subject-matter eligibility",
-      "Patent portfolios in AI are universally enforced without challenge — every company files perfect patents that are accepted as valid by the courts in every infringement case",
-      "Patent portfolios in AI have zero effect on industry practice — every technique is freely available worldwide regardless of any patent claims filed by any major company"
-    ],
-    "context": "IBM, Microsoft, Google, Meta, and several Chinese firms hold large AI patent portfolios. Patent litigation in AI has begun in earnest by the mid-2020s. The legal framework is evolving — the Federal Circuit and PTO have been working through what counts as 'patent-eligible subject matter' in AI. Recognition skill: like in other technology fields (smartphones, biotech), patent portfolios shape who can operate at the frontier and on what terms — and the legal terrain favors well-resourced incumbents who can afford the litigation costs."
+    "context": "This pattern repeats across other federally-funded technologies. The Internet, GPS, the touchscreen interface, and major drug classes (mRNA among them) trace lineages to NIH, NSF, DOD, and DOE research dollars. The current value capture in AI flows to a small number of private firms — partly through patents, partly through compute moats, partly through talent concentration. Recognition skill: the standard 'private innovation' framing obscures the long public-investment lineage, and the politics of who reaps the resulting upside is a live, unresolved question."
   },
   {
     "tier": 5,
@@ -14677,18 +14521,6 @@
   },
   {
     "tier": 5,
-    "question": "The UK Online Safety Act (passed 2023, enforcement starting 2025) requires online platforms to address illegal content and 'harmful' content for children, with Ofcom as the regulator and large fines (up to 10% of global revenue) for non-compliance. The Act includes message-encryption provisions that prompted Apple and Signal to consider withdrawing services. What's the recognition?",
-    "answer": "National content rules can force global platforms into hard choices — either limit service in the country, weaken encryption everywhere, or absorb compliance costs smaller competitors cannot match",
-    "choices": [
-      "National content rules can force global platforms into hard choices — either limit service in the country, weaken encryption everywhere, or absorb compliance costs smaller competitors cannot match",
-      "National content rules are universally identical across jurisdictions — every country imposes the same legal requirements on every platform serving its citizens under any framework",
-      "National content rules have no extraterritorial effect on the global internet — UK law cannot in any way influence the decisions made by US-based platforms in their day-to-day work",
-      "National content rules have been formally repealed worldwide by international treaty — no country in 2025 actively regulates online platforms or their content-moderation choices"
-    ],
-    "context": "The Online Safety Act's encryption-related provisions (which Ofcom said it would not initially exercise) drew direct warnings from Apple, Signal, and WhatsApp about possible withdrawal. The general pattern: when a large market regulates content or encryption, the global services either weaken their protections worldwide to comply, segment their services by country, or withdraw from the market. Recognition skill: 'national content rules' for the largest markets effectively shape what's available everywhere, because the platforms aren't separable cleanly by country."
-  },
-  {
-    "tier": 5,
     "question": "Australia's online-safety regulators have pushed for facial-age-verification rules; Canada's AI and Data Act has been in development since 2022; Brazil passed an AI bill in 2024; India has explored AI advisories. The result is that 'AI policy' is being negotiated across dozens of legal systems simultaneously, with different priorities and assumptions. What's the recognition?",
     "answer": "AI regulation is now a multi-jurisdiction puzzle, not a single national-policy question — global services must comply with the strictest applicable rule in each market, partition their offerings, or withdraw",
     "choices": [
@@ -14698,5 +14530,29 @@
       "AI regulation produces zero compliance burden for any global service — every multinational platform operates under a single unified set of rules harmonized worldwide by 2024"
     ],
     "context": "By the mid-2020s, the most-compliance-relevant AI rules across major jurisdictions included the EU AI Act, US state laws (Colorado, California, NYC), UK Online Safety Act, Canadian C-27 / AIDA, Brazilian AI bill, Korean AI Basic Act, Australian online-safety expansions, Chinese AI rules, and a long tail of others. Multinational services face a layered compliance picture. Recognition skill: 'how is AI being regulated?' is no longer well-asked at a country level — it's a global-architecture question, and the answer at any moment depends on the most-restrictive rule in any market the service operates in."
+  },
+  {
+    "tier": 5,
+    "question": "A 16-year-old researches a poem about death for English class on her school Chromebook. Gaggle's AI flags the search, the principal calls her in, and the incident enters a permanent file that follows her to college admissions. By 2025, federal courts are hearing First and Fourth Amendment challenges to these tools. What harm are the lawsuits trying to address?",
+    "answer": "Low-accuracy AI surveillance generates false-positive 'risk' flags that create paper trails students cannot see or correct — the data is retained for years and shapes how adults see the student",
+    "choices": [
+      "Low-accuracy AI surveillance generates false-positive 'risk' flags that create paper trails students cannot see or correct — the data is retained for years and shapes how adults see the student",
+      "Such surveillance is universally illegal in all 50 US states — no district anywhere may scan student communications under any circumstance under existing federal statute today in any state",
+      "Such surveillance has been proven 100% accurate in flagging only genuine self-harm risks — false positives are mathematically impossible under the machine-learning architecture used by vendors",
+      "Such surveillance creates no records of any flagging incident — every alert is auto-deleted within minutes and no student data of any kind is retained by any vendor under any industry practice"
+    ],
+    "context": "Gaggle, GoGuardian, Bark, and Securly scan student emails, documents, browser history, and chats on school accounts. The tools are paid for partly with federal COPS grants and partly out of district budgets. Florida, New York, Illinois, and California have passed restricting laws. ACLU and EFF have litigated several cases. Recognition skill: the surveillance is sold as 'safety,' but the burden of false positives falls on students with the least leverage to push back — and the retained data outlasts whatever crisis it was supposed to address."
+  },
+  {
+    "tier": 5,
+    "question": "A 14-year-old uses a free 'undress' app to generate fake nude images of female classmates from their Instagram photos, then shares them in a Snapchat group of 30 boys who reshare. The girls find out months later. By 2024, 28 states have laws criminalizing this. What is the practical landscape for the victims?",
+    "answer": "Criminal charges are possible in most states but vary widely, the images are nearly impossible to fully scrub from the internet, and the social harm — already done — is what the new laws are mostly trying to deter future kids from causing",
+    "choices": [
+      "Criminal charges are possible in most states but vary widely, the images are nearly impossible to fully scrub from the internet, and the social harm — already done — is what the new laws are mostly trying to deter future kids from causing",
+      "Federal law guarantees all such images are removed from every platform within 24 hours — every state AG has injunction authority and uses it on every reported incident with no delays",
+      "No US state has any law against creating or sharing AI-generated nude images of identifiable minors — the conduct remains fully legal in 2025 and cannot be prosecuted criminally or sued civilly",
+      "Federal law gives every creator of such an image an automatic 20-year felony sentence — no state varies the punishment and prosecutorial discretion plays no role anywhere in the United States"
+    ],
+    "context": "The 2024 federal TAKE IT DOWN Act and state laws across Texas, Virginia, New York, and California now criminalize creating or sharing non-consensual sexually explicit deepfakes — including of minors. Takedown and removal-request processes exist but are slow and incomplete. The deeper problem: by the time the victim learns, the social damage is done. Recognition skill: 'it's just a joke' or 'it's fake' is no defense — not for the perpetrator under the new criminal-law landscape, and not for the victim's experience."
   }
 ]
