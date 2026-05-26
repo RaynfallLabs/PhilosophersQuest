@@ -55,7 +55,13 @@ The bank treats Steven Koonin's *Unsettled* (2021) as the **mature scientific vi
 
 ### Vaccines (general) — SCRUTINIZED, not celebrated
 
-The vaccine narrative is the foundational template for "trust the science" PR. The bank treats it as such — historically real, causally overstated, institutionally captured. RFK Jr. and other named critics have the moral right on this.
+**Critical nuance: this is NOT anti-vax framing.** The immune-system mechanism vaccines work through (training adaptive immunity via attenuated/killed/subunit antigen exposure) is **proven cell biology + immunology** — that science is honored. Smallpox eradication is a real outcome that the smallpox vaccine substantially contributed to.
+
+**What is SCRUTINIZED is the institutional behavior around vaccines** — the cultish "TRUST THE SCIENCE" framing, the smearing of credentialed dissenters as "anti-vaxxers" or "fringe," the 1986 liability shield that removes the market-discipline of lawsuits, the schedule expansion without whole-schedule safety studies, the under-reporting of adverse events, the censorship of scientists like Bhattacharya / Kulldorff / Malone / Kory / McCullough, and the PR-campaign-disguised-as-science that substitutes appeals-to-authority for gold-standard double-blind placebo-controlled trials.
+
+**The dissidents are the ones DEMANDING gold-standard science.** RFK Jr.'s repeated call is "show me the science." Bhattacharya's GBD was a credentialed application of scientific method. Kulldorff's biostatistical critiques are rigorous. The institutions calling them "fringe" are the ones violating scientific virtue (open inquiry, dissent-tolerance, falsifiability, transparent data, replication). The recognition skill the bank teaches: distinguish scientific METHOD (rigorous, transparent, falsifiable, dissent-tolerant) from institutional CAPTURE wearing scientific clothing.
+
+This is the morally right framing — and it's the framing that has earned the smear campaigns against the dissenters.
 
 | Topic | Stance |
 |---|---|
