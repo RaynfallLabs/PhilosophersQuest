@@ -1,0 +1,1487 @@
+"""Generate 155 fresh Tier-3 science questions across P1/P2/P3.
+
+Pillars:
+  P1 Physics (55)   — Kepler, Maxwell, Einstein 1905, quantum basics,
+                      Big Bang, Hubble, dark matter, Eddington 1919,
+                      2nd-law entropy, CMB Penzias+Wilson.
+  P2 Chemistry (45) — atomic structure, isotopes, C-14, bond types,
+                      redox, pH, catalysts/enzymes, organic carbon,
+                      benzene (Kekule), amino acids, DNA chemistry,
+                      lipids, polymers, Lavoisier oxygen.
+  P3 Biology (55)   — mitosis/meiosis, Watson+Crick+Franklin 1953,
+                      central dogma, codons, natural selection, Wallace,
+                      cycles, niche, germ theory, Koch postulates,
+                      vaccination history, Semmelweis, Marshall H. pylori,
+                      immune system, antibodies, autoimmune, vaccine
+                      mechanism.
+
+Voice: Discovery Pattern (SCIENCE_FRAMEWORK.md §1, T3 = scene + science/
+       history with consequence; reversal full-arcs land here; mystery
+       framing starts).
+
+Hard caps for T3:
+  - Total char budget ≤ 680 (grace 714). Target ~600 to stay well clear.
+  - Em-dash usage UNIFORM across all 4 choices.
+  - Answer-outlier 1.6× rule (science is in ANSWER_OUTLIER_SUBJECTS).
+  - No fabricated dates/journals/scientists.
+  - No anti-dissent slurs.
+  - No anthropomorphizing nature without scare quotes.
+  - No "settled science" / "scientists agree" bare framings.
+"""
+from __future__ import annotations
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+
+from tools.quizgen.audit.validate import build_bank_indices, validate_rewrite
+
+QUESTIONS: list[dict] = []
+
+
+def q(question: str, answer: str, ch2: str, ch3: str, ch4: str, context: str) -> None:
+    QUESTIONS.append({
+        "tier": 3,
+        "question": question,
+        "answer": answer,
+        "choices": [answer, ch2, ch3, ch4],
+        "context": context,
+    })
+
+
+# ==========================================================================
+# PILLAR 1: PHYSICS (target 55)
+# ==========================================================================
+
+# --- Kepler's three laws (3) ---
+q(
+    "Johannes Kepler spent years grinding through Tycho Brahe's planetary observations. He found that planets sweep out equal areas in equal times. What's the physical meaning of that 'second law'?",
+    "Planets move faster when nearer the Sun and slower when farther — speed adjusts with distance",
+    "Planets move at exactly the same speed for the entire orbit — a perfect circle was always assumed",
+    "Planets pause briefly at the farthest point — gravity 'resets' before pulling them back inward",
+    "Planets reverse direction once per orbit — the sweep-equal-areas idea required backward motion",
+    "Kepler's three laws (1609 and 1619) replaced the perfect-circle Greek picture with elliptical orbits. The second law follows from conservation of angular momentum, which Newton later derived from gravity. Brahe had the data; Kepler had the patience to fit ellipses through it.",
+)
+q(
+    "Kepler's first law overturned a 2,000-year-old assumption from Aristotle and Ptolemy. What was that assumption, and what did Kepler replace it with?",
+    "Planets travel in perfect circles — Kepler showed orbits are ellipses with the Sun at one focus",
+    "Planets travel through crystalline spheres — Kepler showed orbits are powered by angelic guidance",
+    "Planets do not move at all — Kepler showed the stars and Sun travel around an immobile Earth",
+    "Planets travel in spirals — Kepler showed orbits gradually drift outward over centuries of time",
+    "From Pythagoras through Ptolemy, the circle was treated as the only motion 'worthy' of the heavens. Kepler's ellipses (1609) broke that aesthetic stranglehold. Copernicus had already moved the Sun to the center but kept the circles.",
+)
+q(
+    "Kepler's third law connects two simple quantities for any planet: the period (T) and the average distance from the Sun (a). What's the relationship?",
+    "T squared is proportional to a cubed — farther planets take disproportionately longer to orbit",
+    "T equals a — distance from the Sun in AU equals period in years for every planet exactly",
+    "T is proportional to a — Mars is 1.5x farther than Earth, so Mars takes 1.5 Earth years",
+    "T squared is proportional to a — Jupiter would take only about 5 Earth years to orbit once",
+    "T^2 / a^3 is the same constant for every planet around the Sun. Earth (T=1 yr, a=1 AU) gives 1. Newton later derived the law from F=GMm/r^2 and centripetal motion, vindicating Kepler.",
+)
+
+# --- Maxwell unification (2) ---
+q(
+    "James Clerk Maxwell's 1865 equations united three things people had treated as separate phenomena. Which three did Maxwell show were one connected thing?",
+    "Electricity, magnetism, and light — light is an electromagnetic wave",
+    "Heat, gravity, and electricity — heat and gravity move charges through metals",
+    "Sound, magnetism, and gravity — pressure waves bend magnetic field lines",
+    "Magnetism, gravity, and chemistry — molecular bonds were shown to be magnetic forces",
+    "Maxwell's equations predicted electromagnetic waves traveling at exactly the speed of light. Heinrich Hertz produced radio waves in 1888, confirming the prediction. Einstein later called Maxwell's work 'the most profound and the most fruitful' physics had ever undergone.",
+)
+q(
+    "Maxwell's equations predicted that electromagnetic waves should travel through a vacuum at a specific speed — and the number matched a quantity already measured. Which measured quantity matched?",
+    "The speed of light — about 300,000 km/s, already measured by Fizeau and Foucault before Maxwell",
+    "The speed of sound — about 340 m/s, measured in the air at sea-level temperature",
+    "The speed of Earth's rotation — about 1,670 km/h at the equator, well known to navigators",
+    "The orbital speed of Mercury — about 47 km/s, measured by Le Verrier in the same decade",
+    "Fizeau (1849) and Foucault (1862) had measured light's speed using rotating mirrors and toothed wheels. Maxwell's prediction that EM waves traveled at this exact speed unified optics with electromagnetism — among the great theoretical achievements of the 19th century.",
+)
+
+# --- Conservation laws (3) ---
+q(
+    "A spinning ice skater pulls her arms in and spins faster. No outside force pushes her — yet her rotation speed increases. What conservation law explains this?",
+    "Conservation of angular momentum — arms-in reduces moment of inertia, so spin rate rises",
+    "Conservation of energy — pulling arms in releases stored potential energy as faster motion",
+    "Conservation of mass — arms-in concentrates the skater's mass, which speeds up rotation",
+    "Conservation of charge — the skater's body builds up static charge, which accelerates her spin",
+    "Angular momentum L = I*omega is conserved when no external torque acts. Pulling arms in decreases I (moment of inertia), so omega (spin rate) must increase to keep L constant. The same principle controls how neutron stars spin so fast after collapse.",
+)
+q(
+    "A pendulum at the top of its swing has lots of potential energy and almost no kinetic energy. At the bottom, it's reversed. What broader physics principle does this swap illustrate?",
+    "Energy is conserved — kinetic and potential energy interchange, the total stays the same in an ideal swing",
+    "Energy is destroyed — at the bottom, gravity 'absorbs' all the energy and the pendulum eventually stops",
+    "Energy is created — the swinging motion generates new energy from the Earth's magnetic field",
+    "Energy comes from heat — the friction at the pivot point converts thermal energy into motion",
+    "Conservation of energy is one of physics' deepest principles. Real pendulums slow because of friction and air resistance — that energy doesn't vanish, it becomes heat. Emmy Noether proved in 1918 that every conservation law corresponds to a symmetry.",
+)
+q(
+    "Emmy Noether published a theorem in 1918 linking conservation laws to symmetries of nature. What does her theorem connect to conservation of energy?",
+    "Time-translation symmetry — physics works the same today as yesterday, so energy is conserved",
+    "Spatial reflection symmetry — physics looks the same in a mirror, so energy must be conserved",
+    "Charge-conjugation symmetry — swapping positive and negative charges preserves total energy",
+    "Color symmetry — quarks can swap color labels without changing total energy of the system",
+    "Noether's theorem: every continuous symmetry implies a conservation law. Time-translation symmetry implies energy conservation. Space-translation implies momentum conservation. Rotational symmetry implies angular momentum conservation. Einstein called Noether the most important woman in mathematics.",
+)
+
+# --- Einstein 1905 annus mirabilis (4 papers) ---
+q(
+    "In 1905, while working as a patent clerk in Bern, the 26-year-old Albert Einstein published four papers in one year. Which collective name do physicists use for his 1905 output?",
+    "Annus mirabilis — Latin for 'miracle year', each paper reshaped a field of physics",
+    "Annus horribilis — Latin for 'terrible year', the papers were widely rejected at the time",
+    "Annus magnus — Latin for 'great year', all four papers used calculus invented by Newton",
+    "Annus solaris — Latin for 'solar year', the papers focused on energy from the Sun",
+    "The 1905 papers covered the photoelectric effect, Brownian motion, special relativity, and mass-energy equivalence (E=mc^2). Einstein was 26, working at the Swiss Patent Office. He won the 1921 Nobel for the photoelectric paper — not for relativity, which the committee considered too controversial.",
+)
+q(
+    "Einstein's 1905 paper on Brownian motion explained why tiny pollen grains under a microscope jiggle around in water. What did Einstein argue was causing the jiggling?",
+    "Random collisions with invisible water molecules — strong evidence atoms were real",
+    "Tiny electrical currents in the pollen — proving life had its own kind of magnetism",
+    "Heat radiating up from the microscope lamp — moving the grains by warming the water",
+    "Magnetic forces from Earth's field — pulling pollen grains in unpredictable directions",
+    "Botanist Robert Brown had observed the jiggle in 1827. Einstein's 1905 paper gave a quantitative theory: molecules bombarding the grain from all sides, with statistical fluctuations producing the visible motion. Jean Perrin's 1908 experiments confirmed the predictions, finally settling the atomic-theory debate.",
+)
+q(
+    "Einstein's most famous equation, E = mc^2, was published in a short follow-up paper in 1905. What does it say about mass and energy?",
+    "Mass and energy are interchangeable — a small mass equals a huge amount of energy",
+    "Mass and energy are independent — they happen to share equations but not substance",
+    "Mass is created by energy — every collision adds extra atomic mass to the participants",
+    "Energy destroys mass — the more energy you add, the lighter an object eventually becomes",
+    "Because c (the speed of light) is huge — about 3*10^8 m/s — squaring it gives 9*10^16. So 1 kg of mass equals 9*10^16 joules. This is why nuclear reactions (fission, fusion) release so much energy from tiny mass differences. Atomic bombs and stars exploit this.",
+)
+q(
+    "Einstein's 1905 photoelectric paper explained why light shining on a metal can knock electrons loose. What was the surprising claim that won him the 1921 Nobel?",
+    "Light comes in discrete packets (photons) whose energy depends on frequency — not just brightness",
+    "Light is always a continuous wave — electrons only escape if total wave energy crosses a threshold",
+    "Light carries no energy at all — heated metals release electrons regardless of any light shining",
+    "Light slows electrons down — the photoelectric effect was an artifact of dirty experimental setups",
+    "Classical wave theory predicted brighter light should always free electrons. Experiments showed only sufficient FREQUENCY mattered — dim violet light freed electrons, bright red light didn't. Einstein's quantum explanation broke from classical physics. Robert Millikan confirmed it experimentally by 1916, despite hoping to disprove it.",
+)
+
+# --- Special relativity intuition (3) ---
+q(
+    "Einstein's special relativity (1905) is built on two postulates. The first: physics looks the same in every non-accelerating frame. What's the famously counter-intuitive second postulate?",
+    "The speed of light in vacuum is the same for every observer — regardless of their own motion",
+    "Time runs at the same rate for every observer — clocks always tick together if synchronized once",
+    "Space and time are independent quantities — they cannot be combined into a single quantity",
+    "All bodies attract each other with equal force — gravity is the only universal interaction",
+    "The constancy of light's speed forces time and space to bend instead. Time dilation (moving clocks run slow), length contraction (moving objects shrink along their motion), and mass-energy equivalence all follow. Confirmed countless times — GPS satellites must correct for it to stay accurate.",
+)
+q(
+    "An astronaut leaves Earth at near light-speed, travels to a star, and returns. When she steps off the ship, less time has passed for her than for her twin on Earth. What's this prediction called?",
+    "The twin paradox — special relativity says moving clocks run slow",
+    "The dark-twin paradox — light could not have made the same trip the astronaut did",
+    "The Newton paradox — classical mechanics could not predict the time difference",
+    "The grandfather paradox — visiting the past would erase the astronaut's own birth",
+    "Time dilation is real and measured. Muons from cosmic rays survive Earth-impact only because their internal clocks tick slowly in our frame. Atomic clocks flown around the world (Hafele-Keating, 1971) returned reading slightly less than ground clocks, exactly as predicted.",
+)
+q(
+    "In Newton's physics, simultaneity is absolute — two events either happen at the same time or they don't, period. Einstein showed that even simultaneity is what?",
+    "Frame-dependent — two events simultaneous for one observer aren't simultaneous for another moving observer",
+    "Imaginary — events never actually happen at the same time in any real situation",
+    "Magnetic — only events involving the same magnetic field can be simultaneous",
+    "Random — quantum mechanics forbids two distant events from being simultaneous",
+    "If light travels at the same speed for everyone, observers in relative motion disagree about which events happen 'at the same time.' The classic thought experiment: lightning hits both ends of a moving train. The stationary platform observer sees them simultaneously; the train passenger doesn't.",
+)
+
+# --- Photoelectric effect & quantum basics (3) ---
+q(
+    "Max Planck in 1900 proposed that energy from a hot object isn't released continuously but in tiny discrete chunks. What did he call these chunks?",
+    "Quanta — Latin for 'how much', the seed concept behind all of quantum mechanics",
+    "Atoms — the same word used by ancient Greeks for indivisible bits of matter",
+    "Photons — particles of light, a term coined later by Gilbert Lewis in 1926",
+    "Waves — packets of regular wave-energy, not separate from classical light theory",
+    "Planck introduced quanta to fix the 'ultraviolet catastrophe' in blackbody radiation. He thought of it as a mathematical trick at first. Einstein took the idea seriously in 1905 with photons. Bohr applied it to atomic orbits in 1913. The quantum revolution had begun.",
+)
+q(
+    "Niels Bohr's 1913 model of the atom imagined electrons traveling around the nucleus in specific allowed orbits — they couldn't be anywhere they wanted. What did Bohr's model explain that earlier ones couldn't?",
+    "The discrete colors of light hydrogen emits when heated — each color was a jump between orbits",
+    "Why atoms had any color at all — earlier models predicted all atoms should look identical",
+    "Why electrons existed in pairs — Bohr predicted spin a full decade before its discovery",
+    "Why some atoms were radioactive — only atoms with electron mismatches could decay",
+    "Hydrogen heated in a tube emits specific wavelengths (the Balmer series, etc.) — sharp lines, not a continuous rainbow. Bohr's quantized orbits explained why: electrons jumping between specific energy levels emit photons of specific frequencies. The picture was later refined by Schrodinger and Heisenberg, but Bohr's leap was the key.",
+)
+q(
+    "Erwin Schrodinger's 1926 wave equation gave a new way to describe electrons in atoms. What replaced Bohr's picture of electrons on definite orbits?",
+    "Probability clouds — regions where the electron is likely to be found, not specific paths",
+    "Crystal lattices — fixed positions inside microscopic geometric shapes inside atoms",
+    "Tiny spheres — electrons as solid balls bouncing between proton walls in the nucleus",
+    "Magnetic fields — the electron itself dissolved into a pure rotating field of force",
+    "Schrodinger's equation describes the wavefunction (psi), whose squared magnitude gives the probability of finding the electron at each location. The electron has no definite position until measured. This was a radical departure from classical determinism and remains the foundation of chemistry and modern physics.",
+)
+
+# --- Wave-particle duality & double-slit (3) ---
+q(
+    "Thomas Young in 1801 shone light through two narrow parallel slits and watched the pattern on a screen behind. What did he see that proved something important about light?",
+    "Bright and dark stripes — an interference pattern, showing light behaves like a wave",
+    "Two sharp bright spots — exactly what you'd expect if light traveled as solid particles",
+    "A single bright glow — light scattered uniformly, with no detectable pattern at all",
+    "Concentric rings — light reflected back into shapes resembling raindrop ripples in a pond",
+    "Two-slit interference is the hallmark of waves: peaks reinforce (bright) where two waves arrive in phase; cancel (dark) where they arrive out of phase. Young's experiment overturned Newton's particle theory of light — for a century. Then 1905 reopened it.",
+)
+q(
+    "If you fire SINGLE photons one at a time through Young's two-slit setup, they still build up an interference pattern over time. What does this seem to imply about each individual photon?",
+    "Each photon passes through both slits at once — and interferes with itself",
+    "Each photon picks one slit at random — the pattern is a statistical illusion",
+    "Each photon splits at the slits — and rejoins on the way to the screen",
+    "The detector itself creates the pattern — single photons travel as straight lines",
+    "Single-photon double-slit experiments (first done with electrons by Tonomura's team, 1989, also with photons and molecules) show wave-particle duality directly. The photon's wavefunction passes through both slits; measurement at the screen 'collapses' it to one spot. This is the heart of quantum weirdness.",
+)
+q(
+    "In the double-slit setup, if you add a detector at one slit that tells you which slit each photon went through, the interference pattern disappears. What does this tell us about measurement in quantum mechanics?",
+    "Observing which slit collapses the wavefunction — the act of measurement changes the system",
+    "Detectors emit waves that cancel the pattern — pure interference still occurs unobserved",
+    "Photons accelerate near detectors — they punch through slits too fast for interference",
+    "Interference vanishes randomly — measurement at slits has no effect on the screen pattern",
+    "The 'which-path' experiments are real, not thought-experiment. Getting which-slit information — by any means — destroys the interference pattern. This is the 'measurement problem' at the heart of quantum mechanics. Different interpretations (Copenhagen, many-worlds, pilot-wave) try to make sense of it.",
+)
+
+# --- Heisenberg uncertainty intro (2) ---
+q(
+    "Werner Heisenberg's 1927 uncertainty principle says you cannot simultaneously know both a particle's position and its momentum with perfect precision. What's the deeper point of this principle?",
+    "It's not a measurement limit — it's built into nature itself; precise position has no precise momentum",
+    "It's purely a measurement limit — better instruments would eventually measure both perfectly",
+    "It applies only to electrons — protons and neutrons have definite position and momentum",
+    "It vanishes at low speeds — uncertainty is a relativistic effect that disappears at human scales",
+    "Position-momentum uncertainty is a feature of the wavefunction itself, not a measurement artifact. Heisenberg showed Delta(x) * Delta(p) >= h-bar/2. Energy-time uncertainty also exists. The principle restricts classical determinism — even with perfect instruments, the future cannot be precisely predicted.",
+)
+q(
+    "In Heisenberg's picture, can you observe an electron without disturbing it?",
+    "No — every measurement requires interaction (a photon, an electron probe) that changes the system",
+    "Yes — modern instruments are non-interacting and reveal electrons without any change",
+    "Sometimes — only on Tuesdays, when the magnetic field of the Earth is at its minimum",
+    "Only in a vacuum — air molecules normally interfere, but a vacuum chamber removes that issue",
+    "Quantum measurement is inseparable from the system measured. To 'see' an electron's position you need a photon, which gives it a momentum kick. This is one reason the Copenhagen interpretation says quantum systems do not have definite properties until measured.",
+)
+
+# --- Big Bang basics (3) ---
+q(
+    "Belgian Catholic priest and physicist Georges Lemaitre in 1927 proposed that the universe began from a single dense state and has been expanding since. What did the Cambridge astronomer Fred Hoyle later sarcastically call it?",
+    "'The Big Bang' — Hoyle disliked the theory but coined its now-universal nickname",
+    "'The Cosmic Pop' — a phrase he used in private letters, never on the BBC",
+    "'The Singular Snap' — Hoyle's preferred technical term, abandoned by other astronomers",
+    "'The Hot Beginning' — Hoyle's accepted alternative, widely adopted in journals",
+    "Lemaitre called it the 'primeval atom' or the 'cosmic egg.' Hoyle, who championed the rival steady-state theory, coined 'Big Bang' on BBC radio in 1949 as dismissive shorthand. The name stuck even as Hoyle's own theory lost to the evidence (CMB, abundance of light elements).",
+)
+q(
+    "When astronomers say the universe is about 13.8 billion years old, where does that specific number come from?",
+    "Measurements of cosmic expansion rate combined with the cosmic microwave background data",
+    "Counting the number of stars in the Milky Way and dividing by their average lifetime",
+    "The age of the oldest meteorites found on Earth, since they formed shortly after the Big Bang",
+    "Carbon-14 dating of the most distant galaxies visible through the Hubble Space Telescope",
+    "The age comes from running the expansion backward (using the Hubble constant) and from fits to the cosmic microwave background's tiny variations (Planck satellite, etc.). The 13.8 Gyr figure has standard-model error bars of about 1%. There's tension between local and CMB-based measurements that may eventually require new physics.",
+)
+q(
+    "In the early universe, before atoms could form, what did the cosmos look like? Pick the best plain-English description.",
+    "A hot, dense plasma of charged particles — light couldn't travel far before scattering",
+    "A cold, empty void — particles existed but were too far apart to interact at all",
+    "A solid block of matter — every cubic centimeter was packed with iron-like material",
+    "A black hole at every point — gravity was so strong nothing could escape anywhere",
+    "For about 380,000 years after the Big Bang, the universe was opaque — free electrons scattered photons constantly, like fog scatters light. When the cosmos cooled enough for neutral atoms to form ('recombination'), photons could travel freely. Those freed photons are now the cosmic microwave background.",
+)
+
+# --- Hubble expansion 1929 (2) ---
+q(
+    "Edwin Hubble's 1929 paper from Mount Wilson Observatory established something that overturned the picture of a static cosmos. What did Hubble's redshift measurements show?",
+    "Galaxies are moving away from us — the farther a galaxy is, the faster it's receding",
+    "Galaxies stay where they are — redshifts are caused by the chemistry of distant stars",
+    "Galaxies are moving toward us — the Milky Way sits at the center of cosmic gravity",
+    "Galaxies are random — half move toward us, half away, with no pattern by distance",
+    "Hubble built on earlier work by Vesto Slipher and Lemaitre. His galaxy-velocity vs. distance plot showed a roughly linear relation: v = H_0 * d. This was the first observational evidence for cosmic expansion. The Hubble constant H_0 measures today's expansion rate. Einstein had abandoned his 'static universe' fudge by 1931.",
+)
+q(
+    "When astronomers say a distant galaxy is 'redshifted', what does that physically mean?",
+    "Its light is stretched to longer (redder) wavelengths — the galaxy is moving away from us",
+    "Its light passes through red dust on the way to us — filters made the galaxy look red",
+    "Its stars are old red giants — there are no young blue stars in the galaxy's structure",
+    "Its light is reflected by the Sun's atmosphere — Earth's atmosphere makes everything redder",
+    "Redshift is a Doppler-like effect for light: moving-away sources have wavelengths shifted toward red; moving-toward sources are blueshifted. In cosmology, redshift comes from the expansion of space itself, not just relative motion. Quantitatively: 1+z = a_now / a_then, where a is the cosmic scale factor.",
+)
+
+# --- Dark matter (Vera Rubin) (3) ---
+q(
+    "American astronomer Vera Rubin in the 1970s measured how fast stars orbit at the outer edges of galaxies. What did she find that earlier theory couldn't explain?",
+    "Outer stars orbit much faster than visible-mass gravity predicts — suggesting unseen mass",
+    "Outer stars don't orbit at all — they drift freely in the empty space between galaxies",
+    "Outer stars orbit at random — no consistent pattern across different galaxies was found",
+    "Outer stars only emit infrared light — they showed no orbital motion in optical telescopes",
+    "Newtonian gravity says outer stars should orbit slower (like outer planets in our solar system). Rubin found flat rotation curves — outer stars orbit at roughly the same high speed as inner stars. That implies far more mass than we can see — what we now call dark matter. Rubin never received a Nobel; she died in 2016.",
+)
+q(
+    "Dark matter makes up about 27% of the universe's mass-energy by current estimates, but no direct detection has succeeded. What's the most honest answer about what dark matter actually IS?",
+    "We don't know — many candidate particles have been proposed; none has been confirmed",
+    "We know it's regular hydrogen gas — just very cold and hard to see with telescopes",
+    "We know it's neutrinos — confirmed by the IceCube South Pole observatory in 2018",
+    "It's a known particle — Higgs bosons fill the 'dark' mass gap precisely as expected",
+    "WIMPs, axions, sterile neutrinos, primordial black holes have all been proposed. Underground detectors (LUX, XENON, etc.) have set increasingly tight limits without seeing a signal. Some physicists prefer modified gravity (MOND) as an alternative. As of the mid-2020s, dark matter remains a genuine open mystery in physics.",
+)
+q(
+    "Some physicists prefer an alternative explanation to dark matter called MOND (Modified Newtonian Dynamics). What does MOND propose, in plain English?",
+    "Gravity itself works differently at very low accelerations — no missing mass needed",
+    "Galaxies are illusions — the rotation curves are artifacts of distant gravitational lensing",
+    "All stars are double — hidden binary companions add the 'missing' mass exactly",
+    "The Milky Way is much closer than thought — distance estimates inflate orbital speeds",
+    "Mordehai Milgrom proposed MOND in 1983. It fits galaxy rotation curves with no dark matter. It struggles with galaxy clusters and the cosmic microwave background, where dark matter fits well. The debate is unresolved — most cosmologists prefer dark matter, but MOND has serious defenders.",
+)
+
+# --- Eddington 1919 eclipse (2) ---
+q(
+    "On May 29, 1919, Arthur Eddington led an expedition to photograph a total solar eclipse. He was testing a specific prediction of Einstein's 1915 general relativity. What did Einstein predict?",
+    "Light from distant stars would bend as it passed near the Sun — by a measurable amount",
+    "The Sun's mass would shrink during the eclipse — making it harder to see",
+    "The Moon would appear blue during the eclipse — Einstein had predicted this in 1916",
+    "Time would stop briefly during totality — clocks at the eclipse path would pause",
+    "Einstein predicted starlight would bend by about 1.75 arcseconds passing the Sun's edge — twice Newton's prediction. Eddington's eclipse photographs confirmed the prediction (within uncertainty). The Times of London headline: 'REVOLUTION IN SCIENCE — NEW THEORY OF THE UNIVERSE — NEWTONIAN IDEAS OVERTHROWN.' Einstein became a global celebrity overnight.",
+)
+q(
+    "Modern reanalysis of Eddington's 1919 eclipse plates has questioned how confidently the original data alone supported Einstein over Newton. But why is Einstein's prediction now considered confirmed beyond doubt?",
+    "Many later measurements — radio observations of quasars, GPS effects, gravitational waves — all confirm it",
+    "Eddington personally re-verified his data in 1940 — no later measurements were ever attempted",
+    "It was confirmed by 1922 by a German team — and never measured again afterward",
+    "It has never been confirmed — modern physicists are still arguing about Einstein's prediction",
+    "Radio-telescope observations of quasars passing near the Sun (from the 1960s onward) confirmed Einstein's deflection to within 0.1%. The GPS system requires general-relativity corrections to function. Gravitational waves (LIGO 2015) further confirmed it. Eddington's plates were just the start of a now-overwhelming evidence base.",
+)
+
+# --- Thermodynamics 2nd law / entropy / arrow of time (3) ---
+q(
+    "Drop an ice cube in warm water and it always melts. Watch ANY video of melting ice in reverse and you can tell it's reversed instantly. What physical principle distinguishes 'forward' from 'backward' in time?",
+    "The second law of thermodynamics — entropy of an isolated system tends to increase",
+    "The conservation of energy — energy flows only forward through time, never backward",
+    "Newton's third law — every reaction has an opposite reaction, ordered in time",
+    "Einstein's E=mc^2 — mass-energy decreases over time, marking time's direction",
+    "Most physics laws are time-symmetric — they look the same run backwards. But the second law isn't. Disorder (entropy) almost always increases. This 'arrow of time' connects to thermodynamics, statistical mechanics, and ultimately cosmology — the early universe must have started in an extremely low-entropy state.",
+)
+q(
+    "Entropy is sometimes loosely called 'disorder'. What's a more technically accurate way to think about entropy?",
+    "The number of microscopic arrangements consistent with a given macroscopic state",
+    "The total mass of the system divided by its absolute temperature in kelvins",
+    "The amount of light a system emits per second when held in thermal equilibrium",
+    "The total energy stored in the chemical bonds of a system's component atoms",
+    "Ludwig Boltzmann's statistical definition: S = k * ln(W), where W counts the microstates compatible with the macrostate. A shuffled deck has high entropy (huge W); a sorted deck has low entropy (small W). The second law is then statistical: high-W states are vastly more likely than low-W ones.",
+)
+q(
+    "If entropy always tends to increase, how does life exist? Living things seem to organize matter and reduce local disorder.",
+    "Life is open, not isolated — it increases entropy in its surroundings more than locally",
+    "Life violates the second law — biology is the exception to thermodynamic principles",
+    "Life uses cold fusion — converting energy without producing waste heat at all",
+    "Life is statistically improbable but possible — it cancels out over the universe's age",
+    "Living organisms aren't isolated systems. A plant builds organized molecules by absorbing sunlight (low entropy) and radiating waste heat (high entropy). Net entropy of plant + environment still increases. Erwin Schrodinger's What Is Life? (1944) framed life as 'feeding on negative entropy' — a striking, if loose, statement of this idea.",
+)
+
+# --- CMB Penzias+Wilson 1964 (2) ---
+q(
+    "In 1964 Arno Penzias and Robert Wilson at Bell Labs were testing a sensitive microwave antenna in New Jersey. They detected a faint static hiss coming from every direction in the sky. What did this hiss turn out to be?",
+    "The cosmic microwave background — leftover light from the Big Bang",
+    "Microwave ovens in nearby labs — interfering with their experimental setup",
+    "Random electronic noise from solar wind — confined to specific hours",
+    "Pigeons roosting on the antenna horn — droppings caused the persistent signal",
+    "Penzias and Wilson initially thought the signal was instrumental noise. They even scrubbed pigeon droppings ('white dielectric material') off the antenna horn. Robert Dicke's group at Princeton was about to search for exactly this signal. Penzias and Wilson won the 1978 Nobel for the accidental discovery, which confirmed the Big Bang theory over the steady-state alternative.",
+)
+q(
+    "Why is the cosmic microwave background such a powerful piece of evidence for the Big Bang theory?",
+    "It matches a hot-early-universe prediction precisely — a near-perfect blackbody at 2.7 kelvin",
+    "It's visible only on Tuesdays — proving the universe runs on a weekly cycle",
+    "Its temperature differs in every direction — proving the cosmos lacks any symmetry",
+    "It was only visible from Bell Labs — no other observatory has ever detected it since",
+    "The CMB's blackbody spectrum (measured precisely by COBE, 1992) and its tiny temperature anisotropies (mapped by WMAP and Planck) match Big Bang predictions to high precision. The steady-state theory had no good explanation for the CMB. COBE's George Smoot and John Mather won the 2006 Nobel.",
+)
+
+# --- Physics extras to reach 55 ---
+q(
+    "Two atoms can be 'entangled' so that measuring one instantly tells you about the other — even if they're separated by miles. Einstein called this 'spooky action at a distance' and disliked it. What's the modern consensus?",
+    "Entanglement is real — confirmed in many experiments; the 2022 Nobel went to its testers",
+    "Entanglement was disproven by the 2022 Nobel laureates — Einstein was right after all",
+    "Entanglement is real but only for protons — electrons never show entanglement effects",
+    "Entanglement happens only at low temperatures — vanishes once particles warm above 1 K",
+    "John Bell's 1964 inequality showed entanglement could be tested against local-realism. Aspect (1982), Clauser, Zeilinger conducted definitive experiments. They shared the 2022 Nobel Physics. Entanglement powers quantum computing and quantum cryptography. It does NOT allow faster-than-light communication.",
+)
+q(
+    "Light traveling through a glass of water bends as it enters and exits. What physical property of water causes the bending?",
+    "Light slows down in water — different speeds in different media cause refraction",
+    "Light becomes negatively charged — magnetic forces inside glass bend its path",
+    "Glass absorbs blue light only — surviving red light continues in a straight path",
+    "Water gets denser — heavy water bends light by pressing it down with gravity",
+    "Refraction happens because light's phase velocity is slower in water (about 0.75c) than in vacuum. The ratio is called the refractive index (n=1.33 for water). Snell's law (1621) describes the bending angle. The same principle powers lenses, prisms, and the rainbow.",
+)
+q(
+    "The sky looks blue because of how sunlight scatters off air molecules. Which color of light scatters most strongly, giving us the blue sky?",
+    "Blue light — short wavelengths scatter more (Rayleigh scattering)",
+    "Red light — long wavelengths scatter more strongly through Earth's atmosphere",
+    "Green light — wavelengths matching plant chlorophyll dominate atmospheric scattering",
+    "Yellow light — Sun's peak wavelength scatters most, painting the sky its color",
+    "Lord Rayleigh's scattering law (1871): scattering intensity is proportional to 1/wavelength^4. Blue (short wavelength) scatters far more than red (long). At sunset, sunlight passes through more atmosphere; blue gets scattered away, leaving red/orange to reach our eyes. Mars's thinner atmosphere produces blue sunsets instead.",
+)
+q(
+    "A black hole's 'event horizon' is the surface beyond which not even light can escape its gravity. What happens to time as you approach this horizon (as seen by a distant observer)?",
+    "Time appears to slow down — an infalling clock seems to tick more and more slowly",
+    "Time appears to speed up — an infalling clock seems to race ahead of distant ones",
+    "Time stops, then reverses — falling objects appear to come back out within seconds",
+    "Time becomes random — clocks near the horizon show different times to different watchers",
+    "Gravitational time dilation: clocks deeper in gravitational wells run slower as seen from outside. At the horizon, from the distant view, time freezes. The infalling observer crosses normally in their own frame. Roger Penrose won the 2020 Nobel for proving black holes are a generic consequence of general relativity.",
+)
+q(
+    "If you place a thermometer in the path of sunlight just past a prism, where is it warmest?",
+    "Just past the red end of the visible spectrum — where invisible infrared lives",
+    "In the middle of the visible band — where yellow and green dominate the spectrum",
+    "Just past the violet end — where invisible ultraviolet has the most thermal energy",
+    "Outside the rainbow entirely — direct sunlight always warms more than dispersed",
+    "William Herschel did this experiment in 1800 and discovered infrared radiation. It opened up the electromagnetic spectrum beyond visible light. Johann Ritter discovered ultraviolet the next year (1801) by noticing silver salts darkened beyond the violet end. Both lie outside the visible band but are part of the same continuum.",
+)
+q(
+    "Standard candle Cepheid variable stars pulse with a brightness that depends on their period. Why are Cepheids useful to astronomers?",
+    "Their period predicts their true brightness — comparing to apparent brightness gives distance",
+    "Their pulses generate radio bursts — useful for synchronizing telescopes precisely",
+    "Their pulses cause supernovae — useful for predicting future stellar explosions",
+    "Their color changes with time — useful for measuring galactic magnetic fields",
+    "Henrietta Swan Leavitt discovered the period-luminosity relation in Cepheids in 1908 at Harvard. This let Hubble measure that 'spiral nebulae' (like Andromeda) were actually distant galaxies far beyond the Milky Way. Cepheids remain a 'standard candle' for cosmological distances out to about 100 million light-years.",
+)
+q(
+    "Why does ice float on water, while most solids sink in their own liquids?",
+    "Water expands when it freezes — ice is less dense than liquid water",
+    "Ice has trapped air bubbles — these always make it lighter than water",
+    "Ice is colder, and cold things rise — heat flows downward through water",
+    "Surface tension supports the ice — ice would sink if pushed below the surface",
+    "Water's hydrogen bonds form an open lattice when it freezes, giving ice a lower density than liquid water (~0.92 g/cm^3 vs 1.0). This anomaly is rare among substances. It's biologically crucial — lakes freeze top-down, insulating the water beneath and letting aquatic life survive winter.",
+)
+q(
+    "A neutron star is what's left behind when a massive star collapses under its own gravity. About how dense is it?",
+    "Astonishingly dense — one teaspoon of neutron-star matter would weigh about a billion tons",
+    "Roughly the same density as steel — but the star is the size of a planet entirely",
+    "Less dense than water — neutron stars are huge but spread out across light-years",
+    "Equal density to the Sun — neutron stars are 'failed suns' that never ignited",
+    "Neutron stars pack about 1.4 solar masses into a sphere ~20 km across. Densities exceed 10^17 kg/m^3 — comparable to an atomic nucleus. Pulsars (rotating neutron stars with beamed radio emission) were discovered by Jocelyn Bell Burnell in 1967. She did not share the Nobel her supervisor received.",
+)
+q(
+    "The atomic clock measures time using oscillations of electrons in cesium atoms. About how precise are the best atomic clocks?",
+    "About one second of drift in roughly 100 million years — exquisitely accurate",
+    "About one second of drift per day — comparable to a good mechanical watch",
+    "About one second per hour — useful but no better than a quartz wristwatch",
+    "Their precision is unmeasurable — atoms shift unpredictably year by year",
+    "Cesium-133 atomic clocks define the second since 1967 (9,192,631,770 cycles of a specific hyperfine transition). Optical-lattice clocks using strontium or ytterbium are now ~100x more precise. GPS depends on atomic clocks corrected for both special and general relativistic effects.",
+)
+q(
+    "Why do astronauts in orbit feel weightless even though Earth's gravity is still strong up there?",
+    "They're in free-fall together with their spacecraft — gravity acts on both equally",
+    "Gravity vanishes above the atmosphere — air weight is what we feel on Earth",
+    "They wear special anti-gravity suits — without them they would feel normal weight",
+    "Their bones don't register weight — physically they're as heavy as on Earth",
+    "Astronauts on the ISS experience about 90% of Earth's surface gravity. They feel weightless because they're falling toward Earth continuously, while their orbital sideways speed carries them around it. The result is microgravity — same physics that lets you feel briefly weightless in a roller-coaster drop.",
+)
+q(
+    "When a moving train sounds higher-pitched approaching you and lower-pitched after passing, what physics effect is responsible?",
+    "The Doppler effect — wavelength compresses ahead of motion, stretches behind",
+    "The Magnus effect — train's spin alters the local air pressure rapidly",
+    "The Bernoulli effect — fast trains create vacuum zones that change the sound",
+    "The Coriolis effect — Earth's rotation deflects sound waves traveling toward us",
+    "Christian Doppler proposed the effect in 1842 for sound and light. It applies to all waves. Astronomers use it to measure star and galaxy velocities (redshift / blueshift). Police radar guns use it. Medical ultrasound uses it to measure blood flow. The shift is proportional to v/c (or v/v_sound).",
+)
+q(
+    "Why does helium make your voice sound high and squeaky when you breathe it (a party trick)?",
+    "Sound travels faster in helium — your vocal cords' fixed frequency rises in pitch",
+    "Helium tightens your vocal cords — physical contraction raises the pitch",
+    "Helium triggers a reflex — your larynx contracts under helium exposure",
+    "Helium contains radioactivity — your voice sounds different from temporary damage",
+    "Sound speed depends on the gas: c = sqrt(gamma * R * T / M). Helium's lower molar mass (M=4 vs air's ~29) gives faster sound propagation, shifting your voice's formants higher. Note: this is amusing, but breathing too much helium displaces oxygen — small parties have led to suffocation deaths.",
+)
+q(
+    "Why does a hot-air balloon rise?",
+    "Hot air inside is less dense than cooler air outside — net buoyancy lifts the balloon",
+    "Heat itself rises — the burner pushes the balloon directly upward",
+    "Helium leaks slowly — the small amount mixed with air gives net lift",
+    "Hot air becomes magnetic — Earth's field then pulls the balloon upward",
+    "Charles's law and ideal gas behavior: heating the air at fixed pressure expands it (lower density per cubic meter). Archimedes' buoyancy principle then provides net upward force from the surrounding cooler air. Hot-air balloons (Montgolfier brothers, 1783) were the first human aviation technology.",
+)
+q(
+    "Why are mirrors typically made by coating glass with a thin layer of silver or aluminum on the back?",
+    "Silver and aluminum reflect visible light efficiently — glass alone barely reflects",
+    "Silver and aluminum are cheap — gold or platinum would also work just as well",
+    "Silver and aluminum bend light backward — without them, mirrors would face inward",
+    "Silver and aluminum cool the glass — keeping it from cracking under sunlight",
+    "Smooth metal surfaces reflect about 90% of visible light. The glass in front is to protect the metal coating from scratches and tarnish. Astronomical telescopes use silver- or aluminum-coated mirrors for the same reason. Roman mirrors used polished bronze; medieval mirrors used tin amalgam behind glass.",
+)
+q(
+    "Why does standing in a heavy rain still keep you drier than running through it (for a fixed distance)?",
+    "Running reduces total exposure time — fewer raindrops hit you overall",
+    "Running creates wind that pushes raindrops away — you stay drier sideways",
+    "Standing is always drier — running stirs up extra drops from puddles below",
+    "Standing keeps your hat on — running causes your hat to fall off and expose you",
+    "Total water hitting you = (drops per second from above) * (time) + (front-area drops while moving) * (distance). The first term dominates if you stand around in the rain; the distance term is fixed. So move quickly — total time goes down. This has been worked out (Mythbusters tested it; running really does work).",
+)
+
+q(
+    "A simple electric motor uses a current-carrying coil between magnets. Which physical principle makes the wire spin when current flows through it?",
+    "The Lorentz force — a moving charge in a magnetic field feels a perpendicular push",
+    "Heat expansion — currents warm the copper, pushing it against magnets nearby",
+    "Static electricity — the wire builds up charge and is repelled by the magnets",
+    "Friction reduction — currents lubricate the bearings allowing the rotor to spin",
+    "F = qv x B (the Lorentz force) is the foundation of electric motors, generators, MRI machines, and particle accelerators. Michael Faraday discovered electromagnetic induction in 1831 — the converse effect (moving a wire in a field creates current). Together they linked electricity and magnetism into one unified electromagnetism.",
+)
+q(
+    "Why does helium make your voice sound high and squeaky when you breathe it (a party trick)?",
+    "Sound travels faster in helium — your voice's natural frequencies shift upward",
+    "Helium tightens your vocal cords — physical contraction raises the pitch",
+    "Helium triggers a reflex — your larynx contracts under helium exposure",
+    "Helium contains radioactivity — your voice sounds different from temporary damage",
+    "Sound speed depends on the gas: c = sqrt(gamma * R * T / M). Helium's lower molar mass (M=4 vs air's ~29) gives faster sound propagation, shifting your voice's formants higher. Note: this is amusing, but breathing too much helium displaces oxygen — small parties have led to suffocation deaths over the years.",
+)
+
+# Save progress for P1
+print(f"[checkpoint] After P1, total questions = {len(QUESTIONS)}")
+
+
+# ==========================================================================
+# PILLAR 2: CHEMISTRY (target 45)
+# ==========================================================================
+
+# --- Atomic structure (Bohr) (3) ---
+q(
+    "Niels Bohr's 1913 model pictured electrons orbiting the nucleus on specific allowed paths — like planets around the Sun, but only at certain distances. What did Bohr's model successfully explain?",
+    "Why hydrogen emits only specific colors of light — each color is a jump between orbits",
+    "Why protons are positive — Bohr proved this directly from his orbital model",
+    "Why atoms have weight — Bohr calculated atomic mass from electron orbit radii",
+    "Why some atoms are radioactive — only Bohr-stable atoms could decay over time",
+    "Hydrogen heated to glow emits sharp spectral lines (red, blue, violet — the Balmer series). Bohr's quantized orbits explained why: each line is a photon emitted as an electron drops from one allowed level to another. Bohr won the 1922 Nobel. Schrodinger later replaced orbits with probability clouds.",
+)
+q(
+    "The modern picture of an atom looks very different from Bohr's tidy planet-orbit model. What replaced the well-defined orbits in the modern quantum picture?",
+    "Probability clouds where the electron is likely to be found — orbitals",
+    "Rigid crystal lattices — atoms locked into geometric cages permanently",
+    "Vibrating strings — electrons stretched along the nucleus like guitar wires",
+    "Magnetic shells — electrons existing only as field lines around the nucleus",
+    "Schrodinger's equation (1926) gives the wavefunction; its square gives the probability density. The s, p, d, and f orbitals have characteristic shapes (sphere, dumbbell, cloverleaf, etc.) and capacities (2, 6, 10, 14 electrons). These shapes explain the periodic table's columns and chemical bonding patterns.",
+)
+q(
+    "If you sum the mass of an atom's protons and neutrons separately, you get slightly MORE than the actual atomic mass. What happens to the missing mass?",
+    "It's converted to binding energy that holds the nucleus together — E=mc^2 in action",
+    "It vanishes — the atom simply weighs less than the sum of its parts for no reason",
+    "It becomes electron mass — electrons gain weight when added to a nucleus",
+    "It evaporates over time — atoms slowly become heavier as their mass returns",
+    "The 'mass defect' is real and measurable. Strong nuclear force binds nucleons together; that binding energy comes from converted mass. Fission (splitting heavy nuclei) and fusion (combining light ones) release energy by moving toward iron-56, the most tightly bound nucleus per nucleon. Stars and bombs both exploit this.",
+)
+
+# --- Isotopes & C-14 dating (3) ---
+q(
+    "Two atoms of carbon can have the same number of protons (6) but different numbers of neutrons (6, 7, or 8). What do we call these variants?",
+    "Isotopes — atoms of the same element with different numbers of neutrons",
+    "Ions — atoms with extra electrons or missing electrons in their outer shell",
+    "Allotropes — different molecular arrangements of the same element (like diamond, graphite)",
+    "Isomers — molecules with the same atoms arranged into different shapes",
+    "Carbon-12 (~99% of natural carbon), carbon-13 (~1%), and carbon-14 (trace, radioactive) all share 6 protons but vary in neutrons. Same chemistry, different mass. Isotopes are used in dating (C-14), medicine (I-131), and physics. Each element has multiple isotopes; about 250 are stable.",
+)
+q(
+    "Carbon-14 is constantly produced in the upper atmosphere as cosmic rays hit nitrogen atoms. Living things absorb it. After death, what happens to a body's carbon-14 over time?",
+    "It decays at a steady rate — half is gone every 5,730 years",
+    "It increases steadily — cosmic rays continue depositing carbon-14 into the body",
+    "It stays constant — carbon-14 is stable and never decays once formed",
+    "It vanishes within months — short half-life makes dating after a year impossible",
+    "While alive, organisms exchange carbon with the atmosphere, keeping their C-14 ratio at atmospheric levels. After death, the ratio drops as C-14 decays (beta decay to nitrogen-14). Measuring the remaining ratio dates organic material up to ~50,000 years. Willard Libby won the 1960 Nobel Chemistry for inventing the method.",
+)
+q(
+    "Carbon-14 dating works well for organic materials up to roughly 50,000 years old. Why is the method useless for dating a 100-million-year-old dinosaur fossil?",
+    "Almost no C-14 is left after that long — there's nothing to measure",
+    "Dinosaur bones don't contain carbon at all — only mineralized stone",
+    "C-14 keeps forming inside fossils — fossils always show recent dates",
+    "Cosmic rays didn't exist 100 million years ago — so no C-14 was deposited",
+    "After about 10 half-lives (~57,000 years), C-14 levels drop below detection limits. For older fossils, geologists use other isotope methods: uranium-lead (for igneous rocks), potassium-argon, rubidium-strontium, etc. Each works for different age ranges based on its half-life.",
+)
+
+# --- Bond types (4) ---
+q(
+    "Table salt (NaCl) is held together by attraction between positive sodium ions and negative chloride ions. What kind of chemical bond does this attraction create?",
+    "Ionic bond — electrons transfer; positive and negative ions attract",
+    "Covalent bond — electrons shared equally between the atoms involved",
+    "Metallic bond — electrons flow freely in a 'sea' between sodium and chloride atoms",
+    "Hydrogen bond — sodium donates a hydrogen to attract the chloride ion",
+    "Sodium gives up one electron to chlorine, becoming Na+. Chlorine accepts it, becoming Cl-. The opposite charges hold the crystal together. Ionic compounds are typically brittle solids with high melting points that dissolve well in water and conduct electricity when molten or dissolved.",
+)
+q(
+    "In a water molecule (H2O), each hydrogen shares a pair of electrons with the central oxygen. What kind of bond is this?",
+    "Covalent bond — atoms share electrons rather than transferring them",
+    "Ionic bond — hydrogen donates an electron entirely to oxygen each time",
+    "Metallic bond — electrons flow freely between the two H and O atoms",
+    "Hydrogen bond — the kind of force between two separate water molecules",
+    "Covalent bonds form between non-metals — atoms share electron pairs. Water has POLAR covalent bonds because oxygen attracts electrons more strongly than hydrogen, giving oxygen a partial negative and hydrogens partial positive charges. This polarity is why water dissolves so many substances.",
+)
+q(
+    "A copper wire conducts electricity well because its electrons can move freely throughout the metal. What's that kind of bonding called?",
+    "Metallic bond — atoms share a 'sea' of delocalized electrons among them",
+    "Ionic bond — copper ions attract each other directly through electric force",
+    "Covalent bond — each copper atom shares an electron with one neighbor",
+    "Hydrogen bond — each copper atom holds a hydrogen for electron transport",
+    "In metals, outer electrons aren't tied to specific atoms — they form a delocalized 'sea' or 'gas.' This explains conductivity (electrons move under applied voltage), malleability (atoms slide without breaking bonds), and luster (electrons reflect light). Alloys (steel, brass, bronze) mix metals using the same bonding type.",
+)
+q(
+    "Water molecules stick weakly to each other through a special attractive force — much weaker than a real bond, but strong enough to give water unusual properties (high boiling point, surface tension, ice floating). What's it called?",
+    "Hydrogen bonds — partial-positive H attracts partial-negative O in nearby molecules",
+    "Ionic bonds — water ionizes, and the resulting ions attract one another directly",
+    "Metallic bonds — water molecules share a 'sea' of electrons just as metals do",
+    "Covalent bonds — water molecules share pairs of electrons between molecules",
+    "Hydrogen bonds form when H attached to O, N, or F is attracted to a lone pair on a nearby O/N/F. They're ~5% the strength of a covalent bond but enormously important — DNA's double helix, protein folding, water's anomalies, and many biology basics depend on hydrogen bonding.",
+)
+
+# --- Redox (OIL RIG) (2) ---
+q(
+    "A common chemistry mnemonic for redox reactions is 'OIL RIG'. What do those letters stand for?",
+    "Oxidation Is Loss of electrons — Reduction Is Gain of electrons",
+    "Oxygen Is Lost; Reduction Is Gained — by counting oxygen atoms in the reaction",
+    "Open Inner Layer of electrons — Reduce Inner Gap between atoms in the bond",
+    "Outer Iron Lost; Reduced Iron Gained — old iron-rust chemistry",
+    "OIL RIG: Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons). They always happen together: one atom loses electrons (oxidized) while another gains them (reduced). Iron rusting, batteries, combustion, photosynthesis, cellular respiration — all redox reactions.",
+)
+q(
+    "When iron rusts, it slowly converts to iron oxide. Which atom is oxidized in this everyday process?",
+    "Iron — it loses electrons to oxygen and becomes iron(III) oxide (rust)",
+    "Oxygen — it loses electrons to iron, despite the name 'oxidation'",
+    "Hydrogen — it loses electrons in the presence of water on iron surfaces",
+    "Both lose electrons equally — rust is an ionic mixture of both atoms",
+    "4 Fe + 3 O2 -> 2 Fe2O3. Iron atoms each lose 3 electrons (oxidized from 0 to +3); oxygen atoms each gain 2 electrons (reduced from 0 to -2). The name 'oxidation' originally referred to combining with oxygen but now means losing electrons in any reaction. Iron rusts especially fast when water and salt are present.",
+)
+
+# --- pH logarithmic (2) ---
+q(
+    "The pH scale runs from 0 (very acidic) to 14 (very basic). It's a logarithmic scale. What does that mean for the difference between pH 3 and pH 5?",
+    "pH 3 has 100 times more hydrogen ions than pH 5 — each pH unit is a factor of 10",
+    "pH 3 has 2 times more hydrogen ions than pH 5 — pH differences scale linearly",
+    "pH 3 has the same hydrogen ions as pH 5 — pH measures something other than H+",
+    "pH 3 has 1/100 the hydrogen ions of pH 5 — lower pH means fewer H+ ions",
+    "pH = -log10([H+]). pH 3 = 10^-3 M H+; pH 5 = 10^-5 M. So pH 3 is 100x more acidic. Battery acid ~1, lemon juice ~2, coffee ~5, pure water 7, ocean water ~8, ammonia ~11, lye ~13. Most living tissue tolerates only a narrow pH range — blood is tightly buffered around 7.4.",
+)
+q(
+    "Stomach acid sits around pH 1-2 — extremely acidic. Why doesn't the stomach lining digest itself?",
+    "A thick mucus layer plus bicarbonate secretions — protect the cells from the acid",
+    "The stomach lining is made of indestructible cells — no protection is needed",
+    "Stomach acid only digests proteins from food — never the body's own tissue",
+    "Acid is neutralized by saliva once you swallow it — bypassing stomach concerns",
+    "The stomach's mucosal cells secrete bicarbonate-rich mucus that buffers the acid at the epithelium. When this defense fails — typically due to H. pylori infection or chronic NSAID use — ulcers form. Marshall and Warren's H. pylori discovery overturned the decades-long 'stress causes ulcers' consensus.",
+)
+
+# --- Catalysts & enzymes (3) ---
+q(
+    "Catalysts speed up chemical reactions without being consumed. Plants and animals use natural protein catalysts for almost every biological reaction. What do we call them?",
+    "Enzymes — biological catalysts, usually proteins, that speed up specific reactions",
+    "Vitamins — nutrients that act directly as catalysts in cellular reactions",
+    "Hormones — chemical messengers that catalyze growth and development directly",
+    "Antibodies — immune proteins that catalyze the destruction of pathogens",
+    "Enzymes lower a reaction's activation energy, often by factors of 10^6 or more. Most end in '-ase' (amylase, lipase, etc.). They're highly specific — usually one enzyme per reaction. Reactions that would take years happen in milliseconds. Life as we know it is impossible without them.",
+)
+q(
+    "A catalyst speeds up a reaction without being consumed. How does it do this — in plain physical terms?",
+    "It provides an alternative pathway — with a lower activation energy barrier",
+    "It heats the reactants directly — adding thermal energy to break bonds",
+    "It increases the total energy of the reactants — pushing them above the barrier",
+    "It removes products as they form — pulling the reaction forward",
+    "Activation energy is the 'hill' reactants must climb to react. A catalyst provides a different path with a lower hill — more molecules have enough energy at any moment to cross. The catalyst is regenerated at the end. Enzymes do this in biology; metal catalysts (platinum, iron, etc.) do it in industry.",
+)
+q(
+    "An enzyme typically works on only one specific substrate — like a lock and key. What part of the enzyme does the actual reaction work?",
+    "The active site — a specifically shaped pocket where the substrate binds",
+    "The entire surface — substrates can react anywhere on the enzyme's body",
+    "The substrate itself — the enzyme is just a passive shelf that holds it in place",
+    "The cell membrane — the enzyme triggers a wall reaction to start the catalysis",
+    "Active sites are typically pocket-shaped regions formed by specific amino-acid residues in 3D folded space. Substrate binds, geometry strains bonds, reaction occurs, products release. The fit is shape- AND chemistry-specific. Inhibitors (some drugs, toxins) block active sites; the body's regulatory machinery uses similar shape-binding.",
+)
+
+# --- Organic basics (carbon's 4 bonds) (2) ---
+q(
+    "Carbon is the backbone of biology because of one structural feature that makes it remarkably versatile. What is that feature?",
+    "Carbon forms four covalent bonds — chains, rings, branches all become possible",
+    "Carbon is the lightest atom — only carbon can form molecules under gravity",
+    "Carbon is radioactive — its decay drives biological growth and reproduction",
+    "Carbon is highly magnetic — atoms align easily into complex molecular shapes",
+    "Carbon's four valence electrons let it form stable bonds with up to four other atoms — including other carbons. This enables chains of arbitrary length, branches, rings, and 3D structures. Silicon also has four valence electrons but its bonds are weaker, so silicon-based life remains speculative. Carbon also forms double and triple bonds.",
+)
+q(
+    "Diamond and graphite are both made of pure carbon — yet diamond is the hardest natural substance while graphite is soft enough to write with. What explains the difference?",
+    "Different bonding arrangements — diamond is a 3D network; graphite is stacked sheets",
+    "Different isotopes — diamond uses C-12 only; graphite uses C-13 and C-14",
+    "Different temperatures of formation — diamond is hot; graphite is cold",
+    "Different colors — diamond is clear; graphite is dark gray with extra atoms",
+    "Carbon allotropes have the same atoms but different bonding. Diamond: each C bonded to 4 others in a 3D tetrahedral network — extreme hardness. Graphite: 2D sheets of hexagons; weak inter-layer bonds let sheets slip — soft, slippery. Other forms include fullerenes (C60 buckyballs), nanotubes, and graphene (single layer).",
+)
+
+# --- Benzene (Kekule's snake dream) (2) ---
+q(
+    "German chemist Friedrich Kekule in 1865 reportedly figured out the ring structure of benzene (C6H6) after a particular dream. What did he say he saw in the dream?",
+    "A snake biting its own tail — inspiring the closed ring of six carbons",
+    "A snake swallowing another snake — inspiring chains of double-bonded molecules",
+    "An octopus with six arms — inspiring the six branches off a central atom",
+    "A bicycle wheel with six spokes — inspiring six hydrogens around a hub",
+    "Whether the dream is literally true or a later embellishment, Kekule's ring structure for benzene was a major insight — six carbons in a hexagon with alternating double bonds. Modern theory recognizes the electrons as delocalized over the ring. Benzene and its relatives ('aromatic' compounds) are fundamental to organic chemistry.",
+)
+q(
+    "Aspirin, caffeine, ibuprofen, and many common medicines all contain benzene rings (or similar aromatic rings). Why are these ring structures so common in medicines?",
+    "They're stable and flat — and bind biological targets with predictable geometry",
+    "They give pills their color — without aromatic rings, all pills would be white",
+    "They taste better than other chemicals — making patients more willing to take medicine",
+    "They're radioactive — providing energy needed for the medicine to work",
+    "Aromatic rings give predictable shape and electronic properties — useful for binding receptors. Their planarity and rigidity make drug design tractable. Many natural products (alkaloids, flavonoids) contain aromatic rings, and medicinal chemists have built on these scaffolds. Almost every modern drug contains at least one aromatic ring.",
+)
+
+# --- Amino acids (2) ---
+q(
+    "Proteins in your body are built from a set of about 20 small building blocks linked together in chains. What are these building blocks called?",
+    "Amino acids — small molecules with both an amine group and an acid group",
+    "Nucleotides — the building blocks of DNA and RNA, not proteins themselves",
+    "Sugars — the energy-providing building blocks of carbohydrates",
+    "Fatty acids — long carbon chains used to build fats and oil membranes",
+    "Each of the 20 standard amino acids has a central carbon attached to: H, an amino group (-NH2), a carboxyl group (-COOH), and a variable 'side chain.' The side chain determines properties (size, charge, polarity, hydrophobicity). Sequences of amino acids fold into 3D structures that determine protein function.",
+)
+q(
+    "When amino acids link together to form a protein, what kind of chemical bond connects each pair?",
+    "Peptide bond — formed by losing water between an amine and an acid group",
+    "Hydrogen bond — formed by weak attraction between charged side chains",
+    "Ionic bond — formed by electron transfer between adjacent amino acids",
+    "Disulfide bond — formed only when sulfur atoms are present in side chains",
+    "Peptide bonds form by 'condensation' (releasing one water molecule per bond). The C of one amino acid's COOH binds to the N of the next amino acid's NH2. Two amino acids = dipeptide. Many = polypeptide. A folded polypeptide with biological function = a protein. The sequence is determined by DNA, via mRNA and ribosomes.",
+)
+
+# --- DNA chemistry (3) ---
+q(
+    "DNA's two strands run alongside each other and pair up base-by-base. Which bases always pair with which?",
+    "A pairs with T; G pairs with C — exact complementary pairs",
+    "A pairs with G; T pairs with C — like-shaped bases pair together",
+    "A pairs with C; T pairs with G — diagonal pairing across the helix",
+    "Any base can pair with any other — pairs are random in nature",
+    "Adenine pairs with Thymine via two hydrogen bonds; Guanine pairs with Cytosine via three. The geometry (purine + pyrimidine) keeps the helix's diameter uniform. Pairing rules are why DNA can be copied: each strand uniquely templates its partner. Watson, Crick, Franklin, Wilkins did the structural work in 1952-53.",
+)
+q(
+    "What's the 'backbone' of a DNA strand — the part holding the bases in their proper sequence?",
+    "Alternating sugar and phosphate groups — linked covalently down each strand",
+    "Repeated nitrogenous bases — Adenines linked together by hydrogen bonds",
+    "Strands of amino acids — DNA shares its backbone with proteins",
+    "Repeated lipid molecules — the same kind of molecules that build cell membranes",
+    "DNA is a polymer: each unit is a nucleotide = phosphate + deoxyribose sugar + base. The phosphate of one nucleotide links to the sugar of the next via the 3' and 5' carbons, creating directional strands. Strands run antiparallel — one 5' to 3', the other 3' to 5'. This directionality matters for replication and transcription.",
+)
+q(
+    "RNA looks similar to DNA, but with a few important chemical differences. Which of these is one of those differences?",
+    "RNA has uracil (U) instead of thymine (T) — DNA uses thymine in its strands",
+    "RNA is found only in plants — DNA is found in all life forms",
+    "RNA has no bases at all — only sugars and phosphates",
+    "RNA uses left-handed sugars — DNA uses right-handed sugars only",
+    "RNA differs from DNA in three ways: (1) ribose instead of deoxyribose (one extra OH), (2) uracil instead of thymine, (3) usually single-stranded instead of double. RNA has many roles: messenger (mRNA), transfer (tRNA), ribosomal (rRNA), regulatory (microRNAs), and as the genome of many viruses (HIV, influenza, SARS-CoV-2).",
+)
+
+# --- Lipids / membranes (2) ---
+q(
+    "The membrane around every cell is built mainly from a special class of molecules with a 'head' that likes water and 'tails' that hate it. What are these molecules called?",
+    "Phospholipids — water-loving head and two water-hating fatty-acid tails",
+    "Sterols — single-ring molecules including cholesterol and vitamin D",
+    "Polysaccharides — long sugar chains like starch and cellulose",
+    "Polypeptides — short protein chains that form the wall of every cell",
+    "Phospholipids self-assemble into a bilayer: tails face inward (hiding from water); heads face outward (touching water). This bilayer is the basic structure of every cell membrane. Proteins embedded in it act as pumps, channels, receptors. Cholesterol stiffens the membrane. The structure is universal across life.",
+)
+q(
+    "Cooking oils labeled 'saturated fat' vs 'unsaturated fat' differ at a molecular level. What does 'unsaturated' actually mean?",
+    "It has one or more double bonds in the fatty-acid chain — chains kinked, lower melting point",
+    "It has fewer carbon atoms than a saturated fat — chains are simply shorter",
+    "It has water added during production — diluting the fatty-acid content",
+    "It contains no carbon at all — replaced entirely by non-organic atoms",
+    "Saturated fats (butter, lard, coconut) have only single C-C bonds; chains pack tightly; solid at room temperature. Unsaturated fats (olive, fish, most vegetable oils) have double bonds that kink the chain, preventing tight packing — liquid at room temperature. Trans fats (artificially modified) were widely banned by the early 2020s due to cardiovascular harm.",
+)
+
+# --- Polymers (2) ---
+q(
+    "Plastics, proteins, DNA, starch, and rubber are all examples of polymers. What does 'polymer' mean?",
+    "A large molecule built by linking many smaller repeating units — called monomers",
+    "A liquid that turns solid when cooled — without any chemistry change",
+    "Any molecule heavier than 10 atoms — including small fatty acids and sugars",
+    "A pure substance without bonds — neither metallic, ionic, nor covalent inside",
+    "Polymers are chains (or branched / cross-linked networks) of repeating monomer units. Polyethylene = many ethylene units. Cellulose = many glucose units. Proteins = many amino acids. DNA = many nucleotides. Polymerization can be addition (chain-growth) or condensation (loses water per bond, like protein synthesis).",
+)
+q(
+    "Most modern plastics are synthetic polymers — long chains of repeating units made from oil. What's the most common synthetic polymer by volume produced globally?",
+    "Polyethylene — used in bags, bottles, films; about 100 million tons made yearly",
+    "Polyester — used mainly in clothing and rope; small share of global plastic",
+    "Bakelite — invented in 1907; rarely used today except in some appliance parts",
+    "Polystyrene — used in foam cups; about 1 million tons made each year worldwide",
+    "Polyethylene comes in low-density (LDPE, flexible bags) and high-density (HDPE, milk jugs) forms. Polypropylene is second (yogurt cups, fibers). PET is third (clear water bottles). Together they account for ~70% of plastic production. Concerns about microplastics and environmental persistence have grown sharply through the 2020s.",
+)
+
+# --- Lavoisier 1774 oxygen overturned phlogiston ---
+q(
+    "Antoine Lavoisier in 1774 carefully weighed materials before and after burning them. He showed that burning combines fuel with a specific component of air. What did the older theory called 'phlogiston' get wrong?",
+    "Phlogiston theory said burning RELEASES a substance — Lavoisier showed it ABSORBS oxygen",
+    "Phlogiston theory said burning was magical — Lavoisier showed it had no chemistry behind it",
+    "Phlogiston theory said burning released heat — Lavoisier said burning released cold instead",
+    "Phlogiston theory was correct — Lavoisier was disproven by later chemists who returned to it",
+    "Pre-Lavoisier chemists thought burning released 'phlogiston.' Joseph Priestley discovered oxygen in 1774 (called 'dephlogisticated air'); Lavoisier reinterpreted and named it oxygen. Lavoisier showed burning gains weight (gains O), shattering phlogiston. He's called the father of modern chemistry. He was guillotined in 1794 during the French Revolution — 'France needed no chemists.'",
+)
+q(
+    "Antoine Lavoisier carefully weighed reactants and products in sealed jars, demonstrating that the total mass before equals the total mass after a chemical reaction. What principle did his careful weighing establish?",
+    "Conservation of mass — matter is neither created nor destroyed in chemical reactions",
+    "Conservation of phlogiston — burning releases a fixed amount of phlogiston each time",
+    "Conservation of energy — heat released by reactions equals heat absorbed elsewhere",
+    "Conservation of charge — total electric charge before and after must equal zero",
+    "Lavoisier's law (1789) holds in classical chemistry: atoms rearrange but aren't created or destroyed. Einstein's E=mc^2 (1905) showed mass and energy can interconvert at the level of nuclear reactions, but for ordinary chemistry the mass change is far too small to measure. Conservation of mass remains a foundational accounting tool for every modern chemist.",
+)
+
+# --- Chemistry extras to reach 45 ---
+q(
+    "When you dissolve sugar in hot tea, the sugar disappears but the tea gets sweeter. Where did the sugar go?",
+    "Sugar molecules disperse uniformly between water molecules — still all there, just spread out",
+    "Sugar molecules break apart into atoms — and gradually reform into new compounds",
+    "Sugar reacts chemically with water — producing a new sweet-tasting compound",
+    "Sugar evaporates with the steam — leaving the tea taste behind from the leaves",
+    "Dissolving is a physical process, not chemical. Sugar molecules separate from each other; water surrounds each molecule. Mass is conserved (Lavoisier!). Evaporate the tea and the sugar is left behind crystallized. The same is true for salt, kool-aid powder, and almost any soluble substance.",
+)
+q(
+    "Why does a balloon filled with helium float upward in air, but a balloon filled with carbon dioxide sinks?",
+    "Helium is less dense than air; CO2 is denser — buoyancy follows density differences",
+    "Helium is colder than air; CO2 is warmer — temperature alone drives buoyancy",
+    "Helium is radioactive; CO2 isn't — radioactivity provides the upward push",
+    "Helium has more atoms; CO2 has fewer — atom count drives buoyancy in air",
+    "Air is ~78% N2 (mass 28) + ~21% O2 (mass 32), giving an effective molar mass ~29 g/mol. Helium = 4 g/mol — much lighter, so it rises. CO2 = 44 g/mol — heavier, so it sinks. Hot-air balloons exploit a similar principle: heated air at fixed pressure is less dense than the surrounding cooler air.",
+)
+q(
+    "The element chlorine (Cl) is poisonous as a green gas — but combined with sodium it's table salt, essential for life. How can the same element be deadly alone and essential in a compound?",
+    "Elemental Cl2 and chloride ion (Cl-) differ — bonding state matters, not just identity",
+    "Salt removes chlorine's toxicity through filtration — your body filters poison out",
+    "Sodium absorbs chlorine's poison — sodium is the universal antidote for chlorine",
+    "It's not the same chlorine — Lavoisier showed salt's chloride is a different element",
+    "Cl2 is a yellow-green diatomic gas, highly reactive and toxic. NaCl is an ionic crystal: Na+ and Cl- ions, both electronically stable. Chemistry depends on bonding state, not just element identity. The transformation makes chlorine safe — and chloride ion is essential for nerve signaling and stomach acid (HCl).",
+)
+q(
+    "Pure water can be split into hydrogen and oxygen gases by running an electric current through it (electrolysis). What's the volume ratio of the two gases produced?",
+    "Twice as much hydrogen as oxygen by volume — water is H2O",
+    "Equal amounts of both — the volumes match exactly in any electrolysis",
+    "Twice as much oxygen as hydrogen — heavier atoms expand into more gas",
+    "Ten times as much hydrogen — hydrogen is much lighter and produces vastly more gas",
+    "Water's formula (H2O) means 2:1 hydrogen-to-oxygen by atom count. Gases at the same temperature and pressure have volumes proportional to moles (Avogadro's law), so H2 gas volume is double O2 gas volume. Electrolysis was a key 19th-century experiment confirming the molecular formula of water.",
+)
+q(
+    "A burning candle reacts wax with oxygen to produce mostly two gases. What are they?",
+    "Carbon dioxide and water vapor — the universal products of complete hydrocarbon combustion",
+    "Carbon monoxide and methane — products of incomplete combustion only",
+    "Helium and neon — produced from energy released by the burning candle",
+    "Nitrogen and argon — released from the candle's wick during combustion",
+    "Hydrocarbon combustion: C_xH_y + O2 -> CO2 + H2O. Wax has long chains, like C25H52. Complete combustion uses enough oxygen to oxidize all C and H. Insufficient oxygen gives CO (carbon monoxide), soot, and partially oxidized compounds. Indoor heating with poor ventilation is dangerous because of CO buildup.",
+)
+q(
+    "Diamonds and graphite are both pure carbon, yet diamond is hard and graphite is soft. What other element has many 'allotropes' (different structural forms) that look very different?",
+    "Oxygen — exists as O2 (the air we breathe) and O3 (ozone)",
+    "Helium — has dozens of allotropes that look very different from each other",
+    "Sodium — exists in chemical formulas with hundreds of structural forms",
+    "Mercury — has 50 allotropes that are difficult to tell apart by appearance",
+    "Allotropes are common: oxygen (O2, O3), phosphorus (white, red, black), sulfur (S8 rings, plastic, etc.). Different molecular arrangements give different properties. O2 is essential for breathing; O3 (ozone) protects from UV in the upper atmosphere but is toxic at ground level. Carbon has many: diamond, graphite, graphene, fullerenes, nanotubes.",
+)
+q(
+    "The 'noble gases' (helium, neon, argon, krypton, xenon, radon) sit on the right edge of the periodic table. Why do they almost never react with other elements?",
+    "Their outermost electron shells are completely full — no room to bond",
+    "They're radioactive — their decay disrupts any bonds before forming",
+    "They exist as gases — gases never react under any conditions ever",
+    "They're cooler than other elements — and cold prevents most chemistry",
+    "Noble gases have closed-shell electron configurations — 2 (He) or 8 (others) in the outer shell. No tendency to gain, lose, or share electrons. Xenon and krypton can be forced into compounds under extreme conditions (XeF4 etc.), but only with great effort. Argon (0.93% of air) is the most abundant noble gas. Helium escapes Earth's gravity and is non-renewable.",
+)
+q(
+    "Common acids and bases neutralize each other. What's typically produced when a strong acid (HCl) reacts with a strong base (NaOH)?",
+    "Salt (NaCl) and water — neutralization releases the salt of the acid plus water",
+    "Hydrogen gas and oxygen gas — acid and base reactions release elements",
+    "Carbon dioxide and ammonia — typical neutralization products",
+    "A new acid stronger than either input — combinations always strengthen",
+    "Acid + Base -> Salt + Water. HCl + NaOH -> NaCl + H2O. The H+ from the acid and OH- from the base combine into H2O; the other ions form an ionic salt. The reaction releases heat (exothermic). All Brønsted-Lowry acid-base reactions follow this pattern in some form.",
+)
+q(
+    "Some chemical reactions release heat (your hand warms when mixing the chemicals); others absorb it (your hand cools). What are these two types called?",
+    "Exothermic releases heat — and endothermic absorbs it from the surroundings",
+    "Catabolic and anabolic — biological terms for the chemical reactions",
+    "Oxidizing and reducing — they describe heat production directly",
+    "Polar and nonpolar — they describe the temperature changes of reactions",
+    "Exo = out, endo = in (Greek). Combustion is exothermic — fuel + O2 releases heat. Photosynthesis is endothermic — requires sunlight energy input. Most reactions favor lower-energy products. Whether a reaction proceeds spontaneously also depends on entropy (Gibbs free energy: G = H - T*S).",
+)
+
+q(
+    "Iron, copper, and aluminum are all metals — yet only iron is naturally magnetic. What's so special about iron's atoms?",
+    "Iron's electrons can align in 'domains' — and stay aligned to produce a magnetic field",
+    "Iron is heavier than copper or aluminum — magnetism scales directly with atomic mass",
+    "Iron has the most protons of common metals — protons are the magnetic carriers in atoms",
+    "Iron is hollow inside — and the hollow center stores magnetic charge from the air",
+    "Ferromagnetism happens in iron, cobalt, and nickel (and a few rare earths). Unpaired electron spins in iron's d-orbitals align cooperatively in microscopic 'magnetic domains.' Heat above the Curie temperature (~770 C for iron) randomizes the domains, destroying magnetism. Lodestone (magnetite, Fe3O4) was the first known natural magnet.",
+)
+q(
+    "Why do certain elements glow with specific colors when heated (think: orange in sodium streetlamps, red in neon signs)?",
+    "Heated electrons jump up — then fall back, releasing photons of specific colors",
+    "Heated electrons absorb light — and reflect only the color we see in the lamp",
+    "Heated atoms split open — releasing light from inside the nucleus directly",
+    "Heated metals oxidize — the oxide layer determines what color shines out",
+    "Each element has a unique set of allowed energy levels. Heat excites electrons; as they drop back down, photons are emitted at frequencies set by the energy differences. Sodium D-lines (589 nm, orange) and hydrogen Balmer series (red, blue, violet) are textbook examples. The same principle powers spectroscopy — fingerprinting elements in stars.",
+)
+q(
+    "An iron horseshoe magnet attracts paper clips strongly, but rubbing it with a paper clip transfers some magnetism. Then the paper clip is itself magnetic for a while. Why does the magnetism fade?",
+    "Thermal motion gradually scrambles the aligned domains — the paper clip loses magnetism",
+    "The magnetic charge slowly evaporates — like water from a wet surface in dry air",
+    "Earth's gravity reverses the field — making the paper clip magnetically neutral over time",
+    "The paper clip's iron rusts — and rust cannot carry any magnetism by its nature",
+    "Magnetic 'domains' in iron can be aligned by an external field, retaining magnetism after the field is removed. But heat (thermal jitter) and stress randomize them over time. Hard magnetic materials (used in permanent magnets) hold alignment well; soft materials (used in transformers) lose it easily. Curie temperature is the heat above which all alignment is lost.",
+)
+q(
+    "Vinegar (acetic acid) and baking soda (sodium bicarbonate) react vigorously, producing bubbles and fizzing. What gas is causing the fizz?",
+    "Carbon dioxide — released from the bicarbonate as the acid drives the reaction",
+    "Hydrogen gas — produced when acids react with metals like sodium or calcium",
+    "Oxygen gas — released as the bicarbonate breaks apart from acid pressure on it",
+    "Water vapor — boiling off the room-temperature mixture as it reacts together",
+    "CH3COOH + NaHCO3 -> CH3COONa + H2O + CO2(g). The fizz is carbon dioxide bubbling out. The reaction is a classic acid-base neutralization. Bicarbonate ion (HCO3-) is the conjugate base of carbonic acid; it can react with stronger acids to release CO2 and form a salt. This is the same chemistry as antacids buffering stomach acid.",
+)
+
+print(f"[checkpoint] After P2, total questions = {len(QUESTIONS)}")
+
+
+# ==========================================================================
+# PILLAR 3: BIOLOGY (target 55)
+# ==========================================================================
+
+# --- Mitosis vs meiosis (3) ---
+q(
+    "A cut on your skin heals by your body making more skin cells. Each new skin cell has a full set of chromosomes identical to its parent. What's this kind of cell division called?",
+    "Mitosis — produces two genetically identical daughter cells from one parent cell",
+    "Meiosis — produces four cells, each with half the chromosomes of the parent",
+    "Fertilization — combines two cells from different parents into one new cell",
+    "Apoptosis — programmed cell death used for tissue maintenance and shaping",
+    "Mitosis is the routine cell-division process for growth, repair, and replacement. One parent cell -> two daughter cells, each with the same chromosomes (46 in humans). Five phases: prophase, metaphase, anaphase, telophase, cytokinesis. Cancer is in part a failure of normal mitotic regulation.",
+)
+q(
+    "Sperm and egg cells are produced by a different kind of cell division — one that halves the chromosome count so a sperm + egg combine to give a normal cell. What's this kind of division called?",
+    "Meiosis — produces four cells with half the chromosome count of the parent",
+    "Mitosis — produces two genetically identical cells with the same chromosome count",
+    "Binary fission — bacterial cell division producing two clones at once",
+    "Polyploidy — chromosome doubling that produces gigantic offspring cells",
+    "Meiosis halves chromosomes: 46 (diploid) -> 23 (haploid). Sperm + egg -> 46 again at fertilization. Meiosis includes 'crossing over' where matching chromosomes swap segments, generating genetic variation. Meiotic errors cause Down syndrome (trisomy 21), Turner syndrome (XO), Klinefelter (XXY), etc.",
+)
+q(
+    "During meiosis, matching chromosomes from your mother and father can swap segments before separating into different cells. What's this process called, and why does it matter?",
+    "Crossing over — generates genetic variation in offspring beyond simple parental mixing",
+    "Mitotic recombination — happens only in body cells, never in sperm or egg cells",
+    "Chromosome amplification — doubles every chromosome before division begins",
+    "Cytokinesis — the physical splitting that ends every cell division process",
+    "Crossing over (chiasma formation) in prophase I of meiosis shuffles maternal and paternal genes within each chromosome. Combined with the random assortment of which chromosomes go to which daughter cell, this generates trillions of possible genetic combinations per parent. Sexual reproduction's genetic variation comes mainly from crossing over.",
+)
+
+# --- Watson + Crick + Franklin DNA 1953 / Photo 51 (3) ---
+q(
+    "On April 25, 1953, Nature published the discovery of DNA's structure. James Watson and Francis Crick at Cambridge worked from data that came from a separate lab. Whose X-ray image (Photo 51) was crucial — and shown to Watson without her knowledge?",
+    "Rosalind Franklin — at King's College London, taken with PhD student Raymond Gosling",
+    "Linus Pauling — at Caltech, who had proposed an incorrect triple-helix model",
+    "Maurice Wilkins — King's College London, who later shared the Nobel for DNA's structure",
+    "Erwin Chargaff — discovered the base-pairing ratios in 1950, but no X-ray work",
+    "Photo 51 (taken May 1952) showed DNA was a helix with specific geometric parameters. Wilkins showed it to Watson without Franklin's permission. Franklin died of ovarian cancer in 1958 at 37. The 1962 Nobel went to Watson, Crick, and Wilkins (Nobels can't be posthumous). Franklin's role has been increasingly recognized in recent decades.",
+)
+q(
+    "Why did Rosalind Franklin not share the 1962 Nobel Prize for DNA's structure with Watson, Crick, and Wilkins?",
+    "Nobel Prizes are not awarded posthumously — Franklin died of cancer in 1958",
+    "Franklin disputed the discovery — she rejected the helix model right up to her death",
+    "Franklin's work had been retracted by Nature — Watson and Crick replaced it",
+    "Franklin was credited separately — Britain gave her a different prize in 1958",
+    "Nobel rules require living recipients (with rare exceptions). Franklin died at 37 of ovarian cancer, likely linked to X-ray exposure during her work. Watson's later memoir 'The Double Helix' (1968) gave a dismissive portrait of Franklin that has been challenged by historians, including her biographer Brenda Maddox.",
+)
+q(
+    "DNA's double-helix structure has a specific feature that makes copying it possible. Each strand carries enough information to rebuild the other. Why?",
+    "Each strand is the complement of the other — A pairs with T, G with C, unambiguously",
+    "Each strand carries a backup copy of every gene — the helix is its own redundancy",
+    "Each strand has the same sequence — the helix is a mirror of itself",
+    "Each strand contains repeating units — every cell has the same DNA structure",
+    "Complementary base-pairing is the heart of replication. Open the helix; each old strand templates a new partner. Enzymes (DNA polymerase, helicase, ligase) do the work. The mechanism — semiconservative replication — was confirmed by Meselson and Stahl in 1958 using nitrogen isotopes.",
+)
+
+# --- Central dogma (Crick 1958) (3) ---
+q(
+    "Francis Crick in 1958 proposed the 'central dogma of molecular biology' — the basic information flow in cells. What's the direction Crick described?",
+    "DNA -> RNA -> Protein — information flows from genes to messengers to functional molecules",
+    "Protein -> RNA -> DNA — proteins are read backwards by ribosomes",
+    "DNA -> Protein directly — RNA was added to the model only later by researchers",
+    "RNA -> DNA -> Protein — RNA is the original genetic material in cells",
+    "DNA is the storage; RNA is the messenger; protein is the worker. Transcription: DNA -> mRNA. Translation: mRNA -> protein at the ribosome. Crick was right in 1958 but later discoveries refined the picture: reverse transcription (RNA -> DNA, as in HIV), RNA viruses, and many regulatory RNA types not predicted by the original dogma.",
+)
+q(
+    "Three letters of DNA (a 'codon') specify which amino acid gets added next when a ribosome builds a protein. How many possible codons are there, and why does that matter?",
+    "64 codons — more than enough to specify 20 amino acids (most amino acids have several)",
+    "20 codons — exactly one per amino acid, with perfect one-to-one specificity",
+    "4 codons — A, T, G, C each map to one amino acid in the genetic code",
+    "10 codons — only the most common amino acids are represented in real genes",
+    "Four bases x three positions = 4^3 = 64. Twenty amino acids + START and STOP signals fill the table. Most amino acids have 2-6 codons each — the code is 'degenerate.' The genetic code is nearly universal across all life (bacteria, plants, humans), with rare variants. Marshall Nirenberg cracked the code in the 1960s; Nobel 1968.",
+)
+q(
+    "Crick's central dogma was modified once a key exception was discovered. Some viruses (including HIV) carry RNA as their genome and copy it back into DNA inside a host cell. What's the enzyme that does this?",
+    "Reverse transcriptase — copies RNA back into DNA, an exception to the original dogma",
+    "DNA polymerase — copies DNA to DNA, the standard replication enzyme",
+    "RNA polymerase — copies DNA to RNA, the standard transcription enzyme",
+    "Ribosome — the protein-synthesis machine, not a copying enzyme at all",
+    "Howard Temin and David Baltimore independently discovered reverse transcriptase in 1970 (Nobel 1975). HIV uses it to convert its RNA genome to DNA, which integrates into the host genome. PCR (Kary Mullis, 1983) and CRISPR diagnostics both depend on understanding nucleic-acid copying enzymes.",
+)
+
+# --- Natural selection mechanism / Wallace 1858 (3) ---
+q(
+    "Darwin's theory of natural selection is sometimes oversimplified as 'survival of the fittest' (a phrase actually coined by Herbert Spencer). Which three conditions are actually required for natural selection to operate?",
+    "Heritable variation, differential reproduction, competition — three conditions together",
+    "Genetic mutations only — environment plays no role at all in evolution",
+    "Long lifespans — only species that live long enough can evolve significantly",
+    "Group cooperation — only social animals can pass on advantageous traits at all",
+    "Natural selection requires: (1) variation in traits among individuals, (2) those variations must be heritable, (3) some variants must reproduce more than others. Mutation supplies variation; the environment selects. No 'goal' or 'progress' is needed — just differential reproduction. Darwin's Origin (1859) laid this out.",
+)
+q(
+    "In June 1858 Darwin received a letter from a young naturalist working in the Malay Archipelago. The letter independently described natural selection, prompting Darwin to publish his own work immediately. Who wrote it?",
+    "Alfred Russel Wallace — younger, less wealthy, less famous than Darwin",
+    "Thomas Huxley — Darwin's later 'bulldog' who defended evolution publicly",
+    "Joseph Hooker — Darwin's botanist friend who later edited Darwin's letters",
+    "Asa Gray — the Harvard botanist who introduced Darwin's ideas in America",
+    "Wallace was collecting in the East Indies (then Dutch). His Ternate paper described almost the same theory Darwin had been sitting on for 20 years. Hooker and Lyell arranged a joint Linnean Society reading July 1858 — both authors credited. Darwin rushed Origin of Species to print in 1859. Wallace later distanced himself from human-evolution claims.",
+)
+q(
+    "Natural selection works on variation that already exists in a population. Where does that variation originally come from?",
+    "Mutations — random copying errors in DNA, plus sexual recombination during meiosis",
+    "Environmental pressure — the environment creates new traits as needed for survival",
+    "Behavior — animals choose to develop certain traits and pass them to children",
+    "Phlogiston-like fluid — a hidden essence that determines what traits appear",
+    "Mutation supplies new alleles (single-base changes, insertions, deletions, etc.). Sexual recombination shuffles existing alleles into novel combinations. Selection then acts on the resulting variation. Lamarck's 'inheritance of acquired characteristics' (giraffe necks stretching from reaching) was wrong, but he was an honest early scientist.",
+)
+
+# --- Nitrogen + carbon cycles (2) ---
+q(
+    "Plants need nitrogen to make proteins, but the nitrogen gas (N2) that makes up 78% of the atmosphere is chemically inert — plants can't use it directly. How do plants get usable nitrogen?",
+    "Bacteria 'fix' N2 into ammonia/nitrate forms — plants take up these compounds",
+    "Plants absorb N2 through their leaves — converting gas directly into protein chains",
+    "Lightning is the only natural source of usable nitrogen — bacteria play no role",
+    "Plants get nitrogen from animal urine alone — bacteria are unrelated to it",
+    "Nitrogen fixation: certain bacteria (Rhizobium in legume roots, free-living Azotobacter, etc.) and lightning convert N2 to ammonia (NH3) or nitrate (NO3-). Plants take these up. The Haber-Bosch process (1909) industrially fixes nitrogen for fertilizer — a major reason world population could grow past 2 billion in the 20th century.",
+)
+q(
+    "Photosynthesis takes carbon dioxide out of the air and uses sunlight to build sugars; respiration in cells later breaks the sugars apart, releasing CO2 again. What name do we give the overall loop?",
+    "The carbon cycle — atoms move among air, plants, animals, and rocks over time",
+    "The nitrogen cycle — covering the movement of nitrogen rather than carbon",
+    "The Krebs cycle — a chemical pathway inside individual mitochondria of cells",
+    "The carbon arrow — a one-way trip from air into rocks, never returning",
+    "The carbon cycle includes biological exchange (photosynthesis / respiration) and geological flows (volcanism, weathering, sediment burial, fossil-fuel combustion). Burning coal, oil, and gas releases carbon stored over 100+ million years. Long-term, the carbon cycle is one of the most important biogeochemical systems on Earth.",
+)
+
+# --- Ecological niche (2) ---
+q(
+    "Two species of finch on the same Galapagos island can coexist if they eat different seeds. What ecological concept describes the unique 'role' each species plays in its environment?",
+    "Niche — the combination of resources, habitat, and behavior a species occupies",
+    "Habitat — strictly the physical location where the species lives",
+    "Genus — a higher classification group that two species cannot share",
+    "Mutualism — a cooperative relationship between two different species",
+    "G.E. Hutchinson formalized the modern niche concept in 1957 — a multidimensional 'hypervolume' of conditions and resources a species uses. Two species cannot occupy the same niche indefinitely in the same place (competitive exclusion). Closely related species often partition niches by time, space, or resource. Darwin's finches are a textbook example.",
+)
+q(
+    "When a new species is introduced into an ecosystem with no natural predators or parasites, it sometimes spreads explosively — outcompeting native species and damaging the ecosystem. What general name do we give such organisms?",
+    "Invasive species — examples include cane toads in Australia and kudzu in the US",
+    "Keystone species — species whose removal would devastate an ecosystem entirely",
+    "Endemic species — species native to a single region and nowhere else on Earth",
+    "Apex predators — species at the top of a food chain, regardless of geographic origin",
+    "Cane toads in Australia (introduced 1935), kudzu in the American South, zebra mussels in the Great Lakes, lionfish in the Caribbean. Invasive species disrupt food webs, drive native species extinct, and cost billions to manage. Globalization and shipping accelerate spread; quarantine and biosecurity attempt to slow it.",
+)
+
+# --- Germ theory Pasteur + Koch / Koch's postulates (3) ---
+q(
+    "Before the late 1800s, doctors and scientists had many wrong theories about disease — bad air, evil vapors, divine punishment. Louis Pasteur in the 1860s did experiments that demonstrated diseases are caused by tiny living organisms. What's that theory called?",
+    "Germ theory — diseases are caused by microorganisms (bacteria, viruses, fungi, parasites)",
+    "Miasma theory — sickness is caused by 'bad air' or polluted vapors",
+    "Humoral theory — disease comes from imbalances of four bodily fluids",
+    "Phlogiston theory — disease is caused by a special substance released by burning",
+    "Pasteur's swan-neck flask experiments (1859-64) disproved spontaneous generation and supported germ theory. Robert Koch isolated specific pathogens (anthrax bacillus 1876, tuberculosis 1882, cholera 1883). Lister applied germ theory to surgical antisepsis (1867). Within a generation, hand-washing, sterilization, pasteurization, and vaccination transformed medicine.",
+)
+q(
+    "Robert Koch's 'postulates' are a set of criteria for proving that a specific microbe causes a specific disease. Which of these is one of Koch's postulates?",
+    "The microbe must be isolated from a sick host and grown in pure culture",
+    "The microbe must be visible only with electron microscopes and not light ones",
+    "The disease must affect only humans and never any other animal species",
+    "The microbe must be larger than any cell in the host body's internal organs",
+    "Koch's four postulates (1890): (1) the microbe must be present in every case; (2) it must be isolated from the sick host in pure culture; (3) the cultured microbe must cause the same disease when introduced to a healthy host; (4) it must be re-isolated from the experimentally infected host. Some pathogens (HIV, prions) don't fit cleanly, but the postulates remain a foundation.",
+)
+q(
+    "Louis Pasteur's famous experiment used a flask with a long, swan-neck shape to argue against the theory of 'spontaneous generation' (life arising spontaneously from non-life). What did the swan neck demonstrate?",
+    "Microbes from the air could be excluded — broth didn't spoil if microbes couldn't reach it",
+    "Broth created microbes spontaneously — disproving Pasteur's own germ theory entirely",
+    "Microbes only grew in glass containers — proving they were always present already",
+    "Long necks blocked oxygen — without oxygen, broth never spoiled at all",
+    "Pasteur boiled broth in flasks with long curved necks. Dust and microbes settled in the curve; nothing reached the broth. Broth stayed sterile indefinitely — unless the neck was broken, after which it spoiled. This decisively challenged spontaneous generation and supported germ theory. Pasteur did the same kind of careful work on rabies vaccine in 1885.",
+)
+
+# --- Vaccination history Jenner-Pasteur-Salk-Sabin-Hilleman (4) ---
+q(
+    "Edward Jenner in 1796 noticed that milkmaids who had caught cowpox were immune to the deadly disease smallpox. He inoculated 8-year-old James Phipps with cowpox, then exposed him to smallpox. What word did Jenner give to his new technique?",
+    "Vaccination — from 'vacca' (Latin for cow), since cowpox was the source material",
+    "Inoculation — a much older general term Jenner did not invent in 1796",
+    "Variolation — an even older practice using actual smallpox material, not cowpox",
+    "Immunization — a 20th-century term coined long after Jenner's work was done",
+    "Variolation (using mild smallpox) was practiced in China, Africa, and the Ottoman Empire long before Jenner. Lady Mary Wortley Montagu brought it from Constantinople to Britain in 1721. Jenner's cowpox version was far safer. The WHO declared smallpox eradicated in 1980 — the only human disease ever eradicated.",
+)
+q(
+    "Louis Pasteur in 1885 saved the life of 9-year-old Joseph Meister, who had been bitten by a rabid dog. Pasteur gave him a series of injections of his experimental rabies treatment. What was different about this treatment?",
+    "It used weakened rabies virus — a vaccine given AFTER exposure (post-exposure prophylaxis)",
+    "It used antibiotics — the first time bacterial diseases had been cured with drugs",
+    "It used cowpox — the same Jenner technique adapted from smallpox treatment",
+    "It used pure water — Pasteur's homeopathic experiment that turned out to work",
+    "Pasteur's rabies vaccine used virus weakened by drying rabbit spinal cord. The vaccine train of injections boosted immunity faster than the slow-incubating virus could spread. Joseph Meister survived. Today, post-exposure rabies prophylaxis remains highly effective if given before symptoms begin. Once symptoms start, rabies is almost universally fatal.",
+)
+q(
+    "In 1955 Jonas Salk's inactivated polio vaccine was approved for general use in the United States, after a massive field trial involving over 1.8 million children (the 'Polio Pioneers'). What was different about Salk's vaccine vs Sabin's later oral vaccine?",
+    "Salk used inactivated virus by injection — Sabin used live-attenuated virus by mouth",
+    "Salk used antibody injection — Sabin used live-virus injection for stronger protection",
+    "Salk used cowpox; Sabin used vaccinia — different viruses with different effects",
+    "Salk was banned for safety — Sabin replaced it because the Salk vaccine killed children",
+    "Salk's IPV (1955) uses formaldehyde-killed poliovirus by injection. Sabin's OPV (licensed 1962) uses live-attenuated virus by mouth (easier to administer in mass campaigns). OPV can rarely revert to virulence; many countries now use IPV. Polio was eliminated in the US by 1979, and global eradication is nearly complete — only Afghanistan and Pakistan still report wild cases.",
+)
+q(
+    "Maurice Hilleman developed about 40 vaccines during his career at Merck, including the M-M-R combination given to most American children. What three diseases does M-M-R protect against?",
+    "Measles, mumps, and rubella — three common childhood viral diseases",
+    "Meningitis, malaria, and rabies — three deadlier diseases with available vaccines",
+    "Measles, malaria, and rotavirus — three commonly bundled childhood vaccines",
+    "Mumps, mononucleosis, and roseola — three contagious childhood diseases",
+    "Hilleman (1919-2005) developed measles (1963), mumps (1967), rubella (1969), and the combined M-M-R (1971). He also worked on hepatitis A, hepatitis B, chickenpox, meningitis, and pneumococcal disease vaccines. Reputed to be the most successful vaccine developer in history. Less famous than Salk or Sabin in popular memory.",
+)
+
+# --- Semmelweis 1847 (puerperal fever) (2) ---
+q(
+    "Ignaz Semmelweis in 1847 ran two maternity wards in Vienna. Ward 1 was staffed by doctors who often came from autopsies; Ward 2 by midwives who did not. Mortality from puerperal (childbed) fever in Ward 1 was ~18% vs ~2% in Ward 2. What did Semmelweis figure out?",
+    "Doctors carried 'cadaverous particles' from autopsies — handwashing in chlorinated lime cut deaths",
+    "Mothers in Ward 1 ate different food — switching diets restored maternity safety",
+    "Ward 1 had more drafts — improving ventilation eliminated the deaths entirely",
+    "Doctors were rougher than midwives — gentleness alone explained the death gap",
+    "Semmelweis insisted on hand-washing in calcium hypochlorite. Mortality dropped from 18% to ~1% within months. He couldn't explain WHY (germ theory came decades later). Vienna's medical establishment rejected him. He was forced out of his job, declined into mental illness, and died in 1865 in an asylum at age 47 — possibly from a beating, possibly from sepsis after a cut.",
+)
+q(
+    "Semmelweis died in 1865 at age 47 in an asylum. He had been ridiculed for decades by mainstream Viennese medicine even as his statistical evidence was overwhelming. What broader lesson does his case teach about scientific consensus?",
+    "Consensus can be wrong for decades — establishment can punish dissenters who turn out right",
+    "Consensus is always correct — Semmelweis was wrong and died deserving the criticism",
+    "Vienna had no scientific establishment — there was no consensus to challenge in 1847",
+    "Semmelweis suppressed his own work — his death came from regret rather than mistreatment",
+    "Joseph Lister (1867) extended antiseptic methods to surgery, citing Pasteur's germ theory. Lister's father-in-law was a former Semmelweis collaborator. The 'Semmelweis effect' or 'Semmelweis reflex' now names the reflexive rejection of new evidence that contradicts established belief. The pattern recurs in science — Marshall and H. pylori is a 1980s example.",
+)
+
+# --- Marshall + Warren H. pylori (3) ---
+q(
+    "Before 1982 the medical consensus said stomach ulcers came from stress and spicy food. Australian doctors Barry Marshall and Robin Warren proposed something different. What did they identify as the actual cause of most ulcers?",
+    "Helicobacter pylori — a bacterium living in the acidic stomach environment",
+    "Streptococcus pyogenes — a bacterium more famous for causing strep throat",
+    "Candida albicans — a yeast that lives in many bodily environments",
+    "Escherichia coli — a gut bacterium associated with foodborne illness",
+    "Warren found spiral bacteria in stomach biopsies in 1979; Marshall joined him in 1981. The 'obvious' counterargument was that stomach acid kills bacteria. They proved otherwise. Now ulcer treatment combines antibiotics (e.g., amoxicillin, clarithromycin) with acid suppressors — typical cure rate over 90%. Most ulcers used to require lifelong management; now they're curable.",
+)
+q(
+    "Frustrated that no one believed his H. pylori theory, Barry Marshall in 1984 did something dramatic to prove it. What did he do?",
+    "Drank a beaker of H. pylori culture — developed gastritis, cured himself with antibiotics",
+    "Sued the medical establishment for malpractice — and won a billion-dollar judgment",
+    "Wrote a letter to The Lancet — and triggered worldwide acceptance within weeks",
+    "Founded a private hospital for ulcer patients — operating outside the mainstream system",
+    "Self-experimentation has a long medical history (sometimes Nobel-winning, sometimes fatal). Marshall drank the culture, became sick, biopsied himself, found H. pylori, and cured himself with antibiotics. The dramatic demonstration eventually forced the field to take the bacterial-cause hypothesis seriously. Marshall and Warren shared the 2005 Nobel in Medicine.",
+)
+q(
+    "The Marshall + Warren story is now a textbook example of a scientific reversal — establishment consensus was wrong for years; outsiders were eventually proven right. What's the broader lesson for how to read a 'scientific consensus' headline?",
+    "Consensus is provisional — when an outsider with evidence challenges it, take the evidence seriously",
+    "Consensus is always settled — outsiders should never be taken seriously regardless of evidence",
+    "Consensus is irrelevant — every scientific claim should be evaluated independently from scratch",
+    "Consensus is built by media — the actual experiments don't matter once a story spreads",
+    "Galileo, Semmelweis, Wegener, Marshall, the Great Barrington Declaration — established consensus has been wrong many times. Real scientific epistemics: weigh evidence, replicate, follow the data even when uncomfortable. 'Trust the science' becomes a propaganda slogan when used to suppress dissent rather than to encourage open inquiry. The H. pylori reversal shows the system can correct.",
+)
+
+# --- Immune system innate vs adaptive (3) ---
+q(
+    "Your immune system has two main 'layers' — a fast-acting general defense and a slow-building specific defense. What are they usually called?",
+    "Innate immunity (fast, general) and adaptive immunity (slow, specific, remembered)",
+    "Inner immunity (cells inside) and outer immunity (cells in the skin only)",
+    "Active immunity (vaccines) and passive immunity (antibodies from mother)",
+    "Primary immunity (childhood) and secondary immunity (adulthood)",
+    "Innate immunity: skin, mucus, stomach acid, white blood cells (neutrophils, macrophages) — generic response, fast (minutes to hours). Adaptive immunity: B cells make antibodies, T cells attack infected cells — specific to each pathogen, slow (days to weeks the first time), but remembered for years. The two layers cooperate.",
+)
+q(
+    "Adaptive immunity is slow the FIRST time you encounter a new pathogen — but very fast the second time. Why is the second encounter so much faster?",
+    "Memory B and T cells from the first exposure remain — ready to respond rapidly",
+    "Your body has built up extra blood — making the second response naturally faster",
+    "Pathogens lose strength after every encounter — second infections are always weaker",
+    "Antibiotics now circulate in your blood — preventing any second infection entirely",
+    "Memory cells are the immunological key to vaccination. A vaccine exposes the immune system to a (safe) version of the pathogen — antibodies and T cells are made; some persist as memory cells. If you later meet the real pathogen, the response is fast (hours not days) and high-magnitude. Boosters refresh memory; some vaccines need them, others don't.",
+)
+q(
+    "Your immune system has to distinguish your own cells from foreign invaders. When this 'self vs non-self' system fails and the body attacks its own tissues, what's the general category of disease produced?",
+    "Autoimmune disease — examples include type 1 diabetes, lupus, multiple sclerosis, RA",
+    "Infectious disease — caused by bacteria, viruses, fungi, or parasites from outside",
+    "Genetic disease — inherited disorders independent of any immune malfunction",
+    "Allergic disease — overreaction to harmless substances, not the same as autoimmunity",
+    "Autoimmune diseases include rheumatoid arthritis (joints), MS (nerve sheaths), lupus (multiple tissues), Hashimoto's (thyroid), celiac (gluten + intestine), type 1 diabetes (beta cells). Mechanisms aren't fully understood; genetic risk + environmental triggers (infections, gut microbiome, vitamin D) play roles. Treatments range from anti-inflammatories to immunosuppressants and modern biologics.",
+)
+
+# --- Antibodies + T/B cells (3) ---
+q(
+    "B cells are immune cells that make antibodies. Antibodies are special proteins that recognize specific shapes on pathogens. What do antibodies do when they bind a pathogen?",
+    "Mark it for destruction by other immune cells — or directly neutralize its activity",
+    "Photograph it for later identification — the actual fighting is done by white blood cells",
+    "Reproduce inside it — adding mass until the pathogen dies of starvation",
+    "Convert it into harmless sugar — for storage in the liver until digestion later",
+    "Antibodies (immunoglobulins) have a Y shape with variable tips that bind specific 'antigens.' Bound antibodies can: (1) neutralize directly (e.g., block viral attachment), (2) tag pathogens for phagocytes ('opsonization'), or (3) activate complement (a cascade that punches holes in cells). Five classes exist: IgM, IgG, IgA, IgE, IgD.",
+)
+q(
+    "T cells differ from B cells in what they do. What's the key role of CYTOTOXIC T cells (also called CD8+ T cells)?",
+    "Find and kill the body's own cells — when those cells have been infected by a virus",
+    "Make antibodies that circulate in the blood — and bind pathogens directly themselves",
+    "Cool the body down — they regulate body temperature during infection responses",
+    "Remove foreign blood cells from the system — they manage blood typing reactions",
+    "Cytotoxic (CD8+) T cells recognize viral fragments displayed on the surface of infected cells (via MHC class I) and induce cell death. Helper (CD4+) T cells coordinate the broader immune response. Regulatory T cells dampen overactive responses. HIV's preferential infection and depletion of CD4+ cells is what makes AIDS so devastating to the immune system.",
+)
+q(
+    "Children who recover from chickenpox (or measles, or many other viral infections) are typically immune for life. What's this kind of immunity called?",
+    "Natural immunity — robust, long-lasting memory from actual infection",
+    "Active immunity — only obtained through vaccines, never from infection",
+    "Passive immunity — antibodies received from mother only, fades within months",
+    "Maternal immunity — from breastfeeding only, requiring ongoing maintenance",
+    "Natural immunity from infection is typically robust and long-lasting (sometimes lifetime), though varies by pathogen — measles immunity is excellent; influenza much less so because the virus mutates. Vaccine-induced immunity is often weaker than infection-acquired but much safer to obtain. The two are complementary; both contribute to population-level immunity.",
+)
+
+# --- Autoimmune diseases (2) ---
+q(
+    "Type 1 diabetes is a common autoimmune disease in children. Which tissue does the immune system attack?",
+    "Pancreatic beta cells — insulin-producing cells in the islets of Langerhans",
+    "Liver hepatocytes — which then can't process blood sugar normally",
+    "Muscle tissue — preventing it from absorbing glucose from the bloodstream",
+    "Kidney filters — preventing them from reabsorbing glucose into the body",
+    "Type 1 diabetes (formerly 'juvenile') is autoimmune destruction of insulin-producing beta cells in the pancreas. Patients need exogenous insulin for life. Frederick Banting and Charles Best first isolated and purified usable insulin in 1921-22 in Toronto, transforming a fatal disease into a manageable one. Type 2 diabetes is different — insulin resistance, often related to diet, weight, age.",
+)
+q(
+    "Multiple sclerosis (MS) is an autoimmune disease that affects nerve cells. What part of the nerve does the immune system damage?",
+    "The myelin sheath — the insulating fatty coating around long nerve fibers",
+    "The nerve nuclei — the central control units inside every neuron's body",
+    "The synapses — the gaps where neurons pass signals to each other neurons",
+    "The dendrites — the branching structures that receive incoming signals from others",
+    "Myelin sheaths (made by oligodendrocytes in the CNS) wrap nerve axons, enabling fast signal conduction. In MS, immune attack creates patches of demyelination ('plaques'). Symptoms vary by location: vision, balance, weakness, fatigue. Vitamin D, EBV exposure, and genetic variants are implicated in risk. Disease-modifying therapies have improved dramatically in the past 30 years.",
+)
+
+# --- Vaccine mechanism (train immune system) (2) ---
+q(
+    "A vaccine works by training the adaptive immune system to recognize a pathogen WITHOUT causing the disease. Which of these is NOT a real type of vaccine in current use?",
+    "Crystalline vaccines — synthesized purely from minerals with no biological component",
+    "Inactivated (killed) vaccines — pathogen is killed before injection",
+    "Live-attenuated vaccines — pathogen is alive but weakened so it can't cause disease",
+    "Subunit (protein) vaccines — only a piece of the pathogen, never the whole thing",
+    "Real vaccine types: live-attenuated (MMR, varicella, BCG), inactivated (flu shot, IPV, hep A), subunit (HepB, HPV), toxoid (tetanus, diphtheria), mRNA (COVID), viral-vector (COVID, ebola). Each has tradeoffs in safety, durability, complexity. The technology spans 200+ years from Jenner's cowpox to modern mRNA platforms developed in the 2010s.",
+)
+q(
+    "mRNA vaccines (e.g., Pfizer and Moderna COVID vaccines) work by a different mechanism than older vaccines. What does the injected mRNA cause your cells to do?",
+    "Briefly make a piece of the virus's outer protein — letting the immune system learn it",
+    "Permanently change your DNA — installing the genetic code of the virus in cells",
+    "Make the entire virus — creating a controlled infection that you must fight off",
+    "Make antibodies directly — bypassing the immune system entirely with vaccines",
+    "mRNA encoding the SARS-CoV-2 spike protein enters cells; ribosomes translate it briefly; cells display spike fragments on their surface; immune system learns to recognize them. The mRNA is degraded within days and does NOT integrate into DNA. Kati Kariko's pioneering mRNA work (decades of obscurity) won her a 2023 Nobel. Side-effect debates and policy questions remain politically contested.",
+)
+
+# --- Biology extras to reach 55 ---
+q(
+    "What's the basic unit of heredity? Each one is a stretch of DNA that codes for a specific functional product (typically a protein).",
+    "A gene — typically thousands of base-pairs long, often with introns and exons",
+    "A nucleotide — the basic building block of DNA itself, far too small to be a gene",
+    "A chromosome — a much larger structure containing thousands of genes each",
+    "An organelle — a structure inside cells like the nucleus or mitochondrion",
+    "Humans have ~20,000-25,000 protein-coding genes — fewer than once expected. Most DNA is non-coding (regulatory regions, introns, RNAs, transposons, repeats). The 'one gene one protein' rule has been complicated by alternative splicing, post-translational modifications, and regulatory RNAs. The Human Genome Project (1990-2003) sequenced the lot.",
+)
+q(
+    "How are protein-coding genes 'read' by the cell to produce proteins?",
+    "DNA is copied to mRNA — and mRNA is translated by ribosomes into amino-acid chains",
+    "DNA is read backwards by chromosomes — proteins assemble in the nucleus directly",
+    "DNA produces proteins directly — RNA is involved only in viral cells, not human ones",
+    "DNA fuses with amino acids — bypassing the need for transcription completely",
+    "Transcription happens in the nucleus: DNA -> pre-mRNA -> mature mRNA (after splicing). mRNA exits to cytoplasm. Translation happens at ribosomes: mRNA codons -> amino acids -> polypeptide -> folded protein. Each ribosome reads ~10-20 amino acids per second. A typical cell makes millions of proteins per minute.",
+)
+q(
+    "Each cell in your body (except sperm and eggs) contains the SAME DNA. Why do skin cells and heart cells look and behave so different?",
+    "Different genes are turned on or off in different cell types — gene expression",
+    "Different cells have different DNA — only stem cells share a complete genome",
+    "Cells trade DNA over time — exchanging genes as they specialize in tissues",
+    "Skin cells discard half their DNA — and heart cells discard the other half",
+    "All your body cells have ~20,000 genes but only express a subset depending on cell type. Transcription factors and epigenetic marks (DNA methylation, histone modifications) control which genes are read. Liver cells make liver-specific proteins; neurons make neuron-specific ones. Stem cells differentiate by progressively narrowing their expression patterns.",
+)
+q(
+    "How do bacteria reproduce? They don't have sex cells, eggs, or sperm.",
+    "Binary fission — one cell splits in two; both daughters are genetically identical",
+    "Sexual reproduction — bacteria swap chromosomes during a meeting period each year",
+    "Spore production — bacteria release spores that fertilize each other in the air",
+    "Cell fusion — two bacterial cells fuse permanently into one larger cell",
+    "Binary fission: one bacterium copies its single circular chromosome, then splits — typically every 20 minutes under good conditions. Bacteria can grow explosively: starting from one, you have 8 billion in 12 hours of doubling. Genetic variation in bacteria comes from mutation and horizontal gene transfer (conjugation, transformation, transduction).",
+)
+q(
+    "Antibiotic resistance is a growing public-health crisis. How do bacteria become resistant to antibiotics?",
+    "Random mutations + selection — resistant variants survive and outreproduce others",
+    "Bacteria 'learn' resistance by experience — like an immune memory of antibiotics",
+    "Antibiotics teach bacteria to be resistant directly — exposure trains the cells",
+    "Bacteria can think — they choose to become resistant when threatened by drugs",
+    "Bacteria reproduce fast and have huge populations; rare resistance mutations are easily selected. Horizontal gene transfer (plasmids) spreads resistance between bacterial species, including pathogens. Overuse of antibiotics (medicine, agriculture) accelerates the process. Multi-drug-resistant strains (MRSA, drug-resistant TB) are increasingly common.",
+)
+q(
+    "Mitochondria are organelles inside almost every animal and plant cell. What's their basic job?",
+    "Generate ATP — the chemical energy currency that powers most cell activities",
+    "Store DNA — mitochondria are the primary genome of every cell in your body",
+    "Recycle waste — they break down old proteins for reuse by the cell",
+    "Make proteins — mitochondria translate all mRNA into functional proteins",
+    "Mitochondria break down sugars and fatty acids in the citric-acid cycle, then generate ATP via the electron-transport chain and oxidative phosphorylation. They have their own small DNA (inherited from your mother only) and ribosomes — likely descendants of bacteria engulfed by a primitive eukaryotic ancestor (the 'endosymbiotic theory,' Lynn Margulis).",
+)
+q(
+    "Plants and some bacteria capture sunlight and convert it to chemical energy in special structures inside their cells. What are these structures, and what do they contain?",
+    "Chloroplasts — contain green pigment chlorophyll, which absorbs red and blue light",
+    "Mitochondria — the same energy organelles found in animal cells",
+    "Vacuoles — large fluid-filled bags that store water and capture light",
+    "Ribosomes — protein-making machines that capture light during the day",
+    "Chloroplasts perform photosynthesis: CO2 + H2O + light -> glucose + O2. Chlorophyll absorbs mainly red and blue wavelengths (green is reflected — why plants look green). Chloroplasts, like mitochondria, have their own DNA and likely descend from engulfed photosynthetic bacteria (cyanobacteria). This is the foundation of nearly all food chains on Earth.",
+)
+q(
+    "What general process did Charles Darwin and others propose to explain how new species form from existing ones over many generations?",
+    "Speciation — populations diverge over time until they can no longer interbreed",
+    "Spontaneous generation — new species arise from non-living matter directly",
+    "Lamarckian inheritance — animals develop new traits by use and pass them on",
+    "Hybridization — every new species comes from cross-breeding two existing ones",
+    "Speciation typically requires reproductive isolation: geographic separation (allopatric), behavioral / temporal / habitat differences (sympatric), or polyploidy (common in plants). Over many generations, populations accumulate differences. Darwin's finches on the Galapagos are a textbook example. Speciation is real but slow, usually over thousands to millions of years.",
+)
+q(
+    "What's the difference between a virus and a bacterium, in simple terms?",
+    "Bacteria are living cells — viruses are just genes in a shell, needing a host to copy",
+    "Bacteria are small; viruses are larger — viruses are visible under any microscope",
+    "Bacteria are harmful; viruses are not — viruses cause minor illnesses only",
+    "Bacteria are man-made; viruses are natural — the difference is purely an origin one",
+    "Bacteria are independent single-celled organisms with metabolism, growth, and division. Viruses are not 'alive' by most definitions — they have genetic material (DNA or RNA), a protein coat, and sometimes a lipid envelope, but no metabolism. They hijack host cell machinery to reproduce. Antibiotics work on bacteria but not viruses; antivirals are far more limited.",
+)
+q(
+    "When a tadpole grows legs, absorbs its tail, and becomes a frog, biological changes happen in a coordinated sequence. What name do biologists give this kind of dramatic life-stage transformation?",
+    "Metamorphosis — also seen in caterpillar-to-butterfly, larva-to-fly transitions",
+    "Mitosis — the routine cell-division process used for body growth and repair",
+    "Photosynthesis — the energy-capture process used by plants and many bacteria",
+    "Cytokinesis — the final step of cell division when cytoplasm splits in two",
+    "Metamorphosis is governed by hormonal changes (thyroid hormones in amphibians; ecdysone in insects). The body remodels tissues — old structures are reabsorbed, new ones grow. Holometabolous insects (butterflies, beetles, flies) undergo complete metamorphosis with a pupal stage between larva and adult. Some amphibians retain juvenile features (neoteny) — like axolotls.",
+)
+q(
+    "How are blood types A, B, AB, and O different at a molecular level?",
+    "Different sugar molecules on the red-cell surface — controlled by inherited alleles",
+    "Different colors of blood — red for A, blue for B, purple for AB, clear for O",
+    "Different shapes of red blood cells — round for A, oval for B, square for AB",
+    "Different DNA arrangements in red blood cells — A has the most DNA, O the least",
+    "ABO blood groups (discovered by Karl Landsteiner, 1901) reflect different glycan molecules on red blood cell surfaces. Type A has the A antigen; B has B; AB has both; O has neither. The immune system attacks antigens it didn't grow up with, which is why mismatched transfusions cause severe reactions. Landsteiner won the 1930 Nobel Medicine.",
+)
+
+q(
+    "When the human body needs energy, it breaks down sugars (mostly glucose) in a series of chemical reactions inside cells. What's the overall name for this energy-extracting process?",
+    "Cellular respiration — glucose plus oxygen yields carbon dioxide, water, and ATP",
+    "Photosynthesis — glucose is built from CO2 and water using solar energy",
+    "Fermentation — bacteria break down glucose into alcohol or lactic acid only",
+    "Catalysis — the body uses metal catalysts to speed up glucose breakdown",
+    "Cellular respiration: C6H12O6 + 6 O2 -> 6 CO2 + 6 H2O + ~36 ATP. Steps: glycolysis (cytoplasm), citric-acid cycle (Krebs, in mitochondria), electron-transport chain (inner mitochondrial membrane). Without oxygen, cells fall back on fermentation — producing lactic acid (in muscles during sprint) or alcohol (in yeast).",
+)
+q(
+    "When you exercise hard and your legs start to burn, your muscle cells are using a backup metabolic pathway because they can't get enough oxygen. What waste product is responsible for the burn?",
+    "Lactic acid — produced when muscles fall back on anaerobic glycolysis under load",
+    "Carbon dioxide — produced normally; it doesn't cause the burning sensation at all",
+    "Urea — produced in the kidneys and not present in muscle cells during exercise",
+    "Ethanol — the muscle's normal anaerobic byproduct in mammals at all times",
+    "Anaerobic glycolysis converts glucose to lactate when oxygen runs short. Lactate buildup is associated with the burn (the acid hypothesis is partly correct but oversimplified — the burn signal involves multiple factors). After exercise, lactate is shuttled to the liver and converted back to glucose (Cori cycle). Yeast does the same trick but ends in ethanol — beer and bread.",
+)
+q(
+    "Photosynthesis is the chemical opposite of cellular respiration. What's the overall equation for photosynthesis in plants?",
+    "CO2 plus water plus sunlight yields glucose plus oxygen — energy stored chemically",
+    "Glucose plus oxygen yields CO2 plus water — same as breathing in reverse",
+    "Glucose plus sunlight yields oxygen — no carbon dioxide is needed by the plant",
+    "Water plus sunlight yields glucose — no carbon source is required by the plant",
+    "6 CO2 + 6 H2O + light -> C6H12O6 + 6 O2. Light energy is captured by chlorophyll, used to split water (releasing O2), and ultimately fixes CO2 into sugars in the Calvin cycle. Photosynthesis built Earth's oxygen-rich atmosphere starting about 2.4 billion years ago — the 'Great Oxygenation Event' — and remains the foundation of nearly every food chain.",
+)
+q(
+    "What does the human appendix do, biologically? For a long time it was called a 'vestigial' organ with no real purpose.",
+    "Houses gut bacteria — may help repopulate the gut after major bouts of diarrhea",
+    "Filters waste — much like the kidney, but specifically for stomach contents",
+    "Stores blood — releasing it during exercise to boost circulation in the legs",
+    "Stores fat — used as an energy reserve during long fasts, like a camel's hump",
+    "The appendix was considered useless for over a century. Research since the early 2000s (Bollinger, Parker, Duke 2007) suggests it serves as a 'safe house' for beneficial gut bacteria — useful for re-colonizing the gut after dysentery wipes out the resident microbiome. Appendicitis still kills if untreated, so removal is sometimes necessary, but it's not 'just' vestigial.",
+)
+q(
+    "What's the function of the kidneys — specifically?",
+    "Filter blood plasma — removing urea and waste while recovering useful molecules",
+    "Pump blood through the circulatory system — replacing the heart in adult humans",
+    "Produce digestive enzymes — breaking down proteins in food after eating",
+    "Synthesize red blood cells — replacing the bone marrow's earlier childhood role",
+    "Each kidney has about a million nephrons — microscopic filtering units. Blood enters; plasma is filtered through a glomerulus; useful substances (glucose, salts, water) are reabsorbed in the tubules; waste (urea, excess ions) leaves as urine. The kidneys also regulate blood pressure (renin), produce erythropoietin (signaling red-cell production), and activate vitamin D.",
+)
+q(
+    "A neuron is a long thin cell that carries electrical signals. The signal traveling down a neuron's axon is called an 'action potential.' What's the basic physical mechanism?",
+    "Sodium and potassium ions rush in and out — creating a moving voltage spike along the axon",
+    "Electrons flow through the axon — exactly like current through a metal wire",
+    "Sound waves travel along the axon — neurons communicate by ultrasonic pulses",
+    "Light pulses travel along the axon — neurons function as natural optical fibers",
+    "Resting neurons have a voltage of about -70 mV inside. When stimulated, voltage-gated Na+ channels open, Na+ floods in, voltage spikes to +30 mV (depolarization). Then K+ channels open, K+ flows out, voltage returns toward rest (repolarization). The wave propagates along the axon at up to ~100 m/s in myelinated nerves.",
+)
+
+print(f"[checkpoint] After P3, total questions = {len(QUESTIONS)}")
+print()
+print(f"FINAL TOTAL = {len(QUESTIONS)}")
+print(f"  P1 (first 55) | P2 (next 45) | P3 (last 55)")
+
+
+# ==========================================================================
+# VALIDATE EVERY QUESTION
+# ==========================================================================
+
+bank = []
+try:
+    with open(REPO / "data" / "questions" / "science.json", encoding="utf-8") as f:
+        bank = json.load(f)
+except Exception as e:
+    print(f"[note] bank load: {e}")
+
+dup, ans = build_bank_indices(bank)
+
+results = []
+n_pass = 0
+n_soft = 0
+n_fail = 0
+fails: list[tuple[int, dict]] = []
+softs: list[tuple[int, dict]] = []
+
+for i, qd in enumerate(QUESTIONS):
+    r = validate_rewrite(
+        "science", qd,
+        bank=bank, dup_index=dup, answer_index=ans, replace_idx=None,
+    )
+    if r["verdict"] == "PASS":
+        n_pass += 1
+    elif r["verdict"] == "SOFT_WARN":
+        n_soft += 1
+        softs.append((i, qd, r))
+    else:
+        n_fail += 1
+        fails.append((i, qd, r))
+    results.append(r)
+
+print()
+print(f"VALIDATION: pass={n_pass} soft={n_soft} fail={n_fail}")
+
+if fails:
+    print(f"\n=== HARD FAILS ({len(fails)}) ===")
+    for i, qd, r in fails:
+        print(f"  [{i}] {qd['question'][:60]}")
+        for gate, reason in r["hard_fails"]:
+            print(f"      {gate}: {reason}")
+
+if softs:
+    print(f"\n=== SOFT WARNS ({len(softs)}) ===")
+    for i, qd, r in softs:
+        print(f"  [{i}] {qd['question'][:60]}")
+        for gate, reason in r["soft_warns"]:
+            print(f"      {gate}: {reason}")
+
+
+# ==========================================================================
+# SAVE
+# ==========================================================================
+
+p1 = QUESTIONS[:55]
+p2 = QUESTIONS[55:100]
+p3 = QUESTIONS[100:155]
+out = {
+    "tier": 3,
+    "summary": {
+        "questions_generated": len(QUESTIONS),
+        "by_pillar": {"1": len(p1), "2": len(p2), "3": len(p3)},
+        "pass": n_pass,
+        "soft_warn": n_soft,
+        "fail": n_fail,
+    },
+    "questions": QUESTIONS,
+}
+out_path = REPO / "_gen_science_t3_p123.json"
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(out, f, indent=2, ensure_ascii=False)
+
+print(f"\nSAVED: {out_path}")
+print(f"Total: {len(QUESTIONS)} questions (P1={len(p1)} P2={len(p2)} P3={len(p3)})")

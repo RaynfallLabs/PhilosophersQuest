@@ -1,0 +1,1367 @@
+"""Build 80 T5 science questions for Pillar 5 (History + ethics + contested).
+
+Tier 5 = grade 9-10 HARD CEILING. No upper-undergraduate jargon, no academic
+philosophy jargon ('epistemic norms', 'deflationary theory'). Use kid-accessible
+language. Length cap <= 1100 (1155 grace). Per SCIENCE_FRAMEWORK + SCIENCE_TEMPLATES.
+
+Voice: The Discovery Pattern. T5 P5 takes mature positions on the most contested
+ground — Reversal + Mystery + Substance. No false balance, no establishment-default,
+no slurs.
+
+Topic distribution (80):
+- Replication crisis + institutional failure (16): pre-registration, Many Labs,
+  ego depletion, power pose, peer review limits, Ioannidis prior probability,
+  effect-size inflation, Reinhart-Rogoff Excel error, Brian Wansink, Jan Hendrik
+  Schon Bell Labs, Theranos, Macchiarini, Obokata STAP, replication shape
+- Eugenics deep (16): Indiana 1907 first, California 20,000+, North Carolina
+  + Virginia reparations, Davenport, Laughlin model law, Cold Spring Harbor
+  funding, Madison Grant 1916, Sanger Negro Project, Nuremberg Code articles,
+  Unit 731 amnesty for data, T4 program doctors, Aktion T4 disabled, Sims
+  enslaved women experiments
+- Censorship + Twitter Files + Murthy + pre-COVID science (12): Galileo
+  precedent, GBD Collins email specifics, Murthy v. Missouri 2024, Twitter
+  Files specifics, pre-COVID pandemic plans recommended AGAINST lockdowns,
+  Hanke-Herby-Jonung 2022 meta, Cochrane 2023 masks, RFK Jr deplatforming,
+  Aaron Siri NCVIA litigation, MOCO Maryland mask injunction, J6 censorship
+- WEF + transhumanism (10): Schwab 1971 founding, Harari "hackable animals"
+  source, "free will is over" specific, Fourth Industrial Revolution 2016,
+  Great Reset 2020 Malleret, gain-of-function ban argument, He Jiankui twins,
+  designer babies enhancement objection, Council for Inclusive Capitalism,
+  young global leaders pipeline
+- Specific dissenters substantively (14): Koonin Caltech credentials, RFK Jr.
+  Real Anthony Fauci, Robert Malone mRNA pioneer, Pierre Kory FLCCC sepsis,
+  Vinay Prasad cancer RCTs, Kulldorff Harvard mass vaccination, Gupta Oxford
+  Stockholm comparison, Children's Health Defense, NEJM open letter, Norman
+  Doidge brain plasticity dissent, Mary Talley Bowden Houston, Harvey Risch
+  Yale, Peter Doshi BMJ, Tracy Beth Hoeg pediatric myocarditis
+- Specific scientific frauds + regulatory capture (12): Jan Hendrik Schon Bell
+  Labs, Hwang Woo-suk Seoul, Reinhart-Rogoff 2010 Excel, Brian Wansink Cornell
+  bottomless soup, Macchiarini Karolinska trachea, Obokata STAP Riken, Andrew
+  Wakefield context, PDUFA 1992 pharma fees, ACIP composition, FDA revolving
+  door, Sackler OxyContin Purdue, Vioxx withdrawal 2004
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(r"C:\Users\brand\Documents\PhilosophersQuest")
+sys.path.insert(0, str(REPO))
+
+from tools.quizgen.audit.validate import build_bank_indices, validate_rewrite
+
+
+P5: list[dict] = []
+
+
+# ===========================================================================
+# REPLICATION CRISIS + INSTITUTIONAL FAILURE (16)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "John Ioannidis's 2005 PLOS Medicine paper 'Why Most Published Research Findings Are False' used a simple Bayesian point about prior probability. The point: if you test 1,000 hypotheses where only 10% are true, even a study with 80% power and 5% false-positive rate produces more false positives than true positives. What's the recognition skill for a kid reading a 'breakthrough study' headline?",
+    "answer": "Most published findings on a topic with low prior probability of being true are themselves likely false, even at standard p-values",
+    "choices": [
+        "Most published findings on a topic with low prior probability of being true are themselves likely false, even at standard p-values",
+        "Most published findings are true because peer review weeds out every false positive automatically before publication",
+        "Most published findings can be safely treated as established knowledge after a single positive result in a top journal",
+        "Most published findings need no follow-up since p-values below 0.05 prove the underlying hypothesis decisively",
+    ],
+    "context": "Ioannidis's argument: when the prior probability that a hypothesis is true is low, the numerator (true positives) shrinks relative to the denominator (true positives + false positives). For exploratory fields with thousands of candidate hypotheses (psychology, nutrition, some biomedicine), most published 'positive' findings will be false. Pre-registration, replication, and effect-size reporting are the structural remedies. This is the actual statistical argument behind the replication-crisis conversation.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Open Science Collaboration's 2015 Reproducibility Project: Psychology attempted to replicate 100 studies published in top journals. About 36% of the replications produced statistically significant results matching the original. Average effect sizes were roughly half of the originals. What does this pattern of half-sized effects illustrate?",
+    "answer": "Original studies routinely overstate effect sizes because publication, peer review, and analytic-flexibility incentives select for the largest-looking findings",
+    "choices": [
+        "Original studies routinely overstate effect sizes because publication, peer review, and analytic-flexibility incentives select for the largest-looking findings",
+        "Replications inflate effect sizes by using better statistical methods than the originals had access to in any way",
+        "Original studies always underestimate effect sizes because of methodological constraints in their original journals",
+        "Replications are mathematically guaranteed to produce smaller effects regardless of the underlying truth being studied",
+    ],
+    "context": "The shrinkage pattern is called 'effect-size attenuation on replication.' It happens because the originals were selected — publication picks the runs where p < 0.05 and the magnitude was striking. The unselected runs (smaller effects, null results, opposite direction) sit in file drawers. When neutral replicators repeat the design, regression to the truth pulls effects toward zero. This isn't replicator error; it's the mathematics of selection.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Pre-registration — declaring your hypotheses, sample size, and analysis plan publicly BEFORE collecting data — has become a major reform proposal after the replication crisis. Why does pre-registration matter, in plain mechanism terms?",
+    "answer": "It prevents researchers from quietly choosing analyses that make the data look significant after seeing the data, the practice called p-hacking",
+    "choices": [
+        "It prevents researchers from quietly choosing analyses that make the data look significant after seeing the data, the practice called p-hacking",
+        "It guarantees that every pre-registered study will produce a statistically significant finding for its main hypothesis",
+        "It makes peer review unnecessary because the pre-registration itself constitutes complete external quality control",
+        "It prevents fraud entirely because anyone who fabricates data after pre-registering will be automatically detected",
+    ],
+    "context": "P-hacking — also called 'researcher degrees of freedom' or 'garden of forking paths' — is the practice of trying different analyses, sub-samples, or outcome variables until something hits p < 0.05. It's often unconscious. Pre-registration locks the analysis plan in advance, so any deviation has to be reported as exploratory rather than confirmatory. The Center for Open Science and Registered Reports (where journals review the plan before data collection) are key infrastructure for this reform.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Roy Baumeister's 'ego depletion' theory — that willpower runs on a limited mental resource you can use up — was one of the most cited findings in social psychology for decades. By 2016, large pre-registered replications including a multi-lab study with 23 sites and ~2,000 subjects found no measurable effect. What lesson does this case teach?",
+    "answer": "A widely-cited finding can survive for decades on small studies before larger pre-registered replications show the effect was never really there",
+    "choices": [
+        "A widely-cited finding can survive for decades on small studies before larger pre-registered replications show the effect was never really there",
+        "A finding cited in textbooks must be true because textbook authors verify every citation through independent replication first",
+        "A finding from a single laboratory generalizes automatically because human cognition works identically across all populations",
+        "A finding from any peer-reviewed paper can be trusted because journals refuse to publish unreplicated psychological claims",
+    ],
+    "context": "Baumeister's original 1998 paper claimed self-control depletes a limited resource (and chocolate-chip cookies or sugary lemonade could replenish it). Hundreds of follow-ups built on the idea. The 2016 pre-registered Hagger et al. multi-lab study found no effect. The textbook had to change. The replication crisis is the slow public process of finding out which celebrated findings survive serious testing — and ego depletion didn't.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Amy Cuddy's 'power posing' research (published 2010, TED talk 2012 with 70+ million views) claimed standing in 'high-power' poses for two minutes changed your testosterone and cortisol levels and made you perform better in interviews. The original coauthor Dana Carney publicly stated by 2016 that she no longer believed the effect was real. What does this case illustrate about scientific popularity and truth?",
+    "answer": "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
+    "choices": [
+        "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
+        "Massive public uptake of a finding always signals it is true because popular ideas are mathematically more likely to replicate",
+        "Massive public uptake of a finding has no influence on whether scientists choose to attempt to replicate it later",
+        "Massive public uptake of a finding only happens after replication has confirmed it across many independent laboratories",
+    ],
+    "context": "The 2010 Carney-Cuddy-Yap paper claimed hormonal and behavioral effects from two-minute pose changes. The 2015 Ranehill et al. attempted replication (200 subjects vs. the original 42) found the behavioral effect was absent and hormonal effect non-significant. Carney's 2016 statement: 'I do not believe that power pose effects are real.' Cuddy continued to advocate the work. The TED talk remained one of the most-viewed of all time. The popular story outlived the empirical claim.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Jan Hendrik Schon at Bell Labs published roughly one paper every eight days in 2001 — Science, Nature, Physical Review Letters — claiming breakthrough after breakthrough in molecular electronics, superconductors, and lasers. In 2002, outside physicists noticed identical figures used across unrelated experiments. What did the investigation find?",
+    "answer": "He had fabricated nearly all his data; the investigation found at least 16 papers with deliberate falsification, and his physics PhD was revoked",
+    "choices": [
+        "He had fabricated nearly all his data; the investigation found at least 16 papers with deliberate falsification, and his physics PhD was revoked",
+        "He had made innocent statistical errors that were corrected in revised versions; his physics PhD remained intact",
+        "He had been the victim of sabotage by a competing laboratory; his papers were all confirmed by independent researchers",
+        "He had used a new computational technique reviewers misunderstood; the supposed problems were resolved in later work",
+    ],
+    "context": "The Bell Labs Schon scandal (2002) is one of physics's largest fraud cases. Schon claimed to have made organic transistors, then field-effect superconductors, then a single-molecule transistor. Coauthors signed papers without seeing raw data. Suspicions arose when Princeton's Lydia Sohn and Cornell's Paul McEuen noticed identical noise patterns in graphs of supposedly different experiments. The Beasley Commission found systematic fabrication. The case is a study in how peer review at the most prestigious journals can be defeated by a determined fabricator with senior coauthors who trust him.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Carmen Reinhart and Kenneth Rogoff's 2010 paper 'Growth in a Time of Debt' claimed countries with debt above 90% of GDP suffered sharply lower growth. Politicians worldwide cited the finding to justify austerity programs. In 2013 a graduate student named Thomas Herndon, asked to replicate it for a class assignment, requested the spreadsheet. What did Herndon find?",
+    "answer": "An Excel coding error and selective country exclusions; correcting them weakened or eliminated the dramatic growth cliff at 90% debt",
+    "choices": [
+        "An Excel coding error and selective country exclusions; correcting them weakened or eliminated the dramatic growth cliff at 90% debt",
+        "Confirmation of every result; the corrected numbers were identical to the originally published version of the paper",
+        "Evidence that Reinhart and Rogoff had understated the effect; debt above 90% was actually more catastrophic than published",
+        "Evidence that the original paper used a custom modeling language never released to other researchers anywhere",
+    ],
+    "context": "Herndon's HAP (Herndon-Ash-Pollin 2013) re-analysis exposed an Excel formula that omitted five countries from the average, plus selective weighting choices that amplified the effect. Reinhart and Rogoff acknowledged the coding error but defended the broader claim. The case illustrates how influential a single paper can become before anyone bothers to ask for the underlying data — and how easy errors are to find once someone does. Data and code sharing is now a norm for serious economics journals; it wasn't in 2010.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Brian Wansink ran the Cornell Food and Brand Lab from 1997 to 2016, producing widely-cited studies on portion sizes, plate colors, and the 'bottomless soup bowl.' His public advice shaped USDA dietary guidelines. In 2016 a blog post he wrote inadvertently revealed how his lab actually generated findings. What was the practice he described?",
+    "answer": "Sifting one dataset for any combination of variables that produced a publishable p-value, the textbook definition of p-hacking",
+    "choices": [
+        "Sifting one dataset for any combination of variables that produced a publishable p-value, the textbook definition of p-hacking",
+        "Pre-registering every hypothesis before data collection and rigorously sticking to the planned statistical analysis",
+        "Replicating each finding in three independent samples before any submission to a peer-reviewed academic journal",
+        "Sharing raw data publicly at the time of submission so that other researchers could independently verify every claim",
+    ],
+    "context": "Wansink's 'The Grad Student Who Never Said No' blog post described directing a student to keep slicing one Italian-buffet dataset until 'something' came out. Researchers including Tim van der Zee, Jordan Anaya, and Nick Brown systematically reanalyzed his published work. By 2018 Cornell found 'academic misconduct in his research.' At least 15 of his papers were retracted. The case is unusual not for the practice — variations of which are widespread — but for how openly Wansink described it.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Elizabeth Holmes founded Theranos in 2003 claiming a finger-prick blood-testing technology that could run hundreds of tests from a single drop. By 2014 the company was valued at $9 billion. In 2015 Wall Street Journal reporter John Carreyrou published the first article showing the technology didn't work. What had enabled the deception to grow that large?",
+    "answer": "A board of high-status figures who couldn't evaluate the technology, secrecy framed as trade-secret protection, and patient samples quietly run on standard commercial analyzers",
+    "choices": [
+        "A board of high-status figures who couldn't evaluate the technology, secrecy framed as trade-secret protection, and patient samples quietly run on standard commercial analyzers",
+        "A genuinely working prototype that failed only at scale; the early technology had been independently verified by outside researchers in respected peer-reviewed venues",
+        "A federal mandate requiring blood testing companies to operate in secret; transparency would have caused agency-imposed legal trouble for the company at every regulatory step",
+        "A peer-reviewed publication record in Nature and Science; the underlying technology was published in top journals well before any commercial launch began",
+    ],
+    "context": "Theranos's board included George Shultz, Henry Kissinger, James Mattis — political and military figures with no biotech expertise. Tyler Shultz (George's grandson, working at Theranos) and Erika Cheung blew the whistle. The technology was never published in any peer-reviewed venue. Many tests were quietly performed on Siemens commercial analyzers. Holmes was convicted of fraud in 2022 and sentenced to over 11 years. The case shows how prestige signals (boards, magazine covers, billion-dollar valuations) can substitute for actual scientific verification in a credulous press environment.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Paolo Macchiarini, a surgeon at Sweden's Karolinska Institute, performed trachea transplants on patients in 2011-2014 using artificial scaffolds seeded with the patients' own stem cells. He published in The Lancet. The work was hailed as regenerative medicine breakthrough. By 2016 documentary investigations revealed the truth. What had happened to the patients?",
+    "answer": "Most of his transplant patients died from the procedure; the published outcomes had been substantially falsified",
+    "choices": [
+        "Most of his transplant patients died from the procedure; the published outcomes had been substantially falsified",
+        "Most of his transplant patients fully recovered; later doctors confirmed every reported outcome in independent follow-ups",
+        "Most of his transplant patients had a partial recovery; the procedure became standard at major centers worldwide",
+        "Most of his transplant patients refused the procedure; the published outcomes were from animal studies only",
+    ],
+    "context": "Macchiarini's procedures killed seven of his nine known recipients; the others suffered severely. Karolinska initially defended him after a 2014 internal review; the 2016 Swedish documentary 'Experimenten' exposed the deaths. The Lancet paper (2011) was retracted in 2018. Multiple senior Karolinska officials resigned. The case illustrates that institutional defense of star researchers can persist long past evidence of harm — and that the journals' apex prestige does not protect against published falsification.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Haruko Obokata at Japan's RIKEN institute published two 2014 Nature papers claiming a simple stress treatment (acid bath) could turn ordinary cells into stem cells — the 'STAP cells' result. Media celebrated it as a Nobel-bound breakthrough. Within months other labs failed to replicate. What did the investigation discover?",
+    "answer": "The images had been manipulated and the cells were probably contaminated with existing embryonic stem cells; her thesis adviser Yoshiki Sasai later took his own life",
+    "choices": [
+        "The images had been manipulated and the cells were probably contaminated with existing embryonic stem cells; her thesis adviser Yoshiki Sasai later took his own life",
+        "The technique worked but required a specific kind of mouse cell unavailable to other laboratories around the world",
+        "The technique was confirmed in three independent replications; the original criticisms were withdrawn after re-examination",
+        "The technique remains contested with about half of laboratories able to replicate the original published findings consistently",
+    ],
+    "context": "Obokata's STAP (Stimulus-Triggered Acquisition of Pluripotency) papers were retracted in July 2014. RIKEN found research misconduct. Sasai, who had championed Obokata and was a respected stem-cell researcher, died by suicide in August 2014. The Nature papers had passed peer review at the world's most prestigious journal. The case illustrates how a charismatic young researcher with a sensational claim can pass through review, and how badly the human costs can scale when the institution backs the publication first and investigates later.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The 2020 Lancet and NEJM Surgisphere scandal: Two papers based on a 'global database' of hospital records claimed hydroxychloroquine increased COVID death rates. Within weeks both papers were retracted because Surgisphere couldn't produce the underlying data. What had the papers' rapid public impact already done in policy terms?",
+    "answer": "WHO had paused its hydroxychloroquine arm of the Solidarity trial and several countries had banned the drug, based on a database that apparently never existed",
+    "choices": [
+        "WHO had paused its hydroxychloroquine arm of the Solidarity trial and several countries had banned the drug, based on a database that apparently never existed",
+        "The papers had no policy effect; WHO and national regulators continued their established trial protocols without any interruption from this episode",
+        "The papers triggered immediate replication studies; concurrent independent verification confirmed the dataset findings within days of original publication",
+        "The papers were ignored by regulators because the journals issued retraction warnings before publication of the original peer-reviewed versions of the article",
+    ],
+    "context": "The Mehra et al. papers (Lancet May 22, 2020; NEJM May 1, 2020) appeared during the most acute phase of COVID. WHO suspended its hydroxychloroquine trial arm based on the Lancet finding; multiple national health agencies halted use. When researchers including James Watson (Australia) and Andrew Wang independently demanded the data, Surgisphere claimed proprietary protection. The journals retracted within 2-3 weeks. The case shows how a single fabricated paper, published in the right journal at the right moment, can shape global treatment decisions before scrutiny catches up.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Peer review is treated in popular coverage as a quality stamp — 'peer-reviewed' often appears as if it meant 'verified.' What's the recognition skill about what peer review actually does and doesn't do?",
+    "answer": "Peer review is two or three colleagues reading a paper for plausibility; it doesn't replicate the experiment, audit the data, or detect determined fraud",
+    "choices": [
+        "Peer review is two or three colleagues reading a paper for plausibility; it doesn't replicate the experiment, audit the data, or detect determined fraud",
+        "Peer review independently re-runs every experiment using the original samples to verify results before publication",
+        "Peer review forensically audits raw data and statistical analyses to certify findings are free of error or bias",
+        "Peer review prevents fraud entirely by requiring institutional certification of every author's professional reputation",
+    ],
+    "context": "Peer review screens for obvious errors, sets minimum quality bars, and routes papers to appropriate venues. It does not verify data, replicate results, or reliably detect sophisticated fraud — Schon, Stapel, Wansink, Macchiarini, Surgisphere all passed peer review at top journals. The phrase 'peer-reviewed' in popular usage often functions as a status signal, not a verification claim. Pre-registration, open data, and independent replication are the actual quality-control infrastructure; peer review is a gatekeeping step within a larger process.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Publication bias — the practice of publishing positive results while null results sit in file drawers — has been documented across medicine, psychology, and economics. How does publication bias distort the broader knowledge base, in plain mechanism terms?",
+    "answer": "Meta-analyses combining published studies systematically overstate effects because the null and contradictory results were never published to be included",
+    "choices": [
+        "Meta-analyses combining published studies systematically overstate effects because the null and contradictory results were never published to be included",
+        "Meta-analyses combining published studies are unaffected by publication bias because statistical corrections eliminate the problem",
+        "Meta-analyses combining published studies underestimate effects because journals favor null results over significant findings",
+        "Meta-analyses combining published studies are accurate because all completed studies are eventually published somewhere in some form",
+    ],
+    "context": "Robert Rosenthal coined the 'file drawer problem' in 1979. Erick Turner's 2008 NEJM analysis of antidepressant trials found 94% of published trials were positive — but FDA records showed nearly half of the actual trials had been null or negative. Meta-analyses combining the published subset overstated antidepressant efficacy. Pre-registration of trials and trial-registry requirements (clinicaltrials.gov, EU equivalent) are the structural remedy, though enforcement is uneven. The phrase 'the published literature shows X' should always raise the question 'what does the unpublished literature show?'",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The 'garden of forking paths' is psychologist Andrew Gelman's term for an underappreciated source of false positives. When a researcher has many possible analyses available (subgroups, outcome variables, control variables, time windows), why does the simple p < 0.05 threshold lose its meaning?",
+    "answer": "Each branching choice gives another chance to find a statistically significant pattern; with enough branches, hitting p < 0.05 somewhere is nearly certain even with no real effect",
+    "choices": [
+        "Each branching choice gives another chance to find a statistically significant pattern; with enough branches, hitting p < 0.05 somewhere is nearly certain even with no real effect",
+        "Each branching choice locks in the conservative result, making p < 0.05 a more demanding threshold than for single-analysis studies",
+        "Each branching choice is automatically corrected by modern statistical software, so no adjustment is needed by the researcher",
+        "Each branching choice has no effect because the p-value computation already accounts for all possible alternative analyses",
+    ],
+    "context": "Gelman and Loken (2014) named the problem. A researcher doesn't have to deliberately p-hack to fall into it — they only have to make sensible-looking decisions that nonetheless depend on what the data show. The p-value statistic assumes ONE pre-specified test; the garden of forking paths violates that assumption invisibly. The remedies are the same as for p-hacking: pre-registration, multiple-comparison corrections when planned, and reporting all analyses tried, not just the one that 'worked.'",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The 'reproducibility' versus 'replicability' distinction is important in the replication-crisis conversation. What's the difference, in plain terms?",
+    "answer": "Reproducibility is getting the same numerical answer from the same data; replicability is getting a similar finding from new data with the same study design",
+    "choices": [
+        "Reproducibility is getting the same numerical answer from the same data; replicability is getting a similar finding from new data with the same study design",
+        "Reproducibility is impossible by definition; only replicability matters and only it can be tested empirically",
+        "Reproducibility and replicability mean exactly the same thing; the distinction is purely a matter of terminology",
+        "Reproducibility means reaching the same conclusion; replicability means using the same statistical software version",
+    ],
+    "context": "The National Academies' 2019 report formalized the distinction. Reproducibility tests the analysis (given the raw data and code, can someone else compute the same numbers?). Replicability tests the finding (does the result hold in fresh data with the same methods?). Many studies fail reproducibility because raw data and code are unavailable. Many that pass reproducibility nonetheless fail replicability. Both are necessary for a finding to count as durable knowledge; neither alone is sufficient.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# EUGENICS DEEP HISTORY (16)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "Indiana passed the world's first compulsory eugenic sterilization law in 1907, targeting 'confirmed criminals, idiots, rapists, and imbeciles' confined to state institutions. The law was authored partly by Dr. Harry Sharp, who had already performed dozens of unauthorized sterilizations at the Indiana Reformatory. What does Indiana's role illustrate about American eugenics?",
+    "answer": "Eugenics was an American policy export, not a European import; the United States passed the world's first compulsory sterilization laws long before Nazi Germany",
+    "choices": [
+        "Eugenics was an American policy export, not a European import; the United States passed the world's first compulsory sterilization laws long before Nazi Germany",
+        "Eugenics began in Nazi Germany in the 1930s and was only later adopted in modified form by some American states",
+        "Eugenics was a Soviet program based on Lysenkoist genetics; American states never enacted compulsory sterilization laws",
+        "Eugenics was confined to European medical journals; no American legislature ever passed any law authorizing sterilization",
+    ],
+    "context": "Sharp's 1899 sterilizations at the Indiana Reformatory predate any law authorizing them. The 1907 Indiana statute was the world's first. By 1931 thirty-two US states had similar laws. The American Eugenics Society, the Eugenics Record Office at Cold Spring Harbor, and the American Breeders' Association coordinated the movement. Nazi sterilization law (1933) explicitly cited American models; Harry Laughlin, the ERO superintendent, received an honorary degree from the University of Heidelberg in 1936 for his contribution to 'racial hygiene' policy.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "California sterilized roughly 20,000 people under its 1909 eugenics law — more than any other US state, and about a third of the national total. The law remained on the books until 1979, decades after Nazi atrocities had supposedly discredited the program. Who was disproportionately targeted in the postwar decades?",
+    "answer": "Latina women in California institutions; later state apologies and reparations efforts acknowledged the racial pattern of who was sterilized",
+    "choices": [
+        "Latina women in California institutions; later state apologies and reparations efforts acknowledged the racial pattern of who was sterilized",
+        "Wealthy private-college students whose families had voluntarily signed consent forms for eugenic improvement",
+        "Recent European immigrants who had agreed to the procedure as a condition of receiving US citizenship rights",
+        "Federal prison inmates from across the country sent to California specifically for sterilization at federal expense",
+    ],
+    "context": "California's program targeted people in state mental hospitals and homes for the 'feebleminded.' Postwar sterilizations continued at LA County USC Medical Center into the 1970s under the Madrigal v. Quilligan litigation; the 1978 case documented Mexican-American women sterilized without informed consent immediately after labor. California's 2003 governor's apology, the 2021 reparations program for surviving victims, and the 2023 expansion to descendants are part of an ongoing recognition that the racial targeting was not incidental to the program — it was the program.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "North Carolina's Eugenics Board sterilized about 7,600 people between 1929 and 1974. Unlike most state programs that wound down after WWII, North Carolina's accelerated in the 1950s and 1960s. Who became the primary targets in that postwar acceleration?",
+    "answer": "Poor Black women on welfare; social workers could refer them to the Board with sterilization as a condition of continued public assistance",
+    "choices": [
+        "Poor Black women on welfare; social workers could refer them to the Board with sterilization as a condition of continued public assistance",
+        "Wealthy retirees from Northern states who had relocated to North Carolina specifically for the procedure",
+        "European refugees granted entry under Cold War immigration quotas requiring medical screening",
+        "Members of voluntary fraternal societies that promoted population improvement among their own members",
+    ],
+    "context": "North Carolina's postwar program is one of American eugenics' most documented later-stage cases. By the 1960s, ~60% of sterilization victims were Black, in a state where Black residents were ~25% of the population. Welfare caseworkers had referral authority. The 2003 News & Observer 'Against Their Will' series brought the program into modern public view. North Carolina's 2013 reparations law paid surviving victims $50,000 each — the first US state to offer compensation. About 220 living victims were located out of the ~7,600 sterilized.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Virginia sterilized about 7,000 to 8,300 people under its 1924 law — the law that produced Buck v. Bell. Like North Carolina, Virginia continued sterilizations into the 1970s. The state issued a formal apology in 2002, and in 2015 it began paying reparations to surviving victims. What does the timeline — Buck v. Bell in 1927, last sterilizations in 1979, apology in 2002, reparations in 2015 — illustrate?",
+    "answer": "Practices that began with scientific authority can persist for half a century and require another generation again to formally repudiate at the state level",
+    "choices": [
+        "Practices that began with scientific authority can persist for half a century and require another generation again to formally repudiate at the state level",
+        "Practices that began with scientific authority are quickly abandoned once any flaw in the underlying science is revealed",
+        "Practices that began with scientific authority must be defended by states forever because they were once legally upheld",
+        "Practices that began with scientific authority are only abandoned when a federal court issues a formal nationwide injunction",
+    ],
+    "context": "Virginia performed at least one sterilization as late as 1979 under the 1924 law. The 2002 apology by Governor Mark Warner came 75 years after Buck v. Bell. The 2015 reparations law paid $25,000 to surviving victims; only a few dozen were located. The Buck v. Bell precedent itself has never been formally overturned — it is still cited occasionally in modern jurisprudence. The institutional inertia of state policy is itself one of the moral lessons of the eugenics era.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Charles Davenport founded the Eugenics Record Office at Cold Spring Harbor in 1910. He hired Harry Laughlin as superintendent. Together they collected family pedigrees, lobbied for sterilization laws, and pushed the 1924 Immigration Act's race-based quotas. Who funded the Eugenics Record Office?",
+    "answer": "Mary Harriman (railroad heir), then Carnegie Institution, then Rockefeller Foundation; the major American philanthropies of the era",
+    "choices": [
+        "Mary Harriman (railroad heir), then Carnegie Institution, then Rockefeller Foundation; the major American philanthropies of the era",
+        "The German Nazi government provided funding through a US embassy intermediary in Washington DC starting in 1924",
+        "The Soviet Communist Party funded American eugenics research as part of a long-term influence operation",
+        "Donations from anonymous private donors who never appeared in any of the institute's published records or letters",
+    ],
+    "context": "Mary Harriman provided initial 1910 funding. The Carnegie Institution of Washington formally adopted the ERO in 1918. Rockefeller Foundation grants funded much of the broader American and German eugenics infrastructure through the 1930s. American philanthropic funding of eugenics is one of the under-discussed legacies of progressive-era reform — Carnegie and Rockefeller's eugenics support continued into the 1930s. The Cold Spring Harbor ERO closed in 1939 when Carnegie withdrew funding after a damning internal review. Cold Spring Harbor Laboratory continues as a respected genetics research institution.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Harry Laughlin's 1922 'Model Eugenical Sterilization Law' provided the template that ~30 US states adopted. The 1933 Nazi 'Law for the Prevention of Hereditarily Diseased Offspring' closely tracked Laughlin's model. Laughlin received the 1936 honorary degree from the University of Heidelberg. What does this transatlantic relationship reveal?",
+    "answer": "American eugenics directly inspired Nazi racial-hygiene law; the influence ran from US to Germany, not the reverse",
+    "choices": [
+        "American eugenics directly inspired Nazi racial-hygiene law; the influence ran from US to Germany, not the reverse",
+        "Nazi racial-hygiene law was independently developed without contact with American eugenics researchers ever",
+        "American eugenics opposed Nazi racial-hygiene from the beginning and refused all professional contact with Germany",
+        "Nazi racial-hygiene targeted only ethnic Germans and had no overlap with American sterilization legislation models",
+    ],
+    "context": "Stefan Kuhl's 'The Nazi Connection' (1994) and Edwin Black's 'War Against the Weak' (2003) document the deep professional ties between American eugenicists and the Nazi racial-hygiene movement. Heidelberg awarded Laughlin's honorary degree explicitly for 'racial hygiene policy.' The Carnegie Institution-funded American Eugenics Society sent representatives to Nazi sterilization courts in the 1930s and returned with admiring reports. The directionality matters: Nuremberg defendants at the postwar trials cited US sterilization laws and Buck v. Bell as precedent.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Madison Grant's 1916 book 'The Passing of the Great Race' argued that the 'Nordic race' was being diluted by immigration from Southern and Eastern Europe. The book influenced the 1924 US Johnson-Reed Immigration Act's race-based quotas. Hitler, in a letter Grant received in the 1930s, called the book his 'bible.' What was Grant's professional standing in 1916?",
+    "answer": "A respected Manhattan attorney, the chairman of the New York Zoological Society, and a founding member of the American Society of Mammalogists",
+    "choices": [
+        "A respected Manhattan attorney, the chairman of the New York Zoological Society, and a founding member of the American Society of Mammalogists",
+        "A fringe pamphleteer with no institutional ties or formal academic credentials of any verifiable kind",
+        "A leader of the Communist Party of the United States during its formative early-twentieth-century period of growth",
+        "A German immigrant whose ideas had no purchase among elite American academic and philanthropic institutions",
+    ],
+    "context": "Grant was a Yale graduate, Columbia law graduate, and a pillar of New York establishment. He chaired the New York Zoological Society (which ran the Bronx Zoo, where in 1906 a Congolese man named Ota Benga had been displayed). His book had blurbs from Theodore Roosevelt. The 1924 Immigration Act's quotas explicitly aimed to restrict 'inferior' Southern and Eastern European immigration. Grant's case is important because eugenics was not a fringe movement among American elites — it was establishment opinion. Recovering this history is part of the honest record this bank covers.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Margaret Sanger founded the American Birth Control League (later Planned Parenthood) in 1921. Her 1939 'Negro Project' aimed to expand birth-control services in the rural South. In a 1939 letter to Clarence Gamble she wrote a sentence that has been heavily debated. What did the letter actually say?",
+    "answer": "'We do not want word to go out that we want to exterminate the Negro population, and the minister is the man who can straighten out that idea'",
+    "choices": [
+        "'We do not want word to go out that we want to exterminate the Negro population, and the minister is the man who can straighten out that idea'",
+        "'Birth control should not be promoted in Black communities at all, because protecting their population growth is the critical priority for any justice work'",
+        "'No minority community should ever be the focus of any organized birth-control campaign anywhere in the world for any social or medical reason whatsoever'",
+        "'I have changed my mind about eugenics and now believe the entire program is fundamentally incompatible with any genuine form of reproductive freedom for anyone'",
+    ],
+    "context": "The 'extermination' sentence is from the December 10, 1939 letter from Sanger to philanthropist Clarence Gamble, who funded the Negro Project. Sanger's defenders read it as concern about a rumor she wanted to refute. Critics read it as awareness her program could be perceived as eliminationist and a strategy to use Black clergy to manage that perception. Sanger's broader writing in 'The Pivot of Civilization' (1922) and her work with the American Eugenics Society are clearly eugenicist. The 2020 Planned Parenthood disavowal of Sanger acknowledged what historians had long documented.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Nuremberg Code emerged from the 1947 Doctors' Trial, where 23 Nazi physicians were prosecuted for medical experiments on concentration camp prisoners. The Code's ten principles became foundational to medical research ethics worldwide. What is the Code's first and most important principle?",
+    "answer": "Voluntary consent of the human subject is absolutely essential; the subject must have legal capacity, free choice, and sufficient knowledge of the experiment",
+    "choices": [
+        "Voluntary consent of the human subject is absolutely essential; the subject must have legal capacity, free choice, and sufficient knowledge of the experiment",
+        "All medical research must be approved in advance by a federal government agency before any human is studied at all in any context",
+        "Medical research subjects must be paid the same wages as any researcher participating in the study under any institutional terms",
+        "Medical experiments may only be performed on prisoners and the mentally ill under controlled institutional supervision of any type",
+    ],
+    "context": "The Code's Article 1 reads in full: 'The voluntary consent of the human subject is absolutely essential. This means... the person involved should have legal capacity to give consent; should be so situated as to be able to exercise free power of choice... and should have sufficient knowledge and comprehension of the elements of the subject matter involved...' The Code shapes the Declaration of Helsinki (1964), the US Common Rule, and all subsequent research-ethics frameworks. Its principles have direct bearing on contemporary debates about coercive mandates, employer pressure, and informed consent for novel medical interventions.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Japan's Unit 731 conducted biological-warfare experiments on Chinese, Korean, Mongolian, and Russian prisoners from 1936 to 1945 — vivisections, frostbite tests, plague-bomb development. Commander Shiro Ishii and senior staff escaped prosecution after the war. Why was there no Japanese equivalent to the Nuremberg medical trials?",
+    "answer": "The United States granted immunity to Unit 731 leadership in exchange for the biological-warfare research data, which was then transferred to Fort Detrick",
+    "choices": [
+        "The United States granted immunity to Unit 731 leadership in exchange for the biological-warfare research data, which was then transferred to Fort Detrick",
+        "The Soviet Union prosecuted all senior Unit 731 staff in 1947, leaving no defendants for any US-led tribunal to pursue",
+        "Japan held its own trials and adequately punished all responsible Unit 731 staff with long prison sentences",
+        "There were no surviving documents about Unit 731; the unit's records had been destroyed by allied air strikes in 1944",
+    ],
+    "context": "The Khabarovsk Trials (1949) by the USSR prosecuted some lower-ranked staff. The US deal — confirmed by declassified documents in the 1980s — gave Ishii and senior staff immunity in exchange for their biological-warfare research. Some went on to senior positions in postwar Japanese medicine and pharmaceuticals. Sheldon Harris's 'Factories of Death' (1994) and the Tokyo Tribunal's omitted-evidence record document the trade. The Unit 731 case is the clearest cold-war example of expedient amnesty for atrocity scientists when their data was strategically useful.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Aktion T4 was the Nazi program that murdered approximately 70,000 disabled adults and 5,000 disabled children between 1939 and 1941. Mobile gas chambers were trialed on these victims before being scaled up for the Holocaust. What kind of professionals selected which patients would be killed?",
+    "answer": "Psychiatrists and physicians at hospitals filled out the registration forms; senior 'expert assessors' made the kill-or-spare decisions",
+    "choices": [
+        "Psychiatrists and physicians at hospitals filled out the registration forms; senior 'expert assessors' made the kill-or-spare decisions",
+        "Soldiers chosen randomly from frontline units made all life-and-death decisions about who would be killed",
+        "Patients and their families voluntarily signed consent forms acknowledging that they would be killed by the state",
+        "Foreign collaborators with no medical training were the only people involved in any selection process for the program",
+    ],
+    "context": "The T4 program operated from Tiergartenstrasse 4 in Berlin. Psychiatrists and pediatricians completed standardized forms for patients in mental hospitals and pediatric wards. Senior 'expert assessors' — usually three reviewers — voted on each form with a red plus (kill), blue minus (spare), or question mark (uncertain). Six killing centers (Brandenburg, Grafeneck, Hartheim, Sonnenstein, Bernburg, Hadamar) used carbon monoxide gas chambers. The personnel and gas-chamber technology were then transferred to Operation Reinhard's death camps. T4 was the Holocaust's prototype, executed by ordinary German doctors.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "J. Marion Sims, often called the 'father of modern gynecology,' developed his surgical techniques for vesicovaginal fistula in the 1840s by operating repeatedly on enslaved women in Alabama. He performed one operation on a woman named Anarcha 30 times without anesthesia. What's the honest historical recognition?",
+    "answer": "Foundational techniques in a medical specialty were developed through experimentation on people who had no legal or actual capacity to refuse",
+    "choices": [
+        "Foundational techniques in a medical specialty were developed through experimentation on people who had no legal or actual capacity to refuse",
+        "Sims pioneered anesthesia in surgery and was the first to insist on patient consent for any procedure he performed",
+        "Sims operated only on white women who had signed detailed written consent forms in compliance with Alabama law",
+        "Sims's surgical techniques have all been discredited and replaced; no modern gynecology owes him anything",
+    ],
+    "context": "Anarcha (subjected to 30 operations), Betsey, and Lucy are the named enslaved women on whom Sims developed his fistula repair. He claimed in his autobiography that anesthesia (ether, available from 1846) was unsuitable for the procedure; his contemporary white patients later received anesthesia. The New York statue of Sims in Central Park was removed in 2018 after years of advocacy. The naming question — does honoring a discoverer require silence about the methods — is one of the bank's substantive cases. The discoveries are real; the methods were grievously wrong.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Henrietta Lacks case: in 1951 cells were taken from a Black cancer patient at Johns Hopkins without consent. The cells, named HeLa, became immortalized in culture and powered an enormous fraction of modern biomedical research — including the Salk polio vaccine. Lacks died of cancer that year; the family wasn't told about HeLa for decades. What's the dual recognition this case forces?",
+    "answer": "Genuine biomedical benefit came from a wrong; both facts are true and neither cancels the other, and consent and benefit-sharing matter independently",
+    "choices": [
+        "Genuine biomedical benefit came from a wrong; both facts are true and neither cancels the other, and consent and benefit-sharing matter independently",
+        "Lacks's case had no actual impact on research; the HeLa story is exaggerated by Rebecca Skloot's bestselling book",
+        "Lacks gave full written consent to all uses of her cells; the family's later objections were unfounded and dismissed",
+        "Lacks's family received billions in royalties from the start; the case has no ethical significance whatsoever",
+    ],
+    "context": "Rebecca Skloot's 'The Immortal Life of Henrietta Lacks' (2010) brought the case into wide public awareness. Johns Hopkins and the NIH have since negotiated with the Lacks family on data-access controls and recognition. The 2023 settlement between the Lacks estate and Thermo Fisher Scientific (which commercialized HeLa cells) was undisclosed but legally significant. The case shaped current debates about biobanks, broad consent, indigenous data sovereignty, and the question of whether research benefits should flow back to subjects' communities.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Belmont Report (1979) is the foundational US document for research ethics on human subjects. It emerged from a National Commission convened after Tuskegee was exposed. What are the three principles the Belmont Report codifies?",
+    "answer": "Respect for persons (autonomy and consent), beneficence (do no harm and maximize benefit), and justice (fair distribution of research burdens and benefits)",
+    "choices": [
+        "Respect for persons (autonomy and consent), beneficence (do no harm and maximize benefit), and justice (fair distribution of research burdens and benefits)",
+        "Maximum data collection, minimum researcher liability, and unlimited institutional discretion in research decisions",
+        "Speed of publication, prestige of journal, and total grant funding secured by the principal investigator",
+        "Government oversight, mandatory federal certification, and required corporate sponsorship of every research project",
+    ],
+    "context": "The National Commission was created by the 1974 National Research Act, passed after the Associated Press's 1972 Tuskegee revelations. The Belmont Report (1979) gave the framework now used by every US Institutional Review Board. The 'justice' principle is the one most actively contested: in practice it has often meant 'don't burden the powerless with research risks while the powerful enjoy the benefits.' The contemporary debates about vaccine trial recruitment, gene-therapy trials in poor countries, and AI training data all engage with the justice principle, whether or not they cite Belmont by name.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The forced sterilization of Native American women in the 1960s and 1970s by Indian Health Service (IHS) physicians is one of the less-discussed chapters of US eugenics history. A 1976 General Accounting Office investigation, prompted by physician Connie Pinkerton-Uri's reporting, found what?",
+    "answer": "Thousands of Native American women had been sterilized without proper consent, often immediately after childbirth, with consent forms presented under duress",
+    "choices": [
+        "Thousands of Native American women had been sterilized without proper consent, often immediately after childbirth, with consent forms presented under duress",
+        "All Native American sterilizations had been properly documented with informed-consent forms signed in tribal languages",
+        "The IHS had performed only voluntary sterilizations of women who had requested the procedure for family-planning reasons",
+        "No Native American sterilizations had ever taken place at any federal facility on any reservation in any state",
+    ],
+    "context": "The 1976 GAO report (limited to 4 of 12 IHS Service Areas, 1973-1976) documented 3,406 Native American sterilizations in those four areas alone. Estimates of the total program range from 25-50% of Native American women of childbearing age sterilized between 1970 and 1976. The 1974 federal regulations requiring waiting periods, separate counseling, and tribal-language consent forms emerged from this reporting. Jane Lawrence's 2000 American Indian Quarterly paper and Andrea Smith's later work documented the broader pattern. This is part of why the modern Indian Health Service includes elaborate consent procedures for surgical sterilization.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# CENSORSHIP + TWITTER FILES + MURTHY + PRE-COVID SCIENCE (12)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "The Galileo affair is often invoked as a parable about science versus religion. The deeper recognition is about institutional power: in 1633 the Church didn't claim heliocentrism was logically wrong, it forbade Galileo from publicly teaching it as fact. The same institutional pattern recurs across centuries. What is the pattern, stripped of any one example?",
+    "answer": "Institutions with the power to police speech and careers can suppress accurate claims for decades while the underlying evidence becomes overwhelming",
+    "choices": [
+        "Institutions with the power to police speech and careers can suppress accurate claims for decades while the underlying evidence becomes overwhelming",
+        "Institutions with policing power always immediately accept any new accurate claim and publicly celebrate every paradigm shift",
+        "Institutions with policing power have no influence on the spread of accurate scientific claims among working researchers",
+        "Institutions with policing power exist only in religious contexts; secular scientific institutions never suppress claims",
+    ],
+    "context": "The Galileo pattern — Semmelweis on hand-washing, Marshall on H. pylori, Wegener on continental drift, the Great Barrington Declaration on lockdowns, the lab-leak hypothesis on COVID — recurs whenever institutions have both intellectual and career-policing power. The institutional response is generally not 'you're wrong' but rather 'you're not the right kind of person to be heard on this.' The recognition skill is to ask not just 'is this true?' but 'what would I expect to see if true claims were being suppressed?'",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Pre-COVID pandemic-preparedness documents — the 2019 WHO 'Non-pharmaceutical public health measures for mitigating the risk and impact of epidemic and pandemic influenza,' the CDC's 2017 'Community Mitigation Guidelines,' the Johns Hopkins 2019 'Preparedness for a High-Impact Respiratory Pathogen Pandemic' — shared specific recommendations against certain measures that were nonetheless adopted in 2020. What did these documents recommend against?",
+    "answer": "Border closures, mass quarantine of asymptomatic exposed persons, contact tracing in the general population, and mass mask mandates for the public",
+    "choices": [
+        "Border closures, mass quarantine of asymptomatic exposed persons, contact tracing in the general population, and mass mask mandates for the public",
+        "Vaccination of children and pregnant women under any circumstances at any phase of any future pandemic anywhere",
+        "Hand-washing campaigns, voluntary social-distancing recommendations, and improved ventilation in indoor settings",
+        "Any government communication with the public during a pandemic for any reason at any time during any phase",
+    ],
+    "context": "The 2019 WHO document explicitly states that contact tracing 'is not recommended in general because there is no obvious rationale for it in most Member States.' It rated border closures and quarantine of exposed individuals as 'not recommended in any circumstances.' The CDC 2017 guidelines recommended against general-public mask mandates. The 2019 Hopkins document explicitly anticipated that mass measures would cause severe collateral damage. The 2020 pandemic response in much of the developed world abandoned these recommendations within weeks. The pre-existing scientific consensus had been broadly correct; the 2020 deviation requires its own historical accounting.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Hanke, Herby, and Jonung's 2022 Johns Hopkins meta-analysis of COVID lockdown studies pooled 24 studies meeting their inclusion criteria. They estimated that lockdowns in Europe and the United States in the spring of 2020 reduced COVID mortality by what amount?",
+    "answer": "Approximately 0.2% — within statistical uncertainty of zero — at the cost of catastrophic economic, educational, and mental-health side-effects",
+    "choices": [
+        "Approximately 0.2% — within statistical uncertainty of zero — at the cost of catastrophic economic, educational, and mental-health side-effects",
+        "Approximately 80% — strong evidence that the lockdown strategy was overwhelmingly effective in saving lives",
+        "Approximately 50% — moderate evidence supporting some forms of lockdown but not the most severe measures",
+        "Approximately negative 30% — showing that lockdowns actively increased mortality through delayed treatments",
+    ],
+    "context": "The Hanke-Herby-Jonung paper (revised 2024) is one of the most-cited lockdown meta-analyses. Its critics challenge the inclusion criteria; its defenders argue the criteria are the same ones applied in legitimate biomedical meta-analyses. The 0.2% estimate doesn't mean lockdowns didn't slow transmission at all — it means the integrated effect on mortality was indistinguishable from zero given how heterogeneous the policy mix was and how much population behavior had already changed before mandates. The collateral damages are now well-documented: WHO estimates of lost school days for children, delayed cancer screenings, and excess non-COVID deaths from delayed care.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Cochrane Library is the gold standard for systematic reviews in medicine. In January 2023 Cochrane published 'Physical interventions to interrupt or reduce the spread of respiratory viruses' — a meta-analysis of 78 RCTs including new COVID-era studies. What was its central finding on mask mandates?",
+    "answer": "Wearing masks in the community probably makes little or no difference to the spread of respiratory illness, with low certainty of evidence",
+    "choices": [
+        "Wearing masks in the community probably makes little or no difference to the spread of respiratory illness, with low certainty of evidence",
+        "Wearing masks reduces respiratory illness transmission by 90% or more across every population and every viral strain",
+        "Wearing masks worsens respiratory illness because of moisture buildup and concentrated viral loads on the fabric",
+        "Wearing masks was not studied in the review; Cochrane has never published any review on mask interventions",
+    ],
+    "context": "The lead author Tom Jefferson summarized the result as 'there is just no evidence that they make any difference.' The NYT's Zeynep Tufekci wrote an op-ed challenging the framing; Cochrane's editor in chief Karla Soares-Weiser issued a clarification statement that the wording could be read more charitably; Jefferson and coauthor Carl Heneghan publicly objected to the clarification as misrepresenting their work. The Cochrane review remains in the public record with its central finding intact. This is the highest-quality evidence base available on community masking, and it does not show what mask-mandate advocates claimed it would show.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Murthy v. Missouri (originally Missouri v. Biden, 2024) raised the question of federal-agency coordination with social-media platforms to suppress speech, including scientific speech. The case included testimony and documents showing what?",
+    "answer": "White House and CDC officials had directly requested removal of specific posts, including from credentialed scientists, with platforms generally complying",
+    "choices": [
+        "White House and CDC officials had directly requested removal of specific posts, including from credentialed scientists, with platforms generally complying",
+        "Social-media platforms made all moderation decisions independently with no input from any federal agency whatsoever",
+        "Federal agencies had only made publicly visible requests through the normal regulatory process for public comment",
+        "Federal agencies had no contact with social-media platforms at any point before or during the COVID pandemic period",
+    ],
+    "context": "Judge Doughty's July 2023 preliminary injunction (Missouri v. Biden, W.D. La.) was extraordinarily detailed about specific communications. The Fifth Circuit largely affirmed. The Supreme Court reversed in June 2024 on STANDING grounds — not on the merits of whether the coordination was unconstitutional. The factual record of the coordination remains in the public docket, and the legal question 'is this state action' is still being litigated in related cases. The standing reversal does not undo what the discovery process documented.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Twitter Files (2022-2023), released after Elon Musk's acquisition, included internal communications about content moderation. One thread focused on COVID-era moderation. What did the documents show about how the platform decided what to suppress?",
+    "answer": "Lists of specific accounts including credentialed scientists like Jay Bhattacharya were flagged by external requesters; the platform applied 'visibility filters' and outright takedowns",
+    "choices": [
+        "Lists of specific accounts including credentialed scientists like Jay Bhattacharya were flagged by external requesters; the platform applied 'visibility filters' and outright takedowns",
+        "Twitter moderated only spam and fraud, with absolutely no political or scientific speech moderation occurring at any point",
+        "Twitter consulted independent academic ethicists for every individual moderation decision through a formal review process",
+        "Twitter banned external requests as a matter of policy and never communicated with any government agency about content",
+    ],
+    "context": "Matt Taibbi, Bari Weiss, David Zweig, and other independent journalists published the Twitter Files threads beginning December 2022. The COVID-moderation files (Zweig's thread) documented specific accounts flagged, including Bhattacharya, Martin Kulldorff, Vinay Prasad, and Harvey Risch. The 'visibility filtering' — sometimes called 'shadow banning' — was confirmed to exist. Twitter executives in internal communications acknowledged the practice. The Files don't prove every flagged claim was correct; they prove the suppression apparatus existed and was used for scientific dissent on a public-health topic.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Aaron Siri is a New York attorney who has litigated FOIA cases against the FDA on behalf of plaintiffs seeking the underlying data for vaccine approvals. In 2022 a federal court ordered the FDA to release the Pfizer COVID vaccine safety review data — documents the FDA had requested 75 years to fully produce. What was the court's ruling?",
+    "answer": "Judge Mark Pittman ordered the FDA to release the documents over 8 months rather than 75 years, calling the agency's request 'unreasonable'",
+    "choices": [
+        "Judge Mark Pittman ordered the FDA to release the documents over 8 months rather than 75 years, calling the agency's request 'unreasonable'",
+        "The judge ruled in favor of the FDA, agreeing that 75 years was an appropriate review period for a vaccine of this scale",
+        "The judge ordered the documents permanently sealed under national security exception protections under federal law",
+        "The judge dismissed the case for lack of standing, declining to address the FDA's timeline at all in any way",
+    ],
+    "context": "The case is Public Health and Medical Professionals for Transparency v. FDA (N.D. Tex. 2022). Siri's PHMPT had filed a 2021 FOIA request for the underlying Pfizer documents (about 450,000 pages). FDA initially proposed 500 pages per month — 75 years to complete. Pittman's order compressed it to about 55,000 pages per month. The released documents are now publicly hosted and have been analyzed by independent researchers. This is the kind of work that depends on a functioning legal system willing to enforce FOIA against agencies that prefer secrecy — and the kind of work the bank specifically credits.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Great Barrington Declaration (October 2020) was authored by Jay Bhattacharya (Stanford), Martin Kulldorff (Harvard), and Sunetra Gupta (Oxford). Within days, NIH Director Francis Collins wrote in an email to Anthony Fauci requesting a 'quick and devastating' public takedown. What was the practical effect on the signatories' careers in 2020-2021?",
+    "answer": "Suppression on major social platforms, exclusion from major media, professional derision; later vindication when Bhattacharya was confirmed as NIH Director in 2025",
+    "choices": [
+        "Suppression on major social platforms, exclusion from major media, professional derision; later vindication when Bhattacharya was confirmed as NIH Director in 2025",
+        "Immediate professional honors and elevated speaking engagements at the World Health Organization throughout 2021",
+        "No professional or social effect; the signatories continued their careers exactly as before the Declaration's publication",
+        "The signatories were sued in federal court for libel by the National Institutes of Health and lost their academic positions",
+    ],
+    "context": "The Collins-Fauci emails were obtained by The Wall Street Journal through FOIA litigation. The 'quick and devastating' phrase appears in Collins's October 8, 2020 email. The three authors' arguments — focused protection of the vulnerable, age-stratified risk, costs of population-wide measures — were within the pre-COVID pandemic-planning consensus. Their treatment in 2020-2021 was a case study in how dissent within scientific establishment can be marginalized when institutional pressure aligns against it. Bhattacharya's March 2025 confirmation as NIH Director by the Senate, 53-47, was an institutional vindication; Kulldorff and Gupta continued at Harvard and Oxford.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Vinay Prasad, a hematologist-oncologist at UCSF, has been one of the most-cited critics of low-evidence medical interventions. His work on cancer drug approvals showed what?",
+    "answer": "Many FDA-approved cancer drugs were approved based on surrogate endpoints; when long-term overall-survival data eventually came in, a large fraction showed no survival benefit",
+    "choices": [
+        "Many FDA-approved cancer drugs were approved based on surrogate endpoints; when long-term overall-survival data eventually came in, a large fraction showed no survival benefit",
+        "All FDA-approved cancer drugs increase survival by at least 5 years and have been verified by independent overall-survival trials",
+        "No FDA-approved cancer drugs have ever been approved without complete overall-survival trial data from large samples",
+        "FDA-approved cancer drugs work by mechanisms identical to vitamin therapies and require no rigorous trial process",
+    ],
+    "context": "Prasad's work — JAMA Internal Medicine 2015, 'Cancer Drugs and Median Improvement in Overall Survival,' and 'The High-Quality Trials of FDA-Approved Cancer Drugs' (BMJ 2017) — documented that median overall-survival improvement for approved cancer drugs was small (often a few weeks to months) and that surrogate endpoints (progression-free survival, response rate) often did not predict survival benefit. He extended this analysis to COVID interventions including youth mRNA vaccines, mask mandates in schools, and gain-of-function research. His Substack and YouTube channel have continued the analysis. Prasad is an example of an institutionally-credentialed dissenter who applies the same evidence standards to establishment positions as to fringe ones.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Robert Malone helped develop the mRNA-lipid-nanoparticle delivery technology in the late 1980s. In 2021 he publicly questioned the COVID mRNA vaccine rollout's risk-benefit analysis for young healthy adults. What happened to him on major social platforms?",
+    "answer": "He was suspended from Twitter (later reinstated), demonetized on YouTube, and his interview with Joe Rogan triggered a major Spotify controversy",
+    "choices": [
+        "He was suspended from Twitter (later reinstated), demonetized on YouTube, and his interview with Joe Rogan triggered a major Spotify controversy",
+        "He was elevated by every social platform and his views were featured prominently in CDC public-health communications",
+        "He had no public presence; his entire career was in private industry with no platform activity of any kind",
+        "He was indicted in federal court for fraud and stripped of all his academic credentials by year-end 2021 nationally",
+    ],
+    "context": "Malone's December 2021 interview on the Joe Rogan Experience (episode #1757) triggered Neil Young's protest withdrawal from Spotify in January 2022; Spotify added 'COVID-19 advisory notices' to certain episodes. Malone's broader argument — that the risk-benefit calculation for healthy young adults differed from that for elderly high-risk populations — has been at least partially vindicated by subsequent data on myocarditis (Tracy Beth Hoeg, others) and on the trial limitations the FDA's released Pfizer documents revealed. Whether one agrees with all of Malone's specific claims, the platform-suppression response to a credentialed mRNA pioneer raising questions is itself a documented case.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Pierre Kory and Paul Marik are critical-care physicians who developed the FLCCC (Front Line COVID-19 Critical Care) protocol — combinations including ivermectin, steroids, and other repurposed drugs for hospitalized COVID patients. Marik had previously been famous for sepsis protocols that saved thousands of lives. What happened to his hospital privileges after the FLCCC work?",
+    "answer": "Sentara Norfolk General Hospital removed his privileges; he eventually left clinical practice for advocating treatment protocols rather than for any medical-error finding",
+    "choices": [
+        "Sentara Norfolk General Hospital removed his privileges; he eventually left clinical practice for advocating treatment protocols rather than for any medical-error finding",
+        "Sentara Norfolk General Hospital promoted him to chief of critical care medicine in recognition of his COVID treatment innovations and his earlier sepsis work",
+        "Sentara Norfolk General Hospital was sued by hundreds of patients who had received Marik's pre-COVID sepsis protocol and saw it as malpractice on a large scale",
+        "Sentara Norfolk General Hospital had no involvement of any kind; Marik never held any privileges at any major US teaching hospital during his entire career",
+    ],
+    "context": "Marik's HAT (hydrocortisone, ascorbic acid, thiamine) sepsis protocol had been published in CHEST in 2017 and credited with saving thousands of lives. After the FLCCC protocols were publicly released in 2020-2021, Sentara restricted then ended his clinical privileges. Marik's case became part of state legislative initiatives in Tennessee, Kansas, and elsewhere protecting physicians who use off-label therapies. Whether one agrees with FLCCC's specific recommendations, the pattern — credentialed senior physicians losing privileges for prescribing approved drugs off-label during a crisis — is one of the documented institutional responses to dissent.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "RFK Jr.'s 'The Real Anthony Fauci' (2021) sold over 1 million copies despite being effectively excluded from mainstream review. What kinds of source material did the book primarily draw on?",
+    "answer": "FOIA-released documents, court records, peer-reviewed studies, and contemporaneous internal communications, extensively footnoted",
+    "choices": [
+        "FOIA-released documents, court records, peer-reviewed studies, and contemporaneous internal communications, extensively footnoted",
+        "Anonymous personal opinions presented without sourcing, supporting Kennedy's prior political beliefs about the topic at hand",
+        "Fictional reconstructions of dialogue and events without any documentary record from any of the involved parties or institutions",
+        "Only mainstream-media articles that had been published in The New York Times and similar outlets at the time of the events",
+    ],
+    "context": "The book has roughly 2,200 footnotes drawing on primary sources. Reviewers including independent scientists have noted both that many of the specific factual claims are well-sourced and that interpretation throughout is sharply argumentative. The book is a partisan account, not a neutral history. It is also extensively documented. The mainstream reception — bookstores declining to stock, major outlets declining to review, social platforms restricting sharing — is itself part of the institutional response to dissent the book documents. Engaging with it requires distinguishing the documentary record (largely solid) from the interpretation (contested).",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# WEF + TRANSHUMANISM (10)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "Klaus Schwab founded the World Economic Forum in 1971 as the European Management Forum. He has run it for over five decades. What is the WEF's actual organizational form, and why does it matter for assessing its influence?",
+    "answer": "A Swiss-based non-governmental organization that convenes heads of state, executives, and academics; its power is convening power, not legal authority",
+    "choices": [
+        "A Swiss-based non-governmental organization that convenes heads of state, executives, and academics; its power is convening power, not legal authority",
+        "A formal United Nations agency with binding regulatory authority over global trade and labor standards globally in every member state",
+        "A subsidiary of the European Union created in 1992 with elected representatives from all member states uniformly chosen by treaty",
+        "A private company owned by Klaus Schwab and his family with publicly traded shares on the Geneva stock exchange that the family controls",
+    ],
+    "context": "WEF is registered in Geneva as a non-governmental international organization. Its annual Davos meeting brings together roughly 3,000 attendees — heads of state, executives, academics, media figures. WEF doesn't pass laws or sign treaties. Its influence runs through the relationships and ideas that get amplified at its events, the Young Global Leaders pipeline (a 5-year fellowship that has counted Macron, Merkel, Trudeau, Ardern, Zuckerberg, and others among alumni), and the publications it produces. Understanding WEF requires understanding how soft power and elite-network formation work — not assuming either omnipotence or insignificance.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Yuval Noah Harari has appeared at WEF panels and authored 'Sapiens,' 'Homo Deus,' and '21 Lessons.' His specific phrase 'hackable animals' appears in his published writing and recorded talks. What is the broader argument the phrase comes from?",
+    "answer": "That biotech and AI together will allow institutions to predict and shape human behavior more precisely than people can understand themselves",
+    "choices": [
+        "That biotech and AI together will allow institutions to predict and shape human behavior more precisely than people can understand themselves",
+        "That humans are computer simulations and the physical world has no underlying reality of any kind whatsoever",
+        "That ancient hunter-gatherers had no consciousness and only modern humans developed the ability to think for the first time",
+        "That all religions are equally true and have always agreed on every important question of metaphysics or ethics",
+    ],
+    "context": "The 'hackable animals' line is from Harari's 2020 Davos remarks and elaborated in 'Homo Deus' and '21 Lessons.' The 'free will is over' framing accompanies it. The argument: combining genomics, neuroscience, and machine learning will allow institutions to predict human behavior, preferences, and choices in detail — and therefore to shape them. Whether one agrees with the specific prediction, the framing — that future technological capability makes traditional concepts of agency obsolete — is itself a political position about how humans should be understood. The bank's job is to help kids recognize the framing AS a position, not to take it as descriptive neutrality.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Schwab's book 'The Fourth Industrial Revolution' (2016) describes coming technological changes — AI, IoT, biotech, blockchain — as a 'fusion of the physical, digital, and biological worlds.' What specific phrase does Schwab use to describe how these technologies will modify human bodies?",
+    "answer": "That technology will become 'an extension of ourselves' and eventually 'merge our physical, digital, and biological identities'",
+    "choices": [
+        "That technology will become 'an extension of ourselves' and eventually 'merge our physical, digital, and biological identities'",
+        "That technology should be banned from all bodily applications and that human embodiment must remain inviolable",
+        "That technology will reverse itself by 2030 and that we will return to pre-industrial forms of work and living",
+        "That technology has nothing to do with bodies and only software and information systems will be transformed",
+    ],
+    "context": "Schwab's framing in 'Fourth Industrial Revolution' (2016) consistently presents bodily-technological merger as future progress to be embraced, not as a contested ethical question. Critics from a range of perspectives — religious traditions, bioconservative ethics, disability-rights advocates — argue that this framing forecloses the question of whether human modification is desirable BEFORE the technologies are deployable, treating consent as something to manage rather than a precondition. The recognition skill: when a futurist names a controversial direction as inevitable, the inevitability framing is itself a rhetorical move worth examining.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Schwab and Thierry Malleret published 'COVID-19: The Great Reset' in July 2020 — just months into the pandemic. The book argues the pandemic offers a unique opportunity for fundamental restructuring of global systems. What does the framing of pandemic as 'opportunity' reveal about how the authors view crises?",
+    "answer": "Crises are treated as catalysts for changes the authors already favored, rather than as emergencies whose end would be the primary goal",
+    "choices": [
+        "Crises are treated as catalysts for changes the authors already favored, rather than as emergencies whose end would be the primary goal",
+        "Crises are treated as accidents requiring the immediate return to pre-crisis arrangements with absolutely no policy changes",
+        "Crises are treated as natural disasters with no human role in their cause or shape and no policy implications anywhere",
+        "Crises are treated as private matters between individuals with no public-health or governance dimension at all",
+    ],
+    "context": "The 'never let a serious crisis go to waste' framing is a well-established political pattern, attributed in various forms to Rahm Emanuel, Naomi Klein ('shock doctrine'), and Milton Friedman. 'The Great Reset' is an explicit version of it applied to COVID. Whether one supports or opposes the specific reforms the book proposes (stakeholder capitalism, climate-focused infrastructure investment, digital-identity systems), the framing — pandemic as opportunity — is itself the position kids should learn to recognize. The crisis-as-opportunity pattern recurs across political contexts; naming it is the analytical skill.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "A widely-circulated 2016 WEF video titled '8 Predictions for the World in 2030' included the line 'You'll own nothing and you'll be happy.' The line drew years of criticism. What did WEF officials later say about the line?",
+    "answer": "That it was meant as a prediction about consumer behavior, not as a policy goal, though the framing of the original video treated it as desirable",
+    "choices": [
+        "That it was meant as a prediction about consumer behavior, not as a policy goal, though the framing of the original video treated it as desirable",
+        "That the line had never been said and the entire video was a fabrication by political opponents working to discredit the WEF",
+        "That property ownership would be banned by international treaty in 2030 with no compensation provided to current property holders",
+        "That the line had been mistranslated from the original German and meant the exact opposite in the original context of the video",
+    ],
+    "context": "The 2016 video drew on a 2016 Danish parliamentarian Ida Auken's essay 'Welcome to 2030. I own nothing, have no privacy, and life has never been better' — published on the WEF website. The framing throughout treated subscription/access economy as a positive transformation. The 'aspirational prediction' defense doesn't address the obvious point: the line was published, promoted, and visualized by WEF as a positive vision of the future. Recognition skill: an organization's framing of a future they describe as desirable is itself a values statement about the kind of future they're working toward, regardless of how they later interpret specific phrasings.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Gain-of-function research deliberately engineers pathogens with enhanced transmissibility or lethality, supposedly to anticipate future natural outbreaks. After the 2014 White House moratorium on certain gain-of-function research was lifted in 2017, and after the COVID origin debate intensified, many serious voices called for a permanent ban on the practice. What's the structural argument for an outright ban?",
+    "answer": "The benefit case rests on preventing hypothetical future outbreaks while the risk case rests on the possibility of actually creating one through laboratory leak",
+    "choices": [
+        "The benefit case rests on preventing hypothetical future outbreaks while the risk case rests on the possibility of actually creating one through laboratory leak",
+        "The research has been proven safe by every biosafety review and there is no actual risk to the public from it",
+        "The research is required for vaccine development and no vaccine could ever be developed without gain-of-function studies",
+        "The research has no scientific value and produces no actual data of any kind that any researcher has ever used",
+    ],
+    "context": "The 2014 moratorium followed several documented near-incidents (anthrax mailings of working stocks, lost vials of smallpox at NIH, H5N1 enhancement controversies). The 2017 lift restored funding under new oversight. The COVID origin debate brought gain-of-function back to public attention — the Wuhan Institute of Virology had received US NIH funding through EcoHealth Alliance grants for related work. Marc Lipsitch and others have argued the risk-benefit calculus does not justify continuing the research at scale, regardless of laboratory safety levels. The structural argument doesn't depend on accepting any specific COVID-origin theory.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "He Jiankui announced in November 2018 that he had edited the genes of twin baby girls in China — the first publicly known germline-edited humans. He targeted the CCR5 gene to confer HIV resistance. International condemnation was swift; He was imprisoned in China. What was the central scientific and ethical objection to his work?",
+    "answer": "The edits were heritable, the girls couldn't consent for future generations, the CCR5 deletion has known off-target effects, and the technique was not safe for clinical use",
+    "choices": [
+        "The edits were heritable, the girls couldn't consent for future generations, the CCR5 deletion has known off-target effects, and the technique was not safe for clinical use",
+        "The edits were trivial and produced no measurable change in the girls' genome that any researcher could detect later",
+        "The edits were beneficial and broadly supported by the scientific community, with the imprisonment based purely on politics",
+        "The edits were performed on adult subjects who had given full informed consent in writing to the procedure",
+    ],
+    "context": "The CCR5-delta32 deletion confers some HIV resistance in homozygotes (people with both copies edited). He's edits targeted this gene in human embryos that he then implanted. CCR5 also has known roles in cognition (associated with stroke recovery and possibly learning) and immune response — the deletion is not a clean win. He was sentenced to three years in prison. Most subsequent debate hasn't been about He himself but about whether ENHANCEMENT germline edits — selecting for intelligence, height, athletic capacity — should ever be permitted. The Nuremberg principle of voluntary consent has no obvious application to a person not yet born; treating that as a soluble engineering problem rather than a real moral barrier is itself the position transhumanism advances.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Designer babies for ENHANCEMENT (taller, smarter, stronger) versus designer babies for treatment of clearly devastating disease (preventing severe genetic illness) raise different ethical questions. What's the core distinction the bank treats as morally substantive?",
+    "answer": "Therapeutic edits address a present harm and could in principle be consented to by the future person; enhancement edits impose values on a person who never agreed to them",
+    "choices": [
+        "Therapeutic edits address a present harm and could in principle be consented to by the future person; enhancement edits impose values on a person who never agreed to them",
+        "Therapeutic and enhancement edits are identical in every relevant respect because the technology is the same in both cases",
+        "Therapeutic edits are universally banned and enhancement edits are universally permitted in every country worldwide",
+        "Therapeutic edits are commercially profitable and enhancement edits are not, which is the only difference between them",
+    ],
+    "context": "Most bioethics frameworks distinguish therapeutic intervention (treating recognized disease) from enhancement (improving traits to be 'better than well'). The bank's position carries the Nuremberg Code's consent principle forward: a person who doesn't yet exist cannot consent to permanent germline changes that reflect someone else's preferences about who they should be. Therapeutic edits for severe disease can pass this test in some framings (the alternative is suffering the person would not have chosen). Enhancement edits for traits cannot — they project the editor's values onto a future person who never had a voice. The technology is the same; the moral weight is not.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Transhumanism as an ideology — pursuing radical extension of human capability through technology — is sometimes presented as inevitable progress. What's the recognition skill for distinguishing technological capability from ideological commitment?",
+    "answer": "Capability says 'we could'; ideology says 'we should'; treating capability as automatically implying obligation hides the actual values choice",
+    "choices": [
+        "Capability says 'we could'; ideology says 'we should'; treating capability as automatically implying obligation hides the actual values choice",
+        "Capability and ideology are identical concepts and treating them differently is a simple confusion of terminology with no real distinction",
+        "Capability is by itself sufficient justification for any action because anything technologically possible is by definition morally required to attempt",
+        "Capability is entirely irrelevant to any policy decision and only ideology matters in choosing what technologies to develop further",
+    ],
+    "context": "Transhumanist advocates like Nick Bostrom, Ray Kurzweil, and David Pearce frame radical human modification — uploaded minds, indefinite lifespan, engineered offspring — as the natural arc of progress. The framing tends to elide the question of whether these specific directions should be pursued, treating them instead as descriptions of where 'we' are going. Critics from religious traditions (Christian bioethics, Orthodox thought), bioconservative philosophy (Leon Kass, Michael Sandel), and disability-rights perspectives argue that the 'we' is doing political work, presupposing consent the actual humans involved haven't given. Recognition skill: any 'inevitable progress' framing is doing work the explicit case for the specific direction would have to do directly.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Council for Inclusive Capitalism, launched 2020 with the Vatican as a partner, includes commitments from major firms (BP, BlackRock, Bank of America, Visa, Salesforce) toward 'stakeholder capitalism' — broadening corporate responsibility beyond shareholders. What's the recognition skill about elite-led 'stakeholder' frameworks?",
+    "answer": "Voluntary corporate commitments by large incumbents can substitute for binding rules, and the specific 'stakeholders' counted are usually whoever the firm already wanted to consult",
+    "choices": [
+        "Voluntary corporate commitments by large incumbents can substitute for binding rules, and the specific 'stakeholders' counted are usually whoever the firm already wanted to consult",
+        "Voluntary corporate commitments are always more demanding than binding rules and produce stronger outcomes universally across every sector globally",
+        "Voluntary corporate commitments are enforced by independent international tribunals with binding judicial authority and full legal remedies for breach",
+        "Voluntary corporate commitments have no effect at all on any corporate behavior anywhere because they are routinely ignored by every signatory firm",
+    ],
+    "context": "The Council for Inclusive Capitalism and similar frameworks — ESG ratings, sustainable-finance taxonomies, stakeholder declarations — share a structure with the AI safety pledges and similar industry self-regulation. Large firms with compliance departments can absorb the reporting burden; small competitors can't. The 'stakeholders' identified in any specific framework reflect the firm's existing relationships, not an independent assessment of who has a legitimate claim. Recognition skill: the most powerful actors in any market often promote the kinds of voluntary frameworks that protect their position from binding alternatives. The pattern is older than AI; the new technology doesn't change the dynamic.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# DISSENTERS SUBSTANTIVE (14)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "Steven Koonin served as Undersecretary for Science at the Department of Energy under Obama (2009-2011). His 2021 book 'Unsettled' argues that the IPCC technical chapters do not support the catastrophist framing of public coverage. What credentials and access did Koonin bring to climate analysis?",
+    "answer": "Caltech provost and computational physicist, who had read the underlying IPCC chapters rather than just the Summary for Policymakers, and had access to the federal climate research apparatus",
+    "choices": [
+        "Caltech provost and computational physicist, who had read the underlying IPCC chapters rather than just the Summary for Policymakers, and had access to the federal climate research apparatus",
+        "A non-scientist political pundit with no formal academic credentials or government experience in climate research",
+        "An oil-industry executive whose entire career had been opposing climate research at every level of academia",
+        "A foreign politician with no exposure to the American climate-research community or any peer-reviewed climate literature",
+    ],
+    "context": "Koonin's CV includes Caltech provost 1995-2004, BP Chief Scientist 2004-2009, DOE Undersecretary 2009-2011, and currently NYU Center for Urban Science and Progress. He's a member of the National Academy of Sciences. His 'Unsettled' argument is not climate denial — he accepts warming and human contribution. He argues the IPCC reports themselves, read carefully, do not support the alarmism of media coverage; that many famous predictions have failed; and that policy debate would benefit from honest engagement with the actual reports. This is the mature dissent within the climate-science conversation, and the bank treats it as the substantive view.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Martin Kulldorff was a Harvard Medical School biostatistician for over a decade and developed the scan statistic that the CDC and FDA use for vaccine-safety signal detection. After the Great Barrington Declaration, what happened to his Harvard position?",
+    "answer": "He was dismissed from Mass General Brigham hospital affiliations in 2021 over COVID communications and later left Harvard; his methodological tools remain in standard use",
+    "choices": [
+        "He was dismissed from Mass General Brigham hospital affiliations in 2021 over COVID communications and later left Harvard; his methodological tools remain in standard use",
+        "He was promoted to tenured full professor at Harvard with expanded research funding and increased institutional power",
+        "He resigned voluntarily to pursue private-sector consulting and was never affected by any institutional decision",
+        "He had never been at Harvard; his association with the institution was fabricated for the Great Barrington Declaration",
+    ],
+    "context": "Kulldorff was at Brigham and Women's Hospital and Harvard Medical School for over a decade. He served on FDA and CDC vaccine-safety committees. His SaTScan software (used for cluster detection) remains the standard tool. After the GBD and subsequent COVID communications, he lost his Mass General Brigham appointments. His professional resume is among the strongest in vaccine epidemiology — making him a difficult target to dismiss on credentials. He moved to Hillsdale College's academic-freedom-focused program. His case illustrates that institutional sanction in 2020-2022 fell on credentialed experts at the very top of their fields, not just on outsiders.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Sunetra Gupta is a professor of theoretical epidemiology at Oxford whose published work on infectious disease modeling predates COVID by decades. Her early-pandemic analysis suggested COVID had already spread more widely than testing suggested — implying lower per-infection mortality than the early models assumed. What was the response from epidemiological mainstream?",
+    "answer": "Her analysis was attacked as 'fringe' despite her standing as one of Oxford's senior theoretical epidemiologists with the credentials and tools to make the case",
+    "choices": [
+        "Her analysis was attacked as 'fringe' despite her standing as one of Oxford's senior theoretical epidemiologists with the credentials and tools to make the case",
+        "Her analysis was immediately confirmed by Imperial College and CDC and adopted as the basis for all national policy",
+        "Her analysis was withdrawn by Oxford and she resigned her position over the controversy in March 2020",
+        "Her analysis had no public dimension; she made no statements during the pandemic to media or in public forums",
+    ],
+    "context": "Gupta's Sunday Times interview (March 2020) suggested the UK might already have substantial population immunity. Imperial College modeling (Neil Ferguson) was the dominant alternative. Subsequent seroprevalence data was mixed but did show higher infection levels than testing-based estimates predicted in many populations. Gupta continued at Oxford, signed the Great Barrington Declaration, and faced years of professional and personal attack. Her credentials — D.Phil. Imperial, Oxford professor, Royal Society fellow — made the 'fringe' label visibly mismatched to her actual standing in the field. The label was institutional positioning, not credential assessment.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Peter McCullough is a cardiologist who, in 2020-2021, advocated early outpatient treatment for COVID using combinations of repurposed drugs. He published an early-outpatient-treatment protocol in the American Journal of Medicine in August 2020. What was the broader argument he was making about the standard care pathway?",
+    "answer": "That hospitals were treating COVID as a single-stage illness suitable only for inpatient care, missing the window when outpatient treatments might prevent hospitalization",
+    "choices": [
+        "That hospitals were treating COVID as a single-stage illness suitable only for inpatient care, missing the window when outpatient treatments might prevent hospitalization",
+        "That hospitals should refuse to treat any COVID patients and patients should be sent home to recover on their own",
+        "That hospitals should mandate immediate intensive-care admission for every COVID patient regardless of symptoms",
+        "That hospitals were perfectly handling every aspect of COVID treatment and no changes to protocols were warranted",
+    ],
+    "context": "McCullough's August 2020 American Journal of Medicine paper ('Pathophysiological Basis and Rationale for Early Outpatient Treatment of SARS-CoV-2 Infection') argued the established treatment paradigm — wait until symptoms severe, then hospitalize — missed an early-treatment window. Whether one agrees with the specific protocols he advocated, the structural argument was correct: a multi-stage illness benefits from interventions before hospitalization. McCullough later lost his university position and faced board complaints. Some of his later specific claims have been more contested than his original AJM paper. The early-treatment framing is now broadly accepted; the credit for raising it has not flowed back consistently.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Harvey Risch is professor emeritus of epidemiology at Yale School of Public Health, with hundreds of peer-reviewed publications. In 2020 he published in the American Journal of Epidemiology advocating consideration of hydroxychloroquine for early outpatient COVID treatment. What happened to his standing in his department?",
+    "answer": "Yale colleagues circulated a public letter denouncing his work; he retained his emeritus position but was largely excluded from departmental decision-making",
+    "choices": [
+        "Yale colleagues circulated a public letter denouncing his work; he retained his emeritus position but was largely excluded from departmental decision-making",
+        "Yale colleagues celebrated his work and elevated him to chair of the department of epidemiology and public health",
+        "Yale colleagues had no reaction; departmental decision-making continued without any reference to his paper at all",
+        "Yale colleagues filed a federal lawsuit against him for his work, which was dismissed in 2021 with no penalty applied",
+    ],
+    "context": "Risch's American Journal of Epidemiology paper (May 2020) reviewed observational evidence on hydroxychloroquine combined with zinc and azithromycin for outpatient use. The paper was widely cited and widely attacked. The Yale Epi department's June 2020 open letter, signed by his colleagues, condemned his recommendations. Risch's broader argument — that the regulatory establishment had treated repurposed drugs differently from how it had treated novel drugs from financial sponsors — became part of the broader conversation about regulatory incentives. The credentials/dismissal asymmetry is the documented pattern.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Tracy Beth Hoeg is an epidemiologist and physician whose 2021 preprint, later peer-reviewed in JAMA, analyzed pediatric COVID-vaccine myocarditis incidence. What did her analysis find for adolescent males?",
+    "answer": "Post-second-dose myocarditis in adolescent males was higher than CDC initial estimates suggested, enough to shift the risk-benefit calculation",
+    "choices": [
+        "Post-second-dose myocarditis in adolescent males was higher than CDC initial estimates suggested, enough to shift the risk-benefit calculation",
+        "Myocarditis risk in adolescent males was identical to that in adolescent females, with no measurable sex difference at any age group",
+        "Myocarditis risk in adolescent males was zero across the study, with no documented cases following any of the studied mRNA doses",
+        "Myocarditis risk in adolescent males was lower than the same risk from natural COVID infection, by approximately a factor of ten",
+    ],
+    "context": "The Hoeg et al. preprint (September 2021) and subsequent peer-reviewed publications found post-dose-2 myocarditis incidence in adolescent males much higher than initial CDC estimates. Multiple European national agencies adjusted their pediatric and adolescent recommendations (Sweden, Norway, Denmark, Finland, France, Germany all restricted mRNA vaccination for healthy minors at various points in 2021-2022) before the CDC did. Hoeg's broader argument — that COVID risk to healthy children was very low and the risk-benefit calculus for pediatric mRNA vaccination differed sharply from adults — has been at least partially vindicated by international policy divergence and subsequent data.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Peter Doshi is associate editor of the BMJ and has been a careful methodologist of vaccine trials. His 2020 BMJ commentary raised questions about the design of the COVID mRNA vaccine pivotal trials. What was his central methodological concern?",
+    "answer": "Endpoints counted only lab-confirmed symptomatic COVID; trial sizes wouldn't detect rare serious adverse events; long-term data didn't yet exist",
+    "choices": [
+        "Endpoints counted only lab-confirmed symptomatic COVID; trial sizes wouldn't detect rare serious adverse events; long-term data didn't yet exist",
+        "The trials had been designed perfectly with no methodological concerns of any kind that any qualified peer reviewer could raise during the process",
+        "The trials had recruited only elderly subjects in nursing homes so the published efficacy data couldn't be applied to any younger population at all",
+        "The trials had no control groups at all and the entire approval process at the FDA was based on observational data from later real-world rollout",
+    ],
+    "context": "Doshi's October 2020 BMJ commentary ('Will covid-19 vaccines save lives? Current trials aren't designed to tell us') laid out methodological concerns about how endpoints were defined and powered. The argument wasn't that the vaccines wouldn't work — it was that the trials weren't designed to answer the questions the public assumed they were answering. Subsequent analyses of the FDA-released documents have engaged with many of the same concerns. Doshi's standing — BMJ associate editor, Maryland associate professor, vaccine-trial transparency advocate for over a decade before COVID — made him difficult to dismiss as a fringe voice.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "John Ioannidis published a March 2020 piece on STAT News titled 'A fiasco in the making? As the coronavirus pandemic takes hold, we are making decisions without reliable data.' Ioannidis had built his career on identifying epistemic failures in biomedicine. What was the core of his March 2020 argument?",
+    "answer": "Without representative population testing, we couldn't reliably estimate infection-fatality ratio, and the policy response was being calibrated to potentially severely-biased data",
+    "choices": [
+        "Without representative population testing, we couldn't reliably estimate infection-fatality ratio, and the policy response was being calibrated to potentially severely-biased data",
+        "The pandemic was definitely no worse than seasonal flu and would resolve within a few weeks of his March essay",
+        "Every government response was perfectly proportionate and there was no risk of policy error in any direction",
+        "The pandemic required immediate adoption of unprecedented restrictions in every jurisdiction without further analysis",
+    ],
+    "context": "Ioannidis's March 17, 2020 STAT piece is one of the most-cited early-pandemic methodological critiques. He didn't claim COVID was nothing — he claimed we didn't have data to know how bad it was, and that policy responses calibrated to bad data could themselves cause great harm. His subsequent Stanford SeroSurvey (later in 2020) suggested infection-fatality ratios well below initial estimates. He continued to publish carefully-bounded estimates throughout the pandemic. The 'fiasco' framing has aged well — many of the specific policy choices were calibrated to assumptions that subsequent data did not support.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Norman Doidge is a Toronto psychiatrist and author of 'The Brain That Changes Itself' (2007), which popularized neuroplasticity research. During COVID he wrote a series of essays in Tablet magazine. What was his methodological critique of the public-health response?",
+    "answer": "That risk communication had failed by treating one number (case counts) as a unified threat rather than as a population-averaged measure of very heterogeneous individual risk",
+    "choices": [
+        "That risk communication had failed by treating one number (case counts) as a unified threat rather than as a population-averaged measure of very heterogeneous individual risk",
+        "That neuroplasticity research had been falsified during the COVID era and the entire field should be retracted",
+        "That every public-health communication during COVID was perfect and required no improvement of any kind",
+        "That risk communication was unnecessary because the public could not understand any aspect of epidemiology",
+    ],
+    "context": "Doidge's essays in Tablet (2020-2022) addressed risk communication, the psychology of pandemic policy support, and the difficulty of speaking against consensus from inside a clinical profession that was applying enormous social pressure for unanimity. His broader point — that the public-health establishment communicated as if every case were equally dangerous, when stratified risk varied by a factor of more than 1,000 from healthy children to elderly nursing-home residents — was difficult to argue with on its own terms. The pattern of communicating one number for political simplicity at the cost of individual decision-making is the larger lesson worth carrying forward.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Mary Talley Bowden is a Houston ENT physician who, in 2021, was suspended from Houston Methodist's medical staff after publicly disagreeing with hospital protocols on COVID treatment. What's the broader recognition this case forces about employer-pressure on physician speech?",
+    "answer": "Hospital-employed physicians can lose privileges for public dissent from institutional protocols, even when those protocols are themselves contested in the literature",
+    "choices": [
+        "Hospital-employed physicians can lose privileges for public dissent from institutional protocols, even when those protocols are themselves contested in the literature",
+        "Hospital-employed physicians have unconditional speech protection under the First Amendment in every US state at all times under all conditions",
+        "Hospital-employed physicians never face any kind of institutional consequence for any public statement they make on any clinical topic at all",
+        "Hospital-employed physicians have private employment contracts that completely prevent any public communication on any clinical topic ever",
+    ],
+    "context": "Bowden's case became part of the Texas legislative debate about physician speech rights. State medical-licensure boards in multiple states (including the Texas Medical Board) faced complaints filed against physicians for off-protocol speech, sometimes triggered by federal agency communications. Whether one agrees with Bowden's specific clinical positions, the structural point — that hospital employers and licensure boards have substantial pressure tools over physician speech, and those tools were used during COVID against speech that wasn't fraudulent — is the documented institutional pattern. Texas SB 1024 (2023) and similar laws emerged in response.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Children's Health Defense, founded by RFK Jr. in 2018, has litigated extensively against federal vaccine policies. The organization was deplatformed from Facebook and Instagram in 2022. What's the broader pattern this kind of deplatforming follows?",
+    "answer": "Platforms can effectively eliminate an organization's reach during the legal and political conversations it exists to influence, with appeals processes too slow to matter",
+    "choices": [
+        "Platforms can effectively eliminate an organization's reach during the legal and political conversations it exists to influence, with appeals processes too slow to matter",
+        "Platforms are required by US federal law to host all organized advocacy groups, and the deplatforming actions were rapidly reversed within days legally",
+        "Platforms had no effect on the organization's reach because every advocacy organization has many alternative channels that remained fully open for them",
+        "Platforms applied the same content standards to advocacy organizations on every side of every issue identically and consistently at all times",
+    ],
+    "context": "The CHD deplatforming preceded Bhattacharya's NIH confirmation by about three years; the timing matters because the political conversation about pediatric mRNA vaccines was at its most active during the period CHD was excluded from major platforms. Whether one agrees with CHD's specific positions, the pattern — major-platform deplatforming during the active phase of a contested policy debate — is one of the documented mechanisms by which speech-control infrastructure shapes political outcomes. The Murthy v. Missouri case dealt with related but legally distinct questions about state action.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Aaron Siri's law firm Siri & Glimstad has litigated multiple FOIA cases against the FDA seeking trial data and adverse-event records. The work has produced several court orders compelling document release. What does this litigation work illustrate about the relationship between transparency and law?",
+    "answer": "Public access to government safety data depends on persistent attorneys willing to litigate when agencies prefer not to release; without that pressure documents stay secret",
+    "choices": [
+        "Public access to government safety data depends on persistent attorneys willing to litigate when agencies prefer not to release; without that pressure documents stay secret",
+        "Federal agencies automatically release every safety record proactively without any legal pressure required at all from outside law firms or activists",
+        "Federal agencies are legally prohibited from releasing safety records and FOIA never applies to medical documents under any circumstances at all",
+        "Federal agencies always lose every FOIA case quickly so any litigation effort is completely unnecessary in any safety-related disclosure context",
+    ],
+    "context": "Siri's work is one of the clearest examples of FOIA litigation actually producing the transparency the law theoretically guarantees. The released Pfizer trial documents (PHMPT v. FDA), the v-safe data, the VAERS records — much of the most useful public information about COVID vaccine safety has emerged from these cases. The broader recognition is structural: 'transparency by default' is rarely how agencies behave; transparency happens when courts order it and lawyers persist. The bank credits the work without taking specific positions on every conclusion drawn from the released documents.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Kary Mullis won the 1993 Nobel in Chemistry for inventing the polymerase chain reaction (PCR) — the foundational technique for amplifying DNA samples that became central to COVID testing. Mullis died in August 2019, months before the pandemic. What had he previously said about PCR's role in diagnosing illness?",
+    "answer": "That PCR amplifies tiny amounts of genetic material so well that it can find almost anything in almost anything, making it powerful for research but not a diagnostic of active infection on its own",
+    "choices": [
+        "That PCR amplifies tiny amounts of genetic material so well that it can find almost anything in almost anything, making it powerful for research but not a diagnostic of active infection on its own",
+        "That PCR is the perfect diagnostic for every infectious disease and the only test that should ever be used in clinical care",
+        "That PCR has no scientific value and the entire technique was a mistake he had personally regretted by 1995",
+        "That PCR can only detect viruses that have been previously sequenced by federal government laboratories worldwide",
+    ],
+    "context": "Mullis is on record (multiple 1990s interviews about HIV) emphasizing that PCR is an amplification tool, not by itself a measurement of clinical infection or contagiousness. The cycle-threshold (Ct) value matters: very high Ct values can amplify trace genetic fragments from people not actively infected. During COVID, varying Ct cutoffs across jurisdictions produced varying case counts; whether one regards this as significant depends on the policy use of those counts. The point about PCR's diagnostic limitations is one its inventor made before the technology was deployed in pandemic-scale testing — and is not the argument of any outsider claiming to overturn established biology.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The traditional medical ethics framework — informed consent, do no harm, the doctor-patient relationship — was tested heavily by COVID-era mandates that physicians administer particular interventions in particular ways, sometimes against their own clinical judgment. What's the broader recognition this period forced?",
+    "answer": "The institutions of medicine differ from the practice of medicine; institutional pressure can override individual clinical judgment in ways the doctor-patient frame misses",
+    "choices": [
+        "The institutions of medicine differ from the practice of medicine; institutional pressure can override individual clinical judgment in ways the doctor-patient frame misses",
+        "The institutions and the actual practice of medicine are identical and the distinction is purely a matter of terminology used by certain critics of the profession",
+        "Institutional medicine has always operated without any pressure of any kind on individual practitioners in any documented way at any point in any era",
+        "Individual clinical judgment has always been the single only force shaping medical practice with no institutional input ever from any of the relevant bodies",
+    ],
+    "context": "The recognition isn't unique to COVID — the eugenics era doctors, the Tuskegee researchers, the Aktion T4 psychiatrists, and the Unit 731 surgeons were all institutional actors whose individual professional ethics were overwhelmed by the institutional context in which they worked. The traditional doctor-patient ethics framework assumes the doctor as the primary moral agent. The actual landscape includes employers, payers, accreditors, state boards, federal agencies, and journals — each with leverage over individual practice. The honest accounting of modern medicine requires seeing all these layers, not just the romantic version where doctors and patients negotiate alone.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# REGULATORY CAPTURE + MEDICAL-INDUSTRIAL (8)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "The Prescription Drug User Fee Act (PDUFA) was enacted in 1992. It established 'user fees' paid by pharmaceutical companies to the FDA to fund drug-review activities. What share of the FDA's drug-review budget now comes from these fees?",
+    "answer": "Over 60% of the FDA Center for Drug Evaluation and Research budget — making the agency financially dependent on the industry it regulates",
+    "choices": [
+        "Over 60% of the FDA Center for Drug Evaluation and Research budget — making the agency financially dependent on the industry it regulates",
+        "Less than 1% of the FDA Center budget — fees are a symbolic gesture with no actual financial impact whatsoever",
+        "Exactly 50% of the budget — the same proportion as every other federal regulatory agency for any product",
+        "Zero percent — PDUFA was repealed by Congress in 1996 and no user fees have been paid since that year",
+    ],
+    "context": "PDUFA was sold as a way to speed drug approvals; user fees would fund hiring reviewers. The unintended consequence: the agency's drug-review function became financially dependent on the industry. Subsequent legislation (PDUFA II-VII) renewed and expanded the framework. The Generic Drug User Fee Amendments (GDUFA, 2012) and others added similar structures. The institutional point: a regulator that depends on its regulated industry for the bulk of its review budget has different incentives than one funded by appropriations. This isn't conspiracy — it's how the agency was designed to operate, and the design has consequences.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The CDC's Advisory Committee on Immunization Practices (ACIP) is the committee that recommends the childhood vaccine schedule. Members serve four-year terms. Concerns about ACIP have focused on financial relationships members have had with vaccine manufacturers. What's the standard objection to those relationships?",
+    "answer": "Members making schedule decisions worth billions to manufacturers should not also have personal financial ties to them, the same conflict-of-interest standard as in other regulatory work",
+    "choices": [
+        "Members making schedule decisions worth billions to manufacturers should not also have personal financial ties to them, the same conflict-of-interest standard as in other regulatory work",
+        "Financial relationships with manufacturers are required for ACIP membership because no other available experts adequately understand the technical details of the products and their manufacturing process",
+        "Financial relationships have no influence on any committee member's recommendations in any documented case ever in the history of any US health advisory body of any kind",
+        "ACIP has no role in any actual vaccine recommendation and has not actually met since the late 1990s in any meaningful capacity that the public can verify from any source",
+    ],
+    "context": "The 2000 House Government Reform Committee report ('Conflicts of Interest in Vaccine Policy Making') documented financial conflicts among ACIP members. Subsequent reforms tightened some rules but didn't eliminate them. The conflict-of-interest standard applies generally: a judge who held stock in a defendant company would recuse; a senator who took money from an industry would face disclosure rules. The same standard should apply to medical recommendation committees, and the deviation from that standard is part of how regulatory capture operates in practice. The 2025 RFK Jr. HHS leadership has signaled stricter recusal rules for these committees.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The revolving door between the FDA and pharmaceutical industry: senior FDA officials routinely move to senior positions at the companies they previously regulated, and industry executives are appointed to senior FDA positions. Scott Gottlieb is one example — FDA Commissioner 2017-2019, then Pfizer board member 2019-present. What is the structural concern?",
+    "answer": "When regulators expect post-government careers in industry, regulatory decisions during their tenure can be shaped by future career prospects, consciously or unconsciously",
+    "choices": [
+        "When regulators expect post-government careers in industry, regulatory decisions during their tenure can be shaped by future career prospects, consciously or unconsciously",
+        "When regulators move to industry, the agency benefits from increased communication channels with regulated firms and the public is broadly better served by the resulting expertise transfer",
+        "When regulators move to industry, the agency loses experienced talent permanently because federal law forbids them from ever returning to any government role of any kind",
+        "When regulators move to industry, federal law strictly prohibits them from working on any single matter they had previously regulated as a government official during their service",
+    ],
+    "context": "The revolving door pattern at FDA is well-documented. Gottlieb's case is illustrative, not unique — Margaret Hamburg (FDA Commissioner 2009-2015) joined the Alkermes board; multiple division directors have moved between FDA and industry. The standard defense — 'cooling-off periods,' formal recusals — addresses some narrow cases but not the broader incentive effect. The structural recognition: incentive systems shape behavior over time, even among people of good intent. A regulatory system designed to resist capture would not have the revolving door operating at the scale and seniority it does.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Purdue Pharma's marketing of OxyContin from 1996 onward downplayed addiction risk and over-represented the drug's safety profile. The Sackler family extracted roughly $11 billion from the company. Approximately how many US deaths have been attributed to the broader opioid crisis Purdue's marketing helped create?",
+    "answer": "Over 600,000 opioid-overdose deaths since 1999, with prescription opioids initiating many of the addiction trajectories that subsequently shifted to heroin and fentanyl",
+    "choices": [
+        "Over 600,000 opioid-overdose deaths since 1999, with prescription opioids initiating many of the addiction trajectories that subsequently shifted to heroin and fentanyl",
+        "Approximately 100 deaths, all of which were due to individual patient misuse, with none traceable to any prescription pattern at any pharmacy chain in the country",
+        "Approximately 10,000 deaths, all of which occurred only in the year 1996 before the FDA implemented warnings on the labels at every retail outlet nationwide",
+        "Zero deaths overall, since the opioid crisis was a media fabrication and there is no evidence of any deaths from any opioid product in any pharmacy or hospital",
+    ],
+    "context": "The Sackler-Purdue case is one of the clearest examples of regulatory failure with mass-casualty consequences. The 1996 FDA approval of OxyContin and the resulting marketing campaign — falsely emphasizing the time-release formulation as 'less addictive' — initiated millions of Americans into opioid use. Many later transitioned to heroin (cheaper) and then fentanyl (deadlier). The 2007 Purdue plea agreement, the 2019 chapter-11 filing, the 2024 Supreme Court bankruptcy ruling against the broad Sackler family release, and ongoing litigation are part of a partial accounting. The opioid crisis is the largest single accountability failure of modern American medicine, dwarfing other regulatory shortfalls in body count.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Vioxx (rofecoxib) was approved by the FDA in 1999 and prescribed to millions for arthritis pain. Merck withdrew it in September 2004 after long-term data showed increased cardiovascular risk. Estimated US excess deaths attributable to Vioxx during its five years on market?",
+    "answer": "Approximately 60,000 excess US deaths from cardiovascular events, according to FDA reviewer David Graham's 2004 testimony",
+    "choices": [
+        "Approximately 60,000 excess US deaths from cardiovascular events, according to FDA reviewer David Graham's 2004 testimony",
+        "Approximately 50 excess US deaths, all of which were due to patient self-medication outside approved label uses",
+        "Zero excess deaths because the FDA had verified the drug's complete safety through independent clinical trials",
+        "Approximately 5 million excess US deaths in five years, making it the largest drug disaster in American history",
+    ],
+    "context": "David Graham, then a senior FDA drug-safety reviewer, testified to the Senate Finance Committee in November 2004 about Vioxx. His estimate of 60,000 excess deaths was based on case-control analysis of the FDA's Sentinel database. Graham had also previously warned about Avandia, Bextra, and other drugs. The Vioxx case illustrates the asymmetry of post-market surveillance: side effects appearing months or years after approval depend on the FDA's willingness to act on signals its own reviewers are flagging, sometimes against management resistance. Graham's testimony also documented his perception that the FDA culture was hostile to internal critics of approved drugs.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "EHR (electronic health record) vendors — Epic, Cerner, Allscripts — dominate the US clinical-record market. Federal policy under HITECH (2009) provided massive subsidies for hospitals to adopt EHRs. What was the broader policy effect on physician practice?",
+    "answer": "Physicians spend roughly twice as much time on EHR documentation as on direct patient care, a major contributor to burnout, with vendors owning much of the data",
+    "choices": [
+        "Physicians spend roughly twice as much time on EHR documentation as on direct patient care, a major contributor to burnout, with vendors owning much of the data",
+        "Physicians have universally praised the EHR rollout as the best public-health policy intervention of the last fifty years across every clinical specialty and every region",
+        "Physicians no longer use EHR systems at all because the systems were so unpopular with practitioners that Congress repealed the HITECH framework within two years",
+        "Physicians have nearly unlimited time for patient care now that EHRs handle every documentation task automatically through advanced AI working in the background",
+    ],
+    "context": "HITECH provided about $36 billion in subsidies, paid mostly to hospitals and vendors. Physician complaints about EHR documentation burden are documented across specialties. Multiple studies (Mayo Clinic, Annals of Internal Medicine) have found EHR documentation as a primary contributor to physician burnout. The interoperability barriers — Epic systems don't easily share data with Cerner systems — have created vendor lock-in for hospitals. The broader recognition: a federal policy framed as enabling 'modern healthcare' produced significant collateral burdens whose costs are now widely acknowledged. The original sales pitch promised reduced burden and improved interoperability; neither has materialized at scale.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The Tuskegee Syphilis Study (1932-1972) is the canonical American medical-ethics atrocity case. Less discussed is the Guatemala syphilis study (1946-1948), conducted by some of the same US Public Health Service researchers. What did the Guatemala study do?",
+    "answer": "Researchers deliberately infected Guatemalan prisoners, soldiers, and psychiatric patients with syphilis and gonorrhea to study transmission and treatment, with no informed consent",
+    "choices": [
+        "Researchers deliberately infected Guatemalan prisoners, soldiers, and psychiatric patients with syphilis and gonorrhea to study transmission and treatment, with no informed consent",
+        "Researchers cured Guatemalan prisoners of pre-existing syphilis using consensual treatment trials with full local oversight and proper documentation throughout the entire study",
+        "Researchers studied only voluntary US citizens who had traveled to Guatemala specifically to participate in the study after signing informed consent forms before departure",
+        "Researchers did not exist; the Guatemala syphilis study is a fictional case invented by twenty-first-century historians for reasons unrelated to the historical record",
+    ],
+    "context": "Susan Reverby, a Wellesley historian, discovered the records of the Guatemala study in 2005 while researching Tuskegee. Her 2010 paper made the case public. President Obama formally apologized to Guatemala in October 2010. Researchers deliberately exposed about 1,300 subjects to syphilis (often via direct inoculation of bacteria on abrasions or genital surfaces) and tested penicillin treatment. The study's principal investigator John Cutler was the same researcher who later worked on Tuskegee. The Guatemala case shows the institutional pattern of which Tuskegee was a piece — a US Public Health Service willing to violate informed consent on poor and powerless populations long before and after Tuskegee specifically.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The 'medical-industrial complex' phrase was coined in 1971 by Barbara and John Ehrenreich, applying Eisenhower's military-industrial-complex framework to healthcare. What's the structural analogy that makes the comparison apt?",
+    "answer": "Healthcare spending grows by serving the interests of providers, insurers, pharma, and device makers; cost containment requires confronting institutions that profit from current spending",
+    "choices": [
+        "Healthcare spending grows by serving the interests of providers, insurers, pharma, and device makers; cost containment requires confronting institutions that profit from current spending",
+        "Healthcare spending has no analogy to military spending and the two systems operate on entirely different principles",
+        "Healthcare spending is automatically efficient because medical professionals always prioritize patient welfare over profit",
+        "Healthcare spending is identical to retail spending and the same market dynamics produce optimal outcomes always",
+    ],
+    "context": "US healthcare spending exceeded $4.5 trillion in 2024 — roughly 18% of GDP. The largest categories include hospitals, physicians, prescription drugs, and administrative costs. Each category has organized political representation. Cost containment efforts (ACO models, Medicare price negotiation, IRA drug-pricing provisions) face resistance from the institutions whose revenues would shrink. The medical-industrial framing is not a conspiracy claim — it's the observation that healthcare politics has the same shape as other sectors where concentrated benefit and dispersed cost produce political asymmetry favoring incumbent providers. Whether one supports market or government cost-containment approaches, recognizing the structural analogy is part of clear thinking about the sector.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# CENSORSHIP MORE + RECOGNITION SKILLS (4)
+# ===========================================================================
+
+P5.append({
+    "tier": 5,
+    "question": "EcoHealth Alliance, headed by Peter Daszak, received NIH grants to study bat coronaviruses including at the Wuhan Institute of Virology. After COVID emerged, the funding relationship became contested. In 2024 the NIH formally debarred EcoHealth from federal funding. What did the NIH cite as the basis for debarment?",
+    "answer": "Failure to report experiments that the NIH considered to meet the agency's gain-of-function research definitions and failure to maintain biosafety information",
+    "choices": [
+        "Failure to report experiments that the NIH considered to meet the agency's gain-of-function research definitions and failure to maintain biosafety information",
+        "Discovery of fabricated grant applications that had never existed in any institutional record at the agency level over many years",
+        "A finding that EcoHealth had created COVID-19 directly in a Wuhan facility, which was then confirmed by all federal agencies together",
+        "An administrative error of some kind; EcoHealth was reinstated within weeks with full funding restored to all of its grant programs",
+    ],
+    "context": "The NIH May 2024 debarment of EcoHealth Alliance came after years of congressional investigation. The actual findings were narrower than the strongest public claims: NIH found EcoHealth had not complied with reporting requirements for certain experiments. Whether the underlying experiments were 'gain of function' under any specific definition remains contested between Daszak and NIH leadership. The debarment is an institutional accountability event regardless of which way the underlying COVID-origin question resolves. The broader recognition: the same agencies that funded the research are now examining whether the recipients complied with grant terms — which is a smaller question than whether the research itself should have been done.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Lockdown effects on child development have been documented in test scores, mental-health metrics, language development, and physical-health outcomes. The National Assessment of Educational Progress (NAEP) data for 2022 showed what compared to 2019?",
+    "answer": "The largest single-test-period drops in reading and math achievement in the assessment's history, with the largest losses concentrated among already-disadvantaged students",
+    "choices": [
+        "The largest single-test-period drops in reading and math achievement in the assessment's history, with the largest losses concentrated among already-disadvantaged students",
+        "Substantial gains in every academic area, with the school closures producing better outcomes than in-person instruction",
+        "Effectively no change in any academic measure, with the closures having no measurable effect on student performance",
+        "Improvements concentrated among advantaged students while disadvantaged students gained ground proportionally as well",
+    ],
+    "context": "The 2022 NAEP results — released in October 2022 — showed reading and math score drops larger than any since the assessment was created in the 1960s. The drops were largest among lower-performing students and disproportionate by socioeconomic status. School-closure duration varied widely by jurisdiction; comparisons across states with different closure policies have allowed some causal inference. The Hanke-Herby-Jonung lockdown meta-analysis, the Brookings school-closure analyses, and the World Bank's COVID-19 learning-loss estimates all triangulate to a similar conclusion. The 'cost' side of the lockdown ledger that pre-COVID pandemic-planning documents had warned about was largely realized.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "Hwang Woo-suk's 2004 and 2005 Science papers claimed the first cloned human embryonic stem-cell lines — a result that would have transformed regenerative medicine if true. Hwang was a national hero in South Korea, with a postage stamp issued in his honor. What did the 2005-2006 Seoul National University investigation find?",
+    "answer": "The stem-cell lines had been fabricated; the photographs were duplicated and reused across supposedly different experiments to disguise the absence of real results",
+    "choices": [
+        "The stem-cell lines had been fabricated; the photographs were duplicated and reused across supposedly different experiments to disguise the absence of real results",
+        "The stem-cell lines were genuine but had been generated from animal embryos rather than human ones",
+        "The stem-cell lines were entirely real and the investigation was a politically motivated attack on Hwang",
+        "The stem-cell lines had been independently confirmed and the Science papers were never retracted at all",
+    ],
+    "context": "Hwang's 2004 and 2005 Science papers were both retracted in early 2006 after a junior whistleblower's online post triggered SNU's investigation. The investigation found systematic fabrication. Hwang was convicted of fraud and embezzlement; his stamp was withdrawn. The case is structurally similar to the Schon Bell Labs scandal — a charismatic researcher producing impossible-seeming breakthrough results, journals at the apex of prestige publishing them, peer review missing the fabrication, and detection eventually coming from junior staff or outside scrutiny rather than the system that approved the work. The pattern recurs because the incentives that produce it remain in place.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+P5.append({
+    "tier": 5,
+    "question": "The 'lab leak' hypothesis for COVID's origin moved from 'conspiracy theory' framing in major outlets in 2020 to a respectable working hypothesis by 2023-2024 — with the FBI, DOE, and other agencies publicly indicating moderate confidence in a research-related origin. What does this evolution illustrate about the speed of institutional updating?",
+    "answer": "Institutions can label a hypothesis disreputable for years and then quietly accept it as plausible without acknowledging the earlier suppression of those who advanced it",
+    "choices": [
+        "Institutions can label a hypothesis disreputable for years and then quietly accept it as plausible without acknowledging the earlier suppression of those who advanced it",
+        "Institutions always update their positions immediately when new evidence emerges and acknowledge their prior errors publicly",
+        "Institutions had never labeled the lab-leak hypothesis disreputable; the framing was a fabrication of later commentators",
+        "Institutions remain entirely opposed to the lab-leak hypothesis and no federal agency has expressed any support for it",
+    ],
+    "context": "The 'Proximal Origin' paper (Andersen et al., Nature Medicine, March 2020), the FOIA'd Slack messages later showing private doubt while public certainty was performed, the 2021 World Health Organization investigation that allowed Chinese authorities to scope the questions, the 2023 FBI 'low confidence' lab-origin assessment, and the 2023 DOE 'low confidence' lab-origin assessment all sit in the documentary record. The institutional response has not generally included formal acknowledgment that those who advanced the lab-leak hypothesis early were treated unfairly or that the institutional pressure against them was inappropriate. The historical accounting remains incomplete because the institutions haven't completed it.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+P5.append({
+    "tier": 5,
+    "question": "Andrew Wakefield's 1998 Lancet paper proposing a possible MMR-autism link triggered decades of public health and political controversy. The paper was eventually retracted in 2010. Beyond the standard simple narrative, what's the more accurate historical accounting of the episode?",
+    "answer": "The paper had real methodological problems and was retracted, while the broader institutional response treated vaccine-safety questions as off-limits in ways that suppressed legitimate inquiry alongside the flawed work",
+    "choices": [
+        "The paper had real methodological problems and was retracted, while the broader institutional response treated vaccine-safety questions as off-limits in ways that suppressed legitimate inquiry alongside the flawed work",
+        "The paper was a flawless piece of medical research that the entire pharmaceutical industry conspired together to suppress through coordinated international action across all major regulatory agencies of every country",
+        "The paper had no methodological problems whatsoever and the retraction was purely a politically motivated action by The Lancet's editorial team, with no actual scientific basis behind any of the published reasons given",
+        "The paper has been universally accepted by every medical journal as the gold standard for vaccine-safety research, and the retraction has now been formally reversed in every database of record by every body",
+    ],
+    "context": "Wakefield's 1998 Lancet paper had a small sample, no control group, and significant undisclosed conflicts of interest. The retraction was warranted on those grounds. The broader episode shows two failure modes at once: a flawed paper given far more weight than its evidence supported, AND an institutional response that treated subsequent vaccine-safety questions in adjacent areas as unspeakable. The honest accounting requires holding both — Wakefield's specific paper was rightly retracted, AND the suppression apparatus that emerged in response went on to chill legitimate questions and credentialed researchers who had no connection to his original work.",
+    "_pillar": 5,
+    "_strategy": "id",
+})
+
+
+# ===========================================================================
+# Compile + validate
+# ===========================================================================
+
+ALL_QUESTIONS = P5
+
+print(f"Pillar 5 (History+ethics+contested) T5: {len(P5)} questions")
+print(f"TOTAL: {len(ALL_QUESTIONS)} questions")
+
+
+def validate_all() -> tuple[list, int, int]:
+    """Validate against the existing science bank + our own batch.
+
+    Returns: (questions_list, fail_count, soft_warn_count).
+    """
+    # Load existing science bank
+    sci_bank_path = REPO / "data" / "questions" / "science.json"
+    existing_bank = json.loads(sci_bank_path.read_text(encoding="utf-8"))
+    print(f"\nLoaded {len(existing_bank)} existing science bank questions for dedup")
+
+    # Combine: our new questions need to dedup against existing + each other
+    combined = existing_bank + ALL_QUESTIONS
+    dup_index, ans_index = build_bank_indices(combined)
+
+    fail_count = 0
+    soft_count = 0
+    fails: list[tuple[int, dict, list]] = []
+    softs: list[tuple[int, dict, list]] = []
+
+    n_existing = len(existing_bank)
+    for i, q in enumerate(ALL_QUESTIONS):
+        bank_idx = n_existing + i  # position in the combined bank
+        r = validate_rewrite(
+            "science", q, bank=combined, dup_index=dup_index,
+            answer_index=ans_index, replace_idx=bank_idx,
+        )
+        total = len(q["question"]) + sum(len(c) for c in q["choices"])
+        if r["verdict"] == "FAIL":
+            fail_count += 1
+            fails.append((i, q, r["hard_fails"]))
+            print(f"  FAIL #{i:03d} T{q['tier']} total={total}c: {q['question'][:60]}")
+            for g, reason in r["hard_fails"]:
+                print(f"      {g}: {reason[:200]}")
+        elif r["verdict"] == "SOFT_WARN":
+            soft_count += 1
+            softs.append((i, q, r["soft_warns"]))
+            print(f"  SOFT #{i:03d} T{q['tier']} total={total}c: {q['question'][:60]}")
+            for g, reason in r["soft_warns"]:
+                print(f"      {g}: {reason[:160]}")
+    return ALL_QUESTIONS, fail_count, soft_count
+
+
+def write_output(questions: list[dict]) -> None:
+    out_path = REPO / "_gen_science_t5_p5.json"
+    payload = {
+        "tier": 5,
+        "summary": {
+            "questions_generated": len(questions),
+            "by_pillar": {"5": len(questions)},
+        },
+        "questions": questions,
+    }
+    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"\nWrote {len(questions)} questions to {out_path}")
+
+
+if __name__ == "__main__":
+    questions, fails, softs = validate_all()
+    print(f"\nValidation summary: {len(questions)} q, {fails} hard fails, {softs} soft warns")
+    if fails == 0:
+        write_output(questions)
+    else:
+        print("Will not write output until fails are resolved.")
+        sys.exit(1)

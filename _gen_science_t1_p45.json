@@ -1,0 +1,1334 @@
+{
+  "tier": 1,
+  "summary": {
+    "questions_generated": 110,
+    "by_pillar": {
+      "4": 50,
+      "5": 60
+    },
+    "failures": 0,
+    "soft_warns": 0
+  },
+  "questions": [
+    {
+      "tier": 1,
+      "question": "Of the eight planets, one is closest to the Sun and zips around it in just 88 Earth days. Which planet is it?",
+      "answer": "Mercury, the smallest and fastest planet",
+      "choices": [
+        "Mercury, the smallest and fastest planet",
+        "Mars, the rusty fourth planet",
+        "Pluto, no longer a true planet",
+        "Saturn, the ringed sixth planet"
+      ],
+      "context": "Mercury is the closest planet to the Sun. It has almost no atmosphere, so daytime can be over 400 C and night below -170 C. It zips around the Sun in 88 Earth days. Pluto was reclassified as a dwarf planet in 2006."
+    },
+    {
+      "tier": 1,
+      "question": "One planet has a giant red storm bigger than Earth that has been swirling for hundreds of years. Which one?",
+      "answer": "Jupiter, the biggest planet of all",
+      "choices": [
+        "Jupiter, the biggest planet of all",
+        "Venus, the cloudy second planet",
+        "Saturn, the ringed sixth planet",
+        "Mars, the rusty red planet"
+      ],
+      "context": "Jupiter is the largest planet in our solar system. The Great Red Spot is a storm observed since at least the 1830s, possibly since 1665. Jupiter has at least 95 known moons."
+    },
+    {
+      "tier": 1,
+      "question": "One planet is famous for its bright icy rings — billions of chunks of frozen water and rock. Which planet?",
+      "answer": "Saturn, with its big bright rings",
+      "choices": [
+        "Saturn, with its big bright rings",
+        "Mars, with its rusty red dust",
+        "Uranus, the tilted ice planet",
+        "Mercury, the closest to the Sun"
+      ],
+      "context": "Saturn's rings were first seen by Galileo in 1610, though he didn't know what they were. They are made of countless ice and rock pieces, from dust-sized to house-sized."
+    },
+    {
+      "tier": 1,
+      "question": "One planet is COVERED in volcanoes and is the hottest in our solar system (yes, hotter than Mercury). Which one?",
+      "answer": "Venus, hotter than Mercury",
+      "choices": [
+        "Venus, hotter than Mercury",
+        "Mars, the rusty fourth planet",
+        "Saturn, the ringed planet",
+        "Neptune, the windy blue planet"
+      ],
+      "context": "Venus has a thick carbon dioxide atmosphere that traps heat — surface temperatures reach about 465 C, hotter than Mercury despite being farther from the Sun. Surface pressure is 90 times Earth's."
+    },
+    {
+      "tier": 1,
+      "question": "One planet is nicknamed the 'red planet' because of rusty iron in its dust, and has the tallest volcano in our system. Which?",
+      "answer": "Mars, home of Olympus Mons",
+      "choices": [
+        "Mars, home of Olympus Mons",
+        "Mercury, the smallest planet",
+        "Jupiter, the biggest planet",
+        "Pluto, the dwarf planet"
+      ],
+      "context": "Mars looks red because iron in its dust has rusted. Olympus Mons is about 22 km tall, almost three times the height of Mount Everest. Mars has two small moons, Phobos and Deimos."
+    },
+    {
+      "tier": 1,
+      "question": "From the Sun the planets go: Mercury, Venus, Earth, Mars, then a giant. Which giant comes fifth?",
+      "answer": "Jupiter, the fifth from the Sun",
+      "choices": [
+        "Jupiter, the fifth from the Sun",
+        "Saturn, the sixth from the Sun",
+        "Uranus, the seventh from the Sun",
+        "Neptune, the eighth from the Sun"
+      ],
+      "context": "Order: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. One mnemonic: 'My Very Excellent Mother Just Served Us Nachos.' Jupiter is so big you could fit all the other planets inside it."
+    },
+    {
+      "tier": 1,
+      "question": "The farthest official planet from the Sun is deep blue, very cold, and takes about 165 Earth years to go around once. Which planet?",
+      "answer": "Neptune, the eighth and last planet",
+      "choices": [
+        "Neptune, the eighth and last planet",
+        "Jupiter, the largest planet",
+        "Uranus, the tilted planet",
+        "Mercury, the closest planet"
+      ],
+      "context": "Neptune is the farthest of the eight planets. It is a deep blue from methane in its atmosphere and has the fastest winds in the solar system, over 2,000 km per hour."
+    },
+    {
+      "tier": 1,
+      "question": "For 76 years kids learned about 9 planets. In 2006 astronomers voted to call Pluto something else. What did they call it?",
+      "answer": "A dwarf planet, not a true planet",
+      "choices": [
+        "A dwarf planet, not a true planet",
+        "A giant asteroid lost in space",
+        "A frozen comet shaped like a ball",
+        "A captured moon of Neptune"
+      ],
+      "context": "Pluto was discovered by Clyde Tombaugh in 1930 and called the ninth planet until 2006. The International Astronomical Union voted to reclassify it as a 'dwarf planet' because it shares its orbital zone with other icy bodies."
+    },
+    {
+      "tier": 1,
+      "question": "When the Moon is between Earth and the Sun, its lit side faces away. What phase is that?",
+      "answer": "New moon, looking invisible from Earth",
+      "choices": [
+        "New moon, looking invisible from Earth",
+        "Full moon, with the whole face lit",
+        "Half moon, with half lit and half dark",
+        "Blood moon, glowing reddish in space"
+      ],
+      "context": "A new moon happens when the Moon sits between Earth and the Sun, so the lit side faces away from us. The Moon cycles through phases about every 29.5 days."
+    },
+    {
+      "tier": 1,
+      "question": "When Earth is between the Sun and the Moon, sunlight bounces off the Moon's whole face. What phase is that?",
+      "answer": "Full moon, with the whole face lit up",
+      "choices": [
+        "Full moon, with the whole face lit up",
+        "New moon, looking invisible from Earth",
+        "Quarter moon, with one quarter dark",
+        "Crescent moon, shaped like a sliver"
+      ],
+      "context": "A full moon happens when Earth sits between the Sun and Moon. There is usually one full moon each month. Two full moons in one month is sometimes called a 'blue moon.'"
+    },
+    {
+      "tier": 1,
+      "question": "The Moon SEEMS to change shape over 29 days. Why does it look like that?",
+      "answer": "The Sun lights different parts as it orbits",
+      "choices": [
+        "The Sun lights different parts as it orbits",
+        "Earth's shadow covers it for the whole month",
+        "The Moon really shrinks and then regrows",
+        "Space clouds slowly cover parts of it"
+      ],
+      "context": "The Moon doesn't change shape — only how much of its lit side faces us. As the Moon orbits Earth, the angle between Sun, Moon, and Earth changes, so we see different fractions of the lit half."
+    },
+    {
+      "tier": 1,
+      "question": "Sometimes the Moon passes exactly between Earth and the Sun, and the sky goes dark in the middle of the day. What is that called?",
+      "answer": "A total solar eclipse",
+      "choices": [
+        "A total solar eclipse",
+        "A long lunar eclipse",
+        "A bright meteor shower",
+        "A glowing blue moon"
+      ],
+      "context": "A solar eclipse happens when the Moon blocks the Sun's light from reaching part of Earth. Total solar eclipses are rare in any one spot. Never look at the Sun directly without eclipse glasses."
+    },
+    {
+      "tier": 1,
+      "question": "Sometimes Earth passes between the Sun and the full Moon, casting a shadow that turns the Moon dim or reddish. What is that called?",
+      "answer": "A lunar eclipse, or blood moon",
+      "choices": [
+        "A lunar eclipse, or blood moon",
+        "A bright solar eclipse",
+        "A nighttime shooting star",
+        "A glowing super moon"
+      ],
+      "context": "A lunar eclipse happens during a full moon when Earth lines up between the Sun and Moon. The Moon often turns rusty red because Earth's atmosphere bends red light onto it. Lunar eclipses are safe to view."
+    },
+    {
+      "tier": 1,
+      "question": "Why is it never safe to stare at the Sun during a solar eclipse without proper glasses?",
+      "answer": "Even a sliver of Sun can burn your eyes",
+      "choices": [
+        "Even a sliver of Sun can burn your eyes",
+        "The Moon gives off a rare harmful ray",
+        "Eclipse light has been shown to itch skin",
+        "The sky goes too dark for human eyes"
+      ],
+      "context": "Even when most of the Sun is covered, the visible edge is bright enough to damage the retina. The retina has no pain sensors, so the burn happens silently. Eclipse glasses block about 99.999% of sunlight."
+    },
+    {
+      "tier": 1,
+      "question": "Why does Earth have summer and winter at all?",
+      "answer": "Earth is tilted toward or away from the Sun",
+      "choices": [
+        "Earth is tilted toward or away from the Sun",
+        "Earth moves closer in summer, farther in winter",
+        "The Sun burns hotter for half the year",
+        "Space wind pushes Earth back and forth"
+      ],
+      "context": "Earth's axis is tilted about 23.5 degrees. As Earth orbits, different halves get more direct sunlight at different times. Earth is actually CLOSEST to the Sun in January (Northern winter), so distance isn't the cause."
+    },
+    {
+      "tier": 1,
+      "question": "When it is summer in Florida, what season is it down in Argentina (south of the equator)?",
+      "answer": "Winter, the opposite of Florida",
+      "choices": [
+        "Winter, the opposite of Florida",
+        "Summer, the same as Florida",
+        "Spring, just before their summer",
+        "Autumn, just after their summer"
+      ],
+      "context": "When the Northern Hemisphere is tilted TOWARD the Sun (June-August), the Southern Hemisphere is tilted AWAY — so it's winter there. Christmas in Argentina or Australia happens in summer."
+    },
+    {
+      "tier": 1,
+      "question": "Twice a year, around March 20 and September 22, day and night are nearly equal everywhere. What is that day called?",
+      "answer": "An equinox, meaning 'equal night'",
+      "choices": [
+        "An equinox, meaning 'equal night'",
+        "A solstice, when sun 'stands still'",
+        "An eclipse, when the Sun is dim",
+        "A meridian, when noon goes long"
+      ],
+      "context": "Equinox means 'equal night' in Latin. On the equinoxes the Sun shines straight down on the equator. The two solstices (around June 21 and December 21) are the longest and shortest days of the year."
+    },
+    {
+      "tier": 1,
+      "question": "Earth turns all the way around once each day, giving us day and night. About how long does one full spin take?",
+      "answer": "About 24 hours, our day-night cycle",
+      "choices": [
+        "About 24 hours, our day-night cycle",
+        "About 12 hours, only the day part",
+        "About 7 days, a full week of spin",
+        "About 30 days, the same as the moon"
+      ],
+      "context": "Earth spins on its axis once every 24 hours, which is why we have day and night. Strictly, one spin relative to the stars is 23 hours 56 minutes; the extra 4 minutes is because Earth has also moved around the Sun."
+    },
+    {
+      "tier": 1,
+      "question": "When it is noon in New York and the Sun is high overhead, what is it in Tokyo, across the world?",
+      "answer": "The dark middle of the night",
+      "choices": [
+        "The dark middle of the night",
+        "Also bright noon, with sun high",
+        "Sunrise, with the Sun just up",
+        "Sunset, with the Sun just down"
+      ],
+      "context": "Tokyo is about halfway around the world from New York. When one side of Earth faces the Sun, the other side is dark. Time zones exist because the same instant looks different all around the globe."
+    },
+    {
+      "tier": 1,
+      "question": "Hot melted rock cools and hardens. What KIND of rock is made that way? (Granite and obsidian count.)",
+      "answer": "Igneous rock, from cooled magma",
+      "choices": [
+        "Igneous rock, from cooled magma",
+        "Sedimentary rock, from layers of mud",
+        "Metamorphic rock, changed by heat",
+        "Crystal rock, from frozen sand"
+      ],
+      "context": "'Igneous' comes from the Latin word for fire ('ignis'). When magma cools slowly underground, it forms rocks like granite. When lava cools quickly on the surface, it forms rocks like obsidian and basalt."
+    },
+    {
+      "tier": 1,
+      "question": "Sand, mud, and shells settle in rivers and oceans, layer on layer, and slowly harden into rock. What kind of rock is that?",
+      "answer": "Sedimentary rock, from settled layers",
+      "choices": [
+        "Sedimentary rock, from settled layers",
+        "Igneous rock, from cooled magma",
+        "Metamorphic rock, changed by heat",
+        "Lava rock, from a recent eruption"
+      ],
+      "context": "Sedimentary rocks (sandstone, limestone, shale) form from squeezed-and-cemented layers of sand, mud, and shells. Most fossils are found in sedimentary rocks. The Grand Canyon shows the layers beautifully."
+    },
+    {
+      "tier": 1,
+      "question": "Take any rock and squish-and-heat it deep underground for a long time. What kind of rock results? (Marble and slate count.)",
+      "answer": "Metamorphic rock, meaning 'changed form'",
+      "choices": [
+        "Metamorphic rock, meaning 'changed form'",
+        "Igneous rock, from cooled magma",
+        "Sedimentary rock, from layers",
+        "Mineral rock, made of one crystal"
+      ],
+      "context": "'Metamorphic' means 'changed form.' Marble starts as limestone, then heat and pressure recrystallize it. Slate starts as shale. The three rock types form the rock cycle."
+    },
+    {
+      "tier": 1,
+      "question": "Igneous, sedimentary, metamorphic — these rock types can SLOWLY change into each other over millions of years. What is that called?",
+      "answer": "The rock cycle, slow but never stopping",
+      "choices": [
+        "The rock cycle, slow but never stopping",
+        "The water cycle, with rain and ocean",
+        "The food chain, with eaters and eaten",
+        "The carbon ladder, with energy steps"
+      ],
+      "context": "The rock cycle: an igneous rock can be worn down into sediment, buried into sedimentary rock, then heated into metamorphic rock, then melted back into magma. It takes millions of years but never stops."
+    },
+    {
+      "tier": 1,
+      "question": "Melted rock inside the Earth is called magma. What is the SAME melted rock called once it comes OUT of a volcano?",
+      "answer": "Lava, magma above the surface",
+      "choices": [
+        "Lava, magma above the surface",
+        "Still magma, just hotter than before",
+        "Tar, a black sticky kind of rock",
+        "Ash, the powder left over after"
+      ],
+      "context": "Magma is melted rock UNDERGROUND. The same stuff becomes lava once it reaches the surface. Lava can be over 1,000 C. As it cools, it hardens into igneous rock like basalt."
+    },
+    {
+      "tier": 1,
+      "question": "In 79 AD a Roman city was buried under ash from Mount Vesuvius, including bread still in ovens. What was that city?",
+      "answer": "Pompeii, buried by Mount Vesuvius",
+      "choices": [
+        "Pompeii, buried by Mount Vesuvius",
+        "Atlantis, the lost ocean city",
+        "Sparta, in ancient Greek lands",
+        "Carthage, in northern Africa"
+      ],
+      "context": "Mount Vesuvius erupted on August 24, 79 AD, burying Pompeii and Herculaneum under meters of ash and pumice. Archaeologists later found preserved homes, paintings, loaves of bread, and the shapes of people. Vesuvius is still active."
+    },
+    {
+      "tier": 1,
+      "question": "Hawaii was built entirely by volcanoes. The biggest volcano on Earth (from its base on the seafloor) sits there. Which island chain?",
+      "answer": "Hawaii, with Mauna Loa as its giant",
+      "choices": [
+        "Hawaii, with Mauna Loa as its giant",
+        "Iceland, with many small volcanoes",
+        "Japan, with Mount Fuji nearby",
+        "Sicily, with Mount Etna nearby"
+      ],
+      "context": "Mauna Loa on Hawaii's Big Island rises about 9 km from the seafloor — taller than Mount Everest if measured from the base. The Hawaiian islands sit over a 'hotspot' in Earth's mantle that has been making volcanoes for millions of years."
+    },
+    {
+      "tier": 1,
+      "question": "Earth's crust is split into giant plates that slowly bump and slide. The shaking we feel when they slip is called what?",
+      "answer": "An earthquake, from slipping plates",
+      "choices": [
+        "An earthquake, from slipping plates",
+        "A volcano, from rising magma",
+        "A tornado, from spinning wind",
+        "An avalanche, from sliding snow"
+      ],
+      "context": "Earth's surface is broken into about 15 large plates that move a few centimeters a year. At faults, plates can stick and then suddenly slip, releasing energy as an earthquake. California's San Andreas Fault is famous."
+    },
+    {
+      "tier": 1,
+      "question": "Scientists use a seismograph to measure earthquakes. The number it gives tells you what about each one?",
+      "answer": "How much energy the quake released",
+      "choices": [
+        "How much energy the quake released",
+        "How many people felt the quake",
+        "How many minutes the quake lasted",
+        "How deep below ground it started"
+      ],
+      "context": "The Richter scale (1935) and the moment magnitude scale rate quake strength. Each step up is about 32 times more energy: a magnitude 7 releases 32 times more energy than a magnitude 6."
+    },
+    {
+      "tier": 1,
+      "question": "When a big underwater earthquake shoves up the seafloor, what huge wave can race outward and crash onto far coastlines?",
+      "answer": "A tsunami, named the 'harbor wave'",
+      "choices": [
+        "A tsunami, named the 'harbor wave'",
+        "A typhoon, a spinning Pacific storm",
+        "A whirlpool, a spinning small drain",
+        "A geyser, a hot water spout on land"
+      ],
+      "context": "'Tsunami' is Japanese for 'harbor wave.' A tsunami crosses the deep ocean as fast as a jet plane (up to 800 km/h). The 2004 Indian Ocean tsunami killed about 230,000 people across many countries."
+    },
+    {
+      "tier": 1,
+      "question": "On a hot day, water from a puddle quietly disappears into the air. What is that step of the water cycle called?",
+      "answer": "Evaporation, water turning into vapor",
+      "choices": [
+        "Evaporation, water turning into vapor",
+        "Condensation, vapor making clouds",
+        "Precipitation, rain falling back down",
+        "Filtration, water flowing through dirt"
+      ],
+      "context": "The water cycle: evaporation, condensation (vapor forms clouds), precipitation, runoff back to rivers and oceans. The same water has been cycling on Earth for billions of years — rain you drink contains atoms dinosaurs once drank."
+    },
+    {
+      "tier": 1,
+      "question": "After lightning flashes, you sometimes hear a loud rolling BOOM a few seconds later. What is that boom?",
+      "answer": "Thunder, the sound of heated air",
+      "choices": [
+        "Thunder, the sound of heated air",
+        "Clouds bumping into each other",
+        "Wind hitting faraway mountains",
+        "The sound of rain in upper sky"
+      ],
+      "context": "Lightning is hotter than the surface of the Sun — about 30,000 C. It heats the air so fast that the air explodes outward, creating thunder. Light travels faster than sound, so we see the flash first."
+    },
+    {
+      "tier": 1,
+      "question": "A huge spinning storm over warm oceans is called a hurricane in America. What is the SAME kind of storm called in Asia?",
+      "answer": "A typhoon, the Asian name for it",
+      "choices": [
+        "A typhoon, the Asian name for it",
+        "A tornado, the funnel-cloud storm",
+        "A blizzard, a heavy snowstorm",
+        "A monsoon, a rainy wind season"
+      ],
+      "context": "Hurricanes (Atlantic + Eastern Pacific), typhoons (Western Pacific), and cyclones (Indian Ocean + Southern Hemisphere) are all the same kind of storm — just different regional names. They form over warm ocean water."
+    },
+    {
+      "tier": 1,
+      "question": "A tornado is a fast-spinning funnel of wind that touches the ground. Which US region gets the MOST tornadoes?",
+      "answer": "The central plains, called Tornado Alley",
+      "choices": [
+        "The central plains, called Tornado Alley",
+        "The northeast, mostly New England",
+        "The far west, by the Pacific Ocean",
+        "The far north, including Alaska"
+      ],
+      "context": "Tornado Alley roughly covers Texas, Oklahoma, Kansas, Nebraska, and nearby states. Warm wet air from the Gulf crashing into cool dry air from the Rockies sets up the storm conditions. The US gets about 1,200 tornadoes a year."
+    },
+    {
+      "tier": 1,
+      "question": "More than two-thirds of Earth is covered by salty water. Which single ocean is the BIGGEST?",
+      "answer": "The Pacific, bigger than all dry land",
+      "choices": [
+        "The Pacific, bigger than all dry land",
+        "The Atlantic, between the Americas",
+        "The Indian, south of southern Asia",
+        "The Arctic, surrounding the North Pole"
+      ],
+      "context": "The Pacific covers about 165 million square kilometers — roughly 30% of Earth's surface, more than all the land on the planet. Ferdinand Magellan named it 'Pacifico' (peaceful) in 1521 because his ships had calm weather crossing it."
+    },
+    {
+      "tier": 1,
+      "question": "Mount Everest could SINK into the deepest spot on Earth with over a kilometer of water still on top. Where is that deep spot?",
+      "answer": "The Mariana Trench, in the Pacific",
+      "choices": [
+        "The Mariana Trench, in the Pacific",
+        "The Bermuda Triangle, off Florida",
+        "The Great Barrier Reef, off Australia",
+        "The Sargasso Sea, by Bermuda"
+      ],
+      "context": "The Mariana Trench in the western Pacific reaches about 11,000 m below sea level at its deepest point, Challenger Deep. Jacques Piccard and Don Walsh first reached the bottom in 1960 in the bathyscaphe Trieste."
+    },
+    {
+      "tier": 1,
+      "question": "Ocean water is salty. Where did all that salt first come from?",
+      "answer": "Rain slowly washed it from rocks",
+      "choices": [
+        "Rain slowly washed it from rocks",
+        "Humans put it there to keep ice off",
+        "Sea creatures squirted it for defense",
+        "Lightning split sea water into salt"
+      ],
+      "context": "When rain falls on land, it dissolves tiny bits of salt from rocks. Rivers carry the salt to the sea. Water evaporates from the ocean leaving the salt behind. After billions of years, oceans are about 3.5% salt."
+    },
+    {
+      "tier": 1,
+      "question": "Fluffy white clouds look like cotton, but they are not cotton. What are clouds REALLY made of?",
+      "answer": "Tiny droplets of water (or ice)",
+      "choices": [
+        "Tiny droplets of water (or ice)",
+        "Smoke from chimneys and fires",
+        "Bits of salt from ocean wind",
+        "Tiny pieces of plant pollen"
+      ],
+      "context": "Clouds form when water vapor in warm rising air cools and condenses on tiny dust particles. Each droplet is far smaller than a raindrop. A typical cloud weighs as much as a million pounds, but each droplet is so tiny it stays up."
+    },
+    {
+      "tier": 1,
+      "question": "Big puffy white clouds with flat bottoms — the cotton-ball kind on a sunny day — have a special name. Which?",
+      "answer": "Cumulus clouds, from Latin for 'heap'",
+      "choices": [
+        "Cumulus clouds, from Latin for 'heap'",
+        "Cirrus clouds, from Latin for 'curl'",
+        "Stratus clouds, from Latin for 'layer'",
+        "Nimbus clouds, from Latin for 'rain'"
+      ],
+      "context": "'Cumulus' is Latin for 'heap.' Cumulus clouds form on warm sunny days when rising air carries moisture upward. If they grow tall and dark, they become cumulonimbus — the storm clouds."
+    },
+    {
+      "tier": 1,
+      "question": "Thin wispy clouds high up that look like horse tails or feathers are made mostly of tiny ICE crystals. What are they called?",
+      "answer": "Cirrus clouds, way up high and icy",
+      "choices": [
+        "Cirrus clouds, way up high and icy",
+        "Cumulus clouds, puffy and low",
+        "Stratus clouds, in flat gray sheets",
+        "Fog clouds, hugging the ground"
+      ],
+      "context": "'Cirrus' comes from Latin for 'curl of hair.' Cirrus clouds form above 6,000 m where the air is below freezing, so they are made of ice. Lots of cirrus from the west often means a weather front and rain are on the way."
+    },
+    {
+      "tier": 1,
+      "question": "Earth's crust is broken into giant plates that crash and crumple over millions of years. What does that crumpling MAKE?",
+      "answer": "Mountains, slowly rising from crashes",
+      "choices": [
+        "Mountains, slowly rising from crashes",
+        "Oceans, big basins between plates",
+        "Deserts, with little rain or trees",
+        "Glaciers, with ice that flows slowly"
+      ],
+      "context": "The Himalayas (including Mount Everest) are still rising today because India is crashing into Asia at about 5 cm per year. The Andes, Alps, and Rockies were all formed by colliding tectonic plates."
+    },
+    {
+      "tier": 1,
+      "question": "The tallest mountain in the world (measured from sea level) sits on the border of Nepal and Tibet. What is it called?",
+      "answer": "Mount Everest, on the Nepal border",
+      "choices": [
+        "Mount Everest, on the Nepal border",
+        "Mount Kilimanjaro, in east Africa",
+        "Mount Fuji, in Japan's main island",
+        "Denali, in the state of Alaska"
+      ],
+      "context": "Mount Everest is about 8,849 m tall and still rising slowly. It is named after George Everest, a British surveyor. The Nepali name is Sagarmatha and the Tibetan is Chomolungma. Edmund Hillary and Tenzing Norgay first reached the summit in 1953."
+    },
+    {
+      "tier": 1,
+      "question": "Inside the Sun, hydrogen atoms slam together and turn into helium, releasing HUGE energy. What is that process called?",
+      "answer": "Nuclear fusion, smashing atoms together",
+      "choices": [
+        "Nuclear fusion, smashing atoms together",
+        "Nuclear fission, splitting atoms apart",
+        "Burning oxygen, like a candle flame",
+        "Electric sparking, between two wires"
+      ],
+      "context": "The Sun has been fusing hydrogen into helium for about 4.6 billion years and has roughly 5 billion years of fuel left. Fusion needs immense heat — about 15 million C at the Sun's core. The Sun isn't 'burning' chemically; it's a nuclear reactor."
+    },
+    {
+      "tier": 1,
+      "question": "Why does the Moon shine in the night sky if it isn't a star?",
+      "answer": "It reflects sunlight back to Earth",
+      "choices": [
+        "It reflects sunlight back to Earth",
+        "Its hot core glows from the inside",
+        "Distant stars combine to light it",
+        "It produces its own moonlight"
+      ],
+      "context": "The Moon, Mars, Jupiter, and Venus all look bright because they reflect sunlight. None make their own light. Only stars (huge balls of fusing hydrogen) shine on their own. The Sun is the closest star to us."
+    },
+    {
+      "tier": 1,
+      "question": "Sunlight takes some time to travel through space. About how long is sunlight on its way to Earth?",
+      "answer": "About 8 minutes from Sun to Earth",
+      "choices": [
+        "About 8 minutes from Sun to Earth",
+        "About 8 seconds from Sun to Earth",
+        "About 8 hours from Sun to Earth",
+        "Almost instantly, less than one tick"
+      ],
+      "context": "Earth is about 150 million km from the Sun, and light travels about 300,000 km per second. The light hitting your face right now LEFT the Sun about 8 minutes ago. Light from the next-closest star (Proxima Centauri) takes about 4.2 years."
+    },
+    {
+      "tier": 1,
+      "question": "The Sun is huge compared to Earth. About how many Earths could fit INSIDE the Sun?",
+      "answer": "About one million tiny Earths",
+      "choices": [
+        "About one million tiny Earths",
+        "About one hundred tiny Earths",
+        "About one thousand tiny Earths",
+        "About ten billion tiny Earths"
+      ],
+      "context": "The Sun's diameter is about 1.4 million km — roughly 109 times Earth's. By volume, you could fit about 1.3 million Earths inside the Sun. The Sun holds about 99.8% of the entire mass of our solar system."
+    },
+    {
+      "tier": 1,
+      "question": "Earth has a thin outer crust, a hot squishy middle, and a very hot center ball. What is the very HOTTEST middle ball called?",
+      "answer": "The core, with melted iron inside",
+      "choices": [
+        "The core, with melted iron inside",
+        "The mantle, the slow-flowing layer",
+        "The crust, the thin outer rocky skin",
+        "The atmosphere, all the layers of air"
+      ],
+      "context": "Earth's layers: crust (rocky, thin), mantle (hot rock flowing slowly), outer core (liquid iron and nickel), inner core (solid iron and nickel, about 5,400 C). The swirling liquid core makes Earth's magnetic field."
+    },
+    {
+      "tier": 1,
+      "question": "Compass needles all point the same way no matter where you stand. What invisible thing pulls them?",
+      "answer": "Earth's own magnetic field",
+      "choices": [
+        "Earth's own magnetic field",
+        "Plain gravity toward the Sun",
+        "Wind currents in the upper sky",
+        "Static from rubbing in the clouds"
+      ],
+      "context": "Earth acts like a giant magnet, with a north and south magnetic pole. The field is made by churning liquid iron in Earth's outer core. It also protects us from harmful solar particles, and creates the northern lights (aurora)."
+    },
+    {
+      "tier": 1,
+      "question": "Astronauts on the Moon could jump much HIGHER than on Earth. Why?",
+      "answer": "The Moon's gravity is much weaker",
+      "choices": [
+        "The Moon's gravity is much weaker",
+        "The Moon has no air to push against",
+        "Astronauts wore very light moon boots",
+        "Time runs faster on the Moon than Earth"
+      ],
+      "context": "The Moon has about 1/6 of Earth's gravity because it has much less mass. An 80 kg Earth astronaut feels only 13 kg there. Apollo astronauts famously hopped instead of walked. Twelve people have walked on the Moon (1969-1972)."
+    },
+    {
+      "tier": 1,
+      "question": "On the ocean, people watching a ship sail far away see it disappear BOTTOM FIRST below the horizon. What does that show?",
+      "answer": "Earth is a sphere, not a flat disk",
+      "choices": [
+        "Earth is a sphere, not a flat disk",
+        "Ships shrink as they go far away",
+        "The sea slowly pulls ships under",
+        "Light can't travel across oceans"
+      ],
+      "context": "Ancient Greek thinkers like Eratosthenes (around 240 BC) figured out Earth was round and measured its size well using shadows. Ships disappearing hull-first, the round shadow Earth casts on the Moon during eclipses, and photos from space all confirm it."
+    },
+    {
+      "tier": 1,
+      "question": "Earth's air is a mix of gases. Which gas is the MAIN one — the most common in every breath?",
+      "answer": "Nitrogen, about 78% of the air",
+      "choices": [
+        "Nitrogen, about 78% of the air",
+        "Oxygen, about 21% of the air",
+        "Carbon dioxide, the gas plants use",
+        "Helium, the light gas in balloons"
+      ],
+      "context": "Earth's atmosphere is about 78% nitrogen, 21% oxygen, and 1% other gases. Many kids guess oxygen because we breathe it, but oxygen is only the second most common gas. Plants need carbon dioxide; animals need oxygen."
+    },
+    {
+      "tier": 1,
+      "question": "In 1610 Galileo pointed a new telescope at Jupiter and saw four little dots moving around it night after night. What had he just found?",
+      "answer": "Jupiter has its own four small worlds",
+      "choices": [
+        "Jupiter has its own four small worlds",
+        "Jupiter is much hotter than the Sun",
+        "Jupiter is a closer star than our Sun",
+        "Jupiter is made of solid clear ice"
+      ],
+      "context": "Galileo Galilei saw Jupiter's four largest moons in January 1610: Io, Europa, Ganymede, Callisto. They are still called the 'Galilean moons.' Moons going around Jupiter showed Earth was NOT the center of everything."
+    },
+    {
+      "tier": 1,
+      "question": "Galileo's telescope showed the Moon's surface was not smooth and perfect at all. What did he actually see up there?",
+      "answer": "Mountains and craters on a rocky moon",
+      "choices": [
+        "Mountains and craters on a rocky moon",
+        "Cities of light made by moon people",
+        "A smooth shiny ball as taught for ages",
+        "A flat painted picture in the sky"
+      ],
+      "context": "Galileo published his telescope discoveries in 'Starry Messenger' (1610). Until then, the Moon was thought to be a perfect smooth sphere. Galileo even estimated mountain heights from shadows. He also found the Sun has spots."
+    },
+    {
+      "tier": 1,
+      "question": "A story says Galileo dropped a heavy ball and a light ball off the Leaning Tower of Pisa. What did he say happens?",
+      "answer": "They land at about the same time",
+      "choices": [
+        "They land at about the same time",
+        "The heavy ball hits MUCH sooner",
+        "The light ball hits MUCH sooner",
+        "Both float and never hit at all"
+      ],
+      "context": "The Tower of Pisa story may be legend, but the idea is real: without air, all objects fall at the same rate. An Apollo 15 astronaut dropped a hammer and a feather on the Moon in 1971 to prove it. Galileo's claim went against 2,000 years of Aristotle's teaching."
+    },
+    {
+      "tier": 1,
+      "question": "Galileo said Earth goes around the Sun, not the other way. In 1633 the Church was very upset. What happened to him?",
+      "answer": "He was made to take it back and stay home",
+      "choices": [
+        "He was made to take it back and stay home",
+        "He got a big medal and a parade in Rome",
+        "He was ignored politely for centuries",
+        "His idea was adopted within a month"
+      ],
+      "context": "Galileo's 'Dialogue Concerning the Two Chief World Systems' (1632) defended the Sun-centered view of Copernicus. He was tried by the Inquisition in 1633 and forced to recant. He spent his last years under house arrest. The Church formally apologized for the case in 1992."
+    },
+    {
+      "tier": 1,
+      "question": "Galileo was an outsider who turned out RIGHT but experts mocked him. What's the lesson kids learn from his story?",
+      "answer": "Even big experts can be wrong for a while",
+      "choices": [
+        "Even big experts can be wrong for a while",
+        "Outsiders are always wrong about nature",
+        "Books should never be checked by readers",
+        "Scientists always agree on everything"
+      ],
+      "context": "Galileo's case is one of the most famous in science history — a single outsider with better evidence held to the truth against powerful institutions. The story repeats: Semmelweis, Wegener, Marshall, all rejected then vindicated."
+    },
+    {
+      "tier": 1,
+      "question": "A famous legend says young Isaac Newton was under a tree when something fell and sparked a big idea. What fell?",
+      "answer": "An apple, says the famous story",
+      "choices": [
+        "An apple, says the famous story",
+        "A pear, just before lunchtime",
+        "A coconut, on a hot summer day",
+        "A book of poetry, says one tale"
+      ],
+      "context": "The apple story comes from Newton himself, told to friends late in life. The real question wasn't 'why did the apple fall?' but 'why does the apple fall DOWN but the Moon stays UP?' Newton's answer: same gravity pulls on both — the Moon is moving sideways fast enough to keep missing the Earth."
+    },
+    {
+      "tier": 1,
+      "question": "Newton said the same invisible PULL that makes apples fall ALSO keeps the Moon in orbit. What did he call this pull?",
+      "answer": "Gravity, the universal pull",
+      "choices": [
+        "Gravity, the universal pull",
+        "Magnetism, the iron-pulling force",
+        "Friction, what slows sliding things",
+        "Electricity, the spark in wires"
+      ],
+      "context": "Newton's law of universal gravitation (1687) was the first to say the same force works everywhere — on apples, the Moon, planets, stars. The math worked so well it predicted comets and planets we hadn't seen yet."
+    },
+    {
+      "tier": 1,
+      "question": "Newton's third law: for every action, an equal and opposite reaction. If you push a wall hard, what does it do?",
+      "answer": "It pushes back with the same force",
+      "choices": [
+        "It pushes back with the same force",
+        "It absorbs the push and gives none back",
+        "Only soft walls push back, not hard ones",
+        "It moves a tiny bit forward over time"
+      ],
+      "context": "Newton's third law is why rockets work — burning fuel pushes gases OUT the back, and the gases push the rocket FORWARD. It is also why ice skaters slide backward when they push each other. Newton's three laws of motion are still used by engineers today."
+    },
+    {
+      "tier": 1,
+      "question": "Newton put sunlight through a glass prism and saw a rainbow appear on the wall. What did that prove?",
+      "answer": "White sunlight is many colors mixed",
+      "choices": [
+        "White sunlight is many colors mixed",
+        "Prisms add colors that weren't there",
+        "Sunlight is one pure color throughout",
+        "Rainbows are painted on the prism"
+      ],
+      "context": "Newton's prism experiments (around 1666) showed white light contains all rainbow colors: red, orange, yellow, green, blue, indigo, violet. Rainbows in the sky work the same way: raindrops act like little prisms."
+    },
+    {
+      "tier": 1,
+      "question": "In 1831 a young Charles Darwin sailed around the world for almost 5 years as the naturalist on a British ship. What ship?",
+      "answer": "HMS Beagle, on a five-year voyage",
+      "choices": [
+        "HMS Beagle, on a five-year voyage",
+        "HMS Victory, Nelson's old warship",
+        "HMS Titanic, a doomed ocean liner",
+        "HMS Endeavour, Captain Cook's ship"
+      ],
+      "context": "Darwin was 22 when he joined HMS Beagle in 1831. The voyage took him to South America, the Galapagos, Australia, and around Africa. He collected fossils, plants, animals, and most importantly his observations of how species differed between places."
+    },
+    {
+      "tier": 1,
+      "question": "On a group of islands far off South America, Darwin saw small birds — each island had birds with slightly different beaks. What birds?",
+      "answer": "Galapagos finches, with varied beaks",
+      "choices": [
+        "Galapagos finches, with varied beaks",
+        "Penguins, sliding on the icy shore",
+        "Albatrosses, with huge wide wings",
+        "Parrots, bright green in the trees"
+      ],
+      "context": "Darwin's Galapagos finches (about 15 species) became the textbook example of how species can change to fit their environment. Bigger beaks could crack tough seeds; pointier beaks could eat insects. One ancestor must have arrived and slowly split into many species."
+    },
+    {
+      "tier": 1,
+      "question": "Darwin's big idea: animals with helpful traits live to have more babies, who also have those traits. What did he call this?",
+      "answer": "Natural selection, over many generations",
+      "choices": [
+        "Natural selection, over many generations",
+        "Spontaneous generation, life from non-life",
+        "Sudden creation, all at once",
+        "Random shuffling, no real pattern"
+      ],
+      "context": "Natural selection: in any group, some individuals have traits that help them survive and reproduce better. Over many generations, those traits become more common. Darwin's 'On the Origin of Species' (1859) laid out the theory with mountains of evidence."
+    },
+    {
+      "tier": 1,
+      "question": "Darwin waited about 20 years to publish his big idea — he worried it would upset people. WHY would it upset them?",
+      "answer": "It says all living things share ancestors",
+      "choices": [
+        "It says all living things share ancestors",
+        "It says scientists should never test ideas",
+        "It says Earth is much younger than it looks",
+        "It says animals should not be studied"
+      ],
+      "context": "Darwin gathered evidence for two decades before publishing in 1859 — only then because Alfred Russel Wallace was about to publish similar ideas. The idea that humans share ancestors with apes — and ultimately all life — challenged many people's beliefs at the time and still does."
+    },
+    {
+      "tier": 1,
+      "question": "Born in Poland, working in France, Marie Curie and husband Pierre found TWO new elements together. Which two?",
+      "answer": "Polonium and radium, two glowing elements",
+      "choices": [
+        "Polonium and radium, two glowing elements",
+        "Helium and neon, two common bright gases",
+        "Gold and silver, two ancient shiny metals",
+        "Iron and copper, two daily-life metals"
+      ],
+      "context": "Marie Curie named polonium (1898) after her homeland, Poland. She and Pierre discovered radium later that year. Both are 'radioactive' — slowly giving off energy. Pierre died in a street accident in 1906; Marie kept working and won a second Nobel in 1911."
+    },
+    {
+      "tier": 1,
+      "question": "Marie Curie's 100-year-old lab notebooks are kept in special lead-lined boxes. Why are they so dangerous to touch?",
+      "answer": "They still give off radium radiation",
+      "choices": [
+        "They still give off radium radiation",
+        "They are written in a secret unknown code",
+        "They are the only copies of a famous bomb plan",
+        "They are too valuable to ever open up"
+      ],
+      "context": "Curie worked with radium without knowing how dangerous it was. Her notebooks (and even her cookbook) are still measurably radioactive — they will be for about another 1,500 years. She died in 1934 of a blood disease likely caused by all the radiation."
+    },
+    {
+      "tier": 1,
+      "question": "Marie Curie is the only person ever to win Nobel Prizes in TWO different sciences. Which two sciences?",
+      "answer": "Physics and Chemistry, both Nobel-winning",
+      "choices": [
+        "Physics and Chemistry, both Nobel-winning",
+        "Biology and Medicine, twice over",
+        "Astronomy and Geology, twice over",
+        "Math and Engineering, twice over"
+      ],
+      "context": "Marie Curie won the 1903 Nobel in Physics (with Pierre and Henri Becquerel) for radioactivity, and the 1911 Nobel in Chemistry (alone) for polonium and radium. No one else has Nobels in two different sciences. Her daughter Irene also won a Nobel in Chemistry in 1935."
+    },
+    {
+      "tier": 1,
+      "question": "During World War I, Marie Curie drove special vans right up to the front lines. What did the vans carry?",
+      "answer": "X-ray machines for wounded soldiers",
+      "choices": [
+        "X-ray machines for wounded soldiers",
+        "Secret messages back to French command",
+        "Cooking gear for hot food in trenches",
+        "Bright lamps to keep soldiers brave at night"
+      ],
+      "context": "Curie organized about 20 mobile X-ray vans known as 'petites Curies' (little Curies) during WWI. She trained women to operate them and drove them to the front herself. They helped surgeons treat over a million wounded soldiers."
+    },
+    {
+      "tier": 1,
+      "question": "Marie Curie taught herself in a freezing Paris attic, topped her physics class, and won TWO Nobels. Today she is what?",
+      "answer": "One of the greatest scientists in history",
+      "choices": [
+        "One of the greatest scientists in history",
+        "A factory worker who never went to school",
+        "A famous queen of a small country",
+        "A young athlete from the Olympic games"
+      ],
+      "context": "When Curie arrived at the Sorbonne in 1891, women were rarely accepted in science. She had to fight for lab space, recognition, and even her second Nobel. Today, the element curium (Cm) is named after her and Pierre."
+    },
+    {
+      "tier": 1,
+      "question": "Albert Einstein's tiny famous equation E=mc^2 says that a tiny bit of MASS can turn into a HUGE amount of what?",
+      "answer": "Energy, an enormous amount",
+      "choices": [
+        "Energy, an enormous amount",
+        "Water, a useful clean liquid",
+        "Food, ready to be eaten",
+        "Air, the gas you breathe"
+      ],
+      "context": "E=mc^2 says energy equals mass times the speed of light squared. Light's speed is a huge number, and squaring it makes it bigger still. So tiny mass becomes huge energy. This is the principle behind both nuclear power and nuclear bombs."
+    },
+    {
+      "tier": 1,
+      "question": "Einstein liked 'thought experiments' — picturing strange situations in his mind. What did these help him do?",
+      "answer": "Think out how space, time, and light work",
+      "choices": [
+        "Think out how space, time, and light work",
+        "Just take a peaceful break after lunch",
+        "Plan a real light-beam-riding bike one day",
+        "Teach little kids to ride small bicycles"
+      ],
+      "context": "Einstein began the 'riding a light beam' thought experiment as a teenager. It led him eventually to special relativity (1905) — which said time and space themselves change for fast-moving observers. Many big physics ideas have started with carefully imagined situations."
+    },
+    {
+      "tier": 1,
+      "question": "Einstein's theory of gravity (general relativity, 1915) said gravity is not really a pull at all. So what IS gravity?",
+      "answer": "A bending of space and time by mass",
+      "choices": [
+        "A bending of space and time by mass",
+        "Invisible strings between two objects",
+        "A wind blowing down from above",
+        "A force pulling toward the equator"
+      ],
+      "context": "Einstein's general relativity says heavy objects warp the fabric of space and time around them, like a heavy ball bending a stretched sheet. Things 'falling' are following the bend. Confirmed in 1919 when starlight was seen to bend around the Sun during a total eclipse."
+    },
+    {
+      "tier": 1,
+      "question": "Einstein was offered the job of PRESIDENT of a country in 1952 — a great honor — but he politely turned it down. Which country?",
+      "answer": "Israel, just a few years old then",
+      "choices": [
+        "Israel, just a few years old then",
+        "Germany, his old birth country",
+        "France, his neighbor in Europe",
+        "Italy, where Galileo had lived"
+      ],
+      "context": "After Chaim Weizmann (Israel's first president) died in 1952, Einstein was offered the position. He declined, saying he was unsuited for politics and lacked the practical skills the job required. Einstein had fled Germany when the Nazis took power and became a US citizen in 1940."
+    },
+    {
+      "tier": 1,
+      "question": "In the 1700s smallpox killed about 1 in 10 people. English doctor Edward Jenner noticed one group almost NEVER caught it. Who?",
+      "answer": "Milkmaids who had already had cowpox",
+      "choices": [
+        "Milkmaids who had already had cowpox",
+        "Farmers who only ate root vegetables",
+        "Sailors who spent years out at sea",
+        "Bakers who handled bread all day"
+      ],
+      "context": "Cowpox is a mild cousin of smallpox that milkmaids often caught from cows. Jenner noticed milkmaids who had survived cowpox almost never got smallpox. He had a hunch the milder disease was protecting them from the deadly one."
+    },
+    {
+      "tier": 1,
+      "question": "Edward Jenner tested his cowpox idea in 1796 on an 8-year-old boy named James Phipps. What did he do exactly?",
+      "answer": "Gave him cowpox, then exposed him to smallpox",
+      "choices": [
+        "Gave him cowpox, then exposed him to smallpox",
+        "Asked him to drink milk every day for a year",
+        "Sent him to live among cows for a week",
+        "Painted his skin nightly with a cream"
+      ],
+      "context": "Jenner inoculated young Phipps with cowpox in May 1796. Weeks later he deliberately exposed him to smallpox — Phipps didn't get sick. By today's rules this would be banned, but it worked. Jenner had just invented the world's first vaccine."
+    },
+    {
+      "tier": 1,
+      "question": "The word VACCINE comes from a Latin word. What does that Latin root word mean?",
+      "answer": "Cow, as in cowpox",
+      "choices": [
+        "Cow, as in cowpox",
+        "Needle, like a sharp shot",
+        "Doctor, who gives the shot",
+        "Sleep, as in feeling tired"
+      ],
+      "context": "Vaccine comes from 'vacca,' Latin for cow — because Edward Jenner's first vaccine used cowpox to protect people from smallpox. The word entered medicine through Jenner's work in the 1790s. Today we have vaccines for many diseases."
+    },
+    {
+      "tier": 1,
+      "question": "Smallpox once killed hundreds of millions. In 1980 the World Health Organization said something amazing about it. What?",
+      "answer": "Smallpox had been wiped out on Earth",
+      "choices": [
+        "Smallpox had been wiped out on Earth",
+        "Smallpox was twice as common worldwide",
+        "Smallpox had been given a new long name",
+        "Smallpox was a fictional made-up disease"
+      ],
+      "context": "Smallpox is the ONLY human infectious disease ever fully wiped out. WHO declared eradication in May 1980, after a global vaccination campaign started in 1967. The last natural case was Ali Maow Maalin in Somalia in October 1977."
+    },
+    {
+      "tier": 1,
+      "question": "In the 1940s and 50s, polio paralyzed thousands of US kids each summer. In 1955 a doctor announced a vaccine. Who was he?",
+      "answer": "Jonas Salk, the polio vaccine doctor",
+      "choices": [
+        "Jonas Salk, the polio vaccine doctor",
+        "Edward Jenner, an old English doctor",
+        "Louis Pasteur, a famous French chemist",
+        "Alexander Fleming, the penicillin doctor"
+      ],
+      "context": "Jonas Salk announced his polio vaccine on April 12, 1955. American cities held parades; church bells rang. Before it, polio struck about 50,000 American kids a year and left many in iron lungs. After widespread vaccination, US polio cases fell to almost zero by the early 1960s."
+    },
+    {
+      "tier": 1,
+      "question": "TV asked Jonas Salk who owned the patent on his polio vaccine. What did he famously answer?",
+      "answer": "There was no patent; could you patent the Sun?",
+      "choices": [
+        "There was no patent; could you patent the Sun?",
+        "His own family was set to own it for years",
+        "The US government quietly owned the rights",
+        "A secret company had bought all the rights"
+      ],
+      "context": "Salk's famous reply came on a 1955 TV interview with Edward R. Murrow. He never patented his vaccine — he wanted it to reach as many children as possible. Economists later estimated the unpatented choice cost him around $7 billion. He stayed a working scientist all his life."
+    },
+    {
+      "tier": 1,
+      "question": "Albert Sabin later made a different polio vaccine, given by mouth on a sugar cube. Why was that easier than a shot?",
+      "answer": "Kids could just swallow it anywhere",
+      "choices": [
+        "Kids could just swallow it anywhere",
+        "It also worked the same day taken",
+        "It was made of regular kitchen sugar",
+        "It also cured the common cold quickly"
+      ],
+      "context": "Albert Sabin's oral polio vaccine (1961) was easier to give than Salk's injected version, especially in places without trained medical staff. Kids could swallow a few drops on a sugar cube. The two vaccines together drove polio close to extinction worldwide."
+    },
+    {
+      "tier": 1,
+      "question": "In Vienna in 1847, new mothers were dying of fever. Ignaz Semmelweis saw doctors going from corpses to babies. What did he tell them?",
+      "answer": "Wash hands in chlorine water first",
+      "choices": [
+        "Wash hands in chlorine water first",
+        "Switch to wearing thick leather gloves",
+        "Stop all talking during the delivery",
+        "Pray for one hour before each birth"
+      ],
+      "context": "Semmelweis figured out doctors were carrying invisible 'cadaverous particles' (germs) from autopsies to maternity wards. He had them wash with chlorinated lime. Deaths dropped from about 18% to about 1%. This was decades before anyone knew about germs."
+    },
+    {
+      "tier": 1,
+      "question": "Semmelweis SHOWED with numbers that handwashing saved lives. How did most other doctors of his day react?",
+      "answer": "Mocked him; he was put in an asylum",
+      "choices": [
+        "Mocked him; he was put in an asylum",
+        "All hospitals copied his rule in months",
+        "He won a great prize and named a hospital",
+        "Everyone in Europe adopted his idea fast"
+      ],
+      "context": "Semmelweis's evidence was strong, but he couldn't EXPLAIN why handwashing worked (germ theory came later from Pasteur and Koch). Many doctors were offended by the idea they had been killing patients. He was institutionalized in 1865 and died there, possibly beaten by guards."
+    },
+    {
+      "tier": 1,
+      "question": "Semmelweis was RIGHT but died unhonored. What's the warning in his story?",
+      "answer": "Being right is not the same as being believed",
+      "choices": [
+        "Being right is not the same as being believed",
+        "Doctors always agree with new research",
+        "Old hospitals were perfectly safe places",
+        "Handwashing is a fairly minor habit"
+      ],
+      "context": "The 'Semmelweis effect' is the name now used when people reject something that contradicts what they already believe. His story is sometimes paired with Wegener, Marshall, Mendel — all right, all rejected, all eventually vindicated."
+    },
+    {
+      "tier": 1,
+      "question": "In a quiet monastery in the 1860s, Austrian monk Gregor Mendel carefully grew thousands of plants. What plant did he study?",
+      "answer": "Pea plants, about 28,000 of them",
+      "choices": [
+        "Pea plants, about 28,000 of them",
+        "Apple trees, with red apples",
+        "Sunflowers, with bright yellow heads",
+        "Cabbage plants, in long green rows"
+      ],
+      "context": "Mendel grew about 28,000 pea plants over 8 years in the garden of Saint Thomas' Abbey in Brno (now in the Czech Republic). He chose peas because they grow fast, breed predictably, and have clear features."
+    },
+    {
+      "tier": 1,
+      "question": "Mendel crossed TALL and SHORT pea plants. All babies grew tall. But some GRANDCHILDREN were short. What did that show?",
+      "answer": "Traits can hide one round, then return",
+      "choices": [
+        "Traits can hide one round, then return",
+        "Plants choose how tall to grow each year",
+        "Short plants always die before babies",
+        "Tall plants only marry tall plants"
+      ],
+      "context": "Mendel discovered what we now call DOMINANT and RECESSIVE traits. Tall masks short, but the short instructions are still in the plant. About 1 in 4 grandchildren show the hidden short trait. This was the start of modern genetics."
+    },
+    {
+      "tier": 1,
+      "question": "Mendel published his pea results in 1866. How LONG did it take other scientists to finally notice his work?",
+      "answer": "About 34 years, after he had died",
+      "choices": [
+        "About 34 years, after he had died",
+        "About one week from the printing",
+        "About two months in the same year",
+        "About 200 years after his death"
+      ],
+      "context": "Mendel's 1866 paper was published in a small local journal and ignored. He died in 1884 still unknown. In 1900, three scientists working separately (de Vries, Correns, Tschermak) rediscovered his rules. Today he is called the father of genetics."
+    },
+    {
+      "tier": 1,
+      "question": "Today we know the 'instructions' Mendel was tracking sit inside almost every cell. What are those instructions written in?",
+      "answer": "DNA, the double-helix molecule",
+      "choices": [
+        "DNA, the double-helix molecule",
+        "Salt, found in every kitchen",
+        "Sugar, found in every kitchen",
+        "Iron, found in every magnet"
+      ],
+      "context": "Mendel didn't know about DNA. The molecule was named in 1869 by Friedrich Miescher; its double-helix structure was found in 1953. But the 'units' Mendel proposed are what we now call GENES, made of DNA. His math and the chemistry matched perfectly."
+    },
+    {
+      "tier": 1,
+      "question": "In the 1860s French scientist Louis Pasteur showed wine and milk go bad because of TINY LIVING things. What do we call them today?",
+      "answer": "Germs, also called microbes",
+      "choices": [
+        "Germs, also called microbes",
+        "Tiny invisible flying fairies",
+        "Bits of broken glass dust",
+        "Tiny iron filings in the food"
+      ],
+      "context": "Pasteur's experiments helped prove the 'germ theory of disease' — that infections are caused by microorganisms. Before this, many thought disease came from bad air ('miasma') or imbalanced body fluids. Pasteur showed the invisible enemy was a living thing."
+    },
+    {
+      "tier": 1,
+      "question": "Pasteur showed you can heat milk just enough to KILL germs without ruining the taste, so it lasts longer. What is that process called today?",
+      "answer": "Pasteurization, named after Pasteur",
+      "choices": [
+        "Pasteurization, named after Pasteur",
+        "Boiling, the simplest way to heat",
+        "Salting, the old way to preserve",
+        "Freezing, the cold way to preserve"
+      ],
+      "context": "Pasteurization heats milk (or other liquids) just enough to kill harmful germs while keeping flavor and most nutrients. Modern milk is usually pasteurized at 72 C for 15 seconds. It saves countless children from food-borne diseases every year."
+    },
+    {
+      "tier": 1,
+      "question": "Pasteur's swan-neck flasks of broth stayed fresh even with air flowing in. What did this experiment PROVE?",
+      "answer": "Life does not arise from non-life on its own",
+      "choices": [
+        "Life does not arise from non-life on its own",
+        "Curved glass is bad for the taste of broth",
+        "All broths in his time were unsafe to drink",
+        "Swans were proven to be very clever birds"
+      ],
+      "context": "Many people in Pasteur's day still believed in 'spontaneous generation' — that maggots arose from old meat. His swan-neck flasks let air in but kept dust and germs out. The broth stayed clear forever. Some of his original flasks are still preserved today."
+    },
+    {
+      "tier": 1,
+      "question": "In 1885 Pasteur saved a 9-year-old boy named Joseph Meister who had been badly bitten by a rabid dog. How did he save the boy?",
+      "answer": "Gave him a brand-new rabies vaccine",
+      "choices": [
+        "Gave him a brand-new rabies vaccine",
+        "Sent him to the seaside for fresh air",
+        "Wrapped his arm in a special bandage",
+        "Told him not to drink any water at all"
+      ],
+      "context": "Pasteur's rabies vaccine (1885) was risky — rabies is almost 100% fatal once symptoms appear. The vaccine worked, and Meister lived to be an adult. He later worked as a gatekeeper at the Pasteur Institute."
+    },
+    {
+      "tier": 1,
+      "question": "In 1953 two young scientists in England figured out the shape of DNA. The famous shape looks like a twisted ladder. What's it called?",
+      "answer": "A double helix, like a twisted ladder",
+      "choices": [
+        "A double helix, like a twisted ladder",
+        "A single loop, just one curved circle",
+        "A flat square, like a small window",
+        "A flat sheet, like a piece of paper"
+      ],
+      "context": "DNA's double helix is made of two strands wound around each other. Each strand is built from four letters (A, T, G, C). Watson and Crick announced the shape in 1953 at the Eagle Pub in Cambridge. Their one-page paper was published in Nature on April 25, 1953."
+    },
+    {
+      "tier": 1,
+      "question": "Watson and Crick's DNA shape was helped by an X-ray photo taken by chemist Rosalind Franklin. What was that famous picture called?",
+      "answer": "Photo 51, an X-ray of DNA",
+      "choices": [
+        "Photo 51, an X-ray of DNA",
+        "The Big Picture, of all chemistry",
+        "Photo Helix, of a clear test tube",
+        "The Spiral Snapshot, of a glass slide"
+      ],
+      "context": "Rosalind Franklin and her PhD student Raymond Gosling took Photo 51 in 1952 — an X-ray showing DNA's helical pattern. Watson saw the photo without Franklin's knowledge. She died of cancer in 1958 at age 37. Watson, Crick, and Wilkins won the Nobel in 1962."
+    },
+    {
+      "tier": 1,
+      "question": "DNA is found inside almost every cell of every living thing. What does DNA actually carry?",
+      "answer": "Instructions for building living things",
+      "choices": [
+        "Instructions for building living things",
+        "Tiny pictures of each memory you have",
+        "Stored sunlight from earlier in the day",
+        "Pure water in a very thin liquid form"
+      ],
+      "context": "DNA carries the genetic code — instructions for making everything in a living thing, from eye color to how a leaf grows. The code is written with four letters (A, T, G, C) in long sequences called genes. Humans share about 99.9% of their DNA with each other."
+    },
+    {
+      "tier": 1,
+      "question": "DNA's two strands can unzip, and each one makes a perfect new copy of itself. What does this let cells do?",
+      "answer": "Copy themselves, so bodies can grow",
+      "choices": [
+        "Copy themselves, so bodies can grow",
+        "Stop growing once a baby is born safely",
+        "Float out of the body each spring",
+        "Glow brightly in the dark at night"
+      ],
+      "context": "Each strand of DNA's double helix is a 'template' — when the strands unzip, each side serves as a master for building its missing half. This is how a single fertilized egg can become a whole baby with trillions of cells, all carrying identical DNA."
+    },
+    {
+      "tier": 1,
+      "question": "Doctors said ulcers came from stress and spicy food. In 1984 Barry Marshall did something SHOCKING to prove it was a germ. What?",
+      "answer": "He drank a glass of the ulcer germ himself",
+      "choices": [
+        "He drank a glass of the ulcer germ himself",
+        "He sent a sample of it to outer space",
+        "He spread it on a wall to see it grow",
+        "He let his pet dog drink it instead"
+      ],
+      "context": "Marshall and Robin Warren had identified Helicobacter pylori in ulcer patients. Other doctors didn't believe a germ could survive stomach acid. Marshall drank a beaker of it, developed stomach inflammation in days, then cured himself with antibiotics."
+    },
+    {
+      "tier": 1,
+      "question": "After Barry Marshall drank the ulcer germ and PROVED his theory, what happened to him in later years?",
+      "answer": "He won the Nobel Prize for that discovery",
+      "choices": [
+        "He won the Nobel Prize for that discovery",
+        "He was sent to jail for unsafe testing",
+        "He vanished and was never seen again",
+        "He lost his medical license forever"
+      ],
+      "context": "Marshall developed gastritis within days of drinking H. pylori, exactly as his theory predicted. He cured himself with antibiotics. Ulcers are now routinely treated as a bacterial infection. In 2005 he and Robin Warren shared the Nobel Prize in Medicine."
+    },
+    {
+      "tier": 1,
+      "question": "Marshall's story shows medical 'common knowledge' was wrong for decades. What's the lesson for kids?",
+      "answer": "It is okay to ask 'how do we KNOW that?'",
+      "choices": [
+        "It is okay to ask 'how do we KNOW that?'",
+        "All doctors agree on every question always",
+        "Spicy food actually does cause ulcers",
+        "Outsiders are usually wrong about hidden truths"
+      ],
+      "context": "Marshall's story is now taught in medical schools. Real science is open to questioning, even when an answer is repeated in every textbook. The opposite of science is 'because I said so.' Honest doubt is a core virtue."
+    },
+    {
+      "tier": 1,
+      "question": "A kid sees mold on bread in the dark drawer but not on bread in sunlight, and wonders if sun slows mold. What is that called?",
+      "answer": "An observation leading to a question",
+      "choices": [
+        "An observation leading to a question",
+        "A finished proof of how mold grows",
+        "A guess about future weather changes",
+        "A list of every food in the house"
+      ],
+      "context": "Science usually starts with NOTICING something and ASKING WHY. From that question, a scientist makes a guess (a hypothesis) and tries to test it. Big ideas often start with quiet, careful noticing."
+    },
+    {
+      "tier": 1,
+      "question": "A scientist guesses, 'Salt makes ice melt faster.' She plans an experiment to check. What is this kind of testable guess called?",
+      "answer": "A hypothesis, a testable scientific guess",
+      "choices": [
+        "A hypothesis, a testable scientific guess",
+        "A theorem, a proved math statement",
+        "A poem, a piece of written art",
+        "A fact, something already proven true"
+      ],
+      "context": "A hypothesis is a specific testable guess — not just a hope. A good hypothesis CAN be proved wrong by an experiment. After many tests support a hypothesis, it can grow into a 'theory.'"
+    },
+    {
+      "tier": 1,
+      "question": "A team thinks plants grow taller with music. One plant gets music; one gets nothing. The 'no music' plant has a special name. What is it?",
+      "answer": "The control, used to compare results",
+      "choices": [
+        "The control, used to compare results",
+        "The cheater, to make answers fit",
+        "The mistake, that should not be there",
+        "The boss, watching the other plant"
+      ],
+      "context": "A control is the sample that gets the normal treatment, so you can compare. Without a control, you can't tell if music caused any difference or if it would have happened anyway. Good experiments always have a control group."
+    },
+    {
+      "tier": 1,
+      "question": "Sasha tries her ice-melting idea once. Then she tries it 20 more times. WHY does a good scientist repeat an experiment?",
+      "answer": "A single try might be a lucky fluke",
+      "choices": [
+        "A single try might be a lucky fluke",
+        "Repeats make the answer come out any way",
+        "The first try never counts in any case",
+        "Scientists run out of things to do anyway"
+      ],
+      "context": "REPLICATION (repeating the experiment) is one of the most important rules in science. A single result might be luck. Strong patterns hold up across many tries. When results DON'T replicate, that's important too: the first finding might be wrong."
+    },
+    {
+      "tier": 1,
+      "question": "A scientist's experiment shows her favorite idea is WRONG. What is the honest thing for her to do?",
+      "answer": "Admit it, even if she wanted to be right",
+      "choices": [
+        "Admit it, even if she wanted to be right",
+        "Hide the result and stick with her favorite",
+        "Change the data to make her idea fit",
+        "Never tell anyone what really happened"
+      ],
+      "context": "Admitting when you were WRONG is one of the hardest and most important parts of science. Many famous scientists (Einstein, Linus Pauling) had ideas that turned out to be wrong. Hiding bad results is fraud and can ruin a career."
+    },
+    {
+      "tier": 1,
+      "question": "Why is it good for scientists to SHARE their experiments so other people can repeat them?",
+      "answer": "Others can spot mistakes and check the result",
+      "choices": [
+        "Others can spot mistakes and check the result",
+        "Sharing makes the scientist many friends",
+        "Sharing is just being nice, not about truth",
+        "It keeps the experiment a family secret"
+      ],
+      "context": "Science depends on OPEN sharing. When experiments are kept secret, errors and even fraud can hide for a long time. Shared experiments can be repeated and checked. This is the heart of why science usually self-corrects over time."
+    },
+    {
+      "tier": 1,
+      "question": "Old doctors said worms appeared in rotting meat by themselves. Pasteur's experiments proved them WRONG. What is the lesson?",
+      "answer": "Science updates with better evidence",
+      "choices": [
+        "Science updates with better evidence",
+        "All very old ideas are still correct today",
+        "Pasteur was secretly only joking around",
+        "Doctors should never change their minds"
+      ],
+      "context": "'Spontaneous generation' (life arising from non-life like rotting meat) was believed for centuries. Pasteur's swan-neck-flask experiments in the 1860s disproved it for good. Real science follows the evidence, even when it's uncomfortable for old beliefs."
+    },
+    {
+      "tier": 1,
+      "question": "An honest scientist sometimes says, 'I don't know yet.' Is that okay?",
+      "answer": "Yes, sometimes the truthful answer is unknown",
+      "choices": [
+        "Yes, sometimes the truthful answer is unknown",
+        "No, scientists are supposed to know everything",
+        "No, scientists who say it lose their careers",
+        "Yes, but only if no one else is listening"
+      ],
+      "context": "There are still many open mysteries — what dark matter is, how life first started, how consciousness works. Pretending to know when you don't is worse than admitting it. 'I don't know — let's find out' is the spirit of real science."
+    },
+    {
+      "tier": 1,
+      "question": "A scientist writes down only the numbers that match her favorite idea. She throws OUT the other numbers. Is this okay?",
+      "answer": "No, hiding data is a form of cheating",
+      "choices": [
+        "No, hiding data is a form of cheating",
+        "Yes, only the good numbers really matter",
+        "Yes, this is normal everyday science work",
+        "Only if the good numbers are much bigger"
+      ],
+      "context": "Throwing out data you don't like is called 'cherry-picking' and it is a form of scientific fraud. ALL data matters. Honest scientists report results that contradicted their hopes, too. Scientific notebooks are kept so others can see all the data."
+    },
+    {
+      "tier": 1,
+      "question": "Old stories like 'Earth is flat' or 'ulcers from stress' end the same way: better evidence wins. The GOOD lesson?",
+      "answer": "Science fixes its own mistakes over time",
+      "choices": [
+        "Science fixes its own mistakes over time",
+        "Old beliefs are always right; nothing changes",
+        "Smart people in the past made no mistakes",
+        "Only modern people can ever be correct"
+      ],
+      "context": "Science is special because of its built-in habit of self-correction: open inquiry, sharing data, testing claims, replication, and the willingness to admit when an old answer was wrong. It doesn't always work fast — Galileo waited centuries for an apology. But it works."
+    },
+    {
+      "tier": 1,
+      "question": "In 1928 Alexander Fleming came back to his messy London lab and saw a mold killing germs on a dirty dish. What did this become?",
+      "answer": "Penicillin, the first true antibiotic",
+      "choices": [
+        "Penicillin, the first true antibiotic",
+        "A new kind of cleaning soap for labs",
+        "A medicine to help bald hair grow back",
+        "A glue used to repair broken pieces"
+      ],
+      "context": "Fleming noticed Penicillium mold killed bacteria on a contaminated petri dish. He published the find in 1929. Howard Florey and Ernst Chain at Oxford figured out how to mass-produce it in the early 1940s. By D-Day 1944 penicillin was saving Allied soldiers. Fleming, Florey, and Chain shared the 1945 Nobel."
+    },
+    {
+      "tier": 1,
+      "question": "President Franklin D. Roosevelt couldn't walk because of a disease he caught at 39. Which disease scared US families every summer back then?",
+      "answer": "Polio, the summer paralysis disease",
+      "choices": [
+        "Polio, the summer paralysis disease",
+        "Smallpox, the deadly old plague",
+        "Measles, the spotted rash disease",
+        "Chickenpox, with itchy red blisters"
+      ],
+      "context": "FDR was paralyzed by polio in 1921 at age 39 and used a wheelchair for the rest of his life (mostly hidden from the public). He started the March of Dimes in 1938 to fund a cure. That research helped pay for Jonas Salk's work, which gave a vaccine in 1955 — 10 years after FDR's death."
+    },
+    {
+      "tier": 1,
+      "question": "Alfred Wegener said the continents had once been joined and slowly DRIFTED apart. How did most scientists FIRST react?",
+      "answer": "Laughed and rejected it for about 50 years",
+      "choices": [
+        "Laughed and rejected it for about 50 years",
+        "Believed him right away and built a statue",
+        "Sent him a Nobel Prize within a month",
+        "Welcomed his idea instantly across Europe"
+      ],
+      "context": "Wegener proposed continental drift in 1912. He noted South America and Africa look like they fit together, plus matching fossils and rocks on both sides. Geologists rejected it because he had no MECHANISM. In the 1960s, seafloor spreading proved him right — but he had died on an Arctic expedition in 1930."
+    }
+  ]
+}
