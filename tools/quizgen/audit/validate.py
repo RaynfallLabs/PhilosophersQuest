@@ -58,6 +58,7 @@ _GATE_MODULES = {
     "geography":  "tools.quizgen.gates.geography",
     "grammar":    "tools.quizgen.gates.grammar",
     "ai":         "tools.quizgen.gates.ai",
+    "science":    "tools.quizgen.gates.science",
 }
 
 
