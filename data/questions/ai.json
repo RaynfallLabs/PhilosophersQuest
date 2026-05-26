@@ -6829,15 +6829,15 @@
   },
   {
     "tier": 3,
-    "question": "DeepMind's AlphaFold released a free database in 2021 with predicted 3D structures for about 200 million proteins — essentially every known protein in nature. Before AlphaFold, mapping one protein experimentally could take a PhD student years. Why is the protein-shape database such a leap for medicine?",
-    "answer": "A drug works by binding to a protein's shape, knowing the shape lets researchers design dru",
+    "question": "DeepMind's AlphaFold released 3D structures for about 200 million proteins in 2021 — essentially every known protein in nature. Before AlphaFold, mapping one took a PhD student years. Why is this a leap for medicine?",
+    "answer": "A drug works by binding to a protein's shape, knowing the shape lets researchers design drugs that fit",
     "choices": [
-      "A drug works by binding to a protein's shape, knowing the shape lets researchers design dru",
+      "A drug works by binding to a protein's shape, knowing the shape lets researchers design drugs that fit",
       "Every protein in the body emits a unique signal that the drug then amplifies once injected",
       "The database tells doctors which patients have which proteins, so prescriptions become custom",
       "Pharmaceutical labs can skip clinical trials once a protein's structure has been mapped by AI"
     ],
-    "context": "AlphaFold 2, from DeepMind, solved a problem biologists had worked on for 50 years: predicting how a chain of amino acids folds into a 3D shape. Drug discovery depends on this — drugs work by physically fitting into pockets on proteins. The AlphaFold Protein Structure Database is free, hosted with the European Bioinformatics Institute. It does NOT replace clinical trials, signal detection, or patient-specific protein tests. It gives researchers a starting blueprint that used to require years of crystallography work."
+    "context": "AlphaFold 2, from DeepMind, solved a problem biologists had worked on for 50 years: predicting how a chain of amino acids folds into a 3D shape. Drug design starts from the target protein's shape — the drug must fit precisely into it. With a database of 200 million predicted shapes, researchers can screen drug candidates much faster than waiting for traditional X-ray crystallography."
   },
   {
     "tier": 3,
@@ -6853,15 +6853,15 @@
   },
   {
     "tier": 3,
-    "question": "AlphaFold doesn't actually fold proteins in the physical sense. It predicts the final folded shape from the amino-acid sequence using a neural network trained on the Protein Data Bank's experimentally-solved structures. Why is calling it 'protein folding' a bit misleading?",
-    "answer": "It learned to predict the answer from many examples, it doesn't simulate the chemistry of fol",
+    "question": "AlphaFold doesn't physically fold proteins. It predicts the final 3D shape from the amino-acid sequence using a neural network trained on known structures. Why is calling it 'protein folding' a bit misleading?",
+    "answer": "It learned to predict the answer from many examples, it doesn't simulate the chemistry of folding",
     "choices": [
-      "It learned to predict the answer from many examples, it doesn't simulate the chemistry of fol",
+      "It learned to predict the answer from many examples, it doesn't simulate the chemistry of folding",
       "It physically folds the protein in a tiny lab on a chip, then photographs the result for the output",
       "It refuses to predict any protein that hasn't already been solved by traditional X-ray crystallography",
       "It performs a quantum-mechanical simulation that traces every atom's motion through the folding process"
     ],
-    "context": "The Protein Data Bank holds tens of thousands of experimentally determined protein structures. AlphaFold trained on these — learning the relationship between sequence and final shape — and now predicts shapes for sequences it has never seen. It does not run physics simulations of how the chain folds. This matters: AlphaFold is pattern-matching at scale, not physics. When the bank says LLMs 'predict next tokens,' AlphaFold is the same pattern recognition idea applied to molecules."
+    "context": "The Protein Data Bank holds tens of thousands of experimentally determined protein structures. AlphaFold trained on these — learning the relationship between amino-acid sequence and 3D shape. At inference time it predicts; it does not simulate the physics of folding. This is faster but means it can fail on proteins very unlike anything in its training data."
   },
   {
     "tier": 3,
@@ -6949,15 +6949,15 @@
   },
   {
     "tier": 3,
-    "question": "Modern AI image generators — DALL-E, Stable Diffusion, Midjourney — all use a technique called 'diffusion.' The model starts with an image that looks like pure TV static and gradually removes the noise, step by step, until a clean image appears. Why does this counter-intuitive approach work?",
-    "answer": "Learning to clean up noise teaches the model what real images look like, then noise becomes a crea",
+    "question": "Modern AI image generators (DALL-E, Stable Diffusion, Midjourney) use 'diffusion.' The model starts with TV static and gradually removes the noise, step by step, until a clean image appears. Why does this work?",
+    "answer": "Learning to clean up noise teaches the model what real images look like, so noise becomes a creative starting point",
     "choices": [
-      "Learning to clean up noise teaches the model what real images look like, then noise becomes a crea",
-      "Static is actually compressed image data, diffusion just unpacks it back into the original photo",
-      "The noise is randomly chosen from real photos, the model is just blending photos together",
+      "Learning to clean up noise teaches the model what real images look like, so noise becomes a creative starting point",
+      "Static is actually compressed image data, and diffusion just unpacks it back into the original photo",
+      "The noise is randomly chosen from real photos, and the model is just blending those photos together",
       "Diffusion models steal pixels from the training set and rearrange them into the requested image"
     ],
-    "context": "Diffusion models are trained on a clever flip: take a real image, add noise to it step by step, then teach the network to reverse the process — predict the cleaner image at each step. After training, you feed in pure random noise and run the cleanup steps; the model 'finds' an image in the static, guided by your text prompt. This is why diffusion image AI is generative — it's making images from random starting points, not retrieving them."
+    "context": "Diffusion models are trained on a clever flip: take a real image, add noise to it step by step, then teach the network to reverse the process — predicting how to remove noise. After training, you start with pure noise and apply the network repeatedly, guided by a text prompt. Each step the image becomes a bit more like 'what the prompt described.'"
   },
   {
     "tier": 3,
@@ -7009,15 +7009,15 @@
   },
   {
     "tier": 3,
-    "question": "Google Health's AI for diabetic retinopathy can flag retinal images that show signs of vision-threatening damage. It's used as a screening tool in clinics in India and Thailand, where the ophthalmologist-to-patient ratio is too low for everyone to be screened. What does the AI specifically do in this deployment?",
-    "answer": "Filters who needs to see a specialist next, most retinas are normal and the AI catches the ",
+    "question": "Google Health's AI flags retinal images that show signs of diabetic retinopathy. It's used as a screening tool in clinics in India and Thailand, where specialists are scarce. What does the AI specifically do in this deployment?",
+    "answer": "Filters who needs to see a specialist next, most retinas are normal and the AI catches the high-risk ones",
     "choices": [
-      "Filters who needs to see a specialist next, most retinas are normal and the AI catches the ",
+      "Filters who needs to see a specialist next, most retinas are normal and the AI catches the high-risk ones",
       "Treats the retinal damage directly using laser commands sent through the camera lens",
       "Replaces all eye specialists in those countries permanently, eliminating the need for any doctors",
       "Refunds the patient automatically if their eyes turn out to be healthy after the scan"
     ],
-    "context": "Diabetic retinopathy is a major cause of blindness — early treatment prevents it. Screening requires an expert reading the retinal image. In countries where there aren't enough ophthalmologists, AI triage catches the urgent cases for human review. This is a classic AI-as-amplifier pattern: AI scales scarce expert attention to many more patients. Same idea in tuberculosis screening from chest X-rays in low-resource settings. The recognition: AI's biggest medical wins so far are in workflow leverage, not in beating doctors at hard diagnostic puzzles."
+    "context": "Diabetic retinopathy is a major cause of blindness — early treatment prevents it. Screening requires an expert reading the retinal image. In countries where the ophthalmologist-to-patient ratio is too low for everyone to be screened, AI triage catches the suspicious images and sends only those to a human specialist. Most retinas come back normal; the AI's job is filtering, not treating."
   },
   {
     "tier": 3,
@@ -7093,15 +7093,15 @@
   },
   {
     "tier": 3,
-    "question": "Satellite imagery used to be expensive and slow — government Landsat data available a couple of times a month. Now constellations of small satellites (Planet Labs has hundreds) image every spot on Earth daily, and AI processes the images to spot crop stress, deforestation, or new construction. What's the recognition skill here for a kid thinking about modern agriculture?",
-    "answer": "Daily satellite imagery + AI lets farmers (and others) see things at fie",
+    "question": "Government Landsat satellite imagery used to come monthly. Now Planet Labs's hundreds of small satellites image every spot on Earth daily, and AI processes the images to spot crop stress and deforestation. What's the recognition for modern agriculture?",
+    "answer": "Daily satellite imagery + AI lets farmers see things at field scale that would have been impossible before",
     "choices": [
-      "Daily satellite imagery + AI lets farmers (and others) see things at fie",
-      "Modern agriculture has stopped using human farmers entirely",
-      "Every field in the world is watched continuously by government drones that fi",
-      "Satellites cannot see anything through clouds, so the new imagery only works on sunny day"
+      "Daily satellite imagery + AI lets farmers see things at field scale that would have been impossible before",
+      "Modern agriculture has completely stopped using human farmers in every country worldwide",
+      "Every field in the world is watched continuously by government drones that fly overhead",
+      "Satellites cannot see anything through clouds, so the new imagery only works on sunny days"
     ],
-    "context": "Daily-revisit satellite imagery — combined with AI image processing — gives a farmer information her grandparents would have called miraculous: which areas of a field are stressed, which sub-fields are ready for harvest first, where pest damage is spreading. Same data flows enable monitoring of deforestation in real time (Global Forest Watch), tracking of new factory construction in foreign countries, and crop-yield forecasting at country scale. Recognition: 'remote sensing + AI' is a major story of the 2020s, mostly invisible to the public."
+    "context": "Daily-revisit satellite imagery — combined with AI image processing — gives a farmer information her grandparents would have called miraculous: which fields are water-stressed, where pests are spreading, which patches need fertilizer. The same imagery and AI also serve conservation groups tracking deforestation, urban planners watching new construction, and journalists verifying war damage."
   },
   {
     "tier": 3,
@@ -7141,15 +7141,15 @@
   },
   {
     "tier": 3,
-    "question": "Tesla's 'Full Self-Driving' (FSD) is sold as an option to retail buyers. The system requires the driver's hands on the wheel and attention on the road — technically classified as Level 2 (driver assistance, not autonomous). The marketing name suggests something stronger. Why is this gap a defensive recognition issue?",
+    "question": "Tesla's 'Full Self-Driving' (FSD) is sold to retail buyers. The system requires the driver's hands on the wheel — it's classified as Level 2 (driver assistance, not autonomous). The marketing name suggests something stronger. Why is this a defensive recognition issue?",
     "answer": "Drivers who believe a Level 2 system is fully autonomous may stop paying attention, and crash",
     "choices": [
       "Drivers who believe a Level 2 system is fully autonomous may stop paying attention, and crash",
       "Tesla owners can legally remove all safety features if they don't like how the car drives",
-      "FSD makes the car immune to all rear-end collisions for the full duration of th",
+      "FSD makes the car immune to all rear-end collisions for the full duration of the trip",
       "Tesla provides personal chauffeurs at no cost to anyone who buys a vehicle with FSD enabled"
     ],
-    "context": "The Society of Automotive Engineers defines levels 0-5 of automation. Tesla FSD is Level 2: the driver must remain attentive. The naming creates a misperception risk. NHTSA has investigated multiple fatal Tesla crashes where drivers appeared to disengage from the road while FSD was active. The recognition: marketing language and safety classification can be far apart; it matters who's responsible when something goes wrong. Read the SAE level, not the brand name."
+    "context": "The Society of Automotive Engineers defines levels 0-5 of automation. Tesla FSD is Level 2: the driver must remain attentive. The naming creates a mismatch between what buyers expect ('full self-driving') and the system's actual capability. NHTSA investigations have documented crashes where drivers were not paying attention, trusting the marketing language over the actual operating envelope."
   },
   {
     "tier": 3,
