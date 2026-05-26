@@ -251,6 +251,58 @@ See also: [[feedback_lift_discovered_rules]].
 
 See also: `HISTORY_TEMPLATES.md` §1 (worked examples); [[feedback_lift_discovered_rules]].
 
+### 14. Story-in-stem — substance must be LIVE, not context-deferred
+**Principle (refined through the 2026-05-26 user flag during science rebuild Surgisphere review)**: The dramatic substance the kid is meant to learn — named figures, dates, dollar amounts, body counts, institutional failures, specific quoted phrases — must live in the **stem** (or be carried by the **answer** as the recognition skill). Context is supporting detail, NEVER the carrier of the story.
+
+**Why this matters**: in *Philosopher's Quest* mechanics, the `context` field is shown to the player ONLY if they get the question wrong OR review at end of game. The vast majority of correct-answer plays don't see the context at all. Live learning happens at **stem + answer**. Anything buried in context is dead substance for the typical player.
+
+This is the broader form of §8 (which addressed "wonder hooks" specifically) and §13 (which addressed "cool-fact-is-answer" in wonder subjects). §14 generalizes both to contested-topic recognition, institutional-failure substance, and any other dramatic content the kid is meant to extract.
+
+**The user's canonical exemplar (Surgisphere T3, science bank, 2026-05-26)**:
+
+> ❌ **Buried-story version**:
+> - Stem: "The Surgisphere scandal of 2020 was one of the fastest implosions in modern medical research. What was published, where, and how quickly was it retracted?"
+> - Answer: "Two papers in *The Lancet* and *NEJM* on COVID-19 treatments — retracted within weeks once the data couldn't be produced"
+> - Context: "...The May 2020 *Lancet* paper used it to claim hydroxychloroquine increased COVID mortality... **WHO suspended HCQ trials based on the *Lancet* findings**. Within weeks, requests for data verification revealed the dataset's authenticity couldn't be confirmed..."
+>
+> The travesty — **WHO suspended hydroxychloroquine trials globally based on data that didn't exist** — was in context. The kid playing this question never saw the actual recognition skill.
+
+> ✅ **Story-in-stem version**:
+> - Stem: "A May 2020 *Lancet* study from a company called Surgisphere claimed hydroxychloroquine raised COVID death rates. WHO suspended its global HCQ trial within days. Both *Lancet* and *NEJM* retracted the papers within weeks: Surgisphere had no database. What does this illustrate?"
+> - Answer: "A single fabricated paper passed peer review and changed global treatment policy in real time"
+> - Context: supporting detail — Mehra et al., specific dates, James Watson + 200 co-signatories, retraction date June 4 2020
+
+**Failures look like**:
+- Stem is generic recall prompt ("what happened?", "describe", "explain", "what was published?")
+- Answer is dry list of facts (journals, dates, retraction timing)
+- Context contains the actual story: named figures, dollar amounts, body counts, policy consequences, dramatic specifics
+- Players who get it right never see the substance
+
+**Passes look like**:
+- Stem leads with the full narrative: who, when, what, dramatic specifics, policy consequences
+- Answer is the **recognition skill** the kid extracts from the story
+- Context is **additional sources, secondary specifics**, not the carrier of the story
+
+**Especially load-bearing for**:
+- Contested-topic recognition (COVID, vaccines, climate, eugenics, replication crisis)
+- Institutional-failure substance (PR-vs-method, capture-vs-rigor distinction)
+- Reversal-arc stories (Wegener, Semmelweis, Marshall, GBD-then-NIH-director, Bhattacharya-fringe-to-director)
+- Whistleblower / dissenter content (Twitter Files, Murthy v Missouri, FOIA reveals)
+
+**Heuristic for catching this pattern in audit**:
+- Stem ends in generic prompt ("what happened" / "what was the" / "explain" / "describe" / "what does this illustrate") without giving setup details
+- Context length > stem length × 1.5 AND contains specific years / dollar amounts / named institutions not in stem+answer
+- BUT human review required: the heuristic over-flags; many already-good questions have rich context. Only **rewrite** the ones where the cinematic detail is genuinely missing from the live moment.
+
+**Implementations**:
+- **Science**: 17 rewrites landed 2026-05-26 (Surgisphere, Sims/Anarcha/Betsey/Lucy, Stapel hotel room, Climategate "hide the decline", Joe Rogan #1757 protest, Feb 1 2020 Fauci/Farrar teleconference, etc.). See `_buried_story_audit.md` for the full triage + before/after.
+- **All future subjects (going forward)**: this principle generalizes. Future rebuilds + audits should treat **story-in-stem** as a universal voice rule. The heuristic in `_hunt_buried_story.py` is reusable across subjects.
+- **Cannot be deterministically gated** — requires human reading judgment. The heuristic narrows candidates; the agent (or human auditor) decides KEEP vs REWRITE.
+
+**Discovered explicitly**: 2026-05-26 user flag during science Surgisphere review. Pattern was implicit across all subjects but never codified at this level of generality.
+
+See also: §8 (wonder lives in stem), §13 (Wonder Pattern cool-fact-is-answer), `_hunt_buried_story.py` (heuristic), `_buried_story_audit.md` (worked examples).
+
 ## Before starting a new subject rebuild
 
 Required reading order:

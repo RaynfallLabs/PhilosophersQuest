@@ -119,6 +119,20 @@ Soft-warn gates: `no_anthropomorphizing_nature`, `no_trust_the_science` (some le
 
 ---
 
+## §7.5 Story-in-stem (live learning rule)
+
+Live learning happens at **stem + answer**, not in `context`. The `context` field is shown to players ONLY if they get the question wrong OR review at end of game — the typical correct-answer play never sees it. The dramatic substance the kid is meant to learn — named figures, dates, dollar amounts, body counts, institutional failures, specific quoted phrases — must live in the stem (or be carried by the answer as the recognition skill).
+
+This is **especially load-bearing** for contested-topic recognition (COVID, vaccines, climate, eugenics, replication crisis), institutional-failure substance (distinguishing scientific METHOD from institutional CAPTURE), and reversal arcs (Wegener, Semmelweis, Marshall, Bhattacharya-fringe-to-NIH-director).
+
+**Canonical exemplar** (Surgisphere T3, science bank):
+
+> ❌ Stem: "The Surgisphere scandal of 2020 was one of the fastest implosions in modern medical research. What was published, where, and how quickly was it retracted?" — the actual travesty (WHO suspending global HCQ trials based on data that didn't exist) was buried in context, invisible to most players.
+>
+> ✅ Stem: "A May 2020 Lancet study from a company called Surgisphere claimed hydroxychloroquine raised COVID death rates. WHO suspended its global HCQ trial within days. Both Lancet and NEJM retracted the papers within weeks: Surgisphere had no database. What does this illustrate?" — story is live; answer is the recognition skill ("a single fabricated paper passed peer review and changed global treatment policy in real time").
+
+See `SHARED_PRINCIPLES.md` §14 for the full principle + heuristic + implementation notes.
+
 ## §8 Anti-patterns (do not generate)
 
 - **Establishment-default framing on contested topics** — IPCC SPM as default-neutral, CDC mandates as default-correct, "97% consensus" as default-fact
