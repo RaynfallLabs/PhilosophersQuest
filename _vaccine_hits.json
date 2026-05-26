@@ -1,0 +1,1497 @@
+[
+  {
+    "bank_idx": 212,
+    "tier": 1,
+    "question": "In the 1700s smallpox killed about 1 in 10 people. English doctor Edward Jenner noticed one group almost NEVER caught it. Who?",
+    "answer": "Milkmaids who had already had cowpox",
+    "choices": [
+      "Milkmaids who had already had cowpox",
+      "Farmers who only ate root vegetables",
+      "Sailors who spent years out at sea",
+      "Bakers who handled bread all day"
+    ],
+    "context": "Cowpox is a mild cousin of smallpox that milkmaids often caught from cows. Jenner noticed milkmaids who had survived cowpox almost never got smallpox. He had a hunch the milder disease was protecting them from the deadly one."
+  },
+  {
+    "bank_idx": 213,
+    "tier": 1,
+    "question": "Edward Jenner tested his cowpox idea in 1796 on an 8-year-old boy named James Phipps. What did he do exactly?",
+    "answer": "Gave him cowpox, then exposed him to smallpox",
+    "choices": [
+      "Gave him cowpox, then exposed him to smallpox",
+      "Asked him to drink milk every day for a year",
+      "Sent him to live among cows for a week",
+      "Painted his skin nightly with a cream"
+    ],
+    "context": "Jenner inoculated young Phipps with cowpox in May 1796. Weeks later he deliberately exposed him to smallpox — Phipps didn't get sick. By today's rules this would be banned, but it worked. Jenner had just invented the world's first vaccine."
+  },
+  {
+    "bank_idx": 214,
+    "tier": 1,
+    "question": "The word VACCINE comes from a Latin word. What does that Latin root word mean?",
+    "answer": "Cow, as in cowpox",
+    "choices": [
+      "Cow, as in cowpox",
+      "Needle, like a sharp shot",
+      "Doctor, who gives the shot",
+      "Sleep, as in feeling tired"
+    ],
+    "context": "Vaccine comes from 'vacca,' Latin for cow — because Edward Jenner's first vaccine used cowpox to protect people from smallpox. The word entered medicine through Jenner's work in the 1790s. Today we have vaccines for many diseases."
+  },
+  {
+    "bank_idx": 215,
+    "tier": 1,
+    "question": "Smallpox once killed hundreds of millions. In 1980 the World Health Organization said something amazing about it. What?",
+    "answer": "Smallpox had been wiped out on Earth",
+    "choices": [
+      "Smallpox had been wiped out on Earth",
+      "Smallpox was twice as common worldwide",
+      "Smallpox had been given a new long name",
+      "Smallpox was a fictional made-up disease"
+    ],
+    "context": "Smallpox is the ONLY human infectious disease ever fully wiped out. WHO declared eradication in May 1980, after a global vaccination campaign started in 1967. The last natural case was Ali Maow Maalin in Somalia in October 1977."
+  },
+  {
+    "bank_idx": 216,
+    "tier": 1,
+    "question": "In the 1940s and 50s, polio paralyzed thousands of US kids each summer. In 1955 a doctor announced a vaccine. Who was he?",
+    "answer": "Jonas Salk, the polio vaccine doctor",
+    "choices": [
+      "Jonas Salk, the polio vaccine doctor",
+      "Edward Jenner, an old English doctor",
+      "Louis Pasteur, a famous French chemist",
+      "Alexander Fleming, the penicillin doctor"
+    ],
+    "context": "Jonas Salk announced his polio vaccine on April 12, 1955. American cities held parades; church bells rang. Before it, polio struck about 50,000 American kids a year and left many in iron lungs. After widespread vaccination, US polio cases fell to almost zero by the early 1960s."
+  },
+  {
+    "bank_idx": 217,
+    "tier": 1,
+    "question": "TV asked Jonas Salk who owned the patent on his polio vaccine. What did he famously answer?",
+    "answer": "There was no patent; could you patent the Sun?",
+    "choices": [
+      "There was no patent; could you patent the Sun?",
+      "His own family was set to own it for years",
+      "The US government quietly owned the rights",
+      "A secret company had bought all the rights"
+    ],
+    "context": "Salk's famous reply came on a 1955 TV interview with Edward R. Murrow. He never patented his vaccine — he wanted it to reach as many children as possible. Economists later estimated the unpatented choice cost him around $7 billion. He stayed a working scientist all his life."
+  },
+  {
+    "bank_idx": 218,
+    "tier": 1,
+    "question": "Albert Sabin later made a different polio vaccine, given by mouth on a sugar cube. Why was that easier than a shot?",
+    "answer": "Kids could just swallow it anywhere",
+    "choices": [
+      "Kids could just swallow it anywhere",
+      "It also worked the same day taken",
+      "It was made of regular kitchen sugar",
+      "It also cured the common cold quickly"
+    ],
+    "context": "Albert Sabin's oral polio vaccine (1961) was easier to give than Salk's injected version, especially in places without trained medical staff. Kids could swallow a few drops on a sugar cube. The two vaccines together drove polio close to extinction worldwide."
+  },
+  {
+    "bank_idx": 220,
+    "tier": 1,
+    "question": "Semmelweis SHOWED with numbers that handwashing saved lives. How did most other doctors of his day react?",
+    "answer": "Mocked him; he was put in an asylum",
+    "choices": [
+      "Mocked him; he was put in an asylum",
+      "All hospitals copied his rule in months",
+      "He won a great prize and named a hospital",
+      "Everyone in Europe adopted his idea fast"
+    ],
+    "context": "Semmelweis's evidence was strong, but he couldn't EXPLAIN why handwashing worked (germ theory came later from Pasteur and Koch). Many doctors were offended by the idea they had been killing patients. He was institutionalized in 1865 and died there, possibly beaten by guards."
+  },
+  {
+    "bank_idx": 226,
+    "tier": 1,
+    "question": "In the 1860s French scientist Louis Pasteur showed wine and milk go bad because of TINY LIVING things. What do we call them today?",
+    "answer": "Germs, also called microbes",
+    "choices": [
+      "Germs, also called microbes",
+      "Tiny invisible flying fairies",
+      "Bits of broken glass dust",
+      "Tiny iron filings in the food"
+    ],
+    "context": "Pasteur's experiments helped prove the 'germ theory of disease' — that infections are caused by microorganisms. Before this, many thought disease came from bad air ('miasma') or imbalanced body fluids. Pasteur showed the invisible enemy was a living thing."
+  },
+  {
+    "bank_idx": 227,
+    "tier": 1,
+    "question": "Pasteur showed you can heat milk just enough to KILL germs without ruining the taste, so it lasts longer. What is that process called today?",
+    "answer": "Pasteurization, named after Pasteur",
+    "choices": [
+      "Pasteurization, named after Pasteur",
+      "Boiling, the simplest way to heat",
+      "Salting, the old way to preserve",
+      "Freezing, the cold way to preserve"
+    ],
+    "context": "Pasteurization heats milk (or other liquids) just enough to kill harmful germs while keeping flavor and most nutrients. Modern milk is usually pasteurized at 72 C for 15 seconds. It saves countless children from food-borne diseases every year."
+  },
+  {
+    "bank_idx": 228,
+    "tier": 1,
+    "question": "Pasteur's swan-neck flasks of broth stayed fresh even with air flowing in. What did this experiment PROVE?",
+    "answer": "Life does not arise from non-life on its own",
+    "choices": [
+      "Life does not arise from non-life on its own",
+      "Curved glass is bad for the taste of broth",
+      "All broths in his time were unsafe to drink",
+      "Swans were proven to be very clever birds"
+    ],
+    "context": "Many people in Pasteur's day still believed in 'spontaneous generation' — that maggots arose from old meat. His swan-neck flasks let air in but kept dust and germs out. The broth stayed clear forever. Some of his original flasks are still preserved today."
+  },
+  {
+    "bank_idx": 229,
+    "tier": 1,
+    "question": "In 1885 Pasteur saved a 9-year-old boy named Joseph Meister who had been badly bitten by a rabid dog. How did he save the boy?",
+    "answer": "Gave him a brand-new rabies vaccine",
+    "choices": [
+      "Gave him a brand-new rabies vaccine",
+      "Sent him to the seaside for fresh air",
+      "Wrapped his arm in a special bandage",
+      "Told him not to drink any water at all"
+    ],
+    "context": "Pasteur's rabies vaccine (1885) was risky — rabies is almost 100% fatal once symptoms appear. The vaccine worked, and Meister lived to be an adult. He later worked as a gatekeeper at the Pasteur Institute."
+  },
+  {
+    "bank_idx": 243,
+    "tier": 1,
+    "question": "Old doctors said worms appeared in rotting meat by themselves. Pasteur's experiments proved them WRONG. What is the lesson?",
+    "answer": "Science updates with better evidence",
+    "choices": [
+      "Science updates with better evidence",
+      "All very old ideas are still correct today",
+      "Pasteur was secretly only joking around",
+      "Doctors should never change their minds"
+    ],
+    "context": "'Spontaneous generation' (life arising from non-life like rotting meat) was believed for centuries. Pasteur's swan-neck-flask experiments in the 1860s disproved it for good. Real science follows the evidence, even when it's uncomfortable for old beliefs."
+  },
+  {
+    "bank_idx": 248,
+    "tier": 1,
+    "question": "President Franklin D. Roosevelt couldn't walk because of a disease he caught at 39. Which disease scared US families every summer back then?",
+    "answer": "Polio, the summer paralysis disease",
+    "choices": [
+      "Polio, the summer paralysis disease",
+      "Smallpox, the deadly old plague",
+      "Measles, the spotted rash disease",
+      "Chickenpox, with itchy red blisters"
+    ],
+    "context": "FDR was paralyzed by polio in 1921 at age 39 and used a wheelchair for the rest of his life (mostly hidden from the public). He started the March of Dimes in 1938 to fund a cure. That research helped pay for Jonas Salk's work, which gave a vaccine in 1955 — 10 years after FDR's death."
+  },
+  {
+    "bank_idx": 341,
+    "tier": 2,
+    "question": "In 1855 German pathologist Rudolf Virchow completed cell theory with a third claim that overturned the old idea of 'spontaneous generation.' What did he add in Latin: 'omnis cellula e cellula'?",
+    "answer": "Every cell comes from another cell — life always begets life",
+    "choices": [
+      "Every cell comes from another cell — life always begets life",
+      "Every cell can form from non-living mud given enough warmth — and time",
+      "Every cell contains a tiny new mind — once it grows past a certain size",
+      "Every cell sleeps for thousands of — years before opening for the first time"
+    ],
+    "context": "Spontaneous generation was the ancient idea that life arises freely from non-life: maggots from rotting meat, mice from dirty rags. Virchow's 1855 'omnis cellula e cellula' completed cell theory: cells reproduce. Combined with Pasteur's later swan-neck flask experiments, the doctrine of spontaneous generation was put to rest by the 1860s."
+  },
+  {
+    "bank_idx": 353,
+    "tier": 2,
+    "question": "In January 1900 three European botanists — Hugo de Vries (Netherlands), Carl Correns (Germany), and Erich von Tschermak (Austria) — independently rediscovered and confirmed work done decades earlier. Whose work were they rediscovering?",
+    "answer": "Gregor Mendel's 1866 pea-plant inheritance experiments",
+    "choices": [
+      "Gregor Mendel's 1866 pea-plant inheritance experiments",
+      "Charles Darwin's notebooks from his Beagle voyage to the Galápagos in 1835",
+      "Louis Pasteur's swan-neck flask experiments from the 1860s",
+      "Alfred Russel Wallace's island-biogeography survey of Malaysian forest"
+    ],
+    "context": "All three botanists came to similar laws of inheritance — and all found that Mendel had reported the same results 34 years earlier. They credited Mendel, founding modern genetics. The credit-giving was unusual; many scientists in their position would have downplayed Mendel's priority. De Vries had also independently developed mutation theory."
+  },
+  {
+    "bank_idx": 360,
+    "tier": 2,
+    "question": "Darwin had sat on his theory of evolution for ~20 years when in 1858 he received a letter from another naturalist in the Malay Archipelago describing almost the same theory. Who was he?",
+    "answer": "Alfred Russel Wallace — sending his independent version of natural selection from Indonesia",
+    "choices": [
+      "Alfred Russel Wallace — sending his independent version of natural selection from Indonesia",
+      "Louis Pasteur — sending his work on germ theory from Paris",
+      "Gregor Mendel — sending his work on pea plant inheritance from Brno",
+      "Thomas Huxley — sending his work on human anatomy from London"
+    ],
+    "context": "Alfred Russel Wallace sent his 'Ternate Paper' to Darwin in 1858 after a malaria-induced insight on Ternate Island. Darwin's friends arranged for a joint presentation at the Linnean Society on July 1, 1858 — both papers were read together. Darwin rushed *Origin of Species* into print the next year. Wallace remained generous in giving Darwin priority and called the theory 'Darwinism.'"
+  },
+  {
+    "bank_idx": 366,
+    "tier": 2,
+    "question": "French chemist Louis Pasteur showed in the 1860s that microorganisms cause spoilage and disease — not 'spontaneous generation.' What clever experiment proved his case?",
+    "answer": "He boiled broth in flasks with curved 'swan-neck' tubes — broth stayed clear for years",
+    "choices": [
+      "He boiled broth in flasks with curved 'swan-neck' tubes — broth stayed clear for years",
+      "He bred mice in sealed sterile rooms — and showed no germs reached them in time",
+      "He grew bacteria — in pure metallic gold to show they did not need any food source",
+      "He froze water samples — from rivers to crystals to capture the germ life inside"
+    ],
+    "context": "Pasteur's 1862 swan-neck flasks let air in but trapped dust and bacteria in the curved neck. Sterilized broth in straight-neck flasks went cloudy with growth; broth in swan-neck flasks stayed clear indefinitely. When he broke a swan neck off, the corresponding flask quickly went cloudy. Proof: microorganisms come from microorganisms, not from broth itself. End of spontaneous generation."
+  },
+  {
+    "bank_idx": 368,
+    "tier": 2,
+    "question": "Robert Koch identified the bacterium causing one of history's deadliest diseases in 1882 — a disease that had killed roughly one in seven people in Europe in the 1800s. What disease?",
+    "answer": "Tuberculosis — caused by Mycobacterium tuberculosis",
+    "choices": [
+      "Tuberculosis — caused by Mycobacterium tuberculosis",
+      "Polio — but Koch found a virus rather than a bacterium for the disease",
+      "Influenza — caused by what we now know is a flu virus",
+      "Common cold — caused by a wide variety of mild upper respiratory viruses"
+    ],
+    "context": "Koch announced his discovery of *Mycobacterium tuberculosis* on March 24, 1882. TB ('consumption') was killing roughly one in seven Europeans. The bacterium was hard to find — it's small, slow-growing, and stains poorly with then-standard methods. Koch developed new staining techniques to spot it. World TB Day is March 24 each year, commemorating his announcement. TB is still one of the world's deadliest infectious diseases."
+  },
+  {
+    "bank_idx": 369,
+    "tier": 2,
+    "question": "Why is pasteurization — heating milk to a specific temperature for a specific time — important?",
+    "answer": "It kills harmful bacteria like Salmonella and TB without destroying the milk's quality",
+    "choices": [
+      "It kills harmful bacteria like Salmonella and TB without destroying the milk's quality",
+      "It evaporates excess water from milk to reduce shipping weight to grocery stores",
+      "It magnetizes the iron in milk to make it more digestible for older children",
+      "It removes the natural sugar (lactose) from milk so anyone can drink it safely"
+    ],
+    "context": "Pasteurization is named for Louis Pasteur, who developed it to preserve wine and beer in the 1860s. Modern milk pasteurization (typically 72°C for 15 seconds) kills *Mycobacterium tuberculosis* (cattle can give humans TB through unpasteurized milk), *Salmonella*, *Listeria*, *E. coli*, *Brucella*, and *Campylobacter*. Pasteurization has prevented countless cases of food-borne disease since standardized in the early 1900s."
+  },
+  {
+    "bank_idx": 370,
+    "tier": 2,
+    "question": "In 1796 Edward Jenner inoculated 8-year-old James Phipps with material from a milkmaid's cowpox sore, then exposed him to smallpox. Phipps didn't get sick. What had Jenner just done?",
+    "answer": "Performed the first deliberate vaccination — using cowpox to protect against smallpox",
+    "choices": [
+      "Performed the first deliberate vaccination — using cowpox to protect against smallpox",
+      "Performed the first deliberate gene therapy — by exchanging the boy's cells",
+      "Performed the first deliberate surgery — by removing the cowpox blister entirely",
+      "Performed the first deliberate antibiotic test — using cow tissue as a medicine"
+    ],
+    "context": "Jenner had noticed that milkmaids who caught cowpox (a mild disease from cows) seemed not to get smallpox (the deadly human version). His 1796 experiment with Phipps confirmed it. The word 'vaccine' comes from 'vacca,' Latin for cow. Jenner's discovery launched modern immunization. Smallpox would eventually be eradicated worldwide in 1980 — the only human disease ever eliminated."
+  },
+  {
+    "bank_idx": 371,
+    "tier": 2,
+    "question": "In July 1885 Louis Pasteur used his experimental rabies treatment on a real patient for the first time. Who was the patient, and what was the situation?",
+    "answer": "Nine-year-old Joseph Meister, bitten 14 times by a rabid dog — and Meister survived",
+    "choices": [
+      "Nine-year-old Joseph Meister, bitten 14 times by a rabid dog — and Meister survived",
+      "An elderly French chemist — infected during a lab accident with his own samples",
+      "A wealthy Parisian baroness — bitten by her pet dog at her country estate",
+      "Pasteur himself — who tested the vaccine on his own arm to prove safety to others"
+    ],
+    "context": "Joseph Meister had been mauled by a rabid dog in Alsace. Without treatment, he would almost certainly die. Pasteur's vaccine — weakened rabies virus from desiccated infected rabbit spinal cords — was untested in humans. Pasteur gave it anyway over 13 days. Meister survived and lived to age 64. He worked the rest of his life as the gatekeeper at the Pasteur Institute, founded with funds raised after the rabies success."
+  },
+  {
+    "bank_idx": 372,
+    "tier": 2,
+    "question": "In 1955 American medical researcher Jonas Salk announced a vaccine against a disease that had been paralyzing thousands of American children each year. What disease?",
+    "answer": "Polio — once a major cause of childhood paralysis and death in the United States",
+    "choices": [
+      "Polio — once a major cause of childhood paralysis and death in the United States",
+      "Measles — Maurice Hilleman's vaccine came out a decade later in 1963",
+      "Whooping cough — for which the first vaccines had been used since the 1920s",
+      "Yellow fever — for which Max Theiler had already developed a vaccine in 1937"
+    ],
+    "context": "Polio epidemics peaked in the US in 1952 with about 58,000 cases. Salk's killed-virus vaccine, announced April 12, 1955, was a triumph. Within a few years, US polio cases dropped by 85-90%. Salk famously refused to patent the vaccine — when asked by Edward R. Murrow who held the patent, he said: 'Well, the people, I would say. There is no patent. Could you patent the sun?'"
+  },
+  {
+    "bank_idx": 373,
+    "tier": 2,
+    "question": "Jonas Salk's polio vaccine (1955) used killed virus injected by needle. A few years later Albert Sabin developed a different version. What was different about Sabin's vaccine (1962)?",
+    "answer": "It used weakened-but-live virus taken orally — usually on a sugar cube",
+    "choices": [
+      "It used weakened-but-live virus taken orally — usually on a sugar cube",
+      "It used killed virus injected into the arm — just like the Salk version",
+      "It used a synthetic chemical compound — made entirely without any virus material",
+      "It used purified salt water injected — into the spine to trigger immunity"
+    ],
+    "context": "Albert Sabin's oral polio vaccine was easier to give (no needle), cheaper, and conferred some intestinal immunity that Salk's didn't. It was used worldwide for global eradication campaigns. Polio cases dropped from hundreds of thousands per year globally in the 1980s to about a dozen wild-type cases in 2023. The disease persists in pockets of Pakistan and Afghanistan."
+  },
+  {
+    "bank_idx": 374,
+    "tier": 2,
+    "question": "American microbiologist Maurice Hilleman has been called 'the most successful vaccinologist in history.' How many vaccines did he develop or contribute to over his career?",
+    "answer": "Over 40 vaccines — including measles, mumps, rubella, hepatitis A and B, and chickenpox",
+    "choices": [
+      "Over 40 vaccines — including measles, mumps, rubella, hepatitis A and B, and chickenpox",
+      "Exactly 4 vaccines — all of them targeting tropical mosquito-borne diseases",
+      "Around 80 vaccines — half against animal diseases on commercial farms",
+      "Around 2 vaccines — one against polio and one against measles together"
+    ],
+    "context": "Maurice Hilleman (1919-2005) worked at Merck for 47 years. His 40+ vaccines include the eight commonly given to American kids today. Estimated lives saved: roughly 8 million per year. When his own daughter Jeryl Lynn caught the mumps in 1963, he swabbed her throat, isolated the virus, and used it to develop the mumps vaccine in 1967 — still in use today. Despite his impact, he stayed largely out of the spotlight."
+  },
+  {
+    "bank_idx": 375,
+    "tier": 2,
+    "question": "Maurice Hilleman's mumps vaccine has an unusual origin. The strain it's based on came from where?",
+    "answer": "His own 5-year-old daughter Jeryl Lynn's throat when she caught mumps in 1963",
+    "choices": [
+      "His own 5-year-old daughter Jeryl Lynn's throat when she caught mumps in 1963",
+      "A monkey at the Bronx Zoo that had been observed coughing in a strange way",
+      "A patient in his own hospital who refused to give consent to use her samples",
+      "A lab-engineered strain Hilleman built from scratch in 1965 using gene editing tools"
+    ],
+    "context": "Hilleman's daughter Jeryl Lynn caught mumps on a Sunday in 1963. Hilleman drove to his lab, swabbed her throat, and isolated the virus. He weakened the virus through repeated culturing and tested it as a vaccine. The 'Jeryl Lynn strain' has been used in every US mumps vaccine ever since. Jeryl Lynn herself became a microbiologist as an adult."
+  },
+  {
+    "bank_idx": 376,
+    "tier": 2,
+    "question": "In 1847 Hungarian doctor Ignaz Semmelweis showed that doctors washing hands with chlorinated lime cut maternity-ward deaths from about 18% to 1%. How did the Vienna medical establishment respond?",
+    "answer": "They mocked him — he was eventually institutionalized and died in an asylum",
+    "choices": [
+      "They mocked him — he was eventually institutionalized and died in an asylum",
+      "They adopted hand-washing across every — European hospital within a few months",
+      "They awarded him the first medical — Nobel Prize given for the discovery",
+      "They renamed the hospital after him — and built a statue while he was alive"
+    ],
+    "context": "Semmelweis was correct, but he couldn't explain WHY hand-washing worked — germ theory came decades later from Pasteur and Koch. Without a mechanism, his statistical evidence was rejected. He died in 1865 at age 47, possibly from sepsis after being beaten by asylum guards. Vindicated posthumously when Lister extended his work to surgical antisepsis in the 1860s."
+  },
+  {
+    "bank_idx": 446,
+    "tier": 2,
+    "question": "In 1858 Darwin received a paper from another naturalist working in Indonesia who had independently arrived at nearly the same theory. Who was the other naturalist?",
+    "answer": "Alfred Russel Wallace, working in the Malay Archipelago",
+    "choices": [
+      "Alfred Russel Wallace, working in the Malay Archipelago",
+      "Thomas Huxley, later called Darwin's bulldog for defense",
+      "Joseph Hooker, a botanist and Darwin's closest friend",
+      "Charles Lyell, the geologist who wrote 'Principles of Geology'"
+    ],
+    "context": "Alfred Russel Wallace (1823-1913) was a naturalist working in the Malay Archipelago who independently developed natural selection from his own field observations. In 1858 he sent his manuscript to Darwin, asking him to forward it for publication. Darwin's mentors Lyell and Hooker arranged a joint Darwin-Wallace presentation at the Linnean Society on July 1, 1858 — and Darwin rushed his ideas into the 'Origin of Species' the next year. Wallace remained gracious about Darwin getting the lion's share of credit, though he was always co-discoverer."
+  },
+  {
+    "bank_idx": 452,
+    "tier": 2,
+    "question": "Barry Marshall's 1984 self-experiment (drinking H. pylori bacteria) is now considered a famous moment in scientific history. What is the broader pattern of self-experimentation in medical research?",
+    "answer": "Many landmark discoveries came from researchers testing their own ideas on themselves",
+    "choices": [
+      "Many landmark discoveries came from researchers testing their own ideas on themselves",
+      "No serious scientist has ever tested an idea on their own body",
+      "Self-experimentation is banned globally in every country by international law",
+      "Self-experimentation has never produced a useful medical result"
+    ],
+    "context": "Self-experimentation has a long history: Werner Forssmann threaded a catheter into his own heart in 1929 (Nobel 1956); Jonas Salk gave himself and his family his early polio vaccine in 1953; Pierre Curie strapped radium to his arm to study burns. Modern research ethics generally requires institutional review and informed consent, but a researcher experimenting on themselves remains relatively unrestricted. Marshall's H. pylori demonstration was decisive because no one could claim 'placebo effect' or 'subject misled' — he knew exactly what he was drinking."
+  },
+  {
+    "bank_idx": 467,
+    "tier": 2,
+    "question": "Andrew Wakefield's 1998 paper in The Lancet linking the MMR vaccine to autism was a major event in vaccine controversy. What eventually happened to the paper itself?",
+    "answer": "It was formally retracted by The Lancet in 2010 after fraud was documented",
+    "choices": [
+      "It was formally retracted by The Lancet in 2010 after fraud was documented",
+      "It was awarded a Nobel Prize and remains the foundation of vaccine safety",
+      "It was extended into a major textbook used in medical schools worldwide",
+      "It was translated into 50 languages and remains in the journal's archive"
+    ],
+    "context": "Wakefield's 1998 paper proposed a possible link between MMR vaccine and autism. Investigative reporter Brian Deer (Sunday Times) found that Wakefield had fabricated patient data, had undisclosed financial conflicts, and conducted unethical experiments on children. The Lancet partially retracted in 2004 and fully retracted in 2010. Wakefield lost his medical license. Many subsequent large studies have found no causal link between MMR and autism. The Wakefield episode is often cited — sometimes accurately, sometimes not — in vaccine debates; the bank covers it honestly without using slurs against critics generally."
+  },
+  {
+    "bank_idx": 469,
+    "tier": 2,
+    "question": "Alexander Fleming discovered penicillin's antibacterial effect in 1928 but couldn't make practical medicine from it. Who eventually isolated and produced penicillin at scale during World War II?",
+    "answer": "Howard Florey and Ernst Chain at Oxford University in 1940-41",
+    "choices": [
+      "Howard Florey and Ernst Chain at Oxford University in 1940-41",
+      "Marie Curie's daughter Irene Joliot-Curie at the Pasteur Institute",
+      "Albert Einstein and Niels Bohr at Princeton during the war years",
+      "Robert Koch and Louis Pasteur at the German Institute of Health"
+    ],
+    "context": "Florey (Australian pathologist) and Chain (German-Jewish chemist, refugee from Nazi Germany) led the Oxford team that isolated penicillin in usable form by 1940. Norman Heatley designed the production process. By 1941 they could treat human patients. American companies (Pfizer, Merck) scaled production to industrial levels. Florey traveled to the US to convince the wartime government to invest. By D-Day 1944, enough penicillin was available to treat every Allied soldier needing it. Fleming, Florey, and Chain shared the 1945 Nobel."
+  },
+  {
+    "bank_idx": 470,
+    "tier": 2,
+    "question": "Jonas Salk developed an effective polio vaccine using inactivated (killed) virus, tested in massive field trials in the early 1950s. What did Salk do regarding a patent for his vaccine?",
+    "answer": "He refused to patent it, saying it belonged to the people",
+    "choices": [
+      "He refused to patent it, saying it belonged to the people",
+      "He patented it and earned billions of dollars in royalties from sales",
+      "He sold the patent to a single drug company for one dollar quietly",
+      "He patented it but the patent was rejected by the U.S. courts"
+    ],
+    "context": "Jonas Salk (1914-1995) tested his polio vaccine on himself and his family before public trials. The 1954 field trial enrolled 1.8 million American children — the largest medical experiment ever conducted. Results announced April 12, 1955 showed the vaccine effective; church bells rang across America. When CBS journalist Edward R. Murrow asked Salk who owned the patent, Salk famously replied: 'Well, the people, I would say. There is no patent. Could you patent the sun?' Polio is now eradicated from most of the world."
+  },
+  {
+    "bank_idx": 471,
+    "tier": 2,
+    "question": "The very first vaccine in human history was created in 1796 by Edward Jenner, an English country doctor. What disease did he prevent, and what was the new technique called?",
+    "answer": "Smallpox — using cowpox material, the technique named 'vaccination' from Latin 'vacca' (cow)",
+    "choices": [
+      "Smallpox — using cowpox material, the technique named 'vaccination' from Latin 'vacca' (cow)",
+      "Yellow fever — using mosquito tissue, the technique called 'mosquito-pox'",
+      "Tuberculosis — using cow's milk, the technique called 'cow-milk inoculation'",
+      "Cholera — using river water, the technique called 'aqueous immunization'"
+    ],
+    "context": "Edward Jenner (1749-1823) noticed that milkmaids who caught the mild cowpox disease seemed protected from deadly smallpox. In 1796 he tested his hypothesis by inoculating 8-year-old James Phipps with cowpox material, then exposing him to smallpox — Phipps didn't get sick. Jenner published in 1798. The technique was called 'vaccination' from Latin 'vacca' meaning cow. Earlier 'variolation' (inoculating directly with weakened smallpox) had been practiced in Africa, India, China, and Ottoman Turkey — Lady Mary Wortley Montagu brought it to England in 1721. Jenner's safer cowpox method displaced it."
+  },
+  {
+    "bank_idx": 472,
+    "tier": 2,
+    "question": "In the 1860s French chemist Louis Pasteur showed that microorganisms cause fermentation and disease — overturning the older 'spontaneous generation' theory. What clever experimental device did he use to make his case?",
+    "answer": "Swan-necked flasks that let air enter but trapped airborne particles",
+    "choices": [
+      "Swan-necked flasks that let air enter but trapped airborne particles",
+      "Glass tubes shaped exactly like the letter Z, viewed from above",
+      "Heated copper basins that destroyed all gases above the broth",
+      "Sealed buckets buried underground for thirty days at a time"
+    ],
+    "context": "Pasteur's 1859 swan-neck flask experiment was elegant. He boiled broth in flasks with long, curved necks that let air in but trapped dust and microbes in the curve. The broth stayed sterile for months — no spontaneous generation. When he broke the neck, the broth was quickly contaminated. The experiment refuted spontaneous generation and supported germ theory. Pasteur went on to develop pasteurization (heat-treating to kill microbes), rabies vaccine, and improved anthrax vaccine. His work, with Robert Koch's, established germ theory."
+  },
+  {
+    "bank_idx": 473,
+    "tier": 2,
+    "question": "British surgeon Joseph Lister revolutionized surgery in the 1860s by introducing antiseptic techniques based on Pasteur's germ theory. What was his most famous antiseptic chemical?",
+    "answer": "Carbolic acid (phenol), used to sterilize instruments and wounds",
+    "choices": [
+      "Carbolic acid (phenol), used to sterilize instruments and wounds",
+      "Hydrogen peroxide, only invented after Lister's lifetime",
+      "Bleach, the same chlorine solution used today in households",
+      "Pure alcohol, never used in medicine because of its toxicity"
+    ],
+    "context": "Joseph Lister (1827-1912), inspired by Pasteur's germ theory, began using carbolic acid (phenol) to sterilize surgical instruments, wounds, and operating rooms in 1865 at the Glasgow Royal Infirmary. Post-surgical infection rates fell dramatically. British surgeons resisted his innovations for years (Listerism was mocked initially), but American surgeons adopted them more quickly. The mouthwash brand Listerine was named in his honor. Lister's work, together with Pasteur's, ushered in the modern era of surgical medicine."
+  },
+  {
+    "bank_idx": 488,
+    "tier": 2,
+    "question": "Before the 1860s most diseases were thought to be caused by 'miasma' (bad air) or imbalanced humors. Louis Pasteur and Robert Koch overturned this view. What did they show diseases are actually caused by?",
+    "answer": "Specific microorganisms, bacteria and other microbes invisible to the eye",
+    "choices": [
+      "Specific microorganisms, bacteria and other microbes invisible to the eye",
+      "Bad luck and individual moral failings that cannot be measured",
+      "Curses placed on specific families by other people deliberately",
+      "Old age alone, with no other identifiable causes whatsoever"
+    ],
+    "context": "Germ theory developed through the work of many — Ignaz Semmelweis (hand-washing, 1847), Louis Pasteur (microbes cause fermentation and disease, 1860s), Joseph Lister (antiseptic surgery, 1860s), and Robert Koch (proving specific microbes cause specific diseases: anthrax 1876, tuberculosis 1882, cholera 1884). Koch's postulates established how to prove a particular microbe caused a particular disease. The germ theory transformed medicine: by 1900 once-deadly diseases (puerperal fever, surgical infection, cholera) had been substantially reduced where germ-theory hygiene was adopted."
+  },
+  {
+    "bank_idx": 607,
+    "tier": 3,
+    "question": "In June 1858 Darwin received a letter from a young naturalist working in the Malay Archipelago. The letter independently described natural selection, prompting Darwin to publish his own work immediately. Who wrote it?",
+    "answer": "Alfred Russel Wallace — younger, less wealthy, less famous than Darwin",
+    "choices": [
+      "Alfred Russel Wallace — younger, less wealthy, less famous than Darwin",
+      "Thomas Huxley — Darwin's later 'bulldog' who defended evolution publicly",
+      "Joseph Hooker — Darwin's botanist friend who later edited Darwin's letters",
+      "Asa Gray — the Harvard botanist who introduced Darwin's ideas in America"
+    ],
+    "context": "Wallace was collecting in the East Indies (then Dutch). His Ternate paper described almost the same theory Darwin had been sitting on for 20 years. Hooker and Lyell arranged a joint Linnean Society reading July 1858 — both authors credited. Darwin rushed Origin of Species to print in 1859. Wallace later distanced himself from human-evolution claims."
+  },
+  {
+    "bank_idx": 613,
+    "tier": 3,
+    "question": "Before the late 1800s, doctors and scientists had many wrong theories about disease — bad air, evil vapors, divine punishment. Louis Pasteur in the 1860s did experiments that demonstrated diseases are caused by tiny living organisms. What's that theory called?",
+    "answer": "Germ theory — diseases are caused by microorganisms (bacteria, viruses, fungi, parasites)",
+    "choices": [
+      "Germ theory — diseases are caused by microorganisms (bacteria, viruses, fungi, parasites)",
+      "Miasma theory — sickness is caused by 'bad air' or polluted vapors",
+      "Humoral theory — disease comes from imbalances of four bodily fluids",
+      "Phlogiston theory — disease is caused by a special substance released by burning"
+    ],
+    "context": "Pasteur's swan-neck flask experiments (1859-64) disproved spontaneous generation and supported germ theory. Robert Koch isolated specific pathogens (anthrax bacillus 1876, tuberculosis 1882, cholera 1883). Lister applied germ theory to surgical antisepsis (1867). Within a generation, hand-washing, sterilization, pasteurization, and vaccination transformed medicine."
+  },
+  {
+    "bank_idx": 615,
+    "tier": 3,
+    "question": "Louis Pasteur's famous experiment used a flask with a long, swan-neck shape to argue against the theory of 'spontaneous generation' (life arising spontaneously from non-life). What did the swan neck demonstrate?",
+    "answer": "Microbes from the air could be excluded — broth didn't spoil if microbes couldn't reach it",
+    "choices": [
+      "Microbes from the air could be excluded — broth didn't spoil if microbes couldn't reach it",
+      "Broth created microbes spontaneously — disproving Pasteur's own germ theory entirely",
+      "Microbes only grew in glass containers — proving they were always present already",
+      "Long necks blocked oxygen — without oxygen, broth never spoiled at all"
+    ],
+    "context": "Pasteur boiled broth in flasks with long curved necks. Dust and microbes settled in the curve; nothing reached the broth. Broth stayed sterile indefinitely — unless the neck was broken, after which it spoiled. This decisively challenged spontaneous generation and supported germ theory. Pasteur did the same kind of careful work on rabies vaccine in 1885."
+  },
+  {
+    "bank_idx": 616,
+    "tier": 3,
+    "question": "Edward Jenner in 1796 noticed that milkmaids who had caught cowpox were immune to the deadly disease smallpox. He inoculated 8-year-old James Phipps with cowpox, then exposed him to smallpox. What word did Jenner give to his new technique?",
+    "answer": "Vaccination — from 'vacca' (Latin for cow), since cowpox was the source material",
+    "choices": [
+      "Vaccination — from 'vacca' (Latin for cow), since cowpox was the source material",
+      "Inoculation — a much older general term Jenner did not invent in 1796",
+      "Variolation — an even older practice using actual smallpox material, not cowpox",
+      "Immunization — a 20th-century term coined long after Jenner's work was done"
+    ],
+    "context": "Variolation (using mild smallpox) was practiced in China, Africa, and the Ottoman Empire long before Jenner. Lady Mary Wortley Montagu brought it from Constantinople to Britain in 1721. Jenner's cowpox version was far safer. The WHO declared smallpox eradicated in 1980 — the only human disease ever eradicated."
+  },
+  {
+    "bank_idx": 617,
+    "tier": 3,
+    "question": "Louis Pasteur in 1885 saved the life of 9-year-old Joseph Meister, who had been bitten by a rabid dog. Pasteur gave him a series of injections of his experimental rabies treatment. What was different about this treatment?",
+    "answer": "It used weakened rabies virus — a vaccine given AFTER exposure (post-exposure prophylaxis)",
+    "choices": [
+      "It used weakened rabies virus — a vaccine given AFTER exposure (post-exposure prophylaxis)",
+      "It used antibiotics — the first time bacterial diseases had been cured with drugs",
+      "It used cowpox — the same Jenner technique adapted from smallpox treatment",
+      "It used pure water — Pasteur's homeopathic experiment that turned out to work"
+    ],
+    "context": "Pasteur's rabies vaccine used virus weakened by drying rabbit spinal cord. The vaccine train of injections boosted immunity faster than the slow-incubating virus could spread. Joseph Meister survived. Today, post-exposure rabies prophylaxis remains highly effective if given before symptoms begin. Once symptoms start, rabies is almost universally fatal."
+  },
+  {
+    "bank_idx": 618,
+    "tier": 3,
+    "question": "In 1955 Jonas Salk's inactivated polio vaccine was approved for general use in the United States, after a massive field trial involving over 1.8 million children (the 'Polio Pioneers'). What was different about Salk's vaccine vs Sabin's later oral vaccine?",
+    "answer": "Salk used inactivated virus by injection — Sabin used live-attenuated virus by mouth",
+    "choices": [
+      "Salk used inactivated virus by injection — Sabin used live-attenuated virus by mouth",
+      "Salk used antibody injection — Sabin used live-virus injection for stronger protection",
+      "Salk used cowpox; Sabin used vaccinia — different viruses with different effects",
+      "Salk was banned for safety — Sabin replaced it because the Salk vaccine killed children"
+    ],
+    "context": "Salk's IPV (1955) uses formaldehyde-killed poliovirus by injection. Sabin's OPV (licensed 1962) uses live-attenuated virus by mouth (easier to administer in mass campaigns). OPV can rarely revert to virulence; many countries now use IPV. Polio was eliminated in the US by 1979, and global eradication is nearly complete — only Afghanistan and Pakistan still report wild cases."
+  },
+  {
+    "bank_idx": 619,
+    "tier": 3,
+    "question": "Maurice Hilleman developed about 40 vaccines during his career at Merck, including the M-M-R combination given to most American children. What three diseases does M-M-R protect against?",
+    "answer": "Measles, mumps, and rubella — three common childhood viral diseases",
+    "choices": [
+      "Measles, mumps, and rubella — three common childhood viral diseases",
+      "Meningitis, malaria, and rabies — three deadlier diseases with available vaccines",
+      "Measles, malaria, and rotavirus — three commonly bundled childhood vaccines",
+      "Mumps, mononucleosis, and roseola — three contagious childhood diseases"
+    ],
+    "context": "Hilleman (1919-2005) developed measles (1963), mumps (1967), rubella (1969), and the combined M-M-R (1971). He also worked on hepatitis A, hepatitis B, chickenpox, meningitis, and pneumococcal disease vaccines. Reputed to be the most successful vaccine developer in history. Less famous than Salk or Sabin in popular memory."
+  },
+  {
+    "bank_idx": 621,
+    "tier": 3,
+    "question": "Semmelweis died in 1865 at age 47 in an asylum. He had been ridiculed for decades by mainstream Viennese medicine even as his statistical evidence was overwhelming. What broader lesson does his case teach about scientific consensus?",
+    "answer": "Consensus can be wrong for decades — establishment can punish dissenters who turn out right",
+    "choices": [
+      "Consensus can be wrong for decades — establishment can punish dissenters who turn out right",
+      "Consensus is always correct — Semmelweis was wrong and died deserving the criticism",
+      "Vienna had no scientific establishment — there was no consensus to challenge in 1847",
+      "Semmelweis suppressed his own work — his death came from regret rather than mistreatment"
+    ],
+    "context": "Joseph Lister (1867) extended antiseptic methods to surgery, citing Pasteur's germ theory. Lister's father-in-law was a former Semmelweis collaborator. The 'Semmelweis effect' or 'Semmelweis reflex' now names the reflexive rejection of new evidence that contradicts established belief. The pattern recurs in science — Marshall and H. pylori is a 1980s example."
+  },
+  {
+    "bank_idx": 630,
+    "tier": 3,
+    "question": "Children who recover from chickenpox (or measles, or many other viral infections) are typically immune for life. What's this kind of immunity called?",
+    "answer": "Natural immunity — robust, long-lasting memory from actual infection",
+    "choices": [
+      "Natural immunity — robust, long-lasting memory from actual infection",
+      "Active immunity — only obtained through vaccines, never from infection",
+      "Passive immunity — antibodies received from mother only, fades within months",
+      "Maternal immunity — from breastfeeding only, requiring ongoing maintenance"
+    ],
+    "context": "Natural immunity from infection is typically robust and long-lasting (sometimes lifetime), though varies by pathogen — measles immunity is excellent; influenza much less so because the virus mutates. Vaccine-induced immunity is often weaker than infection-acquired but much safer to obtain. The two are complementary; both contribute to population-level immunity."
+  },
+  {
+    "bank_idx": 633,
+    "tier": 3,
+    "question": "A vaccine works by training the adaptive immune system to recognize a pathogen WITHOUT causing the disease. Which of these is NOT a real type of vaccine in current use?",
+    "answer": "Crystalline vaccines — synthesized purely from minerals with no biological component",
+    "choices": [
+      "Crystalline vaccines — synthesized purely from minerals with no biological component",
+      "Inactivated (killed) vaccines — pathogen is killed before injection",
+      "Live-attenuated vaccines — pathogen is alive but weakened so it can't cause disease",
+      "Subunit (protein) vaccines — only a piece of the pathogen, never the whole thing"
+    ],
+    "context": "Real vaccine types: live-attenuated (MMR, varicella, BCG), inactivated (flu shot, IPV, hep A), subunit (HepB, HPV), toxoid (tetanus, diphtheria), mRNA (COVID), viral-vector (COVID, ebola). Each has tradeoffs in safety, durability, complexity. The technology spans 200+ years from Jenner's cowpox to modern mRNA platforms developed in the 2010s."
+  },
+  {
+    "bank_idx": 710,
+    "tier": 3,
+    "question": "Charles Darwin returned from the Beagle voyage in 1836 with notebooks suggesting species change over time. He didn't publish *On the Origin of Species* until 1859. What pushed him to finally publish?",
+    "answer": "Alfred Russel Wallace mailed Darwin a manuscript proposing the same theory, Darwin rushed his own to press",
+    "choices": [
+      "Alfred Russel Wallace mailed Darwin a manuscript proposing the same theory, Darwin rushed his own to press",
+      "Queen Victoria personally requested that Darwin publish his theory within the year for the British Empire's prestige",
+      "Darwin's wife refused to live with him until he published, under threat of formal religious separation",
+      "Darwin won a contest set by the Royal Society for the best theory of species change in the natural world"
+    ],
+    "context": "Darwin received Wallace's letter from Indonesia in June 1858 containing essentially the same theory of natural selection. Charles Lyell and Joseph Hooker arranged a joint presentation at the Linnean Society on July 1, 1858. Darwin then wrote *Origin* in a year and published in November 1859. The 23-year delay had been driven partly by his caution about religious controversy and partly by his thoroughness in gathering supporting evidence."
+  },
+  {
+    "bank_idx": 717,
+    "tier": 3,
+    "question": "Joseph Lister extended Semmelweis's hand-washing insight to surgery in the 1860s, using carbolic acid sprays to reduce post-operative infection. What earlier scientist provided Lister with the theoretical foundation for why antisepsis works?",
+    "answer": "Louis Pasteur — whose germ-theory experiments showed microbes caused fermentation and disease",
+    "choices": [
+      "Louis Pasteur — whose germ-theory experiments showed microbes caused fermentation and disease",
+      "Isaac Newton — whose gravity laws explained why heavy infection-causing fluids settled into wounds",
+      "Robert Boyle — whose gas laws predicted that hot air alone could sterilize surgical instruments without chemicals",
+      "Antoine Lavoisier — whose chemistry of oxygen showed surgical wounds needed sealing off from air"
+    ],
+    "context": "Louis Pasteur's swan-neck flask experiments (1860s) demonstrated that microorganisms in the air caused spoilage and disease — not 'spontaneous generation.' Lister extended the insight to surgery, sterilizing instruments and using carbolic-acid sprays during operations. Surgical mortality dropped dramatically. The Listerine mouthwash brand (1879) is named after him. Pasteur's later work on vaccines (rabies 1885) further established germ theory as the foundation of modern medicine."
+  },
+  {
+    "bank_idx": 741,
+    "tier": 3,
+    "question": "In October 2020 three epidemiologists from Stanford, Harvard, and Oxford published the Great Barrington Declaration. What did it actually propose?",
+    "answer": "'Focused protection' of vulnerable people while letting younger — and healthier populations resume normal life",
+    "choices": [
+      "'Focused protection' of vulnerable people while letting younger — and healthier populations resume normal life",
+      "Universal lockdowns extended for at least three more years — across the entire global population",
+      "Mandatory vaccination of all citizens including infants — backed by enforcement of fines and arrests",
+      "Closing schools permanently — replacing them with online-only learning into the next decade"
+    ],
+    "context": "Jay Bhattacharya (Stanford epidemiologist, MD/PhD), Martin Kulldorff (Harvard biostatistician), and Sunetra Gupta (Oxford epidemiologist) wrote the Declaration at the American Institute for Economic Research. It argued lockdowns caused unequal harm — protecting older laptop-class workers while displacing harm onto younger working-class and Third World populations — and recommended targeting protection to the elderly while letting natural immunity develop in lower-risk groups. Over 60,000 doctors and scientists signed."
+  },
+  {
+    "bank_idx": 742,
+    "tier": 3,
+    "question": "How did NIH director Francis Collins respond to the Great Barrington Declaration in October 2020, according to FOIA'd emails released later?",
+    "answer": "He privately emailed Anthony Fauci calling for 'a quick, and devastating takedown' of the Declaration's authors",
+    "choices": [
+      "He privately emailed Anthony Fauci calling for 'a quick, and devastating takedown' of the Declaration's authors",
+      "He praised the Declaration in a public statement, and invited the authors to NIH for policy discussions",
+      "He ignored the Declaration completely, and the FOIA emails confirmed he had never heard of it",
+      "He commissioned a peer-review panel to evaluate the Declaration's claims with full scientific rigor"
+    ],
+    "context": "House Judiciary Committee subpoenas in 2023 released Collins's October 8, 2020 email to Fauci about 'a quick and devastating takedown.' Collins called the GBD signatories 'three fringe epidemiologists' despite their Stanford, Harvard, and Oxford affiliations. In March 2025, the Trump administration nominated Bhattacharya as NIH director — the same agency Collins had run. Bhattacharya was confirmed and serves as the 18th NIH director. The arc from 'fringe' label to NIH directorship within five years is one of the more visible reversals in modern US science policy."
+  },
+  {
+    "bank_idx": 743,
+    "tier": 3,
+    "question": "Jay Bhattacharya is now the 18th Director of the National Institutes of Health, confirmed in March 2025. What's his academic background, prior to becoming a national figure during COVID?",
+    "answer": "Stanford School of Medicine professor (MD and Stanford economics PhD), health policy researcher with hundreds of papers",
+    "choices": [
+      "Stanford School of Medicine professor (MD and Stanford economics PhD), health policy researcher with hundreds of papers",
+      "Television host with no medical credentials, promoted to NIH after a popular daytime program",
+      "Pharmaceutical executive who came directly from a major drug company to lead the agency",
+      "Twitter influencer with a chemistry undergraduate degree but no formal medical training"
+    ],
+    "context": "Bhattacharya holds MD and PhD degrees from Stanford. He's published hundreds of peer-reviewed papers on health policy, public health, and economics, with a particular focus on populations affected by health-care policy. The Great Barrington Declaration framed his public reputation during COVID. President Trump nominated him for NIH director in December 2024; the Senate confirmed him in March 2025. His nomination was controversial — Senator Bernie Sanders called him 'totally unfit'; supporters cited his return to mainstream public-health norms."
+  },
+  {
+    "bank_idx": 744,
+    "tier": 3,
+    "question": "Martin Kulldorff was a Harvard biostatistician serving on multiple federal vaccine advisory committees before he co-authored the Great Barrington Declaration in October 2020. What happened to his federal appointments afterward?",
+    "answer": "He was removed from the CDC's vaccine working group, and Harvard eventually let his contract expire in 2021",
+    "choices": [
+      "He was removed from the CDC's vaccine working group, and Harvard eventually let his contract expire in 2021",
+      "He was promoted to lead the CDC's vaccine division, Harvard kept his position with full tenure",
+      "He resigned voluntarily and quietly, with no public controversy about his work during COVID",
+      "He remained on all advisory boards with no professional impact whatsoever from the Declaration"
+    ],
+    "context": "Kulldorff invented the spatial scan statistic — the standard method for detecting disease outbreak clusters and used worldwide in public-health surveillance. He served on the CDC's Vaccine Safety Subgroup and an FDA advisory committee. After he co-authored the GBD and questioned aspects of COVID vaccine mandates, he was removed from CDC and FDA roles. Harvard later let his contract expire. He works now at the Brownstone Institute and Hillsdale College. His record on vaccine safety methodology is widely cited even by his critics."
+  },
+  {
+    "bank_idx": 754,
+    "tier": 3,
+    "question": "Congress passed the National Childhood Vaccine Injury Act in 1986, creating the Vaccine Injury Compensation Program. What did the act actually do in terms of legal liability for vaccine manufacturers?",
+    "answer": "It shielded manufacturers from most lawsuits over childhood vaccine injuries — routing claims through a federal claims court",
+    "choices": [
+      "It shielded manufacturers from most lawsuits over childhood vaccine injuries — routing claims through a federal claims court",
+      "It made vaccine manufacturers fully liable in every state — creating new opportunities for class-action lawsuits",
+      "It declared vaccines exempt from all medical-ethics review — Congress removed every oversight requirement",
+      "It made vaccines free for all American children — and increased manufacturer profits to compensate"
+    ],
+    "context": "Before 1986, multiple vaccine-injury lawsuits threatened US manufacturer participation in the childhood vaccine market. The NCVIA shielded manufacturers from most product-liability claims and created VICP as a no-fault compensation program. Critics including Robert F. Kennedy Jr. and attorney Aaron Siri argue the liability shield combined with mandate pressure removes the normal market discipline of liability litigation. Supporters argue it kept vaccines available. Both descriptions are accurate."
+  },
+  {
+    "bank_idx": 755,
+    "tier": 3,
+    "question": "The CDC's published childhood immunization schedule has expanded substantially since 1986. About how many doses were on the schedule by age 6 in 1986, versus by age 18 today?",
+    "answer": "About 11 doses by age 6 in 1986 — versus around 70+ doses by age 18 today, depending on the year and state",
+    "choices": [
+      "About 11 doses by age 6 in 1986 — versus around 70+ doses by age 18 today, depending on the year and state",
+      "About 70 doses by age 6 in 1986 — and the schedule has slightly decreased since then to 50 doses",
+      "About 11 doses both in 1986 and today — the schedule has not changed at all in nearly four decades",
+      "About 5 doses in 1986 — and about 8 doses today, a small increase consistent with new disease threats"
+    ],
+    "context": "The childhood vaccine schedule has grown with new vaccines for hepatitis B (1991), Hib, varicella (chickenpox, 1995), rotavirus, pneumococcal, hepatitis A, HPV, and meningococcal. Counting individual doses across the full age-18 schedule reaches roughly 70+ depending on what's included. The 1986 schedule covered fewer diseases with fewer doses. No published RCT has tested the combined schedule against any alternative; critics including Bhattacharya, Kulldorff, and Kennedy argue this is a gap in the evidence base for current US policy."
+  },
+  {
+    "bank_idx": 756,
+    "tier": 3,
+    "question": "The World Health Organization declared smallpox eradicated in 1980 — the only infectious human disease ever eradicated. Who was the last person to catch it naturally?",
+    "answer": "Ali Maow Maalin, a Somali hospital cook, caught smallpox in October 1977 and survived after treatment",
+    "choices": [
+      "Ali Maow Maalin, a Somali hospital cook, caught smallpox in October 1977 and survived after treatment",
+      "An unknown Mongolian shepherd in the late 1980s caught smallpox from a smuggled live virus sample",
+      "A Soviet biological-warfare technician contracted it from a lab accident in 1979, and died from the disease",
+      "The last natural case was in 1812 in Ireland, the disease had been confined to laboratories thereafter"
+    ],
+    "context": "The WHO Intensified Smallpox Eradication Program (1967-1980) used a ring-vaccination strategy targeting outbreaks rather than mass immunization. D.A. Henderson led the effort. The last natural case (variola minor) was Ali Maow Maalin in Somalia, October 1977. The last fatal case was Janet Parker, a British medical photographer who caught smallpox in 1978 from a Birmingham laboratory accident — the very last smallpox death in human history. WHO formally declared eradication May 8, 1980."
+  },
+  {
+    "bank_idx": 757,
+    "tier": 3,
+    "question": "Jonas Salk's polio vaccine was announced safe and effective on April 12, 1955 — ten years to the day after Franklin Roosevelt died of polio. What's striking about Salk's choice not to patent it?",
+    "answer": "He declined to patent — telling Edward R. Murrow 'there is no patent. Could you patent the sun?'",
+    "choices": [
+      "He declined to patent — telling Edward R. Murrow 'there is no patent. Could you patent the sun?'",
+      "He sold the patent for one dollar to the US government — keeping fully half of all future royalties",
+      "He patented it personally — and his estate continues to receive royalties from polio vaccine sales today",
+      "He licensed it exclusively to a single pharmaceutical company — granting them a permanent monopoly worldwide"
+    ],
+    "context": "The Salk inactivated polio vaccine was developed at the University of Pittsburgh with funding from the March of Dimes. The 1954 Francis trial enrolled 1.8 million American children — the largest medical experiment in history. Salk's decision not to patent meant the vaccine was rapidly produced by multiple manufacturers and widely available. Albert Sabin's oral live-attenuated polio vaccine (1961) is what eventually drove polio toward worldwide eradication. As of 2025, wild polio remains in only a few areas of Afghanistan and Pakistan."
+  },
+  {
+    "bank_idx": 760,
+    "tier": 3,
+    "question": "Louis Pasteur's swan-neck flask experiments in the 1860s definitively ended the idea of 'spontaneous generation' — the belief that maggots arose spontaneously from rotten meat. How did the elegant experimental design work?",
+    "answer": "Boiled broth in a flask with a long S-curved neck stayed sterile — microbes settled in the curve and never reached the broth",
+    "choices": [
+      "Boiled broth in a flask with a long S-curved neck stayed sterile — microbes settled in the curve and never reached the broth",
+      "Sealed glass flasks always grew microbes — proving that life arose spontaneously from non-living matter alone",
+      "Microscopes showed microbes growing from rotten meat directly — confirming spontaneous generation as factual",
+      "Pasteur could not prove the experiment — and the question of spontaneous generation was never resolved"
+    ],
+    "context": "Spontaneous generation (the idea that living things arise spontaneously from non-living matter) had been a serious scientific theory since Aristotle. Pasteur's 1860 experiment used flasks with long curved necks: the broth was boiled (sterilizing it), the necks let air in (so it wasn't simply 'lack of air'), but dust and microbes settled in the curve. The broth stayed sterile. Tip the flask so the broth touched the curve — and it spoiled within days. The experiment was decisive."
+  },
+  {
+    "bank_idx": 766,
+    "tier": 3,
+    "question": "Gain-of-function research deliberately makes pathogens more dangerous (more transmissible or virulent) to study their potential. What's the policy debate about this kind of work?",
+    "answer": "Critics argue the lab-accident risk outweighs potential pandemic-preparedness benefits; the debate intensified post-COVID",
+    "choices": [
+      "Critics argue the lab-accident risk outweighs potential pandemic-preparedness benefits; the debate intensified post-COVID",
+      "There is no debate, gain-of-function research has been universally banned worldwide since 2002",
+      "Gain-of-function research is required for all vaccine development, and no virus can be studied without it",
+      "Critics are universally dismissed by the scientific community, there is no respectable opposition to gain-of-function work"
+    ],
+    "context": "The 2014-2017 US 'pause' on gain-of-function research applied to certain pathogens including influenza, SARS, and MERS. The pause lifted in 2017 under the new HHS framework requiring P3CO review (Potential Pandemic Pathogen Care and Oversight). Critics including Marc Lipsitch (Harvard), Richard Ebright (Rutgers), and others have argued the framework was applied with insufficient rigor. The COVID-19 origins controversy increased attention to this debate. As of 2025, Bhattacharya's NIH has paused new gain-of-function funding pending policy review."
+  },
+  {
+    "bank_idx": 767,
+    "tier": 3,
+    "question": "Twitter Files releases starting in late 2022 documented federal agency contacts with social media platforms during 2020-2022. What kind of scientific speech was suppressed under these contacts?",
+    "answer": "Discussion of lab leak, COVID treatments — vaccine side effects, and the Great Barrington Declaration were all flagged",
+    "choices": [
+      "Discussion of lab leak, COVID treatments — vaccine side effects, and the Great Barrington Declaration were all flagged",
+      "Only flat-earth, anti-evolution, and chemtrails content was flagged — never any credentialed scientific work",
+      "No scientific content was ever flagged — only purely political speech with no medical implications at all",
+      "Discussion of dark matter — the Big Bang, and string theory were flagged as politically destabilizing topics"
+    ],
+    "context": "The Twitter Files (Matt Taibbi, Bari Weiss, Michael Shellenberger, and others starting in November 2022) showed FBI, CDC, and other federal agencies routinely flagging accounts for suppression. Topics included natural-immunity discussions, vaccine adverse-event reports, lab-leak speculation, school-closure critiques, and Great Barrington Declaration content. Many flagged accounts belonged to credentialed scientists (Bhattacharya, Kulldorff, Vinay Prasad, Marty Makary). The Supreme Court's *Murthy v. Missouri* (2024) ruled on standing rather than reaching the merits of the First Amendment claim itself."
+  },
+  {
+    "bank_idx": 768,
+    "tier": 3,
+    "question": "The Murthy v. Missouri case in 2024 reached the US Supreme Court on the question of federal-government coordination with social-media platforms to suppress speech. What did the court ultimately rule?",
+    "answer": "The court ruled 6-3 that plaintiffs lacked standing, not reaching the underlying First Amendment question on the merits",
+    "choices": [
+      "The court ruled 6-3 that plaintiffs lacked standing, not reaching the underlying First Amendment question on the merits",
+      "The court ruled unanimously that government-platform coordination is fully constitutional in every circumstance",
+      "The court ruled unanimously that any government-platform contact violates the First Amendment automatically",
+      "The court refused to hear the case at all, and the lower court ruling stood without modification or appeal"
+    ],
+    "context": "*Murthy v. Missouri* (originally *Missouri v. Biden*) was filed by Missouri and Louisiana state attorneys general plus individual plaintiffs including Bhattacharya and Kulldorff. The 5th Circuit had ruled against the government. The Supreme Court (June 2024, Barrett writing for the majority) ruled 6-3 that plaintiffs lacked Article III standing — not addressing whether the government's conduct actually violated the First Amendment. Justice Alito dissented (joined by Thomas and Gorsuch), calling the case 'one of the most important free speech cases to reach this Court in years.' The merits remain open for future litigation."
+  },
+  {
+    "bank_idx": 769,
+    "tier": 3,
+    "question": "The Vaccine Adverse Event Reporting System (VAERS) collects reports of suspected vaccine reactions in the US. What's the documented under-reporting problem with VAERS?",
+    "answer": "A 2010 Harvard Pilgrim study estimated less than 1% of actual vaccine adverse events are ever reported to VAERS",
+    "choices": [
+      "A 2010 Harvard Pilgrim study estimated less than 1% of actual vaccine adverse events are ever reported to VAERS",
+      "VAERS captures essentially 100% of adverse events because of mandatory reporting requirements",
+      "VAERS overreports events by a factor of ten because the public uses it for unrelated medical complaints",
+      "VAERS does not exist, the US has never operated a vaccine adverse-event surveillance system"
+    ],
+    "context": "VAERS is a passive surveillance system jointly run by CDC and FDA, open to reports from anyone. The 2010 Harvard Pilgrim Health Care study (a CMS-funded project led by Ross Lazarus) estimated 'fewer than 1% of vaccine adverse events are reported.' The CMS contract was not renewed; the planned electronic-tracking system was not built out. VAERS is widely cited in vaccine-safety discussions; critics including Kulldorff have called for improving its capture rate and integrating with electronic health records."
+  },
+  {
+    "bank_idx": 770,
+    "tier": 3,
+    "question": "The Wakefield 1998 paper in *The Lancet* claimed a link between MMR vaccine and autism. The paper was retracted in 2010. What's the often-overlooked nuance in the broader scientific reaction?",
+    "answer": "The specific MMR-autism link is unsupported — but Wakefield's broader gastrointestinal observations in autistic kids were later replicated by others",
+    "choices": [
+      "The specific MMR-autism link is unsupported — but Wakefield's broader gastrointestinal observations in autistic kids were later replicated by others",
+      "Every aspect of Wakefield's research was completely fraudulent — and no part of his work has been replicated by anyone",
+      "Wakefield's research was actually correct — and vaccines do cause autism according to mainstream evidence",
+      "The case was never about science — it was a personal vendetta by tabloid journalists with no medical basis"
+    ],
+    "context": "Andrew Wakefield's 1998 *Lancet* paper proposed a link between MMR vaccine and 'autistic enterocolitis.' Journalist Brian Deer documented procedural violations (children selected on prior expectation, undisclosed funding) and the paper was retracted. Wakefield's UK medical license was revoked. Independent later studies have confirmed gastrointestinal abnormalities are more common in autistic children than in neurotypical children (separate from any vaccine question) — that piece of his observation set has held up. The headline MMR-autism causal claim remains unsupported."
+  },
+  {
+    "bank_idx": 826,
+    "tier": 4,
+    "question": "Enzymes are biological catalysts — almost always proteins — that speed up specific chemical reactions in living cells without being consumed. Some accelerate reactions by factors of a million or more. What's the basic mechanism by which an enzyme works?",
+    "answer": "It binds the reactant in a precisely-shaped 'active site' — lowering the energy barrier for the reaction so it proceeds at body temperature instead of needing extreme heat or pressure",
+    "choices": [
+      "It binds the reactant in a precisely-shaped 'active site' — lowering the energy barrier for the reaction so it proceeds at body temperature instead of needing extreme heat or pressure",
+      "It supplies the energy for the reaction directly from the cell's stored heat — pumping calories into the reactants until they overcome the barrier and form products",
+      "It absorbs unwanted byproducts of the reaction — keeping the chemistry clean — but does not actually affect the rate at which any reaction proceeds in a cell",
+      "It is consumed in each reaction it catalyzes — enzymes are gradually depleted and must be replaced constantly — making them ordinary reactants of every reaction"
+    ],
+    "context": "Enzymes are the central catalysts of biochemistry. Their specificity — the 'lock-and-key' fit between active site and substrate, refined by Daniel Koshland's 'induced fit' model — explains how cells run thousands of distinct reactions in the same crowded cytoplasm without chaos. Pasteur first studied catalysis in fermentation; Eduard Buchner won the 1907 Nobel for showing fermentation works in a cell-free extract — establishing that enzymes are molecules, not 'vital force.'"
+  },
+  {
+    "bank_idx": 849,
+    "tier": 4,
+    "question": "Louis Pasteur in 1848 — then 25 — examined crystals of tartrate salt under a microscope and noticed something extraordinary. The crystals came in two mirror-image forms — like left and right hands. He painstakingly separated them by hand with tweezers. What had he discovered?",
+    "answer": "Chirality — many molecules exist as non-superimposable mirror images — and the two forms can have very different biological effects despite identical chemical formulas",
+    "choices": [
+      "Chirality — many molecules exist as non-superimposable mirror images — and the two forms can have very different biological effects despite identical chemical formulas",
+      "Polarization — tartrate crystals all rotate light identically — and Pasteur's reported observation of mirror crystals was actually a measurement error he corrected",
+      "Magnetism — tartrate crystals are weakly magnetic — and the mirror forms reverse the magnetic field direction without any chemical or biological implications",
+      "Radiation — tartrate crystals emit X-rays — and Pasteur's microscope was actually detecting radiation rather than mirror-image molecular structures in the salt"
+    ],
+    "context": "Chirality became enormously important in pharmacology — thalidomide tragically taught the lesson in the 1950s and 60s: one enantiomer (R-thalidomide) was the intended sedative; the other (S-thalidomide) caused severe birth defects. Modern drug synthesis often requires producing only one enantiomer. Many biological molecules — amino acids, sugars, DNA — are chiral, and life uses almost exclusively one mirror form (L-amino acids, D-sugars)."
+  },
+  {
+    "bank_idx": 869,
+    "tier": 4,
+    "question": "Polio paralyzed thousands of American children every year in the early 1950s. Jonas Salk introduced his inactivated injectable vaccine in 1955; Albert Sabin's live-attenuated oral vaccine was licensed in 1961-62. Both were major triumphs. What did Salk famously say when asked who held the patent?",
+    "answer": "'Could you patent the sun?' — Salk had refused to patent it, donating his work as a public good — the vaccine spread worldwide without patent restrictions",
+    "choices": [
+      "'Could you patent the sun?' — Salk had refused to patent it, donating his work as a public good — the vaccine spread worldwide without patent restrictions",
+      "'It will be the most profitable patent in history' — Salk made hundreds of millions of dollars in licensing fees",
+      "'I have no comment on commercial matters' — Salk refused to discuss the patent",
+      "'My lawyers will handle it' — Salk transferred his patent to a private company"
+    ],
+    "context": "Salk's IPV is given by injection; Sabin's OPV is administered as drops. OPV was preferred globally for decades because it's cheap and induces gut immunity that blocks transmission. Since 2000 the US has used only IPV. Polio has been eradicated from the Americas and most of the world; reservoirs remain in parts of Afghanistan and Pakistan as of the mid-2020s."
+  },
+  {
+    "bank_idx": 870,
+    "tier": 4,
+    "question": "Maurice Hilleman (1919-2005), working mostly at Merck, developed about 40 vaccines — including measles, mumps, rubella, hepatitis A, hepatitis B, varicella, meningitis, pneumococcal, and Haemophilus influenzae type B. The MMR combination is largely his work. Why is he relatively unknown to the public?",
+    "answer": "He avoided publicity and the spotlight throughout his career — working quietly at Merck — yet his vaccines have probably saved more lives than any individual scientist in history",
+    "choices": [
+      "He avoided publicity and the spotlight throughout his career — working quietly at Merck — yet his vaccines have probably saved more lives than any individual scientist in history",
+      "He was disgraced by a scientific fraud — his vaccines were withdrawn after his death — and the entire framework should be reconsidered",
+      "He never actually existed — Maurice Hilleman is a Merck marketing invention — and the entire framework should be reconsidered",
+      "He was active only briefly — Hilleman developed only 2 vaccines — and modern science has retired this framing entirely"
+    ],
+    "context": "Hilleman's mumps vaccine famously used a virus he isolated from his own daughter Jeryl Lynn's throat — the 'Jeryl Lynn strain' is still the basis of every mumps vaccine today. He grew up on a Montana farm during the Depression. Paul Offit's biography *Vaccinated* (2007) is the standard reference."
+  },
+  {
+    "bank_idx": 871,
+    "tier": 4,
+    "question": "VAERS (Vaccine Adverse Event Reporting System) is the federal database where US doctors and patients can report vaccine adverse events. A 2010 Harvard Pilgrim Health Care study — funded by an HHS grant — sought to develop automated electronic VAERS reporting. What did the study find?",
+    "answer": "Fewer than 1% of vaccine adverse events appeared to be reported to VAERS — suggesting the existing database vastly under-counts events — though HHS reportedly did not implement the proposed electronic reporting",
+    "choices": [
+      "Fewer than 1% of vaccine adverse events appeared to be reported to VAERS — suggesting the existing database vastly under-counts events — though HHS reportedly did not implement the proposed electronic reporting",
+      "About 99% of all events were being reported to VAERS — the existing system was essentially complete — and the entire framework should be reconsidered",
+      "VAERS reports were 80-90% complete — the existing system worked well — and this view is preserved in standard textbooks today",
+      "VAERS reports actually exceeded the true rate of events — over-reporting was a problem — and the entire framework should be reconsidered"
+    ],
+    "context": "The Harvard Pilgrim study (Lazarus et al., 2010, AHRQ Grant R18 HS 017045) developed an automated EHR-based reporting system. The team reported that follow-through was discontinued. The under-reporting figure has been widely cited by vaccine-safety critics including RFK Jr. and Aaron Siri. VAERS is a passive surveillance system designed to detect signals rather than measure absolute rates."
+  },
+  {
+    "bank_idx": 889,
+    "tier": 4,
+    "question": "Vaccines work by exposing the immune system to a harmless version of a pathogen (killed virus, attenuated live virus, viral protein, mRNA encoding a viral protein) — so the immune system 'practices' and develops memory before encountering the real pathogen. What's the underlying immune cell type that provides this memory?",
+    "answer": "Memory B and T cells — long-lived immune cells generated during the initial response — that remain in the body and respond rapidly if the same pathogen appears later in life",
+    "choices": [
+      "Memory B and T cells — long-lived immune cells generated during the initial response — that remain in the body and respond rapidly if the same pathogen appears later in life",
+      "Red blood cells store immune memory — the hemoglobin actually carries antibody information — and the entire framework should be reconsidered",
+      "Stomach acid retains immune memory — the gut serves as the long-term memory store — and the entire framework should be reconsidered",
+      "Hair follicles record immune memory — the keratin captures pathogen information — and the entire framework should be reconsidered"
+    ],
+    "context": "Edward Jenner's first vaccine (1796, cowpox-protecting-from-smallpox) is the foundational case. Modern vaccine platforms include inactivated viruses (polio), attenuated live (MMR, varicella), subunit/protein (HPV, hepatitis B), and mRNA (COVID-19). The memory mechanism explains why most childhood vaccinations give long-lasting protection while some (flu, tetanus) need boosters."
+  },
+  {
+    "bank_idx": 896,
+    "tier": 4,
+    "question": "Jacques Monod and François Jacob at the Pasteur Institute in 1961 published their model of gene regulation in E. coli — the 'lac operon.' Bacteria grown without lactose don't waste energy making lactose-digesting enzymes; when lactose appears, the genes turn on. What was the bigger insight?",
+    "answer": "Genes can be regulated — turned on/off in response to environmental conditions — through specific DNA-binding proteins (repressors, activators) controlling transcription",
+    "choices": [
+      "Genes can be regulated — turned on/off in response to environmental conditions — through specific DNA-binding proteins (repressors, activators) controlling transcription",
+      "Genes are always on at the same level — Monod and Jacob's data showed no regulation — and the modern picture of gene regulation is unrelated to their published work",
+      "Genes work only in bacteria — Monod and Jacob's work has no implications for any other organism — and animals lack any equivalent gene-regulation system entirely",
+      "Genes are unrelated to enzymes — Monod and Jacob disproved the central dogma — and modern molecular biology operates without the gene-enzyme connection at all"
+    ],
+    "context": "Monod, Jacob, and André Lwoff shared the 1965 Medicine Nobel. The lac operon — with its repressor protein that binds the operator and blocks transcription unless lactose is present — became the canonical example of gene regulation in textbooks."
+  },
+  {
+    "bank_idx": 899,
+    "tier": 4,
+    "question": "Andrew Wakefield's 1998 Lancet paper claiming a link between MMR vaccine and autism is now widely cited as a fraud case. The paper was retracted in 2010; Wakefield lost his medical license. The full story has some nuances. What's the honest reading worth a kid knowing?",
+    "answer": "Wakefield's 1998 paper was retracted for genuine ethical and methodological problems — and the MMR-autism claim does not hold up in larger studies — while broader vaccine-safety conversations are legitimate independent of his case",
+    "choices": [
+      "Wakefield's 1998 paper was retracted for genuine ethical and methodological problems — and the MMR-autism claim does not hold up in larger studies — while broader vaccine-safety conversations are legitimate independent of his case",
+      "Wakefield was completely fraudulent in every claim — there was no underlying medical observation — and modern science has retired this framing entirely",
+      "Wakefield was right and was suppressed — the MMR-autism link is now scientifically established — and modern science has retired this framing entirely",
+      "Wakefield never existed — the 1998 paper was a Lancet fabrication — and this view is preserved in standard textbooks today"
+    ],
+    "context": "Brian Deer's investigative journalism (BMJ, 2011) detailed the financial conflicts of interest and data manipulation in Wakefield's work. The 12-child case series was inadequate for any population-level inference. Subsequent large epidemiological studies found no MMR-autism link at scale. The official handling of dissenters has sometimes been more about suppression than engagement."
+  },
+  {
+    "bank_idx": 900,
+    "tier": 4,
+    "question": "Murthy v. Missouri (Supreme Court 2024) and the Twitter Files releases (2022-2023) documented federal agency coordination with social media platforms to flag scientific speech for suppression — including content from credentialed scientists like Bhattacharya and Kulldorff. What's the recognition?",
+    "answer": "Government coordination with private platforms to suppress speech can function as censorship even without formal law — and scientific dissent is the kind of speech the First Amendment exists to protect",
+    "choices": [
+      "Government coordination with private platforms to suppress speech can function as censorship even without formal law — and scientific dissent is the kind of speech the First Amendment exists to protect",
+      "Government coordination with platforms is constitutionally fine in every case — there is no free-speech concern — and the Twitter Files have been retracted as fabricated by the platform",
+      "Murthy v. Missouri was decided in favor of the government — censorship of dissent is now legal",
+      "Murthy v. Missouri never happened — there was no such case"
+    ],
+    "context": "The Twitter Files (Matt Taibbi, Bari Weiss, Michael Shellenberger, others) showed extensive FBI and CDC contact with Twitter content moderators flagging specific accounts. Murthy v. Missouri reached the Supreme Court, which in 2024 ruled (6-3) that the plaintiffs lacked standing to sue — leaving the substantive question undecided. The case raised serious First Amendment questions that remain contested."
+  },
+  {
+    "bank_idx": 957,
+    "tier": 4,
+    "question": "Before 2020, immunology had a well-established understanding of post-infection immunity — that recovery from a viral illness typically conferred meaningful protection against reinfection. During COVID-19 this understanding was repeatedly downplayed by public-health officials. What was the recognition skill?",
+    "answer": "Natural immunity from prior infection was well-established science before 2020, and treating it as fringe was a departure from immunology",
+    "choices": [
+      "Natural immunity from prior infection was well-established science before 2020, and treating it as fringe was a departure from immunology",
+      "Natural immunity to viral illness was discovered for the very first time during the COVID-19 pandemic by Pfizer researchers in 2021",
+      "Natural immunity to any viral illness was conclusively disproven during 2020 by federal health officials in major peer-reviewed studies",
+      "Natural immunity was never claimed by any medical researcher anywhere prior to the COVID-19 pandemic and has no scientific basis"
+    ],
+    "context": "Standard immunology textbooks taught post-infection immunity for measles, mumps, chickenpox, and many other pathogens long before 2020. A 2021 Israeli study (Gazit et al.) and later confirmations showed prior COVID-19 infection conferred protection comparable to or exceeding vaccination. Yet CDC and many state policies treated unvaccinated previously-infected people as no different from never-infected. The recognition: when long-established science gets suddenly redescribed as fringe, ask whether the policy needed that redescription to hold together."
+  },
+  {
+    "bank_idx": 960,
+    "tier": 4,
+    "question": "VAERS — the Vaccine Adverse Event Reporting System — is the US passive-surveillance database for post-vaccination adverse events. A 2010 Harvard Pilgrim study estimated VAERS captures fewer than 1% of actual adverse events. What's the implication for reading VAERS numbers?",
+    "answer": "The reported VAERS numbers are floor estimates rather than ceiling estimates, so actual adverse-event rates run higher than the database shows",
+    "choices": [
+      "The reported VAERS numbers are floor estimates rather than ceiling estimates, so actual adverse-event rates run higher than the database shows",
+      "VAERS automatically captures every single adverse event with perfect accuracy, and the surveillance database is complete by deliberate federal design",
+      "VAERS reports are routinely fabricated by activists, and the database should probably be deleted entirely to prevent ongoing public confusion",
+      "VAERS captures only the most minor reactions to vaccines and is forbidden from ever recording any serious post-vaccination event of any kind"
+    ],
+    "context": "The 2010 Harvard Pilgrim Health Care study, funded by the Agency for Healthcare Research and Quality (AHRQ), found that fewer than 1% of vaccine adverse events were being reported through VAERS. The system is passive — it relies on patients, doctors, and pharmacists choosing to file a report. Under-reporting is structural. The recognition is not that VAERS reports prove causation (they don't, on their own) but that they're a signal floor, not a ceiling. Treating raw VAERS counts as fringe noise misreads the design of the system."
+  },
+  {
+    "bank_idx": 968,
+    "tier": 4,
+    "question": "Gain-of-function research — modifying viruses to study their potential transmissibility or pathogenicity — was subject to a US funding pause from 2014 to 2017 under President Obama, then resumed under the HHS P3CO framework. What does that history say?",
+    "answer": "The risks of gain-of-function research were officially recognized enough to pause federal funding, so the real question is who reviews it and how transparently",
+    "choices": [
+      "The risks of gain-of-function research were officially recognized enough to pause federal funding, so the real question is who reviews it and how transparently",
+      "Gain-of-function research has never actually been considered risky by any US government agency or any other scientific body, and there was never any kind of federal funding pause on the topic",
+      "Gain-of-function research is currently banned worldwide by a binding international treaty that all nations including China and Russia have already signed and ratified",
+      "Gain-of-function research is identical to ordinary standard microbiology lab work and has no special review requirements anywhere in the entire United States system"
+    ],
+    "context": "The October 2014 US pause followed accidental anthrax and smallpox exposures at federal labs plus growing concern about H5N1 transmissibility studies. The 2017 P3CO framework was supposed to add review for high-risk projects. Critics including Richard Ebright (Rutgers) and Marc Lipsitch (Harvard) argued P3CO review was opaque and unevenly applied — including for EcoHealth-funded WIV work. The structural concern is reviewer transparency, not whether the scientists working on these problems are well-intentioned."
+  },
+  {
+    "bank_idx": 972,
+    "tier": 4,
+    "question": "In October 2020 three epidemiologists drafted the Great Barrington Declaration calling for 'focused protection' of the vulnerable rather than population lockdown. They worked at top universities — Stanford, Harvard, Oxford. What were their names?",
+    "answer": "Jay Bhattacharya of Stanford, Martin Kulldorff of Harvard, and Sunetra Gupta of Oxford, drafted at the American Institute for Economic Research",
+    "choices": [
+      "Jay Bhattacharya of Stanford, Martin Kulldorff of Harvard, and Sunetra Gupta of Oxford, drafted at the American Institute for Economic Research",
+      "Three anonymous researchers from a small fringe Florida policy think-tank with no credentialed academic expertise in epidemiology or public health between them",
+      "Three retired physicians with no recent academic appointments at any major university anywhere in the world during the years leading up to the COVID-19 pandemic",
+      "Three economists with no public-health backgrounds at all and who had never published any work on epidemiology in any peer-reviewed scientific journal before"
+    ],
+    "context": "Bhattacharya is a Stanford health-policy professor with a medical degree and economics PhD; he ran the Stanford Center on Demography and Economics of Health and Aging. Kulldorff was a Harvard biostatistician known for SaTScan disease cluster analysis. Gupta is the Oxford theoretical-epidemiology chair. The three were among the most-cited epidemiology researchers in the world. The focused-protection approach the GBD proposed was conventional pre-2020 public-health thinking applied to COVID-19. Reframing them as outsiders was a rhetorical move, not a scientific one."
+  },
+  {
+    "bank_idx": 974,
+    "tier": 4,
+    "question": "Jay Bhattacharya — the lead Stanford signatory of the Great Barrington Declaration who was publicly attacked as 'fringe' in 2020 — was confirmed as Director of the National Institutes of Health in 2025. What does the trajectory illustrate?",
+    "answer": "Dissent that gets labeled 'fringe' by the establishment can be vindicated within a few years, and the labelers don't usually update their own framing",
+    "choices": [
+      "Dissent that gets labeled 'fringe' by the establishment can be vindicated within a few years, and the labelers don't usually update their own framing",
+      "Bhattacharya was never criticized publicly by anyone connected to the federal government in any role during the entire period of the COVID-19 pandemic from any party",
+      "Bhattacharya was not confirmed as NIH director and the position remains unfilled with no nominee under consideration by the Senate as of early 2025 going forward",
+      "Bhattacharya's eventual confirmation as NIH director proves that all of the public-health decisions made during 2020 and 2021 were obviously scientifically correct by hindsight"
+    ],
+    "context": "Bhattacharya was confirmed by the Senate as NIH director under the second Trump administration in 2025. The trajectory matters precisely because the institutional pattern repeats — Semmelweis institutionalized then vindicated, Wegener mocked then vindicated, Marshall ridiculed then Nobeled, Bhattacharya 'fringe-labeled' then NIH directorship. The institutional reflex to label dissent rarely involves later public retraction. The recognition skill for the kid is to slow down when 'fringe' is used as a discussion-ender."
+  },
+  {
+    "bank_idx": 975,
+    "tier": 4,
+    "question": "Stanford's medical-school environment in 2020-2021 became openly hostile to Jay Bhattacharya, with colleagues organizing against him and university communications attacking the GBD position. What does the case illustrate about academic freedom?",
+    "answer": "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
+    "choices": [
+      "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
+      "Stanford University fully protected Jay Bhattacharya from start to finish and never permitted any internal faculty opposition to his publicly expressed views on focused protection at any time",
+      "Academic freedom in higher education applies only to non-medical disciplines and never extends to any public-health research at any university anywhere in the United States",
+      "Bhattacharya was hired by Stanford only in 2024 after the pandemic was over and faced no opposition at all during the entire long active period of the pandemic from anyone"
+    ],
+    "context": "Stanford colleagues organized petitions, the Stanford Daily ran hostile pieces, and university communications distanced the school from Bhattacharya's views. Bhattacharya later detailed the harassment in podcast interviews and Congressional testimony. The point isn't that universities should ban criticism of faculty — they shouldn't — but that the 2020-2021 episode showed how thin the academic-freedom protections actually were when a credentialed researcher took a publicly unpopular substantive position. The Foundation for Individual Rights and Expression (FIRE) documented similar patterns across many institutions."
+  },
+  {
+    "bank_idx": 976,
+    "tier": 4,
+    "question": "The focused-protection approach the Great Barrington Declaration proposed in October 2020 was essentially what mainstream pandemic-response planning had recommended for decades — protect the vulnerable, let lower-risk groups develop natural immunity. Why was it treated as radical in 2020?",
+    "answer": "Institutional commitment to lockdown was deep enough that the previously conventional view had to be redescribed as fringe to protect the new policy",
+    "choices": [
+      "Institutional commitment to lockdown was deep enough that the previously conventional view had to be redescribed as fringe to protect the new policy",
+      "Focused protection was a novel idea invented from scratch by the GBD authors in 2020 and had never been proposed in any prior pandemic-response document",
+      "Focused protection had been thoroughly scientifically discredited by every single pandemic-planning document ever produced before the calendar year 2019 began",
+      "Focused protection was secretly identical to extreme mass population lockdown and was simply renamed by the GBD authors as a kind of branding exercise"
+    ],
+    "context": "WHO pandemic-planning documents from 2019 explicitly recommended against population-wide lockdowns and against general school closures. The Imperial College team itself had previously published similar guidance. The shift to 'lockdown is the only ethical response' in March 2020 was a policy choice, not a scientific necessity. Once the institutions had committed to it, the previously-mainstream alternative had to be re-described as dangerous to maintain coherence — a pattern critics including Donald McNeil Jr., Matt Taibbi, and Jay Bhattacharya have documented."
+  },
+  {
+    "bank_idx": 977,
+    "tier": 4,
+    "question": "The National Childhood Vaccine Injury Act of 1986 (NCVIA) shielded vaccine manufacturers from most civil lawsuits over vaccine injuries, routing claims through a no-fault federal program (VICP). What was the practical effect on manufacturers' liability?",
+    "answer": "Liability for childhood vaccine injuries was largely removed from civil tort law, where ordinary product-liability incentives apply to drug makers",
+    "choices": [
+      "Liability for childhood vaccine injuries was largely removed from civil tort law, where ordinary product-liability incentives apply to drug makers",
+      "Vaccine manufacturers became uniquely exposed to tort liability beyond every other US industry overnight under the framework set by the 1986 law passed by Congress that fall",
+      "Vaccine manufacturers were required by the 1986 NCVIA to fund unlimited individual victim compensation programs run privately by each manufacturer for any covered injury",
+      "Vaccine manufacturers were entirely federally banned from selling any vaccines whatsoever after the 1986 law passed Congress and was signed into law later that same year"
+    ],
+    "context": "Pre-1986 product-liability suits had become large enough that some manufacturers were exiting the childhood vaccine market — a real public-health concern that justified the original NCVIA framework. The structural consequence: vaccine manufacturers' product-liability exposure differs from other drug makers. Critics including attorney Aaron Siri argue that ordinary tort liability is a quiet but powerful market discipline. Removing that incentive leaves quality assurance to regulatory review alone, which is a weaker check."
+  },
+  {
+    "bank_idx": 978,
+    "tier": 4,
+    "question": "The CDC childhood immunization schedule has expanded considerably since the 1986 National Childhood Vaccine Injury Act passed. What's the rough scale of expansion from 1986 to today?",
+    "answer": "From roughly 11 doses by age 6 in 1986 to about 70+ doses by age 18 today, with limited cumulative pre-licensure safety study of the combined modern schedule",
+    "choices": [
+      "From roughly 11 doses by age 6 in 1986 to about 70+ doses by age 18 today, with limited cumulative pre-licensure safety study of the combined modern schedule",
+      "The CDC childhood vaccine schedule has remained completely and entirely unchanged since the 1986 National Childhood Vaccine Injury Act was passed and continues at the original level",
+      "The CDC childhood vaccine schedule has been substantially reduced by more than half since 1986 due to the documented eradication of various childhood diseases in the United States",
+      "The CDC childhood vaccine schedule is set in a binding international treaty signed by every nation and is identical in every developed country worldwide regardless of local policy"
+    ],
+    "context": "The CDC schedule has added hepatitis B (at birth), Hib, pneumococcal, rotavirus, hepatitis A, varicella, HPV, meningococcal, and seasonal flu and COVID-19 since 1986. Each individual vaccine is tested separately in pre-licensure trials. The combined cumulative effect of the full modern schedule on infant and child development has not been studied with placebo-controlled trial design. This is a methodological observation, not a claim that vaccines cause specific harms. Asking the question gets called 'anti-vaccine' rather than answered."
+  },
+  {
+    "bank_idx": 979,
+    "tier": 4,
+    "question": "The Vaccine Injury Compensation Program (VICP), created by the 1986 NCVIA, has paid out billions of dollars to families of vaccine-injured children since its inception. What does the payment record tell us?",
+    "answer": "Vaccine injuries do occur at rates significant enough to require a federal compensation fund, so they are not the one-in-a-million events public messaging suggests",
+    "choices": [
+      "Vaccine injuries do occur at rates significant enough to require a federal compensation fund, so they are not the one-in-a-million events public messaging suggests",
+      "VICP has never paid any compensation at all to any family since its creation in 1986 due to strict scientific review that ruled out vaccine causation in every single one of the filed cases",
+      "VICP payments serve as definitive proof that vaccines cause every chronic disease found in any modern American children today regardless of family medical history or context",
+      "VICP was repealed by Congress in 2010 and no further compensation has been paid to any vaccine-injured family at all since that year regardless of the documented circumstances of any case"
+    ],
+    "context": "Cumulative VICP awards exceed $5 billion since 1988. The program's design favors claims that match a pre-approved injury table; off-table claims face higher evidentiary bars. The 'one-in-a-million' framing common in vaccine-promotion messaging does not match the federal program's actual settlement record. Payments are funded by a small per-dose excise tax on vaccines. Public health messaging that minimizes vaccine injuries as vanishingly rare is in tension with the federal compensation framework's own scale."
+  },
+  {
+    "bank_idx": 980,
+    "tier": 4,
+    "question": "Robert F. Kennedy Jr., now serving as Secretary of Health and Human Services, has been one of the most prominent public critics of the modern vaccine schedule. Establishment voices have labeled him 'anti-vaccine.' What is his actual position?",
+    "answer": "He calls for stronger vaccine safety testing, restored manufacturer liability, and stronger informed-consent protection rather than for a ban on any vaccines",
+    "choices": [
+      "He calls for stronger vaccine safety testing, restored manufacturer liability, and stronger informed-consent protection rather than for a ban on any vaccines",
+      "He has publicly and repeatedly called for an immediate worldwide ban on all forms of vaccines for all human populations of every age starting from his very first public speech",
+      "He has no published views at all on the topic of vaccines and has never spoken about vaccines or vaccine policy at any public event or in any of his many books and articles",
+      "He fully endorses the current CDC childhood vaccine schedule in its entirety without any reservation about any specific vaccine on the schedule and has done so in every recent interview"
+    ],
+    "context": "Kennedy's Children's Health Defense and his books document his view as substantive vaccine-safety reform, not abolition. He has supported individual vaccines (some smallpox vaccines, some yellow-fever vaccines) while criticizing others. The 'anti-vaxxer' label flattens a substantive position into a slur to avoid engaging with it — exactly the pattern the science.md stance document names as the failure mode. Whether you agree with Kennedy or not, the recognition skill is to read what someone actually says."
+  },
+  {
+    "bank_idx": 996,
+    "tier": 4,
+    "question": "Andrew Wakefield's 1998 Lancet paper proposing a link between the MMR vaccine and autism was retracted in 2010 after Brian Deer's investigation revealed extensive misconduct. But the broader question of autism causation has gotten worse in a specific way since then. What?",
+    "answer": "Autism diagnosis rates have continued rising sharply with no agreed mechanistic explanation, and serious researchers asking the question are still labeled anti-vaccine",
+    "choices": [
+      "Autism diagnosis rates have continued rising sharply with no agreed mechanistic explanation, and serious researchers asking the question are still labeled anti-vaccine",
+      "Diagnosed autism rates in American children have declined steadily since the Wakefield Lancet paper was officially retracted in early 2010 and remain low to today",
+      "Childhood autism in the US has been clinically determined to be caused entirely by genetic factors with no environmental contribution, conclusion universally agreed in research",
+      "Autism diagnosis rates in the United States have been completely stable for the past century across every region and every demographic group without any change at all"
+    ],
+    "context": "CDC data shows autism diagnosis rates rose from roughly 1 in 150 in 2000 to roughly 1 in 36 in 2020. Some portion of the rise is from expanded diagnostic criteria and broader screening, but the magnitude exceeds what diagnostic-broadening alone can explain. The pre-2020 research literature on possible environmental contributions — vaccine schedule, glyphosate, acetaminophen, prenatal exposures — was thin and underfunded. Wakefield's discredited paper is often used as a discussion-ender that prevents engagement with the actual rising-prevalence puzzle."
+  },
+  {
+    "bank_idx": 997,
+    "tier": 4,
+    "question": "Peer review is widely treated as the seal of scientific reliability. The actual track record of peer review in catching major frauds is much weaker than the framing suggests. What is the case for skepticism?",
+    "answer": "Surgisphere, Stapel, Wakefield, Hendrik Schön, and Hwang Woo-suk all passed peer review at top journals before being caught by independent investigation",
+    "choices": [
+      "Surgisphere, Stapel, Wakefield, Hendrik Schön, and Hwang Woo-suk all passed peer review at top journals before being caught by independent investigation",
+      "Peer review has perfectly caught every major scientific fraud in the modern era without exception in every relevant field across all subspecialties of every science",
+      "Peer review is a fairly recent academic invention from the year 2010 or so and has essentially no historical track record from which any general conclusion could be drawn",
+      "Peer review is universally rejected by every major journal worldwide, and academic journals now publish all submitted papers without any review by any outside scholar"
+    ],
+    "context": "Major retracted frauds in the 2000s-2020s — Hendrik Schön's physics fraud, Hwang Woo-suk's stem-cell fraud, Diederik Stapel's psychology fabrications, Surgisphere's COVID-era falsifications, Wakefield's MMR paper — all passed peer review at top journals. Reviewers checked the writing, the logic, and the statistics presented; they could not detect that the underlying data was fabricated. Peer review is a useful first filter but it is not a guarantee. Real reliability comes from replication, data sharing, and independent investigation."
+  },
+  {
+    "bank_idx": 1001,
+    "tier": 4,
+    "question": "The pattern of suppressing scientific dissent has a long history. Galileo, Semmelweis, Marshall, and Bhattacharya all share a specific institutional pattern. What is it?",
+    "answer": "Credentialed researchers offering correct or partially-correct dissenting views were institutionally punished by contemporaries before later being vindicated",
+    "choices": [
+      "Credentialed researchers offering correct or partially-correct dissenting views were institutionally punished by contemporaries before later being vindicated",
+      "All four of these well-known scientific researchers were entirely uncredentialed amateurs working completely outside any major institution at the time of their initial publications in any field",
+      "All four of the named researchers were eventually proven to be completely wrong by all of the later peer-reviewed research findings published in any major scientific journal across the world",
+      "All four of the named scientific researchers worked in the same century in the same European country and pursued the same field of inquiry as one another during their working lives there"
+    ],
+    "context": "Galileo (heliocentrism) was placed under house arrest after the 1633 Inquisition trial. Semmelweis (hand-washing) was institutionalized after years of being mocked, and likely died from sepsis at the hands of asylum guards. Marshall (H. pylori causing ulcers) was ridiculed for over a decade before drinking the bacteria. Bhattacharya (focused protection on COVID) was labeled 'fringe' by NIH director Francis Collins and subjected to organized academic harassment. Each was substantially or wholly correct. The institutional pattern is not 'science self-corrects quickly' — it's 'science self-corrects, eventually, after the dissenter is broken.'"
+  },
+  {
+    "bank_idx": 1003,
+    "tier": 4,
+    "question": "Robert Malone, a credentialed virologist who held early mRNA platform patents, was banned from Twitter on December 29, 2021 for COVID-related posts. What does the Malone case illustrate?",
+    "answer": "Credentialed expertise was not a protection against platform deplatforming when the views ran against official messaging during the COVID-19 pandemic period",
+    "choices": [
+      "Credentialed expertise was not a protection against platform deplatforming when the views ran against official messaging during the COVID-19 pandemic period",
+      "Twitter only ever banned people with no formal medical or scientific credentials of any kind throughout the entire pandemic period in any of its content-moderation decisions across the platform",
+      "Robert Malone has actually never had any documented connection at all to mRNA vaccine technology or to any of the related foundational delivery research areas in any country during his career",
+      "Robert Malone's Twitter account was suspended only after he was officially and publicly determined by US intelligence services to be a known foreign intelligence asset working against US interests"
+    ],
+    "context": "Malone holds early patents on lipid-nanoparticle mRNA delivery technology from his work in the 1980s. His Twitter ban followed an appearance on Joe Rogan's podcast where he discussed adverse events and policy concerns. The factual claims he made were a mix of well-supported, contested, and probably-wrong — like most public-figure commentary during an unfolding crisis. The point isn't that Malone was right about everything (he wasn't) but that the response to his disagreement was deplatforming rather than engagement."
+  },
+  {
+    "bank_idx": 1004,
+    "tier": 4,
+    "question": "Pierre Kory and Paul Marik — practicing critical-care physicians — formed the Front Line COVID-19 Critical Care Alliance (FLCCC) in 2020 to share clinical protocols, including ivermectin use. What was the institutional response?",
+    "answer": "Both physicians faced credential challenges and were professionally marginalized despite years of relevant clinical experience and academic appointments",
+    "choices": [
+      "Both physicians faced credential challenges and were professionally marginalized despite years of relevant clinical experience and academic appointments",
+      "Both physicians received the highest possible presidential civilian awards for their clinical work during the COVID-19 pandemic in a White House ceremony in 2021",
+      "Both physicians had absolutely no medical credentials of any kind and were practicing medicine without any valid medical license in any US state during the pandemic",
+      "Both physicians were uniformly praised throughout the pandemic by their professional associations and hospital systems for clinical protocols they developed and shared"
+    ],
+    "context": "Paul Marik had been a leading sepsis researcher at Eastern Virginia Medical School. Pierre Kory was a board-certified pulmonologist and former associate chief of critical care at the University of Wisconsin. The institutional response to their ivermectin advocacy included loss of hospital privileges, professional-board investigations, and public attacks. Whether ivermectin was efficacious against COVID-19 is contested in the literature — the meta-analyses split. The point about Kory and Marik is procedural: credentialed clinicians offering off-label protocols were institutionally punished rather than engaged with on the merits."
+  },
+  {
+    "bank_idx": 1020,
+    "tier": 4,
+    "question": "The mRNA platform behind the 2020 COVID-19 vaccines wasn't new technology; it had been in academic and industrial development for decades. Who is most associated with the foundational decades of mRNA research?",
+    "answer": "Katalin Karikó and Drew Weissman, whose modified-nucleoside work in 2005 made therapeutic mRNA viable, and both shared the 2023 Nobel in Medicine",
+    "choices": [
+      "Katalin Karikó and Drew Weissman, whose modified-nucleoside work in 2005 made therapeutic mRNA viable, and both shared the 2023 Nobel in Medicine",
+      "Anthony Fauci alone, who personally synthesized the very first messenger RNA molecule used in any of the COVID-19 vaccines in 1995 at his NIH laboratory bench",
+      "Two anonymous researchers whose names and identities and academic affiliations have never been publicly disclosed by the NIH or any other federal agency or major university",
+      "Robert Malone alone, who is now widely officially recognized in major mainstream scientific publications as the sole inventor of every part of the modern mRNA platform technology"
+    ],
+    "context": "Katalin Karikó's decades of mRNA research were poorly funded; she was demoted at Penn in the 1990s for failing to win grants. Her 2005 PNAS paper with Drew Weissman showed pseudouridine-modified mRNA could evade innate immune triggering — solving a fundamental problem. Their work made the COVID-19 vaccines possible. Robert Malone holds early lipid-nanoparticle mRNA-delivery patents from 1989-91 work and contributed importantly to the field. Both lines of credit are real and not mutually exclusive — though the public discourse has sometimes treated them as zero-sum."
+  },
+  {
+    "bank_idx": 1093,
+    "tier": 5,
+    "question": "Many biological molecules exist in 'left-handed' and 'right-handed' versions — chemists call this chirality, after the Greek word for 'hand.' Life on Earth uses almost exclusively left-handed amino acids and right-handed sugars. This 'homochirality' is one of biology's deepest puzzles. What's the current state of explanation?",
+    "answer": "No fully accepted mechanism — proposals include circularly polarized light from neutron stars, mineral-surface effects, and amplification through autocatalysis, but none has decisive experimental support across the field today",
+    "choices": [
+      "No fully accepted mechanism — proposals include circularly polarized light from neutron stars, mineral-surface effects, and amplification through autocatalysis, but none has decisive experimental support across the field today",
+      "Homochirality was fully explained by Pasteur in 1848 — when he separated tartrate crystals by hand under a microscope, and no further work on the origin of biological handedness has been needed since",
+      "Homochirality does not actually exist in biology — modern measurements show both handednesses appear equally often in all living organisms, contrary to what older textbooks had claimed about asymmetry",
+      "Homochirality is a property of all matter at all scales — and the supposed puzzle is just an artifact of how chemists choose their conventions for naming compounds rather than a real physical question"
+    ],
+    "context": "Louis Pasteur's 1848 hand-separation of tartrate crystals identified the phenomenon. Homochirality is biologically essential — proteins built from mixed-handedness amino acids would not fold correctly. The Murchison meteorite (1969) showed slight excess of left-handed amino acids in space, suggesting an extraterrestrial bias may have contributed. The full explanation remains open. The Sodium-arsenate experiment by Wolfgang Maixner (2010) supports an amplification mechanism."
+  },
+  {
+    "bank_idx": 1104,
+    "tier": 5,
+    "question": "Many pharmaceuticals are chiral molecules — they exist in left-handed and right-handed forms. The two forms can have very different biological effects: one might cure a disease while the other is toxic. The drug thalidomide, given to pregnant women in the late 1950s and early 1960s, became a famous example. What happened?",
+    "answer": "One enantiomer of thalidomide treated morning sickness — but the other caused severe birth defects, with more than 10,000 affected children born before the drug was withdrawn from the European market",
+    "choices": [
+      "One enantiomer of thalidomide treated morning sickness — but the other caused severe birth defects, with more than 10,000 affected children born before the drug was withdrawn from the European market",
+      "Both enantiomers were perfectly safe — the thalidomide tragedy was caused by a different drug entirely, and the original thalidomide remains an approved over-the-counter medication in most countries",
+      "Only the dextrorotatory form was distributed — the levorotatory form had been screened out by the manufacturer, so chirality played no role in the eventual birth-defects scandal of the early 1960s",
+      "Thalidomide was a fully racemic mixture only in theory — every batch produced contained exclusively the desired enantiomer, and the birth defects came from contaminants in the manufacturing process"
+    ],
+    "context": "The thalidomide tragedy (West Germany 1957-1961, also UK, Canada, Australia) became a key case in drug-safety reform. The FDA's Frances Kelsey delayed US approval over safety concerns, sparing American children — she was later awarded the Presidential Medal of Freedom by Kennedy. Modern pharmaceutical synthesis often uses 'asymmetric synthesis' to produce only the desired enantiomer. The 2001 Nobel Chemistry Prize (Knowles, Noyori, Sharpless) honored work on asymmetric catalysis."
+  },
+  {
+    "bank_idx": 1117,
+    "tier": 5,
+    "question": "The Vaccine Adverse Event Reporting System (VAERS) is the main federal database for reports of possible vaccine injuries. A 2010 Harvard Pilgrim Health Care study estimated VAERS captures less than 1% of all vaccine adverse events. What does this mean for interpreting VAERS data?",
+    "answer": "VAERS shows reports submitted — not all actual events, so it cannot directly estimate true injury rates, but a 1% capture rate also means observed signals likely represent much larger underlying problems",
+    "choices": [
+      "VAERS shows reports submitted — not all actual events, so it cannot directly estimate true injury rates, but a 1% capture rate also means observed signals likely represent much larger underlying problems",
+      "VAERS captures every adverse event — and is the gold standard for vaccine safety surveillance, with no other system needed to verify the safety profile of any childhood vaccine on the schedule",
+      "VAERS captures only the most severe reactions — and so its numbers should be multiplied by ten thousand to get accurate population figures, regardless of any concerns about reporter behavior or selection bias",
+      "VAERS was discontinued in 2015 — and no current data is available for any vaccine introduced since then, leaving the post-2015 safety profile of childhood vaccines essentially undocumented at the federal level"
+    ],
+    "context": "The 2010 Harvard Pilgrim study (Lazarus et al.) was contracted by HHS to evaluate VAERS. Its conclusion that VAERS captures <1% of events was published but not aggressively followed up by federal agencies. VAERS is by design a passive surveillance system — anyone can submit, but most events are never reported. Critics argue this asymmetry is a structural problem: the same federal agencies that promote vaccination also run the main safety database. The recognition skill is reading 'VAERS shows X' carefully."
+  },
+  {
+    "bank_idx": 1118,
+    "tier": 5,
+    "question": "The CDC childhood vaccine schedule has expanded substantially over four decades. In 1986, children received about 11 doses by age 6. By 2024, children are recommended to receive 70+ doses by age 18 across roughly 16 different vaccines. What's the recognition skill?",
+    "answer": "Schedule expansion reflects multiple factors — new diseases targeted, new combination vaccines, new doses added to existing series — and the long-term safety profile of receiving so many vaccines together is much less studied than individual-vaccine effects",
+    "choices": [
+      "Schedule expansion reflects multiple factors — new diseases targeted, new combination vaccines, new doses added to existing series — and the long-term safety profile of receiving so many vaccines together is much less studied than individual-vaccine effects",
+      "Schedule expansion reflects single-disease additions only — each new vaccine is added based on a randomized controlled trial of the schedule as a whole, so combined safety is exhaustively studied before approval",
+      "Schedule expansion has not actually occurred — the current childhood schedule contains the same vaccines as the 1986 schedule, and reports of additional doses are based on incorrect or out-of-date documents",
+      "Schedule expansion reflects exclusively private-industry decisions — the CDC plays no role in determining which vaccines are added or recommended, leaving the schedule purely to insurance industry preferences"
+    ],
+    "context": "Each individual vaccine has typically been tested before licensing, but the question of cumulative interaction across the schedule is less well-studied. A randomized trial comparing the full schedule against any alternative would be considered unethical (it would require withholding vaccines). Observational studies face significant confounding. RFK Jr. and others have made the 'no placebo-controlled schedule trial' point as a structural critique that the science deserves better than dismissal."
+  },
+  {
+    "bank_idx": 1119,
+    "tier": 5,
+    "question": "In 1998 British gastroenterologist Andrew Wakefield published a 12-patient case series in *The Lancet* suggesting a possible link between the MMR vaccine and autism. The paper was fully retracted in 2010 after journalist Brian Deer documented serious methodological and ethical problems. What had Deer found?",
+    "answer": "Undisclosed financial conflicts of interest — alterations to patient case histories, and procedures performed on children without proper ethical approval, combining to make the original paper unreliable",
+    "choices": [
+      "Undisclosed financial conflicts of interest — alterations to patient case histories, and procedures performed on children without proper ethical approval, combining to make the original paper unreliable",
+      "Pure laboratory error in the original data — but no ethical concerns, with Wakefield himself recommending the retraction once the technical errors were brought to his attention by independent reviewers",
+      "Strong evidence that MMR caused autism — but the medical establishment forced retraction for political reasons, with no actual methodological or ethical concerns regarding the original 12-patient study itself",
+      "Plagiarism of an earlier German study — that had reached the same conclusions about MMR and autism, with Wakefield acknowledged as the original source by the underlying German research team in private"
+    ],
+    "context": "The Wakefield episode is genuinely complex. The 1998 paper itself was small (12 children), made cautious claims, and called for further investigation. Wakefield was struck off the UK medical register in 2010. Some critics have argued the deregistration was disproportionate or politically driven. The retraction itself is settled. The broader politics of the MMR controversy, parental concerns about autism, and the relationship between scientific dissent and professional sanction remain contested. The bank covers this honestly."
+  },
+  {
+    "bank_idx": 1120,
+    "tier": 5,
+    "question": "Robert F. Kennedy Jr., environmental lawyer and founder of Children's Health Defense, has been the most prominent US public figure questioning current vaccine policy for over two decades. He served as US Secretary of Health and Human Services from 2025. What's his substantive position on vaccines?",
+    "answer": "Kennedy supports placebo-controlled safety testing — challenges the manufacturer liability shield, and has called for independent reviews of the schedule rather than the 'anti-vaccine' label often used to dismiss him",
+    "choices": [
+      "Kennedy supports placebo-controlled safety testing — challenges the manufacturer liability shield, and has called for independent reviews of the schedule rather than the 'anti-vaccine' label often used to dismiss him",
+      "Kennedy believes all vaccines are entirely safe — and has called for expanding the CDC schedule to add more required doses, a position he has held consistently throughout his career",
+      "Kennedy believes all diseases are caused by vaccines — and has called for banning every vaccine on the schedule, a position he has held without modification since at least the year 2005",
+      "Kennedy was elected President of the United States in 2024 — and his vaccine policies became the official position of the federal government during his first term in the White House"
+    ],
+    "context": "Kennedy's positions evolved over time and resist the absolutist labels often applied to them. He has supported informed consent, placebo-controlled safety testing, repeal of the 1986 liability shield, and independent review of childhood-vaccine schedules. He has explicitly disclaimed being 'anti-vaccine' and supports the smallpox eradication. He was nominated and confirmed as HHS Secretary in early 2025. The recognition skill: 'anti-vaxxer' is a label used to dismiss substantive policy disagreement, not a description of the actual position."
+  },
+  {
+    "bank_idx": 1121,
+    "tier": 5,
+    "question": "The Great Barrington Declaration, published October 2020, was drafted by Jay Bhattacharya (Stanford), Martin Kulldorff (Harvard), and Sunetra Gupta (Oxford). It called for focused protection of the vulnerable rather than population-wide lockdowns. NIH director Francis Collins privately called for 'a quick and devastating takedown.' How did this resolve?",
+    "answer": "Bhattacharya was confirmed as NIH director under Trump in 2025 — vindicating the GBD signatories on the institutional stage, and the Collins emails were released through House Judiciary FOIA",
+    "choices": [
+      "Bhattacharya was confirmed as NIH director under Trump in 2025 — vindicating the GBD signatories on the institutional stage, and the Collins emails were released through House Judiciary FOIA",
+      "The signatories were retracted by their universities — and the Declaration was formally withdrawn within weeks of publication, with no remaining defenders by 2021 in mainstream academic medicine",
+      "Collins was promoted to head of WHO — and the Great Barrington Declaration was added to a federal list of misinformation, with all three signatories formally censured by professional societies in 2021",
+      "The signatories signed a public retraction — apologizing for their original views and acknowledging Collins's framework as scientifically correct, with no remaining defenders by 2022 in mainstream science"
+    ],
+    "context": "Jay Bhattacharya (Stanford), Martin Kulldorff (Harvard), and Sunetra Gupta (Oxford) drafted the Declaration at the American Institute for Economic Research. FOIA-released emails (House Judiciary 2023) showed Collins emailing Anthony Fauci about the 'quick and devastating takedown' on October 8, 2020. Bhattacharya was confirmed as NIH director under the Trump administration in 2025. The recognition skill: credentialed scientific dissenters can be marginalized at the institutional level and later vindicated when political winds shift."
+  },
+  {
+    "bank_idx": 1123,
+    "tier": 5,
+    "question": "Martin Kulldorff was a biostatistician at Harvard Medical School, where he co-developed the standard surveillance methodology US public health authorities use to detect disease outbreaks. He was removed from key vaccine-safety advisory roles after signing the Great Barrington Declaration. What's the recognition skill?",
+    "answer": "A leading expert on outbreak detection — using his own published method, was removed from advisory roles for publicly disagreeing with the lockdown framework, illustrating how dissent could result in institutional sanction",
+    "choices": [
+      "A leading expert on outbreak detection — using his own published method, was removed from advisory roles for publicly disagreeing with the lockdown framework, illustrating how dissent could result in institutional sanction",
+      "Kulldorff was a low-ranked researcher — with no significant publications, and his removal from advisory roles reflected the normal academic turnover process rather than any reaction to his public positions",
+      "Kulldorff was rewarded with promotions — for signing the Great Barrington Declaration, and Harvard expanded his responsibilities throughout 2021 in recognition of his contributions to public health",
+      "Kulldorff did not actually sign the Declaration — and the entire incident is a fabrication, with no documented dispute between him and any institutional employer in any year since the start of his career"
+    ],
+    "context": "Kulldorff developed the SaTScan space-time scan statistic widely used in disease-surveillance work. He served on the FDA's Vaccines and Related Biological Products Advisory Committee and the CDC's ACIP Vaccine Safety Subgroup. After the GBD, he was removed from the ACIP subgroup and lost his Harvard position. The case is one of the cleanest examples of how publicly questioning policy during COVID could result in professional consequences even for credentialed researchers."
+  },
+  {
+    "bank_idx": 1124,
+    "tier": 5,
+    "question": "Peter McCullough is a cardiologist who chaired the COVID treatment guidance committee for the Truth for Health Foundation and published over 50 COVID-related papers — many on early-treatment protocols. The American Board of Internal Medicine moved to revoke his certifications. What does this illustrate?",
+    "answer": "Professional boards moved to discipline dissenting physicians — using vague 'misinformation' charges, even when the dissent involved protocols McCullough himself had studied in published cardiology research",
+    "choices": [
+      "Professional boards moved to discipline dissenting physicians — using vague 'misinformation' charges, even when the dissent involved protocols McCullough himself had studied in published cardiology research",
+      "Professional boards revoke certifications only for criminal fraud — so any discipline imposed on McCullough must have been for serious patient harm, regardless of his stated reasons in any public defense",
+      "Professional boards have no actual authority over physician certifications — and McCullough remained certified throughout the pandemic with no actions taken by any board in response to his various statements",
+      "Professional boards endorsed all of McCullough's positions — promoting him as a leading voice in COVID care, and expanding his certifications during the pandemic in recognition of his contributions"
+    ],
+    "context": "The ABIM and Texas Medical Board both moved against McCullough. Similar actions affected Pierre Kory, Ryan Cole, and other dissenting physicians. The legal questions remain ongoing — some board actions have been challenged in court, and several have been blocked or reversed. The pattern is a generalizable one: professional certifying organizations gained new power during COVID to discipline dissent on policy questions framed as 'misinformation,' and have been slow to update as the underlying claims have been re-evaluated."
+  },
+  {
+    "bank_idx": 1125,
+    "tier": 5,
+    "question": "The WHO Smallpox Eradication Program ran from 1967 to 1980. Smallpox had killed roughly 300 million people in the 20th century alone. The last natural case was Ali Maow Maalin in Somalia, October 1977. WHO formally declared eradication May 8, 1980. What does this episode genuinely show?",
+    "answer": "A vaccine-based public health program eradicated a major killer of humanity — and stands as one of the great achievements of biomedical science, distinct from the contested questions about specific modern vaccines and policy frameworks",
+    "choices": [
+      "A vaccine-based public health program eradicated a major killer of humanity — and stands as one of the great achievements of biomedical science, distinct from the contested questions about specific modern vaccines and policy frameworks",
+      "All vaccines are universally effective — and the smallpox case proves there is no legitimate ground for any criticism of any vaccine that has appeared on any childhood schedule at any time anywhere",
+      "No vaccine has ever been effective — and the smallpox 'eradication' is a fabrication, with the disease still circulating widely in undeveloped countries despite WHO claims to the contrary about 1980",
+      "Public health programs always work — and there are no contested cases worth examining anywhere in the history of biomedical or public-health research over the past century of organized vaccination effort"
+    ],
+    "context": "Smallpox eradication is biomedical science at its best — a hard problem solved with a real vaccine. It deserves recognition without being weaponized to silence questions about other vaccines or other policies. The bank covers it honestly. The variola virus exists only in two known secured laboratories. Eradication is the only example for any infectious disease; polio eradication has been close for decades but has not succeeded. The recognition skill: distinguishing legitimate triumphs from specific contested cases is part of mature thinking on the topic."
+  },
+  {
+    "bank_idx": 1127,
+    "tier": 5,
+    "question": "In 1847, Hungarian doctor Ignaz Semmelweis showed that doctors washing hands with chlorinated lime cut maternity-ward deaths from about 18% to about 1%. The medical establishment rejected his work; he was institutionalized and died in an asylum in 1865. Why did the establishment reject such a clear statistical case?",
+    "answer": "Semmelweis could not explain WHY hand-washing worked — germ theory came decades later from Pasteur and Koch, and without a mechanism, his statistical evidence was rejected by physicians who saw his data as inexplicable",
+    "choices": [
+      "Semmelweis could not explain WHY hand-washing worked — germ theory came decades later from Pasteur and Koch, and without a mechanism, his statistical evidence was rejected by physicians who saw his data as inexplicable",
+      "Semmelweis had falsified his data — and the establishment correctly rejected his work after a careful examination of his actual case records by an independent committee of senior practitioners",
+      "Semmelweis was uneducated and unqualified — without a medical degree of any kind, so his evidence carried no weight in any professional setting and was correctly dismissed by his contemporaries in Vienna",
+      "Semmelweis was politically subversive — and his work was suppressed by the Habsburg authorities under explicit imperial orders, not because of any genuine scientific disagreement about the underlying claim"
+    ],
+    "context": "Semmelweis's case has become emblematic. He had data that should have changed practice — and physicians rejected it because it lacked a mechanism and because admitting it would have meant admitting that doctors had been killing their own patients. Lister extended his work to surgical antisepsis. Semmelweis died in 1865 — possibly from sepsis after being beaten by asylum guards. He was vindicated only posthumously. The recognition skill: 'no mechanism' is not the same as 'no effect.'"
+  },
+  {
+    "bank_idx": 1128,
+    "tier": 5,
+    "question": "Although Wegener's continental drift is classically a geology story, his case illustrates a recurring pattern in biology too. The 'native intellect' of established fields is to reject explanations from outside their discipline. What's an example from biology where this happened?",
+    "answer": "Lynn Margulis's endosymbiotic theory of cell organelles — mitochondria and chloroplasts as descendants of free-living bacteria — was rejected for over a decade after her 1967 paper, then vindicated by genetic evidence",
+    "choices": [
+      "Lynn Margulis's endosymbiotic theory of cell organelles — mitochondria and chloroplasts as descendants of free-living bacteria — was rejected for over a decade after her 1967 paper, then vindicated by genetic evidence",
+      "Watson and Crick's DNA helix model — was rejected for over a decade after their 1953 paper, and was eventually accepted only after Rosalind Franklin published her own independent confirmation of the basic helix shape",
+      "Linnaeus's classification system — was rejected for over a century after his 1735 publication, and was eventually accepted only when the genetic basis for species differences became clear through modern DNA sequencing",
+      "Pasteur's germ theory — was rejected for over a century in mainstream biology, and was eventually accepted only after the discovery of antibiotics had eliminated bacteria from the surrounding clinical environment"
+    ],
+    "context": "Lynn Margulis's 'On the origin of mitosing cells' (1967) was rejected by 15 journals before publication. She argued mitochondria and chloroplasts had originated as free-living bacteria that took up residence inside other cells. The mainstream considered the idea wild. Sequence evidence in the 1980s showed mitochondrial and chloroplast DNA were unambiguously bacterial in origin. Margulis (1938-2011) was vindicated. She was a difficult colleague but profoundly correct on the central point."
+  },
+  {
+    "bank_idx": 1132,
+    "tier": 5,
+    "question": "Chemistry had its phlogiston theory — wrong but widely held for over a century. Medicine has had its 'humoral theory' — Hippocrates and Galen's four humors (blood, phlegm, yellow bile, black bile) dominated Western medicine for nearly two millennia. What finally killed humoral theory?",
+    "answer": "Pasteur's germ theory and Koch's postulates in the late 1800s — gave bacteria a documented role in specific diseases, making the four-humors framework unnecessary for explaining illness across the spectrum",
+    "choices": [
+      "Pasteur's germ theory and Koch's postulates in the late 1800s — gave bacteria a documented role in specific diseases, making the four-humors framework unnecessary for explaining illness across the spectrum",
+      "The American Medical Association's vote in 1847 — formally banned humoral theory from being taught in any medical school in the United States starting that year, regardless of evidence or supporter arguments",
+      "Sigmund Freud's psychoanalysis — replaced humoral theory with psychological explanations of illness, and the four-humors framework had no influence on twentieth-century Western medicine in any way",
+      "Modern genetics in the early 2000s — provided the first genuine alternative to humoral theory, and Western medicine had been teaching the four humors continuously until that time without dispute"
+    ],
+    "context": "Humoral theory survived an astonishing length of time precisely because it was unfalsifiable — virtually any patient's illness could be retrofitted to humor imbalance. Galen's authority lasted from the 2nd century AD through the Renaissance. Bloodletting (correcting 'excess' blood) killed George Washington in 1799 — a relatively modern date. The germ-theory transition wasn't instantaneous; older physicians often continued humoral practice for decades. The recognition skill: even long-held medical doctrines can be wrong."
+  },
+  {
+    "bank_idx": 1234,
+    "tier": 5,
+    "question": "The Henrietta Lacks case: in 1951 cells were taken from a Black cancer patient at Johns Hopkins without consent. The cells, named HeLa, became immortalized in culture and powered an enormous fraction of modern biomedical research — including the Salk polio vaccine. Lacks died of cancer that year; the family wasn't told about HeLa for decades. What's the dual recognition this case forces?",
+    "answer": "Genuine biomedical benefit came from a wrong; both facts are true and neither cancels the other, and consent and benefit-sharing matter independently",
+    "choices": [
+      "Genuine biomedical benefit came from a wrong; both facts are true and neither cancels the other, and consent and benefit-sharing matter independently",
+      "Lacks's case had no actual impact on research; the HeLa story is exaggerated by Rebecca Skloot's bestselling book",
+      "Lacks gave full written consent to all uses of her cells; the family's later objections were unfounded and dismissed",
+      "Lacks's family received billions in royalties from the start; the case has no ethical significance whatsoever"
+    ],
+    "context": "Rebecca Skloot's 'The Immortal Life of Henrietta Lacks' (2010) brought the case into wide public awareness. Johns Hopkins and the NIH have since negotiated with the Lacks family on data-access controls and recognition. The 2023 settlement between the Lacks estate and Thermo Fisher Scientific (which commercialized HeLa cells) was undisclosed but legally significant. The case shaped current debates about biobanks, broad consent, indigenous data sovereignty, and the question of whether research benefits should flow back to subjects' communities."
+  },
+  {
+    "bank_idx": 1242,
+    "tier": 5,
+    "question": "The Twitter Files (2022-2023), released after Elon Musk's acquisition, included internal communications about content moderation. One thread focused on COVID-era moderation. What did the documents show about how the platform decided what to suppress?",
+    "answer": "Lists of specific accounts including credentialed scientists like Jay Bhattacharya were flagged by external requesters; the platform applied 'visibility filters' and outright takedowns",
+    "choices": [
+      "Lists of specific accounts including credentialed scientists like Jay Bhattacharya were flagged by external requesters; the platform applied 'visibility filters' and outright takedowns",
+      "Twitter moderated only spam and fraud, with absolutely no political or scientific speech moderation occurring at any point",
+      "Twitter consulted independent academic ethicists for every individual moderation decision through a formal review process",
+      "Twitter banned external requests as a matter of policy and never communicated with any government agency about content"
+    ],
+    "context": "Matt Taibbi, Bari Weiss, David Zweig, and other independent journalists published the Twitter Files threads beginning December 2022. The COVID-moderation files (Zweig's thread) documented specific accounts flagged, including Bhattacharya, Martin Kulldorff, Vinay Prasad, and Harvey Risch. The 'visibility filtering' — sometimes called 'shadow banning' — was confirmed to exist. Twitter executives in internal communications acknowledged the practice. The Files don't prove every flagged claim was correct; they prove the suppression apparatus existed and was used for scientific dissent on a public-health topic."
+  },
+  {
+    "bank_idx": 1243,
+    "tier": 5,
+    "question": "Aaron Siri is a New York attorney who has litigated FOIA cases against the FDA on behalf of plaintiffs seeking the underlying data for vaccine approvals. In 2022 a federal court ordered the FDA to release the Pfizer COVID vaccine safety review data — documents the FDA had requested 75 years to fully produce. What was the court's ruling?",
+    "answer": "Judge Mark Pittman ordered the FDA to release the documents over 8 months rather than 75 years, calling the agency's request 'unreasonable'",
+    "choices": [
+      "Judge Mark Pittman ordered the FDA to release the documents over 8 months rather than 75 years, calling the agency's request 'unreasonable'",
+      "The judge ruled in favor of the FDA, agreeing that 75 years was an appropriate review period for a vaccine of this scale",
+      "The judge ordered the documents permanently sealed under national security exception protections under federal law",
+      "The judge dismissed the case for lack of standing, declining to address the FDA's timeline at all in any way"
+    ],
+    "context": "The case is Public Health and Medical Professionals for Transparency v. FDA (N.D. Tex. 2022). Siri's PHMPT had filed a 2021 FOIA request for the underlying Pfizer documents (about 450,000 pages). FDA initially proposed 500 pages per month — 75 years to complete. Pittman's order compressed it to about 55,000 pages per month. The released documents are now publicly hosted and have been analyzed by independent researchers. This is the kind of work that depends on a functioning legal system willing to enforce FOIA against agencies that prefer secrecy — and the kind of work the bank specifically credits."
+  },
+  {
+    "bank_idx": 1244,
+    "tier": 5,
+    "question": "The Great Barrington Declaration (October 2020) was authored by Jay Bhattacharya (Stanford), Martin Kulldorff (Harvard), and Sunetra Gupta (Oxford). Within days, NIH Director Francis Collins wrote in an email to Anthony Fauci requesting a 'quick and devastating' public takedown. What was the practical effect on the signatories' careers in 2020-2021?",
+    "answer": "Suppression on major social platforms, exclusion from major media, professional derision; later vindication when Bhattacharya was confirmed as NIH Director in 2025",
+    "choices": [
+      "Suppression on major social platforms, exclusion from major media, professional derision; later vindication when Bhattacharya was confirmed as NIH Director in 2025",
+      "Immediate professional honors and elevated speaking engagements at the World Health Organization throughout 2021",
+      "No professional or social effect; the signatories continued their careers exactly as before the Declaration's publication",
+      "The signatories were sued in federal court for libel by the National Institutes of Health and lost their academic positions"
+    ],
+    "context": "The Collins-Fauci emails were obtained by The Wall Street Journal through FOIA litigation. The 'quick and devastating' phrase appears in Collins's October 8, 2020 email. The three authors' arguments — focused protection of the vulnerable, age-stratified risk, costs of population-wide measures — were within the pre-COVID pandemic-planning consensus. Their treatment in 2020-2021 was a case study in how dissent within scientific establishment can be marginalized when institutional pressure aligns against it. Bhattacharya's March 2025 confirmation as NIH Director by the Senate, 53-47, was an institutional vindication; Kulldorff and Gupta continued at Harvard and Oxford."
+  },
+  {
+    "bank_idx": 1246,
+    "tier": 5,
+    "question": "Robert Malone helped develop the mRNA-lipid-nanoparticle delivery technology in the late 1980s. In 2021 he publicly questioned the COVID mRNA vaccine rollout's risk-benefit analysis for young healthy adults. What happened to him on major social platforms?",
+    "answer": "He was suspended from Twitter (later reinstated), demonetized on YouTube, and his interview with Joe Rogan triggered a major Spotify controversy",
+    "choices": [
+      "He was suspended from Twitter (later reinstated), demonetized on YouTube, and his interview with Joe Rogan triggered a major Spotify controversy",
+      "He was elevated by every social platform and his views were featured prominently in CDC public-health communications",
+      "He had no public presence; his entire career was in private industry with no platform activity of any kind",
+      "He was indicted in federal court for fraud and stripped of all his academic credentials by year-end 2021 nationally"
+    ],
+    "context": "Malone's December 2021 interview on the Joe Rogan Experience (episode #1757) triggered Neil Young's protest withdrawal from Spotify in January 2022; Spotify added 'COVID-19 advisory notices' to certain episodes. Malone's broader argument — that the risk-benefit calculation for healthy young adults differed from that for elderly high-risk populations — has been at least partially vindicated by subsequent data on myocarditis (Tracy Beth Hoeg, others) and on the trial limitations the FDA's released Pfizer documents revealed. Whether one agrees with all of Malone's specific claims, the platform-suppression response to a credentialed mRNA pioneer raising questions is itself a documented case."
+  },
+  {
+    "bank_idx": 1247,
+    "tier": 5,
+    "question": "Pierre Kory and Paul Marik are critical-care physicians who developed the FLCCC (Front Line COVID-19 Critical Care) protocol — combinations including ivermectin, steroids, and other repurposed drugs for hospitalized COVID patients. Marik had previously been famous for sepsis protocols that saved thousands of lives. What happened to his hospital privileges after the FLCCC work?",
+    "answer": "Sentara Norfolk General Hospital removed his privileges; he eventually left clinical practice for advocating treatment protocols rather than for any medical-error finding",
+    "choices": [
+      "Sentara Norfolk General Hospital removed his privileges; he eventually left clinical practice for advocating treatment protocols rather than for any medical-error finding",
+      "Sentara Norfolk General Hospital promoted him to chief of critical care medicine in recognition of his COVID treatment innovations and his earlier sepsis work",
+      "Sentara Norfolk General Hospital was sued by hundreds of patients who had received Marik's pre-COVID sepsis protocol and saw it as malpractice on a large scale",
+      "Sentara Norfolk General Hospital had no involvement of any kind; Marik never held any privileges at any major US teaching hospital during his entire career"
+    ],
+    "context": "Marik's HAT (hydrocortisone, ascorbic acid, thiamine) sepsis protocol had been published in CHEST in 2017 and credited with saving thousands of lives. After the FLCCC protocols were publicly released in 2020-2021, Sentara restricted then ended his clinical privileges. Marik's case became part of state legislative initiatives in Tennessee, Kansas, and elsewhere protecting physicians who use off-label therapies. Whether one agrees with FLCCC's specific recommendations, the pattern — credentialed senior physicians losing privileges for prescribing approved drugs off-label during a crisis — is one of the documented institutional responses to dissent."
+  },
+  {
+    "bank_idx": 1248,
+    "tier": 5,
+    "question": "RFK Jr.'s 'The Real Anthony Fauci' (2021) sold over 1 million copies despite being effectively excluded from mainstream review. What kinds of source material did the book primarily draw on?",
+    "answer": "FOIA-released documents, court records, peer-reviewed studies, and contemporaneous internal communications, extensively footnoted",
+    "choices": [
+      "FOIA-released documents, court records, peer-reviewed studies, and contemporaneous internal communications, extensively footnoted",
+      "Anonymous personal opinions presented without sourcing, supporting Kennedy's prior political beliefs about the topic at hand",
+      "Fictional reconstructions of dialogue and events without any documentary record from any of the involved parties or institutions",
+      "Only mainstream-media articles that had been published in The New York Times and similar outlets at the time of the events"
+    ],
+    "context": "The book has roughly 2,200 footnotes drawing on primary sources. Reviewers including independent scientists have noted both that many of the specific factual claims are well-sourced and that interpretation throughout is sharply argumentative. The book is a partisan account, not a neutral history. It is also extensively documented. The mainstream reception — bookstores declining to stock, major outlets declining to review, social platforms restricting sharing — is itself part of the institutional response to dissent the book documents. Engaging with it requires distinguishing the documentary record (largely solid) from the interpretation (contested)."
+  },
+  {
+    "bank_idx": 1254,
+    "tier": 5,
+    "question": "Gain-of-function research deliberately engineers pathogens with enhanced transmissibility or lethality, supposedly to anticipate future natural outbreaks. After the 2014 White House moratorium on certain gain-of-function research was lifted in 2017, and after the COVID origin debate intensified, many serious voices called for a permanent ban on the practice. What's the structural argument for an outright ban?",
+    "answer": "The benefit case rests on preventing hypothetical future outbreaks while the risk case rests on the possibility of actually creating one through laboratory leak",
+    "choices": [
+      "The benefit case rests on preventing hypothetical future outbreaks while the risk case rests on the possibility of actually creating one through laboratory leak",
+      "The research has been proven safe by every biosafety review and there is no actual risk to the public from it",
+      "The research is required for vaccine development and no vaccine could ever be developed without gain-of-function studies",
+      "The research has no scientific value and produces no actual data of any kind that any researcher has ever used"
+    ],
+    "context": "The 2014 moratorium followed several documented near-incidents (anthrax mailings of working stocks, lost vials of smallpox at NIH, H5N1 enhancement controversies). The 2017 lift restored funding under new oversight. The COVID origin debate brought gain-of-function back to public attention — the Wuhan Institute of Virology had received US NIH funding through EcoHealth Alliance grants for related work. Marc Lipsitch and others have argued the risk-benefit calculus does not justify continuing the research at scale, regardless of laboratory safety levels. The structural argument doesn't depend on accepting any specific COVID-origin theory."
+  },
+  {
+    "bank_idx": 1260,
+    "tier": 5,
+    "question": "Martin Kulldorff was a Harvard Medical School biostatistician for over a decade and developed the scan statistic that the CDC and FDA use for vaccine-safety signal detection. After the Great Barrington Declaration, what happened to his Harvard position?",
+    "answer": "He was dismissed from Mass General Brigham hospital affiliations in 2021 over COVID communications and later left Harvard; his methodological tools remain in standard use",
+    "choices": [
+      "He was dismissed from Mass General Brigham hospital affiliations in 2021 over COVID communications and later left Harvard; his methodological tools remain in standard use",
+      "He was promoted to tenured full professor at Harvard with expanded research funding and increased institutional power",
+      "He resigned voluntarily to pursue private-sector consulting and was never affected by any institutional decision",
+      "He had never been at Harvard; his association with the institution was fabricated for the Great Barrington Declaration"
+    ],
+    "context": "Kulldorff was at Brigham and Women's Hospital and Harvard Medical School for over a decade. He served on FDA and CDC vaccine-safety committees. His SaTScan software (used for cluster detection) remains the standard tool. After the GBD and subsequent COVID communications, he lost his Mass General Brigham appointments. His professional resume is among the strongest in vaccine epidemiology — making him a difficult target to dismiss on credentials. He moved to Hillsdale College's academic-freedom-focused program. His case illustrates that institutional sanction in 2020-2022 fell on credentialed experts at the very top of their fields, not just on outsiders."
+  },
+  {
+    "bank_idx": 1262,
+    "tier": 5,
+    "question": "Peter McCullough is a cardiologist who, in 2020-2021, advocated early outpatient treatment for COVID using combinations of repurposed drugs. He published an early-outpatient-treatment protocol in the American Journal of Medicine in August 2020. What was the broader argument he was making about the standard care pathway?",
+    "answer": "That hospitals were treating COVID as a single-stage illness suitable only for inpatient care, missing the window when outpatient treatments might prevent hospitalization",
+    "choices": [
+      "That hospitals were treating COVID as a single-stage illness suitable only for inpatient care, missing the window when outpatient treatments might prevent hospitalization",
+      "That hospitals should refuse to treat any COVID patients and patients should be sent home to recover on their own",
+      "That hospitals should mandate immediate intensive-care admission for every COVID patient regardless of symptoms",
+      "That hospitals were perfectly handling every aspect of COVID treatment and no changes to protocols were warranted"
+    ],
+    "context": "McCullough's August 2020 American Journal of Medicine paper ('Pathophysiological Basis and Rationale for Early Outpatient Treatment of SARS-CoV-2 Infection') argued the established treatment paradigm — wait until symptoms severe, then hospitalize — missed an early-treatment window. Whether one agrees with the specific protocols he advocated, the structural argument was correct: a multi-stage illness benefits from interventions before hospitalization. McCullough later lost his university position and faced board complaints. Some of his later specific claims have been more contested than his original AJM paper. The early-treatment framing is now broadly accepted; the credit for raising it has not flowed back consistently."
+  },
+  {
+    "bank_idx": 1269,
+    "tier": 5,
+    "question": "Children's Health Defense, founded by RFK Jr. in 2018, has litigated extensively against federal vaccine policies. The organization was deplatformed from Facebook and Instagram in 2022. What's the broader pattern this kind of deplatforming follows?",
+    "answer": "Platforms can effectively eliminate an organization's reach during the legal and political conversations it exists to influence, with appeals processes too slow to matter",
+    "choices": [
+      "Platforms can effectively eliminate an organization's reach during the legal and political conversations it exists to influence, with appeals processes too slow to matter",
+      "Platforms are required by US federal law to host all organized advocacy groups, and the deplatforming actions were rapidly reversed within days legally",
+      "Platforms had no effect on the organization's reach because every advocacy organization has many alternative channels that remained fully open for them",
+      "Platforms applied the same content standards to advocacy organizations on every side of every issue identically and consistently at all times"
+    ],
+    "context": "The CHD deplatforming preceded Bhattacharya's NIH confirmation by about three years; the timing matters because the political conversation about pediatric mRNA vaccines was at its most active during the period CHD was excluded from major platforms. Whether one agrees with CHD's specific positions, the pattern — major-platform deplatforming during the active phase of a contested policy debate — is one of the documented mechanisms by which speech-control infrastructure shapes political outcomes. The Murthy v. Missouri case dealt with related but legally distinct questions about state action."
+  },
+  {
+    "bank_idx": 1270,
+    "tier": 5,
+    "question": "Aaron Siri's law firm Siri & Glimstad has litigated multiple FOIA cases against the FDA seeking trial data and adverse-event records. The work has produced several court orders compelling document release. What does this litigation work illustrate about the relationship between transparency and law?",
+    "answer": "Public access to government safety data depends on persistent attorneys willing to litigate when agencies prefer not to release; without that pressure documents stay secret",
+    "choices": [
+      "Public access to government safety data depends on persistent attorneys willing to litigate when agencies prefer not to release; without that pressure documents stay secret",
+      "Federal agencies automatically release every safety record proactively without any legal pressure required at all from outside law firms or activists",
+      "Federal agencies are legally prohibited from releasing safety records and FOIA never applies to medical documents under any circumstances at all",
+      "Federal agencies always lose every FOIA case quickly so any litigation effort is completely unnecessary in any safety-related disclosure context"
+    ],
+    "context": "Siri's work is one of the clearest examples of FOIA litigation actually producing the transparency the law theoretically guarantees. The released Pfizer trial documents (PHMPT v. FDA), the v-safe data, the VAERS records — much of the most useful public information about COVID vaccine safety has emerged from these cases. The broader recognition is structural: 'transparency by default' is rarely how agencies behave; transparency happens when courts order it and lawyers persist. The bank credits the work without taking specific positions on every conclusion drawn from the released documents."
+  },
+  {
+    "bank_idx": 1274,
+    "tier": 5,
+    "question": "The CDC's Advisory Committee on Immunization Practices (ACIP) is the committee that recommends the childhood vaccine schedule. Members serve four-year terms. Concerns about ACIP have focused on financial relationships members have had with vaccine manufacturers. What's the standard objection to those relationships?",
+    "answer": "Members making schedule decisions worth billions to manufacturers should not also have personal financial ties to them, the same conflict-of-interest standard as in other regulatory work",
+    "choices": [
+      "Members making schedule decisions worth billions to manufacturers should not also have personal financial ties to them, the same conflict-of-interest standard as in other regulatory work",
+      "Financial relationships with manufacturers are required for ACIP membership because no other available experts adequately understand the technical details of the products and their manufacturing process",
+      "Financial relationships have no influence on any committee member's recommendations in any documented case ever in the history of any US health advisory body of any kind",
+      "ACIP has no role in any actual vaccine recommendation and has not actually met since the late 1990s in any meaningful capacity that the public can verify from any source"
+    ],
+    "context": "The 2000 House Government Reform Committee report ('Conflicts of Interest in Vaccine Policy Making') documented financial conflicts among ACIP members. Subsequent reforms tightened some rules but didn't eliminate them. The conflict-of-interest standard applies generally: a judge who held stock in a defendant company would recuse; a senator who took money from an industry would face disclosure rules. The same standard should apply to medical recommendation committees, and the deviation from that standard is part of how regulatory capture operates in practice. The 2025 RFK Jr. HHS leadership has signaled stricter recusal rules for these committees."
+  },
+  {
+    "bank_idx": 1285,
+    "tier": 5,
+    "question": "Andrew Wakefield's 1998 Lancet paper proposing a possible MMR-autism link triggered decades of public health and political controversy. The paper was eventually retracted in 2010. Beyond the standard simple narrative, what's the more accurate historical accounting of the episode?",
+    "answer": "The paper had real methodological problems and was retracted, while the broader institutional response treated vaccine-safety questions as off-limits in ways that suppressed legitimate inquiry alongside the flawed work",
+    "choices": [
+      "The paper had real methodological problems and was retracted, while the broader institutional response treated vaccine-safety questions as off-limits in ways that suppressed legitimate inquiry alongside the flawed work",
+      "The paper was a flawless piece of medical research that the entire pharmaceutical industry conspired together to suppress through coordinated international action across all major regulatory agencies of every country",
+      "The paper had no methodological problems whatsoever and the retraction was purely a politically motivated action by The Lancet's editorial team, with no actual scientific basis behind any of the published reasons given",
+      "The paper has been universally accepted by every medical journal as the gold standard for vaccine-safety research, and the retraction has now been formally reversed in every database of record by every body"
+    ],
+    "context": "Wakefield's 1998 Lancet paper had a small sample, no control group, and significant undisclosed conflicts of interest. The retraction was warranted on those grounds. The broader episode shows two failure modes at once: a flawed paper given far more weight than its evidence supported, AND an institutional response that treated subsequent vaccine-safety questions in adjacent areas as unspeakable. The honest accounting requires holding both — Wakefield's specific paper was rightly retracted, AND the suppression apparatus that emerged in response went on to chill legitimate questions and credentialed researchers who had no connection to his original work."
+  }
+]
