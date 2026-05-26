@@ -5749,15 +5749,15 @@
   },
   {
     "tier": 2,
-    "question": "Beginning around 2010, several large research efforts tried to replicate famous findings in psychology and biomedicine. What did these efforts often find?",
-    "answer": "Many famous results failed to replicate when independent labs tried again",
+    "question": "The 2015 Open Science Collaboration tried to redo 100 famous psychology studies — including ego depletion and the power-pose effect. Only ~36% replicated cleanly. What did the effort find?",
+    "answer": "Many famous results failed — single studies are weaker than headlines suggest",
     "choices": [
-      "Many famous results failed to replicate when independent labs tried again",
-      "Every famous result was perfectly replicated by every other lab",
-      "Famous results are impossible to replicate by definition of being unique",
-      "Famous results were all classified secret and could not be retested"
+      "Many famous results failed — single studies are weaker than headlines suggest",
+      "Every famous result replicated — exactly as originally published",
+      "Famous results are unreplicable — by definition of being unique",
+      "Famous results were classified secret — and could not be retested"
     ],
-    "context": "The 'replication crisis' is the recognition that many published findings — especially in social psychology, but also in cancer biology and pharmacology — don't replicate when independent labs try them. The 2015 Open Science Collaboration replication of 100 psychology studies found only ~36% replicated cleanly. Famous failed replications include ego depletion, power-pose effect, priming effects. Causes include p-hacking, publication bias (positive results get published, null results don't), small sample sizes, and outright fraud (Diederik Stapel, ~50 retractions). The crisis has led to pre-registration, larger studies, and more cautious interpretation of single studies."
+    "context": "The 'replication crisis' anchored on Ioannidis's 2005 PLOS Medicine paper. Causes include p-hacking, publication bias, small samples, and outright fraud (Stapel, ~50 retractions). The field adopted pre-registration in response."
   },
   {
     "tier": 2,
@@ -8749,15 +8749,15 @@
   },
   {
     "tier": 3,
-    "question": "Margaret Sanger, founder of what would become Planned Parenthood, was a prominent eugenicist who wrote and spoke about race and reproductive policy in the 1910s-1930s. What's her own most direct statement people often point to?",
-    "answer": "Her writings called for limiting reproduction by people she described as 'human weeds', and 'morons'",
+    "question": "Margaret Sanger founded what became Planned Parenthood, lectured a Ku Klux Klan women's auxiliary in 1926, and ran a 'Negro Project' (1939) framed in her letters as needing Black ministers to prevent the 'exterminate the Negro population' perception. Planned Parenthood removed her name in 2020. What's her best-known eugenic phrase?",
+    "answer": "'Human weeds' — she wrote of limiting reproduction by those she so described",
     "choices": [
-      "Her writings called for limiting reproduction by people she described as 'human weeds', and 'morons'",
-      "Her writings explicitly opposed eugenics, and were misquoted by Catholic critics of her clinics",
-      "Her writings never touched on race or class, focusing exclusively on women's individual rights",
-      "Her writings called for universal forced sterilization of all human beings without any exceptions"
+      "'Human weeds' — she wrote of limiting reproduction by those she so described",
+      "'Free citizens' — she opposed eugenics and the phrases are critic fabrications",
+      "'Worker class' — she only used economic categories, never any biological framing",
+      "'Pure births' — she demanded universal forced sterilization without any exceptions"
     ],
-    "context": "Sanger's *The Pivot of Civilization* (1922) and her writings in *Birth Control Review* explicitly endorsed eugenic goals. She opened the first US birth-control clinic in Brooklyn (1916) and later founded what became Planned Parenthood. She lectured to the Ku Klux Klan in 1926. The 'Negro Project' (1939) was framed in her own letters as needing Black ministers to prevent the idea that 'we want to exterminate the Negro population.' Planned Parenthood removed her name from its New York City clinic in 2020."
+    "context": "Sanger's *Pivot of Civilization* (1922) endorsed eugenic goals explicitly. The December 10, 1939 letter to Clarence Gamble framed the Black ministers' role. Planned Parenthood's 2020 disavowal acknowledged what historians had long documented."
   },
   {
     "tier": 3,
@@ -8833,27 +8833,27 @@
   },
   {
     "tier": 3,
-    "question": "A 'replication crisis' was named after researchers tried to redo many published studies and found most could not be repeated. What's the recognition skill for a teenager reading 'NEW STUDY SHOWS X' headlines?",
-    "answer": "Wait for replication — a single finding is weak evidence, no matter the journal or how confident the headline sounds",
+    "question": "Ioannidis's 2005 PLOS Medicine paper 'Why Most Published Research Findings Are False' lit the fuse — and the 2015 Open Science Collaboration's attempt to replicate 100 psychology studies got only ~36% replicating cleanly. What's the recognition skill for a teen reading 'NEW STUDY SHOWS X' headlines?",
+    "answer": "Wait for replication — a single finding is weak evidence regardless of journal prestige",
     "choices": [
-      "Wait for replication — a single finding is weak evidence, no matter the journal or how confident the headline sounds",
-      "Trust every study from prestigious journals — peer review eliminates errors before publication, full stop",
-      "Reject all scientific research as fake — treat science headlines the same as gossip about random celebrities",
-      "Believe the most recent study above any earlier work — newer research always overrides older established work"
+      "Wait for replication — a single finding is weak evidence regardless of journal prestige",
+      "Trust every prestigious-journal study — peer review eliminates errors before publication completely",
+      "Reject all science as fake — headlines should be treated like gossip about random celebrities",
+      "Always trust the most recent paper — newer studies automatically override older established work"
     ],
-    "context": "The 'replication crisis' was anchored by John Ioannidis's 2005 paper 'Why Most Published Research Findings Are False,' the Open Science Collaboration's 2015 attempt to replicate 100 psychology studies (only ~36% replicated), and dramatic individual cases like Stapel (50+ retractions, 2011). Pre-registration of hypotheses, larger sample sizes, open data, and registered reports are tools the field has adopted in response. The kid's skill is intermediate: not 'trust everything,' not 'reject everything,' but 'wait for the second study.'"
+    "context": "Famous failed replications include ego depletion, power-pose, and many priming results. Stapel's case (50+ retractions, 2011) is the canonical fabrication example. Pre-registration and registered reports were field responses."
   },
   {
     "tier": 3,
-    "question": "Diederik Stapel was a star Dutch social psychologist at Tilburg University whose work appeared in *Science* and major journals. In 2011 his career imploded. What happened?",
-    "answer": "He confessed to fabricating data in dozens of papers — over 50 of his published works were eventually retracted",
+    "question": "Star Dutch social psychologist Diederik Stapel (Tilburg University, papers in *Science*) was found in 2011 to have been making up numbers in his hotel room before showing them to graduate students. What was the final accounting?",
+    "answer": "Over 50 of his papers were retracted — prestigious journals and peer review had not caught years of fabrication",
     "choices": [
-      "He confessed to fabricating data in dozens of papers — over 50 of his published works were eventually retracted",
-      "He was caught accepting bribes from corporate sponsors — but his actual data was sound on inspection",
-      "He plagiarized other authors' work — but his original conclusions remained intact and respected in the field",
-      "He was wrongly accused but cleared after extensive investigation — and his career fully recovered"
+      "Over 50 of his papers were retracted — prestigious journals and peer review had not caught years of fabrication",
+      "He had accepted corporate bribes — but his actual published data turned out to be sound on inspection",
+      "He plagiarized other authors' work — but his original conclusions remained intact and respected",
+      "He was wrongly accused and cleared — his career fully recovered to prior international prominence"
     ],
-    "context": "Three of Stapel's junior researchers reported irregularities in 2011. An investigation led by Willem Levelt found he had been fabricating data for years — sometimes just making up numbers in his hotel room before showing them to graduate students. Over 50 of his papers were retracted by 2024. The case became a foundational example of how prestigious credentials, top-journal placement, and peer review can fail to catch outright fabrication. His memoir *Faking Science* (2014) is a chilling firsthand account."
+    "context": "The Levelt investigation followed reports by three junior researchers. Stapel's memoir 'Faking Science' (2014) is a firsthand account. The case became foundational in showing how prestige + top-journal placement + peer review can fail to detect outright fabrication."
   },
   {
     "tier": 3,
@@ -8881,27 +8881,27 @@
   },
   {
     "tier": 3,
-    "question": "The Surgisphere scandal of 2020 was one of the fastest implosions in modern medical research. What was published, where, and how quickly was it retracted?",
-    "answer": "Two papers in *The Lancet* and *NEJM* on COVID-19 treatments — retracted within weeks once the data couldn't be produced",
+    "question": "A May 2020 Lancet study from a company called Surgisphere claimed hydroxychloroquine raised COVID death rates. WHO suspended its global HCQ trial within days. Both Lancet and NEJM retracted the papers within weeks: Surgisphere had no database. What does this illustrate?",
+    "answer": "A single fabricated paper passed peer review and changed global treatment policy in real time",
     "choices": [
-      "Two papers in *The Lancet* and *NEJM* on COVID-19 treatments — retracted within weeks once the data couldn't be produced",
-      "A single paper in *Nature* on COVID origins — confirmed independently and never retracted at any point",
-      "A textbook on emergency medicine — and the publisher refused to retract despite multiple complaints",
-      "A bioterrorism warning by the CDC — and the report was quietly removed without explanation"
+      "A single fabricated paper passed peer review and changed global treatment policy in real time",
+      "Top journals verify raw data before publication, so fraud at this level is exceptionally rare",
+      "The Surgisphere claims were correct, and the global HCQ trial pause was based on sound evidence",
+      "Peer review caught the problem within days, preventing any impact on real-world treatment policy"
     ],
-    "context": "Surgisphere Corporation claimed to operate a massive multinational hospital database. The May 2020 *Lancet* paper used it to claim hydroxychloroquine increased COVID mortality; the *NEJM* paper looked at blood-pressure medications. WHO suspended HCQ trials based on the *Lancet* findings. Within weeks, requests for data verification revealed the dataset's authenticity couldn't be confirmed. Both papers were retracted in June 2020. The episode shows how a single fabricated paper can affect policy in real time — and how the system can correct fast when scrutinized."
+    "context": "Mehra et al. published in The Lancet (May 22, 2020) and NEJM (May 1, 2020). WHO suspended its HCQ trial arm based on the Lancet finding; multiple national health agencies halted use. James Watson (Australia), Andrew Wang, and 200+ co-signatories demanded data verification. Surgisphere — a Chicago company with few employees and no track record — couldn't produce its claimed multinational hospital database. Both papers retracted June 4, 2020."
   },
   {
     "tier": 3,
-    "question": "In October 2020 three epidemiologists from Stanford, Harvard, and Oxford published the Great Barrington Declaration. What did it actually propose?",
-    "answer": "'Focused protection' of vulnerable people while letting younger — and healthier populations resume normal life",
+    "question": "On October 4, 2020, Jay Bhattacharya (Stanford), Martin Kulldorff (Harvard), and Sunetra Gupta (Oxford) published the Great Barrington Declaration. Over 60,000 doctors and scientists signed within months. What did the Declaration actually propose?",
+    "answer": "'Focused protection' of the vulnerable — letting younger, healthier populations resume normal life",
     "choices": [
-      "'Focused protection' of vulnerable people while letting younger — and healthier populations resume normal life",
-      "Universal lockdowns extended for at least three more years — across the entire global population",
-      "Mandatory vaccination of all citizens including infants — backed by enforcement of fines and arrests",
-      "Closing schools permanently — replacing them with online-only learning into the next decade"
+      "'Focused protection' of the vulnerable — letting younger, healthier populations resume normal life",
+      "Universal global lockdowns for three more years — extended across the entire planetary population",
+      "Mandatory vaccination of all citizens including infants — backed by fines and arrests for refusal",
+      "Permanent school closures — replacing them with online-only learning into the next decade"
     ],
-    "context": "Jay Bhattacharya (Stanford epidemiologist, MD/PhD), Martin Kulldorff (Harvard biostatistician), and Sunetra Gupta (Oxford epidemiologist) wrote the Declaration at the American Institute for Economic Research. It argued lockdowns caused unequal harm — protecting older laptop-class workers while displacing harm onto younger working-class and Third World populations — and recommended targeting protection to the elderly while letting natural immunity develop in lower-risk groups. Over 60,000 doctors and scientists signed."
+    "context": "The Declaration argued lockdowns caused unequal harm — protecting older laptop-class workers while displacing harm onto younger working-class and Third World populations. Within four days, NIH director Francis Collins emailed Anthony Fauci calling for a 'quick and devastating takedown.'"
   },
   {
     "tier": 3,
@@ -9037,15 +9037,15 @@
   },
   {
     "tier": 3,
-    "question": "School closures during 2020-2021 were a major component of the pandemic response. What does the bulk of subsequent evidence show about their effects on children?",
-    "answer": "Substantial learning loss, mental-health harm, and developmental setbacks, with lasting effects worst for poor and minority children",
+    "question": "The 2022 NAEP showed the largest declines in reading and math scores in the assessment's history — concentrated in poorer and minority districts where closures lasted longest. Sweden, which kept under-16 schools open, showed smaller losses. What's the recognition?",
+    "answer": "Substantial learning loss and mental-health harm — worst for poor and minority kids, as GBD warned",
     "choices": [
-      "Substantial learning loss, mental-health harm, and developmental setbacks, with lasting effects worst for poor and minority children",
-      "Substantial learning gains because children received more individualized parental attention at home",
-      "No effect at all, children fully recovered within weeks once schools eventually reopened nationwide",
-      "Improvement in standardized test scores, confirming online learning is superior to traditional schooling"
+      "Substantial learning loss and mental-health harm — worst for poor and minority kids, as GBD warned",
+      "Substantial learning gains across the board — kids got more individualized parental attention at home",
+      "No effect of any kind on any group — all children fully recovered within weeks of reopening",
+      "Improvements across every demographic — confirming online learning is universally superior"
     ],
-    "context": "The 2022 NAEP ('Nation's Report Card') showed the largest declines in reading and math scores in the assessment's history. Studies from Stanford's CREDO, Harvard's Strategic Data Project, and McKinsey documented major learning losses concentrated in poorer and minority districts where school closures lasted longest. Sweden, which kept lower-grade schools open, showed smaller losses. The Great Barrington Declaration had warned of these effects in October 2020."
+    "context": "Studies from Stanford's CREDO, Harvard's Strategic Data Project, and McKinsey documented the disparate impact. Sweden's policy choice provided a real comparison case."
   },
   {
     "tier": 3,
@@ -9205,27 +9205,27 @@
   },
   {
     "tier": 3,
-    "question": "Twitter Files releases starting in late 2022 documented federal agency contacts with social media platforms during 2020-2022. What kind of scientific speech was suppressed under these contacts?",
-    "answer": "Discussion of lab leak, COVID treatments — vaccine side effects, and the Great Barrington Declaration were all flagged",
+    "question": "The Twitter Files (starting November 2022) showed FBI and CDC officials flagging specific accounts — including Stanford's Jay Bhattacharya, Harvard's Martin Kulldorff, and Johns Hopkins's Marty Makary. What kind of scientific speech got targeted?",
+    "answer": "Lab leak, vaccine adverse events, and the Great Barrington Declaration — credentialed dissent on public health",
     "choices": [
-      "Discussion of lab leak, COVID treatments — vaccine side effects, and the Great Barrington Declaration were all flagged",
-      "Only flat-earth, anti-evolution, and chemtrails content was flagged — never any credentialed scientific work",
-      "No scientific content was ever flagged — only purely political speech with no medical implications at all",
-      "Discussion of dark matter — the Big Bang, and string theory were flagged as politically destabilizing topics"
+      "Lab leak, vaccine adverse events, and the Great Barrington Declaration — credentialed dissent on public health",
+      "Flat-earth, anti-evolution, and chemtrails — only obvious pseudoscience touched, never any credentialed work",
+      "Only partisan political party speech — no medical content suppressed at any platform anywhere ever",
+      "Dark matter, the Big Bang, and string theory — flagged as politically destabilizing scientific topics"
     ],
-    "context": "The Twitter Files (Matt Taibbi, Bari Weiss, Michael Shellenberger, and others starting in November 2022) showed FBI, CDC, and other federal agencies routinely flagging accounts for suppression. Topics included natural-immunity discussions, vaccine adverse-event reports, lab-leak speculation, school-closure critiques, and Great Barrington Declaration content. Many flagged accounts belonged to credentialed scientists (Bhattacharya, Kulldorff, Vinay Prasad, Marty Makary). The Supreme Court's *Murthy v. Missouri* (2024) ruled on standing rather than reaching the merits of the First Amendment claim itself."
+    "context": "The Files documented 'visibility filtering' and direct takedown requests. *Murthy v. Missouri* (2024) ruled on standing rather than the First Amendment merits."
   },
   {
     "tier": 3,
-    "question": "The Murthy v. Missouri case in 2024 reached the US Supreme Court on the question of federal-government coordination with social-media platforms to suppress speech. What did the court ultimately rule?",
-    "answer": "The court ruled 6-3 that plaintiffs lacked standing, not reaching the underlying First Amendment question on the merits",
+    "question": "In June 2024 the Supreme Court ruled 6-3 in *Murthy v. Missouri* that plaintiffs lacked standing — not reaching the First Amendment merits. Justice Alito's dissent called it 'one of the most important free speech cases to reach this Court in years.' Practical effect?",
+    "answer": "The federal-platform coordination record stayed in the docket — the constitutional question remains live",
     "choices": [
-      "The court ruled 6-3 that plaintiffs lacked standing, not reaching the underlying First Amendment question on the merits",
-      "The court ruled unanimously that government-platform coordination is fully constitutional in every circumstance",
-      "The court ruled unanimously that any government-platform contact violates the First Amendment automatically",
-      "The court refused to hear the case at all, and the lower court ruling stood without modification or appeal"
+      "The federal-platform coordination record stayed in the docket — the constitutional question remains live",
+      "The court ruled coordination constitutional — the question is permanently settled in agencies' favor",
+      "The court ruled any government-platform contact violates the First Amendment — enjoining federal contact",
+      "The court refused to hear the case — the lower court ruling stood without modification or appeal"
     ],
-    "context": "*Murthy v. Missouri* (originally *Missouri v. Biden*) was filed by Missouri and Louisiana state attorneys general plus individual plaintiffs including Bhattacharya and Kulldorff. The 5th Circuit had ruled against the government. The Supreme Court (June 2024, Barrett writing for the majority) ruled 6-3 that plaintiffs lacked Article III standing — not addressing whether the government's conduct actually violated the First Amendment. Justice Alito dissented (joined by Thomas and Gorsuch), calling the case 'one of the most important free speech cases to reach this Court in years.' The merits remain open for future litigation."
+    "context": "Originally *Missouri v. Biden*, filed by Missouri and Louisiana state AGs plus individual plaintiffs Bhattacharya and Kulldorff. The Fifth Circuit had ruled against the government on the merits."
   },
   {
     "tier": 3,
@@ -11497,15 +11497,15 @@
   },
   {
     "tier": 4,
-    "question": "Vaccine mandates during 2021-2022 — imposed by federal agencies, employers, universities, and the military — required individuals to accept a specific medical intervention as a condition of work, school, or travel. From a medical-ethics standpoint, what's the central objection?",
-    "answer": "Informed consent and bodily autonomy are foundational principles codified in the Nuremberg Code, and coerced medical interventions violate them",
+    "question": "The Nuremberg Code of 1947 — drafted after the Doctors' Trial of Nazi physicians who had conducted lethal experiments — opens: 'The voluntary consent of the human subject is absolutely essential.' Vaccine mandates during 2021-2022 required accepting a specific medical intervention as a condition of work, school, or travel. What's the medical-ethics objection?",
+    "answer": "Coerced medical interventions violate voluntary informed consent — codified in the Nuremberg Code and the 1964 Declaration of Helsinki",
     "choices": [
-      "Informed consent and bodily autonomy are foundational principles codified in the Nuremberg Code, and coerced medical interventions violate them",
-      "Bodily autonomy in medical ethics applies only to elective surgeries and has no actual relevance to any vaccine policy questions whatsoever",
-      "The Nuremberg Code applies only to formal medical research and was formally repealed by the World Health Organization back in 2002",
-      "Vaccine mandates are universally required by every infectious-disease textbook ever published in any country regardless of policy debate"
+      "Coerced medical interventions violate voluntary informed consent — codified in the Nuremberg Code and the 1964 Declaration of Helsinki",
+      "Bodily autonomy applies only to elective surgeries — and has no relevance to any vaccine policy questions in any jurisdiction",
+      "The Nuremberg Code applies only to formal research — and was formally repealed by the WHO back in 2002 by general resolution",
+      "Vaccine mandates are universally required by every infectious-disease textbook — regardless of any policy debate ever raised"
     ],
-    "context": "The Nuremberg Code (1947) was drafted after the Doctors' Trial of Nazi physicians and established that voluntary consent of the human subject is absolutely essential. The Declaration of Helsinki (1964) extended these principles. Coercive vaccine mandates — lose your job, lose access to school, lose travel — are coercion even if the substance itself is beneficial. Reasonable people can disagree about the underlying medical risk-benefit. The ethical objection to mandates is about the structure of coercion, not the science of the vaccines themselves."
+    "context": "Coercive mandates — lose your job, lose school access, lose travel — are coercion even if the substance is beneficial. Reasonable people can disagree about underlying risk-benefit. The objection to mandates is about the structure of coercion, not the science of the vaccines themselves."
   },
   {
     "tier": 4,
@@ -11569,15 +11569,15 @@
   },
   {
     "tier": 4,
-    "question": "The Proximal Origin of SARS-CoV-2 paper (Andersen et al., Nature Medicine, March 2020) declared a natural origin and dismissed lab leak. FOIA'd Slack messages later showed the authors had been privately uncertain. What did those messages reveal?",
-    "answer": "The authors discussed lab-leak plausibility in real time even as they drafted the public dismissal, so public certainty didn't match private uncertainty",
+    "question": "On February 1, 2020, Anthony Fauci and Jeremy Farrar held a teleconference where engineering of SARS-CoV-2 was deemed concerning enough to warrant a coordinated response. Six weeks later Andersen, Holmes, and Garry published 'The Proximal Origin of SARS-CoV-2' in *Nature Medicine* declaring natural origin. FOIA'd Slack messages later revealed what?",
+    "answer": "The authors were discussing lab-leak plausibility on Slack the same week — private uncertainty did not match published certainty",
     "choices": [
-      "The authors discussed lab-leak plausibility in real time even as they drafted the public dismissal, so public certainty didn't match private uncertainty",
-      "The authors were entirely unanimous on natural origin throughout the entire drafting process and recorded no internal doubts at any point in the discussion",
-      "No Slack messages from the Proximal Origin authors have ever been actually released to anyone, and those alleged FOIA records do not exist",
-      "The Slack messages plainly confirmed that lab leak was decisively ruled out by a single careful experimental result conducted at the lab itself"
+      "The authors were discussing lab-leak plausibility on Slack the same week — private uncertainty did not match published certainty",
+      "The authors were unanimous on natural origin throughout drafting — they recorded no internal doubts at any point",
+      "No Slack messages were ever actually released to anyone — the alleged FOIA records simply do not exist",
+      "The Slack messages plainly confirmed lab leak was ruled out — by a single experiment at the Wuhan lab itself"
     ],
-    "context": "Kristian Andersen, Eddie Holmes, Robert Garry, and co-authors published 'Proximal Origin' in Nature Medicine on March 17, 2020. The paper was widely cited to call lab-leak claims 'misinformation.' House Oversight Committee FOIA releases (2023) showed Andersen and others discussing lab-leak plausibility on Slack the same week they were drafting the public dismissal. The February 1, 2020 internal teleconference with Anthony Fauci and Jeremy Farrar framed engineering as concerning enough to need a coordinated response. The public document didn't reflect the private deliberation."
+    "context": "The paper was cited for over two years to label lab-leak claims 'misinformation.' House Oversight Committee FOIA releases (2023) showed Andersen and others discussing lab-leak plausibility in real time."
   },
   {
     "tier": 4,
@@ -11641,15 +11641,15 @@
   },
   {
     "tier": 4,
-    "question": "In May 2021 — over a year into the pandemic — Facebook quietly changed its content-moderation policy to stop removing posts that claimed COVID-19 was a 'man-made virus.' Why did the policy change?",
-    "answer": "Lab leak no longer met any reasonable definition of misinformation once intelligence agencies and major journalists were openly investigating it",
+    "question": "Facebook's January 2021 policy explicitly listed 'COVID-19 is man-made' among claims subject to removal. In May 2021, after Nicholas Wade's essay 'Origin of COVID' and growing reporting by Donald McNeil Jr. and Katherine Eban, Facebook quietly reversed the policy. What did the reversal acknowledge?",
+    "answer": "Lab leak had never been a fringe conspiracy theory — the label was a political artifact, withdrawn once respected journalists made the labeling cost too high",
     "choices": [
-      "Lab leak no longer met any reasonable definition of misinformation once intelligence agencies and major journalists were openly investigating it",
-      "Facebook quietly discovered that the original removal policy had simply been a typo in the rulebook and had never been intended to ban any of that content at all",
-      "Facebook adopted the entire policy change purely because of various unrelated software bugs internal to the moderation system that just happened to hit in May 2021",
-      "Facebook reversed the policy only because it had originally been imposed on the company by an early 2021 court order that was struck down on appeal shortly after"
+      "Lab leak had never been a fringe conspiracy theory — the label was a political artifact, withdrawn once respected journalists made the labeling cost too high",
+      "Facebook discovered the removal policy was a typo in the rulebook — never intended to ban any of that content at all anywhere",
+      "Facebook adopted the change from unrelated software bugs — internal to the moderation system that happened to hit in May 2021",
+      "Facebook reversed only because of an early-2021 court order — that was struck down on appeal shortly afterward"
     ],
-    "context": "Facebook's January 2021 policy had explicitly listed 'COVID-19 is man-made or manufactured' among claims subject to removal. In May 2021, after Nicholas Wade's widely-read essay and growing journalist coverage (Donald McNeil Jr., Katherine Eban), Facebook reversed course. The shift acknowledged what was already true: the lab-leak hypothesis had never been a fringe conspiracy theory. It was being labeled one. When the labeling cost became too high — when respected journalists were taking the question seriously — the label was withdrawn. The label was a political artifact, not a scientific assessment."
+    "context": "Wade's essay (Bulletin of the Atomic Scientists, May 2021) walked through the documentary case for taking lab leak seriously. The intelligence-agency assessments (FBI 2023, DOE 2023) later moved in the same direction."
   },
   {
     "tier": 4,
@@ -11713,15 +11713,15 @@
   },
   {
     "tier": 4,
-    "question": "The focused-protection approach the Great Barrington Declaration proposed in October 2020 was essentially what mainstream pandemic-response planning had recommended for decades — protect the vulnerable, let lower-risk groups develop natural immunity. Why was it treated as radical in 2020?",
-    "answer": "Institutional commitment to lockdown was deep enough that the previously conventional view had to be redescribed as fringe to protect the new policy",
+    "question": "WHO pandemic-planning documents from 2019 explicitly recommended against population-wide lockdowns and against general school closures. Imperial College had published similar guidance. By October 2020 the Great Barrington Declaration (proposing focused protection) was attacked as fringe. Why was the previously conventional view redescribed as radical?",
+    "answer": "Institutional commitment to lockdown ran too deep — the previously conventional view had to be redescribed as fringe to protect the new policy",
     "choices": [
-      "Institutional commitment to lockdown was deep enough that the previously conventional view had to be redescribed as fringe to protect the new policy",
-      "Focused protection was a novel idea invented from scratch by the GBD authors in 2020 and had never been proposed in any prior pandemic-response document",
-      "Focused protection had been thoroughly scientifically discredited by every single pandemic-planning document ever produced before the calendar year 2019 began",
-      "Focused protection was secretly identical to extreme mass population lockdown and was simply renamed by the GBD authors as a kind of branding exercise"
+      "Institutional commitment to lockdown ran too deep — the previously conventional view had to be redescribed as fringe to protect the new policy",
+      "Focused protection was a novel idea invented from scratch in 2020 — never appearing in any prior pandemic-response document anywhere",
+      "Focused protection had been scientifically discredited by every pandemic-planning document — produced before 2019 in any country at all",
+      "Focused protection was secretly identical to mass lockdown — and was simply renamed by GBD authors as a branding exercise"
     ],
-    "context": "WHO pandemic-planning documents from 2019 explicitly recommended against population-wide lockdowns and against general school closures. The Imperial College team itself had previously published similar guidance. The shift to 'lockdown is the only ethical response' in March 2020 was a policy choice, not a scientific necessity. Once the institutions had committed to it, the previously-mainstream alternative had to be re-described as dangerous to maintain coherence — a pattern critics including Donald McNeil Jr., Matt Taibbi, and Jay Bhattacharya have documented."
+    "context": "The shift to 'lockdown is the only ethical response' in March 2020 was a policy choice, not a scientific necessity. Critics including Donald McNeil Jr., Matt Taibbi, and Jay Bhattacharya documented the pattern."
   },
   {
     "tier": 4,
@@ -12217,15 +12217,15 @@
   },
   {
     "tier": 4,
-    "question": "Climategate (2009) involved the public release of emails from the Climatic Research Unit at the University of East Anglia. What did the emails reveal about scientific practice in the field?",
-    "answer": "Discussion of how to handle inconvenient data, exclude critics from journals, and frame uncertainty in policy-friendly ways, internal candor not matching public certainty",
+    "question": "In November 2009 emails from the Climatic Research Unit at the University of East Anglia were released to the public. They included the phrase 'hide the decline' (a paleoclimate data-handling choice), discussions of journals to exclude critics from, and FOIA-evasion remarks. What did the emails reveal about scientific practice?",
+    "answer": "Internal candor handled inconvenient data, excluded critics from journals, and framed uncertainty — in ways public statements of confidence did not show",
     "choices": [
-      "Discussion of how to handle inconvenient data, exclude critics from journals, and frame uncertainty in policy-friendly ways, internal candor not matching public certainty",
-      "Nothing whatsoever of substance was shown in any of the released emails, since all the emails were trivial scheduling correspondence between busy researchers",
-      "Definitive confirmation that all climate scientists working in the field agreed on every detail of the underlying climate science and never had any technical disagreements",
-      "Substantial documentary evidence that climate change is in fact a hoax fabricated by university researchers, a position no serious analysis or formal inquiry has supported"
+      "Internal candor handled inconvenient data, excluded critics from journals, and framed uncertainty — in ways public statements of confidence did not show",
+      "Nothing of substance was shown in the released emails — the entire correspondence was trivial scheduling between researchers at institutions",
+      "Definitive confirmation that all climate scientists agreed on every detail — with no internal technical disagreements at any institution",
+      "Substantial documentary evidence that climate change is a hoax — fabricated by university researchers, a position no analysis has supported"
     ],
-    "context": "The November 2009 release of CRU emails included phrases like 'hide the decline' (referring to specific paleoclimate data handling), discussion of journals to exclude critics from, and FOIA-evasion remarks. Multiple subsequent inquiries (Muir Russell, Penn State, Independent Climate Change Email Review) found no scientific fraud but did identify issues with FOIA compliance, openness, and treatment of critics. The emails illustrate the gap between internal scientific candor and public certainty. They didn't disprove climate change. They did reveal the difference between 'we're confident' and 'public statements of confidence are tightly managed.'"
+    "context": "Multiple inquiries (Muir Russell, Penn State, Independent Climate Change Email Review) found no scientific fraud but did identify issues with FOIA compliance, openness, and treatment of critics."
   },
   {
     "tier": 4,
@@ -14797,15 +14797,15 @@
   },
   {
     "tier": 5,
-    "question": "J. Marion Sims, often called the 'father of modern gynecology,' developed his surgical techniques for vesicovaginal fistula in the 1840s by operating repeatedly on enslaved women in Alabama. He performed one operation on a woman named Anarcha 30 times without anesthesia. What's the honest historical recognition?",
-    "answer": "Foundational techniques in a medical specialty were developed through experimentation on people who had no legal or actual capacity to refuse",
+    "question": "Three enslaved women — Anarcha (subjected to 30 operations without anesthesia), Betsey, and Lucy — were the patients on whom J. Marion Sims developed his vesicovaginal fistula surgical technique in 1840s Alabama. His contemporary white patients later received ether anesthesia. In 2018, after years of advocacy, his statue was removed from Central Park. What's the honest recognition?",
+    "answer": "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
     "choices": [
-      "Foundational techniques in a medical specialty were developed through experimentation on people who had no legal or actual capacity to refuse",
-      "Sims pioneered anesthesia in surgery and was the first to insist on patient consent for any procedure he performed",
-      "Sims operated only on white women who had signed detailed written consent forms in compliance with Alabama law",
-      "Sims's surgical techniques have all been discredited and replaced; no modern gynecology owes him anything"
+      "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
+      "Sims pioneered surgical anesthesia and required detailed patient consent for every procedure — he was the first to insist on those modern standards in the entire field",
+      "Sims operated only on white women with signed written consent forms — in full compliance with Alabama law of the time, with thorough independent witnessing",
+      "Sims's techniques have all been discredited and replaced by entirely modern methods — no contemporary gynecology owes any debt to his nineteenth-century research work"
     ],
-    "context": "Anarcha (subjected to 30 operations), Betsey, and Lucy are the named enslaved women on whom Sims developed his fistula repair. He claimed in his autobiography that anesthesia (ether, available from 1846) was unsuitable for the procedure; his contemporary white patients later received anesthesia. The New York statue of Sims in Central Park was removed in 2018 after years of advocacy. The naming question — does honoring a discoverer require silence about the methods — is one of the bank's substantive cases. The discoveries are real; the methods were grievously wrong."
+    "context": "Sims claimed in his autobiography that anesthesia (ether, available from 1846) was unsuitable for the procedure; his white patients later received it. The naming question — does honoring a discoverer require silence about the methods — is one of the bank's substantive cases."
   },
   {
     "tier": 5,
@@ -14953,15 +14953,15 @@
   },
   {
     "tier": 5,
-    "question": "Robert Malone helped develop the mRNA-lipid-nanoparticle delivery technology in the late 1980s. In 2021 he publicly questioned the COVID mRNA vaccine rollout's risk-benefit analysis for young healthy adults. What happened to him on major social platforms?",
-    "answer": "He was suspended from Twitter (later reinstated), demonetized on YouTube, and his interview with Joe Rogan triggered a major Spotify controversy",
+    "question": "Robert Malone helped develop mRNA lipid-nanoparticle delivery in the late 1980s (US patents 1989-1991). In December 2021 his three-hour interview on Joe Rogan Experience #1757 questioned the COVID mRNA vaccine rollout's risk-benefit for young healthy adults. Within weeks Neil Young withdrew his catalog from Spotify in protest. What was the major-platform response to a credentialed mRNA pioneer raising safety questions?",
+    "answer": "Suspended from Twitter (later reinstated), demonetized on YouTube; Spotify added 'COVID-19 advisory notices' to specific episodes rather than remove them",
     "choices": [
-      "He was suspended from Twitter (later reinstated), demonetized on YouTube, and his interview with Joe Rogan triggered a major Spotify controversy",
-      "He was elevated by every social platform and his views were featured prominently in CDC public-health communications",
-      "He had no public presence; his entire career was in private industry with no platform activity of any kind",
-      "He was indicted in federal court for fraud and stripped of all his academic credentials by year-end 2021 nationally"
+      "Suspended from Twitter (later reinstated), demonetized on YouTube; Spotify added 'COVID-19 advisory notices' to specific episodes rather than remove them",
+      "Elevated by every social platform and his concerns were featured prominently in CDC public-health communications throughout the entire pandemic period worldwide",
+      "He had no public presence at all and made no broadcasts; his entire long career had been in private industry with no platform activity of any kind whatsoever",
+      "Indicted in federal court for fraud and stripped of all his academic credentials by year-end 2021 nationally, with all medical licenses revoked permanently"
     ],
-    "context": "Malone's December 2021 interview on the Joe Rogan Experience (episode #1757) triggered Neil Young's protest withdrawal from Spotify in January 2022; Spotify added 'COVID-19 advisory notices' to certain episodes. Malone's broader argument — that the risk-benefit calculation for healthy young adults differed from that for elderly high-risk populations — has been at least partially vindicated by subsequent data on myocarditis (Tracy Beth Hoeg, others) and on the trial limitations the FDA's released Pfizer documents revealed. Whether one agrees with all of Malone's specific claims, the platform-suppression response to a credentialed mRNA pioneer raising questions is itself a documented case."
+    "context": "Malone's broader argument — that risk-benefit for healthy young adults differed from that for elderly high-risk populations — has been at least partially vindicated by subsequent data on myocarditis (Tracy Beth Hoeg) and on the trial limitations the FDA's released Pfizer documents revealed."
   },
   {
     "tier": 5,
@@ -15349,15 +15349,15 @@
   },
   {
     "tier": 5,
-    "question": "The Tuskegee Syphilis Study (1932-1972) is the canonical American medical-ethics atrocity case. Less discussed is the Guatemala syphilis study (1946-1948), conducted by some of the same US Public Health Service researchers. What did the Guatemala study do?",
-    "answer": "Researchers deliberately infected Guatemalan prisoners, soldiers, and psychiatric patients with syphilis and gonorrhea to study transmission and treatment, with no informed consent",
+    "question": "In 2005 Wellesley historian Susan Reverby found archived records: between 1946 and 1948, US Public Health Service researcher John Cutler (later a Tuskegee investigator) deliberately infected roughly 1,300 Guatemalan prisoners, soldiers, and psychiatric patients with syphilis and gonorrhea — often by inoculating bacteria onto abrasions or genital surfaces. President Obama formally apologized to Guatemala in October 2010. What does this case reveal?",
+    "answer": "Tuskegee was a pattern, not an aberration — the same USPHS network ran nonconsensual disease-exposure studies on poor and powerless populations for decades",
     "choices": [
-      "Researchers deliberately infected Guatemalan prisoners, soldiers, and psychiatric patients with syphilis and gonorrhea to study transmission and treatment, with no informed consent",
-      "Researchers cured Guatemalan prisoners of pre-existing syphilis using consensual treatment trials with full local oversight and proper documentation throughout the entire study",
-      "Researchers studied only voluntary US citizens who had traveled to Guatemala specifically to participate in the study after signing informed consent forms before departure",
-      "Researchers did not exist; the Guatemala syphilis study is a fictional case invented by twenty-first-century historians for reasons unrelated to the historical record"
+      "Tuskegee was a pattern, not an aberration — the same USPHS network ran nonconsensual disease-exposure studies on poor and powerless populations for decades",
+      "Researchers cured Guatemalan prisoners of pre-existing syphilis — using consensual treatment trials with full local oversight and thorough documentation",
+      "Researchers studied only voluntary US citizens — who had traveled to Guatemala specifically after signing informed consent forms before departure",
+      "Researchers did not exist — the Guatemala syphilis study is a fictional case invented by twenty-first-century historians for unrelated political reasons"
     ],
-    "context": "Susan Reverby, a Wellesley historian, discovered the records of the Guatemala study in 2005 while researching Tuskegee. Her 2010 paper made the case public. President Obama formally apologized to Guatemala in October 2010. Researchers deliberately exposed about 1,300 subjects to syphilis (often via direct inoculation of bacteria on abrasions or genital surfaces) and tested penicillin treatment. The study's principal investigator John Cutler was the same researcher who later worked on Tuskegee. The Guatemala case shows the institutional pattern of which Tuskegee was a piece — a US Public Health Service willing to violate informed consent on poor and powerless populations long before and after Tuskegee specifically."
+    "context": "Reverby's 2010 paper made the case public. The Guatemala case sits with Tuskegee (1932-1972), Sims's enslaved-women surgeries, the Henrietta Lacks case, and the Belmont Report (1979) as foundational US medical-ethics history."
   },
   {
     "tier": 5,
