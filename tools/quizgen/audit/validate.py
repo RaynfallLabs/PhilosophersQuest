@@ -59,6 +59,7 @@ _GATE_MODULES = {
     "grammar":    "tools.quizgen.gates.grammar",
     "ai":         "tools.quizgen.gates.ai",
     "science":    "tools.quizgen.gates.science",
+    "economics":  "tools.quizgen.gates.economics",
 }
 
 
