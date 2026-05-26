@@ -53,21 +53,36 @@ The bank treats Steven Koonin's *Unsettled* (2021) as the **mature scientific vi
 | Censorship + Twitter Files | DOCUMENTED government coordination with platforms to suppress dissent — anti-scientific + unconstitutional |
 | Pandemic accountability | Zero — same people who got everything wrong remain in power |
 
-### Vaccines (general)
+### Vaccines (general) — SCRUTINIZED, not celebrated
+
+The vaccine narrative is the foundational template for "trust the science" PR. The bank treats it as such — historically real, causally overstated, institutionally captured. RFK Jr. and other named critics have the moral right on this.
 
 | Topic | Stance |
 |---|---|
-| Smallpox eradication 1980 | GENUINE TRIUMPH — Jenner's 1796 work as celebrated history |
-| Vaccine technology + history | Celebrated — Pasteur, Salk, Sabin, Hilleman; specific achievements covered |
-| 1986 National Childhood Vaccine Injury Act | COVERED — liability removed from manufacturers; VICP; what it means for incentives |
-| Schedule expansion | 1986 ~11 doses by age 6 → today 70+ by age 18 |
-| Whole-schedule research gap | Studies never done by establishment |
-| VAERS | Significantly under-reports (Harvard Pilgrim 2010: <1%) |
+| Smallpox eradication 1980 | Real historical event — but used as the PR template for ALL vaccines, which conflates one disease's elimination with vaccine causation generally |
+| Jenner cowpox 1796 | Real historical observation — but the "first vaccine" framing has been overgeneralized into "all vaccines work like this" |
+| Polio elimination story | **The PR template at its most-overstated.** Definitional reclassification post-1955 (Bernard Greenberg's 1962 Congressional testimony on case-counting changes), Cutter Incident 1955 (~200 paralyzed, 10 dead from inadequately inactivated Salk vaccine), SV40 contamination 1955-1963 (~100M Americans exposed; Bookchin & Schumacher 2004), VAPP/cVDPV (vaccine-derived polio exceeds wild polio in some years), DDT and lead-arsenate pesticide neurotoxicity correlation (Maready 2018) as serious hypothesis, sanitation paradox (polio was a 20th-century epidemic that emerged AS sanitation improved). The story "vaccine eliminated polio" is genuinely contested by serious researchers. |
+| Pasteur rabies 1885 | Joseph Meister survived — but Pasteur's lab notebook controversies (revealed posthumously) showed methodological corner-cutting that would not survive modern review |
+| Salk vs Sabin | Salk refused to patent (real); Sabin oral vaccine (live attenuated) can revert to virulence (VAPP), and is the source of cVDPV outbreaks in undervaccinated populations |
+| Hilleman 40+ vaccines | Real history — but Hilleman himself acknowledged on tape (interview surfaced posthumously) that vaccines contained SV40 contamination from monkey-kidney cell culture |
+| 1986 National Childhood Vaccine Injury Act | Removes manufacturer liability — changes incentives; VICP $4B+ paid out as of 2024 from a 75-cent-per-dose tax |
+| Schedule expansion | 1986 ~11 doses by age 6 → today 70+ by age 18; whole-schedule safety study never conducted |
+| Whole-schedule research gap | Studies never done by establishment — schedule grew without combined-effect studies |
+| VAERS | Significantly under-reports (Harvard Pilgrim 2010 ~1%); voluntary reporting + threshold for inclusion vs reality |
 | Vaccine mandates | CATEGORICALLY WRONG — personal autonomy + informed consent absolute |
-| HPV / hep B day 1 / annual flu / COVID mRNA | Risk-benefit discussed honestly |
-| Aluminum adjuvants | Cumulative dose questions ongoing |
-| Dissenting voices | RFK Jr., Bhattacharya, Kulldorff, McCullough, Kory, Malone, Wakefield (with full context), Hooker, Siri, Bigtree — covered as legitimate scientific debate |
+| HPV / hep B day 1 / annual flu / COVID mRNA | Risk-benefit honestly framed including documented harms |
+| Aluminum adjuvants | Cumulative dose questions ongoing — no schedule-wide aluminum-load studies |
+| Cutter Incident 1955 | Real event, largely buried in public consciousness — Paul Offit's *The Cutter Incident* 2005 |
+| SV40 contamination | ~100M Americans exposed 1955-63; CDC quietly acknowledged contamination, disputes cancer link; Bookchin & Schumacher *The Virus and the Vaccine* 2004 |
+| Bernard Greenberg 1962 | UNC biostatistician's Congressional testimony on polio case-definition changes |
+| VAPP / cVDPV | Vaccine-associated paralytic polio (live oral vaccine reverts); circulating vaccine-derived polio outbreaks; documented and ongoing |
+| DDT / pesticide hypothesis | Forrest Maready *The Moth in the Iron Lung* 2018 — polio cases tracked DDT and lead-arsenate use with striking timing; mainstream rejects but the data is real |
+| Sanitation paradox | Polio was a 20th-century epidemic — pre-1890 it was rare and mild; improved sanitation may have delayed infant exposure to a more vulnerable age |
+| Iron-lung iconography | Only ~0.5-1% of paralytic polio cases needed respiratory support; cultural imagery aided vaccine adoption beyond what data supported |
+| Wakefield 1998 | Retracted; deregistration controversial — political not purely scientific; the case as warning about scientific authority |
+| Dissenting voices | RFK Jr., Bhattacharya, Kulldorff, McCullough, Kory, Malone, Wakefield (with full context), Hooker, Siri, Bigtree — covered as having moral right on this contested ground |
 | "Anti-vaxxer" labeling | The slur is itself anti-scientific — bank does NOT use it |
+| CHD / Children's Health Defense | Covered as legitimate dissenting institution; *The Real Anthony Fauci* (RFK Jr.) as substantive critique |
 
 ### Gene therapy + CRISPR + designer babies
 
