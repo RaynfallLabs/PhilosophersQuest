@@ -35,6 +35,46 @@ fact about a story kids should know.** TELL THE STORY.
 - The closer must be POINTED and CONCRETE ("What did he say?", "What
   was the sword's name?", "Where did he go next?"). NO weasels.
 
+## CRITICAL: STRICTLY SYMMETRIC VOICE ACROSS ALL FOUR TRADITIONS
+
+**The user is NOT Christian. The bank does NOT promote Christianity as
+true.** All four traditions — Christian, Arthurian + medieval legend,
+Greek, Norse — are presented on the SAME plane, with the SAME narrative
+voice, with the SAME dramatic seriousness. No tradition is treated as
+truer or more mythological than another.
+
+**Symmetric-voice test** (apply to every Christian-tradition question):
+
+Would you write the equivalent Greek or Norse story the same way? If
+"fulfilled the prophecy of X" feels weird when applied to Greek
+prophecy (e.g., "fulfilled the prophecy of the Pythia"), drop
+"fulfilled" from the Christian one too. Use "echoes" or "matches the
+figure in" instead.
+
+**Banned framings** (all four directions):
+
+- Christian-doctrinal: "fulfilled prophecy", "the Lord", "Our Lord",
+  "the Savior", "the true God", "the risen Christ" — use plain
+  narrative ("Jesus", "the apostle Paul", "the bishop Polycarp")
+- Christian-favoring: "the real account", "the truth about", "as
+  Scripture teaches"
+- Smug-atheist toward Christian: "ancient peoples ignorantly
+  believed", "primitive Hebrew myth"
+- Smug-atheist toward Greek/Norse: "primitive Norse believed", "Greek
+  sky-god fairy tale"
+- Smug-believer toward Greek/Norse: "the false gods of Olympus", "the
+  pagan superstitions"
+- Asymmetric labels: don't call Greek/Norse content "myth" while
+  calling Christian content "scripture" — use parallel narrative
+  framing across all four traditions
+
+The narrative voice in your Christian-content stems must read exactly
+the same as your Greek/Norse-content stems would — no devotional drift,
+no truth-claim slip, no "Resurrection capitalized for reverence vs
+ragnarok lowercase for myth" type asymmetries (capitalize proper-noun
+story events for ALL traditions — Resurrection / Ragnarok / Birth of
+Athena / Camlann — they're equally story-event names).
+
 ## TIER CAPS (total characters: stem + 4 choices + answer)
 
 | Tier | Cap |

@@ -2,14 +2,18 @@
 
 These 30 questions are the Wonder Pattern (adapted for theology) made
 concrete. Six anchors per tier, each anchor hitting a specific role in
-the framework:
+the framework. ALL FOUR TRADITIONS PRESENTED ON THE SAME PLANE — no
+truth-claim hierarchy. Christian content gets the same narrative voice
+as Greek, Norse, and Arthurian content. The bank is NOT Christian-
+endorsing; the user is not Christian.
 
   Per tier (T1-T5):
-    P1  Christian — Bible narrative / saint legend
-    P2  Arthurian + Western-medieval legend — sword, knight, oath
-    P3  Greek myth — Olympian / hero / Trojan / Odyssey
-    P4  Norse myth — Aesir / Vanir / Yggdrasil / Ragnarok
-    P5  Christian symbolism / liturgy / second Bible scene
+    P1  Christian story tradition — Bible narrative / saint legend
+    P2  Arthurian + Western-medieval legend tradition — sword, knight, oath
+    P3  Greek mythological tradition — Olympian / hero / Trojan / Odyssey
+    P4  Norse mythological tradition — Aesir / Vanir / Yggdrasil / Ragnarok
+    P5  Christian story tradition (second slot) — symbolism, liturgy,
+        or second Bible scene (per the 30% Christian share)
     SIG Signature wonder (Robin Hood / Roland / Beowulf / Faust /
         William Tell / second classical hero)
 
@@ -303,7 +307,7 @@ EXEMPLARS: list[dict] = [
             "Three years of tax exemption",
             "A high priest's robe and signet ring",
         ],
-        "context": "The betrayer was Judas Iscariot. The thirty pieces of silver fulfilled Zechariah 11:12-13. Judas later hanged himself from a tree (Matthew 27:5); the priests used the returned silver to buy a potter's field as a burial ground for foreigners. The site became known as Akeldama, the Field of Blood.",
+        "context": "The betrayer was Judas Iscariot. The thirty pieces of silver echoes the figure in Zechariah 11:12-13. Judas later hanged himself from a tree (Matthew 27:5); the priests used the returned silver to buy a potter's field as a burial ground for foreigners. The site became known as Akeldama, the Field of Blood.",
     },
 
     # T4-P2 Arthurian — Grail quest / Galahad in the Siege Perilous

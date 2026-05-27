@@ -4,6 +4,8 @@ Per-tier approved stem patterns + anti-patterns. Companion to `THEOLOGY_FRAMEWOR
 
 Authoring rule: every new theology question should match an approved template AND fit somewhere on the Wonder Pattern hierarchy (`THEOLOGY_FRAMEWORK.md` §1). **TELL THE STORY.** No doctrine quizzes. No author attribution.
 
+**STRICTLY SYMMETRIC VOICE across all four traditions.** Christian, Arthurian, Greek, Norse stories are told with the SAME narrative voice — no Christian-favoring framing, no Greek/Norse-dismissing framing. The user is NOT Christian; the bank does NOT promote Christian truth-claims. See `THEOLOGY_FRAMEWORK.md` §5 symmetric-voice test before authoring any Christian-tradition question.
+
 ---
 
 ## §1 Approved stem patterns by tier
