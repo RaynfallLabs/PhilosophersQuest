@@ -1,0 +1,843 @@
+"""Generate 50 supplemental economics questions on Investing + Retirement.
+
+Tier distribution: T1=6, T2=8, T3=12, T4=12, T5=12
+
+Voice: Bastiat Pattern + §14 story-in-stem. Every question reveals a
+knowledge problem, an incentive, or a hidden cost (fees, taxes, opportunity
+cost). Hayek-coherent: nobody beats the index after fees, because no manager
+has the dispersed knowledge prices encode.
+
+Stance from docs/quiz/subjects/economics.md §3.5:
+- Vanguard/Bogle CELEBRATED as practical Hayek
+- Buffett CELEBRATED (delayed gratification + time preference)
+- Index funds + low-cost ETFs WIN
+- Active management OVERSOLD
+- Crypto-not-Bitcoin = mostly speculative noise
+
+Save-as-you-go to _gen_economics_supp_finlit_investing.json.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO))
+
+from tools.quizgen.audit.validate import build_bank_indices, validate_rewrite  # noqa: E402
+
+OUTPUT = REPO / "_gen_economics_supp_finlit_investing.json"
+BANK_PATH = REPO / "data" / "questions" / "economics.json"
+
+
+# Pre-load bank + build indices
+print("Loading economics bank...", flush=True)
+BANK: list[dict] = json.load(BANK_PATH.open(encoding="utf-8"))
+print(f"  bank has {len(BANK)} questions", flush=True)
+DUP, ANS = build_bank_indices(BANK)
+print("  indices built", flush=True)
+
+
+def q(tier: int, question: str, answer: str, choices: list[str], context: str) -> dict:
+    """Build + validate a question. Raises if it fails."""
+    d = {
+        "tier": tier,
+        "question": question,
+        "answer": answer,
+        "choices": choices,
+        "context": context,
+    }
+    chars = len(question) + sum(len(c) for c in choices)
+    caps = {1: 294, 2: 504, 3: 714, 4: 945, 5: 1155}
+    if chars > caps[tier]:
+        raise AssertionError(
+            f"T{tier} OVER budget: {chars} > {caps[tier]} chars\n"
+            f"  Q: {question[:120]}"
+        )
+    r = validate_rewrite(
+        "economics", d, bank=BANK, dup_index=DUP, answer_index=ANS, replace_idx=None
+    )
+    if r["verdict"] == "FAIL":
+        msg = f"T{tier} FAIL ({chars}c):\n  Q: {question[:120]}\n"
+        for name, reason in r["hard_fails"]:
+            msg += f"  HARD {name}: {reason}\n"
+        raise AssertionError(msg)
+    return d
+
+
+questions: list[dict] = []
+
+
+def add(d: dict) -> None:
+    """Save-as-you-go."""
+    questions.append(d)
+    with OUTPUT.open("w", encoding="utf-8") as f:
+        json.dump(
+            {
+                "tier_distribution": "T1=6, T2=8, T3=12, T4=12, T5=12",
+                "summary": {"questions_generated": len(questions)},
+                "questions": questions,
+            },
+            f,
+            indent=2,
+            ensure_ascii=False,
+        )
+    print(f"  [{len(questions):2d}] T{d['tier']} OK ({len(d['question']) + sum(len(c) for c in d['choices'])}c) {d['question'][:90]}", flush=True)
+
+
+# ============================================================================
+# T1 — 6 questions — cap 294 chars (target 280)
+# Crisp moment + named figure + the wonder
+# ============================================================================
+
+print("\n=== T1 (6 questions) ===", flush=True)
+
+# T1-1: Bogle + Vanguard 1975 launch
+add(q(
+    tier=1,
+    question="In 1975 John Bogle launched Vanguard with a wild idea: buy every stock, hold forever. What did critics miss?",
+    answer="After fees, almost no manager beats the index",
+    choices=[
+        "After fees, almost no manager beats the index",
+        "Stocks always rise, so picking is easy",
+        "Vanguard was a charity giving away shares",
+        "Bogle inherited cash, the fund was a stunt",
+    ],
+    context="Bogle founded Vanguard May 1, 1975, and launched the first index mutual fund in 1976. SPIVA data tracks active-vs-index after fees.",
+))
+
+# T1-2: Compound interest — $5K at 18 vs 28
+add(q(
+    tier=1,
+    question="A teen invests $5,000 at 18 at 7% and never adds a dollar. By 65 it grows to ~$160,000. Why?",
+    answer="Compounding: time is the most expensive ingredient",
+    choices=[
+        "Compounding: time is the most expensive ingredient",
+        "Stock prices double every five years no matter what",
+        "Banks pay teens extra interest as a starter bonus",
+        "The teen got lucky and picked the next Apple",
+    ],
+    context="At 7% real, $5,000 doubles roughly every 10 years. Starting at 28 instead gives only ~$80,000 at 65 — half the pile, ten years lost.",
+))
+
+# T1-3: Rule of 72 — savings account vs stock
+add(q(
+    tier=1,
+    question="Rule of 72: years to double = 72 / yearly return. A 1% savings account doubles in 72 years. What's the lesson?",
+    answer="Low yields lose to inflation over a career",
+    choices=[
+        "Low yields lose to inflation over a career",
+        "Banks are the safest way to grow real wealth",
+        "Cash beats stocks if you wait long enough",
+        "The rule only works for amounts above $10,000",
+    ],
+    context="At 6% you double in 12 years; at 12% in 6 years; at 1% in 72 — longer than most working lives. Inflation eats real value while you wait.",
+))
+
+# T1-4: Buffett snowball — age 10 start
+add(q(
+    tier=1,
+    question="At 11, Warren Buffett bought his first stock. By 2024 he was worth ~$140 billion. What was the secret?",
+    answer="Compounding the same patient approach for decades",
+    choices=[
+        "Compounding the same patient approach for decades",
+        "Picking the one perfect stock in his twenties",
+        "Inheriting a fortune from a father in Congress",
+        "Trading actively to time every market move",
+    ],
+    context="Buffett bought Cities Service Preferred at 11 in 1942. He says the magic was not one pick but compounding the right approach for ~70 years.",
+))
+
+# T1-5: 401(k) match as free money
+add(q(
+    tier=1,
+    question="A new job offers a 401(k) with a 5% match. You skip it for more take-home pay. What did you miss?",
+    answer="A guaranteed 100% return on the matched dollars",
+    choices=[
+        "A guaranteed 100% return on the matched dollars",
+        "A small tax break that costs more than it saves",
+        "An optional bonus paid once at retirement",
+        "Nothing, since matches only help older workers",
+    ],
+    context="Most US 401(k) matches run 3-6%. Skipping the match is leaving compensation on the table. Vesting cliffs vary — read the plan document.",
+))
+
+# T1-6: Stock split — Apple 4-for-1
+add(q(
+    tier=1,
+    question="Aug 2020: Apple did a 4-for-1 split. You had 10 shares at $400; next day you had 40 at $100. What changed about your wealth?",
+    answer="Nothing, the same pie was sliced thinner",
+    choices=[
+        "Nothing, the same pie was sliced thinner",
+        "Your stake quadrupled in value overnight",
+        "You lost three-quarters of your stake",
+        "Apple borrowed new shares from the Fed",
+    ],
+    context="A stock split changes share count and price but not total market cap. Apple split 4-for-1 on Aug 31, 2020; Nvidia split 10-for-1 in June 2024. Wealth unchanged.",
+))
+
+
+# ============================================================================
+# T2 — 8 questions — cap 504 chars (target 480)
+# One scene + named figure + action/argument
+# ============================================================================
+
+print("\n=== T2 (8 questions) ===", flush=True)
+
+# T2-1: SPIVA + active manager underperformance
+add(q(
+    tier=2,
+    question="S&P Dow Jones publishes SPIVA reports tracking active managers vs the index. After 20 years, fewer than 10% of active stock funds beat the S&P 500 after fees. Why did Hayek predict this in 1945?",
+    answer="No manager owns the dispersed knowledge prices already encode",
+    choices=[
+        "No manager owns the dispersed knowledge prices already encode",
+        "Active managers refuse to do the research that beating the market requires",
+        "Stock markets are rigged so only Wall Street insiders ever win at all",
+        "Index funds cheat by secretly outperforming what their holdings actually do",
+    ],
+    context="Hayek's 1945 'Use of Knowledge in Society' is the theoretical case for index investing decades before Bogle built the practical product. Prices aggregate what no one fund manager can know.",
+))
+
+# T2-2: Roth IRA contribution limit + income phaseout
+add(q(
+    tier=2,
+    question="The 2024 Roth IRA contribution limit is $7,000 a year ($8,000 if you're over 50). Single filers earning above ~$161,000 get phased out. Why does Congress cap contributions and phase out high earners?",
+    answer="Roth's tax-free growth is a benefit politicians ration by income",
+    choices=[
+        "Roth's tax-free growth is a benefit politicians ration by income",
+        "Roth IRAs only work mathematically for incomes below $150,000",
+        "Above that income the IRS automatically converts the account to taxable",
+        "Roth accounts physically cannot hold more than $7,000 in any one year",
+    ],
+    context="Roth IRA was created by the 1997 Taxpayer Relief Act (named for Senator William Roth, no relation to Murray Rothbard). Backdoor-Roth conversions remain a workaround for higher earners.",
+))
+
+# T2-3: 1% expense ratio over 40 years
+add(q(
+    tier=2,
+    question="Two investors put $10,000 in S&P 500 funds at age 25 and hold to age 65. One pays a 1% expense ratio; the other pays 0.03% in a low-cost index fund. After 40 years at 7% growth, the gap is huge. About how much?",
+    answer="Roughly 30% less in the high-fee account — fees compound too",
+    choices=[
+        "Roughly 30% less in the high-fee account — fees compound too",
+        "Roughly 1% less in the high-fee account — that's the fee, after all",
+        "Roughly the same — fees are a rounding error over decades",
+        "Roughly 5% less — most of the fee is rebated at retirement",
+    ],
+    context="At 7% gross, the high-fee fund grows at 6%; the low-fee fund at 6.97%. Over 40 years the gap compounds to ~$70K vs ~$150K. Vanguard's VTI/VOO sit near 0.03%.",
+))
+
+# T2-4: Traditional vs Roth 401(k) — tax timing
+add(q(
+    tier=2,
+    question="Your employer offers Traditional and Roth 401(k) options. Traditional cuts your tax bill today; Roth cuts your tax bill in retirement. Both grow tax-deferred. What's the actual bet you're making?",
+    answer="Whether your tax bracket will be higher or lower in retirement",
+    choices=[
+        "Whether your tax bracket will be higher or lower in retirement",
+        "Whether the stock market will go up or down over your career",
+        "Whether your employer will still exist when you retire someday",
+        "Whether Congress will abolish all income taxes in the future",
+    ],
+    context="Young workers in low brackets typically favor Roth; high earners in peak years often favor Traditional. The decision rests on a forecast of future tax policy — itself a public-choice gamble.",
+))
+
+# T2-5: Buffett 20-punch-card method
+add(q(
+    tier=2,
+    question="Warren Buffett tells students: imagine you got a punch card with only 20 holes for your entire investing life. Every trade punches a hole. After 20, you stop forever. What lesson is he teaching?",
+    answer="Most trading destroys wealth; great picks reward patience over activity",
+    choices=[
+        "Most trading destroys wealth; great picks reward patience over activity",
+        "Day traders win because they take advantage of constant small moves",
+        "Twenty trades per year is the ideal cadence for a serious investor",
+        "Buffett wanted students to make exactly 20 picks no more no less",
+    ],
+    context="Buffett's 'punch card' is a thought experiment about commitment under scarcity. The same logic underlies his Berkshire Hathaway concentration — a few decade-long holdings rather than churn.",
+))
+
+# T2-6: Madoff Ponzi — consistent returns tell
+add(q(
+    tier=2,
+    question="Bernie Madoff reported ~10% returns every year for 20 years, regardless of market booms or crashes. Harry Markopolos warned the SEC starting 2000. Madoff was arrested Dec 11, 2008. What was the giveaway?",
+    answer="Returns that ignore market cycles are mathematically impossible",
+    choices=[
+        "Returns that ignore market cycles are mathematically impossible",
+        "Madoff's office was located in a building investigators thought shady",
+        "Madoff's investors were wealthier than other Wall Street clients",
+        "The SEC always investigates funds reporting returns above five percent",
+    ],
+    context="Markopolos's 2005 memo to the SEC was titled 'The World's Largest Hedge Fund is a Fraud.' Madoff confessed in December 2008 once the crisis forced redemptions he couldn't meet. Loss: ~$65B in paper account values.",
+))
+
+# T2-7: Asset allocation — age in bonds rule
+add(q(
+    tier=2,
+    question="A common rule of thumb: subtract your age from 120 to get your stock allocation. A 20-year-old holds 100% stocks; a 65-year-old holds 55%. Why hold more stocks when young?",
+    answer="Young investors have decades to ride out crashes that recover",
+    choices=[
+        "Young investors have decades to ride out crashes that recover",
+        "Stocks are guaranteed to outperform every other asset class always",
+        "Bonds are illegal for anyone under retirement age in the US",
+        "Younger investors pay less tax on stock gains than older ones do",
+    ],
+    context="The 60/40 stock/bond portfolio was a Boglehead staple. Young people with no liabilities and decades of human capital ahead can absorb volatility; retirees living off the portfolio cannot.",
+))
+
+# T2-8: Dividend reinvestment + compounding
+add(q(
+    tier=2,
+    question="A DRIP (Dividend Reinvestment Plan) automatically buys more shares with each dividend payment. Over 30 years, an S&P 500 investor who reinvests dividends ends up with roughly twice the wealth of one who spends them. Why?",
+    answer="Reinvested dividends compound into new dividend-paying shares",
+    choices=[
+        "Reinvested dividends compound into new dividend-paying shares",
+        "DRIPs are tax-free since the IRS doesn't see automatic reinvestment",
+        "Reinvested dividends always purchase shares at a discount to market",
+        "Companies pay double dividends to investors enrolled in any DRIP plan",
+    ],
+    context="From 1930-2023, roughly 40% of S&P 500 total return came from reinvested dividends. The mechanism is pure compounding: dividends buy shares that pay dividends that buy shares.",
+))
+
+
+# ============================================================================
+# T3 — 12 questions — cap 714 chars (target 680)
+# Scene + stakes + mechanism or moment
+# ============================================================================
+
+print("\n=== T3 (12 questions) ===", flush=True)
+
+# T3-1: Bogle + first index fund mockery 1976
+add(q(
+    tier=3,
+    question="On Aug 31, 1976, John Bogle launched the First Index Investment Trust, the first retail index fund. Active managers nicknamed it 'Bogle's Folly' and called it 'un-American' for settling for average returns. The fund raised only $11M of a planned $150M. Forty years later, Vanguard managed over $7 trillion. Why did the mockery age so badly?",
+    answer="Active managers charged fees for a service the index quietly delivered free",
+    choices=[
+        "Active managers charged fees for a service the index quietly delivered free",
+        "Active managers spotted a structural flaw Vanguard later patched in the prospectus",
+        "Active managers were proven right when most index funds were liquidated by 1990",
+        "Active managers built better products but lost share because Vanguard had ads",
+    ],
+    context="The First Index Investment Trust later became Vanguard 500 Index Fund (VFIAX). Bogle's 1999 'Common Sense on Mutual Funds' became the canonical case for low-cost indexing. Bogle died January 16, 2019.",
+))
+
+# T3-2: SPIVA 20-year data — sub-10% beat index
+add(q(
+    tier=3,
+    question="The 2023 SPIVA Year-End Scorecard shows that over the prior 20 years, 93% of large-cap active funds underperformed the S&P 500 after fees. The number gets worse over longer horizons. Why does this support Hayek's knowledge-problem argument?",
+    answer="No fund manager can outperform a price system aggregating millions of decisions",
+    choices=[
+        "No fund manager can outperform a price system aggregating millions of decisions",
+        "Active managers are required by law to underperform so retail investors can win",
+        "The S&P 500 includes secret holdings active managers are not allowed to buy",
+        "After-fee comparisons are unfair since the fees fund the manager's family expenses",
+    ],
+    context="Hayek's 1945 essay argued knowledge is dispersed, tacit, local — no central node can collect it. Markets aggregate it via prices. Active managers are central nodes. SPIVA is the empirical receipt for the theoretical claim.",
+))
+
+# T3-3: Compound interest gap — 18 vs 28
+add(q(
+    tier=3,
+    question="Two friends invest in an S&P 500 index fund. Alice starts at 18 and contributes $5,000 once, never again. Bob starts at 28 and also contributes $5,000 once. At 65, assuming 7% real returns, Alice has about $160,000 and Bob has about $80,000. What does the ten-year delay reveal?",
+    answer="Time is the most expensive input in any compound-growth calculation",
+    choices=[
+        "Time is the most expensive input in any compound-growth calculation",
+        "Bob simply chose worse funds; the gap reflects his manager's poor picks",
+        "Alice cheated by using inheritance she got later in her twenties",
+        "The gap is illusory once you adjust for the cost of a college education",
+    ],
+    context="At 7%, money doubles every ~10 years. Alice gets one extra doubling Bob never gets. The asymmetry is why financial planners chant 'start early' — the seen sacrifice of a teen's $5K is dwarfed by the unseen later wealth.",
+))
+
+# T3-4: Morningstar 5-star reversion
+add(q(
+    tier=3,
+    question="Morningstar's 5-star rating is the gold star of fund picking — yet study after study shows 5-star funds typically underperform their categories AFTER the rating is awarded. Why does the star fail at predicting future returns?",
+    answer="Stars reflect past luck more than skill; performance reverts to the mean",
+    choices=[
+        "Stars reflect past luck more than skill; performance reverts to the mean",
+        "Morningstar's algorithm has a known bug that inverts ratings every five years",
+        "Five-star funds attract so much new money that their managers stop trying hard",
+        "The SEC requires top-rated funds to underperform to avoid the appearance of bias",
+    ],
+    context="The Morningstar Star paradox: backward-looking ratings systematically mis-predict forward performance because in a noisy zero-sum game, last year's outperformance was mostly noise. The lesson reinforces the index case.",
+))
+
+# T3-5: Roth vs Traditional — bet on future bracket
+add(q(
+    tier=3,
+    question="A 25-year-old engineer earning $60,000 considers Roth IRA vs Traditional IRA. Roth pays tax now (22% bracket) and grows tax-free. Traditional skips tax now and pays tax in retirement. If she expects to retire in the 32% bracket because of decades of saving, which is the better bet?",
+    answer="Roth — locking in the lower 22% bracket now beats paying 32% later",
+    choices=[
+        "Roth — locking in the lower 22% bracket now beats paying 32% later",
+        "Traditional — deferring tax is always better regardless of future rates",
+        "Roth — but only because the IRS will eliminate Traditional accounts by 2040",
+        "Traditional — because retirees pay no federal income tax in any state",
+    ],
+    context="The Roth-vs-Traditional decision is a public-choice bet on future tax rates. With deficits at record highs and entitlements unfunded, many advisors lean Roth for young workers. But future tax policy is genuinely unknowable.",
+))
+
+# T3-6: P/E ratio + dot-com peak 1999
+add(q(
+    tier=3,
+    question="The price-to-earnings (P/E) ratio is share price divided by annual earnings per share. In March 2000, the Nasdaq's P/E hit roughly 50× — meaning investors paid $50 for each dollar of earnings. By October 2002 the index had fallen 78%. What was the market signaling at 50×?",
+    answer="Investors had priced in growth that companies couldn't deliver",
+    choices=[
+        "Investors had priced in growth that companies couldn't deliver",
+        "The SEC was about to mandate higher dividends across the tech sector",
+        "Tech earnings were guaranteed to grow 50% every year through 2010",
+        "Federal Reserve policy required P/E ratios above 40 in election years",
+    ],
+    context="The dot-com peak's P/E ratios implied earnings growth no industry has ever sustained. Shiller's CAPE ratio (cyclically-adjusted P/E) normalizes for cycles; CAPE was ~44 in 1999, the highest in 130 years.",
+))
+
+# T3-7: Buffett's first stock at 11 — patience
+add(q(
+    tier=3,
+    question="In 1942, eleven-year-old Warren Buffett bought three shares of Cities Service Preferred at $38.25. The stock dropped to $27 within weeks. Buffett held until it recovered to $40, then sold. The stock soon hit $200. Buffett later said the experience taught him the most important investing lesson. What was it?",
+    answer="Selling early for a small gain forfeits the compounding you bought in for",
+    choices=[
+        "Selling early for a small gain forfeits the compounding you bought in for",
+        "Volatile stocks should always be sold the moment they return to break-even",
+        "Eleven-year-olds should never buy preferred stock without parental approval",
+        "Holding too long during a market drop is the cardinal sin in investing",
+    ],
+    context="Buffett tells this story in 'The Snowball' (Schroeder, 2008). His Berkshire Hathaway holdings show the lesson at work — Coca-Cola held since 1988, American Express since 1964. Concentration plus patience plus compounding.",
+))
+
+# T3-8: 401(k) employer match + vesting cliff
+add(q(
+    tier=3,
+    question="A new hire learns her company offers a 6% 401(k) match but with a 3-year cliff vesting schedule. If she leaves before three years, she forfeits all employer contributions. She gets recruited away at 2.5 years for a $5,000 raise. What's the unseen cost of switching?",
+    answer="Walking away from accumulated match dollars that haven't vested yet",
+    choices=[
+        "Walking away from accumulated match dollars that haven't vested yet",
+        "Nothing, since federal law forces the new employer to pay the forfeited match",
+        "A penalty equal to one full year of salary, mandated by Department of Labor",
+        "The new employer must match the old plan dollar-for-dollar by federal statute",
+    ],
+    context="Cliff vesting fully vests after a single date; graded vesting (more common) vests partially over years. SECURE Act 2.0 (2022) shortened maximum vesting periods for some plans but cliff schedules remain legal. Read the SPD before job-switching.",
+))
+
+# T3-9: Index fund vs active — 60-year track record
+add(q(
+    tier=3,
+    question="From 1962 to 2022, the S&P 500 returned an average ~10% per year. A 1% actively-managed fund grew at ~9%, and a 2% hedge fund at ~8%. A buy-and-hold investor in a 0.03% Vanguard index fund kept ~9.97%. Over $10,000 invested in 1962, what's the wealth gap at the end?",
+    answer="The low-fee index investor ends with roughly twice the hedge-fund investor",
+    choices=[
+        "The low-fee index investor ends with roughly twice the hedge-fund investor",
+        "All four investors end with nearly the same wealth since fees are rounding errors",
+        "The hedge-fund investor ends ahead because the fees buy genuine skill",
+        "The active manager ends ahead because of survivorship bias in the data",
+    ],
+    context="Survivorship bias is the trick that makes active management look better than it is — failed funds disappear from the data. SPIVA controls for this. The 1962-2022 case shows fee drag dominates over multi-decade horizons.",
+))
+
+# T3-10: Buffett bet — Protégé Partners 2008-2017
+add(q(
+    tier=3,
+    question="In 2007 Warren Buffett bet $1M that a low-cost S&P 500 index fund would beat any basket of hedge funds over ten years, after fees. Protégé Partners took the bet, picking five hedge funds-of-funds. By 2017 the index returned 7.1% annually; the hedge funds returned 2.2%. What was the lesson?",
+    answer="Hedge fund fees consumed the alpha managers promised but could not deliver",
+    choices=[
+        "Hedge fund fees consumed the alpha managers promised but could not deliver",
+        "Hedge funds were sabotaged by a market environment hostile to active investing",
+        "Buffett picked an unusually strong decade for the S&P that won't repeat",
+        "Protégé picked funds Buffett vetoed by exploiting a loophole in the contract",
+    ],
+    context="Buffett donated his $1M winnings to Girls Inc. of Omaha. The bet became canonical in the index-vs-active debate. The five funds-of-funds charged ~2.5% in layered fees on top of underlying fund fees.",
+))
+
+# T3-11: Madoff feeder funds + ignored warnings
+add(q(
+    tier=3,
+    question="Bernie Madoff's investors included sophisticated 'feeder funds' — Fairfield Greenwich, Tremont Capital, Banco Santander — that charged their own fees on top of Madoff's promised returns. Harry Markopolos sent the SEC detailed memos in 2000, 2001, 2005, and 2007. None triggered action. Why did everyone miss the obvious?",
+    answer="Incentives: feeders earned fees, while the SEC feared the reputation hit",
+    choices=[
+        "Incentives: feeders earned fees, while the SEC feared the reputation hit",
+        "Madoff's math was so sophisticated only Markopolos could understand it",
+        "The SEC was understaffed and Madoff's filings were too voluminous to read",
+        "Madoff genuinely outperformed for decades; only 2008 exposed the gap",
+    ],
+    context="Madoff's December 11, 2008 arrest revealed ~$65B in fictitious account values. The Public Choice lesson: regulators face the same incentive problems as the markets they police. Madoff was a former Nasdaq chairman.",
+))
+
+# T3-12: Bitcoin vs altcoins — Mt. Gox 2014
+add(q(
+    tier=3,
+    question="On February 7, 2014, Mt. Gox — then handling 70% of Bitcoin transactions — froze withdrawals and filed bankruptcy two weeks later. About 850,000 BTC went missing. Customers who held coins on the exchange lost everything; customers who self-custodied lost nothing. What's the recognition skill?",
+    answer="Not your keys, not your coins: exchanges reintroduce the trust Bitcoin removed",
+    choices=[
+        "Not your keys, not your coins: exchanges reintroduce the trust Bitcoin removed",
+        "Bitcoin's design is structurally fragile and inherits exchange risk by protocol",
+        "Mt. Gox proved fiat currency is fundamentally safer than any crypto asset",
+        "Holding coins on an exchange is mandatory for all serious Bitcoin investors",
+    ],
+    context="Mt. Gox CEO Mark Karpelès was later convicted of data manipulation. The 2014 collapse foreshadowed FTX 2022 — different decade, same custodial-risk lesson. Bitcoin's self-custody design (private keys) makes exchange-bypass possible.",
+))
+
+
+# ============================================================================
+# T4 — 12 questions — cap 945 chars (target 900)
+# Setup + tension + named details + payoff
+# ============================================================================
+
+print("\n=== T4 (12 questions) ===", flush=True)
+
+# T4-1: Bogle 1951 Princeton thesis + index seed
+add(q(
+    tier=4,
+    question="John Bogle's 1951 Princeton senior thesis 'The Economic Role of the Investment Company' analyzed mutual fund performance and concluded that funds 'should make no claim to superiority over the market averages.' He spent the next 24 years working at Wellington Management, was fired in 1974 after a botched merger, and founded Vanguard in 1975 specifically to implement the thesis. The first index mutual fund launched in 1976 to industry mockery. Why was the firing actually the precondition for the revolution?",
+    answer="Only an outsider with nothing to lose could build a fund firm structurally opposed to active management",
+    choices=[
+        "Only an outsider with nothing to lose could build a fund firm structurally opposed to active management",
+        "Bogle's firing was the unrelated result of personality conflicts with Wellington's board members",
+        "Vanguard's structure was actually invented by Wellington's CEO and Bogle was just the public face",
+        "Bogle did not believe in indexing himself and only built Vanguard as a strategic accident in 1975",
+    ],
+    context="Vanguard's mutual structure — owned by its funds, which are owned by shareholders — was Bogle's key innovation. It eliminated the conflict of interest where a fund company profits by extracting fees from the funds it manages. Bogle's compensation as Vanguard chair was a fraction of competing fund-firm CEOs.",
+))
+
+# T4-2: Vanguard's mutual structure — no profit motive
+add(q(
+    tier=4,
+    question="Vanguard is structured as a mutual fund company — meaning Vanguard is owned by the funds it manages, which are owned by the fund shareholders. There is no parent corporation taking profit out of the system. Fidelity, BlackRock, and others have shareholders the fund company must enrich. Expense ratios reflect this difference. Vanguard's average ER in 2023 was ~0.09%; the industry average was ~0.36%. Why does the structure matter?",
+    answer="Vanguard's costs are returned to shareholders; competitors return costs to corporate shareholders",
+    choices=[
+        "Vanguard's costs are returned to shareholders; competitors return costs to corporate shareholders",
+        "Vanguard receives federal subsidies that competitors are not legally entitled to claim",
+        "Vanguard's lower expenses are a marketing illusion that hide hidden management fees",
+        "Vanguard is the only firm in the US legally permitted to operate as a mutual structure",
+    ],
+    context="Bogle wrote about Vanguard's structure as 'the only true mutual fund company.' BlackRock's iShares ETFs have since matched some Vanguard expense ratios through competition, but the structural incentive remains different. Bogle: 'In investing, you get what you don't pay for.'",
+))
+
+# T4-3: Compound interest — Einstein quote + math
+add(q(
+    tier=4,
+    question="Albert Einstein supposedly called compound interest 'the eighth wonder of the world' and 'the most powerful force in the universe.' The quote is disputed but the math isn't. At 7% real returns, $5,000 invested at age 18 grows to about $160,000 at 65 — a 32× multiplier over 47 years. The same $5,000 invested at 28 grows to about $80,000. The same investment at 38 grows to about $40,000. What's the unseen pattern?",
+    answer="Each decade of delay roughly cuts the final result in half",
+    choices=[
+        "Each decade of delay roughly cuts the final result in half",
+        "Compound interest works the same regardless of when you start saving",
+        "Starting at 38 produces better outcomes than starting at 18 due to maturity",
+        "The investor must contribute every year for compounding to function properly",
+    ],
+    context="The 7% real assumption is conservative for US equities; nominal returns including dividends ran ~10% from 1926-2024. The 'starting age' effect is why financial educators stress age 18 over age 28: the difference is one full doubling cycle that can never be recovered.",
+))
+
+# T4-4: Roth IRA — Senator Roth 1997 + tax-free growth
+add(q(
+    tier=4,
+    question="The Taxpayer Relief Act of 1997, championed by Senator William Roth (R-DE), created the Roth IRA. The deal: pay tax on contributions now, then watch the account grow tax-free forever. No required minimum distributions. Tax-free withdrawals in retirement. The trade-off is the lost current-year deduction. Why did Congress create such a generous account?",
+    answer="To encourage long-term saving while collecting tax revenue upfront for budget scoring",
+    choices=[
+        "To encourage long-term saving while collecting tax revenue upfront for budget scoring",
+        "To eliminate retirement saving incentives for high-income earners completely",
+        "To replace the Traditional IRA which was scheduled to be phased out by 2005",
+        "To force all Americans to pay capital gains taxes earlier in their working lives",
+    ],
+    context="The 10-year budget window in Congressional Budget Office scoring made Roth attractive politically: upfront revenue scores well; tax-free growth is in the out-years that scoring ignores. The actual long-term tax cost is enormous if accounts grow as designed. Public choice at work.",
+))
+
+# T4-5: Active manager survivorship bias + closed funds
+add(q(
+    tier=4,
+    question="When fund families report 'our active funds outperformed the index,' they often quote only surviving funds. Failed funds are quietly liquidated or merged into successful ones, removed from the historical record. A 1996 study by Burton Malkiel found that roughly a third of equity funds active in 1985 had disappeared by 1995. What's the methodological trick?",
+    answer="Survivorship bias inflates the apparent track record of active management",
+    choices=[
+        "Survivorship bias inflates the apparent track record of active management",
+        "Survivorship bias is required by SEC rules to protect investors from old data",
+        "The trick is harmless because failed funds were never owned by real customers",
+        "Failed funds were always merged at gains so the bias works in investors' favor",
+    ],
+    context="Malkiel's 'A Random Walk Down Wall Street' (1973, multiple editions) is the canonical popular case for indexing. Survivorship bias compounds across all active-management performance claims. SPIVA controls for it explicitly. The honest claim: even before bias, the index wins after fees.",
+))
+
+# T4-6: Buffett — Mr. Market parable from Graham
+add(q(
+    tier=4,
+    question="In Benjamin Graham's 1949 'The Intelligent Investor,' Chapter 8 introduces Mr. Market — a manic-depressive business partner who shows up daily quoting wildly different prices for the same business. Some days he's euphoric and quotes high; some days he's despondent and quotes low. Buffett, Graham's most famous student, calls Mr. Market his most important investing concept. What's the lesson?",
+    answer="Use the market's mood swings to buy below value; ignore the mood itself",
+    choices=[
+        "Use the market's mood swings to buy below value; ignore the mood itself",
+        "Mr. Market is always right; investors should follow daily price signals strictly",
+        "Stock prices reflect underlying business value perfectly at every moment",
+        "Investors should sell during euphoria and buy during despair using technical signals",
+    ],
+    context="Graham's distinction: a stock's price (what Mr. Market quotes) and a business's value (what the cash flows are worth) drift apart constantly. The investor exploits the gap. Buffett's 1987 Berkshire letter expanded on Mr. Market; he calls Graham's chapter 8 the most important investment writing ever.",
+))
+
+# T4-7: 401(k) match + Vesting cliff scenario
+add(q(
+    tier=4,
+    question="At age 25, a software engineer earns $100K with a 5% 401(k) match that vests on a 3-year cliff. She contributes 6% ($6,000); the employer contributes 5% ($5,000) yearly. At year 2.5, a competitor offers a $15K raise. She'd forfeit two years of unvested match — about $10,250 plus growth. The new employer matches the salary boost but only offers a 3% match with immediate vesting. What's the actual decision?",
+    answer="Compare the lifetime present value of the raise against the forfeited unvested match plus lower future match",
+    choices=[
+        "Compare the lifetime present value of the raise against the forfeited unvested match plus lower future match",
+        "Always take the higher salary, since current cash always beats deferred retirement benefits",
+        "Always stay until full vesting, since leaving any match unvested is irrational under all conditions",
+        "Negotiate the new employer to pay the forfeited match in cash, since they always agree to this",
+    ],
+    context="Compensation comparisons that look only at salary miss vesting cliffs, equity grants, healthcare costs, commute differences. The unseen costs/benefits often exceed the visible salary delta. Lesson: compare total compensation, not headline numbers. Public choice applies to HR too.",
+))
+
+# T4-8: P/E ratio + Shiller CAPE 1929/1999/2021
+add(q(
+    tier=4,
+    question="Robert Shiller's Cyclically Adjusted P/E (CAPE) ratio averages earnings over 10 years to smooth business cycles. Long-term mean: ~17. Three peaks stand out: 1929 hit ~32 (preceded the Great Depression), 1999 hit ~44 (preceded the dot-com crash), 2021 hit ~38. Shiller won the 2013 Nobel for related work. What does extreme CAPE typically predict?",
+    answer="Lower-than-average real returns over the following 10-15 years",
+    choices=[
+        "Lower-than-average real returns over the following 10-15 years",
+        "Immediate market crashes within six months of any extreme CAPE reading",
+        "Higher-than-average returns since high CAPE indicates strong market momentum",
+        "Nothing at all, since CAPE has never predicted any market behavior reliably",
+    ],
+    context="Shiller's 'Irrational Exuberance' (2000) used CAPE to warn of the dot-com peak weeks before the March 2000 top. CAPE doesn't time tops precisely but its relationship to subsequent 10-year real returns has held for 130+ years. Mean-reversion is the mechanism.",
+))
+
+# T4-9: Index fund sector neutrality + Hayek
+add(q(
+    tier=4,
+    question="The S&P 500's largest weights in early 2024 were Apple, Microsoft, Nvidia, Amazon, Meta, and Alphabet. Critics say this 'concentration risk' makes the index a tech bet. Defenders say the weights reflect what real markets value — billions of investors collectively decided these are the most valuable companies. Whose argument is more Hayekian?",
+    answer="The defenders — market-cap weighting reflects dispersed knowledge no manager can replicate",
+    choices=[
+        "The defenders — market-cap weighting reflects dispersed knowledge no manager can replicate",
+        "The critics — concentration is a flaw that proves indexes need active rebalancing",
+        "Neither — Hayek explicitly rejected stock investing as inherently speculative",
+        "Both equally — Hayek would have applauded any approach that included equal weighting",
+    ],
+    context="Equal-weight S&P 500 funds exist (RSP) and underperform the cap-weighted S&P over long periods. Hayek's price system is the market's aggregation of dispersed information; cap-weight respects it. Equal weight overrides it. The 1945 paper is the theoretical foundation.",
+))
+
+# T4-10: Roth conversion + future tax forecast
+add(q(
+    tier=4,
+    question="A 40-year-old executive in the 35% federal tax bracket has $500K in a Traditional 401(k). She considers converting to a Roth — paying $175K in tax now to lock in tax-free growth forever. The bet: future income tax rates will rise. Her financial advisor warns the conversion is 'irreversible after the 2017 TCJA repealed recharacterization.' What's the unseen risk?",
+    answer="Future Congress could change the rules — Roth's tax-free promise depends on political stability",
+    choices=[
+        "Future Congress could change the rules — Roth's tax-free promise depends on political stability",
+        "Future returns might disappoint — Roth conversions only work if the market rises",
+        "Future life expectancy might shorten — Roth's benefits assume the retiree lives 20 years",
+        "Future inflation might erode — Roth's nominal balance might lose purchasing power",
+    ],
+    context="The 2017 Tax Cuts and Jobs Act removed the ability to undo a Roth conversion. Public-choice insight: any tax shelter exists only as long as Congress allows. Past efforts to means-test or tax Roth accounts (rumored under various administrations) show the rules are not stone tablets.",
+))
+
+# T4-11: Madoff arrest + Markopolos 9-year SEC failure
+add(q(
+    tier=4,
+    question="Harry Markopolos worked at Boston-based Rampart Investment Management when he was asked in 1999 to reverse-engineer Madoff's returns. Within four hours he concluded the strategy was mathematically impossible. He delivered a 2005 memo to the SEC titled 'The World's Largest Hedge Fund is a Fraud' with 29 red flags. The SEC investigated for two years and concluded Madoff was legitimate. Madoff confessed December 11, 2008. What does the timing reveal?",
+    answer="The regulator that should catch fraud faced incentives that aligned it with the fraudster's prestige",
+    choices=[
+        "The regulator that should catch fraud faced incentives that aligned it with the fraudster's prestige",
+        "Markopolos's memo was poorly written and the SEC investigators could not understand the math",
+        "Madoff's strategy was so sophisticated that no regulator in history could have caught it earlier",
+        "The 2008 financial crisis created a unique opportunity to expose long-running frauds that year",
+    ],
+    context="Bernie Madoff had served as Nasdaq chairman. SEC investigators went on to private-sector jobs at firms tied to Madoff's network. Markopolos's 2010 book 'No One Would Listen' details the nine-year regulatory failure. Public choice theory predicts exactly this dynamic.",
+))
+
+# T4-12: FTX Sam Bankman-Fried + EA grift
+add(q(
+    tier=4,
+    question="FTX collapsed November 8, 2022. Founder Sam Bankman-Fried had moved roughly $8 billion in customer crypto deposits to his trading firm Alameda Research. He had cultivated an image as the face of 'effective altruism,' donating to political campaigns (mostly Democratic) and pledging future billions to charity. He was convicted of seven counts of fraud in November 2023 and sentenced to 25 years in March 2024. What's the recognition skill?",
+    answer="Stated altruism is no protection against the incentives self-custody and Bitcoin were designed to remove",
+    choices=[
+        "Stated altruism is no protection against the incentives self-custody and Bitcoin were designed to remove",
+        "All cryptocurrency exchanges are fraudulent and Bitcoin itself was proven worthless by FTX",
+        "FTX was an unusually well-regulated exchange and its collapse was due to a media-driven panic",
+        "Customers who used FTX shared moral responsibility for the missing customer deposits",
+    ],
+    context="SBF was a major political donor (~$40M in 2022 cycle, mostly Democratic) and EA spokesman. His parents both taught at Stanford Law. FTX's collapse exposed the gap between performed virtue and actual practice. Bitcoin's design (no central custodian) makes FTX-style collapses architecturally impossible at the protocol level.",
+))
+
+
+# ============================================================================
+# T5 — 12 questions — cap 1155 chars (target 1100)
+# Grade 9-10 hard ceiling — setup + tension + named details + sophisticated payoff
+# ============================================================================
+
+print("\n=== T5 (12 questions) ===", flush=True)
+
+# T5-1: Bogle thesis 1951 → Vanguard 1975 → $7T 2020s
+add(q(
+    tier=5,
+    question="John Bogle's 1951 Princeton senior thesis argued that mutual funds 'should make no claim to superiority over the market averages.' Wellington Management hired him; he became CEO; the 1974 merger he engineered collapsed and the board fired him. He founded Vanguard May 1, 1975, structured as a mutual company (owned by its funds, owned by shareholders, with no external profit motive). The First Index Investment Trust launched 1976 to industry ridicule — 'un-American,' 'Bogle's Folly.' By his death in 2019 Vanguard managed roughly $5 trillion. Why did the firing turn out to be load-bearing for the indexing revolution?",
+    answer="An insider compensated by the existing fee structure could never have built the firm that destroyed it",
+    choices=[
+        "An insider compensated by the existing fee structure could never have built the firm that destroyed it",
+        "Wellington's board explicitly required Bogle to start an index firm in his exit agreement of 1974",
+        "Vanguard's mutual structure was designed by Wellington's CEO and Bogle was a public face only",
+        "The 1974 firing was the unrelated result of personality conflicts unconnected to Bogle's economic views",
+    ],
+    context="The Hayek connection runs through Bogle's own writing. 'Common Sense on Mutual Funds' (1999) cited the price system as the rationale for not picking stocks. The Vanguard mutual structure is the institutional embodiment of Bogle's insight: remove the conflict of interest at the corporate level, return all economies of scale to the customer-owners. The compound effect over 50 years is one of the great wealth transfers in financial history — from fund managers to ordinary savers.",
+))
+
+# T5-2: SPIVA + Buffett bet + survivorship — three lines of evidence
+add(q(
+    tier=5,
+    question="Three converging empirical lines support Hayek's 1945 knowledge-problem argument applied to investing. (1) SPIVA reports show that over 20 years, ~93% of large-cap active managers underperform the S&P 500 after fees. (2) Buffett's 2007-2017 bet pitted a low-cost index fund (7.1% annual) against five hedge-fund-of-funds picked by Protégé Partners (2.2% annual); the index won by a wide margin. (3) Survivorship bias makes the published active-management record look better than it is — failed funds disappear from the database. Why do critics dismiss all three findings?",
+    answer="Each finding contradicts the core sales pitch of an industry that employs hundreds of thousands",
+    choices=[
+        "Each finding contradicts the core sales pitch of an industry that employs hundreds of thousands",
+        "The findings rely on cherry-picked data, and neutral statistical methods would reverse the result",
+        "Index funds were retroactively boosted by post-2017 corporate tax cuts not yet repealed by Congress",
+        "Hedge funds and active managers actually outperform when measured before fees and before taxes",
+    ],
+    context="Public choice theory predicts industries facing existential threats from research findings will mobilize to reinterpret or dismiss them. The active management industry has weathered the SPIVA decades with rhetoric about 'this time is different,' 'concentration risk,' 'tail risk,' and 'alpha opportunities.' Fee compression has happened anyway — competition forced it. But the institutional architecture defending active management remains substantial.",
+))
+
+# T5-3: Rule of 72 + savings account = career-loss
+add(q(
+    tier=5,
+    question="The Rule of 72 estimates years-to-double as 72 divided by annual return. At 1% (typical savings account in 2010-2020), money doubles in 72 years. At 3% (CD or short-term Treasury), 24 years. At 7% (long-run S&P 500 real return), 10.3 years. At 10% (long-run S&P 500 nominal), 7.2 years. Cantillon's 18th-century insight was that newly-printed money reaches early recipients first. The Cantillon effect compounds when savers lose purchasing power to inflation while asset holders gain. What does the Rule of 72 reveal about cash holdings in a fiat era?",
+    answer="Holding cash through a career under fiat policy guarantees a substantial real-wealth transfer to early-money recipients",
+    choices=[
+        "Holding cash through a career under fiat policy guarantees a substantial real-wealth transfer to early-money recipients",
+        "Holding cash is the only safe choice during inflation since stocks and bonds both fail to keep pace",
+        "Holding cash beats every other asset class over decades since inflation is always reversed eventually",
+        "Holding cash is required by federal law for all retirement accounts under regulations passed in 1974",
+    ],
+    context="The 2009-2022 zero-interest-rate period combined with $4-5T in pandemic deficit spending produced a clean test. Savers in cash lost ~30% of real purchasing power; equity-index holders preserved value; Bitcoin holders gained. The Cantillon effect Richard Cantillon described in 1755 played out at modern scale. The Rule of 72 makes the math transparent.",
+))
+
+# T5-4: Roth + Backdoor + Mega Backdoor + Public Choice
+add(q(
+    tier=5,
+    question="The Roth IRA (1997 Taxpayer Relief Act) caps direct contributions at $7,000 (2024) and phases out above ~$161K for single filers. High earners discovered the Backdoor Roth — contribute non-deductibly to a Traditional IRA, then immediately convert to Roth. The 2017 TCJA made conversions irreversible. Sophisticated employers offer Mega Backdoor Roth via after-tax 401(k) contributions up to ~$69K total annual cap. Senator Wyden has repeatedly proposed closing both loopholes. What does this dynamic illustrate about tax-policy benefits?",
+    answer="Any benefit Congress grants can be revoked; sophisticated workarounds invite the political backlash that closes them",
+    choices=[
+        "Any benefit Congress grants can be revoked; sophisticated workarounds invite the political backlash that closes them",
+        "Tax law is stable over decades and high earners can rely on current Roth rules through retirement",
+        "Backdoor and Mega Backdoor Roth strategies are illegal and the IRS has prosecuted users since 2010",
+        "Congress is constitutionally barred from changing retirement tax rules once an account has been opened",
+    ],
+    context="The Build Back Better legislation in 2021 included a provision closing the Mega Backdoor Roth; it was removed before final passage. Subsequent proposals revive the closure. Public choice theory: concentrated benefits to sophisticated taxpayers face diffuse opposition until the asymmetry becomes visible — at which point reform becomes politically possible. Tax planning is always a forecast of political stability.",
+))
+
+# T5-5: Buffett's snowball — 11 to 94, the math of patience
+add(q(
+    tier=5,
+    question="Warren Buffett bought his first stock (3 shares of Cities Service Preferred at $38.25) at age 11 in 1942. By 2024 he was approximately 94 years old and worth ~$140 billion. Of his net worth, more than 99% was accumulated after age 50. The phenomenon Buffett calls 'the snowball' is a specific mathematical feature of compound growth: at high values, even modest percentage gains produce enormous absolute increases. What's the policy implication for young savers?",
+    answer="The first dollar saved at 18 is worth orders of magnitude more than the last dollar saved at 60",
+    choices=[
+        "The first dollar saved at 18 is worth orders of magnitude more than the last dollar saved at 60",
+        "Saving in youth is optional since the largest gains arrive in the final decade before retirement",
+        "Buffett's wealth came from inheritance and the snowball metaphor is misleading for ordinary investors",
+        "Compound growth slows substantially after age 50 making early savings effectively worthless",
+    ],
+    context="The mathematics: at 10% nominal returns, money doubles roughly every 7 years. A 17-year-old's investment doubles ~6 times by age 65. A 47-year-old's investment doubles ~2 times by 65. The difference is the four doublings the young saver gets and the older saver can never recover. Alice Schroeder's 2008 biography 'The Snowball' takes its title from Buffett's own metaphor for this asymmetric pattern.",
+))
+
+# T5-6: Active management's structural problem — Sharpe 1991
+add(q(
+    tier=5,
+    question="William Sharpe's 1991 paper 'The Arithmetic of Active Management' (Financial Analysts Journal) demonstrated mathematically that active investors as a group must underperform passive investors after costs. The proof rests on a tautology: every dollar invested actively must be matched by a dollar invested in something the active manager chose NOT to buy; one investor's outperformance is another's underperformance. Costs make the average active investor a net loser. Why is the proof more devastating than empirical SPIVA evidence?",
+    answer="Empirical evidence could in principle reverse; the arithmetic identity cannot be violated by any future data",
+    choices=[
+        "Empirical evidence could in principle reverse; the arithmetic identity cannot be violated by any future data",
+        "Sharpe's proof was rejected by the academic profession in the 1990s and has been retracted from journals",
+        "The proof applies only to US markets and does not constrain emerging-market active managers",
+        "Sharpe later admitted his arithmetic was wrong and apologized in his 1990 Nobel acceptance speech",
+    ],
+    context="Sharpe won the 1990 Nobel for the Capital Asset Pricing Model. The 1991 paper sharpened the case against active management to mathematical certainty. The argument: passive returns are the market return minus passive costs; active returns are the market return minus active costs; active costs exceed passive costs; therefore the average active dollar must underperform the average passive dollar. Identity, not empirical claim.",
+))
+
+# T5-7: 1929 + 1987 + 2008 + 2020 — the case for ignoring crashes
+add(q(
+    tier=5,
+    question="The Dow lost 89% from 1929-1932 (Great Depression); 22.6% on Black Monday October 19, 1987; 54% from October 2007 to March 2009 (Global Financial Crisis); 34% February-March 2020 (COVID). An investor who bought the S&P 500 at the 1929 peak — the worst-timed buy in modern US history — and reinvested dividends, breaking even in real terms took until 1959 (30 years) but their grandchildren's portfolio grew at long-run rates. What's the recognition skill for young investors today?",
+    answer="Crashes hurt buyers near the top; over decades, broad-market index holders are made whole by compounding",
+    choices=[
+        "Crashes hurt buyers near the top; over decades, broad-market index holders are made whole by compounding",
+        "Crashes prove that stocks are not a safe investment and bonds should be preferred at all ages",
+        "Crashes are bought-and-paid-for events orchestrated by central banks for political reasons",
+        "Crashes are best avoided by exiting markets whenever P/E ratios exceed historical averages",
+    ],
+    context="The behavioral lesson is harder than the math. Buy-and-hold sounds simple until you watch your account drop 50%. Bogle's Vanguard built investor education materials specifically to prevent the panic-selling that turns a paper drawdown into a realized loss. The 1929-1959 recovery includes the Great Depression itself — even that extreme case reverted to long-run returns for patient holders.",
+))
+
+# T5-8: Madoff + Theranos + Enron + FTX — fraud pattern
+add(q(
+    tier=5,
+    question="Bernie Madoff (~$65B paper / 2008), Theranos (~$9B peak / 2018), Enron (~$74B peak / 2001), and FTX (~$8B customer funds / 2022) share structural features. Each had charismatic leadership, prestigious endorsements, opaque internals, and reported results too consistent or too good to be true. Harry Markopolos, John Carreyrou, Bethany McLean, and Coffeezilla each tried to warn the public; each was initially dismissed. What's the recognition skill these four cases together teach?",
+    answer="Concentrated reputation plus consistent returns plus opacity is the canonical fraud signature",
+    choices=[
+        "Concentrated reputation plus consistent returns plus opacity is the canonical fraud signature",
+        "Frauds are typically caught quickly by regulators who follow strict whistleblower protocols",
+        "All four cases involved foreign actors and US-based investment firms are inherently safe from fraud",
+        "Frauds always reveal themselves through obvious financial-statement errors visible to any auditor",
+    ],
+    context="Each case combined a high-status figure (Madoff/Nasdaq, Holmes/Stanford, Lay-Skilling/Houston elite, SBF/Stanford-Law parents) with internal practices the public couldn't examine. Bastiat's seen-unseen frame applies: the SEEN is the prestige; the UNSEEN is the financial architecture. The recognition skill is to weight the unseen more than the seen — the opposite of the natural impulse.",
+))
+
+# T5-9: Index fund concentration + Hayek price aggregation
+add(q(
+    tier=5,
+    question="As of early 2024 the top 10 holdings of the S&P 500 represented ~33% of total market cap — Apple, Microsoft, Nvidia, Amazon, Meta, Alphabet (A & C shares), Berkshire, Tesla, Eli Lilly. Critics call this 'concentration risk' and argue equal-weight indexes (where each company holds 0.2%) are safer. The 2003-2023 record: equal-weight S&P 500 underperformed cap-weight S&P 500 by roughly 0.5% annually after fees. Why does cap-weighting embody the Hayek price-system case?",
+    answer="Cap-weighting respects what billions of investors price; equal-weighting overrides them with a flat decree",
+    choices=[
+        "Cap-weighting respects what billions of investors price; equal-weighting overrides them with a flat decree",
+        "Equal-weighting is required by SEC regulations for any fund marketed as an index fund",
+        "Cap-weighting is a relic from the 1970s that has been superseded by smart-beta methodologies",
+        "Hayek explicitly endorsed equal-weighted portfolios in his 1945 American Economic Review paper",
+    ],
+    context="The argument runs both ways and serious investors disagree. The Hayekian point is narrow: cap-weighting reflects the aggregate price judgment of millions of decisions; equal-weighting substitutes the fund designer's judgment for the market's. Hayek's 1945 essay is not about portfolio construction but the underlying epistemology applies: distributed pricing aggregates information no single agent possesses.",
+))
+
+# T5-10: 2021-2023 inflation + savers vs asset holders + Cantillon
+add(q(
+    tier=5,
+    question="From early 2020 to early 2023, US M2 money supply grew about 40% while federal deficit spending totaled roughly $5 trillion above baseline. CPI inflation peaked at 9.1% in June 2022. Households holding cash and short-term bonds lost ~20-30% in real purchasing power. Households holding S&P 500 index funds preserved real value through 2023. Households holding Bitcoin (despite extreme volatility) outperformed in nominal terms from any pre-2020 entry. What does the period reveal about the Cantillon effect at modern scale?",
+    answer="Monetary expansion under fiat regimes transfers real wealth from savers to early-money asset holders",
+    choices=[
+        "Monetary expansion under fiat regimes transfers real wealth from savers to early-money asset holders",
+        "Monetary expansion is neutral and affects all economic actors equally across the income distribution",
+        "Monetary expansion lifts wages first since labor markets always price in inflation faster than assets",
+        "Monetary expansion reduces inequality since the Fed targets relief at lower-income households first",
+    ],
+    context="Richard Cantillon's 1755 *Essai* identified the mechanism nearly three centuries before the empirical receipt arrived. The 2020-2023 period is the cleanest natural experiment in living memory. Index-fund holders and Bitcoin holders preserved wealth; cash-and-bonds holders absorbed the loss. The Larry Summers warning from February 2021 turned out to be correct against the consensus of Treasury, Fed, and academic Keynesians.",
+))
+
+# T5-11: Buffett 1999 Allen Sun Valley warning + 2000 crash
+add(q(
+    tier=5,
+    question="At Sun Valley July 1999, Warren Buffett gave a long address to an audience of tech-boom executives. The market was at peak euphoria; the Nasdaq would rise another ~50% before peaking in March 2000. Buffett argued that for the prior 17 years (1981-1998) corporate profits as a share of GDP were stagnant while equity prices had multiplied; either profits had to rise dramatically or prices had to fall. He was mocked as out of touch. The Nasdaq lost 78% by October 2002. What recognition skill does the episode demonstrate?",
+    answer="Identifying when prices have detached from the underlying cash flows they ultimately depend on",
+    choices=[
+        "Identifying when prices have detached from the underlying cash flows they ultimately depend on",
+        "Following Wall Street consensus is the safest strategy during periods of market euphoria",
+        "Buffett's 1999 warning was an accident; he had no analytical basis for the timing of the call",
+        "Sun Valley speakers have legal liability for predictions that move markets in subsequent sessions",
+    ],
+    context="The 1999 Allen Sun Valley speech is canonical in value-investing literature. Buffett's framework: market capitalization to GDP is the 'best single measure' of valuation extremes. The ratio peaked at ~190% in 2000 and again above 200% in 2021. Long-run mean is ~80-100%. The discipline is to ignore the narrative consensus when the arithmetic doesn't support it. Bogle held similar concerns at the same moment.",
+))
+
+# T5-12: Bitcoin vs altcoins + custody + Mt. Gox + FTX
+add(q(
+    tier=5,
+    question="Mt. Gox (Feb 2014, ~850K BTC lost), FTX (Nov 2022, ~$8B customer funds missing), Celsius (Jul 2022 bankruptcy, ~$4.7B customer claims), BlockFi (Nov 2022 bankruptcy), Voyager (Jul 2022 bankruptcy), Genesis (Jan 2023 bankruptcy). Each collapse involved customer-deposited crypto held by a centralized intermediary that turned out to be insolvent, fraudulent, or both. Customers who self-custodied Bitcoin (held private keys themselves) lost nothing. What recognition skill does this decade of failures teach?",
+    answer="Bitcoin's self-custody removes the trust assumption that every centralized exchange collapse exploited",
+    choices=[
+        "Bitcoin's self-custody removes the trust assumption that every centralized exchange collapse exploited",
+        "All crypto activity is structurally fraudulent and Bitcoin itself was never a credible asset",
+        "Self-custody is illegal in the United States and customers had no alternative to using exchanges",
+        "The exchange collapses were caused by macroeconomic factors entirely unrelated to the custody model",
+    ],
+    context="The phrase 'not your keys, not your coins' captures the self-custody insight. Bitcoin's design — a public ledger where ownership is proved by private-key signature — was specifically intended to eliminate the trusted intermediary. Every exchange collapse from Mt. Gox to FTX is a failure to use the design as intended. Hayek's knowledge problem applies: a centralized intermediary's internal state is opaque to depositors. Self-custody returns control to the verifiable, auditable level.",
+))
+
+
+# ============================================================================
+# Final summary
+# ============================================================================
+
+print(f"\n=== DONE: {len(questions)} questions written to {OUTPUT.name} ===", flush=True)
+
+# Verify tier counts
+from collections import Counter
+counts = Counter(q["tier"] for q in questions)
+expected = {1: 6, 2: 8, 3: 12, 4: 12, 5: 12}
+for t in (1, 2, 3, 4, 5):
+    got = counts.get(t, 0)
+    want = expected[t]
+    flag = "OK" if got == want else "MISMATCH"
+    print(f"  T{t}: {got} (expected {want}) {flag}")

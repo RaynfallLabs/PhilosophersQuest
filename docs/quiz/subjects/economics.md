@@ -61,6 +61,26 @@ The bank takes **substantive positions** on contested economic questions. Same s
 - **No treating the Federal Reserve as a neutral technocratic body.** Cover its history honestly: Jekyll Island, the dual mandate's contradictions, the revolving door, the political-economic incentives, the actual track record.
 - **No "crypto = Bitcoin" sloppy framing.** Bitcoin is a specific engineering + monetary achievement. Most "crypto" is pre-mined, centrally controlled, governance-fragile, or outright fraud. The bank distinguishes.
 
+## 3.5 Practical financial literacy + entrepreneurship — IN SCOPE
+
+The Pillar 5 "Practical Economics" pillar covers the **terms kids will actually encounter** as workers, taxpayers, savers, investors, and entrepreneurs — but **always through the Bastiat Pattern lens** (every question reveals an unseen cost, an incentive, a knowledge problem, or a cycle). No dry definitional content.
+
+| Topic | Covered with Bastiat lens |
+|---|---|
+| Personal banking + paycheck | FICA's "employer half" as unseen tax (tax wedge concept); the gross-to-net gap; why your first $400 paycheck shows $337 deposited |
+| Taxes | Tax brackets as marginal-not-average (the seen-vs-unseen pay raise); Roth vs Traditional IRA as time-preference recognition; capital gains long-vs-short as incentive to hold; W-2 vs 1099 as employee-vs-contractor structural difference |
+| Investing | John Bogle 1975 Vanguard launch + the active-manager mockery + 40-year vindication = Hayek knowledge problem applied to investing; Buffett's "snowball" + compound interest + age-10 paper-route start; index fund vs active management; SPIVA data on after-fees performance; the rule of 72 |
+| Retirement | 401(k) match as free money + the unseen vesting cliff; Roth vs Traditional as bet on future vs current marginal rate; the time-value-of-money case for starting at 18 instead of 28 |
+| Business structure | LLC vs sole prop vs S-corp vs C-corp as INCENTIVE recognition — each is a different tradeoff between simplicity / liability / tax; why most US small businesses are LLCs; the S-corp salary trick as government creating arbitrage opportunities |
+| Entrepreneurship metrics | CAC / LTV / churn / unit economics / burn rate / runway / gross margin — all framed as recognition skills (how do you know if a business is real or burning capital?) |
+| Funding rounds | Series A/B/C as dilution arc + cap-table education; SAFE notes; preferred vs common; vesting + cliffs; convertible notes; why VCs need home runs (the power-law return distribution) |
+| Accounting | Cash flow vs profit (the Bastiat distinction at the company level); income statement vs balance sheet; depreciation as government-permitted timing trick; accounts receivable as unseen cash-flow risk |
+| Insurance | Premium / deductible / out-of-pocket maximum as risk-pool tradeoff; term-life vs whole-life as honest-product-vs-financial-product distinction; how moral hazard makes insurance markets fragile |
+| Real-world fraud as recognition | Madoff Ponzi (how to spot one — "consistent returns regardless of market conditions" is the tell); Enron + Andersen 2001 (accounting fraud as story-in-stem); Theranos as VC due-diligence failure |
+| Wealth-building celebrations | Buffett's "20-punch-card" investing method; Bogle's revolution; Munger's "Poor Charlie's Almanack"; Jim Simons's Renaissance + the rare exception that proves the rule |
+
+**Voice rule for this content:** every question still leads with a NAMED FIGURE or NAMED MOMENT or DRAMATIC SCENARIO. No "What is the definition of X?" stems. Every answer is the recognition skill.
+
 ## 4. Voice rules
 
 ### Same wonder voice as geography + history + theology

@@ -1,0 +1,661 @@
+"""Generate 35 supplemental economics questions on Insurance + Risk + Personal Finance.
+
+Distribution: T1=4, T2=6, T3=8, T4=10, T5=7.
+Bastiat Pattern + §14 story-in-stem. No dry definitional content.
+
+Each question reveals an INCENTIVE (moral hazard / adverse selection),
+a TRADE-OFF (deductible vs premium), or a recognition skill (why whole
+life is usually a bad deal).
+
+Stance from `docs/quiz/subjects/economics.md` §3.5: Insurance is a real
+risk-pooling product; some products (term life, catastrophic health,
+property) are honest; others (whole life, annuity-as-investment) are
+mostly financial products dressed as insurance.
+
+Caps: T1 ≤ 280 (294 hard), T2 ≤ 480 (504 hard), T3 ≤ 680 (714 hard),
+T4 ≤ 900 (945 hard), T5 ≤ 1100 (1155 hard).
+Em-dash uniformity required (all-or-none across 4 choices).
+Answer-outlier rule: answer cannot exceed 1.6× longest distractor.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO))
+
+from tools.quizgen.audit.validate import build_bank_indices, validate_rewrite
+
+OUT_PATH = REPO / "_gen_economics_supp_finlit_insurance_personal.json"
+
+
+# =============================================================================
+# T1 — 4 questions — cap 280
+# =============================================================================
+
+T1_QUESTIONS: list[dict] = [
+    # T1-1: Deductible/premium tradeoff — recognition skill
+    {
+        "tier": 1,
+        "question": "A driver picks a $5,000 deductible instead of $500. Her premium drops sharply. What deal did she make?",
+        "answer": "She self-insures small dents — premium falls",
+        "choices": [
+            "She self-insures small dents — premium falls",
+            "She gets safer coverage — for the same cost",
+            "Her car becomes safer — by the deductible",
+            "Her insurer adds bonus pay — for going high",
+        ],
+        "context": "A high deductible means you cover small losses yourself. The premium savings reflect risk the insurer no longer carries. It is a different deal, not more or less 'coverage' — Bastiat seen-vs-unseen.",
+    },
+
+    # T1-2: Emergency fund — Bastiat lesson on unseen cost of NO buffer
+    {
+        "tier": 1,
+        "question": "A worker has no savings. The car breaks — $1,200. He puts it on a card at 24% APR. The missing savings cost what?",
+        "answer": "Months of interest — atop the repair bill",
+        "choices": [
+            "Months of interest — atop the repair bill",
+            "A higher credit score — for using the card",
+            "A free repair — since cards always cover",
+            "A tax refund — since cards reduce taxes",
+        ],
+        "context": "Dave Ramsey's 'baby step 1' is a starter emergency fund precisely for this case. Without 3-6 months of cash, the next surprise forces high-interest debt — the unseen cost of no buffer.",
+    },
+
+    # T1-3: Term life vs whole life — story-in-stem
+    {
+        "tier": 1,
+        "question": "A 30-year-old can buy $500K term life for $25/month. An agent pushes whole life at $400/month. What's the read?",
+        "answer": "Term is pure insurance — whole life adds fees",
+        "choices": [
+            "Term is pure insurance — whole life adds fees",
+            "Whole life always pays — term life never does",
+            "Term life is illegal — only whole life is sold",
+            "Whole life is cheaper — over the long years",
+        ],
+        "context": "Dave Ramsey's 'buy term and invest the difference' is the recognition skill. Term life is honest insurance — pure death-benefit, cheap. Whole life bundles a high-fee savings account into the premium.",
+    },
+
+    # T1-4: Lifestyle inflation — Bastiat unseen
+    {
+        "tier": 1,
+        "question": "A worker gets a $500/month raise. A year later she spends $500 more — new car, gym, dinners. What did Bastiat's method hide?",
+        "answer": "The savings the raise could have built — gone",
+        "choices": [
+            "The savings the raise could have built — gone",
+            "The taxes on the raise — paid to the IRS",
+            "The hours the boss tracked — for the raise",
+            "The dinners she ate — at a downtown spot",
+        ],
+        "context": "Lifestyle inflation is the wealth-building killer Bastiat would have named. The seen: a nicer life. The unseen: the compounded savings, never started. The raise 'feels exciting briefly,' then gets absorbed.",
+    },
+]
+
+
+# =============================================================================
+# T2 — 6 questions — cap 480
+# =============================================================================
+
+T2_QUESTIONS: list[dict] = [
+    # T2-1: Risk pool — adverse selection recognition
+    {
+        "tier": 2,
+        "question": "Health insurance works because thousands of people pay premiums but only a few file big claims. If a new law lets people buy insurance ONLY AFTER they get sick, what happens to the risk pool?",
+        "answer": "Only sick people buy — premiums spike, healthy people drop out, the pool collapses",
+        "choices": [
+            "Only sick people buy — premiums spike, healthy people drop out, the pool collapses",
+            "Premiums fall — because the new sick buyers expand the customer base",
+            "Insurers profit more — since sick customers are more loyal long term",
+            "Hospital bills shrink — because more people now carry insurance overall",
+        ],
+        "context": "Adverse selection: when the buyers most likely to need a product are the most likely to buy it. Without a mandate or pricing rules, voluntary health insurance markets unravel — a textbook Akerlof 'lemons' dynamic.",
+    },
+
+    # T2-2: Moral hazard — TARP recognition
+    {
+        "tier": 2,
+        "question": "October 2008: Congress passed the $700B TARP bank bailout. Banks that bet recklessly were rescued. What incentive did this create for the NEXT cycle of banks?",
+        "answer": "Take bigger risks — if it works you profit, if it fails the taxpayer pays again",
+        "choices": [
+            "Take bigger risks — if it works you profit, if it fails the taxpayer pays again",
+            "Take fewer risks — banks now feared losing federal charters next time",
+            "Lend only to farmers — since TARP required agricultural focus by law",
+            "Avoid all new lending — to repay the bailout funds within five years",
+        ],
+        "context": "Moral hazard at scale: TARP told banks they were 'too big to fail.' Heads I win, tails the taxpayer pays. The 2008 bailout shaped banker incentives going forward in exactly the direction critics warned.",
+    },
+
+    # T2-3: Akerlof 1970 lemons — adverse selection roots
+    {
+        "tier": 2,
+        "question": "George Akerlof's 1970 paper 'The Market for Lemons' won him a Nobel. His example: used cars. Sellers know the car's history; buyers don't. What does Akerlof show happens to the market?",
+        "answer": "Buyers offer low prices — good-car owners exit — only lemons remain",
+        "choices": [
+            "Buyers offer low prices — good-car owners exit — only lemons remain",
+            "Buyers offer high prices — to attract better cars to the market overall",
+            "Sellers raise quality — because lemon-car sales are now illegal in 1970",
+            "Markets vanish quickly — once federal regulators step in to oversee",
+        ],
+        "context": "Akerlof, Spence, and Stiglitz shared the 2001 Nobel for asymmetric-information economics. The lemons model is the canonical adverse-selection case — and the foundation for understanding insurance markets too.",
+    },
+
+    # T2-4: Liability insurance — one lawsuit
+    {
+        "tier": 2,
+        "question": "A small-business owner skips general liability insurance to save $800 a year. A customer slips, sues for $250,000, and wins. What does Bastiat's method tell us about the savings?",
+        "answer": "The $800-a-year savings — vanished against a quarter-million loss",
+        "choices": [
+            "The $800-a-year savings — vanished against a quarter-million loss",
+            "The savings paid off — because lawsuits never reach small businesses",
+            "The savings doubled — since insurance always raises business taxes",
+            "The savings made jobs — by hiring more workers with the extra cash",
+        ],
+        "context": "Liability insurance pools small premiums against rare large losses. Umbrella policies stack additional millions cheaply because the underlying probability is low. Skipping it is betting against a low-frequency, ruinous event.",
+    },
+
+    # T2-5: Replacement cost vs ACV — recognition
+    {
+        "tier": 2,
+        "question": "A fire destroys a couch bought new for $1,200 ten years ago. The homeowner has 'actual cash value' coverage, not 'replacement cost.' What check does she get?",
+        "answer": "About what a ten-year-old couch is worth — maybe $150",
+        "choices": [
+            "About what a ten-year-old couch is worth — maybe $150",
+            "About what a brand-new couch costs — close to $1,500",
+            "About what the cushions weigh — by federal fire law",
+            "About what she paid in premiums — over the ten years",
+        ],
+        "context": "Actual cash value (ACV) pays depreciated value — old furniture at old-furniture prices. Replacement cost pays whatever a NEW equivalent costs today. The premium gap reflects a different deal, not 'more coverage.'",
+    },
+
+    # T2-6: HSA stealth retirement
+    {
+        "tier": 2,
+        "question": "A 25-year-old picks an HDHP and opens an HSA. She contributes $4,000 a year, invests it in index funds, and lets it grow untouched for 40 years. What did she actually build?",
+        "answer": "A stealth retirement account — pre-tax in, tax-free growth, tax-free medical out",
+        "choices": [
+            "A stealth retirement account — pre-tax in, tax-free growth, tax-free medical out",
+            "A regular savings account — taxed normally on contributions and growth",
+            "An ordinary 401(k) plan — with an employer match included by law",
+            "A health-only fund — that must be spent each year before December 31",
+        ],
+        "context": "The Health Savings Account is the only US tax-advantaged vehicle with the 'triple tax benefit': pre-tax in, tax-free growth, tax-free withdrawals for qualified medical. After age 65, non-medical withdrawals are taxed like a Traditional IRA.",
+    },
+]
+
+
+# =============================================================================
+# T3 — 8 questions — cap 680
+# =============================================================================
+
+T3_QUESTIONS: list[dict] = [
+    # T3-1: Underwriting failure — 2005-07 subprime
+    {
+        "tier": 3,
+        "question": "AIG sold credit default swaps on mortgage bonds from 2003-2007 without matching reserves. Underwriters assumed nationwide housing wouldn't crash together. When 2008 hit, taxpayers bailed AIG out for $182B. What failed?",
+        "answer": "Underwriting priced correlated risk as zero — one event blew up the book",
+        "choices": [
+            "Underwriting priced correlated risk as zero — one event blew up the book",
+            "Underwriting used good computer models — so the insurer couldn't fail",
+            "Underwriting wrote too few swaps — the federal backstop was missing",
+            "Underwriting priced risk too high — customers fled and revenue fell",
+        ],
+        "context": "Underwriting is how insurers price risk. AIG's London office sold protection on housing-bond defaults with no reserves, treating correlated crashes as impossible. Bad underwriting plus implicit federal backing produced the 2008 rescue.",
+    },
+
+    # T3-2: Actuarial fairness — mortality tables
+    {
+        "tier": 3,
+        "question": "A life insurer charges a healthy 30-year-old $25/month for a 20-year term. An unhealthy 60-year-old pays $400/month. The insurer uses mortality tables built from millions of deaths. What makes the pricing 'actuarially fair'?",
+        "answer": "Each premium matches that group's expected payout — high-risk groups pay more because they claim more",
+        "choices": [
+            "Each premium matches that group's expected payout — high-risk groups pay more because they claim more",
+            "Premiums are equal — actuarial fairness means everyone pays the exact same monthly amount",
+            "Young buyers subsidize old ones — federal insurance law since 1965 forces this transfer",
+            "Premium pricing is random — actuarial fairness refers to the random sample size used",
+        ],
+        "context": "Actuarial fairness — premium tied to expected loss for that risk group — makes insurance work without adverse selection. When laws block actuarial pricing (community rating without a mandate), healthy buyers drop out and the pool unravels.",
+    },
+
+    # T3-3: HDHP+HSA tradeoff
+    {
+        "tier": 3,
+        "question": "A 35-year-old picks a $7,000-deductible HDHP at $300/month instead of a $500-deductible plan at $700/month. Premium savings: $4,800/year. She funds an HSA at the 2024 limit, invested in index funds. What deal did she make?",
+        "answer": "She self-insures small bills — routes savings into a triple-tax-advantaged account",
+        "choices": [
+            "She self-insures small bills — routes savings into a triple-tax-advantaged account",
+            "She lost coverage — HDHPs don't cover any hospitalization or major medical events",
+            "She paid a tax penalty — HSAs are taxed at ordinary rates on every contribution",
+            "She got worse coverage — deductibles above $5,000 violate ACA plan rules in 2024",
+        ],
+        "context": "HSAs require an HDHP. The trade: accept exposure to small medical bills for triple-tax-advantaged savings. For healthy young workers it's often the strictly-dominant choice. The catastrophic backstop still sits above the deductible.",
+    },
+
+    # T3-4: Auto liability minimums + Bastiat
+    {
+        "tier": 3,
+        "question": "California's auto minimum is 15/30/5: $15K per person, $30K per accident, $5K property. A driver with only state minimums causes a crash with $400K in injuries. What does Bastiat's method tell us 'minimum coverage' buys?",
+        "answer": "The legal floor to drive — but one serious crash leaves the driver liable for the gap",
+        "choices": [
+            "The legal floor to drive — but one serious crash leaves the driver liable for the gap",
+            "Full lawsuit protection — state minimums cover every damage a driver can cause",
+            "A federal backstop — the US government pays losses above $30K in California crashes",
+            "The cheapest top deal — state minimums match a $1M umbrella policy at half the price",
+        ],
+        "context": "State minimums vary widely. The 'minimum' is the legal floor to register a car, not 'enough coverage.' One serious accident exposes the gap. Umbrella policies stack cheaply because the underlying serious-crash probability is low.",
+    },
+
+    # T3-5: Whole life insurance + Bastiat
+    {
+        "tier": 3,
+        "question": "A 30-year-old picks $500K whole life at $400/month. Another picks $500K term at $25/month and invests the $375 difference in an index fund. After 30 years at 7%, the index holds about $440K. The whole life cash value: about $180K. Read?",
+        "answer": "Whole life mixes insurance with a high-fee savings account — the fees are the unseen cost",
+        "choices": [
+            "Whole life mixes insurance with a high-fee savings account — the fees are the unseen cost",
+            "Whole life is always better — it guarantees money back, which term life never does",
+            "Term life is a scam — the buyer pays 20 years and gets zero back if he survives",
+            "Both deals match exactly — federal law caps all life insurance fees at 1% per year",
+        ],
+        "context": "'Buy term and invest the difference' is the canonical Bastiat-style recognition skill for life insurance. Whole life's cash value grows slowly because high front-loaded commissions and ongoing fees eat returns. For most buyers, term + separate investing wins.",
+    },
+
+    # T3-6: 50/30/20 budgeting + lifestyle inflation
+    {
+        "tier": 3,
+        "question": "Elizabeth Warren and her daughter Amelia named the 50/30/20 rule in their 2005 book: half of take-home pay to needs, 30% to wants, 20% to savings. A worker's pay rises from $4K to $6K and every new dollar flows to 'wants.' What was missed?",
+        "answer": "The raise should have boosted savings — lifestyle absorbed the whole $2,000 raise",
+        "choices": [
+            "The raise should have boosted savings — lifestyle absorbed the whole $2,000 raise",
+            "The raise had no effect — tax brackets always claim every dollar above $50,000",
+            "The 50/30/20 rule never works — no budget framework helps any household reliably",
+            "The savings rate stays at 20% — the rule auto-scales with income by federal law",
+        ],
+        "context": "Lifestyle inflation defeats every budget if savings rates don't rise WITH income. The 50/30/20 rule, Dave Ramsey's baby steps, and Mr. Money Mustache's stoic approach all share this point: the marginal dollar must be allocated, not absorbed.",
+    },
+
+    # T3-7: Renters insurance + Bastiat
+    {
+        "tier": 3,
+        "question": "A Boston student pays $15/month for renters insurance covering $30K of belongings. A pipe bursts and floods his bedroom — laptop, books, clothes destroyed. The landlord's policy covers the BUILDING, not his stuff. What did Bastiat's method hide?",
+        "answer": "The $15-a-month policy — replaced years of belongings for a few hundred a year",
+        "choices": [
+            "The $15-a-month policy — replaced years of belongings for a few hundred a year",
+            "The landlord's policy — covers all tenants' belongings by federal housing law",
+            "The federal flood program — reimburses any tenant living above the third floor",
+            "The state of Massachusetts — pays student replacement costs via a tuition fee",
+        ],
+        "context": "Renters insurance is one of the highest expected-value purchases for low-asset young adults — premiums of $10-20/month against tens of thousands in belongings. Most renters skip it because the SEEN cost is monthly and the UNSEEN benefit is invisible.",
+    },
+
+    # T3-8: Catastrophic vs comprehensive health
+    {
+        "tier": 3,
+        "question": "Two healthy 25-year-olds compare plans. Plan A: $400/month, $1,500 deductible. Plan B: $150/month, $7,500 deductible, HSA-eligible. Both cap out-of-pocket at $9,000/year. Plan B saves them $3,000/year if unused. What's the real trade?",
+        "answer": "Plan B trades small-bill exposure for premium savings — same catastrophic cap, lower expected cost",
+        "choices": [
+            "Plan B trades small-bill exposure for premium savings — same catastrophic cap, lower expected cost",
+            "Plan B has no coverage — HDHPs don't pay for hospitalization or catastrophic events under ACA",
+            "Plan A and B are identical — federal law makes every health plan cost the same per year",
+            "Plan B is illegal nationwide — HDHPs were banned in the United States after the 2010 ACA",
+        ],
+        "context": "The catastrophic-vs-comprehensive distinction matters most for healthy young adults. The high-deductible plan IS real insurance against the rare $100K event; it just self-insures the routine. ACA's out-of-pocket maximum caps the worst case identically for both plan types.",
+    },
+]
+
+
+# =============================================================================
+# T4 — 10 questions — cap 900
+# =============================================================================
+
+T4_QUESTIONS: list[dict] = [
+    # T4-1: AIG bailout deep
+    {
+        "tier": 4,
+        "question": "AIG's London Financial Products unit sold credit default swaps on mortgage-backed securities, collecting about $250M/year in premiums with no matched reserves. When housing crashed in 2008, counterparty calls overwhelmed AIG. On September 16, 2008, the Fed extended an $85B loan; total federal commitments later topped $182B. What does the case illustrate?",
+        "answer": "When insurers price tail risks as zero AND assume federal rescue — they sell protection they can't deliver, and taxpayers cover the gap",
+        "choices": [
+            "When insurers price tail risks as zero AND assume federal rescue — they sell protection they can't deliver, and taxpayers cover the gap",
+            "When insurers diversify their holdings — they cover all losses with no federal assistance under federal law every time",
+            "When insurers hold reserves matched to claims — government bailouts become the standard outcome for routine cycles",
+            "When insurers face short-term cash demands — the federal government must legally provide emergency lending right away",
+        ],
+        "context": "AIG made the 'too big to fail' moral hazard visible in real time. The London FP unit ran an unreserved insurance book, collecting premiums on what they treated as impossible-loss events. Goldman Sachs and other counterparties were paid 100 cents on the dollar from bailout funds.",
+    },
+
+    # T4-2: Whole life sales pitch + math
+    {
+        "tier": 4,
+        "question": "A whole-life agent pitches a 30-year-old: 'Pay $400/month for 30 years and at 60 your cash value will be about $180,000.' The alternative: $25/month for 20-year term gives the same $500K death benefit. Invest the $375 difference at 7% real, and at 60 it's about $440,000 — with the term policy long expired. What's missing from the pitch?",
+        "answer": "The opportunity cost — the $440K the prospect could have built by investing the difference",
+        "choices": [
+            "The opportunity cost — the $440K the prospect could have built by investing the difference",
+            "The federal subsidy — IRS pays whole life policies bonus matching for coverage above $500K",
+            "The market crash risk — index funds lose money over every 30-year span in US history",
+            "The agent commission — it's paid only at policy maturity, never deducted from cash value",
+        ],
+        "context": "Whole life's first-year premium is typically eaten by agent commissions (often 50-110% of year-one premium). Subsequent years pay ongoing fees that suppress cash-value growth. 'Buy term and invest the difference' is Dave Ramsey's most-repeated personal-finance recognition skill for a reason.",
+    },
+
+    # T4-3: 2010 PPACA + adverse selection
+    {
+        "tier": 4,
+        "question": "The ACA, signed March 23, 2010, made insurers accept all applicants (community rating) and required most people to carry insurance (individual mandate). The 2017 tax bill cut the mandate penalty to zero, effective 2019. What does adverse selection theory predict when the mandate goes but community rating stays?",
+        "answer": "Healthy buyers drop coverage — pool gets sicker — premiums rise — more healthy buyers drop — costs spiral",
+        "choices": [
+            "Healthy buyers drop coverage — pool gets sicker — premiums rise — more healthy buyers drop — costs spiral",
+            "The pool stays stable — adverse selection applies only to markets with zero federal regulation",
+            "Premiums fall sharply — removing the mandate cuts compliance costs for all US insurers nationwide",
+            "Insurers exit at a profit — federal subsidies cover them regardless of pool composition changes",
+        ],
+        "context": "The mandate-without-mandate problem is a textbook adverse-selection case. Community rating plus guaranteed issue without a mandate is what broke individual markets in NJ, NY, and WA in the 1990s. The 2019 mandate-zero rule reignited the same dynamic federally.",
+    },
+
+    # T4-4: Hurricane Andrew + reinsurance
+    {
+        "tier": 4,
+        "question": "On August 24, 1992, Hurricane Andrew hit South Florida with Category 5 winds, causing $27B in damage. Eleven US property insurers went insolvent. State Farm and Allstate sharply cut Florida policies. The Florida Hurricane Catastrophe Fund formed in 1993; state-owned Citizens Property Insurance launched 2002. What does this show?",
+        "answer": "Correlated catastrophic losses can wipe out insurers pricing risks as independent — and when private exits, state pools fill the gap",
+        "choices": [
+            "Correlated catastrophic losses can wipe out insurers pricing risks as independent — and when private exits, state pools fill the gap",
+            "Hurricane damage is always covered — federal flood insurance pays every hurricane loss regardless of policy",
+            "Insurance markets always recover — Florida insurers resumed normal underwriting within six months of Andrew",
+            "Property insurance is impossible — no private insurer has offered Florida coverage since Andrew hit in 1992",
+        ],
+        "context": "Andrew was the wake-up call for catastrophic-risk modeling. Pre-Andrew insurers underpriced hurricane risk in Florida. Post-Andrew, reinsurers (Lloyd's, Swiss Re, Munich Re) restructured pricing. The withdrawal-state intervention cycle recurs every major storm.",
+    },
+
+    # T4-5: Emergency fund math + Bastiat
+    {
+        "tier": 4,
+        "question": "A worker earning $4K/month has no emergency fund. A $3,500 transmission failure goes on a credit card at 24% APR with minimum payments. The card takes 14 years to pay off. Total interest: about $4,200. What's Bastiat's lesson about the savings the worker never built?",
+        "answer": "Missing savings cost more than the repair — $4,200 in unseen interest, 14 years paid to creditors instead of wealth",
+        "choices": [
+            "Missing savings cost more than the repair — $4,200 in unseen interest, 14 years paid to creditors instead of wealth",
+            "Missing savings cost nothing — credit cards exist so prudent households never need a cash emergency fund",
+            "Missing savings saved money — cash outside a savings account loses value to inflation every single year",
+            "Missing savings funded growth — credit-card borrowing grows the US economy faster than personal saving does",
+        ],
+        "context": "Credit-card APRs of 22-29% are common. Carrying a balance turns small emergencies into multi-year wealth drains. Ramsey's baby-step ordering — starter fund, debt snowball, then 3-6 months expenses — exists to break this cycle.",
+    },
+
+    # T4-6: 401(k) match + vesting cliff
+    {
+        "tier": 4,
+        "question": "A 25-year-old at a startup earns $80K. The employer offers 100% 401(k) match on the first 4% contributed — $3,200/year of 'free money.' Vesting is 4-year cliff: zero vests until year 4, then 100% at once. The worker leaves at month 36 for a better job. What did she lose?",
+        "answer": "Three years of employer match — about $9,600 plus growth — forfeited because cliff vesting hadn't triggered",
+        "choices": [
+            "Three years of employer match — about $9,600 plus growth — forfeited because cliff vesting hadn't triggered",
+            "Three years of her own contributions — federal law lets employers claw back contributions on early exit",
+            "Three years of Social Security — vested benefits forfeit when changing jobs before retirement age fully",
+            "Three years of tax breaks — the IRS retroactively taxes 401(k) contributions when workers leave before 65",
+        ],
+        "context": "The 401(k) match is one of the most powerful wealth-building tools in the US tax code — but vesting schedules can forfeit thousands. Cliff vesting (all-or-nothing) vs graded vesting (20%/year) is a recognition skill workers should ask about BEFORE accepting the job.",
+    },
+
+    # T4-7: Property + replacement cost story
+    {
+        "tier": 4,
+        "question": "A homeowner picks ACV (actual cash value) coverage because the premium is $400/year cheaper than replacement cost. Ten years later a kitchen fire destroys cabinets bought 15 years ago. New cabinets cost $24,000. The ACV policy depreciates them 60% and pays $9,600. The owner covers the $14,400 gap. What did Bastiat's method hide?",
+        "answer": "The depreciation gap — the policy paid for ten-year-old cabinets at ten-year-old prices, leaving the rebuild bill",
+        "choices": [
+            "The depreciation gap — the policy paid for ten-year-old cabinets at ten-year-old prices, leaving the rebuild bill",
+            "The federal tax credit — replacement cost policies get a 100% IRS deduction every year, ACV does not",
+            "The building code — replacement cost is required by every US municipal code while ACV is illegal there",
+            "The mortgage rule — federal law requires replacement cost coverage on any home loaned by Fannie Mae",
+        ],
+        "context": "Replacement cost vs ACV is one of the most common homeowner misunderstandings. ACV pays depreciated value; replacement cost pays whatever a new equivalent costs today. The premium difference (10-25%) is small enough that many pick ACV and learn the gap at claim time.",
+    },
+
+    # T4-8: Mr. Money Mustache + savings rate
+    {
+        "tier": 4,
+        "question": "Pete Adeney, writing as 'Mr. Money Mustache' starting 2011, popularized a simple equation: at a 50% savings rate, you can retire in about 17 years from any starting point. At 75%, about 7 years. His own family retired around age 30 on a modest engineer's income. What does this show about lifestyle inflation?",
+        "answer": "Each avoided spending dollar does double duty — it adds to savings AND lowers the nest egg needed to be free",
+        "choices": [
+            "Each avoided spending dollar does double duty — it adds to savings AND lowers the nest egg needed to be free",
+            "Each saving dollar earns triple — federal law gives a 3:1 match on retirement contributions above $20K",
+            "Each spending dollar grows wealth — by stimulating the economy via the Keynesian multiplier effect",
+            "Each saving dollar is taxed — retirement saving faces higher rates than spending under US tax rules",
+        ],
+        "context": "The Mustachian framework is the personal-finance application of the Bastiat method. The SEEN of frugal living: less spent on dinners. The UNSEEN: a shrinking lifetime spending need AND a growing portfolio — both compounding together.",
+    },
+
+    # T4-9: Madoff Ponzi + recognition skill
+    {
+        "tier": 4,
+        "question": "Bernie Madoff was arrested December 11, 2008. His fund had reported 10-12% returns for over two decades — through 1990s booms, the 2000 dot-com crash, 2002 bear market, 2008 collapse, with almost no down months. Harry Markopolos warned the SEC starting in 2000. What recognition skill did the SEC miss for nine years?",
+        "answer": "Consistent returns regardless of market — no real strategy produces smooth gains across booms, crashes, and crises",
+        "choices": [
+            "Consistent returns regardless of market — no real strategy produces smooth gains across booms, crashes, and crises",
+            "Excessive transparency about strategy — real Ponzi schemes publish their trading method on quarterly statements",
+            "Low fees and modest returns — Madoff charged below-industry fees so investors had no fraud signal at all",
+            "Heavy regulation requirements — Ponzi schemes operate only in unregulated offshore markets, never under SEC view",
+        ],
+        "context": "The Madoff case is the canonical recognition exercise for retail investors. Markopolos's 2005 memo 'The World's Largest Hedge Fund is a Fraud' walked the SEC through the math. The institutional failure made Madoff the textbook 'consistent returns' tell.",
+    },
+
+    # T4-10: Buffett + Berkshire reinsurance
+    {
+        "tier": 4,
+        "question": "Warren Buffett bought Berkshire Hathaway in 1965. By 2023 its insurance float — money held between premium and claim — was about $169 billion across GEICO, General Re, and BHRG. Buffett invests the float in equities (Apple, Coca-Cola) and businesses (BNSF, See's Candies). Why is float so valuable?",
+        "answer": "Float is low-cost or no-cost leverage — Berkshire invests it for years in equities and businesses before claims come due",
+        "choices": [
+            "Float is low-cost or no-cost leverage — Berkshire invests it for years in equities and businesses before claims come due",
+            "Float is required by law — federal insurance rules mandate every insurer hold investments worth at least $100B",
+            "Float is barely taxed — the IRS exempts insurance float from corporate income tax for any Omaha-headquartered firm",
+            "Float pays dividends — Berkshire receives quarterly checks from federal insurance regulators based on float held",
+        ],
+        "context": "Buffett's annual letters explain float repeatedly. A disciplined insurer collects premiums today against claims paid later — sometimes years later. That time-shifted cash is investable in the meantime. Berkshire turning insurance float into Apple and BNSF stakes is one of the great applications of capital.",
+    },
+]
+
+
+# =============================================================================
+# T5 — 7 questions — cap 1100
+# =============================================================================
+
+T5_QUESTIONS: list[dict] = [
+    # T5-1: Adverse selection theory + Akerlof
+    {
+        "tier": 5,
+        "question": "George Akerlof's 1970 paper 'The Market for Lemons' was rejected by three top journals before publication. His used-car example: sellers know which cars are lemons; buyers can't tell. Buyers offer average prices. Good-car owners exit. Only lemons remain. Akerlof shared the 2001 Nobel. What does the model predict about voluntary health insurance without a mandate?",
+        "answer": "The pool unravels — sick buyers crowd in, healthy buyers exit, only the sickest pool remains",
+        "choices": [
+            "The pool unravels — sick buyers crowd in, healthy buyers exit, only the sickest pool remains",
+            "The pool stabilizes naturally — health markets behave differently from used cars due to federal oversight",
+            "The pool gains efficiency — adverse selection only applies to markets without any government involvement",
+            "The pool prices fall steadily — new sick buyers add diversified risk and bring premiums down broadly",
+        ],
+        "context": "Akerlof's 1970 model is the foundational asymmetric-information paper. Health insurance is the canonical application: when insurers are barred from underwriting (community rating) AND buyers can choose timing, the market unravels unless a mandate forces healthy buyers in. NJ/NY/WA in the 1990s and ACA exchanges 2010-2019 all ran the same dynamic.",
+    },
+
+    # T5-2: Moral hazard theory + 2008
+    {
+        "tier": 5,
+        "question": "Kenneth Arrow's 1963 paper 'Uncertainty and the Welfare Economics of Medical Care' coined 'moral hazard' as economic terminology. Arrow's distinction: ex ante (taking more risk because insured) vs ex post (consuming more covered services). TARP 2008 created textbook ex ante moral hazard at the bank level. What does Arrow predict about banker behavior next?",
+        "answer": "Risk-taking ratchets up — rescued banks internalize gains and externalize losses, so bigger bets are the optimal strategy",
+        "choices": [
+            "Risk-taking ratchets up — rescued banks internalize gains and externalize losses, so bigger bets are the optimal strategy",
+            "Risk-taking decreases sharply — bailouts always teach institutions to behave more prudently under regulation",
+            "Risk-taking stays unchanged — moral hazard is a theoretical construct with no measurable real effect at all",
+            "Risk-taking shifts entirely — to community banks since federal rescues only ever cover large multinational firms",
+        ],
+        "context": "Arrow's 1963 paper is the foundational moral-hazard reference. The 2008 application extends naturally: implicit federal backing distorts the risk-reward calculation. Public choice theory (Buchanan, Tullock) compounds the prediction — the political incentives to rescue are themselves predictable. Hayek and Mises round out the frame: planners can neither price these distortions nor design around them.",
+    },
+
+    # T5-3: Whole life vs term + opportunity cost deep
+    {
+        "tier": 5,
+        "question": "The whole life pitch: 'Your premium builds cash value tax-deferred, you can borrow against it, lifetime coverage.' The math: a 30-year-old buys $500K 20-year term at $25/month, invests the $375 difference at 7% real, and at 60 holds about $440K. Whole life cash value at 30 years: about $180K — 41% of the index alternative. What recognition skill should the kid walk away with?",
+        "answer": "Whole life mixes pure insurance with a high-fee savings account — fees compound against the buyer for decades",
+        "choices": [
+            "Whole life mixes pure insurance with a high-fee savings account — fees compound against the buyer for decades",
+            "Whole life is universally optimal — federal insurance law requires permanent policies to beat term plus indexing",
+            "Term life is fraudulent — buyer pays for two decades and gets nothing back if she survives the policy period",
+            "Both products are identical — IRS rules require all life insurance to deliver matching cash and death benefits",
+        ],
+        "context": "Dave Ramsey's 'buy term and invest the difference' rule is the canonical Bastiat-style decomposition. Whole life's first-year premium is typically eaten by 50-110% agent commissions. Cash value grows slowly because fees suppress returns. Exceptions exist (estate planning for very high net worth), but for the vast majority the math is decisive.",
+    },
+
+    # T5-4: HSA triple tax + retirement math
+    {
+        "tier": 5,
+        "question": "The HSA, created by the Medicare Modernization Act of 2003, has the only triple-tax-advantaged structure in the US tax code: pre-tax in, tax-free growth, tax-free medical out. After 65, non-medical withdrawals are taxed like a Traditional IRA. A 25-year-old maxing the 2024 limit at 7% real holds about $560K at 65. Why is this called 'the most underused retirement account in America'?",
+        "answer": "It dominates every other account on tax treatment — but requires an HDHP, blocking workers stuck in low-deductible employer plans",
+        "choices": [
+            "It dominates every other account on tax treatment — but requires an HDHP, blocking workers stuck in low-deductible employer plans",
+            "It pays guaranteed interest — federal HSA rules mandate a 7% minimum annual return for all qualifying account holders",
+            "It eliminates all medical costs — HSA balances cover any medical bill of any size in any country without authorization",
+            "It replaces Social Security — workers with HSA balances above $500K are exempt from FICA tax for life under 2003 law",
+        ],
+        "context": "The HSA is the under-noticed crown jewel of US tax-advantaged accounts. The HDHP-pairing requirement is the binding constraint: most workers don't have access through employer plans. For self-employed workers and those at HDHP employers, maxing the HSA before the Roth IRA is often optimal — pure Hayekian recognition skill that no central planner could collect.",
+    },
+
+    # T5-5: Catastrophic risk + Florida Citizens
+    {
+        "tier": 5,
+        "question": "Florida's Citizens Property Insurance was created 2002 as a state 'insurer of last resort' after Hurricane Andrew (1992) drove eleven private insurers insolvent. By 2023 Citizens held over 1.4M policies — Florida's largest property insurer, despite being designed as backstop. When state pools price below actuarial fair value (politicians face voter pressure), the gap must be paid SOMEWHERE. What does the case illustrate?",
+        "answer": "When premiums sit below actuarial value — the gap shows as cross-subsidies from non-insureds, future taxpayers, or sudden post-storm assessments",
+        "choices": [
+            "When premiums sit below actuarial value — the gap shows as cross-subsidies from non-insureds, future taxpayers, or sudden post-storm assessments",
+            "When state-run insurance works normally — Florida's market has improved dramatically since Citizens launched in 2002 under its bylaws",
+            "When the government underwrites catastrophe — taxpayers automatically benefit via FEMA grants distributed after every named storm",
+            "When private insurers exit voluntarily — federal flood insurance fully replaces every needed coverage at private-market premium rates",
+        ],
+        "context": "The Florida case ties together public choice theory (politicians face voter pressure to keep premiums down regardless of actuarial reality), the Mises calculation problem (state pools can't aggregate dispersed information that private underwriting does), and the Bastiat seen-vs-unseen lens (current coastal homeowners benefit; inland Floridians, future Floridians, and US taxpayers via FEMA pay the unseen cost).",
+    },
+
+    # T5-6: Madoff + due diligence + recognition deep
+    {
+        "tier": 5,
+        "question": "Bernie Madoff was arrested December 11, 2008, as his $65B fraud collapsed. Harry Markopolos had submitted memos to the SEC in 2000, 2001, 2005, and 2007 — including 'The World's Largest Hedge Fund is a Fraud' — showing the impossibility of Madoff's reported returns. Madoff claimed a 'split-strike conversion' producing 10-12% annual gains with almost no down months over two decades. What's the recognition skill that protects retail investors from the next Madoff?",
+        "answer": "Consistent returns across all market regimes are the tell — no genuine strategy produces smooth gains through booms, crashes, and crises",
+        "choices": [
+            "Consistent returns across all market regimes are the tell — no genuine strategy produces smooth gains through booms, crashes, and crises",
+            "Heavy regulation is the protection — SEC oversight of registered funds prevents any Madoff-style fraud in modern US markets",
+            "Large fund size guarantees safety — multi-billion-dollar funds undergo audits intensive enough to catch any fraudulent reporting now",
+            "Personal relationships matter most — investors who know the fund manager personally are protected by reputation effects alone always",
+        ],
+        "context": "The Madoff case binds together public choice (SEC failure as institutional capture), Hayekian knowledge (regulators can't substitute for retail due diligence), and Bastiat recognition (the SEEN — Madoff's prestigious reputation — masked the UNSEEN — mathematically impossible return smoothness). Markopolos's 2005 memo is one of the great documents in fraud-detection history.",
+    },
+
+    # T5-7: Buffett float + Berkshire compounding
+    {
+        "tier": 5,
+        "question": "Warren Buffett took control of Berkshire Hathaway in 1965, a failing New England textile mill. By 2023 Berkshire was the eighth-largest US company by market cap, with insurance float of about $169B. Disciplined underwriting at GEICO, General Re, and BHRG keeps float free or negative-cost. Charlie Munger called this 'the best business model ever discovered.' Why is float fundamentally different from corporate debt?",
+        "answer": "Debt has fixed repayment — float has actuarially-projected outflows, lets the holder invest long-term, and a disciplined underwriter pays nothing or less for the capital",
+        "choices": [
+            "Debt has fixed repayment — float has actuarially-projected outflows, lets the holder invest long-term, and a disciplined underwriter pays nothing or less for the capital",
+            "Debt grows continuously — float shrinks under federal regulation while corporate bonds always expand at 5% annually by US law",
+            "Debt requires shareholders — float can only be invested in Treasury bills under SEC rules for any insurance holding company",
+            "Debt is taxed lightly — float pays double corporate tax under IRS rules for any insurer headquartered inside a US state",
+        ],
+        "context": "Berkshire is the great practical demonstration of disciplined underwriting compounded over six decades. Most insurers chase premium volume and effectively pay (in losses paid out vs premiums collected) for the privilege of holding float. Berkshire's combined ratios run below 100%, meaning it is PAID to hold the float. Compounded on $100B+ at equity-market returns, that's the engine.",
+    },
+]
+
+
+ALL_QUESTIONS = T1_QUESTIONS + T2_QUESTIONS + T3_QUESTIONS + T4_QUESTIONS + T5_QUESTIONS
+
+
+def main():
+    print(f"Total questions built: {len(ALL_QUESTIONS)}")
+    print(f"  T1: {len(T1_QUESTIONS)}")
+    print(f"  T2: {len(T2_QUESTIONS)}")
+    print(f"  T3: {len(T3_QUESTIONS)}")
+    print(f"  T4: {len(T4_QUESTIONS)}")
+    print(f"  T5: {len(T5_QUESTIONS)}")
+
+    # Pre-flight: compute totals and check caps
+    CAPS = {1: 294, 2: 504, 3: 714, 4: 945, 5: 1155}
+    print("\nPre-flight cap check:")
+    over_cap = []
+    for i, q in enumerate(ALL_QUESTIONS):
+        total = len(q["question"]) + sum(len(c) for c in q["choices"])
+        cap = CAPS[q["tier"]]
+        if total > cap:
+            over_cap.append((i, q["tier"], total, cap, q["question"][:60]))
+    if over_cap:
+        for i, tier, total, cap, stem in over_cap:
+            print(f"  Q{i} T{tier}: {total}/{cap} OVER — {stem}")
+    else:
+        print("  All within hard cap.")
+
+    # Build indices over the bank for validation
+    dup_idx, ans_idx = build_bank_indices(ALL_QUESTIONS)
+
+    # Validate each question
+    pass_count = 0
+    soft_count = 0
+    fail_count = 0
+    failures = []
+    soft_warns_list = []
+
+    for i, q in enumerate(ALL_QUESTIONS):
+        result = validate_rewrite(
+            "economics",
+            q,
+            bank=ALL_QUESTIONS,
+            dup_index=dup_idx,
+            answer_index=ans_idx,
+            replace_idx=i,
+        )
+        if result["verdict"] == "PASS":
+            pass_count += 1
+        elif result["verdict"] == "SOFT_WARN":
+            soft_count += 1
+            soft_warns_list.append((i, q["question"][:60], result["soft_warns"]))
+        else:
+            fail_count += 1
+            failures.append((i, q["tier"], q["question"][:80], result["hard_fails"], result["soft_warns"]))
+
+    print(f"\nValidation results:")
+    print(f"  PASS:      {pass_count}")
+    print(f"  SOFT_WARN: {soft_count}")
+    print(f"  FAIL:      {fail_count}")
+
+    if failures:
+        print("\nFailures:")
+        for i, tier, stem, fails, softs in failures:
+            total = len(ALL_QUESTIONS[i]['question']) + sum(len(c) for c in ALL_QUESTIONS[i]['choices'])
+            print(f"  Q{i} T{tier} (total={total}): {stem}")
+            for gate, reason in fails:
+                print(f"     HARD - {gate}: {reason}")
+            for gate, reason in softs:
+                print(f"     SOFT - {gate}: {reason}")
+
+    if soft_warns_list:
+        print("\nSoft warnings:")
+        for i, stem, softs in soft_warns_list:
+            print(f"  Q{i}: {stem}")
+            for gate, reason in softs:
+                print(f"     SOFT - {gate}: {reason}")
+
+    # Write output JSON (schema per spec)
+    output = {
+        "tier_distribution": "T1=4, T2=6, T3=8, T4=10, T5=7",
+        "summary": {
+            "questions_generated": len(ALL_QUESTIONS),
+            "by_tier": {
+                "T1": len(T1_QUESTIONS),
+                "T2": len(T2_QUESTIONS),
+                "T3": len(T3_QUESTIONS),
+                "T4": len(T4_QUESTIONS),
+                "T5": len(T5_QUESTIONS),
+            },
+            "pass": pass_count,
+            "soft_warn": soft_count,
+            "fail": fail_count,
+        },
+        "questions": ALL_QUESTIONS,
+    }
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print(f"\nWritten to {OUT_PATH}")
+
+    return fail_count
+
+
+if __name__ == "__main__":
+    sys.exit(main())
