@@ -1,0 +1,452 @@
+[
+  {
+    "bank_idx": 372,
+    "new": {
+      "tier": 2,
+      "question": "In Nov 1923 Weimar introduced the Rentenmark backed by farmland. One replaced one TRILLION papermarks. Hyperinflation stopped overnight. What stopped it?",
+      "answer": "Credible commitment to stop printing — hyperinflation is monetary, not 'economic'",
+      "choices": [
+        "Credible commitment to stop printing — hyperinflation is monetary, not 'economic'",
+        "The farmland backing — only land-collateral money can ever stop inflation",
+        "German cultural discipline — citizens voluntarily refused to spend papermarks",
+        "Time and a natural cycle — hyperinflations always end after 30 months on their own"
+      ],
+      "context": "The Rentenmark (Nov 15, 1923) showed hyperinflation ends with monetary discipline. The damage was already done — middle-class savings wiped out."
+    }
+  },
+  {
+    "bank_idx": 402,
+    "new": {
+      "tier": 2,
+      "question": "The Fed's 'dual mandate' (Humphrey-Hawkins 1978) targets max employment AND stable prices. Why can it not be honored in full?",
+      "answer": "Rising inflation with high employment forces the Fed to violate one mandate to honor the other",
+      "choices": [
+        "Rising inflation with high employment forces the Fed to violate one mandate to honor the other",
+        "Inflation and employment always move together, so the two goals never come into conflict at all",
+        "Other central banks have the same mandate and they all work without any trade-off whatsoever",
+        "The mandate explicitly prioritizes employment over prices in a clear and binding policy order"
+      ],
+      "context": "Conflict was most visible 2021-22: as inflation hit 9.1%, the Fed delayed raising rates because the labor market was 'tight.' By March 2022 inflation was entrenched."
+    }
+  },
+  {
+    "bank_idx": 420,
+    "new": {
+      "tier": 2,
+      "question": "US debt rose from ~$23T (end 2019) to over $35T by 2024 — interest now exceeds defense. Why does the math run away?",
+      "answer": "Compounding interest becomes the biggest line — debt service grows with no natural ceiling",
+      "choices": [
+        "Compounding interest becomes the biggest line — debt service grows with no natural ceiling",
+        "Higher debt grows the economy faster than its cost — the burden shrinks over time automatically",
+        "Interest payments are macroeconomically neutral — they have no impact on overall growth dynamics",
+        "Debt service is paid only when the Fed authorizes — the timing is fully discretionary by Treasury"
+      ],
+      "context": "US net interest payments on federal debt crossed $1 trillion annually in 2024 — more than total defense spending. The fiscal trajectory becomes the monetary problem."
+    }
+  },
+  {
+    "bank_idx": 474,
+    "new": {
+      "tier": 2,
+      "question": "Hayek argued markets work because of something every central planner lacks. Prices, opportunity cost, spontaneous order — what do they share?",
+      "answer": "They coordinate information no one person could collect — the Hayekian thread",
+      "choices": [
+        "They coordinate information no one person could collect — the Hayekian thread",
+        "They are math models economists design — central-committee mainstream econ",
+        "They describe random outcomes economics can't analyze — the chaos view",
+        "They mirror physics laws — economics as deterministic natural science"
+      ],
+      "context": "The Hayekian thread — that prices encode dispersed knowledge no individual possesses — connects supply/demand, marginal analysis, time preference, public choice, spontaneous order."
+    }
+  },
+  {
+    "bank_idx": 507,
+    "new": {
+      "tier": 3,
+      "question": "A town passes a 'buy local' ordinance: city money must be spent at city businesses, not on cheaper goods from elsewhere. Supporters say it 'keeps wealth in the community.' Apply Bastiat's seen-and-unseen method. What unseen cost does the ordinance hide?",
+      "answer": "Higher prices reduce what residents can buy elsewhere — the loss to those other tradesmen is hidden, but real",
+      "choices": [
+        "Higher prices reduce what residents can buy elsewhere — the loss to those other tradesmen is hidden, but real",
+        "The town becomes wealthier by recycling its own money — no compensating loss to outside trade",
+        "Local jobs grow without bound — Bastiat's method confirms buy-local laws produce net employment gains",
+        "Outside merchants benefit too — protectionism between towns always produces win-win specialization"
+      ],
+      "context": "The 'buy local' argument is a small-scale version of the protectionist fallacy Bastiat dissected. Money 'kept in the community' at a higher price is money the community can't spend on other things. The seen benefit (local sales) hides the unseen cost."
+    }
+  },
+  {
+    "bank_idx": 565,
+    "new": {
+      "tier": 3,
+      "question": "May 2021: China banned Bitcoin mining. ~50% of hashrate went offline within weeks. Many predicted collapse. Hashrate recovered within months. Why didn't the protocol break?",
+      "answer": "Mining migrated to the US, Kazakhstan, and Russia, difficulty auto-adjusted, and the network absorbed the 50% shock by design",
+      "choices": [
+        "Mining migrated to the US, Kazakhstan, and Russia, difficulty auto-adjusted, and the network absorbed the 50% shock by design",
+        "Bitcoin Core developers issued an emergency intervention patch that rescued the network from real-time collapse and restored lost hashrate",
+        "The People's Bank of China quietly reversed the mining ban within weeks, restoring the pre-ban hashrate distribution exactly as before",
+        "Hashrate proved structurally irrelevant since Bitcoin's security depends on the 21M supply cap, with no role for any mining activity at all"
+      ],
+      "context": "Pre-ban, China hosted ~65-75% of global hashrate. By mid-2022 the US led, then Kazakhstan and Russia. Difficulty adjustment let remaining miners produce blocks at target rate."
+    }
+  },
+  {
+    "bank_idx": 656,
+    "new": {
+      "tier": 3,
+      "question": "Before 2008, the Fed's balance sheet held ~$800B in assets — almost entirely Treasury securities. By 2008-14, QE took it to $4.5T. The 2020 pandemic took it to ~$9T by 2022. Where did the new $8T come from?",
+      "answer": "The Fed created dollars from nothing and bought financial assets — pushing up prices and rewarding asset holders first",
+      "choices": [
+        "The Fed created dollars from nothing and bought financial assets — pushing up prices and rewarding asset holders first",
+        "The Fed reduced its balance sheet from $800B to roughly zero — current holdings are essentially nil at this time",
+        "Asset purchases have no economic effect — the balance sheet is just an accounting line and does not influence prices",
+        "Every dollar was funded by tax collection — taxpayer revenues offset the Fed's purchases dollar-for-dollar each year"
+      ],
+      "context": "The post-2008 Fed has been a serial asset-purchaser at scales the original 1913 Act did not contemplate. 'Temporary emergency' programs have become permanent. Cantillon-effect distributional consequences accumulate."
+    }
+  },
+  {
+    "bank_idx": 683,
+    "new": {
+      "tier": 3,
+      "question": "In May 1930, over 1,000 American economists signed a petition opposing Smoot-Hawley — warning of retaliation, higher prices, damaged trade. Hoover signed on June 17. Why did he ignore unified expert opposition?",
+      "answer": "Concentrated industries lobbied effectively; diffuse consumers did not — political incentives beat unified expert advice",
+      "choices": [
+        "Concentrated industries lobbied effectively; diffuse consumers did not — political incentives beat unified expert advice",
+        "Economic consensus was simply wrong about Smoot-Hawley — the tariff turned out to be excellent policy in practice",
+        "There was no actual consensus among economists in 1930 — the petition was a small minority view at the time",
+        "Hoover signed because the economists demanded it — history misread the direction of the lobbying pressure entirely"
+      ],
+      "context": "The 1,000-economist petition is the rare case where the profession was unified on a policy question and the politicians ignored them. Concentrated interests lobby effectively; diffuse interests do not."
+    }
+  },
+  {
+    "bank_idx": 734,
+    "new": {
+      "tier": 4,
+      "question": "Milton Friedman and Anna Schwartz published A Monetary History of the United States, 1867-1960 in 1963. The chapter on the Great Depression made a startling argument: the Fed didn't just fail to stop the catastrophe — the Fed CAUSED it by letting M2 collapse roughly 33% between 1929 and 1933. What does this say about the Fed's defenders?",
+      "answer": "An institution founded in 1913 to prevent banking panics presided over the worst banking collapse in US history — and was defended afterward by the profession it employs",
+      "choices": [
+        "An institution founded in 1913 to prevent banking panics presided over the worst banking collapse in US history — and was defended afterward by the profession it employs",
+        "The Fed's 1929-1933 actions were textbook-perfect — Friedman and Schwartz documented the Fed's role in shortening the downturn substantially",
+        "Banks alone caused the Depression — Friedman and Schwartz absolved the Fed of any role in the contraction of money or credit during the period",
+        "Tariffs caused the Depression — Friedman and Schwartz argued in this book that the Smoot-Hawley Tariff Act was the only meaningful driver of the slump"
+      ],
+      "context": "Friedman and Schwartz reshaped how the Great Depression is taught. Ben Bernanke, citing Friedman explicitly, took Fed chair into 2008 determined not to repeat the 1929-33 contraction — and arguably overcorrected with the rounds of QE that followed."
+    }
+  },
+  {
+    "bank_idx": 773,
+    "new": {
+      "tier": 4,
+      "question": "Building on his 1920 paper, Mises published Die Gemeinwirtschaft in 1922 — translated as Socialism: An Economic and Sociological Analysis. The 500-page treatise was the first comprehensive Austrian critique of socialism as a complete social system. Hayek read it young and credited it with changing his thinking. What did Mises claim socialism cannot do?",
+      "answer": "Coordinate a modern industrial economy peacefully — it lacks the economic, ethical, and sociological foundations to deliver what advocates promise",
+      "choices": [
+        "Coordinate a modern industrial economy peacefully — it lacks the economic, ethical, and sociological foundations to deliver what advocates promise",
+        "Differ from capitalism in practice — Mises argued the two systems converge to identical outcomes regardless of formal property arrangements between them",
+        "Lose to capitalism on efficiency — Mises argued for the empirical superiority of central planning over markets specifically in his 1922 book",
+        "Win political dominance — Mises argued that socialist ideas would never reach political power anywhere in the 20th century or beyond"
+      ],
+      "context": "Mises's Socialism is one of the great anti-socialist treatises of the 20th century — comprehensive, careful, written before the worst Soviet atrocities became fully known. Hayek's later Road to Serfdom (1944) builds on Mises's foundation. The book has been continuously in print since its English translation."
+    }
+  },
+  {
+    "bank_idx": 828,
+    "new": {
+      "tier": 4,
+      "question": "Bitcoin's price has moved through remarkable milestones since 2009. First market exchange (May 2010, Pizza Day): 10,000 BTC for ~$25 (less than a penny per BTC). $1 (February 2011). $1,000 (November 2013). $10,000 (November 2017). $69,000 (November 2021 peak). $73,000 (March 2024). What's the shape of the long-term price curve?",
+      "answer": "Long-term appreciation punctuated by 70-90% drawdowns — the upward trend across cycles reflects growing recognition of fixed-supply digital scarcity",
+      "choices": [
+        "Long-term appreciation punctuated by 70-90% drawdowns — the upward trend across cycles reflects growing recognition of fixed-supply digital scarcity",
+        "Steady linear growth without volatility — Bitcoin has appreciated about 10% per year consistently with no significant drawdowns since 2009",
+        "A single bubble in 2017 — Bitcoin has had no meaningful price movement before or after that single event in November 2017 alone",
+        "Government-controlled pricing — the US Federal Reserve sets Bitcoin's price quarterly via FOMC meetings, with no market involvement at all"
+      ],
+      "context": "Bitcoin's volatility is genuinely high — annual drawdowns of 30-50% are normal, and 70-90% drawdowns have occurred multiple times. Long-term holders ('HODLers') have generally benefited from holding through volatility. The asset's market cap (sometimes over $1 trillion) reflects substantial institutional adoption."
+    }
+  },
+  {
+    "bank_idx": 919,
+    "new": {
+      "tier": 4,
+      "question": "Executive Order 6102, signed by FDR on April 5, 1933, ordered Americans to surrender their gold to the Federal Reserve at $20.67 per ounce. After the surrender, Roosevelt revalued gold to $35 per ounce — a 41% devaluation of the dollar. Hoarding gold became a federal crime. Why does this disqualify a politically-controlled gold standard as 'sound money'?",
+      "answer": "Political authority can devalue any nominally-backed currency on demand — backing without binding rules is not really binding",
+      "choices": [
+        "Political authority can devalue any nominally-backed currency on demand — backing without binding rules is not really binding",
+        "The 1933 confiscation ended democratically — institutional flexibility worked properly and protected the currency long-term",
+        "The order was reversed within five years — a temporary emergency measure that set no lasting policy precedent for gold",
+        "The Supreme Court overturned it in 1935 — fully restoring private gold ownership and ending the confiscation immediately"
+      ],
+      "context": "The 1933 confiscation was nominally lifted in 1974, but the precedent stands: a government with the power to compel can override gold-backed money. This is the lesson Hayek and modern Bitcoin proponents emphasize."
+    }
+  },
+  {
+    "bank_idx": 1041,
+    "new": {
+      "tier": 5,
+      "question": "On September 7, 2021, El Salvador became the first country to adopt Bitcoin as legal tender, alongside the US dollar (used since 2001). President Nayib Bukele announced the move at Bitcoin 2021 in Miami. Implementation included a wallet app 'Chivo' and a $30 sign-up bonus in Bitcoin for citizens. Why did the 10% remittance fee make Bitcoin attractive specifically?",
+      "answer": "Western Union and MoneyGram charged 10%+ on transfers from Salvadorans abroad — Bitcoin (via Lightning) routes the same payments at near-zero cost, recovering billions in fees for poor families",
+      "choices": [
+        "Western Union and MoneyGram charged 10%+ on transfers from Salvadorans abroad — Bitcoin (via Lightning) routes the same payments at near-zero cost, recovering billions in fees for poor families",
+        "El Salvador had been pressured by the IMF to abandon dollarization and return to the colon — Bitcoin adoption was a defensive maneuver",
+        "The Bukele government sought to attract a wealthy Bitcoin-holding population to settle in El Salvador — the legal tender status was a tax-residency incentive",
+        "El Salvador had identified geothermal mining opportunities from its volcanic geography — Bitcoin adoption was driven by energy export potential"
+      ],
+      "context": "Remittances are roughly 20-25% of El Salvador's GDP. The 10% Western Union fees represent billions in annual transfer costs paid by Salvadoran families. Bitcoin (and especially Lightning Network) offered a technical alternative that could route remittances at near-zero cost."
+    }
+  },
+  {
+    "bank_idx": 1138,
+    "new": {
+      "tier": 5,
+      "question": "Obama's $787B American Recovery and Reinvestment Act (Feb 2009) was sold on a fiscal multiplier of ~1.5: every $1 spent would produce $1.50 of GDP. The Romer-Romer projections forecast unemployment peaking under 8% with stimulus, above 9% without. Actual unemployment peaked at 10% in October 2009 with the stimulus in effect. Why did unemployment peak ABOVE the no-stimulus forecast?",
+      "answer": "The fiscal multiplier was smaller than Keynesian models predicted — likely below 1.0 — so spending crowded out private activity rather than adding to it on net",
+      "choices": [
+        "The fiscal multiplier was smaller than Keynesian models predicted — likely below 1.0 — so spending crowded out private activity rather than adding to it on net",
+        "The multiplier was higher than predicted at over 3.0 — the actual outcome vastly exceeded Romer-Romer projections, vindicating Keynesian fiscal theory",
+        "The multiplier was exactly 1.5 as predicted — the 10% peak was attributable to mid-2009 demographic factors only and not policy effectiveness",
+        "The multiplier was negative — the ARRA actively caused the unemployment increase, a finding endorsed by mainstream Keynesian economics consensus"
+      ],
+      "context": "The Romer-Romer projections were public in early 2009. The actual outcome was substantially worse. The episode is often cited (Cochrane, Cogan, Taylor, Wieland) as evidence that headline-Keynesian multipliers overstate fiscal stimulus efficacy. The 2020-21 stimulus produced inflation rather than the expected real-output expansion."
+    }
+  },
+  {
+    "bank_idx": 1151,
+    "new": {
+      "tier": 5,
+      "question": "Charles Ponzi's 1920 Boston scheme paid early investors with new investors' money — Bernie Madoff ran the same play for at least 17 years. Arrested Dec 11, 2008 after his sons reported him to the FBI. Defrauded ~$65B notional (~$19B real losses). Harry Markopolos warned the SEC since 2000; the SEC investigated five times and found nothing. Madoff got 150 years. Why was the mathematical proof ignored for nine years?",
+      "answer": "SEC staff lacked both the technical math skill to follow the proof AND the institutional incentive to challenge a well-connected NASDAQ insider",
+      "choices": [
+        "SEC staff lacked both the technical math skill to follow the proof AND the institutional incentive to challenge a well-connected NASDAQ insider",
+        "Markopolos was wrong, SEC investigations correctly found no fraud, and the 2008 collapse was caused by unrelated market conditions during the crisis",
+        "The SEC shut down Madoff back in 2002, and the 2008 arrest was an entirely separate matter unrelated to the earlier Ponzi-scheme allegations against him",
+        "Madoff wasn't actually running a Ponzi, the arrest was based on accounting errors since reversed, and the $65B figure was simply a media exaggeration"
+      ],
+      "context": "Charles Ponzi promised Boston investors 50% in 45 days in 1920 from postal-coupon arbitrage; his scheme collapsed in months and named the entire category. Markopolos's No One Would Listen (2010) details the SEC failure. Madoff was the former NASDAQ chairman with deep social ties to SEC officials. Regulatory capture compounded by competence gaps."
+    }
+  },
+  {
+    "bank_idx": 1162,
+    "new": {
+      "tier": 5,
+      "question": "Beginning 2018, the Trump administration imposed tariffs on Chinese imports under Section 301, covering ~$370B in goods at 7.5-25% rates. China retaliated, particularly hitting US agricultural exports. The 2020 Phase One deal partially de-escalated. Studies (Amiti et al., Fajgelbaum et al.) found the tariffs were passed through to US consumers and producers. Who actually paid the tariffs?",
+      "answer": "US consumers and producers paid via higher prices — the 'China is paying' framing was contradicted by every serious pass-through analysis",
+      "choices": [
+        "US consumers and producers paid via higher prices — the 'China is paying' framing was contradicted by every serious pass-through analysis",
+        "Foreign exporters paid as Trump claimed — the 2018-19 tariffs successfully transferred wealth from China to the US with no cost to consumers or businesses",
+        "Nobody paid measurably — the 2018-19 tariffs had no measurable economic effect, with US prices and trade flows unchanged from pre-tariff baselines",
+        "Nobody paid anything — the 2018-19 tariffs were not actually implemented, with the Section 301 action being a media story without policy effect"
+      ],
+      "context": "The Biden administration largely maintained the Trump tariffs through 2024. Both parties moved toward protectionism. The Phase One deal's purchase commitments were not met. The political appeal of 'tough on China' framings outran the economic analysis of who actually pays the tax."
+    }
+  },
+  {
+    "bank_idx": 1167,
+    "new": {
+      "tier": 5,
+      "question": "Berlin's Senate passed the Mietendeckel (Rent Cap) law in February 2020, freezing rents at June 2019 levels and rolling back recent increases. New supply collapsed within months. On April 15, 2021, the German Federal Constitutional Court struck down the law, ruling Berlin lacked authority. Rents bounced back sharply. What did Berlin's 14-month rent freeze actually do to housing supply?",
+      "answer": "New construction permits collapsed during the law's brief effective period — even short-term rent freezes produce measurable supply distortions before courts intervene",
+      "choices": [
+        "New construction permits collapsed during the law's brief effective period — even short-term rent freezes produce measurable supply distortions before courts intervene",
+        "The Mietendeckel solved Berlin's housing shortage — only the Constitutional Court's politically motivated ruling stopped a wildly popular successful policy",
+        "Berlin housing was unchanged for 14 months — construction permits matched pre-2020 baselines through the entire 2020-2021 period of operation",
+        "The Mietendeckel is still in effect as of 2024 — Berlin operates the most successful rent-control regime in Europe, ignoring the Constitutional Court ruling"
+      ],
+      "context": "The Berlin SPD-Greens-Linke coalition pushed the Mietendeckel through despite expert testimony that it would reduce supply. Construction permits for new apartments collapsed during the law's brief effective period. The episode is a textbook case of policy ignoring evidence under public-choice pressure."
+    }
+  },
+  {
+    "bank_idx": 1224,
+    "new": {
+      "tier": 5,
+      "question": "Bernie Madoff's Ponzi ran at least 17 years (proven), possibly 47 (disputed). Peak: ~$65B notional, ~$20B losses. Returns averaged 10-12% with extraordinarily smooth equity curves. The SEC dismissed Markopolos's complaints in 2000, 2001, 2005, 2007, 2008. Madoff confessed Dec 10, 2008 only after the crash drained cash. Why did SEC investigators target his accusers instead of him?",
+      "answer": "Madoff was NASDAQ chairman (1990-93), SEC advisory member, and major political donor — regulators couldn't imagine a respected insider as a fraudster, so they investigated his accusers instead",
+      "choices": [
+        "Madoff was NASDAQ chairman (1990-93), SEC advisory member, and major political donor — regulators couldn't imagine a respected insider as a fraudster, so they investigated his accusers instead",
+        "Madoff's scheme was undetectable by any rational analysis — the SEC's failure was inevitable, and the case reflects no broader pattern about high-status fraud vulnerability anywhere",
+        "Madoff would have been caught earlier under modern Dodd-Frank rules from 2010 — those rules closed the regulatory gaps that let the fraud continue as long as it actually did under SEC watch",
+        "Madoff's scheme operated outside SEC jurisdiction since hedge funds were exempt at the time — the agency simply had no legal power to investigate his advisory business under federal law"
+      ],
+      "context": "Sentenced 150 years June 29, 2009. Died April 14, 2021, age 82. Son Mark Madoff hanged himself Dec 11, 2010 (anniversary of arrest). The Madoff Recovery Initiative has clawed back ~$14B."
+    }
+  },
+  {
+    "bank_idx": 1295,
+    "new": {
+      "tier": 3,
+      "question": "Late 2008: Tesla and SpaceX nearly broke. Musk split his last cash between them. Why did the money go IN, not OUT?",
+      "answer": "Founders sometimes personally fund through near-collapse — bearing concentrated risk because no outside investor will touch a dying startup",
+      "choices": [
+        "Founders sometimes personally fund through near-collapse — bearing concentrated risk because no outside investor will touch a dying startup",
+        "Founders are legally barred from funding their own startups — Securities rules forbid all related-party transactions of this kind by federal law",
+        "The US Treasury automatically rescued any startup running out of cash in late 2008 — emergency-lending facilities covered every venture firm by statute",
+        "VC firms uniformly refused late-stage rounds during the 2008 crisis — no outside funding was available at any valuation across the entire year of 2008"
+      ],
+      "context": "December 2008: Tesla closed emergency funding Dec 24; SpaceX's first successful Falcon 1 launch came Sept 28 with a NASA contract following. Musk reportedly put his last personal funds into both."
+    }
+  },
+  {
+    "bank_idx": 1349,
+    "new": {
+      "tier": 4,
+      "question": "AIG's London Financial Products unit sold credit default swaps on mortgage-backed securities, collecting about $250M/year in premiums with no matched reserves. When housing crashed in 2008, counterparty calls overwhelmed AIG. On September 16, 2008, the Fed extended an $85B loan; total federal commitments later topped $182B. Why couldn't AIG honor the swaps it sold?",
+      "answer": "AIG priced tail risks at zero AND assumed federal rescue — they sold protection they couldn't deliver, and taxpayers covered the gap",
+      "choices": [
+        "AIG priced tail risks at zero AND assumed federal rescue — they sold protection they couldn't deliver, and taxpayers covered the gap",
+        "AIG diversified its holdings widely — it covered all losses without any federal assistance under standard federal law every time a counterparty called",
+        "AIG held reserves matched dollar-for-dollar to claims — government bailouts had become the standard outcome for routine cycles by 2008",
+        "AIG faced only short-term cash demands — the federal government was legally required to provide emergency lending right away under existing statute"
+      ],
+      "context": "AIG made the 'too big to fail' moral hazard visible in real time. The London FP unit ran an unreserved insurance book, collecting premiums on what they treated as impossible-loss events. Goldman Sachs and other counterparties were paid 100 cents on the dollar from bailout funds."
+    }
+  },
+  {
+    "bank_idx": 1357,
+    "new": {
+      "tier": 4,
+      "question": "Bernie Madoff was arrested December 11, 2008. His fund had reported 10-12% returns for over two decades — through 1990s booms, the 2000 dot-com crash, 2002 bear market, 2008 collapse, with almost no down months. Harry Markopolos warned the SEC starting in 2000. Why are perfectly smooth returns through booms and crashes mathematically proof of fraud?",
+      "answer": "No real strategy produces smooth gains across booms, crashes, and crises — markets impose drawdowns on every honest investor; a flat line is the tell",
+      "choices": [
+        "No real strategy produces smooth gains across booms, crashes, and crises — markets impose drawdowns on every honest investor; a flat line is the tell",
+        "Real Ponzi schemes publish their trading method transparently on quarterly statements — excessive disclosure is what investors should be skeptical of",
+        "Madoff charged below-industry fees — low fees and modest returns are the standard warning sign that retail investors should reliably learn to spot",
+        "Ponzi schemes operate only in unregulated offshore markets — heavy SEC oversight is itself the giveaway that something fraudulent is underway"
+      ],
+      "context": "The Madoff case is the canonical recognition exercise for retail investors. Markopolos's 2005 memo 'The World's Largest Hedge Fund is a Fraud' walked the SEC through the math. The institutional failure made Madoff the textbook 'consistent returns' tell."
+    }
+  },
+  {
+    "bank_idx": 1361,
+    "new": {
+      "tier": 5,
+      "question": "The whole life pitch: 'Your premium builds cash value tax-deferred, you can borrow against it, lifetime coverage.' The math: a 30-year-old buys $500K 20-year term at $25/month, invests the $375 difference at 7% real, and at 60 holds about $440K. Whole life cash value at 30 years: about $180K — 41% of the index alternative. Why does whole life lose so badly to the term-and-index combo?",
+      "answer": "Whole life mixes pure insurance with a high-fee savings account — agent commissions and ongoing fees compound against the buyer for decades",
+      "choices": [
+        "Whole life mixes pure insurance with a high-fee savings account — agent commissions and ongoing fees compound against the buyer for decades",
+        "Whole life is universally optimal — federal insurance law requires permanent policies to beat term-plus-indexing across every realistic scenario",
+        "Term life is fraudulent — the buyer pays for two decades and gets absolutely nothing back if she survives the policy period and her family is fine",
+        "Both products are mathematically identical — IRS rules require all life insurance to deliver matching cash value and matching death benefits exactly"
+      ],
+      "context": "Dave Ramsey's 'buy term and invest the difference' rule is the canonical Bastiat-style decomposition. Whole life's first-year premium is typically eaten by 50-110% agent commissions. Cash value grows slowly because fees suppress returns. Exceptions exist (estate planning for very high net worth), but the default retail pitch loses by ~60% over a working life."
+    }
+  },
+  {
+    "bank_idx": 1363,
+    "new": {
+      "tier": 5,
+      "question": "Florida's Citizens Property Insurance was created 2002 as a state 'insurer of last resort' after Hurricane Andrew (1992) drove eleven private insurers insolvent. By 2023 Citizens held over 1.4M policies — Florida's largest property insurer, despite being designed as backstop. When state pools price below actuarial fair value (politicians face voter pressure), the gap must be paid SOMEWHERE. Where does the actuarial gap actually show up?",
+      "answer": "The gap shows as cross-subsidies from non-insureds, future taxpayers, or sudden post-storm assessments — premiums priced by voters, not by risk math, push the cost onto unseen parties",
+      "choices": [
+        "The gap shows as cross-subsidies from non-insureds, future taxpayers, or sudden post-storm assessments — premiums priced by voters, not by risk math, push the cost onto unseen parties",
+        "Florida's market improved dramatically since Citizens launched in 2002 — state-run insurance works normally and resolves catastrophe pricing on its own",
+        "Taxpayers automatically benefit via FEMA grants distributed after every named storm — federal funds fully replace what the state pool fails to collect",
+        "Federal flood insurance fully replaces every needed coverage at private-market premium rates — private insurer exit creates no real customer problem"
+      ],
+      "context": "The Florida case ties together public choice theory (politicians face voter pressure to keep premiums down regardless of actuarial reality), the Mises calculation problem (state pools can't aggregate dispersed information that private underwriting does), and the Bastiat seen-vs-unseen lens (current premium relief vs future assessment costs)."
+    }
+  },
+  {
+    "bank_idx": 1377,
+    "new": {
+      "tier": 2,
+      "question": "Bernie Madoff reported ~10% returns every year for 20 years — through booms AND crashes. Markopolos warned the SEC starting 2000. Madoff arrested Dec 11, 2008. The smooth returns were proof of what?",
+      "answer": "Fraud — no real strategy produces returns that ignore market cycles",
+      "choices": [
+        "Fraud — no real strategy produces returns that ignore market cycles",
+        "Skill — Madoff's office building looked suspicious to investigators",
+        "Wealth — his investors were richer than other Wall Street clients",
+        "Routine — the SEC always probes funds reporting over five percent"
+      ],
+      "context": "Charles Ponzi promised Boston investors 50% in 45 days in 1920; his scheme named the category. Markopolos's 2005 memo: 'The World's Largest Hedge Fund is a Fraud.' Madoff confessed December 2008 once redemptions drained the cash. Loss: ~$65B paper."
+    }
+  },
+  {
+    "bank_idx": 1394,
+    "new": {
+      "tier": 4,
+      "question": "Albert Einstein supposedly called compound interest 'the most powerful force in the universe.' The quote is disputed; the math isn't. At 7% real returns: $5,000 invested at age 18 grows to ~$160,000 at 65. Same $5,000 at 28: ~$80,000. At 38: ~$40,000. Why does each decade of delay halve the final result?",
+      "answer": "At 7% real, money roughly doubles every decade — losing a decade is losing one whole doubling that no later contribution can recover",
+      "choices": [
+        "At 7% real, money roughly doubles every decade — losing a decade is losing one whole doubling that no later contribution can recover",
+        "Compound interest produces identical outcomes whenever you begin — starting age has no effect on the final balance at retirement age 65",
+        "Starting at 38 actually produces better outcomes than starting at 18 — early investors lack the financial discipline to leave money alone",
+        "The investor must contribute new money every single year for compounding to work — a one-time deposit cannot grow without continued additions"
+      ],
+      "context": "7% real is conservative for US equities; nominal returns including dividends ran ~10% from 1926-2024. The starting-age effect is why educators stress 18 over 28: a full doubling cycle that can never be recovered."
+    }
+  },
+  {
+    "bank_idx": 1396,
+    "new": {
+      "tier": 4,
+      "question": "When fund families report 'our active funds outperformed the index,' they often quote only the survivors. Failed funds get quietly liquidated or merged — erased from the record. A 1996 Burton Malkiel study found ~1/3 of equity funds active in 1985 had disappeared by 1995. How does dropping failed funds boost the record?",
+      "answer": "Survivorship bias inflates the apparent track record — survivor averages look great precisely because the losers have been quietly erased",
+      "choices": [
+        "Survivorship bias inflates the apparent track record — survivor averages look great precisely because the losers have been quietly erased",
+        "Survivorship bias is required by SEC rules — the regulator demands failed funds be removed to protect investors from confusing data",
+        "The trick is harmless because failed funds were never owned by real customers — only paper funds get quietly liquidated by their sponsors",
+        "Failed funds were always merged at favorable gains — the bias actually works in investors' favor by lifting the record above reality"
+      ],
+      "context": "Malkiel's 'A Random Walk Down Wall Street' (1973) is the canonical popular case for indexing. Survivorship bias compounds across all active-management performance claims. SPIVA controls for it explicitly. The honest claim: even before bias, the index wins after fees."
+    }
+  },
+  {
+    "bank_idx": 1402,
+    "new": {
+      "tier": 4,
+      "question": "Harry Markopolos at Rampart in 1999 was asked to reverse-engineer Madoff's returns. Four hours: mathematically impossible. His 2005 SEC memo 'The World's Largest Hedge Fund is a Fraud' listed 29 red flags. SEC investigated and called Madoff legitimate. He confessed Dec 11, 2008. Why did the SEC trust him nine years?",
+      "answer": "Madoff was former NASDAQ chairman — SEC staff faced revolving-door incentives toward firms in his network; public choice predicts deference to insiders",
+      "choices": [
+        "Madoff was former NASDAQ chairman — SEC staff faced revolving-door incentives toward firms in his network; public choice predicts deference to insiders",
+        "Markopolos's memo was poorly written — SEC investigators could not understand the mathematical arguments he made about Madoff's strategy being impossible",
+        "Madoff's strategy was so technically sophisticated that no regulator could ever have caught it earlier — the case sets no precedent for institutional reform",
+        "The 2008 financial crisis created a unique opportunity to expose long-running frauds — without the crisis no Ponzi scheme would ever have come to light"
+      ],
+      "context": "Bernie Madoff had served as Nasdaq chairman. SEC investigators went on to private-sector jobs at firms tied to Madoff's network. Markopolos's 2010 book 'No One Would Listen' details the failure."
+    }
+  },
+  {
+    "bank_idx": 1413,
+    "new": {
+      "tier": 5,
+      "question": "From early 2020 to early 2023, US M2 money supply grew about 40% while federal deficit spending totaled roughly $5 trillion above baseline. CPI inflation peaked at 9.1% in June 2022. Households holding cash and short-term bonds lost ~20-30% in real purchasing power. Households holding S&P 500 index funds preserved real value through 2023. Households holding Bitcoin (despite extreme volatility) outperformed in nominal terms from any pre-2020 entry. Who lost and who gained from the 40% M2 expansion?",
+      "answer": "Savers and wage-earners lost real wealth; asset holders nearest to the new money gained — Cantillon's 1755 mechanism playing out at modern scale",
+      "choices": [
+        "Savers and wage-earners lost real wealth; asset holders nearest to the new money gained — Cantillon's 1755 mechanism playing out at modern scale",
+        "All economic actors were affected equally — monetary expansion was neutral across the income distribution and showed no transfer effects in real time",
+        "Wages priced in inflation faster than assets did — labor markets received the new money first, eliminating any cross-household redistribution from the expansion",
+        "Lower-income households gained — the Fed targeted relief at the bottom of the income distribution first, reducing inequality measurably during the 2020-2023 period"
+      ],
+      "context": "Richard Cantillon's 1755 *Essai* identified the mechanism nearly three centuries before the empirical receipt arrived. The 2020-2023 period is the cleanest natural experiment in living memory. Index-fund holders and Bitcoin holders preserved wealth; cash-and-bonds holders absorbed the loss. The Larry Summers warning of early 2021 named this in advance."
+    }
+  },
+  {
+    "bank_idx": 1414,
+    "new": {
+      "tier": 5,
+      "question": "Sun Valley July 1999: Warren Buffett told tech-boom executives that for 17 prior years (1981-98) corporate profits as a share of GDP had been stagnant while equity prices multiplied. Either profits must rise dramatically or prices must fall. He was mocked. Nasdaq lost 78% by October 2002. What did Buffett see that they couldn't?",
+      "answer": "Prices had detached from cash flows — when valuations outpace the profits backing them, prices must eventually come down to meet them",
+      "choices": [
+        "Prices had detached from cash flows — when valuations outpace the profits backing them, prices must eventually come down to meet them",
+        "Wall Street consensus is the safest strategy during euphoria — Buffett's value-investing framework was contrary and proven unhelpful in 1999",
+        "Buffett's warning was a lucky guess — he had no analytical basis for the call, and the post-2000 Nasdaq decline was a macroeconomic coincidence",
+        "Sun Valley speakers face legal liability for market-moving predictions — Buffett was constrained to vague language by securities regulation in 1999"
+      ],
+      "context": "The 1999 Allen Sun Valley speech is canonical in value-investing literature. Buffett's framework: market-cap-to-GDP is the 'best single measure' of valuation extremes. The ratio peaked ~190% in 2000 and above 200% in 2021. Long-run mean ~80-100%."
+    }
+  },
+  {
+    "bank_idx": 1415,
+    "new": {
+      "tier": 5,
+      "question": "Mt. Gox (Feb 2014, ~850K BTC lost), FTX (Nov 2022, ~$8B customer funds missing), Celsius (Jul 2022 bankruptcy, ~$4.7B customer claims), BlockFi (Nov 2022 bankruptcy), Voyager (Jul 2022 bankruptcy), Genesis (Jan 2023 bankruptcy). Each collapse involved customer-deposited crypto held by a centralized intermediary that turned out to be insolvent, fraudulent, or both. Customers who self-custodied Bitcoin (held private keys themselves) lost nothing. What did self-custodied Bitcoin holders DO that exchange depositors didn't?",
+      "answer": "They kept their own private keys — eliminating the trusted intermediary that every collapse exploited; 'not your keys, not your coins' is the rule the failures teach",
+      "choices": [
+        "They kept their own private keys — eliminating the trusted intermediary that every collapse exploited; 'not your keys, not your coins' is the rule the failures teach",
+        "They quit holding any Bitcoin entirely — all crypto activity is structurally fraudulent and Bitcoin itself was never a credible asset for long-term wealth",
+        "They moved to offshore exchanges — self-custody is technically illegal in the United States and customers had no alternative to using regulated exchanges",
+        "They were lucky in their timing — exchange collapses were caused by macroeconomic factors unrelated to the centralized-custody model of those platforms"
+      ],
+      "context": "The phrase 'not your keys, not your coins' captures the self-custody insight. Bitcoin's design — a public ledger where ownership is proved by private-key signature — was specifically intended to eliminate the trusted intermediary. Every exchange collapse from Mt. Gox to FTX is a failure to use the tool as designed."
+    }
+  }
+]

@@ -1465,15 +1465,15 @@
   },
   {
     "tier": 5,
-    "question": "Researchers documented an Egyptian vulture in Bulgaria flying with a rock in its beak across a kilometer of open ground, then dropping the rock on an unattended ostrich egg in a zoo enclosure. The bird had never been observed using a tool before. What does the case illustrate about behavioral innovation?",
-    "answer": "A behavior can spread by individual innovation followed by social transmission to nearby population members — culture-like spread of new ideas across a wild bird population",
+    "question": "Researchers documented an Egyptian vulture in Bulgaria flying with a rock in its beak across a kilometer of open ground, then dropping the rock on an unattended ostrich egg in a zoo enclosure. The bird had never been observed using a tool before. How could this novel behavior spread to other birds in the population?",
+    "answer": "By one bird inventing it, then nearby birds copying it after watching, like a culture spreading ideas",
     "choices": [
-      "A behavior can spread by individual innovation followed by social transmission to nearby population members — culture-like spread of new ideas across a wild bird population",
-      "A behavior can never appear without genetic mutation underlying it — the bird must have inherited the rock-dropping behavior from genetic ancestors not observed before",
-      "A behavior must be performed by a young bird only — adult birds are too set in their ways to innovate, and the bird in question must therefore be a juvenile in disguise",
-      "A behavior reflects pure chance — the bird happened to pick up the rock for unknown reasons and the outcome at the egg was coincidental rather than learned"
+      "By one bird inventing it, then nearby birds copying it after watching, like a culture spreading ideas",
+      "Only through inherited genes, so the offspring of this vulture will be the only ones to ever do this",
+      "Through cosmic-ray induced random mutations affecting only the brains of birds in that specific zoo",
+      "Through magnetic alignment with the Earth's polar field, which forces vultures to drop objects daily"
     ],
-    "context": "Stone tool use in Egyptian vultures (Neophron percnopterus) was documented by Van Lawick-Goodall in the 1960s. Recent observations track the spread of the behavior across populations. Whiten and others treat such cases as cultural transmission within wild bird populations — small but real cultural traditions."
+    "context": "The behavior is documented in Van Lawick-Goodall + Van Lawick 1966 *Use of tools by the Egyptian vulture*. Social transmission of foraging innovations is observed across multiple bird groups — New Caledonian crows, Galapagos woodpecker finches, primates. The mechanism doesn't require genetic change; it requires brains that learn from watching."
   },
   {
     "tier": 5,
@@ -4201,15 +4201,15 @@
   },
   {
     "tier": 5,
-    "question": "Toxoplasma gondii is a parasite that requires cats to complete its life cycle. Infected rodents lose their fear of cat odor — making them easier prey for cats, completing the parasite's cycle. Roughly a third of humans carry T. gondii antibodies. What does this case illustrate about ecology and behavior?",
-    "answer": "Parasites can manipulate host behavior in ways that complete their own life cycle reliably",
+    "question": "Toxoplasma gondii is a parasite that requires cats to complete its life cycle. Infected rodents lose their fear of cat odor — making them easier prey for cats, completing the parasite's cycle. Roughly a third of humans carry T. gondii antibodies. What kind of biological influence does the parasite exert on its rodent host?",
+    "answer": "It manipulates the host's behavior in ways that help the parasite finish its life cycle",
     "choices": [
-      "Parasites can manipulate host behavior in ways that complete their own life cycle reliably",
-      "Toxoplasma is unique among parasites in its capacity to manipulate any host behavior at all",
-      "Host behavior is invariant under parasite infection in mammals though not in invertebrates",
-      "Toxoplasma in humans always causes severe disease and the behavioral effects are universal"
+      "It manipulates the host's behavior in ways that help the parasite finish its life cycle",
+      "It strengthens the rodent's immune defenses against cats, allowing escape from predation events",
+      "It produces a chemical that kills cats on contact, eliminating the predator that threatens the rodent",
+      "It has no effect on rodent behavior, since the cat-fear loss is purely coincidental observation"
     ],
-    "context": "Toxoplasma gondii (Vyas, Webster, others) alters rodent aversion to cat odor — an adaptive parasite strategy. Other behavior-manipulating parasites: parasitoid wasps reprogramming host caterpillar guarding, Cordyceps fungi driving infected ants to climb high before dying. Parasite ecology is rich and substantial."
+    "context": "Behavior-manipulating parasites are well documented: Toxoplasma in rodents (Berdoy et al. 2000), Cordyceps fungi in insects, Leucochloridium in snails (eyestalk swelling), Spinochordodes hairworms forcing crickets into water. The human-toxoplasma link with behavioral or psychiatric effects (Flegr et al.) remains debated."
   },
   {
     "tier": 1,
@@ -5401,7 +5401,7 @@
   },
   {
     "tier": 5,
-    "question": "Bottlenose dolphin populations in Shark Bay, Australia, include a group of females that use marine sponges to protect their snouts while foraging on the seafloor. The behavior is taught matrilineally and shared by relatives, not by genetic predisposition. What does this demonstrate?",
+    "question": "Bottlenose dolphin populations in Shark Bay, Australia, include a group of females that use marine sponges to protect their snouts while foraging on the seafloor. The behavior is taught matrilineally and shared by relatives, not by genetic predisposition. Without genes carrying the recipe, what mechanism passes the behavior from one orca to the next?",
     "answer": "Animal culture — tool-use traditions transmitted socially across generations are documented in non-human mammals besides primates",
     "choices": [
       "Animal culture — tool-use traditions transmitted socially across generations are documented in non-human mammals besides primates",
@@ -6217,15 +6217,15 @@
   },
   {
     "tier": 3,
-    "question": "The vast majority of dogs in the world are not pets — they are working animals or semi-wild village dogs that earn their food. About 75-85% of the world's roughly 900 million dogs fall in that group. What does that tell us about the domestication story?",
+    "question": "The vast majority of dogs in the world are not pets — they are working animals or semi-wild village dogs that earn their food. About 75-85% of the world's roughly 900 million dogs fall in that group. Which framing of the dog-human relationship does that statistic correct?",
+    "answer": "Dogs evolved alongside humans as working partners, and the pet relationship is a recent minority",
     "choices": [
-      "Dogs evolved alongside humans as working partners — the pet relationship is a recent minority",
-      "Dogs were always meant to be pets — the working dogs are descendants of escaped house dogs",
-      "Dogs are split into two species — the working dogs and the pet dogs are now genetically separate",
-      "Dogs in the wild started as pets that ran away — every village dog is a returned house dog"
+      "Dogs evolved alongside humans as working partners, and the pet relationship is a recent minority",
+      "Dogs were domesticated only in the 1800s as Victorian show animals, and remain primarily pets globally",
+      "Dogs are not domesticated at all in the genetic sense and most are still genuinely wild animals",
+      "Dogs were domesticated independently by every culture in identical processes and outcomes worldwide"
     ],
-    "answer": "Dogs evolved alongside humans as working partners — the pet relationship is a recent minority",
-    "context": "Coppinger and Coppinger (Dogs: A Startling New Understanding, 2001) and global census estimates put working / village dogs at 75-85% of the dog population. The companion-animal pet is a Western late-modern relationship; the dog-as-partner story is older and broader."
+    "context": "Coppinger & Coppinger *Dogs* (2001) made the village-dog argument central to canine biology. The pet relationship dates mostly to the 19th-20th century industrial cities; for most of dog-human history, dogs hunted, guarded, herded, hauled, or scavenged at human settlements."
   },
   {
     "tier": 4,
@@ -10717,15 +10717,15 @@
   },
   {
     "tier": 3,
-    "question": "The chytrid fungus probably spread globally via the international amphibian pet trade and African clawed frogs (Xenopus) shipped worldwide as lab animals or pregnancy tests. What does this case illustrate about wildlife disease?",
-    "answer": "Globalization of animal movement spreads pathogens to naive populations, often catastrophically across continents",
+    "question": "The chytrid fungus probably spread globally via the international amphibian pet trade and African clawed frogs (Xenopus) shipped worldwide as lab animals or pregnancy tests. How does the chytrid story explain modern amphibian die-offs across continents?",
+    "answer": "Global animal shipping moves pathogens to populations that have no immunity, causing catastrophic spread",
     "choices": [
-      "Globalization of animal movement spreads pathogens to naive populations, often catastrophically across continents",
-      "Modern fungi simply cannot be controlled once they appear; quarantine measures all fail at preventing spread",
-      "Amphibians have always been declining; chytrid is correlated but not actually a real cause of the modern crisis",
-      "Each chytrid strain is harmless on its own; only the climate amplifies the disease impact in any region"
+      "Global animal shipping moves pathogens to populations that have no immunity, causing catastrophic spread",
+      "Frogs everywhere developed the same allergy to humans simultaneously due to environmental toxins",
+      "Climate change alone explains every die-off, with no role for human animal-movement networks",
+      "The fungus was a deliberate WHO release for biological pest control, then accidentally escaped"
     ],
-    "context": "Bd (chytrid) likely originated in African or Asian amphibians and spread via the global pet, food, and lab trade. Naive New World, Australian, European frogs had no resistance. The amphibian extinction crisis is the worst wildlife pandemic by species impact."
+    "context": "Batrachochytrium dendrobatidis (Bd) has driven declines in over 500 amphibian species (Scheele et al., *Science*, 2019). Xenopus carry Bd asymptomatically and were exported worldwide for the Hogben pregnancy test (1930s-1960s). The pet-trade vector and African-clawed-frog hypothesis are the leading explanations."
   },
   {
     "tier": 3,

@@ -2257,7 +2257,7 @@
   },
   {
     "tier": 1,
-    "question": "On the ocean, people watching a ship sail far away see it disappear BOTTOM FIRST below the horizon. What does that show?",
+    "question": "On the ocean, people watching a ship sail far away see it disappear BOTTOM FIRST below the horizon. What does that tell us about Earth's shape?",
     "answer": "Earth is a sphere, not a flat disk",
     "choices": [
       "Earth is a sphere, not a flat disk",
@@ -2329,15 +2329,15 @@
   },
   {
     "tier": 1,
-    "question": "Galileo was an outsider who turned out RIGHT but experts mocked him. What's the lesson kids learn from his story?",
-    "answer": "Even big experts can be wrong for a while",
+    "question": "In 1633 Galileo was tried for saying Earth goes around the Sun. The experts mocked him; he was right. Lesson?",
+    "answer": "Big experts can be wrong for a while",
     "choices": [
-      "Even big experts can be wrong for a while",
-      "Outsiders are always wrong about nature",
-      "Books should never be checked by readers",
-      "Scientists always agree on everything"
+      "Big experts can be wrong for a while",
+      "Outsiders are always wrong on nature",
+      "Books are not meant to be checked",
+      "Experts all say the same things always"
     ],
-    "context": "Galileo's case is one of the most famous in science history — a single outsider with better evidence held to the truth against powerful institutions. The story repeats: Semmelweis, Wegener, Marshall, all rejected then vindicated."
+    "context": "Galileo Galilei (1564-1642) used a telescope to discover Jupiter's moons, the phases of Venus, and craters on the Moon. His 1632 book defended the Sun-centered view first argued by Copernicus. The Roman Inquisition tried him in 1633 and forced him to publicly recant — but the Sun really is at the center of our solar system, and history remembers him as right."
   },
   {
     "tier": 1,
@@ -2653,15 +2653,15 @@
   },
   {
     "tier": 1,
-    "question": "Semmelweis was RIGHT but died unhonored. What's the warning in his story?",
+    "question": "In 1847 Vienna, Ignaz Semmelweis showed handwashing saved mothers' lives. Other doctors mocked him; he died unhonored. Warning in his story?",
     "answer": "Being right is not the same as being believed",
     "choices": [
       "Being right is not the same as being believed",
-      "Doctors always agree with new research",
-      "Old hospitals were perfectly safe places",
+      "Doctors quickly accept new findings",
+      "Old hospitals were perfectly safe",
       "Handwashing is a fairly minor habit"
     ],
-    "context": "The 'Semmelweis effect' is the name now used when people reject something that contradicts what they already believe. His story is sometimes paired with Wegener, Marshall, Mendel — all right, all rejected, all eventually vindicated."
+    "context": "Semmelweis (1818-1865) was a Hungarian obstetrician in Vienna. He showed that washing hands in a chlorine solution cut maternal deaths from childbed fever from about 18% to under 2%. His colleagues rejected the idea — germs hadn't been discovered yet. He was eventually committed to an asylum, where he died from a beating. Decades later, Pasteur's germ theory vindicated him."
   },
   {
     "tier": 1,
@@ -2833,15 +2833,15 @@
   },
   {
     "tier": 1,
-    "question": "Marshall's story shows medical 'common knowledge' was wrong for decades. What's the lesson for kids?",
+    "question": "In 1984 Aussie doctor Barry Marshall drank ulcer bacteria to prove ulcers came from a germ — not stress or spicy food. Lesson for kids?",
     "answer": "It is okay to ask 'how do we KNOW that?'",
     "choices": [
       "It is okay to ask 'how do we KNOW that?'",
-      "All doctors agree on every question always",
-      "Spicy food actually does cause ulcers",
-      "Outsiders are usually wrong about hidden truths"
+      "Trust whatever doctors say always",
+      "Old medical ideas are always right",
+      "Self-experiments are never useful"
     ],
-    "context": "Marshall's story is now taught in medical schools. Real science is open to questioning, even when an answer is repeated in every textbook. The opposite of science is 'because I said so.' Honest doubt is a core virtue."
+    "context": "Barry Marshall and Robin Warren proposed in 1982 that the bacterium Helicobacter pylori caused ulcers. Other doctors refused to believe it. Marshall drank a beaker of the bacteria, developed gastritis within days, and cured himself with antibiotics. He and Warren won the 2005 Nobel Prize in Medicine. Ulcers are now routinely cured with a course of antibiotics — a treatment unimaginable under the old stress-and-spicy-food orthodoxy."
   },
   {
     "tier": 1,
@@ -3361,7 +3361,7 @@
   },
   {
     "tier": 2,
-    "question": "Swiss mathematician Daniel Bernoulli, in his 1738 book *Hydrodynamica*, described a property of moving fluids that helps explain why airplanes can fly. What's the key idea?",
+    "question": "Swiss mathematician Daniel Bernoulli, in his 1738 book *Hydrodynamica*, described why airplanes can fly. How does pressure relate to flow speed in a moving fluid?",
     "answer": "Faster-moving fluid exerts lower pressure than slower-moving fluid alongside it",
     "choices": [
       "Faster-moving fluid exerts lower pressure than slower-moving fluid alongside it",
@@ -4201,7 +4201,7 @@
   },
   {
     "tier": 2,
-    "question": "A 'Punnett square' is a simple grid biology students use to predict offspring traits. Who developed it, and what does it show?",
+    "question": "A 'Punnett square' is a simple grid biology students use to predict offspring traits. Who developed it, and around what year?",
     "answer": "Reginald Punnett (around 1905) — it shows all combinations of parent alleles in offspring",
     "choices": [
       "Reginald Punnett (around 1905) — it shows all combinations of parent alleles in offspring",
@@ -9769,7 +9769,7 @@
   },
   {
     "tier": 4,
-    "question": "Quarks are never observed as free particles — only in combinations (protons, neutrons, mesons). Pull two quarks apart with enough energy and new quark-antiquark pairs pop out of the vacuum, snapping the quarks back into colorless bound states. This odd property is called 'confinement.' What's the underlying mechanism?",
+    "question": "Quarks are never seen as free particles — only inside protons, neutrons, mesons. Pull two apart with enough energy and new quark-antiquark pairs pop from the vacuum, snapping them back into colorless bound states. This is 'confinement.' How does the strong force change as quarks are pulled apart?",
     "answer": "The strong force gets STRONGER with distance — pulling quarks apart costs more energy the farther you go — until making new particles becomes cheaper than further separation",
     "choices": [
       "The strong force gets STRONGER with distance — pulling quarks apart costs more energy the farther you go — until making new particles becomes cheaper than further separation",
@@ -9949,7 +9949,7 @@
   },
   {
     "tier": 4,
-    "question": "Heike Kamerlingh Onnes in 1911 cooled mercury below 4.2 K (the temperature of liquid helium) and noticed something strange: its electrical resistance dropped to zero. Currents in superconducting rings can persist forever without a driving voltage. What's the broader phenomenon?",
+    "question": "Heike Kamerlingh Onnes in 1911 cooled mercury below 4.2 K (liquid helium) and saw its electrical resistance drop to zero. Currents in such rings persist forever without a driving voltage. What's the name for this zero-resistance phenomenon — and what magnetic effect comes with it?",
     "answer": "Superconductivity — below a critical temperature, certain materials carry electric current with zero resistance — and many also expel magnetic fields entirely (the Meissner effect)",
     "choices": [
       "Superconductivity — below a critical temperature, certain materials carry electric current with zero resistance — and many also expel magnetic fields entirely (the Meissner effect)",
@@ -10165,7 +10165,7 @@
   },
   {
     "tier": 4,
-    "question": "Leo Baekeland in 1907 synthesized the first fully synthetic plastic — Bakelite — by reacting phenol with formaldehyde. It was hard, heat-resistant, electrically insulating, and could be molded into any shape. What was the broader significance?",
+    "question": "Leo Baekeland in 1907 made the first fully synthetic plastic — Bakelite — from phenol and formaldehyde. It was hard, heat-resistant, electrically insulating, and moldable. What did Bakelite open the door to in the decades after?",
     "answer": "Bakelite launched the synthetic plastic era — phones, radios, electrical insulation, billiard balls, kitchenware — and triggered the explosion of plastic chemistry through the 20th century",
     "choices": [
       "Bakelite launched the synthetic plastic era — phones, radios, electrical insulation, billiard balls, kitchenware — and triggered the explosion of plastic chemistry through the 20th century",
@@ -10273,7 +10273,7 @@
   },
   {
     "tier": 4,
-    "question": "Pure silicon is a poor conductor of electricity — better than insulators like glass, worse than metals like copper. But add a tiny amount of phosphorus (5 electrons per atom vs silicon's 4) or boron (3 electrons) and conductivity changes dramatically. What's the broader idea?",
+    "question": "Pure silicon conducts poorly — between glass and copper. But add a trace of phosphorus (5 electrons per atom vs silicon's 4) or boron (3 electrons) and conductivity changes dramatically. What's this controlled-impurity process called, and what does it produce?",
     "answer": "Doping a semiconductor — adding controlled impurities — creates 'n-type' (extra electrons) or 'p-type' (electron holes) materials, the building blocks of transistors and modern electronics",
     "choices": [
       "Doping a semiconductor — adding controlled impurities — creates 'n-type' (extra electrons) or 'p-type' (electron holes) materials, the building blocks of transistors and modern electronics",
@@ -10513,7 +10513,7 @@
   },
   {
     "tier": 4,
-    "question": "In an autoimmune disease, the immune system mistakenly attacks the body's own tissues. Examples include systemic lupus erythematosus (joints, skin, kidneys), multiple sclerosis (nerve myelin), and type 1 diabetes (pancreatic beta cells). What's the broader mechanism?",
+    "question": "In an autoimmune disease, the immune system mistakenly attacks the body's own tissues. Examples include systemic lupus erythematosus (joints, skin, kidneys), multiple sclerosis (nerve myelin), and type 1 diabetes (pancreatic beta cells). What basic immune-recognition failure underlies all of these?",
     "answer": "The immune system fails to distinguish self from non-self — instead of attacking only invaders, it targets specific body tissues — often with unclear triggers (genetic susceptibility, infections, environment)",
     "choices": [
       "The immune system fails to distinguish self from non-self — instead of attacking only invaders, it targets specific body tissues — often with unclear triggers (genetic susceptibility, infections, environment)",
@@ -10525,7 +10525,7 @@
   },
   {
     "tier": 4,
-    "question": "Allergies — from mild seasonal hay fever to life-threatening anaphylaxis — involve the immune system overreacting to harmless substances (pollen, peanuts, bee venom). The first exposure doesn't trigger anything dramatic; later exposures bring symptoms. What's the underlying mechanism?",
+    "question": "Allergies — from mild seasonal hay fever to life-threatening anaphylaxis — involve the immune system overreacting to harmless substances (pollen, peanuts, bee venom). The first exposure doesn't trigger anything dramatic; later exposures bring symptoms. What specifically happens during the first exposure that makes later ones explode into a reaction?",
     "answer": "First exposure makes IgE antibodies that bind to mast cells — later exposures crosslink that IgE — triggering massive release of histamine and other inflammatory chemicals",
     "choices": [
       "First exposure makes IgE antibodies that bind to mast cells — later exposures crosslink that IgE — triggering massive release of histamine and other inflammatory chemicals",
@@ -10633,7 +10633,7 @@
   },
   {
     "tier": 4,
-    "question": "Several Nobel-winning scientists have done their most important work outside the standard credentialing system. Norman Borlaug (1970 Peace) worked at a non-elite Mexican research station for decades; Tu Youyou (2015 Medicine) had no PhD; Katalin Karikó (2023 Medicine) was demoted at Penn before her work led to COVID vaccines. What's the broader recognition?",
+    "question": "Several Nobel-winning scientists have done their most important work outside the standard credentialing system. Norman Borlaug (1970 Peace) worked at a non-elite Mexican research station for decades; Tu Youyou (2015 Medicine) had no PhD; Katalin Karikó (2023 Medicine) was demoted at Penn before her work led to COVID vaccines. What do these cases say about whether elite credentials are a reliable filter for important science?",
     "answer": "Major scientific breakthroughs sometimes come from researchers outside elite institutions — credentialing isn't a perfect filter",
     "choices": [
       "Major scientific breakthroughs sometimes come from researchers outside elite institutions — credentialing isn't a perfect filter",
@@ -10681,7 +10681,7 @@
   },
   {
     "tier": 4,
-    "question": "Douglas Hanahan and Robert Weinberg in 2000 (updated 2011) identified a set of 'hallmarks of cancer' — characteristic capabilities that nearly all human cancers acquire on the way from normal cell to malignant tumor. What's the broader picture?",
+    "question": "Douglas Hanahan and Robert Weinberg in 2000 (updated 2011) identified 'hallmarks of cancer' — capabilities nearly all human cancers acquire on the way from normal cell to tumor. What does their framework say cancer fundamentally IS — a single defect, or something else?",
     "answer": "Cancer is the accumulation of mutations that progressively unlock specific capabilities — sustained growth, evading death signals, attracting blood vessels, invading tissues, metastasizing — rather than a single defining defect",
     "choices": [
       "Cancer is the accumulation of mutations that progressively unlock specific capabilities — sustained growth, evading death signals, attracting blood vessels, invading tissues, metastasizing — rather than a single defining defect",
@@ -10885,7 +10885,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2007 climate scientist Wieslaw Maslowski told an American Geophysical Union meeting that Arctic sea ice could be 'completely ice-free' as early as 2013. The BBC and other outlets reported the prediction widely. Arctic September sea-ice extent in 2013 was about 5 million square kilometers — a low value, but not zero. What does this case teach the kid learning to read climate coverage?",
+    "question": "In 2007 climate scientist Wieslaw Maslowski told an American Geophysical Union meeting that Arctic sea ice could be 'completely ice-free' as early as 2013. The BBC and others reported it widely. Actual September 2013 ice extent: about 5 million km² — low, but not zero. When a kid sees a new catastrophe forecast with a date, what should she do once that date arrives?",
     "answer": "Named predictions on dated timescales can be checked — and many high-confidence catastrophe forecasts have missed their deadlines without media correction",
     "choices": [
       "Named predictions on dated timescales can be checked — and many high-confidence catastrophe forecasts have missed their deadlines without media correction",
@@ -10933,7 +10933,7 @@
   },
   {
     "tier": 4,
-    "question": "In 2008 ABC News aired a feature predicting that by 2015 New York's Statue of Liberty would be partly underwater, gas would be $9 a gallon, and milk would be $13 a gallon — all due to climate change. None of these predictions materialized on the 2015 deadline. What does this case teach the kid about media climate coverage?",
+    "question": "In 2008 ABC News aired a feature predicting that by 2015 New York's Statue of Liberty would be partly underwater, gas would be $9 a gallon, and milk would be $13 a gallon — all due to climate change. None of these predictions materialized on the 2015 deadline. Why are visual and dollar-figure predictions like these particularly worth checking once their deadlines arrive?",
     "answer": "Visual and dollar-figure predictions are designed to land emotionally — and their failure rate is high enough that the kid should always check the date and the actual outcome",
     "choices": [
       "Visual and dollar-figure predictions are designed to land emotionally — and their failure rate is high enough that the kid should always check the date and the actual outcome",
@@ -11701,7 +11701,7 @@
   },
   {
     "tier": 4,
-    "question": "Stanford's medical-school environment in 2020-2021 became openly hostile to Jay Bhattacharya, with colleagues organizing against him and university communications attacking the GBD position. What does the case illustrate about academic freedom?",
+    "question": "Stanford's medical school in 2020-2021 turned hostile to Jay Bhattacharya — colleagues organized against him and university communications attacked his Great Barrington Declaration position. How durable did Stanford's academic-freedom norms prove under political pressure?",
     "answer": "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
     "choices": [
       "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
@@ -12660,7 +12660,8 @@
     "tier": 5
   },
   {
-    "question": "Australian philosopher David Chalmers introduced the term 'hard problem of consciousness' in a 1995 paper. He distinguished it from the 'easy problems' — explaining attention, learning, memory, behavior selection — which neuroscience makes steady progress on. What's the hard problem?",
+    "tier": 5,
+    "question": "Australian philosopher David Chalmers introduced the term 'hard problem of consciousness' in a 1995 paper. He distinguished it from the 'easy problems' — explaining attention, learning, memory, behavior selection — which neuroscience makes steady progress on. What question, specifically, does Chalmers say the easy problems leave untouched?",
     "answer": "Why any physical process is accompanied by subjective experience — why there's 'something it is like' to be the brain doing those things, rather than just unconscious computation as default",
     "choices": [
       "Why any physical process is accompanied by subjective experience — why there's 'something it is like' to be the brain doing those things, rather than just unconscious computation as default",
@@ -12668,8 +12669,7 @@
       "Why humans report having experiences but other primates apparently do not — a comparative question about reports rather than about the underlying nature of subjective experience itself",
       "Why brain imaging requires expensive equipment — and cannot yet be done with simple optical methods at home or in low-resource settings outside of major research hospital facilities"
     ],
-    "context": "Chalmers's example: a perfect physical description of seeing red — wavelengths, retinal cells, optic-nerve signals, V4 activations — seems to leave out the redness, the felt experience. Critics like Daniel Dennett deny the hard problem is a genuine problem. Integrated Information Theory, Global Workspace Theory, panpsychism, illusionism are competing serious frameworks. None has decisive empirical traction.",
-    "tier": 5
+    "context": "Chalmers's example: a perfect physical description of seeing red — wavelengths, retinal cells, optic-nerve signals, V4 activations — seems to leave out the redness, the felt experience. Critics like Daniel Dennett deny the hard problem is a genuine problem. Integrated Information Theory, Global Workspace Theory, panpsychism, illusionism are competing serious frameworks. None has decisive empirical traction."
   },
   {
     "question": "Francis Crick — yes, the same Crick of DNA fame — turned to consciousness research in the 1980s and worked with Christof Koch for two decades on what they called the 'neural correlates of consciousness': finding the specific brain activity that accompanies conscious awareness. What's the honest summary of progress?",
@@ -13152,7 +13152,8 @@
     "tier": 5
   },
   {
-    "question": "Diamond and graphite are made of nothing but carbon atoms, yet diamond is the hardest natural substance and one of the most expensive, while graphite is soft enough to write with and worth pennies per gram. The difference comes entirely from how the carbon atoms are bonded. What's the structural difference?",
+    "tier": 5,
+    "question": "Diamond and graphite are both pure carbon, yet diamond is the hardest natural substance, while graphite is soft enough to write with. The difference comes entirely from how the carbon atoms are bonded. How are they arranged differently in each?",
     "answer": "Diamond has each carbon atom bonded to four others in a rigid 3D network — graphite has each carbon bonded to three others in flat sheets that can slide past one another, giving softness and electrical conductivity",
     "choices": [
       "Diamond has each carbon atom bonded to four others in a rigid 3D network — graphite has each carbon bonded to three others in flat sheets that can slide past one another, giving softness and electrical conductivity",
@@ -13160,8 +13161,7 @@
       "Diamond contains heavier isotopes of carbon — graphite contains lighter isotopes, in a ratio that determines all the physical-property differences observed between these two seemingly similar materials",
       "Diamond is made of crystalline carbon — graphite is made of amorphous carbon with no internal order, so the structural difference is the presence or absence of crystallinity rather than bonding type"
     ],
-    "context": "The 1955 GE synthesis of artificial diamonds from graphite required high pressure (about 100,000 atmospheres) and high temperature — conditions roughly matching where natural diamonds form deep in Earth's mantle. Fullerenes (1985 — Kroto, Curl, Smalley Nobel 1996) and graphene (2004 — Geim and Novoselov Nobel 2010) are additional carbon allotropes. Carbon's flexibility in bonding patterns is why organic chemistry, the chemistry of carbon compounds, is its own enormous field.",
-    "tier": 5
+    "context": "The 1955 GE synthesis of artificial diamonds from graphite required high pressure (about 100,000 atmospheres) and high temperature — conditions roughly matching where natural diamonds form deep in Earth's mantle. Fullerenes (1985 — Kroto, Curl, Smalley Nobel 1996) and graphene (2004 — Geim and Novoselov Nobel 2010) are additional carbon allotropes. Carbon's flexibility in bonding patterns is why organic chemistry, the chemistry of carbon compounds, is its own enormous field."
   },
   {
     "question": "Homeopathy, developed by Samuel Hahnemann in the 1790s, treats illness with substances diluted so far that often not a single molecule of the original substance remains. Practitioners claim 'water memory' preserves a healing effect. What's the chemistry community's assessment?",
@@ -14521,7 +14521,7 @@
   },
   {
     "tier": 5,
-    "question": "Amy Cuddy's 'power posing' research (published 2010, TED talk 2012 with 70+ million views) claimed standing in 'high-power' poses for two minutes changed your testosterone and cortisol levels and made you perform better in interviews. The original coauthor Dana Carney publicly stated by 2016 that she no longer believed the effect was real. What does this case illustrate about scientific popularity and truth?",
+    "question": "Amy Cuddy's 'power posing' research (published 2010, TED talk 2012 with 70+ million views) claimed standing in 'high-power' poses for two minutes changed your testosterone and cortisol levels and made you perform better in interviews. The original coauthor Dana Carney publicly stated by 2016 that she no longer believed the effect was real. Why did tens of millions absorb the finding before anyone could check it?",
     "answer": "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
     "choices": [
       "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
@@ -14797,7 +14797,7 @@
   },
   {
     "tier": 5,
-    "question": "Three enslaved women — Anarcha (subjected to 30 operations without anesthesia), Betsey, and Lucy — were the patients on whom J. Marion Sims developed his vesicovaginal fistula surgical technique in 1840s Alabama. His contemporary white patients later received ether anesthesia. In 2018, after years of advocacy, his statue was removed from Central Park. What's the honest recognition?",
+    "question": "Three enslaved women — Anarcha (subjected to 30 operations without anesthesia), Betsey, and Lucy — were the patients on whom J. Marion Sims developed his vesicovaginal fistula surgical technique in 1840s Alabama. His contemporary white patients later received ether anesthesia. In 2018, after years of advocacy, his statue was removed from Central Park. How should the kid hold together the medical discovery and the way it was obtained?",
     "answer": "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
     "choices": [
       "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
@@ -15469,15 +15469,15 @@
   },
   {
     "tier": 1,
-    "question": "In 1986 Congress passed NCVIA. What did it do to how vaccine makers can be sued?",
+    "question": "In 1986 Congress passed the National Childhood Vaccine Injury Act (NCVIA). How did it change suing vaccine makers?",
     "answer": "Shielded — child-injury suits go to federal court",
     "choices": [
       "Shielded — child-injury suits go to federal court",
-      "Opened up — unlimited lawsuits in every state",
-      "Banned — every vaccine pulled from market 5 years",
-      "Forced — makers had to publish secret formulas"
+      "Banned suits — no recovery is allowed now",
+      "Doubled suits — makers face extra penalties",
+      "No change — they work like other suits"
     ],
-    "context": "The National Childhood Vaccine Injury Act of 1986 routed most childhood vaccine injury claims through the no-fault VICP, funded by a 75-cent-per-dose tax. Cumulative payouts exceed $5 billion. Critics including attorney Aaron Siri and RFK Jr. argue the shield removes ordinary market discipline."
+    "context": "The 1986 NCVIA shielded vaccine manufacturers from most civil product-liability lawsuits over childhood vaccine injuries. Claims are routed through a no-fault federal program called the Vaccine Injury Compensation Program (VICP). Critics like RFK Jr. and Aaron Siri argue this removed the normal market signal that warns drug makers to keep products safe."
   },
   {
     "tier": 1,
@@ -15601,7 +15601,7 @@
   },
   {
     "tier": 3,
-    "question": "Aaron Siri's firm Siri & Glimstad litigated the 2022 Pfizer FOIA case against the FDA. The agency requested 75 years to release the documents; Judge Mark Pittman ordered them released in 8 months. What does the case illustrate?",
+    "question": "Aaron Siri's firm Siri & Glimstad litigated the 2022 Pfizer FOIA case. The FDA asked for 75 years to release documents; Judge Mark Pittman ordered 8 months. What does that gap reveal about federal transparency in practice?",
     "answer": "Transparency requires litigation — agencies prefer secrecy, and FOIA's promise depends on persistent attorneys willing to enforce it",
     "choices": [
       "Transparency requires litigation — agencies prefer secrecy, and FOIA's promise depends on persistent attorneys willing to enforce it",
@@ -15673,15 +15673,15 @@
   },
   {
     "tier": 5,
-    "question": "Bhattacharya, Kulldorff, Malone, McCullough, Kory, Marik, RFK Jr. The 'anti-science' label is used to dismiss them. What's the one trait the label fails to capture?",
+    "question": "The 'anti-science' label was used during COVID to dismiss credentialed dissidents — Bhattacharya (Stanford), Kulldorff (Harvard), Malone (mRNA pioneer), McCullough (cardiologist), Kory and Marik (FLCCC ICU doctors), RFK Jr. (Children's Health Defense). What does the label fail to capture about what these figures were actually asking for?",
     "answer": "Each is credentialed — and their substantive call has been for stronger gold-standard scientific rigor: placebo-controlled trials, transparent data, repealed liability shield, dissent tolerance",
     "choices": [
       "Each is credentialed — and their substantive call has been for stronger gold-standard scientific rigor: placebo-controlled trials, transparent data, repealed liability shield, dissent tolerance",
-      "Each is uncredentialed — with no formal scientific training at all, working outside any major academic institution at the time of their pandemic-era statements",
-      "Each invented a pathogen — and the institutional pushback they faced was a direct response to public-health threats from their own active research programs",
-      "Each has identical politics — and they have always agreed on every specific claim across the entire history of their public engagement with every COVID question"
+      "Each is uncredentialed — with no formal scientific training at all, working outside any major academic institution at the time of their pandemic-era critiques of COVID policy",
+      "Each invented a pathogen — and the institutional pushback they faced was a direct response to public-health threats from their own active research lab work during 2020",
+      "Each has identical politics — and they have always agreed on every specific claim across the entire history of their public engagement with COVID-era public-health policy"
     ],
-    "context": "Bhattacharya: Stanford School of Medicine, MD/PhD, hundreds of papers, now NIH Director. Kulldorff: Harvard biostatistician, invented the spatial scan statistic. Malone: pioneer of lipid-nanoparticle mRNA delivery, 1989-91 patents. McCullough: cardiologist with thousands of citations. Kory: pulmonologist, former associate chief of critical care at UW. Marik: leading sepsis researcher (HAT protocol). Their recurring substantive ask is for gold-standard rigor — the rigor institutions claim to have but substitute PR for."
+    "context": "Bhattacharya (Stanford health-policy economist), Kulldorff (Harvard biostatistician, SaTScan developer), Malone (early mRNA patents), McCullough (cardiologist + epidemiologist), Kory + Marik (ICU specialists in the Front Line COVID-19 Critical Care Alliance), RFK Jr. (environmental lawyer + Children's Health Defense founder, later US HHS Secretary). The 'anti-science' framing inverted what each was asking for: more rigor, not less."
   },
   {
     "tier": 5,

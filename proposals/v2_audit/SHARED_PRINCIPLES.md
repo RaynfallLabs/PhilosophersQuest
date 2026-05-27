@@ -372,6 +372,63 @@ Same substance. Same recognition skill. But the second version asks a REAL quest
 
 See also: §14 (story-in-stem), §13 (Wonder Pattern cool-fact-is-answer), `_hunt_weasel_closers.py` (heuristic).
 
+### 16. Teach before test — no question may assume a term it hasn't been given a chance to teach
+**Principle (refined through the 2026-05-26 user flag on the Madoff Ponzi question)**: A question must not ASSUME the player already knows a technical term that the bank should be TEACHING. Foundational concepts (named figures, named events, technical terms) need to be introduced somewhere — either inline in the stem itself, or via a separate origin/biographical question elsewhere in the bank.
+
+**Why this matters**: The player encounters questions in randomized order. If question #847 references "Ponzi scheme" or "Cantillon effect" or "tax wedge" without ever teaching what those things ARE, the player either already-knew the term (so the question taught nothing) or doesn't know it (so the question is unanswerable except by lucky-guess elimination).
+
+**The user's canonical exemplar (Madoff Ponzi question, economics financial-literacy supplement)**:
+
+> ❌ "Bernie Madoff returned ~10% per year for 47 years regardless of market conditions. Harry Markopolos warned the SEC starting in 2000. Madoff was arrested Dec 11 2008. What's the Ponzi tell?"
+
+The question used "Ponzi" as if the player already knew what it meant. The bank had **7 questions using the word Ponzi but ZERO teaching who Charles Ponzi was** (1920, Boston, International Reply Coupon scheme, promised 50% in 45 days, scheme collapsed in months, became the namesake). The closer was also a §15 weasel ("What's the X tell?") on top of the assumed-knowledge failure.
+
+**The fix template**:
+
+> ✅ "Charles Ponzi promised investors 50% returns in 45 days in 1920 Boston, paying early investors with later investors' money until the scheme collapsed within a year. His name became the term for that kind of fraud. Bernie Madoff ran the largest one in history — claiming 10% annual returns for 47 years regardless of market conditions until he was arrested December 11, 2008. What specific pattern in Madoff's reported returns should have signaled fraud?"
+> 
+> → "The returns were too smooth — real investing has down years, but Madoff reported steady ~10% gains even during 1987, 2000-02, and 2008"
+
+This stem teaches WHO Charles Ponzi was AND introduces Madoff as the canonical modern case AND asks a concrete pointed question (§15).
+
+**Two valid fixes for an assumed-knowledge failure**:
+1. **Inline teach**: rewrite the stem to define the term in-place ("the tax wedge — economists' name for the gap between what your boss pays and what you take home")
+2. **Add a foundational question**: write a separate origin/biographical question that teaches the term. The bank-as-a-whole then provides the foundation, even though any given playthrough may or may not hit the foundational question first.
+
+**Failures look like**:
+- Stem says "Madoff's Ponzi scheme" without ever defining what a Ponzi scheme is, AND no other question in the bank teaches Charles Ponzi 1920
+- Stem says "Cantillon effect" without ever introducing Richard Cantillon (18th-c banker who knew John Law), AND no biographical question exists
+- Stem says "RLHF" or "fine-tuning" or "Mises calculation problem" at T4+ without those terms being defined anywhere
+- Stem uses jargon ("the writ of habeas corpus", "the principal-agent problem", "the calculation problem") that has no foundational anchor
+
+**Passes look like**:
+- T2 or T3 foundational question explicitly teaches the term ("In 1920 Boston, Charles Ponzi promised 50% in 45 days...")
+- T4+ questions reference the term confidently, building on that foundation
+- Players who hit the T4 question without the T2/T3 first can still figure it out from inline context
+
+**Especially load-bearing for**:
+- Named historical figures referenced in deeper-tier questions (need T2/T3 biographical foundation)
+- Specialized jargon from a particular tradition (Austrian econ, AI research, science philosophy, theology)
+- Acronym-heavy domains (FICA, NCVIA, VAERS, ABCT, MMT, RLHF, GBD, CCW)
+- Origin stories for namesake terms (Ponzi scheme, Bastiat's broken window, Pareto efficiency, Coase theorem, Cantillon effect, Volcker shock, Reagan revolution)
+
+**Heuristic for catching this pattern in audit**:
+- Build a list of jargon terms used in stems
+- For each, check if it's introduced/explained somewhere in the bank
+- Flag terms used in N questions but with no foundational question
+- BUT: human reading is required — many "uses" of a term are inline-defined, and the heuristic over-flags
+
+**Implementations**:
+- **Economics (2026-05-26)**: Charles Ponzi origin missing → added T2 biographical question. Richard Cantillon biographical, Bastiat 1850 essay origin, John Law Mississippi Bubble 1719-20, Mises 1920 calculation foundation, Hayek 1945 knowledge foundation, Buchanan+Tullock 1962 founding, Bitcoin block / halving / tax-wedge foundations — 10 foundational adds
+- **AI (2026-05-26)**: "agent" and "jailbreak" foundational adds + 2 stem rewrites for inline-teach
+- **Science (2026-05-26)**: 5 stem rewrites to inline-teach Galileo 1633 / Semmelweis 1847 / Marshall 1984 / NCVIA spell-out / COVID-dissenter credentials at T1 (the random-shuffle entry-point problem)
+- **All future subjects**: this principle generalizes. Pre-rebuild: build a glossary of subject-specific jargon; ensure every term has a foundational question OR is inline-defined wherever it appears
+- **Cannot be deterministically gated** — requires reading judgment about which terms count as "should be taught" vs "common-knowledge defaults"
+
+**Discovered explicitly**: 2026-05-26 user flag during economics Madoff/Ponzi review. The bank had been treating the player as an insider who already knew jargon. Real teaching requires either inline-define or foundational anchor.
+
+See also: §14 (story-in-stem), §15 (no weasel closers), `_assumed_knowledge_*.json` audits per subject (worked examples).
+
 ## Before starting a new subject rebuild
 
 Required reading order:

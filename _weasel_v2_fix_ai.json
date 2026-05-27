@@ -1,0 +1,287 @@
+[
+  {
+    "bank_idx": 131,
+    "new": {
+      "tier": 1,
+      "question": "A chatbot says a famous scientist was born in 1872. The date sounds off. What should you do FIRST?",
+      "answer": "Check the date in an encyclopedia",
+      "choices": [
+        "Check the date in an encyclopedia",
+        "Trust the chatbot and use the date",
+        "Ask the same chatbot if it was lying",
+        "Memorize the wrong date for later"
+      ],
+      "context": "Chatbots invent dates, names, and citations with confidence. The safe habit is to look up specific factual claims in a trusted source before using or sharing them. Encyclopedias, government and university websites, and major news organizations are reasonable starting points. Two different chatbots agreeing isn't enough — they often share the same training data and the same errors."
+    }
+  },
+  {
+    "bank_idx": 232,
+    "new": {
+      "tier": 2,
+      "question": "Your AI essay quotes a study you cannot find anywhere online — not in JSTOR, not in Google Scholar, not on the journal's own website. What should you do with that citation?",
+      "answer": "Leave the study out — unless you can verify it from a second, independent source",
+      "choices": [
+        "Leave the study out — unless you can verify it from a second, independent source",
+        "Use the study anyway — chatbots are too smart now to invent something out of thin air",
+        "Ask the same chatbot if it is real — and trust its 'yes' as proof for school",
+        "Cite the chatbot itself as the source — let the teacher decide whether it counts"
+      ],
+      "context": "When you cannot find a study, book, or court case the AI cited, the most likely explanation is that the model made it up. Asking the chatbot 'is this real?' rarely helps — the model has no way to check. The reliable move: verify any citation from an LLM against a trusted source. If you cannot find it, do not use it."
+    }
+  },
+  {
+    "bank_idx": 337,
+    "new": {
+      "tier": 2,
+      "question": "A chatbot answers in fluent confident sentences and tells you a famous battle happened in a year that sounds slightly wrong. Where should you check the year?",
+      "answer": "In an encyclopedia, primary source, or trustworthy news site — somewhere else",
+      "choices": [
+        "In an encyclopedia, primary source, or trustworthy news site — somewhere else",
+        "In the same chatbot a second time — its repeat answer counts as proof",
+        "In a friend's text — sending them the wrong year so they can correct the chatbot",
+        "Nowhere — fluent confident sentences are themselves the proof the year is right"
+      ],
+      "context": "LLMs hallucinate confidently. Dates, names, and citations are especially prone to fabrication. The defensive habit: when a chatbot gives a specific fact, verify it against an encyclopedia, a primary source, or a trustworthy news site before you act on it or share it. Asking the same model twice usually just produces the same wrong answer in different words. Verification means checking somewhere else."
+    }
+  },
+  {
+    "bank_idx": 400,
+    "new": {
+      "tier": 2,
+      "question": "In February 2024, Google's Gemini image generator produced racially diverse Nazi soldiers and was suspended. Who decided it should inject diversity into prompts by default?",
+      "answer": "Google's product and alignment teams — through deliberate tuning choices",
+      "choices": [
+        "Google's product and alignment teams — through deliberate tuning choices",
+        "The image generator itself — through choices the model made on its own",
+        "An outside hacker group — through prompt injection that bypassed safeguards",
+        "United States federal regulators — through a rule requiring diverse outputs"
+      ],
+      "context": "Google's Gemini image generator was tuned to inject diversity into prompts by default — apparently to counter training-data bias. When applied to historical and ethnically specific requests, it produced anachronisms (diverse Nazi soldiers, refused white historical figures). Sundar Pichai apologized; the image feature was suspended. The episode shows that 'alignment' isn't value-neutral — it's a series of choices made by people. Recognizing alignment as a value vector is core AI literacy."
+    }
+  },
+  {
+    "bank_idx": 543,
+    "new": {
+      "tier": 3,
+      "question": "Geoffrey Hinton said in 2023 interviews that part of why he left Google was so he could speak openly about AI risks. Why couldn't he have raised those same concerns publicly while staying at the company?",
+      "answer": "Senior employees who publicly criticize their company's products typically face job consequences",
+      "choices": [
+        "Senior employees who publicly criticize their company's products typically face job consequences",
+        "Senior employees at Google must speak through a press office and may not give any interviews at all",
+        "Senior AI researchers must complete a five-year non-compete period before they can discuss their views",
+        "Senior employees at Google work under federal classification rules that bar all external discussion"
+      ],
+      "context": "Hinton's stated reason for leaving — being able to speak openly — is itself a recognition lesson about who can speak about technology and when. Senior employees at large companies often face real constraints on public criticism of their company's products or strategy. Hinton, financially secure and recognized for his life's work, could absorb the cost of leaving in a way younger researchers can't. The pattern is wider than AI: tech-industry insider voices often emerge most clearly after the insiders have left."
+    }
+  },
+  {
+    "bank_idx": 704,
+    "new": {
+      "tier": 3,
+      "question": "In February 2024, Google's Gemini image generator produced racially diverse images of Nazi soldiers and refused to generate white historical figures. Why did the system behave that way?",
+      "answer": "It had been tuned to inject diversity into outputs by default — that tuning encoded the trainers' values",
+      "choices": [
+        "It had been tuned to inject diversity into outputs by default — that tuning encoded the trainers' values",
+        "Image AI cannot produce accurate historical figures yet — the technology was years away from working at all",
+        "Google deliberately set out to revise history — the product team intended every output the system gave",
+        "A simple bug in one specific Gemini release — every Gemini model released afterward had the issue resolved"
+      ],
+      "context": "Gemini's image generator had been tuned to inject diversity into outputs by default — likely intended to counter stereotyped outputs from training data. The team didn't anticipate the result when applied to historical or ethnically specific prompts (medieval English kings, World War II German soldiers, the US founding fathers all came out racially diverse). Sundar Pichai apologized; the image feature was suspended. The recognition skill: 'alignment' is not a neutral technical process. It encodes choices made by people about what models should and shouldn't do — and those choices sometimes show."
+    }
+  },
+  {
+    "bank_idx": 750,
+    "new": {
+      "tier": 3,
+      "question": "In January 2024, a robocall sounding like President Biden told New Hampshire voters not to vote in the primary. It was made for about a dollar using AI voice cloning. What's the most reliable way to verify an urgent phone call asking for action is real?",
+      "answer": "Call the person back at a known-good number — or use a pre-arranged family safe word",
+      "choices": [
+        "Call the person back at a known-good number — or use a pre-arranged family safe word",
+        "Trust the caller if they sound like the person — voice tools cannot fool a careful listener",
+        "Ask the caller to confirm their identity in their own words — and accept whatever they say",
+        "Send money to the requested account first — wait to see if any of it gets returned later"
+      ],
+      "context": "In January 2024, voters in New Hampshire received a robocall that sounded like President Biden telling them not to vote in the primary. A magician working with a Texas-based consultant later admitted to creating it. The FCC ruled in February 2024 that AI-cloned voices in robocalls violated existing law. The recognition skill: voice cloning is now within reach of anyone with a laptop. Treat any urgent phone call asking for action as suspect until verified through a separate channel — a callback to a known number, a family safe word, an in-person check."
+    }
+  },
+  {
+    "bank_idx": 858,
+    "new": {
+      "tier": 4,
+      "question": "A skin-cancer detection AI trained on dermatology photos performed well on its test set, but on photos from a different hospital — different camera, different lighting, different patient mix — accuracy dropped sharply. What is this failure mode called?",
+      "answer": "Distribution shift — the model learned the test data's specific quirks, not the general task of spotting cancer",
+      "choices": [
+        "Distribution shift — the model learned the test data's specific quirks, not the general task of spotting cancer",
+        "Model collapse — the model stops working entirely after being deployed and must be retrained from scratch every single day",
+        "Concept drift — the actual cancers being detected changed shape over time and the model could never catch up to them again",
+        "Gradient explosion — the model's internal numbers grow so large that the entire computer running the AI immediately crashes"
+      ],
+      "context": "Distribution shift is one of the most important practical concepts in deploying ML in the real world. A model trained on photos from one hospital — one camera, one lighting setup, one population mix — can quietly fail on photos from elsewhere. The cancers haven't changed; the photos have. The fix is broader, more representative training data, and validation across the realistic deployment population before clinical use."
+    }
+  },
+  {
+    "bank_idx": 892,
+    "new": {
+      "tier": 4,
+      "question": "Three documented disasters: Steven Schwartz (NY, fake court citations, $5K fine, June 2023); Air Canada chatbot promising bereavement-fare refunds (tribunal held the airline liable, Feb 2024); Stanford professor Jeff Hancock's affidavit citing AI-invented studies (Dec 2023). Who paid the cost in each case?",
+      "answer": "The human user — each one accepted plausible-sounding LLM output without verifying it",
+      "choices": [
+        "The human user — each one accepted plausible-sounding LLM output without verifying it",
+        "The AI vendor — courts held OpenAI and the chatbot makers directly liable in each case",
+        "An outside attacker — all three cases were traced to a common prompt-injection actor",
+        "Nobody, in the end — each of the three cases was quietly settled with no real consequences"
+      ],
+      "context": "Three separate documented disasters: (1) Steven Schwartz, NY, fake court citations, fined $5K June 2023. (2) Air Canada chatbot promised bereavement-fare refunds; small claims tribunal held the airline liable in February 2024. (3) Stanford professor Jeff Hancock filed a December 2023 affidavit citing fake AI-related studies — apparently generated by his AI tool. The common thread: each user trusted plausible-sounding LLM output. Each suffered real consequences when verification was skipped. Cases like these are now used in professional-development training across law, journalism, academia, and customer service. The defensive principle is identical across them: verify any factual claim from an LLM before acting on it."
+    }
+  },
+  {
+    "bank_idx": 925,
+    "new": {
+      "tier": 4,
+      "question": "STAT News and ProPublica's 2023-24 investigations found that AI tools at major insurers — including UnitedHealth's NaviHealth — were denying coverage at high rates with little human review. Why does automating a coverage decision change the appeals process for the patient?",
+      "answer": "One model decides for thousands while each patient appeals alone — the asymmetry favors the insurer",
+      "choices": [
+        "One model decides for thousands while each patient appeals alone — the asymmetry favors the insurer",
+        "The automated decision triggers a federal review — so every patient appeal is automatically approved",
+        "AI insurance use has been banned in healthcare — the investigations described practices that have since stopped",
+        "Models treat every patient identically and remove human bias — so no individual patient is disadvantaged"
+      ],
+      "context": "STAT News and ProPublica investigations in 2023-2024 documented insurers using AI tools (UnitedHealth's NaviHealth among them) to deny coverage for elderly patients in skilled-nursing facilities. The pattern: AI predicts a patient should be discharged on a certain date; coverage is cut; appeals are slow; many patients give up. A class-action suit followed. The structural concern is scale and asymmetry: the insurer's AI processes thousands of decisions; each patient appeals individually if at all. Federal regulators have begun to require human review of AI denials in some contexts. Defensive principle for affected families: the right to a human-reviewed appeal exists; ask for it explicitly; document the request."
+    }
+  },
+  {
+    "bank_idx": 983,
+    "new": {
+      "tier": 4,
+      "question": "In late 2023, UnitedHealthcare faced a class-action lawsuit alleging that case managers were graded on how closely their decisions matched its nH Predict AI tool — even when the tool's recommendation conflicted with the treating doctor's judgment. What concrete check tells you whether 'AI decision support' has become 'AI decision substitute' in a workplace?",
+      "answer": "The staff using the tool are evaluated or graded on how closely they follow the AI's recommendation",
+      "choices": [
+        "The staff using the tool are evaluated or graded on how closely they follow the AI's recommendation",
+        "The vendor advertises the AI as 'cutting-edge' and 'powered by machine learning' in its product brochures",
+        "The AI generates its recommendations in fewer than five seconds, faster than a human reviewer could read the file",
+        "The AI is described in compliance paperwork as 'advisory only' regardless of how staff are actually evaluated"
+      ],
+      "context": "The nH Predict lawsuit — Estate of Lokken et al. v. UnitedHealth Group — alleged that case managers were graded on how closely their decisions tracked the AI's recommendation. If true, the model functions as policy: it's not advising humans, it's effectively making the call while a human signs the form. Similar patterns have been alleged at other insurers. Recognition skill: read the workflow around the AI, not just the AI. A system officially labeled 'advisory' can be operationally binding if the humans using it are evaluated on agreement."
+    }
+  },
+  {
+    "bank_idx": 997,
+    "new": {
+      "tier": 4,
+      "question": "During COVID-19 (2020-2022), Western democracies built or expanded systems they would not have accepted in normal times: vaccine passports, employer mandates, contact-tracing apps with location data, platform 'misinformation' pipelines coordinating with government. Most stayed in place after the emergency. Under default political conditions, what happens to emergency infrastructure once the original justification fades?",
+      "answer": "Vaccine-passport apps, mandate registries, and contact-tracing systems are usually NOT formally repealed — they sit on the shelf available for re-activation",
+      "choices": [
+        "Vaccine-passport apps, mandate registries, and contact-tracing systems are usually NOT formally repealed — they sit on the shelf available for re-activation",
+        "It is dismantled completely — every Western country removed all COVID-era systems by mid-2022",
+        "It sunsets automatically — every emergency system is designed to expire as soon as its stated purpose ends",
+        "It has no detectable effect — citizens cannot identify any post-emergency continuation of pandemic-era policies"
+      ],
+      "context": "This pattern recurs across history. Wartime surveillance powers persist into peacetime. Patriot Act provisions extended for decades after September 2001. Emergency tax measures (income tax during the Civil War; income-tax withholding during WWII) survived the emergencies. Once an institution exists, removing it requires positive political action; persistence is the default. Recognition skill: judge new powers and infrastructure not by their announced temporary justification, but by what they will do when the next administration or company leadership inherits them. The COVID infrastructure is now available for whatever the next claimed crisis turns out to be."
+    }
+  },
+  {
+    "bank_idx": 1011,
+    "new": {
+      "tier": 4,
+      "question": "App designers use 'dark patterns' — cancellation buttons hidden three layers deep, default-opt-in checkboxes, fake urgency timers ('only 2 left!'), confirmshaming ('No thanks, I don't want to save money'). UX researcher Harry Brignull coined the term in 2010. When a company says it 'lets users choose', what should you actually look at?",
+      "answer": "The number of clicks to refuse versus to accept — the asymmetry of friction is the real policy",
+      "choices": [
+        "The number of clicks to refuse versus to accept — the asymmetry of friction is the real policy",
+        "The colored 'Accept' button — bright headline buttons reliably show the company's preferred outcome to users",
+        "The 'About Us' page of the company — a short mission statement is the most reliable indicator of company practice",
+        "The total length of the terms of service — longer agreements signal more honest disclosures from the company"
+      ],
+      "context": "The term 'dark patterns' was coined by UX researcher Harry Brignull in 2010. The FTC issued a report in 2022; the EU has regulated some patterns; California's CCPA bans some specifically. But enforcement is patchy and the patterns evolve fast. Recognition skill: when a company says it 'lets users choose,' read the actual interface. A choice that takes one click to accept and seven clicks to refuse isn't really a choice — it's manipulation with the appearance of consent."
+    }
+  },
+  {
+    "bank_idx": 1020,
+    "new": {
+      "tier": 4,
+      "question": "CNET (2023) quietly used AI to write financial-advice articles that contained factual errors. Gizmodo's owner G/O Media pushed AI articles over staff objections. BuzzFeed News shut down. Across these cases, what does cutting the human reviewers while keeping the AI authors actually remove?",
+      "answer": "The human attention that would have caught the AI's mistakes before publication day",
+      "choices": [
+        "The human attention that would have caught the AI's mistakes before publication day",
+        "The legal liability for the published errors, since federal law shifts responsibility to the vendor",
+        "The total cost of running the newsroom, since AI authoring is more expensive than human staff",
+        "The audience itself, since readers refuse on principle to read any article authored by an AI"
+      ],
+      "context": "CNET in 2023 quietly used AI to write financial-advice articles; the articles contained factual errors. Gizmodo's owner G/O Media pushed AI articles over the objections of staff. The pattern: AI lowers the marginal cost of producing content; cutting human review further lowers the cost; errors accumulate. The economic logic favors low-quality high-volume publishing — and the journalists who would have caught the errors are no longer there to catch them. Recognition skill: 'AI augments humans' and 'AI replaces humans' are different decisions, and the second one creates new failure modes the first one doesn't."
+    }
+  },
+  {
+    "bank_idx": 1034,
+    "new": {
+      "tier": 4,
+      "question": "When you give an AI agent access to your email and browser to do tasks, an attacker can hide instructions inside a webpage or document the agent reads. The agent then follows those buried instructions, ignoring its original task. What is this attack called?",
+      "answer": "Indirect prompt injection — the hostile instructions hide in third-party content the agent happens to consume",
+      "choices": [
+        "Indirect prompt injection — the hostile instructions hide in third-party content the agent happens to consume",
+        "Cross-site scripting — a classic web attack that has nothing whatsoever to do with AI or any agentic system",
+        "Buffer overflow — caused by the AI agent running out of memory during a regular inbox summary task",
+        "Phishing — the AI was tricked into believing the webpage was sent by your bank's IT department directly"
+      ],
+      "context": "Prompt injection is the AI-agent era's defining new attack surface. The agent reads content (webpages, emails, documents) to do its job, but that content can carry instructions the AI will then follow. INDIRECT prompt injection means the malicious instructions are buried in third-party content the AI happens to read. There's no easy fix — the same property that lets the AI follow YOUR instructions also lets it follow instructions buried anywhere it reads. Recognition skill: an AI given broad tool access is also exposed to broad attack surface. Limit what an agent can do, and audit what it actually does."
+    }
+  },
+  {
+    "bank_idx": 1050,
+    "new": {
+      "tier": 5,
+      "question": "ChatGPT invents a court case that doesn't exist. Claude makes up an author for a real book. Gemini gives a confidently wrong birth date. These aren't bugs — they're predictable. How does the model actually generate the text in the first place?",
+      "answer": "By predicting likely next words from training patterns — with no separate machinery to check that what it produced refers to anything real",
+      "choices": [
+        "By predicting likely next words from training patterns — with no separate machinery to check that what it produced refers to anything real",
+        "By deliberately inventing fake answers when it gets bored — a behavior the model engages in during long conversations",
+        "By following an OpenAI engineering rule to insert one fake fact every fifth response — a hidden watermarking trick",
+        "By running on damaged data-center hardware — random bit-flips happen to land mostly on dates and citations in the output"
+      ],
+      "context": "An LLM predicts text the way you might predict the next word in a sentence — by what's likely given everything before. 'The Supreme Court case Mata v. Avianca' is a likely continuation if the model is writing legal text. Whether such a case exists is a different question that the model has no separate machinery to ask. Confidence in the text and truth of the text are produced by different processes — and the model only has the first. Recognition skill: never use an LLM for a fact that can't be independently checked, especially names, dates, citations, and numbers."
+    }
+  },
+  {
+    "bank_idx": 1151,
+    "new": {
+      "tier": 5,
+      "question": "Between 2020 and 2023, an extensive censorship infrastructure was built across major platforms — automated content classification, government-platform coordination channels, third-party 'fact-check' programs, label-and-restrict pipelines for contested topics. The original COVID justification faded; the systems mostly remained. Under default political conditions, what happens to emergency infrastructure once the crisis is over?",
+      "answer": "It persists on the tech stack — flagging pipelines stay even after the original framing fades",
+      "choices": [
+        "It persists on the tech stack — flagging pipelines stay even after the original framing fades",
+        "It is fully dismantled in 2023 — no content-moderation pipelines exist on any major platform now",
+        "It always sunsets by design — every platform automatically retires such tools when the stated purpose ends",
+        "It has no real effects — content moderation has been entirely abandoned across major platforms"
+      ],
+      "context": "This pattern recurs across history. Wartime surveillance powers persist into peacetime. Patriot Act provisions extended for decades. Emergency tax measures (income tax during the Civil War, withholding during WWII) survived the emergencies. Once an institution exists, removing it requires positive political action; persistence is the default. The recognition skill: judge new powers and infrastructure not by their announced temporary justification, but by what they will do when the next administration or company leadership inherits them."
+    }
+  },
+  {
+    "bank_idx": 1153,
+    "new": {
+      "tier": 5,
+      "question": "Russia operates SORM (System for Operative Investigative Activities), with AI-augmented variants for facial recognition and traffic analysis. Russian dissidents, journalists, and political opponents have been targeted using this infrastructure. Across Russia, China, Belarus, and Iran, which factor differs most between regimes?",
+      "answer": "The legal and political restraints on the technology — not whether the surveillance technology itself is available",
+      "choices": [
+        "The legal and political restraints on the technology — not whether the surveillance technology itself is available",
+        "The countries' physical climates — cold weather makes facial recognition impossible in Russian winters",
+        "Whether SORM still exists — Russia dismantled all internet surveillance after 2000 and Iran built it from scratch",
+        "The single shared system used by all four countries — they operate one integrated authoritarian surveillance network"
+      ],
+      "context": "SORM has existed in some form since the late Soviet era and has been progressively expanded — SORM-1 for phone calls, SORM-2 for internet, SORM-3 with AI augmentations. Telecoms and ISPs operating in Russia are required to provide direct technical access. Belarus operates a similar system. Iran does. The pattern is general: where an authoritarian regime decides to build domestic surveillance, the technology is available; what's specific is the legal-political environment around it. Recognition skill: focus less on whether the tech exists and more on the institutional restraints that govern its use."
+    }
+  },
+  {
+    "bank_idx": 1194,
+    "new": {
+      "tier": 5,
+      "question": "In March 2023, the Future of Life Institute organized an open letter calling for a six-month pause on training AI systems more powerful than GPT-4. Signatories included Elon Musk, Steve Wozniak, Yoshua Bengio, and Max Tegmark. How many frontier labs actually paused training in response?",
+      "answer": "Zero — every major lab continued training, and Musk himself later launched the competing xAI lab",
+      "choices": [
+        "Zero — every major lab continued training, and Musk himself later launched the competing xAI lab",
+        "All of them — every frontier lab paused training for the full six months requested by the letter",
+        "About half — OpenAI and Anthropic paused; Google DeepMind and Meta continued training their frontier models",
+        "Most of them — the labs paused for several weeks in 2023 but quietly resumed training after media attention faded"
+      ],
+      "context": "The pause letter received enormous press coverage and shifted the 2023 conversation about AI safety. None of the major frontier labs paused. Some signatories (including Musk) later launched competing AI labs of their own (xAI in his case). The letter was effective as discourse — less so as policy. Recognition skill: prominent letters and manifestos move the Overton window without necessarily moving the underlying behavior; treating them as both is a frequent analytical mistake — they shape what can be said but not always what gets done."
+    }
+  }
+]

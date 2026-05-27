@@ -1,0 +1,85 @@
+{
+  "rewrites": [
+    {
+      "bank_idx": 194,
+      "new": {
+        "tier": 1,
+        "question": "In 1633 Galileo was tried for saying Earth goes around the Sun. The experts mocked him; he was right. Lesson?",
+        "answer": "Big experts can be wrong for a while",
+        "choices": [
+          "Big experts can be wrong for a while",
+          "Outsiders are always wrong on nature",
+          "Books are not meant to be checked",
+          "Experts all say the same things always"
+        ],
+        "context": "Galileo Galilei (1564-1642) used a telescope to discover Jupiter's moons, the phases of Venus, and craters on the Moon. His 1632 book defended the Sun-centered view first argued by Copernicus. The Roman Inquisition tried him in 1633 and forced him to publicly recant — but the Sun really is at the center of our solar system, and history remembers him as right."
+      },
+      "issue": "T1 stem assumes kid already knows Galileo's story — names him without saying who he was or what experts mocked him for. T1 questions are random-shuffle entry points."
+    },
+    {
+      "bank_idx": 221,
+      "new": {
+        "tier": 1,
+        "question": "In 1847 Vienna, Ignaz Semmelweis showed handwashing saved mothers' lives. Other doctors mocked him; he died unhonored. Warning in his story?",
+        "answer": "Being right is not the same as being believed",
+        "choices": [
+          "Being right is not the same as being believed",
+          "Doctors quickly accept new findings",
+          "Old hospitals were perfectly safe",
+          "Handwashing is a fairly minor habit"
+        ],
+        "context": "Semmelweis (1818-1865) was a Hungarian obstetrician in Vienna. He showed that washing hands in a chlorine solution cut maternal deaths from childbed fever from about 18% to under 2%. His colleagues rejected the idea — germs hadn't been discovered yet. He was eventually committed to an asylum, where he died from a beating. Decades later, Pasteur's germ theory vindicated him."
+      },
+      "issue": "T1 stem assumes kid already knows Semmelweis — names him without saying what he was right about or where/when he lived. T1 random-shuffle problem."
+    },
+    {
+      "bank_idx": 236,
+      "new": {
+        "tier": 1,
+        "question": "In 1984 Aussie doctor Barry Marshall drank ulcer bacteria to prove ulcers came from a germ — not stress or spicy food. Lesson for kids?",
+        "answer": "It is okay to ask 'how do we KNOW that?'",
+        "choices": [
+          "It is okay to ask 'how do we KNOW that?'",
+          "Trust whatever doctors say always",
+          "Old medical ideas are always right",
+          "Self-experiments are never useful"
+        ],
+        "context": "Barry Marshall and Robin Warren proposed in 1982 that the bacterium Helicobacter pylori caused ulcers. Other doctors refused to believe it. Marshall drank a beaker of the bacteria, developed gastritis within days, and cured himself with antibiotics. He and Warren won the 2005 Nobel Prize in Medicine. Ulcers are now routinely cured with a course of antibiotics — a treatment unimaginable under the old stress-and-spicy-food orthodoxy."
+      },
+      "issue": "T1 stem names Marshall as prior knowledge — kid asked for the lesson without ever being told what Marshall did or what 'common knowledge' was wrong about."
+    },
+    {
+      "bank_idx": 1289,
+      "new": {
+        "tier": 1,
+        "question": "In 1986 Congress passed the National Childhood Vaccine Injury Act (NCVIA). How did it change suing vaccine makers?",
+        "answer": "Shielded — child-injury suits go to federal court",
+        "choices": [
+          "Shielded — child-injury suits go to federal court",
+          "Banned suits — no recovery is allowed now",
+          "Doubled suits — makers face extra penalties",
+          "No change — they work like other suits"
+        ],
+        "context": "The 1986 NCVIA shielded vaccine manufacturers from most civil product-liability lawsuits over childhood vaccine injuries. Claims are routed through a no-fault federal program called the Vaccine Injury Compensation Program (VICP). Critics like RFK Jr. and Aaron Siri argue this removed the normal market signal that warns drug makers to keep products safe."
+      },
+      "issue": "T1 stem uses bare 'NCVIA' without expanding the acronym — kid hitting this question cold has no idea what NCVIA is."
+    },
+    {
+      "bank_idx": 1306,
+      "new": {
+        "tier": 5,
+        "question": "The 'anti-science' label was used during COVID to dismiss credentialed dissidents — Bhattacharya (Stanford), Kulldorff (Harvard), Malone (mRNA pioneer), McCullough (cardiologist), Kory and Marik (FLCCC ICU doctors), RFK Jr. (Children's Health Defense). What does the label fail to capture about what these figures were actually asking for?",
+        "answer": "Each is credentialed — and their substantive call has been for stronger gold-standard scientific rigor: placebo-controlled trials, transparent data, repealed liability shield, dissent tolerance",
+        "choices": [
+          "Each is credentialed — and their substantive call has been for stronger gold-standard scientific rigor: placebo-controlled trials, transparent data, repealed liability shield, dissent tolerance",
+          "Each is uncredentialed — with no formal scientific training at all, working outside any major academic institution at the time of their pandemic-era critiques of COVID policy",
+          "Each invented a pathogen — and the institutional pushback they faced was a direct response to public-health threats from their own active research lab work during 2020",
+          "Each has identical politics — and they have always agreed on every specific claim across the entire history of their public engagement with COVID-era public-health policy"
+        ],
+        "context": "Bhattacharya (Stanford health-policy economist), Kulldorff (Harvard biostatistician, SaTScan developer), Malone (early mRNA patents), McCullough (cardiologist + epidemiologist), Kory + Marik (ICU specialists in the Front Line COVID-19 Critical Care Alliance), RFK Jr. (environmental lawyer + Children's Health Defense founder, later US HHS Secretary). The 'anti-science' framing inverted what each was asking for: more rigor, not less."
+      },
+      "issue": "T5 stem lists 7 named figures (Bhattacharya, Kulldorff, Malone, McCullough, Kory, Marik, RFK Jr.) with no inline introduction — kid needs at least the COVID-era + credentialed framing."
+    }
+  ],
+  "adds": []
+}

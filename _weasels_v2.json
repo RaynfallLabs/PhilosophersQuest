@@ -1,0 +1,1014 @@
+{
+  "ai": [
+    {
+      "bank_idx": 131,
+      "tier": 1,
+      "question": "A chatbot writes you a paragraph and says a famous scientist was born in 1872. The date sounds slightly off. What's the smart move?",
+      "answer": "Look it up in a reliable source",
+      "choices": [
+        "Look it up in a reliable source",
+        "Trust the chatbot and move on",
+        "Ask the chatbot if it's lying",
+        "Memorize the wrong date"
+      ],
+      "context": "Chatbots invent dates, names, and citations with confidence. The safe habit is to look up specific factual claims in a trusted source before using or sharing them. Encyclopedias, government and university websites, and major news organizations are reasonable starting points. Two different chatbots agreeing isn't enough — they often share the same training data and same errors."
+    },
+    {
+      "bank_idx": 232,
+      "tier": 2,
+      "question": "Your AI essay quotes a study that you cannot find anywhere online. What's the right move?",
+      "answer": "Treat the study as likely invented — leave it out unless you can verify it from another source",
+      "choices": [
+        "Treat the study as likely invented — leave it out unless you can verify it from another source",
+        "Use the study anyway — chatbots are too smart now to invent something out of thin air",
+        "Ask the same chatbot if the study is real — its confirmation is enough for a school essay",
+        "Cite the chatbot itself as the source — that way the teacher can decide if it counts or not"
+      ],
+      "context": "When you cannot find a study, book, or court case the AI cited, the most likely explanation is that the model made it up. Asking the chatbot 'is this real?' rarely helps — the model has no way to check. The reliable move: verify any citation from an LLM against a trusted source. If you cannot find it, do not use it."
+    },
+    {
+      "bank_idx": 337,
+      "tier": 2,
+      "question": "A chatbot tells you a famous battle happened in a year that sounds slightly wrong. What's the smart move?",
+      "answer": "Check the year against a trusted reference before you share or use it",
+      "choices": [
+        "Check the year against a trusted reference before you share or use it",
+        "Trust the chatbot because it answers in fluent confident sentences",
+        "Ask the same chatbot again and accept its second answer as proof",
+        "Send the wrong year to a friend so they can correct the chatbot"
+      ],
+      "context": "LLMs hallucinate confidently. Dates, names, and citations are especially prone to fabrication. The defensive habit: when a chatbot gives a specific fact, verify it against an encyclopedia, a primary source, or a trustworthy news site before you act on it or share it. Asking the same model twice usually just produces the same wrong answer in different words. Verification means checking somewhere else."
+    },
+    {
+      "bank_idx": 400,
+      "tier": 2,
+      "question": "In February 2024, Google's Gemini image generator produced unusual results — like racially diverse Nazi soldiers — and was suspended. What does the episode show about AI alignment?",
+      "answer": "Tuning choices made by developers can override historical accuracy",
+      "choices": [
+        "Tuning choices made by developers can override historical accuracy",
+        "Image generators don't work on any historical figures from any period",
+        "Google deliberately set out to rewrite all of history through its product",
+        "The product worked correctly and was suspended for unrelated technical reasons"
+      ],
+      "context": "Google's Gemini image generator was tuned to inject diversity into prompts by default — apparently to counter training-data bias. When applied to historical and ethnically specific requests, it produced anachronisms (diverse Nazi soldiers, refused white historical figures). Sundar Pichai apologized; the image feature was suspended. The episode shows that 'alignment' isn't value-neutral — it's a series of choices made by people. Recognizing alignment as a value vector is core AI literacy."
+    },
+    {
+      "bank_idx": 543,
+      "tier": 3,
+      "question": "Geoffrey Hinton said in 2023 interviews that part of why he left Google was so he could speak openly about AI risks. What does that suggest about the speech constraints that come with senior tech-company positions?",
+      "answer": "Senior employees often can't publicly raise concerns about their company's products without consequences for their job.",
+      "choices": [
+        "Senior employees often can't publicly raise concerns about their company's products without consequences for their job.",
+        "Senior employees at Google must speak through a press office and may not give any interviews at all.",
+        "Senior employees in AI must complete a five-year non-compete period before discussing their views.",
+        "Senior employees at Google work under federal classification rules that bar all external discussion."
+      ],
+      "context": "Hinton's stated reason for leaving — being able to speak openly — is itself a recognition lesson about who can speak about technology and when. Senior employees at large companies often face real constraints on public criticism of their company's products or strategy. Hinton, financially secure and recognized for his life's work, could absorb the cost of leaving in a way younger researchers can't. The pattern is wider than AI: tech-industry insider voices often emerge most clearly after the insiders have left."
+    },
+    {
+      "bank_idx": 704,
+      "tier": 3,
+      "question": "In February 2024, Google's Gemini image generator produced racially diverse images of Nazi soldiers and refused to generate white historical figures. The product was suspended. What does this case reveal about AI 'alignment'?",
+      "answer": "Alignment training encodes the trainers' values — those values can override historical accuracy in unintended ways.",
+      "choices": [
+        "Alignment training encodes the trainers' values — those values can override historical accuracy in unintended ways.",
+        "Image AI cannot produce accurate historical figures yet — the technology is years away from working at all.",
+        "Google deliberately set out to revise history — the company's product team intended every output the system gave.",
+        "A simple bug in one specific Gemini release — every Gemini model released afterward has the issue resolved."
+      ],
+      "context": "Gemini's image generator had been tuned to inject diversity into outputs by default — likely intended to counter stereotyped outputs from training data. The team didn't anticipate the result when applied to historical or ethnically specific prompts (medieval English kings, World War II German soldiers, the US founding fathers all came out racially diverse). Sundar Pichai apologized; the image feature was suspended. The recognition skill: 'alignment' is not a neutral technical process. It encodes choices made by people about what models should and shouldn't do — and those choices sometimes show."
+    },
+    {
+      "bank_idx": 750,
+      "tier": 3,
+      "question": "AI voice cloning has been used in political scams — including a 2024 robocall during the New Hampshire primary that imitated President Biden's voice urging people not to vote. What does the case illustrate?",
+      "answer": "AI voice tools are cheap and easy to misuse — defense requires verification, not detection alone.",
+      "choices": [
+        "AI voice tools are cheap and easy to misuse — defense requires verification, not detection alone.",
+        "Only US Presidents have voices that can be cloned — ordinary citizens are not at risk from any voice tools.",
+        "Voice cloning was made illegal in every US state in 2023 — so the technology no longer exists today.",
+        "Voice cloning works only on actors and singers — politicians are immune to the technique by tradition."
+      ],
+      "context": "In January 2024, voters in New Hampshire received a robocall that sounded like President Biden telling them not to vote in the primary. A magician working with a Texas-based consultant later admitted to creating it. The FCC ruled in February 2024 that AI-cloned voices in robocalls violated existing law. The recognition skill: voice cloning is now within reach of anyone with a laptop. Treat any urgent phone call asking for action as suspect until verified through a separate channel — a callback to a known number, a family safe word, an in-person check."
+    },
+    {
+      "bank_idx": 858,
+      "tier": 4,
+      "question": "A skin-cancer detection AI trained on thousands of dermatology photos performs well on the test set. Researchers found that on images from a different hospital, the same model performed much worse. What's this kind of failure called, and what does it reveal about deploying medical AI?",
+      "answer": "Distribution shift — the model learned the test data's specific lighting, camera, and patient mix, not the general task of spotting cancer",
+      "choices": [
+        "Distribution shift — the model learned the test data's specific lighting, camera, and patient mix, not the general task of spotting cancer",
+        "Model collapse — the model stops working entirely after being deployed and must be retrained from scratch every single day",
+        "Concept drift — the actual cancers being detected changed shape over time and the model could never catch up to them again",
+        "Gradient explosion — the model's internal numbers grow so large that the entire computer running the AI immediately crashes"
+      ],
+      "context": "Distribution shift is one of the most important practical concepts in deploying ML in the real world. A model trained on photos from one hospital — one camera, one lighting setup, one population mix — can quietly fail on photos from elsewhere. The cancers haven't changed; the photos have. The fix is broader, more representative training data, and validation across the realistic deployment population before clinical use."
+    },
+    {
+      "bank_idx": 892,
+      "tier": 4,
+      "question": "Two more documented LLM hallucination disasters paralleled the Schwartz case in 2023-2024. In one, a Canadian court found Air Canada liable for a chatbot's wrong refund policy. In another, a Stanford disinformation expert filed an affidavit citing fake studies — invented by his AI assistant. What's the common pattern?",
+      "answer": "An LLM produced plausible-sounding content — the human user accepted it without verifying, and the cost landed on the human",
+      "choices": [
+        "An LLM produced plausible-sounding content — the human user accepted it without verifying, and the cost landed on the human",
+        "An LLM was specifically trained to produce wrong answers — and the vendor was held liable in each case",
+        "An LLM operated outside its rated capability — both cases were caused by using the wrong model size",
+        "An LLM was hacked through prompt injection — all three cases shared a common attacker behind them"
+      ],
+      "context": "Three separate documented disasters: (1) Steven Schwartz, NY, fake court citations, fined $5K June 2023. (2) Air Canada chatbot promised bereavement-fare refunds; small claims tribunal held the airline liable in February 2024. (3) Stanford professor Jeff Hancock filed a December 2023 affidavit citing fake AI-related studies — apparently generated by his AI tool. The common thread: each user trusted plausible-sounding LLM output. Each suffered real consequences when verification was skipped. Cases like these are now used in professional-development training across law, journalism, academia, and customer service. The defensive principle is identical across them: verify any factual claim from an LLM before acting on it."
+    },
+    {
+      "bank_idx": 925,
+      "tier": 4,
+      "question": "AI agents are being deployed in healthcare workflows — automating prior authorization, summarizing patient records, flagging billing codes. A series of 2023-2024 investigations found agents at major insurers were denying coverage at high rates with little human review. What's the structural concern?",
+      "answer": "Automation can scale a wrong decision to many people fast — and 'the AI said no' becomes a default that's hard to appeal",
+      "choices": [
+        "Automation can scale a wrong decision to many people fast — and 'the AI said no' becomes a default that's hard to appeal",
+        "Automation always improves accuracy — these investigations were misreading the data on coverage decisions",
+        "Automation has been banned in healthcare — federal law prohibits AI from making any insurance decisions",
+        "Automation reduces costs equally for everyone — no patient is disadvantaged by AI-driven coverage choices"
+      ],
+      "context": "STAT News and ProPublica investigations in 2023-2024 documented insurers using AI tools (UnitedHealth's NaviHealth among them) to deny coverage for elderly patients in skilled-nursing facilities. The pattern: AI predicts a patient should be discharged on a certain date; coverage is cut; appeals are slow; many patients give up. A class-action suit followed. The structural concern is scale and asymmetry: the insurer's AI processes thousands of decisions; each patient appeals individually if at all. Federal regulators have begun to require human review of AI denials in some contexts. Defensive principle for affected families: the right to a human-reviewed appeal exists; ask for it explicitly; document the request."
+    },
+    {
+      "bank_idx": 983,
+      "tier": 4,
+      "question": "In late 2023, UnitedHealthcare faced a class-action lawsuit over its use of an AI tool called nH Predict to evaluate which patients' rehabilitation care should be cut short. Reporting suggested the tool's recommendations were followed even when they conflicted with doctors' judgment. What's the broader recognition?",
+      "answer": "AI tools sold as 'decision support' can become 'decision substitutes' when staff are pressured to follow the recommendation — turning a model into a policy",
+      "choices": [
+        "AI tools sold as 'decision support' can become 'decision substitutes' when staff are pressured to follow the recommendation — turning a model into a policy",
+        "AI tools in healthcare are universally accurate — every algorithmic recommendation matches what doctors would decide independently",
+        "AI tools in healthcare are illegal under federal law — every U.S. insurer is banned from using any AI in coverage decisions",
+        "AI tools in healthcare have no actual effect — insurers ignore the model output entirely in real practice"
+      ],
+      "context": "The nH Predict lawsuit — Estate of Lokken et al. v. UnitedHealth Group — alleged that case managers were graded on how closely their decisions tracked the AI's recommendation. If true, the model functions as policy: it's not advising humans, it's effectively making the call while a human signs the form. Similar patterns have been alleged at other insurers. Recognition skill: read the workflow around the AI, not just the AI. A system officially labeled 'advisory' can be operationally binding if the humans using it are evaluated on agreement."
+    },
+    {
+      "bank_idx": 997,
+      "tier": 4,
+      "question": "During COVID-19 (2020-2022), Western democracies built or expanded systems they would not have accepted in normal times: vaccine passports for ordinary venues, employer mandates, contact-tracing apps with location data, platform 'misinformation' pipelines coordinating with government. Most of the infrastructure remained in place after the immediate emergency ended. What's the structural concern?",
+      "answer": "Emergency infrastructure tends to persist after the emergency — the tools remain available for the next claimed crisis, while the original justification fades",
+      "choices": [
+        "Emergency infrastructure tends to persist after the emergency — the tools remain available for the next claimed crisis, while the original justification fades",
+        "Emergency infrastructure is always dismantled completely — every Western country removed all COVID-era systems by mid-2022",
+        "Emergency infrastructure is always temporary by design — every system automatically sunsets after its stated purpose ends",
+        "Emergency infrastructure has no effect after the emergency — citizens cannot detect any post-emergency continuation"
+      ],
+      "context": "This pattern recurs across history. Wartime surveillance powers persist into peacetime. Patriot Act provisions extended for decades after September 2001. Emergency tax measures (income tax during the Civil War; income-tax withholding during WWII) survived the emergencies. Once an institution exists, removing it requires positive political action; persistence is the default. Recognition skill: judge new powers and infrastructure not by their announced temporary justification, but by what they will do when the next administration or company leadership inherits them. The COVID infrastructure is now available for whatever the next claimed crisis turns out to be."
+    },
+    {
+      "bank_idx": 1011,
+      "tier": 4,
+      "question": "App designers sometimes use 'dark patterns' — interface designs that nudge users toward choices that benefit the company at the user's expense. Examples: cancellation buttons hidden three layers deep, default-opt-in checkboxes, fake urgency timers ('only 2 left!'), confirmshaming ('No thanks, I don't want to save money'). What's the underlying recognition?",
+      "answer": "When an interface makes one path easy and another path hard, the asymmetry is the policy — read the friction, not the headline buttons",
+      "choices": [
+        "When an interface makes one path easy and another path hard, the asymmetry is the policy — read the friction, not the headline buttons",
+        "Dark patterns are illegal in every U.S. state — no company has ever used a dark pattern in any product anywhere",
+        "Dark patterns have no actual effect — every user navigates every interface with identical ease in all conditions",
+        "Dark patterns are limited to gambling apps — no other category of app uses any interface design tricks at all"
+      ],
+      "context": "The term 'dark patterns' was coined by UX researcher Harry Brignull in 2010. The FTC issued a report in 2022; the EU has regulated some patterns; California's CCPA bans some specifically. But enforcement is patchy and the patterns evolve fast. Recognition skill: when a company says it 'lets users choose,' read the actual interface. A choice that takes one click to accept and seven clicks to refuse isn't really a choice — it's manipulation with the appearance of consent."
+    },
+    {
+      "bank_idx": 1020,
+      "tier": 4,
+      "question": "Several news organizations laid off staff in 2023-2024 while announcing they would use AI to write more content. CNET, Gizmodo, BuzzFeed News (which shut down), and others took this approach. Some of the AI-written articles contained errors that humans would have caught. What's the structural concern?",
+      "answer": "Replacing journalists with AI saves money short-term but removes the human attention that catches the AI's mistakes",
+      "choices": [
+        "Replacing journalists with AI saves money short-term but removes the human attention that catches the AI's mistakes",
+        "AI-written news is universally perfect, and no error has ever been published in any AI-written news article anywhere ever",
+        "AI-written news is illegal in the U.S., and no U.S. outlet has ever published any content generated by any AI tool today",
+        "AI-written news has no economic effect on newsrooms, and every laid-off journalist was rehired within weeks elsewhere always"
+      ],
+      "context": "CNET in 2023 quietly used AI to write financial-advice articles; the articles contained factual errors. Gizmodo's owner G/O Media pushed AI articles over the objections of staff. The pattern: AI lowers the marginal cost of producing content; cutting human review further lowers the cost; errors accumulate. The economic logic favors low-quality high-volume publishing — and the journalists who would have caught the errors are no longer there to catch them. Recognition skill: 'AI augments humans' and 'AI replaces humans' are different decisions, and the second one creates new failure modes the first one doesn't."
+    },
+    {
+      "bank_idx": 1034,
+      "tier": 4,
+      "question": "When an AI agent is given access to your email and browser to do tasks for you, an attacker can hide instructions in a webpage or document the agent reads. The agent may follow the hidden instructions, ignoring its original task. What's the attack called and what's the structural concern?",
+      "answer": "Indirect prompt injection — and the structural concern is that the same property that makes agents useful also makes them attackable through any content they consume",
+      "choices": [
+        "Indirect prompt injection — and the structural concern is that the same property that makes agents useful also makes them attackable through any content they consume",
+        "Cross-site scripting — a classic web attack that has nothing whatsoever to do with AI or any agentic system",
+        "Buffer overflow — caused by the AI agent running out of memory during a regular inbox summary task",
+        "Phishing — the AI was tricked into believing the webpage was sent by your bank's IT department directly"
+      ],
+      "context": "Prompt injection is the AI-agent era's defining new attack surface. The agent reads content (webpages, emails, documents) to do its job, but that content can carry instructions the AI will then follow. INDIRECT prompt injection means the malicious instructions are buried in third-party content the AI happens to read. There's no easy fix — the same property that lets the AI follow YOUR instructions also lets it follow instructions buried anywhere it reads. Recognition skill: an AI given broad tool access is also exposed to broad attack surface. Limit what an agent can do, and audit what it actually does."
+    },
+    {
+      "bank_idx": 1050,
+      "tier": 5,
+      "question": "ChatGPT confidently invents a court case that doesn't exist. Claude makes up an author for a real book. Gemini gives a confidently wrong birth date for a famous person. These aren't bugs — they're predictable failures of how LLMs work. What's the underlying mechanism?",
+      "answer": "The model generates plausible-sounding text by predicting likely next words; it has no separate mechanism to check whether the text it produced refers to anything real",
+      "choices": [
+        "The model generates plausible-sounding text by predicting likely next words; it has no separate mechanism to check whether the text it produced refers to anything real",
+        "The model deliberately invents fake answers when it gets bored and wants to amuse itself during long conversations",
+        "The model has been deliberately programmed by OpenAI engineers to insert one fake fact in every fifth response as a watermarking trick",
+        "The model is running on damaged hardware in the data center, and the cosmic-ray bit flips happen to land mostly on dates and citations"
+      ],
+      "context": "An LLM predicts text the way you might predict the next word in a sentence — by what's likely given everything before. 'The Supreme Court case Mata v. Avianca' is a likely continuation if the model is writing legal text. Whether such a case exists is a different question that the model has no separate machinery to ask. Confidence in the text and truth of the text are produced by different processes — and the model only has the first. Recognition skill: never use an LLM for a fact that can't be independently checked, especially names, dates, citations, and numbers."
+    },
+    {
+      "bank_idx": 1151,
+      "tier": 5,
+      "question": "Between 2020 and 2023, an extensive censorship infrastructure was built across major platforms — automated content classification, government-platform coordination channels, third-party 'fact-check' programs, label-and-restrict pipelines for contested topics. Most of these systems remained in place after the immediate COVID period ended. What's the structural concern?",
+      "answer": "Infrastructure built for one emergency tends to remain available for the next claimed emergency — the tools persist while the original justification fades",
+      "choices": [
+        "Infrastructure built for one emergency tends to remain available for the next claimed emergency — the tools persist while the original justification fades",
+        "Infrastructure was fully dismantled in 2023 — no content-moderation pipelines exist on any major platform",
+        "Infrastructure was always temporary by design — every platform sunsets such tools after their stated purpose ends",
+        "Infrastructure has no real effects — content moderation has been entirely abandoned across major platforms"
+      ],
+      "context": "This pattern recurs across history. Wartime surveillance powers persist into peacetime. Patriot Act provisions extended for decades. Emergency tax measures (income tax during the Civil War, withholding during WWII) survived the emergencies. Once an institution exists, removing it requires positive political action; persistence is the default. The recognition skill: judge new powers and infrastructure not by their announced temporary justification, but by what they will do when the next administration or company leadership inherits them."
+    },
+    {
+      "bank_idx": 1153,
+      "tier": 5,
+      "question": "Russia operates an extensive surveillance system known as SORM (System for Operative Investigative Activities), with AI-augmented variants for facial recognition and traffic analysis. Russian dissidents, journalists, and political opponents have been targeted using this infrastructure. What's the broader recognition?",
+      "answer": "Authoritarian states use AI surveillance against domestic opposition — the technology exists in many jurisdictions, but the political constraints on it vary by regime",
+      "choices": [
+        "Authoritarian states use AI surveillance against domestic opposition — the technology exists in many jurisdictions, but the political constraints on it vary by regime",
+        "Only China uses AI surveillance — Russia has no comparable infrastructure",
+        "Russia abandoned all surveillance after 2000 — SORM was dismantled by 2010",
+        "Russia and China share a single integrated surveillance system — they have no separate national infrastructure"
+      ],
+      "context": "SORM has existed in some form since the late Soviet era and has been progressively expanded — SORM-1 for phone calls, SORM-2 for internet, SORM-3 with AI augmentations. Telecoms and ISPs operating in Russia are required to provide direct technical access. Belarus operates a similar system. Iran does. The pattern is general: where an authoritarian regime decides to build domestic surveillance, the technology is available; what's specific is the legal-political environment around it. Recognition skill: focus less on whether the tech exists and more on the institutional restraints that govern its use."
+    },
+    {
+      "bank_idx": 1194,
+      "tier": 5,
+      "question": "In March 2023, the Future of Life Institute organized an open letter calling for a six-month pause on training AI systems more powerful than GPT-4. Signatories included Elon Musk, Steve Wozniak, Yoshua Bengio, Max Tegmark, and many others. No pause occurred. What does the episode illustrate in retrospect?",
+      "answer": "Open letters by prominent figures can shape elite conversation without changing what major actors actually do — the moratorium did not happen, and the labs continued training",
+      "choices": [
+        "Open letters by prominent figures can shape elite conversation without changing what major actors actually do — the moratorium did not happen, and the labs continued training",
+        "Open letters by prominent figures are universally binding — every signatory commits to enforce the requested pause",
+        "Open letters by prominent figures have no effect — the 2023 letter was ignored entirely by media and policymakers",
+        "Open letters by prominent figures produced the requested pause — frontier AI development ceased for six months after the letter"
+      ],
+      "context": "The pause letter received enormous press coverage and shifted the 2023 conversation about AI safety. None of the major frontier labs paused. Some signatories (including Musk) later launched competing AI labs of their own (xAI in his case). The letter was effective as discourse — less so as policy. Recognition skill: prominent letters and manifestos move the Overton window without necessarily moving the underlying behavior; treating them as both is a frequent analytical mistake — they shape what can be said but not always what gets done."
+    }
+  ],
+  "animal": [
+    {
+      "bank_idx": 122,
+      "tier": 5,
+      "question": "Researchers documented an Egyptian vulture in Bulgaria flying with a rock in its beak across a kilometer of open ground, then dropping the rock on an unattended ostrich egg in a zoo enclosure. The bird had never been observed using a tool before. What does the case illustrate about behavioral innovation?",
+      "answer": "A behavior can spread by individual innovation followed by social transmission to nearby population members — culture-like spread of new ideas across a wild bird population",
+      "choices": [
+        "A behavior can spread by individual innovation followed by social transmission to nearby population members — culture-like spread of new ideas across a wild bird population",
+        "A behavior can never appear without genetic mutation underlying it — the bird must have inherited the rock-dropping behavior from genetic ancestors not observed before",
+        "A behavior must be performed by a young bird only — adult birds are too set in their ways to innovate, and the bird in question must therefore be a juvenile in disguise",
+        "A behavior reflects pure chance — the bird happened to pick up the rock for unknown reasons and the outcome at the egg was coincidental rather than learned"
+      ],
+      "context": "Stone tool use in Egyptian vultures (Neophron percnopterus) was documented by Van Lawick-Goodall in the 1960s. Recent observations track the spread of the behavior across populations. Whiten and others treat such cases as cultural transmission within wild bird populations — small but real cultural traditions."
+    },
+    {
+      "bank_idx": 350,
+      "tier": 5,
+      "question": "Toxoplasma gondii is a parasite that requires cats to complete its life cycle. Infected rodents lose their fear of cat odor — making them easier prey for cats, completing the parasite's cycle. Roughly a third of humans carry T. gondii antibodies. What does this case illustrate about ecology and behavior?",
+      "answer": "Parasites can manipulate host behavior in ways that complete their own life cycle reliably",
+      "choices": [
+        "Parasites can manipulate host behavior in ways that complete their own life cycle reliably",
+        "Toxoplasma is unique among parasites in its capacity to manipulate any host behavior at all",
+        "Host behavior is invariant under parasite infection in mammals though not in invertebrates",
+        "Toxoplasma in humans always causes severe disease and the behavioral effects are universal"
+      ],
+      "context": "Toxoplasma gondii (Vyas, Webster, others) alters rodent aversion to cat odor — an adaptive parasite strategy. Other behavior-manipulating parasites: parasitoid wasps reprogramming host caterpillar guarding, Cordyceps fungi driving infected ants to climb high before dying. Parasite ecology is rich and substantial."
+    },
+    {
+      "bank_idx": 518,
+      "tier": 3,
+      "question": "The vast majority of dogs in the world are not pets — they are working animals or semi-wild village dogs that earn their food. About 75-85% of the world's roughly 900 million dogs fall in that group. What does that tell us about the domestication story?",
+      "answer": "Dogs evolved alongside humans as working partners — the pet relationship is a recent minority",
+      "choices": [
+        "Dogs evolved alongside humans as working partners — the pet relationship is a recent minority",
+        "Dogs were always meant to be pets — the working dogs are descendants of escaped house dogs",
+        "Dogs are split into two species — the working dogs and the pet dogs are now genetically separate",
+        "Dogs in the wild started as pets that ran away — every village dog is a returned house dog"
+      ],
+      "context": "Coppinger and Coppinger (Dogs: A Startling New Understanding, 2001) and global census estimates put working / village dogs at 75-85% of the dog population. The companion-animal pet is a Western late-modern relationship; the dog-as-partner story is older and broader."
+    },
+    {
+      "bank_idx": 893,
+      "tier": 3,
+      "question": "The chytrid fungus probably spread globally via the international amphibian pet trade and African clawed frogs (Xenopus) shipped worldwide as lab animals or pregnancy tests. What does this case illustrate about wildlife disease?",
+      "answer": "Globalization of animal movement spreads pathogens to naive populations, often catastrophically across continents",
+      "choices": [
+        "Globalization of animal movement spreads pathogens to naive populations, often catastrophically across continents",
+        "Modern fungi simply cannot be controlled once they appear; quarantine measures all fail at preventing spread",
+        "Amphibians have always been declining; chytrid is correlated but not actually a real cause of the modern crisis",
+        "Each chytrid strain is harmless on its own; only the climate amplifies the disease impact in any region"
+      ],
+      "context": "Bd (chytrid) likely originated in African or Asian amphibians and spread via the global pet, food, and lab trade. Naive New World, Australian, European frogs had no resistance. The amphibian extinction crisis is the worst wildlife pandemic by species impact."
+    }
+  ],
+  "cooking": [
+    {
+      "bank_idx": 589,
+      "tier": 5,
+      "question": "Vanilla planifolia outside Mexico was sterile until 1841, when a 12-year-old enslaved gardener on Réunion devised hand-pollination. What was Edmond Albius's innovation, and what does it tell us about the orchid's biology?",
+      "answer": "He used a bamboo splint to lift the rostellum membrane separating male and female parts, pressing anther to stigma to bypass the flower's block to selfing",
+      "choices": [
+        "He used a bamboo splint to lift the rostellum membrane separating male and female parts, pressing anther to stigma to bypass the flower's block to selfing",
+        "He bred a Réunion variety of vanilla that no longer needed an insect pollinator, distinguishing the new cultivar from Mexican stock and explaining the island spread",
+        "He grew vanilla in shaded greenhouses matching Mexico's native habitat, allowing the Mexican Melipona bee to be imported and pollinate flowers on Réunion successfully",
+        "He hand-fertilized flowers with pollen from a different orchid species, creating a vanilla hybrid that fruited reliably and became the basis of non-Mexican vanilla"
+      ],
+      "context": "Vanilla planifolia has a self-incompatibility structure: the rostellum membrane physically separates anther from stigma, preventing selfing. Mexican Melipona bees parted it naturally. Edmond Albius (Réunion, 1841, age 12, enslaved gardener of Féréol Bellier-Beaumont) devised the bamboo-and-thumb technique still used worldwide. He died poor."
+    },
+    {
+      "bank_idx": 594,
+      "tier": 5,
+      "question": "Roman garum survived as a high-volume industry through Late Antiquity. After Rome's collapse, the technique disappeared from most of Western Europe — but survived in one Italian village. What survived, and what does it teach about food transmission?",
+      "answer": "Colatura di alici of Cetara (Amalfi) — barrel-fermented anchovy liquid chemically close to ancient garum, preserved through fishing-village and monastic continuity",
+      "choices": [
+        "Colatura di alici of Cetara (Amalfi) — barrel-fermented anchovy liquid chemically close to ancient garum, preserved through fishing-village and monastic continuity",
+        "Anchovy paste of Genoa — a salt-cured product introduced from Arab Spain that replaced Roman garum entirely after the 9th century, preserving no Roman technique",
+        "Bottarga of Sardinia — salt-cured tuna or mullet roe of southern Italy, derived from a Roman fish-salting tradition but distinct from garum in its solid form",
+        "Worcestershire sauce of England — a 19th-century fermented anchovy product modeled on rediscovered Roman garum recipes and preserved in English condiment tradition"
+      ],
+      "context": "Cetara preserves colatura di alici: anchovies salted in chestnut barrels, fermented, drained as clear amber liquid. Chemistry shows the product is close to reconstructed Roman garum in amino acids and free glutamate. The technique survived through coastal fishing and monastic kitchens. Bottarga is salted roe (distinct). Worcestershire (1837) is a separate Victorian invention."
+    },
+    {
+      "bank_idx": 602,
+      "tier": 5,
+      "question": "The Boston Tea Party destroyed 92,000 pounds of Bohea black tea over a constitutional dispute. What does this episode reveal about the relationship between everyday food commodities and political revolutions?",
+      "answer": "Mass-consumption commodities like tea concentrate constitutional questions into a daily object, making abstract debates concrete and protests mass-accessible",
+      "choices": [
+        "Mass-consumption commodities like tea concentrate constitutional questions into a daily object, making abstract debates concrete and protests mass-accessible",
+        "The Tea Party was actually about tea prices, not constitutional questions; the EIC monopoly would have lowered colonial tea prices and the protest was a backlash by smugglers",
+        "Food commodities are essentially unrelated to revolution; the Tea Party became symbolic only retrospectively as a marketing exercise by later American historians needing a myth",
+        "The episode reveals nothing distinctive about food; the same constitutional dispute would have erupted over any other taxed import the Crown attempted to monopolize through a grant"
+      ],
+      "context": "Tea by 1773 was a daily working-class drink in the colonies. The Tea Act bundled a tax with a monopoly grant. The Sons of Liberty's destruction forced taxation-without-representation onto an everyday commodity everyone bought. Intolerable Acts followed in months; war within 18. T.H. Breen's 'Marketplace of Revolution' (2004) tracks how consumer goods structured colonial politics."
+    },
+    {
+      "bank_idx": 689,
+      "tier": 4,
+      "question": "Native American pemmican — dried lean meat pounded fine, mixed with rendered fat and berries — was the energy bar of the fur trade for 200 years. The 1814 Pemmican Proclamation banned its export from Red River. What does that tell us?",
+      "answer": "Pemmican was strategic infrastructure — controlling it controlled who could move freight across the continent in canoe brigades",
+      "choices": [
+        "Pemmican was strategic infrastructure — controlling it controlled who could move freight across the continent in canoe brigades",
+        "Pemmican was a religious offering protected by treaty — the proclamation prevented missionaries from interfering with Native food rites",
+        "Pemmican was the only currency the fur trade accepted — the proclamation pegged its value to silver and stabilized the colonial economy",
+        "Pemmican was strictly a luxury good — the proclamation rationed it to colonial elites and Native chiefs to keep the high market price"
+      ],
+      "context": "Pemmican fueled canoe brigades and Red River cart trains. Hudson's Bay Company built its inland network on it. The 1814 Pemmican Proclamation by Governor Miles Macdonell barred export — provoking the Pemmican War with the North West Company. Strategic infrastructure on the scale of modern fuel."
+    },
+    {
+      "bank_idx": 889,
+      "tier": 2,
+      "question": "A Lyonnaise cook splits a winter morning between charcuterie shops and tiny bistros, eating small dishes and drinking Beaujolais before noon. The tradition has a name. What does it teach about Lyon's cuisine?",
+      "answer": "Mâchon — Lyon's morning meal tradition for workers shows a charcuterie-centered cuisine",
+      "choices": [
+        "Mâchon — Lyon's morning meal tradition for workers shows a charcuterie-centered cuisine",
+        "Vendange — Lyon's fall grape harvest meal tradition shows a wine-centered local cuisine",
+        "Banyans — Lyon's outdoor table tradition shows a vegetable-centered cuisine in summer",
+        "Marché — Lyon's open-air market tradition shows a fresh-fish-centered cuisine in town"
+      ],
+      "context": "Lyon's mâchon tradition (early morning bistro meal) reflects the city's silk-worker history — workers ate substantial morning meals before labor. Charcuterie, andouillette, salads, Beaujolais are staples. Bistros open at dawn."
+    }
+  ],
+  "economics": [
+    {
+      "bank_idx": 372,
+      "tier": 2,
+      "question": "In Nov 1923 Weimar introduced the Rentenmark backed by farmland. One replaced one TRILLION papermarks. Hyperinflation stopped overnight. What does that prove?",
+      "answer": "Hyperinflation ends when the printing press credibly stops — monetary, not 'economic'",
+      "choices": [
+        "Hyperinflation ends when the printing press credibly stops — monetary, not 'economic'",
+        "Mortgage-backed money is the only stable form a currency can take — a permanent rule",
+        "Germans lost faith in paper but trusted handwriting — a cultural quirk",
+        "Hyperinflations end automatically after exactly 30 months — a natural cycle"
+      ],
+      "context": "The Rentenmark (Nov 15, 1923) showed hyperinflation ends with monetary discipline. The damage was already done — middle-class savings wiped out."
+    },
+    {
+      "bank_idx": 402,
+      "tier": 2,
+      "question": "The Fed's 'dual mandate' (Humphrey-Hawkins 1978) pursues maximum employment AND stable prices. Critics note these goals can conflict. What's the structural problem?",
+      "answer": "Rising inflation with employment forces the Fed to violate one mandate — conflict is built in",
+      "choices": [
+        "Rising inflation with employment forces the Fed to violate one mandate — conflict is built in",
+        "The two goals always move together so no conflicts arise — a frictionless setup",
+        "Other central banks have similar mandates that work perfectly — a tested arrangement",
+        "The mandate explicitly prioritizes employment over prices — a clear ranking"
+      ],
+      "context": "Conflict was most visible 2021-22: as inflation hit 9.1%, the Fed delayed raising rates because the labor market was 'tight.' By March 2022 inflation was entrenched."
+    },
+    {
+      "bank_idx": 420,
+      "tier": 2,
+      "question": "Post-pandemic US debt rose from ~$23T (end 2019) to over $35T by 2024 — a $12T increase in five years. Interest now exceeds the defense budget. What's the structural problem?",
+      "answer": "Compounding interest is the largest item — the math of debt service grows without bound",
+      "choices": [
+        "Compounding interest is the largest item — the math of debt service grows without bound",
+        "Higher debt grows the economy more — Keynesian expansion",
+        "Interest payments don't affect growth — neutrality",
+        "Debt service paid only when Fed authorizes — discretionary"
+      ],
+      "context": "US net interest payments on federal debt crossed $1 trillion annually in 2024 — more than total defense spending. The fiscal trajectory becomes the monetary problem."
+    },
+    {
+      "bank_idx": 474,
+      "tier": 2,
+      "question": "Across these concepts (prices, opportunity cost, public choice, spontaneous order, comparative advantage), what's the unifying insight?",
+      "answer": "Economic systems coordinate dispersed information no individual could possess — the Hayekian thread",
+      "choices": [
+        "Economic systems coordinate dispersed information no individual could possess — the Hayekian thread",
+        "Economic systems are best designed by experts using sophisticated math — a different framework",
+        "Economic systems are random and cannot be analyzed at all — denial of analytical economics",
+        "Economic systems work the same way as physics systems — methodology equivalence"
+      ],
+      "context": "The Hayekian thread — that prices encode dispersed knowledge no individual possesses — connects supply/demand, marginal analysis, time preference, public choice, spontaneous order."
+    },
+    {
+      "bank_idx": 507,
+      "tier": 3,
+      "question": "A town passes a 'buy local' ordinance: city money must be spent at city businesses, not on cheaper goods from elsewhere. Supporters say it 'keeps wealth in the community.' Apply Bastiat's seen-and-unseen method. What does it reveal?",
+      "answer": "Higher prices reduce what residents can buy elsewhere — the loss to those other tradesmen is hidden, but real",
+      "choices": [
+        "Higher prices reduce what residents can buy elsewhere — the loss to those other tradesmen is hidden, but real",
+        "The town becomes wealthier — by recycling its own money internally with no compensating loss to outside trade",
+        "Local jobs grow without bound — Bastiat's method confirms that buy-local laws produce net employment gains",
+        "Outside merchants benefit too — protectionism between towns always produces win-win outcomes through specialization"
+      ],
+      "context": "The 'buy local' argument is a small-scale version of the protectionist fallacy Bastiat dissected. Money 'kept in the community' at a higher price is money the community can't spend on other things. The seen benefit (local sales) hides the unseen cost."
+    },
+    {
+      "bank_idx": 565,
+      "tier": 3,
+      "question": "In May 2021, China formally banned Bitcoin mining. About 50% of global hashrate went offline within weeks. Many predicted Bitcoin would collapse without Chinese miners. Instead, hashrate recovered within months. What does this episode demonstrate?",
+      "answer": "Bitcoin's decentralization works — mining migrated to the US, Kazakhstan, Russia; the protocol survived a 50% shock",
+      "choices": [
+        "Bitcoin's decentralization works — mining migrated to the US, Kazakhstan, Russia; the protocol survived a 50% shock",
+        "Bitcoin's centralization was exposed — the network barely survived and required emergency intervention from Bitcoin Core",
+        "China's ban was reversed quickly — the People's Bank of China reinstated Bitcoin mining within months after the ban",
+        "Hashrate is irrelevant to security — Bitcoin depends entirely on the supply cap rather than on any mining activity"
+      ],
+      "context": "Pre-ban, China hosted an estimated 65-75% of global hashrate. By mid-2022, the US became the top hashrate jurisdiction, followed by Kazakhstan and Russia. The difficulty adjustment did exactly what it was designed to do — easier puzzles let remaining miners produce blocks at target rate."
+    },
+    {
+      "bank_idx": 656,
+      "tier": 3,
+      "question": "Before 2008, the Fed's balance sheet held ~$800B in assets — almost entirely Treasury securities. By 2008-14, QE took it to $4.5T. The 2020 pandemic took it to ~$9T by 2022. What's the broader recognition?",
+      "answer": "Fed has bought ~$8T in financial assets in 14 years — creating new dollars from nothing to lift prices",
+      "choices": [
+        "Fed has bought ~$8T in financial assets in 14 years — creating new dollars from nothing to lift prices",
+        "Fed has reduced its balance sheet from $800B to roughly zero — current holdings are essentially nil",
+        "Fed's balance sheet is irrelevant to monetary outcomes — asset purchases have no economic effect",
+        "Fed's balance sheet is funded entirely by taxpayer revenues — every dollar offset by tax collection"
+      ],
+      "context": "The post-2008 Fed has been a serial asset-purchaser at scales the original 1913 Act did not contemplate. 'Temporary emergency' programs have become permanent. Cantillon-effect distributional consequences accumulate."
+    },
+    {
+      "bank_idx": 683,
+      "tier": 3,
+      "question": "In May 1930, over 1,000 American economists signed a petition opposing the Smoot-Hawley tariff bill. The petition warned of retaliation, higher consumer prices, and damage to international relations. Hoover signed anyway on June 17. What does the episode illustrate?",
+      "answer": "Economic consensus can be remarkably solid AND remarkably ignored — political incentives override expert advice",
+      "choices": [
+        "Economic consensus can be remarkably solid AND remarkably ignored — political incentives override expert advice",
+        "Economic consensus was wrong about Smoot-Hawley — the tariff turned out to be excellent policy",
+        "There was no actual consensus among economists in 1930 — the petition was a small minority view",
+        "Hoover signed the tariff specifically because the economists demanded that he sign it — misread by history"
+      ],
+      "context": "The 1,000-economist petition is the rare case where the profession was unified on a policy question and the politicians ignored them. Concentrated interests lobby effectively; diffuse interests do not."
+    },
+    {
+      "bank_idx": 734,
+      "tier": 4,
+      "question": "Milton Friedman and Anna Schwartz published A Monetary History of the United States, 1867-1960 in 1963. The chapter on the Great Depression made a startling argument: the Fed didn't just fail to stop the catastrophe — the Fed CAUSED it by letting M2 collapse roughly 33% between 1929 and 1933. What's the broader recognition?",
+      "answer": "An institution founded in 1913 to prevent banking panics presided over the worst banking collapse in US history — and was defended afterward by the profession it employs",
+      "choices": [
+        "An institution founded in 1913 to prevent banking panics presided over the worst banking collapse in US history — and was defended afterward by the profession it employs",
+        "The Fed's 1929-1933 actions were textbook-perfect — Friedman and Schwartz documented the Fed's role in shortening the downturn substantially",
+        "Banks alone caused the Depression — Friedman and Schwartz absolved the Fed of any role in the contraction of money or credit during the period",
+        "Tariffs caused the Depression — Friedman and Schwartz argued in this book that the Smoot-Hawley Tariff Act was the only meaningful driver of the slump"
+      ],
+      "context": "Friedman and Schwartz reshaped how the Great Depression is taught. Ben Bernanke, citing Friedman explicitly, took Fed chair into 2008 determined not to repeat the 1929-33 contraction — and arguably overcorrected with the rounds of QE that followed."
+    },
+    {
+      "bank_idx": 773,
+      "tier": 4,
+      "question": "Building on his 1920 paper, Mises published Die Gemeinwirtschaft in 1922 — translated as Socialism: An Economic and Sociological Analysis. The 500-page treatise was the first comprehensive Austrian critique of socialism as a complete social system. Hayek read it young and credited it with changing his thinking. What was the broader argument?",
+      "answer": "Socialism cannot deliver what its advocates promise — it lacks the economic, ethical, and sociological foundations to coordinate a modern industrial economy peacefully",
+      "choices": [
+        "Socialism cannot deliver what its advocates promise — it lacks the economic, ethical, and sociological foundations to coordinate a modern industrial economy peacefully",
+        "Socialism is identical to capitalism in practice — Mises argued the two systems converge to the same outcome regardless of formal property arrangements",
+        "Socialism is more efficient than capitalism — Mises argued for the empirical superiority of central planning over markets in his 1922 book",
+        "Socialism is a passing political fashion — Mises argued socialist ideas would never reach political dominance anywhere in the 20th century"
+      ],
+      "context": "Mises's Socialism is one of the great anti-socialist treatises of the 20th century — comprehensive, careful, written before the worst Soviet atrocities became fully known. Hayek's later Road to Serfdom (1944) builds on Mises's foundation. The book has been continuously in print since its English translation by J. Kahane appeared in 1936."
+    },
+    {
+      "bank_idx": 828,
+      "tier": 4,
+      "question": "Bitcoin's price has moved through remarkable milestones since 2009. First market exchange (May 2010, Pizza Day): 10,000 BTC for ~$25 (less than a penny per BTC). $1 (February 2011). $1,000 (November 2013). $10,000 (November 2017). $69,000 (November 2021 peak). $73,000 (March 2024). What's the broader pattern?",
+      "answer": "Long-term appreciation punctuated by 70-90% drawdowns — Bitcoin's volatility is high but the upward trend across cycles reflects growing recognition of fixed-supply digital scarcity",
+      "choices": [
+        "Long-term appreciation punctuated by 70-90% drawdowns — Bitcoin's volatility is high but the upward trend across cycles reflects growing recognition of fixed-supply digital scarcity",
+        "Steady linear growth without volatility — Bitcoin has appreciated about 10% per year consistently with no significant drawdowns since 2009",
+        "A single bubble in 2017 — Bitcoin has had no meaningful price movement before or after that single event in November 2017 alone",
+        "Government-controlled pricing — the US Federal Reserve sets Bitcoin's price quarterly via FOMC meetings, with no market involvement at all"
+      ],
+      "context": "Bitcoin's volatility is genuinely high — annual drawdowns of 30-50% are normal, and 70-90% drawdowns have occurred multiple times. Long-term holders ('HODLers') have generally benefited from holding through volatility. The asset's market cap (sometimes over $1 trillion) reflects substantial institutional and retail adoption since 2017. Whether the volatility decreases over time as adoption matures remains an open question."
+    },
+    {
+      "bank_idx": 919,
+      "tier": 4,
+      "question": "Executive Order 6102, signed by FDR on April 5, 1933, ordered Americans to surrender their gold to the Federal Reserve at $20.67 per ounce. After the surrender, Roosevelt revalued gold to $35 per ounce — a 41% devaluation of the dollar. Hoarding gold became a federal crime. What does this episode reveal about whether a politically-controlled gold standard counts as 'sound money'?",
+      "answer": "It doesn't — political authority can devalue any nominally-backed currency on demand",
+      "choices": [
+        "It doesn't — political authority can devalue any nominally-backed currency on demand",
+        "The 1933 confiscation ended democratically — institutional flexibility worked properly",
+        "The order was reversed in five years — a temporary emergency measure, no precedent",
+        "The Supreme Court overturned it 1935 — restoring private gold ownership entirely"
+      ],
+      "context": "The 1933 confiscation was nominally lifted in 1974, but the precedent stands: a government with the power to compel can override gold-backed money. This is the lesson Hayek and modern Bitcoin proponents emphasize."
+    },
+    {
+      "bank_idx": 1041,
+      "tier": 5,
+      "question": "On September 7, 2021, El Salvador became the first country to adopt Bitcoin as legal tender, alongside the US dollar (used since 2001). President Nayib Bukele announced the move at Bitcoin 2021 in Miami. Implementation included a wallet app 'Chivo' and a $30 sign-up bonus in Bitcoin for citizens. What was the broader motivation?",
+      "answer": "Most Salvadorans worked abroad and sent remittances home through Western Union or MoneyGram with fees of 10% or higher — Bitcoin offered an alternative for cross-border payments that could substantially reduce remittance costs for poor families",
+      "choices": [
+        "Most Salvadorans worked abroad and sent remittances home through Western Union or MoneyGram with fees of 10% or higher — Bitcoin offered an alternative for cross-border payments that could substantially reduce remittance costs for poor families",
+        "El Salvador had been pressured by the IMF to abandon dollarization and return to the colon — Bitcoin adoption was a defensive maneuver",
+        "The Bukele government sought to attract a wealthy Bitcoin-holding population to settle in El Salvador — the legal tender status was a tax-residency incentive",
+        "El Salvador had identified geothermal mining opportunities from its volcanic geography — Bitcoin adoption was driven by energy export potential"
+      ],
+      "context": "Remittances are roughly 20-25% of El Salvador's GDP. The 10% Western Union fees represent billions in annual transfer costs paid by Salvadoran families. Bitcoin (and especially Lightning Network) offered a technical alternative that could route remittances at near-zero cost."
+    },
+    {
+      "bank_idx": 1138,
+      "tier": 5,
+      "question": "Obama's $787B American Recovery and Reinvestment Act (Feb 2009) was sold on a fiscal multiplier of ~1.5: every $1 spent would produce $1.50 of GDP. The Romer-Romer projections forecast unemployment peaking under 8% with stimulus, above 9% without. Actual unemployment peaked at 10% in October 2009 with the stimulus in effect. What was the recognition?",
+      "answer": "The fiscal multiplier was much smaller than mainstream Keynesian models predicted, possibly below 1.0, so government spending crowded out private activity rather than adding to it on net",
+      "choices": [
+        "The fiscal multiplier was much smaller than mainstream Keynesian models predicted, possibly below 1.0, so government spending crowded out private activity rather than adding to it on net",
+        "The fiscal multiplier was higher than predicted at over 3.0, with the actual outcome being vastly better than the Romer-Romer projections had implied, vindicating Keynesian fiscal theory comprehensively",
+        "The fiscal multiplier was exactly 1.5 as predicted and the unemployment outcome was within the projected range, with the 10% peak being attributable to mid-2009 demographic factors only",
+        "The fiscal multiplier was negative because of crowding-out effects, with the ARRA actually causing the unemployment increase rather than dampening it, a finding endorsed by mainstream economics"
+      ],
+      "context": "The Romer-Romer projections were public in early 2009. The actual outcome was substantially worse. The episode is often cited (Cochrane, Cogan, Taylor, Wieland) as evidence that headline-Keynesian multipliers overstate fiscal stimulus efficacy. The 2020-21 stimulus produced inflation rather than the predicted output gains — another data point in the same direction."
+    },
+    {
+      "bank_idx": 1151,
+      "tier": 5,
+      "question": "Bernie Madoff was arrested December 11, 2008 after his sons reported him to the FBI. The Ponzi scheme had run since the 1990s, defrauding investors of ~$65B in claimed assets (~$19B in real losses). Harry Markopolos had warned the SEC repeatedly since 2000; the SEC investigated five times and found nothing. Madoff got 150 years. What does the case illustrate about regulatory capture?",
+      "answer": "Markopolos's mathematical proof that Madoff's returns were impossible was ignored by SEC staff lacking technical capacity and institutional incentive to act against a well-connected insider",
+      "choices": [
+        "Markopolos's mathematical proof that Madoff's returns were impossible was ignored by SEC staff lacking technical capacity and institutional incentive to act against a well-connected insider",
+        "Markopolos was wrong about Madoff and the SEC investigations were correct in finding no fraud, with the eventual 2008 collapse caused by unrelated market conditions during the financial crisis",
+        "The SEC acted quickly on Markopolos's warnings and shut down Madoff in 2002, with the 2008 arrest being a separate matter unrelated to the earlier Ponzi-scheme allegations entirely",
+        "Madoff was not running a Ponzi scheme and the 2008 arrest was based on accounting errors since reversed, with the $65 billion in losses being a media exaggeration of routine market losses"
+      ],
+      "context": "Markopolos's No One Would Listen (2010) details the failed warnings. Madoff was the former NASDAQ chairman with deep social ties to SEC officials. The case is a canonical example of regulatory capture compounded by competence gaps."
+    },
+    {
+      "bank_idx": 1162,
+      "tier": 5,
+      "question": "Beginning 2018, the Trump administration imposed tariffs on Chinese imports under Section 301, covering ~$370B in goods at 7.5-25% rates. China retaliated, particularly hitting US agricultural exports. The 2020 Phase One deal partially de-escalated. Studies (Amiti et al., Fajgelbaum et al.) found the tariffs were passed through to US consumers and producers. What does the episode show?",
+      "answer": "Tariffs are paid by domestic consumers and producers rather than by foreign exporters; the 'China is paying' framing was contradicted by every serious analysis of pass-through",
+      "choices": [
+        "Tariffs are paid by domestic consumers and producers rather than by foreign exporters; the 'China is paying' framing was contradicted by every serious analysis of pass-through",
+        "Tariffs are paid by foreign exporters as Trump claimed, and the 2018-19 tariffs successfully transferred wealth from China to the United States with no cost to US consumers or businesses",
+        "The 2018-19 tariffs had no measurable economic effects and were entirely symbolic, with US prices and trade flows unchanged from pre-tariff baselines throughout the entire post-2018 period",
+        "The 2018-19 tariffs were not actually implemented and the Section 301 action was a media story without any actual policy effect on US-China trade flows in any year during the Trump term"
+      ],
+      "context": "The Biden administration largely maintained the Trump tariffs through 2024. Both parties moved toward protectionism. The Phase One deal's purchase commitments were not met. The political appeal of 'tough on China' framings outran the economic analysis of who actually pays the tax."
+    },
+    {
+      "bank_idx": 1167,
+      "tier": 5,
+      "question": "Berlin's Senate passed the Mietendeckel (Rent Cap) law in February 2020, freezing rents at June 2019 levels and rolling back recent increases. New supply collapsed within months. On April 15, 2021, the German Federal Constitutional Court struck down the law, ruling Berlin lacked authority. Rents bounced back sharply. What does the episode illustrate?",
+      "answer": "Even short-term rent freezes produce measurable supply distortions; the political will to impose such measures shows the public-choice durability of the policy temptation regardless of evidence",
+      "choices": [
+        "Even short-term rent freezes produce measurable supply distortions; the political will to impose such measures shows the public-choice durability of the policy temptation regardless of evidence",
+        "The Mietendeckel was a great success and would have solved Berlin's housing shortage if not for the Federal Constitutional Court's politically motivated decision to strike down a popular policy",
+        "The Mietendeckel had no measurable effect on Berlin housing during its 14 months of operation, with new construction unchanged from pre-2020 baselines throughout the entire 2020-2021 period",
+        "The Mietendeckel is still in effect as of 2024 and Berlin operates under the most successful rent-control regime in Europe, with the German Constitutional Court ruling being widely disregarded by Berlin authorities"
+      ],
+      "context": "The Berlin SPD-Greens-Linke coalition pushed the Mietendeckel through despite expert testimony that it would reduce supply. Construction permits for new apartments collapsed during the law's brief effective period. The episode is a textbook case of policy ignoring evidence under public-choice pressure."
+    },
+    {
+      "bank_idx": 1224,
+      "tier": 5,
+      "question": "Bernie Madoff's Ponzi ran at least 17 years (proven), possibly 47 (disputed). Peak: ~$65B notional, ~$20B losses. Returns averaged 10-12% with extraordinarily smooth equity curves. The SEC dismissed Markopolos's complaints in 2000, 2001, 2005, 2007, 2008. Madoff confessed Dec 10, 2008 only after the crash drained cash. What does it reveal about regulator capture?",
+      "answer": "Madoff was NASDAQ chairman (1990-93), an SEC advisory member, and a major political donor; regulators couldn't imagine a respected insider was a fraudster, so they investigated his accusers instead",
+      "choices": [
+        "Madoff was NASDAQ chairman (1990-93), an SEC advisory member, and a major political donor; regulators couldn't imagine a respected insider was a fraudster, so they investigated his accusers instead",
+        "Madoff's scheme was undetectable by any rational analysis, so the SEC's failure was inevitable and reflects no broader pattern about vulnerability to high-status fraud in finance",
+        "Madoff's scheme would have been caught much earlier under modern Dodd-Frank rules (2010), which closed the regulatory gaps that let the fraud continue for as long as it did",
+        "Madoff's scheme operated outside SEC jurisdiction since hedge funds were exempt from SEC oversight at the time, so the agency had no power to investigate his advisory business"
+      ],
+      "context": "Sentenced 150 years June 29, 2009. Died April 14, 2021, age 82. Son Mark Madoff hanged himself Dec 11, 2010 (anniversary of arrest). The Madoff Recovery Initiative has clawed back ~$14B."
+    },
+    {
+      "bank_idx": 1295,
+      "tier": 3,
+      "question": "In late 2008, both Tesla and SpaceX were nearly broke during the financial crisis. Elon Musk had to decide where to put the last of his money. He famously split his remaining cash between the two companies. What does this episode illustrate about founder capital?",
+      "answer": "Founders sometimes personally fund their companies through near-collapse, taking on enormous concentrated risk",
+      "choices": [
+        "Founders sometimes personally fund their companies through near-collapse, taking on enormous concentrated risk",
+        "Founders are legally barred from putting personal money into their own startups by Securities and Exchange rules",
+        "The US Treasury automatically rescued any startup that ran out of cash during the financial crisis of late 2008",
+        "Most venture capital firms refused to participate in late-stage rounds during the 2008 crisis at any valuation"
+      ],
+      "context": "December 2008: Tesla closed an emergency funding round on December 24th; SpaceX's first successful Falcon 1 launch came September 28th and a NASA contract followed in December. Musk reportedly put his last personal funds into both. The episode is a real-world illustration of founder concentration risk and conviction in their own venture."
+    },
+    {
+      "bank_idx": 1349,
+      "tier": 4,
+      "question": "AIG's London Financial Products unit sold credit default swaps on mortgage-backed securities, collecting about $250M/year in premiums with no matched reserves. When housing crashed in 2008, counterparty calls overwhelmed AIG. On September 16, 2008, the Fed extended an $85B loan; total federal commitments later topped $182B. What does the case illustrate?",
+      "answer": "When insurers price tail risks as zero AND assume federal rescue — they sell protection they can't deliver, and taxpayers cover the gap",
+      "choices": [
+        "When insurers price tail risks as zero AND assume federal rescue — they sell protection they can't deliver, and taxpayers cover the gap",
+        "When insurers diversify their holdings — they cover all losses with no federal assistance under federal law every time",
+        "When insurers hold reserves matched to claims — government bailouts become the standard outcome for routine cycles",
+        "When insurers face short-term cash demands — the federal government must legally provide emergency lending right away"
+      ],
+      "context": "AIG made the 'too big to fail' moral hazard visible in real time. The London FP unit ran an unreserved insurance book, collecting premiums on what they treated as impossible-loss events. Goldman Sachs and other counterparties were paid 100 cents on the dollar from bailout funds."
+    },
+    {
+      "bank_idx": 1357,
+      "tier": 4,
+      "question": "Bernie Madoff was arrested December 11, 2008. His fund had reported 10-12% returns for over two decades — through 1990s booms, the 2000 dot-com crash, 2002 bear market, 2008 collapse, with almost no down months. Harry Markopolos warned the SEC starting in 2000. What recognition skill did the SEC miss for nine years?",
+      "answer": "Consistent returns regardless of market — no real strategy produces smooth gains across booms, crashes, and crises",
+      "choices": [
+        "Consistent returns regardless of market — no real strategy produces smooth gains across booms, crashes, and crises",
+        "Excessive transparency about strategy — real Ponzi schemes publish their trading method on quarterly statements",
+        "Low fees and modest returns — Madoff charged below-industry fees so investors had no fraud signal at all",
+        "Heavy regulation requirements — Ponzi schemes operate only in unregulated offshore markets, never under SEC view"
+      ],
+      "context": "The Madoff case is the canonical recognition exercise for retail investors. Markopolos's 2005 memo 'The World's Largest Hedge Fund is a Fraud' walked the SEC through the math. The institutional failure made Madoff the textbook 'consistent returns' tell."
+    },
+    {
+      "bank_idx": 1361,
+      "tier": 5,
+      "question": "The whole life pitch: 'Your premium builds cash value tax-deferred, you can borrow against it, lifetime coverage.' The math: a 30-year-old buys $500K 20-year term at $25/month, invests the $375 difference at 7% real, and at 60 holds about $440K. Whole life cash value at 30 years: about $180K — 41% of the index alternative. What recognition skill should the kid walk away with?",
+      "answer": "Whole life mixes pure insurance with a high-fee savings account — fees compound against the buyer for decades",
+      "choices": [
+        "Whole life mixes pure insurance with a high-fee savings account — fees compound against the buyer for decades",
+        "Whole life is universally optimal — federal insurance law requires permanent policies to beat term plus indexing",
+        "Term life is fraudulent — buyer pays for two decades and gets nothing back if she survives the policy period",
+        "Both products are identical — IRS rules require all life insurance to deliver matching cash and death benefits"
+      ],
+      "context": "Dave Ramsey's 'buy term and invest the difference' rule is the canonical Bastiat-style decomposition. Whole life's first-year premium is typically eaten by 50-110% agent commissions. Cash value grows slowly because fees suppress returns. Exceptions exist (estate planning for very high net worth), but for the vast majority the math is decisive."
+    },
+    {
+      "bank_idx": 1363,
+      "tier": 5,
+      "question": "Florida's Citizens Property Insurance was created 2002 as a state 'insurer of last resort' after Hurricane Andrew (1992) drove eleven private insurers insolvent. By 2023 Citizens held over 1.4M policies — Florida's largest property insurer, despite being designed as backstop. When state pools price below actuarial fair value (politicians face voter pressure), the gap must be paid SOMEWHERE. What does the case illustrate?",
+      "answer": "When premiums sit below actuarial value — the gap shows as cross-subsidies from non-insureds, future taxpayers, or sudden post-storm assessments",
+      "choices": [
+        "When premiums sit below actuarial value — the gap shows as cross-subsidies from non-insureds, future taxpayers, or sudden post-storm assessments",
+        "When state-run insurance works normally — Florida's market has improved dramatically since Citizens launched in 2002 under its bylaws",
+        "When the government underwrites catastrophe — taxpayers automatically benefit via FEMA grants distributed after every named storm",
+        "When private insurers exit voluntarily — federal flood insurance fully replaces every needed coverage at private-market premium rates"
+      ],
+      "context": "The Florida case ties together public choice theory (politicians face voter pressure to keep premiums down regardless of actuarial reality), the Mises calculation problem (state pools can't aggregate dispersed information that private underwriting does), and the Bastiat seen-vs-unseen lens (current coastal homeowners benefit; inland Floridians, future Floridians, and US taxpayers via FEMA pay the unseen cost)."
+    },
+    {
+      "bank_idx": 1377,
+      "tier": 2,
+      "question": "Bernie Madoff reported ~10% returns every year for 20 years, regardless of market booms or crashes. Harry Markopolos warned the SEC starting 2000. Madoff was arrested Dec 11, 2008. What was the giveaway?",
+      "answer": "Returns that ignore market cycles are mathematically impossible",
+      "choices": [
+        "Returns that ignore market cycles are mathematically impossible",
+        "Madoff's office was located in a building investigators thought shady",
+        "Madoff's investors were wealthier than other Wall Street clients",
+        "The SEC always investigates funds reporting returns above five percent"
+      ],
+      "context": "Markopolos's 2005 memo to the SEC was titled 'The World's Largest Hedge Fund is a Fraud.' Madoff confessed in December 2008 once the crisis forced redemptions he couldn't meet. Loss: ~$65B in paper account values."
+    },
+    {
+      "bank_idx": 1394,
+      "tier": 4,
+      "question": "Albert Einstein supposedly called compound interest 'the eighth wonder of the world' and 'the most powerful force in the universe.' The quote is disputed but the math isn't. At 7% real returns, $5,000 invested at age 18 grows to about $160,000 at 65 — a 32× multiplier over 47 years. The same $5,000 invested at 28 grows to about $80,000. The same investment at 38 grows to about $40,000. What's the unseen pattern?",
+      "answer": "Each decade of delay roughly cuts the final result in half",
+      "choices": [
+        "Each decade of delay roughly cuts the final result in half",
+        "Compound interest works the same regardless of when you start saving",
+        "Starting at 38 produces better outcomes than starting at 18 due to maturity",
+        "The investor must contribute every year for compounding to function properly"
+      ],
+      "context": "The 7% real assumption is conservative for US equities; nominal returns including dividends ran ~10% from 1926-2024. The 'starting age' effect is why financial educators stress age 18 over age 28: the difference is one full doubling cycle that can never be recovered."
+    },
+    {
+      "bank_idx": 1396,
+      "tier": 4,
+      "question": "When fund families report 'our active funds outperformed the index,' they often quote only surviving funds. Failed funds are quietly liquidated or merged into successful ones, removed from the historical record. A 1996 study by Burton Malkiel found that roughly a third of equity funds active in 1985 had disappeared by 1995. What's the methodological trick?",
+      "answer": "Survivorship bias inflates the apparent track record of active management",
+      "choices": [
+        "Survivorship bias inflates the apparent track record of active management",
+        "Survivorship bias is required by SEC rules to protect investors from old data",
+        "The trick is harmless because failed funds were never owned by real customers",
+        "Failed funds were always merged at gains so the bias works in investors' favor"
+      ],
+      "context": "Malkiel's 'A Random Walk Down Wall Street' (1973, multiple editions) is the canonical popular case for indexing. Survivorship bias compounds across all active-management performance claims. SPIVA controls for it explicitly. The honest claim: even before bias, the index wins after fees."
+    },
+    {
+      "bank_idx": 1402,
+      "tier": 4,
+      "question": "Harry Markopolos worked at Boston-based Rampart Investment Management when he was asked in 1999 to reverse-engineer Madoff's returns. Within four hours he concluded the strategy was mathematically impossible. He delivered a 2005 memo to the SEC titled 'The World's Largest Hedge Fund is a Fraud' with 29 red flags. The SEC investigated for two years and concluded Madoff was legitimate. Madoff confessed December 11, 2008. What does the timing reveal?",
+      "answer": "The regulator that should catch fraud faced incentives that aligned it with the fraudster's prestige",
+      "choices": [
+        "The regulator that should catch fraud faced incentives that aligned it with the fraudster's prestige",
+        "Markopolos's memo was poorly written and the SEC investigators could not understand the math",
+        "Madoff's strategy was so sophisticated that no regulator in history could have caught it earlier",
+        "The 2008 financial crisis created a unique opportunity to expose long-running frauds that year"
+      ],
+      "context": "Bernie Madoff had served as Nasdaq chairman. SEC investigators went on to private-sector jobs at firms tied to Madoff's network. Markopolos's 2010 book 'No One Would Listen' details the nine-year regulatory failure. Public choice theory predicts exactly this dynamic."
+    },
+    {
+      "bank_idx": 1413,
+      "tier": 5,
+      "question": "From early 2020 to early 2023, US M2 money supply grew about 40% while federal deficit spending totaled roughly $5 trillion above baseline. CPI inflation peaked at 9.1% in June 2022. Households holding cash and short-term bonds lost ~20-30% in real purchasing power. Households holding S&P 500 index funds preserved real value through 2023. Households holding Bitcoin (despite extreme volatility) outperformed in nominal terms from any pre-2020 entry. What does the period reveal about the Cantillon effect at modern scale?",
+      "answer": "Monetary expansion under fiat regimes transfers real wealth from savers to early-money asset holders",
+      "choices": [
+        "Monetary expansion under fiat regimes transfers real wealth from savers to early-money asset holders",
+        "Monetary expansion is neutral and affects all economic actors equally across the income distribution",
+        "Monetary expansion lifts wages first since labor markets always price in inflation faster than assets",
+        "Monetary expansion reduces inequality since the Fed targets relief at lower-income households first"
+      ],
+      "context": "Richard Cantillon's 1755 *Essai* identified the mechanism nearly three centuries before the empirical receipt arrived. The 2020-2023 period is the cleanest natural experiment in living memory. Index-fund holders and Bitcoin holders preserved wealth; cash-and-bonds holders absorbed the loss. The Larry Summers warning from February 2021 turned out to be correct against the consensus of Treasury, Fed, and academic Keynesians."
+    },
+    {
+      "bank_idx": 1414,
+      "tier": 5,
+      "question": "At Sun Valley July 1999, Warren Buffett gave a long address to an audience of tech-boom executives. The market was at peak euphoria; the Nasdaq would rise another ~50% before peaking in March 2000. Buffett argued that for the prior 17 years (1981-1998) corporate profits as a share of GDP were stagnant while equity prices had multiplied; either profits had to rise dramatically or prices had to fall. He was mocked as out of touch. The Nasdaq lost 78% by October 2002. What recognition skill does the episode demonstrate?",
+      "answer": "Identifying when prices have detached from the underlying cash flows they ultimately depend on",
+      "choices": [
+        "Identifying when prices have detached from the underlying cash flows they ultimately depend on",
+        "Following Wall Street consensus is the safest strategy during periods of market euphoria",
+        "Buffett's 1999 warning was an accident; he had no analytical basis for the timing of the call",
+        "Sun Valley speakers have legal liability for predictions that move markets in subsequent sessions"
+      ],
+      "context": "The 1999 Allen Sun Valley speech is canonical in value-investing literature. Buffett's framework: market capitalization to GDP is the 'best single measure' of valuation extremes. The ratio peaked at ~190% in 2000 and again above 200% in 2021. Long-run mean is ~80-100%. The discipline is to ignore the narrative consensus when the arithmetic doesn't support it. Bogle held similar concerns at the same moment."
+    },
+    {
+      "bank_idx": 1415,
+      "tier": 5,
+      "question": "Mt. Gox (Feb 2014, ~850K BTC lost), FTX (Nov 2022, ~$8B customer funds missing), Celsius (Jul 2022 bankruptcy, ~$4.7B customer claims), BlockFi (Nov 2022 bankruptcy), Voyager (Jul 2022 bankruptcy), Genesis (Jan 2023 bankruptcy). Each collapse involved customer-deposited crypto held by a centralized intermediary that turned out to be insolvent, fraudulent, or both. Customers who self-custodied Bitcoin (held private keys themselves) lost nothing. What recognition skill does this decade of failures teach?",
+      "answer": "Bitcoin's self-custody removes the trust assumption that every centralized exchange collapse exploited",
+      "choices": [
+        "Bitcoin's self-custody removes the trust assumption that every centralized exchange collapse exploited",
+        "All crypto activity is structurally fraudulent and Bitcoin itself was never a credible asset",
+        "Self-custody is illegal in the United States and customers had no alternative to using exchanges",
+        "The exchange collapses were caused by macroeconomic factors entirely unrelated to the custody model"
+      ],
+      "context": "The phrase 'not your keys, not your coins' captures the self-custody insight. Bitcoin's design — a public ledger where ownership is proved by private-key signature — was specifically intended to eliminate the trusted intermediary. Every exchange collapse from Mt. Gox to FTX is a failure to use the design as intended. Hayek's knowledge problem applies: a centralized intermediary's internal state is opaque to depositors. Self-custody returns control to the verifiable, auditable level."
+    }
+  ],
+  "geography": [],
+  "science": [
+    {
+      "bank_idx": 188,
+      "tier": 1,
+      "question": "On the ocean, people watching a ship sail far away see it disappear BOTTOM FIRST below the horizon. What does that show?",
+      "answer": "Earth is a sphere, not a flat disk",
+      "choices": [
+        "Earth is a sphere, not a flat disk",
+        "Ships shrink as they go far away",
+        "The sea slowly pulls ships under",
+        "Light can't travel across oceans"
+      ],
+      "context": "Ancient Greek thinkers like Eratosthenes (around 240 BC) figured out Earth was round and measured its size well using shadows. Ships disappearing hull-first, the round shadow Earth casts on the Moon during eclipses, and photos from space all confirm it."
+    },
+    {
+      "bank_idx": 280,
+      "tier": 2,
+      "question": "Swiss mathematician Daniel Bernoulli, in his 1738 book *Hydrodynamica*, described a property of moving fluids that helps explain why airplanes can fly. What's the key idea?",
+      "answer": "Faster-moving fluid exerts lower pressure than slower-moving fluid alongside it",
+      "choices": [
+        "Faster-moving fluid exerts lower pressure than slower-moving fluid alongside it",
+        "Faster-moving fluid exerts higher pressure than slower-moving fluid alongside it",
+        "Moving fluids exert exactly the same pressure as still fluids at all flow speeds",
+        "Moving fluids exert pressure only on the bottom surfaces of objects passing through"
+      ],
+      "context": "Bernoulli's principle: in steady fluid flow, faster flow corresponds to lower pressure. Airplane wings are shaped so air moves faster over the top than the bottom, creating a pressure difference that lifts the plane. The same principle explains why a roof can be ripped off a house in high winds (fast wind above, normal pressure inside), and why a curveball curves."
+    },
+    {
+      "bank_idx": 350,
+      "tier": 2,
+      "question": "A 'Punnett square' is a simple grid biology students use to predict offspring traits. Who developed it, and what does it show?",
+      "answer": "Reginald Punnett (around 1905) — it shows all combinations of parent alleles in offspring",
+      "choices": [
+        "Reginald Punnett (around 1905) — it shows all combinations of parent alleles in offspring",
+        "Gregor Mendel himself — he invented it for his original pea plant experiments",
+        "Charles Darwin — he used it to track survival rates in his evolution research",
+        "Marie Curie — she designed it to track which children inherited her medical condition"
+      ],
+      "context": "Punnett's square is a teaching tool: cross two parents, list each parent's alleles along the edges of a grid, and the cells show possible offspring combinations. Reginald Punnett (1875-1967) worked at Cambridge with William Bateson. They coined the word 'genetics' in 1905. Punnett squares clearly illustrate Mendelian inheritance, dominant/recessive patterns, and probability ratios for kids."
+    },
+    {
+      "bank_idx": 814,
+      "tier": 4,
+      "question": "Quarks are never observed as free particles — only in combinations (protons, neutrons, mesons). Pull two quarks apart with enough energy and new quark-antiquark pairs pop out of the vacuum, snapping the quarks back into colorless bound states. This odd property is called 'confinement.' What's the underlying mechanism?",
+      "answer": "The strong force gets STRONGER with distance — pulling quarks apart costs more energy the farther you go — until making new particles becomes cheaper than further separation",
+      "choices": [
+        "The strong force gets STRONGER with distance — pulling quarks apart costs more energy the farther you go — until making new particles becomes cheaper than further separation",
+        "The strong force gets WEAKER with distance like gravity and electromagnetism — but it acts on a separate type of charge that masks free quarks completely",
+        "The strong force is identical to electromagnetism — quarks are simply small electrically charged particles that always stick together by ordinary force",
+        "The strong force does not exist in modern physics — quarks were retired in 2010 as obsolete and replaced by a unified mass-energy field theory"
+      ],
+      "context": "The opposite property — where the strong force gets WEAKER at very short distances — was discovered by Gross, Politzer, and Wilczek (2004 Nobel). The combined picture: tightly bound quarks behave almost freely at LHC-scale energies but cannot be pulled apart at normal distances. The theory is quantum chromodynamics (QCD). 'Color' is an internal quantum-number label."
+    },
+    {
+      "bank_idx": 829,
+      "tier": 4,
+      "question": "Heike Kamerlingh Onnes in 1911 cooled mercury below 4.2 K (the temperature of liquid helium) and noticed something strange: its electrical resistance dropped to zero. Currents in superconducting rings can persist forever without a driving voltage. What's the broader phenomenon?",
+      "answer": "Superconductivity — below a critical temperature, certain materials carry electric current with zero resistance — and many also expel magnetic fields entirely (the Meissner effect)",
+      "choices": [
+        "Superconductivity — below a critical temperature, certain materials carry electric current with zero resistance — and many also expel magnetic fields entirely (the Meissner effect)",
+        "Superinductivity — below a critical temperature, materials build up magnetic charges that conduct heat — but their electrical resistance increases rather than decreases",
+        "Supercooling — below a certain temperature, materials stop conducting electricity entirely — and Onnes's measurement was an experimental error in the data",
+        "Subconductivity — below a critical temperature, materials become brittle and shatter under any current load — making the phenomenon useless for any practical use"
+      ],
+      "context": "Onnes won the 1913 Physics Nobel. Type-I (BCS theory, Bardeen-Cooper-Schrieffer 1957, Nobel 1972) and Type-II superconductors are distinguished. High-temperature superconductors (Bednorz and Müller, 1986, Nobel 1987) work above 30 K."
+    },
+    {
+      "bank_idx": 847,
+      "tier": 4,
+      "question": "Leo Baekeland in 1907 synthesized the first fully synthetic plastic — Bakelite — by reacting phenol with formaldehyde. It was hard, heat-resistant, electrically insulating, and could be molded into any shape. What was the broader significance?",
+      "answer": "Bakelite launched the synthetic plastic era — phones, radios, electrical insulation, billiard balls, kitchenware — and triggered the explosion of plastic chemistry through the 20th century",
+      "choices": [
+        "Bakelite launched the synthetic plastic era — phones, radios, electrical insulation, billiard balls, kitchenware — and triggered the explosion of plastic chemistry through the 20th century",
+        "Bakelite was never commercially successful — it was rapidly replaced by metal alternatives — and modern plastics owe nothing to Baekeland's original work in the early 1900s",
+        "Bakelite was the only synthetic plastic ever made — no further plastics were developed until the 1980s — and today's polymers are unrelated to the original chemistry",
+        "Bakelite was a natural rubber product — Baekeland did not synthesize anything new — and modern plastic chemistry started decades after his original Brooklyn lab work"
+      ],
+      "context": "Bakelite was crucial for early radios — its electrical insulation made vacuum-tube assemblies practical. Wallace Carothers at DuPont developed nylon in 1935 and neoprene in 1931. Plexiglas, polyethylene, PVC, polystyrene followed in the 1930s and 40s. The mid-20th-century plastic boom transformed packaging, clothing, transportation, and electronics. Modern concerns — plastic waste, microplastics — are the downside of that century-long explosion in polymer chemistry."
+    },
+    {
+      "bank_idx": 856,
+      "tier": 4,
+      "question": "Pure silicon is a poor conductor of electricity — better than insulators like glass, worse than metals like copper. But add a tiny amount of phosphorus (5 electrons per atom vs silicon's 4) or boron (3 electrons) and conductivity changes dramatically. What's the broader idea?",
+      "answer": "Doping a semiconductor — adding controlled impurities — creates 'n-type' (extra electrons) or 'p-type' (electron holes) materials, the building blocks of transistors and modern electronics",
+      "choices": [
+        "Doping a semiconductor — adding controlled impurities — creates 'n-type' (extra electrons) or 'p-type' (electron holes) materials, the building blocks of transistors and modern electronics",
+        "Doping a semiconductor poisons it — adding impurities reduces conductivity to zero — and pure silicon is used in all modern electronics without any added elements",
+        "Doping a semiconductor changes its color — adding impurities makes silicon glow — but does not affect electrical properties in any commercially useful way",
+        "Doping a semiconductor melts it — silicon becomes liquid when impurities are added — making semiconductor electronics inherently fragile and short-lived"
+      ],
+      "context": "The transistor (Bardeen, Brattain, Shockley at Bell Labs, 1947 — 1956 Nobel) is the engine of the information age. Modern microprocessors contain billions of transistors on a single chip. The semiconductor industry is one of the largest applied uses of chemistry."
+    },
+    {
+      "bank_idx": 876,
+      "tier": 4,
+      "question": "In an autoimmune disease, the immune system mistakenly attacks the body's own tissues. Examples include systemic lupus erythematosus (joints, skin, kidneys), multiple sclerosis (nerve myelin), and type 1 diabetes (pancreatic beta cells). What's the broader mechanism?",
+      "answer": "The immune system fails to distinguish self from non-self — instead of attacking only invaders, it targets specific body tissues — often with unclear triggers (genetic susceptibility, infections, environment)",
+      "choices": [
+        "The immune system fails to distinguish self from non-self — instead of attacking only invaders, it targets specific body tissues — often with unclear triggers (genetic susceptibility, infections, environment)",
+        "The body produces too many immune cells overall — flooding tissues with white blood cells — and the entire framework should be reconsidered",
+        "External parasites mimic body tissues — fooling the immune system into attacking those tissues — and the entire framework should be reconsidered",
+        "Body tissues become genuinely diseased first — only then does the immune system attack — and the entire framework should be reconsidered"
+      ],
+      "context": "Autoimmune diseases affect about 5-8% of the US population — disproportionately women (about 78% of patients are female). Some have known triggers (rheumatic fever following strep, celiac disease following gluten exposure in susceptible people); most have idiopathic onset. Modern treatments include immunosuppressants and biologics targeting specific immune pathways."
+    },
+    {
+      "bank_idx": 877,
+      "tier": 4,
+      "question": "Allergies — from mild seasonal hay fever to life-threatening anaphylaxis — involve the immune system overreacting to harmless substances (pollen, peanuts, bee venom). The first exposure doesn't trigger anything dramatic; later exposures bring symptoms. What's the underlying mechanism?",
+      "answer": "First exposure makes IgE antibodies that bind to mast cells — later exposures crosslink that IgE — triggering massive release of histamine and other inflammatory chemicals",
+      "choices": [
+        "First exposure makes IgE antibodies that bind to mast cells — later exposures crosslink that IgE — triggering massive release of histamine and other inflammatory chemicals",
+        "First exposure produces IgG antibodies that destroy the allergen — later exposures have no effect",
+        "First exposure suppresses the immune system completely — later exposures cause damage without immune involvement",
+        "First exposure activates white blood cells — they remain active forever"
+      ],
+      "context": "Histamine is responsible for many allergy symptoms — itchy eyes, runny nose, hives, bronchoconstriction — which is why antihistamines provide relief. Anaphylaxis can drop blood pressure and close airways within minutes; epinephrine reverses this. The 'hygiene hypothesis' (Strachan, 1989) proposes that low childhood microbial exposure may increase later allergy rates."
+    },
+    {
+      "bank_idx": 886,
+      "tier": 4,
+      "question": "Several Nobel-winning scientists have done their most important work outside the standard credentialing system. Norman Borlaug (1970 Peace) worked at a non-elite Mexican research station for decades; Tu Youyou (2015 Medicine) had no PhD; Katalin Karikó (2023 Medicine) was demoted at Penn before her work led to COVID vaccines. What's the broader recognition?",
+      "answer": "Major scientific breakthroughs sometimes come from researchers outside elite institutions — credentialing isn't a perfect filter",
+      "choices": [
+        "Major scientific breakthroughs sometimes come from researchers outside elite institutions — credentialing isn't a perfect filter",
+        "Major breakthroughs come only from elite institutions — Borlaug, Tu, and Karikó were secretly affiliated with top universities",
+        "Major breakthroughs all come from political activists — Borlaug, Tu, and Karikó were primarily political figures",
+        "Major breakthroughs always come from amateurs — credentialed scientists never make important discoveries"
+      ],
+      "context": "Katalin Karikó spent years at Penn trying to make mRNA work as a therapeutic, faced repeated grant rejections, and was demoted in 1995 — her partnership with Drew Weissman eventually produced the chemistry that made mRNA vaccines possible. They shared the 2023 Medicine Nobel. The broader lesson is humility about credentialing — the system catches many good scientists but also misses some critical work."
+    },
+    {
+      "bank_idx": 890,
+      "tier": 4,
+      "question": "Douglas Hanahan and Robert Weinberg in 2000 (updated 2011) identified a set of 'hallmarks of cancer' — characteristic capabilities that nearly all human cancers acquire on the way from normal cell to malignant tumor. What's the broader picture?",
+      "answer": "Cancer is the accumulation of mutations that progressively unlock specific capabilities — sustained growth, evading death signals, attracting blood vessels, invading tissues, metastasizing — rather than a single defining defect",
+      "choices": [
+        "Cancer is the accumulation of mutations that progressively unlock specific capabilities — sustained growth, evading death signals, attracting blood vessels, invading tissues, metastasizing — rather than a single defining defect",
+        "Cancer is a single mutation in a single gene — Hanahan and Weinberg identified the 'cancer gene' in 2000 — and the entire framework should be reconsidered",
+        "Cancer is not actually mutational — it's caused entirely by environmental toxins — and this view is preserved in standard textbooks today",
+        "Cancer has only one cause: viral infection — Hanahan and Weinberg identified specific tumor viruses — and the entire framework should be reconsidered"
+      ],
+      "context": "Original six hallmarks (2000): sustaining proliferative signaling, evading growth suppressors, resisting cell death, enabling replicative immortality, inducing angiogenesis, activating invasion and metastasis. The 2011 update added energy reprogramming, immune evasion, genome instability, and tumor-promoting inflammation. The framework structures the way many cancer therapies are designed."
+    },
+    {
+      "bank_idx": 907,
+      "tier": 4,
+      "question": "In 2007 climate scientist Wieslaw Maslowski told an American Geophysical Union meeting that Arctic sea ice could be 'completely ice-free' as early as 2013. The BBC and other outlets reported the prediction widely. Arctic September sea-ice extent in 2013 was about 5 million square kilometers — a low value, but not zero. What does this case teach the kid learning to read climate coverage?",
+      "answer": "Named predictions on dated timescales can be checked — and many high-confidence catastrophe forecasts have missed their deadlines without media correction",
+      "choices": [
+        "Named predictions on dated timescales can be checked — and many high-confidence catastrophe forecasts have missed their deadlines without media correction",
+        "Climate predictions are never quoted in media — a fact established by surveying recent science-journalism style guides used by major newsrooms",
+        "Sea-ice predictions have been uniformly accurate — a finding confirmed by repeated NSIDC reports on Arctic conditions every year",
+        "Predictions cannot fail in principle — a position climate scientists have held since the founding of the IPCC in 1988 itself"
+      ],
+      "context": "The 2013 ice-free-Arctic prediction is one of several that did not materialize. Al Gore in 2007 said it could happen in 5-7 years. Peter Wadhams predicted ice-free by 2015-16. James Hansen in 2008 said the Arctic would be 'essentially ice-free' within 5-10 years. As of 2025, September Arctic ice extent fluctuates between roughly 4-6 million km² — well below the 1980s baseline, but not zero. Koonin's *Unsettled* (2021) catalogs many such cases."
+    },
+    {
+      "bank_idx": 911,
+      "tier": 4,
+      "question": "In 2008 ABC News aired a feature predicting that by 2015 New York's Statue of Liberty would be partly underwater, gas would be $9 a gallon, and milk would be $13 a gallon — all due to climate change. None of these predictions materialized on the 2015 deadline. What does this case teach the kid about media climate coverage?",
+      "answer": "Visual and dollar-figure predictions are designed to land emotionally — and their failure rate is high enough that the kid should always check the date and the actual outcome",
+      "choices": [
+        "Visual and dollar-figure predictions are designed to land emotionally — and their failure rate is high enough that the kid should always check the date and the actual outcome",
+        "ABC News retracted the prediction within days — a correction now standard in every climate-related broadcast on every major network",
+        "The predictions were broadly accurate — a fact viewers can confirm by reviewing actual 2015 New York Harbor footage and pricing data",
+        "Media outlets do not air climate predictions — a finding established by surveying network archives from the past two decades"
+      ],
+      "context": "The ABC segment was titled 'Earth 2100' and aired June 2009; the visuals depicted a flooded New York by 2015. Roger Pielke Jr. and others have catalogued such failed dated predictions extensively. The pattern matters because activists and journalists who issued these predictions usually do not issue corrections — the cycle moves to the next prediction with a fresh deadline. Pattern recognition is the skill."
+    },
+    {
+      "bank_idx": 975,
+      "tier": 4,
+      "question": "Stanford's medical-school environment in 2020-2021 became openly hostile to Jay Bhattacharya, with colleagues organizing against him and university communications attacking the GBD position. What does the case illustrate about academic freedom?",
+      "answer": "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
+      "choices": [
+        "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
+        "Stanford University fully protected Jay Bhattacharya from start to finish and never permitted any internal faculty opposition to his publicly expressed views on focused protection at any time",
+        "Academic freedom in higher education applies only to non-medical disciplines and never extends to any public-health research at any university anywhere in the United States",
+        "Bhattacharya was hired by Stanford only in 2024 after the pandemic was over and faced no opposition at all during the entire long active period of the pandemic from anyone"
+      ],
+      "context": "Stanford colleagues organized petitions, the Stanford Daily ran hostile pieces, and university communications distanced the school from Bhattacharya's views. Bhattacharya later detailed the harassment in podcast interviews and Congressional testimony. The point isn't that universities should ban criticism of faculty — they shouldn't — but that the 2020-2021 episode showed how thin the academic-freedom protections actually were when a credentialed researcher took a publicly unpopular substantive position. The Foundation for Individual Rights and Expression (FIRE) documented similar patterns across many institutions."
+    },
+    {
+      "bank_idx": 1055,
+      "tier": 5,
+      "question": "Australian philosopher David Chalmers introduced the term 'hard problem of consciousness' in a 1995 paper. He distinguished it from the 'easy problems' — explaining attention, learning, memory, behavior selection — which neuroscience makes steady progress on. What's the hard problem?",
+      "answer": "Why any physical process is accompanied by subjective experience — why there's 'something it is like' to be the brain doing those things, rather than just unconscious computation as default",
+      "choices": [
+        "Why any physical process is accompanied by subjective experience — why there's 'something it is like' to be the brain doing those things, rather than just unconscious computation as default",
+        "Why neurons fire at certain rates rather than at others — a question that depends on ion-channel gating dynamics and the timing of action-potential propagation across cell membranes",
+        "Why humans report having experiences but other primates apparently do not — a comparative question about reports rather than about the underlying nature of subjective experience itself",
+        "Why brain imaging requires expensive equipment — and cannot yet be done with simple optical methods at home or in low-resource settings outside of major research hospital facilities"
+      ],
+      "context": "Chalmers's example: a perfect physical description of seeing red — wavelengths, retinal cells, optic-nerve signals, V4 activations — seems to leave out the redness, the felt experience. Critics like Daniel Dennett deny the hard problem is a genuine problem. Integrated Information Theory, Global Workspace Theory, panpsychism, illusionism are competing serious frameworks. None has decisive empirical traction."
+    },
+    {
+      "bank_idx": 1096,
+      "tier": 5,
+      "question": "Diamond and graphite are made of nothing but carbon atoms, yet diamond is the hardest natural substance and one of the most expensive, while graphite is soft enough to write with and worth pennies per gram. The difference comes entirely from how the carbon atoms are bonded. What's the structural difference?",
+      "answer": "Diamond has each carbon atom bonded to four others in a rigid 3D network — graphite has each carbon bonded to three others in flat sheets that can slide past one another, giving softness and electrical conductivity",
+      "choices": [
+        "Diamond has each carbon atom bonded to four others in a rigid 3D network — graphite has each carbon bonded to three others in flat sheets that can slide past one another, giving softness and electrical conductivity",
+        "Diamond has carbon atoms bonded only to hydrogen — graphite has carbon atoms bonded only to oxygen, making them chemically very different substances despite their identical elemental composition listings",
+        "Diamond contains heavier isotopes of carbon — graphite contains lighter isotopes, in a ratio that determines all the physical-property differences observed between these two seemingly similar materials",
+        "Diamond is made of crystalline carbon — graphite is made of amorphous carbon with no internal order, so the structural difference is the presence or absence of crystallinity rather than bonding type"
+      ],
+      "context": "The 1955 GE synthesis of artificial diamonds from graphite required high pressure (about 100,000 atmospheres) and high temperature — conditions roughly matching where natural diamonds form deep in Earth's mantle. Fullerenes (1985 — Kroto, Curl, Smalley Nobel 1996) and graphene (2004 — Geim and Novoselov Nobel 2010) are additional carbon allotropes. Carbon's flexibility in bonding patterns is why organic chemistry, the chemistry of carbon compounds, is its own enormous field."
+    },
+    {
+      "bank_idx": 1210,
+      "tier": 5,
+      "question": "Amy Cuddy's 'power posing' research (published 2010, TED talk 2012 with 70+ million views) claimed standing in 'high-power' poses for two minutes changed your testosterone and cortisol levels and made you perform better in interviews. The original coauthor Dana Carney publicly stated by 2016 that she no longer believed the effect was real. What does this case illustrate about scientific popularity and truth?",
+      "answer": "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
+      "choices": [
+        "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
+        "Massive public uptake of a finding always signals it is true because popular ideas are mathematically more likely to replicate",
+        "Massive public uptake of a finding has no influence on whether scientists choose to attempt to replicate it later",
+        "Massive public uptake of a finding only happens after replication has confirmed it across many independent laboratories"
+      ],
+      "context": "The 2010 Carney-Cuddy-Yap paper claimed hormonal and behavioral effects from two-minute pose changes. The 2015 Ranehill et al. attempted replication (200 subjects vs. the original 42) found the behavioral effect was absent and hormonal effect non-significant. Carney's 2016 statement: 'I do not believe that power pose effects are real.' Cuddy continued to advocate the work. The TED talk remained one of the most-viewed of all time. The popular story outlived the empirical claim."
+    },
+    {
+      "bank_idx": 1233,
+      "tier": 5,
+      "question": "Three enslaved women — Anarcha (subjected to 30 operations without anesthesia), Betsey, and Lucy — were the patients on whom J. Marion Sims developed his vesicovaginal fistula surgical technique in 1840s Alabama. His contemporary white patients later received ether anesthesia. In 2018, after years of advocacy, his statue was removed from Central Park. What's the honest recognition?",
+      "answer": "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
+      "choices": [
+        "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
+        "Sims pioneered surgical anesthesia and required detailed patient consent for every procedure — he was the first to insist on those modern standards in the entire field",
+        "Sims operated only on white women with signed written consent forms — in full compliance with Alabama law of the time, with thorough independent witnessing",
+        "Sims's techniques have all been discredited and replaced by entirely modern methods — no contemporary gynecology owes any debt to his nineteenth-century research work"
+      ],
+      "context": "Sims claimed in his autobiography that anesthesia (ether, available from 1846) was unsuitable for the procedure; his white patients later received it. The naming question — does honoring a discoverer require silence about the methods — is one of the bank's substantive cases."
+    },
+    {
+      "bank_idx": 1300,
+      "tier": 3,
+      "question": "Aaron Siri's firm Siri & Glimstad litigated the 2022 Pfizer FOIA case against the FDA. The agency requested 75 years to release the documents; Judge Mark Pittman ordered them released in 8 months. What does the case illustrate?",
+      "answer": "Transparency requires litigation — agencies prefer secrecy, and FOIA's promise depends on persistent attorneys willing to enforce it",
+      "choices": [
+        "Transparency requires litigation — agencies prefer secrecy, and FOIA's promise depends on persistent attorneys willing to enforce it",
+        "Automatic release — federal agencies release every safety record without any legal pressure required from outside parties",
+        "Banned disclosure — federal agencies are legally prohibited from releasing safety records under any circumstances",
+        "Always lose fast — federal agencies always lose FOIA cases quickly with no litigation needed for any disclosure"
+      ],
+      "context": "Public Health and Medical Professionals for Transparency v. FDA (N.D. Tex. 2022). The released Pfizer trial documents, V-safe data, and VAERS records — much of the most useful public safety information on COVID vaccines came from FOIA litigation. The structural recognition: 'transparency by default' is rarely how agencies behave; transparency happens when courts order it and lawyers persist."
+    }
+  ]
+}

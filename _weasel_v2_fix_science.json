@@ -1,0 +1,287 @@
+[
+  {
+    "bank_idx": 188,
+    "new": {
+      "tier": 1,
+      "question": "On the ocean, people watching a ship sail far away see it disappear BOTTOM FIRST below the horizon. What does that tell us about Earth's shape?",
+      "answer": "Earth is a sphere, not a flat disk",
+      "choices": [
+        "Earth is a sphere, not a flat disk",
+        "Ships shrink as they go far away",
+        "The sea slowly pulls ships under",
+        "Light can't travel across oceans"
+      ],
+      "context": "Ancient Greek thinkers like Eratosthenes (around 240 BC) figured out Earth was round and measured its size well using shadows. Ships disappearing hull-first, the round shadow Earth casts on the Moon during eclipses, and photos from space all confirm it."
+    }
+  },
+  {
+    "bank_idx": 280,
+    "new": {
+      "tier": 2,
+      "question": "Swiss mathematician Daniel Bernoulli, in his 1738 book *Hydrodynamica*, described why airplanes can fly. How does pressure relate to flow speed in a moving fluid?",
+      "answer": "Faster-moving fluid exerts lower pressure than slower-moving fluid alongside it",
+      "choices": [
+        "Faster-moving fluid exerts lower pressure than slower-moving fluid alongside it",
+        "Faster-moving fluid exerts higher pressure than slower-moving fluid alongside it",
+        "Moving fluids exert exactly the same pressure as still fluids at all flow speeds",
+        "Moving fluids exert pressure only on the bottom surfaces of objects passing through"
+      ],
+      "context": "Bernoulli's principle: in steady fluid flow, faster flow corresponds to lower pressure. Airplane wings are shaped so air moves faster over the top than the bottom, creating a pressure difference that lifts the plane. The same principle explains why a roof can be ripped off a house in high winds (fast wind above, normal pressure inside), and why a curveball curves."
+    }
+  },
+  {
+    "bank_idx": 350,
+    "new": {
+      "tier": 2,
+      "question": "A 'Punnett square' is a simple grid biology students use to predict offspring traits. Who developed it, and around what year?",
+      "answer": "Reginald Punnett (around 1905) — it shows all combinations of parent alleles in offspring",
+      "choices": [
+        "Reginald Punnett (around 1905) — it shows all combinations of parent alleles in offspring",
+        "Gregor Mendel himself — he invented it for his original pea plant experiments",
+        "Charles Darwin — he used it to track survival rates in his evolution research",
+        "Marie Curie — she designed it to track which children inherited her medical condition"
+      ],
+      "context": "Punnett's square is a teaching tool: cross two parents, list each parent's alleles along the edges of a grid, and the cells show possible offspring combinations. Reginald Punnett (1875-1967) worked at Cambridge with William Bateson. They coined the word 'genetics' in 1905. Punnett squares clearly illustrate Mendelian inheritance, dominant/recessive patterns, and probability ratios for kids."
+    }
+  },
+  {
+    "bank_idx": 814,
+    "new": {
+      "tier": 4,
+      "question": "Quarks are never seen as free particles — only inside protons, neutrons, mesons. Pull two apart with enough energy and new quark-antiquark pairs pop from the vacuum, snapping them back into colorless bound states. This is 'confinement.' How does the strong force change as quarks are pulled apart?",
+      "answer": "The strong force gets STRONGER with distance — pulling quarks apart costs more energy the farther you go — until making new particles becomes cheaper than further separation",
+      "choices": [
+        "The strong force gets STRONGER with distance — pulling quarks apart costs more energy the farther you go — until making new particles becomes cheaper than further separation",
+        "The strong force gets WEAKER with distance like gravity and electromagnetism — but it acts on a separate type of charge that masks free quarks completely",
+        "The strong force is identical to electromagnetism — quarks are simply small electrically charged particles that always stick together by ordinary force",
+        "The strong force does not exist in modern physics — quarks were retired in 2010 as obsolete and replaced by a unified mass-energy field theory"
+      ],
+      "context": "The opposite property — where the strong force gets WEAKER at very short distances — was discovered by Gross, Politzer, and Wilczek (2004 Nobel). The combined picture: tightly bound quarks behave almost freely at LHC-scale energies but cannot be pulled apart at normal distances. The theory is quantum chromodynamics (QCD). 'Color' is an internal quantum-number label."
+    }
+  },
+  {
+    "bank_idx": 829,
+    "new": {
+      "tier": 4,
+      "question": "Heike Kamerlingh Onnes in 1911 cooled mercury below 4.2 K (liquid helium) and saw its electrical resistance drop to zero. Currents in such rings persist forever without a driving voltage. What's the name for this zero-resistance phenomenon — and what magnetic effect comes with it?",
+      "answer": "Superconductivity — below a critical temperature, certain materials carry electric current with zero resistance — and many also expel magnetic fields entirely (the Meissner effect)",
+      "choices": [
+        "Superconductivity — below a critical temperature, certain materials carry electric current with zero resistance — and many also expel magnetic fields entirely (the Meissner effect)",
+        "Superinductivity — below a critical temperature, materials build up magnetic charges that conduct heat — but their electrical resistance increases rather than decreases",
+        "Supercooling — below a certain temperature, materials stop conducting electricity entirely — and Onnes's measurement was an experimental error in the data",
+        "Subconductivity — below a critical temperature, materials become brittle and shatter under any current load — making the phenomenon useless for any practical use"
+      ],
+      "context": "Onnes won the 1913 Physics Nobel. Type-I (BCS theory, Bardeen-Cooper-Schrieffer 1957, Nobel 1972) and Type-II superconductors are distinguished. High-temperature superconductors (Bednorz and Müller, 1986, Nobel 1987) work above 30 K."
+    }
+  },
+  {
+    "bank_idx": 847,
+    "new": {
+      "tier": 4,
+      "question": "Leo Baekeland in 1907 made the first fully synthetic plastic — Bakelite — from phenol and formaldehyde. It was hard, heat-resistant, electrically insulating, and moldable. What did Bakelite open the door to in the decades after?",
+      "answer": "Bakelite launched the synthetic plastic era — phones, radios, electrical insulation, billiard balls, kitchenware — and triggered the explosion of plastic chemistry through the 20th century",
+      "choices": [
+        "Bakelite launched the synthetic plastic era — phones, radios, electrical insulation, billiard balls, kitchenware — and triggered the explosion of plastic chemistry through the 20th century",
+        "Bakelite was never commercially successful — it was rapidly replaced by metal alternatives — and modern plastics owe nothing to Baekeland's original work in the early 1900s",
+        "Bakelite was the only synthetic plastic ever made — no further plastics were developed until the 1980s — and today's polymers are unrelated to the original chemistry",
+        "Bakelite was a natural rubber product — Baekeland did not synthesize anything new — and modern plastic chemistry started decades after his original Brooklyn lab work"
+      ],
+      "context": "Bakelite was crucial for early radios — its electrical insulation made vacuum-tube assemblies practical. Wallace Carothers at DuPont developed nylon in 1935 and neoprene in 1931. Plexiglas, polyethylene, PVC, polystyrene followed in the 1930s and 40s. The mid-20th-century plastic boom transformed packaging, clothing, transportation, and electronics. Modern concerns — plastic waste, microplastics — are the downside of that century-long explosion in polymer chemistry."
+    }
+  },
+  {
+    "bank_idx": 856,
+    "new": {
+      "tier": 4,
+      "question": "Pure silicon conducts poorly — between glass and copper. But add a trace of phosphorus (5 electrons per atom vs silicon's 4) or boron (3 electrons) and conductivity changes dramatically. What's this controlled-impurity process called, and what does it produce?",
+      "answer": "Doping a semiconductor — adding controlled impurities — creates 'n-type' (extra electrons) or 'p-type' (electron holes) materials, the building blocks of transistors and modern electronics",
+      "choices": [
+        "Doping a semiconductor — adding controlled impurities — creates 'n-type' (extra electrons) or 'p-type' (electron holes) materials, the building blocks of transistors and modern electronics",
+        "Doping a semiconductor poisons it — adding impurities reduces conductivity to zero — and pure silicon is used in all modern electronics without any added elements",
+        "Doping a semiconductor changes its color — adding impurities makes silicon glow — but does not affect electrical properties in any commercially useful way",
+        "Doping a semiconductor melts it — silicon becomes liquid when impurities are added — making semiconductor electronics inherently fragile and short-lived"
+      ],
+      "context": "The transistor (Bardeen, Brattain, Shockley at Bell Labs, 1947 — 1956 Nobel) is the engine of the information age. Modern microprocessors contain billions of transistors on a single chip. The semiconductor industry is one of the largest applied uses of chemistry."
+    }
+  },
+  {
+    "bank_idx": 876,
+    "new": {
+      "tier": 4,
+      "question": "In an autoimmune disease, the immune system mistakenly attacks the body's own tissues. Examples include systemic lupus erythematosus (joints, skin, kidneys), multiple sclerosis (nerve myelin), and type 1 diabetes (pancreatic beta cells). What basic immune-recognition failure underlies all of these?",
+      "answer": "The immune system fails to distinguish self from non-self — instead of attacking only invaders, it targets specific body tissues — often with unclear triggers (genetic susceptibility, infections, environment)",
+      "choices": [
+        "The immune system fails to distinguish self from non-self — instead of attacking only invaders, it targets specific body tissues — often with unclear triggers (genetic susceptibility, infections, environment)",
+        "The body produces too many immune cells overall — flooding tissues with white blood cells — and the entire framework should be reconsidered",
+        "External parasites mimic body tissues — fooling the immune system into attacking those tissues — and the entire framework should be reconsidered",
+        "Body tissues become genuinely diseased first — only then does the immune system attack — and the entire framework should be reconsidered"
+      ],
+      "context": "Autoimmune diseases affect about 5-8% of the US population — disproportionately women (about 78% of patients are female). Some have known triggers (rheumatic fever following strep, celiac disease following gluten exposure in susceptible people); most have idiopathic onset. Modern treatments include immunosuppressants and biologics targeting specific immune pathways."
+    }
+  },
+  {
+    "bank_idx": 877,
+    "new": {
+      "tier": 4,
+      "question": "Allergies — from mild seasonal hay fever to life-threatening anaphylaxis — involve the immune system overreacting to harmless substances (pollen, peanuts, bee venom). The first exposure doesn't trigger anything dramatic; later exposures bring symptoms. What specifically happens during the first exposure that makes later ones explode into a reaction?",
+      "answer": "First exposure makes IgE antibodies that bind to mast cells — later exposures crosslink that IgE — triggering massive release of histamine and other inflammatory chemicals",
+      "choices": [
+        "First exposure makes IgE antibodies that bind to mast cells — later exposures crosslink that IgE — triggering massive release of histamine and other inflammatory chemicals",
+        "First exposure produces IgG antibodies that destroy the allergen — later exposures have no effect",
+        "First exposure suppresses the immune system completely — later exposures cause damage without immune involvement",
+        "First exposure activates white blood cells — they remain active forever"
+      ],
+      "context": "Histamine is responsible for many allergy symptoms — itchy eyes, runny nose, hives, bronchoconstriction — which is why antihistamines provide relief. Anaphylaxis can drop blood pressure and close airways within minutes; epinephrine reverses this. The 'hygiene hypothesis' (Strachan, 1989) proposes that low childhood microbial exposure may increase later allergy rates."
+    }
+  },
+  {
+    "bank_idx": 886,
+    "new": {
+      "tier": 4,
+      "question": "Several Nobel-winning scientists have done their most important work outside the standard credentialing system. Norman Borlaug (1970 Peace) worked at a non-elite Mexican research station for decades; Tu Youyou (2015 Medicine) had no PhD; Katalin Karikó (2023 Medicine) was demoted at Penn before her work led to COVID vaccines. What do these cases say about whether elite credentials are a reliable filter for important science?",
+      "answer": "Major scientific breakthroughs sometimes come from researchers outside elite institutions — credentialing isn't a perfect filter",
+      "choices": [
+        "Major scientific breakthroughs sometimes come from researchers outside elite institutions — credentialing isn't a perfect filter",
+        "Major breakthroughs come only from elite institutions — Borlaug, Tu, and Karikó were secretly affiliated with top universities",
+        "Major breakthroughs all come from political activists — Borlaug, Tu, and Karikó were primarily political figures",
+        "Major breakthroughs always come from amateurs — credentialed scientists never make important discoveries"
+      ],
+      "context": "Katalin Karikó spent years at Penn trying to make mRNA work as a therapeutic, faced repeated grant rejections, and was demoted in 1995 — her partnership with Drew Weissman eventually produced the chemistry that made mRNA vaccines possible. They shared the 2023 Medicine Nobel. The broader lesson is humility about credentialing — the system catches many good scientists but also misses some critical work."
+    }
+  },
+  {
+    "bank_idx": 890,
+    "new": {
+      "tier": 4,
+      "question": "Douglas Hanahan and Robert Weinberg in 2000 (updated 2011) identified 'hallmarks of cancer' — capabilities nearly all human cancers acquire on the way from normal cell to tumor. What does their framework say cancer fundamentally IS — a single defect, or something else?",
+      "answer": "Cancer is the accumulation of mutations that progressively unlock specific capabilities — sustained growth, evading death signals, attracting blood vessels, invading tissues, metastasizing — rather than a single defining defect",
+      "choices": [
+        "Cancer is the accumulation of mutations that progressively unlock specific capabilities — sustained growth, evading death signals, attracting blood vessels, invading tissues, metastasizing — rather than a single defining defect",
+        "Cancer is a single mutation in a single gene — Hanahan and Weinberg identified the 'cancer gene' in 2000 — and the entire framework should be reconsidered",
+        "Cancer is not actually mutational — it's caused entirely by environmental toxins — and this view is preserved in standard textbooks today",
+        "Cancer has only one cause: viral infection — Hanahan and Weinberg identified specific tumor viruses — and the entire framework should be reconsidered"
+      ],
+      "context": "Original six hallmarks (2000): sustaining proliferative signaling, evading growth suppressors, resisting cell death, enabling replicative immortality, inducing angiogenesis, activating invasion and metastasis. The 2011 update added energy reprogramming, immune evasion, genome instability, and tumor-promoting inflammation. The framework structures the way many cancer therapies are designed."
+    }
+  },
+  {
+    "bank_idx": 907,
+    "new": {
+      "tier": 4,
+      "question": "In 2007 climate scientist Wieslaw Maslowski told an American Geophysical Union meeting that Arctic sea ice could be 'completely ice-free' as early as 2013. The BBC and others reported it widely. Actual September 2013 ice extent: about 5 million km² — low, but not zero. When a kid sees a new catastrophe forecast with a date, what should she do once that date arrives?",
+      "answer": "Named predictions on dated timescales can be checked — and many high-confidence catastrophe forecasts have missed their deadlines without media correction",
+      "choices": [
+        "Named predictions on dated timescales can be checked — and many high-confidence catastrophe forecasts have missed their deadlines without media correction",
+        "Climate predictions are never quoted in media — a fact established by surveying recent science-journalism style guides used by major newsrooms",
+        "Sea-ice predictions have been uniformly accurate — a finding confirmed by repeated NSIDC reports on Arctic conditions every year",
+        "Predictions cannot fail in principle — a position climate scientists have held since the founding of the IPCC in 1988 itself"
+      ],
+      "context": "The 2013 ice-free-Arctic prediction is one of several that did not materialize. Al Gore in 2007 said it could happen in 5-7 years. Peter Wadhams predicted ice-free by 2015-16. James Hansen in 2008 said the Arctic would be 'essentially ice-free' within 5-10 years. As of 2025, September Arctic ice extent fluctuates between roughly 4-6 million km² — well below the 1980s baseline, but not zero. Koonin's *Unsettled* (2021) catalogs many such cases."
+    }
+  },
+  {
+    "bank_idx": 911,
+    "new": {
+      "tier": 4,
+      "question": "In 2008 ABC News aired a feature predicting that by 2015 New York's Statue of Liberty would be partly underwater, gas would be $9 a gallon, and milk would be $13 a gallon — all due to climate change. None of these predictions materialized on the 2015 deadline. Why are visual and dollar-figure predictions like these particularly worth checking once their deadlines arrive?",
+      "answer": "Visual and dollar-figure predictions are designed to land emotionally — and their failure rate is high enough that the kid should always check the date and the actual outcome",
+      "choices": [
+        "Visual and dollar-figure predictions are designed to land emotionally — and their failure rate is high enough that the kid should always check the date and the actual outcome",
+        "ABC News retracted the prediction within days — a correction now standard in every climate-related broadcast on every major network",
+        "The predictions were broadly accurate — a fact viewers can confirm by reviewing actual 2015 New York Harbor footage and pricing data",
+        "Media outlets do not air climate predictions — a finding established by surveying network archives from the past two decades"
+      ],
+      "context": "The ABC segment was titled 'Earth 2100' and aired June 2009; the visuals depicted a flooded New York by 2015. Roger Pielke Jr. and others have catalogued such failed dated predictions extensively. The pattern matters because activists and journalists who issued these predictions usually do not issue corrections — the cycle moves to the next prediction with a fresh deadline. Pattern recognition is the skill."
+    }
+  },
+  {
+    "bank_idx": 975,
+    "new": {
+      "tier": 4,
+      "question": "Stanford's medical school in 2020-2021 turned hostile to Jay Bhattacharya — colleagues organized against him and university communications attacked his Great Barrington Declaration position. How durable did Stanford's academic-freedom norms prove under political pressure?",
+      "answer": "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
+      "choices": [
+        "Institutional norms of academic freedom can collapse rapidly when political pressure aligns against a faculty member's substantive view",
+        "Stanford University fully protected Jay Bhattacharya from start to finish and never permitted any internal faculty opposition to his publicly expressed views on focused protection at any time",
+        "Academic freedom in higher education applies only to non-medical disciplines and never extends to any public-health research at any university anywhere in the United States",
+        "Bhattacharya was hired by Stanford only in 2024 after the pandemic was over and faced no opposition at all during the entire long active period of the pandemic from anyone"
+      ],
+      "context": "Stanford colleagues organized petitions, the Stanford Daily ran hostile pieces, and university communications distanced the school from Bhattacharya's views. Bhattacharya later detailed the harassment in podcast interviews and Congressional testimony. The point isn't that universities should ban criticism of faculty — they shouldn't — but that the 2020-2021 episode showed how thin the academic-freedom protections actually were when a credentialed researcher took a publicly unpopular substantive position. The Foundation for Individual Rights and Expression (FIRE) documented similar patterns across many institutions."
+    }
+  },
+  {
+    "bank_idx": 1055,
+    "new": {
+      "tier": 5,
+      "question": "Australian philosopher David Chalmers introduced the term 'hard problem of consciousness' in a 1995 paper. He distinguished it from the 'easy problems' — explaining attention, learning, memory, behavior selection — which neuroscience makes steady progress on. What question, specifically, does Chalmers say the easy problems leave untouched?",
+      "answer": "Why any physical process is accompanied by subjective experience — why there's 'something it is like' to be the brain doing those things, rather than just unconscious computation as default",
+      "choices": [
+        "Why any physical process is accompanied by subjective experience — why there's 'something it is like' to be the brain doing those things, rather than just unconscious computation as default",
+        "Why neurons fire at certain rates rather than at others — a question that depends on ion-channel gating dynamics and the timing of action-potential propagation across cell membranes",
+        "Why humans report having experiences but other primates apparently do not — a comparative question about reports rather than about the underlying nature of subjective experience itself",
+        "Why brain imaging requires expensive equipment — and cannot yet be done with simple optical methods at home or in low-resource settings outside of major research hospital facilities"
+      ],
+      "context": "Chalmers's example: a perfect physical description of seeing red — wavelengths, retinal cells, optic-nerve signals, V4 activations — seems to leave out the redness, the felt experience. Critics like Daniel Dennett deny the hard problem is a genuine problem. Integrated Information Theory, Global Workspace Theory, panpsychism, illusionism are competing serious frameworks. None has decisive empirical traction."
+    }
+  },
+  {
+    "bank_idx": 1096,
+    "new": {
+      "tier": 5,
+      "question": "Diamond and graphite are both pure carbon, yet diamond is the hardest natural substance, while graphite is soft enough to write with. The difference comes entirely from how the carbon atoms are bonded. How are they arranged differently in each?",
+      "answer": "Diamond has each carbon atom bonded to four others in a rigid 3D network — graphite has each carbon bonded to three others in flat sheets that can slide past one another, giving softness and electrical conductivity",
+      "choices": [
+        "Diamond has each carbon atom bonded to four others in a rigid 3D network — graphite has each carbon bonded to three others in flat sheets that can slide past one another, giving softness and electrical conductivity",
+        "Diamond has carbon atoms bonded only to hydrogen — graphite has carbon atoms bonded only to oxygen, making them chemically very different substances despite their identical elemental composition listings",
+        "Diamond contains heavier isotopes of carbon — graphite contains lighter isotopes, in a ratio that determines all the physical-property differences observed between these two seemingly similar materials",
+        "Diamond is made of crystalline carbon — graphite is made of amorphous carbon with no internal order, so the structural difference is the presence or absence of crystallinity rather than bonding type"
+      ],
+      "context": "The 1955 GE synthesis of artificial diamonds from graphite required high pressure (about 100,000 atmospheres) and high temperature — conditions roughly matching where natural diamonds form deep in Earth's mantle. Fullerenes (1985 — Kroto, Curl, Smalley Nobel 1996) and graphene (2004 — Geim and Novoselov Nobel 2010) are additional carbon allotropes. Carbon's flexibility in bonding patterns is why organic chemistry, the chemistry of carbon compounds, is its own enormous field."
+    }
+  },
+  {
+    "bank_idx": 1210,
+    "new": {
+      "tier": 5,
+      "question": "Amy Cuddy's 'power posing' research (published 2010, TED talk 2012 with 70+ million views) claimed standing in 'high-power' poses for two minutes changed your testosterone and cortisol levels and made you perform better in interviews. The original coauthor Dana Carney publicly stated by 2016 that she no longer believed the effect was real. Why did tens of millions absorb the finding before anyone could check it?",
+      "answer": "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
+      "choices": [
+        "Massive public uptake of a finding happens long before the slower process of replication can correct or confirm it",
+        "Massive public uptake of a finding always signals it is true because popular ideas are mathematically more likely to replicate",
+        "Massive public uptake of a finding has no influence on whether scientists choose to attempt to replicate it later",
+        "Massive public uptake of a finding only happens after replication has confirmed it across many independent laboratories"
+      ],
+      "context": "The 2010 Carney-Cuddy-Yap paper claimed hormonal and behavioral effects from two-minute pose changes. The 2015 Ranehill et al. attempted replication (200 subjects vs. the original 42) found the behavioral effect was absent and hormonal effect non-significant. Carney's 2016 statement: 'I do not believe that power pose effects are real.' Cuddy continued to advocate the work. The TED talk remained one of the most-viewed of all time. The popular story outlived the empirical claim."
+    }
+  },
+  {
+    "bank_idx": 1233,
+    "new": {
+      "tier": 5,
+      "question": "Three enslaved women — Anarcha (subjected to 30 operations without anesthesia), Betsey, and Lucy — were the patients on whom J. Marion Sims developed his vesicovaginal fistula surgical technique in 1840s Alabama. His contemporary white patients later received ether anesthesia. In 2018, after years of advocacy, his statue was removed from Central Park. How should the kid hold together the medical discovery and the way it was obtained?",
+      "answer": "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
+      "choices": [
+        "Foundational gynecological techniques came from experimentation on people who had no capacity to refuse — the discoveries are real and the methods were grievously wrong",
+        "Sims pioneered surgical anesthesia and required detailed patient consent for every procedure — he was the first to insist on those modern standards in the entire field",
+        "Sims operated only on white women with signed written consent forms — in full compliance with Alabama law of the time, with thorough independent witnessing",
+        "Sims's techniques have all been discredited and replaced by entirely modern methods — no contemporary gynecology owes any debt to his nineteenth-century research work"
+      ],
+      "context": "Sims claimed in his autobiography that anesthesia (ether, available from 1846) was unsuitable for the procedure; his white patients later received it. The naming question — does honoring a discoverer require silence about the methods — is one of the bank's substantive cases."
+    }
+  },
+  {
+    "bank_idx": 1300,
+    "new": {
+      "tier": 3,
+      "question": "Aaron Siri's firm Siri & Glimstad litigated the 2022 Pfizer FOIA case. The FDA asked for 75 years to release documents; Judge Mark Pittman ordered 8 months. What does that gap reveal about federal transparency in practice?",
+      "answer": "Transparency requires litigation — agencies prefer secrecy, and FOIA's promise depends on persistent attorneys willing to enforce it",
+      "choices": [
+        "Transparency requires litigation — agencies prefer secrecy, and FOIA's promise depends on persistent attorneys willing to enforce it",
+        "Automatic release — federal agencies release every safety record without any legal pressure required from outside parties",
+        "Banned disclosure — federal agencies are legally prohibited from releasing safety records under any circumstances",
+        "Always lose fast — federal agencies always lose FOIA cases quickly with no litigation needed for any disclosure"
+      ],
+      "context": "Public Health and Medical Professionals for Transparency v. FDA (N.D. Tex. 2022). The released Pfizer trial documents, V-safe data, and VAERS records — much of the most useful public safety information on COVID vaccines came from FOIA litigation. The structural recognition: 'transparency by default' is rarely how agencies behave; transparency happens when courts order it and lawyers persist."
+    }
+  }
+]
