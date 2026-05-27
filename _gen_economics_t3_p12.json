@@ -1,0 +1,1695 @@
+{
+  "tier": 3,
+  "summary": {
+    "questions_generated": 120,
+    "by_pillar": {
+      "1": 60,
+      "2": 60
+    },
+    "pass": 120,
+    "soft_warn": 0,
+    "fail": 0
+  },
+  "questions": [
+    {
+      "tier": 3,
+      "question": "In 1920 Ludwig von Mises published 'Economic Calculation in the Socialist Commonwealth.' His claim wasn't that socialism is inefficient — it was that socialism is IMPOSSIBLE. What did he say socialist planners couldn't have?",
+      "answer": "Market prices for capital goods — without private ownership, no exchange forms the prices needed to compare uses",
+      "choices": [
+        "Market prices for capital goods — without private ownership, no exchange forms the prices needed to compare uses",
+        "A large enough computer — with enough processing power, planners could simulate every possible market outcome",
+        "Trained workers — socialism failed because Russian peasants lacked the engineering skills capitalism produces",
+        "Friendly trade partners — socialist nations could have succeeded if capitalist countries had not embargoed them"
+      ],
+      "context": "Mises's 1920 essay sparked the 20th-century socialist calculation debate. Oskar Lange tried to answer with 'market socialism' in the 1930s; Mises and Hayek both rejected it as missing the point. Cross-link to history bank.",
+      "_pillar": 1,
+      "_strategy": "mises_calculation_1920_deep"
+    },
+    {
+      "tier": 3,
+      "question": "A Soviet planner must decide whether a new railroad uses steel or aluminum. Both metals have other uses. In a market, prices compare them. Under socialism, all factories are state-owned — there are no market prices. What follows?",
+      "answer": "He must guess — there's no rational way to compare alternatives, so the choice becomes arbitrary or political",
+      "choices": [
+        "He must guess — there's no rational way to compare alternatives, so the choice becomes arbitrary or political",
+        "He runs a survey — by polling factory managers, the planner gets the same information prices provide",
+        "He picks by date — Soviet planning manuals required ordering material choices by alphabetical sequence",
+        "He defers to engineers — technical specifications alone produce the correct allocation in a planned economy"
+      ],
+      "context": "This is Mises's 1920 calculation argument made concrete. The planner can't say steel is 'more valuable' in railroads than in appliances when there are no prices to compare. Soviet planning produced chronic shortages and waste — exactly what Mises predicted.",
+      "_pillar": 1,
+      "_strategy": "mises_calculation_concrete"
+    },
+    {
+      "tier": 3,
+      "question": "Oskar Lange in the 1930s proposed 'market socialism' — state-owned factories instructed to mimic market behavior. Mises and Hayek both rejected it. Why did Lange's answer miss Mises's 1920 point?",
+      "answer": "Without owners risking actual losses, simulated prices carry no real information — managers face no real consequence",
+      "choices": [
+        "Without owners risking actual losses, simulated prices carry no real information — managers face no real consequence",
+        "Lange couldn't solve the math — modern computers can now run his equations and prove his model works perfectly",
+        "Lange used the wrong currency — gold-backed instead of fiat-backed socialism would have been calculable for him",
+        "Lange's plan applied only to agriculture — for industrial production his framework was widely and uncontroversially accepted"
+      ],
+      "context": "Lange thought price-mimicry by managers could substitute for real markets. Mises noted managers without skin in the game face no real consequence. Hayek added that the knowledge required to mimic doesn't exist centrally. Soviet practice vindicated both.",
+      "_pillar": 1,
+      "_strategy": "mises_vs_lange_market_socialism"
+    },
+    {
+      "tier": 3,
+      "question": "Mises argued in 1920 that socialism wasn't inefficient — it was impossible. Yet socialist economies existed for decades in the USSR and China. How is this NOT a refutation?",
+      "answer": "They survived by smuggling capitalist prices from abroad and tolerating black markets — pure socialism never operated",
+      "choices": [
+        "They survived by smuggling capitalist prices from abroad and tolerating black markets — pure socialism never operated",
+        "Mises was simply wrong — Soviet GDP figures from the 1950s and 1970s proved planned economies could outperform markets",
+        "Mises meant the impossible was reaching the moon — daily-life production was always possible under planning instead",
+        "Mises retracted his argument in the 1950s after observing Soviet growth — he accepted that planning had worked in practice"
+      ],
+      "context": "Soviet planners famously consulted Sears catalogs and Western commodity prices to set their own internal prices. Black markets handled goods the plan missed. 'Real existing socialism' borrowing price information from capitalism is consistent with Mises, not against him.",
+      "_pillar": 1,
+      "_strategy": "mises_calculation_objection_handling"
+    },
+    {
+      "tier": 3,
+      "question": "In Mises's 1920 essay, the calculation problem applies specifically to capital goods (machines, factories) not consumer goods. Why does the impossibility sit precisely there?",
+      "answer": "Capital goods have many alternative uses — prices are needed to compare them, and prices need owners trading them",
+      "choices": [
+        "Capital goods have many alternative uses — prices are needed to compare them, and prices need owners trading them",
+        "Capital goods are heavier than consumer goods — they require physical accounting planners cannot perform reliably",
+        "Capital goods are taxed differently — tax law was unsettled in the Bolshevik regime by the year of his publication",
+        "Capital goods include luxury items — and Mises objected to luxury on moral grounds in his published economic writings"
+      ],
+      "context": "Mises specifically targets PRODUCER goods. A loaf of bread has one obvious use. A ton of steel can go a thousand places. Comparing those uses requires bidding between owners, which requires private property. This precision is why the argument resists easy answers.",
+      "_pillar": 1,
+      "_strategy": "mises_capital_goods_precision"
+    },
+    {
+      "tier": 3,
+      "question": "The 20th century ran an enormous natural experiment on Mises's 1920 prediction. USSR, China, Khmer Rouge Cambodia, North Korea, Cuba all tried central planning. The Black Book of Communism (1997) tallies the cost. What does the ledger show?",
+      "answer": "Roughly 65 to 100 million deaths — famine, gulag, and political violence, vindicating Mises's calculation prediction",
+      "choices": [
+        "Roughly 65 to 100 million deaths — famine, gulag, and political violence, vindicating Mises's calculation prediction",
+        "Roughly half a million deaths total — mostly from World War II rather than from socialism's economic policies",
+        "Roughly two thousand deaths over the century — mostly from gulag prisoners trying to escape, not execution",
+        "Roughly zero deaths attributable to socialism — Black Book numbers have all been retracted by modern historians"
+      ],
+      "context": "Courtois et al. (1997) compiled figures from regime archives opened after 1991. USSR ~20M (gulag + Holodomor), China ~65M (Great Leap famine + Cultural Revolution), Cambodia ~2M (Khmer Rouge, ~25% of population). Cross-link to history bank.",
+      "_pillar": 1,
+      "_strategy": "black_book_communism_t3"
+    },
+    {
+      "tier": 3,
+      "question": "Mises's 1920 paper opened the 'socialist calculation debate' — a 60-year argument across the journals. By 1989, who had won, in the judgment of even socialist economists like Harvard's Robert Heilbroner?",
+      "answer": "Mises and Hayek — Heilbroner's January 1989 New Yorker essay said 'Ludwig von Mises was right' about calculation",
+      "choices": [
+        "Mises and Hayek — Heilbroner's January 1989 New Yorker essay said 'Ludwig von Mises was right' about calculation",
+        "Lange and Lerner — modern textbooks now treat market socialism as the successful answer to the 1920 challenge",
+        "Marx and Engels — original Marxist theory was vindicated when the USSR met its 1980s production targets fully",
+        "Keynes and Galbraith — the postwar mixed-economy consensus showed planning could be merged with markets"
+      ],
+      "context": "Robert Heilbroner, lifelong socialist and Harvard economist, wrote in 'The Triumph of Capitalism' (The New Yorker, Jan 23 1989): 'Mises was right.' He acknowledged the calculation debate was over even before the Berlin Wall fell that November.",
+      "_pillar": 1,
+      "_strategy": "heilbroner_concedes_1989"
+    },
+    {
+      "tier": 3,
+      "question": "In Mises's 1920 argument, the breakdown of socialist calculation happens not at any individual factory but at the system level. What specifically can't be done?",
+      "answer": "Comparing alternative uses of resources across the economy — local managers can't see what their inputs are worth elsewhere",
+      "choices": [
+        "Comparing alternative uses of resources across the economy — local managers can't see what their inputs are worth elsewhere",
+        "Adding up factory output — Soviet engineers struggled to count units of production above several thousand a year",
+        "Paying workers correctly — without prices the wage schedule could not be set for any planned economy at all",
+        "Choosing colors for products — the absence of paint prices made packaging design difficult for the planners"
+      ],
+      "context": "Mises emphasizes the SYSTEM-WIDE coordination problem. One factory can muddle through. The whole interlocking structure of capital — where each producer's output is another's input — collapses without prices to ratio the trades.",
+      "_pillar": 1,
+      "_strategy": "mises_system_level_argument"
+    },
+    {
+      "tier": 3,
+      "question": "Friedrich Hayek's 1945 American Economic Review paper 'The Use of Knowledge in Society' is among the most-cited essays in economics. Hayek argued the basic economic problem isn't what most economists assumed. What had they gotten wrong?",
+      "answer": "They treated it as allocating known resources — Hayek showed the real problem is using knowledge no individual possesses",
+      "choices": [
+        "They treated it as allocating known resources — Hayek showed the real problem is using knowledge no individual possesses",
+        "They focused on consumer demand — Hayek argued only producer behavior actually matters in any modern economy",
+        "They emphasized money supply — Hayek thought monetary aggregates were irrelevant to allocation problems entirely",
+        "They overstated trade gains — Hayek showed international exchange was a minor part of any nation's prosperity"
+      ],
+      "context": "Hayek's twin contributions in 1944-45 (Road to Serfdom + Use of Knowledge in Society) reframed the economic problem from optimization to coordination under dispersed information. The textbook framing — allocating given resources — concedes the planner's premise.",
+      "_pillar": 1,
+      "_strategy": "hayek_1945_reframe"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 1945 paper describes market knowledge as 'dispersed, tacit, and local.' A tin-miner knows his shaft; a copper-buyer knows his plant's demand. Nobody knows the whole picture. Yet metal prices coordinate millions of decisions. How?",
+      "answer": "The price system aggregates local knowledge into a signal — each actor responds without needing to know why it moved",
+      "choices": [
+        "The price system aggregates local knowledge into a signal — each actor responds without needing to know why it moved",
+        "Central banks gather production reports from every facility — and broadcast a unified daily price across the network",
+        "Companies share data through a committee — meeting quarterly to align prices across industries that overlap",
+        "Government statisticians publish weekly tables — showing each commodity's correct value to the national economy"
+      ],
+      "context": "This is the canonical Hayekian example. A tin shortage anywhere raises tin's price everywhere; users worldwide economize, substitute, or seek alternatives — without anyone having to be told what changed. Hayek called the price system 'a marvel.'",
+      "_pillar": 1,
+      "_strategy": "hayek_price_signal_marvel"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek 1945 distinguishes 'knowledge of the particular circumstances of time and place' from 'scientific knowledge.' A central planner can have all the scientific knowledge. Why is he still unable to plan an economy?",
+      "answer": "He lacks the local tacit ever-changing facts on the ground — knowledge that doesn't survive being centralized in a report",
+      "choices": [
+        "He lacks the local tacit ever-changing facts on the ground — knowledge that doesn't survive being centralized in a report",
+        "He cannot make decisions quickly enough — even modern central planners take several months to issue any economic order",
+        "He cannot recruit competent staff — government economic agencies fail to attract talented graduates in any country",
+        "He cannot publish his findings — central planning agencies in practice never share their internal economic reports"
+      ],
+      "context": "Hayek's distinction is the key move. The scientist knows general laws. The shipper knows this particular dock is short of crates this week. The plant manager knows his machinery needs maintenance now. None of that survives compression into a planning document.",
+      "_pillar": 1,
+      "_strategy": "hayek_tacit_vs_scientific"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 1945 paper opens by asking 'what is the problem we wish to solve when we try to construct a rational economic order?' The way the question is framed already prejudges the answer. What was the prejudice Hayek exposed?",
+      "answer": "Framing it as 'constructing' assumes a single mind doing the building — but no such mind has the required knowledge",
+      "choices": [
+        "Framing it as 'constructing' assumes a single mind doing the building — but no such mind has the required knowledge",
+        "Framing it as 'rational' assumes humans are perfectly logical — but Hayek thought emotion drives most market decisions",
+        "Framing it as 'economic' excludes social factors — which Hayek argued were the actual driver of prosperity in nations",
+        "Framing it as 'order' presupposes hierarchy — but Hayek favored egalitarian outcomes through direct redistribution programs"
+      ],
+      "context": "Hayek's larger point: spontaneous order emerges from millions of independent actors using local knowledge. The image of someone 'constructing' the economic order is itself the conceptual error. Markets aren't designed; they're discovered.",
+      "_pillar": 1,
+      "_strategy": "hayek_spontaneous_order_setup"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek 1945 was a direct response to Oskar Lange's 'market socialism' faction — they thought socialist planners could mimic markets by running equations. Why did Hayek say the answer missed the problem entirely?",
+      "answer": "The data the equations need — what every actor knows locally — doesn't exist in collectible form for the planner to use",
+      "choices": [
+        "The data the equations need — what every actor knows locally — doesn't exist in collectible form for the planner to use",
+        "The math was too complex for 1940s computers — but newer mainframes can now solve Lange's equations in real time",
+        "Lange assumed honesty among managers — but in practice Soviet plant managers always lied on their progress reports",
+        "Lange wrote in Polish — and translation errors in his 1936 English paper distorted his proposed model substance"
+      ],
+      "context": "Hayek shows the failure isn't computational. Even with a perfect computer and a perfect equation, you still need the inputs — and the inputs are the tacit local knowledge nobody can write down. This is the epistemic, not technical, failure of central planning.",
+      "_pillar": 1,
+      "_strategy": "hayek_vs_lange_data"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 1945 essay calls the price system 'a marvel' — coordinating billions of decisions without explicit central direction. What broader political conclusion does he draw?",
+      "answer": "Markets are an information system — replacing them with central direction destroys the information, regardless of intent",
+      "choices": [
+        "Markets are an information system — replacing them with central direction destroys the information, regardless of intent",
+        "Markets are perfect optimization engines — any intervention by government produces immediate and total economic collapse",
+        "Markets are inferior to expert committees — only academic economists are qualified to oversee resource allocation correctly",
+        "Markets reflect natural law — their outcomes are morally just by construction and never require any humanitarian response"
+      ],
+      "context": "Hayek's conclusion is specifically epistemic, not ideological. The argument doesn't depend on planners being lazy, stupid, or malicious. It applies even to ideal planners with the best intentions: the information they need doesn't exist centrally.",
+      "_pillar": 1,
+      "_strategy": "hayek_information_system_conclusion"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 1945 paper was written during WWII — when Western economies had become heavily centralized for wartime production. What was Hayek's worry about extending wartime methods into peacetime?",
+      "answer": "Wartime planning works on a narrow goal everyone agrees on — peacetime planning has no such consensus, exposing the knowledge gap",
+      "choices": [
+        "Wartime planning works on a narrow goal everyone agrees on — peacetime planning has no such consensus, exposing the knowledge gap",
+        "Wartime planning is too expensive to maintain — but Hayek otherwise supported continued central direction of industry",
+        "Wartime planning depended on military discipline — and Hayek wanted to extend conscription into peacetime management",
+        "Wartime planning had failed by 1945 — so Hayek argued for an immediate return to the prewar laissez-faire arrangement"
+      ],
+      "context": "Hayek 1945 and Road to Serfdom 1944 came out a year apart — both warning that wartime habits would carry into peacetime planning and produce political costs as well as the economic ones. Postwar Britain and continental Europe largely ignored him.",
+      "_pillar": 1,
+      "_strategy": "hayek_wartime_planning_warning"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 1974 Nobel was shared with Gunnar Myrdal, a Swedish socialist. In his Nobel lecture 'The Pretence of Knowledge,' Hayek warned economists against what specific error?",
+      "answer": "Imitating natural sciences by pretending to measure what can't be measured — then using the pretense to justify intervention",
+      "choices": [
+        "Imitating natural sciences by pretending to measure what can't be measured — then using the pretense to justify intervention",
+        "Citing too many old economists in their papers — Hayek argued literature should focus exclusively on current data sets",
+        "Refusing to publish negative results — Hayek wanted journals to require all empirical findings to be reported quarterly",
+        "Building too many computers — Hayek thought economic departments should rely on hand-calculated econometric tables"
+      ],
+      "context": "Hayek's 1974 Nobel lecture attacked the scientism of postwar economics — its imitation of physics in form without the data-controlled experiments that physics actually has. The complaint anticipated the modern replication crisis in social science.",
+      "_pillar": 1,
+      "_strategy": "hayek_nobel_lecture_1974"
+    },
+    {
+      "tier": 3,
+      "question": "Austrian Business Cycle Theory says boom-bust cycles are caused by central banks pushing interest rates below the natural rate. From June 2003 to June 2004, the Federal Reserve held the fed funds rate at 1%. What did ABCT predict?",
+      "answer": "An artificial credit boom in long-horizon assets — most clearly housing — followed by an inevitable bust when rates rose",
+      "choices": [
+        "An artificial credit boom in long-horizon assets — most clearly housing — followed by an inevitable bust when rates rose",
+        "Sustained non-inflationary growth — ultra-low rates would permanently raise the economy's productive capacity nationwide",
+        "Deflation in consumer prices — low rates would drive savings up and depress prices for the indefinite future of the economy",
+        "Equal effect across all sectors — monetary policy is neutral and affects every industry by identical percentage points"
+      ],
+      "context": "Mises 1912 and Hayek 1931 had laid out ABCT. Peter Schiff, Ron Paul, and Mark Thornton publicly warned of the housing bubble in 2004-2006 using ABCT. The mainstream profession overwhelmingly missed it; the Austrians called it.",
+      "_pillar": 1,
+      "_strategy": "abct_2008_prediction_setup"
+    },
+    {
+      "tier": 3,
+      "question": "US housing prices peaked in mid-2006 and then fell. By March 2008, Bear Stearns was sold for $2 a share in a Fed-arranged rescue. Lehman Brothers filed for bankruptcy on September 15, 2008. What does ABCT call this sequence?",
+      "answer": "The inevitable correction — malinvestments made during artificial credit expansion must liquidate when rates normalize",
+      "choices": [
+        "The inevitable correction — malinvestments made during artificial credit expansion must liquidate when rates normalize",
+        "Animal spirits — Keynes's term for sudden mood shifts among investors that have no underlying monetary cause",
+        "Random shock — the Black Swan thesis says crises like 2008 are unpredictable surprises with no theoretical signature",
+        "Coordination failure — game-theory models attribute crashes to mis-coordinated expectations among rational actors"
+      ],
+      "context": "Bear Stearns sale: March 16, 2008 (JPMorgan, $2/share, later raised to $10). Lehman bankruptcy: Sept 15, 2008, $639B in assets. The bust pattern — long-horizon assets falling first, then financial firms holding them — matches ABCT precisely.",
+      "_pillar": 1,
+      "_strategy": "abct_2008_bust_sequence"
+    },
+    {
+      "tier": 3,
+      "question": "Peter Schiff appeared on Fox Business in 2006-2007 warning of a housing bust, mortgage securities collapse, and Fed-created crisis. Other guests laughed. By late 2008 his predictions had landed. What framework was Schiff using?",
+      "answer": "Austrian Business Cycle Theory — applied to Greenspan's 2003-04 rate cuts and the housing credit boom that followed",
+      "choices": [
+        "Austrian Business Cycle Theory — applied to Greenspan's 2003-04 rate cuts and the housing credit boom that followed",
+        "Modern Monetary Theory — which predicted the 2008 crisis through analysis of federal government deficit spending",
+        "Behavioral economics — based on observed irrationality in mortgage applicants during the housing boom years",
+        "New Keynesian models — which had forecast the 2008 crisis using detailed simulations of mortgage default rates"
+      ],
+      "context": "'Peter Schiff Was Right' compilation videos went viral after 2008. He applied ABCT publicly. Mainstream economists in the same period — Bernanke, Greenspan, Krugman — overwhelmingly missed the crisis, with some explicitly denying a housing bubble existed in 2005-2006.",
+      "_pillar": 1,
+      "_strategy": "peter_schiff_was_right"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 1931 book 'Prices and Production' — the canonical statement of ABCT — argues that artificially low rates distort not just the AMOUNT but the SHAPE of investment. Where does the distortion show up?",
+      "answer": "In the time-structure — too much goes to long-horizon projects that only look profitable when rates stay artificially low",
+      "choices": [
+        "In the time-structure — too much goes to long-horizon projects that only look profitable when rates stay artificially low",
+        "In the labor mix — too much hiring goes to skilled workers when central banks lower interest rates significantly",
+        "In the geography — too much investment goes to coastal cities and not enough to interior agricultural regions",
+        "In the size of firms — only multinational corporations expand during artificial credit booms in modern economies"
+      ],
+      "context": "Hayek 1931 emphasizes the time-structure of production. Cheap credit makes long-term projects (housing, capital-intensive industry, R&D) look more profitable than they really are. When rates normalize, those projects look like losers. The 2006-2008 pattern.",
+      "_pillar": 1,
+      "_strategy": "hayek_prices_production_time_structure"
+    },
+    {
+      "tier": 3,
+      "question": "Mises's 1912 'Theory of Money and Credit' first sketched ABCT. Hayek expanded it in 1931. Their argument was that boom-bust cycles aren't inherent to capitalism. What did they say causes the cycle?",
+      "answer": "Central bank credit expansion — without manipulated rates, no systematic mechanism produces boom-bust cycles",
+      "choices": [
+        "Central bank credit expansion — without manipulated rates, no systematic mechanism produces boom-bust cycles",
+        "Investor psychology — animal spirits inevitably produce cycles regardless of any monetary policy stance taken",
+        "Productivity shocks — random changes in technology cause cycles that no monetary regime can prevent or smooth",
+        "Trade imbalances — booms and busts result from current account surpluses and deficits between trading nations"
+      ],
+      "context": "The Austrian counter-claim to mainstream cycle theories. Cycles aren't a feature of free markets — they're the artifact of central-bank credit creation that pushes rates below what borrowers would willingly pay savers. End the manipulation, end the cycle.",
+      "_pillar": 1,
+      "_strategy": "mises_1912_hayek_1931_combined"
+    },
+    {
+      "tier": 3,
+      "question": "ABCT predicts that during the boom, capital flows into long-horizon, rate-sensitive sectors. In the 2003-2006 US boom, which sector experienced exactly this pattern, while mainstream forecasters insisted nothing was unusual?",
+      "answer": "Residential housing — homebuilding ran years above trend, prices doubled in many markets, mortgage debt exploded",
+      "choices": [
+        "Residential housing — homebuilding ran years above trend, prices doubled in many markets, mortgage debt exploded",
+        "Manufacturing equipment — factories overbuilt productive capacity across Rust Belt cities throughout that period",
+        "Agricultural land — Midwest farm prices rose sharply on cheap credit during those years across the Plains states",
+        "Commercial real estate — shopping mall construction in suburban areas was the primary credit-fueled investment"
+      ],
+      "context": "Housing was the clearest example. Case-Shiller national home-price index roughly doubled 2000-2006. Subprime mortgages, no-doc loans, mortgage-backed securities — all built on the assumption that the Fed-cheap-credit era would continue.",
+      "_pillar": 1,
+      "_strategy": "abct_housing_specifically"
+    },
+    {
+      "tier": 3,
+      "question": "After Lehman's Sept 2008 bankruptcy, the US launched the $700B TARP and Quantitative Easing. The Fed's balance sheet went from ~$900B to over $4T by 2014. From an Austrian perspective, what did this response do?",
+      "answer": "It re-flated the bubble — preventing the cleansing liquidation ABCT says is required to restore sound investment patterns",
+      "choices": [
+        "It re-flated the bubble — preventing the cleansing liquidation ABCT says is required to restore sound investment patterns",
+        "It successfully ended the crisis — the rapid Fed response in 2008-09 fully resolved the underlying monetary distortions",
+        "It produced sound recovery — by 2010 the US economy had reached fully sustainable post-crisis growth without side effects",
+        "It had no effect — Federal Reserve actions in the aftermath of the financial crisis were largely symbolic in consequence"
+      ],
+      "context": "Austrians see the post-2008 response as the opposite of the medicine ABCT calls for. The malinvestments weren't allowed to liquidate; banks were bailed out; rates went to zero. The next cycle was baked in. The 2021-2023 inflation was the downstream consequence.",
+      "_pillar": 1,
+      "_strategy": "abct_post_2008_response"
+    },
+    {
+      "tier": 3,
+      "question": "Greenspan's October 23, 2008 testimony before Henry Waxman's committee said he had been in 'shocked disbelief' that his model had a flaw. What did Greenspan confess he had wrongly believed?",
+      "answer": "Lending institutions' self-interest would protect shareholders — additional regulation or oversight wasn't required",
+      "choices": [
+        "Lending institutions' self-interest would protect shareholders — additional regulation or oversight wasn't required",
+        "ABCT was wrong — Greenspan testified that the Austrian framework had finally been vindicated by the 2008 events",
+        "His Ayn Rand career had blinded him — Greenspan repudiated his entire economic philosophy that day in detail",
+        "Lehman should have been saved — Greenspan said he regretted advising against a Lehman bailout the prior month"
+      ],
+      "context": "Greenspan's testimony said his model had a flaw — about market self-regulation, not monetary policy. The confession left the deeper question of whether HE had caused the bubble (by holding rates at 1% in 2003-04) untouched.",
+      "_pillar": 1,
+      "_strategy": "greenspan_2008_testimony"
+    },
+    {
+      "tier": 3,
+      "question": "Frédéric Bastiat's 1850 pamphlet 'That Which Is Seen and That Which Is Not Seen' opens with a broken-window scenario. A shopkeeper's window is smashed; a crowd consoles him by saying it 'creates work for the glazier.' What's Bastiat's deeper point?",
+      "answer": "The window-fix money would have bought shoes or books — glazier work is visible but other tradesmen suffer hidden loss",
+      "choices": [
+        "The window-fix money would have bought shoes or books — glazier work is visible but other tradesmen suffer hidden loss",
+        "The window-fix creates double employment — both glazier and shoemaker benefit from the broken-window scenario together",
+        "The window-fix proves economic growth — destruction always raises GDP figures in the year that immediately follows",
+        "The window-fix has no real effect — Bastiat believed all economic activity nets to zero across actors and time"
+      ],
+      "context": "Bastiat 1850 is the founding statement of opportunity-cost reasoning in popular form. Henry Hazlitt's 'Economics in One Lesson' (1946) is the modern restatement. The 'broken window fallacy' name comes from Bastiat directly.",
+      "_pillar": 1,
+      "_strategy": "bastiat_broken_window_deep"
+    },
+    {
+      "tier": 3,
+      "question": "Bastiat's 1850 'The Law' attacks what he calls 'legal plunder' — the use of law to transfer property from one citizen to another for the benefit of the second. He gives a test for spotting it. What's the test?",
+      "answer": "Whether the law takes from one to give to another — what the first didn't owe and what the second didn't earn",
+      "choices": [
+        "Whether the law takes from one to give to another — what the first didn't owe and what the second didn't earn",
+        "Whether the law was passed unanimously — legal plunder only exists where a single legislator voted against the measure",
+        "Whether the law applies equally — Bastiat believed any uniform law was just regardless of its content or its effects",
+        "Whether the law was signed by a king — Bastiat thought all royal decrees were plunder and all legislative ones were just"
+      ],
+      "context": "Bastiat's 'The Law' (June 1850, a few months before his death) is one of the most-translated classical-liberal pamphlets. The 'legal plunder' concept anticipates modern public-choice work on rent-seeking. Cato circulated millions of copies in the late 20th century.",
+      "_pillar": 1,
+      "_strategy": "bastiat_law_legal_plunder"
+    },
+    {
+      "tier": 3,
+      "question": "Bastiat's 1845 'Candle Makers' Petition' satirized French candle and lamp makers petitioning Parliament against 'unfair competition from a foreign rival supplying light at a price absurdly below our own.' Who is this rival?",
+      "answer": "The Sun — Bastiat shows that protection-from-competition arguments, if consistent, demand a law shuttering sunlight",
+      "choices": [
+        "The Sun — Bastiat shows that protection-from-competition arguments, if consistent, demand a law shuttering sunlight",
+        "The British — Bastiat's pamphlet directly named English candle exporters as the threat to French manufacturers in 1845",
+        "The Belgians — Bastiat argued that small French-speaking neighbors were undercutting Paris candle makers via dumping",
+        "The Russians — Bastiat believed Tsarist suppliers were the main competitive threat to French candle manufacturing then"
+      ],
+      "context": "The 'Candlemakers' Petition' is the most famous reductio ad absurdum in economic literature. By treating the Sun as the unfair foreign competitor, Bastiat exposes the absurdity of protectionist arguments. Read at every intro free-trade lecture for 175 years.",
+      "_pillar": 1,
+      "_strategy": "bastiat_candlemakers_petition"
+    },
+    {
+      "tier": 3,
+      "question": "A construction crew tears down an old building. A bystander says 'good, that creates work.' Bastiat's method tells you how to think about this claim. Where does the seen-vs-unseen analysis lead?",
+      "answer": "The torn building was past saved labor and capital — destroying it consumes what existed; it doesn't create wealth",
+      "choices": [
+        "The torn building was past saved labor and capital — destroying it consumes what existed; it doesn't create wealth",
+        "The new project is bigger — so destruction always pays for itself when modernization is the goal of the redevelopment",
+        "Construction jobs pay better than demolition jobs — so the net effect is positive for the local labor market overall",
+        "Tax revenues from new construction exceed lost property taxes — so government always profits from urban demolition"
+      ],
+      "context": "Bastiat's method generalizes to every 'destruction is good for the economy' claim — wars, natural disasters, planned obsolescence. The visible activity is real; the invisible loss (what the resources WOULD have built had they not been spent fixing destruction) is larger.",
+      "_pillar": 1,
+      "_strategy": "bastiat_demolition_method"
+    },
+    {
+      "tier": 3,
+      "question": "Bastiat's 1850 essay sourced the famous line: 'The bad economist confines himself to the visible effect; the good economist takes into account both the effect that can be seen and those that must be foreseen.' What broader habit does this prescribe?",
+      "answer": "Track second-order effects — what the visible action prevents from happening, not just what it makes happen",
+      "choices": [
+        "Track second-order effects — what the visible action prevents from happening, not just what it makes happen",
+        "Trust government statistics — Bastiat thought official numbers were the only reliable measure of true economic activity",
+        "Avoid theoretical reasoning — Bastiat said economists should rely only on direct observation of factories and markets",
+        "Use mathematical proofs — Bastiat believed every economic claim should be supported by formal algebraic derivation"
+      ],
+      "context": "Henry Hazlitt's 'Economics in One Lesson' (1946) opens by quoting this passage and explicitly extending Bastiat. Thomas Sowell often calls 'thinking past the first stage' the defining habit of an economist. All three are running the same playbook.",
+      "_pillar": 1,
+      "_strategy": "bastiat_foreseen_effects_quote"
+    },
+    {
+      "tier": 3,
+      "question": "A town passes a 'buy local' ordinance: city money must be spent at city businesses, not on cheaper goods from elsewhere. Supporters say it 'keeps wealth in the community.' Apply Bastiat's seen-and-unseen method. What does it reveal?",
+      "answer": "Higher prices reduce what residents can buy elsewhere — the loss to those other tradesmen is hidden, but real",
+      "choices": [
+        "Higher prices reduce what residents can buy elsewhere — the loss to those other tradesmen is hidden, but real",
+        "The town becomes wealthier — by recycling its own money internally with no compensating loss to outside trade",
+        "Local jobs grow without bound — Bastiat's method confirms that buy-local laws produce net employment gains",
+        "Outside merchants benefit too — protectionism between towns always produces win-win outcomes through specialization"
+      ],
+      "context": "The 'buy local' argument is a small-scale version of the protectionist fallacy Bastiat dissected. Money 'kept in the community' at a higher price is money the community can't spend on other things. The seen benefit (local sales) hides the unseen cost.",
+      "_pillar": 1,
+      "_strategy": "bastiat_buy_local_application"
+    },
+    {
+      "tier": 3,
+      "question": "Richard Cantillon was an Irish-French banker who made a fortune trading John Law's Mississippi Bubble shares before the 1720 crash. His posthumous 'Essai' (1755) made a key observation. What is the 'Cantillon effect'?",
+      "answer": "New money enters at specific points — early recipients buy at OLD prices; by the time it ripples out, prices have risen",
+      "choices": [
+        "New money enters at specific points — early recipients buy at OLD prices; by the time it ripples out, prices have risen",
+        "New money raises all prices simultaneously — Cantillon's law states monetary expansion is exactly neutral across actors",
+        "New money is destroyed by trade — Cantillon argued that international commerce eliminates monetary expansion's effects",
+        "New money causes deflation — Cantillon's paradox holds that printing more currency always reduces the price level"
+      ],
+      "context": "Cantillon (~1680-1734) predates Adam Smith by half a century. He survived the Law bubble that ruined many of his clients. The Essai was published 21 years after his death and influenced French and Scottish classical economics deeply.",
+      "_pillar": 1,
+      "_strategy": "cantillon_effect_deep"
+    },
+    {
+      "tier": 3,
+      "question": "John Law's 1719-1720 Mississippi Company scheme issued paper notes against speculative future French Louisiana profits. Cantillon, who knew Law personally, observed something his contemporaries missed about who benefited.",
+      "answer": "Those closest to the new money — bankers, court favorites, insiders profited; ordinary holders lost as prices rose later",
+      "choices": [
+        "Those closest to the new money — bankers, court favorites, insiders profited; ordinary holders lost as prices rose later",
+        "Everyone benefited equally — the Mississippi notes circulated so smoothly that distribution effects didn't exist in practice",
+        "Only foreign holders benefited — Cantillon believed only Dutch and English investors profited from the Mississippi scheme",
+        "Only the French king benefited — all gains went to the crown rather than to any private participants involved"
+      ],
+      "context": "Cantillon walked out of Law's bubble with a fortune, in part because he saw who got the new money first. The pattern — early recipients win, late recipients lose — is what modern Austrians call the Cantillon effect. The redistributive shadow of every monetary expansion.",
+      "_pillar": 1,
+      "_strategy": "cantillon_john_law_mississippi"
+    },
+    {
+      "tier": 3,
+      "question": "Apply the Cantillon effect to the 2020 US response to COVID. The Fed expanded its balance sheet by trillions; federal deficits ran multi-trillions; asset prices rose sharply through 2021. What does the Cantillon view say happened?",
+      "answer": "Asset holders and large financial firms benefited first — wage earners and savers saw the cost arrive later as inflation",
+      "choices": [
+        "Asset holders and large financial firms benefited first — wage earners and savers saw the cost arrive later as inflation",
+        "All Americans benefited equally — pandemic stimulus checks distributed new money evenly across income brackets nationwide",
+        "Only the poorest benefited — the EITC and child credit changes meant low-income households gained disproportionately well",
+        "Nobody benefited — pandemic monetary expansion was sterile and produced no distributional effects of any sort whatsoever"
+      ],
+      "context": "The 2020-2022 cycle was Cantillon-textbook. Asset prices rose first (Wall Street, real estate, crypto). CPI inflation peaked at 9.1% in June 2022, hitting savers and wage earners hardest. The redistribution from late to early recipients was massive.",
+      "_pillar": 1,
+      "_strategy": "cantillon_2020_application"
+    },
+    {
+      "tier": 3,
+      "question": "The Cantillon effect explains a paradox: monetary inflation is often called a 'tax on the poor,' yet official inflation measures sometimes look modest while asset prices roar. Why does the Cantillon framework predict this?",
+      "answer": "Early recipients bid up assets first — CPI tracks consumer goods, missing the asset-price effect that hits savers hardest",
+      "choices": [
+        "Early recipients bid up assets first — CPI tracks consumer goods, missing the asset-price effect that hits savers hardest",
+        "Inflation only counts grocery prices — official CPI excludes all financial products by design across every published measure",
+        "The poor own no assets — therefore monetary expansion cannot affect them in any direct or indirect way whatsoever",
+        "CPI is fabricated — there is no actual measurement of consumer prices in any developed economy in any year at all"
+      ],
+      "context": "This Cantillon framing is why Austrians argue inflation is regressive even when CPI looks tame. House prices, stock indices, and crypto soaking up new money is a wealth transfer from those who don't own these assets to those who do. The tax is real.",
+      "_pillar": 1,
+      "_strategy": "cantillon_asset_vs_cpi"
+    },
+    {
+      "tier": 3,
+      "question": "Cantillon's 1755 'Essai' was rediscovered by William Stanley Jevons in 1881 and called 'the cradle of political economy.' It predated Smith's 'Wealth of Nations' by decades. Why has his name remained obscure?",
+      "answer": "Published posthumously, in French, narrowly circulated — Smith's 1776 work in English to a popular audience eclipsed it",
+      "choices": [
+        "Published posthumously, in French, narrowly circulated — Smith's 1776 work in English to a popular audience eclipsed it",
+        "His work was discredited — modern econometric testing showed his observations were statistically false across every study",
+        "He was a fraud — modern scholarship has demonstrated that Cantillon did not write the Essai attributed to his name",
+        "His work covered only banking — Cantillon never discussed broader markets or division of labor in any of his writings"
+      ],
+      "context": "Cantillon was murdered in London in 1734 (probably by a disgruntled chef, though the case is unsolved). His manuscript circulated in French intellectual circles before publication. Smith's 1776 work, in English to a popular Scottish audience, eclipsed it in fame.",
+      "_pillar": 1,
+      "_strategy": "cantillon_obscurity_explanation"
+    },
+    {
+      "tier": 3,
+      "question": "Murray Rothbard arrived at New York University in 1956 as a freshly-minted PhD with Joseph Dorfman on his committee. His dissertation was published in 1963 as a deeply Austrian reinterpretation of one specific US event. What event?",
+      "answer": "The Great Depression — 'America's Great Depression' argued the Fed caused the 1929 crash through 1920s credit expansion",
+      "choices": [
+        "The Great Depression — 'America's Great Depression' argued the Fed caused the 1929 crash through 1920s credit expansion",
+        "The Civil War — Rothbard's dissertation analyzed Lincoln's economic policies and Northern industrial finance through 1865",
+        "The Spanish-American War — Rothbard examined McKinley's gold-standard politics and Cuban sugar trade arrangements then",
+        "The Whiskey Rebellion — Rothbard reinterpreted Washington-era frontier economics and federal taxation under Hamilton"
+      ],
+      "context": "Rothbard's 'America's Great Depression' (1963) applies ABCT to the 1929 crash and 1930s slump. He blames Fed credit expansion in the 1920s, Hoover's interventions (not Roosevelt's, mostly), and the slow liquidation pattern. Foundational for modern Austrian macro.",
+      "_pillar": 1,
+      "_strategy": "rothbard_americas_great_depression_1963"
+    },
+    {
+      "tier": 3,
+      "question": "Thomas Sowell entered Chicago for his PhD in the late 1960s. His dissertation supervisor was Milton Friedman, and he completed his degree in 1968. What broader intellectual journey had Sowell taken before arriving at Chicago?",
+      "answer": "From Marxism — Sowell had been a Marxist as a young man and reasoned his way out through evidence and study",
+      "choices": [
+        "From Marxism — Sowell had been a Marxist as a young man and reasoned his way out through evidence and study",
+        "From Keynesianism — Sowell had been a leading New Deal advocate before switching to monetarism at Chicago",
+        "From Austrian school — Sowell had been a Misesian and converted to Chicago monetarism under Friedman's influence",
+        "From mainstream — Sowell had no prior school commitment and chose Chicago for its location rather than philosophy"
+      ],
+      "context": "Sowell describes his journey in 'A Personal Odyssey' (2000). The Department of Labor internship (1961) — observing how minimum-wage policy actually played out — was the decisive moment. The data didn't fit the Marxist theory. Sowell followed the evidence.",
+      "_pillar": 1,
+      "_strategy": "sowell_chicago_friedman_1968"
+    },
+    {
+      "tier": 3,
+      "question": "Thomas Sowell's 'Knowledge and Decisions' (1980) is widely considered his magnum opus. Sowell himself called it 'the most important book I have written.' What's its central argument, built on Hayek 1945?",
+      "answer": "Different decision systems handle dispersed knowledge differently — markets process it better than committees do",
+      "choices": [
+        "Different decision systems handle dispersed knowledge differently — markets process it better than committees do",
+        "Knowledge is impossible — Sowell's 1980 book argues no decision-maker ever has enough information to choose anything",
+        "Education solves all problems — Sowell argued more universal schooling would eliminate every economic and social ill",
+        "Government must coordinate — Sowell's book proposes a national database to pool knowledge across decision-makers fully"
+      ],
+      "context": "Sowell explicitly built 'Knowledge and Decisions' on Hayek 1945. The book extends the price-system insight to ALL decision-making institutions: families, firms, governments, courts. The trade-offs in how knowledge gets processed determine which institutions perform well.",
+      "_pillar": 1,
+      "_strategy": "sowell_knowledge_decisions_1980"
+    },
+    {
+      "tier": 3,
+      "question": "Murray Rothbard ran a weekly Monday-night seminar in his Manhattan apartment from the 1960s through his death in 1995. Hoppe, Block, Salerno passed through. What broader role did the seminar serve?",
+      "answer": "Kept the Austrian school alive — Mises died 1973, programs ignored Austrian work, Rothbard sustained the network",
+      "choices": [
+        "Kept the Austrian school alive — Mises died 1973, programs ignored Austrian work, Rothbard sustained the network",
+        "Was purely social — Rothbard's Monday-night gatherings were not actually about economics in any substantive way",
+        "Was Marxist — Rothbard ran a Trotskyist study circle until his death, in opposition to his published economic work",
+        "Was tiny — Rothbard's seminar had only one or two attendees and produced no lasting intellectual influence at all"
+      ],
+      "context": "Rothbard's Monday-night seminars produced the next generation of Austrian scholars. Combined with the Mises Institute (founded 1982 at Auburn) and the Foundation for Economic Education, this private infrastructure carried the school through Keynesian-monetarist dominance.",
+      "_pillar": 1,
+      "_strategy": "rothbard_monday_night_seminars"
+    },
+    {
+      "tier": 3,
+      "question": "Thomas Sowell's 1981 'Ethnic America' surveyed immigrant groups — Jewish, Italian, Irish, Chinese, German, Black. Sowell drew a conclusion that ran against the dominant 1981 explanation of group differences. What was the finding?",
+      "answer": "Cultural patterns from each group's origin — explained outcomes more than discrimination alone could account for",
+      "choices": [
+        "Cultural patterns from each group's origin — explained outcomes more than discrimination alone could account for",
+        "Discrimination explained everything — Sowell concluded that the only causal factor in group outcomes was racial bias",
+        "Genetics explained the differences — Sowell's 1981 book argued for heritable IQ as the master variable across groups",
+        "Geography explained the differences — Sowell argued that climate alone determined the economic success of every group"
+      ],
+      "context": "Sowell's empirical comparative work spans 'Ethnic America' (1981), 'Migrations and Cultures' (1996), 'Conquests and Cultures' (1998). The pattern across his books: cultural endowments transferred from origins predict outcomes more than current discrimination does.",
+      "_pillar": 1,
+      "_strategy": "sowell_ethnic_america_1981"
+    },
+    {
+      "tier": 3,
+      "question": "Rothbard helped found the Libertarian Party in 1971 but broke with it in 1989 over what he called 'modal libertarianism.' What was his complaint?",
+      "answer": "Drift from a working-class populist base — toward an upscale cosmopolitan posture he considered politically dead",
+      "choices": [
+        "Drift from a working-class populist base — toward an upscale cosmopolitan posture he considered politically dead",
+        "The party had become too friendly to Marxism — Rothbard thought it had embraced Soviet-style central planning by 1980",
+        "The party had abandoned Austrian economics — Rothbard objected that LP platforms endorsed Keynesian deficit spending",
+        "The party had endorsed Reagan — Rothbard objected to the LP supporting any Republican presidential candidate in any year"
+      ],
+      "context": "Rothbard's 1989 break led to the 'paleolibertarian' move with Lew Rockwell — an attempt to root libertarianism in conservative working-class culture rather than upper-middle-class lifestyle politics. The John Randolph Club emerged from this realignment.",
+      "_pillar": 1,
+      "_strategy": "rothbard_lp_break_1989"
+    },
+    {
+      "tier": 3,
+      "question": "Sowell's 'A Conflict of Visions' (1987) distinguishes two ways of seeing human nature and society. Sowell argues most political disagreements come from this divide. What are his two visions?",
+      "answer": "Constrained — human nature is fixed, trade-offs inevitable — versus unconstrained — nature is improvable, solutions exist",
+      "choices": [
+        "Constrained — human nature is fixed, trade-offs inevitable — versus unconstrained — nature is improvable, solutions exist",
+        "Capitalist — markets work freely — versus socialist — government must own all means of production at every scale",
+        "Religious — God designs society — versus secular — humans alone construct the social order without divine input",
+        "American — open society — versus European — closed society — Sowell's central distinction is geographic in nature"
+      ],
+      "context": "Sowell's 'A Conflict of Visions' (1987, revised 2007) identifies Burke, Hayek, Hamilton, and Friedman as constrained-vision thinkers; Rousseau, Godwin, Veblen as unconstrained. Widely assigned in political philosophy and explains the moral structure of left-right disagreement.",
+      "_pillar": 1,
+      "_strategy": "sowell_conflict_of_visions_1987"
+    },
+    {
+      "tier": 3,
+      "question": "Murray Rothbard's 'Man, Economy, and State' (1962) was conceived as a textbook expansion of Mises's 'Human Action' (1949). Rothbard takes one further step Mises didn't fully take. What additional move does Rothbard make?",
+      "answer": "Extends praxeology consistently to government — treating the state as just another actor pursuing its own interests",
+      "choices": [
+        "Extends praxeology consistently to government — treating the state as just another actor pursuing its own interests",
+        "Rejects Mises's methodology — Rothbard's 1962 textbook replaces praxeology with empirical statistical methods entirely",
+        "Endorses Keynesianism — Rothbard incorporates aggregate-demand reasoning into the Austrian framework throughout his work",
+        "Embraces Marxism — Rothbard's textbook accepts the labor theory of value alongside Austrian subjective marginalism"
+      ],
+      "context": "Rothbard's extension into anarcho-capitalism comes from applying Mises's praxeology consistently. If individual action is the foundation, government can't be exempt from the same analysis. This is one of Rothbard's most controversial moves within the Austrian school.",
+      "_pillar": 1,
+      "_strategy": "rothbard_man_economy_state_1962"
+    },
+    {
+      "tier": 3,
+      "question": "James Buchanan and Gordon Tullock published 'The Calculus of Consent' in 1962. The book applies economic methodology — rational self-interest, marginal analysis — to politics. Why was this disruptive?",
+      "answer": "Mainstream theories treated officials as benevolent guardians — Buchanan-Tullock said they have their own interests like anyone",
+      "choices": [
+        "Mainstream theories treated officials as benevolent guardians — Buchanan-Tullock said they have their own interests like anyone",
+        "Mainstream theories treated politics as random — Buchanan-Tullock said voting outcomes were determined by lunar cycles alone",
+        "Mainstream theories ignored markets — Buchanan-Tullock said only markets matter and politics is irrelevant to outcomes",
+        "Mainstream theories used math — Buchanan-Tullock rejected all formal analysis in favor of purely narrative descriptions"
+      ],
+      "context": "Public choice theory dissolved the 'market failure → benevolent government fix' framing dominating postwar welfare economics. Treating the political agent as self-interested, you must compare imperfect markets to imperfect governments, not idealized planners.",
+      "_pillar": 1,
+      "_strategy": "buchanan_tullock_calculus_consent"
+    },
+    {
+      "tier": 3,
+      "question": "Gordon Tullock's 1967 paper 'The Welfare Costs of Tariffs, Monopolies, and Theft' coined what's now called 'rent-seeking,' formalized by Anne Krueger in 1974. What does rent-seeking refer to?",
+      "answer": "Spending real resources to capture political privileges — like lobbying for a tariff that benefits one firm at others' expense",
+      "choices": [
+        "Spending real resources to capture political privileges — like lobbying for a tariff that benefits one firm at others' expense",
+        "Renting office space in Washington DC — Tullock's narrow term for the geographic concentration of lobbying activity",
+        "Charging high prices for goods — rent-seeking meant firms that priced above marginal cost in Tullock's original usage",
+        "Collecting rents from tenants — Tullock used the term in his 1967 paper to describe ordinary landlord-tenant relationships"
+      ],
+      "context": "The 'rent' in rent-seeking is economic rent — payments above what's needed to bring a resource to market. Lobbying for a sugar quota costs real lawyer-hours and PR — that's deadweight loss, on top of the price distortion. Tullock's insight is that this triangle is big.",
+      "_pillar": 1,
+      "_strategy": "tullock_rent_seeking_1967"
+    },
+    {
+      "tier": 3,
+      "question": "Buchanan won the 1986 Nobel for public choice work. His Nobel lecture criticized something specific about postwar economics. What was the critique?",
+      "answer": "Postwar economics modeled markets carefully — but treated government as a perfect optimizer; that asymmetry was incoherent",
+      "choices": [
+        "Postwar economics modeled markets carefully — but treated government as a perfect optimizer; that asymmetry was incoherent",
+        "Postwar economics relied too heavily on free markets — Buchanan argued for greatly increased federal regulatory authority",
+        "Postwar economics ignored psychology — Buchanan said behavioral models should replace rational choice in all applications",
+        "Postwar economics underweighted China — Buchanan claimed Western academics had ignored East Asian growth patterns entirely"
+      ],
+      "context": "Buchanan's Nobel was awarded for 'his development of the contractual and constitutional bases for the theory of economic and political decision-making.' The 'symmetry' principle — same actor model in markets and politics — is the unifying methodological move of public choice.",
+      "_pillar": 1,
+      "_strategy": "buchanan_nobel_1986"
+    },
+    {
+      "tier": 3,
+      "question": "George Stigler's 'The Theory of Economic Regulation' (1971) extended public choice to a specific institutional pathology. Stigler argued regulatory agencies end up serving someone other than the public. Who?",
+      "answer": "The industries they regulate — incumbents capture regulators who become their gatekeepers against new entry",
+      "choices": [
+        "The industries they regulate — incumbents capture regulators who become their gatekeepers against new entry",
+        "The general public — Stigler argued postwar regulatory agencies had remarkable success in serving consumer interests",
+        "The President — Stigler's 1971 paper argued that regulators always defer to executive branch policy preferences alone",
+        "Foreign governments — Stigler claimed Soviet and Chinese influence dominated US regulatory agencies after World War II"
+      ],
+      "context": "Stigler's 'regulatory capture' became a foundational public-choice concept. The pattern — railroad regulators captured by railroads, broadcast regulators by broadcasters, banking regulators by banks — is observable across most major regulatory agencies. Stigler won the 1982 Nobel.",
+      "_pillar": 1,
+      "_strategy": "stigler_regulatory_capture_1971"
+    },
+    {
+      "tier": 3,
+      "question": "Public choice predicts a structural problem with democratic decisions on policies with CONCENTRATED benefits but DIFFUSE costs — like a sugar quota. Why does democracy systematically produce these outcomes against the broader public?",
+      "answer": "Sugar producers gain a lot each, lobby intensely — consumers each lose a little, so most don't even notice the policy",
+      "choices": [
+        "Sugar producers gain a lot each, lobby intensely — consumers each lose a little, so most don't even notice the policy",
+        "Sugar producers are more numerous than consumers — in any electorate, suppliers outvote buyers and so policy follows",
+        "Sugar producers are more articulate — they explain their interests in ways the typical consumer cannot comprehend at all",
+        "Sugar producers are wealthier — they bribe lawmakers directly, while consumers lack the resources to participate at all"
+      ],
+      "context": "Organized minorities beat unorganized majorities on policies where the math of attention favors the concentrated side. US sugar quotas, ethanol mandates, dairy compacts — all examples. The diffuse loser doesn't fight because his individual stake is tiny.",
+      "_pillar": 1,
+      "_strategy": "public_choice_concentrated_benefits"
+    },
+    {
+      "tier": 3,
+      "question": "Ronald Coase's 1937 paper 'The Nature of the Firm' asked a question economists hadn't formally asked: if markets coordinate so well through prices, why do firms exist? Why don't we contract everything in markets?",
+      "answer": "Market transactions have costs — searching, negotiating, enforcing contracts — firms exist when those exceed in-house costs",
+      "choices": [
+        "Market transactions have costs — searching, negotiating, enforcing contracts — firms exist when those exceed in-house costs",
+        "Firms exist because of regulation — without government-issued corporate charters, all production would happen through markets",
+        "Firms exist because of taxation — pre-1937 tax codes incentivized internal hierarchy over market-based coordination widely",
+        "Firms exist because of psychology — workers prefer being told what to do rather than negotiating each task individually"
+      ],
+      "context": "Coase's 1937 paper introduced 'transaction costs' as a concept. He used the idea again in 'The Problem of Social Cost' (1960) to analyze externalities. Both papers were cited in his 1991 Nobel. Coase died in 2013 at age 102, still publishing.",
+      "_pillar": 1,
+      "_strategy": "coase_nature_firm_1937"
+    },
+    {
+      "tier": 3,
+      "question": "Coase's 1960 'The Problem of Social Cost' challenged the standard Pigouvian solution to externalities (taxes on the polluter). The 'Coase theorem' that emerged says something striking. What?",
+      "answer": "If transaction costs are low and rights are clear — parties negotiate to an efficient outcome regardless of who is initially liable",
+      "choices": [
+        "If transaction costs are low and rights are clear — parties negotiate to an efficient outcome regardless of who is initially liable",
+        "Government always needs to set the pollution price — markets cannot ever reach efficient externality solutions on their own",
+        "Pollution is unsolvable — Coase's theorem argues that no possible institutional arrangement can address negative externalities",
+        "Property rights must be communally held — Coase argued individual ownership prevents efficient outcomes in any negotiation"
+      ],
+      "context": "The Coase theorem reframed externality policy debates. Even when full Coase-bargain conditions don't hold (most of the time), the framing shifts attention from 'tax the polluter' to 'how should we assign and structure property rights so the bargain becomes feasible?'",
+      "_pillar": 1,
+      "_strategy": "coase_theorem_1960"
+    },
+    {
+      "tier": 3,
+      "question": "Milton Friedman's 1962 'Capitalism and Freedom' argues that economic freedom is necessary — though not always sufficient — for political freedom. What's the mechanism Friedman identifies?",
+      "answer": "Economic power dispersed in markets prevents concentration of all power in the state — a key check on political authority",
+      "choices": [
+        "Economic power dispersed in markets prevents concentration of all power in the state — a key check on political authority",
+        "Economic prosperity makes voters happier — Friedman believed material wealth alone produces political-freedom outcomes",
+        "Economic exchange teaches reasoning — Friedman thought daily market participation made citizens more politically savvy",
+        "Economic specialization requires education — Friedman argued literacy spread through markets produced free political systems"
+      ],
+      "context": "Friedman's central thesis: no society has been politically free without also being economically free, even though many economically-free societies have unfree politics. The relationship is one-way necessary. The book emerged from his Chicago lectures and became hugely influential.",
+      "_pillar": 1,
+      "_strategy": "friedman_capitalism_freedom_1962"
+    },
+    {
+      "tier": 3,
+      "question": "Friedman's 1968 American Economic Association presidential address introduced the 'natural rate of unemployment.' The concept refuted a then-mainstream policy claim. What claim did Friedman attack?",
+      "answer": "Central banks could permanently lower unemployment by tolerating slight inflation — the simple Phillips curve trade-off",
+      "choices": [
+        "Central banks could permanently lower unemployment by tolerating slight inflation — the simple Phillips curve trade-off",
+        "That unemployment was caused by labor unions — Friedman argued union pressure was the only relevant variable",
+        "That unemployment was caused by automation — Friedman argued technology drove all postwar US joblessness data",
+        "That unemployment was a myth — Friedman's 1968 speech denied any meaningful concept of involuntary worker idleness"
+      ],
+      "context": "Friedman's 1968 address (and Edmund Phelps's independent same-year work) predicted any inflation-unemployment trade-off would unravel as workers adjusted expectations. The 1970s stagflation — high inflation AND high unemployment — vindicated him; the simple Phillips curve was dead.",
+      "_pillar": 1,
+      "_strategy": "friedman_natural_rate_1968"
+    },
+    {
+      "tier": 3,
+      "question": "Milton Friedman and Anna Schwartz's 'A Monetary History of the United States 1867-1960' (1963) reinterpreted the Great Depression. Their argument: the Fed caused it. By how much did the US money supply contract from 1929 to 1933?",
+      "answer": "About one-third — the largest monetary contraction in US history, alongside ~9000 bank failures across those four years",
+      "choices": [
+        "About one-third — the largest monetary contraction in US history, alongside ~9000 bank failures across those four years",
+        "About one percent — a normal seasonal variation that should not have produced any economic disturbance whatsoever",
+        "About a tenth of one percent — the money supply held steady through the Depression, refuting Friedman entirely outright",
+        "About one half of one percent — less than the supply had grown in the single year before the 1929 stock-market crash"
+      ],
+      "context": "Friedman + Schwartz turned the Great Depression narrative inside out. The institution founded in 1913 to prevent banking panics presided over the worst banking collapse and economic catastrophe in US history. Friedman noted the Depression vindicates Mises 1912 and Hayek 1931.",
+      "_pillar": 1,
+      "_strategy": "friedman_schwartz_monetary_history"
+    },
+    {
+      "tier": 3,
+      "question": "Eugen von Böhm-Bawerk's 'Capital and Interest' (1884) developed the Austrian theory of interest. Core idea: interest rates aren't arbitrary numbers set by banks. What do interest rates actually reflect?",
+      "answer": "Time preference — how much people value goods now versus the same goods later, varying across savers and borrowers",
+      "choices": [
+        "Time preference — how much people value goods now versus the same goods later, varying across savers and borrowers",
+        "Inflation expectations — interest rates in Böhm-Bawerk's theory respond only to expected changes in the money supply",
+        "Political pressure — Böhm-Bawerk argued interest rates were set arbitrarily by governments and have no market basis",
+        "Risk premiums — the entirety of any interest rate reflects expected default probabilities and nothing else at all"
+      ],
+      "context": "Böhm-Bawerk taught Mises, who taught Hayek and Rothbard. The time-preference theory is the foundation Austrians use to argue that central banks can't permanently lower rates — they can only mask the real time-preference reality, producing the distortions ABCT traces.",
+      "_pillar": 1,
+      "_strategy": "bohm_bawerk_time_preference"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek used the concept of 'spontaneous order' to describe how complex systems emerge from many individual choices without any central designer. He argued this happens not just in markets but in three other domains. Which?",
+      "answer": "Language, common law, and customs — systems with rules nobody designed but everyone follows",
+      "choices": [
+        "Language, common law, and customs — systems with rules nobody designed but everyone follows",
+        "Religion, military, and royalty — Hayek argued top-down designed institutions exhibit the same spontaneous-order properties",
+        "Astronomy, chemistry, and biology — Hayek thought the natural sciences were examples of spontaneous social order ultimately",
+        "Education, healthcare, and welfare — Hayek argued government-designed systems exemplify spontaneous-order principles broadly"
+      ],
+      "context": "Hayek developed spontaneous order in 'Law, Legislation and Liberty' (1973-1979). The insight: complex coordination can happen without a coordinator. English common law evolved case by case. Languages drift across millions of speakers. None of this is designed; all of it is ordered.",
+      "_pillar": 1,
+      "_strategy": "hayek_spontaneous_order_examples"
+    },
+    {
+      "tier": 3,
+      "question": "Carl Menger's 1871 'Principles of Economics' co-founded the marginal revolution alongside Jevons (England) and Walras (Lausanne). Menger's specific contribution was a value theory that overturned the classical labor theory. What's the Mengerian view?",
+      "answer": "Value is subjective — set by each individual's ranking of how a good serves their particular ends at the margin",
+      "choices": [
+        "Value is subjective — set by each individual's ranking of how a good serves their particular ends at the margin",
+        "Value is objective — set by the total labor hours needed to produce a good, summed across all stages of production",
+        "Value is conventional — set by tradition and legal custom rather than by either labor or marginal individual judgment",
+        "Value is impossible to determine — Menger's 1871 book denied any meaningful theory of value could be developed"
+      ],
+      "context": "Menger's subjective value theory dissolves the 'diamonds vs water' paradox classical economists had struggled with. Water is more useful in total, but the FIRST diamond serves a higher-ranked end for most people than the THOUSANDTH glass of water. Marginal subjective value.",
+      "_pillar": 1,
+      "_strategy": "menger_subjective_value_1871"
+    },
+    {
+      "tier": 3,
+      "question": "Mises's 1922 'Socialism' is a 500-page expansion of his 1920 calculation argument. The book addressed not just economic but moral and cultural critiques of socialism. It famously converted one prominent thinker. Who?",
+      "answer": "Friedrich Hayek — Hayek said reading Mises's 'Socialism' in his Vienna student years changed his political-economic views",
+      "choices": [
+        "Friedrich Hayek — Hayek said reading Mises's 'Socialism' in his Vienna student years changed his political-economic views",
+        "John Maynard Keynes — Keynes read Mises in 1922 and converted from Fabian socialism to free-market economics in that year",
+        "Joseph Stalin — Stalin reportedly read Mises's 'Socialism' in 1923 and quietly modified Soviet economic policy in response",
+        "Karl Marx — Marx encountered Mises's 1922 book and retracted his earlier 'Capital' in a posthumous addendum that year"
+      ],
+      "context": "Hayek wrote in tribute that reading Mises's 'Socialism' was decisive for his intellectual development. The book ran in multiple editions, was translated widely, and made Mises an internationally controversial figure. Marx had died in 1883; Keynes never converted.",
+      "_pillar": 1,
+      "_strategy": "mises_socialism_1922_hayek"
+    },
+    {
+      "tier": 3,
+      "question": "Mises ran a 'Privatseminar' in Vienna 1920-1934 — a weekly evening seminar at his Chamber of Commerce office. Who passed through this remarkable gathering?",
+      "answer": "Hayek, Machlup, Morgenstern, Haberler, Voegelin, Schütz, Kaufmann — many future giants of economics and social theory",
+      "choices": [
+        "Hayek, Machlup, Morgenstern, Haberler, Voegelin, Schütz, Kaufmann — many future giants of economics and social theory",
+        "Lenin, Trotsky, and Stalin — the Mises Kreis was secretly the meeting place for the early Bolshevik leadership in Europe",
+        "Freud, Jung, and Adler — Mises's seminar was actually a psychoanalysis circle disguised as economic discussion sessions",
+        "Wittgenstein, Heidegger, Carnap — the Mises Kreis attracted exclusively philosophers without any economists involved"
+      ],
+      "context": "The Mises Kreis (1920-1934) was a giant of interwar Vienna's intellectual life. When Mises emigrated under Nazi threat in 1934, the circle dispersed across Europe and America. Several members became Nobel laureates or founders of distinct schools in their own fields.",
+      "_pillar": 1,
+      "_strategy": "mises_privatseminar_kreis"
+    },
+    {
+      "tier": 3,
+      "question": "Hayek's 'The Road to Serfdom' (1944) was a wartime book to the British public. It argued economic central planning leads by its own internal logic to political authoritarianism. What's the mechanism Hayek identified?",
+      "answer": "Planners must agree on goals — with no spontaneous consensus, plans require coercion; the worst-tempered rise to the top",
+      "choices": [
+        "Planners must agree on goals — with no spontaneous consensus, plans require coercion; the worst-tempered rise to the top",
+        "Planning fails economically — voters then reject the planning party and elect authoritarian leaders to restore prosperity",
+        "Planning is too efficient — once people see how well the plan works, they vote to give the planners more political power",
+        "Planning is unrelated to politics — Hayek's 1944 book has been broadly misinterpreted by readers across the spectrum"
+      ],
+      "context": "Hayek's argument: comprehensive economic plans require consensus on ends; democratic consensus doesn't form for detailed plans; planners must therefore choose; choosing requires coercion; coercion attracts certain personalities. The chapter 'Why the Worst Get on Top' is the crystallization.",
+      "_pillar": 1,
+      "_strategy": "hayek_road_to_serfdom_1944"
+    },
+    {
+      "tier": 3,
+      "question": "Henry Hazlitt's 1946 book 'Economics in One Lesson' restated Bastiat for a postwar American audience. The book's 'one lesson' is captured in a single sentence. What is it?",
+      "answer": "The art of economics consists in looking at the longer effects of any act or policy, and at all groups, not just one",
+      "choices": [
+        "The art of economics consists in looking at the longer effects of any act or policy, and at all groups, not just one",
+        "Economics shows that government spending always pays for itself if directed to socially useful purposes by experts",
+        "Economics demonstrates that all market prices are wrong, since only experts can determine the true value of goods",
+        "Economics proves that free trade is impossible, since every country needs tariffs to maintain employment levels at home"
+      ],
+      "context": "Hazlitt's book is the most widely-read popular-economics text of the 20th century — millions of copies, dozens of translations. The lesson distills Bastiat's seen-and-unseen method into a single discipline: extend reasoning to all groups and all time horizons before judging a policy.",
+      "_pillar": 1,
+      "_strategy": "hazlitt_economics_one_lesson"
+    },
+    {
+      "tier": 3,
+      "question": "The Bitcoin Genesis block was mined on January 3, 2009, with a coinbase reward of 50 BTC. These 50 coins are provably unspendable — no private key can ever spend them. Why does this matter for Bitcoin's design?",
+      "answer": "Proves no founder can spend the first coins — the 'immaculate conception' criticism is defused at block zero",
+      "choices": [
+        "Proves no founder can spend the first coins — the 'immaculate conception' criticism is defused at block zero",
+        "Was a bug — Satoshi tried to spend the coins later but couldn't because of a programming error in the original code",
+        "Was for tax reasons — Satoshi chose unspendable coins to avoid capital gains liability in his home country at launch",
+        "Was a security measure — Satoshi wanted to test whether the network could function without the first reward being moved"
+      ],
+      "context": "The Genesis-block 50 BTC sits at address 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa, forever unspendable. This is a deliberate engineering choice and a credibility move — no pre-mine, no founder allocation, no hidden treasury. The supply curve starts at block one with no exception.",
+      "_pillar": 2,
+      "_strategy": "genesis_block_unspendable_50btc"
+    },
+    {
+      "tier": 3,
+      "question": "The Bitcoin Genesis block's coinbase transaction contained an embedded message: 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.' The headline is from that day's London Times. Why did Satoshi embed it?",
+      "answer": "Dual purpose — timestamps the chain to a date AND signals Bitcoin's response to bank bailouts taking place that week",
+      "choices": [
+        "Dual purpose — timestamps the chain to a date AND signals Bitcoin's response to bank bailouts taking place that week",
+        "Satoshi was paid by The Times for the placement — the embedded headline was a paid promotional placement that week",
+        "Bitcoin's protocol requires every block to cite a newspaper — with the Genesis simply being the first in this series",
+        "The message was decryption-only — the actual purpose was to test whether nodes could read embedded ASCII text strings"
+      ],
+      "context": "The Times headline serves a dual purpose: it cryptographically proves the chain couldn't have been mined before January 3, 2009, and it editorializes the reason Bitcoin exists. The bailout context is part of Bitcoin's founding statement, encoded in block zero forever.",
+      "_pillar": 2,
+      "_strategy": "genesis_block_times_headline_deep"
+    },
+    {
+      "tier": 3,
+      "question": "Block 170 of the Bitcoin blockchain, mined January 12, 2009, recorded the first Bitcoin transaction: Satoshi sent 10 BTC to someone else. Who was the recipient — the first person to receive Bitcoin?",
+      "answer": "Hal Finney — cryptographer, RPOW developer, the first person besides Satoshi to run the Bitcoin software downloaded",
+      "choices": [
+        "Hal Finney — cryptographer, RPOW developer, the first person besides Satoshi to run the Bitcoin software downloaded",
+        "Wei Dai — author of b-money 1998, to whom Satoshi sent the first transaction as scientific credit for prior work",
+        "Adam Back — Hashcash creator 1997, who became the second Bitcoin node operator after exchanging emails with Satoshi",
+        "Nick Szabo — bit gold designer 2005, often suspected of being Satoshi but receiving the first transaction officially"
+      ],
+      "context": "Hal Finney (1956-2014) was a cryptographic pioneer at the PGP Corporation. He downloaded the Bitcoin software on January 11, 2009, and received Satoshi's first transfer the next day. Finney died of ALS in 2014; he was cryonically preserved by Alcor.",
+      "_pillar": 2,
+      "_strategy": "hal_finney_block_170"
+    },
+    {
+      "tier": 3,
+      "question": "On May 22, 2010, programmer Laszlo Hanyecz posted on Bitcointalk offering 10,000 BTC for two pizzas. Jeremy Sturdivant accepted; two Papa John's pizzas were delivered to Hanyecz's home in Jacksonville. What date is now celebrated?",
+      "answer": "Bitcoin Pizza Day — May 22 each year commemorates the first commercial Bitcoin transaction for a real-world good",
+      "choices": [
+        "Bitcoin Pizza Day — May 22 each year commemorates the first commercial Bitcoin transaction for a real-world good",
+        "Bitcoin Genesis Day — May 22 marks the anniversary of the first block being mined the previous year in 2009",
+        "Bitcoin Halving Day — May 22 is the anniversary of the first halving event in the Bitcoin protocol's history",
+        "Bitcoin Tax Day — May 22 became known as the day the IRS first ruled Bitcoin transactions to be taxable events"
+      ],
+      "context": "The 10,000 BTC pizzas would be worth around half a billion dollars at Bitcoin's late-2024 prices. Hanyecz has said he doesn't regret it — somebody had to demonstrate Bitcoin could pay for real things. Pizza Day has become a major community holiday.",
+      "_pillar": 2,
+      "_strategy": "pizza_day_may_22_2010"
+    },
+    {
+      "tier": 3,
+      "question": "The Bitcoin white paper was posted to a cryptography mailing list on October 31, 2008. 9 pages long, titled 'Bitcoin: A Peer-to-Peer Electronic Cash System.' What specific problem does the paper claim to solve?",
+      "answer": "The double-spending problem — preventing digital money from being copied and spent twice without a trusted intermediary",
+      "choices": [
+        "The double-spending problem — preventing digital money from being copied and spent twice without a trusted intermediary",
+        "The encryption problem — scrambling financial messages so that only the recipient can decode the transaction content",
+        "The speed problem — settling payments faster than banks could process them during the financial crisis years",
+        "The privacy problem — making all transactions completely anonymous and untraceable across the global network"
+      ],
+      "context": "Double-spend was the open challenge in digital cash before Bitcoin. DigiCash (Chaum 1989) needed a central issuer. B-money (Dai 1998) and bit gold (Szabo 2005) sketched solutions but couldn't fully implement them. The white paper's combination of proof-of-work + a public ledger solved it.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_whitepaper_double_spend"
+    },
+    {
+      "tier": 3,
+      "question": "Satoshi Nakamoto disappeared from Bitcoin in April 2011. The last verified message — sent to Mike Hearn — said only 'I've moved on to other things.' Satoshi's identity has never been confirmed. What's the recognition skill about this absence?",
+      "answer": "A protocol with no founder cannot be coerced by capturing one — leaderlessness is part of Bitcoin's credible neutrality",
+      "choices": [
+        "A protocol with no founder cannot be coerced by capturing one — leaderlessness is part of Bitcoin's credible neutrality",
+        "Bitcoin without Satoshi is rudderless — the protocol cannot upgrade itself and is destined to fail without his return",
+        "Satoshi must be a government agency — only a state actor would deliberately hide its identity after launching a project",
+        "Bitcoin without Satoshi is illegal — the protocol cannot meet regulatory requirements without an identifiable founder"
+      ],
+      "context": "Satoshi's voluntary departure left Bitcoin in a unique position: no founder to subpoena, sue, or pressure. The Satoshi-owned coins (estimated ~1 million BTC across early blocks) have never moved. The combination of unspendable Genesis + dormant founder coins anchors Bitcoin's credibility.",
+      "_pillar": 2,
+      "_strategy": "satoshi_disappearance_2011"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's block subsidy halves every 210,000 blocks — about every four years. The schedule progressed: 50 → 25 → 12.5 → 6.25 → 3.125 BTC per block. When does issuance reach effectively zero?",
+      "answer": "Around 2140 — the last fractional satoshi is expected to be mined then, capping supply near 21 million BTC",
+      "choices": [
+        "Around 2140 — the last fractional satoshi is expected to be mined then, capping supply near 21 million BTC",
+        "Around 2050 — the schedule was accelerated by the 2017 SegWit upgrade and the 2021 Taproot soft fork combined",
+        "Around 2200 — the halving period was extended to 50 years in a 2015 protocol update by Bitcoin Core developers",
+        "It never reaches zero — Bitcoin's protocol allows the block reward to continue indefinitely under a recent update"
+      ],
+      "context": "The geometric series 50 + 25 + 12.5 + ... converges to 100, meaning total mined BTC approaches 50 × 210,000 × 2 = 21 million. The last block reward becomes a single satoshi (10^-8 BTC), then drops to zero. Around block 6,930,000 — projected around 2140.",
+      "_pillar": 2,
+      "_strategy": "halving_schedule_2140"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's halving dates so far: 2012 (50→25), 2016 (25→12.5), 2020 (12.5→6.25), 2024 (6.25→3.125). The 2024 halving happened in April. What's specifically guaranteed about the supply schedule, regardless of who mines or trades?",
+      "answer": "Set in code — no central party can change it; only network-wide consensus could ever alter the schedule",
+      "choices": [
+        "Set in code — no central party can change it; only network-wide consensus could ever alter the schedule",
+        "Set by the Bitcoin Foundation — a board of directors votes on each halving's effective date and exact quantity",
+        "Set by the Federal Reserve — Bitcoin's issuance schedule was synchronized with Fed rate decisions after 2020",
+        "Set by major miners — pools controlling more than 51% of hashrate can vote to delay each halving in turn"
+      ],
+      "context": "The Bitcoin issuance schedule is a feature of the protocol code that every full node enforces independently. Changing it would require a hard fork that the majority of nodes refuse to upgrade to — economically very unlikely. The supply curve is mathematically certain.",
+      "_pillar": 2,
+      "_strategy": "halving_schedule_code_enforced"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's supply cap is approximately 21 million BTC. As of late 2024, around 19.7 million have been mined. The cap isn't exactly 21M because of rounding in the halving schedule. What's the precise figure?",
+      "answer": "Approximately 20,999,999.9769 BTC — the maximum approaches but never quite reaches 21M due to integer truncation",
+      "choices": [
+        "Approximately 20,999,999.9769 BTC — the maximum approaches but never quite reaches 21M due to integer truncation",
+        "Exactly 21,000,000.0000 BTC — the supply hits exactly this value at the projected final block height in the future",
+        "Approximately 22,500,000 BTC — the cap was raised by a 2017 SegWit-era amendment to the Bitcoin protocol code",
+        "Approximately 18,500,000 BTC — the cap was lowered when several million coins were determined to be permanently lost"
+      ],
+      "context": "Halving rewards get rounded down to satoshis (10^-8 BTC) at each step, so the geometric sum doesn't reach a clean 21M. The exact supply approaches ~20,999,999.97690000 BTC. The 21M figure is a shorthand. The hard cap is a feature of the protocol, not a design intention added later.",
+      "_pillar": 2,
+      "_strategy": "supply_cap_precise_figure"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's 21M supply cap is enforced by every full node. If a miner produced a block containing more than the allowed subsidy, what would happen?",
+      "answer": "Other nodes would reject the block as invalid — the miner would have wasted electricity producing an orphan block",
+      "choices": [
+        "Other nodes would reject the block as invalid — the miner would have wasted electricity producing an orphan block",
+        "The block would be accepted with a warning — Bitcoin Core logs the violation but does not stop the propagation",
+        "The block would be accepted normally — supply-cap enforcement is the responsibility of exchanges, not of nodes",
+        "The block would be flagged for the Bitcoin Foundation — which then votes whether to ratify the bonus issuance"
+      ],
+      "context": "Every full node independently validates the subsidy against the height-dependent rule. A block exceeding the allowed reward is invalid; honest nodes refuse to relay or build on it. The cap isn't a policy enforced from above — it's a property of the consensus rules every node checks.",
+      "_pillar": 2,
+      "_strategy": "supply_cap_node_enforcement"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's halving is sometimes called the 'stock-to-flow' event. The stock-to-flow ratio compares existing supply (stock) to new annual production (flow). After each halving, what happens to Bitcoin's stock-to-flow ratio?",
+      "answer": "It approximately doubles — flow is cut in half while stock keeps growing, raising the ratio sharply each cycle",
+      "choices": [
+        "It approximately doubles — flow is cut in half while stock keeps growing, raising the ratio sharply each cycle",
+        "It approximately halves — both stock and flow shrink in unison, leaving the ratio approximately stable over time",
+        "It remains constant — the Bitcoin protocol adjusts the stock variable to compensate for changes in the flow component",
+        "It approaches zero — every halving brings Bitcoin closer to a stock-to-flow value of zero by mathematical definition"
+      ],
+      "context": "Plan B's stock-to-flow model (2019) attempted to predict Bitcoin price from this ratio. The model has been criticized empirically — but the underlying observation, that Bitcoin's stock-to-flow doubles every four years and approaches gold's ratio (and then exceeds it), is a real property of the schedule.",
+      "_pillar": 2,
+      "_strategy": "stock_to_flow_doubles"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's fixed 21M supply cap stands in sharp contrast to fiat, whose supply expands at central-bank discretion. Why does the cap make Bitcoin a fundamentally different kind of monetary asset, in Austrian terms?",
+      "answer": "Sound money requires inelastic supply — Bitcoin's cap makes it the first digitally-native programmatically-scarce asset",
+      "choices": [
+        "Sound money requires inelastic supply — Bitcoin's cap makes it the first digitally-native programmatically-scarce asset",
+        "Bitcoin is identical to fiat — the supply cap can be raised by the Bitcoin Foundation board through ordinary majority votes",
+        "Bitcoin is inferior to fiat — the inelastic supply prevents needed expansion during economic downturns and recessions",
+        "Bitcoin is only philosophically scarce — the actual cap is enforced by social custom and could be changed informally"
+      ],
+      "context": "Saifedean Ammous's 'The Bitcoin Standard' (2018) is the canonical popular treatment of Bitcoin as Austrian sound money. The combination — programmatically scarce, no issuer, credibly neutral, fair-launched — has no historical precedent. Gold's supply still grows ~1.5% per year.",
+      "_pillar": 2,
+      "_strategy": "supply_cap_austrian_sound_money"
+    },
+    {
+      "tier": 3,
+      "question": "After 2140 — when the last satoshi is mined — Bitcoin miners receive no block subsidy. The protocol nonetheless expects miners to continue securing the network. How will mining remain profitable?",
+      "answer": "Transaction fees alone — block-space demand replaces the subsidy as the network's security budget",
+      "choices": [
+        "Transaction fees alone — block-space demand replaces the subsidy as the network's security budget",
+        "A new subsidy will be voted in — the Bitcoin Foundation will restart issuance through governance once the cap is reached",
+        "Mining will cease entirely — the network is expected to stop processing transactions after the year 2140 by design",
+        "Government grants will fund mining — central banks worldwide are preparing to subsidize Bitcoin security after 2140"
+      ],
+      "context": "The fee-only future is the model Bitcoin is heading toward. As subsidy declines (halving by halving), the fee share of miner revenue grows. The economic question is whether block-space demand will be high enough to sustain security — an active research question.",
+      "_pillar": 2,
+      "_strategy": "post_2140_fee_only_model"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's 21M cap means terminal inflation is zero. During issuance, the inflation rate decreases at each halving. Roughly what was Bitcoin's annualized inflation rate immediately after the April 2024 halving?",
+      "answer": "Around 0.83% — lower than gold's ~1.5%, making Bitcoin's stock-to-flow exceed gold's for the first time ever",
+      "choices": [
+        "Around 0.83% — lower than gold's ~1.5%, making Bitcoin's stock-to-flow exceed gold's for the first time ever",
+        "Around 5% — equivalent to the typical US dollar inflation rate during the 2021-2022 period of pandemic policy",
+        "Around 12% — comparable to many emerging-market fiat currencies during their peak monetary expansion years",
+        "Around 25% — Bitcoin's annual issuance was the same as a typical hyperinflationary fiat currency throughout 2024"
+      ],
+      "context": "Post-April-2024-halving: 3.125 BTC per block × ~52,560 blocks/year ≈ 164,250 BTC/year. Divided by ~19.7M total ≈ 0.83%/year inflation. Gold's annual production is roughly 1.5% of above-ground stock. Bitcoin's monetary scarcity exceeded gold's for the first time.",
+      "_pillar": 2,
+      "_strategy": "post_2024_inflation_below_gold"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's proof-of-work requires miners to find a 'nonce' value such that a block's SHA-256 hash starts with a certain number of zeros. The probability of any single guess succeeding is extremely low. Why does this guess-and-check actually secure the network?",
+      "answer": "Rewriting history requires redoing all the work — an attacker needs more computing power than the rest combined",
+      "choices": [
+        "Rewriting history requires redoing all the work — an attacker needs more computing power than the rest combined",
+        "Each guess is verified by a central authority — only the Bitcoin Foundation can authorize a valid hash for any block",
+        "The hash function ensures security — SHA-256 is mathematically impossible to compute backward in any way at all",
+        "Miners agree on a single answer — they vote among themselves before broadcasting any block to the global network"
+      ],
+      "context": "Proof-of-work is what makes Bitcoin's history expensive to rewrite. To reverse a confirmed block, you must out-mine the rest of the network from that block forward — sustained 51%+ hashrate. This is the cost-imposition mechanism that makes the chain effectively immutable.",
+      "_pillar": 2,
+      "_strategy": "proof_of_work_security"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's difficulty adjustment recalculates every 2,016 blocks — about every two weeks. The protocol targets an average block time of 10 minutes. If miners add hashrate, blocks come faster. What does the adjustment do?",
+      "answer": "Tunes the required leading zeros in the hash — making the puzzle harder or easier to keep block time near 10 minutes",
+      "choices": [
+        "Tunes the required leading zeros in the hash — making the puzzle harder or easier to keep block time near 10 minutes",
+        "Changes the block reward — boosting the subsidy when hashrate falls, reducing it when hashrate rises substantially",
+        "Alters the maximum block size — adjusting capacity in response to network usage and transaction demand each cycle",
+        "Modifies the supply cap — raising 21 million slightly when hashrate is strong to incentivize continued network mining"
+      ],
+      "context": "The 2,016-block window comes from 14 days × 24 hours × 6 blocks/hour = 2,016. The mechanism guarantees the issuance schedule regardless of how much hashrate is on the network. Supply policy stays unaffected even as hardware and energy costs change radically.",
+      "_pillar": 2,
+      "_strategy": "difficulty_adjustment_2016_blocks"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin uses SHA-256 (Secure Hash Algorithm 256-bit) as its proof-of-work hashing function. SHA-256 was designed by the US NSA and standardized by NIST in 2001. Why was it a deliberate choice for Bitcoin?",
+      "answer": "Already battle-tested and broadly deployed — using established cryptography reduces the risk of subtle implementation bugs",
+      "choices": [
+        "Already battle-tested and broadly deployed — using established cryptography reduces the risk of subtle implementation bugs",
+        "Designed for Bitcoin specifically — the NSA collaborated with Satoshi on a new hash function for cryptocurrency in 2008",
+        "Cheapest to compute — SHA-256 requires less electricity than competing hash functions for mining purposes nowadays",
+        "Patented — Satoshi licensed SHA-256 from the NSA to ensure exclusive rights for the Bitcoin network only"
+      ],
+      "context": "SHA-256 was published in 2001 as part of the SHA-2 family. By 2008, it had survived years of public cryptanalysis. Bitcoin uses it twice in block hashing (sometimes called 'double SHA-256'). The choice reflects the cypherpunk discipline of using known-good primitives rather than novel ones.",
+      "_pillar": 2,
+      "_strategy": "sha256_chosen"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin doesn't store account balances. Instead it tracks 'Unspent Transaction Outputs' (UTXOs). Every Bitcoin transaction consumes one or more UTXOs and produces new ones. What does this give Bitcoin?",
+      "answer": "Independent verifiability of each coin's history — parallel validation, simpler reasoning about double-spend prevention",
+      "choices": [
+        "Independent verifiability of each coin's history — parallel validation, simpler reasoning about double-spend prevention",
+        "Single-number balances per user — UTXOs are added together at every block to update each wallet's balance figure",
+        "Built-in privacy for transactions — UTXOs hide the sender and receiver identities through built-in confidential addressing",
+        "Infinitely large blocks — UTXOs eliminate the need for any limit on the size of Bitcoin blocks at all"
+      ],
+      "context": "The UTXO model treats each coin as a unique object with a provenance chain back to its block-subsidy origin. Ethereum, by contrast, uses an account-balance model. UTXO is more parallel-friendly and makes some kinds of analysis easier. Account models are simpler for some applications.",
+      "_pillar": 2,
+      "_strategy": "utxo_model_design"
+    },
+    {
+      "tier": 3,
+      "question": "A Bitcoin private key gives full control of the coins at its address. Lose the key, and the coins are unspendable forever. Estimates suggest 3-4 million BTC have been lost this way. How does this affect effective supply?",
+      "answer": "Effective circulating supply is below the 21M cap — lost coins are forever unreachable, making remaining BTC scarcer",
+      "choices": [
+        "Effective circulating supply is below the 21M cap — lost coins are forever unreachable, making remaining BTC scarcer",
+        "Lost coins are reclaimed by the Bitcoin Foundation — and reissued to active addresses every halving cycle automatically",
+        "Lost coins have no effect — they remain on the blockchain and can be claimed by any address holder who finds them",
+        "Lost coins are mathematically destroyed — the protocol burns them after seven years of address inactivity by design"
+      ],
+      "context": "Famous lost coins: James Howells's hard drive in a Newport landfill (~7,500 BTC), Stefan Thomas's 7,002 BTC behind a forgotten password. Estimates vary, but 3-4 million BTC are commonly cited as effectively lost. The deflationary effect compounds Bitcoin's already-fixed supply.",
+      "_pillar": 2,
+      "_strategy": "lost_coins_effective_supply"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin transactions are signed using ECDSA (Elliptic Curve Digital Signature Algorithm) on the secp256k1 curve. A user proves they control an address by signing with their private key. What does the signature accomplish?",
+      "answer": "Proves knowledge of the key — verifiers can confirm authority to spend without ever seeing the secret itself",
+      "choices": [
+        "Proves knowledge of the key — verifiers can confirm authority to spend without ever seeing the secret itself",
+        "Encrypts the transaction — the signature scrambles the recipient address so only the holder can decrypt it",
+        "Locks the funds for one year — ECDSA signatures impose a mandatory time-lock on every Bitcoin transaction made",
+        "Splits the key into shares — Bitcoin signatures require approval from at least three different parties on every transaction"
+      ],
+      "context": "Public-key cryptography solves this problem: the signature can be verified using only the public key, but only someone with the private key could have produced it. This separates 'control of coins' from 'reveal of secret' — a fundamental property of cryptographic signature schemes.",
+      "_pillar": 2,
+      "_strategy": "ecdsa_signature_basics"
+    },
+    {
+      "tier": 3,
+      "question": "A Bitcoin 'multisig' address requires multiple signatures to spend. A common pattern is '2-of-3' — three keys exist, any two must sign. What practical properties does multisig enable?",
+      "answer": "Loss of any single key is recoverable, no single party can spend alone — used for treasuries, exchanges, custody",
+      "choices": [
+        "Loss of any single key is recoverable, no single party can spend alone — used for treasuries, exchanges, custody",
+        "Bitcoin must be sent through Coinbase or another major exchange to use multisig — it cannot work peer-to-peer ever",
+        "Multisig is only used by governments — the Bitcoin protocol restricts multisig functionality to state-level signers only",
+        "Multisig doubles the fee per transaction — there are no other practical or security benefits beyond the higher cost"
+      ],
+      "context": "Multisig replaces single-point-of-failure custody. Major exchanges, family offices, and corporate treasuries use multisig schemes (often 2-of-3 or 3-of-5) to require multiple signatures, geographically distribute keys, and enable governance over Bitcoin holdings.",
+      "_pillar": 2,
+      "_strategy": "multisig_2_of_3_basics"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin mining hardware has evolved through three generations: CPU mining (2009-10), GPU mining (2010-13), ASIC mining (2013-present). ASICs are chips designed to do nothing but Bitcoin hashing. Why did they come to dominate?",
+      "answer": "Specialization wins — an ASIC's energy-per-hash is thousands of times better than general-purpose CPUs or GPUs",
+      "choices": [
+        "Specialization wins — an ASIC's energy-per-hash is thousands of times better than general-purpose CPUs or GPUs",
+        "ASICs were mandated by the protocol — Bitcoin Core released a 2013 update requiring ASIC mining hardware specifically",
+        "ASICs are cheaper to buy — a typical mining ASIC costs about $50 while a GPU rig costs about $5,000 to assemble",
+        "ASICs are easier to program — most miners lack the skills to operate the older GPU-based mining software systems"
+      ],
+      "context": "Bitmain's Antminer line, MicroBT's Whatsminer, and others dominate today's mining market. The specialization is so extreme ASICs are useless for any other task. This is both Bitcoin's incredible security budget and the source of ongoing debates about hashrate centralization.",
+      "_pillar": 2,
+      "_strategy": "asic_mining_specialization"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's block-size limit was originally 1 MB. After the 'block-size wars' of 2015-2017, the network activated SegWit in August 2017, effectively raising capacity. What does SegWit do, technically?",
+      "answer": "Moves signature data out of the main transaction body — fitting more transactions in the same block weight budget",
+      "choices": [
+        "Moves signature data out of the main transaction body — fitting more transactions in the same block weight budget",
+        "Removes the block size limit entirely — Bitcoin blocks could be unlimited size after the August 2017 upgrade",
+        "Outsources verification to third parties — SegWit transactions are validated by trusted hubs rather than by full nodes",
+        "Compresses transactions through machine learning — SegWit applies neural-network compression to block contents"
+      ],
+      "context": "SegWit's full name: Segregated Witness. By treating signature ('witness') data as discounted weight, it allowed more transactions per block without raising the headline 1 MB limit. The block-size wars produced the Bitcoin Cash fork (BCH) by those who wanted larger raw blocks instead.",
+      "_pillar": 2,
+      "_strategy": "segwit_2017_mechanics"
+    },
+    {
+      "tier": 3,
+      "question": "On November 14, 2021, at block 709,632, Bitcoin activated the Taproot upgrade. Taproot was the largest protocol upgrade since SegWit. What does Taproot enable, in plain terms?",
+      "answer": "Smarter, more private, more compact transactions — complex spending conditions can look identical to simple ones on-chain",
+      "choices": [
+        "Smarter, more private, more compact transactions — complex spending conditions can look identical to simple ones on-chain",
+        "Faster block times across the network — Taproot reduced Bitcoin's target block interval from 10 minutes to 5 minutes",
+        "Higher supply cap of new coins — Taproot raised the maximum BTC supply from 21 million to 23 million at activation",
+        "Quantum resistance against attacks — Taproot replaced ECDSA with a post-quantum signature scheme for all transactions"
+      ],
+      "context": "Taproot combined Schnorr signatures, MAST (Merkelized Abstract Syntax Trees), and Tapscript. The result: smart-contract-like spending conditions can be hidden until execution, all complex transactions look like simple ones, and signature aggregation enables more efficient multisig. Activation: block 709,632.",
+      "_pillar": 2,
+      "_strategy": "taproot_block_709632_2021"
+    },
+    {
+      "tier": 3,
+      "question": "Mt. Gox — based in Tokyo, run by Mark Karpelès — was the largest Bitcoin exchange by 2013, handling ~70% of global trades. In February 2014 the exchange suspended withdrawals and filed for bankruptcy. How many BTC went missing?",
+      "answer": "About 850,000 BTC — most belonged to customers, with the exchange having no funds to make them whole",
+      "choices": [
+        "About 850,000 BTC — most belonged to customers, with the exchange having no funds to make them whole",
+        "About 100,000 BTC — a minor incident at the time involving only the exchange's own treasury holdings briefly",
+        "About 5,000,000 BTC — exceeding the total Bitcoin mined to that date, a clear sign of massive accounting fraud",
+        "About 21,000 BTC — exactly matching one one-thousandth of the entire eventual supply of Bitcoin at the cap"
+      ],
+      "context": "Mt. Gox's collapse exposed catastrophic custody and security failures. Karpelès was later convicted on related charges. Some BTC was recovered (~140K BTC); creditor distributions began in 2024 — a decade later. The collapse remains the canonical example of exchange custody risk.",
+      "_pillar": 2,
+      "_strategy": "mt_gox_feb_2014_850k"
+    },
+    {
+      "tier": 3,
+      "question": "On November 8, 2022, FTX — then the second-largest crypto exchange — froze withdrawals. Founder Sam Bankman-Fried had moved customer funds to his trading firm Alameda. About $8B was missing. SBF was sentenced in March 2024. What sentence?",
+      "answer": "25 years in federal prison — for wire fraud, conspiracy, and money laundering charges related to the collapse",
+      "choices": [
+        "25 years in federal prison — for wire fraud, conspiracy, and money laundering charges related to the collapse",
+        "5 years in federal prison — reduced sentence after SBF agreed to cooperate with US Department of Justice investigators",
+        "Probation only — given his charitable giving and effective-altruism background, the court declined to impose prison time",
+        "Death penalty — SBF was the first US executive ever to face capital punishment for financial fraud at the federal level"
+      ],
+      "context": "SBF was convicted on all seven counts in November 2023; sentenced March 28, 2024 to 25 years by Judge Lewis Kaplan in the Southern District of New York. He had been a major Democratic donor and a prominent figure in 'effective altruism' fundraising. The FTX case is the canonical example of exchange-custody risk.",
+      "_pillar": 2,
+      "_strategy": "ftx_collapse_nov_2022_25_years"
+    },
+    {
+      "tier": 3,
+      "question": "In May 2022, the Terra/Luna ecosystem collapsed in a matter of days. Terra was an 'algorithmic stablecoin' promising a $1 peg; Luna was its governance token. About $60 billion vanished. What does this illustrate about Bitcoin vs 'crypto'?",
+      "answer": "Algorithmic stablecoins are NOT Bitcoin — they require active management and can collapse; Bitcoin has no such dependency",
+      "choices": [
+        "Algorithmic stablecoins are NOT Bitcoin — they require active management and can collapse; Bitcoin has no such dependency",
+        "All crypto is fraudulent uniformly — Terra's collapse proves no digital asset can be trusted under any conditions",
+        "Terra was actually a Bitcoin product — and its failure was caused by errors in the Bitcoin Core software itself",
+        "Algorithmic stablecoins are stronger than Bitcoin — Terra's collapse was caused by a coordinated short-seller attack"
+      ],
+      "context": "Terra's founder Do Kwon was extradited and faced charges in multiple jurisdictions. The 'algorithmic' peg mechanism worked only as long as confidence held; once it broke, the death spiral was rapid. Bitcoin's design has no comparable failure mode — no peg to defend, no governance token to inflate.",
+      "_pillar": 2,
+      "_strategy": "terra_luna_may_2022_60b"
+    },
+    {
+      "tier": 3,
+      "question": "In May 2021, China formally banned Bitcoin mining. About 50% of global hashrate went offline within weeks. Many predicted Bitcoin would collapse without Chinese miners. Instead, hashrate recovered within months. What does this episode demonstrate?",
+      "answer": "Bitcoin's decentralization works — mining migrated to the US, Kazakhstan, Russia; the protocol survived a 50% shock",
+      "choices": [
+        "Bitcoin's decentralization works — mining migrated to the US, Kazakhstan, Russia; the protocol survived a 50% shock",
+        "Bitcoin's centralization was exposed — the network barely survived and required emergency intervention from Bitcoin Core",
+        "China's ban was reversed quickly — the People's Bank of China reinstated Bitcoin mining within months after the ban",
+        "Hashrate is irrelevant to security — Bitcoin depends entirely on the supply cap rather than on any mining activity"
+      ],
+      "context": "Pre-ban, China hosted an estimated 65-75% of global hashrate. By mid-2022, the US became the top hashrate jurisdiction, followed by Kazakhstan and Russia. The difficulty adjustment did exactly what it was designed to do — easier puzzles let remaining miners produce blocks at target rate.",
+      "_pillar": 2,
+      "_strategy": "china_mining_ban_may_2021_recovery"
+    },
+    {
+      "tier": 3,
+      "question": "On September 7, 2021, El Salvador became the first country to make Bitcoin legal tender. President Nayib Bukele led the move. Citizens received $30 in BTC through the government's Chivo wallet at launch. What broader significance?",
+      "answer": "Sovereign-state proof of concept — Bitcoin could legally function as money at the national level under real conditions",
+      "choices": [
+        "Sovereign-state proof of concept — Bitcoin could legally function as money at the national level under real conditions",
+        "Complete failure of the experiment — Bukele revoked Bitcoin's legal-tender status within months of the September launch",
+        "Chinese geopolitical plot — the Salvadoran adoption was secretly funded by Beijing to undermine the US dollar abroad",
+        "Forced action by the IMF — international financial institutions had pressured Bukele to adopt Bitcoin against his wishes"
+      ],
+      "context": "Adoption among ordinary Salvadorans has been mixed; Chivo had technical problems; the IMF objected. But the precedent stands: a sovereign nation made Bitcoin legal tender, accumulated reserves, and continues to hold them. The country's later economic recovery has been partly attributed to the move.",
+      "_pillar": 2,
+      "_strategy": "el_salvador_sept_7_2021_legal_tender"
+    },
+    {
+      "tier": 3,
+      "question": "Mt. Gox, FTX, Celsius (2022), Voyager (2022), BlockFi (2022), Genesis (2023) — all centralized custodians where users gave up control of their private keys. What single phrase captures the lesson Bitcoiners drew?",
+      "answer": "Not your keys, not your coins — if you don't hold the private key, you don't actually own the Bitcoin in question",
+      "choices": [
+        "Not your keys, not your coins — if you don't hold the private key, you don't actually own the Bitcoin in question",
+        "Buy and hold forever no matter what — Bitcoiners learned that no exchange should ever be used for any purpose at any time",
+        "Trust the auditors and CPAs — third-party verification can fully replace direct custody for sophisticated holders going forward",
+        "Government regulation is needed — exchanges should be nationalized to prevent any future custody failure event happening"
+      ],
+      "context": "'Not your keys, not your coins' became the Bitcoin community's mantra after each successive exchange failure. The phrase is attributed to Andreas Antonopoulos, who used it in talks and his book 'Mastering Bitcoin' (2014). Self-custody — holding your own keys — is the canonical safe pattern.",
+      "_pillar": 2,
+      "_strategy": "not_your_keys_not_your_coins"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin custody sits on a spectrum: full self-custody with a hardware wallet at one end; leaving coins on an exchange at the other. What's the trade-off the spectrum captures?",
+      "answer": "Self-custody trades convenience for sovereignty — exchanges trade sovereignty for convenience, and lose coins in failures",
+      "choices": [
+        "Self-custody trades convenience for sovereignty — exchanges trade sovereignty for convenience, and lose coins in failures",
+        "Self-custody is illegal in most jurisdictions — modern regulations require all Bitcoin to be held through licensed exchanges",
+        "Self-custody is identical to exchanges — there is no practical difference between the two custody models in any way",
+        "Self-custody is mandated by Bitcoin Core — the protocol prohibits exchange custody and enforces individual key holding"
+      ],
+      "context": "Hardware wallets (Ledger, Trezor, Coldcard) keep private keys in secure devices that never expose them to internet-connected computers. The trade-off — convenience vs control — is real. Each user makes the choice; the broader principle is that exchange custody is fundamentally different from self-custody.",
+      "_pillar": 2,
+      "_strategy": "self_custody_hardware_wallet_tradeoff"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's 2017 'block-size wars' produced a hard fork in August 2017. A subset of the community split off to create a new chain with larger blocks. What was that chain called?",
+      "answer": "Bitcoin Cash (BCH) — diverged from Bitcoin at block 478,558 to enable 8 MB blocks initially after the split",
+      "choices": [
+        "Bitcoin Cash (BCH) — diverged from Bitcoin at block 478,558 to enable 8 MB blocks initially after the split",
+        "Bitcoin Classic — diverged at block 100,000 to enforce smaller blocks for greater decentralization purposes",
+        "Bitcoin Diamond — diverged at the time of the 2024 halving to introduce gold-backed unit conversions",
+        "Bitcoin Crystal — diverged in 2023 to add a Proof-of-Stake consensus mechanism replacing original Proof-of-Work"
+      ],
+      "context": "Bitcoin Cash forked on August 1, 2017, at block 478,558. The block-size debate split the community over whether to scale on-chain (raise block size) or off-chain (Lightning Network and SegWit). The surviving Bitcoin chain (BTC) chose off-chain scaling; BCH chose larger blocks.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_cash_fork_2017"
+    },
+    {
+      "tier": 3,
+      "question": "The Lightning Network is a second-layer scaling solution for Bitcoin. The white paper, by Joseph Poon and Thaddeus Dryja, was published in 2015. What problem does Lightning aim to solve?",
+      "answer": "On-chain throughput limits — Lightning enables instant, low-fee payments off-chain, settled to Bitcoin in batches",
+      "choices": [
+        "On-chain throughput limits — Lightning enables instant, low-fee payments off-chain, settled to Bitcoin in batches",
+        "Mining centralization in pools — Lightning replaces SHA-256 proof-of-work with a fairer distribution mechanism",
+        "Supply cap rigidity in the protocol — Lightning allows the 21 million cap to flex temporarily during high-demand periods",
+        "Privacy weakness on the main chain — Lightning encrypts all on-chain Bitcoin transactions to hide sender and recipient"
+      ],
+      "context": "The Poon-Dryja paper introduced bidirectional payment channels and a network of them. Lightning lets parties transact off-chain, settling to Bitcoin only when a channel closes. The result: instant, fee-cheap micropayments while preserving Bitcoin's base-layer security and 21M cap.",
+      "_pillar": 2,
+      "_strategy": "lightning_white_paper_2015_poon_dryja"
+    },
+    {
+      "tier": 3,
+      "question": "The Lightning Network mainnet launched in January 2018 on Bitcoin. By 2024 the network had grown to thousands of nodes with significant total channel capacity. What's the mechanism that makes Lightning trust-minimized?",
+      "answer": "Payment channels are secured by Bitcoin's base layer — disputes are resolved on-chain if any party tries to cheat",
+      "choices": [
+        "Payment channels are secured by Bitcoin's base layer — disputes are resolved on-chain if any party tries to cheat",
+        "Lightning relies on trusted node operators — all transactions are verified by a small group of approved Lightning operators",
+        "Lightning uses a separate token — payments inside the network do not interact with Bitcoin at all in any way ever",
+        "Lightning is fully on-chain — every Lightning payment is recorded as a full transaction on the Bitcoin main chain"
+      ],
+      "context": "Lightning's security model uses 'punishment' transactions: if a counterparty broadcasts an old channel state to steal funds, the honest party can broadcast a counter-transaction that takes ALL the channel funds. Cheating is economically irrational. The base layer guarantees enforcement.",
+      "_pillar": 2,
+      "_strategy": "lightning_mainnet_jan_2018"
+    },
+    {
+      "tier": 3,
+      "question": "Lightning payments are routed through a graph of payment channels — each hop forwards a payment to the next. What's the cryptographic primitive that ensures each hop is honest about forwarding?",
+      "answer": "Hash Time-Locked Contracts (HTLCs) — payments commit to a hash; revealing the preimage releases funds at each hop",
+      "choices": [
+        "Hash Time-Locked Contracts (HTLCs) — payments commit to a hash; revealing the preimage releases funds at each hop",
+        "Trusted intermediaries — Lightning hubs are vetted by the Bitcoin Foundation and audited weekly by Lightning Labs staff",
+        "Mining work at each hop — each Lightning hop requires a small proof-of-work payment to deter dishonest routing decisions",
+        "Government registries of payments — Lightning payments are recorded in a US Treasury database all participants consult"
+      ],
+      "context": "HTLCs let payments be sent through multiple hops atomically: either every hop completes, or none do. The hash-preimage mechanism ensures that no intermediate node can take the money without forwarding. The recipient's reveal of the preimage cascades back, completing the chain of payments.",
+      "_pillar": 2,
+      "_strategy": "lightning_htlc_routing"
+    },
+    {
+      "tier": 3,
+      "question": "Compared to base-layer Bitcoin transactions, Lightning Network payments have very different characteristics on fees and confirmation times. What's the practical difference for everyday use?",
+      "answer": "Lightning settles in seconds with fees of cents or less — base-layer Bitcoin can take minutes and cost dollars in fees",
+      "choices": [
+        "Lightning settles in seconds with fees of cents or less — base-layer Bitcoin can take minutes and cost dollars in fees",
+        "Lightning settles in days with very high fees — base-layer Bitcoin is faster and cheaper for any small payment use",
+        "Lightning and base-layer Bitcoin are identical — there is no practical or technical difference in fees or time at all",
+        "Lightning settles in years at most — payments are only finalized at the end of each Bitcoin halving epoch by default"
+      ],
+      "context": "Lightning enables economic models that base-layer Bitcoin cannot support: streaming sats per minute (podcasting 2.0), micropayments for content, retail point-of-sale. El Salvador's Chivo wallet supports Lightning. Strike, Cash App, and various Bitcoin-native apps integrate it natively.",
+      "_pillar": 2,
+      "_strategy": "lightning_fees_vs_base_layer"
+    },
+    {
+      "tier": 3,
+      "question": "Lightning Network represents a particular vision of how Bitcoin scales. Rather than making the base layer process millions of transactions per second, base layer handles settlement only. What analogy maps onto this?",
+      "answer": "Like a banking system — Bitcoin base is the central settlement layer; Lightning is the retail-payment rails on top",
+      "choices": [
+        "Like a banking system — Bitcoin base is the central settlement layer; Lightning is the retail-payment rails on top",
+        "Like a movie streaming service — Lightning is the streaming layer while base layer Bitcoin is a separate movie archive",
+        "Like a kitchen pantry storage — base layer Bitcoin stores food while Lightning prepares each meal as ordered each time",
+        "Like an interstate highway — base layer Bitcoin moves slowly while Lightning enables high-speed parallel transport modes"
+      ],
+      "context": "Nik Bhatia's 'Layered Money' (2021) develops this layered analogy carefully. Historically, gold settled between banks while banknotes circulated for commerce. Bitcoin/Lightning recreates this pattern in digital form: base-layer Bitcoin for final settlement, Lightning for commerce.",
+      "_pillar": 2,
+      "_strategy": "lightning_layered_money_analogy"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's intellectual lineage runs through the cypherpunk mailing list (1992-2010s). David Chaum's DigiCash launched in 1989 but went bankrupt in 1998. What was DigiCash's critical limitation that Bitcoin overcame?",
+      "answer": "DigiCash required a central issuer — Chaum's mint could be subpoenaed, regulated, or shut down, and ultimately was",
+      "choices": [
+        "DigiCash required a central issuer — Chaum's mint could be subpoenaed, regulated, or shut down, and ultimately was",
+        "DigiCash had a small supply — Chaum's currency was capped at one million units, smaller than Bitcoin's design allows",
+        "DigiCash was too fast for banks — banks couldn't process the high transaction speed and refused to participate in the system",
+        "DigiCash had no encryption — Chaum's design exposed user transactions to public view in the original implementation"
+      ],
+      "context": "DigiCash had genuinely innovative cryptography (blind signatures) but a fatal architectural flaw: it needed a central mint. When the mint failed, the system failed. Bitcoin's combination of public ledger + proof-of-work eliminated the need for a central issuer — the breakthrough Chaum couldn't make.",
+      "_pillar": 2,
+      "_strategy": "digicash_chaum_1989_central_issuer"
+    },
+    {
+      "tier": 3,
+      "question": "Adam Back's Hashcash (1997) was originally designed not as money but as an anti-spam measure for email. Senders had to compute a small proof-of-work for each email. What innovation did Hashcash introduce that Bitcoin later inherited?",
+      "answer": "Proof-of-work — using costly computation as verifiable proof that resources were spent, deterring spam or attack",
+      "choices": [
+        "Proof-of-work — using costly computation as verifiable proof that resources were spent, deterring spam or attack",
+        "Public-key cryptography — Hashcash pioneered RSA-style signatures used in modern Bitcoin transactions to this day",
+        "Distributed consensus algorithms — Hashcash implemented a working version of Byzantine fault tolerance for the first time",
+        "Hardware acceleration techniques — Hashcash was the first system designed to be mined using specialized ASIC chips at scale"
+      ],
+      "context": "Adam Back is cited in the Bitcoin white paper. He went on to co-found Blockstream and is a major figure in Bitcoin research and development. The Hashcash proof-of-work design — make-the-attacker-pay-CPU-cost — was directly adapted by Satoshi for Bitcoin's mining.",
+      "_pillar": 2,
+      "_strategy": "hashcash_adam_back_1997"
+    },
+    {
+      "tier": 3,
+      "question": "Wei Dai's 'b-money' (1998) was a thought experiment, not a working system. Posted to the cypherpunk mailing list, it described a hypothetical digital cash with features Bitcoin later implemented. What did b-money propose?",
+      "answer": "A distributed ledger maintained by all participants — no central mint — but couldn't fully solve double-spend itself",
+      "choices": [
+        "A distributed ledger maintained by all participants — no central mint — but couldn't fully solve double-spend itself",
+        "A centralized mint backed by gold — Dai's design closely resembled Chaum's earlier DigiCash architecture exactly today",
+        "A government-issued digital currency — Dai proposed that the US Treasury should issue b-money directly to all citizens",
+        "A patent-protected payment system — Dai planned to license b-money commercially to banks and corporations widely"
+      ],
+      "context": "Satoshi cited Wei Dai in early Bitcoin emails as an inspiration. The b-money paper outlined the basic vision: a distributed system with no central issuer. The specific mechanism (proof-of-work + public ledger) was Satoshi's contribution that made Dai's vision actually work in practice.",
+      "_pillar": 2,
+      "_strategy": "wei_dai_b_money_1998"
+    },
+    {
+      "tier": 3,
+      "question": "Nick Szabo's 'bit gold' (2005) was the closest pre-Bitcoin design — a chain of cryptographic puzzles whose solutions could be verified and timestamped. Szabo published years before Bitcoin appeared. Why is he rumored to be Satoshi?",
+      "answer": "Writing style and technical interests match Satoshi's — and bit gold's design overlaps with Bitcoin's substantially",
+      "choices": [
+        "Writing style and technical interests match Satoshi's — and bit gold's design overlaps with Bitcoin's substantially",
+        "He confessed publicly in 2017 — Szabo revealed himself as Satoshi at the New York Consensus Conference that year",
+        "His Microsoft email account leaked — Szabo's role at Microsoft became the basis for the Satoshi attribution by 2015",
+        "His tax returns proved it definitively — IRS subpoenaed records that conclusively identified Szabo as Satoshi in 2019"
+      ],
+      "context": "Szabo has consistently denied being Satoshi. The case rests on circumstantial evidence: writing style, areas of expertise, his prior bit-gold design. There's no proof. Other candidates have included Hal Finney and Adam Back. The community largely accepts Satoshi's identity will likely never be confirmed.",
+      "_pillar": 2,
+      "_strategy": "nick_szabo_bit_gold_2005_satoshi_rumor"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin is often called a 'fair launch' — distinct from later projects with pre-mines, founder allocations, ICOs, or VC token allotments. What does 'fair launch' mean concretely for Bitcoin?",
+      "answer": "No coins existed before Genesis, no founder reserve — everyone competed equally for early blocks at the launch",
+      "choices": [
+        "No coins existed before Genesis, no founder reserve — everyone competed equally for early blocks at the launch",
+        "Satoshi received exactly 50% — and distributed the remainder to founding contributors before the network's first block ever",
+        "The Bitcoin Foundation pre-allocated coins — early developers and investors received millions of BTC before Genesis fully",
+        "The US government received 20% of supply — as part of a quiet arrangement with Satoshi before the network's public launch"
+      ],
+      "context": "Bitcoin's fair launch is one of its most distinctive properties. Ethereum had a pre-sale; many alt-coins are heavily allocated to insiders before public launch. Bitcoin's mining began at block 1 with no prior issuance. Any coins Satoshi mined were earned by running the software when it was free.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_fair_launch_no_premine"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin has no CEO, no board, no foundation controlling protocol changes, and no central legal entity. The Bitcoin Foundation existed briefly (2012-2015) but never controlled the protocol. Why is this absence load-bearing?",
+      "answer": "A leaderless protocol cannot be coerced — no founder or entity to subpoena, sue, sanction, or politically pressure",
+      "choices": [
+        "A leaderless protocol cannot be coerced — no founder or entity to subpoena, sue, sanction, or politically pressure",
+        "Bitcoin is informal in nature — without a corporate structure, the network is a hobby project with limited oversight",
+        "Bitcoin will collapse over time — without a foundation to maintain it, the protocol cannot survive future upgrades",
+        "Bitcoin is purely speculative — its value comes from greater-fool dynamics rather than from any real monetary use"
+      ],
+      "context": "Compare to Ethereum (Vitalik Buterin + Ethereum Foundation), Solana (Solana Labs + Solana Foundation), Ripple (Ripple Labs). Each has a clear point of failure for regulators or attackers. Bitcoin's protocol is maintained by a loose community of developers across multiple implementations.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_no_corporate_structure"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's protocol upgrades happen by social consensus, not corporate decree. A proposed change becomes a BIP (Bitcoin Improvement Proposal); it must gain support across developers, miners, nodes, users. What does the process protect against?",
+      "answer": "Top-down protocol changes — no single party can alter Bitcoin without convincing the broader network to upgrade",
+      "choices": [
+        "Top-down protocol changes — no single party can alter Bitcoin without convincing the broader network to upgrade",
+        "All bug fixes generally — the BIP process specifically prohibits any change that fixes security flaws in the code",
+        "All performance gains — Bitcoin's process makes it impossible to improve the protocol's speed or efficiency at all",
+        "Decentralization itself — BIP-driven changes always centralize more power into the Bitcoin Core development team"
+      ],
+      "context": "The BIP process produces slow, conservative, deliberate change — by design. SegWit took years of debate; Taproot took longer. The friction is a feature: it makes Bitcoin resistant to capture by any single developer faction, mining pool, or corporate sponsor. Stability is part of sound money.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_bip_process_governance"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin is often described as 'digital gold.' Gold has been the historical sound-money standard for thousands of years. What property does Bitcoin claim to share with gold — and where does it exceed gold?",
+      "answer": "Both are scarce and durable — but Bitcoin's supply is fixed at 21M while gold's increases ~1.5% per year still",
+      "choices": [
+        "Both are scarce and durable — but Bitcoin's supply is fixed at 21M while gold's increases ~1.5% per year still",
+        "Both are heavy metals at base — but Bitcoin weighs less and ships easier through international supply chains and customs",
+        "Both are mined with shovels — Bitcoin uses physical mining equipment indistinguishable from traditional gold mining",
+        "Both are issued by central banks — gold by the US Treasury and Bitcoin by the People's Bank of China since 2018"
+      ],
+      "context": "The 'digital gold' frame compares stocks-and-flows. Gold's stock-to-flow ratio is around 60 (60 years of current production to reach existing stock). Bitcoin's stock-to-flow exceeded gold's after the April 2024 halving and will continue to rise with each future halving.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_digital_gold_comparison"
+    },
+    {
+      "tier": 3,
+      "question": "In January 2024 the SEC approved spot Bitcoin ETFs in the US. BlackRock's IBIT and Fidelity's FBTC began trading. These products let investors gain Bitcoin exposure through brokerage accounts. Why was this significant?",
+      "answer": "Legitimized Bitcoin in US capital markets — major asset managers could now hold Bitcoin within standard structures",
+      "choices": [
+        "Legitimized Bitcoin in US capital markets — major asset managers could now hold Bitcoin within standard structures",
+        "Nationalized Bitcoin into government — the SEC took control of the protocol after January 2024 and began regulating blocks",
+        "Capped Bitcoin's price by regulation — the ETF approval came with a regulatory ceiling on how high Bitcoin could trade",
+        "Eliminated self-custody by law — after January 2024, holding Bitcoin outside an SEC-approved ETF became illegal in the US"
+      ],
+      "context": "Spot Bitcoin ETFs accumulated tens of billions in assets within their first year. They represent a one-way flow into Bitcoin from traditional finance. The 11-year SEC battle over approval (Winklevoss twins first filed in 2013) ended with court rulings forcing the SEC's hand. Self-custody remains fully available.",
+      "_pillar": 2,
+      "_strategy": "spot_btc_etf_jan_2024"
+    },
+    {
+      "tier": 3,
+      "question": "MicroStrategy (now 'Strategy'), a US business intelligence firm, began converting its corporate treasury to Bitcoin in August 2020 under CEO Michael Saylor. By late 2024 the company held over 250,000 BTC. Why has this been influential?",
+      "answer": "Demonstrated a public company could substitute Bitcoin for cash on balance sheet — surviving multiple drawdown cycles",
+      "choices": [
+        "Demonstrated a public company could substitute Bitcoin for cash on balance sheet — surviving multiple drawdown cycles",
+        "Crashed into bankruptcy — MicroStrategy declared bankruptcy in 2022 after Bitcoin's price decline destroyed it fully",
+        "Was forced by SEC regulators — MicroStrategy was required by the agency to hold Bitcoin instead of dollars as sanction",
+        "Targeted retail investors directly — MicroStrategy sold Bitcoin to small investors at a markup as primary business"
+      ],
+      "context": "MicroStrategy's August 2020 announcement converted its first $250 million in treasury reserves to Bitcoin. The strategy survived the 2021-2022 drawdown and accelerated through 2024. Other public companies (Block, Tesla briefly, GameStop in 2025) followed. The pattern demonstrates Bitcoin as a corporate-treasury asset.",
+      "_pillar": 2,
+      "_strategy": "microstrategy_treasury_2020"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's electricity use has been heavily criticized. Estimates put Bitcoin mining at ~0.5% of global electricity. Defenders argue this critique misses what Bitcoin's energy use accomplishes. What's the standard rebuttal?",
+      "answer": "Energy buys security and credible neutrality — sound money has real costs, like gold mining historically",
+      "choices": [
+        "Energy buys security and credible neutrality — sound money has real costs, like gold mining historically",
+        "Bitcoin uses no energy at all — the critique is based on fabricated estimates; the network runs on tiny solar panels",
+        "Energy use is fully offset by miners — Bitcoin mining generates electricity through built-in wind turbines at each rig",
+        "Energy use is irrelevant to outcomes — the SEC approval in 2024 exempted Bitcoin from environmental concerns by law"
+      ],
+      "context": "The energy-use debate is the most common environmental critique of Bitcoin. Defenders point out: (1) gold mining uses comparable or more energy; (2) traditional banking infrastructure uses substantial energy; (3) increasingly, Bitcoin mining uses stranded or excess renewable energy (hydro, wind, flare gas).",
+      "_pillar": 2,
+      "_strategy": "bitcoin_energy_use_defense"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin is sometimes confused with 'crypto' — an umbrella term covering Ethereum, Solana, Ripple, and thousands of other tokens. Bitcoiners argue these aren't the same thing. What's the substantive distinction?",
+      "answer": "Bitcoin has fair launch + no founder + fixed supply + leaderless protocol — most other tokens have none of these properties",
+      "choices": [
+        "Bitcoin has fair launch + no founder + fixed supply + leaderless protocol — most other tokens have none of these properties",
+        "Bitcoin is the same as all crypto — there is no meaningful distinction between Bitcoin and any other token whatsoever",
+        "Bitcoin is simply older than the rest — the only difference is that Bitcoin launched in 2009 while other tokens launched later",
+        "Bitcoin is government-backed by treaties — and all other tokens are private, which is the only relevant difference between them"
+      ],
+      "context": "The economic and structural distinctions are substantive: Bitcoin has no pre-mine, no foundation that controls the protocol, no governance token, no CEO, no marketing budget. Most other tokens have one or more of these. Lumping Bitcoin with FTX-listed altcoins obscures these differences.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_vs_crypto_distinction"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin advocates often cite Saifedean Ammous ('The Bitcoin Standard' 2018), Nik Bhatia ('Layered Money' 2021), Jeff Booth ('The Price of Tomorrow' 2020). These books make a broader claim about Bitcoin. What's the unifying argument?",
+      "answer": "Bitcoin is sound money in digital form — returning the world to a hard-money standard fiat had displaced since 1971",
+      "choices": [
+        "Bitcoin is sound money in digital form — returning the world to a hard-money standard fiat had displaced since 1971",
+        "Bitcoin will replace stocks soon — these authors argue all equity markets should be denominated in Bitcoin by 2030 at latest",
+        "Bitcoin is government-friendly always — these authors argue that central banks should adopt Bitcoin as the new world reserve",
+        "Bitcoin is purely speculative still — these authors argue Bitcoin has no actual monetary properties beyond price action"
+      ],
+      "context": "The Bitcoin-as-sound-money framing connects directly to Austrian economics: Mises on calculation, Hayek on knowledge, Rothbard on hard money, Bastiat on what fiat money hides. The 1971 Nixon shock ended the last formal gold-dollar link. Bitcoin's 2009 launch is positioned as the return.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_sound_money_authors"
+    },
+    {
+      "tier": 3,
+      "question": "A Bitcoin transaction is broadcast to the network but isn't yet confirmed. Where does it sit while waiting for a miner to include it in a block?",
+      "answer": "In the mempool — a global pool of pending transactions, each waiting for miners to include them in the next block",
+      "choices": [
+        "In the mempool — a global pool of pending transactions, each waiting for miners to include them in the next block",
+        "In the Bitcoin Foundation queue — a centralized list maintained by Bitcoin Core developers in San Francisco currently",
+        "In the user's wallet alone — pending transactions are stored only locally until the recipient comes back online to claim",
+        "In the SEC's federal database — pending transactions must be approved by US regulators before any miner can include them"
+      ],
+      "context": "Each Bitcoin node maintains its own mempool — a set of unconfirmed transactions it has seen and validated. Miners pick from their mempool to build candidate blocks, generally prioritizing higher-fee transactions. The mempool is not a single global object — each node has its own — but they're typically very similar.",
+      "_pillar": 2,
+      "_strategy": "mempool_pending_transactions"
+    },
+    {
+      "tier": 3,
+      "question": "A Bitcoin wallet's 'seed phrase' is a sequence of 12 or 24 English words from the BIP39 standard (2013). The seed phrase is the master key. Why is the seed phrase so dangerous to store carelessly?",
+      "answer": "It is the master key — anyone with the phrase can recreate the full wallet and spend all funds in any derived address",
+      "choices": [
+        "It is the master key — anyone with the phrase can recreate the full wallet and spend all funds in any derived address",
+        "It expires after one year automatically — wallets must regenerate seed phrases annually or the funds become permanently locked",
+        "It must be shared with Coinbase — exchanges require seed phrases from all users for ongoing regulatory compliance work",
+        "It is encrypted with the user's birthday — seed phrases require a date of birth combination to function correctly in wallets"
+      ],
+      "context": "BIP39 lets users back up an entire wallet in 12 or 24 words from a fixed wordlist. The phrase deterministically generates all the private keys. Storage best practices: never type into a connected device; etch into metal for fire resistance; geographic separation. Mistakes here are unrecoverable.",
+      "_pillar": 2,
+      "_strategy": "bip39_seed_phrase_master_key"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin mining pools combine the hashrate of many individual miners — sharing rewards proportionally. Pools like Foundry USA, Antpool, F2Pool dominate hashrate share. Why does this raise centralization concerns?",
+      "answer": "Pool operators choose which transactions to include — concentrated pool control could affect censorship resistance",
+      "choices": [
+        "Pool operators choose which transactions to include — concentrated pool control could affect censorship resistance",
+        "Pool operators print new BTC — pools have authority to expand Bitcoin's 21M supply through internal governance votes",
+        "Pool operators set the global price — Bitcoin's USD price is determined daily by agreement among major mining pools",
+        "Pool operators control difficulty — the protocol delegates difficulty adjustment to whichever pool has the largest share"
+      ],
+      "context": "Pool centralization is a legitimate concern even though it can't change the supply cap. If one pool got over 51% hashrate sustainably, it could theoretically reorganize chain or censor transactions. Individual miners can switch pools quickly. Stratum V2 and other tools aim to reduce pool operators' transaction-selection power.",
+      "_pillar": 2,
+      "_strategy": "mining_pools_centralization"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin's Taproot upgrade (November 2021) introduced Schnorr signatures, replacing ECDSA for some uses. Schnorr signatures have advantages. What's the key advantage relevant to multisig?",
+      "answer": "Signatures from multiple parties can be aggregated into one — making large multisig look like single-key spends on-chain",
+      "choices": [
+        "Signatures from multiple parties can be aggregated into one — making large multisig look like single-key spends on-chain",
+        "Schnorr signatures are exactly one byte — they save 99% of transaction space compared to ECDSA in every scenario actually",
+        "Schnorr signatures are mandatory by code — after November 2021, all Bitcoin transactions must use Schnorr instead of ECDSA",
+        "Schnorr signatures are unbreakable mathematically — they cannot be forged even by quantum computers of any future size"
+      ],
+      "context": "Schnorr's linearity property enables signature aggregation. A 5-of-7 multisig can produce a single combined signature, indistinguishable from a single-key spend on-chain. This improves both privacy (multisig setups don't reveal themselves) and efficiency. MuSig2 is a current protocol for safely aggregating Schnorr signatures.",
+      "_pillar": 2,
+      "_strategy": "taproot_schnorr_aggregation"
+    },
+    {
+      "tier": 3,
+      "question": "A 'full node' is software that downloads, validates, and stores the entire Bitcoin blockchain. Anyone can run one — it requires ordinary hardware and internet access. What does running your own give you?",
+      "answer": "Independent verification of consensus rules — your node enforces the supply cap and rules without trusting any third party",
+      "choices": [
+        "Independent verification of consensus rules — your node enforces the supply cap and rules without trusting any third party",
+        "Mining rewards directly per block — running a full node earns the operator a share of the block subsidy proportional to uptime",
+        "Exchange discounts on fees — node operators get reduced fees at major exchanges as a reward for supporting the network",
+        "Government subsidy payments — running a node qualifies the operator for tax breaks in most developed countries by 2024"
+      ],
+      "context": "Full nodes are how Bitcoin's consensus rules are enforced. Each node independently checks every transaction and block. If a miner tried to issue 51 BTC in a coinbase, every full node would reject the block as invalid. The decentralization of node operation is what makes Bitcoin's rules unfalsifiable.",
+      "_pillar": 2,
+      "_strategy": "full_node_independent_verification"
+    },
+    {
+      "tier": 3,
+      "question": "After the SEC approved spot Bitcoin ETFs in January 2024, BlackRock's IBIT became one of the fastest-growing ETFs in history, reaching over $10B in months. What does this institutional flow tell us?",
+      "answer": "Large pools of traditional capital had been waiting for regulatory clearance — and chose to allocate quickly once approved",
+      "choices": [
+        "Large pools of traditional capital had been waiting for regulatory clearance — and chose to allocate quickly once approved",
+        "BlackRock now controls Bitcoin entirely — the firm acquired a majority stake in the protocol through ETF purchases in 2024",
+        "Bitcoin became fully regulated daily — after the ETF approval, the SEC requires direct oversight of every Bitcoin transaction",
+        "Bitcoin was nationalized to government — BlackRock's ETF effectively transferred Bitcoin's protocol governance to the Treasury"
+      ],
+      "context": "IBIT and FBTC accumulated billions in assets within their first months. The flow demonstrates pent-up demand from advisors, family offices, and institutional allocators who could not previously access Bitcoin within standard mandates. The protocol itself is unchanged; ETFs are wrappers around BTC.",
+      "_pillar": 2,
+      "_strategy": "blackrock_ibit_etf_flows_2024"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin transactions pay fees to miners. After the 2024 halving cut the block subsidy in half, fees became a larger share of miner revenue. What's the long-term implication for Bitcoin's economic model?",
+      "answer": "By 2140 miners earn from fees only — a thriving block-space market is essential for continued network security long-term",
+      "choices": [
+        "By 2140 miners earn from fees only — a thriving block-space market is essential for continued network security long-term",
+        "By 2140 miners are replaced by AI — automated trading bots will handle all Bitcoin transaction processing after the cap is hit",
+        "By 2140 the protocol restarts itself — the Bitcoin Foundation will reset block subsidies to 50 BTC and begin again from zero",
+        "By 2140 mining becomes free entirely — the protocol will subsidize all miners directly from the US Federal Reserve budget"
+      ],
+      "context": "The fee market is Bitcoin's long-term security budget. As the subsidy declines, sustained fee demand becomes essential. Block-space demand depends on usage patterns: ETF arbitrage, Ordinals, Lightning channel opens, sovereign reserves. Whether this will sustain miners is an active research question.",
+      "_pillar": 2,
+      "_strategy": "fee_market_post_halving_2140"
+    },
+    {
+      "tier": 3,
+      "question": "In 2023 a new use of Bitcoin emerged: 'Ordinals' and 'Inscriptions' — using the blockchain to embed data into individual satoshis. Casey Rodarmor's system, launched January 2023, became controversial. Why?",
+      "answer": "Increased block-space competition and fees — some welcomed the revenue, others objected to non-monetary uses of base layer",
+      "choices": [
+        "Increased block-space competition and fees — some welcomed the revenue, others objected to non-monetary uses of base layer",
+        "Was a serious security flaw — Ordinals exposed a critical bug that allowed attackers to forge Bitcoin transactions on demand",
+        "Froze the entire network — Ordinals slowed Bitcoin's confirmation times to weeks during early 2023 across major full nodes",
+        "Violated the supply cap rules — Ordinals issued additional Bitcoin beyond the 21 million programmed maximum supply count"
+      ],
+      "context": "Ordinals turned Bitcoin block space into a market for digital collectibles. Fees rose substantially; miner revenue benefited; some users complained that on-chain data inflated UTXO sets and crowded out monetary use. The debate continues: is Bitcoin only money, or is paying real fees for other purposes a legitimate market signal?",
+      "_pillar": 2,
+      "_strategy": "ordinals_inscriptions_2023"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin addresses come in several formats. Originally addresses began with '1' (Legacy P2PKH). SegWit added 'bc1' addresses. Taproot added 'bc1p' addresses. Why does Bitcoin support multiple formats simultaneously?",
+      "answer": "Backward compatibility across upgrades — old addresses still work; new formats enable features without breaking wallets",
+      "choices": [
+        "Backward compatibility across upgrades — old addresses still work; new formats enable features without breaking wallets",
+        "Geographic restriction by regulation — different address formats are required in different countries by national law",
+        "Tax categorization rules — the US IRS requires different formats for capital gains versus ordinary income transactions",
+        "Mining priority routing — newer address formats get priority confirmation by miners ahead of legacy address transactions"
+      ],
+      "context": "The address-format evolution mirrors Bitcoin's soft-fork upgrades. Legacy '1...' addresses still work and are still accepted; SegWit 'bc1q...' is more efficient; Taproot 'bc1p...' unlocks Schnorr aggregation. Bitcoin's commitment to backward compatibility means old wallets keep working even as the protocol gains capability.",
+      "_pillar": 2,
+      "_strategy": "address_formats_backward_compatibility"
+    },
+    {
+      "tier": 3,
+      "question": "Bitcoin mining increasingly uses energy that would otherwise be wasted: flared natural gas at oil wells, stranded hydropower with no grid connection, off-peak excess renewables. What does this energy pattern undercut?",
+      "answer": "The 'wasteful energy' critique — Bitcoin often consumes energy that has no other economic use and would otherwise be discarded",
+      "choices": [
+        "The 'wasteful energy' critique — Bitcoin often consumes energy that has no other economic use and would otherwise be discarded",
+        "The 'sound money' thesis itself — Bitcoin's reliance on alternative energy reveals it isn't actually a hard monetary asset",
+        "The 'fixed supply' guarantee — flared-gas mining is allowed to issue extra BTC beyond the 21 million cap as a special exception",
+        "The 'decentralization' claim — Bitcoin is now centralized in a few oil-producing nations due to energy economics in 2024"
+      ],
+      "context": "Crusoe Energy, Marathon, and others mine Bitcoin from oil-well flare gas — burning the methane productively rather than venting it (worse for climate) or flaring it (mostly wasted). Hydro miners in Sichuan, Texas wind producers, and others demonstrate the same pattern. Bitcoin mining acts as a buyer of last resort for stranded energy.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_mining_stranded_energy"
+    }
+  ]
+}

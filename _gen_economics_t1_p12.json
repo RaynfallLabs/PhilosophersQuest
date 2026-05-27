@@ -1,0 +1,1695 @@
+{
+  "tier": 1,
+  "summary": {
+    "questions_generated": 120,
+    "by_pillar": {
+      "1": 60,
+      "2": 60
+    },
+    "pass": 120,
+    "soft_warn": 0,
+    "fail": 0
+  },
+  "questions": [
+    {
+      "tier": 1,
+      "question": "A rock breaks a baker's window. A neighbor says, 'Good, now the glazier earns money!' What did Bastiat say is being missed?",
+      "answer": "What the baker would have bought instead",
+      "choices": [
+        "What the baker would have bought instead",
+        "The cost of the broken glass repair",
+        "The glazier's tax bill for the year",
+        "The town's official market failure"
+      ],
+      "context": "Bastiat's 1850 essay 'That Which is Seen and That Which is Not Seen' uses the broken-window example to teach hidden costs. The seen is the glazier; the unseen is everything else.",
+      "_pillar": 1,
+      "_strategy": "broken_window"
+    },
+    {
+      "tier": 1,
+      "question": "Bastiat's 1850 lesson: a broken bakery window puts the glazier to work. What did Bastiat call the work the baker would have hired instead?",
+      "answer": "The unseen, lost when the window broke",
+      "choices": [
+        "The unseen, lost when the window broke",
+        "The seen, paid to the local glazier",
+        "The market failure that hurt the town",
+        "The natural rate for that year"
+      ],
+      "context": "Bastiat's seen-vs-unseen distinction is the foundation of folk economics. The seen is the glazier at work. The unseen is everything else the baker would have bought.",
+      "_pillar": 1,
+      "_strategy": "broken_window"
+    },
+    {
+      "tier": 1,
+      "question": "A storm shatters every window on Main Street. A reporter says, 'Great news for glaziers!' What would Bastiat say?",
+      "answer": "Shops now spend on glass, not on new things",
+      "choices": [
+        "Shops now spend on glass, not on new things",
+        "Storms grow the economy through new work",
+        "Insurance pays, so no harm to the town",
+        "Glaziers always vote on storm forecasts"
+      ],
+      "context": "Bastiat's broken-window fallacy applies to disasters too. Destruction is never net wealth. Repairing damage shifts spending from new goods to replacements.",
+      "_pillar": 1,
+      "_strategy": "broken_window"
+    },
+    {
+      "tier": 1,
+      "question": "In 1845 the French candle makers asked their government to ban sunlight. What did Bastiat call this petition?",
+      "answer": "Satire mocking protectionist tariffs",
+      "choices": [
+        "Satire mocking protectionist tariffs",
+        "A real 1840s French tax law",
+        "A poem by a French glazier",
+        "A treaty between French guilds"
+      ],
+      "context": "Bastiat's 1845 'Candlemakers' Petition' was satire arguing if blocking foreign goods helps, then blocking the sun should help candle makers. The joke was the point.",
+      "_pillar": 1,
+      "_strategy": "candle_makers"
+    },
+    {
+      "tier": 1,
+      "question": "A town spends $10 million breaking old roads to give workers jobs. What does Bastiat's method tell us to ask?",
+      "answer": "What else the $10 million could have built",
+      "choices": [
+        "What else the $10 million could have built",
+        "If the workers are union or non-union",
+        "Why the roads were not broken sooner",
+        "If the town has the right equipment"
+      ],
+      "context": "Bastiat's seen-vs-unseen test always asks 'what else?' Visible jobs are real, but the unseen alternative use of the money is the real cost.",
+      "_pillar": 1,
+      "_strategy": "seen_unseen"
+    },
+    {
+      "tier": 1,
+      "question": "A government 'creates' 1,000 jobs by spending $100 million. What's missing from this story, per Bastiat?",
+      "answer": "The jobs the taxed money would have made",
+      "choices": [
+        "The jobs the taxed money would have made",
+        "The names of every worker hired so far",
+        "The college degrees of the new managers",
+        "The brand of paper the program uses"
+      ],
+      "context": "Bastiat: every dollar spent by government is a dollar not spent by the taxpayer. Jobs created in one place mean jobs not created in another.",
+      "_pillar": 1,
+      "_strategy": "seen_unseen"
+    },
+    {
+      "tier": 1,
+      "question": "A war starts. Factories run day and night making tanks. A politician says, 'War grows the economy!' Bastiat's reply?",
+      "answer": "Tanks blow up, real goods do not get made",
+      "choices": [
+        "Tanks blow up, real goods do not get made",
+        "Wars cut unemployment but hurt all trade",
+        "Only winners' economies grow, losers shrink",
+        "War economies recover after ten full years"
+      ],
+      "context": "The 'war is good for the economy' claim is the broken-window fallacy at national scale. Resources go to destruction instead of homes, schools, food, books.",
+      "_pillar": 1,
+      "_strategy": "broken_window"
+    },
+    {
+      "tier": 1,
+      "question": "What is the difference between a bad economist and a good one, per Bastiat?",
+      "answer": "The bad one sees only what is visible now",
+      "choices": [
+        "The bad one sees only what is visible now",
+        "The bad one uses charts, good one words",
+        "The good one works for the government",
+        "The good one studies very ancient cases"
+      ],
+      "context": "Bastiat's opening line: 'The bad economist confines himself to the visible effect; the good economist takes account of both the effect that can be seen and those that must be foreseen.'",
+      "_pillar": 1,
+      "_strategy": "seen_unseen"
+    },
+    {
+      "tier": 1,
+      "question": "Frederic Bastiat lived 1801-1850. Which country was he from, and what was his most famous essay?",
+      "answer": "France, 'That Which is Seen and That Which is Not Seen'",
+      "choices": [
+        "France, 'That Which is Seen and That Which is Not Seen'",
+        "England, 'An Inquiry Into the Wealth of Nations'",
+        "Austria, 'Principles of Economics' from 1871",
+        "Germany, 'Das Kapital' on labor and capital"
+      ],
+      "context": "Bastiat was a French economist and statesman. He died young at 49, but his works (especially the 1850 essay) remain folk economics's foundational text.",
+      "_pillar": 1,
+      "_strategy": "bastiat_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Bastiat said the state is the great fiction by which everyone tries to do what?",
+      "answer": "Live at the expense of everyone else",
+      "choices": [
+        "Live at the expense of everyone else",
+        "Help the most vulnerable people first",
+        "Build roads as cheap as possible",
+        "Print money in case of a real war"
+      ],
+      "context": "Bastiat's quip is a founding insight for public choice theory a century later. Politicians and bureaucrats are self-interested actors, not benevolent guardians.",
+      "_pillar": 1,
+      "_strategy": "bastiat_state"
+    },
+    {
+      "tier": 1,
+      "question": "Carl Menger (1840-1921) founded the Austrian school. His 1871 insight: what sets the price of a thing?",
+      "answer": "How much people want it, not the work in it",
+      "choices": [
+        "How much people want it, not the work in it",
+        "The number of labor hours used in making it",
+        "A government commission that meets yearly",
+        "The cost of metals and wood put into it"
+      ],
+      "context": "Menger's 'Principles of Economics' (1871) established subjective value: prices come from human wants and choices, not from labor or materials.",
+      "_pillar": 1,
+      "_strategy": "menger_subjective"
+    },
+    {
+      "tier": 1,
+      "question": "A kid refuses to trade her teddy bear for a new bicycle worth $200. The bear cost $5. What did Menger explain about this?",
+      "answer": "Value lives in the person, not the price tag",
+      "choices": [
+        "Value lives in the person, not the price tag",
+        "Bears must cost more than economists think",
+        "Children do not understand real money use",
+        "The bear contains rare materials in it"
+      ],
+      "context": "Menger's subjective theory of value (1871): things are worth what individuals choose to pay or trade for them, based on their own wants — not their cost of production.",
+      "_pillar": 1,
+      "_strategy": "menger_subjective"
+    },
+    {
+      "tier": 1,
+      "question": "Two kids find a lemonade stand. One pays $2 happily; the other walks away. Same price, two outcomes. Menger's lesson?",
+      "answer": "Value is personal, not the same for all",
+      "choices": [
+        "Value is personal, not the same for all",
+        "The lemonade is inconsistent in quality",
+        "One kid is secretly richer than the other",
+        "Lemonade has no real value at all"
+      ],
+      "context": "Menger's subjective value theory ended the search for a single 'true' price. Every voluntary trade happens because each side values what they get more than what they give.",
+      "_pillar": 1,
+      "_strategy": "menger_subjective"
+    },
+    {
+      "tier": 1,
+      "question": "Menger's 1871 book gave the Austrian school its name. Why 'Austrian'?",
+      "answer": "Menger taught in Vienna, capital of Austria",
+      "choices": [
+        "Menger taught in Vienna, capital of Austria",
+        "Austrian government funded the early work",
+        "Austria was the only country to use it",
+        "Austrians invented all economic math"
+      ],
+      "context": "Menger taught at the University of Vienna. His students Bohm-Bawerk and Wieser carried the school forward. Mises and Hayek followed. The name stuck.",
+      "_pillar": 1,
+      "_strategy": "menger_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Before Menger, many economists thought a chair was worth its labor hours. What did Menger show was wrong?",
+      "answer": "Nobody buys a bad chair for hours of work",
+      "choices": [
+        "Nobody buys a bad chair for hours of work",
+        "Carpenters lie about hours they worked",
+        "Chairs are not really economic goods",
+        "Labor hours cannot be timed exactly"
+      ],
+      "context": "The labor theory of value was held by classical economists (Smith, Ricardo) and later Marx. Menger's subjective-value insight refuted it: a poorly-made chair is cheap no matter the labor.",
+      "_pillar": 1,
+      "_strategy": "menger_subjective"
+    },
+    {
+      "tier": 1,
+      "question": "Hayek won the 1974 Nobel Prize. His insight: no one knows all the prices and wants in a vast economy. What solves this?",
+      "answer": "Prices, signaling what is scarce and plenty",
+      "choices": [
+        "Prices, signaling what is scarce and plenty",
+        "A national supercomputer running daily",
+        "A council of expert planners each year",
+        "Direct vote on every economic choice"
+      ],
+      "context": "Hayek's 1945 'The Use of Knowledge in Society' is one of the most-cited papers in economics. Prices carry dispersed local knowledge no planner can collect.",
+      "_pillar": 1,
+      "_strategy": "hayek_knowledge"
+    },
+    {
+      "tier": 1,
+      "question": "A Texas bakery runs out of flour. A Kansas farmer grows more wheat. Nobody told the farmer about the bakery. Hayek's answer?",
+      "answer": "Prices rise and signal the farmer to act",
+      "choices": [
+        "Prices rise and signal the farmer to act",
+        "A federal agency texts the farmer daily",
+        "The national flour board sends a memo",
+        "A monthly meeting of millers in DC"
+      ],
+      "context": "Hayek's knowledge insight: rising prices tell farmers, millers, and traders to act without anyone knowing the full picture. Prices coordinate dispersed local knowledge.",
+      "_pillar": 1,
+      "_strategy": "hayek_knowledge"
+    },
+    {
+      "tier": 1,
+      "question": "Hayek argued in 1945 that no human or computer can collect what prices carry. What kind of knowledge did he mean?",
+      "answer": "Tiny local facts known by people on the spot",
+      "choices": [
+        "Tiny local facts known by people on the spot",
+        "Math equations taught in graduate school",
+        "Census records collected every ten years",
+        "Library statistics from libraries and books"
+      ],
+      "context": "Hayek's 'knowledge in society' is tacit, local, and constantly changing. A factory manager knows his suppliers, workers, neighborhood — nobody else can collect it.",
+      "_pillar": 1,
+      "_strategy": "hayek_knowledge"
+    },
+    {
+      "tier": 1,
+      "question": "Hayek called the price system 'a marvel' in 1945. Why marvelous?",
+      "answer": "It coordinates millions with no one in charge",
+      "choices": [
+        "It coordinates millions with no one in charge",
+        "It is designed by Federal Reserve experts",
+        "It uses very advanced computer math",
+        "It is enforced by laws passed yearly"
+      ],
+      "context": "Hayek's awe at prices: a tin shortage in Malaysia raises tin prices worldwide, and users from Detroit to Tokyo switch to alternatives — all without anyone knowing why.",
+      "_pillar": 1,
+      "_strategy": "hayek_knowledge"
+    },
+    {
+      "tier": 1,
+      "question": "Hayek called it 'spontaneous order' — order with no designer. What's the best example?",
+      "answer": "Markets, languages, customs that grow alone",
+      "choices": [
+        "Markets, languages, customs that grow alone",
+        "The army, ordered by a clear command",
+        "A school, where one principal commands",
+        "A board game with printed rules in box"
+      ],
+      "context": "Hayek's spontaneous order is central to his thought. Markets, language, common law, and customs all emerge from countless individual actions without central direction.",
+      "_pillar": 1,
+      "_strategy": "hayek_spontaneous_order"
+    },
+    {
+      "tier": 1,
+      "question": "Hayek's 1944 book 'The Road to Serfdom' warned central planning leads where?",
+      "answer": "To political control growing into tyranny",
+      "choices": [
+        "To political control growing into tyranny",
+        "To richer lives but slower economic growth",
+        "To full employment with limited free press",
+        "To the same outcomes as free markets reach"
+      ],
+      "context": "Hayek argued planners must increasingly use coercion to enforce plans the market would not produce. His warning was vindicated by the 20th-century communist record.",
+      "_pillar": 1,
+      "_strategy": "hayek_serfdom"
+    },
+    {
+      "tier": 1,
+      "question": "In 1920 Ludwig von Mises wrote that socialism could never work — not just badly, IMPOSSIBLE. Why?",
+      "answer": "No private property means no real prices",
+      "choices": [
+        "No private property means no real prices",
+        "Socialist coins have no value at all",
+        "Workers will not show up for the work",
+        "Borders close, so no trade can happen"
+      ],
+      "context": "Mises's 1920 'Economic Calculation in the Socialist Commonwealth' is a landmark essay. Without private property in capital, no prices form; without prices, no rational planning.",
+      "_pillar": 1,
+      "_strategy": "mises_calculation"
+    },
+    {
+      "tier": 1,
+      "question": "Mises in 1920 said a socialist planner cannot tell whether to build a school or a factory. Why?",
+      "answer": "No prices means no way to compare costs",
+      "choices": [
+        "No prices means no way to compare costs",
+        "Socialist schools and factories look alike",
+        "The planner gets too busy with paperwork",
+        "Marx forbade comparing buildings by use"
+      ],
+      "context": "Mises showed prices encode the relative scarcity of resources. Without them, planners are guessing. The 20th century proved him right at terrible cost.",
+      "_pillar": 1,
+      "_strategy": "mises_calculation"
+    },
+    {
+      "tier": 1,
+      "question": "Ludwig von Mises (1881-1973) was the towering Austrian economist. Where did he do most US teaching?",
+      "answer": "NYU, where he held an unpaid post for years",
+      "choices": [
+        "NYU, where he held an unpaid post for years",
+        "Harvard, where he held the senior chair",
+        "Yale, where he taught money with Friedman",
+        "MIT, where he led the macro department"
+      ],
+      "context": "Mises's 1940 escape from the Nazis brought him to the US. From 1945 to 1969 he taught at NYU unpaid. The postwar academic mainstream had no room for his views.",
+      "_pillar": 1,
+      "_strategy": "mises_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Mises ran a New York seminar that became a school of thought. Which famous Austrian student attended?",
+      "answer": "Murray Rothbard, who carried it forward",
+      "choices": [
+        "Murray Rothbard, who carried it forward",
+        "John Maynard Keynes, who changed his mind",
+        "Milton Friedman, who joined the Austrians",
+        "Karl Marx, who came to study with Mises"
+      ],
+      "context": "Mises's NYU seminar (1945-1969) trained the next generation of Austrians. Rothbard, Israel Kirzner, Hans Sennholz, and George Reisman were among the students.",
+      "_pillar": 1,
+      "_strategy": "mises_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Mises said the 20th-century question was not capitalism vs. socialism, but what?",
+      "answer": "Whether civilization survives socialism",
+      "choices": [
+        "Whether civilization survives socialism",
+        "If unions or governments should set wages",
+        "If gold or silver should back the dollar",
+        "If tariffs hurt or help the home country"
+      ],
+      "context": "Mises saw socialism not as a slower path to wealth but as a road to chaos and tyranny. His prediction was confirmed by the USSR, Maoist China, Khmer Rouge Cambodia, and others.",
+      "_pillar": 1,
+      "_strategy": "mises_civilization"
+    },
+    {
+      "tier": 1,
+      "question": "Murray Rothbard (1926-1995) built on Mises's work. What did Rothbard champion?",
+      "answer": "Free markets and individual property rights",
+      "choices": [
+        "Free markets and individual property rights",
+        "The labor theory of value used by Marx",
+        "Math models taught in modern macro class",
+        "Federal Reserve rules for interest rates"
+      ],
+      "context": "Rothbard's 'Man, Economy, and State' (1962) extended Mises into a full treatise. He insisted on private property, voluntary exchange, and the rejection of central planning at every level.",
+      "_pillar": 1,
+      "_strategy": "rothbard_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Rothbard's 1963 book 'America's Great Depression' blamed the 1930s crash on what?",
+      "answer": "The Federal Reserve's easy credit in the 1920s",
+      "choices": [
+        "The Federal Reserve's easy credit in the 1920s",
+        "Greedy Wall Street bankers acting on their own",
+        "Foreign tariffs against US-made steel and cars",
+        "Bad weather wiping out farms across the country"
+      ],
+      "context": "Rothbard applied Mises-Hayek business cycle theory to the Depression. Cheap Fed credit in the 1920s built malinvestment; the crash was the inevitable correction.",
+      "_pillar": 1,
+      "_strategy": "rothbard_great_depression"
+    },
+    {
+      "tier": 1,
+      "question": "Rothbard helped found a school that goes further than most Austrians. What is it called?",
+      "answer": "Anarcho-capitalism, order without a state",
+      "choices": [
+        "Anarcho-capitalism, order without a state",
+        "Christian socialism, state with religion",
+        "Welfare statism, expanded safety nets",
+        "Mercantilism, the state hoards gold money"
+      ],
+      "context": "Rothbard's 'For a New Liberty' (1973) is the canonical anarcho-capitalist statement: all services, including security and law, can be provided by voluntary exchange.",
+      "_pillar": 1,
+      "_strategy": "rothbard_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Rothbard wrote that the state always does what?",
+      "answer": "Takes by force what markets earn by trade",
+      "choices": [
+        "Takes by force what markets earn by trade",
+        "Builds roads better than private firms do",
+        "Defends people from all foreign powers",
+        "Lowers prices for goods most people need"
+      ],
+      "context": "Rothbard defined the state as the institution with a monopoly on force in a territory. His critique cuts across left/right and remains a cornerstone Austrian position.",
+      "_pillar": 1,
+      "_strategy": "rothbard_state"
+    },
+    {
+      "tier": 1,
+      "question": "Thomas Sowell (born 1930) is a Chicago-school economist. What's his famous slogan about economics?",
+      "answer": "There are no solutions, only trade-offs",
+      "choices": [
+        "There are no solutions, only trade-offs",
+        "Government solves most human problems",
+        "Equality is the highest aim of policy",
+        "Profits are unfair to workers always"
+      ],
+      "context": "Sowell's 'Basic Economics' (2000+) is a popular introduction. His 'trade-offs not solutions' line captures the seen-vs-unseen Bastiat method.",
+      "_pillar": 1,
+      "_strategy": "sowell_intro"
+    },
+    {
+      "tier": 1,
+      "question": "Sowell wrote about minimum-wage laws. What happens to teenage workers when wages rise by law?",
+      "answer": "Many lose jobs they would have taken cheaper",
+      "choices": [
+        "Many lose jobs they would have taken cheaper",
+        "All workers' incomes rise with no other effect",
+        "Employers always pay the new wage with ease",
+        "Schools step in to provide free job training"
+      ],
+      "context": "Sowell has written for decades about teen unemployment rising when minimum wages rise. The unseen workers — those priced out of a first job — bear the cost.",
+      "_pillar": 1,
+      "_strategy": "sowell_minimum_wage"
+    },
+    {
+      "tier": 1,
+      "question": "Sowell on rent control: what happens to housing supply when rents are capped by law?",
+      "answer": "Builders stop building, supply shrinks",
+      "choices": [
+        "Builders stop building, supply shrinks",
+        "Landlords are forced to build new units",
+        "Housing becomes plentiful and easy to find",
+        "Cities take over all building work"
+      ],
+      "context": "Sowell's 'Basic Economics' uses NYC, San Francisco, and Stockholm rent-control cases. Visible benefit goes to current tenants. Unseen cost: future housing never built.",
+      "_pillar": 1,
+      "_strategy": "sowell_rent_control"
+    },
+    {
+      "tier": 1,
+      "question": "Sowell warns about a belief that smart planners know better than millions trading. He calls this what?",
+      "answer": "The vision of the anointed, planners on top",
+      "choices": [
+        "The vision of the anointed, planners on top",
+        "The democratic theory of the republic",
+        "The Federal Reserve's standard method",
+        "The natural rate from old textbooks"
+      ],
+      "context": "Sowell's 'The Vision of the Anointed' (1995) critiques the assumption that intellectuals know better than ordinary people making voluntary choices.",
+      "_pillar": 1,
+      "_strategy": "sowell_vision"
+    },
+    {
+      "tier": 1,
+      "question": "Adam Smith (1723-1790) wrote 'Wealth of Nations' in 1776. He used a famous pin factory example. What did it show?",
+      "answer": "Dividing work among many makes goods cheap",
+      "choices": [
+        "Dividing work among many makes goods cheap",
+        "One worker builds pins faster than ten",
+        "Pin factories should be government-run",
+        "Pins should always be made by hand alone"
+      ],
+      "context": "Smith's pin factory in Book I of 'Wealth of Nations' illustrates the division of labor. Specialization multiplies productivity beyond what any one worker can do alone.",
+      "_pillar": 1,
+      "_strategy": "smith_pin_factory"
+    },
+    {
+      "tier": 1,
+      "question": "Adam Smith said the baker bakes bread not for love but for his own gain. What did Smith call this?",
+      "answer": "The invisible hand, self-interest helping all",
+      "choices": [
+        "The invisible hand, self-interest helping all",
+        "The visible fist, force in the marketplace",
+        "The bread tax, paid by all households",
+        "The mercantile law, set by Parliament"
+      ],
+      "context": "Smith's 'invisible hand' (Wealth of Nations, Book IV): voluntary trade in pursuit of self-interest produces broader social benefits without anyone planning for them.",
+      "_pillar": 1,
+      "_strategy": "smith_invisible_hand"
+    },
+    {
+      "tier": 1,
+      "question": "Smith's 1776 book argued AGAINST an older idea that wealth means hoarding gold and silver. What was that older idea?",
+      "answer": "Mercantilism, the gold-hoarding theory",
+      "choices": [
+        "Mercantilism, the gold-hoarding theory",
+        "Communism, before Karl Marx was born",
+        "Bimetallism, gold and silver paired up",
+        "Free trade, an idea Smith opposed"
+      ],
+      "context": "Mercantilism dominated 16th-18th century European economic policy. Smith's free-trade argument helped shift thinking toward what we now call market economics.",
+      "_pillar": 1,
+      "_strategy": "smith_mercantilism"
+    },
+    {
+      "tier": 1,
+      "question": "Smith wrote that the urge to truck, barter, and trade is unique to which species?",
+      "answer": "Humans, no other animal makes deals",
+      "choices": [
+        "Humans, no other animal makes deals",
+        "Bees, who trade nectar with flowers",
+        "Crows, who barter shiny things daily",
+        "Wolves, who divide kills by clear rules"
+      ],
+      "context": "Smith observed that humans alone make deals based on mutual benefit. The capacity to negotiate, contract, and trade across communities is foundational to economic life.",
+      "_pillar": 1,
+      "_strategy": "smith_trade"
+    },
+    {
+      "tier": 1,
+      "question": "Smith's 'Wealth of Nations' came out in 1776. What other famous event happened that year?",
+      "answer": "The American Declaration of Independence",
+      "choices": [
+        "The American Declaration of Independence",
+        "The French Revolution starting in Paris",
+        "The Battle of Waterloo with Napoleon",
+        "The Russian Revolution led by Lenin"
+      ],
+      "context": "Smith's 1776 'Wealth of Nations' and Jefferson's 1776 Declaration of Independence are paired moments in the Enlightenment's case for liberty — political and economic.",
+      "_pillar": 1,
+      "_strategy": "smith_intro"
+    },
+    {
+      "tier": 1,
+      "question": "A kid buys a $10 video game instead of $10 in candy. What did Bastiat point to in cases like this?",
+      "answer": "The candy not bought is the cost of the game",
+      "choices": [
+        "The candy not bought is the cost of the game",
+        "The game is worth more than candy here",
+        "The kid should have asked an adult first",
+        "The candy was a better deal at the price"
+      ],
+      "context": "Opportunity cost is the value of the next-best alternative given up. Every choice has one. Bastiat's seen-vs-unseen is opportunity cost made vivid.",
+      "_pillar": 1,
+      "_strategy": "opportunity_cost"
+    },
+    {
+      "tier": 1,
+      "question": "An hour of TV is an hour not of homework. What do economists call the value of the second thing?",
+      "answer": "Opportunity cost, what you give up to choose",
+      "choices": [
+        "Opportunity cost, what you give up to choose",
+        "Sunk cost, money gone forever already",
+        "Marginal utility, the joy from one more",
+        "Fixed cost, the same no matter what"
+      ],
+      "context": "Opportunity cost is one of the most basic economic ideas. It applies to time as much as money. The cost of any choice is always the next-best alternative.",
+      "_pillar": 1,
+      "_strategy": "opportunity_cost"
+    },
+    {
+      "tier": 1,
+      "question": "A town spends $5 million on a new park. What is the opportunity cost?",
+      "answer": "Schools, roads, anything else the $5M could fund",
+      "choices": [
+        "Schools, roads, anything else the $5M could fund",
+        "The dollar value of the park's grass and benches",
+        "The wages of the gardeners over the first year",
+        "The cost of repainting the park signs each year"
+      ],
+      "context": "Opportunity cost is the unseen alternative. Bastiat's method applied: what else could the $5M have built? That's the real price of the park.",
+      "_pillar": 1,
+      "_strategy": "opportunity_cost"
+    },
+    {
+      "tier": 1,
+      "question": "A senior gets two offers — coffee shop now or trade school. What does she give up if she picks the coffee shop?",
+      "answer": "The higher pay trade school could bring later",
+      "choices": [
+        "The higher pay trade school could bring later",
+        "The cost of buying a coffee uniform first",
+        "The price of gas driving to the coffee shop",
+        "The interest on a checking account balance"
+      ],
+      "context": "Opportunity cost includes future income lost. Skipping training for short-term pay is a classic trade-off. The unseen cost is years of higher wages forfeited.",
+      "_pillar": 1,
+      "_strategy": "opportunity_cost"
+    },
+    {
+      "tier": 1,
+      "question": "Why is 'free' parking never really free, per economists?",
+      "answer": "Someone pays for land, lights, and upkeep",
+      "choices": [
+        "Someone pays for land, lights, and upkeep",
+        "Parking spots are taxed by the city yearly",
+        "Drivers leave coins behind that the city keeps",
+        "The DMV charges a fee to register the car"
+      ],
+      "context": "Thomas Sowell uses the 'free parking' example often. The land, the building, the security, the upkeep — all have costs. 'Free' means hidden, not absent.",
+      "_pillar": 1,
+      "_strategy": "opportunity_cost"
+    },
+    {
+      "tier": 1,
+      "question": "Lemonade is 50 cents a cup. A heat wave hits and everyone wants some. What does basic supply and demand predict?",
+      "answer": "Sellers raise prices, more sellers join in",
+      "choices": [
+        "Sellers raise prices, more sellers join in",
+        "The town council steps in to freeze prices",
+        "Lemonade gets handed out to thirsty kids free",
+        "Customers stop drinking lemonade altogether"
+      ],
+      "context": "Rising demand with stable supply pushes prices up. Higher prices signal other sellers to enter the market. Supply expands. This is the price system at work.",
+      "_pillar": 1,
+      "_strategy": "supply_demand"
+    },
+    {
+      "tier": 1,
+      "question": "After a hurricane, a town runs out of bottled water. Some sellers raise prices. What happens if prices stay LOW?",
+      "answer": "Shelves stay empty, hoarders take it all",
+      "choices": [
+        "Shelves stay empty, hoarders take it all",
+        "Everyone gets water fairly, no other effect",
+        "Trucks always arrive within a few hours",
+        "The mayor sends in emergency water for free"
+      ],
+      "context": "Price ceilings during emergencies cause shortages. Higher prices ration scarce water to the most urgent uses and signal suppliers to bring more in. Walter Williams wrote on this for decades.",
+      "_pillar": 1,
+      "_strategy": "price_signal"
+    },
+    {
+      "tier": 1,
+      "question": "Why does gas usually get cheaper after a big oil discovery?",
+      "answer": "More supply means each gallon less scarce",
+      "choices": [
+        "More supply means each gallon less scarce",
+        "Drivers always panic-buy after discoveries",
+        "Oil companies sell to the government cheap",
+        "The president fixes gas prices by law"
+      ],
+      "context": "Supply and demand: when supply grows and demand is steady, prices fall. The price signal then guides drivers, oil companies, and refiners.",
+      "_pillar": 1,
+      "_strategy": "supply_demand"
+    },
+    {
+      "tier": 1,
+      "question": "A new toy comes out at Christmas. Demand is huge; supply short. What does the price do?",
+      "answer": "Rises, signaling makers to produce more",
+      "choices": [
+        "Rises, signaling makers to produce more",
+        "Stays the same, the toy company sets it",
+        "Falls, because more buyers lower prices",
+        "Disappears, since shortages mean no price"
+      ],
+      "context": "Rising prices ration scarce goods to those who want them most. They also signal producers to expand. This is the price mechanism Hayek admired.",
+      "_pillar": 1,
+      "_strategy": "supply_demand"
+    },
+    {
+      "tier": 1,
+      "question": "A government caps bread at $1 to help the poor. Bakers can't cover costs. What happens?",
+      "answer": "Bakers make less bread, shortages appear",
+      "choices": [
+        "Bakers make less bread, shortages appear",
+        "Bakers make more bread to help the poor",
+        "Bread suddenly becomes more nutritious",
+        "Bread becomes the most plentiful food"
+      ],
+      "context": "Price ceilings below the market clearing price cause shortages. The Soviet Union, Venezuela, and many wartime governments learned this lesson at enormous cost.",
+      "_pillar": 1,
+      "_strategy": "price_controls"
+    },
+    {
+      "tier": 1,
+      "question": "A law sets bread at $20 to help bakers. Customers stop buying. What happens?",
+      "answer": "Bakers end up with unsold bread piling up",
+      "choices": [
+        "Bakers end up with unsold bread piling up",
+        "Bakers always sell at the new high price",
+        "Bread becomes cheaper than the law allows",
+        "Bread sales rise as people stockpile it"
+      ],
+      "context": "Price floors above the market clearing price cause surpluses. Minimum-wage laws are price floors on labor. Agricultural price supports cause crop surpluses.",
+      "_pillar": 1,
+      "_strategy": "price_controls"
+    },
+    {
+      "tier": 1,
+      "question": "A girl trades her stuffed bear for her brother's plastic dinosaur. Both feel they got the better end. How?",
+      "answer": "Each valued what they got more than what they gave",
+      "choices": [
+        "Each valued what they got more than what they gave",
+        "One must have been tricked by the other",
+        "The toys are secretly worth the same",
+        "Their mother decided which trade was fair"
+      ],
+      "context": "Voluntary trade only happens when each side values what they receive more than what they give up. Both sides gain. Menger's subjective value at work.",
+      "_pillar": 1,
+      "_strategy": "voluntary_exchange"
+    },
+    {
+      "tier": 1,
+      "question": "Two kids trade lunches — peanut butter for ham. Each thinks they came out ahead. What does this show?",
+      "answer": "Both sides usually gain when they trade freely",
+      "choices": [
+        "Both sides usually gain when they trade freely",
+        "Trade is a contest where only one wins",
+        "Lunches are always equal in real value",
+        "Trading is bad unless an adult approves"
+      ],
+      "context": "Mutual gain from voluntary exchange is one of economics' great discoveries. Mises called it the basis of human cooperation. No coercion is needed.",
+      "_pillar": 1,
+      "_strategy": "voluntary_exchange"
+    },
+    {
+      "tier": 1,
+      "question": "A baseball card is worth $5 to one kid, $20 to another. They trade for $10. What happens?",
+      "answer": "Both kids gain, total welfare goes up",
+      "choices": [
+        "Both kids gain, total welfare goes up",
+        "Wealth is only created by making goods",
+        "Trades never actually create new wealth",
+        "Only one of the kids could have gained"
+      ],
+      "context": "Voluntary trade creates wealth without making any new physical thing. Both kids end up better off in their own valuation. This is the magic of exchange.",
+      "_pillar": 1,
+      "_strategy": "voluntary_exchange"
+    },
+    {
+      "tier": 1,
+      "question": "How is FORCED trade different from voluntary trade, per Austrian economists?",
+      "answer": "Forced trade may leave one side worse off",
+      "choices": [
+        "Forced trade may leave one side worse off",
+        "Forced trade always helps everyone equally",
+        "Forced trade is the same as voluntary trade",
+        "Forced trade always has the lowest prices"
+      ],
+      "context": "Mises, Rothbard, and the Austrian tradition insist that gain from trade requires the trade to be voluntary. When a state forces a trade, the gains are not guaranteed.",
+      "_pillar": 1,
+      "_strategy": "voluntary_exchange"
+    },
+    {
+      "tier": 1,
+      "question": "Why do Austrians say voluntary trade always 'creates' wealth without making new goods?",
+      "answer": "Each side values what they get more",
+      "choices": [
+        "Each side values what they get more",
+        "New gold appears at the moment of trade",
+        "The buyer must always be paying too much",
+        "The seller is always being underpaid hard"
+      ],
+      "context": "Voluntary trade creates subjective value gain on both sides. Both feel richer than before, even if no new physical goods exist. This is the gain from exchange.",
+      "_pillar": 1,
+      "_strategy": "voluntary_exchange"
+    },
+    {
+      "tier": 1,
+      "question": "Bastiat warned against governments hiring people to keep them busy. What did he call this kind of work?",
+      "answer": "Make-work, paid by taxes from real jobs",
+      "choices": [
+        "Make-work, paid by taxes from real jobs",
+        "Public good, a benefit to the country",
+        "Free trade, helping working families out",
+        "Social insurance, a cushion for hard times"
+      ],
+      "context": "Bastiat's 1850 essay attacked make-work schemes. The visible workers and projects are real, but the unseen cost is the productive work the taxed money would have funded.",
+      "_pillar": 1,
+      "_strategy": "make_work"
+    },
+    {
+      "tier": 1,
+      "question": "Bastiat asked: 'When goods do not cross borders, what do?' His answer was?",
+      "answer": "Soldiers, blocked trade leads to war",
+      "choices": [
+        "Soldiers, blocked trade leads to war",
+        "Tourists, who carry goods with them",
+        "Mail, since people still write each other",
+        "Money, since gold moves with no goods"
+      ],
+      "context": "Bastiat's famous warning: 'When goods do not cross borders, soldiers will.' Free trade is a peace policy. Tariffs and embargoes are precursors to war.",
+      "_pillar": 1,
+      "_strategy": "free_trade"
+    },
+    {
+      "tier": 1,
+      "question": "Why do Austrians oppose tariffs on foreign goods?",
+      "answer": "Tariffs make goods cost more at home",
+      "choices": [
+        "Tariffs make goods cost more at home",
+        "Tariffs help foreign workers get raises",
+        "Tariffs hide who buys what goods today",
+        "Tariffs solve a country's money problems"
+      ],
+      "context": "A tariff is a tax. The seen benefit goes to a few protected producers. The unseen cost falls on every consumer who pays more for everything those tariffs touch.",
+      "_pillar": 1,
+      "_strategy": "free_trade"
+    },
+    {
+      "tier": 1,
+      "question": "Henry Hazlitt's 1946 book 'Economics in One Lesson' put Bastiat's method into one rule. What is it?",
+      "answer": "Look at all groups, not just one, and long term",
+      "choices": [
+        "Look at all groups, not just one, and long term",
+        "Always trust the government to fix any problem",
+        "Trade is zero-sum, one side wins, one loses",
+        "Inflation is good if it keeps jobs growing"
+      ],
+      "context": "Hazlitt's 'one lesson' is the Bastiat method named: trace effects across all groups and over time. It is the single most useful book in popular economics.",
+      "_pillar": 1,
+      "_strategy": "hazlitt_one_lesson"
+    },
+    {
+      "tier": 1,
+      "question": "Austrians predicted boom-bust cycles caused by central banks. Which famous bust did Austrians warn about FIRST?",
+      "answer": "The 2008 US housing crash and crisis",
+      "choices": [
+        "The 2008 US housing crash and crisis",
+        "The 1929 stock market crash and Depression",
+        "The 1933 banking crisis and gold seizure",
+        "The 1971 closing of the gold window"
+      ],
+      "context": "Peter Schiff and other Austrians repeatedly warned (2005-2007) on TV that the housing market would crash. The mainstream profession mocked them. They were right.",
+      "_pillar": 1,
+      "_strategy": "abct_warnings"
+    },
+    {
+      "tier": 1,
+      "question": "On October 31, 2008, a person named Satoshi Nakamoto posted a nine-page paper to a cryptography list. What had he invented?",
+      "answer": "Bitcoin, digital money with no central issuer",
+      "choices": [
+        "Bitcoin, digital money with no central issuer",
+        "A new credit-card system for online stores",
+        "An online video game called Halloween Coin",
+        "A tax-tracking system for the US Treasury"
+      ],
+      "context": "Satoshi's white paper 'Bitcoin: A Peer-to-Peer Electronic Cash System' appeared October 31, 2008 on the metzdowd.com cryptography list. The mailing list members were mostly skeptical.",
+      "_pillar": 2,
+      "_strategy": "satoshi_white_paper"
+    },
+    {
+      "tier": 1,
+      "question": "Satoshi Nakamoto posted the Bitcoin paper on Halloween 2008 and was gone by 2011. What's known about his identity?",
+      "answer": "Nothing for sure, the identity stays unknown",
+      "choices": [
+        "Nothing for sure, the identity stays unknown",
+        "He was Hal Finney, who confessed in old age",
+        "He was a team at MIT funded by Treasury",
+        "He was Vitalik Buterin, before Ethereum was made"
+      ],
+      "context": "Satoshi Nakamoto's identity remains one of the great mysteries of the internet age. Many guesses, no proofs. Satoshi's last forum post was in December 2010.",
+      "_pillar": 2,
+      "_strategy": "satoshi_identity"
+    },
+    {
+      "tier": 1,
+      "question": "What problem did Satoshi solve that earlier digital-cash inventors could not?",
+      "answer": "How to stop the same coin from being spent twice",
+      "choices": [
+        "How to stop the same coin from being spent twice",
+        "How to make computers run on solar power alone",
+        "How to design a font all browsers can read well",
+        "How to ban credit cards from internet purchases"
+      ],
+      "context": "The 'double-spend problem' had plagued digital cash. Satoshi's proof-of-work plus a shared ledger solved it without needing a trusted central party.",
+      "_pillar": 2,
+      "_strategy": "double_spend"
+    },
+    {
+      "tier": 1,
+      "question": "Why did Satoshi build Bitcoin so no central party could control it?",
+      "answer": "So no bank or state could change the rules",
+      "choices": [
+        "So no bank or state could change the rules",
+        "So nobody could ever figure out who he was",
+        "So Bitcoin would never reach more than ten users",
+        "So Bitcoin would always be illegal to use online"
+      ],
+      "context": "Satoshi's design was a direct response to the 2008 banking crisis. Bitcoin's promise was credibly neutral money: rules set by code, enforced by the network, controlled by no party.",
+      "_pillar": 2,
+      "_strategy": "satoshi_design"
+    },
+    {
+      "tier": 1,
+      "question": "Where did Satoshi post the original Bitcoin white paper in 2008?",
+      "answer": "On the metzdowd.com cryptography list",
+      "choices": [
+        "On the metzdowd.com cryptography list",
+        "On the front page of the New York Times",
+        "On a Super Bowl TV ad that year",
+        "On the official Federal Reserve website"
+      ],
+      "context": "Satoshi posted to a small cryptography mailing list with mostly cypherpunk-aligned subscribers. The paper went mostly unnoticed by the mainstream world for years.",
+      "_pillar": 2,
+      "_strategy": "satoshi_white_paper"
+    },
+    {
+      "tier": 1,
+      "question": "The Bitcoin white paper from October 2008 was how many pages long?",
+      "answer": "Nine pages, including references and figures",
+      "choices": [
+        "Nine pages, including references and figures",
+        "Two hundred pages, like a textbook on math",
+        "Five thousand pages, an encyclopedia book",
+        "One page, just an abstract with no detail"
+      ],
+      "context": "Satoshi's white paper is famously short — nine pages. Its compactness is part of its mystique. Re-read it today and the design is all there.",
+      "_pillar": 2,
+      "_strategy": "satoshi_white_paper"
+    },
+    {
+      "tier": 1,
+      "question": "On January 3, 2009, Satoshi mined the first Bitcoin block. What is this block called?",
+      "answer": "The Genesis block, start of the Bitcoin chain",
+      "choices": [
+        "The Genesis block, start of the Bitcoin chain",
+        "The Alpha block, just a name by tradition",
+        "The First Reserve block, an old bank record",
+        "The Pilot block, before the real one in 2010"
+      ],
+      "context": "Bitcoin's Genesis block was mined January 3, 2009. It contains a 50-BTC mining reward that is mathematically unspendable — the public key is set so that no private key can ever spend the coins.",
+      "_pillar": 2,
+      "_strategy": "genesis_block"
+    },
+    {
+      "tier": 1,
+      "question": "The January 3, 2009 Bitcoin Genesis block hid a UK newspaper headline. Which newspaper?",
+      "answer": "The Times of London, on a bank bailout",
+      "choices": [
+        "The Times of London, on a bank bailout",
+        "The New York Times, on a financial crash",
+        "The Wall Street Journal, on Fed rate cuts",
+        "The Washington Post, on Obama's election"
+      ],
+      "context": "The Genesis block's coinbase contains the headline: 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.' The headline anchors Bitcoin's purpose.",
+      "_pillar": 2,
+      "_strategy": "genesis_block_headline"
+    },
+    {
+      "tier": 1,
+      "question": "Why did Satoshi include 'Chancellor on brink of second bailout for banks' in the first Bitcoin block?",
+      "answer": "To timestamp the chain and comment on bailouts",
+      "choices": [
+        "To timestamp the chain and comment on bailouts",
+        "Because the Times paid Satoshi a finder's fee",
+        "Because every block must cite a newspaper",
+        "Because Satoshi was an editor at the Times"
+      ],
+      "context": "The headline serves two purposes: it proves Bitcoin couldn't have been mined before January 3, 2009, AND it editorializes about the bank bailouts Bitcoin was designed to make unnecessary.",
+      "_pillar": 2,
+      "_strategy": "genesis_block_headline"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin's Genesis block contains a 50-BTC reward. What is unusual about those coins?",
+      "answer": "They can never be spent, the chain locks them",
+      "choices": [
+        "They can never be spent, the chain locks them",
+        "They are owned today by the US Federal Reserve",
+        "They were stolen in 2013 by a hacker named Mark",
+        "They can be spent only on January 3 each year"
+      ],
+      "context": "The Genesis block's reward is technically unspendable because of how the coinbase is structured. This eliminates any 'Satoshi keeps the founder's stash' criticism at block zero.",
+      "_pillar": 2,
+      "_strategy": "genesis_block"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin's Genesis block was mined how many days before the next block?",
+      "answer": "About six days, an unusually long pause",
+      "choices": [
+        "About six days, an unusually long pause",
+        "About one second, the network was busy",
+        "About one year, rules required slow mining",
+        "Bitcoin only had one block for the first month"
+      ],
+      "context": "Block 1 was mined January 9, 2009, six days after Genesis. Some speculate Satoshi was making sure the software worked before letting the chain grow.",
+      "_pillar": 2,
+      "_strategy": "genesis_block"
+    },
+    {
+      "tier": 1,
+      "question": "On January 12, 2009, Satoshi sent the first Bitcoin transaction ever. Who received those 10 BTC?",
+      "answer": "Hal Finney, an early cypherpunk and coder",
+      "choices": [
+        "Hal Finney, an early cypherpunk and coder",
+        "Adam Back, who invented Hashcash in 1997",
+        "Vitalik Buterin, who later made Ethereum",
+        "Michael Saylor, of MicroStrategy fame today"
+      ],
+      "context": "Hal Finney (1956-2014) was a cryptography veteran who downloaded the Bitcoin software the day after launch. He received the first transaction at block 170 on January 12, 2009.",
+      "_pillar": 2,
+      "_strategy": "hal_finney"
+    },
+    {
+      "tier": 1,
+      "question": "Hal Finney, the first Bitcoin transaction recipient on January 12, 2009, was famous for what before Bitcoin?",
+      "answer": "Helping develop PGP email encryption tools",
+      "choices": [
+        "Helping develop PGP email encryption tools",
+        "Founding the New York Stock Exchange in 1792",
+        "Inventing the credit card during the 1950s",
+        "Designing the Federal Reserve in 1913 in secret"
+      ],
+      "context": "Finney worked on Phil Zimmermann's PGP team in the 1990s. He was a long-time cypherpunk and pioneer of digital cash ideas before Bitcoin.",
+      "_pillar": 2,
+      "_strategy": "hal_finney"
+    },
+    {
+      "tier": 1,
+      "question": "Hal Finney's first tweet about Bitcoin in January 2009 said simply what?",
+      "answer": "'Running bitcoin' — three words at the launch",
+      "choices": [
+        "'Running bitcoin' — three words at the launch",
+        "'Will this scale?' — a question for Satoshi",
+        "'Down with banks' — a slogan against banks",
+        "'I am Satoshi' — his first confession at last"
+      ],
+      "context": "Finney's January 11, 2009 tweet 'Running bitcoin' is one of the most legendary tweets in tech history. He had downloaded the software and was mining on his home PC.",
+      "_pillar": 2,
+      "_strategy": "hal_finney"
+    },
+    {
+      "tier": 1,
+      "question": "Hal Finney died in 2014. What disease had he been fighting while working on Bitcoin code?",
+      "answer": "ALS, Lou Gehrig's disease, paralyzing him",
+      "choices": [
+        "ALS, Lou Gehrig's disease, paralyzing him",
+        "Cancer, which he beat several times in a row",
+        "Heart disease, with a transplant late on",
+        "Stroke recovery, after a sudden one early on"
+      ],
+      "context": "Finney was diagnosed with ALS around 2009. He continued writing code with the help of eye-tracking technology and was cryonically preserved by Alcor after death in 2014.",
+      "_pillar": 2,
+      "_strategy": "hal_finney"
+    },
+    {
+      "tier": 1,
+      "question": "How many bitcoin can ever exist, per the Bitcoin protocol?",
+      "answer": "About 21 million, the cap Satoshi coded in",
+      "choices": [
+        "About 21 million, the cap Satoshi coded in",
+        "About one trillion, set by Federal Reserve",
+        "Unlimited, as more miners join the network",
+        "About one billion, like the US population"
+      ],
+      "context": "Bitcoin's 21-million cap is one of its defining features. The supply schedule is hard-coded. Changing it would require near-unanimous consent of node operators.",
+      "_pillar": 2,
+      "_strategy": "supply_cap"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin's 21-million cap cannot change without consent of the whole network. Why does this matter?",
+      "answer": "It makes bitcoin scarce in a way fiat is not",
+      "choices": [
+        "It makes bitcoin scarce in a way fiat is not",
+        "It lets the Federal Reserve set the policy",
+        "It allows easy printing during recessions",
+        "It enables governments to issue new bitcoin"
+      ],
+      "context": "The 21M cap is Bitcoin's answer to fiat debasement. No central authority can dilute the supply. The contrast with the dollar's 2020-2021 expansion is what attracted institutional buyers.",
+      "_pillar": 2,
+      "_strategy": "supply_cap"
+    },
+    {
+      "tier": 1,
+      "question": "Why did Satoshi pick 21 million as the bitcoin cap?",
+      "answer": "It came from the halving math, not a round number",
+      "choices": [
+        "It came from the halving math, not a round number",
+        "Twenty-one was Satoshi's lucky birthday number",
+        "It was set by a Federal Reserve panel in 2008",
+        "It matched the size of New York City in 2009"
+      ],
+      "context": "The cap of ~20,999,999.97 BTC comes from the geometric sum of all halvings: 50 BTC/block x 210,000 blocks x (1 + 1/2 + 1/4 + ...) ≈ 21 million.",
+      "_pillar": 2,
+      "_strategy": "supply_cap"
+    },
+    {
+      "tier": 1,
+      "question": "Of Bitcoin's 21-million cap, how many have already been mined as of 2024?",
+      "answer": "Over 19.5 million, most of the supply already",
+      "choices": [
+        "Over 19.5 million, most of the supply already",
+        "Just two million, less than ten percent so far",
+        "All 21 million, every coin has been mined",
+        "About 10,000, only a tiny share is out yet"
+      ],
+      "context": "By 2024, over 93 percent of Bitcoin's eventual supply was already mined. The remaining ~1.5M will trickle in via halvings through about the year 2140.",
+      "_pillar": 2,
+      "_strategy": "supply_cap"
+    },
+    {
+      "tier": 1,
+      "question": "When will the last bitcoin be mined, per the halving schedule?",
+      "answer": "Around the year 2140, when rewards near zero",
+      "choices": [
+        "Around the year 2140, when rewards near zero",
+        "Sometime in 2025, before the next halving",
+        "Never, mining continues forever and ever",
+        "By 2030, supply will end and mining stops"
+      ],
+      "context": "The Bitcoin halving cuts the block reward in half every ~4 years. By the year 2140, the reward drops below one satoshi and effectively stops. Miners after that earn only transaction fees.",
+      "_pillar": 2,
+      "_strategy": "supply_cap"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin's block reward halves about every four years. What was the FIRST halving, and what year?",
+      "answer": "November 2012, dropping from 50 to 25 BTC",
+      "choices": [
+        "November 2012, dropping from 50 to 25 BTC",
+        "January 2009, dropping from 100 to 50 BTC",
+        "August 2015, dropping from 80 to 40 BTC",
+        "March 2018, dropping from 40 to 20 BTC"
+      ],
+      "context": "The first Bitcoin halving occurred at block 210,000 in November 2012. Reward dropped from 50 BTC to 25 BTC per block. The halving is one of Bitcoin's most-watched events.",
+      "_pillar": 2,
+      "_strategy": "halving"
+    },
+    {
+      "tier": 1,
+      "question": "The second Bitcoin halving in 2016 changed the block reward to what?",
+      "answer": "12.5 BTC, half of the previous 25 BTC reward",
+      "choices": [
+        "12.5 BTC, half of the previous 25 BTC reward",
+        "10 BTC, a round number set by miner vote",
+        "50 BTC, the same as the Genesis reward",
+        "1 BTC, a sharp drop to slow the supply"
+      ],
+      "context": "Block 420,000 in July 2016 triggered the second halving: 25 BTC to 12.5 BTC per block. Each halving roughly doubles Bitcoin's stock-to-flow ratio.",
+      "_pillar": 2,
+      "_strategy": "halving"
+    },
+    {
+      "tier": 1,
+      "question": "The third Bitcoin halving was in May 2020 during the early pandemic. New reward?",
+      "answer": "6.25 BTC, half of the prior 12.5 BTC reward",
+      "choices": [
+        "6.25 BTC, half of the prior 12.5 BTC reward",
+        "5.00 BTC, an emergency lower rate that month",
+        "10 BTC, raised to help miners in the pandemic",
+        "25 BTC, restored to draw new miners back in"
+      ],
+      "context": "Block 630,000 in May 2020 triggered the third halving: 12.5 BTC to 6.25 BTC. The pandemic-era halving preceded a major bull market into 2021.",
+      "_pillar": 2,
+      "_strategy": "halving"
+    },
+    {
+      "tier": 1,
+      "question": "The fourth Bitcoin halving was in April 2024. What did the block reward become?",
+      "answer": "3.125 BTC, half of the prior 6.25 BTC reward",
+      "choices": [
+        "3.125 BTC, half of the prior 6.25 BTC reward",
+        "2 BTC, a sharper cut than past halvings",
+        "0 BTC, no more new bitcoin from mining",
+        "12.5 BTC, doubled to attract new miners"
+      ],
+      "context": "Block 840,000 in April 2024 triggered the fourth halving: 6.25 BTC to 3.125 BTC. After four halvings, the daily new-supply rate is a tiny fraction of the original.",
+      "_pillar": 2,
+      "_strategy": "halving"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin halvings happen every 210,000 blocks. About how many years between them?",
+      "answer": "About four years, given 10-minute blocks",
+      "choices": [
+        "About four years, given 10-minute blocks",
+        "Exactly two years, set by the calendar",
+        "About ten years, give or take a few months",
+        "Roughly one year, by the protocol schedule"
+      ],
+      "context": "Blocks target 10 minutes each: 210,000 blocks x 10 minutes = 35,000 hours = ~4 years. The halving cycle is one of Bitcoin's most-watched market signals.",
+      "_pillar": 2,
+      "_strategy": "halving"
+    },
+    {
+      "tier": 1,
+      "question": "Why does the halving matter for Bitcoin's price, per many analysts?",
+      "answer": "New supply gets cut while demand stays the same",
+      "choices": [
+        "New supply gets cut while demand stays the same",
+        "Old coins get destroyed every halving in protest",
+        "Miners take a vacation, slowing the network down",
+        "Bitcoin briefly becomes illegal during the halving"
+      ],
+      "context": "Halvings cut the rate of new supply in half. If demand stays steady or grows, scarcity rises and price tends to follow. Past halvings preceded the 2013, 2017, and 2021 bull markets.",
+      "_pillar": 2,
+      "_strategy": "halving"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoiners say a phrase that warns about keeping coins on an exchange. What is it?",
+      "answer": "Not your keys, not your coins, the simple rule",
+      "choices": [
+        "Not your keys, not your coins, the simple rule",
+        "Buy the dip and sell the rip, surely a win",
+        "Hold for ten years, retire happy on gains",
+        "Cash is king, only paper money is safe"
+      ],
+      "context": "'Not your keys, not your coins' is Bitcoin's warning against custodial risk. If you don't hold the private keys, the exchange can lose, freeze, or steal your coins.",
+      "_pillar": 2,
+      "_strategy": "self_custody"
+    },
+    {
+      "tier": 1,
+      "question": "A 'private key' in Bitcoin is what?",
+      "answer": "A secret number that proves you own the coins",
+      "choices": [
+        "A secret number that proves you own the coins",
+        "A password to log in to a bitcoin exchange",
+        "A monthly fee for getting access to bitcoin",
+        "A government license to use bitcoin online"
+      ],
+      "context": "A private key is a large random number. The math links it to a public address that holds coins. Whoever knows the key can spend the coins. Lose it, lose your bitcoin.",
+      "_pillar": 2,
+      "_strategy": "private_key"
+    },
+    {
+      "tier": 1,
+      "question": "Why does FTX's collapse in November 2022 prove 'not your keys, not your coins' right?",
+      "answer": "FTX customers lost billions when it went bust",
+      "choices": [
+        "FTX customers lost billions when it went bust",
+        "FTX customers got their coins back in a few days",
+        "FTX was not really a bitcoin exchange at the time",
+        "FTX had been backed by the Fed from the start"
+      ],
+      "context": "FTX collapsed November 8, 2022, with about $8B in customer funds missing. Customers who self-custodied their bitcoin on their own wallets lost nothing in the collapse.",
+      "_pillar": 2,
+      "_strategy": "ftx_collapse"
+    },
+    {
+      "tier": 1,
+      "question": "Mt. Gox was the largest Bitcoin exchange in 2014, handling 70% of trades. What happened?",
+      "answer": "It collapsed, losing about 850,000 bitcoin",
+      "choices": [
+        "It collapsed, losing about 850,000 bitcoin",
+        "It became JP Morgan's bitcoin arm quietly",
+        "It was bought by Coinbase in 2015 for a sum",
+        "It is still the largest exchange in the world"
+      ],
+      "context": "Mt. Gox, based in Tokyo, collapsed in February 2014 after losing ~850,000 BTC (about 7% of all bitcoin then in existence). It became the iconic 'why self-custody' lesson.",
+      "_pillar": 2,
+      "_strategy": "mt_gox"
+    },
+    {
+      "tier": 1,
+      "question": "A Bitcoin 'wallet' is best described as what?",
+      "answer": "Software that keeps your private keys safe",
+      "choices": [
+        "Software that keeps your private keys safe",
+        "A pouch that holds physical bitcoin coins",
+        "An account at a bank for bitcoin to USD",
+        "A government license to use bitcoin online"
+      ],
+      "context": "A Bitcoin wallet stores private keys, not the coins themselves (which live on the chain). Wallets sign transactions with the private key, proving ownership without ever revealing it.",
+      "_pillar": 2,
+      "_strategy": "wallet"
+    },
+    {
+      "tier": 1,
+      "question": "In one sentence, what IS Bitcoin?",
+      "answer": "Digital money with no central issuer at all",
+      "choices": [
+        "Digital money with no central issuer at all",
+        "An online video game similar to Roblox",
+        "A credit-card system built by JP Morgan",
+        "A US dollar stored in a computer file only"
+      ],
+      "context": "Bitcoin is a peer-to-peer electronic cash system (per Satoshi's white paper). It has no central issuer, no CEO, no head office. It runs on thousands of independent computers.",
+      "_pillar": 2,
+      "_strategy": "what_is_bitcoin"
+    },
+    {
+      "tier": 1,
+      "question": "Why is Bitcoin called 'peer-to-peer' money?",
+      "answer": "Anyone can send to anyone, no bank between",
+      "choices": [
+        "Anyone can send to anyone, no bank between",
+        "Only certain banks can move bitcoin around",
+        "It only works between two friends you know",
+        "Each transaction needs IRS approval first"
+      ],
+      "context": "Satoshi's title was 'Bitcoin: A Peer-to-Peer Electronic Cash System.' The peer-to-peer design means a transaction in El Salvador to Tokyo needs no bank, no clearinghouse, no permission.",
+      "_pillar": 2,
+      "_strategy": "peer_to_peer"
+    },
+    {
+      "tier": 1,
+      "question": "Who runs Bitcoin's network and keeps the rules going?",
+      "answer": "Thousands of nodes worldwide, with no boss",
+      "choices": [
+        "Thousands of nodes worldwide, with no boss",
+        "The Bitcoin Foundation, with a CEO in office",
+        "The Federal Reserve, approving each transaction",
+        "Coinbase, holding the keys for all of bitcoin"
+      ],
+      "context": "Bitcoin runs on a network of independent nodes. Anyone can run one on a Raspberry Pi for a few hundred dollars. There is no head office, no CEO, no central control.",
+      "_pillar": 2,
+      "_strategy": "decentralization"
+    },
+    {
+      "tier": 1,
+      "question": "How is Bitcoin different from government-issued money?",
+      "answer": "Nobody can print more or change the rules",
+      "choices": [
+        "Nobody can print more or change the rules",
+        "Bitcoin is the same as dollars but in an app",
+        "Bitcoin is fully backed by gold in Switzerland",
+        "Bitcoin is printed by the Bank of England daily"
+      ],
+      "context": "Government money can be expanded by the issuer at will. Bitcoin's supply is fixed by code. The contrast is the whole point: rules over rulers, math over politicians.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_vs_fiat"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin's blockchain lists every transaction. Who can see it?",
+      "answer": "Anyone in the world, the chain is fully public",
+      "choices": [
+        "Anyone in the world, the chain is fully public",
+        "Only people who hold at least one bitcoin",
+        "Only the Bitcoin Foundation in San Francisco",
+        "Only governments with a tax warrant from a judge"
+      ],
+      "context": "Bitcoin's chain is fully public. Anyone can run a node and verify every transaction since Genesis. The transparency is part of what makes the rules enforceable.",
+      "_pillar": 2,
+      "_strategy": "public_ledger"
+    },
+    {
+      "tier": 1,
+      "question": "On May 22, 2010, programmer Laszlo Hanyecz bought two pizzas for 10,000 BTC. Why is this celebrated?",
+      "answer": "It was the first real-world Bitcoin purchase",
+      "choices": [
+        "It was the first real-world Bitcoin purchase",
+        "It was the very first day Bitcoin launched",
+        "It was when the Federal Reserve banned Bitcoin",
+        "It was when Bitcoin first hit one dollar in price"
+      ],
+      "context": "Bitcoin Pizza Day (May 22) marks the first known commercial Bitcoin transaction. Hanyecz, in Jacksonville, FL, paid 10,000 BTC for two Papa John's pizzas delivered by a forum member.",
+      "_pillar": 2,
+      "_strategy": "pizza_day"
+    },
+    {
+      "tier": 1,
+      "question": "How much were 10,000 bitcoin worth on May 22, 2010, the day Laszlo paid for two pizzas?",
+      "answer": "About $41, since bitcoin traded under a penny",
+      "choices": [
+        "About $41, since bitcoin traded under a penny",
+        "About $100,000, since bitcoin was already big",
+        "About $1 billion, the price had climbed already",
+        "About $10, since pizzas cost about $5 each"
+      ],
+      "context": "On May 22, 2010, bitcoin was worth about $0.0041 each. The 10,000 BTC sent for pizzas was worth about $41. At later prices, the same 10,000 BTC would have been worth hundreds of millions.",
+      "_pillar": 2,
+      "_strategy": "pizza_day"
+    },
+    {
+      "tier": 1,
+      "question": "Why do bitcoiners celebrate Bitcoin Pizza Day every May 22?",
+      "answer": "It proved bitcoin could buy real-world goods",
+      "choices": [
+        "It proved bitcoin could buy real-world goods",
+        "Laszlo Hanyecz was the inventor of Bitcoin",
+        "Pizza is the favorite food of every developer",
+        "Papa John founded the Bitcoin Foundation"
+      ],
+      "context": "Pizza Day marks the moment bitcoin became real money. Before May 22, 2010, bitcoin was a curiosity traded on forums. After, it was money that could buy lunch.",
+      "_pillar": 2,
+      "_strategy": "pizza_day"
+    },
+    {
+      "tier": 1,
+      "question": "What does the Pizza Day story show about early Bitcoin prices?",
+      "answer": "The earliest BTC trades had huge later value",
+      "choices": [
+        "The earliest BTC trades had huge later value",
+        "Bitcoin has always been very expensive since launch",
+        "Pizza is the standard unit of bitcoin measurement",
+        "Papa John's is the only chain that takes bitcoin"
+      ],
+      "context": "Pizza Day teaches that early Bitcoin was cheap in dollar terms. Those who held instead of spending in 2010 ended up with what later became life-changing sums.",
+      "_pillar": 2,
+      "_strategy": "pizza_day"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin mining uses 'proof-of-work' — computers solve a puzzle. What's the point?",
+      "answer": "Adding fake blocks gets too costly to do",
+      "choices": [
+        "Adding fake blocks gets too costly to do",
+        "It tests the IQ of the miner before pay",
+        "It picks which miners earn the right to vote",
+        "It chooses who designs new wallets next"
+      ],
+      "context": "Proof-of-work requires miners to spend energy on a cryptographic puzzle. Cheating the chain would require redoing all that work — economically impossible at Bitcoin's scale.",
+      "_pillar": 2,
+      "_strategy": "proof_of_work"
+    },
+    {
+      "tier": 1,
+      "question": "Why is proof-of-work called 'mining' in the first place?",
+      "answer": "Miners spend energy to earn new bitcoin",
+      "choices": [
+        "Miners spend energy to earn new bitcoin",
+        "Miners dig real gold out of the ground",
+        "Miners ride mining trains across the country",
+        "Miners use shovels and picks to break rocks"
+      ],
+      "context": "The analogy: just as gold miners spend labor and energy to extract gold, Bitcoin miners spend electricity and chip-power to discover new blocks. Both produce sound money.",
+      "_pillar": 2,
+      "_strategy": "mining"
+    },
+    {
+      "tier": 1,
+      "question": "A Bitcoin 'block' is what?",
+      "answer": "A bundle of transactions added every 10 minutes",
+      "choices": [
+        "A bundle of transactions added every 10 minutes",
+        "A federal tax form sent to the IRS each year",
+        "A type of strong building stone used in vaults",
+        "A government coupon for cheap bitcoin payments"
+      ],
+      "context": "Bitcoin blocks are bundles of transactions, ~1MB in size, mined every ~10 minutes. Each block points to the previous one, forming the unbroken chain.",
+      "_pillar": 2,
+      "_strategy": "block"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin miners earn two things for each block they mine. What are they?",
+      "answer": "The block reward and the transaction fees",
+      "choices": [
+        "The block reward and the transaction fees",
+        "A government salary and a state pension",
+        "Stock in the Bitcoin Foundation and shares",
+        "A royal title from the Queen of England"
+      ],
+      "context": "Each mined block earns the miner: (1) the block subsidy (currently 3.125 BTC after the 2024 halving) and (2) the transaction fees from the bundled transactions.",
+      "_pillar": 2,
+      "_strategy": "miner_reward"
+    },
+    {
+      "tier": 1,
+      "question": "Why does Bitcoin use so much electricity?",
+      "answer": "Mining proof-of-work makes attacks expensive",
+      "choices": [
+        "Mining proof-of-work makes attacks expensive",
+        "Servers run cold drinks for the mining offices",
+        "Each user heats their home with the chain",
+        "Bitcoin uses no electricity at all today"
+      ],
+      "context": "Bitcoin's energy use is its security. The more energy securing the chain, the more expensive it would be to attack. Critics see waste; supporters see honest cost of trustless money.",
+      "_pillar": 2,
+      "_strategy": "mining_energy"
+    },
+    {
+      "tier": 1,
+      "question": "After the 2024 halving, Bitcoin miners earn 3.125 BTC per block as subsidy. What else do they earn?",
+      "answer": "Transaction fees paid by users sending coins",
+      "choices": [
+        "Transaction fees paid by users sending coins",
+        "A bonus from the Bitcoin Foundation yearly",
+        "Federal grants for green-energy mining work",
+        "Pension contributions from the IRS plan"
+      ],
+      "context": "As block subsidies fall each halving, transaction fees grow as a share of miner revenue. By the year 2140, the subsidy ends and miners are paid only by fees from users.",
+      "_pillar": 2,
+      "_strategy": "transaction_fees"
+    },
+    {
+      "tier": 1,
+      "question": "What is a 'satoshi' in Bitcoin?",
+      "answer": "The smallest unit, one hundred-millionth of a BTC",
+      "choices": [
+        "The smallest unit, one hundred-millionth of a BTC",
+        "The official Bitcoin wallet from Satoshi",
+        "A type of mining computer from Bitmain",
+        "A US government license to use Bitcoin"
+      ],
+      "context": "1 BTC = 100,000,000 satoshis. Named after Satoshi Nakamoto. As bitcoin's price rises, more people think in 'sats' (one sat being like a cent of a dollar).",
+      "_pillar": 2,
+      "_strategy": "satoshi_unit"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin blocks come on average every how many minutes?",
+      "answer": "About ten minutes, the protocol target",
+      "choices": [
+        "About ten minutes, the protocol target",
+        "Exactly one second between every block",
+        "About one hour between blocks always",
+        "About one day between every block"
+      ],
+      "context": "Bitcoin targets 10-minute blocks. The difficulty adjusts every 2,016 blocks (~2 weeks) to keep the average near 10 minutes regardless of how much mining power is online.",
+      "_pillar": 2,
+      "_strategy": "block_time"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin's difficulty adjustment happens every 2,016 blocks. About how often is that?",
+      "answer": "About every two weeks, with 10-minute blocks",
+      "choices": [
+        "About every two weeks, with 10-minute blocks",
+        "About every five minutes between two blocks",
+        "About every five years, by long-term schedule",
+        "About every leap year, on February 29 only"
+      ],
+      "context": "2,016 blocks x 10 minutes = 20,160 minutes = ~14 days. The bi-weekly difficulty adjustment is what keeps Bitcoin's issuance schedule on track regardless of mining-power changes.",
+      "_pillar": 2,
+      "_strategy": "difficulty"
+    },
+    {
+      "tier": 1,
+      "question": "About how many Bitcoin nodes run worldwide?",
+      "answer": "Tens of thousands, in many countries",
+      "choices": [
+        "Tens of thousands, in many countries",
+        "Just three, all in San Francisco offices",
+        "Around twelve, mostly inside US Treasury",
+        "Just one, the official Federal Reserve server"
+      ],
+      "context": "Bitcoin has tens of thousands of nodes globally — anyone with a modest computer and internet can run one. That decentralization is what makes the rules enforceable without a boss.",
+      "_pillar": 2,
+      "_strategy": "nodes"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin sometimes gets confused with 'crypto' broadly. What's the most important difference?",
+      "answer": "Bitcoin has no founder's stash and no CEO",
+      "choices": [
+        "Bitcoin has no founder's stash and no CEO",
+        "Bitcoin is the only crypto that pays interest",
+        "Bitcoin trades only on Sundays of each week",
+        "Bitcoin is run by Coinbase, others by Binance"
+      ],
+      "context": "Bitcoin's launch was uniquely fair: no pre-mine, anonymous founder, open invitation to miners from block one. Most other crypto launched with founder allocations and central foundations.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_vs_crypto"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin builds on a 1997 invention by Adam Back. What did Back invent?",
+      "answer": "Hashcash, using proof-of-work against spam",
+      "choices": [
+        "Hashcash, using proof-of-work against spam",
+        "The very first bitcoin wallet, before the chain",
+        "Microsoft Windows used by Bitcoin miners",
+        "The Federal Reserve's electronic payments"
+      ],
+      "context": "Adam Back's 1997 Hashcash used proof-of-work to make sending email expensive enough to deter spam. Satoshi cited Hashcash in the Bitcoin white paper as the proof-of-work template.",
+      "_pillar": 2,
+      "_strategy": "hashcash"
+    },
+    {
+      "tier": 1,
+      "question": "Before Bitcoin, Nick Szabo proposed 'bit gold' in 2005. What was Szabo's idea?",
+      "answer": "A digital scarce asset, before Satoshi launched",
+      "choices": [
+        "A digital scarce asset, before Satoshi launched",
+        "A gold-backed credit card for online shopping",
+        "A US Treasury test with paper money before",
+        "A way to store gold on computer hard drives"
+      ],
+      "context": "Nick Szabo's 'bit gold' (2005) anticipated many Bitcoin ideas but couldn't solve the double-spend problem. Some speculate Szabo is Satoshi, though he denies it.",
+      "_pillar": 2,
+      "_strategy": "bit_gold"
+    },
+    {
+      "tier": 1,
+      "question": "What was 'b-money,' Wei Dai's 1998 idea?",
+      "answer": "Early digital cash with no central party",
+      "choices": [
+        "Early digital cash with no central party",
+        "The original name of the US dollar before 1971",
+        "An online video game from the late 1990s",
+        "A government-issued debit card for kids"
+      ],
+      "context": "Wei Dai's b-money (1998) proposed a decentralized digital cash system. Satoshi cited b-money first in the Bitcoin white paper's references. Wei Dai's later work influenced Ethereum too.",
+      "_pillar": 2,
+      "_strategy": "b_money"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin descends from a group called the cypherpunks. What did they believe?",
+      "answer": "Privacy and code are tools of freedom",
+      "choices": [
+        "Privacy and code are tools of freedom",
+        "Computers should be run by governments",
+        "Cash should be replaced by federal tokens",
+        "All software should be banned for civilians"
+      ],
+      "context": "The cypherpunk mailing list (1992-2010s) was where modern crypto culture grew. Tim May's 1988 'Crypto Anarchist Manifesto' is a key document. Bitcoin is the cypherpunk dream made real.",
+      "_pillar": 2,
+      "_strategy": "cypherpunks"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoiners use the slogan HODL all the time. Where did the term come from?",
+      "answer": "A 2013 forum post with a typo of holding",
+      "choices": [
+        "A 2013 forum post with a typo of holding",
+        "An acronym for the Federal Reserve's policy",
+        "A code name for the hacker who stole Mt. Gox",
+        "A pension fund for retired Bitcoin coders"
+      ],
+      "context": "The 2013 forum post 'I AM HODLING' was a drunken typo of 'holding.' It went viral. HODL became Bitcoin culture's slogan for long-term holding through price swings.",
+      "_pillar": 2,
+      "_strategy": "hodl"
+    },
+    {
+      "tier": 1,
+      "question": "Bitcoin had its first major price boom in late 2013. What price did it briefly hit?",
+      "answer": "Over $1,000 per coin, up from $20 in January",
+      "choices": [
+        "Over $1,000 per coin, up from $20 in January",
+        "Over $500,000 per coin, in just three days time",
+        "Under one penny per coin, for the first whole month",
+        "Exactly $1,000,000 per coin, by Christmas Eve"
+      ],
+      "context": "Bitcoin crossed $1,000 in late November 2013, up from $13 in January. The Mt. Gox collapse in early 2014 then crashed the price for a few years.",
+      "_pillar": 2,
+      "_strategy": "price_history"
+    },
+    {
+      "tier": 1,
+      "question": "Why does Michael Saylor (CEO of MicroStrategy) call Bitcoin 'digital property'?",
+      "answer": "Scarce asset you can own without a custodian",
+      "choices": [
+        "Scarce asset you can own without a custodian",
+        "Literally a piece of land sold online to all",
+        "A federal title to a small US national park",
+        "A video-game item with a serial number on it"
+      ],
+      "context": "Saylor began buying Bitcoin for MicroStrategy in 2020. His framing — Bitcoin as 'digital property' — emphasizes self-custody and scarcity, contrasting with cash-like or stock-like framings.",
+      "_pillar": 2,
+      "_strategy": "bitcoin_property"
+    },
+    {
+      "tier": 1,
+      "question": "El Salvador made Bitcoin legal tender in September 2021. Who was the president then?",
+      "answer": "Nayib Bukele, who keeps buying bitcoin for it",
+      "choices": [
+        "Nayib Bukele, who keeps buying bitcoin for it",
+        "Hugo Chavez, who died eight years before",
+        "Daniel Ortega, who had banned bitcoin long ago",
+        "Vicente Fox, who served Mexico, not Salvador"
+      ],
+      "context": "Nayib Bukele's El Salvador was the first country to adopt Bitcoin as legal tender, on September 7, 2021. The government continues to buy bitcoin and report holdings publicly.",
+      "_pillar": 2,
+      "_strategy": "el_salvador"
+    },
+    {
+      "tier": 1,
+      "question": "Why is Bitcoin sometimes called 'digital sound money'?",
+      "answer": "It has a fixed supply that cannot be inflated",
+      "choices": [
+        "It has a fixed supply that cannot be inflated",
+        "It plays a chime when each block is mined",
+        "It is made of digital metal, like steel",
+        "It is recorded on tape that makes noise"
+      ],
+      "context": "Sound money holds value because its supply can't be expanded at will. Gold was sound for centuries. Bitcoin's 21M cap and predictable issuance schedule made it the first digital sound money.",
+      "_pillar": 2,
+      "_strategy": "sound_money"
+    }
+  ]
+}
