@@ -79,9 +79,9 @@ Length cap: ≤ 1100. Stays grade 10. No academic theology jargon.
 
 ### Length parity
 
-Theology is NOT in `ANSWER_OUTLIER_SUBJECTS`. Strict 1.6× answer-to-distractor parity does NOT apply — answers should be in tighter parity with distractors (typical 1.30 max/min ratio).
+Theology IS in `ANSWER_OUTLIER_SUBJECTS`. The 1.6× answer-outlier flex applies — a longer dramatic-fact answer (e.g., "Threw her ashes into the Seine to deny French Catholics any relic") can legitimately exceed distractor lengths by up to 1.6×.
 
-Distractors should be in approximate parity with each other (1.30 max/min ratio).
+Distractors should still be in approximate parity with each other (1.30 max/min ratio).
 
 ### Dash-shape parity
 

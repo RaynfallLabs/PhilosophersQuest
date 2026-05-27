@@ -60,6 +60,7 @@ _GATE_MODULES = {
     "ai":         "tools.quizgen.gates.ai",
     "science":    "tools.quizgen.gates.science",
     "economics":  "tools.quizgen.gates.economics",
+    "theology":   "tools.quizgen.gates.theology",
 }
 
 

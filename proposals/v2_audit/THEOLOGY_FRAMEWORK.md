@@ -42,7 +42,7 @@ Same controlling voice rule as history / animal / cooking / geography. The bank'
 
 ## §3 Tier ladder
 
-Standard caps (theology is NOT in `ANSWER_OUTLIER_SUBJECTS` — strict 1.6× answer-to-distractor parity):
+Standard caps. Theology IS in `ANSWER_OUTLIER_SUBJECTS` — the 1.6× answer-outlier allowance applies (a longer story-answer can exceed distractor lengths by up to 1.6×, since the kid is reading the dramatic detail). Distractors must still be in 1.30 max/min parity with each other.
 
 | Tier | Grade | Char cap | Voice |
 |---|---|---:|---|
