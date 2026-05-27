@@ -61,6 +61,7 @@ _GATE_MODULES = {
     "science":    "tools.quizgen.gates.science",
     "economics":  "tools.quizgen.gates.economics",
     "theology":   "tools.quizgen.gates.theology",
+    "trivia":     "tools.quizgen.gates.trivia",
 }
 
 
