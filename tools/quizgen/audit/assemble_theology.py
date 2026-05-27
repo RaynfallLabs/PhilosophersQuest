@@ -34,7 +34,9 @@ BANK_PATH = REPO / "data" / "questions" / "theology.json"
 DROPPED_PATH = REPO / "data" / "questions" / "dropped" / "theology.json"
 ASSEMBLY_LOG_PATH = REPO / "_theology_assembly_log.md"
 SOURCE_DIR = REPO / "_theology_gen"
-SOURCE_GLOB = "A*.json"
+# Match both A*.json (original batches) and R*.json (respawn batches)
+# Excludes anything starting with underscore (build scripts, helpers)
+SOURCE_GLOB_PATTERNS = ["A*.json", "R*.json"]
 DROP_REASON = "v2_rebuild_2026_05_26_theology_from_scratch_story_led"
 
 
@@ -60,7 +62,15 @@ def load_sources() -> dict[str, list[dict]]:
     if not SOURCE_DIR.is_dir():
         print(f"  !! Source dir not found: {SOURCE_DIR}")
         return sources
-    for path in sorted(SOURCE_DIR.glob(SOURCE_GLOB)):
+    seen_paths: set = set()
+    all_paths: list = []
+    for pattern in SOURCE_GLOB_PATTERNS:
+        for path in SOURCE_DIR.glob(pattern):
+            if path in seen_paths:
+                continue
+            seen_paths.add(path)
+            all_paths.append(path)
+    for path in sorted(all_paths):
         if not path.is_file():
             continue
         try:
@@ -82,7 +92,7 @@ def assemble(dry_run: bool = False) -> dict:
     print(f"=== {SUBJECT_NAME} bank assembly ===")
     print(f"  bank path: {BANK_PATH}")
     print(f"  dropped path: {DROPPED_PATH}")
-    print(f"  source dir: {SOURCE_DIR} / {SOURCE_GLOB}")
+    print(f"  source dir: {SOURCE_DIR} / {SOURCE_GLOB_PATTERNS}")
     assert SUBJECT_NAME == "theology", "SUBJECT_NAME mismatch — refuse to run"
     assert BANK_PATH.name == "theology.json", f"BANK_PATH wrong: {BANK_PATH.name}"
     assert DROPPED_PATH.name == "theology.json", f"DROPPED_PATH wrong: {DROPPED_PATH.name}"

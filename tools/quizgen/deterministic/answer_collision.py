@@ -40,7 +40,14 @@ DEFAULT_ANSWER_JACCARD_THRESHOLD = 0.70
 #    monastery thought-experiment) can — and pedagogically should — test
 #    the same position. User-confirmed 2026-05-25: dedup philosophy by
 #    SCENE variety, not by answer text.
-EXEMPT_SUBJECTS = frozenset({"math", "grammar", "philosophy"})
+#  - theology — the answer is often a canonical NAMED figure / object
+#    ("Athena", "Mjölnir", "David", "Excalibur") and multiple legitimate
+#    story scenes pedagogically test the SAME figure. E.g. Athena's
+#    birth from Zeus's forehead, Athena gifting the olive tree, Athena
+#    helping Perseus with the polished shield, Athena turning Arachne
+#    into a spider — all legitimately answer "Athena" as the cool fact.
+#    Dedup theology by SCENE variety + stem similarity, not answer text.
+EXEMPT_SUBJECTS = frozenset({"math", "grammar", "philosophy", "theology"})
 
 _PUNCT_RE = re.compile(r"[^\w\s]")
 _SPACE_RE = re.compile(r"\s+")

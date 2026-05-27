@@ -645,3 +645,19 @@ def test_answer_collision_exempt_philosophy():
     idx = build_answer_collision_index([q1, q2])
     r = validate_answer_collision(q1, idx, self_idx=0, subject="philosophy")
     assert r.status == GateStatus.NA
+
+
+def test_answer_collision_exempt_theology():
+    # Theology answers are often canonical NAMED figures or objects
+    # ("Athena", "Mjölnir", "David", "Excalibur"). Multiple legitimate
+    # story scenes pedagogically test the SAME figure — e.g. Athena's
+    # birth, Athena gifting the olive tree, Athena turning Arachne into
+    # a spider. Dedup theology by SCENE variety, not answer text.
+    # User-confirmed 2026-05-27.
+    q1 = make_question(answer="Athena")
+    q2 = make_question(answer="Athena")
+    q1["choices"][0] = q1["answer"]
+    q2["choices"][0] = q2["answer"]
+    idx = build_answer_collision_index([q1, q2])
+    r = validate_answer_collision(q1, idx, self_idx=0, subject="theology")
+    assert r.status == GateStatus.NA
