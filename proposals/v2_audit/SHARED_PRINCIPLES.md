@@ -303,6 +303,75 @@ This is the broader form of §8 (which addressed "wonder hooks" specifically) an
 
 See also: §8 (wonder lives in stem), §13 (Wonder Pattern cool-fact-is-answer), `_hunt_buried_story.py` (heuristic), `_buried_story_audit.md` (worked examples).
 
+### 15. No weasel closers — questions must be pointed and concrete
+**Principle (refined through the 2026-05-26 user flag during economics financial-literacy review)**: The final question in every stem must be POINTED, CONCRETE, and LEGIBLE. It must ask about something SPECIFIC in the substance. Abstract meta-framings as closers are an anti-pattern.
+
+**Why this matters**: A stem can have beautiful §14 story-in-stem substance (named figures, dates, dollar amounts, dramatic specifics) and still fail the kid if the final question is a vague meta-prompt. The kid then has to pick "the abstract framing" rather than answer a concrete inquiry. Real questions ask real things.
+
+**Banned closers** (the canonical weasels — caught by the regex in `_hunt_weasel_closers.py`):
+- "What's the recognition?"
+- "What's the recognition skill?"
+- "What's the takeaway?"
+- "What's the substance?"
+- "What's the lesson?"
+- "What's the pattern?"
+- "What's the connection?"
+- "What's the moral?"
+- "What's the deeper lesson/point/recognition?"
+- "What's the structural recognition?"
+- "What's the kid's takeaway?"
+- "What does this illustrate?"
+- "What does this case/episode/story/incident illustrate/show/teach/reveal?"
+- "What does this prove?"
+- "What does this period/case demonstrate?"
+- "Why does this matter?"
+
+**The user's canonical exemplar (FICA tax-wedge question, economics financial-literacy supplement)**:
+
+> ❌ "Your first $400 paycheck shows $337 deposited. The missing $63 is FICA (7.65%). Your EMPLOYER also paid $63 you never saw. **What's the recognition?**"
+> → answer: "The employer half is also your wage — economists call this the tax wedge"
+
+> ✅ "Your first $400 paycheck shows $337 deposited. The missing $63 is FICA (7.65%). Your EMPLOYER also paid $63 you never saw. **What do economists call the combined ~15.3% (employee + employer halves) hidden in this kind of paystub?**"
+> → answer: "The tax wedge"
+
+Same substance. Same recognition skill. But the second version asks a REAL question — "what do economists call X?" is concrete and answerable. "What's the recognition?" makes the kid hunt for the abstract framing.
+
+**The fix template**:
+- Identify what concrete thing in the substance the answer names
+- Ask about THAT thing directly
+- Use ordinary human question forms: "What do economists call ___?", "Who did ___?", "How much did ___?", "Which year ___?", "What's the technical name for ___?", "What was the specific consequence ___?", "Why specifically ___?"
+- Avoid academic meta-prompts entirely
+
+**Allowed closers** (specific concrete inquiries):
+- "How much did inflation drop from, and to, under Volcker's chairmanship?"
+- "Who has the authority to change Bitcoin's 21-million supply cap?"
+- "What's the technical name for the gap between what your boss pays and what you take home?"
+- "Which two specific bank failures in 2023 were the biggest?"
+- "Specifically, what should a kid check before believing a 'new study shows X' headline?"
+- "Who suspended its global HCQ trial in the weeks before the Lancet paper was retracted?"
+- "What specific event launched the trial that built his political career?"
+
+**Failures look like**:
+- Beautiful §14 story-in-stem substance + weasel closer
+- Stem has named figure + date + dollar amount + dramatic specific, then asks "What does this illustrate?"
+- Closer is structurally identical to many other questions in the bank — refrain pattern (the §3 T5 P5 governance run that got compressed during the AI bank audit was this)
+
+**Passes look like**:
+- Closer is concrete, specific, ordinary-human-question-form
+- Each closer is structurally different across questions
+- Kid reads the closer and knows exactly what is being asked
+- Answer is the natural reply to a real question, not the natural reply to "pick the abstract framing"
+
+**Implementations**:
+- **Economics + science (2026-05-26)**: 72 weasel-closers identified by `_hunt_weasel_closers.py` heuristic (19 science + 53 economics); rewritten with pointed-concrete closers in the same session
+- **All future subjects (going forward)**: this principle generalizes. The heuristic in `_hunt_weasel_closers.py` should be re-run against every rebuild before commit
+- **Cannot be deterministically gated** (yet) — requires reading judgment about whether the closer is concrete vs abstract. The regex catches the obvious weasels; a more general detector could be added later
+- **§14 and §15 are companion rules**: §14 says SUBSTANCE must be in stem; §15 says the CLOSING QUESTION about that substance must be concrete
+
+**Discovered explicitly**: 2026-05-26 user flag during economics financial-literacy supplement review. The user had been training me out of this pattern repeatedly across earlier sessions; codifying it now to break the recurrence.
+
+See also: §14 (story-in-stem), §13 (Wonder Pattern cool-fact-is-answer), `_hunt_weasel_closers.py` (heuristic).
+
 ## Before starting a new subject rebuild
 
 Required reading order:

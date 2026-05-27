@@ -1,0 +1,64 @@
+[
+  {
+    "bank_idx": 347,
+    "new": {
+      "tier": 5,
+      "topic": "Food history & culture",
+      "pattern": "H. Cultural / historical / lens",
+      "question": "American Thanksgiving has a fixed menu (turkey, stuffing, cranberry sauce, mashed potato, pumpkin pie) that feels timeless. Most was assembled in the 1800s; the 1621 Plymouth feast had wildfowl and venison. Which 19th-century magazine editor campaigned for years to nationalize Thanksgiving and fix the menu?",
+      "answer": "Sarah Josepha Hale — Godey's Lady's Book editor; her 17-year campaign convinced Lincoln to nationalize it",
+      "choices": [
+        "Sarah Josepha Hale — Godey's Lady's Book editor; her 17-year campaign convinced Lincoln to nationalize it",
+        "Fannie Farmer — Boston Cooking School Cook Book author who codified American measurements but not the menu",
+        "Julia Child — whose Mastering the Art of French Cooking established the holiday menu in mid-20th century",
+        "Amelia Simmons — author of 1796 American Cookery, the first US cookbook published after independence"
+      ],
+      "context": "The Thanksgiving menu was assembled in the Lincoln era and Victorian magazines (Sarah Josepha Hale, Godey's Lady's Book). The 1621 Plymouth feast had wildfowl, venison, corn porridge. The 'timeless' menu is a 19th-century construction. The broader lesson: culinary tradition is often a recent construction projected backward - true of Italian tomato cuisine, French haute cuisine, American regional dishes."
+    }
+  },
+  {
+    "bank_idx": 682,
+    "new": {
+      "tier": 3,
+      "question": "In the marble-quarry village of Colonnata in Tuscany, an ancient tradition packs slabs of pure pork back-fat in marble basins with sea salt, garlic, rosemary, and herbs. Which material is the curing vessel made from — and why does its source matter to the dish's identity?",
+      "answer": "Marble — the same Carrara marble quarried by the workers, who cured the fat in offcut basins underground",
+      "choices": [
+        "Marble — the same Carrara marble quarried by the workers, who cured the fat in offcut basins underground",
+        "Volcanic basalt — the dark stone of the Tuscan hills, traditional for olive presses but not for any lardo",
+        "Slate slabs — the Ligurian roofing material brought up by carts but never used in Colonnata's curing",
+        "Terracotta jars — fired clay vessels common across Tuscany but not associated with the Colonnata trade"
+      ],
+      "context": "Lardo di Colonnata IGP: pure pork back-fat cured in marble basins with sea salt, garlic, rosemary, pepper, herbs. Tradition dates to medieval marble quarries. Fat as finished delicacy. The marble basins (conche) are quarry-worker offcuts — the dish is inseparable from the labor that built it."
+    }
+  },
+  {
+    "bank_idx": 713,
+    "new": {
+      "tier": 5,
+      "question": "Excavations at Pompeii, Cadiz (ancient Gades), Lixus in Morocco, and other Roman ports uncovered garum factories — stone vats where small fish lacto-fermented in salt for months. The factories shipped amphorae of the salty sauce empire-wide. Which 1st-century Roman cookbook calls for garum as a staple seasoning on nearly every page?",
+      "answer": "Apicius's De Re Coquinaria — the 1st-century Roman cookbook that uses garum as a near-universal seasoning",
+      "choices": [
+        "Apicius's De Re Coquinaria — the 1st-century Roman cookbook that uses garum as a near-universal seasoning",
+        "Cato's De Agri Cultura — the agricultural manual full of farm-economy notes but no fish-sauce recipe at all",
+        "Pliny's Natural History — the encyclopedia mentioning food but containing no actual cooking recipe content",
+        "Columella's De Re Rustica — the agricultural treatise on estate management but with no kitchen recipes"
+      ],
+      "context": "Roman garum was industrial-scale fermented fish sauce. Factories at Pompeii, Cadiz (Garum Sociorum, the brand), Lixus, Tingis, Baelo Claudia — large stone vats, amphorae shipping across the empire. Apicius's De Re Coquinaria cites it constantly. Modern relatives: Southeast Asian fish sauce, colatura."
+    }
+  },
+  {
+    "bank_idx": 732,
+    "new": {
+      "tier": 5,
+      "question": "Pacific Northwest Native peoples — Chinook, Coast Salish, Tlingit, Haida — built civilizations partly on salmon preservation. Salmon was caught in fish weirs in summer, smoked on cedar racks over slow alder fires for days, stored for winter. Which wood smoke do these traditions use for the long slow smoking of salmon?",
+      "answer": "Alder — burns slow, throws clean light smoke; the dominant wood for traditional cedar-rack salmon smoking",
+      "choices": [
+        "Alder — burns slow, throws clean light smoke; the dominant wood for traditional cedar-rack salmon smoking",
+        "Hickory — the dominant Southern barbecue wood, used heavily in the Carolinas but not in the Pacific NW",
+        "Mesquite — the Southwestern desert wood preferred in Texas barbecue but not native to Northwest coasts",
+        "Applewood — the orchard wood typical of New England smokehouses with no role in salmon-smoking tradition"
+      ],
+      "context": "Pacific Northwest Native peoples (Chinook, Coast Salish, Tlingit, Haida, Kwakwaka'wakw, Nuu-chah-nulth) built dense, settled, hierarchical civilizations on salmon-preservation backbone. Cedar smoking racks, fish weirs, smokehouses, dugout canoes. Pre-contact caloric load: ~300-500 lb salmon/person/year. Potlatch economies, cedar architecture. Alder is the traditional smoking wood."
+    }
+  }
+]

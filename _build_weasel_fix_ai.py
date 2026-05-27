@@ -1,0 +1,851 @@
+"""Apply pointed-concrete closer rewrites to the 57 AI weasel questions.
+
+Each rewrite changes ONLY the final question (the weasel closer) — and
+lightly tunes answer + choices when needed for em-dash parity / length /
+distractor parity. Substance in stem (§14) is preserved exactly.
+
+Validates each rewrite via tools.quizgen.audit.validate.validate_rewrite,
+then writes the patch JSON.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO))
+
+from tools.quizgen.audit.validate import build_bank_indices, validate_rewrite
+
+
+WEASEL_PATH = REPO / "_weasel_ai.json"
+BANK_PATH = REPO / "data" / "questions" / "ai.json"
+OUT_PATH = REPO / "_weasel_fix_ai.json"
+
+
+def _load_json(p: Path):
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+# --------------------------------------------------------------------------
+# Rewrites — one per weasel question. Keyed by bank_idx.
+# Each value is the FULL new question object.
+# --------------------------------------------------------------------------
+
+REWRITES: dict[int, dict] = {
+    # ----- T2 -----
+    305: {
+        "tier": 2,
+        "question": "Drug companies use AI to scan millions of molecules and pick the few worth testing in the lab. Why is narrowing the candidate list before lab work so valuable?",
+        "answer": "Lab testing is slow and expensive, so narrowing the candidate list saves years",
+        "choices": [
+            "Lab testing is slow and expensive, so narrowing the candidate list saves years",
+            "AI invents new molecules that have never existed in nature anywhere",
+            "AI replaces the need for human clinical trials before sale to patients",
+            "AI guarantees that any drug it picks will work on every patient",
+        ],
+        "context": "Designing a new drug means picking, from a vast space of possible molecules, the few worth synthesizing and testing. AI models trained on chemistry data can rank candidates by likely activity and likely side effects. Lab confirmation and clinical trials still happen — the AI just shrinks the starting list. Insilico Medicine and Atomwise are two of several companies in this space.",
+    },
+
+    # ----- T4 -----
+    966: {
+        "tier": 4,
+        "question": "Anthropic was founded in 2021 by Dario and Daniela Amodei and other former OpenAI researchers who left over disagreements about AI safety. It's structured as a Delaware 'public benefit corporation' (PBC). Who actually enforces a PBC's public-benefit mission?",
+        "answer": "Largely the company itself — a PBC is for-profit with a public-benefit mission in its charter, but there's no government inspector ensuring delivery",
+        "choices": [
+            "Largely the company itself — a PBC is for-profit with a public-benefit mission in its charter, but there's no government inspector ensuring delivery",
+            "A federal agency — the SEC audits every PBC's mission delivery on a quarterly basis under public-benefit law",
+            "Mandatory third-party auditors — every PBC is legally required to hire an outside benefit auditor every year",
+            "A specialized PBC court — Delaware operates a dedicated court that reviews every PBC's mission compliance",
+        ],
+        "context": "Anthropic is a Delaware PBC. The structure allows directors to weigh public benefit against shareholder return, but enforcement is mostly internal. Patagonia is a PBC; so are Allbirds and Warby Parker. The structure can be genuine and can also be marketing. Anthropic also has a 'Long-Term Benefit Trust' that holds special board-appointment rights, layered on top. The point: corporate-form labels carry less weight than the actual rules — read the charter, the operating agreement, and the incentives.",
+    },
+
+    972: {
+        "tier": 4,
+        "question": "The phrase 'AI safety' often gets confused with 'AI ethics,' but they refer to different communities with different concerns. AI safety (Yudkowsky's lineage) focuses on existential risk — superintelligent AI as humanity-ending threat. AI ethics (Timnit Gebru, others) focuses on present harms — bias, discrimination, surveillance. What should a careful reader check to identify which community's framing is being used?",
+        "answer": "Which concrete harms the writer names — existential / superintelligence vocabulary signals one camp, bias / discrimination / surveillance vocabulary signals the other",
+        "choices": [
+            "Which concrete harms the writer names — existential / superintelligence vocabulary signals one camp, bias / discrimination / surveillance vocabulary signals the other",
+            "Whichever label is louder — AI safety and AI ethics are interchangeable terms with no real community differences",
+            "Neither — only government regulators have legitimate concerns about AI risks of any kind",
+            "Whichever camp has more X posts — louder voices are correct about AI risks regardless of substance",
+        ],
+        "context": "The two communities have had visible conflicts. The 2020 firing of Timnit Gebru at Google (over an internal paper on LLM harms) marked one flashpoint. AI-safety researchers focused on alignment and superintelligence are often (though not always) more sympathetic to incumbent labs; AI-ethics researchers are often (though not always) more critical of incumbent labs. The framings produce different policy recommendations. A 'safety' argument that ignores present harms and an 'ethics' argument that ignores capability progress are usually telling you something about the speaker's affiliation more than about the technology.",
+    },
+
+    984: {
+        "tier": 4,
+        "question": "Between 2020 and 2022, major social platforms — Facebook, Twitter, YouTube — labeled, restricted, or removed posts containing 'COVID misinformation.' Some labels were applied to claims later acknowledged as factually defensible (lab-leak origin discussion, infection-acquired immunity, mask-policy debates). Which specific labeled claim was later assessed as plausible by U.S. intelligence agencies and the Department of Energy?",
+        "answer": "The lab-leak origin hypothesis — initially labeled misinformation, later treated as a serious possibility by the FBI and DOE assessments by 2023",
+        "choices": [
+            "The lab-leak origin hypothesis — initially labeled misinformation, later treated as a serious possibility by the FBI and DOE assessments by 2023",
+            "The claim that vaccines are entirely ineffective at any dose — confirmed by intelligence agencies as a sound description by 2023",
+            "The claim that masks cause permanent lung damage — confirmed by DOE physicists as a settled health finding by 2023",
+            "The claim that COVID was a deliberate Russian bioweapon — confirmed by US intelligence as the consensus assessment by 2023",
+        ],
+        "context": "Specific examples documented retrospectively: the lab-leak origin hypothesis (originally labeled misinformation, later treated as plausible by US intelligence agencies and the DOE); natural-immunity claims; school-closure cost-benefit discussions. The episodes don't prove every labeled claim was correct — but they do show that 'misinformation' as a category often tracked the prevailing official position more than independently verified truth. Confident labels on contested questions warrant skepticism, especially when the labels move with policy needs rather than with new evidence.",
+    },
+
+    986: {
+        "tier": 4,
+        "question": "In April 2022, the U.S. Department of Homeland Security announced a new 'Disinformation Governance Board' to coordinate federal responses to misinformation. The board was quickly nicknamed the 'Ministry of Truth' (after George Orwell's 1984), faced bipartisan backlash, and was paused within three weeks. How long after announcement was the board paused, and what was the bipartisan nickname driving the backlash?",
+        "answer": "About three weeks; opponents across the political spectrum branded it the 'Ministry of Truth' after Orwell's 1984",
+        "choices": [
+            "About three weeks; opponents across the political spectrum branded it the 'Ministry of Truth' after Orwell's 1984",
+            "About six years; supporters and opponents alike celebrated it as the 'Office of Civic Clarity' under federal law",
+            "About one day; partisan opponents alone called it the 'Federal Fact Office' for that single afternoon of debate",
+            "About fifteen years; it remains in continuous operation today and is universally referred to as the 'Information Bureau'",
+        ],
+        "context": "The DHS Disinformation Governance Board, announced by Secretary Mayorkas in April 2022, would have coordinated DHS responses to disinformation. The Orwell comparison was immediate. Civil-liberties groups across the political spectrum objected. The board was paused within weeks and formally dissolved later that year. The failure of an overt 'Ministry of Truth' doesn't mean the underlying function disappears — it tends to migrate to less-visible mechanisms (informal agency-platform contacts, third-party 'fact-check' programs, voluntary 'industry coalitions'). Watch where the work goes.",
+    },
+
+    996: {
+        "tier": 4,
+        "question": "China's surveillance infrastructure — facial recognition, social credit pilots, internet monitoring, Xinjiang Uyghur tracking systems — is widely cited as the leading authoritarian-AI model. But Western democracies have also expanded surveillance capabilities. What's the load-bearing difference between Chinese surveillance and (say) UK surveillance, given that both deploy similar technology?",
+        "answer": "The institutional restraints — independent courts, a free press able to expose abuses, and competitive elections that can punish overreach",
+        "choices": [
+            "The institutional restraints — independent courts, a free press able to expose abuses, and competitive elections that can punish overreach",
+            "The underlying technology — Chinese facial recognition uses completely different mathematics from Western systems",
+            "There is no real difference — every democracy has identical legal restraints as Beijing on every surveillance program",
+            "The number of cameras — the UK has no surveillance cameras anywhere, while China is the only country with any cameras",
+        ],
+        "context": "Facial recognition systems exist in many democracies. License-plate readers blanket many U.S. cities. Banking transactions are routinely monitored. The difference between China and (say) the UK isn't primarily the technology — it's the legal and political restraints, the role of independent courts, the freedom of press to report on abuses, and the existence of competitive elections that can punish overreach. 'They have the same tech as us' isn't the analytical question. 'What stops the tech from being used against ordinary citizens?' is.",
+    },
+
+    999: {
+        "tier": 4,
+        "question": "Across many U.S. cities, automated license-plate readers (ALPRs) from companies like Flock Safety and Motorola log every passing vehicle. The data sits in searchable databases for months or years. In most jurisdictions, what legal step do police need before searching a specific plate's months-long movement history?",
+        "answer": "None — they can query the database for any plate without a warrant in most jurisdictions, because the data was already collected",
+        "choices": [
+            "None — they can query the database for any plate without a warrant in most jurisdictions, because the data was already collected",
+            "A federal warrant — every ALPR query nationwide requires an Article III judge to sign an individualized affidavit on probable cause first",
+            "Written owner consent — every plate-movement search requires a signed waiver from the registered vehicle owner before any officer can run a query",
+            "A grand-jury indictment — every plate-history search requires an indictment from a federal grand jury before any officer can access the database",
+        ],
+        "context": "An ALPR network logs every plate that passes a camera, with timestamp and location. Some cities have hundreds of cameras. The records build a detailed picture of every vehicle's movements — including yours, whether or not you've ever been suspected of anything. Police can query the database for any plate without a warrant in most jurisdictions, because the data was already collected and is now 'just records.' Third-party doctrine and bulk collection together produce a level of routine government access to citizen movements that would have been unthinkable before the technology existed.",
+    },
+
+    1008: {
+        "tier": 4,
+        "question": "A large industry of 'data brokers' (LexisNexis, Acxiom, Epsilon, Oracle, and many smaller firms) collects, packages, and sells information about you — buying habits, location patterns, family relationships, health inferences, political donations. Most users have never heard of these companies. Who can purchase a data-broker profile of an American consumer?",
+        "answer": "Anyone with money — marketers, insurers, lenders, employers, landlords, political campaigns, and law-enforcement agencies are all standard customers",
+        "choices": [
+            "Anyone with money — marketers, insurers, lenders, employers, landlords, political campaigns, and law-enforcement agencies are all standard customers",
+            "Only the consumer themselves — federal law restricts every broker's sales to the person whose data appears in the file",
+            "Only federally accredited universities — broker data is sold for peer-reviewed academic research and nothing else",
+            "Nobody — data brokers are advertising firms with no actual product available for sale to any customer",
+        ],
+        "context": "Data brokers aggregate from many sources — public records, retail transactions, app permissions, websites, and other brokers. Profiles often include hundreds of attributes. Customers include marketers, insurers, lenders, employers, landlords, political campaigns, and law-enforcement agencies. The U.S. has very little federal regulation in this space; California's CCPA and a few other state laws are partial constraints. A website's 'privacy policy' is largely about how the website itself uses your data — it says nothing about what the broker ecosystem already knows.",
+    },
+
+    1012: {
+        "tier": 4,
+        "question": "Tools like Ollama, LM Studio, and llama.cpp let users download open-weights AI models — Llama, Mistral, Qwen, DeepSeek — and run them locally on a laptop or desktop. No internet connection. No queries logged. No content policy from a remote company. What specific power over your interactions does running a model locally take away from the lab that trained it?",
+        "answer": "The ability to log, refuse, or change the model's behavior — once the weights are on your machine, the lab can no longer shape what it produces for you",
+        "choices": [
+            "The ability to log, refuse, or change the model's behavior — once the weights are on your machine, the lab can no longer shape what it produces for you",
+            "The ability to monetize — federal law prohibits any company from charging for an API once open weights are released anywhere",
+            "The ability to release closed models — labs that publish open weights are barred from running any paid API after release",
+            "Nothing meaningful — local inference produces identical output to closed APIs with no shift in control over policy or logging",
+        ],
+        "context": "A capable open-weights model (8B, 13B, 70B parameters) can run on consumer hardware — a gaming PC, an Apple Silicon Mac, sometimes a high-end laptop. The user has full control: no logging, no remote refusals, no policy update changing behavior overnight. Trade-offs: closed-API frontier models may be better at hardest tasks, and self-hosting requires technical setup. Open-weights AI is the AI equivalent of being able to host your own email server, or print your own books — a structural check on platform power.",
+    },
+
+    1015: {
+        "tier": 4,
+        "question": "In recent elections worldwide — Slovakia 2023, India 2024, Indonesia 2024, the U.S. 2024 — AI-generated audio and video clips of politicians have been used in campaigns. Some clips were quickly debunked; others spread widely before correction caught up. What's the specific window after a viral fake clip drops when correction is hardest to land?",
+        "answer": "The first 24-48 hours — by the time the fact-check publishes, the emotional impression has already formed in the audience that saw the clip",
+        "choices": [
+            "The first 24-48 hours — by the time the fact-check publishes, the emotional impression has already formed in the audience that saw the clip",
+            "The first six months — corrections published within a half-year window land instantly with the original audience without effort",
+            "Never — every platform's automatic detection labels every fake clip within milliseconds, so manual correction is irrelevant",
+            "The first ten years — fact-checks delivered within a decade reach exactly the same audience that saw the original clip",
+        ],
+        "context": "Deepfake political clips share a pattern: they go viral fast, spread through trusted channels (often messaging apps where corrections can't reach), and shape impressions before fact-checks arrive. The Slovakia 2023 case (a fake audio of a candidate discussing election fraud) circulated in the 48 hours before voting when election-day silence rules limited media response. AI-generated content asymmetrically benefits whoever moves first. Build skepticism toward emotional clips arriving without context, especially close to decisions you have to make.",
+    },
+
+    1022: {
+        "tier": 4,
+        "question": "Stability AI released the Stable Diffusion image model with open weights in August 2022. It was trained on the LAION-5B dataset, scraped from the internet — including images by living artists who hadn't consented. Several artists sued, and Getty Images filed its own suit. Whose interests usually shape the eventual legal rules when a technology grows faster than its legal framework?",
+        "answer": "Whoever was at the table while the rules were settled — the labs and large rights-holders, not the individual creators whose work was scraped",
+        "choices": [
+            "Whoever was at the table while the rules were settled — the labs and large rights-holders, not the individual creators whose work was scraped",
+            "Individual artists alone — federal law has guaranteed that working creators dictate every AI training rule in every jurisdiction",
+            "Nobody's interests — courts ignore stakeholder positioning and decide every technology case on pure abstract legal principle",
+            "Foreign governments only — under federal law, US copyright rules for AI are written exclusively by overseas regulators",
+        ],
+        "context": "The 2023 class action against Stability AI, Midjourney, and DeviantArt argued that artists' styles and works were copied into the models without consent. Getty Images sued Stability AI separately. The cases will take years to resolve. The broader pattern: the AI labs trained on whatever they could scrape, and the legal questions are being adjudicated after the fact. The original creators — most without resources to litigate — are usually outside the conversations setting the eventual rules. When a technology grows faster than its legal framework, the resulting rules tend to favor whoever was at the table.",
+    },
+
+    1023: {
+        "tier": 4,
+        "question": "Some companies have released AI chatbots specifically aimed at children — homework help, tutoring, even 'AI friend' apps for kids. Standard child-data protections (like COPPA in the U.S.) apply, but enforcement is uneven. What's the actual mechanism by which COPPA violations are discovered?",
+        "answer": "FTC complaints filed after the fact — meaning violations are caught only once someone notices and reports them, not before the data is collected",
+        "choices": [
+            "FTC complaints filed after the fact — meaning violations are caught only once someone notices and reports them, not before the data is collected",
+            "Pre-launch federal certification — every kid-facing app must pass a COPPA audit before any data can be collected anywhere",
+            "Continuous government monitoring — federal agents review every chat with every child user across every kid-facing service in real time",
+            "Industry self-certification with FTC audit — every company submits to a quarterly COPPA inspection at federal expense automatically",
+        ],
+        "context": "COPPA (Children's Online Privacy Protection Act) requires verifiable parental consent for collecting personal information from children under 13. Enforcement is mostly through FTC complaints, which means violations are discovered after the fact. Several AI-for-kids services have faced complaints. Assume that 'free service for kids' is collecting more data and protecting it less than the company's public statements suggest — the track record of voluntary compliance with child-data rules across the tech industry is patchy.",
+    },
+
+    1026: {
+        "tier": 4,
+        "question": "Some critics (including Yann LeCun and Marc Andreessen) argue that 'AI safety,' framed primarily as existential-risk advocacy, ends up serving the largest AI labs' interests. The argument: dramatic future-risk framing supports regulation that incumbents can absorb but smaller competitors cannot. Can a safety advocate be both sincerely worried AND aligned with the incumbent labs' commercial interests at the same time?",
+        "answer": "Yes — both can be true simultaneously; noticing the commercial alignment doesn't disprove the sincerity of the belief",
+        "choices": [
+            "Yes — both can be true simultaneously; noticing the commercial alignment doesn't disprove the sincerity of the belief",
+            "No — sincerity is impossible whenever any commercial interest aligns, so every existential-risk advocate is by definition insincere",
+            "No — every commercial-alignment claim has been formally refuted, so sincerity is the only possible state for any safety advocate",
+            "No — sincerity and commercial alignment have been mathematically shown to be mutually exclusive in every AI policy position",
+        ],
+        "context": "The argument that AI safety advocacy serves incumbent labs (made by figures including Yann LeCun and Marc Andreessen) doesn't prove every safety advocate is insincere. Many are clearly sincere. The argument is that sincerity and commercial alignment aren't mutually exclusive — and watching which positions get amplified by which institutional players is part of analyzing the public conversation. Sincere belief and structural incentive often align — that's part of how influential ideas survive and spread.",
+    },
+
+    1028: {
+        "tier": 4,
+        "question": "AI helps cybersecurity defenders — detecting unusual patterns, scanning code for vulnerabilities, automating routine analysis. It also helps attackers — generating convincing phishing emails, finding bugs in software faster, crafting evasion techniques. In dual-use AI between offense and defense, who gets the structural advantage when both sides can use the same techniques?",
+        "answer": "Whoever automates first and at scale — typically well-resourced attackers (nation-states, sophisticated criminal groups), until defenders catch up",
+        "choices": [
+            "Whoever automates first and at scale — typically well-resourced attackers (nation-states, sophisticated criminal groups), until defenders catch up",
+            "Defenders by default — every AI tool has been independently proven ineffective at offense across every attack surface in production",
+            "Attackers by default — every defensive AI tool has been formally shown not to detect any technique under any field condition",
+            "Nobody — AI has had zero net measurable effect on offense or defense across the cybersecurity field since 2000 onward",
+        ],
+        "context": "AI-assisted phishing is detectably better than human-written phishing (better grammar, better personalization). AI-assisted vulnerability scanning helps defenders find bugs before they ship — and helps attackers find bugs to exploit. The balance shifts over time and across specific techniques. Dual-use technology favors whoever invests first and at scale, which is often well-resourced attackers (nation-states, sophisticated criminal groups) — until defenders catch up.",
+    },
+
+    1032: {
+        "tier": 4,
+        "question": "Algorithmic and high-frequency trading firms (Citadel, Jane Street, Two Sigma, Renaissance) account for a large share of U.S. stock-market trading volume. Their AI-driven trading happens in microseconds. What specific 2010 market event was driven by algorithmic interactions between trading systems?",
+        "answer": "The May 2010 'Flash Crash' — the Dow dropped roughly 1000 points in minutes and recovered the same day, driven by algorithmic feedback loops",
+        "choices": [
+            "The May 2010 'Flash Crash' — the Dow dropped roughly 1000 points in minutes and recovered the same day, driven by algorithmic feedback loops",
+            "The 2010 'Bitcoin Surge' — every algorithmic trader simultaneously bought cryptocurrency, sending Bitcoin's price up 1000% in seconds",
+            "The 2010 'NYSE Lockout' — every retail brokerage was banned from algorithmic trading nationwide for a single full calendar day",
+            "The 2010 'Federal Reserve Override' — the Fed manually closed every algorithmic trading venue for a week to investigate",
+        ],
+        "context": "High-frequency trading firms colocate servers next to exchange computers to shave microseconds off trades, run ML models to predict short-term price moves, and execute trades faster than any human can react. The May 2010 'Flash Crash' (Dow dropped ~1000 points in minutes, recovered same day) was driven by algorithmic interactions. Subsequent market structure changes have added some safeguards but not changed the basic dynamic. Markets are infrastructure shaped by whoever builds and operates them; in U.S. equity markets, that's increasingly algorithmic firms — a structural fact retail investors should know they're operating within.",
+    },
+
+    1033: {
+        "tier": 4,
+        "question": "Modern AI models are trained partly with the help of human workers who label data — flagging hate speech, ranking model responses, identifying objects in images. Many of these workers are based in lower-wage countries (Kenya, Philippines, India). Per Time magazine's January 2023 report, what hourly pay did Kenyan workers receive for labeling graphic violence and abuse content used to train OpenAI's models?",
+        "answer": "Under $2 per hour — Kenyan workers via Sama labeled distressing content (violence, sexual abuse) so the model could later detect and refuse it",
+        "choices": [
+            "Under $2 per hour — Kenyan workers via Sama labeled distressing content (violence, sexual abuse) so the model could later detect and refuse it",
+            "Over $150 per hour — Sama paid Kenyan workers premium US software-engineer wages for every hour of labeling work",
+            "Exactly the federal minimum wage of $7.25 — Sama paid every overseas worker the same rate as US workers by company policy",
+            "Nothing at all — Sama operated entirely as a volunteer program with no payment of any kind to any worker",
+        ],
+        "context": "Time magazine reported in January 2023 that OpenAI used Kenyan workers via Sama paid under $2/hour to label graphic content (violence, sexual abuse) so the model could detect and refuse it. Similar arrangements have been documented at other major AI labs. The work is sometimes traumatizing; the pay is low; the workers are usually contractors, not employees. 'AI' often hides human labor underneath. The polished chatbot you talk to was made polite partly by people in lower-wage countries reading the worst content the internet produces.",
+    },
+
+    1037: {
+        "tier": 4,
+        "question": "When an AI system causes harm — a wrongful loan denial, a misdiagnosis, an autonomous-vehicle crash — who's legally liable? Existing tort law was written for human actors. As of 2025, who actually bears liability when an AI deployed by one company harms a user?",
+        "answer": "It varies by jurisdiction — courts are extending product-liability, professional-malpractice, or finding no liability at all, and the rules are still being worked out",
+        "choices": [
+            "It varies by jurisdiction — courts are extending product-liability, professional-malpractice, or finding no liability at all, and the rules are still being worked out",
+            "It is fully settled — every US court applies identical product-liability rules with identical outcomes against every developer across every state in the country",
+            "It rests on the AI itself — every state in the United States now treats each model as the responsible defendant in any harm case across the country",
+            "It rests on the US government — federal taxpayers cover every AI-caused damage in every jurisdiction under the federal Tort Claims Act across the country",
+        ],
+        "context": "Federal courts and state legislatures are working through novel liability questions. Some cases extend product-liability frameworks to AI; some apply professional-malpractice rules; some find no liability for anyone. The EU AI Act includes specific liability provisions; the U.S. is more fragmented. 'Who pays when AI is wrong' is one of the most consequential legal questions being decided right now, and the answer will shape what AI gets built, deployed, and refused.",
+    },
+
+    1039: {
+        "tier": 4,
+        "question": "When a business builds applications on top of a closed-API AI service (OpenAI, Anthropic, Google), the business depends on that lab continuing to operate, not raising prices arbitrarily, and not changing the model's behavior. What specific business risk does sole reliance on a closed AI API create for a downstream company?",
+        "answer": "Vendor lock-in — the lab can change terms, raise prices, deprecate the model, or alter refusal behavior, and migrating to a different lab requires re-engineering",
+        "choices": [
+            "Vendor lock-in — the lab can change terms, raise prices, deprecate the model, or alter refusal behavior, and migrating to a different lab requires re-engineering",
+            "No risk at all — every major lab is contractually required by federal law to maintain identical service to every customer indefinitely",
+            "Mandatory price reductions — every lab is legally compelled to lower its API price by a fixed amount each calendar year",
+            "Zero downside — every closed-API business has been formally shown to have no measurable disadvantage relative to running open weights",
+        ],
+        "context": "Vendor lock-in is a classic enterprise software risk; it applies to AI too. A company that built its product on a closed model can find itself in a hard spot when the lab deprecates the model, raises prices, or changes refusal behavior. Migrating to another lab requires re-engineering. Open-weights alternatives are part of why some companies maintain that option. 'The API works today' isn't the same as 'the API will work the same way next year' — and the rational hedge is having a fallback you can run yourself.",
+    },
+
+    # ----- T5 -----
+    1154: {
+        "tier": 5,
+        "question": "In 2018, investigators identified the Golden State Killer (Joseph James DeAngelo) by uploading crime-scene DNA to GEDmatch, a public genealogy database, and matching distant relatives who had voluntarily submitted samples. If you have never sent your DNA to any service, whose decision can still place your genetic profile into a law-enforcement-searchable database?",
+        "answer": "Any close-enough relative's — a cousin or aunt submitting to 23andMe, Ancestry, or GEDmatch makes you partially identifiable in those databases without your consent",
+        "choices": [
+            "Any close-enough relative's — a cousin or aunt submitting to 23andMe, Ancestry, or GEDmatch makes you partially identifiable in those databases without your consent",
+            "Only your own — federal law makes every genealogy database user fully isolated, with zero cross-family inference possible by any query",
+            "Only a court's — every genealogy database requires a federal warrant naming you specifically before any genetic inference can be drawn",
+            "Nobody's — DNA databases legally cannot infer information about anyone other than the registered customer who submitted the saliva sample",
+        ],
+        "context": "Genealogy DNA databases (23andMe, Ancestry, GEDmatch) have become law-enforcement resources. Once a few relatives submit samples, the rest of the family is partially identifiable whether they consented or not. The Golden State Killer case made the technique famous; investigative genetic genealogy has solved hundreds of cold cases since. Genetic privacy is not individually controllable in a world where relatives' choices reveal you. Your aunt's DNA test reveals you, and you had no role in that decision.",
+    },
+
+    1155: {
+        "tier": 5,
+        "question": "Eliezer Yudkowsky wrote a March 2023 Time magazine essay calling for an international moratorium on training large AI models. Yudkowsky's position has been at the apocalyptic end of AI risk advocacy for over two decades. What specific enforcement mechanism did Yudkowsky's essay say he was willing to support against 'rogue' data centers if they violated the moratorium?",
+        "answer": "Military force — airstrikes on noncompliant data centers if necessary, framed as preventing extinction-level AI development",
+        "choices": [
+            "Military force — airstrikes on noncompliant data centers if necessary, framed as preventing extinction-level AI development",
+            "Small civil fines — modest payments from the operating company to a federal agency on a routine quarterly schedule with no further consequence",
+            "Voluntary peer pressure only — no enforcement mechanism beyond friendly conversation between researchers at academic conferences",
+            "Mandatory journalist embeds — assigned reporters at every data center with no power to halt operations and no other enforcement consequences anywhere",
+        ],
+        "context": "Yudkowsky's MIRI (Machine Intelligence Research Institute) has argued for decades that misaligned superintelligence is the dominant existential risk of this century. The 2023 essay is the most explicit version of the policy implication: stop training, by force if necessary, including airstrikes on data centers. This is a real philosophical position with real proponents and a long history. The bank's stance: name positions honestly, engage their arguments seriously, and let the reader weigh the case. A position can be sincere AND wrong AND influential AND worth knowing about — all at once.",
+    },
+
+    1157: {
+        "tier": 5,
+        "question": "In Xinjiang, the Chinese government built one of the most extensive AI surveillance systems in the world: facial-recognition checkpoints, voice-print collection, mandatory biometric DNA sampling, and an Integrated Joint Operations Platform that flags Uyghurs for detention. Roughly how many Uyghurs were sent to 're-education' camps from 2017 onward, and what specific behaviors did the IJOP flag?",
+        "answer": "Around a million or more — and the IJOP flagged behaviors like growing a beard, praying frequently, or visiting a mosque",
+        "choices": [
+            "Around a million or more — and the IJOP flagged behaviors like growing a beard, praying frequently, or visiting a mosque",
+            "Around a dozen — and the IJOP flagged only confirmed terrorist activity, never any peaceful religious or grooming behavior",
+            "Zero — no detention occurred and the IJOP was never deployed against any Uyghur or any other ethnic group in Xinjiang",
+            "Around fifty thousand — and the IJOP exclusively flagged self-confessed violent extremists who had publicly admitted to crimes",
+        ],
+        "context": "The Xinjiang case has been documented by leaked Chinese government files (the Xinjiang Police Files, the China Cables), satellite imagery, survivor testimony, and reporting by outlets including the BBC, AP, and Buzzfeed. The technical stack includes facial recognition tuned to ethnicity, gait recognition, license-plate readers feeding a central platform, and predictive flagging algorithms. AI surveillance is a tool; the question is always who points it where. The same technology used for finding criminals can be turned on dissidents, minorities, or anyone the state decides to target — and once the infrastructure is built, the redirection is a policy decision, not a technical one.",
+    },
+
+    1158: {
+        "tier": 5,
+        "question": "In 2013, Edward Snowden disclosed documents revealing the NSA's XKEYSCORE program — a system that let analysts search the agency's collected internet traffic by email address, IP, or keyword across petabytes of intercepted communications. Under what legal framework did XKEYSCORE queries operate, and what level of judicial approval was required per query?",
+        "answer": "FISA Section 702 and Executive Order 12333 — neither required a per-query warrant, so an analyst's keystroke decided what to retrieve from already-collected data",
+        "choices": [
+            "FISA Section 702 and Executive Order 12333 — neither required a per-query warrant, so an analyst's keystroke decided what to retrieve from already-collected data",
+            "Fourth Amendment warrants — every XKEYSCORE query required an Article III federal judge to sign an individualized affidavit on probable cause",
+            "Foreign Intelligence Surveillance Court orders — every keystroke required a specific FISC order naming the target before any retrieval was possible",
+            "USA PATRIOT Act Section 215 — every query was approved by a federal grand jury before any analyst was permitted to retrieve any record",
+        ],
+        "context": "XKEYSCORE was one of the most striking revelations from the Snowden archive: an interface used by NSA analysts (and, via partnership, GCHQ and others) to search internet traffic by simple selectors. The legal framework relied on the FISA Amendments Act Section 702 and Executive Order 12333, neither of which required a warrant for the underlying collection. Reform proposals followed; some passed (USA FREEDOM Act 2015 trimmed phone-metadata bulk collection), most did not. The question is rarely 'can the government read this?' anymore — it's 'has the government already collected this, and what limits the keystroke that retrieves it?'",
+    },
+
+    1159: {
+        "tier": 5,
+        "question": "PRISM, also disclosed in the 2013 Snowden documents, was a program under which the NSA accessed user data directly from major US internet companies including Microsoft, Yahoo, Google, Facebook, YouTube, Skype, AOL, and Apple. What's the statutory basis for compelling company compliance, and which court issues the orders?",
+        "answer": "FISA Section 702 — orders are issued under classified procedures by the Foreign Intelligence Surveillance Court, which require company compliance",
+        "choices": [
+            "FISA Section 702 — orders are issued under classified procedures by the Foreign Intelligence Surveillance Court, which require company compliance",
+            "The Espionage Act of 1917 — orders are issued by the President personally and published in the Federal Register before any data is collected",
+            "Voluntary contracts — every PRISM-participating company signed a public memorandum of understanding for cooperation with no legal compulsion at all",
+            "The First Amendment — every company complied because federal speech rights mandate cooperation with intelligence requests as protected expression",
+        ],
+        "context": "The companies' public response in 2013 was a mixture of denial, qualified acknowledgment, and demands for transparency about the legal orders they received. Section 702 of FISA provides the statutory basis; the orders are issued under classified procedures with the Foreign Intelligence Surveillance Court. When a few large companies hold most of a country's digital communication, intelligence access to that communication runs through them whether they want it to or not. The same infrastructure that makes the services useful makes them surveillance choke-points.",
+    },
+
+    1160: {
+        "tier": 5,
+        "question": "In January 2020, Detroit police arrested Robert Williams in front of his wife and two daughters after a facial-recognition system matched him to surveillance footage of a shoplifter. He spent 30 hours in jail before being released — he was the wrong man. Where did Clearview AI assemble the photos used to train its identification model, and whose consent was obtained for those photos?",
+        "answer": "It scraped billions of photos from Facebook, Instagram, LinkedIn, and elsewhere — none of the people in the photos consented to being in a police lineup",
+        "choices": [
+            "It scraped billions of photos from Facebook, Instagram, LinkedIn, and elsewhere — none of the people in the photos consented to being in a police lineup",
+            "Each photo came from a notarized consent form — every subject signed a federal-regulation waiver before any image was added to Clearview's database",
+            "Each photo was DMV-licensed — every driver signed an explicit written commercial-police-use consent during license renewal at every state DMV office",
+            "Each photo came from a single 2019 competition — every contestant explicitly authorized commercial police use before any image was added to the database",
+        ],
+        "context": "Robert Williams's case was the first widely-publicized US wrongful arrest from facial-recognition misidentification; several more have been documented since (Nijeer Parks, Porcha Woodruff). Studies (NIST 2019, MIT Media Lab) found error rates substantially higher for women and people of color. Clearview AI's database — built by scraping public photos from Facebook, Instagram, LinkedIn, and elsewhere — was sold to police departments and private security firms before regulatory action (Illinois settlement 2022, UK ICO order 2022) curbed some uses. Anyone whose photo is online has been entered into surveillance lineups they never opted into.",
+    },
+
+    1162: {
+        "tier": 5,
+        "question": "Reporting by +972 Magazine and the Guardian in 2024 described two AI-augmented targeting systems used by the Israeli military in Gaza — 'Lavender,' which identified suspected Hamas operatives from population-scale data, and 'The Gospel,' which generated structure-targeting recommendations. According to Israeli intelligence sources cited in the reporting, roughly how long was the human-review window per Lavender-generated name?",
+        "answer": "About 20 seconds — fast enough that the human-in-the-loop functioned as a formality rather than a meaningful check on the algorithm",
+        "choices": [
+            "About 20 seconds — fast enough that the human-in-the-loop functioned as a formality rather than a meaningful check on the algorithm",
+            "About six hours — sufficient time for a multi-disciplinary panel to deliberate every name produced by the system before any strike was approved",
+            "About a full week — every name went through a week-long ethics review before any decision was reached on whether to act on it",
+            "About a full year — every Lavender output sat for a calendar year while intelligence officials independently corroborated every detail externally",
+        ],
+        "context": "The +972 and Guardian reporting cited Israeli intelligence sources describing review windows of roughly 20 seconds per name generated by Lavender. Civilian casualty figures from Gaza through 2024 were high by historical urban-warfare standards. The Israeli government disputed elements of the reporting. Whatever one makes of any specific conflict, the structural pattern is broader: once an algorithm can generate targets faster than humans can evaluate them, the practical effect of 'human review' degrades — the human becomes a rubber-stamp rather than a brake. The same dynamic appears in other AI-augmented decision pipelines.",
+    },
+
+    1163: {
+        "tier": 5,
+        "question": "The war in Ukraine since 2022 has been called the first 'drone war' at scale. Both sides field large numbers of small drones with progressively autonomous targeting features. Some FPV drones now lock onto and pursue targets even after the operator's signal is jammed. What's the name of the long-running UN forum where 'Lethal Autonomous Weapons Systems' have been debated for over a decade without producing binding restrictions?",
+        "answer": "The UN's Convention on Certain Conventional Weapons (CCW) — major military powers have generally opposed broad bans, and no binding rule has emerged",
+        "choices": [
+            "The UN's Convention on Certain Conventional Weapons (CCW) — major military powers have generally opposed broad bans, and no binding rule has emerged",
+            "The UN Security Council — a binding resolution passed in 2015 prohibits every fielded drone from any autonomous targeting feature anywhere in the world",
+            "The General Assembly's First Committee — a treaty signed in 2018 mandates real-time human approval per shot for every drone fielded by every UN member state",
+            "The International Court of Justice — a 2020 ruling banned every autonomous targeting feature and is enforced through automatic mandatory sanctions on offending states",
+        ],
+        "context": "Reporting from Ukraine has documented FPV drones with on-board target lock that completes the strike even after the human operator's signal is jammed. International discussions on 'Lethal Autonomous Weapons Systems' (LAWS) at the UN's Convention on Certain Conventional Weapons have proceeded for over a decade without binding restrictions. Major military powers have generally opposed broad bans. The gap between 'what we're using in this conflict' and 'what the diplomatic conversation prohibits' tends to widen during active wars, and the technology that gets fielded becomes a precedent for the next conflict.",
+    },
+
+    1164: {
+        "tier": 5,
+        "question": "In November 2020, Microsoft rolled out 'Productivity Score' — a feature in Microsoft 365 that, by default, let administrators see per-employee metrics on document creation, email volume, meeting attendance, and chat activity. After a public backlash, Microsoft removed the individual-employee identification within roughly a week. Why was Productivity Score rolled back, given that most employee-monitoring software keeps similar features in place?",
+        "answer": "Visible reputational backlash — Productivity Score was a consumer-visible Microsoft 365 feature, so public pressure could reach it; most monitoring software is invisible inside enterprise contracts",
+        "choices": [
+            "Visible reputational backlash — Productivity Score was a consumer-visible Microsoft 365 feature, so public pressure could reach it; most monitoring software is invisible inside enterprise contracts",
+            "A federal lawsuit — every state's attorney general sued Microsoft simultaneously and the company was legally compelled to remove the feature within seven days",
+            "A constitutional ruling — the Supreme Court struck down per-employee productivity tracking as a Fourth Amendment violation in a unanimous decision",
+            "A union strike — every Microsoft customer's unionized workforce walked off the job nationwide until the feature was disabled across all 365 tenants",
+        ],
+        "context": "The Productivity Score case was rare because the feature was visible and Microsoft cared about reputational backlash. Most employee-monitoring software (Teramind, Hubstaff, ActivTrak, Time Doctor, Veriato, and many others) operates in less visible ways inside organizations that buy it. Standard features include keystroke logging, screenshot capture, application-usage tracking, and 'productivity' scoring. By default, software your employer buys to manage you has access to a level of detail about your work that was inconceivable a generation ago — and the configuration choices are made by your employer, not by you.",
+    },
+
+    1165: {
+        "tier": 5,
+        "question": "By the mid-2020s, employee-monitoring software (Teramind, Hubstaff, Veriato, ActivTrak, and others) was reportedly used at a majority of large US employers. Features included keystroke logging, screenshot capture, application-usage tracking, idle-time detection, and 'productivity' scoring. Under current US case law, what's the typical privacy expectation of an employee using a company-issued laptop on a company network?",
+        "answer": "Sharply reduced — courts generally find no meaningful expectation of privacy on employer-owned hardware and networks, and notice requirements vary by state",
+        "choices": [
+            "Sharply reduced — courts generally find no meaningful expectation of privacy on employer-owned hardware and networks, and notice requirements vary by state",
+            "Full Fourth Amendment protection — every US employee has the identical constitutional privacy rights on a work laptop as on a personal laptop at home",
+            "Total exemption from monitoring — federal law has banned all employer monitoring of any employee on any device since 2020 in every state",
+            "Mandatory monthly written reports — every employer is federally required to deliver to every employee a complete log of every keystroke collected",
+        ],
+        "context": "US workplace privacy law is thin compared with Europe. Notice requirements vary by state (Connecticut, Delaware, New York have notice statutes; many states have none). Employees on company hardware and networks generally have a sharply reduced expectation of privacy under current case law. The monitoring intensified during 2020-2022 remote work and largely persisted afterward. Assume the company-issued laptop, phone, and accounts are monitored at a level you cannot fully audit, and treat them accordingly.",
+    },
+
+    1166: {
+        "tier": 5,
+        "question": "The Stanford Internet Observatory (SIO), founded in 2019, became a prominent academic center studying online influence operations and content moderation. House Judiciary Committee investigations and lawsuits (Missouri v. Biden, later Murthy v. Missouri at the Supreme Court) raised questions about coordination between SIO, government agencies, and platforms during the 2020 and 2022 election cycles. Stanford wound down much of the program by 2024. Which two SIO programs were named in congressional reporting as flagging content for platform review?",
+        "answer": "The Election Integrity Partnership (EIP) and the Virality Project — both produced reports flagging items including claims later determined to be true",
+        "choices": [
+            "The Election Integrity Partnership (EIP) and the Virality Project — both produced reports flagging items including claims later determined to be true",
+            "The Voter Information Project and the Civic Speech Office — both operated as fully independent academic studies with no contact with any platform",
+            "The Federal Misinformation Bureau and the Truth Verification Service — both were federal agencies operating under Department of Justice authority",
+            "The Public Speech Council and the Citizen Information Office — both were created by Stanford with no government contact and no platform contact",
+        ],
+        "context": "The SIO operated programs (the Election Integrity Partnership, Virality Project) that produced reports flagging content for platform review. Court proceedings and congressional reporting in 2022-2024 highlighted that the flagging extended to claims later determined to be true, including discussions of vaccine side effects and natural-immunity research. Stanford announced significant program changes in 2024. 'Research on misinformation' done in close coordination with the government bodies and platforms whose moderation decisions it shapes is a different activity from independent academic study — and the labels can hide the difference.",
+    },
+
+    1167: {
+        "tier": 5,
+        "question": "Starting December 2022, journalists Matt Taibbi, Bari Weiss, and others published the 'Twitter Files' — internal documents released after Elon Musk's acquisition of Twitter. The files revealed extensive coordination between Twitter staff, federal agencies (FBI, CISA, others), and outside researchers on content-moderation decisions during 2020-2022. Which specific 2020 news story did FBI requests pressure Twitter to suppress?",
+        "answer": "The New York Post's Hunter Biden laptop coverage — the FBI flagged it as possible 'hack-and-leak' material before the November 2020 election",
+        "choices": [
+            "The New York Post's Hunter Biden laptop coverage — the FBI flagged it as possible 'hack-and-leak' material before the November 2020 election",
+            "Coverage of the 1992 Bosnian war — the FBI directed Twitter to remove three-decade-old foreign-correspondent reporting on the conflict",
+            "Reports on local high-school sports — the FBI specifically pressured Twitter to suppress coverage of varsity basketball games nationwide",
+            "Bicycle-safety public-service announcements — the FBI repeatedly requested removal of state DMV reminders about bike helmets and lights",
+        ],
+        "context": "The Twitter Files documented FBI requests to suppress specific accounts and stories (including the New York Post's Hunter Biden laptop coverage), CISA's role in 2020 election-integrity flagging, regular meetings between platform trust-and-safety staff and federal agencies, and patterns of asymmetric application of moderation policies. The Supreme Court in Murthy v. Missouri (2024) addressed standing but not the merits of the underlying coordination. 'Platforms making their own decisions' was, in important cases, a description that omitted the substantial role of government communication in shaping those decisions.",
+    },
+
+    1168: {
+        "tier": 5,
+        "question": "During 2020-2022, major platforms applied 'misinformation' labels, throttling, or removal to COVID-related claims — about vaccine side effects, masking efficacy, the lab-leak hypothesis, school closures, and natural immunity. Subsequent reporting and official statements acknowledged that many of those labeled claims had factual merit. Which two federal agencies later assessed the lab-leak hypothesis as a plausible origin theory?",
+        "answer": "The FBI and the Department of Energy — both released assessments by 2023 treating the lab-leak hypothesis as plausible, after it had been labeled misinformation",
+        "choices": [
+            "The FBI and the Department of Energy — both released assessments by 2023 treating the lab-leak hypothesis as plausible, after it had been labeled misinformation",
+            "The Department of Transportation and the Office of Personnel Management — both formally endorsed the lab-leak hypothesis as settled science by 2023",
+            "The Federal Communications Commission and the SEC — both adjudicated the lab-leak hypothesis as definitively proven by physical evidence by 2023",
+            "The US Postal Service and the GSA — both certified the lab-leak hypothesis as the consensus origin theory of US federal scientific bodies by 2023",
+        ],
+        "context": "Examples have been documented retrospectively: lab-leak as a plausible origin theory (FBI and Department of Energy assessments by 2023), vaccine side-effect discussions (myocarditis acknowledgments and updated CDC guidance), school-closure costs (Brown University, Stanford research). Platforms quietly walked back some specific labels and policies in 2022-2023. In a fast-moving information environment, the cost of suppressing later-vindicated claims is rarely accounted for at the time labels are applied, and the same labeling machinery remains available for the next emergency.",
+    },
+
+    1169: {
+        "tier": 5,
+        "question": "The Cybersecurity and Infrastructure Security Agency (CISA), created in 2018, expanded its scope during 2020-2022 from election-system security toward 'mis-, dis-, and mal-information' monitoring on social platforms. Congressional reporting documented CISA's outreach to platforms about specific posts and accounts. What was CISA's original statutory mission when Congress created the agency in 2018?",
+        "answer": "Cybersecurity of physical and digital infrastructure — power grids, election systems, water utilities, networks — not content monitoring on social media",
+        "choices": [
+            "Cybersecurity of physical and digital infrastructure — power grids, election systems, water utilities, networks — not content monitoring on social media",
+            "Moderating speech on every US social platform — content monitoring was the founding mission of the agency in its original statute",
+            "Issuing parking citations to federal employees — CISA was created to handle a narrow administrative DMV function within federal facilities",
+            "Auditing high-school history textbooks — CISA's founding mission was reviewing K-12 curriculum content under the Department of Education",
+        ],
+        "context": "CISA's original cybersecurity-of-infrastructure remit is broadly uncontroversial. The expansion toward content monitoring drew bipartisan critique by 2023 — Republicans citing speech concerns, civil libertarians citing First Amendment limits, and academic critics citing scope creep. CISA officials in 2024 publicly disavowed some of the content-monitoring activities. When an agency's mission expands quietly, oversight tends to lag behind the expansion, and the new programs can take on the durability of the agency's original ones.",
+    },
+
+    1171: {
+        "tier": 5,
+        "question": "By the mid-2020s, US federal databases (FBI's Next Generation Identification with over 100 million photos, DHS's IDENT, the State Department's facial-image database from passports and visas) plus state DMV photos held biometric records on a majority of US residents. By what specific administrative route did most of those photos enter government databases?",
+        "answer": "Driver's-license and passport applications — administrative collection, not dedicated surveillance programs, supplied the bulk of the photos",
+        "choices": [
+            "Driver's-license and passport applications — administrative collection, not dedicated surveillance programs, supplied the bulk of the photos",
+            "Federal warrant per record — every face in every federal database was added through an individualized judicial process under the Fourth Amendment",
+            "Explicit surveillance-consent forms — every photo required a signed consent acknowledging future facial-recognition use at the moment of collection",
+            "Voluntary citizen submission to dedicated programs — federal facial-image databases hold only photos that residents specifically donated for security use",
+        ],
+        "context": "GAO reporting and FOIA disclosures over the past decade have documented the scope. State DMV photo databases are commonly used for facial-recognition queries by federal agencies; the queries don't require resident notice. Reform efforts (proposed federal facial-recognition statutes, state-level limits in Illinois and elsewhere) have moved slowly. The question 'is there a surveillance database that includes me?' for most US adults has a default 'yes' — the operative question is what controls limit the queries against it.",
+    },
+
+    1172: {
+        "tier": 5,
+        "question": "A long-running concern in US privacy circles is that surveillance capabilities deployed in authoritarian states for control (facial recognition, predictive analytics, integrated databases) eventually migrate to democratic states for ordinary law enforcement. The technologies themselves are not categorically different. What's the load-bearing factor that prevents a democratic surveillance state from drifting into an authoritarian one?",
+        "answer": "Political-legal constraints — warrants, due process, oversight, judicial review — which have to be actively maintained because they erode under emergencies and bureaucratic drift",
+        "choices": [
+            "Political-legal constraints — warrants, due process, oversight, judicial review — which have to be actively maintained because they erode under emergencies and bureaucratic drift",
+            "The underlying mathematics — Western facial recognition uses fundamentally different algorithms from authoritarian systems, making misuse technically impossible",
+            "A federal anti-surveillance statute — Congress has prohibited democracies from ever building any database comparable to authoritarian ones, by law",
+            "Geographic separation — the technology cannot physically operate inside US borders the way it does abroad, so importation is irrelevant by design",
+        ],
+        "context": "The recognition is Solzhenitsyn's deep point applied: institutional capability is durable across changes in ideology. Building the same database that China uses for repression — passport photos, license plates, biometric collection — does not make a democracy authoritarian. But it builds the infrastructure that an authoritarian regime would use, if the politics drifted. The political-legal constraints (warrants, due process, oversight, judicial review) are what's load-bearing — and those have to be actively maintained, because they erode under emergency justifications and bureaucratic drift.",
+    },
+
+    1173: {
+        "tier": 5,
+        "question": "In September 2021, Frances Haugen — a former Facebook product manager — disclosed thousands of pages of internal Facebook research to the Wall Street Journal and the SEC. The documents showed that the company had internal data on Instagram's effects on teen-girl body image. What did the leaked 2019 internal study specifically conclude about Instagram's effect on teen body image?",
+        "answer": "That for many teens, 'we make body image issues worse' on Instagram, and 'aspects of Instagram exacerbate each other to create a perfect storm'",
+        "choices": [
+            "That for many teens, 'we make body image issues worse' on Instagram, and 'aspects of Instagram exacerbate each other to create a perfect storm'",
+            "That Instagram improved every metric of teen wellbeing, with no measured negative effect across any cohort in any country worldwide",
+            "That no teen had ever experienced any psychological effect of any kind from Instagram across the entire history of the platform",
+            "That Instagram was on track to fully eliminate body-image issues by the end of 2023, with every survey result trending positively across the world",
+        ],
+        "context": "Haugen's testimony to the Senate in October 2021 was notable for bipartisan agreement on the seriousness of the disclosures. The internal documents she released included a 2019 study finding that for many teens, 'we make body image issues worse' on Instagram, and that 'aspects of Instagram exacerbate each other to create a perfect storm.' Meta disputed framing and emphasis but did not deny the research existed. A company that researches its products carefully and publishes nothing of those findings is making a structural decision about whose interests get protected — and the gap between the research and the public framing is where careful readers can find ground truth.",
+    },
+
+    1174: {
+        "tier": 5,
+        "question": "Jonathan Haidt, a social psychologist at NYU, argued in 'The Anxious Generation' (2024) that the smartphone and algorithmic-feed transition around 2010-2012 substantially worsened adolescent mental health, especially for teen girls. Critics argued causal attribution to phones was overstated. Which cohort showed the sharpest measured deterioration in depression, anxiety, self-harm, and emergency-room visits around 2011-2013?",
+        "answer": "Teen girls — across CDC YRBS, Pew, time-use, hospitalization, and suicide data, teen-girl indicators show the steepest inflection point at 2011-2013",
+        "choices": [
+            "Teen girls — across CDC YRBS, Pew, time-use, hospitalization, and suicide data, teen-girl indicators show the steepest inflection point at 2011-2013",
+            "Adults over 65 — every measured mental-health indicator deteriorated only among elderly retirees in the years between 2011 and 2013 in every country",
+            "No cohort at all — every measurement of every age group has shown perfectly flat mental-health indicators across the entire decade since 2010 worldwide",
+            "Middle-aged men only — the entire mental-health deterioration was confined to men aged 40-60 in the years around 2011-2013, and no other group",
+        ],
+        "context": "The trends are documented by multiple data sources (CDC YRBS, Pew, time-use studies, hospitalization data, suicide rates). The biggest movements are in teen-girl depression, anxiety, self-harm, and emergency-room visits, with sharp inflection points around 2011-2013. Honest engagement: the measurements are robust; the precise causal mix is contested but the case for a strong phones-and-algorithms contribution is serious. Critics include Candice Odgers and others arguing for caution on individual-level effect sizes. When measurement is solid and causation is contested, precautionary action plus better research beats both denial and overclaim.",
+    },
+
+    1175: {
+        "tier": 5,
+        "question": "Multiple researchers, former employees, and Wall Street Journal investigations have argued that TikTok's 'For You' algorithm is qualitatively more aggressive than other recommendation systems at capturing user attention. What specific harmful content topic did the WSJ's 2021 'TikTok Algorithm Investigation' show the system narrowing into for simulated teen accounts?",
+        "answer": "Disordered-eating content — the algorithm narrowed simulated teen-girl accounts into eating-disorder loops within hours of starting from a blank account",
+        "choices": [
+            "Disordered-eating content — the algorithm narrowed simulated teen-girl accounts into eating-disorder loops within hours of starting from a blank account",
+            "Mathematics homework help — the algorithm exclusively narrowed every simulated teen account toward arithmetic and algebra tutorials with no other content",
+            "Public-broadcasting news segments — the algorithm narrowed every simulated account toward government-funded news exclusively from public stations",
+            "Field-hockey coaching content — the algorithm exclusively narrowed every simulated account toward field-hockey instructional video within minutes of activation",
+        ],
+        "context": "TikTok's algorithm is not technically mysterious — collaborative filtering, content embeddings, watch-time prediction. What's distinctive is the aggressiveness of the optimization loop and the willingness to push content far beyond a user's known interests to find new attention hooks. WSJ's 'TikTok Algorithm Investigation' (2021) traced how rapidly the system narrows into specific topical loops (including disordered-eating content in tests with simulated teen accounts). 'The algorithm just shows what you like' significantly understates how much the algorithm is shaping your preferences rather than reflecting them.",
+    },
+
+    1176: {
+        "tier": 5,
+        "question": "From 2018-2019, journalists (Kevin Roose, Zeynep Tufekci) argued that YouTube's recommendation system tended to push users toward more extreme political content. Later quantitative research, including work by Hosseinmardi, Nagler, and others around 2021, found the algorithm's role was smaller than the initial reporting suggested. What did the later research attribute more of the consumption patterns to than the algorithm itself?",
+        "answer": "User demand and search behavior — users actively seeking content explained more of the patterns than algorithmic push, though the algorithm still mattered",
+        "choices": [
+            "User demand and search behavior — users actively seeking content explained more of the patterns than algorithmic push, though the algorithm still mattered",
+            "Random chance — the later research concluded that every viewer's consumption was the result of random selection, with no role for demand or algorithm",
+            "The phase of the moon — later research found a strict gravitational correlation between lunar cycles and political-content consumption, displacing all other factors",
+            "Federal mandate — later research found that every YouTube viewer was legally required by federal regulation to watch the exact content they consumed",
+        ],
+        "context": "Honest treatment: YouTube's algorithm matters, user demand matters, the political content ecosystem outside the platform matters. The 2018-19 case-study coverage made the strong claim; later quantitative work tempered it. Platforms also tuned their algorithms in response to the early reporting (YouTube changed borderline-content recommendation defaults in 2019). Be willing to update positions on empirical claims as research accumulates, and resist policy framings that treat the strongest possible version of either side as established truth.",
+    },
+
+    1178: {
+        "tier": 5,
+        "question": "Richard Thaler and Cass Sunstein's 2008 book 'Nudge' introduced 'choice architecture' — the idea that defaults and presentations can be designed to steer people toward outcomes the designer considers good without removing the freedom to choose otherwise. AI lets platforms scale this dramatically across billions of users. When one platform's defaults shape choices for billions of users, what's the central political question about that arrangement?",
+        "answer": "Who chose the defaults — and what accountability exists when those defaults harm users, given that the designers can't be voted out the way governments can",
+        "choices": [
+            "Who chose the defaults — and what accountability exists when those defaults harm users, given that the designers can't be voted out the way governments can",
+            "How many bits the defaults are stored in — the political concern is exclusively about disk space used by the platform's default configuration files",
+            "Whether the defaults are sorted alphabetically — federal law requires defaults to be presented in alphabetical order across every platform on any device",
+            "What font the defaults use — the political question is exclusively the typographic styling of the default values shown to billions of users",
+        ],
+        "context": "The 'nudge' framing was pitched as 'libertarian paternalism' — preserve freedom but design the choice. At small scale (retirement-plan defaults, organ-donor defaults), the framework can be benign. At platform scale, the same logic puts billions of choices on rails that one set of designers shaped. The political question is not 'whether nudging happens' — defaults exist whether intended or not — but who controls them and what accountability mechanisms exist when the nudging harms users.",
+    },
+
+    1180: {
+        "tier": 5,
+        "question": "Mobile sports-betting apps (DraftKings, FanDuel, BetMGM, and others) grew explosively after the 2018 Supreme Court decision Murphy v. NCAA struck down the federal sports-betting ban. The apps use AI to personalize push notifications, in-game bet offers, and 'bonus' promotions targeted at lapsing users. What specific psychological design pattern, borrowed from casino design, do 'deposit bonuses' use to lock in additional play?",
+        "answer": "Forced rollover — the bonus only releases after additional wagers reach a multiple of the deposit, so accepting the 'free' money compels more play",
+        "choices": [
+            "Forced rollover — the bonus only releases after additional wagers reach a multiple of the deposit, so accepting the 'free' money compels more play",
+            "Mandatory cool-down — the bonus only releases after a mandatory thirty-day pause in which the user is barred from any further betting activity",
+            "Direct charitable donation — every bonus is automatically routed to verified charities and never re-enters the player's account in any form",
+            "Tax-deductible designation — every bonus is treated as a federal tax-credit refund and never affects the player's gambling activity in any way",
+        ],
+        "context": "Casino design has decades of behavioral-science research behind it — variable reward schedules, near-miss patterns, comp-based reinforcement, loss-disguised-as-wins. Mobile sports betting brings the same techniques into the user's pocket with AI personalization layered on top. Patterns: deposit-bonus structures that lock the bonus in until additional play, targeted win-back campaigns to lapsed users, in-game bet prompts during emotionally salient moments. The apps are not neutral interfaces — they are engineered systems for behavior shaping, and their job is to keep money flowing in.",
+    },
+
+    1181: {
+        "tier": 5,
+        "question": "'Dark patterns' is a term coined by UX designer Harry Brignull around 2010 for interface choices that trick users into actions against their interests. AI lets platforms test and personalize which dark patterns work best on which users. What's the specific name of the dark pattern where opt-out language is loaded with shame to pressure users into staying subscribed?",
+        "answer": "Confirmshaming — pressure language like 'No thanks, I prefer overpaying' presented as the opt-out option, designed to make declining feel like an embarrassing admission",
+        "choices": [
+            "Confirmshaming — pressure language like 'No thanks, I prefer overpaying' presented as the opt-out option, designed to make declining feel like an embarrassing admission",
+            "Default-acceptance — federal law requires every opt-out to be the default selection on every web form across every commercial site",
+            "Mandatory-disclosure — every opt-out screen must by federal regulation include a printable receipt of all of the user's prior consents on file",
+            "Bonus-rejection — every opt-out screen automatically credits the user a cash bonus of one US dollar transferred via the federal Treasury account",
+        ],
+        "context": "Categories include 'roach motel' (easy to enter, hard to leave), 'confirmshaming' (pressure language against opting out — 'No thanks, I prefer overpaying'), 'forced continuity' (free trial that auto-converts), 'sneak into basket' (additional items added without explicit consent). The FTC has brought enforcement actions; the EU has consumer-protection rules that apply. AI lets these be tuned per-user — the specific version you see is selected for what works on you. Assume the interface is designed to bias your decision, and read carefully where money is involved.",
+    },
+
+    1183: {
+        "tier": 5,
+        "question": "Health, life, and auto insurance pricing increasingly uses AI models with hundreds of variables — credit score, social-media activity in some pilots, purchase history, telematics data from cars, location. The resulting pricing decisions are often opaque. Which two states have begun requiring algorithmic-bias testing in insurance pricing?",
+        "answer": "Colorado and Connecticut — both have begun requiring algorithmic-bias testing in insurance pricing, while most other states have not",
+        "choices": [
+            "Colorado and Connecticut — both have begun requiring algorithmic-bias testing in insurance pricing, while most other states have not",
+            "Hawaii and Alaska — both have banned all algorithmic insurance pricing of any kind in every line of insurance offered within the state",
+            "Texas and Florida — both have constitutionally prohibited algorithmic insurance pricing under state-level Fourth Amendment analogue rights",
+            "Wyoming and Vermont — both require every insurance pricing decision to be hand-calculated by a licensed actuary with no software involvement",
+        ],
+        "context": "Insurance pricing has long had complexity; AI accelerates it. State 'rate filings' disclose how rates are set in general terms but may not capture the full granularity of AI-driven personalization. Insurance has a discrimination history (redlining, race-based premiums), and contemporary AI raises new versions of old questions. Some states (Colorado, Connecticut) have begun requiring algorithmic-bias testing in insurance. When prices are personalized via opaque processes, the consumer loses the ability to comparison-shop the underlying logic and to identify discrimination patterns.",
+    },
+
+    1184: {
+        "tier": 5,
+        "question": "Resume-screening and video-interview AI (HireVue and similar platforms) became common in the late 2010s and 2020s. Audit studies and ACLU complaints documented these systems could reflect biases from training data. Which famous Amazon resume-screening model was abandoned after engineers found it was systematically downgrading resumes containing what specific kind of word?",
+        "answer": "Words like 'women's' (as in 'women's chess club captain') — the model had learned from historical hiring data dominated by male engineers and downgraded female-coded resumes",
+        "choices": [
+            "Words like 'women's' (as in 'women's chess club captain') — the model had learned from historical hiring data dominated by male engineers and downgraded female-coded resumes",
+            "Words containing the letter 'q' — Amazon found the model rejected every resume that mentioned any word containing this single letter across every candidate's application",
+            "Words longer than 12 characters — Amazon's model systematically downgraded every resume that included any vocabulary above that arbitrary length threshold",
+            "Words in cursive script — the model had been trained exclusively on typewritten resumes and rejected handwritten ones across every applicant cohort",
+        ],
+        "context": "HireVue's video-analysis features (later scaled back after public criticism), Amazon's abandoned resume-screening model (which downgraded resumes containing 'women's' as in 'women's chess club'), and many other cases document the pattern. Some jurisdictions (Illinois AI Video Interview Act, New York City Local Law 144 requiring bias audits) have begun mandating disclosure or audits. When an AI sits between a person and a job offer, the person loses the ability to understand the criteria being applied — which makes detecting and contesting unfair patterns far harder.",
+    },
+
+    1186: {
+        "tier": 5,
+        "question": "Many apps that aren't formally gambling — fitness apps with streak counters, language-learning apps with leagues and gems, shopping apps with spin-the-wheel rewards — borrow casino-style variable reward schedules, social-comparison feedback, and loss-aversion triggers. Whose operant-conditioning research provides the foundational mechanism — variable-ratio reinforcement schedules — that powers both slot machines and these apps' streak mechanics?",
+        "answer": "B.F. Skinner — variable-ratio reinforcement schedules are the most addictive reward structure in his operant-conditioning research, powering slot machines and many app interactions",
+        "choices": [
+            "B.F. Skinner — variable-ratio reinforcement schedules are the most addictive reward structure in his operant-conditioning research, powering slot machines and many app interactions",
+            "Sigmund Freud — Freud's psychoanalytic theory of repression provides the engineering mechanism for variable-ratio rewards in every contemporary application",
+            "Noam Chomsky — Chomsky's generative grammar work directly underpins reinforcement schedules used in slot machines and consumer apps worldwide",
+            "John Maynard Keynes — Keynesian macroeconomic theory provides the technical basis for variable reward structures across both casinos and consumer apps",
+        ],
+        "context": "Skinner's variable-ratio reinforcement schedules — the most addictive reward structure in operant-conditioning research — power slot machines and many app interactions. Duolingo's gems, leaderboards, and streak-loss panic borrow the toolkit; so do Instagram's notifications, shopping-app spins, and many fitness trackers. The techniques themselves are not new; the personalization layer (which trigger works on which user) is the AI addition. An app whose engagement mechanics mirror a casino's is using techniques developed in a heavily regulated industry — without the regulation.",
+    },
+
+    1187: {
+        "tier": 5,
+        "question": "Political-ad targeting evolved through the 2010s from broad demographic categories toward 'lookalike' audiences, psychographic profiles, and AI-personalized message variants. The technology lets campaigns deliver different content to different voters. What's the democratic-accountability assumption that hyper-personalized political messaging quietly inverts?",
+        "answer": "That what a campaign says can be observed by everyone — when each voter sees a different version, the cross-talk that used to expose contradictions disappears",
+        "choices": [
+            "That what a campaign says can be observed by everyone — when each voter sees a different version, the cross-talk that used to expose contradictions disappears",
+            "That ads must be set in a serif typeface — federal regulation has long required every political ad to use specifically serif fonts in every medium and format",
+            "That voters must respond within ten seconds — federal regulation has required every voter to register a response within ten seconds of viewing any political ad",
+            "That every campaign uses identical artwork — federal law requires every political campaign to use the same standard artwork on every ad placed",
+        ],
+        "context": "The general worry, raised by researchers including Eli Pariser ('The Filter Bubble,' 2011) and reinforced through Cambridge Analytica and subsequent coverage, is that political discourse fragments into private channels that the broader public never sees together. Reform proposals (universal ad libraries, ad transparency rules, the EU's Digital Services Act provisions) try to push the messaging back into shared visibility. Democratic accountability assumes that what a campaign says can be observed by everyone — hyper-personalization quietly inverts that assumption.",
+    },
+
+    1190: {
+        "tier": 5,
+        "question": "AI-generated deepfake images and voice clones became politically and socially consequential through 2023-2024: a fake robocall imitating Joe Biden in the 2024 New Hampshire primary, AI-generated non-consensual sexual images circulating in schools, and convincing video fakes of public figures. What was the FCC's specific 2024 enforcement response to the fake-Biden New Hampshire robocall?",
+        "answer": "It ruled the calls illegal — AI-voice-clone robocalls violated the Telephone Consumer Protection Act and the FCC proposed a $6 million fine against the operator",
+        "choices": [
+            "It ruled the calls illegal — AI-voice-clone robocalls violated the Telephone Consumer Protection Act and the FCC proposed a $6 million fine against the operator",
+            "It awarded the operator a prize — a $6 million cash bonus for technical excellence under a federal innovation program for synthetic-media research",
+            "It mandated a federal device — every American household had to install a specific deepfake-detection unit manufactured exclusively by a single federal vendor",
+            "It declined to act at all — no enforcement action of any kind was taken against any party involved in the robocall operation by any federal agency",
+        ],
+        "context": "The Biden robocall in January 2024 produced an FCC ruling under the Telephone Consumer Protection Act and a $6 million proposed fine against the operator. Non-consensual sexual deepfakes targeting students became a frequent K-12 incident; the TAKE IT DOWN Act and state-level statutes (Virginia, California, others) followed. Voice-clone scams against grandparents and businesses (vishing) have scaled. The cost of producing convincing fake content has dropped dramatically, while the cost of distinguishing it from real has risen — a stable defensive habit (verify via separate channel) matters more than ever.",
+    },
+
+    1191: {
+        "tier": 5,
+        "question": "France hosted the AI Action Summit in February 2025, following the UK's Bletchley Summit (November 2023) and Korea's Seoul Summit (May 2024). The French summit was notable for a shift in tone — emphasizing 'innovation' and economic competitiveness more than the existential-risk framing of earlier summits. Which two specific governments declined to sign the French summit's main declaration?",
+        "answer": "The United States and the United Kingdom — both declined to sign, and US Vice President JD Vance gave a speech rejecting heavy regulation",
+        "choices": [
+            "The United States and the United Kingdom — both declined to sign, and US Vice President JD Vance gave a speech rejecting heavy regulation",
+            "Belarus and North Korea — both states declined to sign and instead issued a joint statement endorsing an alternative AI-governance treaty draft",
+            "Every member state of the United Nations except Iceland — only Iceland signed the French summit's main declaration on AI governance",
+            "Vatican City and Monaco — both microstates declined to sign and made formal statements at the summit about its religious and political implications",
+        ],
+        "context": "The Bletchley Declaration (November 2023) centered 'catastrophic' frontier-AI risks. By the Paris summit (February 2025), the French government was emphasizing AI as economic opportunity; JD Vance, as US Vice President, gave a speech rejecting heavy regulation; the US and UK declined to sign the summit's main declaration. The substantive questions about AI capability and risk hadn't changed much in 15 months, but the political language around them shifted substantially — and tracking those shifts is part of reading what's actually going on.",
+    },
+
+    1195: {
+        "tier": 5,
+        "question": "AI has gone through several 'Summers' (1956-1974, 1980-1987, late-1990s, 2010s-present) and 'Winters' (1974-1980, 1987-1993). Each Summer features confident predictions; each Winter features funding pullbacks. What specific 1970 prediction did Marvin Minsky make about human-level AI, and how did it land?",
+        "answer": "Minsky predicted human-level AI within 'three to eight years' in 1970; the prediction did not land, and the 1973 Lighthill Report ended UK AI funding for a decade",
+        "choices": [
+            "Minsky predicted human-level AI within 'three to eight years' in 1970; the prediction did not land, and the 1973 Lighthill Report ended UK AI funding for a decade",
+            "Minsky predicted a permanent end to all AI research within twenty-four hours of his speech; the field then dissolved completely between 1970 and 1985 worldwide",
+            "Minsky predicted only narrow optical-character recognition by the year 2050; the field never attempted any general-intelligence work between 1970 and the present day",
+            "Minsky predicted nothing at all and remained publicly silent during the entire decade; the AI Winter of 1974-1980 was therefore unrelated to any specific prediction",
+        ],
+        "context": "Marvin Minsky in 1970 predicted human-level AI within 'three to eight years.' The Lighthill Report in 1973 ended UK AI funding for a decade. Expert systems crashed in the late 1980s. The 'AI Winter' funding collapses are documented. The current AI Summer (deep learning, transformers, foundation models) is real — significant capability gains, deployable systems, Nobel-recognized contributions like AlphaFold. The question is whether the short-term predictions of 2023-2025 will track better than 1970's. Long-run technology improvement and short-run prediction accuracy are different things, and the recurring confidence in confident short-run predictions deserves skepticism even when the underlying progress is real.",
+    },
+
+    1196: {
+        "tier": 5,
+        "question": "By the mid-2020s, two distinct communities had formed around AI risk: 'AI safety' (associated with EA, longtermism, MIRI, existential-risk framing, often funded by EA-affiliated foundations) and 'AI ethics' (associated with academic computer science, fairness/bias research, Timnit Gebru's DAIR institute, focused on present-day harms). Whose 2020 departure from Google over a paper on large-language-model harms marked a public flashpoint between the two communities?",
+        "answer": "Timnit Gebru — her 2020 firing over an internal paper on LLM harms was the public flashpoint between the existential-risk and present-harm communities",
+        "choices": [
+            "Timnit Gebru — her 2020 firing over an internal paper on LLM harms was the public flashpoint between the existential-risk and present-harm communities",
+            "Marvin Minsky — his 1970 departure from MIT marked the founding moment of the AI safety community as we now know it through every contemporary debate",
+            "Alan Turing — his 1954 departure from the UK government marked the public flashpoint between AI safety and AI ethics framings of risk",
+            "Norbert Wiener — his 1948 departure from MIT marked the founding split between AI safety and AI ethics framings of contemporary AI risk",
+        ],
+        "context": "The distinction matters in practice. Timnit Gebru's 2020 departure from Google (over a paper on large-language-model harms) marked a public flashpoint between the communities. Funding flows show the split — Open Philanthropy and EA sources fund the existential-risk side; foundations focused on equity and labor fund the present-harm side. The communities use different vocabulary, different journals, and have different policy priorities. 'AI safety' is a term that does work — narrowing the policy conversation to a particular framing of risk while excluding others — and reading whose definition is being used matters.",
+    },
+
+    1198: {
+        "tier": 5,
+        "question": "Two basic approaches to AI regulation have emerged. The EU AI Act takes a 'horizontal' approach — defining categories of AI risk and applying rules across all sectors. The US has mostly drifted toward 'sectoral' — existing financial regulators governing AI in finance, healthcare regulators governing AI in healthcare, civil-rights statutes covering AI hiring. What's a concrete advantage of the sectoral approach, and a concrete disadvantage?",
+        "answer": "Advantage: regulators already know their industry (FDA on medical devices, SEC on markets); disadvantage: produces inconsistencies and gaps where AI cuts across sectors",
+        "choices": [
+            "Advantage: regulators already know their industry (FDA on medical devices, SEC on markets); disadvantage: produces inconsistencies and gaps where AI cuts across sectors",
+            "Advantage: produces a single set of identical rules everywhere worldwide; disadvantage: federal law has formally banned the sectoral approach in every country",
+            "Advantage: requires only one regulator for the entire planet; disadvantage: federal law mandates that one specific federal agency oversee every sector simultaneously",
+            "Advantage: completely eliminates regulatory capture forever; disadvantage: federal law has made horizontal regulation mathematically impossible in every jurisdiction",
+        ],
+        "context": "Sectoral has the advantage of using regulators who already understand the industry (the FDA knows medical devices; the SEC knows financial markets) and disadvantage of producing inconsistencies and gaps where AI cuts across sectors. Horizontal has the advantage of consistency and disadvantage of demanding generalist regulators who may know less about each domain. The choice is partly substantive and partly political — horizontal favors the regulatory class building its own AI expertise; sectoral favors existing agency power. Regulatory architecture choices are themselves political, and the technical framing can hide what's actually at stake.",
+    },
+
+    1200: {
+        "tier": 5,
+        "question": "By the mid-2020s, individual US states had passed dozens of AI-related laws — Colorado's AI Act, Illinois's bias-audit requirements, California's deepfake statutes, New York City Local Law 144, Connecticut's notice statutes. The result was a patchwork that varies sharply across state lines. Why does state-level AI patchwork keep growing instead of being preempted by federal legislation?",
+        "answer": "Congress has not passed comprehensive federal AI legislation — so preemption hasn't happened, and states are filling the vacuum at different speeds and with different priorities",
+        "choices": [
+            "Congress has not passed comprehensive federal AI legislation — so preemption hasn't happened, and states are filling the vacuum at different speeds and with different priorities",
+            "Every state has identical laws by design — patchwork is structurally impossible in the United States without an explicit federal statute first ordering it",
+            "Federal courts have struck down every state AI law — only federal regulation has ever been constitutionally permissible under Supreme Court doctrine",
+            "Every state is barred from passing any AI law — federal preemption is automatic for every AI rule in every jurisdiction across the country always",
+        ],
+        "context": "Federal preemption of state AI law has not happened; preemption disputes are likely as Congress eventually acts. The current patchwork creates real compliance complexity (an HR-software vendor selling to employers in 50 states faces 50 sets of rules) and creates pressure for federal legislation. Whether that federal legislation should be modeled on the strictest state or written to weaken state protections is a political fight, not a technical one. 'Where' a company operates matters enormously for what law it faces — and the politics of preemption is where the next big regulatory battle plays out.",
+    },
+
+    1201: {
+        "tier": 5,
+        "question": "Lawsuits over AI training data multiplied through 2023-2025 — The New York Times v. OpenAI, Getty Images v. Stability AI, multiple author cases against Anthropic, Meta, and OpenAI. The core question is whether training a model on copyrighted text or images constitutes 'fair use.' What was the partial ruling in the 2025 Bartz v. Anthropic case?",
+        "answer": "It partially upheld fair use for training on lawfully acquired books but allowed claims to proceed over the use of pirated copies in the training set",
+        "choices": [
+            "It partially upheld fair use for training on lawfully acquired books but allowed claims to proceed over the use of pirated copies in the training set",
+            "It struck down every existing copyright statute as unconstitutional and ordered every AI training dataset published publicly with no restrictions remaining",
+            "It ruled all AI training universally permitted in every jurisdiction worldwide and barred every copyright holder from filing any future lawsuit anywhere",
+            "It dismissed the case in full as moot before any party had filed a single brief, with no ruling on fair use or pirated material in any direction",
+        ],
+        "context": "Early rulings have gone different ways. The Anthropic books case partially upheld fair use for pirated training data (Bartz v. Anthropic, 2025) but allowed claims over the pirated copies to proceed. The Getty/Stability case in the UK had mixed outcomes. The NYT v. OpenAI case has not produced a final judgment as of late 2025. The economic stakes are high: a ruling against training-as-fair-use would force renegotiation of how models are built and might consolidate the industry around companies that can afford licensing. Copyright law and AI capability are genuinely in tension, and the resolution will partly be technical and partly political.",
+    },
+
+    1203: {
+        "tier": 5,
+        "question": "Through the 2020s, senior AI-policy and AI-safety positions in US government were frequently filled by people moving from frontier AI companies, EA-affiliated funders, or AI think tanks — and people moved in the reverse direction too. What structural conflict does the AI-industry-to-policymaker revolving door create even when individuals act in good faith?",
+        "answer": "People who recently worked at a company, or expect to work there soon, naturally frame questions partly through that lens — bad faith isn't required for the conflict to shape proposals",
+        "choices": [
+            "People who recently worked at a company, or expect to work there soon, naturally frame questions partly through that lens — bad faith isn't required for the conflict to shape proposals",
+            "There's no conflict at all — every official acts in pure public interest regardless of prior employment under federal regulation across every administration",
+            "The conflict is unique to AI — no other US industry has any similar pattern of revolving-door movement between regulated industry and regulatory agency staffing",
+            "Federal law bans the practice — no movement between AI companies and government policy roles has been legal in the United States since the year 2018",
+        ],
+        "context": "This isn't unique to AI. Wall Street, big pharma, defense contracting, energy, and many other industries show the same pattern. The AI case is sharpened by the small number of frontier companies and the narrow expert community that policymakers actually consult. When evaluating an AI policy proposal, look at who's writing the technical details and where they worked before — and where they expect to work after. The conflicts aren't disqualifying, but they shape the available proposals.",
+    },
+
+    1206: {
+        "tier": 5,
+        "question": "Chinese AI labs (Baidu, Alibaba's Qwen team, ByteDance, Tencent, DeepSeek, Zhipu, Moonshot) operate under Chinese law, which since 2017 has required private companies to support state intelligence work when requested. Some Chinese AI work is impressive — DeepSeek's open-weight releases drew global attention. Which two specific Chinese laws create the explicit cooperation requirements between private AI labs and state intelligence agencies?",
+        "answer": "The 2017 National Intelligence Law and the 2021 Data Security Law — both create explicit cooperation requirements with state agencies for Chinese private companies",
+        "choices": [
+            "The 2017 National Intelligence Law and the 2021 Data Security Law — both create explicit cooperation requirements with state agencies for Chinese private companies",
+            "The 1949 Common Program and the 1954 Constitution — both predate the AI era and contain no provisions related to AI labs or intelligence cooperation",
+            "The 1989 Tiananmen Resolution and the 1992 Southern Tour Speech — both are political documents with no force of law on private-sector cooperation requirements",
+            "The 2008 Property Law and the 2014 Environmental Protection Law — both regulate areas unrelated to intelligence cooperation by private technology firms",
+        ],
+        "context": "DeepSeek-R1 (released January 2025) drew attention because its capabilities approached frontier-model performance at a fraction of the apparent compute cost, and the weights were openly released. The 2017 National Intelligence Law and 2021 Data Security Law create explicit cooperation requirements with state agencies. Both facts are true — substantial real capability and structural legal embedding in a one-party state. Assess Chinese AI on its technical merits and the legal context separately, and don't conflate criticism of the political environment with denial of the technology.",
+    },
+
+    1207: {
+        "tier": 5,
+        "question": "AI companies cite trade-secret protection to avoid publishing details of training data, model architectures, safety testing protocols, and red-teaming results. The arguments include competitive harm and the risk that disclosure would help adversaries circumvent safety measures. When have US courts actually refused to extend trade-secret protection to AI-related source code?",
+        "answer": "When source code was used in criminal sentencing — some courts have refused trade-secret protection where a defendant's liberty depended on a model's output",
+        "choices": [
+            "When source code was used in criminal sentencing — some courts have refused trade-secret protection where a defendant's liberty depended on a model's output",
+            "Never — every US court has upheld trade-secret protection for every AI-related source code request without a single exception in the past decade",
+            "Always — every US court refuses to extend trade-secret protection to any AI-related material in any context under any federal or state statute",
+            "Only for purely academic research — every other context has resulted in immediate dismissal of every trade-secret challenge ever filed in US courts",
+        ],
+        "context": "Mandated disclosures can shrink the trade-secret zone (the EU AI Act has some, US Section 702 reauthorization debate touched on this for federal AI use, and some courts have refused trade-secret protection for source code used in criminal sentencing). 'We can't tell you how this works' is sometimes legitimate competitive protection and sometimes a shield against scrutiny — and which one a particular claim is doing requires examining the specific information being withheld and the public interest at stake.",
+    },
+
+    1209: {
+        "tier": 5,
+        "question": "Google's 'Project Maven' contract with the Pentagon (2017-2018) applied computer-vision AI to military drone footage for object recognition. After protests by Google employees, the company let the contract lapse. Which two specific defense-tech companies subsequently picked up the Pentagon's AI-targeting work without similar internal controversy?",
+        "answer": "Palantir and Anduril — both took up military computer-vision and targeting work after Google declined to renew, and both have grown substantially since",
+        "choices": [
+            "Palantir and Anduril — both took up military computer-vision and targeting work after Google declined to renew, and both have grown substantially since",
+            "Pinterest and Reddit — both are social-media firms that signed lucrative Pentagon contracts for AI targeting after Google's withdrawal from defense work",
+            "Sephora and Lush — both cosmetic-retail companies began supplying military AI tools to the Department of Defense after Google's withdrawal from defense AI",
+            "DoorDash and Grubhub — both food-delivery firms became major Pentagon AI-targeting contractors after Google withdrew from Project Maven work in 2018",
+        ],
+        "context": "Project Maven became a flashpoint inside Google in 2018; thousands of employees signed a protest letter, several resigned, and Google did not renew. The contract moved to Palantir and others. Anduril (founded 2017) has grown into a major defense-AI contractor. The Pentagon's appetite for AI has only grown. Refusing to do morally fraught work as a company is meaningful for those individuals but is unlikely to reduce the work in aggregate — it shifts the suppliers, who often face less internal resistance.",
+    },
+
+    1210: {
+        "tier": 5,
+        "question": "Australia's online-safety regulators have pushed for facial-age-verification rules; Canada's AI and Data Act has been in development since 2022; Brazil passed an AI bill in 2024; India has explored AI advisories. The result is that 'AI policy' is being negotiated across dozens of legal systems simultaneously. For a multinational AI service, which rule effectively determines the compliance floor across all the jurisdictions it operates in?",
+        "answer": "The strictest applicable rule in any market it serves — the service must comply with it, partition its offerings region by region, or withdraw from that market",
+        "choices": [
+            "The strictest applicable rule in any market it serves — the service must comply with it, partition its offerings region by region, or withdraw from that market",
+            "A single United Nations treaty signed by every country — federal AI regulation worldwide has been harmonized under a single binding multilateral instrument",
+            "Only the rule of the country where the company is incorporated — every other jurisdiction is preempted by the company's home-country regulation under treaty",
+            "The first AI rule passed in any country — federal law in every other jurisdiction defers automatically to whichever country wrote the very first AI statute first",
+        ],
+        "context": "By the mid-2020s, the most-compliance-relevant AI rules across major jurisdictions included the EU AI Act, US state laws (Colorado, California, NYC), UK Online Safety Act, Canadian C-27 / AIDA, Brazilian AI bill, Korean AI Basic Act, Australian online-safety expansions, Chinese AI rules, and a long tail of others. Multinational services face a layered compliance picture. 'How is AI being regulated?' is no longer well-asked at a country level — it's a global-architecture question, and the answer at any moment depends on the most-restrictive rule in any market the service operates in.",
+    },
+}
+
+
+def main() -> int:
+    weasels = _load_json(WEASEL_PATH)
+    bank = _load_json(BANK_PATH)
+    dup_idx, ans_idx = build_bank_indices(bank)
+
+    expected = {w["bank_idx"] for w in weasels}
+    rewritten = set(REWRITES.keys())
+    missing = expected - rewritten
+    extra = rewritten - expected
+    if missing:
+        print(f"MISSING rewrites: {sorted(missing)}")
+        return 2
+    if extra:
+        print(f"EXTRA rewrites not in weasel set: {sorted(extra)}")
+        return 2
+
+    patch = []
+    pass_count = 0
+    soft_count = 0
+    fail_count = 0
+    failed_idxs = []
+
+    for w in weasels:
+        idx = w["bank_idx"]
+        new_q = REWRITES[idx]
+
+        # Sanity: answer must be in choices
+        assert new_q["answer"] in new_q["choices"], f"answer not in choices for #{idx}"
+
+        result = validate_rewrite(
+            "ai",
+            new_q,
+            bank=bank,
+            dup_index=dup_idx,
+            answer_index=ans_idx,
+            replace_idx=idx,
+        )
+        verdict = result["verdict"]
+        if verdict == "PASS":
+            pass_count += 1
+        elif verdict == "SOFT_WARN":
+            soft_count += 1
+        else:
+            fail_count += 1
+            failed_idxs.append(idx)
+            print(f"\n!!! FAIL idx={idx} T{new_q['tier']}")
+            for gate, reason in result["hard_fails"]:
+                print(f"    HARD {gate}: {reason}")
+            for gate, reason in result["soft_warns"]:
+                print(f"    SOFT {gate}: {reason}")
+
+        patch.append({"bank_idx": idx, "new": new_q})
+
+    print()
+    print(f"=== Validation summary ===")
+    print(f"PASS:      {pass_count}")
+    print(f"SOFT_WARN: {soft_count}")
+    print(f"FAIL:      {fail_count}")
+    if failed_idxs:
+        print(f"failed: {failed_idxs}")
+        return 1
+
+    OUT_PATH.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"\nWrote {len(patch)} rewrites to {OUT_PATH}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -3793,13 +3793,13 @@
   },
   {
     "tier": 4,
-    "question": "Peppered moth populations in industrial Britain shifted from mostly light-bodied to mostly dark-bodied during the 1800s as soot blackened trees. They shifted back as air pollution declined. What does this case demonstrate?",
-    "answer": "Industrial melanism through directional selection on heritable variation",
+    "question": "Peppered moth populations in industrial Britain shifted from mostly light-bodied to mostly dark-bodied during the 1800s as soot blackened trees. They shifted back as air pollution declined. Which specific evolutionary mechanism explains the rapid back-and-forth color shift?",
+    "answer": "Directional selection on a heritable color variant — soot-darkened trees favored dark moths",
     "choices": [
-      "Industrial melanism through directional selection on heritable variation",
-      "Lamarckian inheritance of soot-darkened bodies across moth lifetimes",
-      "Genetic drift fixing dark variants in isolated polluted forest fragments",
-      "Founder effect from single dark mutants in industrial regions of Britain"
+      "Directional selection on a heritable color variant — soot-darkened trees favored dark moths",
+      "Lamarckian inheritance of acquired soot stains — moth bodies darkened by direct exposure to coal smoke",
+      "Random genetic drift in small isolated patches — chance fixation of dark variants in forest fragments",
+      "A founder effect from a single dark mutant — one moth's lineage swept industrial areas of all Britain"
     ],
     "context": "Peppered moth (Biston betularia) industrial melanism is the textbook case. Kettlewell's 1950s experiments, criticized then revalidated by Cook et al. (2012), Majerus (2012). The genetic basis is a transposable element in the cortex gene."
   },
@@ -7345,13 +7345,13 @@
   },
   {
     "tier": 2,
-    "question": "Luna moths have long, twisted tails on their hind wings. When bats hunt them by echolocation, the bats' clicks often hit the tails instead of the body. What does this prove?",
-    "answer": "The tails act as acoustic decoys — bat sonar reflects off them, not the moth's body",
+    "question": "Luna moths have long twisted tails on their hind wings. When bats hunt them by echolocation, the clicks hit the tails instead of the body. Which function do the spinning tails perform during a bat strike?",
+    "answer": "Acoustic decoys — sonar reflects off the spinning tails more strongly than off the body",
     "choices": [
-      "The tails act as acoustic decoys — bat sonar reflects off them, not the moth's body",
-      "The tails act as gliders — they slow the moth down enough that bats often overshoot",
-      "The tails act as sound-makers — emitting a high frequency that jams bat sonar mid-strike",
-      "The tails act as poison delivery — biting bats get a mouthful of irritating chemical"
+      "Acoustic decoys — sonar reflects off the spinning tails more strongly than off the body",
+      "Small gliders — they slow the moth enough that the diving bat overshoots its strike",
+      "Sonar jammers — emitting a high-frequency click that confuses the bat's echolocation",
+      "Chemical decoys — a sticky scent on the tails draws bats away from the moth's body"
     ],
     "context": "Barber et al. (PNAS, 2015) showed luna moth tails confuse bat echolocation — the spinning tails reflect a stronger signal than the body, drawing the strike away. Acoustic decoy evolved."
   },
@@ -7741,13 +7741,13 @@
   },
   {
     "tier": 3,
-    "question": "Darwin saw a Madagascar orchid with a 30-cm nectar tube. He predicted a hawkmoth with a tongue of matching length must exist. Decades after his death, the moth was found. What does this case demonstrate?",
-    "answer": "Coevolution — flower and pollinator can lock into a mutual arms race over very long timescales",
+    "question": "Darwin saw a Madagascar orchid with a 30-cm nectar tube. He predicted a hawkmoth with a tongue of matching length must exist. Decades after his death, the moth was found. What is the predicted moth's name — chosen specifically to honor Darwin's foresight?",
+    "answer": "Xanthopan morganii praedicta — the 'praedicta' epithet honors Darwin's prediction of its existence",
     "choices": [
-      "Coevolution — flower and pollinator can lock into a mutual arms race over very long timescales",
-      "Convergent evolution — unrelated moths independently evolved long tongues for similar reasons",
-      "Genetic drift — the orchid happened to evolve a long tube without any matching pollinator",
-      "Sexual selection — female orchids choose mates with the longest tubes for breeding success"
+      "Xanthopan morganii praedicta — the 'praedicta' epithet honors Darwin's prediction of its existence",
+      "Macroglossum darwinii — a smaller hummingbird hawkmoth named for Darwin but with a short tongue",
+      "Manduca sexta angraeci — the tomato hornworm relative, never predicted to live in Madagascar at all",
+      "Sphinx ligustri madagascariensis — the privet hawkmoth subspecies with no role in the Darwin prediction"
     ],
     "context": "Xanthopan morganii praedicta — named for Darwin's prediction. Pollinator of Angraecum sesquipedale, the Madagascar star orchid. Coevolution of corolla tube length and proboscis length. Wallace also predicted it."
   },
@@ -8365,13 +8365,13 @@
   },
   {
     "tier": 5,
-    "question": "Octopus and vertebrate camera-type eyes are remarkably similar but evolved independently from a last common ancestor with no eye. Vertebrate retinas have a blind spot because nerves pass in front of photoreceptors and exit through the retina. Cephalopod retinas do not. What does this case demonstrate?",
-    "answer": "Convergent evolution reaches similar but non-identical solutions — independent lineages find comparable engineering by different paths",
+    "question": "Octopus and vertebrate camera-type eyes are remarkably similar but evolved independently from a last common ancestor with no eye. Vertebrate retinas have a blind spot because nerves pass in front of photoreceptors. Cephalopod retinas do not. Which retinal feature do vertebrates have that cephalopods lack — the visible signature of the independent origin?",
+    "answer": "A blind spot — vertebrate nerves exit through the retina; cephalopod nerves exit behind, leaving no gap",
     "choices": [
-      "Convergent evolution reaches similar but non-identical solutions — independent lineages find comparable engineering by different paths",
-      "Convergent evolution always produces identical solutions in the long run — the octopus/vertebrate differences are merely cosmetic with no biology",
-      "Cephalopods inherited their eyes from a hidden vertebrate ancestor — the 'independent origins' framing is a simplification disproved recently",
-      "Both lineages were guided by the same design — the differences reflect different cosmetic choices in an identical underlying plan from above"
+      "A blind spot — vertebrate nerves exit through the retina; cephalopod nerves exit behind, leaving no gap",
+      "A pupil that contracts to a slit — octopus pupils are W-shaped while vertebrate pupils are simple holes",
+      "A spherical crystalline lens — octopus lenses use a graded index instead, so they have no spherical version",
+      "A rear-facing photoreceptor layer — octopus retinas have a forward-facing layer instead of vertebrate flip"
     ],
     "context": "Octopus camera-eye: photoreceptors face the light, retinal nerves exit behind. Vertebrate camera-eye: photoreceptors face away from light, nerves exit through the retina creating a blind spot. Same engineering, different developmental solutions. Conway Morris's Life's Solution discusses this; a textbook exemplar of imperfect convergence."
   },
@@ -8881,25 +8881,25 @@
   },
   {
     "tier": 1,
-    "question": "Dolphins sometimes push tired or injured fellow dolphins to the water surface to help them breathe. Why does this matter?",
-    "answer": "Dolphins are mammals not fish, and must surface to breathe air or drown",
+    "question": "Dolphins sometimes push injured pod-mates up to the surface. Which class of animal are dolphins, and why is surfacing life-or-death?",
+    "answer": "Mammals — they breathe air with lungs and would drown if held below the surface",
     "choices": [
-      "Dolphins are mammals not fish, and must surface to breathe air or drown",
-      "Dolphins fall asleep on the surface and need fresh air every few seconds",
-      "Dolphins clean their blowholes only at the surface in warm tropical air",
-      "Dolphins must surface to spit out salt water swallowed while feeding on prey"
+      "Mammals — they breathe air with lungs and would drown if held below the surface",
+      "Fish with lungs — air-breathing but also extracting oxygen through their gill slits",
+      "Amphibians — breathing through skin but needing surface air for an extra boost",
+      "Reptiles — lung-breathers with slow hearts that sleep face-down for long stretches"
     ],
     "context": "Dolphins, whales, and porpoises are mammals — they breathe air. If hurt and unable to swim, they drown. Pod-mates lifting an injured dolphin to breathe is well documented."
   },
   {
     "tier": 1,
-    "question": "Orca pods have been seen working together to make a wave that washes a seal off a small floating ice chunk. What does this show?",
-    "answer": "Coordinated planned hunting — each whale knows its part of the wave",
+    "question": "Off Antarctica, orca pods swim in formation and lift a wave together that washes a seal off a floating ice chunk. Which behavior does this prove orcas are capable of?",
+    "answer": "Coordinated planned hunting — each whale knows its part of the wave and times its swim",
     "choices": [
-      "Coordinated planned hunting — each whale knows its part of the wave",
-      "Random play behavior — the seal getting knocked off is just a coincidence",
-      "Mating display — only adult males put on the wave show for females",
-      "Curiosity — orcas push waves at icebergs to see what falls off them"
+      "Coordinated planned hunting — each whale knows its part of the wave and times its swim",
+      "Random play behavior — the seal getting knocked off is just an accidental coincidence",
+      "Mating display — only adult males perform the wave maneuver as a courtship show",
+      "Curious exploration — orcas push waves at icebergs to see what falls off the top"
     ],
     "context": "'Wave-washing' is documented in transient (mammal-eating) orcas off Antarctica. The whales swim in formation, lift a wave together, and hit the floe — practiced, taught to young."
   },
@@ -9121,13 +9121,13 @@
   },
   {
     "tier": 2,
-    "question": "A wild dog of African plains — a painted wolf — votes before a hunt. The pack 'sneezes' to signal whether to set off. More sneezes by more dogs make a hunt more likely. What does this reveal?",
-    "answer": "Collective decision-making — a non-human animal aggregating multiple individuals' choices",
+    "question": "African wild dogs (Lycaon pictus) 'vote' before a hunt. The pack 'sneezes' to signal whether to set off. More sneezes mean a hunt is more likely. Which scientific term best fits the sneeze-tallying behavior?",
+    "answer": "Quorum decision-making — the pack aggregates each dog's sneeze into a single hunt-or-rest call",
     "choices": [
-      "Collective decision-making — a non-human animal aggregating multiple individuals' choices",
-      "Random response — sneezing is involuntary and the link to hunting is a coincidence",
-      "Alpha dominance — only the lead pair's sneeze actually triggers the hunt",
-      "Predator alarm — sneezing is a danger call mistaken by humans for a vote"
+      "Quorum decision-making — the pack aggregates each dog's sneeze into a single hunt-or-rest call",
+      "Pure reflex sneezing — the sneezes are an involuntary nasal reaction with no role in hunt timing",
+      "Alpha-only command — only the lead pair's sneeze actually triggers the hunt to start at all",
+      "Predator-alarm call — sneezes warn of danger and humans mistake the warning for a vote signal"
     ],
     "context": "Walker et al. (2017) showed African wild dogs (Lycaon pictus) sneeze to vote on whether to start a hunt. The threshold is lower if a dominant dog has already sneezed — but lower-ranked dogs do influence the call."
   },
@@ -11197,13 +11197,13 @@
   },
   {
     "tier": 5,
-    "question": "Coral snakes (elapid, neurotoxic, fixed front fangs) and viperids (rattlesnakes, hemotoxic, hinged front fangs) have totally different venoms and totally different fang mechanics. Phylogenetic studies show front-fang systems evolved twice independently in elapids and in viperids. What does this teach?",
-    "answer": "Front-fang anatomy is a strong adaptation for fast venomous strike, independently selected in different snake lineages",
+    "question": "Coral snakes (elapid, neurotoxic, fixed front fangs) and viperids (rattlesnakes, hemotoxic, hinged front fangs) have totally different venoms and totally different fang mechanics. Phylogenetic studies (Vonk et al., Nature 2008) show front-fang systems evolved twice independently. How many times have front-fang systems independently evolved in snakes?",
+    "answer": "Twice — once in viperids (hinged) and once in elapids (fixed), each via a different developmental route",
     "choices": [
-      "Front-fang anatomy is a strong adaptation for fast venomous strike, independently selected in different snake lineages",
-      "Front-fang anatomy is the ancestral state; all snakes once had front fangs and most have since lost them in modern lineages",
-      "Front-fang anatomy is essentially the same in both lineages; phylogenetic studies miss the deep fang-development similarity",
-      "Front-fang anatomy is rare and only marginally adaptive; it persists in only two lineages by chance rather than by selection"
+      "Twice — once in viperids (hinged) and once in elapids (fixed), each via a different developmental route",
+      "Once — front fangs are the ancestral snake state and most snake lineages have since lost them entirely",
+      "Three times — independently in viperids, elapids, and the colubrid rear-fanged lineage as well evolved",
+      "Zero times — all front-fang snakes share one continuous lineage and the 'twice' claim is a misreading"
     ],
     "context": "Vonk et al. (Nature, 2008) and others show front-fang systems evolved twice in snakes — once in viperids (hinged), once in elapids (fixed). Convergent on the same adaptive solution: fast strike, efficient venom delivery. Different developmental routes, similar engineering."
   },
