@@ -4575,15 +4575,13 @@
   },
   {
     "tier": 5,
-    "topic": "Food history & culture",
-    "pattern": "F. Comparative wonder",
-    "question": "Pre-refrigeration meat preservation took distinct paths in different climates: Roman garum (fermented fish sauce), Mediterranean cured meats (prosciutto, jamon, bresaola), Scandinavian rakfisk (fermented fish), Native American pemmican (dried meat with fat). All solved storing protein without cold. What does the variation show?",
-    "answer": "Food culture solves universal problems through local materials - the meat-preservation problem produced regionally distinct solutions",
+    "question": "Roman garum (fermented fish sauce), Mediterranean prosciutto and jamon (salt-cured, air-dried), Scandinavian rakfisk (cold-fermented fish), Native American pemmican (dried meat plus fat). All solved storing protein without cold. Which principle best explains why one problem yielded such different methods?",
+    "answer": "Local materials and climate shape technique — one universal problem produced regionally distinct solutions, each fitting its place",
     "choices": [
-      "Food culture solves universal problems through local materials - the meat-preservation problem produced regionally distinct solutions",
-      "Food culture is determined entirely by climate - hot regions inevitably produced fish-sauce, cool regions inevitably produced drying",
-      "Food culture follows a single optimal path - the methods are different historical stages approaching the modern cold chain",
-      "Food culture is mainly arbitrary local choice - the methods are simply cultural preferences with no real relation to chemistry"
+      "Local materials and climate shape technique — one universal problem produced regionally distinct solutions, each fitting its place",
+      "Climate alone determines food culture — hot regions inevitably produced fish-sauce, and cool regions inevitably produced drying alone",
+      "Food culture follows one optimal path — these methods are sequential historical stages approaching the modern industrial cold chain",
+      "Food culture is mainly arbitrary preference — these methods reflect cultural taste with little real relation to microbial chemistry"
     ],
     "context": "Pre-refrigeration meat preservation produced distinct cultural solutions to the universal problem of storing protein without cold. Roman garum (warm Mediterranean, fish fermentation in salt). Italian/Spanish prosciutto/jamon (warm dry, salt-cure + air-dry). Scandinavian rakfisk (cold fermentation). Native American pemmican (dried meat + fat for shelf-stable winter protein). Local materials, universal problem."
   },
@@ -7533,13 +7531,13 @@
   },
   {
     "tier": 5,
-    "question": "Two Italian EVOOs of the same harvest. Coratina from Puglia is peppery and bitter. Taggiasca from Liguria is mild and buttery with almond notes. Both extra virgin at the same price. What does the comparison teach about quality?",
-    "answer": "Quality and flavor are distinct; both can be excellent EVOOs at the same chemical grade while differing radically in cultivar-driven aroma and bitterness",
+    "question": "Two Italian EVOOs of the same harvest. Coratina from Puglia is peppery and bitter — high oleocanthal and oleuropein. Taggiasca from Liguria is mild and buttery with almond notes. Both meet the extra-virgin chemical grade at the same price. Which statement best describes the relationship between EVOO grade and flavor here?",
+    "answer": "Quality grade and flavor are separable; both can pass the same chemical grade while differing radically in cultivar-driven aroma and bitterness",
     "choices": [
-      "Quality and flavor are distinct; both can be excellent EVOOs at the same chemical grade while differing radically in cultivar-driven aroma and bitterness",
-      "Coratina is objectively higher quality; Ligurian terrain produces lower-polyphenol oils and the extra virgin grade is permissive enough to qualify either way",
-      "Taggiasca is the higher-quality oil; its mildness reflects careful pressing while Coratina's pepperiness reflects under-ripe olives, a defect not a feature",
-      "The two are essentially identical chemically; the flavor difference is purely from bottle and storage rather than from olive variety or compositional chemistry"
+      "Quality grade and flavor are separable; both can pass the same chemical grade while differing radically in cultivar-driven aroma and bitterness",
+      "Coratina is objectively higher grade; Ligurian terrain yields lower-polyphenol oil and the EVOO grade is permissive enough to qualify either one",
+      "Taggiasca is the higher grade because of careful pressing; Coratina's pepperiness reflects under-ripe olives, which is a defect rather than a true feature",
+      "Coratina and Taggiasca are essentially the same oil chemically; the flavor gap is purely a bottling and storage effect, not olive variety or chemistry"
     ],
     "context": "Olive cultivars carry distinct phenolic and volatile profiles. Coratina is high in oleocanthal and oleuropein (pepper, bitter); Taggiasca is gentler (almond, butter). Both meet EVOO standards. Quality and flavor are separable — a Riesling and a Cabernet can both be excellent without being similar. The IOC tasting panel certifies."
   },
@@ -8385,11 +8383,11 @@
   },
   {
     "tier": 3,
-    "question": "Roman amphorae from Pompeii, Cadiz, and Mediterranean ports carried a fermented fish sauce called garum. Pompeii excavations uncovered factories where small fish ferment in vats for months. What does the spread show?",
+    "question": "Roman amphorae from Pompeii, Cadiz, and Mediterranean ports carried a fermented fish sauce called garum. Pompeii excavations uncovered factories where small fish ferment in vats for months. Which kind of market does the amphora distribution evidence?",
     "answer": "A Mediterranean-wide trade in fermented condiments seasoning meals",
     "choices": [
       "A Mediterranean-wide trade in fermented condiments seasoning meals",
-      "A regional curiosity confined to coastal villages, no broad Roman trade",
+      "A regional curiosity confined to coastal villages, with no broader trade",
       "A wartime ration shipped to soldiers garrisoned at the eastern borders",
       "A religious offering used in temple ceremonies, not consumed in homes"
     ],
@@ -8685,13 +8683,13 @@
   },
   {
     "tier": 4,
-    "question": "American Smithfield ham, Tennessee country ham, and Kentucky country ham trace to colonial-era practices: pigs raised on peanuts or corn and acorns, slaughtered cool months, salt-cured, smoked, aged 6-18 months in cool sheds. What does the continuation show?",
-    "answer": "A regional inheritance that survived industrialization — local producers continued ancestral technique alongside the industrial American ham aisle",
+    "question": "Smithfield ham (Virginia, since 1779), Tennessee country ham, and Kentucky country ham trace to colonial practice: pigs on peanuts or on corn and acorns, slaughtered in cool months, salt-cured, smoked, aged 6-18 months. How does country ham relate to the modern industrial ham aisle?",
+    "answer": "It is a regional inheritance that survived industrialization — local producers kept ancestral technique alongside the industrial American ham aisle",
     "choices": [
-      "A regional inheritance that survived industrialization — local producers continued ancestral technique alongside the industrial American ham aisle",
-      "A failed attempt to mimic European prosciutto in the New World — American hams never reached the quality of Iberian or Italian dry-cured legs",
-      "A tax-driven workaround — colonial-era pork taxes were lower on cured legs than fresh meat, so the local technique grew as an economic dodge",
-      "A religious dietary requirement — Anglican and Presbyterian colonial settlers required salt-cured rather than fresh pork for liturgical use"
+      "It is a regional inheritance that survived industrialization — local producers kept ancestral technique alongside the industrial American ham aisle",
+      "It was a failed attempt to mimic European prosciutto — American hams never reached the quality of Iberian or Italian dry-cured legs in the New World",
+      "It is a colonial-era tax-driven workaround — cured legs were taxed lower than fresh pork, so the technique grew as a regional economic dodge by farmers",
+      "It reflects a religious dietary rule — Anglican and Presbyterian colonial settlers required salt-cured rather than fresh pork for liturgical home use"
     ],
     "context": "Country ham traditions of Virginia (Smithfield, peanut-finished pig since 1779), Tennessee (Newsom's), Kentucky (Col. Bill Newsom's) survived as living inheritance through industrialization. Aged 6-18 months. American premium ham tradition is substantive — kin to Iberian and Italian dry-cured legs."
   },
@@ -9021,13 +9019,13 @@
   },
   {
     "tier": 5,
-    "question": "Native American pemmican — lean meat dried, pounded, mixed with rendered fat and berries — fueled the Hudson's Bay Company and North West Company canoe brigades for two centuries. The 1814 Pemmican Proclamation by Red River governor Miles Macdonell banned export, provoking the Pemmican War. What does the conflict reveal about fur-trade-era food logistics?",
-    "answer": "Pemmican was strategic infrastructure on the scale of fuel in a modern economy; controlling supply controlled freight across a continent",
+    "question": "Native American pemmican — dried pounded meat mixed with rendered fat and berries — fueled the Hudson's Bay Company and North West Company canoe brigades for two centuries. The 1814 Pemmican Proclamation by Red River governor Miles Macdonell banned its export, sparking the Pemmican War. What role did pemmican play that made the export ban worth fighting?",
+    "answer": "Strategic infrastructure on the scale of fuel — controlling supply meant controlling freight movement across the continent",
     "choices": [
-      "Pemmican was strategic infrastructure on the scale of fuel in a modern economy; controlling supply controlled freight across a continent",
-      "Pemmican was a religious offering protected by treaty; the Proclamation prevented missionaries from interfering with Native rites at sites",
-      "Pemmican was the official currency of the inland fur trade; the Proclamation pegged its rate against silver and stabilized economy then",
-      "Pemmican was a marginal luxury food only; the Proclamation rationed it to colonial elites and Native chiefs as status-symbol food conflict"
+      "Strategic infrastructure on the scale of fuel — controlling supply meant controlling freight movement across the continent",
+      "A religious offering protected by treaty — the Proclamation kept missionaries from interfering with Native rites at the fur-trade posts",
+      "The official currency of the inland fur trade — the Proclamation pegged its rate against British silver and stabilized the colony's economy",
+      "A marginal luxury item — the Proclamation rationed it to colonial elites and Native chiefs as a status-symbol food at brigade meetings"
     ],
     "context": "Pemmican fueled canoe brigades and Red River cart trains that moved fur from inland trade to Hudson Bay and Lake Superior ports. Calorie-dense, shelf-stable for years, lightweight relative to fresh provisions. Hudson's Bay Company built its inland supply chain on pemmican. The 1814 Proclamation. Food infrastructure as backbone."
   },

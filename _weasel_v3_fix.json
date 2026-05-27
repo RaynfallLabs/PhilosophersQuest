@@ -1,0 +1,370 @@
+[
+  {
+    "bank": "animal",
+    "bank_idx": 44,
+    "new": {
+      "tier": 3,
+      "question": "A New Caledonian crow trims a leaf into a curved hook and uses it to extract grubs from tree holes. The hooks follow a regional pattern: neighboring crows make one shape, distant crows another. How do the crows acquire that regional shape?",
+      "answer": "By learning the hook design from neighboring crows — cultural transmission of tool-making",
+      "choices": [
+        "By learning the hook design from neighboring crows — cultural transmission of tool-making",
+        "By trial-and-error alone — each crow rediscovers the same hook shape on its own each lifetime",
+        "By inherited instinct — the hook shape is hard-wired in DNA and never varies between regions",
+        "By copying humans — the local crows imitate hooks they have watched people carve nearby"
+      ],
+      "context": "Hunt and Gray's work on New Caledonian crows (Corvus moneduloides) documented stepped pandanus-leaf tools whose shapes vary regionally — strong evidence for cultural transmission of a manufactured tool design within a wild animal population."
+    }
+  },
+  {
+    "bank": "animal",
+    "bank_idx": 633,
+    "new": {
+      "tier": 3,
+      "question": "Before the Clean Air Acts of 1956 (UK) and 1970 (US), industrial soot blackened bark and dark peppered moths thrived. After the soot dropped, bark lichens regrew and pale moths recovered. Which property of natural selection does the pale-form recovery establish?",
+      "answer": "Selection has no fixed direction — when pressure reverses, the population shifts back to the now-matching form",
+      "choices": [
+        "Selection has no fixed direction — when pressure reverses, the population shifts back to the now-matching form",
+        "Dark moths permanently changed and could not switch back — only new pale mutations restored the balance again",
+        "Pollution selected only on adults — moth eggs were unaffected by the soot throughout the whole life cycle",
+        "Climate, not pollution, was the real driver — and climate has not reversed since the Clean Air Acts"
+      ],
+      "context": "Cook & Saccheri reviewed the post-1970 recovery: as bark lichens regrew and bark lightened, bird predation reversed the selection pressure. Allele frequencies shifted back. Natural selection is direction-following, not goal-directed."
+    }
+  },
+  {
+    "bank": "animal",
+    "bank_idx": 692,
+    "new": {
+      "tier": 5,
+      "question": "Wolbachia bacteria introduced into Aedes aegypti mosquitoes block dengue transmission. The World Mosquito Program has deployed them across Asia and Latin America. The Utarini et al. 2021 NEJM cluster-randomized trial in Yogyakarta measured the effect. What dengue reduction did the trial report?",
+      "answer": "About 77% fewer dengue cases in Wolbachia clusters — a landmark proof-of-concept for arbovirus biocontrol without insecticides",
+      "choices": [
+        "About 77% fewer dengue cases in Wolbachia clusters — a landmark proof-of-concept for arbovirus biocontrol without insecticides",
+        "Zero measurable reduction — the trial failed because Wolbachia did not establish in the target Aedes aegypti population in Yogyakarta",
+        "An 18% rise in dengue cases — the trial was halted in 2018 because of unintended ecosystem effects on non-target insect species in the area",
+        "About 22% reduction only in adult cases — the program switched to different bacteria for later deployments after the underwhelming Yogyakarta results"
+      ],
+      "context": "Utarini et al. (NEJM, 2021): Yogyakarta cluster-randomized trial of wMel Wolbachia in Aedes aegypti — 77% dengue reduction in intervention clusters. Subsequent deployments in Brazil, Colombia, Australia. A landmark proof-of-concept for non-insecticidal vector control via symbiotic bacteria."
+    }
+  },
+  {
+    "bank": "cooking",
+    "bank_idx": 350,
+    "new": {
+      "tier": 5,
+      "question": "Roman garum (fermented fish sauce), Mediterranean prosciutto and jamon (salt-cured, air-dried), Scandinavian rakfisk (cold-fermented fish), Native American pemmican (dried meat plus fat). All solved storing protein without cold. Which principle best explains why one problem yielded such different methods?",
+      "answer": "Local materials and climate shape technique — one universal problem produced regionally distinct solutions, each fitting its place",
+      "choices": [
+        "Local materials and climate shape technique — one universal problem produced regionally distinct solutions, each fitting its place",
+        "Climate alone determines food culture — hot regions inevitably produced fish-sauce, and cool regions inevitably produced drying alone",
+        "Food culture follows one optimal path — these methods are sequential historical stages approaching the modern industrial cold chain",
+        "Food culture is mainly arbitrary preference — these methods reflect cultural taste with little real relation to microbial chemistry"
+      ],
+      "context": "Pre-refrigeration meat preservation produced distinct cultural solutions to the universal problem of storing protein without cold. Roman garum (warm Mediterranean, fish fermentation in salt). Italian/Spanish prosciutto/jamon (warm dry, salt-cure + air-dry). Scandinavian rakfisk (cold fermentation). Native American pemmican (dried meat + fat for shelf-stable winter protein). Local materials, universal problem."
+    }
+  },
+  {
+    "bank": "cooking",
+    "bank_idx": 595,
+    "new": {
+      "tier": 5,
+      "question": "Two Italian EVOOs of the same harvest. Coratina from Puglia is peppery and bitter — high oleocanthal and oleuropein. Taggiasca from Liguria is mild and buttery with almond notes. Both meet the extra-virgin chemical grade at the same price. Which statement best describes the relationship between EVOO grade and flavor here?",
+      "answer": "Quality grade and flavor are separable; both can pass the same chemical grade while differing radically in cultivar-driven aroma and bitterness",
+      "choices": [
+        "Quality grade and flavor are separable; both can pass the same chemical grade while differing radically in cultivar-driven aroma and bitterness",
+        "Coratina is objectively higher grade; Ligurian terrain yields lower-polyphenol oil and the EVOO grade is permissive enough to qualify either one",
+        "Taggiasca is the higher grade because of careful pressing; Coratina's pepperiness reflects under-ripe olives, which is a defect rather than a true feature",
+        "Coratina and Taggiasca are essentially the same oil chemically; the flavor gap is purely a bottling and storage effect, not olive variety or chemistry"
+      ],
+      "context": "Olive cultivars carry distinct phenolic and volatile profiles. Coratina is high in oleocanthal and oleuropein (pepper, bitter); Taggiasca is gentler (almond, butter). Both meet EVOO standards. Quality and flavor are separable — a Riesling and a Cabernet can both be excellent without being similar. The IOC tasting panel certifies."
+    }
+  },
+  {
+    "bank": "cooking",
+    "bank_idx": 666,
+    "new": {
+      "tier": 3,
+      "question": "Roman amphorae from Pompeii, Cadiz, and Mediterranean ports carried a fermented fish sauce called garum. Pompeii excavations uncovered factories where small fish ferment in vats for months. Which kind of market does the amphora distribution evidence?",
+      "answer": "A Mediterranean-wide trade in fermented condiments seasoning meals",
+      "choices": [
+        "A Mediterranean-wide trade in fermented condiments seasoning meals",
+        "A regional curiosity confined to coastal villages, with no broader trade",
+        "A wartime ration shipped to soldiers garrisoned at the eastern borders",
+        "A religious offering used in temple ceremonies, not consumed in homes"
+      ],
+      "context": "Garum factories at Pompeii, Cadiz (Gades), Lixus in North Africa produced fermented fish sauce on industrial scale. Amphorae shipped it across the empire. Apicius (1st c.) calls for garum constantly."
+    }
+  },
+  {
+    "bank": "cooking",
+    "bank_idx": 691,
+    "new": {
+      "tier": 4,
+      "question": "Smithfield ham (Virginia, since 1779), Tennessee country ham, and Kentucky country ham trace to colonial practice: pigs on peanuts or on corn and acorns, slaughtered in cool months, salt-cured, smoked, aged 6-18 months. How does country ham relate to the modern industrial ham aisle?",
+      "answer": "It is a regional inheritance that survived industrialization — local producers kept ancestral technique alongside the industrial American ham aisle",
+      "choices": [
+        "It is a regional inheritance that survived industrialization — local producers kept ancestral technique alongside the industrial American ham aisle",
+        "It was a failed attempt to mimic European prosciutto — American hams never reached the quality of Iberian or Italian dry-cured legs in the New World",
+        "It is a colonial-era tax-driven workaround — cured legs were taxed lower than fresh pork, so the technique grew as a regional economic dodge by farmers",
+        "It reflects a religious dietary rule — Anglican and Presbyterian colonial settlers required salt-cured rather than fresh pork for liturgical home use"
+      ],
+      "context": "Country ham traditions of Virginia (Smithfield, peanut-finished pig since 1779), Tennessee (Newsom's), Kentucky (Col. Bill Newsom's) survived as living inheritance through industrialization. Aged 6-18 months. American premium ham tradition is substantive — kin to Iberian and Italian dry-cured legs."
+    }
+  },
+  {
+    "bank": "cooking",
+    "bank_idx": 719,
+    "new": {
+      "tier": 5,
+      "question": "Native American pemmican — dried pounded meat mixed with rendered fat and berries — fueled the Hudson's Bay Company and North West Company canoe brigades for two centuries. The 1814 Pemmican Proclamation by Red River governor Miles Macdonell banned its export, sparking the Pemmican War. What role did pemmican play that made the export ban worth fighting?",
+      "answer": "Strategic infrastructure on the scale of fuel — controlling supply meant controlling freight movement across the continent",
+      "choices": [
+        "Strategic infrastructure on the scale of fuel — controlling supply meant controlling freight movement across the continent",
+        "A religious offering protected by treaty — the Proclamation kept missionaries from interfering with Native rites at the fur-trade posts",
+        "The official currency of the inland fur trade — the Proclamation pegged its rate against British silver and stabilized the colony's economy",
+        "A marginal luxury item — the Proclamation rationed it to colonial elites and Native chiefs as a status-symbol food at brigade meetings"
+      ],
+      "context": "Pemmican fueled canoe brigades and Red River cart trains that moved fur from inland trade to Hudson Bay and Lake Superior ports. Calorie-dense, shelf-stable for years, lightweight relative to fresh provisions. Hudson's Bay Company built its inland supply chain on pemmican. The 1814 Proclamation. Food infrastructure as backbone."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 483,
+    "new": {
+      "tier": 3,
+      "question": "The 20th century ran Mises's 1920 prediction as a natural experiment. USSR, China, Khmer Rouge Cambodia, North Korea, and Cuba all tried central planning. Courtois et al.'s Black Book of Communism (1997) tallied the cost. Roughly how many deaths does the Black Book attribute to it?",
+      "answer": "Roughly 65 to 100 million — from famine, gulag, and political violence, vindicating Mises",
+      "choices": [
+        "Roughly 65 to 100 million — from famine, gulag, and political violence, vindicating Mises",
+        "Roughly half a million total — most from World War II battle losses, not from any socialist policy",
+        "Roughly two thousand over the century — mostly gulag inmates trying to escape, not regime executions",
+        "Roughly zero attributable to socialism — every Black Book figure has been retracted by modern historians"
+      ],
+      "context": "Courtois et al. (1997) compiled figures from regime archives opened after 1991. USSR ~20M (gulag + Holodomor), China ~65M (Great Leap famine + Cultural Revolution), Cambodia ~2M (Khmer Rouge, ~25% of population). Cross-link to history bank."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 684,
+    "new": {
+      "tier": 3,
+      "question": "Tariffs visibly protect specific domestic industries: steel workers keep jobs when steel imports are taxed. Bastiat's method asks what hides behind that visible benefit. According to seen-vs-unseen, what are the unseen costs of the tariff?",
+      "answer": "Higher consumer prices, exporter retaliation losses, and the unseen industries that never form",
+      "choices": [
+        "Higher consumer prices, exporter retaliation losses, and the unseen industries that never form",
+        "Nothing unseen at all; the visible benefit to the protected steel industry is the entire effect",
+        "Nothing for the domestic side; foreign producers absorb the full cost, so consumers pay nothing extra",
+        "Lower consumer prices instead; protected industries pass on savings from being insulated from competition"
+      ],
+      "context": "The Bastiat-to-tariff generalization is one of the cleanest applications of the seen-vs-unseen method. The steel jobs are visible; the consumer-price increases are diffuse but real; the retaliation losses are spread."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 696,
+    "new": {
+      "tier": 3,
+      "question": "Modern protectionist arguments claim domestic industries need protection from low-wage foreign competition. Ricardo's comparative-advantage frame asks what those lower wages actually reflect. What do lower foreign wages signal, and who pays for tariff protection?",
+      "answer": "They reflect lower foreign productivity; tariff protection costs domestic consumers and downstream industries",
+      "choices": [
+        "They reflect lower foreign productivity; tariff protection costs domestic consumers and downstream industries",
+        "They reflect exploitation in foreign factories; tariff protection always benefits domestic consumers via lower prices",
+        "They reflect no productivity relationship; modern international-trade economics has abandoned Ricardo's framework",
+        "They reflect entirely US tariff policy; tariff protection eliminates the wage gap through wage-rate equalization"
+      ],
+      "context": "The comparative-advantage framework explains why protectionist arguments based on 'cheap foreign labor' miss the deeper point. Wage levels track productivity levels; productivity differences create gains from trade."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 1092,
+    "new": {
+      "tier": 5,
+      "question": "Between 1837 and 1862 the US operated without a central bank under the 'free banking' system. State-chartered banks issued their own notes, redeemable in gold or silver, subject to state-level reserve requirements. Textbooks called it 'wildcat banking,' suggesting chaos. Modern revisionist scholarship by Hugh Rockoff and George Selgin reaches a different verdict. How did free-banking-era failure rates actually compare to those under later central-bank regimes?",
+      "answer": "Failure rates were comparable to or lower than those under later central-bank regimes; most state systems ran stably and the wildcat reputation was overstated",
+      "choices": [
+        "Failure rates were comparable to or lower than those under later central-bank regimes; most state systems ran stably and the wildcat reputation was overstated",
+        "Failure rates were catastrophic across every state, with universal bank collapse and total economic ruin that forced Congress to create the Federal Reserve System",
+        "Failure rates triggered the Civil War, since banking instability is what made political conflict inevitable across the entire United States by the year 1860",
+        "Failure rates had no measurable economic effect, because most Americans during this period used barter and personal IOUs rather than any bank notes or coins regularly"
+      ],
+      "context": "Selgin's The Theory of Free Banking (1988) and Rockoff's research are the canonical revisionist accounts. The 1863 National Banking Acts (Civil War financing) ended the free-banking era. The 1913 Federal Reserve Act ended the National Banking system."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 1157,
+    "new": {
+      "tier": 5,
+      "question": "Bretton Woods (July 1944) created the IMF and the IBRD (later the World Bank). The IMF would lend to countries running balance-of-payments difficulties; the World Bank would fund postwar reconstruction and later development. Both were headquartered in Washington DC. The IMF managing director is by tradition European; the World Bank president is by tradition American. What does the DC location and the leadership tradition embed into the global monetary architecture?",
+      "answer": "US geopolitical leadership of the postwar monetary order; the DC location and dollar-centricity hard-wire US power into the global framework alongside stability goals",
+      "choices": [
+        "US geopolitical leadership of the postwar monetary order; the DC location and dollar-centricity hard-wire US power into the global framework alongside stability goals",
+        "No special US relationship at all; the IMF and World Bank were designed as neutral technocracies independent of US influence and remain so today, since 1944 onward",
+        "No formal architecture at all; the Bretton Woods institutions were never actually created and global monetary affairs ran informally until the 1971 Nixon shock",
+        "Equal influence for all 44 founders; the institutions were sited in Geneva, never Washington, and the framework gave every founding nation an equal vote regardless of size"
+      ],
+      "context": "The IMF managing director is by tradition European; the World Bank president is by tradition American. The institutions' 'structural adjustment' lending (Africa, Latin America, post-Soviet states) became deeply controversial in the 1990s-2000s. Austrian economists are largely critical."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 1184,
+    "new": {
+      "tier": 5,
+      "question": "NIMBY zoning restrictions in coastal US cities — San Francisco, Boston, NYC, Seattle, LA — make new housing construction extremely difficult. Single-family zoning, height limits, CEQA environmental review in California, historic preservation rules: all block supply growth. Median home prices in these cities now run several multiples of median income. Who benefits politically from this restriction, and at whose expense?",
+      "answer": "Existing homeowners benefit — they use the political process to restrict supply, lifting the value of their own assets at the cost of future buyers and renters",
+      "choices": [
+        "Existing homeowners benefit — they use the political process to restrict supply, lifting the value of their own assets at the cost of future buyers and renters",
+        "Nobody benefits or loses — NIMBY zoning has no measurable effect on housing supply or prices, and coastal affordability is set entirely by demographic and immigration trends",
+        "Renters benefit — NIMBY zoning was repealed in most major US cities in 2020, so the post-2020 affordability crisis is unrelated to any continuing zoning restrictions",
+        "Nobody is affected — NIMBY zoning is a media exaggeration with no basis in actual local code, and apparent housing shortages reflect entirely unrelated other causes"
+      ],
+      "context": "The YIMBY (Yes In My Back Yard) movement emerged in the 2010s as a counter. California's 2017 SB-35 and Oregon's 2019 statewide upzoning are partial reforms. The political durability of restrictive zoning illustrates concentrated-benefits / diffuse-costs public-choice dynamics."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 1226,
+    "new": {
+      "tier": 5,
+      "question": "FASB has overseen GAAP since 1973. The SEC requires GAAP filings, but since the late 1990s firms also report 'non-GAAP' earnings stripping items management calls 'non-recurring.' Reg G (2003) requires reconciliation but doesn't ban it. By 2015 S&P 500 non-GAAP ran ~25% above GAAP. Charlie Munger called the gap 'bullshit earnings.' Why did Munger use that label for the stripped categories?",
+      "answer": "Because the costs stripped (stock-based comp, restructuring, impairments) are real costs that recur every year despite being labeled non-recurring, so the gap is sometimes the entire fraud",
+      "choices": [
+        "Because the costs stripped (stock-based comp, restructuring, impairments) are real costs that recur every year despite being labeled non-recurring, so the gap is sometimes the entire fraud",
+        "Because non-GAAP earnings give a more accurate picture of underlying business performance, which is why sophisticated equity-market investors rely on them rather than GAAP measures",
+        "Because GAAP is inadequate for modern intangible-heavy businesses, and Munger believed FASB should align GAAP with non-GAAP measures through ongoing standards-setting revisions",
+        "Because the gap is purely a result of stock-based comp under FASB 123R (2006), and would close completely if that single accounting rule were repealed by FASB in a later update"
+      ],
+      "context": "WeWork's 'Community Adjusted EBITDA' (2019) was the reductio ad absurdum — once you adjust EBITDA itself, the metric measures nothing. Stock-based comp is the largest single category of non-GAAP adjustment for tech firms."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 1239,
+    "new": {
+      "tier": 2,
+      "question": "Anna earns $40,000 W-2. Her boss spent $43,060 hiring her: the extra $3,060 was the employer's FICA. Another $3,060 came off Anna's pay stub. The 15.3% combined bite has an economist's name. What is the gap between what the boss pays out and what the worker takes home called?",
+      "answer": "The tax wedge",
+      "choices": [
+        "The tax wedge",
+        "Bracket creep",
+        "The Laffer gap",
+        "Fiscal drag"
+      ],
+      "context": "The tax wedge is Bastiat's seen-vs-unseen at the labor-market level. The worker sees only her half; the employer half is also her wage. The Tax Foundation puts the total US labor tax wedge near 30% once income tax is added."
+    }
+  },
+  {
+    "bank": "economics",
+    "bank_idx": 1311,
+    "new": {
+      "tier": 4,
+      "question": "Stanford dropout Elizabeth Holmes founded Theranos in 2003. By 2014 she had raised ~$700M at a $9B valuation. Investors included Ellison, Murdoch, the Waltons. Board: Kissinger and Shultz. October 2015: Carreyrou's WSJ exposed it. January 2022: jury convicted Holmes on four counts of fraud. What did the prominent investor and board roster fail to substitute for?",
+      "answer": "Verifying that the underlying technology actually worked; narrative and prestige replaced technical audit",
+      "choices": [
+        "Verifying that the underlying technology actually worked; narrative and prestige replaced technical audit",
+        "Securing a Stanford CS certification of the device, automatically granted to startups founded by Stanford dropouts",
+        "Filing an SEC-required independent technical audit, mandatory for any startup raising over $50M from investors",
+        "Buying federal startup-liability shield insurance, required from 2003 to 2015 for accredited-investor disclosures"
+      ],
+      "context": "Theranos investors skipped deep technical due diligence in favor of narrative, prestige, and board roster. The lesson is brutal but clear: even Kissinger and Shultz on the board, even Murdoch and Ellison writing checks, did not substitute for actually checking whether the Edison machine could perform 240 tests from a finger-prick of blood. The recognition skill is to be suspicious when due diligence is being aggressively gatekept."
+    }
+  },
+  {
+    "bank": "geography",
+    "bank_idx": 501,
+    "new": {
+      "tier": 1,
+      "question": "An expedition leaves Spain in 1519 with five ships. Three years later one ship limps home with 18 of 270 men, the captain dead in the Philippines, a calm new ocean crossed. What did the voyage prove?",
+      "answer": "The Earth can be circumnavigated by a continuous global sea route around it",
+      "choices": [
+        "The Earth can be circumnavigated by a continuous global sea route around it",
+        "A sea route to India around South America is faster than the eastward voyage",
+        "The Pacific Ocean is smaller than the Atlantic, on the timed ocean crossings",
+        "The Americas are a separate landmass from Asia, settling a centuries debate"
+      ],
+      "context": "Ferdinand Magellan led the 1519-22 voyage. Killed in the Philippines (1521); Juan Sebastián Elcano sailed Victoria home. 18 of 270 men returned — proof of a global sea route."
+    }
+  },
+  {
+    "bank": "geography",
+    "bank_idx": 620,
+    "new": {
+      "tier": 5,
+      "question": "Amundsen's 1911 South Pole teams started with 52 dogs and finished with 11. Amundsen calculated each dog's day of death in the food plan, feeding weaker dogs to stronger ones. Norwegian press celebrated; British press denounced him as cruel. Which cultural difference let Norway accept the calculation but not Britain?",
+      "answer": "Norway's working-dog tradition (Sami, Inuit, Greenlander) treated sled dogs pragmatically; British Victorian sentiment, with no such tradition, found the calculation cruel",
+      "choices": [
+        "Norway's working-dog tradition (Sami, Inuit, Greenlander) treated sled dogs pragmatically; British Victorian sentiment, with no such tradition, found the calculation cruel",
+        "Norway treated sled dogs as sacred animals (Sami, Inuit, Greenlander religious practice); Britain's Victorian piety with a similar tradition still rejected the calculation",
+        "Norway treated sled dogs as folkloric symbols (Sami, Inuit, Greenlander folklore); Britain's Victorian pageantry without any working-dog tradition still rejected the calculation",
+        "Norway treated sled dogs as market commodities (Sami, Inuit, Greenlander trade practice); Britain's Victorian commerce with the same tradition still rejected the calculation"
+      ],
+      "context": "Amundsen's South Pole logistics: 52 dogs across four sledges, ~800 mile round trip from Framheim (Bay of Whales) to Pole. He planned to kill ~24 dogs at the foot of the polar plateau and feed them to the remaining team — the food calculation depended on it. The plan executed close to design. Norwegian Arctic culture (Sami, Inuit, Greenlander working-dog tradition that Amundsen had absorbed during the Gjøa winters with the Netsilik) treated working dogs pragmatically — animals that worked and could be eaten in extremis. British naval culture (Victorian sentimentalism, no comparable working-dog tradition; the British thought dogs cute and ponies dignified) made the systematic provisioning calculation politically impossible. Scott shot his ponies at the foot of the Beardmore Glacier; the British press complained. Cherry-Garrard's The Worst Journey in the World (1922) is the British perspective; Huntford's Scott and Amundsen (1979/2002) the systematic comparison."
+    }
+  },
+  {
+    "bank": "geography",
+    "bank_idx": 1112,
+    "new": {
+      "tier": 5,
+      "question": "The Iron Curtain (1945-91) ran ~7,000 km from Lübeck on the Baltic to Trieste on the Adriatic. The inner-German border had concrete, barbed wire, anti-personnel mines, watchtowers, and a 5-km exclusion zone. Roughly 1,000 East Germans died trying to cross. Which direction did the bulk of the fortifications face, and whom were they actually built to stop?",
+      "answer": "The fortifications faced inward to keep citizens in; containing one's own population required vastly more infrastructure than repelling invasion would",
+      "choices": [
+        "The fortifications faced inward to keep citizens in; containing one's own population required vastly more infrastructure than repelling invasion would",
+        "The fortifications faced both ways symmetrically, as NATO mirrored a defensive line on its side and both blocs invested equivalent engineering resources",
+        "The fortifications faced only the inner-German section as a Stasi regional initiative; other Warsaw Pact states kept their own western frontiers far more open in comparison",
+        "The fortifications faced outward against smugglers and currency black-marketeers; population control was secondary to enforcement of the East German socialist trade rules"
+      ],
+      "context": "Churchill named it in his 1946 Fulton, Missouri, address: 'From Stettin in the Baltic to Trieste in the Adriatic an iron curtain has descended across the Continent.' The fortified line ran ~7,000 km. The inner-German border alone (Innerdeutsche Grenze, 1,393 km) had 1,300 watchtowers, 760,000 anti-personnel mines, automated SM-70 fragmentation devices (until 1984), and a 5-km exclusion zone (Sperrzone). The Berlin Wall (1961-89, 155 km) was its urban segment. Documented deaths at the border: ~1,000+ in 40 years (Forschungsverbund SED-Staat, Free University Berlin). Solzhenitsyn: 'No tyranny in human history has had to wall in its own subjects.' The line dissolved between 1989 (Hungarian border opening to Austria, August; Berlin Wall, November) and 1991 (Soviet collapse)."
+    }
+  },
+  {
+    "bank": "science",
+    "bank_idx": 974,
+    "new": {
+      "tier": 4,
+      "question": "Jay Bhattacharya, the lead Stanford signatory of the Great Barrington Declaration who was publicly attacked as 'fringe' in 2020, was confirmed as Director of the National Institutes of Health in 2025. How should a reader treat the word 'fringe' the next time it appears in coverage of a scientist?",
+      "answer": "Slow down; 'fringe' is often a discussion-ender, and the label can be reversed within years while the labelers rarely retract it publicly",
+      "choices": [
+        "Slow down; 'fringe' is often a discussion-ender, and the label can be reversed within years while the labelers rarely retract it publicly",
+        "Trust it; Bhattacharya was never publicly criticized by anyone in the federal government during the COVID-19 pandemic, so the label is reliable proof",
+        "Trust it; Bhattacharya was not confirmed as NIH director and the position remains unfilled with no Senate nominee under consideration in 2025",
+        "Trust it; every public-health decision made in 2020 and 2021 was scientifically correct by hindsight, vindicated by Bhattacharya's later confirmation"
+      ],
+      "context": "Bhattacharya was confirmed by the Senate as NIH director under the second Trump administration in 2025. The trajectory matters precisely because the institutional pattern repeats — Semmelweis institutionalized then vindicated, Wegener mocked then vindicated, Marshall ridiculed then Nobeled, Bhattacharya 'fringe-labeled' then NIH directorship. The institutional reflex to label dissent rarely involves later public retraction. The recognition skill for the kid is to slow down when 'fringe' is used as a discussion-ender."
+    }
+  },
+  {
+    "bank": "science",
+    "bank_idx": 1165,
+    "new": {
+      "tier": 5,
+      "question": "Carbon-tax advocates promise their preferred policy will reduce global CO2 emissions. Critics including Tyler Cowen and Bjorn Lomborg point to an empirical pattern in countries that have actually implemented carbon taxes — EU-ETS, Australia's brief 2012-14 tax, Canada's federal scheme. China, India, and other major emitters continue building coal capacity. What does the term 'carbon leakage' name in this comparison?",
+      "answer": "Emissions migrate to non-taxing jurisdictions; global emissions are not reduced, only relocated, while the taxing country's domestic industry weakens",
+      "choices": [
+        "Emissions migrate to non-taxing jurisdictions; global emissions are not reduced, only relocated, while the taxing country's domestic industry weakens",
+        "Tax-implementing countries achieve dramatic global emission reductions; total worldwide CO2 drops far in excess of what the underlying climate models predict in advance",
+        "Tax-implementing countries match the emission profiles of non-taxing countries exactly; the carbon tax has no detectable effect on industrial behavior in any direction",
+        "Tax-implementing countries lose all industrial activity within months; every business immediately closes after any carbon tax introduction in any country adopting one"
+      ],
+      "context": "Carbon leakage — emissions migrating to jurisdictions with weaker regulations — is documented in EU-ETS, Australia's brief 2012-14 carbon tax, and Canada's federal scheme. China, India, and other major emitters continue building coal capacity regardless. Critics argue the tax is wealth extraction dressed as climate policy: it raises revenue, hits working-class household budgets disproportionately (energy is a larger share of poor families' spending), and doesn't reduce planet-wide emissions."
+    }
+  },
+  {
+    "bank": "science",
+    "bank_idx": 1169,
+    "new": {
+      "tier": 5,
+      "question": "Each January, Zurich and Geneva airport records document hundreds of private-jet arrivals during the World Economic Forum at Davos. Attendees publicly demand sacrifice from working-class populations — cars, beef, gas heating, foreign holidays — while flying private to the conference. Critics like Alex Epstein, Bjorn Lomborg, and Michael Shellenberger name the pattern. Whom does the moralism target, and whom does it exempt?",
+      "answer": "It targets working-class life from above — sacrifice demanded of those without private jets, while the donor-class elites issuing the demands exempt themselves",
+      "choices": [
+        "It targets working-class life from above — sacrifice demanded of those without private jets, while the donor-class elites issuing the demands exempt themselves",
+        "It targets every Davos attendee uniformly — all conference-goers travel only by bicycle and walk to every venue together in matching reusable shoes for symbolism",
+        "It targets nobody politically — the rhetoric is purely scientific, and the private-jet Davos pattern is a fabrication invented by political opponents with no airport records",
+        "It targets the wealthy exclusively — and Davos speakers explicitly state that working-class travel and consumption behavior is irrelevant to global climate outcomes"
+      ],
+      "context": "Records from Zurich and Geneva airports each Davos week document hundreds of private-jet arrivals. The same dynamic plays out at COP climate conferences. Critics argue that whatever the underlying science, the political deployment of climate rhetoric functions as a moralism that disciplines working-class life — cars, beef, gas heating, foreign holidays — while exempting the donor-class life of the people doing the moralizing."
+    }
+  }
+]

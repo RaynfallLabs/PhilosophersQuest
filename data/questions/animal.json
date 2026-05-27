@@ -529,13 +529,13 @@
   },
   {
     "tier": 3,
-    "question": "A New Caledonian crow in the wild trims a leaf with its beak into a curved hook and uses the hook to extract grubs from holes. The hooks are shaped to a regular pattern. What does the behavior demonstrate?",
-    "answer": "Cultural transmission of tool-making — crows learn the hook shapes from neighbors",
+    "question": "A New Caledonian crow trims a leaf into a curved hook and uses it to extract grubs from tree holes. The hooks follow a regional pattern: neighboring crows make one shape, distant crows another. How do the crows acquire that regional shape?",
+    "answer": "By learning the hook design from neighboring crows — cultural transmission of tool-making",
     "choices": [
-      "Cultural transmission of tool-making — crows learn the hook shapes from neighbors",
-      "Pure trial-and-error — each crow rediscovers the hook shape on its own each lifetime",
-      "Genetic instinct — the shape is hard-wired and never varies between populations",
-      "Imitation of humans — the local crows copy hooks they have seen people make"
+      "By learning the hook design from neighboring crows — cultural transmission of tool-making",
+      "By trial-and-error alone — each crow rediscovers the same hook shape on its own each lifetime",
+      "By inherited instinct — the hook shape is hard-wired in DNA and never varies between regions",
+      "By copying humans — the local crows imitate hooks they have watched people carve nearby"
     ],
     "context": "Hunt and Gray's work on New Caledonian crows (Corvus moneduloides) documented stepped pandanus-leaf tools whose shapes vary regionally — strong evidence for cultural transmission of a manufactured tool design within a wild animal population."
   },
@@ -7597,13 +7597,13 @@
   },
   {
     "tier": 3,
-    "question": "After the Clean Air Acts of 1956 (UK) and 1970 (US) reduced industrial soot, peppered moth populations shifted again. The dark forms declined and pale forms recovered. What does the reversibility prove about natural selection?",
-    "answer": "Selection has no direction — when pressure reverses, the population shifts back to the now-matching form",
+    "question": "Before the Clean Air Acts of 1956 (UK) and 1970 (US), industrial soot blackened bark and dark peppered moths thrived. After the soot dropped, bark lichens regrew and pale moths recovered. Which property of natural selection does the pale-form recovery establish?",
+    "answer": "Selection has no fixed direction — when pressure reverses, the population shifts back to the now-matching form",
     "choices": [
-      "Selection has no direction — when pressure reverses, the population shifts back to the now-matching form",
-      "Dark moths permanently changed and could not switch back — only new pale mutations restored a balance",
-      "Pollution selected only on adults — moth eggs were unaffected by the soot all along the whole cycle",
-      "Climate change, not pollution, was the real driver — and climate has not reversed since these laws"
+      "Selection has no fixed direction — when pressure reverses, the population shifts back to the now-matching form",
+      "Dark moths permanently changed and could not switch back — only new pale mutations restored the balance again",
+      "Pollution selected only on adults — moth eggs were unaffected by the soot throughout the whole life cycle",
+      "Climate, not pollution, was the real driver — and climate has not reversed since the Clean Air Acts"
     ],
     "context": "Cook & Saccheri reviewed the post-1970 recovery: as bark lichens regrew and bark lightened, bird predation reversed the selection pressure. Allele frequencies shifted back. Natural selection is direction-following, not goal-directed."
   },
@@ -8305,13 +8305,13 @@
   },
   {
     "tier": 5,
-    "question": "Wolbachia bacteria introduced into Aedes aegypti mosquitoes block dengue virus transmission. The World Mosquito Program has deployed Wolbachia-infected mosquitoes in cities across Asia and Latin America. What does the evidence show about effectiveness in disease control?",
-    "answer": "Utarini et al. (NEJM, 2021) randomized trial in Yogyakarta showed ~77% dengue reduction in Wolbachia areas — a major proof-of-concept for arbovirus biocontrol without insecticides",
+    "question": "Wolbachia bacteria introduced into Aedes aegypti mosquitoes block dengue transmission. The World Mosquito Program has deployed them across Asia and Latin America. The Utarini et al. 2021 NEJM cluster-randomized trial in Yogyakarta measured the effect. What dengue reduction did the trial report?",
+    "answer": "About 77% fewer dengue cases in Wolbachia clusters — a landmark proof-of-concept for arbovirus biocontrol without insecticides",
     "choices": [
-      "Utarini et al. (NEJM, 2021) randomized trial in Yogyakarta showed ~77% dengue reduction in Wolbachia areas — a major proof-of-concept for arbovirus biocontrol without insecticides",
-      "The program failed in clinical trials — Wolbachia did not establish in target mosquito populations and dengue rates were unaffected by the deployment campaigns conducted by the",
-      "Wolbachia caused increased disease in mosquito populations — the deployment was halted in 2018 due to safety concerns and unintended ecosystem effects on non-target species in",
-      "The Yogyakarta trial showed no measurable effect — the World Mosquito Program now uses different bacteria for active deployment campaigns instead of Wolbachia after the trial's"
+      "About 77% fewer dengue cases in Wolbachia clusters — a landmark proof-of-concept for arbovirus biocontrol without insecticides",
+      "Zero measurable reduction — the trial failed because Wolbachia did not establish in the target Aedes aegypti population in Yogyakarta",
+      "An 18% rise in dengue cases — the trial was halted in 2018 because of unintended ecosystem effects on non-target insect species in the area",
+      "About 22% reduction only in adult cases — the program switched to different bacteria for later deployments after the underwhelming Yogyakarta results"
     ],
     "context": "Utarini et al. (NEJM, 2021): Yogyakarta cluster-randomized trial of wMel Wolbachia in Aedes aegypti — 77% dengue reduction in intervention clusters. Subsequent deployments in Brazil, Colombia, Australia. A landmark proof-of-concept for non-insecticidal vector control via symbiotic bacteria."
   },

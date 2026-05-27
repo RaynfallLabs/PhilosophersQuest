@@ -5797,13 +5797,13 @@
   },
   {
     "tier": 3,
-    "question": "The 20th century ran an enormous natural experiment on Mises's 1920 prediction. USSR, China, Khmer Rouge Cambodia, North Korea, Cuba all tried central planning. The Black Book of Communism (1997) tallies the cost. What does the ledger show?",
-    "answer": "Roughly 65 to 100 million deaths — famine, gulag, and political violence, vindicating Mises's calculation prediction",
+    "question": "The 20th century ran Mises's 1920 prediction as a natural experiment. USSR, China, Khmer Rouge Cambodia, North Korea, and Cuba all tried central planning. Courtois et al.'s Black Book of Communism (1997) tallied the cost. Roughly how many deaths does the Black Book attribute to it?",
+    "answer": "Roughly 65 to 100 million — from famine, gulag, and political violence, vindicating Mises",
     "choices": [
-      "Roughly 65 to 100 million deaths — famine, gulag, and political violence, vindicating Mises's calculation prediction",
-      "Roughly half a million deaths total — mostly from World War II rather than from socialism's economic policies",
-      "Roughly two thousand deaths over the century — mostly from gulag prisoners trying to escape, not execution",
-      "Roughly zero deaths attributable to socialism — Black Book numbers have all been retracted by modern historians"
+      "Roughly 65 to 100 million — from famine, gulag, and political violence, vindicating Mises",
+      "Roughly half a million total — most from World War II battle losses, not from any socialist policy",
+      "Roughly two thousand over the century — mostly gulag inmates trying to escape, not regime executions",
+      "Roughly zero attributable to socialism — every Black Book figure has been retracted by modern historians"
     ],
     "context": "Courtois et al. (1997) compiled figures from regime archives opened after 1991. USSR ~20M (gulag + Holodomor), China ~65M (Great Leap famine + Cultural Revolution), Cambodia ~2M (Khmer Rouge, ~25% of population). Cross-link to history bank."
   },
@@ -8209,13 +8209,13 @@
   },
   {
     "tier": 3,
-    "question": "Tariffs visibly protect specific domestic industries — steel workers keep jobs when steel imports are taxed. But Bastiat's method asks: what's the unseen cost? What does the framework reveal?",
-    "answer": "Higher consumer prices, retaliation against exporters — plus unseen industries that don't form",
+    "question": "Tariffs visibly protect specific domestic industries: steel workers keep jobs when steel imports are taxed. Bastiat's method asks what hides behind that visible benefit. According to seen-vs-unseen, what are the unseen costs of the tariff?",
+    "answer": "Higher consumer prices, exporter retaliation losses, and the unseen industries that never form",
     "choices": [
-      "Higher consumer prices, retaliation against exporters — plus unseen industries that don't form",
-      "Tariffs have no unseen costs — the visible benefit to protected industries is the entire effect",
-      "Tariffs are paid entirely by foreign producers — domestic consumers never bear any tariff cost",
-      "Tariffs benefit consumers by lowering prices — protected industries charge less due to insulation"
+      "Higher consumer prices, exporter retaliation losses, and the unseen industries that never form",
+      "Nothing unseen at all; the visible benefit to the protected steel industry is the entire effect",
+      "Nothing for the domestic side; foreign producers absorb the full cost, so consumers pay nothing extra",
+      "Lower consumer prices instead; protected industries pass on savings from being insulated from competition"
     ],
     "context": "The Bastiat-to-tariff generalization is one of the cleanest applications of the seen-vs-unseen method. The steel jobs are visible; the consumer-price increases are diffuse but real; the retaliation losses are spread."
   },
@@ -8353,13 +8353,13 @@
   },
   {
     "tier": 3,
-    "question": "Modern protectionist arguments often claim domestic industries need protection from low-wage foreign competition. But the comparative-advantage framework asks: protection from what, exactly? What does the framework reveal?",
-    "answer": "Lower foreign wages reflect lower foreign productivity — protection costs consumers and other industries",
+    "question": "Modern protectionist arguments claim domestic industries need protection from low-wage foreign competition. Ricardo's comparative-advantage frame asks what those lower wages actually reflect. What do lower foreign wages signal, and who pays for tariff protection?",
+    "answer": "They reflect lower foreign productivity; tariff protection costs domestic consumers and downstream industries",
     "choices": [
-      "Lower foreign wages reflect lower foreign productivity — protection costs consumers and other industries",
-      "Lower foreign wages reflect foreign exploitation — protection always benefits domestic consumers",
-      "Lower foreign wages have no productivity relationship — modern trade economics abandoned Ricardo",
-      "Lower foreign wages are caused by US tariff policy — protection eliminates the wage gap via equalization"
+      "They reflect lower foreign productivity; tariff protection costs domestic consumers and downstream industries",
+      "They reflect exploitation in foreign factories; tariff protection always benefits domestic consumers via lower prices",
+      "They reflect no productivity relationship; modern international-trade economics has abandoned Ricardo's framework",
+      "They reflect entirely US tariff policy; tariff protection eliminates the wage gap through wage-rate equalization"
     ],
     "context": "The comparative-advantage framework explains why protectionist arguments based on 'cheap foreign labor' miss the deeper point. Wage levels track productivity levels; productivity differences create gains from trade."
   },
@@ -13105,13 +13105,13 @@
   },
   {
     "tier": 5,
-    "question": "Between 1837 and 1862 the US operated without a central bank under the 'free banking' system. State-chartered banks issued their own notes, redeemable in gold or silver, subject to state-level reserve requirements. The era is often called 'wildcat banking' in textbooks, suggesting chaos. Modern scholarship (Hugh Rockoff, George Selgin) reaches a different verdict. What does the evidence show?",
-    "answer": "Free banking worked better than its reputation, with most state systems running stably and bank failure rates comparable to or lower than those under later central-bank regimes",
+    "question": "Between 1837 and 1862 the US operated without a central bank under the 'free banking' system. State-chartered banks issued their own notes, redeemable in gold or silver, subject to state-level reserve requirements. Textbooks called it 'wildcat banking,' suggesting chaos. Modern revisionist scholarship by Hugh Rockoff and George Selgin reaches a different verdict. How did free-banking-era failure rates actually compare to those under later central-bank regimes?",
+    "answer": "Failure rates were comparable to or lower than those under later central-bank regimes; most state systems ran stably and the wildcat reputation was overstated",
     "choices": [
-      "Free banking worked better than its reputation, with most state systems running stably and bank failure rates comparable to or lower than those under later central-bank regimes",
-      "Free banking was catastrophic across all states with universal bank failures and total economic collapse forcing Congress to create the Federal Reserve System urgently",
-      "Free banking caused the Civil War by destabilizing the financial system to the point where political conflict became inevitable across the entire union by 1860",
-      "Free banking had no measurable economic effects, since most Americans during this period used barter and personal IOUs rather than any bank notes or coins regularly"
+      "Failure rates were comparable to or lower than those under later central-bank regimes; most state systems ran stably and the wildcat reputation was overstated",
+      "Failure rates were catastrophic across every state, with universal bank collapse and total economic ruin that forced Congress to create the Federal Reserve System",
+      "Failure rates triggered the Civil War, since banking instability is what made political conflict inevitable across the entire United States by the year 1860",
+      "Failure rates had no measurable economic effect, because most Americans during this period used barter and personal IOUs rather than any bank notes or coins regularly"
     ],
     "context": "Selgin's The Theory of Free Banking (1988) and Rockoff's research are the canonical revisionist accounts. The 1863 National Banking Acts (Civil War financing) ended the free-banking era. The 1913 Federal Reserve Act ended the National Banking system."
   },
@@ -13885,13 +13885,13 @@
   },
   {
     "tier": 5,
-    "question": "Bretton Woods (July 1944) created the IMF and the IBRD (later the World Bank). The IMF would lend to countries running balance-of-payments difficulties; the World Bank would fund postwar reconstruction and later development. Both bodies were headquartered in Washington under US influence. What does the architecture reveal?",
-    "answer": "The postwar monetary system was designed as much for US geopolitical leadership as for monetary stability; the institutions' DC location and dollar-centricity embed US power in the global framework",
+    "question": "Bretton Woods (July 1944) created the IMF and the IBRD (later the World Bank). The IMF would lend to countries running balance-of-payments difficulties; the World Bank would fund postwar reconstruction and later development. Both were headquartered in Washington DC. The IMF managing director is by tradition European; the World Bank president is by tradition American. What does the DC location and the leadership tradition embed into the global monetary architecture?",
+    "answer": "US geopolitical leadership of the postwar monetary order; the DC location and dollar-centricity hard-wire US power into the global framework alongside stability goals",
     "choices": [
-      "The postwar monetary system was designed as much for US geopolitical leadership as for monetary stability; the institutions' DC location and dollar-centricity embed US power in the global framework",
-      "The IMF and World Bank were designed as neutral technocratic institutions with no special relationship to US geopolitical interests and have been independent of US influence ever since 1944",
-      "The Bretton Woods institutions were never actually created and the postwar monetary system functioned without any formal international bodies until the 1971 Nixon shock dissolved the arrangement",
-      "The IMF and World Bank were headquartered in Geneva rather than Washington, and the postwar monetary system was designed to give equal influence to all 44 founding nations regardless of size"
+      "US geopolitical leadership of the postwar monetary order; the DC location and dollar-centricity hard-wire US power into the global framework alongside stability goals",
+      "No special US relationship at all; the IMF and World Bank were designed as neutral technocracies independent of US influence and remain so today, since 1944 onward",
+      "No formal architecture at all; the Bretton Woods institutions were never actually created and global monetary affairs ran informally until the 1971 Nixon shock",
+      "Equal influence for all 44 founders; the institutions were sited in Geneva, never Washington, and the framework gave every founding nation an equal vote regardless of size"
     ],
     "context": "The IMF managing director is by tradition European; the World Bank president is by tradition American. The institutions' 'structural adjustment' lending (Africa, Latin America, post-Soviet states) became deeply controversial in the 1990s-2000s. Austrian economists are largely critical."
   },
@@ -14209,13 +14209,13 @@
   },
   {
     "tier": 5,
-    "question": "NIMBY (Not In My Back Yard) zoning restrictions in coastal US cities — San Francisco, Boston, NYC, Seattle, LA — make new housing construction extremely difficult. Single-family zoning, height limits, environmental review (CEQA in California), historic preservation rules: all block supply growth. Result: median home prices several multiples of median income. What does the pattern illustrate?",
-    "answer": "Existing homeowners use the political process to restrict supply, raising the value of their own assets at the cost of future buyers and renters; the Yandle bootleggers-and-baptists pattern recurs",
+    "question": "NIMBY zoning restrictions in coastal US cities — San Francisco, Boston, NYC, Seattle, LA — make new housing construction extremely difficult. Single-family zoning, height limits, CEQA environmental review in California, historic preservation rules: all block supply growth. Median home prices in these cities now run several multiples of median income. Who benefits politically from this restriction, and at whose expense?",
+    "answer": "Existing homeowners benefit — they use the political process to restrict supply, lifting the value of their own assets at the cost of future buyers and renters",
     "choices": [
-      "Existing homeowners use the political process to restrict supply, raising the value of their own assets at the cost of future buyers and renters; the Yandle bootleggers-and-baptists pattern recurs",
-      "NIMBY zoning has no measurable effect on housing supply or prices, and US coastal city affordability is determined by demographic and immigration factors with no link to local policy",
-      "NIMBY zoning was repealed in major US cities in 2020 and the post-2020 affordability crisis is unrelated to any continuing zoning restrictions on new housing construction anywhere",
-      "NIMBY zoning is a media exaggeration with no basis in actual local policy, and the apparent housing shortages in coastal cities are caused"
+      "Existing homeowners benefit — they use the political process to restrict supply, lifting the value of their own assets at the cost of future buyers and renters",
+      "Nobody benefits or loses — NIMBY zoning has no measurable effect on housing supply or prices, and coastal affordability is set entirely by demographic and immigration trends",
+      "Renters benefit — NIMBY zoning was repealed in most major US cities in 2020, so the post-2020 affordability crisis is unrelated to any continuing zoning restrictions",
+      "Nobody is affected — NIMBY zoning is a media exaggeration with no basis in actual local code, and apparent housing shortages reflect entirely unrelated other causes"
     ],
     "context": "The YIMBY (Yes In My Back Yard) movement emerged in the 2010s as a counter. California's 2017 SB-35 and Oregon's 2019 statewide upzoning are partial reforms. The political durability of restrictive zoning illustrates concentrated-benefits / diffuse-costs public-choice dynamics."
   },
@@ -14739,14 +14739,13 @@
   },
   {
     "tier": 5,
-    "topic_cell": "accounting_basics",
-    "question": "FASB has overseen GAAP since 1973. The SEC requires GAAP filings, but since the late 1990s firms also report 'non-GAAP' earnings stripping items management calls 'non-recurring.' Reg G (2003) requires reconciliation but doesn't ban it. By 2015 S&P 500 non-GAAP ran ~25% above GAAP. What does the gap reveal?",
-    "answer": "The gap is sometimes the entire fraud; Munger called it 'bullshit earnings'; the costs stripped (stock-based comp, restructuring, impairments) are real costs that recur every year despite being labeled non-recurring",
+    "question": "FASB has overseen GAAP since 1973. The SEC requires GAAP filings, but since the late 1990s firms also report 'non-GAAP' earnings stripping items management calls 'non-recurring.' Reg G (2003) requires reconciliation but doesn't ban it. By 2015 S&P 500 non-GAAP ran ~25% above GAAP. Charlie Munger called the gap 'bullshit earnings.' Why did Munger use that label for the stripped categories?",
+    "answer": "Because the costs stripped (stock-based comp, restructuring, impairments) are real costs that recur every year despite being labeled non-recurring, so the gap is sometimes the entire fraud",
     "choices": [
-      "The gap is sometimes the entire fraud; Munger called it 'bullshit earnings'; the costs stripped (stock-based comp, restructuring, impairments) are real costs that recur every year despite being labeled non-recurring",
-      "Non-GAAP earnings give a more accurate picture of business performance, which is why sophisticated investors rely on them rather than GAAP when making investment decisions in equity markets",
-      "The gap reflects GAAP's inadequacy for modern intangible-heavy businesses, and FASB has been working to align GAAP with non-GAAP measures over the past two decades through ongoing standards-setting",
-      "The gap is purely a result of stock-based comp under FASB 123R (2006), and would close completely if that single rule were repealed under future FASB updates to the standards-setting process"
+      "Because the costs stripped (stock-based comp, restructuring, impairments) are real costs that recur every year despite being labeled non-recurring, so the gap is sometimes the entire fraud",
+      "Because non-GAAP earnings give a more accurate picture of underlying business performance, which is why sophisticated equity-market investors rely on them rather than GAAP measures",
+      "Because GAAP is inadequate for modern intangible-heavy businesses, and Munger believed FASB should align GAAP with non-GAAP measures through ongoing standards-setting revisions",
+      "Because the gap is purely a result of stock-based comp under FASB 123R (2006), and would close completely if that single accounting rule were repealed by FASB in a later update"
     ],
     "context": "WeWork's 'Community Adjusted EBITDA' (2019) was the reductio ad absurdum — once you adjust EBITDA itself, the metric measures nothing. Stock-based comp is the largest single category of non-GAAP adjustment for tech firms."
   },
@@ -14900,13 +14899,13 @@
   },
   {
     "tier": 2,
-    "question": "Anna earns $40,000 W-2. Her boss spent $43,060 hiring her: the extra $3,060 was the employer's FICA. Another $3,060 came off Anna's stub. The 15.3% combined bite is called the 'tax wedge.' What does the name reveal?",
-    "answer": "The wedge between what the boss pays out and what the worker takes home",
+    "question": "Anna earns $40,000 W-2. Her boss spent $43,060 hiring her: the extra $3,060 was the employer's FICA. Another $3,060 came off Anna's pay stub. The 15.3% combined bite has an economist's name. What is the gap between what the boss pays out and what the worker takes home called?",
+    "answer": "The tax wedge",
     "choices": [
-      "The wedge between what the boss pays out and what the worker takes home",
-      "The triangular shape brackets form when graphed against salary",
-      "The split between Social Security and Medicare inside FICA",
-      "The gap between federal spending and the revenue available"
+      "The tax wedge",
+      "Bracket creep",
+      "The Laffer gap",
+      "Fiscal drag"
     ],
     "context": "The tax wedge is Bastiat's seen-vs-unseen at the labor-market level. The worker sees only her half; the employer half is also her wage. The Tax Foundation puts the total US labor tax wedge near 30% once income tax is added."
   },
@@ -15764,13 +15763,13 @@
   },
   {
     "tier": 4,
-    "question": "Stanford dropout Elizabeth Holmes founded Theranos in 2003. By 2014 she had raised ~$700M at a $9B valuation, with investors including Ellison, Murdoch, the Waltons, the DeVoses. Board: Henry Kissinger and George Shultz. October 2015: Carreyrou's WSJ exposed it. January 2022: jury convicted Holmes on four counts of fraud. What does the arc illustrate?",
-    "answer": "Sophisticated investors and prominent board members are no substitute for verifying that the underlying technology actually works",
+    "question": "Stanford dropout Elizabeth Holmes founded Theranos in 2003. By 2014 she had raised ~$700M at a $9B valuation. Investors included Ellison, Murdoch, the Waltons. Board: Kissinger and Shultz. October 2015: Carreyrou's WSJ exposed it. January 2022: jury convicted Holmes on four counts of fraud. What did the prominent investor and board roster fail to substitute for?",
+    "answer": "Verifying that the underlying technology actually worked; narrative and prestige replaced technical audit",
     "choices": [
-      "Sophisticated investors and prominent board members are no substitute for verifying that the underlying technology actually works",
-      "Stanford's CS program automatically guarantees the technical validity of any startup founded by its students or dropouts",
-      "The SEC requires independent technical audits of any startup raising over fifty million dollars from accredited investors",
-      "Theranos investors were all blocked from filing civil claims against the founder by federal startup-liability shield rules"
+      "Verifying that the underlying technology actually worked; narrative and prestige replaced technical audit",
+      "Securing a Stanford CS certification of the device, automatically granted to startups founded by Stanford dropouts",
+      "Filing an SEC-required independent technical audit, mandatory for any startup raising over $50M from investors",
+      "Buying federal startup-liability shield insurance, required from 2003 to 2015 for accredited-investor disclosures"
     ],
     "context": "Theranos investors skipped deep technical due diligence in favor of narrative, prestige, and board roster. The lesson is brutal but clear: even Kissinger and Shultz on the board, even Murdoch and Ellison writing checks, did not substitute for actually checking whether the Edison machine could perform 240 tests from a finger-prick of blood. The recognition skill is to be suspicious when due diligence is being aggressively gatekept."
   },
