@@ -1,9 +1,9 @@
 # theology bank assembly log
 
-- Pool: 980 questions across 12 source files
-- After intra-bank dedup: 980
-- After gate validation: 980 pass (0 soft-warn), 0 fail
-- Final bank size: **980**
+- Pool: 1020 questions across 13 source files
+- After intra-bank dedup: 1020
+- After gate validation: 1020 pass (0 soft-warn), 0 fail
+- Final bank size: **1020**
 
 ## Sources
 
@@ -19,12 +19,13 @@
 - `R4b_greek_t3t4.json` — 60 questions
 - `R5_norse_t3t4.json` — 80 questions
 - `R6_norse_t5.json` — 40 questions
+- `R7_supplement.json` — 40 questions
 
 ## Tier distribution
 
 - T1: 220
-- T2: 220
-- T3: 220
-- T4: 150
+- T2: 230
+- T3: 242
+- T4: 158
 - T5: 170
 
