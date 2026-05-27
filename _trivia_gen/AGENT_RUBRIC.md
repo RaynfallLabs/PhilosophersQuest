@@ -51,13 +51,15 @@ For these — internal plot fair game (kids have seen them):
 
 ## TIER CAPS (total characters: stem + 4 choices + answer; context uncapped)
 
-| Tier | Cap | Voice |
-|---|---:|---|
-| T1 | ≤ 280 (hard ≤ 294) | OBVIOUS — Pikachu, Mario, Sonic, Bruce Wayne = Batman, "Luke I am your father" |
-| T2 | ≤ 480 (hard ≤ 504) | Casual fan — Akira director Otomo 1988, Pac-Man Iwatani pizza-slice |
-| T3 | ≤ 680 (hard ≤ 714) | Real fan — DK kill screen Level 22, Howard's Cross Plains Texas 1932, Patty Patterson-Gimlin Oct 20 1967 |
-| T4 | ≤ 900 (hard ≤ 945) | Deep fan — Mitchell vs Wiebe King of Kong, Eva episode 25/26 collapse, Watchmen smiley-face |
-| T5 | ≤ 1100 (hard ≤ 1155) | Ready Player One — Minus World, Princess Bride opening Hardball II Amiga, Akira's Geinoh Yamashirogumi chorus |
+**Tier = FANDOM DEPTH** (not school-grade). Per user 2026-05-27.
+
+| Tier | Fandom level | Cap | Voice |
+|---|---|---:|---|
+| T1 | **Casual cultural knowledge** | ≤ 280 (hard ≤ 294) | Just from existing in the culture — Pikachu, Mario, "Bruce Wayne is Batman", "Luke I am your father" |
+| T2 | **Direct exposure** | ≤ 480 (hard ≤ 504) | From actually watching/playing/reading the thing — Akira director Otomo 1988, Pac-Man Iwatani pizza-slice |
+| T3 | **Fan** | ≤ 680 (hard ≤ 714) | What a follower would know — DK kill screen Level 22, Howard's Cross Plains Texas 1932, Patty Patterson-Gimlin Oct 20 1967 |
+| T4 | **Huge fan** | ≤ 900 (hard ≤ 945) | Deep cuts within the franchise — Mitchell vs Wiebe King of Kong, Eva episode 25/26 collapse, Watchmen smiley-face in every issue |
+| T5 | **Mega fan** | ≤ 1100 (hard ≤ 1155) | Ready Player One Easter-egg territory — Minus World, Princess Bride opening Hardball II Amiga, Akira Geinoh Yamashirogumi chorus, ABACABB Genesis blood code |
 
 ## CHOICE-SHAPE RULES
 

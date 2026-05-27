@@ -78,19 +78,19 @@ Every question must pass:
 
 ---
 
-## §3 Tier ladder — depth, not difficulty
+## §3 Tier ladder — fandom depth
 
-Per the user's framing: **tier = depth of trivia, not subject difficulty**. High score in Pac-Man is DEEP. Name of Ash's first Pokémon is OBVIOUS.
+Per the user's refined framing 2026-05-27: **tier = depth of fandom, not subject difficulty**. School-grade level doesn't fit trivia. Use this scale instead:
 
-| Tier | Grade-ish | Char cap | Voice |
+| Tier | Fandom level | Char cap | Voice |
 |---|---|---:|---|
-| T1 | obvious | ≤ 280 | Anyone who's heard of the thing knows the answer — Pikachu, Mario, Sonic the Hedgehog, Mickey Mouse, Charlie Brown |
-| T2 | casual fan | ≤ 480 | The franchise's well-known facts — Pac-Man came out in 1980, Akira's director was Katsuhiro Otomo, Indiana Jones's hat is a fedora |
-| T3 | real fan | ≤ 680 | What a deep fan would know — Donkey Kong kill screen is level 22, Conan was created by Howard from a Texas farmhouse in 1932, Patterson-Gimlin film is Oct 20 1967 |
-| T4 | deep fan | ≤ 900 | The geek-canon stuff — Billy Mitchell vs Steve Wiebe King of Kong 2007, Eva episode 25/26 budget collapse, the 1983 video game crash + E.T. landfill in Alamogordo |
-| T5 | Ready Player One | ≤ 1100 | The deep-cut Easter eggs — Minus World glitch in SMB 1-2, the Princess Bride opening shot game = Hardball II on Amiga, the Galaga Avengers cameo, the *Akira* taiko-drum score by Geinoh Yamashirogumi |
+| T1 | **Casual cultural knowledge** | ≤ 280 | What you'd know just from existing in the culture — Pikachu, Mario, Sonic, Mickey Mouse, "Bruce Wayne is Batman", "Luke I am your father" |
+| T2 | **Direct exposure** | ≤ 480 | What you'd know from actually seeing/playing/reading the thing — Akira's director (Otomo) + 1988, Pac-Man came out 1980 by Iwatani, Inigo Montoya's full vengeance line |
+| T3 | **Fan** | ≤ 680 | What a fan who follows the franchise would know — Donkey Kong kill screen is Level 22, Howard wrote Conan from a Texas farmhouse 1932, Patty in the Patterson-Gimlin film Oct 20 1967, Dempsey Roll origin in real-1920s-boxer Jack Dempsey |
+| T4 | **Huge fan** | ≤ 900 | The deep cuts a serious fan knows — Billy Mitchell vs Steve Wiebe King of Kong, Eva episode 25/26 production collapse, the 1983 crash + E.T. landfill in Alamogordo, the smiley-face button in every Watchmen issue, Mitchell's 2018 MAME disqualification |
+| T5 | **Mega fan** | ≤ 1100 | *Ready Player One* deep-cut Easter eggs only the truly obsessed know — Minus World glitch in SMB 1-2 (the 1-2 ceiling-pipe frame-perfect jump), the Princess Bride opening shot game = Hardball II on a Commodore Amiga 1000, the Geinoh Yamashirogumi chorus on *Akira*, the ABACABB Genesis MK blood code, the Galaga Avengers cameo, Edgar's Double Oct 8 1995 (Griffey scores from first) |
 
-T5 stays grade 9-10 readability — no technical jargon dump. Should be a punchy paragraph + answer.
+T5 stays accessible — no technical-jargon dump, but the kind of stuff where a kid finishes and goes "wait, REALLY?" and immediately wants to go find the source. Hopefully the kids learn tons of information about amazing FUN topics here.
 
 ---
 

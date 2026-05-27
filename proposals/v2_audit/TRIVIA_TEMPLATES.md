@@ -122,17 +122,19 @@ See `TRIVIA_FRAMEWORK.md` §6. Key points:
 
 ---
 
-## §4 Per-tier register
+## §4 Per-tier register — fandom-depth scale
 
-| Tier | Register expectations |
-|---|---|
-| T1 | Plain English. The OBVIOUS — Pikachu, Mario, Sonic, Mickey Mouse, Spider-Man, Batman, the kamehameha. ≤ 280 total. |
-| T2 | Casual fan — director name + year + iconic detail. ≤ 480. |
-| T3 | Real fan — kill-screen levels, pulp-author hometowns, anime-arc specifics, cryptid event dates. ≤ 680. |
-| T4 | Deep fan — multi-layered named-figure drama (Mitchell vs Wiebe), production-collapse lore (Eva 25/26), classic-module designer credits. ≤ 900. |
-| T5 | *Ready Player One* — Minus World glitch, the *Princess Bride* opening Hardball II shot, the *Akira* chorus, *Tempest* vector hardware, MK Genesis blood code. ≤ 1100. |
+Per user 2026-05-27, school-grade level doesn't fit trivia. Tier = fandom depth:
 
-T5 stays grade 9-10. No academic / engineering jargon dump — use story-anchored vocabulary.
+| Tier | Fandom level | Register expectations |
+|---|---|---|
+| T1 | **Casual cultural knowledge** | What you'd know just from existing in the culture. Pikachu, Mario, Sonic, "Bruce Wayne is Batman", "Luke I am your father", radioactive spider. ≤ 280 total. |
+| T2 | **Direct exposure** | What you'd know from actually seeing/playing/reading the thing. Akira's director (Otomo) + 1988, Pac-Man's Iwatani pizza-slice origin, Inigo's full vengeance line. ≤ 480. |
+| T3 | **Fan** | What a follower of the franchise would know. Kill-screen levels, pulp-author hometowns, anime-arc-specific moves, cryptid event dates. ≤ 680. |
+| T4 | **Huge fan** | Deep cuts — multi-layered named-figure drama (Mitchell vs Wiebe), production-collapse lore (Eva 25/26), Watchmen smiley-face-in-every-issue, classic-module designer + tournament history. ≤ 900. |
+| T5 | **Mega fan** | *Ready Player One* deep cuts — Minus World glitch, Princess Bride opening Hardball II Amiga, Akira's Geinoh Yamashirogumi chorus, ABACABB Genesis blood code, Edgar's Double inning detail. ≤ 1100. |
+
+T5 stays accessible — no academic/engineering jargon dump. The point is the kid hears it and immediately wants to find the source.
 
 ---
 
