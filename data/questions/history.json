@@ -589,15 +589,15 @@
   },
   {
     "tier": 1,
-    "question": "On a hot July day in Philadelphia in 1776, delegates from 13 American colonies adopted a document written mainly by 33-year-old Thomas Jefferson, declaring themselves independent of Great Britain. What date is celebrated as Independence Day in the United States?",
-    "answer": "July 4 1776",
+    "question": "On a hot July day in Philadelphia in 1776, the Continental Congress voted for independence from Great Britain and then spent two days debating the wording of the Declaration. John Adams wrote his wife Abigail predicting that one specific date would be celebrated forever as American Independence Day with bonfires and bells. He was wrong by two days. Which date did Adams expect to be the holiday?",
+    "answer": "July 2",
     "choices": [
-      "July 4 1776",
-      "July 2 1776",
-      "June 14 1776",
-      "September 17 1776"
+      "July 2",
+      "July 4",
+      "August 1",
+      "June 14"
     ],
-    "context": "Congress actually voted for independence on July 2, but adopted the wording of the Declaration on July 4. John Adams predicted July 2 would be celebrated forever; the date that stuck was the date on the document. Adams and Jefferson both died on July 4 1826, exactly 50 years to the day after the Declaration. James Monroe also died on July 4, in 1831."
+    "context": "Adams wrote: 'The Second Day of July 1776, will be the most memorable Epocha, in the History of America... It ought to be solemnized with Pomp and Parade, with Shews, Games, Sports, Guns, Bells, Bonfires and Illuminations from one End of this Continent to the other from this Time forward forever more.' He was right about the celebrations and wrong about the date — Americans came to celebrate July 4 (when the Declaration's wording was adopted), not July 2 (when the vote for independence happened). Thomas Jefferson, the Declaration's principal author, was 33 years old."
   },
   {
     "tier": 1,
@@ -709,15 +709,15 @@
   },
   {
     "tier": 1,
-    "question": "Early on a Sunday morning, Japanese carrier-based planes attacked the United States Pacific Fleet at its base in Hawaii without warning, killing 2,403 Americans and pulling the United States into World War II. President Roosevelt called the date 'a day which will live in infamy.' What date was the attack?",
-    "answer": "December 7 1941",
+    "question": "Within hours of the Japanese attack on Pearl Harbor, Franklin Roosevelt sat down to dictate his war-message speech. Looking at the typed first draft, he crossed out a single phrase with a pencil and wrote the word above it that became the day's nickname forever after. What was the original typed phrase Roosevelt struck?",
+    "answer": "world history",
     "choices": [
-      "December 7 1941",
-      "September 1 1939",
-      "June 6 1944",
-      "August 15 1945"
+      "world history",
+      "great evil",
+      "American sorrow",
+      "naval shame"
     ],
-    "context": "Japanese planes hit Battleship Row at 7:55 AM. Eight battleships were damaged; four sank. The aircraft carriers, the real prize, were luckily out at sea. Congress declared war on Japan the next day. Three days later Nazi Germany declared war on the U.S., making it a global war. The Arizona Memorial in Pearl Harbor still drips oil from the sunken hull below."
+    "context": "The typed first draft of Roosevelt's December 8, 1941 speech to Congress read: 'a date which will live in world history.' FDR crossed out 'world history' and wrote 'infamy' in pencil — creating the line: 'a date which will live in infamy.' The original typed draft with the pencil edit survives in the FDR Presidential Library in Hyde Park, NY. The Japanese attack on December 7, 1941 killed 2,403 Americans and destroyed or damaged 19 ships. The speech was delivered the next morning; the Senate voted 82-0 and the House 388-1 (Jeannette Rankin of Montana, the same pacifist who had voted against WWI, cast the lone no vote)."
   },
   {
     "tier": 1,
@@ -1009,13 +1009,13 @@
   },
   {
     "tier": 1,
-    "question": "On the afternoon of July 3 1863, in the last desperate Confederate attack at Gettysburg, Pennsylvania, General Robert E. Lee ordered about 12,500 Confederate soldiers across an open mile of ground straight into Union cannon and rifle fire. About half were killed, wounded, or captured. What is this attack called?",
-    "answer": "Pickett's Charge",
+    "question": "At Gettysburg on July 3, 1863, Lee ordered 12,500 men across an open mile into Union artillery. Half died or were captured in under an hour. As survivors limped back, Lee rode out to meet General Pickett directly. What did he say to him?",
+    "answer": "It is all my fault, the fault is entirely mine",
     "choices": [
-      "Pickett's Charge",
-      "The Cornfield Assault",
-      "Hood's Charge",
-      "Stuart's Ride"
+      "It is all my fault, the fault is entirely mine",
+      "Reform your division for another counter charge",
+      "We have lost a battle but not yet the war",
+      "Tell your brave men their general loves them"
     ],
     "context": "Pickett's Charge is called the 'high water mark of the Confederacy' — the closest Southern arms ever came to victory in the war. The 26th North Carolina took 85% casualties. As survivors stumbled back, Lee rode out alone to meet them and said 'It is all my fault.' Three days of fighting at Gettysburg cost roughly 51,000 American casualties on both sides — the bloodiest battle in U.S. history."
   },
@@ -1093,13 +1093,13 @@
   },
   {
     "tier": 1,
-    "question": "In October 1962 American spy planes photographed Soviet missile sites being built in Cuba — 90 miles from Florida. For 13 tense days President John F. Kennedy and Soviet leader Nikita Khrushchev faced each other across the brink of nuclear war. The Soviets eventually backed down and removed the missiles. What is this two-week stand-off called?",
-    "answer": "The Cuban Missile Crisis",
+    "question": "In October 1962, US spy planes spotted Soviet missiles in Cuba. After 13 days at nuclear brink, Khrushchev publicly removed them for a US no-invasion pledge. But Kennedy made a SECRET concession through a back-channel meeting between his brother and the Soviet ambassador. What did Khrushchev secretly receive?",
+    "answer": "US removal of Jupiter missiles from Turkey",
     "choices": [
-      "The Cuban Missile Crisis",
-      "The Bay of Pigs",
-      "The Berlin Blockade",
-      "The Suez Crisis"
+      "US removal of Jupiter missiles from Turkey",
+      "US grain shipments to Soviet Ukraine for two years",
+      "US recognition of East German diplomatic legitimacy",
+      "US withdrawal of Marines from Guantanamo base"
     ],
     "context": "Kennedy ordered a naval 'quarantine' (a blockade) of Cuba on October 22. Soviet ships approached and turned back. A U.S. spy plane was shot down over Cuba on October 27, killing the pilot. Privately, Kennedy agreed to remove obsolete U.S. missiles from Turkey in exchange for the Soviet withdrawal. The crisis led directly to the 1963 Limited Nuclear Test Ban Treaty and a Moscow-Washington 'hotline' telephone link."
   },
@@ -1537,27 +1537,27 @@
   },
   {
     "tier": 1,
-    "question": "In June 1967 Israel, surrounded by Arab armies threatening invasion, launched a surprise attack that destroyed the Egyptian, Syrian, and Jordanian air forces on the ground in the first three hours. The entire war ended in six days with Israel capturing the Sinai, the Golan Heights, the West Bank, and East Jerusalem. What is this conflict called?",
-    "answer": "The Six-Day War",
+    "question": "In June 1967, Israel — surrounded by Arab armies threatening invasion — launched a surprise pre-emptive air strike that destroyed the Egyptian, Syrian, and Jordanian air forces on the ground in the first three hours of the war. Without enemy air cover, Arab ground armies were overrun in six days. What was the Israeli code name for the opening air strike?",
+    "answer": "Operation Focus",
     "choices": [
-      "The Six-Day War",
-      "The Yom Kippur War",
-      "The Suez Crisis",
-      "The War of Attrition"
+      "Operation Focus",
+      "Operation Lightning",
+      "Operation Cyclone",
+      "Operation Sandstorm"
     ],
-    "context": "The Six-Day War transformed the Middle East. Israel's territory tripled. Egyptian President Nasser, humiliated by the loss of the Sinai, resigned and then returned to power on a wave of popular support. East Jerusalem was united with West Jerusalem under Israeli rule. The Suez Canal was closed for eight years. The 1973 Yom Kippur War would see Egypt and Syria launch a surprise attack on a Jewish holy day to try to recover their lost territory."
+    "context": "Operation Focus (in Hebrew: 'Moked,' מבצע מוקד) launched at 7:45 AM on June 5, 1967. Almost every Israeli combat plane was airborne; only 12 jets remained to defend Israel. The strike destroyed 452 Egyptian aircraft on the ground in three hours and 416 total Arab planes by day's end. In six days, Israel captured the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria. The Old City of Jerusalem fell to Israeli paratroopers on June 7 — the first Jewish control of the city in 1,900 years."
   },
   {
     "tier": 1,
-    "question": "On September 15 1950, three months into the Korean War, U.N. forces under American General Douglas MacArthur launched a daring amphibious landing far behind North Korean lines at a difficult port with 30-foot tides. The landing trapped the North Korean army and reversed the war. Where was the landing?",
-    "answer": "Inchon, South Korea",
+    "question": "On September 15, 1950, three months into the Korean War, U.N. forces under American General Douglas MacArthur launched a daring amphibious landing far behind North Korean lines at a difficult port with 30-foot tides that gave landing craft only a 4-hour window per day. Most of MacArthur's staff opposed the plan as too risky. What was the code name for the landing operation?",
+    "answer": "Operation Chromite",
     "choices": [
-      "Inchon, South Korea",
-      "Pusan, South Korea",
-      "Wonsan, North Korea",
-      "Pyongyang, North Korea"
+      "Operation Chromite",
+      "Operation Hammer",
+      "Operation Tidewall",
+      "Operation Stranglehold"
     ],
-    "context": "MacArthur's staff considered Inchon almost impossible — narrow approaches, extreme tides, mudflats that would strand landing craft. MacArthur insisted on it precisely because the enemy thought it impossible. The landing succeeded brilliantly. Seoul was recaptured within two weeks. MacArthur then pushed into North Korea — provoking Chinese intervention in November 1950 and a brutal counter-offensive that pushed the U.N. back south. MacArthur was fired by President Truman in April 1951 for publicly defying his orders."
+    "context": "Operation Chromite landed at Inchon, South Korea — the impossible-tides port near Seoul. MacArthur correctly judged the surprise would shatter the North Korean army stretched along the Pusan Perimeter at the southern tip. Within two weeks, U.N. forces had recaptured Seoul and were pursuing the North Koreans across the 38th parallel. Inchon was MacArthur's last great strategic triumph; his subsequent push north toward the Yalu River triggered Chinese intervention and a long, grinding war."
   },
   {
     "tier": 2,
@@ -1657,13 +1657,13 @@
   },
   {
     "tier": 1,
-    "question": "From 1958 to 1962 Chinese Communist leader Mao Zedong launched a campaign to industrialize China overnight using mass peasant labor — backyard furnaces, mass irrigation projects, and forced grain collection. It produced the deadliest famine in human history. What is the campaign called?",
-    "answer": "The Great Leap Forward",
+    "question": "Mao's 1958-62 industrialization campaign included a 'Four Pests' purge that destroyed sparrows nationwide. Peasants beat pots and pans to keep them airborne until they fell exhausted from the sky. What unintended catastrophe did the sparrow kill cause?",
+    "answer": "Locusts multiplied without their predator, destroying the harvest",
     "choices": [
-      "The Great Leap Forward",
-      "The Long March",
-      "The Cultural Revolution",
-      "The Hundred Flowers Movement"
+      "Locusts multiplied without their predator, destroying the harvest",
+      "Rats overran cities once the sparrows no longer hunted them",
+      "Songbirds went extinct, ending centuries of Chinese poetry",
+      "Tourists stopped visiting Chinese gardens, ending rural tourism"
     ],
     "context": "Roughly 30-45 million Chinese died of starvation during the Great Leap Forward — possibly the largest human-caused death toll in history. Peasants were forced to give up cooking pots and farm tools to melt down for steel in 'backyard furnaces' (most of the steel produced was useless). Grain quotas continued to be enforced during the famine; villagers caught eating their own crops were beaten or shot. The Cultural Revolution (1966-76) was Mao's follow-up campaign that killed perhaps 1-2 million more."
   },
@@ -1837,13 +1837,13 @@
   },
   {
     "tier": 1,
-    "question": "In April-July 1994 the ethnic-majority Hutu government of the central African nation of Rwanda organized the massacre of about 800,000 ethnic-minority Tutsis (and moderate Hutus) over about 100 days. The killers used mostly machetes, encouraged by radio broadcasts naming individuals to murder. What was this genocide called?",
-    "answer": "The Rwandan Genocide",
+    "question": "Between April and July 1994, Hutu-led Rwanda organized the massacre of 800,000 Tutsis and moderate Hutus over 100 days — most killed by neighbors with machetes. Government-aligned radio station RTLM broadcast addresses of hiding places and roadblock instructions. What word did RTLM repeatedly use for the Tutsi target?",
+    "answer": "Inyenzi, the Kinyarwanda word for cockroaches",
     "choices": [
-      "The Rwandan Genocide",
-      "The Burundi Massacre",
-      "The Congo Atrocities",
-      "The Great Lakes Crisis"
+      "Inyenzi, the Kinyarwanda word for cockroaches",
+      "Banyaruguru, the Kinyarwanda for foreign hillpeople",
+      "Abakene, the Kinyarwanda for the lost ones",
+      "Tutsiri, the Kinyarwanda for tall cattle-people"
     ],
     "context": "The genocide began the day after the Rwandan president's plane was shot down on April 6 1994. The U.N. peacekeeping mission was understaffed and given no permission to intervene. Most Western governments (including the U.S. under Clinton) refused to call it genocide for weeks to avoid the legal duty to act. The killings ended only when a Tutsi-led rebel army (the Rwandan Patriotic Front) captured the capital Kigali in July 1994. Several million Hutu refugees then fled into the Congo, sparking later wars there."
   },
@@ -3697,15 +3697,15 @@
   },
   {
     "tier": 2,
-    "question": "From February 23 to March 6, 1836, about 200 Texan defenders held a fortified Spanish mission in San Antonio against the much larger Mexican army of Antonio López de Santa Anna. All the defenders died including frontier figures Jim Bowie and Davy Crockett. The defeat became a rallying cry for the Texan revolution six weeks later. What was the mission called?",
-    "answer": "The Alamo",
+    "question": "From February 23 to March 6, 1836, about 200 Texan defenders held a fortified Spanish mission in San Antonio against Antonio López de Santa Anna's much larger Mexican army. On March 3, three days before the final assault, commander William Travis drew a line in the sand with his sword and asked anyone willing to stay and die for Texas to cross it. How many of the men crossed Travis's line?",
+    "answer": "All but one — Moses Rose, who left over the wall that night",
     "choices": [
-      "The Alamo",
-      "The Goliad",
-      "The Presidio",
-      "The Mision Concepción"
+      "All but one — Moses Rose, who left over the wall that night",
+      "About half — the unmarried men, while families chose to surrender",
+      "Roughly two-thirds — most settlers stayed, most volunteer soldiers left",
+      "Around twenty — the rest accepted Santa Anna's amnesty offer"
     ],
-    "context": "The Alamo siege bought time for Sam Houston to organize the Texan army. On April 21, 1836 at the Battle of San Jacinto, Houston's army surprised Santa Anna's camp during the afternoon siesta, won the battle in 18 minutes, and captured Santa Anna himself the next day — forcing him to sign the Treaty of Velasco recognizing Texan independence. The Texan battle cry that day was 'Remember the Alamo!' Texas remained an independent republic until annexation by the U.S. in 1845."
+    "context": "Travis's line is a story attested by Louis 'Moses' Rose himself, who left the Alamo on the night of March 3-4 by climbing the wall — the only defender who did not cross. He reported the line story to the family that sheltered him; their son later published it in 1873. All other defenders died on March 6 when Mexican forces breached the walls before dawn. Davy Crockett and his Tennessee volunteers, James Bowie (fighting from his sickbed with his huge knife), and Travis all died. Sam Houston defeated Santa Anna at San Jacinto six weeks later, the men shouting 'Remember the Alamo!'"
   },
   {
     "tier": 2,
@@ -3793,13 +3793,13 @@
   },
   {
     "tier": 2,
-    "question": "On January 1, 1863, President Abraham Lincoln issued an executive order during the Civil War declaring enslaved people in Confederate-controlled territory legally free. The order changed the war's character — from a war for the Union to a war for the Union AND emancipation. What was the document called?",
-    "answer": "The Emancipation Proclamation",
+    "question": "On January 1, 1863, Lincoln issued an executive order declaring slaves in Confederate territory legally free. The order changed the war's character from preserving the Union to also ending slavery. But the document's striking scope limitation exposed it as a war measure. Which slaves did the Proclamation NOT free?",
+    "answer": "Those in Union border states and Union-occupied South",
     "choices": [
-      "The Emancipation Proclamation",
-      "The Reconstruction Act",
-      "The Freedmen's Charter",
-      "The Equal Justice Decree"
+      "Those in Union border states and Union-occupied South",
+      "Those whose owners had taken Confederate citizenship",
+      "Those under age 16 or over age 60 years old",
+      "Those in territories still organizing for statehood"
     ],
     "context": "The Proclamation did not free slaves in border states loyal to the Union (Maryland, Kentucky, Missouri, Delaware) — Lincoln did not believe his war powers extended that far. It also did not technically free anyone immediately, since it applied to territory Lincoln could not yet reach. But it changed the war's stated purpose, blocked British and French recognition of the Confederacy, and let Black men enlist in the Union Army (about 180,000 eventually did). Full constitutional abolition came with the 13th Amendment, ratified December 1865."
   },
@@ -3913,15 +3913,15 @@
   },
   {
     "tier": 2,
-    "question": "On May 17, 1954, the U.S. Supreme Court unanimously ruled that racially segregated public schools were unconstitutional, overturning the 1896 Plessy v. Ferguson 'separate but equal' doctrine. Chief Justice Earl Warren wrote the opinion. What was the case called?",
-    "answer": "Brown v. Board of Education of Topeka",
+    "question": "On May 17, 1954, the US Supreme Court overturned the 1896 Plessy v. Ferguson 'separate but equal' doctrine, ruling racially segregated public schools unconstitutional. Chief Justice Earl Warren spent months strategically delaying the decision to achieve one specific outcome. What vote count did Warren achieve?",
+    "answer": "9-0 unanimous, with every Southern justice on board",
     "choices": [
-      "Brown v. Board of Education of Topeka",
-      "Loving v. Virginia (interracial marriage)",
-      "Roe v. Wade (federal abortion right)",
-      "McCulloch v. Maryland (federal bank)"
+      "9-0 unanimous, with every Southern justice on board",
+      "6-3 with two Southern dissents",
+      "7-2 with Warren and Frankfurter dissenting on enforcement",
+      "5-4 along party lines, with Eisenhower's appointee deciding"
     ],
-    "context": "The lead plaintiff was Oliver Brown, whose daughter Linda had been required to walk past a nearby white school to attend a Black school 21 blocks away in Topeka, Kansas. The NAACP Legal Defense Fund's lead attorney was Thurgood Marshall, who would later become the first Black Supreme Court Justice (1967). The decision faced massive resistance in the South — in 1957 President Eisenhower had to send the 101st Airborne Division to Little Rock, Arkansas to enforce school integration at Central High School."
+    "context": "Warren considered a divided decision politically explosive — any dissent would have given segregationists a banner to rally around. He delayed the ruling from December 1952 until May 1954 to bring along holdout justices, including Stanley Reed of Kentucky (the last vote, finally persuaded that day). The unanimous decision famously declared 'separate educational facilities are inherently unequal.' Implementation was deliberately slow — Brown II (1955) ordered desegregation 'with all deliberate speed,' a phrase that gave segregationists decades of delay. The named plaintiff was third-grader Linda Brown of Topeka, Kansas."
   },
   {
     "tier": 2,
@@ -3985,13 +3985,13 @@
   },
   {
     "tier": 2,
-    "question": "On the clear morning of September 11, 2001, 19 hijackers from al-Qaeda took control of four passenger airliners. Two struck the twin towers of the World Trade Center in New York; one struck the Pentagon; one crashed in a Pennsylvania field after passengers tried to retake the plane. About 3,000 people died. Who led al-Qaeda and ordered the attacks?",
-    "answer": "Osama bin Laden",
+    "question": "On the clear morning of September 11, 2001, 19 al-Qaeda hijackers crashed four jetliners — two into the WTC towers, one into the Pentagon, one into a Pennsylvania field. When the towers collapsed, a specific number of New York City firefighters died — the largest single-day loss for any American fire department in history. How many FDNY firefighters were killed?",
+    "answer": "343",
     "choices": [
-      "Osama bin Laden",
-      "Ayman al-Zawahiri",
-      "Mohammed Atta",
-      "Khalid Sheikh Mohammed"
+      "343",
+      "198",
+      "512",
+      "107"
     ],
     "context": "The North and South Towers collapsed within about 100 minutes of impact. Mayor Rudy Giuliani led the city's response. The U.S. invasion of Afghanistan began less than a month later; the Iraq War followed in March 2003. Bin Laden remained at large for nearly a decade. On May 2, 2011, U.S. Navy SEALs killed him at a compound in Abbottabad, Pakistan in a raid ordered by President Barack Obama. Mohammed Atta led the operational hijacker team; Khalid Sheikh Mohammed was the operational mastermind, captured in 2003."
   },
@@ -4093,13 +4093,13 @@
   },
   {
     "tier": 2,
-    "question": "On January 30-31, 1968 — during the Tet (lunar new year) ceasefire — communist North Vietnamese and Viet Cong forces launched simultaneous attacks on over 100 cities and military bases throughout South Vietnam, including the U.S. embassy in Saigon. American forces beat back the attacks but the offensive shattered U.S. public confidence in the war. What is the offensive called?",
-    "answer": "The Tet Offensive",
+    "question": "On January 30-31, 1968, North Vietnamese and Viet Cong forces attacked 100+ South Vietnamese cities during the Tet ceasefire, including a Viet Cong squad that briefly occupied the US embassy in Saigon. On February 27, CBS anchor Walter Cronkite editorialized that the war was 'mired in stalemate.' What did LBJ reportedly say in the White House?",
+    "answer": "If I have lost Cronkite, I have lost middle America",
     "choices": [
-      "The Tet Offensive",
-      "The Saigon Uprising",
-      "The Hanoi Plan",
-      "The Mekong Strike"
+      "If I have lost Cronkite, I have lost middle America",
+      "Bring me McNamara, my generals must be replaced",
+      "Get me Westmoreland on the phone, this needs answers",
+      "Find me a Democrat who can win this war by November"
     ],
     "context": "Militarily the Tet Offensive was a Viet Cong defeat — many of its fighters were killed and the expected popular uprising in southern cities did not occur. Politically it was a disaster for the United States. CBS Evening News anchor Walter Cronkite declared on February 27 that the war was 'mired in stalemate.' President Lyndon Johnson reportedly told an aide: 'If I've lost Cronkite, I've lost middle America.' On March 31, 1968 Johnson announced he would not run for re-election. Vietnam War combat operations for the U.S. would continue until 1973; Saigon fell to North Vietnamese forces on April 30, 1975."
   },
@@ -4405,13 +4405,13 @@
   },
   {
     "tier": 2,
-    "question": "In September 480 BC, with Athens evacuated and the Persian fleet of about 1,200 ships hunting the smaller Greek fleet (~370 ships), Athenian commander Themistocles tricked the Persians into entering a narrow strait where their numbers would not help them. The Greeks destroyed about 200-300 Persian ships and lost about 40. What was the name of the strait?",
-    "answer": "The Salamis Strait — between Salamis island and Attica",
+    "question": "In September 480 BC, with Athens evacuated and the Persian fleet of 1,200 ships hunting a smaller Greek fleet (~370 ships), Themistocles tricked Xerxes by sending his slave Sicinnus with a false message to the Persian camp. What did Sicinnus tell Xerxes?",
+    "answer": "The Greeks were terrified and about to flee",
     "choices": [
-      "The Salamis Strait — between Salamis island and Attica",
-      "The Hellespont — between Europe and Asia at modern Çanakkale",
-      "The Strait of Artemision — at the northern entrance to the Aegean",
-      "The Strait of Euripus — between Euboea and the Greek mainland"
+      "The Greeks were terrified and about to flee",
+      "The Greek fleet had split into three squadrons",
+      "Athens was burning, Greek admirals were arguing",
+      "Secret Greek allies of Persia would betray the fleet"
     ],
     "context": "King Xerxes watched the disaster from a golden throne set up on Mount Aigaleo overlooking the strait. He retreated to Persia within weeks, leaving a smaller force under his general Mardonius, who was destroyed at Plataea the next year (479 BC). The Greek playwright Aeschylus had fought at Salamis as a hoplite and dramatized the battle eight years later in 'The Persians' — the oldest complete surviving play in Western literature."
   },
@@ -4753,15 +4753,15 @@
   },
   {
     "tier": 2,
-    "question": "On April 26, 1986, Reactor No. 4 at a Soviet nuclear power plant in Ukraine exploded during a safety test, releasing the largest atmospheric release of radioactive material in human history. The Soviet government's first instinct was to deny anything had happened. The world only learned about the disaster three days later when radiation alarms triggered at a Swedish nuclear plant. What was the plant called?",
-    "answer": "Chernobyl",
+    "question": "On April 26, 1986, Reactor No. 4 at a Soviet nuclear power plant in Ukraine exploded during a botched safety test, releasing the largest atmospheric release of radioactive material in human history. The Soviet government tried to suppress the news. Two days later, alarms went off at a nuclear plant in another country — workers initially thought their own plant had leaked, then realized the radiation was blowing in from elsewhere. At which foreign plant was the disaster first detected?",
+    "answer": "Forsmark Nuclear Power Plant in Sweden",
     "choices": [
-      "Chernobyl",
-      "Three Mile Island",
-      "Fukushima Daiichi",
-      "Mayak"
+      "Forsmark Nuclear Power Plant in Sweden",
+      "Loviisa Nuclear Power Plant in Finland",
+      "Olkiluoto Nuclear Power Plant in Finland",
+      "Greifswald Nuclear Power Plant in East Germany"
     ],
-    "context": "About 30 workers and firefighters died of acute radiation poisoning in the first weeks; the long-term cancer death toll is debated and estimates range from a few thousand to tens of thousands. About 116,000 people were permanently evacuated from a 30-km zone; the entire town of Pripyat (population 49,000) was abandoned. The disaster badly damaged Soviet credibility and was a major factor in Gorbachev's later willingness to allow more open discussion ('glasnost'). The reactor remains entombed in a concrete and steel sarcophagus."
+    "context": "On the morning of April 28, 1986, a Forsmark worker stepping into a radiation monitor set off alarms — he was contaminated. After hours of internal checking, Forsmark's engineers determined the radiation was on workers' clothing (from outside) and traced atmospheric measurements pointing east-southeast — toward Soviet territory. Sweden contacted Moscow demanding answers. The Soviet government issued a brief acknowledgment the same evening. The plume eventually crossed most of Europe. Reactor No. 4 of the Chernobyl Nuclear Power Plant near Pripyat, Ukrainian SSR was the source. The April 26 explosion killed 2 workers immediately; 30+ first responders and operators died of acute radiation poisoning within months. Long-term cancer-attributable deaths are estimated at 4,000 to 60,000+ across Europe."
   },
   {
     "tier": 2,
@@ -5845,15 +5845,15 @@
   },
   {
     "tier": 3,
-    "question": "Joan of Arc was the illiterate peasant girl from Domrémy who at 17 convinced the French dauphin Charles to give her command of an army. She broke the English siege of Orleans in May 1429 and saw Charles crowned king at Reims that July. Captured by the Burgundians in 1430, she was sold to the English and tried by a French church court. Her execution date and age were:",
-    "answer": "May 30 1431, age 19 — burned at the stake in Rouen's market square",
+    "question": "Joan of Arc was burned alive in Rouen on May 30, 1431, at age 19. Her trial transcript shows the English-aligned court had trouble finding a charge that would stick under Church law. They convicted her of one specific religious offense — relatively minor itself but reframed as repeated heresy because she had 'relapsed.' What was the charge?",
+    "answer": "Wearing men's clothing in defiance of Church teaching",
     "choices": [
-      "May 30 1431, age 19 — burned at the stake in Rouen's market square",
-      "January 6 1432, age 20 — burned at the stake outside the cathedral at Reims",
-      "March 4 1431, age 17 — beheaded by English soldiers without a formal trial",
-      "May 30 1431, age 24 — hanged at Calais after seven months of imprisonment"
+      "Wearing men's clothing in defiance of Church teaching",
+      "Claiming direct revelation from angels without priestly mediation",
+      "Refusing to acknowledge papal authority over the King of France",
+      "Marrying a French nobleman in a secret peasant ceremony"
     ],
-    "context": "Joan was charged with heresy and cross-dressing, condemned, and burned on May 30 1431. Her ashes were thrown into the Seine. A retrial in 1456, ordered by Charles VII, found her innocent. She was canonized as a saint in 1920. Her birthdate is uncertain but commonly given as January 6 1412 — making her 19 at her death."
+    "context": "Joan had worn men's armor and clothing throughout her military service. When the court forced her to abjure and wear women's clothes, she did briefly — then resumed men's dress within days (under disputed circumstances, possibly to prevent assault in prison). The court ruled this made her a 'relapsed heretic,' subject to execution. Her last word at the stake, per witness chronicles, was 'Jesus.' She was canonized in 1920. The cross-dressing charge has been one of the trial's most-debated aspects ever since."
   },
   {
     "tier": 3,
@@ -5977,7 +5977,7 @@
   },
   {
     "tier": 3,
-    "question": "Thomas Edison invented the phonograph in 1877 — a tin-foil cylinder rotated under a stylus that vibrated with the speaker's voice. Edison made the first recording himself, reciting four words from a children's nursery rhyme into the horn. What four words did Edison record?",
+    "question": "Thomas Edison invented the phonograph in 1877 — a tin-foil cylinder rotated under a stylus that vibrated with the speaker's voice. Edison made the first recording himself, reciting the opening line from a children's nursery rhyme into the horn. What the opening line did Edison record?",
     "answer": "'Mary had a little lamb'",
     "choices": [
       "'Mary had a little lamb'",
@@ -8633,9 +8633,9 @@
     "answer": "Nicolae Ceaușescu of Romania — shot December 25 1989",
     "choices": [
       "Nicolae Ceaușescu of Romania — shot December 25 1989",
-      "Erich Honecker of East Germany — shot December 18 1989",
-      "Gustáv Husák of Czechoslovakia — shot December 23 1989",
-      "Todor Zhivkov of Bulgaria — shot December 27 1989"
+      "Erich Honecker of East Germany — deposed October 1989, died in Chile 1994",
+      "Gustáv Husák of Czechoslovakia — resigned December 1989, died of natural causes 1991",
+      "Todor Zhivkov of Bulgaria — resigned November 1989, tried for embezzlement, died 1998"
     ],
     "context": "Ceaușescu and his wife Elena were tried in a brief military proceeding and shot in the courtyard of a military barracks. East Germany's Honecker was forced to resign in October 1989; he later went into Soviet exile and died of cancer in Chile in 1994. The Velvet Revolution in Czechoslovakia (Václav Havel) was peaceful. Hungary had already opened its border to Austria in August 1989, allowing East Germans to escape through Hungary. The Soviet Union itself dissolved December 25 1991."
   },
