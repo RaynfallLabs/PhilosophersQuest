@@ -709,15 +709,15 @@
   },
   {
     "tier": 1,
-    "question": "Austrians predicted boom-bust cycles caused by central banks. Which famous bust did Austrians warn about FIRST?",
-    "answer": "The 2008 US housing crash and crisis",
+    "question": "Austrian economists called a major American bust FIRST using their business-cycle theory. Hayek's monthly bulletins predicted the US stock-market collapse months in advance. Which bust?",
+    "answer": "1929 Wall Street crash",
     "choices": [
-      "The 2008 US housing crash and crisis",
-      "The 1929 stock market crash and Depression",
-      "The 1933 banking crisis and gold seizure",
-      "The 1971 closing of the gold window"
+      "1929 Wall Street crash",
+      "2008 housing collapse",
+      "2000 dot-com crash",
+      "1973 oil shock recession"
     ],
-    "context": "Peter Schiff and other Austrians repeatedly warned (2005-2007) on TV that the housing market would crash. The mainstream profession mocked them. They were right."
+    "context": "Hayek and Mises both warned the Fed's easy-credit 1920s policies would produce a bust. Hayek's early-1929 monthly bulletins at the Vienna Austrian Institute for Business Cycle Research are well-documented. Austrian-school analysis also called 2008 — but the FIRST famous Austrian call was 1929."
   },
   {
     "tier": 1,
@@ -1645,7 +1645,7 @@
   },
   {
     "tier": 1,
-    "question": "You can cut a gold bar in half. Both halves are still pure gold. Try that with a cow. Why does this matter for money?",
+    "question": "You can cut a gold bar in half. Both halves are still pure gold. Try that with a cow. Why does dilution of money supply matter for a saver?",
     "answer": "Money must divide cleanly — so trades stay fair",
     "choices": [
       "Money must divide cleanly — so trades stay fair",
@@ -5395,7 +5395,7 @@
       "Yes — marginal revenue ($6) exceeds marginal cost ($4), so adds $2 profit",
       "No — average profit per widget is $5 so the new worse-margin widget hurts overall — averaged confusion",
       "Maybe — the decision depends on union rules not on cost and revenue — a non-economic factor",
-      "No — marginal analysis is not a real economic concept and should be ignored — a denial"
+      "No — marginal analysis is not a real economic concept and should be ignored"
     ],
     "context": "Marginal analysis is the workhorse of economic decision-making. The owner cares whether ONE MORE unit adds more revenue than cost. Apply at the margin, not the average."
   },
@@ -5817,7 +5817,7 @@
       "Marx and Engels — original Marxist theory was vindicated when the USSR met its 1980s production targets fully",
       "Keynes and Galbraith — the postwar mixed-economy consensus showed planning could be merged with markets"
     ],
-    "context": "Robert Heilbroner, lifelong socialist and Harvard economist, wrote in 'The Triumph of Capitalism' (The New Yorker, Jan 23 1989): 'Mises was right.' He acknowledged the calculation debate was over even before the Berlin Wall fell that November."
+    "context": "Robert Heilbroner, lifelong socialist and The New School for Social Research economist, wrote in 'The Triumph of Capitalism' (The New Yorker, Jan 23 1989): 'Mises was right.' He acknowledged the calculation debate was over even before the Berlin Wall fell that November."
   },
   {
     "tier": 3,
@@ -6457,7 +6457,7 @@
   },
   {
     "tier": 3,
-    "question": "The Bitcoin Genesis block was mined on January 3, 2009, with a coinbase reward of 50 BTC. These 50 coins are provably unspendable — no private key can ever spend them. Why does this matter for Bitcoin's design?",
+    "question": "The Bitcoin Genesis block was mined on January 3, 2009, with a coinbase reward of 50 BTC. These 50 coins are provably unspendable — no private key can ever spend them. What property does Bitcoin's design give every node owner?",
     "answer": "Proves no founder can spend the first coins — the 'immaculate conception' criticism is defused at block zero",
     "choices": [
       "Proves no founder can spend the first coins — the 'immaculate conception' criticism is defused at block zero",
@@ -10417,7 +10417,7 @@
   },
   {
     "tier": 4,
-    "question": "Mises's *The Theory of Money and Credit* (1912), published when he was 31, extended marginal utility theory to money for the first time. His key contribution: the regression theorem, tracing money's purchasing power back through time to a pre-monetary commodity origin. Why does this matter for Bitcoin?",
+    "question": "Mises's *The Theory of Money and Credit* (1912), published when he was 31, extended marginal utility theory to money for the first time. His key contribution: the regression theorem, tracing money's purchasing power back through time to a pre-monetary commodity origin. What's the seen-and-unseen distinction in this case?",
     "answer": "Defenders argue early miners' willingness to acquire it for expected future monetary use satisfies regression",
     "choices": [
       "Defenders argue early miners' willingness to acquire it for expected future monetary use satisfies regression",
@@ -11113,7 +11113,7 @@
   },
   {
     "tier": 4,
-    "question": "Sweden has the most extensive rent control system in Europe. Stockholm rental waitlists average 9+ years for an inner-city apartment; some take 25+ years to obtain through the queue. Subletting from queue-recipients to actual renters is illegal but common. What does this illustrate about rent control's seen-versus-unseen costs?",
+    "question": "Sweden has the most extensive rent control system in Europe. Stockholm rental waitlists average 9+ years for an inner-city apartment; some take 25+ years to obtain through the queue. Subletting from queue-recipients to actual renters is illegal but common. What's the unseen cost of rent control?",
     "answer": "Below-market rent (seen) creates a parallel black market and dramatic mismatches between who needs and who occupies housing",
     "choices": [
       "Below-market rent (seen) creates a parallel black market and dramatic mismatches between who needs and who occupies housing",
@@ -11581,7 +11581,7 @@
   },
   {
     "tier": 5,
-    "question": "Ludwig von Mises died on October 10, 1973, at age 92 in New York City. His funeral was small. His widow Margit organized his papers for the Hoover Institution. In 1982 — nine years after his death — Lewellyn Rockwell and Murray Rothbard founded the Mises Institute at Auburn University. Why was the institute necessary?",
+    "question": "Ludwig von Mises died on October 10, 1973, at age 92 in New York City. His funeral was small. His widow Margit organized his papers for the Hoover Institution. In 1982 — nine years after his death — Llewellyn Rockwell and Murray Rothbard founded the Mises Institute at Auburn University. Why was the institute necessary?",
     "answer": "Mises's work had been pushed to the academic margins for decades — the institute would publish his and Rothbard's books, run conferences, train new scholars, and preserve the tradition outside hostile economics departments",
     "choices": [
       "Mises's work had been pushed to the academic margins for decades — the institute would publish his and Rothbard's books, run conferences, train new scholars, and preserve the tradition outside hostile economics departments",
@@ -11593,7 +11593,7 @@
   },
   {
     "tier": 5,
-    "question": "The Ludwig von Mises Institute was founded in 1982 by Lewellyn Rockwell with the encouragement of Margit von Mises and Murray Rothbard. The institute was located at Auburn University in Alabama — a deliberately non-elite location. What was the strategic reasoning behind this geographic choice?",
+    "question": "The Ludwig von Mises Institute was founded in 1982 by Llewellyn Rockwell with the encouragement of Margit von Mises and Murray Rothbard. The institute was located at Auburn University in Alabama — a deliberately non-elite location. What was the strategic reasoning behind this geographic choice?",
     "answer": "Distance from establishment economics departments — the institute would publish Austrian work outside hostile institutional environments, training scholars without dependence on universities that had marginalized the tradition",
     "choices": [
       "Distance from establishment economics departments — the institute would publish Austrian work outside hostile institutional environments, training scholars without dependence on universities that had marginalized the tradition",
@@ -12427,7 +12427,7 @@
       "The Lightning Network — a layer-2 protocol allowing nearly-instant Bitcoin transactions through bidirectional payment channels, with the channels' opening and closing transactions settled on the main chain — proposed in 2015 by Poon and Dryja, mainnet launched January 2018",
       "Sharding — a database technique allowing different Bitcoin nodes to track only portions of the chain, with full validation reconstructed from partial information",
       "Proof-of-stake — SegWit prepared Bitcoin for the eventual transition from energy-intensive proof-of-work mining to proof-of-stake validation — a view that would face serious historical objections",
-      "Sidechains — SegWit enabled the merging of Bitcoin Cash, Bitcoin SV, and other forked chains back into a single network — a position contradicting the Austrian record"
+      "Sidechains — SegWit enabled the merging of Bitcoin Cash, Bitcoin SV, and other forked chains back into a single network"
     ],
     "context": "Lightning Network is Bitcoin's primary scaling solution. SegWit fixed transaction malleability — the prerequisite for safely opening Lightning channels. The two-party channels can route through other channels, allowing payment paths across the network."
   },
@@ -13861,7 +13861,7 @@
   },
   {
     "tier": 5,
-    "question": "The 12 regional Federal Reserve Banks are technically owned by their member commercial banks, which must subscribe to stock equal to 6% of their capital and surplus. Members receive a 6% statutory dividend on paid-in stock. Member-bank shareholders elect 6 of the 9 directors of their regional Reserve Bank. Why does this matter for public-choice analysis?",
+    "question": "The 12 regional Federal Reserve Banks are technically owned by their member commercial banks, which must subscribe to stock equal to 6% of their capital and surplus. Members receive a 6% statutory dividend on paid-in stock. Member-bank shareholders elect 6 of the 9 directors of their regional Reserve Bank. What does public choice theory predict bureaucrats will maximize?",
     "answer": "Direct ownership and director-election rights give member banks formal channels of influence on monetary policy the public lacks, embedding industry capture in the institution's legal structure",
     "choices": [
       "Direct ownership and director-election rights give member banks formal channels of influence on monetary policy the public lacks, embedding industry capture in the institution's legal structure",
@@ -15259,7 +15259,7 @@
   },
   {
     "tier": 4,
-    "question": "A working-class family in Tennessee (no state income tax) pays ~9.5% sales tax on purchases. On a $50K budget consuming $40K in taxable goods, that's $3,800 in sales tax. They rent too: the $1,800/month rent embeds the landlord's property tax. Both taxes are invisible at point of payment. Why does this matter for tax policy?",
+    "question": "A working-class family in Tennessee (no state income tax) pays ~9.5% sales tax on purchases. On a $50K budget consuming $40K in taxable goods, that's $3,800 in sales tax. They rent too: the $1,800/month rent embeds the landlord's property tax. Both taxes are invisible at point of payment. Who pays the corporate income tax, ultimately?",
     "answer": "Taxes hidden inside transactions are politically easier to raise than visible income taxes; the bite spreads across thousands of moments, none felt acutely",
     "choices": [
       "Taxes hidden inside transactions are politically easier to raise than visible income taxes; the bite spreads across thousands of moments, none felt acutely",
@@ -15931,7 +15931,7 @@
   },
   {
     "tier": 5,
-    "question": "December 2008: Tesla had weeks of cash. SpaceX had just completed Falcon 1's first launch (September 28) and won a $1.6B NASA Commercial Resupply contract (December 23). Musk had spent ~$180M from his PayPal exit on the two and was near personal bankruptcy. He famously split his remaining cash between them — borrowing from friends. Tesla closed an emergency convertible-note round December 24. What does this illustrate about founder capital?",
+    "question": "December 2008: Tesla had weeks of cash. SpaceX had just completed Falcon 1's first launch (September 28) and won a $1.6B NASA Commercial Resupply contract (December 23). Musk had spent ~$180M from his PayPal exit on the two and was near personal bankruptcy. He famously split his remaining cash between them — borrowing from friends. Tesla closed an emergency convertible-note round December 24. What did the entrepreneur risk that VCs typically don't?",
     "answer": "Founders sometimes fund their own companies through near-collapse, taking on enormous concentrated risk for a binary outcome that could ruin them",
     "choices": [
       "Founders sometimes fund their own companies through near-collapse, taking on enormous concentrated risk for a binary outcome that could ruin them",
@@ -16399,7 +16399,7 @@
   },
   {
     "tier": 5,
-    "question": "Bernie Madoff was arrested December 11, 2008, as his $65B fraud collapsed. Harry Markopolos had submitted memos to the SEC in 2000, 2001, 2005, and 2007 — including 'The World's Largest Hedge Fund is a Fraud' — showing the impossibility of Madoff's reported returns. Madoff claimed a 'split-strike conversion' producing 10-12% annual gains with almost no down months over two decades. What's the recognition skill that protects retail investors from the next Madoff?",
+    "question": "Bernie Madoff was arrested December 11, 2008, as his $65B fraud collapsed. Harry Markopolos had submitted memos to the SEC in 2000, 2001, 2005, and 2007 — including 'The World's Largest Hedge Fund is a Fraud' — showing the impossibility of Madoff's reported returns. Madoff claimed a 'split-strike conversion' producing 10-12% annual gains with almost no down months over two decades. What pattern in Madoff's returns should have signaled fraud?",
     "answer": "Consistent returns across all market regimes are the tell — no genuine strategy produces smooth gains through booms, crashes, and crises",
     "choices": [
       "Consistent returns across all market regimes are the tell — no genuine strategy produces smooth gains through booms, crashes, and crises",
@@ -16951,7 +16951,7 @@
   },
   {
     "tier": 5,
-    "question": "The Dow lost 89% from 1929-1932 (Great Depression); 22.6% on Black Monday October 19, 1987; 54% from October 2007 to March 2009 (Global Financial Crisis); 34% February-March 2020 (COVID). An investor who bought the S&P 500 at the 1929 peak — the worst-timed buy in modern US history — and reinvested dividends, breaking even in real terms took until 1959 (30 years) but their grandchildren's portfolio grew at long-run rates. What's the recognition skill for young investors today?",
+    "question": "The Dow lost 89% from 1929-1932 (Great Depression); 22.6% on Black Monday October 19, 1987; 54% from October 2007 to March 2009 (Global Financial Crisis); 34% February-March 2020 (COVID). An investor who bought the S&P 500 at the 1929 peak — the worst-timed buy in modern US history — and reinvested dividends, breaking even in real terms took until 1959 (30 years) but their grandchildren's portfolio grew at long-run rates. What three things should a young investor check before believing a stock tip?",
     "answer": "Crashes hurt buyers near the top; over decades, broad-market index holders are made whole by compounding",
     "choices": [
       "Crashes hurt buyers near the top; over decades, broad-market index holders are made whole by compounding",
@@ -16963,7 +16963,7 @@
   },
   {
     "tier": 5,
-    "question": "Bernie Madoff (~$65B paper / 2008), Theranos (~$9B peak / 2018), Enron (~$74B peak / 2001), and FTX (~$8B customer funds / 2022) share structural features. Each had charismatic leadership, prestigious endorsements, opaque internals, and reported results too consistent or too good to be true. Harry Markopolos, John Carreyrou, Bethany McLean, and Coffeezilla each tried to warn the public; each was initially dismissed. What's the recognition skill these four cases together teach?",
+    "question": "Bernie Madoff (~$65B paper / 2008), Theranos (~$9B peak / 2018), Enron (~$74B peak / 2001), and FTX (~$8B customer funds / 2022) share structural features. Each had charismatic leadership, prestigious endorsements, opaque internals, and reported results too consistent or too good to be true. Harry Markopolos, John Carreyrou, Bethany McLean, and Coffeezilla each tried to warn the public; each was initially dismissed. What recurring institutional failure do these four fraud cases share?",
     "answer": "Concentrated reputation plus consistent returns plus opacity is the canonical fraud signature",
     "choices": [
       "Concentrated reputation plus consistent returns plus opacity is the canonical fraud signature",
