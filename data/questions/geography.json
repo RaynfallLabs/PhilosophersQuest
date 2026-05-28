@@ -841,7 +841,7 @@
   },
   {
     "tier": 3,
-    "question": "In the Karoo Basin of South Africa, a single rock layer holds fossils of a reptile called Lystrosaurus from ~250 million years ago. The same Lystrosaurus fossils show up in identical rock layers in India, Antarctica, and Australia. What does this scatter prove?",
+    "question": "In the Karoo Basin of South Africa, a single rock layer holds fossils of a reptile called Lystrosaurus from ~250 million years ago. The same Lystrosaurus fossils show up in identical rock layers in India, Antarctica, and Australia. What single ancient supercontinent does this Lystrosaurus scatter prove?",
     "choices": [
       "Those continents were once joined as Gondwana; Lystrosaurus walked across before they drifted apart",
       "Lystrosaurus could swim across oceans, colonizing new continents in a single radiation event",
@@ -973,7 +973,7 @@
   },
   {
     "tier": 3,
-    "question": "On the seafloor of the Pacific, basalt rocks show alternating bands of magnetic orientation — one band lined up with Earth's current magnetic field, the next band reversed, then back again. The bands are symmetric across mid-ocean ridges. What does this magnetic striping prove?",
+    "question": "On the seafloor of the Pacific, basalt rocks show alternating bands of magnetic orientation — one band lined up with Earth's current magnetic field, the next band reversed, then back again. The bands are symmetric across mid-ocean ridges. What process does the symmetric magnetic striping across mid-ocean ridges prove?",
     "choices": [
       "Seafloor spreading — new basalt at the ridge records the magnetic field, then drifts outward as more rises",
       "Polar wandering — Earth's magnetic poles have drifted across the seafloor leaving stripes behind them",
@@ -1657,7 +1657,7 @@
   },
   {
     "tier": 5,
-    "question": "Anak Krakatau ('Child of Krakatau') emerged in 1927 in the caldera left by its parent's 1883 eruption. In December 2018 its southwest flank collapsed into the sea, generating a tsunami that killed ~400 people on Sundas Strait coasts of Java and Sumatra. What does this event reveal about flank collapse risk at island volcanoes generally?",
+    "question": "Anak Krakatau ('Child of Krakatau') emerged in 1927 in the caldera left by its parent's 1883 eruption. In December 2018 its southwest flank collapsed into the sea, generating a tsunami that killed ~400 people on Sundas Strait coasts of Java and Sumatra. What kind of trigger does Anak Krakatau's 2018 collapse-tsunami expose at island volcanoes?",
     "choices": [
       "Rapid-growth island volcanoes are inherently unstable; flank collapse can trigger tsunamis without any precursor earthquake",
       "Island volcanoes that erupt frequently are most stable; rare-eruption volcanoes pose the greatest collapse-tsunami risk",
@@ -2149,7 +2149,7 @@
   },
   {
     "tier": 2,
-    "question": "The world's largest hot desert covers most of north Africa today. Cave paintings inside it show people swimming with crocodiles. Rock layers underneath hold hippo bones. What does this evidence tell us?",
+    "question": "The world's largest hot desert covers most of north Africa today. Cave paintings inside it show people swimming with crocodiles. Rock layers underneath hold hippo bones. What kind of climate did the Sahara have between ~9000 and 5000 BC?",
     "choices": [
       "The region had a much wetter, greener phase from roughly 9000 to 5000 BC",
       "The paintings were made by visitors from wetter regions far to the south",
@@ -2619,12 +2619,12 @@
     "tier": 3,
     "question": "Greenland's interior ice sheet rises to 3,000 m above sea level. The top is far colder than coastal Greenland — and even colder than its altitude alone explains. What single positive-feedback amplifies the cold on the high ice cap, beyond simple lapse rate?",
     "choices": [
-      "Bright ice reflects ~85% of sunlight (high albedo) — most solar energy bounces off, keeping the surface cold",
+      "Bright ice reflects ~85% of sunlight — most solar energy bounces off, keeping the surface cold",
       "Surface inversion traps any heat below — cold radiating air sits on the ice and blocks heat loss to space",
       "High humidity inversion absorbs all infrared — water vapor at altitude blocks the ice from re-radiating heat",
       "Strong convection lifts heat upward — warm air at the surface rises immediately to colder altitudes"
     ],
-    "answer": "Bright ice reflects ~85% of sunlight (high albedo) — most solar energy bounces off, keeping the surface cold",
+    "answer": "Bright ice reflects ~85% of sunlight — most solar energy bounces off, keeping the surface cold",
     "context": "Albedo feedback: bright snow and ice reflect most solar shortwave radiation. With less absorbed energy, the surface stays cold; cold surface holds snow and ice; the cycle reinforces. The same feedback amplified ice ages — once polar ice spread, the planet kept cooling until a tipping point reversed."
   },
   {
@@ -3135,12 +3135,12 @@
     "tier": 4,
     "question": "An exotic atmospheric layer called the ionosphere, 60-1,000 km up, contains ionized particles created by solar UV and X-rays. The ionosphere reflects shortwave radio waves around Earth's curve — the basis of long-distance amateur radio. What single feature of the ionosphere lets it reflect different radio frequencies?",
     "choices": [
-      "Different ionized layers (D, E, F1, F2) at different altitudes reflect different frequencies; the F2 layer reflects HF best",
+      "Different ionized layers at different altitudes reflect different frequencies; the F2 layer reflects HF best",
       "All ionized layers reflect all frequencies equally well; the apparent variation is from atmospheric absorption at the ground",
       "Different ionized particles reflect different frequencies; positive ions reflect HF, electrons reflect VHF and UHF",
       "Different particle densities reflect different frequencies; high density absorbs all frequencies, low density reflects all"
     ],
-    "answer": "Different ionized layers (D, E, F1, F2) at different altitudes reflect different frequencies; the F2 layer reflects HF best",
+    "answer": "Different ionized layers at different altitudes reflect different frequencies; the F2 layer reflects HF best",
     "context": "The ionosphere has layered structure: D layer (60-90 km, daytime only, absorbs MF), E layer (90-150 km, reflects HF), F1 and F2 (150-500 km, F2 reflects HF best for long-distance skywave propagation). The peak plasma frequency of each layer sets its maximum useable frequency for reflection."
   },
   {
@@ -3243,12 +3243,12 @@
     "tier": 5,
     "question": "An obscure but consequential phenomenon is the QBO — Quasi-Biennial Oscillation. Equatorial stratospheric winds reverse from easterly to westerly and back on a ~28-month cycle, modulating ozone and tropical convection. Richard and Margaret Reed identified it in 1953. What single dynamical mechanism drives the QBO?",
     "choices": [
-      "Upward propagating equatorial waves (Kelvin and Rossby-gravity waves) deposit momentum that flips the stratospheric wind on alternate phases",
+      "Upward propagating equatorial waves deposit momentum that flips the stratospheric wind on alternate phases",
       "Solar UV directly heats the equatorial stratosphere and drives the wind reversal as part of the 11-year solar cycle response",
       "Volcanic sulfate aerosols modulate stratospheric absorption of solar radiation and trigger the oscillation by aerosol burden cycles",
       "Tidal forcing from the moon and sun on the stratosphere drives the wind reversal on its own characteristic 2-year cycle"
     ],
-    "answer": "Upward propagating equatorial waves (Kelvin and Rossby-gravity waves) deposit momentum that flips the stratospheric wind on alternate phases",
+    "answer": "Upward propagating equatorial waves deposit momentum that flips the stratospheric wind on alternate phases",
     "context": "The QBO is driven by upward-propagating equatorial waves — Kelvin (westerly momentum) and Rossby-gravity (easterly momentum) — generated by tropical convection. The waves dissipate at altitudes depending on the existing wind, depositing momentum and progressively flipping it. Holton and Lindzen (1972) worked out the mechanism — a textbook case of wave-mean flow interaction."
   },
   {
@@ -3483,12 +3483,12 @@
     "tier": 5,
     "question": "An exotic atmospheric phenomenon — the 'morning glory cloud' — forms over the Gulf of Carpentaria in northern Australia. The cloud is a single roll cloud, sometimes 1,000 km long, that propagates inland at dawn. Glider pilots travel from around the world to fly its leading edge. What single mechanism generates the Morning Glory cloud?",
     "choices": [
-      "A solitary wave (soliton) in the lower atmosphere — sea breeze convergence interacts with a temperature inversion to produce a propagating wave",
+      "A solitary wave in the lower atmosphere — sea breeze convergence interacts with a temperature inversion to produce a propagating wave",
       "An undular bore in the upper troposphere — a tropopause-level disturbance propagates south as a wave train detectable by radar",
       "A polar low spawning from the Antarctic — a southern cold-air outbreak occasionally reaches Australia's north coast in austral summer",
       "A monsoon trough oscillation — the northern Australian monsoon trough oscillates north-south on a sub-weekly timescale and generates roll clouds"
     ],
-    "answer": "A solitary wave (soliton) in the lower atmosphere — sea breeze convergence interacts with a temperature inversion to produce a propagating wave",
+    "answer": "A solitary wave in the lower atmosphere — sea breeze convergence interacts with a temperature inversion to produce a propagating wave",
     "context": "The Morning Glory cloud (near Burketown, Queensland) is a solitary wave in the lower atmosphere. A nighttime sea-breeze collision between Cape York and the Gulf of Carpentaria generates waves; under the right inversion, the wave becomes a propagating soliton. The roll cloud's leading edge can be 1,000 km long, propagating at ~60 km/h. Most reliable in September-November."
   },
   {
@@ -3939,12 +3939,12 @@
     "tier": 3,
     "question": "Easter Island, the most remote inhabited landmass on Earth, has been studied as a cautionary tale: tropical isolation, monumental stone heads, then ecological collapse after deforestation. What is the broader scientific lesson the Rapa Nui story carries?",
     "choices": [
-      "Resource bottleneck — closed-system populations that exhaust a key resource (here palm forests) face cascading social collapse",
+      "Resource bottleneck — closed-system populations that exhaust a key resource face cascading social collapse",
       "Founder effect — a small initial population's genetics get amplified, producing the unique features seen in the 887 surviving moai",
       "Trophic cascade — removing apex predators ripples down the food web; the cascade explains the bird population collapse on Rapa Nui",
       "Island gigantism — isolated islands evolve unusually large versions of normally smaller species; the moai are a stone-form example"
     ],
-    "answer": "Resource bottleneck — closed-system populations that exhaust a key resource (here palm forests) face cascading social collapse",
+    "answer": "Resource bottleneck — closed-system populations that exhaust a key resource face cascading social collapse",
     "context": "Rapa Nui (Easter Island) lies 3,500 km west of Chile. The 887 moai were carved 1100-1680. Pollen records show palm forest collapse — population may have peaked ~15,000 then crashed. Jared Diamond's Collapse (2005) cites it; revisionist scholars (Hunt, Lipo) add rats and disease."
   },
   {
@@ -4359,12 +4359,12 @@
     "tier": 5,
     "question": "The Yungay region of Chile's Atacama Desert receives less than 1 mm of rain annually and has gone decades without measurable precipitation. NASA researchers initially found this soil sterile — a dry limit for life. Later studies found microbial communities surviving in salt deposits beneath the surface. How do these microbes get water?",
     "choices": [
-      "Deliquescence — hygroscopic salts (halite, gypsum) absorb water vapor from rare humid air, dissolving briefly into thin brine films that microbes exploit",
+      "Deliquescence — hygroscopic salts absorb water vapor from rare humid air, dissolving briefly into thin brine films that microbes exploit",
       "Glacial runoff — distant Andean snowmelt percolates underground hundreds of kilometers to surface salt nodules, where bacteria filter the trace water flow",
       "Geothermal steam — volcanic vapor rises through cracks in the desert basement, condensing in salt crusts and providing the moisture for microbial growth",
       "Fog condensation — coastal camanchaca penetrates 100+ km inland to the Yungay zone, wetting surface salt enough to sustain bacterial communities each year"
     ],
-    "answer": "Deliquescence — hygroscopic salts (halite, gypsum) absorb water vapor from rare humid air, dissolving briefly into thin brine films that microbes exploit",
+    "answer": "Deliquescence — hygroscopic salts absorb water vapor from rare humid air, dissolving briefly into thin brine films that microbes exploit",
     "context": "Halite (rock salt) and gypsum crystals in the Atacama are hygroscopic — they absorb water vapor at relative humidity above ~75%. Even in hyperarid Yungay, brief nighttime humidity peaks allow the salts to deliquesce, forming thin liquid brine within the crystal matrix. Endolithic cyanobacteria and bacteria (described by Wierzchos, Davila, Artieda 2006) live in these films. The discovery shaped the Curiosity rover's investigation of Martian perchlorate salts — also hygroscopic, raising the question of whether deliquescent brines could host life on present-day Mars."
   },
   {
@@ -4477,7 +4477,7 @@
   },
   {
     "tier": 5,
-    "question": "Lord Howe Island, 600 km east of Australia in the Tasman Sea, hosts ~240 endemic plants and a 'tree lobster' stick insect 15 cm long that was thought extinct after rats arrived in 1918. In 2001 climbers found 24 of them surviving on a single bush on a sea stack 23 km offshore — Ball's Pyramid. What does this rediscovery illustrate?",
+    "question": "Lord Howe Island, 600 km east of Australia in the Tasman Sea, hosts ~240 endemic plants and a 'tree lobster' stick insect 15 cm long that was thought extinct after rats arrived in 1918. In 2001 climbers found 24 of them surviving on a single bush on a sea stack 23 km offshore — Ball's Pyramid. What kind of refuge saved the Lord Howe stick insect from extinction?",
     "choices": [
       "Refugial persistence — a single inaccessible refugium can save an island endemic from extinction even after the main island population is wiped out",
       "Adaptive evolution — the surviving stick insects had quickly evolved rat-resistant traits, allowing the population to persist in the same range",
@@ -4549,7 +4549,7 @@
   },
   {
     "tier": 5,
-    "question": "Off the coast of Ibiza in the Mediterranean, a single Posidonia oceanica seagrass meadow has been genetically traced as one continuous clonal organism stretching 15 km, with an estimated age of ~100,000 years — making it possibly the oldest living thing on Earth. What does this finding illustrate about seagrass biology?",
+    "question": "Off the coast of Ibiza in the Mediterranean, a single Posidonia oceanica seagrass meadow has been genetically traced as one continuous clonal organism stretching 15 km, with an estimated age of ~100,000 years — making it possibly the oldest living thing on Earth. By what mode of growth does a single Australian seagrass clone reach 100,000 years old?",
     "choices": [
       "Vegetative clonal growth — seagrasses spread via rhizome runners, and a single genet can persist for millennia by continuous regeneration",
       "Hybrid vigor through cross-pollination — repeated genetic exchange produces the long-persisting seagrass meadow as a churning genetic community",
@@ -5847,12 +5847,12 @@
     "tier": 5,
     "question": "Rome's eleven aqueducts delivered ~1.1 million m3/day at peak. Aqua Appia (312 BC), Aqua Marcia (144 BC, 91 km), and Aqua Claudia (~50 AD) used gentle gradients of ~3 m per km, plus inverted siphons where valleys were too deep to bridge. Which engineering observation best captures the Roman achievement?",
     "choices": [
-      "Sustained gravity-fed urban supply at metropolitan scale required surveying precision (libra, chorobates) that medieval Europe partly lost and only partly recovered later",
+      "Sustained gravity-fed urban supply at metropolitan scale required surveying precision that medieval Europe partly lost and only partly recovered later",
       "Roman aqueducts used pressurized iron pipework that medieval metallurgy could not match, explaining the disappearance of comparable infrastructure for over a millennium",
       "Roman aqueducts depended on cement that medieval builders deliberately abandoned for religious-cosmological reasons unrelated to engineering capacity in the period",
       "Roman aqueducts were maintained by slave labor that Christianization abolished; the engineering survived but the workforce did not into the medieval period in Europe"
     ],
-    "answer": "Sustained gravity-fed urban supply at metropolitan scale required surveying precision (libra, chorobates) that medieval Europe partly lost and only partly recovered later",
+    "answer": "Sustained gravity-fed urban supply at metropolitan scale required surveying precision that medieval Europe partly lost and only partly recovered later",
     "context": "Roman water engineering combined precise leveling instruments (the chorobates, a long water-level; the libra, sighting tube) with mortared stone, opus caementicium concrete, and inverted lead siphons in valleys (Lyon, Pergamon). The Pont du Gard near Nimes and the Segovia aqueduct stand intact. Frontinus's De Aquaeductu (~97 AD) describes the Roman water bureaucracy. Medieval Europe lost much surveying precision; major aqueduct construction at Roman scale did not return until the 19th century. Persian qanats (separately) sustained different desert-margin water systems through the same period."
   },
   {
@@ -5955,24 +5955,24 @@
     "tier": 5,
     "question": "Internal waves in stratified oceans — long-wavelength oscillations between water layers of different density — can reach amplitudes of 100+ m at depth while surface signature stays small. They contribute to mid-ocean mixing. Which forcing best accounts for the largest internal-wave generation in modern oceanography?",
     "choices": [
-      "Tidal flow over rough bottom topography (mid-ocean ridges, seamounts) converts barotropic tidal energy into baroclinic internal waves that propagate and dissipate at distance",
+      "Tidal flow over rough bottom topography converts barotropic tidal energy into baroclinic internal waves that propagate and dissipate at distance",
       "Solar heating of the surface mixed layer drives internal waves directly at the thermocline by daily energy input throughout the lit zones of the world ocean across most areas",
       "Coriolis force on geostrophic currents pumps energy continuously into internal modes regardless of any tidal or topographic interaction below the surface across the world basins",
       "Bioturbation by deep-ocean organisms generates internal waves through coordinated swimming that has been documented at climatically significant scales across all ocean basins"
     ],
-    "answer": "Tidal flow over rough bottom topography (mid-ocean ridges, seamounts) converts barotropic tidal energy into baroclinic internal waves that propagate and dissipate at distance",
+    "answer": "Tidal flow over rough bottom topography converts barotropic tidal energy into baroclinic internal waves that propagate and dissipate at distance",
     "context": "Walter Munk, Carl Wunsch, and others (e.g., the HOME experiment, Hawaiian Ocean Mixing Experiment) demonstrated that tidal flow across rough bottom topography — especially mid-ocean ridges and seamounts — converts ~1 TW of barotropic tidal energy into internal-wave (baroclinic) modes that propagate horizontally and dissipate, contributing significantly to abyssal mixing. The Bay of Biscay, Hawaiian Ridge, Luzon Strait, and Indonesian Throughflow are major generation sites. Lunar tidal force is the proximate energy source, but the mechanism is wave-topography interaction, not direct lunar pull on surface phenomena."
   },
   {
     "tier": 5,
     "question": "Ester Boserup (The Conditions of Agricultural Growth, 1965) argued population pressure drives agricultural intensification — labor-intensive methods like irrigation and terracing emerge when extensive farming can no longer feed the population. Critics extended her thesis. Where does Boserup's framework MOST poorly fit the record?",
     "choices": [
-      "Cases where irrigation infrastructure (Sumerian canals, Persian qanats) appears before population pressure could plausibly require it — institutional and military explanations fit better",
+      "Cases where irrigation infrastructure appears before population pressure could plausibly require it — institutional and military explanations fit better",
       "Cases where population growth precedes agricultural intensification in clearly documented sequences — Boserup's framework actually captures these very well by her own account",
       "Cases where labor-saving technology accompanies intensification — Boserup explicitly accepted that mechanization can substitute for labor input under demographic pressure",
       "Cases where colonial extraction disrupted indigenous food systems — Boserup's framework was developed precisely for non-colonial historical comparison work across regions"
     ],
-    "answer": "Cases where irrigation infrastructure (Sumerian canals, Persian qanats) appears before population pressure could plausibly require it — institutional and military explanations fit better",
+    "answer": "Cases where irrigation infrastructure appears before population pressure could plausibly require it — institutional and military explanations fit better",
     "context": "Boserup's thesis inverted Malthus: population growth drives intensification, not the other way around. The framework works well for late-medieval European three-field rotation, Asian rice-paddy intensification, and contemporary smallholder cases. It fits less well where major irrigation infrastructure appears before population pressure could plausibly demand it — early Sumerian canals, Persian qanats serving small oases, Achaemenid royal works. Karl Wittfogel's hydraulic-state thesis (real but often overdrawn) and Sowell's cultural-factors argument both compete on this terrain. The bank presents the framework's range without endorsing a single explanation across cases."
   },
   {
@@ -7299,12 +7299,12 @@
     "tier": 5,
     "question": "Jared Diamond argues geography put Europe at the western end of Eurasia's east-west axis with Atlantic harbors, enabling Iberian voyages of discovery; without geography, no Magellan. Thomas Sowell counters that geography doesn't explain WHY Iberians achieved the voyages and not Ming China (similar peninsula). Which is Sowell's move?",
     "choices": [
-      "Geography is necessary but insufficient; comparable geography produced opposite trajectories (Ming retrenchment vs Iberian expansion), so cultural variables load independently",
+      "Geography is necessary but insufficient; comparable geography produced opposite trajectories, so cultural variables load independently",
       "Geography is the proximate cause; culture is a downstream effect of geographic conditions producing the observed regional differences via generational adaptation",
       "Geography is irrelevant to long-run outcomes; cultural variables determine everything and the geographic facts Diamond cites are post-hoc rationalizations of choices",
       "Geography determines the timing of voyaging traditions; culture determines only destinations and the technologies used, with no independent causal contribution"
     ],
-    "answer": "Geography is necessary but insufficient; comparable geography produced opposite trajectories (Ming retrenchment vs Iberian expansion), so cultural variables load independently",
+    "answer": "Geography is necessary but insufficient; comparable geography produced opposite trajectories, so cultural variables load independently",
     "context": "Jared Diamond's Guns, Germs, and Steel (1997, Pulitzer 1998) makes geographic determinism the central claim for differential development. The Iberian case fits: Atlantic peninsula, Mediterranean entry, easy distance to West African coast. Thomas Sowell's Conquests and Cultures (1998), Migrations and Cultures (1996), and Race and Culture (1994) make the counter-move: comparable geography produces opposite trajectories. Ming China had equivalent maritime geography and superior shipbuilding in 1400, then retrenched culturally (Confucian-vs-eunuch court politics). The Arab Indian Ocean trade network was vast and stable but did not produce circumnavigation. Iberian culture (Reconquista habituation to long-range military campaigning, Henry the Navigator's school at Sagres, court patronage of cartography, Christian-vs-Islam pressure as motivation) supplied the missing variables Diamond's geography cannot reach. The pedagogical move: identify each analytical claim without declaring a verdict on which side wins."
   },
   {
@@ -7359,12 +7359,12 @@
     "tier": 5,
     "question": "Vasco da Gama (1497-99), Magellan (1519-22), and Drake (1577-80) all crossed oceans for which no chronometer existed. Cook (1768-79) carried both Kendall's K1 chronometer AND the Nautical Almanac for lunar distances. How did pre-chronometer captains estimate longitude across an ocean?",
     "choices": [
-      "Dead reckoning by chip log and compass with errors compounding daily; landfall corrections (sight known islands) reset the cumulative drift but transoceanic legs accumulated hundreds of miles of error",
+      "Dead reckoning by chip log and compass with errors compounding daily; landfall corrections reset the cumulative drift but transoceanic legs accumulated hundreds of miles of error",
       "Lunar distance from a pre-printed almanac of Greenwich times; pre-chronometer captains used Mayer's tables and the back-staff to measure Moon-star angles and solve for Greenwich time",
       "Magnetic-declination charts using Halley's isogonic lines; pre-chronometer captains compared compass bearing to the chart to derive longitude from regional magnetic variation",
       "Star-occultation timing by hour-glass; pre-chronometer captains timed Jupiter's moon eclipses with hour glasses and compared to printed tables to derive longitude"
     ],
-    "answer": "Dead reckoning by chip log and compass with errors compounding daily; landfall corrections (sight known islands) reset the cumulative drift but transoceanic legs accumulated hundreds of miles of error",
+    "answer": "Dead reckoning by chip log and compass with errors compounding daily; landfall corrections reset the cumulative drift but transoceanic legs accumulated hundreds of miles of error",
     "context": "Pre-chronometer longitude: dead reckoning by chip log (speed measurement using a knotted line cast astern) and compass, with errors compounding at a few percent per day. Captains relied on landfall corrections (sight a known coast, reset the position) to limit cumulative drift. Transoceanic legs without intermediate landfall accumulated hundreds of miles of east-west error — which is why Magellan's Pacific crossing was so much worse than anticipated and why Columbus thought he was near Asia. Lunar distance method (Mayer's tables 1755, Maskelyne's Nautical Almanac 1767) and Harrison's chronometer (H4, 1759) both arrived in the mid-18th century. Galileo had proposed using Jupiter's moons as a celestial clock (1610) — workable on land (Cassini's 1668 ephemeris let cartographers like the Cassini family fix observatory longitudes), but the telescope couldn't be steadied on a moving ship. Iberian and Northern European captains crossed oceans for ~250 years without solving longitude."
   },
   {
@@ -7537,7 +7537,7 @@
   },
   {
     "tier": 5,
-    "question": "GPS is a US DoD system (decision 1973; first launches 1978; full constellation 1995; civilian access 1983 after KAL 007; SA ended 2000). It cost ~$12B to build and ~$2B/year to maintain — funded entirely by US taxpayers. The signal is free to all users worldwide. What does this pattern illustrate?",
+    "question": "GPS is a US DoD system (decision 1973; first launches 1978; full constellation 1995; civilian access 1983 after KAL 007; SA ended 2000). It cost ~$12B to build and ~$2B/year to maintain — funded entirely by US taxpayers. The signal is free to all users worldwide. What kind of global public good does US-built free-to-the-world GPS exemplify?",
     "choices": [
       "Public-good provision at global scale by a single nation; the US underwrites a precision-navigation utility every nation, ally or rival, depends on for aviation and shipping",
       "Strategic restraint at global scale by a single nation; the US declined to monetize GPS access to allies despite the system's commercial value worldwide for aviation and shipping",
@@ -8667,12 +8667,12 @@
     "tier": 4,
     "question": "Norse settlers and Inuit Thule hunters in Greenland faced the same Arctic but ate radically different foods. Norse kept cattle for milk; Inuit ate seal, whale, and walrus almost exclusively. Which genetic-cultural conjunction underlies the difference?",
     "choices": [
-      "Northern European lactase persistence (the LCT-13910 T allele) let Norse adults digest milk; Inuit lacked the allele and depended on high-fat marine prey",
+      "Northern European lactase persistence let Norse adults digest milk; Inuit lacked the allele and depended on high-fat marine prey",
       "Inuit fish-oil adaptation developed in the 19th century; pre-contact Inuit diet was actually similar to Norse pastoralism with seal as a small supplement",
       "Norse and Inuit diets differed only by available species; both populations had identical metabolisms and the difference reflects game distribution",
       "Inuit lactase persistence was nearly universal; the dairy gap reflects Norse cultural preference for cattle rather than any genetic constraint on Inuit"
     ],
-    "answer": "Northern European lactase persistence (the LCT-13910 T allele) let Norse adults digest milk; Inuit lacked the allele and depended on high-fat marine prey",
+    "answer": "Northern European lactase persistence let Norse adults digest milk; Inuit lacked the allele and depended on high-fat marine prey",
     "context": "Lactase persistence (continued production of lactase enzyme into adulthood) evolved independently several times in pastoral populations: Northern European (LCT-13910*T allele, ~5,000-10,000 years ago in cattle herders), East African Maasai/Tutsi (different mutation, similar selection), and a few Arabian pastoralists. Inuit lack lactase persistence; their traditional diet centered on seal, whale, walrus, and caribou. They obtained vitamin C from raw seal liver, muktuk (whale skin), and berries — preventing the scurvy that killed European Arctic explorers eating salt-cured meat. Recent work (Fumagalli et al. 2015) identified Inuit-specific FADS gene variants regulating omega-3/omega-6 fatty acid metabolism — an adaptation to the high marine-fat diet."
   },
   {
@@ -8703,12 +8703,12 @@
     "tier": 4,
     "question": "Ancestral Pueblo (Anasazi) built monumental great-houses at Chaco Canyon (New Mexico) from ~850 to ~1150 AD — Pueblo Bonito had 600+ rooms across 4 stories. By 1150 the canyon was abandoned. Which climate-and-agriculture conjunction explains the depopulation?",
     "choices": [
-      "Dry-farming maize in a marginal precipitation zone (~220mm/year) collapsed under the prolonged 1130-1180 drought documented in Southwest tree-ring chronologies",
+      "Dry-farming maize in a marginal precipitation zone collapsed under the prolonged 1130-1180 drought documented in Southwest tree-ring chronologies",
       "Apache and Navajo raids from the north drove abandonment around 1150; the climate-collapse reading is a 1970s archaeological interpretation overstating environment",
       "Chaco was abandoned because of Spanish colonial pressure; the 1150 date is wrong and the canyon was occupied until conquistador entradas of the early 1500s",
       "Chaco was a ceremonial pilgrimage center, not residential; the 1150 'abandonment' meant the ritual cycle ended and surrounding villages were unaffected by drought"
     ],
-    "answer": "Dry-farming maize in a marginal precipitation zone (~220mm/year) collapsed under the prolonged 1130-1180 drought documented in Southwest tree-ring chronologies",
+    "answer": "Dry-farming maize in a marginal precipitation zone collapsed under the prolonged 1130-1180 drought documented in Southwest tree-ring chronologies",
     "context": "Chaco Canyon (UNESCO 1987) was the center of a regional Ancestral Pueblo (Anasazi) society from ~850 to ~1150 AD. Pueblo Bonito (begun ~850) reached 600+ rooms and 4 stories — the largest dwelling in North America until 1882. The 'Chaco Phenomenon' included a road network radiating 250+ km, astronomical alignments (the Sun Dagger at Fajada Butte), and great kivas. Maize agriculture in the canyon (~220mm precipitation/year) depended on water-harvesting from runoff after summer monsoons. Tree-ring chronologies (Douglass's pioneering dendrochronology, 1929) document severe drought 1130-80. Chacoan populations migrated to the Rio Grande pueblos (Acoma, Zuni, Hopi) and the Mesa Verde region — modern Pueblo peoples are direct descendants. The collapse is a key Diamond Collapse (2005) case."
   },
   {
@@ -8787,12 +8787,12 @@
     "tier": 4,
     "question": "In central Iran's desert cities (Yazd, Kashan), tall rectangular towers rise above flat rooftops. Shaft openings face all sides. Air is drawn down the shaft and across underground qanat water before reaching living rooms. What is this system?",
     "choices": [
-      "Badgir (windcatcher) — convection-and-evaporation cooling using prevailing-wind capture, qanat water for evaporative chill, and density-driven downdraft into rooms",
+      "Badgir — convection-and-evaporation cooling using prevailing-wind capture, qanat water for evaporative chill, and density-driven downdraft into rooms",
       "Yakhchal — ice-storage chimney for winter ice; the cooling function applies only seasonally, and Yazd summer cooling uses underground cellars unrelated to the towers",
       "Howz-khaneh — bath-house ventilation tower; the residential cooling identification is incorrect and Yazd badgirs functioned only for ceremonial bath complexes",
       "Iwan — vaulted entrance hall facing prevailing breeze; the tower identification confuses two features and pre-modern Persian houses used only iwan-style cooling"
     ],
-    "answer": "Badgir (windcatcher) — convection-and-evaporation cooling using prevailing-wind capture, qanat water for evaporative chill, and density-driven downdraft into rooms",
+    "answer": "Badgir — convection-and-evaporation cooling using prevailing-wind capture, qanat water for evaporative chill, and density-driven downdraft into rooms",
     "context": "The badgir (Persian: 'wind-catcher,' also called malqaf in Arabic) is a passive cooling system used across Iran, the Persian Gulf, Egypt, and parts of Pakistan and India. The tower rises above the roof to capture prevailing wind, with multiple opening orientations to catch wind from any direction. Air is drawn down the shaft; if the shaft passes over an underground qanat channel or a courtyard pool, evaporative cooling drops the air temperature 10-15C before it reaches the living spaces below. At night the system reverses: warm air rises and exits, drawing cool night air in. Yazd's old city (UNESCO 2017) preserves the densest concentration. The Dowlat Abad garden (Yazd, ~1750) has the tallest functioning badgir at 33m. Modern bioclimatic architects (Hassan Fathy in Egypt, contemporary Iranian designers) explicitly draw on the badgir tradition."
   },
   {
@@ -8823,12 +8823,12 @@
     "tier": 4,
     "question": "The Inca Qhapaq Nan connected the empire from southern Colombia to central Chile — ~40,000 km of road over Andean terrain. The Incas had no horses, no wheels, and no writing. How did the network function logistically?",
     "choices": [
-      "Chasqui relay runners covered ~250 km/day passing messages and goods; storehouses (qollqas) provisioned army and administration; rope bridges crossed Andean canyons",
+      "Chasqui relay runners covered ~250 km/day passing messages and goods; storehouses provisioned army and administration; rope bridges crossed Andean canyons",
       "The Inca road network is overstated; pre-Columbian roads totaled under 5,000 km, and the chasqui relay-runner system is a Spanish chronicler invention without evidence",
       "Inca roads functioned only locally around Cusco; the south-to-north continental scope is a colonial reconstruction and outlying provinces had no integrated network",
       "Inca road networks were built by Spanish colonial engineers in the 16th century; pre-conquest routes were game trails only and the Qhapaq Nan dating is incorrect"
     ],
-    "answer": "Chasqui relay runners covered ~250 km/day passing messages and goods; storehouses (qollqas) provisioned army and administration; rope bridges crossed Andean canyons",
+    "answer": "Chasqui relay runners covered ~250 km/day passing messages and goods; storehouses provisioned army and administration; rope bridges crossed Andean canyons",
     "context": "The Qhapaq Nan (Quechua: 'Royal Road,' UNESCO 2014) was the Inca road network spanning ~40,000 km across what is now Peru, Bolivia, Ecuador, southern Colombia, northern Chile, and northwestern Argentina. Two main north-south trunk roads (coastal and highland) were crossed by lateral connections. Constructed of stone paving, raised causeways through swamps, retaining walls, drainage channels, and rope bridges across canyons. Chasqui runners (relay messengers, working in pairs stationed at chaski wasi posts every ~7 km) could move information from Quito to Cusco (~2,000 km) in about 5 days. Storehouses (qollqas, tens of thousands of them) held grain, weapons, cloth, and freeze-dried potato (chuño) for army provisioning and famine relief. The system enabled administration of an empire of ~10-12 million across difficult terrain without horses, wheels, or writing (the quipu knotted cords recorded numerical data)."
   },
   {
@@ -8941,15 +8941,15 @@
   },
   {
     "tier": 5,
-    "question": "In 1976 the Polynesian Voyaging Society's double-hulled canoe Hokule'a sailed from Hawaii to Tahiti without instruments — navigating by stars, swells, currents, and bird flight. Mau Piailug from Satawal in Micronesia served as navigator. What did this voyage prove?",
+    "question": "In 1769 Captain Cook's HMS Endeavour took aboard a Polynesian priest-navigator from the island of Raiatea, who proceeded to draw a chart of the Pacific from memory: ~74 islands across 4,800 km, with bearings and sailing times Cook later confirmed by sextant. The man's name was the same as that of an ancestor of three later Tahitian royal lines. Who was the navigator whose chart proved the wayfinding tradition was a real working technology?",
     "choices": [
-      "Polynesian seafarers could have intentionally settled the Pacific by traditional wayfinding alone; Sharp's 1956 'accidental drift' thesis was refuted and the colonization was intentional voyaging",
-      "Hokule'a's voyage was a recreational stunt with no scientific value; the wayfinding methods used were modern reconstructions of imagined Polynesian techniques without traditional basis",
-      "Hokule'a used hidden modern instruments; the no-instruments claim is honored only ceremonially and the voyage cannot be cited as evidence for traditional Polynesian navigation",
-      "Polynesians actually used Arab astrolabes via Indian Ocean trade contact; Mau Piailug's Micronesian techniques are post-1500 borrowings and pre-contact wayfinding had no stellar component"
+      "Tupaia of Raiatea, who joined Cook in 1769 and mapped some 74 islands from memory",
+      "Hipour of Polowat, who later sailed with David Lewis aboard the Isbjorn in 1970",
+      "Mau Piailug of Satawal, who later navigated the Hokule'a from Hawaii to Tahiti in 1976",
+      "Kupe of Hawaiki, the semi-legendary discoverer of Aotearoa around the year 950 AD"
     ],
-    "answer": "Polynesian seafarers could have intentionally settled the Pacific by traditional wayfinding alone; Sharp's 1956 'accidental drift' thesis was refuted and the colonization was intentional voyaging",
-    "context": "The Polynesian Voyaging Society (founded 1973 by Ben Finney, Tommy Holmes, Herb Kawainui Kane) built Hokule'a — a 19m double-hulled voyaging canoe (wa'a kaulua) modeled on traditional designs. In 1976 it sailed 5,400 km from Maui to Tahiti without modern instruments. The navigator was Mau Piailug (1932-2010), one of the last traditional palu (master navigators) from Satawal in the Caroline Islands of Micronesia — the wayfinding tradition had been lost in Polynesia but preserved in Micronesia. Piailug taught Nainoa Thompson and other Hawaiians the traditional star compass, ocean-swell reading, cloud and bird interpretation, and dead reckoning techniques. The voyage refuted Andrew Sharp's 1956 thesis (Ancient Voyagers in the Pacific) that Polynesian dispersal was accidental drift. Hokule'a has since completed 12 major voyages, including a 2014-17 circumnavigation. The voyaging revival catalyzed broader Hawaiian cultural renaissance."
+    "answer": "Tupaia of Raiatea, who joined Cook in 1769 and mapped some 74 islands from memory",
+    "context": "Tupaia (~1725-1770) of Raiatea was a high-ranking arioi priest and master navigator who came aboard Endeavour at Tahiti in July 1769. His chart, copied by Cook's officers, named about 74 islands across the central and western Pacific by traditional name, with bearings and approximate sailing times. Cook later verified several by independent observation. Tupaia died of dysentery at Batavia in December 1770. His chart is the strongest single piece of evidence that pre-contact Polynesian wayfinding was a working long-distance navigation technology — not the lucky drift Andrew Sharp hypothesized in 1956."
   },
   {
     "tier": 5,
@@ -9015,12 +9015,12 @@
     "tier": 5,
     "question": "Garrett Hardin's 'Tragedy of the Commons' (Science, 1968) used Sahelian pastoral overgrazing as a textbook example: rational individual herders would overgraze open-access pasture. Elinor Ostrom won the 2009 Nobel for a different reading. What is Ostrom's move?",
     "choices": [
-      "Distinguishing managed commons (with community-level institutional rules) from open-access; pastoral systems studied empirically were governed by tribal access regimes, not Hardin's open-access",
+      "Distinguishing managed commons from open-access; pastoral systems studied empirically were governed by tribal access regimes, not Hardin's open-access",
       "Endorsing Hardin's framework with cleaner empirical data; Ostrom's Nobel recognized her catalogue of failed commons rather than successful institutional governance of pastoral resources",
       "Arguing pastoralism was always unsustainable; the Sahel droughts of the 1970s confirmed Hardin's prediction regardless of which institutional framework was in place during the period",
       "Calling for state nationalization of Sahel range; pastoral commons had failed historically and only centralized administrative control could prevent further degradation across the region"
     ],
-    "answer": "Distinguishing managed commons (with community-level institutional rules) from open-access; pastoral systems studied empirically were governed by tribal access regimes, not Hardin's open-access",
+    "answer": "Distinguishing managed commons from open-access; pastoral systems studied empirically were governed by tribal access regimes, not Hardin's open-access",
     "context": "Garrett Hardin's 'The Tragedy of the Commons' (Science, 13 December 1968) used a stylized pastoral example: rational individual herders adding cattle to a shared pasture would each profit privately while distributing the overgrazing cost across all users — leading inevitably to over-exploitation and collapse. The framework was rapidly applied to Sahel overgrazing, ocean fisheries, atmospheric pollution, and biodiversity loss. Elinor Ostrom (1933-2012, political economist) spent her career studying actual common-pool resource systems empirically. Governing the Commons (1990) cataloged ~5,000 traditional commons worldwide — irrigation systems in Spanish huerta and Philippine zanjera, Swiss alpine grazing regimes, Maine lobster fisheries, Tokugawa Japanese village forests — with effective institutional governance over centuries. Her 8 'design principles' include clearly defined boundaries, congruence between rules and local conditions, collective-choice arrangements, monitoring, graduated sanctions, conflict-resolution, recognition by external authorities, and nested enterprises. She won the 2009 Nobel Memorial Prize in Economics (first woman). Hardin (1994) clarified he had meant 'unmanaged commons' specifically."
   },
   {
@@ -9579,12 +9579,12 @@
     "tier": 2,
     "question": "In 622 AD, Muhammad and his early followers fled north from Mecca to another oasis town 280 miles away. There they built the first Islamic community and a small mosque. The Muslim calendar starts from this journey. What is the destination city called?",
     "choices": [
-      "Medina — originally Yathrib, renamed Madinat al-Nabi (City of the Prophet) after he arrived",
+      "Medina — originally Yathrib, renamed Madinat al-Nabi after he arrived",
       "Damascus — the Syrian city that became Islam's first major capital just decades later",
       "Baghdad — the Abbasid capital founded over a century later on the Tigris River bank",
       "Jerusalem — taken by Caliph Umar from the Byzantines twenty years after the migration"
     ],
-    "answer": "Medina — originally Yathrib, renamed Madinat al-Nabi (City of the Prophet) after he arrived",
+    "answer": "Medina — originally Yathrib, renamed Madinat al-Nabi after he arrived",
     "context": "The Hijra (migration) of 622 AD took Muhammad from Mecca to Yathrib (renamed Medina, City of the Prophet). The Islamic calendar (AH — Anno Hegirae) starts that year. Medina holds Muhammad's tomb in the Prophet's Mosque — the second-holiest site in Islam after Mecca."
   },
   {
@@ -9915,12 +9915,12 @@
     "tier": 3,
     "question": "Mainland Greece's mountainous geography produced hundreds of small independent poleis — city-states like Athens, Sparta, Corinth, Thebes — separated by ridges and small plains. Yet a single pantheon of gods was shared across them all. How did one mountain in northern Thessaly help unify Greek religion?",
     "choices": [
-      "Mt Olympus (2,917 m) was visible from much of Greece on clear days; Hesiod placed Zeus and twelve gods on its summit",
+      "Mt Olympus was visible from much of Greece on clear days; Hesiod placed Zeus and twelve gods on its summit",
       "Mt Olympus was the only mountain Greeks ever climbed; the sanctuary on top was visited by every polis annually",
       "Mt Olympus blocked all north-south Greek trade, forcing every polis to send merchant offerings to its summit shrine",
       "Mt Olympus was where Greek priests met every spring to set a single calendar; without that no unity could form"
     ],
-    "answer": "Mt Olympus (2,917 m) was visible from much of Greece on clear days; Hesiod placed Zeus and twelve gods on its summit",
+    "answer": "Mt Olympus was visible from much of Greece on clear days; Hesiod placed Zeus and twelve gods on its summit",
     "context": "Mt Olympus sits in northern Thessaly, visible from much of mainland Greece on clear days. Hesiod's Theogony (~700 BC) placed Zeus, Hera, Apollo, Athena, and the twelve Olympians on its summit — creating a shared pantheon despite political fragmentation among hundreds of independent poleis."
   },
   {
@@ -10081,7 +10081,7 @@
   },
   {
     "tier": 3,
-    "question": "Roman colonial cities — from Timgad in Algeria to Vienna in Austria — were laid out on a grid with two main streets: the cardo (north-south) and decumanus (east-west). At the crossing stood the forum with the chief temple. What does this layout tell us about Roman religion in the provinces?",
+    "question": "Roman colonial cities — from Timgad in Algeria to Vienna in Austria — were laid out on a grid with two main streets: the cardo (north-south) and decumanus (east-west). At the crossing stood the forum with the chief temple. Where does the chief temple sit, and what does that placement say?",
     "choices": [
       "Religion was civic-political: the chief temple sat at the city's geographic and administrative center beside the courts and basilica",
       "Religion was kept on the city's outskirts where worshippers could enter without crowding civic and commercial life there at all",
@@ -10239,12 +10239,12 @@
     "tier": 4,
     "question": "Armenia became the world's first official Christian state in 301 AD under King Trdat — twelve years before Rome tolerated Christianity. The highlands sit between the Caucasus and Anatolia. How did mountain geography help the Apostolic Church survive 1,700 years of conquest?",
     "choices": [
-      "Highland fortress geography plus a distinctive alphabet (Mashtots, 405) and liturgy preserved religious identity through repeated foreign rule",
+      "Highland fortress geography plus a distinctive alphabet and liturgy preserved religious identity through repeated foreign rule",
       "Migration to Constantinople and Russia steadily drained the highlands; the patriarchate survived as a diaspora institution after the early Arab conquests",
       "Trade isolation from Byzantium let Armenian Christianity absorb each conqueror's religion in turn, surviving by continuous doctrinal adaptation across rule",
       "Silk Road trade brought wealth the church used to buy autonomy from every conqueror by cash tribute, with no real role for the highland defense in survival"
     ],
-    "answer": "Highland fortress geography plus a distinctive alphabet (Mashtots, 405) and liturgy preserved religious identity through repeated foreign rule",
+    "answer": "Highland fortress geography plus a distinctive alphabet and liturgy preserved religious identity through repeated foreign rule",
     "context": "Armenia's conversion (~301 AD, St Gregory the Illuminator baptizing King Trdat III) preceded Rome's Edict of Milan (313). The Armenian Apostolic Church developed its own theology (rejecting Chalcedon, 451) and alphabet (St Mesrop Mashtots, ~405 AD). The highlands (mean elevation >1,800 m, surrounded by lowland empires) sheltered the church through Sasanian, Arab, Seljuk, Mongol, and Ottoman rule. The 1915 genocide drove ~1.5M deaths and the survivors into worldwide diaspora."
   },
   {
@@ -10285,7 +10285,7 @@
   },
   {
     "tier": 4,
-    "question": "In 664 AD a council at Whitby Abbey on the Northumbrian coast settled a dispute between Celtic Christianity (Iona, Lindisfarne) and Roman Christianity (Augustine's 597 mission). King Oswiu ruled for Rome. What does the geographic-political logic reveal?",
+    "question": "In 664 AD a council at Whitby Abbey on the Northumbrian coast settled a dispute between Celtic Christianity (Iona, Lindisfarne) and Roman Christianity (Augustine's 597 mission). King Oswiu ruled for Rome. What network did England join by ruling for Rome at Whitby in 664 AD?",
     "choices": [
       "Choosing Rome aligned England with the continental episcopal network linking Frankish and Italian kingdoms; the Celtic-Irish reach offered fewer mainland affiliations",
       "Choosing Rome was forced by Mercian pressure; Oswiu had no real preference but needed a Mercian alliance, and Mercia had taken the Roman position several years earlier",
@@ -10333,7 +10333,7 @@
   },
   {
     "tier": 4,
-    "question": "The Edict of Nantes (1598) gave French Huguenots (Calvinist Protestants) toleration and roughly 100 fortified 'places of surety' — chiefly La Rochelle, Montauban, Nîmes, and other southwestern Atlantic-to-Mediterranean towns. What does this concentration reveal?",
+    "question": "The Edict of Nantes (1598) gave French Huguenots (Calvinist Protestants) toleration and roughly 100 fortified 'places of surety' — chiefly La Rochelle, Montauban, Nîmes, and other southwestern Atlantic-to-Mediterranean towns. Which coastal networks did they cluster on?",
     "choices": [
       "Atlantic and Mediterranean ports had stronger Reformed mercantile networks plus distance from Paris royal control; the south-southwest was France's Protestant geography",
       "Huguenots concentrated in southern France because the climate was warmer; agricultural surplus supported Reformed ministers more easily than colder farmland north",
@@ -10441,7 +10441,7 @@
   },
   {
     "tier": 4,
-    "question": "The Druze religion — a unitarian esoteric tradition that diverged from Ismaili Shia Islam in 11th-century Fatimid Egypt — survives in mountain communities in Mt Lebanon, the Galilee, and Jabal al-Druze. What does this mountain geography illustrate?",
+    "question": "The Druze religion — a unitarian esoteric tradition that diverged from Ismaili Shia Islam in 11th-century Fatimid Egypt — survives in mountain communities in Mt Lebanon, the Galilee, and Jabal al-Druze. What kept the Druze alive in those mountains?",
     "choices": [
       "Closed-canon esotericism (no proselytism after 1043, conversion forbidden, marriage within community) plus mountain refuge preserved tradition surrounded by Sunni Islam",
       "Druze communities actively proselytized in the early Fatimid period; the closed-canon tradition is a defensive 19th-century adaptation to French Mandate sectarian classification",
@@ -10491,24 +10491,24 @@
     "tier": 4,
     "question": "Sri Lankan Theravada — the oldest continuous Buddhist tradition — concentrated at Anuradhapura, the Sri Maha Bodhi (sapling of the original Bodhi tree, planted 288 BC), and the Sacred Tooth in Kandy. How did island geography preserve this 2,300-year lineage?",
     "choices": [
-      "Maritime isolation plus continuous royal patronage of the sangha (Mahavihara lineage) preserved Theravada in Sri Lanka after it died out in India under later Islamic pressure",
+      "Maritime isolation plus continuous royal patronage of the sangha preserved Theravada in Sri Lanka after it died out in India under later Islamic pressure",
       "Sri Lankan Buddhism died with the Chola invasion of 1017; the modern tradition is an 18th-century re-importation from Thailand and Burma, not a continuous local lineage",
       "Theravada survived because Chola Hindu invasions were repulsed by Sinhalese kings; the geographic frontier between Sinhala south and Tamil north shifted but did not close",
       "Sri Lankan Theravada flourished under the British colonial government enforcing Buddhism in Ceylon as a counterweight to Tamil Hindu populations during the 19th century"
     ],
-    "answer": "Maritime isolation plus continuous royal patronage of the sangha (Mahavihara lineage) preserved Theravada in Sri Lanka after it died out in India under later Islamic pressure",
+    "answer": "Maritime isolation plus continuous royal patronage of the sangha preserved Theravada in Sri Lanka after it died out in India under later Islamic pressure",
     "context": "Sri Lankan Theravada Buddhism dates to the 3rd-c BC mission of Mahinda (son of King Ashoka) to King Devanampiya Tissa. The Sri Maha Bodhi at Anuradhapura — grown from a sapling of the original Bodhi tree at Bodh Gaya, planted 288 BC — is the oldest documented planted tree on Earth. The Pali Canon was first written down here (~29 BC, the Aluvihare rock caves). Royal patronage (the Mahavihara monastic lineage) persisted through ~2,300 years, with Sri Lanka twice repopulating the bhikkhu order — sending monks to Burma (5th c) and Thailand (11th c), and receiving renewed ordination from Thailand (Siyam Nikaya, 1753 under King Kirti Sri Rajasinha)."
   },
   {
     "tier": 4,
     "question": "Bhutan, a Himalayan kingdom in the eastern Himalayas, kept Vajrayana Buddhism as state religion through the 20th century and opened to outside contact only in 1974. Television was permitted in 1999. How did mountain geography shape this isolation?",
     "choices": [
-      "Steep Himalayan valleys plus deliberate political isolation (Wangchuck dynasty) preserved a continuous Vajrayana monarchy; geographic continuity persisted under modernization",
+      "Steep Himalayan valleys plus deliberate political isolation preserved a continuous Vajrayana monarchy; geographic continuity persisted under modernization",
       "Bhutan's isolation was a British colonial invention; pre-1900 Bhutan participated actively in Tibetan trade networks and shared no distinctive religious-isolation pattern",
       "Bhutan became Buddhist only after 1907; the older population was Hindu Shaiva, and Vajrayana arrived from Tibet with the Wangchuck dynasty as a founding state-religion choice",
       "Bhutan's religious geography reflects 20th-century Indo-Bhutanese diplomatic strategy more than mountain isolation; state religion was chosen as a counterweight to Hindu India"
     ],
-    "answer": "Steep Himalayan valleys plus deliberate political isolation (Wangchuck dynasty) preserved a continuous Vajrayana monarchy; geographic continuity persisted under modernization",
+    "answer": "Steep Himalayan valleys plus deliberate political isolation preserved a continuous Vajrayana monarchy; geographic continuity persisted under modernization",
     "context": "Bhutan (Druk Yul, 'Land of the Thunder Dragon') unified under Zhabdrung Ngawang Namgyal (1594-1651), who established the dual-system government with religious and secular heads. The Wangchuck dynasty (founded 1907 by Ugyen Wangchuck) consolidated political power and preserved Drukpa Kagyu Vajrayana Buddhism as state religion. Geographic isolation in steep valleys with limited road access kept Bhutan less exposed to colonial and modern penetration than neighboring Sikkim (absorbed into India 1975) or Tibet (Chinese annexation 1950-51). Bhutan opened to outside visitors in 1974; introduced television and internet in 1999. The Gross National Happiness framework is part of the continuing tradition."
   },
   {
@@ -10563,24 +10563,24 @@
     "tier": 4,
     "question": "When Wesleyan missionaries reached Tonga in the 1820s, King George Tupou I adopted Methodism and codified Christianity into the 1875 constitution. Tonga became among the world's most Christianized states. How did Polynesian structure enable this?",
     "choices": [
-      "Polynesian chiefly (ariki) authority let a king's conversion cascade through kinship politics; Tupou's Methodism converted his subjects through Polynesian deference",
+      "Polynesian chiefly authority let a king's conversion cascade through kinship politics; Tupou's Methodism converted his subjects through Polynesian deference",
       "Tongan Christianization reflects 19th-century British colonial pressure; missionaries had limited impact, and direct British administrative intervention secured Methodist primacy",
       "Tongan Christianization was a 1950s post-WWII American mission product; the 1875 constitutional reference is a later modification, with no earlier Methodist establishment",
       "Polynesian religion was already Methodist before missionary contact via earlier whaler crews; Tupou formalized an existing religious situation rather than enabling conversion"
     ],
-    "answer": "Polynesian chiefly (ariki) authority let a king's conversion cascade through kinship politics; Tupou's Methodism converted his subjects through Polynesian deference",
+    "answer": "Polynesian chiefly authority let a king's conversion cascade through kinship politics; Tupou's Methodism converted his subjects through Polynesian deference",
     "context": "King George Tupou I (Taufaʻahau, r. 1845-93) unified Tonga and adopted Wesleyan Methodism after a personal conversion. His 1875 Constitution declared Tonga a Christian state with Sabbath observance and the monarchy as defender of the faith. The Polynesian ariki (chief) system meant his religious choice cascaded down through the kinship hierarchy. Methodist (Free Wesleyan) Church of Tonga remains the largest denomination today; over 95% of Tongans identify as Christian. Similar chief-led conversions reshaped Tahiti (Pomare II, 1819), Hawaii (Kamehameha II, 1819 after the kapu system collapsed), and other Polynesian societies."
   },
   {
     "tier": 4,
     "question": "Korean Protestantism grew explosively after the 1907 Pyongyang Revival: from under 1% of Koreans in 1900 to ~19% in modern South Korea (plus 11% Catholic). Seoul hosts some of the world's largest congregations. What conjunction enabled this growth?",
     "choices": [
-      "Korean Protestantism aligned with Korean nationalism against Japanese colonial occupation (1910-45); anti-colonial resistance gave Christianity unique legitimacy",
+      "Korean Protestantism aligned with Korean nationalism against Japanese colonial occupation; anti-colonial resistance gave Christianity unique legitimacy",
       "Korean Protestant growth reflects post-1945 US military government Christianity promotion; the 1907 Pyongyang Revival contributed modestly compared to postwar diffusion patterns",
       "Korean Protestantism is actually a Korean-American diaspora phenomenon; South Korean Protestant statistics are 1990s sociological overcounts that recent census data corrects",
       "Korean Protestant growth was driven by Pentecostal megachurch models alone; early Methodist and Presbyterian missions had no role in the modern Protestant population statistic"
     ],
-    "answer": "Korean Protestantism aligned with Korean nationalism against Japanese colonial occupation (1910-45); anti-colonial resistance gave Christianity unique legitimacy",
+    "answer": "Korean Protestantism aligned with Korean nationalism against Japanese colonial occupation; anti-colonial resistance gave Christianity unique legitimacy",
     "context": "Korean Protestant Christianity grew under unique conditions. The 1907 Pyongyang Revival (Kil Sun-ju, Methodist-Presbyterian collaboration) is the founding event of Korean Protestant identity. Japanese colonization (1910-45) outlawed Korean political organizations except churches; the Protestant church became the chief organized space for Korean nationalist culture (the 1919 March 1st Independence Movement was substantially church-led). Post-1945 division and the Korean War (1950-53) drove Northern Christians south; postwar US presence amplified the trajectory. By 2015, South Korea was ~28% Christian (19% Protestant + 11% Catholic). Korean missionaries are now the world's second-largest missionary-sending force after the US."
   },
   {
@@ -10623,12 +10623,12 @@
     "tier": 4,
     "question": "Classic Maya cities (250-900 AD) like Tikal and Palenque built stepped pyramids rising above the rainforest canopy. The kings were divine ajaw. By 950 AD most Classic Maya centers were abandoned. How did rainforest geography frame this collapse?",
     "choices": [
-      "Lowland rainforest agriculture (milpa swidden) had a fragile carrying capacity; sustained drought (~850-1050 AD) collapsed the royal-divine system maize surplus had supported",
+      "Lowland rainforest agriculture had a fragile carrying capacity; sustained drought collapsed the royal-divine system maize surplus had supported",
       "Maya cities were abandoned because Aztec northern invasions reached them around 950 AD; the rainforest-collapse reading misidentifies military conquest as environmental phenomenon",
       "Maya collapse reflects Christian Spanish conquest, not pre-Columbian environmental change; the 950 AD abandonment is a misdated 16th-century event by archaeologists",
       "Maya cities were never really abandoned; the collapse narrative is a 20th-century myth, and Tikal functioned as a religious center into modern Mayan villages around it today"
     ],
-    "answer": "Lowland rainforest agriculture (milpa swidden) had a fragile carrying capacity; sustained drought (~850-1050 AD) collapsed the royal-divine system maize surplus had supported",
+    "answer": "Lowland rainforest agriculture had a fragile carrying capacity; sustained drought collapsed the royal-divine system maize surplus had supported",
     "context": "The Classic Maya Collapse (~750-950 AD) ended divine kingship in the southern lowland centers (Tikal, Palenque, Calakmul, Yaxchilan, Copan). Multiple converging causes: prolonged drought (paleoclimate proxies show severe dry periods ~760, 810, 860, 910); deforestation reducing rainfall further; soil exhaustion; population growth past carrying capacity; warfare between rival ajaw kings; collapse of trade networks. Northern Yucatan centers (Chichen Itza, Uxmal) persisted later. Maya population and language continued — modern Maya speakers number ~6 million across Guatemala, Belize, southern Mexico. Diamond's Collapse (2005) used the Classic Maya as a case study; recent work (Aimers, Hoggarth, Iannone) emphasizes regional variation in collapse patterns."
   },
   {
@@ -10707,12 +10707,12 @@
     "tier": 5,
     "question": "Soviet anti-religious policy targeted Central Asian Islam alongside Russian Orthodoxy. Khrushchev's 1958-64 campaign closed ~80% of remaining mosques across Uzbekistan, Tajikistan, Turkmenistan, Kazakhstan. Yet by 1991 underground Islam survived widely. What does this document?",
     "choices": [
-      "Sufi tariqas (Naqshbandi, Yasawi) ran clandestine networks invisible to Soviet enforcement; popular practice survived in mahalla neighborhoods despite institutional mosque closure",
+      "Sufi tariqas ran clandestine networks invisible to Soviet enforcement; popular practice survived in mahalla neighborhoods despite institutional mosque closure",
       "Soviet anti-Islam policy was uniformly successful; the 1991 religious revival reflects post-Soviet foreign Wahhabi missionary penetration, not any genuine Central Asian Islamic survival",
       "Khrushchev's anti-religious campaign actually exempted Islam from suppression; the named mosque closures applied only to Orthodox churches, with no genuine Islamic targeting at all",
       "Central Asian Islam survived through Russian state protection of Tatar Volga Muslim communities; the Sufi-clandestine-network thesis overstates underground activity in Soviet villages"
     ],
-    "answer": "Sufi tariqas (Naqshbandi, Yasawi) ran clandestine networks invisible to Soviet enforcement; popular practice survived in mahalla neighborhoods despite institutional mosque closure",
+    "answer": "Sufi tariqas ran clandestine networks invisible to Soviet enforcement; popular practice survived in mahalla neighborhoods despite institutional mosque closure",
     "context": "Soviet anti-religious policy in Central Asia (Uzbekistan, Tajikistan, Turkmenistan, Kazakhstan, Kyrgyzstan) included the 1920s-30s hujum unveiling campaign, mosque closures, and persecution of ulama. Khrushchev's 1958-64 campaign reduced functioning mosques from ~25,000 to ~500. Yet Sufi tariqas — Naqshbandi (especially in the Ferghana Valley) and Yasawi networks — survived through the otin (women teachers), kalonchi (lay reciters), and mahalla (neighborhood) institutions invisible to Soviet enforcement. Devin DeWeese, Adeeb Khalid, and Bakhtiyar Babadjanov have documented this underground religious geography. The 1991 revival drew on this survival; post-Soviet republics rebuilt mosques rapidly."
   },
   {
@@ -10767,12 +10767,12 @@
     "tier": 5,
     "question": "Charlemagne's 30-year Saxon Wars (772-804) forcibly Christianized the Germanic Saxons. The 782 Verden Massacre executed 4,500 prisoners refusing baptism; the 785 Capitulary of Paderborn made paganism capital. Yet within two generations Saxony was firmly Christian. What does this document?",
     "choices": [
-      "Forced conversion combined with subsequent generational institutional embedding (parishes, tithes, episcopal courts) can produce durable Christian identity from violently imposed beginnings",
+      "Forced conversion combined with subsequent generational institutional embedding can produce durable Christian identity from violently imposed beginnings",
       "The Saxon Wars were political rebellions misdescribed as religious; Charlemagne tolerated pagan worship throughout and the named Verden Massacre is a 9th-century chronicler exaggeration",
       "Saxon Christianity reverted to paganism within fifty years; the modern German Christian identity dates from 12th-century Cistercian missions, not from the original Frankish forced conversion",
       "Verden Massacre was an Old Saxon legal punishment for treaty violations not religious refusal; Charlemagne's chronicler Einhard mistranscribed it as a pagan-vs-Christian event later on"
     ],
-    "answer": "Forced conversion combined with subsequent generational institutional embedding (parishes, tithes, episcopal courts) can produce durable Christian identity from violently imposed beginnings",
+    "answer": "Forced conversion combined with subsequent generational institutional embedding can produce durable Christian identity from violently imposed beginnings",
     "context": "Charlemagne's Saxon Wars (772-804) annexed the pagan Germanic Saxons into the Frankish Empire and Christianized them by force. The 782 Verden Massacre (Blood Court of Verden) executed 4,500 Saxon prisoners after the Battle of Süntel. The Capitulary on the Saxon Lands (Capitulatio de partibus Saxoniae, 785) made paganism, refusal of baptism, and crematory burial capital crimes. Saxon resistance under Widukind continued until his baptism in 785. Within two generations Saxony was firmly Christian; within four it was a major center of Latin scholarship (Corvey, Fulda, Werden monasteries). The forced-then-embedded pattern reappears in Charlemagne's successors and modern Christianization debates."
   },
   {
@@ -10803,12 +10803,12 @@
     "tier": 5,
     "question": "George Whitefield's 1739-40 American preaching tour reached an estimated 80% of colonists in person — the first event of pan-colonial scale in American history. The First Great Awakening reshaped American religious geography across all colonies. What does this document?",
     "choices": [
-      "Itinerant preaching plus print networks (Whitefield's sermons in newspapers) created the first pan-colonial American religious-cultural movement; revival reshaped established-church monopolies",
+      "Itinerant preaching plus print networks created the first pan-colonial American religious-cultural movement; revival reshaped established-church monopolies",
       "Whitefield's tour had negligible religious impact; his audience figures are 19th-century evangelical advertising inflation, with no genuine pan-colonial revival in the 1740s period",
       "The Great Awakening was largely confined to New England Congregationalism; the pan-colonial scale overstates the impact, and Anglican Virginia and Presbyterian Mid-Atlantic were largely unaffected",
       "Whitefield's revival actually reduced American church membership by alienating established clergy; long-term religious geography reflects 1780s post-Revolutionary settlement, not the Awakening"
     ],
-    "answer": "Itinerant preaching plus print networks (Whitefield's sermons in newspapers) created the first pan-colonial American religious-cultural movement; revival reshaped established-church monopolies",
+    "answer": "Itinerant preaching plus print networks created the first pan-colonial American religious-cultural movement; revival reshaped established-church monopolies",
     "context": "George Whitefield (1714-70) was an Anglican Calvinist Methodist itinerant who made seven American preaching tours between 1738 and 1770. The 1739-40 tour was massive: open-air sermons drew crowds of 5,000-25,000; he covered 5,000+ miles. Newspaper coverage (Benjamin Franklin printed his sermons in Philadelphia and made money on them) gave the Awakening pan-colonial reach. Frank Lambert's Pedlar in Divinity (1994) and Harry Stout's The Divine Dramatist (1991) analyze the marketing-and-print dimension. The Awakening split colonial churches into 'New Lights' and 'Old Lights,' created pan-colonial religious identity, and helped Americans imagine themselves as one people — a generation before political independence."
   },
   {
@@ -10837,7 +10837,7 @@
   },
   {
     "tier": 5,
-    "question": "The 1925 Scopes 'Monkey Trial' in Dayton, Tennessee, prosecuted a high school teacher for teaching evolution in violation of the Butler Act. Bryan prosecuted; Darrow defended. Press coverage made Bryan a national fundamentalist figure. What does the trial's geography reveal?",
+    "question": "The 1925 Scopes 'Monkey Trial' in Dayton, Tennessee, prosecuted a high school teacher for teaching evolution in violation of the Butler Act. Bryan prosecuted; Darrow defended. Press coverage made Bryan a national fundamentalist figure. Which cultures clashed at Dayton?",
     "choices": [
       "Religious-cultural tension between Southern rural-Protestant geography and Northern urban-secular media; Scopes crystallized the urban-rural religious divide later electoral geography reinforced",
       "Bryan's fundamentalist defense was a fringe minority position in 1925; the urban-rural religious divide is a 1970s political geography mistake, with no antecedent in the Scopes trial period",
@@ -10921,7 +10921,7 @@
   },
   {
     "tier": 5,
-    "question": "Yugoslav Wars (1991-2001) tracked religious-ethnic boundaries: Catholic Croats, Orthodox Serbs, Muslim Bosniaks, Catholic Slovenes, Muslim Kosovars. The Bosnian War's Srebrenica massacre (~8,000 Bosniak men, July 1995) targeted Muslims. What does this conflict reveal?",
+    "question": "Yugoslav Wars (1991-2001) tracked religious-ethnic boundaries: Catholic Croats, Orthodox Serbs, Muslim Bosniaks, Catholic Slovenes, Muslim Kosovars. The Bosnian War's Srebrenica massacre (~8,000 Bosniak men, July 1995) targeted Muslims. What religious-ethnic identity did the Yugoslav wars track?",
     "choices": [
       "Religious identity can become ethnic marker even in highly secular populations; ex-Yugoslavia's wars showed religious-tradition lines as conflict boundaries in nominally secular societies",
       "Yugoslav Wars were entirely about ethnicity with no religious dimension; the named Christian-Muslim categorization is a Western media simplification with no role in actual fighting at all",
@@ -10933,7 +10933,7 @@
   },
   {
     "tier": 5,
-    "question": "The Troubles (1968-1998, ~3,500 deaths) divided Northern Ireland on Protestant Unionist vs Catholic Nationalist lines. Belfast neighborhoods had peace walls separating working-class streets. The Good Friday Agreement (1998) ended overt violence. What does this boundary reveal?",
+    "question": "The Troubles (1968-1998, ~3,500 deaths) divided Northern Ireland on Protestant Unionist vs Catholic Nationalist lines. Belfast neighborhoods had peace walls separating working-class streets. The Good Friday Agreement (1998) ended overt violence. What did the Belfast peace walls fuse together?",
     "choices": [
       "Religious identity and political identity can fuse so tightly that physical urban geography (peace walls between streets, segregated neighborhoods) reflects centuries-deep sectarian division",
       "Northern Ireland's Troubles were entirely political with no genuine religious dimension; the Protestant-Catholic framing is a media simplification with no role in actual paramilitary motivations",
@@ -11055,12 +11055,12 @@
     "tier": 5,
     "question": "During the Vietnam War (1955-75), monk Thich Nhat Hanh founded Engaged Buddhism, applying Buddhist meditation to social action. Exiled in 1966, he lived in France until returning to Vietnam in 2018. In which region of France did Thich Nhat Hanh establish his Engaged-Buddhism monastic center in 1982?",
     "choices": [
-      "Southwestern France — Plum Village (Village des Pruniers) in the Dordogne became the center of Engaged Buddhism",
+      "Southwestern France — Plum Village in the Dordogne became the center of Engaged Buddhism",
       "Eastern Switzerland — a Zen monastery in the Alps that Thich Nhat Hanh founded for European retreatants",
       "Northern California — Spirit Rock and the Insight Meditation Society lineage that he established personally",
       "Central Vermont — Karmê Chöling and the Shambhala lineage that he founded with Chögyam Trungpa in 1970"
     ],
-    "answer": "Southwestern France — Plum Village (Village des Pruniers) in the Dordogne became the center of Engaged Buddhism",
+    "answer": "Southwestern France — Plum Village in the Dordogne became the center of Engaged Buddhism",
     "context": "Thich Nhat Hanh (1926-2022, Vietnamese Zen monk and peace activist) founded the Order of Interbeing (1966) and the broader Engaged Buddhism movement, applying mindfulness and Buddhist ethics to social conditions during the Vietnam War. Exiled in 1966 after meeting Martin Luther King (who nominated him for the 1967 Nobel Peace Prize), he established Plum Village in southwestern France (1982) as the center for Engaged Buddhism in the West. His ~100 books, especially The Miracle of Mindfulness (1975) and Being Peace (1987), shaped the contemporary Western mindfulness movement (Jon Kabat-Zinn's MBSR program built on his teachings). He returned to Vietnam in 2018."
   },
   {
@@ -11809,7 +11809,7 @@
   },
   {
     "tier": 2,
-    "question": "The border between the United States and Canada west of the Great Lakes follows a single line of latitude: the 49th parallel. The 5,500-mile border is the world's longest international land border, and largely undefended. What does this peaceful boundary illustrate?",
+    "question": "The border between the United States and Canada west of the Great Lakes follows a single line of latitude: the 49th parallel. The 5,500-mile border is the world's longest international land border, and largely undefended. Which four treaties built the peaceful US-Canada border west of the Great Lakes?",
     "choices": [
       "A long history of diplomacy: Treaty of 1818, Webster-Ashburton 1842, Oregon 1846",
       "A shared language and currency that erase any real practical national difference",
@@ -12181,7 +12181,7 @@
   },
   {
     "tier": 4,
-    "question": "The 1962 US-built GPS network grew out of Cold War-era American military positioning needs. By 1995 it was a 24-satellite constellation in medium Earth orbit, broadcasting timing signals freely worldwide. President Reagan opened it to civilians after the 1983 KAL 007 incident. What geographic-engineering achievement does it represent?",
+    "question": "The GPS network, authorized in 1973 and built by the US to meet Cold War military positioning needs,. By 1995 it was a 24-satellite constellation in medium Earth orbit, broadcasting timing signals freely worldwide. President Reagan opened it to civilians after the 1983 KAL 007 incident. What geographic-engineering achievement does it represent?",
     "choices": [
       "Continuous-coverage positioning for any sky-view receiver, accurate to within meters",
       "Earth's first system to track and predict typhoons forming over the western Pacific Ocean",
@@ -12591,12 +12591,12 @@
     "tier": 5,
     "question": "James Buchanan's public choice theory analyzes politicians and bureaucrats as utility-maximizing agents subject to political-economic incentives, not benevolent planners. Applied to Soviet five-year-plan geography (Aral Sea diversion, Stalin's Belomor Canal), the move generates a specific predictive frame. Which best names the move?",
     "choices": [
-      "Public choice — planners' personal incentives (career, status, plan fulfillment) systematically diverge from claimed welfare goals",
+      "Public choice — planners' personal incentives systematically diverge from claimed welfare goals",
       "Hayekian knowledge problem — planners cannot know dispersed information, regardless of any incentive structure",
       "Marxist alienation — planners are estranged from their planning labor, producing inefficient outcomes always",
       "Geographic determinism — Soviet geography itself caused the failures, not the planning system specifically"
     ],
-    "answer": "Public choice — planners' personal incentives (career, status, plan fulfillment) systematically diverge from claimed welfare goals",
+    "answer": "Public choice — planners' personal incentives systematically diverge from claimed welfare goals",
     "context": "Buchanan & Tullock's Calculus of Consent (1962) and Buchanan's later work apply economic-rationality analysis to political actors. The Belomor (White Sea-Baltic) Canal (1931-33, ~100,000+ prisoner deaths, navigationally too shallow for major ships) was completed on schedule because plan-fulfillment was the cadre incentive — not because it was good policy. Public choice predicts this systematic divergence."
   },
   {
@@ -12637,7 +12637,7 @@
   },
   {
     "tier": 2,
-    "question": "The Solovetsky Islands sit in the White Sea, off northern Russia. From the 1400s to 1920 they held a major Orthodox monastery. In 1923 the Soviets converted it into the first Gulag camp. Why does this matter historically?",
+    "question": "The Solovetsky Islands sit in the White Sea, off northern Russia. From the 1400s to 1920 they held a major Orthodox monastery. In 1923 the Soviets converted it into the first Gulag camp. What Soviet institution did the Solovetsky monastery become in 1923?",
     "choices": [
       "It marked the start of the Soviet labor-camp system that grew into the Gulag",
       "It was the only camp ever built on an island, so it was the easiest to manage",
@@ -12673,7 +12673,7 @@
   },
   {
     "tier": 2,
-    "question": "Mount Vesuvius in Italy buried the Roman cities of Pompeii and Herculaneum in 79 AD. The volcanic ash preserved daily life in 1st-century Roman cities. What does the preserved evidence tell us about Roman life?",
+    "question": "Mount Vesuvius in Italy buried the Roman cities of Pompeii and Herculaneum in 79 AD. The volcanic ash preserved daily life in 1st-century Roman cities. What aspects of daily Roman life did Vesuvius preserve under Pompeii's ash in 79 AD?",
     "choices": [
       "Bakeries, brothels, graffiti, fast-food shops, all preserved exactly as they were",
       "Pompeii was uniformly wealthy, with marble villas and no class differentiation",
@@ -12915,12 +12915,12 @@
     "tier": 4,
     "question": "Saudi Arabia controls roughly 17% of proven global oil reserves and 13% of OPEC production. Its strategic location includes Persian Gulf coast (Hormuz exit), Red Sea coast (Bab-el-Mandeb), and the Saudi Holy Places (Mecca and Medina). What geographic logic made Saudi Arabia central to US strategy from 1945?",
     "choices": [
-      "Oil, two major sea coasts (Gulf + Red Sea), and population balanced US-Soviet competition for influence",
+      "Oil, two major sea coasts, and population balanced US-Soviet competition for influence",
       "Saudi population was small enough that the US could directly garrison the country with few troops",
       "Saudi terrain was flat enough for direct US military overflight without any defensive complications",
       "Saudi rulers were Christian converts, making religious alignment with the US natural and durable"
     ],
-    "answer": "Oil, two major sea coasts (Gulf + Red Sea), and population balanced US-Soviet competition for influence",
+    "answer": "Oil, two major sea coasts, and population balanced US-Soviet competition for influence",
     "context": "The Roosevelt-Ibn Saud meeting aboard USS Quincy (Feb 1945) established the US-Saudi partnership: US security guarantee in exchange for oil-market stability. Saudi Arabia became central to US Middle East strategy. The country's geography (Gulf + Red Sea + Two Holy Places) gives it positional weight beyond its oil reserves. Substantive geopolitical fact."
   },
   {
@@ -12963,12 +12963,12 @@
     "tier": 5,
     "question": "The Solidarity movement (Solidarność) emerged from Polish shipyard strikes in Gdańsk (1980), led by electrician Lech Wałęsa. Within a year it had ~10 million members in a country of 35 million. Martial law (December 1981) drove it underground; it re-emerged in 1989 to negotiate Poland's transition. What broader Eastern European pattern did Solidarność help establish?",
     "choices": [
-      "Nonviolent civic resistance to communist regimes, picked up by Czechs (1989) and Baltic states (1990-91)",
+      "Nonviolent civic resistance to communist regimes, picked up by Czechs and Baltic states",
       "Armed insurrection in industrial cities, the model later followed by Romanian opposition fighters in 1989",
       "Underground guerrilla warfare in rural forests, copied by Yugoslav successor states in the 1990s",
       "International boycotts of Soviet goods, organized through coordinated Western trade union efforts globally"
     ],
-    "answer": "Nonviolent civic resistance to communist regimes, picked up by Czechs (1989) and Baltic states (1990-91)",
+    "answer": "Nonviolent civic resistance to communist regimes, picked up by Czechs and Baltic states",
     "context": "Solidarność (1980-89) was Eastern Europe's first independent mass trade union under communism. Nonviolent civic resistance — strikes, samizdat, underground universities. Lech Wałęsa's 1983 Nobel Peace Prize. The 1989 Round Table Talks (with John Paul II's Polish papacy as moral framework) negotiated Poland's transition. Czech Velvet Revolution (Nov 1989), Baltic Singing Revolution (1990-91) followed the nonviolent model."
   },
   {
@@ -13168,9 +13168,9 @@
     "question": "The Holodomor of 1932-33 killed an estimated 3.5-7 million Ukrainians in a famine that Robert Conquest's Harvest of Sorrow (1986) documented from Soviet archives, Ukrainian survivor accounts, and contemporary Western reports (Gareth Jones in March 1933). What single Soviet geographic-administrative policy most directly produced the famine's specifically Ukrainian severity?",
     "choices": [
       "Grain requisitioning at Moscow-set quotas above harvest reality, combined with internal-passport restrictions on travel",
-      "Forced relocation of all Ukrainian peasants to Siberian camps before the 1932 harvest could be brought in",
-      "Soviet aircraft seeded clouds over Ukraine to suppress rainfall, deliberately producing a famine",
-      "German invasion of Ukraine in 1932 forced peasant flight to Russia, leaving fields unworked at harvest"
+      "Forced relocation of all Ukrainian peasants to Siberian camps the year before the 1932 harvest could be brought in",
+      "Stalin's deliberate diversion of Volga and Dnieper river irrigation away from Ukrainian wheat fields in 1932-33",
+      "Mass conscription of Ukrainian peasant men into the Red Army in 1932, leaving collective-farm fields unworked"
     ],
     "answer": "Grain requisitioning at Moscow-set quotas above harvest reality, combined with internal-passport restrictions on travel",
     "context": "Stalin's grain-requisitioning quotas (set against falsely reported harvest figures), combined with the Dec 1932 internal-passport law preventing peasants from fleeing to cities, and the 1932 blacklist regime cutting off villages, produced the Holodomor's specifically Ukrainian severity. Many states (including the US, Canada, EU) recognize it as a genocide. Substantive 20th-century Soviet-regime geography."
