@@ -1,0 +1,1218 @@
+{
+  "baseline_tag": "audit_baseline_2026_05_27",
+  "phase": "A",
+  "banks": {
+    "math": {
+      "name": "math",
+      "count": 2455,
+      "gate_fails": [],
+      "weasel_closers": [],
+      "buried_story": [],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "grammar": {
+      "name": "grammar",
+      "count": 1934,
+      "gate_fails": [],
+      "weasel_closers": [
+        {
+          "idx": 1824,
+          "tier": 5,
+          "stem_preview": " from Latin. What does 'sub poena' literally mean, and what does that reveal about the writ's force?"
+        }
+      ],
+      "buried_story": [
+        {
+          "idx": 361,
+          "tier": 2,
+          "stem_preview": "Today 'naughty' describes a misbehaving child. In Middle English, 'naughty' came",
+          "ctx_len": 343
+        },
+        {
+          "idx": 372,
+          "tier": 2,
+          "stem_preview": "The English word 'jungle' came from a Hindi word that originally meant something",
+          "ctx_len": 399
+        },
+        {
+          "idx": 377,
+          "tier": 2,
+          "stem_preview": "The word 'barbecue' came from a Caribbean language. What did the original word d",
+          "ctx_len": 373
+        },
+        {
+          "idx": 425,
+          "tier": 2,
+          "stem_preview": "The word 'gymnasium' (a place for exercise) comes from a Greek word with a surpr",
+          "ctx_len": 443
+        },
+        {
+          "idx": 465,
+          "tier": 2,
+          "stem_preview": "What does the idiom 'couch potato' describe?",
+          "ctx_len": 397
+        },
+        {
+          "idx": 1483,
+          "tier": 4,
+          "stem_preview": "A long modifying phrase placed far from its noun can attach to the wrong thing. ",
+          "ctx_len": 305
+        },
+        {
+          "idx": 1546,
+          "tier": 4,
+          "stem_preview": "The English phrase 'by the skin of my teeth' (meaning narrowly escaped) comes fr",
+          "ctx_len": 531
+        }
+      ],
+      "trailing_tokens": [
+        {
+          "idx": 800,
+          "tier": 3,
+          "matched": "toi toi toi"
+        },
+        {
+          "idx": 1191,
+          "tier": 5,
+          "matched": "climbed climbed climbed"
+        },
+        {
+          "idx": 1247,
+          "tier": 5,
+          "matched": "buffalo buffalo buffalo"
+        },
+        {
+          "idx": 1619,
+          "tier": 4,
+          "matched": "buffalo buffalo buffalo"
+        },
+        {
+          "idx": 1620,
+          "tier": 4,
+          "matched": "police police police police police"
+        },
+        {
+          "idx": 1849,
+          "tier": 5,
+          "matched": "buffalo buffalo buffalo"
+        }
+      ],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "history": {
+      "name": "history",
+      "count": 1049,
+      "gate_fails": [],
+      "weasel_closers": [],
+      "buried_story": [
+        {
+          "idx": 187,
+          "tier": 1,
+          "stem_preview": "In November 1532 the Spanish conquistador Francisco Pizarro, with about 168 men,",
+          "ctx_len": 425
+        },
+        {
+          "idx": 453,
+          "tier": 2,
+          "stem_preview": "Lise Meitner had worked with chemist Otto Hahn on nuclear physics for 30 years. ",
+          "ctx_len": 560
+        }
+      ],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "philosophy": {
+      "name": "philosophy",
+      "count": 882,
+      "gate_fails": [],
+      "weasel_closers": [
+        {
+          "idx": 630,
+          "tier": 4,
+          "stem_preview": "wered. A critic responds: 'Passing settles only behavior, not understanding.' What does this expose?"
+        }
+      ],
+      "buried_story": [],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "geography": {
+      "name": "geography",
+      "count": 1123,
+      "gate_fails": [],
+      "weasel_closers": [],
+      "buried_story": [
+        {
+          "idx": 479,
+          "tier": 1,
+          "stem_preview": "In Central Asia, rusting fishing ships sit on dry desert ground a hundred kilome",
+          "ctx_len": 393
+        },
+        {
+          "idx": 609,
+          "tier": 5,
+          "stem_preview": "The Antarctic Treaty (signed Washington 1 December 1959) was negotiated among th",
+          "ctx_len": 878
+        }
+      ],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "animal": {
+      "name": "animal",
+      "count": 938,
+      "gate_fails": [],
+      "weasel_closers": [],
+      "buried_story": [
+        {
+          "idx": 436,
+          "tier": 4,
+          "stem_preview": "Humpback whales in a single ocean basin sing the same complex song — which chang",
+          "ctx_len": 334
+        }
+      ],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "cooking": {
+      "name": "cooking",
+      "count": 992,
+      "gate_fails": [],
+      "weasel_closers": [
+        {
+          "idx": 965,
+          "tier": 5,
+          "stem_preview": "dispensations. Modern American Catholic observance is mostly Lenten Fridays. What does this tell us?"
+        }
+      ],
+      "buried_story": [],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "science": {
+      "name": "science",
+      "count": 1311,
+      "gate_fails": [],
+      "weasel_closers": [
+        {
+          "idx": 188,
+          "tier": 1,
+          "stem_preview": "ar away see it disappear BOTTOM FIRST below the horizon. What does that tell us about Earth's shape?"
+        }
+      ],
+      "buried_story": [
+        {
+          "idx": 352,
+          "tier": 2,
+          "stem_preview": "When Gregor Mendel submitted his 1866 paper on pea plants to a respected journal",
+          "ctx_len": 417
+        },
+        {
+          "idx": 526,
+          "tier": 3,
+          "stem_preview": "American astronomer Vera Rubin in the 1970s measured how fast stars orbit at the",
+          "ctx_len": 319
+        },
+        {
+          "idx": 552,
+          "tier": 3,
+          "stem_preview": "Niels Bohr's 1913 model pictured electrons orbiting the nucleus on specific allo",
+          "ctx_len": 300
+        },
+        {
+          "idx": 1286,
+          "tier": 1,
+          "stem_preview": "In April 1955 Cutter Labs put out Salk polio vaccine that wasn't fully killed. W",
+          "ctx_len": 223
+        }
+      ],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "economics": {
+      "name": "economics",
+      "count": 1426,
+      "gate_fails": [],
+      "weasel_closers": [
+        {
+          "idx": 430,
+          "tier": 2,
+          "stem_preview": "ion — she pushed for $1.9T+ in spending. By June 2022 US inflation hit 9.1%. What does this tell us?"
+        },
+        {
+          "idx": 949,
+          "tier": 4,
+          "stem_preview": " with restricted supply tend to raise prices rather than expand consumption. What does this suggest?"
+        }
+      ],
+      "buried_story": [
+        {
+          "idx": 89,
+          "tier": 1,
+          "stem_preview": "Mt. Gox was the largest Bitcoin exchange in 2014, handling 70% of trades. What h",
+          "ctx_len": 170
+        },
+        {
+          "idx": 123,
+          "tier": 1,
+          "stem_preview": "Roman soldiers in 100 AD got silver denarii. By 250 AD their coins were mostly c",
+          "ctx_len": 176
+        },
+        {
+          "idx": 235,
+          "tier": 1,
+          "stem_preview": "The town pays $100 per fire-truck call. Suddenly people call for stuck cats and ",
+          "ctx_len": 239
+        }
+      ],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "ai": {
+      "name": "ai",
+      "count": 1215,
+      "gate_fails": [],
+      "weasel_closers": [
+        {
+          "idx": 343,
+          "tier": 2,
+          "stem_preview": "t of a store. The sign over the door looks like letters but doesn't spell any word. What's the tell?"
+        },
+        {
+          "idx": 1205,
+          "tier": 5,
+          "stem_preview": "S AI firms and founding partners in OpenAI's Stargate compute project. What's the kid's recognition?"
+        }
+      ],
+      "buried_story": [
+        {
+          "idx": 557,
+          "tier": 3,
+          "stem_preview": "In February 2011, IBM's Watson played 'Jeopardy!' against two of the show's all-",
+          "ctx_len": 550
+        },
+        {
+          "idx": 658,
+          "tier": 3,
+          "stem_preview": "Face-recognition databases now exist at police departments, retailers, sports ve",
+          "ctx_len": 634
+        }
+      ],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "theology": {
+      "name": "theology",
+      "count": 1020,
+      "gate_fails": [],
+      "weasel_closers": [],
+      "buried_story": [],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    },
+    "trivia": {
+      "name": "trivia",
+      "count": 1444,
+      "gate_fails": [],
+      "weasel_closers": [],
+      "buried_story": [],
+      "trailing_tokens": [],
+      "truncation": [],
+      "christian_drift": [],
+      "spoiler_outside_allowed": [],
+      "stance_violations": {
+        "post-Endgame MCU": [],
+        "Disney SW": [],
+        "post-Attitude wrestling": []
+      }
+    }
+  },
+  "cross_bank_dups": [
+    {
+      "stem_norm": "5²",
+      "occurrences": [
+        [
+          "math",
+          47
+        ],
+        [
+          "math",
+          2154
+        ]
+      ]
+    },
+    {
+      "stem_norm": "12 23",
+      "occurrences": [
+        [
+          "math",
+          553
+        ],
+        [
+          "math",
+          790
+        ]
+      ]
+    },
+    {
+      "stem_norm": "12 38",
+      "occurrences": [
+        [
+          "math",
+          555
+        ],
+        [
+          "math",
+          788
+        ]
+      ]
+    },
+    {
+      "stem_norm": "12 15",
+      "occurrences": [
+        [
+          "math",
+          719
+        ],
+        [
+          "math",
+          783
+        ]
+      ]
+    },
+    {
+      "stem_norm": "12²",
+      "occurrences": [
+        [
+          "math",
+          1057
+        ],
+        [
+          "math",
+          2164
+        ]
+      ]
+    },
+    {
+      "stem_norm": "evaluate 2 3² 4",
+      "occurrences": [
+        [
+          "math",
+          1407
+        ],
+        [
+          "math",
+          1408
+        ]
+      ]
+    },
+    {
+      "stem_norm": "logab",
+      "occurrences": [
+        [
+          "math",
+          2184
+        ],
+        [
+          "math",
+          2185
+        ]
+      ]
+    },
+    {
+      "stem_norm": "noah websters american dictionary of the english language 1828 deliberately dive",
+      "occurrences": [
+        [
+          "grammar",
+          988
+        ],
+        [
+          "grammar",
+          1554
+        ]
+      ]
+    },
+    {
+      "stem_norm": "the chicago manual of style was first published in 1906 by the university of chi",
+      "occurrences": [
+        [
+          "grammar",
+          1061
+        ],
+        [
+          "grammar",
+          1258
+        ]
+      ]
+    },
+    {
+      "stem_norm": "alonzo reed and brainerd kellogg published higher lessons in english in 1877 int",
+      "occurrences": [
+        [
+          "grammar",
+          1073
+        ],
+        [
+          "grammar",
+          1650
+        ]
+      ]
+    },
+    {
+      "stem_norm": "summer 1666 the plague closed cambridge and 23yearold isaac newton went home to ",
+      "occurrences": [
+        [
+          "history",
+          0
+        ],
+        [
+          "history",
+          462
+        ]
+      ]
+    },
+    {
+      "stem_norm": "pope julius ii forced the sistine chapel ceiling commission on michelangelo in 1",
+      "occurrences": [
+        [
+          "history",
+          5
+        ],
+        [
+          "history",
+          258
+        ],
+        [
+          "history",
+          658
+        ],
+        [
+          "history",
+          830
+        ],
+        [
+          "history",
+          883
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on the cold morning of january 28 1986 the space shuttle challenger broke apart ",
+      "occurrences": [
+        [
+          "history",
+          85
+        ],
+        [
+          "history",
+          216
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in september 1928 the scottish bacteriologist alexander fleming returned to his ",
+      "occurrences": [
+        [
+          "history",
+          195
+        ],
+        [
+          "history",
+          454
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on november 24 1859 the english naturalist charles darwin published a book propo",
+      "occurrences": [
+        [
+          "history",
+          198
+        ],
+        [
+          "history",
+          268
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on october 21 1879 the american inventor thomas edison and his menlo park labora",
+      "occurrences": [
+        [
+          "history",
+          280
+        ],
+        [
+          "history",
+          445
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on march 21 1861 three weeks before fort sumter confederate vice president alexa",
+      "occurrences": [
+        [
+          "history",
+          313
+        ],
+        [
+          "history",
+          905
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in september 480 bc with athens evacuated and the persian fleet of about 1200 sh",
+      "occurrences": [
+        [
+          "history",
+          367
+        ],
+        [
+          "history",
+          552
+        ]
+      ]
+    },
+    {
+      "stem_norm": "when cortéss men climbed the steps of the templo mayor in tenochtitlán in 1519 t",
+      "occurrences": [
+        [
+          "history",
+          415
+        ],
+        [
+          "history",
+          612
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on the night of november 23 1654 the french mathematician blaise pascal had an e",
+      "occurrences": [
+        [
+          "history",
+          437
+        ],
+        [
+          "history",
+          879
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on december 17 1903 at kill devil hills near kitty hawk north carolina orville a",
+      "occurrences": [
+        [
+          "history",
+          495
+        ],
+        [
+          "history",
+          900
+        ],
+        [
+          "history",
+          1042
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on october 17 1777 a british army of 5800 under general john burgoyne surrendere",
+      "occurrences": [
+        [
+          "history",
+          519
+        ],
+        [
+          "history",
+          568
+        ]
+      ]
+    },
+    {
+      "stem_norm": "from february 23 to march 6 1836 about 200 texan defenders held the alamo missio",
+      "occurrences": [
+        [
+          "history",
+          525
+        ],
+        [
+          "history",
+          869
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on april 12 1963 good friday martin luther king jr was arrested in birmingham al",
+      "occurrences": [
+        [
+          "history",
+          541
+        ],
+        [
+          "history",
+          705
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on december 2 1823 in his seventh annual message to congress president james mon",
+      "occurrences": [
+        [
+          "history",
+          713
+        ],
+        [
+          "history",
+          929
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on march 8 1983 president ronald reagan addressed the national association of ev",
+      "occurrences": [
+        [
+          "history",
+          718
+        ],
+        [
+          "history",
+          960
+        ]
+      ]
+    },
+    {
+      "stem_norm": "between 1405 and 1433 the ming admiral zheng he commanded seven voyages from chi",
+      "occurrences": [
+        [
+          "history",
+          780
+        ],
+        [
+          "history",
+          1009
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on october 14 1962 a u2 reconnaissance flight over western cuba photographed sov",
+      "occurrences": [
+        [
+          "history",
+          860
+        ],
+        [
+          "history",
+          917
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on may 29 1453 after a 53day siege sultan mehmed iis ottoman army entered consta",
+      "occurrences": [
+        [
+          "history",
+          895
+        ],
+        [
+          "history",
+          945
+        ],
+        [
+          "history",
+          1010
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in 1976 the polynesian voyaging societys doublehulled canoe hokulea sailed from ",
+      "occurrences": [
+        [
+          "geography",
+          590
+        ],
+        [
+          "geography",
+          745
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in 1847 hungarian doctor ignaz semmelweis showed that doctors washing hands with",
+      "occurrences": [
+        [
+          "science",
+          376
+        ],
+        [
+          "science",
+          1127
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in 1927 the us supreme court ruled 81 in buck v bell that compulsory sterilizati",
+      "occurrences": [
+        [
+          "science",
+          462
+        ],
+        [
+          "science",
+          727
+        ]
+      ]
+    },
+    {
+      "stem_norm": "the proximal origin paper andersen et al nature medicine march 2020 declared sar",
+      "occurrences": [
+        [
+          "science",
+          749
+        ],
+        [
+          "science",
+          1075
+        ]
+      ]
+    },
+    {
+      "stem_norm": "steven koonin served as undersecretary for science at the us department of energ",
+      "occurrences": [
+        [
+          "science",
+          923
+        ],
+        [
+          "science",
+          1156
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on may 29 1919 british astronomer arthur eddington led an expedition to príncipe",
+      "occurrences": [
+        [
+          "science",
+          938
+        ],
+        [
+          "science",
+          1068
+        ]
+      ]
+    },
+    {
+      "stem_norm": "john ioannidis published why most published research findings are false in plos ",
+      "occurrences": [
+        [
+          "science",
+          991
+        ],
+        [
+          "science",
+          1107
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in 1963 milton friedman and anna schwartz published a monetary history of the un",
+      "occurrences": [
+        [
+          "economics",
+          403
+        ],
+        [
+          "economics",
+          1004
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in 1920 ludwig von mises published economic calculation in the socialist commonw",
+      "occurrences": [
+        [
+          "economics",
+          478
+        ],
+        [
+          "economics",
+          957
+        ]
+      ]
+    },
+    {
+      "stem_norm": "james buchanan and gordon tullock published the calculus of consent in 1962 the ",
+      "occurrences": [
+        [
+          "economics",
+          521
+        ],
+        [
+          "economics",
+          731
+        ]
+      ]
+    },
+    {
+      "stem_norm": "bitcoins difficulty adjustment recalculates every 2016 blocks about every two we",
+      "occurrences": [
+        [
+          "economics",
+          553
+        ],
+        [
+          "economics",
+          1039
+        ]
+      ]
+    },
+    {
+      "stem_norm": "a ponzi scheme named for charles ponzis 1920 boston fraud pays earlier investors",
+      "occurrences": [
+        [
+          "economics",
+          627
+        ],
+        [
+          "economics",
+          1205
+        ]
+      ]
+    },
+    {
+      "stem_norm": "milton friedman and anna schwartz published a monetary history of the united sta",
+      "occurrences": [
+        [
+          "economics",
+          642
+        ],
+        [
+          "economics",
+          734
+        ],
+        [
+          "economics",
+          1121
+        ]
+      ]
+    },
+    {
+      "stem_norm": "david ricardos 1817 on the principles of political economy and taxation introduc",
+      "occurrences": [
+        [
+          "economics",
+          694
+        ],
+        [
+          "economics",
+          929
+        ]
+      ]
+    },
+    {
+      "stem_norm": "on january 10 2024 the us securities and exchange commission approved the first ",
+      "occurrences": [
+        [
+          "economics",
+          818
+        ],
+        [
+          "economics",
+          1069
+        ]
+      ]
+    },
+    {
+      "stem_norm": "section 179 lets small businesses expense up to 116m 2023 of equipment in year o",
+      "occurrences": [
+        [
+          "economics",
+          1221
+        ],
+        [
+          "economics",
+          1229
+        ]
+      ]
+    },
+    {
+      "stem_norm": "stanford dropout elizabeth holmes founded theranos in 2003 by 2014 she had raise",
+      "occurrences": [
+        [
+          "economics",
+          1311
+        ],
+        [
+          "economics",
+          1323
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in february 2024 googles gemini image generator produced racially diverse nazi s",
+      "occurrences": [
+        [
+          "ai",
+          400
+        ],
+        [
+          "ai",
+          988
+        ],
+        [
+          "ai",
+          1083
+        ]
+      ]
+    },
+    {
+      "stem_norm": "many us school districts use aipowered surveillance tools gaggle goguardian bark",
+      "occurrences": [
+        [
+          "ai",
+          666
+        ],
+        [
+          "ai",
+          931
+        ]
+      ]
+    },
+    {
+      "stem_norm": "microsoft introduced a feature called productivity score that gave managers dash",
+      "occurrences": [
+        [
+          "ai",
+          708
+        ],
+        [
+          "ai",
+          1001
+        ]
+      ]
+    },
+    {
+      "stem_norm": "when a recommendation algorithm learns what you like and serves you more of it t",
+      "occurrences": [
+        [
+          "ai",
+          726
+        ],
+        [
+          "ai",
+          1024
+        ]
+      ]
+    },
+    {
+      "stem_norm": "modern ai models are trained partly with the help of human workers who label dat",
+      "occurrences": [
+        [
+          "ai",
+          737
+        ],
+        [
+          "ai",
+          1033
+        ]
+      ]
+    },
+    {
+      "stem_norm": "an industry effort called c2pa coalition for content provenance and authenticity",
+      "occurrences": [
+        [
+          "ai",
+          740
+        ],
+        [
+          "ai",
+          1016
+        ]
+      ]
+    },
+    {
+      "stem_norm": "your phone collects detailed location data where you go how long you stay what y",
+      "occurrences": [
+        [
+          "ai",
+          747
+        ],
+        [
+          "ai",
+          1009
+        ]
+      ]
+    },
+    {
+      "stem_norm": "when millions of students and writers use the same handful of llms to polish the",
+      "occurrences": [
+        [
+          "ai",
+          752
+        ],
+        [
+          "ai",
+          1014
+        ]
+      ]
+    },
+    {
+      "stem_norm": "in march 2023 the future of life institute published an open letter calling for ",
+      "occurrences": [
+        [
+          "ai",
+          971
+        ],
+        [
+          "ai",
+          1067
+        ]
+      ]
+    },
+    {
+      "stem_norm": "queen niobe of thebes had fourteen beautiful children seven sons and seven daugh",
+      "occurrences": [
+        [
+          "theology",
+          477
+        ],
+        [
+          "theology",
+          833
+        ]
+      ]
+    },
+    {
+      "stem_norm": "stephen one of the seven men appointed by the apostles to administer food to the",
+      "occurrences": [
+        [
+          "theology",
+          708
+        ],
+        [
+          "theology",
+          746
+        ]
+      ]
+    },
+    {
+      "stem_norm": "loki in one of his cruelest pranks crept into thors hall while the goddess sif s",
+      "occurrences": [
+        [
+          "theology",
+          870
+        ],
+        [
+          "theology",
+          929
+        ]
+      ]
+    },
+    {
+      "stem_norm": "after lokis maretrick lured away the giant builders stallion svadilfari the buil",
+      "occurrences": [
+        [
+          "theology",
+          897
+        ],
+        [
+          "theology",
+          938
+        ]
+      ]
+    },
+    {
+      "stem_norm": "the mary celeste was found drifting east of the azores on december 4 1872 by the",
+      "occurrences": [
+        [
+          "trivia",
+          1197
+        ],
+        [
+          "trivia",
+          1251
+        ]
+      ]
+    }
+  ]
+}
