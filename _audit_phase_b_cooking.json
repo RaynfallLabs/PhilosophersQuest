@@ -1,0 +1,855 @@
+{
+  "bank": "cooking",
+  "questions_judged": 992,
+  "flagged_count": 65,
+  "critical_count": 8,
+  "warn_count": 47,
+  "minor_count": 10,
+  "flags": [
+    {
+      "idx": 372,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A metal pan handle gets too hot to touch. A wooden handle next to the same fire stays cool. The wood feels colder even a",
+      "answer_preview": "Metal carries heat much faster along its length than wood",
+      "issue": "Truncated text in choices — All 3 distractors cut mid-phrase (\"to the\", \"from a short\", \"of water from\")",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 416,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A brisket sous-vide for 36 hours at 65C then briefly seared comes out edge-to-edge medium with melted collagen. A tradit",
+      "answer_preview": "Sous-vide gives uniform doneness with no smoke flavor; smoked brisket carries sm",
+      "issue": "Truncated text in choices — ANSWER truncated mid-phrase: \"...with greater variation across the\"",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 447,
+      "tier": 4,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A French pot-au-feu and a Vietnamese pho start from the same family of techniques: tough cuts plus bones plus aromatics,",
+      "answer_preview": "Pho chars ginger and onion and uses star anise/cinnamon with obsessive fat-skimm",
+      "issue": "Truncated text in choices — ANSWER truncated: \"obsessive fat-skimming for\"; c[3] also cut",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 450,
+      "tier": 4,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A celebrity chef argues against modern restaurant vacuum-sealing of meat for sous-vide: 'You cannot taste the fire. The ",
+      "answer_preview": "Tradition appeal — invoking long cultural history of fire cooking as a legitimac",
+      "issue": "Truncated text in choices — All 4 choices cut mid-phrase (answer + 3 distractors)",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 458,
+      "tier": 4,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Pastry chefs temper chocolate — heating to ~45C, cooling to 27C, then warming back to 32C before pouring. Untempered cho",
+      "answer_preview": "Beta-V cocoa butter crystals — stable, tightly packed; tempering selects this fo",
+      "issue": "Truncated text in choices — ANSWER may be cut: \"selects this form over the unstable\" (no following noun)",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 477,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Pre-Columbian Mesoamerican cooking centered on the comal — a flat clay or stone griddle heated over fire, used for torti",
+      "answer_preview": "Dry-heat toasting of chiles, seeds, and tortillas — the comal allowed Maillard b",
+      "issue": "Truncated text in choices — ANSWER cut: \"central to mole, salsa\" (mid-list); c[2] also cut",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 482,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A modernist pressure cooker can develop brown Maillard flavors on stews that traditionally need hours of open simmering.",
+      "answer_preview": "Higher operating temperature (116C) accelerates Maillard 4-8x; sealed environmen",
+      "issue": "Truncated text in choices — All 4 choices cut mid-phrase (\"open-pot\", \"with\", \"simmer\", \"with\")",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 492,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A celebrity chef criticizes fast-grill chain restaurants selling 'BBQ' in 4-minute portions: 'Real barbecue cannot be hu",
+      "answer_preview": "Category boundary defense — arguing the term 'barbecue' belongs to a specific te",
+      "issue": "Truncated text in choices — ANSWER cut: \"and that fast-grilled\" (mid-clause); c[2] also cut",
+      "suggested_fix": "Rewrite truncated choice(s) to complete the sentence; the truncated answer or distractor breaks parity and may be unintelligible or telegraph the missing meaning.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 39,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A San Francisco bakery's sourdough has a flavor and tang found nowhere else, even when other cities use the same flour, ",
+      "answer_preview": "Local microbial ecology matters; a specific bacterium thrives in those starters ",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 70,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Roman public ovens stood in every city — at Pompeii, archaeologists excavated bakeries with millstones, mixing troughs, ",
+      "answer_preview": "Bread was a commercial urban industry; bakers controlled milling, mixing, and ba",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 303,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The first published cookbook of medieval France was Le Viandier (~1300), attributed to Taillevent - chef to the king. Co",
+      "answer_preview": "Royal and noble kitchens had real specialization - dedicated cooks, repeatable r",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 319,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "French tradition reserves cheese to a course served after the main dish but before dessert - never at the start, never a",
+      "answer_preview": "The meal builds in intensity from light to rich, ending with a sweet release - c",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 321,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Antonin Careme (1784-1833) is sometimes called the founder of French haute cuisine. He worked in private kitchens (Talle",
+      "answer_preview": "The professionalization of cuisine - displaced from aristocratic households afte",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 325,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Roman cuisine at the height of empire used a salty fermented fish sauce called garum on most savory dishes. Excavated fa",
+      "answer_preview": "A Mediterranean trade network - sites near Pompeii shipped clay amphorae across ",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 334,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The methode champenoise (sparkling-wine production by secondary fermentation in the bottle) was refined across the 1600s",
+      "answer_preview": "Marketing reshaped history - 19th-century champagne houses built the Dom Perigno",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 345,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Roman garum factories at Pompeii preserved by the 79 CE eruption have been excavated and analyzed. Amphora residues (che",
+      "answer_preview": "An industrial-scale food economy with branded producers, long-distance shipping,",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 352,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Trappist (Cistercian) monasteries currently include only fourteen breweries worldwide entitled to the 'Authentic Trappis",
+      "answer_preview": "Monasteries were repositories of distillation knowledge - alchemical and medical",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 357,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Sumptuary laws in medieval England, Italy, and France regulated who could wear what (silk, fur, dyed cloth) and eat what",
+      "answer_preview": "Social rank tries to fix visible markers - food and dress locked to class by law",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 358,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Modern Italian cuisine (tomatoes, polenta, peppers, gnocchi from potato, turkey) is unimaginable before 1500. Pre-1500 I",
+      "answer_preview": "Cuisines we treat as ancient are often less than 500 years old - the Columbian E",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 449,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Tempura — Japanese batter of cold water, light flour, an egg yolk — fries impossibly light in 175C oil for one minute. S",
+      "answer_preview": "Gluten development must be minimized; overworking builds elastic gluten that tra",
+      "issue": "Distractor truncated mid-phrase — c[2] cut: \"heat from reaching the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 451,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A modern pizza oven runs at 480-500C — far higher than home ovens. A pie cooks in 60-90 seconds. Home pizza at 220C take",
+      "answer_preview": "Crust dries and Maillards in under a minute before the toppings overcook; dome h",
+      "issue": "Distractor truncated mid-phrase — c[3] cut: \"yeast dies before the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 455,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A traditional Indian curry starts with whole spices (cumin, mustard seed, cardamom, cinnamon stick) hitting hot ghee or ",
+      "answer_preview": "Spice flavor compounds are fat-soluble; brief hot-oil bloom extracts and dispers",
+      "issue": "Distractor truncated mid-phrase — c[1] cut: \"diner does not bite into\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 464,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A deli pickled cucumber — crunchy, sour, lightly salty — was sealed weeks ago in salt, vinegar, and spice. The salt-wate",
+      "answer_preview": "Salt brine selects for lactic-acid bacteria and inhibits spoilage organisms; the",
+      "issue": "Distractor truncated mid-phrase — c[2] cut: \"higher than that of a\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 469,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A roasted chicken's golden skin, a glossy creme brulee crust, and the bitter black on burnt toast all look related — but",
+      "answer_preview": "Maillard needs amino acid plus reducing sugar near 140C; caramelization is sugar",
+      "issue": "Distractor truncated mid-phrase — c[2] cut: \"stages of one\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 471,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Carolina whole-hog barbecue developed in coastal North Carolina from African pit-cooking traditions, Native American smo",
+      "answer_preview": "Hot humid summers spoiled meat fast; vinegar was a cheap, locally-available pres",
+      "issue": "Distractor truncated mid-phrase — c[3] cut: \"families had to\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 473,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "A pitmaster smoking brisket fights 'the stall' — internal temperature plateaus at ~70C for 4-6 hours before climbing aga",
+      "answer_preview": "Evaporative cooling from the surface — moisture wicks off as fast as the smoker ",
+      "issue": "Distractor truncated mid-phrase — c[2] cut \"bypasses the\"; c[3] cut \"into raising the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 476,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Perfect homemade ice cream needs slow churning AND fast freezing — both at once. Done wrong, the result is grainy and cr",
+      "answer_preview": "Ice crystal nucleation must be many and small (fast freezing) while air incorpor",
+      "issue": "Distractor truncated mid-phrase — c[1] cut: \"vs iciness in the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 478,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Texas brisket cooked over post oak for 14 hours and Cantonese char siu (BBQ pork) glazed and roasted at high heat for 30",
+      "answer_preview": "Brisket: deep collagen-to-gelatin plus extensive smoke compound deposition over ",
+      "issue": "Distractor truncated mid-phrase — c[1] cut: \"forming during the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 484,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Mass-fast-grill franchises and slow-traditional barbecue both label themselves 'barbecue.' One produces meals in 4 minut",
+      "answer_preview": "Recognize that fast-grill achieves surface Maillard quickly but cannot melt coll",
+      "issue": "Distractor truncated mid-phrase — c[2] cut: \"method over the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 486,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Understanding how smoke flavors meat became scientifically detailed only in the late 20th century. Pitmasters knew what ",
+      "answer_preview": "Phenols (vanillin, guaiacol, syringol from lignin), carbonyls (from cellulose), ",
+      "issue": "Distractor truncated mid-phrase — c[3] cut: \"color but not the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 489,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Modernist Cuisine (Nathan Myhrvold et al., 2011) opened a new chapter in culinary literature by treating cooking as phys",
+      "answer_preview": "Claim: cooking is fully scientific and benefits from systematic measurement; cri",
+      "issue": "Distractor truncated mid-phrase — c[1] and c[2] cut mid-phrase. Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 491,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Ethiopian injera — sourdough flatbread fermented 2-3 days from teff (a tiny grass grain native to Ethiopia), cooked on a",
+      "answer_preview": "Long fermentation transforms an indigenous grain into both bread and serving ves",
+      "issue": "Distractor truncated mid-phrase — c[1] cut \"appearance of\"; c[3] cut \"take on religious\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 493,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Japanese fugu (pufferfish) preparation requires a chef licensed by the Ministry of Health — typically 3+ years of traini",
+      "answer_preview": "Cultural recognition that skill is what makes food safe — the licensed chef's tr",
+      "issue": "Distractor truncated mid-phrase — c[2] cut: \"rather than because the\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 494,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Modernist cuisine uses methylcellulose for unusual textures — including 'hot ice cream' that sets when heated and melts ",
+      "answer_preview": "Methyl groups on the cellulose make it hydrophobic above ~50C — chains aggregate",
+      "issue": "Distractor truncated mid-phrase — c[3] cut: \"is held in suspension by\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 562,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Trappist monks in Belgium have brewed beer since the 12th century. The Cistercian rule requires monasteries to support t",
+      "answer_preview": "Monasteries inventing cheese, beer, distilled liqueurs — ascetic life producing ",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 590,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The Banda Islands were sole producers of nutmeg and mace until ~1700. The Dutch East India Company (VOC) sent Coen in 16",
+      "answer_preview": "Scarce-source spices created monopoly rents that drove extraordinary investment,",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 598,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The Columbian Exchange moved many ingredients both ways. Americas to Old World: tomato, potato, maize, chili, cocoa, van",
+      "answer_preview": "Pre-Columbian agriculture was sophisticated; millennia of breeding produced dive",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 609,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Russian caravans crossed Beijing to Moscow with tea in ~16 months by the 19th century. The samovar became central to Rus",
+      "answer_preview": "Caravans moved high-value-per-weight goods across great distances at economic co",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 705,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "From the 1200s to the 1500s, the Hanseatic League — a confederation of North German trading towns — controlled the salt ",
+      "answer_preview": "Pre-refrigeration food infrastructure salt fish ports ships warehouses was a pri",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 716,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Between 1250 and 1500, the Hanseatic League — a confederation of North German trading towns including Lubeck, Hamburg, B",
+      "answer_preview": "Pre-refrigeration food infrastructure salt fishery ports ships processing was a ",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 722,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Salt cod, gravlax, garum, anchovy paste, salted herring all developed in part as answers to religious fasting calendars ",
+      "answer_preview": "Religious dietary law was a primary driver of food preservation technology and t",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 731,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "European sausage families divide regionally with remarkable specificity: Italian salami (north and south differ), French",
+      "answer_preview": "Pre-refrigeration whole-animal-use was so universal every farming household slau",
+      "issue": "Distractor truncated mid-phrase — c[1] cut: \"competing for prestige across\". Choice parity broken; the properly-ended answer becomes a skim-tell.",
+      "suggested_fix": "Complete the truncated distractor(s) to match answer length and grammatical completeness.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 799,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Roman cuisine relied on garum, a fermented fish sauce produced at industrial scale at Pompeii, Cádiz, and elsewhere. Amp",
+      "answer_preview": "Roman cooking was umami-driven via fermented fish; the empire-wide trade in garu",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 826,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Le Guide Culinaire by Auguste Escoffier (Paris, 1903) systematized French haute cuisine for the Belle Époque. Five thous",
+      "answer_preview": "The rise of the modern restaurant, the grand hotel (Savoy, Ritz, Carlton), and t",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 942,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Korean cuisine includes gungjung eumsik — royal court cuisine. It is elaborate, balanced, visually composed, and documen",
+      "answer_preview": "A literate Confucian state with court protocols, a bureaucracy that documented r",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 948,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Iranian (Persian) cuisine elevates the bottom of the rice pot — tahdig, the crisp golden crust — into the prized portion",
+      "answer_preview": "Persian cuisine prizes textural contrast and craft; the perfect tahdig is techni",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 954,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "American Soul Food — collard greens, cornbread, fried chicken, black-eyed peas, sweet potato pie, smoked pork — is a Sou",
+      "answer_preview": "Cooks transformed difficult ingredients (tough greens, scrap pork, dried beans) ",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 965,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Intra-Christian dietary variation was substantial. Medieval Catholic monastics fasted on long calendars (Lent ~40 days, ",
+      "answer_preview": "Dietary discipline was once central to Western Christian formation; modern Catho",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 969,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Three world cuisines built signature sauces on long fermentation of soy or fish. Roman garum (fish, salt, sun-fermented)",
+      "answer_preview": "Civilizations independently discovered glutamate concentration through fermentat",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 971,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The Sichuan peppercorn (hua jiao) was effectively banned from American import 1968-2005 over citrus-canker concerns. Ame",
+      "answer_preview": "Authentic regional cuisine depends on specific ingredients; for 37 years America",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 972,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Korean kimchi-making is annual — kimjang, the late-autumn community kimchi preparation, is UNESCO-listed. Family and nei",
+      "answer_preview": "Kimchi is community as well as cuisine — kimjang gathers extended family and nei",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 974,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The 17th-18th century European coffeehouse transformed urban life — public spaces for sober, caffeinated discourse where",
+      "answer_preview": "The Enlightenment had social infrastructure — caffeinated sobriety plus public a",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 978,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Italian Sicilian cuisine bears layered influences — Greek, Roman, Byzantine, Arab (827-1091), Norman, Spanish (1282-1713",
+      "answer_preview": "Mediterranean cuisine is layered civilizational sediment — successive empires le",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 986,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "American food culture has unusual regional depth. New England, Mid-Atlantic, Southern, Midwestern, Southwestern, Pacific",
+      "answer_preview": "Immigrant settlement, indigenous heritage, and varied climate created distinct f",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 988,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Mexican mole is a category, not one dish. Oaxaca alone has seven moles (negro, rojo, coloradito, amarillo, verde, chichi",
+      "answer_preview": "Mexican cuisine prizes layered complexity within a unifying structural form; sev",
+      "issue": "Stem ends with §15 weasel closer (\"What does this tell us/reveal/show?\", \"Why does it matter?\", \"What broader change?\"). The substance is in the stem (good) but the closer should ask a specific concrete question.",
+      "suggested_fix": "Rewrite closer to ask a specific concrete question. Examples: \"What does this say specifically about [topic]?\" \"What underlying [chemistry/economic/historical] fact connects them?\" \"What pattern is being named?\"",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 328,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food writer argues against the industrial fast-food system: 'Look at the visible cheap calories. Now look at what the ",
+      "answer_preview": "Bastiat's seen-vs-unseen - the move drawing attention to indirect costs invisibl",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 338,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food economist argues against farm subsidies: 'A small number of large producers organize for the subsidy. The cost sp",
+      "answer_preview": "Public choice - concentrated benefits and dispersed costs predict why small orga",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 341,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food writer argues against ultra-processed snacks: 'These are not food. They are edible food-like substances. The pack",
+      "answer_preview": "Reframing - swapping 'food' for 'food-like substance' to shift analysis from nut",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 343,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food critic argues against fast food: 'Compared to home-cooked meals, fast food is monotonous, lower in fresh produce,",
+      "answer_preview": "Sowell's compared-to-what - the move forcing an explicit baseline for any compar",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 348,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food economist argues against top-down federal nutrition policy: 'The 1992 food pyramid emphasizing grains over fats c",
+      "answer_preview": "Hayek's knowledge problem - distributed knowledge held by individuals cannot be ",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 687,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A shopper picks 'uncured, no nitrites added' bacon labeled 'natural.' Ingredients include celery juice powder. Food scie",
+      "answer_preview": "Bastiat seen-vs-unseen — the consumer sees the label but the nitrites are presen",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 710,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A chef defends serving sweetbreads, marrow, blood sausage, and offal: 'The animal lived and died for the table. To use o",
+      "answer_preview": "A duty-based move tied to stewardship the animal deserves full use independent o",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 727,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A Slow Food advocate argues: 'Industrial charcuterie buys the visible savings — cheap bacon, fast hams — but loses the u",
+      "answer_preview": "Bastiat seen-vs-unseen the visible price savings of industrial charcuterie hide ",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 824,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food writer argues: 'A factory bottled tomato sauce is shelf-stable, salt-and-sugar-tuned for a broad palate. A scratc",
+      "answer_preview": "Category-redefining — denies that industrial sauce-making belongs to the same ca",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    },
+    {
+      "idx": 961,
+      "tier": 5,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A food critic argues: 'American Italian food is fake. Spaghetti and meatballs, chicken parm, fettuccine Alfredo do not e",
+      "answer_preview": "Authenticity-purity move — privileging the Old World version as the standard aga",
+      "issue": "Pattern J \"Which (analytical) move?\" closer. Permitted by COOKING_TEMPLATES.md (pattern J), but structurally identical refrain across many T4-T5 questions partially fits §15 weasel-closer pattern.",
+      "suggested_fix": "Optional: vary closers across Pattern J questions (\"Which named analytical move is the writer making?\", \"Which thinker is the writer applying?\", \"Which classical food-politics move does this argument exemplify?\"). Low priority — the closer is concrete enough that the kid knows what to pick.",
+      "confidence": "LOW"
+    }
+  ]
+}

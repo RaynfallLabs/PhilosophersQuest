@@ -1,0 +1,930 @@
+{
+  "bank": "ai",
+  "questions_judged": 1215,
+  "flagged_count": 71,
+  "flags": [
+    {
+      "idx": 2,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "The 'T' in GPT stands for Transformer. Transformers are a kind of:",
+      "answer_preview": "Neural network architecture",
+      "issue": "Distractors 'Magic wand from a story' and 'Brand of toaster appliance' are cartoon distractors.",
+      "suggested_fix": "Replace with sibling tech terms: 'An optimization algorithm', 'A database structure', 'A compiler design'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 50,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Alan Turing proposed a famous test in 1950. The idea: if a person can't tell a typed conversation apart from a human's, ",
+      "answer_preview": "The Turing test",
+      "issue": "Distractors 'The Newton test' and 'The Edison test' are name-pun fillers.",
+      "suggested_fix": "Replace with real proposed AI tests: 'The Lovelace test', 'The Coffee test (Wozniak)', 'The Winograd Schema Challenge'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 54,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "DeepMind's AlphaFold predicted the 3D structure of huge numbers of which biological molecules?",
+      "answer_preview": "Proteins",
+      "issue": "Tornadoes/Galaxies/Volcanoes are absurd molecule-category distractors.",
+      "suggested_fix": "Use real biological molecule families: 'Carbohydrates', 'Lipids', 'Nucleic acids (DNA/RNA)'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 58,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Geoffrey Hinton, sometimes called a 'godfather of AI' for his work on neural networks, resigned from which big tech comp",
+      "answer_preview": "Google",
+      "issue": "Disney / Boeing / Walmart are absurd distractors for 'the company Hinton left in 2023.'",
+      "suggested_fix": "Use real tech companies: 'Microsoft', 'Apple', 'IBM', 'Amazon'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 59,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Geoffrey Hinton's 2012 ImageNet-winning team gave a huge boost to which kind of AI?",
+      "answer_preview": "Deep neural networks",
+      "issue": "Spinning windmills / Hot-air balloons / Solar panels are cartoon distractors for 'kind of AI.'",
+      "suggested_fix": "Use sibling AI methods: 'Decision-tree ensembles', 'Support vector machines', 'Bayesian inference'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 64,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Anthropic, the company behind the Claude chatbot, is led by which co-founder?",
+      "answer_preview": "Dario Amodei",
+      "issue": "Daniel Boone / Doc Holliday / Davy Crockett are joke distractors for the Anthropic CEO. Frontiersmen as AI co-founders is cartoon-distractor anti-pattern.",
+      "suggested_fix": "Use real AI lab co-founders: 'Sam Altman (OpenAI)', 'Demis Hassabis (DeepMind)', 'Mustafa Suleyman (Inflection/Microsoft AI)'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 70,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "An early chatbot built at MIT in 1966 by Joseph Weizenbaum used simple pattern-matching to imitate a therapist. What was",
+      "answer_preview": "ELIZA",
+      "issue": "TARZAN / ARIEL / ROBIN are Disney/jungle joke distractors for the 1966 MIT chatbot.",
+      "suggested_fix": "Use other early NLP / chatbot systems: 'SHRDLU', 'PARRY', 'A.L.I.C.E'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 72,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "In 2011, an IBM AI system beat top humans on the TV quiz show Jeopardy! What was it called?",
+      "answer_preview": "Watson",
+      "issue": "Hawking / Newton / Edison are name-recognition joke distractors for IBM's Jeopardy AI.",
+      "suggested_fix": "Use real IBM systems: 'Deep Blue', 'Sequoia', 'Blue Gene'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 75,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Meta (the company behind Facebook) releases an open-weight model family that anyone can download and run. What's it call",
+      "answer_preview": "Llama",
+      "issue": "Lemur / Lobster / Leopard are alliterative animal joke distractors for 'Llama.'",
+      "suggested_fix": "Use real open-weight model families: 'Mistral', 'Falcon', 'Qwen'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 76,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Before ChatGPT made AI famous to everyone, the 2016 AlphaGo match against world-class player Lee Sedol was watched live ",
+      "answer_preview": "East Asia (where Go is huge)",
+      "issue": "Antarctica / Greenland / Vatican City as 'where chess is huge' are absurd joke distractors. The parenthetical is the punchline.",
+      "suggested_fix": "Use real Go-viewership regions: 'Europe (smaller Go scene)', 'North America (chess-dominant)', 'South America (chess strong, Go niche)'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 79,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "When the OpenAI board briefly fired Sam Altman in November 2023, which major OpenAI investor pushed for his return?",
+      "answer_preview": "Microsoft (its largest investor)",
+      "issue": "Walmart and Disney World as 'OpenAI investor' are joke distractors.",
+      "suggested_fix": "Use real tech investors: 'Khosla Ventures', 'Andreessen Horowitz (a16z)', 'Sequoia Capital'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 80,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "DeepMind, the AI lab behind AlphaGo and AlphaFold, is based in which city?",
+      "answer_preview": "London",
+      "issue": "Lagos / Lima / Lisbon are alliterative-city distractors; weak.",
+      "suggested_fix": "Use real AI-lab cities: 'Mountain View', 'San Francisco', 'Cambridge (UK)'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 82,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Geoffrey Hinton spent many years at which Canadian university before joining Google?",
+      "answer_preview": "University of Toronto",
+      "issue": "University of Vienna / Tokyo / Tahiti as 'Canadian university' — Vienna and Tokyo are not Canadian; Tahiti is a joke.",
+      "suggested_fix": "Use real Canadian universities: 'University of British Columbia', 'McGill University', 'University of Waterloo'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 83,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "When Google Translate turns Spanish into English, the system underneath uses what kind of AI?",
+      "answer_preview": "A neural network",
+      "issue": "Solar panel / wind turbine / submarine as 'kind of AI behind Google Translate' are absurd joke distractors.",
+      "suggested_fix": "Use sibling AI methods: 'A rule-based grammar parser', 'A statistical phrase table', 'An expert system'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 84,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Before 2016, machine translation between major languages was famously bad. What technology fixed it?",
+      "answer_preview": "Neural networks",
+      "issue": "Carrier pigeons / Telegraph wires as 'tech that fixed translation' read as joke distractors.",
+      "suggested_fix": "Use real pre-2016 MT approaches: 'Statistical machine translation', 'Rule-based translation systems', 'Phrase-based models'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 85,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "DeepMind's AlphaGo learned to play Go partly by playing against:",
+      "answer_preview": "Itself, millions of times",
+      "issue": "Tic-tac-toe champions / Bingo players in Florida are joke distractors for AlphaGo training opponents.",
+      "suggested_fix": "Use plausible alternatives: 'Top human Go masters', 'Earlier versions of itself only', 'A database of historical pro games'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 89,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Self-driving cars rely heavily on AI to make sense of cameras, radar, and lidar. Which of these companies is famous for ",
+      "answer_preview": "Waymo",
+      "issue": "Crayola / Lego / Hasbro are joke toy-company distractors for 'self-driving car company.'",
+      "suggested_fix": "Use real AV programs: 'Cruise (GM)', 'Argo AI', 'Aurora', 'Zoox'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 103,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Apple's voice assistant is called what?",
+      "answer_preview": "Siri",
+      "issue": "Sandy / Sammy / Stevie alliterative joke distractors for 'Apple's voice assistant.'",
+      "suggested_fix": "Use real competitor voice assistants: 'Cortana', 'Bixby', 'Aria'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 104,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Amazon's voice assistant, which lives in the Echo line of speakers, is called what?",
+      "answer_preview": "Alexa",
+      "issue": "Athena / Aurora / Aspen alliterative joke distractors for 'Amazon's voice assistant.'",
+      "suggested_fix": "Use real voice assistants from competitors: 'Bixby', 'Cortana', 'Hey Snapdragon'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1213,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "An 'AI agent' is different from a regular chatbot because it can:",
+      "answer_preview": "Take actions like browsing the web or sending email",
+      "issue": "'Read your mind through the camera on your laptop' is a cartoon-villain joke distractor for the foundational 'AI agent' question.",
+      "suggested_fix": "Use real chatbot capability boundaries: 'Display images alongside its text replies', 'Speak in many languages', 'Format text with headings'.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 37,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Two friends ask the same chatbot the same question. They get slightly different answers. What does this reveal about how",
+      "answer_preview": "Answers are generated, not retrieved",
+      "issue": "Section 15 weasel closer (stem ends in 'What does this reveal about how chatbots work?').",
+      "suggested_fix": "Concrete close: 'Where do chatbot answers come from -- a stored database, or fresh generation?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 45,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "You ask a chatbot to multiply two 5-digit numbers. The chatbot answers immediately. What's the smart move next?",
+      "answer_preview": "Check the result with a real calculator",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the smart move next?').",
+      "suggested_fix": "Concrete close: 'What's the right step after the chatbot gives you a multiplication answer?' (avoid 'smart move' weasel)",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 343,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A suspicious image shows a person standing in front of a store. The sign over the door looks like letters but doesn't sp",
+      "answer_preview": "AI image tools often produce gibberish text inside images",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the tell?').",
+      "suggested_fix": "Concrete close: 'What does the gibberish text on signs typically reveal about the image?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 587,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "AI weather models like GraphCast have a real limitation compared to physics simulations: they were trained on historical",
+      "answer_preview": "Models trained on the past may underperform when the world drifts away from past",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill here?').",
+      "suggested_fix": "Concrete close: 'What is the technical name for the weakness where training data no longer matches the current world?' (distribution shift)",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 588,
+      "tier": 3,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "John Deere now sells tractors with AI-powered cameras that distinguish crop plants from weeds — and spray weedkiller onl",
+      "answer_preview": "Less herbicide on the field means less runoff, less soil load, less environmenta",
+      "issue": "Section 15 weasel closer (stem ends in 'Why does this matter beyond the cost savings?').",
+      "suggested_fix": "Concrete close: 'What specific environmental impacts drop when herbicide use falls two-thirds?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 589,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Government Landsat satellite imagery used to come monthly. Now Planet Labs's hundreds of small satellites image every sp",
+      "answer_preview": "Daily satellite imagery + AI lets farmers see things at field scale that would h",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition for modern agriculture?').",
+      "suggested_fix": "Concrete close: 'What field-scale observation became possible only after Planet Labs's daily imaging?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 594,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Cruise (GM's self-driving subsidiary) had been competing with Waymo until October 2023, when one of its robotaxis dragge",
+      "answer_preview": "Self-driving safety depends on edge-case handling, one rare event can end a depl",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill from this case?').",
+      "suggested_fix": "Concrete close: 'What category of driving event ended Cruise's deployment, and why is it disproportionately important to AV safety?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 604,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Image-recognition systems like Google Photos can find every picture of your dog from years of photos. The system tags fa",
+      "answer_preview": "The same capability that finds your dog is also building a queryable database of",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill...?').",
+      "suggested_fix": "Concrete close: 'What is the same dog-finding capability used for, when applied to faces of people?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 606,
+      "tier": 3,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "AI-powered music generation tools (Suno, Udio, Stable Audio) can produce full-band original songs from text prompts in s",
+      "answer_preview": "Training data choices shape what kinds of art the resulting AI can, and can't, p",
+      "issue": "Section 15 weasel closer (stem ends in 'Why does this matter beyond the legal fight?').",
+      "suggested_fix": "Concrete close: 'What specifically does choice of training data determine about the music the resulting AI can produce?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 642,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Your school adopts an AI tool for students. The school's IT explains that all chat conversations are logged and stored f",
+      "answer_preview": "Treat the chats as if a teacher could read them at any time, assume reasonable p",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill for a student using this?').",
+      "suggested_fix": "Concrete close: 'What posture should you take toward any conversation you have on a school-issued chat?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 659,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "23andMe, AncestryDNA, MyHeritage, and similar services give consumers DNA-based ancestry reports. They also keep your ge",
+      "answer_preview": "The company can be acquired, can change its policies, or can be compelled by law",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill about what can happen to that data over time?').",
+      "suggested_fix": "Concrete close: 'Name three ways your DNA data can change hands AFTER you uploaded it.'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 666,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Many US school districts use AI-powered surveillance tools (Gaggle, GoGuardian, Bark, Securly) that monitor student emai",
+      "answer_preview": "Everything you write on a school account is potentially read by both algorithms ",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill for students using school accounts?').",
+      "suggested_fix": "Concrete close: 'On a school account, who specifically can read what you write -- algorithms only, or also humans?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 687,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "AI 'companion' chatbots (Replika, Character.AI, others) build persona-based relationships with users — pretending to be ",
+      "answer_preview": "It's not a relationship, it's a product designed to maximize your engagement",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill for any kid considering one?').",
+      "suggested_fix": "Concrete close: 'A companion-chatbot app makes money by optimizing what specific user metric?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 696,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "In China, a man named Liu Hu was added to a court 'discredited persons' list after a defamation conviction. He found he ",
+      "answer_preview": "AI-linked databases can lock people out of normal life — quietly, without a new ",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the broader pattern this case illustrates?').",
+      "suggested_fix": "Concrete close: 'What specific everyday activities can a social-credit blacklist deny, with no new trial?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 731,
+      "tier": 3,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Some news organizations have sued AI companies, arguing the models were trained on copyrighted journalism without permis",
+      "answer_preview": "Whether AI training counts as 'fair use' of copyrighted text — a question still ",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the deeper question the lawsuits raise?').",
+      "suggested_fix": "Concrete close: 'What legal doctrine -- 'fair use', 'derivative work', or 'fair dealing' -- are the courts being asked to apply to AI training?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 781,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "AI researchers have predicted 'AGI in 5 years' since at least the 1950s. The Dartmouth conference of 1956 famously expec",
+      "answer_preview": "Confident AGI timeline predictions have a poor track record, and current ones de",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill this 50-year track record teaches?').",
+      "suggested_fix": "Concrete close: 'What is the historical track record of confident 'AGI in five years' predictions, and what does that suggest about current ones?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 797,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "DeepSeek, a Chinese AI lab, released open-weight models in late 2024 and early 2025 that benchmarked competitively with ",
+      "answer_preview": "Closed-weight labs lose the ability to set prices freely when capable open-weigh",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the broader significance of strong open-weight competitors?').",
+      "suggested_fix": "Concrete close: 'What pricing or product-control freedom do closed-weight labs lose once capable open alternatives exist?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 860,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "DeepMind's GNoME tool predicted millions of stable inorganic crystal structures in 2023 — many more than humans had cata",
+      "answer_preview": "Counting headline discoveries is misleading without expert review — many are dup",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the broader lesson about evaluating AI claims of scientific discovery?').",
+      "suggested_fix": "Concrete close: 'What kind of expert verification is needed before treating a GNoME-style headline number as actual novel science?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 889,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A subtle weakness of cross-model verification: when a wrong answer is widespread in the training data — a popular but fa",
+      "answer_preview": "LLMs reflect what was common in their training data — wrong if popular, right if",
+      "issue": "Section 15 weasel closer (stem ends in 'What does this teach about how LLMs fail?').",
+      "suggested_fix": "Concrete close: 'What does the agreement of multiple LLMs on a wrong answer actually reflect -- about their training data, not about truth?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 891,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "After the Steven Schwartz / Mata v. Avianca case in 2023, courts in multiple US jurisdictions began requiring lawyers to",
+      "answer_preview": "Professional standards adapt — the human professional, not the AI tool, is on th",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the broader pattern this represents in regulated professions?').",
+      "suggested_fix": "Concrete close: 'In professions like law and medicine, who remains legally responsible when an AI tool errs?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 898,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "An AI chatbot tells you confidently that a financial product (a 529 plan, an IRA, a specific investment strategy) is the",
+      "answer_preview": "The chatbot doesn't know your full financial picture and bears no liability if i",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural reason to verify with a human financial professional?').",
+      "suggested_fix": "Concrete close: 'Compared to a real human advisor, name two specific things the AI chatbot lacks that bear on giving advice.'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 914,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Phishing emails used to be easy to spot. Awkward grammar, obvious typos, generic 'Dear Customer' greetings. AI-generated",
+      "answer_preview": "Stop relying on writing quality as a signal — verify the sender's actual email a",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural defensive shift?').",
+      "suggested_fix": "Concrete close: 'Now that grammar and personalization no longer mark phishing, what TWO specific things should you check instead?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 929,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "23andMe, AncestryDNA, MyHeritage, and similar services collect DNA samples from millions of consumers. They store the ge",
+      "answer_preview": "DNA is permanent and familial — it identifies your relatives too and reveals pre",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural privacy risk that's different from other kinds of personal data?').",
+      "suggested_fix": "Concrete close: 'Name two properties of DNA data that no password or credit-card data has.'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 934,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Microsoft 365 includes a feature called 'Productivity Score' that aggregates data on employee activity — emails sent, me",
+      "answer_preview": "Workplace AI surveillance has expanded sharply since 2020 — and most employees d",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the broader pattern these tools illustrate?').",
+      "suggested_fix": "Concrete close: 'Since 2020, what has changed in workplace AI surveillance, and what do most employees not know is tracked?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 937,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "AI 'companion' chatbots (Replika, Character.AI, and others) build persona-based relationships with users — pretend frien",
+      "answer_preview": "The product is engineered for engagement — it's a service maximizing your time, ",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural defensive observation about them?').",
+      "suggested_fix": "Concrete close: 'A companion chatbot is engineered to maximize WHICH metric -- and how does that conflict with what users assume the product is for?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 940,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A specific concern about heavy AI use for student writing: even when the AI-written work is technically good, the studen",
+      "answer_preview": "Argument under pressure is the core skill in interviews, presentations, court, d",
+      "issue": "Section 15 weasel closer (stem ends in 'Why does this matter beyond grades?').",
+      "suggested_fix": "Concrete close: 'Argument-under-pressure is the core skill in WHICH adult situations the kid will face without AI?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 941,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Social media platforms use AI to flag and remove content at scale — billions of decisions per year. Users whose content ",
+      "answer_preview": "The scale that makes AI moderation possible — that same scale makes individual a",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural problem when AI moderation gets it wrong?').",
+      "suggested_fix": "Concrete close: 'Why are appeals against AI-driven content removal slow and often unsuccessful?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 947,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "A documented family safety scenario: a young teen is using an AI chatbot late at night to talk about feelings they haven",
+      "answer_preview": "The chatbot displaces real conversation — the teen builds the habit of processin",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural concern, even when nothing dramatic goes wrong?').",
+      "suggested_fix": "Concrete close: 'What habit-of-mind does the teen build over time by routinely processing feelings through a product?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 948,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Companies that handle AI training data have suffered breaches. Anthropic, OpenAI, and others have all reported incidents",
+      "answer_preview": "Treat any cloud AI service as a potential breach vector — paste sensitive conten",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural defensive frame for users sending sensitive content to ANY AI service?').",
+      "suggested_fix": "Concrete close: 'What posture should a user take toward EVERY cloud AI service, given that breaches have occurred?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 956,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Smart-home cameras (Ring, Nest, Arlo, Wyze) increasingly use AI for person and package detection, behavior analysis, and",
+      "answer_preview": "The footage may be accessible to the manufacturer, to law enforcement via subpoe",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural privacy concern for the household and the neighborhood?').",
+      "suggested_fix": "Concrete close: 'Name three parties (other than the homeowner) who can potentially access smart-camera footage.'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 970,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Five companies — OpenAI, Anthropic, Google, Meta, Microsoft — produced the systems that hundreds of millions of people i",
+      "answer_preview": "A small group sets content policies, refusal patterns, and alignment defaults fo",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural concern about this concentration?').",
+      "suggested_fix": "Concrete close: 'What specific powers do these five companies have over what billions of users see, hear, and learn?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 995,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Online ad platforms — Meta, Google, X — offer 'psychographic' targeting: advertisers can request audiences segmented by ",
+      "answer_preview": "Ads can be calibrated to a user's specific psychological vulnerabilities — emoti",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill about psychographic targeting?').",
+      "suggested_fix": "Concrete close: 'What is the technical name for advertising calibrated to a user's specific emotional vulnerabilities?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1003,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Jonathan Haidt's research, summarized in his 2024 book 'The Anxious Generation,' argues that adolescent mental-health me",
+      "answer_preview": "Engagement-maximizing AI applied to developing brains may produce measurable, po",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the broader concern about AI-driven engagement systems?').",
+      "suggested_fix": "Concrete close: 'What measurable, population-scale outcome did Haidt link to the 2012-onward smartphone adoption among teens?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1004,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Several news organizations have sued AI companies, arguing the LLMs were trained on their copyrighted journalism without",
+      "answer_preview": "Training-data law is unsettled — the rules for what can legally be used to train",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the deeper recognition the lawsuits reveal?').",
+      "suggested_fix": "Concrete close: 'What specific legal doctrine -- 'fair use' or 'transformative use' -- is the New York Times suit asking courts to apply to AI training?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1013,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Many students use AI to do their homework — entering prompts and submitting outputs. Schools have responded with detecti",
+      "answer_preview": "Using AI to skip the cognitive work of learning means missing the development of",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the deeper recognition about AI dependency in education?').",
+      "suggested_fix": "Concrete close: 'A diploma certifies that a kid CAN do what specifically -- and how does AI-completed assignments break that certification?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1021,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Many of the largest AI services — ChatGPT free tier, Google's AI features, Meta AI — are offered without charge. Many al",
+      "answer_preview": "If the product is free, your data and behavior are typically part of how the com",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill about 'free' AI services?').",
+      "suggested_fix": "Concrete close: 'If the AI service is free, what is the company collecting from you that it monetizes?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1027,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Meta releases Llama models under a custom license that's not quite traditional open-source (it has commercial-use restri",
+      "answer_preview": "'Open weights' is a spectrum — some licenses permit any use, others restrict com",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition about 'open' AI?').",
+      "suggested_fix": "Concrete close: 'What two things should you check before assuming an 'open' AI license lets you use the model commercially?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1031,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Open-weights generative image models can be fine-tuned to produce harmful content, including AI-generated child sexual a",
+      "answer_preview": "Open weights mean both legitimate countervailing-force benefits AND irreversible",
+      "issue": "Section 15 weasel closer (stem ends in 'What does this illustrate about open-source AI?').",
+      "suggested_fix": "Concrete close: 'Once an open-weight image model has been released, what specifically becomes irreversible -- and why does it cut both ways?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1038,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "As people increasingly ask AI chatbots questions they used to type into search engines (Google, Bing), what's the struct",
+      "answer_preview": "From a ranked list of sources the user picks from, to a single synthesized answe",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural shift in who gets to shape what answers users see?').",
+      "suggested_fix": "Concrete close: 'What is the difference between a ranked search list and a single AI-synthesized answer, in terms of who controls what the user sees?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1041,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "In 1956 at Dartmouth, programs that could play chess were 'artificial intelligence.' After Deep Blue beat Kasparov in 19",
+      "answer_preview": "Whatever AI can already do gets demoted out of the definition; 'AGI' functions a",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the deeper lesson about how the term 'AGI' is being used?').",
+      "suggested_fix": "Concrete close: 'What is the textbook rhetorical move where 'AGI' keeps being redefined to exclude whatever AI has already accomplished?' (moving the goalposts)",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1060,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Anthropic, OpenAI, and Google all released AI 'agents' through 2024-2025 that can browse the web, run code, and modify f",
+      "answer_preview": "Agents read content from the world — web pages, emails, documents — and any of i",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the deeper structural challenge?').",
+      "suggested_fix": "Concrete close: 'In an agent, what specific class of input becomes a potential security vector -- and why does this make defense fundamentally harder?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1089,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "OpenAI's founding charter (published 2018) contains a clause stating that if another value-aligned, safety-conscious pro",
+      "answer_preview": "It has no enforcement mechanism — only OpenAI itself decides whether another pro",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural problem with such a commitment?').",
+      "suggested_fix": "Concrete close: 'What enforcement mechanism is MISSING from OpenAI's stop-and-assist clause that prevents it from being binding?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1140,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "By 2024-2025 a defensive habit caught on in some technical communities: routing all AI use through a local LLM (or a sel",
+      "answer_preview": "Local-first separates capability from privacy — you use the cloud's strongest mo",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural reason this pattern protects users?').",
+      "suggested_fix": "Concrete close: 'In a local-first AI workflow, what specifically NEVER leaves the user's device?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1143,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "California's SB 1047 (2024) would have required pre-deployment safety testing for AI models trained above a compute thre",
+      "answer_preview": "Regulatory capture — the rule entrenches incumbents and raises a barrier to chal",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the pattern when an incumbent supports new regulation that smaller competitors say they cannot afford to comply with?').",
+      "suggested_fix": "Concrete close: 'What is the textbook name for the pattern where an incumbent welcomes regulation that prices out smaller competitors?' (regulatory capture)",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1147,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "By 2024, OpenAI, Anthropic, Google, Meta, and Microsoft were the dominant frontier-AI builders. Microsoft's 49% stake in",
+      "answer_preview": "Antitrust typically arrives late — after the dominant position is established — ",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition pattern about when antitrust actually moves against tech incumbents?').",
+      "suggested_fix": "Concrete close: 'When antitrust moves against an entrenched tech incumbent, what is the typical lag, and what is the practical effect of that lag?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1148,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "In October 2022 (and updated 2023, 2024, 2025), the US imposed export controls on advanced AI chips to China, particular",
+      "answer_preview": "Export-control regimes concentrate AI power in fewer trusted actors — the world'",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the structural side-effect on the open AI ecosystem worldwide?').",
+      "suggested_fix": "Concrete close: 'What does an export-control regime tend to concentrate -- geographically and politically?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1152,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Beginning in 2020, major platforms adopted 'election integrity' policies that included labeling, restricting, or removin",
+      "answer_preview": "Whether the rules and their enforcement are symmetric across parties and candida",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition skill for evaluating election-integrity content moderation in general?').",
+      "suggested_fix": "Concrete close: 'When evaluating an election-integrity moderation policy, what single test most reveals whether it is impartial?' (symmetric application across parties)",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1161,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "The Stop LAPD Spying Coalition is a community organization in Los Angeles that has spent years documenting and challengi",
+      "answer_preview": "Local civil-society pressure has produced real rollbacks of surveillance program",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition about local-level resistance to surveillance?').",
+      "suggested_fix": "Concrete close: 'Which specific surveillance program did the Stop LAPD Spying Coalition push the LAPD to drop, and in what year?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1179,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "G"
+      ],
+      "stem_preview": "Tinder, Bumble, Hinge, and similar dating apps make money from active subscribers and feature upsells. Their stated purp",
+      "answer_preview": "The business model rewards keeping users on the app, which conflicts with the us",
+      "issue": "Section 15 weasel closer (stem ends in 'What's the recognition about the resulting product design?').",
+      "suggested_fix": "Concrete close: 'A dating-app's actual business model maximizes what metric -- and how does that conflict with the user's stated goal?'",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 786,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "F"
+      ],
+      "stem_preview": "A chess engine can defeat the world chess champion. An LLM can write competent essays on millions of topics. AlphaFold c",
+      "answer_preview": "Capability is what a system can do, while consciousness is the inner experience ",
+      "issue": "Stem references 'the AI bank' as a meta-entity ('the distinction the AI bank insists on'). The bank should not refer to itself in stems.",
+      "suggested_fix": "Rephrase: 'What is the philosophical distinction these examples illustrate between capability and consciousness?' (drop the meta-frame entirely).",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 105,
+      "tier": 1,
+      "severity": "MINOR",
+      "dimensions": [
+        "E"
+      ],
+      "stem_preview": "Of these four image AIs, which is open-source — meaning anyone can download and run it themselves?",
+      "answer_preview": "Stable Diffusion",
+      "issue": "Stem says 'Of these four image AIs' but Sora is a video model (not image). Context acknowledges this ('Sora (OpenAI, video)') -- the stem framing should match.",
+      "suggested_fix": "Rephrase stem: 'Of these four generative-AI image/video tools, which one is open-source -- meaning anyone can download and run it themselves?' Or substitute a different image-only model for Sora (e.g., 'Adobe Firefly').",
+      "confidence": "HIGH"
+    }
+  ]
+}

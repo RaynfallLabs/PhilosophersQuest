@@ -1,0 +1,4076 @@
+{
+  "bank": "math",
+  "questions_judged": 2455,
+  "flagged_count": 313,
+  "flags": [
+    {
+      "idx": 770,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Which is larger: -3 or -3?",
+      "answer_preview": "They are equal",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 848,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "1/10 as a decimal:",
+      "answer_preview": "0.1",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 849,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "3/10 as a decimal:",
+      "answer_preview": "0.3",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 850,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "7/10 as a decimal:",
+      "answer_preview": "0.7",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 851,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9/10 as a decimal:",
+      "answer_preview": "0.9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1115,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 60° and 60°. Third angle?",
+      "answer_preview": "60°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1116,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 90° and 45°. Third angle?",
+      "answer_preview": "45°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1117,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 45° and 90°. Third angle?",
+      "answer_preview": "45°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1118,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 50° and 70°. Third angle?",
+      "answer_preview": "60°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1119,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 40° and 80°. Third angle?",
+      "answer_preview": "60°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1120,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 35° and 55°. Third angle?",
+      "answer_preview": "90°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1121,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 25° and 65°. Third angle?",
+      "answer_preview": "90°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1122,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 75° and 75°. Third angle?",
+      "answer_preview": "30°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1123,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 100° and 40°. Third angle?",
+      "answer_preview": "40°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1124,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 110° and 30°. Third angle?",
+      "answer_preview": "40°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1125,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 85° and 35°. Third angle?",
+      "answer_preview": "60°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1126,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 105° and 25°. Third angle?",
+      "answer_preview": "50°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1127,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 33° and 47°. Third angle?",
+      "answer_preview": "100°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1128,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 28° and 92°. Third angle?",
+      "answer_preview": "60°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1129,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 42° and 88°. Third angle?",
+      "answer_preview": "50°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1130,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Triangle has angles 45° and 105°. Third angle?",
+      "answer_preview": "30°",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1134,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "What defines an equilateral triangle?",
+      "answer_preview": "All 3 sides equal",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1135,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "What defines an isosceles triangle?",
+      "answer_preview": "Exactly 2 sides equal",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1136,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "What defines a scalene triangle?",
+      "answer_preview": "No sides equal",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1693,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 1 = 5",
+      "answer_preview": "x = 2",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1694,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 3 = 7",
+      "answer_preview": "x = 2",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1695,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 9",
+      "answer_preview": "x = 2",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1696,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 11",
+      "answer_preview": "x = 2",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1697,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 15",
+      "answer_preview": "x = 2",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1698,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 1 = 7",
+      "answer_preview": "x = 3",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1699,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 3 = 9",
+      "answer_preview": "x = 3",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1700,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 11",
+      "answer_preview": "x = 3",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1701,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 13",
+      "answer_preview": "x = 3",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1702,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 17",
+      "answer_preview": "x = 3",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1703,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 1 = 9",
+      "answer_preview": "x = 4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1704,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 3 = 11",
+      "answer_preview": "x = 4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1705,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 13",
+      "answer_preview": "x = 4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1706,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 15",
+      "answer_preview": "x = 4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1707,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 19",
+      "answer_preview": "x = 4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1708,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 1 = 11",
+      "answer_preview": "x = 5",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1709,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 3 = 13",
+      "answer_preview": "x = 5",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1710,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 15",
+      "answer_preview": "x = 5",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1711,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 17",
+      "answer_preview": "x = 5",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1712,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 21",
+      "answer_preview": "x = 5",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1713,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 1 = 13",
+      "answer_preview": "x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1714,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 3 = 15",
+      "answer_preview": "x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1715,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 17",
+      "answer_preview": "x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1716,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 19",
+      "answer_preview": "x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1717,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 23",
+      "answer_preview": "x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1718,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 21",
+      "answer_preview": "x = 7",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1719,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 25",
+      "answer_preview": "x = 7",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1720,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 21",
+      "answer_preview": "x = 8",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1721,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 23",
+      "answer_preview": "x = 8",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1722,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 27",
+      "answer_preview": "x = 8",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1723,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 3 = 21",
+      "answer_preview": "x = 9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1724,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 5 = 23",
+      "answer_preview": "x = 9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1725,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 7 = 25",
+      "answer_preview": "x = 9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1726,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve for x: 2x + 11 = 29",
+      "answer_preview": "x = 9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1802,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Simplify: 2^2 · 2^2",
+      "answer_preview": "2^4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1826,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Simplify: 3^2 · 3^2",
+      "answer_preview": "3^4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1843,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Circle r = 1. Area? (π ≈ 3.14)",
+      "answer_preview": "3.14",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1844,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Circle r = 2. Area? (π ≈ 3.14)",
+      "answer_preview": "12.56",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1851,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Circle r = 1. Circumference? (π ≈ 3.14)",
+      "answer_preview": "6.28",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1852,
+      "tier": 3,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Circle r = 2. Circumference? (π ≈ 3.14)",
+      "answer_preview": "12.56",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1903,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "All squares are similar — but are they all congruent?",
+      "answer_preview": "No",
+      "issue": "Two joke distractors in same question; both banned.",
+      "suggested_fix": "Replace joke distractor with a real common arithmetic/conceptual mistake.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2208,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Euler's formula V − E + F = ?",
+      "answer_preview": "2",
+      "issue": "Misleading distractor; Euler's formula V-E+F=2 is invariant for any convex polyhedron - distractor contradicts the answer's well-known universality.",
+      "suggested_fix": "Replace joke distractor with a real common arithmetic/conceptual mistake.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2235,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 5x + 4 = 0",
+      "answer_preview": "x = 1 or x = 4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2236,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 7x + 6 = 0",
+      "answer_preview": "x = 1 or x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2237,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 8x + 7 = 0",
+      "answer_preview": "x = 1 or x = 7",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2238,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 9x + 14 = 0",
+      "answer_preview": "x = 2 or x = 7",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2239,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 9x + 8 = 0",
+      "answer_preview": "x = 1 or x = 8",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2240,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 9x + 18 = 0",
+      "answer_preview": "x = 3 or x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2241,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 10x + 9 = 0",
+      "answer_preview": "x = 1 or x = 9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2242,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 10x + 16 = 0",
+      "answer_preview": "x = 2 or x = 8",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2243,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 10x + 21 = 0",
+      "answer_preview": "x = 3 or x = 7",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2244,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 10x + 24 = 0",
+      "answer_preview": "x = 4 or x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2245,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 11x + 10 = 0",
+      "answer_preview": "x = 1 or x = 10",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2246,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 11x + 18 = 0",
+      "answer_preview": "x = 2 or x = 9",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2247,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 11x + 30 = 0",
+      "answer_preview": "x = 5 or x = 6",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2248,
+      "tier": 5,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Solve: x² − 1x − 2 = 0",
+      "answer_preview": "x = -1 or x = 2",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2250,
+      "tier": 2,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Simplify: (2^2)^2",
+      "answer_preview": "2^4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2262,
+      "tier": 4,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Simplify: (3^2)^2",
+      "answer_preview": "3^4",
+      "issue": "Distractor contains literal generation artifact 'NA0' or 'NA1' (never legitimate; this is bulk-gen output leaking placeholder strings).",
+      "suggested_fix": "Replace artifact distractor with a real common-mistake number/answer for this type.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2389,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Four quarters make one whole. So 1/4 + 1/4 + 1/4 + 1/4 = ?",
+      "answer_preview": "1",
+      "issue": "Distractor '4/4 stays 4/4' is a generation artifact - incoherent string.",
+      "suggested_fix": "Replace joke distractor with a real common arithmetic/conceptual mistake.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2390,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Which is the bigger slice: 1/2 or 1/4?",
+      "answer_preview": "1/2",
+      "issue": "Joke distractor; 1/2 and 1/4 are neither zero. Banned per math.md anti-pattern.",
+      "suggested_fix": "Replace joke distractor with a real common arithmetic/conceptual mistake.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2391,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Which is the smaller slice: 1/3 or 1/5?",
+      "answer_preview": "1/5",
+      "issue": "Vacuous distractor; doesn't represent a common arithmetic mistake.",
+      "suggested_fix": "Replace joke distractor with a real common arithmetic/conceptual mistake.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2426,
+      "tier": 1,
+      "severity": "CRITICAL",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Which is heavier: 1 pound or 1 ounce?",
+      "answer_preview": "1 pound",
+      "issue": "Joke distractor; pound vs ounce is not color-dependent. Explicitly banned (math.md punchline-as-distractor).",
+      "suggested_fix": "Replace joke distractor with a real common arithmetic/conceptual mistake.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 16,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25 × 4 = ?",
+      "answer_preview": "100",
+      "issue": "Distractor '925' for 25*4 has no learner-mistake derivation. Real common mistakes: 50 (forgot a 25), 90, 105.",
+      "suggested_fix": "Clean up '925' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 76,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "5 − 9 = ?",
+      "answer_preview": "-4",
+      "issue": "T1 has negative-integer answer (5-9=-4); negative arithmetic is T2 per math.md §3.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 80,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Larger: 1001 or 0999?",
+      "answer_preview": "1001",
+      "issue": "Stem uses '0999' (leading-zero notation, unusual). Distractor '9991' is unrelated. Better: '999 vs 1001' with distractor '1099' or '991'.",
+      "suggested_fix": "Clean up '9991, 0999' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 91,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "3/4 − 1/4 = ?",
+      "answer_preview": "1/2",
+      "issue": "T1 has fraction subtraction (3/4 - 1/4); fractions are T2 per math.md §3.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 161,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "0! (zero factorial) = ?",
+      "answer_preview": "1",
+      "issue": "T5 '0! = 1' is T3-T4 combinatorics; doesn't carry T5-grade wonder/depth.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 162,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "4 + 8 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 163,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "4 + 9 = ?",
+      "answer_preview": "13",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 164,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "5 + 6 = ?",
+      "answer_preview": "11",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 165,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "5 + 7 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 166,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "5 + 8 = ?",
+      "answer_preview": "13",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 167,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "6 + 5 = ?",
+      "answer_preview": "11",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 168,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "6 + 6 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 169,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "7 + 4 = ?",
+      "answer_preview": "11",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 170,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "7 + 5 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 171,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "7 + 6 = ?",
+      "answer_preview": "13",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 172,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "7 + 9 = ?",
+      "answer_preview": "16",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 173,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "8 + 3 = ?",
+      "answer_preview": "11",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 174,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "8 + 4 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 175,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "8 + 5 = ?",
+      "answer_preview": "13",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 176,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "8 + 6 = ?",
+      "answer_preview": "14",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 177,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "8 + 9 = ?",
+      "answer_preview": "17",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 178,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 2 = ?",
+      "answer_preview": "11",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 179,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 3 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 180,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 4 = ?",
+      "answer_preview": "13",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 181,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 5 = ?",
+      "answer_preview": "14",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 182,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "2 + 3 = ?",
+      "answer_preview": "5",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 183,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "3 + 4 = ?",
+      "answer_preview": "7",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 184,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "4 + 5 = ?",
+      "answer_preview": "9",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 185,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 10 = ?",
+      "answer_preview": "19",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 186,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "2 × 2 = ?",
+      "answer_preview": "4",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 196,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "3 × 3 = ?",
+      "answer_preview": "9",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 204,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "4 × 4 = ?",
+      "answer_preview": "16",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 209,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "5 × 5 = ?",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 255,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Double 3 is?",
+      "answer_preview": "6",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 271,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Half of 4 is?",
+      "answer_preview": "2",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 462,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Increase 80 by 25%.",
+      "answer_preview": "100",
+      "issue": "T5 'Increase 80 by 25%' is a T2 percent problem. Belongs at T2.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 517,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√2 is famous because it is…",
+      "answer_preview": "irrational",
+      "issue": "T5 'sqrt(2) famous because irrational' is T3-T4 level number-set membership.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 518,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Fibonacci rule for 1, 1, 2, 3, 5, 8, …?",
+      "answer_preview": "sum of the previous two",
+      "issue": "T5 'Fibonacci = sum of prev two' is T2-T3 vocab recall, not T5.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 532,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 17 = ?",
+      "answer_preview": "26",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 533,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 23 = ?",
+      "answer_preview": "32",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 534,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 36 = ?",
+      "answer_preview": "45",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 535,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 38 = ?",
+      "answer_preview": "47",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 536,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 44 = ?",
+      "answer_preview": "53",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 537,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 47 = ?",
+      "answer_preview": "56",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 538,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 52 = ?",
+      "answer_preview": "61",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 539,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 58 = ?",
+      "answer_preview": "67",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 540,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 63 = ?",
+      "answer_preview": "72",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 541,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "9 + 67 = ?",
+      "answer_preview": "76",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 542,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 17 = ?",
+      "answer_preview": "28",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 543,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 23 = ?",
+      "answer_preview": "34",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 544,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 36 = ?",
+      "answer_preview": "47",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 545,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 38 = ?",
+      "answer_preview": "49",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 546,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 44 = ?",
+      "answer_preview": "55",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 547,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 47 = ?",
+      "answer_preview": "58",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 548,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 52 = ?",
+      "answer_preview": "63",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 549,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 58 = ?",
+      "answer_preview": "69",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 550,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 63 = ?",
+      "answer_preview": "74",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 551,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "11 + 67 = ?",
+      "answer_preview": "78",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 572,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 17 = ?",
+      "answer_preview": "36",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 573,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 23 = ?",
+      "answer_preview": "42",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 574,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 36 = ?",
+      "answer_preview": "55",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 575,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 38 = ?",
+      "answer_preview": "57",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 576,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 44 = ?",
+      "answer_preview": "63",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 577,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 47 = ?",
+      "answer_preview": "66",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 578,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 52 = ?",
+      "answer_preview": "71",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 579,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 58 = ?",
+      "answer_preview": "77",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 580,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 63 = ?",
+      "answer_preview": "82",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 581,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "19 + 67 = ?",
+      "answer_preview": "86",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 582,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "53 + 29 = ?",
+      "answer_preview": "82",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 583,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "35 + 28 = ?",
+      "answer_preview": "63",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 584,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "46 + 35 = ?",
+      "answer_preview": "81",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 585,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "58 + 26 = ?",
+      "answer_preview": "84",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 586,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "37 + 45 = ?",
+      "answer_preview": "82",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 587,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "49 + 24 = ?",
+      "answer_preview": "73",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 588,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "56 + 37 = ?",
+      "answer_preview": "93",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 589,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "74 + 19 = ?",
+      "answer_preview": "93",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 590,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "28 + 47 = ?",
+      "answer_preview": "75",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 591,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "39 + 33 = ?",
+      "answer_preview": "72",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 592,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "52 + 39 = ?",
+      "answer_preview": "91",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 593,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "66 + 25 = ?",
+      "answer_preview": "91",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 594,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "43 + 29 = ?",
+      "answer_preview": "72",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 595,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "57 + 36 = ?",
+      "answer_preview": "93",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 596,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "61 + 28 = ?",
+      "answer_preview": "89",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 597,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "45 + 47 = ?",
+      "answer_preview": "92",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 598,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "38 + 56 = ?",
+      "answer_preview": "94",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 599,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "29 + 44 = ?",
+      "answer_preview": "73",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 600,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "48 + 33 = ?",
+      "answer_preview": "81",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 601,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "54 + 27 = ?",
+      "answer_preview": "81",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 602,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "32 + 49 = ?",
+      "answer_preview": "81",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 603,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "67 + 25 = ?",
+      "answer_preview": "92",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 604,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "41 + 38 = ?",
+      "answer_preview": "79",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 605,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "59 + 33 = ?",
+      "answer_preview": "92",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 606,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "62 + 29 = ?",
+      "answer_preview": "91",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 607,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "44 + 47 = ?",
+      "answer_preview": "91",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 608,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "36 + 58 = ?",
+      "answer_preview": "94",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 633,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "83 − 39 = ?",
+      "answer_preview": "44",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 634,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "92 − 29 = ?",
+      "answer_preview": "63",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 635,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "74 − 38 = ?",
+      "answer_preview": "36",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 636,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "61 − 49 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 637,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "85 − 19 = ?",
+      "answer_preview": "66",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 638,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "96 − 39 = ?",
+      "answer_preview": "57",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 639,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "73 − 48 = ?",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 640,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "82 − 29 = ?",
+      "answer_preview": "53",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 641,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "95 − 49 = ?",
+      "answer_preview": "46",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 642,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "64 − 38 = ?",
+      "answer_preview": "26",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 643,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "87 − 19 = ?",
+      "answer_preview": "68",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 644,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "76 − 49 = ?",
+      "answer_preview": "27",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 645,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "54 − 29 = ?",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 646,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "93 − 38 = ?",
+      "answer_preview": "55",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 647,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "81 − 19 = ?",
+      "answer_preview": "62",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 648,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "72 − 49 = ?",
+      "answer_preview": "23",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 649,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "88 − 39 = ?",
+      "answer_preview": "49",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 650,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "62 − 19 = ?",
+      "answer_preview": "43",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 651,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "98 − 29 = ?",
+      "answer_preview": "69",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 652,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "75 − 48 = ?",
+      "answer_preview": "27",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 854,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 30 = ?",
+      "answer_preview": "3",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 855,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 50 = ?",
+      "answer_preview": "5",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 856,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 80 = ?",
+      "answer_preview": "8",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 857,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 120 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 858,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 250 = ?",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 859,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 500 = ?",
+      "answer_preview": "50",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 860,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 720 = ?",
+      "answer_preview": "72",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 861,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 850 = ?",
+      "answer_preview": "85",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 864,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 60 = ?",
+      "answer_preview": "6",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 865,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 90 = ?",
+      "answer_preview": "9",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 866,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 140 = ?",
+      "answer_preview": "14",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 867,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 180 = ?",
+      "answer_preview": "18",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 868,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 320 = ?",
+      "answer_preview": "32",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 869,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 480 = ?",
+      "answer_preview": "48",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 870,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 640 = ?",
+      "answer_preview": "64",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 871,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 800 = ?",
+      "answer_preview": "80",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 872,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 240 = ?",
+      "answer_preview": "24",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 873,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 400 = ?",
+      "answer_preview": "40",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 874,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 600 = ?",
+      "answer_preview": "60",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 875,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "10% of 950 = ?",
+      "answer_preview": "95",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 876,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 16 = ?",
+      "answer_preview": "4",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 877,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 16 = ?",
+      "answer_preview": "8",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 879,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 24 = ?",
+      "answer_preview": "6",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 880,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 24 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 882,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 32 = ?",
+      "answer_preview": "8",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 883,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 32 = ?",
+      "answer_preview": "16",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 885,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 40 = ?",
+      "answer_preview": "10",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 886,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 40 = ?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 887,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 48 = ?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 888,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 48 = ?",
+      "answer_preview": "24",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 890,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 60 = ?",
+      "answer_preview": "30",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 892,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 80 = ?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 894,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 100 = ?",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 895,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 100 = ?",
+      "answer_preview": "50",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 897,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 120 = ?",
+      "answer_preview": "30",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 898,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 120 = ?",
+      "answer_preview": "60",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 900,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 160 = ?",
+      "answer_preview": "40",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 901,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "50% of 160 = ?",
+      "answer_preview": "80",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 905,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "25% of 240 = ?",
+      "answer_preview": "60",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 948,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "x + 3 = 5. x = ?",
+      "answer_preview": "2",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 961,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "2x = 4. x = ?",
+      "answer_preview": "2",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 963,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "2x = 8. x = ?",
+      "answer_preview": "4",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 972,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "3x = 9. x = ?",
+      "answer_preview": "3",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1066,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√4 = ?",
+      "answer_preview": "2",
+      "issue": "T4 'sqrt(4) = 2' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1067,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√16 = ?",
+      "answer_preview": "4",
+      "issue": "T4 'sqrt(16) = 4' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1068,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√36 = ?",
+      "answer_preview": "6",
+      "issue": "T4 'sqrt(36) = 6' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1069,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√64 = ?",
+      "answer_preview": "8",
+      "issue": "T4 'sqrt(64) = 8' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1070,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√100 = ?",
+      "answer_preview": "10",
+      "issue": "T4 'sqrt(100) = 10' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1071,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√121 = ?",
+      "answer_preview": "11",
+      "issue": "T4 'sqrt(121) = 11' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1072,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√144 = ?",
+      "answer_preview": "12",
+      "issue": "T4 'sqrt(144) = 12' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1073,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√169 = ?",
+      "answer_preview": "13",
+      "issue": "T4 'sqrt(169) = 13' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1074,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√196 = ?",
+      "answer_preview": "14",
+      "issue": "T4 'sqrt(196) = 14' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1075,
+      "tier": 4,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "√225 = ?",
+      "answer_preview": "15",
+      "issue": "T4 'sqrt(225) = 15' is T2-T3 difficulty.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1076,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Rectangle 5 × 4. Perimeter?",
+      "answer_preview": "18",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1198,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Units for volume:",
+      "answer_preview": "Cubic units (cm³)",
+      "issue": "T5 vocab recall 'Units for volume = cubic units' is T1-T2 level.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1199,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Line from center to edge of a circle:",
+      "answer_preview": "Radius",
+      "issue": "T5 vocab recall 'Line from center to edge = Radius' is T1-T2 level.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1201,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Any straight line between two points on a circle:",
+      "answer_preview": "Chord",
+      "issue": "T5 vocab recall 'straight line between two points on circle = Chord' is T1-T2 level.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1204,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Line touching a circle at exactly one point:",
+      "answer_preview": "Tangent",
+      "issue": "T5 vocab recall 'Line touching a circle = Tangent' is T1-T2 level.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1209,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Lines crossing at any angle:",
+      "answer_preview": "Intersecting",
+      "issue": "T5 vocab recall 'Lines crossing at any angle = Intersecting' is T1 level.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1218,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "E"
+      ],
+      "stem_preview": "1 megabyte is how many bytes?",
+      "answer_preview": "1,000,000",
+      "issue": "Ambiguous: 1 megabyte = 1,000,000 (SI/decimal) OR 1,048,576 (binary, 2^20 - traditional computer science). Both have legitimacy; the question doesn't disambiguate, but 1,048,576 is the historical/IEC MiB convention used by Windows.",
+      "suggested_fix": "Either accept both ('per SI standard, 1MB = 10^6 bytes; some older systems use 1MB = 2^20') or rephrase to 'In SI units, 1 megabyte = ?' to make the convention explicit. Alternatively shift to 'megabyte = 10^6 bytes (SI metric)' definition with context note about binary convention.",
+      "confidence": "MEDIUM"
+    },
+    {
+      "idx": 1228,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Which number is largest?",
+      "answer_preview": "−0.05",
+      "issue": "T1 comparing negative decimals (-0.05 vs -0.50); decimal comparisons are T2-T3.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1255,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price rose from 40 to 50. Percent increase?",
+      "answer_preview": "25%",
+      "issue": "T5 percent-increase drill is T2-T3 level, not T5 (T5 = calculus/famous theorems per math.md §3).",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1298,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Inscribed angle theorem: inscribed angle = ___ central angle.",
+      "answer_preview": "half × the",
+      "issue": "Awkward phrasing: 'inscribed angle = half × the central angle' choice 'half × the' reads strangely. Better: 'half of the'.",
+      "suggested_fix": "Clean up 'half x the' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1321,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Simplify: 5⁶ ÷ 5⁴",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1412,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 50 to 60. Percent increase?",
+      "answer_preview": "20%",
+      "issue": "T5 percent-change drill is T2-T3 (T5 reserved for wonder/calculus per math.md §3).",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1414,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 200 to 250. Percent increase?",
+      "answer_preview": "25%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1416,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 100 to 130. Percent increase?",
+      "answer_preview": "30%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1418,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 25 to 30. Percent increase?",
+      "answer_preview": "20%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1420,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 150 to 180. Percent increase?",
+      "answer_preview": "20%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1422,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 40 to 50. Percent increase?",
+      "answer_preview": "25%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1424,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 20 to 24. Percent increase?",
+      "answer_preview": "20%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1426,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 10 to 15. Percent increase?",
+      "answer_preview": "50%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1428,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 80 to 100. Percent increase?",
+      "answer_preview": "25%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1430,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 16 to 20. Percent increase?",
+      "answer_preview": "25%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1432,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Price goes from 5 to 7. Percent increase?",
+      "answer_preview": "40%",
+      "issue": "Same pattern: T5 percent-change drill mis-tiered.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1450,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Score goes from 60 to 75. Percent increase?",
+      "answer_preview": "25%",
+      "issue": "T5 'Score 60 to 75 percent increase' is T3 percent-increase, not T5.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1551,
+      "tier": 5,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Geometric seq: a₁=1, r=5. Find a_3.",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1675,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 3:4, then 9:?",
+      "answer_preview": "12",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1676,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 2:5, then 8:?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1677,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 3:5, then 12:?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1678,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 4:7, then 12:?",
+      "answer_preview": "21",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1679,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 2:3, then 10:?",
+      "answer_preview": "15",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1680,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 5:8, then 15:?",
+      "answer_preview": "24",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1681,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 3:7, then 9:?",
+      "answer_preview": "21",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1682,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 4:9, then 16:?",
+      "answer_preview": "36",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1683,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 5:6, then 20:?",
+      "answer_preview": "24",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1684,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 7:10, then 14:?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1685,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 2:9, then 8:?",
+      "answer_preview": "36",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1686,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 3:8, then 15:?",
+      "answer_preview": "40",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1687,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 6:7, then 24:?",
+      "answer_preview": "28",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1688,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 5:11, then 20:?",
+      "answer_preview": "44",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1689,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 4:5, then 16:?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1690,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 3:4, then 12:?",
+      "answer_preview": "16",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1691,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 2:5, then 14:?",
+      "answer_preview": "35",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1692,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "If 3:5, then 18:?",
+      "answer_preview": "30",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1758,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "gcd(40, 60) = ?",
+      "answer_preview": "20",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1764,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "gcd(50, 75) = ?",
+      "answer_preview": "25",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1771,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "lcm(3, 5) = ?",
+      "answer_preview": "15",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1772,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "lcm(4, 9) = ?",
+      "answer_preview": "36",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1773,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "lcm(5, 6) = ?",
+      "answer_preview": "30",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1776,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "lcm(3, 7) = ?",
+      "answer_preview": "21",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1786,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "lcm(3, 11) = ?",
+      "answer_preview": "33",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1787,
+      "tier": 3,
+      "severity": "WARN",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "lcm(5, 12) = ?",
+      "answer_preview": "60",
+      "issue": "Distractor = answer + 100 (e.g., A=12, distractor=112). Not a learner mistake - just digit-prepending. Math.md requires distractors to derive from specific learner mistakes.",
+      "suggested_fix": "Replace +100 distractor with a real arithmetic error: off-by-one across borrowing, sum-without-carry, wrong-operation result.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2049,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Euclid's proof that primes are infinite uses what technique?",
+      "answer_preview": "Proof by contradiction",
+      "issue": "T2 'Euclid's proof of infinite primes uses contradiction' is meta-math, belongs at T5.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2157,
+      "tier": 1,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "4⁰·⁵ = ?",
+      "answer_preview": "2",
+      "issue": "T1 has fractional exponent (4^0.5); exponent rules are T3-T4 per math.md §3.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2317,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "Test 99% accurate for a 1-in-10000 disease. You test positive. Roughly what is your true risk?",
+      "answer_preview": "About 1 percent — most positives are false alarms",
+      "issue": "T2 Bayes-rate problem (1-in-10000 + 99% test) is T5-level probabilistic reasoning.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 2358,
+      "tier": 2,
+      "severity": "WARN",
+      "dimensions": [
+        "C"
+      ],
+      "stem_preview": "First n powers of 2 sum to?",
+      "answer_preview": "2ⁿ − 1",
+      "issue": "T2 'First n powers of 2 sum to 2^n - 1' requires algebraic abstraction; belongs at T4+.",
+      "suggested_fix": "Move to appropriate tier per math.md §3 content profile.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 140,
+      "tier": 2,
+      "severity": "MINOR",
+      "dimensions": [
+        "J"
+      ],
+      "stem_preview": "Name the angle type at 45°:",
+      "answer_preview": "Acute",
+      "issue": "Distractor 'Reflx' is a typo of 'Reflex'.",
+      "suggested_fix": "Clean up 'Reflx' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 141,
+      "tier": 2,
+      "severity": "MINOR",
+      "dimensions": [
+        "J"
+      ],
+      "stem_preview": "Which sort of angle measures 120°?",
+      "answer_preview": "Obtuse",
+      "issue": "Distractor 'Right.' has trailing period - formatting artifact.",
+      "suggested_fix": "Clean up 'Right.' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 770,
+      "tier": 2,
+      "severity": "MINOR",
+      "dimensions": [
+        "D"
+      ],
+      "stem_preview": "Which is larger: -3 or -3?",
+      "answer_preview": "They are equal",
+      "issue": "Tautology question 'Which is larger: -3 or -3?' with answer 'They are equal'. Also has NA0 distractor (covered above). Low pedagogical value — not testing comparison skill.",
+      "suggested_fix": "Replace with a real comparison: 'Which is larger: -3 or -7?' (with non-trivial answer).",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1246,
+      "tier": 2,
+      "severity": "MINOR",
+      "dimensions": [
+        "J"
+      ],
+      "stem_preview": "Compute: ⅞ + ⅛",
+      "answer_preview": "1/1",
+      "issue": "Answer '1/1' should be simplified to '1' for 7/8 + 1/8.",
+      "suggested_fix": "Clean up '1/1' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    },
+    {
+      "idx": 1361,
+      "tier": 4,
+      "severity": "MINOR",
+      "dimensions": [
+        "J"
+      ],
+      "stem_preview": "y = 2x + 3. y-intercept?",
+      "answer_preview": "b = +3",
+      "issue": "Distractor 'b = 0.' has trailing period - formatting artifact.",
+      "suggested_fix": "Clean up 'b = 0.' to a plausible distractor or fix formatting.",
+      "confidence": "HIGH"
+    }
+  ]
+}
