@@ -913,15 +913,15 @@
   },
   {
     "tier": 1,
-    "question": "Which word connects two ideas to show a contrast?",
+    "question": "In the sentence 'I wanted ice cream, ___ the store was closed,' which word fits the blank to mark the contrast between what was wanted and what happened?",
     "answer": "but",
     "choices": [
       "but",
-      "dog",
-      "run",
-      "red"
+      "and",
+      "so",
+      "because"
     ],
-    "context": "The word 'but' connects two ideas while showing a contrast: 'I wanted ice cream, BUT the store was closed.' Other contrast-words include 'yet' and 'however.' 'But' is one of the seven coordinating conjunctions (sometimes remembered as FANBOYS)."
+    "context": "The conjunction BUT marks contrast or opposition between two clauses: what was wanted (ice cream) versus what happened (the store was closed). AND would suggest both things happened in sequence without contrast. SO would suggest the second clause caused the first. BECAUSE would reverse the cause-effect entirely. The contrast conjunctions in English are BUT, YET, and HOWEVER — each signaling that what follows is unexpected given what came before."
   },
   {
     "tier": 1,
@@ -1406,9 +1406,9 @@
   {
     "tier": 1,
     "question": "The word 'sandwich' was named after a real person. What kind of person was he?",
-    "answer": "An English earl (the 4th Earl of Sandwich)",
+    "answer": "An English earl named John Montagu",
     "choices": [
-      "An English earl (the 4th Earl of Sandwich)",
+      "An English earl named John Montagu",
       "A French chef from Paris long ago",
       "A baker who worked for the Roman army",
       "A king of England in the Middle Ages"
@@ -1430,9 +1430,9 @@
   {
     "tier": 1,
     "question": "A button-up sweater called a 'cardigan' is named after a real person — what kind of person?",
-    "answer": "An English earl (the 7th Earl of Cardigan)",
+    "answer": "An English earl named James Brudenell",
     "choices": [
-      "An English earl (the 7th Earl of Cardigan)",
+      "An English earl named James Brudenell",
       "A French knitter who lived in Lyon",
       "A Scottish wool-trader from Edinburgh",
       "An American clothing-maker from Boston"
@@ -2054,9 +2054,9 @@
   {
     "tier": 1,
     "question": "Why are tongue twisters hard to say?",
-    "answer": "They use alliteration (the same sound over and over).",
+    "answer": "They use alliteration with the same sound repeated.",
     "choices": [
-      "They use alliteration (the same sound over and over).",
+      "They use alliteration with the same sound repeated.",
       "They use only long and complicated old words.",
       "They contain hidden secret meanings to puzzle out.",
       "They use only rare words that are hard to know."
@@ -2090,9 +2090,9 @@
   {
     "tier": 1,
     "question": "What is special about the word RADAR?",
-    "answer": "It is a palindrome (spelled the same backward and forward).",
+    "answer": "It is a palindrome, spelled the same backward and forward.",
     "choices": [
-      "It is a palindrome (spelled the same backward and forward).",
+      "It is a palindrome, spelled the same backward and forward.",
       "It is the oldest word in the English language by far.",
       "It is the longest word in the English language overall.",
       "It is the only English word with no vowels at all."
@@ -2258,9 +2258,9 @@
   {
     "tier": 1,
     "question": "Which sentence uses an idiom (a phrase whose meaning is NOT literal)?",
-    "answer": "Hold your horses (wait just a moment, please).",
+    "answer": "Hold your horses, please wait just a moment.",
     "choices": [
-      "Hold your horses (wait just a moment, please).",
+      "Hold your horses, please wait just a moment.",
       "The horse galloped across the open field.",
       "She fed her horse oats and fresh hay.",
       "There are five horses in the stable today."
@@ -2318,9 +2318,9 @@
   {
     "tier": 1,
     "question": "If someone says 'I've told you a million times to clean your room,' that is a HYPERBOLE. What does that mean?",
-    "answer": "An exaggeration for effect (not really a million times)",
+    "answer": "An exaggeration for effect, not really a million times",
     "choices": [
-      "An exaggeration for effect (not really a million times)",
+      "An exaggeration for effect, not really a million times",
       "A very precise count of all the past warnings",
       "A simile comparing two unrelated daily things",
       "A pun playing on the word 'million' twice"
@@ -2810,14 +2810,14 @@
   {
     "tier": 1,
     "question": "Why is the word 'I' always capitalized in English?",
-    "answer": "It is a special tradition (English is unusual this way)",
+    "answer": "A lone lowercase i looked too small, so medieval scribes wrote it tall",
     "choices": [
-      "It is a special tradition (English is unusual this way)",
-      "Because I is the first letter of the alphabet",
+      "A lone lowercase i looked too small, so medieval scribes wrote it tall",
+      "Because I is the first letter of the alphabet, naturally",
       "Because all pronouns are always capitalized always",
       "Because vowels are always capitalized in writing"
     ],
-    "context": "English is the only major language that always capitalizes the pronoun 'I' (even in the middle of a sentence). Other languages use lowercase: Spanish 'yo,' French 'je,' German 'ich.' The custom started around the 1300s — scribes worried a lone lowercase 'i' looked too small and easy to miss in handwriting. They made it tall, and the tradition stuck."
+    "context": "The pronoun I was originally lowercase, but in medieval manuscripts a single lowercase i floated alone on the page and was easy to miss. Scribes started making it tall (capital I) so readers wouldn't lose it. The convention stuck. English is unusual in capitalizing its first-person pronoun — German capitalizes 'Sie' (formal you), but most languages don't capitalize any pronoun. The capital-I habit moved from manuscripts to print and is now a permanent English-spelling rule."
   },
   {
     "tier": 1,
@@ -4790,14 +4790,14 @@
   {
     "tier": 2,
     "question": "English has many words from Arabic that came through medieval Spain when Arabic learning was at its peak. Which is NOT from Arabic?",
-    "answer": "Apricot (from Latin 'praecoquum' meaning 'early ripening')",
+    "answer": "Asparagus (from Greek 'asparagos' meaning sprout/shoot)",
     "choices": [
-      "Apricot (from Latin 'praecoquum' meaning 'early ripening')",
+      "Asparagus (from Greek 'asparagos' meaning sprout/shoot)",
       "Algebra (from 'al-jabr' meaning 'reunion of parts')",
       "Alcohol (from 'al-kuhl' meaning 'a powder')",
       "Algorithm (from 'al-Khwarizmi' the mathematician)"
     ],
-    "context": "Trick question — APRICOT actually IS from Arabic too ('al-barqūq'), via Spanish and Latin influence. All four words came through Arabic learning. ALGEBRA was named in the title of al-Khwarizmi's 820 AD book; ALGORITHM is the Latinized form of his name; ALCOHOL was 'al-kuhl' (originally a powdered eye makeup, later applied to distilled spirits); APRICOT traveled Persian → Arabic → Spanish → English. Arabic scholarship gave English much of its science vocabulary."
+    "context": "Three of these came through medieval Spain when Arabic learning was at its peak. ALGEBRA was named in the title of al-Khwarizmi's 820 AD book. ALCOHOL originally meant a fine powder used for makeup. ALGORITHM is from the same al-Khwarizmi whose Latin name 'Algoritmi' became the term for step-by-step procedures. ASPARAGUS is the outsider — it came through Latin from Greek, not Arabic, and its name has nothing to do with the al- prefix that signals Arabic origin."
   },
   {
     "tier": 2,
@@ -5102,9 +5102,9 @@
   {
     "tier": 2,
     "question": "The word 'gymnasium' (a place for exercise) comes from a Greek word with a surprising meaning. What did the Greek word originally describe?",
-    "answer": "A place to exercise NAKED (Greek 'gymnos' = naked)",
+    "answer": "A place to exercise NAKED, from Greek 'gymnos' meaning naked",
     "choices": [
-      "A place to exercise NAKED (Greek 'gymnos' = naked)",
+      "A place to exercise NAKED, from Greek 'gymnos' meaning naked",
       "A place to wrestle with oil and sand",
       "A place to train for combat with weapons",
       "A place to study sports philosophy"
@@ -5882,9 +5882,9 @@
   {
     "tier": 2,
     "question": "In the joke 'I used to be a banker, but I lost interest,' what kind of word play makes it funny?",
-    "answer": "A pun on 'interest' (money meaning + curiosity meaning)",
+    "answer": "A pun on 'interest' meaning both money and curiosity",
     "choices": [
-      "A pun on 'interest' (money meaning + curiosity meaning)",
+      "A pun on 'interest' meaning both money and curiosity",
       "Alliteration on the letter B sounds",
       "Hyperbole exaggerating the banker's career",
       "Metaphor comparing banking to losing things"
@@ -8402,12 +8402,12 @@
   {
     "tier": 3,
     "question": "The word 'NAUGHTY' was once a much stronger word. What did it originally mean?",
-    "answer": "Having NOTHING (i.e., morally worthless, wicked) — from 'naught,' meaning zero.",
+    "answer": "Having nothing — morally worthless, wicked, from 'naught'",
     "choices": [
-      "Having NOTHING (i.e., morally worthless, wicked) — from 'naught,' meaning zero.",
-      "Showing off — wearing fancy clothes meant to draw stares from passersby.",
-      "Eating too quickly — gobbling food rapidly without manners at the table.",
-      "Skipping religious observance — refusing to attend services on holy days."
+      "Having nothing — morally worthless, wicked, from 'naught'",
+      "Showing off — wearing fancy clothes meant to draw stares",
+      "Eating too quickly — gobbling food rapidly with no manners",
+      "Skipping religious observance — refusing to attend services"
     ],
     "context": "'Naughty' comes from Middle English 'naught' (nothing — Old English 'nawiht,' literally 'no-thing'). To be naughty was to be morally empty — wicked, depraved. The KJV uses 'naughty' in the strong sense ('a naughty person' = a wicked one). Over the centuries the word softened to mean 'mildly disobedient,' then became childish — applied mainly to children. A textbook softening."
   },
@@ -8762,9 +8762,9 @@
   {
     "tier": 3,
     "question": "Many English star names start with 'AL-' — Aldebaran, Altair, Algol. Why?",
-    "answer": "Medieval Arab astronomers cataloged the stars; their Arabic names (with 'al-,' meaning 'the') entered Europe via Latin translations.",
+    "answer": "Medieval Arab astronomers cataloged the stars; their Arabic names entered Europe via Latin translations.",
     "choices": [
-      "Medieval Arab astronomers cataloged the stars; their Arabic names (with 'al-,' meaning 'the') entered Europe via Latin translations.",
+      "Medieval Arab astronomers cataloged the stars; their Arabic names entered Europe via Latin translations.",
       "Galileo named most stars himself in the 1600s using Arabic-sounding phonetics to suggest mystery.",
       "Modern astronomy chose Arabic-style names in the 1900s when older systems became politically complicated.",
       "Persian poets invented these names in the 1300s and they spread through European folklore literature."
@@ -9245,9 +9245,9 @@
     "answer": "The monarchy or the king/queen as ruler.",
     "choices": [
       "The monarchy or the king/queen as ruler.",
-      "A jeweled crown sitting on a museum stand for display.",
-      "A crown of laurels (an ancient Greek victory wreath).",
-      "A crown molding (an architectural ceiling feature)."
+      "The royal household staff who serve the monarch personally",
+      "The British government's ministers and civil service as a whole",
+      "The constitution and the body of unwritten laws of England"
     ],
     "context": "Metonymy is using a closely associated thing to stand for the main thing. 'The crown' (the physical object) stands for the institution of monarchy. Other classic metonymies: 'the pen' (writing), 'the sword' (military), 'the bench' (the judiciary), 'the White House' (the U.S. executive). The substitution works because the chosen image is strongly linked to what's meant."
   },
@@ -11738,14 +11738,14 @@
   {
     "tier": 4,
     "question": "Latin 'specere' (to look, to see) and its variants 'spect-' / 'spec-' have generated an enormous English word family. Which of these words does NOT come from this 'spect-' / 'spec-' family?",
-    "answer": "Spectrum",
+    "answer": "Speech",
     "choices": [
-      "Spectrum",
+      "Speech",
       "Speculum",
       "Aspect",
       "Inspect"
     ],
-    "context": "Trick question — they ALL come from the spect-/spec- family. From 'specere' (to look): inspect ('look into'), introspect ('look within'), prospect ('look forward'), retrospect ('look back'), respect ('look back at, regard'), suspect ('look from below, mistrust'), aspect ('a way of looking'), perspective, specter (something seen), spectacle, spectrum (range of what's seen — Newton's coinage), speculum (mirror), expect ('look out for'), and circumspect ('looking around carefully'). Latin roots multiply into English vocabulary geometrically — learn one root, gain twenty words."
+    "context": "Three of these come from Latin specere (to look). SPECULUM is a Latin mirror, literally a 'looking-glass.' ASPECT is 'ad-spect' (look-toward). INSPECT is 'in-spect' (look-into). SPEECH is the outsider — it comes from Old English 'spæc,' a Germanic word about speaking, not from the Latin 'spect-' family. The visual-Latin family also gave us prospect (look-forward), retrospect (look-back), respect (look-again), spectacle, spectator, spectrum (Newton's coinage for the rainbow of light), and circumspect (look-around)."
   },
   {
     "tier": 4,
@@ -11762,26 +11762,26 @@
   {
     "tier": 4,
     "question": "Latin 'scribere' (to write) and its participle 'scriptus' (written) generated a vast English family. Which of these English words is NOT from 'scribere'?",
-    "answer": "Scribble (which is Germanic, from Old English 'scrybblian')",
+    "answer": "Letter",
     "choices": [
-      "Scribble (which is Germanic, from Old English 'scrybblian')",
-      "Scripture (from Latin 'scriptura')",
-      "Subscribe (from Latin 'sub' + 'scribere')",
-      "Manuscript (from Latin 'manu' + 'scriptus')"
+      "Letter",
+      "Scripture",
+      "Subscribe",
+      "Manuscript"
     ],
-    "context": "Trick answer — 'scribble' actually came into English from Latin/Medieval Latin 'scribillare,' a diminutive of 'scribere' (to write a little). So even 'scribble' is from this same root. All four words descend from Latin 'scribere.' Other family members: describe ('write down completely'), prescribe ('write before'), proscribe ('write against — outlaw'), inscribe ('write into'), transcribe ('write across'), conscript ('written together'), nondescript ('not written down'), postscript ('written after'). Latin roots stack with prefixes to multiply English vocabulary."
+    "context": "Three of these come from Latin scribere (to write). SCRIPTURE is from 'scriptura' (writing). SUBSCRIBE is 'sub-scribere' (write underneath, the original sense of signing one's name). MANUSCRIPT is 'manu' (by hand) + 'scriptus' (written). LETTER is the outsider — it comes from Latin 'littera' (an alphabet letter), an entirely different Latin root from scribere. The scribere family also gives us scribe, describe, prescribe, transcribe, scribble (yes, even scribble is from scribillare, a diminutive of scribere), inscription, and postscript."
   },
   {
     "tier": 4,
     "question": "Latin 'facere' (to make, to do) is one of the most productive English roots, often hidden as -fy, -ify, -fect, or -fact. Which English word does NOT come from 'facere'?",
-    "answer": "Facade",
+    "answer": "Federal",
     "choices": [
-      "Facade",
+      "Federal",
       "Manufacture",
       "Factory",
       "Beneficial"
     ],
-    "context": "Trick — they all come from 'facere' or its Italian descendant. 'Facade' is from Italian 'facciata' (the face of a building), ultimately from Latin 'facies' (face), which is from 'facere.' Manufacture = 'made by hand' (manu + factura). Factory = 'place where things are made.' Beneficial = 'producing good' (bene + facere). Other 'facere' descendants: affect, effect, infect, perfect ('done thoroughly'), defect ('done away'), fact ('thing done'), feasible ('able to be done'), benefactor, malefactor, satisfy ('do enough'), magnify ('make great'), petrify ('make stone'), beautify, simplify, justify. Hundreds of English words trace to 'facere.'"
+    "context": "Three of these come from Latin facere (to make, to do). MANUFACTURE is 'manu' (by hand) + 'facere' (to make). FACTORY is 'factoria' (a place where things are made). BENEFICIAL is 'bene' (well) + 'ficio' (a form of facere). FEDERAL is the outsider — it comes from Latin 'foedus' (a treaty or league), an entirely different Latin root. The facere family is one of the most productive in English: it gives us fact, factor, fashion, feature, defect, affect, effect, perfect (made-through), confection, infection, fiction, suffice, magnify, terrify, satisfy, and even hundreds of words ending -ify, -fect, or -fact."
   },
   {
     "tier": 4,
@@ -13141,7 +13141,7 @@
   },
   {
     "tier": 4,
-    "question": "Hyphens join compound words and modifiers. Compound modifiers BEFORE a noun typically take a hyhpen; after the noun, no hyphen. Which sentence uses the hyphen correctly?",
+    "question": "Hyphens join compound words and modifiers. Compound modifiers BEFORE a noun typically take a hyphen; after the noun, no hyphen. Which sentence uses the hyphen correctly?",
     "answer": "She is a well-known poet whose work is widely read.",
     "choices": [
       "She is a well-known poet whose work is widely read.",
@@ -19326,7 +19326,7 @@
     "choices": [
       "'Friends, Romans, countrymen, lend me your ears.'",
       "'Et tu, Brute? Then fall, Caesar!'",
-      "'Cry havoc, and let slip the dogs of war.'",
+      "Beware the Ides of March!",
       "'The fault, dear Brutus, is not in our stars.'"
     ],
     "context": "Mark Antony begs his audience to 'lend me your ears' — the ears are the part that hears, standing for the whole attention of the listener. Lending one's ears is impossible literally; the synecdoche works because everyone instantly maps part to whole. Shakespeare's 'Julius Caesar' (1599) is packed with rhetorical figures because the play's central conflict is rhetorical: Brutus and Antony each persuade the Roman crowd by speech alone, and Antony's superior figurative language wins the crowd to his side. Synecdoche compresses the request — 'pay attention to me' becomes the more vivid, more physical 'lend me your ears.'"
@@ -22188,15 +22188,15 @@
     "tier": 5
   },
   {
-    "question": "Linguists love the eight-word sentence: 'Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.' Despite using only one word, it is a grammatically valid English sentence. The trick: the word 'buffalo' carries three meanings simultaneously. Which three meanings make the sentence parse?",
-    "answer": "Buffalo the city in New York, buffalo the animal whose singular and plural forms are identical, and buffalo the verb meaning to bully or intimidate",
+    "question": "The 'Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo' sentence is the most famous English-grammatical curiosity — eight identical words forming a valid sentence. It was popularized in 1972 by William Rapaport, a SUNY Buffalo computer scientist. What enables the trick?",
+    "answer": "Three different lexical uses of 'buffalo': the city, the animal, and the verb (to bully)",
     "choices": [
-      "Buffalo the city in New York, buffalo the animal whose singular and plural forms are identical, and buffalo the verb meaning to bully or intimidate",
-      "Buffalo the Native American tribe, buffalo the nickel coin minted from 1913 to 1938, and buffalo the verb meaning to chase across a plain",
-      "Buffalo the hunting cry, buffalo the leather wallet style, and buffalo the adjective meaning sturdy or thick-skinned across the shoulders",
-      "Buffalo the misspelling of buffet, buffalo the frontier soldier nickname, and buffalo the verb meaning to graze or wander across grass"
+      "Three different lexical uses of 'buffalo': the city, the animal, and the verb (to bully)",
+      "Two homophones of 'buffalo' (the animal and the river) plus a punctuation trick on capitalization",
+      "Buffalo is an abbreviation for four longer English words that share its spelling exactly",
+      "The sentence is actually grammatically broken; native speakers refuse to accept it as English"
     ],
-    "context": "The sentence parses as: 'Buffalo-from-Buffalo whom other Buffalo-from-Buffalo bully, themselves bully Buffalo-from-Buffalo.' The animal's singular and plural are both 'buffalo' (no 's'), the city of Buffalo, NY supplies a place-name adjective, and 'to buffalo' is a real verb (to confuse or intimidate, attested since the 1880s American frontier). Dmitri Borgmann published a version in 1965; computer scientist William Rapaport popularized it in 1972. Sentences using the same word multiple ways can theoretically extend to any length.",
+    "context": "William Rapaport, the computer-science professor at SUNY Buffalo, popularized the sentence in a 1972 paper. The trick relies on three distinct lexical entries for 'buffalo': (1) Buffalo the city in New York; (2) buffalo, the animal (plural same as singular); (3) buffalo, the verb meaning 'to bully or confuse.' Parsing: '[Buffalo buffalo] [Buffalo buffalo buffalo] buffalo [Buffalo buffalo]' = 'Buffalo bison whom other Buffalo bison bully, themselves bully [other] Buffalo bison.' Other identical-word constructions exist: 'James, while John had had had had had had had had had had had a better effect on the teacher,' though Buffalo's eight-word run is the cleanest.",
     "tier": 5
   },
   {
