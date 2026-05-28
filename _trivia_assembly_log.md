@@ -1,9 +1,9 @@
 # trivia bank assembly log
 
-- Pool: 1410 questions across 10 source files
-- After intra-bank dedup: 1410
-- After gate validation: 1386 pass (0 soft-warn), 24 fail
-- Final bank size: **1386**
+- Pool: 1470 questions across 11 source files
+- After intra-bank dedup: 1470
+- After gate validation: 1444 pass (0 soft-warn), 26 fail
+- Final bank size: **1444**
 
 ## Sources
 
@@ -17,18 +17,19 @@
 - `A7_pulp_tolkien_scifi.json` — 120 questions
 - `A8_cryptids_mysteries.json` — 130 questions
 - `A9_classic_dnd.json` — 130 questions
+- `RP_pokemon.json` — 60 questions
 
 ## Tier distribution
 
-- T1: 272
-- T2: 274
-- T3: 279
-- T4: 279
-- T5: 282
+- T1: 280
+- T2: 289
+- T3: 294
+- T4: 289
+- T5: 292
 
 ## Gate failures (dropped)
 
-- `answer_collision`: 24
+- `answer_collision`: 26
 
 ## Fail samples (first 20)
 
