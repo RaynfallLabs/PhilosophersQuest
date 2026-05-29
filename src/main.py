@@ -989,7 +989,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         if (nx, ny) == (self.player.x, self.player.y):
                             continue
                         if dungeon.is_walkable(nx, ny) and \
-                           not any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                           not monster_at_tile(self.monsters, nx, ny) is not None:
                             pet.x, pet.y = nx, ny
                             _pet_placed.add((nx, ny))
                             placed = True
@@ -1648,9 +1648,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if abs(_m.x - px) <= 1 and abs(_m.y - py) <= 1:
                     _aoo_pre_adjacent.append(_m)
 
-        target = next(
-            (m for m in self.monsters if m.alive and m.x == nx and m.y == ny), None
-        )
+        target = monster_at_tile(self.monsters, nx, ny)
         if not self.dungeon.in_bounds(nx, ny):
             return
 
@@ -1728,7 +1726,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     slide_tile = self.dungeon.tiles[sy][sx]
                     if slide_tile in (WATER, LAVA, WALL, DOOR, SECRET_DOOR):
                         break
-                    if any(m.alive and m.x == sx and m.y == sy for m in self.monsters):
+                    if monster_at_tile(self.monsters, sx, sy) is not None:
                         break
                     self.player.x, self.player.y = sx, sy
                     slide_count += 1
@@ -1837,7 +1835,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return False
         if not self.dungeon.is_walkable(tx, ty):
             return False
-        if any(m.alive and m.x == tx and m.y == ty for m in self.monsters):
+        if monster_at_tile(self.monsters, tx, ty) is not None:
             return False
         consume_passive_charge(self.player, 'phase_step_once_per_floor')
         self.player.x, self.player.y = tx, ty
@@ -2534,7 +2532,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         # Spawn on an explored but currently non-visible tile, away from player
         px, py = self.player.x, self.player.y
-        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied |= {(p.x, p.y) for p in self.pets if p.alive}
         candidates = [
             (x, y) for (x, y) in self.dungeon.explored
@@ -2690,7 +2689,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for y in range(self.dungeon.height)
             for x in range(self.dungeon.width)
             if self.dungeon.is_walkable(x, y)
-            and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+            and not monster_at_tile(self.monsters, x, y) is not None
             and not any(p.alive and p.x == x and p.y == y for p in self.pets)
         ]
         if floors:
@@ -3840,7 +3839,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 if not self.dungeon.is_walkable(nx, ny):
                     continue
-                if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                if monster_at_tile(self.monsters, nx, ny) is not None:
                     continue
                 if any(p.alive and p.x == nx and p.y == ny for p in self.pets):
                     continue
@@ -4311,7 +4310,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not locust_def:
             return
 
-        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
 
         # Find walkable tiles near Abaddon for locusts
@@ -4388,7 +4388,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not defn:
             return
 
-        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
         candidates = []
         for dy in range(-3, 4):

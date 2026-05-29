@@ -265,16 +265,44 @@ class Renderer:
 
     def draw_entity(self, x: int, y: int, color: tuple,
                     cam_x: int = 0, cam_y: int = 0, visible=None, mid: str = '',
-                    tint: tuple = None):
-        """Draw a monster or dim dot.  Pass visible=None to always draw.
+                    tint: tuple = None,
+                    footprint: tuple = (1, 1)):
+        """Draw a monster or dim dot. Pass visible=None to always draw.
+
+        For multi-tile monsters (`footprint != (1, 1)`), the sprite is
+        scaled to cover the full footprint (W×TILE_SIZE × H×TILE_SIZE)
+        and visibility is "any tile in FOV" — if any occupied tile is
+        in `visible`, the whole monster renders. Anchor is NW.
+
         tint: optional (R,G,B,A) overlay applied via BLEND_RGBA_MULT."""
-        if visible is not None and (x, y) not in visible:
-            return
+        fw, fh = footprint
+        # Visibility: any occupied tile in FOV is enough to render the
+        # whole monster (Cogmind's rule — partial-FOV becomes "show all
+        # if any part is seen").
+        if visible is not None:
+            any_visible = False
+            for dy in range(fh):
+                for dx in range(fw):
+                    if (x + dx, y + dy) in visible:
+                        any_visible = True
+                        break
+                if any_visible:
+                    break
+            if not any_visible:
+                return
         T = self.map_tile_size
         sx, sy = self.world_to_screen(x, y)
         if mid:
             sprite = self._get_sprite(mid)
             if sprite:
+                # Scale to footprint if multi-tile. smoothscale gives a
+                # coherent look without per-monster art changes.
+                if fw != 1 or fh != 1:
+                    target_w = fw * T
+                    target_h = fh * T
+                    if sprite.get_size() != (target_w, target_h):
+                        sprite = pygame.transform.smoothscale(
+                            sprite, (target_w, target_h))
                 if tint:
                     sprite = sprite.copy()
                     overlay = pygame.Surface(sprite.get_size(), pygame.SRCALPHA)
@@ -282,9 +310,13 @@ class Renderer:
                     sprite.blit(overlay, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 self.screen.blit(sprite, (sx, sy))
                 return
-        pad  = max(1, T // 7)
+        # Fallback: filled rect covering the footprint
+        full_w = fw * T
+        full_h = fh * T
+        pad = max(1, T // 7)
         pygame.draw.rect(self.screen, color,
-                         (sx + pad, sy + pad, T - pad * 2, T - pad * 2))
+                         (sx + pad, sy + pad,
+                          full_w - pad * 2, full_h - pad * 2))
 
     def draw_item(self, item, cam_x: int = 0, cam_y: int = 0, visible: set = None):
         """Draw an item sprite (or glyph fallback) only when visible."""

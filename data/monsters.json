@@ -20662,7 +20662,11 @@
     },
     "lore": "The dwarf Fafnir, transformed by greed into a serpentine dragon, guards the cursed treasure of Andvari. His scales are near-impenetrable — no blade, spell, or holy rite can pierce them. His breath weapon is devastating. Only the hero Sigurd, who struck from below through the dragon's soft belly, could slay him.",
     "frequency": 0,
-    "dragon_scales": 0.8
+    "dragon_scales": 0.8,
+    "footprint": [
+      2,
+      2
+    ]
   },
   "fenrir_wolf": {
     "name": "Fenrir, Wolf of Ragnarok",

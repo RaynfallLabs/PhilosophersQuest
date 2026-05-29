@@ -73,7 +73,13 @@ def _load_boss(boss_id):
 
 
 def _spawn_boss(dungeon, boss_id, boss_room):
-    """Spawn the boss monster at the center of its chamber."""
+    """Spawn the boss monster at the center of its chamber.
+
+    For multi-tile bosses (footprint != (1, 1)), nudge the anchor so
+    the whole footprint fits inside walkable tiles. The boss room is
+    hand-crafted in this file and known to be large enough, but the
+    naive center may put the anchor at a position where one of the
+    extra footprint tiles falls outside the room."""
     from monster import Monster
     defn = _load_boss(boss_id)
     if defn is None:
@@ -81,6 +87,28 @@ def _spawn_boss(dungeon, boss_id, boss_room):
     cx, cy = boss_room.center
     boss = Monster(defn, cx, cy)
     boss.is_boss = True
+    # If multi-tile, ensure all footprint tiles are walkable. The
+    # naive center is good enough for square boss rooms, but if any
+    # extra tile lands on a wall or outside the dungeon we shift the
+    # anchor NW until the whole footprint fits.
+    fw, fh = boss.footprint
+    if fw != 1 or fh != 1:
+        for shift in range(3):
+            ok = True
+            for dy in range(fh):
+                for dx in range(fw):
+                    tx, ty = boss.x + dx, boss.y + dy
+                    if not (dungeon.in_bounds(tx, ty)
+                            and dungeon.is_walkable(tx, ty)):
+                        ok = False
+                        break
+                if not ok:
+                    break
+            if ok:
+                break
+            # Shift NW one tile and retry
+            boss.x -= 1
+            boss.y -= 1
     return [boss]
 
 

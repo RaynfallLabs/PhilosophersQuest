@@ -2,6 +2,7 @@
 Pet companion system — Soul Sphere creatures that follow and fight alongside the player.
 """
 import random
+from geom import monster_at_tile, is_at_tile
 
 # ---------------------------------------------------------------------------
 # Species data: 4 creature types × 3 evolution stages
@@ -446,7 +447,7 @@ class Pet:
                 continue
             if nx == player.x and ny == player.y:
                 continue
-            if any(m.alive and m.x == nx and m.y == ny for m in monsters):
+            if monster_at_tile(monsters, nx, ny) is not None:
                 continue
             if any(p.alive and p is not self and p.x == nx and p.y == ny for p in pets):
                 continue

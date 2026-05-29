@@ -59,6 +59,7 @@ from game_states import (
     STATE_PLAYER, STATE_QUIZ,
     STATE_TARGET, STATE_DEAD,
 )
+from geom import monster_at_tile, is_at_tile
 from items import Artifact, Weapon
 from pet_system import Pet, random_species as random_pet_species
 
@@ -344,7 +345,7 @@ class CombatMixin:
         # Find a walkable tile near the landing spot for the pet
         spawn_x, spawn_y = land_x, land_y
         if not self.dungeon.is_walkable(spawn_x, spawn_y) or \
-           any(m.alive and m.x == spawn_x and m.y == spawn_y for m in self.monsters) or \
+           monster_at_tile(self.monsters, spawn_x, spawn_y) is not None or \
            (spawn_x == self.player.x and spawn_y == self.player.y) or \
            any(p.alive and p.x == spawn_x and p.y == spawn_y for p in self.pets):
             # Try adjacent tiles
@@ -356,7 +357,7 @@ class CombatMixin:
                         continue
                     if nx == self.player.x and ny == self.player.y:
                         continue
-                    if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                    if monster_at_tile(self.monsters, nx, ny) is not None:
                         continue
                     if any(p.alive and p.x == nx and p.y == ny for p in self.pets):
                         continue
@@ -417,7 +418,7 @@ class CombatMixin:
                 nx, ny = land_x + dx, land_y + dy
                 if (self.dungeon.is_walkable(nx, ny)
                         and (nx, ny) != (self.player.x, self.player.y)
-                        and not any(m.alive and m.x == nx and m.y == ny for m in self.monsters)
+                        and not monster_at_tile(self.monsters, nx, ny) is not None
                         and not any(p.alive and p.x == nx and p.y == ny for p in self.pets)):
                     spawn_x, spawn_y = nx, ny
                     placed = True
@@ -462,14 +463,14 @@ class CombatMixin:
             if (cx, cy) != (x1, y1):
                 # Check for monster at this tile
                 for m in self.monsters:
-                    if m.alive and m.x == cx and m.y == cy:
+                    if m.alive and is_at_tile(m, cx, cy):
                         return m
                 # Check for wall (projectile stops)
                 if not self.dungeon.is_walkable(cx, cy):
                     return None
         # Check target tile for monster
         for m in self.monsters:
-            if m.alive and m.x == x1 and m.y == y1:
+            if m.alive and is_at_tile(m, x1, y1):
                 return m
         return None
 
@@ -547,7 +548,7 @@ class CombatMixin:
                 for y in range(self.dungeon.height)
                 for x in range(self.dungeon.width)
                 if self.dungeon.is_walkable(x, y)
-                and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+                and not monster_at_tile(self.monsters, x, y) is not None
                 and not any(p.alive and p.x == x and p.y == y for p in self.pets)
                 and (x, y) != (self.player.x, self.player.y)
             ]
@@ -836,9 +837,7 @@ class CombatMixin:
         wand = self._pending_wand
         self._pending_wand = None
 
-        target = next(
-            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
-        )
+        target = monster_at_tile(self.monsters, cx, cy)
         if not target or (cx, cy) not in self.visible:
             self.add_message("No valid target.", 'warning')
             self.state = STATE_PLAYER
@@ -904,9 +903,7 @@ class CombatMixin:
         self._power_targeting = False
         self._pending_power = None
 
-        target = next(
-            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
-        )
+        target = monster_at_tile(self.monsters, cx, cy)
         if not target or (cx, cy) not in self.visible:
             self.add_message("No valid target.", 'warning')
             self.state = STATE_PLAYER
@@ -953,7 +950,7 @@ class CombatMixin:
                 for dx, dy in [(-1,0),(1,0),(0,-1),(0,1),(-1,-1),(1,-1),(-1,1),(1,1)]:
                     nx, ny = px + dx, py + dy
                     if (self.dungeon.is_walkable(nx, ny)
-                            and not any(m.alive and m.x == nx and m.y == ny for m in self.monsters)
+                            and not monster_at_tile(self.monsters, nx, ny) is not None
                             and not any(p.alive and p.x == nx and p.y == ny for p in self.pets)):
                         pet = SketchedPet(monster, nx, ny, duration)
                         self.pets.append(pet)
@@ -1063,9 +1060,7 @@ class CombatMixin:
         found = False
 
         # Monster at cursor
-        monster = next(
-            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
-        )
+        monster = monster_at_tile(self.monsters, cx, cy)
         if monster:
             hp_pct = monster.hp / max(1, monster.max_hp)
             condition = (
@@ -1136,11 +1131,7 @@ class CombatMixin:
 
     def _confirm_ranged_target(self):
         """Confirm a ranged shot at the cursor position."""
-        target = next(
-            (m for m in self.monsters
-             if m.alive and m.x == self.target_cursor_x and m.y == self.target_cursor_y),
-            None
-        )
+        target = monster_at_tile(self.monsters, self.target_cursor_x, self.target_cursor_y)
         self.state = STATE_PLAYER
         if target:
             from combat import can_ranged_attack
@@ -1157,11 +1148,7 @@ class CombatMixin:
         self.state = STATE_PLAYER
 
         # 1. Monster at cursor -- melee combat
-        target = next(
-            (m for m in self.monsters
-             if m.alive and m.x == cx and m.y == cy),
-            None
-        )
+        target = monster_at_tile(self.monsters, cx, cy)
         if target:
             self._start_combat(target)
             return
@@ -2007,7 +1994,7 @@ class CombatMixin:
         affected = []
         if targeting == 'single':
             for m in self.monsters:
-                if m.alive and m.x == tx and m.y == ty:
+                if m.alive and is_at_tile(m, tx, ty):
                     affected.append(m)
                     break
         elif targeting == 'aoe':
@@ -2029,7 +2016,7 @@ class CombatMixin:
             # Drop the pet's own tile from the line
             for (lx, ly) in line[1:]:
                 for m in self.monsters:
-                    if m.alive and m.x == lx and m.y == ly and m not in affected:
+                    if m.alive and is_at_tile(m, lx, ly) and m not in affected:
                         affected.append(m)
 
         self.add_message(

@@ -13,6 +13,7 @@ hook sites in combat.py, player.py, game_menus.py, and main.py.
 """
 from __future__ import annotations
 import random
+from geom import monster_at_tile, is_at_tile
 
 
 def is_boss_or_huge(monster) -> bool:
@@ -691,7 +692,7 @@ def _eff_teleport_self(game, special, tier, chain):
                 continue
             d = max(abs(x - game.player.x), abs(y - game.player.y))
             if d <= rng and (x, y) != (game.player.x, game.player.y):
-                if not any(m.alive and m.x == x and m.y == y for m in game.monsters):
+                if not monster_at_tile(game.monsters, x, y) is not None:
                     candidates.append((x, y))
     if candidates:
         x, y = random.choice(candidates)

@@ -369,7 +369,7 @@ class MagicMixin:
                         for x in range(self.dungeon.width)
                         if self.dungeon.is_walkable(x, y)
                         and abs(x - self.player.x) <= 6 and abs(y - self.player.y) <= 6
-                        and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+                        and not monster_at_tile(self.monsters, x, y) is not None
                         and (x, y) != (self.player.x, self.player.y)
                     ]
                     if floors:
@@ -660,7 +660,7 @@ class MagicMixin:
                               for y in range(len(self.dungeon.tiles))
                               for x in range(len(self.dungeon.tiles[y]))
                               if self.dungeon.is_walkable(x, y)
-                              and not any(m.alive and m.x == x and m.y == y for m in self.monsters)
+                              and not monster_at_tile(self.monsters, x, y) is not None
                               and not any(p.alive and p.x == x and p.y == y for p in self.pets)
                               and (x, y) != (self.player.x, self.player.y)]
                 if open_tiles:
@@ -1203,7 +1203,7 @@ class MagicMixin:
                           for x in range(self.dungeon.width)
                           if self.dungeon.is_walkable(x, y)
                           and (x, y) != (self.player.x, self.player.y)
-                          and not any(m.alive and m.x == x and m.y == y for m in self.monsters)]
+                          and not monster_at_tile(self.monsters, x, y) is not None]
                 if floors:
                     nx, ny = random.choice(floors)
                     target_m.x, target_m.y = nx, ny
@@ -1264,7 +1264,7 @@ class MagicMixin:
                         continue
                     if not self.dungeon.is_walkable(nx, ny):
                         continue
-                    if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                    if monster_at_tile(self.monsters, nx, ny) is not None:
                         continue
                     species = random_species()
                     pet = Pet(species, nx, ny)
@@ -1412,7 +1412,7 @@ class MagicMixin:
                     nx, ny = px + dx, py + dy
                     if (nx, ny) == (px, py): continue
                     if not self.dungeon.is_walkable(nx, ny): continue
-                    if any(m.alive and m.x == nx and m.y == ny for m in self.monsters): continue
+                    if monster_at_tile(self.monsters, nx, ny) is not None: continue
                     species = random_species()
                     pet = Pet(species, nx, ny)
                     pet.level = max(3, self.dungeon_level // 2)   # ~2x summon_guardian level
@@ -2969,7 +2969,8 @@ class MagicMixin:
         from monster import Monster
         count = random.randint(4, 7)
         px, py = self.player.x, self.player.y
-        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         lvl = max(1, self.dungeon_level)
         spawned = 0
         for _ in range(count):
@@ -3044,7 +3045,8 @@ class MagicMixin:
         """Summon friendly undead minions (pets) from Army of Darkness spell."""
         from pet_system import Pet
         px, py = self.player.x, self.player.y
-        occupied = {(m.x, m.y) for m in self.monsters if m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         if hasattr(self, 'pets'):
             occupied |= {(p.x, p.y) for p in self.pets if p.alive}
         else:

@@ -209,7 +209,8 @@ class LevelManager:
         if not candidate_rooms:
             return
         room = _rng.choice(candidate_rooms)
-        occupied = {(m.x, m.y) for m in monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(monsters)
         tiles = list(room.inner_tiles())
         _rng.shuffle(tiles)
         spawn_pos = None
@@ -269,7 +270,8 @@ class LevelManager:
             candidate_rooms = dungeon.rooms
         _rng.shuffle(candidate_rooms)
 
-        occupied = {(m.x, m.y) for m in monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(monsters)
         for room in candidate_rooms:
             tiles = list(room.inner_tiles())
             _rng.shuffle(tiles)

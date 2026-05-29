@@ -88,6 +88,15 @@ class Monster:
         self.is_seal_demon: bool = defn.get('is_seal_demon', False)
         self._annihilate_target = None  # set by seek_locust AI
 
+        # --- Footprint (multi-tile monsters) ---
+        # NW-anchored rectangle. (1, 1) = single-tile (the default for
+        # every existing monster). (2, 2) = 4-tile boss (currently
+        # Fafnir only). See src/geom.py for the helpers that consume
+        # this; new code should never compare (m.x, m.y) directly to a
+        # tile coordinate — use `geom.monster_at_tile(...)` etc.
+        _fp = defn.get('footprint', [1, 1])
+        self.footprint: tuple[int, int] = (int(_fp[0]), int(_fp[1]))
+
         # --- Piercing ranged state (set by _ranged_turn for caller to process) ---
         self._piercing_collateral: list = []   # monsters in projectile path
         self._force_piercing: bool = False      # next attack must use piercing
@@ -762,7 +771,8 @@ class Monster:
         dx, dy = self._preferred_dir(player, effective_pattern)
         candidates = self._move_candidates(dx, dy)
 
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         player_pos = (player.x, player.y)
@@ -793,7 +803,8 @@ class Monster:
             if _step == 0 and move_steps > 1:
                 dx, dy = self._preferred_dir(player, effective_pattern)
                 candidates = self._move_candidates(dx, dy)
-                occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+                from geom import all_occupied_tiles
+                occupied = all_occupied_tiles(all_monsters, exclude=self)
                 if extra_occupied:
                     occupied |= extra_occupied
 
@@ -801,7 +812,8 @@ class Monster:
 
     def _wander(self, dungeon, all_monsters, extra_occupied, player):
         """Random wandering when the monster hasn't detected the player."""
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         occupied.add((player.x, player.y))
@@ -837,9 +849,13 @@ class Monster:
                 m.status_effects.pop('sleeping', None)
 
     def _adjacent_to(self, player) -> bool:
-        dx = abs(self.x - player.x)
-        dy = abs(self.y - player.y)
-        return dx <= 1 and dy <= 1 and not (dx == 0 and dy == 0)
+        """True if the player is Chebyshev-1 adjacent to ANY tile of
+        this monster's footprint (and not standing on the monster).
+        For 1×1 monsters this is the classic 8-neighbour adjacency;
+        for 2×2 monsters the player counts as adjacent if they're
+        next to any of the 4 occupied tiles."""
+        from geom import is_adjacent
+        return is_adjacent(player.x, player.y, self)
 
     def _preferred_dir(self, player, effective_pattern: str) -> tuple[int, int]:
         # Confused or blinded monsters stumble randomly
@@ -899,25 +915,41 @@ class Monster:
         return []
 
     def _can_move_to(self, dungeon, nx: int, ny: int) -> bool:
-        """Check if this monster can move to (nx, ny), including wall-phasing."""
-        if not dungeon.in_bounds(nx, ny):
-            return False
-        if dungeon.is_walkable(nx, ny):
-            return True
-        # Wall-phasing: Asterion can move through phasing walls
-        if self.can_phase_walls:
-            from dungeon import WALL
-            phasing = getattr(dungeon, 'phasing_walls', set())
-            if dungeon.tiles[ny][nx] == WALL and (nx, ny) in phasing:
-                return True
-        return False
+        """Check if this monster can move to anchor position (nx, ny),
+        including wall-phasing. For multi-tile monsters, ALL footprint
+        tiles at the new position must be walkable — a 2×2 dragon
+        can't step into a 1-tile gap."""
+        fw, fh = self.footprint
+        # Validate every footprint tile at the proposed new position
+        for dy in range(fh):
+            for dx in range(fw):
+                tx, ty = nx + dx, ny + dy
+                if not dungeon.in_bounds(tx, ty):
+                    return False
+                if dungeon.is_walkable(tx, ty):
+                    continue
+                # Wall-phasing: Asterion can move through phasing walls.
+                # (Asterion is 1×1, but we keep the check general.)
+                if self.can_phase_walls:
+                    from dungeon import WALL
+                    phasing = getattr(dungeon, 'phasing_walls', set())
+                    if (dungeon.tiles[ty][tx] == WALL
+                            and (tx, ty) in phasing):
+                        continue
+                return False
+        return True
 
     def _stumble_random(self, dungeon, all_monsters, extra_occupied, player):
         """Move in a random direction (confused/blinded stumble).
         If stumble would bump another monster, attack it (friendly fire)."""
         dirs = [(0,-1),(0,1),(-1,0),(1,0)]
         random.shuffle(dirs)
-        occupied = {(m.x, m.y): m for m in all_monsters if m is not self and m.alive}
+        from geom import occupied_tiles as _ot
+        occupied = {}
+        for _m in all_monsters:
+            if _m is not self and _m.alive:
+                for _t in _ot(_m):
+                    occupied[_t] = _m
         for ddx, ddy in dirs:
             nx, ny = self.x + ddx, self.y + ddy
             # Confused friendly fire: bump into another monster = attack it
@@ -936,7 +968,8 @@ class Monster:
 
     def _flee_from(self, player, dungeon, all_monsters, extra_occupied):
         """Move away from player (feared)."""
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         away_dx = 0 if self.x == player.x else (1 if self.x > player.x else -1)
@@ -963,7 +996,8 @@ class Monster:
         if not _line_of_sight(self.x, self.y, px, py, dungeon):
             return False
         # Bresenham walk to check for monsters in the way
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         dx, dy = abs(px - self.x), abs(py - self.y)
         sx = 1 if px > self.x else -1
         sy = 1 if py > self.y else -1
@@ -985,10 +1019,12 @@ class Monster:
 
     def _monsters_in_path(self, px, py, all_monsters) -> list:
         """Return monsters standing on tiles between self and (px, py)."""
+        from geom import occupied_tiles as _ot
         occupied = {}
         for m in all_monsters:
             if m is not self and m.alive:
-                occupied[(m.x, m.y)] = m
+                for _t in _ot(m):
+                    occupied[_t] = m
         result = []
         dx, dy = abs(px - self.x), abs(py - self.y)
         sx = 1 if px > self.x else -1
@@ -1043,7 +1079,8 @@ class Monster:
         if self._adjacent_to(player):
             return True
 
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         player_pos = (player.x, player.y)
@@ -1133,7 +1170,8 @@ class Monster:
                 if d not in candidates:
                     candidates.append(d)
 
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         player_pos = (player.x, player.y)
@@ -1216,7 +1254,8 @@ class Monster:
 
         # Move toward nearest locust
         nearest = min(locusts, key=lambda m: abs(m.x - self.x) + abs(m.y - self.y))
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         occupied.add((player.x, player.y))
@@ -1348,7 +1387,8 @@ class Monster:
     def _phase_blink_to_player(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Teleport to an empty walkable tile adjacent to the player.
         Returns True if teleport succeeded (caller treats as attack)."""
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         occupied.add((player.x, player.y))
@@ -1379,7 +1419,8 @@ class Monster:
             return False
 
         # Adjacent: reposition to a different adjacent-to-player tile, then attack
-        occupied = {(m.x, m.y) for m in all_monsters if m is not self and m.alive}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
         occupied.add((px, py))

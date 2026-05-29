@@ -18,6 +18,7 @@ import pygame
 
 import layout
 from renderer import TILE_SIZE
+from geom import monster_at_tile, is_at_tile, occupied_tiles, any_tile_in_set
 from fantasy_ui import (FP, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, centered_text, draw_overlay,
@@ -962,7 +963,9 @@ class RenderMixin:
                 # Ambush monsters are invisible until aware
                 if m.ai_pattern == 'ambush' and not getattr(m, '_aware', False):
                     continue
-                self.renderer.draw_entity(m.x, m.y, m.color, cam_x, cam_y, self.visible, mid=m.kind)
+                self.renderer.draw_entity(
+                    m.x, m.y, m.color, cam_x, cam_y, self.visible,
+                    mid=m.kind, footprint=getattr(m, 'footprint', (1, 1)))
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
             if pet.alive and (pet.x, pet.y) in self.visible:
@@ -976,8 +979,10 @@ class RenderMixin:
         # Telepathy: render unseen monsters as dim dots
         if self.player.has_effect('telepathy'):
             for m in self.monsters:
-                if m.alive and (m.x, m.y) not in self.visible:
-                    self.renderer.draw_entity(m.x, m.y, (70, 70, 120), cam_x, cam_y, None)
+                if m.alive and not any_tile_in_set(m, self.visible):
+                    self.renderer.draw_entity(
+                        m.x, m.y, (70, 70, 120), cam_x, cam_y, None,
+                        footprint=getattr(m, 'footprint', (1, 1)))
         # Abyssal Shimmer: pulsing violet glow (brighter when activated)
         for item in self.ground_items:
             if item.id == 'abyssal_shimmer' and (item.x, item.y) in self.visible:
@@ -1163,9 +1168,7 @@ class RenderMixin:
                 pygame.draw.rect(self.screen, (255, 100, 60), (scr_x, scr_y, T, T), 1)
 
         # Check if there's a valid target at cursor
-        target_monster = next(
-            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
-        )
+        target_monster = monster_at_tile(self.monsters, cx, cy)
         has_target = target_monster is not None
 
         # Cursor highlight
@@ -1185,9 +1188,7 @@ class RenderMixin:
         reach = self._throw_reach
         has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
         in_range = max(abs(cx - px), abs(cy - py)) <= reach
-        target_monster = next(
-            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
-        )
+        target_monster = monster_at_tile(self.monsters, cx, cy)
         # Check if a monster blocks the path before the cursor
         blocker = self._find_first_monster_in_path(px, py, cx, cy)
         will_hit_blocker = blocker is not None and (blocker.x != cx or blocker.y != cy)
@@ -1269,9 +1270,7 @@ class RenderMixin:
 
         # Check LoS and whether there's a target at cursor
         has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
-        target_monster = next(
-            (m for m in self.monsters if m.alive and m.x == cx and m.y == cy), None
-        )
+        target_monster = monster_at_tile(self.monsters, cx, cy)
         weapon = self.player.ranged_weapon
         in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None

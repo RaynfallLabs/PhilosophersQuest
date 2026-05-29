@@ -62,7 +62,8 @@ class EncountersMixin:
         }
         import random as _rng
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
-        occupied = {(m.x, m.y) for m in self.monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
         for room in _rng.sample(rooms, min(len(rooms), 5)):
             for tx, ty in room.inner_tiles():
@@ -156,7 +157,8 @@ class EncountersMixin:
             'ingredient_id': None,
         }
         # Place in a non-start room
-        occupied = {(m.x, m.y) for m in self.monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         import random as _rng
@@ -202,7 +204,8 @@ class EncountersMixin:
             'harvest_threshold': 99,
             'ingredient_id': None,
         }
-        occupied = {(m.x, m.y) for m in self.monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         import random as _rng
@@ -242,7 +245,8 @@ class EncountersMixin:
         carrot = copy.copy(carrot_template)
         # Place in a random room
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
-        occupied = {(m.x, m.y) for m in self.monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
         for room in _rng.sample(rooms, min(len(rooms), 5)):
             tiles = list(room.inner_tiles())
@@ -290,7 +294,8 @@ class EncountersMixin:
             'harvest_threshold': 99,
             'ingredient_id': None,
         }
-        occupied = {(m.x, m.y) for m in self.monsters}
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
         occupied.add((self.player.x, self.player.y))
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         import random as _rng
@@ -370,7 +375,7 @@ class EncountersMixin:
                 dist_from_player = abs(nx - px) + abs(ny - py)
                 if dist_from_player < 4:
                     continue
-                if any(m.alive and m.x == nx and m.y == ny for m in self.monsters):
+                if monster_at_tile(self.monsters, nx, ny) is not None:
                     continue
                 candidates.append((nx, ny))
         if candidates:

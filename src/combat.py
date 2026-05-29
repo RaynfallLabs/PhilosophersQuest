@@ -1,5 +1,6 @@
 import random
 from dice import roll
+from geom import monster_at_tile, is_at_tile
 
 # Fallback multipliers used when the player has no weapon equipped.
 # Bare-hand chain table. Caps at the universal 5-chain like every common
@@ -675,7 +676,7 @@ def apply_knockback(player, monster, dungeon, monsters=None):
     tx, ty = monster.x + nx, monster.y + ny
     if not dungeon.is_walkable(tx, ty):
         return
-    if monsters and any(m is not monster and m.alive and m.x == tx and m.y == ty
+    if monsters and any(m is not monster and m.alive and is_at_tile(m, tx, ty)
                         for m in monsters):
         return
     monster.x, monster.y = tx, ty
