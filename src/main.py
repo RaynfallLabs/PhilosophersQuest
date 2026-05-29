@@ -1813,13 +1813,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     pass
                 if not _free_move:
                     self._advance_turn()
-                # Haste: grant a free second step in the same direction
-                if (self.player.has_effect('hasted') and self.state == STATE_PLAYER
-                        and not getattr(self, '_haste_active', False)):
-                    self.add_message("You move with supernatural speed!", 'info')
-                    self._haste_active = True
-                    self._do_move(dx, dy)
-                    self._haste_active = False
+                # Haste no longer auto-fires a second _do_move (that doubled
+                # the player's keystroke). Speed boost is now implemented in
+                # _advance_turn: every other call while hasted, the world
+                # tick (monsters/pets/wander) is skipped so the player gets
+                # two actions per monster action.
 
     def _try_phase_step(self, wx: int, wy: int, dx: int, dy: int) -> bool:
         """Attempt to step one tile through a wall (chain-equip phase_step passive).
@@ -2504,9 +2502,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 break
         self.player._surrounded_ac_bonus = _surr_bonus
 
-        self._do_monster_turns()
-        self._do_pet_turns()
-        self._maybe_wander_spawn()
+        # Haste: player moves twice as fast as monsters. Every other call
+        # while hasted, skip the world tick (monsters/pets/wander spawns)
+        # so 2 player actions = 1 monster action. Player-side ticks
+        # (cooldowns, status durations, HP regen) happen normally on every
+        # action. When haste expires, reset the toggle so a fresh haste
+        # starts the cycle from the same phase.
+        if self.player.has_effect('hasted'):
+            self._haste_skip_world = not getattr(self, '_haste_skip_world', False)
+        else:
+            self._haste_skip_world = False
+
+        if not self._haste_skip_world:
+            self._do_monster_turns()
+            self._do_pet_turns()
+            self._maybe_wander_spawn()
         self._death_proximity_warning()
         self._tick_hp_regen()
 

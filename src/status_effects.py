@@ -58,7 +58,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'fear_immune':        ('Battle Rage',        (220, 60, 40),   'Immune to fear effects'),
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     # ---- Buffs ----
-    'hasted':             ('Hasted',             (245, 245,  60), 'Extra action each turn'),
+    'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
     'levitating':         ('Levitating',         (185, 215, 245), 'Floating; immune to floor traps'),
     'regenerating':       ('Regenerating',       ( 80, 225, 105), 'Recovering 1 HP per turn'),
