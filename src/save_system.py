@@ -68,6 +68,17 @@ def save_game(game) -> bool:
             '_cow_level_done': getattr(game, '_cow_level_done', False),
             '_cow_spawned': getattr(game, '_cow_spawned', False),
             '_cow_level': getattr(game, '_cow_level', 35),
+            # Cow-level return floor — without this, reloading on the cow
+            # level then taking the exit portal warps to floor 0.
+            '_cow_return_level': getattr(game, '_cow_return_level', 0),
+            # Per-floor charge state (one-shot artifact / passive flags)
+            # — must be saved so reload doesn't refresh them.
+            '_first_hit_used':   getattr(game, '_first_hit_used', False),
+            '_death_save_used':  getattr(game, '_death_save_used', False),
+            '_tarnhelm_used':    getattr(game, '_tarnhelm_used', False),
+            '_quiz_reroll_used': getattr(game, '_quiz_reroll_used', False),
+            # Chronicle dedup guards
+            '_chronicle_abaddon_start': getattr(game, '_chronicle_abaddon_start', False),
             # Magic carrot (L1-19) + ethereal unicorn (L21-39) one-shot spawns.
             # Without these, reload re-randomizes the target floor and can
             # spawn a SECOND carrot/unicorn within the same run.

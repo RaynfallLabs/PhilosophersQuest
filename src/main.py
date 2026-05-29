@@ -505,6 +505,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cow_level_done = state.get('_cow_level_done', False)
         self._cow_spawned = state.get('_cow_spawned', False)
         self._cow_level = state.get('_cow_level', 35)
+        # Cow return floor — restore so exit portal works post-reload
+        self._cow_return_level = state.get('_cow_return_level', 0)
+        # Per-floor one-shot charges (Babr-e Bayan, Jade Cicada, Tarnhelm,
+        # Tablet of Destinies reroll). Without these the per-floor charge
+        # would refresh on every reload — a save-exploit.
+        self._first_hit_used   = state.get('_first_hit_used', False)
+        self._death_save_used  = state.get('_death_save_used', False)
+        self._tarnhelm_used    = state.get('_tarnhelm_used', False)
+        self._quiz_reroll_used = state.get('_quiz_reroll_used', False)
+        # Chronicle dedup guards
+        self._chronicle_abaddon_start = state.get('_chronicle_abaddon_start', False)
         # Magic carrot + ethereal unicorn one-shot spawn state (added 2026-05-19
         # save-lifecycle audit). Without these, reload re-rolls the spawn
         # target floor; if the new target is on a floor the player hasn't
