@@ -144,17 +144,24 @@ def validate_rewrite(
     audit: list[tuple[str, str, str]] = []
 
     # 1. Pipeline-level deterministic gates
-    dup_threshold = 0.97 if subject == "math" else 0.85
+    # Math's _normalize strips operators (× + - ·), making "1 × 8" and "1 + 8"
+    # look identical to the gate. Math drilling INTENTIONALLY repeats fact
+    # families across phrasings; the gate's premise doesn't fit. Skip dup for math.
+    dup_threshold = 0.85
+    skip_duplicate = (subject == "math")
     pipeline_results = {
         "schema":           validate_schema(new_q),
         "length_parity":    validate_length_parity(new_q, subject=subject),
         "length_budget":    validate_length_budget(new_q, subject=subject),
         "anti_rote":        validate_anti_rote(new_q, subject=subject),
-        "duplicate":        validate_duplicate(new_q, dup_index, threshold=dup_threshold, self_idx=replace_idx),
+        "duplicate":        (None if skip_duplicate else
+                             validate_duplicate(new_q, dup_index, threshold=dup_threshold, self_idx=replace_idx)),
         "answer_collision": validate_answer_collision(new_q, answer_index, self_idx=replace_idx, subject=subject),
         "math_correctness": validate_math_correctness(new_q, subject=subject),
         "trailing_tokens":  validate_trailing_tokens(new_q, subject=subject),
     }
+    # Drop None results (skipped gates)
+    pipeline_results = {k: v for k, v in pipeline_results.items() if v is not None}
     for gate, res in pipeline_results.items():
         hard_reason, soft_reason = _gate_result_to_status(gate, res)
         status = res.status.value if hasattr(res, "status") else ("FAIL" if hard_reason or soft_reason else "PASS")

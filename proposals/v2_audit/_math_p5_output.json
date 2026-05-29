@@ -1,0 +1,4202 @@
+[
+  {
+    "tier": 1,
+    "question": "3, 6, 9, 12, ? — what comes next?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "16",
+      "13",
+      "10"
+    ],
+    "context": "Skip counting by 3s. Adding 3 each step: 3, 6, 9, 12, 15. Skip counting builds the 3 times table — 3 × 5 = 15."
+  },
+  {
+    "tier": 1,
+    "question": "4, 8, 12, 16, ? — what comes next?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "24",
+      "18",
+      "17"
+    ],
+    "context": "Skip counting by 4s. Adding 4 each step: 4, 8, 12, 16, 20. Skip counting is the foundation for the 4 times table (4 × 5 = 20)."
+  },
+  {
+    "tier": 1,
+    "question": "6, 12, 18, 24, ? — what comes next?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "32",
+      "28",
+      "26"
+    ],
+    "context": "Skip counting by 6s. Adding 6 each step: 6, 12, 18, 24, 30. This bridges to the 6 times table — 6 × 5 = 30."
+  },
+  {
+    "tier": 1,
+    "question": "7, 14, 21, 28, ? — what comes next?",
+    "answer": "35",
+    "choices": [
+      "35",
+      "34",
+      "32",
+      "30"
+    ],
+    "context": "Skip counting by 7s. Adding 7 each step: 7, 14, 21, 28, 35. The 7 times table is the trickiest — skip counting drills it."
+  },
+  {
+    "tier": 1,
+    "question": "8, 16, 24, 32, ? — what comes next?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "42",
+      "36",
+      "38"
+    ],
+    "context": "Skip counting by 8s. Adding 8 each step: 8, 16, 24, 32, 40. This is the 8 times table — 8 × 5 = 40."
+  },
+  {
+    "tier": 1,
+    "question": "9, 18, 27, 36, ? — what comes next?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "44",
+      "42",
+      "48"
+    ],
+    "context": "Skip counting by 9s. Adding 9 each step: 9, 18, 27, 36, 45. Digit-sum check: 4+5 = 9 (9s always have digit-sum 9)."
+  },
+  {
+    "tier": 1,
+    "question": "10, 20, 30, 40, ? — what comes next?",
+    "answer": "50",
+    "choices": [
+      "50",
+      "100",
+      "45",
+      "60"
+    ],
+    "context": "Skip counting by 10s. Adding 10 each step: 10, 20, 30, 40, 50. Multiples of 10 always end in 0 — the easiest skip count."
+  },
+  {
+    "tier": 1,
+    "question": "11, 22, 33, 44, ? — what comes next?",
+    "answer": "55",
+    "choices": [
+      "55",
+      "54",
+      "45",
+      "50"
+    ],
+    "context": "Skip counting by 11s. Adding 11 each step: 11, 22, 33, 44, 55. Single-digit ×11 always gives a repeated digit (1×11=11, 5×11=55)."
+  },
+  {
+    "tier": 1,
+    "question": "12, 24, 36, 48, ? — what comes next?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "62",
+      "56",
+      "50"
+    ],
+    "context": "Skip counting by 12s. Adding 12 each step: 12, 24, 36, 48, 60. 12 times table — useful for time (12 hrs) and dozens."
+  },
+  {
+    "tier": 1,
+    "question": "2, 4, 6, 8, 10, ? — what comes next?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "11",
+      "14",
+      "13"
+    ],
+    "context": "Skip counting by 2s — even numbers. Adding 2 each step. Even numbers end in 0, 2, 4, 6, or 8."
+  },
+  {
+    "tier": 1,
+    "question": "5, 10, 15, 20, 25, ? — what comes next?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "35",
+      "26",
+      "20"
+    ],
+    "context": "Skip counting by 5s. Adding 5 each step. Multiples of 5 always end in 0 or 5 — quickest skip count after 10s."
+  },
+  {
+    "tier": 1,
+    "question": "3, 6, 9, 12, 15, ? — what comes next?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "17",
+      "20",
+      "16"
+    ],
+    "context": "Skip counting by 3s. Adding 3 each step: ..., 12, 15, 18. Builds the 3 times table — 3 × 6 = 18."
+  },
+  {
+    "tier": 1,
+    "question": "4, 8, 12, 16, 20, ? — what comes next?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "22",
+      "25",
+      "28"
+    ],
+    "context": "Skip counting by 4s. Adding 4 each step. Builds the 4 times table — 4 × 6 = 24."
+  },
+  {
+    "tier": 1,
+    "question": "0, 5, 10, 15, ? — what comes next?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "25",
+      "16",
+      "18"
+    ],
+    "context": "Skip counting by 5s starting from 0. Adding 5 each step. Includes 0 as the first multiple — useful for number lines."
+  },
+  {
+    "tier": 1,
+    "question": "2, 4, 6, ? — what comes next?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "10",
+      "7",
+      "9"
+    ],
+    "context": "Skip counting by 2s. Adding 2 each step. The even numbers — 2 × 4 = 8."
+  },
+  {
+    "tier": 1,
+    "question": "5, 10, ? — what comes next?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "20",
+      "12",
+      "11"
+    ],
+    "context": "Skip counting by 5s. Adding 5 each step: 5, 10, 15. Skip counting is the bridge to multiplication (5 × 3 = 15)."
+  },
+  {
+    "tier": 1,
+    "question": "10, 20, ? — what comes next?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "40",
+      "25",
+      "21"
+    ],
+    "context": "Skip counting by 10s. Adding 10 each step. Multiples of 10 end in 0 — quickest pattern to spot."
+  },
+  {
+    "tier": 1,
+    "question": "3, 6, ? — what comes next?",
+    "answer": "9",
+    "choices": [
+      "9",
+      "10",
+      "8",
+      "12"
+    ],
+    "context": "Skip counting by 3s. Adding 3 each step: 3, 6, 9. Builds the 3 times table — 3 × 3 = 9."
+  },
+  {
+    "tier": 1,
+    "question": "1, 2, 4, 8, ? — what comes next?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "12",
+      "14",
+      "10"
+    ],
+    "context": "Doubling pattern: each step doubles. 1 × 2 = 2, 2 × 2 = 4, 4 × 2 = 8, 8 × 2 = 16. Doubles grow fast."
+  },
+  {
+    "tier": 1,
+    "question": "Square: side 4. Perimeter?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "8",
+      "12",
+      "20"
+    ],
+    "context": "Square perimeter: add all four equal sides. 4 + 4 + 4 + 4 = 16. Or use 4 × side = 4 × 4 = 16. Counting on by 4s, four times."
+  },
+  {
+    "tier": 1,
+    "question": "Square: side 5. Perimeter?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "10",
+      "15",
+      "25"
+    ],
+    "context": "Square perimeter: 4 equal sides. 5 + 5 + 5 + 5 = 20. Or 4 × 5 = 20. Skip counting by 5s, four times."
+  },
+  {
+    "tier": 1,
+    "question": "Square: side 3. Perimeter?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "6",
+      "9",
+      "15"
+    ],
+    "context": "Square perimeter: 4 equal sides. 3 + 3 + 3 + 3 = 12. Or 4 × 3 = 12. Skip counting by 3s, four steps."
+  },
+  {
+    "tier": 1,
+    "question": "Square: side 2. Perimeter?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "4",
+      "6",
+      "10"
+    ],
+    "context": "Square perimeter: 4 equal sides. 2 + 2 + 2 + 2 = 8. Or 4 × 2 = 8. Skip counting by 2s, four times."
+  },
+  {
+    "tier": 1,
+    "question": "Triangle: 3 equal sides of length 5. Perimeter?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "10",
+      "12",
+      "20"
+    ],
+    "context": "Equilateral triangle: 3 equal sides. 5 + 5 + 5 = 15. Or 3 × 5 = 15. Skip counting by 5s, three steps."
+  },
+  {
+    "tier": 1,
+    "question": "Triangle: 3 equal sides of length 4. Perimeter?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "8",
+      "16",
+      "9"
+    ],
+    "context": "Equilateral triangle: 3 equal sides. 4 + 4 + 4 = 12. Or 3 × 4 = 12. Skip counting by 4s, three times."
+  },
+  {
+    "tier": 1,
+    "question": "Triangle: 3 equal sides of length 6. Perimeter?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "12",
+      "15",
+      "24"
+    ],
+    "context": "Equilateral triangle: 3 equal sides. 6 + 6 + 6 = 18. Or 3 × 6 = 18. Skip counting by 6s, three steps."
+  },
+  {
+    "tier": 1,
+    "question": "Octagon: how many sides?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "6",
+      "7",
+      "10"
+    ],
+    "context": "Octagon: 8 sides. The prefix octa- means eight (octopus, octave). Stop signs are octagonal."
+  },
+  {
+    "tier": 1,
+    "question": "Decagon: how many sides?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "8",
+      "9",
+      "12"
+    ],
+    "context": "Decagon: 10 sides. The prefix deca- means ten (decade, decimal). 10 sides, 10 vertices."
+  },
+  {
+    "tier": 1,
+    "question": "Dodecagon: how many sides?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "10",
+      "11",
+      "20"
+    ],
+    "context": "Dodecagon: 12 sides. The prefix dodeca- means twelve. Common in design — dodecagonal coins exist."
+  },
+  {
+    "tier": 1,
+    "question": "Heptagon: how many sides?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "context": "Heptagon: 7 sides. The prefix hepta- means seven. Seven sides — less common than its neighbors hexagon and octagon."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 8, width 5. Area?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "26",
+      "13",
+      "20"
+    ],
+    "context": "Rectangle area formula: A = l × w. Here A = 8 × 5 = 40 square units. Perimeter P = 2(l+w) = 26 — don't mix the two formulas."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 9, width 6. Area?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "30",
+      "15",
+      "45"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 9 × 6 = 54. Perimeter would be P = 2(l+w) = 30 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 10, width 7. Area?",
+    "answer": "70",
+    "choices": [
+      "70",
+      "34",
+      "17",
+      "80"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 10 × 7 = 70. Distinguish from perimeter P = 2(l+w) = 34."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 12, width 4. Area?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "32",
+      "16",
+      "44"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 12 × 4 = 48. Perimeter = 2(12+4) = 32 — area and perimeter are different."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 6, width 3. Area?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "18",
+      "9",
+      "20"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 6 × 3 = 18 square units. Perimeter = 2(6+3) = 18 (coincidence here)."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 11, width 5. Area?",
+    "answer": "55",
+    "choices": [
+      "55",
+      "32",
+      "16",
+      "16"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 11 × 5 = 55. Use the ×11 trick mentally: 11 × 5 = 55."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 15, width 4. Area?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "38",
+      "19",
+      "20"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 15 × 4 = 60 square units. Perimeter P = 2(l+w) = 38 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 20, width 8. Area?",
+    "answer": "160",
+    "choices": [
+      "160",
+      "56",
+      "28",
+      "100"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 20 × 8 = 160. Perimeter = 2(20+8) = 56 — area and perimeter are not the same."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 7, width 7. Area?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "28",
+      "14",
+      "14"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 7 × 7 = 49. When l = w, the rectangle is a square — A = s² = 7² = 49."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 14, width 3. Area?",
+    "answer": "42",
+    "choices": [
+      "42",
+      "34",
+      "17",
+      "17"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 14 × 3 = 42. Perimeter = 2(14+3) = 34 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 25, width 4. Area?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "58",
+      "29",
+      "50"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 25 × 4 = 100. Use halving-and-doubling: 25 × 4 = 50 × 2 = 100."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 16, width 5. Area?",
+    "answer": "80",
+    "choices": [
+      "80",
+      "42",
+      "21",
+      "21"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 16 × 5 = 80. Halving-and-doubling: 16 × 5 = 8 × 10 = 80."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 13, width 6. Area?",
+    "answer": "78",
+    "choices": [
+      "78",
+      "38",
+      "19",
+      "76"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 13 × 6 = 78. Distributive: 13 × 6 = 10 × 6 + 3 × 6 = 60 + 18 = 78."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 18, width 5. Area?",
+    "answer": "90",
+    "choices": [
+      "90",
+      "46",
+      "23",
+      "23"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 18 × 5 = 90. Halve-then-×10 trick for ×5: 18/2 = 9, 9 × 10 = 90."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 22, width 3. Area?",
+    "answer": "66",
+    "choices": [
+      "66",
+      "50",
+      "25",
+      "25"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 22 × 3 = 66. Perimeter = 2(22+3) = 50 — area and perimeter are different."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 30, width 4. Area?",
+    "answer": "120",
+    "choices": [
+      "120",
+      "68",
+      "34",
+      "60"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 30 × 4 = 120. Use times-tables: 3 × 4 = 12, then attach the 0."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 8, width 5. Perimeter?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "40",
+      "13",
+      "20"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (8+5) = 2 × 13 = 26. Don't mix with area A = lw = 40."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 7, width 3. Perimeter?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "21",
+      "10",
+      "42"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (7+3) = 2 × 10 = 20. Don't mix with area A = lw = 21."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 9, width 4. Perimeter?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "36",
+      "13",
+      "18"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (9+4) = 2 × 13 = 26. Area A = lw = 36 is different."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 12, width 8. Perimeter?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "96",
+      "20",
+      "48"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (12+8) = 2 × 20 = 40. Area A = lw = 96 is different."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 10, width 6. Perimeter?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "60",
+      "16",
+      "30"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (10+6) = 2 × 16 = 32. Area A = lw = 60 — distinct formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 15, width 5. Perimeter?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "75",
+      "20",
+      "30"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (15+5) = 2 × 20 = 40. Area = 75 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 20, width 10. Perimeter?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "200",
+      "30",
+      "40"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (20+10) = 2 × 30 = 60. Area = 200 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 11, width 4. Perimeter?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "44",
+      "15",
+      "22"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (11+4) = 2 × 15 = 30. Area = 44 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 6, width 4. Perimeter?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "24",
+      "10",
+      "12"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (6+4) = 2 × 10 = 20. Area = 24 — distinguish."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 14, width 6. Perimeter?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "84",
+      "20",
+      "28"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (14+6) = 2 × 20 = 40. Area = 84 — different."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 9, width 2. Perimeter?",
+    "answer": "22",
+    "choices": [
+      "22",
+      "18",
+      "11",
+      "20"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (9+2) = 2 × 11 = 22. Area = 18 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 25, width 5. Perimeter?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "125",
+      "30",
+      "50"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (25+5) = 2 × 30 = 60. Area = 125 — distinguish."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 13, width 7. Perimeter?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "91",
+      "20",
+      "26"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (13+7) = 2 × 20 = 40. Area = 91 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 16, width 4. Perimeter?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "64",
+      "20",
+      "32"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (16+4) = 2 × 20 = 40. Area = 64 — distinguish."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 5, width 3. Perimeter?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "15",
+      "8",
+      "30"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (5+3) = 2 × 8 = 16. Area = 15 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 6, height 4. Area?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "24",
+      "10",
+      "20"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 6 × 4 = ½ × 24 = 12. Don't forget the ½ — forgetting it gives the rectangle area (24)."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 8, height 7. Area?",
+    "answer": "28",
+    "choices": [
+      "28",
+      "56",
+      "15",
+      "48"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 8 × 7 = ½ × 56 = 28. Forgetting the ½ doubles the answer (56, the rectangle area)."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 9, height 4. Area?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "36",
+      "13",
+      "26"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 9 × 4 = ½ × 36 = 18. Triangle is half of the bounding rectangle (36)."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 12, height 5. Area?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "60",
+      "17",
+      "50"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 12 × 5 = ½ × 60 = 30. Forgetting the ½ gives the rectangle area (60)."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 4, height 7. Area?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "28",
+      "11",
+      "11"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 4 × 7 = ½ × 28 = 14. Half of the rectangle area 28."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 9, height 8. Area?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "72",
+      "17",
+      "17"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 9 × 8 = ½ × 72 = 36. Without the ½ you'd get the rectangle area 72."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 18, height 4. Area?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "72",
+      "22",
+      "22"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 18 × 4 = ½ × 72 = 36. Half the bounding rectangle 72."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 5, height 6. Area?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "30",
+      "11",
+      "11"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 5 × 6 = ½ × 30 = 15. Half the rectangle area 30."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 7, height 4. Area?",
+    "answer": "14",
+    "choices": [
+      "14",
+      "28",
+      "11",
+      "11"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 7 × 4 = ½ × 28 = 14. Don't forget the ½ — that's the most common error."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 11, height 4. Area?",
+    "answer": "22",
+    "choices": [
+      "22",
+      "44",
+      "15",
+      "15"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 11 × 4 = ½ × 44 = 22. Half the rectangle area 44."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 22, height 5. Area?",
+    "answer": "55",
+    "choices": [
+      "55",
+      "110",
+      "27",
+      "27"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 22 × 5 = ½ × 110 = 55. Forgetting the ½ gives 110 (rectangle area)."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 20, height 3. Area?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "60",
+      "23",
+      "23"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 20 × 3 = ½ × 60 = 30. Half the rectangle area 60."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 15, height 8. Area?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "120",
+      "23",
+      "23"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 15 × 8 = ½ × 120 = 60. Half the rectangle area 120."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 12, height 10. Area?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "120",
+      "22",
+      "22"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 12 × 10 = ½ × 120 = 60. Half the rectangle area 120."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 6, height 6. Area?",
+    "answer": "18",
+    "choices": [
+      "18",
+      "36",
+      "12",
+      "12"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 6 × 6 = ½ × 36 = 18. Half the bounding square area 36."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 2 × 4 × 7. Volume?",
+    "answer": "56",
+    "choices": [
+      "56",
+      "13",
+      "28",
+      "16"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 2 × 4 × 7 = 56 cubic units. Multiply all three dimensions; sum 2+4+7 = 13 is not volume."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 5 × 4 × 3. Volume?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "12",
+      "47",
+      "20"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 5 × 4 × 3 = 60. Multiply all three dimensions together."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 6 × 5 × 2. Volume?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "13",
+      "30",
+      "11"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 6 × 5 × 2 = 60. Sum 6+5+2 = 13 is not volume — multiply, don't add."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 4 × 4 × 4. Volume?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "12",
+      "48",
+      "16"
+    ],
+    "context": "Rectangular prism volume: V = lwh. When l = w = h, the box is a cube: V = s³ = 4³ = 4 × 4 × 4 = 64."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 3 × 3 × 3. Volume?",
+    "answer": "27",
+    "choices": [
+      "27",
+      "9",
+      "18",
+      "12"
+    ],
+    "context": "Rectangular prism volume: V = lwh. Cube V = s³ = 3³ = 3 × 3 × 3 = 27. Perfect cubes: 1, 8, 27, 64, 125."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 5 × 5 × 5. Volume?",
+    "answer": "125",
+    "choices": [
+      "125",
+      "15",
+      "75",
+      "25"
+    ],
+    "context": "Rectangular prism volume: V = lwh. Cube V = s³ = 5³ = 5 × 5 × 5 = 125. Perfect cubes: 1, 8, 27, 64, 125, 216."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 10 × 5 × 2. Volume?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "17",
+      "50",
+      "20"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 10 × 5 × 2 = 100 cubic units. Multiply all three dimensions."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 8 × 3 × 2. Volume?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "13",
+      "24",
+      "16"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 8 × 3 × 2 = 48. Sum 8+3+2 = 13 is not volume."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 7 × 4 × 3. Volume?",
+    "answer": "84",
+    "choices": [
+      "84",
+      "14",
+      "42",
+      "28"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 7 × 4 × 3 = 84. Multiply all three dimensions."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 6 × 4 × 5. Volume?",
+    "answer": "120",
+    "choices": [
+      "120",
+      "15",
+      "60",
+      "30"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 6 × 4 × 5 = 120. Use halving-and-doubling: 6×4 = 24, 24×5 = 120."
+  },
+  {
+    "tier": 2,
+    "question": "Cube: side 10. Volume?",
+    "answer": "1000",
+    "choices": [
+      "1000",
+      "900",
+      "1200",
+      "800"
+    ],
+    "context": "Rectangular prism volume: V = lwh. Cube V = s³ = 10³ = 1000. 10³ = 1000 — useful: 1 liter = 1000 cm³ (cube of 10 cm)."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 9 × 2 × 3. Volume?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "14",
+      "27",
+      "18"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 9 × 2 × 3 = 54. Multiply all three dimensions."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 8 × 5 × 4. Volume?",
+    "answer": "160",
+    "choices": [
+      "160",
+      "17",
+      "80",
+      "40"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 8 × 5 × 4 = 160. Order doesn't matter: 8 × 5 = 40, 40 × 4 = 160."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 12 × 3 × 2. Volume?",
+    "answer": "72",
+    "choices": [
+      "72",
+      "17",
+      "36",
+      "24"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 12 × 3 × 2 = 72. Multiply all three dimensions; sum 17 is not volume."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 5 × 4 × 4. Volume?",
+    "answer": "80",
+    "choices": [
+      "80",
+      "13",
+      "40",
+      "20"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 5 × 4 × 4 = 80. Multiply all three dimensions."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 6 × 6 × 4. Volume?",
+    "answer": "144",
+    "choices": [
+      "144",
+      "16",
+      "72",
+      "36"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 6 × 6 × 4 = 144. Sum 6+6+4 = 16 is not volume; multiply."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 6. Area?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "24",
+      "12",
+      "30"
+    ],
+    "context": "Square area formula: A = s². A = 6² = 6 × 6 = 36 square units. Perimeter would be P = 4s = 24 — distinct formula."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 7. Area?",
+    "answer": "49",
+    "choices": [
+      "49",
+      "28",
+      "14",
+      "42"
+    ],
+    "context": "Square area formula: A = s². A = 7² = 49. Perfect square: 7² = 49. Perimeter P = 4×7 = 28."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 8. Area?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "32",
+      "16",
+      "56"
+    ],
+    "context": "Square area formula: A = s². A = 8² = 64. Perfect square: 8² = 64 (memorize 1²-15²)."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 9. Area?",
+    "answer": "81",
+    "choices": [
+      "81",
+      "36",
+      "18",
+      "72"
+    ],
+    "context": "Square area formula: A = s². A = 9² = 81. Perfect square: 9² = 81. Perimeter P = 4×9 = 36."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 10. Area?",
+    "answer": "100",
+    "choices": [
+      "100",
+      "40",
+      "20",
+      "90"
+    ],
+    "context": "Square area formula: A = s². A = 10² = 100. Perfect square: 10² = 100. Perimeter P = 4×10 = 40."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 12. Area?",
+    "answer": "144",
+    "choices": [
+      "144",
+      "48",
+      "24",
+      "120"
+    ],
+    "context": "Square area formula: A = s². A = 12² = 144. Perfect square: 12² = 144 (a dozen squared = a gross)."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 11. Area?",
+    "answer": "121",
+    "choices": [
+      "121",
+      "44",
+      "22",
+      "110"
+    ],
+    "context": "Square area formula: A = s². A = 11² = 121. Perfect square: 11² = 121. Use the square-near-10 trick."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 15. Area?",
+    "answer": "225",
+    "choices": [
+      "225",
+      "60",
+      "30",
+      "150"
+    ],
+    "context": "Square area formula: A = s². A = 15² = 225. Square-ending-in-5 trick: 1×2 = 2, append 25 → 225."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 13. Area?",
+    "answer": "169",
+    "choices": [
+      "169",
+      "52",
+      "26",
+      "156"
+    ],
+    "context": "Square area formula: A = s². A = 13² = 169. Perfect square: 13² = 169 (memorize 1²-15²)."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 14. Area?",
+    "answer": "196",
+    "choices": [
+      "196",
+      "56",
+      "28",
+      "180"
+    ],
+    "context": "Square area formula: A = s². A = 14² = 196. Perfect square: 14² = 196. Useful for the 14-square recognition."
+  },
+  {
+    "tier": 2,
+    "question": "How many degrees in a right angle?",
+    "answer": "90",
+    "choices": [
+      "90",
+      "45",
+      "180",
+      "60"
+    ],
+    "context": "Right-angle trick: 90° = corner of a square = quarter of 360°. Computation: 360° ÷ 4 = 90°. Half a right angle = 45°."
+  },
+  {
+    "tier": 2,
+    "question": "How many degrees in a straight angle?",
+    "answer": "180",
+    "choices": [
+      "180",
+      "90",
+      "360",
+      "270"
+    ],
+    "context": "Straight-angle trick: 180° = half a full turn. Computation: 360° ÷ 2 = 180° = 2 × 90° (two right angles)."
+  },
+  {
+    "tier": 2,
+    "question": "How many degrees in a full turn?",
+    "answer": "360",
+    "choices": [
+      "360",
+      "180",
+      "90",
+      "270"
+    ],
+    "context": "Full-turn trick: 360° = full rotation. Computation: 4 × 90° = 360° = 2 × 180° (two straight angles)."
+  },
+  {
+    "tier": 2,
+    "question": "Sum of all angles in a square?",
+    "answer": "360",
+    "choices": [
+      "360",
+      "180",
+      "90",
+      "720"
+    ],
+    "context": "Quadrilateral angle-sum trick: 360°. A square has four right angles. Computation: 4 × 90° = 360° = sum of all 4 corners."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 6. Perimeter?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "36",
+      "12",
+      "20"
+    ],
+    "context": "Square perimeter formula: P = 4s. P = 4 × 6 = 24. Don't confuse with area A = s² = 36 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 8. Perimeter?",
+    "answer": "32",
+    "choices": [
+      "32",
+      "64",
+      "16",
+      "28"
+    ],
+    "context": "Square perimeter formula: P = 4s. P = 4 × 8 = 32. Distinct from area A = s² = 64."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 10. Perimeter?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "100",
+      "20",
+      "30"
+    ],
+    "context": "Square perimeter formula: P = 4s. P = 4 × 10 = 40. Don't confuse with area A = s² = 100."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 4, width 4. Perimeter?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "8",
+      "12",
+      "20"
+    ],
+    "context": "Rectangle perimeter formula: P = 2(l + w). P = 2 × (4+4) = 2 × 8 = 16. When l = w, it's a square — P = 4s = 16 also."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 4 × 2 × 2. Volume?",
+    "answer": "16",
+    "choices": [
+      "16",
+      "8",
+      "12",
+      "10"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 4 × 2 × 2 = 16 cubic units. Multiply all three dimensions together."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 3 × 2 × 2. Volume?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "7",
+      "10",
+      "8"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 3 × 2 × 2 = 12. Sum 3+2+2 = 7 is not volume — multiply."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 7 × 3 × 2. Volume?",
+    "answer": "42",
+    "choices": [
+      "42",
+      "12",
+      "21",
+      "14"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 7 × 3 × 2 = 42. Multiply all three dimensions."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 4, width 3. Area?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "14",
+      "7",
+      "10"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 4 × 3 = 12. Perimeter P = 2(l+w) = 14 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 5, width 4. Area?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "18",
+      "9",
+      "16"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 5 × 4 = 20 square units. Perimeter = 2(5+4) = 18 — distinct."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 10, height 4. Area?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "40",
+      "14",
+      "14"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 10 × 4 = ½ × 40 = 20. Half the bounding rectangle 40."
+  },
+  {
+    "tier": 2,
+    "question": "Sum of all angles in a rectangle?",
+    "answer": "360°",
+    "choices": [
+      "360°",
+      "180°",
+      "90°",
+      "720°"
+    ],
+    "context": "Quadrilateral angle-sum trick: 360°. A rectangle has four right angles. Computation: 4 × 90° = 360° = sum of all 4 corners."
+  },
+  {
+    "tier": 2,
+    "question": "Sum of all angles in any quadrilateral?",
+    "answer": "360°",
+    "choices": [
+      "360°",
+      "180°",
+      "90°",
+      "540°"
+    ],
+    "context": "Quadrilateral angle-sum trick: 360°. Holds for every quadrilateral — square, rectangle, parallelogram, trapezoid, irregular. Computation: 2 × 180° = 360° (two triangles' worth)."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 12, width 6. Area?",
+    "answer": "72",
+    "choices": [
+      "72",
+      "36",
+      "18",
+      "60"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 12 × 6 = 72. Perimeter P = 2(l+w) = 36 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 9, width 5. Area?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "28",
+      "14",
+      "40"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 9 × 5 = 45. Perimeter P = 2(l+w) = 28 — different formula."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 11, width 7. Area?",
+    "answer": "77",
+    "choices": [
+      "77",
+      "36",
+      "18",
+      "72"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 11 × 7 = 77. Perimeter P = 2(l+w) = 36."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 13, width 4. Area?",
+    "answer": "52",
+    "choices": [
+      "52",
+      "34",
+      "17",
+      "48"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 13 × 4 = 52. Perimeter P = 2(l+w) = 34."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 17, width 3. Area?",
+    "answer": "51",
+    "choices": [
+      "51",
+      "40",
+      "20",
+      "48"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 17 × 3 = 51. Perimeter P = 2(l+w) = 40."
+  },
+  {
+    "tier": 2,
+    "question": "Rectangle: length 21, width 4. Area?",
+    "answer": "84",
+    "choices": [
+      "84",
+      "50",
+      "25",
+      "80"
+    ],
+    "context": "Rectangle area formula: A = l × w. A = 21 × 4 = 84. Perimeter P = 2(l+w) = 50."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 4 × 3 × 6. Volume?",
+    "answer": "72",
+    "choices": [
+      "72",
+      "13",
+      "36",
+      "24"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 4 × 3 × 6 = 72. Multiply all three dimensions."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 5 × 5 × 3. Volume?",
+    "answer": "75",
+    "choices": [
+      "75",
+      "13",
+      "25",
+      "15"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 5 × 5 × 3 = 75. Square base × height = 75."
+  },
+  {
+    "tier": 2,
+    "question": "Box: 2 × 8 × 5. Volume?",
+    "answer": "80",
+    "choices": [
+      "80",
+      "15",
+      "40",
+      "26"
+    ],
+    "context": "Rectangular prism volume: V = lwh. V = 2 × 8 × 5 = 80. Halving-and-doubling: 2×8 = 16, 16×5 = 80."
+  },
+  {
+    "tier": 2,
+    "question": "Cube: side 2. Volume?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "6",
+      "4",
+      "12"
+    ],
+    "context": "Rectangular prism volume: V = lwh. Cube V = s³ = 2³ = 2 × 2 × 2 = 8. Perfect cubes: 1, 8, 27, 64, 125."
+  },
+  {
+    "tier": 2,
+    "question": "Triangle: base 5, height 8. Area?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "40",
+      "13",
+      "13"
+    ],
+    "context": "Triangle area formula: A = ½bh. A = ½ × 5 × 8 = ½ × 40 = 20. Half the bounding rectangle 40."
+  },
+  {
+    "tier": 2,
+    "question": "Square: side 16. Area?",
+    "answer": "256",
+    "choices": [
+      "256",
+      "64",
+      "32",
+      "240"
+    ],
+    "context": "Square area formula: A = s². A = 16² = 256. Perfect square 16² = 256."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 3. Area in terms of π?",
+    "answer": "9π",
+    "choices": [
+      "9π",
+      "6π",
+      "3π",
+      "18π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 3² = 9π. Don't confuse with circumference C = 2πr = 6π. Area uses r²."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 4. Area in terms of π?",
+    "answer": "16π",
+    "choices": [
+      "16π",
+      "8π",
+      "4π",
+      "32π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 4² = 16π. Circumference would be C = 2πr = 8π — different formula."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 5. Area in terms of π?",
+    "answer": "25π",
+    "choices": [
+      "25π",
+      "10π",
+      "5π",
+      "50π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 5² = 25π. Don't confuse with circumference C = 2πr = 10π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 6. Area in terms of π?",
+    "answer": "36π",
+    "choices": [
+      "36π",
+      "12π",
+      "6π",
+      "72π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 6² = 36π. Circumference C = 2πr = 12π — different formula."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 7. Area in terms of π?",
+    "answer": "49π",
+    "choices": [
+      "49π",
+      "14π",
+      "7π",
+      "98π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 7² = 49π. Perfect square 7² = 49. Circumference would be 14π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 8. Area in terms of π?",
+    "answer": "64π",
+    "choices": [
+      "64π",
+      "16π",
+      "8π",
+      "128π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 8² = 64π. Perfect square 8² = 64. Don't confuse with C = 16π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 9. Area in terms of π?",
+    "answer": "81π",
+    "choices": [
+      "81π",
+      "18π",
+      "9π",
+      "162π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 9² = 81π. Perfect square 9² = 81."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 10. Area in terms of π?",
+    "answer": "100π",
+    "choices": [
+      "100π",
+      "20π",
+      "10π",
+      "200π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 10² = 100π. Don't confuse with circumference C = 2πr = 20π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 2. Area in terms of π?",
+    "answer": "4π",
+    "choices": [
+      "4π",
+      "2π",
+      "8π",
+      "4π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 2² = 4π. Circumference C = 2πr = 4π also — by coincidence at r = 2."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 12. Area in terms of π?",
+    "answer": "144π",
+    "choices": [
+      "144π",
+      "24π",
+      "12π",
+      "288π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 12² = 144π. Perfect square 12² = 144."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 11. Area in terms of π?",
+    "answer": "121π",
+    "choices": [
+      "121π",
+      "22π",
+      "11π",
+      "242π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 11² = 121π. Perfect square 11² = 121."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 6. Area in terms of π?",
+    "answer": "9π",
+    "choices": [
+      "9π",
+      "36π",
+      "6π",
+      "12π"
+    ],
+    "context": "Circle area formula: A = πr². With diameter 6, radius r = 3. A = π × 3² = 9π. Common error: forgetting to halve diameter."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 10. Area in terms of π?",
+    "answer": "25π",
+    "choices": [
+      "25π",
+      "100π",
+      "10π",
+      "50π"
+    ],
+    "context": "Circle area formula: A = πr². With diameter 10, radius r = 5. A = π × 5² = 25π. Don't square the diameter — halve first."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 8. Area in terms of π?",
+    "answer": "16π",
+    "choices": [
+      "16π",
+      "64π",
+      "8π",
+      "32π"
+    ],
+    "context": "Circle area formula: A = πr². With diameter 8, radius r = 4. A = π × 4² = 16π. Common error: using d² gives 64π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 4. Area in terms of π?",
+    "answer": "4π",
+    "choices": [
+      "4π",
+      "16π",
+      "2π",
+      "8π"
+    ],
+    "context": "Circle area formula: A = πr². With diameter 4, radius r = 2. A = π × 2² = 4π. Halve diameter first."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 1. Area in terms of π?",
+    "answer": "π",
+    "choices": [
+      "π",
+      "2π",
+      "π/2",
+      "4π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 1² = 1 × π = π. At radius 1 the area equals π — a handy reference value."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 13. Area in terms of π?",
+    "answer": "169π",
+    "choices": [
+      "169π",
+      "26π",
+      "13π",
+      "338π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 13² = 169π. Perfect square 13² = 169."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 14. Area in terms of π?",
+    "answer": "196π",
+    "choices": [
+      "196π",
+      "28π",
+      "14π",
+      "392π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 14² = 196π. Perfect square 14² = 196."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 15. Area in terms of π?",
+    "answer": "225π",
+    "choices": [
+      "225π",
+      "30π",
+      "15π",
+      "450π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 15² = 225π. Square-ending-in-5: 1×2 = 2, append 25 → 225."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 20. Area in terms of π?",
+    "answer": "400π",
+    "choices": [
+      "400π",
+      "40π",
+      "20π",
+      "800π"
+    ],
+    "context": "Circle area formula: A = πr². A = π × 20² = 400π. Don't confuse with circumference C = 2πr = 40π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 3. Circumference in terms of π?",
+    "answer": "6π",
+    "choices": [
+      "6π",
+      "9π",
+      "3π",
+      "12π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 3 = 6π. Don't confuse with area A = πr² = 9π. Circumference uses r once."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 4. Circumference in terms of π?",
+    "answer": "8π",
+    "choices": [
+      "8π",
+      "16π",
+      "4π",
+      "12π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 4 = 8π. Don't confuse with area A = πr² = 16π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 5. Circumference in terms of π?",
+    "answer": "10π",
+    "choices": [
+      "10π",
+      "25π",
+      "5π",
+      "20π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 5 = 10π. Area would be A = πr² = 25π — different formula."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 7. Circumference in terms of π?",
+    "answer": "14π",
+    "choices": [
+      "14π",
+      "49π",
+      "7π",
+      "28π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 7 = 14π. Don't confuse with area A = πr² = 49π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 8. Circumference in terms of π?",
+    "answer": "16π",
+    "choices": [
+      "16π",
+      "64π",
+      "8π",
+      "32π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 8 = 16π. Area A = πr² = 64π — distinct."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 9. Circumference in terms of π?",
+    "answer": "18π",
+    "choices": [
+      "18π",
+      "81π",
+      "9π",
+      "36π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 9 = 18π. Area A = πr² = 81π — different formula."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 10. Circumference in terms of π?",
+    "answer": "20π",
+    "choices": [
+      "20π",
+      "100π",
+      "10π",
+      "40π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 10 = 20π. Don't confuse with area A = πr² = 100π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 11. Circumference in terms of π?",
+    "answer": "22π",
+    "choices": [
+      "22π",
+      "121π",
+      "11π",
+      "44π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 11 = 22π. Area A = πr² = 121π — different formula."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 12. Circumference in terms of π?",
+    "answer": "24π",
+    "choices": [
+      "24π",
+      "144π",
+      "12π",
+      "48π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 12 = 24π. Area A = πr² = 144π — distinct."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 1. Circumference in terms of π?",
+    "answer": "2π",
+    "choices": [
+      "2π",
+      "π",
+      "π/2",
+      "4π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 1 = 2 × π = 2π. At radius 1 the circumference is 2π — handy reference value."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 15. Circumference in terms of π?",
+    "answer": "30π",
+    "choices": [
+      "30π",
+      "225π",
+      "15π",
+      "60π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 15 = 30π. Area A = πr² = 225π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 6. Circumference in terms of π?",
+    "answer": "6π",
+    "choices": [
+      "6π",
+      "12π",
+      "3π",
+      "9π"
+    ],
+    "context": "Circumference formula: C = 2πr = πd. With d = 6, C = 6π. Or halve to radius 3, then C = 2πr = 6π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 10. Circumference in terms of π?",
+    "answer": "10π",
+    "choices": [
+      "10π",
+      "20π",
+      "5π",
+      "25π"
+    ],
+    "context": "Circumference formula: C = πd (or 2πr). With d = 10, C = 10π. Easy form: when diameter is given, just multiply by π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 8. Circumference in terms of π?",
+    "answer": "8π",
+    "choices": [
+      "8π",
+      "16π",
+      "4π",
+      "16π"
+    ],
+    "context": "Circumference formula: C = πd. With d = 8, C = 8π. Or radius 4 then C = 2π × 4 = 8π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 14. Circumference in terms of π?",
+    "answer": "14π",
+    "choices": [
+      "14π",
+      "28π",
+      "7π",
+      "49π"
+    ],
+    "context": "Circumference formula: C = πd. With d = 14, C = 14π. Equivalent: radius 7, C = 2π × 7 = 14π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 6. Circumference in terms of π?",
+    "answer": "12π",
+    "choices": [
+      "12π",
+      "36π",
+      "6π",
+      "24π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 6 = 12π. Don't confuse with area A = πr² = 36π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 20. Circumference in terms of π?",
+    "answer": "40π",
+    "choices": [
+      "40π",
+      "400π",
+      "20π",
+      "80π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 20 = 40π. Area would be 400π."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 25. Circumference in terms of π?",
+    "answer": "50π",
+    "choices": [
+      "50π",
+      "625π",
+      "25π",
+      "100π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 25 = 50π. Area A = πr² = 625π (15² then square trick → 625)."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: radius 2. Circumference in terms of π?",
+    "answer": "4π",
+    "choices": [
+      "4π",
+      "4π",
+      "2π",
+      "8π"
+    ],
+    "context": "Circumference formula: C = 2πr. C = 2π × 2 = 4π. Area A = πr² = 4π also — coincidence at r = 2."
+  },
+  {
+    "tier": 3,
+    "question": "Circle: diameter 12. Circumference in terms of π?",
+    "answer": "12π",
+    "choices": [
+      "12π",
+      "24π",
+      "6π",
+      "36π"
+    ],
+    "context": "Circumference formula: C = πd. With d = 12, C = 12π. Or radius 6 then C = 2π × 6 = 12π."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 8, height 3. Area?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "12",
+      "11",
+      "16"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 8 × 3 = 24 square units. Same as rectangle area — parallelogram is a 'leaning' rectangle."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 10, height 4. Area?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "20",
+      "14",
+      "28"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 10 × 4 = 40. Use the perpendicular height, not the slanted side."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 6, height 5. Area?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "15",
+      "11",
+      "22"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 6 × 5 = 30. Perpendicular height × base — same shape's area as a rectangle."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 12, height 5. Area?",
+    "answer": "60",
+    "choices": [
+      "60",
+      "30",
+      "17",
+      "42"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 12 × 5 = 60. Multiply base by perpendicular height."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 13, height 5. Area?",
+    "answer": "65",
+    "choices": [
+      "65",
+      "32",
+      "18",
+      "45"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 13 × 5 = 65. Identical formula to rectangle area."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 14, height 4. Area?",
+    "answer": "56",
+    "choices": [
+      "56",
+      "28",
+      "18",
+      "40"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 14 × 4 = 56. Base × perpendicular height (NOT the slanted side)."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 16, height 5. Area?",
+    "answer": "80",
+    "choices": [
+      "80",
+      "40",
+      "21",
+      "40"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 16 × 5 = 80. Use the perpendicular height to the base."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 15, height 3. Area?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "22",
+      "18",
+      "30"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 15 × 3 = 45. Base × perpendicular height."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 8, height 7. Area?",
+    "answer": "56",
+    "choices": [
+      "56",
+      "28",
+      "15",
+      "40"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 8 × 7 = 56. Base × perpendicular height."
+  },
+  {
+    "tier": 3,
+    "question": "Parallelogram: base 11, height 6. Area?",
+    "answer": "66",
+    "choices": [
+      "66",
+      "33",
+      "17",
+      "44"
+    ],
+    "context": "Parallelogram area formula: A = bh. A = 11 × 6 = 66. Use the perpendicular height (not the slanted side)."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 4 and 6, height 5. Area?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "50",
+      "30",
+      "120"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(4+6) × 5 = ½ × 10 × 5 = 25. Average the bases, multiply by height."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 3 and 7, height 4. Area?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "40",
+      "24",
+      "84"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(3+7) × 4 = ½ × 10 × 4 = 20. Average bases, then multiply by height."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 5 and 9, height 6. Area?",
+    "answer": "42",
+    "choices": [
+      "42",
+      "84",
+      "54",
+      "270"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(5+9) × 6 = ½ × 14 × 6 = 42. Average bases × height."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 6 and 10, height 8. Area?",
+    "answer": "64",
+    "choices": [
+      "64",
+      "128",
+      "80",
+      "480"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(6+10) × 8 = ½ × 16 × 8 = 64."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 8 and 12, height 5. Area?",
+    "answer": "50",
+    "choices": [
+      "50",
+      "100",
+      "60",
+      "480"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(8+12) × 5 = ½ × 20 × 5 = 50."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 4 and 10, height 6. Area?",
+    "answer": "42",
+    "choices": [
+      "42",
+      "84",
+      "60",
+      "240"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(4+10) × 6 = ½ × 14 × 6 = 42."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 7 and 11, height 4. Area?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "72",
+      "44",
+      "308"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(7+11) × 4 = ½ × 18 × 4 = 36."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 5 and 7, height 8. Area?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "96",
+      "56",
+      "280"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(5+7) × 8 = ½ × 12 × 8 = 48."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 2 and 8, height 5. Area?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "50",
+      "40",
+      "80"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(2+8) × 5 = ½ × 10 × 5 = 25."
+  },
+  {
+    "tier": 3,
+    "question": "Trapezoid: bases 6 and 8, height 10. Area?",
+    "answer": "70",
+    "choices": [
+      "70",
+      "140",
+      "80",
+      "480"
+    ],
+    "context": "Trapezoid area formula: A = ½(b₁ + b₂)h. A = ½(6+8) × 10 = ½ × 14 × 10 = 70."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 2, height 5. Volume in terms of π?",
+    "answer": "20π",
+    "choices": [
+      "20π",
+      "10π",
+      "40π",
+      "100π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 2² × 5 = π × 4 × 5 = 20π. Square the radius first, then multiply by height."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 3, height 4. Volume in terms of π?",
+    "answer": "36π",
+    "choices": [
+      "36π",
+      "12π",
+      "24π",
+      "144π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 3² × 4 = π × 9 × 4 = 36π. Square the radius first."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 5, height 2. Volume in terms of π?",
+    "answer": "50π",
+    "choices": [
+      "50π",
+      "10π",
+      "20π",
+      "100π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 5² × 2 = π × 25 × 2 = 50π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 4, height 3. Volume in terms of π?",
+    "answer": "48π",
+    "choices": [
+      "48π",
+      "12π",
+      "24π",
+      "144π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 4² × 3 = π × 16 × 3 = 48π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 1, height 10. Volume in terms of π?",
+    "answer": "10π",
+    "choices": [
+      "10π",
+      "20π",
+      "5π",
+      "100π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 1² × 10 = π × 1 × 10 = 10π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 2, height 8. Volume in terms of π?",
+    "answer": "32π",
+    "choices": [
+      "32π",
+      "16π",
+      "64π",
+      "256π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 2² × 8 = π × 4 × 8 = 32π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 3, height 6. Volume in terms of π?",
+    "answer": "54π",
+    "choices": [
+      "54π",
+      "18π",
+      "36π",
+      "324π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 3² × 6 = π × 9 × 6 = 54π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 6, height 2. Volume in terms of π?",
+    "answer": "72π",
+    "choices": [
+      "72π",
+      "24π",
+      "36π",
+      "432π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 6² × 2 = π × 36 × 2 = 72π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 4, height 5. Volume in terms of π?",
+    "answer": "80π",
+    "choices": [
+      "80π",
+      "20π",
+      "40π",
+      "400π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 4² × 5 = π × 16 × 5 = 80π."
+  },
+  {
+    "tier": 3,
+    "question": "Cylinder: radius 5, height 4. Volume in terms of π?",
+    "answer": "100π",
+    "choices": [
+      "100π",
+      "20π",
+      "40π",
+      "500π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h. V = π × 5² × 4 = π × 25 × 4 = 100π."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 100°C to Fahrenheit.",
+    "answer": "212°F",
+    "choices": [
+      "212°F",
+      "180°F",
+      "132°F",
+      "200°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(100) + 32 = 180 + 32 = 212. Water boils at 212°F = 100°C."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 0°C to Fahrenheit.",
+    "answer": "32°F",
+    "choices": [
+      "32°F",
+      "0°F",
+      "100°F",
+      "212°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(0) + 32 = 0 + 32 = 32. Water freezes at 32°F = 0°C."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 20°C to Fahrenheit.",
+    "answer": "68°F",
+    "choices": [
+      "68°F",
+      "52°F",
+      "60°F",
+      "72°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(20) + 32 = 36 + 32 = 68. Comfortable room temperature."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 25°C to Fahrenheit.",
+    "answer": "77°F",
+    "choices": [
+      "77°F",
+      "57°F",
+      "60°F",
+      "82°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(25) + 32 = 45 + 32 = 77."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 10°C to Fahrenheit.",
+    "answer": "50°F",
+    "choices": [
+      "50°F",
+      "42°F",
+      "32°F",
+      "60°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(10) + 32 = 18 + 32 = 50."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 30°C to Fahrenheit.",
+    "answer": "86°F",
+    "choices": [
+      "86°F",
+      "62°F",
+      "76°F",
+      "90°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(30) + 32 = 54 + 32 = 86. Hot summer day."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 40°C to Fahrenheit.",
+    "answer": "104°F",
+    "choices": [
+      "104°F",
+      "72°F",
+      "94°F",
+      "120°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(40) + 32 = 72 + 32 = 104. Heat-wave territory."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 37°C to Fahrenheit.",
+    "answer": "98.6°F",
+    "choices": [
+      "98.6°F",
+      "69°F",
+      "75°F",
+      "105°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(37) + 32 = 66.6 + 32 = 98.6. Normal human body temperature."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 50°C to Fahrenheit.",
+    "answer": "122°F",
+    "choices": [
+      "122°F",
+      "82°F",
+      "90°F",
+      "140°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(50) + 32 = 90 + 32 = 122."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 15°C to Fahrenheit.",
+    "answer": "59°F",
+    "choices": [
+      "59°F",
+      "47°F",
+      "50°F",
+      "62°F"
+    ],
+    "context": "Temperature conversion: F = (9/5)C + 32. F = (9/5)(15) + 32 = 27 + 32 = 59. Cool spring day."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 32°F to Celsius.",
+    "answer": "0°C",
+    "choices": [
+      "0°C",
+      "32°C",
+      "-32°C",
+      "100°C"
+    ],
+    "context": "Temperature conversion: C = (5/9)(F - 32). C = (5/9)(32-32) = (5/9)(0) = 0. Water freezes at 32°F = 0°C."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 212°F to Celsius.",
+    "answer": "100°C",
+    "choices": [
+      "100°C",
+      "212°C",
+      "180°C",
+      "80°C"
+    ],
+    "context": "Temperature conversion: C = (5/9)(F - 32). C = (5/9)(212-32) = (5/9)(180) = 100. Water boils at 212°F = 100°C."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 68°F to Celsius.",
+    "answer": "20°C",
+    "choices": [
+      "20°C",
+      "36°C",
+      "60°C",
+      "100°C"
+    ],
+    "context": "Temperature conversion: C = (5/9)(F - 32). C = (5/9)(68-32) = (5/9)(36) = 20. Comfortable room temperature."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 50°F to Celsius.",
+    "answer": "10°C",
+    "choices": [
+      "10°C",
+      "18°C",
+      "32°C",
+      "82°C"
+    ],
+    "context": "Temperature conversion: C = (5/9)(F - 32). C = (5/9)(50-32) = (5/9)(18) = 10."
+  },
+  {
+    "tier": 3,
+    "question": "Convert 86°F to Celsius.",
+    "answer": "30°C",
+    "choices": [
+      "30°C",
+      "54°C",
+      "56°C",
+      "118°C"
+    ],
+    "context": "Temperature conversion: C = (5/9)(F - 32). C = (5/9)(86-32) = (5/9)(54) = 30."
+  },
+  {
+    "tier": 3,
+    "question": "60 mph for 3 hours. Distance?",
+    "answer": "180 miles",
+    "choices": [
+      "180 miles",
+      "20 miles",
+      "63 miles",
+      "120 miles"
+    ],
+    "context": "Distance formula: d = rt (distance = rate × time). d = 60 × 3 = 180 miles. Multiply, don't add or divide."
+  },
+  {
+    "tier": 3,
+    "question": "50 mph for 4 hours. Distance?",
+    "answer": "200 miles",
+    "choices": [
+      "200 miles",
+      "54 miles",
+      "12.5 miles",
+      "150 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 50 × 4 = 200 miles. Speed × time = distance."
+  },
+  {
+    "tier": 3,
+    "question": "40 mph for 2 hours. Distance?",
+    "answer": "80 miles",
+    "choices": [
+      "80 miles",
+      "42 miles",
+      "20 miles",
+      "60 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 40 × 2 = 80 miles. Rate × time."
+  },
+  {
+    "tier": 3,
+    "question": "70 mph for 5 hours. Distance?",
+    "answer": "350 miles",
+    "choices": [
+      "350 miles",
+      "75 miles",
+      "14 miles",
+      "250 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 70 × 5 = 350 miles. Rate × time = distance."
+  },
+  {
+    "tier": 3,
+    "question": "30 mph for 4 hours. Distance?",
+    "answer": "120 miles",
+    "choices": [
+      "120 miles",
+      "34 miles",
+      "7.5 miles",
+      "90 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 30 × 4 = 120 miles."
+  },
+  {
+    "tier": 3,
+    "question": "65 mph for 2 hours. Distance?",
+    "answer": "130 miles",
+    "choices": [
+      "130 miles",
+      "67 miles",
+      "32.5 miles",
+      "100 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 65 × 2 = 130 miles."
+  },
+  {
+    "tier": 3,
+    "question": "Walked 4 mph for 3 hours. Distance?",
+    "answer": "12 miles",
+    "choices": [
+      "12 miles",
+      "7 miles",
+      "1.3 miles",
+      "9 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 4 × 3 = 12 miles. Rate × time gives distance."
+  },
+  {
+    "tier": 3,
+    "question": "Ran 8 mph for 2 hours. Distance?",
+    "answer": "16 miles",
+    "choices": [
+      "16 miles",
+      "10 miles",
+      "4 miles",
+      "12 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 8 × 2 = 16 miles."
+  },
+  {
+    "tier": 3,
+    "question": "Drove 55 mph for 6 hours. Distance?",
+    "answer": "330 miles",
+    "choices": [
+      "330 miles",
+      "61 miles",
+      "9 miles",
+      "300 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 55 × 6 = 330 miles."
+  },
+  {
+    "tier": 3,
+    "question": "100 mph for 3 hours. Distance?",
+    "answer": "300 miles",
+    "choices": [
+      "300 miles",
+      "103 miles",
+      "33 miles",
+      "200 miles"
+    ],
+    "context": "Distance formula: d = rt. d = 100 × 3 = 300 miles."
+  },
+  {
+    "tier": 3,
+    "question": "Triangle has angles 20° and 30°. Third angle?",
+    "answer": "130°",
+    "choices": [
+      "130°",
+      "50°",
+      "180°",
+      "90°"
+    ],
+    "context": "Triangle angle-sum trick: all three angles add to 180°. Computation: 180° = 20° + 30° + x = 50° + x, so x = 130°. Obtuse triangle."
+  },
+  {
+    "tier": 3,
+    "question": "Triangle has angles 36° and 72°. Third angle?",
+    "answer": "72°",
+    "choices": [
+      "72°",
+      "108°",
+      "180°",
+      "90°"
+    ],
+    "context": "Triangle angle-sum trick: all three angles add to 180°. Computation: 180° = 36° + 72° + x = 108° + x, so x = 72°. Isosceles (two angles equal 72°)."
+  },
+  {
+    "tier": 3,
+    "question": "Triangle has angles 53° and 37°. Third angle?",
+    "answer": "90°",
+    "choices": [
+      "90°",
+      "30°",
+      "180°",
+      "120°"
+    ],
+    "context": "Triangle angle-sum trick: all three angles add to 180°. Computation: 180° = 53° + 37° + x = 90° + x, so x = 90°. Right triangle."
+  },
+  {
+    "tier": 3,
+    "question": "Triangle: two angles 22° and 68°. Find the third.",
+    "answer": "90°",
+    "choices": [
+      "90°",
+      "30°",
+      "180°",
+      "120°"
+    ],
+    "context": "Triangle angle-sum trick: all three angles add to 180°. Computation: 180° = 22° + 68° + x = 90° + x, so x = 90°. Right triangle."
+  },
+  {
+    "tier": 3,
+    "question": "Triangle: two angles 18° and 12°. Find the third.",
+    "answer": "150°",
+    "choices": [
+      "150°",
+      "30°",
+      "180°",
+      "90°"
+    ],
+    "context": "Triangle angle-sum trick: all three angles add to 180°. Computation: 180° = 18° + 12° + x = 30° + x, so x = 150°. Very obtuse triangle."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 3 and 4. Hypotenuse?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "12"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 3² + 4² = 9 + 16 = 25; c = √25 = 5. The 3-4-5 triangle is the most famous Pythagorean triple — memorize 3-4-5, 5-12-13, 8-15-17, 7-24-25."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 6 and 8. Hypotenuse?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "14",
+      "100",
+      "48"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 6² + 8² = 36 + 64 = 100; c = √100 = 10. This is 2× the 3-4-5 triple — scaled Pythagorean triples are also right triangles."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 9 and 12. Hypotenuse?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "21",
+      "225",
+      "108"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 9² + 12² = 81 + 144 = 225; c = √225 = 15. This is 3× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 5, one leg 3. Other leg?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "2",
+      "16",
+      "8"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 5, a = 3: b² = 25 - 9 = 16, so b = 4. The 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 10, one leg 6. Other leg?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "4",
+      "64",
+      "16"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 10, a = 6: b² = 100 - 36 = 64, so b = 8. The 6-8-10 triangle (2× of 3-4-5)."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 5 and 12. Hypotenuse?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "17",
+      "169",
+      "60"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 5² + 12² = 25 + 144 = 169; c = √169 = 13. The 5-12-13 triangle is one of four common Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 10 and 24. Hypotenuse?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "34",
+      "676",
+      "240"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 10² + 24² = 100 + 576 = 676; c = √676 = 26. This is 2× the 5-12-13 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 13, one leg 5. Other leg?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "8",
+      "144",
+      "169"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 13, a = 5: b² = 169 - 25 = 144, so b = 12. The famous 5-12-13 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 13, one leg 12. Other leg?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "1",
+      "25",
+      "169"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 13, a = 12: b² = 169 - 144 = 25, so b = 5. The 5-12-13 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 8 and 15. Hypotenuse?",
+    "answer": "17",
+    "choices": [
+      "17",
+      "23",
+      "289",
+      "120"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 8² + 15² = 64 + 225 = 289; c = √289 = 17. The 8-15-17 triangle is one of four common Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 17, one leg 8. Other leg?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "9",
+      "225",
+      "289"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 17, a = 8: b² = 289 - 64 = 225, so b = 15. The 8-15-17 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 17, one leg 15. Other leg?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "2",
+      "64",
+      "289"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 17, a = 15: b² = 289 - 225 = 64, so b = 8. The 8-15-17 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 7 and 24. Hypotenuse?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "31",
+      "625",
+      "168"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 7² + 24² = 49 + 576 = 625; c = √625 = 25. The 7-24-25 triangle is one of four common Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 25, one leg 7. Other leg?",
+    "answer": "24",
+    "choices": [
+      "24",
+      "18",
+      "576",
+      "625"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 25, a = 7: b² = 625 - 49 = 576, so b = 24. The 7-24-25 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 25, one leg 24. Other leg?",
+    "answer": "7",
+    "choices": [
+      "7",
+      "1",
+      "49",
+      "625"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 25, a = 24: b² = 625 - 576 = 49, so b = 7. The 7-24-25 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 12 and 16. Hypotenuse?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "28",
+      "400",
+      "192"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 12² + 16² = 144 + 256 = 400; c = √400 = 20. This is 4× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 1 and 1. Hypotenuse?",
+    "answer": "√2",
+    "choices": [
+      "√2",
+      "2",
+      "1",
+      "√1"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 1² + 1² = 1 + 1 = 2; c = √2. The 1-1-√2 ratio defines the 45-45-90 triangle."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 5, one leg 4. Other leg?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "1",
+      "9",
+      "25"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 5, a = 4: b² = 25 - 16 = 9, so b = 3. The 3-4-5 triple from the other side."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 50, one leg 30. Other leg?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "20",
+      "1600",
+      "2500"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 50, a = 30: b² = 2500 - 900 = 1600, so b = 40. This is 10× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 8 and 6. Hypotenuse?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "14",
+      "100",
+      "48"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 8² + 6² = 64 + 36 = 100; c = √100 = 10. Common error: forgetting to take the square root (answer would be 100, not 10). This is 2× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 5 and 12. Square of hypotenuse?",
+    "answer": "169",
+    "choices": [
+      "169",
+      "17",
+      "144",
+      "60"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 5² + 12² = 25 + 144 = 169 = c². Here we want c² not c — so we stop before square-rooting. The 5-12-13 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Which right triangle is the 'Pythagorean triple' with legs 7?",
+    "answer": "7-24-25",
+    "choices": [
+      "7-24-25",
+      "7-8-9",
+      "7-10-13",
+      "7-12-19"
+    ],
+    "context": "Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25. The 7-24-25 triple has leg 7. Verify: 7² + 24² = 49 + 576 = 625 = 25²."
+  },
+  {
+    "tier": 4,
+    "question": "Which right triangle is the 'Pythagorean triple' with legs 8?",
+    "answer": "8-15-17",
+    "choices": [
+      "8-15-17",
+      "8-10-12",
+      "8-9-12",
+      "8-16-24"
+    ],
+    "context": "Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25. The 8-15-17 triple has leg 8. Verify: 8² + 15² = 64 + 225 = 289 = 17²."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 18 and 24. Hypotenuse?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "42",
+      "900",
+      "432"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 18² + 24² = 324 + 576 = 900; c = √900 = 30. This is 6× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle with legs 7 and 24. Square of hypotenuse?",
+    "answer": "625",
+    "choices": [
+      "625",
+      "31",
+      "576",
+      "168"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 7² + 24² = 49 + 576 = 625 = c². The 7-24-25 triple (c = 25 if we square-root, but the question asked for c² = 625)."
+  },
+  {
+    "tier": 4,
+    "question": "Right triangle: hypotenuse 41, one leg 9. Other leg?",
+    "answer": "40",
+    "choices": [
+      "40",
+      "32",
+      "1600",
+      "1681"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². With c = 41, a = 9: b² = 1681 - 81 = 1600, so b = 40. The 9-40-41 Pythagorean triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (3, 4)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "1"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(3² + 4²) = √(9+16) = √25 = 5. The 3-4-5 Pythagorean triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (1, 2) to (4, 6)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "3"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √((4-1)² + (6-2)²) = √(9+16) = √25 = 5. The 3-4-5 triple again."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (5, 12)?",
+    "answer": "13",
+    "choices": [
+      "13",
+      "17",
+      "169",
+      "60"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(5² + 12²) = √(25+144) = √169 = 13. The 5-12-13 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (2, 3) to (5, 7)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "12"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). Differences: 3 and 4. d = √(9+16) = √25 = 5. The 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (8, 15)?",
+    "answer": "17",
+    "choices": [
+      "17",
+      "23",
+      "289",
+      "120"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(8² + 15²) = √(64+225) = √289 = 17. The 8-15-17 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (6, 8)?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "14",
+      "100",
+      "48"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(6² + 8²) = √(36+64) = √100 = 10. This is 2× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (1, 1) to (4, 5)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "3"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). Differences: 3 and 4. d = √(9+16) = √25 = 5. The 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (-1, 2) to (2, 6)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "3"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). Differences: 3 and 4. d = √(9+16) = √25 = 5."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (7, 24)?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "31",
+      "625",
+      "168"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(7² + 24²) = √(49+576) = √625 = 25. The 7-24-25 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (1, 2) to (1, 5)?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "5",
+      "9",
+      "1"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). When x₁ = x₂, d = |y₂-y₁| = |5-2| = 3. Vertical line — just the y-difference."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (2, 3) to (6, 3)?",
+    "answer": "4",
+    "choices": [
+      "4",
+      "8",
+      "16",
+      "2"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). When y₁ = y₂, d = |x₂-x₁| = |6-2| = 4. Horizontal line — just the x-difference."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (9, 12)?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "21",
+      "225",
+      "108"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(81 + 144) = √225 = 15. This is 3× the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (-3, -4) to (0, 0)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "-7"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(3² + 4²) = √25 = 5. Negatives squared become positive — the 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (0, 0) to (10, 24)?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "34",
+      "676",
+      "240"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(100 + 576) = √676 = 26. This is 2× the 5-12-13 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Distance from (3, 4) to (6, 8)?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "7",
+      "25",
+      "3"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). Differences 3 and 4. d = √(9+16) = √25 = 5. The 3-4-5 triple."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (1, 2) and (5, 8)?",
+    "answer": "(3, 5)",
+    "choices": [
+      "(3, 5)",
+      "(4, 6)",
+      "(6, 10)",
+      "(2, 3)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((1+5)/2, (2+8)/2) = (3, 5). Average the x's, average the y's."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (0, 0) and (4, 6)?",
+    "answer": "(2, 3)",
+    "choices": [
+      "(2, 3)",
+      "(4, 6)",
+      "(1, 1.5)",
+      "(4, 3)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((0+4)/2, (0+6)/2) = (2, 3)."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (2, 4) and (8, 10)?",
+    "answer": "(5, 7)",
+    "choices": [
+      "(5, 7)",
+      "(10, 14)",
+      "(6, 6)",
+      "(3, 3)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((2+8)/2, (4+10)/2) = (5, 7)."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (-2, 3) and (4, 7)?",
+    "answer": "(1, 5)",
+    "choices": [
+      "(1, 5)",
+      "(2, 10)",
+      "(3, 2)",
+      "(-1, 5)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((-2+4)/2, (3+7)/2) = (1, 5). Negatives still average."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (0, 0) and (10, 10)?",
+    "answer": "(5, 5)",
+    "choices": [
+      "(5, 5)",
+      "(10, 10)",
+      "(0, 10)",
+      "(2.5, 2.5)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((0+10)/2, (0+10)/2) = (5, 5). On the line y = x."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (3, 1) and (7, 9)?",
+    "answer": "(5, 5)",
+    "choices": [
+      "(5, 5)",
+      "(10, 10)",
+      "(4, 8)",
+      "(2, 4)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((3+7)/2, (1+9)/2) = (5, 5)."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (-4, -2) and (6, 8)?",
+    "answer": "(1, 3)",
+    "choices": [
+      "(1, 3)",
+      "(10, 10)",
+      "(2, 6)",
+      "(-1, -3)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((-4+6)/2, (-2+8)/2) = (1, 3). Average the x's, average the y's."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (1, 1) and (9, 9)?",
+    "answer": "(5, 5)",
+    "choices": [
+      "(5, 5)",
+      "(10, 10)",
+      "(8, 8)",
+      "(4, 4)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((1+9)/2, (1+9)/2) = (5, 5)."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (2, 6) and (8, 2)?",
+    "answer": "(5, 4)",
+    "choices": [
+      "(5, 4)",
+      "(10, 8)",
+      "(6, 4)",
+      "(4, 5)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((2+8)/2, (6+2)/2) = (5, 4)."
+  },
+  {
+    "tier": 4,
+    "question": "Midpoint of (0, 0) and (8, 6)?",
+    "answer": "(4, 3)",
+    "choices": [
+      "(4, 3)",
+      "(8, 6)",
+      "(2, 1.5)",
+      "(4, 6)"
+    ],
+    "context": "Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2). Midpoint = ((0+8)/2, (0+6)/2) = (4, 3)."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 3. Volume in terms of π?",
+    "answer": "36π",
+    "choices": [
+      "36π",
+      "12π",
+      "27π",
+      "108π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 3³ = (4/3) × 27 × π = 36π. Cube the radius first."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 6. Volume in terms of π?",
+    "answer": "288π",
+    "choices": [
+      "288π",
+      "72π",
+      "144π",
+      "864π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 6³ = (4/3) × 216 × π = 288π. Cube r first: 6³ = 216."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 1. Volume in terms of π?",
+    "answer": "(4/3)π",
+    "choices": [
+      "(4/3)π",
+      "4π",
+      "π",
+      "(1/3)π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 1³ = (4/3)π. The unit sphere volume — handy reference."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 2. Volume in terms of π?",
+    "answer": "(32/3)π",
+    "choices": [
+      "(32/3)π",
+      "8π",
+      "16π",
+      "(4/3)π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 2³ = (4/3) × 8 × π = (32/3)π."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 4. Volume in terms of π?",
+    "answer": "(256/3)π",
+    "choices": [
+      "(256/3)π",
+      "(128/3)π",
+      "(192/3)π",
+      "(512/3)π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 4³ = (4/3) × 64 × π = (256/3)π."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 5. Volume in terms of π?",
+    "answer": "(500/3)π",
+    "choices": [
+      "(500/3)π",
+      "(250/3)π",
+      "(400/3)π",
+      "(625/3)π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 5³ = (4/3) × 125 × π = (500/3)π."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 12. Volume in terms of π?",
+    "answer": "2304π",
+    "choices": [
+      "2304π",
+      "576π",
+      "1728π",
+      "144π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 12³ = (4/3) × 1728 × π = 2304π. 12³ = 1728."
+  },
+  {
+    "tier": 4,
+    "question": "Sphere: radius 10. Volume in terms of π?",
+    "answer": "(4000/3)π",
+    "choices": [
+      "(4000/3)π",
+      "(2000/3)π",
+      "(3000/3)π",
+      "(5000/3)π"
+    ],
+    "context": "Sphere volume formula: V = (4/3)πr³. V = (4/3)π × 10³ = (4/3) × 1000 × π = (4000/3)π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 3, height 4. Volume in terms of π?",
+    "answer": "12π",
+    "choices": [
+      "12π",
+      "36π",
+      "4π",
+      "9π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 9 × 4 = 12π. One-third of the bounding cylinder (cylinder would be 36π)."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 2, height 6. Volume in terms of π?",
+    "answer": "8π",
+    "choices": [
+      "8π",
+      "24π",
+      "12π",
+      "4π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 4 × 6 = 8π. Cylinder of same r, h would be 24π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 5, height 3. Volume in terms of π?",
+    "answer": "25π",
+    "choices": [
+      "25π",
+      "75π",
+      "15π",
+      "5π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 25 × 3 = 25π. One-third of cylinder volume 75π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 6, height 5. Volume in terms of π?",
+    "answer": "60π",
+    "choices": [
+      "60π",
+      "180π",
+      "30π",
+      "12π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 36 × 5 = 60π. One-third of cylinder 180π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 1, height 9. Volume in terms of π?",
+    "answer": "3π",
+    "choices": [
+      "3π",
+      "9π",
+      "1π",
+      "27π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 1 × 9 = 3π. Cylinder of same dims = 9π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 4, height 6. Volume in terms of π?",
+    "answer": "32π",
+    "choices": [
+      "32π",
+      "96π",
+      "16π",
+      "8π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 16 × 6 = 32π. One-third of cylinder volume."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 3, height 7. Volume in terms of π?",
+    "answer": "21π",
+    "choices": [
+      "21π",
+      "63π",
+      "9π",
+      "7π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 9 × 7 = 21π. One-third of cylinder 63π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 2, height 3. Volume in terms of π?",
+    "answer": "4π",
+    "choices": [
+      "4π",
+      "12π",
+      "2π",
+      "6π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 4 × 3 = 4π. Cylinder of same dims = 12π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 6, height 8. Volume in terms of π?",
+    "answer": "96π",
+    "choices": [
+      "96π",
+      "288π",
+      "48π",
+      "16π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 36 × 8 = 96π. One-third of cylinder 288π."
+  },
+  {
+    "tier": 4,
+    "question": "Cone: radius 10, height 3. Volume in terms of π?",
+    "answer": "100π",
+    "choices": [
+      "100π",
+      "300π",
+      "50π",
+      "30π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h. V = (1/3)π × 100 × 3 = 100π."
+  },
+  {
+    "tier": 4,
+    "question": "Cube: side 7. Surface area?",
+    "answer": "294",
+    "choices": [
+      "294",
+      "343",
+      "49",
+      "147"
+    ],
+    "context": "Cube surface area: 6 × s² (six identical square faces). SA = 6 × 7² = 6 × 49 = 294. Don't confuse with volume = s³ = 343."
+  },
+  {
+    "tier": 4,
+    "question": "Cube: side 3. Surface area?",
+    "answer": "54",
+    "choices": [
+      "54",
+      "27",
+      "9",
+      "108"
+    ],
+    "context": "Cube surface area: 6 × s². SA = 6 × 3² = 6 × 9 = 54. Volume V = s³ = 27 is different."
+  },
+  {
+    "tier": 4,
+    "question": "Cube: side 6. Surface area?",
+    "answer": "216",
+    "choices": [
+      "216",
+      "216",
+      "36",
+      "432"
+    ],
+    "context": "Cube surface area: 6 × s². SA = 6 × 6² = 6 × 36 = 216. Coincidence: volume V = s³ = 216 also at s = 6."
+  },
+  {
+    "tier": 4,
+    "question": "Box: 2 × 3 × 4. Surface area?",
+    "answer": "52",
+    "choices": [
+      "52",
+      "24",
+      "26",
+      "104"
+    ],
+    "context": "Rectangular prism surface area: 2(lw + lh + wh). SA = 2(2×3 + 2×4 + 3×4) = 2(6+8+12) = 2 × 26 = 52. Volume V = 24 is different."
+  },
+  {
+    "tier": 4,
+    "question": "Box: 3 × 4 × 5. Surface area?",
+    "answer": "94",
+    "choices": [
+      "94",
+      "60",
+      "47",
+      "188"
+    ],
+    "context": "Rectangular prism surface area: 2(lw + lh + wh). SA = 2(12+15+20) = 2 × 47 = 94. Volume V = 60."
+  },
+  {
+    "tier": 4,
+    "question": "Box: 2 × 2 × 5. Surface area?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "20",
+      "24",
+      "96"
+    ],
+    "context": "Rectangular prism surface area: 2(lw + lh + wh). SA = 2(4+10+10) = 2 × 24 = 48. Volume V = 20."
+  },
+  {
+    "tier": 4,
+    "question": "Cube: side 10. Surface area?",
+    "answer": "600",
+    "choices": [
+      "600",
+      "1000",
+      "100",
+      "60"
+    ],
+    "context": "Cube surface area: 6 × s². SA = 6 × 10² = 6 × 100 = 600. Volume V = 1000 is different (10³)."
+  },
+  {
+    "tier": 4,
+    "question": "Cube: side 1. Surface area?",
+    "answer": "6",
+    "choices": [
+      "6",
+      "1",
+      "4",
+      "12"
+    ],
+    "context": "Cube surface area: 6 × s². SA = 6 × 1² = 6. Six square faces, each of area 1. Volume V = 1."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 3-4-5; similar triangle has shortest side 9. Longest side?",
+    "answer": "15",
+    "choices": [
+      "15",
+      "12",
+      "9",
+      "60"
+    ],
+    "context": "Similar-triangles trick: all sides scale by the same factor. From 3 to 9 is scale factor 3. Computation: 5 × 3 = 15 (longest side). Original is the 3-4-5 Pythagorean triple."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 3-4-5; similar triangle has shortest side 6. Longest side?",
+    "answer": "10",
+    "choices": [
+      "10",
+      "8",
+      "6",
+      "60"
+    ],
+    "context": "Similar triangles: scale factor 6/3 = 2. Longest side: 5 × 2 = 10. All corresponding sides scale by the same factor."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 5-12-13; similar triangle has shortest side 10. Longest side?",
+    "answer": "26",
+    "choices": [
+      "26",
+      "24",
+      "13",
+      "65"
+    ],
+    "context": "Similar triangles: scale factor 10/5 = 2. Longest side: 13 × 2 = 26. This is the doubled 5-12-13 Pythagorean triple."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 3-4-5; similar triangle has shortest side 12. Other sides?",
+    "answer": "16 and 20",
+    "choices": [
+      "16 and 20",
+      "13 and 14",
+      "15 and 18",
+      "32 and 40"
+    ],
+    "context": "Similar triangles: scale factor 12/3 = 4. Other sides: 4×4 = 16, 5×4 = 20. This is the 12-16-20 triangle (4× the 3-4-5 triple)."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 3-4-5; similar triangle has scale factor 5. Longest side?",
+    "answer": "25",
+    "choices": [
+      "25",
+      "20",
+      "5",
+      "75"
+    ],
+    "context": "Similar triangles: each side scales by the scale factor 5. Longest side: 5 × 5 = 25. The 15-20-25 triangle (5× of 3-4-5)."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 8-15-17; similar triangle has shortest side 16. Longest side?",
+    "answer": "34",
+    "choices": [
+      "34",
+      "30",
+      "17",
+      "32"
+    ],
+    "context": "Similar-triangles trick: scale factor 16/8 = 2. Longest side: 17 × 2 = 34. This is 2× the 8-15-17 Pythagorean triple."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 7-24-25; similar triangle has shortest side 14. Longest side?",
+    "answer": "50",
+    "choices": [
+      "50",
+      "48",
+      "25",
+      "28"
+    ],
+    "context": "Similar-triangles trick: scale factor 14/7 = 2. Longest side: 25 × 2 = 50. The 14-48-50 triangle (2× of 7-24-25)."
+  },
+  {
+    "tier": 4,
+    "question": "Triangle sides 3-4-5; similar triangle has scale factor 10. Perimeter?",
+    "answer": "120",
+    "choices": [
+      "120",
+      "12",
+      "100",
+      "60"
+    ],
+    "context": "Similar-triangles trick: each side scales by 10. New sides: 30-40-50. Perimeter: 30+40+50 = 120 (or scale original perimeter 12 by 10). Based on the 3-4-5 Pythagorean triple."
+  },
+  {
+    "tier": 4,
+    "question": "Side ratios of a 45-45-90 right triangle?",
+    "answer": "1 : 1 : √2",
+    "choices": [
+      "1 : 1 : √2",
+      "1 : 2 : 3",
+      "1 : √3 : 2",
+      "3 : 4 : 5"
+    ],
+    "context": "45-45-90 special triangle: two equal legs (ratio 1:1) and hypotenuse √2. Comes from a square cut diagonally — diagonal of unit square is √2 by the Pythagorean theorem."
+  },
+  {
+    "tier": 4,
+    "question": "Side ratios of a 30-60-90 right triangle?",
+    "answer": "1 : √3 : 2",
+    "choices": [
+      "1 : √3 : 2",
+      "1 : 1 : √2",
+      "3 : 4 : 5",
+      "1 : 2 : 3"
+    ],
+    "context": "30-60-90 special triangle: shortest side opposite 30° = 1, side opposite 60° = √3, hypotenuse = 2. Comes from an equilateral triangle cut in half."
+  },
+  {
+    "tier": 4,
+    "question": "In a 45-45-90 triangle with legs of length 5, hypotenuse?",
+    "answer": "5√2",
+    "choices": [
+      "5√2",
+      "10√2",
+      "√5",
+      "5/√2"
+    ],
+    "context": "45-45-90 special-triangle trick: side ratios 1 : 1 : √2. Pythagorean theorem: 5² + 5² = 50 = c², so c = √50 = 5√2."
+  },
+  {
+    "tier": 4,
+    "question": "In a 30-60-90 triangle with shortest side 4, hypotenuse?",
+    "answer": "8",
+    "choices": [
+      "8",
+      "4√3",
+      "12",
+      "4"
+    ],
+    "context": "30-60-90 special triangle: side ratios 1 : √3 : 2. Hypotenuse = 2 × shortest = 2 × 4 = 8."
+  },
+  {
+    "tier": 4,
+    "question": "Sum of angles in any triangle?",
+    "answer": "180°",
+    "choices": [
+      "180°",
+      "360°",
+      "90°",
+      "270°"
+    ],
+    "context": "Triangle angle-sum trick: 180°. Holds for every triangle — equilateral, isosceles, scalene, right. Computation: any triangle = 180° = ½ × 360° (half a full turn)."
+  },
+  {
+    "tier": 4,
+    "question": "Reflect (3, 4) over the y-axis. New point?",
+    "answer": "(-3, 4)",
+    "choices": [
+      "(-3, 4)",
+      "(3, -4)",
+      "(-3, -4)",
+      "(4, 3)"
+    ],
+    "context": "Reflection-over-y-axis trick: flip the sign of x, keep y the same. (3, 4) → (-3, 4). Mirror across the vertical y-axis."
+  },
+  {
+    "tier": 4,
+    "question": "Reflect (3, 4) over the x-axis. New point?",
+    "answer": "(3, -4)",
+    "choices": [
+      "(3, -4)",
+      "(-3, 4)",
+      "(-3, -4)",
+      "(4, 3)"
+    ],
+    "context": "Reflection-over-x-axis trick: flip the sign of y, keep x the same. (3, 4) → (3, -4). Mirror across the horizontal x-axis."
+  },
+  {
+    "tier": 4,
+    "question": "Reflect (-2, 5) over the y-axis. New point?",
+    "answer": "(2, 5)",
+    "choices": [
+      "(2, 5)",
+      "(-2, -5)",
+      "(2, -5)",
+      "(5, -2)"
+    ],
+    "context": "Reflection-over-y-axis trick: flip the sign of x. (-2, 5) → (2, 5). Mirror across the vertical y-axis."
+  },
+  {
+    "tier": 4,
+    "question": "Translate (1, 2) right 3, up 4. New point?",
+    "answer": "(4, 6)",
+    "choices": [
+      "(4, 6)",
+      "(-2, -2)",
+      "(3, 6)",
+      "(4, 5)"
+    ],
+    "context": "Translation trick: add to x for right (+), add to y for up (+). Computation: (1+3, 2+4) = (4, 6)."
+  },
+  {
+    "tier": 4,
+    "question": "Translate (5, 5) left 2, down 3. New point?",
+    "answer": "(3, 2)",
+    "choices": [
+      "(3, 2)",
+      "(7, 8)",
+      "(3, 8)",
+      "(7, 2)"
+    ],
+    "context": "Translation trick: left subtracts from x, down subtracts from y. Computation: (5-2, 5-3) = (3, 2)."
+  },
+  {
+    "tier": 4,
+    "question": "Reflect (5, -3) over the x-axis. New point?",
+    "answer": "(5, 3)",
+    "choices": [
+      "(5, 3)",
+      "(-5, -3)",
+      "(-5, 3)",
+      "(3, 5)"
+    ],
+    "context": "Reflection-over-x-axis trick: flip the sign of y. (5, -3) → (5, 3). Mirror across the horizontal x-axis."
+  },
+  {
+    "tier": 4,
+    "question": "Rotate (1, 0) 90° counterclockwise about the origin. New point?",
+    "answer": "(0, 1)",
+    "choices": [
+      "(0, 1)",
+      "(0, -1)",
+      "(-1, 0)",
+      "(1, 0)"
+    ],
+    "context": "Rotation trick (90° CCW about origin): (x, y) → (-y, x). (1, 0) → (0, 1). Quarter-turn CCW."
+  },
+  {
+    "tier": 4,
+    "question": "Rotate (0, 1) 90° clockwise about the origin. New point?",
+    "answer": "(1, 0)",
+    "choices": [
+      "(1, 0)",
+      "(-1, 0)",
+      "(0, -1)",
+      "(0, 1)"
+    ],
+    "context": "Rotation trick (90° CW about origin): (x, y) → (y, -x). (0, 1) → (1, 0). Quarter-turn CW."
+  },
+  {
+    "tier": 4,
+    "question": "Reflect (4, 7) over the origin. New point?",
+    "answer": "(-4, -7)",
+    "choices": [
+      "(-4, -7)",
+      "(-4, 7)",
+      "(4, -7)",
+      "(7, 4)"
+    ],
+    "context": "Reflection-through-origin trick: flip both signs: (x, y) → (-x, -y). (4, 7) → (-4, -7). Equivalent to a 180° rotation."
+  },
+  {
+    "tier": 4,
+    "question": "Translate (-2, 3) right 5, down 1. New point?",
+    "answer": "(3, 2)",
+    "choices": [
+      "(3, 2)",
+      "(-7, 4)",
+      "(3, 4)",
+      "(-7, 2)"
+    ],
+    "context": "Translation trick: right adds to x, down subtracts from y. Computation: (-2+5, 3-1) = (3, 2)."
+  },
+  {
+    "tier": 5,
+    "question": "Right triangle: legs 5 and 12. What is hypotenuse² + 1?",
+    "answer": "170",
+    "choices": [
+      "170",
+      "168",
+      "169",
+      "144"
+    ],
+    "context": "Pythagorean theorem chain: a² + b² = c². 5² + 12² = 169 = c². Then c² + 1 = 169 + 1 = 170. The 5-12-13 triple gives c = 13, but we want c²+1 = 170. Don't forget to add the 1."
+  },
+  {
+    "tier": 5,
+    "question": "Sphere radius 3, cylinder radius 3 height 8. Sphere + cylinder volume in terms of π?",
+    "answer": "108π",
+    "choices": [
+      "108π",
+      "72π",
+      "144π",
+      "36π"
+    ],
+    "context": "Sphere volume: V = (4/3)πr³ = (4/3) × 27 × π = 36π. Cylinder volume: V = πr²h = 9 × 8 × π = 72π. Total = 36π + 72π = 108π."
+  },
+  {
+    "tier": 5,
+    "question": "Cone radius 6, height 9. Volume in terms of π, divided by 9?",
+    "answer": "12π",
+    "choices": [
+      "12π",
+      "108π",
+      "36π",
+      "9π"
+    ],
+    "context": "Cone volume formula: V = (1/3)πr²h = (1/3)π × 36 × 9 = 108π. Divided by 9: 108π / 9 = 12π."
+  },
+  {
+    "tier": 5,
+    "question": "Distance from (0,0) to (3,4), then squared and add 11?",
+    "answer": "36",
+    "choices": [
+      "36",
+      "25",
+      "11",
+      "47"
+    ],
+    "context": "Distance formula: d = √((x₂-x₁)² + (y₂-y₁)²). d = √(9+16) = √25 = 5. d² = 25 (just a²+b² from Pythagorean). Then 25 + 11 = 36. 3-4-5 triple."
+  },
+  {
+    "tier": 5,
+    "question": "Sphere: at what radius does surface area 4πr² equal volume?",
+    "answer": "3",
+    "choices": [
+      "3",
+      "6",
+      "4",
+      "12"
+    ],
+    "context": "Sphere surface-area formula 4πr² vs volume formula (4/3)πr³. Set equal as circle area expressions: 4πr² = (4/3)πr³, divide by 4πr²: 1 = r/3, so r = 3. At r = 3, 4πr² = 36π = volume."
+  },
+  {
+    "tier": 5,
+    "question": "Pythagorean: legs 7 and 24. Hypotenuse + 5?",
+    "answer": "30",
+    "choices": [
+      "30",
+      "25",
+      "31",
+      "32"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 7² + 24² = 49 + 576 = 625; c = √625 = 25 (the 7-24-25 triple). Then c + 5 = 30."
+  },
+  {
+    "tier": 5,
+    "question": "Triangle 3-4-5 area, doubled?",
+    "answer": "12",
+    "choices": [
+      "12",
+      "6",
+      "20",
+      "24"
+    ],
+    "context": "Triangle area formula: A = ½bh. For the 3-4-5 right triangle, legs are base/height: A = ½ × 3 × 4 = 6. Doubled = 12. (Doubling triangle area gives the bounding rectangle area.)"
+  },
+  {
+    "tier": 5,
+    "question": "Circle radius 5: area + circumference in terms of π?",
+    "answer": "35π",
+    "choices": [
+      "35π",
+      "30π",
+      "50π",
+      "75π"
+    ],
+    "context": "Circle area formula: A = πr² = 25π. Circumference formula: C = 2πr = 10π. Sum: 25π + 10π = 35π."
+  },
+  {
+    "tier": 5,
+    "question": "Box 2×3×4: volume + surface area?",
+    "answer": "76",
+    "choices": [
+      "76",
+      "52",
+      "24",
+      "28"
+    ],
+    "context": "Rectangular prism volume: V = lwh = 2×3×4 = 24. Surface area: 2(lw+lh+wh) = 2(6+8+12) = 52. Sum: 24 + 52 = 76."
+  },
+  {
+    "tier": 5,
+    "question": "Cylinder radius 2 height 5: volume in terms of π, then minus 10π?",
+    "answer": "10π",
+    "choices": [
+      "10π",
+      "30π",
+      "20π",
+      "5π"
+    ],
+    "context": "Cylinder volume formula: V = πr²h = π × 4 × 5 = 20π. Then 20π - 10π = 10π."
+  },
+  {
+    "tier": 5,
+    "question": "Midpoint of (0,0) and (8,6), then distance to origin?",
+    "answer": "5",
+    "choices": [
+      "5",
+      "10",
+      "25",
+      "3"
+    ],
+    "context": "Midpoint formula: ((0+8)/2, (0+6)/2) = (4, 3). Distance from origin: √(4² + 3²) = √25 = 5. The 3-4-5 triple appears again."
+  },
+  {
+    "tier": 5,
+    "question": "Sphere radius 3, cone radius 3 height 4. Sphere V minus cone V (in π)?",
+    "answer": "24π",
+    "choices": [
+      "24π",
+      "48π",
+      "12π",
+      "36π"
+    ],
+    "context": "Sphere volume: V = (4/3)πr³ = (4/3) × 27 × π = 36π. Cone volume: V = (1/3)πr²h = (1/3) × 9 × 4 × π = 12π. 36π - 12π = 24π."
+  },
+  {
+    "tier": 5,
+    "question": "Right triangle legs 3, 4. Area² + hypotenuse²?",
+    "answer": "61",
+    "choices": [
+      "61",
+      "36",
+      "169",
+      "100"
+    ],
+    "context": "Triangle area A = ½ × 3 × 4 = 6, so A² = 36. Pythagorean: 3² + 4² = 25 = c², so c² = 25. Sum: 36 + 25 = 61. 3-4-5 triple."
+  },
+  {
+    "tier": 5,
+    "question": "Square side 5. Area + perimeter?",
+    "answer": "45",
+    "choices": [
+      "45",
+      "25",
+      "20",
+      "30"
+    ],
+    "context": "Square area formula: A = s² = 25. Perimeter P = 4s = 20. Sum: 25 + 20 = 45."
+  },
+  {
+    "tier": 5,
+    "question": "Distance from (1,1) to (4,5), then add the midpoint x?",
+    "answer": "7.5",
+    "choices": [
+      "7.5",
+      "5",
+      "2.5",
+      "10"
+    ],
+    "context": "Distance formula: √((4-1)² + (5-1)²) = √(9+16) = √25 = 5 (3-4-5 triple). Midpoint x: (1+4)/2 = 2.5. Sum: 5 + 2.5 = 7.5."
+  },
+  {
+    "tier": 5,
+    "question": "Circle d = 10. Area + circumference in terms of π?",
+    "answer": "35π",
+    "choices": [
+      "35π",
+      "30π",
+      "100π",
+      "10π"
+    ],
+    "context": "Circle area formula: A = πr² with r = 5 → 25π. Circumference C = πd = 10π. Sum: 25π + 10π = 35π."
+  },
+  {
+    "tier": 5,
+    "question": "Pythagorean: legs 8, 15. Hypotenuse + 3?",
+    "answer": "20",
+    "choices": [
+      "20",
+      "17",
+      "23",
+      "289"
+    ],
+    "context": "Pythagorean theorem: a² + b² = c². 8² + 15² = 64 + 225 = 289; c = √289 = 17 (the 8-15-17 triple). c + 3 = 20."
+  },
+  {
+    "tier": 5,
+    "question": "Triangle base 8 height 6 area, doubled?",
+    "answer": "48",
+    "choices": [
+      "48",
+      "24",
+      "14",
+      "96"
+    ],
+    "context": "Triangle area formula: A = ½bh = ½ × 8 × 6 = 24. Doubled = 48 (also the bounding rectangle area)."
+  },
+  {
+    "tier": 5,
+    "question": "Cube side 4. Surface area + volume?",
+    "answer": "160",
+    "choices": [
+      "160",
+      "96",
+      "64",
+      "192"
+    ],
+    "context": "Cube surface area: 6s² = 6 × 16 = 96. Volume: s³ = 64. Sum: 96 + 64 = 160."
+  },
+  {
+    "tier": 5,
+    "question": "Distance (0,0) to (5,12), plus the midpoint y-coordinate?",
+    "answer": "19",
+    "choices": [
+      "19",
+      "13",
+      "5",
+      "12"
+    ],
+    "context": "Distance formula: √(25+144) = √169 = 13 (the 5-12-13 triple). Midpoint y: (0+12)/2 = 6. Sum: 13 + 6 = 19."
+  }
+]
