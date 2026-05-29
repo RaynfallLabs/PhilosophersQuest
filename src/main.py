@@ -2362,6 +2362,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._on_game_over()
                 self.state = STATE_DEAD
                 self.add_message("You have turned completely to stone!", 'danger')
+            elif text.startswith('_disease_drain:'):
+                # Wire the Paracelsus quirk: disease draining stats counts.
+                try:
+                    _, _drain_stat, _drain_amt = text.split(':')
+                    _qs_disease = getattr(self, 'quirk_system', None)
+                    if _qs_disease:
+                        _qs_disease.on_disease_drain(_drain_stat, int(_drain_amt))
+                except (ValueError, AttributeError):
+                    pass
             else:
                 self.add_message(text, mtype)
 
@@ -3771,7 +3780,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p.mp = p.max_mp
 
         for msg in msgs:
-            self.add_message(msg, 'good')
+            self.add_message(msg, 'success')
 
         self._hack_result_lines = result_lines
         self._hack_result_chain = chain

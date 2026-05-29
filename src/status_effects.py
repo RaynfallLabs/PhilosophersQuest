@@ -342,6 +342,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 if random.random() < 0.08:
                     stat = random.choice(['STR', 'CON'])
                     player.apply_stat_bonus(stat, -1)
+                    # Signal for main.py to dispatch the Paracelsus quirk hook.
+                    messages.append((f'_disease_drain:{stat}:1', 'info'))
                     messages.append((f'The disease saps your strength! {stat} -1.', 'danger'))
 
         elif effect == 'strangulation':
