@@ -1138,7 +1138,7 @@ class DivineMixin:
                     p.status_effects.pop(e, None)
                     cured.append(e)
             p.hp = p.max_hp
-            msgs.append(f"Raphael's healing flame: full restoration"
+            msgs.append("Raphael's healing flame: full restoration"
                         + (f" + cured {', '.join(cured)}." if cured else "."))
             fired_full = True
         elif effective >= 3:

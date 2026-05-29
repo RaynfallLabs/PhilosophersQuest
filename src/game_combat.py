@@ -657,7 +657,7 @@ class CombatMixin:
         gold_range = treasure.get('gold', [0, 0])
         gold = _rng.randint(int(gold_range[0]), max(int(gold_range[0]), int(gold_range[1])))
         if gold > 0:
-            from items import GoldPile, add_gold_to_tile
+            from items import add_gold_to_tile
             add_gold_to_tile(self.ground_items, gold, monster.x, monster.y)
             self.add_message(
                 f"The {monster.name} drops {gold} gold coins.", 'loot'

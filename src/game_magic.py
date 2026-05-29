@@ -2708,7 +2708,7 @@ class MagicMixin:
                     'desc': f"The spell from the {item.name} costs 1 less MP."}
         if isinstance(item, Potion):
             return {'kind': 'potion_potency_bonus', 'value': 0.25,
-                    'desc': f"Potions of this type are 25% more potent."}
+                    'desc': "Potions of this type are 25% more potent."}
         return None
 
     def _on_full_identify(self, item) -> None:

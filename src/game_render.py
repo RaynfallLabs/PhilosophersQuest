@@ -3052,9 +3052,9 @@ class RenderMixin:
                 getattr(pet, 'command', 'return'), 'RETURN')
             rows = [
                 ("F", f"Feed {pet.name}  ({food_count} food in pack)"),
-                ("P", f"Pet  (+5 XP; once per floor)"),
+                ("P", "Pet  (+5 XP; once per floor)"),
                 ("H", f"Heal with potion  ({potion_count} healing potions)"),
-                ("R", f"Recall to Soul Sphere  (requires adjacent)"),
+                ("R", "Recall to Soul Sphere  (requires adjacent)"),
                 ("C", f"Command: {cmd_label}  (press to cycle)"),
                 ("S", f"Specials  ({ready} ready / {len(specials_avail)} unlocked)"),
             ]
@@ -3171,7 +3171,7 @@ class RenderMixin:
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT)
 
         # Subtitle: invite naming.
-        sub = f"Will you give this companion a name?"
+        sub = "Will you give this companion a name?"
         sub_surf = self.font_md.render(sub, True, FP.BODY_TEXT)
         self.screen.blit(sub_surf, (bx + (bw - sub_surf.get_width()) // 2, by + 58))
 
@@ -3816,8 +3816,7 @@ class RenderMixin:
 
             # Family mastery banner \u2014 top line once mastered (id_level == 5).
             if id_level >= 5:
-                from monster_classes import (get_monster_family,
-                                              MONSTER_FAMILY_BLESSINGS)
+                from monster_classes import (get_monster_family)
                 fam = get_monster_family(subject)
                 if fam:
                     blessing = (getattr(self.player,

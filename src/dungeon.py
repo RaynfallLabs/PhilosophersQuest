@@ -1238,8 +1238,7 @@ def _roll_trap_for_level(level: int, rng: random.Random) -> dict:
 
 def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     """Spawn items, containers, and lockpicks in dungeon rooms."""
-    from items import (load_items, Container, Weapon, Armor, Shield,
-                       pick_random_weapon_for_floor, pick_random_armor_for_floor,
+    from items import (load_items, Container, pick_random_weapon_for_floor, pick_random_armor_for_floor,
                        pick_random_shield_for_floor)
 
     rng          = random.Random()
@@ -1543,7 +1542,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
                              if dungeon.tiles[ty][tx] == FLOOR and
                              not any(i.x == tx and i.y == ty for i in ground_items)]
             if tiles_in_room:
-                from items import GoldPile, add_gold_to_tile
+                from items import add_gold_to_tile
                 gx, gy = rng.choice(tiles_in_room)
                 add_gold_to_tile(ground_items, gold_amount, gx, gy)
 
@@ -1572,7 +1571,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
 
         elif room_type == 'zoo':
             # Gold piles on most inner tiles; message handled in main.py via special_rooms
-            from items import GoldPile, add_gold_to_tile
+            from items import add_gold_to_tile
             for tx, ty in special_room.inner_tiles():
                 if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.70:
                     amount = rng.randint(level * 2, level * 5)
@@ -1652,7 +1651,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
 
     # -- Vault items (gold piles) -----------------------------------------------
     if dungeon.vault is not None:
-        from items import GoldPile, add_gold_to_tile
+        from items import add_gold_to_tile
         vault_room = dungeon.vault['room']
         for tx, ty in vault_room.inner_tiles():
             if dungeon.tiles[ty][tx] == FLOOR:

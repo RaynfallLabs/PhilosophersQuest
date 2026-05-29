@@ -786,7 +786,6 @@ def instantiate_weapon(template_id: str, material_id: str, *,
     Damage is derived from curve.weapon_base_damage(material.peak_floor) × the
     material's damage_mult × the template's damage_modifier. Chain shape comes
     entirely from the template."""
-    import math
     tpl = get_template('weapons', template_id)
     mat = get_material('weapons', material_id)
     if not tpl:

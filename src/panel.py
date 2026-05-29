@@ -31,7 +31,6 @@ import pygame
 import layout
 from fantasy_ui import (FP, get_font, draw_overlay, draw_dark_panel,
                         draw_header_bar, draw_divider)
-from text_layout import truncate_label
 
 
 # Size classes — each picks a target width; the actual width is clamped to

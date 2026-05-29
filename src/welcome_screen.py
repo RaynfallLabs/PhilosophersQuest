@@ -14,7 +14,7 @@ import pygame
 from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
                         draw_header_bar, draw_filigree_bar, draw_shadow_text,
                         draw_overlay, draw_rune_circle, draw_candle_glow,
-                        draw_divider, centered_text)
+                        centered_text)
 
 
 # ------------------------------------------------------------------

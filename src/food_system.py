@@ -336,7 +336,7 @@ def _apply_bonus(player, recipe) -> list[str]:
             if applied > 0:
                 any_gained = True
         if any_gained:
-            messages.append(f"A glow spreads — most of your stats edge upward.")
+            messages.append("A glow spreads — most of your stats edge upward.")
         else:
             messages.append("Your body resists further change. The dish is filling, no more.")
     elif bonus_type == 'stat':

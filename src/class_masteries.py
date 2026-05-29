@@ -369,5 +369,5 @@ def default_blessing_for_class(class_id: str, item) -> dict | None:
                 'desc': f"You know {class_id.replace('_', ' ')} to the bone — costs 1 less MP."}
     if isinstance(item, Potion):
         return {'kind': 'potion_potency_bonus', 'value': 0.20, 'scope': 'class',
-                'desc': f"Potions of this class are 20% more potent in your hands."}
+                'desc': "Potions of this class are 20% more potent in your hands."}
     return None

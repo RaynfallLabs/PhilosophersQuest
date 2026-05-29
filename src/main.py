@@ -3093,7 +3093,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _pickup(self):
-        from items import GoldPile, add_gold_to_tile
+        from items import GoldPile
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer -- it's fixed to the floor
         # Also skip MysteryAltar objects (not_pickable=True)

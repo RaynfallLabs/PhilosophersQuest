@@ -372,7 +372,6 @@ class MenuMixin:
         'floor' (on the current tile). Currently-equipped items are emitted
         only once (not duplicated as 'pack').
         """
-        from items import ARMOR_SLOTS
         out: list[tuple[str, object]] = []
         equipped_ids = set()
 

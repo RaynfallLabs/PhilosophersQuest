@@ -29,7 +29,7 @@ side-effects, easy to unit-test without pygame init.
 """
 from __future__ import annotations
 
-from typing import Iterable, NamedTuple
+from typing import NamedTuple
 
 
 def wrap_lines(text: str, max_width: int, font) -> list[str]:

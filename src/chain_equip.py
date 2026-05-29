@@ -27,7 +27,6 @@ This module owns:
 Other bonus keys are stored verbatim on the item for use-site queries.
 """
 
-from items import Accessory, Armor, Shield
 
 
 # Default quiz subject per slot family. Overridable via equip_chain_subject.
