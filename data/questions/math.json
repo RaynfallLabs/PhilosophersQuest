@@ -22756,10 +22756,10 @@
     "question": "Rectangle: length 6, width 3. Area?",
     "answer": "18",
     "choices": [
-      "18",
-      "18",
       "9",
-      "20"
+      "15",
+      "17",
+      "18"
     ],
     "context": "Rectangle area formula: A = l × w. A = 6 × 3 = 18 square units. Perimeter = 2(6+3) = 18 (coincidence here)."
   },
@@ -22768,10 +22768,10 @@
     "question": "Rectangle: length 11, width 5. Area?",
     "answer": "55",
     "choices": [
+      "57",
       "55",
-      "32",
-      "16",
-      "16"
+      "56",
+      "53"
     ],
     "context": "Rectangle area formula: A = l × w. A = 11 × 5 = 55. Use the ×11 trick mentally: 11 × 5 = 55."
   },
@@ -22804,10 +22804,10 @@
     "question": "Rectangle: length 7, width 7. Area?",
     "answer": "49",
     "choices": [
+      "47",
+      "50",
       "49",
-      "28",
-      "14",
-      "14"
+      "98"
     ],
     "context": "Rectangle area formula: A = l × w. A = 7 × 7 = 49. When l = w, the rectangle is a square — A = s² = 7² = 49."
   },
@@ -22816,10 +22816,10 @@
     "question": "Rectangle: length 14, width 3. Area?",
     "answer": "42",
     "choices": [
-      "42",
-      "34",
-      "17",
-      "17"
+      "45",
+      "44",
+      "39",
+      "42"
     ],
     "context": "Rectangle area formula: A = l × w. A = 14 × 3 = 42. Perimeter = 2(14+3) = 34 — different formula."
   },
@@ -22840,10 +22840,10 @@
     "question": "Rectangle: length 16, width 5. Area?",
     "answer": "80",
     "choices": [
-      "80",
-      "42",
-      "21",
-      "21"
+      "160",
+      "82",
+      "77",
+      "80"
     ],
     "context": "Rectangle area formula: A = l × w. A = 16 × 5 = 80. Halving-and-doubling: 16 × 5 = 8 × 10 = 80."
   },
@@ -22864,10 +22864,10 @@
     "question": "Rectangle: length 18, width 5. Area?",
     "answer": "90",
     "choices": [
-      "90",
-      "46",
-      "23",
-      "23"
+      "87",
+      "45",
+      "89",
+      "90"
     ],
     "context": "Rectangle area formula: A = l × w. A = 18 × 5 = 90. Halve-then-×10 trick for ×5: 18/2 = 9, 9 × 10 = 90."
   },
@@ -22876,10 +22876,10 @@
     "question": "Rectangle: length 22, width 3. Area?",
     "answer": "66",
     "choices": [
+      "64",
+      "69",
       "66",
-      "50",
-      "25",
-      "25"
+      "132"
     ],
     "context": "Rectangle area formula: A = l × w. A = 22 × 3 = 66. Perimeter = 2(22+3) = 50 — area and perimeter are different."
   },
@@ -23128,10 +23128,10 @@
     "question": "Triangle: base 4, height 7. Area?",
     "answer": "14",
     "choices": [
+      "17",
+      "15",
       "14",
-      "28",
-      "11",
-      "11"
+      "7"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 4 × 7 = ½ × 28 = 14. Half of the rectangle area 28."
   },
@@ -23140,10 +23140,10 @@
     "question": "Triangle: base 9, height 8. Area?",
     "answer": "36",
     "choices": [
-      "36",
       "72",
-      "17",
-      "17"
+      "34",
+      "35",
+      "36"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 9 × 8 = ½ × 72 = 36. Without the ½ you'd get the rectangle area 72."
   },
@@ -23153,9 +23153,9 @@
     "answer": "36",
     "choices": [
       "36",
-      "72",
-      "22",
-      "22"
+      "35",
+      "38",
+      "39"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 18 × 4 = ½ × 72 = 36. Half the bounding rectangle 72."
   },
@@ -23165,9 +23165,9 @@
     "answer": "15",
     "choices": [
       "15",
-      "30",
-      "11",
-      "11"
+      "12",
+      "16",
+      "17"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 5 × 6 = ½ × 30 = 15. Half the rectangle area 30."
   },
@@ -23176,10 +23176,10 @@
     "question": "Triangle: base 7, height 4. Area?",
     "answer": "14",
     "choices": [
-      "14",
-      "28",
-      "11",
-      "11"
+      "12",
+      "13",
+      "16",
+      "14"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 7 × 4 = ½ × 28 = 14. Don't forget the ½ — that's the most common error."
   },
@@ -23189,9 +23189,9 @@
     "answer": "22",
     "choices": [
       "22",
-      "44",
-      "15",
-      "15"
+      "19",
+      "21",
+      "11"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 11 × 4 = ½ × 44 = 22. Half the rectangle area 44."
   },
@@ -23200,10 +23200,10 @@
     "question": "Triangle: base 22, height 5. Area?",
     "answer": "55",
     "choices": [
-      "55",
-      "110",
-      "27",
-      "27"
+      "58",
+      "53",
+      "54",
+      "55"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 22 × 5 = ½ × 110 = 55. Forgetting the ½ gives 110 (rectangle area)."
   },
@@ -23212,10 +23212,10 @@
     "question": "Triangle: base 20, height 3. Area?",
     "answer": "30",
     "choices": [
+      "32",
       "30",
-      "60",
-      "23",
-      "23"
+      "15",
+      "60"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 20 × 3 = ½ × 60 = 30. Half the rectangle area 60."
   },
@@ -23224,10 +23224,10 @@
     "question": "Triangle: base 15, height 8. Area?",
     "answer": "60",
     "choices": [
-      "60",
       "120",
-      "23",
-      "23"
+      "59",
+      "60",
+      "57"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 15 × 8 = ½ × 120 = 60. Half the rectangle area 120."
   },
@@ -23236,10 +23236,10 @@
     "question": "Triangle: base 12, height 10. Area?",
     "answer": "60",
     "choices": [
-      "60",
       "120",
-      "22",
-      "22"
+      "58",
+      "30",
+      "60"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 12 × 10 = ½ × 120 = 60. Half the rectangle area 120."
   },
@@ -23249,9 +23249,9 @@
     "answer": "18",
     "choices": [
       "18",
-      "36",
-      "12",
-      "12"
+      "9",
+      "19",
+      "20"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 6 × 6 = ½ × 36 = 18. Half the bounding square area 36."
   },
@@ -23730,8 +23730,8 @@
     "choices": [
       "20",
       "40",
-      "14",
-      "14"
+      "21",
+      "10"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 10 × 4 = ½ × 40 = 20. Half the bounding rectangle 40."
   },
@@ -23884,10 +23884,10 @@
     "question": "Triangle: base 5, height 8. Area?",
     "answer": "20",
     "choices": [
+      "23",
+      "19",
       "20",
-      "40",
-      "13",
-      "13"
+      "17"
     ],
     "context": "Triangle area formula: A = ½bh. A = ½ × 5 × 8 = ½ × 40 = 20. Half the bounding rectangle 40."
   },
@@ -24004,10 +24004,10 @@
     "question": "Circle: radius 2. Area in terms of π?",
     "answer": "4π",
     "choices": [
-      "4π",
+      "3π",
       "2π",
-      "8π",
-      "4π"
+      "4π",
+      "8π"
     ],
     "context": "Circle area formula: A = πr². A = π × 2² = 4π. Circumference C = 2πr = 4π also — by coincidence at r = 2."
   },
@@ -24305,7 +24305,7 @@
     "answer": "8π",
     "choices": [
       "8π",
-      "16π",
+      "9π",
       "4π",
       "16π"
     ],
@@ -24364,10 +24364,10 @@
     "question": "Circle: radius 2. Circumference in terms of π?",
     "answer": "4π",
     "choices": [
-      "4π",
+      "8π",
       "4π",
       "2π",
-      "8π"
+      "6π"
     ],
     "context": "Circumference formula: C = 2πr. C = 2π × 2 = 4π. Area A = πr² = 4π also — coincidence at r = 2."
   },
@@ -24461,9 +24461,9 @@
     "answer": "80",
     "choices": [
       "80",
-      "40",
-      "21",
-      "40"
+      "81",
+      "83",
+      "79"
     ],
     "context": "Parallelogram area formula: A = bh. A = 16 × 5 = 80. Use the perpendicular height to the base."
   },
@@ -25960,10 +25960,10 @@
     "question": "Cube: side 6. Surface area?",
     "answer": "216",
     "choices": [
+      "217",
       "216",
-      "216",
-      "36",
-      "432"
+      "218",
+      "214"
     ],
     "context": "Cube surface area: 6 × s². SA = 6 × 6² = 6 × 36 = 216. Coincidence: volume V = s³ = 216 also at s = 6."
   },
