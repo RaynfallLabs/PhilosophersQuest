@@ -464,47 +464,71 @@ def gate_named_equation_when_applicable(q: dict) -> Optional[str]:
 
 
 def gate_choice_shape_parity(q: dict) -> Optional[str]:
-    """All 4 choices should be roughly the same SHAPE (all numeric, all
-    fractional, all algebraic, all π-form). Mixing 3 integers with 1
-    fraction is a skim-tell.
+    """The ANSWER must not be the odd-shape-out vs distractors.
+
+    If 3 distractors share a shape and the answer has a different shape,
+    that's a skim-tell — the kid sees one answer that looks different and
+    can route to it without computing. But if 3 of 4 choices share a
+    shape and one DISTRACTOR is the odd-one-out (a student-error like
+    forgetting π or dropping a variable), that's fine — represents a
+    real error mode.
     """
     choices = q.get("choices", []) or []
     if len(choices) != 4:
         return None
+    answer = q.get("answer", "")
 
     def shape(c: str) -> str:
         if not isinstance(c, str):
             return "other"
         s = c.strip()
-        if re.fullmatch(r"-?\d+(?:\.\d+)?", s):
-            return "decimal" if "." in s else "integer"
-        if re.fullmatch(r"-?\d+\s*/\s*\d+", s):
-            return "fraction"
-        if "π" in s or "pi" in s.lower():
-            return "pi"
-        if re.search(r"[a-zA-Z]\s*[²2³3]?\s*[+\-*/]\s*[a-zA-Z\d]", s):
+        # Multi-clause answers ("x = 3 or x = −2") — treat as algebraic
+        if " or " in s.lower() or "," in s and any(
+            tok in s for tok in ["=", "x", "y"]
+        ):
             return "algebraic"
-        if re.search(r"\bx\b|\by\b", s):
+        # Plain integers / decimals (accept unicode minus too)
+        if re.fullmatch(r"[-−]?\d+(?:\.\d+)?", s):
+            return "decimal" if "." in s else "integer"
+        # Currency
+        if re.fullmatch(r"\$?[-−]?\d+(?:\.\d+)?\$?", s):
+            return "currency"
+        # Percent
+        if re.fullmatch(r"[-−]?\d+(?:\.\d+)?\s*%", s):
+            return "percent"
+        # Fraction
+        if re.fullmatch(r"[-−]?\d+\s*/\s*\d+", s):
+            return "fraction"
+        # π-form
+        if "π" in s or re.search(r"\bpi\b", s.lower()):
+            return "pi"
+        # Algebraic (anything with x, y, ², or visible polynomial structure)
+        if re.search(r"[xy]|²|³|\^", s):
             return "algebraic"
         return "other"
 
     shapes = [shape(str(c)) for c in choices]
-    unique = set(shapes)
-    # All same shape is best; 2 close shapes (integer/decimal) is OK
-    if len(unique) == 1:
+    answer_shape = shape(str(answer))
+
+    # Find distractor shapes
+    distractor_shapes = [shape(str(c)) for c in choices if c != answer]
+    if len(distractor_shapes) != 3:
         return None
-    # Integer + decimal mix is OK (numeric is numeric)
-    numeric_shapes = {"integer", "decimal"}
-    if unique <= numeric_shapes:
-        return None
-    # Otherwise: if 3 of 4 share a shape and 1 differs, that's a skim-tell
-    from collections import Counter
-    cnt = Counter(shapes)
-    if max(cnt.values()) == 3:
-        return (
-            f"choice_shape_parity: shapes {shapes!r} — 3 of 4 share shape, "
-            f"odd-one-out is a skim-tell"
-        )
+
+    # Skim-tell condition: ALL 3 distractors share a shape that the answer
+    # doesn't. EXCEPT when integer/decimal/currency/percent are mixed —
+    # those are all "numeric" and fine together.
+    numeric_family = {"integer", "decimal", "currency", "percent"}
+    if all(s == distractor_shapes[0] for s in distractor_shapes):
+        # All distractors same shape — does answer match?
+        if answer_shape != distractor_shapes[0]:
+            # Both in numeric family? OK
+            if answer_shape in numeric_family and distractor_shapes[0] in numeric_family:
+                return None
+            return (
+                f"choice_shape_parity: distractors all {distractor_shapes[0]!r} "
+                f"but answer is {answer_shape!r} — answer is odd-one-out skim-tell"
+            )
     return None
 
 
