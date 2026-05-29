@@ -23,7 +23,6 @@ added_files = [
     # Assets
     ('assets/fonts',                'assets/fonts'),
     ('assets/tiles',                'assets/tiles'),
-    ('assets/textures',             'assets/textures'),
 ]
 
 a = Analysis(
