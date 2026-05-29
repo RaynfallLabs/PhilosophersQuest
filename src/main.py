@@ -4893,6 +4893,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Escalator-chain identify on a corpse. Chain reached -> corpse.id_level.
 
         Already at level 5 -> skip the quiz and just open the lore screen.
+
+        Resume rule (parallel to item identify in game_magic.py): chain
+        starts at start_tier = previous_level + 1 with max_chain =
+        5 - previous_level. The kid only re-answers the tiers they didn't
+        complete. id_level only ever rises, never falls.
         """
         if int(getattr(corpse, 'id_level', 0)) >= 5:
             self._lore_subject = corpse
@@ -4902,11 +4907,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.state = STATE_QUIZ
 
         previous_level = int(getattr(corpse, 'id_level', 0))
+        from items import identify_resume_params
+        start_tier, max_chain = identify_resume_params(previous_level)
 
         def on_complete(result):
             self.state = STATE_PLAYER
             chain = int(getattr(result, 'score', 0) or 0)
-            new_level = min(5, max(previous_level, chain))
+            # chain measured from start_tier — achieved level = previous + chain.
+            new_level = min(5, max(previous_level, previous_level + chain))
             if new_level > previous_level:
                 corpse.id_level = new_level
                 # Propagate full id_level to all corpses of the same monster_id
@@ -4953,9 +4961,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
             subject='philosophy',
-            tier=1,
+            tier=start_tier,
             callback=on_complete,
-            max_chain=5,
+            max_chain=max_chain,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +

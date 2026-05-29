@@ -2469,7 +2469,11 @@ class MagicMixin:
         Chain depth reveals progressively:
           1 = real name           2 = BUC aura       3 = stats
           4 = lore                5 = mastery bonus (one-time, permanent)
-        Each retry on a partially-identified item only raises id_level (never lowers).
+
+        Each retry on a partially-identified item RESUMES at the failed tier:
+        chain starts at start_tier = previous_level + 1 with max_chain =
+        5 - previous_level. The kid only re-answers the tiers they didn't
+        complete. id_level only ever rises, never falls.
         """
         display = self._display_name(item)
         # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin T2+).
@@ -2488,6 +2492,7 @@ class MagicMixin:
                 self._on_full_identify(item)
                 self._advance_turn()
                 return
+
         except ImportError:
             pass
 
@@ -2495,18 +2500,28 @@ class MagicMixin:
         self.state = STATE_QUIZ
 
         previous_level = int(getattr(item, 'id_level', 0))
+        # Resume rule: chain starts where the kid last failed and only spans
+        # the tiers they still need. See items.identify_resume_params for math.
+        from items import identify_resume_params
+        start_tier, max_chain = identify_resume_params(previous_level)
 
         def on_complete(result):
             self.state = STATE_PLAYER
             chain = int(result.score)
-            new_level = max(previous_level, min(chain, 5))
+            # chain is measured from start_tier, so achieved level =
+            # previous_level + chain (capped at 5, never lowers id_level).
+            new_level = max(previous_level, min(previous_level + chain, 5))
             was_full_id = previous_level >= 3
             item.id_level = new_level
 
             if chain == 0:
-                self.add_message(
-                    f"You ponder the {display} but gain no insight.", 'warning'
-                )
+                # Distinguish "no insight at all" from "no NEW insight" for
+                # the partial-progress retry case — the kid hasn't lost ground.
+                if previous_level == 0:
+                    msg = f"You ponder the {display} but gain no insight."
+                else:
+                    msg = f"You ponder the {display} but gain no new insight."
+                self.add_message(msg, 'warning')
                 self._advance_turn()
                 return
 
@@ -2565,9 +2580,9 @@ class MagicMixin:
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
             subject='philosophy',
-            tier=1,
+            tier=start_tier,
             callback=on_complete,
-            max_chain=5,
+            max_chain=max_chain,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus(),

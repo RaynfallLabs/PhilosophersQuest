@@ -2551,18 +2551,21 @@ class RenderMixin:
 
         entries = []
 
+        from items import id_progress_marker
         def _add_section(src, label, label_color, name_color, detail_suffix=''):
             for idx, (i, item) in enumerate(src):
+                # Progressive ID marker — uniform across items and corpses.
+                # The menu only contains entries with id_level < 5 (5 filters
+                # out elsewhere), so this always renders 0/5..4/5.
+                progress_marker = id_progress_marker(getattr(item, 'id_level', 0))
                 if isinstance(item, Corpse):
-                    _il = int(getattr(item, 'id_level', 0) or 0)
-                    lore_status = f"[STUDIED {_il}/5]" if _il > 0 else "[UNSTUDIED]"
-                    detail_text = f"Corpse  {lore_status}"
+                    detail_text = "Corpse"
                 else:
                     type_label = item.item_class.replace('_', ' ').title()
                     tier_lbl = f"  tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
                     detail_text = f"{type_label}{tier_lbl}{detail_suffix}"
                 entry = {
-                    'name': self._display_name(item),
+                    'name': self._display_name(item) + progress_marker,
                     'detail': detail_text,
                     'key': self._LETTERS[i],
                     'icon': item,

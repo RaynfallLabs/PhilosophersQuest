@@ -333,3 +333,101 @@ def test_every_unique_has_valid_mastery_blessing():
                 invalid.append(f'{cat}:{it.id} -> scope {mb.get("scope")!r}')
     assert not missing, f"Uniques missing mastery_blessing: {missing[:8]}"
     assert not invalid, f"Invalid mastery_blessing entries: {invalid[:8]}"
+
+
+# ---------------------------------------------------------------------------
+# Identify-system helpers (2026-05-28): chain resume from failed tier +
+# menu progress marker. See `proposals/v2_audit/IDENTIFY_SYSTEM.md`.
+# ---------------------------------------------------------------------------
+
+from items import identify_resume_params, id_progress_marker
+
+
+def test_resume_params_fresh_identify():
+    """Brand-new item (id_level=0): start at tier 1, full 5-chain."""
+    assert identify_resume_params(0) == (1, 5)
+
+
+def test_resume_params_partial_two_passed():
+    """User scenario: identified to 2/5, retry resumes at tier 3 with 3 to go."""
+    assert identify_resume_params(2) == (3, 3)
+
+
+def test_resume_params_one_tier_left():
+    """Lore revealed (4/5) but mastery unclaimed: one T5 question for mastery."""
+    assert identify_resume_params(4) == (5, 1)
+
+
+def test_resume_params_already_mastered_is_safe():
+    """Defensive: if id_level is somehow already 5 (e.g. via Odin's Cloak +
+    a re-entry race), helper still returns a valid quiz spec rather than
+    asking for a 0-length chain at tier 6."""
+    start, max_chain = identify_resume_params(5)
+    assert start == 5 and max_chain >= 1
+
+
+def test_resume_params_clamps_out_of_range():
+    """Negative or > 5 prev_level shouldn't crash."""
+    assert identify_resume_params(-1) == (1, 5)
+    assert identify_resume_params(99) == (5, 1)
+
+
+# The chain-to-id_level mapping in the resume design:
+#   new_level = previous_level + chain (capped at 5, never lowers).
+# These tests express the algebra; the call-sites in game_magic.py
+# and main.py compute exactly this expression.
+
+def test_new_level_partial_progress():
+    """At id_level=2, kid answers T3+T4 then misses T5: chain=2 -> new_level=4."""
+    previous, chain = 2, 2
+    new_level = max(previous, min(previous + chain, 5))
+    assert new_level == 4
+
+
+def test_new_level_full_completion_to_mastery():
+    """At id_level=2, kid clears T3+T4+T5: chain=3 -> new_level=5 (mastery)."""
+    previous, chain = 2, 3
+    new_level = max(previous, min(previous + chain, 5))
+    assert new_level == 5
+
+
+def test_new_level_failure_preserves_previous():
+    """At id_level=2, kid blanks the start-tier question: chain=0 -> stays at 2."""
+    previous, chain = 2, 0
+    new_level = max(previous, min(previous + chain, 5))
+    assert new_level == 2
+
+
+def test_new_level_cannot_exceed_5():
+    """Defensive: even if chain somehow overshoots, id_level caps at 5."""
+    previous, chain = 4, 10
+    new_level = max(previous, min(previous + chain, 5))
+    assert new_level == 5
+
+
+# ---------------------------------------------------------------------------
+# Progress marker — the (N/5) appended to entry names in the identify menu.
+# ---------------------------------------------------------------------------
+
+def test_progress_marker_zero():
+    assert id_progress_marker(0) == "  (0/5)"
+
+
+def test_progress_marker_partial():
+    assert id_progress_marker(2) == "  (2/5)"
+
+
+def test_progress_marker_full():
+    """Should still render correctly if asked for level 5 (menu filters
+    these out, but the helper should be robust)."""
+    assert id_progress_marker(5) == "  (5/5)"
+
+
+def test_progress_marker_clamps_out_of_range():
+    assert id_progress_marker(-1) == "  (0/5)"
+    assert id_progress_marker(99) == "  (5/5)"
+
+
+def test_progress_marker_handles_none():
+    """getattr(item, 'id_level', 0) can return None for legacy save data."""
+    assert id_progress_marker(None) == "  (0/5)"

@@ -8,6 +8,38 @@ _DATA_DIR = data_path('data', 'items')
 # Armor slot index map (matches Player.armor_slots order)
 ARMOR_SLOTS = ['head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt']
 
+
+# Identify-system helpers — pure functions used by both item identify
+# (game_magic.py:_identify_unique_item) and corpse identify
+# (main.py:_start_corpse_identify). Extracted here so they're trivially
+# unit-testable and the rule lives in ONE place.
+
+def identify_resume_params(previous_level: int) -> tuple[int, int]:
+    """Return (start_tier, max_chain) for an identify quiz that resumes
+    from the failed tier.
+
+    Rule: the chain starts at one tier ABOVE the last tier the kid passed,
+    and only spans the remaining tiers. previous_level=0 -> (1, 5) — a
+    fresh full identify. previous_level=2 -> (3, 3) — only T3+T4+T5 needed
+    for mastery. previous_level=4 -> (5, 1) — last tier, mastery on the line.
+
+    Clamped so previous_level >= 5 (already mastered) yields (5, 1) rather
+    than crashing the quiz engine.
+    """
+    prev = max(0, min(int(previous_level), 5))
+    start_tier = min(prev + 1, 5)
+    max_chain = max(5 - prev, 1)
+    return start_tier, max_chain
+
+
+def id_progress_marker(id_level: int) -> str:
+    """Return the menu marker that appears next to a partially-identified
+    item's name (e.g. "  (2/5)"). The menu only contains items with
+    id_level < 5; 5 is filtered out elsewhere.
+    """
+    lvl = max(0, min(int(id_level or 0), 5))
+    return f"  ({lvl}/5)"
+
 # Per-slot enchantment caps (max enchant_bonus allowed)
 ENCHANT_CAP = {
     'head': 2, 'body': 3, 'arms': 1, 'hands': 1,
