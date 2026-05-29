@@ -1459,27 +1459,33 @@ class RenderMixin:
         bar_x += tier_offset
         bar_w -= tier_offset
 
-        ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
-        t_color = (
-            FP.SUCCESS_TEXT if ratio > 0.55 else
-            FP.WARNING_TEXT if ratio > 0.28 else
-            FP.DANGER_TEXT
-        )
-        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (bar_x, ty, bar_w, bar_h), border_radius=4)
-        if ratio > 0:
-            pygame.draw.rect(self.screen, t_color,
-                             (bar_x, ty, max(4, int(bar_w * ratio)), bar_h), border_radius=4)
-        # Tick marks every 20%
-        for tick in range(1, 5):
-            tx = bar_x + int(bar_w * tick / 5)
-            pygame.draw.line(self.screen, FP.SHADOW, (tx, ty), (tx, ty + bar_h), 1)
+        # Timer bar — only rendered for timed quizzes (combat math attack).
+        # Untimed quizzes (identify / lockpick / equip / prayer / cooking /
+        # magic / etc.) drop the bar entirely so the kid feels invited to
+        # read the substantive content the banks now carry. Tier pips above
+        # still show progress in escalator-chain modes.
+        if getattr(qe, 'timed', True):
+            ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
+            t_color = (
+                FP.SUCCESS_TEXT if ratio > 0.55 else
+                FP.WARNING_TEXT if ratio > 0.28 else
+                FP.DANGER_TEXT
+            )
+            pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (bar_x, ty, bar_w, bar_h), border_radius=4)
+            if ratio > 0:
+                pygame.draw.rect(self.screen, t_color,
+                                 (bar_x, ty, max(4, int(bar_w * ratio)), bar_h), border_radius=4)
+            # Tick marks every 20%
+            for tick in range(1, 5):
+                tx = bar_x + int(bar_w * tick / 5)
+                pygame.draw.line(self.screen, FP.SHADOW, (tx, ty), (tx, ty + bar_h), 1)
 
-        # Timer seconds label -- right-aligned inside the bar
-        secs = int(qe.time_remaining)
-        t_label = self.font_sm.render(f"{secs}s", True, FP.WHITE)
-        lx = bar_x + bar_w - t_label.get_width() - 4
-        ly = ty + (bar_h - t_label.get_height()) // 2
-        self.screen.blit(t_label, (lx, ly))
+            # Timer seconds label -- right-aligned inside the bar
+            secs = int(qe.time_remaining)
+            t_label = self.font_sm.render(f"{secs}s", True, FP.WHITE)
+            lx = bar_x + bar_w - t_label.get_width() - 4
+            ly = ty + (bar_h - t_label.get_height()) // 2
+            self.screen.blit(t_label, (lx, ly))
 
         # -- Question text ---------------------------------------------
         qy = ty + TIMER_H

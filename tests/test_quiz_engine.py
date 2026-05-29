@@ -467,3 +467,92 @@ def test_active_property_lifecycle():
     eng.update(eng.WRONG_DISPLAY_TIME + 0.01)
     assert eng.active is False
     assert eng.state == QuizState.COMPLETE
+
+
+# ---------------------------------------------------------------------------
+# Timed vs untimed policy (2026-05-29 timer-policy change)
+# ---------------------------------------------------------------------------
+#
+# Policy: combat math attack is the ONE timed action. Every other quiz
+# (identify, lockpick, equip, prayer, cooking, magic, etc.) is untimed
+# so the kid can READ the substantive bank content. start_quiz auto-
+# detects via `subject == 'math'`; an explicit `timed=` kwarg overrides.
+
+
+def test_timed_defaults_to_true_for_math():
+    eng = QuizEngine()
+    eng._cache['math'] = _build_bank('math', 2)
+    _, cb = _captured_result()
+    eng.start_quiz('chain', 'math', tier=1, callback=cb)
+    assert eng.timed is True
+    assert eng.timer_seconds > 0
+    assert eng.time_remaining > 0
+
+
+def test_timed_defaults_to_false_for_non_math_subjects():
+    for subject in ('philosophy', 'economics', 'theology', 'cooking',
+                     'science', 'history', 'geography', 'grammar',
+                     'animal', 'ai', 'trivia'):
+        eng = QuizEngine()
+        eng._cache[subject] = _build_bank(subject, 2)
+        _, cb = _captured_result()
+        eng.start_quiz('threshold', subject, tier=1, callback=cb, threshold=2)
+        assert eng.timed is False, f"{subject} should be untimed by default"
+        assert eng.timer_seconds == 0
+        assert eng.time_remaining == 0.0
+
+
+def test_timed_explicit_override_true():
+    """Caller can force a timer on a non-math quiz if a future feature needs it."""
+    eng = QuizEngine()
+    eng._cache['philosophy'] = _build_bank('philosophy', 2)
+    _, cb = _captured_result()
+    eng.start_quiz('threshold', 'philosophy', tier=1, callback=cb,
+                    threshold=2, timed=True, base_seconds=20)
+    assert eng.timed is True
+    assert eng.timer_seconds > 0
+
+
+def test_timed_explicit_override_false_for_math():
+    """And conversely — caller can force-untime a math quiz for a debug/menu use."""
+    eng = QuizEngine()
+    eng._cache['math'] = _build_bank('math', 2)
+    _, cb = _captured_result()
+    eng.start_quiz('chain', 'math', tier=1, callback=cb, timed=False)
+    assert eng.timed is False
+    assert eng.timer_seconds == 0
+
+
+def test_untimed_quiz_update_does_not_tick():
+    """update(dt) must NOT decrement an untimed quiz's clock — it starts
+    at 0 and any decrement would auto-fail the quiz instantly."""
+    eng = QuizEngine()
+    eng._cache['philosophy'] = _build_bank('philosophy', 4)
+    _, cb = _captured_result()
+    eng.start_quiz('escalator_chain', 'philosophy', tier=1, callback=cb,
+                    max_chain=5)
+    assert eng.timed is False
+    assert eng.time_remaining == 0.0
+    # Tick a generous amount; the quiz must remain ASKING.
+    eng.update(60.0)
+    assert eng.state == QuizState.ASKING
+    assert eng.active is True
+    # time_remaining stays 0 — never decremented.
+    assert eng.time_remaining == 0.0
+
+
+def test_untimed_quiz_completes_via_chain_fail_not_timer():
+    """An untimed escalator-chain quiz must end when the kid gets one
+    wrong, NOT when the (zero) timer 'runs out' on the first _advance."""
+    eng = QuizEngine()
+    eng._cache['philosophy'] = _build_bank('philosophy', 4)
+    results, cb = _captured_result()
+    eng.start_quiz('escalator_chain', 'philosophy', tier=1, callback=cb,
+                    max_chain=5)
+    eng.answer(eng.current_question['answer'])  # right
+    eng.update(eng.RESULT_DISPLAY_TIME + 0.01)
+    assert eng.active is True  # still going, not timer-ended
+    eng.answer('wrong')
+    eng.update(eng.WRONG_DISPLAY_TIME + 0.01)
+    assert eng.active is False
+    assert results[0].score == 1

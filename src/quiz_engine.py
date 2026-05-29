@@ -98,7 +98,7 @@ class QuizEngine:
                    callback, threshold: int = 3, max_chain: int | None = None,
                    wisdom: int = 10, timer_modifier: float = 1.0,
                    extra_seconds: int = 0, base_seconds: int | None = None,
-                   total_qs: int | None = None):
+                   total_qs: int | None = None, timed: bool | None = None):
         """
         Start a quiz session.
           threshold     -- for threshold modes: number of correct answers needed.
@@ -107,10 +107,19 @@ class QuizEngine:
           timer_modifier -- multiplier on the base timer (e.g. 0.55 when confused).
           base_seconds  -- pre-computed base timer from Player.get_quiz_timer(subject).
                           If provided, replaces the legacy (10 + wisdom) calculation.
+          timed         -- True/False forces, None auto-detects from subject.
+                          Combat math attack is the ONE timed action (chain pressure
+                          + game-design speed). Every other quiz (identify, lockpick,
+                          equip, prayer, cooking, magic, etc.) is untimed so the kid
+                          can actually READ the substantive content the banks teach.
+                          See `proposals/v2_audit/10_quiz_engine.md` §timer policy.
           callback(QuizResult) is called when the quiz ends.
         """
         if isinstance(mode, str):
             mode = QuizMode(mode)
+        if timed is None:
+            # Default policy: only math (combat attack) is timed.
+            timed = (subject == 'math')
 
         all_qs = self.load_questions(subject)
         deck_key = (subject, tier)
@@ -141,11 +150,18 @@ class QuizEngine:
         self.max_chain = max_chain
         self.callback = callback
         self._timer_modifier = timer_modifier
-        if base_seconds is not None:
-            self.timer_seconds = round(base_seconds * timer_modifier) + extra_seconds
+        self.timed = timed
+        if not timed:
+            # Untimed quizzes (everything except combat math attack) carry
+            # no clock. The tick loop and the renderer both check `self.timed`.
+            self.timer_seconds = 0
+            self.time_remaining = 0.0
         else:
-            self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
-        self.time_remaining = float(self.timer_seconds)
+            if base_seconds is not None:
+                self.timer_seconds = round(base_seconds * timer_modifier) + extra_seconds
+            else:
+                self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
+            self.time_remaining = float(self.timer_seconds)
 
         self.score = 0
         self.chain = 0
@@ -216,7 +232,7 @@ class QuizEngine:
             return
 
         if self.state == QuizState.ASKING:
-            if self.time_remaining > 0:
+            if self.timed and self.time_remaining > 0:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
                 if self.time_remaining <= 0.0:
                     # Time's up -- count as a wrong answer and advance
@@ -289,8 +305,10 @@ class QuizEngine:
     def _advance(self):
         mode = self.mode
 
-        # Timer expired — no more questions; end immediately
-        if self.time_remaining <= 0:
+        # Timer expired — no more questions; end immediately.
+        # Skip this check for untimed quizzes (time_remaining is permanently 0
+        # by design); they end via chain-fail / threshold-met instead.
+        if self.timed and self.time_remaining <= 0:
             if mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
                 self._end(success=True)  # chain: score = chain length achieved
             else:
