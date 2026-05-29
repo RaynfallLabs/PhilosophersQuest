@@ -28,6 +28,7 @@ from game_states import (
     STATE_PLAYER, STATE_QUIZ,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT,
 )
+from geom import monster_at_tile, is_at_tile
 
 
 class EncountersMixin:

@@ -179,6 +179,11 @@ class Monster:
         'prefers_flank': False,
         'can_phase_blink': False, 'phase_blink_chance': 0.30,
         '_mimic_surprise': False,
+        # Footprint default — every saved Monster from before the
+        # multi-tile feature gets (1, 1) automatically. Live Monster
+        # instances set this in __init__; pickled instances inherit it
+        # through __getattr__ via this dict.
+        'footprint': (1, 1),
     }
 
     def __getattr__(self, name):

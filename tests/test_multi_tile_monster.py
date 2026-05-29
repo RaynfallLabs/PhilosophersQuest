@@ -324,6 +324,46 @@ def test_l60_boss_room_fits_fafnir_2x2_footprint():
             )
 
 
+def test_modules_using_monster_at_tile_actually_import_it():
+    """Regression for the launch-crash bug: main.py / game_magic.py /
+    game_encounters.py called `monster_at_tile(...)` without ever
+    importing it, raising `NameError` the first time the player tried
+    to move. Asserts every file that uses the symbol as a bare call
+    (not `geom.monster_at_tile`) also imports it."""
+    import re
+    # Match bare calls only: `monster_at_tile(` NOT preceded by a dot
+    # (so `geom.monster_at_tile(` in a comment doesn't trigger).
+    rx_call = re.compile(r"(?<![\.\w])(monster_at_tile|is_at_tile)\(")
+    # Match a real `from geom import ...` line that includes the name
+    rx_import = re.compile(
+        r"^from geom import[^\n]*\b(monster_at_tile|is_at_tile)\b",
+        re.MULTILINE,
+    )
+    src_root = ROOT / "src"
+    for py in sorted(src_root.glob("*.py")):
+        if py.name == "geom.py":
+            continue
+        text = py.read_text(encoding="utf-8")
+        if rx_call.search(text):
+            assert rx_import.search(text), (
+                f"{py.name} calls monster_at_tile/is_at_tile but doesn't "
+                f"import it from geom — will NameError at runtime"
+            )
+
+
+def test_monster_without_init_still_has_footprint():
+    """Regression for the launch-crash bug: pickle bypasses __init__,
+    so a Monster instance restored from a save file would have no
+    `footprint` attribute and `_can_move_to` would raise via the
+    custom __getattr__. The fix puts (1, 1) in _DEFAULTS so that
+    fallback path returns the right default."""
+    from monster import Monster
+    m = Monster.__new__(Monster)  # bypass __init__ — pickle-like
+    # The custom __getattr__ should fall back to _DEFAULTS for
+    # footprint, NOT raise AttributeError.
+    assert m.footprint == (1, 1)
+
+
 def test_l60_player_can_attack_any_of_fafnirs_tiles():
     """End-to-end sanity: in the live L60 level, every one of Fafnir's
     4 tiles routes through `monster_at_tile` correctly and returns

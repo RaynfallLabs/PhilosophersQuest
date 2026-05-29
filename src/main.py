@@ -21,6 +21,7 @@ from player import Player
 import sound_system as _snd
 from quiz_engine import QuizEngine
 from renderer import Renderer
+from geom import monster_at_tile, is_at_tile
 from ui import Sidebar, MessageLog
 from game_helpers import (
     migrate_buc_item, cycle_tab,

@@ -55,6 +55,7 @@ from game_states import (
 from items import Container
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
+from geom import monster_at_tile, is_at_tile
 
 if TYPE_CHECKING:
     from items import Scroll, Spellbook, Wand
