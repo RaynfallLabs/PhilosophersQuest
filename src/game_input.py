@@ -100,6 +100,22 @@ class InputMixin:
                     self._pet_special_targeting = False
                     self._pending_pet_special = None
                     self._pending_pet_special_pet = None
+                    # Refund MP if cancelling mid-targeted-spell (A2-3 fix).
+                    # _cast_spell deducts MP before STATE_TARGET; ESC must give it back.
+                    _pending_spell = getattr(self, '_pending_spell', None)
+                    if _pending_spell is not None:
+                        try:
+                            _mp_cost = int(_pending_spell.get('mp_cost', 0))
+                            if _mp_cost > 0:
+                                self.player.mp = min(self.player.max_mp,
+                                                      self.player.mp + _mp_cost)
+                                self.add_message(
+                                    f"You hold the {_pending_spell.get('name', 'spell')} unspoken — your magic returns.",
+                                    'info')
+                        except (AttributeError, TypeError, ValueError):
+                            pass
+                        self._pending_spell = None
+                        self._pending_spell_id = None
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:

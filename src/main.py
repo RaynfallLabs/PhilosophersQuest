@@ -3947,6 +3947,31 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif isinstance(item, Accessory):
             self._equip_accessory(item)
 
+    def _remove_status_if_no_other_grants(self, status: str) -> None:
+        """Pop a permanent status from the player only if no OTHER currently-
+        equipped item still grants it. Without this guard, unequipping any
+        one of N stacked items that grant the same status (e.g. two Rings of
+        Warning both granting 'warning') would drop the effect entirely.
+
+        Assumes the just-unequipped item has already been cleared from its
+        slot. See bug-bash A2-6.
+        """
+        from items import Accessory as _Acc
+        slot_iter = []
+        slot_iter.append(getattr(self.player, 'weapon', None))
+        slot_iter.append(getattr(self.player, 'shield', None))
+        slot_iter.extend(getattr(self.player, 'armor_slots', []) or [])
+        slot_iter.extend(getattr(self.player, 'accessory_slots', []) or [])
+        slot_iter.append(getattr(self.player, 'amulet_slot', None))
+        for other in slot_iter:
+            if other is None:
+                continue
+            if isinstance(other, _Acc):
+                ofx = getattr(other, 'effects', {}) or {}
+                if ofx.get('status') == status:
+                    return  # another item still grants this status — keep it
+        self.player.status_effects.pop(status, None)
+
     def _unequip_slot(self, slot_name: str, item):
         """Remove an equipped item and return it to inventory."""
         from items import ARMOR_SLOTS
@@ -3980,7 +4005,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if 'stat2' in fx:
                     self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
-                    self.player.status_effects.pop(fx['status'], None)
+                    self._remove_status_if_no_other_grants(fx['status'])
         elif slot_name == 'amulet':
             self.player.amulet_slot = None
             from items import Accessory as _Acc
@@ -3991,7 +4016,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if 'stat2' in fx:
                     self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
-                    self.player.status_effects.pop(fx['status'], None)
+                    self._remove_status_if_no_other_grants(fx['status'])
         self.player.inventory.append(item)
         self.add_message(f"You remove the {self._display_name(item)}.", 'info')
         _qs_uneq = getattr(self, 'quirk_system', None)
@@ -5009,11 +5034,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # queried lazily at the use-site (combat damage, regen tick, etc.).
         kind = blessing.get('kind')
         if kind == 'wisdom_bonus':
-            self.player.WIS += int(blessing.get('value', 0) or 0)
+            self.player.apply_stat_bonus('WIS', int(blessing.get('value', 0) or 0))
         elif kind == 'int_bonus':
-            self.player.INT += int(blessing.get('value', 0) or 0)
-            # Recompute INT-derived MP cap
-            self.player.max_mp = self.player.BASE_MP + self.player.INT
+            # Use apply_stat_bonus instead of direct INT += / max_mp = …
+            # The direct assignment STOMPS chain-equip max_mp_bonus and other
+            # contributors (Robe of the Magus etc.). apply_stat_bonus
+            # correctly increments via _intelligence_bonus + recomputes max_mp.
+            self.player.apply_stat_bonus('INT', int(blessing.get('value', 0) or 0))
         desc = blessing.get('desc', 'A subtle insight settles upon you.')
         self.add_message(f"Mastery of {fam} family attained! {desc}", 'success')
         self._log_chronicle(
