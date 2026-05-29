@@ -1816,6 +1816,11 @@ class RenderMixin:
         p.draw()
 
     def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
+        # Mirror _kit_draw_spells' truncate discipline — every cell is
+        # clipped to its column width minus an 8px gutter so text can never
+        # bleed into the neighbour column. See proposals/v2_audit/IDENTIFY_SYSTEM.md
+        # style: the rule lives at the seam where layout meets render.
+        from text_layout import truncate_label
         all_rows = self._kit_collect_items()
         rows = self._kit_filter_for_tab(all_rows, [t[1] for t in self._KIT_TABS].index(slug))
 
@@ -1844,10 +1849,14 @@ class RenderMixin:
                             max(0, len(rows) - max_visible)))
         self._kit_scroll = scroll
 
-        # Header row
+        GUTTER = 8  # px of guaranteed whitespace between columns
+
+        # Header row — clip too (long headers like "Material" usually fit,
+        # but the discipline is per-cell, no exceptions).
         cx = x
         for label, cw, _align in cols:
-            hdr = self.font_sm.render(label, True, FP.GOLD_PALE)
+            label_text = truncate_label(label, max(1, cw - GUTTER), self.font_sm)
+            hdr = self.font_sm.render(label_text, True, FP.GOLD_PALE)
             self.screen.blit(hdr, (cx, y))
             cx += cw
         draw_divider(self.screen, x, y + 22, w)
@@ -1862,9 +1871,11 @@ class RenderMixin:
             for (label, cw, align), text in zip(cols, cells):
                 if text is None:
                     text = ''
-                surf = self.font_sm.render(text, True, row_col)
+                cell_w = max(1, cw - GUTTER)
+                clipped = truncate_label(text, cell_w, self.font_sm)
+                surf = self.font_sm.render(clipped, True, row_col)
                 if align == 'right':
-                    self.screen.blit(surf, (cx + cw - 8 - surf.get_width(), ry))
+                    self.screen.blit(surf, (cx + cw - GUTTER - surf.get_width(), ry))
                 else:
                     self.screen.blit(surf, (cx, ry))
                 cx += cw
