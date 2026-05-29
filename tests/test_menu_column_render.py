@@ -69,3 +69,35 @@ def test_every_tabular_render_uses_truncate_label():
         f"`text = truncate_label(text, cell_w, font)` before it. See "
         f"_kit_draw_spells for the canonical pattern."
     )
+
+
+def test_no_direct_fit_columns_outside_shared_helper():
+    """The content-measure pattern lives in `_draw_measured_table`.
+    Any other method that directly imports `fit_columns` is duplicating
+    the seam — same bug pattern that bit the kit menu twice. New code
+    should call `self._draw_measured_table(...)` instead.
+
+    Pure layout helpers that only define column shapes (e.g.
+    `_kit_column_defs`) don't render anything and are allowed to call
+    fit_columns? Actually no — column defs do NOT call fit_columns;
+    they only construct Column tuples. So the only legitimate caller
+    of fit_columns IS the shared helper.
+    """
+    with open(SRC, encoding='utf-8') as f:
+        src = f.read()
+
+    offenders = []
+    for name, body in _split_top_level_methods(src):
+        if 'fit_columns' not in body:
+            continue
+        if name == '_draw_measured_table':
+            continue  # the canonical caller
+        offenders.append(name)
+
+    assert not offenders, (
+        f"Methods in game_render.py that call fit_columns(...) directly "
+        f"instead of going through _draw_measured_table(): {offenders}. "
+        f"The content-measure + render pattern lives in one place. "
+        f"Refactor the offender to call self._draw_measured_table(...) "
+        f"with col_defs + cells_per_row."
+    )

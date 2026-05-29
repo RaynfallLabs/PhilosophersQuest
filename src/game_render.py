@@ -521,6 +521,10 @@ class RenderMixin:
             slot_items.append((f"Ring {i+1}", acc))
         slot_items.append(('Amulet', p.amulet_slot))
 
+        # Truncate the item name so the full line never runs off the
+        # right edge of the panel. The full name is still discoverable
+        # in the inventory / Kit screens.
+        from text_layout import truncate_label
         for label, item in slot_items:
             if item:
                 name = self._display_name(item)
@@ -531,7 +535,12 @@ class RenderMixin:
                     suffix += f" +{enchant}" if enchant > 0 else f" {enchant}"
                 if cursed:
                     suffix += " {cursed}"
-                lines.append((f"  {label:8s}: {name}{suffix}", WHITE, font_body, False))
+                prefix = f"  {label:8s}: "
+                prefix_w = font_body.size(prefix)[0]
+                suffix_w = font_body.size(suffix)[0]
+                name_max = max(40, max_text_w - prefix_w - suffix_w)
+                name_fit = truncate_label(name, name_max, font_body)
+                lines.append((f"{prefix}{name_fit}{suffix}", WHITE, font_body, False))
             else:
                 lines.append((f"  {label:8s}: (empty)", DIM, font_body, False))
 
@@ -1815,15 +1824,110 @@ class RenderMixin:
 
         p.draw()
 
-    def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
-        # Content-measured columns: pre-walk all rows and size each fixed
-        # column to its actual widest cell (max of header width + every
-        # data cell width). Flex columns keep their declared min_w and
-        # absorb leftover space. This eliminates the "Material header
-        # truncated to 'Materi…'" problem from the previous static-min_w
-        # approach. Truncation is now a true backstop, fired only by the
-        # flex column on extreme content.
+    # --------------------------------------------------------------
+    # Shared content-measured table helper
+    # --------------------------------------------------------------
+    # Every column-table render in this file goes through here. The
+    # contract: fixed columns (flex=0) get sized to their actual content
+    # (max of header width + widest cell width + gutter); flex columns
+    # absorb leftover space by weight. Truncation is a backstop only.
+    # See proposals/v2_audit/IDENTIFY_SYSTEM.md §11 + the kit-menu fix
+    # commit 2026-05-28.
+    def _draw_measured_table(
+        self,
+        *,
+        x: int, y: int, w: int, h: int,
+        col_defs,
+        cells_per_row,
+        font,
+        header_color,
+        row_color_fn=None,
+        default_row_color=(200, 200, 200),
+        scroll: int = 0,
+        line_h: int = 24,
+        gutter: int = 12,
+        left_pad: int = 4,
+        header_y_offset: int = 0,
+        divider_y_offset: int = 22,
+        body_y_offset: int = 28,
+    ) -> tuple[int, int]:
+        """Render a column table with content-measured widths.
+
+        Args:
+          col_defs:        list[Column] — labels + flex weights + alignments.
+          cells_per_row:   list[list[str]] — every row's cell text. Used
+                            to measure column widths AND to render.
+          font:            pygame font for both header and cell text.
+          header_color:    color for the header row.
+          row_color_fn:    optional callable(row_index) -> color for the
+                            body row. Falls back to default_row_color.
+          default_row_color: used when row_color_fn is None.
+          scroll:          row index of the first visible row.
+
+        Returns: (max_visible_count, total_rows). The caller can use this
+                  to draw a scrollbar hint.
+        """
         from text_layout import Column, fit_columns, truncate_label
+        if not col_defs or not cells_per_row:
+            return 0, 0
+
+        max_visible = max(1, (h - body_y_offset) // line_h)
+        scroll = max(0, min(scroll, max(0, len(cells_per_row) - max_visible)))
+
+        # Measure: for each column, natural width = max(header width,
+        # widest cell in that column) + gutter. Flex columns floor at
+        # their declared min_w so they can still absorb leftover space.
+        measured_cols: list[Column] = []
+        for i, c in enumerate(col_defs):
+            natural = font.size(c.label)[0]
+            for cells in cells_per_row:
+                if i < len(cells):
+                    cell_text = str(cells[i] or '')
+                    natural = max(natural, font.size(cell_text)[0])
+            # Floor: header/content width OR declared min_w for flex cols.
+            min_w = max(natural, c.min_w if c.flex > 0 else 0) + gutter
+            measured_cols.append(Column(c.label, min_w, c.flex, c.align))
+
+        widths = fit_columns(measured_cols, w)
+        cols = [(c.label, ww, c.align) for c, ww in zip(measured_cols, widths)]
+
+        # Header row
+        cx = x
+        for label, cw, align in cols:
+            label_text = truncate_label(label, max(1, cw - gutter), font)
+            hdr = font.render(label_text, True, header_color)
+            if align == 'right':
+                self.screen.blit(hdr, (cx + cw - gutter - hdr.get_width(),
+                                        y + header_y_offset))
+            else:
+                self.screen.blit(hdr, (cx + left_pad, y + header_y_offset))
+            cx += cw
+        draw_divider(self.screen, x, y + divider_y_offset, w)
+
+        # Body rows
+        ry = y + body_y_offset
+        for idx, cells in enumerate(cells_per_row[scroll:scroll + max_visible],
+                                     start=scroll):
+            row_col = (row_color_fn(idx) if row_color_fn else default_row_color)
+            cx = x
+            for (label, cw, align), text in zip(cols, cells):
+                if text is None:
+                    text = ''
+                cell_w = max(1, cw - gutter)
+                clipped = truncate_label(str(text), cell_w, font)
+                surf = font.render(clipped, True, row_col)
+                if align == 'right':
+                    self.screen.blit(surf, (cx + cw - gutter - surf.get_width(), ry))
+                else:
+                    self.screen.blit(surf, (cx + left_pad, ry))
+                cx += cw
+            ry += line_h
+
+        return max_visible, len(cells_per_row)
+
+    def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
+        # Content-measured columns via the shared helper. Every column-
+        # table render in the game goes through _draw_measured_table.
         all_rows = self._kit_collect_items()
         rows = self._kit_filter_for_tab(all_rows, [t[1] for t in self._KIT_TABS].index(slug))
 
@@ -1844,87 +1948,36 @@ class RenderMixin:
             self.screen.blit(txt, (x, y + 10))
             return
 
-        line_h = 24
-        max_visible = max(1, (h - 28) // line_h)
-        scroll = max(0, min(getattr(self, '_kit_scroll', 0),
-                            max(0, len(rows) - max_visible)))
-        self._kit_scroll = scroll
-
-        GUTTER = 12  # px of inter-column whitespace (added to each column)
-        LEFT_PAD = 4  # px of padding inside a left-aligned cell
-
-        # Column definitions (label + flex + align). The legacy `min_w`
-        # field is now treated as a *fallback floor* for flex columns
-        # only; fixed columns get content-measured widths below.
         col_defs = self._kit_column_defs(slug)
         if not col_defs:
             return
 
-        # Pre-compute every visible cell so we can measure widths AND
-        # render from the same data. Measuring ALL rows (not just visible)
-        # keeps column widths stable when the user scrolls.
+        # Pre-compute every cell so the helper can measure + render
+        # from the same data. ALL rows (not just visible) measured so
+        # column widths stay stable across scrolls.
         cells_per_row = [self._kit_cells_for_item(slug, src, item)
                           for src, item in rows]
 
-        # Measure: for each column, natural width = max(header width,
-        # widest cell in that column) + GUTTER. Flex columns floor at
-        # their declared min_w so they can still absorb leftover space
-        # cleanly.
-        measured_cols: list[Column] = []
-        for i, c in enumerate(col_defs):
-            natural = self.font_sm.size(c.label)[0]
-            for cells in cells_per_row:
-                if i < len(cells):
-                    cell_text = str(cells[i] or '')
-                    natural = max(natural, self.font_sm.size(cell_text)[0])
-            # Floor: header label width OR declared min_w, whichever is
-            # larger. Flex columns then add their elastic share on top.
-            min_w = max(natural, c.min_w if c.flex > 0 else 0) + GUTTER
-            measured_cols.append(Column(c.label, min_w, c.flex, c.align))
+        # Row color is per-row (equipped vs floor vs pack)
+        row_colors = [self._KIT_SRC_COLOR.get(src, (200, 200, 200))
+                       for src, _ in rows]
 
-        # fit_columns honors content widths for fixed cols, distributes
-        # leftover to flex cols by weight. If total still overflows
-        # (rare), it shrinks proportionally — truncate backstops that.
-        widths = fit_columns(measured_cols, w)
-        cols = [(c.label, ww, c.align) for c, ww in zip(measured_cols, widths)]
+        scroll = max(0, getattr(self, '_kit_scroll', 0))
+        max_visible, total = self._draw_measured_table(
+            x=x, y=y, w=w, h=h,
+            col_defs=col_defs,
+            cells_per_row=cells_per_row,
+            font=self.font_sm,
+            header_color=FP.GOLD_PALE,
+            row_color_fn=lambda i: row_colors[i],
+            scroll=scroll,
+        )
+        # Clamp self._kit_scroll after the helper has computed max_visible
+        self._kit_scroll = max(0, min(scroll, max(0, total - max_visible)))
 
-        # Header row — column widths are now sized to fit headers
-        # naturally, but keep truncate as defensive backstop.
-        cx = x
-        for label, cw, align in cols:
-            label_text = truncate_label(label, max(1, cw - GUTTER), self.font_sm)
-            hdr = self.font_sm.render(label_text, True, FP.GOLD_PALE)
-            if align == 'right':
-                self.screen.blit(hdr, (cx + cw - GUTTER - hdr.get_width(), y))
-            else:
-                self.screen.blit(hdr, (cx + LEFT_PAD, y))
-            cx += cw
-        draw_divider(self.screen, x, y + 22, w)
-
-        # Body rows
-        ry = y + 28
-        for cells, (src, _item) in zip(
-                cells_per_row[scroll:scroll + max_visible],
-                rows[scroll:scroll + max_visible]):
-            cx = x
-            row_col = self._KIT_SRC_COLOR.get(src, (200, 200, 200))
-            for (label, cw, align), text in zip(cols, cells):
-                if text is None:
-                    text = ''
-                cell_w = max(1, cw - GUTTER)
-                clipped = truncate_label(text, cell_w, self.font_sm)
-                surf = self.font_sm.render(clipped, True, row_col)
-                if align == 'right':
-                    self.screen.blit(surf, (cx + cw - GUTTER - surf.get_width(), ry))
-                else:
-                    self.screen.blit(surf, (cx + LEFT_PAD, ry))
-                cx += cw
-            ry += line_h
-
-        # Scrollbar hint
-        if len(rows) > max_visible:
+        if total > max_visible:
             tag = self.font_sm.render(
-                f"{scroll + 1}-{min(scroll + max_visible, len(rows))} of {len(rows)}",
+                f"{self._kit_scroll + 1}-{min(self._kit_scroll + max_visible, total)} of {total}",
                 True, FP.FADED_TEXT)
             self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
 
@@ -2229,53 +2282,43 @@ class RenderMixin:
         return '-'
 
     def _kit_draw_spells(self, x: int, y: int, w: int, h: int):
-        from text_layout import Column, fit_columns, truncate_label
+        # Content-measured columns via the shared helper. Spell + Description
+        # are flex columns; Tier + MP get sized to their actual content
+        # (which is small, so they end up nicely tight).
+        from text_layout import Column
         rows = self._kit_collect_spells()
         if not rows:
             txt = self.font_sm.render("(you have learned no spells yet)",
                                       True, FP.FADED_TEXT)
             self.screen.blit(txt, (x, y + 10))
             return
-        # Responsive columns — Description gets all the leftover space.
         col_defs = [
-            Column('Spell',       220, flex=2, align='left'),
-            Column('Tier',         44, flex=0, align='right'),
-            Column('MP',           44, flex=0, align='right'),
-            Column('Description', 240, flex=4, align='left'),
+            Column('Spell',       180, flex=2, align='left'),
+            Column('Tier',          0, flex=0, align='right'),
+            Column('MP',            0, flex=0, align='right'),
+            Column('Description', 200, flex=4, align='left'),
         ]
-        widths = fit_columns(col_defs, w)
-        cols = [(c.label, wid, c.align) for c, wid in zip(col_defs, widths)]
-
-        line_h = 24
-        max_visible = max(1, (h - 28) // line_h)
-        scroll = max(0, min(getattr(self, '_kit_scroll', 0),
-                            max(0, len(rows) - max_visible)))
-        self._kit_scroll = scroll
-        cx = x
-        for label, cw, _align in cols:
-            hdr = self.font_sm.render(label, True, FP.GOLD_PALE)
-            self.screen.blit(hdr, (cx, y))
-            cx += cw
-        draw_divider(self.screen, x, y + 22, w)
-        ry = y + 28
-        for r in rows[scroll:scroll + max_visible]:
-            cells = [r['name'],
-                     f"T{r['quiz_tier']}" if r['quiz_tier'] else '-',
-                     str(r['mp_cost']),
-                     r['desc']]
-            cx = x
-            for (label, cw, align), text in zip(cols, cells):
-                clipped = truncate_label(text, cw - 8, self.font_sm)
-                surf = self.font_sm.render(clipped, True, FP.BODY_TEXT)
-                if align == 'right':
-                    self.screen.blit(surf, (cx + cw - 8 - surf.get_width(), ry))
-                else:
-                    self.screen.blit(surf, (cx, ry))
-                cx += cw
-            ry += line_h
-        if len(rows) > max_visible:
+        cells_per_row = [
+            [r['name'],
+             f"T{r['quiz_tier']}" if r['quiz_tier'] else '-',
+             str(r['mp_cost']),
+             r['desc']]
+            for r in rows
+        ]
+        scroll = max(0, getattr(self, '_kit_scroll', 0))
+        max_visible, total = self._draw_measured_table(
+            x=x, y=y, w=w, h=h,
+            col_defs=col_defs,
+            cells_per_row=cells_per_row,
+            font=self.font_sm,
+            header_color=FP.GOLD_PALE,
+            default_row_color=FP.BODY_TEXT,
+            scroll=scroll,
+        )
+        self._kit_scroll = max(0, min(scroll, max(0, total - max_visible)))
+        if total > max_visible:
             tag = self.font_sm.render(
-                f"{scroll + 1}-{min(scroll + max_visible, len(rows))} of {len(rows)}",
+                f"{self._kit_scroll + 1}-{min(self._kit_scroll + max_visible, total)} of {total}",
                 True, FP.FADED_TEXT)
             self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
 
