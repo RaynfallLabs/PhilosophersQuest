@@ -289,4 +289,123 @@ end-to-end quiz flow — see `CLAUDE.md` Play-test Rule.
 | `src/main.py:4966 _claim_monster_family_mastery` | Corpse family-mastery application |
 | `src/class_masteries.py` | `get_mastery_class()` + `CLASS_MASTERY_BLESSINGS` for commons |
 | `src/monster_classes.py` | `get_monster_family()` + `MONSTER_FAMILY_BLESSINGS` for corpses |
-| `tests/test_identify.py` | Pure-function tests (35 as of 2026-05-28) |
+| `tests/test_identify.py` | Pure-function tests (47 as of 2026-05-28) |
+
+---
+
+## §11 Item-name composition (added 2026-05-28)
+
+Common items (weapons / armor / shields generated from a template +
+material) have two display names — `name` (identified) and
+`unidentified_name`. Both are composed at instantiation time in
+`items.py`.
+
+### The bug this section documents fixing
+
+Naive compose was:
+```python
+name              = f"{mat['name']} {tpl['name']}"
+unidentified_name = f"{mat['unidentified_descriptor']} {tpl['name']}"
+```
+
+Two structural problems with the JSON data this concat couldn't see:
+
+1. **Templates carry the material word.** 32 of ~50 armor/shield
+   templates have a material word baked into their `name` field
+   ("light wooden shield", "iron boots", "chain shirt"). Naive concat
+   with the material prefix produced "oak light wooden shield" or
+   "iron iron boots" — material doubled.
+2. **Material `unidentified_descriptor`s are written as noun
+   phrases**, not adjective phrases. Many start with an article ("a
+   wooden plank") or end in an object noun ("a faintly blue blade").
+   Worse: shields fall back to the weapons material pool when an
+   armor-pool material isn't found (`get_material('armor', id) or
+   get_material('weapons', id)`), so a wooden shield could get a
+   weapon-specific descriptor ending in "blade" or "haft", producing
+   "a wooden haft light wooden shield".
+
+The user's report: "pale fibrous wood light round wood shield" — same
+shape: weapon-pool ash descriptor `"a pale fibrous wood"` + shield
+template `"light wooden shield"`.
+
+### The fix (no JSON edits)
+
+Two pure helpers in `items.py` normalize each side before concat:
+
+```python
+def _strip_redundant_material_words(tpl_name: str) -> str:
+    """'light wooden shield' -> 'light shield'; 'iron boots' -> 'boots';
+    'tower shield' -> 'tower shield' (unchanged). Never strips to empty."""
+
+def _normalize_descriptor(desc: str) -> str:
+    """'a wooden plank' -> 'wooden'; 'a faintly blue blade' -> 'faintly blue';
+    'pale silvery metal' -> 'pale silvery metal' (unchanged). Strips a
+    leading article and trailing object-noun. Never strips to empty."""
+
+def compose_item_name(mat_name, tpl_name):
+    return f"{mat_name} {_strip_redundant_material_words(tpl_name)}".strip()
+
+def compose_unidentified_name(mat_descriptor, tpl_name):
+    cleaned_desc = _normalize_descriptor(mat_descriptor)
+    cleaned_tpl  = _strip_redundant_material_words(tpl_name)
+    return f"{cleaned_desc} {cleaned_tpl}".strip()
+```
+
+Wired into all three `instantiate_*` functions
+(`instantiate_weapon`, `instantiate_armor`, `instantiate_shield`).
+
+### Strip lists
+
+These const sets in `items.py` define what counts as "generic material
+word" and "weapon-specific tail noun". Add to them if a future template
+or material descriptor surfaces a new offender:
+
+```python
+GENERIC_MATERIAL_WORDS = {
+    'wood', 'wooden', 'iron', 'steel', 'leather', 'plate',
+    'chain', 'cloth', 'silk', 'linen', 'hide', 'padded',
+    'studded', 'scale', 'bronze', 'silver', 'gold', 'mithril',
+    'banded', 'ringmail', 'chainmail', 'splint',
+}
+DESCRIPTOR_TAIL_NOUNS = {
+    'blade', 'haft', 'timber', 'plank', 'plate', 'board',
+    'hide', 'cloth', 'fabric', 'leather', 'weapon', 'thing',
+}
+```
+
+Note: `'wood'` is in `GENERIC_MATERIAL_WORDS` but NOT in
+`DESCRIPTOR_TAIL_NOUNS`. That's deliberate — the descriptor side keeps
+"wood" because it carries the pre-identify material hint to the
+player ("pale fibrous wood ... shield" tells them it's some kind of
+wood before they know it's ash). The template side strips "wood" /
+"wooden" because the material prefix already conveys that.
+
+### Worked examples
+
+| material | template | before (identified) | after | before (unidentified) | after |
+|---|---|---|---|---|---|
+| oak | light wooden shield | oak light wooden shield | **oak light shield** | a wooden plank light wooden shield | **wooden light shield** |
+| ash | light wooden shield | ash light wooden shield | **ash light shield** | a pale fibrous wood light wooden shield | **pale fibrous wood light shield** |
+| iron | iron boots | iron iron boots | **iron boots** | a plain blade iron boots | **plain boots** |
+| steel | plate helm | steel plate helm | **steel helm** | well-forged steel plate helm | **well-forged steel helm** |
+| mithril | plate helm | mithril plate helm | **mithril helm** | pale silvery metal plate helm | **pale silvery metal helm** |
+| oak | kite shield | oak kite shield (unchanged) | oak kite shield | a wooden plank kite shield | **wooden kite shield** |
+
+### Why runtime, not data rewrite
+
+Fixing the 32 templates' `name` fields and 30 materials' descriptors
+in JSON would be the "more proper" fix, but:
+
+1. The runtime helpers work on any future template/material data the
+   same way — they enforce the rule structurally rather than relying
+   on every author getting the data right.
+2. Existing save games already store composed names on item
+   instances; a data rewrite wouldn't fix those.
+3. The helpers are testable and have invariants (never strip to
+   empty, idempotent on already-clean strings) the data couldn't
+   express.
+
+If a future material descriptor or template name shows a new failure
+mode (some word that's neither a generic-material nor a tail-noun but
+still wrong), add it to the appropriate const set and the
+test_identify.py composition tests.

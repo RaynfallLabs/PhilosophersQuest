@@ -431,3 +431,118 @@ def test_progress_marker_clamps_out_of_range():
 def test_progress_marker_handles_none():
     """getattr(item, 'id_level', 0) can return None for legacy save data."""
     assert id_progress_marker(None) == "  (0/5)"
+
+
+# ---------------------------------------------------------------------------
+# Item-name composition (2026-05-28 fix): material descriptor + template
+# name should produce a natural noun phrase, not "a wooden plank light
+# wooden shield". See IDENTIFY_SYSTEM.md §11.
+# ---------------------------------------------------------------------------
+
+from items import (compose_item_name, compose_unidentified_name,
+                    _strip_redundant_material_words, _normalize_descriptor)
+
+
+def test_strip_material_words_from_template():
+    # The user's scenario: shield template "light wooden shield" + material
+    # "oak" should NOT produce "oak light wooden shield" — wooden is
+    # redundant with "oak" (a wood).
+    assert _strip_redundant_material_words("light wooden shield") == "light shield"
+    assert _strip_redundant_material_words("heavy wooden shield") == "heavy shield"
+    assert _strip_redundant_material_words("iron boots") == "boots"
+    assert _strip_redundant_material_words("plate helm") == "helm"
+    assert _strip_redundant_material_words("chain shirt") == "shirt"
+    assert _strip_redundant_material_words("leather gloves") == "gloves"
+
+
+def test_strip_material_words_leaves_non_material_templates_alone():
+    assert _strip_redundant_material_words("tower shield") == "tower shield"
+    assert _strip_redundant_material_words("kite shield") == "kite shield"
+    assert _strip_redundant_material_words("buckler") == "buckler"
+    assert _strip_redundant_material_words("breastplate") == "breastplate"
+
+
+def test_strip_material_words_never_returns_empty():
+    # Edge case: the entire template name is generic material words.
+    # We must not strip to "" — better to leave the original than
+    # render a nameless item.
+    assert _strip_redundant_material_words("leather") == "leather"
+    assert _strip_redundant_material_words("chainmail") == "chainmail"
+    assert _strip_redundant_material_words("") == ""
+
+
+def test_normalize_descriptor_strips_article_and_tail_noun():
+    # The exact descriptors that produced the user's bug:
+    assert _normalize_descriptor("a wooden plank") == "wooden"
+    assert _normalize_descriptor("a faintly blue blade") == "faintly blue"
+    assert _normalize_descriptor("a pale fibrous wooden plate") == "pale fibrous wooden"
+    assert _normalize_descriptor("a wooden haft") == "wooden"
+    assert _normalize_descriptor("an oddly-glossy fabric") == "oddly-glossy"
+
+
+def test_normalize_descriptor_leaves_adjective_phrases_alone():
+    assert _normalize_descriptor("pale silvery metal") == "pale silvery metal"
+    assert _normalize_descriptor("rune-chased") == "rune-chased"
+    assert _normalize_descriptor("dense black metal") == "dense black metal"
+    assert _normalize_descriptor("rivet-studded leather") == "rivet-studded"
+
+
+def test_normalize_descriptor_never_returns_empty():
+    # If everything strips, keep the original — better to look weird
+    # than to lose all flavor signal.
+    assert _normalize_descriptor("a plank") == "a plank"  # would strip to ''
+    assert _normalize_descriptor("the blade") == "the blade"
+    assert _normalize_descriptor("") == ""
+
+
+def test_compose_item_name_user_scenario():
+    """The exact bug the user reported, end-to-end through the
+    identified path: oak material + light_wooden_shield template should
+    NOT produce 'oak light wooden shield'."""
+    assert compose_item_name("oak", "light wooden shield") == "oak light shield"
+
+
+def test_compose_item_name_no_change_when_no_overlap():
+    assert compose_item_name("oak", "tower shield") == "oak tower shield"
+    assert compose_item_name("mithril", "buckler") == "mithril buckler"
+
+
+def test_compose_item_name_handles_iron_iron_collision():
+    # iron + iron_boots template -> "iron boots", not "iron iron boots".
+    assert compose_item_name("iron", "iron boots") == "iron boots"
+    # steel + iron_boots template -> "steel boots" (the iron in the
+    # template name is now redundant once we have a specific material).
+    assert compose_item_name("steel", "iron boots") == "steel boots"
+
+
+def test_compose_unidentified_name_user_scenario():
+    """The exact wonky string the user reported: 'a pale fibrous wood
+    light round wood shield' (approximate) was produced by composing
+    a noun-phrase descriptor with a material-baked template name. After
+    the fix:
+      - article "a" is stripped from the descriptor
+      - "wooden" is stripped from the template (redundant with descriptor)
+      - generic material adjective "wood" in the descriptor is KEPT (it
+        carries the pre-identify hint about what the material might be)
+    Result reads as a natural noun phrase rather than a glued-together
+    mess: 'pale fibrous wood light shield'.
+    """
+    # ash (weapons-pool) has unidentified_descriptor "a pale fibrous wood"
+    result = compose_unidentified_name("a pale fibrous wood", "light wooden shield")
+    assert result == "pale fibrous wood light shield", f"unexpected: {result!r}"
+    # Critically: the word "wood" does NOT appear twice anymore.
+    assert result.lower().count("wood") == 1
+
+
+def test_compose_unidentified_name_oak_shield():
+    # oak's unidentified_descriptor is "a wooden plank"
+    result = compose_unidentified_name("a wooden plank", "light wooden shield")
+    # Article stripped, tail noun "plank" stripped, then "wooden" left
+    # as adjective. Template strips "wooden". Result reads naturally.
+    assert result == "wooden light shield"
+
+
+def test_compose_unidentified_name_no_overlap():
+    # mithril descriptor is "pale silvery metal" (adjective phrase already)
+    result = compose_unidentified_name("pale silvery metal", "plate helm")
+    assert result == "pale silvery metal helm"

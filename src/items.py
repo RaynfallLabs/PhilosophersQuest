@@ -672,6 +672,113 @@ def get_material(category: str, material_id: str) -> dict | None:
     return load_materials(category).get(material_id)
 
 
+# ----------------------------------------------------------------------
+# Item-name composition (2026-05-28)
+# ----------------------------------------------------------------------
+# Many armor/shield templates carry a material word in their `name`
+# field ("iron boots", "light wooden shield", "chain shirt"). Many
+# material `unidentified_descriptor`s are written as noun phrases with
+# leading articles and weapon-specific tail nouns ("a wooden plank",
+# "a faintly blue blade"). The naive concat in the original compose
+# logic produced "a wooden plank light wooden shield" — material word
+# duplicated, ungrammatical, and overflowing the Kit menu.
+#
+# These helpers normalize both sides BEFORE concat so the result reads
+# like a real noun phrase. No JSON edits required — they make existing
+# data compose correctly.
+#
+# See proposals/v2_audit/IDENTIFY_SYSTEM.md §11 (Item-name composition).
+
+GENERIC_MATERIAL_WORDS = frozenset({
+    'wood', 'wooden', 'iron', 'steel', 'leather', 'plate',
+    'chain', 'cloth', 'silk', 'linen', 'hide', 'padded',
+    'studded', 'scale', 'bronze', 'silver', 'gold', 'mithril',
+    'banded', 'ringmail', 'chainmail', 'splint',
+})
+
+# Tail nouns that appear at the END of material `unidentified_descriptor`
+# values and don't compose as adjectives. "a wooden plank" -> strip
+# "plank" leaves "wooden", which composes correctly with a template name.
+DESCRIPTOR_TAIL_NOUNS = frozenset({
+    'blade', 'haft', 'timber', 'plank', 'plate', 'board',
+    'hide', 'cloth', 'fabric', 'leather', 'weapon', 'thing',
+})
+
+_LEADING_ARTICLES = frozenset({'a', 'an', 'the'})
+
+
+def _strip_redundant_material_words(tpl_name: str) -> str:
+    """Drop generic material words from a template name so they don't
+    duplicate the material prefix.
+
+    >>> _strip_redundant_material_words("light wooden shield")
+    'light shield'
+    >>> _strip_redundant_material_words("iron boots")
+    'boots'
+    >>> _strip_redundant_material_words("tower shield")  # no material word
+    'tower shield'
+    >>> _strip_redundant_material_words("leather")  # whole name is generic
+    'leather'
+    """
+    if not tpl_name:
+        return tpl_name
+    cleaned = ' '.join(w for w in tpl_name.split()
+                       if w.lower() not in GENERIC_MATERIAL_WORDS).strip()
+    # If everything stripped (e.g. tpl_name was "leather"), keep original
+    # so we don't end up with empty strings — the material prefix will
+    # carry the meaning.
+    return cleaned or tpl_name
+
+
+def _normalize_descriptor(desc: str) -> str:
+    """Turn a noun-phrase `unidentified_descriptor` into an adjective
+    phrase. Strips a leading article and any trailing object-noun.
+
+    >>> _normalize_descriptor("a wooden plank")
+    'wooden'
+    >>> _normalize_descriptor("a faintly blue blade")
+    'faintly blue'
+    >>> _normalize_descriptor("rune-chased plate")  # no article, noun tail
+    'rune-chased'
+    >>> _normalize_descriptor("pale silvery metal")  # no article, no tail noun
+    'pale silvery metal'
+    >>> _normalize_descriptor("a plank")  # everything strips
+    'a plank'
+    """
+    if not desc:
+        return desc
+    words = desc.split()
+    # Strip leading article (a / an / the).
+    if words and words[0].lower() in _LEADING_ARTICLES:
+        words = words[1:]
+    # Strip trailing object-nouns one at a time. Multiple in a row are
+    # rare but possible ("plate blade" — neither is real, but if it
+    # happened we'd want both gone).
+    while words and words[-1].lower().rstrip(',.;') in DESCRIPTOR_TAIL_NOUNS:
+        words.pop()
+    cleaned = ' '.join(words).strip()
+    # If everything stripped, fall back to the original — better to look
+    # weird than to lose all flavor.
+    return cleaned or desc
+
+
+def compose_item_name(material_name: str, template_name: str) -> str:
+    """Identified-form item name. Strips redundant material words from
+    the template so 'steel' + 'iron boots' renders as 'steel boots',
+    not 'steel iron boots'."""
+    cleaned = _strip_redundant_material_words(template_name)
+    return f"{material_name} {cleaned}".strip()
+
+
+def compose_unidentified_name(material_descriptor: str, template_name: str) -> str:
+    """Unidentified-form item name. Normalizes both the descriptor
+    (drop article, drop tail-noun) and the template (drop redundant
+    material words) before composing."""
+    cleaned_desc = _normalize_descriptor(material_descriptor)
+    cleaned_tpl = _strip_redundant_material_words(template_name)
+    return f"{cleaned_desc} {cleaned_tpl}".strip()
+
+
 def instantiate_weapon(template_id: str, material_id: str, *,
                        enchant: int = 0, buc: str = 'uncursed',
                        x: int = 0, y: int = 0) -> Weapon:
@@ -719,7 +826,7 @@ def instantiate_weapon(template_id: str, material_id: str, *,
                                * float(tpl.get('damage_modifier', 1.0))))
 
     weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
-    name = f"{mat['name']} {tpl['name']}"
+    name = compose_item_name(mat['name'], tpl['name'])
     lore = _compose_common_lore(tpl, mat, name, item_noun_for_weapon(tpl))
 
     defn = {
@@ -743,7 +850,8 @@ def instantiate_weapon(template_id: str, material_id: str, *,
         'crit_multiplier': float(tpl.get('crit_multiplier', 1.5)),
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
         'identified': False,
-        'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
+        'unidentified_name': compose_unidentified_name(
+            mat.get('unidentified_descriptor', mat['name']), tpl['name']),
         'buc': buc,
         'requires_ammo': tpl.get('requires_ammo', None),
         'infinite_ammo': bool(tpl.get('infinite_ammo', False)),
@@ -830,7 +938,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
     base_ac = int(tpl.get('base_ac_value', 1))
     material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
-    name = f"{mat['name']} {tpl['name']}"
+    name = compose_item_name(mat['name'], tpl['name'])
 
     defn = {
         'id': f"{material_id}_{template_id}",
@@ -848,7 +956,8 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
         'damage_resistances': mat.get('resistances', {}) if isinstance(mat.get('resistances'), dict) else {},
         'identified': False,
-        'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
+        'unidentified_name': compose_unidentified_name(
+            mat.get('unidentified_descriptor', mat['name']), tpl['name']),
         'buc': buc,
         'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
     }
@@ -871,7 +980,7 @@ def instantiate_shield(template_id: str, material_id: str, *,
     base_ac = int(tpl.get('base_ac_value', 1))
     material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
-    name = f"{mat['name']} {tpl['name']}"
+    name = compose_item_name(mat['name'], tpl['name'])
     defn = {
         'id': f"{material_id}_{template_id}",
         'name': name,
@@ -886,7 +995,8 @@ def instantiate_shield(template_id: str, material_id: str, *,
         'ac_bonus': base_ac + material_ac,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
         'identified': False,
-        'unidentified_name': f"{mat.get('unidentified_descriptor', mat['name'])} {tpl['name']}",
+        'unidentified_name': compose_unidentified_name(
+            mat.get('unidentified_descriptor', mat['name']), tpl['name']),
         'buc': buc,
         'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
     }
