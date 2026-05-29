@@ -342,26 +342,32 @@ class Sidebar:
                 known = (not hasattr(item, 'identified')
                          or item.identified
                          or item.id in player.known_item_ids)
-                iname = item.name if known else getattr(item, 'unidentified_name', item.name)
-                # Show ammo count for ranged weapons
+                base_name = item.name if known else getattr(item, 'unidentified_name', item.name)
+                # Compose modifier suffix (enchant + cursed flag + ammo count).
+                # Suffix order: critical info FIRST (enchant, curse), then
+                # ammo count which is least urgent. Truncate the BASE NAME
+                # if needed \u2014 never let the suffix get eaten by truncate.
+                # See bug-bash A1-3.
+                suffix = ""
+                if getattr(item, 'identified', True):
+                    eb = getattr(item, 'enchant_bonus', 0)
+                    if eb > 0:
+                        suffix += f" +{eb}"
+                    elif eb < 0:
+                        suffix += f" {eb}"
+                    if getattr(item, 'cursed', False):
+                        suffix += " {C}"
+                ammo_suffix = ""
                 if key == "ranged_weapon" and getattr(item, 'requires_ammo', None):
                     ammo_type = item.requires_ammo
                     total = sum(
                         i.count for i in player.inventory
                         if getattr(i, 'ammo_type', None) == ammo_type
                     )
-                    iname += f" [{total} {ammo_type}s]"
-                # Modifiers only revealed when this specific instance was examined
-                if getattr(item, 'identified', True):
-                    eb = getattr(item, 'enchant_bonus', 0)
-                    if eb > 0:
-                        iname += f" +{eb}"
-                    elif eb < 0:
-                        iname += f" {eb}"
-                    if getattr(item, 'cursed', False):
-                        iname += " {C}"
+                    ammo_suffix = f" [{total}]"
+                iname_pieces = (base_name, suffix, ammo_suffix)  # placeholder; rendered below
             else:
-                iname = "\u2014"
+                iname_pieces = ("\u2014", "", "")
             # FANTASY: Gold-pale for equipped items, SLOT_EMPTY for empty
             ic = FP.GOLD_PALE if item else FP.SLOT_EMPTY
             # FANTASY: FADED_TEXT label color
@@ -369,7 +375,13 @@ class Sidebar:
             self.screen.blit(label_surf, (self.x + self.PAD, y))
             name_x = self.x + self.PAD + label_surf.get_width() + 5
             max_name_w = self.x + self.w - self.PAD - name_x
-            iname = self._fit(self._fsm, self._cap(iname), max_name_w)
+            base_part, suf_part, ammo_part = iname_pieces
+            # Truncate the BASE NAME so the suffix and ammo info always fit.
+            suf_w = self._fsm.size(suf_part)[0] if suf_part else 0
+            ammo_w = self._fsm.size(ammo_part)[0] if ammo_part else 0
+            name_budget = max(40, max_name_w - suf_w - ammo_w)
+            fitted_base = self._fit(self._fsm, self._cap(base_part), name_budget)
+            iname = f"{fitted_base}{suf_part}{ammo_part}"
             self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
             y += 22
         # Philosopher's Shard -- passive carry indicator (not an equip slot)

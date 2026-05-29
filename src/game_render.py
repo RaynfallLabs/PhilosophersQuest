@@ -1640,17 +1640,22 @@ class RenderMixin:
         sy = strip_y + 10
 
         # -- Left: monster name + HP bar -------------------------------
+        from text_layout import truncate_label
         lx       = bx + 22
+        rx       = bx + 320  # right-column anchor (must match below)
         hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
         hp_color = (
             FP.SUCCESS_TEXT if hp_ratio > 0.50 else
             FP.WARNING_TEXT if hp_ratio > 0.25 else
             FP.DANGER_TEXT
         )
-        name_surf = self.font_sm.render(
-            f"{monster.name.upper()}   {monster.hp}/{monster.max_hp} HP",
-            True, FP.GOLD_PALE
-        )
+        # Truncate the monster name so it can't bleed into the right column
+        # (long uniques like "the Greater Spectral Knight of Caer Llion"
+        # previously clobbered the WEAKNESS!/RESISTED label). See A1-2.
+        max_name_w = max(40, rx - lx - 16)
+        full_name_text = f"{monster.name.upper()}   {monster.hp}/{monster.max_hp} HP"
+        name_text_fit = truncate_label(full_name_text, max_name_w, self.font_sm)
+        name_surf = self.font_sm.render(name_text_fit, True, FP.GOLD_PALE)
         self.screen.blit(name_surf, (lx, sy))
 
         hb_y, hb_w = sy + 18, 260
@@ -1662,12 +1667,13 @@ class RenderMixin:
 
         effects = [e for e, v in monster.status_effects.items() if v > 0]
         if effects:
-            eff = self.font_sm.render("  ".join(f"[{e}]" for e in effects[:5]),
-                                       True, FP.WARNING_TEXT)
+            # Also clip the effects row so long status names can't bleed.
+            eff_text = "  ".join(f"[{e}]" for e in effects[:5])
+            eff_text_fit = truncate_label(eff_text, max_name_w, self.font_sm)
+            eff = self.font_sm.render(eff_text_fit, True, FP.WARNING_TEXT)
             self.screen.blit(eff, (lx, hb_y + 16))
 
         # -- Right: damage preview + weapon ---------------------------
-        rx      = bx + 320
         base    = weapon.base_damage  if weapon else 4
         enchant = weapon.enchant_bonus if weapon else 0
         mults   = weapon.chain_multipliers if weapon else [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
@@ -3008,6 +3014,11 @@ class RenderMixin:
                 "No active companions. Throw a Soul Sphere to summon one.",
                 True, FP.BODY_TEXT)
             self.screen.blit(empty, (bx + 30, y))
+            # Footer hint even on empty (bug-bash A1: prevented panel from
+            # leaving the user with no exit instruction).
+            hint = self.font_sm.render("ESC: close", True, FP.HINT_TEXT)
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2,
+                                     by + bh - 24))
             return
         # Pet roster
         for idx, pet in enumerate(items[:8]):
@@ -3087,6 +3098,9 @@ class RenderMixin:
             msg = "No specials unlocked yet. Evolve this pet to learn them."
             s = self.font_md.render(msg, True, FP.HINT_TEXT)
             self.screen.blit(s, (bx + (bw - s.get_width()) // 2, y))
+            hint = self.font_sm.render("ESC: back", True, FP.HINT_TEXT)
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2,
+                                     by + bh - 24))
             return
         for idx, sp in enumerate(items):
             tag = self._LETTERS[idx]
@@ -3121,6 +3135,9 @@ class RenderMixin:
             msg = "Nothing applicable in your inventory."
             s = self.font_md.render(msg, True, FP.HINT_TEXT)
             self.screen.blit(s, (bx + (bw - s.get_width()) // 2, y))
+            hint = self.font_sm.render("ESC: back", True, FP.HINT_TEXT)
+            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2,
+                                     by + bh - 24))
             return
         for idx, it in enumerate(items[:20]):
             tag = self._LETTERS[idx]
@@ -4088,7 +4105,10 @@ class RenderMixin:
         draw_overlay(self.screen, 190)
         bw, bh = 400, 160
         bx = (layout.GAME_W - bw) // 2
-        by = (layout.GAME_H - bh) // 2
+        # WINDOW_H (full window) not GAME_H (excludes message log) — matches
+        # every other input modal so the drop-gold popup sits at the same
+        # vertical center as drop-item, pet-name, etc.
+        by = (layout.WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh))
 
         title = self.font_lg.render("DROP GOLD", True, FP.GOLD_BRIGHT)
