@@ -14,13 +14,24 @@ block_cipher = None
 
 # ── Data files to bundle ────────────────────────────────────────────────────
 # Format: (source_path_or_glob, dest_folder_inside_bundle)
+#
+# IMPORTANT: tests/test_packaging.py verifies that EVERY data_path(...)
+# call site in src/ resolves to a path covered by this list. If you add
+# a `data_path('data', 'foo.json')` to game code, add ('data/foo.json',
+# 'data') here OR the bundled exe will FileNotFoundError on load.
 added_files = [
-    # Game data
+    # Game data — top-level JSONs
     ('data/monsters.json',          'data'),
     ('data/hints.json',             'data'),
+    ('data/chest_templates.json',   'data'),
+    ('data/flavor_encounters.json', 'data'),
+    # Game data — directories
     ('data/items',                  'data/items'),
+    ('data/materials',              'data/materials'),
     ('data/questions',              'data/questions'),
-    # Assets
+    ('data/templates',              'data/templates'),
+    # Assets — window icon + sprites/fonts
+    ('assets/icon.ico',             'assets'),
     ('assets/fonts',                'assets/fonts'),
     ('assets/tiles',                'assets/tiles'),
 ]
