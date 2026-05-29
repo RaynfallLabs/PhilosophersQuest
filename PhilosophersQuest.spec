@@ -48,9 +48,11 @@ a = Analysis(
     hooksconfig={},
     runtime_hooks=[],
     excludes=[
+        # NOTE: do NOT exclude `difflib` — pygame.font imports it
+        # internally and the exe crashes on startup if it's missing.
         'tkinter', '_tkinter', 'unittest', 'pytest',
         'email', 'html', 'http', 'xml', 'pydoc',
-        'doctest', 'difflib', 'ftplib', 'argparse',
+        'doctest', 'ftplib',
     ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
