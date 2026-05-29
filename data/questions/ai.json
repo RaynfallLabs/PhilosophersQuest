@@ -1753,7 +1753,7 @@
   },
   {
     "tier": 1,
-    "question": "A scammer calls and the voice sounds exactly like your grandma. She's crying and needs money fast. What's the move?",
+    "question": "A scammer calls and the voice sounds exactly like your grandma. She's crying and needs money fast. What single check should you make before sending any money?",
     "answer": "Hang up and call grandma directly",
     "choices": [
       "Hang up and call grandma directly",
@@ -4465,7 +4465,7 @@
   },
   {
     "tier": 2,
-    "question": "A chatbot writes a glowing description of a small town that mentions a historic battle there. You've never heard of the battle. What's the move?",
+    "question": "A chatbot writes a glowing description of a small town that mentions a historic battle there. You've never heard of the battle. What single check should you run on the chatbot's claim?",
     "answer": "Search the battle name; if no real source comes up, treat it as invented",
     "choices": [
       "Search the battle name; if no real source comes up, treat it as invented",
@@ -4981,7 +4981,7 @@
   },
   {
     "tier": 2,
-    "question": "An ad platform offers 'psychographic' targeting. What does that mean?",
+    "question": "An ad platform offers 'psychographic' targeting. What single category of personal data does psychographic targeting build on?",
     "answer": "Targeting people by personality traits, values, or attitudes inferred from behavior",
     "choices": [
       "Targeting people by personality traits, values, or attitudes inferred from behavior",
@@ -7225,7 +7225,7 @@
   },
   {
     "tier": 3,
-    "question": "Recommendation systems that decide what shows up in your YouTube feed, your TikTok For You, your Netflix home screen, and your Spotify Discover Weekly are some of the most-deployed AI in the world. Most of them are 'collaborative filtering' at heart. What does that mean?",
+    "question": "Recommendation systems that decide what shows up in your YouTube feed, your TikTok For You, your Netflix home screen, and your Spotify Discover Weekly are some of the most-deployed AI in the world. Most of them are 'collaborative filtering' at heart. What single thing does collaborative filtering compare across users?",
     "answer": "Users similar to you liked X, so the system predicts you'll like X too",
     "choices": [
       "Users similar to you liked X, so the system predicts you'll like X too",
