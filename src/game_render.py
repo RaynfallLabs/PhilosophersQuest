@@ -1816,11 +1816,14 @@ class RenderMixin:
         p.draw()
 
     def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
-        # Mirror _kit_draw_spells' truncate discipline — every cell is
-        # clipped to its column width minus an 8px gutter so text can never
-        # bleed into the neighbour column. See proposals/v2_audit/IDENTIFY_SYSTEM.md
-        # style: the rule lives at the seam where layout meets render.
-        from text_layout import truncate_label
+        # Content-measured columns: pre-walk all rows and size each fixed
+        # column to its actual widest cell (max of header width + every
+        # data cell width). Flex columns keep their declared min_w and
+        # absorb leftover space. This eliminates the "Material header
+        # truncated to 'Materi…'" problem from the previous static-min_w
+        # approach. Truncation is now a true backstop, fired only by the
+        # flex column on extreme content.
+        from text_layout import Column, fit_columns, truncate_label
         all_rows = self._kit_collect_items()
         rows = self._kit_filter_for_tab(all_rows, [t[1] for t in self._KIT_TABS].index(slug))
 
@@ -1841,31 +1844,68 @@ class RenderMixin:
             self.screen.blit(txt, (x, y + 10))
             return
 
-        # Column layout per slug (responsive to body width)
-        cols = self._kit_columns(slug, w)
         line_h = 24
         max_visible = max(1, (h - 28) // line_h)
         scroll = max(0, min(getattr(self, '_kit_scroll', 0),
                             max(0, len(rows) - max_visible)))
         self._kit_scroll = scroll
 
-        GUTTER = 8  # px of guaranteed whitespace between columns
+        GUTTER = 12  # px of inter-column whitespace (added to each column)
+        LEFT_PAD = 4  # px of padding inside a left-aligned cell
 
-        # Header row — clip too (long headers like "Material" usually fit,
-        # but the discipline is per-cell, no exceptions).
+        # Column definitions (label + flex + align). The legacy `min_w`
+        # field is now treated as a *fallback floor* for flex columns
+        # only; fixed columns get content-measured widths below.
+        col_defs = self._kit_column_defs(slug)
+        if not col_defs:
+            return
+
+        # Pre-compute every visible cell so we can measure widths AND
+        # render from the same data. Measuring ALL rows (not just visible)
+        # keeps column widths stable when the user scrolls.
+        cells_per_row = [self._kit_cells_for_item(slug, src, item)
+                          for src, item in rows]
+
+        # Measure: for each column, natural width = max(header width,
+        # widest cell in that column) + GUTTER. Flex columns floor at
+        # their declared min_w so they can still absorb leftover space
+        # cleanly.
+        measured_cols: list[Column] = []
+        for i, c in enumerate(col_defs):
+            natural = self.font_sm.size(c.label)[0]
+            for cells in cells_per_row:
+                if i < len(cells):
+                    cell_text = str(cells[i] or '')
+                    natural = max(natural, self.font_sm.size(cell_text)[0])
+            # Floor: header label width OR declared min_w, whichever is
+            # larger. Flex columns then add their elastic share on top.
+            min_w = max(natural, c.min_w if c.flex > 0 else 0) + GUTTER
+            measured_cols.append(Column(c.label, min_w, c.flex, c.align))
+
+        # fit_columns honors content widths for fixed cols, distributes
+        # leftover to flex cols by weight. If total still overflows
+        # (rare), it shrinks proportionally — truncate backstops that.
+        widths = fit_columns(measured_cols, w)
+        cols = [(c.label, ww, c.align) for c, ww in zip(measured_cols, widths)]
+
+        # Header row — column widths are now sized to fit headers
+        # naturally, but keep truncate as defensive backstop.
         cx = x
-        for label, cw, _align in cols:
+        for label, cw, align in cols:
             label_text = truncate_label(label, max(1, cw - GUTTER), self.font_sm)
             hdr = self.font_sm.render(label_text, True, FP.GOLD_PALE)
-            self.screen.blit(hdr, (cx, y))
+            if align == 'right':
+                self.screen.blit(hdr, (cx + cw - GUTTER - hdr.get_width(), y))
+            else:
+                self.screen.blit(hdr, (cx + LEFT_PAD, y))
             cx += cw
         draw_divider(self.screen, x, y + 22, w)
 
         # Body rows
         ry = y + 28
-        for row in rows[scroll:scroll + max_visible]:
-            src, item = row
-            cells = self._kit_cells_for_item(slug, src, item)
+        for cells, (src, _item) in zip(
+                cells_per_row[scroll:scroll + max_visible],
+                rows[scroll:scroll + max_visible]):
             cx = x
             row_col = self._KIT_SRC_COLOR.get(src, (200, 200, 200))
             for (label, cw, align), text in zip(cols, cells):
@@ -1877,7 +1917,7 @@ class RenderMixin:
                 if align == 'right':
                     self.screen.blit(surf, (cx + cw - GUTTER - surf.get_width(), ry))
                 else:
-                    self.screen.blit(surf, (cx, ry))
+                    self.screen.blit(surf, (cx + LEFT_PAD, ry))
                 cx += cw
             ry += line_h
 
@@ -1888,69 +1928,66 @@ class RenderMixin:
                 True, FP.FADED_TEXT)
             self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
 
-    def _kit_columns(self, slug: str, body_w: int):
-        """Compute per-tab column layout, fit to the available `body_w`.
+    def _kit_column_defs(self, slug: str):
+        """Per-tab column definitions (label, fallback min_w, flex, align).
 
-        Returns a list of (label, width_px, align) tuples sized so the row
-        does not overflow the panel at any viewport. Uses text_layout.Column
-        (min_w + flex weight); the elastic last column (Special / Resists /
-        Effect) gets the leftover space.
+        Returns raw Column list — the caller in `_kit_draw_items` does the
+        content-measure pass + fit. The fallback `min_w` values here matter
+        ONLY for flex columns (Name / Special / Resists / Effect); fixed
+        columns get their width measured from actual content at render time.
         """
-        from text_layout import Column, fit_columns
+        from text_layout import Column
         if slug == 'weapons':
-            cols = [
-                Column('Name',     220, flex=2, align='left'),
-                Column('Src',       36, flex=0, align='left'),
-                Column('Dmg',       66, flex=0, align='right'),
-                Column('Avg',       50, flex=0, align='right'),
-                Column('Material',  90, flex=0, align='left'),
-                Column('BUC',       64, flex=0, align='left'),
-                Column('Wt',        36, flex=0, align='right'),
-                Column('Special',  160, flex=3, align='left'),
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('Dmg',        0, flex=0, align='right'),
+                Column('Avg',        0, flex=0, align='right'),
+                Column('Material',   0, flex=0, align='left'),
+                Column('BUC',        0, flex=0, align='left'),
+                Column('Wt',         0, flex=0, align='right'),
+                Column('Special',  140, flex=3, align='left'),
             ]
-        elif slug == 'armor':
-            cols = [
-                Column('Name',     220, flex=2, align='left'),
-                Column('Src',       36, flex=0, align='left'),
-                Column('Slot',      84, flex=0, align='left'),
-                Column('AC',        42, flex=0, align='right'),
-                Column('Material',  90, flex=0, align='left'),
-                Column('BUC',       64, flex=0, align='left'),
-                Column('Wt',        36, flex=0, align='right'),
+        if slug == 'armor':
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('Slot',       0, flex=0, align='left'),
+                Column('AC',         0, flex=0, align='right'),
+                Column('Material',   0, flex=0, align='left'),
+                Column('BUC',        0, flex=0, align='left'),
+                Column('Wt',         0, flex=0, align='right'),
+                Column('Resists',  120, flex=3, align='left'),
+            ]
+        if slug == 'shields':
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('AC',         0, flex=0, align='right'),
+                Column('Material',   0, flex=0, align='left'),
+                Column('BUC',        0, flex=0, align='left'),
+                Column('Wt',         0, flex=0, align='right'),
                 Column('Resists',  140, flex=3, align='left'),
             ]
-        elif slug == 'shields':
-            cols = [
-                Column('Name',     220, flex=2, align='left'),
-                Column('Src',       36, flex=0, align='left'),
-                Column('AC',        42, flex=0, align='right'),
-                Column('Material',  90, flex=0, align='left'),
-                Column('BUC',       64, flex=0, align='left'),
-                Column('Wt',        36, flex=0, align='right'),
-                Column('Resists',  160, flex=3, align='left'),
+        if slug == 'accessories':
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('Slot',       0, flex=0, align='left'),
+                Column('BUC',        0, flex=0, align='left'),
+                Column('Wt',         0, flex=0, align='right'),
+                Column('Effect',   200, flex=3, align='left'),
             ]
-        elif slug == 'accessories':
-            cols = [
-                Column('Name',     220, flex=2, align='left'),
-                Column('Src',       36, flex=0, align='left'),
-                Column('Slot',      84, flex=0, align='left'),
-                Column('BUC',       64, flex=0, align='left'),
-                Column('Wt',        36, flex=0, align='right'),
-                Column('Effect',   240, flex=3, align='left'),
+        if slug == 'consumables':
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('Type',       0, flex=0, align='left'),
+                Column('BUC',        0, flex=0, align='left'),
+                Column('Wt',         0, flex=0, align='right'),
+                Column('Effect',   200, flex=3, align='left'),
             ]
-        elif slug == 'consumables':
-            cols = [
-                Column('Name',     220, flex=2, align='left'),
-                Column('Src',       36, flex=0, align='left'),
-                Column('Type',      84, flex=0, align='left'),
-                Column('BUC',       64, flex=0, align='left'),
-                Column('Wt',        36, flex=0, align='right'),
-                Column('Effect',   240, flex=3, align='left'),
-            ]
-        else:
-            return []
-        widths = fit_columns(cols, body_w)
-        return [(c.label, w, c.align) for c, w in zip(cols, widths)]
+        return []
 
     def _kit_cells_for_item(self, slug: str, src: str, item) -> list[str]:
         """Return list of cell strings matching _kit_columns(slug)."""
