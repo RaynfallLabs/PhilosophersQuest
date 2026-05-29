@@ -42,6 +42,7 @@ SUBJECT_TIER_BUDGETS: dict[str, dict[int, int]] = {
     "economics": {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "trivia":    {1: 280, 2: 480, 3: 680, 4: 900, 5: 1100},
     "grammar":   {1: 600, 2: 700, 3: 750, 4: 950, 5: 1000},  # added 2026-05-25 per GRAMMAR_FRAMEWORK.md §6 — T4 needs room for multi-sentence etymology/grammarian-history stems (avg 265c + choices); T5 covers rhetorical-figure recognition + advanced syntax; lifted from docs/quiz/grammar_strategies.md 2026-05-12
+    "math":      {1: 280, 2: 400, 3: 550, 4: 750, 5: 900},  # added 2026-05-28 per MATH_TEMPLATES.md §2 — 16s combat timer drives tightest caps in game; T1 numeric-only (avg ~30c stem + 4 short numeric choices), T2 adds short setups, T5 polynomial expansions fit in 900
 }
 
 GRACE_FACTOR = 1.05  # +5% per philosophy.md §2
