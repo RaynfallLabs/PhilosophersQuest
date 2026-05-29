@@ -207,10 +207,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
             chain = 1
 
-        # Cursed weapon backlash on miss (Tyrfing)
+        # Cursed weapon backlash on miss (Tyrfing).
+        # Floor at 0 so the player.hp value stays non-negative — downstream
+        # code (HUD bars, low-HP buff triggers, is_dead checks) all assume
+        # hp >= 0. See bug-bash A7-6.
         if chain == 0:
             if weapon and getattr(weapon, 'cursed_miss_backlash', 0) > 0:
-                player.hp -= weapon.cursed_miss_backlash
+                player.hp = max(0, player.hp - weapon.cursed_miss_backlash)
             on_complete(0, monster.is_dead(), chain)
             return
 

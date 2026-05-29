@@ -204,6 +204,14 @@ class Player:
                     pass
         amount = max(0, amount - flat_reduction)
 
+        # 'shielded' status halves physical damage (matches the description
+        # at status_effects.py:82 and the Mage Armor / Magic Shield / Stoneskin
+        # spell promises). Previously only monsters got the halving (combat.py)
+        # — the player side was missing this branch. See bug-bash A7-4.
+        # Round UP so a 1-damage hit still does 1.
+        if damage_type == 'physical' and self.has_effect('shielded'):
+            amount = (amount + 1) // 2
+
         # Fractional resistance: status/accessory effects x armor resistances
         resistance = self.resistances.get(damage_type, 1.0)
         resistance *= self.get_armor_resistance(damage_type)
@@ -610,9 +618,14 @@ class Player:
     def get_quiz_timer(self, subject: str = 'math') -> int:
         """Base quiz timer in seconds (before status modifiers).
         Uses per-subject base + WIS scaling so text-heavy categories
-        give enough reading time without making flashcard math trivial."""
+        give enough reading time without making flashcard math trivial.
+
+        Floor of 5 seconds: at very low WIS (e.g. after cursed-drain-wis
+        potions or stacked disease ticks), the unfloored formula can
+        return 0 or negative, making combat unwinnable. See bug-bash A7-1.
+        """
         base, wis_scale = self.SUBJECT_TIMER.get(subject, (10, 1.0))
-        return round(base + self.WIS * wis_scale)
+        return max(5, round(base + self.WIS * wis_scale))
 
     def get_quiz_timer_modifier(self) -> float:
         """Multiplier applied to quiz timer based on active effects.
@@ -741,15 +754,23 @@ class Player:
         item_weight = getattr(item, 'weight', 0) * count
         if item_weight + self.get_current_weight() > self.get_carry_limit():
             return False
-        # Stack identical items for stackable types (same id)
-        # BUC must match only if known on both; hidden BUC stacks freely
+        # Stack identical items for stackable types (same id).
+        # BUC rule: only merge stacks whose UNDERLYING buc value matches —
+        # whether or not the player has identified it yet. Previously the
+        # code allowed hidden-buc stacks to merge across underlying values,
+        # silently dropping the incoming item's BUC effect when the kid
+        # later drank/read/threw from the stack. See bug-bash A7-5.
         if isinstance(item, Item._STACKABLE_CLASSES):
             for existing in self.inventory:
                 if existing.id != item.id:
                     continue
-                both_known = getattr(existing, 'buc_known', False) and getattr(item, 'buc_known', False)
-                if both_known and getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
-                    continue  # known-different BUC: separate stacks
+                if getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
+                    continue  # different underlying BUC: keep stacks separate
+                # Merge buc_known monotonically — if EITHER known, the stack
+                # is known (because we just confirmed the underlying values
+                # are identical).
+                if getattr(item, 'buc_known', False):
+                    existing.buc_known = True
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
                 return True
         self.inventory.append(item)
