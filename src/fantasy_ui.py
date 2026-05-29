@@ -840,6 +840,9 @@ def draw_menu(
     font_sm=None,
     draw_icon_fn=None,     # callback(surf, icon_source, x, y)
     row_style: str = 'icon',  # default; entries can override per-row
+    wrap_detail: bool = False,  # icon rows: wrap long detail across lines
+                                # instead of truncating with "..."; row
+                                # height grows to fit
 ):
     """
     Universal scrollable menu overlay.
@@ -876,12 +879,25 @@ def draw_menu(
     # Measure each entry
     row_heights = []
     text_max_w = bw - 50 if row_style == 'text' else bw - 140
+    # Width matching the icon-row render path's name_max (assuming no badge):
+    #   tx = bx + 110; name_max = bw - 110 - 20 = bw - 130
+    icon_detail_wrap_w = bw - 130
     for entry in entries:
         rs = entry.get('row_style', row_style)
         if entry.get('section'):
             row_heights.append(28)  # section header
         if rs == 'icon':
-            row_heights.append(_ICON_ROW_H)
+            rh = _ICON_ROW_H
+            # Opt-in wrap: cache wrapped lines on the entry so the render
+            # path uses the same list (and grows the row by 18px per
+            # extra line). First line already fits in the base row.
+            if (wrap_detail and entry.get('detail')
+                    and not entry.get('detail_lines') and font_sm):
+                wrapped = wrap_text(entry['detail'], font_sm, icon_detail_wrap_w)
+                if len(wrapped) > 1:
+                    entry['_wrapped_detail'] = wrapped
+                    rh += (len(wrapped) - 1) * 18
+            row_heights.append(rh)
         else:
             # Text row: measure wrapped height
             detail_lines = entry.get('detail_lines')
@@ -976,6 +992,11 @@ def draw_menu(
 
         if rs == 'icon':
             rh = _ICON_ROW_H
+            # Mirror the measurement-loop row-height growth so wrapped
+            # detail lines fit and the next row doesn't overlap.
+            wrapped_detail = entry.get('_wrapped_detail')
+            if wrapped_detail:
+                rh += (len(wrapped_detail) - 1) * 18
             pygame.draw.rect(surf, bg_col, (bx + 10, cy, bw - 20, rh - 8), border_radius=6)
 
             # Key label
@@ -1008,10 +1029,13 @@ def draw_menu(
             name_text = fit_text(entry['name'], font_md, name_max)
             surf.blit(font_md.render(name_text, True, nc), (tx, cy + 8))
 
-            # Detail
+            # Detail — three sources, in priority order:
+            #   1. caller-supplied detail_lines (pre-wrapped)
+            #   2. wrap_detail=True cache (_wrapped_detail)
+            #   3. single-line truncated fallback (the original behaviour)
             det_y = cy + 4 + _ICON_SIZE + 6
             dc = entry.get('detail_color', FP.FADED_TEXT)
-            detail_lines = entry.get('detail_lines')
+            detail_lines = entry.get('detail_lines') or wrapped_detail
             if detail_lines:
                 for dl in detail_lines:
                     if det_y < content_bottom:

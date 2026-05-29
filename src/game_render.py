@@ -2600,6 +2600,9 @@ class RenderMixin:
             font_md=self.font_md,
             font_sm=self.font_sm,
             draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
+            wrap_detail=True,  # prayer lore + gate_reason can run long;
+                               # wrap across multiple lines instead of
+                               # truncating with "..."
         )
 
     def _draw_scroll_menu(self):
