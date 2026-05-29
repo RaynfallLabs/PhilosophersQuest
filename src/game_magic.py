@@ -2531,9 +2531,11 @@ class MagicMixin:
             # Chain >= 2: BUC aura revealed
             if new_level >= 2:
                 item.buc_known = True
-            # Propagate identification state to all instances (same id) once name is known.
+            # Propagate identification state to all instances (same id)
+            # at the level the player just reached, capped per uniqueness
+            # rule inside _propagate_identification.
             self.player.known_item_ids.add(item.id)
-            self._propagate_identification(item.id)
+            self._propagate_identification(item.id, level=new_level)
 
             if new_level == 1:
                 self.add_message(
@@ -3084,41 +3086,68 @@ class MagicMixin:
                 spawned += 1
                 break
 
-    def _propagate_identification(self, item_id: str):
-        """Record that the player now recognises this item type by ID — and
-        by mastery_class if applicable.
+    def _propagate_identification(self, item_id: str, level: int = 4):
+        """Sync identification state across every other instance of the
+        same item id (and same mastery_class for commons).
 
-        Type recognition for the exact id goes into known_item_ids. Class-
-        level recognition goes into known_class_ids; both are checked at
-        display time so "Ring of Strength" names all variants in the pack
-        once any one is identified.
+        Updates THREE pieces of state per copy:
+          1. known_item_ids / known_class_ids on the player
+          2. buc_known on every matching copy
+          3. id_level on every matching copy, raised to `level` —
+             capped at 4 for uniques (so the chain-5 mastery still
+             requires the player to actually quiz it), capped at 5
+             for commons (no mastery to gate).
 
-        Also propagates buc_known across inventory copies that share the
-        same id OR the same mastery_class.
+        Walks inventory + ground items + container contents at the
+        player's tile so a wand identified in pocket also bumps an
+        identical wand sitting on the floor or inside an open chest.
+
+        2026-05-29 bug-bash fix: previously only bumped buc_known and
+        only walked inventory.
         """
         from class_masteries import get_mastery_class
         self.player.known_item_ids.add(item_id)
-        # Find the canonical class for any inventory or ground item with
-        # this id, then propagate class-recognition.
+
+        # Find the canonical class for any inventory / ground / container
+        # item with this id, then propagate class-recognition.
+        def _all_candidates():
+            yield from getattr(self.player, 'inventory', [])
+            yield from getattr(self, 'ground_items', [])
+            # Container contents at the player's tile.
+            px = getattr(self.player, 'x', None)
+            py = getattr(self.player, 'y', None)
+            for g in getattr(self, 'ground_items', []) or []:
+                if getattr(g, 'x', None) != px or getattr(g, 'y', None) != py:
+                    continue
+                contents = getattr(g, 'contents', None)
+                if contents:
+                    yield from contents
+
         seed_class = None
-        for inv_item in self.player.inventory:
-            if inv_item.id == item_id:
-                seed_class = get_mastery_class(inv_item)
+        for cand in _all_candidates():
+            if getattr(cand, 'id', None) == item_id:
+                seed_class = get_mastery_class(cand)
                 break
-        if seed_class is None:
-            for g in getattr(self, 'ground_items', []):
-                if getattr(g, 'id', None) == item_id:
-                    seed_class = get_mastery_class(g)
-                    break
         if seed_class:
             self.player.known_class_ids.add(seed_class)
 
-        for inv_item in self.player.inventory:
-            same_id = inv_item.id == item_id
-            same_class = (seed_class is not None
-                          and get_mastery_class(inv_item) == seed_class)
-            if (same_id or same_class) and hasattr(inv_item, 'buc_known'):
-                inv_item.buc_known = True
+        # Apply the cap-per-uniqueness rule to the propagated id_level:
+        # uniques cap at 4 (preserves the chain-5 mastery quiz path),
+        # commons cap at the requested level (full reveal allowed).
+        for cand in _all_candidates():
+            same_id = getattr(cand, 'id', None) == item_id
+            same_class = (
+                seed_class is not None
+                and get_mastery_class(cand) == seed_class
+            )
+            if not (same_id or same_class):
+                continue
+            if hasattr(cand, 'buc_known'):
+                cand.buc_known = True
+            if hasattr(cand, 'id_level'):
+                cap = 4 if getattr(cand, 'is_unique', False) else 5
+                target = min(level, cap)
+                cand.id_level = max(int(getattr(cand, 'id_level', 0)), target)
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).

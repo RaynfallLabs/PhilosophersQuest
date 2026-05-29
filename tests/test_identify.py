@@ -434,6 +434,175 @@ def test_progress_marker_handles_none():
 
 
 # ---------------------------------------------------------------------------
+# Identified-property back-compat (2026-05-29 bug-bash fix)
+# ---------------------------------------------------------------------------
+#
+# Pre-fix: every Item subclass declared `self.identified = ...` as a
+# plain instance attribute. Many call sites wrote `item.identified = True`
+# to mark a scroll/wand identified, but id_level stayed 0 — so the
+# identify menu kept showing (0/5) and the resume rule started the
+# quiz from T1 instead of skipping ahead. The IDENTIFY_SYSTEM.md doc
+# CLAIMED `identified` was a property; the code disagreed.
+#
+# Post-fix: `identified` is a real property on base Item reading
+# `id_level >= 4`. Setter bumps id_level to >= 4 on True or resets
+# to 0 on False. Subclass __init__ no longer shadows the property.
+
+
+def test_identified_property_reads_from_id_level():
+    w = _make_weapon(id_level=0)
+    assert w.identified is False
+    w = _make_weapon(id_level=3)
+    assert w.identified is False  # below the lore tier
+    w = _make_weapon(id_level=4)
+    assert w.identified is True
+    w = _make_weapon(id_level=5)
+    assert w.identified is True
+
+
+def test_identified_setter_bumps_id_level_on_true():
+    """The big one. Pre-fix this set instance attr only and id_level
+    stayed at 0 — the bug behind the identify-menu (0/5) regression."""
+    w = _make_weapon()
+    assert w.id_level == 0
+    w.identified = True
+    assert w.id_level == 4
+    assert w.identified is True
+
+
+def test_identified_setter_preserves_higher_id_level():
+    w = _make_weapon(id_level=5)
+    w.identified = True  # don't downgrade!
+    assert w.id_level == 5
+
+
+def test_identified_setter_resets_to_zero_on_false():
+    w = _make_weapon(id_level=4)
+    w.identified = False
+    assert w.id_level == 0
+    assert w.identified is False
+
+
+def test_no_shadowing_instance_attribute_on_new_items():
+    """After the property migration, no subclass should set `identified`
+    as a plain instance attribute that shadows the property."""
+    w = _make_weapon()
+    # `identified` should NOT be in the per-instance __dict__ — it lives
+    # on the class as a property.
+    assert 'identified' not in w.__dict__
+
+
+def test_save_migration_strips_shadow_attribute():
+    """Old saves shadowed the property. The migration helper unwinds it."""
+    from game_helpers import migrate_buc_item
+    w = _make_weapon(id_level=0)
+    # Simulate a legacy save by force-installing the shadow attribute.
+    w.__dict__['identified'] = True
+    # Sanity: before migration the shadow wins.
+    assert w.__dict__.get('identified') is True
+    assert w.id_level == 0  # not yet synced
+    migrate_buc_item(w)
+    # Shadow attribute removed, id_level bumped to the lore tier.
+    assert 'identified' not in w.__dict__
+    assert w.id_level == 4
+    assert w.identified is True
+
+
+def test_save_migration_preserves_already_high_id_level():
+    from game_helpers import migrate_buc_item
+    w = _make_weapon(id_level=5)
+    w.__dict__['identified'] = True
+    migrate_buc_item(w)
+    assert w.id_level == 5  # don't downgrade!
+
+
+# ---------------------------------------------------------------------------
+# _propagate_identification correctness (2026-05-29 bug-bash fix)
+# ---------------------------------------------------------------------------
+#
+# Pre-fix: only set buc_known on inventory copies; never bumped id_level
+# anywhere; skipped ground items and container contents entirely. The
+# IDENTIFY_SYSTEM.md doc claimed otherwise.
+#
+# Post-fix: sync id_level (capped 4-for-uniques / 5-for-commons),
+# walk inventory + ground + containers at the player's tile.
+
+
+class _FakeGame:
+    """Minimal stand-in for the Game mixin chain used by
+    `_propagate_identification`. Provides the attributes the method
+    reads (`self.player`, `self.ground_items`) without dragging in the
+    full Game/Pygame stack."""
+
+    def __init__(self, inventory, ground_items, player_x=0, player_y=0):
+        from player import Player
+        self.player = Player.__new__(Player)
+        self.player.x = player_x
+        self.player.y = player_y
+        self.player.inventory = list(inventory)
+        self.player.known_item_ids = set()
+        self.player.known_class_ids = set()
+        self.ground_items = list(ground_items)
+
+    # Borrow the real implementation off the MagicMixin without
+    # instantiating Game (which needs Pygame).
+    from game_magic import MagicMixin
+    _propagate_identification = MagicMixin._propagate_identification
+
+
+def test_propagate_id_level_across_inventory_copies():
+    """Identifying one wand to id_level=3 bumps every other copy of the
+    same id in inventory to the same level (capped at 4 for uniques).
+    Pre-fix this was a no-op."""
+    w1 = _make_weapon(id_level=3)
+    w2 = _make_weapon(id_level=0)
+    g = _FakeGame(inventory=[w1, w2], ground_items=[])
+    g._propagate_identification('test_sword', level=3)
+    assert w1.id_level == 3
+    assert w2.id_level == 3
+
+
+def test_propagate_id_level_walks_ground_items():
+    """Floor copies at any tile share the identify state once a copy in
+    inventory has been identified."""
+    w_inv = _make_weapon(id_level=4)
+    w_ground = _make_weapon(id_level=0)
+    g = _FakeGame(inventory=[w_inv], ground_items=[w_ground])
+    g._propagate_identification('test_sword', level=4)
+    assert w_ground.id_level == 4
+
+
+def test_propagate_id_level_caps_at_four_for_uniques():
+    """Uniques cap at 4 so the chain-5 mastery quiz path is preserved."""
+    w1 = _make_weapon(id_level=0, is_unique=True)
+    w2 = _make_weapon(id_level=0, is_unique=True)
+    g = _FakeGame(inventory=[w1, w2], ground_items=[])
+    g._propagate_identification('test_sword', level=5)
+    # Even though we asked for 5, uniques cap at 4.
+    assert w1.id_level == 4
+    assert w2.id_level == 4
+
+
+def test_propagate_id_level_caps_at_five_for_commons():
+    w1 = _make_weapon(id_level=0)  # is_unique default False
+    w2 = _make_weapon(id_level=0)
+    g = _FakeGame(inventory=[w1, w2], ground_items=[])
+    g._propagate_identification('test_sword', level=5)
+    assert w1.id_level == 5
+    assert w2.id_level == 5
+
+
+def test_propagate_does_not_lower_existing_id_level():
+    """Monotonic — never downgrades a higher level."""
+    w1 = _make_weapon(id_level=5)
+    w2 = _make_weapon(id_level=0)
+    g = _FakeGame(inventory=[w1, w2], ground_items=[])
+    g._propagate_identification('test_sword', level=3)
+    assert w1.id_level == 5  # not lowered
+    assert w2.id_level == 3
+
+
+# ---------------------------------------------------------------------------
 # Item-name composition (2026-05-28 fix): material descriptor + template
 # name should produce a natural noun phrase, not "a wooden plank light
 # wooden shield". See IDENTIFY_SYSTEM.md §11.

@@ -13,18 +13,36 @@ if TYPE_CHECKING:
 
 
 def migrate_buc_item(item) -> None:
-    """Patch missing base-Item fields onto items from old saves."""
+    """Patch missing base-Item fields onto items from old saves.
+
+    Also handles the 2026-05-29 `identified` property migration:
+    pre-fix saves stored `identified` as a per-instance attribute that
+    shadowed the new class-level property. To honor the new invariant
+    (identified iff id_level >= 4), bump id_level if the shadow attr
+    said True, then strip the shadow so the property takes over.
+    """
     if not hasattr(item, 'buc'):
         item.buc = 'cursed' if item.__dict__.get('cursed', False) else 'uncursed'
     if not hasattr(item, 'buc_known'):
         item.buc_known = False
-    if not hasattr(item, 'identified'):
-        item.identified = True  # old items without the field are assumed known
-    if not hasattr(item, 'unidentified_name'):
-        item.unidentified_name = getattr(item, 'name', '???')
+    # `identified` is now a property. Old pickled saves shadow it with
+    # an instance attribute; if present, sync id_level then drop it.
+    legacy_identified = None
+    if 'identified' in item.__dict__:
+        legacy_identified = bool(item.__dict__['identified'])
     if not hasattr(item, 'id_level'):
         # Old saves: identified items are fully known (id_level=5); unknown stay at 0.
-        item.id_level = 5 if getattr(item, 'identified', True) else 0
+        # Use the shadow attr if present, else the property fallback (True default).
+        seed = legacy_identified if legacy_identified is not None else True
+        item.id_level = 5 if seed else 0
+    elif legacy_identified is True and getattr(item, 'id_level', 0) < 4:
+        # Old code wrote `item.identified = True` without touching id_level,
+        # so a "known" item could carry id_level=0. Bump to the lore tier.
+        item.id_level = max(int(getattr(item, 'id_level', 0)), 4)
+    # Remove the shadowing attribute so future reads/writes hit the property.
+    item.__dict__.pop('identified', None)
+    if not hasattr(item, 'unidentified_name'):
+        item.unidentified_name = getattr(item, 'name', '???')
     if not hasattr(item, 'mastery_blessing'):
         item.mastery_blessing = None
 

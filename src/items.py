@@ -65,8 +65,9 @@ class Item:
         self.x: int = 0
         self.y: int = 0
         self.count: int = 1          # stack size; >1 only for stackable types
-        # Identification & BUC -- defaults on ALL items so no subclass can be missing them
-        self.identified: bool   = defn.get('identified', True)
+        # Identification & BUC -- defaults on ALL items so no subclass can be missing them.
+        # NOTE: `identified` is a property (defined below) reading id_level >= 4,
+        # so it is NOT set as an instance attribute. id_level is the source of truth.
         self.unidentified_name: str = defn.get('unidentified_name', defn['name'])
         self.buc: str           = defn.get('buc', 'uncursed')
         self.buc_known: bool    = defn.get('buc_known', False)
@@ -76,8 +77,8 @@ class Item:
         # Granular identification level (0-5) for the escalator-chain identify on uniques.
         # 0 = nothing known; 1 = real name; 2 = + BUC aura; 3 = + stats; 4 = + lore; 5 = + mastery.
         # For non-unique items going through threshold-mode identify, this jumps 0 -> 5 on success.
-        # Default matches `identified`: known items start at 5, unknown at 0.
-        self.id_level: int      = int(defn.get('id_level', 5 if self.identified else 0))
+        # Default matches the legacy `identified` JSON field: known items start at 5, unknown at 0.
+        self.id_level: int      = int(defn.get('id_level', 5 if defn.get('identified', True) else 0))
         # Mastery blessing data for is_unique items. Shape: {'kind': str, 'value': int|float|str, 'desc': str}
         # Granted to the player on chain-5 identify; lives on player.unlocked_masteries by item_id.
         self.mastery_blessing: dict | None = defn.get('mastery_blessing', None)
@@ -89,6 +90,34 @@ class Item:
         self.peak_floor:  int   = int(defn.get('peak_floor', 0) or 0)
         self.spread:      int   = int(defn.get('spread', 10) or 10)
         self.peak_weight: float = float(defn.get('peak_weight', 0.0) or 0.0)
+
+    # ------------------------------------------------------------------
+    # Identified back-compat property (2026-05-29 bug-bash fix)
+    # ------------------------------------------------------------------
+    # Old code reads `item.identified` as a bool. The new model uses
+    # `id_level: int` (0..5) as the source of truth. Treat `identified`
+    # as True iff id_level >= 4 (lore tier reached).
+    #
+    # The setter is the critical part: many call sites write
+    # `item.identified = True` and pre-2026-05-29 that was a no-op for
+    # id_level — so the identify menu kept showing (0/5) even after a
+    # scroll/wand identify revealed the name. Now the setter bumps
+    # id_level to 4 minimum, keeping both representations in sync.
+    #
+    # Old pickled saves where `identified` was set as an instance
+    # attribute (shadowing this property) are migrated on load — see
+    # save_system.migrate_legacy_identified() / main.load_state.
+
+    @property
+    def identified(self) -> bool:
+        return getattr(self, 'id_level', 0) >= 4
+
+    @identified.setter
+    def identified(self, value: bool) -> None:
+        if value:
+            self.id_level = max(getattr(self, 'id_level', 0), 4)
+        else:
+            self.id_level = 0
 
 
 class Weapon(Item):
@@ -120,8 +149,7 @@ class Weapon(Item):
         self.container_loot_tier: str   = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.value: int                 = int(defn.get('value', 50))
         self.enchant_bonus: int         = int(defn.get('enchant_bonus', defn.get('enchantBonus', 0)))
-        self.identified: bool           = bool(defn.get('identified', False))
-        self.id_level: int              = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str     = defn.get('unidentified_name', 'an unknown weapon')
         # On-hit effect properties
         self.poison_chance: float       = float(defn.get('poisonChance', defn.get('poison_chance', 0.0)))
@@ -183,8 +211,7 @@ class Armor(Item):
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
-        self.identified: bool    = bool(defn.get('identified', False))
-        self.id_level: int       = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.on_equip_status: str    = defn.get('onEquipStatus', defn.get('on_equip_status', ''))
@@ -233,8 +260,7 @@ class Shield(Item):
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
-        self.identified: bool    = bool(defn.get('identified', False))
-        self.id_level: int       = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
@@ -267,8 +293,7 @@ class Accessory(Item):
         self.equip_threshold  = int(defn.get('equip_threshold', 2))
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified       = bool(defn.get('identified', False))
-        self.id_level: int    = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         # Artifact mechanics (defaults match the getattr fallbacks used in main.py)
@@ -309,8 +334,7 @@ class Wand(Item):
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified       = bool(defn.get('identified', False))
-        self.id_level: int    = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
 
@@ -331,8 +355,7 @@ class Scroll(Item):
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified       = bool(defn.get('identified', False))
-        self.id_level: int    = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         # Spawn-once quest scrolls: survive a failed read so the secret-victory
@@ -357,8 +380,7 @@ class Spellbook(Item):
         self.quiz_tier         = int(defn.get('quiz_tier', 1))
         self.quiz_threshold    = int(defn.get('quiz_threshold', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
-        self.identified        = bool(defn.get('identified', False))
-        self.id_level: int     = int(defn.get('id_level', 5 if self.identified else 0))
+        self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
 

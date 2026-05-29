@@ -44,14 +44,35 @@ that species drops out of the menu.)
 
 ### `Item.id_level: int`
 
-Range 0..5, on the base `Item` class. Initialized by every subclass
-constructor as `int(defn.get('id_level', 5 if self.identified else 0))`.
+Range 0..5. **The single source of truth** for identification state.
+On the base `Item` class; initialized by every subclass constructor as
+`int(defn.get('id_level', 5 if defn.get('identified', True) else 0))`.
 
-`Item.identified` is a **backward-compat property** that reads
-`id_level >= 4`. Setter: `True` raises id_level to ≥ 4; `False` resets
-to 0. Old code that reads `item.identified` continues to work; new
+### `Item.identified` — back-compat property
+
+`Item.identified` is a **real property** on the base `Item` class:
+- **Getter**: returns `True` iff `id_level >= 4` (the lore tier).
+- **Setter**: `True` raises `id_level` to at least 4 (never downgrades a
+  higher level); `False` resets to 0.
+
+Old code that reads `item.identified` continues to work. Old code that
+writes `item.identified = True` now correctly bumps `id_level`. New
 code should query `id_level` directly when it cares about specific
 levels (1=name, 2=BUC, 3=stats, 4=lore, 5=mastery).
+
+**Save migration**: pre-2026-05-29 pickles stored `identified` as an
+*instance attribute* that shadowed the property. `game_helpers.
+migrate_buc_item()` (called from `load_state`) strips the shadow and
+syncs `id_level` to ≥ 4 if the shadow said True — so old saves get the
+new correct behavior automatically.
+
+**Why this matters**: before the fix, 40+ call sites that wrote
+`item.identified = True` (scroll of identify, wand of identify, several
+mystery/altar paths) left `id_level` at 0. The identify menu kept
+showing `(0/5)` on a "fully identified" item; the resume rule started
+the philosophy quiz at T1 instead of skipping ahead. Two agents
+independently confirmed the bug in the 2026-05-28 bug-bash. The
+property setter now keeps both representations in sync.
 
 ### `Corpse.id_level: int`
 
@@ -186,10 +207,24 @@ Career-arc counter (`_on_full_identify`) fires once per item, the
 first time `new_level >= 3` (the threshold for "full ID" on items —
 the kid can read the stats).
 
-`_propagate_identification(item.id)` is called at every reveal level —
-it raises id_level on all OTHER instances of the same id (commons:
-mastery_class) to a cap (3 for uniques to preserve mastery, 5 for
-commons since there's no mastery to gate).
+`_propagate_identification(item.id, level=new_level)` is called at
+every reveal level. It walks **inventory + ground items + container
+contents at the player's tile** and on every matching copy:
+- Adds the item.id to `player.known_item_ids` and the mastery_class to
+  `player.known_class_ids`
+- Sets `buc_known = True`
+- Raises `id_level` to `min(new_level, cap)` where `cap` is **4 for
+  uniques** (so the chain-5 mastery quiz path is preserved — players
+  still need to actually beat T5 to claim the blessing) and **5 for
+  commons** (no mastery to gate, full reveal allowed).
+
+The level only ever rises — monotonic, never downgrades.
+
+**Pre-2026-05-29 (fixed)**: the implementation only synced `buc_known`
+and only walked `player.inventory`. The doc claimed it did more; the
+code didn't. Two identical wands → identify one to T3 → the other
+still showed `(0/5)` in the identify menu and started a fresh quiz
+from T1. Bug-bash A2 caught the drift; now the code matches this doc.
 
 ### Corpses (`_start_corpse_identify` in `main.py`)
 

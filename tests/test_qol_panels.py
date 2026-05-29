@@ -123,9 +123,12 @@ def test_kit_visible_level_unidentified_returns_id_level():
     p = _make_player_with_items()
     g = _ResolvedFake(p, [])
     from items import Potion
+    # id_level=1 IS the partial-identification fixture; do NOT call
+    # `pot.identified = False` afterwards — under the 2026-05-29 property
+    # rule, that setter clamps id_level back to 0 (matching the new
+    # invariant: identified iff id_level >= 4).
     pot = Potion(_defn(id='pot_x', name='fizzy potion', effect='fizz',
                        id_level=1))
-    pot.identified = False
     # known_item_ids empty + id_level 1 -> 1
     assert g._kit_visible_level(pot) == 1
 
@@ -136,7 +139,8 @@ def test_kit_visible_level_known_id_boosts_to_3():
     from items import Potion
     pot = Potion(_defn(id='pot_y', name='fizzy potion', effect='fizz',
                        id_level=0))
-    pot.identified = False
+    # Same caveat: don't reset identified=False here. id_level=0 from
+    # the defn is enough to represent unidentified.
     p.known_item_ids.add('pot_y')
     # known_item_ids match -> boost to 3
     assert g._kit_visible_level(pot) == 3
