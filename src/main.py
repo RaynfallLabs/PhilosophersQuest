@@ -3430,6 +3430,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._log_chronicle(
             "The duck on my head hatched. I have a tiny celestial duckling now. "
             "It can read minds. I have made a friend.")
+        # Award the registered quirk so the unlock ceremony fires and the
+        # Quirks menu shows this run's achievement as unlocked. The
+        # mechanical "reward" (the pet) has already been spawned above,
+        # so apply_fn is a no-op.
+        qs = getattr(self, 'quirk_system', None)
+        if qs is not None:
+            qs._award('duck_of_doom', "The Duck of Doom", lambda pl: None)
 
     # ------------------------------------------------------------------
     # Lockpicking

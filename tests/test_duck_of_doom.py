@@ -205,6 +205,117 @@ def test_constants_match_spec():
 # Mechanical sanity (statistical: spawn floor distribution)
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Quirk registration — the progress bar must appear on the Quirks menu
+# ---------------------------------------------------------------------------
+
+def test_duck_quirk_registered_in_all_five_dicts():
+    """`duck_of_doom` must appear in EVERY quirk-system registry, or it
+    won't show up on the menu / unlock ceremony / etc."""
+    import quirk_system as qs
+    assert 'duck_of_doom' in qs._QUIRK_PROGRESS, "missing from THRESHOLDS"
+    assert 'duck_of_doom' in qs._QUIRK_NAMES,      "missing from NAMES"
+    assert 'duck_of_doom' in qs._QUIRK_ORDER,      "missing from ORDER (won't render)"
+    assert 'duck_of_doom' in qs._QUIRK_TRIGGER,    "missing from TRIGGER"
+    assert 'duck_of_doom' in qs._QUIRK_EFFECTS,    "missing from EFFECTS"
+    assert 'duck_of_doom' in qs._QUIRK_FLAVOR,     "missing from FLAVOR"
+
+
+def test_duck_quirk_threshold_matches_spec():
+    """Progress key is `duck_of_doom_turns`, threshold 2026, is_set False."""
+    import quirk_system as qs
+    assert qs._QUIRK_PROGRESS['duck_of_doom'] == ('duck_of_doom_turns', 2026, False)
+
+
+class _StubPlayer:
+    def __init__(self, duck_turns: int = 0):
+        self.quirk_progress = {'duck_of_doom_turns': duck_turns}
+        self.unlocked_quirks: set = set()
+        self.active_powers: dict = {}
+        self.power_uses: dict = {}
+        self.power_cooldowns: dict = {}
+
+
+class _StubGame:
+    def __init__(self, duck_turns: int = 0):
+        self.player = _StubPlayer(duck_turns)
+    def add_message(self, *a, **k): pass
+    def _log_chronicle(self, *a, **k): pass
+
+
+def test_duck_quirk_progress_calculates_correctly():
+    """Halfway through the 2026 wear-counter, the menu should show ~50%."""
+    from quirk_system import QuirkSystem
+    qsys = QuirkSystem(_StubGame(duck_turns=1013))
+    pct = qsys.get_quirk_progress('duck_of_doom')
+    assert 0.49 < pct < 0.51, f"50% progress should land near 0.5, got {pct}"
+
+
+def test_duck_quirk_shows_in_menu_listing():
+    """`get_all_quirk_info` is what the quirk-menu renderer iterates.
+    Duck must be in the returned list — not just in the dicts."""
+    from quirk_system import QuirkSystem
+    info = QuirkSystem(_StubGame()).get_all_quirk_info()
+    qids = {row[0] for row in info}
+    assert 'duck_of_doom' in qids, "Duck of Doom must appear on the quirk menu"
+
+
+def test_duck_transform_awards_the_quirk():
+    """The _duck_of_doom_transform source must call quirk_system._award,
+    otherwise the unlock ceremony won't fire when the pet hatches."""
+    import inspect
+    import main
+    src = inspect.getsource(main.Game._duck_of_doom_transform)
+    assert "_award('duck_of_doom'" in src, (
+        "transform must call quirk_system._award('duck_of_doom', ...) "
+        "so the unlock popup fires and unlocked_quirks gets the entry"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Hint laddering — without giving away the mechanic
+# ---------------------------------------------------------------------------
+
+def test_duck_hints_present_in_all_five_tiers():
+    """The 5-hint ladder must be in hints.json, one per tier (1..5)."""
+    hints = json.loads((ROOT / "data" / "hints.json").read_text(encoding="utf-8"))
+    for tier in ('1', '2', '3', '4', '5'):
+        pool = hints.get(tier, [])
+        # Each tier should have at least one hint that mentions 'duck'
+        # (the joke spans every tier)
+        duck_hints = [h for h in pool if 'duck' in h.lower()]
+        assert duck_hints, f"tier {tier} has no Duck of Doom hint"
+
+
+def test_t1_t2_hints_match_user_spec():
+    """T1 and T2 wording is taken directly from the user — don't drift."""
+    hints = json.loads((ROOT / "data" / "hints.json").read_text(encoding="utf-8"))
+    t1 = "You should know better than to pick up a duck in a dungeon."
+    t2 = "I know I shouldn't pick up that duck... but what if..."
+    assert t1 in hints['1'], f"T1 hint missing or modified"
+    assert t2 in hints['2'], f"T2 hint missing or modified"
+
+
+def test_hints_do_not_spoil_the_mechanic():
+    """The hint ladder is supposed to TEMPT and HINT, not spoil. None
+    of the duck hints should explicitly name the pet, the species
+    name, the abilities, or the word 'hatch'."""
+    hints = json.loads((ROOT / "data" / "hints.json").read_text(encoding="utf-8"))
+    forbidden = {'waddlekind', 'drake of the covenant', 'seraphimallard',
+                 'psionic blast', 'sometimes goose',
+                 'pet', 'hatch', 'hatches', 'hatched',
+                 'telepathy', 'transforms'}
+    for tier, pool in hints.items():
+        for hint in pool:
+            if 'duck' not in hint.lower():
+                continue
+            for tabooed in forbidden:
+                assert tabooed not in hint.lower(), (
+                    f"tier {tier} hint spoils the mechanic with "
+                    f"'{tabooed}': {hint!r}"
+                )
+
+
 def test_spawn_floor_distribution_is_uniform_1_to_10():
     """1000 trials of `random.randint(1, 10)` should hit every floor.
     A regression where someone changed the range would surface here."""

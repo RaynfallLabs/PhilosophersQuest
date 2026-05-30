@@ -1197,6 +1197,10 @@ _QUIRK_PROGRESS = {
     'sage_counsel':  ('history_correct_total', 50, False),
     'ouroboros':     ('total_correct_answers', 1000, False),
     'diogenes':     ('levels_without_shard', 10, False),
+    # Duck of Doom: wear the cursed +2 AC headgear for 2026 turns to
+    # hatch the Waddlekind pet. Progress key counts turns the Duck
+    # has been welded to the player's head.
+    'duck_of_doom':  ('duck_of_doom_turns', 2026, False),
 }
 
 # Canonical display order and names for all quirks
@@ -1252,6 +1256,7 @@ _QUIRK_NAMES = {
     'runic_armor': "Runic Armor", 'astral_form': "Astral Form",
     'sage_counsel': "Sage's Counsel", 'ouroboros': "The Infinite Circle",
     'diogenes': "Diogenes' Lantern",
+    'duck_of_doom': "The Duck of Doom",
 }
 
 # Canonical display order
@@ -1362,6 +1367,7 @@ _QUIRK_TRIGGER = {
     'sage_counsel':  "You answered 50 history questions correctly.",
     'ouroboros':     "You answered 1,000 questions correctly in one run.",
     'diogenes':     "You dropped the Philosopher's Shard and survived 10 levels without it.",
+    'duck_of_doom': "You wore the Duck of Doom on your head for 2,026 turns without removing it.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1469,6 +1475,7 @@ _QUIRK_FLAVOR = {
     'sage_counsel':  "History is not what happened. It is what we learned from what happened.",
     'ouroboros':     "The serpent swallows its own tail and is never diminished. -- Hermetic Corpus",
     'diogenes':     "I am looking for an honest man. I do not need a lantern -- I need only my eyes. -- Diogenes",
+    'duck_of_doom': "Always trust a duck wearing a hat. -- The Munchkin Field Manual",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -1576,4 +1583,5 @@ _QUIRK_EFFECTS = {
     'sage_counsel':  "[POWER x3] Blessed for 15 turns (+25% quiz timer).",
     'ouroboros':     "[POWER x1] Hasted + Shielded + Regenerating for 20 turns.",
     'diogenes':     "WIS +2",
+    'duck_of_doom': "A celestial duckling hatched off your head as a pet.",
 }
