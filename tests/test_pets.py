@@ -239,9 +239,14 @@ def test_available_specials_by_stage():
 
 
 def test_every_species_has_two_specials():
-    """All four soul-sphere species must have stage-1 and stage-2 specials."""
+    """All four soul-sphere species must have stage-1 and stage-2 specials.
+    The Duck of Doom is exempt: it has a stage-0 special (Detect Monsters)
+    that's available at hatch, plus the standard 1 & 2 stage specials —
+    3 total. Validated separately below."""
     import pet_system
     for key, sp in pet_system._SPECIES.items():
+        if key == 'duck_of_doom':
+            continue  # see test_duck_of_doom_species_has_three_specials
         assert 'specials' in sp, f"{key} missing specials list"
         specials = sp['specials']
         assert len(specials) == 2, f"{key} should define 2 specials; got {len(specials)}"
@@ -251,6 +256,29 @@ def test_every_species_has_two_specials():
             for required in ('id', 'name', 'damage_mult', 'targeting',
                              'range', 'cooldown', 'desc'):
                 assert required in s, f"{key}/{s.get('id')} missing {required}"
+
+
+def test_duck_of_doom_species_has_three_specials():
+    """The Duck of Doom hatches into Waddlekind with Detect Monsters
+    already unlocked (stage 0). Evolves through Drake of the Covenant
+    (Psionic Blast, stage 1) into Seraphimallard (Sometimes Goose, stage 2).
+    All 3 specials need the standard schema."""
+    import pet_system
+    sp = pet_system._SPECIES['duck_of_doom']
+    specials = sp['specials']
+    assert len(specials) == 3
+    stages = {s['unlock_stage'] for s in specials}
+    assert stages == {0, 1, 2}, f"expected stages {{0,1,2}}; got {stages}"
+    by_stage = {s['unlock_stage']: s for s in specials}
+    assert by_stage[0]['id'] == 'detect_monsters'
+    assert by_stage[1]['id'] == 'psionic_blast'
+    assert by_stage[2]['id'] == 'sometimes_goose'
+    # Stage 0 special is a self-buff, not a damaging attack, so it
+    # doesn't need damage_mult.
+    for s in (by_stage[1], by_stage[2]):
+        for required in ('id', 'name', 'damage_mult', 'targeting',
+                         'range', 'cooldown', 'desc'):
+            assert required in s, f"duck/{s.get('id')} missing {required}"
 
 
 def test_special_cooldown_lifecycle():

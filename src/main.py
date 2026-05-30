@@ -209,6 +209,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._flavor_encounter_levels: dict = select_flavor_encounters()
         self._encountered_flavor_npcs: set = set()
 
+        # Duck of Doom: one Duck per run, on a uniform-random floor in
+        # {1..10}. Tracked so spawn placement (level_manager) can drop
+        # it on first entry to that floor.
+        self._duck_of_doom_floor: int = random.randint(1, 10)
+        self._duck_of_doom_placed: bool = False
+
         self._new_level(1)
         # Per-run trackers for chain-equip passives. Per-floor charges are
         # initialised here so first-floor access doesn't AttributeError.
@@ -333,6 +339,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._maybe_spawn_flavor_npc(level)
         self._maybe_spawn_magic_carrot(level)
         self._maybe_spawn_unicorn(level)
+        self._maybe_place_duck_of_doom(level)
         # Place deep-lore items targeted to this floor (e.g. abyssal_shimmer
         # when _lore_levels['shimmer'] == 1). Without this, lore items on L1
         # only spawn if the player descends and returns — and a save/reload
@@ -743,6 +750,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_magic_carrot(new_level)
             self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
+            self._maybe_place_duck_of_doom(new_level)
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
@@ -2366,6 +2374,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._on_monster_killed(m)
                     self.add_message(f"The {m.name} succumbs to its wounds!", 'combat')
 
+        # Duck of Doom: advance the 2026-turn worn-on-head counter and
+        # trigger hatch on completion.
+        self._duck_of_doom_tick()
+
         # Tick all player status effects
         effect_msgs = self.player.tick_effects()
         for text, mtype in effect_msgs:
@@ -3175,6 +3187,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message("You don't need this — your master kit is sufficient. (+5 gold scrap value)", 'info')
             self._advance_turn()
             return
+        # ── Duck of Doom intercept: cursed headgear that auto-equips ──
+        # Per Munchkin lore: "You should know better than to pick up a
+        # duck in a dungeon." Pickup bypasses inventory entirely; the
+        # duck force-equips to the head slot (kicking even a cursed
+        # existing helmet into inventory) and stays welded there until
+        # the 2026-turn quirk transforms it into a pet.
+        if getattr(item, 'id', '') == 'duck_of_doom':
+            self._duck_of_doom_pickup(item)
+            return
+
         if self.player.add_to_inventory(item):
             self.ground_items.remove(item)
             _snd.play('pickup')
@@ -3274,6 +3296,140 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
         else:
             self.add_message("You are carrying too much to pick that up.", 'warning')
+
+    # ------------------------------------------------------------------
+    # Duck of Doom — Munchkin reference. One per run, on a uniform-random
+    # floor in {1..10}. Looks like an adorable yellow duckie sitting on
+    # the floor. Pickup auto-equips it as cursed headgear (+2 AC, can't
+    # remove). Worn for 2026 turns -> transforms into Waddlekind, a
+    # psychic-pet that follows standard pet rules (evolves at L25 and
+    # L55 into Drake of the Covenant -> Seraphimallard). Permadeath for
+    # the run if the pet dies.
+    # ------------------------------------------------------------------
+
+    DUCK_OF_DOOM_TURNS_REQUIRED = 2026
+
+    def _maybe_place_duck_of_doom(self, level: int):
+        """Drop the Duck of Doom on its assigned floor (first entry only)."""
+        if self._duck_of_doom_placed:
+            return
+        if level != self._duck_of_doom_floor:
+            return
+        # Skip if the player is already carrying or wearing one (defensive).
+        head = self.player.armor_slots[0] if self.player.armor_slots else None
+        if head is not None and getattr(head, 'id', '') == 'duck_of_doom':
+            self._duck_of_doom_placed = True
+            return
+        if any(getattr(i, 'id', '') == 'duck_of_doom' for i in self.player.inventory):
+            self._duck_of_doom_placed = True
+            return
+        # Pick a walkable floor tile away from the player.
+        import json as _json
+        from paths import data_path
+        from items import Armor
+        with open(data_path('data', 'items', 'armor.json'), encoding='utf-8') as _f:
+            _armor_defs = _json.load(_f)
+        _defn = {'id': 'duck_of_doom', **_armor_defs['duck_of_doom']}
+        # Find a candidate tile: floor, not on player, not already occupied
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(self.monsters)
+        occupied.add((self.player.x, self.player.y))
+        occupied |= {(i.x, i.y) for i in self.ground_items}
+        candidates = []
+        for room in self.dungeon.rooms:
+            for tx, ty in room.inner_tiles():
+                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                    candidates.append((tx, ty))
+        if not candidates:
+            return  # nowhere to drop — give up silently
+        spawn_x, spawn_y = random.choice(candidates)
+        duck = Armor(_defn)
+        duck.x, duck.y = spawn_x, spawn_y
+        self.ground_items.append(duck)
+        self._duck_of_doom_placed = True
+
+    def _duck_of_doom_pickup(self, duck):
+        """Intercept of normal pickup. The duck force-equips to the head
+        slot, kicking the existing head armor (cursed or not) into
+        inventory. The Duck is itself cursed, so try_unequip_slot will
+        refuse to remove it through normal channels."""
+        # Remove from ground
+        if duck in self.ground_items:
+            self.ground_items.remove(duck)
+        # Force-displace the existing head armor (bypass try_unequip_slot
+        # to allow displacing a cursed helmet — the Duck's magic
+        # supersedes lesser curses).
+        head_idx = 0  # 'head' is armor_slots[0]
+        old = self.player.armor_slots[head_idx] if self.player.armor_slots else None
+        if old is not None:
+            self.player.armor_slots[head_idx] = None
+            old_status = getattr(old, 'on_equip_status', '')
+            if old_status:
+                self.player.status_effects.pop(old_status, None)
+            # Try to put old into inventory; if over weight, drop on floor
+            if not self.player.add_to_inventory(old):
+                old.x, old.y = self.player.x, self.player.y
+                self.ground_items.append(old)
+                self.add_message(
+                    f"The {self._display_name(old)} clatters to the floor.",
+                    'warning')
+        # Equip the Duck.
+        duck.identified = False  # stays unknown until identified
+        duck.id_level = max(getattr(duck, 'id_level', 0), 0)
+        self.player.armor_slots[head_idx] = duck
+        _snd.play('pickup')
+        self.add_message(
+            "The duckie hops onto your head! It feels… stuck. Heavy. Wrong.",
+            'danger')
+        self.add_message(
+            "(You should know better than to pick up a duck in a dungeon.)",
+            'warning')
+        self._log_chronicle(
+            "I picked up a duck. It's on my head now. It won't come off.")
+        # Start the quirk timer fresh.
+        if not hasattr(self.player, 'quirk_progress') or self.player.quirk_progress is None:
+            self.player.quirk_progress = {}
+        self.player.quirk_progress['duck_of_doom_turns'] = 0
+        self._advance_turn()
+
+    def _duck_of_doom_tick(self):
+        """Called once per turn from _advance_turn. If the Duck is on
+        the head slot, advance the quirk counter; transform at 2026."""
+        head = self.player.armor_slots[0] if self.player.armor_slots else None
+        if head is None or getattr(head, 'id', '') != 'duck_of_doom':
+            return
+        if not hasattr(self.player, 'quirk_progress') or self.player.quirk_progress is None:
+            self.player.quirk_progress = {}
+        n = self.player.quirk_progress.get('duck_of_doom_turns', 0) + 1
+        self.player.quirk_progress['duck_of_doom_turns'] = n
+        if n >= self.DUCK_OF_DOOM_TURNS_REQUIRED:
+            self._duck_of_doom_transform()
+
+    def _duck_of_doom_transform(self):
+        """At 2026 turns, the Duck hatches: remove the item from the
+        head slot and spawn a Waddlekind pet at the player's tile."""
+        from pet_system import Pet
+        # Remove the duck from head; no inventory copy — the item is
+        # CONSUMED by the transformation.
+        head = self.player.armor_slots[0] if self.player.armor_slots else None
+        if head is None or getattr(head, 'id', '') != 'duck_of_doom':
+            return  # defensive; shouldn't happen
+        self.player.armor_slots[0] = None
+        # Clear the quirk counter so a second Duck (impossible in
+        # normal play, but defensive) starts at 0.
+        self.player.quirk_progress.pop('duck_of_doom_turns', None)
+        # Pet spawns on player's tile (player can step away next turn).
+        pet = Pet('duck_of_doom', self.player.x, self.player.y)
+        self.pets.append(pet)
+        self.add_message(
+            "The duckie's eyes glow. It hops off your head, suddenly weightless.",
+            'success')
+        self.add_message(
+            f"Waddlekind has hatched! ({pet.name})",
+            'success')
+        self._log_chronicle(
+            "The duck on my head hatched. I have a tiny celestial duckling now. "
+            "It can read minds. I have made a friend.")
 
     # ------------------------------------------------------------------
     # Lockpicking

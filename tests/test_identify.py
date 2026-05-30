@@ -309,6 +309,10 @@ _ALLOWED_KINDS = {
     'armor_ac_bonus', 'armor_resist_bonus', 'armor_hp_bonus',
     'accessory_stat_bonus', 'accessory_passive_strength',
     'wand_extra_charge', 'scroll_extra_read', 'spellbook_mp_discount', 'potion_potency_bonus',
+    # Cosmetic-only blessing: no mechanical effect, just lore/humor on
+    # the item menu card. Used by the Duck of Doom's T5 reveal
+    # ("The Duck of Doom has no master!").
+    'cosmetic_only',
 }
 
 

@@ -123,6 +123,62 @@ _SPECIES = {
             },
         ],
     },
+    'duck_of_doom': {
+        # The Duck of Doom pet — hatched when the cursed Duck of Doom
+        # headgear has been worn for 2026 turns. Unique among species:
+        # it has a Stage 0 special (Detect Monsters) the moment it
+        # hatches, because the player already paid 2026 cursed-turns
+        # to be here.
+        'element': 'psychic',
+        'damage_type': 'psychic',
+        'color': (250, 220, 80),  # bright duck-yellow
+        'stages': [
+            {'name': 'Waddlekind',          'symbol': 'd',
+             'msg': 'A small celestial duckling waddles off your head!'},
+            {'name': 'Drake of the Covenant', 'symbol': 'D',
+             'msg': '{old} sheds its hatchling fluff and rises as the Drake of the Covenant!'},
+            {'name': 'Seraphimallard',      'symbol': 'D',
+             'msg': '{old} unfolds six wings of solid light — it has become Seraphimallard!'},
+        ],
+        'specials': [
+            {
+                'id': 'detect_monsters', 'name': 'Detect Monsters', 'unlock_stage': 0,
+                # Applies telepathy to the player for a stretch of turns —
+                # all monsters on the floor become visible. Targeting='self'
+                # skips the cursor phase entirely (auto-resolves on use).
+                'targeting': 'self',
+                'effect': 'player_telepathy',
+                'effect_duration': 30,
+                'range': 0,
+                'cooldown': 200,
+                'desc': "Reveal every monster on the floor for 30 turns.",
+            },
+            {
+                'id': 'psionic_blast', 'name': 'Psionic Blast', 'unlock_stage': 1,
+                'damage_mult': 1.8, 'damage_type': 'psychic',
+                'targeting': 'single', 'range': 6,
+                'status': 'confused', 'status_chance': 0.50, 'status_duration': 3,
+                'cooldown': 300,
+                'desc': "Range 6 single target; 1.8x psychic damage; 50% confuse (3 turns).",
+            },
+            {
+                'id': 'sometimes_goose', 'name': 'Sometimes Goose', 'unlock_stage': 2,
+                'damage_mult': 1.2, 'damage_type': 'psychic',
+                # 'visible_all' targeting hits every alive monster in
+                # the player's current FOV. The "goose" is flavour
+                # only — no monster icon is spawned, just message text
+                # and damage application across visible enemies.
+                'targeting': 'visible_all', 'range': 0,
+                'status': 'feared', 'status_chance': 0.40, 'status_duration': 4,
+                'cooldown': 600,
+                'flavor_message': (
+                    "Reality folds. A goose the size of a cathedral hisses "
+                    "from a dimensional rift — every enemy in sight reels."
+                ),
+                'desc': "Hits every visible enemy; 1.2x psychic damage; 40% fear (4 turns).",
+            },
+        ],
+    },
 }
 
 # Evolution thresholds — major Pokémon-style milestones.

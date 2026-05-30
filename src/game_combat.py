@@ -1907,8 +1907,19 @@ class CombatMixin:
         The cursor starts on the pet's current tile. Confirm with ENTER/SPACE/F/S.
         Targeting envelope is enforced at resolution time, not movement time
         (cursor can roam, but invalid confirms produce a warning).
+
+        Specials with `targeting: 'self'` or `'visible_all'` have no
+        tile to pick — they resolve instantly here, no cursor.
         """
         from game_states import STATE_TARGET, STATE_PLAYER
+        if special.get('targeting') in ('self', 'visible_all'):
+            # No-target specials: resolve immediately at pet's tile and
+            # spend the turn.
+            self._resolve_pet_special(pet, special, pet.x, pet.y)
+            pet.use_special(special['id'])
+            self.state = STATE_PLAYER
+            self._advance_turn()
+            return
         self._pending_pet_special = special
         self._pending_pet_special_pet = pet
         self._pet_special_targeting = True
@@ -1976,6 +1987,48 @@ class CombatMixin:
         status = special.get('status')
         status_chance = float(special.get('status_chance', 0.0))
         status_duration = int(special.get('status_duration', 3))
+
+        # ── No-target specials (Duck of Doom: Detect Monsters) ──
+        if targeting == 'self':
+            effect = special.get('effect')
+            dur = int(special.get('effect_duration', 0))
+            if effect == 'player_telepathy' and dur > 0:
+                self.player.add_effect('telepathy', dur)
+                self.add_message(
+                    f"{pet.name}'s mind opens — every creature on the "
+                    f"floor floods into your awareness ({dur} turns).",
+                    'success')
+            return
+
+        # ── Sometimes Goose: hit every alive monster in FOV ──
+        if targeting == 'visible_all':
+            flavor = special.get('flavor_message')
+            if flavor:
+                self.add_message(flavor, 'success')
+            else:
+                self.add_message(
+                    f"{pet.name} unleashes {special['name']}!", 'success')
+            hit_count = 0
+            for m in self.monsters:
+                if not m.alive:
+                    continue
+                if (m.x, m.y) not in self.visible:
+                    continue
+                dmg = max(1, int(base_dmg * dmg_mult))
+                pre_max = m.max_hp
+                m.take_damage(dmg)
+                if m.alive and status and _rng.random() < status_chance:
+                    cur = m.status_effects.get(status, 0)
+                    m.status_effects[status] = max(cur, status_duration)
+                if not m.alive:
+                    for k_msg in pet.gain_xp_from_kill(pre_max):
+                        self.add_message(k_msg, 'success')
+                    self._on_monster_killed(m)
+                hit_count += 1
+            if hit_count == 0:
+                self.add_message(
+                    f"The {special['name']} dissipates harmlessly.", 'info')
+            return
 
         def _apply_to(m):
             if not m.alive:

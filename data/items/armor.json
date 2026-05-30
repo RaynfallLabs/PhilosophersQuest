@@ -2971,5 +2971,36 @@
       "scope": "item",
       "desc": "The Crown of Brahma was the creator's own — it deflects 30% of all elemental damage."
     }
+  },
+  "duck_of_doom": {
+    "name": "Duck of Doom",
+    "symbol": "[",
+    "color": [250, 220, 80],
+    "weight": 1.0,
+    "min_level": 1,
+    "slot": "head",
+    "tier": 1,
+    "material": "rubber",
+    "ac_bonus": 2,
+    "enchant_bonus": 0,
+    "equip_threshold": 0,
+    "quiz_tier": 1,
+    "damage_resistances": {},
+    "can_be_cursed": true,
+    "buc": "cursed",
+    "cursed": true,
+    "identified": false,
+    "id_level": 0,
+    "unidentified_name": "an adorable yellow duckie",
+    "auto_equip_on_pickup": true,
+    "value": 0,
+    "lore": "You should know better than to pick up a duck in a dungeon.",
+    "is_unique": true,
+    "mastery_blessing": {
+      "kind": "cosmetic_only",
+      "value": 0,
+      "scope": "item",
+      "desc": "The Duck of Doom has no master!"
+    }
   }
 }
