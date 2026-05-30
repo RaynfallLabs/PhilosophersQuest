@@ -1062,6 +1062,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         b = self.secret_build or {}
 
         # -- Always: Philosopher's Shard ------------------------------------
+        # Mark a build-kit starting item as appropriately-known: uniques
+        # get id_level=3 (name + BUC + stats; lore + mastery still
+        # earnable via the philosophy chain). Commons jump straight to
+        # id_level=5 because their content is just "basic gear" — the
+        # identify menu's common-filter (`id_level >= 5`) then hides
+        # them so the kid isn't spamming threshold-mode IDs on a
+        # starting dagger. Per user feedback 2026-05-29: build-kit items
+        # were spawning at 4/5 or 5/5 due to the legacy property-set
+        # path raising id_level to 4 via the setter.
+        def _mark_starting_item_known(it):
+            if getattr(it, 'is_unique', False):
+                it.id_level = max(int(getattr(it, 'id_level', 0)), 3)
+                it.buc_known = True
+            else:
+                it.id_level = 5
+                it.buc_known = True
         shard = Item({
             'id': 'philosophers_shard',
             'name': "Philosopher's Shard",
@@ -1072,7 +1088,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'min_level': 1,
             'lore': "A tiny fragment of the Philosopher's Stone, warm to the touch and faintly luminous. It resonates with philosophical understanding, allowing its bearer to perceive the true nature of unknown items through rigorous examination. Ancient texts warn that those who abandon it walk blind through the dungeon — but some say that blindness teaches its own kind of wisdom.",
         })
-        shard.identified = True
+        _mark_starting_item_known(shard)
         self.player.inventory.append(shard)
         self.player.known_item_ids.add('philosophers_shard')
 
@@ -1090,13 +1106,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 else:
                     w = next((x for x in weapons if x.id == start_weapon), None)
                 if w:
-                    w.identified = True
+                    _mark_starting_item_known(w)
                     self.player.known_item_ids.add(w.id)
                     self.player.inventory.append(w)
             elif not no_dagger:
                 sword = instantiate_weapon('shortsword', 'iron')
                 if sword:
-                    sword.identified = True
+                    _mark_starting_item_known(sword)
                     self.player.known_item_ids.add(sword.id)
                     self.player.inventory.append(sword)
         except Exception:
@@ -1125,7 +1141,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 else:
                     melee_w = next((x for x in weapons if x.id == start_melee), None)
                 if melee_w:
-                    melee_w.identified = True
+                    _mark_starting_item_known(melee_w)
                     self.player.known_item_ids.add(melee_w.id)
                     if b.get('_lock_melee'):
                         # Auto-equip and lock (can't be removed)
@@ -1143,7 +1159,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 wands = load_items('wand')
                 wand = next((w for w in wands if w.id == start_wand), None)
                 if wand:
-                    wand.identified = True
+                    _mark_starting_item_known(wand)
                     self.player.known_item_ids.add(wand.id)
                     self.player.inventory.append(wand)
             except Exception:
@@ -1156,7 +1172,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 books = load_items('spellbook')
                 book = next((bk for bk in books if bk.id == start_book), None)
                 if book:
-                    book.identified = True
+                    _mark_starting_item_known(book)
                     self.player.known_item_ids.add(book.id)
                     self.player.inventory.append(book)
             except Exception:
@@ -1174,7 +1190,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     shields = load_items('shield')
                     sh = next((s for s in shields if s.id == start_shield), None)
                 if sh:
-                    sh.identified = True
+                    _mark_starting_item_known(sh)
                     self.player.known_item_ids.add(sh.id)
                     self.player.inventory.append(sh)
             except Exception:
@@ -1187,7 +1203,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 accs = load_items('accessory')
                 acc = next((a for a in accs if a.id == start_acc), None)
                 if acc:
-                    acc.identified = True
+                    _mark_starting_item_known(acc)
                     self.player.known_item_ids.add(acc.id)
                     self.player.inventory.append(acc)
             except Exception:
@@ -1201,7 +1217,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for eid in extra_acc_ids:
                     ea = next((a for a in all_accs if a.id == eid), None)
                     if ea:
-                        ea.identified = True
+                        _mark_starting_item_known(ea)
                         self.player.known_item_ids.add(ea.id)
                         self.player.inventory.append(ea)
             except Exception:
@@ -1219,7 +1235,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     armors = load_items('armor')
                     arm = next((a for a in armors if a.id == start_armor), None)
                 if arm:
-                    arm.identified = True
+                    _mark_starting_item_known(arm)
                     self.player.known_item_ids.add(arm.id)
                     if b.get('_equip_armor'):
                         from items import ARMOR_SLOTS
@@ -1247,7 +1263,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             'Ancient texts say these vessels were used to bind creature spirits. '
                             'One wonders what might happen if it were hurled with force...',
                 })
-                sphere.identified = True
+                _mark_starting_item_known(sphere)
                 self.player.known_item_ids.add('soul_sphere')
                 self.player.inventory.append(sphere)
 
@@ -1265,7 +1281,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 'lore': "An unusual soul sphere. Its colors are black and silver. "
                         "It pulses with a powerful energy...",
             })
-            usphere.identified = True
+            _mark_starting_item_known(usphere)
             self.player.known_item_ids.add('unusual_soul_sphere')
             self.player.inventory.append(usphere)
 
@@ -1286,7 +1302,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if pot:
                         import copy
                         p = copy.copy(pot)
-                        p.identified = True
+                        _mark_starting_item_known(p)
                         self.player.known_item_ids.add(p.id)
                         self.player.add_to_inventory(p)
             except Exception:
@@ -1299,7 +1315,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             picks = load_items('lockpick')
             if picks:
                 master = copy.copy(picks[0])  # canonical lockpick
-                master.identified = True
+                _mark_starting_item_known(master)
                 self.player.add_to_inventory(master)
         except Exception:
             pass
@@ -1318,7 +1334,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             potions = load_items('potion')
             heal_pot = next((p for p in potions if p.id == 'potion_of_healing'), None)
             if heal_pot:
-                heal_pot.identified = True
+                _mark_starting_item_known(heal_pot)
                 heal_pot.buc_known = True
                 self.player.known_item_ids.add(heal_pot.id)
                 self.player.inventory.append(heal_pot)
@@ -5181,6 +5197,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"{previous_level}/5).",
                     'warning'
                 )
+                # Backlash from the Shard: zero-correct on a corpse-study
+                # chain stuns the kid for 10 turns of Confusion. Mirrors
+                # the item-identify branch in
+                # game_magic.py:_identify_unique_item. Per user 2026-05-29.
+                self.player.add_effect('confused', 10)
+                self.add_message(
+                    "The Shard turns cold in your palm. Backlash floods "
+                    "your mind — you are Confused (10 turns).",
+                    'danger')
             if after_advance_turn:
                 self._advance_turn()
 

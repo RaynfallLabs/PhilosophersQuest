@@ -246,7 +246,9 @@
       "value": 1,
       "scope": "item",
       "desc": "The Bronze Aegis is carved with Hephaestus's eye — armor class improves by 1."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "aegis_of_athena": {
     "name": "Aegis of Athena",
@@ -315,7 +317,9 @@
       },
       "scope": "item",
       "desc": "Athena's mirror-polished Aegis turns Gorgon-stares to stone — it deflects 25% of all elemental damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "lionheart_shield": {
     "name": "Lionheart Shield",
@@ -351,7 +355,9 @@
       "value": 15,
       "scope": "item",
       "desc": "The Lionheart Shield was sworn to duty unto death — it grants a permanent 15 HP on mastery."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "shield_of_the_spartans": {
     "name": "Shield of the Spartans",
@@ -393,7 +399,9 @@
       "value": 15,
       "scope": "item",
       "desc": "Return with your shield, or on it — the Shield of the Spartans grants a permanent 15 HP on mastery."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "svalinn": {
     "name": "Svalinn",
@@ -437,7 +445,9 @@
       },
       "scope": "item",
       "desc": "Svalinn stands before the sun itself — it deflects 50% of fire damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ancile": {
     "name": "Ancile",
@@ -478,7 +488,9 @@
       "value": 2,
       "scope": "item",
       "desc": "The Ancile fell from heaven during Numa's reign — armor class improves by 2."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "mycenaean_tower_of_telamon": {
     "name": "Mycenaean Tower of Telamon",

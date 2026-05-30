@@ -444,7 +444,7 @@
     "value": 8500,
     "min_level": 9999,
     "quiz_tier": 5,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a shining foreign blade of pale steel",
     "ignore_resistances": true,
     "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment — nothing can resist it.",
@@ -476,7 +476,8 @@
       },
       "scope": "item",
       "desc": "Reforged Gram remembers Fafnir — Sigurd's blade deals +50% damage to dragons."
-    }
+    },
+    "id_level": 0
   },
   "broken_gram": {
     "name": "Broken Blade of Gram",
@@ -515,7 +516,7 @@
     "value": 100,
     "min_level": 9999,
     "quiz_tier": 1,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a broken sword hilt with a jagged blade",
     "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon — but something about it still hums with dormant power.",
     "damage_types": [
@@ -542,7 +543,8 @@
       "value": 2,
       "scope": "item",
       "desc": "Even shattered, the Broken Blade of Gram hums with dormant power — every strike lands a little heavier."
-    }
+    },
+    "id_level": 0
   },
   "sigurds_shovel": {
     "name": "Sigurd's Shovel",
@@ -582,7 +584,7 @@
     "value": 200,
     "min_level": 9999,
     "quiz_tier": 1,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a sturdy iron shovel",
     "can_dig": true,
     "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below — sometimes the right tool is the humble one.",
@@ -613,7 +615,8 @@
       },
       "scope": "item",
       "desc": "Sigurd's Shovel remembers the pit beneath the wyrm — it deals +25% damage to dragons."
-    }
+    },
+    "id_level": 0
   },
   "tyrfing": {
     "name": "Tyrfing",
@@ -3453,7 +3456,7 @@
     "containerLootTier": "special",
     "value": 0,
     "min_level": 9999,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "Punch in the Face",
     "lore": "This is Dad’s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
     "quiz_tier": 1,
@@ -3482,7 +3485,8 @@
       "value": true,
       "scope": "item",
       "desc": "A Punch in the Face has never needed to miss twice — every chain opens with an auto-crit."
-    }
+    },
+    "id_level": 0
   },
   "hunt_captains_sword": {
     "name": "Hunt Captain's Sword",
@@ -3556,7 +3560,9 @@
       },
       "scope": "item",
       "desc": "The Hunt Captain's Sword phases between worlds — it deals +40% damage to fey."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "wendigo_fang": {
     "name": "Wendigo's Fang",
@@ -3626,7 +3632,9 @@
       "value": 0.15,
       "scope": "item",
       "desc": "The Wendigo's Fang leaches warmth from its victims — it heals 15% of damage dealt back to the wielder."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "echidna_fang": {
     "name": "Echidna's Fang",
@@ -3701,7 +3709,9 @@
       },
       "scope": "item",
       "desc": "Echidna's Fang weeps the venoms of all her monstrous children — 25% of its hits poison for 3 turns."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "vulcans_brand": {
     "name": "Vulcan's Brand",
@@ -3775,7 +3785,9 @@
       },
       "scope": "item",
       "desc": "Vulcan's Brand never fully cools — 25% of its strikes set foes burning for 3 turns."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "sling_of_david": {
     "name": "Sling of David",
@@ -3851,7 +3863,9 @@
       },
       "scope": "item",
       "desc": "David's Sling humbled Goliath with a single stone — it deals +50% damage to giants."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "prometheus_torch": {
     "name": "Narthex of Prometheus",
@@ -3933,7 +3947,9 @@
       },
       "scope": "item",
       "desc": "The Narthex of Prometheus still smoulders after three thousand years — 20% of its strikes ignite the target for 2 turns."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "sword_of_damocles": {
     "name": "Sword of Damocles",
@@ -4009,7 +4025,9 @@
       "scope": "item",
       "desc": "The Sword of Damocles hangs ready to fall — it auto-crits on the first swing of every chain."
     },
-    "design_notes": "Wild/chaotic archetype: each swing thins the horsehair, the blade lurches between safety and the falling sword."
+    "design_notes": "Wild/chaotic archetype: each swing thins the horsehair, the blade lurches between safety and the falling sword.",
+    "identified": false,
+    "id_level": 0
   },
   "robin_hoods_longbow": {
     "name": "Robin Hood's Longbow",
@@ -4082,7 +4100,9 @@
       "scope": "item",
       "desc": "Robin Hood always struck from cover — his longbow auto-crits on the first arrow of every chain."
     },
-    "design_notes": "Sniper/precise archetype: the outlaw's patient breath, the last shot from cover splits the arrow before it."
+    "design_notes": "Sniper/precise archetype: the outlaw's patient breath, the last shot from cover splits the arrow before it.",
+    "identified": false,
+    "id_level": 0
   },
   "achilles_spear": {
     "name": "Achilles's Spear",
@@ -4156,7 +4176,9 @@
       "scope": "item",
       "desc": "The spear that wounded also healed — Achilles's Spear restores 20% of its damage dealt to the wielder."
     },
-    "design_notes": "Ancient/stately archetype: Hephaestus' shaft, measured and deliberate; the rust on its tip already knowing the cure."
+    "design_notes": "Ancient/stately archetype: Hephaestus' shaft, measured and deliberate; the rust on its tip already knowing the cure.",
+    "identified": false,
+    "id_level": 0
   },
   "gilgamesh_axe": {
     "name": "Gilgamesh's Axe",
@@ -4232,7 +4254,9 @@
       "scope": "item",
       "desc": "Gilgamesh's Axe remembers Enkidu's bond — it adds 3 damage to every strike."
     },
-    "design_notes": "Bestial/feral archetype: the axe Enkidu dreamed, primal rhythm; the bond hardens it after the first wound."
+    "design_notes": "Bestial/feral archetype: the axe Enkidu dreamed, primal rhythm; the bond hardens it after the first wound.",
+    "identified": false,
+    "id_level": 0
   },
   "cronus_scythe": {
     "name": "Cronus's Scythe",
@@ -4307,7 +4331,9 @@
       "scope": "item",
       "desc": "The Scythe of Cronus cuts through time — each strike extends bleeding by 5 turns as vitality drains."
     },
-    "design_notes": "Cursed-blade archetype: time itself sheds from its edge, slow as it drinks vitality then ruinous at the harvest."
+    "design_notes": "Cursed-blade archetype: time itself sheds from its edge, slow as it drinks vitality then ruinous at the harvest.",
+    "identified": false,
+    "id_level": 0
   },
   "spear_of_lugh": {
     "name": "Spear of Lugh",
@@ -4388,7 +4414,9 @@
       "scope": "item",
       "desc": "The Spear of Lugh ignites unless kept in poison — 25% of its strikes set foes burning for 3 turns."
     },
-    "design_notes": "Brute/crushing archetype: a spear quenched in poison strikes hot from the cauldron, heavy from the first lunge."
+    "design_notes": "Brute/crushing archetype: a spear quenched in poison strikes hot from the cauldron, heavy from the first lunge.",
+    "identified": false,
+    "id_level": 0
   },
   "gae_dearg": {
     "name": "Gae Dearg",
@@ -4460,7 +4488,9 @@
       "scope": "item",
       "desc": "From Gae Dearg's red point no wound ever heals — every hit extends bleeding by 6 turns."
     },
-    "design_notes": "Cursed-blade archetype: the Red Spear offers no mercy, patient wound-finding then unhealing ruin."
+    "design_notes": "Cursed-blade archetype: the Red Spear offers no mercy, patient wound-finding then unhealing ruin.",
+    "identified": false,
+    "id_level": 0
   },
   "net_of_hephaestus": {
     "name": "Net of Hephaestus",
@@ -4536,7 +4566,9 @@
       "scope": "item",
       "desc": "The Net of Hephaestus caught Ares himself — 30% of its strikes paralyze for 2 turns."
     },
-    "design_notes": "Trickster/nimble archetype: the smith-god's ensnaring weave, light strokes that find the gaps then the closing fold."
+    "design_notes": "Trickster/nimble archetype: the smith-god's ensnaring weave, light strokes that find the gaps then the closing fold.",
+    "identified": false,
+    "id_level": 0
   },
   "sword_of_michael": {
     "name": "Sword of Michael",
@@ -4582,7 +4614,7 @@
     "value": 25000,
     "min_level": 9999,
     "quiz_tier": 5,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a blade of blinding white radiance",
     "ignore_resistances": true,
     "abaddon_bonus_damage": "6d10",
@@ -4615,7 +4647,8 @@
       },
       "scope": "item",
       "desc": "The Sword of Michael deals +50% damage to demonkind."
-    }
+    },
+    "id_level": 0
   },
   "oathkeeper_sword": {
     "name": "Oathkeeper",
@@ -4682,7 +4715,9 @@
       "value": 0.2,
       "scope": "item",
       "desc": "Oathkeeper was carried in love and maintained in love — every chain multiplier rises by 0.20."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "penitents_blade": {
     "name": "Penitent's Blade",
@@ -4724,7 +4759,7 @@
     "value": 5000,
     "min_level": 9999,
     "quiz_tier": 3,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a dark iron dagger stained with old blood",
     "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
     "damage_types": [
@@ -4751,7 +4786,8 @@
       "value": 0.25,
       "scope": "item",
       "desc": "The Penitent's Blade tries to balance its long ledger — it heals 25% of damage dealt back to the wielder."
-    }
+    },
+    "id_level": 0
   },
   "boomstick": {
     "name": "Boomstick",
@@ -4786,7 +4822,7 @@
     "requiresAmmo": "shell",
     "min_level": 9999,
     "value": 500,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a sawed-off double-barreled shotgun",
     "lore": "This is my BOOMSTICK! It's a twelve-gauge double-barreled Remington. S-Mart's top of the line. You can find this in the sporting goods department. That's right, this sweet baby was made in Grand Rapids, Michigan. Retails for about $109.95. It's got a walnut stock, cobalt blue steel, and a hair trigger. That's right. Shop smart. Shop S-Mart.",
     "quiz_tier": 3,
@@ -4816,7 +4852,8 @@
       "scope": "item",
       "desc": "S-Mart's top of the line — the Boomstick adds 5 buckshot damage to every blast. Shop smart."
     },
-    "design_notes": "Signature chain: explosive peak -- chain-5 triggers an AOE/shotgun spread. Requires combat.py wiring for the AOE. peak_floor=0 so baseDamage is special-cased (not formula-derived)."
+    "design_notes": "Signature chain: explosive peak -- chain-5 triggers an AOE/shotgun spread. Requires combat.py wiring for the AOE. peak_floor=0 so baseDamage is special-cased (not formula-derived).",
+    "id_level": 0
   },
   "chainsaw_prosthetic": {
     "name": "Chainsaw Prosthetic",
@@ -4849,7 +4886,7 @@
     "bleedChance": 0.35,
     "min_level": 9999,
     "value": 666,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a chainsaw bolted to an arm stump",
     "lore": "A Homelite XL chainsaw, permanently bolted to the stump of a severed right hand. The original owner attached it in a moment of desperate improvisation in a remote cabin in Tennessee. It has since carved through more deadites than anyone cares to count. Groovy.",
     "quiz_tier": 3,
@@ -4877,7 +4914,8 @@
       "value": 5,
       "scope": "item",
       "desc": "The Chainsaw Prosthetic carves and tears — every hit extends bleeding by 5 turns. Groovy."
-    }
+    },
+    "id_level": 0
   },
   "romulus_spear": {
     "name": "Spear of Romulus",
@@ -4948,7 +4986,9 @@
       "value": 2,
       "scope": "item",
       "desc": "The Spear of Romulus founded a city from one throw — every cast lands with 2 more weight."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "pharaohs_crook": {
     "name": "Pharaoh's Crook",
@@ -5020,7 +5060,9 @@
       "scope": "item",
       "desc": "The Pharaoh's Crook carries the weight of divine kingship — 20% of its strikes stun for 2 turns."
     },
-    "design_notes": "King's blow archetype: every stroke carries pharaoh's authority, even the first touch is rebuke."
+    "design_notes": "King's blow archetype: every stroke carries pharaoh's authority, even the first touch is rebuke.",
+    "identified": false,
+    "id_level": 0
   },
   "mjolnir_shard": {
     "name": "Mjolnir Shard",
@@ -5095,7 +5137,9 @@
       "scope": "item",
       "desc": "Even a shard of Mjolnir holds Thor's thunder — 25% of its strikes stun foes for 2 turns."
     },
-    "design_notes": "Signature chain: heavy with thunder peak -- a chip of the hammer keeps the weight even when broken. NOTE: chain-5 should trigger a lightning status proc; requires combat.py wiring."
+    "design_notes": "Signature chain: heavy with thunder peak -- a chip of the hammer keeps the weight even when broken. NOTE: chain-5 should trigger a lightning status proc; requires combat.py wiring.",
+    "identified": false,
+    "id_level": 0
   },
   "bow_of_rama": {
     "name": "Bow of Rama",
@@ -5171,7 +5215,9 @@
       },
       "scope": "item",
       "desc": "Rama's arrows are guided by dharma — the Bow of Rama deals +40% damage to evil-aligned foes."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "gae_bolg_fragment": {
     "name": "Gae Bolg Fragment",
@@ -5241,7 +5287,9 @@
       "scope": "item",
       "desc": "Even a fragment of the Gae Bolg opens like the original — it auto-crits on the first strike of every chain."
     },
-    "design_notes": "Cursed-blade archetype: even the splinter remembers, the bone barbs find the wound and then they spread."
+    "design_notes": "Cursed-blade archetype: even the splinter remembers, the bone barbs find the wound and then they spread.",
+    "identified": false,
+    "id_level": 0
   },
   "staff_of_moses": {
     "name": "Staff of Moses",
@@ -5315,7 +5363,9 @@
       "scope": "item",
       "desc": "The Staff of Moses parted the sea and confronted the unholy — it deals +40% damage to undead."
     },
-    "design_notes": "Holy/radiant archetype: the shepherd's rod chosen by God, the radiance grows as the unholy is named."
+    "design_notes": "Holy/radiant archetype: the shepherd's rod chosen by God, the radiance grows as the unholy is named.",
+    "identified": false,
+    "id_level": 0
   },
   "witcher_silver_blade": {
     "name": "Witcher's Silver Blade",
@@ -5353,7 +5403,7 @@
     "containerLootTier": "legendary",
     "value": 800,
     "min_level": 9999,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a blade of polished silver etched with runes",
     "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night — wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
     "quiz_tier": 2,
@@ -5385,7 +5435,8 @@
       },
       "scope": "item",
       "desc": "The Witcher's Silver Blade was forged for things that crawl from cursed earth — it deals +40% damage to undead."
-    }
+    },
+    "id_level": 0
   },
   "zireael": {
     "name": "Zireael",
@@ -5422,7 +5473,7 @@
     "containerLootTier": "legendary",
     "value": 1200,
     "min_level": 9999,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
     "lore": "Zireael — 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative — it is a promise. She will return. She always returns.",
     "quiz_tier": 2,
@@ -5451,7 +5502,8 @@
       "scope": "item",
       "desc": "Zireael is a masterwork of gnomish steel — Swallow adds 0.25 to every chain multiplier."
     },
-    "design_notes": "Signature chain: Swallow, the witcher's blade -- fast finesse opener (0.4x) with a sharp closing peak. Rewards the chain."
+    "design_notes": "Signature chain: Swallow, the witcher's blade -- fast finesse opener (0.4x) with a sharp closing peak. Rewards the chain.",
+    "id_level": 0
   },
   "vel_of_murugan": {
     "name": "Vel of Murugan",

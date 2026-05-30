@@ -3285,7 +3285,9 @@
       },
       "scope": "item",
       "desc": "The Dragonslayer's Ring carries a guildhall's worth of dragon-blood — STR rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "shadow_walker_ring": {
     "name": "Shadow Walker's Ring",
@@ -3325,7 +3327,9 @@
       },
       "scope": "item",
       "desc": "The Shadow Walker's Ring still smells faintly of nightshade — DEX rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "philosophers_ring": {
     "name": "Philosopher's Ring",
@@ -3367,7 +3371,9 @@
       },
       "scope": "item",
       "desc": "The Philosopher's Ring warms when unknown things are near — WIS rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ring_protection_silver": {
     "name": "ring of protection +1",
@@ -3919,7 +3925,9 @@
       },
       "scope": "item",
       "desc": "The Ring of Gyges lets the just and unjust act unseen — DEX rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ring_of_the_nibelung": {
     "name": "Ring of the Nibelung",
@@ -4038,7 +4046,9 @@
       },
       "scope": "item",
       "desc": "Gold pickups are tripled while you wear Draupnir (instead of doubled)."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ring_of_solomon": {
     "name": "Seal of Solomon",
@@ -4271,7 +4281,9 @@
       },
       "scope": "item",
       "desc": "The Eye of Horus heals an extra 2 HP each tick."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "scarab_of_khepri": {
     "name": "Scarab of Khepri",
@@ -4311,7 +4323,9 @@
       },
       "scope": "item",
       "desc": "The Scarab of Khepri rolls the sun across the sky each morning — each regen tick heals 2 more HP."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "hamsa_hand": {
     "name": "Hand of Fatima",
@@ -5904,7 +5918,9 @@
       },
       "scope": "item",
       "desc": "The Sphinx's Crown holds millennia of riddle-wisdom — WIS rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "sailors_amulet": {
     "name": "Sailor's Amulet",
@@ -5942,7 +5958,9 @@
       },
       "scope": "item",
       "desc": "The Sailor's Amulet was carved from a ship that survived Charybdis — PER rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "anubis_scales": {
     "name": "Anubis's Scales",
@@ -5978,7 +5996,9 @@
       },
       "scope": "item",
       "desc": "Anubis weighs hearts against Ma'at's feather — CON rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ring_of_iron_grip": {
     "name": "Ring of Iron Grip",
@@ -6014,7 +6034,9 @@
       },
       "scope": "item",
       "desc": "The Ring of Iron Grip was crushed from Ravana's finger — STR rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "obsidian_talisman": {
     "name": "Obsidian Talisman",
@@ -6050,7 +6072,9 @@
       },
       "scope": "item",
       "desc": "The Obsidian Talisman carved from Xibalba's altar steadies the soul against fear — WIS rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -6259,7 +6283,9 @@
       },
       "scope": "item",
       "desc": "Elara's name is engraved on the back of the Silverlight Pendant — WIS rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "saints_reliquary": {
     "name": "Saint's Reliquary",
@@ -6275,7 +6301,7 @@
     "weight": 0.2,
     "value": 1200,
     "min_level": 0,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a silver reliquary containing a saint's fingerbone",
     "lore": "A silver reliquary containing the fingerbone of a saint, set in gold. The monk who carried it crawled through the dungeon on his hands and knees to keep it safe. It radiates a quiet warmth.",
     "symbol": "=",
@@ -6298,7 +6324,8 @@
       },
       "scope": "item",
       "desc": "The Saint's Reliquary was carried on hands and knees through the dungeon — WIS rises by 1 permanently."
-    }
+    },
+    "id_level": 0
   },
   "officers_signet": {
     "name": "Officer's Signet",
@@ -6314,7 +6341,7 @@
     "weight": 0.1,
     "value": 2000,
     "min_level": 0,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a heavy gold signet ring stamped with the Legion crest",
     "lore": "A solid gold signet ring bearing the crest of the Legion. Officer-grade — only issued to those who have earned command. The previous owner pulled it off his own finger and said he didn't deserve it.",
     "symbol": "=",
@@ -6337,7 +6364,8 @@
       },
       "scope": "item",
       "desc": "The Officer's Signet was earned by command and then refused — DEX rises by 1 permanently."
-    }
+    },
+    "id_level": 0
   },
   "prophets_amulet": {
     "name": "Prophet's Amulet",
@@ -6353,7 +6381,7 @@
     "weight": 0.2,
     "value": 8000,
     "min_level": 0,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "an amulet pulsing with gathered visions",
     "lore": "An amulet worn by a dying prophet who spent his last years carving warnings into stone tablets. It pulses with accumulated foresight — visions of the Destroyer, the Seven Seals, and the final battle. The clarity it grants is almost painful.",
     "symbol": "=",
@@ -6376,7 +6404,8 @@
       },
       "scope": "item",
       "desc": "The Prophet's Amulet pulses with carved foresight — WIS rises by 2 permanently."
-    }
+    },
+    "id_level": 0
   },
   "aesops_quill": {
     "name": "Aesop's Quill",
@@ -6416,7 +6445,9 @@
       },
       "scope": "item",
       "desc": "Aesop's Quill carries a slave's earned freedom — WIS rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "lyre_of_orpheus": {
     "name": "Lyre of Orpheus",
@@ -6456,7 +6487,9 @@
       },
       "scope": "item",
       "desc": "Orpheus's lyre paused rivers and charmed Cerberus — buffs from it last 10 turns longer."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "tablet_of_gilgamesh": {
     "name": "Tablet of Gilgamesh",
@@ -6498,7 +6531,9 @@
       },
       "scope": "item",
       "desc": "The Tablet of Gilgamesh holds the oldest epic — INT rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "scales_of_maat": {
     "name": "Scales of Ma'at",
@@ -6540,7 +6575,9 @@
       },
       "scope": "item",
       "desc": "The Scales of Ma'at weigh every heart against truth — WIS rises by 1 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "tablet_of_hammurabi": {
     "name": "Tablet of Hammurabi",
@@ -6580,7 +6617,9 @@
       },
       "scope": "item",
       "desc": "Hammurabi's tablet replaced chaos with written law — INT rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "torc_of_boudicca": {
     "name": "Torc of Boudicca",
@@ -6620,7 +6659,9 @@
       },
       "scope": "item",
       "desc": "Boudicca's Torc fights fiercest when surrounded — STR rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "rands_heart": {
     "name": "Rand's Heart",
@@ -6639,7 +6680,7 @@
       "status": "warning",
       "duration": -1
     },
-    "identified": true,
+    "identified": false,
     "can_be_cursed": false,
     "unidentified_name": "silver locket",
     "lore": "A simple silver locket on a leather thong. It is infused with the power of a lover's promise. He knew he could not always be by Robyn's side, but he swore to protect her, always.",
@@ -6656,7 +6697,8 @@
       },
       "scope": "item",
       "desc": "Rand's Heart carries a lover's promise to Robyn — buffs from it last 6 turns longer."
-    }
+    },
+    "id_level": 0
   },
   "dreamspun_sketchbook": {
     "name": "Dreamspun Sketchbook",
@@ -6672,7 +6714,7 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "effects": {},
-    "identified": true,
+    "identified": false,
     "can_be_cursed": false,
     "unidentified_name": "tattered sketchbook",
     "lore": "A young lady's sketchbook. It's full of whimsical drawings. She used this sketchbook to bring her dreams to life. The pages shimmer with magical energy.",
@@ -6689,7 +6731,8 @@
       },
       "scope": "item",
       "desc": "The Dreamspun Sketchbook brought dreams to life — INT rises by 2 permanently."
-    }
+    },
+    "id_level": 0
   },
   "charmander_stuffie": {
     "name": "Charmander Stuffie",
@@ -6705,7 +6748,7 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "effects": {},
-    "identified": true,
+    "identified": false,
     "can_be_cursed": false,
     "unidentified_name": "stuffed toy dragon",
     "lore": "A child's favorite toy and oldest friend. It looks like a small orange dragon with a burning ember on the tip of its tail. The love shown to this toy has imbued it with a shimmering magical power that protects and strengthens the bearer.",
@@ -6722,7 +6765,8 @@
       },
       "scope": "item",
       "desc": "The Charmander Stuffie is a child's oldest friend, full of love — CON rises by 2 permanently."
-    }
+    },
+    "id_level": 0
   },
   "jade_cicada": {
     "name": "Jade Cicada",
@@ -6761,7 +6805,9 @@
       },
       "scope": "item",
       "desc": "The Han buried jade cicadas with their dead to guarantee resurrection — the cicada now restores its bearer to full HP on resurrection."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "seal_of_solomon": {
     "name": "Seal of Solomon",
@@ -6801,7 +6847,9 @@
       },
       "scope": "item",
       "desc": "Michael gave Solomon the Seal engraved with the true name of God — WIS rises by 2 permanently."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "ankh_of_isis": {
     "name": "Ankh of Isis",
@@ -6839,7 +6887,9 @@
       },
       "scope": "item",
       "desc": "The Ankh of Isis now resurrects you to FULL HP (instead of partial)."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "megingjord": {
     "name": "Megingjörð",

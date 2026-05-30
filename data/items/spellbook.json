@@ -326,7 +326,9 @@
     },
     "is_unique": true,
     "weight": 0.3,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "identified": false,
+    "id_level": 0
   },
   "spellbook_cleanse": {
     "name": "Spellbook of Cleanse",

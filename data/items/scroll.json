@@ -410,7 +410,9 @@
     },
     "is_unique": true,
     "weight": 0.3,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "identified": false,
+    "id_level": 0
   },
   "scroll_of_time_stop": {
     "name": "scroll of time stop",

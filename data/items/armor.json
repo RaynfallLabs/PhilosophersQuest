@@ -1087,7 +1087,9 @@
       },
       "scope": "item",
       "desc": "The Nemean Pelt is the unskinnable hide itself — it deflects 25% of all elemental damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "green_knights_plate": {
     "name": "Green Knight's Plate",
@@ -1162,7 +1164,9 @@
       "value": 25,
       "scope": "item",
       "desc": "The Green Knight's Plate grows with its wearer — it grants a permanent 25 HP on mastery."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "serpent_scale_mail": {
     "name": "Serpent Scale Mail",
@@ -1205,7 +1209,9 @@
       },
       "scope": "item",
       "desc": "The Serpent Scale Mail repels toxins entirely — it deflects 50% of poison damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "arachne_silk_cloak": {
     "name": "Arachne's Silk Cloak",
@@ -1244,7 +1250,9 @@
       "value": 1,
       "scope": "item",
       "desc": "Arachne's Silk Cloak catches arrows and slows blades — armor class improves by 1."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "erlking_mantle": {
     "name": "Erlking's Mantle",
@@ -1285,7 +1293,9 @@
       },
       "scope": "item",
       "desc": "The Erlking's Mantle sharpens every sense — it deflects 30% of psychic damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -1325,7 +1335,9 @@
       "value": 2,
       "scope": "item",
       "desc": "Anansi's Web Cloak shifts and deceives — armor class improves by 2."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "nidhoggr_scale": {
     "name": "Níðhöggr's Scale",
@@ -1369,7 +1381,9 @@
       },
       "scope": "item",
       "desc": "Níðhöggr's Scale resists all corrosion — it deflects 50% of acid damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",
@@ -1585,7 +1599,7 @@
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "strip of dark cloth",
     "lore": "A strip of heavy black cloth. Wearing it plunges you into total darkness — you cannot see anything at all. A desperate measure, but sometimes not seeing is the only way to survive what lurks in the dark.",
     "symbol": "[",
@@ -1616,7 +1630,8 @@
       },
       "scope": "item",
       "desc": "The Blindfold severs sight from soul — it deflects 50% of psychic damage."
-    }
+    },
+    "id_level": 0
   },
   "trainers_cap": {
     "name": "Trainer's Cap",
@@ -1637,7 +1652,7 @@
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "red and white cap",
     "pet_regen_bonus": 2,
     "lore": "A well-worn red and white cap, its brim shaped by countless adventures. It radiates a warm, encouraging energy that invigorates companion creatures, helping them recover from wounds more quickly. The inside of the brim reads: 'I choose you.'",
@@ -1655,7 +1670,8 @@
       "value": 10,
       "scope": "item",
       "desc": "The Trainer's Cap radiates encouragement and bond — it grants a permanent 10 HP on mastery."
-    }
+    },
+    "id_level": 0
   },
   "cow_kings_horns": {
     "name": "Cow King's Horns",
@@ -1678,7 +1694,7 @@
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "identified": true,
+    "identified": false,
     "unidentified_name": "a crown of golden horns",
     "chain_bonus": 1,
     "lore": "The gilded horns of the Cow King, ripped from his crowned skull by a victorious adventurer. When worn, the horns channel bovine fury into every strike, granting a free chain hit before the quiz even begins — making it impossible to miss entirely. The left horn is inscribed with a single word: 'Moo.'",
@@ -1696,7 +1712,8 @@
       "value": 15,
       "scope": "item",
       "desc": "The Cow King's Horns channel bovine fury — they grant a permanent 15 HP on mastery."
-    }
+    },
+    "id_level": 0
   },
   "cloth_of_penelope": {
     "name": "Cloth of Penelope",
@@ -1738,7 +1755,9 @@
       "value": 10,
       "scope": "item",
       "desc": "The Cloth of Penelope was woven and unwoven for twenty years — it grants a permanent 10 HP on mastery."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
@@ -1781,7 +1800,9 @@
       "value": 15,
       "scope": "item",
       "desc": "The Bracers of Cu Chulainn carry the warp-spasm — they grant a permanent 15 HP on mastery."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "cloak_of_sun_wukong": {
     "name": "Cloak of Sun Wukong",
@@ -1823,7 +1844,9 @@
       "value": 1,
       "scope": "item",
       "desc": "The Cloak of Sun Wukong shimmers and shifts — armor class improves by 1."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "coat_of_cu_chulainn": {
     "name": "Coat of Cú Chulainn",
@@ -1870,7 +1893,9 @@
       "value": 20,
       "scope": "item",
       "desc": "+20 max HP while wearing the Coat of Cu Chulainn."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "babr_e_bayan": {
     "name": "Babr-e Bayan",
@@ -1917,7 +1942,9 @@
       },
       "scope": "item",
       "desc": "Babr-e Bayan grants +20% resistance to all elemental damage."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "tarnhelm": {
     "name": "Tarnhelm",
@@ -1959,7 +1986,9 @@
       "value": 2,
       "scope": "item",
       "desc": "The Tarnhelm renders its wearer absent from perception — armor class improves by 2."
-    }
+    },
+    "identified": false,
+    "id_level": 0
   },
   "linothorax_of_alexander": {
     "name": "Linothorax of Alexander",
@@ -2975,7 +3004,11 @@
   "duck_of_doom": {
     "name": "Duck of Doom",
     "symbol": "[",
-    "color": [250, 220, 80],
+    "color": [
+      250,
+      220,
+      80
+    ],
     "weight": 1.0,
     "min_level": 1,
     "slot": "head",

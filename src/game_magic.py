@@ -2523,6 +2523,16 @@ class MagicMixin:
                 else:
                     msg = f"You ponder the {display} but gain no new insight."
                 self.add_message(msg, 'warning')
+                # Backlash from the Stone: zero-correct on an identify
+                # chain stuns the kid for 10 turns of Confusion. Mirrors
+                # the corpse-study branch in main.py:_start_corpse_identify.
+                # Per user 2026-05-29: no penalty had let his son just
+                # guess-spam the chain; this puts cost on a blind attempt.
+                self.player.add_effect('confused', 10)
+                self.add_message(
+                    "The Shard turns cold in your palm. Backlash floods "
+                    "your mind — you are Confused (10 turns).",
+                    'danger')
                 self._advance_turn()
                 return
 
