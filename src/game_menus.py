@@ -535,7 +535,7 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _prayer_menu_input(self, key: int):
-        """a-h selects a prayer; greyed-out (gate-failed / karma-refused)
+        """a-i selects a prayer; greyed-out (gate-failed / karma-refused)
         prayers ignore input. ESC cancels."""
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
@@ -693,12 +693,41 @@ class MenuMixin:
         Per design: one quiz, tiered results. No pre-quiz chooser. Quick-BUC
         peeking lives on the altar D-press path (_altar_buc_identify), not
         here.
+
+        SCROLL-OF-IDENTIFY MODE: when `_scroll_identify_pending` is set, the
+        menu was opened by a successful Scroll of Identify read; on select,
+        the item jumps straight to id_level 5 + mastery (no philosophy quiz).
+        ESC in this mode wastes the scroll's revelation.
         """
+        # Handle ESC in scroll-pending mode: scroll already consumed, just
+        # close and advance the turn.
+        if key == pygame.K_ESCAPE and getattr(self, '_scroll_identify_pending', False):
+            self._scroll_identify_pending = False
+            self._scroll_identify_blessed = False
+            self.state = STATE_PLAYER
+            self.add_message(
+                "The scroll's revelation fades, unfocused — you chose nothing.",
+                'warning')
+            self._advance_turn()
+            return
         idx = self._paged_menu_input(key, self.identify_menu_items)
         if idx is None:
             return
         item, is_ground, is_corpse = self.identify_menu_items[idx]
         self.state = STATE_PLAYER
+        # Scroll-of-Identify path: bypass the philosophy quiz entirely.
+        if getattr(self, '_scroll_identify_pending', False):
+            self._scroll_identify_pending = False
+            self._scroll_identify_blessed = False
+            if is_corpse:
+                # Corpses use the normal lore path — the scroll doesn't
+                # short-circuit corpse identification (which needs an
+                # animal quiz). Fall through to the regular handler.
+                self._examine_corpse_direct(item)
+            else:
+                self._scroll_grant_mastery(item)
+            self._advance_turn()
+            return
         if is_corpse:
             self._examine_corpse_direct(item)
         else:

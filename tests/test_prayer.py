@@ -1,10 +1,11 @@
 """Tests for the 2026 prayer-system rebuild:
-- 8 named prayers registered with required fields
+- 9 named prayers registered with required fields (Benedictio added 2026-05-29)
 - Situational gates evaluate correctly
 - Karma-tier verses are wired
 - Specialty prayers refuse at karma <= -6; Damned at -10 keeps only Pater Noster
 - _any_cursed_worn helper
 - _karma_tier mapping
+- Confiteor and Benedictio require an altar tile (D1, 2026-05-29)
 """
 import os
 import sys
@@ -18,8 +19,11 @@ import game_divine
 # Registry / structure
 # ---------------------------------------------------------------------------
 
-def test_eight_prayers_registered():
-    assert len(game_divine.PRAYERS) == 8
+def test_nine_prayers_registered():
+    """Registry holds 9 named prayers after Benedictio was added (D1, 2026-05-29)."""
+    assert len(game_divine.PRAYERS) == 9
+    by_id = {p['id'] for p in game_divine.PRAYERS}
+    assert 'benedictio' in by_id
 
 
 def test_each_prayer_has_required_fields():
@@ -136,7 +140,9 @@ class _StubMonster:
 class _StubGame:
     """Minimal Game stub for _start_pray gate evaluation."""
     def __init__(self, hp=100, max_hp=100, karma=0, monsters=None,
-                 inventory=None, weapon_buc='uncursed'):
+                 inventory=None, weapon_buc='uncursed', on_altar=False,
+                 belt_buc=None):
+        from dungeon import ALTAR, FLOOR
         class _P:
             pass
         self.player = _P()
@@ -148,7 +154,23 @@ class _StubGame:
         self.player.armor_slots = [None] * 8
         self.player.amulet_slot = None
         self.player.accessory_slots = [None, None]
+        self.player.belt_slot = _StubItem(belt_buc) if belt_buc else None
         self.player.inventory = inventory or []
+        # Place the player on an ALTAR tile when on_altar is True, FLOOR
+        # otherwise. _on_altar(g) (added in D1) checks
+        # g.dungeon.tiles[g.player.y][g.player.x].
+        self.player.x = 1
+        self.player.y = 1
+        class _D:
+            pass
+        self.dungeon = _D()
+        # 3x3 tile grid: center is altar if on_altar, else floor.
+        center_tile = ALTAR if on_altar else FLOOR
+        self.dungeon.tiles = [
+            [FLOOR, FLOOR, FLOOR],
+            [FLOOR, center_tile, FLOOR],
+            [FLOOR, FLOOR, FLOOR],
+        ]
         self.karma = karma
         self.monsters = monsters or []
         self.visible = {(m.x, m.y) for m in self.monsters}
@@ -193,12 +215,37 @@ def test_anima_christi_gate_requires_visible_undead():
     assert spec['gate'](g_with_undead) is True
 
 
-def test_confiteor_gate_requires_cursed_worn():
+def test_confiteor_gate_requires_cursed_worn_at_altar():
+    """D1 (2026-05-29): Confiteor now ALSO requires standing on an altar.
+    Cursed gear alone in the open field no longer satisfies the gate."""
     spec = next(p for p in game_divine.PRAYERS if p['id'] == 'confiteor')
     g_clean = _StubGame()
-    g_cursed = _StubGame(weapon_buc='cursed')
+    g_cursed_no_altar = _StubGame(weapon_buc='cursed', on_altar=False)
+    g_cursed_at_altar = _StubGame(weapon_buc='cursed', on_altar=True)
+    g_altar_only = _StubGame(weapon_buc='uncursed', on_altar=True)
     assert spec['gate'](g_clean) is False
-    assert spec['gate'](g_cursed) is True
+    assert spec['gate'](g_cursed_no_altar) is False, (
+        "Confiteor must NOT fire without an altar after D1 (2026-05-29)")
+    assert spec['gate'](g_cursed_at_altar) is True
+    assert spec['gate'](g_altar_only) is False, (
+        "Altar alone with no cursed gear still fails the cursed-worn check")
+
+
+def test_benedictio_gate_requires_altar_and_unblessed_item():
+    """D1 (2026-05-29): Benedictio is altar-only AND requires the player
+    to carry at least one BUC-bearing item that isn't already blessed."""
+    spec = next(p for p in game_divine.PRAYERS if p['id'] == 'benedictio')
+    plain_item = _StubItem('uncursed')
+    cursed_item = _StubItem('cursed')
+    blessed_item = _StubItem('blessed')
+    # Off-altar always fails.
+    assert spec['gate'](_StubGame(inventory=[plain_item], on_altar=False)) is False
+    # At altar with only blessed items in inventory: no work to do.
+    assert spec['gate'](_StubGame(inventory=[blessed_item], on_altar=True)) is False
+    # At altar with an uncursed item: gate open.
+    assert spec['gate'](_StubGame(inventory=[plain_item], on_altar=True)) is True
+    # At altar with a cursed item: gate open.
+    assert spec['gate'](_StubGame(inventory=[cursed_item], on_altar=True)) is True
 
 
 def test_prayer_quiz_uses_max_chain_5():

@@ -2559,7 +2559,7 @@ class RenderMixin:
         )
 
     def _draw_prayer_menu(self):
-        """8 named prayers. Show lore description only (player extrapolates
+        """9 named prayers. Show lore description only (player extrapolates
         intent). Greyed-out entries are gate-failed or karma-refused; the
         reason is shown in italics on the detail line."""
         entries = []

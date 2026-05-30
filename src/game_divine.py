@@ -77,11 +77,32 @@ PRAYERS: list[dict] = [
          for m in g.monsters),
      'gate_reason': 'No undead are in sight.'},
     {'id': 'confiteor', 'name': 'Confiteor',
-     'lore': 'The penitential rite — acknowledgment before grace.',
+     'lore': 'The penitential rite — acknowledgment before grace. Spoken only at an altar.',
      'specialty': False, 'cooldown_bonus_full': 0,
-     'gate': lambda g: _any_cursed_worn(g.player),
-     'gate_reason': 'You wear no cursed gear.'},
+     'gate': lambda g: _on_altar(g) and _any_cursed_worn(g.player),
+     'gate_reason': 'Speak this rite only at an altar — and only while bearing cursed gear.'},
+    {'id': 'benedictio', 'name': 'Benedictio',
+     'lore': 'The rite of blessing. Lay a worn or carried item upon the altar and beg consecration.',
+     'specialty': False, 'cooldown_bonus_full': 100,
+     'gate': lambda g: _on_altar(g) and _any_blessable_inventory(g.player),
+     'gate_reason': 'Stand at an altar with an unblessed item in hand.'},
 ]
+
+
+def _on_altar(g) -> bool:
+    """True iff the player is standing on an ALTAR tile."""
+    try:
+        return g.dungeon.tiles[g.player.y][g.player.x] == ALTAR
+    except Exception:
+        return False
+
+
+def _any_blessable_inventory(player) -> bool:
+    """True iff the player carries at least one BUC-bearing item that isn't blessed."""
+    for it in (player.inventory or []):
+        if hasattr(it, 'buc') and getattr(it, 'buc', '') != 'blessed':
+            return True
+    return False
 
 
 def _any_cursed_worn(player) -> bool:
@@ -970,6 +991,7 @@ class DivineMixin:
             'saint_anthony':  self._prayer_saint_anthony,
             'anima_christi':  self._prayer_anima_christi,
             'confiteor':      self._prayer_confiteor,
+            'benedictio':     self._prayer_benedictio,
         }
         handler = dispatch.get(prayer_id, self._prayer_pater_noster)
         msgs, fired_full_effect = handler(effective, chain)
@@ -1251,4 +1273,92 @@ class DivineMixin:
             it.buc = 'uncursed'
             it.buc_known = True
             return [f"The curse on your {it.name} is broken."], False
+
+    def _prayer_benedictio(self, effective: int, raw_chain: int) -> tuple[list, bool]:
+        """Bless items at the altar — count + tier scales with chain.
+
+        Priority queue: worn cursed → worn uncursed → inventory cursed →
+        inventory uncursed. Cursed items are uncursed; uncursed items are
+        blessed. At full chain, BUC status of every remaining item in
+        inventory is revealed as a bonus.
+
+        Available only at altars (see PRAYERS gate); altar-only by design.
+        """
+        p = self.player
+        msgs = []
+        fired_full = False
+
+        worn_cursed: list = []
+        worn_unc: list = []
+        inv_cursed: list = []
+        inv_unc: list = []
+        worn_slots = []
+        for slot in (p.armor_slots or []):
+            if slot: worn_slots.append(slot)
+        if p.shield: worn_slots.append(p.shield)
+        if p.weapon: worn_slots.append(p.weapon)
+        if getattr(p, 'ranged_weapon', None): worn_slots.append(p.ranged_weapon)
+        for acc in (getattr(p, 'accessory_slots', []) or []):
+            if acc: worn_slots.append(acc)
+        if getattr(p, 'amulet_slot', None): worn_slots.append(p.amulet_slot)
+        if getattr(p, 'belt_slot', None): worn_slots.append(p.belt_slot)
+        for it in worn_slots:
+            buc = getattr(it, 'buc', None)
+            if buc == 'cursed':
+                worn_cursed.append(it)
+            elif buc == 'uncursed':
+                worn_unc.append(it)
+        for it in (p.inventory or []):
+            if not hasattr(it, 'buc'):
+                continue
+            buc = getattr(it, 'buc', None)
+            if buc == 'cursed':
+                inv_cursed.append(it)
+            elif buc == 'uncursed':
+                inv_unc.append(it)
+
+        queue = worn_cursed + worn_unc + inv_cursed + inv_unc
+        if not queue:
+            return ["Every item you carry already bears a blessing."], False
+
+        # Tier ladder: 1-2 → 1 item, 3-4 → 2 items, 5+ → 3 items.
+        if effective >= 5:
+            cap = 3
+            fired_full = True
+        elif effective >= 3:
+            cap = 2
+        else:
+            cap = 1
+
+        blessed_n = 0
+        purified_n = 0
+        for it in queue[:cap]:
+            buc = getattr(it, 'buc', None)
+            if buc == 'cursed':
+                it.buc = 'uncursed'
+                it.buc_known = True
+                purified_n += 1
+            else:
+                it.buc = 'blessed'
+                it.buc_known = True
+                blessed_n += 1
+
+        parts = []
+        if blessed_n:
+            parts.append(f"{blessed_n} item{'s' if blessed_n != 1 else ''} blessed")
+        if purified_n:
+            parts.append(f"{purified_n} curse{'s' if purified_n != 1 else ''} purified")
+        msgs.append("The altar glows: " + ", ".join(parts) + ".")
+
+        # Full-tier bonus: reveal BUC on every remaining inventory item.
+        if fired_full:
+            revealed = 0
+            for it in (p.inventory or []):
+                if hasattr(it, 'buc') and not getattr(it, 'buc_known', False):
+                    it.buc_known = True
+                    revealed += 1
+            if revealed:
+                msgs.append(f"A second blaze of light reveals the aura of {revealed} more items.")
+
+        return msgs, fired_full
 

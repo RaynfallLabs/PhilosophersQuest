@@ -91,6 +91,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._lore_hint_chain: int       = 0
         self._lore_subject: str | None   = None
         self.identify_menu_items: list   = []
+        # Scroll-of-Identify (D2/D3, 2026-05-29): when set, the next pick
+        # in the identify menu jumps straight to id_level 5 + mastery
+        # instead of starting the philosophy quiz.
+        self._scroll_identify_pending: bool = False
+        self._scroll_identify_blessed: bool = False
         self.cook_menu_items: list       = []
         self.cook_compound_recipes: list = []   # available multi-ingredient recipes
         self._cook_tab: int              = 0

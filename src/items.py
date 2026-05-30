@@ -352,6 +352,11 @@ class Scroll(Item):
         super().__init__(defn)
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
+        # Quiz mode: default 'threshold' (pass/fail). Set to 'escalator_chain'
+        # to scale the scroll's effect by chain (e.g. Scroll of Heal).
+        self.quiz_mode        = defn.get('quiz_mode', 'threshold')
+        # max_chain only used when quiz_mode == 'escalator_chain'.
+        self.max_chain        = int(defn.get('max_chain', 5))
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])

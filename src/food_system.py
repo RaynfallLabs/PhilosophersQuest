@@ -415,7 +415,13 @@ def drink_potion(player, potion) -> list[str]:
     _pot_class_mast = player.unlocked_class_masteries.get(
         get_mastery_class(potion))
     if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_potency_bonus':
-        _heal_mult *= 1.0 + float(_pot_class_mast.get('value', 0))
+        # Potency boosts BOTH heal amount AND buff/debuff duration.
+        # Per user feedback 2026-05-29: previously only _heal_mult was
+        # scaled, so mastered paralysis/haste/etc. potions claimed
+        # "20% more effective" but their duration was unchanged.
+        _bonus = float(_pot_class_mast.get('value', 0))
+        _heal_mult *= 1.0 + _bonus
+        _buff_mult *= 1.0 + _bonus
     if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_duration_bonus':
         duration = int(duration) + int(_pot_class_mast.get('value', 0))
 

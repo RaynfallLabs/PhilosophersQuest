@@ -1951,11 +1951,25 @@ class MagicMixin:
         self.state = STATE_QUIZ
         _was_identified_before = getattr(scroll, 'identified', False) or \
             scroll.id in self.player.known_item_ids
+        # quiz_mode lets a scroll opt into 'escalator_chain' scaling instead
+        # of the legacy threshold pass/fail (Scroll of Heal does this so
+        # heal amount scales with how many tiers you cleared). For chain
+        # mode, treat chain >= 1 as success (anything you clear scales);
+        # chain == 0 is "scroll crumbles unread."
+        _mode = getattr(scroll, 'quiz_mode', 'threshold')
 
         def on_complete(result):
             self.state = STATE_PLAYER
+            # Re-interpret success for escalator_chain scrolls: chain >= 1 fires
+            # the effect, chain 0 is the crumble path.
+            if _mode == 'escalator_chain':
+                _scroll_chain = int(getattr(result, 'score', 0))
+                result_success = _scroll_chain >= 1
+            else:
+                _scroll_chain = None
+                result_success = result.success
 
-            if not result.success:
+            if not result_success:
                 # Chain-equip passive: scroll_save_on_fail (Ring of Scheherazade).
                 # On quiz fail, the scroll survives but is not identified.
                 try:
@@ -2032,8 +2046,11 @@ class MagicMixin:
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
-            self._apply_scroll_effect(scroll)
-            self._advance_turn()
+            self._apply_scroll_effect(scroll, chain=_scroll_chain)
+            # If the scroll effect parked us in a picker state, don't burn
+            # a turn here — the picker callback (or ESC) will advance.
+            if self.state == STATE_PLAYER:
+                self._advance_turn()
 
         # Chain-equip passive: grammar_chain_cap_bonus lowers scroll threshold.
         _threshold = scroll.quiz_threshold
@@ -2043,20 +2060,39 @@ class MagicMixin:
         except ImportError:
             pass
 
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='grammar',
-            tier=scroll.quiz_tier,
-            callback=on_complete,
-            threshold=_threshold,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus() +
-                          self.player.get_quiz_extra_seconds('grammar'),
-            base_seconds=self.player.get_quiz_timer('grammar'),
-        )
+        if _mode == 'escalator_chain':
+            self.quiz_engine.start_quiz(
+                mode='escalator_chain',
+                subject='grammar',
+                tier=scroll.quiz_tier,
+                callback=on_complete,
+                max_chain=int(getattr(scroll, 'max_chain', 5)),
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_int_quiz_bonus() +
+                              self.player.get_quiz_extra_seconds('grammar'),
+                base_seconds=self.player.get_quiz_timer('grammar'),
+            )
+        else:
+            self.quiz_engine.start_quiz(
+                mode='threshold',
+                subject='grammar',
+                tier=scroll.quiz_tier,
+                callback=on_complete,
+                threshold=_threshold,
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_int_quiz_bonus() +
+                              self.player.get_quiz_extra_seconds('grammar'),
+                base_seconds=self.player.get_quiz_timer('grammar'),
+            )
 
-    def _apply_scroll_effect(self, scroll: 'Scroll'):
+    # Heal multipliers when a scroll runs the escalator-chain quiz. Mirrors
+    # the spell chain mults so a chain-5 read feels like casting a real heal
+    # spell instead of a cantrip. Chain index is 1-based (chain 1 -> idx 0).
+    _SCROLL_HEAL_CHAIN_MULTS = [1.0, 2.0, 4.0, 7.0, 11.0]
+
+    def _apply_scroll_effect(self, scroll: 'Scroll', chain: int | None = None):
         from dice import roll
         from class_masteries import get_mastery_class
         effect = scroll.effect
@@ -2070,10 +2106,21 @@ class MagicMixin:
             _scroll_pot_mult = 1.0 + float(_scroll_pot_mast.get('value', 0))
 
         if effect == 'heal':
-            amount = roll(scroll.power) if scroll.power else 10
-            amount = max(1, int(amount * _scroll_pot_mult))
-            self.player.restore_hp(amount)
-            self.add_message(f"Healing light washes over you -- {amount} HP restored!", 'success')
+            base = roll(scroll.power) if scroll.power else 10
+            if chain is not None and chain >= 1:
+                # Escalator-chain mode: scale heal amount by chain tier.
+                idx = min(int(chain) - 1, len(self._SCROLL_HEAL_CHAIN_MULTS) - 1)
+                chain_mult = self._SCROLL_HEAL_CHAIN_MULTS[idx]
+                amount = max(1, int(base * chain_mult * _scroll_pot_mult))
+                self.player.restore_hp(amount)
+                self.add_message(
+                    f"Healing light washes over you -- {amount} HP restored! (chain {chain})",
+                    'success')
+            else:
+                amount = max(1, int(base * _scroll_pot_mult))
+                self.player.restore_hp(amount)
+                self.add_message(
+                    f"Healing light washes over you -- {amount} HP restored!", 'success')
 
         elif effect == 'boss_reward':
             code = scroll.power or '???'
@@ -2092,40 +2139,27 @@ class MagicMixin:
 
         elif effect == 'identify':
             if _scroll_buc == 'cursed':
-                self.add_message("The scroll's words dissolve into nonsense.", 'warning')
+                # Per user 2026-05-29 (D3): cursed scroll-of-identify is
+                # AMNESIA — the kid forgets one item they had already
+                # studied. Drops id_level to 0 and forgets the type.
+                self._scroll_identify_amnesia()
             elif _scroll_buc == 'blessed':
-                # Blessed: identify ALL unknown items
-                unknowns = [i for i in self.player.inventory
-                            if hasattr(i, 'identified') and not i.identified
-                            and i.id not in self.player.known_item_ids]
-                if unknowns:
-                    for u in unknowns:
-                        u.identified = True
-                        u.buc_known = True
-                        self.player.known_item_ids.add(u.id)
-                        self._propagate_identification(u.id)
-                    self.add_message(f"Brilliant light reveals all {len(unknowns)} items!", 'success')
+                # Blessed: grant mastery on ONE chosen item AND fully ID the rest.
+                # The pick happens via the identify menu (see flag below).
+                # First, bulk-identify everything to id_level 4 (lore-known),
+                # then prompt the player to pick ONE item to push to id_level 5
+                # (mastery).
+                if self._scroll_identify_bulk_to_lore():
+                    self._open_scroll_identify_picker(bless=True)
                 else:
-                    self.add_message("All your items are already identified.", 'info')
+                    # Nothing to identify or mastery — at least heal the carrier
+                    self.add_message("All your items are already mastered.", 'info')
             else:
-                # Uncursed: identify one item
-                unknown = next(
-                    (i for i in self.player.inventory
-                     if hasattr(i, 'identified') and not i.identified
-                        and i.id not in self.player.known_item_ids),
-                    None
-                )
-                if unknown:
-                    unknown.identified = True
-                    unknown.buc_known = True
-                    self.player.known_item_ids.add(unknown.id)
-                    self._propagate_identification(unknown.id)
-                    self.add_message(f"The {unknown.unidentified_name} is revealed: {unknown.name}!", 'success')
-                    if unknown.lore:
-                        self._lore_subject = unknown
-                        self.state = STATE_LORE
-                else:
-                    self.add_message("All your items are already identified.", 'info')
+                # Uncursed: pick a target via menu, grant id_level=5 +
+                # claim mastery on that ONE item. Per user 2026-05-29 (D2):
+                # the scroll IS the shortcut to mastery; the grammar quiz
+                # is the cost paid to bypass the philosophy escalator.
+                self._open_scroll_identify_picker(bless=False)
 
         elif effect == 'enchant_weapon':
             from items import ENCHANT_CAP
@@ -2742,6 +2776,168 @@ class MagicMixin:
         """
         self.player.total_identifies += 1
         self._check_philosopher_thresholds()
+
+    # ------------------------------------------------------------------
+    # Scroll of Identify rework (D2 + D3, 2026-05-29)
+    # ------------------------------------------------------------------
+
+    def _open_scroll_identify_picker(self, bless: bool = False) -> None:
+        """Open the identify menu in 'scroll-grants-mastery' mode.
+
+        The player picks one item from their inventory / ground tile; on
+        select, the chosen item jumps to id_level 5 and `_claim_mastery`
+        fires for it (no philosophy quiz needed). Triggered after a
+        successful Scroll of Identify read.
+
+        Blessed variant: bulk-identification of everything to id_level 4
+        already happened — this picker still gives mastery on the chosen
+        item, so the scroll is unambiguously the best path to mastery.
+        """
+        # Build the same target list `_open_identify_menu` uses, so corpses
+        # behave consistently and the menu UI is shared.
+        from items import Corpse
+        def _needs_identify(i):
+            if getattr(i, 'is_unique', False):
+                return i.id not in self.player.unlocked_masteries
+            return getattr(i, 'id_level', 5) < 5
+        inv_items = [i for i in self.player.inventory if _needs_identify(i)]
+        ground_items = [
+            i for i in self.ground_items
+            if i.x == self.player.x and i.y == self.player.y
+               and not isinstance(i, Corpse)
+               and _needs_identify(i)
+        ]
+        self.identify_menu_items = (
+            [(i, False, False) for i in inv_items]
+            + [(i, True,  False) for i in ground_items]
+        )
+        if not self.identify_menu_items:
+            self.add_message(
+                "The scroll's revelation finds nothing to reveal — every item is already mastered.",
+                'info')
+            return
+        # Flag the picker so _identify_menu_input grants mastery directly
+        # instead of starting the philosophy quiz.
+        self._scroll_identify_pending = True
+        self._scroll_identify_blessed = bool(bless)
+        self._menu_page = 0
+        self.state = STATE_IDENTIFY_MENU
+        self.add_message(
+            "The scroll trembles in your hand — choose the item to be revealed.",
+            'info')
+
+    def _scroll_grant_mastery(self, item) -> None:
+        """Bypass the philosophy quiz: set id_level=5 + claim mastery on
+        `item`. Called when the identify menu was entered via a Scroll of
+        Identify (see _scroll_identify_pending).
+        """
+        was_full_id = int(getattr(item, 'id_level', 0)) >= 3
+        item.id_level = 5
+        item.identified = True
+        item.buc_known = True
+        self.player.known_item_ids.add(item.id)
+        self._propagate_identification(item.id, level=5)
+        self.add_message(
+            f"Truth crashes through you — you have mastered the {item.name}!",
+            'success')
+        self._claim_mastery(item)
+        if not was_full_id:
+            _qs_id = getattr(self, 'quirk_system', None)
+            if _qs_id:
+                _qs_id.on_item_identified(item.id)
+            self._on_full_identify(item)
+            self._log_chronicle(
+                f"A scroll laid bare the {item.name}. Its full nature is mine.")
+        if item.lore:
+            self._lore_subject = item
+            self.state = STATE_LORE
+
+    def _scroll_identify_bulk_to_lore(self) -> bool:
+        """Blessed Scroll of Identify: lift every unknown item in inventory
+        + tile to id_level 4 (full lore). Returns True iff at least one
+        item was advanced (so the picker still has something to pick).
+        """
+        from items import Corpse
+        bumped = 0
+        for it in self.player.inventory:
+            if getattr(it, 'id_level', 5) < 4:
+                was_full_id = int(getattr(it, 'id_level', 0)) >= 3
+                it.id_level = 4
+                it.identified = True
+                it.buc_known = True
+                self.player.known_item_ids.add(it.id)
+                self._propagate_identification(it.id, level=4)
+                if not was_full_id:
+                    _qs_id = getattr(self, 'quirk_system', None)
+                    if _qs_id:
+                        _qs_id.on_item_identified(it.id)
+                    self._on_full_identify(it)
+                bumped += 1
+        for it in self.ground_items:
+            if it.x != self.player.x or it.y != self.player.y:
+                continue
+            if isinstance(it, Corpse):
+                continue
+            if getattr(it, 'id_level', 5) < 4:
+                it.id_level = 4
+                it.identified = True
+                it.buc_known = True
+                self.player.known_item_ids.add(it.id)
+                self._propagate_identification(it.id, level=4)
+                bumped += 1
+        if bumped:
+            self.add_message(
+                f"Brilliant light reveals {bumped} item{'s' if bumped != 1 else ''}!",
+                'success')
+            return True
+        # If nothing needed lore-bump but some uniques still owe mastery, still let the picker run.
+        for it in self.player.inventory:
+            if getattr(it, 'is_unique', False) and it.id not in self.player.unlocked_masteries:
+                return True
+        return False
+
+    def _scroll_identify_amnesia(self) -> None:
+        """Cursed Scroll of Identify: the kid forgets one item they had
+        identified. Picks a random item with id_level >= 1 (or in
+        known_item_ids), drops id_level to 0, removes from
+        known_item_ids, and clears identified+buc_known. Per user
+        2026-05-29 (D3) — the cursed scroll now has TEETH.
+        """
+        import random as _rng
+        candidates = []
+        for it in self.player.inventory:
+            if getattr(it, 'id_level', 0) >= 1 \
+               or it.id in self.player.known_item_ids:
+                # Skip the philosopher's shard — bricking the ID system is too brutal.
+                if getattr(it, 'id', '') == 'philosophers_shard':
+                    continue
+                candidates.append(it)
+        if not candidates:
+            self.add_message(
+                "The scroll's words dissolve into nonsense. You feel a chill.",
+                'warning')
+            return
+        target = _rng.choice(candidates)
+        old_name = getattr(target, 'name', 'item')
+        target.id_level = 0
+        target.identified = False
+        target.buc_known = False
+        # Forget the TYPE too — the kid has to relearn it on any other copy.
+        self.player.known_item_ids.discard(target.id)
+        # Walk inventory + ground and de-identify every same-id copy to
+        # match (otherwise propagation gets stuck: the type is gone but
+        # individual copies stay 'known').
+        for it in self.player.inventory:
+            if getattr(it, 'id', '') == target.id and it is not target:
+                it.identified = False
+                it.id_level = max(0, min(int(getattr(it, 'id_level', 0)), 0))
+        for it in self.ground_items:
+            if getattr(it, 'id', '') == target.id:
+                it.identified = False
+                it.id_level = max(0, min(int(getattr(it, 'id_level', 0)), 0))
+        self.add_message(
+            f"The scroll's words burn cold. The {old_name} — you no longer recognize it.",
+            'danger')
 
     def _quick_buc_check(self, item):
         """Tier-1 philosophy threshold quiz that reveals only buc_known.

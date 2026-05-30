@@ -13,6 +13,8 @@
     "spread": 5,
     "quiz_tier": 1,
     "quiz_threshold": 2,
+    "quiz_mode": "escalator_chain",
+    "max_chain": 5,
     "effect": "heal",
     "power": "2d4",
     "unidentified_name": "crumpled scroll",
