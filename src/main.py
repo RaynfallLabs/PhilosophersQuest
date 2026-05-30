@@ -1072,30 +1072,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # were spawning at 4/5 or 5/5 due to the legacy property-set
         # path raising id_level to 4 via the setter.
         def _mark_starting_item_known(it):
-            if getattr(it, 'is_unique', False):
-                it.id_level = max(int(getattr(it, 'id_level', 0)), 3)
-                it.buc_known = True
-            else:
-                # Commons go all the way to fully-identified AND get
-                # added to known_class_ids so the identify menu's
-                # common-filter hides them (it filters by class id).
-                # Per user feedback 2026-05-29: starting iron sword /
-                # shortbow / heal potion etc. should never show up in
-                # the identify list — the kid knows what they got.
-                it.id_level = 5
-                it.buc_known = True
-                try:
-                    from class_masteries import get_mastery_class
-                    cid = get_mastery_class(it)
-                    if cid:
-                        self.player.known_class_ids.add(cid)
-                except Exception:
-                    pass
-                # Also mark the id itself known so any per-id filters
-                # treat it as fully recognised.
-                _iid = getattr(it, 'id', None)
-                if _iid:
-                    self.player.known_item_ids.add(_iid)
+            """Build-kit items behave as if the player had picked them up
+            and successfully completed a Tier-4 identify chain on them.
+            id_level=4 = name + BUC + stats + lore all revealed; Tier 5
+            (mastery for uniques, full ID for commons) remains earnable
+            via the normal identify flow. NO special-casing for uniques
+            vs commons — they're treated identically to any naturally-
+            found item that's been ID'd to Tier 4. Per user direction
+            2026-05-29 (correcting an earlier draft that split the rule)."""
+            it.id_level = max(int(getattr(it, 'id_level', 0)), 4)
+            it.buc_known = True
+            _iid = getattr(it, 'id', None)
+            if _iid:
+                self.player.known_item_ids.add(_iid)
         shard = Item({
             'id': 'philosophers_shard',
             'name': "Philosopher's Shard",
