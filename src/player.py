@@ -303,14 +303,22 @@ class Player:
     STAIR_REST_CAP_DESC = 0    # NO stair-rest HP healing on descent (damage accumulates)
     STAIR_REST_CAP_ASC  = 22   # max HP restored per stair on ascent
 
-    def on_level_change(self, ascending: bool = False):
+    def on_level_change(self, ascending: bool = False, first_visit: bool = True):
         """Called when player uses a staircase. Stair-rest healing only.
 
         No automatic max HP growth -- that comes from cooking compound recipes
         and high-tier single ingredient cooks (Q3+).
         Stair-rest heal scales with max HP; reduced on ascent (Death pursuit).
         Capped to prevent trivialising damage at very high max HP.
+
+        first_visit: True only on the FIRST entry to this floor in the
+        run. Revisits (going back and forth between floors via stairs)
+        do NOT grant any rest-heal — otherwise a player can stair-stomp
+        two adjacent floors to fully recover SP/MP for free, which is
+        the exploit reported 2026-05-29.
         """
+        if not first_visit:
+            return
         if ascending:
             rest_heal = min(self.STAIR_REST_CAP_ASC,
                             max(self.HP_PER_LEVEL, int(self.max_hp * 0.04)))

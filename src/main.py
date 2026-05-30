@@ -960,8 +960,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         m.status_effects['slowed'] = max(
                             m.status_effects.get('slowed', 0), 5)
 
-        # Grant HP on every level transition (reduced on ascent)
-        self.player.on_level_change(ascending=not enter_from_top)
+        # Grant HP/SP/MP rest-heal on FIRST visit only. Revisits (e.g.
+        # stair-stomping between two floors to grind SP) get nothing —
+        # the `saved` variable above is truthy iff this floor was
+        # already visited in this run (level_mgr returned cached state).
+        self.player.on_level_change(
+            ascending=not enter_from_top,
+            first_visit=not saved,
+        )
 
         # Place player at the stairs they came through
         _snd.play('level_change')
