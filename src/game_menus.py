@@ -270,6 +270,8 @@ class MenuMixin:
                 self.equip_menu_equipped.append((f'accessory_{idx}', acc_item))
         if self.player.amulet_slot:
             self.equip_menu_equipped.append(('amulet', self.player.amulet_slot))
+        if getattr(self.player, 'belt_slot', None):
+            self.equip_menu_equipped.append(('belt', self.player.belt_slot))
         if not self.equip_menu_items and not self.equip_menu_equipped:
             self.add_message("Nothing to equip or unequip.", 'info')
             return

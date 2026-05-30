@@ -521,6 +521,7 @@ class RenderMixin:
         for i, acc in enumerate(p.accessory_slots):
             slot_items.append((f"Ring {i+1}", acc))
         slot_items.append(('Amulet', p.amulet_slot))
+        slot_items.append(('Belt', getattr(p, 'belt_slot', None)))
 
         # Truncate the item name so the full line never runs off the
         # right edge of the panel. The full name is still discoverable

@@ -57,6 +57,7 @@ class Player:
         self.armor_slots = [None] * 8     # head, body, arms, hands, legs, feet, cloak, shirt
         self.accessory_slots = [None] * 4  # ring slots
         self.amulet_slot = None            # single amulet slot
+        self.belt_slot   = None            # single belt slot (Megingjörð, Hippolyta's Girdle, Ariadne's Thread, etc.)
 
         # Inventory (list of item objects)
         self.inventory = []
@@ -160,10 +161,15 @@ class Player:
 
     @property
     def equipped_accessories(self):
-        """Every equipped accessory item: amulet (if any) + all non-empty ring slots."""
+        """Every equipped accessory item: amulet (if any) + belt (if any)
+        + all non-empty ring slots. The defensive getattr() lets older
+        pickled saves that predate the belt slot still work."""
         items = []
         if self.amulet_slot is not None:
             items.append(self.amulet_slot)
+        _belt = getattr(self, 'belt_slot', None)
+        if _belt is not None:
+            items.append(_belt)
         items.extend(r for r in self.accessory_slots if r is not None)
         return items
 
@@ -883,6 +889,7 @@ class Player:
         for i, item in enumerate(self.accessory_slots):
             slots[f'ring_{i+1}'] = item
         slots['amulet'] = self.amulet_slot
+        slots['belt']   = getattr(self, 'belt_slot', None)
         return slots
 
     def get_inventory_display(self) -> list:
@@ -992,6 +999,26 @@ class Player:
                     if 'stat2' in old_fx:
                         self.apply_stat_bonus(old_fx['stat2'], -old_fx.get('amount2', 0))
                 self.amulet_slot = item
+            elif getattr(item, 'slot', 'ring') == 'belt':
+                # Belt slot — single-item, mirrors amulet handling.
+                # Used by Megingjörð, Girdle of Hippolyta, Ariadne's
+                # Thread, Rope of Izanagi, Anansi's Thread.
+                if not hasattr(self, 'belt_slot'):
+                    self.belt_slot = None  # backfill for older saves
+                old = self.belt_slot
+                if old:
+                    ok, msg = self.try_unequip_slot(old)
+                    if not ok:
+                        return
+                    self.inventory.append(old)
+                    old_fx = old.effects
+                    if 'status' in old_fx:
+                        self.status_effects.pop(old_fx['status'], None)
+                    if 'stat' in old_fx:
+                        self.apply_stat_bonus(old_fx['stat'], -old_fx.get('amount', 0))
+                    if 'stat2' in old_fx:
+                        self.apply_stat_bonus(old_fx['stat2'], -old_fx.get('amount2', 0))
+                self.belt_slot = item
             else:
                 # Find first empty ring slot. If none free, bail out — the
                 # game-level _equip_accessory blocks this, but harden here too

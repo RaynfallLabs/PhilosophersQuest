@@ -100,6 +100,8 @@ def _any_cursed_worn(player) -> bool:
             return True
     if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'buc', '') == 'cursed':
         return True
+    if getattr(player, 'belt_slot', None) and getattr(player.belt_slot, 'buc', '') == 'cursed':
+        return True
     return False
 
 
@@ -1226,6 +1228,8 @@ class DivineMixin:
                 cursed_items.append(acc)
         if getattr(p, 'amulet_slot', None) and getattr(p.amulet_slot, 'buc', '') == 'cursed':
             cursed_items.append(p.amulet_slot)
+        if getattr(p, 'belt_slot', None) and getattr(p.belt_slot, 'buc', '') == 'cursed':
+            cursed_items.append(p.belt_slot)
         if not cursed_items:
             return ["You wear no cursed gear."], False
         if effective >= 5:

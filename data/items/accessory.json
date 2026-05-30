@@ -6078,7 +6078,7 @@
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
-    "slot": "amulet",
+    "slot": "belt",
     "effects": {
       "status": "searching",
       "duration": -1,
@@ -6165,7 +6165,7 @@
   },
   "anansis_thread": {
     "name": "Anansi's Thread",
-    "slot": "ring",
+    "slot": "belt",
     "effects": {
       "stat": "INT",
       "amount": 2
@@ -6206,7 +6206,7 @@
   },
   "rope_of_izanagi": {
     "name": "Rope of Izanagi",
-    "slot": "amulet",
+    "slot": "belt",
     "effects": {
       "status": "searching",
       "duration": -1,
@@ -6893,7 +6893,7 @@
   },
   "megingjord": {
     "name": "Megingjörð",
-    "slot": "ring",
+    "slot": "belt",
     "symbol": "=",
     "color": [
       180,
@@ -7063,8 +7063,8 @@
     "lore": "A simple ring of cold-forged iron, banded for stability. Plain in design but stout in protection."
   },
   "amulet_of_hippolyta": {
-    "name": "Amulet of Hippolyta",
-    "slot": "amulet",
+    "name": "Girdle of Hippolyta",
+    "slot": "belt",
     "effects": {
       "stat": "STR",
       "amount": 3
