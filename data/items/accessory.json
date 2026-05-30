@@ -6729,8 +6729,8 @@
         "stat": "INT",
         "amount": 2
       },
-      "scope": "item",
-      "desc": "The Dreamspun Sketchbook brought dreams to life — INT rises by 2 permanently."
+      "scope": "carry",
+      "desc": "The Dreamspun Sketchbook brought dreams to life — INT +2 while carried."
     },
     "id_level": 0
   },
@@ -6763,8 +6763,8 @@
         "stat": "CON",
         "amount": 2
       },
-      "scope": "item",
-      "desc": "The Charmander Stuffie is a child's oldest friend, full of love — CON rises by 2 permanently."
+      "scope": "carry",
+      "desc": "The Charmander Stuffie is a child's oldest friend, full of love — CON +2 while carried."
     },
     "id_level": 0
   },

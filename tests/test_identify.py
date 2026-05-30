@@ -333,7 +333,11 @@ def test_every_unique_has_valid_mastery_blessing():
                 invalid.append(f'{cat}:{it.id} -> kind {mb.get("kind")!r}')
             if not mb.get('desc'):
                 invalid.append(f'{cat}:{it.id} -> empty desc')
-            if mb.get('scope') != 'item':
+            # 'item' = standard one-shot mastery applied at chain-5.
+            # 'carry' = stat-bonus mastery that applies only while the
+            # item is in inventory (post-mastery); used for slot=none
+            # uniques like Charmander Stuffie / Dreamspun Sketchbook.
+            if mb.get('scope') not in ('item', 'carry'):
                 invalid.append(f'{cat}:{it.id} -> scope {mb.get("scope")!r}')
     assert not missing, f"Uniques missing mastery_blessing: {missing[:8]}"
     assert not invalid, f"Invalid mastery_blessing entries: {invalid[:8]}"

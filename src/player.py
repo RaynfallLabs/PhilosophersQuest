@@ -138,6 +138,13 @@ class Player:
         # Mastery bonuses unlocked by chain-5 identify on uniques.
         # Key: item_id (e.g. 'soul_reaver'). Value: blessing dict {'kind', 'value', 'desc'}.
         self.unlocked_masteries: dict[str, dict] = {}
+        # Carry-scope masteries currently applied to stats. Keyed by
+        # item_id, value = (stat, amount) tuple of what's been added.
+        # See refresh_carry_bonuses() for the apply/remove diff logic.
+        # Used for items with mastery_blessing.scope='carry' (e.g.
+        # Charmander Stuffie, Dreamspun Sketchbook) — bonus applies
+        # only while the mastered item is in the player's inventory.
+        self.active_carry_bonuses: dict[str, tuple] = {}
         # Class-level mastery for commons — mastering one Ring of Strength applies
         # to ALL rings of strength. Key: mastery_class slug (e.g. 'ring_of_strength').
         # Computed by class_masteries.get_mastery_class(item).
@@ -784,6 +791,8 @@ class Player:
         self.inventory.append(item)
         # Keep inventory sorted alphabetically by item name
         self.inventory.sort(key=lambda i: i.name.lower())
+        # Sync carry-scope mastery bonuses (Charmander Stuffie etc.)
+        self.refresh_carry_bonuses()
         return True
 
     def remove_from_inventory(self, item) -> bool:
@@ -792,6 +801,9 @@ class Player:
                 item.count -= 1
                 return True
             self.inventory.remove(item)
+            # Sync carry-scope mastery bonuses (bonus removed if the
+            # dropped item was a Charmander Stuffie etc.)
+            self.refresh_carry_bonuses()
             return True
         return False
 
@@ -812,6 +824,53 @@ class Player:
         elif stat == 'INT':
             self.max_mp += amount
             self.mp = min(self.mp, self.max_mp)
+
+    def refresh_carry_bonuses(self):
+        """Sync carry-scope mastery bonuses with current inventory.
+
+        For each unlocked mastery whose `scope == 'carry'`, applies its
+        bonus iff the corresponding item is currently in inventory, and
+        removes it otherwise. Idempotent — diffs against
+        `self.active_carry_bonuses` so calling repeatedly has no effect.
+
+        Use case: Charmander Stuffie / Dreamspun Sketchbook — items
+        you carry as keepsakes; the bonus applies as long as you
+        haven't dropped them.
+        """
+        # Defensive default for old saves
+        if not hasattr(self, 'active_carry_bonuses') or self.active_carry_bonuses is None:
+            self.active_carry_bonuses = {}
+        # What SHOULD be applied right now
+        inv_ids = {getattr(i, 'id', None) for i in self.inventory}
+        desired: dict[str, tuple] = {}
+        for item_id, mastery in self.unlocked_masteries.items():
+            if not isinstance(mastery, dict):
+                continue
+            if mastery.get('scope') != 'carry':
+                continue
+            if item_id not in inv_ids:
+                continue
+            # Currently only stat_bonus kinds are supported on carry
+            kind = mastery.get('kind')
+            if kind not in ('accessory_stat_bonus',):
+                continue
+            v = mastery.get('value') or {}
+            stat = v.get('stat')
+            amount = int(v.get('amount', 0))
+            if stat and amount:
+                desired[item_id] = (stat, amount)
+        # Apply newly-active (in desired but not yet in active)
+        for item_id, (stat, amount) in desired.items():
+            if item_id in self.active_carry_bonuses:
+                continue
+            self.apply_stat_bonus(stat, amount)
+            self.active_carry_bonuses[item_id] = (stat, amount)
+        # Remove newly-inactive (in active but no longer desired)
+        for item_id in list(self.active_carry_bonuses.keys()):
+            if item_id in desired:
+                continue
+            stat, amount = self.active_carry_bonuses.pop(item_id)
+            self.apply_stat_bonus(stat, -amount)
 
     # --- Equipment ---
 

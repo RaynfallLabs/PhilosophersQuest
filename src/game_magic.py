@@ -2671,6 +2671,17 @@ class MagicMixin:
         elif kind in ('accessory_stat_bonus', 'class_acc_stat_bonus'):
             # class_acc_stat_bonus mirrors accessory_stat_bonus but is
             # class-scoped — applied once when the class is mastered.
+            #
+            # NEW (2026-05-29): If the blessing carries
+            # `scope: "carry"`, the bonus applies only while the item
+            # is in inventory. Skip the one-shot apply here and let
+            # Player.refresh_carry_bonuses() handle it instead. Used
+            # by carry-only uniques like Charmander Stuffie (+2 CON
+            # in inventory) and Dreamspun Sketchbook (+2 INT in
+            # inventory).
+            if blessing.get('scope') == 'carry':
+                p.refresh_carry_bonuses()
+                return
             v = value or {}
             stat = v.get('stat')
             amount = int(v.get('amount', 0))
