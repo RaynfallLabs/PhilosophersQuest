@@ -101,33 +101,38 @@ def test_threshold_success_when_enough_correct():
     assert results[0].score == 2
 
 
-def test_threshold_fail_when_not_enough_correct():
-    """Threshold mode: runs out of questions without hitting threshold → fail."""
+def test_threshold_first_wrong_ends_quiz():
+    """Threshold mode: zero-tolerance per user direction 2026-05-29.
+    Any wrong answer ends the quiz immediately. Replaces the older
+    'early exit when math impossible' rule — which was a softer
+    variant of the same idea."""
     eng = _make_engine()
     results, cb = _captured_result()
     eng.start_quiz('threshold', 'math', tier=1, callback=cb, threshold=3)
-    # 3 required, total_qs = ceil(3*1.5)=5. Answer wrong on all 5.
-    for _ in range(5):
-        eng.answer('wrong')
-        eng.update(eng.WRONG_DISPLAY_TIME + 0.01)
+    eng.answer('wrong')
+    eng.update(eng.WRONG_DISPLAY_TIME + 0.01)
     assert len(results) == 1
     assert results[0].success is False
     assert results[0].correct == 0
-    assert results[0].asked >= 1  # early-exits as soon as math becomes impossible
+    assert results[0].asked == 1, (
+        "first wrong must end the quiz immediately — no mulligans"
+    )
 
 
-def test_threshold_early_exit_when_impossible():
-    """Threshold mode early-exits when remaining < still-needed."""
+def test_threshold_first_wrong_after_partial_correct_ends_quiz():
+    """Two right then a wrong → quiz ends with success iff partial >= threshold."""
     eng = _make_engine()
     results, cb = _captured_result()
     eng.start_quiz('threshold', 'math', tier=1, callback=cb, threshold=3)
-    # threshold=3, total_qs=5. After 3 wrong, only 2 left, need 3 → impossible.
-    for _ in range(3):
-        eng.answer('wrong')
-        eng.update(eng.WRONG_DISPLAY_TIME + 0.01)
+    for _ in range(2):
+        eng.answer('right')
+        eng.update(eng.RESULT_DISPLAY_TIME + 0.01)
+    eng.answer('wrong')
+    eng.update(eng.WRONG_DISPLAY_TIME + 0.01)
     assert len(results) == 1
+    # 2 correct < 3 threshold -> fail
     assert results[0].success is False
-    # Should NOT have asked all 5 — exited at 3
+    assert results[0].correct == 2
     assert results[0].asked == 3
 
 

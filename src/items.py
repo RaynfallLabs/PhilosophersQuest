@@ -784,21 +784,33 @@ def _normalize_descriptor(desc: str) -> str:
     return cleaned or desc
 
 
+def _title_if_all_lower(s: str) -> str:
+    """Title-case `s` ONLY if it's currently entirely lowercase. Mirrors
+    game_helpers.fix_name_case so 'linen padded' becomes 'Linen Padded'
+    without breaking 'STR+1'-style identifiers that already use case
+    deliberately. Per user feedback 2026-05-29: identified item names
+    were displaying as lowercase ('linen padded') in messages where
+    fix_name_case wasn't applied at the call site. Title-casing at the
+    composition source means every downstream consumer sees the
+    correct form."""
+    return s.title() if s and s == s.lower() else s
+
+
 def compose_item_name(material_name: str, template_name: str) -> str:
     """Identified-form item name. Strips redundant material words from
     the template so 'steel' + 'iron boots' renders as 'steel boots',
-    not 'steel iron boots'."""
+    not 'steel iron boots'. Title-cases the result."""
     cleaned = _strip_redundant_material_words(template_name)
-    return f"{material_name} {cleaned}".strip()
+    return _title_if_all_lower(f"{material_name} {cleaned}".strip())
 
 
 def compose_unidentified_name(material_descriptor: str, template_name: str) -> str:
     """Unidentified-form item name. Normalizes both the descriptor
     (drop article, drop tail-noun) and the template (drop redundant
-    material words) before composing."""
+    material words) before composing. Title-cases the result."""
     cleaned_desc = _normalize_descriptor(material_descriptor)
     cleaned_tpl = _strip_redundant_material_words(template_name)
-    return f"{cleaned_desc} {cleaned_tpl}".strip()
+    return _title_if_all_lower(f"{cleaned_desc} {cleaned_tpl}".strip())
 
 
 def instantiate_weapon(template_id: str, material_id: str, *,

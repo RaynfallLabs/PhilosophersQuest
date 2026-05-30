@@ -337,14 +337,21 @@ class QuizEngine:
                 self._next_question()
 
         else:  # threshold / escalator_threshold
+            # Zero-tolerance: any wrong answer ends the quiz, per user
+            # direction 2026-05-29 ("no mulligans in ANY quiz mode").
+            # The Tablet of Destinies' one-time reroll still applies —
+            # if the player has it, consume it and re-pose the question.
+            if not self.last_correct:
+                if self.reroll_available:
+                    self.reroll_available = False
+                    self.reroll_was_used = True
+                    self._next_question()
+                    return
+                self._end(success=self.correct_count >= self.required)
+                return
             # End immediately when threshold reached
             if self.correct_count >= self.required:
                 self._end(success=True)
-                return
-            # Early-exit if it's now mathematically impossible to reach threshold
-            remaining = self.total_qs - self.asked_count
-            if self.correct_count + remaining < self.required:
-                self._end(success=False)
                 return
             # Ran out of questions without reaching threshold
             if self.asked_count >= self.total_qs:

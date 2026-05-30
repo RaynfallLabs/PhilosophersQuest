@@ -671,21 +671,23 @@ def test_normalize_descriptor_never_returns_empty():
 def test_compose_item_name_user_scenario():
     """The exact bug the user reported, end-to-end through the
     identified path: oak material + light_wooden_shield template should
-    NOT produce 'oak light wooden shield'."""
-    assert compose_item_name("oak", "light wooden shield") == "oak light shield"
+    NOT produce 'oak light wooden shield'. Title-cased since
+    2026-05-29 per user feedback that 'linen padded' displayed as
+    lowercase in messages."""
+    assert compose_item_name("oak", "light wooden shield") == "Oak Light Shield"
 
 
 def test_compose_item_name_no_change_when_no_overlap():
-    assert compose_item_name("oak", "tower shield") == "oak tower shield"
-    assert compose_item_name("mithril", "buckler") == "mithril buckler"
+    assert compose_item_name("oak", "tower shield") == "Oak Tower Shield"
+    assert compose_item_name("mithril", "buckler") == "Mithril Buckler"
 
 
 def test_compose_item_name_handles_iron_iron_collision():
-    # iron + iron_boots template -> "iron boots", not "iron iron boots".
-    assert compose_item_name("iron", "iron boots") == "iron boots"
-    # steel + iron_boots template -> "steel boots" (the iron in the
+    # iron + iron_boots template -> "Iron Boots", not "Iron Iron Boots".
+    assert compose_item_name("iron", "iron boots") == "Iron Boots"
+    # steel + iron_boots template -> "Steel Boots" (the iron in the
     # template name is now redundant once we have a specific material).
-    assert compose_item_name("steel", "iron boots") == "steel boots"
+    assert compose_item_name("steel", "iron boots") == "Steel Boots"
 
 
 def test_compose_unidentified_name_user_scenario():
@@ -698,11 +700,11 @@ def test_compose_unidentified_name_user_scenario():
       - generic material adjective "wood" in the descriptor is KEPT (it
         carries the pre-identify hint about what the material might be)
     Result reads as a natural noun phrase rather than a glued-together
-    mess: 'pale fibrous wood light shield'.
+    mess: 'Pale Fibrous Wood Light Shield'.
     """
     # ash (weapons-pool) has unidentified_descriptor "a pale fibrous wood"
     result = compose_unidentified_name("a pale fibrous wood", "light wooden shield")
-    assert result == "pale fibrous wood light shield", f"unexpected: {result!r}"
+    assert result == "Pale Fibrous Wood Light Shield", f"unexpected: {result!r}"
     # Critically: the word "wood" does NOT appear twice anymore.
     assert result.lower().count("wood") == 1
 
@@ -712,10 +714,10 @@ def test_compose_unidentified_name_oak_shield():
     result = compose_unidentified_name("a wooden plank", "light wooden shield")
     # Article stripped, tail noun "plank" stripped, then "wooden" left
     # as adjective. Template strips "wooden". Result reads naturally.
-    assert result == "wooden light shield"
+    assert result == "Wooden Light Shield"
 
 
 def test_compose_unidentified_name_no_overlap():
     # mithril descriptor is "pale silvery metal" (adjective phrase already)
     result = compose_unidentified_name("pale silvery metal", "plate helm")
-    assert result == "pale silvery metal helm"
+    assert result == "Pale Silvery Metal Helm"
