@@ -5166,6 +5166,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             new_level = min(5, max(previous_level, previous_level + chain))
             if new_level > previous_level:
                 corpse.id_level = new_level
+                # Remember the max level reached for this monster_id
+                # so future corpse spawns (in game_combat._make_corpse)
+                # can pre-set their id_level to match what the kid has
+                # already learned. Per user feedback 2026-05-29.
+                if not hasattr(self.player, 'corpse_id_level_known') or self.player.corpse_id_level_known is None:
+                    self.player.corpse_id_level_known = {}
+                prev = self.player.corpse_id_level_known.get(corpse.monster_id, 0)
+                self.player.corpse_id_level_known[corpse.monster_id] = max(prev, new_level)
                 # Propagate full id_level to all corpses of the same monster_id
                 from items import Corpse as _Corpse
                 for obj in self.ground_items + list(self.player.inventory):
@@ -5413,11 +5421,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif isinstance(item, Shield):
             return f"shield  -{item.ac_bonus} AC  tier {item.tier}"
         elif isinstance(item, Accessory):
-            fx = item.effects
+            fx = item.effects or {}
             if 'status' in fx:
                 return f"grants {fx['status']}"
-            else:
-                return f"{fx.get('stat','?')} +{fx.get('amount',0)}"
+            if 'stat' in fx and 'amount' in fx:
+                return f"{fx['stat']} +{fx['amount']}"
+            # Equip-time effects empty — fall back to the mastery
+            # bonus that is the item's actual mechanical point. Used
+            # by carry-only items like Charmander Stuffie and
+            # Dreamspun Sketchbook, whose stat bump lives in
+            # mastery_blessing.value rather than effects. Per user
+            # feedback 2026-05-29: examine card was rendering "? +0"
+            # for these items.
+            mb = getattr(item, 'mastery_blessing', None) or {}
+            v = mb.get('value') or {}
+            if mb.get('kind') == 'accessory_stat_bonus' and 'stat' in v and 'amount' in v:
+                suffix = ' (carried)' if mb.get('scope') == 'carry' else ' (mastery)'
+                return f"{v['stat']} +{v['amount']}{suffix}"
+            # Last resort: a generic class label instead of the
+            # broken '? +0'.
+            return item.item_class.replace('_', ' ').title()
         elif isinstance(item, Wand):
             return f"effect: {item.effect.replace('_', ' ')}  charges: {item.charges}/{item.max_charges}"
         elif isinstance(item, Scroll):

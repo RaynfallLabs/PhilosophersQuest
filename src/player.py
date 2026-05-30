@@ -102,7 +102,14 @@ class Player:
         self.known_item_ids: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)
         self.known_monster_ids: set[str] = set()   # monsters seen (encyclopedia)
-        self.lore_known_monster_ids: set[str] = set()  # monsters whose corpse has been studied
+        self.lore_known_monster_ids: set[str] = set()  # monsters whose corpse has been studied (id_level >= 4)
+        # Max id_level reached on EACH monster_id's corpse (any tier
+        # 1..5). Used to spawn newly-dropped corpses at the same tier
+        # the player has already learned, so identification carries
+        # over between fresh kills. Per user feedback 2026-05-29:
+        # "if I examine ONE rotting zombie corpse, all should be
+        # identified at same tier upon discovery."
+        self.corpse_id_level_known: dict[str, int] = {}
         self.lockpick_charges: int = 0             # charges from collected lockpicks
         # Spells learned from spellbooks: spell_id -> mp_cost
         self.known_spells: dict[str, int] = {}

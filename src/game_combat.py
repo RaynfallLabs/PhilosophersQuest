@@ -726,6 +726,14 @@ class CombatMixin:
         if monster.kind in getattr(self.player, 'lore_known_monster_ids', set()):
             # Pre-studied family: drop straight into lore-tier (4+).
             c.id_level = max(int(getattr(c, 'id_level', 0)), 4)
+        # Continuity: spawn the corpse at whatever tier the kid has
+        # already learned for this monster type (any tier 1..5).
+        # Without this, a fresh kill of a zombie you've already ID'd
+        # to T2 would spawn at 0/5 and you'd have to start over.
+        _known = getattr(self.player, 'corpse_id_level_known', None) or {}
+        _max = int(_known.get(monster.kind, 0))
+        if _max > 0:
+            c.id_level = max(int(getattr(c, 'id_level', 0)), _max)
         return c
 
     def _spawn_treasure_item(self, x: int, y: int, tier: int):
