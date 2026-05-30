@@ -131,7 +131,11 @@ class Renderer:
         path = os.path.join(_ENV_SPRITE_DIR, f"{name}.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
-            surf = pygame.transform.scale(raw, (self.map_tile_size, self.map_tile_size))
+            # smoothscale (bilinear) instead of scale (nearest-neighbour)
+            # so high-res illustrations downscale cleanly to the tile
+            # size. Same-size pass-through is harmless for pixel art
+            # that's already at the target resolution.
+            surf = pygame.transform.smoothscale(raw, (self.map_tile_size, self.map_tile_size))
             self._env_sprite_cache[name] = surf
         else:
             self._env_sprite_cache[name] = None
@@ -145,7 +149,11 @@ class Renderer:
             path = os.path.join(_ITEM_SPRITE_DIR, "corpse.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
-            surf = pygame.transform.scale(raw, (self.map_tile_size, self.map_tile_size))
+            # smoothscale (bilinear) instead of scale (nearest-neighbour)
+            # so high-res illustrations downscale cleanly to the tile
+            # size. Same-size pass-through is harmless for pixel art
+            # that's already at the target resolution.
+            surf = pygame.transform.smoothscale(raw, (self.map_tile_size, self.map_tile_size))
             self._item_sprite_cache[item_id] = surf
         else:
             self._item_sprite_cache[item_id] = None
@@ -157,7 +165,11 @@ class Renderer:
         path = os.path.join(_SPRITE_DIR, f"{mid}.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
-            surf = pygame.transform.scale(raw, (self.map_tile_size, self.map_tile_size))
+            # smoothscale (bilinear) instead of scale (nearest-neighbour)
+            # so high-res illustrations downscale cleanly to the tile
+            # size. Same-size pass-through is harmless for pixel art
+            # that's already at the target resolution.
+            surf = pygame.transform.smoothscale(raw, (self.map_tile_size, self.map_tile_size))
             self._sprite_cache[mid] = surf
         else:
             self._sprite_cache[mid] = None
