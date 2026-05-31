@@ -3944,7 +3944,7 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
-      "amount": 4
+      "amount": 5
     },
     "unidentified_name": "a heavy gold ring with a tiny rune",
     "floorSpawnWeight": {
@@ -3964,7 +3964,9 @@
       },
       "scope": "item",
       "desc": "The Ring of the Nibelung is the cursed dwarf-gold itself — every gold drop is multiplied by 3.0."
-    }
+    },
+    "gold_multiplier": 2.0,
+    "can_be_cursed": true
   },
   "andvaranaut": {
     "name": "Andvaranaut",
@@ -4018,7 +4020,7 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "STR",
@@ -4144,7 +4146,9 @@
     "quiz_tier": 5,
     "effects": {
       "status": "reflecting",
-      "duration": -1
+      "duration": -1,
+      "stat": "WIS",
+      "amount": 2
     },
     "unidentified_name": "a small wooden figure of armed Athena",
     "floorSpawnWeight": {
@@ -4165,7 +4169,8 @@
       },
       "scope": "item",
       "desc": "The Palladium kept Troy invincible while it stood within the walls — buffs from it last 8 turns longer."
-    }
+    },
+    "ac_bonus": 2
   },
   "eye_of_horus": {
     "name": "Eye of Horus",
@@ -4268,7 +4273,7 @@
     "effects": {
       "stat": "CON",
       "amount": 2,
-      "status": "warning",
+      "status": "reflecting",
       "duration": -1
     },
     "unidentified_name": "an open hand amulet with an eye in the palm",
@@ -4569,7 +4574,7 @@
     "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
       "stat": "CON",
@@ -4714,7 +4719,9 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
-      "amount": 4
+      "amount": 5,
+      "status": "magic_resist",
+      "duration": -1
     },
     "unidentified_name": "a broad chest ornament of lapis and gold",
     "floorSpawnWeight": {
@@ -5175,7 +5182,9 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
-      "amount": 4
+      "amount": 4,
+      "status": "magic_resist",
+      "duration": -1
     },
     "unidentified_name": "a silver ring set with a small cup-shaped hollow",
     "floorSpawnWeight": {
@@ -5573,7 +5582,7 @@
     "effects": {
       "stat": "DEX",
       "amount": 3,
-      "status": "invisible",
+      "status": "silent_walk",
       "duration": -1
     },
     "identified": false,
@@ -5821,7 +5830,7 @@
     "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 2,
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "effects": {
       "stat": "WIS",
       "amount": 2
@@ -5859,7 +5868,7 @@
     "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 3,
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "effects": {
       "stat": "PER",
       "amount": 1,
@@ -5899,7 +5908,7 @@
     "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 2,
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "effects": {
       "stat": "CON",
       "amount": 1
@@ -6302,7 +6311,7 @@
       "amount2": 1
     },
     "equip_threshold": 2,
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "weight": 0.2,
     "value": 8000,
     "min_level": 0,
@@ -6835,8 +6844,9 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
-      "amount": 4,
-      "duration": -1
+      "amount": 6,
+      "duration": -1,
+      "status": "hasted"
     },
     "can_be_cursed": false,
     "is_unique": true,

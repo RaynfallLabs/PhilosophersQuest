@@ -42,7 +42,8 @@
       "value": 2,
       "scope": "item",
       "desc": "The Hide of the Nemean Lion turns all but divine arms — armor class improves by 2."
-    }
+    },
+    "unskinnable": true
   },
   "carapace_of_the_hydra": {
     "name": "Carapace of the Hydra",
@@ -90,7 +91,8 @@
       },
       "scope": "item",
       "desc": "The Carapace of the Hydra was immune to its own venom — it deflects 50% of incoming poison."
-    }
+    },
+    "caustic_blood": 0.4
   },
   "panoply_of_hephaestus": {
     "name": "Panoply of Hephaestus",
@@ -135,7 +137,8 @@
       "value": 2,
       "scope": "item",
       "desc": "The Panoply of Hephaestus is a smith-god's masterwork — armor class improves by 2."
-    }
+    },
+    "divine_smithing": 1
   },
   "dragon_mail_of_sigurd": {
     "name": "Dragon-Sewn Mail of Sigurd",
@@ -267,7 +270,8 @@
       "value": 20,
       "scope": "item",
       "desc": "Joan of Arc fought on through every wound — her breastplate grants a permanent 20 HP on mastery."
-    }
+    },
+    "maid_does_not_fall": true
   },
   "lorica_hamata_of_caesar": {
     "name": "Lorica of Caesar",
@@ -311,7 +315,8 @@
       "value": 15,
       "scope": "item",
       "desc": "Caesar wore the chain-mail across the Rubicon and the Senate floor — the Lorica grants a permanent 15 HP on mastery."
-    }
+    },
+    "et_tu_charge": true
   },
   "orichalcum_breastplate": {
     "name": "Orichalcum Breastplate",
@@ -476,7 +481,8 @@
       "value": 15,
       "scope": "item",
       "desc": "The Helm of Achilles rang like a bell for the last weeks of his life — it grants a permanent 15 HP on mastery."
-    }
+    },
+    "ringing_intimidation": 3
   },
   "great_helm_of_galahad": {
     "name": "Great Helm of Galahad",
@@ -523,7 +529,8 @@
       },
       "scope": "item",
       "desc": "Galahad's purity allowed him the Grail — his great helm deflects 40% of unholy damage."
-    }
+    },
+    "purity": true
   },
   "vambraces_of_achilles": {
     "name": "Vambraces of Achilles",
@@ -567,7 +574,8 @@
       "value": 1,
       "scope": "item",
       "desc": "The Vambraces of Achilles bear scenes of working lives — armor class improves by 1."
-    }
+    },
+    "peace_at_the_forge": 2
   },
   "gauntlets_of_mars": {
     "name": "Gauntlets of Mars",
@@ -610,7 +618,8 @@
       "value": 15,
       "scope": "item",
       "desc": "The Gauntlets of Mars defend boundaries and break them — they grant a permanent 15 HP on mastery."
-    }
+    },
+    "boundary_guardian": true
   },
   "greaves_of_hermes": {
     "name": "Greaves of Hermes",
@@ -654,7 +663,9 @@
       "value": 1,
       "scope": "item",
       "desc": "Hermes's Greaves carried him between Olympus and Hades — armor class improves by 1."
-    }
+    },
+    "onEquipStatus": "hasted",
+    "descend_stairs_no_turn": true
   },
   "cloak_of_the_morrigan": {
     "name": "Cloak of the Morrigan",
@@ -778,7 +789,8 @@
       "value": 15,
       "scope": "item",
       "desc": "Enkidu was made wild and made friend — his leggings grant a permanent 15 HP on mastery."
-    }
+    },
+    "wild_friend": 0.2
   },
   "mantle_of_elijah": {
     "name": "Mantle of Elijah",
@@ -824,7 +836,8 @@
       },
       "scope": "item",
       "desc": "Elijah was taken to heaven in a chariot of fire — his mantle deflects 30% of fire damage."
-    }
+    },
+    "prophets_passing": true
   },
   "robe_of_the_magus": {
     "name": "Robe of the Magus",
@@ -954,7 +967,8 @@
       "value": 1,
       "scope": "item",
       "desc": "The Boots of Seven Leagues fit their hero perfectly — armor class improves by 1."
-    }
+    },
+    "seven_league_step": true
   },
   "brigandine_of_william_wallace": {
     "name": "Brigandine of Wallace",
@@ -998,7 +1012,8 @@
       "value": 20,
       "scope": "item",
       "desc": "Wallace's brigandine carried him through Stirling Bridge — it grants a permanent 20 HP on mastery."
-    }
+    },
+    "guerrilla_terrain": true
   },
   "cuirass_of_hannibal": {
     "name": "Cuirass of Hannibal",
@@ -1043,7 +1058,8 @@
       "value": 20,
       "scope": "item",
       "desc": "Hannibal won every major engagement in Italy — his cuirass grants a permanent 20 HP on mastery."
-    }
+    },
+    "cannae_encirclement": true
   },
   "nemean_pelt": {
     "name": "Nemean Lion Pelt",
@@ -1088,7 +1104,8 @@
       "desc": "The Nemean Pelt is the unskinnable hide itself — it deflects 25% of all elemental damage."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "unskinnable": true
   },
   "green_knights_plate": {
     "name": "Green Knight's Plate",
@@ -1221,7 +1238,7 @@
     "weight": 1.5,
     "min_level": 9999,
     "slot": "cloak",
-    "tier": 2,
+    "tier": 3,
     "material": "silk",
     "ac_bonus": 2,
     "equip_threshold": 1,
@@ -1249,7 +1266,8 @@
       "desc": "Arachne's Silk Cloak catches arrows and slows blades — armor class improves by 1."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "webbed_strike": true
   },
   "erlking_mantle": {
     "name": "Erlking's Mantle",
@@ -1295,7 +1313,8 @@
     "effects": {
       "stat": "PER",
       "amount": 2
-    }
+    },
+    "forest_hearing": 6
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -1337,7 +1356,8 @@
       "desc": "Anansi's Web Cloak shifts and deceives — armor class improves by 2."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "story_thread": true
   },
   "nidhoggr_scale": {
     "name": "Níðhöggr's Scale",
@@ -1468,7 +1488,7 @@
   "winged_sandals_of_hermes": {
     "name": "Winged Sandals of Hermes",
     "slot": "feet",
-    "tier": 2,
+    "tier": 3,
     "material": "gold",
     "ac_bonus": 2,
     "enchant_bonus": 0,
@@ -1586,7 +1606,8 @@
       "value": 1,
       "scope": "item",
       "desc": "These votive Hermes's Sandals carry one trick from the god — armor class improves by 1."
-    }
+    },
+    "dodge_first_arrow_per_floor": true
   },
   "blindfold": {
     "name": "blindfold",
@@ -1631,7 +1652,8 @@
       "scope": "item",
       "desc": "The Blindfold severs sight from soul — it deflects 50% of psychic damage."
     },
-    "id_level": 0
+    "id_level": 0,
+    "tremor_sense": 3
   },
   "trainers_cap": {
     "name": "Trainer's Cap",
@@ -1671,7 +1693,8 @@
       "scope": "item",
       "desc": "The Trainer's Cap radiates encouragement and bond — it grants a permanent 10 HP on mastery."
     },
-    "id_level": 0
+    "id_level": 0,
+    "bond_check": true
   },
   "cow_kings_horns": {
     "name": "Cow King's Horns",
@@ -1713,7 +1736,8 @@
       "scope": "item",
       "desc": "The Cow King's Horns channel bovine fury — they grant a permanent 15 HP on mastery."
     },
-    "id_level": 0
+    "id_level": 0,
+    "bovine_fury": true
   },
   "cloth_of_penelope": {
     "name": "Cloth of Penelope",
@@ -1757,7 +1781,8 @@
       "desc": "The Cloth of Penelope was woven and unwoven for twenty years — it grants a permanent 10 HP on mastery."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "weave_and_unweave": true
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
@@ -1802,7 +1827,8 @@
       "desc": "The Bracers of Cu Chulainn carry the warp-spasm — they grant a permanent 15 HP on mastery."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "riastrad_echo": true
   },
   "cloak_of_sun_wukong": {
     "name": "Cloak of Sun Wukong",
@@ -1817,7 +1843,7 @@
     "slot": "cloak",
     "tier": 2,
     "material": "silk",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {},
@@ -1846,7 +1872,8 @@
       "desc": "The Cloak of Sun Wukong shimmers and shifts — armor class improves by 1."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "monkey_king_dodge": 10
   },
   "coat_of_cu_chulainn": {
     "name": "Coat of Cú Chulainn",
@@ -2029,7 +2056,8 @@
       "value": 1,
       "scope": "item",
       "desc": "Alexander's Linothorax stops what punches through wood — armor class improves by 1."
-    }
+    },
+    "phalanx_recovery": 2
   },
   "coif_of_beowulf": {
     "name": "Coif of Beowulf",
@@ -2070,7 +2098,8 @@
       "value": 10,
       "scope": "item",
       "desc": "Beowulf's coif was 'wound with wires by a weapon-smith of cunning' — it grants a permanent 10 HP on mastery."
-    }
+    },
+    "grendel_grip": true
   },
   "sandals_of_perseus": {
     "name": "Sandals of Perseus",
@@ -2111,7 +2140,8 @@
       "value": 1,
       "scope": "item",
       "desc": "The Sandals of Perseus walked the road to Medusa — armor class improves by 1."
-    }
+    },
+    "quest_humility": true
   },
   "kilt_of_the_pharaoh": {
     "name": "Kilt of the Pharaoh",
@@ -2155,7 +2185,8 @@
       },
       "scope": "item",
       "desc": "The Kilt of the Pharaoh is starched linen with the desert's defiance — it deflects 25% of fire damage."
-    }
+    },
+    "royal_burial": true
   },
   "scale_of_dilmun": {
     "name": "Scale of Dilmun",
@@ -2197,7 +2228,9 @@
       "value": 12,
       "scope": "item",
       "desc": "The Scale of Dilmun came from the Sumerian paradise — it grants a permanent 12 HP on mastery."
-    }
+    },
+    "water_tile_ac_bonus": 2,
+    "water_tile_regen_bonus": 1
   },
   "helm_of_gilgamesh": {
     "name": "Helm of Gilgamesh",
@@ -2238,7 +2271,8 @@
       "value": 12,
       "scope": "item",
       "desc": "The Helm of Gilgamesh remembers Uruk's king — it grants a permanent 12 HP on mastery."
-    }
+    },
+    "gold_offering": true
   },
   "sandals_of_theseus": {
     "name": "Sandals of Theseus",
@@ -2279,7 +2313,8 @@
       "value": 1,
       "scope": "item",
       "desc": "The Sandals of Theseus walked from Troezen through every Labour — armor class improves by 1."
-    }
+    },
+    "their_own_methods": 0.2
   },
   "greaves_of_qin": {
     "name": "Greaves of the Qin Guard",
@@ -2447,7 +2482,8 @@
       "value": 1,
       "scope": "item",
       "desc": "Arjuna's Bracers held the bow through Kurukshetra — armor class improves by 1."
-    }
+    },
+    "gita_focus": true
   },
   "girdle_of_hippolyta": {
     "name": "Girdle of Hippolyta",
@@ -2534,7 +2570,8 @@
       "value": 20,
       "scope": "item",
       "desc": "Leonidas's transverse-crested helm held the pass for three days — it grants a permanent 20 HP on mastery."
-    }
+    },
+    "last_stand_bonus": true
   },
   "cloak_of_mulan": {
     "name": "Cloak of Mulan",
@@ -2576,7 +2613,8 @@
       "value": 2,
       "scope": "item",
       "desc": "Mulan's Cloak hid her in plain sight for twelve years of war — armor class improves by 2."
-    }
+    },
+    "disguise_at_camp": true
   },
   "haramaki_of_yoshitsune": {
     "name": "Haramaki of Yoshitsune",
@@ -2620,7 +2658,8 @@
       "value": 20,
       "scope": "item",
       "desc": "Yoshitsune's haramaki carried him through Ichi-no-Tani and Dan-no-ura — it grants a permanent 20 HP on mastery."
-    }
+    },
+    "descent_haste": 5
   },
   "boots_of_thor": {
     "name": "Iron Boots of Thor",
@@ -2662,7 +2701,8 @@
       "value": 20,
       "scope": "item",
       "desc": "Thor's iron boots are his ordinary working kit — they grant a permanent 20 HP on mastery."
-    }
+    },
+    "thors_step": 0.05
   },
   "helm_of_aragorn": {
     "name": "Helm of the King Returned",
