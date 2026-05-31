@@ -252,6 +252,117 @@ class Weapon(Item):
         # from the Akinakes for the rest of the run.
         self.prophecy_blade: bool       = bool(defn.get('prophecy_blade', False))
 
+        # ------------------------------------------------------------------
+        # Engine wave 3 (2026-05-30) — finishes wiring the rest of the
+        # audit-deferred unique mechanics. Each was flagged "code missing"
+        # in the unique-weapons audit. Twenty-two flags added at once. Tests
+        # cover loading + the consumer-code presence checks per flag.
+        # ------------------------------------------------------------------
+
+        # Chrysaor: weapon_immune_to_enchant_loss — enchant_bonus does not
+        # decrease from corrosion / rust monsters / unenchant scrolls.
+        self.weapon_immune_to_enchant_loss: bool = bool(
+            defn.get('weapon_immune_to_enchant_loss', False))
+        # Aiglos and successors: wielder_status_immunity — list of debuff
+        # statuses the player is immune to while this weapon is equipped.
+        # Generalizes wielder_fire_immunity into a flexible vocabulary.
+        self.wielder_status_immunity: list[str] = list(
+            defn.get('wielder_status_immunity', []) or [])
+        # Robin Hood's Longbow: +X% damage when player is invisible or
+        # stealthed. Stored as a fractional multiplier (0.50 = +50%).
+        self.stealth_damage_bonus: float = float(
+            defn.get('stealth_damage_bonus', 0.0) or 0.0)
+        # Fail-not: cannot_miss_before_player_takes_damage — chain 0
+        # promotes to chain 1 ONLY while the player hasn't taken any
+        # damage in the current combat. Tristan's dutiful arrows.
+        self.cannot_miss_before_hurt: bool = bool(
+            defn.get('cannot_miss_before_player_takes_damage', False))
+        # Mistilteinn: damage_double_vs_resistant_at_max — at max chain,
+        # double damage if the target has ANY resistance (the gap nobody
+        # guards against).
+        self.damage_double_vs_resistant_at_max: bool = bool(
+            defn.get('damage_double_vs_resistant_at_max', False))
+        # Gae Dearg: apply_heal_block_chance — chance per hit to apply
+        # heal_blocked status to the target. Diarmuid's wound.
+        self.apply_heal_block_chance: float = float(
+            defn.get('apply_heal_block_chance', 0.0) or 0.0)
+        # Hrunting: one_shot_chain_save_per_floor — chain 0 promotes to
+        # the PREVIOUS rung ONCE per floor. "Never failed any man."
+        self.one_shot_chain_save_per_floor: bool = bool(
+            defn.get('one_shot_chain_save_per_floor', False))
+        # Sword of Damocles: damoclean_counter_auto_kill — after N chains
+        # without breaking, the NEXT chain-1 attack auto-kills a non-boss.
+        # The threshold is configurable; default 10.
+        self.damoclean_counter_threshold: int = int(
+            defn.get('damoclean_counter_threshold',
+                     10 if defn.get('damoclean_counter_auto_kill') else 0)
+            or 0)
+        # Sharur: floor_start_reveal_chance — chance per floor entry to
+        # reveal a random tile near a stair-down. The talking-mace scout.
+        self.floor_start_reveal_chance: float = float(
+            defn.get('floor_start_reveal_chance', 0.0) or 0.0)
+        # Kusanagi: surrounded_proc_bonus — auto-crit when 3+ enemies are
+        # adjacent to the player.
+        self.surrounded_proc_bonus: bool = bool(
+            defn.get('surrounded_proc_bonus', False))
+        # Parashu: chain_no_reset_on_tag — list of tags. Killing a target
+        # whose tags match keeps the chain going (no reset). Parashurama
+        # accumulating his penance.
+        self.chain_no_reset_on_tag: list[str] = list(
+            defn.get('chain_no_reset_on_tag', []) or [])
+        # Harpe: skip_chain_warmup_vs_tag — list of tags. Against matching
+        # targets, the chain starts at rung 2 instead of rung 1.
+        self.skip_chain_warmup_vs_tag: list[str] = list(
+            defn.get('skip_chain_warmup_vs_tag', []) or [])
+        # Prometheus Torch: equipped_light_aura — bonus to sight radius
+        # while equipped (in addition to PER's natural radius).
+        self.equipped_light_aura: int = int(
+            defn.get('equipped_light_aura', 0) or 0)
+        # Cain's Club: equipped_monster_aggro_radius — beasts seek the
+        # player from an additional N tiles' distance.
+        self.equipped_monster_aggro_radius: int = int(
+            defn.get('equipped_monster_aggro_radius', 0) or 0)
+        # Penitent's Blade: kill_count_karma_adjust — every N kills, the
+        # weapon adjusts player karma by +1 toward 0 (caps at 0 — the
+        # blade can balance the ledger but not make a wicked man holy).
+        self.kill_count_karma_adjust: int = int(
+            defn.get('kill_count_karma_adjust', 0) or 0)
+        # Joyeuse: combat_start_aoe_confuse_chance — chance per combat
+        # for nearby enemies to be confused for 1 turn.
+        self.combat_start_aoe_confuse_chance: float = float(
+            defn.get('combat_start_aoe_confuse_chance', 0.0) or 0.0)
+        # Zireael: extra_action_after_kill — once per turn, the player
+        # gets a bonus move action after killing.
+        self.extra_action_after_kill: bool = bool(
+            defn.get('extra_action_after_kill', False))
+        # Oathkeeper: adjacent_pet_damage_bonus — fractional multiplier
+        # applied to attacks when the player has at least one pet within
+        # 1 tile. Lore: the young man's promise.
+        self.adjacent_pet_damage_bonus: float = float(
+            defn.get('adjacent_pet_damage_bonus', 0.0) or 0.0)
+        # Pharaoh's Crook: equipped_ally_aura_buff_str — pets within 5
+        # tiles gain +N STR while the weapon is equipped.
+        self.equipped_ally_aura_buff_str: int = int(
+            defn.get('equipped_ally_aura_buff_str', 0) or 0)
+        # Whisperer: equipped_sound_radius_modifier — fractional change to
+        # the player's sound radius (-0.5 = halve sound, etc.).
+        self.equipped_sound_radius_modifier: float = float(
+            defn.get('equipped_sound_radius_modifier', 0.0) or 0.0)
+        # Meleager's Boar-Spear: reveal_tag_on_chain_5_kill — list of
+        # tags. On chain-5 kill of any matching target, reveal all
+        # other tag-matching monsters within sight for 5 turns.
+        self.reveal_tag_on_chain_5_kill: list[str] = list(
+            defn.get('reveal_tag_on_chain_5_kill', []) or [])
+        # Skofnung: chain_bonus_on_low_hp_window — +N chain rungs on the
+        # next attack when player drops below 50% HP. One of the twelve
+        # berserkers takes over.
+        self.chain_bonus_on_low_hp_window: int = int(
+            defn.get('chain_bonus_on_low_hp_window', 0) or 0)
+        # Runtime state for damoclean counter + one-shot per-floor saves.
+        self._damoclean_consecutive: int = 0
+        # Runtime kill_count tally for karma_adjust.
+        self._karma_kill_tally: int = 0
+
     @property
     def max_chain_length(self) -> int:
         """Always derived from chain_multipliers so old pickled weapons stay correct."""

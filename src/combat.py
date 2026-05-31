@@ -192,6 +192,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if slot and getattr(slot, 'chain_bonus', 0):
                 chain += slot.chain_bonus
 
+        # Parashu (engine wave 3): chain_no_reset_on_tag carry. After a kill
+        # of a matching-tag target, the next attack starts at the same
+        # chain rung instead of restarting. Consumed immediately so a
+        # second attack restarts normally.
+        _carry = int(getattr(player, '_chain_carry', 0) or 0)
+        if _carry > 0:
+            chain += _carry
+            player._chain_carry = 0
+
         # Glamdring: Foe-Hammer's signature glow. Against any goblin/orc-
         # tagged enemy, +1 chain rung head start while equipped. Per audit
         # 2026-05-30 — the `glows_near_orcs` JSON flag was previously inert.
@@ -221,6 +230,46 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if chain == 0 and weapon and getattr(weapon, 'cannot_miss', False):
             chain = 1
 
+        # Fail-not (engine wave 3): cannot_miss_before_player_takes_damage.
+        # The Tristan-knot vow holds until the player takes a hit this combat.
+        # Once the combat tracker says the player has been hurt, the spell
+        # falters and misses can land normally. See _combat_player_taken_damage
+        # marker (set by player.take_damage hook below).
+        if (chain == 0 and weapon and getattr(weapon, 'cannot_miss_before_hurt', False)
+                and not getattr(player, '_combat_player_taken_damage', False)):
+            chain = 1
+
+        # Hrunting (engine wave 3): one_shot_chain_save_per_floor. The poem's
+        # promise: "never failed any man who grasped it." Once per floor,
+        # demote a chain-0 (miss) into chain-1 (light hit). After the save
+        # is spent, normal misses resume. Player-level marker
+        # `_hrunting_save_used` is reset on every floor in main._change_level.
+        if (chain == 0 and weapon and getattr(weapon, 'one_shot_chain_save_per_floor', False)
+                and not getattr(player, '_hrunting_save_used', False)):
+            player._hrunting_save_used = True
+            chain = 1
+
+        # Harpe (engine wave 3): skip_chain_warmup_vs_tag. Against matching-
+        # tag enemies, the chain auto-completes the warm-up — start at rung 2
+        # instead of rung 1. The blade that knows the monster.
+        _skip_warmup = getattr(weapon, 'skip_chain_warmup_vs_tag', None) or []
+        if _skip_warmup and chain >= 1:
+            for _tg in _skip_warmup:
+                if _tag_match(monster, _tg):
+                    chain += 1
+                    break
+
+        # Skofnung (engine wave 3): chain_bonus_on_low_hp_window. When the
+        # player has just dropped below 50% HP, the next attack adds N chain
+        # rungs (one of the twelve berserkers takes over). Tracker
+        # `_skofnung_low_hp_pending` is set by player.take_damage when the
+        # threshold is crossed, and consumed here.
+        _skofnung_bonus = int(getattr(weapon, 'chain_bonus_on_low_hp_window', 0) or 0)
+        if (_skofnung_bonus > 0 and chain >= 1
+                and getattr(player, '_skofnung_low_hp_pending', False)):
+            chain += _skofnung_bonus
+            player._skofnung_low_hp_pending = False
+
         # Cursed weapon backlash on miss (Tyrfing).
         # Floor at 0 so the player.hp value stays non-negative — downstream
         # code (HUD bars, low-HP buff triggers, is_dead checks) all assume
@@ -228,6 +277,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if chain == 0:
             if weapon and getattr(weapon, 'cursed_miss_backlash', 0) > 0:
                 player.hp = max(0, player.hp - weapon.cursed_miss_backlash)
+            # Damoclean counter resets on any miss
+            if weapon and getattr(weapon, 'damoclean_counter_threshold', 0) > 0:
+                weapon._damoclean_consecutive = 0
             on_complete(0, monster.is_dead(), chain)
             return
 
@@ -330,6 +382,59 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if _proph and _tag_match(monster, _proph):
                 dtype_mult *= 1.5
 
+        # Mistilteinn (engine wave 3): damage_double_vs_resistant_at_max.
+        # At max chain, against ANY target with resistances, double damage.
+        # Baldur's flaw: protected against everything except the small thing.
+        if weapon and getattr(weapon, 'damage_double_vs_resistant_at_max', False):
+            _maxc = weapon.max_chain_length or len(weapon.chain_multipliers)
+            if chain >= _maxc and getattr(monster, 'resistances', None):
+                dtype_mult *= 2.0
+
+        # Robin Hood's Longbow (engine wave 3): stealth_damage_bonus.
+        # Striking from invisibility/stealth: +X% damage. Stored as
+        # fractional multiplier (0.5 = +50%).
+        _sb = float(getattr(weapon, 'stealth_damage_bonus', 0.0) or 0.0) if weapon else 0.0
+        if _sb > 0 and player.has_effect('invisible'):
+            dtype_mult *= 1.0 + _sb
+
+        # Kusanagi (engine wave 3): surrounded_proc_bonus. When 3+ enemies
+        # are adjacent to the player, the attack auto-crits.
+        if weapon and getattr(weapon, 'surrounded_proc_bonus', False):
+            # Imported indirectly to avoid circular import — combat.py is
+            # leaf-ish and doesn't typically import game state.
+            _adj = 0
+            try:
+                # The monsters list lives on the parent game — we can read
+                # via the player's _last_known_monsters_ref hook if set,
+                # OR fall back to a no-op. Most engines should pass game
+                # to player_attack, but this codebase doesn't. Skip if
+                # we can't see neighbors.
+                _mons = getattr(player, '_combat_monsters_ref', None) or []
+                for _m in _mons:
+                    if _m.alive and abs(_m.x - player.x) <= 1 and abs(_m.y - player.y) <= 1 \
+                            and not (_m.x == player.x and _m.y == player.y):
+                        _adj += 1
+            except Exception:
+                _adj = 0
+            if _adj >= 3:
+                # Force a crit by bumping mult — applied later via crit
+                # path is cleaner, but since crit is computed below, just
+                # set a side-channel flag the crit block checks.
+                player._kusanagi_force_crit = True
+
+        # Oathkeeper (engine wave 3): adjacent_pet_damage_bonus.
+        # When ANY pet is within 1 tile of the player, multiply damage.
+        # Lore: care for what walks beside you.
+        _ap_bonus = float(getattr(weapon, 'adjacent_pet_damage_bonus', 0.0) or 0.0) \
+            if weapon else 0.0
+        if _ap_bonus > 0:
+            _pets = getattr(player, '_combat_pets_ref', None) or []
+            for _p in _pets:
+                if (getattr(_p, 'alive', False)
+                        and abs(_p.x - player.x) <= 1 and abs(_p.y - player.y) <= 1):
+                    dtype_mult *= 1.0 + _ap_bonus
+                    break
+
         # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect
         if not (weapon and weapon.ignore_shield):
             if monster.has_effect('shielded'):
@@ -346,6 +451,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 if weapon.petrify_on_crit:
                     current_pet = monster.status_effects.get('petrifying', 0)
                     monster.status_effects['petrifying'] = max(current_pet, 3)
+        # Kusanagi (engine wave 3): surrounded_proc_bonus forces a crit. Flag
+        # set in the dtype-mult block above when 3+ adjacent enemies.
+        if weapon and getattr(player, '_kusanagi_force_crit', False):
+            mult *= max(1.5, weapon.crit_multiplier)
+            crit = True
+            player._kusanagi_force_crit = False  # consume per-attack
 
         # weapon_first_hit_crit mastery: guarantee crit on the FIRST hit of a chain
         if chain == 1 and _mastery and _mastery.get('kind') == 'weapon_first_hit_crit' \
@@ -577,6 +688,86 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if _wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance:
                 _wfx_current = monster.status_effects.get(_wfx_status, 0)
                 monster.status_effects[_wfx_status] = max(_wfx_current, _wfx_dur)
+
+        # Gae Dearg (engine wave 3): apply_heal_block_chance. The Red Spear's
+        # wounds don't heal — apply heal_blocked to target on hit. Default
+        # duration 10 turns per the lore.
+        _hb_chance = float(getattr(weapon, 'apply_heal_block_chance', 0.0) or 0.0) \
+            if weapon else 0.0
+        if _hb_chance > 0 and actual > 0 and random.random() < _hb_chance:
+            cur = monster.status_effects.get('heal_blocked', 0)
+            monster.status_effects['heal_blocked'] = max(cur, 10)
+
+        # Sword of Damocles (engine wave 3): damoclean_counter increment.
+        # Counter tracks consecutive successful chain hits. When it crosses
+        # the threshold, the NEXT chain-1 attack auto-kills a non-boss
+        # target. We track via runtime weapon attribute _damoclean_consecutive.
+        _dc_thresh = int(getattr(weapon, 'damoclean_counter_threshold', 0) or 0) if weapon else 0
+        if _dc_thresh > 0 and actual > 0:
+            # If we're spending an auto-kill this turn (chain==1 + counter ready)
+            # the resolution happens lower in `damoclean_check`. Counter still
+            # increments per hit.
+            weapon._damoclean_consecutive = getattr(weapon, '_damoclean_consecutive', 0) + 1
+
+        # Penitent's Blade (engine wave 3): kill_count_karma_adjust. Every N
+        # kills with this weapon, karma improves by +1 (capped at 0 — the
+        # blade balances the ledger but can't redeem you). Tracker lives on
+        # the weapon.
+        _kc_every = int(getattr(weapon, 'kill_count_karma_adjust', 0) or 0) if weapon else 0
+        if _kc_every > 0 and monster.is_dead():
+            weapon._karma_kill_tally = getattr(weapon, '_karma_kill_tally', 0) + 1
+            if weapon._karma_kill_tally % _kc_every == 0:
+                # Look up the game via the side-channel ref; fall back if not set.
+                _g = getattr(player, '_combat_game_ref', None)
+                if _g is not None:
+                    cur_karma = int(getattr(_g, 'karma', 0))
+                    if cur_karma < 0:
+                        _g.karma = cur_karma + 1
+
+        # Parashu (engine wave 3): chain_no_reset_on_tag. When killing a
+        # matching-tag target, mark the player so the next attack starts at
+        # the same chain rung instead of from 1. Combat-side reads
+        # _chain_carry to bump chain at the START of the next quiz, but the
+        # carry only persists turn-to-turn so it's safe to set here.
+        _chain_no_reset = getattr(weapon, 'chain_no_reset_on_tag', None) or [] \
+            if weapon else []
+        if _chain_no_reset and monster.is_dead():
+            for _tg in _chain_no_reset:
+                if _tag_match(monster, _tg):
+                    player._chain_carry = chain
+                    break
+
+        # Meleager's Boar-Spear (engine wave 3): reveal_tag_on_chain_5_kill.
+        # At max chain kill of a matching tag, all visible (within sight)
+        # matching-tag monsters become marked for the next 5 turns via a
+        # player-level set keyed by id.
+        _rtag = getattr(weapon, 'reveal_tag_on_chain_5_kill', None) or [] \
+            if weapon else []
+        if _rtag and monster.is_dead() and weapon:
+            _maxc_r = weapon.max_chain_length or len(weapon.chain_multipliers)
+            if chain >= _maxc_r:
+                for _tg in _rtag:
+                    if _tag_match(monster, _tg):
+                        _mons_ref = getattr(player, '_combat_monsters_ref', None) or []
+                        _marked = getattr(player, '_revealed_tag_ids', set()) or set()
+                        for _m in _mons_ref:
+                            if _m.alive and any(_tag_match(_m, t) for t in _rtag):
+                                _marked.add(id(_m))
+                        player._revealed_tag_ids = _marked
+                        player._revealed_tag_turns_left = 5
+                        break
+
+        # Sword of Damocles (engine wave 3) — auto-kill resolution.
+        # If counter reached threshold AND this hit was chain-1 against a
+        # non-boss, the blade falls. The counter resets after firing.
+        if (weapon and _dc_thresh > 0 and chain == 1 and actual > 0
+                and not monster.is_dead()
+                and getattr(weapon, '_damoclean_consecutive', 0) >= _dc_thresh
+                and 'boss' not in set(getattr(monster, 'tags', []))):
+            extra = max(1, monster.hp)  # finish the job
+            extra = monster.take_damage(extra, 'physical')
+            actual += extra
+            weapon._damoclean_consecutive = 0
 
         # Lifesteal mechanic (Soul Reaver). Mastery: weapon_lifesteal adds % on top.
         healed = False

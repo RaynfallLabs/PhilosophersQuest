@@ -37,6 +37,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'feared':             ('Feared',             (200,  80, 200), 'Fleeing -- cannot approach enemies'),
     'charmed':            ('Charmed',            (255, 160, 200), 'Under enemy influence'),
     'cursed':             ('Cursed',             (120,  40, 160), 'Under a dark curse'),
+    'heal_blocked':       ('Wound Lingers',      (160,  30,  50), 'HP cannot be restored while active (Gae Dearg)'),
     'weakened':           ('Weakened',           (150, 150,  80), 'Attack damage halved'),
     'bleeding':           ('Bleeding',           (200,  40,  40), 'Losing HP from wounds each turn'),
     'doomed':             ('Doomed',             (100,  20,  20), 'A death-curse; losing 1 HP per ~8 turns'),
@@ -103,6 +104,9 @@ DEBUFFS: frozenset = frozenset({
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
     'burning', 'frozen', 'corroding', 'immobilized', 'in_pit', 'silenced',
     'hallucinating_pot', 'berserk',
+    # Engine wave 3 (2026-05-30): heal_blocked debuff (Gae Dearg's wound).
+    # Blocks restore_hp from working on target while active.
+    'heal_blocked',
 })
 
 BUFFS: frozenset = frozenset({

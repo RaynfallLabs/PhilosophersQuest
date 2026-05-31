@@ -201,6 +201,15 @@ class Player:
             for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
                 if _slot and getattr(_slot, 'wielder_fire_immunity', False):
                     return 0
+        # Engine wave 3: generalized wielder_status_immunity. A weapon can
+        # declare a list of damage types it blocks for the wielder. The
+        # narrower wielder_fire_immunity flag stays for backward compat;
+        # this gives the audit a clean extension point.
+        for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
+            if _slot:
+                _imm = getattr(_slot, 'wielder_status_immunity', None) or []
+                if damage_type in _imm:
+                    return 0
 
         # Flat damage reduction from chain-equip tier_bonuses (resistance_<type>).
         # Each "level" subtracts 1 damage of the matching type; clamped to >=0.
@@ -293,6 +302,21 @@ class Player:
             self.weapon.enchant_bonus = max(0, self.weapon.enchant_bonus - 1)
             self.add_effect('life_save', -1)
 
+        # Engine wave 3: combat-tracker hooks.
+        # 1. Fail-not (cannot_miss_before_player_takes_damage) reads this
+        #    flag — once the player has been hurt this combat, miss rolls
+        #    return to normal. Cleared at the START of every melee /
+        #    ranged attack (game_combat sets it False).
+        if actual > 0:
+            self._combat_player_taken_damage = True
+        # 2. Skofnung's twelve berserkers wake when HP drops below 50%.
+        #    Setting the pending flag here triggers a +chain rung on the
+        #    NEXT successful attack. Reset by combat after consuming.
+        if actual > 0 and self.hp > 0 and self.hp <= self.max_hp * 0.5 \
+                and self.weapon \
+                and int(getattr(self.weapon, 'chain_bonus_on_low_hp_window', 0) or 0) > 0:
+            self._skofnung_low_hp_pending = True
+
         # Damage wakes a sleeping player
         if actual > 0 and 'sleeping' in self.status_effects:
             del self.status_effects['sleeping']
@@ -335,7 +359,10 @@ class Player:
 
     def restore_hp(self, amount: int) -> int:
         """Restore HP up to max. Returns actual HP gained (callers use the
-        delta for messages like 'you heal N HP')."""
+        delta for messages like 'you heal N HP'). Per engine wave 3 (2026-05-30):
+        heal_blocked status (Gae Dearg's wound) blocks the restore entirely."""
+        if self.has_effect('heal_blocked'):
+            return 0
         before = self.hp
         self.hp = min(self.max_hp, self.hp + amount)
         return self.hp - before
@@ -662,6 +689,11 @@ class Player:
             radius += 4
         if self.has_effect('truesight'):
             radius += 2
+        # Engine wave 3: equipped_light_aura on a wielded weapon (Prometheus
+        # Torch, etc.) extends sight while held. Stacks weapon + ranged_weapon.
+        for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
+            if _slot:
+                radius += int(getattr(_slot, 'equipped_light_aura', 0) or 0)
         return radius
 
     def get_quiz_timer(self, subject: str = 'math') -> int:

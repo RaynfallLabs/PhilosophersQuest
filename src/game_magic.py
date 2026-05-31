@@ -2167,6 +2167,14 @@ class MagicMixin:
             if w:
                 cap = ENCHANT_CAP.get('weapon', 5)
                 delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
+                # Chrysaor (engine wave 3): weapon_immune_to_enchant_loss
+                # blocks NEGATIVE enchant changes — "the gold sword stays gold."
+                # Positive enchants still apply.
+                if delta < 0 and getattr(w, 'weapon_immune_to_enchant_loss', False):
+                    delta = 0
+                    self.add_message(
+                        f"The {w.name} shrugs off the unenchantment — it does not tarnish.",
+                        'info')
                 old_val = w.enchant_bonus
                 w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + delta))
                 actual = w.enchant_bonus - old_val

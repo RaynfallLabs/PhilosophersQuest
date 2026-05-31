@@ -767,6 +767,33 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._elder_blood_escape_used = False   # Ciri auto-teleport
         self._quiz_reroll_used = False  # Tablet of Destinies
         self._tarnhelm_used = False     # Tarnhelm
+        # Engine wave 3 per-floor resets:
+        # Hrunting save: "never failed any man" — one save per floor.
+        self.player._hrunting_save_used = False
+        # Sharur (engine wave 3): floor_start_reveal_chance — if equipped,
+        # roll to reveal a random tile near a stair-down.
+        import random as _ew3_rng
+        for _slot in (self.player.weapon, getattr(self.player, 'ranged_weapon', None)):
+            _ev_ch = float(getattr(_slot, 'floor_start_reveal_chance', 0.0) or 0.0) if _slot else 0.0
+            if _ev_ch > 0 and _ew3_rng.random() < _ev_ch:
+                # Find a stair-down tile; reveal a random tile in its 5-tile radius.
+                from dungeon import STAIRS_DOWN
+                for _y in range(dungeon.height):
+                    for _x in range(dungeon.width):
+                        if dungeon.tiles[_y][_x] == STAIRS_DOWN:
+                            for _ in range(8):
+                                _rx = _x + _ew3_rng.randint(-5, 5)
+                                _ry = _y + _ew3_rng.randint(-5, 5)
+                                if 0 <= _rx < dungeon.width and 0 <= _ry < dungeon.height:
+                                    dungeon.explored.add((_rx, _ry))
+                            self.add_message(
+                                "Sharur whispers — you glimpse a corner of the floor.",
+                                'info')
+                            break
+                    else:
+                        continue
+                    break
+                break
         # Chain-equip per-floor passive charges (free_cast, free_escape,
         # huginn_muninn, demon_command, etc.) reset on every floor change.
         from chain_passives import reset_per_floor_charges
@@ -2349,6 +2376,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _advance_turn(self):
         self.turn_count += 1
+        # Engine wave 3 per-turn resets:
+        # Zireael's extra_action_after_kill — one bonus haste per turn,
+        # not per kill.
+        self.player._zireael_used_this_turn = False
+        # Meleager's Boar-Spear: revealed-tag-marker decay.
+        _rt = int(getattr(self.player, '_revealed_tag_turns_left', 0) or 0)
+        if _rt > 0:
+            _rt -= 1
+            self.player._revealed_tag_turns_left = _rt
+            if _rt == 0:
+                self.player._revealed_tag_ids = set()
 
         # Rand's Heart: show dramatic message if death was just prevented
         if getattr(self.player, '_rands_heart_triggered', False):

@@ -609,6 +609,34 @@ class CombatMixin:
         self.level_mgr.monsters_killed += 1
         self.add_message(f"The {monster.name} is slain!", 'success')
         self._drop_treasure(monster)
+
+        # Zireael (engine wave 3): extra_action_after_kill — Ciri's speed.
+        # On kill, apply 1-turn haste so the player effectively gets a free
+        # action. Capped at once per combat turn via _zireael_used_this_turn
+        # which the turn-advance code clears.
+        _w_zir = self.player.weapon
+        if (_w_zir and getattr(_w_zir, 'extra_action_after_kill', False)
+                and not getattr(self.player, '_zireael_used_this_turn', False)):
+            self.player.add_effect('hasted', 1)
+            self.player._zireael_used_this_turn = True
+
+        # Pharaoh's Crook / Cain's Club / Oathkeeper (engine wave 3):
+        # equipped_ally_aura_buff_str — pets within 5 tiles get +N STR.
+        # Apply on every kill to refresh. Reverses naturally when pet
+        # exits the radius or weapon is unequipped (re-checked here).
+        for _slot in (self.player.weapon, getattr(self.player, 'ranged_weapon', None)):
+            _bonus = int(getattr(_slot, 'equipped_ally_aura_buff_str', 0) or 0) if _slot else 0
+            if _bonus > 0:
+                _px, _py = self.player.x, self.player.y
+                for _pet in self.pets:
+                    if (getattr(_pet, 'alive', False)
+                            and abs(_pet.x - _px) <= 5 and abs(_pet.y - _py) <= 5):
+                        # Idempotent — only apply once per pet per equip
+                        if not getattr(_pet, '_aura_str_applied_by', None):
+                            cur_str = int(getattr(_pet, 'STR', 0) or 0)
+                            if cur_str > 0:
+                                _pet.STR = cur_str + _bonus
+                                _pet._aura_str_applied_by = id(_slot)
         # Quirk on_kill hook — single canonical call site
         qs = getattr(self, 'quirk_system', None)
         if qs:
@@ -1434,6 +1462,12 @@ class CombatMixin:
             (self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False))
             or _scheh_reroll
         )
+        # Engine wave 3: side-channel refs for combat-side mechanics. Ranged
+        # path mirrors the melee path so flags like Kusanagi surrounded and
+        # Oathkeeper adjacent-pet work on bow shots too.
+        self.player._combat_monsters_ref = self.monsters
+        self.player._combat_pets_ref = self.pets
+        self.player._combat_player_taken_damage = False
         player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
 
     # ------------------------------------------------------------------
@@ -1457,6 +1491,21 @@ class CombatMixin:
         if qs:
             qs.on_combat_started()
         self._combat_hp_pct_before = self.player.hp / max(1, self.player.max_hp)
+
+        # Joyeuse (engine wave 3): combat_start_aoe_confuse_chance. Each
+        # melee combat start, chance to dazzle adjacent enemies for 1 turn.
+        # Lore: "Charlemagne's sword changed colour thirty times a day."
+        _w_dazzle = self.player.weapon
+        _dz_ch = float(getattr(_w_dazzle, 'combat_start_aoe_confuse_chance', 0.0) or 0.0) if _w_dazzle else 0.0
+        if _dz_ch > 0 and random.random() < _dz_ch:
+            _px, _py = self.player.x, self.player.y
+            for _m in self.monsters:
+                if (_m.alive and abs(_m.x - _px) <= 3 and abs(_m.y - _py) <= 3
+                        and not (_m.x == _px and _m.y == _py)):
+                    _m.add_effect('confused', 1)
+            self.add_message(
+                f"{_w_dazzle.name} flashes — nearby foes reel in confusion!",
+                'success')
 
         # Floating eye: paralyzing gaze on melee attack (the eye's signature
         # mechanic). Honor sleep_resist and blindness like monster.attack does.
@@ -1624,6 +1673,17 @@ class CombatMixin:
             (self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False))
             or _scheh_reroll
         )
+        # Engine wave 3: side-channel refs for combat-side weapon mechanics
+        # that need access to game state (Kusanagi surrounded check,
+        # Oathkeeper adjacent-pet check, Penitent kill-tally karma adjust).
+        # Set fresh per attack so they reflect current game state.
+        self.player._combat_monsters_ref = self.monsters
+        self.player._combat_pets_ref = self.pets
+        self.player._combat_game_ref = self
+        # Track that this combat is starting — used by cannot_miss_before_hurt
+        # (Fail-not) which needs to know if the player has been hurt yet.
+        # Reset to False at the START of every melee combat.
+        self.player._combat_player_taken_damage = False
         player_attack(self.player, monster, self.quiz_engine, on_complete)
 
     # ------------------------------------------------------------------
