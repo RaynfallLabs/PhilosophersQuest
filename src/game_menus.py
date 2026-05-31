@@ -958,27 +958,29 @@ class MenuMixin:
             powers.append((sp['id'], _h_def, 0, _h_cd))
 
         # ----- Engine wave 6: armor-granted activated abilities -----
-        # 7-League Boots: once-per-floor 7-tile dash
+        # 7-League Boots: once-per-floor 7-tile dash.
+        # Bug-bash fix (audit afdf): when spent, DON'T add to the menu at all
+        # (rather than show a 0-uses entry that the dispatcher would mis-fire).
         for _arm in pl.armor_slots:
             if _arm and getattr(_arm, 'seven_league_step', False):
-                _used = bool(getattr(pl, '_seven_league_used_this_floor', False))
-                powers.append(('armor_seven_league_step', {
-                    'label': 'Seven-League Step',
-                    'desc': 'Stride 7 tiles in your facing direction. Once per floor.',
-                    'cooldown': 0,
-                    'uses': 0 if _used else 1,
-                }, 0 if _used else 1, 0))
+                if not getattr(pl, '_seven_league_used_this_floor', False):
+                    powers.append(('armor_seven_league_step', {
+                        'label': 'Seven-League Step',
+                        'desc': 'Stride 7 tiles in your facing direction. Once per floor.',
+                        'cooldown': 0,
+                        'uses': 1,
+                    }, 1, 0))
                 break
-        # Helm of Gilgamesh: once-per-floor gold bribe to skip a non-boss monster
+        # Helm of Gilgamesh: once-per-floor gold bribe to skip a non-boss monster.
         for _arm in pl.armor_slots:
             if _arm and getattr(_arm, 'gold_offering', False):
-                _used = bool(getattr(pl, '_gold_offering_used_this_floor', False))
-                powers.append(('armor_gold_offering', {
-                    'label': 'Gilgamesh\'s Bribe',
-                    'desc': 'Toss 1d100 gold at a visible non-boss monster. It skips its next turn. Once per floor.',
-                    'cooldown': 0,
-                    'uses': 0 if _used else 1,
-                }, 0 if _used else 1, 0))
+                if not getattr(pl, '_gold_offering_used_this_floor', False):
+                    powers.append(('armor_gold_offering', {
+                        'label': 'Gilgamesh\'s Bribe',
+                        'desc': 'Toss 1d100 gold at a visible non-boss monster. It skips its next turn. Once per floor.',
+                        'cooldown': 0,
+                        'uses': 1,
+                    }, 1, 0))
                 break
 
         # ----- Engine wave 6: charged accessories (Lyre of Orpheus, Hand of Glory) -----
@@ -1396,18 +1398,20 @@ class MenuMixin:
 
         Stops at the first wall, edge, or monster. Each tile costs 0 turns
         (the boot's lore: "each step covers ground that would take mortals three").
+        Returns True (= defer/don't tick turn) on early-exit warnings so a
+        misclick doesn't waste a real turn.
         """
         pl = self.player
         if getattr(pl, '_seven_league_used_this_floor', False):
             self.add_message("Seven-League Step is spent for this floor.", 'warning')
-            return False
+            return True  # bug-bash fix afdf: don't burn a turn on a warning
         dx = int(getattr(pl, '_facing_dx', 0) or 0)
         dy = int(getattr(pl, '_facing_dy', 0) or 0)
         if dx == 0 and dy == 0:
             self.add_message(
                 "Face a direction first (move once), then try Seven-League Step.",
                 'warning')
-            return False
+            return True
         steps = 0
         last_x, last_y = pl.x, pl.y
         for _ in range(7):

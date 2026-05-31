@@ -1138,7 +1138,10 @@ class Player:
                 self.add_effect(new_status, -1)
             # Mantle of Elijah (prophets_passing): the "office passes" — +3 max MP
             # while equipped. Lore: the wisdom of the prophet's school carries.
-            if getattr(item, 'prophets_passing', False):
+            # Bug-bash fix a97b: guard against double-grant if a prior unequip
+            # failed (cursed swap) — only grant when no stale grant is on the item.
+            if getattr(item, 'prophets_passing', False) and \
+                    int(getattr(item, '_prophets_mp_grant', 0) or 0) == 0:
                 _grant = 3
                 self.max_mp += _grant
                 self.mp = min(self.mp + _grant, self.max_mp)

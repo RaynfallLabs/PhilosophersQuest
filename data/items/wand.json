@@ -405,7 +405,8 @@
     "unidentified_name": "pulsing crystal wand",
     "lore": "The most devastating fire wand produces explosions of concentrated flame. The blast radius means users must maintain significant distance. Particularly effective against undead and creatures resistant to physical damage.",
     "weight": 0.3,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "damage_dice": "4d8"
   },
   "wand_of_embers": {
     "name": "wand of embers",
@@ -1653,7 +1654,9 @@
     "unidentified_name": "runed birch wand",
     "lore": "A disturbing wand that seizes upon the natural passage of time and twists it to murderous purpose, forcing years â€” sometimes decades â€” upon its target in a matter of moments. The ravages manifest as progressive, terrible weakening, as though life itself is being steadily withdrawn.",
     "weight": 0.3,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "drain_stat": "STR",
+    "drain_amount": 1
   },
   "wand_of_time_stop": {
     "name": "wand of time stop",

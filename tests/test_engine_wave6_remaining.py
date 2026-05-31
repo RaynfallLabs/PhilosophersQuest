@@ -199,8 +199,10 @@ def test_hand_of_glory_has_charges():
 
 
 def test_torque_of_lugh_has_rotating_pool():
+    """Per the bug-bash balance audit (agent a4dd), the original 10-subject
+    rotation was too broad — the subject filter never bit. Trimmed to 6."""
     t = ACCESSORY['torque_of_lugh']
-    assert len(t['rotating_subject_chain_cap']) == 10
+    assert len(t['rotating_subject_chain_cap']) == 6
 
 
 def test_hamsa_hand_has_three_faiths():

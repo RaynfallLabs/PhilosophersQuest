@@ -3306,6 +3306,8 @@
     "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
+      "stat": "DEX",
+      "amount": 3,
       "status": "poison_resist",
       "duration": -1
     },
@@ -3345,7 +3347,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "WIS",
@@ -3453,7 +3455,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "AC",
@@ -3549,11 +3551,11 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "STR",
-      "amount": 4
+      "amount": 3
     },
     "unidentified_name": "a massive carved bone ring",
     "lore": "Carved from the finger-knuckle of a fire giant, this ring channels a fraction of the creature's legendary strength into the wearer. The inscription reads: 'Take from strength; do not merely borrow it.'",
@@ -3581,11 +3583,11 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
-      "amount": 4
+      "amount": 3
     },
     "unidentified_name": "a faceted crystal ring",
     "lore": "A diamond ring that channels the stone's indomitable hardness into the wearer's constitution. Those who have worn it for long periods report an unusual inability to tire, a reduced need for sleep, and a strange clarity of purpose.",
@@ -3613,11 +3615,11 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
-      "amount": 4
+      "amount": 3
     },
     "unidentified_name": "a shifting prismatic ring",
     "lore": "The prismatic ring contains a miniature aurora borealis in its setting — an observable phenomenon with no satisfactory mundane explanation. Wearers report accelerated thought, improved memory consolidation, and an occasional overwhelming sense of suddenly understanding something they cannot articulate.",
@@ -3773,7 +3775,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "CON",
@@ -3805,7 +3807,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -4715,12 +4717,8 @@
     },
     "rotating_subject_chain_cap": [
       "math",
-      "geography",
       "history",
-      "animal",
-      "cooking",
       "science",
-      "philosophy",
       "grammar",
       "economics",
       "theology"
@@ -5970,7 +5968,7 @@
     "min_level": 0,
     "slot": "ring",
     "equip_threshold": 3,
-    "quiz_tier": 4,
+    "quiz_tier": 2,
     "effects": {
       "stat": "STR",
       "amount": 2

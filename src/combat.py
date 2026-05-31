@@ -664,23 +664,28 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         except ImportError:
             pass
 
-        # Cuirass of Hannibal (cannae_encirclement): +1 damage per adjacent enemy
-        # when surrounded by 3 or more. Pure tile math.
-        try:
-            from armor_procs import player_has_armor_proc as _pap
-            if _pap(player, 'cannae_encirclement'):
-                _mons_cc = getattr(player, '_combat_monsters_ref', None) or []
-                _adj = 0
-                for _mm in _mons_cc:
-                    if not getattr(_mm, 'alive', False):
-                        continue
-                    if abs(_mm.x - player.x) <= 1 and abs(_mm.y - player.y) <= 1 \
-                            and not (_mm.x == player.x and _mm.y == player.y):
-                        _adj += 1
-                if _adj >= 3:
-                    damage += _adj
-        except ImportError:
-            pass
+        # Cuirass of Hannibal (cannae_encirclement): +1 damage per adjacent
+        # *other* enemy when surrounded by 3 or more. Bug-bash fix aac:
+        # gate to melee only (no `ammo`) and exclude the target monster
+        # itself from the adjacency count.
+        if not ammo:
+            try:
+                from armor_procs import player_has_armor_proc as _pap
+                if _pap(player, 'cannae_encirclement'):
+                    _mons_cc = getattr(player, '_combat_monsters_ref', None) or []
+                    _adj = 0
+                    for _mm in _mons_cc:
+                        if not getattr(_mm, 'alive', False):
+                            continue
+                        if _mm is monster:
+                            continue
+                        if abs(_mm.x - player.x) <= 1 and abs(_mm.y - player.y) <= 1 \
+                                and not (_mm.x == player.x and _mm.y == player.y):
+                            _adj += 1
+                    if _adj >= 3:
+                        damage += _adj
+            except ImportError:
+                pass
 
         # Lorica Hamata of Caesar (et_tu_charge): +50% damage against the
         # marked first-attacker.
@@ -1018,7 +1023,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
 
         # Ring of Gyges (gyges_invisible_attack_karma): attacking an NPC
         # while invisible costs -2 karma. The just-man-when-unseen test.
-        if _is_innocent and getattr(player, 'has_effect', None) and player.has_effect('invisible'):
+        # Bug-bash fix aac: only fire on an actual hit (actual > 0) — a
+        # whiffed swing doesn't reveal moral character.
+        if actual > 0 and _is_innocent and getattr(player, 'has_effect', None) and player.has_effect('invisible'):
             for _acc in getattr(player, 'equipped_accessories', ()) or ():
                 if getattr(_acc, 'gyges_invisible_attack_karma', False):
                     _g = getattr(player, '_combat_game_ref', None)

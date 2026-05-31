@@ -813,6 +813,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._gold_offering_used_this_floor = False  # Gilgamesh bribe
         self.player._eluned_auto_invis_used = False  # Ring of Eluned
         self.player._hypatia_protected_used = False  # Ring of Hypatia
+        # Bug-bash fix af6d: amazon_charge must reset between floors so the
+        # player doesn't carry a free +50% melee from one floor to the next.
+        self.player._amazon_charge_armed = False
+        self.player._straight_line_steps = 0
         # Torque of Lugh / Hamsa Hand: rotating-subject pick for this floor.
         # Pool is the union of `rotating_subject_chain_cap` lists across
         # equipped accessories. One subject is picked at random; it gets a
@@ -821,11 +825,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         for _acc in self.player.equipped_accessories:
             for _s in getattr(_acc, 'rotating_subject_chain_cap', []) or []:
                 _rotating_pool.add(_s)
+        # Bug-bash fix ab5c: only message when the subject actually changes,
+        # not on every floor entry — the original code spammed even when no
+        # accessory was equipped (pool empty -> no message; pool non-empty
+        # -> always message).
+        _prev_rot = getattr(self.player, '_rotating_chain_subject', None)
         if _rotating_pool:
-            self.player._rotating_chain_subject = random.choice(sorted(_rotating_pool))
-            self.add_message(
-                f"The rotating gift settles on {self.player._rotating_chain_subject} this floor.",
-                'info')
+            _new_rot = random.choice(sorted(_rotating_pool))
+            self.player._rotating_chain_subject = _new_rot
+            if _new_rot != _prev_rot:
+                self.add_message(
+                    f"The rotating gift settles on {_new_rot} this floor.",
+                    'info')
         else:
             self.player._rotating_chain_subject = None
         # Achilles' helm (ringing_intimidation): on floor entry, monsters in
