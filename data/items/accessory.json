@@ -5876,7 +5876,8 @@
       "desc": "The Sphinx's Crown holds millennia of riddle-wisdom — WIS rises by 1 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "tier": 2
   },
   "sailors_amulet": {
     "name": "Sailor's Amulet",
@@ -5916,7 +5917,8 @@
       "desc": "The Sailor's Amulet was carved from a ship that survived Charybdis — PER rises by 1 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "tier": 2
   },
   "anubis_scales": {
     "name": "Anubis's Scales",
@@ -5954,7 +5956,8 @@
       "desc": "Anubis weighs hearts against Ma'at's feather — CON rises by 1 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "tier": 2
   },
   "ring_of_iron_grip": {
     "name": "Ring of Iron Grip",
@@ -5992,7 +5995,8 @@
       "desc": "The Ring of Iron Grip was crushed from Ravana's finger — STR rises by 2 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "tier": 2
   },
   "obsidian_talisman": {
     "name": "Obsidian Talisman",
@@ -6030,7 +6034,8 @@
       "desc": "The Obsidian Talisman carved from Xibalba's altar steadies the soul against fear — WIS rises by 1 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "tier": 3
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -6281,7 +6286,8 @@
       "scope": "item",
       "desc": "The Saint's Reliquary was carried on hands and knees through the dungeon — WIS rises by 1 permanently."
     },
-    "id_level": 0
+    "id_level": 0,
+    "tier": 1
   },
   "officers_signet": {
     "name": "Officer's Signet",
@@ -6321,7 +6327,8 @@
       "scope": "item",
       "desc": "The Officer's Signet was earned by command and then refused — DEX rises by 1 permanently."
     },
-    "id_level": 0
+    "id_level": 0,
+    "tier": 2
   },
   "prophets_amulet": {
     "name": "Prophet's Amulet",
@@ -6361,7 +6368,8 @@
       "scope": "item",
       "desc": "The Prophet's Amulet pulses with carved foresight — WIS rises by 2 permanently."
     },
-    "id_level": 0
+    "id_level": 0,
+    "tier": 2
   },
   "aesops_quill": {
     "name": "Aesop's Quill",

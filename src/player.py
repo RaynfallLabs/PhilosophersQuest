@@ -98,6 +98,26 @@ class Player:
         self.damage_resistances: dict[str, int] = {}
         # Flat HP-regen bonus per tick (chain-equip / accessory passives).
         self.regen_bonus: int = 0
+        # ----- Engine waves 5/6 runtime attrs (seeded so brand-new games +
+        # old saves load cleanly; every use-site also defends with getattr).
+        self._et_tu_target = None
+        self._riastrad_hits = 0
+        self._monkey_king_counter = 0
+        self._seven_league_used_this_floor = False
+        self._gold_offering_used_this_floor = False
+        self._eluned_auto_invis_used = False
+        self._hypatia_protected_used = False
+        self._was_on_altar = False
+        self._amazon_charge_armed = False
+        self._straight_line_steps = 0
+        self._weave_unweave_active = False
+        self._rotating_chain_subject = None
+        self._armor_proc_adj_enemies = 0
+        self._armor_proc_near_door = False
+        self._armor_proc_in_corridor = False
+        self._armor_proc_on_water = False
+        self._armor_proc_charges: dict = {}
+        self._armor_proc_run_spent: set = set()
         # Item IDs the player has identified this run
         self.known_item_ids: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)

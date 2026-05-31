@@ -322,7 +322,10 @@ class Monster:
             # Gaze was blocked or reflected — continue to normal attack
             # (but append the gaze message below)
             atk = random.choice(self.attacks)
-            # Fall through to normal damage with gaze_msg prepended
+            # Fall through to normal damage with gaze_msg prepended.
+            # Bug-bash fix aac-#2: this inline path was bypassing all
+            # damage-mitigation procs (unskinnable, weakened, summon-weaken,
+            # back_attack_weakness). Re-route through the same mitigations.
             d20 = random.randint(1, 20)
             player_ac = player.get_ac()
             to_hit = self.thac0 - player_ac
@@ -337,6 +340,19 @@ class Monster:
             atk_type = atk.get('type', 'physical')
             if self.has_effect('weakened'):
                 dmg = max(1, dmg // 2)
+            # Hide of the Nemean Lion (unskinnable): physical/slash/pierce/blunt
+            # attackers floor at 1 damage. Same condition as the main path.
+            try:
+                from armor_procs import player_has_armor_proc
+                if player_has_armor_proc(player, 'unskinnable') and \
+                        atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
+                        not getattr(self, 'magical', False) and \
+                        'magic' not in (getattr(self, 'tags', []) or []) and \
+                        'divine' not in (getattr(self, 'tags', []) or []):
+                    if dmg > 1:
+                        dmg = 1
+            except ImportError:
+                pass
             actual = player.take_damage(dmg, atk_type)
             return actual, gaze_msg + f" The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"
 

@@ -101,8 +101,11 @@ def apply_tier_bonuses(player, item, tier: int) -> None:
     if not bonuses:
         return
 
-    # Stash baseline for revert
-    if not hasattr(item, '_chain_baseline'):
+    # Stash baseline for revert. Bug-bash fix a97b: if a prior apply happened
+    # without an intervening revert (e.g. re-attune without unequip), the
+    # current ac_bonus is the overridden value — so trust the stored baseline
+    # if present, otherwise capture from current state.
+    if not hasattr(item, '_chain_baseline') or not item._chain_baseline:
         item._chain_baseline = {
             'ac_bonus': getattr(item, 'ac_bonus', 0),
         }
