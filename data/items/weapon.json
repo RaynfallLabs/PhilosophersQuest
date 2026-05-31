@@ -94,7 +94,7 @@
     ],
     "maxChainLength": 9,
     "damageTypes": [
-      "slash",
+      "blunt",
       "fire",
       "holy"
     ],
@@ -320,7 +320,8 @@
       "scope": "item",
       "desc": "+0.25 to every chain multiplier when wielding Excalibur."
     },
-    "design_notes": "Signature chain: the king's killing blow -- chain-1 already a meaningful cut (1.0x), then a steep climb to a legendary peak of 5.0x at chain-5."
+    "design_notes": "Signature chain: the king's killing blow -- chain-1 already a meaningful cut (1.0x), then a steep climb to a legendary peak of 5.0x at chain-5.",
+    "cast_me_away": true
   },
   "durendal": {
     "name": "Durendal",
@@ -842,7 +843,8 @@
       "scope": "item",
       "desc": "Caladbolg sheared the tops off three hills with one sweep — every chain swing carries 0.25 more of that momentum."
     },
-    "design_notes": "Brute/crushing archetype: a sweep that takes the tops off hills carries weight from the first arc."
+    "design_notes": "Brute/crushing archetype: a sweep that takes the tops off hills carries weight from the first arc.",
+    "class_mechanic": "cleave_at_max"
   },
   "joyeuse": {
     "name": "Joyeuse",
@@ -1146,7 +1148,8 @@
       "scope": "item",
       "desc": "The first hit of every chain with Gungnir is a guaranteed crit."
     },
-    "design_notes": "King's blow archetype: Odin's throw never wavers, the unbreakable oath strikes with sovereign certainty."
+    "design_notes": "King's blow archetype: Odin's throw never wavers, the unbreakable oath strikes with sovereign certainty.",
+    "cannot_miss": true
   },
   "gae_bulg": {
     "name": "Gáe Bulg",
@@ -3939,14 +3942,13 @@
       "undead"
     ],
     "mastery_blessing": {
-      "kind": "weapon_status_chance",
+      "kind": "weapon_damage_vs_tag",
       "value": {
-        "status": "burning",
-        "pct": 20,
-        "duration": 2
+        "tag": "undead",
+        "pct": 30
       },
       "scope": "item",
-      "desc": "The Narthex of Prometheus still smoulders after three thousand years — 20% of its strikes ignite the target for 2 turns."
+      "desc": "Prometheus gave mortals fire to keep the dark at bay - +30% damage to undead."
     },
     "identified": false,
     "id_level": 0
@@ -4910,10 +4912,13 @@
     "max_enchant": 2,
     "weapon_class_chain": "normal",
     "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 5,
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "undead",
+        "pct": 35
+      },
       "scope": "item",
-      "desc": "The Chainsaw Prosthetic carves and tears — every hit extends bleeding by 5 turns. Groovy."
+      "desc": "Carved through deadites by the millions - +35% damage to undead."
     },
     "id_level": 0
   },
@@ -5538,7 +5543,7 @@
     "stunChance": 0.0,
     "bleedChance": 0.0,
     "knockback": false,
-    "ignoreShield": false,
+    "ignoreShield": true,
     "critMultiplier": 1.85,
     "requiresAmmo": null,
     "floorSpawnWeight": {
@@ -5893,7 +5898,8 @@
       "scope": "item",
       "desc": "Aiglos pierced even Sauron's hand — Gil-galad's spear adds 4 cold-edged damage to every thrust."
     },
-    "design_notes": "Signature chain: Elendil's spear -- steady, reliable, no surprises. Every rung climbs by ~0.3x; the spear keeps its word."
+    "design_notes": "Signature chain: Elendil's spear -- steady, reliable, no surprises. Every rung climbs by ~0.3x; the spear keeps its word.",
+    "wielder_fire_immunity": true
   },
   "akinakes_acrisius": {
     "name": "Akinakes of Acrisius",
@@ -6050,7 +6056,10 @@
       "scope": "item",
       "desc": "Reforged Anduril is the Flame of the West — it deals +45% damage to evil-aligned foes."
     },
-    "design_notes": "Signature chain: the Flame of the West -- a bright, steady ramp. Each rung is meaningful; no dead opener."
+    "design_notes": "Signature chain: the Flame of the West -- a bright, steady ramp. Each rung is meaningful; no dead opener.",
+    "effective_against": [
+      "undead"
+    ]
   },
   "atalanta_bow": {
     "name": "Atalanta's Bow",
@@ -6195,14 +6204,13 @@
     "critMultiplier": 1.8,
     "requiresAmmo": null,
     "mastery_blessing": {
-      "kind": "weapon_status_chance",
+      "kind": "weapon_damage_vs_tag",
       "value": {
-        "status": "burning",
-        "pct": 25,
-        "duration": 3
+        "tag": "beast",
+        "pct": 30
       },
       "scope": "item",
-      "desc": "Bellerophon's lead-tipped lance melted in the Chimera's throat — 25% of its strikes set foes burning for 3 turns."
+      "desc": "Hephaestus forged the lead tip that melted in the Chimera's throat - +30% damage to beasts."
     }
   },
   "cadmus_sword": {
@@ -6432,10 +6440,13 @@
     "critMultiplier": 1.6,
     "requiresAmmo": null,
     "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 2,
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "humanoid",
+        "pct": 30
+      },
       "scope": "item",
-      "desc": "Hector's bronze-headed javelin felled Patroclus — it adds 2 damage to every throw."
+      "desc": "Hector's spear felled Patroclus - +30% damage to humanoids."
     }
   },
   "heracles_club": {
@@ -6573,7 +6584,6 @@
     "crit_multiplier": 1.8,
     "vigilance_aware": true,
     "stun_chance": 0.15,
-    "abaddon_bonus_damage": "1d6",
     "lore": "Hofud, called Man-Head, the sword of Heimdall the watcher at Bifrost. He hears wool growing on the backs of sheep and grass climbing out of the ground. At Ragnarok he and Loki will meet on the field and finish each other; the sword will not survive that day either, but until then nothing slips past it.",
     "_curve_note": "base_damage = curve.weapon_base_damage(80) x 1.6 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F80-89 Fenrir-era band fill; Norse signature.",
     "stunChance": 0.15,
@@ -6889,14 +6899,13 @@
     "critMultiplier": 1.8,
     "requiresAmmo": null,
     "mastery_blessing": {
-      "kind": "weapon_status_chance",
+      "kind": "weapon_damage_vs_tag",
       "value": {
-        "status": "bleeding",
-        "pct": 25,
-        "duration": 3
+        "tag": "construct",
+        "pct": 35
       },
       "scope": "item",
-      "desc": "The Sickle of Talos was ground from a giant's bronze ichor — 25% of its strikes cause bleeding for 3 turns."
+      "desc": "Forged from Talos's own bronze - +35% damage to constructs."
     }
   },
   "theseus_club": {
@@ -7191,10 +7200,13 @@
       "beast"
     ],
     "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 2,
+      "kind": "weapon_damage_vs_tag",
+      "value": {
+        "tag": "beast",
+        "pct": 25
+      },
       "scope": "item",
-      "desc": "Setanta drove a hurling ball down the throat of Culann's hound — the ash hurley adds 2 damage to every blow."
+      "desc": "Setanta killed Culann's hound with a hurling ball - +25% damage to beasts."
     }
   },
   "mwindo_axe": {
