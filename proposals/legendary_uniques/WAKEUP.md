@@ -56,10 +56,13 @@ Per CLAUDE.md play-test rule, these are "easily reachable" and you should verify
 
 ## Known follow-ups (not blockers)
 
-1. **T5 passive flags unwired** — ~60 `passive_<flag>` keys are stashed on items but use-site combat hooks aren't written yet. Aegis "Aura of Awe", Hermes "Psychopomp's Step", etc. need their effect handlers. Big future phase.
-2. **Chaos/Wonder/Wish dispatchers** — Pandora, Wonder, Lamp tables are data-only. Engine needs effect dispatch for items.
-3. **Family mastery use-sites** — `damage_vs_tag` and `tohit_vs_tag` are wired. `resist_charm`, `resist_elemental`, `sp_regen` aren't yet.
-4. **Hand of Glory mechanics** — needs `paralyze_charges` activation + `passive_silent_walk` + `passive_dark_vision` + `expended_curse` hooks.
+> **2026-05-30 update** (engine waves 5/6 sweep): items #1 and #4 are now
+> largely SHIPPED. See the updated status below per follow-up.
+
+1. **T5 passive flags unwired** — ~~~60 `passive_<flag>` keys are stashed on items but use-site combat hooks aren't written yet~~. **Now MOSTLY SHIPPED via engine waves 5 + 6.** Wired in `src/chain_passives.py` + `src/armor_procs.py`: Aegis "Aura of Awe", Hermes "Psychopomp's Step", Hades "Stealth in Dark / Unseen When Still / Phase Step", Aragorn "Command Undead / Paths of the Dead", Solomon "Seventy-Two Seals", Morrigan "Raven Scout / Death Omen Mark", Sigurd "Back Attack Weakness / Dragon Blood Bath", Ragnarok "Doom of the Gods", Brahma "Four Faces 360 FOV", Robe-of-Magus "Free Cast / Spell Crit / Double Cast", Cu Chulainn "Berserk Trigger", Aegishjalmr "Fafnir's Glare / No Man Dares", and all 9 named T5 chain-equip accessory passives (Three O'Clock, Solomonic Key, Reassembly, Anti-Being, Beautiful Ruin, One Thousand and One, Atalanta's Choice, Aesir Young, Surya's Gift). **Still deferred**: a handful of secondary procs like Greater Aegis "Gorgoneion" (wired but as paralyze-proxy not full petrification) — see armor_procs.py for current registry.
+2. **Chaos/Wonder/Wish dispatchers** — Pandora, Wonder, Lamp tables are data-only. Engine needs effect dispatch for items. **STILL DEFERRED** (2026-05-30) — biggest single remaining vision gap. Three artifacts shipping with rich JSON tables and zero use-site readers.
+3. **Family mastery use-sites** — `damage_vs_tag` and `tohit_vs_tag` are wired. `resist_charm`, `resist_elemental`, `sp_regen` aren't yet. **Status unchanged** (2026-05-30).
+4. **Hand of Glory mechanics** — needs `paralyze_charges` activation + `passive_silent_walk` + `passive_dark_vision` + `expended_curse` hooks. **PARTIALLY SHIPPED** (2026-05-30 engine wave 6): paralyze_charges activation via power menu (V key) is wired; `expended_curse` and the two passive statuses still deferred.
 
 ## Commits today
 

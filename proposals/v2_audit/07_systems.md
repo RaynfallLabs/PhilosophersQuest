@@ -8,6 +8,17 @@ Tests: `py -m pytest tests/ -q` -> **476 passed in 63.45s**.
 
 ---
 
+> **2026-05-30 status note**: items §A (10 silent-no-op spells) and §C
+> (`parry_armed` / `see_invisible` orphans) are now **RESOLVED**. Every spell
+> effect in §A has a handler in `_apply_spell_effect` (`game_magic.py:292–990`).
+> Both orphan statuses are registered in `EFFECT_INFO` and `BUFFS`
+> (`status_effects.py:55–56`, `:120`). §B (12 mastery kinds with no read-site)
+> is **PARTIALLY RESOLVED** — read-site count rose from 0 to 22; most
+> commonly-used mastery kinds work, but the long-tail class_acc_* still no-op
+> for some sub-classes. See the vision audit in `_morning_review.md`.
+
+---
+
 ## Critical findings (would crash or silently break on use)
 
 ### A. Spells with no handler in `_apply_spell_effect` (silent no-op or wrong fallback)
