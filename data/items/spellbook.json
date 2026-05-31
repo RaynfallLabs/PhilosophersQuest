@@ -18,7 +18,7 @@
     "mp_cost": 4,
     "unidentified_name": "slim blue tome",
     "lore": "The first spell every apprentice masters. An unerring dart of pure magical force.",
-    "read_threshold": 3,
+    "read_threshold": 2,
     "weight": 0.3,
     "peak_weight": 0.25
   },
@@ -41,7 +41,7 @@
     "mp_cost": 4,
     "unidentified_name": "dusty violet tome",
     "lore": "A gentle enchantment that sends living creatures into sudden slumber.",
-    "read_threshold": 3,
+    "read_threshold": 2,
     "weight": 0.3,
     "peak_weight": 0.25
   },
@@ -64,7 +64,7 @@
     "mp_cost": 2,
     "unidentified_name": "thin yellow tome",
     "lore": "Banishes shadows. Simple, essential, and often the spell that saves lives.",
-    "read_threshold": 3,
+    "read_threshold": 2,
     "weight": 0.3,
     "peak_weight": 0.25
   },
@@ -287,7 +287,7 @@
     "min_level": 18,
     "peak_floor": 26,
     "spread": 10,
-    "quiz_tier": 1,
+    "quiz_tier": 3,
     "quiz_threshold": 3,
     "spell_id": "army_of_darkness_spell",
     "spell_name": "Army of Darkness",
@@ -326,7 +326,7 @@
     "mp_cost": 2,
     "unidentified_name": "pale green tome",
     "lore": "A healer's primer on purification magic. The spells within were developed by temple physicians who needed to cure plague victims without touching them. One incantation removes any single affliction â€” poison, paralysis, disease, curse. Simple, reliable, life-saving.",
-    "read_threshold": 3,
+    "read_threshold": 2,
     "weight": 0.3,
     "peak_weight": 0.25
   },
