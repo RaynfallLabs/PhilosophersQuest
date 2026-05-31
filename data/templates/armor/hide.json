@@ -7,6 +7,11 @@
   "base_ac_value": 1,
   "base_weight_lb": 15.0,
   "_design_note": "F1-20 light. Weight penalty vs leather; takes crushing better.",
-  "compatible_material_classes": ["hide", "leather", "dragon_material"],
-  "lore_template": "A wrap of thick {material_name}, lashed at the shoulders with rawhide cord. Heavier than tanned leather but it takes a crushing blow better."
+  "compatible_material_classes": [
+    "hide",
+    "leather",
+    "dragon_material"
+  ],
+  "lore_template": "A wrap of thick {material_name}, lashed at the shoulders with rawhide cord. Heavier than tanned leather but it takes a crushing blow better.",
+  "equip_threshold": 1
 }

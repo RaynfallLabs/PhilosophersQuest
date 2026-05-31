@@ -7,6 +7,11 @@
   "base_ac_value": 2,
   "base_weight_lb": 3.5,
   "_design_note": "F35-60 medium head slot. Segmented spangenhelm with hinged cheek guards. Material is the variation axis — name retained for canon.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "A segmented {material_name} spangenhelm with a riveted brow band and hinged cheek guards. The polished surface deflects glancing blows; the thoughtful ventilation keeps the head from cooking under load."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "A segmented {material_name} spangenhelm with a riveted brow band and hinged cheek guards. The polished surface deflects glancing blows; the thoughtful ventilation keeps the head from cooking under load.",
+  "equip_threshold": 2
 }

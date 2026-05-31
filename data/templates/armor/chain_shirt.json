@@ -7,6 +7,11 @@
   "base_ac_value": 3,
   "base_weight_lb": 20.0,
   "_design_note": "F15-35 medium entry. Half hauberk.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "A short shirt of {material_name} rings, riveted four-in-one. It rattles as you walk — but a sword that should have ended you slides off instead."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "A short shirt of {material_name} rings, riveted four-in-one. It rattles as you walk — but a sword that should have ended you slides off instead.",
+  "equip_threshold": 2
 }

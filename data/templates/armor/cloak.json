@@ -7,6 +7,15 @@
   "base_ac_value": 1,
   "base_weight_lb": 2.0,
   "_design_note": "Single cloak template — material is the variation axis (cloth, wool, leather, silk, mithril, shadowweave, dragonscale, etc.). Light cloth gets +0 AC contribution; sturdier materials add via material bonus. Existing data has 17 cloak items — most of those are uniques or material variations of this template.",
-  "compatible_material_classes": ["cloth", "leather", "hide", "metal", "rare_metal", "magical_metal", "dragon_material"],
-  "lore_template": "A wide cloak of {material_name}, cut to fall to the heel and clasped at the throat. In cold stone passages it is warmth first and armor a distant second — and yet the wearers of good cloaks tend to outlive their bare-shouldered companions."
+  "compatible_material_classes": [
+    "cloth",
+    "leather",
+    "hide",
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material"
+  ],
+  "lore_template": "A wide cloak of {material_name}, cut to fall to the heel and clasped at the throat. In cold stone passages it is warmth first and armor a distant second — and yet the wearers of good cloaks tend to outlive their bare-shouldered companions.",
+  "equip_threshold": 1
 }

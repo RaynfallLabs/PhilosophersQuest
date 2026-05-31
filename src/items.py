@@ -1338,6 +1338,12 @@ def instantiate_armor(template_id: str, material_id: str, *,
             mat.get('unidentified_descriptor', mat['name']), tpl['name']),
         'buc': buc,
         'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        # equip_threshold = complexity, driven by armor_class_tier:
+        #   light = 1 (slip-on: cloak, leather, padded)
+        #   medium = 2 (straps + lacing: chain shirt, scale, gauntlets)
+        #   heavy = 3 (full kit + gambeson: plate, breastplate, banded)
+        # Per-template `equip_threshold` overrides the class default if set.
+        'equip_threshold': int(tpl.get('equip_threshold', 2)),
     }
     a = Armor(defn)
     a.x, a.y = x, y

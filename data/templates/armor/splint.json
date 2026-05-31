@@ -7,6 +7,11 @@
   "base_ac_value": 4,
   "base_weight_lb": 40.0,
   "_design_note": "F30-60 heavy. Cheaper plate alternative.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "Vertical {material_name} strips riveted to a backing of stout leather. Cheaper to forge than plate; nearly as good if the strips are tight."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "Vertical {material_name} strips riveted to a backing of stout leather. Cheaper to forge than plate; nearly as good if the strips are tight.",
+  "equip_threshold": 3
 }

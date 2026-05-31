@@ -7,6 +7,11 @@
   "base_ac_value": 1,
   "base_weight_lb": 1.0,
   "_design_note": "F1-25 light arms slot. Oil-hardened leather forearm guards. Bracers_of_Cu_Chulainn uses this as template_basis.",
-  "compatible_material_classes": ["cloth", "leather", "hide"],
-  "lore_template": "Forearm bracers of oil-hardened {material_name}, strapped from wrist to elbow over the tendons that a glancing blade would otherwise find first. Archers prize bracers of this make additionally for the bowstring snap they prevent — a small consideration that has saved many an arm over years of practice."
+  "compatible_material_classes": [
+    "cloth",
+    "leather",
+    "hide"
+  ],
+  "lore_template": "Forearm bracers of oil-hardened {material_name}, strapped from wrist to elbow over the tendons that a glancing blade would otherwise find first. Archers prize bracers of this make additionally for the bowstring snap they prevent — a small consideration that has saved many an arm over years of practice.",
+  "equip_threshold": 1
 }

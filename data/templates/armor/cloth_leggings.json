@@ -7,6 +7,10 @@
   "base_ac_value": 1,
   "base_weight_lb": 2.0,
   "_design_note": "F1-20 light legs slot. Lowest-tier leg covering — quilted hose. Covers cloth_leggings, padded_leggings from legacy data.",
-  "compatible_material_classes": ["cloth", "leather"],
-  "lore_template": "Quilted {material_name} leggings cut full at the thigh and tapered at the calf, worn beneath outer breeches or as standalone hose. They turn a glancing blade aside more often than the wearer might expect — though only the first time per garment. After that the wearer learns where the blade went through, and the wearer learns to be careful there."
+  "compatible_material_classes": [
+    "cloth",
+    "leather"
+  ],
+  "lore_template": "Quilted {material_name} leggings cut full at the thigh and tapered at the calf, worn beneath outer breeches or as standalone hose. They turn a glancing blade aside more often than the wearer might expect — though only the first time per garment. After that the wearer learns where the blade went through, and the wearer learns to be careful there.",
+  "equip_threshold": 1
 }

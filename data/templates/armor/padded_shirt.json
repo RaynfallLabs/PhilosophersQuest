@@ -7,6 +7,13 @@
   "base_ac_value": 1,
   "base_weight_lb": 4.0,
   "_design_note": "Under-armor slot. Worn beneath body armor or standalone. Gambeson/chain-shirt are both this template — material is the variation axis. Distributes impact, mitigates seam-blows.",
-  "compatible_material_classes": ["cloth", "leather", "metal", "rare_metal", "magical_metal"],
-  "lore_template": "A fitted shirt of {material_name}, quilted or woven dense, worn as both a standalone garment and as padding beneath heavier armor. Distributes impact across a wide area — the true value is revealed when a blade finds the seam in a breastplate and instead of drawing blood, it meets the shirt and glances away."
+  "compatible_material_classes": [
+    "cloth",
+    "leather",
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "A fitted shirt of {material_name}, quilted or woven dense, worn as both a standalone garment and as padding beneath heavier armor. Distributes impact across a wide area — the true value is revealed when a blade finds the seam in a breastplate and instead of drawing blood, it meets the shirt and glances away.",
+  "equip_threshold": 1
 }

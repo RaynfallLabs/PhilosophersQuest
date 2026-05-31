@@ -7,6 +7,10 @@
   "base_ac_value": 1,
   "base_weight_lb": 8.0,
   "_design_note": "F1-5 starter; chained with leather material gives +1 AC contribution.",
-  "compatible_material_classes": ["cloth", "leather"],
-  "lore_template": "A padded coat of {material_name}, quilted thick and stitched in offset rows. Cheap, quiet, and forgiving — the squire's first real armor."
+  "compatible_material_classes": [
+    "cloth",
+    "leather"
+  ],
+  "lore_template": "A padded coat of {material_name}, quilted thick and stitched in offset rows. Cheap, quiet, and forgiving — the squire's first real armor.",
+  "equip_threshold": 1
 }

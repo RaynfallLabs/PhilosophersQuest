@@ -7,6 +7,11 @@
   "base_ac_value": 1,
   "base_weight_lb": 2.0,
   "_design_note": "F20-60 medium arms slot. Riveted plate from wrist to elbow. Covers iron_bracers, bronze_bracers, chain_bracers, scale_bracers from legacy data — material is the variation axis.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "Vambraces of riveted {material_name}, encasing the forearm from wrist to elbow in a single curved plate. Soldiers wear these when they expect to block weapon strikes with their arms — a maneuver discouraged in drill, but sometimes unavoidable in the close quarters where shield discipline breaks down."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "Vambraces of riveted {material_name}, encasing the forearm from wrist to elbow in a single curved plate. Soldiers wear these when they expect to block weapon strikes with their arms — a maneuver discouraged in drill, but sometimes unavoidable in the close quarters where shield discipline breaks down.",
+  "equip_threshold": 2
 }

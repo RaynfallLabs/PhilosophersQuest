@@ -7,6 +7,12 @@
   "base_ac_value": 4,
   "base_weight_lb": 20.0,
   "_design_note": "F30-60 heavy-but-light. Open-back design.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
-  "lore_template": "A solid {material_name} cuirass shaped to deflect points off the chest's curve. Open at the back — assumes you face your enemies, not run from them."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material"
+  ],
+  "lore_template": "A solid {material_name} cuirass shaped to deflect points off the chest's curve. Open at the back — assumes you face your enemies, not run from them.",
+  "equip_threshold": 3
 }

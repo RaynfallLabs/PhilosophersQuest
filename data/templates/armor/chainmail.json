@@ -7,6 +7,11 @@
   "base_ac_value": 4,
   "base_weight_lb": 40.0,
   "_design_note": "F25-50 heavy entry. Full hauberk.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "A full hauberk of {material_name} rings, riveted four-in-one from neck to thigh. The weight settles into the hips after an hour — and stops a swung blade cold."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "A full hauberk of {material_name} rings, riveted four-in-one from neck to thigh. The weight settles into the hips after an hour — and stops a swung blade cold.",
+  "equip_threshold": 3
 }

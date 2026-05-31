@@ -7,6 +7,12 @@
   "base_ac_value": 1,
   "base_weight_lb": 4.0,
   "_design_note": "F50-100 heavy feet slot. Full plate boots ankle-to-toe. Pairs with plate / full plate body.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
-  "lore_template": "Full-coverage {material_name} plate boots from ankle to toe, with a complex mechanism of overlapping plates that somehow allows normal walking. Worn with full plate, they complete a suit of protection that covers every inch of the body in solid metal."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material"
+  ],
+  "lore_template": "Full-coverage {material_name} plate boots from ankle to toe, with a complex mechanism of overlapping plates that somehow allows normal walking. Worn with full plate, they complete a suit of protection that covers every inch of the body in solid metal.",
+  "equip_threshold": 3
 }

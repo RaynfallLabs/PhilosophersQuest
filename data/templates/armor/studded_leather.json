@@ -7,6 +7,10 @@
   "base_ac_value": 2,
   "base_weight_lb": 13.0,
   "_design_note": "F10-25 light. Bridges leather to medium.",
-  "compatible_material_classes": ["leather", "studded_leather"],
-  "lore_template": "A jerkin of {material_name} riveted with iron studs across the chest and shoulders. The studs catch glancing blades that the hide alone would let through."
+  "compatible_material_classes": [
+    "leather",
+    "studded_leather"
+  ],
+  "lore_template": "A jerkin of {material_name} riveted with iron studs across the chest and shoulders. The studs catch glancing blades that the hide alone would let through.",
+  "equip_threshold": 1
 }

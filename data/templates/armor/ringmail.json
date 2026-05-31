@@ -7,6 +7,11 @@
   "base_ac_value": 3,
   "base_weight_lb": 25.0,
   "_design_note": "F15-35 medium. Cheaper than chain; same AC, heavier.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "Heavy {material_name} rings sewn flat onto a leather backing. Cheaper than true chain, and the rings catch a blade better than scale."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "Heavy {material_name} rings sewn flat onto a leather backing. Cheaper than true chain, and the rings catch a blade better than scale.",
+  "equip_threshold": 2
 }

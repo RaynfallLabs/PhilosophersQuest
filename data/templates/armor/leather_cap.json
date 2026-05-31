@@ -7,6 +7,11 @@
   "base_ac_value": 1,
   "base_weight_lb": 2.0,
   "_design_note": "F1-15 starter head slot. Pairs with leather/studded body for scout loadout.",
-  "compatible_material_classes": ["cloth", "leather", "hide"],
-  "lore_template": "A close-cropped {material_name} cap, oil-hardened and shaped on a wooden form. Keeps the hair back and turns a glancing blow — beyond that, it's hope and a quick neck."
+  "compatible_material_classes": [
+    "cloth",
+    "leather",
+    "hide"
+  ],
+  "lore_template": "A close-cropped {material_name} cap, oil-hardened and shaped on a wooden form. Keeps the hair back and turns a glancing blow — beyond that, it's hope and a quick neck.",
+  "equip_threshold": 1
 }

@@ -7,6 +7,11 @@
   "base_ac_value": 1,
   "base_weight_lb": 2.5,
   "_design_note": "F40-80 medium-heavy arms slot. Articulated forearm plate with flared wrist guard. Bridge between iron_vambraces and plate_vambraces.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal"],
-  "lore_template": "Articulated {material_name} vambraces hinged at the elbow for mobility, with a flared wrist-guard cup designed to catch and redirect blade strikes. The flare turns a parry into a counter — a small mechanical advantage that has consistently outlived the soldiers who relied on it."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "lore_template": "Articulated {material_name} vambraces hinged at the elbow for mobility, with a flared wrist-guard cup designed to catch and redirect blade strikes. The flare turns a parry into a counter — a small mechanical advantage that has consistently outlived the soldiers who relied on it.",
+  "equip_threshold": 2
 }

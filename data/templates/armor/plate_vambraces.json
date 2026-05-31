@@ -7,6 +7,12 @@
   "base_ac_value": 1,
   "base_weight_lb": 3.0,
   "_design_note": "F50-100 heavy arms slot. Full articulated plate, elbow couter and forearm rerebrace. Pairs with plate/full plate body. Vambraces_of_Achilles uses this as template_basis.",
-  "compatible_material_classes": ["metal", "rare_metal", "magical_metal", "dragon_material"],
-  "lore_template": "Full {material_name} plate vambraces with a hinged elbow couter and a fluted rerebrace covering the upper forearm. Together with the plate gauntlets they create an unbroken metal sheath from fingertip to shoulder — and a smith's signature is somewhere on the inside seam, where the wearer will probably never look."
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal",
+    "dragon_material"
+  ],
+  "lore_template": "Full {material_name} plate vambraces with a hinged elbow couter and a fluted rerebrace covering the upper forearm. Together with the plate gauntlets they create an unbroken metal sheath from fingertip to shoulder — and a smith's signature is somewhere on the inside seam, where the wearer will probably never look.",
+  "equip_threshold": 3
 }

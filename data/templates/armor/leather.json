@@ -7,6 +7,10 @@
   "base_ac_value": 1,
   "base_weight_lb": 10.0,
   "_design_note": "F1-15 light. With leather material = +1 AC; with studded_leather = +2.",
-  "compatible_material_classes": ["leather", "hide"],
-  "lore_template": "A cuirass of {material_name}, boiled and shaped on a wooden form. Light enough to run in, tough enough to turn a dagger's tip."
+  "compatible_material_classes": [
+    "leather",
+    "hide"
+  ],
+  "lore_template": "A cuirass of {material_name}, boiled and shaped on a wooden form. Light enough to run in, tough enough to turn a dagger's tip.",
+  "equip_threshold": 1
 }
