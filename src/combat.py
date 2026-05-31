@@ -207,6 +207,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
         if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
             chain = 1
+        # Gungnir: "the spear has never missed." Per audit 2026-05-30 — the
+        # `cannot_miss` data flag previously had no consumer. Same chain 0 -> 1
+        # promotion as guaranteed_hit but driven from the weapon's JSON.
+        if chain == 0 and weapon and getattr(weapon, 'cannot_miss', False):
+            chain = 1
 
         # Cursed weapon backlash on miss (Tyrfing).
         # Floor at 0 so the player.hp value stays non-negative — downstream
@@ -265,6 +270,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
             mult = multipliers[min(1, len(multipliers) - 1)]
 
+        # Atalanta's Bow: first_blood_bonus — at chain 1 against a target
+        # that has not yet taken damage this combat (HP at max), +50%
+        # damage. The Calydonian-Boar opener — first arrow rewarded.
+        # Per audit 2026-05-30 (data flag was previously inert).
+        if (chain == 1 and weapon and getattr(weapon, 'first_blood_bonus', False)
+                and monster.hp >= monster.max_hp):
+            mult *= 1.5
+
         # Damage type advantage vs monster resistances/weaknesses
         # Gram (reforged) ignores all resistances
         dtype_mult = 1.0
@@ -281,6 +294,24 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if getattr(weapon, 'buc', 'uncursed') == 'blessed' and 'holy' not in dtypes:
                 dtypes.append('holy')
             dtype_mult = _damage_multiplier(dtypes, monster)
+
+        # Weapon-side effective_against array. Per audit 2026-05-30 — many
+        # uniques (Zulfiqar, Vel of Murugan, Spear of Longinus, Mjolnir,
+        # Dawnbreaker, Gungnir, Fragarach, Skofnung, Gilgamesh's Axe,
+        # Shamshir) declared per-weapon anti-tag arrays that the engine
+        # ignored (only material.effective_against was read). Boost
+        # damage 1.5x when the target matches any declared tag.
+        if weapon:
+            _weapon_anti = getattr(weapon, 'effective_against', None) or []
+            if _weapon_anti:
+                _mon_tags = set(getattr(monster, 'tags', []))
+                if _mon_tags & set(_weapon_anti):
+                    dtype_mult *= 1.5
+            # Anduril-style numeric undead_multiplier (legacy `undead_bonus`
+            # JSON field): applies as a flat 1.5x against undead when set > 1.
+            _und_mult = float(getattr(weapon, 'undead_multiplier', 1.0) or 1.0)
+            if _und_mult > 1.0 and _tag_match(monster, 'undead'):
+                dtype_mult *= 1.5
 
         # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect
         if not (weapon and weapon.ignore_shield):
@@ -448,6 +479,22 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             bonus = _ab_roll(weapon.abaddon_bonus_damage)
             damage += bonus
 
+        # Per-tag bonus damage dice (Anduril +1d8 vs undead, Glamdring vs
+        # goblin, Cadmus vs dragon, Meleager vs beast, etc.). Each entry
+        # in weapon.bonus_damage_vs_tag is rolled and added when the target
+        # carries the matching tag. Generalizes abaddon_bonus_damage above.
+        # Per audit 2026-05-30 — the *_bonus_damage JSON keys had no
+        # consumer; this revives ~10 weapons' anti-tag dice.
+        _tag_bonuses = getattr(weapon, 'bonus_damage_vs_tag', None) if weapon else None
+        if _tag_bonuses:
+            from dice import roll as _tb_roll
+            for _bt_tag, _bt_dice in _tag_bonuses.items():
+                if _tag_match(monster, _bt_tag):
+                    try:
+                        damage += _tb_roll(_bt_dice)
+                    except Exception:
+                        pass
+
         # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
         # +25% damage against the floor's highest-level monster.
         if getattr(player, '_death_omen_target', None) == id(monster):
@@ -492,6 +539,27 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if random.random() < weapon.confuse_chance:
                 monster.add_effect('confused', 4)
                 confused = True
+
+        # Freeze proc (Aiglos: Gil-galad's spear). Per audit 2026-05-30 —
+        # freeze_chance was declared on the unique but had no consumer.
+        # Applies 'frozen' status (skip-turn) on a successful hit.
+        if weapon and getattr(weapon, 'freeze_chance', 0) > 0 and actual > 0:
+            if random.random() < weapon.freeze_chance:
+                monster.add_effect('frozen', 3)
+
+        # Weapon-side effects block: {status, effect_chance, effect_duration}.
+        # Per audit 2026-05-30 — items.py previously loaded this only on the
+        # Accessory class, so the headline status delivery on four quest
+        # mythics (vulcans_brand, wendigo_fang, echidna_fang,
+        # hunt_captains_sword) was silently dead. Now fires on hit.
+        _wfx = getattr(weapon, 'effects', None) if weapon else None
+        if _wfx and actual > 0:
+            _wfx_status = _wfx.get('status')
+            _wfx_chance = float(_wfx.get('effect_chance', 0.0) or 0.0)
+            _wfx_dur = int(_wfx.get('effect_duration', 3) or 3)
+            if _wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance:
+                _wfx_current = monster.status_effects.get(_wfx_status, 0)
+                monster.status_effects[_wfx_status] = max(_wfx_current, _wfx_dur)
 
         # Lifesteal mechanic (Soul Reaver). Mastery: weapon_lifesteal adds % on top.
         healed = False

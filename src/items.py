@@ -185,6 +185,49 @@ class Weapon(Item):
         # Runtime: accumulated max_hp bonus from kill_max_hp_bonus
         self._max_hp_granted: int       = 0
 
+        # ------------------------------------------------------------------
+        # Engine wave 2026-05-30: previously-inert Weapon JSON flags.
+        # Each of these was declared on unique-weapon entries in
+        # data/items/weapon.json but had no code consumer in src/. The
+        # unique-audit (proposals/legendary_uniques/weapons.md vs current
+        # JSON, 2026-05-30) flagged ~30 weapons whose lore-promised
+        # mechanics were dead on the floor. These additions wake them up.
+        # ------------------------------------------------------------------
+
+        # effects: {status, effect_chance, effect_duration} — on-hit status
+        # delivery for quest-mythic weapons (vulcans_brand, wendigo_fang,
+        # echidna_fang, hunt_captains_sword). Previously loaded ONLY on
+        # Accessory; now Weapon too.
+        self.effects: dict              = defn.get('effects', {}) or {}
+        # Per-weapon effective_against array — lore-tagged anti-X bonus.
+        # Previously only material.effective_against was read at use-site,
+        # leaving 10+ weapons (Zulfiqar, Vel of Murugan, Spear of Longinus,
+        # Mjolnir, Dawnbreaker, Gungnir, Fragarach, Skofnung, Gilgamesh's
+        # Axe, Shamshir...) with dead anti-tag declarations.
+        self.effective_against: list[str] = list(defn.get('effective_against', []) or [])
+        # Per-tag bonus damage dice. Each entry rolls a dice expression and
+        # adds the result to damage when the target has the matching tag.
+        # Built from the legacy *_bonus_damage keys (which were inert except
+        # for abaddon_bonus_damage — left as-is for Sword of Michael).
+        self.bonus_damage_vs_tag: dict[str, str] = {}
+        for _tag in ('dragon', 'beast', 'undead', 'goblin', 'demon', 'fey', 'giant', 'troll'):
+            _dice = defn.get(f'{_tag}_bonus_damage')
+            if _dice:
+                self.bonus_damage_vs_tag[_tag] = str(_dice)
+        # Anduril-style multiplier flag: undead_bonus (numeric mult).
+        # Converted at use-site into +50% damage vs undead if set above 1.0.
+        self.undead_multiplier: float   = float(defn.get('undead_bonus', 1.0) or 1.0)
+        # Aiglos: freeze proc on hit.
+        self.freeze_chance: float       = float(defn.get('freezeChance', defn.get('freeze_chance', 0.0)) or 0.0)
+        # Atalanta's Bow: at chain 1 against a full-HP target, 1.5x damage.
+        self.first_blood_bonus: bool    = bool(defn.get('first_blood_bonus', False))
+        # Gungnir: never misses — chain 0 promotes to chain 1 (like
+        # guaranteed_hit class_mechanic but driven by data, not template).
+        self.cannot_miss: bool          = bool(defn.get('cannot_miss', False))
+        # Aiglos: while equipped, wielder takes no fire damage. ("Sauron's
+        # flame did nothing.")
+        self.wielder_fire_immunity: bool = bool(defn.get('wielder_fire_immunity', False))
+
     @property
     def max_chain_length(self) -> int:
         """Always derived from chain_multipliers so old pickled weapons stay correct."""

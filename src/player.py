@@ -193,6 +193,14 @@ class Player:
         shield_effect = SHIELD_IMMUNITY.get(damage_type)
         if shield_effect and self.has_effect(shield_effect):
             return 0
+        # Aiglos (Gil-galad's spear): wielder_fire_immunity blocks fire damage
+        # while equipped — "Sauron's flame did nothing" (per audit 2026-05-30,
+        # the flag was declared in JSON but had no consumer). Checks both
+        # melee weapon and ranged_weapon slots.
+        if damage_type == 'fire':
+            for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
+                if _slot and getattr(_slot, 'wielder_fire_immunity', False):
+                    return 0
 
         # Flat damage reduction from chain-equip tier_bonuses (resistance_<type>).
         # Each "level" subtracts 1 damage of the matching type; clamped to >=0.
