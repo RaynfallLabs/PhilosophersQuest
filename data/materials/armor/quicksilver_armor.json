@@ -1,0 +1,35 @@
+{
+  "id": "quicksilver_armor",
+  "name": "quicksilver",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 52,
+  "spread": 11,
+  "peak_weight": 7.0,
+  "min_level": 38,
+  "damage_mult": 0.95,
+  "weight_mult": 0.65,
+  "max_enchant": 6,
+  "color": [
+    200,
+    220,
+    230
+  ],
+  "armor_ac_bonus": 1,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "liquid_metal",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "flowing silver that hardens only when worn",
+  "unidentified_descriptor": "an armor that seems to shimmer",
+  "first_pickup_chronicle": "Quicksilver. Alchemists' silver. The metal flows until you wear it.",
+  "design_notes": "Light-ench magical_metal. Pairs with weapon-side quicksilver."
+}

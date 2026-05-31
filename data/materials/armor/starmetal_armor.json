@@ -1,0 +1,37 @@
+{
+  "id": "starmetal_armor",
+  "name": "starmetal",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 75,
+  "spread": 12,
+  "peak_weight": 4.0,
+  "min_level": 63,
+  "damage_mult": 1.45,
+  "weight_mult": 0.85,
+  "max_enchant": 6,
+  "color": [
+    220,
+    230,
+    255
+  ],
+  "armor_ac_bonus": 2,
+  "resistances": [
+    "cold"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "glows_faintly",
+    "celestial",
+    "blessed_capable",
+    "cannot_be_cursed"
+  ],
+  "lore_descriptor": "silver with a hint of blue starlight",
+  "unidentified_descriptor": "armor that gleams with cold light",
+  "first_pickup_chronicle": "Starmetal. Smelted from a meteor that fell on a mountain held by monks.",
+  "design_notes": "Unique-flavor magical_metal. Strong AC + celestial blessing."
+}

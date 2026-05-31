@@ -1,0 +1,36 @@
+{
+  "id": "rawhide",
+  "name": "rawhide",
+  "material_class": "leather",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 5,
+  "spread": 6,
+  "peak_weight": 7.0,
+  "min_level": 1,
+  "damage_mult": 0.8,
+  "weight_mult": 1.0,
+  "max_enchant": 1,
+  "color": [
+    180,
+    150,
+    110
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "primitive"
+  ],
+  "lore_descriptor": "untreated hide, still smelling faintly of the carcass",
+  "unidentified_descriptor": "a rough leather wrap",
+  "first_pickup_chronicle": "Rawhide. Skin a beast, scrape it, dry it. The first armor any people make.",
+  "design_notes": "Earliest leather. Mult 0.8, weight 1.0, enchant 1. F1-15 leather slot."
+}

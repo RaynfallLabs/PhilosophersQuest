@@ -1,0 +1,37 @@
+{
+  "id": "primordial_stone_armor",
+  "name": "primordial stone",
+  "material_class": "exotic_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 94,
+  "spread": 12,
+  "peak_weight": 3.0,
+  "min_level": 82,
+  "damage_mult": 1.75,
+  "weight_mult": 2.0,
+  "max_enchant": 1,
+  "color": [
+    80,
+    70,
+    75
+  ],
+  "armor_ac_bonus": 4,
+  "resistances": [
+    "magic"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "pre_world",
+    "unbreakable",
+    "spell_resistant",
+    "cannot_be_destroyed"
+  ],
+  "lore_descriptor": "stone from before — deep gray, veined with red",
+  "unidentified_descriptor": "armor of impossibly heavy stone",
+  "first_pickup_chronicle": "Primordial stone. From before the world had names. Spell-resistant. Almost unbearable.",
+  "design_notes": "Heaviest endgame mineral armor. Mult 1.75, weight 2.0, AC +4, spell-resistant."
+}

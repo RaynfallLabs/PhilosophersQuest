@@ -1,0 +1,36 @@
+{
+  "id": "dragonhide_armor",
+  "name": "dragonhide",
+  "material_class": "leather",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 62,
+  "spread": 14,
+  "peak_weight": 4.0,
+  "min_level": 48,
+  "damage_mult": 1.25,
+  "weight_mult": 0.95,
+  "max_enchant": 3,
+  "color": [
+    180,
+    100,
+    60
+  ],
+  "armor_ac_bonus": 2,
+  "resistances": [
+    "fire",
+    "cold"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "dragon_hide",
+    "elemental_resistant"
+  ],
+  "lore_descriptor": "broad red-gold scales, each one tougher than steel",
+  "unidentified_descriptor": "an extraordinary scaled hide",
+  "first_pickup_chronicle": "Dragonhide. Mature dragon. Each scale would turn a sword.",
+  "design_notes": "Bridges to dragonscale at F65. Strong AC + elemental."
+}

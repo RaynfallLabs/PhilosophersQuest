@@ -1,0 +1,37 @@
+{
+  "id": "titanforged_armor",
+  "name": "titanforged",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 78,
+  "spread": 14,
+  "peak_weight": 3.0,
+  "min_level": 64,
+  "damage_mult": 1.65,
+  "weight_mult": 1.7,
+  "max_enchant": 2,
+  "color": [
+    180,
+    140,
+    80
+  ],
+  "armor_ac_bonus": 3,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "giant"
+  ],
+  "special_properties": [
+    "titan_made",
+    "unbreakable",
+    "anti_giant",
+    "cannot_be_destroyed"
+  ],
+  "lore_descriptor": "bronze-gold harness struck in pre-Olympian patterns",
+  "unidentified_descriptor": "a magnificent ponderous suit",
+  "first_pickup_chronicle": "Titanforged. Pre-Olympian. Only those who passed the Trial of Strength can wear it.",
+  "design_notes": "Heavy magical_metal. Mult 1.65, weight 1.7, AC +3, anti-giant."
+}

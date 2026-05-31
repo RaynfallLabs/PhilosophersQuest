@@ -1,0 +1,35 @@
+{
+  "id": "shadowiron_armor",
+  "name": "shadowiron",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 82,
+  "spread": 12,
+  "peak_weight": 4.0,
+  "min_level": 70,
+  "damage_mult": 1.55,
+  "weight_mult": 0.9,
+  "max_enchant": 3,
+  "color": [
+    40,
+    40,
+    50
+  ],
+  "armor_ac_bonus": 2,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "drains_user",
+    "drain_hp_per_turn_1",
+    "void_aligned",
+    "cannot_be_blessed"
+  ],
+  "lore_descriptor": "matte black metal that seems to drink the light",
+  "unidentified_descriptor": "armor of unsettling darkness",
+  "first_pickup_chronicle": "Shadowiron. The wearer is paying for the strength. 1 HP per turn, every turn.",
+  "design_notes": "Curse-flavor magical_metal. Drains wearer 1 HP/turn. Strong AC tradeoff."
+}

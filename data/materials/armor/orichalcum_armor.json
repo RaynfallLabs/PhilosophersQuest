@@ -1,0 +1,37 @@
+{
+  "id": "orichalcum_armor",
+  "name": "orichalcum",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 90,
+  "spread": 14,
+  "peak_weight": 3.0,
+  "min_level": 76,
+  "damage_mult": 1.55,
+  "weight_mult": 0.95,
+  "max_enchant": 7,
+  "color": [
+    220,
+    165,
+    60
+  ],
+  "armor_ac_bonus": 3,
+  "resistances": [
+    "magic"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "atlantean",
+    "magic_synergy",
+    "blessed_capable",
+    "rare_to_find"
+  ],
+  "lore_descriptor": "red-gold metal of Atlantis; a fortune in scrap",
+  "unidentified_descriptor": "armor of impossibly fine alloy",
+  "first_pickup_chronicle": "Orichalcum. From the city under the sea. The Atlanteans wore this.",
+  "design_notes": "Atlantean magical_metal. Strong AC + high enchant + magic-resist."
+}

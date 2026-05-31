@@ -1,0 +1,36 @@
+{
+  "id": "cured_leather_armor",
+  "name": "cured leather",
+  "material_class": "leather",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 15,
+  "spread": 10,
+  "peak_weight": 8.0,
+  "min_level": 5,
+  "damage_mult": 0.9,
+  "weight_mult": 0.85,
+  "max_enchant": 2,
+  "color": [
+    120,
+    80,
+    50
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "cured"
+  ],
+  "lore_descriptor": "sun-cured brown leather, supple to the hand",
+  "unidentified_descriptor": "a wrap of well-treated leather",
+  "first_pickup_chronicle": "Cured leather. Honest material — cattle and oak-tannin and a year in a barn.",
+  "design_notes": "Standard leather Band B. Parallels weapon-side cured_leather."
+}

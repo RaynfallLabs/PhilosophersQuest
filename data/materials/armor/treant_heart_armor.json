@@ -1,0 +1,38 @@
+{
+  "id": "treant_heart_armor",
+  "name": "treant heart",
+  "material_class": "exotic_organic",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 72,
+  "spread": 14,
+  "peak_weight": 3.0,
+  "min_level": 58,
+  "damage_mult": 1.35,
+  "weight_mult": 0.9,
+  "max_enchant": 5,
+  "color": [
+    80,
+    130,
+    60
+  ],
+  "armor_ac_bonus": 1,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "living_wood",
+    "regrowing",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "warm green-brown wood that still breathes",
+  "unidentified_descriptor": "armor that seems to grow",
+  "first_pickup_chronicle": "Treant heart armor. Cut from a dying treant. The wood is still alive.",
+  "design_notes": "Light-ench late-band exotic_organic."
+}

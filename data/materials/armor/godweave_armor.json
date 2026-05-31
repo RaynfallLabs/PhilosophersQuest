@@ -1,0 +1,35 @@
+{
+  "id": "godweave_armor",
+  "name": "godweave",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "armor"
+  ],
+  "peak_floor": 90,
+  "spread": 12,
+  "peak_weight": 3.0,
+  "min_level": 78,
+  "damage_mult": 1.3,
+  "weight_mult": 0.6,
+  "max_enchant": 8,
+  "color": [
+    240,
+    230,
+    200
+  ],
+  "armor_ac_bonus": 1,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "starlight_thread",
+    "blessed_capable",
+    "cannot_be_cursed",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "thread of starlight, almost weightless",
+  "unidentified_descriptor": "impossibly light, shimmering cloth",
+  "first_pickup_chronicle": "Godweave. The metal that isn't metal — a thread of starlight woven into a garment.",
+  "design_notes": "Endgame light-enchant magical_metal. Highest enchant ceiling in armor."
+}
