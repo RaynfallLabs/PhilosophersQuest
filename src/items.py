@@ -630,6 +630,20 @@ class Accessory(Item):
         self.pacify_chance: float        = float(defn.get('pacify_chance', 0.0))       # Seal of Solomon
         self.death_save: bool            = bool(defn.get('death_save', False))         # Jade Cicada
         self.resurrect_on_death: bool    = bool(defn.get('resurrect_on_death', False)) # Ankh of Isis
+        self.can_be_cursed: bool         = bool(defn.get('can_be_cursed', False))
+        # ----- Engine wave 6: charge-based accessories (Lyre of Orpheus,
+        # Hand of Glory). `use_charged: true` exposes the item in the power
+        # menu when equipped; `charges` / `max_charges` track remaining uses.
+        self.use_charged: bool       = bool(defn.get('use_charged', False))
+        self.charges: int            = int(defn.get('charges', 0))
+        self.max_charges: int        = int(defn.get('max_charges', self.charges or 0))
+        # ----- Engine wave 6: small per-item procs (audit follow-up) -----
+        self.identify_timer_bonus: int = int(defn.get('identify_timer_bonus', 0) or 0)  # ring_of_pythia
+        self.auto_invisible_at_low_hp: bool = bool(defn.get('auto_invisible_at_low_hp', False))  # ring_of_eluned
+        self.protected_when_surrounded: bool = bool(defn.get('protected_when_surrounded', False))  # ring_of_hypatia
+        self.gyges_invisible_attack_karma: bool = bool(defn.get('gyges_invisible_attack_karma', False))  # ring_of_gyges
+        self.monster_tag_chain_bonus: dict = defn.get('monster_tag_chain_bonus', {})  # dragonslayer_ring
+        self.rotating_subject_chain_cap: list = defn.get('rotating_subject_chain_cap', [])  # Lugh, Hamsa
         # Chain-equip fields (legendary uniques only). When equip_chain_mode is set
         # to 'escalator' or 'chain', equipping triggers that quiz mode. Default
         # subject for accessories is 'history' if equip_chain_subject is empty.

@@ -18,6 +18,8 @@ from __future__ import annotations
 
 import pygame
 
+from geom import monster_at_tile
+
 from food_system import (eat_food, eat_raw, get_available_compound_recipes)
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
                    Accessory, Wand, Scroll, Spellbook, Food, Potion)
@@ -955,6 +957,51 @@ class MenuMixin:
             }
             powers.append((sp['id'], _h_def, 0, _h_cd))
 
+        # ----- Engine wave 6: armor-granted activated abilities -----
+        # 7-League Boots: once-per-floor 7-tile dash
+        for _arm in pl.armor_slots:
+            if _arm and getattr(_arm, 'seven_league_step', False):
+                _used = bool(getattr(pl, '_seven_league_used_this_floor', False))
+                powers.append(('armor_seven_league_step', {
+                    'label': 'Seven-League Step',
+                    'desc': 'Stride 7 tiles in your facing direction. Once per floor.',
+                    'cooldown': 0,
+                    'uses': 0 if _used else 1,
+                }, 0 if _used else 1, 0))
+                break
+        # Helm of Gilgamesh: once-per-floor gold bribe to skip a non-boss monster
+        for _arm in pl.armor_slots:
+            if _arm and getattr(_arm, 'gold_offering', False):
+                _used = bool(getattr(pl, '_gold_offering_used_this_floor', False))
+                powers.append(('armor_gold_offering', {
+                    'label': 'Gilgamesh\'s Bribe',
+                    'desc': 'Toss 1d100 gold at a visible non-boss monster. It skips its next turn. Once per floor.',
+                    'cooldown': 0,
+                    'uses': 0 if _used else 1,
+                }, 0 if _used else 1, 0))
+                break
+
+        # ----- Engine wave 6: charged accessories (Lyre of Orpheus, Hand of Glory) -----
+        # Equipped + use_charged: True + charges > 0 → expose in power menu.
+        for _acc in pl.equipped_accessories:
+            if getattr(_acc, 'use_charged', False) and int(getattr(_acc, 'charges', 0) or 0) > 0:
+                _aid = getattr(_acc, 'id', '')
+                if _aid == 'lyre_of_orpheus':
+                    _label = 'Play the Lyre'
+                    _desc = 'Charm one visible enemy for 10 turns. Consumes 1 charge.'
+                elif _aid == 'hand_of_glory':
+                    _label = 'Light the Hand of Glory'
+                    _desc = 'Paralyze one visible enemy for 4 turns. Consumes 1 charge.'
+                else:
+                    _label = getattr(_acc, 'name', _aid) or _aid
+                    _desc = f'Use a charge ({_acc.charges}/{_acc.max_charges} left).'
+                powers.append((f'acc_charge_{_aid}', {
+                    'label': f'{_label} ({_acc.charges}/{_acc.max_charges})',
+                    'desc': _desc,
+                    'cooldown': 0,
+                    'uses': int(_acc.charges),
+                }, int(_acc.charges), 0))
+
         if not powers:
             self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
             return
@@ -987,6 +1034,14 @@ class MenuMixin:
         # quiz; chain depth feeds tier_effects in hero_specials.resolve_active_special.
         if pid.startswith('hero_'):
             return self._activate_hero_special(pid)
+
+        # ----- Engine wave 6: armor-granted + accessory-charge branches -----
+        if pid == 'armor_seven_league_step':
+            return self._activate_seven_league_step()
+        if pid == 'armor_gold_offering':
+            return self._activate_gold_offering()
+        if pid.startswith('acc_charge_'):
+            return self._activate_accessory_charge(pid[len('acc_charge_'):])
 
         pdef = _ACTIVE_POWER_DEFS.get(pid, {})
         label = pdef.get('label', pid)
@@ -1331,6 +1386,144 @@ class MenuMixin:
             base_seconds=pl.get_quiz_timer('ai'),
         )
         return True   # defer turn advance until on_complete
+
+    # ------------------------------------------------------------------
+    # Engine wave 6: armor activated abilities + accessory charges
+    # ------------------------------------------------------------------
+
+    def _activate_seven_league_step(self) -> bool:
+        """Stride 7 tiles in the player's facing direction. Once per floor.
+
+        Stops at the first wall, edge, or monster. Each tile costs 0 turns
+        (the boot's lore: "each step covers ground that would take mortals three").
+        """
+        pl = self.player
+        if getattr(pl, '_seven_league_used_this_floor', False):
+            self.add_message("Seven-League Step is spent for this floor.", 'warning')
+            return False
+        dx = int(getattr(pl, '_facing_dx', 0) or 0)
+        dy = int(getattr(pl, '_facing_dy', 0) or 0)
+        if dx == 0 and dy == 0:
+            self.add_message(
+                "Face a direction first (move once), then try Seven-League Step.",
+                'warning')
+            return False
+        steps = 0
+        last_x, last_y = pl.x, pl.y
+        for _ in range(7):
+            nx, ny = last_x + dx, last_y + dy
+            if not self.dungeon.in_bounds(nx, ny):
+                break
+            if not self.dungeon.is_walkable(nx, ny):
+                break
+            if monster_at_tile(self.monsters, nx, ny) is not None:
+                break
+            last_x, last_y = nx, ny
+            steps += 1
+        if steps == 0:
+            self.add_message("Seven-League Step blocked — nothing to stride into.",
+                             'warning')
+            return False
+        pl.x, pl.y = last_x, last_y
+        pl._seven_league_used_this_floor = True
+        self._refresh_fov()
+        self.add_message(
+            f"You stride {steps} tiles in a single bound. The boots are quiet now.",
+            'success')
+        self._notify_stairs(last_x, last_y)
+        self._notify_ground(last_x, last_y)
+        return False  # don't defer; we already moved
+
+    def _activate_gold_offering(self) -> bool:
+        """Pay 1d100 gold to make a visible non-boss INT-5+ monster skip its next turn.
+
+        Lore: Gilgamesh was a king first — the bribe-mechanic captures that.
+        Picks the closest qualifying visible monster automatically.
+        """
+        import random as _r
+        pl = self.player
+        if getattr(pl, '_gold_offering_used_this_floor', False):
+            self.add_message("Gilgamesh's Bribe is spent for this floor.", 'warning')
+            return False
+        # Find closest visible, non-boss, INT-5+ monster
+        candidates = []
+        for m in self.monsters:
+            if not getattr(m, 'alive', False):
+                continue
+            if getattr(m, 'is_boss', False):
+                continue
+            if int(getattr(m, 'intelligence', 0)) < 5:
+                continue
+            if (m.x, m.y) not in self.visible:
+                continue
+            d = abs(m.x - pl.x) + abs(m.y - pl.y)
+            candidates.append((d, m))
+        if not candidates:
+            self.add_message(
+                "No bribeable mortals in sight — only dumb beasts or kings.",
+                'warning')
+            return False
+        candidates.sort(key=lambda t: t[0])
+        target = candidates[0][1]
+        cost = _r.randint(1, 100)
+        if pl.gold < cost:
+            self.add_message(
+                f"You need {cost} gold to bribe the {target.name}. You have {pl.gold}.",
+                'warning')
+            return False
+        pl.gold -= cost
+        target.add_effect('paralyzed', 1)
+        pl._gold_offering_used_this_floor = True
+        self.add_message(
+            f"You toss {cost} gold at the {target.name}'s feet. "
+            "The {tname} bows and steps aside.".format(tname=target.name),
+            'success')
+        return False
+
+    def _activate_accessory_charge(self, acc_id: str) -> bool:
+        """Consume one charge of an equipped charged accessory."""
+        import random as _r
+        pl = self.player
+        # Find the accessory
+        acc = None
+        for _a in pl.equipped_accessories:
+            if getattr(_a, 'id', '') == acc_id and \
+                    getattr(_a, 'use_charged', False):
+                acc = _a
+                break
+        if acc is None or int(getattr(acc, 'charges', 0) or 0) <= 0:
+            self.add_message("That charge is gone.", 'warning')
+            return False
+        # Pick a visible target
+        targets = [m for m in self.monsters
+                   if m.alive and (m.x, m.y) in self.visible]
+        if not targets:
+            self.add_message(
+                "Nothing in sight to use the charge on.", 'warning')
+            return False
+        # Closest target wins
+        targets.sort(key=lambda t: abs(t.x - pl.x) + abs(t.y - pl.y))
+        target = targets[0]
+        if acc_id == 'lyre_of_orpheus':
+            # Charm: pacified for 10 turns (using paralyzed as charm proxy)
+            target.add_effect('paralyzed', 10)
+            self.add_message(
+                f"You play Orpheus's lyre. The {target.name} is enchanted.",
+                'success')
+        elif acc_id == 'hand_of_glory':
+            target.add_effect('paralyzed', 4)
+            self.add_message(
+                f"The candle of the Hand of Glory flares. The {target.name} freezes.",
+                'success')
+        else:
+            # Generic charge — sleep target 5 turns
+            target.add_effect('sleeping', 5)
+            self.add_message(
+                f"A charge of the {getattr(acc, 'name', acc_id)} flows out. "
+                f"The {target.name} sleeps.",
+                'info')
+        acc.charges -= 1
+        return False  # advance turn
 
     # ------------------------------------------------------------------
     # Pet menu  (Shift+P) — roster + actions for each companion

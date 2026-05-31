@@ -763,6 +763,18 @@ class Player:
         shld = getattr(self, 'shield', None)
         if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
             base += shld.quiz_timer_bonus
+        # Ring of Pythia (identify_timer_bonus): +N seconds on philosophy quizzes.
+        # Guard for partially-constructed Player instances used in unit tests.
+        if hasattr(self, 'amulet_slot') and hasattr(self, 'accessory_slots'):
+            for acc in self.equipped_accessories:
+                _ib = int(getattr(acc, 'identify_timer_bonus', 0) or 0)
+                if _ib > 0 and subject == 'philosophy':
+                    base += _ib
+        # Torque of Lugh / Hamsa Hand (rotating_subject_chain_cap): if the
+        # rotating-blessed subject this floor matches, +3 seconds. Set on
+        # floor entry in main._change_level.
+        if getattr(self, '_rotating_chain_subject', None) == subject:
+            base += 3
         return base
 
     def get_class_mastery_regen_bonus(self) -> int:
@@ -1049,6 +1061,16 @@ class Player:
 
     def _apply_equip(self, item):
         from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
+        # Great Helm of Galahad (purity): when equipped, no newly-equipped item
+        # can carry a curse. Lore: "the Grail works through irony."
+        try:
+            from armor_procs import player_has_armor_proc
+            if player_has_armor_proc(self, 'purity') and \
+                    getattr(item, 'buc', '') == 'cursed':
+                item.buc = 'uncursed'
+                item.buc_known = True
+        except ImportError:
+            pass
         if isinstance(item, Weapon):
             is_ranged = getattr(item, 'requires_ammo', None) is not None
             if is_ranged:

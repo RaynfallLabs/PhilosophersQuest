@@ -27,17 +27,32 @@ def save_bones(player_name: str, dungeon_level: int, defeat_reason: str,
                player, player_gold: int):
     """Save a bones file when the player dies.  Keeps at most _MAX_BONES files."""
     equipped = player.get_equipped_items()
+    # Kilt of the Pharaoh (royal_burial): preserve ONE possession on death.
+    # Mark the first equipped item as 'preserved'; load_bones-side spawning
+    # leaves preserved items uncursed.
+    has_royal_burial = any(
+        getattr(it, 'royal_burial', False)
+        for it in (equipped.values() if isinstance(equipped, dict) else [])
+        if it is not None
+    )
     # Collect up to 5 best equipped items (non-None)
     gear = []
+    preserved_marked = False
     for slot, item in equipped.items():
         if item is None:
             continue
-        gear.append({
+        entry = {
             'id': getattr(item, 'id', 'unknown'),
             'name': getattr(item, 'name', 'unknown item'),
             'item_class': getattr(item, 'item_class', 'misc'),
             'slot': slot,
-        })
+        }
+        # Preserve the first non-kilt item (so the kilt itself doesn't always win).
+        if has_royal_burial and not preserved_marked and \
+                getattr(item, 'id', '') != 'kilt_of_the_pharaoh':
+            entry['preserved'] = True
+            preserved_marked = True
+        gear.append(entry)
         if len(gear) >= 5:
             break
 
@@ -186,8 +201,13 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
             continue
 
         item = copy.copy(template)
-        item.buc = 'cursed'
-        item.buc_known = False
+        # Royal Burial (Kilt of the Pharaoh): preserved items stay uncursed.
+        if gear_entry.get('preserved'):
+            item.buc = 'uncursed'
+            item.buc_known = True  # the inscription is visible — "preserved by the Pharaoh"
+        else:
+            item.buc = 'cursed'
+            item.buc_known = False
 
         # Place on a free tile
         while tile_idx < len(tiles):

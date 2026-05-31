@@ -3287,7 +3287,10 @@
       "desc": "The Dragonslayer's Ring carries a guildhall's worth of dragon-blood — STR rises by 1 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "monster_tag_chain_bonus": {
+      "dragon": 1
+    }
   },
   "shadow_walker_ring": {
     "name": "Shadow Walker's Ring",
@@ -3927,7 +3930,8 @@
       "desc": "The Ring of Gyges lets the just and unjust act unseen — DEX rises by 2 permanently."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "gyges_invisible_attack_karma": true
   },
   "ring_of_the_nibelung": {
     "name": "Ring of the Nibelung",
@@ -4090,7 +4094,8 @@
       },
       "scope": "item",
       "desc": "Luned's ring saved Owain at the portcullis — DEX rises by 2 permanently."
-    }
+    },
+    "auto_invisible_at_low_hp": true
   },
   "brisingamen": {
     "name": "Brisingamen",
@@ -4295,7 +4300,12 @@
       },
       "scope": "item",
       "desc": "The Hand of Fatima's painted eye deflects the evil eye — CON rises by 1 permanently."
-    }
+    },
+    "rotating_subject_chain_cap": [
+      "theology",
+      "history",
+      "grammar"
+    ]
   },
   "ouroboros_pendant": {
     "name": "Ouroboros",
@@ -4702,7 +4712,19 @@
       },
       "scope": "item",
       "desc": "Lugh of the Long Arm was the god of every skill at once — STR rises by 2 permanently."
-    }
+    },
+    "rotating_subject_chain_cap": [
+      "math",
+      "geography",
+      "history",
+      "animal",
+      "cooking",
+      "science",
+      "philosophy",
+      "grammar",
+      "economics",
+      "theology"
+    ]
   },
   "pectoral_of_amun": {
     "name": "Pectoral of Amun",
@@ -5022,7 +5044,8 @@
       },
       "scope": "item",
       "desc": "The Pythia spoke for Apollo over the chasm — PER rises by 2 permanently."
-    }
+    },
+    "identify_timer_bonus": 2
   },
   "anklet_of_atalanta": {
     "name": "Anklet of Atalanta",
@@ -5403,7 +5426,8 @@
       },
       "scope": "item",
       "desc": "Hypatia was the foremost mathematician of her age — INT rises by 2 permanently."
-    }
+    },
+    "protected_when_surrounded": true
   },
   "ring_of_thunder": {
     "name": "Ring of Thunder",
@@ -6423,7 +6447,10 @@
       "desc": "Orpheus's lyre paused rivers and charmed Cerberus — buffs from it last 10 turns longer."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "use_charged": true,
+    "charges": 3,
+    "max_charges": 3
   },
   "tablet_of_gilgamesh": {
     "name": "Tablet of Gilgamesh",
@@ -6970,7 +6997,10 @@
       "value": 1,
       "desc": "A fourth wax-tipped finger rises from the palm. +1 paralyze charge per Hand of Glory.",
       "scope": "item"
-    }
+    },
+    "use_charged": true,
+    "charges": 3,
+    "max_charges": 3
   },
   "ring_protection_iron": {
     "name": "ring of iron protection",

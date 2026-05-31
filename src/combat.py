@@ -687,6 +687,25 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if getattr(player, '_et_tu_target', None) == id(monster):
             damage = int(damage * 1.50)
 
+        # Hippolyta girdle (amazon_charge): if armed (3+ straight-line moves),
+        # next melee +50%. Consumed on hit.
+        if getattr(player, '_amazon_charge_armed', False) and not ammo:
+            damage = int(damage * 1.50)
+            player._amazon_charge_armed = False
+            player._straight_line_steps = 0
+
+        # Dragonslayer Ring (monster_tag_chain_bonus): a per-tag damage bonus
+        # against monsters carrying the matching tag.
+        try:
+            mtags = set(getattr(monster, 'tags', []) or [])
+            for _acc in getattr(player, 'equipped_accessories', ()) or ():
+                _tag_table = getattr(_acc, 'monster_tag_chain_bonus', {}) or {}
+                for _tag, _bonus in _tag_table.items():
+                    if _tag in mtags:
+                        damage = int(damage * (1.0 + float(_bonus) * 0.10))
+        except AttributeError:
+            pass
+
         # Bracers of Arjuna (gita_focus): first ranged attack per floor crits.
         if ammo:
             try:
@@ -986,17 +1005,27 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Soul Reaver (engine wave 4): growth_on_innocent_kill. Killing a
         # non-hostile NPC (hostile=False / friendly tag / npc tag) marks
         # the next hit for auto-crit. The blade is fed by innocence.
+        _mon_tags_inn = set(getattr(monster, 'tags', []))
+        _is_innocent = (
+            not getattr(monster, 'hostile', True)
+            or 'npc' in _mon_tags_inn
+            or 'friendly' in _mon_tags_inn
+            or 'civilian' in _mon_tags_inn
+        )
         if (weapon and getattr(weapon, 'growth_on_innocent_kill', False)
-                and monster.is_dead()):
-            _mon_tags = set(getattr(monster, 'tags', []))
-            _is_innocent = (
-                not getattr(monster, 'hostile', True)
-                or 'npc' in _mon_tags
-                or 'friendly' in _mon_tags
-                or 'civilian' in _mon_tags
-            )
-            if _is_innocent:
-                player._next_hit_auto_crit = True
+                and monster.is_dead() and _is_innocent):
+            player._next_hit_auto_crit = True
+
+        # Ring of Gyges (gyges_invisible_attack_karma): attacking an NPC
+        # while invisible costs -2 karma. The just-man-when-unseen test.
+        if _is_innocent and getattr(player, 'has_effect', None) and player.has_effect('invisible'):
+            for _acc in getattr(player, 'equipped_accessories', ()) or ():
+                if getattr(_acc, 'gyges_invisible_attack_karma', False):
+                    _g = getattr(player, '_combat_game_ref', None)
+                    if _g is not None:
+                        cur_k = int(getattr(_g, 'karma', 0) or 0)
+                        _g.karma = max(-10, cur_k - 2)
+                    break
 
         # Echidna's Fang (engine wave 4): random_status_from_pool. On hit,
         # roll the chance and apply a random status from the pool.

@@ -809,6 +809,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._et_tu_target = None     # Caesar lorica marks fresh per floor
         self.player._riastrad_hits = 0       # Cu Chulainn bracers reset
         self.player._monkey_king_counter = 0  # Wukong cloak dodge timer
+        self.player._seven_league_used_this_floor = False  # 7-League boots dash
+        self.player._gold_offering_used_this_floor = False  # Gilgamesh bribe
+        self.player._eluned_auto_invis_used = False  # Ring of Eluned
+        self.player._hypatia_protected_used = False  # Ring of Hypatia
+        # Torque of Lugh / Hamsa Hand: rotating-subject pick for this floor.
+        # Pool is the union of `rotating_subject_chain_cap` lists across
+        # equipped accessories. One subject is picked at random; it gets a
+        # +3s timer bonus on all its quizzes this floor.
+        _rotating_pool: set = set()
+        for _acc in self.player.equipped_accessories:
+            for _s in getattr(_acc, 'rotating_subject_chain_cap', []) or []:
+                _rotating_pool.add(_s)
+        if _rotating_pool:
+            self.player._rotating_chain_subject = random.choice(sorted(_rotating_pool))
+            self.add_message(
+                f"The rotating gift settles on {self.player._rotating_chain_subject} this floor.",
+                'info')
+        else:
+            self.player._rotating_chain_subject = None
         # Achilles' helm (ringing_intimidation): on floor entry, monsters in
         # the player's FOV save vs fear. Pure cosmetic-shaped fear pulse.
         try:
@@ -1825,10 +1844,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Track player facing direction (used by back_attack_weakness passive).
         if dx != 0 or dy != 0:
+            _prev_dx = int(getattr(self.player, '_facing_dx', 0) or 0)
+            _prev_dy = int(getattr(self.player, '_facing_dy', 0) or 0)
             self.player._facing_dx = dx
             self.player._facing_dy = dy
             # Reset the no-move counter used by unseen_when_still passive.
             self.player._chain_no_move_counter = 0
+            # Hippolyta girdle (amazon_charge): track consecutive straight-line steps.
+            # Same direction increments; any turn resets to 0.
+            if dx == _prev_dx and dy == _prev_dy:
+                self.player._straight_line_steps = int(
+                    getattr(self.player, '_straight_line_steps', 0)) + 1
+            else:
+                self.player._straight_line_steps = 1
 
         # Chain-equip passive: no_attack_of_opportunity (Sandals of Hermes
         # T3+) re-purposed as "free disengage". Capture which hostiles were
@@ -2837,6 +2865,100 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.player._weave_unweave_active = False
         except ImportError:
             self.player._weave_unweave_active = False
+
+        # ----- Engine wave 6: small per-item armor + accessory procs -----
+        # Orichalcum breastplate (atlantean_resonance): every N turns, gain 3t shielded.
+        try:
+            from armor_procs import proc_value as _pv_at
+            _ar_period = int(_pv_at(self.player, 'atlantean_resonance') or 0)
+            if _ar_period > 0 and self.turn_count % _ar_period == 0:
+                self.player.add_effect('shielded', 3)
+        except ImportError:
+            pass
+
+        # Ring of Hypatia (protected_when_surrounded): once/floor, 3+ adjacent
+        # enemies => protected 3 turns.
+        if not getattr(self.player, '_hypatia_protected_used', False):
+            for _acc in self.player.equipped_accessories:
+                if getattr(_acc, 'protected_when_surrounded', False):
+                    _adj = sum(1 for _mm in self.monsters
+                              if getattr(_mm, 'alive', False)
+                              and abs(_mm.x - self.player.x) <= 1
+                              and abs(_mm.y - self.player.y) <= 1
+                              and not (_mm.x == self.player.x and _mm.y == self.player.y))
+                    if _adj >= 3:
+                        self.player.add_effect('shielded', 3)
+                        self.player._hypatia_protected_used = True
+                        self.add_message(
+                            "Hypatia's ring shields you from the mob — shielded 3 turns!",
+                            'success')
+                        break
+
+        # Ring of Eluned (auto_invisible_at_low_hp): once/floor, drop below 25% HP -> invisible 10t.
+        if not getattr(self.player, '_eluned_auto_invis_used', False) and \
+                self.player.hp > 0 and self.player.max_hp > 0 and \
+                self.player.hp / self.player.max_hp < 0.25:
+            for _acc in self.player.equipped_accessories:
+                if getattr(_acc, 'auto_invisible_at_low_hp', False):
+                    self.player.add_effect('invisible', 10)
+                    self.player._eluned_auto_invis_used = True
+                    self.add_message(
+                        "Luned's ring veils you from sight — invisible 10 turns!",
+                        'success')
+                    break
+
+        # Hippolyta girdle (amazon_charge): track 3+ straight-line steps, set
+        # a "next melee +50%" flag. Counter advances in input.py on each move.
+        # Here we just expose the flag for combat to read.
+        try:
+            from armor_procs import player_has_armor_proc as _pap_ac
+            if _pap_ac(self.player, 'amazon_charge') and \
+                    int(getattr(self.player, '_straight_line_steps', 0)) >= 3:
+                self.player._amazon_charge_armed = True
+            # _straight_line_steps is reset by input.py whenever the player
+            # turns; if they keep marching the counter grows.
+        except ImportError:
+            pass
+
+        # ----- Rest-site mechanics: standing on altar tiles -----
+        # Linothorax phalanx_recovery: extra HP regen rate at rest.
+        # Achilles vambraces peace_at_the_forge: MP+SP regen at rest.
+        # Mulan cloak disguise_at_camp: once-per-altar-visit full restore.
+        try:
+            from dungeon import ALTAR
+            _on_altar_now = (
+                self.dungeon.in_bounds(self.player.x, self.player.y)
+                and self.dungeon.tiles[self.player.y][self.player.x] == ALTAR
+            )
+        except (ImportError, IndexError):
+            _on_altar_now = False
+        _was_on_altar = bool(getattr(self.player, '_was_on_altar', False))
+        self.player._was_on_altar = _on_altar_now
+
+        if _on_altar_now:
+            try:
+                from armor_procs import proc_value, player_has_armor_proc as _pap_r
+                # phalanx_recovery: +N HP regen each turn at altar
+                _pr = int(proc_value(self.player, 'phalanx_recovery') or 0)
+                if _pr > 0 and self.player.hp < self.player.max_hp:
+                    self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
+                # peace_at_the_forge: +N MP and SP each turn at altar
+                _pf = int(proc_value(self.player, 'peace_at_the_forge') or 0)
+                if _pf > 0:
+                    if self.player.mp < self.player.max_mp:
+                        self.player.mp = min(self.player.max_mp, self.player.mp + _pf)
+                    if self.player.sp < self.player.max_sp:
+                        self.player.sp = min(self.player.max_sp, self.player.sp + _pf)
+                # disguise_at_camp: full restore once per altar visit
+                if _pap_r(self.player, 'disguise_at_camp') and not _was_on_altar:
+                    self.player.hp = self.player.max_hp
+                    self.player.mp = self.player.max_mp
+                    self.player.sp = self.player.max_sp
+                    self.add_message(
+                        "Mulan's cloak — you return home to yourself, fully restored.",
+                        'success')
+            except ImportError:
+                pass
 
         # Haste: player moves twice as fast as monsters. Every other call
         # while hasted, skip the world tick (monsters/pets/wander spawns)
