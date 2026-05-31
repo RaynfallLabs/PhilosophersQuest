@@ -75,7 +75,8 @@
       "scope": "item",
       "desc": "Wounds the Soul Reaver inflicts bleed for an extra 5 turns."
     },
-    "design_notes": "Signature chain: finesse opener; the blade hesitates on the first cut (0.2x) and only commits once it tastes blood. Lifesteal makes the long ramp viable."
+    "design_notes": "Signature chain: finesse opener; the blade hesitates on the first cut (0.2x) and only commits once it tastes blood. Lifesteal makes the long ramp viable.",
+    "growth_on_innocent_kill": true
   },
   "dawnbreaker": {
     "name": "Dawnbreaker",
@@ -923,7 +924,8 @@
       "scope": "item",
       "desc": "Joyeuse changes colour thirty times a day — its dazzle confuses 25% of the foes it strikes for 3 turns."
     },
-    "design_notes": "Trickster/nimble archetype: thirty shifting colours dazzle the eye, quick to find the gap and sharp to exploit it."
+    "design_notes": "Trickster/nimble archetype: thirty shifting colours dazzle the eye, quick to find the gap and sharp to exploit it.",
+    "combat_start_aoe_confuse_chance": 0.5
   },
   "hrunting": {
     "name": "Hrunting",
@@ -996,7 +998,8 @@
       "scope": "item",
       "desc": "+4 flat damage when wielding Hrunting."
     },
-    "design_notes": "Ancient/stately archetype: the patient old blade keeps its measured tempo, until the one strike where it does not."
+    "design_notes": "Ancient/stately archetype: the patient old blade keeps its measured tempo, until the one strike where it does not.",
+    "one_shot_chain_save_per_floor": true
   },
   "skofnung": {
     "name": "Skofnung",
@@ -1071,7 +1074,8 @@
       "scope": "item",
       "desc": "Wounds dealt by Skofnung will only heal at the Skofnung Stone — every cut extends bleeding by 5 turns."
     },
-    "design_notes": "Bestial/feral archetype: twelve berserkers in the steel, each strike a different one finding its rhythm."
+    "design_notes": "Bestial/feral archetype: twelve berserkers in the steel, each strike a different one finding its rhythm.",
+    "chain_bonus_on_low_hp_window": 1
   },
   "gungnir": {
     "name": "Gungnir",
@@ -1302,7 +1306,8 @@
       "scope": "item",
       "desc": "The Spear of Longinus, blooded at the Crucifixion, deals +50% damage to demons."
     },
-    "design_notes": "Holy/radiant archetype: the relic warms as it works, radiance gathered with each righteous thrust."
+    "design_notes": "Holy/radiant archetype: the relic warms as it works, radiance gathered with each righteous thrust.",
+    "weep_heal_on_kill_scaled": 0.1
   },
   "mjolnir": {
     "name": "Mjolnir",
@@ -1384,7 +1389,12 @@
       "scope": "item",
       "desc": "Mjolnir stuns the target for 2 turns on 25% of hits."
     },
-    "design_notes": "King's blow archetype: every blow of Thor's hammer lands like the first, no warm-up to giant-slaying."
+    "design_notes": "King's blow archetype: every blow of Thor's hammer lands like the first, no warm-up to giant-slaying.",
+    "chain_lightning_at_chain_n": {
+      "from_chain": 6,
+      "splash_pct": 0.5,
+      "max_targets": 1
+    }
   },
   "sharur": {
     "name": "Sharur",
@@ -1461,7 +1471,8 @@
       "scope": "item",
       "desc": "Sharur's strikes scramble enemy minds — 30% of its hits confuse the target for 3 turns."
     },
-    "design_notes": "Trickster/nimble archetype: the talking mace reads the field, quick adapt to where the enemy is not looking."
+    "design_notes": "Trickster/nimble archetype: the talking mace reads the field, quick adapt to where the enemy is not looking.",
+    "floor_start_reveal_chance": 1.0
   },
   "ruyi_jingu_bang": {
     "name": "Ruyi Jingu Bang",
@@ -1533,7 +1544,11 @@
       "scope": "item",
       "desc": "The Ruyi Jingu Bang weighs 17,550 pounds and its reach is unmatched — every blow lands with 4 more crushing weight."
     },
-    "design_notes": "Signature chain: the As-You-Will Cudgel -- starts modest, then expands to a climactic spike at chain-5 (4.0x). Sun Wukong's staff grows with intent."
+    "design_notes": "Signature chain: the As-You-Will Cudgel -- starts modest, then expands to a climactic spike at chain-5 (4.0x). Sun Wukong's staff grows with intent.",
+    "chain_modulated_reach": {
+      "4": 4,
+      "7": 5
+    }
   },
   "gandiva": {
     "name": "Gandiva",
@@ -1607,7 +1622,11 @@
       "scope": "item",
       "desc": "Gandiva's hundred strings hum in sequence — Arjuna's bow adds 0.25 to every chain multiplier."
     },
-    "design_notes": "Brute/crushing archetype: a hundred strings sing at once, no shot is half-drawn on Arjuna's bow."
+    "design_notes": "Brute/crushing archetype: a hundred strings sing at once, no shot is half-drawn on Arjuna's bow.",
+    "multi_arrow_at_chain_5": {
+      "targets": 3,
+      "damage_per": 0.5
+    }
   },
   "fail_not": {
     "name": "Fail-not",
@@ -1678,7 +1697,8 @@
       "scope": "item",
       "desc": "Fail-not's promise holds — Tristan's bow auto-crits on the first arrow of every chain."
     },
-    "design_notes": "Sniper/precise archetype: the bow waits for the dutiful arrow, patience then a single inevitable strike."
+    "design_notes": "Sniper/precise archetype: the bow waits for the dutiful arrow, patience then a single inevitable strike.",
+    "cannot_miss_before_player_takes_damage": true
   },
   "kusanagi": {
     "name": "Kusanagi-no-Tsurugi",
@@ -1756,7 +1776,8 @@
       "scope": "item",
       "desc": "Kusanagi turns the wind against your enemies — 25% of its hits slow the target for 3 turns."
     },
-    "design_notes": "Trickster/nimble archetype: cuts the grass to turn the wind, quick reads then a sharp redirected peak."
+    "design_notes": "Trickster/nimble archetype: cuts the grass to turn the wind, quick reads then a sharp redirected peak.",
+    "surrounded_proc_bonus": true
   },
   "zulfiqar": {
     "name": "Zulfiqar",
@@ -1834,7 +1855,11 @@
       "scope": "item",
       "desc": "Zulfiqar's bifurcated tip takes two lives with one thrust — every chain multiplier rises by 0.30."
     },
-    "design_notes": "King's blow archetype: two lives with one thrust, every stroke is the champion's declaration."
+    "design_notes": "King's blow archetype: two lives with one thrust, every stroke is the champion's declaration.",
+    "every_hit_secondary_target": {
+      "splash_pct": 0.5,
+      "range_tiles": 1
+    }
   },
   "harpe": {
     "name": "Harpe",
@@ -1912,7 +1937,12 @@
       "scope": "item",
       "desc": "The Harpe separated Medusa from her head — it deals +40% damage to aberrations."
     },
-    "design_notes": "Trickster/nimble archetype: Hermes' gift, quick footwork then a single decisive separation."
+    "design_notes": "Trickster/nimble archetype: Hermes' gift, quick footwork then a single decisive separation.",
+    "skip_chain_warmup_vs_tag": [
+      "gaze",
+      "aberration",
+      "petrification"
+    ]
   },
   "trident_of_poseidon": {
     "name": "Trident of Poseidon",
@@ -2137,7 +2167,8 @@
       "scope": "item",
       "desc": "Mistilteinn slips past every protection — the Mistletoe Sword adds 5 raw damage to every hit."
     },
-    "design_notes": "Cursed-blade archetype: the one thing nobody guarded against, patient until it finds the gap and then ruin."
+    "design_notes": "Cursed-blade archetype: the one thing nobody guarded against, patient until it finds the gap and then ruin.",
+    "damage_double_vs_resistant_at_max": true
   },
   "curtana": {
     "name": "Curtana",
@@ -2212,7 +2243,9 @@
       "scope": "item",
       "desc": "Curtana's blunt tip teaches restraint — the Sword of Mercy grants a steady 0.15 chain bonus that never overreaches."
     },
-    "design_notes": "King's blow archetype: mercy is the lesser blade, royal weight in every stroke but the peak stays its hand."
+    "design_notes": "King's blow archetype: mercy is the lesser blade, royal weight in every stroke but the peak stays its hand.",
+    "spare_kill_chance": 0.25,
+    "spare_kill_max_hp_per_floor": 5
   },
   "parashu": {
     "name": "Parashu",
@@ -2290,7 +2323,10 @@
       "scope": "item",
       "desc": "Parashurama's axe exterminated the Kshatriyas twenty-one times — Parashu deals +40% damage to humanoids."
     },
-    "design_notes": "Brute/crushing archetype: ten thousand years of penance forged into one axe, heavy from the first arc."
+    "design_notes": "Brute/crushing archetype: ten thousand years of penance forged into one axe, heavy from the first arc.",
+    "chain_no_reset_on_tag": [
+      "humanoid"
+    ]
   },
   "labrys": {
     "name": "Labrys",
@@ -2444,7 +2480,8 @@
       "scope": "item",
       "desc": "Chandrahas was Shiva's gift, intolerant of wickedness — it deals +35% damage to evil-aligned foes."
     },
-    "design_notes": "Cursed-blade archetype: Shiva's gift bides its time, the laughing peak comes only when the price is paid."
+    "design_notes": "Cursed-blade archetype: Shiva's gift bides its time, the laughing peak comes only when the price is paid.",
+    "karma_disappear_proc": 0.05
   },
   "laevateinn": {
     "name": "Laevateinn",
@@ -2520,7 +2557,11 @@
       "scope": "item",
       "desc": "Laevateinn was cut to kill the rooster of Ragnarok — it adds 5 fiery damage to every blow."
     },
-    "design_notes": "Cursed-blade archetype: Loki's wand at Hel's gate, slow gathering of doom then a ragnarok-grade peak."
+    "design_notes": "Cursed-blade archetype: Loki's wand at Hel's gate, slow gathering of doom then a ragnarok-grade peak.",
+    "boss_doom_dot_at_chain_5": {
+      "pct_max_hp_per_turn": 0.05,
+      "duration": 30
+    }
   },
   "thyrsus": {
     "name": "Thyrsus of Dionysus",
@@ -2829,7 +2870,8 @@
       "scope": "item",
       "desc": "The Sudarshana Chakra spins eternally — Vishnu's discus adds 0.35 to every chain multiplier."
     },
-    "design_notes": "King's blow archetype: Vishnu's discus spins from the start, every revolution is a god's strike."
+    "design_notes": "King's blow archetype: Vishnu's discus spins from the start, every revolution is a god's strike.",
+    "return_to_hand_ward": true
   },
   "ridill": {
     "name": "Ridill",
@@ -3055,7 +3097,13 @@
       "scope": "item",
       "desc": "Solomon's emerald scimitar commands djinn and shatters the disobedient — Shamshir-e Zomorrodnegar deals +40% damage to demons."
     },
-    "design_notes": "Ancient/stately archetype: Solomon's administration in steel, measured and bureaucratic then decisive."
+    "design_notes": "Ancient/stately archetype: Solomon's administration in steel, measured and bureaucratic then decisive.",
+    "summon_after_kill_with_tag": {
+      "tag": "demon",
+      "duration_turns": 5,
+      "max_hp_pct": 0.4,
+      "chance": 0.5
+    }
   },
   "chrysaor": {
     "name": "Chrysaor",
@@ -3129,7 +3177,8 @@
       "scope": "item",
       "desc": "Chrysaor — the Golden Sword — was born of Medusa's blood and never tarnishes; it adds 4 damage to every strike."
     },
-    "design_notes": "King's blow archetype: the Golden Sword founded a western kingdom, every stroke carries Pegasus-born light."
+    "design_notes": "King's blow archetype: the Golden Sword founded a western kingdom, every stroke carries Pegasus-born light.",
+    "weapon_immune_to_enchant_loss": true
   },
   "caliburn": {
     "name": "Caliburn",
@@ -3352,7 +3401,8 @@
       "scope": "item",
       "desc": "The Whisperer is always already at the throat — it auto-crits on the first strike of every chain."
     },
-    "design_notes": "Cursed-blade archetype: the silent companion bides its time, patient until the moment of betrayal."
+    "design_notes": "Cursed-blade archetype: the silent companion bides its time, patient until the moment of betrayal.",
+    "equipped_sound_radius_modifier": -0.5
   },
   "naegling": {
     "name": "Naegling",
@@ -3714,7 +3764,17 @@
       "desc": "Echidna's Fang weeps the venoms of all her monstrous children — 25% of its hits poison for 3 turns."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "random_status_from_pool": {
+      "pool": [
+        "poisoned",
+        "confused",
+        "slowed",
+        "weakened"
+      ],
+      "chance": 0.4,
+      "duration": 5
+    }
   },
   "vulcans_brand": {
     "name": "Vulcan's Brand",
@@ -3951,7 +4011,8 @@
       "desc": "Prometheus gave mortals fire to keep the dark at bay - +30% damage to undead."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "equipped_light_aura": 3
   },
   "sword_of_damocles": {
     "name": "Sword of Damocles",
@@ -4029,7 +4090,9 @@
     },
     "design_notes": "Wild/chaotic archetype: each swing thins the horsehair, the blade lurches between safety and the falling sword.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "damoclean_counter_auto_kill": true,
+    "damoclean_counter_threshold": 10
   },
   "robin_hoods_longbow": {
     "name": "Robin Hood's Longbow",
@@ -4104,7 +4167,8 @@
     },
     "design_notes": "Sniper/precise archetype: the outlaw's patient breath, the last shot from cover splits the arrow before it.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "stealth_damage_bonus": 1.0
   },
   "achilles_spear": {
     "name": "Achilles's Spear",
@@ -4418,7 +4482,8 @@
     },
     "design_notes": "Brute/crushing archetype: a spear quenched in poison strikes hot from the cauldron, heavy from the first lunge.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "damage_bonus_vs_gaze": 2.0
   },
   "gae_dearg": {
     "name": "Gae Dearg",
@@ -4492,7 +4557,8 @@
     },
     "design_notes": "Cursed-blade archetype: the Red Spear offers no mercy, patient wound-finding then unhealing ruin.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "apply_heal_block_chance": 0.4
   },
   "net_of_hephaestus": {
     "name": "Net of Hephaestus",
@@ -4719,7 +4785,8 @@
       "desc": "Oathkeeper was carried in love and maintained in love — every chain multiplier rises by 0.20."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "adjacent_pet_damage_bonus": 0.25
   },
   "penitents_blade": {
     "name": "Penitent's Blade",
@@ -4789,7 +4856,8 @@
       "scope": "item",
       "desc": "The Penitent's Blade tries to balance its long ledger — it heals 25% of damage dealt back to the wielder."
     },
-    "id_level": 0
+    "id_level": 0,
+    "kill_count_karma_adjust": 100
   },
   "boomstick": {
     "name": "Boomstick",
@@ -5067,7 +5135,8 @@
     },
     "design_notes": "King's blow archetype: every stroke carries pharaoh's authority, even the first touch is rebuke.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "equipped_ally_aura_buff_str": 1
   },
   "mjolnir_shard": {
     "name": "Mjolnir Shard",
@@ -5370,7 +5439,17 @@
     },
     "design_notes": "Holy/radiant archetype: the shepherd's rod chosen by God, the radiance grows as the unholy is named.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_tier_status_table": {
+      "3": {
+        "status": "slowed",
+        "duration": 3
+      },
+      "5": {
+        "status": "blinded",
+        "duration": 2
+      }
+    }
   },
   "witcher_silver_blade": {
     "name": "Witcher's Silver Blade",
@@ -5508,7 +5587,8 @@
       "desc": "Zireael is a masterwork of gnomish steel — Swallow adds 0.25 to every chain multiplier."
     },
     "design_notes": "Signature chain: Swallow, the witcher's blade -- fast finesse opener (0.4x) with a sharp closing peak. Rewards the chain.",
-    "id_level": 0
+    "id_level": 0,
+    "extra_action_after_kill": true
   },
   "vel_of_murugan": {
     "name": "Vel of Murugan",
@@ -5597,7 +5677,13 @@
       "scope": "item",
       "desc": "The Vel of Murugan burns with righteous war — 25% of its hits set foes burning for 3 turns."
     },
-    "design_notes": "Holy/radiant archetype: Parvati's lance burns with righteous war, a steady building flame: peacock and rooster."
+    "design_notes": "Holy/radiant archetype: Parvati's lance burns with righteous war, a steady building flame: peacock and rooster.",
+    "summon_after_kill_with_tag": {
+      "tag": "demon",
+      "duration_turns": 5,
+      "max_hp_pct": 0.4,
+      "chance": 0.5
+    }
   },
   "khopesh_of_anubis": {
     "name": "Khopesh of Anubis",
@@ -5899,7 +5985,10 @@
       "desc": "Aiglos pierced even Sauron's hand — Gil-galad's spear adds 4 cold-edged damage to every thrust."
     },
     "design_notes": "Signature chain: Elendil's spear -- steady, reliable, no surprises. Every rung climbs by ~0.3x; the spear keeps its word.",
-    "wielder_fire_immunity": true
+    "wielder_fire_immunity": true,
+    "wielder_status_immunity": [
+      "fire"
+    ]
   },
   "akinakes_acrisius": {
     "name": "Akinakes of Acrisius",
@@ -6290,6 +6379,12 @@
       },
       "scope": "item",
       "desc": "The Sword of Cadmus opened the dragon at Thebes's spring — it deals +35% damage to dragons."
+    },
+    "summon_after_kill_with_tag": {
+      "tag": "dragon",
+      "duration_turns": 5,
+      "max_hp_pct": 0.4,
+      "chance": 1.0
     }
   },
   "glamdring": {
@@ -6675,7 +6770,10 @@
       },
       "scope": "item",
       "desc": "Meleager's boar-spear pinned the Calydonian sow — it deals +35% damage to beasts."
-    }
+    },
+    "reveal_tag_on_chain_5_kill": [
+      "beast"
+    ]
   },
   "pelops_sword": {
     "name": "Sword of Pelops",
@@ -7052,7 +7150,8 @@
       "value": 3,
       "scope": "item",
       "desc": "Cain's Club carries the first murder — every strike extends bleeding by 3 turns."
-    }
+    },
+    "equipped_monster_aggro_radius": 2
   },
   "wepwawet_mace": {
     "name": "Mace of Wepwawet",
