@@ -328,7 +328,7 @@
     "material": "adamantine",
     "ac_bonus": 7,
     "enchant_bonus": 0,
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.35,
@@ -392,7 +392,6 @@
     },
     "value": 9000,
     "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility — it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing.",
-    "onEquipStatus": "invisible",
     "max_enchant": 2,
     "peak_floor": 72,
     "spread": 12,
@@ -541,7 +540,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 0,
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.2,
@@ -1115,8 +1114,6 @@
     "enchant_bonus": 0,
     "unidentified_name": "eerily green plate armor",
     "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
-    "special_effect": "regen_2",
-    "onEquipStatus": "life_save",
     "floorSpawnWeight": {},
     "max_enchant": 3,
     "peak_floor": 0,
@@ -1228,7 +1225,7 @@
     "material": "silk",
     "ac_bonus": 2,
     "equip_threshold": 1,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.7
     },
@@ -1275,7 +1272,6 @@
     "enchant_bonus": 0,
     "unidentified_name": "a green forest cloak",
     "lore": "Woven from the living branches of the Erlking's forest, this cloak sharpens the senses of the wearer. Sound and sight carry further, and hidden things become easier to discern.",
-    "special_effect": "per_plus_2",
     "floorSpawnWeight": {},
     "max_enchant": 2,
     "peak_floor": 0,
@@ -1295,7 +1291,11 @@
       "desc": "The Erlking's Mantle sharpens every sense — it deflects 30% of psychic damage."
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "effects": {
+      "stat": "PER",
+      "amount": 2
+    }
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -1473,7 +1473,7 @@
     "ac_bonus": 2,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.2
     },
@@ -1688,7 +1688,7 @@
     "material": "bone",
     "ac_bonus": 1,
     "equip_threshold": 2,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "blunt": 0.15
     },
@@ -1729,7 +1729,7 @@
     "tier": 1,
     "material": "cloth",
     "ac_bonus": 1,
-    "equip_threshold": 3,
+    "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -1819,7 +1819,7 @@
     "material": "silk",
     "ac_bonus": 2,
     "equip_threshold": 2,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -2321,6 +2321,9 @@
       "value": 1,
       "scope": "item",
       "desc": "The Greaves of the Qin Guard are lacquered to resist water and weather — armor class improves by 1."
+    },
+    "resistances": {
+      "acid": 0.3
     }
   },
   "cloak_of_odin": {
@@ -2953,7 +2956,6 @@
     "floorSpawnWeight": {},
     "value": 15000,
     "lore": "Brahma is the creator, the first of the Trimurti. He has four faces because he looked in every direction at once when his consort Saraswati was created and could not stop looking. The crown he wears is unrelated to any earthly metal. The Mahabharata says he gave it to a king who returned it. The king's name is not recorded. Some gifts are too large to keep.",
-    "onEquipStatus": "regenerating",
     "max_enchant": 3,
     "peak_floor": 93,
     "spread": 8,

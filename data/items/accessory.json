@@ -4050,81 +4050,6 @@
     "identified": false,
     "id_level": 0
   },
-  "ring_of_solomon": {
-    "name": "Seal of Solomon",
-    "symbol": "=",
-    "color": [
-      120,
-      180,
-      120
-    ],
-    "weight": 0.1,
-    "min_level": 60,
-    "slot": "ring",
-    "equip_threshold": 4,
-    "quiz_tier": 5,
-    "effects": {
-      "stat": "WIS",
-      "amount": 3,
-      "status": "telepathy",
-      "duration": -1
-    },
-    "equip_chain_mode": "escalator_chain",
-    "tier_bonuses": {
-      "1": {
-        "stat_bonus_INT": 1,
-        "stat_bonus_WIS": 1
-      },
-      "2": {
-        "stat_bonus_INT": 2,
-        "stat_bonus_WIS": 2,
-        "passive_detect_magic": true
-      },
-      "3": {
-        "stat_bonus_INT": 2,
-        "stat_bonus_WIS": 3,
-        "passive_detect_magic": true,
-        "passive_pacify_demon_chance": 0.15
-      },
-      "4": {
-        "stat_bonus_INT": 3,
-        "stat_bonus_WIS": 3,
-        "passive_detect_magic": true,
-        "passive_pacify_demon_chance": 0.2,
-        "status_telepathy": 999,
-        "passive_weaken_summoned": true
-      },
-      "5": {
-        "stat_bonus_INT": 3,
-        "stat_bonus_WIS": 3,
-        "passive_detect_magic": true,
-        "passive_pacify_demon_chance": 0.2,
-        "status_telepathy": 999,
-        "passive_weaken_summoned": true,
-        "passive_solomonic_key": true
-      }
-    },
-    "unidentified_name": "a signet ring with a six-pointed star",
-    "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
-    },
-    "identified": false,
-    "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it.",
-    "peak_weight": 0.2,
-    "is_unique": true,
-    "spread": 24,
-    "peak_floor": 65,
-    "mastery_blessing": {
-      "kind": "accessory_stat_bonus",
-      "value": {
-        "stat": "WIS",
-        "amount": 2
-      },
-      "scope": "item",
-      "desc": "Solomon's ring let him command demons and djinn — WIS rises by 2 permanently."
-    }
-  },
   "ring_of_eluned": {
     "name": "Ring of Eluned",
     "symbol": "=",
@@ -4414,8 +4339,8 @@
     "effects": {
       "stat": "WIS",
       "amount": 4,
-      "second_stat": "CON",
-      "second_amount": -2
+      "stat2": "CON",
+      "amount2": -2
     },
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
@@ -7061,6 +6986,81 @@
     "tier": 1,
     "unidentified_name": "iron ring",
     "lore": "A simple ring of cold-forged iron, banded for stability. Plain in design but stout in protection."
+  },
+  "ring_of_solomons_authority": {
+    "name": "Solomon's Authority",
+    "symbol": "=",
+    "color": [
+      120,
+      180,
+      120
+    ],
+    "weight": 0.1,
+    "min_level": 60,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "WIS",
+      "amount": 3,
+      "status": "telepathy",
+      "duration": -1
+    },
+    "equip_chain_mode": "escalator_chain",
+    "tier_bonuses": {
+      "1": {
+        "stat_bonus_INT": 1,
+        "stat_bonus_WIS": 1
+      },
+      "2": {
+        "stat_bonus_INT": 2,
+        "stat_bonus_WIS": 2,
+        "passive_detect_magic": true
+      },
+      "3": {
+        "stat_bonus_INT": 2,
+        "stat_bonus_WIS": 3,
+        "passive_detect_magic": true,
+        "passive_pacify_demon_chance": 0.15
+      },
+      "4": {
+        "stat_bonus_INT": 3,
+        "stat_bonus_WIS": 3,
+        "passive_detect_magic": true,
+        "passive_pacify_demon_chance": 0.2,
+        "status_telepathy": 999,
+        "passive_weaken_summoned": true
+      },
+      "5": {
+        "stat_bonus_INT": 3,
+        "stat_bonus_WIS": 3,
+        "passive_detect_magic": true,
+        "passive_pacify_demon_chance": 0.2,
+        "status_telepathy": 999,
+        "passive_weaken_summoned": true,
+        "passive_solomonic_key": true
+      }
+    },
+    "unidentified_name": "a signet ring with a six-pointed star",
+    "floorSpawnWeight": {
+      "61-80": 1,
+      "81-100": 2
+    },
+    "identified": false,
+    "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it.",
+    "peak_weight": 0.2,
+    "is_unique": true,
+    "spread": 24,
+    "peak_floor": 65,
+    "mastery_blessing": {
+      "kind": "accessory_stat_bonus",
+      "value": {
+        "stat": "WIS",
+        "amount": 2
+      },
+      "scope": "item",
+      "desc": "Solomon's ring let him command demons and djinn — WIS rises by 2 permanently."
+    }
   },
   "amulet_of_hippolyta": {
     "name": "Girdle of Hippolyta",
