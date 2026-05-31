@@ -50,6 +50,26 @@ ENCHANT_CAP = {
 SPAWN_ENCHANT_CAP_ARMOR = 1
 
 
+def effective_enchant_cap(player, slot_name: str) -> int:
+    """ENCHANT_CAP lookup that respects Panoply of Hephaestus (divine_smithing).
+
+    Panoply raises the weapon cap by `divine_smithing` (1 by default). Engine
+    wave 5: the panoply at AC 8 was numerically mythic but mechanically generic.
+    The forge-god's cross-slot bonus is what makes it legendary.
+    """
+    cap = ENCHANT_CAP.get(slot_name, 1)
+    if player is None:
+        return cap
+    try:
+        from armor_procs import proc_value
+        bonus = int(proc_value(player, 'divine_smithing') or 0)
+        if bonus > 0 and slot_name == 'weapon':
+            cap += bonus
+    except ImportError:
+        pass
+    return cap
+
+
 class Item:
     # Item types where identical instances (same id) merge into a stack
     _STACKABLE_CLASSES: tuple = ()   # filled in after subclass definitions
@@ -489,6 +509,53 @@ class Armor(Item):
         self.invisibility_power: bool = bool(defn.get('invisibility_power', False))
         self.invisibility_duration: int = int(defn.get('invisibility_duration', 0))
         self.invisibility_cooldown: int = int(defn.get('invisibility_cooldown', 0))
+        # ------- Engine wave 5 (armor procs) -------
+        # AB band (early floors)
+        self.weave_and_unweave: bool = bool(defn.get('weave_and_unweave', False))     # Penelope
+        self.phalanx_recovery: int   = int(defn.get('phalanx_recovery', 0) or 0)       # Linothorax
+        self.water_tile_ac_bonus: int = int(defn.get('water_tile_ac_bonus', 0) or 0)   # Dilmun
+        self.water_tile_regen_bonus: int = int(defn.get('water_tile_regen_bonus', 0) or 0)
+        self.unskinnable: bool       = bool(defn.get('unskinnable', False))           # Nemean Lion / Hide
+        self.prophets_passing: bool  = bool(defn.get('prophets_passing', False))      # Elijah mantle
+        self.webbed_strike: bool     = bool(defn.get('webbed_strike', False))         # Arachne cloak
+        self.forest_hearing: int     = int(defn.get('forest_hearing', 0) or 0)        # Erlking mantle
+        self.story_thread: bool      = bool(defn.get('story_thread', False))          # Anansi cloak
+        self.monkey_king_dodge: int  = int(defn.get('monkey_king_dodge', 0) or 0)     # Sun Wukong cloak
+        self.grendel_grip: bool      = bool(defn.get('grendel_grip', False))          # Beowulf coif
+        self.gold_offering: bool     = bool(defn.get('gold_offering', False))         # Gilgamesh helm
+        self.bond_check: bool        = bool(defn.get('bond_check', False))            # Trainer's cap
+        self.bovine_fury: bool       = bool(defn.get('bovine_fury', False))           # Cow King horns
+        self.dodge_first_arrow_per_floor: bool = bool(defn.get('dodge_first_arrow_per_floor', False))
+        self.quest_humility: bool    = bool(defn.get('quest_humility', False))        # Perseus sandals
+        self.their_own_methods: float = float(defn.get('their_own_methods', 0.0) or 0.0)  # Theseus
+        self.royal_burial: bool      = bool(defn.get('royal_burial', False))          # Pharaoh kilt
+        self.riastrad_echo: bool     = bool(defn.get('riastrad_echo', False))         # Cu Chulainn bracers
+
+        # CD band (mid floors)
+        self.cannae_encirclement: bool = bool(defn.get('cannae_encirclement', False))  # Hannibal
+        self.last_stand_bonus: bool  = bool(defn.get('last_stand_bonus', False))      # Leonidas
+        self.et_tu_charge: bool      = bool(defn.get('et_tu_charge', False))          # Caesar lorica
+        self.guerrilla_terrain: bool = bool(defn.get('guerrilla_terrain', False))     # Wallace
+        self.disguise_at_camp: bool  = bool(defn.get('disguise_at_camp', False))      # Mulan
+        self.boundary_guardian: bool = bool(defn.get('boundary_guardian', False))     # Mars gauntlets
+        self.wild_friend: float      = float(defn.get('wild_friend', 0.0) or 0.0)     # Enkidu (pet HP mult)
+        self.gita_focus: bool        = bool(defn.get('gita_focus', False))            # Arjuna bracers
+        self.seven_league_step: bool = bool(defn.get('seven_league_step', False))     # Boots of Seven Leagues
+        self.descend_stairs_no_turn: bool = bool(defn.get('descend_stairs_no_turn', False))  # Hermes greaves
+        self.tremor_sense: int       = int(defn.get('tremor_sense', 0) or 0)          # Blindfold radius
+        self.peace_at_the_forge: int = int(defn.get('peace_at_the_forge', 0) or 0)    # Achilles vambraces
+        self.amazon_charge: bool     = bool(defn.get('amazon_charge', False))         # Hippolyta girdle
+
+        # EF band (deep floors)
+        self.caustic_blood: float    = float(defn.get('caustic_blood', 0.0) or 0.0)   # Hydra carapace
+        self.divine_smithing: int    = int(defn.get('divine_smithing', 0) or 0)       # Hephaestus panoply
+        self.maid_does_not_fall: bool = bool(defn.get('maid_does_not_fall', False))   # Joan breastplate
+        self.atlantean_resonance: int = int(defn.get('atlantean_resonance', 0) or 0)  # Orichalcum
+        self.descent_haste: int      = int(defn.get('descent_haste', 0) or 0)         # Yoshitsune
+        self.ringing_intimidation: int = int(defn.get('ringing_intimidation', 0) or 0)  # Achilles helm
+        self.purity: bool            = bool(defn.get('purity', False))                # Galahad helm
+        self.thors_step: float       = float(defn.get('thors_step', 0.0) or 0.0)      # Thor boots
+
         # True for named/legendary armors; controls spawn pool filtering.
         self.is_unique: bool         = bool(defn.get('is_unique', False))
         # Chain-equip fields (legendary uniques only). When equip_chain_mode is set

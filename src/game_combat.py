@@ -1865,6 +1865,96 @@ class CombatMixin:
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
 
+                # Anansi web cloak (story_thread): the first crit per floor that
+                # would deal >25% of max-HP is reduced to 1 damage. Threshold is
+                # a stand-in for "crit" since monsters don't tag their hits as crits.
+                try:
+                    from armor_procs import consume_floor_charge
+                    if dmg > 0 and self.player.max_hp > 0 and \
+                            dmg / max(1, self.player.max_hp) >= 0.25:
+                        if consume_floor_charge(self.player, 'story_thread'):
+                            # Reverse the damage spike by healing back to pre-hit HP - 1.
+                            self.player.hp = min(self.player.max_hp,
+                                                 self.player.hp + max(0, dmg - 1))
+                            self.add_message(
+                                "The thread of a thousand stories catches the blow — only a scratch!",
+                                'success')
+                            dmg = 1
+                except ImportError:
+                    pass
+
+                # Arachne silk cloak (webbed_strike): on melee hit, attacker is
+                # slowed for 3 turns.
+                if dmg > 0:
+                    try:
+                        from armor_procs import player_has_armor_proc
+                        if player_has_armor_proc(self.player, 'webbed_strike'):
+                            atks = getattr(m, 'attacks', []) or []
+                            _is_melee = atks and not any(
+                                w in (atks[0].get('name', '') or '').lower()
+                                for w in ('shoot', 'arrow', 'bolt', 'dart', 'spit',
+                                         'hurl', 'volley', 'ray', 'blast', 'breath',
+                                         'spike', 'gaze', 'song', 'wail'))
+                            if _is_melee and hasattr(m, 'add_effect'):
+                                m.add_effect('slowed', 3)
+                                self.add_message(
+                                    f"Arachne's silk drags the {m.name} — slowed!", 'info')
+                    except ImportError:
+                        pass
+
+                # Sandals of Theseus (their_own_methods): on melee hit, % chance
+                # to mirror one of the player's currently active statuses back
+                # at the attacker. Probability stored on the field.
+                if dmg > 0:
+                    try:
+                        from armor_procs import proc_value
+                        chance = float(proc_value(self.player, 'their_own_methods') or 0.0)
+                        if chance > 0 and random.random() < chance:
+                            from status_effects import DEBUFFS as _DEBUFFS
+                            _candidates = [eff for eff in self.player.status_effects.keys()
+                                          if eff in _DEBUFFS]
+                            if _candidates and hasattr(m, 'add_effect'):
+                                _eff = random.choice(_candidates)
+                                m.add_effect(_eff, 5)
+                                self.add_message(
+                                    f"Theseus's sandals turn the {m.name}'s tactic against it — {_eff.replace('_', ' ')}!",
+                                    'info')
+                    except ImportError:
+                        pass
+
+                # Carapace of the Hydra (caustic_blood): when the wearer takes
+                # poison damage, the attacker also gets poisoned. Reflects the
+                # "immune to its own venom" lore.
+                if dmg > 0:
+                    try:
+                        from armor_procs import proc_value
+                        _refl_chance = float(proc_value(self.player, 'caustic_blood') or 0.0)
+                        if _refl_chance > 0 and \
+                                'poison' in (getattr(m, 'damage_types', []) or
+                                             getattr(m, 'attack_types', []) or []):
+                            if random.random() < _refl_chance and hasattr(m, 'add_effect'):
+                                m.add_effect('poisoned', 4)
+                                self.add_message(
+                                    f"The Hydra carapace bleeds caustic ichor — the {m.name} is poisoned!",
+                                    'combat')
+                    except ImportError:
+                        pass
+
+                # Lorica Hamata of Caesar (et_tu_charge): the first attacker each
+                # combat is marked; player will deal +50% damage to that monster
+                # (consumed in combat.player_attack via _et_tu_target).
+                if dmg > 0:
+                    try:
+                        from armor_procs import player_has_armor_proc
+                        if player_has_armor_proc(self.player, 'et_tu_charge') and \
+                                getattr(self.player, '_et_tu_target', None) is None:
+                            self.player._et_tu_target = id(m)
+                            self.add_message(
+                                f"\"Et tu, {m.name}?\" — Caesar's lorica marks the first betrayer.",
+                                'info')
+                    except ImportError:
+                        pass
+
                 # Piercing collateral: damage monsters in the projectile path
                 _collateral = getattr(m, '_piercing_collateral', [])
                 if _collateral and dmg > 0:
@@ -1996,6 +2086,22 @@ class CombatMixin:
                             self.player._reassembly_regen_remaining = 10
                             self.add_message(
                                 "The Tyet of Isis reassembles you from death!", 'success')
+                    except ImportError:
+                        pass
+
+                # Breastplate of Joan (maid_does_not_fall): per-floor death save —
+                # first lethal hit each floor heals back to 1 HP. Joan fought
+                # wounded at Orléans, Patay, Reims; "could not protect against
+                # what God willed" but kept her standing through three campaigns.
+                if self.player.hp <= 0:
+                    try:
+                        from armor_procs import consume_floor_charge
+                        if consume_floor_charge(self.player, 'maid_does_not_fall'):
+                            self.player.hp = 1
+                            self.add_message(
+                                "BY COMMAND OF GOD — the Maid does not fall! You stand at 1 HP.",
+                                'success')
+                            _snd.play('player_healed')
                     except ImportError:
                         pass
 
@@ -2409,6 +2515,16 @@ class CombatMixin:
                     # Monster swipes at pet — use a fraction of its normal damage
                     from dice import roll as _dice_roll
                     pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
+                    # Leggings of Enkidu (wild_friend): pets take less damage
+                    # — "the wild man stands beside his friend." Mathematically
+                    # equivalent to a max-HP buff without touching the curve.
+                    try:
+                        from armor_procs import proc_value
+                        _wf = float(proc_value(self.player, 'wild_friend') or 0.0)
+                        if _wf > 0:
+                            pet_dmg = max(1, int(pet_dmg * (1.0 - _wf)))
+                    except ImportError:
+                        pass
                     pet.take_damage(pet_dmg)
                     if not pet.alive:
                         if getattr(pet, 'is_sketch', False):

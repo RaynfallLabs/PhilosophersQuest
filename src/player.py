@@ -631,7 +631,33 @@ class Player:
             stand_ac = int(getattr(self, '_stand_ac_bonus', 0))
         # Quarterstaff defensive_parry chain-5 effect: +2 AC for 2 turns
         parry_ac = 2 if self.status_effects.get('parry_armed', 0) > 0 else 0
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac - parry_ac
+        # ------ Engine wave 5: flat-armor AC procs ------
+        # Hannibal cuirass (cannae_encirclement): +2 AC when surrounded by 3+.
+        # Boundary guardian (Mars): +1 AC in a room near a door.
+        # Wallace brigandine (guerrilla_terrain): +2 AC in 1-tile-wide corridors.
+        # Scale of Dilmun (paradise_water): +water_tile_ac_bonus AC on water.
+        # The terrain caches (_armor_proc_adj_enemies, _armor_proc_near_door,
+        # _armor_proc_in_corridor, _armor_proc_on_water) are refreshed each turn
+        # in main._advance_turn so get_ac stays O(1).
+        try:
+            from armor_procs import player_has_armor_proc as _pap_ac, proc_value as _pv_ac
+        except ImportError:
+            _pap_ac = None
+            _pv_ac = None
+        armor_proc_ac = 0
+        if _pap_ac is not None:
+            if _pap_ac(self, 'cannae_encirclement') and \
+                    int(getattr(self, '_armor_proc_adj_enemies', 0)) >= 3:
+                armor_proc_ac += 2
+            if _pap_ac(self, 'boundary_guardian') and \
+                    getattr(self, '_armor_proc_near_door', False):
+                armor_proc_ac += 1
+            if _pap_ac(self, 'guerrilla_terrain') and \
+                    getattr(self, '_armor_proc_in_corridor', False):
+                armor_proc_ac += 2
+            if getattr(self, '_armor_proc_on_water', False):
+                armor_proc_ac += int(_pv_ac(self, 'water_tile_ac_bonus') or 0)
+        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac - parry_ac - armor_proc_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -1075,12 +1101,26 @@ class Player:
                 old_status = getattr(old, 'on_equip_status', '')
                 if old_status:
                     self.status_effects.pop(old_status, None)
+                # Mantle of Elijah (prophets_passing): unequip drops the +max_MP bonus.
+                if getattr(old, 'prophets_passing', False):
+                    _drop = int(getattr(old, '_prophets_mp_grant', 0) or 0)
+                    if _drop > 0:
+                        self.max_mp = max(0, self.max_mp - _drop)
+                        self.mp = min(self.mp, self.max_mp)
+                        old._prophets_mp_grant = 0
                 self.inventory.append(old)
             self.armor_slots[idx] = item
             # Grant new armor's on-equip status
             new_status = getattr(item, 'on_equip_status', '')
             if new_status:
                 self.add_effect(new_status, -1)
+            # Mantle of Elijah (prophets_passing): the "office passes" — +3 max MP
+            # while equipped. Lore: the wisdom of the prophet's school carries.
+            if getattr(item, 'prophets_passing', False):
+                _grant = 3
+                self.max_mp += _grant
+                self.mp = min(self.mp + _grant, self.max_mp)
+                item._prophets_mp_grant = _grant
         elif isinstance(item, Shield):
             if not self.can_equip_shield():
                 return

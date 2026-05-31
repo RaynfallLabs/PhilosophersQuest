@@ -798,6 +798,64 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # huginn_muninn, demon_command, etc.) reset on every floor change.
         from chain_passives import reset_per_floor_charges
         reset_per_floor_charges(self.player)
+        # Engine wave 5 — flat-armor per-floor charges (dodge_first_arrow,
+        # gita_focus, maid_does_not_fall, story_thread).
+        try:
+            from armor_procs import reset_per_floor_charges as _armor_reset
+            _armor_reset(self.player)
+        except ImportError:
+            pass
+        # Per-floor markers for armor procs that don't use the charge dict.
+        self.player._et_tu_target = None     # Caesar lorica marks fresh per floor
+        self.player._riastrad_hits = 0       # Cu Chulainn bracers reset
+        self.player._monkey_king_counter = 0  # Wukong cloak dodge timer
+        # Achilles' helm (ringing_intimidation): on floor entry, monsters in
+        # the player's FOV save vs fear. Pure cosmetic-shaped fear pulse.
+        try:
+            from armor_procs import proc_value as _pv_helm
+            _rng = int(_pv_helm(self.player, 'ringing_intimidation') or 0)
+            if _rng > 0:
+                for _mm in self.monsters:
+                    if not getattr(_mm, 'alive', False):
+                        continue
+                    if abs(_mm.x - self.player.x) <= _rng and \
+                            abs(_mm.y - self.player.y) <= _rng:
+                        if random.random() < 0.40 and hasattr(_mm, 'add_effect'):
+                            _mm.add_effect('feared', 4)
+                if _rng > 0:
+                    self.add_message(
+                        "Achilles' helm rings out — nearby foes flinch!", 'info')
+        except ImportError:
+            pass
+        # Haramaki of Yoshitsune (descent_haste): on descent, gain hasted for N turns.
+        if enter_from_top:
+            try:
+                from armor_procs import proc_value as _pv_desc
+                _dh = int(_pv_desc(self.player, 'descent_haste') or 0)
+                if _dh > 0:
+                    self.player.add_effect('hasted', _dh)
+                    self.add_message(
+                        "Tactical descent — Yoshitsune's haramaki blurs your steps!",
+                        'success')
+            except ImportError:
+                pass
+
+        # Trainer's Cap (bond_check): on floor entry, grant the FIRST pet +1 level.
+        # "I choose you" — the bond strengthens with each floor cleared.
+        try:
+            from armor_procs import player_has_armor_proc as _pap_bc
+            if _pap_bc(self.player, 'bond_check') and getattr(self, 'pets', None):
+                _first_pet = next((p for p in self.pets if getattr(p, 'alive', False)), None)
+                if _first_pet is not None and hasattr(_first_pet, 'gain_xp'):
+                    # Grant a level by feeding enough xp for one level-up.
+                    _xpn = _first_pet._xp_to_next() if hasattr(_first_pet, '_xp_to_next') else 100
+                    for _msg in _first_pet.gain_xp(_xpn):
+                        self.add_message(_msg, 'info')
+                    self.add_message(
+                        f"Trainer's Cap pulses — {_first_pet.name} grows stronger!",
+                        'success')
+        except (ImportError, AttributeError):
+            pass
         # Per-floor mechanic markers used by named passives (greater Aegis
         # gorgoneion, identify-free, etc.). Cheap to reset every time.
         self.player._gorgoneion_used_this_floor = False
@@ -1475,6 +1533,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             self.dungeon.explored.add((_tx, _ty))
         except ImportError:
             pass
+        # Erlking Mantle (forest_hearing): reveal monster positions within
+        # radius even through walls. The mantle "carries sound and sight."
+        # The monster tile becomes visible; the wider area stays dark.
+        # Blindfold (tremor_sense): same mechanic but for the wearer who
+        # has sight 0 — they "feel" enemies through the floor.
+        try:
+            from armor_procs import proc_value
+            _fh_r = int(proc_value(self.player, 'forest_hearing') or 0)
+            _ts_r = int(proc_value(self.player, 'tremor_sense') or 0)
+            _sense_r = max(_fh_r, _ts_r)
+            if _sense_r > 0:
+                _px, _py = self.player.x, self.player.y
+                for _mm in self.monsters:
+                    if not getattr(_mm, 'alive', False):
+                        continue
+                    if abs(_mm.x - _px) <= _sense_r and abs(_mm.y - _py) <= _sense_r:
+                        self.visible.add((_mm.x, _mm.y))
+        except ImportError:
+            pass
+
         # Palladium: reveal stairs through walls
         _has_palladium = any(getattr(i, 'id', '') == 'palladium' for i in self.player.inventory)
         if _has_palladium:
@@ -2647,6 +2725,119 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 break
         self.player._surrounded_ac_bonus = _surr_bonus
 
+        # ----- Engine wave 5: armor-proc terrain caches (per-turn) -----
+        # Used by player.get_ac() for cannae_encirclement / boundary_guardian /
+        # guerrilla_terrain / paradise_water. Also drives thors_step + the
+        # weave_and_unweave regen-boost flag below.
+        try:
+            from armor_procs import player_has_armor_proc as _pap_t
+            _has_cannae = _pap_t(self.player, 'cannae_encirclement')
+            _has_boundary = _pap_t(self.player, 'boundary_guardian')
+            _has_guerrilla = _pap_t(self.player, 'guerrilla_terrain')
+            _has_water = _pap_t(self.player, 'water_tile_ac_bonus') or \
+                _pap_t(self.player, 'water_tile_regen_bonus')
+            _has_thors = _pap_t(self.player, 'thors_step')
+        except ImportError:
+            _has_cannae = _has_boundary = _has_guerrilla = _has_water = _has_thors = False
+
+        if _has_cannae:
+            _adj = sum(1 for _mm in self.monsters
+                       if getattr(_mm, 'alive', False)
+                       and abs(_mm.x - self.player.x) <= 1
+                       and abs(_mm.y - self.player.y) <= 1
+                       and not (_mm.x == self.player.x and _mm.y == self.player.y))
+            self.player._armor_proc_adj_enemies = _adj
+        else:
+            self.player._armor_proc_adj_enemies = 0
+
+        if _has_guerrilla or _has_boundary:
+            # Tile-context detection. Count walkable neighbors at orthogonals.
+            _px, _py = self.player.x, self.player.y
+            _open_dirs = 0
+            for _dx, _dy in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+                _nx, _ny = _px + _dx, _py + _dy
+                if self.dungeon.in_bounds(_nx, _ny) and self.dungeon.is_walkable(_nx, _ny):
+                    _open_dirs += 1
+            # corridor: only 2 orthogonal walkable neighbors in a straight line.
+            self.player._armor_proc_in_corridor = (_open_dirs <= 2 and _has_guerrilla)
+
+            # near a door: any tile within 1 step that is a door.
+            from dungeon import DOOR, SECRET_DOOR
+            _near_door = False
+            for _dx in (-1, 0, 1):
+                for _dy in (-1, 0, 1):
+                    _nx, _ny = _px + _dx, _py + _dy
+                    if self.dungeon.in_bounds(_nx, _ny):
+                        _t = self.dungeon.tiles[_ny][_nx]
+                        if _t == DOOR or _t == SECRET_DOOR:
+                            _near_door = True
+                            break
+                if _near_door:
+                    break
+            self.player._armor_proc_near_door = _near_door and _has_boundary
+        else:
+            self.player._armor_proc_in_corridor = False
+            self.player._armor_proc_near_door = False
+
+        if _has_water:
+            try:
+                from dungeon import WATER as _W_TILE
+                _cur_t = self.dungeon.tiles[self.player.y][self.player.x]
+                self.player._armor_proc_on_water = (_cur_t == _W_TILE)
+            except (ImportError, IndexError):
+                self.player._armor_proc_on_water = False
+        else:
+            self.player._armor_proc_on_water = False
+
+        # Boots of Thor (thors_step): per-turn chance to deal 1d6 lightning to
+        # a random adjacent enemy. "Thor's working kit — the thunder came from
+        # the work." Fires on movement turns and on stationary turns alike;
+        # being adjacent to an enemy is the natural gate.
+        if _has_thors:
+            try:
+                from armor_procs import proc_value
+                _chance = float(proc_value(self.player, 'thors_step') or 0.0)
+                if _chance > 0 and random.random() < _chance:
+                    _adj_targets = [_mm for _mm in self.monsters
+                                    if getattr(_mm, 'alive', False)
+                                    and abs(_mm.x - self.player.x) <= 1
+                                    and abs(_mm.y - self.player.y) <= 1
+                                    and not (_mm.x == self.player.x and _mm.y == self.player.y)]
+                    if _adj_targets:
+                        _t = random.choice(_adj_targets)
+                        _dmg = random.randint(1, 6)
+                        _t.take_damage(_dmg, 'lightning')
+                        self.add_message(
+                            f"Boots of Thor — lightning arcs into the {_t.name} for {_dmg}!",
+                            'combat')
+                        if not _t.alive:
+                            self._on_monster_killed(_t)
+            except ImportError:
+                pass
+
+        # Paradise water bonus regen — applied when player stands on water.
+        if getattr(self.player, '_armor_proc_on_water', False):
+            try:
+                from armor_procs import proc_value
+                _wreg = int(proc_value(self.player, 'water_tile_regen_bonus') or 0)
+                if _wreg > 0 and self.player.hp < self.player.max_hp:
+                    self.player.hp = min(self.player.max_hp, self.player.hp + _wreg)
+            except ImportError:
+                pass
+
+        # Cloth of Penelope (weave_and_unweave): when below 25% HP, double the
+        # per-turn regen rate. Sets a status_effects flag the HP-regen tick reads.
+        try:
+            from armor_procs import player_has_armor_proc as _pap_w
+            if _pap_w(self.player, 'weave_and_unweave') and \
+                    self.player.hp > 0 and self.player.max_hp > 0 and \
+                    self.player.hp / self.player.max_hp < 0.25:
+                self.player._weave_unweave_active = True
+            else:
+                self.player._weave_unweave_active = False
+        except ImportError:
+            self.player._weave_unweave_active = False
+
         # Haste: player moves twice as fast as monsters. Every other call
         # while hasted, skip the world tick (monsters/pets/wander spawns)
         # so 2 player actions = 1 monster action. Player-side ticks
@@ -3269,6 +3460,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
         interval = max(10, 20 - max(0, self.player.CON - 12))
+        # Cloth of Penelope (weave_and_unweave): under 25% HP, regen ticks
+        # arrive twice as often. Set in _advance_turn.
+        if getattr(self.player, '_weave_unweave_active', False):
+            interval = max(5, interval // 2)
         if self.turn_count % interval == 0:
             base_regen = 1 + max(0, getattr(self.player, 'regen_bonus', 0))
             # class_acc_regen_bonus: equipped ring/amulet of regeneration

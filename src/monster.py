@@ -413,6 +413,30 @@ class Monster:
         if player.has_effect('displacement') and random.random() < 0.30:
             return 0, f"The {self.name} strikes at your displaced image and misses!"
 
+        # Cloak of Sun Wukong (monkey_king_dodge): every Nth attack against the
+        # player auto-misses. Counter is on the player; resets when armor unequipped.
+        try:
+            from armor_procs import proc_value
+            mkd_n = int(proc_value(player, 'monkey_king_dodge') or 0)
+            if mkd_n > 0:
+                player._monkey_king_counter = int(getattr(player, '_monkey_king_counter', 0)) + 1
+                if player._monkey_king_counter >= mkd_n:
+                    player._monkey_king_counter = 0
+                    return 0, f"You shimmer like the Monkey King — the {self.name}'s strike finds nothing!"
+        except ImportError:
+            pass
+
+        # Hermes votive sandals (dodge_first_arrow_per_floor): first ranged attack
+        # per floor auto-misses. _RANGED_WORDS already computed above.
+        _is_ranged_atk = any(w in atk_name for w in _RANGED_WORDS)
+        if _is_ranged_atk:
+            try:
+                from armor_procs import consume_floor_charge
+                if consume_floor_charge(player, 'dodge_first_arrow_per_floor'):
+                    return 0, f"The {self.name}'s shot whistles past — the votive sandals carry you a hair's-breadth aside!"
+            except ImportError:
+                pass
+
         # -- Hit: roll damage -----------------------------------------------
         dmg = roll(atk['damage'])
         atk_type = atk.get('type', 'physical')
@@ -450,6 +474,23 @@ class Monster:
                     dmg = max(1, dmg // 2)
             except ImportError:
                 pass
+
+        # Hide of the Nemean Lion (unskinnable): non-magical attackers floor at
+        # 1 damage. "Only divine arms scratch it" — Heracles used the lion's own
+        # claws. Magic/holy/fire/cold/lightning/acid/poison/radiant all bypass
+        # since they are not "blade hits hide." Pure physical/slash/pierce/blunt
+        # gets clamped.
+        try:
+            from armor_procs import player_has_armor_proc
+            if player_has_armor_proc(player, 'unskinnable') and \
+                    atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
+                    not getattr(self, 'magical', False) and \
+                    'magic' not in (getattr(self, 'tags', []) or []) and \
+                    'divine' not in (getattr(self, 'tags', []) or []):
+                if dmg > 1:
+                    dmg = 1
+        except ImportError:
+            pass
 
         # Chain-equip passive: back_attack_weakness (dragon_mail_of_sigurd).
         # Multiplier on incoming damage when monster is in the player's "rear arc"

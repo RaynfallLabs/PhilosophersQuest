@@ -807,10 +807,10 @@ class MagicMixin:
                 self.add_message("Everything you carry is already known.", 'info')
 
         elif effect == 'enchant_weapon':
-            from items import ENCHANT_CAP
+            from items import effective_enchant_cap
             w = self.player.weapon or self.player.ranged_weapon
             if w:
-                cap = ENCHANT_CAP.get('weapon', 5)
+                cap = effective_enchant_cap(self.player, 'weapon')
                 if w.enchant_bonus < cap:
                     w.enchant_bonus += 1
                     self.add_message(f"Your {w.name} glows! Enchantment +{w.enchant_bonus}.", 'success')
@@ -2162,10 +2162,10 @@ class MagicMixin:
                 self._open_scroll_identify_picker(bless=False)
 
         elif effect == 'enchant_weapon':
-            from items import ENCHANT_CAP
+            from items import effective_enchant_cap
             w = self.player.weapon or self.player.ranged_weapon
             if w:
-                cap = ENCHANT_CAP.get('weapon', 5)
+                cap = effective_enchant_cap(self.player, 'weapon')
                 delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
                 # Chrysaor (engine wave 3): weapon_immune_to_enchant_loss
                 # blocks NEGATIVE enchant changes — "the gold sword stays gold."
@@ -2297,7 +2297,7 @@ class MagicMixin:
                 self.add_message("You wear no armor to enchant.", 'info')
 
         elif effect == 'enchant_item':
-            from items import ENCHANT_CAP, ARMOR_SLOTS
+            from items import ARMOR_SLOTS, effective_enchant_cap
             candidates = []
             if self.player.weapon:
                 candidates.append((self.player.weapon, 'weapon'))
@@ -2313,7 +2313,7 @@ class MagicMixin:
                     candidates.append((s, 'accessory'))
             if candidates:
                 target, slot_key = candidates[0]
-                cap = ENCHANT_CAP.get(slot_key, 1)
+                cap = effective_enchant_cap(self.player, slot_key)
                 delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
                 old_val = getattr(target, 'enchant_bonus', 0)
                 target.enchant_bonus = max(-3, min(cap, old_val + delta))

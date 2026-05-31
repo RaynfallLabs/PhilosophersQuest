@@ -331,6 +331,19 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     messages: list[tuple[str, str]] = []
     to_expire: list[str] = []
 
+    # Coif of Beowulf (grendel_grip): the wearer cannot be held. Clears any
+    # paralyzed/strangulation/sleeping status at the START of the tick. The
+    # grip that strangled Grendel keeps you free.
+    try:
+        from armor_procs import player_has_armor_proc
+        if player_has_armor_proc(player, 'grendel_grip'):
+            for _gg_eff in ('paralyzed', 'strangulation', 'sleeping'):
+                if player.status_effects.get(_gg_eff, 0) > 0:
+                    player.status_effects[_gg_eff] = 0
+                    messages.append((f'Grendel-grip — you wrench free of {_gg_eff.replace("_", " ")}!', 'success'))
+    except ImportError:
+        pass
+
     for effect, val in list(player.status_effects.items()):
         if val == 0:
             to_expire.append(effect)

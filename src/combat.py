@@ -654,7 +654,63 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if getattr(player, '_death_omen_target', None) == id(monster):
             damage = int(damage * 1.25)
 
+        # Helm of Leonidas (last_stand_bonus): +3 flat damage while at <20% HP.
+        try:
+            from armor_procs import player_has_armor_proc
+            if player.hp > 0 and player.max_hp > 0 and \
+                    player.hp / player.max_hp < 0.20 and \
+                    player_has_armor_proc(player, 'last_stand_bonus'):
+                damage += 3
+        except ImportError:
+            pass
+
+        # Cuirass of Hannibal (cannae_encirclement): +1 damage per adjacent enemy
+        # when surrounded by 3 or more. Pure tile math.
+        try:
+            from armor_procs import player_has_armor_proc as _pap
+            if _pap(player, 'cannae_encirclement'):
+                _mons_cc = getattr(player, '_combat_monsters_ref', None) or []
+                _adj = 0
+                for _mm in _mons_cc:
+                    if not getattr(_mm, 'alive', False):
+                        continue
+                    if abs(_mm.x - player.x) <= 1 and abs(_mm.y - player.y) <= 1 \
+                            and not (_mm.x == player.x and _mm.y == player.y):
+                        _adj += 1
+                if _adj >= 3:
+                    damage += _adj
+        except ImportError:
+            pass
+
+        # Lorica Hamata of Caesar (et_tu_charge): +50% damage against the
+        # marked first-attacker.
+        if getattr(player, '_et_tu_target', None) == id(monster):
+            damage = int(damage * 1.50)
+
+        # Bracers of Arjuna (gita_focus): first ranged attack per floor crits.
+        if ammo:
+            try:
+                from armor_procs import consume_floor_charge
+                if consume_floor_charge(player, 'gita_focus'):
+                    _cm = float(getattr(weapon, 'crit_multiplier', 1.5) or 1.5) if weapon else 1.5
+                    damage = int(damage * max(1.5, _cm))
+                    crit = True
+            except ImportError:
+                pass
+
         actual = monster.take_damage(damage)
+
+        # Bracers of Cu Chulainn (riastrad_echo): every 3rd hit applies bleed.
+        # Counter is on the player; the warp-spasm rises with each strike.
+        try:
+            from armor_procs import player_has_armor_proc as _pap2
+            if actual > 0 and _pap2(player, 'riastrad_echo'):
+                player._riastrad_hits = int(getattr(player, '_riastrad_hits', 0)) + 1
+                if player._riastrad_hits >= 3:
+                    player._riastrad_hits = 0
+                    monster.add_effect('bleeding', 5)
+        except ImportError:
+            pass
 
         # Stun mechanic (staves only, or any weapon with stunChance > 0)
         stunned = False
