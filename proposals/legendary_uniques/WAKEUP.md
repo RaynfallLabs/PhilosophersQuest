@@ -64,6 +64,12 @@ Per CLAUDE.md play-test rule, these are "easily reachable" and you should verify
 3. **Family mastery use-sites** — `damage_vs_tag` and `tohit_vs_tag` are wired. `resist_charm`, `resist_elemental`, `sp_regen` aren't yet. **Status unchanged** (2026-05-30).
 4. **Hand of Glory mechanics** — needs `paralyze_charges` activation + `passive_silent_walk` + `passive_dark_vision` + `expended_curse` hooks. **PARTIALLY SHIPPED** (2026-05-30 engine wave 6): paralyze_charges activation via power menu (V key) is wired; `expended_curse` and the two passive statuses still deferred.
 
+5. **Vision audit's "7 deferred weapon procs"** (was: terrain_buff_on_finisher / throwable_weapon_proc / spawn_giant_on_male_humanoid_kill / summon_on_demon_kill_alternating / chain_no_reset_on_tagged_kill / resurrect_pet_proc / damoclean_counter_auto_kill). **RESOLVED 2026-05-31** — direct re-trace shows all 9 weapons (Cadmus, Vel, Shamshir, Parashu, Damocles, Heracles, Cronus, Mwindo, Hector) ship working mechanics. Verdict:
+   - 5 of 9 ship the proposal proc exactly (Cadmus/Vel/Shamshir `summon_after_kill_with_tag`; Parashu `chain_no_reset_on_tag`; Damocles `damoclean_counter_auto_kill`)
+   - 3 of 9 have alternate proposal-deviating mechanics that ARE live (Heracles `beast_bonus_damage` + knockback; Cronus `lifestealPercent` + ignoreShield; Mwindo `kill_heal_amount`)
+   - 1 of 9 (Hector) ships bleed + the engine-wave-1 FOV-decouple
+   The proposal procs (`terrain_buff_on_finisher`, `spawn_giant_on_male_humanoid_kill`, `resurrect_pet_proc`) are aspirational and never landed in JSON, but those three items are NOT dead — they ship working alternate kits. Pin tests in `tests/test_legendary_weapon_procs_wired.py` lock the live mechanics in.
+
 ## Commits today
 
 ```
