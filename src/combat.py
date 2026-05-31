@@ -192,6 +192,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if slot and getattr(slot, 'chain_bonus', 0):
                 chain += slot.chain_bonus
 
+        # Glamdring: Foe-Hammer's signature glow. Against any goblin/orc-
+        # tagged enemy, +1 chain rung head start while equipped. Per audit
+        # 2026-05-30 — the `glows_near_orcs` JSON flag was previously inert.
+        # Lore: "the sword preempts — the wielder gets +2 initiative."
+        if weapon and getattr(weapon, 'glows_near_orcs', False):
+            if _tag_match(monster, 'goblin') or _tag_match(monster, 'orc'):
+                chain += 1
+
         # Monster-family tohit_vs_tag mastery (humanoid Anatomist): +N chain
         # rungs when striking a matching-family target. This is the chain
         # equivalent of "+1 to-hit" in a system that has no separate to-hit roll.
@@ -311,6 +319,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             # JSON field): applies as a flat 1.5x against undead when set > 1.
             _und_mult = float(getattr(weapon, 'undead_multiplier', 1.0) or 1.0)
             if _und_mult > 1.0 and _tag_match(monster, 'undead'):
+                dtype_mult *= 1.5
+
+        # Akinakes of Acrisius: prophecy_blade. At first equip the blade
+        # declared a random tag (stored on player._prophecy_target_tag).
+        # That tag's monsters take +50% damage from the Akinakes for the
+        # rest of the run. Per audit 2026-05-30 — the JSON flag was inert.
+        if weapon and getattr(weapon, 'prophecy_blade', False):
+            _proph = getattr(player, '_prophecy_target_tag', None)
+            if _proph and _tag_match(monster, _proph):
                 dtype_mult *= 1.5
 
         # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect

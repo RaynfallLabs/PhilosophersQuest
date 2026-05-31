@@ -740,6 +740,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         if new_level in _MILESTONE_FLAVOR:
             self._log_chronicle(_MILESTONE_FLAVOR[new_level])
+        # Pelops Sword: cursed_lineage descent event. 5% chance per floor
+        # to spawn a hostile "House of Atreus" NPC near the player. Per
+        # audit 2026-05-30 — JSON flag was inert.
+        if (self.player.weapon
+                and getattr(self.player.weapon, 'cursed_lineage', False)):
+            import random as _ca_rng
+            if _ca_rng.random() < 0.05:
+                self._spawn_house_of_atreus(new_level)
         # Bones ghost notification
         ghost_name = getattr(dungeon, 'bones_ghost_name', None)
         if ghost_name:
@@ -2761,6 +2769,38 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         m.x, m.y = nx2, ny2
                         self.monsters.append(m)
                         return
+
+    def _spawn_house_of_atreus(self, new_level: int) -> None:
+        """Pelops Sword cursed_lineage descent event. Spawn a level-
+        appropriate monster near the player and rename it after a doomed
+        Mycenaean prince. The curse keeps coming. Per audit 2026-05-30."""
+        import random as _ha_rng
+        names = ['Atreus', 'Thyestes', 'Aegisthus', 'Agamemnon',
+                 'Orestes', 'Pelopia', 'Pleisthenes']
+        new_monsters = spawn_monsters(self.dungeon.rooms, new_level,
+                                      self.dungeon, min_count=1, max_count=1)
+        if not new_monsters:
+            return
+        m = new_monsters[0]
+        # Rename the doomed scion
+        m.name = _ha_rng.choice(names)
+        # Place near the player (search a 4-tile radius)
+        px, py = self.player.x, self.player.y
+        for dx in range(-4, 5):
+            for dy in range(-4, 5):
+                if abs(dx) + abs(dy) > 5:
+                    continue
+                nx, ny = px + dx, py + dy
+                if self.dungeon.is_walkable(nx, ny) and \
+                        not any(om.alive and om.x == nx and om.y == ny for om in self.monsters):
+                    m.x, m.y = nx, ny
+                    self.monsters.append(m)
+                    self.add_message(
+                        f"A figure from the House of Atreus stalks you: {m.name}.",
+                        'warning')
+                    self._log_chronicle(
+                        f"Pelops's curse caught up to me. {m.name} hunts me now.")
+                    return
 
     def _do_warning(self):
         """Warn if monsters are within 5 tiles when player has the warning effect.

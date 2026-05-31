@@ -227,6 +227,30 @@ class Weapon(Item):
         # Aiglos: while equipped, wielder takes no fire damage. ("Sauron's
         # flame did nothing.")
         self.wielder_fire_immunity: bool = bool(defn.get('wielder_fire_immunity', False))
+        # Glamdring: Foe-Hammer's orc/goblin glow. While equipped against a
+        # goblin/orc-tagged enemy, +1 chain rung head start.
+        self.glows_near_orcs: bool      = bool(defn.get('glows_near_orcs', False))
+        # Hofud: Heimdall's vigilance. While equipped, wielder gains +2 PER.
+        self.vigilance_aware: bool      = bool(defn.get('vigilance_aware', False))
+        # Stormbringer: the runesword betrays at low HP. At HP <= 15%, a
+        # successful hit has 25% chance to also "feed" by draining the
+        # nearest adjacent ally (pet) for half the damage dealt to the monster.
+        self.betrays_at_low_hp: bool    = bool(defn.get('betrays_at_low_hp', False))
+        # Stormbringer: the runesword selects its wielder. While equipped,
+        # cannot be unequipped (refuses, same shape as cursed gear). Per
+        # weapons.md design — the weapon "chooses you."
+        self.selects_wielder: bool      = bool(defn.get('selects_wielder', False))
+        # Excalibur: cast_me_away — at HP <= 25%, one-shot drain weapon
+        # enchant -1 and grant life_save. One use per run.
+        self.cast_me_away: bool         = bool(defn.get('cast_me_away', False))
+        # Pelops Sword: cursed_lineage — on equip, -1 STR + 2 max HP
+        # (cumulative ledger entry, see Player._apply_weapon_passives).
+        # Per-descent 5% chance of "House of Atreus" hostile NPC spawn.
+        self.cursed_lineage: bool       = bool(defn.get('cursed_lineage', False))
+        # Akinakes of Acrisius: prophecy_blade — at first equip, the blade
+        # declares a random monster tag/class. That tag takes +50% damage
+        # from the Akinakes for the rest of the run.
+        self.prophecy_blade: bool       = bool(defn.get('prophecy_blade', False))
 
     @property
     def max_chain_length(self) -> int:

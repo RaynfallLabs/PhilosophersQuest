@@ -280,6 +280,19 @@ class Player:
                 self.status_effects.get('berserk', 0) <= 0:
             self.status_effects['berserk'] = max(self.status_effects.get('berserk', 0), 8)
 
+        # Excalibur: cast_me_away. At HP <= 25%, the blade ONE-SHOT drains
+        # its own enchant by 1 and grants the wielder life_save. One use
+        # per run — _cast_me_away_used is a run-wide flag. Per audit
+        # 2026-05-30 — the JSON flag was inert. Lore: "the blade keeps
+        # Arthur alive once, then dims."
+        if (self.hp > 0 and self.hp <= self.max_hp * 0.25
+                and self.weapon
+                and getattr(self.weapon, 'cast_me_away', False)
+                and not getattr(self, '_cast_me_away_used', False)):
+            self._cast_me_away_used = True
+            self.weapon.enchant_bonus = max(0, self.weapon.enchant_bonus - 1)
+            self.add_effect('life_save', -1)
+
         # Damage wakes a sleeping player
         if actual > 0 and 'sleeping' in self.status_effects:
             del self.status_effects['sleeping']
@@ -917,10 +930,64 @@ class Player:
 
     def try_unequip_slot(self, slot_item) -> tuple[bool, str]:
         """Attempt to remove an equipped item. Returns (success, message).
-        Fails if the item is cursed."""
+        Fails if the item is cursed OR has the selects_wielder flag
+        (Stormbringer — the runesword has chosen you)."""
         if slot_item and getattr(slot_item, 'cursed', False):
             return False, f"The {slot_item.name} is welded to you!"
+        # Stormbringer: selects_wielder — refuses to be put down. Per audit
+        # 2026-05-30 — JSON flag was inert.
+        if slot_item and getattr(slot_item, 'selects_wielder', False):
+            return False, f"The {slot_item.name} clings to your hand. It will not be put down."
         return True, ""
+
+    # ------------------------------------------------------------------
+    # Weapon-passive hooks (engine wave 2026-05-30).
+    # Per the unique-weapon audit, several flags expect to apply WHILE the
+    # weapon is equipped (vigilance_aware +PER, cursed_lineage stat ledger)
+    # or fire ONCE on first equip (prophecy_blade declaration). These
+    # helpers wrap the bumps/declarations and are called from _apply_equip
+    # below.
+    # ------------------------------------------------------------------
+
+    def _apply_weapon_passives(self, weapon) -> None:
+        """Fire weapon-equip-side passives when a weapon is put on."""
+        if weapon is None:
+            return
+        # Hofud: vigilance_aware — +2 PER while equipped.
+        if getattr(weapon, 'vigilance_aware', False):
+            self.PER += 2
+        # Pelops Sword: cursed_lineage — -1 STR + 2 max HP on equip.
+        # Per descent: handled separately in main._change_level via the
+        # weapon-aware House-of-Atreus event hook.
+        if getattr(weapon, 'cursed_lineage', False):
+            self.STR = max(1, self.STR - 1)
+            self.max_hp += 2
+            self.hp = min(self.max_hp, self.hp + 2)
+        # Akinakes of Acrisius: prophecy_blade — at first equip declares
+        # a random monster tag/class. Stored on the player as a run-wide
+        # buff lookup; combat.player_attack reads it for the +50% mult.
+        if getattr(weapon, 'prophecy_blade', False) and \
+                getattr(self, '_prophecy_target_tag', None) is None:
+            import random as _rng
+            # Tag pool: the seven recurring monster archetypes Akinakes
+            # could have prophesied. Picked once per run, persists across
+            # equip/unequip cycles so the player can't reroll by toggling.
+            self._prophecy_target_tag = _rng.choice([
+                'humanoid', 'undead', 'demon', 'beast',
+                'dragon', 'fey', 'aberration',
+            ])
+
+    def _remove_weapon_passives(self, weapon) -> None:
+        """Reverse weapon-equip-side passives when a weapon is taken off."""
+        if weapon is None:
+            return
+        if getattr(weapon, 'vigilance_aware', False):
+            self.PER = max(1, self.PER - 2)
+        if getattr(weapon, 'cursed_lineage', False):
+            self.STR += 1
+            self.max_hp = max(1, self.max_hp - 2)
+            self.hp = min(self.hp, self.max_hp)
+        # prophecy_blade declaration is run-permanent — does NOT reverse.
 
     def _apply_equip(self, item):
         from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
@@ -935,11 +1002,13 @@ class Player:
                     old_status = getattr(self.ranged_weapon, 'on_equip_status', '')
                     if old_status:
                         self.status_effects.pop(old_status, None)
+                    self._remove_weapon_passives(self.ranged_weapon)
                     self.inventory.append(self.ranged_weapon)
                 self.ranged_weapon = item
                 new_status = getattr(item, 'on_equip_status', '')
                 if new_status:
                     self.add_effect(new_status, -1)
+                self._apply_weapon_passives(item)
             else:
                 # --- Melee weapon slot ---
                 if self.weapon:
@@ -949,6 +1018,7 @@ class Player:
                     old_status = getattr(self.weapon, 'on_equip_status', '')
                     if old_status:
                         self.status_effects.pop(old_status, None)
+                    self._remove_weapon_passives(self.weapon)
                     self.inventory.append(self.weapon)
                 # Unequip shield if switching to 2H melee
                 if getattr(item, 'two_handed', False) and self.shield:
@@ -961,6 +1031,7 @@ class Player:
                 new_status = getattr(item, 'on_equip_status', '')
                 if new_status:
                     self.add_effect(new_status, -1)
+                self._apply_weapon_passives(item)
         elif isinstance(item, Armor):
             idx = ARMOR_SLOTS.index(item.slot) if item.slot in ARMOR_SLOTS else 0
             old = self.armor_slots[idx]

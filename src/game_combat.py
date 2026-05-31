@@ -1516,6 +1516,32 @@ class CombatMixin:
             else:
                 if damage > 0:
                     _snd.play('monster_hit')
+                # Stormbringer: betrays_at_low_hp. At HP <= 15%, a successful
+                # hit has 25% chance to ALSO drain the nearest adjacent ally
+                # (pet) for half the damage dealt to the monster. Per audit
+                # 2026-05-30 — the JSON flag was inert. Lore: Elric's blade
+                # eats from whatever's nearest when its bearer is dying.
+                if (chain > 0 and damage > 0 and self.player.weapon
+                        and getattr(self.player.weapon, 'betrays_at_low_hp', False)
+                        and self.player.hp <= self.player.max_hp * 0.15):
+                    if random.random() < 0.25:
+                        _px, _py = self.player.x, self.player.y
+                        _vic = next(
+                            (p for p in self.pets
+                             if p.alive
+                             and abs(p.x - _px) <= 1 and abs(p.y - _py) <= 1),
+                            None
+                        )
+                        if _vic:
+                            _dr = max(1, damage // 2)
+                            _vic.take_damage(_dr)
+                            self.add_message(
+                                f"Stormbringer twists in your hand — it drinks from {_vic.name} ({_dr} dmg)!",
+                                'danger')
+                            if not _vic.alive:
+                                self.add_message(
+                                    f"{_vic.name} crumples — the runesword has fed.",
+                                    'danger')
                 if crit:
                     msg = f"CRITICAL! Chain x{chain}! You strike the {monster.name} for {damage} damage!"
                 else:
