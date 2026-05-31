@@ -829,11 +829,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # not on every floor entry — the original code spammed even when no
         # accessory was equipped (pool empty -> no message; pool non-empty
         # -> always message).
+        # Follow-up gate (2026-05-31): even when the subject DOES change,
+        # only surface the message on entries that "feel like a new floor"
+        # — first-generated floors (not saved) OR descents (enter_from_top).
+        # Ascending stairs back up, returning from the cow level, and
+        # Hermes' psychopomp pull-back all suppress the message.
+        # The mechanic itself still re-rolls every entry — it's the chat
+        # spam we're suppressing, not the rotation.
         _prev_rot = getattr(self.player, '_rotating_chain_subject', None)
         if _rotating_pool:
             _new_rot = random.choice(sorted(_rotating_pool))
             self.player._rotating_chain_subject = _new_rot
-            if _new_rot != _prev_rot:
+            _feels_like_new_floor = (not saved) or enter_from_top
+            if _new_rot != _prev_rot and _feels_like_new_floor:
                 self.add_message(
                     f"The rotating gift settles on {_new_rot} this floor.",
                     'info')
