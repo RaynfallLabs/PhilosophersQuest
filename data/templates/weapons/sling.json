@@ -15,7 +15,7 @@
     0.55,
     1.0,
     1.8,
-    3.0
+    4.5
   ],
   "max_chain_length": 5,
   "damage_modifier": 0.6,
@@ -27,7 +27,7 @@
     "rare_wood"
   ],
   "lore_template": "A {material_name} sling. David's argument with Goliath.",
-  "design_notes": "v2 chain rebalance: finesse class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 3.00×. Class mechanic: Cheap ammo: sling stones are 0.1 lb and abundant. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.6 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
+  "design_notes": "Sling balance pass 2026-05-31: chain-5 peak bumped from 3.0 → 4.5 (damage_modifier 0.6 unchanged). Yields chain-5 effective 2.70× — highest in the ranged class, but ONLY at max chain. Chains 1-4 stay below all peers. Lore: small stone, has to hit exactly right.",
   "weapon_class_chain": "finesse",
   "class_mechanic": "free_stones",
   "class_mechanic_desc": "At max chain: 25% chance to ricochet for second hit on adjacent enemy. Ammo (stones) is weightless and gathered automatically on any floor. David's argument with Goliath."

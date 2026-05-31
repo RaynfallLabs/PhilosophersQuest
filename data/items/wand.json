@@ -2211,10 +2211,10 @@
       240
     ],
     "weight_lb": 0.8,
-    "min_level": 22,
-    "peak_floor": 45,
+    "min_level": 9999,
+    "peak_floor": 0,
     "spread": 15,
-    "peak_weight": 0.4,
+    "peak_weight": 0,
     "charges_min": 8,
     "charges_max": 10,
     "max_charges": 12,
@@ -2578,6 +2578,7 @@
       "desc": "The Wand of Wonder gains +2 maximum charges on mastery -- wonder begets wonder."
     },
     "lore": "An iridescent wand that swirls with colors no language has names for. It is a tabletop fixture -- the AD&D Wand of Wonder, the wand whose effect is rolled fresh each cast. Some sages claim each Wand of Wonder is sentient and wants very much to be helpful; the misfires are not malice, only enthusiasm imperfectly executed. The longer you sustain the chain, the broader its repertoire becomes -- and the rarer the truly extraordinary outcomes appear.",
-    "weight": 0.3
+    "weight": 0.3,
+    "_disabled_reason": "wonder_tables dispatcher pending — vision audit 2026-05-30"
   }
 }

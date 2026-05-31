@@ -623,10 +623,10 @@
       60
     ],
     "weight": 3.0,
-    "min_level": 30,
-    "peak_floor": 50,
+    "min_level": 9999,
+    "peak_floor": 0,
     "spread": 15,
-    "peak_weight": 0.3,
+    "peak_weight": 0,
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a sealed pithos",
@@ -797,7 +797,8 @@
       "score_bonus_on_use": 5000,
       "plot_role": "wonder_relic"
     },
-    "lore": "A small clay pithos sealed with wax and rope, painted with figures fleeing. The gods gave it to Pandora as a wedding gift and told her not to open it. She did, of course -- the lid lifted easily and out flew Plague, Toil, Strife, Famine, Madness, Lies, Old Age, Despair, Tempest. Hesiod says she clapped the lid shut just in time, and Hope alone remained inside. Whether that was mercy or the cruellest trick of all is for the bearer to decide."
+    "lore": "A small clay pithos sealed with wax and rope, painted with figures fleeing. The gods gave it to Pandora as a wedding gift and told her not to open it. She did, of course -- the lid lifted easily and out flew Plague, Toil, Strife, Famine, Madness, Lies, Old Age, Despair, Tempest. Hesiod says she clapped the lid shut just in time, and Hope alone remained inside. Whether that was mercy or the cruellest trick of all is for the bearer to decide.",
+    "_disabled_reason": "chaos_table dispatcher pending — vision audit 2026-05-30"
   },
   "aladdins_lamp": {
     "name": "Aladdin's Lamp",
@@ -808,10 +809,10 @@
       60
     ],
     "weight": 2.0,
-    "min_level": 35,
-    "peak_floor": 60,
+    "min_level": 9999,
+    "peak_floor": 0,
     "spread": 15,
-    "peak_weight": 0.2,
+    "peak_weight": 0,
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a tarnished brass lamp",
@@ -913,6 +914,7 @@
       "score_bonus_on_use": 7500,
       "plot_role": "wonder_relic"
     },
-    "lore": "A brass oil-lamp, dented and tarnished, worth nothing at market. Aladdin found one like it in a cave under the earth, sent there by a sorcerer who promised it was 'just a lamp.' The djinn bound inside grants ONE wish to whoever rubs the lamp and proves themselves worthy. Not three -- one. The other tales got it wrong. The djinn keeps count and is patient and exact, and an unworthy rub earns a half-answered prayer rather than a full one. Make the wish count."
+    "lore": "A brass oil-lamp, dented and tarnished, worth nothing at market. Aladdin found one like it in a cave under the earth, sent there by a sorcerer who promised it was 'just a lamp.' The djinn bound inside grants ONE wish to whoever rubs the lamp and proves themselves worthy. Not three -- one. The other tales got it wrong. The djinn keeps count and is patient and exact, and an unworthy rub earns a half-answered prayer rather than a full one. Make the wish count.",
+    "_disabled_reason": "wish_categories dispatcher pending — vision audit 2026-05-30"
   }
 }

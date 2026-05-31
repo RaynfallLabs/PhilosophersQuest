@@ -1844,27 +1844,33 @@ class MagicMixin:
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'chain_lightning_jump':
-                # Initial hit + jumps to nearest 2 monsters within 3 tiles at reduced dmg
+                # T4 book learns a spell where the chain count drives the
+                # number of arc-jumps. chain=1 → 1 arc (initial only),
+                # chain=2 → +1 jump (2 targets), … chain=5 → +5 jumps
+                # (6 targets total). Each successive arc deals 0.75× the
+                # previous arc's damage.
                 base_dmg = _roll(power) if power else 12
                 scaled = self._spell_damage(base_dmg, chain)
                 hit_targets = [target]
                 target.take_damage(scaled, 'lightning')
                 if not target.alive:
                     self._on_monster_killed(target)
-                # Find nearest 2 monsters within 3 tiles of ANY already-hit
+                # chain == 1 → no extra jumps; chain == N → N extra jumps.
+                _max_arcs = max(0, int(chain))
                 remaining = [m for m in self.monsters
                              if m.alive and m not in hit_targets
                              and any(abs(m.x - h.x) + abs(m.y - h.y) <= 3
                                      for h in hit_targets)]
                 remaining.sort(key=lambda m: abs(m.x - target.x) + abs(m.y - target.y))
-                for jump_n, jm in enumerate(remaining[:2], start=1):
-                    arc_dmg = max(1, int(scaled * (0.75 if jump_n == 1 else 0.50)))
-                    jm.take_damage(arc_dmg, 'lightning')
-                    if not jm.alive:
-                        self._on_monster_killed(jm)
-                    hit_targets.append(jm)
+                arc_dmg = scaled
+                for _jm in remaining[:_max_arcs]:
+                    arc_dmg = max(1, int(arc_dmg * 0.75))
+                    _jm.take_damage(arc_dmg, 'lightning')
+                    if not _jm.alive:
+                        self._on_monster_killed(_jm)
+                    hit_targets.append(_jm)
                 self.add_message(
-                    f"Chain Lightning arcs through {len(hit_targets)} targets! (chain {chain})", 'success')
+                    f"Forked Lightning arcs through {len(hit_targets)} targets! (chain {chain})", 'success')
             elif effect == 'banishment':
                 # Returns summoned/extraplanar entities — fey, demon, celestial, elemental
                 tags = set(getattr(target, 'tags', []))

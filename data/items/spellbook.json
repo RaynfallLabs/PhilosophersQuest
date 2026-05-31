@@ -183,29 +183,6 @@
     "weight": 0.3,
     "peak_weight": 0.25
   },
-  "spellbook_lightning": {
-    "name": "Spellbook of Chain Lightning",
-    "symbol": "+",
-    "color": [
-      200,
-      220,
-      255
-    ],
-    "weight_lb": 3.0,
-    "min_level": 45,
-    "peak_floor": 53,
-    "spread": 14,
-    "quiz_tier": 3,
-    "quiz_threshold": 4,
-    "spell_id": "chain_lightning_spell",
-    "spell_name": "Chain Lightning",
-    "mp_cost": 10,
-    "unidentified_name": "crackling silver tome",
-    "lore": "Lightning that arcs between targets, chaining to nearby enemies.",
-    "read_threshold": 4,
-    "weight": 0.3,
-    "peak_weight": 0.25
-  },
   "spellbook_confusion": {
     "name": "Spellbook of Confusion",
     "symbol": "+",
@@ -1206,7 +1183,7 @@
     "mp_cost": 17,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Storm-singer's grimoire — the sequel to Lightning Bolt. The arc-jump math is in the appendix.",
+    "lore": "Storm-singer's grimoire. Lightning forks one extra time for every rung of your chain — the arc-math is in the appendix.",
     "weight": 0.3
   },
   "spellbook_greater_invis": {

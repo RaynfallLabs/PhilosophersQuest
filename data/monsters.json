@@ -3122,8 +3122,8 @@
         "damage": "3d6+6",
         "type": "cold",
         "effect": "frozen",
-        "effect_chance": 0.8,
-        "effect_duration": "1d12",
+        "effect_chance": 0.5,
+        "effect_duration": "1d6",
         "piercing": true
       },
       {
