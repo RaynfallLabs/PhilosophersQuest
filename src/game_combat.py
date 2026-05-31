@@ -802,13 +802,15 @@ class CombatMixin:
                 )
                 return
 
-        # Build candidate list: visible alive monsters sorted by distance
+        # Build candidate list: alive monsters within weapon reach + ammo
+        # (visibility NOT required as of 2026-05-30 — projectile traces and
+        # hits first obstacle in path, so unseen monsters in corridors are
+        # legitimate targets and walls absorb mis-fires).
         px, py = self.player.x, self.player.y
         from combat import can_ranged_attack
         candidates = [
             m for m in self.monsters
-            if m.alive and (m.x, m.y) in self.visible
-            and can_ranged_attack(self.player, m, self.dungeon)
+            if m.alive and can_ranged_attack(self.player, m, self.dungeon)
         ]
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
@@ -1138,17 +1140,122 @@ class CombatMixin:
         self._observe_targeting = False
 
     def _confirm_ranged_target(self):
-        """Confirm a ranged shot at the cursor position."""
-        target = monster_at_tile(self.monsters, self.target_cursor_x, self.target_cursor_y)
+        """Confirm a ranged shot at the cursor position.
+
+        Per user 2026-05-30: the projectile flies along a Bresenham path from
+        the player to the cursor. WHAT it hits depends on what's in the way —
+        not on what the player can see.
+
+          * First obstacle is a monster -> fire on that monster (full quiz).
+          * First obstacle is a wall -> ammo is consumed, shot is wasted.
+          * Path clear AND no monster at cursor -> ammo is consumed, shot
+            vanishes into the darkness (the player aimed at empty space).
+          * Path clear AND monster AT cursor -> fire on that monster.
+
+        Result: a ranger with high PER (sight) can shoot down corridors with
+        confidence; a ranger guessing into the dark spends ammo on hope.
+        """
         self.state = STATE_PLAYER
-        if target:
-            from combat import can_ranged_attack
-            if can_ranged_attack(self.player, target, self.dungeon):
-                self._fire_ranged(target)
-            else:
-                self.add_message("No clear line of sight to that target.", 'warning')
+        px, py = self.player.x, self.player.y
+        cx, cy = self.target_cursor_x, self.target_cursor_y
+
+        # Bail if cursor is on the player tile (degenerate aim)
+        if (cx, cy) == (px, py):
+            self.add_message("You cannot fire at yourself.", 'warning')
+            return
+
+        # Bail if no ranged weapon equipped
+        weapon = self.player.ranged_weapon
+        if not weapon or not weapon.requires_ammo:
+            self.add_message("You have no ranged weapon equipped.", 'warning')
+            return
+
+        # Range check (matches _open_targeting / can_ranged_attack)
+        reach = weapon.reach + max(0, self.player.PER - 10) // 3
+        if max(abs(cx - px), abs(cy - py)) > reach:
+            self.add_message("That tile is out of range.", 'warning')
+            return
+
+        # Trace projectile path. _find_first_monster_in_path returns the first
+        # alive monster hit, or None if the path is blocked by wall or clear.
+        # We need to distinguish wall-blocked vs clear-path, so do a parallel
+        # trace here.
+        first_monster, blocked_by_wall = self._trace_projectile_obstacle(px, py, cx, cy)
+
+        if first_monster is not None:
+            # Real shot — let _fire_ranged handle ammo + quiz
+            self._fire_ranged(first_monster)
+            return
+
+        # Either wall-blocked or clear-no-target: consume ammo, message, advance turn.
+        self._consume_ranged_ammo_for_miss(blocked_by_wall, cx, cy)
+
+    def _trace_projectile_obstacle(self, x0, y0, x1, y1):
+        """Bresenham trace from (x0,y0) to (x1,y1). Returns
+        (monster_or_None, blocked_by_wall_bool). blocked_by_wall is True only
+        if the path hit a wall BEFORE reaching the target tile."""
+        dx, dy = abs(x1 - x0), abs(y1 - y0)
+        sx = 1 if x1 > x0 else -1
+        sy = 1 if y1 > y0 else -1
+        err = dx - dy
+        cx, cy = x0, y0
+        while True:
+            if cx == x1 and cy == y1:
+                break
+            e2 = 2 * err
+            step_x = e2 > -dy
+            step_y = e2 < dx
+            if step_x and step_y:
+                if (not self.dungeon.is_walkable(cx + sx, cy)
+                        and not self.dungeon.is_walkable(cx, cy + sy)):
+                    return None, True  # corner blocked
+            if step_x:
+                err -= dy
+                cx += sx
+            if step_y:
+                err += dx
+                cy += sy
+            if (cx, cy) != (x1, y1):
+                for m in self.monsters:
+                    if m.alive and is_at_tile(m, cx, cy):
+                        return m, False
+                if not self.dungeon.is_walkable(cx, cy):
+                    return None, True
+        # Reached target tile cleanly — check for monster on the target tile
+        for m in self.monsters:
+            if m.alive and is_at_tile(m, x1, y1):
+                return m, False
+        # Target tile itself unwalkable counts as wall hit
+        if not self.dungeon.is_walkable(x1, y1):
+            return None, True
+        return None, False
+
+    def _consume_ranged_ammo_for_miss(self, blocked_by_wall: bool, cx: int, cy: int):
+        """Ammo cost + message for a ranged shot that didn't hit a monster.
+        Either struck a wall or flew into empty space. Advances the turn."""
+        weapon = self.player.ranged_weapon
+        # Decrement ammo (skip for infinite-ammo weapons like Sling of David)
+        if not getattr(weapon, 'infinite_ammo', False):
+            ammo_type = weapon.requires_ammo
+            ammo_item = next(
+                (i for i in self.player.inventory
+                 if getattr(i, 'ammo_type', None) == ammo_type),
+                None
+            )
+            if ammo_item is not None:
+                if getattr(ammo_item, 'count', 1) > 1:
+                    ammo_item.count -= 1
+                else:
+                    self.player.inventory.remove(ammo_item)
+        if blocked_by_wall:
+            self.add_message(
+                f"Your {weapon.requires_ammo} strikes a wall and clatters to the floor.",
+                'warning')
         else:
-            self.add_message("No target there -- shot cancelled.", 'warning')
+            self.add_message(
+                f"Your {weapon.requires_ammo} flies into the darkness — no target.",
+                'warning')
+        self._advance_turn()
 
     def _confirm_melee_target(self):
         """Confirm a melee strike at the cursor position."""

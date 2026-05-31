@@ -230,6 +230,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         else:
             base = roll('1d4')
 
+        # PER -> ranged damage scaling. Modest +1 per 3 PER points above 10,
+        # so a high-PER ranger gets a real reward for the build. Sight + passive
+        # perception are PER's other roles; this completes its combat identity
+        # without making it a "must-pick" stat for all builds.
+        # Per user 2026-05-30: previously PER had ZERO damage hook.
+        if ammo:
+            base += max(0, (player.PER - 10) // 3)
+
         # Weakened / frozen: halve player attack damage. Both effects
         # describe "attack damage halved" / "encased in ice." Previously
         # NEITHER was wired for the player — applied by 30+ monsters but
@@ -314,6 +322,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             # damage representing the diagonal cut that defeats defensive guards.
             if _pre_mech == 'master_strike' and chain >= 3:
                 mult *= 1.15
+
+            # str_bonus_range_7 (composite_bow) — the laminated horn+sinew+wood
+            # stack requires real bow-arm strength to fully draw. Each STR
+            # point above 10 adds 5% to damage. Ranged shots only (ammo present).
+            # Per user 2026-05-30: this mechanic was declared in the template
+            # but never wired — composite bows behaved identically to longbows.
+            if _pre_mech == 'str_bonus_range_7' and ammo:
+                mult *= 1.0 + max(0, (player.STR - 10) * 0.05)
 
             # AT-MAX-CHAIN damage multipliers
             if _at_max:
@@ -694,7 +710,13 @@ def can_melee_attack(player, monster) -> bool:
 
 
 def can_ranged_attack(player, monster, dungeon) -> bool:
-    """Return True if the player has a ranged weapon, ammo, and line of sight."""
+    """Return True if the player can fire a ranged shot at this monster — has
+    the weapon, has ammo, and the monster is within reach. Per user 2026-05-30:
+    LINE OF SIGHT is NO LONGER required. The player may shoot into darkness or
+    down a corridor they can't see; the projectile traces and hits the first
+    obstacle along the path. Path-resolution happens at fire time inside
+    _confirm_ranged_target (game_combat.py), not here.
+    """
     weapon = player.ranged_weapon
     if not weapon or not weapon.requires_ammo:
         return False
@@ -713,8 +735,7 @@ def can_ranged_attack(player, monster, dungeon) -> bool:
         )
         if not has_ammo:
             return False
-    # Line of sight: check no solid tiles block the path (Bresenham)
-    return _line_of_sight(player.x, player.y, monster.x, monster.y, dungeon)
+    return True
 
 
 def _line_of_sight(x0, y0, x1, y1, dungeon) -> bool:
