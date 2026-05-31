@@ -1,0 +1,38 @@
+{
+  "id": "ghost_iron",
+  "name": "ghost iron",
+  "material_class": "rare_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 36,
+  "spread": 10,
+  "peak_weight": 5.0,
+  "min_level": 26,
+  "damage_mult": 1.15,
+  "weight_mult": 0.95,
+  "max_enchant": 3,
+  "color": [
+    150,
+    170,
+    180
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "undead",
+    "ghost",
+    "spectre"
+  ],
+  "special_properties": [
+    "phasebound",
+    "anti_incorporeal",
+    "cannot_be_blessed"
+  ],
+  "lore_descriptor": "translucent silver-blue, almost not all there",
+  "unidentified_descriptor": "a faintly glowing pale blade",
+  "first_pickup_chronicle": "Ghost iron. Forged in haunted ruins where the dead would not stop walking — the smiths beat them into the metal. A weapon that doesn't pass through what doesn't have a body.",
+  "design_notes": "Band C unique-flavor rare_metal. Mid mult (1.15), the special is 'phasebound' (can hit incorporeal monsters that would otherwise resist physical attacks). Cannot be blessed — the spirits in the iron don't tolerate it. Fills the Band C unique-flavor gap."
+}

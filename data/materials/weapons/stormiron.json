@@ -1,0 +1,35 @@
+{
+  "id": "stormiron",
+  "name": "stormiron",
+  "material_class": "rare_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 27,
+  "spread": 10,
+  "peak_weight": 7.0,
+  "min_level": 17,
+  "damage_mult": 1.40,
+  "weight_mult": 1.45,
+  "max_enchant": 1,
+  "color": [
+    80,
+    90,
+    110
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [
+    "lightning"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "thunder_quenched",
+    "shock_resistant"
+  ],
+  "lore_descriptor": "dark, with a faint blue cast and the smell of ozone",
+  "unidentified_descriptor": "a heavy iron weapon that hums",
+  "first_pickup_chronicle": "Stormiron. Quenched in a thunderhead while it cooled — the smith stood on a hilltop and held it up to the lightning. Half the smiths who try this die. The other half make this.",
+  "design_notes": "Band B heavy rare_metal. Mult 1.40, weight 1.45, enchant 1. Players see stormiron and know what they're getting — heavy and brutal. Shock-resistant flavor lets the wielder shrug off some lightning-monster procs."
+}

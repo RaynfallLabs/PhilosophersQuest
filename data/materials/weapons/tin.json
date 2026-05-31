@@ -1,0 +1,33 @@
+{
+  "id": "tin",
+  "name": "tin",
+  "material_class": "metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 7,
+  "spread": 6,
+  "peak_weight": 8.0,
+  "min_level": 1,
+  "damage_mult": 0.85,
+  "weight_mult": 0.8,
+  "max_enchant": 4,
+  "color": [
+    180,
+    190,
+    195
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "soft_metal",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "gray-pewter shine, soft enough to bend with thumb pressure",
+  "unidentified_descriptor": "a pale gray blade",
+  "first_pickup_chronicle": "Tin. The metal that made the Bronze Age — too soft alone, but it drinks enchantment like a thirsty thing.",
+  "design_notes": "Band A light-enchantable metal. Soft and unimpressive raw (mult 0.85) but max_enchant 4 means an early enchanter stacks big bonuses. Sister-archetype to quicksilver — both trade raw damage for enchant ceiling. Fills the F1-15 light-ench gap."
+}

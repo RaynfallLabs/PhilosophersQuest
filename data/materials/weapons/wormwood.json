@@ -1,0 +1,34 @@
+{
+  "id": "wormwood",
+  "name": "wormwood",
+  "material_class": "rare_wood",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 80,
+  "spread": 12,
+  "peak_weight": 4.0,
+  "min_level": 68,
+  "damage_mult": 1.30,
+  "weight_mult": 1.3,
+  "max_enchant": 1,
+  "color": [
+    200,
+    195,
+    170
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "battlefield_grown",
+    "bone_density",
+    "rot_proof"
+  ],
+  "lore_descriptor": "bone-pale, dense as ivory, with a faint smell of old steel",
+  "unidentified_descriptor": "an unnaturally heavy length of wood",
+  "first_pickup_chronicle": "Wormwood. Not the herb — the wood. Grown on a battlefield where the blood made the soil rich and the trees grew dense as bone. Heavy. Won't burn easy. Won't bend.",
+  "design_notes": "Band E heavy rare_wood. Mult 1.30, weight 1.3, enchant 1. Rot-proof + bone-dense flavor. Closes the late-band wood gap so clubs/staves/bows have a heavy late-game option."
+}

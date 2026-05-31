@@ -1,0 +1,38 @@
+{
+  "id": "cured_leather",
+  "name": "cured leather",
+  "material_class": "leather",
+  "applies_to": [
+    "weapon",
+    "armor"
+  ],
+  "peak_floor": 15,
+  "spread": 10,
+  "peak_weight": 8.0,
+  "min_level": 5,
+  "damage_mult": 0.9,
+  "weight_mult": 0.85,
+  "max_enchant": 2,
+  "color": [
+    120,
+    80,
+    50
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "cured",
+    "common"
+  ],
+  "lore_descriptor": "sun-cured brown leather, supple to the hand",
+  "unidentified_descriptor": "a wrap of well-treated leather",
+  "first_pickup_chronicle": "Cured leather. The honest material. Cattle and oak-tannin and a year hung in a barn. Doesn't surprise you, doesn't disappoint you.",
+  "design_notes": "Standard leather Band B. Closes the F5 → F62 leather gap. Mult 0.9, weight 0.85, max_enchant 2."
+}

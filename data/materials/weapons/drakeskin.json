@@ -1,0 +1,38 @@
+{
+  "id": "drakeskin",
+  "name": "drakeskin",
+  "material_class": "leather",
+  "applies_to": [
+    "weapon",
+    "armor"
+  ],
+  "peak_floor": 45,
+  "spread": 12,
+  "peak_weight": 4.0,
+  "min_level": 33,
+  "damage_mult": 1.15,
+  "weight_mult": 0.8,
+  "max_enchant": 3,
+  "color": [
+    100,
+    130,
+    150
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [
+    "fire",
+    "cold"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "drake_hide",
+    "elemental_resistant",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "blue-gray scales, soft as silk, hard to cut",
+  "unidentified_descriptor": "a strange, scaled hide",
+  "first_pickup_chronicle": "Drakeskin. Not a true dragon — a drake, the smaller cousin. The scales are softer but the fire-resistance is real. Better than mail in a furnace.",
+  "design_notes": "Light-ench leather Band D. Mult 1.15, weight 0.8, enchant 3. Has elemental resistance. Bridges into dragonhide. Fills leather light-ench gap."
+}

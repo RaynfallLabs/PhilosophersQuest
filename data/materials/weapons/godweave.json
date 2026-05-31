@@ -1,0 +1,35 @@
+{
+  "id": "godweave",
+  "name": "godweave",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 90,
+  "spread": 12,
+  "peak_weight": 3.0,
+  "min_level": 78,
+  "damage_mult": 1.30,
+  "weight_mult": 0.6,
+  "max_enchant": 8,
+  "color": [
+    240,
+    230,
+    200
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "starlight_thread",
+    "blessed_capable",
+    "cannot_be_cursed",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "thread of starlight, almost weightless, almost not there",
+  "unidentified_descriptor": "an impossibly light, shimmering weapon",
+  "first_pickup_chronicle": "Godweave. The metal that isn't metal — a thread of starlight pulled from the heaven-fabric and woven into a blade. Holds enchantment beyond the limits of any earthly forge.",
+  "design_notes": "Band F light-enchantable magical_metal. Mult 1.30, weight 0.6 (lightest in game), max_enchant 8 (highest in game). Cannot be cursed. The endgame enchanter's dream — base damage modest, but a +8 godweave weapon is the meta-best."
+}

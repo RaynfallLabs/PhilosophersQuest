@@ -1,0 +1,38 @@
+{
+  "id": "treant_heart",
+  "name": "treant heart",
+  "material_class": "exotic_organic",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 72,
+  "spread": 14,
+  "peak_weight": 3.0,
+  "min_level": 58,
+  "damage_mult": 1.35,
+  "weight_mult": 0.9,
+  "max_enchant": 5,
+  "color": [
+    80,
+    130,
+    60
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "living_wood",
+    "regrowing",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "warm green-brown, still living, faintly growing at the grain",
+  "unidentified_descriptor": "a length of wood that seems to breathe",
+  "first_pickup_chronicle": "Treant heart. Cut from the heart of a treant who was already dying — the wood is still alive. Bows of it draw stronger; staves of it root themselves in the floor when set down.",
+  "design_notes": "Light-ench exotic_organic, pf 72. Mult 1.35, weight 0.9, enchant 5. Living-wood/regrowing flavor. Fills the late-band organic gap below worldtree."
+}

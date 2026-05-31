@@ -1,0 +1,33 @@
+{
+  "id": "pig_iron",
+  "name": "pig iron",
+  "material_class": "metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 12,
+  "spread": 8,
+  "peak_weight": 8.0,
+  "min_level": 4,
+  "damage_mult": 1.20,
+  "weight_mult": 1.5,
+  "max_enchant": 1,
+  "color": [
+    120,
+    100,
+    90
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "bloomery_iron",
+    "brittle_but_brutal"
+  ],
+  "lore_descriptor": "rough cast, still pitted from the bloomery",
+  "unidentified_descriptor": "a crude, heavy weapon",
+  "first_pickup_chronicle": "Pig iron — straight from the bloomery, full of slag the smith never burned out. Brutal. Heavy. Won't take an enchantment, won't keep an edge — but it'll cave a helmet.",
+  "design_notes": "Band A heavy metal. High mult (1.20), heavy (1.5 weight), enchant cap 1. Sister-archetype to tungsten — early-game brute material. Fills the F1-15 heavy gap."
+}

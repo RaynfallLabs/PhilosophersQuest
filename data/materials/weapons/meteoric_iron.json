@@ -1,0 +1,33 @@
+{
+  "id": "meteoric_iron",
+  "name": "meteoric iron",
+  "material_class": "rare_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 40,
+  "spread": 12,
+  "peak_weight": 6.0,
+  "min_level": 28,
+  "damage_mult": 1.45,
+  "weight_mult": 1.6,
+  "max_enchant": 2,
+  "color": [
+    100,
+    100,
+    120
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "sky_fallen",
+    "ignores_shield_partial"
+  ],
+  "lore_descriptor": "dark gray, flecked with iron-shine like distant stars",
+  "unidentified_descriptor": "a strangely heavy metal weapon",
+  "first_pickup_chronicle": "Meteoric iron. It fell out of the sky. Hittite kings had blades of it before iron was understood as a craft — they didn't know what to call the metal but they knew it cut everything else they had.",
+  "design_notes": "Band C heavy rare_metal. Mult 1.45, weight 1.6, enchant 2. 'ignores_shield_partial' is the unique mechanic — splits shield AC by 25% on hit, just by virtue of how dense the meteoric metal is. Heavy-archetype for the F31-45 gap."
+}

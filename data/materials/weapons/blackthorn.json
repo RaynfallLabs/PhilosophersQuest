@@ -1,0 +1,37 @@
+{
+  "id": "blackthorn",
+  "name": "blackthorn",
+  "material_class": "wood",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 11,
+  "spread": 8,
+  "peak_weight": 7.0,
+  "min_level": 3,
+  "damage_mult": 1.15,
+  "weight_mult": 1.25,
+  "max_enchant": 1,
+  "color": [
+    50,
+    40,
+    35
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "dense_grain",
+    "ironwood_peer"
+  ],
+  "lore_descriptor": "near-black grain, dense as horn",
+  "unidentified_descriptor": "a heavy, dark club",
+  "first_pickup_chronicle": "Blackthorn. The shillelagh wood. Irish farmers carried it for two centuries against landlords and worse. The grain is so dense it rings like iron when you strike it.",
+  "design_notes": "Band A heavy wood. Mult 1.15, weight 1.25, enchant 1. The wood-class equivalent of pig_iron. Fills Band A wood-heavy gap."
+}

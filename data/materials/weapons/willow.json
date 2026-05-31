@@ -1,0 +1,37 @@
+{
+  "id": "willow",
+  "name": "willow",
+  "material_class": "wood",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 6,
+  "spread": 6,
+  "peak_weight": 7.0,
+  "min_level": 1,
+  "damage_mult": 0.75,
+  "weight_mult": 0.65,
+  "max_enchant": 4,
+  "color": [
+    200,
+    220,
+    150
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "bendable",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "pale, almost silvery — bends in a strong breeze",
+  "unidentified_descriptor": "a slender, pale length of wood",
+  "first_pickup_chronicle": "Willow. Bends instead of breaks. Bowers love it for that — and so do magicians. The wood seems to listen.",
+  "design_notes": "Band A light-enchantable wood. Low mult (0.75), very light (0.65), max_enchant 4. The wood-class equivalent of tin. Fills Band A wood-light gap so clubs/staves/bows have variety early."
+}

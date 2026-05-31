@@ -1,0 +1,37 @@
+{
+  "id": "titanforged",
+  "name": "titanforged",
+  "material_class": "magical_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 78,
+  "spread": 14,
+  "peak_weight": 4.0,
+  "min_level": 64,
+  "damage_mult": 1.65,
+  "weight_mult": 1.7,
+  "max_enchant": 2,
+  "color": [
+    180,
+    140,
+    80
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "giant"
+  ],
+  "special_properties": [
+    "titan_made",
+    "unbreakable",
+    "anti_giant",
+    "cannot_be_destroyed"
+  ],
+  "lore_descriptor": "bronze-gold, struck in patterns no human smith could match",
+  "unidentified_descriptor": "a magnificent, ponderous weapon",
+  "first_pickup_chronicle": "Titanforged. The pre-Olympian smiths. Heavier than anything mortal craftsmen attempt — only those who already passed the Trial of Strength can lift it without a chain.",
+  "design_notes": "Band E heavy magical_metal. Mult 1.65, weight 1.7, enchant 2. Late-game brute archetype — sister to tungsten/pig_iron in spirit. Unbreakable (cannot be sundered) + extra dmg vs giants for the lore payoff. Fills Band E heavy gap."
+}

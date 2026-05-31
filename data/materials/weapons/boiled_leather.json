@@ -1,0 +1,38 @@
+{
+  "id": "boiled_leather",
+  "name": "boiled leather",
+  "material_class": "leather",
+  "applies_to": [
+    "weapon",
+    "armor"
+  ],
+  "peak_floor": 30,
+  "spread": 12,
+  "peak_weight": 6.0,
+  "min_level": 18,
+  "damage_mult": 1.0,
+  "weight_mult": 1.0,
+  "max_enchant": 2,
+  "color": [
+    80,
+    50,
+    35
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [
+    "fire"
+  ],
+  "vulnerabilities": [
+    "fire"
+  ],
+  "effective_against": [],
+  "special_properties": [
+    "boiled",
+    "rigid"
+  ],
+  "lore_descriptor": "boiled to near-rigidity; dense, dark, half-armor in itself",
+  "unidentified_descriptor": "a stiff, dark leather",
+  "first_pickup_chronicle": "Boiled leather. Cuir bouilli. Plunged into hot wax until it hardens to near-bone density. The poor man's plate — and surprisingly close to the rich man's.",
+  "design_notes": "Mid-band leather, pf 30. Mult 1.0, weight 1.0, enchant 2. Continues the leather progression between cured_leather and drakeskin."
+}

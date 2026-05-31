@@ -1,0 +1,36 @@
+{
+  "id": "elven_silver",
+  "name": "elven silver",
+  "material_class": "rare_metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 22,
+  "spread": 10,
+  "peak_weight": 7.0,
+  "min_level": 12,
+  "damage_mult": 1.0,
+  "weight_mult": 0.8,
+  "max_enchant": 5,
+  "color": [
+    220,
+    230,
+    240
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "undead"
+  ],
+  "special_properties": [
+    "elven_polished",
+    "blessed_capable",
+    "enchant_friendly"
+  ],
+  "lore_descriptor": "moon-pale silver, polished by elven hands",
+  "unidentified_descriptor": "a luminous silver blade",
+  "first_pickup_chronicle": "Elven silver — alloyed by hands that worked while the moon was up. It holds blessings the way other metals hold rust.",
+  "design_notes": "Band B light-enchantable rare_metal. Mid mult (1.0), light weight (0.8), max_enchant 5. Sets up the 'cool elven gear' niche midgame. Sister to quicksilver/godweave."
+}

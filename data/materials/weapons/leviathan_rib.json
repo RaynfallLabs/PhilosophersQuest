@@ -1,0 +1,36 @@
+{
+  "id": "leviathan_rib",
+  "name": "leviathan rib",
+  "material_class": "exotic_organic",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 55,
+  "spread": 14,
+  "peak_weight": 4.0,
+  "min_level": 41,
+  "damage_mult": 1.2,
+  "weight_mult": 1.3,
+  "max_enchant": 2,
+  "color": [
+    200,
+    220,
+    230
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [
+    "cold"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [],
+  "special_properties": [
+    "sea_beast_bone",
+    "bone_density",
+    "sonar_aware"
+  ],
+  "lore_descriptor": "pearl-white bone, threaded with veins of dried saltwater",
+  "unidentified_descriptor": "a polished length of strange bone",
+  "first_pickup_chronicle": "Leviathan rib. From the beast in the deep — the bone is denser than ivory and somehow still hears the sea. Wielders report the weapon trembling when storms are near.",
+  "design_notes": "Heavy exotic_organic, mid-band. Mult 1.2, weight 1.3, enchant 2. Cold-resistant + bone-dense flavor. Fills the F5 → F92 organic gap (alongside treant_heart)."
+}
