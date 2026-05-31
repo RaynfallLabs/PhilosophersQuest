@@ -38,6 +38,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'charmed':            ('Charmed',            (255, 160, 200), 'Under enemy influence'),
     'cursed':             ('Cursed',             (120,  40, 160), 'Under a dark curse'),
     'heal_blocked':       ('Wound Lingers',      (160,  30,  50), 'HP cannot be restored while active (Gae Dearg)'),
+    'doom_dot':           ('Doom',               (140,  60, 200), 'Ticking damage as fraction of max HP per turn (Laevateinn)'),
     'weakened':           ('Weakened',           (150, 150,  80), 'Attack damage halved'),
     'bleeding':           ('Bleeding',           (200,  40,  40), 'Losing HP from wounds each turn'),
     'doomed':             ('Doomed',             (100,  20,  20), 'A death-curse; losing 1 HP per ~8 turns'),

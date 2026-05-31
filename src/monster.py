@@ -205,6 +205,7 @@ class Monster:
         bleeding_dmg = 0
         poison_dmg   = 0
         burning_dmg  = 0
+        doom_dmg     = 0
         disease_tick = False
         for name in list(self.status_effects):
             val = self.status_effects[name]
@@ -217,6 +218,12 @@ class Monster:
                     disease_tick = True
                 elif name == 'burning':
                     burning_dmg = max(1, self.max_hp // 20)
+                elif name == 'doom_dot':
+                    # Laevateinn (engine wave 4): doom_dot ticks N% of
+                    # max_hp per turn. The % is stashed on the monster
+                    # by the application code in combat.py.
+                    _pct = float(getattr(self, '_doom_dot_pct', 0.05) or 0.05)
+                    doom_dmg = max(1, int(self.max_hp * _pct))
             # Permanent effects (duration == -1) do NOT tick down or expire.
             if self.status_effects[name] < 0:
                 continue
@@ -232,6 +239,8 @@ class Monster:
             self.take_damage(poison_dmg)
         if burning_dmg > 0:
             self.take_damage(burning_dmg)
+        if doom_dmg > 0:
+            self.take_damage(doom_dmg, 'fire')
         if disease_tick and random.random() < 0.08:
             self.take_damage(max(1, self.max_hp // 20))
 
@@ -277,6 +286,12 @@ class Monster:
 
     def attack(self, player) -> tuple[int, str]:
         """Monster attacks player using THAC0 vs player AC. Returns (damage_dealt, message)."""
+        # Sudarshana (engine wave 4): return_to_hand_ward. The previous
+        # chain-5 kill set this flag — this attack misses outright and the
+        # ward is consumed.
+        if getattr(player, '_return_to_hand_active', False):
+            player._return_to_hand_active = False
+            return 0, f"The {self.name}'s strike is deflected — a discus spins between you!"
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:

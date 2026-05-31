@@ -1031,6 +1031,42 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _ca_rng.random() < 0.05:
                 self._spawn_house_of_atreus(new_level)
 
+        # Chandrahasa (engine wave 4): karma_disappear_proc. If the player's
+        # karma is negative AND they carry a chandrahasa-class weapon,
+        # roll the disappearance chance. The blade returns to Shiva.
+        # Searches weapon, ranged_weapon, AND inventory.
+        import random as _kd_rng
+        _karma = int(getattr(self, 'karma', 0))
+        if _karma < 0:
+            _slots = []
+            if self.player.weapon:
+                _slots.append(('weapon', self.player.weapon))
+            if getattr(self.player, 'ranged_weapon', None):
+                _slots.append(('ranged_weapon', self.player.ranged_weapon))
+            for _idx, _inv_item in enumerate(self.player.inventory):
+                _slots.append(('inventory', _inv_item, _idx))
+            for _entry in list(_slots):
+                _slot_kind = _entry[0]
+                _item = _entry[1]
+                _proc = float(getattr(_item, 'karma_disappear_proc', 0.0) or 0.0)
+                if _proc > 0 and _kd_rng.random() < _proc:
+                    # Remove this item.
+                    if _slot_kind == 'weapon':
+                        self.player.weapon = None
+                    elif _slot_kind == 'ranged_weapon':
+                        self.player.ranged_weapon = None
+                    else:
+                        try:
+                            self.player.inventory.remove(_item)
+                        except ValueError:
+                            pass
+                    self.add_message(
+                        f"The {getattr(_item, 'name', 'blade')} laughs and vanishes — it returns to Shiva.",
+                        'warning')
+                    self._log_chronicle(
+                        f"Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
+                    break  # one disappearance per floor change is enough
+
         # Place deep-lore items on their designated levels (once per run)
         self._maybe_place_lore_items(dungeon, new_level)
 
@@ -2387,6 +2423,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player._revealed_tag_turns_left = _rt
             if _rt == 0:
                 self.player._revealed_tag_ids = set()
+        # Cadmus / Vel / Shamshir summoned temp pets (engine wave 4): tick
+        # their _temp_duration; expire when it reaches zero.
+        if getattr(self, 'pets', None):
+            for _p in list(self.pets):
+                _td = int(getattr(_p, '_temp_duration', -1) or -1)
+                if _td > 0:
+                    _td -= 1
+                    _p._temp_duration = _td
+                    if _td == 0 and getattr(_p, 'alive', False):
+                        _p.alive = False
+                        self.add_message(
+                            f"The {_p.name} fades away — its time is spent.",
+                            'info')
 
         # Rand's Heart: show dramatic message if death was just prevented
         if getattr(self.player, '_rands_heart_triggered', False):

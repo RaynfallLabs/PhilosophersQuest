@@ -607,8 +607,55 @@ class CombatMixin:
         for kill-count quirks like Caesar, Kali, Boudicca, Leonidas, Battle Trance, etc.
         """
         self.level_mgr.monsters_killed += 1
+        # Curtana (engine wave 4): spare_kill_chance — the monster did NOT
+        # actually die. The combat-side flag _spared_this_attack tells us
+        # to swallow the kill notification, decrement the killed counter,
+        # and print the mercy line instead.
+        if getattr(self.player, '_spared_this_attack', False):
+            self.player._spared_this_attack = False
+            self.level_mgr.monsters_killed -= 1
+            self.add_message(
+                f"You spare the {monster.name} — Curtana's mercy. (+1 max HP)",
+                'success')
+            return
         self.add_message(f"The {monster.name} is slain!", 'success')
         self._drop_treasure(monster)
+
+        # Cadmus / Vel of Murugan / Shamshir (engine wave 4):
+        # summon_after_kill_with_tag — combat side set _pending_summon
+        # with details; we spawn a temp ally Pet here.
+        _ps = getattr(self.player, '_pending_summon', None)
+        if _ps:
+            self.player._pending_summon = None
+            try:
+                from pet_system import Pet, random_pet_species
+                _spawn_x, _spawn_y = _ps.get('spawn_at', (self.player.x, self.player.y))
+                # Adjacent fallback if spawn tile occupied
+                if any(p.alive and p.x == _spawn_x and p.y == _spawn_y for p in self.pets) \
+                        or not self.dungeon.is_walkable(_spawn_x, _spawn_y):
+                    for _dx in (-1, 0, 1):
+                        for _dy in (-1, 0, 1):
+                            if _dx == 0 and _dy == 0:
+                                continue
+                            _nx, _ny = _spawn_x + _dx, _spawn_y + _dy
+                            if (self.dungeon.is_walkable(_nx, _ny)
+                                    and not any(p.alive and p.x == _nx and p.y == _ny
+                                                for p in self.pets)):
+                                _spawn_x, _spawn_y = _nx, _ny
+                                break
+                _species = random_pet_species()
+                _ally = Pet(_species, _spawn_x, _spawn_y)
+                # Temp pet: scale max_hp + flag duration.
+                _max_pct = float(_ps.get('max_hp_pct', 0.5) or 0.5)
+                _ally.max_hp = max(5, int(_ally.max_hp * _max_pct))
+                _ally.hp = _ally.max_hp
+                _ally._temp_duration = int(_ps.get('duration_turns', 5) or 5)
+                self.pets.append(_ally)
+                self.add_message(
+                    f"From the slain {monster.name} a {_ally.name} springs forth — bound to your side!",
+                    'success')
+            except Exception:
+                pass
 
         # Zireael (engine wave 3): extra_action_after_kill — Ciri's speed.
         # On kill, apply 1-turn haste so the player effectively gets a free

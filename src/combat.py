@@ -458,6 +458,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             crit = True
             player._kusanagi_force_crit = False  # consume per-attack
 
+        # Soul Reaver (engine wave 4): growth_on_innocent_kill auto-crit
+        # on the NEXT hit after innocent blood was spilled.
+        if weapon and getattr(player, '_next_hit_auto_crit', False):
+            mult *= max(1.5, weapon.crit_multiplier)
+            crit = True
+            player._next_hit_auto_crit = False
+
         # weapon_first_hit_crit mastery: guarantee crit on the FIRST hit of a chain
         if chain == 1 and _mastery and _mastery.get('kind') == 'weapon_first_hit_crit' \
                 and _mastery.get('value') and weapon:
@@ -606,6 +613,25 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             from dice import roll as _ab_roll
             bonus = _ab_roll(weapon.abaddon_bonus_damage)
             damage += bonus
+
+        # Spear of Lugh (engine wave 4): damage_bonus_vs_gaze. Multiplies
+        # damage against any monster with a gaze attack mechanic — Balor's
+        # eye, the basilisk's stare, Medusa's petrifaction. Detection via
+        # gaze_paralyze attr (Medusa-style) OR any attack with 'gaze' in
+        # its type/name string.
+        _lugh_mult = float(getattr(weapon, 'damage_bonus_vs_gaze', 0.0) or 0.0) if weapon else 0.0
+        if _lugh_mult > 0:
+            _has_gaze = False
+            if int(getattr(monster, 'gaze_paralyze', 0) or 0) > 0:
+                _has_gaze = True
+            else:
+                for _atk in getattr(monster, 'attacks', []) or []:
+                    _atk_str = str(_atk.get('type', '') or '') + ' ' + str(_atk.get('name', '') or '')
+                    if 'gaze' in _atk_str.lower():
+                        _has_gaze = True
+                        break
+            if _has_gaze:
+                damage = max(1, int(damage * (1.0 + _lugh_mult)))
 
         # Per-tag bonus damage dice (Anduril +1d8 vs undead, Glamdring vs
         # goblin, Cadmus vs dragon, Meleager vs beast, etc.). Each entry
@@ -768,6 +794,180 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             extra = monster.take_damage(extra, 'physical')
             actual += extra
             weapon._damoclean_consecutive = 0
+
+        # Curtana (engine wave 4): spare_kill_chance. On a strike that
+        # WOULD kill the target, chance to spare instead — leave the
+        # monster at 1 HP, grant the player +1 max HP up to the per-floor
+        # cap. The Sword of Mercy. Pre-check that the hit would have
+        # killed by reading monster.hp BEFORE this resolution — already
+        # actual >= monster.hp_before_hit, so check is_dead() post-hit.
+        _sp_ch = float(getattr(weapon, 'spare_kill_chance', 0.0) or 0.0) if weapon else 0.0
+        if (_sp_ch > 0 and monster.is_dead() and actual > 0
+                and random.random() < _sp_ch):
+            _per_floor_cap = int(getattr(weapon, 'spare_kill_max_hp_per_floor', 5) or 5)
+            _already = int(getattr(weapon, '_spare_kill_floor_hp', 0) or 0)
+            if _already < _per_floor_cap:
+                # Restore monster to 1 HP and mark it for fleeing-tendency
+                monster.hp = 1
+                monster.alive = True
+                player.max_hp += 1
+                player.hp = min(player.max_hp, player.hp + 1)
+                weapon._spare_kill_floor_hp = _already + 1
+                # Marker for game_combat to print "You spared the foe."
+                player._spared_this_attack = True
+
+        # Mjolnir (engine wave 4): chain_lightning_at_chain_n. At chain
+        # >= from_chain, splash damage to N adjacent enemies of the
+        # primary target. Uses _combat_monsters_ref.
+        _cl = getattr(weapon, 'chain_lightning_at_chain_n', None) if weapon else None
+        if _cl and actual > 0 and chain >= int(_cl.get('from_chain', 999) or 999):
+            _splash_pct = float(_cl.get('splash_pct', 0.5) or 0.5)
+            _max_targets = int(_cl.get('max_targets', 1) or 1)
+            _splash_dmg = max(1, int(damage * _splash_pct))
+            _hit = 0
+            _mons_ref = getattr(player, '_combat_monsters_ref', None) or []
+            for _m in _mons_ref:
+                if _hit >= _max_targets:
+                    break
+                if (_m is not monster and getattr(_m, 'alive', False)
+                        and abs(_m.x - monster.x) <= 1 and abs(_m.y - monster.y) <= 1):
+                    _m.take_damage(_splash_dmg, 'lightning')
+                    _hit += 1
+
+        # Zulfiqar (engine wave 4): every_hit_secondary_target. Bifurcated
+        # tip — every successful hit deals splash damage to one adjacent
+        # enemy of the primary target.
+        _eh = getattr(weapon, 'every_hit_secondary_target', None) if weapon else None
+        if _eh and actual > 0:
+            _eh_pct = float(_eh.get('splash_pct', 0.5) or 0.5)
+            _eh_range = int(_eh.get('range_tiles', 1) or 1)
+            _eh_dmg = max(1, int(damage * _eh_pct))
+            _mons_ref = getattr(player, '_combat_monsters_ref', None) or []
+            for _m in _mons_ref:
+                if (_m is not monster and getattr(_m, 'alive', False)
+                        and abs(_m.x - monster.x) <= _eh_range
+                        and abs(_m.y - monster.y) <= _eh_range):
+                    _m.take_damage(_eh_dmg, 'physical')
+                    break  # one adjacent foe per hit
+
+        # Gandiva (engine wave 4): multi_arrow_at_chain_5. At max chain
+        # (ranged shots only — gated by `ammo` arg), hit up to N other
+        # visible monsters for fractional damage. The hundred-string
+        # volley.
+        _ma = getattr(weapon, 'multi_arrow_at_chain_5', None) if weapon else None
+        if _ma and ammo and actual > 0:
+            _maxc_ma = weapon.max_chain_length or len(weapon.chain_multipliers)
+            if chain >= _maxc_ma:
+                _ma_targets = int(_ma.get('targets', 3) or 3)
+                _ma_pct = float(_ma.get('damage_per', 0.5) or 0.5)
+                _ma_dmg = max(1, int(damage * _ma_pct))
+                _hit_ma = 0
+                _mons_ref = getattr(player, '_combat_monsters_ref', None) or []
+                # Closest-first ordering for narrative satisfaction.
+                _sorted = sorted(
+                    [m for m in _mons_ref
+                     if m is not monster and getattr(m, 'alive', False)],
+                    key=lambda m: abs(m.x - player.x) + abs(m.y - player.y),
+                )
+                for _m in _sorted:
+                    if _hit_ma >= _ma_targets:
+                        break
+                    _m.take_damage(_ma_dmg, 'pierce')
+                    _hit_ma += 1
+
+        # Rod of Moses (engine wave 4): chain_tier_status_table. The Ten
+        # Plagues by rung — at chain >= key, apply the matching status
+        # to the target. Keys are stringified ints (JSON convention).
+        _ctst = getattr(weapon, 'chain_tier_status_table', None) if weapon else None
+        if _ctst and actual > 0:
+            for _key, _entry in _ctst.items():
+                try:
+                    _need = int(_key)
+                except (TypeError, ValueError):
+                    continue
+                if chain >= _need and isinstance(_entry, dict):
+                    _st = _entry.get('status')
+                    _dur = int(_entry.get('duration', 3) or 3)
+                    if _st:
+                        _cur = monster.status_effects.get(_st, 0)
+                        monster.status_effects[_st] = max(_cur, _dur)
+
+        # Laevateinn (engine wave 4): boss_doom_dot_at_chain_5. At max
+        # chain hit on a boss-tagged target, apply doom_dot status. The
+        # status duration encodes the fraction of max-HP/turn — see
+        # main turn-tick.
+        _bd = getattr(weapon, 'boss_doom_dot_at_chain_5', None) if weapon else None
+        if _bd and actual > 0:
+            _maxc_bd = weapon.max_chain_length or len(weapon.chain_multipliers)
+            _mon_tags = set(getattr(monster, 'tags', []))
+            if chain >= _maxc_bd and ('boss' in _mon_tags or getattr(monster, 'is_boss', False)):
+                _pct = float(_bd.get('pct_max_hp_per_turn', 0.05) or 0.05)
+                _dur = int(_bd.get('duration', 30) or 30)
+                # Encode pct in a side-channel on the monster so the tick
+                # knows how much to deal. Avoid mutating the status dict.
+                monster._doom_dot_pct = _pct
+                cur = monster.status_effects.get('doom_dot', 0)
+                monster.status_effects['doom_dot'] = max(cur, _dur)
+
+        # Spear of Longinus (engine wave 4): weep_heal_on_kill_scaled.
+        # On kill, heal player by (target.max_hp * scale) HP. Charlemagne's
+        # spear weeps for the wounds it deals.
+        _wh = float(getattr(weapon, 'weep_heal_on_kill_scaled', 0.0) or 0.0) \
+            if weapon else 0.0
+        if _wh > 0 and monster.is_dead():
+            _gain = max(1, int(getattr(monster, 'max_hp', 0) * _wh))
+            player.restore_hp(_gain)
+
+        # Sudarshana (engine wave 4): return_to_hand_ward. On chain-5 kill,
+        # set player flag — the NEXT monster attack on the player will
+        # miss outright (consumed by monster.attack).
+        if (weapon and getattr(weapon, 'return_to_hand_ward', False)
+                and monster.is_dead()):
+            _maxc_rh = weapon.max_chain_length or len(weapon.chain_multipliers)
+            if chain >= _maxc_rh:
+                player._return_to_hand_active = True
+
+        # Soul Reaver (engine wave 4): growth_on_innocent_kill. Killing a
+        # non-hostile NPC (hostile=False / friendly tag / npc tag) marks
+        # the next hit for auto-crit. The blade is fed by innocence.
+        if (weapon and getattr(weapon, 'growth_on_innocent_kill', False)
+                and monster.is_dead()):
+            _mon_tags = set(getattr(monster, 'tags', []))
+            _is_innocent = (
+                not getattr(monster, 'hostile', True)
+                or 'npc' in _mon_tags
+                or 'friendly' in _mon_tags
+                or 'civilian' in _mon_tags
+            )
+            if _is_innocent:
+                player._next_hit_auto_crit = True
+
+        # Echidna's Fang (engine wave 4): random_status_from_pool. On hit,
+        # roll the chance and apply a random status from the pool.
+        _rsp = getattr(weapon, 'random_status_from_pool', None) if weapon else None
+        if _rsp and actual > 0:
+            _rsp_chance = float(_rsp.get('chance', 0.0) or 0.0)
+            _rsp_pool = list(_rsp.get('pool', []) or [])
+            _rsp_dur = int(_rsp.get('duration', 5) or 5)
+            if _rsp_pool and random.random() < _rsp_chance:
+                _pick = random.choice(_rsp_pool)
+                _cur_p = monster.status_effects.get(_pick, 0)
+                monster.status_effects[_pick] = max(_cur_p, _rsp_dur)
+
+        # Cadmus / Vel / Shamshir (engine wave 4): summon_after_kill_with_tag.
+        # On kill matching a tag, set side-channel marker for game_combat
+        # to spawn an ally pet. Done as a marker (not direct spawn) because
+        # combat.py is leaf and doesn't import pet system.
+        _su = getattr(weapon, 'summon_after_kill_with_tag', None) if weapon else None
+        if _su and monster.is_dead():
+            _su_tag = _su.get('tag', '')
+            _su_chance = float(_su.get('chance', 1.0) or 1.0)
+            if _su_tag and _tag_match(monster, _su_tag) and random.random() < _su_chance:
+                player._pending_summon = {
+                    'duration_turns': int(_su.get('duration_turns', 5) or 5),
+                    'max_hp_pct': float(_su.get('max_hp_pct', 0.5) or 0.5),
+                    'spawn_at': (monster.x, monster.y),
+                }
 
         # Lifesteal mechanic (Soul Reaver). Mastery: weapon_lifesteal adds % on top.
         healed = False
@@ -978,6 +1178,17 @@ def can_melee_attack(player, monster) -> bool:
     """Return True if the player's equipped weapon can reach the monster."""
     weapon = player.weapon
     reach = weapon.reach if weapon else 1
+    # Ruyi Jingu Bang (engine wave 4): chain_modulated_reach. The cudgel
+    # GROWS with the chain. For targeting purposes we use the MAXIMUM
+    # reach the weapon could achieve (top entry in the table). Damage
+    # ladder still scales per-attack normally.
+    _cmr = getattr(weapon, 'chain_modulated_reach', None) if weapon else None
+    if _cmr:
+        try:
+            _max_extension = max(int(v) for v in _cmr.values())
+            reach = max(reach, _max_extension)
+        except (TypeError, ValueError):
+            pass
     if reach < 15:  # melee or polearm
         dx = abs(player.x - monster.x)
         dy = abs(player.y - monster.y)

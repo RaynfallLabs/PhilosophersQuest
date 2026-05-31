@@ -363,6 +363,87 @@ class Weapon(Item):
         # Runtime kill_count tally for karma_adjust.
         self._karma_kill_tally: int = 0
 
+        # ------------------------------------------------------------------
+        # Engine wave 4 (2026-05-30) — the rest of the "complex" mechanics
+        # the audit had flagged. Each wired through to behavior — no more
+        # "deferred / will revisit." Field load + consumer code in this
+        # commit; tests in tests/test_engine_wave4_unique_mechanics.py.
+        # ------------------------------------------------------------------
+
+        # Mjolnir: chain_lightning_at_chain_n = {"from_chain": 6,
+        # "splash_pct": 0.5, "max_targets": 1}. At chain >= from_chain,
+        # splash damage to adjacent enemies of the primary target.
+        self.chain_lightning_at_chain_n: dict = defn.get(
+            'chain_lightning_at_chain_n', {}) or {}
+        # Sudarshana: return_to_hand_ward = True. On chain-5 kill, sets
+        # player._return_to_hand_active so the NEXT monster attack misses
+        # outright. Refreshes per chain reset (any new combat).
+        self.return_to_hand_ward: bool = bool(
+            defn.get('return_to_hand_ward', False))
+        # Laevateinn: boss_doom_dot_at_chain_5 = {"pct_max_hp_per_turn":
+        # 0.05, "duration": -1}. At chain 5 hit on a boss-tagged target,
+        # apply a doom_dot status that ticks N% max-HP per turn.
+        self.boss_doom_dot_at_chain_5: dict = defn.get(
+            'boss_doom_dot_at_chain_5', {}) or {}
+        # Spear of Longinus: weep_heal_on_kill_scaled = 0.1 (1 HP per
+        # 10 max-HP of slain target). Charlemagne's spear weeps and
+        # heals the wielder.
+        self.weep_heal_on_kill_scaled: float = float(
+            defn.get('weep_heal_on_kill_scaled', 0.0) or 0.0)
+        # Rod of Moses: chain_tier_status_table = {"3": {"status":
+        # "slowed", "duration": 3}, "5": ...}. The Ten Plagues by chain
+        # rung.
+        self.chain_tier_status_table: dict = defn.get(
+            'chain_tier_status_table', {}) or {}
+        # Zulfiqar: every_hit_secondary_target = {"splash_pct": 0.5,
+        # "range_tiles": 1}. Every hit also deals splash damage to one
+        # adjacent enemy of the primary target.
+        self.every_hit_secondary_target: dict = defn.get(
+            'every_hit_secondary_target', {}) or {}
+        # Gandiva: multi_arrow_at_chain_5 = {"targets": 3, "damage_per":
+        # 0.5}. At chain 5 ranged hit, hit up to N other visible monsters.
+        self.multi_arrow_at_chain_5: dict = defn.get(
+            'multi_arrow_at_chain_5', {}) or {}
+        # Soul Reaver: growth_on_innocent_kill = True. Killing a
+        # non-hostile NPC marks the next hit for auto-crit.
+        self.growth_on_innocent_kill: bool = bool(
+            defn.get('growth_on_innocent_kill', False))
+        # Chandrahasa: karma_disappear_proc = 0.05 (chance per floor
+        # change when karma is negative). Vanishes back to Shiva.
+        self.karma_disappear_proc: float = float(
+            defn.get('karma_disappear_proc', 0.0) or 0.0)
+        # Ruyi Jingu Bang: chain_modulated_reach = {"4": 4, "7": 5}.
+        # At chain >= key, reach is at least value.
+        self.chain_modulated_reach: dict = defn.get(
+            'chain_modulated_reach', {}) or {}
+        # Curtana: spare_kill_chance = 0.25, spare_kill_hp_per_floor =
+        # 5. On hit that WOULD kill, chance to spare instead. The
+        # monster survives at 1 HP and the player gains +1 max HP up
+        # to the floor cap.
+        self.spare_kill_chance: float = float(
+            defn.get('spare_kill_chance', 0.0) or 0.0)
+        self.spare_kill_max_hp_per_floor: int = int(
+            defn.get('spare_kill_max_hp_per_floor', 5) or 5)
+        # Spear of Lugh: damage_bonus_vs_gaze = 2.0. Vs any monster with
+        # a gaze/petrification mechanic, multiply damage. Killed Balor
+        # through the eye.
+        self.damage_bonus_vs_gaze: float = float(
+            defn.get('damage_bonus_vs_gaze', 0.0) or 0.0)
+        # Echidna's Fang: random_status_from_pool = {"pool": [...],
+        # "chance": 0.4, "duration": 5}. On hit, roll chance and apply
+        # a random status from the pool.
+        self.random_status_from_pool: dict = defn.get(
+            'random_status_from_pool', {}) or {}
+        # Cadmus / Vel / Shamshir: summon_after_kill_with_tag = {"tag":
+        # "demon", "duration_turns": 5, "max_hp_pct": 0.5, "chance": 1.0}.
+        # On kill of matching tag, spawn an ally pet of similar level.
+        self.summon_after_kill_with_tag: dict = defn.get(
+            'summon_after_kill_with_tag', {}) or {}
+        # Runtime: counter of spared monsters this floor for Curtana cap.
+        self._spare_kill_floor_hp: int = 0
+        # Runtime: per-floor karma_disappear roll already done flag.
+        self._karma_disappear_rolled_this_floor: bool = False
+
     @property
     def max_chain_length(self) -> int:
         """Always derived from chain_multipliers so old pickled weapons stay correct."""
