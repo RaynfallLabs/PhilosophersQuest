@@ -111,6 +111,7 @@ class Player:
         self._amazon_charge_armed = False
         self._straight_line_steps = 0
         self._weave_unweave_active = False
+        self._dragon_blood_active = False
         self._rotating_chain_subject = None
         self._armor_proc_adj_enemies = 0
         self._armor_proc_near_door = False
