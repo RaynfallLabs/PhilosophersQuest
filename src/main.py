@@ -740,14 +740,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         if new_level in _MILESTONE_FLAVOR:
             self._log_chronicle(_MILESTONE_FLAVOR[new_level])
-        # Pelops Sword: cursed_lineage descent event. 5% chance per floor
-        # to spawn a hostile "House of Atreus" NPC near the player. Per
-        # audit 2026-05-30 — JSON flag was inert.
-        if (self.player.weapon
-                and getattr(self.player.weapon, 'cursed_lineage', False)):
-            import random as _ca_rng
-            if _ca_rng.random() < 0.05:
-                self._spawn_house_of_atreus(new_level)
         # Bones ghost notification
         ghost_name = getattr(dungeon, 'bones_ghost_name', None)
         if ghost_name:
@@ -998,6 +990,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         else:
             self.player.x, self.player.y = dungeon.rooms[-1].center
             self.add_message(f"You ascend to level {new_level}.", 'info')
+
+        # Pelops Sword: cursed_lineage descent event. 5% chance per
+        # DESCENT (enter_from_top=True only — ascending doesn't trigger
+        # the Mycenaean curse) to spawn a hostile House of Atreus NPC
+        # near the player. Hooked HERE — AFTER player position is set —
+        # so the spawn radius search reads correct coordinates. Bug
+        # fix 2026-05-30 (audit found previous placement read OLD
+        # floor's player position).
+        if (enter_from_top and self.player.weapon
+                and getattr(self.player.weapon, 'cursed_lineage', False)):
+            import random as _ca_rng
+            if _ca_rng.random() < 0.05:
+                self._spawn_house_of_atreus(new_level)
 
         # Place deep-lore items on their designated levels (once per run)
         self._maybe_place_lore_items(dungeon, new_level)
