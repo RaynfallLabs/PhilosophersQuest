@@ -1141,21 +1141,62 @@ def _title_if_all_lower(s: str) -> str:
     return s.title() if s and s == s.lower() else s
 
 
-def compose_item_name(material_name: str, template_name: str) -> str:
+def _append_noun_if_missing(text: str, noun: str) -> str:
+    """If `text` doesn't already end in `noun` (or contain it), append it.
+    Used by compose_item_name / compose_unidentified_name to rescue names
+    whose template is a bare adjective ('padded', 'leather', 'plate'),
+    which would otherwise render as 'Linen Padded' with no noun. The
+    template JSON supplies `noun` ('armor', 'mail', 'coat'); we only
+    append the noun's words that aren't already present so 'padded shirt'
+    + noun='shirt' doesn't become 'padded shirt shirt'.
+
+    >>> _append_noun_if_missing('linen padded', 'coat')
+    'linen padded coat'
+    >>> _append_noun_if_missing('linen padded shirt', 'shirt')
+    'linen padded shirt'
+    >>> _append_noun_if_missing('leather armor', 'armor')
+    'leather armor'
+    >>> _append_noun_if_missing('damascus steel full', 'plate armor')
+    'damascus steel full plate armor'
+    >>> _append_noun_if_missing('damascus steel plate', 'plate armor')
+    'damascus steel plate armor'
+    """
+    if not noun:
+        return text
+    words_lc = [w.lower() for w in text.split()]
+    # Only append the noun-words that aren't already in the text. Preserves
+    # word order in the noun phrase ("plate armor" not "armor plate").
+    missing = [w for w in noun.split() if w.lower() not in words_lc]
+    if not missing:
+        return text
+    return f"{text} {' '.join(missing)}".strip()
+
+
+def compose_item_name(material_name: str, template_name: str,
+                      noun: str = '') -> str:
     """Identified-form item name. Strips redundant material words from
     the template so 'steel' + 'iron boots' renders as 'steel boots',
-    not 'steel iron boots'. Title-cases the result."""
+    not 'steel iron boots'. Appends `noun` if provided and the cleaned
+    phrase doesn't already contain it — this rescues bare-adjective
+    template names ('padded' + 'linen' would otherwise be 'Linen Padded').
+    Title-cases the result."""
     cleaned = _strip_redundant_material_words(template_name)
-    return _title_if_all_lower(f"{material_name} {cleaned}".strip())
+    composed = f"{material_name} {cleaned}".strip()
+    composed = _append_noun_if_missing(composed, noun)
+    return _title_if_all_lower(composed)
 
 
-def compose_unidentified_name(material_descriptor: str, template_name: str) -> str:
+def compose_unidentified_name(material_descriptor: str, template_name: str,
+                              noun: str = '') -> str:
     """Unidentified-form item name. Normalizes both the descriptor
     (drop article, drop tail-noun) and the template (drop redundant
-    material words) before composing. Title-cases the result."""
+    material words) before composing. Appends `noun` if provided and
+    the cleaned phrase lacks one. Title-cases the result."""
     cleaned_desc = _normalize_descriptor(material_descriptor)
     cleaned_tpl = _strip_redundant_material_words(template_name)
-    return _title_if_all_lower(f"{cleaned_desc} {cleaned_tpl}".strip())
+    composed = f"{cleaned_desc} {cleaned_tpl}".strip()
+    composed = _append_noun_if_missing(composed, noun)
+    return _title_if_all_lower(composed)
 
 
 def instantiate_weapon(template_id: str, material_id: str, *,
@@ -1204,7 +1245,7 @@ def instantiate_weapon(template_id: str, material_id: str, *,
                                * float(tpl.get('damage_modifier', 1.0))))
 
     weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
-    name = compose_item_name(mat['name'], tpl['name'])
+    name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))
     lore = _compose_common_lore(tpl, mat, name, item_noun_for_weapon(tpl))
 
     defn = {
@@ -1229,7 +1270,8 @@ def instantiate_weapon(template_id: str, material_id: str, *,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
         'identified': False,
         'unidentified_name': compose_unidentified_name(
-            mat.get('unidentified_descriptor', mat['name']), tpl['name']),
+            mat.get('unidentified_descriptor', mat['name']), tpl['name'],
+            tpl.get('noun', '')),
         'buc': buc,
         'requires_ammo': tpl.get('requires_ammo', None),
         'infinite_ammo': bool(tpl.get('infinite_ammo', False)),
@@ -1316,7 +1358,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
     base_ac = int(tpl.get('base_ac_value', 1))
     material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
-    name = compose_item_name(mat['name'], tpl['name'])
+    name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))
 
     defn = {
         'id': f"{material_id}_{template_id}",
@@ -1335,7 +1377,8 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'damage_resistances': mat.get('resistances', {}) if isinstance(mat.get('resistances'), dict) else {},
         'identified': False,
         'unidentified_name': compose_unidentified_name(
-            mat.get('unidentified_descriptor', mat['name']), tpl['name']),
+            mat.get('unidentified_descriptor', mat['name']), tpl['name'],
+            tpl.get('noun', '')),
         'buc': buc,
         'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
         # equip_threshold = complexity, driven by armor_class_tier:
@@ -1364,7 +1407,7 @@ def instantiate_shield(template_id: str, material_id: str, *,
     base_ac = int(tpl.get('base_ac_value', 1))
     material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
-    name = compose_item_name(mat['name'], tpl['name'])
+    name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))
     defn = {
         'id': f"{material_id}_{template_id}",
         'name': name,
@@ -1380,7 +1423,8 @@ def instantiate_shield(template_id: str, material_id: str, *,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
         'identified': False,
         'unidentified_name': compose_unidentified_name(
-            mat.get('unidentified_descriptor', mat['name']), tpl['name']),
+            mat.get('unidentified_descriptor', mat['name']), tpl['name'],
+            tpl.get('noun', '')),
         'buc': buc,
         'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
     }
