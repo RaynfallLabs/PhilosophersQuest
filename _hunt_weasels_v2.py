@@ -7,6 +7,11 @@ User flag: my first weasel-purge missed:
 - "What does the case illustrate about X?" — intervening clause beat the closer regex
 - "What does it reveal about X?" / "What does the timing reveal?" — same trick
 - "What was the giveaway?" / "What's the Ponzi tell?" — jargon nouns
+
+v3 additions (2026-06-01): possessive + bare-tail + past-tense + adjective-prefix
+variants the user flagged in economics — "Menger's lesson?", "What was the lesson?",
+"What's the canonical lesson?", "What is the assignat episode's lesson?", trailing
+"Lesson?" after a sentence terminator, etc.
 """
 import json
 import re
@@ -48,12 +53,29 @@ WEASEL_V2_PATTERNS = [
     r"[Ww]hat does (this case|this episode|this story|this incident|this period) (illustrate|show|reveal|teach|prove|demonstrate|suggest|tell us|expose)[^?]*\??$",
     # v4: "What was the X" with abstract noun (similar to "What's the X" weasels)
     r"[Ww]hat was the (giveaway|tell|red flag|catch|implication|warning|recognition|takeaway|broader \w+)\??$",
+    # v5 (2026-06-01): possessive + bare-tail + past-tense + adjective-prefix variants
+    # "Menger's lesson?" / "Bastiat's read?" / "the assignat episode's lesson?"
+    r"\b\w+(?:[’']s)\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition)\??$",
+    # bare-tail after sentence terminator: "...$11B. Lesson?" / "...transaction is final. LESSON?"
+    r"[.!?’”—]\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition|READ|LESSON|TAKEAWAY|RECOGNITION)\??$",
+    # "What was the lesson/read/takeaway/recognition?" (past-tense)
+    r"[Ww]hat\s+was\s+the\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition)\??$",
+    # "What's the canonical lesson?" / "What is the central recognition?" (adjective-prefix)
+    r"[Ww]hat'?s\s+the\s+\w+\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition)\??$",
+    r"[Ww]hat\s+is\s+the\s+\w+\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition)\??$",
+    # "Why was 'too big to fail' the lesson?" (interrogative-shifted)
+    r"[Ww]hy\s+was\s+[^?]+\s+the\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition)\??$",
+    # "What is the recognition?" (bare "is the" form, completes v1 set)
+    r"[Ww]hat\s+is\s+the\s+([Rr]ead|[Ll]esson|[Tt]akeaway|[Rr]ecognition)\??$",
 ]
 
 WEASEL_V2_RE = re.compile("|".join(WEASEL_V2_PATTERNS))
 
-# Banks touched in this session
-SESSION_BANKS = ["ai", "animal", "cooking", "economics", "geography", "science"]
+# All 12 subject banks — full sweep (was: just session-touched banks)
+SESSION_BANKS = [
+    "ai", "animal", "cooking", "economics", "geography", "grammar",
+    "history", "math", "philosophy", "science", "theology", "trivia",
+]
 
 print(f"{'bank':<12} {'size':>6} {'weasels':>8}")
 print("-" * 30)
