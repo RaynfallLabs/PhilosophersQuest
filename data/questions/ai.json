@@ -10093,7 +10093,7 @@
   },
   {
     "tier": 4,
-    "question": "A high-school student asks ChatGPT to write the code for a programming-class project. The code runs, the project gets an A. A year later the student tries to extend the project and discovers the variable names made no sense and the logic was wrong in two places. What's the realistic lesson?",
+    "question": "A high-school student asks ChatGPT to write the code for a programming-class project. The code runs, the project gets an A. A year later the student tries to extend the project and discovers the variable names made no sense and the logic was wrong in two places. What did skipping the read cost?",
     "answer": "AI-generated code that runs is not the same as code you understand — you owe a careful read-through before turning it in, because tomorrow you will be the one stuck with it.",
     "choices": [
       "AI-generated code that runs is not the same as code you understand — you owe a careful read-through before turning it in, because tomorrow you will be the one stuck with it.",
@@ -11329,7 +11329,7 @@
   },
   {
     "tier": 4,
-    "question": "Researchers in 2023 and 2024 documented several browser extensions that were initially benign and then became malicious after the developer sold the extension or was compromised. The extensions had already been installed by millions of users. What's the defensive lesson?",
+    "question": "Researchers in 2023 and 2024 documented several browser extensions that were initially benign and then became malicious after the developer sold the extension or was compromised. The extensions had already been installed by millions of users. What's the routine that shrinks this attack surface?",
     "answer": "Periodically audit installed extensions and remove ones you don't actively use — long-tail extensions are a known supply-chain risk",
     "choices": [
       "Periodically audit installed extensions and remove ones you don't actively use — long-tail extensions are a known supply-chain risk",
@@ -14461,7 +14461,7 @@
   },
   {
     "tier": 5,
-    "question": "Sam Altman flew to Saudi Arabia and the UAE in 2024 to pitch a multi-trillion-dollar AI chip-fab plan. Within a year, sovereign wealth funds — UAE's MGX, Saudi PIF, Singapore's Temasek — were investors in major US AI firms and founding partners in OpenAI's Stargate compute project. What's the kid's recognition?",
+    "question": "Sam Altman flew to Saudi Arabia and the UAE in 2024 to pitch a multi-trillion-dollar AI chip-fab plan. Within a year, sovereign wealth funds — UAE's MGX, Saudi PIF, Singapore's Temasek — were investors in major US AI firms and founding partners in OpenAI's Stargate compute project. What is now embedded in the AI capital stack that wasn't there five years ago?",
     "answer": "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
     "choices": [
       "Foreign government capital is now embedded in major US AI firms — that does not automatically compromise these companies, but it creates real dependencies and influence relationships worth watching",
@@ -14497,7 +14497,7 @@
   },
   {
     "tier": 5,
-    "question": "Most of the AI a kid uses today came out of military research grants. DARPA paid for ARPANET (which became the Internet), the Stanford AI Lab's early work, computer-vision and natural-language-processing programs through the 1980s, and the PhD pipeline that trained the researchers now running OpenAI, Anthropic, and DeepMind. What is the recognition?",
+    "question": "Most of the AI a kid uses today came out of military research grants. DARPA paid for ARPANET (which became the Internet), the Stanford AI Lab's early work, computer-vision and natural-language-processing programs through the 1980s, and the PhD pipeline that trained the researchers now running OpenAI, Anthropic, and DeepMind. Who paid for the research?",
     "answer": "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
     "choices": [
       "Modern frontier AI is partly a return on decades of public investment in basic research — but the value capture flows mostly to a few private firms, which raises real questions about the public's stake in the outcome",
