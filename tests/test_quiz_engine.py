@@ -425,13 +425,20 @@ def test_answer_noop_outside_asking_state():
     assert out is False
 
 
-def test_answer_is_case_and_whitespace_insensitive():
-    """Answers are normalized via strip().lower() so 'right'/'RIGHT'/' right ' all match."""
+def test_answer_is_whitespace_insensitive_but_case_exact():
+    """Answers are whitespace-stripped but case-EXACT (bug bash 2026-06-01).
+
+    Previously the engine .lower()'d both sides, which made grammar
+    capitalization questions impossible to grade — all 4 case-variants
+    collapsed to the same string and ANY pick registered correct. The
+    fix is exact case; whitespace stripping is preserved so trailing
+    spaces on multi-line render still match."""
     eng = _make_engine()
     _, cb = _captured_result()
     eng.start_quiz('chain', 'math', tier=1, callback=cb)
-    assert eng.answer('  RIGHT  ') is True
-    assert eng.chain == 1
+    assert eng.answer('  right  ') is True   # whitespace OK
+    assert eng.answer('  RIGHT  ') is False  # case must match
+    assert eng.chain == 1                      # only the first one counted
 
 
 # ---------------------------------------------------------------------------

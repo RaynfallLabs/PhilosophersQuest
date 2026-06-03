@@ -35,6 +35,7 @@ STATE_EXAMINE        = 'examine'         # Examine identified inventory item
 STATE_ENCYCLOPEDIA   = 'encyclopedia'    # Encyclopedia browser
 STATE_DROP_MENU      = 'drop_menu'       # Drop an item from inventory
 STATE_DROP_GOLD_INPUT = 'drop_gold_input' # Numeric prompt: how much gold to drop
+STATE_DROP_QTY_INPUT = 'drop_qty_input'  # Numeric prompt: how many of a stack to drop
 STATE_STORY_POPUP    = 'story_popup'     # Narrative popup (quest intro, boss defeat, ending)
 STATE_MYSTERY_APPROACH = 'mystery_approach'  # Player is approaching a mystery altar
 STATE_SHOP             = 'shop'              # Merchant shop overlay

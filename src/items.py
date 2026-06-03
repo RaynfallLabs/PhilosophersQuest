@@ -186,6 +186,8 @@ class Weapon(Item):
         self.can_dig: bool              = bool(defn.get('can_dig', False))
         self.ignore_resistances: bool   = bool(defn.get('ignore_resistances', False))
         self.abaddon_bonus_damage: str  = defn.get('abaddon_bonus_damage', '')
+        # Sword of Michael: dramatic flavor line when smiting evil (combat.py).
+        self.holy_smite_message: bool   = bool(defn.get('holy_smite_message', False))
         # Khopesh of Anubis: +max_hp on kill
         self.kill_max_hp_bonus: int     = int(defn.get('kill_max_hp_bonus', 0))
         self.kill_max_hp_cap: int       = int(defn.get('kill_max_hp_cap', 0))
@@ -637,6 +639,17 @@ class Accessory(Item):
         self.use_charged: bool       = bool(defn.get('use_charged', False))
         self.charges: int            = int(defn.get('charges', 0))
         self.max_charges: int        = int(defn.get('max_charges', self.charges or 0))
+        # Hand of Glory: passive flags + paralyze duration + expended-curse.
+        # Use-sites: player.get_sight_radius (dark vision), monster detection
+        # (silent walk), game_menus._activate_accessory_charge (paralyze + curse).
+        self.passive_dark_vision: bool = bool(defn.get('passive_dark_vision', False))
+        self.passive_silent_walk: bool = bool(defn.get('passive_silent_walk', False))
+        self.expended_curse: bool      = bool(defn.get('expended_curse', False))
+        self.paralyze_duration: int    = int(defn.get('paralyze_duration', 4) or 4)
+        # Brisingamen (tears_of_freya): passive gold drip — main._advance_turn hook.
+        self.tears_of_freya: bool      = bool(defn.get('tears_of_freya', False))
+        self.tears_of_freya_gold: int  = int(defn.get('tears_of_freya_gold', 1) or 1)
+        self.tears_of_freya_interval: int = int(defn.get('tears_of_freya_interval', 1) or 1)
         # ----- Engine wave 6: small per-item procs (audit follow-up) -----
         self.identify_timer_bonus: int = int(defn.get('identify_timer_bonus', 0) or 0)  # ring_of_pythia
         self.auto_invisible_at_low_hp: bool = bool(defn.get('auto_invisible_at_low_hp', False))  # ring_of_eluned

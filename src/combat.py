@@ -724,6 +724,30 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
 
         actual = monster.take_damage(damage)
 
+        # Sword of Michael (holy_smite_message): when a holy weapon hits a
+        # demon/undead/evil-tagged target, surface a dramatic line. This is
+        # FLAIR, not damage — the bonus damage is computed above. The line
+        # makes the climax FEEL like the angelic blade striking down evil.
+        if weapon and getattr(weapon, 'holy_smite_message', False) and actual > 0:
+            _gref = getattr(player, '_combat_game_ref', None)
+            if _gref is not None:
+                _mtags = set(getattr(monster, 'tags', []) or [])
+                _is_evil = bool(_mtags & {'demon', 'undead', 'evil'})
+                if _is_evil:
+                    _mname = getattr(monster, 'name', 'the foe')
+                    if monster.kind == 'abaddon_destroyer':
+                        _gref.add_message(
+                            f"The flame of Michael BLAZES! The blade falls upon "
+                            f"the Destroyer like the wrath of Heaven!",
+                            'success')
+                    elif monster.is_dead():
+                        _gref.add_message(
+                            f"Heaven's fire ends the {_mname}. The blade glows brighter.",
+                            'success')
+                    else:
+                        _gref.add_message(
+                            f"Holy fire scours the {_mname}!", 'success')
+
         # Bracers of Cu Chulainn (riastrad_echo): every 3rd hit applies bleed.
         # Counter is on the player; the warp-spasm rises with each strike.
         try:

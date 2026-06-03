@@ -1102,10 +1102,13 @@ class MagicMixin:
                     _qs_spell.on_spell_cast(hp_pct)
             self._advance_turn()
 
+        # Escalator-chain always starts at T1 and ramps up; the spell's
+        # quiz_tier is a power-class label, not a starting tier (bug bash
+        # 2026-06-01, same fix pattern as harvest/chest).
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
             subject='science',
-            tier=spell['quiz_tier'],
+            tier=1,
             callback=on_complete,
             max_chain=5,
             wisdom=self.player.WIS,
@@ -2067,10 +2070,13 @@ class MagicMixin:
             pass
 
         if _mode == 'escalator_chain':
+            # Scrolls in escalator_chain mode start at T1 per the 2026-06-01
+            # bug bash (same fix pattern as harvest/chest/cast). The scroll's
+            # quiz_tier is a power-class label, not a starting tier.
             self.quiz_engine.start_quiz(
                 mode='escalator_chain',
                 subject='grammar',
-                tier=scroll.quiz_tier,
+                tier=1,
                 callback=on_complete,
                 max_chain=int(getattr(scroll, 'max_chain', 5)),
                 wisdom=self.player.WIS,
@@ -2110,6 +2116,12 @@ class MagicMixin:
         _scroll_pot_mult = 1.0
         if _scroll_pot_mast and _scroll_pot_mast.get('kind') == 'class_scroll_potency':
             _scroll_pot_mult = 1.0 + float(_scroll_pot_mast.get('value', 0))
+        # Chain-step helper (bug bash 2026-06-01, Path A). Scrolls in
+        # escalator_chain mode pass a chain length 1-5; we use that to
+        # pick from a 5-tier ladder per effect. None (legacy threshold
+        # path) defaults to step 2 — "mid-tier" magnitude so old behavior
+        # roughly matches.
+        _cstep = 2 if (chain is None or chain < 1) else min(int(chain) - 1, 4)
 
         if effect == 'heal':
             base = roll(scroll.power) if scroll.power else 10
@@ -2138,10 +2150,24 @@ class MagicMixin:
             return  # skip the remove that the caller does
 
         elif effect == 'mapping':
-            for y in range(self.dungeon.height):
-                for x in range(self.dungeon.width):
-                    self.dungeon.explored.add((x, y))
-            self.add_message("The dungeon layout floods your mind!", 'success')
+            # Chain ladder (Path A): radius around player scales by chain tier.
+            # T5 = full floor (original behavior); lower tiers reveal less.
+            _radius_by_step = [6, 12, 22, 40, 999]
+            radius = _radius_by_step[_cstep]
+            px, py = self.player.x, self.player.y
+            if radius >= 999:
+                for y in range(self.dungeon.height):
+                    for x in range(self.dungeon.width):
+                        self.dungeon.explored.add((x, y))
+                self.add_message("The dungeon layout floods your mind!", 'success')
+            else:
+                for y in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
+                    for x in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
+                        if abs(x - px) + abs(y - py) <= radius:
+                            self.dungeon.explored.add((x, y))
+                self.add_message(
+                    f"A partial map blooms in your mind — {radius} tiles in every direction.",
+                    'success')
 
         elif effect == 'identify':
             if _scroll_buc == 'cursed':
@@ -2149,56 +2175,77 @@ class MagicMixin:
                 # AMNESIA — the kid forgets one item they had already
                 # studied. Drops id_level to 0 and forgets the type.
                 self._scroll_identify_amnesia()
-            elif _scroll_buc == 'blessed':
-                # Blessed: grant mastery on ONE chosen item AND fully ID the rest.
-                # The pick happens via the identify menu (see flag below).
-                # First, bulk-identify everything to id_level 4 (lore-known),
-                # then prompt the player to pick ONE item to push to id_level 5
-                # (mastery).
-                if self._scroll_identify_bulk_to_lore():
-                    self._open_scroll_identify_picker(bless=True)
-                else:
-                    # Nothing to identify or mastery — at least heal the carrier
-                    self.add_message("All your items are already mastered.", 'info')
             else:
-                # Uncursed: pick a target via menu, grant id_level=5 +
-                # claim mastery on that ONE item. Per user 2026-05-29 (D2):
-                # the scroll IS the shortcut to mastery; the grammar quiz
-                # is the cost paid to bypass the philosophy escalator.
-                self._open_scroll_identify_picker(bless=False)
+                # Chain ladder (Path A):
+                #   chain 1-2 (_cstep 0-1): pick 1, grant mastery — uncursed
+                #     behavior. Blessed bumps the *resulting* picker bless flag.
+                #   chain 3-4 (_cstep 2-3): bulk-ID everything to id_level 4,
+                #     then picker for mastery on 1. (Old blessed behavior.)
+                #   chain 5 (_cstep 4): mastery on EVERY uncovered unique in
+                #     inventory + bulk-ID the rest. Skip the picker — the
+                #     scroll just hands the kid the whole arsenal.
+                _bless = (_scroll_buc == 'blessed') or _cstep >= 2
+                if _cstep >= 4:
+                    self._scroll_identify_mass_mastery()
+                elif _cstep >= 2:
+                    if self._scroll_identify_bulk_to_lore():
+                        self._open_scroll_identify_picker(bless=_bless)
+                    else:
+                        self.add_message("All your items are already mastered.", 'info')
+                else:
+                    self._open_scroll_identify_picker(bless=_bless)
 
         elif effect == 'enchant_weapon':
             from items import effective_enchant_cap
-            w = self.player.weapon or self.player.ranged_weapon
-            if w:
-                cap = effective_enchant_cap(self.player, 'weapon')
-                delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
-                # Chrysaor (engine wave 3): weapon_immune_to_enchant_loss
-                # blocks NEGATIVE enchant changes — "the gold sword stays gold."
-                # Positive enchants still apply.
-                if delta < 0 and getattr(w, 'weapon_immune_to_enchant_loss', False):
-                    delta = 0
-                    self.add_message(
-                        f"The {w.name} shrugs off the unenchantment — it does not tarnish.",
-                        'info')
-                old_val = w.enchant_bonus
-                w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + delta))
-                actual = w.enchant_bonus - old_val
-                if actual > 0:
-                    self.add_message(
-                        f"Your {w.name} glows -- enchant +{w.enchant_bonus}!",
-                        'success'
-                    )
-                elif actual < 0:
-                    self.add_message(
-                        f"Your {w.name} dims -- enchant {w.enchant_bonus:+d}!",
-                        'warning'
-                    )
-                else:
-                    self.add_message(
-                        f"Your {w.name} shudders but can hold no more enchantment.",
-                        'info'
-                    )
+            # Chain ladder (Path A): delta + how many weapons get hit.
+            #   T1: +0 net (no-op except messaging) for uncursed, blessed=+1
+            #   T2: +1 (uncursed)
+            #   T3: +1 to BOTH melee + ranged
+            #   T4: +2 to BOTH
+            #   T5: +3 to BOTH
+            if _scroll_buc == 'blessed':
+                delta = max(2, [1, 2, 2, 3, 4][_cstep])
+            elif _scroll_buc == 'cursed':
+                delta = -1
+            else:
+                delta = [0, 1, 1, 2, 3][_cstep]
+            multi = _cstep >= 2
+            targets = []
+            if self.player.weapon:
+                targets.append(self.player.weapon)
+            if multi and self.player.ranged_weapon and self.player.ranged_weapon not in targets:
+                targets.append(self.player.ranged_weapon)
+            if not targets and self.player.ranged_weapon:
+                targets = [self.player.ranged_weapon]
+            if targets:
+                for w in targets:
+                    cap = effective_enchant_cap(self.player, 'weapon')
+                    eff_delta = delta
+                    # Chrysaor (engine wave 3): weapon_immune_to_enchant_loss
+                    # blocks NEGATIVE enchant changes.
+                    if eff_delta < 0 and getattr(w, 'weapon_immune_to_enchant_loss', False):
+                        eff_delta = 0
+                        self.add_message(
+                            f"The {w.name} shrugs off the unenchantment — it does not tarnish.",
+                            'info')
+                    old_val = w.enchant_bonus
+                    w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + eff_delta))
+                    actual = w.enchant_bonus - old_val
+                    if actual > 0:
+                        self.add_message(
+                            f"Your {w.name} glows -- enchant +{w.enchant_bonus}!",
+                            'success'
+                        )
+                    elif actual < 0:
+                        self.add_message(
+                            f"Your {w.name} dims -- enchant {w.enchant_bonus:+d}!",
+                            'warning'
+                        )
+                    else:
+                        self.add_message(
+                            f"Your {w.name} shudders but can hold no more enchantment.",
+                            'info'
+                        )
             else:
                 self.add_message("You have no weapon to enchant.", 'info')
 
@@ -2207,98 +2254,139 @@ class MagicMixin:
                 self.add_message("The scroll's power fizzles. Nothing happens.", 'warning')
             else:
                 from status_effects import DEBUFFS
-                removed = [e for e in list(self.player.status_effects) if e in DEBUFFS]
-                for e in removed:
-                    del self.player.status_effects[e]
+                # Chain ladder (Path A): scope of uncurse grows by chain tier.
+                #   T1: 1 equipped item (pick first cursed equipment)
+                #   T2: ALL equipped items
+                #   T3: ALL equipped + status debuffs
+                #   T4: ALL equipped + status debuffs + uncurse inventory items
+                #   T5: T4 + bless one equipped item (uncursed → blessed) for free
+                _scope = _cstep  # 0..4
+                # Status debuffs cleared at T3+ (was unconditional)
+                removed = []
+                if _scope >= 2 or _scroll_buc == 'blessed':
+                    removed = [e for e in list(self.player.status_effects) if e in DEBUFFS]
+                    for e in removed:
+                        del self.player.status_effects[e]
                 cursed_items = []
-                if _scroll_buc == 'blessed':
-                    # Blessed: uncurse ALL inventory items too
-                    all_items = list(self.player.inventory)
-                    if self.player.weapon:
-                        all_items.append(self.player.weapon)
-                    if self.player.ranged_weapon:
-                        all_items.append(self.player.ranged_weapon)
-                    all_items.extend(s for s in self.player.armor_slots if s)
-                    if self.player.shield:
-                        all_items.append(self.player.shield)
-                    all_items.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+                blessed_extra = None
+                # Equipped item set
+                equipped = []
+                if self.player.weapon:
+                    equipped.append(self.player.weapon)
+                if self.player.ranged_weapon:
+                    equipped.append(self.player.ranged_weapon)
+                equipped.extend(s for s in self.player.armor_slots if s)
+                if self.player.shield:
+                    equipped.append(self.player.shield)
+                equipped.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+                # Inventory: only at T4+ or blessed
+                inv_pool = []
+                if _scope >= 3 or _scroll_buc == 'blessed':
+                    inv_pool = list(self.player.inventory)
                     amulet = getattr(self.player, 'amulet_slot', None)
                     if amulet:
-                        all_items.append(amulet)
+                        inv_pool.append(amulet)
+                # T1: only first cursed equipped item; T2+: all equipped + inv_pool
+                if _scope == 0 and _scroll_buc != 'blessed':
+                    first = next((eq for eq in equipped if getattr(eq, 'buc', 'uncursed') == 'cursed'), None)
+                    pool = [first] if first else []
                 else:
-                    # Uncursed: equipped items only
-                    all_items = []
-                    if self.player.weapon:
-                        all_items.append(self.player.weapon)
-                    if self.player.ranged_weapon:
-                        all_items.append(self.player.ranged_weapon)
-                    all_items.extend(s for s in self.player.armor_slots if s)
-                    if self.player.shield:
-                        all_items.append(self.player.shield)
-                    all_items.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
-                for eq in all_items:
+                    pool = equipped + inv_pool
+                for eq in pool:
+                    if eq is None:
+                        continue
                     if getattr(eq, 'buc', 'uncursed') == 'cursed':
                         eq.buc = 'uncursed'
                         eq.buc_known = True
                         cursed_items.append(eq.name)
-                if removed or cursed_items:
+                # T5: also bless one uncursed equipped item
+                if _scope >= 4 and equipped:
+                    candidate = next((eq for eq in equipped
+                                      if getattr(eq, 'buc', 'uncursed') == 'uncursed'), None)
+                    if candidate:
+                        candidate.buc = 'blessed'
+                        candidate.buc_known = True
+                        blessed_extra = candidate.name
+                if removed or cursed_items or blessed_extra:
                     parts = []
                     if removed:
                         parts.append(f"status effects: {', '.join(removed)}")
                     if cursed_items:
                         parts.append(f"cursed items: {', '.join(cursed_items)}")
-                    self.add_message(f"A cleansing light removes {' and '.join(parts)}.", 'success')
+                    if parts:
+                        self.add_message(f"A cleansing light removes {' and '.join(parts)}.", 'success')
+                    if blessed_extra:
+                        self.add_message(f"Your {blessed_extra} gleams — now blessed!", 'success')
                 else:
                     self.add_message("You feel purified (no curses to remove).", 'info')
 
         elif effect == 'confuse_monsters':
+            # Chain ladder (Path A): chain raises duration sharply.
+            duration = [3, 6, 10, 16, 25][_cstep]
             count = 0
             for m in self.monsters:
                 if m.alive and (m.x, m.y) in self.visible:
-                    m.add_effect('confused', 8)
+                    m.add_effect('confused', duration)
                     count += 1
             if count:
-                self.add_message(f"{count} monster(s) reel in confusion!", 'success')
+                self.add_message(
+                    f"{count} monster(s) reel in confusion for {duration} turns!", 'success')
             else:
                 self.add_message("No monsters are in sight to confuse.", 'info')
 
         # -- Tier 3 scroll effects ------------------------------------------
         elif effect == 'sleep_monsters':
+            # Chain ladder (Path A): chain raises duration sharply.
+            duration = [3, 6, 10, 16, 25][_cstep]
             targets = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in targets:
-                m.add_effect('sleeping', 8)
+                m.add_effect('sleeping', duration)
             if targets:
-                self.add_message(f"A wave of slumber washes out -- {len(targets)} creature(s) fall asleep!", 'success')
+                self.add_message(
+                    f"A wave of slumber washes out -- {len(targets)} creature(s) fall asleep for {duration} turns!",
+                    'success')
             else:
                 self.add_message("No creatures are in sight to affect.", 'info')
 
         elif effect == 'haste_self':
-            duration = int(scroll.power) if scroll.power else 15
+            # Chain ladder (Path A): scales duration.
+            base_dur = int(scroll.power) if scroll.power else 15
+            duration = int(base_dur * [0.4, 0.7, 1.0, 1.6, 2.5][_cstep])
+            duration = max(3, duration)
             self.player.add_effect('hasted', duration)
             self.add_message(f"Energy surges through you -- hasted for {duration} turns!", 'success')
 
         elif effect == 'enchant_armor':
             from items import ENCHANT_CAP, ARMOR_SLOTS
             equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots) if s is not None]
+            # Chain ladder (Path A): delta + how many armor slots get hit.
+            if _scroll_buc == 'blessed':
+                delta = max(2, [1, 2, 2, 3, 4][_cstep])
+            elif _scroll_buc == 'cursed':
+                delta = -1
+            else:
+                delta = [0, 1, 1, 2, 3][_cstep]
             if equipped:
-                target, slot_name = equipped[0]
-                cap = ENCHANT_CAP.get(slot_name, 1)
-                delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
-                old_val = getattr(target, 'enchant_bonus', 0)
-                target.enchant_bonus = max(-3, min(cap, old_val + delta))
-                actual = target.enchant_bonus - old_val
-                if actual > 0:
-                    self.add_message(
-                        f"Your {target.name} shines -- enchant +{target.enchant_bonus}!", 'success'
-                    )
-                elif actual < 0:
-                    self.add_message(
-                        f"Your {target.name} tarnishes -- enchant {target.enchant_bonus:+d}!", 'warning'
-                    )
-                else:
-                    self.add_message(
-                        f"Your {target.name} shudders but can hold no more enchantment.", 'info'
-                    )
+                # T1: just first slot. T2: 2 slots. T3: 3 slots. T4: 4. T5: all.
+                slot_count = [1, 2, 3, 4, 99][_cstep]
+                hits = equipped[:slot_count]
+                for target, slot_name in hits:
+                    cap = ENCHANT_CAP.get(slot_name, 1)
+                    old_val = getattr(target, 'enchant_bonus', 0)
+                    target.enchant_bonus = max(-3, min(cap, old_val + delta))
+                    actual = target.enchant_bonus - old_val
+                    if actual > 0:
+                        self.add_message(
+                            f"Your {target.name} shines -- enchant +{target.enchant_bonus}!", 'success'
+                        )
+                    elif actual < 0:
+                        self.add_message(
+                            f"Your {target.name} tarnishes -- enchant {target.enchant_bonus:+d}!", 'warning'
+                        )
+                    else:
+                        self.add_message(
+                            f"Your {target.name} shudders but can hold no more enchantment.", 'info'
+                        )
             else:
                 self.add_message("You wear no armor to enchant.", 'info')
 
@@ -2317,88 +2405,228 @@ class MagicMixin:
             for s in getattr(self.player, 'accessory_slots', []):
                 if s:
                     candidates.append((s, 'accessory'))
+            # Chain ladder (Path A): all-equipped enchant — scales delta and
+            # count of items hit.
+            if _scroll_buc == 'blessed':
+                delta = max(2, [1, 2, 2, 3, 4][_cstep])
+            elif _scroll_buc == 'cursed':
+                delta = -1
+            else:
+                delta = [0, 1, 1, 2, 3][_cstep]
+            count_by_step = [1, 2, 3, 5, 99]
+            n = count_by_step[_cstep]
             if candidates:
-                target, slot_key = candidates[0]
-                cap = effective_enchant_cap(self.player, slot_key)
-                delta = 2 if _scroll_buc == 'blessed' else (-1 if _scroll_buc == 'cursed' else 1)
-                old_val = getattr(target, 'enchant_bonus', 0)
-                target.enchant_bonus = max(-3, min(cap, old_val + delta))
-                actual = target.enchant_bonus - old_val
-                if actual > 0:
-                    self.add_message(
-                        f"A golden light infuses your {target.name} -- enchant +{target.enchant_bonus}!",
-                        'success'
-                    )
-                elif actual < 0:
-                    self.add_message(
-                        f"A dark energy corrupts your {target.name} -- enchant {target.enchant_bonus:+d}!",
-                        'warning'
-                    )
-                else:
-                    self.add_message(
-                        f"Your {target.name} shudders but can hold no more enchantment.",
-                        'info'
-                    )
+                for target, slot_key in candidates[:n]:
+                    cap = effective_enchant_cap(self.player, slot_key)
+                    old_val = getattr(target, 'enchant_bonus', 0)
+                    target.enchant_bonus = max(-3, min(cap, old_val + delta))
+                    actual = target.enchant_bonus - old_val
+                    if actual > 0:
+                        self.add_message(
+                            f"A golden light infuses your {target.name} -- enchant +{target.enchant_bonus}!",
+                            'success'
+                        )
+                    elif actual < 0:
+                        self.add_message(
+                            f"A dark energy corrupts your {target.name} -- enchant {target.enchant_bonus:+d}!",
+                            'warning'
+                        )
+                    else:
+                        self.add_message(
+                            f"Your {target.name} shudders but can hold no more enchantment.",
+                            'info'
+                        )
             else:
                 self.add_message("You have no equipped items to enchant.", 'info')
 
         # -- Tier 4 scroll effects ------------------------------------------
         elif effect == 'teleport_self':
-            self._teleport_player()
+            # Chain ladder (Path A):
+            #   T1-T2: random walkable tile (legacy _teleport_player).
+            #   T3-T4: random tile but biased toward explored tiles only.
+            #   T5: teleport directly to the downstairs.
+            from dungeon import STAIRS_DOWN
+            import random as _rng
+            from monster import monster_at_tile
+            if _cstep >= 4:
+                target = None
+                for y in range(self.dungeon.height):
+                    for x in range(self.dungeon.width):
+                        if self.dungeon.tiles[y][x] == STAIRS_DOWN:
+                            target = (x, y); break
+                    if target: break
+                if target:
+                    self.player.x, self.player.y = target
+                    self._refresh_fov()
+                    self.add_message("Space folds — you step directly to the stairs down!", 'success')
+                    _qs_tp = getattr(self, 'quirk_system', None)
+                    if _qs_tp:
+                        _qs_tp.on_teleport()
+                else:
+                    self._teleport_player()
+            elif _cstep >= 2:
+                explored = self.dungeon.explored
+                # explored may be a set or 2D list depending on version; handle both
+                def _is_explored(x, y):
+                    if isinstance(explored, set):
+                        return (x, y) in explored
+                    try:
+                        return bool(explored[y][x])
+                    except Exception:
+                        return False
+                floors = [
+                    (x, y)
+                    for y in range(self.dungeon.height)
+                    for x in range(self.dungeon.width)
+                    if self.dungeon.is_walkable(x, y)
+                    and _is_explored(x, y)
+                    and monster_at_tile(self.monsters, x, y) is None
+                    and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+                ]
+                if floors:
+                    self.player.x, self.player.y = _rng.choice(floors)
+                    self._refresh_fov()
+                    self.add_message("You step through a remembered place.", 'success')
+                    _qs_tp = getattr(self, 'quirk_system', None)
+                    if _qs_tp:
+                        _qs_tp.on_teleport()
+                else:
+                    self._teleport_player()
+            else:
+                self._teleport_player()
 
         elif effect == 'charging':
             from items import Wand
             wands = [i for i in self.player.inventory if isinstance(i, Wand)]
-            if wands:
-                for w in wands:
-                    w.charges = min(w.max_charges, w.charges + 1)
-                self.add_message(
-                    f"Magical energy crackles into {len(wands)} wand(s) -- each recharged by 1!", 'success'
-                )
-            else:
+            # Chain ladder (Path A):
+            #   T1: 1 wand (most-depleted) gets +1 charge.
+            #   T2: 2 wands +1.
+            #   T3: ALL wands +1 charge (legacy behavior).
+            #   T4: ALL wands +2 charges.
+            #   T5: ALL wands maxed.
+            if not wands:
                 self.add_message("You carry no wands to charge.", 'info')
+            else:
+                if _cstep >= 4:
+                    for w in wands:
+                        w.charges = w.max_charges
+                    self.add_message(
+                        f"Lightning courses through your pack — {len(wands)} wand(s) crackle at maximum charges!",
+                        'success')
+                elif _cstep == 3:
+                    for w in wands:
+                        w.charges = min(w.max_charges, w.charges + 2)
+                    self.add_message(
+                        f"Magical energy floods {len(wands)} wand(s) -- each gained 2 charges!",
+                        'success')
+                elif _cstep == 2:
+                    for w in wands:
+                        w.charges = min(w.max_charges, w.charges + 1)
+                    self.add_message(
+                        f"Magical energy crackles into {len(wands)} wand(s) -- each recharged by 1!", 'success')
+                else:
+                    # T1/T2: 1 or 2 wands (most-depleted first)
+                    n = 1 if _cstep == 0 else 2
+                    targets = sorted(wands, key=lambda w: w.charges / max(1, w.max_charges))[:n]
+                    for w in targets:
+                        w.charges = min(w.max_charges, w.charges + 1)
+                    self.add_message(
+                        f"Magical energy crackles into {len(targets)} wand(s).", 'success')
 
         elif effect == 'identify_all':
-            unknown = [i for i in self.player.inventory
-                       if hasattr(i, 'identified') and not i.identified]
-            if unknown:
-                for item in unknown:
-                    item.identified = True
-                    self.player.known_item_ids.add(item.id)
-                self.add_message(
-                    f"A flash of revelation -- {len(unknown)} item(s) identified!", 'success'
-                )
+            # Chain ladder (Path A): chain raises the resulting id_level the
+            # scroll grants. T1 = basic identify (1); T2 = identify (3); T3 =
+            # full identify+BUC (3); T4 = lore (4); T5 = mastery on every
+            # unique + lore on everything else (mass).
+            if _cstep >= 4:
+                # Chain 5: act like the chain-5 of the picker scroll.
+                self._scroll_identify_mass_mastery()
             else:
-                self.add_message("All your items are already identified.", 'info')
+                target_level = [1, 3, 3, 4][_cstep]
+                bumped = 0
+                for item in self.player.inventory:
+                    if not hasattr(item, 'identified'):
+                        continue
+                    cur = int(getattr(item, 'id_level', 0))
+                    if cur >= target_level:
+                        continue
+                    was_full_id = cur >= 3
+                    item.id_level = target_level
+                    item.identified = True
+                    if target_level >= 2:
+                        item.buc_known = True
+                    self.player.known_item_ids.add(item.id)
+                    self._propagate_identification(item.id, level=target_level)
+                    if target_level >= 3 and not was_full_id:
+                        _qs_id = getattr(self, 'quirk_system', None)
+                        if _qs_id:
+                            _qs_id.on_item_identified(item.id)
+                        self._on_full_identify(item)
+                    bumped += 1
+                if bumped:
+                    self.add_message(
+                        f"A flash of revelation -- {bumped} item(s) identified to depth {target_level}!",
+                        'success')
+                else:
+                    self.add_message("All your items are already identified at that depth.", 'info')
 
         # -- Tier 5 scroll effects ------------------------------------------
         elif effect == 'annihilate':
-            victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
-            for m in victims:
-                m.hp = 0
-                m.alive = False
-                self._on_monster_killed(m)
-            if victims:
+            # Chain ladder (Path A): count of visible monsters killed.
+            # T1: 1 weakest; T2: 2 weakest; T3: 4; T4: half; T5: all.
+            visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            if not visible:
+                self.add_message("No creatures are visible to annihilate.", 'info')
+            else:
+                if _cstep >= 4:
+                    victims = visible
+                elif _cstep == 3:
+                    victims = sorted(visible, key=lambda m: m.max_hp)[:max(1, len(visible) // 2)]
+                elif _cstep == 2:
+                    victims = sorted(visible, key=lambda m: m.max_hp)[:4]
+                elif _cstep == 1:
+                    victims = sorted(visible, key=lambda m: m.max_hp)[:2]
+                else:
+                    victims = sorted(visible, key=lambda m: m.max_hp)[:1]
+                for m in victims:
+                    m.hp = 0
+                    m.alive = False
+                    self._on_monster_killed(m)
                 self.add_message(
                     f"A blinding flash of white energy obliterates {len(victims)} creature(s)!", 'success'
                 )
-            else:
-                self.add_message("No creatures are visible to annihilate.", 'info')
 
         elif effect == 'time_stop_scroll':
-            duration = int(scroll.power) if scroll.power else 10
+            # Chain ladder (Path A): scales duration.
+            base_dur = int(scroll.power) if scroll.power else 10
+            duration = max(2, int(base_dur * [0.3, 0.6, 1.0, 1.5, 2.5][_cstep]))
             self.player.add_effect('time_stopped', duration)
             self.add_message(f"Time itself halts -- {duration} turns of absolute stillness!", 'success')
 
         elif effect == 'great_power':
-            for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+            # Chain ladder (Path A): chain controls how many stats are
+            # elevated (lowest stats picked first so it's never wasted).
+            # T1: 1 lowest stat; T5: all 6.
+            stat_count = [1, 2, 3, 5, 6][_cstep]
+            all_stats = ['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER']
+            current = {s: getattr(self.player, s) for s in all_stats}
+            # Sort by current value asc, ties broken by canonical order
+            ordered = sorted(all_stats, key=lambda s: (current[s], all_stats.index(s)))
+            chosen = ordered[:stat_count]
+            for stat in chosen:
                 self.player.apply_stat_bonus(stat, 1)
-            self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
+            if stat_count >= 6:
+                self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
+            else:
+                self.add_message(
+                    f"You feel your weakest faculties surge — {', '.join(chosen)} +1!", 'success')
 
         elif effect == 'earth':
             from dice import roll as _roll_e
+            # Chain ladder (Path A): scales damage multiplier on the base roll.
             base_dmg = _roll_e(scroll.power) if scroll.power else 12
-            scaled = self._int_scaled_damage(base_dmg)
+            _chain_mult = [1.0, 1.8, 3.0, 5.0, 8.0][_cstep]
+            scaled = self._int_scaled_damage(int(base_dmg * _chain_mult))
             victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in victims:
                 m.take_damage(scaled)
@@ -2412,33 +2640,53 @@ class MagicMixin:
 
         elif effect == 'protection':
             _buc = getattr(scroll, 'buc', 'uncursed')
-            bonus = 5 if _buc == 'blessed' else (1 if _buc == 'cursed' else 3)
-            dur = 30
+            # Chain ladder (Path A): both bonus & duration scale.
+            if _buc == 'cursed':
+                bonus = 1
+            else:
+                bonus = [1, 2, 3, 5, 8][_cstep] + (2 if _buc == 'blessed' else 0)
+            dur = [10, 20, 30, 50, 80][_cstep]
             self.player.add_effect('shielded', dur)
             self.add_message(f"A protective ward envelops you! +{bonus} AC for {dur} turns!", 'success')
 
         elif effect == 'enchant_accessory':
             _buc = getattr(scroll, 'buc', 'uncursed')
-            bonus = 2 if _buc == 'blessed' else (-1 if _buc == 'cursed' else 1)
-            acc = next((s for s in self.player.accessory_slots if s is not None), None)
-            if acc:
-                fx = acc.effects
-                if 'amount' in fx:
-                    fx['amount'] = max(0, fx['amount'] + bonus)
-                    self.add_message(
-                        f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} by {abs(bonus)}!", 'success')
-                else:
-                    self.add_message(f"The {acc.name} shimmers briefly but nothing happens.", 'info')
+            # Chain ladder (Path A): scales bonus + count of accessory slots hit.
+            if _buc == 'blessed':
+                bonus = max(2, [1, 2, 2, 3, 4][_cstep])
+            elif _buc == 'cursed':
+                bonus = -1
+            else:
+                bonus = [0, 1, 1, 2, 3][_cstep]
+            accs = [s for s in getattr(self.player, 'accessory_slots', []) if s is not None]
+            count_by_step = [1, 1, 2, 3, 99]
+            n = count_by_step[_cstep]
+            if accs:
+                touched = 0
+                for acc in accs[:n]:
+                    fx = acc.effects
+                    if 'amount' in fx:
+                        fx['amount'] = max(0, fx['amount'] + bonus)
+                        self.add_message(
+                            f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} by {abs(bonus)}!", 'success')
+                        touched += 1
+                    else:
+                        self.add_message(f"The {acc.name} shimmers briefly but nothing happens.", 'info')
+                if touched == 0:
+                    pass  # messages already emitted
             else:
                 self.add_message("You have no accessory equipped to enchant.", 'warning')
 
         elif effect == 'genocide':
-            # Kill all monsters of the most common visible type. Bosses/quest immune.
+            # Chain ladder (Path A): chain raises (a) fraction of the kind
+            # actually erased, and (b) whether multiple kinds are hit.
+            # T1: 25% of most-common kind. T2: 50%. T3: 100% of one kind
+            # (old behavior). T4: 100% of top 2 kinds. T5: 100% of all
+            # eligible kinds.
             visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             if not visible:
                 self.add_message("No creatures are visible to target.", 'info')
             else:
-                # Count by kind, excluding bosses and seal demons
                 from collections import Counter
                 kind_counts = Counter(
                     m.kind for m in visible
@@ -2449,29 +2697,80 @@ class MagicMixin:
                 if not kind_counts:
                     self.add_message("The scroll finds no suitable targets among these creatures.", 'warning')
                 else:
-                    target_kind = kind_counts.most_common(1)[0][0]
+                    if _cstep >= 4:
+                        target_kinds = list(kind_counts.keys())
+                    elif _cstep == 3:
+                        target_kinds = [k for k, _ in kind_counts.most_common(2)]
+                    else:
+                        target_kinds = [kind_counts.most_common(1)[0][0]]
+                    fraction = [0.25, 0.5, 1.0, 1.0, 1.0][_cstep]
                     killed = 0
-                    for m in list(self.monsters):
-                        if m.alive and m.kind == target_kind:
+                    killed_names = []
+                    for kind in target_kinds:
+                        kind_members = [m for m in self.monsters
+                                        if m.alive and m.kind == kind
+                                        and not getattr(m, 'is_boss', False)
+                                        and m.max_hp <= 500
+                                        and not getattr(m, 'is_seal_demon', False)]
+                        if not kind_members:
+                            continue
+                        n_kill = max(1, int(len(kind_members) * fraction))
+                        # Kill the weakest first so the fractional cull is sensible
+                        for m in sorted(kind_members, key=lambda mm: mm.max_hp)[:n_kill]:
                             m.hp = 0
                             m.alive = False
                             self._on_monster_killed(m)
                             killed += 1
-                    target_name = next((m.name for m in self.monsters if m.kind == target_kind), target_kind)
-                    self.add_message(
-                        f"A wave of annihilation sweeps the level -- {killed} {target_name}(s) erased from existence!",
-                        'success')
+                        kind_name = next((m.name for m in self.monsters if m.kind == kind), kind)
+                        killed_names.append(kind_name)
+                    if killed:
+                        self.add_message(
+                            f"A wave of annihilation sweeps the level -- {killed} {', '.join(killed_names)} erased from existence!",
+                            'success')
+                    else:
+                        self.add_message("The scroll's power finds nothing it can erase.", 'warning')
 
         elif effect == 'full_light':
             _buc = getattr(scroll, 'buc', 'uncursed')
-            # Reveal entire level layout
-            for y in range(self.dungeon.height):
-                for x in range(self.dungeon.width):
-                    self.dungeon.explored[y][x] = True
-            self.add_message("Brilliant light floods every corner of the level!", 'success')
+            # Chain ladder (Path A):
+            #   T1: reveal half the floor radius from player.
+            #   T2: reveal whole floor (legacy).
+            #   T3: reveal whole floor + 10t clairvoyance.
+            #   T4: reveal floor + 30t clairvoyance + detect monsters 30t.
+            #   T5: same as T4 but 60t each.
+            explored = self.dungeon.explored
+            def _mark(x, y):
+                if isinstance(explored, set):
+                    explored.add((x, y))
+                else:
+                    try:
+                        explored[y][x] = True
+                    except Exception:
+                        pass
+            if _cstep == 0:
+                radius = max(self.dungeon.width, self.dungeon.height) // 2
+                px, py = self.player.x, self.player.y
+                for y in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
+                    for x in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
+                        _mark(x, y)
+                self.add_message("Soft light spreads outward, revealing half the floor.", 'success')
+            else:
+                for y in range(self.dungeon.height):
+                    for x in range(self.dungeon.width):
+                        _mark(x, y)
+                self.add_message("Brilliant light floods every corner of the level!", 'success')
+            clair_dur = [0, 0, 10, 30, 60][_cstep]
             if _buc == 'blessed':
-                self.player.add_effect('clairvoyant', 30)
-                self.add_message("Your vision extends to sense all creatures!", 'success')
+                clair_dur = max(clair_dur, 30)
+            if clair_dur:
+                self.player.add_effect('clairvoyant', clair_dur)
+                self.add_message(
+                    f"Your vision extends to sense all creatures for {clair_dur} turns!", 'success')
+            if _cstep >= 3:
+                detect_dur = [0, 0, 0, 30, 60][_cstep]
+                self.player.add_effect('detect_monsters', detect_dur)
+                self.add_message(
+                    f"Every living creature lights up in your mind for {detect_dur} turns!", 'success')
 
         elif effect == 'lake_of_fire':
             # The inscription is always revealed
@@ -2909,6 +3208,70 @@ class MagicMixin:
             if getattr(it, 'is_unique', False) and it.id not in self.player.unlocked_masteries:
                 return True
         return False
+
+    def _scroll_identify_mass_mastery(self) -> None:
+        """Chain-5 Scroll of Identify (Path A): grant id_level=5 + mastery
+        on every unique in inventory + tile, and ID every common to
+        id_level=4 (lore). No picker — the scroll just hands over the
+        whole arsenal.
+        """
+        from items import Corpse
+        unique_count = 0
+        common_count = 0
+        for it in list(self.player.inventory):
+            if isinstance(it, Corpse):
+                continue
+            if getattr(it, 'is_unique', False):
+                if it.id not in self.player.unlocked_masteries:
+                    self._scroll_grant_mastery(it)
+                    unique_count += 1
+                elif getattr(it, 'id_level', 5) < 5:
+                    it.id_level = 5
+                    it.identified = True
+                    it.buc_known = True
+                    self.player.known_item_ids.add(it.id)
+                    self._propagate_identification(it.id, level=5)
+                    unique_count += 1
+            elif getattr(it, 'id_level', 5) < 4:
+                was_full_id = int(getattr(it, 'id_level', 0)) >= 3
+                it.id_level = 4
+                it.identified = True
+                it.buc_known = True
+                self.player.known_item_ids.add(it.id)
+                self._propagate_identification(it.id, level=4)
+                if not was_full_id:
+                    _qs_id = getattr(self, 'quirk_system', None)
+                    if _qs_id:
+                        _qs_id.on_item_identified(it.id)
+                    self._on_full_identify(it)
+                common_count += 1
+        for it in list(self.ground_items):
+            if it.x != self.player.x or it.y != self.player.y:
+                continue
+            if isinstance(it, Corpse):
+                continue
+            if getattr(it, 'is_unique', False):
+                if it.id not in self.player.unlocked_masteries:
+                    self._scroll_grant_mastery(it)
+                    unique_count += 1
+            elif getattr(it, 'id_level', 5) < 4:
+                it.id_level = 4
+                it.identified = True
+                it.buc_known = True
+                self.player.known_item_ids.add(it.id)
+                self._propagate_identification(it.id, level=4)
+                common_count += 1
+        if unique_count or common_count:
+            parts = []
+            if unique_count:
+                parts.append(f"{unique_count} unique(s) mastered")
+            if common_count:
+                parts.append(f"{common_count} item(s) revealed")
+            self.add_message(
+                "An apocalypse of revelation washes over your pack — " + " and ".join(parts) + "!",
+                'success')
+        else:
+            self.add_message("The scroll's revelation finds nothing left to reveal.", 'info')
 
     def _scroll_identify_amnesia(self) -> None:
         """Cursed Scroll of Identify: the kid forgets one item they had

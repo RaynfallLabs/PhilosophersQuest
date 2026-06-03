@@ -5,8 +5,10 @@ from paths import data_path
 
 _INGREDIENT_PATH = data_path('data', 'items', 'ingredient.json')
 _RECIPE_PATH     = data_path('data', 'items', 'recipes.json')
+_PRIME_CUTS_PATH = data_path('data', 'items', 'prime_cuts.json')
 _ingredient_cache: dict | None = None
 _recipe_cache: dict | None = None
+_prime_cuts_cache: dict | None = None
 
 _STAT_LABELS = {
     'STR': 'strength', 'CON': 'constitution', 'DEX': 'dexterity',
@@ -14,6 +16,63 @@ _STAT_LABELS = {
 }
 _ALL_STATS    = list(_STAT_LABELS.keys())
 _COMBAT_STATS = ['STR', 'CON']
+
+# ----------------------------------------------------------------------
+# Harvest + Cook redesign 2026-05-31
+#
+# Harvest uses ANIMAL escalator_chain quiz. Tier outcomes:
+#   T0: ruined — no ingredients
+#   T1: 1x Assorted Monster Parts (universal)
+#   T2: 2x Assorted Monster Parts
+#   T3: +1x family ingredient (12 families)
+#   T4: +1 more family (so 2x family total)
+#   T5: +1x prime cut (unique to monster) OR trophy ingredient (boss-only)
+#
+# Cook uses COOKING escalator_chain quiz. Tier outcomes:
+#   T0: ruined mush
+#   T1: +20-30 SP, +1-2 HP
+#   T2: +50-75 SP, +3-5 HP
+#   T3: above + max HP bonus (counts vs +5/floor cap)
+#   T4: above + 1 stat (recipe-themed, counts vs +1/floor cap)
+#   T5: above + temp power (lore-themed)
+#   Trophy recipes: above + permanent power (bypasses floor caps)
+# ----------------------------------------------------------------------
+
+def _load_prime_cuts() -> dict:
+    """Return the 527-entry prime_cuts.json keyed by monster_id."""
+    global _prime_cuts_cache
+    if _prime_cuts_cache is None:
+        with open(_PRIME_CUTS_PATH, encoding='utf-8') as f:
+            _prime_cuts_cache = json.load(f).get('primes', {})
+    return _prime_cuts_cache
+
+
+def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
+    """Map an escalator_chain tier (0-5) to the list of ingredient IDs the
+    player gains. Multi-tier outcomes are CUMULATIVE."""
+    primes = _load_prime_cuts()
+    prime_info = primes.get(monster_id)
+    if not prime_info:
+        # Defensive — monster not in prime_cuts mapping. Fallback: beast family.
+        family = 'beast'
+        prime_id = None
+    else:
+        family = prime_info['family']
+        prime_id = (f'{monster_id}_trophy' if prime_info['is_trophy']
+                    else f'{monster_id}_prime')
+
+    out: list[str] = []
+    if tier >= 1:
+        out.append('assorted_monster_parts')
+    if tier >= 2:
+        out.append('assorted_monster_parts')
+    if tier >= 3:
+        out.append(f'family_{family}')
+    if tier >= 4:
+        out.append(f'family_{family}')
+    if tier >= 5 and prime_id:
+        out.append(prime_id)
+    return out
 
 # ------------------------------------------------------------------
 # Potency-based cooking formulas (replaces tier lookup tables)
@@ -90,14 +149,25 @@ def _raw_recipes() -> dict:
 # ------------------------------------------------------------------
 
 def get_available_compound_recipes(inventory: list) -> list[dict]:
-    """Return compound recipe dicts where the player has ALL required ingredients."""
+    """Return compound recipe dicts where the player has ALL required
+    ingredients AND the recipe combines >=2 distinct ingredient TYPES.
+
+    Solo cooks (recipes whose ingredients list is one type repeated, e.g.
+    basic_monster_stew = 5x assorted_monster_parts) are excluded — they
+    are reachable from the Single tab via _find_recipe_for_ingredient
+    on the canonical anchor ingredient. The Recipes tab is reserved for
+    multi-type combinations per the 2026-06-01 cooking-menu UX contract.
+    """
     from items import Ingredient
     held_ids = {item.id for item in inventory if isinstance(item, Ingredient)}
-    return [
-        {'id': rid, **rdef}
-        for rid, rdef in _raw_recipes().items()
-        if all(ing in held_ids for ing in rdef.get('ingredients', []))
-    ]
+    out = []
+    for rid, rdef in _raw_recipes().items():
+        ings = rdef.get('ingredients', [])
+        if not ings or len(set(ings)) < 2:
+            continue
+        if all(ing in held_ids for ing in ings):
+            out.append({'id': rid, **rdef})
+    return out
 
 
 def get_recipes_for_ingredient(ingredient_id: str) -> list[dict]:
@@ -109,57 +179,214 @@ def get_recipes_for_ingredient(ingredient_id: str) -> list[dict]:
     ]
 
 
-def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
+# Map redesign-friendly temp_power names to canonical status_effects entries.
+# Names on the LEFT come from prime_cuts.json + recipes.json; names on the
+# RIGHT are real status effects in src/status_effects.py:EFFECT_INFO that
+# have actual consumers in combat/get_ac/etc.
+_TEMP_POWER_REMAP = {
+    'acid_resist':           'shock_resist',      # closest tier-1 elemental resist
+    'berserk_short':         'berserk',
+    'bleeding_resist':       'regenerating',      # regen counters bleed effectively
+    'blessed_status':        'blessed',
+    'charm_resist':          'sleep_resist',
+    'confused_resist':       'magic_resist',
+    'cursed_resist':         'magic_resist',
+    'damage_resist_phys':    'shielded',
+    'detect_magic':          'searching',         # close enough — surfaces info
+    'detect_monster':        'warning',
+    'drain_heals_self_temp': 'drain_resist',      # closest mechanical match
+    'feared_resist':         'fear_immune',
+    'gold_drip':             'identify_sight',    # quirky proxy — no real "gold/turn" buff
+    'hallucinate_resist':    'magic_resist',
+    'lightning_resist':      'shock_resist',
+    'mp_regen':              'brilliance',        # brilliance boosts mental stats
+    'night_vision':          'dark_vision',
+    'paralyze_resist':       'sleep_resist',
+    'passive_regen':         'regenerating',
+    'petrify_resist':        'sleep_resist',      # both are "no-move" defenses
+    'quiz_timer_bonus':      'brilliance',
+    'rust_proof':            'shielded',
+    'silenced_resist':       'magic_resist',
+    'stealth_in_dark':       'invisible',
+    'stunned_resist':        'sleep_resist',
+    'tactics_buff':          'crit_buff',
+}
+
+
+def _resolve_temp_power(name: str) -> str:
+    """Resolve a redesign-friendly temp_power name to the canonical status
+    effect. Returns the input unchanged if already canonical."""
+    return _TEMP_POWER_REMAP.get(name, name)
+
+
+def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
+    """Dispatch a cook tier outcome per the 2026-05-31 redesign.
+
+    Each recipe carries a `tier_outcomes` dict keyed '0'..'5'. Cumulative
+    layered outcomes: SP/HP restore, max_hp_bonus (counts vs +5/floor cap),
+    stat_grant (counts vs +1/floor cap), temp_power (T5), permanent_power
+    (trophy only — bypasses both caps).
     """
-    Remove all required ingredients from inventory, then run an escalator_chain
-    cooking quiz. Quality 0 = total ruin; 1-5 = meal with potency-scaled rewards.
-    on_complete(messages: list[str]) is called when the quiz ends.
+    messages: list[str] = []
+    meal_name = recipe.get('name', 'mysterious dish')
+    outcomes = recipe.get('tier_outcomes', {})
+    outcome = outcomes.get(str(tier), outcomes.get('0', {}))
+
+    if tier == 0:
+        return [f"You ruin the preparation. The {meal_name} is wasted."]
+
+    # SP + HP restore (always applied)
+    sp = int(outcome.get('sp', 0))
+    if sp > 0:
+        player.restore_sp(sp)
+    hp = int(outcome.get('hp', 0))
+    if hp > 0:
+        player.restore_hp(hp)
+
+    messages.append(f"You prepare {meal_name} (T{tier}/5).")
+    if sp > 0 or hp > 0:
+        bits = []
+        if sp > 0: bits.append(f"+{sp} SP")
+        if hp > 0: bits.append(f"+{hp} HP")
+        messages.append("You eat it: " + ", ".join(bits) + ".")
+
+    # T3+: max HP bonus (counts vs per-floor cap unless bypass)
+    max_hp_bonus = int(outcome.get('max_hp_bonus', 0))
+    if max_hp_bonus > 0:
+        bypass = bool(outcome.get('bypass_floor_cap', False))
+        if hasattr(player, 'try_apply_cook_hp_gain'):
+            applied = player.try_apply_cook_hp_gain(max_hp_bonus, bypass=bypass)
+        else:
+            applied = max_hp_bonus
+            player.increase_max_hp(applied, from_cooking=True)
+        if applied > 0:
+            messages.append(f"The meal fortifies you permanently. (+{applied} max HP)")
+        elif not bypass:
+            messages.append("You feel sated, but your body is already full of nourishment this floor.")
+
+    # T4+: stat grant (counts vs per-floor cap unless bypass)
+    stat_grant_amount = int(outcome.get('stat_grant', 0))
+    if stat_grant_amount > 0:
+        bypass = bool(outcome.get('bypass_floor_cap', False))
+        # Stat selection: recipe.stat_grant (specific) > stat_grant_default
+        stat = recipe.get('stat_grant') or recipe.get('stat_grant_default') or 'STR'
+        if hasattr(player, 'try_apply_cook_stat_gain'):
+            applied = player.try_apply_cook_stat_gain(stat, stat_grant_amount, bypass=bypass)
+        else:
+            applied = stat_grant_amount
+            player.apply_stat_bonus(stat, applied)
+        if applied > 0:
+            messages.append(f"Your {_STAT_LABELS.get(stat, stat)} increases by {applied}!")
+        elif not bypass:
+            messages.append(f"You sense your {_STAT_LABELS.get(stat, stat)} could grow no further this floor.")
+
+    # T5: temp power (lore-themed, from prime cut)
+    if outcome.get('temp_power') and recipe.get('temp_power'):
+        raw_power = recipe['temp_power']
+        # Remap redesign-friendly name to canonical status effect so the
+        # buff actually fires in-game (not a silent no-op).
+        power = _resolve_temp_power(raw_power)
+        duration = int(recipe.get('temp_duration', 100))
+        desc = recipe.get('temp_desc', raw_power.replace('_', ' '))
+        try:
+            player.add_effect(power, duration)
+            messages.append(f"The essence carries through — {desc} ({duration} turns).")
+        except Exception:
+            messages.append(f"You feel the {desc} flow through you ({duration} turns).")
+
+    # Trophy: permanent power — applied via a dispatcher
+    if outcome.get('permanent_power') and recipe.get('permanent_power'):
+        power_id = recipe['permanent_power']
+        applied_msg = _apply_permanent_power(player, power_id, recipe)
+        if applied_msg:
+            messages.append(applied_msg)
+
+    return messages
+
+
+# Permanent-power dispatcher for trophy recipes
+def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
+    """Apply a permanent-power trophy effect. Returns a flavor message."""
+    desc = recipe.get('permanent_desc', '')
+    # Each power_id maps to a concrete mutation
+    if power_id == 'all_stats_plus_1':
+        # Abaddon's apotheosis: every stat permanently +1
+        for s in _ALL_STATS:
+            player.apply_stat_bonus(s, 1)
+        return ("APOTHEOSIS — every stat permanently +1. "
+                + (desc or "The dungeon recognizes you."))
+    elif power_id == 'plus_3_str':
+        player.apply_stat_bonus('STR', 3)
+        return "Permanent +3 STR. " + (desc or "")
+    elif power_id == 'plus_2_con_petrify_immune':
+        player.apply_stat_bonus('CON', 2)
+        # Petrify immunity as a permanent status effect
+        try: player.add_effect('petrify_immune', -1)
+        except Exception: pass
+        return "Permanent +2 CON, immunity to petrification. " + (desc or "")
+    elif power_id == 'plus_2_wis_auto_reveal_secret_doors':
+        player.apply_stat_bonus('WIS', 2)
+        try: player.add_effect('auto_reveal_secret_3', -1)
+        except Exception: pass
+        return "Permanent +2 WIS, secret doors revealed nearby. " + (desc or "")
+    elif power_id == 'fire_immunity':
+        try: player.add_effect('fire_immune', -1)
+        except Exception: pass
+        return "Permanent fire immunity. " + (desc or "")
+    elif power_id == 'cold_immunity':
+        try: player.add_effect('cold_immune', -1)
+        except Exception: pass
+        return "Permanent cold immunity. " + (desc or "")
+    elif power_id == 'petrify_immunity':
+        try: player.add_effect('petrify_immune', -1)
+        except Exception: pass
+        return "Permanent petrification immunity. " + (desc or "")
+    elif power_id == 'chromatic_resist_all':
+        for elt in ('fire_resist', 'cold_resist', 'shock_resist',
+                    'poison_resist', 'acid_resist'):
+            try: player.add_effect(elt, -1)
+            except Exception: pass
+        return "Permanent 25% resist to all chromatic elements. " + (desc or "")
+    elif power_id == 'one_time_death_save':
+        player._asmodeus_pact = True  # consumed by player.is_dead() check
+        return "The Pact is signed. The next death will not claim you. " + (desc or "")
+    elif power_id == 'revive_once_at_half_hp':
+        player._green_knight_revive = True
+        return "Once per run, when you die, you return at half HP. " + (desc or "")
+    elif power_id == 'max_hp_per_floor_descent':
+        player._fafnir_per_descent_hp = 2
+        return "+2 max HP each new floor you descend. " + (desc or "")
+    elif power_id == 'max_mp_per_floor_descent_and_poison_immunity':
+        player._nidhogg_per_descent_mp = 2
+        try: player.add_effect('poison_immune', -1)
+        except Exception: pass
+        return "+2 max MP per descent + permanent poison immunity. " + (desc or "")
+    elif power_id == 'lifesteal_5pct_on_melee':
+        player._blood_archon_lifesteal = 0.05
+        return "+5% lifesteal on all melee attacks. " + (desc or "")
+    return desc or f"You feel a permanent change ({power_id})."
+
+
+def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
+    """Cook a recipe via the new 2026-05-31 escalator_chain dispatch.
+
+    Consumes all required ingredients from inventory, runs the cooking
+    quiz, then dispatches the tier outcome through _apply_tier_outcome.
     """
     from items import Ingredient
-    # Resolve ingredient min_levels before consuming them
-    raw_ings = _raw_ingredients()
-    ing_min_levels = []
-    for ing_id in recipe.get('ingredients', []):
-        ing_def = raw_ings.get(ing_id, {})
-        ing_min_levels.append(ing_def.get('min_level', 1))
 
-    # Consume all required ingredients now (before quiz)
-    for ing_id in recipe.get('ingredients', []):
+    # Consume required ingredients up-front (one inventory pop per ingredient
+    # listing — duplicates in the list mean we need that many copies).
+    needed = list(recipe.get('ingredients', []))
+    for ing_id in needed:
         for item in list(inventory):
             if isinstance(item, Ingredient) and item.id == ing_id:
                 player.remove_from_inventory(item)
                 break
 
-    max_min_level = max(ing_min_levels) if ing_min_levels else 1
-    n_ingredients = len(recipe.get('ingredients', []))
-
     def _callback(result):
-        quality = min(5, result.score)
-        messages = []
-        meal_name = recipe['name']
-
-        if quality == 0:
-            messages.append(f"You ruin the preparation. The {meal_name} is wasted.")
-        else:
-            sp = _cooking_sp(max_min_level, quality)
-            player.restore_sp(sp)
-            heal = _cooking_heal(max_min_level, quality)
-            if heal > 0:
-                player.restore_hp(heal)
-
-            if quality <= 2:
-                messages.append(f"You produce a {'rough' if quality == 1 else 'decent'} {meal_name} (quality {quality}/5).")
-            else:
-                messages.append(f"You masterfully prepare {meal_name}! (quality {quality}/5)")
-            messages.append(f"You eat it and restore {sp} SP" + (f" and {heal} HP." if heal > 0 else "."))
-
-            messages.extend(_apply_bonus(player, recipe))
-            # Permanent max HP bonus from compound recipe (potency-based)
-            hp_bonus = _compound_max_hp(max_min_level, quality, n_ingredients)
-            if hp_bonus > 0:
-                player.increase_max_hp(hp_bonus, from_cooking=True)
-                messages.append(f"The nourishing meal strengthens you permanently. (+{hp_bonus} max HP)")
-
+        tier = min(5, getattr(result, 'score', 0))
+        messages = _apply_tier_outcome(player, recipe, tier)
         on_complete(messages)
 
     quiz_engine.start_quiz(
@@ -190,29 +417,54 @@ def load_ingredient_for(ingredient_id: str):
 # ------------------------------------------------------------------
 
 def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int = 0):
+    """Animal escalator_chain harvest with 6-tier cumulative outcome.
+
+    on_complete(ingredients_list, message: str) is called when the quiz ends.
+    ingredients_list is the list of fresh Ingredient instances to add to
+    inventory (may be empty for T0 ruined).
+
+    Tier 0: empty list  (corpse ruined)
+    Tier 1: [Assorted Monster Parts]
+    Tier 2: [Assorted x2]
+    Tier 3: [Assorted x2, Family x1]
+    Tier 4: [Assorted x2, Family x2]
+    Tier 5: [Assorted x2, Family x2, Prime/Trophy x1]
     """
-    Trigger an animal threshold quiz to harvest a corpse.
-    on_complete(ingredient_or_None, message: str) is called when the quiz ends.
-    The corpse is consumed regardless of success.
-    extra_seconds: bonus time (e.g. +5s for lore-identified monsters).
-    """
+    monster_id = getattr(corpse, 'monster_id', '')
+
     def _callback(result):
-        if result.success:
-            ingredient = load_ingredient_for(corpse.ingredient_id)
-            if ingredient:
-                on_complete(ingredient, f"You harvest {ingredient.name} from the {corpse.name}.")
-            else:
-                on_complete(None, f"The {corpse.name} yields nothing useful.")
+        tier = min(5, getattr(result, 'score', 0))
+        ingredient_ids = _harvest_outcome_for_tier(tier, monster_id)
+        ingredients = []
+        for ing_id in ingredient_ids:
+            ing = load_ingredient_for(ing_id)
+            if ing is not None:
+                ingredients.append(ing)
+        # Build message
+        if tier == 0:
+            msg = f"You botch the harvest. The {corpse.name} is ruined."
         else:
-            on_complete(None, f"You botch the harvest. The {corpse.name} is ruined.")
+            # Summarize counts (e.g. "2x Assorted Monster Parts, 1x Beast Meat")
+            counts: dict[str, int] = {}
+            for ing in ingredients:
+                counts[ing.name] = counts.get(ing.name, 0) + 1
+            parts = [f"{c}x {n}" if c > 1 else n for n, c in counts.items()]
+            msg = (f"You harvest the {corpse.name} (T{tier}/5): "
+                   f"{', '.join(parts)}.")
+        on_complete(ingredients, msg)
 
     _player_extra = getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('animal')
+    # Harvest ALWAYS starts at T1 in escalator_chain mode (every chain ramps
+    # T1→T2→T3→T4→T5). The legacy `harvest_tier` field on monsters is
+    # ignored — it was the difficulty tier for the OLD threshold quiz and
+    # would silently skip the early tiers, leaving the player facing T4/T5
+    # questions from question one.
     quiz_engine.start_quiz(
-        mode='threshold',
+        mode='escalator_chain',
         subject='animal',
-        tier=getattr(corpse, 'harvest_tier', 1),
+        tier=1,
         callback=_callback,
-        threshold=getattr(corpse, 'harvest_threshold', 2),
+        max_chain=5,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=_player_extra + extra_seconds,
@@ -224,67 +476,56 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
 # Cooking
 # ------------------------------------------------------------------
 
+def _find_recipe_for_ingredient(ingredient) -> dict | None:
+    """Locate the canonical recipe that uses this ingredient as its anchor.
+
+    Priority order:
+      1. Trophy recipe (if ingredient is a trophy)
+      2. Prime recipe matching this monster (if prime)
+      3. Family recipe matching this ingredient's family (if family-tier)
+      4. Basic recipe (for assorted_monster_parts)
+    Returns the recipe dict (with 'id' key set) or None.
+    """
+    recipes = _raw_recipes()
+    iid = ingredient.id
+    # Trophy: recipe id is `trophy_{monster}_recipe`
+    if iid.endswith('_trophy'):
+        monster_id = iid[:-len('_trophy')]
+        rid = f'trophy_{monster_id}_recipe'
+        if rid in recipes:
+            return {'id': rid, **recipes[rid]}
+    # Prime: recipe id is `prime_{monster}_recipe`
+    if iid.endswith('_prime'):
+        monster_id = iid[:-len('_prime')]
+        rid = f'prime_{monster_id}_recipe'
+        if rid in recipes:
+            return {'id': rid, **recipes[rid]}
+    # Family ingredient: recipe id is `family_{fam}_recipe`
+    if iid.startswith('family_'):
+        rid = f'{iid}_recipe'
+        if rid in recipes:
+            return {'id': rid, **recipes[rid]}
+    # Universal: basic_monster_stew
+    if iid == 'assorted_monster_parts':
+        if 'basic_monster_stew' in recipes:
+            return {'id': 'basic_monster_stew', **recipes['basic_monster_stew']}
+    return None
+
+
 def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int = 5):
+    """Legacy entry point: cook a single ingredient by finding its canonical
+    recipe and delegating to cook_compound_recipe.
+
+    Per the 2026-05-31 redesign, all cooking flows through recipes.json. This
+    function preserves the old call signature so the cook menu still works
+    when the player picks an ingredient — it just resolves the right recipe
+    behind the scenes.
     """
-    Trigger a cooking escalator_chain quiz (always starts at T1).
-    Chain length 0-5 = meal quality. Rewards scale with ingredient potency
-    (sqrt of source monster's min_level).
-    on_complete(messages: list[str]) is called when the quiz ends.
-    max_chain: maximum chain length (default 5; pass 6 if Persephone quirk is active).
-    """
-    min_level = ingredient.min_level
-
-    def _callback(result):
-        quality   = min(5, result.score)
-        recipe    = ingredient.recipes.get(str(quality), ingredient.recipes.get('0', {}))
-        meal_name = recipe.get('name', 'mysterious dish')
-        messages  = []
-
-        if quality == 0:
-            messages.append(f"You ruin the {ingredient.name}. Inedible {meal_name}.")
-        else:
-            raw_recipe = ingredient.recipes.get('1', ingredient.recipes.get('0', {}))
-            raw_sp = int(raw_recipe.get('sp', 10))
-            sp_amount = _cooking_sp(min_level, quality, raw_sp)
-            messages.append(f"You cook {meal_name}  (quality {quality}/5).")
-            player.restore_sp(sp_amount)
-            messages.append(f"You eat it and restore {sp_amount} SP.")
-            # HP heal scales with potency
-            hp = _cooking_heal(min_level, quality)
-            if hp > 0:
-                player.restore_hp(hp)
-                messages.append(f"The meal soothes your wounds. (+{hp} HP)")
-            # MP restore from ingredient (e.g. undead ingredients restore mana)
-            mp_base = getattr(ingredient, 'mp_restore', 0)
-            if mp_base > 0:
-                mp_gained = max(1, int(mp_base * quality / 5)) if quality > 0 else 0
-                if mp_gained > 0:
-                    player.restore_mp(mp_gained)
-                    messages.append(f"The essence of the ingredient restores {mp_gained} MP.")
-            # Permanent max HP bonus from single cook (potency-based)
-            hp_bonus = _single_max_hp(min_level, quality)
-            if hp_bonus > 0:
-                player.increase_max_hp(hp_bonus, from_cooking=True)
-                messages.append(f"The nourishing meal fortifies you. (+{hp_bonus} max HP)")
-
-        # Status effects (e.g. invisible, regenerating) from ingredient data are still applied
-        bonus_type = recipe.get('bonus_type', 'none')
-        if bonus_type == 'status':
-            messages.extend(_apply_bonus(player, recipe))
-
-        on_complete(messages)
-
-    quiz_engine.start_quiz(
-        mode='escalator_chain',
-        subject='cooking',
-        tier=1,
-        callback=_callback,
-        max_chain=max_chain,
-        wisdom=player.WIS,
-        timer_modifier=player.get_quiz_timer_modifier(),
-        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
-        base_seconds=player.get_quiz_timer('cooking'),
-    )
+    recipe = _find_recipe_for_ingredient(ingredient)
+    if recipe is None:
+        on_complete([f"You don't know what to do with the {ingredient.name}."])
+        return
+    cook_compound_recipe(player, recipe, player.inventory, quiz_engine, on_complete)
 
 
 def _apply_bonus(player, recipe) -> list[str]:
@@ -740,29 +981,43 @@ def drink_potion(player, potion) -> list[str]:
 
 def make_corpse(monster_id: str, x: int, y: int):
     """Create a Corpse item for dungeon generation (graveyard rooms, etc.).
-    Uses monster_id to look up basic info; returns a Corpse item at (x, y)."""
+
+    Per 2026-05-31 redesign: corpse no longer carries an ingredient_id —
+    the new escalator_chain harvest looks up the prime cut from
+    prime_cuts.json keyed by monster_id at harvest time.
+    """
     from items import Corpse
-    # Load monster data for the name
     monsters_path = data_path('data', 'monsters.json')
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
     defn = all_defs.get(monster_id, {})
     name = defn.get('name', monster_id.replace('_', ' ').title())
-    ingredient_id = defn.get('ingredient_id', None)
     harvest_tier = defn.get('harvest_tier', 1)
     harvest_threshold = defn.get('harvest_threshold', 2)
+    # ingredient_id kept for legacy save-compat — passed but harvest ignores it.
     return Corpse(name, monster_id, x, y,
                   harvest_tier=harvest_tier,
                   harvest_threshold=harvest_threshold,
-                  ingredient_id=ingredient_id)
+                  ingredient_id=defn.get('ingredient_id'))
 
 
 def eat_raw(player, ingredient) -> list[str]:
-    """Eat an ingredient raw (quality 1 recipe, no quiz).
-    30% chance of food poisoning — cooking eliminates this risk."""
+    """Eat an ingredient raw (no quiz, no cooking benefits).
+    30% chance of food poisoning — cooking eliminates this risk.
+
+    Per 2026-05-31 redesign: raw eating gives a flat SP amount based on
+    the ingredient's tier_role (richer ingredients restore more even raw).
+    """
     import random
-    recipe = ingredient.recipes.get('1', ingredient.recipes.get('0', {}))
-    sp = int(recipe.get('sp', 5))
+    tier_role = getattr(ingredient, 'tier_role', 'universal')
+    raw_sp_map = {
+        'universal': 5,
+        'family':    10,
+        'dungeon':   10,
+        'prime':     15,
+        'trophy':    20,
+    }
+    sp = raw_sp_map.get(tier_role, 5)
     player.restore_sp(sp)
     messages = [f"You choke down the raw {ingredient.name}. ({sp} SP, unpleasant)."]
     if random.random() < 0.30 and not player.has_effect('poison_resist'):

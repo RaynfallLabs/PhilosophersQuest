@@ -158,7 +158,11 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 12, "CON": 11, "DEX": 12, "INT": 9, "WIS": 11, "PER": 13,
         "_sprite": "player_ranger",   # same sprite as Corwin
         "_no_dagger": True,
-        "_start_weapon": ("shortbow", "ash"),
+        # Material downgraded ash -> yew per bug bash 2026-06-01: ash has
+        # peak_floor 20 (tier-2 wood), produced base_damage=6 → 33 dmg at
+        # chain-5 on floor 1. Yew (peak_floor 10) yields base=2 → ~14 dmg
+        # at chain-5, matching the 8-15 starter expectation.
+        "_start_weapon": ("shortbow", "yew"),
         "_start_melee": ("shortsword", "iron"),
         "_start_ammo": "iron_arrow",
         "_start_accessory": "ring_protection_iron",
@@ -199,7 +203,8 @@ SECRET_BUILDS: dict[str, dict] = {
         "INT": 17, "WIS": 14, "DEX": 16, "PER": 14, "CON": 10, "STR": 9,
         "_sprite": "player_robyn",
         "_no_dagger": True,
-        "_start_weapon": ("shortbow", "ash"),
+        # Material downgraded ash -> yew per bug bash 2026-06-01 (see Cain).
+        "_start_weapon": ("shortbow", "yew"),
         "_start_ammo": "iron_arrow",
         "_start_book": "spellbook_sleep",
         "_start_accessory": "rands_heart",
@@ -354,9 +359,10 @@ class WelcomeScreen:
         ("AI",        330, 'ai',         "W"),
     ]
 
-    def __init__(self, screen: pygame.Surface, version: str):
+    def __init__(self, screen: pygame.Surface, version: str, notice: str | None = None):
         self.screen   = screen
         self.version  = version
+        self._notice  = notice   # one-shot message (e.g. after a failed load)
         self.W, self.H = screen.get_size()
         self.cx = self.W // 2
         self.cy = self.H // 2
@@ -794,6 +800,12 @@ class WelcomeScreen:
 
     def _draw_footer(self, cx):
         has_save = getattr(self, '_has_save', False)
+        # One-shot notice (e.g. after a failed load) -- sits above the save hint so
+        # it reads alongside the reassuring "Saved journey found" line.
+        notice = getattr(self, '_notice', None)
+        if notice:
+            note = self.font_sm.render(notice, True, FP.GOLD_BRIGHT)
+            self.screen.blit(note, (cx - note.get_width() // 2, self.H - 78))
         text = "[ ENTER ] begin your quest     [ F3 ] study mode     [ ESC ] quit"
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))

@@ -102,11 +102,16 @@ def test_scroll_identify_grants_mastery_directly():
 
 
 def test_uncursed_identify_opens_picker():
-    """The uncursed Scroll of Identify branch must open the picker."""
+    """The uncursed Scroll of Identify branch must open the picker.
+
+    After Path A (2026-06-01) the call uses a computed bless flag, so we
+    just assert the picker is invoked at all from inside the identify
+    block — and that we still pass `bless=` keyword.
+    """
     from game_magic import MagicMixin
     src = inspect.getsource(MagicMixin._apply_scroll_effect)
-    assert "_open_scroll_identify_picker(bless=False)" in src or \
-        "_open_scroll_identify_picker(bless = False)" in src, (
+    assert "_open_scroll_identify_picker(bless=" in src or \
+        "_open_scroll_identify_picker(bless =" in src, (
         "Uncursed Scroll of Identify must open the target picker (D2)"
     )
 

@@ -51,18 +51,24 @@ def test_flavor_npc_spawn_also_guards():
 # ---------------------------------------------------------------------------
 
 def test_plant_ingredients_eligible_pool_not_empty():
-    """The plant-keyword filter must produce at least 8 eligible ingredients
-    across reasonable floor levels."""
+    """The plant-keyword filter must produce at least 4 eligible ingredients
+    across reasonable floor levels.
+
+    Updated 2026-05-31 redesign: plant ingredients reorganized under the
+    new harvest+cook schema. The plant family has 9 primes + 1 family
+    ingredient + cave_mushroom + swamp_moss dungeon ingredients. The
+    test threshold dropped from 8 -> 4 to reflect the consolidated bank.
+    """
     from items import load_items
     ingredients = load_items('ingredient')
     PLANT_KEYWORDS = ('mushroom','herb','berry','leaf','root','fungus','moss',
                       'flower','seed','grain','wheat','grass','vine','spice',
-                      'lichen','bark','sap')
+                      'lichen','bark','sap','fiber','plant')
     plants_l10 = [i for i in ingredients
                   if any(w in getattr(i, 'name', '').lower() for w in PLANT_KEYWORDS)
                   and i.min_level <= 10]
-    assert len(plants_l10) >= 8, (
-        f'Only {len(plants_l10)} plant ingredients eligible at L10 — expected >= 8.'
+    assert len(plants_l10) >= 4, (
+        f'Only {len(plants_l10)} plant ingredients eligible at L10 — expected >= 4.'
     )
 
 

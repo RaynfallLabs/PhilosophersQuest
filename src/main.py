@@ -37,6 +37,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT,
     STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_STUDY,
+    STATE_DROP_QTY_INPUT,
 )
 from welcome_screen import WelcomeScreen
 from study_mode import StudyMode
@@ -137,6 +138,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Drop-item state
         self.drop_menu_items: list = []
         self.drop_gold_input: str  = ''   # digit buffer for gold-drop amount prompt
+        self.drop_qty_input: str   = ''   # digit buffer for stack-drop quantity prompt
+        self._drop_qty_item        = None # the stacked item awaiting a drop quantity
         # Story popup state (quest intro, boss victory, endings)
         self.popup_data: dict | None = None     # title, lines, accent, code
         self.popup_next_state: str   = STATE_PLAYER
@@ -465,6 +468,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 setattr(self.player, _attr, _default)
         # BUC migration: patch buc/buc_known on all items from old saves
         self._migrate_buc_all(state)
+        # Harvest+Cook redesign migration (2026-05-31): old saves have
+        # Ingredient objects with pre-redesign ids (orc_meat, dragon_essence,
+        # void_essence, etc.) that no longer exist in the new bank. Replace
+        # them with assorted_monster_parts so the inventory stays usable
+        # rather than holding dead items.
+        self._migrate_legacy_ingredients(state)
         self.player_name   = state['player_name']
         self.secret_build  = state.get('secret_build')
         self.turn_count    = state['turn_count']
@@ -561,7 +570,43 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._migrate_common_item_lore()
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.GAME_W, layout.GAME_H)
         self._refresh_fov()
-        self.add_message("Welcome back, seeker. Your journey continues...", 'success')
+        self._show_load_summary_popup()
+
+    def _load_looks_valid(self, state: dict) -> bool:
+        """Sanity-check that load_state actually restored the run.
+
+        Guards against a silent partial restore: if these are wrong the game
+        would look 'fresh' and, once played and quit, overwrite the still-intact
+        save on disk. The caller refuses to enter the game loop when this returns
+        False, leaving the save recoverable on the next launch.
+        """
+        return (
+            self.player is not None
+            and self.dungeon is not None
+            and self.dungeon_level == state.get('dungeon_level')
+        )
+
+    def _show_load_summary_popup(self):
+        """Unmissable confirmation that a save was restored, showing the facts the
+        player can verify at a glance. Reuses the STATE_STORY_POPUP chrome like
+        _show_quirk_unlock_popup, so a bad restore (Floor 1 / Turn 0 / 0 items) is
+        immediately obvious instead of a one-line message that scrolls past."""
+        weapon_name = self.player.weapon.name if self.player.weapon else 'unarmed'
+        item_count = len(self.player.inventory)
+        lines = [
+            f'Floor {self.dungeon_level}   |   Turn {self.turn_count}',
+            f'{item_count} item{"" if item_count == 1 else "s"}   |   {weapon_name}',
+            '',
+            'Welcome back, seeker. Your journey continues.',
+        ]
+        self.popup_data = {
+            'title':  'JOURNEY RESTORED',
+            'accent': (140, 220, 160),   # green — matches the saved-journey theme
+            'lines':  lines,
+            'code':   None,
+        }
+        self.popup_next_state = STATE_PLAYER
+        self.state = STATE_STORY_POPUP
 
     def _migrate_ranged_weapons(self):
         """One-shot save migration. Old saves have bows with requires_ammo=None
@@ -687,6 +732,51 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for item in lvl_data.get('ground_items', []):
                     migrate(item)
 
+    def _migrate_legacy_ingredients(self, state: dict):
+        """Walk every Ingredient item in inventory + ground + stored levels.
+
+        Per the 2026-05-31 harvest+cook redesign, the ingredient bank was
+        rebuilt from scratch. Old saves carry Ingredient objects pickled
+        with pre-redesign ids (orc_meat, dragon_essence, etc.) that no
+        longer exist. Replace each with an Assorted Monster Parts so the
+        inventory stays usable (rather than holding dead items that won't
+        cook).
+        """
+        from items import Ingredient
+        from food_system import load_ingredient_for, _raw_ingredients
+
+        valid_ids = set(_raw_ingredients().keys())
+
+        def _migrated_replacement():
+            """Build a fresh Assorted Monster Parts ingredient."""
+            return load_ingredient_for('assorted_monster_parts')
+
+        def _migrate_list(items_list):
+            """Swap any Ingredient with an unknown id for Assorted Parts."""
+            if not items_list:
+                return 0
+            count = 0
+            for i, item in enumerate(items_list):
+                if isinstance(item, Ingredient) and item.id not in valid_ids:
+                    replacement = _migrated_replacement()
+                    if replacement is not None:
+                        # Preserve position (x, y) for ground items
+                        replacement.x = getattr(item, 'x', 0)
+                        replacement.y = getattr(item, 'y', 0)
+                        items_list[i] = replacement
+                        count += 1
+            return count
+
+        total = 0
+        total += _migrate_list(getattr(self.player, 'inventory', None))
+        total += _migrate_list(state.get('ground_items'))
+        lm = state.get('level_mgr')
+        if lm:
+            for lvl_data in getattr(lm, 'levels', {}).values():
+                total += _migrate_list(lvl_data.get('ground_items'))
+        if total > 0:
+            print(f'[Migration] Translated {total} legacy ingredients to Assorted Monster Parts')
+
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
         # Notify quirk system before level change (fast-exit check)
@@ -721,9 +811,28 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for _x in range(self.dungeon.width):
                     self.dungeon.explored.add((_x, _y))
         # Track deepest floor reached for the cooking softcap (rises with descent)
+        _was_deepest = self.player.deepest_floor_reached
         self.player.deepest_floor_reached = max(
             self.player.deepest_floor_reached, new_level
         )
+        # Fafnir's Heart trophy (2026-05-31): +2 max HP each NEW deepest floor.
+        if self.player.deepest_floor_reached > _was_deepest:
+            _per_desc = int(getattr(self.player, '_fafnir_per_descent_hp', 0) or 0)
+            if _per_desc > 0:
+                self.player.max_hp += _per_desc
+                self.player.hp = min(self.player.hp + _per_desc, self.player.max_hp)
+                self.add_message(
+                    f"Fafnir's Heart pulses — your vitality grows. (+{_per_desc} max HP)",
+                    'success')
+        # Níðhöggr's Scale trophy: +2 max MP each NEW deepest floor.
+        if self.player.deepest_floor_reached > _was_deepest:
+            _per_desc_mp = int(getattr(self.player, '_nidhogg_per_descent_mp', 0) or 0)
+            if _per_desc_mp > 0:
+                self.player.max_mp += _per_desc_mp
+                self.player.mp = min(self.player.mp + _per_desc_mp, self.player.max_mp)
+                self.add_message(
+                    f"Níðhöggr's Scale stirs — your mana deepens. (+{_per_desc_mp} max MP)",
+                    'success')
         self._notified_rooms = set()   # reset per-floor special room notifications
         # Chronicle: level milestones and maze entries
         _MILESTONE_FLAVOR = {
@@ -798,6 +907,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # huginn_muninn, demon_command, etc.) reset on every floor change.
         from chain_passives import reset_per_floor_charges
         reset_per_floor_charges(self.player)
+        # Harvest+Cook redesign 2026-05-31: per-floor cooking caps reset
+        # (+1 stat / +5 HP per floor; trophies bypass).
+        if hasattr(self.player, 'reset_floor_cook_caps'):
+            self.player.reset_floor_cook_caps()
         # Engine wave 5 — flat-armor per-floor charges (dodge_first_arrow,
         # gita_focus, maid_does_not_fall, story_thread).
         try:
@@ -2721,6 +2834,38 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if self.player.hp < self.player.max_hp:
                     self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
 
+        # Charybdis pull-on-hit: when a pulling monster's strike landed
+        # this turn (set on player by monster.attack via pull_chance), drag
+        # the player 1 tile toward the monster, blocked by walls. Single
+        # tile is enough to feel like a grappler proc without softlocking.
+        _pull_xy = getattr(self.player, '_pending_pull_toward', None)
+        if _pull_xy is not None:
+            self.player._pending_pull_toward = None
+            try:
+                _mx, _my = int(_pull_xy[0]), int(_pull_xy[1])
+                dx = 1 if _mx > self.player.x else (-1 if _mx < self.player.x else 0)
+                dy = 1 if _my > self.player.y else (-1 if _my < self.player.y else 0)
+                _nx, _ny = self.player.x + dx, self.player.y + dy
+                if self.dungeon.in_bounds(_nx, _ny) and \
+                        self.dungeon.is_walkable(_nx, _ny) and \
+                        not any(m.alive and m.x == _nx and m.y == _ny
+                                for m in self.monsters):
+                    self.player.x, self.player.y = _nx, _ny
+            except (TypeError, ValueError, AttributeError):
+                pass
+
+        # Brisingamen (tears_of_freya): a single gold piece drips from the
+        # amulet on each tick interval while equipped. Lore: "Freya wore it
+        # in battle and her tears became gold." Tiny per-tick value over a
+        # peak-floor-65+ item rewards long runs without spiking economy.
+        for _acc in self.player.equipped_accessories:
+            if getattr(_acc, 'tears_of_freya', False):
+                _tg = int(getattr(_acc, 'tears_of_freya_gold', 1) or 1)
+                _ti = max(1, int(getattr(_acc, 'tears_of_freya_interval', 1) or 1))
+                if _tg > 0 and self.turn_count % _ti == 0:
+                    self.player.gold += _tg
+                break  # only first tears_of_freya amulet ticks (no stacking)
+
         # Coat of Cú Chulainn: berserk trigger at low HP, HP cost while active.
         # STR refund + expiry message are handled by status_effects.tick_all
         # so we don't need to manually re-trigger or refund here.
@@ -4006,11 +4151,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Master Lockpick is permanent; no charge check.
         # Post-2026-05-19: escalator-chain quiz. Chain reached drives loot
         # quality (chain 0 = empty open; chain 5 = master thief, bonus item).
-        _q_tier = int(getattr(container, 'quiz_tier', getattr(container, 'tier', 1)))
-        self.quiz_title = (
-            f"PICKING {container.name.upper()}  --  ECONOMICS  "
-            f"(starts tier {_q_tier}, chain for better loot)"
-        )
+        self.quiz_title = f"PICKING {container.name.upper()}  --  ECONOMICS"
         self.state = STATE_QUIZ
 
         def on_complete(result: dict):
@@ -4076,11 +4217,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to harvest.", 'info')
             return
-        if corpse.ingredient_id is None:
-            self.add_message(f"The {corpse.name} yields nothing useful.", 'info')
-            self.ground_items.remove(corpse)
-            return
-
+        # Per 2026-05-31 redesign: EVERY corpse yields Assorted Monster Parts
+        # at T1+, regardless of monster_id. No pre-skip.
         self.ground_items.remove(corpse)
         # +5s harvest timer bonus if monster has been lore-identified
         _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
@@ -4088,13 +4226,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL LORE"
         self.state = STATE_QUIZ
 
-        def on_complete(ingredient, message: str):
+        def on_complete(ingredients_list, message: str):
+            """New 2026-05-31 callback: receives a LIST of fresh Ingredient
+            instances (may be empty for T0 ruined harvest). Each is added
+            individually; overflow goes to ground."""
             self.state = STATE_PLAYER
-            self.add_message(message, 'loot' if ingredient is not None else 'warning')
-            success = ingredient is not None
+            success = bool(ingredients_list)
+            self.add_message(message, 'loot' if success else 'warning')
             _qs_harv = getattr(self, 'quirk_system', None)
             if _qs_harv:
-                # Check if this monster's definition applies poison
                 _mon_def = getattr(corpse, 'monster_def', {}) or {}
                 _attacks = _mon_def.get('attacks', [])
                 _applies_poison = any(
@@ -4106,7 +4246,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     success=success,
                     monster_applies_poisoned=_applies_poison,
                 )
-            if success:
+            for ingredient in ingredients_list:
                 if not self.player.add_to_inventory(ingredient):
                     self.ground_items.append(ingredient)
                     ingredient.x, ingredient.y = px, py
@@ -4727,6 +4867,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if getattr(item, 'cursed', False):
                     msg += " It feels wrong..."
                 self.add_message(msg, 'success')
+                # Great Helm of Galahad (purity): announce the cleansing
+                # when items were freed of curses by the helm going on.
+                _cleansed = int(getattr(self.player, '_galahad_cleansed_count', 0) or 0)
+                if _cleansed > 0:
+                    self.add_message(
+                        f"The Grail's light flows from the helm. "
+                        f"{_cleansed} cursed item{'s' if _cleansed != 1 else ''} "
+                        f"on your person is purified.",
+                        'success')
+                    self.player._galahad_cleansed_count = 0
                 _qs_arm = getattr(self, 'quirk_system', None)
                 if _qs_arm:
                     itype = 'shield' if isinstance(item, Shield) else 'armor'
@@ -4886,10 +5036,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # directly; the lenient fallback exists for legacy data only.
         if mode not in ('escalator_chain', 'chain'):
             mode = 'escalator_chain'
+        # Escalator-chain ALWAYS starts at T1 (bug bash 2026-06-01 — same
+        # pattern as the corpse/chest harvest fix). Legacy quiz_tier on
+        # legendary items was a leftover difficulty knob.
         self.quiz_engine.start_quiz(
             mode=mode,
             subject=subject,
-            tier=int(getattr(item, 'quiz_tier', 1)),
+            tier=1,
             callback=on_complete,
             max_chain=5,
             wisdom=self.player.WIS,
@@ -5785,11 +5938,33 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if is_equipped and (getattr(item, 'cursed', False) or getattr(item, 'buc', '') == 'cursed'):
             self.add_message(f"The {self._display_name(item)} is cursed and bound to you! Uncurse it first.", 'warning')
             return
-        if not self.player.remove_from_inventory(item):
+        from items import Item
+        count = getattr(item, 'count', 1)
+        if count > 1 and isinstance(item, Item._STACKABLE_CLASSES):
+            # Stacked item -> ask how many to drop (mirrors the gold prompt).
+            self._drop_qty_item = item
+            self.drop_qty_input = ''
+            self.state = STATE_DROP_QTY_INPUT
             return
+        self._finish_drop(item, count)
+
+    def _finish_drop(self, item, qty):
+        """Place ``qty`` of a (possibly stacked) item on the ground, then run all
+        drop-time side effects (quest altars, BUC altar, chronicle hooks).
+
+        ``drop_stack`` hands back a detached object -- never the one left in
+        inventory -- so a later pickup can't self-merge and double the count."""
+        dropped = self.player.drop_stack(item, qty)
+        if dropped is None:
+            return
+        item = dropped   # operate on the detached / ground object below
         item.x, item.y = self.player.x, self.player.y
         self.ground_items.append(item)
-        self.add_message(f"You drop the {self._display_name(item)}.", 'info')
+        _dc = getattr(item, 'count', 1)
+        if _dc > 1:
+            self.add_message(f"You drop {_dc} {self._display_name(item)}.", 'info')
+        else:
+            self.add_message(f"You drop the {self._display_name(item)}.", 'info')
 
         # Track shard drop for Diogenes' Lantern quirk
         if getattr(item, 'id', '') == 'philosophers_shard':
@@ -6108,7 +6283,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
 
 def main():
-    from save_system import save_exists, load_game, save_game, delete_save
+    from save_system import save_exists, load_game, save_game
 
     pygame.init()
     _di = pygame.display.Info()
@@ -6121,9 +6296,13 @@ def main():
 
     global _crash_game_ref
 
+    # One-shot notice shown on the next welcome screen (e.g. after a failed load).
+    _load_notice = None
+
     while True:
         # ---------- welcome / study screen ----------
-        welcome = WelcomeScreen(screen, VERSION)
+        welcome = WelcomeScreen(screen, VERSION, notice=_load_notice)
+        _load_notice = None
         player_name, secret_build = welcome.run(clock)
 
         if player_name == '__STUDY_MODE__':
@@ -6136,13 +6315,25 @@ def main():
         layout.update(_cur_w, _cur_h)
 
         # ---------- load or create game ----------
+        # The save is NOT deleted here. It persists on disk as a recovery anchor
+        # until the run actually ends: death/victory delete it via _on_game_over,
+        # and an explicit "exit without saving" deletes it too. Deleting on load —
+        # before load_state was known to have succeeded — is what silently
+        # destroyed progress when a restore only partially took.
         state = load_game(player_name) if save_exists(player_name) else None
         if state:
-            delete_save(player_name)   # permadeath: delete save immediately on load
             game = Game(screen,
                         player_name=state.get('player_name', player_name),
                         secret_build=state.get('secret_build'))
             game.load_state(state)
+            if not game._load_looks_valid(state):
+                # The restore did not take. Do NOT enter the game loop — a broken
+                # game would overwrite the still-intact save on quit. Bounce back
+                # to the welcome screen; the save on disk is untouched and the run
+                # is recoverable on the next launch.
+                _load_notice = ("Your saved journey didn't load cleanly -- but it "
+                                "is safe. Please try again.")
+                continue
         else:
             game = Game(screen, player_name=player_name, secret_build=secret_build)
 
@@ -6172,7 +6363,11 @@ def main():
 
         # Save on clean exit if the game is still in progress and player chose to save
         if game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit:
-            save_game(game)
+            if not save_game(game):
+                # The on-disk save is no longer deleted on load, so the previous
+                # good state remains and the run is still recoverable — but record
+                # that this session did not persist.
+                print("[Save] quit-save failed; previous save retained on disk")
 
         # If game ended by death or victory, loop back to welcome screen
         if game.state in (STATE_DEAD, STATE_VICTORY):

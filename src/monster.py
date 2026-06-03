@@ -147,6 +147,32 @@ class Monster:
         # --- Mimic surprise flag (set when mimic springs from disguise) ---
         self._mimic_surprise: bool = False
 
+        # --- Boss multi-attack: fires all attacks per turn like Fenrir at
+        # rage 3+. Currently used by Abaddon. Wired in act().
+        self.multi_attack_always: bool = bool(defn.get('multi_attack_always', False))
+        # Granular multi-attack: fire only the first N attacks per turn
+        # (0 = all). Lets bosses ramp up — phase 1 fires 2, enraged phase
+        # fires all 5. Tiamat/Asmodeus/Abaddon all use this for phase
+        # escalation alongside enrage_at_hp_pct.
+        self.multi_attack_count: int = int(defn.get('multi_attack_count', 0) or 0)
+        self.enraged_multi_attack_count: int = int(defn.get('enraged_multi_attack_count', 0) or 0)
+        # Chain-disrupt-on-hit: chance the strike disrupts the player's
+        # chain meter for the next attack. Stored on player as
+        # _chain_disrupt_pending; consumed by next chain-mode quiz start
+        # if the quiz engine wires it. Currently JSON-stored, partial wire.
+        self.chain_break_on_hit: float = float(defn.get('chain_break_on_hit', 0.0) or 0.0)
+        # Drain heals self: vampires and life-drainers regain HP when their
+        # drain attacks deal damage. Default 1.0 = full heal, 0.5 = half.
+        self.drain_heals_self: float = float(defn.get('drain_heals_self', 0.0) or 0.0)
+        # Revive-once-on-death: green_knight signature — first death drops
+        # to 0 HP but the corpse pops back up to revive_hp_pct.
+        self.revive_once_on_death: bool = bool(defn.get('revive_once_on_death', False))
+        self.revive_hp_pct: float = float(defn.get('revive_hp_pct', 0.5) or 0.5)
+        self._has_revived: bool = False
+        # Pull-on-hit: chance the strike drags the player 2 tiles toward
+        # the monster (charybdis / kraken / grappler family).
+        self.pull_chance: float = float(defn.get('pull_chance', 0.0) or 0.0)
+
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
         '_flee_timer': 0, '_alerted': False, '_aware': False, '_slow_skip': False,
@@ -276,7 +302,16 @@ class Monster:
         actual = max(0, amount)
         self.hp = max(0, self.hp - actual)
         if self.hp == 0:
-            self.alive = False
+            # Green Knight (revive_once_on_death): the beheading-game pact.
+            # First death pops back up at revive_hp_pct (default 0.5). Only
+            # fires once per encounter.
+            if getattr(self, 'revive_once_on_death', False) and not getattr(self, '_has_revived', False):
+                self._has_revived = True
+                self.hp = max(1, int(self.max_hp * float(getattr(self, 'revive_hp_pct', 0.5) or 0.5)))
+                # Append a flag so the killing-blow path can announce it.
+                self._just_revived = True
+            else:
+                self.alive = False
         if actual > 0:
             self.status_effects.pop('sleeping', None)
         return actual
@@ -297,9 +332,12 @@ class Monster:
             if player.get_sight_radius() == 0:
                 return 0, f"The {self.name} gazes at you, but you cannot see its eyes!"
             if not player.has_effect('sleep_resist'):
-                turns = max(player.status_effects.get('paralyzed', 0), 3)
-                player.add_effect('paralyzed', turns)
-                return 0, f"The {self.name}'s gaze paralyzes you for {turns} turns!"
+                from status_effects import apply_debuff_with_save
+                dc = min(18, 12 + self.min_level // 7)
+                applied, _ = apply_debuff_with_save(player, 'paralyzed', 3, dc)
+                if applied:
+                    return 0, f"The {self.name}'s gaze paralyzes you!"
+                return 0, f"You wrench your gaze away from the {self.name} just in time!"
             else:
                 return 0, f"The {self.name} gazes at you harmlessly."
 
@@ -315,10 +353,13 @@ class Monster:
                 gaze_msg = (f"The {self.name} meets her own reflection in your shield "
                             f"and is turned to stone for a moment!")
             else:
-                player.add_effect('paralyzed', self.gaze_paralyze)
-                gaze_msg = (f"The {self.name}'s terrible gaze freezes you in place! "
-                            f"Paralyzed for {self.gaze_paralyze} turns!")
-                return 0, gaze_msg  # gaze turn: no damage, just paralyze
+                from status_effects import apply_debuff_with_save
+                dc = min(18, 12 + self.min_level // 7)
+                applied, _ = apply_debuff_with_save(player, 'paralyzed', self.gaze_paralyze, dc)
+                if applied:
+                    return 0, (f"The {self.name}'s terrible gaze freezes you in place!")
+                return 0, (f"You meet the {self.name}'s gaze but tear your eyes away "
+                           f"before the stone takes hold!")  # gaze turn: no damage
             # Gaze was blocked or reflected — continue to normal attack
             # (but append the gaze message below)
             atk = random.choice(self.attacks)
@@ -358,6 +399,21 @@ class Monster:
 
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
         if self.rage_stacks >= 3 and len(self.attacks) > 1:
+            return self._fenrir_multi_attack(player)
+
+        # Tiered multi-attack (Tiamat, Asmodeus, Abaddon):
+        #   multi_attack_count=N → fire first N attacks per turn
+        #   enraged_multi_attack_count=M → swap to M when enraged
+        #   multi_attack_always=True → fire ALL attacks (legacy Abaddon path)
+        # Phase escalation via enrage_at_hp_pct gives the boss-fight rhythm.
+        _macnt = int(getattr(self, 'multi_attack_count', 0) or 0)
+        _emacnt = int(getattr(self, 'enraged_multi_attack_count', 0) or 0)
+        if self._enraged and _emacnt > 0:
+            _macnt = _emacnt
+        if _macnt > 0 and _macnt < len(self.attacks):
+            return self._fenrir_multi_attack(player, attack_limit=_macnt)
+        if (getattr(self, 'multi_attack_always', False) or _macnt >= len(self.attacks)) \
+                and len(self.attacks) > 1:
             return self._fenrir_multi_attack(player)
 
         # Ranged monsters at distance: prefer ranged attacks over melee
@@ -606,7 +662,33 @@ class Monster:
             if player.CON < old_con:
                 msg = f"The {self.name} drains your life force! ({actual} dmg, CON -1)"
 
-        # Apply status effect from attack
+        # Drain heals self (vampire lord, life-drainer family): when a
+        # drain attack lands, regain a fraction of the damage dealt.
+        # JSON: drain_heals_self = 1.0 → full heal, 0.5 → half. Audit fix
+        # for ancient_vampire_lord: "drain attack causes CON -1 but doesn't
+        # heal the vampire — not a vampire."
+        _dhs = float(getattr(self, 'drain_heals_self', 0.0) or 0.0)
+        if atk_type == 'drain' and _dhs > 0 and actual > 0 and self.alive:
+            heal = max(1, int(actual * _dhs))
+            self.hp = min(self.max_hp, self.hp + heal)
+            msg += f" The {self.name}'s wounds close as it feeds ({heal} HP regained)."
+
+        # Chain-disrupt: chance the strike interrupts the player's chain
+        # build for the next attack. Sets a flag the quiz engine can read
+        # (currently stored; consumer pending).
+        _cbh = float(getattr(self, 'chain_break_on_hit', 0.0) or 0.0)
+        if _cbh > 0 and actual > 0 and random.random() < _cbh:
+            player._chain_disrupt_pending = True
+
+        # Pull-on-hit (Charybdis, kraken, grappler family): drag the player
+        # 1-2 tiles toward this monster. Storms request via a flag the
+        # game loop honors when it can resolve movement.
+        _pc = float(getattr(self, 'pull_chance', 0.0) or 0.0)
+        if _pc > 0 and actual > 0 and random.random() < _pc:
+            player._pending_pull_toward = (self.x, self.y)
+            msg += f" The {self.name} drags you closer!"
+
+        # Apply status effect from attack (gated by a D&D-style saving throw).
         effect_id = atk.get('effect')
         if effect_id:
             chance   = atk.get('effect_chance', 0.30)
@@ -617,9 +699,12 @@ class Monster:
                     self.add_effect(effect_id, duration)
                     msg += f" The effect reflects back -- the {self.name} is {effect_id.replace('_', ' ')}!"
                 else:
-                    applied = player.add_effect(effect_id, duration)
-                    if applied:
-                        msg += f" You are {effect_id.replace('_', ' ')}!"
+                    from status_effects import apply_debuff_with_save
+                    # DC scales gently with monster depth; data may override.
+                    dc = min(18, int(atk.get('effect_save_dc', 12 + self.min_level // 7)))
+                    _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc)
+                    if _emsg:
+                        msg += " " + _emsg
 
         return actual, msg
 
@@ -755,6 +840,17 @@ class Monster:
         # Aggravated status makes ALL monsters aware immediately.
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
         detection_range = getattr(self, 'perception_range', 8)
+        # Hand of Glory (passive_silent_walk): halves a monster's perception
+        # against the wearer (rounded down, min 1). Already-aware monsters
+        # keep their target via the _aware flag, so silent_walk only helps
+        # AVOID first detection — once seen, you're seen.
+        try:
+            for _acc in player.equipped_accessories:
+                if getattr(_acc, 'passive_silent_walk', False):
+                    detection_range = max(1, detection_range // 2)
+                    break
+        except AttributeError:
+            pass
         # Chain-equip passives: invisible_to_undead / stealth_in_dark /
         # unseen_when_still — if any applies, the monster cannot acquire
         # the player this turn (existing _aware/_alerted is preserved).
@@ -1355,13 +1451,20 @@ class Monster:
 
         return False  # angels never attack the player
 
-    def _fenrir_multi_attack(self, player) -> tuple[int, str]:
-        """Fenrir at 3+ rage: use ALL attacks in one turn. Returns (total_dmg, combined_msg)."""
+    def _fenrir_multi_attack(self, player, attack_limit: int = 0) -> tuple[int, str]:
+        """Fire multiple attacks in one turn. Returns (total_dmg, combined_msg).
+
+        attack_limit > 0: use only the first N attacks (for tiered bosses
+        like Tiamat phase 1 / Asmodeus phase 1 — see the multi_attack_count
+        JSON field). attack_limit == 0: use ALL attacks (Fenrir / Abaddon
+        multi_attack_always).
+        """
         total = 0
         parts = []
         is_boss = getattr(self, 'is_boss', False)
         min_hit = getattr(self, 'min_hit_chance', 0.25 if is_boss else 0.05)
-        for atk in self.attacks:
+        atks_to_fire = self.attacks[:attack_limit] if attack_limit > 0 else self.attacks
+        for atk in atks_to_fire:
             d20 = random.randint(1, 20)
             player_ac = player.get_ac()
             to_hit = self.thac0 - player_ac

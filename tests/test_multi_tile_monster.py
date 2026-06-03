@@ -42,16 +42,29 @@ def test_fafnir_has_2x2_footprint():
     )
 
 
-def test_only_fafnir_has_multi_tile_footprint():
-    """Phase 1 ships one 2×2 monster. Other 2×2 monsters are
-    one-line data changes in a follow-up commit; if more appear in
-    this commit something has drifted."""
+def test_known_multi_tile_monsters_are_in_allowlist():
+    """Phase 1 shipped only Fafnir as 2x2. Follow-up monster passes
+    have intentionally added more cosmic-scale bosses (Tiamat, Surtur,
+    Ymir, Hrungnir) at 2x2 footprint. This test pins the FULL list so
+    any further additions are deliberate."""
     monsters = _load_monsters_json()
-    multi = [name for name, m in monsters.items()
-             if m.get("footprint") and tuple(m["footprint"]) != (1, 1)]
-    assert multi == ["fafnir_dragon"], (
-        f"expected only fafnir_dragon as multi-tile, got: {multi}"
-    )
+    multi = sorted([name for name, m in monsters.items()
+                    if m.get("footprint") and tuple(m["footprint"]) != (1, 1)])
+    EXPECTED = {
+        "fafnir_dragon",      # f60 boss room
+        "tiamat",             # f85 chromatic dragon queen
+        "surtur",             # f87 fire giant lord
+        "ymir_last_spawn",    # f82 frost giant primordial
+        "hrungnirs_ghost",    # f80 stone giant ghost
+    }
+    multi_set = set(multi)
+    unexpected = multi_set - EXPECTED
+    assert not unexpected, \
+        f"Unexpected multi-tile monsters in JSON: {sorted(unexpected)}"
+    missing = EXPECTED - multi_set
+    # Missing is OK only if that entry was intentionally removed.
+    assert not missing, \
+        f"Expected multi-tile monsters missing from JSON: {sorted(missing)}"
 
 
 # ---------------------------------------------------------------------------

@@ -270,15 +270,15 @@
     "text": "A small, wiry woman moves along the wall with a lantern, peering at patches of fungus with a jeweler's loupe. She barely glances at you. \"I'm cataloguing. Don't touch the blue ones, they'll numb your tongue for a week. Are you interested in supplies, or are you just going to hover?\"",
     "options": [
       {
-        "label": "Trade food for her medicines",
+        "label": "Trade food for one of her potions",
         "cost": {
           "type": "food"
         },
         "reward": {
           "type": "random_item",
-          "category": "food"
+          "category": "potion"
         },
-        "outcome": "She accepts your ration with a professional nod and replaces it with something wrapped in dark leaves. \"Better than trail bread. I foraged it this morning — grows near the thermal vents, restorative properties, mostly reliable.\""
+        "outcome": "She accepts your ration with a professional nod and presses a small stoppered vial into your hand. \"My morning's brew. I trust the apothecaria more than I trust the labels. Drink with caution.\""
       },
       {
         "label": "Buy a restorative potion (45g)",
@@ -373,7 +373,7 @@
         "outcome": "You trade her a ration for ten minutes of the most thorough dungeon briefing you have ever received, complete with hand gestures. She describes three shortcuts, two trapped passages, and a very large rat she has named Gerald. You feel oddly well-oriented."
       },
       {
-        "label": "Share food and ask about the layout",
+        "label": "Just share food — she should eat",
         "cost": {
           "type": "food"
         },
@@ -3247,7 +3247,7 @@
     "text": "A towering warrior slumps against the wall, his golden armor shattered, a dozen wounds weeping light rather than blood. \"I made it to the ninety-second floor once,\" he rasps, \"before the thing with a thousand mouths found me. I won't make it further. But you — you still have breath in you.\"",
     "options": [
       {
-        "label": "Give him a healing potion",
+        "label": "Give him 200 gold for funeral rites",
         "cost": {
           "type": "gold",
           "amount": 200

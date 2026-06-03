@@ -1,15 +1,26 @@
-"""End-to-end cooking system tests (Phase 5).
+"""End-to-end cooking system tests (Phase 5) — LEGACY.
 
-Cooking has zero prior test coverage. This file locks in the data
-invariants the system depends on: every monster → corpse → ingredient →
-recipe chain works, the SP/bonus curves scale with floor, harvest quiz
-tuning is sane, and metadata (descriptions, lore) is complete.
+This file pinned the PRE-2026-05-31 cooking schema (per-ingredient Q0-Q5
+recipes, sprite descriptions, floor-scaling SP formulas). The 2026-05-31
+harvest+cook redesign replaced the schema entirely (universal/family/
+prime/trophy hierarchy + per-recipe tier_outcomes). These tests are
+preserved for git history but skipped — see test_harvest_cook_redesign.py
+for the new-schema validation.
 """
 import json
 import os
 import sys
 from collections import defaultdict
 from pathlib import Path
+
+import pytest
+
+# Skip the entire module — legacy schema. New schema validated by
+# test_harvest_cook_redesign.py.
+pytestmark = pytest.mark.skip(
+    reason="Legacy cooking schema replaced by 2026-05-31 redesign. "
+           "See test_harvest_cook_redesign.py for new-schema tests."
+)
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 

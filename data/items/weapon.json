@@ -4645,19 +4645,16 @@
     "tier": 5,
     "material": "divine",
     "mathTier": 5,
-    "baseDamage": 45,
+    "baseDamage": 52,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.2,
-      2.0,
-      3.2,
-      4.8,
-      6.5,
-      9.0,
-      12.0,
-      16.0
+      1.7,
+      2.2,
+      2.8,
+      3.4
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 6,
     "damageTypes": [
       "holy",
       "slash"
@@ -4671,11 +4668,11 @@
     "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.15,
+    "stunChance": 0.20,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 4.0,
+    "critMultiplier": 3.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {},
     "containerLootTier": "legendary",
@@ -4685,7 +4682,8 @@
     "identified": false,
     "unidentified_name": "a blade of blinding white radiance",
     "ignore_resistances": true,
-    "abaddon_bonus_damage": "6d10",
+    "abaddon_bonus_damage": "5d10",
+    "holy_smite_message": true,
     "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous — earned not by strength but by the quality of one's soul.",
     "damage_types": [
       "holy",
@@ -4694,16 +4692,17 @@
     "template_basis": "longsword",
     "spread": 0,
     "peak_floor": 0,
-    "chain_multipliers": [
-      0.5,
-      0.85,
-      1.0,
-      1.45,
-      2.0
-    ],
     "peak_weight": 0.0,
-    "base_damage": 38,
-    "max_chain_length": 5,
+    "base_damage": 52,
+    "max_chain_length": 6,
+    "chain_multipliers": [
+      0.6,
+      1.2,
+      1.7,
+      2.2,
+      2.8,
+      3.4
+    ],
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
@@ -4715,6 +4714,11 @@
       },
       "scope": "item",
       "desc": "The Sword of Michael deals +50% damage to demonkind."
+    },
+    "bonus_damage_vs_tag": {
+      "demon": "2d8",
+      "undead": "1d8",
+      "evil": "1d8"
     },
     "id_level": 0
   },

@@ -16,11 +16,69 @@ def _save_path(name: str) -> str:
 
 
 def save_exists(name: str) -> bool:
-    return os.path.exists(_save_path(name))
+    # A 0-byte file is a truncated/corrupt save (e.g. from a pre-atomic-write
+    # failed dump); treat it as no save so it doesn't masquerade as loadable.
+    path = _save_path(name)
+    return os.path.exists(path) and os.path.getsize(path) > 0
+
+
+def _find_unpicklable(obj, path='state', _seen=None, _out=None, _depth=0):
+    """Best-effort localizer: return [(path, typename), ...] for the objects
+    pickle can't serialize, descending only into subtrees that fail. Used only
+    when a save fails, to print the exact attribute (e.g. a stray pygame
+    Surface) instead of a vague 'cannot pickle' message. Honors __getstate__ so
+    it matches what pickle actually walks."""
+    if _out is None:
+        _out = []
+    if _seen is None:
+        _seen = set()
+    if len(_out) >= 8 or _depth > 18:
+        return _out
+    try:
+        pickle.dumps(obj)
+        return _out                      # this subtree is clean
+    except Exception:
+        pass
+    oid = id(obj)
+    if oid in _seen:
+        return _out
+    _seen.add(oid)
+    if isinstance(obj, dict):
+        for k, v in list(obj.items()):
+            _find_unpicklable(v, f"{path}[{k!r}]", _seen, _out, _depth + 1)
+        return _out
+    if isinstance(obj, (list, tuple, set, frozenset)):
+        for i, v in enumerate(list(obj)):
+            _find_unpicklable(v, f"{path}[{i}]", _seen, _out, _depth + 1)
+        return _out
+    st = None
+    gs = getattr(obj, '__getstate__', None)
+    if callable(gs):
+        try:
+            st = gs()
+        except Exception:
+            st = None
+    if st is None:
+        st = getattr(obj, '__dict__', None)
+    if isinstance(st, dict):
+        before = len(_out)
+        for k, v in list(st.items()):
+            _find_unpicklable(v, f"{path}.{k}", _seen, _out, _depth + 1)
+        if len(_out) == before:          # no child pinned it; blame this object
+            _out.append((path, type(obj).__name__))
+        return _out
+    _out.append((path, type(obj).__name__))
+    return _out
 
 
 def save_game(game) -> bool:
-    """Serialize the full game state to disk. Returns True on success."""
+    """Serialize the full game state to disk. Returns True on success.
+
+    Writes to a temp file and atomically replaces the real save, so a failed or
+    partial dump (e.g. an unpicklable object sneaking into state) can never
+    corrupt or destroy an existing good save."""
+    path = _save_path(game.player_name)
+    tmp = path + '.tmp'
     try:
         state = {
             'player':           game.player,
@@ -93,11 +151,24 @@ def save_game(game) -> bool:
             # Quiz deck state — preserves shuffle position so questions don't repeat on reload
             'quiz_deck_state': game.quiz_engine.get_deck_state(),
         }
-        with open(_save_path(game.player_name), 'wb') as f:
+        with open(tmp, 'wb') as f:
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)
+        os.replace(tmp, path)   # atomic; never touches `path` unless dump succeeded
         return True
     except Exception as e:
         print(f"[Save] Failed: {e}")
+        # Pinpoint the exact attribute path of the unpicklable object(s).
+        try:
+            for p, tn in _find_unpicklable(state):
+                print(f"[Save]   unpicklable at {p}  ({tn})")
+        except Exception:
+            pass
+        # Leave the existing save intact; discard only the throwaway temp.
+        try:
+            if os.path.exists(tmp):
+                os.remove(tmp)
+        except Exception:
+            pass
         return False
 
 

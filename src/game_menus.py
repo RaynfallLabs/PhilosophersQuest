@@ -1515,7 +1515,11 @@ class MenuMixin:
                 f"You play Orpheus's lyre. The {target.name} is enchanted.",
                 'success')
         elif acc_id == 'hand_of_glory':
-            target.add_effect('paralyzed', 4)
+            # Use the JSON-authored paralyze_duration if present (10 turns
+            # for Hand of Glory; older defaults to 4). The longer duration
+            # reflects the "candle holds them frozen" lore.
+            dur = int(getattr(acc, 'paralyze_duration', 4) or 4)
+            target.add_effect('paralyzed', dur)
             self.add_message(
                 f"The candle of the Hand of Glory flares. The {target.name} freezes.",
                 'success')
@@ -1527,6 +1531,19 @@ class MenuMixin:
                 f"The {target.name} sleeps.",
                 'info')
         acc.charges -= 1
+        # Hand of Glory (expended_curse): when all five candle-fingers are
+        # burnt out, the wax-soaked hand fuses to its wearer. Per lore:
+        # "When all five have burned, the hand will not let go." The item
+        # becomes permanently cursed and welded into the slot.
+        if int(acc.charges) <= 0 and getattr(acc, 'expended_curse', False) and \
+                not getattr(acc, 'cursed', False):
+            acc.cursed = True
+            acc.buc = 'cursed'
+            acc.buc_known = True
+            self.add_message(
+                f"The {getattr(acc, 'name', acc_id)} burns out — the wax "
+                f"fuses to your skin. It will not let go.",
+                'danger')
         return False  # advance turn
 
     # ------------------------------------------------------------------

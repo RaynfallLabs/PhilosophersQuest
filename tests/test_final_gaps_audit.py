@@ -23,17 +23,30 @@ def _src(name):
 # 1. Multi-tile boss footprint
 # ---------------------------------------------------------------------------
 
-def test_only_one_multi_tile_boss():
+def test_known_multi_tile_bosses_pinned():
     """If a new multi-tile boss gets added, this test forces an
-    update so _spawn_boss footprint logic can be verified for it."""
+    update so _spawn_boss footprint logic can be verified for it.
+
+    Extended 2026-05-31: 4 new cosmic-scale entries (Tiamat, Surtur,
+    Ymir's Last Spawn, Hrungnir's Ghost) share Fafnir's 2x2 mechanic.
+    They spawn via the regular spawn pool rather than hand-crafted boss
+    levels, so the NW-shift logic in _spawn_boss does not apply (but the
+    geom helpers still handle their 4-tile footprints correctly)."""
     monsters = json.loads(
         (ROOT / "data" / "monsters.json").read_text(encoding='utf-8'))
-    multi_tile = []
+    multi_tile = {}
     for mid, mon in monsters.items():
         fp = mon.get('footprint', [1, 1])
         if fp and (fp[0] > 1 or fp[1] > 1):
-            multi_tile.append((mid, tuple(fp)))
-    assert multi_tile == [('fafnir_dragon', (2, 2))], \
+            multi_tile[mid] = tuple(fp)
+    EXPECTED = {
+        'fafnir_dragon':   (2, 2),
+        'tiamat':          (2, 2),
+        'surtur':          (2, 2),
+        'ymir_last_spawn': (2, 2),
+        'hrungnirs_ghost': (2, 2),
+    }
+    assert multi_tile == EXPECTED, \
         f"New multi-tile bosses detected — verify _spawn_boss handles them: {multi_tile}"
 
 
@@ -190,12 +203,14 @@ def test_every_recipe_ingredient_resolves():
 
 
 def test_every_recipe_has_effect():
-    """Recipes must have at least sp restore OR a bonus_type — otherwise
-    cooking yields nothing."""
+    """Recipes must yield something — either tier_outcomes (new 2026-05-31
+    schema) OR legacy sp/bonus_type fields."""
     from food_system import _raw_recipes
     recipes = _raw_recipes()
-    no_effect = [rid for rid, r in recipes.items()
-                 if 'sp' not in r and 'bonus_type' not in r]
+    no_effect = [
+        rid for rid, r in recipes.items()
+        if 'tier_outcomes' not in r and 'sp' not in r and 'bonus_type' not in r
+    ]
     assert not no_effect, f"Recipes with no effect: {no_effect[:5]}"
 
 

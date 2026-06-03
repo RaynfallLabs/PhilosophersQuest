@@ -88,11 +88,15 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
         else:
             _handle_success(player, container, dungeon, chain, on_complete)
 
-    quiz_tier = int(getattr(container, 'quiz_tier', getattr(container, 'tier', 1)))
+    # Escalator-chain ALWAYS starts at T1 and ramps T1→T5 from there. The
+    # legacy `quiz_tier`/`tier` field on containers was a difficulty knob
+    # for the OLD threshold-mode design; passing it through here makes the
+    # FIRST question be a T4/T5 question. (Same bug fixed for harvest in
+    # food_system.py — bug bash 2026-06-01.)
     quiz_engine.start_quiz(
         mode='escalator_chain',
         subject='economics',
-        tier=max(1, min(5, quiz_tier)),
+        tier=1,
         callback=_callback,
         max_chain=5,
         wisdom=player.WIS,

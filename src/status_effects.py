@@ -59,6 +59,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'crit_buff':          ('Critical Resolve',   (255, 100, 100), 'Next attack deals +50% damage'),
     'fear_immune':        ('Battle Rage',        (220, 60, 40),   'Immune to fear effects'),
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
+    'control_immune':     ('Recovering',         (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -120,7 +121,37 @@ BUFFS: frozenset = frozenset({
     'riposte_armed', 'parry_armed', 'see_invisible',
     # Hero special buffs (Phase 3B) — these are beneficial timed effects.
     'stand_ac', 'crit_buff', 'fear_immune', 'boomstick_aoe_next', 'berserk',
+    # Post-lock grace buff (set when a hard-control effect expires).
+    'control_immune',
 })
+
+# --- Control / disable effects + D&D-style saving-throw support ---------------
+# HARD control = zero/near-zero player actions (the autokill risk): NEGATED on a
+# successful save and followed by a grace window. SOFT control = degraded
+# actions: HALVED on a save. Both REFRESH (max) instead of stacking, and are
+# capped per single application so one failed save is never a death sentence.
+HARD_CONTROL: frozenset = frozenset({
+    'paralyzed', 'sleeping', 'immobilized', 'stunned', 'frozen',
+})
+SOFT_CONTROL: frozenset = frozenset({'confused', 'feared', 'charmed', 'slowed'})
+CONTROL: frozenset = HARD_CONTROL | SOFT_CONTROL
+
+# Saving-throw stat per effect (D&D-style): body (CON) / mind (WIS) / reflex (DEX).
+SAVE_STAT: dict = {
+    'paralyzed': 'CON', 'sleeping': 'CON', 'stunned': 'CON', 'frozen': 'CON',
+    'petrifying': 'CON',
+    'confused': 'WIS', 'feared': 'WIS', 'charmed': 'WIS',
+    'slowed': 'DEX', 'immobilized': 'DEX',
+}
+
+# Hard cap on how long a SINGLE control application can last on the player —
+# clamps egregious data durations so one failed save is never a death sentence.
+CONTROL_CAP: dict = {
+    'paralyzed': 4, 'sleeping': 5, 'stunned': 3, 'frozen': 4, 'immobilized': 4,
+    'confused': 6, 'feared': 6, 'charmed': 6, 'slowed': 6,
+}
+
+GRACE_TURNS = 3  # turns of immunity to re-disable after a hard-control effect ends
 
 # Resistance effects that block specific debuffs from being applied
 _RESIST_BLOCKS: dict[str, set] = {
@@ -313,9 +344,75 @@ def apply_effect(player, effect: str, duration: int) -> bool:
 
     if duration == -1:
         player.status_effects[effect] = -1
+    elif effect in CONTROL:
+        cap = CONTROL_CAP.get(effect)
+        if cap is not None:
+            duration = min(duration, cap)
+        if effect in HARD_CONTROL:
+            # Hard control cannot be re-applied OR refreshed while you are already
+            # locked, nor within the post-lock grace window. This GUARANTEES that
+            # every bout of hard control is followed by free turns — no permalock
+            # no matter how reliably a monster re-applies. Core autokill fix.
+            if current > 0 or player.status_effects.get('control_immune', 0) > 0:
+                return False
+            player.status_effects[effect] = min(duration, MAX_EFFECT_DURATION)
+        else:
+            # Soft control (you still act): refresh to the larger value, never stack.
+            player.status_effects[effect] = min(max(current, duration), MAX_EFFECT_DURATION)
     else:
         player.status_effects[effect] = min(current + duration, MAX_EFFECT_DURATION)
     return True
+
+
+# Save-feedback flavor: the player should FEEL which stat saved them (body /
+# will / reflexes) without seeing dice or DCs. Keyed by the save stat.
+_SAVE_FLAVOR: dict = {
+    'CON': 'Your hardy constitution',
+    'WIS': 'Your strong will',
+    'DEX': 'Your quick footwork',
+}
+# Natural-language noun per effect so messages read as flavor, not effect ids.
+_EFFECT_NOUN: dict = {
+    'paralyzed': 'paralysis', 'sleeping': 'drowsiness', 'stunned': 'daze',
+    'frozen': 'creeping frost', 'immobilized': 'grip', 'petrifying': 'petrification',
+    'confused': 'confusion', 'feared': 'dread', 'charmed': 'charm',
+    'slowed': 'sluggishness',
+}
+
+
+def apply_debuff_with_save(player, effect: str, duration: int, dc: int) -> tuple[bool, str]:
+    """Apply a MONSTER-inflicted debuff gated by a D&D-style saving throw.
+
+    Two-gate model: the caller already passed the monster's to-apply check
+    (effect_chance — its skill at landing the blow). Here the player rolls
+    d20 + stat-modifier vs ``dc``:
+      - HARD control (paralyze/sleep/immobilize/stun/freeze): a save NEGATES it.
+      - SOFT control (confuse/fear/charm/slow): a save HALVES the duration.
+      - effects with no SAVE_STAT entry (poison, bleed, etc.): applied directly.
+
+    Returns (applied, message). The message is FLAVOR, not math — on a save the
+    player hears their constitution/will/reflexes hold; on a failure they hear
+    the effect take hold. Always routes application through ``player.add_effect``
+    so existing defenses + refresh/cap/grace still apply on top.
+    """
+    import random as _r
+    stat = SAVE_STAT.get(effect)
+    noun = _EFFECT_NOUN.get(effect, effect.replace('_', ' '))
+    if stat is None:
+        applied = player.add_effect(effect, duration)
+        return applied, (f"You are {effect.replace('_', ' ')}!" if applied else "")
+    mod = (int(getattr(player, stat, 10)) - 10) // 2
+    roll = _r.randint(1, 20) + mod
+    flavor = _SAVE_FLAVOR.get(stat, 'You')
+    if roll >= dc:
+        if effect in HARD_CONTROL:
+            # Full save on hard control — negated, and you feel your stat earn it.
+            return False, f"{flavor} throws off the {noun}!"
+        applied = player.add_effect(effect, max(1, duration // 2))
+        return applied, (f"{flavor} blunts the {noun} — it barely takes hold." if applied else "")
+    # Failed save — the effect lands.
+    applied = player.add_effect(effect, duration)
+    return applied, (f"The {noun} takes hold!" if applied else "")
 
 
 def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
@@ -434,6 +531,10 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     # Expire finished effects
     for effect in to_expire:
         player.status_effects.pop(effect, None)
+        # Post-lock grace: after a hard-control effect ends, grant brief immunity
+        # to being re-disabled so the player ALWAYS gets free turns to act/flee.
+        if effect in HARD_CONTROL:
+            player.status_effects['control_immune'] = GRACE_TURNS
         # Reverse stat bonuses granted by timed effects
         if effect == 'heroism':
             player.apply_stat_bonus('STR', -2)

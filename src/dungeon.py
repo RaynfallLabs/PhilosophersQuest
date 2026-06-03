@@ -301,10 +301,15 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dunge
                 tiles[ry][rx] = FLOOR
 
     # -- 3. Connect sibling pairs up the BSP tree -----------------------------
-    _connect_bsp(root, tiles, rng)
+    # Deep dungeons (f76+) get 2-wide corridors so the 2x2 cosmic-scale
+    # bosses (Tiamat / Surtur / Ymir's Last Spawn / Hrungnir's Ghost) can
+    # path between rooms instead of being trapped at their spawn anchor.
+    corridor_w = _corridor_width_for_level(level)
+    _connect_bsp(root, tiles, rng, corridor_width=corridor_w)
 
     # -- 3b. Add extra connections between nearby rooms for loops -------------
-    _add_extra_connections(tiles, rooms, rng, count=min(len(rooms) // 3, 3))
+    _add_extra_connections(tiles, rooms, rng, count=min(len(rooms) // 3, 3),
+                           corridor_width=corridor_w)
 
     # -- 4. Place doors at room-wall openings ---------------------------------
     _place_doors(tiles, rooms, rng, chance=0.70)
@@ -757,12 +762,13 @@ def _room_in_leaf(leaf: _BSPNode, rng: random.Random) -> Optional[Room]:
     return Room(rx, ry, rw, rh)
 
 
-def _connect_bsp(node: _BSPNode, tiles: List[List[int]], rng: random.Random):
+def _connect_bsp(node: _BSPNode, tiles: List[List[int]], rng: random.Random,
+                 corridor_width: int = 1):
     """Recursively connect every pair of BSP siblings with a corridor."""
     if node.is_leaf:
         return
-    _connect_bsp(node.left,  tiles, rng)
-    _connect_bsp(node.right, tiles, rng)
+    _connect_bsp(node.left,  tiles, rng, corridor_width=corridor_width)
+    _connect_bsp(node.right, tiles, rng, corridor_width=corridor_width)
 
     left_room  = node.left.get_room()
     right_room = node.right.get_room()
@@ -770,7 +776,7 @@ def _connect_bsp(node: _BSPNode, tiles: List[List[int]], rng: random.Random):
         # Connect nearest edges rather than centers for shorter corridors
         x1, y1 = _nearest_edge_point(left_room, right_room, rng)
         x2, y2 = _nearest_edge_point(right_room, left_room, rng)
-        _carve_corridor(tiles, x1, y1, x2, y2, rng)
+        _carve_corridor(tiles, x1, y1, x2, y2, rng, width=corridor_width)
 
 
 def _nearest_edge_point(room: Room, target: Room, rng: random.Random) -> Tuple[int, int]:
@@ -797,18 +803,25 @@ def _nearest_edge_point(room: Room, target: Room, rng: random.Random) -> Tuple[i
         return (cx, ey)
 
 
-def _carve_corridor(tiles, x1: int, y1: int, x2: int, y2: int, rng: random.Random):
+def _carve_corridor(tiles, x1: int, y1: int, x2: int, y2: int,
+                    rng: random.Random, width: int = 1):
     """Carve an L-shaped (or straight) corridor between two points.
-    Long corridors get a small 3x3 alcove at the bend to break monotony."""
+    Long corridors get a small 3x3 alcove at the bend to break monotony.
+
+    ``width`` controls the corridor thickness. Width 1 is the historical
+    default; deep dungeons (f76+) use width 2 so the 2x2 cosmic-scale
+    bosses (Tiamat, Surtur, Ymir's Last Spawn, Hrungnir's Ghost) can
+    actually path between rooms.
+    """
     manhattan = abs(x2 - x1) + abs(y2 - y1)
     if rng.random() < 0.5:
         mx, my = x2, y1
-        _carve_h(tiles, x1, x2, y1)
-        _carve_v(tiles, y1, y2, x2)
+        _carve_h(tiles, x1, x2, y1, width=width)
+        _carve_v(tiles, y1, y2, x2, width=width)
     else:
         mx, my = x1, y2
-        _carve_v(tiles, y1, y2, x1)
-        _carve_h(tiles, x1, x2, y2)
+        _carve_v(tiles, y1, y2, x1, width=width)
+        _carve_h(tiles, x1, x2, y2, width=width)
     # Widen the bend into a small alcove if corridor is long
     if manhattan > 20:
         h = len(tiles)
@@ -821,19 +834,48 @@ def _carve_corridor(tiles, x1: int, y1: int, x2: int, y2: int, rng: random.Rando
                         tiles[ny][nx] = FLOOR
 
 
-def _carve_h(tiles, x1: int, x2: int, y: int):
+def _carve_h(tiles, x1: int, x2: int, y: int, width: int = 1):
+    """Carve a horizontal corridor. ``width`` is the y-axis thickness.
+
+    Width 2 adds the row at y+1 too (or y-1 if y+1 would go OOB).
+    """
+    h = len(tiles)
+    w = len(tiles[0])
     for x in range(min(x1, x2), max(x1, x2) + 1):
-        if tiles[y][x] == WALL:
-            tiles[y][x] = FLOOR
+        for dy in range(width):
+            ny = y + dy
+            if ny >= h - 1:
+                # Bumped against bottom wall — back off to (y - 1) instead.
+                ny = y - dy
+            if 0 < ny < h - 1 and 0 < x < w - 1 and tiles[ny][x] == WALL:
+                tiles[ny][x] = FLOOR
 
 
-def _carve_v(tiles, y1: int, y2: int, x: int):
+def _carve_v(tiles, y1: int, y2: int, x: int, width: int = 1):
+    """Carve a vertical corridor. ``width`` is the x-axis thickness."""
+    h = len(tiles)
+    w = len(tiles[0])
     for y in range(min(y1, y2), max(y1, y2) + 1):
-        if tiles[y][x] == WALL:
-            tiles[y][x] = FLOOR
+        for dx in range(width):
+            nx = x + dx
+            if nx >= w - 1:
+                nx = x - dx
+            if 0 < nx < w - 1 and 0 < y < h - 1 and tiles[y][nx] == WALL:
+                tiles[y][nx] = FLOOR
 
 
-def _add_extra_connections(tiles, rooms: List[Room], rng: random.Random, count: int):
+def _corridor_width_for_level(level: int) -> int:
+    """Corridor thickness as a function of depth.
+
+    f1-75: 1-tile (the historical default — feels tight, classic roguelike).
+    f76+: 2-tile (lets 2x2 cosmic-scale bosses like Tiamat, Surtur, Ymir's
+    Last Spawn, and Hrungnir's Ghost actually pathfind between rooms).
+    """
+    return 2 if level >= 76 else 1
+
+
+def _add_extra_connections(tiles, rooms: List[Room], rng: random.Random,
+                           count: int, corridor_width: int = 1):
     """Add extra corridors between nearby non-sibling rooms to create loops."""
     if len(rooms) < 4:
         return
@@ -855,7 +897,7 @@ def _add_extra_connections(tiles, rooms: List[Room], rng: random.Random, count: 
             break
         x1, y1 = _nearest_edge_point(rooms[i], rooms[j], rng)
         x2, y2 = _nearest_edge_point(rooms[j], rooms[i], rng)
-        _carve_corridor(tiles, x1, y1, x2, y2, rng)
+        _carve_corridor(tiles, x1, y1, x2, y2, rng, width=corridor_width)
         added += 1
 
 
@@ -1124,6 +1166,28 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     monsters = []
     spawn_rooms = rooms[1:]
 
+    def _footprint_fits(defn, tx, ty):
+        """Validate the FULL monster footprint at (tx, ty), not just the anchor.
+
+        Multi-tile monsters (Fafnir 2x2 in his hand-crafted lair, Tiamat /
+        Surtur / Ymir / Hrungnir 2x2 in deep-floor procedural rooms) need
+        every tile of their NW-anchored footprint to be walkable AND
+        unoccupied. Pre-fix the spawn picker checked only the anchor, so
+        a Tiamat could land straddling a wall.
+        """
+        fp = defn.get('footprint', [1, 1])
+        fw, fh = int(fp[0]), int(fp[1])
+        if fw == 1 and fh == 1:
+            return True
+        for ddy in range(fh):
+            for ddx in range(fw):
+                ftx, fty = tx + ddx, ty + ddy
+                if not dungeon.is_walkable(ftx, fty):
+                    return False
+                if any(m.x == ftx and m.y == fty for m in monsters):
+                    return False
+        return True
+
     for _ in range(count):
         if not spawn_rooms:
             break
@@ -1138,6 +1202,11 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
                 continue
             kind = _weighted_choice(eligible, rng)
             defn = {**eligible[kind], 'id': kind}
+            # If the picked monster is multi-tile, validate the FULL
+            # footprint. If it doesn't fit at this anchor, fall through
+            # to the next tile rather than placing it half-in-the-wall.
+            if not _footprint_fits(defn, tx, ty):
+                continue
             monsters.append(Monster(defn, tx, ty))
 
             # --- Pack spawning: variable extras based on level and frequency ---
@@ -1425,15 +1494,21 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
         all_ingredients = []
     _PLANT_KEYWORDS = ('mushroom','herb','berry','leaf','root','fungus','moss',
                        'flower','seed','grain','wheat','grass','vine','spice',
-                       'lichen','bark','sap',
+                       'lichen','bark','sap','fiber','plant',
                        # 2026-05-19 audit: ingredients whose names lack the
                        # above tokens but ARE plant-sourced (no monster drop).
                        # Without these, ~190 compound recipes are uncookable.
                        'thyme','rosemary','celery','carrot','spore',
-                       'pepper','salt','sprig','celery')
+                       'pepper','salt','sprig',
+                       # 2026-05-31 redesign: plant-family primes the
+                       # new ingredient bank introduced.
+                       'mold','myconid','treant','shambling','shrieker')
+    # Per redesign: also include any ingredient with tier_role 'dungeon'
+    # (terrain-foraged) regardless of keyword.
     plant_ingredients = [
         ing for ing in all_ingredients
-        if any(w in getattr(ing, 'name', '').lower() for w in _PLANT_KEYWORDS)
+        if (any(w in getattr(ing, 'name', '').lower() for w in _PLANT_KEYWORDS)
+            or getattr(ing, 'tier_role', '') == 'dungeon')
         and ing.min_level <= level
     ]
     if plant_ingredients:

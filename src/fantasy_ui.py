@@ -454,7 +454,8 @@ def _edge_diamond(surf: pygame.Surface, x: int, y: int,
 def draw_header_bar(surf: pygame.Surface, rect: tuple,
                     text: str = '', font: pygame.font.Font | None = None,
                     text_color: tuple | None = None,
-                    accent: tuple | None = None) -> None:
+                    accent: tuple | None = None,
+                    right_reserve: int = 0) -> None:
     """
     # FANTASY: Decorative header strip inside a panel.
     rect = (x, y, w, h)  -- usually HEADER_H = 44 tall.
@@ -480,9 +481,13 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
     # text never overflows the panel sides. Mid-edge diamonds + side padding
     # = 28px each side, so usable interior is w - 56.
     if text and font:
-        text = fit_text(text, font, max(20, w - 56))
+        # Reserve room on the right (e.g. a quiz chain counter) so the centered
+        # title never runs under it; clip + center within the remaining region.
+        reserve = max(0, right_reserve)
+        text = fit_text(text, font, max(20, w - 56 - reserve))
         ts = font.render(text, True, text_color)
-        sx = x + w//2 - ts.get_width()//2
+        region_w = w - reserve
+        sx = x + region_w//2 - ts.get_width()//2
         sy = y + h//2 - ts.get_height()//2
         shadow = font.render(text, True, FP.INK)
         surf.blit(shadow, (sx + 2, sy + 2))
@@ -897,6 +902,12 @@ def draw_menu(
                 if len(wrapped) > 1:
                     entry['_wrapped_detail'] = wrapped
                     rh += (len(wrapped) - 1) * 18
+            # Caller-supplied detail_lines (e.g. cook menu pre-wraps for
+            # the recipe tier-preview). Bug bash 2026-06-01: without this
+            # branch the multi-line content rendered ON TOP of the next
+            # row's icon. Now the row grows to fit.
+            elif entry.get('detail_lines') and len(entry['detail_lines']) > 1:
+                rh += (len(entry['detail_lines']) - 1) * 18
             row_heights.append(rh)
         else:
             # Text row: measure wrapped height
@@ -997,6 +1008,10 @@ def draw_menu(
             wrapped_detail = entry.get('_wrapped_detail')
             if wrapped_detail:
                 rh += (len(wrapped_detail) - 1) * 18
+            elif entry.get('detail_lines') and len(entry['detail_lines']) > 1:
+                # Bug bash 2026-06-01: caller-supplied pre-wrapped lines
+                # (e.g. cook menu Recipes tab) also need the row to grow.
+                rh += (len(entry['detail_lines']) - 1) * 18
             pygame.draw.rect(surf, bg_col, (bx + 10, cy, bw - 20, rh - 8), border_radius=6)
 
             # Key label

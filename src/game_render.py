@@ -39,7 +39,7 @@ from game_states import (
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
     STATE_TARGET, STATE_EAT_MENU, STATE_QUAFF_MENU, STATE_HELP, STATE_LORE,
     STATE_SPELL_MENU, STATE_HINT, STATE_EXAMINE,
-    STATE_ENCYCLOPEDIA, STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
+    STATE_ENCYCLOPEDIA, STATE_DROP_MENU, STATE_DROP_GOLD_INPUT, STATE_DROP_QTY_INPUT,
     STATE_STORY_POPUP, STATE_MYSTERY_APPROACH, STATE_SHOP, STATE_POWER_MENU,
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
@@ -1108,6 +1108,8 @@ class RenderMixin:
             self._draw_drop_menu()
         elif self.state == STATE_DROP_GOLD_INPUT:
             self._draw_drop_gold_input()
+        elif self.state == STATE_DROP_QTY_INPUT:
+            self._draw_drop_qty_input()
         elif self.state == STATE_STORY_POPUP:
             self._draw_story_popup()
         elif self.state == STATE_MYSTERY_APPROACH:
@@ -1424,17 +1426,21 @@ class RenderMixin:
 
         # FANTASY: Arcane grimoire quiz panel
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent)
-        draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
-                        text=self.quiz_title, font=self.font_md,
-                        text_color=FP.GOLD_BRIGHT, accent=accent)
 
-        # Mode / progress counter (top-right)
+        # Mode / progress counter (top-right). Built BEFORE the header so the
+        # title can reserve room for it and never overrun it (e.g. a long
+        # lockpick/cook title sliding under "Chain xN").
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
             c_text, c_color = f"Chain x{qe.chain}", FP.SUCCESS_TEXT
         else:
             c_text  = f"{qe.correct_count} / {qe.required}"
             c_color = FP.CYAN_ACCENT
         c_surf = self.font_md.render(c_text, True, c_color)
+
+        draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
+                        text=self.quiz_title, font=self.font_md,
+                        text_color=FP.GOLD_BRIGHT, accent=accent,
+                        right_reserve=c_surf.get_width() + PAD + 16)
         self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
                                    by + (HEADER_H - c_surf.get_height()) // 2))
 
@@ -1500,8 +1506,12 @@ class RenderMixin:
 
         # -- Choice cards (2 x 2 grid) — grimoire chrome via draw_choice_button --
         from fantasy_ui import draw_choice_button
-        correct_str = str(qe.current_question.get('answer', '')).strip().lower()
-        selected    = qe.last_answer.strip().lower()
+        # Case-EXACT comparison (bug bash 2026-06-01) — mirrors the engine
+        # fix in quiz_engine.answer(). With .lower(), grammar capitalization
+        # questions rendered ALL four choices green because the choices
+        # collapsed to the same string after case-folding.
+        correct_str = str(qe.current_question.get('answer', '')).strip()
+        selected    = qe.last_answer.strip()
         in_result   = (qe.state == QuizState.RESULT)
 
         for i, (choice, wrapped_lines) in enumerate(zip(display_choices, c_wrapped)):
@@ -1510,9 +1520,9 @@ class RenderMixin:
             cx_ = bx + PAD + col * (cw + GAP)
             cy_ = qy + row * (ch_height + GAP)
 
-            c_lower     = str(choice).strip().lower()
-            is_correct  = c_lower == correct_str
-            is_selected = bool(selected) and c_lower == selected
+            c_str       = str(choice).strip()
+            is_correct  = c_str == correct_str
+            is_selected = bool(selected) and c_str == selected
 
             # In result phase: mark the right answer green, mark the player's
             # wrong pick red. Mid-question: highlight only if pressed (rare —
@@ -2713,6 +2723,32 @@ class RenderMixin:
         def _cap(s):
             return s[:1].upper() + s[1:] if s else s
 
+        def _format_tier_preview(recipe) -> str:
+            """One-line outcome preview per the 2026-05-31 redesign.
+            Shows what each tier delivers so the player knows the stakes."""
+            outcomes = recipe.get('tier_outcomes', {})
+            if not outcomes:
+                return ""
+            parts = []
+            for t in range(1, 6):
+                o = outcomes.get(str(t), {})
+                if not o:
+                    continue
+                bits = []
+                if o.get('sp'): bits.append(f"+{o['sp']}SP")
+                if o.get('hp'): bits.append(f"+{o['hp']}HP")
+                if o.get('max_hp_bonus'): bits.append(f"+{o['max_hp_bonus']}maxHP")
+                if o.get('stat_grant'):
+                    s = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
+                    bits.append(f"+{o['stat_grant']}{s}")
+                if o.get('temp_power'):
+                    bits.append('temp')
+                if o.get('permanent_power'):
+                    bits.append('PERM')
+                if bits:
+                    parts.append(f"T{t}: {'/'.join(bits)}")
+            return " | ".join(parts)
+
         entries = []
         if is_compound:
             from food_system import _raw_ingredients as _ri
@@ -2720,9 +2756,11 @@ class RenderMixin:
             def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
             for i, recipe in enumerate(tab_items[:26]):
                 ing_list = ', '.join(_ing_name(iid) for iid in recipe.get('ingredients', []))
-                detail = f"Consumes: {ing_list}"
+                tier_preview = _format_tier_preview(recipe)
+                detail = f"Needs: {ing_list}"
+                if tier_preview:
+                    detail += f"   |   {tier_preview}"
                 detail_lines = self._wrap_text(detail, self.font_sm, max_detail_w)
-                # Build a lightweight icon proxy for the recipe sprite
                 recipe_sprite_id = f"recipe_{recipe.get('id', '')}"
                 first_ing = recipe.get('ingredients', [''])[0] if recipe.get('ingredients') else ''
                 class _RecipeIcon:
@@ -2732,21 +2770,31 @@ class RenderMixin:
                         self2.color = [110, 220, 100]
                         self2.symbol = '*'
                 icon_obj = _RecipeIcon(recipe_sprite_id, first_ing)
+                # Trophy recipes get distinct color
+                _name_col = FP.GOLD_BRIGHT if recipe.get('recipe_class') == 'trophy' else FP.GOLD_PALE
                 entries.append({
                     'name': _cap(recipe['name']),
                     'detail_lines': detail_lines,
                     'key': self._LETTERS[i],
                     'icon': icon_obj,
-                    'name_color': FP.GOLD_PALE,
+                    'name_color': _name_col,
                     'detail_color': FP.BODY_TEXT,
                 })
         else:
+            # Single tab: each ingredient resolves to its canonical recipe via
+            # food_system._find_recipe_for_ingredient. Per redesign, ALL cooks
+            # go through a recipe — the menu shows the recipe's tier preview.
+            from food_system import _find_recipe_for_ingredient
             for i, item in enumerate(tab_items[:26]):
-                base = item.recipes.get('1', item.recipes.get('2', {}))
-                dish_name = _cap(base.get('name', '???'))
+                recipe = _find_recipe_for_ingredient(item) or {}
+                dish_name = _cap(recipe.get('name', f"{item.name} Surprise"))
+                tier_preview = _format_tier_preview(recipe)
+                detail = f"Consumes: {self._display_name(item)}"
+                if tier_preview:
+                    detail += f"   |   {tier_preview}"
                 entries.append({
                     'name': dish_name,
-                    'detail': f"Consumes: {self._display_name(item)}",
+                    'detail': detail,
                     'key': self._LETTERS[i],
                     'icon': item,
                     'name_color': FP.GOLD_PALE,
@@ -4130,6 +4178,30 @@ class RenderMixin:
                        self.drop_gold_input or "0", self.font_md)
 
         hint = self.font_sm.render("ENTER to confirm  |  ESC to cancel", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
+
+    def _draw_drop_qty_input(self):
+        """Numeric entry overlay: how many of a stacked item to drop."""
+        from fantasy_ui import draw_input_box
+        item = getattr(self, '_drop_qty_item', None)
+        have = getattr(item, 'count', 1) if item else 0
+        name = self._display_name(item) if item else 'items'
+        draw_overlay(self.screen, 190)
+        bw, bh = 400, 160
+        bx = (layout.GAME_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        draw_dark_panel(self.screen, (bx, by, bw, bh))
+
+        title = self.font_lg.render("DROP HOW MANY?", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 14))
+
+        sub = self.font_sm.render(f"You have {have} {name}", True, FP.FADED_TEXT)
+        self.screen.blit(sub, (bx + (bw - sub.get_width()) // 2, by + 44))
+
+        draw_input_box(self.screen, (bx + 60, by + 76, bw - 120, 34),
+                       self.drop_qty_input or str(have), self.font_md)
+
+        hint = self.font_sm.render("ENTER for all  |  ESC to cancel", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
 
     def _draw_examine_menu(self):

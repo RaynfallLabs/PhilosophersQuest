@@ -113,6 +113,16 @@ class Player:
         self._weave_unweave_active = False
         self._dragon_blood_active = False
         self._rotating_chain_subject = None
+        # Great Helm of Galahad (purity): per-equip cleanse count. Set by
+        # _apply_equip when Galahad goes on; read once by main's equip path
+        # to surface a "X cursed items purified" message, then cleared.
+        self._galahad_cleansed_count = 0
+        # Set by monster.attack when chain_break_on_hit fires. The quiz
+        # engine's chain-mode start hook reads + clears this on next attack.
+        self._chain_disrupt_pending = False
+        # Set by monster.attack when pull_chance fires. Coordinates are
+        # (mx, my) of the monster pulling. Consumed by main._advance_turn.
+        self._pending_pull_toward = None
         self._armor_proc_adj_enemies = 0
         self._armor_proc_near_door = False
         self._armor_proc_in_corridor = False
@@ -153,6 +163,12 @@ class Player:
         self.cooking_stat_gained: dict[str, int] = {
             'STR': 0, 'CON': 0, 'DEX': 0, 'INT': 0, 'WIS': 0, 'PER': 0,
         }
+        # ----- Harvest+Cook redesign 2026-05-31: per-floor cap -----
+        # Rec 2: +1 stat / +5 HP per floor across ALL stats. Trophy recipes
+        # bypass this cap (the boss reward feels distinct). Reset by
+        # main._change_level when descending to a new floor.
+        self._cook_stat_gain_this_floor: int = 0
+        self._cook_hp_gain_this_floor: int = 0
 
         # Material discovery: tracks which materials have triggered their first-pickup chronicle.
         self.chronicle_seen_materials: set = set()
@@ -347,6 +363,23 @@ class Player:
     def is_dead(self) -> bool:
         if self.immortal and self.hp <= 0:
             self.hp = self.max_hp   # snap back to full health instantly
+        # Harvest+Cook redesign trophies (2026-05-31):
+        # Asmodeus's Pact-Blood: one-time death save. When the player would
+        # die, the contract is consumed instead — full HP restore.
+        if self.hp <= 0 and not self.immortal and \
+                getattr(self, '_asmodeus_pact', False):
+            self._asmodeus_pact = False  # contract is spent
+            self.hp = self.max_hp
+            self._asmodeus_pact_triggered = True  # flag for message in main
+            return False
+        # Green Knight's Holly-Bough: revive once per run at 50% HP.
+        if self.hp <= 0 and not self.immortal and \
+                getattr(self, '_green_knight_revive', False) and \
+                not getattr(self, '_green_knight_revive_used', False):
+            self._green_knight_revive_used = True
+            self.hp = max(1, self.max_hp // 2)
+            self._green_knight_triggered = True
+            return False
         # Rand's Heart: prevent death if equipped as amulet
         if self.hp <= 0 and not self.immortal:
             amulet = self.amulet_slot
@@ -464,6 +497,71 @@ class Player:
         """Per-stat cooking lifetime cap. Capped at +15 per stat at endgame."""
         idx = max(0, min(100, self.deepest_floor_reached))
         return max(1, self._COOKING_STAT_SOFTCAP_BY_FLOOR[idx])
+
+    # ----- Harvest+Cook redesign 2026-05-31 -----
+    # Hard per-floor caps for cooking stat + HP gains. Both reset on
+    # _change_level (main.py). Trophy-flagged recipes bypass.
+
+    PER_FLOOR_STAT_CAP = 1     # +1 stat total across all stats per floor
+    PER_FLOOR_HP_CAP   = 5     # +5 max HP per floor
+
+    def try_apply_cook_stat_gain(self, stat: str, amount: int, bypass: bool = False) -> int:
+        """Apply a cooking stat gain under the per-floor cap. Returns the
+        amount that actually landed (may be 0 if cap is already used).
+
+        Trophy recipes pass bypass=True to skip the floor cap; lifetime
+        per-stat softcap still applies. The per-floor counter reserves up
+        front based on the clamped request, so a lifetime-softcap shrink
+        doesn't refund the slot.
+        """
+        if amount <= 0 or stat not in self.cooking_stat_gained:
+            return 0
+        if not bypass:
+            cap = self.PER_FLOOR_STAT_CAP
+            remaining = cap - int(getattr(self, '_cook_stat_gain_this_floor', 0))
+            if remaining <= 0:
+                return 0
+            amount = min(amount, remaining)
+            self._cook_stat_gain_this_floor = int(
+                getattr(self, '_cook_stat_gain_this_floor', 0)) + amount
+        applied = self.apply_cooking_stat_bonus(stat, amount)
+        return applied
+
+    def try_apply_cook_hp_gain(self, amount: int, bypass: bool = False) -> int:
+        """Apply a cooking max-HP gain under the per-floor cap. Returns the
+        amount that actually landed.
+
+        Trophy recipes pass bypass=True to skip the floor cap; lifetime
+        diminishing softcap still applies inside increase_max_hp.
+
+        Per-floor counter increments by the CLAMPED AMOUNT (what the
+        player asked for, post per-floor cap), not the diminished
+        `gained`. Rationale: the player consumed their cap slot. The
+        lifetime softcap shrinking the actual delivery is a separate
+        progression mechanic — don't let it refund the floor cap.
+        """
+        if amount <= 0:
+            return 0
+        if not bypass:
+            cap = self.PER_FLOOR_HP_CAP
+            remaining = cap - int(getattr(self, '_cook_hp_gain_this_floor', 0))
+            if remaining <= 0:
+                return 0
+            amount = min(amount, remaining)
+            # Reserve the cap slot up front — the slot is spent whether or
+            # not the lifetime softcap shrinks the delivery.
+            self._cook_hp_gain_this_floor = int(
+                getattr(self, '_cook_hp_gain_this_floor', 0)) + amount
+        before = self.max_hp
+        self.increase_max_hp(amount, from_cooking=True)
+        gained = self.max_hp - before
+        return gained
+
+    def reset_floor_cook_caps(self) -> None:
+        """Called by main._change_level. Resets per-floor cap counters so
+        the next floor of cooking starts fresh."""
+        self._cook_stat_gain_this_floor = 0
+        self._cook_hp_gain_this_floor = 0
 
     def apply_cooking_stat_bonus(self, stat: str, amount: int) -> int:
         """Apply a cooked-food stat bonus with diminishing returns + per-stat
@@ -736,6 +834,14 @@ class Player:
             radius += 4
         if self.has_effect('truesight'):
             radius += 2
+        # Hand of Glory (passive_dark_vision): a flat accessory passive that
+        # mirrors the dark_vision status. Lore: the corpse-fat candle reveals
+        # what hides in deep shadow. +4 radius while worn.
+        if hasattr(self, 'amulet_slot') and hasattr(self, 'accessory_slots'):
+            for _acc in self.equipped_accessories:
+                if getattr(_acc, 'passive_dark_vision', False):
+                    radius += 4
+                    break
         # Engine wave 3: equipped_light_aura on a wielded weapon (Prometheus
         # Torch, etc.) extends sight while held. Stacks weapon + ranged_weapon.
         for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
@@ -902,6 +1008,8 @@ class Player:
         # later drank/read/threw from the stack. See bug-bash A7-5.
         if isinstance(item, Item._STACKABLE_CLASSES):
             for existing in self.inventory:
+                if existing is item:
+                    continue  # never merge a stack into itself (guards stray aliasing)
                 if existing.id != item.id:
                     continue
                 if getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
@@ -931,6 +1039,32 @@ class Player:
             self.refresh_carry_bonuses()
             return True
         return False
+
+    def drop_stack(self, item, qty: int):
+        """Detach ``qty`` of a (possibly stacked) item from inventory and return
+        the object to place on the ground -- the original when the whole stack
+        is dropped, or a fresh split copy when only part of it is. Returns None
+        if the item isn't held.
+
+        Splitting is the point: the dropped object must NOT be the same object
+        left in inventory. Aliasing one item into both ``inventory`` and
+        ``ground_items`` is what let a drop/pickup cycle double a stack's count
+        (add_to_inventory found the dropped object as its own existing stack and
+        did count += count). See the stackable-drop bug fix."""
+        import copy
+        if item not in self.inventory:
+            return None
+        count = getattr(item, 'count', 1)
+        qty = max(1, min(int(qty), count))
+        if qty >= count:
+            self.inventory.remove(item)
+            self.refresh_carry_bonuses()
+            return item
+        # Partial drop: shrink the held stack and hand back a detached copy.
+        item.count = count - qty
+        dropped = copy.copy(item)
+        dropped.count = qty
+        return dropped
 
     # --- Stat bonuses ---
 
@@ -1082,14 +1216,61 @@ class Player:
 
     def _apply_equip(self, item):
         from items import Weapon, Armor, Shield, Accessory, ARMOR_SLOTS
-        # Great Helm of Galahad (purity): when equipped, no newly-equipped item
-        # can carry a curse. Lore: "the Grail works through irony."
+        # Great Helm of Galahad (purity): the Grail-knight's helm cleanses
+        # ALL curses on items in contact with the bearer. Three behaviors:
+        #   (1) The NEWLY-equipped item: if cursed, it uncurses on equip.
+        #   (2) The Galahad helm ITSELF: if cursed when first equipped, it
+        #       uncurses (the helm cleanses itself).
+        #   (3) When the helm goes ON, every currently-equipped item is
+        #       purified — weapon, shield, all armor, amulet, belt, rings.
+        # Lore: "Purest of all knights — no shadow can rest on his arms."
+        is_galahad = getattr(item, 'purity', False)
         try:
             from armor_procs import player_has_armor_proc
-            if player_has_armor_proc(self, 'purity') and \
-                    getattr(item, 'buc', '') == 'cursed':
+            purity_active = player_has_armor_proc(self, 'purity') or is_galahad
+            # (1) + (2): purify the item being equipped.
+            if purity_active and getattr(item, 'buc', '') == 'cursed':
                 item.buc = 'uncursed'
                 item.buc_known = True
+                if hasattr(item, 'cursed'):
+                    item.cursed = False
+            # (3): if Galahad is going on for the first time, purify the
+            # whole equipped kit. Idempotent — non-cursed items are left
+            # untouched. The helm itself was handled above.
+            if is_galahad:
+                _all_equipped = []
+                if self.weapon is not None:
+                    _all_equipped.append(self.weapon)
+                if getattr(self, 'ranged_weapon', None) is not None:
+                    _all_equipped.append(self.ranged_weapon)
+                if self.shield is not None:
+                    _all_equipped.append(self.shield)
+                for _slot in (self.armor_slots or []):
+                    if _slot is not None:
+                        _all_equipped.append(_slot)
+                if getattr(self, 'amulet_slot', None) is not None:
+                    _all_equipped.append(self.amulet_slot)
+                if getattr(self, 'belt_slot', None) is not None:
+                    _all_equipped.append(self.belt_slot)
+                for _slot in (self.accessory_slots or []):
+                    if _slot is not None:
+                        _all_equipped.append(_slot)
+                _cleansed = 0
+                for _it in _all_equipped:
+                    if getattr(_it, 'buc', '') == 'cursed':
+                        _it.buc = 'uncursed'
+                        _it.buc_known = True
+                        if hasattr(_it, 'cursed'):
+                            _it.cursed = False
+                        _cleansed += 1
+                if _cleansed and hasattr(self, 'add_message'):
+                    # Fall through silently — _apply_equip is called from
+                    # _equip_accessory / _equip_armor which already prints
+                    # the "you equip the Helm of Galahad" line. The cleanse
+                    # message is just a status report.
+                    pass
+                # Stash the count so callers can surface a flavor line.
+                self._galahad_cleansed_count = _cleansed
         except ImportError:
             pass
         if isinstance(item, Weapon):

@@ -31,7 +31,7 @@ from game_states import (
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
     STATE_TARGET, STATE_EAT_MENU, STATE_QUAFF_MENU, STATE_HELP, STATE_LORE,
     STATE_SPELL_MENU, STATE_HINT, STATE_EXAMINE,
-    STATE_ENCYCLOPEDIA, STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
+    STATE_ENCYCLOPEDIA, STATE_DROP_MENU, STATE_DROP_GOLD_INPUT, STATE_DROP_QTY_INPUT,
     STATE_STORY_POPUP, STATE_MYSTERY_APPROACH, STATE_SHOP, STATE_POWER_MENU,
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
@@ -82,7 +82,7 @@ class InputMixin:
                               STATE_COW_ENCOUNTER,
                               STATE_CHARACTER_SHEET,
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
-                              STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
+                              STATE_DROP_MENU, STATE_DROP_GOLD_INPUT, STATE_DROP_QTY_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
                               STATE_PET_MENU,
@@ -249,6 +249,8 @@ class InputMixin:
             self._drop_menu_input(key)
         elif self.state == STATE_DROP_GOLD_INPUT:
             self._drop_gold_input(key, event.unicode)
+        elif self.state == STATE_DROP_QTY_INPUT:
+            self._drop_qty_input(key, event.unicode)
         elif self.state == STATE_STORY_POPUP:
             self.state = self.popup_next_state   # any key advances
         elif self.state == STATE_CONFIRM_EXIT:
@@ -1002,6 +1004,29 @@ class InputMixin:
             return
         if unicode.isdigit() and len(self.drop_gold_input) < 7:
             self.drop_gold_input += unicode
+
+    def _drop_qty_input(self, key: int, unicode: str):
+        """Handle keystrokes for the 'how many to drop' prompt (stacked items)."""
+        item = getattr(self, '_drop_qty_item', None)
+        if item is None:
+            self.state = STATE_PLAYER
+            return
+        have = getattr(item, 'count', 1)
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            # Blank entry drops the whole stack (the shown default).
+            qty = min(int(self.drop_qty_input), have) if self.drop_qty_input.isdigit() else have
+            self.state = STATE_PLAYER
+            self._drop_qty_item = None
+            if qty > 0:
+                self._finish_drop(item, qty)
+            else:
+                self.add_message("Nothing dropped.", 'info')
+            return
+        if key == pygame.K_BACKSPACE:
+            self.drop_qty_input = self.drop_qty_input[:-1]
+            return
+        if unicode.isdigit() and len(self.drop_qty_input) < 7:
+            self.drop_qty_input += unicode
 
     # ------------------------------------------------------------------
     # Shop / encyclopedia

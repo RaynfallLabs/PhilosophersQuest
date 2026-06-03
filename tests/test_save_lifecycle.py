@@ -680,3 +680,141 @@ def test_mastery_and_career_arc_round_trip():
         assert 'ring_of_strength' in g2.player.known_class_ids
     finally:
         _cleanup(name)
+
+
+# ---------------------------------------------------------------------------
+# 15. Permadeath lifecycle: the save is removed ONLY when the run ends,
+#     never on load. (Regression: load used to delete the save before
+#     load_state ran, so a partial restore or a crash destroyed progress.)
+# ---------------------------------------------------------------------------
+
+def test_core_fields_round_trip():
+    """The headline fields a player checks after loading -- floor, turn, HP,
+    weapon -- survive the full save/load cycle, and the load-summary popup
+    reports them."""
+    name = '__test_lifecycle_core__'
+    try:
+        g = _new_game(name)
+        g.turn_count = 137
+        g.dungeon_level = 4
+        g.player.hp = 7
+        weapon_name = g.player.weapon.name if g.player.weapon else None
+
+        g2, _ = _save_then_load(g)
+        assert g2.turn_count == 137
+        assert g2.dungeon_level == 4
+        assert g2.player.hp == 7
+        if weapon_name is not None:
+            assert g2.player.weapon is not None
+            assert g2.player.weapon.name == weapon_name
+
+        # The visible load confirmation reads these fields; it must build a
+        # popup that names the restored floor.
+        g2._show_load_summary_popup()
+        assert g2.popup_data['title'] == 'JOURNEY RESTORED'
+        assert any(str(g2.dungeon_level) in line for line in g2.popup_data['lines'])
+    finally:
+        _cleanup(name)
+
+
+def test_failed_save_does_not_destroy_existing_save():
+    """A save that fails to pickle (an unpicklable pygame Surface sneaks into
+    state) must NOT truncate or destroy the prior good save. Regression for the
+    0-byte save-wipe: save_game opened the real file in 'wb' (truncating it)
+    before pickling, so a mid-dump failure wiped the existing save. The fix
+    writes to a temp file and only atomically replaces on full success."""
+    name = '__test_lifecycle_atomic__'
+    try:
+        from save_system import save_game, load_game, save_exists
+
+        g = _new_game(name)
+        g.turn_count = 99
+        assert save_game(g), "baseline good save should succeed"
+        assert save_exists(name)
+
+        # Inject an unpicklable object into saved state, then save again.
+        g.ground_items.append(pygame.Surface((4, 4)))
+        assert save_game(g) is False, "save with a Surface in state should fail"
+
+        # The prior good save must still be intact and loadable.
+        st = load_game(name)
+        assert st is not None, "a failed save destroyed the existing save!"
+        assert st.get('turn_count') == 99
+    finally:
+        _cleanup(name)
+
+
+def test_load_does_not_consume_save():
+    """Loading a save must NOT delete it. This is the core fix: the save now
+    persists on disk as a recovery anchor until the run actually ends, so a
+    silent load_state failure or a hard process kill can't destroy progress."""
+    name = '__test_lifecycle_load_persist__'
+    try:
+        from save_system import save_game, load_game, save_exists
+
+        g = _new_game(name)
+        g.turn_count = 42
+        assert save_game(g)
+        assert save_exists(name)
+
+        # Mirror main()'s load path: read the state and restore it -- but do
+        # NOT delete. The save file must still be on disk afterwards.
+        state = load_game(name)
+        assert state is not None
+        g2 = _new_game(name)
+        g2.load_state(state)
+        assert save_exists(name), "loading a save must NOT delete it (regression)"
+    finally:
+        _cleanup(name)
+
+
+def test_game_over_deletes_save():
+    """Permadeath still works: ending the run via _on_game_over deletes the
+    save. Combined with test_load_does_not_consume_save, this pins the contract
+    'removed on death, not on load.'"""
+    name = '__test_lifecycle_permadeath__'
+    try:
+        from save_system import save_game, save_exists
+
+        g = _new_game(name)
+        assert save_game(g)
+        assert save_exists(name)
+
+        g.defeat_reason = 'died'
+        g._on_game_over()   # writes bones, no-op sound, and deletes the save
+        assert not save_exists(name), "death must delete the save (permadeath)"
+    finally:
+        _cleanup(name)
+
+
+def test_load_looks_valid_guard():
+    """_load_looks_valid accepts a faithful restore and rejects a broken one
+    (missing dungeon / mismatched floor). The caller uses this to refuse to
+    enter the game loop on a bad load, so the intact on-disk save can't be
+    overwritten on quit."""
+    name = '__test_lifecycle_guard__'
+    try:
+        from save_system import save_game, load_game
+
+        g = _new_game(name)
+        assert save_game(g)
+        state = load_game(name)
+        assert state is not None
+
+        g_ok = _new_game(name)
+        g_ok.load_state(state)
+        assert g_ok._load_looks_valid(state) is True
+
+        # Dungeon dropped -> invalid
+        g_bad = _new_game(name)
+        g_bad.load_state(state)
+        g_bad.dungeon = None
+        assert g_bad._load_looks_valid(state) is False
+
+        # Floor mismatch -> invalid
+        g_bad2 = _new_game(name)
+        g_bad2.load_state(state)
+        g_bad2.dungeon_level = (state.get('dungeon_level') or 1) + 99
+        assert g_bad2._load_looks_valid(state) is False
+    finally:
+        _cleanup(name)

@@ -200,8 +200,12 @@ class QuizEngine:
         if self.state != QuizState.ASKING:
             return False
 
-        correct = str(self.current_question['answer']).strip().lower()
-        is_correct = choice.strip().lower() == correct
+        # Case-EXACT match (bug bash 2026-06-01). Grammar capitalization
+        # questions intentionally have 4 choices that differ only by case
+        # ("We went home. Then we ate dinner." vs "We went home. then we
+        # ate dinner."). Case-folding made every choice register correct.
+        correct = str(self.current_question['answer']).strip()
+        is_correct = choice.strip() == correct
 
         self.last_answer = choice
         self.asked_count += 1
