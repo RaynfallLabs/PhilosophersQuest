@@ -60,6 +60,11 @@ EFFECT_INFO: dict[str, tuple] = {
     'fear_immune':        ('Battle Rage',        (220, 60, 40),   'Immune to fear effects'),
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     'control_immune':     ('Recovering',         (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
+    # Cooked / power "ward" buffs — a timed bonus to a saving-throw category.
+    'save_guard_CON':     ('Body Ward',          (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun'),
+    'save_guard_WIS':     ('Mind Ward',          (160, 200, 245), 'Bonus to resisting confusion / fear / charm'),
+    'save_guard_DEX':     ('Reflex Ward',        (205, 230, 150), 'Bonus to resisting slow / immobilize'),
+    'save_guard_all':     ('Warded',             (210, 230, 255), 'Bonus to all saving throws'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
@@ -123,6 +128,8 @@ BUFFS: frozenset = frozenset({
     'stand_ac', 'crit_buff', 'fear_immune', 'boomstick_aoe_next', 'berserk',
     # Post-lock grace buff (set when a hard-control effect expires).
     'control_immune',
+    # Cooked / power "ward" buffs that grant a timed saving-throw bonus.
+    'save_guard_CON', 'save_guard_WIS', 'save_guard_DEX', 'save_guard_all',
 })
 
 # --- Control / disable effects + D&D-style saving-throw support ---------------
@@ -402,7 +409,8 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int) -> tuple
         applied = player.add_effect(effect, duration)
         return applied, (f"You are {effect.replace('_', ' ')}!" if applied else "")
     mod = (int(getattr(player, stat, 10)) - 10) // 2
-    roll = _r.randint(1, 20) + mod
+    bonus = player.save_bonus_for(stat) if hasattr(player, 'save_bonus_for') else 0
+    roll = _r.randint(1, 20) + mod + bonus
     flavor = _SAVE_FLAVOR.get(stat, 'You')
     if roll >= dc:
         if effect in HARD_CONTROL:
@@ -535,6 +543,11 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         # to being re-disabled so the player ALWAYS gets free turns to act/flee.
         if effect in HARD_CONTROL:
             player.status_effects['control_immune'] = GRACE_TURNS
+        # When a cooked/power "ward" expires, drop its magnitude companion.
+        if effect.startswith('save_guard_'):
+            _g = getattr(player, '_save_guard', None)
+            if isinstance(_g, dict):
+                _g.pop(effect[len('save_guard_'):], None)
         # Reverse stat bonuses granted by timed effects
         if effect == 'heroism':
             player.apply_stat_bonus('STR', -2)

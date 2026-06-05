@@ -158,9 +158,19 @@ def save_game(game) -> bool:
     except Exception as e:
         print(f"[Save] Failed: {e}")
         # Pinpoint the exact attribute path of the unpicklable object(s).
+        culprits = []
         try:
-            for p, tn in _find_unpicklable(state):
+            culprits = list(_find_unpicklable(state))
+            for p, tn in culprits:
                 print(f"[Save]   unpicklable at {p}  ({tn})")
+        except Exception:
+            pass
+        # Record to the verbose error log (print() goes nowhere in the bundle).
+        try:
+            from game_log import log_error
+            detail = ''.join(f"\n    unpicklable at {p}  ({tn})" for p, tn in culprits)
+            log_error(f"save_game failed for player "
+                      f"{getattr(game, 'player_name', '?')!r}: {e}{detail}")
         except Exception:
             pass
         # Leave the existing save intact; discard only the throwaway temp.
@@ -179,6 +189,11 @@ def load_game(name: str):
             return pickle.load(f)
     except Exception as e:
         print(f"[Load] Failed: {e}")
+        try:
+            from game_log import log_error
+            log_error(f"load_game failed for {name!r}: {e}")
+        except Exception:
+            pass
         return None
 
 

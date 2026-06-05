@@ -467,25 +467,48 @@ def test_legacy_player_missing_chain_charges_backfills():
 # ---------------------------------------------------------------------------
 
 def test_family_mastery_round_trip():
-    """player.unlocked_monster_class_masteries (corpse-identify chain-5)
-    must survive save/load including the blessing dicts."""
+    """The SET of mastered families (corpse-identify chain-5) survives save/load.
+    Blessings are canonical: on load they are re-synced to the current
+    MONSTER_FAMILY_BLESSINGS, so a blessing redesign (e.g. the 2026-06 save-bonus
+    conversion of fey/undead) auto-updates returning players rather than leaving
+    them holding a stale/inert blessing."""
+    from monster_classes import MONSTER_FAMILY_BLESSINGS as MFB
     name = '__test_lifecycle_family__'
     try:
         g = _new_game(name)
+        # Seed with deliberately STALE blessing shapes (pre-conversion forms).
         g.player.unlocked_monster_class_masteries = {
-            'dragon': {'kind': 'resist_elemental', 'value': 2,
-                       'desc': 'Cold/fire/lightning -2 flat damage'},
-            'undead': {'kind': 'turn_undead', 'value': 3},
-            'fey':    {'kind': 'resist_charm', 'value': 1},
+            'dragon': {'kind': 'damage_vs_tag', 'tag': 'dragon', 'value': 2, 'desc': '_'},
+            'undead': {'kind': 'turn_undead', 'value': 3},          # obsolete kind
+            'fey':    {'kind': 'resist_charm', 'value': 1},          # pre-conversion
         }
 
         g2, _ = _save_then_load(g)
-        assert g2.player.unlocked_monster_class_masteries == {
-            'dragon': {'kind': 'resist_elemental', 'value': 2,
-                       'desc': 'Cold/fire/lightning -2 flat damage'},
-            'undead': {'kind': 'turn_undead', 'value': 3},
-            'fey':    {'kind': 'resist_charm', 'value': 1},
-        }
+        fams = g2.player.unlocked_monster_class_masteries
+        # Same families remembered...
+        assert set(fams) == {'dragon', 'undead', 'fey'}
+        # ...and each blessing re-synced to the current canonical definition.
+        assert fams['fey'] == MFB['fey']        # now a WIS save_bonus
+        assert fams['undead'] == MFB['undead']  # now a CON save_bonus
+        assert fams['dragon'] == MFB['dragon']
+    finally:
+        _cleanup(name)
+
+
+def test_combat_game_ref_does_not_block_save():
+    """Regression for the silent save-Surface loss: player._combat_game_ref is a
+    Game backref set during combat (game_combat) that holds the pygame screen,
+    fonts, and quiz-engine callbacks. It made the player unpicklable, so a save
+    made after ANY fight failed (and atomic-write then left no file). Player
+    __getstate__ now drops it; the save must succeed."""
+    name = '__test_lifecycle_combatref__'
+    try:
+        g = _new_game(name)
+        g.player._combat_game_ref = g     # simulate post-combat state
+        g.turn_count = 77
+        g2, _ = _save_then_load(g)         # must NOT fail (this was the bug)
+        assert g2.turn_count == 77
+        assert getattr(g2.player, '_combat_game_ref', None) is None
     finally:
         _cleanup(name)
 

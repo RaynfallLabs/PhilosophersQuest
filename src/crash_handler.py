@@ -18,7 +18,14 @@ import datetime
 
 
 def _project_root() -> str:
-    """Return a writable directory for crash reports."""
+    """Return a writable directory for crash reports -- the SAME folder as the
+    error log (<Documents>/PhilosophersQuest, with fallbacks) so testers find
+    everything in one place."""
+    try:
+        from game_log import log_dir
+        return log_dir()
+    except Exception:
+        pass
     if getattr(sys, 'frozen', False):
         from paths import save_dir
         return save_dir()
@@ -101,16 +108,30 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
         lines.append("")
         lines.append("  Emergency save written -- your progress has been preserved.")
     lines.append("=" * 70)
-    lines.append("  Please send this file to the developer. Thank you!")
+    lines.append("  Please send this file (or ERROR_LOG.txt in the same folder)")
+    lines.append("  to the developer. Thank you!")
     lines.append("=" * 70)
+
+    report = "\n".join(lines) + "\n"
+
+    # Fold the full report into the rolling ERROR_LOG.txt as well, so that one
+    # file is a complete record (recovered errors AND this fatal crash).
+    try:
+        from game_log import log_crash_report
+        log_crash_report(report)
+    except Exception:
+        pass
 
     try:
         with open(path, "w", encoding="utf-8") as f:
-            f.write("\n".join(lines) + "\n")
+            f.write(report)
     except Exception:
         # Last resort: write to cwd
         path = os.path.join(os.getcwd(), filename)
-        with open(path, "w", encoding="utf-8") as f:
-            f.write("\n".join(lines) + "\n")
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(report)
+        except Exception:
+            pass
 
     return path

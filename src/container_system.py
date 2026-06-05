@@ -271,6 +271,13 @@ def _build_common_pool(template: dict, level_cap: int) -> list:
                         continue
                     if it.min_level > level_cap:
                         continue
+                    # Only terrain-FORAGED ingredients (tier_role 'dungeon')
+                    # belong in chests -- apothecary herbs, cave mushrooms, etc.
+                    # Monster-derived ingredients (family/prime/trophy) come
+                    # ONLY from harvesting corpses, never from loot -- the same
+                    # rule the floor-spawn path enforces (dungeon.py).
+                    if sc == 'ingredient' and getattr(it, 'tier_role', '') != 'dungeon':
+                        continue
                     pool.append(it)
             except (FileNotFoundError, KeyError):
                 pass
@@ -310,6 +317,10 @@ def _build_unique_pool(template: dict, level_cap: int) -> list:
                 if not getattr(it, 'is_unique', False):
                     continue
                 if it.min_level > level_cap:
+                    continue
+                # Defensive: never let a monster-derived ingredient (prime/
+                # trophy) reach chest loot via the unique path either.
+                if cls_name == 'ingredient' and getattr(it, 'tier_role', '') != 'dungeon':
                     continue
                 pool.append(it)
         except (FileNotFoundError, KeyError):

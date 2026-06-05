@@ -50,7 +50,7 @@ from game_helpers import wand_tier_duration
 from game_states import (
     STATE_PLAYER, STATE_QUIZ,
     STATE_TARGET, STATE_LORE,
-    STATE_HINT,
+    STATE_HINT, STATE_IDENTIFY_MENU,
 )
 from items import Container
 from quiz_engine import QuizMode, QuizState
@@ -525,8 +525,12 @@ class MagicMixin:
                     self._on_monster_killed(target)
 
             elif effect == 'magic_missile':
-                # Irresistible: bypasses all resistances. Missile count = wand tier.
-                missiles = max(1, wand.quiz_tier)
+                # Irresistible: bypasses all resistances. Missile count scales with
+                # the SCIENCE CHAIN achieved when zapped (1-5, set in
+                # _confirm_wand_target); falls back to wand tier for any non-chain
+                # invocation. Answer well -> a barrage.
+                _mm_chain = getattr(self, '_wand_chain', 0)
+                missiles = max(1, _mm_chain if _mm_chain else wand.quiz_tier)
                 total_dmg = 0
                 for _ in range(missiles):
                     if not target.alive:

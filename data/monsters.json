@@ -4286,7 +4286,7 @@
         "name": "boulder hurl",
         "damage": "1d6+1",
         "type": "physical",
-        "piercing": true
+        "piercing": false
       },
       {
         "name": "crush",
@@ -4504,7 +4504,7 @@
         "name": "acid spit",
         "damage": "1d4+1",
         "type": "poison",
-        "piercing": true
+        "piercing": false
       }
     ],
     "resistances": [
@@ -4847,7 +4847,7 @@
         "effect": "burning",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "piercing": true
+        "piercing": false
       }
     ],
     "resistances": [
@@ -5176,7 +5176,7 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "piercing": true
+        "piercing": false
       }
     ],
     "resistances": [
@@ -13223,7 +13223,7 @@
         "effect": null,
         "effect_chance": 0.0,
         "effect_duration": 0,
-        "piercing": true
+        "piercing": false
       }
     ],
     "resistances": [
@@ -16566,7 +16566,7 @@
         "effect": "burning",
         "effect_chance": 0.6,
         "effect_duration": 5,
-        "piercing": true
+        "piercing": false
       },
       {
         "name": "magma fist",
@@ -18164,7 +18164,7 @@
         "effect": "slowed",
         "effect_chance": 0.3,
         "effect_duration": 3,
-        "piercing": true
+        "piercing": false
       }
     ],
     "resistances": [],
@@ -19218,7 +19218,7 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "piercing": true
+        "piercing": false
       }
     ],
     "resistances": [

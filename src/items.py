@@ -102,6 +102,10 @@ class Item:
         # Mastery blessing data for is_unique items. Shape: {'kind': str, 'value': int|float|str, 'desc': str}
         # Granted to the player on chain-5 identify; lives on player.unlocked_masteries by item_id.
         self.mastery_blessing: dict | None = defn.get('mastery_blessing', None)
+        # Permanent saving-throw bonus while equipped (the gradient defense; the
+        # total is capped in Player.save_bonus_for). Shape: {'cat': 'CON'|'WIS'|
+        # 'DEX'|'all', 'amount': int}. Read dynamically off equipped gear.
+        self.save_bonus: dict | None = defn.get('save_bonus', None)
         # Named/legendary marker. Routes identify to escalator-chain mode and controls spawn-pool filtering.
         # Lives on base Item so accessories/wands/scrolls/spellbooks/etc. can mark uniques in JSON.
         self.is_unique: bool    = bool(defn.get('is_unique', False))
@@ -791,6 +795,14 @@ class Ingredient(Item):
         self.identified: bool       = True   # raw ingredients are obvious
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
         self.mp_restore: int        = int(defn.get('mp_restore', 0))
+        # tier_role: 'universal' | 'family' | 'prime' | 'trophy' | 'dungeon'.
+        # Where the ingredient comes from: only 'dungeon' (terrain-foraged --
+        # cave mushroom, swamp moss, river salt...) may appear as floor or chest
+        # loot. Monster-derived tiers (family/prime/trophy) come ONLY from
+        # harvesting corpses. Consumed by dungeon.spawn_items, container_system
+        # loot pools, and food_system raw-SP scaling -- all of which used
+        # getattr(.., 'tier_role') and silently got '' until this was loaded.
+        self.tier_role: str         = defn.get('tier_role', 'universal')
 
 
 class Corpse(Item):

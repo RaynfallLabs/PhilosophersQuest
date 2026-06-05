@@ -2084,12 +2084,12 @@ class RenderMixin:
                 dmg = self._kit_damage_str(item)
                 avg = self._kit_avg_damage(item)
                 avg_s = f"{avg:.1f}" if avg is not None else '?'
+                # Class mechanic shows once the weapon class is known (idl>=3) --
+                # it's a property of the weapon type; magical extras stay gated
+                # inside the helper at idl>=4.
+                special = self._kit_weapon_special(item, idl)
             else:
-                dmg, avg_s = '?', '?'
-            if idl >= 4:
-                special = self._kit_weapon_special(item)
-            else:
-                special = '?' if idl < 4 else ''
+                dmg, avg_s, special = '?', '?', '?'
             return [name, src_tag, dmg, avg_s, mat, buc, wt, special]
 
         if slug == 'armor':
@@ -2167,16 +2167,26 @@ class RenderMixin:
                 return None
         return None
 
-    def _kit_weapon_special(self, w) -> str:
+    def _kit_weapon_special(self, w, idl: int = 5) -> str:
         bits = []
-        dt = getattr(w, 'damage_types', None) or []
-        if dt and dt != ['slash'] and dt != ['pierce'] and dt != ['crush']:
-            bits.append('+'.join(dt))
-        if getattr(w, 'two_handed', False):
-            bits.append('2H')
-        sb = getattr(w, 'special_blessing', None) or getattr(w, 'unique_effect', None)
-        if sb:
-            bits.append(str(sb)[:32])
+        # Class mechanic FIRST -- the weapon's signature ability (Backstab,
+        # Reach 2, Master Strike...). Shown once the weapon class is known.
+        mech = getattr(w, 'class_mechanic', None)
+        if mech:
+            from combat import class_mechanic_info
+            info = class_mechanic_info(mech)
+            if info:
+                bits.append(info[0])
+        # Magical / unique extras need fuller identification (idl>=4).
+        if idl >= 4:
+            dt = getattr(w, 'damage_types', None) or []
+            if dt and dt != ['slash'] and dt != ['pierce'] and dt != ['crush']:
+                bits.append('+'.join(dt))
+            if getattr(w, 'two_handed', False):
+                bits.append('2H')
+            sb = getattr(w, 'special_blessing', None) or getattr(w, 'unique_effect', None)
+            if sb:
+                bits.append(str(sb)[:32])
         return ', '.join(bits) if bits else '-'
 
     def _kit_resist_str(self, a) -> str:
@@ -4204,16 +4214,48 @@ class RenderMixin:
         hint = self.font_sm.render("ENTER for all  |  ESC to cancel", True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 26))
 
+    def _weapon_mechanic_detail_lines(self, item) -> list:
+        """Display lines describing a weapon's class-mechanic: a NAME line plus
+        wrapped DESCRIPTION lines (e.g. 'Master Strike' + what it does).
+
+        Returns an empty list for non-weapons, weapons with no mechanic, or a
+        weapon whose class isn't known yet (idl < 3). Used by the Examine menu
+        so players can read what their weapon does, not just its name.
+        """
+        from items import Weapon
+        if not isinstance(item, Weapon):
+            return []
+        mech = getattr(item, 'class_mechanic', None)
+        if not mech:
+            return []
+        if self._kit_visible_level(item) < 3:
+            return []
+        from combat import class_mechanic_info
+        info = class_mechanic_info(mech)
+        if not info:
+            return []
+        name, desc = info
+        lines = [f"• {name}"]
+        if desc:
+            lines += (self._wrap_text(desc, self.font_sm, 660) or [desc])
+        return lines
+
     def _draw_examine_menu(self):
         tab_items = self._get_examine_tab_items()
         entries = []
         for i, item in enumerate(tab_items[:26]):
-            entries.append({
+            entry = {
                 'name': self._display_name(item),
                 'detail': self._get_item_stats_brief(item),
                 'key': self._LETTERS[i],
                 'icon': item,
-            })
+            }
+            # Weapons: surface the class-mechanic NAME + full DESCRIPTION on
+            # extra detail lines so the Examine view shows what the weapon does.
+            _mech_lines = self._weapon_mechanic_detail_lines(item)
+            if _mech_lines:
+                entry['detail_lines'] = [entry['detail']] + _mech_lines
+            entries.append(entry)
 
         _exam_counts = [sum(1 for it in self.examine_menu_items if filt(it))
                         for _, filt in self._EXAMINE_TABS]

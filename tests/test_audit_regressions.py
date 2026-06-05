@@ -73,14 +73,20 @@ def test_plant_ingredients_eligible_pool_not_empty():
 
 
 def test_plant_ingredient_spawn_block_present_in_dungeon():
-    """The spawn_items function must contain the plant-ingredient placement
-    block (regression guard against accidental deletion)."""
+    """The spawn_items function must contain the foraged-ingredient placement
+    block (regression guard against accidental deletion).
+
+    Updated 2026-06-04: the block used to filter by a _PLANT_KEYWORDS name list,
+    which leaked monster primes (e.g. "gas spore" via 'spore') onto the floor.
+    Floor ingredients are now selected purely by tier_role == 'dungeon', so the
+    marker checks for that filter instead of the removed keyword list.
+    """
     import inspect
     import dungeon
     src = inspect.getsource(dungeon.spawn_items)
-    # Loose marker: the keyword tuple plus the load_items('ingredient') call
-    assert "_PLANT_KEYWORDS" in src or "'mushroom'" in src
+    # Marker: the load_items('ingredient') call gated on the dungeon tier_role.
     assert "load_items('ingredient')" in src
+    assert "'dungeon'" in src
 
 
 # ---------------------------------------------------------------------------
@@ -168,16 +174,16 @@ def test_no_duplicate_item_ids_across_files():
 # Family-mastery wiring (resist_charm, resist_elemental, sp_regen)
 # ---------------------------------------------------------------------------
 
-def test_fey_resist_charm_halves_charm_duration():
-    """Fey-family mastery should reduce charmed duration by half."""
+def test_fey_mastery_grants_wis_save_bonus():
+    """Fey-family mastery now grants a WIS saving-throw bonus -- it replaced the
+    old ad-hoc charm-duration halving with the unified save-bonus system."""
     from player import Player
     p = Player()
     p.unlocked_monster_class_masteries = {
-        'fey': {'kind': 'resist_charm', 'value': 1, 'desc': '_'}
+        'fey': {'kind': 'save_bonus', 'value': {'cat': 'WIS', 'amount': 2}, 'desc': '_'}
     }
-    p.add_effect('charmed', 10)
-    # Halved to 5 (max(1, 10//2))
-    assert p.status_effects.get('charmed', 0) == 5
+    assert p.save_bonus_for('WIS') == 2
+    assert p.save_bonus_for('CON') == 0
 
 
 def test_elemental_resists_elemental_damage():

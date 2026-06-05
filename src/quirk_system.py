@@ -1038,7 +1038,7 @@ class QuirkSystem:
         self._inc('perseus_blocks')
         if self._p('perseus_blocks') >= 5 and not self.is_unlocked('perseus'):
             self._award('perseus', "Perseus' Reflection",
-                        lambda pl: pl.quirk_progress.update({'perseus_active': True}))
+                        lambda pl: pl.quirk_progress.update({'save_bonus_all': 2}))
 
     def on_teleport(self):
         """Called for any teleport (wand or teleportitis tick)."""
@@ -1511,7 +1511,7 @@ _QUIRK_EFFECTS = {
     'jormungandr':   "That weapon's max chain length +1.",
     'shiva':         "Philosophy quiz timer +5 seconds.",
     'enkidu':        "STR +1",
-    'perseus':       "Enemy status effects last 50% fewer turns on you.",
+    'perseus':       "+2 to all saving throws -- you turn the blow aside.",
     'theseus':       "PER +1",
     'persephone':    "Cooking max chain becomes 6 instead of 5.",
     'hermes':        "Hasted duration permanently doubled.",

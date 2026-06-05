@@ -5565,8 +5565,9 @@
     "slot": "amulet",
     "quiz_tier": 2,
     "equip_threshold": 3,
-    "effects": {
-      "stat": "WIS",
+    "effects": {},
+    "save_bonus": {
+      "cat": "WIS",
       "amount": 3
     },
     "identified": false,
@@ -5647,10 +5648,12 @@
     "quiz_tier": 3,
     "equip_threshold": 3,
     "effects": {
-      "stat": "CON",
-      "amount": 3,
       "status": "regenerating",
       "duration": -1
+    },
+    "save_bonus": {
+      "cat": "CON",
+      "amount": 3
     },
     "identified": false,
     "unidentified_name": "pulsing amulet",

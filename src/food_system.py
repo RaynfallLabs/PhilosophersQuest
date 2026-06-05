@@ -188,27 +188,27 @@ _TEMP_POWER_REMAP = {
     'berserk_short':         'berserk',
     'bleeding_resist':       'regenerating',      # regen counters bleed effectively
     'blessed_status':        'blessed',
-    'charm_resist':          'sleep_resist',
-    'confused_resist':       'magic_resist',
+    'charm_resist':          'save_guard_WIS',    # mind ward (WIS save)
+    'confused_resist':       'save_guard_WIS',    # mind ward (WIS save)
     'cursed_resist':         'magic_resist',
     'damage_resist_phys':    'shielded',
     'detect_magic':          'searching',         # close enough — surfaces info
     'detect_monster':        'warning',
     'drain_heals_self_temp': 'drain_resist',      # closest mechanical match
-    'feared_resist':         'fear_immune',
+    'feared_resist':         'save_guard_WIS',    # mind ward (WIS save)
     'gold_drip':             'identify_sight',    # quirky proxy — no real "gold/turn" buff
-    'hallucinate_resist':    'magic_resist',
+    'hallucinate_resist':    'save_guard_WIS',    # mind ward (WIS save)
     'lightning_resist':      'shock_resist',
     'mp_regen':              'brilliance',        # brilliance boosts mental stats
     'night_vision':          'dark_vision',
-    'paralyze_resist':       'sleep_resist',
+    'paralyze_resist':       'save_guard_CON',    # body ward (CON save)
     'passive_regen':         'regenerating',
-    'petrify_resist':        'sleep_resist',      # both are "no-move" defenses
+    'petrify_resist':        'save_guard_CON',    # body ward (CON save)
     'quiz_timer_bonus':      'brilliance',
     'rust_proof':            'shielded',
-    'silenced_resist':       'magic_resist',
+    'silenced_resist':       'magic_resist',      # silence isn't a SAVE_STAT effect
     'stealth_in_dark':       'invisible',
-    'stunned_resist':        'sleep_resist',
+    'stunned_resist':        'save_guard_CON',    # body ward (CON save)
     'tactics_buff':          'crit_buff',
 }
 
@@ -290,6 +290,15 @@ def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
         desc = recipe.get('temp_desc', raw_power.replace('_', ' '))
         try:
             player.add_effect(power, duration)
+            # Save-guard wards carry a FIXED-per-recipe magnitude that lives in
+            # player._save_guard; save_bonus_for() reads it only while the
+            # companion save_guard_<cat> status is active (set just above).
+            if power.startswith('save_guard_'):
+                cat = power[len('save_guard_'):]  # 'CON'|'WIS'|'DEX'|'all'
+                amount = min(3, int(recipe.get('ward_amount', 2)))
+                if not hasattr(player, '_save_guard') or player._save_guard is None:
+                    player._save_guard = {}
+                player._save_guard[cat] = amount
             messages.append(f"The essence carries through — {desc} ({duration} turns).")
         except Exception:
             messages.append(f"You feel the {desc} flow through you ({duration} turns).")
@@ -776,11 +785,11 @@ def drink_potion(player, potion) -> list[str]:
         if _harm_mult == 0.0:
             messages.append("You feel briefly dizzy -- your blessed constitution resists.")
         else:
-            applied = player.add_effect('confused', max(1, int(duration * _harm_mult)))
-            if applied:
-                messages.append("Your thoughts spin out of control! You are Confused.")
-            else:
-                messages.append("You feel briefly dizzy -- nothing happens.")
+            from status_effects import apply_debuff_with_save
+            _, msg = apply_debuff_with_save(
+                player, 'confused', max(1, int(duration * _harm_mult)), dc=13)
+            if msg:
+                messages.append(msg)
 
     elif effect == 'blindness':
         if _harm_mult == 0.0:
@@ -806,11 +815,11 @@ def drink_potion(player, potion) -> list[str]:
         if _harm_mult == 0.0:
             messages.append("A brief stiffness passes -- your blessed constitution resists.")
         else:
-            applied = player.add_effect('paralyzed', max(1, int(duration * _harm_mult)))
-            if applied:
-                messages.append("Your body locks up! You are Paralyzed.")
-            else:
-                messages.append("You feel a brief stiffness -- nothing happens.")
+            from status_effects import apply_debuff_with_save
+            _, msg = apply_debuff_with_save(
+                player, 'paralyzed', max(1, int(duration * _harm_mult)), dc=13)
+            if msg:
+                messages.append(msg)
 
     elif effect == 'hallucination':
         if _harm_mult == 0.0:
@@ -826,11 +835,11 @@ def drink_potion(player, potion) -> list[str]:
         if _harm_mult == 0.0:
             messages.append("Drowsiness touches you and passes -- your blessed constitution resists.")
         else:
-            applied = player.add_effect('sleeping', max(1, int(duration * _harm_mult)))
-            if applied:
-                messages.append("Irresistible drowsiness claims you. You fall Asleep!")
-            else:
-                messages.append("You feel briefly drowsy -- your will resists.")
+            from status_effects import apply_debuff_with_save
+            _, msg = apply_debuff_with_save(
+                player, 'sleeping', max(1, int(duration * _harm_mult)), dc=13)
+            if msg:
+                messages.append(msg)
 
     elif effect == 'weakness':
         if _harm_mult == 0.0:
@@ -846,11 +855,11 @@ def drink_potion(player, potion) -> list[str]:
         if _harm_mult == 0.0:
             messages.append("Time flickers and steadies -- your blessed constitution resists.")
         else:
-            applied = player.add_effect('slowed', max(1, int(duration * _harm_mult)))
-            if applied:
-                messages.append("Time thickens around you. You are Slowed.")
-            else:
-                messages.append("You feel momentarily sluggish -- it passes.")
+            from status_effects import apply_debuff_with_save
+            _, msg = apply_debuff_with_save(
+                player, 'slowed', max(1, int(duration * _harm_mult)), dc=13)
+            if msg:
+                messages.append(msg)
 
     elif effect == 'teleport':
         messages.append("_teleport")
@@ -912,11 +921,11 @@ def drink_potion(player, potion) -> list[str]:
         if _harm_mult == 0.0:
             messages.append("A shadow of dread passes -- your blessed constitution resists.")
         else:
-            applied = player.add_effect('feared', max(1, int(duration * _harm_mult)))
-            if applied:
-                messages.append("Terror grips your heart. You are Feared!")
-            else:
-                messages.append("A shadow of dread passes -- your courage holds.")
+            from status_effects import apply_debuff_with_save
+            _, msg = apply_debuff_with_save(
+                player, 'feared', max(1, int(duration * _harm_mult)), dc=13)
+            if msg:
+                messages.append(msg)
 
     elif effect == 'fire_resist':
         dur = max(1, int(duration * _buff_mult))

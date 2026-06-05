@@ -139,3 +139,186 @@ def test_save_stat_mapping_is_sane():
     assert se.SAVE_STAT['paralyzed'] == 'CON'
     assert se.SAVE_STAT['confused'] == 'WIS'
     assert se.SAVE_STAT['slowed'] == 'DEX'
+
+
+# ---------------------------------------------------------------------------
+# Save-bonus foundation (the gradient system: gear / build / mastery / ward)
+# ---------------------------------------------------------------------------
+
+def test_save_bonus_sums_permanent_lanes_and_hard_caps():
+    p = _p()
+    assert p.save_bonus_for('CON') == 0          # nothing yet
+    p._save_bonus = {'CON': 2}                   # equipment
+    p.save_affinity = {'CON': 1, 'all': 1}       # innate build + an 'all'
+    assert p.save_bonus_for('CON') == 4          # 2 + 1 + 1(all)
+    assert p.save_bonus_for('WIS') == 1          # only the 'all' touches WIS
+    p._save_bonus = {'CON': 99}                  # try to blow past the ceiling
+    assert p.save_bonus_for('CON') == 5          # hard cap +5 (gradient, not immunity)
+
+
+def test_timed_ward_gated_by_status_and_capped_at_3():
+    p = _p()
+    p._save_guard = {'WIS': 5}
+    assert p.save_bonus_for('WIS') == 0          # magnitude inert without the status
+    p.status_effects['save_guard_WIS'] = 50      # ward active
+    assert p.save_bonus_for('WIS') == 3          # timed lane capped at +3 (5 -> 3)
+
+
+def test_ward_companion_cleared_when_status_expires():
+    p = _p()
+    p._save_guard = {'CON': 2}
+    p.status_effects['save_guard_CON'] = 1
+    se.tick_all(p)                               # ward expires this tick
+    assert p.status_effects.get('save_guard_CON', 0) == 0
+    assert 'CON' not in p._save_guard             # magnitude companion dropped
+
+
+def test_mastery_save_bonus_is_read():
+    p = _p()
+    p.unlocked_monster_class_masteries = {
+        'fey': {'kind': 'save_bonus', 'value': {'cat': 'WIS', 'amount': 2}},
+    }
+    assert p.save_bonus_for('WIS') == 2
+    assert p.save_bonus_for('CON') == 0
+
+
+def test_save_bonus_actually_improves_save_odds():
+    # A big CON save bonus should turn a mid-DC paralysis into a reliable save.
+    saved = 0
+    for _ in range(200):
+        p = _p()
+        p._save_bonus = {'CON': 5}               # +5 (capped)
+        applied, _ = se.apply_debuff_with_save(p, 'paralyzed', 4, dc=10)
+        if not applied:                          # negated == saved
+            saved += 1
+    assert saved > 140, f"big CON bonus should save most of the time, got {saved}/200"
+
+
+# ---------------------------------------------------------------------------
+# Food-system ward family + bad-food save routing (food_system.py)
+# ---------------------------------------------------------------------------
+
+import food_system as fs
+
+
+class _Potion:
+    """Minimal potion stand-in for food_system.drink_potion()."""
+    def __init__(self, effect, duration=6, buc='uncursed', power=None):
+        self.id = 'test_potion'
+        self.is_unique = False
+        self.effect = effect
+        self.power = power
+        self.duration = duration
+        self.buc = buc
+        self.identified = False
+
+
+def test_cooked_ward_grants_status_and_sets_capped_magnitude():
+    """A T5 recipe whose temp_power maps to a save_guard ward must grant the
+    companion status AND record the (capped) magnitude in _save_guard, so
+    save_bonus_for() reflects it while the status is active."""
+    p = _p()
+    recipe = {
+        'name': 'Aegis Stew',
+        'temp_power': 'paralyze_resist',   # remaps -> save_guard_CON
+        'temp_duration': 40,
+        'ward_amount': 2,
+        'tier_outcomes': {'5': {'sp': 10, 'temp_power': True}},
+    }
+    msgs = fs._apply_tier_outcome(p, recipe, 5)
+
+    # Companion status active under its canonical name...
+    assert p.status_effects.get('save_guard_CON', 0) == 40
+    # ...magnitude recorded for the CON category...
+    assert p._save_guard.get('CON') == 2
+    # ...and the gradient defense actually reads through.
+    assert p.save_bonus_for('CON') == 2
+    assert p.save_bonus_for('WIS') == 0            # ward is CON-specific
+    assert any('carries through' in m or 'flow through' in m for m in msgs)
+
+
+def test_cooked_ward_amount_is_clamped_to_3():
+    p = _p()
+    recipe = {
+        'name': 'Overcharged Tonic',
+        'temp_power': 'confused_resist',   # remaps -> save_guard_WIS
+        'temp_duration': 30,
+        'ward_amount': 9,                  # absurd authored value
+        'tier_outcomes': {'5': {'temp_power': True}},
+    }
+    fs._apply_tier_outcome(p, recipe, 5)
+    assert p._save_guard.get('WIS') == 3           # clamped to +3
+    assert p.save_bonus_for('WIS') == 3            # timed-lane cap also +3
+
+
+def test_cooked_ward_defaults_to_plus_2_when_unspecified():
+    p = _p()
+    recipe = {
+        'name': 'Plain Ward Broth',
+        'temp_power': 'feared_resist',     # remaps -> save_guard_WIS
+        'temp_duration': 20,
+        'tier_outcomes': {'5': {'temp_power': True}},
+    }
+    fs._apply_tier_outcome(p, recipe, 5)
+    assert p._save_guard.get('WIS') == 2           # default +2
+
+
+def test_control_resist_remap_targets_are_wards():
+    # The bug being fixed: these used to silently become sleep_resist /
+    # magic_resist. They must now resolve to the matching save_guard ward.
+    assert fs._resolve_temp_power('paralyze_resist') == 'save_guard_CON'
+    assert fs._resolve_temp_power('stunned_resist') == 'save_guard_CON'
+    assert fs._resolve_temp_power('petrify_resist') == 'save_guard_CON'
+    assert fs._resolve_temp_power('confused_resist') == 'save_guard_WIS'
+    assert fs._resolve_temp_power('charm_resist') == 'save_guard_WIS'
+    assert fs._resolve_temp_power('feared_resist') == 'save_guard_WIS'
+    assert fs._resolve_temp_power('hallucinate_resist') == 'save_guard_WIS'
+    # silence has no SAVE_STAT entry -> stays magic_resist (unchanged).
+    assert fs._resolve_temp_power('silenced_resist') == 'magic_resist'
+
+
+def test_bad_food_control_routes_through_save_failure_lands():
+    """A bad-food CONTROL outcome routes through apply_debuff_with_save. With a
+    guaranteed-fail save the debuff lands and a flavor message is produced."""
+    import random
+    p = _p()
+    random.seed(0)
+    # paralysis maps to a CON save; force a failure with a worst-case roll.
+    p.CON = 1                                      # large negative modifier
+    msgs = fs.drink_potion(p, _Potion('paralysis', duration=4, buc='uncursed'))
+    assert p.status_effects.get('paralyzed', 0) > 0
+    assert any(m for m in msgs), "control outcome produced no message"
+
+
+def test_bad_food_control_save_can_negate_hard_control():
+    """With a huge CON ward the same paralysis is reliably negated (the point of
+    routing bad food through the save)."""
+    negated = 0
+    for _ in range(60):
+        p = _p()
+        p._save_bonus = {'CON': 5}                 # +5 capped
+        before = dict(p.status_effects)
+        fs.drink_potion(p, _Potion('paralysis', duration=4, buc='uncursed'))
+        if p.status_effects.get('paralyzed', 0) == before.get('paralyzed', 0):
+            negated += 1
+    assert negated > 0, "a maxed CON save never negated bad-food paralysis"
+
+
+def test_bad_food_blessed_resist_branch_preserved():
+    """The blessed-constitution branch must NOT route through the save — it
+    resists outright with its original flavor and applies nothing."""
+    p = _p()
+    msgs = fs.drink_potion(p, _Potion('confusion', duration=6, buc='blessed'))
+    assert p.status_effects.get('confused', 0) == 0
+    assert any('blessed constitution resists' in m for m in msgs)
+
+
+def test_bad_food_noncontrol_debuff_unchanged():
+    """blindness/poison have no SAVE_STAT entry and must stay on the direct
+    add_effect path (not routed through the save)."""
+    p = _p()
+    fs.drink_potion(p, _Potion('blindness', duration=6, buc='uncursed'))
+    assert p.status_effects.get('blinded', 0) > 0
+    p2 = _p()
+    fs.drink_potion(p2, _Potion('poison', duration=6, buc='uncursed'))
+    assert p2.status_effects.get('poisoned', 0) > 0

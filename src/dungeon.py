@@ -1485,30 +1485,28 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in food_rooms:
         _place_one(eligible_food, room, dungeon, ground_items, rng)
 
-    # -- Plant ingredients -- 1-3 per floor (mushrooms, herbs, fungi, sap, etc.)
-    # Monster-derived ingredients (meat, glands, hides) STILL come from
-    # harvest-corpse only; plant-source ingredients can grow in the dungeon.
+    # -- Foraged ingredients -- 1-3 per floor (terrain-grown: mushrooms,
+    # river salt, swamp moss, crystal shards, etc.).
+    #
+    # ONLY `tier_role == 'dungeon'` ingredients may spawn as floor loot. Every
+    # other ingredient tier (universal Assorted Monster Parts, the 12 family
+    # cuts, the per-monster PRIME cuts, and boss TROPHY cuts) is MONSTER-DERIVED
+    # and obtainable ONLY by harvesting a corpse via the animal quiz — never as
+    # ground loot or a death-drop.
+    #
+    # This used to filter by plant-name keywords ('spore', 'vine', 'mold', ...),
+    # which leaked monster primes whose names happen to contain those substrings
+    # onto the floor (e.g. "gas spore" matched 'spore', "Hell Bovine" matched
+    # 'vine'). The keyword path is gone; foraged terrain ingredients are tagged
+    # tier_role 'dungeon' in ingredient.json, so an explicit tier check is both
+    # correct and leak-proof.
     try:
         all_ingredients = load_items('ingredient')
     except FileNotFoundError:
         all_ingredients = []
-    _PLANT_KEYWORDS = ('mushroom','herb','berry','leaf','root','fungus','moss',
-                       'flower','seed','grain','wheat','grass','vine','spice',
-                       'lichen','bark','sap','fiber','plant',
-                       # 2026-05-19 audit: ingredients whose names lack the
-                       # above tokens but ARE plant-sourced (no monster drop).
-                       # Without these, ~190 compound recipes are uncookable.
-                       'thyme','rosemary','celery','carrot','spore',
-                       'pepper','salt','sprig',
-                       # 2026-05-31 redesign: plant-family primes the
-                       # new ingredient bank introduced.
-                       'mold','myconid','treant','shambling','shrieker')
-    # Per redesign: also include any ingredient with tier_role 'dungeon'
-    # (terrain-foraged) regardless of keyword.
     plant_ingredients = [
         ing for ing in all_ingredients
-        if (any(w in getattr(ing, 'name', '').lower() for w in _PLANT_KEYWORDS)
-            or getattr(ing, 'tier_role', '') == 'dungeon')
+        if getattr(ing, 'tier_role', '') == 'dungeon'
         and ing.min_level <= level
     ]
     if plant_ingredients:

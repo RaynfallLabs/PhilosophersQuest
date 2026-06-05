@@ -3,6 +3,15 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Playtest crash reports + verbose error log. These are written to
+# <Documents>/PhilosophersQuest, which IS the project root on the dev machine,
+# so ignore them here to keep tester artifacts out of the repo.
+crash_*.txt
+ERROR_LOG.txt
+ERROR_LOG.txt.*
+save_*.pkl
+save_*.pkl.tmp
+
 # C extensions
 *.so
 

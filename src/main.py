@@ -57,7 +57,19 @@ from spells import LEARNABLE_SPELLS
 # Module-level helpers
 # ------------------------------------------------------------------
 
-
+# Innate saving-throw affinity by build archetype — the gradient-defense identity
+# layer (read by Player.save_bonus_for, capped there, so it only biases the odds).
+# Stalwart bodies -> CON, strong wills -> WIS, quick scouts -> DEX; frail
+# glass-cannon mages deliberately get none (fragility is their cost). Keyed by
+# build/player name, like hero passives.
+_BUILD_SAVE_AFFINITY: dict[str, dict] = {
+    'leonidas of sparta': {'CON': 2}, 'boudicca queen of the iceni': {'CON': 2},
+    'achilles son of peleus': {'CON': 2},
+    'socrates of athens': {'WIS': 2}, 'saint joan of arc maid of orleans': {'WIS': 2},
+    'saint hildegard von bingen': {'WIS': 2}, 'diogenes of sinope': {'WIS': 2},
+    'hermes trismegistus': {'DEX': 2}, 'ciri riannon': {'DEX': 2},
+    'miyamoto musashi the sword saint': {'DEX': 2}, 'corwin': {'DEX': 2},
+}
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
@@ -326,6 +338,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.max_mp = self.player.BASE_MP + self.player.INT
             self.player.mp     = self.player.max_mp
 
+        # Innate save affinity by build archetype (see module-level
+        # _BUILD_SAVE_AFFINITY). Also re-applied in load_state for old saves.
+        self._apply_save_affinity()
+
         # Immortality flag
         self.player.immortal = bool(b.get('_immortal', False))
         # QA tools flag (Titivillus debug build): unlocks Shift+I immortal toggle
@@ -366,6 +382,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Chronicle: entering the dungeon
         self._log_chronicle("Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+
+    def _apply_save_affinity(self):
+        """Set the player's innate save affinity from the build name. Idempotent:
+        called at game start AND from load_state (which replaces self.player, and
+        old saves predate the save_affinity field)."""
+        aff = _BUILD_SAVE_AFFINITY.get((getattr(self, 'player_name', '') or '').strip().lower())
+        if aff and getattr(self, 'player', None) is not None:
+            self.player.save_affinity = dict(aff)
 
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
@@ -466,6 +490,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ):
             if not hasattr(self.player, _attr):
                 setattr(self.player, _attr, _default)
+        # ----- Save-bonus system: new attrs + migrations (old saves predate it) -----
+        if not hasattr(self.player, '_save_bonus'):
+            self.player._save_bonus = {}
+        if not hasattr(self.player, 'save_affinity'):
+            self.player.save_affinity = {}
+        if not hasattr(self.player, '_save_guard'):
+            self.player._save_guard = {}
+        # Re-sync monster-family mastery blessings to current definitions, so
+        # families converted to save_bonus (fey/aberration -> WIS, undead/reptile
+        # -> CON) aren't left holding inert old blessings after the upgrade.
+        try:
+            from monster_classes import MONSTER_FAMILY_BLESSINGS as _MFB
+            _fam = getattr(self.player, 'unlocked_monster_class_masteries', None)
+            if isinstance(_fam, dict):
+                for _f in list(_fam.keys()):
+                    if _f in _MFB:
+                        _fam[_f] = dict(_MFB[_f])
+        except Exception:
+            pass
+        # Perseus quirk was a debuff-duration-halve flag; it is now a +2 all-saves
+        # bonus. Migrate the legacy flag so returning players keep the benefit.
+        _qp = getattr(self.player, 'quirk_progress', None)
+        if isinstance(_qp, dict) and _qp.get('perseus_active') and not _qp.get('save_bonus_all'):
+            _qp['save_bonus_all'] = 2
+        # Re-apply innate build save-affinity (load_state just replaced the player;
+        # old saves predate the field). Idempotent for current saves.
+        self._apply_save_affinity()
+
         # BUC migration: patch buc/buc_known on all items from old saves
         self._migrate_buc_all(state)
         # Harvest+Cook redesign migration (2026-05-31): old saves have
@@ -3238,11 +3290,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.player.has_effect('sleep_resist'):
                 self.add_message("You resist the sleeping gas!", 'info')
             else:
-                self.player.add_effect('sleeping', random.randint(3, 8))
-                self.add_message("You fall asleep!", 'danger')
+                from status_effects import apply_debuff_with_save
+                _dc = min(18, 12 + self.dungeon_level // 7)
+                _ok, _smsg = apply_debuff_with_save(self.player, 'sleeping', random.randint(3, 8), _dc)
+                self.add_message(_smsg or "You fall asleep!", 'danger' if _ok else 'success')
         elif trap_type == 'bear_trap':
-            self.player.add_effect('immobilized', random.randint(2, 4))
-            self.add_message("You're stuck! Struggle to break free!", 'danger')
+            from status_effects import apply_debuff_with_save
+            _dc = min(18, 12 + self.dungeon_level // 7)
+            _ok, _smsg = apply_debuff_with_save(self.player, 'immobilized', random.randint(2, 4), _dc)
+            self.add_message(_smsg or "You're stuck! Struggle to break free!",
+                             'danger' if _ok else 'success')
         elif trap_type == 'squeaky_board':
             for m in self.monsters:
                 if m.alive:
@@ -6282,6 +6339,36 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
 
+def _recover_in_loop(game, where):
+    """Recover from an error raised inside the game loop so a single broken
+    event / update / render frame never takes the whole game down.
+
+    Writes the full traceback to the verbose error log (which survives in the
+    windowed bundle, where print() goes nowhere), shows the player a calm
+    message, and resets to a playable state. Every step is itself guarded --
+    the recovery path must never raise.
+    """
+    try:
+        from game_log import log_error
+        log_error(f"recovered from error in {where}")
+    except Exception:
+        pass
+    try:
+        import traceback
+        traceback.print_exc()    # dev-console convenience; silent in the bundle
+    except Exception:
+        pass
+    try:
+        game.add_message("Something glitched, but the game recovered. "
+                         "(Details saved to the error log.)", 'danger')
+    except Exception:
+        pass
+    try:
+        game.state = STATE_PLAYER
+    except Exception:
+        pass
+
+
 def main():
     from save_system import save_exists, load_game, save_game
 
@@ -6340,6 +6427,13 @@ def main():
         _crash_game_ref = game
 
         # ---------- game loop ----------
+        # Each frame's three phases (input, update, render) are independently
+        # guarded: a crash in any one is logged with a full traceback and the
+        # game recovers to a playable state instead of dying. render() was
+        # previously UNGUARDED -- a draw error would crash the whole game.
+        from game_log import log_session_start
+        log_session_start(VERSION, getattr(game, 'player_name', '?'),
+                          getattr(game, 'secret_build', None))
         running = True
         while running:
             dt = clock.tick(FPS) / 1000.0
@@ -6347,19 +6441,17 @@ def main():
                 try:
                     if not game.handle_event(event):
                         running = False
-                except Exception as _evt_err:
-                    game.add_message(f"Error: {_evt_err}", 'danger')
-                    game.state = STATE_PLAYER  # recover to playable state
-                    import traceback
-                    traceback.print_exc()
+                except Exception:
+                    _recover_in_loop(
+                        game, f"handle_event (event type {getattr(event, 'type', '?')})")
             try:
                 game.update(dt)
-            except Exception as _upd_err:
-                game.add_message(f"Error: {_upd_err}", 'danger')
-                game.state = STATE_PLAYER
-                import traceback
-                traceback.print_exc()
-            game.render()
+            except Exception:
+                _recover_in_loop(game, "update")
+            try:
+                game.render()
+            except Exception:
+                _recover_in_loop(game, "render")
 
         # Save on clean exit if the game is still in progress and player chose to save
         if game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit:
@@ -6389,6 +6481,13 @@ if __name__ == "__main__":
     except SystemExit:
         raise
     except Exception:
+        # Log the fatal escape (full traceback) BEFORE building the crash
+        # report, so even if report-writing fails the error is in ERROR_LOG.txt.
+        try:
+            from game_log import log_error
+            log_error("FATAL: unhandled exception escaped main()")
+        except Exception:
+            pass
         path = _crash.write_crash_report(*sys.exc_info(), game=_crash_game_ref)
         print(f"\nCRASH -- report written to:\n  {path}", file=sys.stderr)
         raise

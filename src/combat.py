@@ -11,6 +11,88 @@ from geom import monster_at_tile, is_at_tile
 _DEFAULT_MULTIPLIERS = [0.3, 0.5, 0.7, 0.9, 1.2]
 
 
+# ---------------------------------------------------------------------------
+# Weapon class-mechanic display info
+# ---------------------------------------------------------------------------
+# Maps a weapon's `class_mechanic` id -> (short name, plain-English description).
+# Surfaced in the Kit screen (name only) and the Examine panel (name + desc) so
+# players can see what their weapon actually does. Both common weapons (mechanic
+# applied from their class template) and uniques carry `class_mechanic`, so this
+# single map serves every weapon. Descriptions authored from the weapon
+# templates' `class_mechanic_desc`; kept ASCII-clean for safe rendering.
+CLASS_MECHANIC_INFO = {
+    'backstab':                ('Backstab',
+        'x2 damage if the target is unaware of you.'),
+    'bleed_at_max':            ('Bleed',
+        'On chain rung 3+, inflicts bleeding (1d4/turn for 3 turns).'),
+    'cleave_at_max':           ('Cleave',
+        'At max chain, on a kill: cleave damage to one adjacent foe.'),
+    'cleave_at_max_plus_bleed':('Cleave + Bleed',
+        'At max chain: cleave one adjacent foe and apply bleed (1d6/turn for 3).'),
+    'concussion_at_max':       ('Concussion',
+        'At max chain: 35% chance to confuse the target for 2 turns. Cheap, '
+        'abundant, and never breaks on harvest.'),
+    'defensive_parry':         ('Parry',
+        'At max chain: gain +2 AC for 2 turns -- the staff turns each riposte '
+        'into shelter.'),
+    'finesse_dex':             ('Finesse',
+        'Uses DEX instead of STR for the damage bonus.'),
+    'free_stones':             ('Free Stones',
+        'At max chain: 25% chance to ricochet to an adjacent enemy. Ammo is '
+        'weightless and gathered automatically.'),
+    'ignores_all_armor':       ('Armor-Piercing',
+        'Ignores ALL armor AC. Single-shot reload; the slowest weapon.'),
+    'ignores_half_armor':      ('Half Armor-Pierce',
+        'Ignores half of the target armor AC. Single-shot reload between volleys.'),
+    'ignores_shield':          ('Shield-Bypass',
+        'Ignores the shield AC bonus -- the flail wraps around defenses.'),
+    'master_strike':           ('Master Strike',
+        'At chain 3+, every hit treats the target AC as 1 lower -- the '
+        'longsword Meisterhau.'),
+    'quick_riposte':           ('Riposte',
+        'At max chain: if struck in melee next turn, free counter-attack at '
+        '0.85x damage.'),
+    'rapid_shot_at_max':       ('Rapid Shot',
+        'At max chain: fire a follow-up arrow at half damage on the same target.'),
+    'reach_2':                 ('Reach 2',
+        'Strike foes 2 tiles away; at max chain, hits all enemies in the line.'),
+    'str_bonus_range_7':       ('Range 7 (STR)',
+        'Range 7 tiles; adds your STR modifier to the damage.'),
+    'stun_at_max':             ('Stun',
+        'On chain rung 3+, 20% chance to stun for 1 turn.'),
+    'stun_knockdown_at_max':   ('Stun + Knockdown',
+        'At chain rung 4+: stun and knock down (the target loses 2 turns).'),
+    'versatile':               ('Versatile',
+        '+20% damage when wielded two-handed (no shield).'),
+    'anti_heavy_at_max':       ('Anti-Armor',
+        'At max chain: +50% damage vs heavy-armored monsters.'),
+    'armor_pierce_at_max':     ('Pierce at Max',
+        "At max chain, ignores 50% of the target's armor."),
+    # Unique-only mechanics (no class template -- carried by specific artifacts).
+    'guaranteed_hit':          ('Never Miss',
+        'The weapon never misses -- even a failed quiz still lands a minimum hit.'),
+    'returning_blow':          ('Returning Blow',
+        'At max chain the blow rebounds on you for half damage -- swing too '
+        'hard and you pay the price.'),
+}
+
+
+def class_mechanic_info(mech_id):
+    """Return (short_name, description) for a weapon class-mechanic id.
+
+    Falls back to a humanized id with an empty description for any mechanic not
+    in the table, so a weapon's signature ability never renders blank. Returns
+    None only for a falsy id.
+    """
+    if not mech_id:
+        return None
+    info = CLASS_MECHANIC_INFO.get(mech_id)
+    if info:
+        return info
+    name = mech_id.replace('_at_max', '').replace('_', ' ').title()
+    return (name, '')
+
+
 def _weapon_mastery(player, weapon) -> dict | None:
     """Return the mastery blessing dict for this weapon if claimed, else None.
 

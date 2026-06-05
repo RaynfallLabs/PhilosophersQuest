@@ -142,6 +142,7 @@ def test_family_blessing_kinds_are_known():
         'damage_vs_tag', 'tohit_vs_tag',
         'wisdom_bonus', 'int_bonus',
         'resist_charm', 'resist_elemental', 'sp_regen',
+        'save_bonus',
     }
     for fam, b in MONSTER_FAMILY_BLESSINGS.items():
         assert b['kind'] in allowed, (

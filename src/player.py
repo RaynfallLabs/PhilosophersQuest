@@ -98,6 +98,14 @@ class Player:
         self.damage_resistances: dict[str, int] = {}
         # Flat HP-regen bonus per tick (chain-equip / accessory passives).
         self.regen_bonus: int = 0
+        # Saving-throw bonuses (the gradient defense; summed + hard-capped in
+        # save_bonus_for, never immunity). PERMANENT lanes: equipment grants ->
+        # _save_bonus; innate build affinity -> save_affinity. TIMED lane: cooked
+        # wards / powers set a save_guard_<cat> status (duration) plus the
+        # magnitude in _save_guard. All dicts: {'CON'|'WIS'|'DEX'|'all' -> int}.
+        self._save_bonus: dict = {}
+        self.save_affinity: dict = {}
+        self._save_guard: dict = {}
         # ----- Engine waves 5/6 runtime attrs (seeded so brand-new games +
         # old saves load cleanly; every use-site also defends with getattr).
         self._et_tu_target = None
@@ -613,17 +621,93 @@ class Player:
         """True if the effect is active (any non-zero value)."""
         return self.status_effects.get(name, 0) != 0
 
+    def __getstate__(self):
+        """Exclude the transient Game back-reference from pickling.
+        ``_combat_game_ref`` is set on the player during combat (game_combat) so
+        combat code can reach the game; it holds the pygame screen, fonts, and
+        quiz-engine callbacks -- all unpicklable. Left in, it silently fails every
+        save made after a fight (the long-standing 'cannot pickle Surface' save
+        loss). It is re-set on the next combat, so dropping it on save is safe."""
+        state = self.__dict__.copy()
+        state.pop('_combat_game_ref', None)
+        return state
+
+    def save_bonus_for(self, cat: str) -> int:
+        """Total saving-throw bonus for a category ('CON'/'WIS'/'DEX'), read by
+        status_effects.apply_debuff_with_save. Sums every source and HARD-CAPS
+        the result so saves stay a gradient, never immunity (immunity is the
+        resist items' job): +5 total, of which the TIMED lane (cooked wards /
+        powers) contributes at most +3. An 'all' bonus applies to every category.
+        """
+        if cat not in ('CON', 'WIS', 'DEX'):
+            return 0
+
+        def _amt(d):
+            if not isinstance(d, dict):
+                return 0
+            return int(d.get(cat, 0) or 0) + int(d.get('all', 0) or 0)
+
+        # --- Permanent lane: equipment, innate build affinity, masteries, quirks
+        perm = (_amt(getattr(self, '_save_bonus', None))
+                + _amt(getattr(self, 'save_affinity', None))
+                + self._gear_save_bonus(cat)
+                + self._mastery_save_bonus(cat)
+                + self._quirk_save_bonus(cat))
+
+        # --- Timed lane (cooked wards / powers); magnitude counts only while the
+        #     companion status is still active. Capped at +3.
+        se = self.status_effects
+        guard = getattr(self, '_save_guard', None) or {}
+        timed = 0
+        if se.get(f'save_guard_{cat}', 0):
+            timed += int(guard.get(cat, 0) or 0)
+        if se.get('save_guard_all', 0):
+            timed += int(guard.get('all', 0) or 0)
+        timed = min(timed, 3)
+
+        return min(perm + timed, 5)
+
+    def _mastery_save_bonus(self, cat: str) -> int:
+        """Sum kind=='save_bonus' blessings across the three mastery stores."""
+        total = 0
+        for store in (getattr(self, 'unlocked_masteries', None) or {},
+                      getattr(self, 'unlocked_class_masteries', None) or {},
+                      getattr(self, 'unlocked_monster_class_masteries', None) or {}):
+            for bless in store.values():
+                if isinstance(bless, dict) and bless.get('kind') == 'save_bonus':
+                    val = bless.get('value') or {}
+                    if isinstance(val, dict) and val.get('cat') in (cat, 'all'):
+                        total += int(val.get('amount', 0) or 0)
+        return total
+
+    def _quirk_save_bonus(self, cat: str) -> int:
+        """Save bonuses from converted quirk passives (quirk_progress flags)."""
+        qp = getattr(self, 'quirk_progress', None) or {}
+        return int(qp.get(f'save_bonus_{cat}', 0) or 0) + int(qp.get('save_bonus_all', 0) or 0)
+
+    def _gear_save_bonus(self, cat: str) -> int:
+        """Sum the `save_bonus` field across all equipped gear (scanned live, so
+        equipping/unequipping needs no bookkeeping)."""
+        total = 0
+        slots = [self.weapon, getattr(self, 'ranged_weapon', None), self.shield,
+                 self.amulet_slot, getattr(self, 'belt_slot', None)]
+        slots.extend(self.armor_slots)
+        slots.extend(self.accessory_slots)
+        for it in slots:
+            sb = getattr(it, 'save_bonus', None) if it is not None else None
+            if isinstance(sb, dict) and sb.get('cat') in (cat, 'all'):
+                total += int(sb.get('amount', 0) or 0)
+        return total
+
     def add_effect(self, name: str, duration: int) -> bool:
         """Apply effect via the status_effects module. Returns True if applied."""
-        from status_effects import apply_effect, DEBUFFS
+        from status_effects import apply_effect
         # Hermes quirk: double haste duration
         if name == 'hasted' and duration > 0:
             if getattr(self, 'quirk_progress', {}).get('hermes_active'):
                 duration = duration * 2
-        # Perseus quirk: halve incoming debuff durations
-        if name in DEBUFFS and duration > 0:
-            if getattr(self, 'quirk_progress', {}).get('perseus_active'):
-                duration = max(1, duration // 2)
+        # (Perseus quirk formerly halved incoming debuff durations here; it is now
+        # a +2 bonus to ALL saving throws, read in apply_debuff_with_save.)
         # Hero passive: Will to Power — immune to fear/charm when below 30% HP.
         if name in ('feared', 'charmed') and 'will_to_power' in self.hero_passives \
                 and self.max_hp > 0 and self.hp <= self.max_hp * 0.3:
@@ -631,14 +715,9 @@ class Player:
         # Hero buff: fear_immune (Ash's berserk chain >= 3) — block fear application.
         if name == 'feared' and self.status_effects.get('fear_immune', 0) > 0:
             return False
-        # Monster-family mastery: fey blessing reduces charm/illusion durations.
-        # Aberration blessing reduces mind-effect durations (charmed/confused).
-        fams = getattr(self, 'unlocked_monster_class_masteries', {})
-        if duration > 0:
-            if name == 'charmed' and fams.get('fey', {}).get('kind') == 'resist_charm':
-                duration = max(1, duration // 2)
-            if name in ('charmed', 'confused') and fams.get('aberration', {}).get('value'):
-                duration = max(1, duration - int(fams['aberration']['value']))
+        # (Fey/aberration family masteries formerly halved charm/confuse durations
+        # here; they are now clean WIS save bonuses read in apply_debuff_with_save,
+        # so the ad-hoc duration math has been retired.)
         # class_acc_quirk mastery: matching ring class extends its signature
         # buff duration. Applies for non-permanent (>0) buffs only — permanent
         # ring statuses already last forever.

@@ -62,16 +62,16 @@ MONSTER_FAMILY_BLESSINGS: dict[str, dict] = {
         'desc': 'Theophany: +1 WIS permanently.',
     },
     'undead': {
-        'kind': 'damage_vs_tag', 'tag': 'undead', 'value': 1,
-        'desc': 'Undead lore: +1 damage vs undead, immune to fear from undead.',
+        'kind': 'save_bonus', 'value': {'cat': 'CON', 'amount': 2},
+        'desc': 'Grave-warden: +2 CON saves — stand firm against undead paralysis and fear.',
     },
     'fey': {
-        'kind': 'resist_charm', 'value': 1,
-        'desc': 'Fey lore: resist charm and illusion effects.',
+        'kind': 'save_bonus', 'value': {'cat': 'WIS', 'amount': 2},
+        'desc': 'Fey lore: +2 WIS saves — your will resists charm and illusion.',
     },
     'aberration': {
-        'kind': 'int_bonus', 'value': 1,
-        'desc': 'Aberrant insight: +1 INT, resist mind effects.',
+        'kind': 'save_bonus', 'value': {'cat': 'WIS', 'amount': 2},
+        'desc': 'Aberrant insight: +2 WIS saves — your mind resists confusion and domination.',
     },
     'construct': {
         'kind': 'damage_vs_tag', 'tag': 'construct', 'value': 1,
@@ -94,7 +94,7 @@ MONSTER_FAMILY_BLESSINGS: dict[str, dict] = {
         'desc': 'Botanist: +1 damage vs plant creatures.',
     },
     'reptile': {
-        'kind': 'damage_vs_tag', 'tag': 'reptile', 'value': 1,
-        'desc': 'Herpetologist: +1 damage vs reptiles.',
+        'kind': 'save_bonus', 'value': {'cat': 'CON', 'amount': 2},
+        'desc': 'Cold-blood lore: +2 CON saves — shrug off petrifying gaze and venom.',
     },
 }

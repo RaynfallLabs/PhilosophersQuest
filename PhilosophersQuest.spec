@@ -51,9 +51,9 @@ a = Analysis(
         'boss_levels', 'pet_system', 'mystery_system',
         'npc_encounters', 'quirk_system', 'container_system',
         'fantasy_ui', 'sound_system', 'level_manager',
-        'status_effects', 'paths',
-        # Standard lib used in except blocks
-        'pickle', 'traceback',
+        'status_effects', 'paths', 'game_log',
+        # Standard lib used in except blocks / logging
+        'pickle', 'traceback', 'logging', 'logging.handlers',
     ],
     hookspath=[],
     hooksconfig={},
