@@ -47,3 +47,24 @@ def _redirect_game_log_to_temp():
             shutil.rmtree(tmpdir, ignore_errors=True)
         except Exception:
             pass
+
+
+@pytest.fixture(autouse=True, scope='session')
+def _isolate_quiz_history():
+    """Point the cross-game quiz-recency file at a throwaway temp dir so the
+    suite never reads or writes the player's real <save_dir>/quiz_history.json.
+    Every quiz that ends persists this file; without the redirect, pytest would
+    seed and clobber the real player's question history."""
+    try:
+        import quiz_engine
+    except Exception:
+        yield
+        return
+    tmpdir = tempfile.mkdtemp(prefix='pq_test_quizhist_')
+    saved = quiz_engine._HISTORY_DIR_OVERRIDE
+    quiz_engine._HISTORY_DIR_OVERRIDE = tmpdir
+    try:
+        yield
+    finally:
+        quiz_engine._HISTORY_DIR_OVERRIDE = saved
+        shutil.rmtree(tmpdir, ignore_errors=True)

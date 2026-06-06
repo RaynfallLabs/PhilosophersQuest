@@ -1117,28 +1117,22 @@ def _place_hidden_chambers(tiles, rooms: List[Room], width: int, height: int,
 # Spawn helpers  (unchanged signatures -- called by level_manager)
 # ---------------------------------------------------------------------------
 
-def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
-                   min_count: int = None, max_count: int = None) -> list:
-    """Spawn monsters in dungeon rooms (skips the first room).
-    Count scales with dungeon level: 3-5 at level 1, up to 10-15 at level 50+."""
-    from monster import Monster
+def _build_spawn_pool(level: int) -> dict:
+    """Bell-curve-weighted pool of monster defs eligible at `level`.
 
+    Each monster has peak_floor/spread/peak_weight from the unified curve
+    (tools/balance/curve.py): common at its peak, rare at the edges, phasing out
+    entirely past it (no hard min/max gates that would create jarring tier
+    transitions). The lore floor (`min_level`) is still a hard physical-
+    plausibility gate (e.g., seal demons can't appear at L1). Bosses, seal
+    demons, and other story-locked entries carry peak_weight = 0 and are placed
+    by level_manager / boss_levels, NOT from this pool.
+    """
     from paths import data_path
     monsters_path = data_path('data', 'monsters.json')
     with open(monsters_path, encoding='utf-8') as f:
         all_defs = json.load(f)
 
-    # Build weighted spawn pool from bell-curve probability per monster.
-    #
-    # Each monster has peak_floor/spread/peak_weight from the unified curve
-    # (tools/balance/curve.py). The bell curve gives every monster a soft,
-    # graduated spawn band — common at its peak, rare at the edges, eventually
-    # phasing out. No hard min/max gates (which would create jarring tier
-    # transitions). The lore floor (`min_level`) is still a hard physical-
-    # plausibility gate (e.g., seal demons can't appear at L1).
-    #
-    # Bosses, seal demons, and other story-locked entries carry peak_weight = 0
-    # and are placed by level_manager / boss_levels, NOT from this pool.
     eligible = {}
     for k, v in all_defs.items():
         peak_weight = v.get('peak_weight', 0)
@@ -1154,91 +1148,143 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
             continue  # vanishingly rare — drop entirely rather than rounding to floor
         weight = max(0.02, peak_weight * bell)
         eligible[k] = {**v, '_spawn_freq': weight}
+    return eligible
+
+
+def _footprint_fits(defn, tx, ty, dungeon, monsters) -> bool:
+    """Validate the FULL monster footprint at (tx, ty), not just the anchor.
+
+    Multi-tile monsters (Fafnir 2x2 in his hand-crafted lair, Tiamat / Surtur /
+    Ymir / Hrungnir 2x2 in deep-floor procedural rooms) need every tile of their
+    NW-anchored footprint to be walkable AND unoccupied, so a Tiamat can't land
+    straddling a wall.
+    """
+    fp = defn.get('footprint', [1, 1])
+    fw, fh = int(fp[0]), int(fp[1])
+    if fw == 1 and fh == 1:
+        return True
+    for ddy in range(fh):
+        for ddx in range(fw):
+            ftx, fty = tx + ddx, ty + ddy
+            if not dungeon.is_walkable(ftx, fty):
+                return False
+            if any(m.x == ftx and m.y == fty for m in monsters):
+                return False
+    return True
+
+
+def _spawn_one_in_room(room, eligible, dungeon, monsters, rng) -> bool:
+    """Place one bell-curve-weighted monster on a free tile inside `room`.
+
+    If it's a pack monster, its extras spawn in the SAME room (the intentional
+    cluster). Appends to `monsters`; returns True if at least the leader landed.
+    """
+    from monster import Monster
+    tiles = list(room.inner_tiles())
+    rng.shuffle(tiles)
+    for tx, ty in tiles:
+        if not dungeon.is_walkable(tx, ty):
+            continue
+        if any(m.x == tx and m.y == ty for m in monsters):
+            continue
+        kind = _weighted_choice(eligible, rng)
+        defn = {**eligible[kind], 'id': kind}
+        # Multi-tile monsters must fit their whole footprint here; otherwise
+        # fall through to the next tile rather than placing half-in-the-wall.
+        if not _footprint_fits(defn, tx, ty, dungeon, monsters):
+            continue
+        monsters.append(Monster(defn, tx, ty))
+
+        # --- Pack spawning: variable extras based on level and frequency ---
+        if defn.get('pack', False):
+            # Low levels: 1-2 extras. Mid: 2-3. Deep: 2-4. High freq = bigger.
+            freq = defn.get('frequency', 3)
+            ml = defn.get('min_level', 1)
+            if ml >= 60:
+                base_min, base_max = 2, 4
+            elif ml >= 30:
+                base_min, base_max = 2, 3
+            else:
+                base_min, base_max = 1, 2
+            if freq >= 5:                 # high-frequency monsters get +1 max
+                base_max += 1
+            if rng.random() < 0.30:       # 30% chance of a smaller pack (variety)
+                base_max = base_min
+            pack_extra = rng.randint(base_min, base_max)
+            for ptx, pty in tiles:
+                if pack_extra <= 0:
+                    break
+                if not dungeon.is_walkable(ptx, pty):
+                    continue
+                if any(m.x == ptx and m.y == pty for m in monsters):
+                    continue
+                monsters.append(Monster({**defn}, ptx, pty))
+                pack_extra -= 1
+        return True
+    return False
+
+
+def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
+                   min_count: int = None, max_count: int = None) -> list:
+    """Place a fixed COUNT of monsters, each in a randomly-chosen room.
+
+    This intentionally LUMPS — it is the right tool for targeted clusters
+    (zoo / graveyard / barracks / den / lair extras) and one-off wandering
+    spawns. For whole-floor population use populate_floor() instead, which
+    spreads a baseline across every room. Skips the first room.
+    """
+    eligible = _build_spawn_pool(level)
     if not eligible:
         return []
-
     rng = random.Random()
     if min_count is None:
         min_count = min(4 + level // 10, 8)
     if max_count is None:
         max_count = min(6 + level // 5, 14)
-    count    = rng.randint(min_count, max_count)
+    count = rng.randint(min_count, max_count)
     monsters = []
     spawn_rooms = rooms[1:]
-
-    def _footprint_fits(defn, tx, ty):
-        """Validate the FULL monster footprint at (tx, ty), not just the anchor.
-
-        Multi-tile monsters (Fafnir 2x2 in his hand-crafted lair, Tiamat /
-        Surtur / Ymir / Hrungnir 2x2 in deep-floor procedural rooms) need
-        every tile of their NW-anchored footprint to be walkable AND
-        unoccupied. Pre-fix the spawn picker checked only the anchor, so
-        a Tiamat could land straddling a wall.
-        """
-        fp = defn.get('footprint', [1, 1])
-        fw, fh = int(fp[0]), int(fp[1])
-        if fw == 1 and fh == 1:
-            return True
-        for ddy in range(fh):
-            for ddx in range(fw):
-                ftx, fty = tx + ddx, ty + ddy
-                if not dungeon.is_walkable(ftx, fty):
-                    return False
-                if any(m.x == ftx and m.y == fty for m in monsters):
-                    return False
-        return True
-
     for _ in range(count):
         if not spawn_rooms:
             break
-        room  = rng.choice(spawn_rooms)
-        tiles = list(room.inner_tiles())
-        rng.shuffle(tiles)
+        _spawn_one_in_room(rng.choice(spawn_rooms), eligible, dungeon, monsters, rng)
+    return monsters
 
-        for tx, ty in tiles:
-            if not dungeon.is_walkable(tx, ty):
-                continue
-            if any(m.x == tx and m.y == ty for m in monsters):
-                continue
-            kind = _weighted_choice(eligible, rng)
-            defn = {**eligible[kind], 'id': kind}
-            # If the picked monster is multi-tile, validate the FULL
-            # footprint. If it doesn't fit at this anchor, fall through
-            # to the next tile rather than placing it half-in-the-wall.
-            if not _footprint_fits(defn, tx, ty):
-                continue
-            monsters.append(Monster(defn, tx, ty))
 
-            # --- Pack spawning: variable extras based on level and frequency ---
-            if defn.get('pack', False):
-                # Low levels: 1-2 extras. Mid: 2-3. Deep: 2-4. High freq = bigger packs.
-                freq = defn.get('frequency', 3)
-                ml = defn.get('min_level', 1)
-                if ml >= 60:
-                    base_min, base_max = 2, 4
-                elif ml >= 30:
-                    base_min, base_max = 2, 3
-                else:
-                    base_min, base_max = 1, 2
-                # High frequency monsters get +1 max pack size
-                if freq >= 5:
-                    base_max += 1
-                # 30% chance of a smaller pack (variety)
-                if rng.random() < 0.30:
-                    base_max = base_min
-                pack_extra = rng.randint(base_min, base_max)
-                for ptx, pty in tiles:
-                    if pack_extra <= 0:
-                        break
-                    if not dungeon.is_walkable(ptx, pty):
-                        continue
-                    if any(m.x == ptx and m.y == pty for m in monsters):
-                        continue
-                    monsters.append(Monster({**defn}, ptx, pty))
-                    pack_extra -= 1
+def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
+                   occupancy: float = None) -> list:
+    """Populate a whole floor by rolling EVERY room for occupancy.
 
-            break
+    The old approach rolled a small global count and let each monster pick a
+    room at random — with far more rooms than monsters, most rooms came up empty
+    and the rest got lumped (the "all the monsters are in one corner" bug).
+    NetHack instead rolls each room independently, so a baseline spreads across
+    the level; packs / dens / zoos then cluster intentionally on top.
 
+    `occupancy` is the per-room probability of a baseline monster (the caller's
+    depth `density`, ~0.50 shallow → 0.95 deep). It is clamped so shallow floors
+    never feel barren and deep floors still leave a few empty rooms for breathing
+    space. Skips the first room.
+    """
+    eligible = _build_spawn_pool(level)
+    if not eligible:
+        return []
+    rng = random.Random()
+    monsters = []
+    spawn_rooms = rooms[1:]
+    if not spawn_rooms:
+        return monsters
+    if occupancy is None:
+        occupancy = min(0.50 + level / 130, 0.95)
+    per_room_p = max(0.45, min(0.92, occupancy))
+    for room in spawn_rooms:
+        if rng.random() < per_room_p:
+            _spawn_one_in_room(room, eligible, dungeon, monsters, rng)
+    # Never return a completely empty floor (tiny maps / unlucky rolls).
+    if not monsters:
+        for room in spawn_rooms:
+            if _spawn_one_in_room(room, eligible, dungeon, monsters, rng):
+                break
     return monsters
 
 

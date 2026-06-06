@@ -138,18 +138,24 @@ def test_f85_dungeon_has_walkable_2x2_anchors():
 # ---------------------------------------------------------------------------
 
 def test_spawn_picker_validates_full_footprint():
-    """The new _footprint_fits helper in spawn_monsters must reject any
-    anchor where the full footprint doesn't land on walkable tiles."""
+    """The _footprint_fits helper must reject any anchor where the full
+    footprint doesn't land on walkable tiles, and the placement path must
+    consult it BEFORE constructing a Monster. Since the 2026-06-06 per-room
+    refactor, the check lives in the shared _spawn_one_in_room helper used by
+    both spawn_monsters (targeted clusters) and populate_floor (whole floor)."""
     src = (ROOT / "src" / "dungeon.py").read_text(encoding='utf-8')
-    # Verify the function source contains the new helper
-    assert "_footprint_fits" in src, \
-        "spawn_monsters must define _footprint_fits to check full footprint"
+    assert "def _footprint_fits" in src, \
+        "dungeon must define _footprint_fits to check full footprint"
     assert "footprint" in src
-    # And the caller must consult it before placing the monster
-    spawn_idx = src.find("def spawn_monsters")
-    spawn_body = src[spawn_idx:spawn_idx + 5000]
-    assert "_footprint_fits(defn, tx, ty)" in spawn_body, \
-        "spawn_monsters must call _footprint_fits before Monster() construction"
+    # The shared placement helper must call it before any Monster() construction.
+    place_idx = src.find("def _spawn_one_in_room")
+    assert place_idx != -1, "expected the shared _spawn_one_in_room placement helper"
+    place_body = src[place_idx:place_idx + 5000]
+    fit_idx = place_body.find("_footprint_fits(")
+    mk_idx = place_body.find("Monster(")
+    assert fit_idx != -1, "placement helper must call _footprint_fits"
+    assert fit_idx < mk_idx, \
+        "_footprint_fits must be checked before Monster() construction"
 
 
 # ---------------------------------------------------------------------------

@@ -1073,12 +1073,57 @@ class Player:
 
     # --- Inventory ---
 
+    def knows_item_type(self, item) -> bool:
+        """True if the player has already identified this item's TYPE. Once you
+        know a 'Potion of Healing', you know EVERY Potion of Healing — the same
+        predicate the name-resolver uses (id in known_item_ids, or the mastery
+        class in known_class_ids for unique/variant families)."""
+        if item is None:
+            return False
+        if getattr(item, 'id', None) in getattr(self, 'known_item_ids', ()):
+            return True
+        known_classes = getattr(self, 'known_class_ids', None)
+        if known_classes:
+            try:
+                from class_masteries import get_mastery_class
+                return get_mastery_class(item) in known_classes
+            except Exception:
+                return False
+        return False
+
+    def reconcile_item_identification(self, item) -> None:
+        """Stamp a freshly-acquired instance's id_level / buc_known from the
+        player's GLOBAL type-knowledge, so 'once you know it, you know it' holds
+        for items that spawn or are picked up AFTER the type was identified.
+
+        Without this, a new potion of an already-known type arrived at id_level 0
+        — showing its true name (name resolution checks the global set) yet
+        marked '(0/5)' and refusing to stack. Mirrors the corpse precedent
+        (corpse_id_level_known) and the cap rule in _propagate_identification:
+        uniques cap at id_level 4 (so the chain-5 mastery quiz must still be
+        earned), commons reveal fully at 5. No-op for unknown types or items
+        without an id_level."""
+        if item is None or not hasattr(item, 'id_level'):
+            return
+        if not self.knows_item_type(item):
+            return
+        cap = 4 if getattr(item, 'is_unique', False) else 5
+        if int(getattr(item, 'id_level', 0)) < cap:
+            item.id_level = cap
+        if hasattr(item, 'buc_known'):
+            item.buc_known = True
+
     def add_to_inventory(self, item) -> bool:
         from items import Item
         count = getattr(item, 'count', 1)
         item_weight = getattr(item, 'weight', 0) * count
         if item_weight + self.get_current_weight() > self.get_carry_limit():
             return False
+        # Once you KNOW an item type, you know every copy: stamp this instance's
+        # identification from the global known-type set BEFORE stacking, so a
+        # freshly-acquired known-type item never arrives as a mysterious "(0/5)"
+        # and merges with the identified stack when its underlying BUC matches.
+        self.reconcile_item_identification(item)
         # Stack identical items for stackable types (same id).
         # BUC rule: only merge stacks whose UNDERLYING buc value matches —
         # whether or not the player has identified it yet. Previously the

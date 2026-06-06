@@ -11,6 +11,8 @@ ERROR_LOG.txt
 ERROR_LOG.txt.*
 save_*.pkl
 save_*.pkl.tmp
+quiz_history.json
+quiz_history.json.tmp
 
 # C extensions
 *.so

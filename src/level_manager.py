@@ -55,20 +55,18 @@ class LevelManager:
             self.max_level_reached = max(self.max_level_reached, level_num)
             return dungeon, monsters, items
 
-        from dungeon import generate_dungeon, spawn_monsters, spawn_items
+        from dungeon import generate_dungeon, spawn_items, populate_floor
 
         dungeon = generate_dungeon(80, 50, level_num)
 
-        # Monster count scales with ROOM COUNT and depth (2026-05-19 density rebuild).
-        # Density grows from 0.50 mob/room at L1 to 0.95 at L75+. Base count is
-        # 70-110% of (rooms_excluding_start * density). Pack-spawning adds extras
-        # on top, so on heavy-pack floors total mobs may exceed max_m here.
-        n_rooms_spawnable = max(1, len(dungeon.rooms) - 1)  # exclude start room
+        # Monster spread scales with depth (2026-05-19 density rebuild;
+        # 2026-06-06 per-room pass). `density` grows from 0.50 at L1 to 0.95 at
+        # L75+ and is the PER-ROOM probability of a baseline monster --
+        # populate_floor rolls every room, so the population spreads across the
+        # whole floor instead of lumping in one corner. Packs and den/zoo extras
+        # cluster intentionally on top.
         density = min(0.50 + level_num / 130, 0.95)
-        target = max(3, int(n_rooms_spawnable * density))
-        min_m = max(3, int(target * 0.70))
-        max_m = max(5, min(int(target * 1.10), 20))
-        monsters = spawn_monsters(dungeon.rooms, level_num, dungeon, min_m, max_m)
+        monsters = populate_floor(dungeon.rooms, level_num, dungeon, occupancy=density)
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)
 

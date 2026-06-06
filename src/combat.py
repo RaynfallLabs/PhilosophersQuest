@@ -662,12 +662,20 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         family_dmg_bonus = 0
         fam_masteries = getattr(player, 'unlocked_monster_class_masteries', {}) or {}
         for _fb in fam_masteries.values():
-            _kind = _fb.get('kind')
-            _tag = _fb.get('tag', '')
-            _val = int(_fb.get('value', 0) or 0)
-            if not _tag or not _val:
+            # Only damage_vs_tag blessings add flat combat damage. Other kinds
+            # must be skipped BEFORE touching `value`: save_bonus stores a
+            # {cat, amount} dict (int() would raise), and resist_*/tohit_vs_tag
+            # are applied elsewhere. (Regression guard: save-bonus blessings.)
+            if _fb.get('kind') != 'damage_vs_tag':
                 continue
-            if _kind == 'damage_vs_tag' and _tag_match(monster, _tag):
+            _tag = _fb.get('tag', '')
+            if not _tag or not _tag_match(monster, _tag):
+                continue
+            try:
+                _val = int(_fb.get('value', 0) or 0)
+            except (TypeError, ValueError):
+                continue
+            if _val:
                 family_dmg_bonus += _val
 
         # round (not int-truncate): chain damage gradient must survive at

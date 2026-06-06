@@ -522,19 +522,39 @@ def _find_recipe_for_ingredient(ingredient) -> dict | None:
 
 
 def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int = 5):
-    """Legacy entry point: cook a single ingredient by finding its canonical
-    recipe and delegating to cook_compound_recipe.
+    """Cook the ONE selected ingredient (the Single tab).
 
-    Per the 2026-05-31 redesign, all cooking flows through recipes.json. This
-    function preserves the old call signature so the cook menu still works
-    when the player picks an ingredient — it just resolves the right recipe
-    behind the scenes.
+    The caller (`Game._cook_item`) has ALREADY removed that single ingredient
+    from inventory, so this consumes nothing further — it just runs the cooking
+    quiz and applies the canonical recipe's tier outcome.
+
+    BUGFIX 2026-06-04: previously this delegated to `cook_compound_recipe`, which
+    RE-consumed the canonical recipe's full ingredient list (e.g.
+    basic_monster_stew lists assorted_monster_parts x5). Combined with the
+    caller's own removal, cooking a single part could devour an entire stack.
+    Single-tab cooking now costs exactly one ingredient — the one you picked.
     """
     recipe = _find_recipe_for_ingredient(ingredient)
     if recipe is None:
         on_complete([f"You don't know what to do with the {ingredient.name}."])
         return
-    cook_compound_recipe(player, recipe, player.inventory, quiz_engine, on_complete)
+
+    def _callback(result):
+        tier = min(5, getattr(result, 'score', 0))
+        messages = _apply_tier_outcome(player, recipe, tier)
+        on_complete(messages)
+
+    quiz_engine.start_quiz(
+        mode='escalator_chain',
+        subject='cooking',
+        tier=1,
+        callback=_callback,
+        max_chain=max_chain,
+        wisdom=player.WIS,
+        timer_modifier=player.get_quiz_timer_modifier(),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
+        base_seconds=player.get_quiz_timer('cooking'),
+    )
 
 
 def _apply_bonus(player, recipe) -> list[str]:

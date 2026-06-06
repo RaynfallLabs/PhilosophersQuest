@@ -334,3 +334,155 @@ def test_all_state_constants_are_imported_where_used():
         "modules reference STATE_ constants they never imported "
         "(NameError at runtime):\n" + "\n".join(problems)
     )
+
+
+# ===========================================================================
+# Regression found during the v2.0.3 play-test -- and CAUGHT BY the new error
+# logging (the game recovered instead of crashing): combat.player_attack int()'d
+# EVERY monster-family mastery's `value` before checking its `kind`, but
+# save_bonus blessings store value as a {cat, amount} dict -> TypeError mid-fight
+# whenever the player had unlocked a fey/aberration/undead/reptile mastery.
+# ===========================================================================
+
+class _FakeResult:
+    def __init__(self, score):
+        self.score = score
+
+
+class _FakeEngine:
+    def start_quiz(self, **kwargs):
+        self._cb = kwargs['callback']
+
+    def fire(self, score):
+        self._cb(_FakeResult(score))
+
+
+def test_combat_with_save_bonus_family_mastery_does_not_crash():
+    import combat
+    from player import Player
+    from monster import Monster
+    p = Player()
+    # fey-family save_bonus blessing: value is a DICT -- the exact crash trigger.
+    p.unlocked_monster_class_masteries = {
+        'fey': {'kind': 'save_bonus', 'value': {'cat': 'WIS', 'amount': 2}, 'desc': '_'}
+    }
+    m = Monster({'id': 'pixie', 'name': 'pixie', 'symbol': 'f',
+                 'color': [200, 100, 200], 'hp': 30, 'min_level': 1,
+                 'damage': '1d2', 'tags': ['fey']}, 0, 0)
+    out = {}
+    eng = _FakeEngine()
+    combat.player_attack(
+        p, m, eng, lambda damage, killed, chain, **kw: out.update(damage=damage))
+    eng.fire(3)                      # must NOT raise TypeError
+    assert out.get('damage', 0) >= 1
+
+
+def test_combat_damage_vs_tag_family_bonus_still_applies():
+    """The fix must keep the legit damage_vs_tag flat bonus working."""
+    import random
+    import combat
+    from player import Player
+    from monster import Monster
+
+    def run(mastery):
+        p = Player()
+        p.weapon = None
+        p.unlocked_monster_class_masteries = mastery or {}
+        m = Monster({'id': 'wyrm', 'name': 'wyrm', 'symbol': 'D',
+                     'color': [200, 50, 50], 'hp': 9999, 'min_level': 1,
+                     'damage': '1d2', 'tags': ['dragon']}, 0, 0)
+        out = {}
+        eng = _FakeEngine()
+        combat.player_attack(
+            p, m, eng, lambda damage, killed, chain, **kw: out.update(damage=damage))
+        random.seed(20260604)        # deterministic rolls at the damage step
+        eng.fire(3)
+        return out['damage']
+
+    base = run(None)
+    boosted = run({'dragon': {'kind': 'damage_vs_tag', 'tag': 'dragon',
+                              'value': 5, 'desc': '_'}})
+    assert boosted == base + 5
+
+
+# ===========================================================================
+# v2.0.4 play-test bugs:
+#  - Cooking a SINGLE ingredient devoured the whole stack (the Single tab
+#    pre-removed one, then re-consumed the canonical recipe's full list).
+#  - Magic-missile WAND felt broken: it scales missile COUNT with the science
+#    chain, but a low chain (1) only fires 1 weak missile. Verify it really does
+#    scale through the full _confirm_wand_target -> _apply_wand_effect path.
+# ===========================================================================
+
+def _headless_game(name):
+    import pygame as _pg
+    from main import Game
+    return Game(_pg.display.set_mode((1, 1)), player_name=name)
+
+
+def test_single_cook_consumes_exactly_one_ingredient():
+    from food_system import load_ingredient_for
+    g = _headless_game('cooktest')
+    g.player.inventory = []
+    for _ in range(5):
+        g.player.add_to_inventory(load_ingredient_for('assorted_monster_parts'))
+
+    def total_assorted():
+        return sum(getattr(i, 'count', 1) for i in g.player.inventory
+                   if getattr(i, 'id', '') == 'assorted_monster_parts')
+
+    assert total_assorted() == 5
+    ing = next(i for i in g.player.inventory if i.id == 'assorted_monster_parts')
+
+    cap = {}
+    g.quiz_engine.start_quiz = lambda **kw: cap.__setitem__('cb', kw['callback'])
+    g._advance_turn = lambda *a, **k: None
+    g._cook_item(ing)
+
+    class R:
+        score = 3
+    cap['cb'](R())
+    consumed = 5 - total_assorted()
+    assert consumed == 1, f'single cook consumed {consumed} ingredients, expected 1'
+
+
+def test_magic_missile_wand_scales_missiles_with_chain():
+    from items import load_items
+    from monster import Monster
+    import combat
+    g = _headless_game('mmtest')
+    g.player.INT = 14
+    wand = next(w for w in load_items('wand') if w.id == 'wand_of_magic_missile')
+    wand.charges = 99
+    mx, my = g.player.x + 1, g.player.y
+    _orig_los = combat._line_of_sight
+    combat._line_of_sight = lambda *a, **k: True
+    g._advance_turn = lambda *a, **k: None
+
+    def fire(chain):
+        t = Monster({'id': 'd', 'name': 'd', 'symbol': 'd', 'color': [1, 1, 1],
+                     'hp': 99999, 'min_level': 1, 'damage': '1d2'}, mx, my)
+        g.monsters = [t]
+        g.visible = {(mx, my), (g.player.x, g.player.y)}
+        g.target_cursor_x, g.target_cursor_y = mx, my
+        g._pending_wand = wand
+        cap = {}
+        g.quiz_engine.start_quiz = lambda **kw: cap.__setitem__('cb', kw['callback'])
+        g._confirm_wand_target()
+
+        class R:
+            success = True
+        R.score = chain
+        before = t.hp
+        cap['cb'](R())
+        return before - t.hp
+
+    try:
+        d1 = sum(fire(1) for _ in range(8))
+        d5 = sum(fire(5) for _ in range(8))
+    finally:
+        combat._line_of_sight = _orig_los
+
+    assert d1 > 0
+    # 5-chain fires 5x the missiles -> far more damage than a 1-chain bolt
+    assert d5 > d1 * 3, f'chain-5 damage ({d5}) should far exceed chain-1 ({d1})'

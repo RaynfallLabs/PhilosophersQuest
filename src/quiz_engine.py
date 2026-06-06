@@ -32,6 +32,21 @@ class QuizResult:
 
 _QUESTIONS_DIR = data_path('data', 'questions')
 
+_CROSS_GAME_RECENT_CAP = 30          # questions remembered per (subject, tier)
+_HISTORY_DIR_OVERRIDE = None         # tests point this at a temp dir
+
+
+def _quiz_history_path() -> str:
+    """Path to the cross-game question-recency file.
+
+    Lives in save_dir() so it is shared across save slots AND new games — the
+    per-save deck pickle can't carry recency into a fresh game. Tests override
+    the directory via `_HISTORY_DIR_OVERRIDE`.
+    """
+    from paths import save_dir
+    base = _HISTORY_DIR_OVERRIDE if _HISTORY_DIR_OVERRIDE is not None else save_dir()
+    return os.path.join(base, 'quiz_history.json')
+
 
 class QuizEngine:
     RESULT_DISPLAY_TIME = 0.8       # seconds to show correct answer feedback
@@ -47,6 +62,12 @@ class QuizEngine:
         self._deck_idx: dict[tuple, int]  = {}   # (subject, tier) -> next position in deck
         self._last_q:   dict[tuple, dict | None] = {}  # (subject, tier) -> last question shown
         self._seen:     dict[tuple, set]  = {}   # (subject, tier) -> set of seen question texts
+        # Cross-GAME anti-repeat memory: the last N question texts shown per
+        # (subject, tier), persisted to disk so a NEW game deliberately avoids
+        # what recent games already asked. The deck above only prevents repeats
+        # WITHIN one game; without this a fresh game re-rolls from scratch and by
+        # pure chance re-shows recent openers — which reads as "not random".
+        self._recent:   dict[tuple, list] = {}   # (subject, tier) -> recent question texts
 
         self.state = QuizState.IDLE
         self.mode: QuizMode | None = None
@@ -79,6 +100,11 @@ class QuizEngine:
         self.celebrating: bool = False
         self.celebration_text: str = ''
         self.celebration_timer: float = 0.0
+
+        # Seed `_seen` from the persisted cross-game history so the first deck
+        # built for each (subject, tier) pushes recently-shown questions to the
+        # back. Fully guarded — a missing/corrupt file is non-fatal.
+        self._load_cross_game_history()
 
     # --- Public API ---
 
@@ -288,6 +314,11 @@ class QuizEngine:
         if deck_key not in self._seen:
             self._seen[deck_key] = set()
         self._seen[deck_key].add(self.current_question['question'])
+        # ...and in the bounded cross-game recency list (persisted on quiz end).
+        _rec = self._recent.setdefault(deck_key, [])
+        _rec.append(self.current_question['question'])
+        if len(_rec) > _CROSS_GAME_RECENT_CAP * 2:
+            del _rec[:-_CROSS_GAME_RECENT_CAP]
 
         # Persist deck position immediately so _end() doesn't need to duplicate it.
         if deck_key in self._decks:
@@ -417,8 +448,64 @@ class QuizEngine:
         self._last_q   = state.get('last_q', {})
         self._seen     = state.get('seen', {})
 
+    def _load_cross_game_history(self):
+        """Load the persisted cross-game recency file and seed `_seen` so the
+        first deck built for each (subject, tier) avoids recently-shown
+        questions. Non-fatal on any error (missing file / bad JSON)."""
+        try:
+            path = _quiz_history_path()
+            if not os.path.exists(path):
+                return
+            with open(path, encoding='utf-8') as f:
+                raw = json.load(f)
+        except (OSError, ValueError):
+            return
+        if not isinstance(raw, dict):
+            return
+        for skey, texts in raw.items():
+            if not isinstance(texts, list):
+                continue
+            subject, _, tier_s = skey.rpartition('|')
+            if not subject or not tier_s.isdigit():
+                continue
+            recent = [t for t in texts if isinstance(t, str)][-_CROSS_GAME_RECENT_CAP:]
+            if not recent:
+                continue
+            key = (subject, int(tier_s))
+            self._recent[key] = recent
+            self._seen.setdefault(key, set()).update(recent)
+
+    def _persist_cross_game_history(self):
+        """Atomically write the last N shown questions per (subject, tier) so a
+        future NEW game can avoid them. Non-fatal on any error — this is a UX
+        nicety, never gameplay-critical."""
+        if not self._recent:
+            return
+        try:
+            out = {}
+            for (subject, tier), texts in self._recent.items():
+                # de-dupe keeping the most-recent occurrence, then cap
+                seen_local = set()
+                trimmed = []
+                for t in reversed(texts):
+                    if t in seen_local:
+                        continue
+                    seen_local.add(t)
+                    trimmed.append(t)
+                    if len(trimmed) >= _CROSS_GAME_RECENT_CAP:
+                        break
+                out[f'{subject}|{tier}'] = list(reversed(trimmed))
+            path = _quiz_history_path()
+            tmp = path + '.tmp'
+            with open(tmp, 'w', encoding='utf-8') as f:
+                json.dump(out, f)
+            os.replace(tmp, path)
+        except OSError:
+            return
+
     def _end(self, success: bool):
         self.state = QuizState.COMPLETE
+        self._persist_cross_game_history()
         result = QuizResult(
             success=success,
             score=self.score,

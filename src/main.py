@@ -756,24 +756,35 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _migrate_buc_item = staticmethod(migrate_buc_item)
 
     def _migrate_buc_all(self, state: dict):
-        """Walk every item in inventory, equipment, ground, and stored levels."""
+        """Walk every item in inventory, equipment, ground, and stored levels.
+
+        OWNED items also get identification reconciled: once a type is known,
+        every copy the player holds should reflect it. This heals pre-2026-06-06
+        saves where a known-type item could linger at id_level 0 ("(0/5)")
+        because nothing stamped it from known_item_ids at acquisition time."""
         migrate = self._migrate_buc_item
+        reconcile = self.player.reconcile_item_identification
+
+        def owned(item):
+            migrate(item)
+            reconcile(item)
+
         # Player inventory
         for item in getattr(self.player, 'inventory', []):
-            migrate(item)
+            owned(item)
         # Equipped slots
         for slot_item in [self.player.weapon, self.player.ranged_weapon, self.player.shield]:
             if slot_item:
-                migrate(slot_item)
+                owned(slot_item)
         for s in getattr(self.player, 'armor_slots', []):
             if s:
-                migrate(s)
+                owned(s)
         for s in getattr(self.player, 'accessory_slots', []):
             if s:
-                migrate(s)
+                owned(s)
         amulet = getattr(self.player, 'amulet_slot', None)
         if amulet:
-            migrate(amulet)
+            owned(amulet)
         # Ground items
         for item in state.get('ground_items', []):
             migrate(item)

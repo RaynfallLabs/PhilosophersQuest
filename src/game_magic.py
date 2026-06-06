@@ -525,17 +525,20 @@ class MagicMixin:
                     self._on_monster_killed(target)
 
             elif effect == 'magic_missile':
-                # Irresistible: bypasses all resistances. Missile count scales with
-                # the SCIENCE CHAIN achieved when zapped (1-5, set in
+                # Irresistible: bypasses all resistances. Missile COUNT = the
+                # science CHAIN achieved when zapped (1-5, set in
                 # _confirm_wand_target); falls back to wand tier for any non-chain
-                # invocation. Answer well -> a barrage.
+                # invocation. Each missile is INT-scaled (like the magic-missile
+                # SPELL) with a flat base floor, so a single low-chain bolt still
+                # lands a real hit and a full 5-chain is a serious barrage.
                 _mm_chain = getattr(self, '_wand_chain', 0)
                 missiles = max(1, _mm_chain if _mm_chain else wand.quiz_tier)
                 total_dmg = 0
                 for _ in range(missiles):
                     if not target.alive:
                         break
-                    dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 5, wand.quiz_tier)
+                    base = (roll(wand.power) if wand.power else 4) + 2
+                    dmg = self._int_scaled_damage(base)
                     target.hp = max(0, target.hp - dmg)
                     if target.hp == 0:
                         target.alive = False

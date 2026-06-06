@@ -10,6 +10,78 @@ _SPRITE_DIR       = data_path('assets', 'tiles', 'monsters')
 _ITEM_SPRITE_DIR  = data_path('assets', 'tiles', 'items')
 _ENV_SPRITE_DIR   = data_path('assets', 'tiles', 'env')
 
+
+# --- Item sprite path resolution -------------------------------------------
+# Weapons/armor are instanced as "<material>_<template>" (e.g. "iron_maul"), and
+# each combo normally ships its own art file. Some legitimate materials never
+# got art generated (e.g. "tin" — a real weapon material), so those items fell
+# back to a bare ASCII glyph ("("). When a per-material sprite is missing, fall
+# back to a representative SAME-BASE sprite so the item still shows its weapon /
+# armor icon instead of a glyph. Kept as module-level pure-filesystem helpers
+# (no pygame) so they are unit-testable headlessly.
+_MATERIAL_IDS = None                                  # sorted longest-first
+_BASE_SPRITE_FALLBACK: dict[str, 'str | None'] = {}   # base -> representative file
+
+
+def _material_ids() -> list:
+    global _MATERIAL_IDS
+    if _MATERIAL_IDS is None:
+        ids: set = set()
+        try:
+            from items import load_materials
+            for cat in ('weapons', 'armor'):
+                ids.update(load_materials(cat).keys())
+        except Exception:
+            ids = set()
+        # longest first so "cold_iron_maul" matches "cold_iron", not "iron"
+        _MATERIAL_IDS = sorted(ids, key=len, reverse=True)
+    return _MATERIAL_IDS
+
+
+def _representative_base_sprite(base: str) -> 'str | None':
+    """An existing `<somematerial>_<base>.png` to stand in when a specific
+    material's own art is missing. Prefers iron/steel, else first available."""
+    if base in _BASE_SPRITE_FALLBACK:
+        return _BASE_SPRITE_FALLBACK[base]
+    chosen = None
+    for pref in ('iron', 'steel'):
+        cand = os.path.join(_ITEM_SPRITE_DIR, f"{pref}_{base}.png")
+        if os.path.exists(cand):
+            chosen = cand
+            break
+    if chosen is None:
+        try:
+            suffix = f"_{base}.png"
+            names = sorted(n for n in os.listdir(_ITEM_SPRITE_DIR)
+                           if n.endswith(suffix))
+        except OSError:
+            names = []
+        if names:
+            chosen = os.path.join(_ITEM_SPRITE_DIR, names[0])
+    _BASE_SPRITE_FALLBACK[base] = chosen
+    return chosen
+
+
+def _resolve_item_sprite_path(item_id: str) -> 'str | None':
+    """Filesystem path of the sprite to draw for `item_id`, or None.
+
+    Order: exact `<id>.png`; a generic corpse sprite for `corpse_*`; then, for
+    material items whose per-material art is missing (e.g. "tin_maul"), a
+    representative same-base sprite so the icon shows the weapon, not a glyph.
+    """
+    if not item_id:
+        return None
+    path = os.path.join(_ITEM_SPRITE_DIR, f"{item_id}.png")
+    if os.path.exists(path):
+        return path
+    if item_id.startswith('corpse_'):
+        corpse = os.path.join(_ITEM_SPRITE_DIR, "corpse.png")
+        return corpse if os.path.exists(corpse) else None
+    for mat in _material_ids():
+        if item_id.startswith(mat + '_'):
+            return _representative_base_sprite(item_id[len(mat) + 1:])
+    return None
+
 # Map tile constants to sprite filenames (SECRET_DOOR looks like WALL)
 _TILE_SPRITE = {
     WALL:        'wall',
@@ -144,10 +216,8 @@ class Renderer:
     def _get_item_sprite(self, item_id: str) -> 'pygame.Surface | None':
         if item_id in self._item_sprite_cache:
             return self._item_sprite_cache[item_id]
-        path = os.path.join(_ITEM_SPRITE_DIR, f"{item_id}.png")
-        if not os.path.exists(path) and item_id.startswith('corpse_'):
-            path = os.path.join(_ITEM_SPRITE_DIR, "corpse.png")
-        if os.path.exists(path):
+        path = _resolve_item_sprite_path(item_id)
+        if path:
             raw  = pygame.image.load(path).convert_alpha()
             # smoothscale (bilinear) instead of scale (nearest-neighbour)
             # so high-res illustrations downscale cleanly to the tile
