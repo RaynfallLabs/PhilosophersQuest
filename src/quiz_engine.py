@@ -431,22 +431,29 @@ class QuizEngine:
         return unseen + rest
 
     def get_deck_state(self) -> dict:
-        """Return serializable deck state for save system."""
-        return {
-            'decks':    self._decks,
-            'deck_idx': self._deck_idx,
-            'last_q':   self._last_q,
-            'seen':     self._seen,
-        }
+        """Serializable quiz state for the save system.
+
+        We persist ONLY the seen-set (question texts), NOT the shuffled decks.
+        Pickling the decks' question OBJECTS made saves go STALE: a bank update
+        (new or rewritten questions) never reached a loaded game, because restore
+        re-installed the old pickled questions and start_quiz reused that deck
+        instead of rebuilding from the current JSON. Seen-only keeps anti-repeat
+        for unchanged questions while letting bank updates always take effect.
+        """
+        return {'seen': self._seen}
 
     def restore_deck_state(self, state: dict):
-        """Restore deck state from a previously saved dict."""
+        """Restore ONLY the seen-set; decks rebuild from the current question
+        files on the next start_quiz, so bank updates always take effect on load
+        (and old saves stop serving stale, pre-update questions)."""
         if not state:
             return
-        self._decks    = state.get('decks', {})
-        self._deck_idx = state.get('deck_idx', {})
-        self._last_q   = state.get('last_q', {})
         self._seen     = state.get('seen', {})
+        # decks/deck_idx/last_q are intentionally NOT restored — re-installing
+        # the pickled question objects is exactly what served stale questions.
+        self._decks    = {}
+        self._deck_idx = {}
+        self._last_q   = {}
 
     def _load_cross_game_history(self):
         """Load the persisted cross-game recency file and seed `_seen` so the
