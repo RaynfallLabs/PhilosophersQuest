@@ -1,0 +1,436 @@
+{
+  "remove": [
+    "The North American Model of Wildlife Conservation, codi",
+    "A scholar argues: 'Hunters who pay excis",
+    "Scientists at Colossal Biosciences propo",
+    "In 2005, ecologist Josh Donlan and colle",
+    "Pyrenean ibex (bucardo) was the only spe",
+    "John Muir helped found the Sierra Club a",
+    "The North American Model of Wildlife Conservation evolv",
+    "A scholar argues: 'The North American Mo",
+    "Peter Singer's *Animal Liberation* (1975",
+    "Aldo Leopold ended *A Sand County Almana",
+    "A scholar argues: 'Pure-preservation con",
+    "Christian theological tradition treats h",
+    "Some critics argue the ESA listing proce",
+    "A scholar argues: 'Aquinas wrote that hu",
+    "The Aleutian sea otter population droppe",
+    "The Makah of Washington State retain a t",
+    "Inupiat communities in Alaska hunt bowhe",
+    "Reef shark populations have been listed ",
+    "Theodore Roosevelt is well known for ter",
+    "Hammerhead shark fins are highly valued ",
+    "Tropical coral reefs cover less than 1% ",
+    "Critics of the resumed Makah whale hunt ",
+    "The North American Model of Wildlife Conservation rests on seven princ",
+    "A scholar argues: 'Animal welfare matter",
+    "A forester writes: 'A forest left untouc",
+    "An animal-rights philosopher argues: 'Sp",
+    "Aquinas (Summa Theologiae IIa-IIae) hold",
+    "Aristotle (History of Animals, Politics ",
+    "Aldo Leopold's land ethic, in 'A Sand Co",
+    "Peter Singer's animal-liberation argumen",
+    "Hamilton's rule rb > c states altruism e",
+    "Darwin's 1860 letter on Ichneumonidae is",
+    "Conservation policy on pollinators somet",
+    "Sericulture has been a partnership betwe",
+    "The North American Model of Wildlife Conservation cente",
+    "Aldo Leopold's A Sand County Almanac (19",
+    "The UK Animal Welfare (Sentience) Act 20",
+    "A teacher argues: 'We should treat inver",
+    "Aldo Leopold's 1949 book A Sand County A",
+    "Aldo Leopold's land ethic (1949) extends",
+    "The North American Model of Wildlife Conservation rests on Roosevelt-e",
+    "Aristotle wrote of 'every thing in its p",
+    "Theodore Roosevelt's North American Mode",
+    "A bioethicist argues: 'The North America",
+    "The harlequin frogs (Atelopus) of the Co",
+    "The Western tradition treats animals as "
+  ],
+  "add": [
+    {
+      "tier": 1,
+      "question": "A pistol shrimp snaps one claw so fast it fires a bubble that flashes hotter than the sun and stuns its prey. What does the snap make?",
+      "answer": "A bubble that flashes hot with a bang",
+      "choices": [
+        "A bubble that flashes hot with a bang",
+        "A jet of dark ink to hide the shrimp",
+        "A sticky thread to tangle the prey",
+        "A cloud of sand off the seabed"
+      ],
+      "context": "The snap collapses a bubble (cavitation) so violently it emits light (sonoluminescence) and a crack near 210 decibels — louder than a real gunshot."
+    },
+    {
+      "tier": 1,
+      "question": "A mantis shrimp throws a punch from a spring-loaded club so fast the water boils for an instant. The strike accelerates about as quickly as what?",
+      "answer": "A bullet fired from a gun",
+      "choices": [
+        "A bullet fired from a gun",
+        "A sprinter leaving the blocks",
+        "A diver pushing off a wall",
+        "A leaf falling from a tree"
+      ],
+      "context": "The dactyl club reaches ~23 m/s from a standstill, with acceleration like a .22 round. It cracks crab shells and aquarium glass alike."
+    },
+    {
+      "tier": 1,
+      "question": "A tardigrade can be dried to dust, frozen near absolute zero, or shot into the vacuum of space and still walk away later. People nicknamed this eight-legged speck after which animal?",
+      "answer": "A water bear",
+      "choices": [
+        "A water bear",
+        "A sand flea",
+        "A dust mite",
+        "A moss worm"
+      ],
+      "context": "Tardigrades survive by entering a 'tun' state, replacing their water and curling up. Some revived after a decade dry; others rode a 2007 mission outside the spacecraft."
+    },
+    {
+      "tier": 1,
+      "question": "An axolotl that loses a leg simply grows a new one — bones, nerves, and all — and it keeps its feathery gills for life instead of growing up. What does it never normally do?",
+      "answer": "Grow up into a land salamander",
+      "choices": [
+        "Grow up into a land salamander",
+        "Eat any kind of meat at all",
+        "Open its eyes while moving",
+        "Use all four of its legs"
+      ],
+      "context": "Most salamanders metamorphose; the axolotl stays in its larval form (neoteny) and breeds that way. It can regrow limbs, jaw, spinal cord, even parts of its heart."
+    },
+    {
+      "tier": 1,
+      "question": "A platypus has a duck's bill, a beaver's tail, and webbed feet — and it does something no other mammal but the echidna does. What is it?",
+      "answer": "Lays eggs like a bird",
+      "choices": [
+        "Lays eggs like a bird",
+        "Breathes underwater",
+        "Changes color to hide",
+        "Glows in moonlight"
+      ],
+      "context": "The platypus is a monotreme: it lays eggs, then nurses its young. The male also has a venomous spur on each hind leg."
+    },
+    {
+      "tier": 1,
+      "question": "A T. rex did not have the strongest bite of any land animal ever — but its jaws still crunched bone with a force that could crush a small car. What helped pack that power?",
+      "answer": "Banana-sized serrated teeth",
+      "choices": [
+        "Banana-sized serrated teeth",
+        "A forked snake-like tongue",
+        "Rows of flat grinding molars",
+        "A beak instead of teeth"
+      ],
+      "context": "Some T. rex teeth topped 30 cm with the root. Bite-force estimates near 35,000 newtons let it pulverize bone, a habit confirmed by crushed Triceratops fossils."
+    },
+    {
+      "tier": 1,
+      "question": "A dodo was a flightless pigeon the size of a turkey, living with no predators on one island — until sailors arrived in the 1600s. Roughly how long did it take to vanish?",
+      "answer": "Less than a hundred years",
+      "choices": [
+        "Less than a hundred years",
+        "About five hundred years",
+        "About a thousand years",
+        "Several thousand years"
+      ],
+      "context": "The dodo of Mauritius was gone by the late 1600s, within decades of human contact — sailors, and the pigs and rats they brought, ate the eggs and birds."
+    },
+    {
+      "tier": 1,
+      "question": "An archerfish hunts insects above the water by spitting a hard jet from its mouth to knock them off leaves. To aim, its brain corrects for something tricky. What?",
+      "answer": "The way water bends light",
+      "choices": [
+        "The way water bends light",
+        "The color of the insect",
+        "The sound of the wind",
+        "The taste of the leaves"
+      ],
+      "context": "Light bends (refracts) at the surface, so prey isn't where it appears. The archerfish compensates and hits targets a meter or more away, then races to catch the fall."
+    },
+    {
+      "tier": 2,
+      "question": "A lyrebird in an Australian forest can copy almost any sound it hears — and it doesn't stop at other birds. Males have been recorded faithfully mimicking what?",
+      "answer": "Chainsaws and camera shutters",
+      "choices": [
+        "Chainsaws and camera shutters",
+        "Distant thunder and pouring rain",
+        "The beating of its own heart",
+        "Crickets it has never once heard"
+      ],
+      "context": "The superb lyrebird weaves human-made sounds — chainsaws, car alarms, camera motor-drives — into its song to impress females. It has one of the most complex vocal apparatuses of any bird."
+    },
+    {
+      "tier": 2,
+      "question": "A naked mole-rat is a wrinkled, nearly blind rodent that lives underground in a colony ruled by a single breeding queen, like an insect. It also shrugs off something most animals can't. What?",
+      "answer": "It shrugs off some pain and rarely gets cancer",
+      "choices": [
+        "It shrugs off some pain and rarely gets cancer",
+        "It can fly short hops from burrow to burrow",
+        "It lives its whole life without any water",
+        "It changes into the queen when she dies"
+      ],
+      "context": "Naked mole-rats are eusocial, can live ~30 years, lack the pain response to acid and capsaicin, almost never develop tumors, and survive long stretches on very little oxygen."
+    },
+    {
+      "tier": 2,
+      "question": "An immortal jellyfish, Turritopsis dohrnii, has a trick no other animal is known to repeat at will when it is starving or injured. What can it do?",
+      "answer": "Rewind to its baby polyp stage and start over",
+      "choices": [
+        "Rewind to its baby polyp stage and start over",
+        "Split itself cleanly into two adult jellyfish",
+        "Freeze solid in ice and thaw out unharmed",
+        "Sting hard enough to kill a passing whale"
+      ],
+      "context": "The tiny medusa can transform its cells back into a polyp colony (transdifferentiation), effectively rebooting its life cycle. Barring predators or disease, the loop can repeat."
+    },
+    {
+      "tier": 2,
+      "question": "A pangolin is the only mammal fully covered in scales — made of the same stuff as your fingernails. When a predator comes near, what does it do?",
+      "answer": "Rolls into a tight armored ball",
+      "choices": [
+        "Rolls into a tight armored ball",
+        "Sprays a cloud of blinding venom",
+        "Sheds its scales and dashes away",
+        "Plays dead and holds its breath"
+      ],
+      "context": "Pangolin scales are keratin. Curled up, even a lion usually can't pry one open. A pangolin's sticky tongue can be longer than its body, anchored back near its pelvis."
+    },
+    {
+      "tier": 2,
+      "question": "A bombardier beetle defends itself with a weapon it builds inside its own body, firing it at attackers. What does it shoot?",
+      "answer": "A boiling, popping chemical spray",
+      "choices": [
+        "A boiling, popping chemical spray",
+        "A long stream of very sticky silk",
+        "A bright cloud of glowing dust",
+        "A barbed stinger it leaves behind"
+      ],
+      "context": "Two chemicals mix in a reinforced chamber and react explosively, blasting out a ~100°C spray with an audible pop — aimed with a swiveling tip at whatever grabbed the beetle."
+    },
+    {
+      "tier": 2,
+      "question": "A megalodon was an extinct shark so huge that a single one of its fossil teeth can be as long as a human hand. How big do scientists think the whole animal got?",
+      "answer": "About the length of three school buses",
+      "choices": [
+        "About the length of three school buses",
+        "About the same size as a large dog",
+        "Roughly the length of one canoe",
+        "About as long as a single tall man"
+      ],
+      "context": "Estimated near 15-18 meters, Otodon megalodon dwarfed the great white. We know it mostly from teeth and a few vertebrae, since shark skeletons are cartilage and rarely fossilize."
+    },
+    {
+      "tier": 2,
+      "question": "A glyptodon roamed Ice Age South America looking like a car-sized armadillo, sealed in a domed shell. Some species carried an extra surprise for defense. What?",
+      "answer": "A spiked, club-like tail",
+      "choices": [
+        "A spiked, club-like tail",
+        "A pair of curved tusks",
+        "A long, grasping trunk",
+        "A fan of stinging spines"
+      ],
+      "context": "Glyptodon's fused bony shell could top a meter tall; relatives like Doedicurus swung a heavy spiked tail-club. Early humans are thought to have sheltered under emptied shells."
+    },
+    {
+      "tier": 3,
+      "question": "A star-nosed mole is nearly blind, but the ring of 22 pink tentacles on its snout makes it the fastest-eating mammal known. It can find, identify, and swallow prey in about how long?",
+      "answer": "A quarter of a second",
+      "choices": [
+        "A quarter of a second",
+        "A full ten seconds",
+        "Just over a minute",
+        "Around five minutes"
+      ],
+      "context": "The 'star' has ~25,000 touch receptors (Eimer's organs) and feels objects faster than the eye sees. The mole touches up to a dozen spots per second, hitting prey in ~120 milliseconds — at the limit of mammalian nerves."
+    },
+    {
+      "tier": 3,
+      "question": "A cuttlefish can flash rippling bands of color across its skin in a heartbeat to hunt, hide, or talk — yet there's a strange catch about how it sees those colors. What is it?",
+      "answer": "It is colorblind but still matches its background",
+      "choices": [
+        "It is colorblind but still matches its background",
+        "It can only ever see shades of the color red",
+        "It sees color only in the brightest sunlight",
+        "It must touch an object before it sees the color"
+      ],
+      "context": "Cuttlefish have a single visual pigment, so they likely can't see color the way we do — yet they camouflage to colored backgrounds. One idea: their oddly shaped, layered pupils split light to read color another way."
+    },
+    {
+      "tier": 3,
+      "question": "A tongue-eating louse is a parasite that swims into a fish's mouth, latches onto its tongue, and does something out of a nightmare. What happens to the fish's tongue?",
+      "answer": "The louse replaces it and acts as the tongue",
+      "choices": [
+        "The louse replaces it and acts as the tongue",
+        "The louse paints it a bright warning color",
+        "The louse seals the fish's mouth shut",
+        "The louse lays eggs that hatch into a new tongue"
+      ],
+      "context": "Cymothoa exigua severs the blood supply so the tongue withers, then clings in its place. The fish goes on using the louse to grip food — the only known case of a parasite functionally replacing a host organ."
+    },
+    {
+      "tier": 3,
+      "question": "A secretary bird is a long-legged raptor of the African grasslands that hunts snakes on foot. Instead of grabbing prey with its talons, how does it kill?",
+      "answer": "It stomps with lightning-fast, powerful kicks",
+      "choices": [
+        "It stomps with lightning-fast, powerful kicks",
+        "It drops heavy stones from high overhead",
+        "It bites down with a hooked, venomous beak",
+        "It holds prey under the surface to drown it"
+      ],
+      "context": "The secretary bird strikes the ground in about 15 milliseconds, hitting with several times its body weight — fast enough that a snake can't bite back. It often eats venomous snakes whole."
+    },
+    {
+      "tier": 3,
+      "question": "Argentinosaurus may be the largest land animal that ever lived — a long-necked plant-eater so massive that a single backbone could stand taller than a person. About how heavy was it?",
+      "answer": "As much as a dozen elephants",
+      "choices": [
+        "As much as a dozen elephants",
+        "About the same as one horse",
+        "Roughly as much as a rhino",
+        "About the weight of a giraffe"
+      ],
+      "context": "Estimates run to 70-100 tonnes. We know it from only a handful of giant bones, so its full size is reconstructed by scaling up from better-known relatives."
+    },
+    {
+      "tier": 3,
+      "question": "A Dunkleosteus was an armored fish the size of a bus that ruled the seas long before the dinosaurs. It had no real teeth — so what did it bite with?",
+      "answer": "Self-sharpening bony jaw blades",
+      "choices": [
+        "Self-sharpening bony jaw blades",
+        "Rows of tiny replaceable teeth",
+        "A hard, parrot-like beak",
+        "A sucker lined with hooks"
+      ],
+      "context": "Bony plates formed shearing edges that ground against each other to stay sharp. Its jaws could snap shut in a fraction of a second with one of the most powerful bites ever measured in a fish."
+    },
+    {
+      "tier": 3,
+      "question": "Anomalocaris was a top predator of the Cambrian seas, known from such strange scattered fossils that scientists first mistook its parts for three different creatures. What were its grasping front limbs first identified as?",
+      "answer": "The whole body of a shrimp",
+      "choices": [
+        "The whole body of a shrimp",
+        "The tentacles of a squid",
+        "The eight legs of a spider",
+        "The wide fins of a fish"
+      ],
+      "context": "Its name means 'abnormal shrimp' because a spiny front appendage was first described as a shrimp's body, the mouth as a jellyfish, and the whole animal only reassembled in the 1980s."
+    },
+    {
+      "tier": 4,
+      "question": "For over a century, museums posed dinosaurs as scaly, tail-dragging lizards. Then fossils from China revealed fuzzy and feathered ones — like Microraptor, which had a surprising feature. What did it have?",
+      "answer": "Flight feathers on all four limbs",
+      "choices": [
+        "Flight feathers on all four limbs",
+        "A pair of leathery bat-like wings",
+        "A long trunk for grasping branches",
+        "Glowing patches to attract mates"
+      ],
+      "context": "Microraptor was a crow-sized dromaeosaur with asymmetric flight feathers on its arms and legs — a 'four-winged' glider. Fossilized melanosomes even show it was iridescent black, like a raven."
+    },
+    {
+      "tier": 4,
+      "question": "The dinosaurs' reign ended 66 million years ago when an asteroid about 10 km wide struck Earth. We pinned down the culprit thanks to a worldwide clue and a buried scar. What were they?",
+      "answer": "A worldwide iridium layer and the Chicxulub crater",
+      "choices": [
+        "A worldwide iridium layer and the Chicxulub crater",
+        "A worldwide ash bed and a giant volcanic island",
+        "A worldwide salt layer and a vast dried-up ocean",
+        "A worldwide coal band and a deep frozen tar pit"
+      ],
+      "context": "Walter and Luis Alvarez found iridium — rare on Earth, common in asteroids — in a thin clay layer worldwide in 1980. The matching ~180 km Chicxulub crater off Mexico clinched it a decade later."
+    },
+    {
+      "tier": 4,
+      "question": "A terror bird stalked South America for millions of years after the dinosaurs — a flightless hunter up to 3 meters tall. What was its main weapon?",
+      "answer": "A huge hooked beak like a hatchet",
+      "choices": [
+        "A huge hooked beak like a hatchet",
+        "A venomous spur on each foot",
+        "A whip-like, bone-tipped tail",
+        "A pair of clawed grasping arms"
+      ],
+      "context": "Phorusrhacids drove that axe-like skull down to strike and dismember prey, then likely swallowed chunks whole. Some could outrun nearly anything on the open pampas."
+    },
+    {
+      "tier": 4,
+      "question": "A Megatherium was a ground sloth the size of an elephant that lived in the Americas until fairly recently. Unlike today's sloths, what could it do?",
+      "answer": "Rear up to browse high tree branches",
+      "choices": [
+        "Rear up to browse high tree branches",
+        "Swim for days across the open ocean",
+        "Glide between trees on flaps of skin",
+        "Dig deep tunnel systems underground"
+      ],
+      "context": "Standing on its hind legs and thick tail, Megatherium reached branches 5-6 meters up, raking them with huge claws. It survived until roughly 10,000 years ago, overlapping with early humans."
+    },
+    {
+      "tier": 4,
+      "question": "The Irish elk wasn't Irish and wasn't an elk — it was a giant deer of Ice Age Europe famous for one feature so big it stretches the limits of what an animal can carry. What was it?",
+      "answer": "Antlers wider than a person is tall",
+      "choices": [
+        "Antlers wider than a person is tall",
+        "Tusks that curled down past its knees",
+        "A grasping trunk longer than its legs",
+        "A shaggy mane of bright red fur"
+      ],
+      "context": "Megaloceros giganteus grew antlers up to 3.6 meters across, shed and regrown every year. They appear in European cave art, and the animal survived in places until about 7,000 years ago."
+    },
+    {
+      "tier": 4,
+      "question": "Some dinosaurs may have been warm-blooded, not sluggish like reptiles. One strong clue comes from cutting their fossil bones into thin slices. What do those slices show?",
+      "answer": "Fast-growing bone like in birds and mammals",
+      "choices": [
+        "Fast-growing bone like in birds and mammals",
+        "Yearly growth rings exactly like a tree trunk",
+        "Hollow inner chambers entirely filled with fat",
+        "A dense honeycomb of small empty air pockets"
+      ],
+      "context": "Thin-sectioned dino bone often shows dense blood-vessel channels and rapid deposition typical of active, warm-bodied animals — one line of evidence, alongside their link to living birds."
+    },
+    {
+      "tier": 5,
+      "question": "Trilobites scuttled across the seafloor for almost 300 million years — longer than any dinosaur lineage — before vanishing. Beyond their armored bodies, they pioneered a feature found in almost no other animal. What was it?",
+      "answer": "Eyes built from crystal-clear mineral lenses",
+      "choices": [
+        "Eyes built from crystal-clear mineral lenses",
+        "A beating heart that pumped bright blue blood",
+        "A pair of lungs for breathing air on dry land",
+        "A sting with venom strong enough to kill a fish"
+      ],
+      "context": "Many trilobites had compound eyes whose lenses were made of calcite — a mineral — focusing light through their rigid optics. Some had hundreds of lenses per eye; the design is preserved in fossils half a billion years old."
+    },
+    {
+      "tier": 5,
+      "question": "Hallucigenia is a Cambrian oddity so bizarre that scientists who first reconstructed it put the whole animal upside down and backward. What did they originally get wrong?",
+      "answer": "Its spikes were drawn as legs, its head as the tail",
+      "choices": [
+        "Its spikes were drawn as legs, its head as the tail",
+        "Its shell was mistaken for a separate kind of clam",
+        "Its eyes were reconstructed as a second hidden mouth",
+        "Its tail was reconstructed as a broad swimming fin"
+      ],
+      "context": "Hallucigenia walked on soft legs while a row of defensive spines pointed up — early workers flipped it onto the spines and read the rear blob as a head. Better fossils, and tiny eyes and teeth, finally set it right."
+    },
+    {
+      "tier": 5,
+      "question": "The quagga looked like a horse wearing only the front half of a zebra's stripes, and it was hunted to extinction in the 1800s. Decades later, studying its preserved DNA settled a long debate. What did it reveal?",
+      "answer": "It was a subspecies of the plains zebra",
+      "choices": [
+        "It was a subspecies of the plains zebra",
+        "It was a hybrid of horse and donkey",
+        "It was the ancestor of all modern horses",
+        "It was a kind of wild African ass"
+      ],
+      "context": "The quagga was the first extinct animal to have its DNA sequenced (1984). The genes showed it wasn't a separate species but a southern plains-zebra population — inspiring a breeding project to revive the coat pattern."
+    },
+    {
+      "tier": 5,
+      "question": "A honey badger has a reputation for fearlessness that turns out to be backed by biology. One reason it can raid beehives and even tangle with venomous snakes is a peculiar trait. What is it?",
+      "answer": "Loose, thick skin it can twist around in",
+      "choices": [
+        "Loose, thick skin it can twist around in",
+        "A coat of fur that hardens into armor",
+        "A spray it fires from glands like a skunk",
+        "Quills it can raise along its back"
+      ],
+      "context": "The honey badger's hide is so loose that a grabbed badger can swivel and bite back, and tough enough to resist many stings and bites. It also has notable resistance to some snake venoms."
+    }
+  ]
+}

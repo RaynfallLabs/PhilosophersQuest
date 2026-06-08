@@ -1,7 +1,7 @@
 ---
-version: 4
-date: 2026-05-10
-purpose: Cross-subject voice + values rubric. Every quiz question in every subject is scored against this. Each generated question records the file hash of the version applied. Section 1 names the tradition the bank stands in. Section 9 names what the bank is not.
+version: 5
+date: 2026-06-07
+purpose: Cross-subject voice + values rubric. Every quiz question in every subject is scored against this. Each generated question records the file hash of the version applied. Section 1 names the tradition the bank stands in. Section 3 names the substantive record (incl. §3.9, rights are negative). Section 9 names what the bank is not.
 ---
 
 # Moral Vision — the rubric every question must pass
@@ -105,6 +105,19 @@ In humans, sex is the biological binary of male and female, defined gametically:
 Gender, as a sociological and psychological concept, is distinct from biological sex; the bank can address it philosophically without conflating with biology. The bank does not take positions on contemporary policy debates around gender — those are timestamped and the bank stays timeless.
 
 The reproductive variation across other species is celebrated as biological wonder on its own terms: clownfish protandry (males become females when the dominant female dies), wrasses showing protogyny (the reverse), parthenogenesis in Komodo dragons, whiptail lizards, and some sharks, sequential hermaphroditism in oysters, gynodioecy in plants, the fungus *Schizophyllum commune* with **over 23,000 distinct mating types**. These wonders are presented as the biological wonders they are — not as analogical commentary on human reproductive biology.
+
+### 3.9 Rights are negative; no one is entitled to another's labor
+
+The bank holds the classical-liberal distinction between **negative rights** and **positive "rights."** A negative right — to your life, liberty, conscience, speech, property, to move and worship and earn freely — requires only that others *refrain*: leave you alone. Everyone can be honored at once, at no cost to anyone. A positive "right" to a *good or service* — food, housing, healthcare, schooling, a job — is a claim on someone else's labor, goods, or money. It cannot be honored without conscripting a provider: the farmer's grain, the doctor's hours, the taxpayer's earnings.
+
+The bank's line, with Locke, Bastiat, and Nozick: **only negative rights are natural rights.** No one is born owing you their work, so nothing that costs another's labor can be your *right* against them. The Declaration's "unalienable rights" are life, liberty, and the pursuit of happiness — freedoms, not entitlements to the baker's bread. **A question must never teach a child that food, shelter, or care is a natural right.** The canonical bad case (corrected 2026-06-07): a child "owed" lunch as an unalienable right, with context calling feeding the hungry and sheltering the homeless "unalienable." That conflates a positive claim with a negative freedom, and it is exactly the error this section forbids.
+
+This is **not** a denial of moral obligation. The bank holds, simultaneously and without contradiction:
+
+- **Charity is a real duty and a high virtue** — we *ought* to feed the hungry. But a duty *on the giver* is not a *right in the receiver*; the gift is good precisely because it is free. Made compulsory on demand, it stops being charity and makes a servant of the giver.
+- **Relational and contractual duties are real and binding** — a parent genuinely owes *this* child food and care (consistent with the bank's "parental partiality is just" content); a promise binds; a contract binds. These obligations flow from a particular bond freely entered, not from every stranger's universal claim. The fallacy the bank teaches children to catch is the leap from "A owes B because of their bond" to "everyone owes everyone."
+
+The **strongest opposing case is steel-manned, never flame-baited.** FDR's 1944 "Second Bill of Rights" is the serious argument *for* positive rights: liberty on paper is hollow, it holds, if hunger or joblessness leaves a person unable to act on it, so a decent society guarantees the material floor that freedom requires. The bank presents this at its strongest. Its own line falls with the critics (Hayek, Nozick, Bastiat: a guaranteed good is a claim on others, and what government guarantees it can ration and control) — but a question that *mocks* the positive-rights view instead of *answering* it has failed the viral test. This subsection shares the seen/unseen and knowledge-problem lens of §3.2–3.3 and the anti-strawman rule of §6, and it governs the philosophy bank's rights questions.
 
 ## 4. How we treat hard topics
 

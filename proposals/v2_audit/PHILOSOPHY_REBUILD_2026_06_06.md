@@ -6,6 +6,16 @@ older framework, **this brief + `docs/quiz/moral_vision.md` win** (moral_vision 
 supreme). The generation swarm reads, in priority order: `moral_vision.md` →
 this brief → `PHILOSOPHY_FRAMEWORK.md` → `PHILOSOPHY_TEMPLATES.md`.
 
+> **STANCE GUARD (added 2026-06-07): rights are negative.** Never write or keep a
+> question whose correct answer makes food, shelter, healthcare, housing, schooling,
+> or a job a *natural / unalienable right* — those cost another's labor and are
+> positive claims, not rights (Locke / Bastiat / Nozick). Relational duties
+> (parent→child, promises, charity) are real, but they are the giver's duty, not the
+> recipient's enforceable right; parental partiality stays just. Steel-man FDR's 1944
+> economic bill of rights, never flame-bait it. See **moral_vision.md §3.9** +
+> PHILOSOPHY_FRAMEWORK "Rights are negative." The lunch-ticket question was corrected
+> under this rule (2026-06-07).
+
 ## Why a rebuild (the diagnosis, one paragraph)
 ~50% of the live 882-question bank is ONE template: a fabricated speaker recites
 a position → *"Which view/school is X defending?"* → four `[School] — [200-char

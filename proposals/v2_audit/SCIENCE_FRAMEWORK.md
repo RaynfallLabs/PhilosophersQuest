@@ -46,17 +46,20 @@ Same caps as the existing rebuild (gate-clean as of 2026-05-19). Hard ceiling at
 
 ## §3 Pillar distribution
 
-Five pillars, already canonical in `science_strategies.md`. Pillar 5 carries the contested-topic weight and the wonder/reversal anchors most kids will remember:
+Six pillars (rebalanced 2026-06-07 per user direction). The four FACT pillars (P1–P4) are the core and the majority of the bank — physics, chemistry, biology, astronomy, the elements, the equations. P5 carries the contested-METHOD weight (real science vs "science as religion"). P6 — NEW — is the human drama: the scientist & mathematician wonder stories the user asked to feature as a special pillar.
 
 | Pillar | Share | What it teaches |
 |---|---:|---|
-| P1 Physics | ~20% | Classical, modern, paradoxes, cosmology |
-| P2 Chemistry | ~16% | Atoms, periodic, reactions, organic, biochem |
-| P3 Biology | ~20% | Cells, DNA, genetics, evolution, immunology, medical biology |
-| P4 Earth + space | ~20% | Geology, climate (honestly), oceanography, astronomy |
-| P5 History + ethics + contested | ~24% | Discovery moments, reversals, replication crisis, eugenics, censorship, contested-topic stance |
+| P1 Physics | ~20% | Classical, modern, paradoxes, cosmology, the great equations (F=ma, E=mc², the gas laws) |
+| P2 Chemistry | ~16% | Atoms, the periodic table + elements, reactions, bonding, organic, biochem |
+| P3 Biology | ~18% | Cells, DNA, genetics, evolution, immunology, medical biology |
+| P4 Earth + space | ~16% | Geology, oceanography, astronomy, the planets + cosmos |
+| P5 Contested method | ~14% | The scientific METHOD as the hero — falsifiability, RCT / gold-standard rigor, replication — used to recognize politics-masquerading-as-settled-science: climate-model overreach (set variables, cherry-picked ranges), the never-gold-standard-tested vaccine schedule framed as "settled," COVID-policy capture, WEF / transhumanism. Steel-manned, never flame-bait. See §4. |
+| P6 Scientist & mathematician wonder stories | ~16% | TRUE wonder stories ONLY — the most interesting parts of real lives + feuds. Newton vs Leibniz (the calculus priority war), Galois (group theory the night before dying in a duel at 20), Tesla vs Edison, Curie's glowing radium, Tycho Brahe's gold nose, Ramanujan + Hardy + 1729, Cantor + infinity, Boltzmann + S=k log W, Semmelweis, Faraday the bookbinder, Feynman + the Challenger O-ring. The human drama behind the discovery. |
 
-Pillar 5 is deliberately heaviest — it's the bank's distinctive contribution. The kid playing the magic system in *Philosopher's Quest* should come out understanding that **the science is never just settled**.
+**Eugenics / forced sterilization / Tuskegee moved OUT of the science bank (2026-06-07).** That is dark *political* history and belongs to the **History** bank, not Science. Science keeps the method-vs-capture recognition (P5) and the human wonder (P6), not dark-history recitation.
+
+**Tier discipline (the rule the old bank broke).** T1–T2 are clean, accessible SCIENCE FACTS + the most kid-friendly wonder stories — *never* the heavy contested-method material. The P5 critique lives at **T3–T5**, where a kid has the conceptual footing to wield the scientific method against a political claim. "Compulsory sterilization at Tier 2" was exactly the anti-pattern this rule now forbids.
 
 ---
 
@@ -70,7 +73,7 @@ This bank does NOT take establishment-default positions on contested topics. Hig
 - **Gene therapy + CRISPR** — therapeutic CELEBRATED (Casgevy 2023 sickle cell, Zolgensma SMA, Luxturna, CAR-T); over-regulation costs lives (Right to Try 2018); He Jiankui 2018 designer-baby case condemned; germline editing not categorically wrong with consent + transparency + do-no-harm
 - **WEF / transhumanism** — Schwab, Harari, Great Reset, "hackable humans," "you'll own nothing" covered as the powerful anti-human ideology it is. Not "one side of a debate" — named as the agenda
 - **Replication crisis** — Ioannidis 2005, Stapel, Surgisphere, p-hacking, peer-review limits all named honestly
-- **Eugenics** — Buck v. Bell 1927 (never overturned), Indiana 1907, California 20,000+ sterilizations, Sanger explicitly eugenicist, Davenport + Laughlin Cold Spring Harbor (Carnegie + Rockefeller funded), Madison Grant's *Passing of the Great Race* called "his bible" by Hitler, Nazi T4 program directly modeled on American precedent, Nuremberg Code 1947
+- **Eugenics / forced sterilization / Tuskegee — MOVED to the History bank (2026-06-07).** This dark *political* history is not science-bank material and was removed from Science (30 questions stashed in `data/questions/_staging/science_eugenics_removed.json` for possible History relocation). The scientific-ethics PRINCIPLE the vaccine pillar invokes — informed consent, do-no-harm, gold-standard rigor — is taught through the METHOD (P5), not through eugenics recitation.
 - **Censorship of dissent** — Galileo → Semmelweis → Marshall → GBD → Bhattacharya. Dissent IS the scientific tradition. Twitter Files 2022-2023 + Murthy v. Missouri 2024 documented
 
 ---

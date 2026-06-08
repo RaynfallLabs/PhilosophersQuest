@@ -2835,15 +2835,15 @@
   },
   {
     "tier": 1,
-    "question": "In June 1215 the English barons forced an unpopular king to ride out to a meadow on the River Thames near Windsor and seal a great charter restricting his royal power. The charter said even the king must obey the law. What was the king's name?",
-    "answer": "King John",
+    "question": "In 1215 the barons of England, in revolt against King John after he lost his French lands and taxed them for failed wars, cornered him at a meadow called Runnymede and forced him to seal a charter that even the king must obey the law. By what name is that charter known?",
+    "answer": "Magna Carta — Latin for the 'Great Charter' of liberties",
     "choices": [
-      "King John",
-      "Richard the Lionheart",
-      "Henry II",
-      "Edward the Confessor"
+      "Magna Carta — Latin for the 'Great Charter' of liberties",
+      "The Petition of Right — a later curb on the English crown",
+      "Provisions of Oxford — baron-imposed reforms on Henry III",
+      "Charter of the Forest — common rights to the royal forests"
     ],
-    "context": "King John (1166-1216) had lost most of England's possessions in France and raised taxes to try to win them back. The barons revolted. Magna Carta ('Great Charter') had 63 clauses, mostly about feudal taxes, but clause 39 — no free man imprisoned except by lawful judgment of his peers — became the foundation of English liberty and later inspired the U.S. Constitution. John tried to break the charter immediately; he died the next year of dysentery while fleeing his enemies. Four original 1215 copies survive."
+    "context": "King John (1166-1216) had lost most of England's French possessions and raised taxes trying to win them back; the barons revolted and met him at Runnymede on the Thames near Windsor in June 1215. Magna Carta's 63 clauses were mostly about feudal taxes, but Clause 39 — no free man imprisoned except by the lawful judgment of his peers — became the foundation of English liberty and later inspired the U.S. Constitution. John tried to break the charter at once and died the next year of dysentery while fleeing his enemies. Four original 1215 copies survive. The distractors are all real English constitutional documents: the Petition of Right (1628), the Provisions of Oxford (1258, forced on John's son Henry III), and the Charter of the Forest (1217)."
   },
   {
     "tier": 1,
@@ -5427,15 +5427,15 @@
   },
   {
     "tier": 2,
-    "question": "In the 1840s, the English mathematician Ada Lovelace wrote a detailed paper about Charles Babbage's mechanical computer (the 'Analytical Engine'). Her notes included what is generally considered the first computer program in history — an algorithm for calculating Bernoulli numbers. She was also the only legitimate daughter of one of the most famous Romantic poets. Who was her father?",
-    "answer": "Lord George Gordon Byron",
+    "question": "Ada Lovelace wrote what is now called the first computer program — an algorithm for Charles Babbage's never-built Analytical Engine. Her father was the poet Lord Byron, who left when she was a month old. Her mother then made a pointed choice about her schooling. Why did Lady Byron drill the young Ada so hard in mathematics?",
+    "answer": "To steer her away from the poetic temperament of the father she never knew",
     "choices": [
-      "Lord George Gordon Byron",
-      "Percy Bysshe Shelley",
-      "John Keats",
-      "Samuel Taylor Coleridge"
+      "To steer her away from the poetic temperament of the father she never knew",
+      "To ready her to run the sprawling Byron estate she stood to inherit one day",
+      "To win her a Cambridge teaching post of the kind then closed to all women",
+      "To make her an astronomer, counted the one science fit for a lady of rank"
     ],
-    "context": "Byron separated from Ada's mother Lady Byron when Ada was a month old. He never saw his daughter again and died in Greece when she was 8. Ada was raised by her mother on a strict diet of mathematics, intended specifically to inoculate her against her father's poetic temperament. Ada died of cancer in 1852 at age 36 — the same age her father had died. The U.S. Department of Defense programming language Ada (developed 1980) is named after her. December 11 is celebrated as 'Ada Lovelace Day' to honor women in science and technology."
+    "context": "Byron separated from Ada's mother, Lady Byron, when Ada was a month old; he never saw his daughter again and died in Greece when she was eight. Lady Byron raised Ada on a strict regimen of mathematics intended specifically to inoculate her against the 'dangerous' poetic temperament she feared Ada had inherited. The plan backfired beautifully: Ada combined the rigor with imagination she called 'poetical science,' and her 1843 notes on Babbage's Analytical Engine included the first published algorithm — making her, by common reckoning, the first computer programmer. She died of cancer in 1852 at 36, the same age her father had died. The U.S. Department of Defense named its programming language Ada (1980) in her honor."
   },
   {
     "tier": 2,
