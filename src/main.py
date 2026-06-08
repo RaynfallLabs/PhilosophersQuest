@@ -4579,8 +4579,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Cook menu
     # ------------------------------------------------------------------
 
+    # One menu of multi-ingredient recipes. The old "Single" solo-cook tab is
+    # gone (2026-06-07): with basic_monster_stew deleted, every recipe needs >=2
+    # ingredient types, so that tab only DUPLICATED this list -- and let you cook
+    # a dish from a single anchor ingredient, bypassing the recipe's real cost.
     _COOK_TABS = [
-        ('Single',  'single'),
         ('Recipes', 'compound'),
     ]
 
@@ -4671,9 +4674,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Eat menu  (z key)
     # ------------------------------------------------------------------
 
+    # One combined list so the survival food (Assorted Monster Jerky) sits WITH
+    # the rations instead of on a separate "Raw Ingredients" tab. 2026-06-07.
     _EAT_TABS = [
-        ('Cooked Food', lambda i: isinstance(i, Food)),
-        ('Raw Ingredients', lambda i: isinstance(i, Ingredient)),
+        ('Food', lambda i: isinstance(i, (Food, Ingredient))),
     ]
 
     # ------------------------------------------------------------------

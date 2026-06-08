@@ -41,27 +41,18 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_cook_menu(self):
-        # Single tab lists only ingredients that map to a REAL solo recipe.
-        # Cooking-overhaul 2026-06-07: with basic_monster_stew deleted, Assorted
-        # Monster Jerky has no solo recipe -- it is EATEN (z), not cooked. Filtering
-        # here keeps it off the Single tab AND prevents the destroy-for-nothing bug
-        # (_cook_item removes the ingredient up-front, so an empty-recipe single
-        # cook would consume the part and grant nothing). Primes/family/trophy
-        # still resolve via _find_recipe_for_ingredient and remain cookable.
-        from food_system import _find_recipe_for_ingredient
-        self.cook_menu_items = [
-            i for i in self.player.inventory
-            if isinstance(i, Ingredient) and _find_recipe_for_ingredient(i) is not None
-        ]
+        # Cooking is ONE list of multi-ingredient recipes (2026-06-07). The old
+        # "Single" solo-cook tab is gone: with basic_monster_stew deleted every
+        # recipe needs >=2 ingredient types, so it only duplicated this list and
+        # let you cook a dish from one anchor ingredient (bypassing its cost).
+        # Assorted Monster Jerky is EATEN (z), not cooked.
+        self.cook_menu_items = []
         self.cook_compound_recipes = get_available_compound_recipes(self.player.inventory)
-        if not self.cook_menu_items and not self.cook_compound_recipes:
-            self.add_message("You have no ingredients to cook.", 'info')
+        if not self.cook_compound_recipes:
+            self.add_message(
+                "You have no recipes you can make yet -- gather more ingredients.", 'info')
             return
-        # Auto-select first tab that has items
-        if self.cook_menu_items:
-            self._cook_tab = 0
-        else:
-            self._cook_tab = 1
+        self._cook_tab = 0
         self.state = STATE_COOK_MENU
 
     def _get_cook_tab_items(self):
