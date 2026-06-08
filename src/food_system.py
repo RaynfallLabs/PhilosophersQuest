@@ -230,10 +230,24 @@ def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
     messages: list[str] = []
     meal_name = recipe.get('name', 'mysterious dish')
     outcomes = recipe.get('tier_outcomes', {})
-    outcome = outcomes.get(str(tier), outcomes.get('0', {}))
 
     if tier == 0:
         return [f"You ruin the preparation. The {meal_name} is wasted."]
+
+    # Resolve this tier's outcome. If the exact tier is missing (a recipe data
+    # gap), degrade to the highest DEFINED tier at or below it -- NEVER silently
+    # to the '0' ruined outcome. That silent degrade made a perfect T5 cook of
+    # any recipe missing its '5' block (the 12 family recipes + basic stew) give
+    # ZERO reward despite the success message. See the missing-top-tier fix
+    # (2026-06-07). The data is now complete; this stays as a safety net.
+    outcome = outcomes.get(str(tier))
+    if outcome is None:
+        for t in range(tier, 0, -1):
+            if str(t) in outcomes:
+                outcome = outcomes[str(t)]
+                break
+        if outcome is None:
+            outcome = outcomes.get('0', {})
 
     # SP + HP restore (always applied)
     sp = int(outcome.get('sp', 0))
@@ -695,8 +709,35 @@ def drink_potion(player, potion) -> list[str]:
     if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_duration_bonus':
         duration = int(duration) + int(_pot_class_mast.get('value', 0))
 
+    # --- Binary-effect potions: magnitude is meaningless (a teleport either
+    # fires or it doesn't), so mastery/BUC act on RELIABILITY, not size:
+    #   mastered class OR blessed -> chance the dose isn't used up (_preserve)
+    #   cursed                    -> chance the magic fails outright (_fizzle)
+    # The default mastery for these classes is 'potion_preserve' (see
+    # class_masteries.default_blessing_for_class); the quaff caller re-adds a
+    # preserved potion to inventory.
+    _BINARY_EFFECTS = {'teleport', 'cure_poison', 'cure_disease', 'cure_all',
+                       'restore_str', 'gain_level'}
+    _mastered = bool(_pot_class_mast)
+    _is_binary = effect in _BINARY_EFFECTS
+    _preserve_chance = 0.0
+    _fizzle = False
+    if _is_binary:
+        if _pot_class_mast:
+            _preserve_chance += (float(_pot_class_mast.get('value', 0.25))
+                                 if _pot_class_mast.get('kind') == 'potion_preserve'
+                                 else 0.25)
+        if buc == 'blessed':
+            _preserve_chance += 0.25
+        elif buc == 'cursed':
+            _fizzle = roll_dice('1d4') == 1
+
     # --- Identification on use ---
     potion.identified = True
+
+    if _is_binary and _fizzle:
+        messages.append("The cursed potion curdles on your tongue -- its magic fails entirely.")
+        return messages
 
     if effect == 'heal':
         amt = int((roll_dice(power) if power else 10) * _heal_mult)
@@ -709,12 +750,23 @@ def drink_potion(player, potion) -> list[str]:
         messages.append(f"Deep wounds knit closed with startling speed. (+{amt} HP)")
 
     elif effect == 'full_heal':
+        # Blessed or mastered full-healing scours away ALL debuffs FIRST, so a
+        # heal-blocking debuff (heal_blocked / diseased) can't stop the heal that
+        # follows. Order matters: restore_hp is a no-op while heal_blocked, so the
+        # cleanse must run before it -- otherwise you'd be cured but still at 1 HP.
+        cleared = []
+        if buc == 'blessed' or _mastered:
+            from status_effects import DEBUFFS
+            cleared = [d.replace('_', ' ') for d in list(DEBUFFS)
+                       if player.status_effects.pop(d, None) is not None]
         if buc == 'cursed':
             amt = int((player.max_hp - player.hp) * 0.5)
         else:
             amt = player.max_hp - player.hp
         player.restore_hp(amt)
         messages.append("Every wound closes. You feel completely whole.")
+        if cleared:
+            messages.append(f"The draught also burns away: {', '.join(cleared)}.")
 
     elif effect == 'restore_sp':
         amt = int((roll_dice(power) if power else 50) * _heal_mult)
@@ -1005,6 +1057,12 @@ def drink_potion(player, potion) -> list[str]:
     else:
         messages.append("The potion does nothing obvious.")
 
+    # Binary-potion reliability payoff: a mastered/blessed dose may linger.
+    if _is_binary and _preserve_chance > 0 and not _fizzle:
+        if roll_dice('1d100') <= int(round(_preserve_chance * 100)):
+            messages.append("_preserve")
+            messages.append("You drew the draught out so skillfully a dose remains.")
+
     return messages
 
 
@@ -1036,18 +1094,36 @@ def eat_raw(player, ingredient) -> list[str]:
 
     Per 2026-05-31 redesign: raw eating gives a flat SP amount based on
     the ingredient's tier_role (richer ingredients restore more even raw).
+
+    Cooking-overhaul (2026-06-07): Assorted Monster Jerky (assorted_monster_parts)
+    is the dried, shelf-stable SURVIVAL FLOOR — it is eaten instantly with NO
+    food-poison risk and a bumped SP yield so the player can always stave off
+    starvation by harvesting and snacking, even with zero cooking skill. Any
+    ingredient carrying `edible_safe` (or a data-driven `raw_sp`) is treated the
+    same way. Richer recipes are then the upgrade you CHOOSE, never a survival tax.
     """
     import random
     tier_role = getattr(ingredient, 'tier_role', 'universal')
     raw_sp_map = {
-        'universal': 5,
+        'universal': 12,   # Assorted Monster Jerky — the don't-starve floor (+12 SP)
         'family':    10,
         'dungeon':   10,
         'prime':     15,
         'trophy':    20,
     }
-    sp = raw_sp_map.get(tier_role, 5)
+    # Data-driven SP override (ingredient.raw_sp) wins; else the tier_role map.
+    raw_sp = getattr(ingredient, 'raw_sp', None)
+    sp = int(raw_sp) if raw_sp is not None else raw_sp_map.get(tier_role, 5)
     player.restore_sp(sp)
+
+    # Cured / dried foods (jerky) are safe to eat — no poison roll.
+    is_cured = (getattr(ingredient, 'edible_safe', False)
+                or ingredient.id == 'assorted_monster_parts')
+    if is_cured:
+        messages = [f"You tear into the {ingredient.name}. "
+                    f"Tough and gamey, but it keeps you going. (+{sp} SP)."]
+        return messages
+
     messages = [f"You choke down the raw {ingredient.name}. ({sp} SP, unpleasant)."]
     if random.random() < 0.30 and not player.has_effect('poison_resist'):
         player.add_effect('poisoned', 8)

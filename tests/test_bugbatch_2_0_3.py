@@ -421,18 +421,22 @@ def _headless_game(name):
 
 
 def test_single_cook_consumes_exactly_one_ingredient():
+    # 2026-06-07: assorted parts are no longer solo-cookable (basic_monster_stew
+    # deleted; they're eaten as jerky). A PRIME is the canonical single-cook now,
+    # and still must consume EXACTLY the one part picked -- never the full recipe.
     from food_system import load_ingredient_for
     g = _headless_game('cooktest')
     g.player.inventory = []
+    PRIME = 'giant_rat_prime'
     for _ in range(5):
-        g.player.add_to_inventory(load_ingredient_for('assorted_monster_parts'))
+        g.player.add_to_inventory(load_ingredient_for(PRIME))
 
-    def total_assorted():
+    def total_prime():
         return sum(getattr(i, 'count', 1) for i in g.player.inventory
-                   if getattr(i, 'id', '') == 'assorted_monster_parts')
+                   if getattr(i, 'id', '') == PRIME)
 
-    assert total_assorted() == 5
-    ing = next(i for i in g.player.inventory if i.id == 'assorted_monster_parts')
+    assert total_prime() == 5
+    ing = next(i for i in g.player.inventory if i.id == PRIME)
 
     cap = {}
     g.quiz_engine.start_quiz = lambda **kw: cap.__setitem__('cb', kw['callback'])
@@ -442,7 +446,7 @@ def test_single_cook_consumes_exactly_one_ingredient():
     class R:
         score = 3
     cap['cb'](R())
-    consumed = 5 - total_assorted()
+    consumed = 5 - total_prime()
     assert consumed == 1, f'single cook consumed {consumed} ingredients, expected 1'
 
 

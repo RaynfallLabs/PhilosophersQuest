@@ -411,7 +411,11 @@ class InputMixin:
             elif tile in (FOUNTAIN, GRAVE, THRONE):
                 self._interact_tile()
             elif tile == ALTAR:
-                self._altar_buc_identify()
+                # D = DROP, even on an altar. It used to auto-launch a theology
+                # quiz against the first unidentified item (_altar_buc_identify),
+                # which hijacked dropping. Altars are for PRAYER (the pray key,
+                # amplified here); dropping/unequipping stay friction-free.
+                self._open_drop_menu()
             else:
                 # Adjacent to Odin's Altar with items — allow drop for throw-over
                 self._open_drop_menu()

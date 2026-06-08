@@ -686,6 +686,20 @@ class Wand(Item):
         self.charges_max      = int(defn.get('charges_max', self.charges_min))
         self.charges          = self.charges_min          # re-rolled when placed in dungeon
         self.max_charges      = int(defn.get('max_charges', self.charges_max))
+        # BUC: blessed wands hold one extra charge, cursed wands one fewer
+        # (floor 1). Charges are re-rolled at dungeon placement from
+        # charges_min/charges_max, so shift those bounds too.
+        _wbuc = getattr(self, 'buc', 'uncursed')
+        if _wbuc == 'blessed':
+            self.charges_min += 1
+            self.charges_max += 1
+            self.charges     += 1
+            self.max_charges += 1
+        elif _wbuc == 'cursed':
+            self.charges_min = max(1, self.charges_min - 1)
+            self.charges_max = max(1, self.charges_max - 1)
+            self.charges     = max(1, self.charges - 1)
+            self.max_charges = max(1, self.max_charges - 1)
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
         self.effect           = defn.get('effect', '')
@@ -803,6 +817,12 @@ class Ingredient(Item):
         # loot pools, and food_system raw-SP scaling -- all of which used
         # getattr(.., 'tier_role') and silently got '' until this was loaded.
         self.tier_role: str         = defn.get('tier_role', 'universal')
+        # Cooking-overhaul 2026-06-07: `edible_safe` ingredients (jerky) are eaten
+        # raw with NO food-poison roll; `raw_sp` data-drives the SP they restore
+        # (overriding the tier_role map in food_system.eat_raw). Both default off
+        # so the change is harmless to old saves / unflagged ingredients.
+        self.edible_safe: bool      = bool(defn.get('edible_safe', False))
+        self.raw_sp                 = defn.get('raw_sp', None)
 
 
 class Corpse(Item):

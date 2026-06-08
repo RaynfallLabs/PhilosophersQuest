@@ -537,8 +537,11 @@ class MagicMixin:
                 for _ in range(missiles):
                     if not target.alive:
                         break
+                    # Gentle flat INT bonus per missile; the barrage's power comes
+                    # from the missile COUNT (chain), not a 2-4x per-missile
+                    # multiplier (which over-scaled hard at high INT).
                     base = (roll(wand.power) if wand.power else 4) + 2
-                    dmg = self._int_scaled_damage(base)
+                    dmg = max(1, base + self.player.INT // 5)
                     target.hp = max(0, target.hp - dmg)
                     if target.hp == 0:
                         target.alive = False
@@ -1643,8 +1646,12 @@ class MagicMixin:
                 for _ in range(missiles):
                     if not target.alive:
                         break
+                    # Magic missile scales by missile COUNT (the chain), so each
+                    # missile stays small: base roll + a GENTLE flat INT bonus, NOT
+                    # the 2-4x _int_scaled_damage multiplier (which made a single
+                    # 1d4 missile hit for ~16 at high INT -- user-reported bug).
                     base_dmg = _roll(power) if power else 4
-                    per_missile = self._int_scaled_damage(base_dmg)
+                    per_missile = max(1, base_dmg + self.player.INT // 5)
                     target.hp = max(0, target.hp - per_missile)
                     if target.hp == 0:
                         target.alive = False
@@ -3085,6 +3092,13 @@ class MagicMixin:
             return {'kind': 'spellbook_mp_discount', 'value': 1,
                     'desc': f"The spell from the {item.name} costs 1 less MP."}
         if isinstance(item, Potion):
+            # Binary-effect potions have no magnitude to scale ("more potent"
+            # is dead text on teleport/cures); give them a reliability perk
+            # instead. Mirrors class_masteries.default_blessing_for_class.
+            if getattr(item, 'effect', '') in {'teleport', 'cure_poison',
+                    'cure_disease', 'cure_all', 'restore_str', 'gain_level'}:
+                return {'kind': 'potion_preserve', 'value': 0.25,
+                        'desc': "You draw out every drop — 25% chance a potion of this type isn't used up."}
             return {'kind': 'potion_potency_bonus', 'value': 0.25,
                     'desc': "Potions of this type are 25% more potent."}
         return None
@@ -3423,6 +3437,13 @@ class MagicMixin:
             _threshold = max(1, _threshold - get_spellbook_chain_bonus(self.player))
         except ImportError:
             pass
+        # BUC: a blessed text reads clearer (one fewer correct needed); a cursed
+        # text resists (one more). Previously blessed/cursed spellbooks did nothing.
+        _sbuc = getattr(book, 'buc', 'uncursed')
+        if _sbuc == 'blessed':
+            _threshold = max(1, _threshold - 1)
+        elif _sbuc == 'cursed':
+            _threshold = _threshold + 1
 
         self.quiz_engine.start_quiz(
             mode='threshold',

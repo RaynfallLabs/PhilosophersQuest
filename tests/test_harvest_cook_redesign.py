@@ -2,7 +2,7 @@
 
 Verifies the new schema:
   - ingredient.json has 1 universal + 12 family + 527 prime + 13 trophy + 8 dungeon
-  - recipes.json has at least 1 basic + 12 family + 514 prime + 13 trophy
+  - recipes.json has 0 basic (deleted 2026-06-07) + 12 family + 514 prime + 13 trophy
   - prime_cuts.json has all 527 monsters mapped
   - food_system._harvest_outcome_for_tier produces correct cumulative outcomes
   - Per-floor cap mechanism on Player works (cap, bypass, reset)
@@ -99,7 +99,9 @@ def test_recipe_schema():
     for r in d.values():
         cls = r.get('recipe_class', '?')
         counts[cls] = counts.get(cls, 0) + 1
-    assert counts.get('basic', 0) >= 1
+    # 2026-06-07 cooking overhaul: basic_monster_stew DELETED (assorted parts are
+    # now eaten as Assorted Monster Jerky, not cooked).
+    assert counts.get('basic', 0) == 0
     assert counts.get('family', 0) == 12
     assert counts.get('prime', 0) >= 500  # 527 - 13 trophies
     assert counts.get('trophy', 0) == 13

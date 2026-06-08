@@ -2764,8 +2764,16 @@ class RenderMixin:
             from food_system import _raw_ingredients as _ri
             _ings = _ri()
             def _ing_name(iid): return _ings.get(iid, {}).get('name', iid)
+            from collections import Counter as _Counter
             for i, recipe in enumerate(tab_items[:26]):
-                ing_list = ', '.join(_ing_name(iid) for iid in recipe.get('ingredients', []))
+                # Collapse repeated ingredient ids into "name xN" (a recipe that
+                # needs 3 assorted parts should read "Monster Parts x3", not list
+                # the same ingredient three times). Counter preserves order (3.7+).
+                _ing_counts = _Counter(recipe.get('ingredients', []))
+                ing_list = ', '.join(
+                    f"{_ing_name(iid)} x{n}" if n > 1 else _ing_name(iid)
+                    for iid, n in _ing_counts.items()
+                )
                 tier_preview = _format_tier_preview(recipe)
                 detail = f"Needs: {ing_list}"
                 if tier_preview:
@@ -2799,12 +2807,16 @@ class RenderMixin:
                 recipe = _find_recipe_for_ingredient(item) or {}
                 dish_name = _cap(recipe.get('name', f"{item.name} Surprise"))
                 tier_preview = _format_tier_preview(recipe)
-                detail = f"Consumes: {self._display_name(item)}"
+                # Use the bare item name (no inventory count — that it's listed at
+                # all means you have it) and WRAP the detail like the compound tab,
+                # so the tier bonuses don't truncate off the right edge.
+                detail = f"Consumes: {item.name}"
                 if tier_preview:
                     detail += f"   |   {tier_preview}"
+                detail_lines = self._wrap_text(detail, self.font_sm, max_detail_w)
                 entries.append({
                     'name': dish_name,
-                    'detail': detail,
+                    'detail_lines': detail_lines,
                     'key': self._LETTERS[i],
                     'icon': item,
                     'name_color': FP.GOLD_PALE,

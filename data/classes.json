@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "doc": "Boss Class Ascension tree (proposals/design/boss_class_ascension.md). Cooked from each boss's Legendary Cut: Calling (f20) -> Specialization (f40) -> Mastery (f60) -> Capstone (f80). Phase 1 = the 4 Tier-1 callings. These are small flavor PERKS, not power spikes. Soft-gated (B): a calling is offered only if its requirement is met; Fighter is always available. requirement {type:'any', conditions:[{stat,min}|{knows_any_spell}|{carries_class:[...]}]}. perks: weapon_bonus {groups:[sword|axe|ranged],flat} = small flat dmg with signature weapons; save_bonus {category,amount}; healing_received_pct; mp_cost_reduction; trap_sight (scalars).",
+    "stat_cap_total": 10,
+    "weapon_groups": {
+      "sword": ["shortsword", "longsword", "bastard_sword", "greatsword", "scimitar", "rapier"],
+      "axe": ["battleaxe", "great_axe"],
+      "ranged": ["shortbow", "longbow", "composite_bow", "light_crossbow", "heavy_crossbow", "sling"]
+    }
+  },
+  "fighter": {
+    "tier": 1,
+    "parent": null,
+    "calling": "fighter",
+    "name": "Fighter",
+    "flavor": "You answer the Labyrinth's challenge with steel. The warrior's path.",
+    "stat_bonuses": { "STR": 1 },
+    "perks": {
+      "weapon_bonus": { "groups": ["sword", "axe"], "flat": 2 },
+      "save_bonus": { "category": "body", "amount": 1 }
+    },
+    "ability": {
+      "id": "second_wind",
+      "name": "Second Wind",
+      "desc": "Once per floor: catch your breath and heal 10% of max HP."
+    },
+    "requirement": null
+  },
+  "mage": {
+    "tier": 1,
+    "parent": null,
+    "calling": "mage",
+    "name": "Mage",
+    "flavor": "You read the boss's death like a proof. The scholar-wizard's path.",
+    "stat_bonuses": { "INT": 1 },
+    "perks": {
+      "mp_cost_reduction": 1,
+      "save_bonus": { "category": "mind", "amount": 1 }
+    },
+    "ability": {
+      "id": "arcane_recovery",
+      "name": "Arcane Recovery",
+      "desc": "Once per floor: draw on the weave and restore 20% of max MP."
+    },
+    "requirement": {
+      "type": "any",
+      "conditions": [
+        { "stat": "INT", "min": 13 },
+        { "knows_any_spell": true },
+        { "carries_class": ["Wand", "Spellbook"] }
+      ]
+    }
+  },
+  "rogue": {
+    "tier": 1,
+    "parent": null,
+    "calling": "rogue",
+    "name": "Rogue",
+    "flavor": "You took the boss apart by reading its tells. The scout-cutpurse's path.",
+    "stat_bonuses": { "DEX": 1 },
+    "perks": {
+      "weapon_bonus": { "groups": ["ranged"], "flat": 2 },
+      "trap_sight": 1
+    },
+    "ability": {
+      "id": "evasion",
+      "name": "Evasion",
+      "desc": "Automatically dodge the first trap you trigger each floor."
+    },
+    "requirement": {
+      "type": "any",
+      "conditions": [
+        { "stat": "DEX", "min": 13 },
+        { "stat": "PER", "min": 13 }
+      ]
+    }
+  },
+  "cleric": {
+    "tier": 1,
+    "parent": null,
+    "calling": "cleric",
+    "name": "Cleric",
+    "flavor": "You read the boss's fall as judgment. The crusader-priest's path.",
+    "stat_bonuses": { "WIS": 1 },
+    "perks": {
+      "healing_received_pct": 15,
+      "save_bonus": { "category": "spirit", "amount": 1 }
+    },
+    "ability": {
+      "id": "turn_undead",
+      "name": "Turn Undead",
+      "desc": "Once per floor: brandish your faith; nearby undead recoil and flee."
+    },
+    "requirement": {
+      "type": "any",
+      "conditions": [
+        { "stat": "WIS", "min": 13 },
+        { "stat": "CON", "min": 14 }
+      ]
+    }
+  }
+}

@@ -4336,6 +4336,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     ]
 
     def _cook_item(self, ingredient):
+        # Guard: only consume the ingredient if it maps to a real solo recipe.
+        # Cooking-overhaul 2026-06-07: Assorted Monster Jerky (and any other part
+        # with no solo recipe) must NOT be silently destroyed by a single cook.
+        # The cook menu already filters these out; this is the safety net.
+        from food_system import _find_recipe_for_ingredient
+        if _find_recipe_for_ingredient(ingredient) is None:
+            self.state = STATE_PLAYER
+            self.add_message(
+                f"The {ingredient.name} can't be cooked alone -- eat it raw, "
+                f"or combine it into a recipe.", 'info')
+            return
         self.player.remove_from_inventory(ingredient)
         self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING CHAIN"
         self.state = STATE_QUIZ

@@ -80,7 +80,8 @@ def test_harvest_tier_3_returns_2_assorted_plus_family():
         out['message'] = msg
     harvest_corpse(p, corpse, quiz, on_complete)
     names = [i.name for i in out['ingredients']]
-    assert names.count('Assorted Monster Parts') == 2
+    # Renamed to "Assorted Monster Jerky" in the 2026-06-07 cooking overhaul.
+    assert names.count('Assorted Monster Jerky') == 2
     assert names.count('Beast Meat') == 1
 
 
@@ -153,31 +154,36 @@ def test_harvest_always_starts_at_tier_1():
 # Cook path
 # ---------------------------------------------------------------------------
 
-def test_cook_basic_recipe_restores_sp():
-    """Cook the basic monster stew with 5 Assorted Parts: should restore SP."""
+def test_cook_family_recipe_restores_sp():
+    """Cook a family roast (2 family + 4 assorted): should restore SP and
+    consume exactly the recipe's ingredients.
+
+    2026-06-07: basic_monster_stew was DELETED (assorted parts are now eaten as
+    Assorted Monster Jerky, not cooked). The family recipe is the new cheapest
+    compound cook, so this exercises the same cook_compound_recipe path.
+    """
     from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
     from player import Player
 
     p = Player()
     p.sp = 100  # plenty of headroom
 
-    # Add 5 Assorted Parts to inventory
-    for _ in range(5):
-        p.add_to_inventory(load_ingredient_for('assorted_monster_parts'))
+    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    # Build EXACTLY the recipe's ingredients (2x family_beast + 4x assorted).
+    for ing_id in recipe['ingredients']:
+        p.add_to_inventory(load_ingredient_for(ing_id))
 
-    recipe = {'id': 'basic_monster_stew', **_raw_recipes()['basic_monster_stew']}
     quiz = MockQuizEngine(scripted_tier=2)
     out = {}
     def on_complete(messages):
         out['messages'] = messages
     cook_compound_recipe(p, recipe, p.inventory, quiz, on_complete)
 
-    # SP should have increased by T2 amount (65)
+    # SP should have increased by the T2 amount.
     assert p.sp > 100
-    # 5 assorted parts should be consumed (inventory now has 0)
+    # Every listed ingredient consumed (one pop per list entry).
     from items import Ingredient
-    remaining = [i for i in p.inventory if isinstance(i, Ingredient)
-                 and i.id == 'assorted_monster_parts']
+    remaining = [i for i in p.inventory if isinstance(i, Ingredient)]
     assert len(remaining) == 0
 
 
@@ -215,22 +221,24 @@ def test_cook_prime_recipe_at_t5_applies_temp_power():
 
 
 def test_cook_consumes_inventory_even_on_ruin():
-    """Even at T0 (ruined), the ingredients are still consumed — design intent."""
+    """Even at T0 (ruined), the ingredients are still consumed — design intent.
+
+    2026-06-07: uses the family recipe now that basic_monster_stew is gone.
+    """
     from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
     from player import Player
 
     p = Player()
-    for _ in range(5):
-        p.add_to_inventory(load_ingredient_for('assorted_monster_parts'))
+    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    for ing_id in recipe['ingredients']:
+        p.add_to_inventory(load_ingredient_for(ing_id))
 
-    recipe = {'id': 'basic_monster_stew', **_raw_recipes()['basic_monster_stew']}
     quiz = MockQuizEngine(scripted_tier=0)
     out = {}
     cook_compound_recipe(p, recipe, p.inventory, quiz, lambda msgs: out.update(messages=msgs))
 
     from items import Ingredient
-    remaining = [i for i in p.inventory if isinstance(i, Ingredient)
-                 and i.id == 'assorted_monster_parts']
+    remaining = [i for i in p.inventory if isinstance(i, Ingredient)]
     assert len(remaining) == 0, "T0 ruined must still consume the ingredients"
 
 

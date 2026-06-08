@@ -685,6 +685,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # to deliver.
         damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult) + family_dmg_bonus)
 
+        # Class perk: a small FLAT bonus with the class's SIGNATURE weapons
+        # (Fighter swords/axes, Rogue ranged). Flat -> self-diminishing as weapon
+        # damage grows; a perk, not a blanket all-weapon multiplier.
+        try:
+            from class_system import weapon_flat_bonus as _wfb
+            damage += _wfb(player, weapon)
+        except Exception:
+            pass
+
         # Empower spell: 3x damage on next hit, then clears
         if player.has_effect('empowered'):
             damage *= 3

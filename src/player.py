@@ -783,13 +783,20 @@ class Player:
                     shield_bonus += int(cls_m.get('value', 0))
             except Exception:
                 pass
-        # Blessed armor/shield: +1 AC per blessed piece
-        blessed_bonus = sum(
-            1 for s in self.armor_slots
-            if s is not None and getattr(s, 'buc', 'uncursed') == 'blessed'
-        )
-        if self.shield and getattr(self.shield, 'buc', 'uncursed') == 'blessed':
-            blessed_bonus += 1
+        # BUC of worn gear: blessed +1 AC / cursed -1 AC per piece, across
+        # armor, shield AND accessories. (Cursed gear is also welded on by the
+        # unequip guard, so a cursed piece is a real, stuck penalty -- and a
+        # blessed accessory/amulet now does something instead of nothing.)
+        buc_ac = 0
+        for s in (list(self.armor_slots) + [self.shield]
+                  + list(getattr(self, 'equipped_accessories', []))):
+            if s is None:
+                continue
+            _b = getattr(s, 'buc', 'uncursed')
+            if _b == 'blessed':
+                buc_ac += 1
+            elif _b == 'cursed':
+                buc_ac -= 1
         # Invisibility: harder to hit -> lowers AC by 2
         invisible_bonus = 2 if self.has_effect('invisible') else 0
         # Shielded status effect (from wand of shielding): -2 AC
@@ -855,7 +862,7 @@ class Player:
                 armor_proc_ac += 2
             if getattr(self, '_armor_proc_on_water', False):
                 armor_proc_ac += int(_pv_ac(self, 'water_tile_ac_bonus') or 0)
-        return 10 - dex_mod - armor_bonus - shield_bonus - blessed_bonus - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac - parry_ac - armor_proc_ac
+        return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac - parry_ac - armor_proc_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -1062,6 +1069,11 @@ class Player:
         return bonus
 
     def get_carry_limit(self) -> int:
+        # DESIGN (confirmed 2026-06-07): encumbrance is an INTENTIONAL mechanic.
+        # Item weights are deliberately realistic (full plate ~65 lb, maul ~8 lb)
+        # and STR is the lever -- a high-STR build (STR 25-30 -> 175-200 lb) wears
+        # the heaviest armor + a full kit; a low-STR caster (~100 lb) cannot. Do
+        # NOT compress armor weights to fit a tighter cap; the answer is more STR.
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
 
     def get_current_weight(self) -> float:

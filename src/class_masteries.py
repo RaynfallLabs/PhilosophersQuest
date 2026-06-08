@@ -368,6 +368,14 @@ def default_blessing_for_class(class_id: str, item) -> dict | None:
         return {'kind': 'spellbook_mp_discount', 'value': 1, 'scope': 'class',
                 'desc': f"You know {class_id.replace('_', ' ')} to the bone — costs 1 less MP."}
     if isinstance(item, Potion):
+        # Binary-effect potions (teleport, cures, gain-level...) have no
+        # magnitude to scale, so "20% more potent" was dead text. Give those
+        # classes a reliability perk instead: a chance the dose isn't used up.
+        _binary = {'teleport', 'cure_poison', 'cure_disease', 'cure_all',
+                   'restore_str', 'gain_level'}
+        if getattr(item, 'effect', '') in _binary:
+            return {'kind': 'potion_preserve', 'value': 0.25, 'scope': 'class',
+                    'desc': "You draw out every drop — 25% chance a potion of this class isn't used up."}
         return {'kind': 'potion_potency_bonus', 'value': 0.20, 'scope': 'class',
                 'desc': "Potions of this class are 20% more potent in your hands."}
     return None

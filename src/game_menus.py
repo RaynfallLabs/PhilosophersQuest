@@ -40,8 +40,17 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_cook_menu(self):
+        # Single tab lists only ingredients that map to a REAL solo recipe.
+        # Cooking-overhaul 2026-06-07: with basic_monster_stew deleted, Assorted
+        # Monster Jerky has no solo recipe -- it is EATEN (z), not cooked. Filtering
+        # here keeps it off the Single tab AND prevents the destroy-for-nothing bug
+        # (_cook_item removes the ingredient up-front, so an empty-recipe single
+        # cook would consume the part and grant nothing). Primes/family/trophy
+        # still resolve via _find_recipe_for_ingredient and remain cookable.
+        from food_system import _find_recipe_for_ingredient
         self.cook_menu_items = [
-            i for i in self.player.inventory if isinstance(i, Ingredient)
+            i for i in self.player.inventory
+            if isinstance(i, Ingredient) and _find_recipe_for_ingredient(i) is not None
         ]
         self.cook_compound_recipes = get_available_compound_recipes(self.player.inventory)
         if not self.cook_menu_items and not self.cook_compound_recipes:
@@ -176,6 +185,16 @@ class MenuMixin:
         item.identified = True
         self.player.known_item_ids.add(item.id)
         messages = drink_potion(self.player, item)
+        # Binary-potion mastery/blessing may leave a dose behind -> undo the
+        # consume. A stack was only decremented (item still in inventory), so
+        # bump its count back; a singleton was removed, so re-add the object.
+        # (Calling add_to_inventory on a still-held stack would alias it twice.)
+        if '_preserve' in messages:
+            messages.remove('_preserve')
+            if item in self.player.inventory:
+                item.count = getattr(item, 'count', 1) + 1
+            else:
+                self.player.add_to_inventory(item)
         _qs_pot = getattr(self, 'quirk_system', None)
         if _qs_pot:
             _qs_pot.on_potion_drunk()
@@ -666,13 +685,17 @@ class MenuMixin:
         # Corpses on the current tile that haven't been lore-identified yet.
         # Flatten into ground_entries — no separate "CORPSES" section per
         # 2026-05-20 playtest feedback (felt redundant alongside "ON THE GROUND").
-        _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
+        # Show a corpse while its id_level < 5 (parallel to the item rule above),
+        # so a partially-studied corpse can be pushed all the way to level 5 (the
+        # family mastery). The OLD filter excluded corpses at lore_identified
+        # (id_level >= 4) and any monster in lore_known_monster_ids, which made a
+        # 4/5 corpse vanish from the menu — you could never reach the level-5
+        # mastery, especially since new corpses spawn pre-set to the known level.
         corpses = [
             i for i in self.ground_items
             if i.x == self.player.x and i.y == self.player.y
                and isinstance(i, Corpse)
-               and not i.lore_identified
-               and getattr(i, 'monster_id', '') not in _lore_known
+               and int(getattr(i, 'id_level', 0)) < 5
         ]
         # Store as (item, is_ground, is_corpse) tuples.
         # Corpses now flagged is_ground=True so they share the ON THE GROUND
