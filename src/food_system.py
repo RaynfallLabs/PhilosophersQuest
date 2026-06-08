@@ -317,6 +317,16 @@ def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
         except Exception:
             messages.append(f"You feel the {desc} flow through you ({duration} turns).")
 
+    # Boss Class Ascension hook: the four boss trophy recipes (floors 20/40/60/80)
+    # carry `class_ascension: true`. Cooking one is NOT a permanent-power meal --
+    # the meal IS the class choice. Emit a `_class_ascension` SIGNAL (caught by the
+    # cook caller in game_menus, which opens the Ascension screen) and SKIP the
+    # permanent_power branch below so the reward isn't double-spent. The signal
+    # only fires on a non-ruined cook (tier >= 1); a botched cook wastes the cut.
+    if recipe.get('class_ascension') and tier >= 1:
+        messages.append("_class_ascension")
+        return messages
+
     # Trophy: permanent power — applied via a dispatcher
     if outcome.get('permanent_power') and recipe.get('permanent_power'):
         power_id = recipe['permanent_power']

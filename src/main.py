@@ -1178,6 +1178,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # (+1 stat / +5 HP per floor; trophies bypass).
         if hasattr(self.player, 'reset_floor_cook_caps'):
             self.player.reset_floor_cook_caps()
+        # Boss Class Ascension: once-per-floor class-ability charges reset.
+        try:
+            from class_system import reset_ability_charges as _reset_class_charges
+            _reset_class_charges(self.player)
+        except ImportError:
+            pass
+        self.player._evasion_armed = False   # Rogue Evasion arm clears each floor
         # Engine wave 5 — flat-armor per-floor charges (dodge_first_arrow,
         # gita_focus, maid_does_not_fall, story_thread).
         try:
@@ -3458,6 +3465,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             trap['revealed'] = True
             self.add_message("You float safely over a trap!", 'info')
             return
+        # Rogue Evasion ability: a one-shot armed auto-dodge of the first trap
+        # this floor (Boss Class Ascension). Consumes the armed flag.
+        if getattr(self.player, '_evasion_armed', False):
+            self.player._evasion_armed = False
+            trap['revealed'] = True
+            self.add_message(
+                f"Evasion! You twist aside from a {trap['type'].replace('_', ' ')} trap "
+                "at the last instant.", 'success')
+            return
         # PER-based avoidance: chance to notice and sidestep at the last moment
         import random as _rng_trap
         avoid_chance = 0.05 + self.player.PER * 0.02  # PER 10 = 25%, PER 16 = 37%
@@ -3917,12 +3933,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         return _hrng.choice(pool)
 
     def _do_passive_trap_detection(self):
-        """Passive PER-based detection of adjacent unrevealed traps each turn."""
+        """Passive PER-based detection of unrevealed traps each turn.
+
+        Base radius is the 8 adjacent tiles; the Rogue class perk trap_sight
+        (Boss Class Ascension) extends the scan radius by its value (+1 tile for
+        the base Rogue calling)."""
         import random as _rng
         chance = 0.03 + self.player.PER * 0.01  # PER 10 = 13%, PER 16 = 19%
+        rad = 1
+        try:
+            from class_system import proficiency as _cls_prof
+            rad += int(_cls_prof(self.player, 'trap_sight'))
+        except Exception:
+            pass
         px, py = self.player.x, self.player.y
-        for dy in range(-1, 2):
-            for dx in range(-1, 2):
+        for dy in range(-rad, rad + 1):
+            for dx in range(-rad, rad + 1):
                 if dx == 0 and dy == 0:
                     continue
                 nx, ny = px + dx, py + dy
@@ -4557,6 +4583,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
+            _ascend = self._pop_class_ascension_signal(messages)
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
             # Determine quality from messages to notify quirk system
@@ -4577,6 +4604,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     ingredient_id=ingredient.id,
                 )
             self._advance_turn()
+            if _ascend:
+                self._open_ascension_menu()
 
         # Check Persephone quirk: max chain 6
         _persephone = getattr(self.player, 'quirk_progress', {}).get('persephone_active', False)
@@ -4589,6 +4618,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
+            _ascend = self._pop_class_ascension_signal(messages)
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and ('ruin' in msg.lower() or 'mediocre' in msg.lower())) else 'success')
             if not getattr(self, '_chronicle_first_compound', False):
@@ -4599,8 +4629,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if rname and rname not in self._cooked_recipes:
                 self._cooked_recipes.append(rname)
             self._advance_turn()
+            if _ascend:
+                self._open_ascension_menu()
 
         cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete)
+
+    def _pop_class_ascension_signal(self, messages: list[str]) -> bool:
+        """Strip the `_class_ascension` cook signal from `messages` in place.
+
+        Returns True if the signal was present (a boss trophy was successfully
+        cooked -> the player should be offered an Ascension). The signal is
+        emitted by food_system._apply_tier_outcome for the four boss trophy
+        recipes; opening the picker is deferred to the caller so messages can be
+        surfaced and the cook's turn advanced first.
+        """
+        if '_class_ascension' in messages:
+            messages.remove('_class_ascension')
+            return True
+        return False
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)

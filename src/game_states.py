@@ -56,3 +56,4 @@ STATE_PET_FEED         = 'pet_feed'          # Sub-menu: pick a food item to fee
 STATE_PET_HEAL         = 'pet_heal'          # Sub-menu: pick a healing potion to use on selected pet
 STATE_PET_SPECIALS     = 'pet_specials'      # Sub-menu: pick an unlocked special to use
 STATE_QA_WARP_INPUT    = 'qa_warp_input'     # Titivillus build only: type a floor number to warp to
+STATE_ASCENSION        = 'ascension'         # Boss Class Ascension picker (cooked a boss trophy)

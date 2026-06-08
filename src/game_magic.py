@@ -1043,6 +1043,16 @@ class MagicMixin:
         if not spell:
             return
         mp_cost = spell['mp_cost']
+        # Mage class perk: mp_cost_reduction (Boss Class Ascension) shaves a flat
+        # amount off every spell's MP cost (min 1, so spells never become free
+        # this way). Applied before the free-cast passive.
+        try:
+            from class_system import proficiency as _cls_prof
+            _mp_red = int(_cls_prof(self.player, 'mp_cost_reduction'))
+            if _mp_red > 0:
+                mp_cost = max(1, mp_cost - _mp_red)
+        except Exception:
+            pass
         from chain_passives import consume_passive_charge
         if consume_passive_charge(self.player, 'free_cast_once_per_floor'):
             mp_cost = 0

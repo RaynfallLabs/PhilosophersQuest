@@ -46,7 +46,7 @@ from game_states import (
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_PRAY, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT,
+    STATE_QA_WARP_INPUT, STATE_ASCENSION,
 )
 
 
@@ -1060,6 +1060,8 @@ class RenderMixin:
             self._draw_qa_warp_popup()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
+        elif self.state == STATE_ASCENSION:
+            self._draw_ascension_menu()
         elif self.state == STATE_EAT_MENU:
             self._draw_eat_menu()
         elif self.state == STATE_QUAFF_MENU:
@@ -2856,6 +2858,56 @@ class RenderMixin:
             font_md=self.font_md,
             font_sm=self.font_sm,
             draw_icon_fn=_cook_icon,
+        )
+
+    def _draw_ascension_menu(self):
+        """Boss Class Ascension picker (opened by cooking a boss trophy).
+
+        Lists the offered class nodes for the player's current tier. Each row
+        shows the node name + a stat/perk/ability summary + flavor, wrapped to
+        the panel width. Text rows (no icons), modelled on the drop menu."""
+        import class_system as cs
+        choices = getattr(self, '_ascension_choices', []) or []
+        classes = cs.load_classes()
+        bw = min(760, layout.GAME_W - 40)
+        max_detail_w = bw - 90
+        entries = []
+        for i, nid in enumerate(choices[:26]):
+            node = classes.get(nid, {})
+            summary = self._ascension_node_summary(node)
+            flavor = node.get('flavor', '')
+            detail = summary
+            if flavor:
+                detail = f"{summary}\n{flavor}" if summary else flavor
+            # Pre-wrap each logical line so flavor sits under the stat summary.
+            detail_lines = []
+            for chunk in detail.split('\n'):
+                detail_lines.extend(self._wrap_text(chunk, self.font_sm, max_detail_w))
+            entries.append({
+                'name': node.get('name', nid),
+                'detail_lines': detail_lines,
+                'key': self._LETTERS[i],
+                'name_color': FP.GOLD_BRIGHT,
+                'detail_color': FP.BODY_TEXT,
+                'row_style': 'text',
+            })
+        path_len = len(cs.class_path(self.player))
+        _tier_names = {0: 'Calling', 1: 'Specialization', 2: 'Mastery', 3: 'Capstone'}
+        subtitle = f"Choose your {_tier_names.get(path_len, 'path')} — the boss meal IS the choice."
+        draw_menu(
+            self.screen,
+            title="ASCENSION",
+            entries=entries,
+            scroll=getattr(self, '_ascension_scroll', 0),
+            subtitle=subtitle,
+            subtitle_color=FP.GOLD_PALE,
+            hint="a-z: answer the calling  |  ESC: defer",
+            border_color=FP.GOLD_BRIGHT,
+            max_width=760,
+            center_in=(layout.GAME_W, layout.WINDOW_H),
+            font_md=self.font_md,
+            font_sm=self.font_sm,
+            row_style='text',
         )
 
     def _draw_drop_menu(self):

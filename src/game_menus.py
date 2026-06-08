@@ -31,6 +31,7 @@ from game_states import (
     STATE_DROP_MENU, STATE_DROP_GOLD_INPUT,
     STATE_POWER_MENU, STATE_THROW_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
+    STATE_ASCENSION,
 )
 
 
@@ -91,6 +92,68 @@ class MenuMixin:
             self._cook_item(tab_items[idx])
         else:
             self._cook_compound(tab_items[idx])
+
+    # ------------------------------------------------------------------
+    # Boss Class Ascension picker  (opened by cooking a boss trophy)
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _ascension_node_summary(node: dict) -> str:
+        """One-line stat/perk/ability summary for an Ascension choice row."""
+        import class_system as _cs
+        bits = []
+        for stat, amt in (node.get('stat_bonuses') or {}).items():
+            bits.append(f"+{int(amt)} {stat}")
+        perks = node.get('perks') or {}
+        for key, val in perks.items():
+            if key == 'weapon_bonus':
+                grps = ', '.join(val.get('groups', []))
+                bits.append(f"+{val.get('flat', 0)} dmg ({grps})")
+            elif key == 'save_bonus':
+                bits.append(f"+{val.get('amount', 1)} {val.get('category', '')} saves")
+            elif key == 'healing_received_pct':
+                bits.append(f"+{int(val)}% healing")
+            elif key == 'mp_cost_reduction':
+                bits.append(f"-{int(val)} spell MP cost")
+            elif key == 'trap_sight':
+                bits.append(f"+{int(val)} trap sight")
+            else:
+                bits.append(f"{key.replace('_', ' ')} +{val}")
+        ability = node.get('ability') or {}
+        if ability.get('name'):
+            bits.append(f"Ability: {ability['name']}")
+        return "   |   ".join(bits)
+
+    def _open_ascension_menu(self):
+        """Open the Ascension picker for the player's current class tier.
+
+        Lists class_system.offered_choices(player); the player picks one with
+        a-z. If nothing qualifies (e.g. a tier with no authored nodes, or no
+        soft-gate met), surface a graceful message and stay in STATE_PLAYER.
+        """
+        import class_system as cs
+        node_ids = cs.offered_choices(self.player)
+        if not node_ids:
+            self.add_message(
+                "You commune with the slain boss's essence, but no calling "
+                "answers you here.", 'info')
+            self.state = STATE_PLAYER
+            return
+        self._ascension_choices = node_ids
+        self.state = STATE_ASCENSION
+
+    def _ascension_menu_input(self, key: int):
+        import class_system as cs
+        idx = self._AZ_KEYS.get(key)
+        choices = getattr(self, '_ascension_choices', []) or []
+        if idx is None or idx >= len(choices):
+            return
+        node_id = choices[idx]
+        self.state = STATE_PLAYER
+        self._ascension_choices = []
+        messages = cs.apply_class_node(self.player, node_id)
+        for i, msg in enumerate(messages):
+            self.add_message(msg, 'success' if i == 0 else 'info')
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)
@@ -1027,6 +1090,31 @@ class MenuMixin:
                     'uses': int(_acc.charges),
                 }, int(_acc.charges), 0))
 
+        # ----- Boss Class Ascension: once-per-floor class abilities -----
+        # Granted by apply_class_node; each has a per-floor charge tracked in
+        # class_system. Only shown while the charge is unspent (a spent charge
+        # is dropped from the menu, like the 7-League / Gilgamesh actives).
+        import class_system as _cs
+        _CLASS_ABILITY_DEFS = {
+            'second_wind':     ('Second Wind', 'Catch your breath: heal 10% of max HP. Once per floor.'),
+            'arcane_recovery': ('Arcane Recovery', 'Draw on the weave: restore 20% of max MP. Once per floor.'),
+            'evasion':         ('Evasion', 'Ready your reflexes: auto-dodge the next trap this floor.'),
+            'turn_undead':     ('Turn Undead', 'Brandish your faith: nearby undead recoil and flee. Once per floor.'),
+        }
+        for _abid in getattr(pl, 'class_abilities', []) or []:
+            _adef = _CLASS_ABILITY_DEFS.get(_abid)
+            if not _adef:
+                continue
+            if not _cs.ability_charge_available(pl, _abid):
+                continue
+            _alabel, _adesc = _adef
+            powers.append((f'class_{_abid}', {
+                'label': _alabel,
+                'desc': _adesc,
+                'cooldown': 0,
+                'uses': 1,
+            }, 1, 0))
+
         if not powers:
             self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
             return
@@ -1067,6 +1155,8 @@ class MenuMixin:
             return self._activate_gold_offering()
         if pid.startswith('acc_charge_'):
             return self._activate_accessory_charge(pid[len('acc_charge_'):])
+        if pid.startswith('class_'):
+            return self._activate_class_ability(pid[len('class_'):])
 
         pdef = _ACTIVE_POWER_DEFS.get(pid, {})
         label = pdef.get('label', pid)
@@ -1415,6 +1505,76 @@ class MenuMixin:
     # ------------------------------------------------------------------
     # Engine wave 6: armor activated abilities + accessory charges
     # ------------------------------------------------------------------
+
+    def _activate_class_ability(self, ability_id: str) -> bool:
+        """Activate a once-per-floor Boss-Class-Ascension ability.
+
+        Returns False (advance the turn) on success; True (defer, no turn) on a
+        warning so a misfire doesn't waste a turn. The per-floor charge is spent
+        only when the ability actually does something.
+        """
+        import class_system as _cs
+        pl = self.player
+        if not _cs.ability_charge_available(pl, ability_id):
+            self.add_message("That calling's power is spent for this floor.", 'warning')
+            return True
+
+        if ability_id == 'second_wind':
+            heal = max(1, int(pl.max_hp * 0.10))
+            gained = pl.restore_hp(heal)
+            if gained <= 0:
+                self.add_message("Second Wind: you are already at full health.", 'info')
+                return True
+            _cs.consume_ability_charge(pl, ability_id)
+            self.add_message(f"Second Wind: you catch your breath. (+{gained} HP)", 'success')
+            return False
+
+        if ability_id == 'arcane_recovery':
+            restore = max(1, int(pl.max_mp * 0.20))
+            before = pl.mp
+            pl.restore_mp(restore)
+            gained = pl.mp - before
+            if gained <= 0:
+                self.add_message("Arcane Recovery: your mana is already full.", 'info')
+                return True
+            _cs.consume_ability_charge(pl, ability_id)
+            self.add_message(f"Arcane Recovery: the weave answers. (+{gained} MP)", 'success')
+            return False
+
+        if ability_id == 'evasion':
+            # Arm a one-shot trap dodge consumed by _check_floor_trap. The flag
+            # lives on the player and is cleared on the next trap trigger.
+            _cs.consume_ability_charge(pl, ability_id)
+            pl._evasion_armed = True
+            self.add_message(
+                "Evasion: you ready your reflexes — the next trap this floor will miss.",
+                'success')
+            return False
+
+        if ability_id == 'turn_undead':
+            _UNDEAD_WORDS = {'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'wight',
+                             'spectre', 'vampire', 'mummy', 'revenant', 'death', 'undead',
+                             'ghoul', 'ghast', 'shade', 'banshee', 'draugr', 'barrow',
+                             'bone', 'corpse', 'vrykolakas', 'strigoi', 'mohrg', 'demi_lich'}
+            undead = [
+                m for m in self.monsters
+                if getattr(m, 'alive', False) and (m.x, m.y) in self.visible
+                and (any(w in m.kind.lower() for w in _UNDEAD_WORDS)
+                     or 'undead' in set(getattr(m, 'tags', []) or []))
+            ]
+            if not undead:
+                self.add_message("You brandish your faith, but no undead are near.", 'info')
+                return True
+            _cs.consume_ability_charge(pl, ability_id)
+            for m in undead:
+                m.add_effect('feared', 8)
+            self.add_message(
+                f"Turn Undead: holy dread washes over {len(undead)} undead — they recoil and flee!",
+                'success')
+            return False
+
+        self.add_message("Nothing happens.", 'info')
+        return True
 
     def _activate_seven_league_step(self) -> bool:
         """Stride 7 tiles in the player's facing direction. Once per floor.

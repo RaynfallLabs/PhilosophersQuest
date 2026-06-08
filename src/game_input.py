@@ -38,7 +38,7 @@ from game_states import (
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_PRAY, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT,
+    STATE_QA_WARP_INPUT, STATE_ASCENSION,
 )
 
 
@@ -85,7 +85,7 @@ class InputMixin:
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT, STATE_DROP_QTY_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
-                              STATE_PET_MENU,
+                              STATE_PET_MENU, STATE_ASCENSION,
                               STATE_PRAY, STATE_JUDGMENT):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
@@ -203,6 +203,8 @@ class InputMixin:
             self._identify_menu_input(key)
         elif self.state == STATE_COOK_MENU:
             self._cook_menu_input(key)
+        elif self.state == STATE_ASCENSION:
+            self._ascension_menu_input(key)
         elif self.state == STATE_EAT_MENU:
             self._eat_menu_input(key)
         elif self.state == STATE_QUAFF_MENU:

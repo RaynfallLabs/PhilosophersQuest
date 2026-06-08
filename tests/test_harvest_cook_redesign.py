@@ -41,7 +41,10 @@ def test_ingredient_schema():
     assert counts['universal'] == 1, f"expected 1 universal, got {counts['universal']}"
     assert counts['family'] == 12, f"expected 12 family, got {counts['family']}"
     assert counts['prime'] == 516, f"expected 516 prime, got {counts['prime']}"
-    assert counts['trophy'] == 13, f"expected 13 trophy, got {counts['trophy']}"
+    # 14 trophies: the original 13 + asterion_minotaur, converted from a prime to
+    # a trophy by the Boss Class Ascension integration (2026-06-07) so all four
+    # floor-20/40/60/80 bosses use the uniform trophy_{boss}_recipe ascension flow.
+    assert counts['trophy'] == 14, f"expected 14 trophy, got {counts['trophy']}"
     assert counts['dungeon'] == 8, f"expected 8 dungeon, got {counts['dungeon']}"
 
 
@@ -66,6 +69,8 @@ def test_thirteen_trophy_bosses():
         'surtur', 'ymir_last_spawn', 'hrungnirs_ghost', 'asmodeus',
         'nidhoggr_fragment', 'green_knight', 'whispering_crone',
         'blood_archon', 'medusa_gorgon',
+        # Converted prime -> trophy for the Boss Class Ascension (2026-06-07).
+        'asterion_minotaur',
     }
     trophy_sources = {
         ing['source_monster'] for ing in d.values()
@@ -104,7 +109,8 @@ def test_recipe_schema():
     assert counts.get('basic', 0) == 0
     assert counts.get('family', 0) == 12
     assert counts.get('prime', 0) >= 500  # 527 - 13 trophies
-    assert counts.get('trophy', 0) == 13
+    # +1 trophy: asterion converted prime->trophy for Boss Class Ascension.
+    assert counts.get('trophy', 0) == 14
     # Post-merge: master_prime and dungeon_keyed may or may not be present
     # depending on whether Phase 2 has merged yet. We don't assert their
     # absence; if present, they should be valid recipe classes.
@@ -119,8 +125,13 @@ def test_every_recipe_has_tier_outcomes():
 def test_trophy_recipes_have_permanent_power():
     d = json.loads((ROOT / "data" / "items" / "recipes.json").read_text(encoding='utf-8'))
     trophies = [r for r in d.values() if r.get('recipe_class') == 'trophy']
-    assert len(trophies) == 13
+    assert len(trophies) == 14
     for r in trophies:
+        # Boss Class Ascension recipes (floors 20/40/60/80) grant a CLASS NODE
+        # instead of a permanent_power — the meal IS the class choice. They are
+        # exempt from the permanent_power requirement (the cook signals ascension).
+        if r.get('class_ascension'):
+            continue
         assert r.get('permanent_power'), f"trophy {r.get('name')} missing permanent_power"
         # T5 outcome must have bypass_floor_cap flag
         t5 = r['tier_outcomes'].get('5', {})

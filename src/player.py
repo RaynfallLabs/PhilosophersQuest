@@ -422,9 +422,21 @@ class Player:
     def restore_hp(self, amount: int) -> int:
         """Restore HP up to max. Returns actual HP gained (callers use the
         delta for messages like 'you heal N HP'). Per engine wave 3 (2026-05-30):
-        heal_blocked status (Gae Dearg's wound) blocks the restore entirely."""
+        heal_blocked status (Gae Dearg's wound) blocks the restore entirely.
+
+        Cleric class perk: healing_received_pct (Boss Class Ascension) scales the
+        incoming heal up (+15% for the base Cleric calling). Applied to positive
+        heals only."""
         if self.has_effect('heal_blocked'):
             return 0
+        if amount > 0:
+            try:
+                from class_system import proficiency as _cls_prof
+                pct = _cls_prof(self, 'healing_received_pct')
+                if pct:
+                    amount = int(round(amount * (1.0 + pct / 100.0)))
+            except Exception:
+                pass
         before = self.hp
         self.hp = min(self.max_hp, self.hp + amount)
         return self.hp - before
@@ -651,12 +663,14 @@ class Player:
                 return 0
             return int(d.get(cat, 0) or 0) + int(d.get('all', 0) or 0)
 
-        # --- Permanent lane: equipment, innate build affinity, masteries, quirks
+        # --- Permanent lane: equipment, innate build affinity, masteries, quirks,
+        #     and the Boss Class Ascension class save bonus (body/mind/spirit).
         perm = (_amt(getattr(self, '_save_bonus', None))
                 + _amt(getattr(self, 'save_affinity', None))
                 + self._gear_save_bonus(cat)
                 + self._mastery_save_bonus(cat)
-                + self._quirk_save_bonus(cat))
+                + self._quirk_save_bonus(cat)
+                + self._class_save_bonus(cat))
 
         # --- Timed lane (cooked wards / powers); magnitude counts only while the
         #     companion status is still active. Capped at +3.
@@ -688,6 +702,14 @@ class Player:
         """Save bonuses from converted quirk passives (quirk_progress flags)."""
         qp = getattr(self, 'quirk_progress', None) or {}
         return int(qp.get(f'save_bonus_{cat}', 0) or 0) + int(qp.get('save_bonus_all', 0) or 0)
+
+    def _class_save_bonus(self, cat: str) -> int:
+        """Boss Class Ascension save bonus mapped onto this engine save stat."""
+        try:
+            from class_system import save_bonus_for_stat
+            return int(save_bonus_for_stat(self, cat))
+        except Exception:
+            return 0
 
     def _gear_save_bonus(self, cat: str) -> int:
         """Sum the `save_bonus` field across all equipped gear (scanned live, so

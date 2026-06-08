@@ -29957,9 +29957,71 @@
     "temp_desc": "astral-anchor; immune to hallucination",
     "source_monster": "astral_horror"
   },
+  "trophy_asterion_minotaur_recipe": {
+    "name": "Crown of the Labyrinth",
+    "recipe_class": "trophy",
+    "class_ascension": true,
+    "ingredients": [
+      "asterion_minotaur_trophy",
+      "family_humanoid",
+      "family_humanoid",
+      "assorted_monster_parts",
+      "assorted_monster_parts",
+      "assorted_monster_parts",
+      "assorted_monster_parts",
+      "assorted_monster_parts"
+    ],
+    "tier_outcomes": {
+      "0": {
+        "sp": 0,
+        "hp": 0,
+        "desc": "Ruined dish — the trophy is wasted forever"
+      },
+      "1": {
+        "sp": 25,
+        "hp": 2,
+        "desc": "Rough preparation of the trophy"
+      },
+      "2": {
+        "sp": 65,
+        "hp": 5,
+        "desc": "A solid trophy meal"
+      },
+      "3": {
+        "sp": 65,
+        "hp": 5,
+        "max_hp_bonus": 3,
+        "desc": "Nourishing trophy dish"
+      },
+      "4": {
+        "sp": 65,
+        "hp": 5,
+        "max_hp_bonus": 3,
+        "stat_grant": 1,
+        "desc": "Excellent trophy preparation"
+      },
+      "5": {
+        "sp": 65,
+        "hp": 5,
+        "max_hp_bonus": 3,
+        "stat_grant": 1,
+        "temp_power": true,
+        "class_ascension": true,
+        "bypass_floor_cap": true,
+        "desc": "Legendary trophy meal — you answer a calling"
+      }
+    },
+    "stat_grant": "STR",
+    "temp_power": "confused_resist",
+    "temp_duration": 250,
+    "temp_desc": "maze-king sense; immune to confusion",
+    "source_monster": "asterion_minotaur",
+    "description": "The legendary trophy recipe for Asterion the Minotaur. Cooking it opens a class Ascension."
+  },
   "trophy_medusa_gorgon_recipe": {
     "name": "Gorgon's Antitoxin",
     "recipe_class": "trophy",
+    "class_ascension": true,
     "ingredients": [
       "medusa_gorgon_trophy",
       "family_humanoid",
@@ -30022,6 +30084,7 @@
   "trophy_fafnir_dragon_recipe": {
     "name": "Heart of the Dragon",
     "recipe_class": "trophy",
+    "class_ascension": true,
     "ingredients": [
       "fafnir_dragon_trophy",
       "family_dragon",
@@ -30084,6 +30147,7 @@
   "trophy_fenrir_wolf_recipe": {
     "name": "Wolf-Bite Tonic",
     "recipe_class": "trophy",
+    "class_ascension": true,
     "ingredients": [
       "fenrir_wolf_trophy",
       "family_beast",

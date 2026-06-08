@@ -7615,6 +7615,28 @@
     "description": "Prime cut from Asterion the Minotaur.",
     "identified": true
   },
+  "asterion_minotaur_trophy": {
+    "name": "Asterion's Horn-Crown",
+    "symbol": "*",
+    "color": [
+      200,
+      120,
+      70
+    ],
+    "weight": 0.3,
+    "min_level": 18,
+    "source_monster": "asterion_minotaur",
+    "family": "humanoid",
+    "tier_role": "trophy",
+    "temp_power": "confused_resist",
+    "temp_duration": 250,
+    "temp_desc": "maze-king sense",
+    "stat_grant": "STR",
+    "class_ascension": true,
+    "trophy_desc": "The horn-crown of the Labyrinth's bull. Cooking it answers a calling.",
+    "description": "Trophy harvest from Asterion the Minotaur. Cooking it opens a class Ascension.",
+    "identified": true
+  },
   "medusa_gorgon_trophy": {
     "name": "Medusa-Gorgon's Blood",
     "symbol": "*",

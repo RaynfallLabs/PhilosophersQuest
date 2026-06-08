@@ -68,6 +68,36 @@ def has_ability(player, ability_id: str) -> bool:
     return ability_id in (getattr(player, 'class_abilities', []) or [])
 
 
+# --- once-per-floor ability charges (mirror chain_passives' charge model) ----
+# player.class_ability_charges: dict[str, bool] -- "did we already use this
+# ability's per-floor charge?". Reset by main._change_level each floor.
+
+def _ability_charge_dict(player) -> dict:
+    if not getattr(player, 'class_ability_charges', None):
+        player.class_ability_charges = {}
+    return player.class_ability_charges
+
+
+def reset_ability_charges(player) -> None:
+    """Wipe per-floor class-ability charges. Called on _change_level."""
+    player.class_ability_charges = {}
+
+
+def ability_charge_available(player, ability_id: str) -> bool:
+    """True if the player HAS the ability and its per-floor charge is unspent."""
+    if not has_ability(player, ability_id):
+        return False
+    return not _ability_charge_dict(player).get(ability_id, False)
+
+
+def consume_ability_charge(player, ability_id: str) -> bool:
+    """Spend the per-floor charge. Returns True if it was available + now spent."""
+    if not ability_charge_available(player, ability_id):
+        return False
+    _ability_charge_dict(player)[ability_id] = True
+    return True
+
+
 def weapon_flat_bonus(player, weapon) -> int:
     """Small FLAT damage bonus if `weapon` is in one of the player's class
     signature weapon groups (Fighter swords/axes, Rogue ranged). 0 otherwise."""
@@ -89,6 +119,30 @@ def save_bonus(player, category: str) -> int:
     total = 0
     for sb in class_features(player).get('save_bonuses', []) or []:
         if sb.get('category') in (category, 'all'):
+            total += int(sb.get('amount', 0))
+    return total
+
+
+# Class save categories (body/mind/spirit/reflex) -> the engine's saving-throw
+# stats (CON/WIS/DEX) read by status_effects.apply_debuff_with_save. Fighter
+# guards the body (CON: paralysis/sleep/stun), Mage+Cleric the mind/spirit
+# (WIS: confuse/fear/charm), Rogue reflexes (DEX: slow/immobilize).
+_SAVE_STAT_CATEGORIES = {
+    'CON': ('body',),
+    'WIS': ('mind', 'spirit'),
+    'DEX': ('reflex',),
+}
+
+
+def save_bonus_for_stat(player, stat: str) -> int:
+    """Class save bonus for an engine save STAT ('CON'/'WIS'/'DEX'), summing the
+    class categories that map onto it plus any 'all' bonus. Read by
+    Player.save_bonus_for (the permanent lane)."""
+    total = 0
+    cats = _SAVE_STAT_CATEGORIES.get(stat, ())
+    for sb in class_features(player).get('save_bonuses', []) or []:
+        cat = sb.get('category')
+        if cat in cats or cat == 'all':
             total += int(sb.get('amount', 0))
     return total
 

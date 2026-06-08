@@ -172,7 +172,8 @@ def test_prime_recipes_cost_1_prime_2_family_4_assorted():
 
 def test_trophy_recipes_cost_1_trophy_2_family_5_assorted():
     troph = _recipes_of("trophy")
-    assert len(troph) == 13
+    # 14 = original 13 + asterion (prime->trophy for Boss Class Ascension, 2026-06-07).
+    assert len(troph) == 14
     for rid in troph:
         r = _roles(rid)
         assert r == Counter({"trophy": 1, "family": 2, "assorted": 5}), (rid, dict(r))
