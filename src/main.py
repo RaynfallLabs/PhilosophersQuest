@@ -1011,17 +1011,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         valid_ids = set(_raw_ingredients().keys())
 
+        raw_ings = _raw_ingredients()
+
         def _migrated_replacement():
             """Build a fresh Assorted Monster Parts ingredient."""
             return load_ingredient_for('assorted_monster_parts')
 
+        def _reconcile(item):
+            """Refresh a VALID-id Ingredient's cooking-overhaul fields from the
+            current JSON (2026-06-07): old saves predate the jerky rename + the
+            edible_safe / raw_sp fields, so a pickled 'Assorted Monster Parts'
+            stayed un-eatable. Per-instance state (count, x, y, buc) is untouched."""
+            defn = raw_ings.get(item.id)
+            if not defn:
+                return
+            item.name = defn.get('name', item.name)
+            item.lore = defn.get('lore', getattr(item, 'lore', ''))
+            item.edible_safe = bool(defn.get('edible_safe', False))
+            item.raw_sp = defn.get('raw_sp', None)
+
         def _migrate_list(items_list):
-            """Swap any Ingredient with an unknown id for Assorted Parts."""
+            """Swap unknown-id Ingredients for Assorted Parts; reconcile the rest."""
             if not items_list:
                 return 0
             count = 0
             for i, item in enumerate(items_list):
-                if isinstance(item, Ingredient) and item.id not in valid_ids:
+                if not isinstance(item, Ingredient):
+                    continue
+                if item.id not in valid_ids:
                     replacement = _migrated_replacement()
                     if replacement is not None:
                         # Preserve position (x, y) for ground items
@@ -1029,6 +1046,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         replacement.y = getattr(item, 'y', 0)
                         items_list[i] = replacement
                         count += 1
+                else:
+                    _reconcile(item)
             return count
 
         total = 0

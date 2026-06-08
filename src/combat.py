@@ -645,7 +645,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if hp_pct < 0.5:
                 low_hp_mult = 1.0 + (0.5 - hp_pct) * 2.0  # up to 2x at 0% HP
 
-        str_factor = 1.0 + max(0, player.STR - 10) * 0.03
+        # STR scales MELEE damage only. RANGED shots scale on PER (the base
+        # bonus added above) -- applying str_factor to ranged too made bows and
+        # crossbows double-dip on STR *and* PER, the persistent "ranged hits way
+        # too hard" bug. (The composite_bow keeps its own intentional draw-weight
+        # STR mechanic, str_bonus_range_7, applied separately to `mult`.)
+        str_factor = 1.0 if ammo else 1.0 + max(0, player.STR - 10) * 0.03
 
         # weapon_damage_vs_tag mastery: +X% damage when target matches tag
         tag_mult = 1.0
