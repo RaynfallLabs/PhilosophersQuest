@@ -1,0 +1,630 @@
+{
+  "ring": [
+    {
+      "name": "oak ring",
+      "color": [
+        180,
+        140,
+        80
+      ]
+    },
+    {
+      "name": "runed metal ring",
+      "color": [
+        155,
+        155,
+        175
+      ]
+    },
+    {
+      "name": "ancient copper ring",
+      "color": [
+        180,
+        120,
+        60
+      ]
+    },
+    {
+      "name": "bone ring",
+      "color": [
+        220,
+        210,
+        190
+      ]
+    },
+    {
+      "name": "twisted iron ring",
+      "color": [
+        130,
+        130,
+        140
+      ]
+    },
+    {
+      "name": "carved jade ring",
+      "color": [
+        100,
+        180,
+        120
+      ]
+    },
+    {
+      "name": "rough stone ring",
+      "color": [
+        140,
+        130,
+        120
+      ]
+    },
+    {
+      "name": "grey granite ring",
+      "color": [
+        150,
+        150,
+        150
+      ]
+    },
+    {
+      "name": "silver ring",
+      "color": [
+        200,
+        200,
+        210
+      ]
+    },
+    {
+      "name": "polished crystal ring",
+      "color": [
+        210,
+        240,
+        255
+      ]
+    },
+    {
+      "name": "malachite ring",
+      "color": [
+        60,
+        160,
+        80
+      ]
+    },
+    {
+      "name": "engraved pewter ring",
+      "color": [
+        160,
+        165,
+        170
+      ]
+    },
+    {
+      "name": "gleaming iron ring",
+      "color": [
+        180,
+        180,
+        200
+      ]
+    },
+    {
+      "name": "pale ivory ring",
+      "color": [
+        240,
+        235,
+        210
+      ]
+    },
+    {
+      "name": "mossy stone ring",
+      "color": [
+        100,
+        140,
+        80
+      ]
+    },
+    {
+      "name": "sapphire ring",
+      "color": [
+        40,
+        80,
+        220
+      ]
+    },
+    {
+      "name": "lapis lazuli ring",
+      "color": [
+        50,
+        90,
+        180
+      ]
+    },
+    {
+      "name": "cobalt blue ring",
+      "color": [
+        50,
+        100,
+        200
+      ]
+    },
+    {
+      "name": "dark obsidian ring",
+      "color": [
+        40,
+        40,
+        60
+      ]
+    },
+    {
+      "name": "moonstone ring",
+      "color": [
+        200,
+        210,
+        255
+      ]
+    },
+    {
+      "name": "twilight crystal ring",
+      "color": [
+        100,
+        80,
+        180
+      ]
+    },
+    {
+      "name": "emerald ring",
+      "color": [
+        20,
+        180,
+        60
+      ]
+    },
+    {
+      "name": "peridot ring",
+      "color": [
+        100,
+        200,
+        60
+      ]
+    },
+    {
+      "name": "serpentine ring",
+      "color": [
+        80,
+        160,
+        80
+      ]
+    },
+    {
+      "name": "verdant jade ring",
+      "color": [
+        50,
+        150,
+        70
+      ]
+    },
+    {
+      "name": "living wood ring",
+      "color": [
+        100,
+        140,
+        60
+      ]
+    },
+    {
+      "name": "fire opal ring",
+      "color": [
+        255,
+        100,
+        30
+      ]
+    },
+    {
+      "name": "molten iron ring",
+      "color": [
+        220,
+        80,
+        20
+      ]
+    },
+    {
+      "name": "glacial quartz ring",
+      "color": [
+        120,
+        200,
+        255
+      ]
+    },
+    {
+      "name": "frost crystal ring",
+      "color": [
+        160,
+        220,
+        255
+      ]
+    },
+    {
+      "name": "crackling copper ring",
+      "color": [
+        240,
+        200,
+        60
+      ]
+    },
+    {
+      "name": "arc-spark brass ring",
+      "color": [
+        200,
+        180,
+        40
+      ]
+    },
+    {
+      "name": "jade serpent ring",
+      "color": [
+        60,
+        180,
+        80
+      ]
+    },
+    {
+      "name": "toxic tourmaline ring",
+      "color": [
+        80,
+        200,
+        60
+      ]
+    },
+    {
+      "name": "dreamstone ring",
+      "color": [
+        140,
+        140,
+        220
+      ]
+    },
+    {
+      "name": "lucid crystal ring",
+      "color": [
+        160,
+        160,
+        240
+      ]
+    },
+    {
+      "name": "iron ring",
+      "color": [
+        120,
+        120,
+        130
+      ]
+    },
+    {
+      "name": "steel ring",
+      "color": [
+        150,
+        155,
+        165
+      ]
+    },
+    {
+      "name": "adamantine ring",
+      "color": [
+        80,
+        90,
+        110
+      ]
+    },
+    {
+      "name": "mithril ring",
+      "color": [
+        170,
+        200,
+        240
+      ]
+    },
+    {
+      "name": "ruby ring",
+      "color": [
+        220,
+        40,
+        40
+      ]
+    },
+    {
+      "name": "coral ring",
+      "color": [
+        220,
+        100,
+        80
+      ]
+    },
+    {
+      "name": "carnelian ring",
+      "color": [
+        200,
+        80,
+        40
+      ]
+    },
+    {
+      "name": "garnet ring",
+      "color": [
+        180,
+        30,
+        30
+      ]
+    },
+    {
+      "name": "quicksilver ring",
+      "color": [
+        200,
+        220,
+        220
+      ]
+    },
+    {
+      "name": "thin wire ring",
+      "color": [
+        190,
+        190,
+        190
+      ]
+    },
+    {
+      "name": "spun glass ring",
+      "color": [
+        220,
+        240,
+        255
+      ]
+    },
+    {
+      "name": "featherweight ring",
+      "color": [
+        240,
+        240,
+        255
+      ]
+    },
+    {
+      "name": "amethyst ring",
+      "color": [
+        160,
+        80,
+        200
+      ]
+    },
+    {
+      "name": "purple glass ring",
+      "color": [
+        140,
+        60,
+        180
+      ]
+    },
+    {
+      "name": "arcane pewter ring",
+      "color": [
+        130,
+        100,
+        170
+      ]
+    },
+    {
+      "name": "prismatic ring",
+      "color": [
+        200,
+        180,
+        255
+      ]
+    },
+    {
+      "name": "opal ring",
+      "color": [
+        200,
+        200,
+        240
+      ]
+    },
+    {
+      "name": "pearl ring",
+      "color": [
+        240,
+        240,
+        240
+      ]
+    },
+    {
+      "name": "ivory ring",
+      "color": [
+        240,
+        235,
+        210
+      ]
+    },
+    {
+      "name": "white quartz ring",
+      "color": [
+        220,
+        225,
+        230
+      ]
+    },
+    {
+      "name": "topaz ring",
+      "color": [
+        220,
+        180,
+        60
+      ]
+    },
+    {
+      "name": "amber ring",
+      "color": [
+        200,
+        150,
+        40
+      ]
+    },
+    {
+      "name": "citrine ring",
+      "color": [
+        220,
+        200,
+        80
+      ]
+    },
+    {
+      "name": "hawks-eye ring",
+      "color": [
+        180,
+        140,
+        60
+      ]
+    }
+  ],
+  "amulet": [
+    {
+      "name": "leather cord amulet",
+      "color": [
+        180,
+        140,
+        80
+      ]
+    },
+    {
+      "name": "copper chain amulet",
+      "color": [
+        180,
+        120,
+        60
+      ]
+    },
+    {
+      "name": "bone chain amulet",
+      "color": [
+        220,
+        210,
+        190
+      ]
+    },
+    {
+      "name": "bronze chain amulet",
+      "color": [
+        160,
+        120,
+        60
+      ]
+    },
+    {
+      "name": "silver chain amulet",
+      "color": [
+        200,
+        200,
+        210
+      ]
+    },
+    {
+      "name": "jade pendant",
+      "color": [
+        60,
+        180,
+        100
+      ]
+    },
+    {
+      "name": "iron medallion",
+      "color": [
+        120,
+        120,
+        130
+      ]
+    },
+    {
+      "name": "titan iron pendant",
+      "color": [
+        80,
+        90,
+        110
+      ]
+    },
+    {
+      "name": "ruby pendant",
+      "color": [
+        220,
+        40,
+        40
+      ]
+    },
+    {
+      "name": "guardian ruby locket",
+      "color": [
+        180,
+        30,
+        30
+      ]
+    },
+    {
+      "name": "quicksilver charm",
+      "color": [
+        200,
+        220,
+        220
+      ]
+    },
+    {
+      "name": "air-light locket",
+      "color": [
+        210,
+        230,
+        255
+      ]
+    },
+    {
+      "name": "amethyst talisman",
+      "color": [
+        160,
+        80,
+        200
+      ]
+    },
+    {
+      "name": "brilliant crystal medallion",
+      "color": [
+        200,
+        180,
+        255
+      ]
+    },
+    {
+      "name": "opal locket",
+      "color": [
+        200,
+        200,
+        240
+      ]
+    },
+    {
+      "name": "sage ivory locket",
+      "color": [
+        240,
+        235,
+        210
+      ]
+    },
+    {
+      "name": "eagle-eye pendant",
+      "color": [
+        180,
+        140,
+        60
+      ]
+    },
+    {
+      "name": "hawk-feather talisman",
+      "color": [
+        200,
+        160,
+        60
+      ]
+    }
+  ]
+}

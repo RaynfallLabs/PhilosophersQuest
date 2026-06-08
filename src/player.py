@@ -630,6 +630,10 @@ class Player:
         loss). It is re-set on the next combat, so dropping it on save is safe."""
         state = self.__dict__.copy()
         state.pop('_combat_game_ref', None)
+        # Transient bound-method hook set by Game (one-cosmetic-per-item): stamps
+        # the run's appearance on accessories entering the pack. Unpicklable;
+        # re-set on load. Dropping it on save keeps the player picklable.
+        state.pop('_appearance_stamp', None)
         return state
 
     def save_bonus_for(self, cat: str) -> int:
@@ -1136,6 +1140,17 @@ class Player:
         # freshly-acquired known-type item never arrives as a mysterious "(0/5)"
         # and merges with the identified stack when its underlying BUC matches.
         self.reconcile_item_identification(item)
+        # One-cosmetic-per-item: stamp the run's appearance onto a managed
+        # ring/amulet entering the pack from ANY source (floor pickup, chest,
+        # NPC gift, hero special). Floor items are already stamped at spawn, so
+        # this is the catch-all for non-floor grants. No-op without the hook
+        # (e.g. unit tests that build a Player directly).
+        _stamp = getattr(self, '_appearance_stamp', None)
+        if _stamp is not None:
+            try:
+                _stamp(item)
+            except Exception:
+                pass
         # Stack identical items for stackable types (same id).
         # BUC rule: only merge stacks whose UNDERLYING buc value matches —
         # whether or not the player has identified it yet. Previously the

@@ -139,6 +139,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'tablet':      _lore_rng.randint(80, 99),
         }
         self._lore_placed: set = set()   # which have been placed this run
+        # One-cosmetic-per-item: per-run appearance map for the collapsed
+        # ring/amulet types (one mundane look per functional type this game;
+        # mirrors the _lore_levels per-run randomization). Keyed by the item's
+        # mastery_class (== canonical id for these); value is {'name','color'}.
+        self._appearance_map = self._roll_appearance_map()
         # Secret cow level state
         self._cow_poke_count: int = 0        # poke counter for the cow NPC
         self._cow_level_done: bool = False   # True once cow level completed
@@ -323,6 +328,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters                = monsters
         self.ground_items            = items
         self.player                  = Player()
+        # One-cosmetic-per-item: give the player the appearance-stamp hook so
+        # accessories entering the pack from any source adopt this run's looks.
+        self.player._appearance_stamp = self.apply_appearance
 
         # Apply secret build stat overrides (ignore _-prefixed metadata keys)
         b = self.secret_build or {}
@@ -374,6 +382,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
 
+        # One-cosmetic-per-item: stamp this run's appearance onto the starting
+        # floor's accessories (and onto any starting-kit ring/amulet in pack).
+        self._stamp_ground_appearances()
+        for _it in getattr(self.player, 'inventory', []):
+            self.apply_appearance(_it)
+
         # Greeting
         if b.get('_greeting'):
             self.add_message(b['_greeting'], 'success')
@@ -394,6 +408,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
         self.player        = state['player']
+        # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
+        # pickle). _migrate_buc_all (below) handles deleted-id remap + stamping
+        # of already-owned/ground items.
+        self.player._appearance_stamp = self.apply_appearance
         # Save compat: old saves lack ranged_weapon slot
         if not hasattr(self.player, 'ranged_weapon'):
             self.player.ranged_weapon = None
@@ -570,6 +588,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if '_lore_levels' in state:
             self._lore_levels = state['_lore_levels']
         self._lore_placed = state.get('_lore_placed', set())
+        # One-cosmetic-per-item: restore the per-run accessory appearance map.
+        # A pre-fix save lacks it -> roll a fresh one so the run still gets
+        # consistent per-type looks from here on. (__init__ already rolled one;
+        # only overwrite when the save actually carries the field.)
+        _amap = state.get('_appearance_map')
+        if _amap:
+            self._appearance_map = _amap
+        elif not getattr(self, '_appearance_map', None):
+            self._appearance_map = self._roll_appearance_map()
+        # Now that the appearance map + all item collections are restored, heal
+        # accessories: remap any deleted variant id to its surviving canonical id
+        # (and re-resolve its mechanical def), then stamp the run's look.
+        self._migrate_accessory_appearances(state)
         # Quirk system
         if state.get('quirk_system') is not None:
             self.quirk_system = state['quirk_system']
@@ -755,6 +786,176 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     _migrate_buc_item = staticmethod(migrate_buc_item)
 
+    # ------------------------------------------------------------------
+    # One-cosmetic-per-item: per-run accessory appearances
+    # ------------------------------------------------------------------
+    # The cosmetic ring/amulet groups were collapsed in accessory.json to ONE
+    # functional definition each, carrying a NEUTRAL fallback look. The real
+    # unidentified appearance is dealt here, once per run: each managed type gets
+    # exactly one slot-appropriate look from the shared pool (NetHack-style). The
+    # map persists in the save so the looks stay stable across reloads.
+
+    def _roll_appearance_map(self, rng=None) -> dict:
+        """Deal one appearance per managed (collapsed/renamed) accessory type.
+
+        Returns {mastery_class: {'name': str, 'color': [r,g,b]}}. Deterministic
+        for a given `rng` (used by tests). Managed types are the non-unique
+        accessories carrying the neutral 'a ring' / 'an amulet' fallback look —
+        i.e. exactly the survivors of the collapse. Types with their own bespoke
+        unidentified_name (protection rings, resist amulets, uniques, the
+        identified-by-default story rings) are skipped and keep their own look.
+
+        If the pool is smaller than the number of managed types of a slot, looks
+        are reused round-robin (still deterministic) rather than crashing —
+        there is ample headroom (60 ring / 18 amulet looks) so this is a guard.
+        """
+        import random as _r
+        from items import load_items, load_accessory_appearances
+        from class_masteries import get_mastery_class
+        rng = rng or _r.Random()
+
+        try:
+            accs = load_items('accessory')
+        except Exception:
+            return {}
+        try:
+            pool = load_accessory_appearances()
+        except Exception:
+            return {}
+
+        # Collect managed types per slot, keyed by mastery_class (stable id).
+        # 'a ring' / 'an amulet' are the neutral fallbacks the migration stamped.
+        _NEUTRAL = {'a ring', 'an amulet'}
+        managed: dict[str, list] = {'ring': [], 'amulet': []}
+        seen: set = set()
+        for a in accs:
+            if getattr(a, 'is_unique', False):
+                continue
+            if getattr(a, 'identified', False):
+                continue
+            uid = (getattr(a, 'unidentified_name', '') or '').strip().lower()
+            if uid not in _NEUTRAL:
+                continue
+            slot = getattr(a, 'slot', None)
+            if slot not in managed:
+                continue
+            cls = get_mastery_class(a)
+            if cls in seen:
+                continue
+            seen.add(cls)
+            managed[slot].append(cls)
+
+        amap: dict = {}
+        for slot, classes in managed.items():
+            looks = list(pool.get(slot, []))
+            if not looks or not classes:
+                continue
+            rng.shuffle(looks)
+            # Stable order of classes so the deal is deterministic given rng.
+            for i, cls in enumerate(sorted(classes)):
+                look = looks[i % len(looks)]
+                amap[cls] = {'name': look['name'], 'color': list(look['color'])}
+        return amap
+
+    def apply_appearance(self, item) -> None:
+        """Stamp the run's assigned look onto a managed accessory instance.
+
+        No-op for non-accessories, uniques, and types not in the appearance map
+        (which keep their own unidentified_name). Because _display_name only
+        shows unidentified_name while the type is unknown, stamping at spawn /
+        pickup / load is sufficient and never leaks once identified."""
+        from items import Accessory
+        amap = getattr(self, '_appearance_map', None)
+        if not amap or not isinstance(item, Accessory):
+            return
+        if getattr(item, 'is_unique', False):
+            return
+        from class_masteries import get_mastery_class
+        look = amap.get(get_mastery_class(item))
+        if look:
+            item.unidentified_name = look['name']
+            try:
+                item.color = tuple(look['color'])
+            except Exception:
+                pass
+
+    def _stamp_ground_appearances(self) -> None:
+        """Apply the run appearance map to every accessory currently on the
+        floor (and inside open containers at any tile). Called after a floor is
+        generated so freshly-spawned rings/amulets adopt this run's looks."""
+        for g in getattr(self, 'ground_items', []) or []:
+            self.apply_appearance(g)
+            for c in getattr(g, 'contents', None) or []:
+                self.apply_appearance(c)
+
+    @staticmethod
+    def _heal_accessory_id(item) -> None:
+        """If `item` is an accessory whose id was deleted by the one-cosmetic
+        merge, rewrite it to the surviving canonical id and re-resolve its
+        mechanical fields (name/effects/slot/etc.) from the canonical definition.
+
+        Items already IDENTIFIED keep displaying correctly (name resolution
+        falls back to item.name, which we refresh here for renamed stat tiers);
+        unidentified ones pick up the canonical type + the run's look. No-op for
+        non-accessories and for ids that still exist."""
+        from items import (Accessory, LEGACY_ACCESSORY_ID_REMAP,
+                           get_accessory_def)
+        if not isinstance(item, Accessory):
+            return
+        old_id = getattr(item, 'id', None)
+        if old_id not in LEGACY_ACCESSORY_ID_REMAP:
+            return
+        new_id = LEGACY_ACCESSORY_ID_REMAP[old_id]
+        defn = get_accessory_def(new_id)
+        if not defn:
+            return
+        # Rebuild a canonical instance to copy mechanical fields from, preserving
+        # the player's per-instance progress (buc, buc_known, id_level, count,
+        # enchant, charges). Position is irrelevant here (handled by caller).
+        fresh = Accessory({**defn, 'id': new_id, 'item_class': 'accessory'})
+        # Preserve the player's per-instance progress. NOTE: `identified` is a
+        # property backed by id_level (setting it rewrites id_level), so we
+        # restore id_level only — never `identified` — to avoid clobbering it.
+        preserve = {}
+        for attr in ('buc', 'buc_known', 'id_level', 'count', 'charges', 'x', 'y'):
+            if attr in item.__dict__:
+                preserve[attr] = item.__dict__[attr]
+        item.__dict__.update(fresh.__dict__)
+        item.__dict__.update(preserve)
+
+    def _migrate_accessory_appearances(self, state: dict):
+        """Heal deleted accessory ids + stamp the run's appearance on every
+        owned/ground/stored accessory (one-cosmetic-per-item save migration)."""
+        heal = self._heal_accessory_id
+        stamp = self.apply_appearance
+
+        def fix(item):
+            if item is None:
+                return
+            heal(item)
+            stamp(item)
+            for c in getattr(item, 'contents', None) or []:
+                heal(c)
+                stamp(c)
+
+        p = self.player
+        for item in getattr(p, 'inventory', []):
+            fix(item)
+        for slot_item in (getattr(p, 'weapon', None), getattr(p, 'ranged_weapon', None),
+                          getattr(p, 'shield', None), getattr(p, 'amulet_slot', None)):
+            fix(slot_item)
+        for s in getattr(p, 'armor_slots', []) or []:
+            fix(s)
+        for s in getattr(p, 'accessory_slots', []) or []:
+            fix(s)
+        for item in state.get('ground_items', []) or []:
+            fix(item)
+        lm = state.get('level_mgr')
+        if lm:
+            for lvl_data in getattr(lm, 'levels', {}).values():
+                for item in lvl_data.get('ground_items', []) or []:
+                    fix(item)
+
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels.
 
@@ -863,6 +1064,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters     = monsters
         self.ground_items = ground_items
         self.dungeon_level = new_level
+        # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
+        # (and any unstamped) floor accessories. Idempotent for loaded floors.
+        self._stamp_ground_appearances()
         # class_scroll_persist (scroll_of_mapping mastery): auto-map every
         # newly-entered floor. The mapped state already persists per-floor via
         # level_manager save/load; this extends that to floors the player has

@@ -1,8 +1,17 @@
 # One Cosmetic Appearance Per Functional Type
 
-**Status:** Proposal (audit complete; no live files changed)
+**Status:** IMPLEMENTED 2026-06-07 (recommended approach — collapse + per-run shuffle). Suite 1534 GREEN; one play-test pending (rings/amulets are early loot).
 **Date:** 2026-06-07
-**Scope:** `data/items/accessory.json`, `src/items.py`, `src/dungeon.py`, `src/main.py`, `src/save_system.py`
+**Scope:** `data/items/accessory.json`, `src/items.py`, `src/main.py`, `src/player.py`, `src/class_masteries.py`, `src/save_system.py`, `src/welcome_screen.py`
+
+**Implementation notes (what actually shipped):**
+- Data migration: `data/items/_collapse_cosmetic_accessories.py` (round-trip + idempotency guarded). accessory.json 199→163 entries (36 removed: 30 cosmetic + 6 same-tier dupes). Pool harvested to `data/items/accessory_appearances.json` (60 ring / 18 amulet looks).
+- Tiered stat rings renamed: +1 "ring of X" / +2 "ring of greater X" / +3 "ring of master X"; amulets +2 "amulet of X" / +3 "amulet of greater X" (no +1 amulet). Power + bell-curve weights preserved byte-for-byte; +2/+3 cosmetic dupes merged per tier.
+- Per-run shuffle: `Game._roll_appearance_map` (rolled in `__init__`, persisted in save, re-rolled if a pre-fix save lacks it). `Game.apply_appearance` stamps name+color; called at floor-gen (`_stamp_ground_appearances`), starting kit, and `Player.add_to_inventory` (via a transient `_appearance_stamp` hook dropped in `Player.__getstate__`).
+- Save migration: `items.LEGACY_ACCESSORY_ID_REMAP` (78 ids) + `Game._heal_accessory_id` (rewrites id, re-resolves canonical def, preserves buc/buc_known/id_level/count); driven by `Game._migrate_accessory_appearances` in `load_state`. `identified` is a property backed by id_level, so it is NOT restored separately (would clobber id_level).
+- Renderer: rings/amulets have no per-id sprite → glyph path uses `item.color` (the stamped look), so no sprite/look desync.
+- `class_masteries.CLASS_MASTERY_BLESSINGS` gained the 30 new tier slugs. `welcome_screen.py` start-accessory grants re-pointed to canonical ids.
+- Tests: `tests/test_one_cosmetic_appearances.py` (22 tests).
 
 ---
 

@@ -98,6 +98,69 @@ CLASS_MASTERY_BLESSINGS: dict[str, dict] = {
         'scope': 'class',
         'desc': 'You understand the ring of perception: +1 PER while any is worn.',
     },
+    # Tiered stat rings (+2 "greater", +3 "master") -- one-cosmetic-per-item
+    # disambiguated the old shared-name power tiers into distinct classes
+    # (2026-06-07). Each tier gets the same flavor +1 mastery bonus as its base.
+    'ring_of_greater_strength': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'STR', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of greater strength: a quiet +1 STR while any is worn.',
+    },
+    'ring_of_master_strength': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'STR', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of master strength: a quiet +1 STR while any is worn.',
+    },
+    'ring_of_greater_constitution': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'CON', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of greater constitution: +1 CON while any is worn.',
+    },
+    'ring_of_master_constitution': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'CON', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of master constitution: +1 CON while any is worn.',
+    },
+    'ring_of_greater_dexterity': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'DEX', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of greater dexterity: +1 DEX while any is worn.',
+    },
+    'ring_of_master_dexterity': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'DEX', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of master dexterity: +1 DEX while any is worn.',
+    },
+    'ring_of_greater_intellect': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'INT', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of greater intellect: +1 INT while any is worn.',
+    },
+    'ring_of_master_intellect': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'INT', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of master intellect: +1 INT while any is worn.',
+    },
+    'ring_of_greater_wisdom': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'WIS', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of greater wisdom: +1 WIS while any is worn.',
+    },
+    'ring_of_master_wisdom': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'WIS', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of master wisdom: +1 WIS while any is worn.',
+    },
+    'ring_of_greater_perception': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'PER', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of greater perception: +1 PER while any is worn.',
+    },
+    'ring_of_master_perception': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'PER', 'amount': 1},
+        'scope': 'class',
+        'desc': 'You understand the ring of master perception: +1 PER while any is worn.',
+    },
     'ring_of_protection': {
         'kind': 'class_acc_ac_bonus', 'value': 1, 'scope': 'class',
         'desc': 'Rings of protection feel familiar — they grant +1 AC bonus when worn.',
@@ -208,6 +271,38 @@ CLASS_MASTERY_BLESSINGS: dict[str, dict] = {
         'kind': 'class_acc_stat_bonus', 'value': {'stat': 'PER', 'amount': 1},
         'scope': 'class',
         'desc': 'Amulets of perception feel familiar — +1 PER while any is worn.',
+    },
+    # Tiered stat amulets: base name sits on the +2 tier, "greater" on +3
+    # (one-cosmetic-per-item, 2026-06-07). Same flavor +1 bonus per tier.
+    'amulet_of_greater_strength': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'STR', 'amount': 1},
+        'scope': 'class',
+        'desc': 'Amulets of greater strength feel familiar — +1 STR while any is worn.',
+    },
+    'amulet_of_greater_constitution': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'CON', 'amount': 1},
+        'scope': 'class',
+        'desc': 'Amulets of greater constitution feel familiar — +1 CON while any is worn.',
+    },
+    'amulet_of_greater_dexterity': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'DEX', 'amount': 1},
+        'scope': 'class',
+        'desc': 'Amulets of greater dexterity feel familiar — +1 DEX while any is worn.',
+    },
+    'amulet_of_greater_intellect': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'INT', 'amount': 1},
+        'scope': 'class',
+        'desc': 'Amulets of greater intellect feel familiar — +1 INT while any is worn.',
+    },
+    'amulet_of_greater_wisdom': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'WIS', 'amount': 1},
+        'scope': 'class',
+        'desc': 'Amulets of greater wisdom feel familiar — +1 WIS while any is worn.',
+    },
+    'amulet_of_greater_perception': {
+        'kind': 'class_acc_stat_bonus', 'value': {'stat': 'PER', 'amount': 1},
+        'scope': 'class',
+        'desc': 'Amulets of greater perception feel familiar — +1 PER while any is worn.',
     },
     'amulet_of_regeneration': {
         'kind': 'class_acc_regen_bonus', 'value': 1, 'scope': 'class',

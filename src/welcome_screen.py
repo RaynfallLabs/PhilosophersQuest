@@ -38,14 +38,14 @@ SECRET_BUILDS: dict[str, dict] = {
     "aristotle of stagira": {
         "INT": 18, "WIS": 16, "PER": 14, "STR": 6, "CON": 8, "DEX": 8,
         "_sprite": "player_aristotle",
-        "_start_accessory": "ring_intellect_amethyst",
+        "_start_accessory": "ring_of_intellect",
         "_start_wand": "lantern_of_diogenes",
         "_greeting": "Aristotle the Philosopher enters the dungeon with calm reason.",
     },
     "socrates of athens": {
         "WIS": 20, "INT": 14, "PER": 16, "STR": 8, "CON": 10, "DEX": 7,
         "_sprite": "player_socrates",
-        "_start_accessory": "ring_wisdom_opal",
+        "_start_accessory": "ring_of_wisdom",
         "_start_spells": ["cleanse_spell"],
         "_greeting": "Socrates asks the dungeon a question. It does not answer.",
     },
@@ -59,7 +59,7 @@ SECRET_BUILDS: dict[str, dict] = {
     "friedrich nietzsche": {
         "INT": 16, "WIS": 8, "PER": 14, "STR": 14, "CON": 12, "DEX": 10,
         "_sprite": "player_nietzsche",
-        "_start_accessory": "ring_strength_iron",
+        "_start_accessory": "ring_of_strength",
         "_start_spells": ["empower_spell"],
         "_greeting": "Nietzsche stares into the dungeon. The dungeon stares back.",
     },
@@ -254,7 +254,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_lovelace",
         "_no_dagger": True,
         "_start_weapon": ("rapier", "iron"),
-        "_start_accessory": "ring_intellect_amethyst",
+        "_start_accessory": "ring_of_intellect",
         "_start_book": "spellbook_magic_missile",
         "_greeting": "Ada Lovelace traces the dungeon's algorithm in the air. It is computable.",
     },
@@ -288,7 +288,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_sherlock",
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),   # the famous walking-stick
-        "_start_accessory": "ring_intellect_amethyst",
+        "_start_accessory": "ring_of_intellect",
         "_greeting": "Holmes glances at the dungeon and announces three deductions before stepping in.",
     },
     "miyamoto musashi the sword saint": {
@@ -304,7 +304,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_hildegard",
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),
-        "_start_accessory": "ring_wisdom_opal",
+        "_start_accessory": "ring_of_wisdom",
         "_start_book": "spellbook_light",
         "_greeting": "Hildegard prays. The world greens around her in answer.",
     },
@@ -313,7 +313,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_tesla",
         "_start_weapon": ("dagger", "iron"),
         "_start_wand": "wand_of_magic_missile",
-        "_start_accessory": "ring_intellect_amethyst",
+        "_start_accessory": "ring_of_intellect",
         "_greeting": "Tesla touches the doorframe. It hums. The dungeon has been wired.",
     },
 

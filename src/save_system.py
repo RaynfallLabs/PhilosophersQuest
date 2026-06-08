@@ -119,6 +119,10 @@ def save_game(game) -> bool:
             # Deep-lore item spawn tracking
             '_lore_levels': getattr(game, '_lore_levels', {}),
             '_lore_placed': getattr(game, '_lore_placed', set()),
+            # One-cosmetic-per-item: per-run accessory appearance map (one look
+            # per collapsed ring/amulet type). Backward-compatible: old saves
+            # return {} and load_state rolls a fresh one.
+            '_appearance_map': getattr(game, '_appearance_map', {}),
             # Quirk system (full object with progress, unlocks, cooldowns)
             'quirk_system': getattr(game, 'quirk_system', None),
             # Secret cow level
