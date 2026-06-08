@@ -54,3 +54,38 @@ def test_chain5_yew_crossbow_lands_28_not_41():
     fey = 1.5  # single (fixed); the bug made this 2.25
     assert round(rw.base_damage * 1.75 * 1.5 * fey) == 28
     assert round(rw.base_damage * 1.75 * 1.5 * 2.25) == 41   # the old buggy value
+
+
+def test_every_material_bonus_is_caught_by_damage_multiplier():
+    # The fix gates weapon.effective_against to UNIQUES; composites rely on
+    # _damage_multiplier catching their MATERIAL's effective_against. Guard that
+    # it catches EVERY material x target-tag, so no composite loses its bonus
+    # (27 materials today: yew, silver, cold_iron, dragonbone, ...).
+    from combat import _load_material_tags, _MATERIAL_EFFECTIVE_AGAINST, _damage_multiplier
+    _load_material_tags()
+
+    class _Mon:
+        def __init__(self, tag):
+            self.tags = [tag]; self.weaknesses = []; self.resistances = []
+
+    misses = [(mat, tag) for mat, tags in _MATERIAL_EFFECTIVE_AGAINST.items()
+              for tag in tags if _damage_multiplier([mat], _Mon(tag)) != 1.5]
+    assert not misses, f"material bonuses NOT caught by _damage_multiplier: {misses}"
+
+
+def test_no_unique_double_counts_material_plus_own_effective_against():
+    # Gating weapon.effective_against to uniques is only safe if no unique has a
+    # MATERIAL whose effective_against overlaps its OWN effective_against (that
+    # would re-introduce the double-count for that unique). Guard it forever.
+    from combat import _load_material_tags, _MATERIAL_EFFECTIVE_AGAINST
+    from items import load_items
+    _load_material_tags()
+    overlaps = []
+    for w in load_items('weapon'):
+        if not getattr(w, 'is_unique', False):
+            continue
+        ea = set(getattr(w, 'effective_against', []) or [])
+        mat = (getattr(w, 'material', '') or '').lower()
+        if ea & _MATERIAL_EFFECTIVE_AGAINST.get(mat, set()):
+            overlaps.append(w.name)
+    assert not overlaps, f"uniques that would double-count material+effective_against: {overlaps}"
