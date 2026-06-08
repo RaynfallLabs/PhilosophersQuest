@@ -1,6 +1,6 @@
 {
   "assorted_monster_parts": {
-    "name": "Assorted Monster Parts",
+    "name": "Assorted Monster Jerky",
     "symbol": "~",
     "color": [
       160,
@@ -10,8 +10,10 @@
     "weight": 0.1,
     "min_level": 1,
     "tier_role": "universal",
-    "description": "A jumbled handful of muscle, sinew, and gristle. Every harvest yields some.",
-    "identified": true
+    "description": "Strips of mixed monster meat, salted and dried. Tough and gamey, but it keeps -- and it keeps you alive.",
+    "identified": true,
+    "edible_safe": true,
+    "raw_sp": 12
   },
   "family_beast": {
     "name": "Beast Meat",

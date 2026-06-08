@@ -41,11 +41,11 @@
     "unidentified_name": "oak ring",
     "lore": "Carved from a branch of a prophetic oak tree, this ring faintly pulses when danger approaches, alerting the wearer before their eyes perceive the threat.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -72,11 +72,11 @@
     "unidentified_name": "runed metal ring",
     "lore": "The runes inscribed on this metal band are a warning-sense enchantment of military origin, used by scouts who needed to detect ambushes without breaking stealth themselves.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -103,11 +103,11 @@
     "unidentified_name": "ancient copper ring",
     "lore": "Ancient copper carries a memory of the earth's danger-sense, and this ring's verdigris-tinged surface grows warm whenever hostile intent comes near.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -134,11 +134,11 @@
     "unidentified_name": "bone ring",
     "lore": "Carved from the bone of an animal with exceptional instincts, this ring channels a residual predator-sense that alerts its wearer to threats before they fully manifest.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -165,11 +165,11 @@
     "unidentified_name": "twisted iron ring",
     "lore": "The twisted iron band vibrates almost imperceptibly when danger nears — a subtle but unmistakable signal that experienced wearers learn to read as reliably as a shout.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -196,11 +196,11 @@
     "unidentified_name": "carved jade ring",
     "lore": "The jade surface of this ring is cool to the touch until danger approaches, at which point it grows almost feverishly warm — a startling contrast that has saved many lives.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -227,11 +227,11 @@
     "unidentified_name": "rough stone ring",
     "lore": "An unpolished stone ring of obscure origin that quivers against the skin when hostile creatures are near, as though the stone itself remembers being struck.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -258,11 +258,11 @@
     "unidentified_name": "grey granite ring",
     "lore": "Grey granite holds the patience of mountains, but this enchanted band pulses with urgency when threats approach — the contrast between stone's stillness and its sudden alarm is deeply unsettling to those who encounter it the first time.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 10,
+      "21-40": 10,
+      "41-60": 10,
+      "61-80": 5,
+      "81-100": 5
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -289,11 +289,11 @@
     "unidentified_name": "silver ring",
     "lore": "Silver is said to reveal what is hidden from ordinary sight, and this ring sharpens the wearer's perception of concealed passages and secret doors in the dungeon's walls.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -320,11 +320,11 @@
     "unidentified_name": "polished crystal ring",
     "lore": "The transparent crystal band focuses light into microscopic cracks and seams in stonework, allowing the wearer to notice hidden mechanisms that would otherwise be invisible.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -351,11 +351,11 @@
     "unidentified_name": "malachite ring",
     "lore": "Malachite resonates with the secret nature of stone, and this banded green ring draws the wearer's eye toward inconsistencies in dungeon architecture — the telltale signs of hidden doors and concealed passages.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -382,11 +382,11 @@
     "unidentified_name": "engraved pewter ring",
     "lore": "The engraved patterns on this pewter band are actually a searching-sense formula, activating a passive scanning enchantment that lets the wearer detect what is deliberately concealed nearby.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -413,11 +413,11 @@
     "unidentified_name": "gleaming iron ring",
     "lore": "An unusually lustrous iron ring that, when worn, makes the wearer acutely aware of the wrongness of concealed spaces — doors disguised as walls, pits covered with false stone, traps hidden in plain sight.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -444,11 +444,11 @@
     "unidentified_name": "pale ivory ring",
     "lore": "Carved from a tusk known for prophetic associations, this pale ring lends the wearer a persistent awareness of hidden things — a sixth sense refined from an animal's natural vigilance.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -475,11 +475,11 @@
     "unidentified_name": "mossy stone ring",
     "lore": "The mossy surface of this ring is actually a colony of sensing spores that have bonded with the enchantment, creating an organic early-warning system for hidden architectural features.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 11,
+      "21-40": 11,
+      "41-60": 11,
+      "61-80": 6,
+      "81-100": 6
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -506,11 +506,11 @@
     "unidentified_name": "sapphire ring",
     "lore": "The sapphire's deep blue is associated with clarity of mind across many cultures; this ring leverages that association to project the wearer's perception across distance, reading the surface thoughts of nearby creatures.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 13,
+      "21-40": 13,
+      "41-60": 13,
+      "61-80": 13,
+      "81-100": 7
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -537,11 +537,11 @@
     "unidentified_name": "lapis lazuli ring",
     "lore": "Lapis was prized by ancient mind-mages for its resonance with thought-waves; this ring's golden pyrite flecks serve as focusing elements for the telepathic enchantment locked inside.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 13,
+      "21-40": 13,
+      "41-60": 13,
+      "61-80": 13,
+      "81-100": 7
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -568,11 +568,11 @@
     "unidentified_name": "cobalt blue ring",
     "lore": "A cobalt-blue ring that resonates at the exact frequency of sapient thought, allowing the wearer to sense the emotional states and immediate intentions of creatures within range.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 13,
+      "21-40": 13,
+      "41-60": 13,
+      "61-80": 13,
+      "81-100": 7
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -599,11 +599,11 @@
     "unidentified_name": "dark obsidian ring",
     "lore": "Obsidian is volcanic in origin, but this particular band was carved from a vein with unusual mental resonance properties — wearing it is like having a quiet voice in one's head that whispers the intentions of nearby creatures.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 13,
+      "21-40": 13,
+      "41-60": 13,
+      "61-80": 13,
+      "81-100": 7
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -630,11 +630,11 @@
     "unidentified_name": "moonstone ring",
     "lore": "Moonstone's eerie inner glow reflects the light of a mind-reading enchantment. Wearers report that nearby creatures' thoughts appear at the edge of their consciousness like half-remembered dreams.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 13,
+      "21-40": 13,
+      "41-60": 13,
+      "61-80": 13,
+      "81-100": 7
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -661,11 +661,11 @@
     "unidentified_name": "twilight crystal ring",
     "lore": "A twilight-purple crystal that exists in an optical state between transparent and opaque, much like the boundary between private thought and spoken word — wearing it erodes that boundary for nearby minds.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 13,
+      "21-40": 13,
+      "41-60": 13,
+      "61-80": 13,
+      "81-100": 7
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -692,11 +692,11 @@
     "unidentified_name": "emerald ring",
     "lore": "The living green of this emerald pulses with regenerative vitality, accelerating the body's natural healing until minor wounds close between heartbeats and major injuries mend in hours rather than days.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 16,
+      "21-40": 16,
+      "41-60": 16,
+      "61-80": 16,
+      "81-100": 8
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -723,11 +723,11 @@
     "unidentified_name": "peridot ring",
     "lore": "Peridot forms deep within the earth under conditions of intense heat and pressure — a forging process that instills the stone with a drive toward renewal that transfers to the ring's wearer as accelerated healing.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 16,
+      "21-40": 16,
+      "41-60": 16,
+      "61-80": 16,
+      "81-100": 8
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -754,11 +754,11 @@
     "unidentified_name": "serpentine ring",
     "lore": "Named for its snake-skin patterning, serpentine was associated with renewal and rebirth across many ancient cultures — this ring channels that symbolic power into genuine physical regeneration.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 16,
+      "21-40": 16,
+      "41-60": 16,
+      "61-80": 16,
+      "81-100": 8
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -785,11 +785,11 @@
     "unidentified_name": "verdant jade ring",
     "lore": "Deep forest-green jade carries the slow patient energy of growing things, and this ring channels that vitality into the wearer's body — wounds closing with the steady inevitability of vines reclaiming old stone.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 16,
+      "21-40": 16,
+      "41-60": 16,
+      "61-80": 16,
+      "81-100": 8
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -816,11 +816,11 @@
     "unidentified_name": "living wood ring",
     "lore": "This ring was carved from wood taken from a living tree still in the ground at the time of cutting, preserving the living essence of the plant matter. That essence drives continuous cellular regeneration in the wearer.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 16,
+      "21-40": 16,
+      "41-60": 16,
+      "61-80": 16,
+      "81-100": 8
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -847,11 +847,11 @@
     "unidentified_name": "iron ring",
     "lore": "Iron is the metal of physical labor and martial endurance; this simple band channels that essence into the wearer's muscles, granting a reliable increase to raw strength.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 10,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -878,11 +878,11 @@
     "unidentified_name": "steel ring",
     "lore": "The superior refinement of steel over iron is reflected in this ring's stronger enhancement — the muscles of the wearer cord and harden noticeably while it is worn, providing meaningful combat advantage.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -909,11 +909,11 @@
     "unidentified_name": "adamantine ring",
     "lore": "The densest metal known to mortals grants the densest strength enhancement known to ring-makers; wearers of adamantine strength rings have been known to bend iron bars with bare hands.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -940,11 +940,11 @@
     "unidentified_name": "mithril ring",
     "lore": "Mithril's strength-to-weight ratio is legendary; this ring enhances the wearer's physical capabilities to a similar degree — extraordinary power delivered without the usual associated bulk.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -971,11 +971,11 @@
     "unidentified_name": "ruby ring",
     "lore": "Rubies were believed by ancient healers to strengthen the blood and harden the body against illness and injury; this ring activates that belief as literal fact, enhancing the wearer's constitution.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 10,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1002,11 +1002,11 @@
     "unidentified_name": "coral ring",
     "lore": "Coral grows relentlessly despite the crushing pressures of deep water — this ring channels that stubborn vitality, significantly bolstering the wearer's endurance and resistance to harm.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1033,11 +1033,11 @@
     "unidentified_name": "carnelian ring",
     "lore": "Carnelian was carried by warriors for courage and physical hardiness since ancient times — this ring makes good on that tradition, providing genuine constitutional enhancement rather than mere psychological comfort.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1064,11 +1064,11 @@
     "unidentified_name": "garnet ring",
     "lore": "Deep garnet vibrates at a frequency that resonates with the body's fundamental vitality; this ring markedly improves the wearer's stamina, hit point capacity, and resistance to environmental stresses.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1095,11 +1095,11 @@
     "unidentified_name": "quicksilver ring",
     "lore": "Mercury's liquid swiftness is captured in this ring's enchantment, translating the metal's effortless flow into enhanced reflexes and precision of movement for the wearer.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 10,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1126,11 +1126,11 @@
     "unidentified_name": "thin wire ring",
     "lore": "This impossibly fine wire ring represents the pinnacle of delicate metalworking — wearing it transfers some of that delicacy to the wearer's fingers, greatly enhancing manual precision and overall agility.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1157,11 +1157,11 @@
     "unidentified_name": "spun glass ring",
     "lore": "Spun from a single unbroken thread of glass in a process requiring extraordinary patience and skill, this ring imparts the maker's mastery of precise movement to whoever wears it.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1188,11 +1188,11 @@
     "unidentified_name": "featherweight ring",
     "lore": "So light it can barely be felt on the finger, this ring was enchanted by a master acrobat-mage who wanted to capture perfect physical grace in an item. The result is a dramatic enhancement to the wearer's coordination and reflexes.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1219,11 +1219,11 @@
     "unidentified_name": "amethyst ring",
     "lore": "Amethyst has been associated with clarity of thought since antiquity; this ring channels that association into a genuine enhancement of the wearer's reasoning capacity and magical aptitude.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 10,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1250,11 +1250,11 @@
     "unidentified_name": "purple glass ring",
     "lore": "Purple glass was used in ancient scrying lenses, and this ring carries an echo of that tradition — wearing it sharpens the mind significantly, improving memory, reasoning, and magical power simultaneously.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1281,11 +1281,11 @@
     "unidentified_name": "arcane pewter ring",
     "lore": "Pewter mixed with arcane reagents during casting, this ring's dull surface belies its sophisticated enchantment — worn, it noticeably improves the wearer's intellectual capacity and mana reserves.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1312,11 +1312,11 @@
     "unidentified_name": "prismatic ring",
     "lore": "A ring that splits incoming light into a full spectrum — a metaphor made literal for the wearer's mind, which gains the ability to analyze problems from multiple simultaneous angles. The intelligence enhancement is dramatic and immediate.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1343,11 +1343,11 @@
     "unidentified_name": "opal ring",
     "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom, improving quiz timing and heightening awareness of hidden truths.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 10,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1374,11 +1374,11 @@
     "unidentified_name": "pearl ring",
     "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, significantly improving the wearer's judgment and quiz performance.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1405,11 +1405,11 @@
     "unidentified_name": "ivory ring",
     "lore": "Carved from ancient ivory of uncertain provenance, this ring carries a gravity of accumulated experience that transfers to its wearer as enhanced discernment and measured judgment.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1436,11 +1436,11 @@
     "unidentified_name": "white quartz ring",
     "lore": "White quartz is the stone most used in divination traditions worldwide; this ring concentrates centuries of divinatory enchantment into a permanent wisdom enhancement that provides an exceptional boost to the wearer's perceptive judgment.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1467,11 +1467,11 @@
     "unidentified_name": "topaz ring",
     "lore": "Topaz catches light from every angle simultaneously — and this ring extends that quality to the wearer's vision, expanding their effective sight radius in the darkened passages of the dungeon.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 10,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1498,11 +1498,11 @@
     "unidentified_name": "amber ring",
     "lore": "Ancient amber sometimes contains preserved insects whose compound eyes saw in directions simultaneously — this ring channels that multi-directional awareness, meaningfully increasing the wearer's field of perception.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1529,11 +1529,11 @@
     "unidentified_name": "citrine ring",
     "lore": "Golden citrine focuses light efficiently, and this ring's enchantment does the same for the wearer's senses — dramatically increasing the distance at which they can reliably detect movement and detail.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 10
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1560,11 +1560,11 @@
     "unidentified_name": "hawks-eye ring",
     "lore": "Named for the raptor whose vision is legendary, this ring's enchantment provides an almost supernatural expansion of the wearer's perceptual range — at full effect, wearers describe seeing clearly in conditions that would blind ordinary adventurers entirely.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1591,11 +1591,11 @@
     "unidentified_name": "fire opal ring",
     "lore": "A fire opal set in a band of heat-treated iron, this ring was forged in a volcano's mouth by a smith who worked alongside fire elementals. It makes the wearer's skin shed flame like water sheds off oiled leather.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1622,11 +1622,11 @@
     "unidentified_name": "molten iron ring",
     "lore": "This iron ring was quenched not in water but in fire itself, permanently altering its magical properties. The wearer's skin becomes dramatically more resistant to flames — a vital enchantment in any dungeon where fire-breathing creatures patrol.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1653,11 +1653,11 @@
     "unidentified_name": "glacial quartz ring",
     "lore": "Quartz formed within glacier ice over thousands of years, this ring carries the cold's patience within it — and grants the wearer an immunity to that very patience, becoming impervious to magical cold.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1684,11 +1684,11 @@
     "unidentified_name": "frost crystal ring",
     "lore": "This crystal seems perpetually frosted, yet the wearer's finger never grows cold — the ring absorbs cold energy before it can harm its owner, leaving the wearer comfortable while ice storms rage around them.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1715,11 +1715,11 @@
     "unidentified_name": "crackling copper ring",
     "lore": "Copper is electricity's preferred path, and this ring was enchanted to make itself that path instead of the wearer — electrical energy flows harmlessly through the ring and dissipates, sparing the body entirely.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1746,11 +1746,11 @@
     "unidentified_name": "arc-spark brass ring",
     "lore": "This brass ring occasionally emits small spontaneous sparks — a sign that it is actively absorbing and discharging ambient electrical energy harmlessly, protecting the wearer from lightning and shock attacks.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1777,11 +1777,11 @@
     "unidentified_name": "jade serpent ring",
     "lore": "Carved in the shape of a serpent devouring its own tail, this jade ring was used by venomous creature handlers who needed reliable protection against accidental bites. The antitoxin enchantment is thoroughly tested.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1808,11 +1808,11 @@
     "unidentified_name": "toxic tourmaline ring",
     "lore": "Tourmaline naturally concentrates certain minerals that neutralize biological toxins; this enchanted ring magnifies that property dramatically, making its wearer virtually immune to ingested, injected, and contact poisons.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1839,11 +1839,11 @@
     "unidentified_name": "dreamstone ring",
     "lore": "Carved from dreamstone — a mineral that forms only in locations where many creatures have died in their sleep — this ring paradoxically protects against the very sleep effects its material evokes.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -1870,11 +1870,11 @@
     "unidentified_name": "lucid crystal ring",
     "lore": "Those who wear this pale lavender crystal ring report that their sleep is uncommonly vivid and lucid — but more importantly, sleep-inducing magic simply fails to take hold while the ring is worn.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2242,11 +2242,11 @@
     "unidentified_name": "leather cord amulet",
     "lore": "A simple tooth or claw strung on a leather cord, charged with a warning-sense enchantment by a dungeon shaman. The amulet grows hot against the sternum when danger approaches from any direction.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2273,11 +2273,11 @@
     "unidentified_name": "copper chain amulet",
     "lore": "An oxidized copper pendant hanging from a matching chain, enchanted to vibrate at the frequency of approaching hostility. The verdigris darkens further as threats draw closer — a colorful if morbid safety gauge.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2304,11 +2304,11 @@
     "unidentified_name": "bone chain amulet",
     "lore": "Carved from the small bones of a creature known for finding hidden caches of food, this amulet extends that natural searching ability to the wearer — detecting hidden doors and secret passages that would otherwise go unnoticed.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2335,11 +2335,11 @@
     "unidentified_name": "bronze chain amulet",
     "lore": "A bronze pendant engraved with a magnifying lens motif, this amulet continually scans the environment for concealed architectural features — its wearer detects hidden doors, traps, and passages with unusual reliability.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 40,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 20,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2366,11 +2366,11 @@
     "unidentified_name": "silver chain amulet",
     "lore": "A polished silver disc on a delicate chain, engraved with a mind's-eye motif. The silver amplifies the wearer's natural sensitivity to others' thoughts, making nearby creatures' intentions transparent to anyone skilled enough to interpret the impressions.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2397,11 +2397,11 @@
     "unidentified_name": "jade pendant",
     "lore": "Shaped like a stylized brain in green jade, this pendant was the prize possession of a mind-mage who claimed to have used it to read dragons' dreams. The telepathic enchantment is genuine and powerful.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2831,11 +2831,11 @@
     "unidentified_name": "iron medallion",
     "lore": "A heavy iron medallion worn by gladiators in the old arenas, enchanted to significantly enhance physical strength. The enhancement is visible — veins cord against the skin and muscles visibly bulk while the amulet is worn.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2862,11 +2862,11 @@
     "unidentified_name": "titan iron pendant",
     "lore": "Named for the mythological giants who could move mountains, this amulet provides a dramatic strength enhancement that leaves the wearer capable of feats of raw power that should be physically impossible for a creature their size.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 40
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2893,11 +2893,11 @@
     "unidentified_name": "ruby pendant",
     "lore": "A blood-red ruby pendant that resonates with the body's vital force, significantly enhancing the wearer's constitution — their hit points increase, their stamina improves, and minor poisons affect them less severely.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2924,11 +2924,11 @@
     "unidentified_name": "guardian ruby locket",
     "lore": "This deep crimson locket houses a guardian spirit that constantly reinforces the wearer's physical vitality — the constitution boost is dramatic enough that seasoned fighters notice it immediately as a transformation in how punishment their body can absorb.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 40
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2955,11 +2955,11 @@
     "unidentified_name": "quicksilver charm",
     "lore": "A small charm containing a sealed vial of actual mercury, enchanted to transfer its liquid swiftness to the wearer — movements become fluid and precise, reflexes sharpen, and armor class improves noticeably.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -2986,11 +2986,11 @@
     "unidentified_name": "air-light locket",
     "lore": "So light that wearing it feels like wearing nothing at all, this air-enchanted locket translates its own near-weightlessness to the wearer's movements — they become preternaturally agile, their every motion flowing with the ease of breath.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 40
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -3017,11 +3017,11 @@
     "unidentified_name": "amethyst talisman",
     "lore": "An amethyst carved into a stylized brain, hung on a silver chain — a fanciful design that nonetheless delivers genuine intellectual enhancement, improving the wearer's reasoning, memory, and magical capacity significantly.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -3048,11 +3048,11 @@
     "unidentified_name": "brilliant crystal medallion",
     "lore": "Faceted crystal that catches every available light and throws it back in a dozen directions — a fitting metaphor for the dramatically enhanced intellect this medallion provides. Scholars who have worn it describe the experience as thinking with an extra layer of mind.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 40
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -3079,11 +3079,11 @@
     "unidentified_name": "opal locket",
     "lore": "An opal locket that opens to reveal nothing — the container is the enchantment, and what it holds is the distilled wisdom of its original owner, ready to be borrowed by whoever wears it.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -3110,11 +3110,11 @@
     "unidentified_name": "sage ivory locket",
     "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment, quiz timing, and intuitive threat assessment.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 40
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -3141,11 +3141,11 @@
     "unidentified_name": "eagle-eye pendant",
     "lore": "An eagle's eye set in gold, enchanted to share the raptor's legendary visual acuity with the wearer — their effective sight radius expands significantly, allowing them to spot threats and targets at distances that would challenge even keen natural vision.",
     "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
+      "1-20": 40,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 20
     },
     "peak_weight": 0.4,
     "is_unique": false,
@@ -3172,11 +3172,11 @@
     "unidentified_name": "hawk-feather talisman",
     "lore": "Three hawk feathers bound in copper wire and charged with an expanding-sight enchantment, this talisman dramatically increases the wearer's perceptual range — at full effect, they can monitor a radius of dungeon that most adventurers would consider an entire floor.",
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
+      "1-20": 1,
+      "21-40": 40,
+      "41-60": 40,
+      "61-80": 40,
+      "81-100": 40
     },
     "peak_weight": 0.4,
     "is_unique": false,
