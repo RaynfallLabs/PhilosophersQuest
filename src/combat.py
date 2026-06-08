@@ -443,12 +443,19 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Shamshir) declared per-weapon anti-tag arrays that the engine
         # ignored (only material.effective_against was read). Boost
         # damage 1.5x when the target matches any declared tag.
-        if weapon:
+        # Per-weapon effective_against: ONLY for UNIQUE weapons' explicit anti-tag
+        # arrays (Zulfiqar, Mjolnir, Dawnbreaker...). A COMPOSITIONAL weapon
+        # inherits effective_against from its MATERIAL (instantiate_weapon copies
+        # it), but the material is already added to damage_types above, so
+        # _damage_multiplier ALREADY applied that bonus -- counting it again here
+        # double-dipped it. A yew crossbow vs a fey Satyr did 1.5 x 1.5 = 2.25x:
+        # a 7-base chain-5 shot hit for 41 instead of ~28. (2026-06-07 ranged fix;
+        # gated at the use-site so it also corrects weapons already in saves.)
+        if weapon and getattr(weapon, 'is_unique', False):
             _weapon_anti = getattr(weapon, 'effective_against', None) or []
-            if _weapon_anti:
-                _mon_tags = set(getattr(monster, 'tags', []))
-                if _mon_tags & set(_weapon_anti):
-                    dtype_mult *= 1.5
+            if _weapon_anti and (set(getattr(monster, 'tags', [])) & set(_weapon_anti)):
+                dtype_mult *= 1.5
+        if weapon:
             # Anduril-style numeric undead_multiplier (legacy `undead_bonus`
             # JSON field): applies as a flat 1.5x against undead when set > 1.
             _und_mult = float(getattr(weapon, 'undead_multiplier', 1.0) or 1.0)
