@@ -2,6 +2,29 @@ import os
 import random
 import sys
 
+# Capture HARD / C-level crashes (pygame/SDL segfaults, Windows access
+# violations) that bypass Python's excepthook entirely -- without this a native
+# crash leaves NO trace anywhere. faulthandler dumps the C+Python stack of every
+# thread to faulthandler.log (next to the save) and to stderr on a fatal signal.
+import faulthandler as _faulthandler
+try:
+    from paths import save_dir as _fh_save_dir
+    _fh_path = os.path.join(_fh_save_dir(), 'faulthandler.log')
+except Exception:
+    _fh_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'faulthandler.log')
+try:
+    _fh_handle = open(_fh_path, 'a', encoding='utf-8', buffering=1)
+    _fh_handle.write('\n==== faulthandler armed ====\n')
+    _faulthandler.enable(file=_fh_handle, all_threads=True)
+except Exception:
+    # Fallback to stderr -- but in a WINDOWED bundle sys.stderr is None and
+    # enable() raises RuntimeError, which here (at import, before main()'s crash
+    # handler) would silently abort startup. Guard it so arming never crashes.
+    try:
+        _faulthandler.enable(all_threads=True)
+    except Exception:
+        pass
+
 import pygame
 
 # FANTASY: get_font is the only fantasy_ui name still consumed by main.py;
@@ -162,6 +185,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.popup_next_state: str   = STATE_PLAYER
         self.defeat_reason      = 'died'   # 'died' | 'starved' | 'fled'
         self._save_on_quit      = True     # False when player explicitly exits without saving
+        self._quit_confirmed    = False    # True only when the player confirms exit; a bare
+                                           # QUIT event (window-X / spurious OS event) routes to
+                                           # the confirm dialog instead of vanishing the run
         self.correct_answers    = 0        # total correct answers this run
         self.wrong_answers      = 0        # total wrong answers this run
         self.missed_questions: list = []   # [{subject, question, correct, chosen}]
@@ -601,6 +627,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # accessories: remap any deleted variant id to its surviving canonical id
         # (and re-resolve its mechanical def), then stamp the run's look.
         self._migrate_accessory_appearances(state)
+        # Recompose composite weapon/armor/shield names + armor AC from current
+        # template+material data, so old saves pick up naming fixes ("Hide Hide
+        # Armor" -> "Hide Armor") and template rebalances (hide AC 1 -> 2)
+        # instead of showing the stale value baked in at instantiation.
+        self._migrate_recompose_composite_items(state)
         # Quirk system
         if state.get('quirk_system') is not None:
             self.quirk_system = state['quirk_system']
@@ -955,6 +986,97 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for lvl_data in getattr(lm, 'levels', {}).values():
                 for item in lvl_data.get('ground_items', []) or []:
                     fix(item)
+        # Carry identified-TYPE knowledge across the collapse: an old save still
+        # "knows" the pre-collapse variant ids (e.g. ring_searching_malachite).
+        # Remap them to the surviving id so the type stays known to the
+        # encyclopedia / auto-id / type-known checks.
+        from items import LEGACY_ACCESSORY_ID_REMAP
+        kii = getattr(p, 'known_item_ids', None)
+        if kii:
+            for old, new in LEGACY_ACCESSORY_ID_REMAP.items():
+                if old in kii:
+                    kii.discard(old)
+                    kii.add(new)
+
+    def _migrate_recompose_composite_items(self, state: dict):
+        """Recompute name/unidentified_name (+ armor AC) for COMPOSITE items
+        from current template+material JSON, so old saves reflect naming fixes
+        ('Hide Hide Armor' -> 'Hide Armor') and template rebalances (hide AC
+        1 -> 2) instead of the values frozen in at instantiation.
+
+        Composite = id is '<material_id>_<template_id>' with `material` set;
+        uniques (own id, no material prefix) are skipped untouched. AC is
+        recomputed for ARMOR only (deterministic template-base + material, which
+        excludes the separate enchant_bonus); weapon damage is left alone."""
+        from items import (Armor, Shield, Weapon, get_template, get_material,
+                           compose_item_name, compose_unidentified_name)
+        # Hand-authored UNIQUES (ids that are JSON keys, not <material>_<template>
+        # composites) must NEVER be recomposed. The startswith() guard below is a
+        # heuristic that would corrupt e.g. Bronze Aegis / Cloth of Penelope if a
+        # future template id collided -- so also skip any id naming a real unique.
+        import json as _rc_json
+        from paths import data_path as _rc_dp
+        unique_ids = set()
+        for _cat in ('weapon', 'armor', 'shield', 'accessory', 'artifact'):
+            try:
+                with open(_rc_dp('data', 'items', f'{_cat}.json'), encoding='utf-8') as _f:
+                    _d = _rc_json.load(_f)
+                unique_ids |= set(_d.keys() if isinstance(_d, dict)
+                                  else (x.get('id') for x in _d if isinstance(x, dict)))
+            except Exception:
+                pass
+
+        def recompose(item):
+            if item is None:
+                return
+            mat_id = getattr(item, 'material', None)
+            iid = getattr(item, 'id', '') or ''
+            if not mat_id or not iid.startswith(f"{mat_id}_") or iid in unique_ids:
+                return
+            tpl_id = iid[len(mat_id) + 1:]
+            if isinstance(item, Shield):
+                cat, mat = 'shields', (get_material('armor', mat_id)
+                                       or get_material('weapons', mat_id))
+            elif isinstance(item, Armor):
+                cat, mat = 'armor', get_material('armor', mat_id)
+            elif isinstance(item, Weapon):
+                cat, mat = 'weapons', get_material('weapons', mat_id)
+            else:
+                return
+            tpl = get_template(cat, tpl_id)
+            if not tpl or not mat:
+                return
+            noun = tpl.get('noun', '')
+            item.name = compose_item_name(mat['name'], tpl['name'], noun)
+            if hasattr(item, 'unidentified_name'):
+                item.unidentified_name = compose_unidentified_name(
+                    mat.get('unidentified_descriptor', mat['name']),
+                    tpl['name'], noun)
+            if cat == 'armor':
+                raw = mat.get('ac_bonus', mat.get('armor_ac_bonus', 0))
+                item.ac_bonus = int(tpl.get('base_ac_value', 1)) + (
+                    int(raw) if raw is not None else 0)
+
+        def walk(item):
+            recompose(item)
+            for c in getattr(item, 'contents', None) or []:
+                recompose(c)
+
+        p = self.player
+        for item in getattr(p, 'inventory', []):
+            walk(item)
+        for slot_item in (getattr(p, 'weapon', None), getattr(p, 'ranged_weapon', None),
+                          getattr(p, 'shield', None)):
+            walk(slot_item)
+        for s in getattr(p, 'armor_slots', []) or []:
+            walk(s)
+        for item in state.get('ground_items', []) or []:
+            walk(item)
+        lm = state.get('level_mgr')
+        if lm:
+            for lvl_data in getattr(lm, 'levels', {}).values():
+                for item in lvl_data.get('ground_items', []) or []:
+                    walk(item)
 
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels.
@@ -2643,6 +2765,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         try:
             self._change_level(self.dungeon_level + 1, enter_from_top=True)
+            self._autosave('descend')      # checkpoint each new floor reached
         except Exception as e:
             self.add_message(f"Error descending: {e}", 'danger')
             import traceback
@@ -2941,8 +3064,37 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Turn bookkeeping
     # ------------------------------------------------------------------
 
+    def _autosave(self, reason: str = ''):
+        """Best-effort in-play save so progress survives an ABRUPT termination
+        (spurious QUIT, hard-kill, OOM, power loss). Normal play otherwise only
+        persisted at a clean exit, so any non-clean close reverted the player to
+        wherever they loaded from. Never raises; logs OK/FAILED so a 'didn't
+        save' report is diagnosable from ERROR_LOG.txt."""
+        if getattr(self, 'state', None) in (STATE_DEAD, STATE_VICTORY):
+            return
+        try:
+            from save_system import save_game
+            ok = save_game(self)
+            try:
+                from game_log import log_info
+                log_info(f"autosave[{reason}] {'OK' if ok else 'FAILED'} "
+                         f"floor={getattr(self, 'dungeon_level', '?')} "
+                         f"turn={getattr(self, 'turn_count', '?')}")
+            except Exception:
+                pass
+        except Exception as e:
+            try:
+                from game_log import log_error
+                log_error(f"autosave[{reason}] raised: {e}")
+            except Exception:
+                pass
+
     def _advance_turn(self):
         self.turn_count += 1
+        # Periodic in-play autosave (every 50 turns) so an abrupt close costs at
+        # most ~50 turns instead of the whole session. A floor is ~200-400 turns.
+        if self.turn_count % 50 == 0:
+            self._autosave('turn')
         # Engine wave 3 per-turn resets:
         # Zireael's extra_action_after_kill — one bonus haste per turn,
         # not per kill.
@@ -4747,6 +4899,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if is_correct:
             self.correct_answers += 1
             _snd.play('quiz_correct')
+            # Subject mastery: a (subject, tier) just cleared this run -- every
+            # distinct question at that tier answered correctly. Announce it; the
+            # tier now auto-succeeds for the rest of the run.
+            jm = getattr(qe, 'just_mastered', None)
+            if jm:
+                msubj, mtier = jm
+                name = str(msubj).title()
+                self.add_message(
+                    f"MASTERY! You've answered every Tier {mtier} {name} question "
+                    f"correctly this run -- Tier {mtier} {name} now succeeds "
+                    f"automatically.", 'success')
+                self._log_chronicle(
+                    f"Achieved Tier {mtier} {name} mastery -- cleared the entire tier.")
+                qe.just_mastered = None
         else:
             self.wrong_answers += 1
             _snd.play('quiz_wrong')
@@ -6577,7 +6743,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 with open(_rdp('data', 'items', 'recipes.json'), encoding='utf-8') as f:
                     all_recipes = _rjson.load(f)
                 entries = []
-                for recipe in all_recipes:
+                # recipes.json is a DICT keyed by recipe id -- iterate its
+                # VALUES (iterating it directly yields string keys and .get()
+                # raised, which the bare except below silently swallowed, leaving
+                # the Recipes tab permanently empty). Matches the bestiary/item
+                # branches fixed in the same pass.
+                recipe_list = all_recipes.values() if isinstance(all_recipes, dict) else all_recipes
+                for recipe in recipe_list:
                     rname = recipe.get('name', '')
                     if rname in self._cooked_recipes:
                         ings = ', '.join(recipe.get('ingredients', []))
@@ -6620,12 +6792,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.encyclopedia_entries = []
                 return
             entries = []
-            item_list = list(all_items.values()) if isinstance(all_items, dict) else all_items
-            for entry in item_list:
-                iid = entry.get('id', '')
-                if iid in known_ids:
-                    entries.append(entry)
-            entries.sort(key=lambda e: e.get('name', e.get('id', '')))
+            if isinstance(all_items, dict):
+                # The id is the dict KEY -- the values carry no inner 'id' field,
+                # so the old entry.get('id') matched nothing and EVERY item
+                # category came up empty. Match on the key and inject it as _id
+                # for the renderer (mirrors the bestiary path above).
+                for k, v in all_items.items():
+                    if k in known_ids:
+                        entries.append({'_id': k, **v})
+            else:
+                for entry in all_items:
+                    if entry.get('id', '') in known_ids:
+                        entries.append(entry)
+            entries.sort(key=lambda e: e.get('name', e.get('_id', e.get('id', ''))))
             self.encyclopedia_entries = entries
 
 
@@ -6734,7 +6913,23 @@ def main():
             dt = clock.tick(FPS) / 1000.0
             for event in pygame.event.get():
                 try:
-                    if not game.handle_event(event):
+                    # Only an EXPLICIT `return False` from handle_event quits --
+                    # a forgotten/None return must never silently close the game.
+                    if game.handle_event(event) is False:
+                        # Record EXACTLY why we're exiting. A "the window just
+                        # closed" report then resolves to one of: a real window-X
+                        # (event=Quit, state=PLAYER/Quiz), the confirm-exit dialog
+                        # (event=Quit, state=CONFIRM_EXIT), an ESC in an unlisted
+                        # state (event=KeyDown), or a SPURIOUS/external Quit
+                        # (event=Quit mid-Quiz with no dialog) -> OS/display event.
+                        try:
+                            from game_log import log_info
+                            _ev = pygame.event.event_name(getattr(event, 'type', 0))
+                            log_info(f"GAME EXIT via handle_event->False | event={_ev} | "
+                                     f"state={getattr(game, 'state', '?')} | "
+                                     f"save_on_quit={getattr(game, '_save_on_quit', '?')}")
+                        except Exception:
+                            pass
                         running = False
                 except Exception:
                     _recover_in_loop(

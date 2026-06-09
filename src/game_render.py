@@ -120,17 +120,23 @@ class RenderMixin:
     MENU_ICON_SIZE = 32
 
     def _get_menu_sprite(self, item_id: str) -> 'pygame.Surface':
-        """Return a MENU_ICON_SIZE sprite for item_id (no glyph — use _draw_menu_icon for fallback)."""
+        """Return a MENU_ICON_SIZE sprite for item_id (no glyph -- use
+        _draw_menu_icon for fallback).
+
+        Routes through the SAME central resolver as the map
+        (renderer._resolve_item_sprite_path) so EVERY fallback -- composite
+        material art ("willow_longbow" -> a longbow icon), collapsed ring/amulet,
+        ingredient meat-cut, art-less unique -- applies in menus too. These two
+        paths used to diverge: the menu path matched only "<id>.png" + corpse, so
+        an item with no per-id art showed its icon on the floor but a bare glyph
+        in the inventory/equip/cook menus. ONE resolver, no divergence.
+        """
         if item_id in self._menu_sprite_cache:
             return self._menu_sprite_cache[item_id]
-        import os
-        from paths import data_path
+        from renderer import _resolve_item_sprite_path
         SZ = self.MENU_ICON_SIZE
-        items_dir = data_path('assets', 'tiles', 'items')
-        path = os.path.join(items_dir, f"{item_id}.png")
-        if not os.path.exists(path) and item_id.startswith('corpse_'):
-            path = os.path.join(items_dir, "corpse.png")
-        if os.path.exists(path):
+        path = _resolve_item_sprite_path(item_id)
+        if path:
             raw = pygame.image.load(path).convert_alpha()
             surf = pygame.transform.smoothscale(raw, (SZ, SZ))
         else:
@@ -2429,6 +2435,11 @@ class RenderMixin:
         ]
         # Per-subject + per-tier breakdown if tracking is active
         qstats = getattr(self, 'quiz_stats', {}) or {}
+        # Per-run SUBJECT MASTERY: a cleared (subject, tier) auto-succeeds, so
+        # mark it MASTERED here instead of a hit ratio -- the badge the player
+        # earns for clearing a whole tier.
+        mastered = (self.quiz_engine.mastered_tiers()
+                    if getattr(self, 'quiz_engine', None) else set())
         if qstats:
             quiz_rows.append("")
             for subj in sorted(qstats.keys()):
@@ -2439,6 +2450,9 @@ class RenderMixin:
                 a = (r / t * 100) if t else 0.0
                 tier_bits = []
                 for ti in range(1, 6):
+                    if (subj, ti) in mastered:
+                        tier_bits.append(f"T{ti} MASTERED")
+                        continue
                     tr = int(d.get(f't{ti}c', 0))
                     tw = int(d.get(f't{ti}w', 0))
                     if tr + tw > 0:
@@ -2754,7 +2768,11 @@ class RenderMixin:
                     s = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
                     bits.append(f"+{o['stat_grant']}{s}")
                 if o.get('temp_power'):
-                    bits.append('temp')
+                    # Name the actual buff + its duration, not a bare "temp".
+                    tp = (recipe.get('temp_power') or '').replace('_', ' ').strip()
+                    dur = recipe.get('temp_duration')
+                    label = tp or 'temp buff'
+                    bits.append(f"{label} {dur}t" if dur else label)
                 if o.get('permanent_power'):
                     bits.append('PERM')
                 if bits:
@@ -2799,6 +2817,7 @@ class RenderMixin:
                     'icon': icon_obj,
                     'name_color': _name_col,
                     'detail_color': FP.BODY_TEXT,
+                    'selected': i == getattr(self, '_cook_sel', 0),
                 })
         else:
             # Single tab: each ingredient resolves to its canonical recipe via
@@ -2823,6 +2842,7 @@ class RenderMixin:
                     'icon': item,
                     'name_color': FP.GOLD_PALE,
                     'detail_color': FP.BODY_TEXT,
+                    'selected': i == getattr(self, '_cook_sel', 0),
                 })
 
         sp = self.player.sp
@@ -2851,7 +2871,7 @@ class RenderMixin:
             tabs=self._COOK_TABS,
             active_tab=self._cook_tab,
             tab_counts=_cook_counts,
-            hint="Left/Right: tab  |  a-z: cook  |  ESC: cancel",
+            hint="Up/Down: move  |  Enter or a-z: cook  |  ESC: cancel",
             border_color=FP.SUCCESS_TEXT,
             max_width=800,
             center_in=(layout.GAME_W, layout.WINDOW_H),
@@ -2962,6 +2982,7 @@ class RenderMixin:
                 'detail': detail_text,
                 'key': self._LETTERS[i],
                 'icon': item,
+                'selected': i == getattr(self, '_eat_sel', 0),
             })
 
         sp = self.player.sp
@@ -2978,7 +2999,7 @@ class RenderMixin:
             tabs=self._EAT_TABS,
             active_tab=self._eat_tab,
             tab_counts=_eat_counts,
-            hint="Left/Right: tab  |  a-z: eat  |  ESC: cancel",
+            hint="Up/Down: move  |  Enter or a-z: eat  |  ESC: cancel",
             border_color=FP.SUCCESS_TEXT,
             max_width=760,
             center_in=(layout.GAME_W, layout.WINDOW_H),
@@ -4153,8 +4174,18 @@ class RenderMixin:
                 # Power is a dice expression like '2d8+4' for healing.
                 eff_label = subject.effect.replace('_', ' ').title() if subject.effect else 'Unknown'
                 stat_lines.append(f"Effect: {eff_label}")
-                if subject.power:
-                    stat_lines.append(f"Magnitude: {subject.power}  (rolled when quaffed)")
+                # '(rolled when quaffed)' is only honest for effects that ROLL a
+                # numeric magnitude. gain_level is a fixed count; full_heal/cure
+                # carry a sentinel power that shouldn't be shown as a magnitude.
+                _rolled_mag = ('heal', 'extra_heal', 'restore_sp', 'restore_mp', 'brilliance_mp')
+                _p = str(subject.power) if subject.power else ''
+                if subject.effect == 'gain_level' and _p:
+                    stat_lines.append(f"Levels gained: {_p}")
+                elif subject.effect in _rolled_mag and _p:
+                    if 'd' in _p.lower():
+                        stat_lines.append(f"Magnitude: {_p}  (rolled when quaffed)")
+                    else:
+                        stat_lines.append(f"Magnitude: {_p}")
                 if subject.duration:
                     stat_lines.append(f"Duration: {subject.duration} turns")
                 else:

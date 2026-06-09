@@ -32,7 +32,7 @@
     "lothlorien_bow"
   ],
   "lore_descriptor": "pale silver bark, almost luminous; smelling of starlight",
-  "unidentified_descriptor": "a wood that gleams faintly",
+  "unidentified_descriptor": "pale silvery",
   "first_pickup_chronicle": "Silverbark. Galadhrim wood. Bows cut from these trees do not miss in the dark, and the dead recoil from them.",
   "design_notes": "F75 peak — wood equivalent of silver+mithril hybrid. Triple-effective (undead/fey/demon_minor) but damage_mult 1.20 (not stacked with the bonuses). Light (weight_mult 0.8) — ideal bow material. Mythologically Lothlórien."
 }

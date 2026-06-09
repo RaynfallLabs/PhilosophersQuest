@@ -21,6 +21,21 @@ _ENV_SPRITE_DIR   = data_path('assets', 'tiles', 'env')
 # (no pygame) so they are unit-testable headlessly.
 _MATERIAL_IDS = None                                  # sorted longest-first
 _BASE_SPRITE_FALLBACK: dict[str, 'str | None'] = {}   # base -> representative file
+_ACCESSORY_SPRITE_FALLBACK: dict[str, 'str | None'] = {}  # collapsed ring/amulet id -> rep file
+_INGREDIENT_IDS = None                                # set of ingredient ids (cached)
+
+# Art-less ACTIVE uniques mapped to the closest existing sprite so they show an
+# icon instead of a bare glyph. (Composite items + rings/amulets are handled by
+# the fallbacks below.) Only spawnable items belong here -- orphaned/disabled
+# uniques never render, and code must not name them (test_quest_item_lifecycle).
+_UNIQUE_SPRITE_FALLBACK = {
+    'hand_of_glory': 'hamsa_hand',
+    'duck_of_doom':  'adamantine_great_helm',
+}
+# Generic icon for cooking ingredients (prime cuts, parts, trophies, foraged) --
+# 550+ of them ship no per-id art and rendered as the '~'/'*' glyph. A meat-cut
+# stand-in reads as "a cooking ingredient" far better than a punctuation glyph.
+_INGREDIENT_FALLBACK_SPRITE = 'prime_beef'
 
 
 def _material_ids() -> list:
@@ -62,24 +77,107 @@ def _representative_base_sprite(base: str) -> 'str | None':
     return chosen
 
 
+def _representative_accessory_sprite(item_id: str) -> 'str | None':
+    """A stand-in sprite for a COLLAPSED common ring/amulet id.
+
+    The one-cosmetic appearance merge renamed many common accessories to a
+    canonical "<cat>_of_<effect>" id (e.g. ring_of_searching), but their art is
+    still filed under the OLD per-variant names (ring_searching_silver.png). Map
+    the canonical id to a representative same-effect sprite so the item shows a
+    ring/amulet icon instead of a bare '=' / '"' glyph. Identity is per-type --
+    matching how every other accessory already renders -- while the random
+    per-run appearance still drives the displayed name + glyph-fallback colour.
+    """
+    if item_id in _ACCESSORY_SPRITE_FALLBACK:
+        return _ACCESSORY_SPRITE_FALLBACK[item_id]
+    cat = ('ring' if item_id.startswith('ring_')
+           else 'amulet' if item_id.startswith('amulet_') else None)
+    chosen = None
+    if cat:
+        eff = item_id[len(cat) + 1:]
+        if eff.startswith('of_'):
+            eff = eff[3:]
+        # normalise effect words to how the art is named, drop power-tier words
+        _SYN = {'resist': 'res', 'resistance': 'res', 'regeneration': 'regen'}
+        toks = [_SYN.get(t, t) for t in eff.split('_')
+                if t and t not in ('greater', 'master')]
+        root = '_'.join(toks)            # 'fire_res', 'strength', 'searching'
+        prim = toks[0] if toks else ''
+        try:
+            names = sorted(n for n in os.listdir(_ITEM_SPRITE_DIR)
+                           if n.endswith('.png') and n.startswith(cat + '_'))
+        except OSError:
+            names = []
+        for needle in (root, prim):      # full effect first, then primary token
+            if not needle:
+                continue
+            hit = next((n for n in names if needle in n[:-4]), None)
+            if hit:
+                chosen = os.path.join(_ITEM_SPRITE_DIR, hit)
+                break
+        if chosen is None and names:
+            # last resort: a neutral same-category band so a unique with no art
+            # (e.g. ring_of_solomons_authority) still shows jewellery, not a
+            # glyph. Prefer a plain iron/silver/bronze piece for neutrality.
+            pref = next((n for n in names
+                         if any(m in n for m in ('iron', 'silver', 'bronze'))), None)
+            chosen = os.path.join(_ITEM_SPRITE_DIR, pref or names[0])
+    _ACCESSORY_SPRITE_FALLBACK[item_id] = chosen
+    return chosen
+
+
+def _named_sprite(basename: str) -> 'str | None':
+    """Path to `<basename>.png` if it exists, else None."""
+    p = os.path.join(_ITEM_SPRITE_DIR, f"{basename}.png")
+    return p if os.path.exists(p) else None
+
+
+def _ingredient_ids() -> set:
+    """All cooking-ingredient ids (cached). Used to give the 550+ art-less
+    ingredients a generic meat-cut icon instead of a '~'/'*' glyph."""
+    global _INGREDIENT_IDS
+    if _INGREDIENT_IDS is None:
+        try:
+            import json
+            with open(data_path('data', 'items', 'ingredient.json'),
+                      encoding='utf-8') as f:
+                _INGREDIENT_IDS = set(json.load(f).keys())
+        except Exception:
+            _INGREDIENT_IDS = set()
+    return _INGREDIENT_IDS
+
+
 def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     """Filesystem path of the sprite to draw for `item_id`, or None.
 
-    Order: exact `<id>.png`; a generic corpse sprite for `corpse_*`; then, for
-    material items whose per-material art is missing (e.g. "tin_maul"), a
-    representative same-base sprite so the icon shows the weapon, not a glyph.
+    Order: exact `<id>.png`; an explicit stand-in for an art-less unique; a
+    generic corpse sprite for `corpse_*`; a representative same-base sprite for
+    material items missing per-material art (e.g. "tin_maul"); a same-effect
+    band for collapsed ring/amulet ids; finally a generic meat-cut icon for any
+    cooking ingredient. Returns None only for ids that are none of these.
     """
     if not item_id:
         return None
     path = os.path.join(_ITEM_SPRITE_DIR, f"{item_id}.png")
     if os.path.exists(path):
         return path
+    if item_id in _UNIQUE_SPRITE_FALLBACK:
+        hit = _named_sprite(_UNIQUE_SPRITE_FALLBACK[item_id])
+        if hit:
+            return hit
     if item_id.startswith('corpse_'):
         corpse = os.path.join(_ITEM_SPRITE_DIR, "corpse.png")
         return corpse if os.path.exists(corpse) else None
+    # Ingredients are an authoritative set and are checked BEFORE the material
+    # loop: some ids start with a material word ("iron_golem_prime") that would
+    # otherwise be misread as a composite and resolve to None.
+    if item_id in _ingredient_ids():
+        return _named_sprite(_INGREDIENT_FALLBACK_SPRITE)
     for mat in _material_ids():
         if item_id.startswith(mat + '_'):
             return _representative_base_sprite(item_id[len(mat) + 1:])
+    if item_id.startswith(('ring_', 'amulet_')):
+        return _representative_accessory_sprite(item_id)
     return None
 
 # Map tile constants to sprite filenames (SECRET_DOOR looks like WALL)

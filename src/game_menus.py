@@ -53,6 +53,7 @@ class MenuMixin:
                 "You have no recipes you can make yet -- gather more ingredients.", 'info')
             return
         self._cook_tab = 0
+        self._cook_sel = 0
         self.state = STATE_COOK_MENU
 
     def _get_cook_tab_items(self):
@@ -65,18 +66,48 @@ class MenuMixin:
         return (self.cook_menu_items if self._COOK_TABS[idx][1] == 'single'
                 else self.cook_compound_recipes)
 
+    # Up/Down/PageUp/PageDown/Home/End cursor keys, shared by the letter+cursor
+    # overflow menus (cook, eat). 26 = the a-z display cap in the renderer.
+    _MENU_CURSOR_KEYS = (pygame.K_UP, pygame.K_DOWN, pygame.K_PAGEUP,
+                         pygame.K_PAGEDOWN, pygame.K_HOME, pygame.K_END)
+
+    def _move_menu_cursor(self, cur: int, key: int, total: int) -> int:
+        """Move a menu cursor index, clamped to [0, min(total,26)-1]. The view
+        auto-scrolls to keep the cursor visible (fantasy_ui.draw_menu)."""
+        last = max(0, min(total, 26) - 1)
+        cur = max(0, min(cur, last))
+        if key == pygame.K_DOWN:
+            return min(last, cur + 1)
+        if key == pygame.K_UP:
+            return max(0, cur - 1)
+        if key == pygame.K_PAGEDOWN:
+            return min(last, cur + 5)
+        if key == pygame.K_PAGEUP:
+            return max(0, cur - 5)
+        if key == pygame.K_HOME:
+            return 0
+        if key == pygame.K_END:
+            return last
+        return cur
+
     def _cook_menu_input(self, key: int):
         if key == pygame.K_LEFT:
             self._cook_tab = self._cycle_tab(self._cook_tab, -1, len(self._COOK_TABS), self._cook_tab_has_items)
+            self._cook_sel = 0
             return
         if key == pygame.K_RIGHT:
             self._cook_tab = self._cycle_tab(self._cook_tab, 1, len(self._COOK_TABS), self._cook_tab_has_items)
-            return
-        idx = self._AZ_KEYS.get(key)
-        if idx is None:
+            self._cook_sel = 0
             return
         tab_items = self._get_cook_tab_items()
-        if idx >= len(tab_items):
+        if key in self._MENU_CURSOR_KEYS:
+            self._cook_sel = self._move_menu_cursor(getattr(self, '_cook_sel', 0), key, len(tab_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_cook_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
+        if idx is None or idx >= len(tab_items):
             return
         self.state = STATE_PLAYER
         if self._COOK_TABS[self._cook_tab][1] == 'single':
@@ -160,6 +191,7 @@ class MenuMixin:
             self.add_message("You have nothing to eat.", 'info')
             return
         self._eat_tab = 0
+        self._eat_sel = 0
         for i, (_, filt) in enumerate(self._EAT_TABS):
             if any(filt(item) for item in self.eat_menu_items):
                 self._eat_tab = i
@@ -174,13 +206,21 @@ class MenuMixin:
         if key == pygame.K_LEFT:
             self._eat_tab = self._cycle_tab(self._eat_tab, -1, len(self._EAT_TABS),
                 lambda t: any(self._EAT_TABS[t][1](i) for i in self.eat_menu_items))
+            self._eat_sel = 0          # reset cursor on tab switch (mirror cook)
             return
         if key == pygame.K_RIGHT:
             self._eat_tab = self._cycle_tab(self._eat_tab, 1, len(self._EAT_TABS),
                 lambda t: any(self._EAT_TABS[t][1](i) for i in self.eat_menu_items))
+            self._eat_sel = 0
             return
         tab_items = self._get_eat_tab_items()
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._eat_sel = self._move_menu_cursor(getattr(self, '_eat_sel', 0), key, len(tab_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_eat_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(tab_items):
             return
         self.state = STATE_PLAYER

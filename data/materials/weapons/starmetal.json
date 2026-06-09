@@ -39,7 +39,7 @@
     "cannot_be_cursed"
   ],
   "lore_descriptor": "blue-silver with a constellation pattern only visible at night",
-  "unidentified_descriptor": "a strange blade that seems to remember light",
+  "unidentified_descriptor": "cold starlit",
   "first_pickup_chronicle": "Starmetal. The dungeon's roof opened once, long ago, and let this fall. It is colder than it should be. It is brighter than it should be. The stars are still up there, just on the other side of all that rock.",
   "design_notes": "Peak F75 spread 12 — bridges Fenrir prep band. damage_mult 1.45, weight_mult 0.85 (light). max_enchant 5. cannot_be_cursed is a unique safety property — a STARMETAL +3 cannot become STARMETAL -3. effective_against aberration/void_spawn ties to the L91-99 Abaddon-elite gap content. glows_faintly = light source, like a torch, no inventory cost. The fighter-mage's late-game material — magic-friendly and combat-viable."
 }

@@ -1025,11 +1025,7 @@ def drink_potion(player, potion) -> list[str]:
         messages.append(f"Electricity crackles and disperses. Shock Resist ({dur} turns).")
 
     elif effect == 'restore_mp':
-        try:
-            amt = int(power) if power else 15
-        except (ValueError, TypeError):
-            from dice import roll
-            amt = roll(str(power))
+        amt = roll_dice(power) if power else 15      # dice expr like '2d8+6'
         before = player.mp
         player.restore_mp(amt)
         gained = player.mp - before
@@ -1039,11 +1035,7 @@ def drink_potion(player, potion) -> list[str]:
             messages.append("Your mana is already full.")
 
     elif effect == 'brilliance_mp':
-        try:
-            amt = int(power) if power else 40
-        except (ValueError, TypeError):
-            from dice import roll
-            amt = roll(str(power))
+        amt = roll_dice(power) if power else 40      # dice expr like '4d8+22'
         before = player.mp
         player.restore_mp(amt)
         gained = player.mp - before

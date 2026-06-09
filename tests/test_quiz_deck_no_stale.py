@@ -36,9 +36,14 @@ def test_seen_set_still_persists_but_decks_do_not():
     assert e._decks == {}                                    # stale deck dropped
 
 
-def test_get_deck_state_persists_seen_only():
+def test_get_deck_state_persists_no_question_objects():
     e = QuizEngine()
     e._seen = {('math', 1): {'a', 'b'}}
     e._decks = {('math', 1): [{'question': 'q'}]}
     state = e.get_deck_state()
-    assert state == {'seen': {('math', 1): {'a', 'b'}}}      # no decks pickled
+    # The seen-set persists (anti-repeat) and per-run mastery persists
+    # (retired + mastered, added 2026-06-08), but the shuffled DECKS -- the
+    # question OBJECTS -- must NEVER be pickled: that was the stale-question bug.
+    assert state['seen'] == {('math', 1): {'a', 'b'}}
+    assert 'decks' not in state and 'deck_idx' not in state
+    assert 'retired' in state and 'mastered' in state

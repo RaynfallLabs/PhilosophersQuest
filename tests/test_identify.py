@@ -665,10 +665,12 @@ def test_normalize_descriptor_leaves_adjective_phrases_alone():
 
 
 def test_normalize_descriptor_never_returns_empty():
-    # If everything strips, keep the original — better to look weird
-    # than to lose all flavor signal.
-    assert _normalize_descriptor("a plank") == "a plank"  # would strip to ''
-    assert _normalize_descriptor("the blade") == "the blade"
+    # If everything strips, fall back to the neutral adjective 'strange' (2026-
+    # 06-07) -- NOT the original noun phrase, which composed into garbage like
+    # "A Plank Longbow". 'strange' is non-empty and reads cleanly ("A Strange
+    # Longbow"). A descriptor that hits this should be rewritten in data.
+    assert _normalize_descriptor("a plank") == "strange"   # would strip to ''
+    assert _normalize_descriptor("the blade") == "strange"
     assert _normalize_descriptor("") == ""
 
 

@@ -45,7 +45,7 @@
     "secret_path"
   ],
   "lore_descriptor": "absent — the eye refuses to focus on it",
-  "unidentified_descriptor": "a blade that hurts to look at",
+  "unidentified_descriptor": "void-dark",
   "first_pickup_chronicle": "Void-touched. I don't want to write this down. It bypasses Abaddon's resistances. It cuts angels. It cuts the Host. I know what I am holding. I know what side this puts me on. Whether I have a choice anymore — that I do not know.",
   "design_notes": "Peak F95 spread 8 — Abaddon-adjacent ONLY. Cannot spawn outside the deepest band. damage_mult 1.70 — IS the highest in the bank. weight_mult 0.70 (light — material defies physics). max_enchant 7. The abaddon_resistance_bypass is HUGE — bypasses Abaddon's 5-of-6 resistances. anti_heaven means it damages celestials too (the player's angel allies). drain_sanity_per_turn — currently a flagged design hook for a sanity system not yet implemented; if absent, treat as cosmetic chronicle entry per turn. The 'dark ending' material: void_touched wielders cannot complete the Sword-of-Michael path but may have an alternate Abaddon kill. Open question: should this gate behind a moral choice (e.g., must have already used a cursed altar)?"
 }

@@ -1246,8 +1246,26 @@ GENERIC_MATERIAL_WORDS = frozenset({
 # values and don't compose as adjectives. "a wooden plank" -> strip
 # "plank" leaves "wooden", which composes correctly with a template name.
 DESCRIPTOR_TAIL_NOUNS = frozenset({
-    'blade', 'haft', 'timber', 'plank', 'plate', 'board',
-    'hide', 'cloth', 'fabric', 'leather', 'weapon', 'thing',
+    # item-SHAPE / generic object nouns -- redundant before a template noun
+    # ("a midnight-dark BLADE" -> "midnight-dark", "a heavy dark CLUB" ->
+    # "heavy dark"). Material-class words (wood, metal, stone, bone, glass...)
+    # are deliberately KEPT: for an unidentified item they hint what it might be
+    # ("Pale Fibrous Wood Longbow", "Pale Silvery Metal Helm").
+    'blade', 'haft', 'timber', 'plank', 'plate', 'board', 'hide', 'cloth',
+    'fabric', 'leather', 'weapon', 'thing', 'club', 'wrap', 'length', 'piece',
+    'bar', 'ingot', 'rod', 'shaft', 'stick', 'staff', 'sheen', 'sheet', 'suit',
+    'wrought', 'armor', 'armour',
+})
+
+# Words that begin a relative/prepositional clause: everything from the first
+# such word onward is flavor that must NOT leak into a composed item name
+# ("a blade THAT shows no edge wear" -> "a blade"; "alloy, color SHIFTING in
+# firelight" -> "alloy"). Leading participles like "gleaming"/"glowing" are
+# deliberately absent -- they read fine as adjectives ("a gleaming silver ...").
+_DESCRIPTOR_CLAUSE_CUT = frozenset({
+    'that', 'which', 'who', 'whose', 'of', 'like', 'with', 'woven', 'shifting',
+    'color', 'colour', 'set', 'etched', 'flecked', 'veined', 'traced', 'chased',
+    'shot',
 })
 
 _LEADING_ARTICLES = frozenset({'a', 'an', 'the'})
@@ -1277,35 +1295,42 @@ def _strip_redundant_material_words(tpl_name: str) -> str:
 
 
 def _normalize_descriptor(desc: str) -> str:
-    """Turn a noun-phrase `unidentified_descriptor` into an adjective
-    phrase. Strips a leading article and any trailing object-noun.
+    """Reduce a flavor `unidentified_descriptor` to a SHORT visual adjective
+    phrase fit to prefix a template noun. Strips a leading article, drops
+    commas, truncates at the first clause word, then strips trailing object
+    nouns:
 
     >>> _normalize_descriptor("a wooden plank")
     'wooden'
     >>> _normalize_descriptor("a faintly blue blade")
     'faintly blue'
-    >>> _normalize_descriptor("rune-chased plate")  # no article, noun tail
-    'rune-chased'
-    >>> _normalize_descriptor("pale silvery metal")  # no article, no tail noun
-    'pale silvery metal'
-    >>> _normalize_descriptor("a plank")  # everything strips
-    'a plank'
+    >>> _normalize_descriptor("a midnight-dark blade that shows no edge wear")
+    'midnight-dark'
+    >>> _normalize_descriptor("a heavy, dark club")
+    'heavy dark'
+    >>> _normalize_descriptor("an impossible alloy, color shifting in firelight")
+    'impossible alloy'
+
+    Falls back to 'strange' if nothing usable survives -- a descriptor that
+    reduces to nothing should be rewritten in data, but a composed name must
+    NEVER read as garbage ("Pale Fibrous Wood Longbow").
     """
     if not desc:
         return desc
-    words = desc.split()
+    words = desc.replace(',', ' ').split()
     # Strip leading article (a / an / the).
     if words and words[0].lower() in _LEADING_ARTICLES:
         words = words[1:]
-    # Strip trailing object-nouns one at a time. Multiple in a row are
-    # rare but possible ("plate blade" — neither is real, but if it
-    # happened we'd want both gone).
-    while words and words[-1].lower().rstrip(',.;') in DESCRIPTOR_TAIL_NOUNS:
+    # Truncate at the first relative/prepositional clause word.
+    cut = next((i for i, w in enumerate(words)
+                if w.lower().strip('.;') in _DESCRIPTOR_CLAUSE_CUT), None)
+    if cut is not None:
+        words = words[:cut]
+    # Strip trailing object-nouns ('blade', 'wood', 'metal', ...).
+    while words and words[-1].lower().strip('.;') in DESCRIPTOR_TAIL_NOUNS:
         words.pop()
-    cleaned = ' '.join(words).strip()
-    # If everything stripped, fall back to the original — better to look
-    # weird than to lose all flavor.
-    return cleaned or desc
+    cleaned = ' '.join(words).strip(' ,.;')
+    return cleaned or 'strange'
 
 
 def _title_if_all_lower(s: str) -> str:
@@ -1351,15 +1376,86 @@ def _append_noun_if_missing(text: str, noun: str) -> str:
     return f"{text} {' '.join(missing)}".strip()
 
 
+def _drop_words_present_in(phrase: str, *carriers: str) -> str:
+    """Remove from `phrase` every word the material side already carries, so a
+    template whose name IS a material word doesn't double up:
+      'hide'   (material) + 'hide'    (template) -> 'Hide Armor'
+      'leather'           + 'leather'            -> 'Leather Armor'
+      'boiled leather'    + 'leather'            -> 'Boiled Leather Armor'
+      'rawhide'/'dragonhide' + 'hide'            -> 'Rawhide/Dragonhide Armor'
+    A template word is redundant if it matches a carrier word exactly, OR is the
+    tail of a longer carrier word ('hide' inside 'rawhide'). The length guards
+    keep short coincidental suffixes safe. Case-insensitive; preserves order +
+    the kept words' original casing.
+    """
+    carrier = set()
+    for c in carriers:
+        carrier |= {w.lower() for w in c.split()}
+
+    def redundant(w: str) -> bool:
+        wl = w.lower()
+        if wl in carrier:
+            return True
+        return len(wl) >= 4 and any(
+            len(cw) > len(wl) and cw.endswith(wl) for cw in carrier)
+
+    return ' '.join(w for w in phrase.split() if not redundant(w))
+
+
+def _drop_generic_words_implied_by(material_name: str, *template_parts: str) -> str:
+    """Drop a GENERIC material word already implied by a template word it is the
+    tail of: 'dwarven plate' + 'breastplate' -> 'Dwarven Breastplate'. The word
+    is KEPT when it still distinguishes ('dwarven plate' + 'gauntlets' stays
+    'Dwarven Plate Gauntlets', since plate-gauntlets differ from leather ones).
+    Only generic material words qualify, so real descriptors are never lost; the
+    last surviving word is never stripped."""
+    tpl = set()
+    for p in template_parts:
+        tpl |= {w.lower() for w in p.split()}
+
+    def implied(w: str) -> bool:
+        wl = w.lower()
+        return (wl in GENERIC_MATERIAL_WORDS and len(wl) >= 4
+                and any(tw != wl and tw.endswith(wl) for tw in tpl))
+
+    kept = [w for w in material_name.split() if not implied(w)]
+    return ' '.join(kept) or material_name
+
+
+# Words that all mean "leather/hide armor". A leather-family MATERIAL meeting the
+# OTHER family word as the TEMPLATE reads redundantly ('boiled leather' + 'hide'
+# -> 'Boiled Leather Hide Armor'), so the template class-word is dropped.
+_LEATHER_FAMILY = frozenset({'hide', 'leather', 'rawhide', 'skin'})
+
+
+def _drop_leather_family_redundancy(cleaned: str, material_name: str) -> str:
+    """If the cleaned template is a SINGLE leather/hide-family class word and the
+    material is already a leather/hide material, drop the template word -- the
+    appended noun carries the type: 'boiled leather' + 'hide' -> 'Boiled Leather
+    Armor', 'dragonhide' + 'leather' -> 'Dragonhide Armor'."""
+    words = cleaned.split()
+    if len(words) != 1 or words[0].lower() not in _LEATHER_FAMILY:
+        return cleaned
+    mw = material_name.lower().split()
+    if any(w in mw or material_name.lower().endswith(w) for w in _LEATHER_FAMILY):
+        return ''
+    return cleaned
+
+
 def compose_item_name(material_name: str, template_name: str,
                       noun: str = '') -> str:
     """Identified-form item name. Strips redundant material words from
     the template so 'steel' + 'iron boots' renders as 'steel boots',
-    not 'steel iron boots'. Appends `noun` if provided and the cleaned
-    phrase doesn't already contain it — this rescues bare-adjective
-    template names ('padded' + 'linen' would otherwise be 'Linen Padded').
-    Title-cases the result."""
+    not 'steel iron boots'. Also drops any template word the material name
+    already carries, so 'hide' + 'hide' is 'Hide Armor', not 'Hide Hide
+    Armor', and a cross-family leather/hide redundancy ('boiled leather' +
+    'hide' -> 'Boiled Leather Armor'). Appends `noun` if provided and the cleaned
+    phrase doesn't already contain it — this rescues bare-adjective template
+    names ('padded' + 'linen' would otherwise be 'Linen Padded'). Title-cases."""
     cleaned = _strip_redundant_material_words(template_name)
+    cleaned = _drop_words_present_in(cleaned, material_name)
+    cleaned = _drop_leather_family_redundancy(cleaned, material_name)
+    material_name = _drop_generic_words_implied_by(material_name, cleaned, noun)
     composed = f"{material_name} {cleaned}".strip()
     composed = _append_noun_if_missing(composed, noun)
     return _title_if_all_lower(composed)
@@ -1369,10 +1465,12 @@ def compose_unidentified_name(material_descriptor: str, template_name: str,
                               noun: str = '') -> str:
     """Unidentified-form item name. Normalizes both the descriptor
     (drop article, drop tail-noun) and the template (drop redundant
-    material words) before composing. Appends `noun` if provided and
-    the cleaned phrase lacks one. Title-cases the result."""
+    material words, then any word the descriptor already carries) before
+    composing. Appends `noun` if provided and the cleaned phrase lacks one.
+    Title-cases the result."""
     cleaned_desc = _normalize_descriptor(material_descriptor)
     cleaned_tpl = _strip_redundant_material_words(template_name)
+    cleaned_tpl = _drop_words_present_in(cleaned_tpl, cleaned_desc)
     composed = f"{cleaned_desc} {cleaned_tpl}".strip()
     composed = _append_noun_if_missing(composed, noun)
     return _title_if_all_lower(composed)

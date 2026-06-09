@@ -881,7 +881,9 @@ def draw_menu(
     hint_h = 38
     chrome_h = header_h + subtitle_h + tab_h + divider_h + hint_h + 16  # padding
 
-    # Measure each entry
+    # Measure each entry -- ONE row_heights element PER entry (a section header
+    # is folded into its entry's height) so the list stays index-aligned with
+    # `entries` for the scroll-to-selection math below.
     row_heights = []
     text_max_w = bw - 50 if row_style == 'text' else bw - 140
     # Width matching the icon-row render path's name_max (assuming no badge):
@@ -889,10 +891,9 @@ def draw_menu(
     icon_detail_wrap_w = bw - 130
     for entry in entries:
         rs = entry.get('row_style', row_style)
-        if entry.get('section'):
-            row_heights.append(28)  # section header
+        rh = 28 if entry.get('section') else 0   # section header folded in
         if rs == 'icon':
-            rh = _ICON_ROW_H
+            rh += _ICON_ROW_H
             # Opt-in wrap: cache wrapped lines on the entry so the render
             # path uses the same list (and grows the row by 18px per
             # extra line). First line already fits in the base row.
@@ -908,7 +909,6 @@ def draw_menu(
             # row's icon. Now the row grows to fit.
             elif entry.get('detail_lines') and len(entry['detail_lines']) > 1:
                 rh += (len(entry['detail_lines']) - 1) * 18
-            row_heights.append(rh)
         else:
             # Text row: measure wrapped height
             detail_lines = entry.get('detail_lines')
@@ -916,7 +916,8 @@ def draw_menu(
                 detail_lines = wrap_text(entry['detail'], font_sm, text_max_w) if font_sm else [entry['detail']]
             name_lines = wrap_text(entry['name'], font_md, text_max_w) if font_md else [entry['name']]
             n_lines = len(name_lines) + (len(detail_lines) if detail_lines else 0)
-            row_heights.append(max(_TEXT_ROW_BASE, n_lines * 22 + 8))
+            rh += max(_TEXT_ROW_BASE, n_lines * 22 + 8)
+        row_heights.append(rh)
 
     total_content = sum(row_heights)
     max_content = ch - 40 - chrome_h
@@ -925,12 +926,19 @@ def draw_menu(
     bx = (cw - bw) // 2
     by = (ch - bh) // 2
 
-    # Clamp scroll
+    # Clamp scroll, then AUTO-FOLLOW the selected row so it is always visible.
+    # A cursor-driven menu (one row has 'selected': True) need not track a
+    # scroll offset at all -- the viewport chases the cursor. Letter-driven
+    # menus (no selected row) keep the caller's offset for manual Up/Down.
     if needs_scroll:
-        # Compute max scroll by counting how many entries from the end fit
-        max_scroll = max(0, len(entries) - 1)
-        # Simple: allow scrolling entry-by-entry
-        scroll = max(0, min(scroll, max_scroll))
+        scroll = max(0, min(scroll, max(0, len(entries) - 1)))
+        sel = next((i for i, e in enumerate(entries) if e.get('selected')), None)
+        if sel is not None:
+            if sel < scroll:
+                scroll = sel
+            else:
+                while scroll < sel and sum(row_heights[scroll:sel + 1]) > max_content:
+                    scroll += 1
     else:
         scroll = 0
 

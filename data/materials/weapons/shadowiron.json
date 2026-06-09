@@ -40,7 +40,7 @@
     "void_aligned"
   ],
   "lore_descriptor": "black as pitch, edges absorbing torchlight",
-  "unidentified_descriptor": "a blade that seems to drink the light",
+  "unidentified_descriptor": "shadow-dark",
   "first_pickup_chronicle": "Shadowiron. Drains me a little every turn. Worth it for what it does to the dead. I am told the smiths who worked this metal did not live past forty. I am told they did good work.",
   "design_notes": "Peak F82 spread 12. damage_mult 1.55 — TOP raw damage in the bank. The catch: drains 1 HP per turn equipped. cite: curve F82 monster_damage_med ≈ 13; a 1-HP drain per turn is meaningful (~7.5% of player_hp_target P at F82 over a 30-turn fight). cannot_be_blessed — necrotic alignment. effective_against celestial AS WELL AS undead/fiend — shadowiron damages EVERYONE, including the player's angel allies. Tactical risk material. void_aligned flag enables Abaddon-side karma interactions. No armor — wearing shadowiron plate would kill the player in 100 turns."
 }

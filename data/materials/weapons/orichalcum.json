@@ -42,7 +42,7 @@
     "rare_to_find"
   ],
   "lore_descriptor": "copper-rose flickering to bronze when shadowed",
-  "unidentified_descriptor": "an impossible alloy, color shifting in firelight",
+  "unidentified_descriptor": "lustrous golden",
   "first_pickup_chronicle": "Orichalcum. Atlantis was real, then. Or my memory of it just became real. The metal is warm to the touch and hums when held near a spell. Plato saw one of these once. He didn't believe it either.",
   "design_notes": "Peak F90 spread 6 — DELIBERATELY NARROW. orichalcum is rare-of-rares. Spread 6 means peak weight 2 at F90 falls to ~0.05 by F75 or F100. damage_mult 1.55 ties shadowiron at the top, but armor_ac_bonus 2 and max_enchant 6 (highest of any material) put it above shadowiron for magical builds. spell_damage_bonus_15pct stacks with the player's wand/spell damage. Open question: should this require a discovery (Atlantis hidden room) rather than be loot-pool? Currently treated as soft-curve loot."
 }

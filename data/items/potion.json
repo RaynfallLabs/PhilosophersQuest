@@ -275,7 +275,7 @@
     "weight": 0.4,
     "min_level": 20,
     "effect": "brilliance_mp",
-    "power": "40",
+    "power": "4d8+22",
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -827,7 +827,7 @@
     "weight": 0.4,
     "min_level": 5,
     "effect": "restore_mp",
-    "power": "15",
+    "power": "2d8+6",
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 8,

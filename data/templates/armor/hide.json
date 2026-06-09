@@ -5,9 +5,9 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "body",
-  "base_ac_value": 1,
+  "base_ac_value": 2,
   "base_weight_lb": 15.0,
-  "_design_note": "F1-20 light. Weight penalty vs leather; takes crushing better.",
+  "_design_note": "F1-20 medium-light. AC 2 (vs leather/padded's 1) earns its weight: the early heavy option, same AC as studded leather but available sooner. Takes a crushing blow better.",
   "compatible_material_classes": [
     "hide",
     "leather",

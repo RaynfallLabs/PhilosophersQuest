@@ -49,7 +49,27 @@ class InputMixin:
 
     def handle_event(self, event: pygame.event.Event) -> bool:
         if event.type == pygame.QUIT:
-            return False
+            # A QUIT can come from the window-X, the confirm-exit dialog (which
+            # sets _quit_confirmed before posting it), OR a SPURIOUS OS/display
+            # event (monitor sleep, focus loss, RDP, screensaver) that must NOT
+            # silently end the run. Only a confirmed quit -- or the death/victory
+            # screens -- exits outright; anything else routes to the VISIBLE
+            # confirm dialog so a stray QUIT can be cancelled, and is logged so a
+            # "the window just closed" report names itself.
+            if getattr(self, '_quit_confirmed', False):
+                return False
+            if self.state in (STATE_DEAD, STATE_VICTORY):
+                return False
+            if self.state != STATE_CONFIRM_EXIT:
+                try:
+                    from game_log import log_info
+                    log_info(f"QUIT event received in state={self.state} -> routed to "
+                             f"confirm-exit (NOT exiting). If you didn't click the X, "
+                             f"this was a spurious OS/display/focus event.")
+                except Exception:
+                    pass
+                self.state = STATE_CONFIRM_EXIT
+            return True
         if event.type == pygame.WINDOWRESIZED:
             self.on_resize(event.x, event.y)
             return True
@@ -471,11 +491,13 @@ class InputMixin:
         if key in (pygame.K_y, pygame.K_RETURN):
             # Save & exit cleanly -- auto-save runs in main() after the loop
             self._save_on_quit = True
+            self._quit_confirmed = True        # this QUIT is deliberate -> actually exit
             import pygame as _pg
             _pg.event.post(_pg.event.Event(_pg.QUIT))
         elif key == pygame.K_n:
             # Exit without saving -- delete any existing save to prevent checkpointing
             self._save_on_quit = False
+            self._quit_confirmed = True
             from save_system import delete_save
             delete_save(self.player_name)
             import pygame as _pg

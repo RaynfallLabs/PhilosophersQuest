@@ -69,6 +69,20 @@ class QuizEngine:
         # pure chance re-shows recent openers — which reads as "not random".
         self._recent:   dict[tuple, list] = {}   # (subject, tier) -> recent question texts
 
+        # Per-RUN subject mastery (NOT cross-game). A (subject, tier) is mastered
+        # once EVERY distinct question at that tier has been answered correctly
+        # this run: wrong answers recycle (re-presented), right answers retire. A
+        # mastered (subject, tier) AUTO-SUCCEEDS (escalator chains start at your
+        # frontier; a fully-mastered subject auto-succeeds outright). Persisted in
+        # the SAVE so it survives save/load WITHIN a run, but a brand-new game
+        # starts fresh (__init__ leaves these empty; only restore_deck_state fills
+        # them) -- i.e. per-run, reset each run.
+        self._retired:   dict[tuple, set] = {}   # (subject, tier) -> question texts answered correctly
+        self._mastered:  set = set()             # {(subject, tier), ...} fully cleared this run
+        self._tier_size: dict[tuple, int] = {}   # cached count of distinct questions per (subject, tier)
+        self.just_mastered: tuple | None = None  # one-shot UI flag: the (subject,tier) just mastered
+        self.auto_passed: int = 0                # mastered tier-rounds auto-passed in the current quiz
+
         self.state = QuizState.IDLE
         self.mode: QuizMode | None = None
         self.subject: str = ''
@@ -193,6 +207,8 @@ class QuizEngine:
         self.chain = 0
         self.correct_count = 0
         self.asked_count = 0
+        self.just_mastered = None
+        self.auto_passed = 0
         self.last_correct = None
         self.last_answer = ''
         self.result_timer = 0.0
@@ -242,6 +258,7 @@ class QuizEngine:
             self.chain += 1
             self.score = self.chain if self.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN) \
                 else self.correct_count
+            self._record_correct_for_mastery()   # retire this question; master the tier if cleared
         else:
             self.chain = 0
 
@@ -288,6 +305,10 @@ class QuizEngine:
 
     def _next_question(self):
         deck_key = (self.subject, self.tier)
+        # A mastered (subject, tier) auto-succeeds its round -- no question shown.
+        if self.is_mastered(self.subject, self.tier):
+            self._auto_pass_mastered_round()
+            return
         last = self._last_q.get(deck_key)
 
         # Defensive: empty pool would crash on _pool[0] below. Should already
@@ -298,17 +319,33 @@ class QuizEngine:
             self._end(success=False)
             return
 
-        if self._pool_idx >= len(self._pool):
-            # Deck exhausted -- reshuffle with unseen questions first.
-            reshuffled = self._shuffle_unseen_first(deck_key, self._pool)
-            self._pool[:] = reshuffled
-            if last is not None and len(self._pool) > 1 and self._pool[0] is last:
-                swap = random.randint(1, len(self._pool) - 1)
-                self._pool[0], self._pool[swap] = self._pool[swap], self._pool[0]
-            self._pool_idx = 0
-
-        self.current_question = self._pool[self._pool_idx]
-        self._pool_idx += 1
+        # Draw the next question NOT already answered correctly this run. Right
+        # answers retire (stay out of the deck); wrong answers recycle (stay in).
+        # If every question is retired, the tier is mastered -> auto-pass.
+        retired = self._retired.get(deck_key, set())
+        chosen = None
+        for _ in range(len(self._pool) * 2 + 1):
+            if self._pool_idx >= len(self._pool):
+                # Deck exhausted -- reshuffle with unseen questions first.
+                reshuffled = self._shuffle_unseen_first(deck_key, self._pool)
+                self._pool[:] = reshuffled
+                if last is not None and len(self._pool) > 1 and self._pool[0] is last:
+                    swap = random.randint(1, len(self._pool) - 1)
+                    self._pool[0], self._pool[swap] = self._pool[swap], self._pool[0]
+                self._pool_idx = 0
+            cand = self._pool[self._pool_idx]
+            self._pool_idx += 1
+            if cand.get('question') not in retired:
+                chosen = cand
+                break
+        if chosen is None:
+            # Every question retired this run -> the tier is mastered.
+            if deck_key not in self._mastered:
+                self._mastered.add(deck_key)
+                self.just_mastered = deck_key
+            self._auto_pass_mastered_round()
+            return
+        self.current_question = chosen
 
         # Track this question as seen.
         if deck_key not in self._seen:
@@ -430,6 +467,92 @@ class QuizEngine:
         random.shuffle(rest)
         return unseen + rest
 
+    # --- Subject mastery (per-run) ---
+
+    def _full_tier_size(self, subject: str, tier: int) -> int:
+        """Count of DISTINCT questions at exactly this (subject, tier) -- the
+        number that must each be answered correctly to master the tier."""
+        key = (subject, tier)
+        if key not in self._tier_size:
+            qs = self.load_questions(subject)
+            self._tier_size[key] = len({q['question'] for q in qs
+                                        if q.get('tier', 1) == tier and q.get('question')})
+        return self._tier_size[key]
+
+    def is_mastered(self, subject: str, tier: int) -> bool:
+        return (subject, tier) in self._mastered
+
+    def mastered_tiers(self) -> set:
+        """Public read for UI: set of (subject, tier) mastered this run."""
+        return set(self._mastered)
+
+    def _record_correct_for_mastery(self):
+        """Retire the just-answered question; if every distinct question at this
+        (subject, tier) is now retired, the tier is mastered for the run."""
+        if not self.current_question:
+            return
+        key = (self.subject, self.tier)
+        qtext = self.current_question.get('question')
+        if not qtext:
+            return
+        retired = self._retired.setdefault(key, set())
+        if qtext in retired:
+            return
+        retired.add(qtext)
+        size = self._full_tier_size(self.subject, self.tier)
+        if size > 0 and len(retired) >= size and key not in self._mastered:
+            self._mastered.add(key)
+            self.just_mastered = key
+
+    def _auto_pass_mastered_round(self):
+        """A mastered (subject, tier) auto-succeeds its round with no question
+        shown. In escalator modes this climbs to the next tier (the player always
+        fights at their frontier); a fully-mastered subject auto-succeeds outright."""
+        self.last_correct = True
+        self.correct_count += 1
+        self.chain += 1
+        self.asked_count += 1
+        self.auto_passed += 1
+        chain_mode = self.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN)
+        self.score = self.chain if chain_mode else self.correct_count
+        if chain_mode:
+            if self.max_chain and self.chain >= self.max_chain:
+                self._end(success=True)
+                return
+            if self.mode == QuizMode.ESCALATOR_CHAIN:
+                prev = self.tier
+                self._escalate()
+                if self.tier == prev:            # already at the top tier -- can't climb
+                    self._end(success=True)
+                    return
+                self._next_question()            # next tier (may itself be mastered)
+                return
+            # plain CHAIN, single tier, fully mastered -> strong auto-success
+            self.chain = self.max_chain or 5
+            self.score = self.chain
+            self._end(success=True)
+            return
+        # threshold / escalator_threshold
+        if self.correct_count >= self.required:
+            self._end(success=True)
+            return
+        if self.mode == QuizMode.ESCALATOR_THRESHOLD:
+            prev = self.tier
+            self._escalate()
+            if self.tier == prev:
+                # Top tier, no higher to climb. If THIS tier is also mastered we
+                # auto-passed the whole reachable ladder -> success even if the
+                # threshold count wasn't reached. (Sphinx/Mjolnir are
+                # escalator_threshold T3 thr=4: three auto-passes give count=3 <
+                # 4, which used to AUTO-FAIL a fully-mastered player.)
+                self._end(success=(self.correct_count >= self.required)
+                          or self.is_mastered(self.subject, self.tier))
+                return
+            self._next_question()
+            return
+        # plain threshold, single tier, mastered -> auto-success
+        self._end(success=True)
+
     def get_deck_state(self) -> dict:
         """Serializable quiz state for the save system.
 
@@ -440,15 +563,22 @@ class QuizEngine:
         instead of rebuilding from the current JSON. Seen-only keeps anti-repeat
         for unchanged questions while letting bank updates always take effect.
         """
-        return {'seen': self._seen}
+        # `retired` + `mastered` are this RUN's subject-mastery progress. They go
+        # in the per-save pickle (so save/load mid-run keeps your progress) but NOT
+        # in the cross-game quiz_history.json -- mastery is per-run, earned fresh.
+        return {'seen': self._seen, 'retired': self._retired,
+                'mastered': self._mastered}
 
     def restore_deck_state(self, state: dict):
-        """Restore ONLY the seen-set; decks rebuild from the current question
-        files on the next start_quiz, so bank updates always take effect on load
-        (and old saves stop serving stale, pre-update questions)."""
+        """Restore the seen-set + this run's mastery progress; decks rebuild from
+        the current question files on the next start_quiz, so bank updates always
+        take effect on load (and old saves stop serving stale questions)."""
         if not state:
             return
         self._seen     = state.get('seen', {})
+        self._retired  = state.get('retired', {}) or {}
+        # tolerant of set-of-tuples (pickle) or list-of-lists (any JSON path)
+        self._mastered = {tuple(k) for k in (state.get('mastered') or [])}
         # decks/deck_idx/last_q are intentionally NOT restored — re-installing
         # the pickled question objects is exactly what served stale questions.
         self._decks    = {}

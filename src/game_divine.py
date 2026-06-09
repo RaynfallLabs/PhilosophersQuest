@@ -1040,14 +1040,18 @@ class DivineMixin:
         msgs = []
         fired_full = False
         if effective >= 5:
-            # Full effect: full restoration + cleanse
+            # Full HEAL + cleanse (the prayer's divine-restoration identity), but
+            # SP is a strong -- not total -- refill. Pater Noster used to fully
+            # restore SP, which scales with max_sp and so outran cooking (a flat
+            # 50-120) at depth; SP is now cooking's domain, prayer is HP/cleanse.
             p.hp = p.max_hp
-            p.sp = p.max_sp
+            sp_gain = int(p.max_sp * 0.6)
+            p.sp = min(p.max_sp, p.sp + sp_gain)
             bad = ['poisoned', 'paralyzed', 'confused', 'bleeding', 'blinded',
                    'sleeping', 'slowed', 'weakened']
             for e in bad:
                 p.status_effects.pop(e, None)
-            msgs.append("A warm light washes over you. Fully healed, restored, and cleansed!")
+            msgs.append(f"A warm light washes over you. Fully healed and cleansed! (+{sp_gain} SP)")
             fired_full = True
             # Perfect chain (raw 5): the rare permanent boon, up to 3 times per run
             if raw_chain >= 5 and p.prayer_boon_count < 3:
@@ -1055,7 +1059,7 @@ class DivineMixin:
                 p.prayer_boon_count += 1
                 msgs.append("Divine light fills you. Your wisdom is permanently increased! (WIS +1)")
         elif effective >= 3:
-            sp_gain = int(p.max_sp * 0.5)
+            sp_gain = int(p.max_sp * 0.35)
             heal = p.max_hp // 3
             p.sp = min(p.max_sp, p.sp + sp_gain)
             p.hp = min(p.max_hp, p.hp + heal)

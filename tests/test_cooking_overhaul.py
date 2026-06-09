@@ -86,14 +86,17 @@ def test_assorted_ingredient_is_renamed_jerky():
     assert e["name"] == "Assorted Monster Jerky", e["name"]
 
 
-def test_assorted_jerky_is_edible_safe_with_raw_sp_12():
+def test_assorted_jerky_is_edible_safe_with_raw_sp_25():
     e = INGREDIENTS[ASSORTED]
     assert e.get("edible_safe") is True
-    assert e.get("raw_sp") == 12
+    assert e.get("raw_sp") == 25
 
 
-def test_eat_jerky_restores_12_sp_and_never_poisons():
-    """Loop the RNG hard: jerky must give +12 SP and NEVER apply food poison."""
+def test_eat_jerky_restores_25_sp_and_never_poisons():
+    """Loop the RNG hard: jerky must give +25 SP and NEVER apply food poison.
+
+    Raw jerky SP raised 12 -> 25 (2026-06-07 SP-economy tune): jerky 25, low
+    cook 50, good cook 100 -- a clear raw < low-cook < good-cook ladder."""
     import food_system
     from food_system import load_ingredient_for
 
@@ -102,7 +105,7 @@ def test_eat_jerky_restores_12_sp_and_never_poisons():
         jerky = load_ingredient_for(ASSORTED)
         assert jerky is not None
         msgs = food_system.eat_raw(pl, jerky)
-        assert pl.sp == 12, f"expected +12 SP, got {pl.sp}"
+        assert pl.sp == 25, f"expected +25 SP, got {pl.sp}"
         assert pl.hp == 50, "jerky grants no HP (HP stays behind cooking)"
         assert "poisoned" not in pl.effects, "jerky must never poison"
         assert not any("poison" in m.lower() for m in msgs)
@@ -112,7 +115,7 @@ def test_jerky_loaded_ingredient_carries_flags():
     from food_system import load_ingredient_for
     jerky = load_ingredient_for(ASSORTED)
     assert jerky.edible_safe is True
-    assert jerky.raw_sp == 12
+    assert jerky.raw_sp == 25
 
 
 def test_non_cured_ingredient_still_risks_poison():

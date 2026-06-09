@@ -163,3 +163,71 @@ def test_canvas_padded_includes_noun():
     a = instantiate_armor('padded', 'canvas')
     assert _final_word(a.name) in RECOGNIZED_NOUNS, (
         f"canvas padded composed as {a.name!r} — still missing a noun!")
+
+
+# ---------------------------------------------------------------------------
+# Test 4 — no DOUBLED material word (2026-06-07: user reported "Hide Hide
+# Armor"). The hide/leather/padded body templates are named after a material
+# word, so pairing them with that same material doubled it.
+# ---------------------------------------------------------------------------
+
+def _has_doubled_word(name: str) -> bool:
+    ws = [w.lower() for w in name.split()]
+    if len(ws) != len(set(ws)):
+        return True            # exact repeat: 'hide hide'
+    # compound-suffix repeat: 'rawhide ... hide', 'plate ... breastplate'
+    for a in ws:
+        for b in ws:
+            if a != b and len(b) >= 4 and len(a) > len(b) and a.endswith(b):
+                return True
+    return False
+
+
+def test_no_doubled_material_word_in_any_armor_name():
+    from items import instantiate_armor
+    templates = _armor_templates()
+    materials = _armor_materials()
+    bad = []
+    for tid, tpl in templates.items():
+        compat = set(tpl.get('compatible_material_classes', []) or [])
+        for mid, mat in materials.items():
+            mclass = mat.get('material_class', '')
+            if compat and mclass and mclass not in compat:
+                continue
+            try:
+                a = instantiate_armor(tid, mid)
+            except Exception:
+                continue
+            if _has_doubled_word(a.name):
+                bad.append(f"{tid}+{mid} -> {a.name!r}")
+    assert not bad, "Doubled-word armor names:\n  " + "\n  ".join(sorted(set(bad))[:30])
+
+
+def test_reported_doubled_names_are_fixed():
+    """Explicit regression on the exact user string + siblings, and proof the
+    fix keeps a material word where it still distinguishes the piece."""
+    from items import compose_item_name
+    assert compose_item_name('hide', 'hide', 'armor') == 'Hide Armor'
+    assert compose_item_name('leather', 'leather', 'armor') == 'Leather Armor'
+    assert compose_item_name('boiled leather', 'leather', 'armor') == 'Boiled Leather Armor'
+    assert compose_item_name('rawhide', 'hide', 'armor') == 'Rawhide Armor'
+    assert compose_item_name('dragonhide', 'hide', 'armor') == 'Dragonhide Armor'
+    # 'plate' implied by 'breastplate' is dropped...
+    assert compose_item_name('dwarven plate', 'breastplate', '') == 'Dwarven Breastplate'
+    # ...but KEPT where it distinguishes (plate gauntlets vs leather gauntlets)
+    assert compose_item_name('dwarven plate', 'gauntlets', '') == 'Dwarven Plate Gauntlets'
+    # no regression on legit composites
+    assert compose_item_name('steel', 'iron boots', '') == 'Steel Boots'
+    assert compose_item_name('cured leather', 'padded', 'coat') == 'Cured Leather Padded Coat'
+
+
+def test_cross_leather_family_redundancy_is_dropped():
+    """A leather/hide MATERIAL meeting the OTHER family word as the TEMPLATE
+    read redundantly ('Boiled Leather Hide Armor'). The class word is dropped."""
+    from items import compose_item_name
+    assert compose_item_name('boiled leather', 'hide', 'armor') == 'Boiled Leather Armor'
+    assert compose_item_name('dragonhide', 'leather', 'armor') == 'Dragonhide Armor'
+    assert compose_item_name('leather', 'hide', 'armor') == 'Leather Armor'
+    assert compose_item_name('cured leather', 'hide', 'armor') == 'Cured Leather Armor'
+    # a NON-leather material keeps a meaningful template class word
+    assert compose_item_name('iron', 'plate', 'armor') == 'Iron Plate Armor'

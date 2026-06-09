@@ -34,7 +34,7 @@ def test_legacy_assorted_parts_reconciled_to_jerky():
 
     assert stale.name == 'Assorted Monster Jerky'
     assert stale.edible_safe is True
-    assert stale.raw_sp == 12
+    assert stale.raw_sp == 25
 
 
 def test_legacy_unknown_ingredient_id_swapped_not_crashed():
