@@ -95,6 +95,7 @@ Even on contested topics: present, don't preach. "The overkill hypothesis (Paul 
 - No fabricated species names — every binomial cited must be real
 - No outdated taxonomy (Brontosaurus is real again 2015; dire wolf reassigned 2021)
 - No "T. Rex" with capital R — "T. rex" or "*Tyrannosaurus rex*"
+- **Conservation-POLICY drift — keep it about the ANIMAL (SHARED_PRINCIPLES §18, user 2026-06-08).** This bank is about ANIMALS — biology, behavior, senses, adaptation, life cycle, the wonder of the creature — NOT human conservation legislation, agencies, or treaties. A question whose substance is the Lacey Act, the founding of a wildlife refuge, the DDT ban, the Migratory Bird Treaty Act, or "which law protects this species" is **history/policy, not animal** → out. The North American Conservation Model / Pittman-Robertson framing in §3 + §8 is a STANCE the bank *holds*, not a topic to quiz — do not make the kid memorize wildlife law. Keep conservation a SMALL slice, and only when it teaches the animal's biology (a population bottleneck shrinking a species' genetic diversity is about the ANIMAL; the year a statute passed is not). Strip the human politics — if no animal fact survives, cut it. *(2026-06-08 audit: ~88 conservation-policy questions, 9% of the bank, flagged for rebuild.)*
 
 ## 7. Quality gates
 

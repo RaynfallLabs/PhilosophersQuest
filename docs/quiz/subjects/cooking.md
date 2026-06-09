@@ -54,6 +54,47 @@ Hard cap = target × 1.05 per the standard grace zone. Recalibrated 2026-05-24 p
 | T4 | Kitchen chemistry, scaling | Seed oil debate, raw milk debate, traditional foods principles | Famous chef techniques | **Service à la russe 1810**, brigade system, Maillard 1912 | **Medieval banquets, Versailles court dining, Victorian dinner-party codes** |
 | T5 | Modernist cuisine | Cholesterol revisionism, Blue Zones research | Obscure regional cuisines | Food in revolutions, philosophy of taste | **Debutante cotillions, royal banquet diplomacy** |
 
+### 3.1 TIER = GRADE LEVEL (hard rule, set 2026-06-08 after a user audit)
+
+**T1 = Grade 5 · T2 = Grade 6-7 · T3 = Grade 7-8 · T4 = Grade 8-9 · T5 = Grade 9-10.**
+A T1 question must be KNOWABLE or reason-able by a 10-year-old (which tool peels a
+carrot, how you tell pasta is done, what to do after cutting raw chicken). A T5 may
+test a food-science *concept* a bright 15-year-old can reason — never lab trivia.
+
+**BANNED MINUTIAE at every tier** (the bank drifted into these; a user audit caught
+"how many crocuses make a pound of saffron" at T1 and bacteria-strain naming at T3):
+
+- **Number recall** — "how many X", exact yields, hand-pick counts, sap-to-syrup ratios.
+- **Naming specific microbes / enzymes** — *Lactobacillus*, *Leuconostoc*, *Acetobacter*,
+  transglutaminase, koji-as-an-answer. Teach the CONCEPT (acid-making bacteria need air;
+  salt gatekeeps a ferment), never the Latin binomial.
+- **Lab jargon** — water activity / "Aw", specific pH numbers, gram-positive/negative.
+- **Production / geography statistics** — "% of world supply", tonnage, "largest producer".
+- **Bread-PRO minutiae** — exact hydration percentages (65% vs 85%), lamination layer
+  counts (81 vs 243), pre-ferment NAMES as the answer (poolish / biga / levain / autolyse).
+
+TEST before writing the answer: *"Would a normal person at that grade plausibly KNOW or
+REASON this?"* If the answer is recall of an obscure NUMBER or PROPER NOUN → it's minutiae;
+reframe to the underlying concept or pick a different fact. A microbe/percentage may appear
+in a wrong-answer distractor or the `context`, but must never BE the thing tested.
+
+### 3.2 INVERT the wonder — don't waste a cool fact (set 2026-06-08, user insight)
+
+A cool fact is NOT the enemy — testing it as *recall* is. Before cutting a number-recall
+question, try to INVERT it: put the wonder (the big number / superlative) in the STEM as the
+hook, and ask the KNOWABLE thing as the answer.
+
+- BAD:  "How many crocus flowers make a pound of saffron?"  → 150,000 (nobody knows).
+- GREAT: "It takes ~150,000 hand-picked flowers to make one pound of saffron, the world's
+  costliest spice — each red thread a stigma plucked by hand. Which FLOWER is saffron
+  harvested from?"  → **"The crocus"** (distractors: tulip, marigold, lavender).
+
+The number stays in the stem (the hook); the answer is an origin / part / concept the kid
+LEARNS and remembers — saffron→crocus, maple's ~40-gallons-of-sap→boil-it-down, chocolate→
+fermented-then-roasted cacao beans, vanilla→orchid pod, katsuobushi→dried tuna. This is the
+story-in-stem rule (SHARED_PRINCIPLES §14) applied to wonder facts. A fact is genuinely cut
+ONLY when it has no knowable hook to invert toward (pure lab jargon, proper-noun recall).
+
 ## 4. Voice rules
 
 ### Scene-led, not definition-shell

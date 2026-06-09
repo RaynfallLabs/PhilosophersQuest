@@ -298,6 +298,7 @@ In addition to the cross-subject anti-patterns in `moral_vision.md`:
 - **Strawmen of any tradition.** Especially: no cartoonish Marxism, no cartoonish Objectivism, no "primitive religion" framings. Real positions only.
 - **Smug-believer voice** (Rand cluster in current bank is the canonical failure). Distractors-as-virtuous-truisms with answer-as-obvious-good-guy is banned.
 - **Dictionary definitions disguised as questions.** "What does 'ethics' study?" — banned.
+- **Unanswerable consciousness / qualia speculation (SHARED_PRINCIPLES §17, user 2026-06-08).** "Does the (robot / computer / AI / chatbot / statue / knight) REALLY feel / think / have an inner life?" with no decidable answer is banned — undecidable AND uninteresting ("useless because no one knows, and it's not interesting"). KEEP the real thought experiments that teach a NAMED move with a defensible answer: Mary's Room (the knowledge argument), Nozick's experience machine, Parfit's teleporter, Searle's Chinese Room (syntax ≠ semantics), Turing's imitation game. The line: a defensible answer that names a real position, vs. an open "who knows." When in doubt, ask which philosophical MOVE the scene illustrates — not whether the gadget has a soul.
 
 ## 7. What success looks like for the rebuild
 
@@ -310,3 +311,5 @@ A philosophy bank where:
 - A player who plays 50 chains over a run encounters Confucian, Daoist, Islamic, Christian, Hindu, secular, ancient, and contemporary thought — not just the Greek-to-German-to-French canon.
 
 That last point is the coverage rule. The taxonomy is what guarantees it.
+
+**The classical moral traditions are the backbone (user direction, 2026-06-08).** Weight the bank toward the thinkers who framed MORALITY through lived discussion and example — the Greeks (Socrates, Plato, Aristotle), the **Stoics (Marcus Aurelius, Epictetus, Seneca)**, the Cynics and Epicureans, **Confucius** and the Chinese tradition, Rome, the **Renaissance and Enlightenment**, and the modern individualist tradition (**Ayn Rand / Objectivism**, presented as a real position per §6's no-strawman + no-smug-voice rules). These are the heart of the bank. Abstract philosophy-of-mind puzzles (qualia, machine consciousness) are at most a SMALL T4–T5 slice and only when they pass §17 (a decidable move with a defensible answer) — never the center of gravity. A kid should leave this bank having met Marcus Aurelius, Confucius, and Aristotle far more often than "is the chatbot lonely." *(2026-06-08 audit: only 122/968 questions (13%) touched the classics; rebuild target is to make them the spine.)*

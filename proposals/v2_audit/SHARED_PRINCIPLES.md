@@ -429,6 +429,41 @@ This stem teaches WHO Charles Ponzi was AND introduces Madoff as the canonical m
 
 See also: §14 (story-in-stem), §15 (no weasel closers), `_assumed_knowledge_*.json` audits per subject (worked examples).
 
+### 17. Knowable answer — no unanswerables (number-recall AND unfalsifiable speculation)
+**Principle (refined through the 2026-06-08 user audit of cooking + philosophy)**: A quiz answer must be KNOWABLE, learnable, or reason-able to ONE defensible position. Two failure modes both collapse to *"no one can really know,"* and both are banned:
+- **(a) Obscure recall** — a specific number or obscure proper noun IS the answer ("how many crocus flowers make a pound of saffron?" → 150,000; "name the bacterium in this ferment" → *Leuconostoc*). Largely caught by the §6 anti-rote gate (count-the-things, name-the-creator) — but note the gate is stem-START anchored, so scene-led recall ("Saffron costs more than gold. How many crocuses…") slips it and needs review.
+- **(b) Unfalsifiable speculation** — "does the (robot / computer / machine / animal / knight) REALLY feel / think / have consciousness / an inner life?" The honest answer is *"no one knows."* The user's words: *"useless because no one knows, and it's not interesting."*
+
+**The carve-out (this is the whole subtlety)**: a real thought experiment that teaches a NAMED, decidable philosophical MOVE is GREAT, not banned — Frank Jackson's Mary's Room (→ "she learns something new, so physical facts don't capture experience"), Nozick's experience machine, Parfit's teleporter. Those have a DEFENSIBLE answer that names a real position you can argue for. "Is the chatbot really lonely?" has no such answer — it's a bull-session prompt, not a quiz question.
+
+**The test**: *Is there a defensible answer naming a real fact or position — or is the honest answer "who knows"?* If the latter: cut, or reframe to the decidable move underneath.
+
+**Implementations**: §17a largely caught by the anti-rote gate (+ a non-anchored advisory pattern added 2026-06-08 for scene-led recall). §17b is an **LLM-judge** call during generation/review (like §16) — regex can't tell Mary's Room from "is the AI sad," since both are scene-led and both use "feel." Cooking applied this 2026-06-08 (strain-naming + number-recall purge). Philosophy + Animal: apply during their next rebuild.
+See also: §19 (the constructive fix — invert it), §6 anti-rote gate, `docs/quiz/subjects/cooking.md` §3.1.
+
+### 18. On the subject's own core — no adjacent-policy / politics drift
+**Principle (refined through the 2026-06-08 user audit of the animal bank)**: A wonder subject must teach ITS OWN substance, not an adjacent human-politics / policy / institutional layer. The ANIMAL bank is about ANIMALS — biology, behavior, senses, adaptation, life cycle, the wonder of the creature itself — NOT conservation legislation, agency history, treaties, or policy debates (the Lacey Act, CITES, the founding of a wildlife refuge, a DDT ban). Cooking is about how cooking works, not food-aid geopolitics.
+
+**The test**: *Strip the human politics/policy — is a [subject] fact still being taught?* If the real content is a LAW, an AGENCY, a TREATY, or a POLICY DEBATE, it belongs in **history** or **economics**, not the wonder subject. The user: *"focus on the animals, not human politics around conservation policy."*
+
+**Why this matters**: drift toward adjacent policy is seductive — it *feels* educational and important — but it hollows the subject: the kid stops learning about the eagle and starts memorizing the 1940 Bald Eagle Protection Act. Each subject has ONE job; the SUBJECT→ACTION mapping (animal→harvesting) means the animal bank should make the kid LOVE animals, not legislation.
+
+**Allowed slice**: a little conservation is fine IF it stays on the animal's BIOLOGY — "the whooping crane's population bottleneck shrank its genetic diversity; why is that dangerous for a species?" is about the ANIMAL. "Which 1973 law protects it?" is policy → out.
+**Implementations**: advisory keyword heuristic (legislation / agency / treaty / "Act of 19XX" / policy terms dominating an animal stem → flag for review; over-flags, human reads). Animal rebuild 2026-06-08 audit: ~88 conservation-policy questions (9%). All wonder subjects: keep adjacent-policy a small minority, always subject-first.
+
+### 19. Invert the wonder — a cool fact is a STEM HOOK, never the answer
+**Principle (refined through the 2026-06-08 user insight on the saffron question)**: A cool fact — a big surprising number, a superlative, a surprising origin — must NOT be the ANSWER (that's §17a, unanswerable recall). It belongs in the STEM as the HOOK, with a KNOWABLE thing (the origin, the part, the concept) as the answer. **Don't CUT a cool fact — INVERT it.**
+
+**The user's canonical exemplar (saffron)**:
+> ❌ "How many crocus flowers make a pound of saffron?" → *150,000* (nobody knows; recall)
+> ✅ "It takes ~150,000 hand-picked flowers to make one pound of saffron, the world's costliest spice — each red thread a stigma plucked by hand. Which FLOWER is saffron harvested from?" → **"The crocus"** (tulip / marigold / lavender)
+
+The number stays the hook; the answer is the origin the kid LEARNS and remembers. This is §13 (Wonder Pattern) + §14 (story-in-stem) applied to a fact that was being tested *backwards*. Other inversions: maple's ~40-gallons-of-sap→"boil it down," vanilla→orchid pod, chocolate→fermented-then-roasted cacao bean, katsuobushi→dried tuna.
+
+**The fix template**: put the wonder in the stem; ask the knowable origin / part / concept; give 3 plausible peer distractors (other flowers, other trees). A fact is genuinely CUT only when it has no knowable hook to invert toward (pure lab jargon, proper-noun recall with no origin story).
+**Implementations**: Cooking 2026-06-08 — 24 cool facts recovered by inversion (cooking.md §3.2). Before cutting ANY number-recall question, try inversion first.
+See also: §13, §14, §17, cooking.md §3.2.
+
 ## Before starting a new subject rebuild
 
 Required reading order:
