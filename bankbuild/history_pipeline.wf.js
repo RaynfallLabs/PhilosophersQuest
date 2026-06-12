@@ -65,6 +65,19 @@ const VERDICTS = { type:'object', additionalProperties:false, properties:{
   }, required:['tier','idx','verdict','severity','rules_flagged','primary_flaw','fix']}}
 }, required:['ladder_ok','verdicts'] };
 
+// THROTTLE CONTROL: retry-with-backoff. Sequential re-spawns (each attempt takes ~30-60s, so they
+// are naturally spaced minutes apart) ride out intermittent server rate-limiting instead of dropping
+// the topic. ok(r) decides success; returns the last attempt (possibly null) if all tries fail.
+async function tryAgent(prompt, opts, ok, tries){
+  let last = null;
+  for (let a = 0; a < (tries || 3); a++){
+    const r = await agent(prompt, { ...opts, label: opts.label + (a ? `.r${a}` : '') }).catch(() => null);
+    if (r && (!ok || ok(r))) return r;
+    last = r;
+  }
+  return last;
+}
+
 function readCmd(idx){ return `python -c "import json,sys;q=json.load(open(r'${QUEUE}',encoding='utf-8'));sys.stdout.write(json.dumps(q[${idx}]))"`; }
 
 function researchPrompt(idx){ return `You are the RESEARCH stage of a history quiz bank a father is building for HIS OWN KIDS. Accuracy is sacred.
@@ -131,7 +144,7 @@ async function reviseUntilClean(idx, research, ladder){
   const name = research.topic_name || ('#'+idx);
   let cur = ladder, rounds = 0, last = [];
   for (let r=0; r<3; r++){
-    const v = await agent(judgePrompt(name, research, cur), {schema:VERDICTS, phase:'Judge', label:`judge:${name.slice(0,22)}`, model:'opus'}).catch(()=>null);
+    const v = await tryAgent(judgePrompt(name, research, cur), {schema:VERDICTS, phase:'Judge', label:`judge:${name.slice(0,22)}`, model:'opus'}, x=>x&&Array.isArray(x.verdicts));
     if (!v) return {status:'error', ladder:cur, rounds:r, unresolved:['judge-failed']};
     const flags = (v.verdicts||[]).filter(x=>x.verdict==='flag');
     const high = flags.filter(x=>x.severity==='high');
@@ -143,7 +156,7 @@ async function reviseUntilClean(idx, research, ladder){
     const toFix = [...high, ...med];
     last = toFix; rounds = r+1;
     if (r===2) break;
-    const rev = await agent(revisePrompt(name, research, cur, toFix), {schema:LADDER, phase:'Revise', label:`revise:${name.slice(0,22)}`, model:'opus'}).catch(()=>null);
+    const rev = await tryAgent(revisePrompt(name, research, cur, toFix), {schema:LADDER, phase:'Revise', label:`revise:${name.slice(0,22)}`, model:'opus'}, x=>x&&x.rungs&&x.rungs.length>0);
     if (!rev || !rev.rungs || !rev.rungs.length) return {status:'needs_review', ladder:cur, rounds, unresolved:toFix.map(f=>`T${f.tier}:${f.primary_flaw}`), notes:[]};
     cur = rev;
   }
@@ -155,13 +168,13 @@ phase('Research');
 log(`History pipeline: ${idxs.length} topics [${idxs[0]}..${idxs[idxs.length-1]}]. research -> author -> judge+revise (cap 3).`);
 
 const results = await pipeline(idxs,
-  (idx) => agent(researchPrompt(idx), {schema:RESEARCH, phase:'Research', label:`res:${idx}`, model:'opus'})
-            .then(r => ({idx, research: (r&&r.facts)?r:{topic_name:'#'+idx,status:'thin',facts:[]}}))
+  (idx) => tryAgent(researchPrompt(idx), {schema:RESEARCH, phase:'Research', label:`res:${idx}`, model:'opus'}, x=>x&&x.facts&&x.facts.length>=2)
+            .then(r => ({idx, research: (r&&r.facts&&r.facts.length>=2)?r:{topic_name:'#'+idx,status:'thin',facts:[]}}))
             .catch(()=>({idx, research:{topic_name:'#'+idx,status:'thin',facts:[]}})),
   async (s1, idx) => {
     const res = s1.research, name = res.topic_name || ('#'+idx);
     if (!res.facts || res.facts.length < 2) return {idx, status:'needs_review', research:res, ladder:{rungs:[]}, reason:'thin-research'};
-    const lad = await agent(authorPrompt(idx, name, res), {schema:LADDER, phase:'Author', label:`auth:${idx}`, model:'opus'}).catch(()=>null);
+    const lad = await tryAgent(authorPrompt(idx, name, res), {schema:LADDER, phase:'Author', label:`auth:${idx}`, model:'opus'}, x=>x&&x.rungs&&x.rungs.length>0);
     const ok = lad && lad.rungs && lad.rungs.length;
     return {idx, research:res, ladder: ok?lad:{rungs:[]}, status: ok?'authored':'needs_review', reason: ok?'':'author-failed'};
   },
