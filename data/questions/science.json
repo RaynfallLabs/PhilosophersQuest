@@ -10621,13 +10621,13 @@
   },
   {
     "tier": 4,
-    "question": "The 'replication crisis' — the recognition that many published research findings cannot be reproduced — has hit biology hard. The 2012 Amgen paper (Begley and Ellis, Nature) reported that researchers could replicate only 6 out of 53 'landmark' cancer-biology findings. What fraction of landmark cancer-biology findings replicated in the Amgen check?",
-    "answer": "A single study — even peer-reviewed in a top journal — is weak evidence on its own — replication, pre-registration, and effect size matter more than the original headline-grabbing finding",
+    "question": "The 'replication crisis' — the recognition that many published research findings cannot be reproduced — has hit biology hard. The 2012 Amgen paper (Begley and Ellis, Nature) set out to reproduce 53 'landmark' cancer-biology findings. How many of the 53 actually held up?",
+    "answer": "Only 6 of the 53 — barely one in nine held up",
     "choices": [
-      "A single study — even peer-reviewed in a top journal — is weak evidence on its own — replication, pre-registration, and effect size matter more than the original headline-grabbing finding",
-      "A single study in a top journal is definitive — peer review eliminates errors — and the entire framework should be reconsidered",
-      "Replication is impossible by design — every experiment is unique — and this view is preserved in standard textbooks today",
-      "Modern statistics has solved the problem entirely — replication failure is now eliminated — and the entire framework should be reconsidered"
+      "Only 6 of the 53 — barely one in nine held up",
+      "About 26 of the 53 — roughly half of them held up",
+      "About 45 of the 53 — the large majority held up",
+      "All 53 of them — every landmark finding replicated"
     ],
     "context": "The replication crisis is severe in psychology (the Open Science Collaboration's 2015 paper found only 36% replication), but also affects biomedical research, pharmacology, and beyond. Pre-registration, larger sample sizes, and the Many Labs replication projects have raised the bar somewhat. Notable retractions in biomedicine include the Surgisphere HCQ papers (2020) and various Stapel cases."
   },

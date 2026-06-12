@@ -237,3 +237,19 @@ _trash/
 
 # Built installer binary — distribute via GitHub Releases, not in git history
 installer/*.exe
+
+# --- scratch generators & temp (not committed) ---
+/_*.py
+*_tmp_check.py
+_pilot/
+_trivia_gen/
+_theology_gen/
+
+# --- bank rebuild: run artifacts + WIP bank content (ships as x.y.0 when a bank is complete) ---
+data/questions/history_v2.json
+data/questions/history_pre_v2_backup.json
+bankbuild/history/ladders/
+bankbuild/history/needs_review/
+bankbuild/history/manifest.json
+bankbuild/history/_runstate.json
+bankbuild/history/_queue.json

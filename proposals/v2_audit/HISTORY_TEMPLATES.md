@@ -81,8 +81,9 @@ When you have an event to write about, the question becomes: **what KIND of cool
 **TIER 3 — OBJECTS / MATERIALS** *(strong; use when no Tier-1/2 available)*
 - Specific items with memorable properties (obsidian knives, Tycho's silver nose, herringbone bricks, the asp/cobra)
 
-**TIER 4 — NUMBERS** *(weak; use only when SINGULAR and UNFORGETTABLE, never as a guess-the-magnitude pick)*
+**TIER 4 — NUMBERS** *(weak; use only when SINGULAR + UNFORGETTABLE **AND the question CONSTRUCTS the number as a shattered-expectation payoff** — never a cold end-of-stem stat, a magnitude-pick, or a low-tier ask)*
 - WORKS: Wright Brothers `"12 seconds"`, Halley's Comet `"every 76 years"`, Joan of Arc dying `"at 19"`, Lincoln's Gettysburg `"272 words"`, Mandela `"27 years"` in prison
+- **CONSTRUCTION is the real test** — the WORKS examples *earn* the number: the stem builds toward it so it lands as the revelation (set up "Everett spoke **13,000 words**" then ask "Lincoln's *entire* address?" → 272 is a gut-punch). The SAME number FAILS asked cold: "Lincoln spoke for two minutes. How many words?" → 272 is a non-sequitur — the wonder (the brevity) was already handed over and nothing set up the count. A famous number is **not a hall pass**; flag any number the stem doesn't build, and never at T1.
 - FAILS: `"approximately how many millions"` (when a cultural NAME exists — like "lotus foot"); `"about how many casualties"` (when a specific story-detail exists — like the lost orders wrapped around three cigars); any guess-between-similar-magnitudes (`"about 8,500 / 23,000 / 45,000 / 80,000"`) when something nameable is available
 
 **TIER 5 — GENERIC LABELS** *(BANNED as primary answers)*

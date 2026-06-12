@@ -1311,7 +1311,7 @@
     ],
     "hp": "3d8",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "aggressive",
     "thac0": 15,
     "peak_floor": 14,
     "spread": 10,
@@ -3679,7 +3679,7 @@
     ],
     "hp": "2d8+1",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -5214,7 +5214,7 @@
     ],
     "hp": "2d6",
     "speed": 14,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 17,
     "peak_floor": 8,
     "spread": 9,
@@ -5812,7 +5812,7 @@
     ],
     "hp": "2d8+1",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -6198,7 +6198,7 @@
     ],
     "hp": "2d8",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 10,
     "spread": 9,
@@ -6416,7 +6416,7 @@
     ],
     "hp": "2d8",
     "speed": 14,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 10,
     "spread": 9,
@@ -7148,7 +7148,7 @@
     ],
     "hp": "4d8-2",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 12,
     "peak_floor": 11,
     "spread": 9,
@@ -7725,7 +7725,7 @@
     ],
     "hp": "2d6",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 17,
     "peak_floor": 7,
     "spread": 9,
@@ -7843,7 +7843,7 @@
     ],
     "hp": "3d8-2",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 15,
     "peak_floor": 13,
     "spread": 10,
@@ -7895,7 +7895,7 @@
     ],
     "hp": "4d8",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 14,
     "peak_floor": 17,
     "spread": 10,
@@ -7957,7 +7957,7 @@
     ],
     "hp": "4d8-2",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 15,
     "peak_floor": 16,
     "spread": 10,
@@ -8429,7 +8429,7 @@
     ],
     "hp": "2d6",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 17,
     "peak_floor": 8,
     "spread": 9,
@@ -8863,7 +8863,7 @@
     ],
     "hp": "2d8",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 10,
     "spread": 9,
@@ -9558,7 +9558,7 @@
     ],
     "hp": "5d8+2",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "aggressive",
     "thac0": 13,
     "peak_floor": 21,
     "spread": 12,
@@ -9707,7 +9707,7 @@
     ],
     "hp": "4d8-2",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 12,
     "peak_floor": 11,
     "spread": 9,
@@ -9715,17 +9715,21 @@
     "min_level": 2,
     "attacks": [
       {
-        "name": "staff",
-        "damage": "1d3",
-        "type": "physical"
-      },
-      {
         "name": "venom spit",
-        "damage": "1d2",
+        "damage": "1d4+1",
         "type": "poison",
         "effect": "poisoned",
-        "effect_chance": 0.45,
-        "effect_duration": 6
+        "effect_chance": 0.4,
+        "effect_duration": 4,
+        "ranged": true
+      },
+      {
+        "name": "staff",
+        "damage": "1d4",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
       }
     ],
     "resistances": [
@@ -10252,7 +10256,7 @@
     ],
     "hp": "2d8+1",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ambush",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -10565,7 +10569,7 @@
     ],
     "hp": "2d8",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 16,
     "peak_floor": 10,
     "spread": 9,
@@ -10573,16 +10577,17 @@
     "min_level": 1,
     "attacks": [
       {
-        "name": "cast",
-        "damage": "1d2",
-        "type": "magic",
+        "name": "necrotic ray",
+        "damage": "1d4+1",
+        "type": "necrotic",
         "effect": null,
         "effect_chance": 0.0,
-        "effect_duration": 0
+        "effect_duration": 0,
+        "ranged": true
       },
       {
         "name": "claw",
-        "damage": "1d2",
+        "damage": "1d3",
         "type": "physical",
         "effect": null,
         "effect_chance": 0.0,
@@ -11308,7 +11313,7 @@
     ],
     "hp": "2d8",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 10,
     "spread": 9,
@@ -11360,7 +11365,7 @@
     ],
     "hp": "2d8+1",
     "speed": 14,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -11947,7 +11952,7 @@
     ],
     "hp": "5d8+2",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 13,
     "peak_floor": 22,
     "spread": 12,
@@ -11955,18 +11960,19 @@
     "min_level": 10,
     "attacks": [
       {
-        "name": "necrotic_bolt",
-        "damage": "1d4+1",
-        "type": "magic",
+        "name": "necrotic bolt",
+        "damage": "1d6+2",
+        "type": "necrotic",
         "effect": null,
         "effect_chance": 0.0,
-        "effect_duration": 0
+        "effect_duration": 0,
+        "ranged": true
       },
       {
         "name": "wither",
-        "damage": "1d4+1",
+        "damage": "1d6+1",
         "type": "drain",
-        "effect": "slowed",
+        "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 4
       }
@@ -12009,7 +12015,7 @@
     ],
     "hp": "3d8",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 15,
     "peak_floor": 14,
     "spread": 10,
@@ -12017,16 +12023,17 @@
     "min_level": 4,
     "attacks": [
       {
-        "name": "hex",
-        "damage": "1d2",
-        "type": "magic",
-        "effect": "poisoned",
-        "effect_chance": 0.4,
-        "effect_duration": 5
+        "name": "curse bolt",
+        "damage": "1d6",
+        "type": "necrotic",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 4,
+        "ranged": true
       },
       {
-        "name": "bone_lance",
-        "damage": "1d2",
+        "name": "bone lance",
+        "damage": "1d4",
         "type": "physical",
         "effect": null,
         "effect_chance": 0.0,
@@ -12069,7 +12076,7 @@
     ],
     "hp": "8d8+7",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 8,
     "peak_floor": 24,
     "spread": 12,
@@ -12077,20 +12084,30 @@
     "min_level": 12,
     "attacks": [
       {
-        "name": "death_ray",
-        "damage": "2d4+1",
-        "type": "magic",
+        "name": "death ray",
+        "damage": "2d6",
+        "type": "necrotic",
         "effect": null,
         "effect_chance": 0.0,
-        "effect_duration": 0
+        "effect_duration": 0,
+        "ranged": true
       },
       {
-        "name": "animate",
-        "damage": "1d4+1",
+        "name": "bone shard",
+        "damage": "1d6+1",
+        "type": "pierce",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0,
+        "ranged": true
+      },
+      {
+        "name": "withering grasp",
+        "damage": "1d6",
         "type": "drain",
         "effect": "slowed",
-        "effect_chance": 0.4,
-        "effect_duration": 5
+        "effect_chance": 0.3,
+        "effect_duration": 3
       }
     ],
     "resistances": [
@@ -12130,7 +12147,7 @@
     ],
     "hp": "5d8+6",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 10,
     "peak_floor": 17,
     "spread": 10,
@@ -12152,7 +12169,8 @@
         "effect": "slowed",
         "effect_chance": 0.3,
         "effect_duration": 3,
-        "piercing": true
+        "piercing": true,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -13134,7 +13152,7 @@
     ],
     "hp": "3d8",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 12,
     "peak_floor": 10,
     "spread": 9,
@@ -15143,7 +15161,7 @@
     ],
     "hp": "2d8+1",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -15731,7 +15749,7 @@
     ],
     "hp": "2d6",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 17,
     "peak_floor": 8,
     "spread": 9,
@@ -15827,7 +15845,7 @@
     ],
     "hp": "2d8",
     "speed": 14,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 16,
     "peak_floor": 10,
     "spread": 9,
@@ -16109,7 +16127,7 @@
     ],
     "hp": "2d8+1",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -16161,7 +16179,7 @@
     ],
     "hp": "4d8-2",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 12,
     "peak_floor": 11,
     "spread": 9,
@@ -16324,7 +16342,7 @@
     ],
     "hp": "1d10+2",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 17,
     "peak_floor": 9,
     "spread": 9,
@@ -16832,7 +16850,7 @@
     ],
     "hp": "2d6",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 17,
     "peak_floor": 8,
     "spread": 9,
@@ -17388,7 +17406,7 @@
     ],
     "hp": "2d8+1",
     "speed": 12,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "hit_and_run",
     "thac0": 16,
     "peak_floor": 11,
     "spread": 9,
@@ -17503,7 +17521,7 @@
     ],
     "hp": "2d6",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 17,
     "peak_floor": 8,
     "spread": 9,
@@ -17512,11 +17530,20 @@
     "attacks": [
       {
         "name": "hex bolt",
-        "damage": "1d2",
+        "damage": "1d4",
         "type": "magic",
         "effect": "confused",
-        "effect_chance": 0.3,
-        "effect_duration": 4
+        "effect_chance": 0.25,
+        "effect_duration": 3,
+        "ranged": true
+      },
+      {
+        "name": "jab",
+        "damage": "1d2",
+        "type": "physical",
+        "effect": null,
+        "effect_chance": 0.0,
+        "effect_duration": 0
       }
     ],
     "resistances": [],
@@ -18039,7 +18066,7 @@
     ],
     "hp": "3d8",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 15,
     "peak_floor": 14,
     "spread": 10,
@@ -18048,19 +18075,21 @@
     "attacks": [
       {
         "name": "fire bolt",
-        "damage": "1d2",
+        "damage": "1d6",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.3,
-        "effect_duration": 4
+        "effect_duration": 3,
+        "ranged": true
       },
       {
-        "name": "lightning arc",
-        "damage": "1d2",
-        "type": "lightning",
+        "name": "frost bolt",
+        "damage": "1d4+1",
+        "type": "cold",
         "effect": "slowed",
-        "effect_chance": 0.25,
-        "effect_duration": 3
+        "effect_chance": 0.3,
+        "effect_duration": 3,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -18515,7 +18544,7 @@
     ],
     "hp": "4d8+6",
     "speed": 10,
-    "ai_pattern": "cowardly",
+    "ai_pattern": "ranged",
     "thac0": 13,
     "peak_floor": 20,
     "spread": 12,
@@ -18524,19 +18553,21 @@
     "attacks": [
       {
         "name": "shadow bolt",
-        "damage": "1d3",
+        "damage": "1d6+1",
         "type": "shadow",
         "effect": "blinded",
         "effect_chance": 0.3,
-        "effect_duration": 4
+        "effect_duration": 3,
+        "ranged": true
       },
       {
         "name": "faerie fire",
-        "damage": "1d3",
+        "damage": "1d4+1",
         "type": "magic",
         "effect": "confused",
-        "effect_chance": 0.25,
-        "effect_duration": 3
+        "effect_chance": 0.3,
+        "effect_duration": 3,
+        "ranged": true
       }
     ],
     "resistances": [

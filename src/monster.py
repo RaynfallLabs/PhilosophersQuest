@@ -419,7 +419,8 @@ class Monster:
         # Ranged monsters at distance: prefer ranged attacks over melee
         _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
                          'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
-                         'song', 'wail', 'charm', 'psionic', 'disintegrat'}
+                         'song', 'wail', 'charm', 'psionic', 'disintegrat',
+                         'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
         if not self.attacks:
             return 0, f"The {self.name} flails helplessly!"
         if getattr(self, '_force_piercing', False):
@@ -430,7 +431,7 @@ class Monster:
             atk = random.choice(piercing_atks) if piercing_atks else random.choice(self.attacks)
         elif self.ai_pattern == 'ranged' and not self._adjacent_to(player) and len(self.attacks) > 1:
             ranged_atks = [a for a in self.attacks
-                          if any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
+                          if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
             atk = random.choice(ranged_atks) if ranged_atks else random.choice(self.attacks)
         else:
             atk = random.choice(self.attacks)
@@ -1222,7 +1223,8 @@ class Monster:
         """True if this monster has at least one piercing ranged attack."""
         _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
                          'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
-                         'song', 'wail', 'charm', 'psionic', 'disintegrat'}
+                         'song', 'wail', 'charm', 'psionic', 'disintegrat',
+                         'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
         for a in self.attacks:
             if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS):
                 return True
