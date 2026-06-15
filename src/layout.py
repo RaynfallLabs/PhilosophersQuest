@@ -12,7 +12,7 @@ need them.
 from renderer import TILE_SIZE
 from ui import SIDEBAR_W
 
-VERSION    = "2.0.3"
+VERSION    = "2.1.0"
 FPS        = 60
 
 WINDOW_W   = 1600

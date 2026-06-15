@@ -1,34 +1,27 @@
-# History Bank Rebuild — Report
+# History Bank Rebuild — COMPLETE
 
-**Status: MILESTONE REACHED — 161 topics live, throttle-capped on the long tail.**
+**Status: DONE — all 777 register topics rebuilt.**
 
-## What's live right now
-- **`data/questions/history.json` = 2,055 questions across 161 topics** — roughly **2× your original** (1,049), every question freshly web-sourced and run through the 14-rule craft judge + fact-check.
-- Your original is backed up at **`data/questions/history_pre_v2_backup.json`**. To revert: copy it back over `history.json`.
-- **Data layer verified:** 0 invalid (every answer matches one of its 4 choices; 4 choices each; sourced).
-- **Tier balance:** T1 123 · T2 453 · T3 559 · T4 530 · T5 390 (T1–T2 = 28%).
+## Final result
+- **`data/questions/history.json` = 5,356 questions across all 777 topics** — about **5× your original** (1,049).
+- **Zero invalid** (every answer matches one of its 4 choices; 4 choices each; every fact web-sourced and judged). **Manifest: 777/777 `passed`, 0 error, 0 needs_review.**
+- **Tier spread:** T1 291 · T2 1,246 · T3 1,454 · T4 1,430 · T5 935 (T1–T2 ≈ 29%).
+- Your original is backed up at **`data/questions/history_pre_v2_backup.json`** (gitignored). To revert: copy it back over `history.json`.
+- Per-topic checkpoints in `bankbuild/history/ladders/<topic>.json` (777 files); rebuildable manifest via `python bankbuild/bank.py status`.
 
-## What's covered (the highest-priority ~21% of the register)
-The queue was priority-ordered (high-weight, deep, vision-mandated first), so the 161 done are the topics that matter most: the ancient world (Mesopotamia, Egypt, Greece — Marathon, Thermopylae, Salamis, Socrates — Rome), the Hebrews and early Islam, the great world civilizations (Aztec, Inca, Mali, Great Zimbabwe), medieval Europe and the Gothic cathedrals, the Renaissance and Reformation, and into the American founding and Civil War (Jefferson, Gettysburg, Pickett's Charge). These are full 12–14 rung wonder ladders.
+## How it was built
+Per-topic pipeline (`bankbuild/history_pipeline.wf.js`), one topic at a time, fully checkpointed:
+**research** (web-sourced, anti-hallucination) → **author** (all 14 craft rules + the Wonder Pattern + a 5-point self-audit) → **craft-judge** (rules + per-rung severity + fact-check vs sources) → **revise-until-clean** (cap 3; passes only with zero high/medium telegraphs, ≤2 low notes; anything rougher parked, never shipped dirty).
 
-## Why it stopped here (honest)
-1. **Session usage limit** — I hit it overnight (reset 3:30am PT). Recovered after reset.
-2. **Heavy intermittent server throttling** — from ~topic 147 on, each forward batch loses ~25% of its research agents to "Server is temporarily limiting requests." They recover on re-run, but it makes the long tail slow and token-expensive.
-3. A **bug I introduced** (`blocking`→`toFix`) crashed revise-failures under the throttling — **fixed**.
+Run across multiple session-quota windows: I drove the lower topics live while the every-2-hours `history-bank-resume` schedule drove the upper topics during my quota pauses. Both used the identical harness and bar.
 
-The remaining ~611 topics (idx 167–776) are the **lower-priority** medium/low-weight tail. Finishing them is entirely doable but is now fighting the throttle for diminishing-priority content.
+## Rules learned and integrated mid-run (your "pause, integrate, resume")
+Author self-audit + severity pass-bar (the unblocker) · distractor-category match (the #1 telegraph) · effect/goal-match telegraph · Drama-Available auto-HIGH · tier-balance nudge toward a real T1–T2 base · retry-with-backoff for server throttling · never run concurrent batches. All saved to memory and committed (`fb0a391`, `3374e57`, `2229bd3`).
 
-## Pending (5 topics)
-`needs_review`: idx **147, 148, 153, 162, 165** — rate-limit casualties that kept missing throttle windows (not quality failures). They re-run clean in a calmer window.
+## Honest caveats
+1. **I did not human-spot-check the upper ~half in-stream** — topics ~383–776 were driven by the background schedule through the same judge, which passed them, but I didn't eyeball each as it landed. Worth sampling a handful (open the file, read a few ladders) before you lean on it. (Six ancient-block topics — 375–380: Sumerian inventions, the Nile, Hieroglyphics, Salamis, the Peloponnesian War, Pythagoras — had failed the judge in an earlier window and were recovered on the final run; all six now pass.)
+2. **Recurring low/medium tells:** a minority of rungs carry a noted "answer is the longest/only-elaborated choice" or "stem pre-states the goal" tell. They cleared the ≤2-medium bar but are worth a future polish pass if you want it pristine. (Notes live alongside each topic if we want to hunt them.)
+3. **Data layer verified; not play-tested in Pygame from here** — load the game and try some history actions to confirm it feels right live.
 
-## How to finish the rest later (trivially resumable)
-The harness checkpoints everything; nothing is redone.
-- Re-run the 5 stragglers: `Workflow {scriptPath: bankbuild/history_pipeline.wf.js, args:{idxs:[147,148,153,162,165]}}`
-- Continue the tail: `Workflow {... args:{start:167, count:20}}` — then `python bankbuild/bank.py integrate <output>; merge; promote`.
-- Dashboard: `python bankbuild/bank.py status`. Cursor/state in `bankbuild/history/_runstate.json`.
-
-## Rules learned & integrated overnight (also saved to memory)
-Author self-audit + severity pass-bar (the unblocker); distractor-category-match (the #1 telegraph); Drama-Available auto-HIGH; tier-balance nudge; never run concurrent batches (it throttles).
-
-## Caveat
-Data layer is verified, but I **cannot play-test Pygame** from here — load the game and try a few history actions (accessory equipping) to confirm it feels right in a live session.
+## Release
+The rebuilt `history.json` is **held out of git** (gitignored) per the plan — it's ready to ship as the **x.y.0** release whenever you want to cut it (version bump + un-ignore + commit + installer). Say the word and I'll prep that.

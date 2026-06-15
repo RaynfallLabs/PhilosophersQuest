@@ -244,12 +244,18 @@ installer/*.exe
 _pilot/
 _trivia_gen/
 _theology_gen/
+data/_legacy/
+data/questions/_staging/
+phil_report.json/
+*.pkl.bak
 
 # --- bank rebuild: run artifacts + WIP bank content (ships as x.y.0 when a bank is complete) ---
-data/questions/history_v2.json
-data/questions/history_pre_v2_backup.json
-bankbuild/history/ladders/
-bankbuild/history/needs_review/
-bankbuild/history/manifest.json
-bankbuild/history/_runstate.json
-bankbuild/history/_queue.json
+# the live data/questions/<subject>.json IS tracked; staging, backups, and run-artifacts are not.
+data/questions/*_v2.json
+data/questions/*_pre_v2_backup.json
+data/questions/*_tellgate.json
+data/questions/*.json.backup
+bankbuild/*/ladders/
+bankbuild/*/needs_review/
+bankbuild/*/manifest.json
+bankbuild/*/_*.json

@@ -81,6 +81,9 @@ assets/
 - Run tests: `pytest tests/ -v`
 - Install dependencies: `pip install -r requirements.txt`
 
+## Rebuilding a Quiz Bank
+When the user says they want to build or rebuild a quiz bank for a subject — e.g. **"now we're going to do the geography bank"** — STOP and read **[`bankbuild/PIPELINE.md`](bankbuild/PIPELINE.md)** before doing anything else. It is the complete, authoritative, zero-to-shipped process: prerequisites (topic queue + subject config + the controlling voice rule), the batched build loop, the built-in prevention layers (deterministic gate + adversarial judge), and merge → gate → promote → ship. Follow it exactly; do not improvise an ad-hoc process. The **history** bank (`data/questions/history.json`) is the reference implementation.
+
 ## Development Rules
 - Keep code modular — one responsibility per file (main.py is a known exception, split planned)
 - All questions and game data loaded from JSON files — no hardcoded content
