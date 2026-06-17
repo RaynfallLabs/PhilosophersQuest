@@ -249,6 +249,9 @@ data/questions/_staging/
 phil_report.json/
 *.pkl.bak
 
+# Archived dev scratch + old reports (swept here 2026-06-17) — kept on disk, out of the repo
+/_archive/
+
 # --- bank rebuild: run artifacts + WIP bank content (ships as x.y.0 when a bank is complete) ---
 # the live data/questions/<subject>.json IS tracked; staging, backups, and run-artifacts are not.
 data/questions/*_v2.json
