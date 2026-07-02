@@ -119,6 +119,17 @@ This is **not** a denial of moral obligation. The bank holds, simultaneously and
 
 The **strongest opposing case is steel-manned, never flame-baited.** FDR's 1944 "Second Bill of Rights" is the serious argument *for* positive rights: liberty on paper is hollow, it holds, if hunger or joblessness leaves a person unable to act on it, so a decent society guarantees the material floor that freedom requires. The bank presents this at its strongest. Its own line falls with the critics (Hayek, Nozick, Bastiat: a guaranteed good is a claim on others, and what government guarantees it can ration and control) — but a question that *mocks* the positive-rights view instead of *answering* it has failed the viral test. This subsection shares the seen/unseen and knowledge-problem lens of §3.2–3.3 and the anti-strawman rule of §6, and it governs the philosophy bank's rights questions.
 
+### 3.10 The no-verdict rule is not uniform — stance topics vs genuinely-open questions
+
+The "no smug verdict / attribute the claim / present competing schools" rule (§4, and each subject's voice) governs **genuinely OPEN** questions — free will, personal identity, mind-body, the nature of beauty and taste, the existence of God and the problem of evil, distributive justice (Rawls vs Nozick), the trolley. There the bank stays neutral: a competent thinker holding the opposite view is never marked wrong.
+
+But **§§1, 3, and 9 name questions where the bank is COMMITTED and must LEAN** — while still steel-manning the other side, never strawmanning, never sneering. On these the bank has an answer, and a question that goes "no verdict / balanced live fork" has *failed*:
+
+- The bank is a **MORAL REALIST** — real good and evil exist (§9). On moral/cultural relativism and moral nihilism, steel-man the view (attributed — Protagoras, Mackie, Harman) but **key the refutations**: the **reformer's dilemma** (relativism brands the abolitionists and MLK *definitionally wrong* and makes moral progress impossible), the self-refutation, the Moorean "torturing a child for fun is just wrong." **Never reward selecting "whatever a society approves is right" / "there are no objective values"; never mark moral realism wrong.**
+- Communism's ~65–100M record and the calculation problem are established (§3.1–3.2); human sex is binary (§3.8); no positive "right" to a good is a natural right (§3.9); no anti-Western/anti-white inherent-condemnation as fact (§3.7); a postmodern/critical-theory frame is the thinker's *claim*, never adopted as neutral fact (§6).
+
+*The failure this prevents (philosophy bank, 2026-06-17):* a moral-relativism ladder built on the generic no-verdict rule keyed cultural relativism ("whatever a society approves is right") as the correct answer and marked moral realism *wrong*. Corrected. The lesson for every future bank: **identify the subject's stance topics up front, and make the gate/judge distinguish LEAN-topics from NEUTRAL-topics** — it is not enough to leave the stance in per-topic framing notes.
+
 ## 4. How we treat hard topics
 
 Hard topics are *welcome* — war, religion, suffering, ideology, death, race. The bank that flinches from these isn't worth playing. The rules:

@@ -1,14 +1,27 @@
 ---
-version: 1
-date: 2026-05-10
+version: 2
+date: 2026-06-17
 subject: philosophy
 in_game_action: identification (per CLAUDE.md subject→action mapping)
-style_verdict: WONDER-DRIVEN
+style_verdict: REASONING-MOVES + WONDER (hybrid)
+status: SHIPPED — ground-up ladder rebuild, 2,867 questions live (data/questions/philosophy.json)
 ---
 
 # Subject: Philosophy
 
 Philosophy is the flagship wonder subject. Questions here are the calibration set for the rest of the bank. If the philosophy questions feel boring, the project has failed; if they feel like discovery, the rest follows.
+
+## v2 — the shipped bank (2026-06-17)
+
+The philosophy bank was **rebuilt from scratch** via the ladder pipeline (`bankbuild/PIPELINE.md`) — the same process that built history v2 — replacing the June surgical bank. **367 topic ladders → 2,867 questions**, promoted live; the previous 1,088-question bank is preserved at `data/questions/philosophy_pre_v2_backup.json`.
+
+**The controlling voice (the hybrid).** Philosophy = **reasoning MOVES + wonder**, never name-recall trivia. Two shapes both welcome: **(A) STORY/DRAMA** — a thinker's life/deed/death as a vivid scene; the named subject *leads* the stem (names are allowed in this shape); the answer is the most memorable specific move or fact (Socrates drinking the hemlock he could have fled; Diogenes telling Alexander to move out of his sun; Gödel wrecking *Principia* in one 1931 paper). **(B) MOVE/SCENARIO** — a scene embodies a reasoning move, fallacy, or dilemma; the four choices are competing positions in plain language (never -ism labels or jargon to decode); the answer is the move that survives scrutiny. For a **fallacy** rung the answer is the *substantive collapse* the soundbite blurs, not the fallacy's name (label → context). This **supersedes** the old absolute "no names in stems" ban — drama-about-a-life is the carve-out; bare "X said Y → name the doctrine" is still banned. Config: `bankbuild/subjects/philosophy.json`.
+
+**Stance vs neutral (see moral_vision §3.10).** On genuinely OPEN questions (free will, identity, mind-body, beauty, God, Rawls-vs-Nozick, the trolley) the bank imposes NO verdict — the claim sits in a character's mouth, the choices are competing schools. But the bank is a **MORAL REALIST** and LEANS where moral_vision §1/§3/§9 commit it — most sharply on **moral/cultural relativism**: relativism is steel-manned + attributed but *refuted* (the reformer's dilemma is the keyed move; no rung rewards "whatever a society approves is right"). The classical moral traditions are the SPINE — a kid meets Marcus Aurelius, Confucius, and Aristotle far more than any qualia puzzle.
+
+**Verified at ship.** Gate 0% mechanical tells · 0 over-cap · median record ~580 chars (vs the old 608–1153) · moral-vision audit clean across the 162 stance-relevant ladders · fallacy/reasoning ladder ~17% of the bank.
+
+*The material below (timing budgets, per-tier profile, exemplars, distractor design, anti-patterns) remains the reference for what a good individual rung looks like.*
 
 ## 1. Timing budget
 

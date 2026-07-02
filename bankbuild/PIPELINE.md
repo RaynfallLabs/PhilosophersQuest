@@ -139,10 +139,27 @@ the adversary once at build time instead (memory: `project-bank-rebuild-harness`
 implement the SAME two checks. Change one → change the other. The Python copy is the reference;
 `python bankbuild/tellgate.py validate` measures its precision/recall against any LLM-audited ground truth.
 
+## 8. Additions from the philosophy build (2026-06-17) — the de-tell sweep + the moral-vision audit
+
+Philosophy (`data/questions/philosophy.json`, 2,867 Q) is now a **second reference build**, alongside history. Two tools were added and are the standard now.
+
+**The de-tell sweep — the per-batch convergence tool (`bankbuild/detell_pipeline.wf.js`).** After each build batch: integrate, then de-tell the `needs_review` ladders instead of re-running them from scratch (§4). It reads each `needs_review/<id>.json`, runs a surgical reviser (fix ONLY flagged rungs; parity sacred; reword answers to kill echoes; NO new facts) + a fresh adversarial judge + the mechanical gate, and **deterministically drops any rung still flagged after 2 rounds** so every ladder converges to 0-high/0-medium (shedding ~0–2 rungs). Apply with `python bankbuild/<X>/_apply_detell.py "<task output>"` (promotes cleared ladders into `ladders/`, deletes them from `needs_review/`). Typical rhythm: build passes ~30–50% first try; the de-tell sweep + drop converges the rest to 100%. Its judge applies a **reasoning-appropriate** standard — a careful kid reasoning to the answer from live options is the skill, NOT a telegraph — which matters when the answer is a *move*, not a fact.
+
+**The moral-vision audit — the pre-ship stance gate (`bankbuild/<X>/_moral_audit.wf.js`).** An independent Opus panel scores each stance-relevant ladder against `moral_vision.md` §1–§9, flagging BOTH directions: imposed-verdict / strawman / smug-voice / advocacy-frame **and** *neutral-where-the-bank-takes-a-side* (see moral_vision **§3.10** — the no-verdict rule is NOT uniform). Read-only. Run it over the subject's stance topics before `promote`; correct what it flags. **This is now a required ship step for any value-laden subject** — the generic build judge enforces only the generic no-verdict rule, so the subject's STANCE must be checked here (and, better, baked into the config `framing`, as philosophy's now is).
+
+**Helper scripts** (`bankbuild/<X>/`): `_assemble_queue.py` (per-strand files → `_queue.json` + `register.json`), `_next_batch.py N` (next N unbuilt idxs, skips done/needs_review), `_apply_detell.py`, `_gen_review_doc.py` (human-readable review doc to project root).
+
+**Wall / rate-limit handling.** A wall at the **research** stage → empty `thin-research` ladders (n=0): do NOT integrate that output; just re-run the build on those idxs. A wall at the **author/judge** stage → ladders integrate as `needs_review` WITH a full ladder: just DE-TELL them (don't rebuild). Transient `Rate limited` / `Server is temporarily limiting` ≠ the usage wall (the pipeline's retries absorb it; rebuild only the n=0 ones). `bank.py merge` now skips `_`-prefixed files (a build subagent can drop a stray draft into `ladders/`).
+
+**Stance vs neutral (load-bearing).** Before building a value-laden subject, identify its stance topics (where moral_vision §1/§3/§9 commit the bank) vs its genuinely-open ones, and put the LEAN into the subject config `framing` + the topic `framing_note`s so it reaches the author + judge — not only the audit. See moral_vision §3.10 + memory `feedback-stance-vs-neutral`.
+
 ## File map
 - `bankbuild/bank_pipeline.wf.js` — the subject-agnostic build Workflow
 - `bankbuild/subjects/<X>.json` — per-subject config (voice rule, queue path, framing)
 - `bankbuild/<X>/_queue.json` · `…/ladders/` · `…/needs_review/` · `…/manifest.json` — per-subject state
 - `bankbuild/bank.py` — integrate / merge / status / gate / promote (`--subject=X`, default history)
 - `bankbuild/tellgate.py` — deterministic gate: `scan` · `bank <file>` · `validate`
+- `bankbuild/detell_pipeline.wf.js` — per-batch de-tell sweep (reviser + adversarial + deterministic-drop); apply with `<X>/_apply_detell.py`
+- `bankbuild/<X>/_moral_audit.wf.js` — pre-ship moral-vision stance audit (read-only, Opus panel vs moral_vision.md §1–§9 + §3.10)
+- `bankbuild/<X>/_assemble_queue.py` · `_next_batch.py` · `_apply_detell.py` · `_gen_review_doc.py` — build helpers
 - `data/questions/<X>.json` (live) · `<X>_v2.json` (staging) · `<X>_pre_v2_backup.json` (backup)

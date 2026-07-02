@@ -108,8 +108,8 @@ def cmd_integrate(P, outfile):
 def cmd_merge(P):
     bank, topics = [], 0
     for fn in sorted(os.listdir(P["LAD"])):
-        if not fn.endswith(".json"):
-            continue
+        if not fn.endswith(".json") or fn.startswith("_"):
+            continue  # skip scratch/draft files a build subagent may have dropped here
         d = jload(os.path.join(P["LAD"], fn))
         if not d or not d.get("rungs"):
             continue
