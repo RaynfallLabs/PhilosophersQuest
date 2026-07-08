@@ -8,6 +8,8 @@ style_verdict: WONDER-DRIVEN with practical anchoring
 
 # Subject: Animal
 
+> ⚠️ **SUPERSEDED (2026-07-08) — do not build from this doc.** It describes the RETIRED 5-pillar / culture / husbandry / butchery design. The animal bank was reframed and shipped as **v2.3.0 (pure animal-knowledge**: two ladder shapes — adaptation-theme backbone + single-creature — the animal always the anchor, one coherent wonder per rung; culture/myth/human-history → history/theology, butchery/ingredients → the COOKING tier, NO butcher-table/dissection frame). The authoritative design now lives in **`bankbuild/subjects/animal.json`** (`voice_rule` + `framing`), memory **`project_animal_bank_reframe`**, and process **`bankbuild/PIPELINE.md` §9**. Kept below only as history of the original design.
+
 In-game, the player answers animal questions when harvesting corpses (chain mode). Practical biology + butchery knowledge has real game value. Char budgets mirror cooking — the timer (34s at WIS 10) supports scene-led scaffolded questions but not paragraphs.
 
 Five pillars from `docs/quiz/animal_strategies.md`:

@@ -6,6 +6,8 @@ subject: animal
 
 # Animal strategy taxonomy
 
+> ⚠️ **SUPERSEDED (2026-07-08) — do not build from this doc.** This 5-pillar taxonomy (incl. culture/myth, husbandry, hunting/butchery) is the RETIRED design. The animal bank shipped as **v2.3.0 pure animal-knowledge** (two ladder shapes; culture/myth/human-history and butchery/ingredients moved to other tiers). Authoritative design: **`bankbuild/subjects/animal.json`**, memory **`project_animal_bank_reframe`**, process **`bankbuild/PIPELINE.md` §9**. Kept below as history only.
+
 Animals is a wonder-rich subject with five natural pillars. Biological diversity is staggering (8.7M estimated species, ~1M described). The deep timeline goes back 540M years to the Cambrian explosion — five mass extinctions, dinosaurs, Pleistocene megafauna. Humans have lived with domesticated animals for 15,000-40,000 years (dogs first). Animals appear in every mythology, religion, and culture humans have built. And in-game, the player harvests animal corpses for food — practical biology + butchery knowledge matters.
 
 Five pillars:
