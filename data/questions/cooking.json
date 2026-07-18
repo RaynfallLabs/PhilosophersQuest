@@ -3373,90 +3373,6 @@
  },
  {
   "tier": 1,
-  "question": "You chill a bowl of spicy salsa in the fridge for an hour, sure the cold will finally tame the fire. First bite: it's every bit as blazing as before. Why couldn't the cold cool the burn?",
-  "answer": "A chili's burn isn't heat at all \u2014 cold can't switch off the molecule behind it.",
-  "choices": [
-   "A chili's burn isn't heat at all \u2014 cold can't switch off the molecule behind it.",
-   "The fridge just wasn't cold enough to weaken the pepper's spice.",
-   "Cold food always tastes spicier to the tongue than warm food does.",
-   "The salsa soaked up heat from the other dishes in the fridge."
-  ],
-  "context": "Chilling, freezing, or even cooking barely touches the burn, because a chili's 'heat' isn't temperature at all \u2014 it's a single molecule, capsaicin, tricking your body. Source: en.wikipedia.org/wiki/Capsaicin"
- },
- {
-  "tier": 2,
-  "question": "Bite a raw jalape\u00f1o and your whole mouth lights up in alarm \u2014 yet a thermometer on your tongue wouldn't budge a degree. The pepper never touched the real temperature; instead, one of its molecules trips a danger-alarm your body already carries and fools your brain. Which alarm is the chili setting off?",
-  "answer": "The one that fires when your food is scalding-hot enough to burn you.",
-  "choices": [
-   "The one that fires when your food is scalding-hot enough to burn you.",
-   "The one that warns a mouthful of food has gone rotten.",
-   "The one that jolts when you bite down on something freezing cold.",
-   "The one that fires when you've cut or bitten your own tongue."
-  ],
-  "context": "Capsaicin latches onto a nerve sensor called TRPV1 \u2014 the very receptor that fires when food is genuinely scalding, above about 43\u00b0C (109\u00b0F) \u2014 so your brain reads 'burning!' even from ice-cold salsa. It's a pain signal, not one of the five tastes. Scientist David Julius, who identified that receptor using chili as bait, shared the 2021 Nobel Prize in Medicine. Sources: en.wikipedia.org/wiki/TRPV1; /wiki/Capsaicin"
- },
- {
-  "tier": 2,
-  "question": "You bite something far too spicy and your mouth is on fire, so you gulp down a big glass of cold water. Big mistake \u2014 the burning only flares up worse. Why does water fail to douse chili fire?",
-  "answer": "Capsaicin is oily, and oil won't dissolve in water \u2014 the gulp just smears it around.",
-  "choices": [
-   "Capsaicin is oily, and oil won't dissolve in water \u2014 the gulp just smears it around.",
-   "The cold water shocks the raw nerves into firing even harder.",
-   "Water rinses away the saliva that was the only thing dulling the burn.",
-   "Swallowing pushes the chili oil deeper toward the back of your throat."
-  ],
-  "context": "Capsaicin is oil-based and barely dissolves in water (about 0.0013 g per 100 mL), so a swig of water just smears the oily molecule across your mouth and spreads the fire. Source: en.wikipedia.org/wiki/Capsaicin"
- },
- {
-  "tier": 3,
-  "question": "Water only spread the fire, so you switch to a glass of cold milk \u2014 and this time the burning finally fades. Yet almond milk and oat milk barely help at all. What does real cow's milk have that those plant 'milks' don't?",
-  "answer": "Fat and the protein casein, which grab the oily capsaicin and rinse it away.",
-  "choices": [
-   "Fat and the protein casein, which grab the oily capsaicin and rinse it away.",
-   "Extra natural sugar that coats the tongue and smothers the burn.",
-   "Tiny air bubbles that cool the mouth as they rise and pop.",
-   "A faint acid that chemically cancels the capsaicin out."
-  ],
-  "context": "Casein, milk's main protein, works like a detergent \u2014 surrounding the oily capsaicin and rinsing it off your nerve receptors the way soap lifts grease; milk's fat helps too. Yogurt, ice cream, and a mango lassi all work. Almond and oat 'milks' have no casein, so they don't. Sources: wellnd.com; askdruniverse.wsu.edu"
- },
- {
-  "tier": 3,
-  "question": "Concentrate a chili's fire down to pure capsaicin and you're holding the exact molecule loaded into pepper-spray canisters \u2014 the burning agent itself, far too fierce to ever season food. For all that fury, what does the pure molecule actually look and smell like?",
-  "answer": "An odorless, waxy white powder.",
-  "choices": [
-   "An odorless, waxy white powder.",
-   "A blood-red, pungent oil.",
-   "A clear, odorless, runny syrup.",
-   "A dark, smoky-smelling crystal."
-  ],
-  "context": "Pure capsaicin really is an odorless, waxy white crystalline powder (chemical formula C18H27NO3) \u2014 nothing like the fiery-red chili it's squeezed from. It's so concentrated that it's the active, burning ingredient in pepper spray, not just a food seasoning. Source: en.wikipedia.org/wiki/Capsaicin"
- },
- {
-  "tier": 4,
-  "question": "How do you measure something as slippery as 'how spicy is this pepper?' In 1912, American pharmacist Wilbur Scoville built the very first heat scale \u2014 no lab machine, just a pepper extract and a panel of brave human tasters. What was his actual measuring stick for a pepper's fire?",
-  "answer": "How many times he had to water the extract down before the tasters felt no burn.",
-  "choices": [
-   "How many times he had to water the extract down before the tasters felt no burn.",
-   "How long the burn lingered on the tasters' tongues after one sip.",
-   "How much the tasters' faces sweated during a single spoonful.",
-   "How much sugar it took before the tasters called the extract sweet."
-  ],
-  "context": "Scoville's 'organoleptic test' diluted pepper extract in sugar-water over and over until a panel of tasters could no longer feel any burn; the number of dilutions became the score. On his scale a bell pepper is 0, a jalape\u00f1o 2,500\u201310,000, a habanero up to 350,000, and pure capsaicin about 16,000,000 Scoville Heat Units. The current record-holder, 'Pepper X' (~2.7 million SHU, Guinness 2023), left its breeder Ed Currie 'laid out flat on a marble wall, groaning in pain.' Source: en.wikipedia.org/wiki/Scoville_scale"
- },
- {
-  "tier": 5,
-  "question": "Biologists noticed something strange about wild chilies: a mouse that chews the pepper grinds its seeds to useless dust, while a bird swallows them whole and scatters them far and wide. Their leading idea is that the plant brews capsaicin as a chemical filter \u2014 fiery agony for the seed-wrecking mammal. So what happens when a bird eats that same blazing-hot pepper?",
-  "answer": "No effect at all \u2014 its heat-sensor can't even register the chemical.",
-  "choices": [
-   "No effect at all \u2014 its heat-sensor can't even register the chemical.",
-   "A mild burn \u2014 enough to make it bolt the pepper down fast.",
-   "A brief sting \u2014 enough to rattle it for a second, then fade.",
-   "A sharp jolt \u2014 but its tough gullet shrugs the pain right off."
-  ],
-  "context": "It's true: birds can't feel capsaicin. Their version of the TRPV1 heat-sensor has amino-acid swaps right in the capsaicin-binding spot, so the molecule can't 'dock' (Jordt & Julius, Cell, 2002). The 'directed deterrence' idea (Joshua Tewksbury & Gary Nabhan, Nature, 2001) argues chilies evolved capsaicin precisely to burn seed-crushing mammals \u2014 whose molars destroy the seeds \u2014 while letting seed-scattering birds, which pass the seeds whole and unharmed, eat the fruit free. Sources: nature.com/articles/35086653; Jordt & Julius, Cell 2002"
- },
- {
-  "tier": 1,
   "question": "A chili pepper on the counter is exactly as cool as everything else in the kitchen, yet one bite sets your mouth ablaze \u2014 no blister, no burn, no real damage. How does a room-temperature pepper pull this off?",
   "answer": "It fools your mouth's nerves into sensing heat.",
   "choices": [
@@ -4189,78 +4105,6 @@
  },
  {
   "tier": 1,
-  "question": "A cook pulls a beef roast from the oven the instant a thermometer reads the exact target temperature in its center, then sets it on the counter to carve. In the first few minutes off the heat, what does the temperature deep inside the roast actually do?",
-  "answer": "It keeps climbing for several minutes",
-  "choices": [
-   "It keeps climbing for several minutes",
-   "It drops the moment the oven door opens",
-   "It holds perfectly steady until carving",
-   "It falls fast, then slowly climbs back"
-  ],
-  "context": "This is carryover cooking: heat stored in the meat keeps working even after the oven is off, so the center can climb several more degrees on the counter. Pull a roast at exactly your target and it can end up overcooked. Source: Wikipedia 'Carryover cooking'; America's Test Kitchen 'All About Carryover Cooking.'"
- },
- {
-  "tier": 2,
-  "question": "Everything here is pulled from the oven right at its target temperature and rested on the counter. Carryover keeps heating each one, but one can climb a full 10-15\u00b0F \u2014 far more than the rest. Which piece carries over the MOST?",
-  "answer": "A roast turkey",
-  "choices": [
-   "A roast turkey",
-   "A skirt steak",
-   "A chicken cutlet",
-   "A pork chop"
-  ],
-  "context": "The bigger and denser the piece, the lower its surface-to-volume ratio, so it traps more heat and releases it longer: a thin steak carries over only ~3-5\u00b0F, a 1-inch steak ~5-8\u00b0F, but a big roast, whole chicken, or turkey climbs 10-15\u00b0F. High-water, dense foods carry over the most, because water stores so much heat energy. Source: ThermoWorks 'Resting: The Final Phase of Cooking'; EasyTemperature.com 'Carryover Cooking.'"
- },
- {
-  "tier": 3,
-  "question": "Take a roast off the heat and its center keeps warming for several minutes, even though nothing outside is adding any energy. What is driving that extra heating from within the meat itself?",
-  "answer": "Heat from the seared outer layers marching inward to the cooler center",
-  "choices": [
-   "Heat from the seared outer layers marching inward to the cooler center",
-   "Trapped steam condensing at the center and giving off its warmth",
-   "The meat's own juices reacting chemically and releasing their heat",
-   "The bone radiating heat it slowly soaked up while roasting"
-  ],
-  "context": "Heat always flows from hotter to cooler. Roasting drives the outer layers far hotter than the middle, so even off the burner that stored heat keeps marching toward the center \u2014 slowing and finally stopping only as inside and outside even out. Cooking hotter drives it harder: a roast blasted at 400\u00b0F can carry over up to ~20\u00b0F, while the same roast cooked low-and-slow at 225\u00b0F may rise only ~5\u00b0F. Source: America's Test Kitchen 'All About Carryover Cooking'; Meathead / AmazingRibs 'Carryover Cooking.'"
- },
- {
-  "tier": 3,
-  "question": "You want a steak to land at a perfect medium-rare 130\u00b0F in the center. Knowing it will keep heating as it rests off the pan, when should you actually take it off the heat?",
-  "answer": "At about 125\u00b0F, and let carryover do the rest",
-  "choices": [
-   "At about 125\u00b0F, and let carryover do the rest",
-   "At about 110\u00b0F, and let carryover do the rest",
-   "At exactly 130\u00b0F, right when it hits target",
-   "At about 140\u00b0F, a touch past to be sure"
-  ],
-  "context": "Pull the meat early by roughly the amount it will climb: about 5\u00b0F early for a steak, ~10\u00b0F for a medium roast, and ~15\u00b0F early for a big roast or turkey \u2014 the bigger the cut, the earlier it comes off. So a 130\u00b0F medium-rare steak comes off around 125\u00b0F and coasts up to target as it rests. Source: America's Test Kitchen (pull 'within 10 degrees of the target'); ThermoWorks; EasyTemperature.com 'Carryover Cooking.'"
- },
- {
-  "tier": 4,
-  "question": "As a steak cooks, its muscle fibers tighten and clench so hard that they will squirt juice out the instant a knife opens them. Let the steak rest a few minutes off the heat before slicing \u2014 and what happens to those fibers?",
-  "answer": "They relax and draw some of that juice back in",
-  "choices": [
-   "They relax and draw some of that juice back in",
-   "They clench even tighter and force the juice out",
-   "They dissolve, letting the juice run to the surface",
-   "They cool and lock the juice permanently in place"
-  ],
-  "context": "Cooking makes the protein fibers coil up and expel moisture; a short rest lets them relax and reabsorb some of it, so more juice stays in when you cut. Honesty check: the effect is real but modest \u2014 Kenji L\u00f3pez-Alt's tests found a rested steak sheds only about 9% less juice than one cut right away, and a 2025 blind retest found little difference once the meat's temperature was matched. The surer payoff of resting is simply better temperature control as carryover finishes. Source: ThermoWorks 'Resting: The Final Phase of Cooking'; Serious Eats / Kenji L\u00f3pez-Alt 'The Food Lab.'"
- },
- {
-  "tier": 4,
-  "question": "A cook takes chicken off the heat while it is still a little undercooked, planning to let carryover \u2014 the leftover heat that keeps meat cooking for a few minutes \u2014 finish bringing it up to a safe temperature on the counter. Why is that a dangerous bet with poultry?",
-  "answer": "Carryover rarely rises enough to kill the bacteria still inside the meat",
-  "choices": [
-   "Carryover rarely rises enough to kill the bacteria still inside the meat",
-   "Carryover heats the skin first and scorches it before the middle is safe",
-   "Resting lets surface bacteria multiply and then spread deep into the meat",
-   "Carryover cooks the breast through but leaves the dense thigh unsafe"
-  ],
-  "context": "Carryover can nudge a chicken's temperature up a little, but the rise is small and unpredictable \u2014 not enough to reliably kill bacteria like Salmonella. For food safety, poultry has to actually reach a safe internal temperature while it is still cooking; resting and carryover are for the last few degrees and the juices, not for rescuing undercooked chicken. Source: America's Test Kitchen 'All About Carryover Cooking.'"
- },
- {
-  "tier": 1,
   "question": "The chewy pearls in a cup of bubble tea \u2014 and the thickener that gives some puddings their glossy wobble \u2014 are pure starch made from the cassava plant. What do we call that starch?",
   "answer": "Tapioca",
   "choices": [
@@ -4513,54 +4357,6 @@
  },
  {
   "tier": 1,
-  "question": "In a Peruvian kitchen, cubes of raw fish sit in a bowl and no burner is ever lit \u2014 yet within about half an hour the flesh firms up and turns opaque, exactly as if it had been cooked on a stove. One ordinary ingredient did all that work. Which one?",
-  "answer": "Fresh lime juice",
-  "choices": [
-   "Fresh lime juice",
-   "Fine sea salt",
-   "Dark soy sauce",
-   "Crushed ice cubes"
-  ],
-  "context": "This is ceviche, and the 'cooking' is done entirely by acid. Food scientist Harold McGee notes that the raw fish is 'cooked' simply by immersing it in citrus juice \u2014 classically lime, which is fiercely sour. No heat is involved at all. (Harold McGee, On Food and Cooking; scienceandfood.org)"
- },
- {
-  "tier": 2,
-  "question": "Bite into ceviche and the fish is firm and white, though nothing but cold lime juice ever touched it. Down at the molecular level, what has the sour juice done to the long protein chains packed inside that fish?",
-  "answer": "Unraveled their coils so they re-link into a tangled web",
-  "choices": [
-   "Unraveled their coils so they re-link into a tangled web",
-   "Swelled their coils by soaking them full of juice",
-   "Chilled their coils rigid, the way cold sets fat",
-   "Coated their coils in a thin sour glaze"
-  ],
-  "context": "The acid denatures the proteins: the tightly folded chains unfold, then snag and lock into a new network \u2014 the exact structural change that heat causes. It is the same process that turns a clear, liquid egg white into a firm white solid in a hot pan. (Wikipedia, Denaturation (biochemistry); McGee via scienceandfood.org)"
- },
- {
-  "tier": 2,
-  "question": "A plate of ceviche is raw fish that the lime juice has turned firm and white \u2014 but any careful chef will tell you it is NOT the same as fish cooked through with real heat, and you shouldn't treat it as if it were. In what important way does this cold-acid trick fall short of true cooking?",
-  "answer": "It can't kill the hidden parasites and germs",
-  "choices": [
-   "It can't kill the hidden parasites and germs",
-   "It can't brown the surface for flavor",
-   "It can't soften the tiny pin bones",
-   "It can't melt the fat into richness"
-  ],
-  "context": "The FDA warns that citrus or vinegar marinade does not destroy Anisakis (roundworm larvae) in fish, and a roughly 30-minute soak is far too short to knock out pathogens. That's why the safest ceviche starts with fish that was frozen beforehand and is eaten fresh and soon \u2014 it only looks fully cooked. (FDA Fish & Fishery Products Hazards Guidance, Ch. 5; scienceandfood.org)"
- },
- {
-  "tier": 3,
-  "question": "Cooks on the coast of ancient Peru invented ceviche \u2014 but here's the twist: limes and bitter oranges aren't native to the Americas at all. Spanish colonists only carried Mediterranean citrus across the ocean in the 1500s. So long before any lime arrived, what did those early coastal cooks use to sour their raw fish?",
-  "answer": "The sharp juice of a native passionfruit",
-  "choices": [
-   "The sharp juice of a native passionfruit",
-   "The tart juice of small wild tomatoes",
-   "The sour pulp of wild Andean berries",
-   "The tangy juice of native prickly-pear fruit"
-  ],
-  "context": "The tart lime is the New World meeting the Old. Records indicate the Moche of coastal Peru, some 2,000 years ago, soured raw fish with the fermented juice of the banana passionfruit, known locally as tumbo; later Inca-era cooks also used chicha (fermented corn beer), sea salt, and aji chili. Lime only became the classic after the Spanish brought citrus. (Wikipedia, Ceviche; ice.edu, 'The Science of Ceviche')"
- },
- {
-  "tier": 1,
   "question": "Fresh cow's or goat's milk turns sour and undrinkable within a day. Long ago, people found that draining and salting milk into firm cheese gave it one big advantage fresh milk never had. What was that advantage?",
   "answer": "It could be stored for weeks or months without spoiling.",
   "choices": [
@@ -4810,78 +4606,6 @@
    "The beef browned while it was warm, and cold can't bring the red back"
   ],
   "context": "A cold chain is only as strong as its weakest link. Warm hours let bacteria multiply on the meat, and going back on ice doesn't reverse that growth \u2014 re-chilling stops the clock, it doesn't reset it. That's why one failed link breaks the whole chain. Swift's refrigerated railcar was one of the first links in the first great cold chain. Source: Wikipedia, 'Cold chain.'"
- },
- {
-  "tier": 1,
-  "question": "Indian vindaloo, Thai green curry, and Sichuan hotpot all blaze with chili heat, as if they always had. But the chili pepper isn't Asian at all \u2014 wild and farmed chilies grew in just one part of the world until about 500 years ago. Where did the chili come from?",
-  "answer": "The Americas",
-  "choices": [
-   "The Americas",
-   "West Africa",
-   "the Middle East",
-   "southern Europe"
-  ],
-  "context": "The chili is a New World plant: wild and domesticated Capsicum grew only in Mexico and Central and South America until about 500 years ago, when European ships carried it worldwide. The 'ancient' fire of Asian cooking is barely five centuries old. Source: https://en.wikipedia.org/wiki/Chili_pepper"
- },
- {
-  "tier": 2,
-  "question": "No cook in India, Thailand, or Korea had ever tasted a chili before about 1500 \u2014 then European ships changed dinner forever. One nation's traders carried the chili around the tip of Africa and planted it at a trading post called Goa on India's coast, and from there it spread across Asia. Which seafaring nation brought the chili to Asia?",
-  "answer": "Portugal",
-  "choices": [
-   "Portugal",
-   "England",
-   "the Netherlands",
-   "Spain"
-  ],
-  "context": "Portuguese traders, using the Cape of Good Hope route Vasco da Gama opened in 1498, landed chilies at their colony of Goa in the early 1500s. Within about 30 years three chili varieties were growing around Goa \u2014 the seed of every fiery Indian, Thai, and Korean dish that followed. Source: https://www.legalnomads.com/history-chili-peppers/"
- },
- {
-  "tier": 2,
-  "question": "In 1492 Christopher Columbus sailed west chasing Asia's most valuable spice \u2014 a treasure so costly a small sack of it could buy a house, and the reason Europe craved a sea route east. He never reached Asia; he stumbled into the Caribbean and found chilies instead. Which prized spice had Columbus actually set out to find?",
-  "answer": "Black pepper",
-  "choices": [
-   "Black pepper",
-   "cinnamon",
-   "cloves",
-   "saffron"
-  ],
-  "context": "Columbus was hunting black pepper and, believing he'd reached the Indies, called the chili 'pimiento' (pepper) \u2014 which is why English still calls this unrelated American fruit a 'pepper.' The Caribbean locals' own name for it was 'aji.' Source: https://www.diasporaco.com/blogs/journal/did-you-feel-the-burn"
- },
- {
-  "tier": 4,
-  "question": "A chili's burn didn't evolve to punish humans \u2014 it appeared millions of years before us. Scientists proposed that capsaicin is a targeted defense: one whole group of seed-eaters can't taste the heat at all and happily spreads the chili's seeds far and wide, while the animals the plant needs to repel get the full fiery blast. Which creatures feel no burn from a chili and scatter its seeds?",
-  "answer": "Birds",
-  "choices": [
-   "Birds",
-   "squirrels",
-   "deer",
-   "bats"
-  ],
-  "context": "Mammal molars grind chili seeds to death, so capsaicin punishes them \u2014 but birds don't feel it and pass the seeds unharmed, scattering them far. Scientists Tewksbury and Nabhan called this the 'directed deterrence' hypothesis (2001). Source: https://en.wikipedia.org/wiki/Capsaicin"
- },
- {
-  "tier": 4,
-  "question": "Your mouth is blazing from a hot curry, so you gulp down a big glass of ice water \u2014 and the fire barely fades. Every chili-head knows the water trick doesn't work, yet almost everyone still reaches for the glass. Why does plain water fail against chili burn?",
-  "answer": "Capsaicin is an oil, and water cannot dissolve oil at all",
-  "choices": [
-   "Capsaicin is an oil, and water cannot dissolve oil at all",
-   "Capsaicin binds the tongue, and water cannot break that bond",
-   "The burn is a nerve signal, and water never reaches the nerve",
-   "Capsaicin sinks into the tongue, and water only skims the top"
-  ],
-  "context": "Capsaicin dissolves in oil and fat, not water \u2014 so a glass of water can't carry it away and just spreads the burning oil around ('like dissolves like'). Source: https://phys.org/news/2024-06-doesnt-spicy-food-beer.html"
- },
- {
-  "tier": 5,
-  "question": "Chili-heads know the real cure for a mouth on fire is a cold glass of milk, not water \u2014 and full-fat milk or yogurt beats skim milk every time. Milk works partly because its fat dissolves the oily capsaicin. But milk has a second weapon water lacks: a component that surrounds each capsaicin molecule and physically strips it off your burning nerve endings. What is milk's second weapon against chili burn?",
-  "answer": "Its casein protein",
-  "choices": [
-   "Its casein protein",
-   "its lactose sugar",
-   "its calcium mineral",
-   "its cold temperature"
-  ],
-  "context": "Milk beats water for two reasons: its fat dissolves the oily capsaicin, and its protein casein surrounds the capsaicin and strips it off your receptors. That's why full-fat cream or yogurt cools better than skim milk. Source: https://www.usdairy.com/news-articles/does-milk-help-with-spicy-food"
  },
  {
   "tier": 1,
@@ -6010,6 +5734,18 @@
    "A bolt"
   ],
   "context": "Clavus is Latin for 'nail,' and the medieval French called the spice 'clou de girofle' -- the nail of the clove tree -- because a dried clove really is shaped like a tiny brown nail with a bulbous head and a slim stem. Source: Wikipedia, 'Clove'; McCormick Science Institute, 'Cloves'."
+ },
+ {
+  "tier": 3,
+  "question": "For hundreds of years, every clove on Earth came from one place and grew nowhere else: a handful of tiny volcanic islands that traders prized so highly they called them the Spice Islands. Those legendary islands are part of which country today?",
+  "answer": "Indonesia",
+  "choices": [
+   "Indonesia",
+   "India",
+   "Malaysia",
+   "Thailand"
+  ],
+  "context": "The clove's home is the northern Maluku (Molucca) islands of Indonesia -- five tiny volcanic specks off Halmahera: Ternate, Tidore, Moti, Makian, and Bacan. For centuries they were the world's only source of cloves. Source: New World Encyclopedia, 'Clove'; Sea Trek, 'Spices in the Spice Islands'."
  },
  {
   "tier": 3,
@@ -7834,66 +7570,6 @@
    "Salt on top draws oil up and out"
   ],
   "context": "Most of the oil in fried food is pulled in not during frying but during cooling. In a study of tortilla chips, only about a fifth of the final oil got in while frying - roughly two-thirds was drawn in afterward, as the food cooled: the steam inside condenses back to water, and the shrinking vapor creates suction that pulls surface oil in through the pores. That's why fries are best straight from the fryer, drained on paper towels right away. Source: Moreira, Sun & Chen, 'Factors affecting oil uptake in tortilla chips in deep-fat frying'; cited in My German Table."
- },
- {
-  "tier": 1,
-  "question": "You sear a steak and lift it out. The pan bottom is coated in dark-brown crusty bits welded to the metal, and your first instinct is to scrub them off. But to a cook, those stuck-on bits are what?",
-  "answer": "concentrated flavor, the best-tasting part of the dish",
-  "choices": [
-   "concentrated flavor, the best-tasting part of the dish",
-   "flavorless burnt carbon with no taste left in it",
-   "hardened cooking oil the meat left behind",
-   "dried-out seasoning that fell off the steak"
-  ],
-  "context": "That brown crust welded to the pan after a good sear is the 'fond' (French for 'base' or 'foundation'). Chefs get excited about it: it is concentrated, browned flavor and the best part of the dish, not burnt garbage to scrub away. Sources: en.wikipedia.org/wiki/Deglazing_(cooking); offcuts.kitchen/blogs/cooking/what-is-fond"
- },
- {
-  "tier": 2,
-  "question": "A cook sears chicken in a nonstick pan, then lifts it out to a nearly bare pan \u2014 barely any browned fond to build a sauce from. Why does nonstick leave the pan so clean?",
-  "answer": "the coating gives fond nothing to grip and never forms",
-  "choices": [
-   "the coating gives fond nothing to grip and never forms",
-   "the coating chemically dissolves fond as fast as it forms",
-   "the coating sheds the fond into the fat as fast as it forms",
-   "the coating soaks the fond up into the pan like a sponge"
-  ],
-  "context": "Fond only forms where it can stick a little \u2014 bare stainless steel or cast iron. A nonstick coating is designed to stop exactly that sticking, so almost no fond forms and there is little to build a pan sauce from. Source: offcuts.kitchen/blogs/cooking/what-is-fond"
- },
- {
-  "tier": 2,
-  "question": "Those flavor-packed browned bits are cemented to the hot pan \u2014 you can't just scrape them onto your plate. So you splash in a little wine or stock and stir as it hisses. What happens to the browned bits?",
-  "answer": "they dissolve off the metal into the liquid, becoming a sauce",
-  "choices": [
-   "they dissolve off the metal into the liquid, becoming a sauce",
-   "they harden into dry flakes you strain out and toss",
-   "they burn away into smoke, leaving the pan clean",
-   "they float up as a foam you skim off the top"
-  ],
-  "context": "This move is called deglazing. The splash of liquid \u2014 wine, stock, beer, cider, or even plain water \u2014 dissolves the fond off the pan and carries all that browned flavor into the liquid, which becomes the sauce. It is the same trick used to lift the sticky brown layer when caramelizing onions. Sources: en.wikipedia.org/wiki/Deglazing_(cooking); offcuts.kitchen/blogs/cooking/what-is-fond"
- },
- {
-  "tier": 3,
-  "question": "Fond is the cook's treasure \u2014 but push the pan too hot for too long and the browned bits cross a line into jet-black. What has that blackened fond become?",
-  "answer": "bitter and beyond saving, past any sauce's rescue",
-  "choices": [
-   "bitter and beyond saving, past any sauce's rescue",
-   "richer and deeper, the finest fond of all",
-   "sweet, like the dark edge of burnt caramel",
-   "dull and tasteless, a crust you can ignore"
-  ],
-  "context": "The browning itself comes from the Maillard reaction \u2014 amino acids and sugars under heat \u2014 and golden-brown to deep-chestnut fond tastes rich and savory. Pushed past that into pyrolysis, it turns jet-black and bitter, and once blackened no amount of deglazing or butter can rescue it. Sources: offcuts.kitchen/blogs/cooking/what-is-fond; claritykitchen.com/deglazing"
- },
- {
-  "tier": 3,
-  "question": "You've cooked your pan-sauce liquid down until it's syrupy. To give it that glossy, velvety restaurant finish, a French cook pulls the pan OFF the heat and swirls in one last thing until it turns silky. What goes in?",
-  "answer": "a cold knob of butter",
-  "choices": [
-   "a cold knob of butter",
-   "a pour of thick cream",
-   "a spoonful of dry flour",
-   "a single raw egg yolk"
-  ],
-  "context": "This finish is 'monter au beurre' \u2014 French for 'to mount with butter.' The butter goes in COLD and OFF the heat: cold butter is an emulsion of water droplets held in fat, and swirled into the warm sauce the fat disperses into microscopic droplets that stay glossy; too hot, the emulsion breaks and releases pools of melted fat. Auguste Escoffier codified finishing sauces this way in his 1903 'Le Guide Culinaire.' A pan sauce left plain and unthickened is instead called a 'jus' \u2014 French for 'juice.' Sources: thedailymeal.com/1259742/monter-au-beurre-method-pan-sauce; provenance.kitchen/technique/monter-au-beurre-finishing-sauces-with-cold-butter; en.wikipedia.org/wiki/Deglazing_(cooking)"
  },
  {
   "tier": 1,
@@ -10405,66 +10081,6 @@
  },
  {
   "tier": 1,
-  "question": "Open a bottle of Southeast Asian fish sauce and you're smelling something the ancient Romans loved too: small whole fish, sealed in a jar for months, slowly melting into a savory brown liquid. One cheap, common ingredient is what keeps the fish from simply rotting and lets this change happen instead. What is it?",
-  "answer": "salt",
-  "choices": [
-   "salt",
-   "vinegar",
-   "sugar",
-   "smoke"
-  ],
-  "context": "The fish are packed in a great deal of salt \u2014 Wikipedia puts the range at 10 to 30 percent \u2014 and sealed away for up to two years. The salt holds back the microbes that would otherwise just spoil the fish, while the slow, savory breakdown goes on underneath. Source: Wikipedia, 'Fish sauce.'"
- },
- {
-  "tier": 2,
-  "question": "Making garum was big, profitable business in the Roman world, but the seaside factories \u2014 where fish fermented for months in open stone vats \u2014 gave off a stench so powerful that Roman towns refused to let them operate nearby. Where were garum-makers forced to set up their vats?",
-  "answer": "outside the city walls",
-  "choices": [
-   "outside the city walls",
-   "on small islands offshore",
-   "at the far end of the docks",
-   "out beyond the farm fields"
-  ],
-  "context": "These fish-sauce works were called cetariae. A typical one employed around 50 people and used big stone vats, often carved out in the open air \u2014 and the smell was strong enough that towns pushed them out past the walls, well away from everyone. Source: National Geographic, 'What Is Garum?'"
- },
- {
-  "tier": 4,
-  "question": "In Pompeii, a garum merchant named Aulus Umbricius Scaurus grew so wealthy from fish sauce that he paved his house with a mosaic showing off his own garum jars. But the most striking thing about Scaurus was how he had started out in life. What was he before he made his fortune?",
-  "answer": "he had once been a slave",
-  "choices": [
-   "he had once been a slave",
-   "he had been a temple priest",
-   "he had commanded a legion",
-   "he had ruled a distant province"
-  ],
-  "context": "Aulus Umbricius Scaurus was a freed slave who grew rich in the Pompeii garum trade \u2014 wealthy enough to decorate his home with a mosaic of his own amphorae, the Roman equivalent of stamping your brand on your wall. Source: National Geographic, 'What Is Garum?'"
- },
- {
-  "tier": 4,
-  "question": "Rome's garum faded away with the empire, yet the very same fermented-fish method thrives today in Southeast Asian kitchens \u2014 Vietnam's nuoc mam, Thailand's nam pla, the Philippines' patis. What is the true relationship between these Asian fish sauces and ancient Roman garum?",
-  "answer": "each place invented the same idea on its own",
-  "choices": [
-   "each place invented the same idea on its own",
-   "Roman sailors carried the recipe east",
-   "Asian cooks first taught it to Rome",
-   "the recipe slowly spread there over centuries"
-  ],
-  "context": "Same salt-and-fish trick, no shared origin: Vietnam's nuoc mam, Thailand's nam pla and the Philippines' patis arose independently of Rome. In Italy, garum's own direct descendant survives as colatura di alici from Campania. Source: Wikipedia, 'Fish sauce.'"
- },
- {
-  "tier": 5,
-  "question": "Soy sauce, a wedge of aged parmesan, and a splash of fish sauce taste nothing alike, yet all three deliver the same deep savory punch \u2014 the taste called umami. In each one, months of fermenting or aging break the food's protein apart and free the very molecule the tongue reads as 'savory.' What molecule is that?",
-  "answer": "glutamate",
-  "choices": [
-   "glutamate",
-   "alcohol",
-   "lactic acid",
-   "carbon dioxide"
-  ],
-  "context": "Umami comes from free glutamate, and fermentation and aging are what free it from a food's protein \u2014 the very same reason soy sauce and aged parmesan taste so savory. The chemistry is so reliable that the fish sauces fermented the longest measure the most glutamate. Source: Wikipedia, 'Garum.'"
- },
- {
-  "tier": 1,
   "question": "In Thai and Vietnamese kitchens, a thin amber-brown liquid \u2014 nam pla in Thailand, nuoc mam in Vietnam \u2014 is splashed into almost every dish as the everyday salt-and-savor. It looks a lot like soy sauce, but it isn't made from soybeans at all. What is this bottle actually made from?",
   "answer": "small salted fish",
   "choices": [
@@ -12613,90 +12229,6 @@
  },
  {
   "tier": 1,
-  "question": "Grits are so beloved in one part of the United States that three out of every four bags sold nationwide are bought there. In which region of the U.S. do people eat the most grits?",
-  "answer": "The South",
-  "choices": [
-   "The South",
-   "The Northeast",
-   "The Midwest",
-   "The West Coast"
-  ],
-  "context": "Grits \u2014 coarsely ground dried corn cooked into a hot porridge \u2014 are a Southern staple. Three-quarters of all grits sold in the U.S. are bought in a band from Lower Texas to Washington, D.C. nicknamed the 'grits belt,' and Georgia even named grits its official prepared food in 2002. Source: Wikipedia, 'Grits.'"
- },
- {
-  "tier": 1,
-  "question": "At a diner counter, a bowl of thick, salty, buttered porridge steams beside the fried eggs at breakfast. Grits are made by coarsely grinding up which grain?",
-  "answer": "Corn",
-  "choices": [
-   "Corn",
-   "Oats",
-   "Rice",
-   "Barley"
-  ],
-  "context": "Grits are coarsely ground dried corn, boiled in salted water or milk into a hot porridge. 'Hominy grits' are special: they're ground not from plain dried field corn but from hominy \u2014 corn that's been treated so each kernel swells up and sheds its tough outer hull. Source: Wikipedia, 'Grits.'"
- },
- {
-  "tier": 2,
-  "question": "Cherokee cooks faced hard dried corn locked in a hull too tough to chew. Rather than scrub each kernel by hand, they soaked the corn in one liquid until every hull loosened and slipped away on its own. Which liquid did the job?",
-  "answer": "Lye, leached from hardwood ashes",
-  "choices": [
-   "Lye, leached from hardwood ashes",
-   "Brine, drawn from boiled salt",
-   "Whey, poured off from milk",
-   "Vinegar, soured from apple cider"
-  ],
-  "context": "Hominy is made by soaking dried corn in an alkali \u2014 either wood-ash lye or slaked lime (calcium hydroxide, nicknamed 'cal'). The alkali dissolves the 'glue' holding the grain's cell walls together, so the tough hull slips off while the kernel soaks up water and puffs. Source: Wikipedia, 'Hominy.'"
- },
- {
-  "tier": 3,
-  "question": "Southern cooks and the Cherokee made hominy this way for generations \u2014 but soaking corn in alkali was not their invention. The technique is thousands of years older, first worked out long ago by which ancient people?",
-  "answer": "The Maya of Mexico",
-  "choices": [
-   "The Maya of Mexico",
-   "The Inca of Peru",
-   "The Sioux of the Plains",
-   "The Inuit of the Arctic"
-  ],
-  "context": "Nixtamalization \u2014 the alkali corn-soak, from a Nahuatl (Aztec) word \u2014 was invented by Mesoamerican peoples; the oldest known equipment comes from Guatemala's Pacific coast, roughly 1200\u20131500 BCE, and the Aztec and Maya refined it. It is a Native American invention, not a Southern or European one. Source: Wikipedia, 'Nixtamalization.'"
- },
- {
-  "tier": 3,
-  "question": "Southern grits and one famous food hide the very same ancient secret: both begin with corn straight out of that alkali soak. Southerners grind the soaked kernels coarse and boil them into porridge; other cooks grind theirs fine and wet into masa. Which of these foods is made from masa?",
-  "answer": "Tortillas",
-  "choices": [
-   "Tortillas",
-   "Pozole",
-   "Elote",
-   "Cornbread"
-  ],
-  "context": "The alkali corn-soak turns corn into masa, the stretchy dough behind tortillas and tamales. Plain dried corn ground to cornmeal makes cornbread, but it will not form a workable dough with water \u2014 only nixtamalized masa is springy enough to press into a tortilla. So Southern grits and Mexican tortillas secretly share one ancient Native technique. Source: Wikipedia, 'Nixtamalization.'"
- },
- {
-  "tier": 4,
-  "question": "A family could eat corn at nearly every meal and still fall ill \u2014 unless the corn was first soaked in alkali. Raw corn actually holds a certain vitamin but keeps it chemically locked where the body cannot absorb it; the ancient soak sets it free. Which vitamin does the soak unlock?",
-  "answer": "Niacin, or vitamin B3",
-  "choices": [
-   "Niacin, or vitamin B3",
-   "Thiamine, or vitamin B1",
-   "Riboflavin, or vitamin B2",
-   "Folate, or vitamin B9"
-  ],
-  "context": "Nixtamalization unlocks niacin (vitamin B3) that raw corn keeps locked away, and frees up tryptophan so the body can make its own niacin too. The soak also boosts the corn's calcium by about 750%, makes it easier to grind, and improves flavor \u2014 which is why Native peoples stayed healthy on a corn-heavy diet. Source: Wikipedia, 'Nixtamalization.'"
- },
- {
-  "tier": 5,
-  "question": "When Europeans and American settlers adopted corn, they skipped the strange alkali soak as pointless bother. In the corn-dependent American South of the early 1900s, that shortcut turned deadly: a disease of the 'four D's' \u2014 dermatitis, diarrhea, dementia, and death \u2014 swept the region, striking because the corn's hidden vitamin was never unlocked. What was this disease?",
-  "answer": "Pellagra",
-  "choices": [
-   "Pellagra",
-   "Scurvy",
-   "Rickets",
-   "Beriberi"
-  ],
-  "context": "Pellagra is the niacin (B3) deficiency disease. Europeans adopted corn but not the alkali step that frees its niacin \u2014 so between about 1906 and 1940, more than 3 million Americans were affected and over 100,000 died, making it the deadliest nutrition-related disease in U.S. history. The very step they ignored was the cure. Source: Wikipedia, 'Pellagra.'"
- },
- {
-  "tier": 1,
   "question": "In a heavy stone bowl, an Aztec cook mashes one soft fruit into a rich, creamy paste, then works in salt and chili to make guacamole. Which fruit is the base of the whole dish?",
   "answer": "Avocado",
   "choices": [
@@ -13474,54 +13006,6 @@
    "a speck of straw fiber"
   ],
   "context": "A 2015 Agroscope study found the carbon-dioxide bubbles need microscopic specks of hay dust as seeds to form around. Old open-bucket milking let bits of hay fall into the milk; spotless modern milking machines removed them, so the holes grew smaller and fewer. Source: dairyreporter.com, 2015 (Agroscope study)."
- },
- {
-  "tier": 2,
-  "question": "The French word 'restaurant' didn't start out naming a place to eat at all \u2014 in 1760s Paris it named something you actually swallowed, sold all over the city to revive weak and sickly folk. What did you get when you ordered a 'restaurant'?",
-  "answer": "A steaming bowl of meat broth",
-  "choices": [
-   "A steaming bowl of meat broth",
-   "A wedge of ripe soft cheese",
-   "A cup of thick hot chocolate",
-   "A dish of sweet stewed fruit"
-  ],
-  "context": "The word came from the French 'restaurer' \u2014 to restore. A 'restaurant' was a rich, concentrated meat broth (a bouillon), sold to restore weak and ailing diners. Only later did the ROOM where you sipped it borrow the food's name. Source: The Conversation, 'Revolutionary broth: the birth of the restaurant'; en.wikipedia.org/wiki/Restaurant."
- },
- {
-  "tier": 3,
-  "question": "At a 1700s roadside inn, the cook set out one meal for the whole table at one fixed hour \u2014 you ate what he had made or you went hungry. Paris's new restaurants worked nothing like that. How did a guest there get his dinner?",
-  "answer": "He picked dishes from a printed list at posted prices",
-  "choices": [
-   "He picked dishes from a printed list at posted prices",
-   "He ordered from a boy who recited the dishes aloud",
-   "He served himself from dishes spread on a side table",
-   "He asked the cook to make whatever he felt like eating"
-  ],
-  "context": "The restaurant's true revolution was the FORMAT. The old inn ran on the 'table d'hote' \u2014 one set meal, served to everyone at a fixed hour, take it or leave it. A restaurant let you choose dishes from a printed list at posted fixed prices and come when you pleased. The printed menu was born. Source: en.wikipedia.org/wiki/Restaurant; National Geographic, 'Who invented the first modern restaurant.'"
- },
- {
-  "tier": 4,
-  "question": "As the French Revolution swept Paris after 1789, the city's aristocrats fled the country or lost their heads on the guillotine \u2014 and the private chefs who had cooked in their grand houses were thrown out of work all at once. What did many of these suddenly jobless cooks do next?",
-  "answer": "Opened eating-houses of their own to the public",
-  "choices": [
-   "Opened eating-houses of their own to the public",
-   "Followed their old masters into exile abroad",
-   "Gave up the kitchen for steadier trades",
-   "Signed on as cooks for the new republican army"
-  ],
-  "context": "Palace-level 'grande cuisine,' once locked behind noble walls, spilled out into public restaurants anyone with money could enter. The numbers tell the story: Paris had roughly 50 restaurants in 1789, about 500 by 1804, and more than 2,000 by 1834. Source: The Conversation, 'Revolutionary broth'; National Geographic, 'Who invented the first modern restaurant.'"
- },
- {
-  "tier": 5,
-  "question": "For two hundred years, food writers repeated a tidy origin story that modern historians, digging through the archives, can find no real evidence for. As the legend goes, around 1765 a Paris cook named Boulanger outraged the caterers' guild by serving one dish they insisted only they had the right to sell. What was that supposedly forbidden dish?",
-  "answer": "Sheep's feet in a white sauce",
-  "choices": [
-   "Sheep's feet in a white sauce",
-   "Roast pheasant glazed with honey",
-   "A pie of minced eel and prunes",
-   "Calf's liver braised in red wine"
-  ],
-  "context": "The tale first appears in Le Grand d'Aussy's food history of 1782 and was copied for two centuries. When historian Rebecca Spang searched the actual archives ('The Invention of the Restaurant,' 2000), she found no record of the man, the dish, or the lawsuit. The real credit belongs to Mathurin Roze de Chantoiseau, who called himself 'the first restaurateur' around 1765-66, and to the post-Revolution boom. Source: Britannica, 'A. Boulanger'; parisfoodhistory.blogspot.com, 'Boulanger and the restaurant'; Spang, 'The Invention of the Restaurant.'  (Legend.)"
  },
  {
   "tier": 1,
@@ -14458,78 +13942,6 @@
    "Total darkness underground was what the souring bacteria needed to grow"
   ],
   "context": "This is the kimjang tradition (a UNESCO Intangible Cultural Heritage since 2013). The pots, called onggi, are porous 'breathing' jars whose tiny clay pores let carbon dioxide escape while staying watertight; the steady underground cool kept the kimchi from freezing so it lasted until spring. Modern Korean homes use a dedicated kimchi refrigerator instead. Sources: en.wikipedia.org/wiki/Kimjang ; en.wikipedia.org/wiki/Onggi"
- },
- {
-  "tier": 1,
-  "question": "Shake a jar of oil-and-vinegar salad dressing and it blends into one cloudy liquid \u2014 but leave it on the table a few minutes and it changes. What happens to it?",
-  "answer": "It separates back into two layers, oil floating on top",
-  "choices": [
-   "It separates back into two layers, oil floating on top",
-   "It thickens into a smooth, creamy paste",
-   "It foams up and overflows the jar",
-   "It turns clear and colorless like water"
-  ],
-  "context": "Oil and water are 'immiscible' \u2014 they refuse to stay blended, so within minutes the mixture drifts back to its stable state: two separate layers, with the lighter oil resting on top of the watery vinegar. Making them STAY mixed is the whole challenge behind sauces like mayonnaise and hollandaise. Source: Wikipedia, 'Emulsion'."
- },
- {
-  "tier": 2,
-  "question": "To force oil and water to stay mixed, cooks add a 'go-between' molecule called an emulsifier. Its clever trick is what actually holds two liquids that hate each other together. What is that trick?",
-  "answer": "It grabs oil with one end and water with the other",
-  "choices": [
-   "It grabs oil with one end and water with the other",
-   "It heats the oil until it dissolves into the water",
-   "It thickens the water so the oil droplets can't rise",
-   "It adds a burst of air bubbles that hold the drops apart"
-  ],
-  "context": "An emulsifier is a molecule with two very different ends \u2014 one that loves water (hydrophilic), one that loves oil (hydrophobic). It parks right at the border of every tiny oil droplet, its oil-loving end tucked into the oil and its water-loving end sticking out into the water, wrapping each droplet in a coat that stops them from merging back together and separating. Source: Wikipedia, 'Emulsion'."
- },
- {
-  "tier": 3,
-  "question": "Homemade mayonnaise starts with almost nothing: whisk oil in drop by drop, add a splash of lemon or vinegar, and thin liquids magically thicken into a smooth, stable spread. It only works because you whisk all that oil into ONE humble kitchen ingredient \u2014 the emulsifier that keeps oil and water blended. What is it?",
-  "answer": "A fresh egg yolk",
-  "choices": [
-   "A fresh egg yolk",
-   "A spoon of sugar",
-   "A pinch of salt",
-   "A splash of milk"
-  ],
-  "context": "The molecule doing the work is lecithin, a phospholipid packed into egg yolk with an oil-loving tail and a water-loving head \u2014 a natural emulsifier. Add the acid (lemon or vinegar) to the yolk FIRST and it can hold even more oil; rush the oil in too fast and the emulsion 'breaks' into a greasy, curdled mess. Source: Wikipedia, 'Mayonnaise'."
- },
- {
-  "tier": 4,
-  "question": "Hollandaise \u2014 that lemony warm sauce of butter whisked into egg yolk over gentle heat \u2014 is famous for being temperamental. Push the pan too hot and the sauce is ruined in seconds. What goes wrong when hollandaise overheats?",
-  "answer": "The yolks cook into scrambled bits and the butter pools out",
-  "choices": [
-   "The yolks cook into scrambled bits and the butter pools out",
-   "The butter caramelizes and the sauce turns bitter brown",
-   "The sauce boils over and foams up out of the pan",
-   "The sauce thins into a watery, flavorless puddle"
-  ],
-  "context": "Hollandaise is one of the five French 'mother sauces,' and it's a WARM emulsion \u2014 melted butter whisked into egg yolk with lemon. But egg yolks curdle at about 180-185\u00b0F (85\u00b0C), so cooks whisk it over a double boiler to keep the heat gentle; the lemon's acid buys roughly 20\u00b0F more room before it breaks. Overheat it and the yolk sets into solid specks while the melted butterfat weeps out \u2014 a broken sauce. Source: Wikipedia, 'Hollandaise sauce'; FineCooking, 'Too Hot for Hollandaise'."
- },
- {
-  "tier": 4,
-  "question": "Whisk oil and vinegar for a salad dressing and it splits apart in minutes \u2014 unless you stir in a spoonful of one ordinary condiment first. Cooks reach for it not mainly for its flavor but because it's secretly an emulsifier, coating the droplets so the dressing holds together. Which condiment does the trick?",
-  "answer": "Mustard",
-  "choices": [
-   "Mustard",
-   "Ketchup",
-   "Soy sauce",
-   "Hot sauce"
-  ],
-  "context": "It's the mucilage \u2014 a gummy coating on mustard seeds \u2014 that does it: a natural emulsifier doing the same job egg yolk does in mayonnaise. So the next time a vinaigrette holds together silky and thick instead of splitting, thank the mustard, not just the whisking. Source: ScienceInsights, 'Is Mustard an Emulsifier?'."
- },
- {
-  "tier": 5,
-  "question": "Some cooking fats are pure fat and nothing else \u2014 but one common kitchen fat is secretly an emulsion, with tiny droplets of water trapped inside all that fat. Which one?",
-  "answer": "Butter",
-  "choices": [
-   "Butter",
-   "Lard",
-   "Shortening",
-   "Ghee"
-  ],
-  "context": "Butter is water-in-oil \u2014 droplets of water scattered through fat \u2014 the exact reverse of mayonnaise, hollandaise, and vinaigrette, which are oil droplets scattered through water. (Ghee is butter with that water boiled off, which is why it keeps so long.) That hidden water is also why butter spits and foams the moment it hits a hot pan. Source: Wikipedia, 'Emulsion'."
  },
  {
   "tier": 1,
@@ -16069,90 +15481,6 @@
  },
  {
   "tier": 1,
-  "question": "Little Miss Muffet sat on her tuffet, eating the two things milk splits into when it becomes cheese: a thin, watery liquid and soft white lumps that get pressed into the finished wheel. What are those soft white lumps called?",
-  "answer": "Curds",
-  "choices": [
-   "Curds",
-   "Whey",
-   "Rennet",
-   "Cream"
-  ],
-  "context": "The nursery rhyme is really a cheesemaking scene: the solid curds are separated from the thin, watery whey and pressed into finished cheese. Source: Wikipedia, 'Cheese'."
- },
- {
-  "tier": 2,
-  "question": "Warm milk sits in a vat, still perfectly liquid. A cheesemaker stirs in a few drops of one substance, and within minutes the whole vat sets into a wobbling, solid gel \u2014 the first curd. It isn't heat that clumps the milk. What did she stir in?",
-  "answer": "Rennet",
-  "choices": [
-   "Rennet",
-   "Yeast",
-   "Salt",
-   "Sugar"
-  ],
-  "context": "What sets liquid milk into a solid gel is rennet, not heat \u2014 the key ingredient in turning milk to cheese, and one people have relied on for thousands of years. Source: Wikipedia, 'Rennet'."
- },
- {
-  "tier": 2,
-  "question": "After the curds are scooped out to become cheese, a vat of thin, leftover whey is usually all that remains. An Italian cheesemaker doesn't dump it \u2014 she gently re-heats it until the last stray proteins clump into a soft, sweet, fresh cheese. Its very name means 're-cooked.' What cheese is it?",
-  "answer": "Ricotta",
-  "choices": [
-   "Ricotta",
-   "Mozzarella",
-   "Parmesan",
-   "Cheddar"
-  ],
-  "context": "Ricotta means 're-cooked' in Italian. Cheesemakers re-heat the leftover whey until the last proteins that rennet left behind \u2014 albumin and globulin \u2014 clump into a fine, soft, slightly sweet curd. The whey isn't waste; it becomes a second cheese. Source: Wikipedia, 'Ricotta'."
- },
- {
-  "tier": 3,
-  "question": "Before milk is ever set into curd, most cheesemakers stir in a 'starter culture' of friendly bacteria and let the milk sit and sour. The bacteria feed on the milk's natural sugar and give off an acid that both flavors the cheese and helps it set. Which acid are they making?",
-  "answer": "Lactic acid",
-  "choices": [
-   "Lactic acid",
-   "Citric acid",
-   "Acetic acid",
-   "Carbonic acid"
-  ],
-  "context": "Most cheeses rely on starter bacteria converting the milk sugar (lactose) into lactic acid. That souring both flavors the future cheese and helps the milk set. Source: Wikipedia, 'Cheese'."
- },
- {
-  "tier": 3,
-  "question": "A block of curd straight off the press tastes of almost nothing at all \u2014 even the world's greatest cheeses start out that bland. The wheel goes down into a cool, damp cave and sits there for two years. It comes out carrying a deep, savory taste. Down in the dark, what built that flavor?",
-  "answer": "Microbes break its proteins and fat apart",
-  "choices": [
-   "Microbes break its proteins and fat apart",
-   "Salt works its way inward from the rind",
-   "Water dries slowly out of the whole block",
-   "Wood from the cave shelf flavors the rind"
-  ],
-  "context": "Fresh curd is nearly tasteless. As a cheese ripens (ages), microbes and enzymes break its casein proteins and milkfat into a complex mix of amino acids, amines, and fatty acids \u2014 the deep taste of an old cheese. 'If the product is not ripened, the resulting cheese is tasteless.' Source: Wikipedia, 'Cheese' and 'Cheese ripening'."
- },
- {
-  "tier": 4,
-  "question": "Long before anyone understood the chemistry, wandering herders almost certainly discovered cheese entirely by accident. They filled a container with fresh milk, carried it across the hills, and by the time they stopped it had turned to cheese. What had they stored the milk in?",
-  "answer": "A pouch of animal stomach",
-  "choices": [
-   "A pouch of animal stomach",
-   "A hollowed-out gourd",
-   "A clay drinking jug",
-   "A sealed leather flask"
-  ],
-  "context": "Early herders carried milk in bags and bladders made from animals' stomachs, and the rennet naturally lining that stomach curdled the milk into cheese on the journey. 'Within the stomach an inherent supply of rennet would encourage curdling, forming cheese.' Source: Wikipedia, 'History of cheese'.  (Legend.)"
- },
- {
-  "tier": 5,
-  "question": "Rennet's enzyme sets a whole vat of milk in minutes: it trims one specific piece off the surface of each of milk's tiny floating protein clusters, and the instant that piece is gone the clusters clump together into curd. What had that trimmed-off piece been doing while it was still attached?",
-  "answer": "Giving each cluster a charge that repelled its neighbors",
-  "choices": [
-   "Giving each cluster a charge that repelled its neighbors",
-   "Wrapping each cluster in a slippery layer of fat",
-   "Cushioning each cluster inside a pocket of water",
-   "Sheathing each cluster in a tough outer skin"
-  ],
-  "context": "Rennet's enzyme, chymosin, cleaves the kappa-casein chains that stick out from milk's casein micelles (the protein clusters). Those chains carry a negative charge, so the clusters repel one another and stay apart, like matching magnets held face to face. Snip the chains off and the clusters can no longer push away, so they collapse together into a gel \u2014 the exact moment milk becomes curd. Source: Wikipedia, 'Rennet'."
- },
- {
-  "tier": 1,
   "question": "A chef lines up every chopped, measured ingredient in its own little bowl, then \u2014 and only then \u2014 reaches for the burner. French kitchens have a name for this prep-it-all-before-you-cook habit. What is it?",
   "answer": "Mise en place",
   "choices": [
@@ -17098,78 +16426,6 @@
    "A blast of cold kitchen air."
   ],
   "context": "The sealed dome traps the soup's scent as it bakes; cracking the pastry lid releases the trapped steam of truffle and foie gras in one wave -- the whole payoff of the dish. When President Giscard d'Estaing asked how to eat it, Bocuse told him, 'Just break the crust, Mr President.' Source: Luxeat, 'The legend of the truffle soup.'"
- },
- {
-  "tier": 2,
-  "question": "Slice open the ripe fruit of the nutmeg tree \u2014 it looks a lot like an apricot \u2014 and you don't get one spice, you get two. The hard brown seed at the center, dried and grated, becomes nutmeg. Peel off the bright-red, lacy net clinging around that seed, dry it for two weeks, and you have a whole second spice. What is it called?",
-  "answer": "mace",
-  "choices": [
-   "mace",
-   "cinnamon",
-   "cloves",
-   "saffron"
-  ],
-  "context": "One tree \u2014 Myristica fragrans \u2014 gives the world two spices at once. Nutmeg is the seed; mace is the aril, the lacy crimson coat that grows wrapped around it. Peeled off and dried for about 10 to 14 days, the red net fades to orange-brown and becomes mace, valued for a flavor a little more delicate than nutmeg's own. Source: en.wikipedia.org/wiki/Nutmeg"
- },
- {
-  "tier": 2,
-  "question": "For hundreds of years, every nutmeg seed and every flake of mace on Earth grew in just one place \u2014 a single cluster of tiny volcanic islands, and nowhere else. Cooks called them the original 'Spice Islands.' Those islands, the Bandas, are part of which country today?",
-  "answer": "Indonesia",
-  "choices": [
-   "Indonesia",
-   "India",
-   "Malaysia",
-   "Thailand"
-  ],
-  "context": "The Banda Islands, in the Maluku (Molucca) group of eastern Indonesia, were the world's only source of nutmeg and mace until the mid-1800s. A nutmeg tree takes about five years before it even begins to bear fruit, so this handful of specks in the sea could never grow enough to meet Europe's hunger for the spice \u2014 which is exactly what made it worth fighting over. Source: en.wikipedia.org/wiki/Nutmeg"
- },
- {
-  "tier": 3,
-  "question": "In the 1600s, nutmeg was so valued that many Europeans wouldn't cook with their precious seed at all. Instead they tied it around their necks or tucked it into scented pomander balls and carried it everywhere, convinced its powerful smell could keep away the deadly disease then sweeping their cities. Which disease did they hope nutmeg would ward off?",
-  "answer": "plague",
-  "choices": [
-   "plague",
-   "smallpox",
-   "cholera",
-   "typhoid"
-  ],
-  "context": "It didn't actually cure anything, but the belief was everywhere. Doctors and ordinary people alike wore nutmeg to fend off what they called 'bad air' \u2014 the mistaken idea that foul smells themselves spread the plague. There's a small irony: nutmeg's insect-repelling scent may have driven off a few of the fleas that truly carried the disease. Source: thetakeout.com/1995387/baking-spice-prevent-black-death-nutmeg"
- },
- {
-  "tier": 4,
-  "question": "By the 1600s, nutmeg was worth more by weight than gold \u2014 and only the Bandanese islanders grew it. Wanting that supply for themselves, the Dutch East India Company sent a fleet under Governor-General Jan Pieterszoon Coen, who conquered the Banda Islands in 1621. What did Coen's forces do to the roughly 15,000 Bandanese living there?",
-  "answer": "killed or enslaved nearly the whole population",
-  "choices": [
-   "killed or enslaved nearly the whole population",
-   "taxed every harvest and let them keep farming",
-   "signed treaties making them sell only to the Dutch",
-   "built forts and posted guards over the groves"
-  ],
-  "context": "It became one of history's most brutal trade monopolies. Of roughly 15,000 Bandanese, about 2,500 to 2,800 were killed and around 1,700 enslaved and deported; only about 1,000 were left on their home islands. A single spice had emptied and reshaped an entire island world \u2014 real history, driven by nutmeg. Source: en.wikipedia.org/wiki/Dutch_conquest_of_the_Banda_Islands"
- },
- {
-  "tier": 4,
-  "question": "The Dutch were so set on keeping the nutmeg trade that in the 1667 Treaty of Breda they let England keep the last tiny nutmeg island, Run \u2014 and in exchange handed over one of their own colonies far across the world, a small Dutch trading town called New Amsterdam. Which world-famous city did New Amsterdam grow into?",
-  "answer": "New York",
-  "choices": [
-   "New York",
-   "New Orleans",
-   "Cape Town",
-   "Quebec City"
-  ],
-  "context": "England had already seized New Amsterdam in 1664 and renamed it New York; the 1667 treaty simply made the swap official \u2014 nutmeg-rich Run for the future New York City. To the Dutch it looked like a shrewd deal: Run, barely 3 km long and 1 km wide, was carpeted in priceless nutmeg trees, while New York was just a distant frontier port. A speck in the sea once outweighed the port that became one of the great cities of the world. Source: en.wikipedia.org/wiki/Treaty_of_Breda_(1667)"
- },
- {
-  "tier": 5,
-  "question": "There's a real reason cooks use only a pinch of freshly grated nutmeg and never a heaping spoonful. In large amounts, nutmeg carries a natural compound called myristicin that is mildly poisonous to people. Swallow a big dose and, hours later, a wretched spell sets in that can drag on for a day or two. What does too much nutmeg actually do to a person?",
-  "answer": "it brings on hallucinations and a racing heart",
-  "choices": [
-   "it brings on hallucinations and a racing heart",
-   "it numbs the mouth and blurs the eyesight",
-   "it turns the skin and eyes bright yellow",
-   "it swells the tongue and locks the jaw"
-  ],
-  "context": "Myristicin acts as a mild MAO inhibitor, and in quantity it can bring on hallucinations, dizziness, nausea, a pounding heart, and days of misery \u2014 with almost no pleasant part to it. That's why nutmeg is measured in pinches: as a whisper of warmth in eggnog, custard, or a bechamel sauce it's wonderful, but it was never meant to be eaten by the spoon. Source: en.wikipedia.org/wiki/Nutmeg"
  },
  {
   "tier": 1,
@@ -18649,78 +17905,6 @@
  },
  {
   "tier": 2,
-  "question": "Grab a box of dried spaghetti from the pantry and read the label - the ingredient list is almost comically short. Besides hard-wheat flour, classic dried pasta needs just one other thing. What is it?",
-  "answer": "Water",
-  "choices": [
-   "Water",
-   "Oil",
-   "Salt",
-   "Milk"
-  ],
-  "context": "Classic dried pasta - spaghetti, penne, macaroni - is nothing but hard-wheat flour and water. That short recipe is the whole secret of the boxed pasta in your pantry; the flavor comes later, from the sauce. Source: en.wikipedia.org/wiki/History_of_pasta"
- },
- {
-  "tier": 2,
-  "question": "Dried pasta isn't made from the soft white flour of a bakery - it comes from a coarse, gritty, pale-gold meal all its own. Which of these coarse meals is the one dried pasta is made from?",
-  "answer": "Semolina",
-  "choices": [
-   "Semolina",
-   "Cornmeal",
-   "Grits",
-   "Bulgur"
-  ],
-  "context": "That coarse golden meal is semolina. It feels gritty, almost like fine sand, rather than soft and powdery like ordinary flour - the same stuff that's also rolled into couscous. Source: en.wikipedia.org/wiki/Semolina"
- },
- {
-  "tier": 3,
-  "question": "Semolina is milled from one particular kind of wheat - the hardest, highest-protein wheat a farmer can grow, so tough and glassy that grinding it into flour is real work. What is this wheat called?",
-  "answer": "Durum",
-  "choices": [
-   "Durum",
-   "Spelt",
-   "Einkorn",
-   "Emmer"
-  ],
-  "context": "The wheat is durum - Latin for 'hard,' named for how tough its glassy grain is to grind. It's the hardest, highest-protein wheat there is, and that strength is exactly what lets a noodle hold its shape in boiling water instead of turning to mush. Source: en.wikipedia.org/wiki/Durum"
- },
- {
-  "tier": 3,
-  "question": "Italian cooks insist good pasta should be boiled only until it stays firm and springy, never soft and mushy - a stage they prize and call 'al dente.' In Italian, what does the phrase 'al dente' literally mean?",
-  "answer": "To the tooth",
-  "choices": [
-   "To the tooth",
-   "To the fork",
-   "To the pot",
-   "To the flame"
-  ],
-  "context": "'Al dente' is Italian for 'to the tooth' - pasta boiled just until it's firm with a little chew. Durum's strong gluten is what makes that firm bite possible, and al dente pasta even releases its energy more slowly - a lower glycemic index - than mushy, overcooked pasta. Sources: en.wikipedia.org/wiki/Al_dente ; en.wikipedia.org/wiki/Durum"
- },
- {
-  "tier": 4,
-  "question": "Almost everyone has heard that the explorer Marco Polo brought pasta back to Italy from China in the 1290s. Historians say that's false - Italians were eating pasta long before his voyage. So where did this famous Marco Polo pasta story actually begin?",
-  "answer": "A 1920s American pasta ad",
-  "choices": [
-   "A 1920s American pasta ad",
-   "Marco Polo's travel diary",
-   "An ancient Chinese cookbook",
-   "A medieval Italian folk tale"
-  ],
-  "context": "The tale is a myth, and a fairly modern one: it first appeared in October 1929 in an American trade magazine, the Macaroni Journal, as an ad campaign to sell U.S.-made pasta. The story - 'A Saga of Cathay' - even invented a sailor named 'Spaghetti' who supposedly copied a Chinese woman making noodles, and a 1938 Hollywood film cemented it. Real proof came far earlier: in 1154 the Arab geographer al-Idrisi wrote that the Sicilian town of Trabia was making dried 'itriyya' - string pasta - by the boatload, shipping it across the Mediterranean more than a century before Marco Polo ever set out for China. Sources: en.wikipedia.org/wiki/History_of_pasta ; sbs.com.au/food/article/it-was-all-a-lie-the-scandalous-history-of-pasta/k9btp88b8 ; timesofsicily.com/trabia-ancient-home-spaghetti  (Legend.)"
- },
- {
-  "tier": 4,
-  "question": "Alongside the dried spaghetti of southern Italy sits a second, richer pasta tradition - the fresh, silky, hand-rolled ribbons of the north, like the tagliatelle of Emilia-Romagna. This fresh pasta is made from soft flour plus one ingredient that dried pasta never uses. What is that ingredient?",
-  "answer": "Eggs",
-  "choices": [
-   "Eggs",
-   "Butter",
-   "Cream",
-   "Honey"
-  ],
-  "context": "The answer is eggs. Italy really has two pasta worlds: the dried semolina-and-water pasta of the south, and the fresh egg pasta of the north - soft '00' flour plus eggs, no durum needed - which gives the rich tagliatelle and tortellini of Emilia-Romagna. Source: en.wikipedia.org/wiki/History_of_pasta"
- },
- {
-  "tier": 2,
   "question": "In the 1850s French winemakers watched whole barrels of wine mysteriously turn sour, losing fortunes \u2014 and no one knew why. Emperor Napoleon III asked the chemist Louis Pasteur to find the cause. Peering through his microscope, what did Pasteur see was souring the wine?",
   "answer": "tiny living microbes feeding on it",
   "choices": [
@@ -18946,54 +18130,6 @@
    "Dry food traps salt that poisons any germs"
   ],
   "context": "Fat plus dryness beats either alone. The microbes that spoil food need liquid water to grow, but dried meat has almost none, and pemmican's rendered-fat coating blocks any new moisture from getting back in - so the germs never get the water they need. Some Civil War troops were even handed hardtack baked 15 years earlier for the Mexican-American War. Source: en.wikipedia.org/wiki/Pemmican; foodsafety.institute; militaryhistorynow.com"
- },
- {
-  "tier": 2,
-  "question": "On the northern plains, a Cree family dries slabs of bison over a low fire until the meat is brittle, then pounds it on a stone until it is nearly a powder. Pounded meat alone is not yet pemmican \u2014 the family now works in a second ingredient. What is that second ingredient?",
-  "answer": "Rendered fat, poured in while hot",
-  "choices": [
-   "Rendered fat, poured in while hot",
-   "Cracked corn, parched and pounded in",
-   "Dried fish, pounded to a fine meal",
-   "Wild honey, warmed until it pours"
-  ],
-  "context": "Pemmican comes from the Cree word 'pimihkan,' built on the root 'pimi' \u2014 'fat' or 'grease' \u2014 so the name means roughly 'manufactured fat.' The Plains peoples of North America developed it; it was never a European invention, though fur traders later bought it by the bagful. Dried bison, elk, or deer was pounded almost to powder and mixed with rendered tallow at roughly one to one by weight, then packed into rawhide bags to harden. Source: Wikipedia, 'Pemmican'; Britannica, 'Pemmican' (pimi = 'fat, grease')."
- },
- {
-  "tier": 3,
-  "question": "A fur-trade voyageur hauled a loaded canoe up rivers and over portages for months at a stretch, and his ration was about a pound of pemmican a day \u2014 a dark, dense cake of pounded meat and rendered fat. Almost none of it was carbohydrate. When a pemmican maker did work a little carbohydrate into the cake, what did it come from?",
-  "answer": "Dried berries, crushed and mixed in",
-  "choices": [
-   "Dried berries, crushed and mixed in",
-   "Cracked corn, parched and stirred in",
-   "Wild rice, boiled and folded in",
-   "Acorn meal, ground and sifted in"
-  ],
-  "context": "Meat and fat alone was the standard recipe; berries were the treat \u2014 saskatoon berries, chokecherries, cranberries, or currants pounded in, turning the dark cake sweet-and-savory. They were the only carbohydrate pemmican ever had. Everything else is fat and protein, and fur-trade voyageurs and polar explorers lived and worked brutally hard on it for months: living proof the body runs fine on fat and protein alone when it must. It is also fiercely energy-dense \u2014 roughly 225 g carries about 1,500 calories, which is why a pound could fuel a day of paddling. Source: Wikipedia, 'Pemmican'; Wikipedia, 'Sledging ration'."
- },
- {
-  "tier": 3,
-  "question": "Robert Falcon Scott's men, dragging sledges across the Antarctic ice, were each rationed twelve ounces of pemmican a day. At camp they dropped it into a pot with crushed biscuit and melted snow and boiled the lot into a thick brown stew that served as breakfast and dinner both. The polar sledgers had their own word for that pot of stew. What was it?",
-  "answer": "Hoosh",
-  "choices": [
-   "Hoosh",
-   "Burgoo",
-   "Skilly",
-   "Scouse"
-  ],
-  "context": "'Hoosh' was the polar sledger's word for pemmican boiled with biscuit and melted snow. Nearly every great name of polar exploration ran on pemmican \u2014 Robert Peary, Ernest Shackleton, Robert Falcon Scott, and Roald Amundsen \u2014 and British expeditions even made a special 'dog pemmican,' with a higher share of protein to fat, to feed their sled teams. Source: Wikipedia, 'Sledging ration'; Wikipedia, 'Pemmican'."
- },
- {
-  "tier": 4,
-  "question": "A fur trader pulls a rawhide bag of pemmican off a trading-post shelf where it has sat for decades, through summer after summer, and the dark cake inside is still perfectly good to eat. Fresh bison would have gone rotten in days. What is it about the way pemmican is made that keeps rot from ever getting started?",
-  "answer": "Drying takes the water out and the fat seals the meat from air",
-  "choices": [
-   "Drying takes the water out and the fat seals the meat from air",
-   "Pounding packs the cake so tight that no air ever reaches inside",
-   "Rendering heats the fat hot enough to kill what is in the meat",
-   "Smoking leaves a tar on the meat that rot cannot get through"
-  ],
-  "context": "Because it is so dry and sealed in fat, pemmican keeps in perfect condition for decades with no refrigeration \u2014 which is exactly why it crossed oceans on expeditions long before the canned tin existed. Drying is what concentrates it: about five pounds of fresh meat cook down to a single pound of the dried meat that goes into the cake, and stripping out that water is what leaves nothing for spoilage to work on. Source: Britannica, 'Pemmican' ('would keep in perfect condition for decades'); Wikipedia, 'Pemmican'."
  },
  {
   "tier": 1,
@@ -20245,126 +19381,6 @@
  },
  {
   "tier": 1,
-  "question": "You pull a sizzling steak off the grill and go to carve it right away. Every experienced cook stops you - cutting the instant it leaves the heat is the classic rookie mistake. What is the one simple move to make first?",
-  "answer": "Let it rest for a few minutes",
-  "choices": [
-   "Let it rest for a few minutes",
-   "Slice it as thinly as you can",
-   "Rinse it under cold water",
-   "Salt it hard on both sides"
-  ],
-  "context": "Straight off the heat a cut is like a squeezed sponge: slice in and the juices flood the board, leaving the meat dry. America's Test Kitchen measured an unrested roast losing about 10 tablespoons of juice; a 10-minute rest cut that to roughly 4. Source: America's Test Kitchen, 'Resting Meat Is Worth It.'"
- },
- {
-  "tier": 2,
-  "question": "Lay a raw flank steak on the cutting board and you'll see its surface covered in long, straight lines all running the same way, like the grain in a plank of wood. Those parallel lines are bundles of what?",
-  "answer": "Muscle fibers",
-  "choices": [
-   "Muscle fibers",
-   "Fat marbling",
-   "Char from the grill",
-   "Connective gristle"
-  ],
-  "context": "That is exactly why cooks talk about cutting 'with' or 'against the grain' - the grain is just the direction those muscle fibers run, and on a flank or skirt steak they are as visible as the grain in wood. Source: FoodFireFriends, 'Cutting Against the Grain.'"
- },
- {
-  "tier": 2,
-  "question": "Slice a steak across the grain instead of along it and it eats far more tender - the knife has already done a job your teeth would otherwise have to do. What job is that?",
-  "answer": "Cutting the long muscle fibers into short pieces",
-  "choices": [
-   "Cutting the long muscle fibers into short pieces",
-   "Grinding down the tough connective gristle",
-   "Mashing the fat out from between the fibers",
-   "Squeezing the juices up toward the surface"
-  ],
-  "context": "Slice the other way - along the fibers, with the grain - and you leave them full-length, so the meat comes out tough, chewy, and stringy. Cutting across shortens the work your teeth have to do. Source: FoodFireFriends, 'Cutting Against the Grain.'"
- },
- {
-  "tier": 3,
-  "question": "Many people think resting a steak lets the juices 'sink and settle' before you cut - but that's a myth. Here's the real reason: while the meat cooked, its muscle fibers clenched tight and drove liquid toward the center. As the steak rests, something changes that pulls the juice back through the meat. What is it?",
-  "answer": "The fibers relax and reabsorb the liquid",
-  "choices": [
-   "The fibers relax and reabsorb the liquid",
-   "The fibers keep tightening and trap the juice",
-   "The fat melts and carries juice back inward",
-   "The surface dries into a firm crust"
-  ],
-  "context": "It is fiber relaxation and reabsorption, not juice 'sinking.' A second helper works too: as the juice cools slightly it thickens - dissolved gelatin and fat firm up - so more of it clings inside the meat instead of running out. Source: America's Test Kitchen, 'Resting Meat Is Worth It.'"
- },
- {
-  "tier": 3,
-  "question": "Pull a big roast or a whole chicken out of a hot oven and leave a thermometer in it: over the next several minutes the inside temperature keeps climbing - a large roast can rise another 10 to 15F while it just sits on the counter. Cooks call this carryover cooking. Why does the center keep getting hotter after the heat is off?",
-  "answer": "The hot outer layers keep driving heat inward",
-  "choices": [
-   "The hot outer layers keep driving heat inward",
-   "Trapped steam pressure cooks it from within",
-   "The relaxing fibers give off heat as they rest",
-   "Cold room air seals the surface and holds heat in"
-  ],
-  "context": "A thin steak barely moves, but a big roast or whole chicken can climb 10 to 15F on the counter - so cooks pull large cuts from the oven a few degrees early and let carryover finish the job. Source: America's Test Kitchen, 'All About Carryover Cooking.'"
- },
- {
-  "tier": 4,
-  "question": "America's Test Kitchen took a single flank steak, sliced half of it WITH the grain and half AGAINST it, then pushed each slice through a machine that measures bite force. Same cow, same steak, same doneness - only the knife direction changed. How much tougher was the with-the-grain slice to bite through?",
-  "answer": "About four times as tough",
-  "choices": [
-   "About four times as tough",
-   "About the same - barely any difference",
-   "Around twice as tough",
-   "Ten times as tough, or more"
-  ],
-  "context": "Real texture-analyzer test, not a legend. The against-the-grain slice was so tender it matched far pricier cuts - the same cheap flank steak, transformed by knife direction alone. This is why the against-the-grain move matters most on bold, coarse-grained muscles like flank, skirt, and brisket. Source: FoodFireFriends / America's Test Kitchen CT3 texture-analyzer test."
- },
- {
-  "tier": 4,
-  "question": "A pitmaster smokes a whole brisket for 14 hours, then hits a carving puzzle: a brisket isn't one muscle but two overlapping ones - the flat and the point - and their grains run in DIFFERENT directions. To keep slicing across the grain the whole way through, what must he do partway along?",
-  "answer": "Turn the meat about 90 degrees and re-aim the knife",
-  "choices": [
-   "Turn the meat about 90 degrees and re-aim the knife",
-   "Flip the brisket over and carve from the bottom",
-   "Slice much faster before the grain shifts",
-   "Switch to cutting straight down the middle"
-  ],
-  "context": "Cut a brisket the wrong way - with the grain - and it shreds into stringy strands, more like pulled pork than sliced brisket. To carve it right you slice the flat, then rotate about 90 degrees to stay across the grain of the point. Source: The Kitchn, 'How to Cut Brisket'; Hey Grill Hey, 'How to Slice a Brisket.'"
- },
- {
-  "tier": 1,
-  "question": "You slice into a thick steak the instant it comes off the grill, and a pool of juice floods across the cutting board, leaving the meat itself dry and gray. What simple step would have kept most of that juice inside the meat?",
-  "answer": "Letting it rest a few minutes before slicing",
-  "choices": [
-   "Letting it rest a few minutes before slicing",
-   "Searing it harder to seal in the juices",
-   "Basting it with melted butter while it cooks",
-   "Salting it heavily right before it hits the grill"
-  ],
-  "context": "In J. Kenji Lopez-Alt's Serious Eats 'Food Lab' test, two steaks were cooked to 125F: the one sliced immediately spilled a large puddle onto the board, while the rested steak left almost no liquid. America's Test Kitchen measured the same thing -- cut-right-away meat loses about 9-10% of its weight as juice on the board, but properly rested meat loses only about 2%, roughly a 60% cut in juice lost. 'Searing to seal in the juices' is a myth: a hot sear browns and flavors the surface, but it does not trap moisture. Source: foodfirefriends.com (Kenji/Serious Eats resting experiment); wildcountrymeats.com (America's Test Kitchen research)."
- },
- {
-  "tier": 2,
-  "question": "A cook wants her roast to finish at 135F, but she pulls it from the oven at 125F -- a full ten degrees early -- and sets it on the counter. Why take it out before it ever reaches the number she wants?",
-  "answer": "Heat from the hot outer layers keeps flowing inward and cooking the center",
-  "choices": [
-   "Heat from the hot outer layers keeps flowing inward and cooking the center",
-   "Cold air on the counter would otherwise chill the center too fast",
-   "The juices need the extra ten degrees of room to drain away",
-   "Meat shrinks less if it never reaches the full target temperature"
-  ],
-  "context": "This is 'carryover cooking.' The outer layers are hotter than the center, and heat can only flow 'downhill' toward the cooler middle, so the center's temperature keeps climbing after the food leaves the heat. How much it climbs depends on size: a thin steak or chicken piece coasts up only about 3-8F, but a big roast or whole turkey can rise 10-15F. That is why the rule of thumb is to pull beef roughly 3-10F below the doneness you actually want -- the bigger and hotter the cook, the further ahead you pull, or a perfect medium-rare can overshoot into overdone. Source: blog.thermoworks.com; americastestkitchen.com (carryover cooking)."
- },
- {
-  "tier": 3,
-  "question": "Two identical steaks come off the pan. You slice one right away and juice runs everywhere; you let the other sit five minutes and it stays juicy on the plate. During those five minutes, what actually happens inside the resting steak?",
-  "answer": "The muscle fibers relax as they cool and soak the juices back up",
-  "choices": [
-   "The muscle fibers relax as they cool and soak the juices back up",
-   "The outer crust hardens into a seal that traps the liquid inside",
-   "The melting fat spreads to fill the gaps between the fibers",
-   "The surface dries out so no more liquid can escape"
-  ],
-  "context": "Kenji Lopez-Alt describes the muscle fibers as tiny straws: the hotter the meat, the tighter the straw-ends are squeezed, forcing juice to the surface -- let it cool a little and they loosen and hold the liquid inside. Bigger cuts store more heat, so they need longer rests: a steak or chop about 5-10 minutes, a whole chicken 15-20, a turkey 30-45, and a brisket or pork butt 1-2 hours. (One food scientist, Dr. Greg Blonder, measured only a small juice difference in a ribeye and argues resting mostly lets the carryover finish and the temperature settle rather than dramatically sucking juice back in.) Source: foodfirefriends.com (Kenji 'straw' analogy); wildcountrymeats.com; amazingribs.com (Blonder)."
- },
- {
-  "tier": 1,
   "question": "Cut a steak the instant it leaves the hot pan and a puddle of juice floods the cutting board. What simple move keeps that juice inside the meat instead?",
   "answer": "Let it rest a few minutes before slicing",
   "choices": [
@@ -21214,6 +20230,18 @@
    "160\u00b0F"
   ],
   "context": "165\u00b0F is the number that kills Salmonella, the toughest pathogen in raw poultry, which is why every bit of chicken \u2014 whole, in pieces, or ground \u2014 goes to 165\u00b0F. Source: USDA FSIS Safe Minimum Internal Temperature Chart; Ohio State Univ. Extension, 'Chow Line.'"
+ },
+ {
+  "tier": 3,
+  "question": "Two identical steaks come off the grill; one is sliced right away, the other is left to sit a few minutes first. The rested steak loses far less juice onto the plate. Why does resting keep a steak juicier?",
+  "answer": "Its muscle fibers relax and soak the squeezed-out juices back in",
+  "choices": [
+   "Its muscle fibers relax and soak the squeezed-out juices back in",
+   "Cooling lets the fat set and trap the juices in place",
+   "The crust firms into a seal that locks the juices inside",
+   "Surface salt draws the escaping juices back inward"
+  ],
+  "context": "Heat drives the juices toward the center and tenses the muscle; resting lets the fibers loosen and reabsorb them, so a rested cut is juicier as well as safer. Source: Wikipedia, 'Carryover cooking'; WebstaurantStore.com."
  },
  {
   "tier": 4,
@@ -22308,6 +21336,18 @@
   "context": "Scurvy is simply vitamin C deficiency. The body needs vitamin C to build collagen \u2014 the 'glue' that holds skin, gums, and old scars together \u2014 so without it the gums bleed, teeth loosen, and even long-healed wounds fall apart. Source: Hektoen International, 'Plague of the Sea and the Spoyle of Mariners.'"
  },
  {
+  "tier": 2,
+  "question": "In 1747, a Royal Navy surgeon named James Lind ran one of the first controlled medical experiments in history: he took twelve scurvy-stricken sailors, split them into six pairs, and fed each pair a different suspected cure for the same six days. Only one pair recovered, one man fit for duty within the week. What had that pair been eating?",
+  "answer": "Oranges and lemons",
+  "choices": [
+   "Oranges and lemons",
+   "A garlic-and-horseradish paste",
+   "Daily mugs of cider",
+   "Cups of seawater"
+  ],
+  "context": "Only the citrus pair recovered \u2014 proof, in 1747, that oranges and lemons cured scurvy. But Lind worked purely by observation: vitamin C itself would not be discovered for roughly another 180 years, so he had no idea WHICH part of the fruit did the healing. Source: James Lind, 'A Treatise of the Scurvy' (1753); PMC, 'Putrid gums and Dead Men's Cloaths: James Lind aboard the Salisbury.'"
+ },
+ {
   "tier": 3,
   "question": "A generation after James Lind, Captain James Cook kept his crews free of scurvy across years-long Pacific voyages \u2014 even though fresh fruit rots in weeks and there was no room to store it anyway. Instead he had barrels of one humble, long-keeping food packed below deck by the ton. What was Cook's anti-scurvy secret?",
   "answer": "Sauerkraut",
@@ -22414,90 +21454,6 @@
    "The extra powder made the crumb tough and chewy"
   ],
   "context": "Double the baking powder and you make double the carbon-dioxide gas, but the batter's gluten net cannot hold the extra pressure, so the bubbles rupture and the cake collapses (and too much leavening can taste metallic). Bakers scale leavening to only about 1.5 times, or trim roughly an eighth of a teaspoon for every teaspoon. This is why baking is stricter than stovetop cooking: a stew forgives a rough double, just simmer longer and taste, but a cake's geometry, leavening, and browning all shift at once. Sources: mashed.com; pastrycal.com."
- },
- {
-  "tier": 2,
-  "question": "Scurvy killed some two million sailors in the age of sail \u2014 more than storms, shipwrecks, and enemy cannon combined. Month after month at sea, a crew's gums swelled and rotted and their teeth dropped out, yet no germ was to blame. The real killer was a food they had not tasted since leaving port. What had they gone without?",
-  "answer": "Fresh fruit and vegetables",
-  "choices": [
-   "Fresh fruit and vegetables",
-   "Fresh meat and fish",
-   "Fresh milk and eggs",
-   "Fresh bread and grain"
-  ],
-  "context": "The 'plague of the sea' was caused not by infection but by a diet of salt-meat and hard biscuit with no fresh produce. It killed an estimated two million sailors between Columbus's era and the 1850s; on George Anson's 1740-44 voyage, only a few hundred of about 2,000 men came home alive. One 16th-century ship's surgeon reported a sailor whose wound from 50 years earlier 'broke out afresh, as if it had never been healed.' Sources: sciencehistory.org, 'The Age of Scurvy'; en.wikipedia.org/wiki/Scurvy."
- },
- {
-  "tier": 2,
-  "question": "In 1747, aboard HMS Salisbury, naval surgeon James Lind took twelve scurvy-stricken sailors, split them into six pairs, and gave each pair a different suspected cure. Only one pair bounced back \u2014 one man was fit for duty in just six days, before the supply ran out. Which daily ration cured them?",
-  "answer": "Two oranges and a lemon",
-  "choices": [
-   "Two oranges and a lemon",
-   "A paste of garlic and mustard",
-   "A quart of rough cider",
-   "Half a pint of seawater"
-  ],
-  "context": "Lind's shipboard test is remembered as one of the first controlled clinical trials. His six remedies were cider, elixir of vitriol (sulfuric acid), vinegar, seawater, a spicy garlic-mustard-horseradish paste, and citrus (two oranges and one lemon a day). Only the citrus pair clearly recovered \u2014 one man fit for duty in six days, until the fruit ran out; the cider pair improved slightly, the other four not at all. Sources: jameslindlibrary.org, 'James Lind and scurvy 1747-1795'; en.wikipedia.org/wiki/James_Lind."
- },
- {
-  "tier": 3,
-  "question": "British sailors had to down a daily ration to keep scurvy at bay, and the practice saddled them with a teasing nickname \u2014 one that stuck to the whole navy, and in time to all Britons. Which nickname was it?",
-  "answer": "Limeys",
-  "choices": [
-   "Limeys",
-   "Tars",
-   "Salts",
-   "Jacks"
-  ],
-  "context": "British ships issued a daily citrus ration \u2014 lemon at first, then cheaper West Indian lime juice. Dock workers mocked the crews as 'lime-juicers' (1850s), soon shortened to 'limey,' and the name stuck to British sailors and then to all Britons. ('Tars,' 'salts,' and 'jacks' were older, general nicknames for any sailor.) Sources: en.wikipedia.org/wiki/Scurvy; sciencehistory.org, 'The Age of Scurvy'."
- },
- {
-  "tier": 3,
-  "question": "Captain James Cook sailed the Pacific for three straight years and lost almost no one to scurvy \u2014 a near-miracle for the time. Fresh citrus fruit rots within weeks, so instead he packed his hold with tons of a cheap preserved food and made every man eat it. What kept Cook's crew alive?",
-  "answer": "Barrels of sauerkraut",
-  "choices": [
-   "Barrels of sauerkraut",
-   "Barrels of salt pork",
-   "Barrels of ship's biscuit",
-   "Barrels of dried peas"
-  ],
-  "context": "Sauerkraut is cabbage preserved by fermenting rather than cooking, so it holds its vitamin C for months at sea \u2014 where salt-meat had none. Cook loaded roughly 20,000 lb of it on the Resolution (about 2 lb per man per week); accounts say only about one man (some say none) died of scurvy on the roughly three-year second voyage. Sources: modernfarmer.com, 'Magical Sour Cabbage'; British Library 'Untold Lives' on Cook's Resolution diet."
- },
- {
-  "tier": 4,
-  "question": "Here is the strangest part of the whole scurvy story: a cow, a horse, or a dog never gets it, but a human sailor does. Most animals build one particular nutrient inside their own bodies, so they never need it from food \u2014 but humans, apes, and guinea pigs lost that ability to a broken gene, so we must eat ours. Which nutrient can't our bodies make?",
-  "answer": "Vitamin C",
-  "choices": [
-   "Vitamin C",
-   "Vitamin A",
-   "Vitamin D",
-   "Vitamin K"
-  ],
-  "context": "The hidden nutrient in citrus, sauerkraut, and fresh greens is vitamin C (ascorbic acid). A broken gene called GULO leaves humans \u2014 along with apes, guinea pigs, capybaras, and most bats \u2014 unable to build our own, while a cow makes hers in the liver and never gets scurvy. Vitamin C was not even isolated until 1928 (Albert Szent-Gyorgyi won the 1937 Nobel Prize for it), so Lind in 1747 knew nothing of any 'vitamin' \u2014 he only saw that citrus worked, and wrongly credited its sourness, which is why acidic-but-useless remedies like vinegar failed. Sources: en.wikipedia.org/wiki/Vitamin_C; en.wikipedia.org/wiki/James_Lind."
- },
- {
-  "tier": 4,
-  "question": "The eeriest sign of scurvy: on a starving sailor, old scars from wounds healed decades earlier would slowly split open again, and long-mended broken bones came apart. His body had run out of the raw material for the 'glue' that knits skin, gums, and old scars together. What is that living glue?",
-  "answer": "Collagen",
-  "choices": [
-   "Collagen",
-   "Keratin",
-   "Cartilage",
-   "Calcium"
-  ],
-  "context": "Vitamin C is what the body uses to build collagen, the protein 'glue' that holds skin, gums, scars, and bone together. Starve the body of the vitamin and the collagen fails, which is exactly why long-healed wounds and even old fractures came undone \u2014 the 16th-century surgeon's sailor whose 50-year-old wound reopened 'as if it had never been healed' was watching his collagen dissolve. Sources: en.wikipedia.org/wiki/Vitamin_C; en.wikipedia.org/wiki/Scurvy."
- },
- {
-  "tier": 5,
-  "question": "Here is the maddening twist: some ships DID carry lemon juice, and their crews still rotted with scurvy. The juice had been treated so it could survive months at sea \u2014 but one common way of preparing and storing it silently destroyed the very thing that cured the disease. Which method wrecked the cure?",
-  "answer": "Boiling it down in copper kettles",
-  "choices": [
-   "Boiling it down in copper kettles",
-   "Preserving it with heavy salt",
-   "Drying it into hard cakes",
-   "Cutting it with strong rum"
-  ],
-  "context": "Both heat and copper destroy vitamin C. Lind himself advised boiling citrus juice into a storable concentrate called 'rob,' and juice was often heated or kept in copper vessels \u2014 so the 'cure' frequently arrived at sea useless. Partly for that reason the Royal Navy waited until 1795 (pushed by physician Gilbert Blane) to issue lemon juice fleet-wide \u2014 nearly 50 years after Lind's 1747 trial. Sources: jameslindlibrary.org, 'James Lind and scurvy 1747-1795'; sciencehistory.org, 'The Age of Scurvy'."
  },
  {
   "tier": 1,
@@ -26521,78 +25477,6 @@
  },
  {
   "tier": 1,
-  "question": "Indian curry, Thai tom yum soup, and mouth-searing Sichuan hotpot are all built around chili heat today. Yet 600 years ago, cooks in India, Thailand, and China had never even seen a chili \u2014 the fiery little fruit still grew wild only in its faraway original homeland. Which part of the world was the chili's true birthplace?",
-  "answer": "The Americas",
-  "choices": [
-   "The Americas",
-   "The Spice Islands",
-   "The Middle East",
-   "North Africa"
-  ],
-  "context": "Every chili on Earth traces back to wild plants along the Andes of South America and in Mexico \u2014 all part of the Americas. Not one chili grew anywhere in Asia until after Columbus reached the Americas in 1492. Source: archive-yaleglobal.yale.edu 'Chili: Small Fruit Sets Global Palettes on Fire'; en.wikipedia.org/wiki/Chili_pepper."
- },
- {
-  "tier": 2,
-  "question": "The chili exploded across Asia, but it didn't get there on its own \u2014 and it wasn't Columbus who carried it. One seafaring trading people picked up the fiery fruit in the Americas and spread it around India, Southeast Asia, and China faster than any spice before it. Who carried the chili to Asia?",
-  "answer": "Portuguese traders",
-  "choices": [
-   "Portuguese traders",
-   "Arab merchants",
-   "Dutch sailors",
-   "Venetian traders"
-  ],
-  "context": "Portuguese traders, not Columbus himself, carried the chili out of the Americas and planted it at their trading posts across Asia \u2014 Goa in India, Colombo in Sri Lanka, Macao in China, Nagasaki in Japan \u2014 spreading it faster than any spice before it. Source: legalnomads.com 'A Brief History of Chili Peppers'; en.wikipedia.org/wiki/Chili_pepper."
- },
- {
-  "tier": 2,
-  "question": "Here's a puzzle for anyone who thinks Indian food only got hot once the chili arrived. For thousands of years BEFORE the chili crossed the ocean, Indian kitchens were already famous for pungent, biting dishes. Two of India's own homegrown seasonings supplied that old heat. Which pair gave Indian cooking its bite for all those centuries?",
-  "answer": "Black pepper and ginger",
-  "choices": [
-   "Black pepper and ginger",
-   "Mustard and garlic",
-   "Onion and radish",
-   "Fenugreek and asafoetida"
-  ],
-  "context": "When the chili finally arrived, Indian cooks were already used to fiery food \u2014 for ages they'd built their heat from pungent black pepper and biting ginger, so the newcomer slotted right in. Source: legalnomads.com 'A Brief History of Chili Peppers'; archive-yaleglobal.yale.edu 'Chili: Small Fruit Sets Global Palettes on Fire'."
- },
- {
-  "tier": 3,
-  "question": "The chili didn't even reach China until around 1570 \u2014 so what gave Chinese food its famous kick for the thousands of years before that? Sichuan cooks used their own native spice, huajiao, or 'flower pepper.' It had seasoned Chinese food for ages. What does Sichuan pepper actually do to your mouth?",
-  "answer": "Makes your lips buzz and go numb",
-  "choices": [
-   "Makes your lips buzz and go numb",
-   "Sets your whole throat on fire",
-   "Turns your tongue bright blue",
-   "Fills your mouth with sweetness"
-  ],
-  "context": "Sichuan pepper (huajiao, 'flower pepper') isn't a chili and doesn't burn \u2014 it delivers a buzzing, tingling numbness that makes your lips vibrate. It flavored Chinese cooking for thousands of years before chili arrived around 1570. Source: sixthtone.com 'How the Chili Pepper Conquered China'; 50hertzfoods.com."
- },
- {
-  "tier": 5,
-  "question": "A chili plant needs an animal to eat its peppers and scatter the seeds far away, unharmed. The fiery burn is really a filter: most creatures that try one get a mouthful of fire and never come back. But one kind of animal feels no burn whatsoever \u2014 it gobbles chilis happily and drops the seeds somewhere new to sprout. Which animals shrug off the chili's heat completely?",
-  "answer": "Birds",
-  "choices": [
-   "Birds",
-   "Bats",
-   "Monkeys",
-   "Squirrels"
-  ],
-  "context": "Birds don't feel chili heat at all \u2014 their version of the heat-sensing nerve simply ignores capsaicin. That's the whole point of the burn: birds eat the peppers and scatter the seeds unharmed, while mammals, whose teeth would grind the seeds to dust, learn to stay away. Source: en.wikipedia.org/wiki/Capsaicin; archive-yaleglobal.yale.edu 'Chili: Small Fruit Sets Global Palettes on Fire'."
- },
- {
-  "tier": 5,
-  "question": "Every seasoned cook knows the trick: when a chili has set your mouth ablaze, a glass of milk cools the fire far better than water ever could. Scientists even ran the test, and milk won easily. What is it about milk that lets it beat water at killing chili burn?",
-  "answer": "Its fat and proteins rinse away the oily heat",
-  "choices": [
-   "Its fat and proteins rinse away the oily heat",
-   "It is simply colder than plain water",
-   "It coats your tongue in a layer of sugar",
-   "It cancels the heat the way an acid would"
-  ],
-  "context": "The chili's heat compound is an oil, and oil won't dissolve in water \u2014 so a gulp of water just sloshes the fire around to new spots. Milk works because a protein in it called casein grabs the oily compound and rinses it off your tongue, the way soap cuts through grease. A 2019 test of seven drinks found skim and whole milk beat everything, while water barely helped. Source: en.wikipedia.org/wiki/Capsaicin; edu.rsc.org 'Why chilli burns your mouth'; pmc.ncbi.nlm.nih.gov/articles/PMC6620146/; health.clevelandclinic.org 'Does milk help with spicy food'."
- },
- {
-  "tier": 1,
   "question": "Your mouth is blazing after a fiery chili and you bolt for the fridge, ready to gulp down anything cold. Which drink actually cools a chili burn best?",
   "answer": "a glass of milk",
   "choices": [
@@ -28140,90 +27024,6 @@
   "context": "Once the fork took over the job of spearing and lifting food, the dinner knife no longer needed a sharp point, so blunt, rounded tips became standard. By tradition, Cardinal Richelieu (around 1637) first had knife points filed round because he was disgusted by guests picking their teeth with them; in 1669 Louis XIV banned pointed table knives outright to cut down on violence. (Source: Wikipedia, 'Table knife'; sciencelens.co.nz)"
  },
  {
-  "tier": 2,
-  "question": "About 10,000 years ago in the Fertile Crescent, wandering hunter-gatherers settled down and became the world's first farmers. Archaeologists digging their oldest villages find the same charred crops again and again \u2014 the very first plants humans ever farmed. What kind of food were these founding crops?",
-  "answer": "Cereal grains, like wheat and barley",
-  "choices": [
-   "Cereal grains, like wheat and barley",
-   "Leafy greens, like lettuce and cabbage",
-   "Tree fruits, like apples and figs",
-   "Root vegetables, like carrots and beets"
-  ],
-  "context": "Farming was born in the Fertile Crescent \u2014 the arc of land from the Jordan River to the Tigris and Euphrates \u2014 about 10,000 years ago, and its founding foods were grains plus their protein partners, the legumes (lentils, peas, chickpeas). Grains could be dried, stored through winter, and ground into flour, which is exactly what let people stop wandering and build permanent villages. Source: en.wikipedia.org/wiki/Fertile_Crescent"
- },
- {
-  "tier": 2,
-  "question": "The first Fertile Crescent farmers tamed a small package of founding crops. Workers combed and spun the tough stalks of one of them into thread for cloth, and pressed its little seeds for oil. Which founder crop gave the first farms their linen and linseed oil?",
-  "answer": "Flax",
-  "choices": [
-   "Flax",
-   "Barley",
-   "Lentil",
-   "Pea"
-  ],
-  "context": "That crop was flax \u2014 the first plant humans domesticated NOT for food but for fiber and oil, around 9,900 years ago. Its fibers are woven into linen cloth and its seeds still give us linseed (flax) oil. It was the odd one out among the eight 'founder crops' of the first farms. Source: en.wikipedia.org/wiki/Neolithic_founder_crops"
- },
- {
-  "tier": 2,
-  "question": "Picture a farmer long before farming was mastered, walking into a field of WILD wheat, ripe and golden. He starts cutting \u2014 but a wild field like this is nearly impossible to harvest, because by the time the grain is ripe, most of it is already gone. What does wild wheat do the instant its seeds ripen?",
-  "answer": "Shatters, flinging its ripe seeds to the ground",
-  "choices": [
-   "Shatters, flinging its ripe seeds to the ground",
-   "Rots on the stalk within a few hours",
-   "Is stripped bare by birds before dawn",
-   "Dries to dust and blows away on the wind"
-  ],
-  "context": "Wild wheat and barley 'shatter' \u2014 their ripe seed-heads break apart and scatter, which is how a wild plant sows itself. Domesticated grain carries a single mutation that keeps the ripe seeds locked onto the head, so a farmer can reap a whole field at once. Humans unknowingly bred this trait in over just 20-200 years \u2014 it's the change that separates a farmed grain from a wild one. Source: en.wikipedia.org/wiki/Einkorn_wheat"
- },
- {
-  "tier": 3,
-  "question": "The very first wheat humans ever farmed was nothing like today's tall bread wheat. It was a scrawny ancestor grain, so plain that each little spikelet on its ear ripened just a SINGLE grain \u2014 and the farmers who tamed it, roughly 10,000 years ago, named it for exactly that: 'single grain.' What is this founding ancestor wheat called?",
-  "answer": "Einkorn",
-  "choices": [
-   "Einkorn",
-   "Emmer",
-   "Spelt",
-   "Durum"
-  ],
-  "context": "'Einkorn' is German for 'single grain,' named because each spikelet holds only one kernel. It was among the first wheats humans ever tamed, about 10,000 years ago, and \u2014 with emmer wheat and barley \u2014 one of the three founding cereals of the first farms. Modern bread wheat came much later. Source: en.wikipedia.org/wiki/Einkorn_wheat"
- },
- {
-  "tier": 3,
-  "question": "The pharaohs of ancient Egypt ran their whole world on one grain. It filled the daily bread that fed the pyramid workers, and it brewed the thick beer handed out as their wages. It wasn't modern bread wheat or barley, but an ancient ancestor wheat. Which wheat fed ancient Egypt?",
-  "answer": "Emmer",
-  "choices": [
-   "Emmer",
-   "Einkorn",
-   "Spelt",
-   "Durum"
-  ],
-  "context": "Emmer was the main wheat of ancient Egypt all through the age of the pharaohs \u2014 both their bread and their beer were made from it. Emmer and einkorn were the two ancestor wheats of the first farms; DNA traces both back to the slopes of the Karaca Dag mountains in southeastern Turkey. Source: en.wikipedia.org/wiki/Emmer"
- },
- {
-  "tier": 4,
-  "question": "The soft, fluffy bread wheat that rises into a tall loaf \u2014 the wheat behind about 95% of all the wheat grown today \u2014 did not exist for the first farmers. It appeared thousands of years later, around 8,000 years ago, when their emmer wheat crossed in the wild with a scruffy roadside weed. So today's bread is, quite literally, part weed. What weed's genes are hiding in your sandwich loaf?",
-  "answer": "Goatgrass",
-  "choices": [
-   "Goatgrass",
-   "Crabgrass",
-   "Ryegrass",
-   "Foxtail"
-  ],
-  "context": "The weed was goatgrass (Aegilops tauschii). When emmer wheat crossed with it near the Caspian Sea, the goatgrass handed the new hybrid its extra gluten \u2014 the stretchy proteins that let bread dough trap gas and rise into a light loaf. That hybrid is common bread wheat, and today it makes up about 95% of the world's wheat. Source: en.wikipedia.org/wiki/Common_wheat"
- },
- {
-  "tier": 4,
-  "question": "Farming wasn't invented just once. On continent after continent, people tamed a local wild grass into their own founding grain \u2014 each group with no idea that farmers a world away were doing the very same thing. In the Balsas River valley of ancient Mexico, about 9,000 years ago, farmers tamed a wild grass into the grain their whole civilization would be built on. Which grain did ancient Mexico give the world?",
-  "answer": "Corn",
-  "choices": [
-   "Corn",
-   "Rice",
-   "Barley",
-   "Sorghum"
-  ],
-  "context": "That grain was corn \u2014 also called maize \u2014 domesticated in Mexico's Balsas River valley about 9,000 years ago from a scraggly wild grass called teosinte. Each part of the world tamed its own founding grain independently: wheat and barley in the Middle East, rice along China's Yangtze River, corn in Mexico, and sorghum and millet in Africa. So 'What was the first crop?' has a different answer on every continent. Source: en.wikipedia.org/wiki/Maize"
- },
- {
   "tier": 1,
   "question": "Across most of the American South, pitmasters smoke PORK \u2014 shoulders, ribs, pulled pork. But one state built its whole barbecue tradition on smoked BEEF brisket instead. Which state is the beef outlier?",
   "answer": "Texas",
@@ -29038,150 +27838,6 @@
    "It was burned to keep grain prices high."
   ],
   "context": "For most of the famine Ireland stayed a net exporter of food. In 1847 alone almost 4,000 ships carried food out to ports like Bristol, Liverpool, Glasgow and London, and nearly 10,000 calves were shipped to Britain \u2014 about a third more than the year before. Whether the era's landlords and free-market policy turned a crop failure into mass death is still fiercely argued by historians; the plain fact is that food kept leaving Ireland while its people starved. Source: historyireland.com/food-exports-from-ireland-1846-47 (Cecil Woodham-Smith, The Great Hunger)."
- },
- {
-  "tier": 1,
-  "question": "A chef sears one steak in a screaming-hot pan until it wears a dark-brown crust, then poaches an identical steak in gently simmering water until it is grey and pale. Side by side, they taste like totally different foods. What did the crust give the seared steak that the pale one never got?",
-  "answer": "Brand-new flavor molecules built by the heat",
-  "choices": [
-   "Brand-new flavor molecules built by the heat",
-   "Juices sealed inside by the browned crust",
-   "Cooking oil soaked deep into the meat",
-   "Extra salt concentrated on the dry surface"
-  ],
-  "context": "Browning is not just 'more cooked' \u2014 the heat forges brand-new flavor and aroma molecules that simply do not exist in pale, boiled meat, which is why a seared crust tastes nothing like a poached piece of the same steak. (The old idea that searing 'seals in juices' is a myth.) Source: https://en.wikipedia.org/wiki/Maillard_reaction"
- },
- {
-  "tier": 1,
-  "question": "Fresh green coffee beans, straight off the plant, smell grassy and taste harsh and sour \u2014 nothing at all like the coffee in your mug. What has to happen to those raw green beans before they taste and smell like real coffee?",
-  "answer": "They must be roasted until brown",
-  "choices": [
-   "They must be roasted until brown",
-   "They must be soaked in water overnight",
-   "They must be dried in the hot sun",
-   "They must be frozen, then thawed"
-  ],
-  "context": "Raw coffee beans really are green, grassy and sour. Roasting browns them and builds the hundreds of roasty, chocolatey aroma compounds we call 'coffee' \u2014 the very same browning chemistry that flavors a steak crust and dark toast. Source: https://en.wikipedia.org/wiki/Maillard_reaction"
- },
- {
-  "tier": 2,
-  "question": "A cook wants the fastest, darkest crust on a pan-seared steak. Right before the steak hits the ripping-hot pan, what does she do to its surface to help it brown better?",
-  "answer": "Blot it bone-dry with a paper towel",
-  "choices": [
-   "Blot it bone-dry with a paper towel",
-   "Coat it with a thin film of water",
-   "Dust it with a pinch of sugar",
-   "Warm it to room temperature first"
-  ],
-  "context": "A wet surface cannot get hotter than boiling water until the water evaporates, so the pan wastes its heat steaming instead of searing. Blot the steak bone-dry and the surface leaps straight to browning temperature \u2014 a faster, darker crust. Source: Kenji Lopez-Alt, Serious Eats (seriouseats.com)."
- },
- {
-  "tier": 2,
-  "question": "Sniff the crust of a seared steak, a slice of dark toast, a fresh pot of roasted coffee, and a panful of fried onions \u2014 the very same deep, toasty, savory smell rises off every one of them. Astonishingly, it is all made by a single chemical reaction. What is that reaction called?",
-  "answer": "Maillard reaction",
-  "choices": [
-   "Maillard reaction",
-   "Sugar caramelization",
-   "Yeast fermentation",
-   "Fat oxidation"
-  ],
-  "context": "It is the Maillard reaction \u2014 heat driving sugars to react with proteins and amino acids. The toasty smell of a steak crust, dark toast, roasted coffee and fried onions is all this one reaction at work. Source: https://en.wikipedia.org/wiki/Maillard_reaction"
- },
- {
-  "tier": 2,
-  "question": "Raw onions are sharp, pungent, and make your eyes water. But cook them low and slow until they collapse into a deep-brown, jammy tangle, and their flavor changes into something else completely. What do slow-browned onions taste like?",
-  "answer": "Sweet and savory",
-  "choices": [
-   "Sweet and savory",
-   "Sour and sharp",
-   "Bitter and smoky",
-   "Salty and metallic"
-  ],
-  "context": "As onions cook down they brown through the Maillard reaction: both their natural sugars and their proteins react, so the sharp raw bite turns into deep, sweet-and-savory richness \u2014 not merely softer, but a whole new flavor. Source: https://en.wikipedia.org/wiki/Maillard_reaction"
- },
- {
-  "tier": 3,
-  "question": "Jean-Marie Lehn, a chemist who won the Nobel Prize, once made a bold claim about the humble browning that happens whenever anyone sears a steak or toasts a slice of bread. Of every chemical reaction on the entire planet, Lehn called it the ___.",
-  "answer": "most widely practiced one in the world",
-  "choices": [
-   "most widely practiced one in the world",
-   "oldest one ever discovered",
-   "single most dangerous one known",
-   "fastest one science has ever timed"
-  ],
-  "context": "Because almost everyone on Earth cooks, browning may be the most-run chemistry there is. Nobel laureate Jean-Marie Lehn called the Maillard reaction 'by far, the most widely practiced chemical reaction in the world.' Source: https://en.wikipedia.org/wiki/Maillard_reaction"
- },
- {
-  "tier": 3,
-  "question": "You can boil a chicken breast for a full hour and it will never turn golden-brown \u2014 yet roast or fry that same breast and it browns in minutes. No matter how long it stays in the pot, the wet surface simply will not brown. Why is browning impossible in boiling water?",
-  "answer": "Boiling water pins the surface near boiling, too cool to brown",
-  "choices": [
-   "Boiling water pins the surface near boiling, too cool to brown",
-   "Boiling rinses away all the sugars that browning needs",
-   "The rising steam forms a shield that blocks the heat",
-   "Water turns the surface too acidic for browning to start"
-  ],
-  "context": "Water in a pot stays stuck at about 100 C (212 F), but browning needs a much hotter, drier surface \u2014 roughly 140-165 C (280-330 F). Until the surface water boils off, it cannot get hot enough, so boiled food stays pale. Source: https://en.wikipedia.org/wiki/Maillard_reaction ; Kenji Lopez-Alt, Serious Eats."
- },
- {
-  "tier": 3,
-  "question": "A baker wants her bread rolls and pie crust to bake up a deeper, glossier golden-brown than plain dough ever manages. Just before they go in the oven, she brushes the raw tops with a thin coating. What does she brush on to boost the browning?",
-  "answer": "A wash of beaten egg",
-  "choices": [
-   "A wash of beaten egg",
-   "A splash of cold water",
-   "A dusting of plain flour",
-   "A pinch of black pepper"
-  ],
-  "context": "An egg wash (milk or honey work too) paints extra protein and sugar onto the surface \u2014 exactly the fuel the browning reaction feeds on \u2014 so the crust bakes up deeper and glossier. Source: food52.com ; thekitchn.com."
- },
- {
-  "tier": 4,
-  "question": "When a loaf bakes, the brown COLOR of its crust is not just the old pale dough getting darker \u2014 it is built from big, brand-new molecules that form at the very same moment as the toasty aroma, so the color and the flavor are born together. Food chemists gave these brown-color molecules their own name. What are they called?",
-  "answer": "Melanoidins",
-  "choices": [
-   "Melanoidins",
-   "Carotenoids",
-   "Tannins",
-   "Caramels"
-  ],
-  "context": "They are melanoidins \u2014 big brown pigment molecules built during the Maillard reaction. They form right alongside the aroma compounds, which is why a food's brown color and its roasty flavor always appear together. Source: https://en.wikipedia.org/wiki/Maillard_reaction"
- },
- {
-  "tier": 4,
-  "question": "Melt white sugar in a dry pan and it slowly turns amber and smells of butterscotch \u2014 that is caramelization, sugar all on its own breaking down in the heat. The browning on a seared steak looks similar, but scientists insist it is a different reaction entirely. What does a steak's browning need that plain caramelization does not?",
-  "answer": "Protein, in the form of amino acids",
-  "choices": [
-   "Protein, in the form of amino acids",
-   "Far more heat than caramel ever reaches",
-   "A splash of acid, like lemon or vinegar",
-   "Oxygen drawn in from the open air"
-  ],
-  "context": "Caramelization is sugar alone breaking down in heat; the Maillard reaction needs a reducing sugar PLUS amino acids and protein. That protein is why a steak crust tastes savory and meaty, not just sweet like caramel. Source: cookist.com ; formul.io/science/maillard-reaction-caramelization-science"
- },
- {
-  "tier": 5,
-  "question": "A soft pretzel comes out of the oven with a skin far darker, glossier and more mahogany-brown than a plain roll baked right beside it. The secret is that pretzel dough gets dipped into a special bath just before baking that turbo-charges its browning. What kind of bath gives a pretzel that deep-brown skin?",
-  "answer": "A baking-soda bath",
-  "choices": [
-   "A baking-soda bath",
-   "A sugar-syrup bath",
-   "A salt-brine bath",
-   "A vinegar bath"
-  ],
-  "context": "Traditional pretzels are dipped in a caustic lye bath (bakers also use baking soda); the alkaline surface supercharges the Maillard reaction into that deep, glossy mahogany skin. Source: https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
- },
- {
-  "tier": 5,
-  "question": "In 1912 a French chemist and physician, Louis-Camille Maillard, sat in his lab heating simple food molecules together \u2014 but he was not trying to cook a thing. His flasks kept filling with brown residue that smelled unmistakably of roasting food. What had Maillard actually been trying to make when he stumbled onto the browning reaction that now carries his name?",
-  "answer": "A protein, the body's basic material",
-  "choices": [
-   "A protein, the body's basic material",
-   "A sweetener made from burnt sugar",
-   "A brown dye for coloring cloth",
-   "A medicine to preserve cooked meat"
-  ],
-  "context": "Maillard was trying to synthesize proteins by heating amino acids with sugar; the brown colors and cooked-food smell were an 'accident' that founded modern food chemistry. He described it in 1912, and the reaction has borne his name ever since. Source: https://cen.acs.org/articles/90/i40/Maillard-Reaction-Turns-100.html ; https://en.wikipedia.org/wiki/Louis_Camille_Maillard"
  },
  {
   "tier": 1,
@@ -30790,114 +29446,6 @@
    "tropical coconut oil"
   ],
   "context": "The 2017 AHA Presidential Advisory (Sacks et al., in Circulation) held the line: randomized trials swapping saturated fat for polyunsaturated vegetable oil cut cardiovascular disease by about 30% \u2014 a reduction the authors compared to statin drugs. This is the strongest steel-man FOR the old view. Source: Sacks FM et al. 2017, 'Dietary Fats and Cardiovascular Disease,' AHA Presidential Advisory, Circulation."
- },
- {
-  "tier": 1,
-  "question": "From a mild jalape\u00f1o slice to the fieriest pepper on Earth, a chili's entire burn comes from one single chemical the plant makes. Name that chemical.",
-  "answer": "capsaicin",
-  "choices": [
-   "capsaicin",
-   "menthol",
-   "caffeine",
-   "tannin"
-  ],
-  "context": "It's capsaicin. Whether a chili is barely warm or a record-smashing monster, this one compound is the source of all the heat \u2014 and its concentration is exactly what the Scoville scale, invented by pharmacist Wilbur Scoville in 1912, was built to measure. Source: en.wikipedia.org/wiki/Scoville_scale; nist.gov, 'How do you measure the heat of a pepper?'"
- },
- {
-  "tier": 2,
-  "question": "Bite into something way too spicy and your instinct is to gulp water \u2014 but water actually makes the burn feel WORSE, smearing the oily capsaicin around instead of rinsing it away. What cold drink truly calms the fire?",
-  "answer": "milk",
-  "choices": [
-   "milk",
-   "soda",
-   "iced tea",
-   "lemonade"
-  ],
-  "context": "Cold milk. Because capsaicin is an oil, water just spreads it across your mouth; a protein in milk called casein grabs the oily capsaicin and carries it off your nerve endings. Source: en.wikipedia.org/wiki/Capsaicin."
- },
- {
-  "tier": 2,
-  "question": "In 2005, scientists confirmed the very first chili pepper ever to blast past one MILLION Scoville heat units \u2014 roughly 170 times hotter than a bottle of Tabasco sauce. What is this record-breaking chili called?",
-  "answer": "the ghost pepper",
-  "choices": [
-   "the ghost pepper",
-   "the Carolina Reaper",
-   "the Trinidad Scorpion",
-   "the Komodo Dragon"
-  ],
-  "context": "The ghost pepper, or bhut jolokia. Paul Bosland's Chile Pepper Institute at New Mexico State University measured it at about 1,001,304 SHU using HPLC, and Guinness crowned it the world's hottest pepper in 2007. Source: en.wikipedia.org/wiki/Bhut_jolokia."
- },
- {
-  "tier": 3,
-  "question": "Capsaicin never raises your mouth's temperature by even one degree \u2014 hold a thermometer to your tongue and nothing is hot. Yet the sensation is unbearable. Its trick is to switch on one specific nerve sensor. What job is that sensor actually meant to do?",
-  "answer": "warn you that you're touching something dangerously hot",
-  "choices": [
-   "warn you that you're touching something dangerously hot",
-   "tell you when a food has turned bitter or spoiled",
-   "sense when your mouth has gone freezing cold",
-   "feel the sharp sting of a cut or a scrape"
-  ],
-  "context": "It hijacks your real heat alarm. Capsaicin latches onto a receptor called TRPV1 \u2014 the very one that fires when you touch something hotter than about 43\u00b0C \u2014 so your brain screams 'burning!' even though nothing is actually hot. Source: en.wikipedia.org/wiki/Capsaicin; ncbi.nlm.nih.gov, PMC6966804."
- },
- {
-  "tier": 3,
-  "question": "Everybody 'knows' the fieriest part of a chili is its seeds, so cooks scrape them out to tame a dish. But the seeds themselves make no capsaicin at all. Where is a pepper's heat really concentrated?",
-  "answer": "in the pale ribs lining the inner wall",
-  "choices": [
-   "in the pale ribs lining the inner wall",
-   "in the glossy outer skin",
-   "in the green stem and cap",
-   "evenly throughout the flesh"
-  ],
-  "context": "In the pale, spongy ribs \u2014 the placental tissue \u2014 that run along the inner wall where the seeds attach; the seeds only taste hot because they've been pressed against that tissue. Source: en.wikipedia.org/wiki/Capsaicin."
- },
- {
-  "tier": 3,
-  "question": "Some people love fiercely spicy food so much they keep chasing hotter peppers \u2014 sweating, teary-eyed, but grinning through the 'chili high.' The pain of the burn actually makes your brain release a surge of its own feel-good chemicals, the same ones behind a runner's high. What are they called?",
-  "answer": "endorphins",
-  "choices": [
-   "endorphins",
-   "adrenaline",
-   "dopamine",
-   "serotonin"
-  ],
-  "context": "Endorphins, the body's own natural painkillers. Your brain floods them out to fight the pain of the capsaicin burn, and that pleasurable rush is a big reason heat-lovers keep coming back for more. Source: en.wikipedia.org/wiki/Capsaicin."
- },
- {
-  "tier": 4,
-  "question": "A wild chili plant pours energy into making capsaicin, a chemical that turns its own ripe fruit painful to eat \u2014 which sounds self-defeating. But biologists say the heat is really a shield guarding one part of the plant. What is the burn protecting?",
-  "answer": "its seeds, from animals that would chew them up",
-  "choices": [
-   "its seeds, from animals that would chew them up",
-   "its leaves, from swarms of hungry caterpillars",
-   "its roots, from burrowing underground pests",
-   "its flowers, from an early frost"
-  ],
-  "context": "Its seeds. Capsaicin evolved as a chemical weapon to drive off seed-crushing mammals \u2014 whose grinding molars would destroy the seeds \u2014 and to fight seed-rotting fungi. The heat is a defense, not an accident. Source: en.wikipedia.org/wiki/Capsaicin."
- },
- {
-  "tier": 5,
-  "question": "A chili's fiery capsaicin drives off most animals that try to eat it \u2014 yet one group of creatures gulps down whole peppers and feels no burn at all, because their nerves simply don't respond to capsaicin. They swallow the fruit and scatter the seeds, unharmed, in their droppings. Which animals are the pepper's chosen seed-carriers?",
-  "answer": "birds",
-  "choices": [
-   "birds",
-   "reptiles",
-   "fish",
-   "insects"
-  ],
-  "context": "Birds. The receptor that capsaicin fools in mammals doesn't react to it in birds at all, so they feel nothing. A mammal would grind the seeds to bits with its molars \u2014 but a bird swallows them whole and plants them, intact, wherever it flies. Source: en.wikipedia.org/wiki/Capsaicin."
- },
- {
-  "tier": 5,
-  "question": "For a solid decade the Carolina Reaper reigned as the Guinness-certified hottest pepper alive. Then in 2023 the very breeder who created the Reaper, American Ed Currie, dethroned his own champion with an even fiercer chili he'd spent years crossbreeding. What did Currie name the new record-holder?",
-  "answer": "Pepper X",
-  "choices": [
-   "Pepper X",
-   "Trinidad Scorpion",
-   "Dragon's Breath",
-   "Komodo Dragon"
-  ],
-  "context": "Pepper X. Grown by Currie's PuckerButt Pepper Company in South Carolina, it averaged about 2,693,000 SHU when Winthrop University tested it \u2014 far above the Reaper's ~1.64 million \u2014 and it's a cross of a Carolina Reaper with a pepper a friend had sent him. Source: guinnessworldrecords.com (Oct 2023); en.wikipedia.org/wiki/Pepper_X."
  },
  {
   "tier": 1,
@@ -32773,78 +31321,6 @@
  },
  {
   "tier": 1,
-  "question": "The word 'tomato' barely changed on its way into English - it comes almost straight from 'tomatl,' the name the fruit already carried in the language of a great empire in the Americas that grew it and sold it in bustling markets. Which people gave the tomato its name?",
-  "answer": "The Aztecs",
-  "choices": [
-   "The Aztecs",
-   "The Maya",
-   "The Inca",
-   "The Olmec"
-  ],
-  "context": "'Tomato' comes straight from the Aztec (Nahuatl) word 'tomatl,' built on a verb meaning 'to swell' - so it roughly means 'the plump, swelling fruit.' The tomato is a New World plant that grew only in the Americas; Aztec markets in Tenochtitlan sold many kinds long before Europe knew it existed. Spanish took 'tomatl' as 'tomate,' which English reshaped into 'tomato.' Sources: Merriam-Webster, 'Words from Nahuatl'; Wikipedia, 'Tomato'; Nahuatl Dictionary (Wired Humanities)."
- },
- {
-  "tier": 2,
-  "question": "A restaurant boasts that its whole menu is 'straight from ancient Rome': olive tapenade, honey-roasted figs, crusty garlic bread - and a steaming bowl of tomato sauce. A food historian laughs, because one dish could not possibly have existed in Caesar's Rome. Which one gives the fake away?",
-  "answer": "The tomato sauce",
-  "choices": [
-   "The tomato sauce",
-   "The olive tapenade",
-   "The honey-roasted figs",
-   "The garlic bread"
-  ],
-  "context": "There were no tomatoes anywhere in Europe before Columbus - the fruit crossed the Atlantic only after 1492, carried home on Spanish ships. So no Roman and no medieval cook ever tasted tomato sauce, though olives, figs, honey, and garlic were everyday Roman foods. Tomato cookery is entirely post-Columbian. Source: Wikipedia, 'Tomato.'"
- },
- {
-  "tier": 2,
-  "question": "The Italian word for tomato is 'pomodoro' - not a borrowed Aztec word like the English 'tomato,' but the astonished name an Italian botanist coined for the strange new fruit that reached his garden in the 1540s. What does 'pomodoro' literally translate to?",
-  "answer": "Golden apple",
-  "choices": [
-   "Golden apple",
-   "Sun apple",
-   "Red apple",
-   "Blood apple"
-  ],
-  "context": "The Italian botanist Pietro Andrea Mattioli described the fruit in 1544 and called it 'pomi d'oro' - 'golden apples,' likely after an early yellow variety. That name became the modern Italian word 'pomodoro.' As fear of the fruit spread in the 1700s, the 'golden apple' was sometimes rebranded a 'poison apple.' Sources: Wikipedia, 'Tomato'; Smithsonian Magazine."
- },
- {
-  "tier": 3,
-  "question": "When tomatoes first reached European gardens in the 1500s, people grew them only to admire and were afraid to eat them. Botanists had realized the tomato was a close plant-family cousin of a notorious wild plant Europeans already feared as a deadly poison - so they assumed the tasty-looking newcomer must be just as lethal. Which poisonous plant is the tomato related to?",
-  "answer": "Belladonna",
-  "choices": [
-   "Belladonna",
-   "Hemlock",
-   "Wolfsbane",
-   "Foxglove"
-  ],
-  "context": "The tomato belongs to the nightshade family (Solanaceae) - the same family as belladonna, or deadly nightshade, whose berries were used as poison. Because the tomato's plant and fruit resembled its dangerous relative, herbalists assumed it too was deadly, and early Europeans grew it only for looks; one Florentine wrote the plants 'were to be sought only for their beauty.' Sources: Wikipedia, 'Tomato'; Smithsonian Magazine."
- },
- {
-  "tier": 3,
-  "question": "For more than 200 years, wealthy Europeans who dared to eat tomatoes sometimes fell violently ill afterward - seeming to prove the fruit was poison. Yet poorer families, who owned no fine tableware, ate the very same tomatoes and stayed perfectly healthy. According to the popular story, what was really poisoning the rich diners?",
-  "answer": "The lead in their pewter plates",
-  "choices": [
-   "The lead in their pewter plates",
-   "The tin in their drinking cups",
-   "The copper in their serving bowls",
-   "The silver in their table spoons"
-  ],
-  "context": "This is the popular, often-repeated explanation: wealthy diners ate off pewter plates high in lead, and the tomato's acid leached the lead out, so the metal - not the fruit - sickened them, while poorer people eating off wood or ceramic were fine. It's disputed, though: chemist Joe Schwarcz of McGill argues the amount of lead actually leached would be trivial. Sources: Smithsonian Magazine; usefulbs.com.  (Legend.)"
- },
- {
-  "tier": 4,
-  "question": "The very first written recipe for tomato sauce was set down in 1692 by Antonio Latini, a chef in Naples - and he did something that would horrify an Italian today: he did NOT pour it over pasta. Tomato-on-pasta came later. So what did Latini actually spoon his brand-new tomato sauce over?",
-  "answer": "Roasted meat and fish",
-  "choices": [
-   "Roasted meat and fish",
-   "Fresh-baked bread",
-   "Boiled white rice",
-   "Sweet fried pastries"
-  ],
-  "context": "Antonio Latini's 1692 recipe, in his cookbook 'Lo Scalco alla Moderna' ('The Modern Steward'), is the first known written tomato sauce. He named it 'salsa di pomodoro alla spagnuola' - Spanish-style tomato sauce - because the fruit had reached Italy from Mexico by way of Spain, and he served it with meat and fish. Tomato-on-pasta, and the tomato pizza that made Naples famous (around the 1880s), came later - making Italian tomato cookery barely ~300 years old. Sources: storienapoli.it; Museo della Cucina; Wikipedia, 'Tomato.'"
- },
- {
-  "tier": 1,
   "question": "A ribeye and a chuck roast are cut from the very same cow, yet the chuck costs a fraction of the price and needs hours of slow braising to soften. What decides which cut turns out tender and which turns out tough?",
   "answer": "How hard that muscle worked while the animal was alive",
   "choices": [
@@ -33094,66 +31570,6 @@
    "It kept the food from ever crumbling"
   ],
   "context": "The fourth virtue was a long shelf life: partially hydrogenated oil resisted going rancid, so cookies, crackers, and pie crust could sit for months without spoiling. Cheap, shelf-stable, and crisp, it replaced pricier lard and butter and got baked into the American diet \u2014 the trade-off that spread it everywhere before the science caught up. Source: en.wikipedia.org/wiki/Trans_fat; pmc.ncbi.nlm.nih.gov/articles/PMC8452362/."
- },
- {
-  "tier": 3,
-  "question": "'Ultra-processed' doesn't mean any food that's been processed at all. It means an industrial formulation \u2014 built from ingredients you'd never keep in a home kitchen, like corn syrup, hydrogenated oils, protein isolates, emulsifiers, and dyes. On a shelf sit a bag of frozen peas, a can of plain beans, a baked potato, and a box of breakfast cereal. Which one is the ultra-processed food?",
-  "answer": "The box of breakfast cereal",
-  "choices": [
-   "The box of breakfast cereal",
-   "The bag of frozen peas",
-   "The can of plain beans",
-   "The whole baked potato"
-  ],
-  "context": "This is NOVA Group 4. The NOVA system \u2014 created in 2009 by Brazilian epidemiologist Carlos Monteiro and his team at the University of Sao Paulo \u2014 sorts food by how much it has been industrially processed, not by grams of fat or sugar, running from Group 1 (unprocessed or barely processed, like the peas, beans, and potato) up to Group 4 (ultra-processed, like the cereal). Freezing peas or canning beans keeps the food basically the food; a neon breakfast cereal is an industrial formulation. Source: NOVA classification, en.wikipedia.org/wiki/Nova_classification"
- },
- {
-  "tier": 4,
-  "question": "In a 2019 NIH experiment, 20 adults lived at a research center for a month while scientists fed them two menus, two weeks each. The menus were matched for calories, sugar, fat, salt, and even fiber \u2014 the only real difference was how processed the food was, and people could eat as much as they wanted. On the ultra-processed menu, what happened to how much they ate and their weight?",
-  "answer": "They ate several hundred more calories a day and gained weight",
-  "choices": [
-   "They ate several hundred more calories a day and gained weight",
-   "They ate about the same amount and their weight held steady",
-   "They ate a little less and slowly lost weight",
-   "They ate more but burned it off and stayed the same weight"
-  ],
-  "context": "It was the first trial to show ultra-processed food actually causes overeating, not just goes along with it. Though both menus put the same calories on the plate, on the ultra-processed menu people chose to take in about 508 extra calories a day and gained roughly 2 pounds in two weeks; on the minimally-processed menu the same people lost about that much. Source: NIH news release; Hall et al., Cell Metabolism 2019, nih.gov"
- },
- {
-  "tier": 4,
-  "question": "The 2019 NIH trial also added up the grocery cost of each menu, per 2,000 calories a day \u2014 one menu ultra-processed, the other minimally-processed whole food. When the researchers compared what the two menus cost to buy, which one cost more?",
-  "answer": "The minimally-processed, whole-food menu",
-  "choices": [
-   "The minimally-processed, whole-food menu",
-   "The ultra-processed, packaged menu",
-   "Neither \u2014 they cost about the same",
-   "Both rose and fell with grocery prices"
-  ],
-  "context": "The ultra-processed meals ran about $106 a week in ingredients; the whole-food meals about $151 (priced per 2,000 calories a day). The food that nudged people to overeat was also the cheaper one to buy \u2014 part of why ultra-processed food is everywhere. Source: Hall et al., Cell Metabolism 2019, pmc.ncbi.nlm.nih.gov"
- },
- {
-  "tier": 5,
-  "question": "Scientists wanted to know WHY the ultra-processed menu made people overeat. It wasn't that the eaters felt hungrier, and it wasn't that they liked the taste better \u2014 those came out about the same on both menus. The real difference was in how they ate the food itself. What was different?",
-  "answer": "They ate it faster, taking in more calories a minute",
-  "choices": [
-   "They ate it faster, taking in more calories a minute",
-   "They ate it slowly but kept going back for seconds",
-   "They ate it only when bored, not when truly hungry",
-   "They ate it late at night instead of during the day"
-  ],
-  "context": "On the ultra-processed menu people took in about 17 more calories a minute (and about 7.4 more grams of food a minute). Ultra-processed food is engineered to be soft, calorie-dense, and low in the protein and fiber that make you chew and slow down \u2014 so it goes down fast, and the gut's 'I'm full' hormones (like PYY and GLP-1) can't catch up before the plate is empty. Source: Hall et al., Cell Metabolism 2019, pmc.ncbi.nlm.nih.gov"
- },
- {
-  "tier": 5,
-  "question": "Scientists honestly debate the ultra-processed idea. Critics call the dividing line 'fuzzy' \u2014 it can box a soda together with whole-grain bread and plain yogurt \u2014 and the landmark 2019 trial was small, just 20 people. Given all that, which claim does the evidence best support?",
-  "answer": "That engineered, factory-formulated food can nudge people to overeat",
-  "choices": [
-   "That engineered, factory-formulated food can nudge people to overeat",
-   "That every ultra-processed food is poison and should be banned",
-   "That how food is processed makes no difference to how much we eat",
-   "That the 'ultra-processed' label perfectly sorts good food from bad"
-  ],
-  "context": "The concept \u2014 that engineered, factory-made food nudges you to overeat \u2014 is what the experiment tested and supported. But the exact '500 extra calories' is one small study's result (20 people, two weeks per diet), not a universal law, and the 'ultra-processed' category really is fuzzy at the edges: it can file a soda with whole-grain bread, and some ultra-processed foods aren't clearly harmful. Honest scientists hold both ideas at once \u2014 the finding matters and the debate is real. Source: Britannica, 'Nova scale'; Hall et al., Cell Metabolism 2019"
  },
  {
   "tier": 1,
@@ -35494,78 +33910,6 @@
    "His build -- the taller cooks wore the taller toques, and short cooks wore short ones."
   ],
   "context": "In the traditional kitchen the hat's height signaled rank: the executive chef wore the tallest toque, and the hats got shorter as you moved down the line of cooks. Careme had made the toque tall as a status symbol in the first place, and around 1821-1822, inspired by crisp military uniforms, he sketched the whole standardized look -- white hats, double-breasted coats, waist-tied aprons -- in his book 'Le Maitre d'Hotel Francais.' Auguste Escoffier finished the job in the late 1800s: he was the first to make the uniform mandatory across his kitchens, as part of his organized 'brigade de cuisine' system. Source: escoffier.edu, 'A History of the Chef's Hat' and 'A Brief History of the Chef's Uniform'; en.wikipedia.org/wiki/Chef's_uniform."
- },
- {
-  "tier": 1,
-  "question": "You slice a raw onion clean in half, and within seconds your eyes sting and stream with tears \u2014 even though you never rubbed them or brought the onion near your face. What travels from the cut onion to your eyes to set off the crying?",
-  "answer": "An invisible gas rising off the cut surface",
-  "choices": [
-   "An invisible gas rising off the cut surface",
-   "A fine spray of juice flung up by the blade",
-   "Heat given off by the onion's flesh",
-   "The onion's smell, passed from your nose to your eyes"
-  ],
-  "context": "The onion releases a real airborne irritant \u2014 chemists point out it's a chemical cousin of tear gas, and it works on your eyes the same way. Your tears aren't from heat or spice; they're your eyes simply flushing the irritant away. (Source: RSC Education, edu.rsc.org; LiveScience.)"
- },
- {
-  "tier": 2,
-  "question": "A whole onion sitting in a bowl never makes anyone cry \u2014 you could hold it right up to your face and feel nothing. Yet the instant a knife cuts into it, your eyes start to sting. What is it about cutting that unleashes the irritant?",
-  "answer": "It ruptures the cells, mixing two chemicals the onion had kept apart",
-  "choices": [
-   "It ruptures the cells, mixing two chemicals the onion had kept apart",
-   "It exposes the inner flesh to air, which reacts to make the irritant",
-   "It warms the flesh just enough to boil off a trapped gas",
-   "It lets the steel blade react with the juice to give off fumes"
-  ],
-  "context": "In plain terms, the onion keeps an enzyme locked inside tiny storage sacs and its sulfur compounds in the surrounding cell fluid. Slicing bursts the walls between them, so the two finally meet and react \u2014 making the eye-stinging gas. An uncut onion holds no gas at all; damage is the trigger. (Source: Chemistry World, chemistryworld.com; ScienceDirect.)"
- },
- {
-  "tier": 3,
-  "question": "You're chopping onions for dinner and tears are pouring down your face. Two knives sit on the board: one freshly sharpened, one dull and dinged. Which should you grab to cry less \u2014 and why does it actually work?",
-  "answer": "The sharp one \u2014 a clean slice ruptures fewer cells, so less gas escapes",
-  "choices": [
-   "The sharp one \u2014 a clean slice ruptures fewer cells, so less gas escapes",
-   "The dull one \u2014 crushing the cells traps the gas inside the pulp",
-   "The sharp one \u2014 its polished edge lets the gas slide off instead of spraying",
-   "Either one \u2014 the blade can't change how much gas an onion releases"
-  ],
-  "context": "A keen blade parts the cells cleanly and ruptures fewer of them, freeing less gas; a dull blade crushes and mangles, flooding the air. A 2025 Cornell study by Sunghwan Jung and Zixuan Wu filmed onions in high speed and caught a blunt, fast chop firing a mist of droplets at up to 40 meters per second, while a keen blade moving slowly threw far fewer, slower ones. Jung's rule: 'Cut onions slowly with a sharpened blade.' (Source: Discover Magazine; Cornell Chronicle, news.cornell.edu.)"
- },
- {
-  "tier": 4,
-  "question": "A cook who hates crying swears by one trick: she leaves the onion in the fridge for half an hour before she ever picks up the knife. Chilling the onion really does mean fewer tears. Why does making the onion cold cut down the sting?",
-  "answer": "Cold slows the reaction, so the onion makes its stinging gas more slowly",
-  "choices": [
-   "Cold slows the reaction, so the onion makes its stinging gas more slowly",
-   "Cold freezes the juices, sealing the irritant deep inside the flesh",
-   "Cold hardens the outer skin so it traps the gas within",
-   "Cold shuts the cells down so they stop making any gas at all"
-  ],
-  "context": "Cold slows the chemistry: the onion's irritant-making enzyme works far more sluggishly when chilled, so a fridge-cold onion gives off the gas more slowly and in smaller amounts. The RSC suggests chilling onions before chopping; the National Onion Association recommends about 30 minutes in the fridge. (Source: RSC Education, edu.rsc.org; Poison Control, poison.org.)"
- },
- {
-  "tier": 5,
-  "question": "Trace the onion's sting to its very end. The stinging gas an onion gives off drifts up and lands on the wet surface of your eye \u2014 and only then does it turn into the thing that actually hurts. What does the gas become the moment it touches the moisture of your eye?",
-  "answer": "A tiny bit of acid, which is what stings and makes you tear up",
-  "choices": [
-   "A tiny bit of acid, which is what stings and makes you tear up",
-   "A film of salt that dries out the eye and irritates it",
-   "A cloud of tiny crystals that scratch the surface",
-   "A soapy residue that clings and burns the eyelid"
-  ],
-  "context": "The gas reacts with the water on your eye's surface to form a trace of acid \u2014 often described as a tiny amount of sulfuric acid \u2014 and that acid sets off the nerve response that makes your eyes water to wash it away. So the sting isn't the gas itself; it's the little bit of acid it becomes on contact. (Source: RSC Education, edu.rsc.org; Poison Control, poison.org.)"
- },
- {
-  "tier": 5,
-  "question": "The enzyme that makes an onion's tears also works inside one other everyday kitchen ingredient. Crush that one, though, and the reaction makes not a tear gas but a sharp, pungent aroma prized in kitchens the world over. Which ingredient is the onion's close chemical cousin?",
-  "answer": "Garlic",
-  "choices": [
-   "Garlic",
-   "Ginger",
-   "Chili",
-   "Turmeric"
-  ],
-  "context": "Onion and garlic are both alliums, and their cells hold the very same enzyme, released when you crush them. In the onion it helps build the tear gas; in garlic that machinery makes allicin instead \u2014 the sharp compound behind garlic's punchy aroma and bite. Same chemical toolkit, different product \u2014 and it all traces back to the sulfur these plants pull from the soil. (Source: ScienceDirect; Wikipedia, 'Allicin'.)"
  },
  {
   "tier": 1,
