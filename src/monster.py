@@ -32,6 +32,8 @@ class Monster:
         self.ingredient_id     = defn.get('ingredient_id', None)
         self.min_level: int    = int(defn.get('min_level', 1))
         self.max_level         = defn.get('max_level', None)  # soft cap; None = no cap
+        self.peak_floor: int   = int(defn.get('peak_floor', self.min_level) or self.min_level)
+        self.spread: int       = int(defn.get('spread', 10) or 10)
 
         # THAC0: "To Hit Armor Class Zero". Lower = more accurate.
         self.thac0: int = int(defn.get('thac0', max(-10, 20 - defn.get('min_level', 1))))
@@ -178,6 +180,7 @@ class Monster:
         '_flee_timer': 0, '_alerted': False, '_aware': False, '_slow_skip': False,
         'speed': 10, 'resistances': [], 'weaknesses': [],
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
+        'peak_floor': 0, 'spread': 10,
         'lore': '', 'status_effects': {}, 'thac0': 20,
         'harvest_tier': 1, 'harvest_threshold': 2, 'ingredient_id': None,
         'min_level': 1, 'max_level': None,

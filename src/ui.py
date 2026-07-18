@@ -2,8 +2,10 @@ import pygame
 
 # FANTASY: Import theme helpers from the central fantasy_ui module
 from fantasy_ui import FP, get_font, ITEM_COLOR
+from hud_context import active_power_rows, visible_context_rows
 
-SIDEBAR_W = 430
+LEFT_SIDEBAR_W = 248
+SIDEBAR_W = 330
 
 # FANTASY: Rich fantasy-palette message colors
 _MSG_COLORS = {
@@ -95,29 +97,51 @@ class Sidebar:
 
     def __init__(self, screen: pygame.Surface, x: int):
         self.screen = screen
+        self.left_x = 0
+        self.right_x = x
         self.x = x
         self.w = SIDEBAR_W
         # FANTASY: Grimoire font set -- larger for readability
-        self._fsm   = get_font('body', 20)
-        self._fbold = get_font('body', 20, bold=True)
-        self._fhd   = get_font('heading', 19)
+        self._fsm   = get_font('body', 18)
+        self._fbold = get_font('body', 18, bold=True)
+        self._fhd   = get_font('heading', 17)
 
-    def draw(self, player, dungeon_level: int, turn_count: int, gold: int = 0):
+    def draw(self, player, dungeon_level: int, turn_count: int, gold: int = 0,
+             *, player_name: str = "Adventurer", visible_monsters=(),
+             visible_items=(), visible_tiles=None, secret_build=None,
+             heavenly_host_active: bool = False):
         h = self.screen.get_height()
-        # FANTASY: Midnight sidebar background + gold-dark left border
-        pygame.draw.rect(self.screen, FP.MIDNIGHT, (self.x, 0, self.w, h))
-        pygame.draw.line(self.screen, FP.GOLD_DARK, (self.x, 0), (self.x, h), 2)
+        visible_tiles = visible_tiles or set()
 
+        self._set_pane(self.left_x, LEFT_SIDEBAR_W)
+        self._pane_bg(h, edge="right")
         y = self.PAD
+        y = self._identity(player_name, dungeon_level, turn_count, y)
         y = self._vitals(player, y)
         y = self._attributes(player, y)
-        y = self._status(player, dungeon_level, turn_count, gold, y)
-        y = self._equipment(player, y)
-        self._inventory(player, y)
+        y = self._derived(player, dungeon_level, gold, y)
+        self._effects(player, y)
+
+        self._set_pane(self.right_x, SIDEBAR_W)
+        self._pane_bg(h, edge="left")
+        y = self.PAD
+        y = self._powers(player, y, secret_build=secret_build,
+                         heavenly_host_active=heavenly_host_active)
+        self._in_sight(player, visible_monsters, visible_items, visible_tiles,
+                       dungeon_level, y)
 
     # ------------------------------------------------------------------
     # Section helpers
     # ------------------------------------------------------------------
+
+    def _set_pane(self, x: int, w: int):
+        self.x = x
+        self.w = w
+
+    def _pane_bg(self, h: int, *, edge: str):
+        pygame.draw.rect(self.screen, FP.MIDNIGHT, (self.x, 0, self.w, h))
+        lx = self.x if edge == "left" else self.x + self.w - 1
+        pygame.draw.line(self.screen, FP.GOLD_DARK, (lx, 0), (lx, h), 2)
 
     def _header(self, text: str, y: int) -> int:
         """Section header — matches the panel-modal draw_header_bar vocabulary.
@@ -163,6 +187,17 @@ class Sidebar:
     # Sections
     # ------------------------------------------------------------------
 
+    def _identity(self, player_name: str, dungeon_level: int, turn_count: int, y: int) -> int:
+        y = self._header("CHARACTER", y)
+        name = self._fit(self._fbold, player_name or "Adventurer", self.w - self.PAD * 2)
+        self.screen.blit(self._fbold.render(name, True, FP.GOLD_PALE), (self.x + self.PAD, y))
+        y += 23
+        line = f"Floor {dungeon_level}   Turn {turn_count}"
+        self.screen.blit(self._fsm.render(self._fit(self._fsm, line, self.w - self.PAD * 2),
+                                          True, FP.FADED_TEXT),
+                         (self.x + self.PAD, y))
+        return y + 24 + self.SECTION_GAP
+
     def _vitals(self, player, y: int) -> int:
         y = self._header("VITALS", y)
         sp_r = player.sp / max(1, player.max_sp)
@@ -172,8 +207,8 @@ class Sidebar:
             FP.SP_RED
         )
         y = self._bar(y, "HP", player.hp, player.max_hp, FP.HP_RED)
-        y = self._bar(y, "SP", player.sp, player.max_sp, sp_col)
         y = self._bar(y, "MP", player.mp, player.max_mp, FP.MP_BLUE)
+        y = self._bar(y, "SP", player.sp, player.max_sp, sp_col)
         return y + self.SECTION_GAP
 
     def _attributes(self, player, y: int) -> int:
@@ -196,249 +231,151 @@ class Sidebar:
             self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 46, ay))
         return y + 2 * 24 + self.SECTION_GAP
 
-    def _status(self, player, dungeon_level: int, turn_count: int, gold: int, y: int) -> int:
-        from status_effects import EFFECT_INFO
-        y = self._header("STATUS", y)
+    def _derived(self, player, dungeon_level: int, gold: int, y: int) -> int:
+        y = self._header("DERIVED", y)
         ac = player.get_ac()
-        # FANTASY: AC color thresholds
         ac_color = FP.SUCCESS_TEXT if ac <= 0 else FP.SP_GREEN if ac <= 5 else FP.WARNING_TEXT
-        for text, color in [
-            (f"AC     {ac}",                          ac_color),
-            (f"Level  {dungeon_level}",               FP.BODY_TEXT),
-            (f"Turns  {turn_count}",                  FP.BODY_TEXT),
-            (f"Gold   {gold:,}",                      FP.GOLD_PALE),
-            (f"Sight  {player.get_sight_radius()}",   FP.BODY_TEXT),
-            (f"Timer  {player.get_quiz_timer('math')}s",  FP.WARNING_TEXT),
-        ]:
-            self.screen.blit(self._fsm.render(text, True, color),
-                             (self.x + self.PAD, y))
-            y += 22
-
-        # Lockpick charges
-        picks = getattr(player, 'lockpick_charges', 0)
-        if picks > 0:
-            self.screen.blit(
-                self._fsm.render(f"Picks  {picks}", True, FP.AMBER_ACCENT),
-                (self.x + self.PAD, y)
-            )
-            y += 22
-
-        # Known spells count
-        spell_count = len(getattr(player, 'known_spells', {}))
-        if spell_count > 0:
-            self.screen.blit(
-                self._fsm.render(f"Spells {spell_count}", True, FP.MP_BLUE_TEXT),
-                (self.x + self.PAD, y)
-            )
-            y += 22
-
-        # Prayer cooldown
-        if player.prayer_cooldown > 0:
-            self.screen.blit(
-                self._fsm.render(f"Prayer: {player.prayer_cooldown}t",
-                                 True, FP.COOLDOWN_ARCANE),
-                (self.x + self.PAD, y)
-            )
-        else:
-            self.screen.blit(
-                self._fsm.render("Prayer: Ready", True, FP.GOLD_PALE),
-                (self.x + self.PAD, y)
-            )
-        y += 22
-
-        # Recall Lore cooldown
-        if player.recall_lore_cooldown > 0:
-            self.screen.blit(
-                self._fsm.render(f"Lore:   {player.recall_lore_cooldown}t",
-                                 True, FP.COOLDOWN_TEAL),
-                (self.x + self.PAD, y)
-            )
-        else:
-            self.screen.blit(
-                self._fsm.render("Lore:   Ready", True, FP.READY_TEAL),
-                (self.x + self.PAD, y)
-            )
-        y += 22
-
-        # Hack Reality cooldown intentionally hidden from sidebar
-
-        # Hunger indicator -- FANTASY colors
-        sp = player.sp
-        if sp < 20:
-            self.screen.blit(
-                self._fbold.render("[Starving!]", True, FP.DANGER_TEXT),
-                (self.x + self.PAD, y)
-            )
-            y += 24
-        elif sp < 60:
-            self.screen.blit(
-                self._fbold.render("[Hungry]", True, FP.WARNING_TEXT),
-                (self.x + self.PAD, y)
-            )
-            y += 24
-
-        # Lockpick durability (if carrying one)
-        from items import Lockpick
-        lp = next((i for i in player.inventory if isinstance(i, Lockpick)), None)
-        if lp is not None:
-            ratio = lp.durability / lp.max_durability
-            lp_color = (FP.SUCCESS_TEXT if ratio > 0.5
-                        else FP.WARNING_TEXT if ratio > 0.25
-                        else FP.DANGER_TEXT)
-            lp_text = f"Lockpick: {lp.durability}/{lp.max_durability}  [{lp.name}]"
-            self.screen.blit(self._fsm.render(lp_text, True, lp_color), (self.x + self.PAD, y))
-            y += 22
-
-        # Item-granted passives (not status effects)
-        if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
-            self.screen.blit(self._fbold.render("[Fire Protect]", True, FP.PASSIVE_FIRE),
-                             (self.x + self.PAD, y))
-            y += 22
-        if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in player.inventory):
-            self.screen.blit(self._fbold.render("[Manifest]", True, FP.PASSIVE_MANIFEST),
-                             (self.x + self.PAD, y))
-            y += 22
-        if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'id', '') == 'rands_heart':
-            self.screen.blit(self._fbold.render("[Death Ward]", True, FP.PASSIVE_WARD),
-                             (self.x + self.PAD, y))
-            y += 22
-
-        # Active status effects in a 2-column grid
-        active = [(eid, val) for eid, val in player.status_effects.items() if val != 0]
-        if active:
-            col_w = (self.w - self.PAD * 2) // 2
-            for i, (eid, val) in enumerate(active):
-                info = EFFECT_INFO.get(eid)
-                if not info:
-                    continue
-                display_name, rgb, _ = info
-                label = f"[{display_name}]"
-                ax = self.x + self.PAD + (i % 2) * col_w
-                ay = y + (i // 2) * 22
-                self.screen.blit(self._fbold.render(label, True, rgb), (ax, ay))
-            y += ((len(active) + 1) // 2) * 22
-
-        return y + self.SECTION_GAP
-
-    def _equipment(self, player, y: int) -> int:
-        y = self._header("EQUIPMENT", y)
-        equipped = player.get_equipped_items()
-        # Check if player has Philosopher's Shard in inventory
-        has_phil = any(getattr(i, 'id', '') == 'philosophers_shard'
-                       for i in player.inventory)
-        for label, key in [
-            ("Weapon", "weapon"), ("Ranged", "ranged_weapon"), ("Shield", "shield"),
-            ("Head",   "head"),   ("Body",   "body"),
-            ("Arms",   "arms"),   ("Hands",  "hands"),
-            ("Legs",   "legs"),   ("Feet",   "feet"),
-            ("Cloak",  "cloak"),  ("Shirt",  "shirt"),
-            ("Amulet", "amulet"),
-            ("Ring 1", "ring_1"), ("Ring 2", "ring_2"),
-            ("Ring 3", "ring_3"), ("Ring 4", "ring_4"),
-        ]:
-            item = equipped.get(key)
-            if item:
-                # Name: show identified name if type is known, else unidentified name
-                known = (not hasattr(item, 'identified')
-                         or item.identified
-                         or item.id in player.known_item_ids)
-                base_name = item.name if known else getattr(item, 'unidentified_name', item.name)
-                # Compose modifier suffix (enchant + cursed flag + ammo count).
-                # Suffix order: critical info FIRST (enchant, curse), then
-                # ammo count which is least urgent. Truncate the BASE NAME
-                # if needed \u2014 never let the suffix get eaten by truncate.
-                # See bug-bash A1-3.
-                suffix = ""
-                if getattr(item, 'identified', True):
-                    eb = getattr(item, 'enchant_bonus', 0)
-                    if eb > 0:
-                        suffix += f" +{eb}"
-                    elif eb < 0:
-                        suffix += f" {eb}"
-                    if getattr(item, 'cursed', False):
-                        suffix += " {C}"
-                ammo_suffix = ""
-                if key == "ranged_weapon" and getattr(item, 'requires_ammo', None):
-                    ammo_type = item.requires_ammo
-                    total = sum(
-                        i.count for i in player.inventory
-                        if getattr(i, 'ammo_type', None) == ammo_type
-                    )
-                    ammo_suffix = f" [{total}]"
-                iname_pieces = (base_name, suffix, ammo_suffix)  # placeholder; rendered below
-            else:
-                iname_pieces = ("\u2014", "", "")
-            # FANTASY: Gold-pale for equipped items, SLOT_EMPTY for empty
-            ic = FP.GOLD_PALE if item else FP.SLOT_EMPTY
-            # FANTASY: FADED_TEXT label color
-            label_surf = self._fsm.render(f"{label}:", True, FP.FADED_TEXT)
-            self.screen.blit(label_surf, (self.x + self.PAD, y))
-            name_x = self.x + self.PAD + label_surf.get_width() + 5
-            max_name_w = self.x + self.w - self.PAD - name_x
-            base_part, suf_part, ammo_part = iname_pieces
-            # Truncate the BASE NAME so the suffix and ammo info always fit.
-            suf_w = self._fsm.size(suf_part)[0] if suf_part else 0
-            ammo_w = self._fsm.size(ammo_part)[0] if ammo_part else 0
-            name_budget = max(40, max_name_w - suf_w - ammo_w)
-            fitted_base = self._fit(self._fsm, self._cap(base_part), name_budget)
-            iname = f"{fitted_base}{suf_part}{ammo_part}"
-            self.screen.blit(self._fsm.render(iname, True, ic), (name_x, y))
-            y += 22
-        # Philosopher's Shard -- passive carry indicator (not an equip slot)
-        if has_phil:
-            phil_surf = self._fsm.render("* Phil. Shard", True, FP.GOLD_PALE)
-            self.screen.blit(phil_surf, (self.x + self.PAD, y))
-            y += 20
-        return y + self.SECTION_GAP
-
-    def _inventory(self, player, y: int):
-        y = self._header("INVENTORY", y)
-        items = player.get_inventory_display()
-        if not items:
-            self.screen.blit(
-                self._fsm.render("(empty)", True, FP.SLOT_EMPTY),
-                (self.x + self.PAD, y)
-            )
-            return
-
-        wt  = player.get_current_weight()
+        wt = player.get_current_weight()
         lim = player.get_carry_limit()
-        # FANTASY: Warning for heavy load, success for normal
-        wc  = FP.WARNING_TEXT if wt > lim * 0.75 else FP.SUCCESS_TEXT
-        self.screen.blit(
-            self._fsm.render(f"Wt: {wt:.0f}/{lim}", True, wc),
-            (self.x + self.PAD, y)
-        )
-        y += 22
+        wt_color = FP.WARNING_TEXT if wt > lim * 0.75 else FP.SUCCESS_TEXT
+        spell_count = len(getattr(player, 'known_spells', {}))
+        metrics = [
+            (f"AC {ac}", ac_color),
+            (f"Gold {gold:,}", FP.GOLD_PALE),
+            (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
+            (f"Timer {player.get_quiz_timer('math')}s", FP.WARNING_TEXT),
+            (f"Wt {wt:.0f}/{lim}", wt_color),
+            (f"Picks {getattr(player, 'lockpick_charges', 0)}", FP.AMBER_ACCENT),
+            (f"Spells {spell_count}", FP.MP_BLUE_TEXT),
+            (f"Depth {dungeon_level}", FP.BODY_TEXT),
+        ]
+        metric_w = (self.w - self.PAD * 2) // 2
+        for i, (label, color) in enumerate(metrics):
+            ax = self.x + self.PAD + (i % 2) * metric_w
+            ay = y + (i // 2) * 22
+            self.screen.blit(self._fsm.render(self._fit(self._fsm, label, metric_w - 8),
+                                              True, color), (ax, ay))
+        return y + ((len(metrics) + 1) // 2) * 22 + self.SECTION_GAP
 
-        for letter, item in items:
-            if y > self.screen.get_height() - 20:
-                self.screen.blit(
-                    self._fsm.render("...", True, FP.FADED_TEXT),
-                    (self.x + self.PAD, y)
-                )
+    def _effect_chip(self, x: int, y: int, w: int, label: str, color: tuple) -> None:
+        rect = pygame.Rect(x, y, w, 21)
+        pygame.draw.rect(self.screen, (22, 26, 48), rect, border_radius=4)
+        pygame.draw.rect(self.screen, color, (rect.x, rect.y, 3, rect.h), border_radius=2)
+        text = self._fit(self._fbold, label, w - 10)
+        self.screen.blit(self._fbold.render(text, True, color), (x + 7, y + 1))
+
+    def _effect_label(self, display_name: str, duration: int) -> str:
+        if duration < 0:
+            return display_name
+        full = f"{display_name} {duration}"
+        col_w = (self.w - self.PAD * 2 - 6) // 2
+        if self._fbold.size(full)[0] <= col_w - 10:
+            return full
+        compact_names = {
+            "Poisoned": "Pois",
+            "Paralyzed": "Para",
+            "Confused": "Conf",
+            "Blessed": "Bless",
+            "Cursed": "Curse",
+            "Berserk": "Bersk",
+            "Telepathy": "Tele",
+        }
+        return f"{compact_names.get(display_name, display_name[:5])} {duration}"
+
+    def _effects(self, player, y: int) -> int:
+        from status_effects import EFFECT_INFO
+        y = self._header("EFFECTS", y)
+        rows = []
+        if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
+            rows.append(("Fire Protect", FP.PASSIVE_FIRE))
+        if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in player.inventory):
+            rows.append(("Manifest", FP.PASSIVE_MANIFEST))
+        if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'id', '') == 'rands_heart':
+            rows.append(("Death Ward", FP.PASSIVE_WARD))
+        for eid, val in player.status_effects.items():
+            if val == 0:
+                continue
+            info = EFFECT_INFO.get(eid)
+            if not info:
+                continue
+            display_name, rgb, _ = info
+            label = self._effect_label(display_name, val)
+            rows.append((label, rgb))
+        if not rows:
+            self.screen.blit(self._fsm.render("(none)", True, FP.SLOT_EMPTY),
+                             (self.x + self.PAD, y))
+            return y + 22 + self.SECTION_GAP
+
+        col_w = (self.w - self.PAD * 2 - 6) // 2
+        bottom = self.screen.get_height() - self.PAD
+        for i, (label, color) in enumerate(rows):
+            ay = y + (i // 2) * 24
+            if ay + 21 > bottom:
                 break
-            # FANTASY: Use ITEM_COLOR dict from fantasy_ui
-            ic = _IC_COLOR.get(getattr(item, 'item_class', ''), (165, 165, 165))
-            # FANTASY: Gold letter color
-            self.screen.blit(
-                self._fsm.render(f"{letter})", True, FP.GOLD),
-                (self.x + self.PAD, y)
-            )
-            count = getattr(item, 'count', None)
-            known = (not hasattr(item, 'identified')
-                     or item.identified
-                     or item.id in player.known_item_ids)
-            raw_name = item.name if known else getattr(item, 'unidentified_name', item.name)
-            buc = getattr(item, 'buc', 'uncursed')
-            if getattr(item, 'buc_known', False) and buc != 'uncursed':
-                raw_name = f"{{{buc}}} {raw_name}"
-            cname = self._cap(raw_name)
-            display = f"{cname} x{count}" if count is not None else cname
-            max_disp_w = self.w - self.PAD * 2 - 24
-            display = self._fit(self._fsm, display, max_disp_w)
-            self.screen.blit(
-                self._fsm.render(display, True, ic),
-                (self.x + self.PAD + 24, y)
-            )
+            ax = self.x + self.PAD + (i % 2) * (col_w + 6)
+            self._effect_chip(ax, ay, col_w, label, color)
+        return y + ((len(rows) + 1) // 2) * 24 + self.SECTION_GAP
+
+    def _power_color(self, state: str) -> tuple:
+        if state == "ready":
+            return FP.SUCCESS_TEXT
+        if state == "uses":
+            return FP.MP_BLUE_TEXT
+        return FP.WARNING_TEXT
+
+    def _compact_row(self, y: int, label: str, meta: str, color: tuple,
+                     *, label_color: tuple | None = None) -> int:
+        row = pygame.Rect(self.x + self.PAD, y, self.w - self.PAD * 2, 24)
+        pygame.draw.rect(self.screen, (18, 22, 42), row, border_radius=4)
+        pygame.draw.rect(self.screen, color, (row.x, row.y, 4, row.h), border_radius=2)
+        meta_w = min(88, max(50, self._fsm.size(meta)[0] + 8))
+        self.screen.blit(self._fbold.render(self._fit(self._fbold, label, row.w - meta_w - 18),
+                                            True, label_color or FP.BODY_TEXT),
+                         (row.x + 10, row.y + 2))
+        meta_surf = self._fbold.render(self._fit(self._fbold, meta, meta_w), True, color)
+        self.screen.blit(meta_surf, (row.right - meta_surf.get_width() - 8, row.y + 2))
+        return y + 27
+
+    def _powers(self, player, y: int, *, secret_build=None,
+                heavenly_host_active: bool = False) -> int:
+        y = self._header("POWERS", y)
+        rows = active_power_rows(player, secret_build=secret_build,
+                                 heavenly_host_active=heavenly_host_active)
+        max_rows = 8
+        for row in rows[:max_rows]:
+            y = self._compact_row(y, row.label, row.status, self._power_color(row.state))
+        if len(rows) > max_rows:
+            more = f"+{len(rows) - max_rows} more"
+            self.screen.blit(self._fsm.render(more, True, FP.FADED_TEXT),
+                             (self.x + self.PAD, y))
             y += 22
+        return y + self.SECTION_GAP
+
+    def _in_sight(self, player, visible_monsters, visible_items, visible_tiles,
+                  dungeon_level: int, y: int) -> int:
+        y = self._header("IN SIGHT", y)
+        monsters, items = visible_context_rows(
+            player, visible_monsters, visible_items, visible_tiles, dungeon_level,
+            max_monsters=6, max_items=6,
+        )
+        bottom = self.screen.get_height() - self.PAD
+
+        def section(title: str, rows, y: int) -> int:
+            self.screen.blit(self._fbold.render(title, True, FP.GOLD_PALE),
+                             (self.x + self.PAD, y))
+            y += 22
+            if not rows:
+                self.screen.blit(self._fsm.render("(none)", True, FP.SLOT_EMPTY),
+                                 (self.x + self.PAD, y))
+                return y + 24
+            for row in rows:
+                if y + 24 > bottom:
+                    return y
+                y = self._compact_row(y, row.label, row.meta, row.color,
+                                      label_color=row.color)
+            return y + 8
+
+        y = section("Enemies", monsters, y)
+        if y + 44 <= bottom:
+            y = section("Items", items, y)
+        return y

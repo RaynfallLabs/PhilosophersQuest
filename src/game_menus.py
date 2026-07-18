@@ -67,14 +67,14 @@ class MenuMixin:
                 else self.cook_compound_recipes)
 
     # Up/Down/PageUp/PageDown/Home/End cursor keys, shared by the letter+cursor
-    # overflow menus (cook, eat). 26 = the a-z display cap in the renderer.
+    # overflow menus. Letter shortcuts still cover a-z; arrows/Enter can reach
+    # everything in long inventories.
     _MENU_CURSOR_KEYS = (pygame.K_UP, pygame.K_DOWN, pygame.K_PAGEUP,
                          pygame.K_PAGEDOWN, pygame.K_HOME, pygame.K_END)
 
     def _move_menu_cursor(self, cur: int, key: int, total: int) -> int:
-        """Move a menu cursor index, clamped to [0, min(total,26)-1]. The view
-        auto-scrolls to keep the cursor visible (fantasy_ui.draw_menu)."""
-        last = max(0, min(total, 26) - 1)
+        """Move a menu cursor index, clamped to [0, total-1]."""
+        last = max(0, total - 1)
         cur = max(0, min(cur, last))
         if key == pygame.K_DOWN:
             return min(last, cur + 1)
@@ -162,12 +162,26 @@ class MenuMixin:
             self.state = STATE_PLAYER
             return
         self._ascension_choices = node_ids
+        self._ascension_sel = 0
         self.state = STATE_ASCENSION
 
     def _ascension_menu_input(self, key: int):
         import class_system as cs
-        idx = self._AZ_KEYS.get(key)
         choices = getattr(self, '_ascension_choices', []) or []
+        if key in (pygame.K_LEFT, pygame.K_RIGHT):
+            delta = -1 if key == pygame.K_LEFT else 1
+            total = len(choices)
+            if total:
+                self._ascension_sel = (getattr(self, '_ascension_sel', 0) + delta) % total
+            return
+        if key in self._MENU_CURSOR_KEYS:
+            self._ascension_sel = self._move_menu_cursor(
+                getattr(self, '_ascension_sel', 0), key, len(choices))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_ascension_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(choices):
             return
         node_id = choices[idx]
@@ -249,10 +263,6 @@ class MenuMixin:
             return idx
         return None
 
-    def _get_page(self, items) -> list:
-        """Return items (no pagination needed with a-z + tabs)."""
-        return items[:26]
-
     # ------------------------------------------------------------------
     # Quaff menu  (Q key)
     # ------------------------------------------------------------------
@@ -264,12 +274,19 @@ class MenuMixin:
         if not self.quaff_menu_items:
             self.add_message("You have no potions to quaff.", 'info')
             return
-        self._menu_page = 0
+        self._quaff_sel = 0
         self.state = STATE_QUAFF_MENU
 
     def _quaff_menu_input(self, key: int):
-        idx = self._paged_menu_input(key, self.quaff_menu_items)
-        if idx is None:
+        if key in self._MENU_CURSOR_KEYS:
+            self._quaff_sel = self._move_menu_cursor(
+                getattr(self, '_quaff_sel', 0), key, len(self.quaff_menu_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_quaff_sel', 0)
+        else:
+            idx = self._paged_menu_input(key, self.quaff_menu_items)
+        if idx is None or idx >= len(self.quaff_menu_items):
             return
         self.state = STATE_PLAYER
         item = self.quaff_menu_items[idx]
@@ -331,6 +348,7 @@ class MenuMixin:
             self.add_message("You have nothing to throw.", 'info')
             return
         self._throw_tab = 0
+        self._throw_sel = 0
         for i, (_, filt) in enumerate(self._THROW_TABS):
             if any(filt(item) for item in self.throw_menu_items):
                 self._throw_tab = i
@@ -345,13 +363,22 @@ class MenuMixin:
         if key == pygame.K_LEFT:
             self._throw_tab = self._cycle_tab(self._throw_tab, -1, len(self._THROW_TABS),
                 lambda t: any(self._THROW_TABS[t][1](i) for i in self.throw_menu_items))
+            self._throw_sel = 0
             return
         if key == pygame.K_RIGHT:
             self._throw_tab = self._cycle_tab(self._throw_tab, 1, len(self._THROW_TABS),
                 lambda t: any(self._THROW_TABS[t][1](i) for i in self.throw_menu_items))
+            self._throw_sel = 0
             return
         tab_items = self._get_throw_tab_items()
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._throw_sel = self._move_menu_cursor(
+                getattr(self, '_throw_sel', 0), key, len(tab_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_throw_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(tab_items):
             return
         potion = tab_items[idx]
@@ -401,6 +428,7 @@ class MenuMixin:
                 self._menu_tab = i
                 break
         self.state = STATE_EQUIP_MENU
+        self._equip_sel = 0
 
     def _get_equip_tab_items(self):
         """Return items for the current equip tab."""
@@ -418,6 +446,7 @@ class MenuMixin:
                     return bool(self.equip_menu_equipped)
                 return any(filt(i) for i in self.equip_menu_items)
             self._menu_tab = self._cycle_tab(self._menu_tab, -1, len(self._EQUIP_TABS), _eq_has)
+            self._equip_sel = 0
             return
         if key == pygame.K_RIGHT:
             def _eq_has(t):
@@ -426,14 +455,23 @@ class MenuMixin:
                     return bool(self.equip_menu_equipped)
                 return any(filt(i) for i in self.equip_menu_items)
             self._menu_tab = self._cycle_tab(self._menu_tab, 1, len(self._EQUIP_TABS), _eq_has)
-            return
-
-        # a-z keys: select from current tab
-        idx = self._AZ_KEYS.get(key)
-        if idx is None:
+            self._equip_sel = 0
             return
 
         tab_items = self._get_equip_tab_items()
+        display_items = self.equip_menu_equipped if tab_items is None else tab_items
+        if key in self._MENU_CURSOR_KEYS:
+            self._equip_sel = self._move_menu_cursor(
+                getattr(self, '_equip_sel', 0), key, len(display_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_equip_sel', 0)
+        else:
+            # a-z keys: select from current tab
+            idx = self._AZ_KEYS.get(key)
+        if idx is None:
+            return
+
         if tab_items is not None:
             if idx < len(tab_items):
                 self.state = STATE_PLAYER
@@ -567,6 +605,7 @@ class MenuMixin:
         """Open the Kit (compare) panel."""
         self._kit_tab = 0
         self._kit_scroll = 0
+        self._kit_sel = 0
         self.state = STATE_KIT
 
     def _kit_input(self, key: int):
@@ -577,22 +616,38 @@ class MenuMixin:
         if key == pygame.K_LEFT:
             self._kit_tab = (self._kit_tab - 1) % n_tabs
             self._kit_scroll = 0
+            self._kit_sel = 0
             return
         if key == pygame.K_RIGHT:
             self._kit_tab = (self._kit_tab + 1) % n_tabs
             self._kit_scroll = 0
+            self._kit_sel = 0
             return
+        active = getattr(self, '_kit_tab', 0)
+        slug = self._KIT_TABS[active][1]
+        if slug == 'spells':
+            total = len(self._kit_collect_spells())
+        else:
+            total = len(self._kit_filter_for_tab(
+                self._kit_collect_items(), active))
+        cur = max(0, min(getattr(self, '_kit_sel', 0), max(0, total - 1)))
         if key == pygame.K_UP:
-            self._kit_scroll = max(0, self._kit_scroll - 1)
+            self._kit_sel = max(0, cur - 1)
             return
         if key == pygame.K_DOWN:
-            self._kit_scroll += 1
+            self._kit_sel = min(max(0, total - 1), cur + 1)
             return
         if key == pygame.K_PAGEUP:
-            self._kit_scroll = max(0, self._kit_scroll - 10)
+            self._kit_sel = max(0, cur - 6)
             return
         if key == pygame.K_PAGEDOWN:
-            self._kit_scroll += 10
+            self._kit_sel = min(max(0, total - 1), cur + 6)
+            return
+        if key == pygame.K_HOME:
+            self._kit_sel = 0
+            return
+        if key == pygame.K_END:
+            self._kit_sel = max(0, total - 1)
             return
 
     # ------------------------------------------------------------------
@@ -605,23 +660,37 @@ class MenuMixin:
 
     def _open_discoveries(self):
         self._disc_scroll = 0
+        self._disc_sel = 0
         self.state = STATE_DISCOVERIES
 
     def _discoveries_input(self, key: int):
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
             return
+        sections = self._discoveries_sections() if hasattr(self, '_discoveries_sections') else []
+        total = len(sections)
+        cur = max(0, min(getattr(self, '_disc_sel', 0), max(0, total - 1)))
         if key == pygame.K_UP:
-            self._disc_scroll = max(0, self._disc_scroll - 1)
+            self._disc_sel = max(0, cur - 1)
+            self._disc_scroll = 0
             return
         if key == pygame.K_DOWN:
-            self._disc_scroll += 1
+            self._disc_sel = min(max(0, total - 1), cur + 1)
+            self._disc_scroll = 0
             return
         if key == pygame.K_PAGEUP:
-            self._disc_scroll = max(0, self._disc_scroll - 10)
+            self._disc_scroll = max(0, self._disc_scroll - 8)
             return
         if key == pygame.K_PAGEDOWN:
-            self._disc_scroll += 10
+            self._disc_scroll += 8
+            return
+        if key == pygame.K_HOME:
+            self._disc_sel = 0
+            self._disc_scroll = 0
+            return
+        if key == pygame.K_END:
+            self._disc_sel = max(0, total - 1)
+            self._disc_scroll = 0
             return
 
     # ------------------------------------------------------------------
@@ -635,11 +704,18 @@ class MenuMixin:
         if not self.wand_menu_items:
             self.add_message("You have no wands to use.", 'info')
             return
-        self._menu_page = 0
+        self._wand_sel = 0
         self.state = STATE_WAND_MENU
 
     def _wand_menu_input(self, key: int):
-        idx = self._paged_menu_input(key, self.wand_menu_items)
+        if key in self._MENU_CURSOR_KEYS:
+            self._wand_sel = self._move_menu_cursor(
+                getattr(self, '_wand_sel', 0), key, len(self.wand_menu_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_wand_sel', 0)
+        else:
+            idx = self._paged_menu_input(key, self.wand_menu_items)
         if idx is None or idx >= len(self.wand_menu_items):
             return
         self.state = STATE_PLAYER
@@ -656,8 +732,14 @@ class MenuMixin:
             self.state = STATE_PLAYER
             return
         items = getattr(self, '_prayer_menu_items', [])
+        if key in self._MENU_CURSOR_KEYS:
+            self._prayer_sel = self._move_menu_cursor(
+                getattr(self, '_prayer_sel', 0), key, len(items))
+            return
         idx = None
-        if pygame.K_a <= key <= pygame.K_z:
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_prayer_sel', 0)
+        elif pygame.K_a <= key <= pygame.K_z:
             idx = key - pygame.K_a
         if idx is None or idx >= len(items):
             return
@@ -683,14 +765,21 @@ class MenuMixin:
             self.add_message("You have not learned any spells.", 'warning')
             return
         self.spell_menu_items = list(self.player.known_spells.keys())
+        self._spell_sel = 0
         self.state = STATE_SPELL_MENU
 
     def _spell_menu_input(self, key: int):
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
             return
+        if key in self._MENU_CURSOR_KEYS:
+            self._spell_sel = self._move_menu_cursor(
+                getattr(self, '_spell_sel', 0), key, len(self.spell_menu_items))
+            return
         idx = None
-        if pygame.K_a <= key <= pygame.K_z:
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_spell_sel', 0)
+        elif pygame.K_a <= key <= pygame.K_z:
             idx = key - pygame.K_a
         if idx is None or idx >= len(self.spell_menu_items):
             return
@@ -711,6 +800,7 @@ class MenuMixin:
             self.add_message("You have no scrolls or spellbooks to read.", 'info')
             return
         self._scroll_tab = 0
+        self._scroll_sel = 0
         for i, (_, filt) in enumerate(self._SCROLL_TABS):
             if any(filt(item) for item in self.scroll_menu_items):
                 self._scroll_tab = i
@@ -725,13 +815,22 @@ class MenuMixin:
         if key == pygame.K_LEFT:
             self._scroll_tab = self._cycle_tab(self._scroll_tab, -1, len(self._SCROLL_TABS),
                 lambda t: any(self._SCROLL_TABS[t][1](i) for i in self.scroll_menu_items))
+            self._scroll_sel = 0
             return
         if key == pygame.K_RIGHT:
             self._scroll_tab = self._cycle_tab(self._scroll_tab, 1, len(self._SCROLL_TABS),
                 lambda t: any(self._SCROLL_TABS[t][1](i) for i in self.scroll_menu_items))
+            self._scroll_sel = 0
             return
         tab_items = self._get_scroll_tab_items()
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._scroll_sel = self._move_menu_cursor(
+                getattr(self, '_scroll_sel', 0), key, len(tab_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_scroll_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(tab_items):
             return
         self.state = STATE_PLAYER
@@ -802,7 +901,7 @@ class MenuMixin:
         if not self.identify_menu_items:
             self.add_message("Nothing here to identify or examine.", 'info')
             return
-        self._menu_page = 0
+        self._identify_sel = 0
         self.state = STATE_IDENTIFY_MENU
 
     def _identify_menu_input(self, key: int):
@@ -829,8 +928,15 @@ class MenuMixin:
                 'warning')
             self._advance_turn()
             return
-        idx = self._paged_menu_input(key, self.identify_menu_items)
-        if idx is None:
+        if key in self._MENU_CURSOR_KEYS:
+            self._identify_sel = self._move_menu_cursor(
+                getattr(self, '_identify_sel', 0), key, len(self.identify_menu_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_identify_sel', 0)
+        else:
+            idx = self._paged_menu_input(key, self.identify_menu_items)
+        if idx is None or idx >= len(self.identify_menu_items):
             return
         item, is_ground, is_corpse = self.identify_menu_items[idx]
         self.state = STATE_PLAYER
@@ -867,6 +973,7 @@ class MenuMixin:
         self.drop_menu_items = items
         self._menu_tab = 0
         self._drop_scroll = 0
+        self._drop_sel = 0
         self.state = STATE_DROP_MENU
 
     def _get_drop_tab_items(self):
@@ -884,24 +991,26 @@ class MenuMixin:
                 _, filt = self._DROP_TABS[t]
                 return bool(self.drop_menu_items) if filt is None else any(filt(i) for i in self.drop_menu_items)
             self._menu_tab = self._cycle_tab(self._menu_tab, -1, len(self._DROP_TABS), _dr_has)
+            self._drop_sel = 0
+            self._drop_scroll = 0
             return
         if key == pygame.K_RIGHT:
             def _dr_has(t):
                 _, filt = self._DROP_TABS[t]
                 return bool(self.drop_menu_items) if filt is None else any(filt(i) for i in self.drop_menu_items)
             self._menu_tab = self._cycle_tab(self._menu_tab, 1, len(self._DROP_TABS), _dr_has)
-            return
-        # Up/Down: scroll within the current tab
-        if key == pygame.K_UP:
-            self._drop_scroll = max(0, getattr(self, '_drop_scroll', 0) - 1)
-            return
-        if key == pygame.K_DOWN:
-            tab_items = self._get_drop_tab_items()
-            max_scroll = max(0, len(tab_items) - self._DROP_MAX_VISIBLE)
-            self._drop_scroll = min(getattr(self, '_drop_scroll', 0) + 1, max_scroll)
+            self._drop_sel = 0
+            self._drop_scroll = 0
             return
         tab_items = self._get_drop_tab_items()
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._drop_sel = self._move_menu_cursor(
+                getattr(self, '_drop_sel', 0), key, len(tab_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_drop_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(tab_items):
             return
         item = tab_items[idx]
@@ -948,6 +1057,7 @@ class MenuMixin:
             return
         self.examine_menu_items = items
         self._examine_tab = 0
+        self._examine_sel = 0
         # Auto-select first tab with items
         for i, (_, filt) in enumerate(self._EXAMINE_TABS):
             if any(filt(item) for item in items):
@@ -966,13 +1076,22 @@ class MenuMixin:
         if key == pygame.K_LEFT:
             self._examine_tab = self._cycle_tab(self._examine_tab, -1, len(self._EXAMINE_TABS),
                 lambda t: any(self._EXAMINE_TABS[t][1](i) for i in self.examine_menu_items))
+            self._examine_sel = 0
             return
         if key == pygame.K_RIGHT:
             self._examine_tab = self._cycle_tab(self._examine_tab, 1, len(self._EXAMINE_TABS),
                 lambda t: any(self._EXAMINE_TABS[t][1](i) for i in self.examine_menu_items))
+            self._examine_sel = 0
             return
         tab_items = self._get_examine_tab_items()
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._examine_sel = self._move_menu_cursor(
+                getattr(self, '_examine_sel', 0), key, len(tab_items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_examine_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(tab_items):
             return
         self._lore_subject = tab_items[idx]
@@ -1150,10 +1269,19 @@ class MenuMixin:
             self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
             return
         self._power_menu_list = powers
+        self._power_sel = 0
         self.state = STATE_POWER_MENU
 
     def _power_menu_input(self, key: int):
-        idx = self._AZ_KEYS.get(key)
+        powers = getattr(self, '_power_menu_list', [])
+        if key in self._MENU_CURSOR_KEYS:
+            self._power_sel = self._move_menu_cursor(
+                getattr(self, '_power_sel', 0), key, len(powers))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_power_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(self._power_menu_list):
             return
         self.state = STATE_PLAYER
@@ -1838,6 +1966,7 @@ class MenuMixin:
             return
         self.pet_feed_items = foods
         self._pet_feed_target = pet
+        self._pet_feed_sel = 0
         self.state = STATE_PET_FEED
 
     def _pet_feed_input(self, key: int):
@@ -1846,7 +1975,14 @@ class MenuMixin:
         if pet is None or not items:
             self.state = STATE_PET_MENU
             return
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._pet_feed_sel = self._move_menu_cursor(
+                getattr(self, '_pet_feed_sel', 0), key, len(items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_pet_feed_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(items):
             return
         food = items[idx]
@@ -1893,6 +2029,7 @@ class MenuMixin:
             return
         self.pet_heal_items = potions
         self._pet_heal_target = pet
+        self._pet_heal_sel = 0
         self.state = STATE_PET_HEAL
 
     def _pet_heal_input(self, key: int):
@@ -1901,7 +2038,14 @@ class MenuMixin:
         if pet is None or not items:
             self.state = STATE_PET_MENU
             return
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._pet_heal_sel = self._move_menu_cursor(
+                getattr(self, '_pet_heal_sel', 0), key, len(items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_pet_heal_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(items):
             return
         potion = items[idx]
@@ -2013,6 +2157,7 @@ class MenuMixin:
             return
         self.pet_specials_items = avail
         self._pet_specials_target = pet
+        self._pet_specials_sel = 0
         self.state = STATE_PET_SPECIALS
 
     def _pet_specials_input(self, key: int):
@@ -2021,7 +2166,14 @@ class MenuMixin:
         if pet is None or not items:
             self.state = STATE_PET_MENU
             return
-        idx = self._AZ_KEYS.get(key)
+        if key in self._MENU_CURSOR_KEYS:
+            self._pet_specials_sel = self._move_menu_cursor(
+                getattr(self, '_pet_specials_sel', 0), key, len(items))
+            return
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+            idx = getattr(self, '_pet_specials_sel', 0)
+        else:
+            idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(items):
             return
         special = items[idx]

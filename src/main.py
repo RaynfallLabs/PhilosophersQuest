@@ -111,7 +111,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _snd.init()   # initialise procedural sound synthesis (best-effort)
         self.quiz_engine        = QuizEngine()
         self.msg_log            = MessageLog()
-        self.sidebar            = Sidebar(screen, layout.GAME_W)
+        self.sidebar            = Sidebar(screen, layout.RIGHT_X)
         self.level_mgr          = LevelManager()
         self.state              = STATE_PLAYER
         self.combat_target      = None
@@ -119,7 +119,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.equip_menu_items: list      = []
         self.equip_menu_equipped: list   = []   # (slot_name, item) pairs for unequip section
         self._menu_tab: int              = 0    # current tab index for tabbed menus
-        self._menu_page: int             = 0    # page offset for paginated menus
         self.wand_menu_items: list       = []
         self.scroll_menu_items: list     = []
         self.spell_menu_items: list      = []   # list of spell_ids known to player
@@ -388,7 +387,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, layout.VIEWPORT_W, layout.VIEWPORT_H)
-        self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.GAME_W, layout.GAME_H)
+        self.renderer.set_view_origin(layout.MAP_X, 0)
+        self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
 
         # Spawn trigger items and NPC for moral encounters on L1 (if assigned)
@@ -682,7 +682,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # had empty `lore` fields. Recompose from template + material so the
         # examine panel shows lore.
         self._migrate_common_item_lore()
-        self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.GAME_W, layout.GAME_H)
+        self.renderer.set_view_origin(layout.MAP_X, 0)
+        self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
         self._show_load_summary_popup()
 
@@ -1262,7 +1263,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if ghost_name:
             self.add_message(f"You sense a restless presence... the {ghost_name} haunts this floor.", 'danger')
             self._log_chronicle(f"Encountered the {ghost_name}. A chill ran through me.")
-        self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.GAME_W, layout.GAME_H)
+        self.renderer.set_view_origin(layout.MAP_X, 0)
+        self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
 
         # Spawn trigger items and NPCs for moral encounters (only on first visit)
         if not saved:
@@ -2293,10 +2295,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def on_resize(self, w: int, h: int):
         """Called after window is resized -- syncs renderer and sidebar."""
         layout.update(w, h)
+        self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(
-            self.dungeon.width, self.dungeon.height, layout.GAME_W, layout.GAME_H
+            self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H
         )
-        self.sidebar.x = layout.GAME_W
+        self.sidebar.x = layout.RIGHT_X
+        self.sidebar.right_x = layout.RIGHT_X
 
     def _do_move(self, dx: int, dy: int):
         """Attempt a player move/action in direction (dx, dy)."""
@@ -5179,6 +5183,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _open_quirks_screen(self):
         self._quirks_scroll = 0
+        self._quirks_sel = 0
         qs = getattr(self, 'quirk_system', None)
         if qs:
             self._quirks_data = qs.get_all_quirk_info()
@@ -5190,9 +5195,210 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Character sheet  (@)
     # ------------------------------------------------------------------
 
+    _CHARSHEET_PACK_FILTERS = ('all', 'gear', 'food', 'lore')
+
     def _open_character_sheet(self):
         self._charsheet_scroll = 0
+        self._charsheet_focus = 'loadout'
+        self._charsheet_loadout_idx = 0
+        self._charsheet_pack_idx = 0
+        self._charsheet_action_idx = 0
+        self._charsheet_action_source = 'loadout'
+        self._charsheet_pack_scroll = 0
+        self._charsheet_pack_filter = 'all'
+        entries = self._charsheet_loadout_entries()
+        for idx, entry in enumerate(entries):
+            if entry.get('item') is not None:
+                self._charsheet_loadout_idx = idx
+                break
         self.state = STATE_CHARACTER_SHEET
+
+    def _charsheet_loadout_entries(self):
+        from items import ARMOR_SLOTS
+        p = self.player
+        rows = [
+            {'label': 'Weapon', 'slot': 'weapon', 'item': p.weapon},
+            {'label': 'Ranged', 'slot': 'ranged_weapon', 'item': p.ranged_weapon},
+            {'label': 'Shield', 'slot': 'shield', 'item': p.shield},
+        ]
+        armor_labels = {
+            'head': 'Head', 'body': 'Body', 'arms': 'Arms', 'hands': 'Hands',
+            'legs': 'Legs', 'feet': 'Feet', 'cloak': 'Cloak', 'shirt': 'Shirt',
+        }
+        for idx, slot in enumerate(ARMOR_SLOTS):
+            rows.append({
+                'label': armor_labels.get(slot, slot.title()),
+                'slot': slot,
+                'item': p.armor_slots[idx],
+            })
+        rows.append({'label': 'Amulet', 'slot': 'amulet', 'item': p.amulet_slot})
+        rows.append({'label': 'Belt', 'slot': 'belt', 'item': getattr(p, 'belt_slot', None)})
+        for idx, item in enumerate(p.accessory_slots):
+            rows.append({'label': f'Ring {idx + 1}', 'slot': f'accessory_{idx}', 'item': item})
+        return rows
+
+    def _charsheet_current_pack_filter(self) -> str:
+        active = getattr(self, '_charsheet_pack_filter', 'all')
+        if active not in self._CHARSHEET_PACK_FILTERS:
+            active = 'all'
+            self._charsheet_pack_filter = active
+        return active
+
+    def _charsheet_pack_filter_matches(self, item, active: str) -> bool:
+        if active == 'all':
+            return True
+        if active == 'gear':
+            return isinstance(item, (Weapon, Armor, Shield, Accessory, Ammo))
+        if active == 'food':
+            return isinstance(item, (Food, Ingredient, Potion))
+        if active == 'lore':
+            return isinstance(item, (Corpse, Wand, Scroll, Spellbook, Artifact))
+        return True
+
+    def _charsheet_pack_entries(self, *, filtered: bool = True):
+        rows = [
+            {'letter': letter, 'item': item}
+            for letter, item in self.player.get_inventory_display()
+        ]
+        if not filtered:
+            return rows
+        active = self._charsheet_current_pack_filter()
+        return [
+            entry for entry in rows
+            if self._charsheet_pack_filter_matches(entry['item'], active)
+        ]
+
+    def _charsheet_set_pack_filter(self, active: str) -> None:
+        if active not in self._CHARSHEET_PACK_FILTERS:
+            return
+        if active != self._charsheet_current_pack_filter():
+            self._charsheet_pack_idx = 0
+            self._charsheet_pack_scroll = 0
+        self._charsheet_pack_filter = active
+        self._charsheet_focus = 'pack'
+        self._charsheet_action_source = 'pack'
+        self._charsheet_clamp()
+
+    def _charsheet_cycle_pack_filter(self, delta: int) -> None:
+        filters = self._CHARSHEET_PACK_FILTERS
+        idx = filters.index(self._charsheet_current_pack_filter())
+        self._charsheet_set_pack_filter(filters[(idx + delta) % len(filters)])
+
+    def _charsheet_clamp(self) -> None:
+        loadout = self._charsheet_loadout_entries()
+        pack = self._charsheet_pack_entries()
+        self._charsheet_loadout_idx = max(
+            0, min(getattr(self, '_charsheet_loadout_idx', 0), max(0, len(loadout) - 1)))
+        self._charsheet_pack_idx = max(
+            0, min(getattr(self, '_charsheet_pack_idx', 0), max(0, len(pack) - 1)))
+        actions = self._charsheet_actions()
+        self._charsheet_action_idx = max(
+            0, min(getattr(self, '_charsheet_action_idx', 0), max(0, len(actions) - 1)))
+
+    def _charsheet_selection(self, *, source: str | None = None):
+        self._charsheet_clamp_shallow()
+        focus = source or getattr(self, '_charsheet_focus', 'loadout')
+        if focus == 'actions':
+            focus = getattr(self, '_charsheet_action_source', 'loadout')
+        if focus == 'pack':
+            pack = self._charsheet_pack_entries()
+            if not pack:
+                return 'pack', None, None
+            entry = pack[getattr(self, '_charsheet_pack_idx', 0)]
+            return 'pack', entry, entry.get('item')
+        loadout = self._charsheet_loadout_entries()
+        if not loadout:
+            return 'loadout', None, None
+        entry = loadout[getattr(self, '_charsheet_loadout_idx', 0)]
+        return 'loadout', entry, entry.get('item')
+
+    def _charsheet_clamp_shallow(self) -> None:
+        loadout_len = len(self._charsheet_loadout_entries())
+        pack_len = len(self._charsheet_pack_entries())
+        self._charsheet_loadout_idx = max(
+            0, min(getattr(self, '_charsheet_loadout_idx', 0), max(0, loadout_len - 1)))
+        self._charsheet_pack_idx = max(
+            0, min(getattr(self, '_charsheet_pack_idx', 0), max(0, pack_len - 1)))
+
+    def _charsheet_actions(self):
+        source, entry, item = self._charsheet_selection(source=self._charsheet_detail_source())
+        if item is None:
+            return []
+        actions = []
+        if source == 'pack':
+            if isinstance(item, (Weapon, Armor, Shield, Accessory)):
+                actions.append({'id': 'equip', 'key': 'E', 'label': 'Equip'})
+            if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 5)) < 5:
+                actions.append({'id': 'identify', 'key': 'I', 'label': 'Identify'})
+            actions.append({'id': 'lore', 'key': 'X', 'label': 'Lore'})
+            actions.append({'id': 'drop', 'key': 'D', 'label': 'Drop'})
+        else:
+            actions.append({'id': 'unequip', 'key': 'U', 'label': 'Unequip'})
+            if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 5)) < 5:
+                actions.append({'id': 'identify', 'key': 'I', 'label': 'Identify'})
+            actions.append({'id': 'lore', 'key': 'X', 'label': 'Lore'})
+        return actions
+
+    def _charsheet_focus_actions(self) -> None:
+        focus = getattr(self, '_charsheet_focus', 'loadout')
+        if focus in ('loadout', 'pack'):
+            self._charsheet_action_source = focus
+        self._charsheet_focus = 'actions'
+        self._charsheet_clamp()
+
+    def _charsheet_detail_source(self) -> str:
+        focus = getattr(self, '_charsheet_focus', 'loadout')
+        if focus in ('loadout', 'pack'):
+            return focus
+        return getattr(self, '_charsheet_action_source', 'loadout')
+
+    def _charsheet_activate_action(self, action_id: str | None = None) -> bool:
+        self._charsheet_clamp()
+        if action_id is None:
+            actions = self._charsheet_actions()
+            if not actions:
+                return False
+            action_id = actions[getattr(self, '_charsheet_action_idx', 0)]['id']
+
+        source, entry, item = self._charsheet_selection(source=self._charsheet_detail_source())
+        if item is None:
+            self.add_message("Nothing selected.", 'info')
+            return False
+
+        if action_id == 'equip':
+            if source != 'pack' or not isinstance(item, (Weapon, Armor, Shield, Accessory)):
+                self.add_message("That item cannot be equipped from here.", 'info')
+                return False
+            self._equip_item(item)
+            return True
+
+        if action_id == 'unequip':
+            if source != 'loadout' or not entry:
+                self.add_message("Choose an equipped item first.", 'info')
+                return False
+            self._unequip_slot(entry.get('slot', ''), item)
+            return True
+
+        if action_id == 'identify':
+            if not hasattr(item, 'id_level') or int(getattr(item, 'id_level', 5)) >= 5:
+                self.add_message("You already understand that item.", 'info')
+                return False
+            self._identify_item(item)
+            return True
+
+        if action_id == 'lore':
+            self._lore_subject = item
+            self.state = STATE_LORE
+            return True
+
+        if action_id == 'drop':
+            if source != 'pack':
+                self.add_message("Unequip it before dropping it.", 'warning')
+                return False
+            self._do_drop_item(item)
+            return True
+
+        return False
 
 
     def _get_effect_source(self, effect_id: str) -> str:
@@ -5296,6 +5502,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         slot_iter.extend(getattr(self.player, 'armor_slots', []) or [])
         slot_iter.extend(getattr(self.player, 'accessory_slots', []) or [])
         slot_iter.append(getattr(self.player, 'amulet_slot', None))
+        slot_iter.append(getattr(self.player, 'belt_slot', None))
         for other in slot_iter:
             if other is None:
                 continue
@@ -5350,13 +5557,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
                 if 'status' in fx:
                     self._remove_status_if_no_other_grants(fx['status'])
+        elif slot_name == 'belt':
+            self.player.belt_slot = None
+            from items import Accessory as _Acc
+            if isinstance(item, _Acc):
+                fx = item.effects
+                if 'stat' in fx:
+                    self.player.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'stat2' in fx:
+                    self.player.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                if 'status' in fx:
+                    self._remove_status_if_no_other_grants(fx['status'])
         self.player.inventory.append(item)
         self.add_message(f"You remove the {self._display_name(item)}.", 'info')
         _qs_uneq = getattr(self, 'quirk_system', None)
         if _qs_uneq:
             itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
                     'shield' if slot_name == 'shield' else \
-                    'armor' if slot_name not in ('amulet',) and not slot_name.startswith('accessory_') else \
+                    'armor' if slot_name not in ('amulet', 'belt') and not slot_name.startswith('accessory_') else \
                     'accessory'
             _qs_uneq.on_item_unequipped(item.id, itype, slot_name)
         self._advance_turn()
@@ -6257,6 +6475,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         self._study_subject_idx = 0  # 0 = 'all'
         self._study_question_idx = 0
+        self._study_scroll = 0
         self._study_filtered = list(self.missed_questions)
         self.state = STATE_STUDY
 
@@ -6708,11 +6927,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Encyclopedia  (b key)
     # ------------------------------------------------------------------
 
+    _ENCYCLOPEDIA_CATS = [
+        ('a', 'bestiary', 'Bestiary'),
+        ('b', 'weapon', 'Armory'),
+        ('c', 'armor', 'Armor'),
+        ('d', 'accessory', 'Accessories'),
+        ('e', 'scroll', 'Scrolls'),
+        ('f', 'wand', 'Wands'),
+        ('g', 'spellbook', 'Spellbooks'),
+        ('h', 'chronicle', 'Chronicle'),
+        ('i', 'lore_hints', 'Lore Hints'),
+        ('j', 'recipes', 'Recipes'),
+    ]
+
     def _open_encyclopedia(self):
         """Open the encyclopedia browser."""
         self.encyclopedia_category = ''
         self.encyclopedia_entries = []
         self.encyclopedia_selection = 0
+        self._encyclopedia_cat_idx = 0
+        self._encyclopedia_article_scroll = 0
         self._encyclopedia_entry = None
         self.state = STATE_ENCYCLOPEDIA
 

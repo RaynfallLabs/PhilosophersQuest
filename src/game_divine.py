@@ -886,6 +886,7 @@ class DivineMixin:
             items.append(entry)
 
         self._prayer_menu_items = items
+        self._prayer_sel = 0
         self._at_altar = (self.dungeon.tiles[self.player.y][self.player.x] == ALTAR)
         self.state = STATE_PRAY
 

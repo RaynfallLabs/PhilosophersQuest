@@ -1,8 +1,8 @@
 """Crowded menus must scroll (2026-06-07).
 
 draw_menu now AUTO-FOLLOWS the selected row so any overflowing cursor menu keeps
-the selection on-screen with no per-caller scroll plumbing; the cook/eat letter
-menus gained an Up/Down cursor (_move_menu_cursor) that drives that selection.
+the selection on-screen with no per-caller scroll plumbing; letter shortcuts
+still cover a-z, while the cursor/Enter path can reach long inventories.
 Headless (SDL dummy) -- these guard the scroll math, not the pixels.
 """
 import os
@@ -45,12 +45,12 @@ def test_draw_menu_does_not_scroll_when_everything_fits():
     assert sc == 0
 
 
-def test_move_menu_cursor_clamps_and_caps_at_26():
+def test_move_menu_cursor_clamps_to_full_list():
     from main import Game
     g = Game.__new__(Game)
     assert g._move_menu_cursor(0, pygame.K_UP, 10) == 0       # clamp low
     assert g._move_menu_cursor(0, pygame.K_DOWN, 10) == 1
     assert g._move_menu_cursor(5, pygame.K_HOME, 10) == 0
     assert g._move_menu_cursor(0, pygame.K_END, 10) == 9      # last of 10
-    assert g._move_menu_cursor(0, pygame.K_END, 100) == 25    # a-z display cap
+    assert g._move_menu_cursor(0, pygame.K_END, 100) == 99    # arrows reach beyond z
     assert g._move_menu_cursor(0, pygame.K_DOWN, 0) == 0      # empty list safe

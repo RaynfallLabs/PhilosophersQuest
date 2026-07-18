@@ -245,6 +245,8 @@ class Renderer:
         self.map_tile_size = TILE_SIZE
         self.map_offset_x  = 0
         self.map_offset_y  = 0
+        self.view_origin_x = 0
+        self.view_origin_y = 0
 
         self._sym_font = pygame.font.SysFont('consolas', max(8, TILE_SIZE - 8), bold=True)
         self._sprite_cache: dict[str, pygame.Surface | None] = {}
@@ -256,6 +258,11 @@ class Renderer:
         """Compute tile size and centering offsets to fit the entire dungeon in the game panel."""
         ts = min(game_w // dungeon_w, game_h // dungeon_h)
         self._apply_tile_size(max(4, ts), dungeon_w, dungeon_h, game_w, game_h)
+
+    def set_view_origin(self, x: int, y: int = 0):
+        """Set the screen-space origin of the map viewport."""
+        self.view_origin_x = int(x)
+        self.view_origin_y = int(y)
 
     def set_close_up(self, player_x: int, player_y: int,
                      dungeon_w: int, dungeon_h: int,
@@ -292,8 +299,8 @@ class Renderer:
 
     def world_to_screen(self, wx: int, wy: int) -> tuple[int, int]:
         """Convert world tile coords to screen pixel coords."""
-        return (wx * self.map_tile_size + self.map_offset_x,
-                wy * self.map_tile_size + self.map_offset_y)
+        return (self.view_origin_x + wx * self.map_tile_size + self.map_offset_x,
+                self.view_origin_y + wy * self.map_tile_size + self.map_offset_y)
 
     def _get_env_sprite(self, name: str) -> 'pygame.Surface | None':
         if name in self._env_sprite_cache:

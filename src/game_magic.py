@@ -3164,7 +3164,6 @@ class MagicMixin:
         # instead of starting the philosophy quiz.
         self._scroll_identify_pending = True
         self._scroll_identify_blessed = bool(bless)
-        self._menu_page = 0
         self.state = STATE_IDENTIFY_MENU
         self.add_message(
             "The scroll trembles in your hand — choose the item to be revealed.",

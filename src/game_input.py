@@ -300,10 +300,16 @@ class InputMixin:
                 self._review_idx = 0
                 self.state = STATE_REVIEW_MISSED
         elif self.state == STATE_REVIEW_MISSED:
-            if key in (pygame.K_RIGHT, pygame.K_DOWN, pygame.K_SPACE, pygame.K_RETURN):
+            if key == pygame.K_PAGEUP:
+                self._review_scroll = max(0, getattr(self, '_review_scroll', 0) - 8)
+            elif key == pygame.K_PAGEDOWN:
+                self._review_scroll = getattr(self, '_review_scroll', 0) + 8
+            elif key in (pygame.K_RIGHT, pygame.K_DOWN, pygame.K_SPACE, pygame.K_RETURN):
                 self._review_idx = min(self._review_idx + 1, len(self.missed_questions) - 1)
+                self._review_scroll = 0
             elif key in (pygame.K_LEFT, pygame.K_UP):
                 self._review_idx = max(0, self._review_idx - 1)
+                self._review_scroll = 0
 
         return True
 
@@ -667,35 +673,130 @@ class InputMixin:
         if key in (pygame.K_ESCAPE, pygame.K_w, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
             return
+        data = getattr(self, '_quirks_data', []) or []
+        if not data:
+            return
+        cur = max(0, min(getattr(self, '_quirks_sel', 0), len(data) - 1))
         if key == pygame.K_UP:
-            self._quirks_scroll = max(0, self._quirks_scroll - 1)
+            self._quirks_sel = max(0, cur - 1)
         elif key == pygame.K_DOWN:
-            self._quirks_scroll += 1
+            self._quirks_sel = min(len(data) - 1, cur + 1)
         elif key == pygame.K_PAGEUP:
-            self._quirks_scroll = max(0, self._quirks_scroll - 10)
+            self._quirks_sel = max(0, cur - 6)
         elif key == pygame.K_PAGEDOWN:
-            self._quirks_scroll += 10
+            self._quirks_sel = min(len(data) - 1, cur + 6)
         elif key == pygame.K_HOME:
-            self._quirks_scroll = 0
+            self._quirks_sel = 0
         elif key == pygame.K_END:
-            self._quirks_scroll = max(0, len(self._quirks_data) - 1)
+            self._quirks_sel = len(data) - 1
 
     def _character_sheet_input(self, key):
-        if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
+        if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
             return
+        self._charsheet_clamp()
+        focus = getattr(self, '_charsheet_focus', 'loadout')
+        order = ['loadout', 'pack', 'actions']
+
+        if key == pygame.K_RETURN or key == pygame.K_KP_ENTER:
+            if focus == 'actions':
+                self._charsheet_activate_action()
+            else:
+                self._charsheet_focus_actions()
+            return
+
+        filter_keys = {
+            pygame.K_1: 'all',
+            pygame.K_2: 'gear',
+            pygame.K_3: 'food',
+            pygame.K_4: 'lore',
+        }
+        if key in filter_keys:
+            self._charsheet_set_pack_filter(filter_keys[key])
+            return
+        if key == pygame.K_TAB:
+            try:
+                mods = pygame.key.get_mods()
+            except pygame.error:
+                mods = 0
+            delta = -1 if mods & pygame.KMOD_SHIFT else 1
+            self._charsheet_cycle_pack_filter(delta)
+            return
+
+        shortcut_actions = {
+            pygame.K_e: 'equip',
+            pygame.K_u: 'unequip',
+            pygame.K_i: 'identify',
+            pygame.K_x: 'lore',
+            pygame.K_d: 'drop',
+        }
+        if key in shortcut_actions:
+            self._charsheet_activate_action(shortcut_actions[key])
+            return
+
+        if key == pygame.K_LEFT:
+            if focus == 'actions':
+                self._charsheet_focus = getattr(self, '_charsheet_action_source', 'pack')
+            else:
+                idx = max(0, order.index(focus) - 1) if focus in order else 0
+                self._charsheet_focus = order[idx]
+            self._charsheet_clamp()
+            return
+        if key == pygame.K_RIGHT:
+            if focus in ('loadout', 'pack'):
+                idx = min(len(order) - 1, order.index(focus) + 1)
+                if order[idx] == 'actions':
+                    self._charsheet_focus_actions()
+                else:
+                    self._charsheet_focus = order[idx]
+            else:
+                self._charsheet_focus = 'actions'
+            self._charsheet_clamp()
+            return
+
         if key == pygame.K_UP:
-            self._charsheet_scroll = max(0, self._charsheet_scroll - 1)
+            if focus == 'pack':
+                self._charsheet_pack_idx = max(0, getattr(self, '_charsheet_pack_idx', 0) - 1)
+            elif focus == 'actions':
+                self._charsheet_action_idx = max(0, getattr(self, '_charsheet_action_idx', 0) - 1)
+            else:
+                self._charsheet_loadout_idx = max(0, getattr(self, '_charsheet_loadout_idx', 0) - 1)
         elif key == pygame.K_DOWN:
-            self._charsheet_scroll += 1
+            if focus == 'pack':
+                self._charsheet_pack_idx = getattr(self, '_charsheet_pack_idx', 0) + 1
+            elif focus == 'actions':
+                self._charsheet_action_idx = getattr(self, '_charsheet_action_idx', 0) + 1
+            else:
+                self._charsheet_loadout_idx = getattr(self, '_charsheet_loadout_idx', 0) + 1
         elif key == pygame.K_PAGEUP:
-            self._charsheet_scroll = max(0, self._charsheet_scroll - 10)
+            if focus == 'pack':
+                self._charsheet_pack_idx = max(0, getattr(self, '_charsheet_pack_idx', 0) - 6)
+            elif focus == 'actions':
+                self._charsheet_action_idx = 0
+            else:
+                self._charsheet_loadout_idx = max(0, getattr(self, '_charsheet_loadout_idx', 0) - 6)
         elif key == pygame.K_PAGEDOWN:
-            self._charsheet_scroll += 10
+            if focus == 'pack':
+                self._charsheet_pack_idx = getattr(self, '_charsheet_pack_idx', 0) + 6
+            elif focus == 'actions':
+                self._charsheet_action_idx = 999
+            else:
+                self._charsheet_loadout_idx = getattr(self, '_charsheet_loadout_idx', 0) + 6
         elif key == pygame.K_HOME:
-            self._charsheet_scroll = 0
+            if focus == 'pack':
+                self._charsheet_pack_idx = 0
+            elif focus == 'actions':
+                self._charsheet_action_idx = 0
+            else:
+                self._charsheet_loadout_idx = 0
         elif key == pygame.K_END:
-            self._charsheet_scroll = 9999
+            if focus == 'pack':
+                self._charsheet_pack_idx = 9999
+            elif focus == 'actions':
+                self._charsheet_action_idx = 9999
+            else:
+                self._charsheet_loadout_idx = 9999
+        self._charsheet_clamp()
 
     # ------------------------------------------------------------------
     # Cow encounter dialog
@@ -992,8 +1093,14 @@ class InputMixin:
             if self._study_filtered:
                 self._study_question_idx = min(
                     getattr(self, '_study_question_idx', 0) + 1, len(self._study_filtered) - 1)
+                self._study_scroll = 0
         elif key in (pygame.K_UP, pygame.K_BACKSPACE):
             self._study_question_idx = max(0, getattr(self, '_study_question_idx', 0) - 1)
+            self._study_scroll = 0
+        elif key == pygame.K_PAGEUP:
+            self._study_scroll = max(0, getattr(self, '_study_scroll', 0) - 8)
+        elif key == pygame.K_PAGEDOWN:
+            self._study_scroll = getattr(self, '_study_scroll', 0) + 8
 
     # ------------------------------------------------------------------
     # Help / lore overlays
@@ -1006,6 +1113,81 @@ class InputMixin:
     def _lore_input(self, key: int):
         if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE, pygame.K_x):
             self.state = STATE_PLAYER
+            self._lore_subject = None
+            return
+
+        subject = getattr(self, '_lore_subject', None)
+        if subject is None:
+            self.state = STATE_PLAYER
+            return
+
+        if key == pygame.K_TAB:
+            panes = ['identity', 'mechanics', 'lore']
+            focus = getattr(self, '_lore_focus', 'mechanics')
+            try:
+                mods = pygame.key.get_mods()
+            except pygame.error:
+                mods = 0
+            delta = -1 if mods & pygame.KMOD_SHIFT else 1
+            idx = panes.index(focus) if focus in panes else 1
+            self._lore_focus = panes[(idx + delta) % len(panes)]
+            return
+
+        scroll_keys = {
+            pygame.K_UP: -1,
+            pygame.K_DOWN: 1,
+            pygame.K_PAGEUP: -8,
+            pygame.K_PAGEDOWN: 8,
+            pygame.K_HOME: 'home',
+            pygame.K_END: 'end',
+        }
+        if key in scroll_keys:
+            focus = getattr(self, '_lore_focus', 'mechanics')
+            attr = {
+                'identity': '_lore_identity_scroll',
+                'mechanics': '_lore_mech_scroll',
+                'lore': '_lore_text_scroll',
+            }.get(focus, '_lore_mech_scroll')
+            delta = scroll_keys[key]
+            if delta == 'home':
+                setattr(self, attr, 0)
+            elif delta == 'end':
+                setattr(self, attr, 9999)
+            else:
+                setattr(self, attr, max(0, getattr(self, attr, 0) + delta))
+            return
+
+        from items import Weapon, Armor, Shield, Accessory, Corpse
+
+        if key == pygame.K_i:
+            if isinstance(subject, Corpse) or not hasattr(subject, 'id_level'):
+                self.add_message("There is nothing more to identify here.", 'info')
+                return
+            if int(getattr(subject, 'id_level', 5)) >= 5:
+                self.add_message("You already understand that item completely.", 'info')
+                return
+            self.state = STATE_PLAYER
+            self._identify_item(subject)
+            return
+
+        if key == pygame.K_e:
+            if isinstance(subject, Corpse):
+                self.add_message("You cannot equip a corpse.", 'info')
+                return
+            if not isinstance(subject, (Weapon, Armor, Shield, Accessory)):
+                self.add_message("That item cannot be equipped.", 'info')
+                return
+            slot = None
+            if hasattr(self, '_lore_equipped_slot'):
+                slot = self._lore_equipped_slot(subject)
+            self.state = STATE_PLAYER
+            if slot:
+                self._unequip_slot(slot, subject)
+            elif subject in getattr(self.player, 'inventory', []):
+                self._equip_item(subject)
+            else:
+                self.add_message("That item is not in your pack.", 'info')
+            return
 
     # ------------------------------------------------------------------
     # Drop-gold numeric prompt
@@ -1071,10 +1253,13 @@ class InputMixin:
             self.state = STATE_PLAYER
             return
         sel = getattr(self, '_shop_selection', 0)
-        if key == pygame.K_UP:
-            self._shop_selection = (sel - 1) % len(stock)
-        elif key == pygame.K_DOWN:
-            self._shop_selection = (sel + 1) % len(stock)
+        if key in getattr(self, '_MENU_CURSOR_KEYS', (pygame.K_UP, pygame.K_DOWN)):
+            if hasattr(self, '_move_menu_cursor'):
+                self._shop_selection = self._move_menu_cursor(sel, key, len(stock))
+            elif key == pygame.K_UP:
+                self._shop_selection = (sel - 1) % len(stock)
+            elif key == pygame.K_DOWN:
+                self._shop_selection = (sel + 1) % len(stock)
         elif key == pygame.K_h:
             sel = self._shop_selection
             if sel < len(stock):
@@ -1108,35 +1293,76 @@ class InputMixin:
                         self.state = STATE_PLAYER
 
     def _encyclopedia_input(self, key: int):
+        cats = getattr(self, '_ENCYCLOPEDIA_CATS', [
+            ('a', 'bestiary', 'Bestiary'),
+            ('b', 'weapon', 'Armory'),
+            ('c', 'armor', 'Armor'),
+            ('d', 'accessory', 'Accessories'),
+            ('e', 'scroll', 'Scrolls'),
+            ('f', 'wand', 'Wands'),
+            ('g', 'spellbook', 'Spellbooks'),
+            ('h', 'chronicle', 'Chronicle'),
+            ('i', 'lore_hints', 'Lore Hints'),
+            ('j', 'recipes', 'Recipes'),
+        ])
+        cat_keys = {getattr(pygame, f'K_{key_label}'): slug
+                    for key_label, slug, _ in cats}
+
+        def open_category(slug: str):
+            self.encyclopedia_category = slug
+            self.encyclopedia_selection = 0
+            self._encyclopedia_entry = None
+            self._encyclopedia_article_scroll = 0
+            for idx, (_key, cat_slug, _label) in enumerate(cats):
+                if cat_slug == slug:
+                    self._encyclopedia_cat_idx = idx
+                    break
+            self._encyclopedia_load_entries(slug)
+
         if self.encyclopedia_category == '':
             # Category selection screen
-            cat_keys = {
-                pygame.K_a: 'bestiary',
-                pygame.K_b: 'weapon',
-                pygame.K_c: 'armor',
-                pygame.K_d: 'accessory',
-                pygame.K_e: 'scroll',
-                pygame.K_f: 'wand',
-                pygame.K_g: 'spellbook',
-                pygame.K_h: 'chronicle',
-                pygame.K_i: 'lore_hints',
-                pygame.K_j: 'recipes',
-            }
             if key == pygame.K_ESCAPE:
                 self.state = STATE_PLAYER
                 return
+            if key == pygame.K_UP:
+                self._encyclopedia_cat_idx = max(0, getattr(self, '_encyclopedia_cat_idx', 0) - 1)
+                return
+            if key == pygame.K_DOWN:
+                self._encyclopedia_cat_idx = min(len(cats) - 1,
+                                                 getattr(self, '_encyclopedia_cat_idx', 0) + 1)
+                return
+            if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
+                idx = max(0, min(getattr(self, '_encyclopedia_cat_idx', 0),
+                                 len(cats) - 1))
+                open_category(cats[idx][1])
+                return
             cat = cat_keys.get(key)
             if cat:
-                self.encyclopedia_category = cat
-                self.encyclopedia_selection = 0
-                self._encyclopedia_entry = None
-                self._encyclopedia_load_entries(cat)
+                open_category(cat)
             return
 
         if self._encyclopedia_entry is not None:
-            # Entry detail view -- any key except arrows goes back to list
+            # Entry detail view
             if key == pygame.K_ESCAPE:
                 self._encyclopedia_entry = None
+                self._encyclopedia_article_scroll = 0
+                return
+            if key == pygame.K_PAGEUP:
+                self._encyclopedia_article_scroll = max(
+                    0, getattr(self, '_encyclopedia_article_scroll', 0) - 8)
+                return
+            if key == pygame.K_PAGEDOWN:
+                self._encyclopedia_article_scroll = getattr(
+                    self, '_encyclopedia_article_scroll', 0) + 8
+                return
+            if key == pygame.K_UP:
+                self._encyclopedia_article_scroll = max(
+                    0, getattr(self, '_encyclopedia_article_scroll', 0) - 1)
+                return
+            if key == pygame.K_DOWN:
+                self._encyclopedia_article_scroll = getattr(
+                    self, '_encyclopedia_article_scroll', 0) + 1
+                return
             return
 
         # List view
@@ -1145,15 +1371,38 @@ class InputMixin:
             self.encyclopedia_entries = []
             self.encyclopedia_selection = 0
             self._encyclopedia_entry = None
+            self._encyclopedia_article_scroll = 0
+            return
+        if key in cat_keys:
+            open_category(cat_keys[key])
+            return
+        if key == pygame.K_LEFT:
+            cur = getattr(self, '_encyclopedia_cat_idx', 0)
+            open_category(cats[(cur - 1) % len(cats)][1])
+            return
+        if key == pygame.K_RIGHT:
+            cur = getattr(self, '_encyclopedia_cat_idx', 0)
+            open_category(cats[(cur + 1) % len(cats)][1])
             return
         if key == pygame.K_UP:
             self.encyclopedia_selection = max(0, self.encyclopedia_selection - 1)
+            self._encyclopedia_article_scroll = 0
             return
         if key == pygame.K_DOWN:
             self.encyclopedia_selection = min(len(self.encyclopedia_entries) - 1,
                                               self.encyclopedia_selection + 1)
+            self._encyclopedia_article_scroll = 0
+            return
+        if key == pygame.K_PAGEUP:
+            self._encyclopedia_article_scroll = max(
+                0, getattr(self, '_encyclopedia_article_scroll', 0) - 8)
+            return
+        if key == pygame.K_PAGEDOWN:
+            self._encyclopedia_article_scroll = getattr(
+                self, '_encyclopedia_article_scroll', 0) + 8
             return
         if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
             if 0 <= self.encyclopedia_selection < len(self.encyclopedia_entries):
                 self._encyclopedia_entry = self.encyclopedia_entries[self.encyclopedia_selection]
+                self._encyclopedia_article_scroll = 0
             return
