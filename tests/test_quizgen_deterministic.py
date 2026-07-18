@@ -320,7 +320,7 @@ def test_load_moral_vision():
 def test_load_philosophy_subject_spec():
     s = specs.load_subject_spec("philosophy")
     assert s.subject == "philosophy"
-    assert s.style_verdict == "WONDER-DRIVEN"
+    assert "WONDER" in s.style_verdict  # wonder-driven (post-rebuild label "REASONING-MOVES + WONDER (hybrid)"), not SNAPPY-ROTE
 
 
 def test_taxonomy_aggregates():

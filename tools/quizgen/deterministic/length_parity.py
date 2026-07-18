@@ -28,7 +28,7 @@ MAX_LONGEST_SHORTEST_RATIO = 1.30
 
 EXEMPT_SUBJECTS = frozenset({"math"})
 
-# Per-subject ratio calibration. Default if not listed = 1.30 (philosophy standard).
+# Per-subject ratio calibration for the strict rule below. Default if not listed = 1.30.
 SUBJECT_RATIO_OVERRIDES: dict[str, float] = {}
 SUBJECT_DEVIATION_OVERRIDES: dict[str, float] = {}
 
@@ -36,7 +36,12 @@ SUBJECT_DEVIATION_OVERRIDES: dict[str, float] = {}
 # only fail condition is: correct answer is dramatically longer or shorter
 # than every distractor. Distractor-length variation among the 3 wrong
 # choices is allowed.
-ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking", "animal", "grammar", "science", "ai", "geography", "history", "theology", "economics", "trivia"})
+#
+# philosophy joined this set after its v2 Socratic rebuild: choices are
+# competing reasoning moves of naturally varying length, so demanding
+# equal-length parity would warp the content (bank design forbids that) --
+# the only real tell to guard is the answer being a length outlier.
+ANSWER_OUTLIER_SUBJECTS = frozenset({"cooking", "animal", "grammar", "science", "ai", "geography", "history", "theology", "economics", "trivia", "philosophy"})
 
 # Multiplier for "dramatically": answer is an outlier if its length exceeds
 # (longest distractor × multiplier) or is below (shortest distractor / multiplier).

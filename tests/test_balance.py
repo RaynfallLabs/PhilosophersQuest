@@ -268,6 +268,10 @@ def test_question_length_balance():
                     'history', 'animal', 'geography', 'grammar', 'science', 'ai',
                     'trivia'}
     for fpath in sorted(glob.glob(os.path.join(q_dir, '*.json'))):
+        _bn = os.path.basename(fpath)
+        _stem = os.path.splitext(_bn)[0]
+        if _stem.endswith(('_v2', '_pre_v2_backup', '_tellgate', '_backup', '_staging')) or '.backup' in _bn:
+            continue  # skip bank-rebuild artifacts (.gitignore'd); game loads only live <subject>.json
         subject = os.path.splitext(os.path.basename(fpath))[0]
         qs = load_json(os.path.join('data', 'questions', f'{subject}.json'))
         if not qs:
@@ -297,6 +301,10 @@ def test_question_fields_valid():
     import glob
     q_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'questions')
     for fpath in sorted(glob.glob(os.path.join(q_dir, '*.json'))):
+        _bn = os.path.basename(fpath)
+        _stem = os.path.splitext(_bn)[0]
+        if _stem.endswith(('_v2', '_pre_v2_backup', '_tellgate', '_backup', '_staging')) or '.backup' in _bn:
+            continue  # skip bank-rebuild artifacts (.gitignore'd); game loads only live <subject>.json
         subject = os.path.splitext(os.path.basename(fpath))[0]
         qs = load_json(os.path.join('data', 'questions', f'{subject}.json'))
         for i, q in enumerate(qs):
