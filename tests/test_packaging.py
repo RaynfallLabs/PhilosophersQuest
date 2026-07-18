@@ -176,3 +176,52 @@ def test_every_data_path_call_is_bundled():
         "entry to `_EXEMPT` if the call site has a graceful fallback.\n\n"
         + "\n".join(missing)
     )
+
+
+# ---------------------------------------------------------------------------
+# Guard: whole-directory bundle entries must contain ONLY runtime files.
+# The spec bundles data/items, data/materials, data/questions, data/templates,
+# assets/fonts and assets/tiles *wholesale*, so any generator script,
+# __pycache__, *.backup, or *_v2/_pre_v2_backup/_tellgate staging JSON dropped
+# inside them SHIPS in the exe. This test fails loudly if that happens.
+# (Added with the 2026-07-18 distro cleanup that removed ~50 MB of such cruft.)
+# ---------------------------------------------------------------------------
+
+_BUNDLED_DIR_ALLOWED = {
+    "data/items":     {".json"},
+    "data/materials": {".json"},
+    "data/questions": {".json"},
+    "data/templates": {".json"},
+    "assets/fonts":   {".ttf", ".otf"},
+    "assets/tiles":   {".png"},
+}
+_ARTIFACT_MARKERS = ("_v2", "_pre_v2", "_tellgate", "_backup", "_staging")
+
+
+def test_bundled_dirs_contain_only_runtime_files():
+    """Whole-directory `added_files` entries ship every file inside them,
+    so those dirs must stay pristine — only runtime data/assets, never
+    generator scripts, __pycache__, backups, or *_v2 staging banks."""
+    offenders = []
+    for rel, allowed in _BUNDLED_DIR_ALLOWED.items():
+        d = ROOT / rel
+        if not d.is_dir():
+            offenders.append(f"  MISSING bundled dir: {rel}")
+            continue
+        for f in d.rglob("*"):
+            if not f.is_file():
+                continue
+            if f.suffix.lower() not in allowed:
+                offenders.append(
+                    f"  {f.relative_to(ROOT).as_posix()}  "
+                    f"(bundle ships only {sorted(allowed)} here)")
+            elif rel == "data/questions" and any(m in f.stem for m in _ARTIFACT_MARKERS):
+                offenders.append(
+                    f"  {f.relative_to(ROOT).as_posix()}  "
+                    f"(bank-build artifact — must not ship in the exe)")
+    assert not offenders, (
+        "Non-runtime files found inside whole-dir bundle entries — these "
+        "would ship in the frozen exe. Move them out of the bundled dir "
+        "(e.g. to _archive/ or a non-bundled tools/ path):\n\n"
+        + "\n".join(offenders)
+    )
