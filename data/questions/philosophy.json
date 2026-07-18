@@ -26557,42 +26557,6 @@
  },
  {
   "tier": 3,
-  "question": "A boy argues: \u201cLions kill the cubs of rival males \u2014 it happens all the time in nature, so it's perfectly natural. Therefore humans ought to be allowed to harm their rivals too.\u201d His sister says the argument breaks somewhere between the premise and the conclusion. Where exactly does it slip?",
-  "answer": "The premises only say what animals DO, but the conclusion leaps to what people SHOULD do.",
-  "choices": [
-   "The premises only say what animals DO, but the conclusion leaps to what people SHOULD do.",
-   "The premise is just false, because lions actually defend every cub born in the pride.",
-   "It treats people and lions as one kind of creature, which the boy's sister never accepted.",
-   "The conclusion is too cautious; from those premises it should say people MUST harm rivals."
-  ],
-  "context": "This is the is\u2013ought problem. David Hume, in A Treatise of Human Nature (1739\u201340), noticed that writers slide from 'is' and 'is not' to 'ought' and 'ought not' without ever justifying the jump. 'Lions do it' is a pure description of how the world IS; it cannot by itself prove how people OUGHT to act. The move also has a fallacy name \u2014 the appeal to nature: 'it's natural' tells you how things ARE, never how they SHOULD be. Spotting the gap doesn't decide whether harming rivals is right or wrong; it only shows this particular argument never earned its conclusion. Source: Stanford Encyclopedia of Philosophy, 'Hume's Moral Philosophy'; Wikipedia, 'Is\u2013ought problem.'"
- },
- {
-  "tier": 4,
-  "question": "A student learns to spot the silent jump from 'is' to 'ought' \u2014 the moment a moral argument slides from facts about the world to a claim about what should be done. Thrilled, she announces: \u201cI caught the leap in his argument, so his conclusion must be false!\u201d Her teacher says she has pushed the tool one step too far. What does catching an is\u2013ought gap actually prove?",
-  "answer": "Only that the argument is invalid as written; a value premise must be added to fix it.",
-  "choices": [
-   "Only that the argument is invalid as written; a value premise must be added to fix it.",
-   "That the conclusion is false, since an argument with a gap cannot have a true conclusion.",
-   "That facts are irrelevant to morality, so no amount of evidence should change anyone's mind.",
-   "That the speaker was lying, because honest people never leave gaps in their reasoning."
-  ],
-  "context": "This is the diagnostic limit of Hume's gap. Spotting an is\u2013ought leap shows only that a SPECIFIC argument is invalid as stated \u2014 it never shows the conclusion is false, and it settles no moral question on its own. To bridge the gap honestly, you must supply at least one premise that already contains an 'ought' (a value premise); then the inference can legitimately go through. So the skill is purely diagnostic \u2014 'this argument smuggled in a value it never stated,' not 'this conclusion is wrong.' Source: Stanford Encyclopedia of Philosophy, 'Hume's Moral Philosophy'; Wikipedia, 'Is\u2013ought problem.'"
- },
- {
-  "tier": 5,
-  "question": "Two thinkers make different mistakes about morality. The first argues, \u201cMost people desire pleasure \u2014 that's a fact \u2014 therefore we ought to pursue pleasure,\u201d sliding from a fact straight to a duty. The second never argues at all; he simply treats the word 'good' as meaning nothing more than 'pleasant,' as if the two words named one and the same thing. A philosopher insists these are two different errors, not one. How does the second mistake differ from the first?",
-  "answer": "The first jumps from a fact to a duty; the second tries to define a moral word as a plain fact.",
-  "choices": [
-   "The first jumps from a fact to a duty; the second tries to define a moral word as a plain fact.",
-   "Both are really one error: deriving a duty and defining a word are just two names for it.",
-   "The first breaks a rule of logic, while the second is just factually wrong about what pleases people.",
-   "The first uses true premises and the second false ones, which is the only real difference here."
-  ],
-  "context": "This is the line between two famous moves that get muddled. David Hume's is\u2013ought gap is about INFERENCE: you cannot validly deduce an 'ought' conclusion from purely 'is' premises \u2014 the first thinker's error. Because the gap cleanly severs descriptive premises from prescriptive conclusions, philosopher Max Black, in a 1964 article in The Philosophical Review, nicknamed it 'Hume's Guillotine' (it is also called 'Hume's Law'). The second thinker commits what G. E. Moore, in Principia Ethica (1903), called the 'naturalistic fallacy': trying to DEFINE the moral word 'good' as identical to some plain natural property like 'pleasant.' Hume's point is about what you can DEDUCE; Moore's is about what 'good' MEANS \u2014 closely related, often conflated, but different claims. Source: G. E. Moore, Principia Ethica (1903); Max Black, 'The Gap Between \"Is\" and \"Should\",' The Philosophical Review 73(2), 1964; Wikipedia, 'Is\u2013ought problem' and 'Naturalistic fallacy.'"
- },
- {
-  "tier": 3,
   "question": "A man is sure a mineral supplement cures cancer. One study found it works; twenty found nothing. He throws out all twenty, saying those trials were too small, biased, and fished for results. He never asks whether those same flaws sit in the single study he loves. Granting his criticisms name real problems that can wreck a study, why does his argument still fail?",
   "answer": "He aims his doubt only at the twenty studies he dislikes and never at the one he likes, so it filters out unwelcome evidence rather than testing truth",
   "choices": [
