@@ -260,5 +260,7 @@ data/questions/*_tellgate.json
 data/questions/*.json.backup
 bankbuild/*/ladders/
 bankbuild/*/needs_review/
+bankbuild/*/_pruned/
 bankbuild/*/manifest.json
 bankbuild/*/_*.json
+bankbuild/*/_*.txt

@@ -1,10 +1,11 @@
 export const meta = {
   name: 'cooking-tone-audit',
-  description: 'Independent Opus panel: read every cooking ladder as a parent reviewing a kids\' game (ages 10-14). Flag gratuitous butchery/offal gore, cruelty-as-entertainment, alcohol glamorization, and gruesome dark-history WORDING. The prep-frame ("you sear/cut it") and honest butchery/food-safety/food-history facts are FINE. Read-only.',
-  phases: [{ title: 'Audit', detail: 'one tone reviewer per ladder' }],
+  description: 'Independent Opus panel: read every cooking ladder as a parent reviewing a kids\' game (ages 10-14). Flag gratuitous butchery/offal gore, cruelty-as-entertainment, alcohol glamorization, and gruesome dark-history WORDING. The prep-frame ("you sear/cut it") and honest butchery/food-safety/food-history facts are FINE. Read-only. BATCHED: one agent reviews args.batch ladders (default 5) to cut per-agent rubric overhead.',
+  phases: [{ title: 'Audit', detail: 'one tone reviewer per batch of ladders' }],
 }
 const A = (typeof args === 'string') ? JSON.parse(args) : (args || {});
 const IDS = Array.isArray(A.ids) ? A.ids : [];
+const BATCH = Math.max(1, Number(A.batch) || 5);
 const LADDIR = 'C:\\Users\\brand\\Documents\\PhilosophersQuest\\bankbuild\\cooking\\ladders';
 
 const RUBRIC = `You are reviewing a COOKING quiz bank a father built for HIS OWN KIDS (ages ~10-14), as a careful PARENT would. The bank teaches how cooking works, where food comes from (including cuts of meat and offal), classic dishes, food history, amazing food facts, and nutrition. The in-game action is FOOD PREPARATION, so a second-person "you sear / knead / cut / prep it" frame is FINE and expected. Flag a rung ONLY for a genuine TONE / APPROPRIATENESS problem below:
@@ -15,7 +16,7 @@ const RUBRIC = `You are reviewing a COOKING quiz bank a father built for HIS OWN
 
 3. KID-APPROPRIATENESS. (a) ALCOHOL: wine, beer, spirits, and cocktails may appear as HISTORY/technique/science, but NEVER glamorize drinking or teach a kid to get drunk -- flag consumption-glamorizing or how-to-get-drunk framing. (b) Gross-out overload: food poisoning, parasites, rot, maggots, mold described in gratuitously graphic, lingering detail beyond the safety/food fact. (c) Anything sexual, crude, or otherwise off-limits for a 10-14 kid. FLAG.
 
-4. GRUESOME DARK-HISTORY WORDING. Honest food history is welcome and stays: famine, the slave trade behind sugar, the Banda nutmeg massacre, poisonings, rationing -- stated PLAINLY and matter-of-factly. FLAG ONLY wording that is gratuitously graphic/lingering about atrocity, that stages an atrocity as a fun/cool "did you know," or a smug/glib voice about real suffering. (medium; high if it treats mass death or slavery with relish or as entertainment).
+4. GRUESOME DARK-HISTORY WORDING. Honest food history is welcome and stays: famine, the slave trade behind sugar, the Banda nutmeg massacre, poisonings, rationing -- stated PLAINLY and matter-of-factly. FLAG ONLY wording that is gratuitously graphic/lingering about atrocity, that stages an atrocity as a fun/cool "did you know," a smug/glib voice about real suffering, OR an ANSWER SET that makes a kid weigh atrocities against each other to score a point (e.g. four amputation variants). (medium; high if it treats mass death or slavery with relish or as entertainment).
 
 5. DISTURBING-OUT-OF-CONTEXT. The deck is SHUFFLED; a stem read cold should not land as menacing, gruesome, or creepy toward the reader in a way unrelated to teaching the food. FLAG a stem that reads wrong out of context.
 
@@ -33,6 +34,7 @@ const AUDIT = { type:'object', additionalProperties:false, properties:{
   }, required:['idx','rule','severity','detail','fix']}},
   note:{type:'string'}
 }, required:['id','verdict','worst_severity','flags','note'] };
+const BATCH_AUDIT = { type:'object', additionalProperties:false, properties:{ audits:{type:'array', items:AUDIT} }, required:['audits'] };
 
 async function tryAgent(prompt, opts, ok, tries){
   let last=null;
@@ -41,19 +43,30 @@ async function tryAgent(prompt, opts, ok, tries){
 }
 function readCmd(id){ return `python -c "import json,sys;d=json.load(open(r'${LADDIR}\\${id}.json',encoding='utf-8'));sys.stdout.write(json.dumps({'name':d['name'],'rungs':[{'tier':r['tier'],'stem':r['stem'],'choices':r['choices'],'answer':r['answer']} for r in d['rungs']]}))"`; }
 
-function auditPrompt(id){ return `You are an INDEPENDENT tone/appropriateness reviewer for a kids' COOKING quiz bank. Review ONE ladder as a careful parent would.
+function auditPrompt(ids){
+  const reads = ids.map((id, k) => `  LADDER ${k + 1} (id="${id}"): ${readCmd(id)}`).join('\n');
+  return `You are an INDEPENDENT tone/appropriateness reviewer for a kids' COOKING quiz bank. Review ${ids.length} ladders as a careful parent would -- give EACH its own full, independent review.
 
-STEP 1 -- read the ladder (PowerShell, do not modify): ${readCmd(id)}
-It prints {name, rungs:[{tier,stem,choices,answer}]}. idx = position in the rungs array.
+STEP 1 -- read each ladder (run EVERY command, do not modify):
+${reads}
+Each prints {name, rungs:[{tier,stem,choices,answer}]}. idx = position in that ladder's rungs array.
 
 ${RUBRIC}
 
-Audit EVERY rung. worst_severity = highest among flags ('none' if clean). verdict = 'flag' if any high/medium, else 'clean'. note = one line overall.
-Return ONLY the JSON object.`; }
+Audit EVERY rung of EVERY ladder. Return one audit object PER LADDER (${ids.length} total), each carrying its own id: worst_severity = highest among that ladder's flags ('none' if clean); verdict = 'flag' if any high/medium else 'clean'; note = one line. Do not skip or merge ladders.`;
+}
+
+function agentFailed(ids){ return ids.map(id => ({id, verdict:'flag', worst_severity:'high', flags:[{idx:-1, rule:'0', severity:'high', detail:'audit-agent-failed', fix:'re-run'}], note:'agent failed'})); }
 
 phase('Audit');
-log(`cooking tone audit: ${IDS.length} ladders reviewed as a parent (gratuitous gore + cruelty-as-fun + alcohol + dark-history wording).`);
-const results = await parallel(IDS.map(id => () => tryAgent(auditPrompt(id), {schema:AUDIT, phase:'Audit', label:`tone:${id.slice(0,22)}`, model:'opus'}, x=>x&&x.verdict).then(r=>r||{id,verdict:'flag',worst_severity:'high',flags:[{idx:-1,rule:'0',severity:'high',detail:'audit-agent-failed',fix:'re-run'}],note:'agent failed'})));
+const groups = [];
+for (let i = 0; i < IDS.length; i += BATCH) groups.push(IDS.slice(i, i + BATCH));
+log(`cooking tone audit: ${IDS.length} ladders in ${groups.length} batches of ${BATCH} (parent's-eye: gratuitous gore + cruelty-as-fun + alcohol + dark-history wording).`);
+const nested = await parallel(groups.map(g => () =>
+  tryAgent(auditPrompt(g), {schema:BATCH_AUDIT, phase:'Audit', label:`tone:${g[0].slice(0,16)}+${g.length}`, model:'opus'}, x=>x&&Array.isArray(x.audits))
+    .then(r => (r && Array.isArray(r.audits) && r.audits.length) ? r.audits : agentFailed(g))
+));
+const results = nested.flat();
 const flagged = results.filter(r=>r&&r.verdict==='flag');
 log(`tone audit done: ${results.length-flagged.length}/${results.length} clean; ${flagged.length} flagged.`);
 return {subject:'cooking', audited:results.length, flagged:flagged.length, results};

@@ -127,18 +127,23 @@ function researchPrompt(idx){ return `You are the RESEARCH stage of a ${SUBJECT}
 STEP 1 -- read your topic (PowerShell, do not modify): ${readCmd(idx)}
 It prints {name, scope, framing_note, tier_span, depth, target_q, source}. Non-ASCII appears as \\uXXXX escapes. Echo name back as topic_name.
 STEP 2 -- use WebSearch/WebFetch on REAL sources to gather the most memorable, specific, RETELLABLE facts that fit this subject's controlling voice: named things, vivid actions, real quotes, striking specifics, primary-source human detail. Gather MORE than needed (about target_q + 5 gems) so the author can choose.
+SOURCE PRIORITY (required): check **Grokipedia (grokipedia.com) FIRST** for every fact -- it is the primary, most-trusted reference; consult it before Wikipedia and prefer it whenever both cover a fact. Then corroborate and supplement with Wikipedia and other reputable primary sources. Cite the Grokipedia URL when it is your source.
 For each fact: fact, source (a real URL/named primary source you ACTUALLY found), difficulty (easy=T1 .. hard=T5), legend (bool), confidence.
 ANTI-HALLUCINATION (non-negotiable): every fact MUST trace to a real source you found. Do NOT invent or pad from memory. If you can't research to depth, set status='thin' and return only what you verified. Better thin than fabricated.`; }
 
-function authorPrompt(idx, name, research){ return `You are the AUTHOR stage of a ${SUBJECT} quiz bank for a father's kids. Turn the SOURCED fact sheet into a voice-driven ladder for "${name}".
+// NOTE: every build prompt (author/judge/advJudge/revise) opens with the byte-identical ${RULES}
+// block so the session prompt-cache can reuse that ~4KB prefix across all calls; put ONLY the
+// task-specific tail after it. Do not interleave per-topic text before RULES.
+function authorPrompt(idx, name, research){ return `${RULES}
+
+=== AUTHOR STAGE ===
+You are the AUTHOR of a ${SUBJECT} quiz bank for a father's kids, applying EVERY rule above. Turn the SOURCED fact sheet into a voice-driven ladder for "${name}".
 STEP 1 -- read your topic spec: ${readCmd(idx)}
 Use framing_note for stance/voice; depth sets length (deep = 10-15 rungs, standard = 3-5, mini = 1-3 standalone gems); author about target_q rungs across the tier_span.
 SOURCED FACT SHEET -- use ONLY these facts, nothing from memory:
 ${JSON.stringify(research.facts)}
 
-${RULES}
-
-Author the ladder: pick the BEST gems, ONE fact per rung, slot by conceptual difficulty across the tier_span with a REAL T1-T2 base (~30%+). Each rung: tier, EXACTLY 4 choices, answer (== one choice verbatim), context (post-answer enrichment + the source), legend bool. Apply EVERY rule. If a fact can't make a clean rung, drop it.
+Author the ladder: pick the BEST gems, ONE fact per rung, slot by conceptual difficulty across the tier_span with a REAL T1-T2 base (~30%+). Each rung: tier, EXACTLY 4 choices, answer (== one choice verbatim), context (post-answer enrichment + the source), legend bool. If a fact can't make a clean rung, drop it.
 
 FINAL SELF-AUDIT -- run on EVERY rung BEFORE returning; fix or drop any failure. Be ruthless:
 1. PARITY: all 4 choices alike in length, name-count, grammar? Answer not the only long/dual-named/full-sentence/oddly-precise-number one?
@@ -148,8 +153,10 @@ FINAL SELF-AUDIT -- run on EVERY rung BEFORE returning; fix or drop any failure.
 5. SCAFFOLD: does this rung STATE a number/name/fact another rung ASKS as its answer? Remove the leak.
 Return ONLY rungs that pass all five.`; }
 
-function judgePrompt(name, research, ladder){ return `You are the CRAFT JUDGE -- the last line of defense before these questions reach a child. Be STRICT; flag anything that breaks a rule or isn't sourced. Topic: "${name}".
-${RULES}
+function judgePrompt(name, research, ladder){ return `${RULES}
+
+=== CRAFT JUDGE ===
+You are the CRAFT JUDGE -- the last line of defense before these questions reach a child. Be STRICT; flag anything that breaks a rule above or isn't sourced. Topic: "${name}".
 SOURCED FACTS (the ONLY allowed basis for any answer): ${JSON.stringify(research.facts)}
 LADDER TO JUDGE (idx = position in this array): ${JSON.stringify(ladder.rungs)}
 For EACH rung: verdict 'keep' or 'flag'. If flag: rules_flagged (rule numbers/labels), primary_flaw (one line), fix (concrete). ALSO fact-check: if the keyed answer is NOT supported by the sourced facts, FLAG ("factual integrity").
@@ -157,16 +164,20 @@ SEVERITY (every rung; 'none' for keeps). ALWAYS-HIGH: a factual error, a dead-na
 Set ladder_ok = true ONLY if NO rung is flagged HIGH or MEDIUM (a couple LOW notes ok).`; }
 
 // fresh, hostile, INDEPENDENT re-judge -- the audit's strength, moved into the build. Fed the gate flags.
-function advJudgePrompt(name, research, ladder, gateFlags){ return `You are an INDEPENDENT, SKEPTICAL auditor. This ${SUBJECT} ladder ALREADY PASSED a craft judge -- your job is to catch what that judge MISSED. Assume nothing is good; do not rubber-stamp. Topic: "${name}".
-${RULES}
+function advJudgePrompt(name, research, ladder, gateFlags){ return `${RULES}
+
+=== INDEPENDENT ADVERSARIAL RE-JUDGE ===
+You are an INDEPENDENT, SKEPTICAL auditor. This ${SUBJECT} ladder ALREADY PASSED a craft judge -- your job is to catch what that judge MISSED. Assume nothing is good; do not rubber-stamp. Topic: "${name}".
 SOURCED FACTS: ${JSON.stringify(research.facts)}
 LADDER (idx = position): ${JSON.stringify(ladder.rungs)}
 ${gateFlags.length ? `A DETERMINISTIC mechanical scanner already flagged these (verify each -- it is ~76% precise, so CONFIRM a real leak or clear it as a false positive on a legitimately vivid/named answer):\n${JSON.stringify(gateFlags)}` : `The mechanical scanner found nothing -- still hunt the SEMANTIC tells it cannot see.`}
 Hunt especially the tells a lenient judge waves through: RESTATEMENT (answer echoes a stem clause), ENUMERATION (stem lists the distractors), CATEGORY-MATCH (only the answer fits a category the stem names), EFFECT/GOAL-MATCH, Drama-Available (a label/number answer under a vivid stem), dead-name answers, weasel closers, agent-hiding passive, and any unsourced/false fact.
 For EACH rung: verdict 'keep' or 'flag'; if flag: severity (high/medium/low) + rules_flagged + primary_flaw + fix. Be the adversary the first judge wasn't. ladder_ok = true ONLY if nothing is HIGH or MEDIUM.`; }
 
-function revisePrompt(name, research, ladder, flags){ return `Revise this ${SUBJECT} ladder for "${name}". Fix ONLY the flagged rungs; leave the others byte-identical. Apply the rules + the given fixes, using ONLY the sourced facts.
-${RULES}
+function revisePrompt(name, research, ladder, flags){ return `${RULES}
+
+=== SURGICAL REVISE ===
+Revise this ${SUBJECT} ladder for "${name}", applying the rules above + the given fixes, using ONLY the sourced facts. Fix ONLY the flagged rungs; leave the others byte-identical.
 SOURCED FACTS: ${JSON.stringify(research.facts)}
 CURRENT LADDER: ${JSON.stringify(ladder.rungs)}
 FLAGS TO FIX: ${JSON.stringify(flags)}

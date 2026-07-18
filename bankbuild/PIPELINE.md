@@ -151,6 +151,8 @@ Philosophy (`data/questions/philosophy.json`, 2,867 Q) is now a **second referen
 
 **Wall / rate-limit handling.** A wall at the **research** stage → empty `thin-research` ladders (n=0): do NOT integrate that output; just re-run the build on those idxs. A wall at the **author/judge** stage → ladders integrate as `needs_review` WITH a full ladder: just DE-TELL them (don't rebuild). Transient `Rate limited` / `Server is temporarily limiting` ≠ the usage wall (the pipeline's retries absorb it; rebuild only the n=0 ones). `bank.py merge` now skips `_`-prefixed files (a build subagent can drop a stray draft into `ladders/`).
 
+**ALWAYS RESUME a walled build batch to completion before integrating** (efficiency rule, cooking build 2026-07-15). When a batch walls mid-run, do NOT integrate the walled partial — relaunch the SAME run with `Workflow({scriptPath, resumeFromRunId, args})` once the window resets. Completed agents replay from cache for free; only the walled agents re-run. Integrating a partial instead lands topics as `needs_review` with an **unfinished adversarial pass**, which the de-tell sweep must then redo — a double adversarial pass that inflates the whole de-tell phase (half of cooking's needs_review pile was wall-caused, not quality-caused). Resume-then-integrate keeps topics passing in-build and shrinks de-tell.
+
 **Stance vs neutral (load-bearing).** Before building a value-laden subject, identify its stance topics (where moral_vision §1/§3/§9 commit the bank) vs its genuinely-open ones, and put the LEAN into the subject config `framing` + the topic `framing_note`s so it reaches the author + judge — not only the audit. See moral_vision §3.10 + memory `feedback-stance-vs-neutral`.
 
 ## File map
@@ -160,8 +162,9 @@ Philosophy (`data/questions/philosophy.json`, 2,867 Q) is now a **second referen
 - `bankbuild/bank.py` — integrate / merge / status / gate / promote (`--subject=X`, default history)
 - `bankbuild/tellgate.py` — deterministic gate: `scan` · `bank <file>` · `validate`
 - `bankbuild/detell_pipeline.wf.js` — per-batch de-tell sweep (reviser + adversarial + deterministic-drop); apply with `<X>/_apply_detell.py`
-- `bankbuild/<X>/_moral_audit.wf.js` — pre-ship moral-vision stance audit (read-only, Opus panel vs moral_vision.md §1–§9 + §3.10)
-- `bankbuild/<X>/_assemble_queue.py` · `_next_batch.py` · `_apply_detell.py` · `_gen_review_doc.py` — build helpers
+- `bankbuild/queue_dedup.wf.js` + `queue_dedup_apply.py` — **pre-build** gate: cluster same-fact topics and drop the redundant twins from `_queue.json` BEFORE building (subject-generic; run right after `_assemble_queue.py`). See §10.
+- `bankbuild/<X>/_moral_audit.wf.js` · `_tone_audit.wf.js` — pre-ship stance + parent's-eye audits (read-only, Opus panels; BATCHED — one agent per `args.batch` ladders, default 5)
+- `bankbuild/<X>/_assemble_queue.py` · `_next_batch.py` · `_apply_detell.py` · `_gen_review_doc.py` · `_dupscan.py` (question-level dedup) — build helpers
 - `data/questions/<X>.json` (live) · `<X>_v2.json` (staging) · `<X>_pre_v2_backup.json` (backup)
 
 ## 9. Additions from the animal build (2026-07-08) — the THIRD reference build
@@ -185,3 +188,12 @@ Animal (`data/questions/animal.json`, **2,621 Q, v2.3.0**) is now a third refere
 8. **Workflow-infra gotchas (hard-won):** (a) **a walled/failed JUDGE must return status:failed with NO rungs** — otherwise unjudged rungs fall through as "passed" (fixed this in `_deepen.wf.js`). (b) Big parallel audit/deepen jobs (300+ agents fired at once) trigger **transient server rate-limits** ("Server is temporarily limiting requests · not your usage limit") that knock out roughly half — **chunk to ~38 topics/run**, and re-run the un-verified subset by parsing the output and skipping the agent-failed fallback records. (c) Deepen/audit are token-heavy (~6M tokens / 38-topic chunk) — expect to span 5-hour and weekly usage windows; apply after each chunk so a wall never loses committed progress.
 
 **Ship sequence used (per `bank.py`):** merge → gate → moral-vision audit → **tone audit** → (optional) **deepen pass** for the tier curve → re-merge/gate → `promote` → commit the clean subject-only files to `main` + version bump in `src/layout.py` (x.y.0-per-bank) + installer rebuild. (For animal, Brandon deferred the installer and kept the version bump on his parallel UI branch.)
+
+## 10. Efficiency levers (cooking build, 2026-07-15) — cut usage without degrading output
+
+The cooking build (~170M subagent tokens) is the reference for where the cost goes: **the build pipeline is ~70%**, de-tell ~13%, tone audit ~10%, the rest small. Four changes were made after ship; all are no-quality-risk. (A fifth — **model-tiering** the build, i.e. author on Sonnet with the Opus adversarial pass as the quality backstop — is the biggest lever but relaxes the "opus everywhere" rule and needs a one-strand A/B before rollout; NOT yet adopted.)
+
+1. **Semantic-dedup the queue BEFORE building** (`queue_dedup.wf.js` → `queue_dedup_apply.py`). The token-level dedup only catches similar topic *names*; semantically overlapping ladders (Maillard ×3, chili-to-Asia ×3, tomato-to-Italy ×2) each cost a full research→author→judge→adversarial build and were dropped only at merge. Run dedup right after `_assemble_queue.py`, review the clusters, `--apply`, THEN build. Keeps genuinely-different angles (pepper-trade vs pepper-botany); only drops same-fact twins.
+2. **Always resume a walled build batch to completion before integrating** — see §8. Keeps the in-build adversarial pass finished, so wall-caused topics don't fall into the de-tell pile.
+3. **Batch the audits** (`_tone_audit.wf.js` / `_moral_audit.wf.js` now take `args.batch`, default 5). One agent reviews N ladders instead of 1, cutting ~60% of the audit phase's per-agent rubric overhead; the schema forces one verdict object per ladder so each still gets a full independent review. Keep tone at FULL coverage (child-safety); it's the batching, not the coverage, that's cheaper.
+4. **RULES as a byte-identical prompt prefix** (`bank_pipeline.wf.js`). Every build prompt (author/judge/advJudge/revise) now OPENS with the identical `${RULES}` block, then its task-specific tail — so the session prompt-cache can reuse that ~4KB invariant across all ~3,000 calls (benefit depends on the harness prefix-caching workflow agents; the reorder is harmless regardless). When editing these prompts, keep RULES first and put per-topic text only AFTER it.
