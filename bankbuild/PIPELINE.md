@@ -108,6 +108,9 @@ fabricated fact on the very first history smoke-test). Never loosen the bar to f
    swaps in v2 (runs the gate first as a pre-promote check).
 4. **SHIP — user confirms releases:** commit the new bank, bump the version, rebuild the installer.
    Release per the iterative **x.y.0-per-bank** plan (one minor version per completed bank).
+   **Then run the §11 post-promote hygiene:** register the subject with the legacy gates
+   (`length_parity.ANSWER_OUTLIER_SUBJECTS` + full `pytest`), sweep `<X>_v2`/`<X>_pre_v2_backup`
+   artifacts out of `data/questions/`, and run the post-ship semantic-dedup pass.
 
 ---
 
@@ -163,6 +166,7 @@ Philosophy (`data/questions/philosophy.json`, 2,867 Q) is now a **second referen
 - `bankbuild/tellgate.py` — deterministic gate: `scan` · `bank <file>` · `validate`
 - `bankbuild/detell_pipeline.wf.js` — per-batch de-tell sweep (reviser + adversarial + deterministic-drop); apply with `<X>/_apply_detell.py`
 - `bankbuild/queue_dedup.wf.js` + `queue_dedup_apply.py` — **pre-build** gate: cluster same-fact topics and drop the redundant twins from `_queue.json` BEFORE building (subject-generic; run right after `_assemble_queue.py`). See §10.
+- `bankbuild/dedup_verify.wf.js` + `dedup_prune_apply.py` — **post-ship** conservative dedup: verify `queue_dedup` clusters against the FULL built ladders (biased-to-keep), then reversibly prune confirmed dups to `bankbuild/<X>/_pruned/`. See §11.3.
 - `bankbuild/<X>/_moral_audit.wf.js` · `_tone_audit.wf.js` — pre-ship stance + parent's-eye audits (read-only, Opus panels; BATCHED — one agent per `args.batch` ladders, default 5)
 - `bankbuild/<X>/_assemble_queue.py` · `_next_batch.py` · `_apply_detell.py` · `_gen_review_doc.py` · `_dupscan.py` (question-level dedup) — build helpers
 - `data/questions/<X>.json` (live) · `<X>_v2.json` (staging) · `<X>_pre_v2_backup.json` (backup)
@@ -197,3 +201,20 @@ The cooking build (~170M subagent tokens) is the reference for where the cost go
 2. **Always resume a walled build batch to completion before integrating** — see §8. Keeps the in-build adversarial pass finished, so wall-caused topics don't fall into the de-tell pile.
 3. **Batch the audits** (`_tone_audit.wf.js` / `_moral_audit.wf.js` now take `args.batch`, default 5). One agent reviews N ladders instead of 1, cutting ~60% of the audit phase's per-agent rubric overhead; the schema forces one verdict object per ladder so each still gets a full independent review. Keep tone at FULL coverage (child-safety); it's the batching, not the coverage, that's cheaper.
 4. **RULES as a byte-identical prompt prefix** (`bank_pipeline.wf.js`). Every build prompt (author/judge/advJudge/revise) now OPENS with the identical `${RULES}` block, then its task-specific tail — so the session prompt-cache can reuse that ~4KB invariant across all ~3,000 calls (benefit depends on the harness prefix-caching workflow agents; the reorder is harmless regardless). When editing these prompts, keep RULES first and put per-topic text only AFTER it.
+
+## 11. Ship hygiene + gate registration (v2.4.0 ship + cleanup, 2026-07-18)
+
+Three steps that MUST run when a rebuilt bank ships — learned when philosophy shipped with **251 phantom gate failures** and the exe bundled **~47 MB of bank artifacts**.
+
+1. **Register the subject with the legacy `tools/quizgen` gates.** The bankbuild pipeline and the old `tools/quizgen` deterministic gates are SEPARATE validators, and the test suite runs the latter. After `promote`:
+   - Add the subject to `tools/quizgen/deterministic/length_parity.py:ANSWER_OUTLIER_SUBJECTS` (every non-`math` subject belongs here; `math` is EXEMPT). A ladder-built bank uses variable-length competing-choice distractors, so the strict "all four choices equal length" fallback rule is WRONG for it — the only real tell to guard is the *answer* being a length outlier. Philosophy was left off → 251 false `length_parity` fails on a clean bank.
+   - Run the FULL suite (`pytest tests/ -q`) and reconcile whatever keys off the subject: `test_load_<X>_subject_spec` (a rebuild often relabels the spec `style_verdict` — assert the invariant like `"WONDER" in verdict`, not a brittle literal), and any absolute count thresholds in `test_quizgen_deterministic` (prefer a RATE over a bank-size-dependent absolute).
+
+2. **Sweep bank artifacts OUT of `data/questions/` at ship.** `bank.py promote` leaves `<X>_pre_v2_backup.json` there; builds leave `<X>_v2.json` / `<X>_tellgate.json` / `<X>.json.backup`. The installer bundles `data/questions/` WHOLESALE, so every one of those ships as dead weight in the exe. Move them to `bankbuild/<X>/` or `_archive/` after promote. `tests/test_packaging.py::test_bundled_dirs_contain_only_runtime_files` now FAILS the build if any non-`.json`, or a `_v2`/`_pre_v2_backup`/`_tellgate`/`_backup` artifact JSON, is left inside a whole-dir bundle entry (`data/{items,materials,questions,templates}`, `assets/{fonts,tiles}`) — enforced, not merely advised. `data/questions/` must end as exactly the live banks.
+
+3. **Semantic dedup is REQUIRED — pre-build AND post-ship.** §10 lever #1 dedups the QUEUE before building; a SHIPPED bank ALSO gets the conservative full-ladder pass (the toolkit found real same-fact dups in every bank run: cooking 23, animal 3, philosophy 2). Flow for a shipped bank (all `model:'opus'`; **precondition:** a fresh `bank.py merge --subject=X` reproduces the LIVE count, else `ladders/` is stale and re-merge would regress the bank):
+   1. `Workflow{scriptPath:"bankbuild/queue_dedup.wf.js", args:{subject:X}}` → same-fact `clusters`.
+   2. FILTER clusters to ids that actually have a `ladders/<id>.json` — queue topics can lack a built ladder (the **phantom-keep trap**: a cluster whose `keep_id` has no ladder would delete the only built copy). Philosophy hit this with `descartes-dream-argument`.
+   3. `Workflow{scriptPath:"bankbuild/dedup_verify.wf.js", args:{subject:X, clusters:[…], batch:6}}` — reads the FULL ladders, biased-to-keep. **This verify pass is LOAD-BEARING** (philosophy 7 raw clusters → 1 real). Returns the confirmed drop set.
+   4. `python bankbuild/dedup_prune_apply.py --subject=X "<verify output>" [--dry]` → moves confirmed dup ladders to `bankbuild/<X>/_pruned/` (reversible), drops them from the manifest.
+   5. `bank.py merge → gate → promote`, then step 2 (sweep artifacts).
