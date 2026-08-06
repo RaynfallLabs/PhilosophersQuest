@@ -97,6 +97,16 @@ def test_derive_id_tier_spawn_weight_band_fallback():
     assert derive_id_tier(floor_spawn_weight=deep) == 4
 
 
+def test_derive_id_tier_takes_harder_of_quiz_and_depth():
+    """A scroll's quiz_tier is its READ difficulty — deliberately easy on
+    deep mythic scrolls — so native depth must be able to outvote it.
+    (Scroll of Ragnarok: quiz_tier 1, spawns floor 81-100 -> identify T5.)"""
+    assert derive_id_tier(quiz_tier=1, floor_spawn_weight={'81-100': 3}) == 5
+    assert derive_id_tier(quiz_tier=1, peak_floor=90) == 5
+    # ...and the harder quiz_tier wins when depth is shallow.
+    assert derive_id_tier(quiz_tier=4, peak_floor=5) == 4
+
+
 def test_derive_id_tier_min_level_last_resort():
     assert derive_id_tier(min_level=50) == 3
 
@@ -126,16 +136,28 @@ def test_item_id_tier_json_override_beats_derivation():
     assert item_id_tier(w) == 1
 
 
-def test_corpse_id_tier_from_harvest_tier():
+def test_corpse_id_tier_depth_beats_harvest_tier():
+    """harvest_tier is a FOOD stat: an ancient lich (floor 90, barely
+    harvestable) still identifies at T5; a meaty floor-17 sphinx doesn't
+    demand T5."""
+    lich = Corpse('ancient lich', 'ancient_lich', 0, 0, harvest_tier=1,
+                  monster_def={'peak_floor': 90})
+    assert lich.id_tier == 5
+    sphinx = Corpse('sphinx', 'sphinx_lesser', 0, 0, harvest_tier=5,
+                    monster_def={'peak_floor': 17})
+    assert sphinx.id_tier == 1
+
+
+def test_corpse_id_tier_from_harvest_tier_when_no_depth():
     c = Corpse('zombie', 'zombie', 0, 0, harvest_tier=3)
     assert c.id_tier == 3
     assert item_id_tier(c) == 3
 
 
-def test_corpse_id_tier_falls_back_to_monster_peak_floor():
-    c = Corpse('golem', 'golem', 0, 0, harvest_tier=0,
-               monster_def={'peak_floor': 55})
-    assert c.id_tier == 3
+def test_corpse_id_tier_explicit_monster_json_override():
+    c = Corpse('sphinx', 'sphinx_lesser', 0, 0, harvest_tier=5,
+               monster_def={'peak_floor': 17, 'id_tier': 4})
+    assert c.id_tier == 4
 
 
 def test_corpse_id_tier_defaults_to_one():

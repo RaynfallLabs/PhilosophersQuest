@@ -1060,10 +1060,14 @@ def make_corpse(monster_id: str, x: int, y: int):
     harvest_tier = defn.get('harvest_tier', 1)
     harvest_threshold = defn.get('harvest_threshold', 2)
     # ingredient_id kept for legacy save-compat — passed but harvest ignores it.
+    # peak_floor (+ optional explicit id_tier) drives the identify tier.
     return Corpse(name, monster_id, x, y,
                   harvest_tier=harvest_tier,
                   harvest_threshold=harvest_threshold,
-                  ingredient_id=defn.get('ingredient_id'))
+                  ingredient_id=defn.get('ingredient_id'),
+                  monster_def={'peak_floor': defn.get('peak_floor', 0),
+                               'id_tier': defn.get('id_tier', 0),
+                               'tags': defn.get('tags', [])})
 
 
 def eat_raw(player, ingredient) -> list[str]:

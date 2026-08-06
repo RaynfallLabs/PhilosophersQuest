@@ -52,25 +52,31 @@ def derive_id_tier(*, explicit: int = 0, is_unique: bool = False,
     """The identification tier (1-5) for the ONE-question identify quiz.
 
     Priority: explicit id_tier from JSON > gear tier (weapons/armor/
-    shields/ammo) > quiz_tier > peak_floor band > floorSpawnWeight peak
-    band > min_level band > 1. Uniques never sit below tier 4 — a
-    legendary yields only to deep study.
+    shields/ammo — already the depth band by construction) > the HARDER
+    of quiz_tier vs native spawn depth (peak_floor band, then
+    floorSpawnWeight peak band) > min_level band > 1. The max matters:
+    a scroll's quiz_tier is its READ difficulty (deliberately easy on
+    deep mythic scrolls), so depth must be able to outvote it — a
+    floor-90 Scroll of Ragnarok identifies at T5, not T1. Uniques never
+    sit below tier 4 — a legendary yields only to deep study.
     """
-    for candidate in (
-        explicit,
-        tier,
-        quiz_tier,
-        _floor_band_tier(peak_floor),
-        _spawn_weight_band_tier(floor_spawn_weight),
-        _floor_band_tier(min_level),
-    ):
+    def _clamp(v) -> int:
         try:
-            c = int(candidate or 0)
+            v = int(v or 0)
         except (TypeError, ValueError):
-            c = 0
-        if 1 <= c <= 5:
-            break
-    else:
+            return 0
+        return v if 1 <= v <= 5 else 0
+
+    c = _clamp(explicit)
+    if not c:
+        c = _clamp(tier)
+    if not c:
+        depth = (_floor_band_tier(peak_floor)
+                 or _spawn_weight_band_tier(floor_spawn_weight))
+        c = max(_clamp(quiz_tier), _clamp(depth))
+    if not c:
+        c = _clamp(_floor_band_tier(min_level))
+    if not c:
         c = 1
     if is_unique:
         c = max(c, 4)
@@ -940,13 +946,19 @@ class Corpse(Item):
         # correct philosophy question at this corpse's id_tier). Kept as an
         # int for save/display back-compat; only 0 and 5 are written.
         self.id_level: int     = 0
-        # Identification-quiz tier: explicit kwarg > harvest_tier (1-5) >
-        # the monster's peak_floor band > 1.
+        # Identification-quiz tier: explicit (kwarg or monster JSON
+        # id_tier) > the monster's peak_floor band > harvest_tier > 1.
+        # Depth comes FIRST: harvest_tier is a FOOD-value stat, not a
+        # knowledge stat — an ancient lich (floor 90, barely harvestable)
+        # must identify at T5, and a meaty floor-17 sphinx must not
+        # demand T5 from a kid with T1 philosophy skills.
+        md = monster_def or {}
+        explicit = int(id_tier or 0) or int(md.get('id_tier', 0) or 0)
         ht = int(harvest_tier or 0)
         self.id_tier: int = (
-            int(id_tier) if 1 <= int(id_tier or 0) <= 5
-            else (ht if 1 <= ht <= 5
-                  else (_floor_band_tier((monster_def or {}).get('peak_floor', 0)) or 1))
+            explicit if 1 <= explicit <= 5
+            else (_floor_band_tier(md.get('peak_floor', 0))
+                  or (ht if 1 <= ht <= 5 else 1))
         )
         self.x = x
         self.y = y
