@@ -69,12 +69,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 5,
-      "scope": "item",
-      "desc": "Wounds the Soul Reaver inflicts bleed for an extra 5 turns."
-    },
     "design_notes": "Signature chain: finesse opener; the blade hesitates on the first cut (0.2x) and only commits once it tastes blood. Lifesteal makes the long ramp viable.",
     "growth_on_innocent_kill": true
   },
@@ -154,15 +148,6 @@
       "undead"
     ],
     "ignore_resistances": true,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "undead",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Dawnbreaker deals +35% damage to undead."
-    },
     "design_notes": "Holy/radiant archetype: a building dawn, each strike a fuller rising sun against the undead."
   },
   "venomfang": {
@@ -211,7 +196,7 @@
     "value": 4800,
     "min_level": 82,
     "unidentified_name": "a darkly gleaming spiked weapon",
-    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut — it corrupts.",
+    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut \u2014 it corrupts.",
     "quiz_tier": 5,
     "identified": false,
     "poisonChance": 0.6,
@@ -235,16 +220,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "poisoned",
-        "pct": 30,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Venomfang's hollow spikes inject distilled corruption — every hit has a 30% chance to poison the target for 3 turns."
-    },
     "design_notes": "Cursed-blade archetype: the venom needs time to find the wound, slow first taste then devastating last."
   },
   "excalibur": {
@@ -292,7 +267,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an ornate golden-hilted blade",
-    "lore": "The sword in the stone was not merely a test of strength but of worthiness — a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
+    "lore": "The sword in the stone was not merely a test of strength but of worthiness \u2014 a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
     "onEquipStatus": "life_save",
     "killHealAmount": 5,
     "damage_types": [
@@ -315,12 +290,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.25,
-      "scope": "item",
-      "desc": "+0.25 to every chain multiplier when wielding Excalibur."
-    },
     "design_notes": "Signature chain: the king's killing blow -- chain-1 already a meaningful cut (1.0x), then a steep climb to a legendary peak of 5.0x at chain-5.",
     "cast_me_away": true
   },
@@ -391,15 +360,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
     "onEquipStatus": "blessed",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "evil",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Durendal's saintly relics flare against wickedness — Roland's blade deals +35% damage to evil-aligned foes."
-    },
     "design_notes": "Ancient/stately archetype: measured Carolingian steel, each blow as deliberate as the saints sealed in its hilt."
   },
   "gram": {
@@ -449,7 +409,7 @@
     "identified": false,
     "unidentified_name": "a shining foreign blade of pale steel",
     "ignore_resistances": true,
-    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment — nothing can resist it.",
+    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment \u2014 nothing can resist it.",
     "damage_types": [
       "slash",
       "pierce"
@@ -470,15 +430,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "dragon",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "Reforged Gram remembers Fafnir — Sigurd's blade deals +50% damage to dragons."
-    },
     "id_level": 0
   },
   "broken_gram": {
@@ -520,7 +471,7 @@
     "quiz_tier": 1,
     "identified": false,
     "unidentified_name": "a broken sword hilt with a jagged blade",
-    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon — but something about it still hums with dormant power.",
+    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon \u2014 but something about it still hums with dormant power.",
     "damage_types": [
       "slash"
     ],
@@ -540,12 +491,6 @@
     "is_unique": true,
     "max_enchant": 0,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "Even shattered, the Broken Blade of Gram hums with dormant power — every strike lands a little heavier."
-    },
     "id_level": 0
   },
   "sigurds_shovel": {
@@ -589,7 +534,7 @@
     "identified": false,
     "unidentified_name": "a sturdy iron shovel",
     "can_dig": true,
-    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below — sometimes the right tool is the humble one.",
+    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below \u2014 sometimes the right tool is the humble one.",
     "damage_types": [
       "blunt"
     ],
@@ -609,15 +554,6 @@
     "is_unique": true,
     "max_enchant": 1,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "dragon",
-        "pct": 25
-      },
-      "scope": "item",
-      "desc": "Sigurd's Shovel remembers the pit beneath the wyrm — it deals +25% damage to dragons."
-    },
     "id_level": 0
   },
   "tyrfing": {
@@ -687,12 +623,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
     "lifestealPercent": 0.1,
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.3,
-      "scope": "item",
-      "desc": "Tyrfing's dwarf-cursed edge never dulls — every chain multiplier rises by 0.30 when it is drawn."
-    },
     "design_notes": "Cursed-blade archetype: the dwarven curse waits patient; the blade hungers and pays out in full."
   },
   "fragarach": {
@@ -766,12 +696,6 @@
     "effective_against": [
       "humanoid"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "The Answerer cannot be refused — Fragarach's first swing of every chain auto-crits."
-    },
     "design_notes": "King's blow archetype: The Answerer needs no warm-up, every stroke is the Wind from the East."
   },
   "caladbolg": {
@@ -818,7 +742,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a massive greatsword of unearthly make",
-    "lore": "Fergus mac Róich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken.",
+    "lore": "Fergus mac R\u00f3ich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken.",
     "damage_types": [
       "slash"
     ],
@@ -838,12 +762,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.25,
-      "scope": "item",
-      "desc": "Caladbolg sheared the tops off three hills with one sweep — every chain swing carries 0.25 more of that momentum."
-    },
     "design_notes": "Brute/crushing archetype: a sweep that takes the tops off hills carries weight from the first arc.",
     "class_mechanic": "cleave_at_max"
   },
@@ -914,16 +832,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "onEquipStatus": "blessed",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "confused",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Joyeuse changes colour thirty times a day — its dazzle confuses 25% of the foes it strikes for 3 turns."
-    },
     "design_notes": "Trickster/nimble archetype: thirty shifting colours dazzle the eye, quick to find the gap and sharp to exploit it.",
     "combat_start_aoe_confuse_chance": 0.5
   },
@@ -992,12 +900,6 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=52, base=13 (= curve.weapon_base_damage(52) x 1.65), min_level=40, quiz_tier=3.",
     "cursedMissBacklash": 1,
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 4,
-      "scope": "item",
-      "desc": "+4 flat damage when wielding Hrunting."
-    },
     "design_notes": "Ancient/stately archetype: the patient old blade keeps its measured tempo, until the one strike where it does not.",
     "one_shot_chain_save_per_floor": true
   },
@@ -1045,7 +947,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a cold grey blade with a dim inner glow",
-    "lore": "Taken from King Hrólf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone.",
+    "lore": "Taken from King Hr\u00f3lf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone.",
     "damage_types": [
       "slash"
     ],
@@ -1068,12 +970,6 @@
     "effective_against": [
       "humanoid"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 5,
-      "scope": "item",
-      "desc": "Wounds dealt by Skofnung will only heal at the Skofnung Stone — every cut extends bleeding by 5 turns."
-    },
     "design_notes": "Bestial/feral archetype: twelve berserkers in the steel, each strike a different one finding its rhythm.",
     "chain_bonus_on_low_hp_window": 1
   },
@@ -1146,17 +1042,11 @@
       "humanoid",
       "fey"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "The first hit of every chain with Gungnir is a guaranteed crit."
-    },
     "design_notes": "King's blow archetype: Odin's throw never wavers, the unbreakable oath strikes with sovereign certainty.",
     "cannot_miss": true
   },
   "gae_bulg": {
-    "name": "Gáe Bulg",
+    "name": "G\u00e1e Bulg",
     "class": "spear",
     "variant": "1h",
     "tier": 4,
@@ -1199,7 +1089,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a barbed spear of sea-monster bone",
-    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs — it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after.",
+    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs \u2014 it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after.",
     "damage_types": [
       "pierce"
     ],
@@ -1219,12 +1109,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 6,
-      "scope": "item",
-      "desc": "The Gae Bulg's thirty barbs open inside the wound — every strike extends bleeding by 6 turns."
-    },
     "design_notes": "Signature chain: the never-miss spear of Cu Chulainn -- chain-1 is already a confirmed kill (1.0x), and every rung climbs cleanly. No weak openers, no dramatic peak; the spear simply lands."
   },
   "spear_of_longinus": {
@@ -1297,15 +1181,6 @@
       "demon"
     ],
     "ignore_resistances": true,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "demon",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Spear of Longinus, blooded at the Crucifixion, deals +50% damage to demons."
-    },
     "design_notes": "Holy/radiant archetype: the relic warms as it works, radiance gathered with each righteous thrust.",
     "weep_heal_on_kill_scaled": 0.1
   },
@@ -1379,16 +1254,6 @@
     "effective_against": [
       "construct"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "stunned",
-        "pct": 25,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "Mjolnir stuns the target for 2 turns on 25% of hits."
-    },
     "design_notes": "King's blow archetype: every blow of Thor's hammer lands like the first, no warm-up to giant-slaying.",
     "chain_lightning_at_chain_n": {
       "from_chain": 6,
@@ -1439,7 +1304,7 @@
     "identified": false,
     "unidentified_name": "a golden mace that hums faintly",
     "confuseChance": 0.25,
-    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak — it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless.",
+    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak \u2014 it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless.",
     "damage_types": [
       "blunt",
       "magic"
@@ -1461,16 +1326,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=45, base=10 (= curve.weapon_base_damage(45) x 1.55), min_level=37, quiz_tier=3.",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "confused",
-        "pct": 30,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Sharur's strikes scramble enemy minds — 30% of its hits confuse the target for 3 turns."
-    },
     "design_notes": "Trickster/nimble archetype: the talking mace reads the field, quick adapt to where the enemy is not looking.",
     "floor_start_reveal_chance": 1.0
   },
@@ -1516,7 +1371,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a massive iron pillar banded with gold",
-    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched — enemies three paces away are within striking distance.",
+    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched \u2014 enemies three paces away are within striking distance.",
     "damage_types": [
       "blunt",
       "magic"
@@ -1538,12 +1393,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=82, base=30 (= curve.weapon_base_damage(82) x 1.7), min_level=70, quiz_tier=5.",
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 4,
-      "scope": "item",
-      "desc": "The Ruyi Jingu Bang weighs 17,550 pounds and its reach is unmatched — every blow lands with 4 more crushing weight."
-    },
     "design_notes": "Signature chain: the As-You-Will Cudgel -- starts modest, then expands to a climactic spike at chain-5 (4.0x). Sun Wukong's staff grows with intent.",
     "chain_modulated_reach": {
       "4": 4,
@@ -1616,12 +1465,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.25,
-      "scope": "item",
-      "desc": "Gandiva's hundred strings hum in sequence — Arjuna's bow adds 0.25 to every chain multiplier."
-    },
     "design_notes": "Brute/crushing archetype: a hundred strings sing at once, no shot is half-drawn on Arjuna's bow.",
     "multi_arrow_at_chain_5": {
       "targets": 3,
@@ -1691,12 +1534,6 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=57, base=16 (= curve.weapon_base_damage(57) x 1.65), min_level=45, quiz_tier=3.",
     "class_mechanic": "guaranteed_hit",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "Fail-not's promise holds — Tristan's bow auto-crits on the first arrow of every chain."
-    },
     "design_notes": "Sniper/precise archetype: the bow waits for the dutiful arrow, patience then a single inevitable strike.",
     "cannot_miss_before_player_takes_damage": true
   },
@@ -1766,16 +1603,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=83, base=32 (= curve.weapon_base_damage(83) x 1.7), min_level=71, quiz_tier=5.",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "slowed",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Kusanagi turns the wind against your enemies — 25% of its hits slow the target for 3 turns."
-    },
     "design_notes": "Trickster/nimble archetype: cuts the grass to turn the wind, quick reads then a sharp redirected peak.",
     "surrounded_proc_bonus": true
   },
@@ -1849,12 +1676,6 @@
       "demon",
       "undead"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.3,
-      "scope": "item",
-      "desc": "Zulfiqar's bifurcated tip takes two lives with one thrust — every chain multiplier rises by 0.30."
-    },
     "design_notes": "King's blow archetype: two lives with one thrust, every stroke is the champion's declaration.",
     "every_hit_secondary_target": {
       "splash_pct": 0.5,
@@ -1928,15 +1749,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "aberration",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "The Harpe separated Medusa from her head — it deals +40% damage to aberrations."
-    },
     "design_notes": "Trickster/nimble archetype: Hermes' gift, quick footwork then a single decisive separation.",
     "skip_chain_warmup_vs_tag": [
       "gaze",
@@ -2010,16 +1822,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
     "_curve_note": "Redistributed: peak=85, base=34 (= curve.weapon_base_damage(85) x 1.7), min_level=73, quiz_tier=5.",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "stunned",
-        "pct": 25,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "Poseidon's Trident strikes with the weight of the Aegean — 25% of its hits stun for 2 turns."
-    },
     "design_notes": "Brute/crushing archetype: a sea-god's tide, heavy from the first blow and building to drowning weight."
   },
   "carnwennan": {
@@ -2088,12 +1890,6 @@
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=34, base=8 (= curve.weapon_base_damage(34) x 1.7), min_level=26, quiz_tier=2.",
     "class_mechanic": "backstab",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "Carnwennan shrouds its wielder in shadow — Arthur's dagger auto-crits on the opening strike of every chain."
-    },
     "design_notes": "Trickster/nimble archetype: shadows part for the killing stroke, the rogue's blade builds then erupts."
   },
   "mistilteinn": {
@@ -2138,7 +1934,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade that seems to cut shadows as well as flesh",
-    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against — his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow.",
+    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against \u2014 his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow.",
     "damage_types": [
       "slash",
       "magic"
@@ -2161,12 +1957,6 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=91, base=39 (= curve.weapon_base_damage(91) x 1.7), min_level=85, quiz_tier=5.",
     "ignore_resistances": true,
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 5,
-      "scope": "item",
-      "desc": "Mistilteinn slips past every protection — the Mistletoe Sword adds 5 raw damage to every hit."
-    },
     "design_notes": "Cursed-blade archetype: the one thing nobody guarded against, patient until it finds the gap and then ruin.",
     "damage_double_vs_resistant_at_max": true
   },
@@ -2215,7 +2005,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a broad two-handed blade with a blunt squared tip",
-    "lore": "The Sword of Mercy — its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade.",
+    "lore": "The Sword of Mercy \u2014 its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade.",
     "damage_types": [
       "slash",
       "holy"
@@ -2237,12 +2027,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
     "onEquipStatus": "blessed",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.15,
-      "scope": "item",
-      "desc": "Curtana's blunt tip teaches restraint — the Sword of Mercy grants a steady 0.15 chain bonus that never overreaches."
-    },
     "design_notes": "King's blow archetype: mercy is the lesser blade, royal weight in every stroke but the peak stays its hand.",
     "spare_kill_chance": 0.25,
     "spare_kill_max_hp_per_floor": 5
@@ -2314,15 +2098,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "class_mechanic": "cleave_at_max",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "humanoid",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "Parashurama's axe exterminated the Kshatriyas twenty-one times — Parashu deals +40% damage to humanoids."
-    },
     "design_notes": "Brute/crushing archetype: ten thousand years of penance forged into one axe, heavy from the first arc.",
     "chain_no_reset_on_tag": [
       "humanoid"
@@ -2369,7 +2144,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a symmetrical double-bladed ceremonial axe",
-    "lore": "The double-headed axe of Minoan Crete — labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there.",
+    "lore": "The double-headed axe of Minoan Crete \u2014 labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there.",
     "damage_types": [
       "slash"
     ],
@@ -2391,15 +2166,6 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=24, base=6 (= curve.weapon_base_damage(24) x 1.65), min_level=16, quiz_tier=2.",
     "class_mechanic": "cleave_at_max",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "beast",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Labrys remembers the Minotaur in the dark — it deals +30% damage to beasts."
-    },
     "design_notes": "Ancient/stately archetype: the priestess's bronze, ritual rhythm building toward the killing blow."
   },
   "chandrahas": {
@@ -2471,15 +2237,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "confuseChance": 0.2,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "evil",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Chandrahas was Shiva's gift, intolerant of wickedness — it deals +35% damage to evil-aligned foes."
-    },
     "design_notes": "Cursed-blade archetype: Shiva's gift bides its time, the laughing peak comes only when the price is paid.",
     "karma_disappear_proc": 0.05
   },
@@ -2551,12 +2308,6 @@
     "_curve_note": "Redistributed: peak=93, base=40 (= curve.weapon_base_damage(93) x 1.7), min_level=87, quiz_tier=5.",
     "burnChance": 0.45,
     "ignore_resistances": true,
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 5,
-      "scope": "item",
-      "desc": "Laevateinn was cut to kill the rooster of Ragnarok — it adds 5 fiery damage to every blow."
-    },
     "design_notes": "Cursed-blade archetype: Loki's wand at Hel's gate, slow gathering of doom then a ragnarok-grade peak.",
     "boss_doom_dot_at_chain_5": {
       "pct_max_hp_per_turn": 0.05,
@@ -2628,16 +2379,6 @@
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=32, base=7 (= curve.weapon_base_damage(32) x 1.5), min_level=24, quiz_tier=2.",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "confused",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "The Thyrsus carries Dionysian madness — 25% of its strikes confuse the target for 3 turns."
-    },
     "design_notes": "Wild/chaotic archetype: Maenad rhythm, the staff lurches in bacchic madness then crowns its frenzy."
   },
   "rod_of_moses": {
@@ -2707,15 +2448,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=84, base=31 (= curve.weapon_base_damage(84) x 1.65), min_level=72, quiz_tier=5.",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "evil",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "The Rod of Moses parted seas and humbled Pharaoh — it deals +40% damage to evil-aligned foes."
-    },
     "design_notes": "Holy/radiant archetype: shepherd's rod made instrument of God, the radiance builds with each pronouncement."
   },
   "amenonuhoko": {
@@ -2785,16 +2517,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "stunned",
-        "pct": 20,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "Amenonuhoko stirred the primordial ocean — 20% of its hits stun foes with cosmic stillness for 2 turns."
-    },
     "design_notes": "Ancient/stately archetype: the spear that stirred the ocean, every thrust a measured drop of the primordial."
   },
   "sudarshana": {
@@ -2864,12 +2586,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "finesse",
     "_curve_note": "Promoted to F90s: peak=93, base=39 (= curve.weapon_base_damage(93) x 1.65).",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.35,
-      "scope": "item",
-      "desc": "The Sudarshana Chakra spins eternally — Vishnu's discus adds 0.35 to every chain multiplier."
-    },
     "design_notes": "King's blow archetype: Vishnu's discus spins from the start, every revolution is a god's strike.",
     "return_to_hand_ward": true
   },
@@ -2915,7 +2631,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a short blade from the dwarf-hoard",
-    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade — a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical.",
+    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade \u2014 a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical.",
     "damage_types": [
       "pierce",
       "magic"
@@ -2937,12 +2653,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=55, base=13 (= curve.weapon_base_damage(55) x 1.5), min_level=43, quiz_tier=3.",
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "Ridill was always the lesser blade in Fafnir's hoard, but Sigurd left it sharp — it adds 2 reliable damage to every cut."
-    },
     "design_notes": "Sniper/precise archetype: the theoretical blade, patient and undemonstrated until at last it is."
   },
   "kladenets": {
@@ -3010,12 +2720,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=58, base=17 (= curve.weapon_base_damage(58) x 1.7), min_level=46, quiz_tier=3.",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.2,
-      "scope": "item",
-      "desc": "The Samosek swings itself in the wielder's hand — every chain multiplier rises by 0.20."
-    },
     "design_notes": "Wild/chaotic archetype: the self-swinger has its own ideas, erratic until it finds the killing stroke."
   },
   "shamshir_e_zomorrodnegar": {
@@ -3088,15 +2792,6 @@
     "effective_against": [
       "demon"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "demon",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "Solomon's emerald scimitar commands djinn and shatters the disobedient — Shamshir-e Zomorrodnegar deals +40% damage to demons."
-    },
     "design_notes": "Ancient/stately archetype: Solomon's administration in steel, measured and bureaucratic then decisive.",
     "summon_after_kill_with_tag": {
       "tag": "demon",
@@ -3150,7 +2845,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a golden-bladed sword of divine origin",
-    "lore": "Chrysaor — the Golden Sword — sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out.",
+    "lore": "Chrysaor \u2014 the Golden Sword \u2014 sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out.",
     "damage_types": [
       "slash",
       "holy"
@@ -3171,12 +2866,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 4,
-      "scope": "item",
-      "desc": "Chrysaor — the Golden Sword — was born of Medusa's blood and never tarnishes; it adds 4 damage to every strike."
-    },
     "design_notes": "King's blow archetype: the Golden Sword founded a western kingdom, every stroke carries Pegasus-born light.",
     "weapon_immune_to_enchant_loss": true
   },
@@ -3221,7 +2910,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a plain but perfectly balanced blade",
-    "lore": "Some scholars distinguish Caliburn — the sword in the stone — from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
+    "lore": "Some scholars distinguish Caliburn \u2014 the sword in the stone \u2014 from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
     "growingPower": true,
     "killsToGrow": 10,
     "damage_types": [
@@ -3244,12 +2933,6 @@
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=37, base=10 (= curve.weapon_base_damage(37) x 1.7), min_level=29, quiz_tier=2.",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.2,
-      "scope": "item",
-      "desc": "Caliburn was the sword Arthur earned from the stone — every chain multiplier rises by 0.20."
-    },
     "design_notes": "King's blow archetype: the stone-drawn blade carries every blow as proof of the king's right."
   },
   "brisingr": {
@@ -3319,16 +3002,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "burning",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Brisingr's blade is still faintly warm — 25% of its strikes set the target burning for 3 turns."
-    },
     "design_notes": "Holy/radiant archetype: the warm blade kindles as it works, a slow fire reaching its proper heat."
   },
   "fragarach_the_whisperer": {
@@ -3395,12 +3068,6 @@
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=38, base=9 (= curve.weapon_base_damage(38) x 1.55), min_level=30, quiz_tier=2.",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "The Whisperer is always already at the throat — it auto-crits on the first strike of every chain."
-    },
     "design_notes": "Cursed-blade archetype: the silent companion bides its time, patient until the moment of betrayal.",
     "equipped_sound_radius_modifier": -0.5
   },
@@ -3446,7 +3113,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a heavy single-bladed axe with an age-worn grip",
-    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him — his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men.",
+    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him \u2014 his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men.",
     "damage_types": [
       "slash",
       "blunt"
@@ -3468,12 +3135,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=54, base=13 (= curve.weapon_base_damage(54) x 1.55), min_level=42, quiz_tier=3.",
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 3,
-      "scope": "item",
-      "desc": "Naegling shattered in Beowulf's grip from sheer force — it adds 3 brutal damage to every hit."
-    },
     "design_notes": "Brute/crushing archetype: Beowulf's grip was always too strong, heavy from the first cut as the steel braces for the end."
   },
   "punch_in_the_face": {
@@ -3511,7 +3172,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "Punch in the Face",
-    "lore": "This is Dad’s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
+    "lore": "This is Dad\u2019s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt",
@@ -3533,12 +3194,6 @@
     "is_unique": true,
     "max_enchant": 0,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "A Punch in the Face has never needed to miss twice — every chain opens with an auto-crit."
-    },
     "id_level": 0
   },
   "hunt_captains_sword": {
@@ -3605,15 +3260,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "fey",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "The Hunt Captain's Sword phases between worlds — it deals +40% damage to fey."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -3680,12 +3326,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_lifesteal",
-      "value": 0.15,
-      "scope": "item",
-      "desc": "The Wendigo's Fang leaches warmth from its victims — it heals 15% of damage dealt back to the wielder."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -3753,16 +3393,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "poisoned",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Echidna's Fang weeps the venoms of all her monstrous children — 25% of its hits poison for 3 turns."
-    },
     "identified": false,
     "id_level": 0,
     "random_status_from_pool": {
@@ -3839,16 +3469,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "burning",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "Vulcan's Brand never fully cools — 25% of its strikes set foes burning for 3 turns."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -3895,7 +3515,7 @@
     "value": 300,
     "min_level": 5,
     "unidentified_name": "a worn leather strap with a pouch",
-    "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated — it asks only for courage and accuracy. Against the mighty, it is devastating.",
+    "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated \u2014 it asks only for courage and accuracy. Against the mighty, it is devastating.",
     "quiz_tier": 1,
     "requiresAmmo": "stone",
     "infiniteAmmo": true,
@@ -3918,15 +3538,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "giant",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "David's Sling humbled Goliath with a single stone — it deals +50% damage to giants."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -3976,7 +3587,7 @@
     "value": 500,
     "min_level": 8,
     "unidentified_name": "a smoldering hollow fennel stalk",
-    "lore": "Hesiod's Theogony says Prometheus stole fire in a hollow fennel stalk — a narthex, the dry pithy stem that smolders slowly inside without burning through. He carried Zeus's ember down to mortals that way. Zeus chained him to the Caucasus and sent an eagle for his liver every day. The stalk in your hand still smokes at the core. It has not gone out for three thousand years.",
+    "lore": "Hesiod's Theogony says Prometheus stole fire in a hollow fennel stalk \u2014 a narthex, the dry pithy stem that smolders slowly inside without burning through. He carried Zeus's ember down to mortals that way. Zeus chained him to the Caucasus and sent an eagle for his liver every day. The stalk in your hand still smokes at the core. It has not gone out for three thousand years.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt",
@@ -4001,15 +3612,6 @@
     "effective_against": [
       "undead"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "undead",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "Prometheus gave mortals fire to keep the dark at bay - +30% damage to undead."
-    },
     "identified": false,
     "id_level": 0,
     "equipped_light_aura": 3
@@ -4082,12 +3684,6 @@
     "max_enchant": 2,
     "weapon_class_chain": "normal",
     "cursedMissBacklash": 2,
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "The Sword of Damocles hangs ready to fall — it auto-crits on the first swing of every chain."
-    },
     "design_notes": "Wild/chaotic archetype: each swing thins the horsehair, the blade lurches between safety and the falling sword.",
     "identified": false,
     "id_level": 0,
@@ -4138,7 +3734,7 @@
     "value": 1800,
     "min_level": 14,
     "unidentified_name": "a weathered yew longbow wrapped in green cloth",
-    "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows — enemies that cannot see you cannot hear its string.",
+    "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows \u2014 enemies that cannot see you cannot hear its string.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"
@@ -4159,12 +3755,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "Robin Hood always struck from cover — his longbow auto-crits on the first arrow of every chain."
-    },
     "design_notes": "Sniper/precise archetype: the outlaw's patient breath, the last shot from cover splits the arrow before it.",
     "identified": false,
     "id_level": 0,
@@ -4215,7 +3805,7 @@
     "value": 3500,
     "min_level": 1,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
-    "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed — rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
+    "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed \u2014 rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
     "quiz_tier": 1,
     "damage_types": [
       "pierce"
@@ -4236,12 +3826,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_lifesteal",
-      "value": 0.2,
-      "scope": "item",
-      "desc": "The spear that wounded also healed — Achilles's Spear restores 20% of its damage dealt to the wielder."
-    },
     "design_notes": "Ancient/stately archetype: Hephaestus' shaft, measured and deliberate; the rust on its tip already knowing the cure.",
     "identified": false,
     "id_level": 0
@@ -4290,7 +3874,7 @@
     "value": 4500,
     "min_level": 35,
     "unidentified_name": "a heavy bronze axe with cuneiform inscriptions",
-    "lore": "Enkidu dreamed of an axe that fell from the sky — Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond — it strikes harder after its wielder has been wounded.",
+    "lore": "Enkidu dreamed of an axe that fell from the sky \u2014 Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond \u2014 it strikes harder after its wielder has been wounded.",
     "quiz_tier": 3,
     "damage_types": [
       "slash"
@@ -4314,12 +3898,6 @@
     "effective_against": [
       "construct"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 3,
-      "scope": "item",
-      "desc": "Gilgamesh's Axe remembers Enkidu's bond — it adds 3 damage to every strike."
-    },
     "design_notes": "Bestial/feral archetype: the axe Enkidu dreamed, primal rhythm; the bond hardens it after the first wound.",
     "identified": false,
     "id_level": 0
@@ -4368,7 +3946,7 @@
     "value": 5500,
     "min_level": 38,
     "unidentified_name": "a curved blade that distorts the air around it",
-    "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself — from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
+    "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself \u2014 from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
     "quiz_tier": 3,
     "damage_types": [
       "slash",
@@ -4391,12 +3969,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
     "lifestealPercent": 0.08,
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 5,
-      "scope": "item",
-      "desc": "The Scythe of Cronus cuts through time — each strike extends bleeding by 5 turns as vitality drains."
-    },
     "design_notes": "Cursed-blade archetype: time itself sheds from its edge, slow as it drinks vitality then ruinous at the harvest.",
     "identified": false,
     "id_level": 0
@@ -4470,16 +4042,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "burning",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "The Spear of Lugh ignites unless kept in poison — 25% of its strikes set foes burning for 3 turns."
-    },
     "design_notes": "Brute/crushing archetype: a spear quenched in poison strikes hot from the cauldron, heavy from the first lunge.",
     "identified": false,
     "id_level": 0,
@@ -4528,7 +4090,7 @@
     "value": 8500,
     "min_level": 52,
     "unidentified_name": "a crimson-stained spear that weeps red",
-    "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered — Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
+    "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered \u2014 Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
     "quiz_tier": 4,
     "damage_types": [
       "pierce"
@@ -4549,12 +4111,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 6,
-      "scope": "item",
-      "desc": "From Gae Dearg's red point no wound ever heals — every hit extends bleeding by 6 turns."
-    },
     "design_notes": "Cursed-blade archetype: the Red Spear offers no mercy, patient wound-finding then unhealing ruin.",
     "identified": false,
     "id_level": 0,
@@ -4603,7 +4159,7 @@
     "value": 4000,
     "min_level": 30,
     "unidentified_name": "a tightly woven metallic mesh",
-    "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage — but nothing escapes it.",
+    "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage \u2014 but nothing escapes it.",
     "quiz_tier": 3,
     "damage_types": [
       "blunt"
@@ -4624,16 +4180,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "paralyzed",
-        "pct": 30,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "The Net of Hephaestus caught Ares himself — 30% of its strikes paralyze for 2 turns."
-    },
     "design_notes": "Trickster/nimble archetype: the smith-god's ensnaring weave, light strokes that find the gaps then the closing fold.",
     "identified": false,
     "id_level": 0
@@ -4668,7 +4214,7 @@
     "weight": 2.5,
     "twoHanded": false,
     "reach": 1,
-    "stunChance": 0.20,
+    "stunChance": 0.2,
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
@@ -4684,7 +4230,7 @@
     "ignore_resistances": true,
     "abaddon_bonus_damage": "5d10",
     "holy_smite_message": true,
-    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous — earned not by strength but by the quality of one's soul.",
+    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous \u2014 earned not by strength but by the quality of one's soul.",
     "damage_types": [
       "holy",
       "slash"
@@ -4706,15 +4252,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "demon",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Sword of Michael deals +50% damage to demonkind."
-    },
     "bonus_damage_vs_tag": {
       "demon": "2d8",
       "undead": "1d8",
@@ -4762,7 +4299,7 @@
     "min_level": 9999,
     "quiz_tier": 2,
     "unidentified_name": "well-kept longsword",
-    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp — someone maintained it with love.",
+    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp \u2014 someone maintained it with love.",
     "damage_types": [
       "slash"
     ],
@@ -4782,12 +4319,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.2,
-      "scope": "item",
-      "desc": "Oathkeeper was carried in love and maintained in love — every chain multiplier rises by 0.20."
-    },
     "identified": false,
     "id_level": 0,
     "adjacent_pet_damage_bonus": 0.25
@@ -4834,7 +4365,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a dark iron dagger stained with old blood",
-    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
+    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood \u2014 wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
     "damage_types": [
       "pierce"
     ],
@@ -4854,12 +4385,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_lifesteal",
-      "value": 0.25,
-      "scope": "item",
-      "desc": "The Penitent's Blade tries to balance its long ledger — it heals 25% of damage dealt back to the wielder."
-    },
     "id_level": 0,
     "kill_count_karma_adjust": 100
   },
@@ -4920,12 +4445,6 @@
     "is_unique": true,
     "max_enchant": 2,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 5,
-      "scope": "item",
-      "desc": "S-Mart's top of the line — the Boomstick adds 5 buckshot damage to every blast. Shop smart."
-    },
     "design_notes": "Signature chain: explosive peak -- chain-5 triggers an AOE/shotgun spread. Requires combat.py wiring for the AOE. peak_floor=0 so baseDamage is special-cased (not formula-derived).",
     "id_level": 0
   },
@@ -4983,15 +4502,6 @@
     "is_unique": true,
     "max_enchant": 2,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "undead",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Carved through deadites by the millions - +35% damage to undead."
-    },
     "id_level": 0
   },
   "romulus_spear": {
@@ -5034,7 +4544,7 @@
     "value": 250,
     "min_level": 4,
     "unidentified_name": "a bronze-tipped spear with wolf-hide grip",
-    "lore": "When Romulus hurled his spear from the Aventine Hill into the Palatine, it struck the earth and took root, growing into a great tree. The spear that founded Rome carries the will of a man who built a civilization from nothing — from fratricide to empire. It strikes from further than any common weapon.",
+    "lore": "When Romulus hurled his spear from the Aventine Hill into the Palatine, it struck the earth and took root, growing into a great tree. The spear that founded Rome carries the will of a man who built a civilization from nothing \u2014 from fratricide to empire. It strikes from further than any common weapon.",
     "quiz_tier": 1,
     "damage_types": [
       "pierce"
@@ -5058,12 +4568,6 @@
     "effective_against": [
       "beast"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Spear of Romulus founded a city from one throw — every cast lands with 2 more weight."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -5105,7 +4609,7 @@
     "value": 200,
     "min_level": 3,
     "unidentified_name": "a gold-leafed shepherd's crook",
-    "lore": "The crook and flail were the symbols of pharaonic authority in ancient Egypt — the crook representing the shepherd's duty to guide and protect, the flail representing the power to punish. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
+    "lore": "The crook and flail were the symbols of pharaonic authority in ancient Egypt \u2014 the crook representing the shepherd's duty to guide and protect, the flail representing the power to punish. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt"
@@ -5127,16 +4631,6 @@
     "max_enchant": 2,
     "weapon_class_chain": "normal",
     "onEquipStatus": "heroism",
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "stunned",
-        "pct": 20,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "The Pharaoh's Crook carries the weight of divine kingship — 20% of its strikes stun for 2 turns."
-    },
     "design_notes": "King's blow archetype: every stroke carries pharaoh's authority, even the first touch is rebuke.",
     "identified": false,
     "id_level": 0,
@@ -5182,7 +4676,7 @@
     "value": 500,
     "min_level": 10,
     "unidentified_name": "a heavy iron fragment crackling with static",
-    "lore": "A jagged fragment of Thor's legendary hammer, Mjolnir — the weapon forged by the dwarves Sindri and Brokkr in Asgard. Though only a shard, it still carries the storm. Lightning arcs between its fractures, and each blow echoes with distant thunder. To wield even a piece of Mjolnir is to hold a fraction of the storm god's wrath.",
+    "lore": "A jagged fragment of Thor's legendary hammer, Mjolnir \u2014 the weapon forged by the dwarves Sindri and Brokkr in Asgard. Though only a shard, it still carries the storm. Lightning arcs between its fractures, and each blow echoes with distant thunder. To wield even a piece of Mjolnir is to hold a fraction of the storm god's wrath.",
     "quiz_tier": 2,
     "damage_types": [
       "blunt",
@@ -5205,16 +4699,6 @@
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "burnChance": 0.15,
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "stunned",
-        "pct": 25,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "Even a shard of Mjolnir holds Thor's thunder — 25% of its strikes stun foes for 2 turns."
-    },
     "design_notes": "Signature chain: heavy with thunder peak -- a chip of the hammer keeps the weight even when broken. NOTE: chain-5 should trigger a lightning status proc; requires combat.py wiring.",
     "identified": false,
     "id_level": 0
@@ -5259,7 +4743,7 @@
     "value": 600,
     "min_level": 12,
     "unidentified_name": "a recurved bow radiating faint heat",
-    "lore": "The great bow of Lord Rama, hero of the Ramayana — the divine prince who bent the bow of Shiva to win Sita's hand. His arrows, guided by dharma, struck down the demon king Ravana and his armies. This bow carries that sacred fire. Arrows loosed from it burn with righteous flame, and no act of evil can stand before it.",
+    "lore": "The great bow of Lord Rama, hero of the Ramayana \u2014 the divine prince who bent the bow of Shiva to win Sita's hand. His arrows, guided by dharma, struck down the demon king Ravana and his armies. This bow carries that sacred fire. Arrows loosed from it burn with righteous flame, and no act of evil can stand before it.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce",
@@ -5285,15 +4769,6 @@
       "demon"
     ],
     "critMultiplier": 1.5,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "evil",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "Rama's arrows are guided by dharma — the Bow of Rama deals +40% damage to evil-aligned foes."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -5338,7 +4813,7 @@
     "value": 800,
     "min_level": 20,
     "unidentified_name": "a barbed bone spearhead bound to a shaft",
-    "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn, greatest hero of Irish mythology. The original weapon was made from the bone of a sea monster and, once it pierced flesh, its barbs opened inside the wound, making it impossible to remove without killing the victim. Even this fragment carries that terrible legacy — its strikes rend deep, and its critical blows are devastating.",
+    "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn, greatest hero of Irish mythology. The original weapon was made from the bone of a sea monster and, once it pierced flesh, its barbs opened inside the wound, making it impossible to remove without killing the victim. Even this fragment carries that terrible legacy \u2014 its strikes rend deep, and its critical blows are devastating.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"
@@ -5359,12 +4834,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "heavy",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "Even a fragment of the Gae Bolg opens like the original — it auto-crits on the first strike of every chain."
-    },
     "design_notes": "Cursed-blade archetype: even the splinter remembers, the bone barbs find the wound and then they spread.",
     "identified": false,
     "id_level": 0
@@ -5409,7 +4878,7 @@
     "value": 900,
     "min_level": 25,
     "unidentified_name": "a weathered staff of ancient wood",
-    "lore": "The staff that Moses raised to part the Red Sea, that struck the rock at Horeb to bring forth water, that became a serpent before Pharaoh. It was a simple shepherd's staff before God chose it — and that is the lesson. It is not the weapon that matters, but the hand that wields it and the faith behind it. Against the unholy, it strikes with divine authority.",
+    "lore": "The staff that Moses raised to part the Red Sea, that struck the rock at Horeb to bring forth water, that became a serpent before Pharaoh. It was a simple shepherd's staff before God chose it \u2014 and that is the lesson. It is not the weapon that matters, but the hand that wields it and the faith behind it. Against the unholy, it strikes with divine authority.",
     "quiz_tier": 2,
     "damage_types": [
       "blunt",
@@ -5432,15 +4901,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "knockback": true,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "undead",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "The Staff of Moses parted the sea and confronted the unholy — it deals +40% damage to undead."
-    },
     "design_notes": "Holy/radiant archetype: the shepherd's rod chosen by God, the radiance grows as the unholy is named.",
     "identified": false,
     "id_level": 0,
@@ -5493,7 +4953,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "a blade of polished silver etched with runes",
-    "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night — wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
+    "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night \u2014 wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
     "quiz_tier": 2,
     "damage_types": [
       "slash",
@@ -5515,15 +4975,6 @@
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "undead",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "The Witcher's Silver Blade was forged for things that crawl from cursed earth — it deals +40% damage to undead."
-    },
     "id_level": 0
   },
   "zireael": {
@@ -5563,7 +5014,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
-    "lore": "Zireael — 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative — it is a promise. She will return. She always returns.",
+    "lore": "Zireael \u2014 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative \u2014 it is a promise. She will return. She always returns.",
     "quiz_tier": 2,
     "damage_types": [
       "slash"
@@ -5584,12 +5035,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.25,
-      "scope": "item",
-      "desc": "Zireael is a masterwork of gnomish steel — Swallow adds 0.25 to every chain multiplier."
-    },
     "design_notes": "Signature chain: Swallow, the witcher's blade -- fast finesse opener (0.4x) with a sharp closing peak. Rewards the chain.",
     "id_level": 0,
     "extra_action_after_kill": true
@@ -5646,7 +5091,7 @@
       "effect_chance": 0.3,
       "effect_duration": 5
     },
-    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two — one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields.",
+    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two \u2014 one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields.",
     "damage_types": [
       "pierce",
       "fire",
@@ -5671,16 +5116,6 @@
     "effective_against": [
       "demon"
     ],
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "burning",
-        "pct": 25,
-        "duration": 3
-      },
-      "scope": "item",
-      "desc": "The Vel of Murugan burns with righteous war — 25% of its hits set foes burning for 3 turns."
-    },
     "design_notes": "Holy/radiant archetype: Parvati's lance burns with righteous war, a steady building flame: peacock and rooster.",
     "summon_after_kill_with_tag": {
       "tag": "demon",
@@ -5737,7 +5172,7 @@
     "kill_heal_amount": 3,
     "kill_max_hp_bonus": 1,
     "kill_max_hp_cap": 10,
-    "lore": "Anubis weighed the heart of every Egyptian dead against the feather of Ma'at, truth itself. If the heart was heavier, the demon Ammit ate it on the spot. The priests of Anubis carried khopeshes of black iron during the embalming rites — not for use on the living, but for the symbolic severing of what could not be allowed into the next world. This is one of them. The blade still measures, and what it judges, it keeps.",
+    "lore": "Anubis weighed the heart of every Egyptian dead against the feather of Ma'at, truth itself. If the heart was heavier, the demon Ammit ate it on the spot. The priests of Anubis carried khopeshes of black iron during the embalming rites \u2014 not for use on the living, but for the symbolic severing of what could not be allowed into the next world. This is one of them. The blade still measures, and what it judges, it keeps.",
     "damage_types": [
       "slash"
     ],
@@ -5757,12 +5192,6 @@
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "mastery_blessing": {
-      "kind": "weapon_lifesteal",
-      "value": 0.2,
-      "scope": "item",
-      "desc": "The Khopesh of Anubis steals 20% of damage dealt as HP."
-    },
     "design_notes": "Cursed-blade archetype: the embalmer's reckoning, quiet at first then the heart is found too heavy."
   },
   "chandrahasa": {
@@ -5808,7 +5237,7 @@
     "identified": false,
     "unidentified_name": "a crescent-shaped blade that glows faintly",
     "low_hp_damage_bonus": true,
-    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut — a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen.",
+    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut \u2014 a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen.",
     "damage_types": [
       "slash",
       "magic"
@@ -5830,12 +5259,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Pass 3 trim: peak=87, base=34 (= curve.weapon_base_damage(87) x 1.65).",
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.3,
-      "scope": "item",
-      "desc": "Chandrahasa laughs louder as its bearer fades — every chain multiplier rises by 0.30."
-    },
     "design_notes": "Cursed-blade archetype: the Laughing Moon ripens on desperation, patient until the wielder's strength fades."
   },
   "green_chapel_axe": {
@@ -5884,7 +5307,7 @@
     "identified": false,
     "unidentified_name": "a green-hafted axe with living vines",
     "on_hit_regen": 3,
-    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close — slowly, but surely.",
+    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close \u2014 slowly, but surely.",
     "damage_types": [
       "slash"
     ],
@@ -5905,12 +5328,6 @@
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "class_mechanic": "returning_blow",
-    "mastery_blessing": {
-      "kind": "weapon_lifesteal",
-      "value": 0.15,
-      "scope": "item",
-      "desc": "The Green Chapel Axe remembers severed and rejoined — the wielder heals 15% of damage dealt."
-    },
     "design_notes": "Bestial/feral archetype: the Green Knight's pact, strike then take then strike again: primal exchange-rhythm."
   },
   "aiglos": {
@@ -5982,12 +5399,6 @@
     "ignoreShield": false,
     "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 4,
-      "scope": "item",
-      "desc": "Aiglos pierced even Sauron's hand — Gil-galad's spear adds 4 cold-edged damage to every thrust."
-    },
     "design_notes": "Signature chain: Elendil's spear -- steady, reliable, no surprises. Every rung climbs by ~0.3x; the spear keeps its word.",
     "wielder_fire_immunity": true,
     "wielder_status_immunity": [
@@ -6062,13 +5473,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.2,
-    "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.2,
-      "scope": "item",
-      "desc": "The Akinakes of Acrisius outlasted its king's prophecy — every chain multiplier rises by 0.20."
-    }
+    "requiresAmmo": null
   },
   "anduril": {
     "name": "Anduril",
@@ -6140,15 +5545,6 @@
     "ignoreShield": false,
     "critMultiplier": 1.8,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "evil",
-        "pct": 45
-      },
-      "scope": "item",
-      "desc": "Reforged Anduril is the Flame of the West — it deals +45% damage to evil-aligned foes."
-    },
     "design_notes": "Signature chain: the Flame of the West -- a bright, steady ramp. Each rung is meaningful; no dead opener.",
     "effective_against": [
       "undead"
@@ -6219,13 +5615,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 2.0,
-    "requiresAmmo": "arrow",
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "Atalanta drew first blood on the Calydonian Boar — her bow auto-crits on the first arrow of every chain."
-    }
+    "requiresAmmo": "arrow"
   },
   "bellerophon_lance": {
     "name": "Bellerophon's Lance",
@@ -6295,16 +5685,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "beast",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "Hephaestus forged the lead tip that melted in the Chimera's throat - +30% damage to beasts."
-    }
+    "requiresAmmo": null
   },
   "cadmus_sword": {
     "name": "Sword of Cadmus",
@@ -6375,15 +5756,6 @@
     "ignoreShield": false,
     "critMultiplier": 1.6,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "dragon",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "The Sword of Cadmus opened the dragon at Thebes's spring — it deals +35% damage to dragons."
-    },
     "summon_after_kill_with_tag": {
       "tag": "dragon",
       "duration_turns": 5,
@@ -6461,15 +5833,6 @@
     "ignoreShield": false,
     "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "humanoid",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "Glamdring is Foe-Hammer, the orc-cleaver of Gondolin — it deals +40% damage to humanoids."
-    },
     "design_notes": "Signature chain: the Foe-hammer -- a bright, steady ramp like Anduril. Goblin-bane reliability over flashy peaks."
   },
   "hector_javelin": {
@@ -6537,16 +5900,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.6,
-    "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "humanoid",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "Hector's spear felled Patroclus - +30% damage to humanoids."
-    }
+    "requiresAmmo": null
   },
   "heracles_club": {
     "name": "Heracles's Olive-Club",
@@ -6615,12 +5969,6 @@
     "ignoreShield": false,
     "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 4,
-      "scope": "item",
-      "desc": "Heracles uprooted the olive-club himself and hardened it on Nemea — it adds 4 crushing damage to every blow."
-    },
     "design_notes": "Signature chain: the Olive-Club -- first hits crush evenly (1.0x, 1.0x), then break into a huge peak. Heracles never warms up; he finishes."
   },
   "hofud": {
@@ -6691,13 +6039,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_first_hit_crit",
-      "value": true,
-      "scope": "item",
-      "desc": "Heimdall's Hofud lets nothing slip past — it auto-crits on the first strike of every chain."
-    }
+    "requiresAmmo": null
   },
   "meleager_spear": {
     "name": "Meleager's Boar-Spear",
@@ -6766,15 +6108,6 @@
     "ignoreShield": false,
     "critMultiplier": 1.7,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "beast",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Meleager's boar-spear pinned the Calydonian sow — it deals +35% damage to beasts."
-    },
     "reveal_tag_on_chain_5_kill": [
       "beast"
     ]
@@ -6845,13 +6178,7 @@
     "ignoreShield": false,
     "critMultiplier": 1.7,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 4,
-      "scope": "item",
-      "desc": "The Sword of Pelops cursed three generations of Mycenae — every cut extends bleeding by 4 turns."
-    }
+    "floorSpawnWeight": {}
   },
   "stormbringer": {
     "name": "Stormbringer",
@@ -6925,12 +6252,6 @@
     "ignoreShield": false,
     "critMultiplier": 2.5,
     "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_lifesteal",
-      "value": 0.25,
-      "scope": "item",
-      "desc": "Stormbringer drinks souls and feeds them to its bearer — it heals 25% of damage dealt to the wielder."
-    },
     "design_notes": "Signature: chain-5 drains the victim's soul (lifesteal-style heal). Requires combat.py wiring for the soul-steal proc; chain curve here is the runesword's tempered finesse profile."
   },
   "talos_sickle": {
@@ -6999,16 +6320,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.8,
-    "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "construct",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Forged from Talos's own bronze - +35% damage to constructs."
-    }
+    "requiresAmmo": null
   },
   "theseus_club": {
     "name": "Theseus's Club",
@@ -7075,13 +6387,7 @@
     "knockback": false,
     "ignoreShield": false,
     "critMultiplier": 1.5,
-    "requiresAmmo": null,
-    "mastery_blessing": {
-      "kind": "weapon_base_damage_bonus",
-      "value": 3,
-      "scope": "item",
-      "desc": "Theseus took the bronze club from Periphetes and kept it through the labyrinth — it adds 3 damage to every blow."
-    }
+    "requiresAmmo": null
   },
   "cain_club": {
     "name": "Cain's Club",
@@ -7145,16 +6451,10 @@
     "max_enchant": 3,
     "unidentified_name": "a crude root-end cudgel stained at the head",
     "identified": false,
-    "lore": "The Bible does not say what Cain used. Talmudic and Quranic commentary settles on a rough club — the first murder weapon, made of nothing in particular. The mark on Cain protected him from retaliation but not from memory. The wood is the wrong colour at one end and no one has been able to wash it clean.",
+    "lore": "The Bible does not say what Cain used. Talmudic and Quranic commentary settles on a rough club \u2014 the first murder weapon, made of nothing in particular. The mark on Cain protected him from retaliation but not from memory. The wood is the wrong colour at one end and no one has been able to wash it clean.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "cursedMissBacklash": 1,
-    "mastery_blessing": {
-      "kind": "weapon_wound_lingers",
-      "value": 3,
-      "scope": "item",
-      "desc": "Cain's Club carries the first murder — every strike extends bleeding by 3 turns."
-    },
     "equipped_monster_aggro_radius": 2
   },
   "wepwawet_mace": {
@@ -7219,20 +6519,10 @@
     "max_enchant": 3,
     "unidentified_name": "a slender ceremonial mace topped with a jackal",
     "identified": false,
-    "lore": "Wepwawet — 'Opener of the Ways' — was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
+    "lore": "Wepwawet \u2014 'Opener of the Ways' \u2014 was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "can_dig": true,
-    "mastery_blessing": {
-      "kind": "weapon_status_chance",
-      "value": {
-        "status": "stunned",
-        "pct": 20,
-        "duration": 2
-      },
-      "scope": "item",
-      "desc": "Wepwawet's mace opens the way before the king — 20% of its strikes stun for 2 turns."
-    }
+    "can_dig": true
   },
   "cuchulainn_hurley": {
     "name": "Setanta's Hurley",
@@ -7296,21 +6586,12 @@
     "max_enchant": 3,
     "unidentified_name": "a worn ash hurling stick with a stone-hard heel",
     "identified": false,
-    "lore": "Before he was Cu Chulainn — Culann's Hound — he was Setanta, the boy who killed Culann's guard dog by driving a hurling ball down its throat with this stick. He volunteered to replace the dog. The name stuck. The hurley is ash and the heel is dense as river stone.",
+    "lore": "Before he was Cu Chulainn \u2014 Culann's Hound \u2014 he was Setanta, the boy who killed Culann's guard dog by driving a hurling ball down its throat with this stick. He volunteered to replace the dog. The name stuck. The hurley is ash and the heel is dense as river stone.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "effective_against": [
       "beast"
-    ],
-    "mastery_blessing": {
-      "kind": "weapon_damage_vs_tag",
-      "value": {
-        "tag": "beast",
-        "pct": 25
-      },
-      "scope": "item",
-      "desc": "Setanta killed Culann's hound with a hurling ball - +25% damage to beasts."
-    }
+    ]
   },
   "mwindo_axe": {
     "name": "Mwindo's Conga-Scepter",
@@ -7374,15 +6655,9 @@
     "max_enchant": 3,
     "unidentified_name": "a small carved axe-scepter inlaid with cowrie shells",
     "identified": false,
-    "lore": "The Mwindo Epic — collected from the Banyanga of the eastern Congo in the 1950s — gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
+    "lore": "The Mwindo Epic \u2014 collected from the Banyanga of the eastern Congo in the 1950s \u2014 gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
     "template_basis": "handaxe",
     "_curve_note": "Pass 4: bumped base damage to 5 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "kill_heal_amount": 2,
-    "mastery_blessing": {
-      "kind": "weapon_chain_mult_bonus",
-      "value": 0.15,
-      "scope": "item",
-      "desc": "Mwindo's Conga-Scepter was axe, wand, and flyswatter at once — every chain multiplier rises by 0.15."
-    }
+    "kill_heal_amount": 2
   }
 }

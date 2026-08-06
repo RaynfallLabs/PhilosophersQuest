@@ -43,8 +43,6 @@ def migrate_buc_item(item) -> None:
     item.__dict__.pop('identified', None)
     if not hasattr(item, 'unidentified_name'):
         item.unidentified_name = getattr(item, 'name', '???')
-    if not hasattr(item, 'mastery_blessing'):
-        item.mastery_blessing = None
 
 
 def cycle_tab(current: int, direction: int, n_tabs: int, has_items: Callable[[int], bool]) -> int:

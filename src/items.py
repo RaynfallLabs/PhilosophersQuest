@@ -10,35 +10,114 @@ ARMOR_SLOTS = ['head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt'
 
 
 # Identify-system helpers — pure functions used by both item identify
-# (game_magic.py:_identify_unique_item) and corpse identify
+# (game_magic.py:_identify_item) and corpse identify
 # (main.py:_start_corpse_identify). Extracted here so they're trivially
 # unit-testable and the rule lives in ONE place.
 
-def identify_resume_params(previous_level: int) -> tuple[int, int]:
-    """Return (start_tier, max_chain) for an identify quiz that resumes
-    from the failed tier.
+def _floor_band_tier(floor) -> int:
+    """Map a dungeon floor (1-100) to a 1-5 tier in 20-floor bands.
+    Returns 0 for missing/invalid floors so callers can fall through."""
+    try:
+        f = int(floor or 0)
+    except (TypeError, ValueError):
+        return 0
+    if f <= 0:
+        return 0
+    return max(1, min(5, (f - 1) // 20 + 1))
 
-    Rule: the chain starts at one tier ABOVE the last tier the kid passed,
-    and only spans the remaining tiers. previous_level=0 -> (1, 5) — a
-    fresh full identify. previous_level=2 -> (3, 3) — only T3+T4+T5 needed
-    for mastery. previous_level=4 -> (5, 1) — last tier, mastery on the line.
 
-    Clamped so previous_level >= 5 (already mastered) yields (5, 1) rather
-    than crashing the quiz engine.
+def _spawn_weight_band_tier(floor_spawn_weight) -> int:
+    """Tier from a floorSpawnWeight dict ({"21-40": 80, ...}): take the
+    band with the highest weight and map its midpoint through the
+    20-floor bands. Returns 0 when the dict is empty/unparseable."""
+    if not isinstance(floor_spawn_weight, dict) or not floor_spawn_weight:
+        return 0
+    best_mid, best_w = 0, float('-inf')
+    for band, weight in floor_spawn_weight.items():
+        try:
+            lo, hi = str(band).split('-')
+            mid = (int(lo) + int(hi)) // 2
+            w = float(weight)
+        except (TypeError, ValueError):
+            continue
+        if w > best_w:
+            best_mid, best_w = mid, w
+    return _floor_band_tier(best_mid)
+
+
+def derive_id_tier(*, explicit: int = 0, is_unique: bool = False,
+                   tier: int = 0, quiz_tier: int = 0, peak_floor: int = 0,
+                   floor_spawn_weight: dict | None = None,
+                   min_level: int = 0) -> int:
+    """The identification tier (1-5) for the ONE-question identify quiz.
+
+    Priority: explicit id_tier from JSON > gear tier (weapons/armor/
+    shields/ammo) > quiz_tier > peak_floor band > floorSpawnWeight peak
+    band > min_level band > 1. Uniques never sit below tier 4 — a
+    legendary yields only to deep study.
     """
-    prev = max(0, min(int(previous_level), 5))
-    start_tier = min(prev + 1, 5)
-    max_chain = max(5 - prev, 1)
-    return start_tier, max_chain
+    for candidate in (
+        explicit,
+        tier,
+        quiz_tier,
+        _floor_band_tier(peak_floor),
+        _spawn_weight_band_tier(floor_spawn_weight),
+        _floor_band_tier(min_level),
+    ):
+        try:
+            c = int(candidate or 0)
+        except (TypeError, ValueError):
+            c = 0
+        if 1 <= c <= 5:
+            break
+    else:
+        c = 1
+    if is_unique:
+        c = max(c, 4)
+    return c
 
 
-def id_progress_marker(id_level: int) -> str:
-    """Return the menu marker that appears next to a partially-identified
-    item's name (e.g. "  (2/5)"). The menu only contains items with
-    id_level < 5; 5 is filtered out elsewhere.
+def item_id_tier(item) -> int:
+    """derive_id_tier over a live Item/Corpse instance (reads its fields)."""
+    return derive_id_tier(
+        explicit=int(getattr(item, 'id_tier', 0) or 0),
+        is_unique=bool(getattr(item, 'is_unique', False)),
+        tier=int(getattr(item, 'tier', 0) or 0),
+        quiz_tier=int(getattr(item, 'quiz_tier', 0) or 0),
+        peak_floor=int(getattr(item, 'peak_floor', 0) or 0),
+        floor_spawn_weight=getattr(item, 'floor_spawn_weight', None),
+        min_level=int(getattr(item, 'min_level', 0) or 0),
+    )
+
+
+_TYPE_CLASS_PUNCT = None    # compiled lazily in _slugify
+
+
+def _slugify(text: str) -> str:
+    """Convert "Ring of Strength" -> "ring_of_strength"."""
+    global _TYPE_CLASS_PUNCT
+    if _TYPE_CLASS_PUNCT is None:
+        import re
+        _TYPE_CLASS_PUNCT = re.compile(r'[^a-z0-9]+')
+    s = (text or '').strip().lower()
+    s = _TYPE_CLASS_PUNCT.sub('_', s)
+    return s.strip('_')
+
+
+def type_class(item) -> str:
+    """Type-knowledge key: the granularity at which "once you know it,
+    you know it" applies.
+
+    Uniques key by item.id. Accessories key by name-slug so all material
+    variants of a "Ring of Strength" count as ONE learned type. Everything
+    else keys by item.id. (Formerly class_masteries.get_mastery_class —
+    kept for the True Name display model after masteries were removed.)
     """
-    lvl = max(0, min(int(id_level or 0), 5))
-    return f"  ({lvl}/5)"
+    if getattr(item, 'is_unique', False):
+        return item.id
+    if isinstance(item, Accessory):
+        return _slugify(getattr(item, 'name', '') or item.id)
+    return item.id
 
 # Per-slot enchantment caps (max enchant_bonus allowed)
 ENCHANT_CAP = {
@@ -94,14 +173,19 @@ class Item:
         self.lore: str          = defn.get('lore', '')
         self.set_id: str        = defn.get('set_id', '')
         self.set_name: str      = defn.get('set_name', '')
-        # Granular identification level (0-5) for the escalator-chain identify on uniques.
-        # 0 = nothing known; 1 = real name; 2 = + BUC aura; 3 = + stats; 4 = + lore; 5 = + mastery.
-        # For non-unique items going through threshold-mode identify, this jumps 0 -> 5 on success.
+        # Per-instance identification state. The one-question identify sets
+        # this straight to 5 on success; 0 = this copy's BUC/enchant unknown.
+        # (Kept as an int, not a bool, so the id_level >= N display gates and
+        # old saves keep working; only 0 and 5 are written by the new flow.)
         # Default matches the legacy `identified` JSON field: known items start at 5, unknown at 0.
         self.id_level: int      = int(defn.get('id_level', 5 if defn.get('identified', True) else 0))
-        # Mastery blessing data for is_unique items. Shape: {'kind': str, 'value': int|float|str, 'desc': str}
-        # Granted to the player on chain-5 identify; lives on player.unlocked_masteries by item_id.
-        self.mastery_blessing: dict | None = defn.get('mastery_blessing', None)
+        # Explicit identification-quiz tier override (1-5). 0 = derive at
+        # quiz time from tier/quiz_tier/peak_floor/etc — see derive_id_tier.
+        self.id_tier: int       = int(defn.get('id_tier', 0) or 0)
+        # Carry bonus: {'stat': 'CON', 'amount': 2} applied while the item is
+        # in inventory (Charmander Stuffie, Dreamspun Sketchbook). See
+        # Player.refresh_carry_bonuses.
+        self.carry_bonus: dict | None = defn.get('carry_bonus', None)
         # Permanent saving-throw bonus while equipped (the gradient defense; the
         # total is capped in Player.save_bonus_for). Shape: {'cat': 'CON'|'WIS'|
         # 'DEX'|'all', 'amount': int}. Read dynamically off equipped gear.
@@ -114,6 +198,10 @@ class Item:
         self.peak_floor:  int   = int(defn.get('peak_floor', 0) or 0)
         self.spread:      int   = int(defn.get('spread', 10) or 10)
         self.peak_weight: float = float(defn.get('peak_weight', 0.0) or 0.0)
+        # Spawn bands — hoisted to the base class so id-tier derivation can
+        # read them on any item type (subclasses may re-assign; harmless).
+        self.floor_spawn_weight: dict = defn.get(
+            'floorSpawnWeight', defn.get('floor_spawn_weight', {})) or {}
 
     # ------------------------------------------------------------------
     # Identified back-compat property (2026-05-29 bug-bash fix)
@@ -829,7 +917,8 @@ class Corpse(Item):
     def __init__(self, monster_name: str, monster_id: str, x: int, y: int,
                  harvest_tier: int = 1, harvest_threshold: int = 2,
                  ingredient_id: str | None = None,
-                 lore: str = '', monster_def: dict | None = None):
+                 lore: str = '', monster_def: dict | None = None,
+                 id_tier: int = 0):
         defn = {
             'id':         f'corpse_{monster_id}',
             'name':       f'{monster_name} corpse',
@@ -847,11 +936,18 @@ class Corpse(Item):
         self.ingredient_id     = ingredient_id
         self.lore              = lore
         self.monster_def       = monster_def or {}   # full definition for stat display
-        # Escalator-chain identify level (0..5):
-        #   0 nothing, 1 name+symbol, 2 basic stats, 3 weak/resist/tags,
-        #   4 full lore, 5 family mastery unlocked. lore_identified is a
-        #   property reflecting id_level >= 4 (backward compat).
+        # Identification state: 0 = unstudied, 5 = fully identified (one
+        # correct philosophy question at this corpse's id_tier). Kept as an
+        # int for save/display back-compat; only 0 and 5 are written.
         self.id_level: int     = 0
+        # Identification-quiz tier: explicit kwarg > harvest_tier (1-5) >
+        # the monster's peak_floor band > 1.
+        ht = int(harvest_tier or 0)
+        self.id_tier: int = (
+            int(id_tier) if 1 <= int(id_tier or 0) <= 5
+            else (ht if 1 <= ht <= 5
+                  else (_floor_band_tier((monster_def or {}).get('peak_floor', 0)) or 1))
+        )
         self.x = x
         self.y = y
 

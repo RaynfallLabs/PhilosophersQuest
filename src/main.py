@@ -479,18 +479,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.philosopher_tier_claimed = set()
         if not hasattr(self.player, 'philosophers_mantle'):
             self.player.philosophers_mantle = False
-        if not hasattr(self.player, 'unlocked_masteries'):
-            self.player.unlocked_masteries = {}
-        # Class-level mastery (commons): added 2026-05-18 with the unified
-        # escalator-chain identify path. Older saves get empty defaults.
-        if not hasattr(self.player, 'unlocked_class_masteries'):
-            self.player.unlocked_class_masteries = {}
         if not hasattr(self.player, 'known_class_ids'):
             self.player.known_class_ids = set()
-        # Per-family monster mastery (corpse-identify chain 5): added with
-        # the corpse-identify rebuild. Older saves default to empty.
-        if not hasattr(self.player, 'unlocked_monster_class_masteries'):
-            self.player.unlocked_monster_class_masteries = {}
         # Chain-equip tier_bonuses targets: flat damage reduction + HP regen.
         # Added 2026-05-18 with the legendary-uniques chain-equip mechanic.
         if not hasattr(self.player, 'damage_resistances'):
@@ -541,18 +531,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.save_affinity = {}
         if not hasattr(self.player, '_save_guard'):
             self.player._save_guard = {}
-        # Re-sync monster-family mastery blessings to current definitions, so
-        # families converted to save_bonus (fey/aberration -> WIS, undead/reptile
-        # -> CON) aren't left holding inert old blessings after the upgrade.
-        try:
-            from monster_classes import MONSTER_FAMILY_BLESSINGS as _MFB
-            _fam = getattr(self.player, 'unlocked_monster_class_masteries', None)
-            if isinstance(_fam, dict):
-                for _f in list(_fam.keys()):
-                    if _f in _MFB:
-                        _fam[_f] = dict(_MFB[_f])
-        except Exception:
-            pass
         # Perseus quirk was a debuff-duration-halve flag; it is now a +2 all-saves
         # bonus. Migrate the legacy flag so returning players keep the benefit.
         _qp = getattr(self.player, 'quirk_progress', None)
@@ -842,8 +820,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         there is ample headroom (60 ring / 18 amulet looks) so this is a guard.
         """
         import random as _r
-        from items import load_items, load_accessory_appearances
-        from class_masteries import get_mastery_class
+        from items import load_items, load_accessory_appearances, type_class
         rng = rng or _r.Random()
 
         try:
@@ -871,7 +848,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             slot = getattr(a, 'slot', None)
             if slot not in managed:
                 continue
-            cls = get_mastery_class(a)
+            cls = type_class(a)
             if cls in seen:
                 continue
             seen.add(cls)
@@ -902,8 +879,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         if getattr(item, 'is_unique', False):
             return
-        from class_masteries import get_mastery_class
-        look = amap.get(get_mastery_class(item))
+        from items import type_class
+        look = amap.get(type_class(item))
         if look:
             item.unidentified_name = look['name']
             try:
@@ -1082,16 +1059,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels.
 
-        OWNED items also get identification reconciled: once a type is known,
-        every copy the player holds should reflect it. This heals pre-2026-06-06
-        saves where a known-type item could linger at id_level 0 ("(0/5)")
-        because nothing stamped it from known_item_ids at acquisition time."""
+        Under the True Name model a known TYPE no longer stamps per-copy
+        identification — each instance keeps its own BUC/enchant secret —
+        so this only patches the BUC fields themselves."""
         migrate = self._migrate_buc_item
-        reconcile = self.player.reconcile_item_identification
 
         def owned(item):
             migrate(item)
-            reconcile(item)
 
         # Player inventory
         for item in getattr(self.player, 'inventory', []):
@@ -1209,16 +1183,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
         self._stamp_ground_appearances()
-        # class_scroll_persist (scroll_of_mapping mastery): auto-map every
-        # newly-entered floor. The mapped state already persists per-floor via
-        # level_manager save/load; this extends that to floors the player has
-        # never set foot on, so the mastered scroll's effect persists in the
-        # design sense (you carry the reveal forward).
-        _map_mastery = self.player.unlocked_class_masteries.get('scroll_of_mapping')
-        if _map_mastery and _map_mastery.get('kind') == 'class_scroll_persist':
-            for _y in range(self.dungeon.height):
-                for _x in range(self.dungeon.width):
-                    self.dungeon.explored.add((_x, _y))
         # Track deepest floor reached for the cooking softcap (rises with descent)
         _was_deepest = self.player.deepest_floor_reached
         self.player.deepest_floor_reached = max(
@@ -1779,15 +1743,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # were spawning at 4/5 or 5/5 due to the legacy property-set
         # path raising id_level to 4 via the setter.
         def _mark_starting_item_known(it):
-            """Build-kit items behave as if the player had picked them up
-            and successfully completed a Tier-4 identify chain on them.
-            id_level=4 = name + BUC + stats + lore all revealed; Tier 5
-            (mastery for uniques, full ID for commons) remains earnable
-            via the normal identify flow. NO special-casing for uniques
-            vs commons — they're treated identically to any naturally-
-            found item that's been ID'd to Tier 4. Per user direction
-            2026-05-29 (correcting an earlier draft that split the rule)."""
-            it.id_level = max(int(getattr(it, 'id_level', 0)), 4)
+            """Build-kit items arrive FULLY identified — the kid owns them,
+            so type knowledge + this copy's BUC are both known from turn
+            one (one-question identify model: 5 is the only 'known' state)."""
+            it.id_level = 5
             it.buc_known = True
             _iid = getattr(it, 'id', None)
             if _iid:
@@ -3270,15 +3229,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Passive PER-based ambush detection
         self._do_passive_ambush_detection()
         # Eye of Horus: passive HP regen every N turns.
-        # Mastery (accessory_passive_strength/passive_regen_bonus) adds to the regen amount.
         for _acc in self.player.equipped_accessories:
             _pr = getattr(_acc, 'passive_regen', 0)
             _pri = getattr(_acc, 'passive_regen_interval', 5)
-            _mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', None))
-            if _mast and _mast.get('kind') == 'accessory_passive_strength':
-                _mv = _mast.get('value') or {}
-                if _mv.get('kind') == 'passive_regen_bonus':
-                    _pr += int(_mv.get('value', 0))
             if _pr > 0 and self.turn_count % _pri == 0:
                 if self.player.hp < self.player.max_hp:
                     self.player.hp = min(self.player.max_hp, self.player.hp + _pr)
@@ -3344,11 +3297,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             m.add_effect('paralyzed', 1)
 
         # Clairvoyant: reveal tiles within 10-tile radius each turn.
-        # class_acc_passive_radius (ring_of_clairvoyance): mastered class adds
-        # +N tiles to the reveal radius.
         if self.player.has_effect('clairvoyant'):
             px, py = self.player.x, self.player.y
-            radius = 10 + self.player.get_class_mastery_passive_radius_bonus('clairvoyance')
+            radius = 10
             for cy in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
                 for cx in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
                     if abs(cx - px) + abs(cy - py) <= radius:
@@ -3843,7 +3794,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not self.player.has_effect('warning'):
             return
         px, py = self.player.x, self.player.y
-        radius = 5 + self.player.get_class_mastery_passive_radius_bonus('warning')
+        radius = 5
         nearby = [
             m for m in self.monsters
             if m.alive and abs(m.x - px) <= radius and abs(m.y - py) <= radius
@@ -3864,7 +3815,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not self.player.has_effect('searching'):
             return
         px, py = self.player.x, self.player.y
-        radius = 1 + self.player.get_class_mastery_passive_radius_bonus('searching')
+        radius = 1
         for dy in range(-radius, radius + 1):
             for dx in range(-radius, radius + 1):
                 nx, ny = px + dx, py + dy
@@ -4158,13 +4109,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _tick_sp(self):
         # Base SP drain: 1 per 2 moves (0.5/move effective)
         # Ring of Sustenance halves again (1 per 4 moves)
-        # Beast-family mastery (sp_regen): adds Nx more turns between drains.
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
         drain_interval = 4 if self.player.has_effect('sustained') else 2
-        fams = getattr(self.player, 'unlocked_monster_class_masteries', {})
-        beast = fams.get('beast')
-        if beast and beast.get('kind') == 'sp_regen':
-            drain_interval += int(beast.get('value', 0))
         # Chain-equip passive: hunger_slow (Idunn Apple Charm). Multiplier
         # on the drain interval -- 0.33 adds 33% more ticks between drains.
         try:
@@ -4174,11 +4120,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 drain_interval = max(2, int(round(drain_interval * (1.0 + hs))))
         except ImportError:
             pass
-        # class_acc_sp_burn_bonus: mastered ring of sustenance equipped adds
-        # (1 + value) multiplier to the drain interval (slower drain).
-        _sp_factor = self.player.get_class_mastery_sp_burn_factor()
-        if _sp_factor > 0:
-            drain_interval = max(2, int(round(drain_interval * (1.0 + _sp_factor))))
         if self._sp_drain_tick % drain_interval != 0:
             return
         if self.player.sp > 0:
@@ -4225,9 +4166,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             interval = max(5, interval // 2)
         if self.turn_count % interval == 0:
             base_regen = 1 + max(0, getattr(self.player, 'regen_bonus', 0))
-            # class_acc_regen_bonus: equipped ring/amulet of regeneration
-            # adds +N HP per tick when its class is mastered.
-            base_regen += self.player.get_class_mastery_regen_bonus()
             self.player.restore_hp(base_regen)
 
     # ------------------------------------------------------------------
@@ -4264,28 +4202,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not hasattr(self, 'player_gold'):
                 self.player_gold = 0
             _gold_amt = item.amount
-            # Draupnir: double gold pickups. Mastery overrides to a stronger multiplier.
+            # Draupnir: double gold pickups.
             for _acc in self.player.equipped_accessories:
                 _gm = getattr(_acc, 'gold_multiplier', 0)
-                _mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', None))
-                if _mast and _mast.get('kind') == 'accessory_passive_strength':
-                    _mv = _mast.get('value') or {}
-                    if _mv.get('kind') == 'gold_multiplier':
-                        _gm = max(_gm, float(_mv.get('value', _gm)))
                 if _gm > 0:
                     _gold_amt = int(_gold_amt * _gm)
                     break
-            # Andvaranaut: gold_finds_pct mastery — bonus gold on pickup (additive %).
-            _gold_finds_bonus_pct = 0
-            for _acc in self.player.equipped_accessories:
-                _mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', None))
-                if _mast and _mast.get('kind') == 'accessory_passive_strength':
-                    _mv = _mast.get('value') or {}
-                    if _mv.get('kind') == 'gold_finds_pct':
-                        _gold_finds_bonus_pct += int(_mv.get('value', 0))
-            if _gold_finds_bonus_pct > 0:
-                _bonus = int(_gold_amt * _gold_finds_bonus_pct / 100)
-                _gold_amt += _bonus
             self.player_gold += _gold_amt
             self.ground_items.remove(item)
             self.add_message(f"You pick up {_gold_amt} gold coins.", 'loot')
@@ -4319,15 +4241,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item.identified = True
                 item.id_level = max(getattr(item, 'id_level', 0), 4)
                 self.player.known_item_ids.add(item.id)
-            # Pattern Recognition (75 IDs): auto-reveal name + BUC + stats (id_level=3) on
-            # lesser COMMON items at depth. Lore (id_level=4) and mastery (id_level=5)
-            # still require studying the item via the philosophy quiz from the I-menu.
-            # Uniques are preserved for the chain-5 dramatic flow.
+            # Pattern Recognition (75 IDs): lesser COMMON items reveal their
+            # TYPE at a glance (true name + stats + lore). Each copy's BUC
+            # and enchant stay hidden — the True Name model applies to
+            # career rewards too. Uniques keep their full dramatic reveal.
             if 75 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
+                from items import item_id_tier, type_class
                 tier_gate = 1 + (self.dungeon_level // 30)
-                if hasattr(item, 'id_level') and item.id_level < 3 and \
-                        getattr(item, 'quiz_tier', 5) <= tier_gate:
-                    item.id_level = 3
+                if hasattr(item, 'id_level') and item_id_tier(item) <= tier_gate:
+                    self.player.known_item_ids.add(item.id)
+                    cls = type_class(item)
+                    if cls:
+                        self.player.known_class_ids.add(cls)
                     item.buc_known = True
                     self.player.known_item_ids.add(item.id)
             # Philosopher's Mantle (300 IDs): auto BUC-sense on every pickup, including uniques.
@@ -6071,21 +5996,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _display_name(self, item) -> str:
         """Return the name to show for an item, including stack count when > 1.
 
-        Type known (any of: identified flag, id in known_item_ids, OR the
-        item's mastery_class is in known_class_ids) -> item.name.
-        Otherwise -> item.unidentified_name.
+        True Name model:
+          - instance identified (id_level >= 5)  -> "Sword of Michael"
+          - type known but THIS copy not yet
+            identified                            -> "unidentified Sword of Michael"
+          - type unknown                          -> "an ornate golden-hilted blade"
 
-        The mastery_class check is what lets one Ring of Strength
+        The type_class check is what lets one Ring of Strength
         identification name ALL ring-of-strength variants in the pack.
         """
-        from class_masteries import get_mastery_class
+        from items import type_class
         if not hasattr(item, 'identified'):
             base = self._fix_name_case(item.name)
         else:
-            known_by_class = (get_mastery_class(item)
+            instance_known = int(getattr(item, 'id_level', 0)) >= 5
+            known_by_class = (type_class(item)
                               in getattr(self.player, 'known_class_ids', set()))
-            if item.identified or item.id in self.player.known_item_ids or known_by_class:
+            type_known = (item.id in self.player.known_item_ids or known_by_class)
+            if instance_known:
                 base = self._fix_name_case(item.name)
+            elif type_known:
+                base = f"unidentified {self._fix_name_case(item.name)}"
             else:
                 base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
         # BUC prefix when known
@@ -6502,14 +6433,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _start_corpse_identify(self, corpse, after_advance_turn: bool = True):
-        """Escalator-chain identify on a corpse. Chain reached -> corpse.id_level.
+        """ONE philosophy question at the corpse's id_tier.
 
-        Already at level 5 -> skip the quiz and just open the lore screen.
+        Right = the monster type is fully identified, permanently — this
+        corpse, every corpse of the type on the floor, and every future
+        spawn (via lore_known_monster_ids in game_combat._make_corpse).
+        Wrong = the Shard's backlash stuns the kid.
 
-        Resume rule (parallel to item identify in game_magic.py): chain
-        starts at start_tier = previous_level + 1 with max_chain =
-        5 - previous_level. The kid only re-answers the tiers they didn't
-        complete. id_level only ever rises, never falls.
+        Already identified -> skip the quiz and just open the lore screen.
         """
         if int(getattr(corpse, 'id_level', 0)) >= 5:
             self._lore_subject = corpse
@@ -6518,117 +6449,59 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"STUDYING {corpse.monster_name.upper()} CORPSE  --  PHILOSOPHY"
         self.state = STATE_QUIZ
 
-        previous_level = int(getattr(corpse, 'id_level', 0))
-        from items import identify_resume_params
-        start_tier, max_chain = identify_resume_params(previous_level)
-
         def on_complete(result):
             self.state = STATE_PLAYER
-            chain = int(getattr(result, 'score', 0) or 0)
-            # chain measured from start_tier — achieved level = previous + chain.
-            new_level = min(5, max(previous_level, previous_level + chain))
-            if new_level > previous_level:
-                corpse.id_level = new_level
-                # Remember the max level reached for this monster_id
-                # so future corpse spawns (in game_combat._make_corpse)
-                # can pre-set their id_level to match what the kid has
-                # already learned. Per user feedback 2026-05-29.
-                if not hasattr(self.player, 'corpse_id_level_known') or self.player.corpse_id_level_known is None:
-                    self.player.corpse_id_level_known = {}
-                prev = self.player.corpse_id_level_known.get(corpse.monster_id, 0)
-                self.player.corpse_id_level_known[corpse.monster_id] = max(prev, new_level)
-                # Propagate full id_level to all corpses of the same monster_id
+            if getattr(result, 'success', False):
+                corpse.id_level = 5
+                # The monster TYPE is now known forever: future corpse spawns
+                # arrive pre-identified (game_combat._make_corpse).
+                self.player.lore_known_monster_ids.add(corpse.monster_id)
+                # Propagate to every corpse of the same monster on the floor
+                # and in the pack — corpses carry no per-instance secrets.
                 from items import Corpse as _Corpse
                 for obj in self.ground_items + list(self.player.inventory):
                     if isinstance(obj, _Corpse) and obj.monster_id == corpse.monster_id:
-                        obj.id_level = max(int(getattr(obj, 'id_level', 0)), new_level)
-                # At level 3+, you now recognize the family at a glance: bump
-                # all same-family corpses (in pack or on ground) to id_level >= 3.
-                if new_level >= 3:
-                    from monster_classes import get_monster_family
-                    fam = get_monster_family(corpse)
-                    if fam:
-                        for obj in self.ground_items + list(self.player.inventory):
-                            if (isinstance(obj, _Corpse) and obj is not corpse
-                                    and get_monster_family(obj) == fam):
-                                obj.id_level = max(int(getattr(obj, 'id_level', 0)), 3)
-                # Level 4+: lore now known (drives lore_identified property and
-                # the auto-reveal-on-pickup behavior in _make_corpse).
-                if new_level >= 4:
-                    self.player.lore_known_monster_ids.add(corpse.monster_id)
-                # Level 5: grant the family mastery blessing.
-                if new_level >= 5:
-                    self._claim_monster_family_mastery(corpse)
-                # Chronicle + career arc only on first crossing into "full ID"
-                # (level >= 4) — this mirrors how items count for total_identifies.
-                if previous_level < 4 and new_level >= 4:
-                    self._on_full_identify(corpse)
+                        obj.id_level = 5
+                self._on_full_identify(corpse)
+                self._log_chronicle(
+                    f"Studied the {corpse.monster_name}; its nature is known to me."
+                )
                 self._lore_subject = corpse
                 self.state = STATE_LORE
                 self.add_message(
-                    f"You study the {corpse.monster_name} (level {new_level}/5).",
+                    f"You understand the {corpse.monster_name} now.",
                     'success'
                 )
             else:
                 self.add_message(
-                    f"You study but learn nothing new (still level "
-                    f"{previous_level}/5).",
+                    f"You study the {corpse.monster_name} but its nature eludes you.",
                     'warning'
                 )
-                # Backlash from the Shard: zero-correct on a corpse-study
-                # chain stuns the kid for 10 turns of Confusion. Mirrors
-                # the item-identify branch in
-                # game_magic.py:_identify_unique_item. Per user 2026-05-29.
-                self.player.add_effect('confused', 10)
+                # Backlash from the Shard: a wrong answer stuns the kid.
+                # Mirrors the item-identify branch in
+                # game_magic.py:_identify_item. Per user 2026-05-29 a blind
+                # attempt must carry a cost.
+                self.player.add_effect('stunned', 10)
                 self.add_message(
                     "The Shard turns cold in your palm. Backlash floods "
-                    "your mind — you are Confused (10 turns).",
+                    "your mind — you are Stunned (10 turns).",
                     'danger')
             if after_advance_turn:
                 self._advance_turn()
 
+        from items import item_id_tier
         self.quiz_engine.start_quiz(
-            mode='escalator_chain',
+            mode='threshold',
             subject='philosophy',
-            tier=start_tier,
+            tier=item_id_tier(corpse),
             callback=on_complete,
-            max_chain=max_chain,
+            threshold=1,
+            total_qs=1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
                           self.player.get_quiz_extra_seconds('philosophy'),
             base_seconds=self.player.get_quiz_timer('philosophy'),
-        )
-
-    def _claim_monster_family_mastery(self, corpse):
-        """Grant the per-family mastery blessing on chain-5 corpse-id. Idempotent."""
-        from monster_classes import (get_monster_family,
-                                      MONSTER_FAMILY_BLESSINGS)
-        fam = get_monster_family(corpse)
-        if not fam:
-            return
-        store = self.player.unlocked_monster_class_masteries
-        if fam in store:
-            return
-        blessing = MONSTER_FAMILY_BLESSINGS.get(fam)
-        if not blessing:
-            return
-        store[fam] = blessing
-        # Permanent stat increases are applied here; everything else is
-        # queried lazily at the use-site (combat damage, regen tick, etc.).
-        kind = blessing.get('kind')
-        if kind == 'wisdom_bonus':
-            self.player.apply_stat_bonus('WIS', int(blessing.get('value', 0) or 0))
-        elif kind == 'int_bonus':
-            # Use apply_stat_bonus instead of direct INT += / max_mp = …
-            # The direct assignment STOMPS chain-equip max_mp_bonus and other
-            # contributors (Robe of the Magus etc.). apply_stat_bonus
-            # correctly increments via _intelligence_bonus + recomputes max_mp.
-            self.player.apply_stat_bonus('INT', int(blessing.get('value', 0) or 0))
-        desc = blessing.get('desc', 'A subtle insight settles upon you.')
-        self.add_message(f"Mastery of {fam} family attained! {desc}", 'success')
-        self._log_chronicle(
-            f"Mastered the {fam} family of monsters. {desc}"
         )
 
     def _examine_corpse_direct(self, corpse):
@@ -6646,10 +6519,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to examine.", 'info')
             return
-        # Auto-bump to lore tier if this monster type has already been studied
-        # to that depth in a prior corpse (legacy lore_known_monster_ids set).
+        # A monster type already studied is known forever — mark the corpse
+        # identified so _start_corpse_identify goes straight to the lore screen.
         if corpse.monster_id in getattr(self.player, 'lore_known_monster_ids', set()):
-            corpse.id_level = max(int(getattr(corpse, 'id_level', 0)), 4)
+            corpse.id_level = 5
         self._start_corpse_identify(corpse, after_advance_turn=True)
 
     class _GoldDropEntry:
@@ -6811,18 +6684,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 return f"grants {fx['status']}"
             if 'stat' in fx and 'amount' in fx:
                 return f"{fx['stat']} +{fx['amount']}"
-            # Equip-time effects empty — fall back to the mastery
-            # bonus that is the item's actual mechanical point. Used
-            # by carry-only items like Charmander Stuffie and
-            # Dreamspun Sketchbook, whose stat bump lives in
-            # mastery_blessing.value rather than effects. Per user
-            # feedback 2026-05-29: examine card was rendering "? +0"
-            # for these items.
-            mb = getattr(item, 'mastery_blessing', None) or {}
-            v = mb.get('value') or {}
-            if mb.get('kind') == 'accessory_stat_bonus' and 'stat' in v and 'amount' in v:
-                suffix = ' (carried)' if mb.get('scope') == 'carry' else ' (mastery)'
-                return f"{v['stat']} +{v['amount']}{suffix}"
+            # Equip-time effects empty — fall back to the carry bonus
+            # that is the item's actual mechanical point (Charmander
+            # Stuffie, Dreamspun Sketchbook). Per user feedback
+            # 2026-05-29: examine card was rendering "? +0" for these.
+            cb = getattr(item, 'carry_bonus', None) or {}
+            if 'stat' in cb and 'amount' in cb:
+                return f"{cb['stat']} +{cb['amount']} (carried)"
             # Last resort: a generic class label instead of the
             # broken '? +0'.
             return item.item_class.replace('_', ' ').title()

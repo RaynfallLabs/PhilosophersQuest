@@ -133,7 +133,7 @@ def test_kit_visible_level_unidentified_returns_id_level():
     assert g._kit_visible_level(pot) == 1
 
 
-def test_kit_visible_level_known_id_boosts_to_3():
+def test_kit_visible_level_known_type_boosts_to_4():
     p = _make_player_with_items()
     g = _ResolvedFake(p, [])
     from items import Potion
@@ -142,8 +142,9 @@ def test_kit_visible_level_known_id_boosts_to_3():
     # Same caveat: don't reset identified=False here. id_level=0 from
     # the defn is enough to represent unidentified.
     p.known_item_ids.add('pot_y')
-    # known_item_ids match -> boost to 3
-    assert g._kit_visible_level(pot) == 3
+    # True Name model: a known TYPE reveals name+stats+lore (level 4);
+    # this copy's BUC/enchant (level 5) still needs its own identify.
+    assert g._kit_visible_level(pot) == 4
 
 
 # ---------------------------------------------------------------------------

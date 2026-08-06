@@ -296,7 +296,7 @@ class MenuMixin:
         item.identified = True
         self.player.known_item_ids.add(item.id)
         messages = drink_potion(self.player, item)
-        # Binary-potion mastery/blessing may leave a dose behind -> undo the
+        # Binary-potion blessing may leave a dose behind -> undo the
         # consume. A stack was only decremented (item still in inventory), so
         # bump its count back; a singleton was removed, so re-add the object.
         # (Calling add_to_inventory on a still-held stack would alias it twice.)
@@ -503,19 +503,17 @@ class MenuMixin:
     def _kit_visible_level(self, item) -> int:
         """Return the highest id_level the player has 'earned' for this item.
 
-        Rules:
-          - item.identified=True -> level 5 (everything visible)
-          - item.id in player.known_item_ids -> at least level 3 (name+BUC+stats)
-          - otherwise use the item's stored id_level (advances via the i-key
-            identification chain).
+        True Name model:
+          - this instance identified -> level 5 (everything visible)
+          - the TYPE is known -> level 4 (name + stats + lore; this copy's
+            BUC and enchant still hidden)
+          - otherwise the item's stored id_level.
         Pure helper; no side effects.
         """
         base = int(getattr(item, 'id_level', 0))
-        if bool(getattr(item, 'identified', False)):
-            base = max(base, 5)
         try:
-            if getattr(item, 'id', None) in self.player.known_item_ids:
-                base = max(base, 3)
+            if self.player.knows_item_type(item):
+                base = max(base, 4)
         except AttributeError:
             pass
         return base
@@ -857,12 +855,9 @@ class MenuMixin:
                 self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
                 return
         def _needs_identify(i):
-            # Uniques stay in the menu until their mastery has been claimed (chain-5).
-            if getattr(i, 'is_unique', False):
-                return i.id not in self.player.unlocked_masteries
-            # Non-uniques: visible while id_level < 5 so Pattern-Recognition'd items
-            # (id_level=3 from pickup) can still be studied via the quiz to unlock
-            # lore (id_level=5). Items without id_level default to 5 (always-known).
+            # Visible while this INSTANCE isn't identified — a known TYPE
+            # still leaves each copy's BUC/enchant to be earned (True Name
+            # model). Items without id_level default to 5 (always-known).
             return getattr(i, 'id_level', 5) < 5
 
         inv_items = [i for i in self.player.inventory if _needs_identify(i)]
@@ -875,15 +870,9 @@ class MenuMixin:
                and not isinstance(i, Corpse)
                and _needs_identify(i)
         ]
-        # Corpses on the current tile that haven't been lore-identified yet.
+        # Corpses on the current tile that haven't been identified yet.
         # Flatten into ground_entries — no separate "CORPSES" section per
         # 2026-05-20 playtest feedback (felt redundant alongside "ON THE GROUND").
-        # Show a corpse while its id_level < 5 (parallel to the item rule above),
-        # so a partially-studied corpse can be pushed all the way to level 5 (the
-        # family mastery). The OLD filter excluded corpses at lore_identified
-        # (id_level >= 4) and any monster in lore_known_monster_ids, which made a
-        # 4/5 corpse vanish from the menu — you could never reach the level-5
-        # mastery, especially since new corpses spawn pre-set to the known level.
         corpses = [
             i for i in self.ground_items
             if i.x == self.player.x and i.y == self.player.y
@@ -905,16 +894,15 @@ class MenuMixin:
         self.state = STATE_IDENTIFY_MENU
 
     def _identify_menu_input(self, key: int):
-        """Pick an item to identify — go straight to the (escalator-chain
-        for uniques / threshold for commons) philosophy quiz.
+        """Pick an item to identify — go straight to the one-question
+        philosophy quiz at the item's id_tier.
 
-        Per design: one quiz, tiered results. No pre-quiz chooser. Quick-BUC
-        peeking lives on the altar D-press path (_altar_buc_identify), not
-        here.
+        Quick-BUC peeking lives on the altar D-press path
+        (_altar_buc_identify), not here.
 
         SCROLL-OF-IDENTIFY MODE: when `_scroll_identify_pending` is set, the
         menu was opened by a successful Scroll of Identify read; on select,
-        the item jumps straight to id_level 5 + mastery (no philosophy quiz).
+        the item is fully identified directly (no philosophy quiz).
         ESC in this mode wastes the scroll's revelation.
         """
         # Handle ESC in scroll-pending mode: scroll already consumed, just
@@ -946,11 +934,11 @@ class MenuMixin:
             self._scroll_identify_blessed = False
             if is_corpse:
                 # Corpses use the normal lore path — the scroll doesn't
-                # short-circuit corpse identification (which needs an
-                # animal quiz). Fall through to the regular handler.
+                # short-circuit corpse identification. Fall through to
+                # the regular handler.
                 self._examine_corpse_direct(item)
             else:
-                self._scroll_grant_mastery(item)
+                self._scroll_full_identify(item)
             self._advance_turn()
             return
         if is_corpse:

@@ -793,22 +793,14 @@ class CombatMixin:
                 'resistances': monster.resistances,
                 'weaknesses': monster.weaknesses,
                 'speed': monster.speed,
-                # tags drive family identification for chain-3 propagation
-                # and chain-5 monster_classes mastery — must be on the corpse.
+                # tags drive the bestiary family line — must be on the corpse.
                 'tags': list(getattr(monster, 'tags', []) or []),
             },
         )
+        # A studied monster type is known forever: its corpses spawn
+        # pre-identified (one-question identify, True Name model).
         if monster.kind in getattr(self.player, 'lore_known_monster_ids', set()):
-            # Pre-studied family: drop straight into lore-tier (4+).
-            c.id_level = max(int(getattr(c, 'id_level', 0)), 4)
-        # Continuity: spawn the corpse at whatever tier the kid has
-        # already learned for this monster type (any tier 1..5).
-        # Without this, a fresh kill of a zombie you've already ID'd
-        # to T2 would spawn at 0/5 and you'd have to start over.
-        _known = getattr(self.player, 'corpse_id_level_known', None) or {}
-        _max = int(_known.get(monster.kind, 0))
-        if _max > 0:
-            c.id_level = max(int(getattr(c, 'id_level', 0)), _max)
+            c.id_level = 5
         return c
 
     def _spawn_treasure_item(self, x: int, y: int, tier: int):
@@ -2184,21 +2176,11 @@ class CombatMixin:
                     except ImportError:
                         pass
 
-                # Ankh of Isis: resurrect on death (consumes the item). Mastery
-                # `resurrect_to_full` (unlocked by chain-5 identify on Ankh)
-                # restores the player to FULL HP instead of half.
+                # Ankh of Isis: resurrect on death (consumes the item).
                 if self.player.hp <= 0:
                     for _acc in self.player.equipped_accessories:
                         if getattr(_acc, 'resurrect_on_death', False):
-                            mast = self.player.unlocked_masteries.get(getattr(_acc, 'id', ''))
-                            full_heal = (
-                                mast is not None
-                                and mast.get('kind') == 'accessory_passive_strength'
-                                and isinstance(mast.get('value'), dict)
-                                and mast['value'].get('kind') == 'resurrect_to_full'
-                            )
-                            self.player.hp = self.player.max_hp if full_heal \
-                                else max(1, self.player.max_hp // 2)
+                            self.player.hp = max(1, self.player.max_hp // 2)
                             # Clear the slot that held the Ankh
                             if self.player.amulet_slot is _acc:
                                 self.player.amulet_slot = None
@@ -2207,14 +2189,9 @@ class CombatMixin:
                                     if _r is _acc:
                                         self.player.accessory_slots[_i] = None
                                         break
-                            if full_heal:
-                                self.add_message(
-                                    "The Ankh of Isis blazes! Isis restores you fully!",
-                                    'success')
-                            else:
-                                self.add_message(
-                                    "The Ankh of Isis shatters! Isis breathes life back into you!",
-                                    'success')
+                            self.add_message(
+                                "The Ankh of Isis shatters! Isis breathes life back into you!",
+                                'success')
                             self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
                             _snd.play('player_healed')
                             break

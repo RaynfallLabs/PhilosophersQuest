@@ -93,33 +93,6 @@ def class_mechanic_info(mech_id):
     return (name, '')
 
 
-def _weapon_mastery(player, weapon) -> dict | None:
-    """Return the mastery blessing dict for this weapon if claimed, else None.
-
-    Used to inject chain-5-earned bonuses (Excalibur +0.25 multipliers, etc.) at
-    damage-calc time without touching the weapon's base stats.
-
-    Checks BOTH per-id masteries (uniques) AND class masteries (commons —
-    iron shortsword etc. get +1 damage via class blessing).
-    """
-    if weapon is None:
-        return None
-    # Per-id mastery first (uniques)
-    masteries = getattr(player, 'unlocked_masteries', None) or {}
-    m = masteries.get(getattr(weapon, 'id', None))
-    if m:
-        return m
-    # Fall back to class mastery (commons)
-    class_masteries = getattr(player, 'unlocked_class_masteries', None) or {}
-    if class_masteries:
-        try:
-            from class_masteries import get_mastery_class
-            return class_masteries.get(get_mastery_class(weapon))
-        except Exception:
-            return None
-    return None
-
-
 def _tag_match(monster, tag: str) -> bool:
     """True if `tag` is in the monster's tags (or matches its kind)."""
     if tag == 'all':
@@ -291,17 +264,6 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             if _tag_match(monster, 'goblin') or _tag_match(monster, 'orc'):
                 chain += 1
 
-        # Monster-family tohit_vs_tag mastery (humanoid Anatomist): +N chain
-        # rungs when striking a matching-family target. This is the chain
-        # equivalent of "+1 to-hit" in a system that has no separate to-hit roll.
-        fam_masteries_pre = getattr(player, 'unlocked_monster_class_masteries', {}) or {}
-        for _fb_pre in fam_masteries_pre.values():
-            if _fb_pre.get('kind') == 'tohit_vs_tag':
-                _tag_pre = _fb_pre.get('tag', '')
-                _val_pre = int(_fb_pre.get('value', 0) or 0)
-                if _tag_pre and _val_pre and _tag_match(monster, _tag_pre):
-                    chain += _val_pre
-
         # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
         # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
         if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
@@ -392,22 +354,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         if player.has_effect('weakened') or player.has_effect('frozen'):
             base = max(1, base // 2)
 
-        # Mastery hooks (chain-5 unlocks on uniques)
-        _mastery = _weapon_mastery(player, weapon)
-
-        # weapon_base_damage_bonus: flat damage add
-        if _mastery and _mastery.get('kind') == 'weapon_base_damage_bonus':
-            base += int(_mastery.get('value', 0))
-
         # Ammo damage bonus (ranged shots only)
         ammo_bonus  = ammo.damage_bonus if ammo else 0
         enchant     = weapon.enchant_bonus if weapon else 0
         multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
         mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
 
-        # weapon_chain_mult_bonus: flat add to every chain multiplier
-        if _mastery and _mastery.get('kind') == 'weapon_chain_mult_bonus':
-            mult += float(_mastery.get('value', 0.0))
         # Musashi quirk: chain-1 uses 2nd multiplier instead of weakest
         if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
             mult = multipliers[min(1, len(multipliers) - 1)]
@@ -554,12 +506,6 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             crit = True
             player._next_hit_auto_crit = False
 
-        # weapon_first_hit_crit mastery: guarantee crit on the FIRST hit of a chain
-        if chain == 1 and _mastery and _mastery.get('kind') == 'weapon_first_hit_crit' \
-                and _mastery.get('value') and weapon:
-            mult *= max(1.5, weapon.crit_multiplier)
-            crit = True
-
         # Pre-damage class-mechanic multipliers. Apply to mult before damage
         # is rolled. Several mechanics fire ONLY at max chain (the chain-5
         # payoff identity); some fire on every hit (versatile, master_strike).
@@ -659,43 +605,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # STR mechanic, str_bonus_range_7, applied separately to `mult`.)
         str_factor = 1.0 if ammo else 1.0 + max(0, player.STR - 10) * 0.03
 
-        # weapon_damage_vs_tag mastery: +X% damage when target matches tag
-        tag_mult = 1.0
-        if _mastery and _mastery.get('kind') == 'weapon_damage_vs_tag':
-            tag_val = _mastery.get('value') or {}
-            if isinstance(tag_val, dict) and _tag_match(monster, tag_val.get('tag', '')):
-                tag_mult = 1.0 + (float(tag_val.get('pct', 0)) / 100.0)
-
-        # Monster-family mastery (chain-5 corpse-id):
-        #   damage_vs_tag (dragon/demon/undead/construct/plant/reptile): +N flat
-        #   tohit_vs_tag  (humanoid): +N chain bonus (acts as a guaranteed-hit
-        #     promotion when chain == 0; otherwise irrelevant — chain length
-        #     already drives accuracy via the chain mechanic).
-        family_dmg_bonus = 0
-        fam_masteries = getattr(player, 'unlocked_monster_class_masteries', {}) or {}
-        for _fb in fam_masteries.values():
-            # Only damage_vs_tag blessings add flat combat damage. Other kinds
-            # must be skipped BEFORE touching `value`: save_bonus stores a
-            # {cat, amount} dict (int() would raise), and resist_*/tohit_vs_tag
-            # are applied elsewhere. (Regression guard: save-bonus blessings.)
-            if _fb.get('kind') != 'damage_vs_tag':
-                continue
-            _tag = _fb.get('tag', '')
-            if not _tag or not _tag_match(monster, _tag):
-                continue
-            try:
-                _val = int(_fb.get('value', 0) or 0)
-            except (TypeError, ValueError):
-                continue
-            if _val:
-                family_dmg_bonus += _val
-
         # round (not int-truncate): chain damage gradient must survive at
         # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
         # across chain levels — invisible progression. round() preserves
         # the half-step damage differences that the chain ladder is designed
         # to deliver.
-        damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult * tag_mult) + family_dmg_bonus)
+        damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
 
         # Class perk: a small FLAT bonus with the class's SIGNATURE weapons
         # (Fighter swords/axes, Rogue ranged). Flat -> self-diminishing as weapon
@@ -1196,32 +1111,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                     'spawn_at': (monster.x, monster.y),
                 }
 
-        # Lifesteal mechanic (Soul Reaver). Mastery: weapon_lifesteal adds % on top.
+        # Lifesteal mechanic (Soul Reaver)
         healed = False
         lifesteal_pct = float(getattr(weapon, 'lifesteal_percent', 0) or 0)
-        if _mastery and _mastery.get('kind') == 'weapon_lifesteal':
-            lifesteal_pct += float(_mastery.get('value', 0.0))
         if weapon and lifesteal_pct > 0 and actual > 0:
             heal = max(1, int(actual * lifesteal_pct))
             player.hp = min(player.max_hp, player.hp + heal)
             healed = True
-
-        # weapon_wound_lingers mastery: extend bleeding duration on hit.
-        if _mastery and _mastery.get('kind') == 'weapon_wound_lingers' and actual > 0:
-            extra = int(_mastery.get('value', 0))
-            if extra > 0:
-                current = monster.status_effects.get('bleeding', 0)
-                monster.status_effects['bleeding'] = max(current, 3) + extra
-
-        # weapon_status_chance mastery: apply an additional on-hit status (e.g. stun)
-        if _mastery and _mastery.get('kind') == 'weapon_status_chance' and actual > 0:
-            st = _mastery.get('value') or {}
-            status = st.get('status')
-            chance_pct = float(st.get('pct', 0)) / 100.0
-            dur = int(st.get('duration', 2))
-            if status and chance_pct > 0 and random.random() < chance_pct:
-                current = monster.status_effects.get(status, 0)
-                monster.status_effects[status] = max(current, dur)
 
         # Kill heal mechanic (Excalibur, Achilles's Spear)
         if monster.is_dead() and weapon and getattr(weapon, 'kill_heal_amount', 0) > 0:

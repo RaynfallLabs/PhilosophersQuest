@@ -20,8 +20,7 @@ import random
 
 from items import (Accessory, LEGACY_ACCESSORY_ID_REMAP, get_accessory_def,
                    load_accessory_appearances, load_items,
-                   remap_legacy_accessory_id)
-from class_masteries import CLASS_MASTERY_BLESSINGS, get_mastery_class
+                   remap_legacy_accessory_id, type_class)
 import main as main_mod
 
 
@@ -111,8 +110,8 @@ def test_strength_ring_tiers_distinct_power_and_names():
     assert greater.name == 'ring of greater strength'
     assert master.name == 'ring of master strength'
     # And distinct mastery classes (each tier is its own type now)
-    assert len({get_mastery_class(base), get_mastery_class(greater),
-                get_mastery_class(master)}) == 3
+    assert len({type_class(base), type_class(greater),
+                type_class(master)}) == 3
 
 
 def test_all_six_stat_rings_have_three_distinct_tiers():
@@ -148,17 +147,18 @@ def test_tiered_bell_curve_weights_preserved():
     assert bfsw.get('1-20') == 20 and bfsw.get('81-100') == 10, bfsw
 
 
-def test_every_renamed_stat_tier_has_a_mastery_blessing():
+def test_every_renamed_stat_tier_is_a_distinct_type_class():
     # After the rename, each of the 6-stat x {base/greater[/master]} tier slugs
-    # I created must have a class-mastery entry so the pat-on-the-back bonus
-    # still fires. (Bespoke distinct-named rings like "ring of giant strength"
-    # never had a class blessing and are intentionally out of scope.)
+    # must resolve as its OWN type class so identification of one tier never
+    # leaks the others (they are honest, distinct types).
+    accs = _accessories()
     expected = []
     for word in ('strength', 'constitution', 'dexterity', 'intellect', 'wisdom', 'perception'):
         expected += [f'ring_of_{word}', f'ring_of_greater_{word}', f'ring_of_master_{word}',
                      f'amulet_of_{word}', f'amulet_of_greater_{word}']
     for slug in expected:
-        assert slug in CLASS_MASTERY_BLESSINGS, f"renamed tier slug {slug!r} has no mastery blessing"
+        assert slug in accs, f"renamed tier slug {slug!r} missing from the bank"
+        assert type_class(accs[slug]) == slug
 
 
 # ---------------------------------------------------------------------------
@@ -169,7 +169,7 @@ def test_appearance_map_deals_one_look_per_managed_type():
     amap = _roll(random.Random(1234))
     accs = load_items('accessory')
     # Managed types = non-unique survivors carrying the neutral fallback look.
-    managed = {get_mastery_class(a) for a in accs
+    managed = {type_class(a) for a in accs
                if not getattr(a, 'is_unique', False)
                and not getattr(a, 'identified', False)
                and (getattr(a, 'unidentified_name', '') or '').strip().lower()
@@ -204,10 +204,10 @@ def test_appearances_pooled_by_slot_no_crossover():
 def test_pool_has_headroom_for_managed_types():
     pool = load_accessory_appearances()
     accs = load_items('accessory')
-    ring_types = {get_mastery_class(a) for a in accs
+    ring_types = {type_class(a) for a in accs
                   if a.slot == 'ring' and not getattr(a, 'is_unique', False)
                   and (getattr(a, 'unidentified_name', '') or '').strip().lower() == 'a ring'}
-    amu_types = {get_mastery_class(a) for a in accs
+    amu_types = {type_class(a) for a in accs
                  if a.slot == 'amulet' and not getattr(a, 'is_unique', False)
                  and (getattr(a, 'unidentified_name', '') or '').strip().lower() == 'an amulet'}
     assert len(pool['ring']) >= len(ring_types), (
@@ -256,7 +256,7 @@ def test_identification_is_type_keyed_across_instances():
     seed = Accessory({**defn, 'id': 'ring_of_searching', 'item_class': 'accessory'})
     other = Accessory({**defn, 'id': 'ring_of_searching', 'item_class': 'accessory'})
     # Learn the class from the seed.
-    pl.known_class_ids.add(get_mastery_class(seed))
+    pl.known_class_ids.add(type_class(seed))
     assert pl.knows_item_type(other) is True
 
 
@@ -266,7 +266,7 @@ def test_distinct_tiers_are_separately_identified():
     accs = _accessories()
     base = accs['ring_of_strength']
     master = accs['ring_of_master_strength']
-    pl.known_class_ids.add(get_mastery_class(base))
+    pl.known_class_ids.add(type_class(base))
     # Knowing +1 must NOT reveal the +3 tier — they are honest, distinct types.
     assert pl.knows_item_type(base) is True
     assert pl.knows_item_type(master) is False

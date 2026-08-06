@@ -66,15 +66,6 @@ def test_duck_starts_unidentified():
     assert d.get('id_level', 0) == 0
 
 
-def test_duck_mastery_blessing_is_cosmetic_humor():
-    d = _load_armor()['duck_of_doom']
-    mb = d.get('mastery_blessing')
-    assert mb is not None
-    assert mb['kind'] == 'cosmetic_only'
-    assert mb['value'] == 0
-    assert mb['desc'] == "The Duck of Doom has no master!"
-
-
 def test_duck_marked_auto_equip_on_pickup():
     """The pickup intercept in main.py checks for this flag (and the
     item id) — without it the duck would go to inventory like normal

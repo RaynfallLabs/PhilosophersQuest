@@ -807,11 +807,11 @@ class MagicMixin:
             self.add_message("Your mind expands -- you perceive the entire level!", 'success')
 
         elif effect == 'identify_item':
-            unknown = [i for i in self.player.inventory if hasattr(i, 'identified') and not i.identified]
+            unknown = [i for i in self.player.inventory
+                       if getattr(i, 'id_level', 5) < 5]
             if unknown:
                 item = unknown[0]
-                item.identified = True
-                self.player.known_item_ids.add(item.id)
+                self._full_identify(item)
                 self.add_message(f"The wand identifies: {item.name}!", 'success')
             else:
                 self.add_message("Everything you carry is already known.", 'info')
@@ -2043,38 +2043,7 @@ class MagicMixin:
 
             scroll.identified = True
             self.player.known_item_ids.add(scroll.id)
-            # scroll_extra_read mastery (uniques): keep the first post-mastery
-            # read instead of consuming.
-            _scroll_mast = self.player.unlocked_masteries.get(scroll.id)
-            _save_scroll = (
-                _scroll_mast and _scroll_mast.get('kind') == 'scroll_extra_read'
-                and getattr(scroll, '_mastery_freebie_used', False) is False
-            )
-            if _save_scroll:
-                scroll._mastery_freebie_used = True
-                self.add_message(
-                    f"The words of the {scroll.name} burn into your memory; the scroll survives intact.",
-                    'success'
-                )
-            else:
-                # class_scroll_extra_uses (commons: scroll_of_identify,
-                # scroll_of_teleport): mastery gives N extra reads per scroll
-                # instance. Counter tracked on the scroll; once it reaches the
-                # bonus, the scroll consumes normally.
-                from class_masteries import get_mastery_class as _gmc_scr
-                _class_mast = self.player.unlocked_class_masteries.get(_gmc_scr(scroll))
-                if _class_mast and _class_mast.get('kind') == 'class_scroll_extra_uses':
-                    _bonus_uses = int(_class_mast.get('value', 0))
-                    _used = int(getattr(scroll, '_class_extra_uses_used', 0))
-                    if _used < _bonus_uses:
-                        scroll._class_extra_uses_used = _used + 1
-                        _save_scroll = True
-                        self.add_message(
-                            f"You recall the {scroll.name} from memory; the scroll survives intact.",
-                            'success'
-                        )
-            if not _save_scroll:
-                self.player.remove_from_inventory(scroll)
+            self.player.remove_from_inventory(scroll)
             self.add_message(f"You read the {display}!", 'success')
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:
@@ -2130,16 +2099,8 @@ class MagicMixin:
 
     def _apply_scroll_effect(self, scroll: 'Scroll', chain: int | None = None):
         from dice import roll
-        from class_masteries import get_mastery_class
         effect = scroll.effect
         _scroll_buc = getattr(scroll, 'buc', 'uncursed')
-        # class_scroll_potency: heal/extra-heal masteries boost healing scrolls
-        # by a fractional multiplier. Lookup is by scroll class (id-based).
-        _scroll_pot_mast = self.player.unlocked_class_masteries.get(
-            get_mastery_class(scroll))
-        _scroll_pot_mult = 1.0
-        if _scroll_pot_mast and _scroll_pot_mast.get('kind') == 'class_scroll_potency':
-            _scroll_pot_mult = 1.0 + float(_scroll_pot_mast.get('value', 0))
         # Chain-step helper (bug bash 2026-06-01, Path A). Scrolls in
         # escalator_chain mode pass a chain length 1-5; we use that to
         # pick from a 5-tier ladder per effect. None (legacy threshold
@@ -2153,13 +2114,13 @@ class MagicMixin:
                 # Escalator-chain mode: scale heal amount by chain tier.
                 idx = min(int(chain) - 1, len(self._SCROLL_HEAL_CHAIN_MULTS) - 1)
                 chain_mult = self._SCROLL_HEAL_CHAIN_MULTS[idx]
-                amount = max(1, int(base * chain_mult * _scroll_pot_mult))
+                amount = max(1, int(base * chain_mult))
                 self.player.restore_hp(amount)
                 self.add_message(
                     f"Healing light washes over you -- {amount} HP restored! (chain {chain})",
                     'success')
             else:
-                amount = max(1, int(base * _scroll_pot_mult))
+                amount = max(1, int(base))
                 self.player.restore_hp(amount)
                 self.add_message(
                     f"Healing light washes over you -- {amount} HP restored!", 'success')
@@ -2199,25 +2160,13 @@ class MagicMixin:
                 # AMNESIA — the kid forgets one item they had already
                 # studied. Drops id_level to 0 and forgets the type.
                 self._scroll_identify_amnesia()
+            elif _scroll_buc == 'blessed' or _cstep >= 2:
+                # Blessed OR a strong read: fully identify everything in
+                # inventory + tile. No picker needed.
+                self._scroll_identify_mass()
             else:
-                # Chain ladder (Path A):
-                #   chain 1-2 (_cstep 0-1): pick 1, grant mastery — uncursed
-                #     behavior. Blessed bumps the *resulting* picker bless flag.
-                #   chain 3-4 (_cstep 2-3): bulk-ID everything to id_level 4,
-                #     then picker for mastery on 1. (Old blessed behavior.)
-                #   chain 5 (_cstep 4): mastery on EVERY uncovered unique in
-                #     inventory + bulk-ID the rest. Skip the picker — the
-                #     scroll just hands the kid the whole arsenal.
-                _bless = (_scroll_buc == 'blessed') or _cstep >= 2
-                if _cstep >= 4:
-                    self._scroll_identify_mass_mastery()
-                elif _cstep >= 2:
-                    if self._scroll_identify_bulk_to_lore():
-                        self._open_scroll_identify_picker(bless=_bless)
-                    else:
-                        self.add_message("All your items are already mastered.", 'info')
-                else:
-                    self._open_scroll_identify_picker(bless=_bless)
+                # Uncursed baseline: pick ONE item to fully identify.
+                self._open_scroll_identify_picker()
 
         elif effect == 'enchant_weapon':
             from items import effective_enchant_cap
@@ -2558,41 +2507,10 @@ class MagicMixin:
                         f"Magical energy crackles into {len(targets)} wand(s).", 'success')
 
         elif effect == 'identify_all':
-            # Chain ladder (Path A): chain raises the resulting id_level the
-            # scroll grants. T1 = basic identify (1); T2 = identify (3); T3 =
-            # full identify+BUC (3); T4 = lore (4); T5 = mastery on every
-            # unique + lore on everything else (mass).
-            if _cstep >= 4:
-                # Chain 5: act like the chain-5 of the picker scroll.
-                self._scroll_identify_mass_mastery()
-            else:
-                target_level = [1, 3, 3, 4][_cstep]
-                bumped = 0
-                for item in self.player.inventory:
-                    if not hasattr(item, 'identified'):
-                        continue
-                    cur = int(getattr(item, 'id_level', 0))
-                    if cur >= target_level:
-                        continue
-                    was_full_id = cur >= 3
-                    item.id_level = target_level
-                    item.identified = True
-                    if target_level >= 2:
-                        item.buc_known = True
-                    self.player.known_item_ids.add(item.id)
-                    self._propagate_identification(item.id, level=target_level)
-                    if target_level >= 3 and not was_full_id:
-                        _qs_id = getattr(self, 'quirk_system', None)
-                        if _qs_id:
-                            _qs_id.on_item_identified(item.id)
-                        self._on_full_identify(item)
-                    bumped += 1
-                if bumped:
-                    self.add_message(
-                        f"A flash of revelation -- {bumped} item(s) identified to depth {target_level}!",
-                        'success')
-                else:
-                    self.add_message("All your items are already identified at that depth.", 'info')
+            # Under the one-question identify model there are no depth
+            # rungs left to ladder — any successful read of the mass
+            # scroll fully identifies the whole pack + tile.
+            self._scroll_identify_mass()
 
         # -- Tier 5 scroll effects ------------------------------------------
         elif effect == 'annihilate':
@@ -2829,289 +2747,97 @@ class MagicMixin:
     # ------------------------------------------------------------------
 
     def _identify_item(self, item):
-        """All items now run the escalator-chain ID. Uniques key mastery by
-        item.id; commons key mastery by mastery_class (Ring of Strength
-        regardless of material). See class_masteries.get_mastery_class().
-        """
-        self._identify_unique_item(item)
-
-    def _identify_unique_item(self, item):
-        """Escalator-chain philosophy quiz for is_unique items.
-
-        Chain depth reveals progressively:
-          1 = real name           2 = BUC aura       3 = stats
-          4 = lore                5 = mastery bonus (one-time, permanent)
-
-        Each retry on a partially-identified item RESUMES at the failed tier:
-        chain starts at start_tier = previous_level + 1 with max_chain =
-        5 - previous_level. The kid only re-answers the tiers they didn't
-        complete. id_level only ever rises, never falls.
+        """ONE philosophy question at the item's id_tier. Right = the item
+        is FULLY identified (name, BUC, enchant, stats, lore). Wrong = the
+        Shard's backlash stuns the kid. No partial levels, no resume math,
+        no mastery — see items.item_id_tier for where the tier comes from.
         """
         display = self._display_name(item)
-        # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin T2+).
-        # Skip the quiz entirely and grant level-3 identify, 1/floor.
+        # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin
+        # T2+). Skip the quiz entirely and grant a full identify, 1/floor.
         try:
             from chain_passives import consume_passive_charge
-            if int(getattr(item, 'id_level', 0)) < 3 and \
+            if int(getattr(item, 'id_level', 0)) < 5 and \
                     consume_passive_charge(self.player, 'identify_one_per_floor_free'):
-                item.id_level = max(int(getattr(item, 'id_level', 0)), 3)
-                item.identified = True
-                item.buc_known = True
-                self.player.known_item_ids.add(item.id)
-                self._propagate_identification(item.id)
+                self._full_identify(item)
                 self.add_message(
                     f"Odin's wisdom illuminates the {item.name}!", 'success')
-                self._on_full_identify(item)
+                if item.lore:
+                    self._lore_subject = item
+                    self.state = STATE_LORE
                 self._advance_turn()
                 return
 
         except ImportError:
             pass
 
+        from items import item_id_tier
+        tier = item_id_tier(item)
         self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
         self.state = STATE_QUIZ
 
-        previous_level = int(getattr(item, 'id_level', 0))
-        # Resume rule: chain starts where the kid last failed and only spans
-        # the tiers they still need. See items.identify_resume_params for math.
-        from items import identify_resume_params
-        start_tier, max_chain = identify_resume_params(previous_level)
-
         def on_complete(result):
             self.state = STATE_PLAYER
-            chain = int(result.score)
-            # chain is measured from start_tier, so achieved level =
-            # previous_level + chain (capped at 5, never lowers id_level).
-            new_level = max(previous_level, min(previous_level + chain, 5))
-            was_full_id = previous_level >= 3
-            item.id_level = new_level
-
-            if chain == 0:
-                # Distinguish "no insight at all" from "no NEW insight" for
-                # the partial-progress retry case — the kid hasn't lost ground.
-                if previous_level == 0:
-                    msg = f"You ponder the {display} but gain no insight."
-                else:
-                    msg = f"You ponder the {display} but gain no new insight."
-                self.add_message(msg, 'warning')
-                # Backlash from the Stone: zero-correct on an identify
-                # chain stuns the kid for 10 turns of Confusion. Mirrors
-                # the corpse-study branch in main.py:_start_corpse_identify.
-                # Per user 2026-05-29: no penalty had let his son just
-                # guess-spam the chain; this puts cost on a blind attempt.
-                self.player.add_effect('confused', 10)
-                self.add_message(
-                    "The Shard turns cold in your palm. Backlash floods "
-                    "your mind — you are Confused (10 turns).",
-                    'danger')
-                self._advance_turn()
-                return
-
-            # Chain >= 1: real name revealed; mark identified for display purposes.
-            if new_level >= 1:
-                item.identified = True
-            # Chain >= 2: BUC aura revealed
-            if new_level >= 2:
-                item.buc_known = True
-            # Propagate identification state to all instances (same id)
-            # at the level the player just reached, capped per uniqueness
-            # rule inside _propagate_identification.
-            self.player.known_item_ids.add(item.id)
-            self._propagate_identification(item.id, level=new_level)
-
-            if new_level == 1:
-                self.add_message(
-                    f"Your insight pierces partway: it is the {item.name}.", 'success'
-                )
-            elif new_level == 2:
+            if getattr(result, 'success', False):
+                self._full_identify(item)
                 _buc = getattr(item, 'buc', 'uncursed')
                 aura = {'blessed': "a holy radiance", 'cursed': "a dark aura",
                         'uncursed': "no clinging aura"}.get(_buc, "an unclear aura")
                 self.add_message(
-                    f"The {item.name} reveals itself. You sense {aura}.", 'success'
-                )
-            elif new_level == 3:
+                    f"It is the {item.name}. You sense {aura}.", 'success')
+                # The whole story arrives at once — push the lore screen.
+                if item.lore:
+                    self._lore_subject = item
+                    self.state = STATE_LORE
+            else:
                 self.add_message(
-                    f"The {item.name} yields its workings to you.", 'success'
-                )
-            elif new_level == 4:
+                    f"You ponder the {display} but its nature eludes you.",
+                    'warning')
+                # Backlash from the Shard: a wrong answer stuns the kid.
+                # Standard status rules apply. Successor to the old
+                # zero-chain confusion backlash — a blind attempt must
+                # carry a cost (per user 2026-05-29).
+                self.player.add_effect('stunned', 10)
                 self.add_message(
-                    f"The history of the {item.name} unfolds in your mind.", 'success'
-                )
-            else:   # new_level == 5
-                self.add_message(
-                    f"You have mastered the {item.name}!", 'success'
-                )
-                self._claim_mastery(item)
-
-            # Quirk hook fires once when first crossing into full ID (level >= 3).
-            if not was_full_id and new_level >= 3:
-                _qs_id = getattr(self, 'quirk_system', None)
-                if _qs_id:
-                    _qs_id.on_item_identified(item.id)
-                self._on_full_identify(item)
-                self._log_chronicle(
-                    f"Identified something remarkable: {item.name}. The lore runs deep."
-                )
-
-            # Push lore screen at id_level >= 3 (full stats now visible).
-            if new_level >= 3 and item.lore:
-                self._lore_subject = item
-                self.state = STATE_LORE
-
+                    "The Shard turns cold in your palm. Backlash floods "
+                    "your mind — you are Stunned (10 turns).",
+                    'danger')
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
-            mode='escalator_chain',
+            mode='threshold',
             subject='philosophy',
-            tier=start_tier,
+            tier=tier,
             callback=on_complete,
-            max_chain=max_chain,
+            threshold=1,
+            total_qs=1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus(),
             base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
-    def _claim_mastery(self, item):
-        """Record a mastery blessing on the player once chain 5 is achieved.
+    def _full_identify(self, item) -> None:
+        """Set every knowledge flag for one identified instance.
 
-        Idempotent — re-claiming an already-claimed item OR class is a no-op.
-        Uniques key the blessing by item.id (legacy behavior); commons key
-        by mastery_class so all ring-of-strength variants share the bonus.
-        Some mastery kinds trigger one-time application here (stat bonuses,
-        max-HP bumps, wand-charge upgrades, MP discounts); the rest are
-        evaluated lazily at their use-site by querying the mastery stores.
+        The copy becomes fully known (BUC + enchant + stats + lore) and its
+        TYPE joins the global known set, so future copies show their true
+        name ("unidentified Sword of Michael") while keeping their own BUC
+        and enchant hidden until identified individually. Fires the career
+        hook once per instance crossing into full ID.
         """
-        from class_masteries import (get_mastery_class,
-                                       CLASS_MASTERY_BLESSINGS,
-                                       default_blessing_for_class)
-        is_unique = bool(getattr(item, 'is_unique', False))
-
-        if is_unique:
-            # Legacy per-id path for legendaries
-            if item.id in self.player.unlocked_masteries:
-                return
-            blessing = (getattr(item, 'mastery_blessing', None)
-                        or self._default_mastery_for(item))
-            if not blessing:
-                return
-            self.player.unlocked_masteries[item.id] = blessing
-            self._apply_mastery_once(item, blessing)
-        else:
-            # Class-level path for commons — apply once per CLASS
-            class_id = get_mastery_class(item)
-            if class_id in self.player.unlocked_class_masteries:
-                return
-            blessing = (CLASS_MASTERY_BLESSINGS.get(class_id)
-                        or default_blessing_for_class(class_id, item))
-            if not blessing:
-                return
-            self.player.unlocked_class_masteries[class_id] = blessing
-            # Two kinds of retroactive application for class mastery:
-            #  (1) PER-ITEM effects (wand_extra_charge, spellbook_mp_discount):
-            #      walk inventory and apply each match.
-            #  (2) CLASS-ONCE effects (stat_bonus, ac_bonus, regen_bonus, etc.):
-            #      apply directly to the player a single time.
-            kind = blessing.get('kind', '')
-            if kind in ('wand_extra_charge', 'spellbook_mp_discount'):
-                for inv_item in self.player.inventory:
-                    if get_mastery_class(inv_item) == class_id:
-                        self._apply_mastery_once(inv_item, blessing)
-            else:
-                self._apply_mastery_once(item, blessing)
-
-        desc = blessing.get('desc', 'A subtle resonance settles upon you.')
-        self.add_message(f"Mastery gained: {desc}", 'success')
-        self._log_chronicle(f"Mastery of {item.name} attained. {desc}")
-
-    def _apply_mastery_once(self, item, blessing: dict) -> None:
-        """One-shot application for masteries whose effect is permanent stat changes.
-
-        Lazy/passive kinds (weapon_*, armor_resist_bonus, class_acc_ac_bonus,
-        etc.) are evaluated at use-sites instead.
-        """
-        kind = blessing.get('kind')
-        value = blessing.get('value')
-        p = self.player
-        if kind == 'armor_hp_bonus':
-            bump = int(value or 0)
-            if bump > 0:
-                p.max_hp += bump
-                p.hp += bump
-        elif kind in ('accessory_stat_bonus', 'class_acc_stat_bonus'):
-            # class_acc_stat_bonus mirrors accessory_stat_bonus but is
-            # class-scoped — applied once when the class is mastered.
-            #
-            # NEW (2026-05-29): If the blessing carries
-            # `scope: "carry"`, the bonus applies only while the item
-            # is in inventory. Skip the one-shot apply here and let
-            # Player.refresh_carry_bonuses() handle it instead. Used
-            # by carry-only uniques like Charmander Stuffie (+2 CON
-            # in inventory) and Dreamspun Sketchbook (+2 INT in
-            # inventory).
-            if blessing.get('scope') == 'carry':
-                p.refresh_carry_bonuses()
-                return
-            v = value or {}
-            stat = v.get('stat')
-            amount = int(v.get('amount', 0))
-            if stat and amount:
-                p.apply_stat_bonus(stat, amount)
-        elif kind == 'wand_extra_charge':
-            extra = int(value or 0)
-            if extra > 0 and hasattr(item, 'max_charges'):
-                item.max_charges += extra
-                item.charges = min(item.max_charges, getattr(item, 'charges', 0) + extra)
-        elif kind == 'spellbook_mp_discount':
-            disc = int(value or 0)
-            spell_id = getattr(item, 'spell_id', None)
-            if spell_id and disc > 0 and spell_id in p.known_spells:
-                p.known_spells[spell_id] = max(1, p.known_spells[spell_id] - disc)
-        # Other class kinds (class_acc_ac_bonus, class_acc_regen_bonus,
-        # class_acc_passive_radius, class_acc_resist_bonus, class_acc_sp_burn_bonus,
-        # class_acc_quirk, class_scroll_*, potion_*) are all lazy/passive — they
-        # query player.unlocked_class_masteries at use-site rather than mutating
-        # state here. See use-site comments in player.py / food_system.py /
-        # game_magic.py wand+scroll+potion handlers.
-
-    def _default_mastery_for(self, item) -> dict | None:
-        """Class-default mastery for uniques that didn't author one explicitly.
-
-        Kept conservative — small bonuses tied to the item itself rather than
-        the whole item class. Should rarely be used once the authoring pass
-        is complete; this is a safety net.
-        """
-        from items import Weapon, Armor, Shield, Accessory, Wand, Scroll, Spellbook, Potion
-        if isinstance(item, Weapon):
-            return {'kind': 'weapon_chain_mult_bonus', 'value': 0.1,
-                    'desc': f"+0.1 to all chain multipliers when wielding the {item.name}."}
-        if isinstance(item, (Armor, Shield)):
-            return {'kind': 'armor_ac_bonus', 'value': 1,
-                    'desc': f"+1 AC bonus while wearing the {item.name}."}
-        if isinstance(item, Accessory):
-            return {'kind': 'accessory_buff_duration_bonus', 'value': 5,
-                    'desc': f"Buffs from the {item.name} last 5 turns longer."}
-        if isinstance(item, Wand):
-            return {'kind': 'wand_extra_charge', 'value': 1,
-                    'desc': f"The {item.name} gains +1 maximum charge."}
-        if isinstance(item, Scroll):
-            return {'kind': 'scroll_extra_read', 'value': 1,
-                    'desc': f"You have learned to recite the {item.name} from memory; one extra use this run."}
-        if isinstance(item, Spellbook):
-            return {'kind': 'spellbook_mp_discount', 'value': 1,
-                    'desc': f"The spell from the {item.name} costs 1 less MP."}
-        if isinstance(item, Potion):
-            # Binary-effect potions have no magnitude to scale ("more potent"
-            # is dead text on teleport/cures); give them a reliability perk
-            # instead. Mirrors class_masteries.default_blessing_for_class.
-            if getattr(item, 'effect', '') in {'teleport', 'cure_poison',
-                    'cure_disease', 'cure_all', 'restore_str', 'gain_level'}:
-                return {'kind': 'potion_preserve', 'value': 0.25,
-                        'desc': "You draw out every drop — 25% chance a potion of this type isn't used up."}
-            return {'kind': 'potion_potency_bonus', 'value': 0.25,
-                    'desc': "Potions of this type are 25% more potent."}
-        return None
+        was_full = int(getattr(item, 'id_level', 0)) >= 5
+        item.id_level = 5
+        if hasattr(item, 'buc_known'):
+            item.buc_known = True
+        self._propagate_identification(item.id, seed_item=item)
+        if not was_full:
+            _qs_id = getattr(self, 'quirk_system', None)
+            if _qs_id:
+                _qs_id.on_item_identified(item.id)
+            self._on_full_identify(item)
+            self._log_chronicle(
+                f"Identified the {item.name}. Its nature is known to me.")
 
     def _on_full_identify(self, item) -> None:
         """Hook called once per item when it crosses into full-ID state.
@@ -3126,23 +2852,16 @@ class MagicMixin:
     # ------------------------------------------------------------------
 
     def _open_scroll_identify_picker(self, bless: bool = False) -> None:
-        """Open the identify menu in 'scroll-grants-mastery' mode.
+        """Open the identify menu in 'scroll-reveals-directly' mode.
 
         The player picks one item from their inventory / ground tile; on
-        select, the chosen item jumps to id_level 5 and `_claim_mastery`
-        fires for it (no philosophy quiz needed). Triggered after a
-        successful Scroll of Identify read.
-
-        Blessed variant: bulk-identification of everything to id_level 4
-        already happened — this picker still gives mastery on the chosen
-        item, so the scroll is unambiguously the best path to mastery.
+        select, the chosen item is fully identified with no philosophy
+        quiz. Triggered after a successful Scroll of Identify read.
         """
-        # Build the same target list `_open_identify_menu` uses, so corpses
-        # behave consistently and the menu UI is shared.
+        # Build the same target list `_open_identify_menu` uses, so the
+        # menu UI is shared.
         from items import Corpse
         def _needs_identify(i):
-            if getattr(i, 'is_unique', False):
-                return i.id not in self.player.unlocked_masteries
             return getattr(i, 'id_level', 5) < 5
         inv_items = [i for i in self.player.inventory if _needs_identify(i)]
         ground_items = [
@@ -3157,10 +2876,10 @@ class MagicMixin:
         )
         if not self.identify_menu_items:
             self.add_message(
-                "The scroll's revelation finds nothing to reveal — every item is already mastered.",
+                "The scroll's revelation finds nothing to reveal — every item is already known.",
                 'info')
             return
-        # Flag the picker so _identify_menu_input grants mastery directly
+        # Flag the picker so _identify_menu_input reveals directly
         # instead of starting the philosophy quiz.
         self._scroll_identify_pending = True
         self._scroll_identify_blessed = bool(bless)
@@ -3169,136 +2888,38 @@ class MagicMixin:
             "The scroll trembles in your hand — choose the item to be revealed.",
             'info')
 
-    def _scroll_grant_mastery(self, item) -> None:
-        """Bypass the philosophy quiz: set id_level=5 + claim mastery on
-        `item`. Called when the identify menu was entered via a Scroll of
-        Identify (see _scroll_identify_pending).
+    def _scroll_full_identify(self, item) -> None:
+        """Bypass the philosophy quiz: fully identify `item`. Called when
+        the identify menu was entered via a Scroll of Identify (see
+        _scroll_identify_pending).
         """
-        was_full_id = int(getattr(item, 'id_level', 0)) >= 3
-        item.id_level = 5
-        item.identified = True
-        item.buc_known = True
-        self.player.known_item_ids.add(item.id)
-        self._propagate_identification(item.id, level=5)
+        self._full_identify(item)
         self.add_message(
-            f"Truth crashes through you — you have mastered the {item.name}!",
+            f"Truth crashes through you — it is the {item.name}!",
             'success')
-        self._claim_mastery(item)
-        if not was_full_id:
-            _qs_id = getattr(self, 'quirk_system', None)
-            if _qs_id:
-                _qs_id.on_item_identified(item.id)
-            self._on_full_identify(item)
-            self._log_chronicle(
-                f"A scroll laid bare the {item.name}. Its full nature is mine.")
         if item.lore:
             self._lore_subject = item
             self.state = STATE_LORE
 
-    def _scroll_identify_bulk_to_lore(self) -> bool:
-        """Blessed Scroll of Identify: lift every unknown item in inventory
-        + tile to id_level 4 (full lore). Returns True iff at least one
-        item was advanced (so the picker still has something to pick).
+    def _scroll_identify_mass(self) -> None:
+        """Blessed / high-chain Scroll of Identify: fully identify every
+        item in inventory + tile. No picker — the scroll just hands the
+        kid the whole arsenal.
         """
         from items import Corpse
-        bumped = 0
-        for it in self.player.inventory:
-            if getattr(it, 'id_level', 5) < 4:
-                was_full_id = int(getattr(it, 'id_level', 0)) >= 3
-                it.id_level = 4
-                it.identified = True
-                it.buc_known = True
-                self.player.known_item_ids.add(it.id)
-                self._propagate_identification(it.id, level=4)
-                if not was_full_id:
-                    _qs_id = getattr(self, 'quirk_system', None)
-                    if _qs_id:
-                        _qs_id.on_item_identified(it.id)
-                    self._on_full_identify(it)
-                bumped += 1
-        for it in self.ground_items:
-            if it.x != self.player.x or it.y != self.player.y:
-                continue
+        count = 0
+        for it in list(self.player.inventory) + [
+                g for g in self.ground_items
+                if g.x == self.player.x and g.y == self.player.y]:
             if isinstance(it, Corpse):
                 continue
-            if getattr(it, 'id_level', 5) < 4:
-                it.id_level = 4
-                it.identified = True
-                it.buc_known = True
-                self.player.known_item_ids.add(it.id)
-                self._propagate_identification(it.id, level=4)
-                bumped += 1
-        if bumped:
+            if getattr(it, 'id_level', 5) < 5:
+                self._full_identify(it)
+                count += 1
+        if count:
             self.add_message(
-                f"Brilliant light reveals {bumped} item{'s' if bumped != 1 else ''}!",
-                'success')
-            return True
-        # If nothing needed lore-bump but some uniques still owe mastery, still let the picker run.
-        for it in self.player.inventory:
-            if getattr(it, 'is_unique', False) and it.id not in self.player.unlocked_masteries:
-                return True
-        return False
-
-    def _scroll_identify_mass_mastery(self) -> None:
-        """Chain-5 Scroll of Identify (Path A): grant id_level=5 + mastery
-        on every unique in inventory + tile, and ID every common to
-        id_level=4 (lore). No picker — the scroll just hands over the
-        whole arsenal.
-        """
-        from items import Corpse
-        unique_count = 0
-        common_count = 0
-        for it in list(self.player.inventory):
-            if isinstance(it, Corpse):
-                continue
-            if getattr(it, 'is_unique', False):
-                if it.id not in self.player.unlocked_masteries:
-                    self._scroll_grant_mastery(it)
-                    unique_count += 1
-                elif getattr(it, 'id_level', 5) < 5:
-                    it.id_level = 5
-                    it.identified = True
-                    it.buc_known = True
-                    self.player.known_item_ids.add(it.id)
-                    self._propagate_identification(it.id, level=5)
-                    unique_count += 1
-            elif getattr(it, 'id_level', 5) < 4:
-                was_full_id = int(getattr(it, 'id_level', 0)) >= 3
-                it.id_level = 4
-                it.identified = True
-                it.buc_known = True
-                self.player.known_item_ids.add(it.id)
-                self._propagate_identification(it.id, level=4)
-                if not was_full_id:
-                    _qs_id = getattr(self, 'quirk_system', None)
-                    if _qs_id:
-                        _qs_id.on_item_identified(it.id)
-                    self._on_full_identify(it)
-                common_count += 1
-        for it in list(self.ground_items):
-            if it.x != self.player.x or it.y != self.player.y:
-                continue
-            if isinstance(it, Corpse):
-                continue
-            if getattr(it, 'is_unique', False):
-                if it.id not in self.player.unlocked_masteries:
-                    self._scroll_grant_mastery(it)
-                    unique_count += 1
-            elif getattr(it, 'id_level', 5) < 4:
-                it.id_level = 4
-                it.identified = True
-                it.buc_known = True
-                self.player.known_item_ids.add(it.id)
-                self._propagate_identification(it.id, level=4)
-                common_count += 1
-        if unique_count or common_count:
-            parts = []
-            if unique_count:
-                parts.append(f"{unique_count} unique(s) mastered")
-            if common_count:
-                parts.append(f"{common_count} item(s) revealed")
-            self.add_message(
-                "An apocalypse of revelation washes over your pack — " + " and ".join(parts) + "!",
+                f"An apocalypse of revelation washes over your pack — "
+                f"{count} item{'s' if count != 1 else ''} revealed!",
                 'success')
         else:
             self.add_message("The scroll's revelation finds nothing left to reveal.", 'info')
@@ -3720,83 +3341,42 @@ class MagicMixin:
                 spawned += 1
                 break
 
-    def _propagate_identification(self, item_id: str, level: int = 4):
-        """Sync identification state across every other instance of the
-        same item id (and same mastery_class for commons).
+    def _propagate_identification(self, item_id: str, seed_item=None):
+        """Record TYPE knowledge for an identified item.
 
-        Updates THREE pieces of state per copy:
-          1. known_item_ids / known_class_ids on the player
-          2. buc_known on every matching copy
-          3. id_level on every matching copy, raised to `level` —
-             capped at 4 for uniques (so the chain-5 mastery still
-             requires the player to actually quiz it), capped at 5
-             for commons (no mastery to gate).
-
-        Walks inventory + ground items + container contents at the
-        player's tile so a wand identified in pocket also bumps an
-        identical wand sitting on the floor or inside an open chest.
-
-        2026-05-29 bug-bash fix: previously only bumped buc_known and
-        only walked inventory.
+        The true name (with stats + lore) becomes visible on every current
+        and future copy — they render as "unidentified <true name>". The
+        per-instance state (BUC, enchant) is deliberately NOT touched:
+        under the True Name model each copy must be identified on its own.
+        known_class_ids covers material-variant accessories (one Ring of
+        Strength names them all) — see items.type_class.
         """
-        from class_masteries import get_mastery_class
+        from items import type_class
         self.player.known_item_ids.add(item_id)
-
-        # Find the canonical class for any inventory / ground / container
-        # item with this id, then propagate class-recognition.
-        def _all_candidates():
-            yield from getattr(self.player, 'inventory', [])
-            yield from getattr(self, 'ground_items', [])
-            # Container contents at the player's tile.
-            px = getattr(self.player, 'x', None)
-            py = getattr(self.player, 'y', None)
-            for g in getattr(self, 'ground_items', []) or []:
-                if getattr(g, 'x', None) != px or getattr(g, 'y', None) != py:
-                    continue
-                contents = getattr(g, 'contents', None)
-                if contents:
-                    yield from contents
-
-        seed_class = None
-        for cand in _all_candidates():
-            if getattr(cand, 'id', None) == item_id:
-                seed_class = get_mastery_class(cand)
-                break
-        if seed_class:
-            self.player.known_class_ids.add(seed_class)
-
-        # Apply the cap-per-uniqueness rule to the propagated id_level:
-        # uniques cap at 4 (preserves the chain-5 mastery quiz path),
-        # commons cap at the requested level (full reveal allowed).
-        for cand in _all_candidates():
-            same_id = getattr(cand, 'id', None) == item_id
-            same_class = (
-                seed_class is not None
-                and get_mastery_class(cand) == seed_class
-            )
-            if not (same_id or same_class):
-                continue
-            if hasattr(cand, 'buc_known'):
-                cand.buc_known = True
-            if hasattr(cand, 'id_level'):
-                cap = 4 if getattr(cand, 'is_unique', False) else 5
-                target = min(level, cap)
-                cand.id_level = max(int(getattr(cand, 'id_level', 0)), target)
+        seed = seed_item
+        if seed is None:
+            for cand in (list(getattr(self.player, 'inventory', []))
+                         + list(getattr(self, 'ground_items', []) or [])):
+                if getattr(cand, 'id', None) == item_id:
+                    seed = cand
+                    break
+        if seed is not None:
+            cls = type_class(seed)
+            if cls:
+                self.player.known_class_ids.add(cls)
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).
 
-        Non-uniques get id_level=5 (no mastery to preserve, full reveal).
-        Uniques cap at id_level=4 — lore is shown, but the chain-5 mastery still
-        requires the player to run the philosophy chain quiz from the I-menu.
+        Everything goes to full identification — with masteries gone there
+        is no chain-5 reveal left to protect behind a cap.
         """
         def _stone_id(it):
             if not hasattr(it, 'identified'):
                 return
             it.identified = True
             if hasattr(it, 'id_level'):
-                cap = 4 if getattr(it, 'is_unique', False) else 5
-                it.id_level = max(int(getattr(it, 'id_level', 0)), cap)
+                it.id_level = 5
             if hasattr(it, 'buc_known'):
                 it.buc_known = True
 

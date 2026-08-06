@@ -1,23 +1,21 @@
-"""BUC + binary-potion-mastery effects (2026-06-07).
+"""BUC effects (2026-06-07; masteries removed 2026-08-06).
 
-User found dead text: blessed accessories/wands "did nothing", and the
-"20% more potent" potion mastery did nothing for binary potions like
-teleportation (there is no magnitude to scale). Cursed had the mirror gap:
-cursed gear was sticky (welded on) but carried no stat penalty.
+User found dead text: blessed accessories/wands "did nothing". Cursed had
+the mirror gap: cursed gear was sticky (welded on) but carried no stat
+penalty.
 
 Fixes, all symmetric blessed<->cursed:
   * get_ac: blessed +1 / cursed -1 AC per worn armor, shield AND accessory.
   * wands:  blessed +1 / cursed -1 max charge (floor 1).
-  * binary potions (teleport/cures/gain-level): mastery/blessed grant a
-    PRESERVE chance (dose not used up); cursed grants a FIZZLE chance (magic
-    fails outright). Default mastery for those classes is 'potion_preserve'.
-  * full_heal: blessed/mastered also scours away debuffs.
+  * binary potions (teleport/cures/gain-level): blessed grants a PRESERVE
+    chance (dose not used up); cursed grants a FIZZLE chance (magic fails
+    outright).
+  * full_heal: blessed also scours away debuffs.
 """
 import pytest
 
 from items import Armor, Accessory, Wand, Potion
 from player import Player
-from class_masteries import default_blessing_for_class
 from food_system import drink_potion
 from status_effects import DEBUFFS
 
@@ -83,21 +81,6 @@ def test_cursed_wand_charges_never_below_one():
     assert w.max_charges == 1 and w.charges == 1   # floor, not 0/-?
 
 
-# --- Potion mastery is effect-aware -----------------------------------------
-
-def test_binary_potion_mastery_is_preserve_not_dead_potency():
-    for eff in ('teleport', 'cure_poison', 'cure_disease', 'cure_all',
-                'restore_str', 'gain_level'):
-        m = default_blessing_for_class(f'potion_{eff}', _potion(eff))
-        assert m['kind'] == 'potion_preserve', eff
-
-
-def test_quantitative_potion_mastery_stays_potency():
-    for eff in ('heal', 'extra_heal', 'restore_sp'):
-        m = default_blessing_for_class(f'potion_{eff}', _potion(eff))
-        assert m['kind'] == 'potion_potency_bonus', eff
-
-
 # --- full_heal cleanse ------------------------------------------------------
 
 def test_blessed_full_heal_cleanses_debuffs():
@@ -138,12 +121,11 @@ def test_blessed_full_heal_overcomes_heal_block():
 
 # --- Binary preserve / fizzle wiring (force the dice) -----------------------
 
-def test_mastered_teleport_can_preserve(monkeypatch):
+def test_blessed_teleport_can_preserve(monkeypatch):
     import dice
     monkeypatch.setattr(dice, 'roll', lambda *a, **k: 1)   # every roll = 1
     pl = Player()
-    pot = _potion('teleport', 'uncursed')
-    pl.unlocked_class_masteries[pot.id] = {'kind': 'potion_preserve', 'value': 0.25}
+    pot = _potion('teleport', 'blessed')
     msgs = drink_potion(pl, pot)
     assert '_teleport' in msgs       # the effect still fired
     assert '_preserve' in msgs       # ...and the dose lingered (caller re-adds it)

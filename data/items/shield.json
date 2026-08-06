@@ -29,7 +29,7 @@
       "81-100": 2
     },
     "value": 9500,
-    "lore": "The aegis was not originally a shield but a goatskin breastplate — or a thundercloud — worn by Zeus and Athena. Homer describes Athena shaking it during battle to produce fear in armies. The Gorgoneion — Medusa's severed head — was mounted on it after Perseus made his gift. Athena used a weapon whose power was entirely in what it made people see, rather than what it physically did.",
+    "lore": "The aegis was not originally a shield but a goatskin breastplate \u2014 or a thundercloud \u2014 worn by Zeus and Athena. Homer describes Athena shaking it during battle to produce fear in armies. The Gorgoneion \u2014 Medusa's severed head \u2014 was mounted on it after Perseus made his gift. Athena used a weapon whose power was entirely in what it made people see, rather than what it physically did.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 70,
@@ -68,12 +68,6 @@
         "passive_reflect_spell": 20,
         "passive_gorgoneion_petrify_on_hit": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Greater Aegis of Athena grants an additional -2 AC."
     }
   },
   "pridwen": {
@@ -105,22 +99,13 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Arthur's shield, named in the Welsh poem Pa gur and the Mabinogion. The image of the Virgin Mary was painted on its inner face, so Arthur fought facing her. This was the interior side — the side that faces the bearer. The image was not for showing to enemies. It was for Arthur to look at.",
+    "lore": "Arthur's shield, named in the Welsh poem Pa gur and the Mabinogion. The image of the Virgin Mary was painted on its inner face, so Arthur fought facing her. This was the interior side \u2014 the side that faces the bearer. The image was not for showing to enemies. It was for Arthur to look at.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 60,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "unholy",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Pridwen bears the Virgin Mary on its inner face — it deflects 35% of unholy damage."
-    }
+    "max_enchant": 2
   },
   "tower_shield_of_ajax": {
     "name": "Tower Shield of Ajax",
@@ -151,19 +136,13 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "Ajax's shield was described as a tower of seven ox-hides laminated together with bronze — the largest shield in the Iliad. He stood before the Greek ships and held back the Trojans by mass and will. Achilles was the brilliant warrior. Ajax was the one who could not be moved. When Odysseus was awarded Achilles' armour by rhetorical argument, Ajax's grief destroyed him. The shield outlasted its owner.",
+    "lore": "Ajax's shield was described as a tower of seven ox-hides laminated together with bronze \u2014 the largest shield in the Iliad. He stood before the Greek ships and held back the Trojans by mass and will. Achilles was the brilliant warrior. Ajax was the one who could not be moved. When Odysseus was awarded Achilles' armour by rhetorical argument, Ajax's grief destroyed him. The shield outlasted its owner.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 72,
     "spread": 10,
     "peak_weight": 0.35,
-    "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 25,
-      "scope": "item",
-      "desc": "The Tower Shield of Ajax was seven ox-hides thick — it grants a permanent 25 HP on mastery."
-    }
+    "max_enchant": 2
   },
   "scutum_of_aeneas": {
     "name": "Scutum of Aeneas",
@@ -195,19 +174,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface — battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor.",
+    "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface \u2014 battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 65,
     "spread": 12,
     "peak_weight": 0.4,
-    "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Scutum of Aeneas bore the entire future of Rome — armor class improves by 2."
-    }
+    "max_enchant": 2
   },
   "bronze_aegis": {
     "name": "Bronze Aegis",
@@ -241,12 +214,6 @@
     "spread": 1,
     "peak_weight": 0.0,
     "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Bronze Aegis is carved with Hephaestus's eye — armor class improves by 1."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -271,7 +238,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "mirror-bright bronze shield",
-    "lore": "Athena's own shield, polished to a mirror-bright sheen. She lent it to Perseus so he could face the Gorgon without meeting her eyes. In its reflection, the monster sees only herself — and is turned to stone by her own terrible gaze.",
+    "lore": "Athena's own shield, polished to a mirror-bright sheen. She lent it to Perseus so he could face the Gorgon without meeting her eyes. In its reflection, the monster sees only herself \u2014 and is turned to stone by her own terrible gaze.",
     "floorSpawnWeight": {},
     "is_unique": true,
     "template_basis": "kite_shield",
@@ -309,15 +276,6 @@
         "passive_aura_of_awe": true
       }
     },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 25
-      },
-      "scope": "item",
-      "desc": "Athena's mirror-polished Aegis turns Gorgon-stares to stone — it deflects 25% of all elemental damage."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -350,12 +308,6 @@
     "spread": 1,
     "peak_weight": 0.0,
     "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Lionheart Shield was sworn to duty unto death — it grants a permanent 15 HP on mastery."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -380,7 +332,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a heavy bronze shield with a lambda",
-    "lore": "The aspis of the Spartans — the great round shield that formed the backbone of the phalanx. The inverted lambda on its face marks it as Lacedaemonian. A Spartan mother's farewell to her son: 'Return with your shield, or on it.' The shield that held at Thermopylae, where three hundred stood against a million. Heavy, unyielding, and utterly reliable.",
+    "lore": "The aspis of the Spartans \u2014 the great round shield that formed the backbone of the phalanx. The inverted lambda on its face marks it as Lacedaemonian. A Spartan mother's farewell to her son: 'Return with your shield, or on it.' The shield that held at Thermopylae, where three hundred stood against a million. Heavy, unyielding, and utterly reliable.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-11": 0,
@@ -394,12 +346,6 @@
     "spread": 10,
     "peak_weight": 0.45,
     "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "Return with your shield, or on it — the Shield of the Spartans grants a permanent 15 HP on mastery."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -425,7 +371,7 @@
     "enchant_bonus": 0,
     "fire_reflect": 0.25,
     "unidentified_name": "a golden shield that radiates warmth",
-    "lore": "In Norse myth, Svalinn stands before the sun. Without it, the mountains and the sea would burn. It drinks fire — not merely blocking it but absorbing it entirely. What it cannot absorb, it sends back. Those who strike its bearer with flame find their own fire returned to them.",
+    "lore": "In Norse myth, Svalinn stands before the sun. Without it, the mountains and the sea would burn. It drinks fire \u2014 not merely blocking it but absorbing it entirely. What it cannot absorb, it sends back. Those who strike its bearer with flame find their own fire returned to them.",
     "floorSpawnWeight": {
       "41-60": 1,
       "61-80": 2,
@@ -437,15 +383,6 @@
     "spread": 12,
     "peak_weight": 0.4,
     "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "Svalinn stands before the sun itself — it deflects 50% of fire damage."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -471,7 +408,7 @@
     "enchant_bonus": 0,
     "quiz_timer_bonus": 2,
     "unidentified_name": "an oval bronze shield with an angular notch",
-    "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve — or perhaps the original. Its divine origin sharpens the mind, granting extra time on all mental challenges.",
+    "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve \u2014 or perhaps the original. Its divine origin sharpens the mind, granting extra time on all mental challenges.",
     "floorSpawnWeight": {
       "21-40": 1,
       "41-60": 2,
@@ -483,12 +420,6 @@
     "spread": 12,
     "peak_weight": 0.4,
     "max_enchant": 2,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Ancile fell from heaven during Numa's reign — armor class improves by 2."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -524,13 +455,7 @@
     "peak_weight": 0.5,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 10,
-      "scope": "item",
-      "desc": "The Mycenaean Tower of Telamon stood at Troy's first sack — it grants a permanent 10 HP on mastery."
-    }
+    "floorSpawnWeight": {}
   },
   "pelte_of_the_thracian": {
     "name": "Pelte of the Thracian",
@@ -564,13 +489,7 @@
     "peak_weight": 0.45,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Thracian Pelte is light enough to leave with — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "buckler_of_the_sumerian_lugal": {
     "name": "Buckler of the Sumerian Lugal",
@@ -604,13 +523,7 @@
     "peak_weight": 0.4,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "Eannatum's Sumerian buckler is the oldest phalanx-shield in stone — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "khopesh_breaker_of_thebes": {
     "name": "Khopesh-Breaker of Thebes",
@@ -636,7 +549,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a tall Egyptian shield of cowhide and cedar",
-    "lore": "Egyptian infantry carried tall shields shaped like an upright tongue, cowhide stretched over cedar frames. The khopesh — the sickle-sword — was designed to hook past a round shield's edge. The tall Theban shield denied the hook. Sometimes armor design is just the answer to a single bad weapon. The Egyptians won that argument.",
+    "lore": "Egyptian infantry carried tall shields shaped like an upright tongue, cowhide stretched over cedar frames. The khopesh \u2014 the sickle-sword \u2014 was designed to hook past a round shield's edge. The tall Theban shield denied the hook. Sometimes armor design is just the answer to a single bad weapon. The Egyptians won that argument.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 22,
@@ -644,16 +557,7 @@
     "peak_weight": 0.45,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 20
-      },
-      "scope": "item",
-      "desc": "The Khopesh-Breaker of Thebes was the answer to a single bad weapon — it deflects 20% of all elemental damage."
-    }
+    "floorSpawnWeight": {}
   },
   "hittite_chariot_guard": {
     "name": "Hittite Chariot-Guard",
@@ -679,7 +583,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a figure-eight shield of dark hide",
-    "lore": "Hittite chariots carried three men — driver, archer, and shield-bearer. The shield-bearer stood at the rear and used a figure-eight shield, two ovals fused at the waist, to protect the entire crew from missiles while the chariot turned. At Kadesh the Hittites surprised Ramesses II's army with two thousand of these chariots. The Egyptians never quite admitted they lost.",
+    "lore": "Hittite chariots carried three men \u2014 driver, archer, and shield-bearer. The shield-bearer stood at the rear and used a figure-eight shield, two ovals fused at the waist, to protect the entire crew from missiles while the chariot turned. At Kadesh the Hittites surprised Ramesses II's army with two thousand of these chariots. The Egyptians never quite admitted they lost.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 25,
@@ -687,13 +591,7 @@
     "peak_weight": 0.45,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 12,
-      "scope": "item",
-      "desc": "The Hittite Chariot-Guard's figure-eight shield protected the whole crew at Kadesh — it grants a permanent 12 HP on mastery."
-    }
+    "floorSpawnWeight": {}
   },
   "assyrian_siege_pavise": {
     "name": "Assyrian Siege-Pavise",
@@ -720,7 +618,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a tall wickerwork shield with iron strips",
-    "lore": "When Sennacherib's army besieged Lachish, the archers worked behind man-high wickerwork shields propped on the ground. The reliefs at Nineveh show them — twin curves like a bishop's mitre, the archer's head just visible over the top. Slow to move. Impossible to flank. The Lachish relief is in the British Museum. The shield is here.",
+    "lore": "When Sennacherib's army besieged Lachish, the archers worked behind man-high wickerwork shields propped on the ground. The reliefs at Nineveh show them \u2014 twin curves like a bishop's mitre, the archer's head just visible over the top. Slow to move. Impossible to flank. The Lachish relief is in the British Museum. The shield is here.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 28,
@@ -728,13 +626,7 @@
     "peak_weight": 0.4,
     "max_enchant": 1,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Assyrian Siege-Pavise stood man-high before the archers of Nineveh — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "spartan_aspis_of_leonidas": {
     "name": "Spartan Aspis of Leonidas",
@@ -769,13 +661,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "Leonidas's gold-chased aspis held the Hot Gates — it grants a permanent 15 HP on mastery."
-    }
+    "floorSpawnWeight": {}
   },
   "etruscan_round_shield": {
     "name": "Etruscan Round Shield",
@@ -801,7 +687,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a bronze-faced round shield with a gorgon boss",
-    "lore": "The Etruscans were Italy before Rome was Italy. Their language is still mostly undeciphered. Their tombs show heavy infantry with round bronze-faced shields — Greek-influenced, perhaps Greek-built. Rome learned the phalanx from them, then discarded it for the maniple, then conquered them. The shield outlasted both armies. We do not know what the Etruscans called it.",
+    "lore": "The Etruscans were Italy before Rome was Italy. Their language is still mostly undeciphered. Their tombs show heavy infantry with round bronze-faced shields \u2014 Greek-influenced, perhaps Greek-built. Rome learned the phalanx from them, then discarded it for the maniple, then conquered them. The shield outlasted both armies. We do not know what the Etruscans called it.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 32,
@@ -809,13 +695,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Etruscan Round Shield outlasted both armies — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "scutum_of_the_legio": {
     "name": "Scutum of the Legio",
@@ -843,7 +723,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a curved red rectangular shield with gold wings",
-    "lore": "Legio XII Fulminata, the Thundering Twelfth. Painted thunderbolts on red. Plywood — three layers of birch glued crosswise — covered in cowhide, edged in iron. Light enough to carry on a thirty-mile march. Strong enough to form the testudo, the tortoise, where every man's shield protected his neighbor. Whoever built this one was a tradesman, not a god. He did the work that won an empire.",
+    "lore": "Legio XII Fulminata, the Thundering Twelfth. Painted thunderbolts on red. Plywood \u2014 three layers of birch glued crosswise \u2014 covered in cowhide, edged in iron. Light enough to carry on a thirty-mile march. Strong enough to form the testudo, the tortoise, where every man's shield protected his neighbor. Whoever built this one was a tradesman, not a god. He did the work that won an empire.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 35,
@@ -851,13 +731,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Scutum of the Legio formed the testudo — armor class improves by 2."
-    }
+    "floorSpawnWeight": {}
   },
   "macedonian_aspis_of_philip": {
     "name": "Macedonian Aspis of Philip",
@@ -884,7 +758,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small concave shield with a sunburst",
-    "lore": "Philip II reformed the Greek phalanx by lengthening the pike to eighteen feet — which meant the shield had to shrink. The Macedonian aspis was strapped to the forearm so both hands could grip the sarissa. Philip's son Alexander used this formation to conquer the known world before age thirty-three. The sun on its face is the Argead star, which modern Greece and modern North Macedonia have argued about for forty years.",
+    "lore": "Philip II reformed the Greek phalanx by lengthening the pike to eighteen feet \u2014 which meant the shield had to shrink. The Macedonian aspis was strapped to the forearm so both hands could grip the sarissa. Philip's son Alexander used this formation to conquer the known world before age thirty-three. The sun on its face is the Argead star, which modern Greece and modern North Macedonia have argued about for forty years.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 38,
@@ -892,13 +766,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "Philip's small aspis freed both hands for the sarissa — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "celtic_oval_shield": {
     "name": "Celtic Oval Shield",
@@ -924,7 +792,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "an oval wooden shield with a spiral boss",
-    "lore": "Caesar's commentary describes the Gauls he fought — tall warriors, oval shields painted with spiral designs, the iron boss central and prominent. The Battersea Shield in the Thames is bronze and ceremonial, but the wooden ones the Gauls actually fought with rotted away two thousand years ago. This is what they would have looked like. The Gauls lost. The shield does not know it lost.",
+    "lore": "Caesar's commentary describes the Gauls he fought \u2014 tall warriors, oval shields painted with spiral designs, the iron boss central and prominent. The Battersea Shield in the Thames is bronze and ceremonial, but the wooden ones the Gauls actually fought with rotted away two thousand years ago. This is what they would have looked like. The Gauls lost. The shield does not know it lost.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 42,
@@ -932,13 +800,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Celtic Oval Shield bears spirals the Gauls painted before they lost — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "germanic_kriegsschild": {
     "name": "Germanic Kriegsschild",
@@ -964,7 +826,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a planked round shield with a fur-wrapped rim",
-    "lore": "Tacitus wrote about the Germanic peoples for Romans who feared them. He admired their courage and despised their drunkenness. The shield he describes — round, planked, the rim wrapped in fur for grip — is what Arminius's men carried into the Teutoburg Forest when they annihilated three legions in three days. Rome never put eagles east of the Rhine again. The forest is still there.",
+    "lore": "Tacitus wrote about the Germanic peoples for Romans who feared them. He admired their courage and despised their drunkenness. The shield he describes \u2014 round, planked, the rim wrapped in fur for grip \u2014 is what Arminius's men carried into the Teutoburg Forest when they annihilated three legions in three days. Rome never put eagles east of the Rhine again. The forest is still there.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 45,
@@ -972,13 +834,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Germanic Kriegsschild faced Arminius's Romans in the Teutoburg — it grants a permanent 15 HP on mastery."
-    }
+    "floorSpawnWeight": {}
   },
   "sarmatian_lamellar_targe": {
     "name": "Sarmatian Lamellar Targe",
@@ -1004,7 +860,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small lacquered shield of overlapping scales",
-    "lore": "The Sarmatians fought from horseback in scale armor — both rider and horse covered. Their small lamellar shields strapped to the arm. Rome eventually hired them as cavalry. Some went as far as Britain and stayed there, garrisoning Hadrian's Wall. The local DNA in Lancashire still shows a Sarmatian thread. Some historians say King Arthur's cavalry was Sarmatian, three centuries later. The targe survived all of it.",
+    "lore": "The Sarmatians fought from horseback in scale armor \u2014 both rider and horse covered. Their small lamellar shields strapped to the arm. Rome eventually hired them as cavalry. Some went as far as Britain and stayed there, garrisoning Hadrian's Wall. The local DNA in Lancashire still shows a Sarmatian thread. Some historians say King Arthur's cavalry was Sarmatian, three centuries later. The targe survived all of it.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 47,
@@ -1012,13 +868,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Sarmatian Lamellar Targe garrisoned Hadrian's Wall — armor class improves by 1."
-    }
+    "floorSpawnWeight": {}
   },
   "battersea_votive_shield": {
     "name": "Battersea Votive Shield",
@@ -1045,7 +895,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a thin bronze shield set with red glass studs",
-    "lore": "Found in the Thames in 1857. La Tène style — flowing curves, twenty-seven red glass studs. Too thin to fight with. Iron Age Britons threw it in the river as a gift to a river-god whose name we will never know. Two thousand years later it sits in the British Museum and tourists wonder why someone would drown such a beautiful thing. They drowned it because it was beautiful.",
+    "lore": "Found in the Thames in 1857. La T\u00e8ne style \u2014 flowing curves, twenty-seven red glass studs. Too thin to fight with. Iron Age Britons threw it in the river as a gift to a river-god whose name we will never know. Two thousand years later it sits in the British Museum and tourists wonder why someone would drown such a beautiful thing. They drowned it because it was beautiful.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 49,
@@ -1053,16 +903,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Battersea Votive Shield was drowned for being beautiful — it deflects 30% of psychic damage."
-    }
+    "floorSpawnWeight": {}
   },
   "saxon_round_shield": {
     "name": "Saxon Round Shield",
@@ -1090,7 +931,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a planked round shield with an iron boss",
-    "lore": "The Sutton Hoo burial held a shield like this — limewood planks, iron boss the size of a fist, leather facing painted with the dragon of the Wuffingas. King Raedwald of East Anglia took it to his grave around 625 AD. Beowulf was written down in this kingdom in this century. The shield in the poem is the shield in the ground is the shield in your hand.",
+    "lore": "The Sutton Hoo burial held a shield like this \u2014 limewood planks, iron boss the size of a fist, leather facing painted with the dragon of the Wuffingas. King Raedwald of East Anglia took it to his grave around 625 AD. Beowulf was written down in this kingdom in this century. The shield in the poem is the shield in the ground is the shield in your hand.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 52,
@@ -1098,13 +939,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Saxon Round Shield went into Raedwald's Sutton Hoo barrow — it grants a permanent 15 HP on mastery."
-    }
+    "floorSpawnWeight": {}
   },
   "lendings_of_beowulf": {
     "name": "Lendings of Beowulf",
@@ -1131,7 +966,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a planked round shield with a dragon-shaped boss",
-    "lore": "When Beowulf went to fight the dragon at Earnaness, he ordered an iron shield made, knowing wood would burn. The poet says he chose eleven companions and a thirteenth man who knew the way. Only one — young Wiglaf — stayed to help him kill the dragon. The shield melted around the boss but Beowulf finished the work. He died in Wiglaf's arms. Goth-kingdom ended that day. The dragon-boss is still warm.",
+    "lore": "When Beowulf went to fight the dragon at Earnaness, he ordered an iron shield made, knowing wood would burn. The poet says he chose eleven companions and a thirteenth man who knew the way. Only one \u2014 young Wiglaf \u2014 stayed to help him kill the dragon. The shield melted around the boss but Beowulf finished the work. He died in Wiglaf's arms. Goth-kingdom ended that day. The dragon-boss is still warm.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 55,
@@ -1139,16 +974,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "Beowulf forged an iron shield knowing wood would burn — the Lendings deflect 35% of fire damage."
-    }
+    "floorSpawnWeight": {}
   },
   "sigurds_handshield": {
     "name": "Sigurd's Handshield",
@@ -1183,16 +1009,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "Sigurd's Handshield bore the Fafnir story he had lived — it deflects 30% of fire damage."
-    }
+    "floorSpawnWeight": {}
   },
   "carolingian_kite": {
     "name": "Carolingian Kite",
@@ -1219,7 +1036,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "an almond-shaped shield with a long lower point",
-    "lore": "Charlemagne's heavy horse rode under the kite — almond-shaped, the long point reaching down to cover the left leg in the saddle. The Bayeux Tapestry shows both Norman and Saxon kites, but the design started in Charlemagne's stables a century earlier. The pope crowned him emperor on Christmas Day 800. The empire fell apart inside his grandsons' lifetimes. The shield did not.",
+    "lore": "Charlemagne's heavy horse rode under the kite \u2014 almond-shaped, the long point reaching down to cover the left leg in the saddle. The Bayeux Tapestry shows both Norman and Saxon kites, but the design started in Charlemagne's stables a century earlier. The pope crowned him emperor on Christmas Day 800. The empire fell apart inside his grandsons' lifetimes. The shield did not.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 63,
@@ -1227,13 +1044,7 @@
     "peak_weight": 0.45,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Carolingian Kite reaches down to cover the left leg in the saddle — armor class improves by 2."
-    }
+    "floorSpawnWeight": {}
   },
   "heater_of_the_black_prince": {
     "name": "Heater of the Black Prince",
@@ -1261,7 +1072,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a flat-topped heater shield quartered in black and gold",
-    "lore": "Edward of Woodstock, the Black Prince, fought at Crécy at sixteen and at Poitiers at twenty-six and won both. He took the French king John II prisoner and kept him in courtly luxury for four years. His heraldry was three feathers and the motto Ich dien — 'I serve' — which the Princes of Wales have used ever since. He died of dysentery at forty-five, never reigned. The shield knows about service. It does not know about reigning.",
+    "lore": "Edward of Woodstock, the Black Prince, fought at Cr\u00e9cy at sixteen and at Poitiers at twenty-six and won both. He took the French king John II prisoner and kept him in courtly luxury for four years. His heraldry was three feathers and the motto Ich dien \u2014 'I serve' \u2014 which the Princes of Wales have used ever since. He died of dysentery at forty-five, never reigned. The shield knows about service. It does not know about reigning.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 68,
@@ -1269,13 +1080,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 18,
-      "scope": "item",
-      "desc": "The Heater of the Black Prince served before it reigned — it grants a permanent 18 HP on mastery."
-    }
+    "floorSpawnWeight": {}
   },
   "mameluke_targe": {
     "name": "Mameluke Targe",
@@ -1302,7 +1107,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small round shield inlaid with golden arabesques",
-    "lore": "The Mamluks were slave-soldiers who became the rulers of Egypt and broke the Mongols at Ain Jalut in 1260 — the only army that did. Their targe was small, light, gold-leafed, useless against missiles but perfect for the saber-duel of horse against horse. Napoleon fought them at the Pyramids and was startled by how good they were. The empire of the slaves outlasted the empire of the emperor.",
+    "lore": "The Mamluks were slave-soldiers who became the rulers of Egypt and broke the Mongols at Ain Jalut in 1260 \u2014 the only army that did. Their targe was small, light, gold-leafed, useless against missiles but perfect for the saber-duel of horse against horse. Napoleon fought them at the Pyramids and was startled by how good they were. The empire of the slaves outlasted the empire of the emperor.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 72,
@@ -1310,13 +1115,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Mameluke Targe broke the Mongols at Ain Jalut — armor class improves by 2."
-    }
+    "floorSpawnWeight": {}
   },
   "o_tate_of_the_samurai": {
     "name": "O-Tate of the Samurai",
@@ -1343,7 +1142,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a tall lacquered wooden screen on a single leg",
-    "lore": "Japanese warfare almost never used hand-held shields — both samurai hands belonged to the katana or the bow. Instead the o-tate was a tall wooden screen that stood on the ground in front of the archers. Wall, not gear. At Nagashino in 1575, Oda Nobunaga set up three thousand arquebusiers behind a palisade of o-tate and broke the Takeda cavalry in a single afternoon. The shield wins when it is not being held.",
+    "lore": "Japanese warfare almost never used hand-held shields \u2014 both samurai hands belonged to the katana or the bow. Instead the o-tate was a tall wooden screen that stood on the ground in front of the archers. Wall, not gear. At Nagashino in 1575, Oda Nobunaga set up three thousand arquebusiers behind a palisade of o-tate and broke the Takeda cavalry in a single afternoon. The shield wins when it is not being held.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 78,
@@ -1351,16 +1150,7 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "The O-Tate wins when it is not being held — at Nagashino it stood between musket-fire and cavalry, deflecting 35% of fire damage."
-    }
+    "floorSpawnWeight": {}
   },
   "skidbladnir_aegis": {
     "name": "Skidbladnir Aegis",
@@ -1388,7 +1178,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a pale shield carved with miniature ship-figures",
-    "lore": "Skidbladnir was Freyr's ship, built by the dwarven Sons of Ivaldi, large enough to hold every god — and yet it folded up small enough to fit in a pouch. This shield is carved with its image. A maker once tried to build the same trick into a smaller object. Whether he succeeded is for you to test. Cold of any kind passes through it without resistance, the way wind passes through folded sails.",
+    "lore": "Skidbladnir was Freyr's ship, built by the dwarven Sons of Ivaldi, large enough to hold every god \u2014 and yet it folded up small enough to fit in a pouch. This shield is carved with its image. A maker once tried to build the same trick into a smaller object. Whether he succeeded is for you to test. Cold of any kind passes through it without resistance, the way wind passes through folded sails.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 82,
@@ -1396,16 +1186,7 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "cold",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Skidbladnir Aegis folds like Freyr's ship — cold of any kind passes through it, deflecting 50% of cold damage."
-    }
+    "floorSpawnWeight": {}
   },
   "smoking_mirror_of_tezcatlipoca": {
     "name": "Smoking Mirror of Tezcatlipoca",
@@ -1471,15 +1252,6 @@
         "passive_spell_reflect": 30,
         "passive_mirror_of_souls": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Smoking Mirror of Tezcatlipoca turns spells back upon their casters — it deflects 50% of psychic damage."
     }
   },
   "vajra_paramita": {
@@ -1509,7 +1281,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small round shield inscribed with a thunderbolt",
-    "lore": "In Vedic and Buddhist iconography the vajra is both lightning and diamond — what cannot be broken, and what breaks everything else. Indra carries one. So does Vajrapani, the wrathful protector of the Buddha. The paramitas are six perfections — generosity, ethics, patience, effort, meditation, wisdom — that take a soul from this shore to the far shore. Whoever forged this shield believed the vajra could carry a man across.",
+    "lore": "In Vedic and Buddhist iconography the vajra is both lightning and diamond \u2014 what cannot be broken, and what breaks everything else. Indra carries one. So does Vajrapani, the wrathful protector of the Buddha. The paramitas are six perfections \u2014 generosity, ethics, patience, effort, meditation, wisdom \u2014 that take a soul from this shore to the far shore. Whoever forged this shield believed the vajra could carry a man across.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 86,
@@ -1517,16 +1289,7 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "lightning",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Vajra Paramita is both lightning and diamond — it deflects 50% of lightning damage."
-    }
+    "floorSpawnWeight": {}
   },
   "horse_armor_of_the_norns": {
     "name": "Horse-Armor of the Norns",
@@ -1555,7 +1318,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a kite shield wreathed in carved running figures",
-    "lore": "Urd, Verdandi, and Skuld — past, becoming, and what-should-be — sit beneath Yggdrasil and weave the fates of gods and men. Even Odin obeys what they decide. The shield carved with their three running figures has the property of returning what was sent — the past as it was, the present as it is, the future as it will be. None of those is comforting. The shield does not pretend otherwise.",
+    "lore": "Urd, Verdandi, and Skuld \u2014 past, becoming, and what-should-be \u2014 sit beneath Yggdrasil and weave the fates of gods and men. Even Odin obeys what they decide. The shield carved with their three running figures has the property of returning what was sent \u2014 the past as it was, the present as it is, the future as it will be. None of those is comforting. The shield does not pretend otherwise.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 89,
@@ -1563,16 +1326,7 @@
     "peak_weight": 0.4,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Horse-Armor of the Norns returns what was sent — it deflects 30% of all elemental damage."
-    }
+    "floorSpawnWeight": {}
   },
   "scarab_of_apophis_binding": {
     "name": "Scarab of Apophis-Binding",
@@ -1601,7 +1355,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a round shield carved as a green stone beetle",
-    "lore": "Every night the serpent Apophis tries to swallow the sun-barge of Ra in the underworld, and every night Set or Bastet or sometimes the scarab-god Khepri turns him back. The scarab pushes the sun across the sky each morning. This shield is carved as a scarab and inscribed with the binding-spells from the Book of Overthrowing Apophis. It catches what is thrown and sends it back at the thrower — and Apophis, in the dark beneath the world, hisses with frustration.",
+    "lore": "Every night the serpent Apophis tries to swallow the sun-barge of Ra in the underworld, and every night Set or Bastet or sometimes the scarab-god Khepri turns him back. The scarab pushes the sun across the sky each morning. This shield is carved as a scarab and inscribed with the binding-spells from the Book of Overthrowing Apophis. It catches what is thrown and sends it back at the thrower \u2014 and Apophis, in the dark beneath the world, hisses with frustration.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 95,
@@ -1609,16 +1363,7 @@
     "peak_weight": 0.35,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "unholy",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Scarab of Apophis-Binding hisses back at every serpent — it deflects 50% of unholy damage."
-    }
+    "floorSpawnWeight": {}
   },
   "yamas_dharma_watch": {
     "name": "Yama's Dharma-Watch",
@@ -1648,7 +1393,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a black iron kite shield with a buffalo-horn crest",
-    "lore": "Yama was the first man, the first to die, and so by right became king of the dead — both in Vedic India and in Buddhist Tibet, where he is the wrathful judge with a buffalo's head. He carries a noose, a club, and the Mirror of Karma in which the dead see every action of their lives unflinching. This shield is forged from the Mirror's outer rim. To attack its bearer is to be measured. Many spells, having been measured, decline to land.",
+    "lore": "Yama was the first man, the first to die, and so by right became king of the dead \u2014 both in Vedic India and in Buddhist Tibet, where he is the wrathful judge with a buffalo's head. He carries a noose, a club, and the Mirror of Karma in which the dead see every action of their lives unflinching. This shield is forged from the Mirror's outer rim. To attack its bearer is to be measured. Many spells, having been measured, decline to land.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 97,
@@ -1656,15 +1401,6 @@
     "peak_weight": 0.35,
     "max_enchant": 3,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {},
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "Yama's Dharma-Watch measures every spell against the Mirror of Karma — it deflects 50% of psychic damage."
-    }
+    "floorSpawnWeight": {}
   }
 }

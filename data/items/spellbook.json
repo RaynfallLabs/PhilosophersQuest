@@ -293,14 +293,8 @@
     "spell_name": "Army of Darkness",
     "mp_cost": 7,
     "unidentified_name": "a book bound in human flesh",
-    "lore": "Naturom Demonto â€” roughly translated, the Book of the Dead. Bound in human flesh and inked in blood, this ancient Sumerian text contains funeral incantations, demon resurrection passages, and prophecies. It is NOT to be read aloud. Seriously. Don't.",
+    "lore": "Naturom Demonto \u00e2\u20ac\u201d roughly translated, the Book of the Dead. Bound in human flesh and inked in blood, this ancient Sumerian text contains funeral incantations, demon resurrection passages, and prophecies. It is NOT to be read aloud. Seriously. Don't.",
     "read_threshold": 3,
-    "mastery_blessing": {
-      "kind": "spellbook_mp_discount",
-      "value": 3,
-      "scope": "item",
-      "desc": "Army of Darkness costs 3 fewer MP to cast."
-    },
     "is_unique": true,
     "weight": 0.3,
     "peak_weight": 0.25,
@@ -325,7 +319,7 @@
     "spell_name": "Cleanse",
     "mp_cost": 2,
     "unidentified_name": "pale green tome",
-    "lore": "A healer's primer on purification magic. The spells within were developed by temple physicians who needed to cure plague victims without touching them. One incantation removes any single affliction â€” poison, paralysis, disease, curse. Simple, reliable, life-saving.",
+    "lore": "A healer's primer on purification magic. The spells within were developed by temple physicians who needed to cure plague victims without touching them. One incantation removes any single affliction \u00e2\u20ac\u201d poison, paralysis, disease, curse. Simple, reliable, life-saving.",
     "read_threshold": 2,
     "weight": 0.3,
     "peak_weight": 0.25
@@ -348,7 +342,7 @@
     "spell_name": "Empower",
     "mp_cost": 7,
     "unidentified_name": "gold-edged battle tome",
-    "lore": "A war-mage's secret: channel arcane energy into a physical weapon for a single devastating strike. The technique was perfected by the battlemages of Carthage, who could shatter siege gates with an empowered hammer blow. Cast it, then strike â€” the next melee attack deals triple damage.",
+    "lore": "A war-mage's secret: channel arcane energy into a physical weapon for a single devastating strike. The technique was perfected by the battlemages of Carthage, who could shatter siege gates with an empowered hammer blow. Cast it, then strike \u00e2\u20ac\u201d the next melee attack deals triple damage.",
     "read_threshold": 3,
     "weight": 0.3,
     "peak_weight": 0.25
@@ -371,7 +365,7 @@
     "spell_name": "Smite",
     "mp_cost": 13,
     "unidentified_name": "radiant ivory tome",
-    "lore": "The word of divine judgment, written in letters of fire. This spell calls down holy wrath upon a single target, bypassing all mortal resistances. It was said to be the weapon of archangels against demons â€” pure righteous force that recognizes no shield, no armor, no magical ward.",
+    "lore": "The word of divine judgment, written in letters of fire. This spell calls down holy wrath upon a single target, bypassing all mortal resistances. It was said to be the weapon of archangels against demons \u00e2\u20ac\u201d pure righteous force that recognizes no shield, no armor, no magical ward.",
     "read_threshold": 4,
     "weight": 0.3,
     "peak_weight": 0.25
@@ -394,7 +388,7 @@
     "spell_name": "Summon Guardian",
     "mp_cost": 13,
     "unidentified_name": "moss-green tome with claw marks",
-    "lore": "Druids of the ancient groves could call spirit-beasts from the aether to fight alongside them. The guardian manifests for a brief time â€” drawn from the essence of creatures the caster has encountered. It fights, it protects, and then it fades. But in those precious moments, you are not alone.",
+    "lore": "Druids of the ancient groves could call spirit-beasts from the aether to fight alongside them. The guardian manifests for a brief time \u00e2\u20ac\u201d drawn from the essence of creatures the caster has encountered. It fights, it protects, and then it fades. But in those precious moments, you are not alone.",
     "read_threshold": 4,
     "weight": 0.3,
     "peak_weight": 0.25
@@ -417,7 +411,7 @@
     "spell_name": "Meteor",
     "mp_cost": 16,
     "unidentified_name": "charred obsidian tome",
-    "lore": "The most destructive evocation known to mortal spellcraft. A fragment of a dying star is summoned from the void and hurled into the material plane. Everything in sight burns. The original text was recovered from the Library of Alexandria â€” one of the few scrolls to survive the fire, ironically.",
+    "lore": "The most destructive evocation known to mortal spellcraft. A fragment of a dying star is summoned from the void and hurled into the material plane. Everything in sight burns. The original text was recovered from the Library of Alexandria \u00e2\u20ac\u201d one of the few scrolls to survive the fire, ironically.",
     "read_threshold": 5,
     "weight": 0.3,
     "peak_weight": 0.25
@@ -440,7 +434,7 @@
     "spell_name": "Time Freeze",
     "mp_cost": 20,
     "unidentified_name": "crystalline tome that hums faintly",
-    "lore": "To freeze time itself â€” this is the ambition that drove the greatest chronomancers to madness. The spell does not stop time; it suspends causality for all beings except the caster. For five heartbeats, nothing moves, nothing thinks, nothing acts. Use it to flee, to heal, to strike. It is the ultimate emergency â€” and finding this book may be the rarest stroke of fortune in your entire journey.",
+    "lore": "To freeze time itself \u00e2\u20ac\u201d this is the ambition that drove the greatest chronomancers to madness. The spell does not stop time; it suspends causality for all beings except the caster. For five heartbeats, nothing moves, nothing thinks, nothing acts. Use it to flee, to heal, to strike. It is the ultimate emergency \u00e2\u20ac\u201d and finding this book may be the rarest stroke of fortune in your entire journey.",
     "read_threshold": 5,
     "weight": 0.3,
     "peak_weight": 0.25
@@ -732,12 +726,6 @@
     "identified": false,
     "unidentified_name": "a tome of pale parchment",
     "lore": "The Book of Formation. Attributed to Abraham; the oldest extant Jewish mystical text. It teaches the twenty-two letters of the Hebrew alphabet and the ten sefirot, and how the world was spoken into being. The Maharal of Prague used a copy in the sixteenth century to shape a golem of clay; the golem walked the streets of the Jewish quarter until the Maharal removed the Name from its forehead.",
-    "mastery_blessing": {
-      "kind": "spellbook_mp_discount",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Sefer Yetzirah teaches the twenty-two letters that spoke the world into being — its spell costs 2 fewer MP."
-    },
     "weight": 0.3
   },
   "picatrix": {
@@ -762,13 +750,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a violet leather-bound tome",
-    "lore": "Picatrix — Ghayat al-Hakim, the Aim of the Sage. Composed in tenth-century al-Andalus, translated to Latin under Alfonso X, and read across Europe for the next four centuries. It teaches talismanic magic, planetary hours, and how to summon fire by naming a planet's degree of ascension. Dee owned a copy. Ficino read it carefully and pretended he hadn't.",
-    "mastery_blessing": {
-      "kind": "spellbook_mp_discount",
-      "value": 2,
-      "scope": "item",
-      "desc": "Picatrix systematised four centuries of talismanic magic — its spell costs 2 fewer MP."
-    },
+    "lore": "Picatrix \u2014 Ghayat al-Hakim, the Aim of the Sage. Composed in tenth-century al-Andalus, translated to Latin under Alfonso X, and read across Europe for the next four centuries. It teaches talismanic magic, planetary hours, and how to summon fire by naming a planet's degree of ascension. Dee owned a copy. Ficino read it carefully and pretended he hadn't.",
     "weight": 0.3
   },
   "lemegeton": {
@@ -793,13 +775,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a black tome sealed with sigils",
-    "lore": "The Lemegeton. Five books bound as one; the first, the Ars Goetia, lists the seventy-two demons King Solomon bound to his service. Each demon has a sigil, a number of legions, and a particular use — Bael teaches invisibility, Asmodeus answers questions truthfully, Vassago finds lost things. Crowley translated it in 1904. Read it carefully.",
-    "mastery_blessing": {
-      "kind": "spellbook_mp_discount",
-      "value": 3,
-      "scope": "item",
-      "desc": "The Lemegeton names all seventy-two demons of Solomon — its spell costs 3 fewer MP."
-    },
+    "lore": "The Lemegeton. Five books bound as one; the first, the Ars Goetia, lists the seventy-two demons King Solomon bound to his service. Each demon has a sigil, a number of legions, and a particular use \u2014 Bael teaches invisibility, Asmodeus answers questions truthfully, Vassago finds lost things. Crowley translated it in 1904. Read it carefully.",
     "weight": 0.3
   },
   "spellbook_frost_touch": {
@@ -895,7 +871,7 @@
     "mp_cost": 3,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Dee's earliest divination tract — translation from the original Enochian, partial fragments only.",
+    "lore": "Dee's earliest divination tract \u2014 translation from the original Enochian, partial fragments only.",
     "weight": 0.3
   },
   "spellbook_blink": {
@@ -967,7 +943,7 @@
     "mp_cost": 10,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Lullaby of the Watchman of Antioch — read aloud, every sleeper in the room dreams of the same hill.",
+    "lore": "Lullaby of the Watchman of Antioch \u2014 read aloud, every sleeper in the room dreams of the same hill.",
     "weight": 0.3
   },
   "spellbook_detect_monsters_t2": {
@@ -1015,7 +991,7 @@
     "mp_cost": 6,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "St Joseph of Cupertino's confessional notes — the saint who could not stop floating. Several editions, all repudiated.",
+    "lore": "St Joseph of Cupertino's confessional notes \u2014 the saint who could not stop floating. Several editions, all repudiated.",
     "weight": 0.3
   },
   "spellbook_cone_of_cold": {
@@ -1063,7 +1039,7 @@
     "mp_cost": 14,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Galen's Greater Healing — recovered from the Library of Alexandria fire by an apprentice who lost his arm carrying it out.",
+    "lore": "Galen's Greater Healing \u2014 recovered from the Library of Alexandria fire by an apprentice who lost his arm carrying it out.",
     "weight": 0.3
   },
   "spellbook_stoneskin": {
@@ -1087,7 +1063,7 @@
     "mp_cost": 12,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Dwarven Cantor's diary — describes the breath-technique that hardens the body to stone for one full breath cycle of seconds.",
+    "lore": "Dwarven Cantor's diary \u2014 describes the breath-technique that hardens the body to stone for one full breath cycle of seconds.",
     "weight": 0.3
   },
   "spellbook_counterspell": {
@@ -1111,7 +1087,7 @@
     "mp_cost": 11,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Mordenkainen's Argument — a single chapter on undoing another's working before it lands.",
+    "lore": "Mordenkainen's Argument \u2014 a single chapter on undoing another's working before it lands.",
     "weight": 0.3
   },
   "spellbook_dispel_magic": {
@@ -1135,7 +1111,7 @@
     "mp_cost": 12,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "The Latin original of the rite — late-Renaissance, copied off a folio Dee burned but didn't burn well enough.",
+    "lore": "The Latin original of the rite \u2014 late-Renaissance, copied off a folio Dee burned but didn't burn well enough.",
     "weight": 0.3
   },
   "spellbook_mapping": {
@@ -1183,7 +1159,7 @@
     "mp_cost": 17,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Storm-singer's grimoire. Lightning forks one extra time for every rung of your chain — the arc-math is in the appendix.",
+    "lore": "Storm-singer's grimoire. Lightning forks one extra time for every rung of your chain \u2014 the arc-math is in the appendix.",
     "weight": 0.3
   },
   "spellbook_greater_invis": {
@@ -1207,7 +1183,7 @@
     "mp_cost": 18,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Tarnhelm research notes from the Bayreuth Festival library — three Wagner-era scholars vanished while reading it.",
+    "lore": "Tarnhelm research notes from the Bayreuth Festival library \u2014 three Wagner-era scholars vanished while reading it.",
     "weight": 0.3
   },
   "spellbook_mass_paralyze": {
@@ -1231,7 +1207,7 @@
     "mp_cost": 20,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Carpathian witch's recipe — paralysis was always her preferred technique, never the killing blow.",
+    "lore": "Carpathian witch's recipe \u2014 paralysis was always her preferred technique, never the killing blow.",
     "weight": 0.3
   },
   "spellbook_banishment": {
@@ -1303,7 +1279,7 @@
     "mp_cost": 14,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A  tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Vesper-prayer compendium — clerical, but the working incantation is the same one wizards use.",
+    "lore": "Vesper-prayer compendium \u2014 clerical, but the working incantation is the same one wizards use.",
     "weight": 0.3
   },
   "spellbook_meteor_swarm": {
@@ -1423,7 +1399,7 @@
     "mp_cost": 30,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Lazarus liturgy — full text, with the rabbinical disclaimer that nobody who has tried it has reported their experience usefully.",
+    "lore": "Lazarus liturgy \u2014 full text, with the rabbinical disclaimer that nobody who has tried it has reported their experience usefully.",
     "weight": 0.3
   },
   "spellbook_foresight": {
@@ -1495,7 +1471,7 @@
     "mp_cost": 26,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Persian source-text on binding-into-stone — used originally against a particular djinn who was getting out of hand.",
+    "lore": "Persian source-text on binding-into-stone \u2014 used originally against a particular djinn who was getting out of hand.",
     "weight": 0.3
   },
   "spellbook_mass_polymorph": {
@@ -1543,7 +1519,7 @@
     "mp_cost": 35,
     "unidentified_name": "an unfamiliar tome",
     "sprite_desc": "A thick tome bound in dark leather, the cover sigil glowing faintly.",
-    "lore": "Final chapter of the Liber Nihili — only the final chapter survives, and reads as a list of what no longer is.",
+    "lore": "Final chapter of the Liber Nihili \u2014 only the final chapter survives, and reads as a list of what no longer is.",
     "weight": 0.3
   }
 }

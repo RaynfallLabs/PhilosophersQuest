@@ -194,7 +194,6 @@ def test_player_fields_initialize_cleanly():
     assert hasattr(p, 'total_identifies')
     assert hasattr(p, 'philosopher_tier_claimed')
     assert hasattr(p, 'philosophers_mantle')
-    assert hasattr(p, 'unlocked_masteries')
     # Phase 3 fields
     assert hasattr(p, 'hero_passives')
     assert hasattr(p, 'hero_specials')

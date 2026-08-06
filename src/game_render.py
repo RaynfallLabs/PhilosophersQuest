@@ -624,10 +624,9 @@ class RenderMixin:
                     lines.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
                 if 'status' in fx:
                     lines.append(f"Grants {str(fx['status']).replace('_', ' ').title()}")
-            if getattr(item, 'mastery_blessing', None):
-                desc = item.mastery_blessing.get('desc', '')
-                if desc:
-                    lines.append(desc)
+            cb = getattr(item, 'carry_bonus', None) or {}
+            if cb.get('stat') and cb.get('amount'):
+                lines.append(f"{cb['stat']} +{cb['amount']} while carried")
             return lines or ["No revealed special abilities."]
 
         focus = getattr(self, '_charsheet_focus', 'loadout')
@@ -3975,13 +3974,11 @@ class RenderMixin:
 
         # --- Identification ---
         known_ids = getattr(p, 'known_item_ids', set()) or set()
-        masteries = getattr(p, 'unlocked_masteries', {}) or {}
         total_ids = int(getattr(p, 'total_identifies', 0) or 0)
         mantle = bool(getattr(p, 'philosophers_mantle', False))
         id_rows = [
             f"  Total identifies performed: {total_ids}",
-            f"  Items learned (any tier):    {len(known_ids)}",
-            f"  Mastery blessings earned:    {len(masteries)}",
+            f"  Item types learned:          {len(known_ids)}",
         ]
         if mantle:
             id_rows.append("  Mantle of the Philosopher: granted")
@@ -4313,20 +4310,19 @@ class RenderMixin:
 
     def _draw_identify_menu(self):
         entries = []
-        from items import id_progress_marker
+        from items import item_id_tier
         for i, (item, is_g, is_c) in enumerate(self.identify_menu_items):
-            progress_marker = id_progress_marker(getattr(item, 'id_level', 0))
+            tier = item_id_tier(item)
             if isinstance(item, Corpse):
-                detail_text = "Corpse lore"
+                detail_text = f"Corpse lore | ID tier {tier}"
             else:
                 type_label = item.item_class.replace('_', ' ').title()
-                tier_lbl = f" | tier {item.quiz_tier}" if hasattr(item, 'quiz_tier') else ""
-                detail_text = f"{type_label}{tier_lbl}"
+                detail_text = f"{type_label} | ID tier {tier}"
             source = "GROUND" if is_g else "PACK"
             if is_c:
                 source = "CORPSE"
             entries.append({
-                'name': self._display_name(item) + progress_marker,
+                'name': self._display_name(item),
                 'detail': detail_text,
                 'key': self._menu_letter(i),
                 'icon': item,
@@ -4337,7 +4333,7 @@ class RenderMixin:
                     item,
                     "Reveal this item directly."
                     if getattr(self, '_scroll_identify_pending', False)
-                    else "Start the philosophy identification quiz."),
+                    else "Answer ONE philosophy question at the item's tier."),
             })
 
         selected = self._menu_clamp_selection('_identify_sel', len(entries))
@@ -4347,7 +4343,7 @@ class RenderMixin:
             ("IDENTIFICATION", FP.GOLD_BRIGHT, self.font_sm),
             (f"Shard: {'carried' if has_shard else 'passive or override'}", FP.BODY_TEXT, self.font_sm),
             (f"Targets: {len(entries)}", FP.BODY_TEXT, self.font_sm),
-            ("Uniques progress from ID 0/5 to 5/5. Common items jump on success.",
+            ("One question. Right: fully identified. Wrong: the Shard stuns you.",
              FP.FADED_TEXT, self.font_sm),
         ])
         self._draw_decision_menu_variant_a(
@@ -6630,14 +6626,12 @@ class RenderMixin:
                 lines.append((f"T{tier} ({status}): " + ('; '.join(labels) if labels else '?'),
                               color, self.font_sm))
 
-        if id_level >= 5:
-            mastery = getattr(item, 'mastery_blessing', None) or {}
-            desc = mastery.get('desc') if isinstance(mastery, dict) else ''
-            if desc:
-                lines += [
-                    ("Mastery", FP.GOLD_BRIGHT, self.font_sm),
-                    (desc, FP.CYAN_ACCENT, self.font_sm),
-                ]
+        cb = getattr(item, 'carry_bonus', None) or {}
+        if cb.get('stat') and cb.get('amount'):
+            lines += [
+                ("Keepsake", FP.GOLD_BRIGHT, self.font_sm),
+                (f"{cb['stat']} +{cb['amount']} while carried", FP.CYAN_ACCENT, self.font_sm),
+            ]
 
         return lines or [("No revealed mechanics recorded.", FP.FADED_TEXT, self.font_sm)]
 
@@ -6645,7 +6639,8 @@ class RenderMixin:
         mdef = getattr(corpse, 'monster_def', None) or {}
         identity = [
             (getattr(corpse, 'monster_name', 'Unknown creature'), FP.GOLD_BRIGHT, get_font('heading', 20)),
-            (f"Bestiary study: {id_level}/5", FP.CYAN_ACCENT, self.font_sm),
+            ("Bestiary: identified" if id_level >= 5 else "Bestiary: unstudied",
+             FP.CYAN_ACCENT, self.font_sm),
         ]
         if id_level >= 3:
             tags = mdef.get('tags', []) or []
@@ -7082,29 +7077,16 @@ class RenderMixin:
         from text_layout import wrap_lines
 
         if is_corpse:
-            # -- CORPSE / BESTIARY ENTRY: progressive reveal by id_level ----
-            # 1: name + symbol (always visible in the title)
-            # 2: basic stats (HP, THAC0, speed, attacks)
-            # 3: resistances + weaknesses + family tag
-            # 4: full lore text
-            # 5: family mastery banner
+            # -- CORPSE / BESTIARY ENTRY --------------------------------
+            # One-question identify: a corpse is either unstudied (id_level
+            # 0 \u2014 name/symbol only) or fully identified (id_level 5 \u2014
+            # stats, resistances, family, lore all at once). The >= gates
+            # below are kept for old-save corpses stuck at partial levels.
             id_level = int(getattr(subject, 'id_level', 0) or 0)
-            title_text = f"{subject.monster_name.upper()}  --  BESTIARY (level {id_level}/5)"
+            _bestiary_state = "identified" if id_level >= 5 else "unstudied"
+            title_text = f"{subject.monster_name.upper()}  --  BESTIARY ({_bestiary_state})"
             mdef = subject.monster_def or {}
             stat_lines: list[str] = []
-
-            # Family mastery banner \u2014 top line once mastered (id_level == 5).
-            if id_level >= 5:
-                from monster_classes import (get_monster_family)
-                fam = get_monster_family(subject)
-                if fam:
-                    blessing = (getattr(self.player,
-                                        'unlocked_monster_class_masteries', {})
-                                .get(fam))
-                    if blessing:
-                        stat_lines.append(
-                            f">> MASTERED ({fam}) <<  {blessing.get('desc', '')}"
-                        )
 
             # Basic stats are revealed at level 2+.
             if id_level >= 2:
@@ -7181,34 +7163,24 @@ class RenderMixin:
 
         else:
             # -- ITEM IDENTIFICATION ENTRY --------------------------------
-            # id_level controls progressive reveal for uniques. Non-uniques
-            # default to 5 (full reveal) once identified. Default to 5 for
-            # back-compat when an item doesn't have the field.
+            # True Name model: TYPE knowledge reveals stats + lore on any
+            # copy, so the id_level display gates below treat a known-type
+            # item as fully revealed. The aura (BUC) line stays strictly
+            # per-instance (buc_known), and the enchant line only shows for
+            # an identified instance.
             id_level = int(getattr(subject, 'id_level', 5))
+            _instance_known = id_level >= 5
+            try:
+                if self.player.knows_item_type(subject):
+                    id_level = 5
+            except Exception:
+                pass
             item_class_label = subject.item_class.upper()
             title_text = f"{subject.name.upper()}  --  {item_class_label}"
             stat_lines = []
 
-            # Mastery banner \u2014 top line when id_level == 5 and mastery has
-            # been claimed. Uniques key on item.id (unlocked_masteries); commons
-            # key on mastery_class (unlocked_class_masteries).
-            mastered = None
-            if id_level >= 5:
-                mastered = (getattr(self.player, 'unlocked_masteries', {})
-                            .get(subject.id))
-                if not mastered:
-                    try:
-                        from class_masteries import get_mastery_class
-                        cls_id = get_mastery_class(subject)
-                        mastered = (getattr(self.player, 'unlocked_class_masteries', {})
-                                    .get(cls_id))
-                    except Exception:
-                        pass
-            if mastered:
-                stat_lines.append(f">> MASTERED <<  {mastered.get('desc', '')}")
-
-            # Aura line at id_level >= 2 (BUC known).
-            if id_level >= 2:
+            # Aura line only when THIS copy's BUC has been sensed.
+            if getattr(subject, 'buc_known', False):
                 _buc = getattr(subject, 'buc', 'uncursed')
                 aura_text = {
                     'blessed': "Aura: blessed (radiates a holy light)",
@@ -7216,6 +7188,8 @@ class RenderMixin:
                     'uncursed': "Aura: uncursed",
                 }.get(_buc, "Aura: unclear")
                 stat_lines.append(aura_text)
+            elif id_level >= 5 and not _instance_known:
+                stat_lines.append("Aura: unknown \u2014 identify THIS copy to read it.")
 
             # Set membership banner
             if getattr(subject, 'set_id', ''):
@@ -7258,7 +7232,8 @@ class RenderMixin:
 
             elif id_level >= 3 and isinstance(subject, Armor):
                 stat_lines.append(f"Slot: {subject.slot}  |  Material: {subject.material}  |  Tier: {subject.tier}")
-                stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: +{subject.enchant_bonus}")
+                _ench = f"+{subject.enchant_bonus}" if _instance_known else "unrevealed"
+                stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: {_ench}")
                 stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
                 if subject.damage_resistances:
                     res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())
@@ -7268,7 +7243,8 @@ class RenderMixin:
 
             elif id_level >= 3 and isinstance(subject, Shield):
                 stat_lines.append(f"Material: {subject.material}  |  Tier: {subject.tier}")
-                stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: +{subject.enchant_bonus}")
+                _ench = f"+{subject.enchant_bonus}" if _instance_known else "unrevealed"
+                stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: {_ench}")
                 stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
                 if subject.damage_resistances:
                     res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())

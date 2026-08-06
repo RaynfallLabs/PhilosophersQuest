@@ -411,13 +411,8 @@ def test_abaddon_multi_attack_consumer_in_monster_act():
         "No `multi_attack_always` -> `_fenrir_multi_attack` consumer site found")
 
 
-# ---------------------------------------------------------------------------
-# 6. Class mastery wiring — already passes; sanity-check the test file exists
-# ---------------------------------------------------------------------------
-
-def test_class_acc_mastery_wiring_test_exists():
-    """All 12 mastery kinds had a dedicated test file already shipped."""
-    assert (ROOT / "tests" / "test_mastery_wiring.py").exists()
+# (Class-mastery wiring meta-test removed 2026-08-06 — the mastery system
+# was retired with the one-question identify redesign.)
 
 
 # ---------------------------------------------------------------------------

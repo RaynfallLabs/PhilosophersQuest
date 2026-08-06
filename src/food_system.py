@@ -686,7 +686,6 @@ def drink_potion(player, potion) -> list[str]:
     No quiz required. Effect applied immediately.
     """
     from dice import roll as roll_dice
-    from class_masteries import get_mastery_class
 
     effect   = potion.effect
     power    = potion.power
@@ -703,40 +702,17 @@ def drink_potion(player, potion) -> list[str]:
     _buff_mult = 1.5 if buc == 'blessed' else (0.5 if buc == 'cursed' else 1.0)
     _harm_mult = 0.0 if buc == 'blessed' else (1.5 if buc == 'cursed' else 1.0)
 
-    # --- Class mastery multipliers (commons) ---
-    # potion_potency_bonus: heal/extra_heal/full_heal amounts scaled up.
-    # potion_duration_bonus: matching potion class extends the buff duration.
-    _pot_class_mast = player.unlocked_class_masteries.get(
-        get_mastery_class(potion))
-    if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_potency_bonus':
-        # Potency boosts BOTH heal amount AND buff/debuff duration.
-        # Per user feedback 2026-05-29: previously only _heal_mult was
-        # scaled, so mastered paralysis/haste/etc. potions claimed
-        # "20% more effective" but their duration was unchanged.
-        _bonus = float(_pot_class_mast.get('value', 0))
-        _heal_mult *= 1.0 + _bonus
-        _buff_mult *= 1.0 + _bonus
-    if _pot_class_mast and _pot_class_mast.get('kind') == 'potion_duration_bonus':
-        duration = int(duration) + int(_pot_class_mast.get('value', 0))
-
     # --- Binary-effect potions: magnitude is meaningless (a teleport either
-    # fires or it doesn't), so mastery/BUC act on RELIABILITY, not size:
-    #   mastered class OR blessed -> chance the dose isn't used up (_preserve)
-    #   cursed                    -> chance the magic fails outright (_fizzle)
-    # The default mastery for these classes is 'potion_preserve' (see
-    # class_masteries.default_blessing_for_class); the quaff caller re-adds a
-    # preserved potion to inventory.
+    # fires or it doesn't), so BUC acts on RELIABILITY, not size:
+    #   blessed -> chance the dose isn't used up (_preserve; the quaff
+    #              caller re-adds a preserved potion to inventory)
+    #   cursed  -> chance the magic fails outright (_fizzle)
     _BINARY_EFFECTS = {'teleport', 'cure_poison', 'cure_disease', 'cure_all',
                        'restore_str', 'gain_level'}
-    _mastered = bool(_pot_class_mast)
     _is_binary = effect in _BINARY_EFFECTS
     _preserve_chance = 0.0
     _fizzle = False
     if _is_binary:
-        if _pot_class_mast:
-            _preserve_chance += (float(_pot_class_mast.get('value', 0.25))
-                                 if _pot_class_mast.get('kind') == 'potion_preserve'
-                                 else 0.25)
         if buc == 'blessed':
             _preserve_chance += 0.25
         elif buc == 'cursed':
@@ -760,12 +736,12 @@ def drink_potion(player, potion) -> list[str]:
         messages.append(f"Deep wounds knit closed with startling speed. (+{amt} HP)")
 
     elif effect == 'full_heal':
-        # Blessed or mastered full-healing scours away ALL debuffs FIRST, so a
+        # Blessed full-healing scours away ALL debuffs FIRST, so a
         # heal-blocking debuff (heal_blocked / diseased) can't stop the heal that
         # follows. Order matters: restore_hp is a no-op while heal_blocked, so the
         # cleanse must run before it -- otherwise you'd be cured but still at 1 HP.
         cleared = []
-        if buc == 'blessed' or _mastered:
+        if buc == 'blessed':
             from status_effects import DEBUFFS
             cleared = [d.replace('_', ' ') for d in list(DEBUFFS)
                        if player.status_effects.pop(d, None) is not None]
@@ -1059,7 +1035,7 @@ def drink_potion(player, potion) -> list[str]:
     else:
         messages.append("The potion does nothing obvious.")
 
-    # Binary-potion reliability payoff: a mastered/blessed dose may linger.
+    # Binary-potion reliability payoff: a blessed dose may linger.
     if _is_binary and _preserve_chance > 0 and not _fizzle:
         if roll_dice('1d100') <= int(round(_preserve_chance * 100)):
             messages.append("_preserve")

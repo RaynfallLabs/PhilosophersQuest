@@ -1,16 +1,21 @@
-"""Tests for the 2026-05-17 identify rebuild:
+"""Tests for the one-question identify redesign (2026-08-06).
+
 - id_level field defaults correctly on item subclasses
-- mastery_blessing field loaded from JSON
+- derive_id_tier / item_id_tier: the ONE question's tier, from JSON fields
+- type_class: the granularity of type knowledge (True Name model)
 - Philosopher career arc counter + threshold rewards
-- Mastery application in combat damage calc
-- Quick-BUC doesn't count toward career arc
+- _propagate_identification records TYPE knowledge only (no per-copy bumps)
+- carry_bonus field (Charmander Stuffie / Dreamspun Sketchbook)
+- identified-property back-compat + save migration
+- Item-name composition (unchanged from the 2026-05-28 fix)
 """
 import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from items import Weapon, Accessory, load_items, Potion
+from items import (Weapon, Accessory, load_items, Potion, Corpse,
+                   derive_id_tier, item_id_tier, type_class)
 from player import Player
 import combat
 
@@ -46,25 +51,6 @@ def test_id_level_can_be_explicitly_set_in_defn():
     assert w.id_level == 3
 
 
-# ---------------------------------------------------------------------------
-# mastery_blessing field
-# ---------------------------------------------------------------------------
-
-def test_mastery_blessing_none_by_default():
-    w = _make_weapon()
-    assert w.mastery_blessing is None
-
-
-def test_mastery_blessing_loaded_from_defn():
-    w = _make_weapon(mastery_blessing={
-        'kind': 'weapon_base_damage_bonus', 'value': 3, 'scope': 'item',
-        'desc': 'Test mastery.'
-    })
-    assert w.mastery_blessing is not None
-    assert w.mastery_blessing['kind'] == 'weapon_base_damage_bonus'
-    assert w.mastery_blessing['value'] == 3
-
-
 def test_is_unique_on_base_item():
     """is_unique must live on the base Item class so all subclasses pick it up."""
     a = Accessory({
@@ -76,31 +62,143 @@ def test_is_unique_on_base_item():
 
 
 # ---------------------------------------------------------------------------
-# 20 iconic exemplars actually exist in JSON
+# derive_id_tier — the tier of the ONE identify question
 # ---------------------------------------------------------------------------
 
-def test_20_iconic_exemplars_have_mastery_blessings():
-    """The 20 hand-authored masteries must remain present in the JSON files."""
-    expected = {
-        'weapon': {'soul_reaver', 'dawnbreaker', 'excalibur', 'mjolnir',
-                   'hrunting', 'gungnir', 'khopesh_of_anubis', 'sword_of_michael'},
-        'armor': {'babr_e_bayan', 'coat_of_cu_chulainn', 'dragon_mail_of_sigurd'},
-        'shield': {'greater_aegis_of_athena'},
-        'accessory': {'andvaranaut', 'draupnir', 'megingjord', 'ankh_of_isis', 'eye_of_horus'},
-        'wand': {'aarons_rod'},
-        'scroll': {'scroll_of_annihilation'},
-        'spellbook': {'necronomicon'},
+def test_derive_id_tier_explicit_override_wins():
+    assert derive_id_tier(explicit=3, tier=1, quiz_tier=1, peak_floor=90) == 3
+
+
+def test_derive_id_tier_gear_tier_first():
+    assert derive_id_tier(tier=2, quiz_tier=5, peak_floor=90) == 2
+
+
+def test_derive_id_tier_quiz_tier_next():
+    assert derive_id_tier(quiz_tier=4, peak_floor=5) == 4
+
+
+def test_derive_id_tier_peak_floor_bands():
+    """100-floor dungeon: 20-floor bands map to tiers 1-5."""
+    assert derive_id_tier(peak_floor=1) == 1
+    assert derive_id_tier(peak_floor=20) == 1
+    assert derive_id_tier(peak_floor=21) == 2
+    assert derive_id_tier(peak_floor=45) == 3
+    assert derive_id_tier(peak_floor=70) == 4
+    assert derive_id_tier(peak_floor=95) == 5
+    assert derive_id_tier(peak_floor=999) == 5   # clamped
+
+
+def test_derive_id_tier_spawn_weight_band_fallback():
+    """Potions have no peak_floor/quiz_tier — the heaviest floorSpawnWeight
+    band decides (midpoint through the 20-floor bands)."""
+    fsw = {'1-20': 120, '21-40': 80, '41-60': 50}
+    assert derive_id_tier(floor_spawn_weight=fsw) == 1
+    deep = {'1-20': 5, '61-80': 90}
+    assert derive_id_tier(floor_spawn_weight=deep) == 4
+
+
+def test_derive_id_tier_min_level_last_resort():
+    assert derive_id_tier(min_level=50) == 3
+
+
+def test_derive_id_tier_default_is_one():
+    assert derive_id_tier() == 1
+
+
+def test_derive_id_tier_uniques_floor_at_four():
+    assert derive_id_tier(is_unique=True, tier=1) == 4
+    assert derive_id_tier(is_unique=True, tier=5) == 5
+    assert derive_id_tier(is_unique=True) == 4
+
+
+def test_item_id_tier_reads_live_weapon():
+    w = _make_weapon(tier=3)
+    assert item_id_tier(w) == 3
+
+
+def test_item_id_tier_unique_weapon_floors_at_four():
+    w = _make_weapon(tier=2, is_unique=True)
+    assert item_id_tier(w) == 4
+
+
+def test_item_id_tier_json_override_beats_derivation():
+    w = _make_weapon(tier=3, id_tier=1)
+    assert item_id_tier(w) == 1
+
+
+def test_corpse_id_tier_from_harvest_tier():
+    c = Corpse('zombie', 'zombie', 0, 0, harvest_tier=3)
+    assert c.id_tier == 3
+    assert item_id_tier(c) == 3
+
+
+def test_corpse_id_tier_falls_back_to_monster_peak_floor():
+    c = Corpse('golem', 'golem', 0, 0, harvest_tier=0,
+               monster_def={'peak_floor': 55})
+    assert c.id_tier == 3
+
+
+def test_corpse_id_tier_defaults_to_one():
+    c = Corpse('blob', 'blob', 0, 0, harvest_tier=0)
+    assert c.id_tier == 1
+
+
+# ---------------------------------------------------------------------------
+# type_class — the granularity of "once you know it, you know it"
+# ---------------------------------------------------------------------------
+
+def _make_accessory(item_id, name, **overrides):
+    defn = {
+        'id': item_id, 'name': name, 'symbol': '=',
+        'color': [200, 200, 210], 'weight': 0.1, 'item_class': 'accessory',
+        'slot': 'ring', 'identified': False,
     }
-    for cat, ids in expected.items():
-        items = {i.id: i for i in load_items(cat)}
-        for iid in ids:
-            assert iid in items, f"Expected iconic unique {iid} not found in {cat} bank"
-            it = items[iid]
-            assert it.is_unique, f"{iid} should be is_unique=True"
-            assert it.mastery_blessing, f"{iid} should have mastery_blessing"
-            mb = it.mastery_blessing
-            assert mb.get('kind'), f"{iid} mastery missing 'kind'"
-            assert mb.get('desc'), f"{iid} mastery missing 'desc'"
+    defn.update(overrides)
+    return Accessory(defn)
+
+
+def test_type_class_accessory_groups_by_name_slug():
+    """Material variants of the same named ring are ONE learned type."""
+    gold = _make_accessory('ring_protection_gold', 'ring of protection')
+    iron = _make_accessory('ring_protection_iron', 'ring of protection')
+    assert type_class(gold) == type_class(iron) == 'ring_of_protection'
+
+
+def test_type_class_unique_keys_by_id():
+    u = _make_accessory('andvaranaut', 'Andvaranaut', is_unique=True)
+    assert type_class(u) == 'andvaranaut'
+
+
+def test_type_class_non_accessory_keys_by_id():
+    w = _make_weapon()
+    assert type_class(w) == 'test_sword'
+
+
+def test_knows_item_type_via_class():
+    p = Player()
+    gold = _make_accessory('ring_protection_gold', 'ring of protection')
+    iron = _make_accessory('ring_protection_iron', 'ring of protection')
+    p.known_class_ids.add(type_class(gold))
+    assert p.knows_item_type(iron) is True
+
+
+def test_knows_item_type_via_id():
+    p = Player()
+    w = _make_weapon()
+    p.known_item_ids.add('test_sword')
+    assert p.knows_item_type(w) is True
+
+
+def test_tag_match():
+    """_tag_match recognizes monster tag membership and kind fallback."""
+    class _DummyMonster:
+        kind = 'goblin'
+        tags = ['humanoid']
+    m = _DummyMonster()
+    assert combat._tag_match(m, 'humanoid') is True
+    assert combat._tag_match(m, 'undead') is False
+    assert combat._tag_match(m, 'goblin') is True  # matches kind
+    assert combat._tag_match(m, 'all') is True
 
 
 # ---------------------------------------------------------------------------
@@ -112,59 +210,6 @@ def test_player_career_fields_default():
     assert p.total_identifies == 0
     assert p.philosopher_tier_claimed == set()
     assert p.philosophers_mantle is False
-    assert p.unlocked_masteries == {}
-
-
-# ---------------------------------------------------------------------------
-# Mastery application — combat damage
-# ---------------------------------------------------------------------------
-
-class _DummyMonster:
-    """Minimal monster mock for damage-calc tests."""
-    kind = 'goblin'
-    tags = ['humanoid']
-    max_hp = 50
-    hp = 50
-    alive = True
-    is_boss = False
-    dragon_scales = 0
-    status_effects = {}
-
-    def take_damage(self, n):
-        self.hp -= n
-        return n
-
-    def is_dead(self):
-        return self.hp <= 0
-
-    def has_effect(self, _):
-        return False
-
-    def add_effect(self, name, dur):
-        self.status_effects[name] = max(self.status_effects.get(name, 0), dur)
-
-
-def test_weapon_chain_mult_bonus_helper():
-    """The _weapon_mastery helper returns the blessing dict when claimed."""
-    p = Player()
-    w = _make_weapon(id='excalibur', mastery_blessing={
-        'kind': 'weapon_chain_mult_bonus', 'value': 0.25, 'scope': 'item',
-        'desc': 'test',
-    })
-    assert combat._weapon_mastery(p, w) is None  # not yet claimed
-    p.unlocked_masteries[w.id] = w.mastery_blessing
-    m = combat._weapon_mastery(p, w)
-    assert m is not None
-    assert m['value'] == 0.25
-
-
-def test_tag_match():
-    """_tag_match recognizes monster tag membership and kind fallback."""
-    m = _DummyMonster()
-    assert combat._tag_match(m, 'humanoid') is True
-    assert combat._tag_match(m, 'undead') is False
-    assert combat._tag_match(m, 'goblin') is True  # matches kind
-    assert combat._tag_match(m, 'all') is True
 
 
 # ---------------------------------------------------------------------------
@@ -213,7 +258,7 @@ def test_career_75_grants_pattern_recognition():
     h = _CareerHarness()
     _drive_check(h, 75)
     assert 75 in h.player.philosopher_tier_claimed
-    # Pattern Recognition is a flag-only — auto-id logic checked at pickup time
+    # Pattern Recognition is a flag-only — type-reveal logic checked at pickup time
 
 
 def test_career_125_grants_per_once():
@@ -300,162 +345,74 @@ def test_potion_starts_unidentified_with_id_level_0():
 
 
 # ---------------------------------------------------------------------------
-# Data-layer: every is_unique item has a valid mastery_blessing
+# Data-layer: masteries are gone; keepsakes converted to carry_bonus
 # ---------------------------------------------------------------------------
 
-_ALLOWED_KINDS = {
-    'weapon_chain_mult_bonus', 'weapon_base_damage_bonus', 'weapon_damage_vs_tag',
-    'weapon_first_hit_crit', 'weapon_lifesteal', 'weapon_wound_lingers', 'weapon_status_chance',
-    'armor_ac_bonus', 'armor_resist_bonus', 'armor_hp_bonus',
-    'accessory_stat_bonus', 'accessory_passive_strength',
-    'wand_extra_charge', 'scroll_extra_read', 'spellbook_mp_discount', 'potion_potency_bonus',
-    # Cosmetic-only blessing: no mechanical effect, just lore/humor on
-    # the item menu card. Used by the Duck of Doom's T5 reveal
-    # ("The Duck of Doom has no master!").
-    'cosmetic_only',
-}
-
-
-def test_every_unique_has_valid_mastery_blessing():
-    """Every is_unique item across every category must have a valid mastery_blessing."""
-    cats = ['weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'spellbook']
-    missing = []
-    invalid = []
+def test_no_item_carries_mastery_blessing_anymore():
+    cats = ['weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
+            'spellbook', 'potion', 'artifact']
+    leftovers = []
     for cat in cats:
         for it in load_items(cat):
-            if not it.is_unique:
-                continue
-            mb = it.mastery_blessing
-            if not mb:
-                missing.append(f'{cat}:{it.id}')
-                continue
-            if mb.get('kind') not in _ALLOWED_KINDS:
-                invalid.append(f'{cat}:{it.id} -> kind {mb.get("kind")!r}')
-            if not mb.get('desc'):
-                invalid.append(f'{cat}:{it.id} -> empty desc')
-            # 'item' = standard one-shot mastery applied at chain-5.
-            # 'carry' = stat-bonus mastery that applies only while the
-            # item is in inventory (post-mastery); used for slot=none
-            # uniques like Charmander Stuffie / Dreamspun Sketchbook.
-            if mb.get('scope') not in ('item', 'carry'):
-                invalid.append(f'{cat}:{it.id} -> scope {mb.get("scope")!r}')
-    assert not missing, f"Uniques missing mastery_blessing: {missing[:8]}"
-    assert not invalid, f"Invalid mastery_blessing entries: {invalid[:8]}"
+            if getattr(it, 'mastery_blessing', None):
+                leftovers.append(f'{cat}:{it.id}')
+    assert not leftovers, f"mastery_blessing should be stripped: {leftovers[:8]}"
 
 
-# ---------------------------------------------------------------------------
-# Identify-system helpers (2026-05-28): chain resume from failed tier +
-# menu progress marker. See `proposals/v2_audit/IDENTIFY_SYSTEM.md`.
-# ---------------------------------------------------------------------------
-
-from items import identify_resume_params, id_progress_marker
-
-
-def test_resume_params_fresh_identify():
-    """Brand-new item (id_level=0): start at tier 1, full 5-chain."""
-    assert identify_resume_params(0) == (1, 5)
+def test_keepsakes_have_carry_bonus():
+    accs = {i.id: i for i in load_items('accessory')}
+    charmander = accs['charmander_stuffie']
+    sketchbook = accs['dreamspun_sketchbook']
+    assert charmander.carry_bonus == {'stat': 'CON', 'amount': 2}
+    assert sketchbook.carry_bonus == {'stat': 'INT', 'amount': 2}
 
 
-def test_resume_params_partial_two_passed():
-    """User scenario: identified to 2/5, retry resumes at tier 3 with 3 to go."""
-    assert identify_resume_params(2) == (3, 3)
+def test_carry_bonus_applies_while_in_inventory():
+    p = Player()
+    base_con = p.CON
+    stuffie = _make_accessory('charmander_stuffie', 'Charmander Stuffie',
+                              slot='none', is_unique=True,
+                              carry_bonus={'stat': 'CON', 'amount': 2})
+    assert p.add_to_inventory(stuffie)
+    assert p.CON == base_con + 2
+    p.remove_from_inventory(stuffie)
+    assert p.CON == base_con
 
 
-def test_resume_params_one_tier_left():
-    """Lore revealed (4/5) but mastery unclaimed: one T5 question for mastery."""
-    assert identify_resume_params(4) == (5, 1)
+def test_every_identifiable_item_gets_a_valid_id_tier():
+    """Data-layer guard: item_id_tier must land in 1..5 for everything the
+    identify menu could ever show, and uniques must sit at T4+."""
+    cats = ['weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
+            'spellbook', 'potion', 'artifact', 'food', 'ammo']
+    bad = []
+    for cat in cats:
+        for it in load_items(cat):
+            t = item_id_tier(it)
+            if not (1 <= t <= 5):
+                bad.append(f'{cat}:{it.id} -> {t}')
+            elif getattr(it, 'is_unique', False) and t < 4:
+                bad.append(f'{cat}:{it.id} unique below T4 -> {t}')
+    assert not bad, f"Bad id_tiers: {bad[:10]}"
 
 
-def test_resume_params_already_mastered_is_safe():
-    """Defensive: if id_level is somehow already 5 (e.g. via Odin's Cloak +
-    a re-entry race), helper still returns a valid quiz spec rather than
-    asking for a 0-length chain at tier 6."""
-    start, max_chain = identify_resume_params(5)
-    assert start == 5 and max_chain >= 1
-
-
-def test_resume_params_clamps_out_of_range():
-    """Negative or > 5 prev_level shouldn't crash."""
-    assert identify_resume_params(-1) == (1, 5)
-    assert identify_resume_params(99) == (5, 1)
-
-
-# The chain-to-id_level mapping in the resume design:
-#   new_level = previous_level + chain (capped at 5, never lowers).
-# These tests express the algebra; the call-sites in game_magic.py
-# and main.py compute exactly this expression.
-
-def test_new_level_partial_progress():
-    """At id_level=2, kid answers T3+T4 then misses T5: chain=2 -> new_level=4."""
-    previous, chain = 2, 2
-    new_level = max(previous, min(previous + chain, 5))
-    assert new_level == 4
-
-
-def test_new_level_full_completion_to_mastery():
-    """At id_level=2, kid clears T3+T4+T5: chain=3 -> new_level=5 (mastery)."""
-    previous, chain = 2, 3
-    new_level = max(previous, min(previous + chain, 5))
-    assert new_level == 5
-
-
-def test_new_level_failure_preserves_previous():
-    """At id_level=2, kid blanks the start-tier question: chain=0 -> stays at 2."""
-    previous, chain = 2, 0
-    new_level = max(previous, min(previous + chain, 5))
-    assert new_level == 2
-
-
-def test_new_level_cannot_exceed_5():
-    """Defensive: even if chain somehow overshoots, id_level caps at 5."""
-    previous, chain = 4, 10
-    new_level = max(previous, min(previous + chain, 5))
-    assert new_level == 5
-
-
-# ---------------------------------------------------------------------------
-# Progress marker — the (N/5) appended to entry names in the identify menu.
-# ---------------------------------------------------------------------------
-
-def test_progress_marker_zero():
-    assert id_progress_marker(0) == "  (0/5)"
-
-
-def test_progress_marker_partial():
-    assert id_progress_marker(2) == "  (2/5)"
-
-
-def test_progress_marker_full():
-    """Should still render correctly if asked for level 5 (menu filters
-    these out, but the helper should be robust)."""
-    assert id_progress_marker(5) == "  (5/5)"
-
-
-def test_progress_marker_clamps_out_of_range():
-    assert id_progress_marker(-1) == "  (0/5)"
-    assert id_progress_marker(99) == "  (5/5)"
-
-
-def test_progress_marker_handles_none():
-    """getattr(item, 'id_level', 0) can return None for legacy save data."""
-    assert id_progress_marker(None) == "  (0/5)"
+def test_every_monster_corpse_gets_a_valid_id_tier():
+    import json
+    from paths import data_path
+    with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+        monsters = json.load(f)
+    bad = []
+    for mid, defn in monsters.items():
+        c = Corpse(defn.get('name', mid), mid, 0, 0,
+                   harvest_tier=defn.get('harvest_tier', 1),
+                   monster_def={'peak_floor': defn.get('peak_floor', 0)})
+        if not (1 <= c.id_tier <= 5):
+            bad.append(f'{mid} -> {c.id_tier}')
+    assert not bad, f"Bad corpse id_tiers: {bad[:10]}"
 
 
 # ---------------------------------------------------------------------------
 # Identified-property back-compat (2026-05-29 bug-bash fix)
 # ---------------------------------------------------------------------------
-#
-# Pre-fix: every Item subclass declared `self.identified = ...` as a
-# plain instance attribute. Many call sites wrote `item.identified = True`
-# to mark a scroll/wand identified, but id_level stayed 0 — so the
-# identify menu kept showing (0/5) and the resume rule started the
-# quiz from T1 instead of skipping ahead. The IDENTIFY_SYSTEM.md doc
-# CLAIMED `identified` was a property; the code disagreed.
-#
-# Post-fix: `identified` is a real property on base Item reading
-# `id_level >= 4`. Setter bumps id_level to >= 4 on True or resets
-# to 0 on False. Subclass __init__ no longer shadows the property.
-
 
 def test_identified_property_reads_from_id_level():
     w = _make_weapon(id_level=0)
@@ -469,8 +426,6 @@ def test_identified_property_reads_from_id_level():
 
 
 def test_identified_setter_bumps_id_level_on_true():
-    """The big one. Pre-fix this set instance attr only and id_level
-    stayed at 0 — the bug behind the identify-menu (0/5) regression."""
     w = _make_weapon()
     assert w.id_level == 0
     w.identified = True
@@ -492,11 +447,9 @@ def test_identified_setter_resets_to_zero_on_false():
 
 
 def test_no_shadowing_instance_attribute_on_new_items():
-    """After the property migration, no subclass should set `identified`
-    as a plain instance attribute that shadows the property."""
+    """No subclass should set `identified` as a plain instance attribute
+    that shadows the property."""
     w = _make_weapon()
-    # `identified` should NOT be in the per-instance __dict__ — it lives
-    # on the class as a property.
     assert 'identified' not in w.__dict__
 
 
@@ -506,7 +459,6 @@ def test_save_migration_strips_shadow_attribute():
     w = _make_weapon(id_level=0)
     # Simulate a legacy save by force-installing the shadow attribute.
     w.__dict__['identified'] = True
-    # Sanity: before migration the shadow wins.
     assert w.__dict__.get('identified') is True
     assert w.id_level == 0  # not yet synced
     migrate_buc_item(w)
@@ -525,22 +477,17 @@ def test_save_migration_preserves_already_high_id_level():
 
 
 # ---------------------------------------------------------------------------
-# _propagate_identification correctness (2026-05-29 bug-bash fix)
+# _propagate_identification — True Name model (2026-08-06)
 # ---------------------------------------------------------------------------
 #
-# Pre-fix: only set buc_known on inventory copies; never bumped id_level
-# anywhere; skipped ground items and container contents entirely. The
-# IDENTIFY_SYSTEM.md doc claimed otherwise.
-#
-# Post-fix: sync id_level (capped 4-for-uniques / 5-for-commons),
-# walk inventory + ground + containers at the player's tile.
+# Records TYPE knowledge only: known_item_ids + known_class_ids. It must
+# NOT touch other copies' id_level or buc_known — each instance keeps its
+# own BUC/enchant secret until identified individually.
 
 
 class _FakeGame:
     """Minimal stand-in for the Game mixin chain used by
-    `_propagate_identification`. Provides the attributes the method
-    reads (`self.player`, `self.ground_items`) without dragging in the
-    full Game/Pygame stack."""
+    `_propagate_identification`."""
 
     def __init__(self, inventory, ground_items, player_x=0, player_y=0):
         from player import Player
@@ -552,68 +499,42 @@ class _FakeGame:
         self.player.known_class_ids = set()
         self.ground_items = list(ground_items)
 
-    # Borrow the real implementation off the MagicMixin without
-    # instantiating Game (which needs Pygame).
     from game_magic import MagicMixin
     _propagate_identification = MagicMixin._propagate_identification
 
 
-def test_propagate_id_level_across_inventory_copies():
-    """Identifying one wand to id_level=3 bumps every other copy of the
-    same id in inventory to the same level (capped at 4 for uniques).
-    Pre-fix this was a no-op."""
-    w1 = _make_weapon(id_level=3)
-    w2 = _make_weapon(id_level=0)
-    g = _FakeGame(inventory=[w1, w2], ground_items=[])
-    g._propagate_identification('test_sword', level=3)
-    assert w1.id_level == 3
-    assert w2.id_level == 3
+def test_propagate_records_type_knowledge():
+    w1 = _make_weapon(id_level=5)
+    g = _FakeGame(inventory=[w1], ground_items=[])
+    g._propagate_identification('test_sword', seed_item=w1)
+    assert 'test_sword' in g.player.known_item_ids
+    assert type_class(w1) in g.player.known_class_ids
 
 
-def test_propagate_id_level_walks_ground_items():
-    """Floor copies at any tile share the identify state once a copy in
-    inventory has been identified."""
-    w_inv = _make_weapon(id_level=4)
-    w_ground = _make_weapon(id_level=0)
-    g = _FakeGame(inventory=[w_inv], ground_items=[w_ground])
-    g._propagate_identification('test_sword', level=4)
-    assert w_ground.id_level == 4
-
-
-def test_propagate_id_level_caps_at_four_for_uniques():
-    """Uniques cap at 4 so the chain-5 mastery quiz path is preserved."""
-    w1 = _make_weapon(id_level=0, is_unique=True)
-    w2 = _make_weapon(id_level=0, is_unique=True)
-    g = _FakeGame(inventory=[w1, w2], ground_items=[])
-    g._propagate_identification('test_sword', level=5)
-    # Even though we asked for 5, uniques cap at 4.
-    assert w1.id_level == 4
-    assert w2.id_level == 4
-
-
-def test_propagate_id_level_caps_at_five_for_commons():
-    w1 = _make_weapon(id_level=0)  # is_unique default False
-    w2 = _make_weapon(id_level=0)
-    g = _FakeGame(inventory=[w1, w2], ground_items=[])
-    g._propagate_identification('test_sword', level=5)
-    assert w1.id_level == 5
-    assert w2.id_level == 5
-
-
-def test_propagate_does_not_lower_existing_id_level():
-    """Monotonic — never downgrades a higher level."""
+def test_propagate_does_not_touch_other_copies():
+    """The heart of the True Name model: a second copy keeps its own
+    instance state (id_level 0, BUC hidden) even once the type is known."""
     w1 = _make_weapon(id_level=5)
     w2 = _make_weapon(id_level=0)
+    w2.buc_known = False
     g = _FakeGame(inventory=[w1, w2], ground_items=[])
-    g._propagate_identification('test_sword', level=3)
-    assert w1.id_level == 5  # not lowered
-    assert w2.id_level == 3
+    g._propagate_identification('test_sword', seed_item=w1)
+    assert w2.id_level == 0
+    assert w2.buc_known is False
+
+
+def test_propagate_finds_seed_from_ground_when_not_given():
+    ring = _make_accessory('ring_protection_gold', 'ring of protection')
+    g = _FakeGame(inventory=[], ground_items=[ring])
+    g._propagate_identification('ring_protection_gold')
+    assert 'ring_protection_gold' in g.player.known_item_ids
+    assert 'ring_of_protection' in g.player.known_class_ids
 
 
 # ---------------------------------------------------------------------------
 # Item-name composition (2026-05-28 fix): material descriptor + template
 # name should produce a natural noun phrase, not "a wooden plank light
-# wooden shield". See IDENTIFY_SYSTEM.md §11.
+# wooden shield".
 # ---------------------------------------------------------------------------
 
 from items import (compose_item_name, compose_unidentified_name,
@@ -621,9 +542,6 @@ from items import (compose_item_name, compose_unidentified_name,
 
 
 def test_strip_material_words_from_template():
-    # The user's scenario: shield template "light wooden shield" + material
-    # "oak" should NOT produce "oak light wooden shield" — wooden is
-    # redundant with "oak" (a wood).
     assert _strip_redundant_material_words("light wooden shield") == "light shield"
     assert _strip_redundant_material_words("heavy wooden shield") == "heavy shield"
     assert _strip_redundant_material_words("iron boots") == "boots"
@@ -640,16 +558,12 @@ def test_strip_material_words_leaves_non_material_templates_alone():
 
 
 def test_strip_material_words_never_returns_empty():
-    # Edge case: the entire template name is generic material words.
-    # We must not strip to "" — better to leave the original than
-    # render a nameless item.
     assert _strip_redundant_material_words("leather") == "leather"
     assert _strip_redundant_material_words("chainmail") == "chainmail"
     assert _strip_redundant_material_words("") == ""
 
 
 def test_normalize_descriptor_strips_article_and_tail_noun():
-    # The exact descriptors that produced the user's bug:
     assert _normalize_descriptor("a wooden plank") == "wooden"
     assert _normalize_descriptor("a faintly blue blade") == "faintly blue"
     assert _normalize_descriptor("a pale fibrous wooden plate") == "pale fibrous wooden"
@@ -665,21 +579,12 @@ def test_normalize_descriptor_leaves_adjective_phrases_alone():
 
 
 def test_normalize_descriptor_never_returns_empty():
-    # If everything strips, fall back to the neutral adjective 'strange' (2026-
-    # 06-07) -- NOT the original noun phrase, which composed into garbage like
-    # "A Plank Longbow". 'strange' is non-empty and reads cleanly ("A Strange
-    # Longbow"). A descriptor that hits this should be rewritten in data.
     assert _normalize_descriptor("a plank") == "strange"   # would strip to ''
     assert _normalize_descriptor("the blade") == "strange"
     assert _normalize_descriptor("") == ""
 
 
 def test_compose_item_name_user_scenario():
-    """The exact bug the user reported, end-to-end through the
-    identified path: oak material + light_wooden_shield template should
-    NOT produce 'oak light wooden shield'. Title-cased since
-    2026-05-29 per user feedback that 'linen padded' displayed as
-    lowercase in messages."""
     assert compose_item_name("oak", "light wooden shield") == "Oak Light Shield"
 
 
@@ -689,41 +594,21 @@ def test_compose_item_name_no_change_when_no_overlap():
 
 
 def test_compose_item_name_handles_iron_iron_collision():
-    # iron + iron_boots template -> "Iron Boots", not "Iron Iron Boots".
     assert compose_item_name("iron", "iron boots") == "Iron Boots"
-    # steel + iron_boots template -> "Steel Boots" (the iron in the
-    # template name is now redundant once we have a specific material).
     assert compose_item_name("steel", "iron boots") == "Steel Boots"
 
 
 def test_compose_unidentified_name_user_scenario():
-    """The exact wonky string the user reported: 'a pale fibrous wood
-    light round wood shield' (approximate) was produced by composing
-    a noun-phrase descriptor with a material-baked template name. After
-    the fix:
-      - article "a" is stripped from the descriptor
-      - "wooden" is stripped from the template (redundant with descriptor)
-      - generic material adjective "wood" in the descriptor is KEPT (it
-        carries the pre-identify hint about what the material might be)
-    Result reads as a natural noun phrase rather than a glued-together
-    mess: 'Pale Fibrous Wood Light Shield'.
-    """
-    # ash (weapons-pool) has unidentified_descriptor "a pale fibrous wood"
     result = compose_unidentified_name("a pale fibrous wood", "light wooden shield")
     assert result == "Pale Fibrous Wood Light Shield", f"unexpected: {result!r}"
-    # Critically: the word "wood" does NOT appear twice anymore.
     assert result.lower().count("wood") == 1
 
 
 def test_compose_unidentified_name_oak_shield():
-    # oak's unidentified_descriptor is "a wooden plank"
     result = compose_unidentified_name("a wooden plank", "light wooden shield")
-    # Article stripped, tail noun "plank" stripped, then "wooden" left
-    # as adjective. Template strips "wooden". Result reads naturally.
     assert result == "Wooden Light Shield"
 
 
 def test_compose_unidentified_name_no_overlap():
-    # mithril descriptor is "pale silvery metal" (adjective phrase already)
     result = compose_unidentified_name("pale silvery metal", "plate helm")
     assert result == "Pale Silvery Metal Helm"

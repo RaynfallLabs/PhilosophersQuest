@@ -39,12 +39,9 @@ def test_perseus_quirk_grants_all_save_bonus():
     assert p.save_bonus_for('DEX') == 2
 
 
-def test_family_mastery_blessings_converted_to_saves():
-    from monster_classes import MONSTER_FAMILY_BLESSINGS as MFB
-    assert MFB['fey']['kind'] == 'save_bonus' and MFB['fey']['value']['cat'] == 'WIS'
-    assert MFB['aberration']['kind'] == 'save_bonus' and MFB['aberration']['value']['cat'] == 'WIS'
-    assert MFB['undead']['kind'] == 'save_bonus' and MFB['undead']['value']['cat'] == 'CON'
-    assert MFB['reptile']['kind'] == 'save_bonus' and MFB['reptile']['value']['cat'] == 'CON'
+# (test_family_mastery_blessings_converted_to_saves removed 2026-08-06 —
+# monster-family masteries were retired with the one-question identify
+# redesign.)
 
 
 def test_flagship_amulets_have_save_bonus():
@@ -67,8 +64,8 @@ def test_build_affinity_applied_from_name():
 
 
 def test_old_save_is_backwards_compatible():
-    """An OLD save (no save-bonus attrs, a pre-conversion family blessing, and the
-    legacy perseus_active flag) must load without crashing and migrate cleanly."""
+    """An OLD save (no save-bonus attrs + the legacy perseus_active flag)
+    must load without crashing and migrate cleanly."""
     from main import Game
     from save_system import save_game, load_game, delete_save
     name = '__test_savebonus_compat__'
@@ -79,9 +76,6 @@ def test_old_save_is_backwards_compatible():
         for attr in ('_save_bonus', 'save_affinity', '_save_guard'):
             if hasattr(p, attr):
                 delattr(p, attr)
-        p.unlocked_monster_class_masteries = {
-            'fey': {'kind': 'resist_charm', 'value': 1, 'desc': 'old'}
-        }
         p.quirk_progress = {'perseus_active': True}
         assert save_game(g)
         state = load_game(name)
@@ -95,15 +89,12 @@ def test_old_save_is_backwards_compatible():
         # New attrs seeded
         assert isinstance(getattr(p2, '_save_bonus', None), dict)
         assert isinstance(getattr(p2, '_save_guard', None), dict)
-        # Family blessing re-synced to the new save_bonus form (fey -> WIS)
-        fey = p2.unlocked_monster_class_masteries['fey']
-        assert fey['kind'] == 'save_bonus' and fey['value']['cat'] == 'WIS'
         # Perseus legacy flag migrated to the all-saves bonus
         assert p2.quirk_progress.get('save_bonus_all') == 2
         # Build affinity re-applied (load_state replaced the player)
         assert p2.save_affinity == {'CON': 2}
         # And it all composes, capped, without error
-        assert p2.save_bonus_for('WIS') == 4      # fey 2 + perseus-all 2
+        assert p2.save_bonus_for('WIS') == 2      # perseus-all 2
         assert p2.save_bonus_for('CON') == 4      # affinity 2 + perseus-all 2
     finally:
         delete_save(name)

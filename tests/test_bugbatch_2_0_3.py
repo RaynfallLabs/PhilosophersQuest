@@ -377,32 +377,9 @@ def test_combat_with_save_bonus_family_mastery_does_not_crash():
     assert out.get('damage', 0) >= 1
 
 
-def test_combat_damage_vs_tag_family_bonus_still_applies():
-    """The fix must keep the legit damage_vs_tag flat bonus working."""
-    import random
-    import combat
-    from player import Player
-    from monster import Monster
-
-    def run(mastery):
-        p = Player()
-        p.weapon = None
-        p.unlocked_monster_class_masteries = mastery or {}
-        m = Monster({'id': 'wyrm', 'name': 'wyrm', 'symbol': 'D',
-                     'color': [200, 50, 50], 'hp': 9999, 'min_level': 1,
-                     'damage': '1d2', 'tags': ['dragon']}, 0, 0)
-        out = {}
-        eng = _FakeEngine()
-        combat.player_attack(
-            p, m, eng, lambda damage, killed, chain, **kw: out.update(damage=damage))
-        random.seed(20260604)        # deterministic rolls at the damage step
-        eng.fire(3)
-        return out['damage']
-
-    base = run(None)
-    boosted = run({'dragon': {'kind': 'damage_vs_tag', 'tag': 'dragon',
-                              'value': 5, 'desc': '_'}})
-    assert boosted == base + 5
+# (test_combat_damage_vs_tag_family_bonus_still_applies removed 2026-08-06 —
+# monster-family masteries were retired with the one-question identify
+# redesign; the save-bonus regression guard above still covers the crash.)
 
 
 # ===========================================================================

@@ -1,11 +1,11 @@
-"""Tests for the carry-scope mastery bonus mechanic.
+"""Tests for the carry-bonus mechanic (mastery gate removed 2026-08-06).
 
-Spec (user direction 2026-05-29):
-- Items with `slot: "none"` and a stat_bonus mastery (Charmander
+Spec:
+- Items with `slot: "none"` and a `carry_bonus` field (Charmander
   Stuffie +2 CON, Dreamspun Sketchbook +2 INT) can't be equipped
-- Their mastery must be CLAIMED first (Tier-5 identify chain)
-- Once mastered, the bonus applies WHILE the item is in inventory
-  and removes when the item is dropped/lost
+- The bonus applies WHILE the item is in inventory and removes when
+  the item is dropped/lost — no mastery claim required (the mastery
+  system was retired with the one-question identify redesign)
 - Re-applies if the item is picked up again (e.g., dropped on a floor
   and re-grabbed)
 """
@@ -19,52 +19,40 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 
-def _load_charmander_blessing() -> dict:
+class _StubItem:
+    def __init__(self, item_id, carry_bonus=None):
+        self.id = item_id
+        self.name = item_id
+        self.weight = 0.5
+        self.carry_bonus = carry_bonus
+
+
+def _stuffie():
+    return _StubItem('charmander_stuffie', {'stat': 'CON', 'amount': 2})
+
+
+def test_charmander_json_has_carry_bonus():
     d = json.loads((ROOT / "data" / "items" / "accessory.json").read_text(encoding='utf-8'))
-    return d['charmander_stuffie']['mastery_blessing']
+    assert d['charmander_stuffie'].get('carry_bonus') == {'stat': 'CON', 'amount': 2}
+    assert 'mastery_blessing' not in d['charmander_stuffie']
 
 
-def test_charmander_blessing_has_carry_scope():
-    """The Charmander Stuffie's mastery must be marked scope=carry so
-    the bonus applies from inventory rather than at one-shot claim."""
-    mb = _load_charmander_blessing()
-    assert mb.get('scope') == 'carry', (
-        "Charmander Stuffie mastery_blessing.scope must be 'carry' so "
-        "the +2 CON applies from inventory rather than as a one-shot at "
-        "mastery-claim time"
-    )
-
-
-def test_dreamspun_blessing_has_carry_scope():
+def test_dreamspun_json_has_carry_bonus():
     d = json.loads((ROOT / "data" / "items" / "accessory.json").read_text(encoding='utf-8'))
-    mb = d['dreamspun_sketchbook']['mastery_blessing']
-    assert mb.get('scope') == 'carry'
+    assert d['dreamspun_sketchbook'].get('carry_bonus') == {'stat': 'INT', 'amount': 2}
+    assert 'mastery_blessing' not in d['dreamspun_sketchbook']
 
 
-def test_refresh_applies_bonus_when_item_in_inventory_and_mastered():
-    """Walk the mechanic end-to-end: mark mastery unlocked + put item
-    in inventory + call refresh -> stat increases by amount."""
+def test_refresh_applies_bonus_when_item_in_inventory():
+    """Walk the mechanic end-to-end: put item in inventory + call
+    refresh -> stat increases by amount."""
     from player import Player
-
-    class _StubItem:
-        def __init__(self, item_id):
-            self.id = item_id
-            self.name = item_id
-            self.weight = 0.5
 
     p = Player()
     base_con = p.CON
     base_max_hp = p.max_hp
-    # Register the mastery first (this is what _claim_mastery does)
-    p.unlocked_masteries['charmander_stuffie'] = {
-        'kind': 'accessory_stat_bonus',
-        'value': {'stat': 'CON', 'amount': 2},
-        'scope': 'carry',
-        'desc': 'Charmander +2 CON while carried.',
-    }
     # Manually put it in inventory (bypass weight checks for the test)
-    p.inventory.append(_StubItem('charmander_stuffie'))
-    # Refresh applies the bonus
+    p.inventory.append(_stuffie())
     p.refresh_carry_bonuses()
     assert p.CON == base_con + 2, f"CON should be {base_con+2}; got {p.CON}"
     assert p.max_hp == base_max_hp + 2
@@ -75,21 +63,9 @@ def test_refresh_removes_bonus_when_item_leaves_inventory():
     """Pick up + apply, then drop -> bonus reverses."""
     from player import Player
 
-    class _StubItem:
-        def __init__(self, item_id):
-            self.id = item_id
-            self.name = item_id
-            self.weight = 0.5
-
     p = Player()
     base_con = p.CON
-    p.unlocked_masteries['charmander_stuffie'] = {
-        'kind': 'accessory_stat_bonus',
-        'value': {'stat': 'CON', 'amount': 2},
-        'scope': 'carry',
-        'desc': 'Charmander +2 CON while carried.',
-    }
-    stuffie = _StubItem('charmander_stuffie')
+    stuffie = _stuffie()
     p.inventory.append(stuffie)
     p.refresh_carry_bonuses()
     assert p.CON == base_con + 2
@@ -97,7 +73,7 @@ def test_refresh_removes_bonus_when_item_leaves_inventory():
     # Drop it
     p.inventory.remove(stuffie)
     p.refresh_carry_bonuses()
-    assert p.CON == base_con, "dropping the mastered item must remove the bonus"
+    assert p.CON == base_con, "dropping the keepsake must remove the bonus"
     assert 'charmander_stuffie' not in p.active_carry_bonuses
 
 
@@ -105,21 +81,9 @@ def test_refresh_is_idempotent_against_double_application():
     """Calling refresh multiple times must NOT stack the bonus."""
     from player import Player
 
-    class _StubItem:
-        def __init__(self, item_id):
-            self.id = item_id
-            self.name = item_id
-            self.weight = 0.5
-
     p = Player()
     base_con = p.CON
-    p.unlocked_masteries['charmander_stuffie'] = {
-        'kind': 'accessory_stat_bonus',
-        'value': {'stat': 'CON', 'amount': 2},
-        'scope': 'carry',
-        'desc': '',
-    }
-    p.inventory.append(_StubItem('charmander_stuffie'))
+    p.inventory.append(_stuffie())
     for _ in range(5):
         p.refresh_carry_bonuses()
     assert p.CON == base_con + 2, (
@@ -131,21 +95,9 @@ def test_refresh_reapplies_after_pickup_drop_pickup_cycle():
     """Carry/drop/carry cycle must end at +bonus applied."""
     from player import Player
 
-    class _StubItem:
-        def __init__(self, item_id):
-            self.id = item_id
-            self.name = item_id
-            self.weight = 0.5
-
     p = Player()
     base_con = p.CON
-    p.unlocked_masteries['charmander_stuffie'] = {
-        'kind': 'accessory_stat_bonus',
-        'value': {'stat': 'CON', 'amount': 2},
-        'scope': 'carry',
-        'desc': '',
-    }
-    stuffie = _StubItem('charmander_stuffie')
+    stuffie = _stuffie()
     # cycle 1: pickup
     p.inventory.append(stuffie)
     p.refresh_carry_bonuses()
@@ -160,28 +112,20 @@ def test_refresh_reapplies_after_pickup_drop_pickup_cycle():
     assert p.CON == base_con + 2
 
 
-def test_unmastered_carry_item_does_not_apply():
-    """If the player has the item in inventory but HASN'T claimed
-    mastery (Tier-5 chain), no bonus applies. The mastery is the gate."""
+def test_item_without_carry_bonus_does_nothing():
+    """A plain item with no carry_bonus field never touches stats."""
     from player import Player
-
-    class _StubItem:
-        def __init__(self, item_id):
-            self.id = item_id
-            self.name = item_id
-            self.weight = 0.5
 
     p = Player()
     base_con = p.CON
-    # unlocked_masteries deliberately EMPTY — mastery not claimed
-    p.inventory.append(_StubItem('charmander_stuffie'))
+    p.inventory.append(_StubItem('plain_rock'))
     p.refresh_carry_bonuses()
-    assert p.CON == base_con, "no mastery = no bonus, even with item carried"
+    assert p.CON == base_con
 
 
 def test_add_to_inventory_triggers_refresh():
     """add_to_inventory must call refresh_carry_bonuses so picking up
-    a mastered carry-item applies the bonus automatically."""
+    a keepsake applies the bonus automatically."""
     import inspect
     from player import Player
     src = inspect.getsource(Player.add_to_inventory)

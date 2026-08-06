@@ -415,12 +415,6 @@
     "unidentified_name": "scorched scroll",
     "lore": "The most feared text in the dungeon archivist's catalogue. Its words were first spoken on the day the great library of Carthage burned. Reading it perfectly causes every creature in sight to dissolve in a flash of obliterating white energy, leaving only silence and ash.",
     "read_threshold": 3,
-    "mastery_blessing": {
-      "kind": "scroll_extra_read",
-      "value": 1,
-      "scope": "item",
-      "desc": "You retain the words of annihilation; the scroll is NOT consumed on its first use this run."
-    },
     "is_unique": true,
     "weight": 0.3,
     "peak_weight": 0.25,
@@ -1196,12 +1190,6 @@
     "unidentified_name": "a scroll bound in papyrus",
     "item_class": "scroll",
     "lore": "The book of Thoth, Egyptian god of writing. Pharaoh Neferkaptah stole it from its serpent guardian in the Nile and learned the speech of the birds and the fish and the dead; his family drowned for his audacity, and the book was buried with him. Reading it identifies what was hidden. From the Setna cycle.",
-    "mastery_blessing": {
-      "kind": "scroll_extra_read",
-      "value": 1,
-      "scope": "item",
-      "desc": "Thoth's book identifies what was hidden \u2014 the next reading of the Book of Thoth does not consume the scroll."
-    },
     "weight": 0.3,
     "quiz_mode": "escalator_chain"
   }

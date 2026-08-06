@@ -30,19 +30,13 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Nemean Lion's hide could not be cut by any weapon — that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it. The hide renders its wearer virtually invulnerable to conventional weapons — only magical or divine arms can pierce it.",
+    "lore": "The Nemean Lion's hide could not be cut by any weapon \u2014 that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it. The hide renders its wearer virtually invulnerable to conventional weapons \u2014 only magical or divine arms can pierce it.",
     "max_enchant": 3,
     "peak_floor": 72,
     "spread": 12,
     "peak_weight": 0.3,
     "template_basis": "hide",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Hide of the Nemean Lion turns all but divine arms — armor class improves by 2."
-    },
     "unskinnable": true
   },
   "carapace_of_the_hydra": {
@@ -76,22 +70,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Heracles used the Hydra's caustic blood to poison his arrows — the same arrows that killed Chiron by accident and Nessus by intention and started the chain that killed Heracles himself. The Hydra's outer scale was immune to its own venom. This is the standard configuration: weapons made from the thing they destroy are often proof against the same.",
+    "lore": "Heracles used the Hydra's caustic blood to poison his arrows \u2014 the same arrows that killed Chiron by accident and Nessus by intention and started the chain that killed Heracles himself. The Hydra's outer scale was immune to its own venom. This is the standard configuration: weapons made from the thing they destroy are often proof against the same.",
     "max_enchant": 3,
     "peak_floor": 68,
     "spread": 12,
     "peak_weight": 0.35,
     "template_basis": "scale",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "poison",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Carapace of the Hydra was immune to its own venom — it deflects 50% of incoming poison."
-    },
     "caustic_blood": 0.4
   },
   "panoply_of_hephaestus": {
@@ -132,12 +117,6 @@
     "peak_weight": 0.25,
     "template_basis": "full_plate",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Panoply of Hephaestus is a smith-god's masterwork — armor class improves by 2."
-    },
     "divine_smithing": 1
   },
   "dragon_mail_of_sigurd": {
@@ -171,7 +150,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "After killing Fafnir, Sigurd bathed in the dragon's blood and became invulnerable — except for a leaf that fell between his shoulder blades. His eventual murder came from a spear through exactly that spot, thrown by a man told about it by a woman who loved him and was told by another man who needed Sigurd dead. The weak point was the information, not the armour.",
+    "lore": "After killing Fafnir, Sigurd bathed in the dragon's blood and became invulnerable \u2014 except for a leaf that fell between his shoulder blades. His eventual murder came from a spear through exactly that spot, thrown by a man told about it by a woman who loved him and was told by another man who needed Sigurd dead. The weak point was the information, not the armour.",
     "max_enchant": 3,
     "peak_floor": 72,
     "spread": 12,
@@ -215,15 +194,6 @@
         "status_fire_resist": 999,
         "passive_dragon_blood_bath": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "Dragon-Sewn Mail of Sigurd grants +50% fire resistance."
     }
   },
   "breastplate_of_joan": {
@@ -254,7 +224,7 @@
     "unidentified_name": "a plain white-painted steel breastplate",
     "floorSpawnWeight": {},
     "value": 10000,
-    "lore": "Joan of Arc described her armour as 'very good' — white-painted steel made specifically for her. She was wounded multiple times and fought on. She told her judges at her trial that her armour had been made by command of God and could not protect against what God willed. They burned her anyway. Twenty-five years later Charles VII had the verdict annulled. Joan had been dead for twenty-five years.",
+    "lore": "Joan of Arc described her armour as 'very good' \u2014 white-painted steel made specifically for her. She was wounded multiple times and fought on. She told her judges at her trial that her armour had been made by command of God and could not protect against what God willed. They burned her anyway. Twenty-five years later Charles VII had the verdict annulled. Joan had been dead for twenty-five years.",
     "onEquipStatus": "blessed",
     "max_enchant": 3,
     "peak_floor": 84,
@@ -264,12 +234,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "Joan of Arc fought on through every wound — her breastplate grants a permanent 20 HP on mastery."
-    },
     "maid_does_not_fall": true
   },
   "lorica_hamata_of_caesar": {
@@ -309,12 +273,6 @@
     "peak_weight": 0.4,
     "template_basis": "chain_shirt",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "Caesar wore the chain-mail across the Rubicon and the Senate floor — the Lorica grants a permanent 15 HP on mastery."
-    },
     "et_tu_charge": true
   },
   "orichalcum_breastplate": {
@@ -348,22 +306,13 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "Orichalcum was the metal of Atlantis — mentioned by Plato in the Critias as the most prized substance in the world after gold. Its appearance was flame-red. The Atlanteans mined it everywhere, then it vanished when Atlantis sank. Modern scholars identify it as brass or a copper-zinc alloy. The identification is probably correct. Plato's text does not describe its resonance, which the surviving piece still exhibits.",
+    "lore": "Orichalcum was the metal of Atlantis \u2014 mentioned by Plato in the Critias as the most prized substance in the world after gold. Its appearance was flame-red. The Atlanteans mined it everywhere, then it vanished when Atlantis sank. Modern scholars identify it as brass or a copper-zinc alloy. The identification is probably correct. Plato's text does not describe its resonance, which the surviving piece still exhibits.",
     "max_enchant": 3,
     "peak_floor": 72,
     "spread": 12,
     "peak_weight": 0.3,
     "template_basis": "breastplate",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 20
-      },
-      "scope": "item",
-      "desc": "The Orichalcum Breastplate still resonates with the lost metal of Atlantis — it deflects 20% of all elemental damage."
-    },
     "atlantean_resonance": 30
   },
   "helm_of_hades": {
@@ -396,7 +345,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility — it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing.",
+    "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility \u2014 it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing.",
     "max_enchant": 2,
     "peak_floor": 72,
     "spread": 12,
@@ -430,12 +379,6 @@
         "passive_phase_step_once_per_floor": true,
         "passive_unseen_when_still": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Helm of Darkness prevents perception itself — armor class improves by 2."
     }
   },
   "helm_of_achilles": {
@@ -469,19 +412,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Hephaestus forged Achilles' new armour when Patroclus died wearing the old set. The helmet had a crest of horse-hair and rang like a bell. Achilles wore it for the last weeks of his life. It was awarded after his death to Odysseus over Ajax — a decision based on rhetoric and political judgement, not martial merit. The armour was better than both arguments.",
+    "lore": "Hephaestus forged Achilles' new armour when Patroclus died wearing the old set. The helmet had a crest of horse-hair and rang like a bell. Achilles wore it for the last weeks of his life. It was awarded after his death to Odysseus over Ajax \u2014 a decision based on rhetoric and political judgement, not martial merit. The armour was better than both arguments.",
     "max_enchant": 2,
     "peak_floor": 68,
     "spread": 12,
     "peak_weight": 0.35,
     "template_basis": "plate_helm",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Helm of Achilles rang like a bell for the last weeks of his life — it grants a permanent 15 HP on mastery."
-    },
     "ringing_intimidation": 3
   },
   "great_helm_of_galahad": {
@@ -514,22 +451,13 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Galahad arrived at Camelot with a plain white shield and no name. He sat in the Siege Perilous — the seat that killed anyone not pure enough — and nothing happened. He was the only knight who completed the Grail quest because he was the only one who had not already compromised himself. His father Lancelot came within inches of it. Lancelot's single lapse in virtue cost him the quest and gave the world Galahad. The Grail works through irony.",
+    "lore": "Galahad arrived at Camelot with a plain white shield and no name. He sat in the Siege Perilous \u2014 the seat that killed anyone not pure enough \u2014 and nothing happened. He was the only knight who completed the Grail quest because he was the only one who had not already compromised himself. His father Lancelot came within inches of it. Lancelot's single lapse in virtue cost him the quest and gave the world Galahad. The Grail works through irony.",
     "max_enchant": 2,
     "peak_floor": 68,
     "spread": 12,
     "peak_weight": 0.35,
     "template_basis": "great_helm",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "unholy",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "Galahad's purity allowed him the Grail — his great helm deflects 40% of unholy damage."
-    },
     "purity": true
   },
   "vambraces_of_achilles": {
@@ -560,7 +488,7 @@
     "unidentified_name": "bronze arm-guards of divine make",
     "floorSpawnWeight": {},
     "value": 7000,
-    "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women — farmers, shepherds, dancers — as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them.",
+    "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women \u2014 farmers, shepherds, dancers \u2014 as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them.",
     "max_enchant": 2,
     "peak_floor": 55,
     "spread": 10,
@@ -569,12 +497,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Vambraces of Achilles bear scenes of working lives — armor class improves by 1."
-    },
     "peace_at_the_forge": 2
   },
   "gauntlets_of_mars": {
@@ -604,7 +526,7 @@
     "unidentified_name": "iron gauntlets engraved with wolf-heads",
     "floorSpawnWeight": {},
     "value": 6500,
-    "lore": "Mars was the second most worshipped god in Rome after Jupiter. Unlike Ares, his Greek equivalent, he was not merely the god of war but of agriculture and the protection of boundaries — the army that defends fields is the same army that works them. His priests carried sacred shields believed to have fallen from heaven and danced with them in procession every March. The month is named for him. So is Tuesday, through Tiwaz/Tyr.",
+    "lore": "Mars was the second most worshipped god in Rome after Jupiter. Unlike Ares, his Greek equivalent, he was not merely the god of war but of agriculture and the protection of boundaries \u2014 the army that defends fields is the same army that works them. His priests carried sacred shields believed to have fallen from heaven and danced with them in procession every March. The month is named for him. So is Tuesday, through Tiwaz/Tyr.",
     "max_enchant": 1,
     "peak_floor": 46,
     "spread": 10,
@@ -613,12 +535,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Gauntlets of Mars defend boundaries and break them — they grant a permanent 15 HP on mastery."
-    },
     "boundary_guardian": true
   },
   "greaves_of_hermes": {
@@ -651,19 +567,13 @@
       "81-100": 2
     },
     "value": 7000,
-    "lore": "Hermes' winged sandals — the Talaria — were given him by his father Zeus or possibly won in trade with Perseus or possibly always his. He carried the dead to Hades in them. Perseus borrowed them for the Medusa mission along with the Helm and Kibisis bag. The wings are the most depicted element of Hermes iconography, which is interesting because Hermes himself is most notable for what he carries between places, not the speed.",
+    "lore": "Hermes' winged sandals \u2014 the Talaria \u2014 were given him by his father Zeus or possibly won in trade with Perseus or possibly always his. He carried the dead to Hades in them. Perseus borrowed them for the Medusa mission along with the Helm and Kibisis bag. The wings are the most depicted element of Hermes iconography, which is interesting because Hermes himself is most notable for what he carries between places, not the speed.",
     "max_enchant": 1,
     "peak_floor": 58,
     "spread": 12,
     "peak_weight": 0.4,
     "template_basis": "leather_boots",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "Hermes's Greaves carried him between Olympus and Hades — armor class improves by 1."
-    },
     "onEquipStatus": "hasted",
     "descend_stairs_no_turn": true
   },
@@ -698,7 +608,7 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "The Morrigan — the Phantom Queen — appeared as a crow or raven on the battlefield and chose who lived and died. She approached Cu Chulainn three times in disguise: as a young woman, an eel, a wolf, and a heifer. He rejected and fought each of them. Before his final battle she appeared as an old woman milking a lame cow, and he drank from her and was healed without knowing it. He died anyway. She had been kind to him; he had not recognized it.",
+    "lore": "The Morrigan \u2014 the Phantom Queen \u2014 appeared as a crow or raven on the battlefield and chose who lived and died. She approached Cu Chulainn three times in disguise: as a young woman, an eel, a wolf, and a heifer. He rejected and fought each of them. Before his final battle she appeared as an old woman milking a lame cow, and he drank from her and was healed without knowing it. He died anyway. She had been kind to him; he had not recognized it.",
     "max_enchant": 2,
     "peak_floor": 68,
     "spread": 12,
@@ -735,15 +645,6 @@
         "passive_raven_scout_extended": true,
         "passive_death_omen_mark": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "unholy",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Cloak of the Morrigan chooses who lives and dies — it deflects 30% of unholy damage."
     }
   },
   "leggings_of_enkidu": {
@@ -784,12 +685,6 @@
     "peak_weight": 0.4,
     "template_basis": "leather_leggings",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "Enkidu was made wild and made friend — his leggings grant a permanent 15 HP on mastery."
-    },
     "wild_friend": 0.2
   },
   "mantle_of_elijah": {
@@ -819,7 +714,7 @@
     "unidentified_name": "a rough prophetic cloak of undyed wool",
     "floorSpawnWeight": {},
     "value": 4000,
-    "lore": "Elijah's mantle passed to Elisha when Elijah was taken to heaven in a chariot of fire. Elisha used it to part the Jordan River on his return. In Jewish tradition it represents the transfer of prophetic authority — the mantle is the office, not the man. When Elijah threw it on Elisha's shoulders without asking, Elisha left his oxen and ran after him. He was ploughing when it happened. He finished the field first.",
+    "lore": "Elijah's mantle passed to Elisha when Elijah was taken to heaven in a chariot of fire. Elisha used it to part the Jordan River on his return. In Jewish tradition it represents the transfer of prophetic authority \u2014 the mantle is the office, not the man. When Elijah threw it on Elisha's shoulders without asking, Elisha left his oxen and ran after him. He was ploughing when it happened. He finished the field first.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -828,15 +723,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "Elijah was taken to heaven in a chariot of fire — his mantle deflects 30% of fire damage."
-    },
     "prophets_passing": true
   },
   "robe_of_the_magus": {
@@ -867,7 +753,7 @@
     "unidentified_name": "a deep blue robe with silver astronomical diagrams",
     "floorSpawnWeight": {},
     "value": 5500,
-    "lore": "The Magi of the ancient Near East were not magicians in the popular sense — they were scholars of astronomy, dream interpretation, and the hidden correspondences between celestial and earthly events. The Star they followed was either a conjunction of Jupiter and Saturn, a comet, or a nova. They brought gold, frankincense, and myrrh and went home 'another way,' having been warned in a dream not to report back to Herod.",
+    "lore": "The Magi of the ancient Near East were not magicians in the popular sense \u2014 they were scholars of astronomy, dream interpretation, and the hidden correspondences between celestial and earthly events. The Star they followed was either a conjunction of Jupiter and Saturn, a comet, or a nova. They brought gold, frankincense, and myrrh and went home 'another way,' having been warned in a dream not to report back to Herod.",
     "max_enchant": 1,
     "peak_floor": 35,
     "spread": 10,
@@ -914,15 +800,6 @@
         "passive_spell_crit": 10,
         "passive_double_cast_at_max_chain": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Robe of the Magus belonged to scholars who read the stars — it deflects 30% of psychic damage."
     }
   },
   "boots_of_seven_leagues": {
@@ -954,7 +831,7 @@
       "81-100": 2
     },
     "value": 7000,
-    "lore": "In European folklore, seven-league boots take their wearer seven leagues — about 35 km — per step. Hop-o'-My-Thumb stole them from an ogre. Puss in Boots wore them. They appear across French, German, and Scandinavian tales with minor variation: the boots are always disproportionately large on their original owner and always fit the hero perfectly. The folklore does not explain the sizing mechanism.",
+    "lore": "In European folklore, seven-league boots take their wearer seven leagues \u2014 about 35 km \u2014 per step. Hop-o'-My-Thumb stole them from an ogre. Puss in Boots wore them. They appear across French, German, and Scandinavian tales with minor variation: the boots are always disproportionately large on their original owner and always fit the hero perfectly. The folklore does not explain the sizing mechanism.",
     "onEquipStatus": "hasted",
     "max_enchant": 1,
     "peak_floor": 48,
@@ -962,12 +839,6 @@
     "peak_weight": 0.4,
     "template_basis": "leather_boots",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Boots of Seven Leagues fit their hero perfectly — armor class improves by 1."
-    },
     "seven_league_step": true
   },
   "brigandine_of_william_wallace": {
@@ -1007,12 +878,6 @@
     "peak_weight": 0.4,
     "template_basis": "scale",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "Wallace's brigandine carried him through Stirling Bridge — it grants a permanent 20 HP on mastery."
-    },
     "guerrilla_terrain": true
   },
   "cuirass_of_hannibal": {
@@ -1046,19 +911,13 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Hannibal Barca crossed the Alps with war elephants in 218 BCE and fought Rome for sixteen years on its own soil. He won every major engagement: Trebia, Trasimene, Cannae — Cannae being the most studied battle in military history, used as a model for encirclement tactics by commanders for two millennia. He never took Rome. He was eventually called home to defend Carthage, lost one battle, and died in exile. He won the tactics and lost the war. Military academies still teach him.",
+    "lore": "Hannibal Barca crossed the Alps with war elephants in 218 BCE and fought Rome for sixteen years on its own soil. He won every major engagement: Trebia, Trasimene, Cannae \u2014 Cannae being the most studied battle in military history, used as a model for encirclement tactics by commanders for two millennia. He never took Rome. He was eventually called home to defend Carthage, lost one battle, and died in exile. He won the tactics and lost the war. Military academies still teach him.",
     "max_enchant": 3,
     "peak_floor": 63,
     "spread": 12,
     "peak_weight": 0.4,
     "template_basis": "breastplate",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "Hannibal won every major engagement in Italy — his cuirass grants a permanent 20 HP on mastery."
-    },
     "cannae_encirclement": true
   },
   "nemean_pelt": {
@@ -1094,15 +953,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_nemean",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 25
-      },
-      "scope": "item",
-      "desc": "The Nemean Pelt is the unskinnable hide itself — it deflects 25% of all elemental damage."
-    },
     "identified": false,
     "id_level": 0,
     "unskinnable": true
@@ -1173,12 +1023,6 @@
         "passive_second_beheading_returns": true
       }
     },
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 25,
-      "scope": "item",
-      "desc": "The Green Knight's Plate grows with its wearer — it grants a permanent 25 HP on mastery."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -1205,7 +1049,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "iridescent scale hauberk",
-    "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely.",
+    "lore": "Scales from J\u00f6rmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized \u2014 but it still repels toxins entirely.",
     "floorSpawnWeight": {},
     "max_enchant": 3,
     "peak_floor": 0,
@@ -1215,15 +1059,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_serpent",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "poison",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Serpent Scale Mail repels toxins entirely — it deflects 50% of poison damage."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -1259,12 +1094,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_arachne",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "Arachne's Silk Cloak catches arrows and slows blades — armor class improves by 1."
-    },
     "identified": false,
     "id_level": 0,
     "webbed_strike": true
@@ -1299,15 +1128,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_erlking",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Erlking's Mantle sharpens every sense — it deflects 30% of psychic damage."
-    },
     "identified": false,
     "id_level": 0,
     "effects": {
@@ -1349,18 +1169,12 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_anansi",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "Anansi's Web Cloak shifts and deceives — armor class improves by 2."
-    },
     "identified": false,
     "id_level": 0,
     "story_thread": true
   },
   "nidhoggr_scale": {
-    "name": "Níðhöggr's Scale",
+    "name": "N\u00ed\u00f0h\u00f6ggr's Scale",
     "symbol": "[",
     "color": [
       80,
@@ -1383,7 +1197,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "unidentified_name": "a vast dark-green scale",
-    "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks.",
+    "lore": "A single scale from N\u00ed\u00f0h\u00f6ggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks.",
     "floorSpawnWeight": {},
     "max_enchant": 2,
     "peak_floor": 0,
@@ -1393,15 +1207,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "quest_spawn_nidhoggr",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "acid",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "Níðhöggr's Scale resists all corrosion — it deflects 50% of acid damage."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -1423,7 +1228,7 @@
     "min_level": 28,
     "identified": false,
     "unidentified_name": "a helm inscribed with a terrifying rune",
-    "lore": "The Helm of Awe — ægishjálmr — is described in the Volsunga Saga and the Reginsmal of the Poetic Edda as the prize hoarded by the dragon Fafnir. He boasted of it on his deathbed: while he wore it, no man dared meet his eye. Sigurd took it after the killing, along with the gold and the cursed ring. Later Icelandic grimoires draw the helm as an eight-armed stave to be painted on the forehead in blood or spittle before a fight. It is less a helm than a sign worn on a helm.",
+    "lore": "The Helm of Awe \u2014 \u00e6gishj\u00e1lmr \u2014 is described in the Volsunga Saga and the Reginsmal of the Poetic Edda as the prize hoarded by the dragon Fafnir. He boasted of it on his deathbed: while he wore it, no man dared meet his eye. Sigurd took it after the killing, along with the gold and the cursed ring. Later Icelandic grimoires draw the helm as an eight-armed stave to be painted on the forehead in blood or spittle before a fight. It is less a helm than a sign worn on a helm.",
     "containerLootTier": "rare",
     "can_be_cursed": false,
     "symbol": "[",
@@ -1474,15 +1279,6 @@
         "passive_fafnirs_glare": true,
         "passive_no_man_dares": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Helm of Awe makes no man dare meet your eye — it deflects 30% of psychic damage."
     }
   },
   "winged_sandals_of_hermes": {
@@ -1502,7 +1298,7 @@
     "min_level": 25,
     "identified": false,
     "unidentified_name": "sandals with small golden wings at the ankles",
-    "lore": "The talaria of Hermes, messenger of the gods, allowed him to fly between Olympus, Earth, and the Underworld in moments. Perseus borrowed them to approach Medusa. These sandals carry their wearer with divine swiftness — each step covers ground that would take mortals three.",
+    "lore": "The talaria of Hermes, messenger of the gods, allowed him to fly between Olympus, Earth, and the Underworld in moments. Perseus borrowed them to approach Medusa. These sandals carry their wearer with divine swiftness \u2014 each step covers ground that would take mortals three.",
     "containerLootTier": "rare",
     "can_be_cursed": false,
     "symbol": "[",
@@ -1554,12 +1350,6 @@
         "passive_free_escape_once_per_floor": true,
         "passive_psychopomp_step": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Winged Sandals of Hermes carry you with divine swiftness — armor class improves by 2."
     }
   },
   "hermes_sandals_early": {
@@ -1577,7 +1367,7 @@
     "min_level": 5,
     "identified": false,
     "unidentified_name": "a pair of sandals with tiny wing motifs",
-    "lore": "Hermes's true talaria — described in the Iliad and the Homeric Hymn to Hermes — were golden and carried him on the wind between Olympus and the underworld. These are a mortal smith's copy, the kind hung on temple walls as a votive after a successful errand. The wings are bronze and the leather is good but ordinary. They carry only one trick from the god, and only briefly: enemies always seem to look the wrong way as you pass.",
+    "lore": "Hermes's true talaria \u2014 described in the Iliad and the Homeric Hymn to Hermes \u2014 were golden and carried him on the wind between Olympus and the underworld. These are a mortal smith's copy, the kind hung on temple walls as a votive after a successful errand. The wings are bronze and the leather is good but ordinary. They carry only one trick from the god, and only briefly: enemies always seem to look the wrong way as you pass.",
     "onEquipStatus": "hasted",
     "containerLootTier": "uncommon",
     "can_be_cursed": false,
@@ -1600,12 +1390,6 @@
     "template_basis": "leather_boots",
     "is_unique": true,
     "on_equip_status": "hasted",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "These votive Hermes's Sandals carry one trick from the god — armor class improves by 1."
-    },
     "dodge_first_arrow_per_floor": true
   },
   "blindfold": {
@@ -1621,7 +1405,7 @@
     "enchant_bonus": 0,
     "identified": false,
     "unidentified_name": "strip of dark cloth",
-    "lore": "A strip of heavy black cloth. Wearing it plunges you into total darkness — you cannot see anything at all. A desperate measure, but sometimes not seeing is the only way to survive what lurks in the dark.",
+    "lore": "A strip of heavy black cloth. Wearing it plunges you into total darkness \u2014 you cannot see anything at all. A desperate measure, but sometimes not seeing is the only way to survive what lurks in the dark.",
     "symbol": "[",
     "color": [
       40,
@@ -1642,15 +1426,6 @@
     "template_basis": "leather_cap",
     "is_unique": true,
     "on_equip_status": "blinded",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 50
-      },
-      "scope": "item",
-      "desc": "The Blindfold severs sight from soul — it deflects 50% of psychic damage."
-    },
     "id_level": 0,
     "tremor_sense": 3
   },
@@ -1686,12 +1461,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "easter_egg",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 10,
-      "scope": "item",
-      "desc": "The Trainer's Cap radiates encouragement and bond — it grants a permanent 10 HP on mastery."
-    },
     "id_level": 0,
     "bond_check": true
   },
@@ -1719,7 +1488,7 @@
     "identified": false,
     "unidentified_name": "a crown of golden horns",
     "chain_bonus": 1,
-    "lore": "The gilded horns of the Cow King, ripped from his crowned skull by a victorious adventurer. When worn, the horns channel bovine fury into every strike, granting a free chain hit before the quiz even begins — making it impossible to miss entirely. The left horn is inscribed with a single word: 'Moo.'",
+    "lore": "The gilded horns of the Cow King, ripped from his crowned skull by a victorious adventurer. When worn, the horns channel bovine fury into every strike, granting a free chain hit before the quiz even begins \u2014 making it impossible to miss entirely. The left horn is inscribed with a single word: 'Moo.'",
     "floorSpawnWeight": {},
     "max_enchant": 2,
     "peak_floor": 0,
@@ -1729,12 +1498,6 @@
     "is_unique": true,
     "plot_locked": true,
     "spawn_method": "boss_drop_cow_king",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Cow King's Horns channel bovine fury — they grant a permanent 15 HP on mastery."
-    },
     "id_level": 0,
     "bovine_fury": true
   },
@@ -1759,7 +1522,7 @@
     "enchant_bonus": 0,
     "on_equip_status": "regenerating",
     "unidentified_name": "an intricately woven robe",
-    "lore": "Penelope, wife of Odysseus, waited twenty years for her husband's return from Troy. Each day she wove a funeral shroud; each night she unraveled it, buying time against the suitors who demanded she remarry. This cloth is woven from that same thread — thread that refused to stay finished, that healed itself every night. When worn, the wearer's wounds close slowly but surely, as if time itself is being unwoven.",
+    "lore": "Penelope, wife of Odysseus, waited twenty years for her husband's return from Troy. Each day she wove a funeral shroud; each night she unraveled it, buying time against the suitors who demanded she remarry. This cloth is woven from that same thread \u2014 thread that refused to stay finished, that healed itself every night. When worn, the wearer's wounds close slowly but surely, as if time itself is being unwoven.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-5": 3,
@@ -1773,12 +1536,6 @@
     "peak_weight": 0.4,
     "template_basis": "padded",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 10,
-      "scope": "item",
-      "desc": "The Cloth of Penelope was woven and unwoven for twenty years — it grants a permanent 10 HP on mastery."
-    },
     "identified": false,
     "id_level": 0,
     "weave_and_unweave": true
@@ -1805,7 +1562,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 1,
     "unidentified_name": "battle-scarred leather bracers",
-    "lore": "Cu Chulainn, the Hound of Ulster, was Ireland's greatest warrior — a man who entered such battle frenzy that his body twisted and contorted, one eye bulging, his hair standing like spikes of flame. These bracers are stained with the blood of a hundred battles. They carry the warp-spasm's echo: the wearer strikes harder, bleeds enemies with every blow, and feels no pain from cuts.",
+    "lore": "Cu Chulainn, the Hound of Ulster, was Ireland's greatest warrior \u2014 a man who entered such battle frenzy that his body twisted and contorted, one eye bulging, his hair standing like spikes of flame. These bracers are stained with the blood of a hundred battles. They carry the warp-spasm's echo: the wearer strikes harder, bleeds enemies with every blow, and feels no pain from cuts.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-21": 0,
@@ -1819,12 +1576,6 @@
     "peak_weight": 0.5,
     "template_basis": "leather_bracers",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 15,
-      "scope": "item",
-      "desc": "The Bracers of Cu Chulainn carry the warp-spasm — they grant a permanent 15 HP on mastery."
-    },
     "identified": false,
     "id_level": 0,
     "riastrad_echo": true
@@ -1850,7 +1601,7 @@
     "enchant_bonus": 0,
     "on_equip_status": "displacement",
     "unidentified_name": "a shimmering golden cloak",
-    "lore": "The Monkey King, Sun Wukong, was born from a stone egg on the Mountain of Flowers and Fruit. He stole the peaches of immortality, defied the Jade Emperor, and was imprisoned under a mountain for five hundred years before accompanying the monk Tripitaka westward. His seventy-two transformations made him impossible to pin down. This cloak carries that trickster spirit — the wearer seems to shimmer and shift, making them difficult to strike.",
+    "lore": "The Monkey King, Sun Wukong, was born from a stone egg on the Mountain of Flowers and Fruit. He stole the peaches of immortality, defied the Jade Emperor, and was imprisoned under a mountain for five hundred years before accompanying the monk Tripitaka westward. His seventy-two transformations made him impossible to pin down. This cloak carries that trickster spirit \u2014 the wearer seems to shimmer and shift, making them difficult to strike.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-24": 0,
@@ -1864,18 +1615,12 @@
     "peak_weight": 0.5,
     "template_basis": "cloak",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Cloak of Sun Wukong shimmers and shifts — armor class improves by 1."
-    },
     "identified": false,
     "id_level": 0,
     "monkey_king_dodge": 10
   },
   "coat_of_cu_chulainn": {
-    "name": "Coat of Cú Chulainn",
+    "name": "Coat of C\u00fa Chulainn",
     "symbol": "[",
     "color": [
       180,
@@ -1902,7 +1647,7 @@
     "berserk_duration": 10,
     "berserk_hp_cost": 1,
     "unidentified_name": "a blood-red hide coat that pulses warmly",
-    "lore": "The war-harness of Cú Chulainn, the Hound of Ulster. When his blood was up, his body twisted into the ríastrad — the warp-spasm — and no army could stand before him. The coat remembers. When its wearer's life hangs by a thread, it awakens something primal: strength surges, pain fades, but the fury has a cost.",
+    "lore": "The war-harness of C\u00fa Chulainn, the Hound of Ulster. When his blood was up, his body twisted into the r\u00edastrad \u2014 the warp-spasm \u2014 and no army could stand before him. The coat remembers. When its wearer's life hangs by a thread, it awakens something primal: strength surges, pain fades, but the fury has a cost.",
     "floorSpawnWeight": {
       "31-50": 1,
       "51-70": 2,
@@ -1914,12 +1659,6 @@
     "peak_weight": 0.4,
     "template_basis": "hide",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "+20 max HP while wearing the Coat of Cu Chulainn."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -1948,7 +1687,7 @@
     "enchant_bonus": 0,
     "first_hit_absorb": true,
     "unidentified_name": "a tiger-skin coat of impossible toughness",
-    "lore": "The tiger-skin armor of Rostam, greatest hero of the Shahnameh. He wore it through his Seven Labors — against the lion, the desert, the dragon, the witch, the demon Aulad, the Div-e Sepid, and the Div-e Akvan. The skin remembers every blow it absorbed. On each new floor, it will absorb the first strike completely, as though the blow never fell.",
+    "lore": "The tiger-skin armor of Rostam, greatest hero of the Shahnameh. He wore it through his Seven Labors \u2014 against the lion, the desert, the dragon, the witch, the demon Aulad, the Div-e Sepid, and the Div-e Akvan. The skin remembers every blow it absorbed. On each new floor, it will absorb the first strike completely, as though the blow never fell.",
     "floorSpawnWeight": {
       "51-70": 1,
       "71-90": 2,
@@ -1960,15 +1699,6 @@
     "peak_weight": 0.4,
     "template_basis": "hide",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 20
-      },
-      "scope": "item",
-      "desc": "Babr-e Bayan grants +20% resistance to all elemental damage."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -1995,7 +1725,7 @@
     "invisibility_duration": 5,
     "invisibility_cooldown": 30,
     "unidentified_name": "a dull iron helm that seems hard to look at",
-    "lore": "Forged by the Nibelung dwarf Mime for Alberich, who used it to enslave his own kin. Siegfried took it after slaying Fafnir. The Tarnhelm renders its wearer invisible — not merely hidden, but absent from perception entirely. Monsters lose all awareness of the wearer. The effect is brief, and the helm must recover its power between uses.",
+    "lore": "Forged by the Nibelung dwarf Mime for Alberich, who used it to enslave his own kin. Siegfried took it after slaying Fafnir. The Tarnhelm renders its wearer invisible \u2014 not merely hidden, but absent from perception entirely. Monsters lose all awareness of the wearer. The effect is brief, and the helm must recover its power between uses.",
     "floorSpawnWeight": {
       "41-60": 1,
       "61-80": 2,
@@ -2007,12 +1737,6 @@
     "peak_weight": 0.4,
     "template_basis": "iron_helm",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "The Tarnhelm renders its wearer absent from perception — armor class improves by 2."
-    },
     "identified": false,
     "id_level": 0
   },
@@ -2041,7 +1765,7 @@
     "unidentified_name": "a stiff cuirass of layered white linen",
     "floorSpawnWeight": {},
     "value": 1500,
-    "lore": "Alexander the Great wore linothorax — layers of linen glued and quilted into a stiff cuirass. It was lighter than bronze, cheaper to make, and stopped arrows. The Macedonian phalanx wore it. The Romans copied it. Modern reconstructions tested with bows confirmed: twenty layers of linen will turn an arrow that punches through wood.",
+    "lore": "Alexander the Great wore linothorax \u2014 layers of linen glued and quilted into a stiff cuirass. It was lighter than bronze, cheaper to make, and stopped arrows. The Macedonian phalanx wore it. The Romans copied it. Modern reconstructions tested with bows confirmed: twenty layers of linen will turn an arrow that punches through wood.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -2050,12 +1774,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "Alexander's Linothorax stops what punches through wood — armor class improves by 1."
-    },
     "phalanx_recovery": 2
   },
   "coif_of_beowulf": {
@@ -2083,7 +1801,7 @@
     "unidentified_name": "a riveted iron coif of Anglo-Saxon make",
     "floorSpawnWeight": {},
     "value": 1200,
-    "lore": "Beowulf rode to Heorot and killed Grendel bare-handed because his sword would not bite the troll's hide. He kept the arm as a trophy. His coif, the poet says, was 'wound with wires by a weapon-smith of cunning' — the lines of the Sutton Hoo helmet match the description almost exactly. Archaeology caught up with the poem in 1939.",
+    "lore": "Beowulf rode to Heorot and killed Grendel bare-handed because his sword would not bite the troll's hide. He kept the arm as a trophy. His coif, the poet says, was 'wound with wires by a weapon-smith of cunning' \u2014 the lines of the Sutton Hoo helmet match the description almost exactly. Archaeology caught up with the poem in 1939.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -2092,12 +1810,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 10,
-      "scope": "item",
-      "desc": "Beowulf's coif was 'wound with wires by a weapon-smith of cunning' — it grants a permanent 10 HP on mastery."
-    },
     "grendel_grip": true
   },
   "sandals_of_perseus": {
@@ -2125,7 +1837,7 @@
     "unidentified_name": "a worn pair of bronze-buckled sandals",
     "floorSpawnWeight": {},
     "value": 1100,
-    "lore": "Before Perseus borrowed Hermes' winged talaria, he wore ordinary bronze-buckled sandals — the same Mycenaean style every shepherd and soldier wore. Athena visited him in those sandals. The gods gave him better gear later because the better gear was needed for Medusa, not because his own was inadequate. He kept the originals. The pair found at Lerna may or may not be his.",
+    "lore": "Before Perseus borrowed Hermes' winged talaria, he wore ordinary bronze-buckled sandals \u2014 the same Mycenaean style every shepherd and soldier wore. Athena visited him in those sandals. The gods gave him better gear later because the better gear was needed for Medusa, not because his own was inadequate. He kept the originals. The pair found at Lerna may or may not be his.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -2134,12 +1846,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Sandals of Perseus walked the road to Medusa — armor class improves by 1."
-    },
     "quest_humility": true
   },
   "kilt_of_the_pharaoh": {
@@ -2167,7 +1873,7 @@
     "unidentified_name": "a starched pleated linen kilt with gilt threads",
     "floorSpawnWeight": {},
     "value": 1200,
-    "lore": "The shendyt was the kilt worn by Egyptian royalty for three thousand years — pleated linen, sometimes stiffened with starch, sometimes embroidered with gold thread. Tutankhamun was buried with several. The dry climate preserved the linen better than the wood of the coffins. A pharaoh's clothes outlasted his furniture.",
+    "lore": "The shendyt was the kilt worn by Egyptian royalty for three thousand years \u2014 pleated linen, sometimes stiffened with starch, sometimes embroidered with gold thread. Tutankhamun was buried with several. The dry climate preserved the linen better than the wood of the coffins. A pharaoh's clothes outlasted his furniture.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -2176,15 +1882,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "fire",
-        "pct": 25
-      },
-      "scope": "item",
-      "desc": "The Kilt of the Pharaoh is starched linen with the desert's defiance — it deflects 25% of fire damage."
-    },
     "royal_burial": true
   },
   "scale_of_dilmun": {
@@ -2213,7 +1910,7 @@
     "unidentified_name": "a bronze scale shirt of Mesopotamian make",
     "floorSpawnWeight": {},
     "value": 3500,
-    "lore": "Dilmun was the Sumerian paradise — somewhere in the Persian Gulf, possibly Bahrain — where Enki and his wife lived without sickness or old age. Gilgamesh sought immortality there and found Utnapishtim, the flood survivor, instead. The scale armour found in Dilmun-era tombs predates the Hittite scale shirts by centuries. The Sumerians invented most things first.",
+    "lore": "Dilmun was the Sumerian paradise \u2014 somewhere in the Persian Gulf, possibly Bahrain \u2014 where Enki and his wife lived without sickness or old age. Gilgamesh sought immortality there and found Utnapishtim, the flood survivor, instead. The scale armour found in Dilmun-era tombs predates the Hittite scale shirts by centuries. The Sumerians invented most things first.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -2222,12 +1919,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 12,
-      "scope": "item",
-      "desc": "The Scale of Dilmun came from the Sumerian paradise — it grants a permanent 12 HP on mastery."
-    },
     "water_tile_ac_bonus": 2,
     "water_tile_regen_bonus": 1
   },
@@ -2256,7 +1947,7 @@
     "unidentified_name": "a beaten gold-and-electrum war helm",
     "floorSpawnWeight": {},
     "value": 3200,
-    "lore": "The royal helmets found at Ur are made of beaten gold and electrum, light enough to wear but ornamental enough that a real fight would dent them out of shape. They were buried with the king. Gilgamesh was a real king of Uruk — the tablets list him — and the epic about him was already old when scribes copied it in the second millennium BCE. The story is older than the script that records it.",
+    "lore": "The royal helmets found at Ur are made of beaten gold and electrum, light enough to wear but ornamental enough that a real fight would dent them out of shape. They were buried with the king. Gilgamesh was a real king of Uruk \u2014 the tablets list him \u2014 and the epic about him was already old when scribes copied it in the second millennium BCE. The story is older than the script that records it.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -2265,12 +1956,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 12,
-      "scope": "item",
-      "desc": "The Helm of Gilgamesh remembers Uruk's king — it grants a permanent 12 HP on mastery."
-    },
     "gold_offering": true
   },
   "sandals_of_theseus": {
@@ -2307,12 +1992,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Sandals of Theseus walked from Troezen through every Labour — armor class improves by 1."
-    },
     "their_own_methods": 0.2
   },
   "greaves_of_qin": {
@@ -2341,7 +2020,7 @@
     "unidentified_name": "lacquered leather greaves stamped with seal-script",
     "floorSpawnWeight": {},
     "value": 3000,
-    "lore": "Qin Shi Huangdi's Terracotta Army was eight thousand soldiers in full kit, buried with the first emperor in 210 BCE. Every figure is individual — different face, different armour, different rank. The leg armour on the standing infantry is lacquered leather scales laced with cord. Lacquer waterproofs leather and stiffens it. The Qin engineers understood materials science.",
+    "lore": "Qin Shi Huangdi's Terracotta Army was eight thousand soldiers in full kit, buried with the first emperor in 210 BCE. Every figure is individual \u2014 different face, different armour, different rank. The leg armour on the standing infantry is lacquered leather scales laced with cord. Lacquer waterproofs leather and stiffens it. The Qin engineers understood materials science.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -2350,12 +2029,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "The Greaves of the Qin Guard are lacquered to resist water and weather — armor class improves by 1."
-    },
     "resistances": {
       "acid": 0.3
     }
@@ -2386,7 +2059,7 @@
     "unidentified_name": "a deep blue traveler's cloak with one missing eyelet",
     "floorSpawnWeight": {},
     "value": 3800,
-    "lore": "Odin disguised himself as a one-eyed wanderer in a wide-brimmed hat and a blue cloak. He visited halls, drank with mortals, set them riddles, and left without saying who he was. Half the saga heroes have an encounter with a strange old man at a turning point — the old man is always Odin. He came to find out what humans were doing. He never quite trusted his own answer.",
+    "lore": "Odin disguised himself as a one-eyed wanderer in a wide-brimmed hat and a blue cloak. He visited halls, drank with mortals, set them riddles, and left without saying who he was. Half the saga heroes have an encounter with a strange old man at a turning point \u2014 the old man is always Odin. He came to find out what humans were doing. He never quite trusted his own answer.",
     "max_enchant": 2,
     "peak_floor": 36,
     "spread": 10,
@@ -2430,15 +2103,6 @@
         "passive_huginn_muninn": true,
         "passive_wisdom_at_a_price": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "Odin walked among men in this cloak and set them riddles — it deflects 30% of psychic damage."
     }
   },
   "bracers_of_arjuna": {
@@ -2476,12 +2140,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 1,
-      "scope": "item",
-      "desc": "Arjuna's Bracers held the bow through Kurukshetra — armor class improves by 1."
-    },
     "gita_focus": true
   },
   "girdle_of_hippolyta": {
@@ -2510,7 +2168,7 @@
     "unidentified_name": "a braided leather war-girdle with a bronze clasp",
     "floorSpawnWeight": {},
     "value": 5500,
-    "lore": "Hippolyta, queen of the Amazons, owned a war-girdle given her by Ares. Heracles' ninth Labour was to take it. She offered it freely; Hera disguised herself as an Amazon and started a rumor that he was kidnapping the queen. The Amazons attacked. Heracles killed Hippolyta and took the girdle. The story has variants — in some, Hippolyta lives and the girdle is paid for. The variants reflect later discomfort with the source.",
+    "lore": "Hippolyta, queen of the Amazons, owned a war-girdle given her by Ares. Heracles' ninth Labour was to take it. She offered it freely; Hera disguised herself as an Amazon and started a rumor that he was kidnapping the queen. The Amazons attacked. Heracles killed Hippolyta and took the girdle. The story has variants \u2014 in some, Hippolyta lives and the girdle is paid for. The variants reflect later discomfort with the source.",
     "max_enchant": 2,
     "peak_floor": 45,
     "spread": 10,
@@ -2518,16 +2176,7 @@
     "template_basis": "leather_leggings",
     "is_unique": true,
     "containerLootTier": "rare",
-    "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "accessory_stat_bonus",
-      "value": {
-        "stat": "STR",
-        "amount": 2
-      },
-      "scope": "item",
-      "desc": "The Girdle of Hippolyta was Ares's gift to the Amazon queen — STR rises by 2 permanently."
-    }
+    "container_loot_tier": "rare"
   },
   "helm_of_leonidas": {
     "name": "Helm of Leonidas",
@@ -2555,7 +2204,7 @@
     "unidentified_name": "a Corinthian bronze helm with a transverse crest",
     "floorSpawnWeight": {},
     "value": 5500,
-    "lore": "Leonidas of Sparta held Thermopylae against Xerxes' army with three hundred Spartans and a few thousand allies. He died on the third day. Spartan helmets had a transverse crest — a horsehair brush running ear to ear — that marked officers. Persians who saw the Spartans combing their hair on the morning of the last battle reported it as strange. The Spartans were preparing for death the way their custom required.",
+    "lore": "Leonidas of Sparta held Thermopylae against Xerxes' army with three hundred Spartans and a few thousand allies. He died on the third day. Spartan helmets had a transverse crest \u2014 a horsehair brush running ear to ear \u2014 that marked officers. Persians who saw the Spartans combing their hair on the morning of the last battle reported it as strange. The Spartans were preparing for death the way their custom required.",
     "max_enchant": 2,
     "peak_floor": 45,
     "spread": 10,
@@ -2564,12 +2213,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "Leonidas's transverse-crested helm held the pass for three days — it grants a permanent 20 HP on mastery."
-    },
     "last_stand_bonus": true
   },
   "cloak_of_mulan": {
@@ -2607,12 +2250,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_ac_bonus",
-      "value": 2,
-      "scope": "item",
-      "desc": "Mulan's Cloak hid her in plain sight for twelve years of war — armor class improves by 2."
-    },
     "disguise_at_camp": true
   },
   "haramaki_of_yoshitsune": {
@@ -2652,12 +2289,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "Yoshitsune's haramaki carried him through Ichi-no-Tani and Dan-no-ura — it grants a permanent 20 HP on mastery."
-    },
     "descent_haste": 5
   },
   "boots_of_thor": {
@@ -2686,7 +2317,7 @@
     "unidentified_name": "heavy iron boots scarred by lightning",
     "floorSpawnWeight": {},
     "value": 9200,
-    "lore": "Thor wore iron gloves to hold Mjolnir without crushing his fingers, a belt of strength that doubled his power, and iron boots for the same reason wrestlers chalk their hands. The Eddas list the three together as his ordinary kit — not the legendary parts of his story, just what he wore to work. The gear was practical. The thunder came from the work he did in it.",
+    "lore": "Thor wore iron gloves to hold Mjolnir without crushing his fingers, a belt of strength that doubled his power, and iron boots for the same reason wrestlers chalk their hands. The Eddas list the three together as his ordinary kit \u2014 not the legendary parts of his story, just what he wore to work. The gear was practical. The thunder came from the work he did in it.",
     "max_enchant": 3,
     "peak_floor": 84,
     "spread": 10,
@@ -2695,12 +2326,6 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 20,
-      "scope": "item",
-      "desc": "Thor's iron boots are his ordinary working kit — they grant a permanent 20 HP on mastery."
-    },
     "thors_step": 0.05
   },
   "helm_of_aragorn": {
@@ -2730,7 +2355,7 @@
     "unidentified_name": "a winged silver helm with a pale gem in the brow",
     "floorSpawnWeight": {},
     "value": 9500,
-    "lore": "Aragorn son of Arathorn was raised in Rivendell because his father had been killed and the line of Isildur could not be allowed to die in the wild. He went by Strider for most of his life. He earned the helm by going north when going north was the work nobody wanted. Tolkien's central argument — that the willing exile is the rightful king — is older than the book. The Britons told it about Arthur. The Israelites told it about David.",
+    "lore": "Aragorn son of Arathorn was raised in Rivendell because his father had been killed and the line of Isildur could not be allowed to die in the wild. He went by Strider for most of his life. He earned the helm by going north when going north was the work nobody wanted. Tolkien's central argument \u2014 that the willing exile is the rightful king \u2014 is older than the book. The Britons told it about Arthur. The Israelites told it about David.",
     "max_enchant": 2,
     "peak_floor": 84,
     "spread": 10,
@@ -2775,15 +2400,6 @@
         "passive_command_undead": true,
         "passive_paths_of_the_dead": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "unholy",
-        "pct": 35
-      },
-      "scope": "item",
-      "desc": "The Helm of the King Returned carries the line of Isildur — it deflects 35% of unholy damage."
     }
   },
   "robes_of_solomon": {
@@ -2868,19 +2484,10 @@
         "passive_demon_command_one_per_floor": true,
         "passive_seventy_two_seals": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "psychic",
-        "pct": 40
-      },
-      "scope": "item",
-      "desc": "The Robes of Solomon are embroidered with the names of bound demons — they deflect 40% of psychic damage."
     }
   },
   "armor_of_ragnarok": {
-    "name": "Armor of Ragnarök",
+    "name": "Armor of Ragnar\u00f6k",
     "symbol": "[",
     "color": [
       80,
@@ -2908,7 +2515,7 @@
     "unidentified_name": "an iron-and-bone harness scarred by old burns",
     "floorSpawnWeight": {},
     "value": 16000,
-    "lore": "Ragnarök is the doom of the gods. Odin dies in the wolf's mouth. Thor kills the world-serpent and walks nine steps before falling from its venom. The world burns and sinks and rises again with a smaller pantheon and a memory of what happened. This is the harness for the day the gods knew was coming and went out to meet anyway. The Norse called that courage, not despair.",
+    "lore": "Ragnar\u00f6k is the doom of the gods. Odin dies in the wolf's mouth. Thor kills the world-serpent and walks nine steps before falling from its venom. The world burns and sinks and rises again with a smaller pantheon and a memory of what happened. This is the harness for the day the gods knew was coming and went out to meet anyway. The Norse called that courage, not despair.",
     "max_enchant": 3,
     "peak_floor": 93,
     "spread": 8,
@@ -2956,12 +2563,6 @@
         "passive_first_hit_absorb": true,
         "passive_doom_of_the_gods": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_hp_bonus",
-      "value": 25,
-      "scope": "item",
-      "desc": "The Armor of Ragnarök is the harness for the day the gods went out to meet anyway — it grants a permanent 25 HP on mastery."
     }
   },
   "crown_of_brahma": {
@@ -3028,15 +2629,6 @@
         "resistance_lightning": 1,
         "passive_four_faces_360_fov": true
       }
-    },
-    "mastery_blessing": {
-      "kind": "armor_resist_bonus",
-      "value": {
-        "type": "all_elemental",
-        "pct": 30
-      },
-      "scope": "item",
-      "desc": "The Crown of Brahma was the creator's own — it deflects 30% of all elemental damage."
     }
   },
   "duck_of_doom": {
@@ -3067,12 +2659,6 @@
     "value": 0,
     "lore": "You should know better than to pick up a duck in a dungeon.",
     "is_unique": true,
-    "mastery_blessing": {
-      "kind": "cosmetic_only",
-      "value": 0,
-      "scope": "item",
-      "desc": "The Duck of Doom has no master!"
-    },
     "peak_floor": 1,
     "plot_locked": true
   }

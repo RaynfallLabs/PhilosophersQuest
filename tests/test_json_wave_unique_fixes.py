@@ -95,26 +95,8 @@ def test_anduril_effective_against_undead(weapons):
     assert 'undead' in ea
 
 
-# ---------------------------------------------------------------------------
-# Mid-tier mastery swaps
-# ---------------------------------------------------------------------------
-
-@pytest.mark.parametrize('wid, tag, min_pct', [
-    ('cuchulainn_hurley', 'beast', 20),
-    ('talos_sickle', 'construct', 25),
-    ('chainsaw_prosthetic', 'undead', 25),
-    ('prometheus_torch', 'undead', 25),
-    ('bellerophon_lance', 'beast', 25),
-    ('hector_javelin', 'humanoid', 25),
-])
-def test_mid_tier_mastery_swaps(weapons, wid, tag, min_pct):
-    """Each weapon should now have a weapon_damage_vs_tag mastery matching
-    its lore-claimed anti-X target."""
-    mb = weapons[wid].get('mastery_blessing', {})
-    assert mb.get('kind') == 'weapon_damage_vs_tag', f"{wid} mastery kind wrong"
-    val = mb.get('value', {})
-    assert val.get('tag') == tag, f"{wid} mastery tag should be {tag}, got {val.get('tag')}"
-    assert val.get('pct', 0) >= min_pct, f"{wid} pct should be >= {min_pct}"
+# (Mid-tier mastery-swap tests removed 2026-08-06 — mastery blessings were
+# retired with the one-question identify redesign.)
 
 
 # ---------------------------------------------------------------------------

@@ -141,14 +141,10 @@ class Player:
         self.known_item_ids: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)
         self.known_monster_ids: set[str] = set()   # monsters seen (encyclopedia)
-        self.lore_known_monster_ids: set[str] = set()  # monsters whose corpse has been studied (id_level >= 4)
-        # Max id_level reached on EACH monster_id's corpse (any tier
-        # 1..5). Used to spawn newly-dropped corpses at the same tier
-        # the player has already learned, so identification carries
-        # over between fresh kills. Per user feedback 2026-05-29:
-        # "if I examine ONE rotting zombie corpse, all should be
-        # identified at same tier upon discovery."
-        self.corpse_id_level_known: dict[str, int] = {}
+        # Monster types whose corpse has been identified. One success knows
+        # the type forever — fresh kills of a studied monster spawn their
+        # corpse pre-identified (game_combat._make_corpse).
+        self.lore_known_monster_ids: set[str] = set()
         self.lockpick_charges: int = 0             # charges from collected lockpicks
         # Spells learned from spellbooks: spell_id -> mp_cost
         self.known_spells: dict[str, int] = {}
@@ -188,27 +184,16 @@ class Player:
         self.philosopher_tier_claimed: set[int] = set()
         # Passive: at 100 IDs, auto-set buc_known=True on every new pickup.
         self.philosophers_mantle: bool = False
-        # Mastery bonuses unlocked by chain-5 identify on uniques.
-        # Key: item_id (e.g. 'soul_reaver'). Value: blessing dict {'kind', 'value', 'desc'}.
-        self.unlocked_masteries: dict[str, dict] = {}
-        # Carry-scope masteries currently applied to stats. Keyed by
-        # item_id, value = (stat, amount) tuple of what's been added.
-        # See refresh_carry_bonuses() for the apply/remove diff logic.
-        # Used for items with mastery_blessing.scope='carry' (e.g.
-        # Charmander Stuffie, Dreamspun Sketchbook) — bonus applies
-        # only while the mastered item is in the player's inventory.
+        # Carry bonuses currently applied to stats. Keyed by item_id,
+        # value = (stat, amount) tuple of what's been added. See
+        # refresh_carry_bonuses() for the apply/remove diff logic. Used
+        # for items with a carry_bonus field (Charmander Stuffie,
+        # Dreamspun Sketchbook) — bonus applies while the item is in
+        # the player's inventory.
         self.active_carry_bonuses: dict[str, tuple] = {}
-        # Class-level mastery for commons — mastering one Ring of Strength applies
-        # to ALL rings of strength. Key: mastery_class slug (e.g. 'ring_of_strength').
-        # Computed by class_masteries.get_mastery_class(item).
-        self.unlocked_class_masteries: dict[str, dict] = {}
-        # Per-family monster mastery — unlocked by chain-5 corpse-identify.
-        # Key: family tag (e.g. 'dragon', 'undead'). Value: blessing dict.
-        # See monster_classes.MONSTER_FAMILY_BLESSINGS for the schema.
-        self.unlocked_monster_class_masteries: dict[str, dict] = {}
-        # Item-class names the player has identified by their class (tier-1
-        # of the escalator). Lets us name "Ring of Strength" for all variants
-        # in the player's pack regardless of material.
+        # Item-class names the player has identified by their class. Lets
+        # us name "Ring of Strength" for all variants in the player's
+        # pack regardless of material. See items.type_class.
         self.known_class_ids: set[str] = set()
 
     @property
@@ -259,31 +244,6 @@ class Player:
         # Flat damage reduction from chain-equip tier_bonuses (resistance_<type>).
         # Each "level" subtracts 1 damage of the matching type; clamped to >=0.
         flat_reduction = int(getattr(self, 'damage_resistances', {}).get(damage_type, 0))
-        # Monster-family mastery: elemental blessing reduces fire/cold/lightning
-        # damage by value as flat subtraction.
-        if damage_type in ('fire', 'cold', 'lightning'):
-            fams = getattr(self, 'unlocked_monster_class_masteries', {})
-            elem = fams.get('elemental')
-            if elem and elem.get('kind') == 'resist_elemental':
-                flat_reduction += int(elem.get('value', 0))
-        # Class-mastery flat reduction from equipped armor — physical-only.
-        # CAPPED AT 1 total (not per-piece): with 8 armor slots, stacking
-        # would let a fully-decked player approach physical immunity. The
-        # bonus represents 'you've learned the geometry of armor,' not
-        # eight independent achievements.
-        if damage_type == 'physical':
-            class_masteries = getattr(self, 'unlocked_class_masteries', {}) or {}
-            if class_masteries:
-                try:
-                    from class_masteries import get_mastery_class
-                    for armor_piece in getattr(self, 'armor_slots', []) or []:
-                        if armor_piece:
-                            m = class_masteries.get(get_mastery_class(armor_piece))
-                            if m and m.get('kind') == 'class_armor_damage_reduction':
-                                flat_reduction += int(m.get('value', 0))
-                                break  # ONLY ONCE — cap at 1 total
-                except Exception:
-                    pass
         amount = max(0, amount - flat_reduction)
 
         # 'shielded' status halves physical damage (matches the description
@@ -663,12 +623,11 @@ class Player:
                 return 0
             return int(d.get(cat, 0) or 0) + int(d.get('all', 0) or 0)
 
-        # --- Permanent lane: equipment, innate build affinity, masteries, quirks,
+        # --- Permanent lane: equipment, innate build affinity, quirks,
         #     and the Boss Class Ascension class save bonus (body/mind/spirit).
         perm = (_amt(getattr(self, '_save_bonus', None))
                 + _amt(getattr(self, 'save_affinity', None))
                 + self._gear_save_bonus(cat)
-                + self._mastery_save_bonus(cat)
                 + self._quirk_save_bonus(cat)
                 + self._class_save_bonus(cat))
 
@@ -684,19 +643,6 @@ class Player:
         timed = min(timed, 3)
 
         return min(perm + timed, 5)
-
-    def _mastery_save_bonus(self, cat: str) -> int:
-        """Sum kind=='save_bonus' blessings across the three mastery stores."""
-        total = 0
-        for store in (getattr(self, 'unlocked_masteries', None) or {},
-                      getattr(self, 'unlocked_class_masteries', None) or {},
-                      getattr(self, 'unlocked_monster_class_masteries', None) or {}):
-            for bless in store.values():
-                if isinstance(bless, dict) and bless.get('kind') == 'save_bonus':
-                    val = bless.get('value') or {}
-                    if isinstance(val, dict) and val.get('cat') in (cat, 'all'):
-                        total += int(val.get('amount', 0) or 0)
-        return total
 
     def _quirk_save_bonus(self, cat: str) -> int:
         """Save bonuses from converted quirk passives (quirk_progress flags)."""
@@ -742,41 +688,7 @@ class Player:
         if name == 'feared' and self.status_effects.get('fear_immune', 0) > 0:
             return False
         # (Fey/aberration family masteries formerly halved charm/confuse durations
-        # here; they are now clean WIS save bonuses read in apply_debuff_with_save,
-        # so the ad-hoc duration math has been retired.)
-        # class_acc_quirk mastery: matching ring class extends its signature
-        # buff duration. Applies for non-permanent (>0) buffs only — permanent
-        # ring statuses already last forever.
-        if duration > 0:
-            _CLASS_QUIRK_EFFECT_MAP = {
-                'speed_extend':     ('hasted',       ('ring_of_speed', 'amulet_of_speed')),
-                'invis_extend':     ('invisible',    ('ring_of_invisibility', 'amulet_of_invisibility')),
-                'levitate_extend':  ('levitating',   ('ring_of_levitation', 'amulet_of_levitation')),
-                'displace_extend':  ('displacement', ('ring_of_displacement', 'amulet_of_displacement')),
-            }
-            for _cls_id, _b in getattr(self, 'unlocked_class_masteries', {}).items():
-                if _b.get('kind') != 'class_acc_quirk':
-                    continue
-                _slug = _b.get('value', '')
-                _mapped = _CLASS_QUIRK_EFFECT_MAP.get(_slug)
-                if _mapped and name == _mapped[0] and _cls_id in _mapped[1]:
-                    duration = int(duration) + 4
-        # class_acc_buff_duration_bonus mastery (default fallback for
-        # accessories): +N turns to any buff added while a mastered ring/
-        # amulet of that class is equipped.
-        if duration > 0:
-            try:
-                from class_masteries import get_mastery_class as _gmc_b
-            except ImportError:
-                _gmc_b = None
-            if _gmc_b is not None:
-                _bonus = 0
-                for _acc in self.equipped_accessories:
-                    _m = self.unlocked_class_masteries.get(_gmc_b(_acc))
-                    if _m and _m.get('kind') == 'class_acc_buff_duration_bonus':
-                        _bonus += int(_m.get('value', 0))
-                if _bonus > 0:
-                    duration = int(duration) + _bonus
+        # here; masteries have been removed from the game entirely.)
         return apply_effect(self, name, duration)
 
     def tick_effects(self) -> list:
@@ -799,16 +711,6 @@ class Player:
             getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
             if self.shield else 0
         )
-        # Class-mastery: +1 AC if shield's class has been mastered.
-        if self.shield:
-            try:
-                from class_masteries import get_mastery_class
-                cls_m = (getattr(self, 'unlocked_class_masteries', {}) or {}).get(
-                    get_mastery_class(self.shield))
-                if cls_m and cls_m.get('kind') == 'class_shield_ac_bonus':
-                    shield_bonus += int(cls_m.get('value', 0))
-            except Exception:
-                pass
         # BUC of worn gear: blessed +1 AC / cursed -1 AC per piece, across
         # armor, shield AND accessories. (Cursed gear is also welded on by the
         # unequip guard, so a cursed piece is a real, stuck penalty -- and a
@@ -829,33 +731,6 @@ class Player:
         shield_effect   = 2 if self.has_effect('shielded') else 0
         acc_bonus = getattr(self, '_accessory_ac_bonus', 0)
         surr_bonus = getattr(self, '_surrounded_ac_bonus', 0)
-        # armor_ac_bonus mastery (e.g. Greater Aegis of Athena) — applies for each mastered piece worn
-        mastery_ac = 0
-        for s in (list(self.armor_slots) + [self.shield]):
-            if s is None:
-                continue
-            m = self.unlocked_masteries.get(getattr(s, 'id', None))
-            if m and m.get('kind') == 'armor_ac_bonus':
-                mastery_ac += int(m.get('value', 0))
-        # class_acc_ac_bonus mastery (Ring of Protection class): +N AC.
-        # CAPPED ONCE PER MASTERED CLASS (not per equipped ring) so that
-        # wearing 4 Rings of Protection doesn't multiply the mastery bonus.
-        # The base ring AC already stacks per-piece; mastery is a one-time
-        # 'you understand this class' nod.
-        try:
-            from class_masteries import get_mastery_class as _gmc_ac
-        except ImportError:
-            _gmc_ac = None
-        if _gmc_ac is not None:
-            credited_classes = set()
-            for s in self.equipped_accessories:
-                cls_id = _gmc_ac(s)
-                if cls_id in credited_classes:
-                    continue
-                m = self.unlocked_class_masteries.get(cls_id)
-                if m and m.get('kind') == 'class_acc_ac_bonus':
-                    mastery_ac += int(m.get('value', 0))
-                    credited_classes.add(cls_id)
         # Leonidas Spartan Stand: +N AC while the stand_ac status holds.
         stand_ac = 0
         if self.status_effects.get('stand_ac', 0) > 0:
@@ -888,7 +763,7 @@ class Player:
                 armor_proc_ac += 2
             if getattr(self, '_armor_proc_on_water', False):
                 armor_proc_ac += int(_pv_ac(self, 'water_tile_ac_bonus') or 0)
-        return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - acc_bonus - surr_bonus - mastery_ac - stand_ac - parry_ac - armor_proc_ac
+        return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - acc_bonus - surr_bonus - stand_ac - parry_ac - armor_proc_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -896,41 +771,8 @@ class Player:
         for slot in self.armor_slots:
             if slot and hasattr(slot, 'damage_resistances'):
                 mult *= slot.damage_resistances.get(damage_type, 1.0)
-            if slot:
-                # armor_resist_bonus mastery: reduce incoming damage of `type` by `pct`
-                m = self.unlocked_masteries.get(getattr(slot, 'id', None))
-                if m and m.get('kind') == 'armor_resist_bonus':
-                    v = m.get('value') or {}
-                    t = v.get('type')
-                    pct = float(v.get('pct', 0)) / 100.0
-                    if t == damage_type or t == 'all_elemental' and damage_type in (
-                            'fire', 'cold', 'lightning', 'acid', 'poison'):
-                        mult *= max(0.0, 1.0 - pct)
         if self.shield and hasattr(self.shield, 'damage_resistances'):
             mult *= self.shield.damage_resistances.get(damage_type, 1.0)
-        # class_acc_resist_bonus mastery: matching equipped resist-ring applies
-        # an extra fractional reduction. CAPPED ONCE PER MASTERED CLASS so
-        # wearing 4 Rings of Fire Resistance doesn't multiply the mastery
-        # contribution. The base ring resistance still stacks per-piece.
-        try:
-            from class_masteries import get_mastery_class as _gmc_r
-        except ImportError:
-            _gmc_r = None
-        if _gmc_r is not None:
-            credited_resist = set()
-            for acc in self.equipped_accessories:
-                cid = _gmc_r(acc)
-                if cid in credited_resist:
-                    continue
-                m = self.unlocked_class_masteries.get(cid)
-                if not m or m.get('kind') != 'class_acc_resist_bonus':
-                    continue
-                v = m.get('value') or {}
-                t = v.get('type')
-                amt = float(v.get('amount', 0))
-                if t == damage_type and amt > 0:
-                    mult *= max(0.0, 1.0 - amt)
-                    credited_resist.add(cid)
         return mult
 
     def get_sight_radius(self) -> int:
@@ -1016,84 +858,6 @@ class Player:
             base += 3
         return base
 
-    def get_class_mastery_regen_bonus(self) -> int:
-        """Sum of class_acc_regen_bonus mastery values for currently equipped
-        ring/amulet of regeneration. Returns extra HP per regen tick.
-
-        Wired at the regen-tick site (main._tick_hp_regen) so the bonus only
-        fires while the regen accessory is worn — matches the intent of the
-        blessing description (per-ring class).
-        """
-        # CAPPED ONCE PER MASTERED CLASS — wearing 4 Rings of Regeneration
-        # doesn't multiply the per-tick regen mastery bonus.
-        try:
-            from class_masteries import get_mastery_class as _gmc_re
-        except ImportError:
-            return 0
-        bonus = 0
-        credited = set()
-        for acc in self.equipped_accessories:
-            cid = _gmc_re(acc)
-            if cid in credited:
-                continue
-            m = self.unlocked_class_masteries.get(cid)
-            if m and m.get('kind') == 'class_acc_regen_bonus':
-                bonus += int(m.get('value', 0))
-                credited.add(cid)
-        return bonus
-
-    def get_class_mastery_sp_burn_factor(self) -> float:
-        """Fractional reduction to SP drain rate from class_acc_sp_burn_bonus.
-
-        Returns 0.0 by default; e.g. 0.10 means SP drains 10% slower while a
-        mastered ring/amulet of sustenance is equipped. Wired at the SP-tick
-        site (main._tick_sp) — see drain_interval scaling.
-
-        CAPPED ONCE PER MASTERED CLASS.
-        """
-        try:
-            from class_masteries import get_mastery_class as _gmc_sp
-        except ImportError:
-            return 0.0
-        factor = 0.0
-        credited = set()
-        for acc in self.equipped_accessories:
-            cid = _gmc_sp(acc)
-            if cid in credited:
-                continue
-            m = self.unlocked_class_masteries.get(cid)
-            if m and m.get('kind') == 'class_acc_sp_burn_bonus':
-                factor += float(m.get('value', 0.0))
-                credited.add(cid)
-        return factor
-
-    def get_class_mastery_passive_radius_bonus(self, class_slug: str) -> int:
-        """Extra search/warning/clairvoyance radius from class_acc_passive_radius.
-
-        class_slug is one of: 'searching', 'warning', 'clairvoyance',
-        'telepathy'. Returns ONE bonus per matching mastered class — wearing
-        two Rings of Searching does NOT double the radius.
-        """
-        try:
-            from class_masteries import get_mastery_class as _gmc_pr
-        except ImportError:
-            return 0
-        bonus = 0
-        ring_id = f'ring_of_{class_slug}'
-        amu_id = f'amulet_of_{class_slug}'
-        credited = set()
-        for acc in self.equipped_accessories:
-            cid = _gmc_pr(acc)
-            if cid not in (ring_id, amu_id):
-                continue
-            if cid in credited:
-                continue
-            m = self.unlocked_class_masteries.get(cid)
-            if m and m.get('kind') == 'class_acc_passive_radius':
-                bonus += int(m.get('value', 0))
-                credited.add(cid)
-        return bonus
-
     def get_carry_limit(self) -> int:
         # DESIGN (confirmed 2026-06-07): encumbrance is an INTENTIONAL mechanic.
         # Item weights are deliberately realistic (full plate ~65 lb, maul ~8 lb)
@@ -1114,8 +878,10 @@ class Player:
     def knows_item_type(self, item) -> bool:
         """True if the player has already identified this item's TYPE. Once you
         know a 'Potion of Healing', you know EVERY Potion of Healing — the same
-        predicate the name-resolver uses (id in known_item_ids, or the mastery
-        class in known_class_ids for unique/variant families)."""
+        predicate the name-resolver uses (id in known_item_ids, or the type
+        class in known_class_ids for material-variant families). Type knowledge
+        reveals name/stats/lore; each copy's BUC and enchant stay hidden until
+        that instance is identified (the True Name model)."""
         if item is None:
             return False
         if getattr(item, 'id', None) in getattr(self, 'known_item_ids', ()):
@@ -1123,33 +889,11 @@ class Player:
         known_classes = getattr(self, 'known_class_ids', None)
         if known_classes:
             try:
-                from class_masteries import get_mastery_class
-                return get_mastery_class(item) in known_classes
+                from items import type_class
+                return type_class(item) in known_classes
             except Exception:
                 return False
         return False
-
-    def reconcile_item_identification(self, item) -> None:
-        """Stamp a freshly-acquired instance's id_level / buc_known from the
-        player's GLOBAL type-knowledge, so 'once you know it, you know it' holds
-        for items that spawn or are picked up AFTER the type was identified.
-
-        Without this, a new potion of an already-known type arrived at id_level 0
-        — showing its true name (name resolution checks the global set) yet
-        marked '(0/5)' and refusing to stack. Mirrors the corpse precedent
-        (corpse_id_level_known) and the cap rule in _propagate_identification:
-        uniques cap at id_level 4 (so the chain-5 mastery quiz must still be
-        earned), commons reveal fully at 5. No-op for unknown types or items
-        without an id_level."""
-        if item is None or not hasattr(item, 'id_level'):
-            return
-        if not self.knows_item_type(item):
-            return
-        cap = 4 if getattr(item, 'is_unique', False) else 5
-        if int(getattr(item, 'id_level', 0)) < cap:
-            item.id_level = cap
-        if hasattr(item, 'buc_known'):
-            item.buc_known = True
 
     def add_to_inventory(self, item) -> bool:
         from items import Item
@@ -1157,11 +901,6 @@ class Player:
         item_weight = getattr(item, 'weight', 0) * count
         if item_weight + self.get_current_weight() > self.get_carry_limit():
             return False
-        # Once you KNOW an item type, you know every copy: stamp this instance's
-        # identification from the global known-type set BEFORE stacking, so a
-        # freshly-acquired known-type item never arrives as a mysterious "(0/5)"
-        # and merges with the identified stack when its underlying BUC matches.
-        self.reconcile_item_identification(item)
         # One-cosmetic-per-item: stamp the run's appearance onto a managed
         # ring/amulet entering the pack from ANY source (floor pickup, chest,
         # NPC gift, hero special). Floor items are already stamped at spawn, so
@@ -1197,7 +936,7 @@ class Player:
         self.inventory.append(item)
         # Keep inventory sorted alphabetically by item name
         self.inventory.sort(key=lambda i: i.name.lower())
-        # Sync carry-scope mastery bonuses (Charmander Stuffie etc.)
+        # Sync carry bonuses (Charmander Stuffie etc.)
         self.refresh_carry_bonuses()
         return True
 
@@ -1207,8 +946,8 @@ class Player:
                 item.count -= 1
                 return True
             self.inventory.remove(item)
-            # Sync carry-scope mastery bonuses (bonus removed if the
-            # dropped item was a Charmander Stuffie etc.)
+            # Sync carry bonuses (bonus removed if the dropped item
+            # was a Charmander Stuffie etc.)
             self.refresh_carry_bonuses()
             return True
         return False
@@ -1258,12 +997,13 @@ class Player:
             self.mp = min(self.mp, self.max_mp)
 
     def refresh_carry_bonuses(self):
-        """Sync carry-scope mastery bonuses with current inventory.
+        """Sync carry bonuses with current inventory.
 
-        For each unlocked mastery whose `scope == 'carry'`, applies its
-        bonus iff the corresponding item is currently in inventory, and
-        removes it otherwise. Idempotent — diffs against
-        `self.active_carry_bonuses` so calling repeatedly has no effect.
+        For each inventory item carrying a `carry_bonus` field
+        ({'stat': ..., 'amount': ...}), applies its bonus iff the item is
+        currently in inventory, and removes it otherwise. Idempotent —
+        diffs against `self.active_carry_bonuses` so calling repeatedly
+        has no effect.
 
         Use case: Charmander Stuffie / Dreamspun Sketchbook — items
         you carry as keepsakes; the bonus applies as long as you
@@ -1273,23 +1013,15 @@ class Player:
         if not hasattr(self, 'active_carry_bonuses') or self.active_carry_bonuses is None:
             self.active_carry_bonuses = {}
         # What SHOULD be applied right now
-        inv_ids = {getattr(i, 'id', None) for i in self.inventory}
         desired: dict[str, tuple] = {}
-        for item_id, mastery in self.unlocked_masteries.items():
-            if not isinstance(mastery, dict):
+        for item in self.inventory:
+            cb = getattr(item, 'carry_bonus', None)
+            if not isinstance(cb, dict):
                 continue
-            if mastery.get('scope') != 'carry':
-                continue
-            if item_id not in inv_ids:
-                continue
-            # Currently only stat_bonus kinds are supported on carry
-            kind = mastery.get('kind')
-            if kind not in ('accessory_stat_bonus',):
-                continue
-            v = mastery.get('value') or {}
-            stat = v.get('stat')
-            amount = int(v.get('amount', 0))
-            if stat and amount:
+            stat = cb.get('stat')
+            amount = int(cb.get('amount', 0))
+            item_id = getattr(item, 'id', None)
+            if item_id and stat and amount:
                 desired[item_id] = (stat, amount)
         # Apply newly-active (in desired but not yet in active)
         for item_id, (stat, amount) in desired.items():

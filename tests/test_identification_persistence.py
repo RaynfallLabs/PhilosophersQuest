@@ -1,11 +1,11 @@
-"""Item-type identification persists to newly-acquired copies (2026-06-06).
+"""Per-instance identification under the True Name model (2026-08-06).
 
-Bug the user hit: after identifying 'Potion of Healing' (its id added to
-known_item_ids), a LATER-acquired potion of the same type showed its true name
-yet arrived at id_level 0 ("(0/5)") and refused to stack. Root cause: nothing
-reconciled the per-instance id_level from the global known-type set at
-pickup/spawn — only identify-time propagation did. Player.add_to_inventory now
-stamps every incoming known-type item via reconcile_item_identification().
+Type knowledge (known_item_ids) reveals an item's NAME on every copy, but
+each instance keeps its own BUC/enchant secret until identified — so a
+freshly-acquired copy of a known type must arrive UNSTAMPED (id_level 0,
+buc_known False). Stacking still keys on the underlying BUC value, so an
+unidentified copy merges into an identified stack only when the actual
+BUC matches (and mismatched BUC stays separate — bug A7-5 guard).
 """
 import copy
 
@@ -25,16 +25,26 @@ def _fresh(buc='uncursed', id_level=0):
     return p
 
 
-def test_known_type_stamps_a_fresh_instance():
+def test_known_type_does_not_stamp_a_fresh_instance():
+    """The heart of the True Name model: a new copy of a known type keeps
+    its own secrets (no auto id_level / buc_known stamping)."""
     pl = Player()
     pl.known_item_ids.add(_PID)
-    pl.add_to_inventory(_fresh(id_level=0))         # arrives unidentified
+    incoming = _fresh(id_level=0)
+    pl.add_to_inventory(incoming)
     held = [i for i in pl.inventory if i.id == _PID]
-    assert held and held[0].id_level == 5           # not "(0/5)"
-    assert held[0].buc_known is True
+    assert held
+    # Either it stayed a separate unidentified copy, or it merged into an
+    # existing stack — here there is no existing stack, so it must be the
+    # untouched incoming instance.
+    assert held[0] is incoming
+    assert held[0].id_level == 0
+    assert held[0].buc_known is False
 
 
 def test_known_same_buc_potions_merge():
+    """Stacking keys on the UNDERLYING BUC value, so an unidentified copy
+    still merges with an identified stack of the same actual BUC."""
     pl = Player()
     pl.known_item_ids.add(_PID)
     pl.add_to_inventory(_fresh(buc='uncursed', id_level=5))
@@ -44,16 +54,18 @@ def test_known_same_buc_potions_merge():
     assert held[0].id_level == 5
 
 
-def test_different_buc_stays_separate_but_identified():
+def test_different_buc_stays_separate():
+    """Merging mismatched BUC would silently drop the blessed effect
+    (bug A7-5) — and under the True Name model the blessed copy stays
+    a mystery until identified."""
     pl = Player()
     pl.known_item_ids.add(_PID)
     pl.add_to_inventory(_fresh(buc='uncursed', id_level=5))
     pl.add_to_inventory(_fresh(buc='blessed', id_level=0))
     held = [i for i in pl.inventory if i.id == _PID]
-    # Merging mismatched BUC would silently drop the blessed effect (bug A7-5).
     assert len(held) == 2
     blessed = next(i for i in held if i.buc == 'blessed')
-    assert blessed.id_level == 5 and blessed.buc_known is True   # not a mystery 0/5
+    assert blessed.id_level == 0 and blessed.buc_known is False
 
 
 def test_unknown_type_is_left_untouched():

@@ -26,20 +26,9 @@ sys.path.insert(0, str(ROOT / "src"))
 # C5 — potion_potency_bonus must scale _buff_mult, not just _heal_mult
 # ---------------------------------------------------------------------------
 
-def test_potion_potency_bonus_scales_both_heal_and_buff_duration():
-    """Source-regression: food_system._apply_potion_effect must multiply
-    BOTH _heal_mult AND _buff_mult by the potency bonus."""
-    import food_system
-    src = inspect.getsource(food_system)
-    # The fix region: after the BUC multipliers and before the duration bump.
-    # Must contain _buff_mult *= ... bonus line.
-    assert "_buff_mult *= 1.0 + _bonus" in src, (
-        "potion_potency_bonus must scale _buff_mult so a mastered "
-        "paralysis/haste/etc. potion actually lasts longer; before "
-        "2026-05-29 only _heal_mult was multiplied, so the mastery's "
-        "+25% claim was a no-op for buff/debuff potions"
-    )
-    assert "_heal_mult *= 1.0 + _bonus" in src
+# (test_potion_potency_bonus_scales_both_heal_and_buff_duration removed
+# 2026-08-06 — potion masteries were retired with the one-question
+# identify redesign; BUC multipliers still cover heal/buff scaling.)
 
 
 # ---------------------------------------------------------------------------
@@ -82,36 +71,27 @@ def test_benedictio_handler_exists():
 # ---------------------------------------------------------------------------
 
 def test_scroll_identify_picker_method_exists():
-    """game_magic.MagicMixin must expose the new picker hooks."""
+    """game_magic.MagicMixin must expose the picker + direct-reveal hooks."""
     from game_magic import MagicMixin
     assert hasattr(MagicMixin, '_open_scroll_identify_picker')
-    assert hasattr(MagicMixin, '_scroll_grant_mastery')
-    assert hasattr(MagicMixin, '_scroll_identify_bulk_to_lore')
+    assert hasattr(MagicMixin, '_scroll_full_identify')
+    assert hasattr(MagicMixin, '_scroll_identify_mass')
 
 
-def test_scroll_identify_grants_mastery_directly():
-    """The mastery grant must set id_level=5 and call _claim_mastery."""
+def test_scroll_identify_reveals_directly():
+    """The scroll's direct reveal must run the shared _full_identify path."""
     from game_magic import MagicMixin
-    src = inspect.getsource(MagicMixin._scroll_grant_mastery)
-    assert 'id_level = 5' in src, (
-        "Scroll of Identify must shortcut to id_level 5 on the chosen item"
-    )
-    assert '_claim_mastery' in src, (
-        "Scroll of Identify must call _claim_mastery to actually unlock the bonus"
+    src = inspect.getsource(MagicMixin._scroll_full_identify)
+    assert '_full_identify' in src, (
+        "Scroll of Identify must fully identify the chosen item directly"
     )
 
 
 def test_uncursed_identify_opens_picker():
-    """The uncursed Scroll of Identify branch must open the picker.
-
-    After Path A (2026-06-01) the call uses a computed bless flag, so we
-    just assert the picker is invoked at all from inside the identify
-    block — and that we still pass `bless=` keyword.
-    """
+    """The uncursed Scroll of Identify branch must open the picker."""
     from game_magic import MagicMixin
     src = inspect.getsource(MagicMixin._apply_scroll_effect)
-    assert "_open_scroll_identify_picker(bless=" in src or \
-        "_open_scroll_identify_picker(bless =" in src, (
+    assert "_open_scroll_identify_picker(" in src, (
         "Uncursed Scroll of Identify must open the target picker (D2)"
     )
 

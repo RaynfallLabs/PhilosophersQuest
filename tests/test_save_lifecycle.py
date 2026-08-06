@@ -444,7 +444,7 @@ def test_legacy_player_missing_chain_charges_backfills():
         for attr in ('_chain_passive_charges', '_chain_passive_once_per_run',
                      '_gorgoneion_used_this_floor', '_chain_move_counter',
                      '_chain_no_move_counter', 'damage_resistances',
-                     'regen_bonus', 'unlocked_monster_class_masteries'):
+                     'regen_bonus'):
             if hasattr(state['player'], attr):
                 delattr(state['player'], attr)
 
@@ -457,42 +457,12 @@ def test_legacy_player_missing_chain_charges_backfills():
         assert g2.player._chain_no_move_counter == 0
         assert g2.player.damage_resistances == {}
         assert g2.player.regen_bonus == 0
-        assert g2.player.unlocked_monster_class_masteries == {}
     finally:
         _cleanup(name)
 
 
-# ---------------------------------------------------------------------------
-# 8. Family mastery (unlocked_monster_class_masteries) round-trip
-# ---------------------------------------------------------------------------
-
-def test_family_mastery_round_trip():
-    """The SET of mastered families (corpse-identify chain-5) survives save/load.
-    Blessings are canonical: on load they are re-synced to the current
-    MONSTER_FAMILY_BLESSINGS, so a blessing redesign (e.g. the 2026-06 save-bonus
-    conversion of fey/undead) auto-updates returning players rather than leaving
-    them holding a stale/inert blessing."""
-    from monster_classes import MONSTER_FAMILY_BLESSINGS as MFB
-    name = '__test_lifecycle_family__'
-    try:
-        g = _new_game(name)
-        # Seed with deliberately STALE blessing shapes (pre-conversion forms).
-        g.player.unlocked_monster_class_masteries = {
-            'dragon': {'kind': 'damage_vs_tag', 'tag': 'dragon', 'value': 2, 'desc': '_'},
-            'undead': {'kind': 'turn_undead', 'value': 3},          # obsolete kind
-            'fey':    {'kind': 'resist_charm', 'value': 1},          # pre-conversion
-        }
-
-        g2, _ = _save_then_load(g)
-        fams = g2.player.unlocked_monster_class_masteries
-        # Same families remembered...
-        assert set(fams) == {'dragon', 'undead', 'fey'}
-        # ...and each blessing re-synced to the current canonical definition.
-        assert fams['fey'] == MFB['fey']        # now a WIS save_bonus
-        assert fams['undead'] == MFB['undead']  # now a CON save_bonus
-        assert fams['dragon'] == MFB['dragon']
-    finally:
-        _cleanup(name)
+# (Family-mastery round-trip test removed 2026-08-06 — monster-family
+# masteries were retired with the one-question identify redesign.)
 
 
 def test_combat_game_ref_does_not_block_save():
@@ -669,20 +639,12 @@ def test_magic_carrot_and_unicorn_spawn_state_round_trip():
 # 14. Mastery state (unique + class) + philosopher career arc
 # ---------------------------------------------------------------------------
 
-def test_mastery_and_career_arc_round_trip():
-    """unlocked_masteries (per-item) + unlocked_class_masteries (per-class
-    of common item) + philosopher_tier_claimed + philosophers_mantle +
-    total_identifies must all survive save/load."""
+def test_career_arc_round_trip():
+    """philosopher_tier_claimed + philosophers_mantle + total_identifies
+    + known_class_ids must all survive save/load."""
     name = '__test_lifecycle_mastery__'
     try:
         g = _new_game(name)
-        g.player.unlocked_masteries['soul_reaver'] = {
-            'kind': 'extra_damage', 'value': 5, 'desc': 'Vorpal'
-        }
-        g.player.unlocked_class_masteries['ring_of_strength'] = {
-            'kind': 'class_acc_stat_bonus', 'value': 2,
-            'desc': '+2 STR while equipped'
-        }
         g.player.total_identifies = 75
         g.player.philosopher_tier_claimed.add(25)
         g.player.philosopher_tier_claimed.add(75)
@@ -690,13 +652,6 @@ def test_mastery_and_career_arc_round_trip():
         g.player.known_class_ids.add('ring_of_strength')
 
         g2, _ = _save_then_load(g)
-        assert g2.player.unlocked_masteries == {
-            'soul_reaver': {'kind': 'extra_damage', 'value': 5, 'desc': 'Vorpal'}
-        }
-        assert g2.player.unlocked_class_masteries == {
-            'ring_of_strength': {'kind': 'class_acc_stat_bonus', 'value': 2,
-                                  'desc': '+2 STR while equipped'}
-        }
         assert g2.player.total_identifies == 75
         assert g2.player.philosopher_tier_claimed == {25, 75}
         assert g2.player.philosophers_mantle is True

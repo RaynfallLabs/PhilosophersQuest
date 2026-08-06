@@ -173,15 +173,6 @@ def test_ward_companion_cleared_when_status_expires():
     assert 'CON' not in p._save_guard             # magnitude companion dropped
 
 
-def test_mastery_save_bonus_is_read():
-    p = _p()
-    p.unlocked_monster_class_masteries = {
-        'fey': {'kind': 'save_bonus', 'value': {'cat': 'WIS', 'amount': 2}},
-    }
-    assert p.save_bonus_for('WIS') == 2
-    assert p.save_bonus_for('CON') == 0
-
-
 def test_save_bonus_actually_improves_save_odds():
     # A big CON save bonus should turn a mid-DC paralysis into a reliable save.
     saved = 0
