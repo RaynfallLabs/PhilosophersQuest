@@ -246,6 +246,93 @@ def test_cook_prime_recipe_at_t5_applies_temp_power():
         f"expected {canonical} (remapped from {raw}) status active, got {p.status_effects}"
 
 
+def test_cook_v3_uses_threshold_one_question():
+    """Cook v3 (2026-09-01): threshold mode, 1 Q, no chain."""
+    from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
+    from player import Player
+
+    p = Player()
+    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    for ing_id in recipe['ingredients']:
+        p.add_to_inventory(load_ingredient_for(ing_id))
+    quiz = MockQuizEngine(scripted_success=True)
+    cook_compound_recipe(p, recipe, p.inventory, quiz, lambda m: None)
+    kw = quiz.last_quiz_kwargs
+    assert kw['mode'] == 'threshold'
+    assert kw['subject'] == 'cooking'
+    assert kw['total_qs'] == 1
+    assert kw['threshold'] == 1
+    assert 'max_chain' not in kw
+
+
+def test_cook_v3_tier_matches_recipe_class():
+    """Cook v3: Q tier = recipe class band. family=2, prime=3, master_prime=4,
+    trophy=5, dungeon_keyed=5."""
+    from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
+    from player import Player
+
+    raw = _raw_recipes()
+    def _first_of(cls):
+        for rid, r in raw.items():
+            if r.get('recipe_class') == cls:
+                return {'id': rid, **r}
+        return None
+
+    for cls, expected in [('family', 2), ('prime', 3), ('master_prime', 4),
+                          ('trophy', 5), ('dungeon_keyed', 5)]:
+        recipe = _first_of(cls)
+        if recipe is None:
+            continue
+        p = Player()
+        for ing_id in recipe['ingredients']:
+            ing = load_ingredient_for(ing_id)
+            if ing is not None:
+                p.add_to_inventory(ing)
+        quiz = MockQuizEngine(scripted_success=True)
+        cook_compound_recipe(p, recipe, p.inventory, quiz, lambda m: None)
+        assert quiz.last_quiz_kwargs['tier'] == expected, \
+            f"recipe_class={cls} should produce tier={expected}, got {quiz.last_quiz_kwargs['tier']}"
+
+
+def test_cook_v3_success_gives_peak_reward():
+    """Cook v3: right answer -> T5 outcome regardless of Q tier."""
+    from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
+    from player import Player
+
+    p = Player()
+    p.sp = 100
+    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    for ing_id in recipe['ingredients']:
+        p.add_to_inventory(load_ingredient_for(ing_id))
+    quiz = MockQuizEngine(scripted_success=True)
+    cook_compound_recipe(p, recipe, p.inventory, quiz, lambda m: None)
+    # T5 for family_beast_recipe grants sp=100 (from the JSON we inspected).
+    # Since cook_v3 always gives T5 on success, sp should have gained 100.
+    assert p.sp == 200
+
+
+def test_cook_v3_failure_ruins_and_consumes():
+    """Cook v3: wrong answer -> ingredients consumed AND ruined."""
+    from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
+    from player import Player
+    from items import Ingredient
+
+    p = Player()
+    p.sp = 100
+    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    for ing_id in recipe['ingredients']:
+        p.add_to_inventory(load_ingredient_for(ing_id))
+    quiz = MockQuizEngine(scripted_success=False)
+    out = {}
+    cook_compound_recipe(p, recipe, p.inventory, quiz, lambda msgs: out.update(messages=msgs))
+    # Ingredients consumed (even on failure — matches harvest v3 "resource loss IS the cost")
+    assert len([i for i in p.inventory if isinstance(i, Ingredient)]) == 0
+    # SP unchanged (no reward)
+    assert p.sp == 100
+    # Message reflects ruin
+    assert any('ruin' in m.lower() or 'wasted' in m.lower() for m in out['messages'])
+
+
 def test_cook_consumes_inventory_even_on_ruin():
     """Even at T0 (ruined), the ingredients are still consumed — design intent.
 

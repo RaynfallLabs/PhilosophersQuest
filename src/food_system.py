@@ -400,11 +400,29 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
     return desc or f"You feel a permanent change ({power_id})."
 
 
-def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
-    """Cook a recipe via the new 2026-05-31 escalator_chain dispatch.
+# Recipe class -> single-Q quiz tier for cook v3 (2026-09-01).
+# Same "tiered to the power of the item" principle as harvest v3 and
+# identify v3. Family recipes are basic (T2), primes mid (T3), master
+# primes advanced (T4), trophies and dungeon-keyed at the ceiling (T5).
+_RECIPE_CLASS_TIER = {
+    'family':        2,
+    'prime':         3,
+    'master_prime':  4,
+    'trophy':        5,
+    'dungeon_keyed': 5,
+}
 
-    Consumes all required ingredients from inventory, runs the cooking
-    quiz, then dispatches the tier outcome through _apply_tier_outcome.
+
+def _recipe_quiz_tier(recipe: dict) -> int:
+    """Cook v3 Q tier — one question per recipe, difficulty by recipe_class."""
+    return _RECIPE_CLASS_TIER.get(recipe.get('recipe_class'), 3)
+
+
+def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
+    """One cooking question at the recipe's derived tier. Right = full
+    peak outcome for that recipe (T5-defined block); wrong = ruined,
+    ingredients consumed either way. No chain, no partial credit — see
+    [[feedback-flow-over-gradient]] + [[feedback-resource-loss-is-the-penalty]].
     """
     from items import Ingredient
 
@@ -418,16 +436,17 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
                 break
 
     def _callback(result):
-        tier = min(5, getattr(result, 'score', 0))
-        messages = _apply_tier_outcome(player, recipe, tier)
+        outcome_tier = 5 if getattr(result, 'success', False) else 0
+        messages = _apply_tier_outcome(player, recipe, outcome_tier)
         on_complete(messages)
 
     quiz_engine.start_quiz(
-        mode='escalator_chain',
+        mode='threshold',
         subject='cooking',
-        tier=1,
+        tier=_recipe_quiz_tier(recipe),
         callback=_callback,
-        max_chain=5,
+        threshold=1,
+        total_qs=1,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
@@ -555,16 +574,17 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int
         return
 
     def _callback(result):
-        tier = min(5, getattr(result, 'score', 0))
-        messages = _apply_tier_outcome(player, recipe, tier)
+        outcome_tier = 5 if getattr(result, 'success', False) else 0
+        messages = _apply_tier_outcome(player, recipe, outcome_tier)
         on_complete(messages)
 
     quiz_engine.start_quiz(
-        mode='escalator_chain',
+        mode='threshold',
         subject='cooking',
-        tier=1,
+        tier=_recipe_quiz_tier(recipe),
         callback=_callback,
-        max_chain=max_chain,
+        threshold=1,
+        total_qs=1,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('cooking'),
