@@ -47,15 +47,24 @@ def _p(**stats):
 # --------------------------------------------------------------------------
 
 def test_four_boss_trophy_recipes_flag_class_ascension():
+    """v2.6.4: class_ascension now lives on the OUTCOME archetype, not the
+    recipe. The 4 boss trophies at floors 20/40/60/80 reference an outcome
+    with class_ascension=true; Abaddon (floor 100) does not."""
     rec = _recipes()
+    outcomes = fs._load_outcomes()
     for floor, rid in BOSS_TROPHY_RECIPES.items():
         assert rid in rec, f"floor {floor}: {rid} missing"
-        assert rec[rid].get('class_ascension') is True, f"{rid} not flagged"
+        oid = rec[rid].get('outcome_id')
+        assert oid, f"{rid} has no outcome_id"
+        assert outcomes.get(oid, {}).get('class_ascension') is True, \
+            f"{rid} -> {oid} not flagged class_ascension"
 
 
 def test_abaddon_trophy_is_not_a_class_ascension():
     rec = _recipes()
-    assert rec['trophy_abaddon_destroyer_recipe'].get('class_ascension') is not True
+    outcomes = fs._load_outcomes()
+    oid = rec['trophy_abaddon_destroyer_recipe'].get('outcome_id')
+    assert outcomes.get(oid, {}).get('class_ascension') is not True
 
 
 def test_asterion_is_a_trophy_with_ingredient_and_family_recipe_shape():
@@ -85,28 +94,31 @@ def test_cook_emits_class_ascension_signal_on_success():
     rec = _recipes()
     for rid in BOSS_TROPHY_RECIPES.values():
         recipe = {'id': rid, **rec[rid]}
-        msgs = fs._apply_tier_outcome(_p(STR=10), recipe, tier=5)
+        msgs = fs._apply_recipe_outcome(_p(STR=10), recipe)
         assert '_class_ascension' in msgs, f"{rid} did not signal"
 
 
 def test_ruined_cook_does_not_signal_ascension():
     rec = _recipes()
     recipe = {'id': 'trophy_fenrir_wolf_recipe', **rec['trophy_fenrir_wolf_recipe']}
-    msgs = fs._apply_tier_outcome(_p(STR=10), recipe, tier=0)
+    msgs = fs._apply_recipe_outcome(_p(STR=10), recipe, ruined=True)
     assert '_class_ascension' not in msgs
 
 
 def test_class_ascension_cook_suppresses_permanent_power():
-    """Fenrir's trophy used to grant +3 STR (plus_3_str). With the ascension
-    hook the cook must NOT apply that permanent power — the meal IS the choice."""
+    """v2.6.4: Fenrir's trophy outcome carries permanent_power=plus_3_str AND
+    class_ascension=true. When class_ascension fires, the perm_power is
+    SKIPPED (the meal IS the class choice; the class node applies the +3)."""
     rec = _recipes()
     recipe = {'id': 'trophy_fenrir_wolf_recipe', **rec['trophy_fenrir_wolf_recipe']}
-    assert recipe.get('permanent_power') == 'plus_3_str'   # still in data
+    outcome = fs._load_outcomes().get(recipe['outcome_id'], {})
+    assert outcome.get('permanent_power') == 'plus_3_str'
+    assert outcome.get('class_ascension') is True
     p = _p(STR=10)
     base = p.STR
-    fs._apply_tier_outcome(p, recipe, tier=5)
-    # T4/T5 grants +1 themed stat (STR here, bypassing the floor cap) but the
-    # +3 permanent_power must be skipped, so STR rose by at most the +1 stat_grant.
+    fs._apply_recipe_outcome(p, recipe)
+    # stat_grant=1 (default STR) fires before the ascension return; but the
+    # +3 perm_power must be skipped. STR rises by at most +1.
     assert p.STR <= base + 1
     assert p.STR < base + 3
 
@@ -117,7 +129,7 @@ def test_non_ascension_trophy_still_applies_permanent_power():
     recipe = {'id': 'trophy_abaddon_destroyer_recipe', **rec['trophy_abaddon_destroyer_recipe']}
     p = _p(STR=10, CON=10, DEX=10, INT=10, WIS=10, PER=10)
     base = p.PER
-    msgs = fs._apply_tier_outcome(p, recipe, tier=5)
+    msgs = fs._apply_recipe_outcome(p, recipe)
     assert '_class_ascension' not in msgs
     assert p.PER > base   # apotheosis raised a stat that the themed grant didn't
 

@@ -204,54 +204,47 @@ class _Potion:
         self.identified = False
 
 
-def test_cooked_ward_grants_status_and_sets_capped_magnitude():
-    """A T5 recipe whose temp_power maps to a save_guard ward must grant the
-    companion status AND record the (capped) magnitude in _save_guard, so
-    save_bonus_for() reflects it while the status is active."""
-    p = _p()
-    recipe = {
-        'name': 'Aegis Stew',
-        'temp_power': 'paralyze_resist',   # remaps -> save_guard_CON
-        'temp_duration': 40,
-        'ward_amount': 2,
-        'tier_outcomes': {'5': {'sp': 10, 'temp_power': True}},
+def _ward_outcome(canonical_status: str, amount=2, duration=40):
+    """Synth an outcome dict for a save_guard ward (v2.6.4 schema)."""
+    return {
+        'tier': 3,
+        'sp': 10,
+        'temp_power': canonical_status,
+        'temp_amount': amount,
+        'temp_duration': duration,
     }
-    msgs = fs._apply_tier_outcome(p, recipe, 5)
 
-    # Companion status active under its canonical name...
+
+def test_cooked_ward_grants_status_and_sets_capped_magnitude(monkeypatch):
+    """v2.6.4: a recipe -> outcome whose temp_power is a save_guard_* variant
+    must grant the companion status AND record the magnitude in _save_guard."""
+    p = _p()
+    monkeypatch.setattr(fs, '_load_outcomes', lambda: {'ward_con': _ward_outcome('save_guard_CON', 2, 40)})
+    recipe = {'name': 'Aegis Stew', 'outcome_id': 'ward_con'}
+    fs._apply_recipe_outcome(p, recipe)
+
     assert p.status_effects.get('save_guard_CON', 0) == 40
-    # ...magnitude recorded for the CON category...
     assert p._save_guard.get('CON') == 2
-    # ...and the gradient defense actually reads through.
     assert p.save_bonus_for('CON') == 2
-    assert p.save_bonus_for('WIS') == 0            # ward is CON-specific
-    assert any('carries through' in m or 'flow through' in m for m in msgs)
+    assert p.save_bonus_for('WIS') == 0
 
 
-def test_cooked_ward_amount_is_clamped_to_3():
+def test_cooked_ward_amount_is_clamped_to_3(monkeypatch):
     p = _p()
-    recipe = {
-        'name': 'Overcharged Tonic',
-        'temp_power': 'confused_resist',   # remaps -> save_guard_WIS
-        'temp_duration': 30,
-        'ward_amount': 9,                  # absurd authored value
-        'tier_outcomes': {'5': {'temp_power': True}},
-    }
-    fs._apply_tier_outcome(p, recipe, 5)
-    assert p._save_guard.get('WIS') == 3           # clamped to +3
-    assert p.save_bonus_for('WIS') == 3            # timed-lane cap also +3
+    monkeypatch.setattr(fs, '_load_outcomes', lambda: {'over': _ward_outcome('save_guard_WIS', 9, 30)})
+    recipe = {'name': 'Overcharged Tonic', 'outcome_id': 'over'}
+    fs._apply_recipe_outcome(p, recipe)
+    assert p._save_guard.get('WIS') == 3
+    assert p.save_bonus_for('WIS') == 3
 
 
-def test_cooked_ward_defaults_to_plus_2_when_unspecified():
+def test_cooked_ward_defaults_to_plus_2_when_unspecified(monkeypatch):
     p = _p()
-    recipe = {
-        'name': 'Plain Ward Broth',
-        'temp_power': 'feared_resist',     # remaps -> save_guard_WIS
-        'temp_duration': 20,
-        'tier_outcomes': {'5': {'temp_power': True}},
-    }
-    fs._apply_tier_outcome(p, recipe, 5)
-    assert p._save_guard.get('WIS') == 2           # default +2
+    outcome_no_amount = {'tier': 3, 'sp': 5, 'temp_power': 'save_guard_WIS', 'temp_duration': 20}
+    monkeypatch.setattr(fs, '_load_outcomes', lambda: {'plain': outcome_no_amount})
+    recipe = {'name': 'Plain Ward Broth', 'outcome_id': 'plain'}
+    fs._apply_recipe_outcome(p, recipe)
+    assert p._save_guard.get('WIS') == 2
 
 
 def test_control_resist_remap_targets_are_wards():

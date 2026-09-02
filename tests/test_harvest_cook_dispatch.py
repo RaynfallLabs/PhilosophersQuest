@@ -97,137 +97,101 @@ def test_trophy_blood_archon_sets_lifesteal():
 # tier_outcome dispatcher
 # ---------------------------------------------------------------------------
 
-def _basic_recipe():
-    """A minimal recipe used by all tier-outcome dispatcher tests."""
-    return {
-        'name': 'Test Stew',
-        'ingredients': [],
-        'tier_outcomes': {
-            '0': {'sp': 0, 'hp': 0},
-            '1': {'sp': 25, 'hp': 2},
-            '2': {'sp': 60, 'hp': 5},
-            '3': {'sp': 60, 'hp': 5, 'max_hp_bonus': 2},
-            '4': {'sp': 60, 'hp': 5, 'max_hp_bonus': 2, 'stat_grant': 1},
-            '5': {'sp': 60, 'hp': 5, 'max_hp_bonus': 2, 'stat_grant': 1, 'temp_power': True},
-        },
-        'stat_grant': 'STR',
-        'temp_power': 'night_vision',
-        'temp_duration': 100,
-        'temp_desc': 'predator senses',
-    }
+def _recipe_with_outcome(outcome_id: str):
+    """v2.6.4: a minimal recipe pointing to a real outcome archetype."""
+    return {'name': 'Test Stew', 'ingredients': [], 'outcome_id': outcome_id}
 
 
-def test_tier_0_dispatch_returns_ruined_message():
+def test_ruined_returns_ruined_message():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
     sp0, hp0 = p.sp, p.hp
-    msgs = _apply_tier_outcome(p, _basic_recipe(), 0)
+    msgs = _apply_recipe_outcome(p, _recipe_with_outcome('t1_light_snack'), ruined=True)
     assert any('ruin' in m.lower() or 'wasted' in m.lower() for m in msgs)
     assert p.sp == sp0
     assert p.hp == hp0
 
 
-def test_tier_1_restores_sp_only():
+def test_success_restores_sp_and_hp():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
     p.sp = 100
-    p.hp = 20  # below max so HP restore can move it
-    _apply_tier_outcome(p, _basic_recipe(), 1)
-    assert p.sp == 100 + 25
-    assert p.hp == 20 + 2
+    p.hp = 20
+    # t1_hearty_snack: sp=45, hp=4
+    _apply_recipe_outcome(p, _recipe_with_outcome('t1_hearty_snack'))
+    assert p.sp == 100 + 45
+    assert p.hp == 20 + 4
 
 
-def test_tier_2_restores_more():
+def test_success_grants_max_hp_against_floor_cap():
     from player import Player
-    from food_system import _apply_tier_outcome
-    p = Player()
-    p.sp = 100
-    p.hp = 10
-    _apply_tier_outcome(p, _basic_recipe(), 2)
-    assert p.sp == 100 + 60
-    assert p.hp == 10 + 5
-
-
-def test_tier_3_grants_max_hp_against_floor_cap():
-    from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
     max_hp0 = p.max_hp
-    _apply_tier_outcome(p, _basic_recipe(), 3)
-    # max HP increased (subject to softcap diminishing)
+    # t3_deep_marrow: max_hp_bonus=2
+    _apply_recipe_outcome(p, _recipe_with_outcome('t3_deep_marrow'))
     assert p.max_hp > max_hp0
-    # And the per-floor counter incremented
     assert p._cook_hp_gain_this_floor > 0
 
 
-def test_tier_4_grants_recipe_stat():
+def test_success_grants_stat():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
     str0 = p.STR
-    _apply_tier_outcome(p, _basic_recipe(), 4)
+    # t4_feast_str: stat_grant=1, stat_grant_default=STR
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
     assert p.STR > str0
-    # Per-floor stat cap counter incremented
     assert p._cook_stat_gain_this_floor > 0
 
 
-def test_tier_5_applies_temp_power():
+def test_success_applies_temp_power():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
-    msgs = _apply_tier_outcome(p, _basic_recipe(), 5)
-    # Should have a "temp power applied" message
-    assert any('night_vision' in m or 'predator' in m for m in msgs)
+    # t2_meal_perception: temp_power='searching'
+    _apply_recipe_outcome(p, _recipe_with_outcome('t2_meal_perception'))
+    assert p.status_effects.get('searching', 0) > 0
 
 
-def test_per_floor_caps_block_double_cook_t3_max_hp():
+def test_per_floor_caps_block_double_cook_max_hp():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
-    # First T3 cook — fills the cap
-    _apply_tier_outcome(p, _basic_recipe(), 3)
+    # First cook fills some of the cap
+    _apply_recipe_outcome(p, _recipe_with_outcome('t3_deep_marrow'))
     used_1 = p._cook_hp_gain_this_floor
-    # Second T3 cook should NOT add any more max HP if the cap is full
-    max_hp_after_first = p.max_hp
-    # Use a recipe with max_hp_bonus = 5 to ensure we'd hit cap with one go
-    big_recipe = _basic_recipe()
-    big_recipe['tier_outcomes']['3']['max_hp_bonus'] = 5
-    _apply_tier_outcome(p, big_recipe, 3)
-    # If first cook used N, second can use at most (5 - N) more
+    # Second cook should be capped
+    _apply_recipe_outcome(p, _recipe_with_outcome('t3_deep_marrow'))
     assert p._cook_hp_gain_this_floor <= 5
 
 
-def test_per_floor_caps_block_double_cook_t4_stat():
+def test_per_floor_caps_block_double_cook_stat():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
-    _apply_tier_outcome(p, _basic_recipe(), 4)
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
     str_after_first = p.STR
-    _apply_tier_outcome(p, _basic_recipe(), 4)
-    # Cap is +1 per floor; second cook should NOT add more
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
+    # +1 stat per floor cap
     assert p.STR == str_after_first
 
 
 def test_trophy_bypass_at_t5():
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
-    # Fill the per-floor cap first
-    _apply_tier_outcome(p, _basic_recipe(), 4)
+    # Set deep enough that the lifetime stat softcap doesn't block the test.
+    p.deepest_floor_reached = 30
+    # Fill per-floor cap first
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
     str_after_first = p.STR
-    # Now cook a trophy recipe — should bypass and grant another stat
-    trophy_recipe = _basic_recipe()
-    trophy_recipe['tier_outcomes']['5'] = {
-        'sp': 60, 'hp': 5, 'max_hp_bonus': 2, 'stat_grant': 1,
-        'temp_power': True, 'permanent_power': True,
-        'bypass_floor_cap': True,
-    }
-    trophy_recipe['permanent_power'] = 'plus_3_str'
-    trophy_recipe['permanent_desc'] = 'test'
-    _apply_tier_outcome(p, trophy_recipe, 5)
-    # +1 from bypass stat_grant + 3 from permanent power = +4 total
+    # Trophy has permanent_power -> stat_grant bypasses the per-floor cap.
+    # Fenrir also has class_ascension=true so the +3 perm_power fires from
+    # the class node, not the cook; here we only assert the stat_grant landed.
+    _apply_recipe_outcome(p, _recipe_with_outcome('trophy_fenrir'))
     assert p.STR >= str_after_first + 1
 
 
@@ -291,19 +255,18 @@ def test_change_level_resets_per_floor_caps():
     per stat, so we bump the player to a deeper floor to verify the
     per-floor reset itself works regardless of lifetime cap."""
     from player import Player
-    from food_system import _apply_tier_outcome
+    from food_system import _apply_recipe_outcome
     p = Player()
     # Set the player deep enough that lifetime cap won't block our test
     p.deepest_floor_reached = 30  # cap is 4 per stat at this depth
     # First-floor cap used
-    _apply_tier_outcome(p, _basic_recipe(), 4)
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
     assert p._cook_stat_gain_this_floor > 0, \
         "first floor cap should have incremented"
     # Simulate floor change
     p.reset_floor_cook_caps()
     assert p._cook_stat_gain_this_floor == 0
-    # Now the per-floor counter is fresh. A second T4 cook can land
-    # (since both per-floor AND lifetime headroom are available).
+    # Now the per-floor counter is fresh. A second T4 cook can land.
     str_before = p.STR
-    _apply_tier_outcome(p, _basic_recipe(), 4)
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
     assert p.STR > str_before

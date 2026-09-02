@@ -203,14 +203,19 @@ def test_every_recipe_ingredient_resolves():
 
 
 def test_every_recipe_has_effect():
-    """Recipes must yield something — either tier_outcomes (new 2026-05-31
-    schema) OR legacy sp/bonus_type fields."""
-    from food_system import _raw_recipes
+    """v2.6.4: every recipe must reference a resolvable outcome_id in
+    data/items/cook_outcomes.json (or carry legacy fields for pre-v2.6.4 data)."""
+    from food_system import _raw_recipes, _load_outcomes
     recipes = _raw_recipes()
-    no_effect = [
-        rid for rid, r in recipes.items()
-        if 'tier_outcomes' not in r and 'sp' not in r and 'bonus_type' not in r
-    ]
+    outcomes = _load_outcomes()
+    no_effect = []
+    for rid, r in recipes.items():
+        oid = r.get('outcome_id')
+        if oid and oid in outcomes:
+            continue
+        if 'tier_outcomes' in r or 'sp' in r or 'bonus_type' in r:
+            continue
+        no_effect.append(rid)
     assert not no_effect, f"Recipes with no effect: {no_effect[:5]}"
 
 

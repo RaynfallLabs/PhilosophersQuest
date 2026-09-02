@@ -228,55 +228,61 @@ def _resolve_temp_power(name: str) -> str:
     return _TEMP_POWER_REMAP.get(name, name)
 
 
-def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
-    """Dispatch a cook tier outcome per the 2026-05-31 redesign.
+_OUTCOMES_CACHE: dict | None = None
 
-    Each recipe carries a `tier_outcomes` dict keyed '0'..'5'. Cumulative
-    layered outcomes: SP/HP restore, max_hp_bonus (counts vs +5/floor cap),
-    stat_grant (counts vs +1/floor cap), temp_power (T5), permanent_power
-    (trophy only — bypasses both caps).
+
+def _load_outcomes() -> dict:
+    """Load and cache the cook v2.6.4 outcome archetype catalog."""
+    global _OUTCOMES_CACHE
+    if _OUTCOMES_CACHE is None:
+        from paths import data_path
+        p = data_path('data', 'items', 'cook_outcomes.json')
+        with open(p, encoding='utf-8') as f:
+            _OUTCOMES_CACHE = json.load(f).get('outcomes', {})
+    return _OUTCOMES_CACHE
+
+
+def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[str]:
+    """v2.6.4 cook dispatch — one recipe -> one outcome archetype.
+
+    Recipe carries an `outcome_id` referencing data/items/cook_outcomes.json.
+    Right answer -> apply the referenced outcome (recovery + optional buff +
+    optional +max HP + optional +stat + optional permanent_power). Wrong ->
+    ingredients already consumed, one message, no reward.
     """
-    messages: list[str] = []
     meal_name = recipe.get('name', 'mysterious dish')
-    outcomes = recipe.get('tier_outcomes', {})
-
-    if tier == 0:
+    if ruined:
         return [f"You ruin the preparation. The {meal_name} is wasted."]
-
-    # Resolve this tier's outcome. If the exact tier is missing (a recipe data
-    # gap), degrade to the highest DEFINED tier at or below it -- NEVER silently
-    # to the '0' ruined outcome. That silent degrade made a perfect T5 cook of
-    # any recipe missing its '5' block (the 12 family recipes + basic stew) give
-    # ZERO reward despite the success message. See the missing-top-tier fix
-    # (2026-06-07). The data is now complete; this stays as a safety net.
-    outcome = outcomes.get(str(tier))
+    outcome_id = recipe.get('outcome_id')
+    outcome = _load_outcomes().get(outcome_id)
     if outcome is None:
-        for t in range(tier, 0, -1):
-            if str(t) in outcomes:
-                outcome = outcomes[str(t)]
-                break
-        if outcome is None:
-            outcome = outcomes.get('0', {})
+        return [f"You prepare {meal_name}, but the effect eludes you (unknown outcome {outcome_id!r})."]
+    return _apply_outcome_body(player, recipe, outcome)
 
-    # SP + HP restore (always applied)
+
+def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
+    """Apply the mechanical body of an outcome archetype to the player.
+    Returns a list of user-facing messages (first line is the meal name)."""
+    meal_name = recipe.get('name', 'mysterious dish')
+    messages: list[str] = [f"You prepare {meal_name}."]
+
+    # SP + HP restore
     sp = int(outcome.get('sp', 0))
     if sp > 0:
         player.restore_sp(sp)
     hp = int(outcome.get('hp', 0))
     if hp > 0:
         player.restore_hp(hp)
-
-    messages.append(f"You prepare {meal_name} (T{tier}/5).")
     if sp > 0 or hp > 0:
         bits = []
         if sp > 0: bits.append(f"+{sp} SP")
         if hp > 0: bits.append(f"+{hp} HP")
         messages.append("You eat it: " + ", ".join(bits) + ".")
 
-    # T3+: max HP bonus (counts vs per-floor cap unless bypass)
+    # +max HP (per-floor softcap unless bypassed)
     max_hp_bonus = int(outcome.get('max_hp_bonus', 0))
     if max_hp_bonus > 0:
-        bypass = bool(outcome.get('bypass_floor_cap', False))
+        bypass = bool(outcome.get('permanent_power'))
         if hasattr(player, 'try_apply_cook_hp_gain'):
             applied = player.try_apply_cook_hp_gain(max_hp_bonus, bypass=bypass)
         else:
@@ -287,12 +293,11 @@ def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
         elif not bypass:
             messages.append("You feel sated, but your body is already full of nourishment this floor.")
 
-    # T4+: stat grant (counts vs per-floor cap unless bypass)
+    # +1 stat (per-floor softcap unless bypassed)
     stat_grant_amount = int(outcome.get('stat_grant', 0))
     if stat_grant_amount > 0:
-        bypass = bool(outcome.get('bypass_floor_cap', False))
-        # Stat selection: recipe.stat_grant (specific) > stat_grant_default
-        stat = recipe.get('stat_grant') or recipe.get('stat_grant_default') or 'STR'
+        bypass = bool(outcome.get('permanent_power'))
+        stat = outcome.get('stat_grant_default') or 'STR'
         if hasattr(player, 'try_apply_cook_stat_gain'):
             applied = player.try_apply_cook_stat_gain(stat, stat_grant_amount, bypass=bypass)
         else:
@@ -300,50 +305,54 @@ def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
             player.apply_stat_bonus(stat, applied)
         if applied > 0:
             messages.append(f"Your {_STAT_LABELS.get(stat, stat)} increases by {applied}!")
-        elif not bypass:
-            messages.append(f"You sense your {_STAT_LABELS.get(stat, stat)} could grow no further this floor.")
 
-    # T5: temp power (lore-themed, from prime cut)
-    if outcome.get('temp_power') and recipe.get('temp_power'):
-        raw_power = recipe['temp_power']
-        # Remap redesign-friendly name to canonical status effect so the
-        # buff actually fires in-game (not a silent no-op).
-        power = _resolve_temp_power(raw_power)
-        duration = int(recipe.get('temp_duration', 100))
-        desc = recipe.get('temp_desc', raw_power.replace('_', ' '))
+    # Temp power (status effect)
+    tp = outcome.get('temp_power')
+    if tp:
+        canonical = _resolve_temp_power(tp)
         try:
-            player.add_effect(power, duration)
-            # Save-guard wards carry a FIXED-per-recipe magnitude that lives in
-            # player._save_guard; save_bonus_for() reads it only while the
-            # companion save_guard_<cat> status is active (set just above).
-            if power.startswith('save_guard_'):
-                cat = power[len('save_guard_'):]  # 'CON'|'WIS'|'DEX'|'all'
-                amount = min(3, int(recipe.get('ward_amount', 2)))
+            player.add_effect(canonical, int(outcome.get('temp_duration', 60)))
+            # save_guard_* wards carry a magnitude in player._save_guard;
+            # save_bonus_for() reads it while the companion status is active.
+            if canonical.startswith('save_guard_'):
+                cat = canonical[len('save_guard_'):]  # 'CON'|'WIS'|'DEX'|'all'
+                amount = min(3, int(outcome.get('temp_amount', 2) or 2))
                 if not hasattr(player, '_save_guard') or player._save_guard is None:
                     player._save_guard = {}
                 player._save_guard[cat] = amount
-            messages.append(f"The essence carries through — {desc} ({duration} turns).")
         except Exception:
-            messages.append(f"You feel the {desc} flow through you ({duration} turns).")
+            pass
+        messages.append(f"A short {canonical.replace('_', ' ')} lingers.")
 
-    # Boss Class Ascension hook: the four boss trophy recipes (floors 20/40/60/80)
-    # carry `class_ascension: true`. Cooking one is NOT a permanent-power meal --
-    # the meal IS the class choice. Emit a `_class_ascension` SIGNAL (caught by the
-    # cook caller in game_menus, which opens the Ascension screen) and SKIP the
-    # permanent_power branch below so the reward isn't double-spent. The signal
-    # only fires on a non-ruined cook (tier >= 1); a botched cook wastes the cut.
-    if recipe.get('class_ascension') and tier >= 1:
-        messages.append("_class_ascension")
+    # Class-ascension outcomes (four boss trophies at floors 20/40/60/80):
+    # emit the signal INSTEAD of firing the permanent_power directly; the
+    # cook caller opens the Ascension picker and the class node applies
+    # the power. See test_class_ascension.
+    if outcome.get('class_ascension'):
+        messages.append('_class_ascension')
         return messages
 
-    # Trophy: permanent power — applied via a dispatcher
-    if outcome.get('permanent_power') and recipe.get('permanent_power'):
-        power_id = recipe['permanent_power']
-        applied_msg = _apply_permanent_power(player, power_id, recipe)
+    # Permanent power (non-ascension trophy)
+    perm = outcome.get('permanent_power')
+    if perm:
+        # Fake a "recipe with permanent_power" shape so _apply_permanent_power
+        # (unchanged from v2.6.3) still works.
+        fake_recipe = dict(recipe)
+        fake_recipe['permanent_power'] = perm
+        fake_recipe['permanent_desc'] = outcome.get('permanent_desc', '')
+        applied_msg = _apply_permanent_power(player, perm, fake_recipe)
         if applied_msg:
             messages.append(applied_msg)
 
     return messages
+
+
+# Legacy shim: some code paths still reference _apply_tier_outcome
+def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
+    """LEGACY (pre-v2.6.4). Routes to _apply_recipe_outcome.
+    tier=0 -> ruined, anything else -> normal outcome (v2.6.4 doesn't do
+    partial tiers)."""
+    return _apply_recipe_outcome(player, recipe, ruined=(tier == 0))
 
 
 # Permanent-power dispatcher for trophy recipes
@@ -406,25 +415,31 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
     elif power_id == 'lifesteal_5pct_on_melee':
         player._blood_archon_lifesteal = 0.05
         return "+5% lifesteal on all melee attacks. " + (desc or "")
+    elif power_id == 'plus_2_str_confuse_immune':
+        # Asterion (v2.6.4 cook redesign): the Minotaur's cunning + navigation
+        player.apply_stat_bonus('STR', 2)
+        try: player.add_effect('confuse_immune', -1)
+        except Exception: pass
+        return "Permanent +2 STR, immunity to confusion. " + (desc or "")
     return desc or f"You feel a permanent change ({power_id})."
 
 
-# Recipe class -> single-Q quiz tier for cook v3 (2026-09-01).
-# Same "tiered to the power of the item" principle as harvest v3 and
-# identify v3. Family recipes are basic (T2), primes mid (T3), master
-# primes advanced (T4), trophies and dungeon-keyed at the ceiling (T5).
-_RECIPE_CLASS_TIER = {
-    'family':        2,
-    'prime':         3,
-    'master_prime':  4,
-    'trophy':        5,
-    'dungeon_keyed': 5,
-}
-
-
 def _recipe_quiz_tier(recipe: dict) -> int:
-    """Cook v3 Q tier — one question per recipe, difficulty by recipe_class."""
-    return _RECIPE_CLASS_TIER.get(recipe.get('recipe_class'), 3)
+    """Cook v3 Q tier — the outcome's tier is the quiz difficulty.
+
+    v2.6.4 (2026-09-02) simplification: each recipe references an outcome
+    archetype (`outcome_id`), and the outcome carries its own tier. The
+    old recipe_class -> tier map is retired.
+    """
+    outcome_id = recipe.get('outcome_id')
+    if outcome_id:
+        o = _load_outcomes().get(outcome_id)
+        if o:
+            return max(1, min(5, int(o.get('tier', 3))))
+    # Legacy fallback (old-schema recipes with recipe_class)
+    legacy = {'family': 2, 'prime': 3, 'master_prime': 4,
+              'trophy': 5, 'dungeon_keyed': 5}
+    return legacy.get(recipe.get('recipe_class'), 3)
 
 
 def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
@@ -445,8 +460,8 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
                 break
 
     def _callback(result):
-        outcome_tier = 5 if getattr(result, 'success', False) else 0
-        messages = _apply_tier_outcome(player, recipe, outcome_tier)
+        messages = _apply_recipe_outcome(player, recipe,
+                                         ruined=not getattr(result, 'success', False))
         on_complete(messages)
 
     quiz_engine.start_quiz(
@@ -583,8 +598,8 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int
         return
 
     def _callback(result):
-        outcome_tier = 5 if getattr(result, 'success', False) else 0
-        messages = _apply_tier_outcome(player, recipe, outcome_tier)
+        messages = _apply_recipe_outcome(player, recipe,
+                                         ruined=not getattr(result, 'success', False))
         on_complete(messages)
 
     quiz_engine.start_quiz(

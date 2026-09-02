@@ -39,6 +39,12 @@ MONSTERS = json.loads((ROOT / "data" / "monsters.json").read_text(encoding="utf-
 ASSORTED = "assorted_monster_parts"
 
 
+_DUNGEON_ING_IDS = frozenset({
+    "cave_mushroom", "altar_incense", "swamp_moss", "river_salt",
+    "holy_water", "crystal_shard", "deep_iron", "abyssal_kelp",
+})
+
+
 def _classify(ing: str) -> str:
     if ing == ASSORTED:
         return "assorted"
@@ -48,6 +54,8 @@ def _classify(ing: str) -> str:
         return "trophy"
     if ing.endswith("_prime"):
         return "prime"
+    if ing in _DUNGEON_ING_IDS:
+        return "dungeon"
     return "special"
 
 
@@ -157,50 +165,58 @@ def test_assorted_parts_have_no_solo_recipe():
 # (C) Richer recipe costs per class
 # ---------------------------------------------------------------------------
 
-def test_family_recipes_cost_2_family_4_assorted():
-    fams = _recipes_of("family")
-    assert len(fams) == 12
+# v2.6.4 (2026-09-02) recipe economy replaces the class-uniform costs above.
+# recipe_class is retired; recipes are keyed by id prefix (u_ / family_ /
+# trophy_ / prime_ / combo_) and every recipe references an outcome archetype
+# in data/items/cook_outcomes.json.
+
+def _recipes_by_prefix(prefix: str) -> dict:
+    return {rid: r for rid, r in RECIPES.items() if rid.startswith(prefix)}
+
+
+def test_v264_family_recipes_are_2_family_and_4_assorted():
+    fams = {rid: r for rid, r in RECIPES.items()
+            if rid.startswith("family_") and rid.endswith("_recipe")}
+    assert len(fams) == 12, f"expected 12 family recipes, got {len(fams)}"
     for rid in fams:
         r = _roles(rid)
         assert r == Counter({"family": 2, "assorted": 4}), (rid, dict(r))
 
 
-def test_prime_recipes_cost_1_prime_2_family_4_assorted():
-    primes = _recipes_of("prime")
-    assert len(primes) == 514
+def test_v264_solo_prime_recipes_are_lightweight():
+    """v2.6.4: solo prime cooks cost just the prime + 2 assorted. Simpler
+    than the pre-v2.6.4 economy (which forced primes to also spend family
+    cuts). Combo prime recipes (with dungeon adjuncts) sit at 3 ingredients
+    too. See PLAYABILITY_PASS_AUDIT.md for the redesign rationale."""
+    primes = _recipes_by_prefix("prime_")
+    assert len(primes) >= 500, f"expected 500+ prime recipes, got {len(primes)}"
     for rid in primes:
         r = _roles(rid)
-        assert r == Counter({"prime": 1, "family": 2, "assorted": 4}), (rid, dict(r))
+        assert r["prime"] == 1, (rid, dict(r))
+        assert r["assorted"] == 2, (rid, dict(r))
 
 
-def test_trophy_recipes_cost_1_trophy_2_family_5_assorted():
-    troph = _recipes_of("trophy")
-    # 14 = original 13 + asterion (prime->trophy for Boss Class Ascension, 2026-06-07).
-    assert len(troph) == 14
+def test_v264_trophy_recipes_use_boss_trophy():
+    troph = _recipes_by_prefix("trophy_")
+    assert len(troph) == 14, f"expected 14 trophy recipes, got {len(troph)}"
     for rid in troph:
         r = _roles(rid)
-        assert r == Counter({"trophy": 1, "family": 2, "assorted": 5}), (rid, dict(r))
-
-
-def test_master_recipes_cost_2_primes_2_family_3_assorted():
-    masters = _recipes_of("master_prime")
-    assert len(masters) == 51
-    for rid in masters:
-        r = _roles(rid)
-        assert r["prime"] == 2, (rid, dict(r))
+        assert r["trophy"] == 1, (rid, dict(r))
         assert r["family"] == 2, (rid, dict(r))
-        assert r["assorted"] == 3, (rid, dict(r))
+        assert r["assorted"] == 5, (rid, dict(r))
 
 
-def test_dungeon_recipes_cost_1_special_1_prime_2_family_3_assorted():
-    dung = _recipes_of("dungeon_keyed")
-    assert len(dung) == 29
-    for rid in dung:
+def test_v264_combo_recipes_pair_prime_with_dungeon_ingredient():
+    """Signature-monster combos take 1 prime + 1 dungeon-role adjunct +
+    1 assorted. The pairing drives which outcome archetype fires
+    (mushroom -> perception, salt -> poison_resist, etc.)."""
+    combos = _recipes_by_prefix("combo_")
+    assert len(combos) >= 30, f"expected 30+ combo recipes, got {len(combos)}"
+    for rid in combos:
         r = _roles(rid)
-        assert r["special"] == 1, (rid, dict(r))
         assert r["prime"] == 1, (rid, dict(r))
-        assert r["family"] == 2, (rid, dict(r))
-        assert r["assorted"] == 3, (rid, dict(r))
+        assert r["dungeon"] == 1, (rid, dict(r))
+        assert r["assorted"] == 1, (rid, dict(r))
 
 
 def test_every_recipe_references_existing_ingredients():
