@@ -261,6 +261,9 @@ data/questions/*.json.backup
 bankbuild/*/ladders/
 bankbuild/*/needs_review/
 bankbuild/*/_pruned/
+bankbuild/*/_cli_state/
+bankbuild/*/register.json
 bankbuild/*/manifest.json
 bankbuild/*/_*.json
 bankbuild/*/_*.txt
+final_rungs.json

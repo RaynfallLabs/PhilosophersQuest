@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\brand\\Documents\\PhilosophersQuest\\.claude\\hooks\\check_py.ps1",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
