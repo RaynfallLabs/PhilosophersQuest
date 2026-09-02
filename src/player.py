@@ -196,6 +196,15 @@ class Player:
         # pack regardless of material. See items.type_class.
         self.known_class_ids: set[str] = set()
 
+        # Identify v3.1 split-knowledge (2026-09-01): learn FORMS and
+        # MATERIALS independently. Once you know "long_sword" and "iron",
+        # every future iron long sword auto-shows its true name without
+        # a per-id-slug identify event. BUC and enchant still need a
+        # per-instance quiz to reveal. See items.form_id / material_id /
+        # is_split_type_known + memory [[project-identify-one-question-2026-08-06]].
+        self.known_forms: set[str] = set()
+        self.known_materials: set[str] = set()
+
     @property
     def equipped_accessories(self):
         """Every equipped accessory item: amulet (if any) + belt (if any)
@@ -608,6 +617,20 @@ class Player:
         state.pop('_appearance_stamp', None)
         return state
 
+    def __setstate__(self, state):
+        """Migrate saves across schema bumps.
+
+        Currently just fills in identify v3.1 (2026-09-01) split-knowledge
+        sets on loads from pre-2.6.3 saves — old saves have no known_forms
+        or known_materials; missing = empty, and each new identify from
+        here on will populate them.
+        """
+        self.__dict__.update(state)
+        if not hasattr(self, 'known_forms'):
+            self.known_forms = set()
+        if not hasattr(self, 'known_materials'):
+            self.known_materials = set()
+
     def save_bonus_for(self, cat: str) -> int:
         """Total saving-throw bonus for a category ('CON'/'WIS'/'DEX'), read by
         status_effects.apply_debuff_with_save. Sums every source and HARD-CAPS
@@ -881,19 +904,29 @@ class Player:
         predicate the name-resolver uses (id in known_item_ids, or the type
         class in known_class_ids for material-variant families). Type knowledge
         reveals name/stats/lore; each copy's BUC and enchant stay hidden until
-        that instance is identified (the True Name model)."""
+        that instance is identified (the True Name model).
+
+        Identify v3.1 (2026-09-01) extends this: if you know the item's FORM
+        AND MATERIAL independently (from other identifies of the same form or
+        material), the type counts as known here too — no per-id-slug event
+        required. See items.is_split_type_known.
+        """
         if item is None:
             return False
         if getattr(item, 'id', None) in getattr(self, 'known_item_ids', ()):
             return True
+        try:
+            from items import type_class, is_split_type_known
+        except Exception:
+            return False
         known_classes = getattr(self, 'known_class_ids', None)
         if known_classes:
             try:
-                from items import type_class
-                return type_class(item) in known_classes
+                if type_class(item) in known_classes:
+                    return True
             except Exception:
-                return False
-        return False
+                pass
+        return is_split_type_known(self, item)
 
     def add_to_inventory(self, item) -> bool:
         from items import Item

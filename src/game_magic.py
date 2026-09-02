@@ -3350,8 +3350,13 @@ class MagicMixin:
         under the True Name model each copy must be identified on its own.
         known_class_ids covers material-variant accessories (one Ring of
         Strength names them all) — see items.type_class.
+
+        Identify v3.1 (2026-09-01) additionally learns the item's FORM
+        and MATERIAL independently. Once both are in known_forms /
+        known_materials, any future item matching that form × material
+        combo auto-shows its true name without a per-id-slug identify.
         """
-        from items import type_class
+        from items import type_class, form_id, material_id
         self.player.known_item_ids.add(item_id)
         seed = seed_item
         if seed is None:
@@ -3364,13 +3369,26 @@ class MagicMixin:
             cls = type_class(seed)
             if cls:
                 self.player.known_class_ids.add(cls)
+            fid = form_id(seed)
+            if fid:
+                if not hasattr(self.player, 'known_forms'):
+                    self.player.known_forms = set()
+                self.player.known_forms.add(fid)
+            mid = material_id(seed)
+            if mid:
+                if not hasattr(self.player, 'known_materials'):
+                    self.player.known_materials = set()
+                self.player.known_materials.add(mid)
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).
 
         Everything goes to full identification — with masteries gone there
-        is no chain-5 reveal left to protect behind a cap.
+        is no chain-5 reveal left to protect behind a cap. Also fills the
+        identify v3.1 split-knowledge sets so post-stone pickups continue
+        to auto-know.
         """
+        from items import type_class, form_id, material_id
         def _stone_id(it):
             if not hasattr(it, 'identified'):
                 return
@@ -3380,14 +3398,31 @@ class MagicMixin:
             if hasattr(it, 'buc_known'):
                 it.buc_known = True
 
+        def _record(it):
+            iid = getattr(it, 'id', '')
+            if iid:
+                self.player.known_item_ids.add(iid)
+            try:
+                cls = type_class(it)
+                if cls:
+                    self.player.known_class_ids.add(cls)
+                fid = form_id(it)
+                if fid:
+                    self.player.known_forms.add(fid)
+                mid = material_id(it)
+                if mid:
+                    self.player.known_materials.add(mid)
+            except Exception:
+                pass
+
         for item in self.player.inventory:
             _stone_id(item)
-            self.player.known_item_ids.add(item.id)
+            _record(item)
         for item in self.ground_items:
             _stone_id(item)
-            self.player.known_item_ids.add(getattr(item, 'id', ''))
+            _record(item)
         # Equipped items too
         for slot_item in self.player.get_equipped_items().values():
             if slot_item:
                 _stone_id(slot_item)
-                self.player.known_item_ids.add(slot_item.id)
+                _record(slot_item)

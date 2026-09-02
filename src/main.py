@@ -6005,14 +6005,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         The type_class check is what lets one Ring of Strength
         identification name ALL ring-of-strength variants in the pack.
         """
-        from items import type_class
         if not hasattr(item, 'identified'):
             base = self._fix_name_case(item.name)
         else:
             instance_known = int(getattr(item, 'id_level', 0)) >= 5
-            known_by_class = (type_class(item)
-                              in getattr(self.player, 'known_class_ids', set()))
-            type_known = (item.id in self.player.known_item_ids or known_by_class)
+            # Route type-known through player.knows_item_type: covers
+            # per-id, per-class (accessories), AND the identify v3.1
+            # split form × material knowledge.
+            type_known = self.player.knows_item_type(item)
             if instance_known:
                 base = self._fix_name_case(item.name)
             elif type_known:

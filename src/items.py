@@ -125,6 +125,63 @@ def type_class(item) -> str:
         return _slugify(getattr(item, 'name', '') or item.id)
     return item.id
 
+
+def form_id(item) -> str | None:
+    """Identify v3.1 form-id (split-knowledge model, 2026-09-01).
+
+    Returns the item's FORM (long_sword, plate_armor, ring, potion, ...)
+    with material stripped off. For templated weapons/armor/shields the
+    id is `{material_id}_{template_id}` so we strip the material prefix.
+    Accessories key by name-slug (all rings-of-strength share one form).
+    Uniques return None — they have their own known_item_ids entry and
+    the split-knowledge check doesn't apply.
+    """
+    if item is None or getattr(item, 'is_unique', False):
+        return None
+    material = getattr(item, 'material', None)
+    iid = getattr(item, 'id', '')
+    if isinstance(item, Accessory):
+        return _slugify(getattr(item, 'name', '') or iid)
+    if material and iid.startswith(f'{material}_'):
+        return iid[len(material) + 1:]
+    return iid or None
+
+
+def material_id(item) -> str | None:
+    """Identify v3.1 material-id (split-knowledge model, 2026-09-01).
+
+    Returns the item's material (iron, mithril, dragonscale, ...) or None
+    if it has no material (potions, scrolls, wands, food, uniques).
+    """
+    if item is None or getattr(item, 'is_unique', False):
+        return None
+    m = getattr(item, 'material', None)
+    return m if m else None
+
+
+def is_split_type_known(player, item) -> bool:
+    """Identify v3.1: True if player knows this item's form AND its material.
+
+    If the item has NO material (potion/scroll/wand/food/accessory), only
+    the form needs to be known. Uniques return False — they use per-item
+    known_item_ids. This is additive to known_item_ids / known_class_ids:
+    a positive answer here means the display can auto-reveal the true name
+    without a specific per-id-slug identify event.
+    """
+    if player is None or item is None:
+        return False
+    if getattr(item, 'is_unique', False):
+        return False
+    fid = form_id(item)
+    if not fid:
+        return False
+    if fid not in getattr(player, 'known_forms', ()):
+        return False
+    mid = material_id(item)
+    if mid is None:
+        return True
+    return mid in getattr(player, 'known_materials', ())
+
 # Per-slot enchantment caps (max enchant_bonus allowed)
 ENCHANT_CAP = {
     'head': 2, 'body': 3, 'arms': 1, 'hands': 1,
