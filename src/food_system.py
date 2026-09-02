@@ -450,54 +450,45 @@ def load_ingredient_for(ingredient_id: str):
 # ------------------------------------------------------------------
 
 def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int = 0):
-    """Animal escalator_chain harvest with 6-tier cumulative outcome.
+    """Animal one-question harvest, tier scaled to the corpse's harvest_tier.
+
+    ONE animal question at the corpse's harvest_tier (1-5). Right = the
+    corpse yields its full harvest for that tier (see
+    `_harvest_outcome_for_tier`). Wrong = corpse ruined, no ingredients.
+    No chain, no partial credit, no stun on failure — losing the corpse
+    IS the cost. See [[feedback-flow-over-gradient]] +
+    [[feedback-resource-loss-is-the-penalty]].
 
     on_complete(ingredients_list, message: str) is called when the quiz ends.
-    ingredients_list is the list of fresh Ingredient instances to add to
-    inventory (may be empty for T0 ruined).
-
-    Tier 0: empty list  (corpse ruined)
-    Tier 1: [Assorted Monster Parts]
-    Tier 2: [Assorted x2]
-    Tier 3: [Assorted x2, Family x1]
-    Tier 4: [Assorted x2, Family x2]
-    Tier 5: [Assorted x2, Family x2, Prime/Trophy x1]
     """
     monster_id = getattr(corpse, 'monster_id', '')
+    ht = int(getattr(corpse, 'harvest_tier', 1) or 0)
+    tier = max(1, min(5, ht)) if ht > 0 else 1
 
     def _callback(result):
-        tier = min(5, getattr(result, 'score', 0))
-        ingredient_ids = _harvest_outcome_for_tier(tier, monster_id)
-        ingredients = []
-        for ing_id in ingredient_ids:
-            ing = load_ingredient_for(ing_id)
-            if ing is not None:
-                ingredients.append(ing)
-        # Build message
-        if tier == 0:
-            msg = f"You botch the harvest. The {corpse.name} is ruined."
-        else:
-            # Summarize counts (e.g. "2x Assorted Monster Parts, 1x Beast Meat")
+        if getattr(result, 'success', False):
+            ingredient_ids = _harvest_outcome_for_tier(tier, monster_id)
+            ingredients = [ing for ing_id in ingredient_ids
+                           if (ing := load_ingredient_for(ing_id)) is not None]
             counts: dict[str, int] = {}
             for ing in ingredients:
                 counts[ing.name] = counts.get(ing.name, 0) + 1
             parts = [f"{c}x {n}" if c > 1 else n for n, c in counts.items()]
             msg = (f"You harvest the {corpse.name} (T{tier}/5): "
-                   f"{', '.join(parts)}.")
-        on_complete(ingredients, msg)
+                   f"{', '.join(parts)}." if parts
+                   else f"You harvest the {corpse.name}, but it yields nothing usable.")
+            on_complete(ingredients, msg)
+        else:
+            on_complete([], f"You botch the harvest. The {corpse.name} is ruined.")
 
     _player_extra = getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('animal')
-    # Harvest ALWAYS starts at T1 in escalator_chain mode (every chain ramps
-    # T1→T2→T3→T4→T5). The legacy `harvest_tier` field on monsters is
-    # ignored — it was the difficulty tier for the OLD threshold quiz and
-    # would silently skip the early tiers, leaving the player facing T4/T5
-    # questions from question one.
     quiz_engine.start_quiz(
-        mode='escalator_chain',
+        mode='threshold',
         subject='animal',
-        tier=1,
+        tier=tier,
         callback=_callback,
-        max_chain=5,
+        threshold=1,
+        total_qs=1,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=_player_extra + extra_seconds,

@@ -18,11 +18,19 @@ sys.path.insert(0, str(ROOT / "src"))
 
 class MockQuizEngine:
     """Fakes QuizEngine.start_quiz — fires the callback immediately with
-    a pre-set tier score so we can drive the harvest+cook flow without
-    a real game loop."""
+    a pre-set outcome so we can drive the harvest+cook flow without
+    a real game loop.
 
-    def __init__(self, scripted_tier: int):
+    `scripted_tier` still exists for legacy escalator_chain call sites
+    (cook_compound_recipe etc.). For threshold-mode call sites (harvest v3),
+    `scripted_success` decides the outcome: True → callback with
+    success=True, False → success=False. `scripted_tier` also drives the
+    reported chain score for chain-mode paths that read `result.score`.
+    """
+
+    def __init__(self, scripted_tier: int = 5, scripted_success: bool | None = None):
         self.tier = scripted_tier
+        self.success = (scripted_tier > 0) if scripted_success is None else scripted_success
         self.last_quiz_kwargs: dict | None = None
 
     def start_quiz(self, **kwargs):
@@ -30,19 +38,19 @@ class MockQuizEngine:
         callback = kwargs['callback']
 
         class _Result:
-            success = True
-            score = self.tier
-            correct = self.tier
+            success = self.success
+            score = self.tier if self.success else 0
+            correct = self.tier if self.success else 0
             asked = 5
         callback(_Result())
 
 
 class MockCorpse:
     """Minimal corpse shape for harvest_corpse."""
-    def __init__(self, monster_id: str, name: str = None):
+    def __init__(self, monster_id: str, name: str = None, harvest_tier: int = 1):
         self.monster_id = monster_id
         self.name = name or monster_id.replace('_', ' ').title()
-        self.harvest_tier = 1
+        self.harvest_tier = harvest_tier
         self.x = 0
         self.y = 0
 
@@ -51,13 +59,15 @@ class MockCorpse:
 # Harvest path
 # ---------------------------------------------------------------------------
 
-def test_harvest_tier_0_returns_no_ingredients():
+def test_harvest_wrong_answer_ruins_corpse():
+    """Harvest v3 (2026-09-01): a wrong quiz answer ruins the corpse.
+    No ingredients, no additional debuff — losing the corpse IS the cost."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    corpse = MockCorpse('giant_rat')
-    quiz = MockQuizEngine(scripted_tier=0)
+    corpse = MockCorpse('giant_rat', harvest_tier=3)
+    quiz = MockQuizEngine(scripted_success=False)
     out = {}
     def on_complete(ings, msg):
         out['ingredients'] = ings
@@ -67,31 +77,32 @@ def test_harvest_tier_0_returns_no_ingredients():
     assert 'ruined' in out['message'].lower() or 'botch' in out['message'].lower()
 
 
-def test_harvest_tier_3_returns_2_assorted_plus_family():
+def test_harvest_tier_3_success_returns_2_assorted_plus_family():
+    """T3 corpse (family-tier monster), right answer -> full T3 haul."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    corpse = MockCorpse('giant_rat')  # beast family
-    quiz = MockQuizEngine(scripted_tier=3)
+    corpse = MockCorpse('giant_rat', harvest_tier=3)  # beast family
+    quiz = MockQuizEngine(scripted_success=True)
     out = {}
     def on_complete(ings, msg):
         out['ingredients'] = ings
         out['message'] = msg
     harvest_corpse(p, corpse, quiz, on_complete)
     names = [i.name for i in out['ingredients']]
-    # Renamed to "Assorted Monster Jerky" in the 2026-06-07 cooking overhaul.
     assert names.count('Assorted Monster Jerky') == 2
     assert names.count('Beast Meat') == 1
 
 
-def test_harvest_tier_5_includes_prime_cut():
+def test_harvest_tier_5_success_includes_prime_cut():
+    """T5 corpse, right answer -> prime cut included."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    corpse = MockCorpse('giant_rat')
-    quiz = MockQuizEngine(scripted_tier=5)
+    corpse = MockCorpse('giant_rat', harvest_tier=5)
+    quiz = MockQuizEngine(scripted_success=True)
     out = {}
     def on_complete(ings, msg):
         out['ingredients'] = ings
@@ -101,14 +112,14 @@ def test_harvest_tier_5_includes_prime_cut():
     assert 'giant_rat_prime' in ids
 
 
-def test_harvest_tier_5_boss_includes_trophy():
-    """Boss harvest at T5 yields the trophy ingredient (not regular prime)."""
+def test_harvest_tier_5_boss_success_includes_trophy():
+    """Boss corpse at T5, right answer -> trophy ingredient."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    corpse = MockCorpse('abaddon_destroyer')
-    quiz = MockQuizEngine(scripted_tier=5)
+    corpse = MockCorpse('abaddon_destroyer', harvest_tier=5)
+    quiz = MockQuizEngine(scripted_success=True)
     out = {}
     def on_complete(ings, msg):
         out['ingredients'] = ings
@@ -118,36 +129,51 @@ def test_harvest_tier_5_boss_includes_trophy():
     assert 'abaddon_destroyer_trophy' in ids
 
 
-def test_harvest_quiz_uses_escalator_chain_mode():
-    """Verify the quiz mode swapped from threshold → escalator_chain."""
+def test_harvest_quiz_uses_threshold_one_question():
+    """Harvest v3 (2026-09-01): threshold mode, 1 question, no chain."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    corpse = MockCorpse('giant_rat')
-    quiz = MockQuizEngine(scripted_tier=1)
+    corpse = MockCorpse('giant_rat', harvest_tier=1)
+    quiz = MockQuizEngine(scripted_success=True)
     harvest_corpse(p, corpse, quiz, lambda i, m: None)
-    assert quiz.last_quiz_kwargs['mode'] == 'escalator_chain'
-    assert quiz.last_quiz_kwargs['subject'] == 'animal'
-    assert quiz.last_quiz_kwargs['max_chain'] == 5
+    kw = quiz.last_quiz_kwargs
+    assert kw['mode'] == 'threshold'
+    assert kw['subject'] == 'animal'
+    assert kw['total_qs'] == 1
+    assert kw['threshold'] == 1
+    assert 'max_chain' not in kw
 
 
-def test_harvest_always_starts_at_tier_1():
-    """Bug fix 2026-05-31: legacy `harvest_tier` field on monsters used to
-    leak through as the starting tier, making escalator_chain skip T1-T3
-    and put the player into T4/T5 questions from the first answer. Every
-    harvest must now START at T1 regardless of the monster's old tier."""
+def test_harvest_quiz_tier_matches_corpse_harvest_tier():
+    """Quiz difficulty scales to the corpse's harvest_tier — the
+    intrinsic 'richness of harvest' of the monster. A sphinx (T5) demands
+    a T5 animal question; a bat (T1) a T1 question."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    # MockCorpse defaults to harvest_tier=1, but force a legacy high value
-    corpse = MockCorpse('giant_rat')
-    corpse.harvest_tier = 5  # simulate a stale monster JSON
-    quiz = MockQuizEngine(scripted_tier=2)
-    harvest_corpse(p, corpse, quiz, lambda i, m: None)
-    assert quiz.last_quiz_kwargs['tier'] == 1, \
-        f"harvest must start at T1; got {quiz.last_quiz_kwargs['tier']}"
+    for ht in (1, 2, 3, 4, 5):
+        corpse = MockCorpse('giant_rat', harvest_tier=ht)
+        quiz = MockQuizEngine(scripted_success=True)
+        harvest_corpse(p, corpse, quiz, lambda i, m: None)
+        assert quiz.last_quiz_kwargs['tier'] == ht, \
+            f"harvest_tier={ht} must produce tier={ht}, got {quiz.last_quiz_kwargs['tier']}"
+
+
+def test_harvest_quiz_tier_clamps_and_defaults():
+    """harvest_tier outside [1,5] clamps to 1 (safe default)."""
+    from food_system import harvest_corpse
+    from player import Player
+
+    p = Player()
+    for bad, expected in ((0, 1), (7, 5), (-3, 1)):
+        corpse = MockCorpse('giant_rat', harvest_tier=bad)
+        quiz = MockQuizEngine(scripted_success=True)
+        harvest_corpse(p, corpse, quiz, lambda i, m: None)
+        assert quiz.last_quiz_kwargs['tier'] == expected, \
+            f"harvest_tier={bad} should clamp to tier={expected}, got {quiz.last_quiz_kwargs['tier']}"
 
 
 # ---------------------------------------------------------------------------
@@ -252,8 +278,8 @@ def test_full_lifecycle_harvest_then_cook():
     p.hp = 20
 
     # Harvest a giant_rat at T5 → get 2 Assorted + 2 Beast + 1 Rat Prime
-    corpse = MockCorpse('giant_rat')
-    quiz_h = MockQuizEngine(scripted_tier=5)
+    corpse = MockCorpse('giant_rat', harvest_tier=5)
+    quiz_h = MockQuizEngine(scripted_success=True)
     out_h = {}
     def on_harvest(ings, msg):
         out_h['ingredients'] = ings
