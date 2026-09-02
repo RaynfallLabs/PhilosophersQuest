@@ -6,6 +6,29 @@ Full path: `C:\Users\brand\Documents\PhilosophersQuest\PLAYABILITY_PASS_AUDIT.md
 
 ---
 
+## Update (2026-09-01, post-deep-audit)
+
+The initial audit was a **health check** (tests + freeze + git state) not a **systems audit**. A deeper sweep after Brandon asked "you've audited everything?" found real gaps and fixed them. Two extra commits landed on `main`:
+
+- `6343ed8` — **audit sweep**: routed ~10 direct `item.id in known_item_ids` readers in `game_render.py` and `main.py:_item_is_known` through `player.knows_item_type` so the v2.6.3 split-knowledge (and the older type-class fallback) actually reach ALL display code. Also cleaned up "COOKING CHAIN" titles → "COOKING" and neutered the dead `Persephone max_chain=6` branch on the (unreachable) `_cook_item` path.
+- `0beb88f` — the audit doc itself (this file).
+
+**Bugs found + fixed:**
+1. Split-knowledge didn't reach `_item_is_known` → ground-item comparison hints silently missed auto-known items. **Fixed.**
+2. Split-knowledge didn't reach 10 render sites in `game_render.py` (inventory, ground, HUD). Auto-known items would show true names via `_display_name` but adjacent detail lines used the old direct-check. **Fixed.**
+3. `"COOKING CHAIN"` titles remained after v3 (no chain any more). **Fixed.**
+4. `Persephone max_chain=6` branch on `_cook_item` is dead in v3 (max_chain no longer used). Neutered with an explicit comment; noted that Persephone's cook bonus is currently inert until re-designed.
+
+**Pre-existing bugs found, NOT touched (out of scope for this pass):**
+- `on_food_eaten` quirk hook is never called from the compound-cook path (only from the dead `_cook_item`). So Tantalus (15 ruined meals) and Persephone (5 quality-5 meals) triggers are dead code. Pre-existing since the 2026-06-07 cook overhaul.
+
+**Still surface-only, NOT verified in-game:**
+- Actually running the game and equipping/cooking/harvesting. You'll catch UX weirdness the code review can't.
+
+Head is now `6343ed8`, working tree clean.
+
+---
+
 ## Ship state
 
 | version | tag | commit | GitHub release |
