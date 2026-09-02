@@ -2730,7 +2730,7 @@ class RenderMixin:
             lines += [("Chain outcomes", FP.GOLD_BRIGHT, self.font_sm),
                       (preview, FP.SUCCESS_TEXT, self.font_sm)]
         lines += [("Next action", FP.GOLD_BRIGHT, self.font_sm),
-                  ("Start the cooking escalator-chain quiz.", FP.BODY_TEXT, self.font_sm)]
+                  ("Answer one cooking question. Right = full recipe; wrong = ruined dish.", FP.BODY_TEXT, self.font_sm)]
         return lines
 
     def _draw_action_tabs(self, tabs, active_tab: int, counts, x: int, y: int, w: int) -> int:
@@ -3037,7 +3037,7 @@ class RenderMixin:
                 elif isinstance(item, Armor):
                     detail = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC  {item.material}"
                 elif isinstance(item, Accessory):
-                    if item.identified or item.id in self.player.known_item_ids:
+                    if item.identified or self.player.knows_item_type(item):
                         fx = item.effects
                         if 'status' in fx:
                             detail = f"grants {fx['status']}"
@@ -4036,7 +4036,7 @@ class RenderMixin:
                 else FP.DANGER_TEXT_LIGHT
             )
             charge_text = f"charges: {item.charges}/{item.max_charges}"
-            if item.identified or item.id in self.player.known_item_ids:
+            if item.identified or self.player.knows_item_type(item):
                 charge_text += f" | effect: {item.effect.replace('_', ' ')}"
             entries.append({
                 'name': self._display_name(item),
@@ -4065,7 +4065,7 @@ class RenderMixin:
                 else FP.DANGER_TEXT_LIGHT
             )
             charge_text = f"charges: {item.charges}/{item.max_charges}"
-            if item.identified or item.id in self.player.known_item_ids:
+            if item.identified or self.player.knows_item_type(item):
                 charge_text += f"  |  effect: {item.effect.replace('_', ' ')}"
             entries.append({
                 'name': self._display_name(item),
@@ -4265,12 +4265,12 @@ class RenderMixin:
                 known = item.spell_id in self.player.known_spells
                 if known:
                     detail_text = f"[KNOWN] {item.spell_name}"
-                elif item.identified or item.id in self.player.known_item_ids:
+                elif item.identified or self.player.knows_item_type(item):
                     detail_text = f"teaches: {item.spell_name}  {item.mp_cost} MP"
                 else:
                     detail_text = "spellbook"
             else:
-                if item.identified or item.id in self.player.known_item_ids:
+                if item.identified or self.player.knows_item_type(item):
                     detail_text = f"effect: {item.effect.replace('_', ' ')}"
                 else:
                     detail_text = "unknown effect"
@@ -4866,7 +4866,7 @@ class RenderMixin:
         items = self.quaff_menu_items
         entries = []
         for i, item in enumerate(items):
-            known = item.identified or item.id in self.player.known_item_ids
+            known = item.identified or self.player.knows_item_type(item)
             if known:
                 eff = item.effect.replace('_', ' ')
                 dur = f" ({item.duration} turns)" if item.duration else ""
@@ -4902,7 +4902,7 @@ class RenderMixin:
         items = self.quaff_menu_items
         entries = []
         for i, item in enumerate(items[:26]):
-            known = item.identified or item.id in self.player.known_item_ids
+            known = item.identified or self.player.knows_item_type(item)
             if known:
                 eff = item.effect.replace('_', ' ')
                 dur = f"  ({item.duration} turns)" if item.duration else ""
@@ -4946,7 +4946,7 @@ class RenderMixin:
                 badge = 'WEAPON'
                 badge_color = FP.WARNING_TEXT
             elif isinstance(item, Potion):
-                known = item.identified or item.id in self.player.known_item_ids
+                known = item.identified or self.player.knows_item_type(item)
                 if known:
                     eff = item.effect.replace('_', ' ')
                     dur = f" ({item.duration} turns)" if item.duration else ""
@@ -4991,7 +4991,7 @@ class RenderMixin:
                 brk = int(self._get_weapon_break_chance(item) * 100)
                 detail_text = f"{dmg} dmg  |  {brk}% break chance"
             elif isinstance(item, Potion):
-                known = item.identified or item.id in self.player.known_item_ids
+                known = item.identified or self.player.knows_item_type(item)
                 if known:
                     eff = item.effect.replace('_', ' ')
                     dur = f"  ({item.duration} turns)" if item.duration else ""

@@ -4681,7 +4681,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"or combine it into a recipe.", 'info')
             return
         self.player.remove_from_inventory(ingredient)
-        self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING CHAIN"
+        self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
         def on_complete(messages: list[str]):
@@ -4710,13 +4710,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _ascend:
                 self._open_ascension_menu()
 
-        # Check Persephone quirk: max chain 6
-        _persephone = getattr(self.player, 'quirk_progress', {}).get('persephone_active', False)
-        cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete,
-                        max_chain=6 if _persephone else 5)
+        # NOTE: this _cook_item path is unreachable post 2026-06-07 cook overhaul
+        # (the SINGLE tab was removed; _COOK_TABS only lists 'compound'). Kept as
+        # a safety net. Persephone's max-chain-6 bonus was a chain-mode reward
+        # that has no meaning under the v3 one-Q cook — its cook effect is now
+        # inert. If Persephone gets a new cook bonus, wire it here + _cook_compound.
+        cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
 
     def _cook_compound(self, recipe: dict):
-        self.quiz_title = f"PREPARING {recipe['name'].upper()}  --  COOKING CHAIN"
+        self.quiz_title = f"PREPARING {recipe['name'].upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
         def on_complete(messages: list[str]):
@@ -6648,10 +6650,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _item_is_known(self, item) -> bool:
-        """Return True if the item type is known (identified instance OR recognised by type)."""
+        """Return True if the item type is known (identified instance OR recognised
+        by type). Routes through player.knows_item_type so it picks up per-id,
+        per-class (accessories), and identify-v3.1 split form × material coverage."""
         if not hasattr(item, 'identified'):
             return True  # items without an identified flag are always known
-        return item.identified or item.id in self.player.known_item_ids
+        return item.identified or self.player.knows_item_type(item)
 
     _EXAMINE_TABS = [
         ('Weapons',     lambda i: isinstance(i, Weapon)),
