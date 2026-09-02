@@ -18,24 +18,31 @@ _ALL_STATS    = list(_STAT_LABELS.keys())
 _COMBAT_STATS = ['STR', 'CON']
 
 # ----------------------------------------------------------------------
-# Harvest + Cook redesign 2026-05-31
+# Harvest + Cook — cadence rewritten 2026-09-01 (v2.6.1 harvest, v2.6.2 cook)
 #
-# Harvest uses ANIMAL escalator_chain quiz. Tier outcomes:
-#   T0: ruined — no ingredients
+# Both actions now use ONE animal/cooking question, tiered to the target's
+# power (corpse.harvest_tier for harvest, recipe_class for cook). Right
+# answer = full tier-appropriate outcome. Wrong = ruined; the resource
+# (corpse or ingredients) is consumed either way. No chain, no partial
+# credit, no stun on failure. See [[feedback-flow-over-gradient]] and
+# [[feedback-resource-loss-is-the-penalty]].
+#
+# The tier→outcome tables below still drive the reward SHAPE (what a T3
+# monster yields vs a T5 one; what a family recipe gives vs a trophy).
+# Only the CADENCE changed — from up-to-5 escalating Qs to a single one.
+#
+# Harvest outcome shape (per _harvest_outcome_for_tier):
+#   T0: ruined — no ingredients (wrong-answer path only)
 #   T1: 1x Assorted Monster Parts (universal)
 #   T2: 2x Assorted Monster Parts
 #   T3: +1x family ingredient (12 families)
 #   T4: +1 more family (so 2x family total)
 #   T5: +1x prime cut (unique to monster) OR trophy ingredient (boss-only)
 #
-# Cook uses COOKING escalator_chain quiz. Tier outcomes:
-#   T0: ruined mush
-#   T1: +20-30 SP, +1-2 HP
-#   T2: +50-75 SP, +3-5 HP
-#   T3: above + max HP bonus (counts vs +5/floor cap)
-#   T4: above + 1 stat (recipe-themed, counts vs +1/floor cap)
-#   T5: above + temp power (lore-themed)
-#   Trophy recipes: above + permanent power (bypasses floor caps)
+# Cook outcome shape (per recipe's tier_outcomes; v3 always passes T5 on
+# success and T0 on failure):
+#   T5: full peak reward (SP + HP + max-HP + stat + temp/permanent power)
+#   T0: ruined dish, ingredients consumed
 # ----------------------------------------------------------------------
 
 def _load_prime_cuts() -> dict:
@@ -48,8 +55,10 @@ def _load_prime_cuts() -> dict:
 
 
 def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
-    """Map an escalator_chain tier (0-5) to the list of ingredient IDs the
-    player gains. Multi-tier outcomes are CUMULATIVE."""
+    """Map a tier (0-5) to the list of ingredient IDs the player gains
+    from harvesting this monster's corpse. Outcomes are CUMULATIVE — a
+    T3 haul contains everything a T1 haul does, plus more. Called with
+    corpse.harvest_tier on success (v3 pattern) or 0 on failure."""
     primes = _load_prime_cuts()
     prime_info = primes.get(monster_id)
     if not prime_info:
@@ -1059,8 +1068,9 @@ def make_corpse(monster_id: str, x: int, y: int):
     """Create a Corpse item for dungeon generation (graveyard rooms, etc.).
 
     Per 2026-05-31 redesign: corpse no longer carries an ingredient_id —
-    the new escalator_chain harvest looks up the prime cut from
-    prime_cuts.json keyed by monster_id at harvest time.
+    the harvest looks up the prime cut from prime_cuts.json keyed by
+    monster_id at harvest time. (v3 2026-09-01: harvest is now a single
+    animal question at the corpse's harvest_tier; see harvest_corpse.)
     """
     from items import Corpse
     monsters_path = data_path('data', 'monsters.json')
