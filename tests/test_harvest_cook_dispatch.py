@@ -119,9 +119,9 @@ def test_success_restores_sp_and_hp():
     p = Player()
     p.sp = 100
     p.hp = 20
-    # t1_hearty_snack: sp=45, hp=4
+    # t1_hearty_snack (v2.6.5.1 tune): sp=70, hp=4
     _apply_recipe_outcome(p, _recipe_with_outcome('t1_hearty_snack'))
-    assert p.sp == 100 + 45
+    assert p.sp == 100 + 70
     assert p.hp == 20 + 4
 
 

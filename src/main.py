@@ -4118,17 +4118,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.player.sp > 0:
             self.player.sp -= 1
             if self.player.sp == 0:
-                # v2.6.5 SP soft boundary (2026-09-03): SP=0 no longer
-                # damages the player. Instead, hunger cuts off passive
-                # HP regen (see _tick_hp_regen) and disables the
-                # chain-final crit bonus (see game_combat). This is a
-                # soft ceiling on exploration -- cooking is rewarding,
-                # not required to survive. See memory
-                # [[feedback-sp-soft-boundary]] and the harvest-audit
-                # PLAYABILITY_PASS_AUDIT.md.
-                self.add_message("You are hungry. Find food to keep your edge.", 'warning')
-        # SP==0 is a soft state: no damage, just the "hungry" penalty
-        # applied by consumers of player.sp elsewhere in the loop.
+                self.add_message("You are hungry! Find food before you starve.", 'warning')
+        else:
+            dmg = self.player.take_damage(1, 'starvation')
+            self.add_message(f"Starving! You take {dmg} damage.", 'danger')
+            if self.player.is_dead():
+                self.defeat_reason = 'starved'
+                self._on_game_over()
+                self.state = STATE_DEAD
+                self.add_message("You have starved to death! Press ESC to quit.", 'danger')
 
     # ------------------------------------------------------------------
     # Passive HP regeneration
@@ -4152,11 +4150,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.player.hp >= self.player.max_hp:
             return
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
-            return
-        # v2.6.5 SP soft boundary (2026-09-03): hungry (SP=0) blocks passive
-        # HP regen. The body needs fuel to knit itself. Cook, quaff, or rest
-        # at an altar to work around it. Not fatal, just a friction cost.
-        if self.player.sp <= 0:
             return
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
         interval = max(10, 20 - max(0, self.player.CON - 12))
