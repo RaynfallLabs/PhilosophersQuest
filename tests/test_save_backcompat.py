@@ -19,37 +19,60 @@ from pathlib import Path
 _ACC = Path(__file__).resolve().parents[1] / 'data' / 'items' / 'accessory.json'
 
 
-def test_legacy_assorted_parts_reconciled_to_jerky():
+def test_v265_legacy_assorted_parts_dropped():
+    """v2.6.5: assorted_monster_parts was deleted. Old saves carrying an
+    'Assorted Monster Parts' Ingredient have it removed from inventory on
+    load (nothing valid to swap to)."""
     from food_system import load_ingredient_for
+    from items import Ingredient
     from main import Game
-    stale = load_ingredient_for('assorted_monster_parts')
-    stale.name = 'Assorted Monster Parts'   # pre-overhaul pickled state
-    stale.edible_safe = False
-    stale.raw_sp = None
+
+    # Simulate a pre-v2.6.5 pickled ingredient by faking the id.
+    # Take any current ingredient and give it the deleted id.
+    stale = load_ingredient_for('giant_rat_prime')
+    stale.id = 'assorted_monster_parts'
+    stale.name = 'Assorted Monster Parts'
 
     class _M:
         pass
     g = _M(); g.player = _M(); g.player.inventory = [stale]
     Game._migrate_legacy_ingredients(g, {})
 
-    assert stale.name == 'Assorted Monster Jerky'
-    assert stale.edible_safe is True
-    assert stale.raw_sp == 25
+    # Dropped from inventory (no replacement possible).
+    remaining_ings = [i for i in g.player.inventory if isinstance(i, Ingredient)]
+    assert remaining_ings == [], "assorted_monster_parts should be dropped on v2.6.5 load"
 
 
-def test_legacy_unknown_ingredient_id_swapped_not_crashed():
-    # A truly-removed ingredient id (pre-2026-05-31 redesign) must be swapped for
-    # assorted parts, not left as a dead item.
+def test_v265_legacy_family_cut_dropped():
+    """Same story for family_* cuts."""
     from food_system import load_ingredient_for
+    from items import Ingredient
     from main import Game
-    dead = load_ingredient_for('assorted_monster_parts')
-    dead.id = 'orc_meat_legacy_gone'          # an id no longer in the bank
+
+    stale = load_ingredient_for('goblin_prime')
+    stale.id = 'family_humanoid'
 
     class _M:
         pass
-    g = _M(); g.player = _M(); g.player.inventory = [dead]
+    g = _M(); g.player = _M(); g.player.inventory = [stale]
     Game._migrate_legacy_ingredients(g, {})
-    assert g.player.inventory[0].id == 'assorted_monster_parts'
+    assert [i for i in g.player.inventory if isinstance(i, Ingredient)] == []
+
+
+def test_legacy_unknown_ingredient_id_dropped():
+    """Truly-removed ingredients (pre-any-current-schema) are dropped, not
+    left as dead items."""
+    from food_system import load_ingredient_for
+    from items import Ingredient
+    from main import Game
+
+    stale = load_ingredient_for('goblin_prime')
+    stale.id = 'orc_meat_legacy_gone'
+    class _M:
+        pass
+    g = _M(); g.player = _M(); g.player.inventory = [stale]
+    Game._migrate_legacy_ingredients(g, {})
+    assert [i for i in g.player.inventory if isinstance(i, Ingredient)] == []
 
 
 def test_accessory_remap_targets_all_valid_and_non_noop():

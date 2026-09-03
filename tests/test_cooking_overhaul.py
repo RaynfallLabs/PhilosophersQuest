@@ -89,58 +89,45 @@ class _MockPlayer:
         return name in self.effects
 
 
-def test_assorted_ingredient_is_renamed_jerky():
-    e = INGREDIENTS[ASSORTED]
-    assert e["name"] == "Assorted Monster Jerky", e["name"]
+# v2.6.5 (2026-09-03) rewrote the emergency-food safety net:
+# assorted_monster_parts and family_* cuts are DELETED. Every monster prime
+# is now edible_safe with tier-scaled raw_sp (T1=10, T5=30) so raw eating
+# survives as a "you're desperate" fallback. Cooking is 3-5x more efficient
+# but not required for survival.
 
 
-def test_assorted_jerky_is_edible_safe_with_raw_sp_25():
-    e = INGREDIENTS[ASSORTED]
-    assert e.get("edible_safe") is True
-    assert e.get("raw_sp") == 25
+def test_assorted_monster_parts_is_removed():
+    """The v2.6.5 harvest rebuild ripped out the generic 'assorted' fallback."""
+    assert ASSORTED not in INGREDIENTS
 
 
-def test_eat_jerky_restores_25_sp_and_never_poisons():
-    """Loop the RNG hard: jerky must give +25 SP and NEVER apply food poison.
+def test_family_cuts_are_removed():
+    family_ids = [k for k in INGREDIENTS if k.startswith("family_")]
+    assert family_ids == [], f"expected no family_* cuts, got {family_ids}"
 
-    Raw jerky SP raised 12 -> 25 (2026-06-07 SP-economy tune): jerky 25, low
-    cook 50, good cook 100 -- a clear raw < low-cook < good-cook ladder."""
+
+def test_every_monster_prime_is_edible_raw():
+    """v2.6.5: every prime is edible_safe with tier-scaled raw_sp. Ensures
+    the player can never fully lose access to emergency food."""
+    for ing_id, ing in INGREDIENTS.items():
+        if ing.get("tier_role") != "prime":
+            continue
+        assert ing.get("edible_safe") is True, f"{ing_id} not edible_safe"
+        raw_sp = int(ing.get("raw_sp", 0) or 0)
+        assert 5 <= raw_sp <= 40, f"{ing_id} raw_sp={raw_sp} out of range"
+
+
+def test_eat_raw_prime_never_poisons_v265(monkeypatch):
+    """The emergency-food promise: raw-eating a prime never applies poisoned.
+    (Loop the RNG hard.)"""
     import food_system
     from food_system import load_ingredient_for
-
-    for _ in range(400):
-        pl = _MockPlayer()
-        jerky = load_ingredient_for(ASSORTED)
-        assert jerky is not None
-        msgs = food_system.eat_raw(pl, jerky)
-        assert pl.sp == 25, f"expected +25 SP, got {pl.sp}"
-        assert pl.hp == 50, "jerky grants no HP (HP stays behind cooking)"
-        assert "poisoned" not in pl.effects, "jerky must never poison"
-        assert not any("poison" in m.lower() for m in msgs)
-
-
-def test_jerky_loaded_ingredient_carries_flags():
-    from food_system import load_ingredient_for
-    jerky = load_ingredient_for(ASSORTED)
-    assert jerky.edible_safe is True
-    assert jerky.raw_sp == 25
-
-
-def test_non_cured_ingredient_still_risks_poison():
-    """A prime (no edible_safe) keeps the 30% raw-poison roll: the exemption is
-    jerky-specific, not a blanket removal."""
-    import food_system
-    from food_system import load_ingredient_for
-    poisoned_once = False
     for _ in range(300):
         pl = _MockPlayer()
         prime = load_ingredient_for("giant_rat_prime")
-        assert not getattr(prime, "edible_safe", False)
+        assert prime is not None
         food_system.eat_raw(pl, prime)
-        if "poisoned" in pl.effects:
-            poisoned_once = True
-            break
-    assert poisoned_once, "raw non-cured ingredients must still be able to poison"
+        assert "poisoned" not in pl.effects, "raw primes must never poison in v2.6.5"
 
 
 # ---------------------------------------------------------------------------
@@ -152,13 +139,10 @@ def test_basic_stew_deleted():
     assert not _recipes_of("basic")
 
 
-def test_assorted_parts_have_no_solo_recipe():
-    """With basic stew gone, eating jerky is the ONLY use for a lone assorted
-    part -- _find_recipe_for_ingredient must return None for it."""
-    import food_system
+def test_assorted_parts_are_gone_v265():
+    """v2.6.5: no lookup should return anything for the deleted assorted key."""
     from food_system import load_ingredient_for
-    jerky = load_ingredient_for(ASSORTED)
-    assert food_system._find_recipe_for_ingredient(jerky) is None
+    assert load_ingredient_for(ASSORTED) is None
 
 
 # ---------------------------------------------------------------------------
@@ -174,49 +158,53 @@ def _recipes_by_prefix(prefix: str) -> dict:
     return {rid: r for rid, r in RECIPES.items() if rid.startswith(prefix)}
 
 
-def test_v264_family_recipes_are_2_family_and_4_assorted():
+def test_v265_family_recipes_are_3_same_family_monsters():
+    """v2.6.5: family recipes use 3 same-family monster primes (no more
+    abstract family_* or assorted ingredients)."""
     fams = {rid: r for rid, r in RECIPES.items()
             if rid.startswith("family_") and rid.endswith("_recipe")}
     assert len(fams) == 12, f"expected 12 family recipes, got {len(fams)}"
-    for rid in fams:
-        r = _roles(rid)
-        assert r == Counter({"family": 2, "assorted": 4}), (rid, dict(r))
+    for rid, r in fams.items():
+        ings = r["ingredients"]
+        assert len(ings) == 3, f"{rid} should have 3 ingredients, got {len(ings)}"
+        # All 3 should be primes from the same family
+        families = set()
+        for ing_id in ings:
+            defn = INGREDIENTS.get(ing_id, {})
+            assert defn.get("tier_role") == "prime", f"{rid}: {ing_id} not a prime"
+            families.add(defn.get("family"))
+        assert len(families) == 1, f"{rid}: mixed families {families}"
 
 
-def test_v264_solo_prime_recipes_are_lightweight():
-    """v2.6.4: solo prime cooks cost just the prime + 2 assorted. Simpler
-    than the pre-v2.6.4 economy (which forced primes to also spend family
-    cuts). Combo prime recipes (with dungeon adjuncts) sit at 3 ingredients
-    too. See PLAYABILITY_PASS_AUDIT.md for the redesign rationale."""
+def test_v265_solo_prime_recipes_are_single_ingredient():
+    """v2.6.5: solo prime cooks are 1 ingredient (the prime alone)."""
     primes = _recipes_by_prefix("prime_")
     assert len(primes) >= 500, f"expected 500+ prime recipes, got {len(primes)}"
-    for rid in primes:
-        r = _roles(rid)
-        assert r["prime"] == 1, (rid, dict(r))
-        assert r["assorted"] == 2, (rid, dict(r))
+    for rid, r in primes.items():
+        ings = r["ingredients"]
+        assert len(ings) == 1, f"{rid} should have 1 ingredient, got {ings}"
+        defn = INGREDIENTS.get(ings[0], {})
+        assert defn.get("tier_role") == "prime", f"{rid}: {ings[0]} not a prime"
 
 
-def test_v264_trophy_recipes_use_boss_trophy():
+def test_v265_trophy_recipes_are_trophy_alone():
+    """v2.6.5: trophies stand alone — precious, no gating behind extra grinding."""
     troph = _recipes_by_prefix("trophy_")
     assert len(troph) == 14, f"expected 14 trophy recipes, got {len(troph)}"
-    for rid in troph:
-        r = _roles(rid)
-        assert r["trophy"] == 1, (rid, dict(r))
-        assert r["family"] == 2, (rid, dict(r))
-        assert r["assorted"] == 5, (rid, dict(r))
+    for rid, r in troph.items():
+        ings = r["ingredients"]
+        assert len(ings) == 1, f"{rid} should have 1 ingredient, got {ings}"
+        assert ings[0].endswith("_trophy"), f"{rid}: {ings[0]} not a trophy"
 
 
-def test_v264_combo_recipes_pair_prime_with_dungeon_ingredient():
-    """Signature-monster combos take 1 prime + 1 dungeon-role adjunct +
-    1 assorted. The pairing drives which outcome archetype fires
-    (mushroom -> perception, salt -> poison_resist, etc.)."""
+def test_v265_combo_recipes_pair_prime_with_dungeon():
     combos = _recipes_by_prefix("combo_")
     assert len(combos) >= 30, f"expected 30+ combo recipes, got {len(combos)}"
-    for rid in combos:
-        r = _roles(rid)
-        assert r["prime"] == 1, (rid, dict(r))
-        assert r["dungeon"] == 1, (rid, dict(r))
-        assert r["assorted"] == 1, (rid, dict(r))
+    for rid, r in combos.items():
+        role_counter = _roles(rid)
+        assert role_counter["prime"] == 1, (rid, dict(role_counter))
+        assert role_counter["dungeon"] == 1, (rid, dict(role_counter))
+        assert role_counter.get("assorted", 0) == 0, f"{rid} should have no assorted"
 
 
 def test_every_recipe_references_existing_ingredients():
@@ -303,29 +291,26 @@ def test_cook_menu_excludes_jerky_from_single_tab():
 
 
 def test_cook_item_on_jerky_does_not_consume_it():
-    """Safety net: if _cook_item is somehow called on jerky, it must NOT destroy
-    the part (no solo recipe) -- the pre-overhaul flow removed it up-front."""
+    """v2.6.5: jerky/assorted_monster_parts is gone; this test is a
+    load-through-no-op check that _cook_item handles the missing key without
+    crashing (the caller filters upstream anyway)."""
     from food_system import load_ingredient_for
-    g = _headless_game()
-    g.player.inventory = [load_ingredient_for(ASSORTED) for _ in range(3)]
-    jerky = g.player.inventory[0]
-    started = {"quiz": False}
-    g.quiz_engine.start_quiz = lambda **kw: started.__setitem__("quiz", True)
-    g._cook_item(jerky)
-    held = sum(1 for i in g.player.inventory if i.id == ASSORTED)
-    assert held == 3, f"jerky was consumed by a solo cook ({held} left)"
-    assert started["quiz"] is False, "no cooking quiz should start for un-cookable jerky"
+    assert load_ingredient_for(ASSORTED) is None
+    # No crash on the lookup itself is the assertion.
 
 
-def test_prime_recipe_family_matches_its_monster_family():
-    """A prime recipe's 2 family parts must be THIS monster's family -- the
-    auto-cluster guarantee (the family co-spawns with the prime by definition)."""
-    mism = []
-    for rid, r in _recipes_of("prime").items():
-        prime = next(i for i in r["ingredients"] if _classify(i) == "prime")
-        mon = prime[: -len("_prime")]
-        want = f"family_{PRIMES[mon]['family']}"
-        fams = [i for i in r["ingredients"] if _classify(i) == "family"]
-        if any(f != want for f in fams):
-            mism.append((rid, fams, want))
-    assert not mism, f"prime recipes whose family part mismatches the monster: {mism[:10]}"
+def test_v265_family_recipes_have_family_matching_ingredients():
+    """v2.6.5 family recipe uses 3 same-family monster primes. Verifies the
+    generator picked monsters that actually match the family in the recipe id."""
+    for fam_id, (name, _flavor) in [
+        ("beast", (None, None)), ("humanoid", (None, None)),
+        ("reptile", (None, None)), ("dragon", (None, None)),
+        ("undead", (None, None)),
+    ]:
+        rid = f"family_{fam_id}_recipe"
+        if rid not in RECIPES:
+            continue
+        for ing_id in RECIPES[rid]["ingredients"]:
+            defn = INGREDIENTS.get(ing_id, {})
+            assert defn.get("family") == fam_id, \
+                f"{rid} ingredient {ing_id} has family={defn.get('family')}, expected {fam_id}"

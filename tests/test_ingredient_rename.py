@@ -153,17 +153,20 @@ def test_trophy_authored_names_preserved():
 # ---------------------------------------------------------------------------
 
 def test_known_ingredient_ids_still_load():
+    """v2.6.5: assorted_monster_parts + family_* deleted; monster primes and
+    trophies and the 8 dungeon adjuncts remain."""
     names = _name_by_id()
     for iid in (
-        "assorted_monster_parts",
         "giant_rat_prime",
         "gas_spore_prime",
         "skeleton_prime",
         "fafnir_dragon_trophy",
-        "family_undead",
         "cave_mushroom",
     ):
         assert iid in names, f"ingredient_id {iid!r} no longer loads"
+    # These are DELETED in v2.6.5:
+    for gone in ("assorted_monster_parts", "family_undead", "family_beast"):
+        assert gone not in names, f"{gone!r} should be gone in v2.6.5"
 
 
 def test_prime_ids_match_source_monster_pattern():

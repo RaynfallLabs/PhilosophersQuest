@@ -55,33 +55,26 @@ def _load_prime_cuts() -> dict:
 
 
 def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
-    """Map a tier (0-5) to the list of ingredient IDs the player gains
-    from harvesting this monster's corpse. Outcomes are CUMULATIVE — a
-    T3 haul contains everything a T1 haul does, plus more. Called with
-    corpse.harvest_tier on success (v3 pattern) or 0 on failure."""
+    """v2.6.5 (2026-09-03): harvest yields exactly ONE ingredient — the
+    monster's identifying prime cut (or trophy for bosses). Tier is used
+    ONLY for the harvest quiz difficulty; the outcome is the same
+    ingredient regardless of tier. tier=0 (ruined) -> empty list.
+
+    Prior versions returned a cumulative T1-T5 stack of assorted +
+    family + prime; that meant 87% of monsters never dropped their own
+    prime (only T5 corpses reached the prime slot). See harvest audit
+    2026-09-03 for the details of the redesign.
+    """
+    if tier <= 0:
+        return []
     primes = _load_prime_cuts()
     prime_info = primes.get(monster_id)
     if not prime_info:
-        # Defensive — monster not in prime_cuts mapping. Fallback: beast family.
-        family = 'beast'
-        prime_id = None
-    else:
-        family = prime_info['family']
-        prime_id = (f'{monster_id}_trophy' if prime_info['is_trophy']
-                    else f'{monster_id}_prime')
-
-    out: list[str] = []
-    if tier >= 1:
-        out.append('assorted_monster_parts')
-    if tier >= 2:
-        out.append('assorted_monster_parts')
-    if tier >= 3:
-        out.append(f'family_{family}')
-    if tier >= 4:
-        out.append(f'family_{family}')
-    if tier >= 5 and prime_id:
-        out.append(prime_id)
-    return out
+        # Defensive — monster has no prime_cut mapping. Nothing to harvest.
+        return []
+    is_trophy = bool(prime_info.get('is_trophy'))
+    ing_id = f'{monster_id}_trophy' if is_trophy else f'{monster_id}_prime'
+    return [ing_id]
 
 # ------------------------------------------------------------------
 # Potency-based cooking formulas (replaces tier lookup tables)

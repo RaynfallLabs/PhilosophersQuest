@@ -1104,21 +1104,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         cook).
         """
         from items import Ingredient
-        from food_system import load_ingredient_for, _raw_ingredients
+        from food_system import _raw_ingredients
 
         valid_ids = set(_raw_ingredients().keys())
-
         raw_ings = _raw_ingredients()
 
-        def _migrated_replacement():
-            """Build a fresh Assorted Monster Parts ingredient."""
-            return load_ingredient_for('assorted_monster_parts')
-
         def _reconcile(item):
-            """Refresh a VALID-id Ingredient's cooking-overhaul fields from the
-            current JSON (2026-06-07): old saves predate the jerky rename + the
-            edible_safe / raw_sp fields, so a pickled 'Assorted Monster Parts'
-            stayed un-eatable. Per-instance state (count, x, y, buc) is untouched."""
+            """Refresh a VALID-id Ingredient's fields from the current JSON.
+            v2.6.5 (2026-09-03) added edible_safe + raw_sp on every prime;
+            re-syncing here upgrades saves in place."""
             defn = raw_ings.get(item.id)
             if not defn:
                 return
@@ -1128,21 +1122,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             item.raw_sp = defn.get('raw_sp', None)
 
         def _migrate_list(items_list):
-            """Swap unknown-id Ingredients for Assorted Parts; reconcile the rest."""
+            """v2.6.5: assorted_monster_parts + family_* were deleted. Old
+            saves carrying those Ingredients have nothing to swap to (no
+            equivalent survives). Drop them from the list; reconcile the rest."""
             if not items_list:
                 return 0
             count = 0
-            for i, item in enumerate(items_list):
+            for i in range(len(items_list) - 1, -1, -1):
+                item = items_list[i]
                 if not isinstance(item, Ingredient):
                     continue
                 if item.id not in valid_ids:
-                    replacement = _migrated_replacement()
-                    if replacement is not None:
-                        # Preserve position (x, y) for ground items
-                        replacement.x = getattr(item, 'x', 0)
-                        replacement.y = getattr(item, 'y', 0)
-                        items_list[i] = replacement
-                        count += 1
+                    # Deleted ingredient (assorted/family/legacy) — drop it.
+                    items_list.pop(i)
+                    count += 1
                 else:
                     _reconcile(item)
             return count
@@ -4125,15 +4118,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.player.sp > 0:
             self.player.sp -= 1
             if self.player.sp == 0:
-                self.add_message("You are hungry! Find food before you starve.", 'warning')
-        else:
-            dmg = self.player.take_damage(1, 'starvation')
-            self.add_message(f"Starving! You take {dmg} damage.", 'danger')
-            if self.player.is_dead():
-                self.defeat_reason = 'starved'
-                self._on_game_over()
-                self.state = STATE_DEAD
-                self.add_message("You have starved to death! Press ESC to quit.", 'danger')
+                # v2.6.5 SP soft boundary (2026-09-03): SP=0 no longer
+                # damages the player. Instead, hunger cuts off passive
+                # HP regen (see _tick_hp_regen) and disables the
+                # chain-final crit bonus (see game_combat). This is a
+                # soft ceiling on exploration -- cooking is rewarding,
+                # not required to survive. See memory
+                # [[feedback-sp-soft-boundary]] and the harvest-audit
+                # PLAYABILITY_PASS_AUDIT.md.
+                self.add_message("You are hungry. Find food to keep your edge.", 'warning')
+        # SP==0 is a soft state: no damage, just the "hungry" penalty
+        # applied by consumers of player.sp elsewhere in the loop.
 
     # ------------------------------------------------------------------
     # Passive HP regeneration
@@ -4157,6 +4152,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.player.hp >= self.player.max_hp:
             return
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
+            return
+        # v2.6.5 SP soft boundary (2026-09-03): hungry (SP=0) blocks passive
+        # HP regen. The body needs fuel to knit itself. Cook, quaff, or rest
+        # at an altar to work around it. Not fatal, just a friction cost.
+        if self.player.sp <= 0:
             return
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
         interval = max(10, 20 - max(0, self.player.CON - 12))

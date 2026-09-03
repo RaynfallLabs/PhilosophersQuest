@@ -79,11 +79,9 @@ def test_asterion_is_a_trophy_with_ingredient_and_family_recipe_shape():
     assert 'asterion_minotaur_trophy' in ing
     assert ing['asterion_minotaur_trophy']['tier_role'] == 'trophy'
 
-    # trophy recipe = 1 trophy + 2 family + 5 assorted (cooking-overhaul shape)
+    # v2.6.5: trophy recipe is 1 trophy alone (trophies are precious).
     ings = _recipes()['trophy_asterion_minotaur_recipe']['ingredients']
-    assert ings.count('asterion_minotaur_trophy') == 1
-    assert ings.count('family_humanoid') == 2
-    assert ings.count('assorted_monster_parts') == 5
+    assert ings == ['asterion_minotaur_trophy']
 
 
 # --------------------------------------------------------------------------

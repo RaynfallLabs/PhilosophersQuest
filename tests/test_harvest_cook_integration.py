@@ -77,39 +77,38 @@ def test_harvest_wrong_answer_ruins_corpse():
     assert 'ruined' in out['message'].lower() or 'botch' in out['message'].lower()
 
 
-def test_harvest_tier_3_success_returns_2_assorted_plus_family():
-    """T3 corpse (family-tier monster), right answer -> full T3 haul."""
+def test_v265_harvest_gives_the_monsters_prime_at_any_tier():
+    """v2.6.5: every successful harvest yields the monster's prime cut,
+    regardless of harvest_tier (no more cumulative T1-T5 stack)."""
+    from food_system import harvest_corpse
+    from player import Player
+
+    for ht in (1, 2, 3, 4, 5):
+        p = Player()
+        corpse = MockCorpse('giant_rat', harvest_tier=ht)
+        quiz = MockQuizEngine(scripted_success=True)
+        out = {}
+        def on_complete(ings, msg):
+            out['ingredients'] = ings
+            out['message'] = msg
+        harvest_corpse(p, corpse, quiz, on_complete)
+        ids = [i.id for i in out['ingredients']]
+        assert ids == ['giant_rat_prime'], f"harvest_tier={ht}: got {ids}"
+
+
+def test_v265_low_tier_monsters_now_drop_their_own_prime():
+    """The v2.6.5 bug fix: goblin (harvest_tier=1) never dropped goblin_prime
+    under the old cumulative-T1-T5 harvest. Now it does."""
     from food_system import harvest_corpse
     from player import Player
 
     p = Player()
-    corpse = MockCorpse('giant_rat', harvest_tier=3)  # beast family
+    corpse = MockCorpse('goblin', harvest_tier=1)
     quiz = MockQuizEngine(scripted_success=True)
     out = {}
-    def on_complete(ings, msg):
-        out['ingredients'] = ings
-        out['message'] = msg
-    harvest_corpse(p, corpse, quiz, on_complete)
-    names = [i.name for i in out['ingredients']]
-    assert names.count('Assorted Monster Jerky') == 2
-    assert names.count('Beast Meat') == 1
-
-
-def test_harvest_tier_5_success_includes_prime_cut():
-    """T5 corpse, right answer -> prime cut included."""
-    from food_system import harvest_corpse
-    from player import Player
-
-    p = Player()
-    corpse = MockCorpse('giant_rat', harvest_tier=5)
-    quiz = MockQuizEngine(scripted_success=True)
-    out = {}
-    def on_complete(ings, msg):
-        out['ingredients'] = ings
-        out['message'] = msg
-    harvest_corpse(p, corpse, quiz, on_complete)
+    harvest_corpse(p, corpse, quiz, lambda ings, msg: out.update(ingredients=ings))
     ids = [i.id for i in out['ingredients']]
-    assert 'giant_rat_prime' in ids
+    assert ids == ['goblin_prime']
 
 
 def test_harvest_tier_5_boss_success_includes_trophy():
@@ -368,20 +367,20 @@ def test_full_lifecycle_harvest_then_cook():
     p.sp = 100
     p.hp = 20
 
-    # Harvest a giant_rat at T5 → get 2 Assorted + 2 Beast + 1 Rat Prime
-    corpse = MockCorpse('giant_rat', harvest_tier=5)
+    # v2.6.5: harvest a giant_rat → get 1 giant_rat_prime (just the ingredient)
+    corpse = MockCorpse('giant_rat', harvest_tier=1)
     quiz_h = MockQuizEngine(scripted_success=True)
     out_h = {}
     def on_harvest(ings, msg):
         out_h['ingredients'] = ings
         out_h['msg'] = msg
-        # Add them to inventory manually (mimicking main.py call site)
         for ing in ings:
             p.add_to_inventory(ing)
     harvest_corpse(p, corpse, quiz_h, on_harvest)
-    assert len(out_h['ingredients']) == 5
+    assert len(out_h['ingredients']) == 1
+    assert out_h['ingredients'][0].id == 'giant_rat_prime'
 
-    # Now cook the prime recipe (v2.6.4: 1 prime + 2 assorted)
+    # Cook the prime recipe (v2.6.5: 1 prime alone)
     rid = 'prime_giant_rat_recipe'
     recipe = {'id': rid, **_raw_recipes()[rid]}
     quiz_c = MockQuizEngine(scripted_success=True)
@@ -389,6 +388,5 @@ def test_full_lifecycle_harvest_then_cook():
     cook_compound_recipe(p, recipe, p.inventory, quiz_c,
                          lambda msgs: out_c.update(messages=msgs))
 
-    # SP should be higher (rat prime is T1 -> ~30-40 SP outcome)
+    # SP should be higher (rat prime is T1 → 30-50 SP outcome)
     assert p.sp > 100
-    # (v2.6.4 rat prime doesn't grant stat — that's T4+)
