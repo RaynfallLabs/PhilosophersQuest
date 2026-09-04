@@ -24,6 +24,7 @@ added_files = [
     ('data/monsters.json',          'data'),
     ('data/hints.json',             'data'),
     ('data/chest_templates.json',   'data'),
+    ('data/chest_traps.json',       'data'),
     ('data/flavor_encounters.json', 'data'),
     ('data/classes.json',           'data'),
     # Game data — directories

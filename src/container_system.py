@@ -1,63 +1,79 @@
 """
 Container / lockpicking system.
 
-Flow (post-2026-05-19 template rebuild):
+Flow (v2.6.6 lockpick v3, 2026-09-03):
   attempt_lockpick(player, container, quiz_engine, dungeon, monsters, callback)
-    -> starts an Economics ESCALATOR_CHAIN quiz starting at container.quiz_tier.
-    -> on chain >= 1: chest opens, generates loot via template, returns items + gold
-    -> on chain == 0: chest opens visually but yields NO loot; trap fires if present;
-                      no retry — chest is marked opened.
+    -> starts an Economics THRESHOLD quiz (1 Q at container.quiz_tier).
+    -> on success: chest opens, generates full loot table (3-4 items + bonus +
+                   rare_chance x 2), returns items + gold.
+    -> on failure: no loot, trap fires at CHEST tier (not floor tier -- bug
+                   fixed pre-v2.6.6). Chest is marked opened.
 
-  Chain curve scales rare/unique odds AND item count:
-      chain 1 (Pried)         0.25x rare, 1 item
-      chain 2 (Cracked)       0.50x rare, 2 items
-      chain 3 (Opened)        1.00x rare, 2-3 items   (baseline; matches template rare%)
-      chain 4 (Picked clean)  1.50x rare, 3 items
-      chain 5 (Master thief)  2.00x rare, 3-4 items + 1 guaranteed bonus common
+Rationale: match the harvest/cook/identify v3 pattern (one question, binary
+outcome). Prior chain-scaled loot rewarded chain length; the failure mode
+was empty-chest-plus-maybe-trap. Under v3, success = the full authored
+haul; failure = a real trap consequence. Traps live in data/chest_traps.json
+and are picked by chest tier. See PLAYABILITY_PASS_AUDIT.md.
 
 Mimic check:
   Handled directly in main.py via _spawn_mimic(container, monsters)
 """
 
 import copy
+import json
+import os
 import random
 
 from dice import roll, roll_duration
 
 
 # ---------------------------------------------------------------------------
-# Chain → loot curve (escalator-chain Economics)
+# Loot curve — post-v2.6.6: success is single-outcome (matches old chain-5)
 # ---------------------------------------------------------------------------
 
-CHAIN_RARE_MULT: dict[int, float] = {
-    0: 0.0,
-    1: 0.25,
-    2: 0.50,
-    3: 1.00,
-    4: 1.50,
-    5: 2.00,
-}
+# Full-success item count: 3-4 real slots + 1 guaranteed bonus common
+# (matches the old chain-5 "Master Thief" tier -- see PLAYABILITY_PASS_AUDIT.md).
+FULL_ITEM_COUNT: tuple[int, int] = (3, 4)
+FULL_BONUS_SLOTS: int = 1
 
-# Per chain rung: minimum and maximum loot slot count. Chain 5 also gets +1
-# bonus item, added on top of whatever sample falls in the (min,max) range.
-CHAIN_ITEM_COUNT: dict[int, tuple[int, int]] = {
-    0: (0, 0),
-    1: (1, 1),
-    2: (2, 2),
-    3: (2, 3),
-    4: (3, 3),
-    5: (3, 4),
-}
+# Rare (unique) chance multiplier vs the JSON `rare_chance_chain3` baseline.
+# Matches the old chain-5 multiplier so a successful pick yields the full
+# authored rare rate.
+FULL_RARE_MULT: float = 2.0
 
-# Labels that describe the chain rung — surfaced in messages and tests.
-CHAIN_LABELS: dict[int, str] = {
-    0: 'Failed',
-    1: 'Pried',
-    2: 'Cracked',
-    3: 'Opened',
-    4: 'Picked clean',
-    5: 'Master thief',
-}
+
+# ---------------------------------------------------------------------------
+# Trap pool -- loaded from data/chest_traps.json (v2.6.6+)
+# ---------------------------------------------------------------------------
+
+_TRAP_POOL_CACHE: dict[int, list[dict]] | None = None
+
+
+def _load_trap_pool() -> dict[int, list[dict]]:
+    """Load traps_by_tier from data/chest_traps.json. Cached."""
+    global _TRAP_POOL_CACHE
+    if _TRAP_POOL_CACHE is None:
+        from paths import data_path
+        p = data_path('data', 'chest_traps.json')
+        with open(p, encoding='utf-8') as f:
+            raw = json.load(f).get('traps_by_tier', {})
+        _TRAP_POOL_CACHE = {int(k): v for k, v in raw.items()}
+    return _TRAP_POOL_CACHE
+
+
+def pick_trap_for_chest(container, rng=None) -> dict:
+    """Pick a random trap keyed by CHEST tier (not floor tier).
+
+    v2.6.6 fix: pre-v2.6.6 code in dungeon.py used floor tier, so a T1
+    chest at floor 50 got a T3 trap. The chest's own tier now drives
+    severity.
+    """
+    rng = rng or random
+    tier = max(1, min(5, int(getattr(container, 'tier', 1))))
+    pool = _load_trap_pool().get(tier) or _load_trap_pool().get(1) or []
+    if not pool:
+        return {}
+    return dict(rng.choice(pool))
 
 
 # ---------------------------------------------------------------------------
@@ -65,40 +81,32 @@ CHAIN_LABELS: dict[int, str] = {
 # ---------------------------------------------------------------------------
 
 def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_complete):
-    """
-    Start an Economics escalator-chain quiz to open *container*.
+    """v2.6.6 lockpick v3: ONE economics question at container.quiz_tier.
 
     on_complete({'status': str, 'loot': list, 'gold': int, 'messages': list[tuple]})
-      status: 'opened' (always — chain 0 yields opened-but-empty)
-      loot:   list of Item instances (empty when chain 0)
-      gold:   int (0 when chain 0)
+      status: 'opened' (always -- one attempt per chest)
+      loot:   list of Item instances (populated on success, [] on failure)
+      gold:   int
       messages: list of (text, type) pairs
 
-    The Master Lockpick is a permanent inventory item; no charges to track.
+    Right -> the chest yields its full authored haul (3-4 items + bonus common
+             + rare_chance x 2). Gold rolls at the top of the range.
+    Wrong -> no loot. A trap fires, keyed by chest.tier (see chest_traps.json).
+             Chest is marked opened -- no retry, the chest itself is the cost.
     """
     def _callback(result):
-        # In escalator-chain mode, `result.score` carries the peak chain
-        # length reached. After a wrong answer the engine resets `.chain`
-        # back to 0, so score is the correct field to read for the loot
-        # curve. Clamp to 0..5 (engine caps at max_chain=5 above).
-        chain = int(getattr(result, 'score', 0))
-        chain = max(0, min(5, chain))
-        if chain == 0:
-            _handle_failure(player, container, dungeon, monsters, on_complete)
+        if getattr(result, 'success', False):
+            _handle_success(player, container, dungeon, on_complete)
         else:
-            _handle_success(player, container, dungeon, chain, on_complete)
+            _handle_failure(player, container, dungeon, monsters, on_complete)
 
-    # Escalator-chain ALWAYS starts at T1 and ramps T1→T5 from there. The
-    # legacy `quiz_tier`/`tier` field on containers was a difficulty knob
-    # for the OLD threshold-mode design; passing it through here makes the
-    # FIRST question be a T4/T5 question. (Same bug fixed for harvest in
-    # food_system.py — bug bash 2026-06-01.)
     quiz_engine.start_quiz(
-        mode='escalator_chain',
+        mode='threshold',
         subject='economics',
-        tier=1,
+        tier=max(1, int(getattr(container, 'quiz_tier', 1) or 1)),
         callback=_callback,
-        max_chain=5,
+        threshold=1,
+        total_qs=1,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('economics'),
@@ -111,62 +119,52 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
 # Outcome handlers
 # ---------------------------------------------------------------------------
 
-def _handle_success(player, container, dungeon, chain: int, on_complete):
+def _handle_success(player, container, dungeon, on_complete):
+    """v2.6.6: success = the chest's full authored haul.
+    Gold rolls at the TOP of the range (you did it right)."""
     messages = []
     container.opened = True
-
-    # Reset gold_bonus accumulator before loot generation populates it
     container._gold_bonus_accum = 0
 
-    # Gold scales softly with chain — chain 5 gives the top of range; chain 1
-    # gives the bottom. Stay within the template's gold_range either way.
     gmin, gmax = (container.gold[0], container.gold[1]) if container.gold else (0, 0)
     if gmax > 0:
-        # Bias the roll by chain: chain 1 = min, chain 5 = max, chain 3 = mid.
-        bias = (chain - 1) / 4.0  # 0..1 across chain 1..5
-        bias = max(0.0, min(1.0, bias))
-        lo = int(gmin + (gmax - gmin) * max(0.0, bias - 0.25))
-        hi = int(gmin + (gmax - gmin) * min(1.0, bias + 0.25))
-        gold = random.randint(min(lo, hi), max(lo, hi)) if hi >= lo else gmin
+        # Full success gets the top of the range (with a small floor at
+        # 70% for variance). Bias upward, unlike the old chain-scaled bias.
+        lo = int(gmin + (gmax - gmin) * 0.7)
+        gold = random.randint(lo, gmax)
     else:
         gold = 0
 
-    loot = _generate_loot_from_template(container, dungeon.level, chain)
-
-    # Roll-up any gold_bonus slots that fired during loot generation
+    loot = _generate_loot_from_template(container, dungeon.level)
     gold += int(getattr(container, '_gold_bonus_accum', 0))
 
-    # Lead message reflects the chain rung
-    label = CHAIN_LABELS.get(chain, 'Opened')
-    if chain >= 4:
-        messages.insert(0, (f'{label}! The lock yields gracefully.', 'success'))
-    else:
-        messages.insert(0, ('The lock clicks open!', 'success'))
+    messages.insert(0, ('The lock yields! You crack the chest.', 'success'))
     if gold:
         messages.append((f'You find {gold} gold coins!', 'loot'))
 
     on_complete({'status': 'opened', 'loot': loot, 'gold': gold,
-                 'messages': messages, 'chain': chain})
+                 'messages': messages})
 
 
 def _handle_failure(player, container, dungeon, monsters, on_complete):
-    """Chain 0: chest visually opens but yields no loot. Trap fires if present."""
-    messages = [('You fumble the lock -- the chest pops open, empty.', 'warning')]
+    """v2.6.6: failure fires a trap at the CHEST's tier (not the floor tier).
+    Chest is marked opened -- the chest itself is the cost."""
+    messages = [('You fumble the lock -- the chest snaps shut.', 'warning')]
     container.opened = True
 
-    # Trap: triggers on the empty open if present
-    if container.trapped and not container.trap_triggered:
-        container.trap_triggered = True
-        _trigger_trap(player, container.trap, messages)
+    # v2.6.6: universal fail-trap. Pick a trap keyed to CHEST tier.
+    trap = pick_trap_for_chest(container)
+    if trap:
+        _trigger_trap(player, trap, messages)
 
-    # 30% chance to alert nearby monsters (scraping noise)
+    # Scraping-noise alert (unchanged from prior)
     if random.random() < 0.30:
         alerted = _alert_nearby(player, dungeon, monsters)
         if alerted:
             messages.append(('The scraping noise alerts nearby monsters!', 'danger'))
 
     on_complete({'status': 'opened', 'loot': [], 'gold': 0,
-                 'messages': messages, 'chain': 0})
+                 'messages': messages})
 
 
 def _trigger_trap(player, trap: dict, messages: list):
@@ -394,43 +392,32 @@ def _pull_unique_from_category(category: str, unique_pool: list, rng) -> object 
     return copy.copy(rng.choice(eligible))
 
 
-def _generate_loot_from_template(container, dungeon_level: int, chain: int) -> list:
-    """Generate loot for a chest using its template + the player's chain rung.
+def _generate_loot_from_template(container, dungeon_level: int) -> list:
+    """v2.6.6: generate the chest's full authored loot on successful pick.
 
-    Chain 0 is handled by _handle_failure (returns []). chain 1..5 lands here.
+    Item count = FULL_ITEM_COUNT (3-4 items) + FULL_BONUS_SLOTS (1 bonus common).
+    Rare (unique) chance = template.rare_chance_chain3 * FULL_RARE_MULT (2x)
+    -- matches the pre-v2.6.6 chain-5 "Master Thief" reward tier.
     """
     from items import get_chest_template, add_gold_to_tile  # noqa: F401  (kept for import-side-effect parity)
-    if chain <= 0:
-        return []
     template_id = getattr(container, 'template_id', '')
     template = get_chest_template(template_id) if template_id else None
     if not template:
-        # No template — legacy fallback: empty loot. The 12-template rebuild
-        # is the intended path; legacy containers should never reach here.
         return []
 
     rng = random
     level_cap = _floor_level_cap(container, dungeon_level)
 
-    # Pre-build pools per chest open (template categories often overlap)
-    common_pool  = _build_common_pool(template, level_cap)
-    unique_pool  = _build_unique_pool(template, level_cap)
+    common_pool = _build_common_pool(template, level_cap)
+    unique_pool = _build_unique_pool(template, level_cap)
 
-    # Item count for this chain rung
-    cmin, cmax = CHAIN_ITEM_COUNT.get(chain, (1, 1))
+    cmin, cmax = FULL_ITEM_COUNT
     n_items = rng.randint(cmin, cmax)
 
-    # Effective rare chance, scaled by chain rung. SINGLE roll per chest:
-    # the chest is one lottery ticket. If rare_roll succeeds, ONE slot of
-    # the chest becomes a unique; otherwise all slots are commons. This
-    # bounds endgame uniques (target ~17/run at chain 3) and makes the
-    # "I got a unique!" moment discrete and exciting for players.
     base_rare = float(template.get('rare_chance_chain3', 0.0))
-    rare_mult = CHAIN_RARE_MULT.get(chain, 1.0)
-    eff_rare  = min(1.0, base_rare * rare_mult)
+    eff_rare = min(1.0, base_rare * FULL_RARE_MULT)
 
-    # Chain 5: one bonus item, guaranteed common (never the rare slot)
-    bonus_slots = 1 if chain == 5 else 0
+    bonus_slots = FULL_BONUS_SLOTS
     total_slots = n_items + bonus_slots
 
     loot: list = []

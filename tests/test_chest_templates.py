@@ -92,28 +92,17 @@ def test_floor_band_helper_covers_full_depth():
 
 
 # ---------------------------------------------------------------------------
-# Chain curve values
+# v2.6.6 full-haul loot curve values
 # ---------------------------------------------------------------------------
 
-def test_chain_curve_values_correct():
-    from container_system import CHAIN_RARE_MULT, CHAIN_ITEM_COUNT
-    # Chain 0 = no loot at all
-    assert CHAIN_RARE_MULT[0] == 0.0
-    assert CHAIN_ITEM_COUNT[0] == (0, 0)
-    # Chain 3 = baseline (1.0x), 2-3 items
-    assert CHAIN_RARE_MULT[3] == 1.0
-    assert CHAIN_ITEM_COUNT[3] == (2, 3)
-    # Chain 5 = 2.0x, 3-4 items (bonus common added on top by loot gen)
-    assert CHAIN_RARE_MULT[5] == 2.0
-    assert CHAIN_ITEM_COUNT[5] == (3, 4)
-    # Monotonic ramp on rare mult
-    mults = [CHAIN_RARE_MULT[c] for c in range(0, 6)]
-    assert mults == sorted(mults), f"rare mult should be monotonic: {mults}"
+def test_full_haul_curve_values_correct():
+    """v2.6.6: success is single-outcome (no chain rungs). Loot = 3-4 items
+    + 1 bonus common; rare chance = template baseline x 2 (matches old chain-5)."""
+    from container_system import FULL_ITEM_COUNT, FULL_BONUS_SLOTS, FULL_RARE_MULT
+    assert FULL_ITEM_COUNT == (3, 4)
+    assert FULL_BONUS_SLOTS == 1
+    assert FULL_RARE_MULT == 2.0
 
-
-# ---------------------------------------------------------------------------
-# Chain 0 = empty chest
-# ---------------------------------------------------------------------------
 
 def _make_container(template_id: str):
     """Build a stub Container with the named template, no mimic, no JSON read."""
@@ -131,123 +120,101 @@ def _make_container(template_id: str):
         'tier': int(tdef.get('tier', 1)),
         'quiz_tier': int(tdef.get('quiz_tier', 1)),
         'gold': tdef.get('gold_range', [0, 0]),
-        'trapped': False,
-        'trap': None,
         'template_id': template_id,
     }
     return Container(defn)
 
 
-def test_chain_0_yields_no_loot():
-    """Chain 0 -> _handle_failure path: empty loot, no gold from loot."""
-    from container_system import _generate_loot_from_template
-    c = _make_container('wooden_chest')
-    loot = _generate_loot_from_template(c, dungeon_level=5, chain=0)
-    assert loot == [], f"chain 0 must yield no loot; got {len(loot)} items"
-
-
-# ---------------------------------------------------------------------------
-# Chain 5 = 3-4 items + bonus
-# ---------------------------------------------------------------------------
-
-def test_chain_5_yields_3_or_4_items_with_bonus():
-    """Chain 5 rolls 3-4 normal items + 1 guaranteed bonus common.
-    Total: 4-5 items (some may fail to materialize if pool is empty for
-    the rolled category, e.g. gold_bonus produces no item slot)."""
+def test_v266_success_yields_3_to_5_items():
+    """v2.6.6 success = 3-4 real items + 1 guaranteed bonus common = 4-5 total.
+    Some slots may drop out if pool empty (gold_bonus produces no item slot)."""
     from container_system import _generate_loot_from_template
     random.seed(42)
     counts = []
     for _ in range(50):
         c = _make_container('warlord_warchest')
-        loot = _generate_loot_from_template(c, dungeon_level=40, chain=5)
+        loot = _generate_loot_from_template(c, dungeon_level=40)
         counts.append(len(loot))
-    # Warlord chest is gear-only (no gold_bonus); should consistently get 4-5 items
     median = statistics.median(counts)
-    assert median >= 4, f"chain 5 should yield at least 4 items typically; median was {median}"
-    # No run should produce zero items at chain 5 for a gear template
-    assert min(counts) >= 1, f"chain 5 should never be totally empty; got {min(counts)}"
+    assert median >= 4, f"success should yield >= 4 items typically; median was {median}"
+    assert min(counts) >= 1, f"success should never yield 0 items; got {min(counts)}"
 
 
-def test_chain_5_more_items_than_chain_1():
-    """Chain 5 must produce strictly more items than chain 1 on average."""
-    from container_system import _generate_loot_from_template
-    random.seed(7)
-    c1 = []
-    c5 = []
-    for _ in range(40):
-        c = _make_container('warlord_warchest')
-        c1.append(len(_generate_loot_from_template(c, dungeon_level=40, chain=1)))
-        c = _make_container('warlord_warchest')
-        c5.append(len(_generate_loot_from_template(c, dungeon_level=40, chain=5)))
-    assert statistics.mean(c5) > statistics.mean(c1), (
-        f"chain 5 mean ({statistics.mean(c5)}) should beat chain 1 mean ({statistics.mean(c1)})"
-    )
-
-
-# ---------------------------------------------------------------------------
-# Rare odds scale with chain (smoke test)
-# ---------------------------------------------------------------------------
-
-def test_rare_chance_scales_with_chain():
-    """Smoke test: chain 5 should produce more unique items than chain 1
-    across 100 trials of a high-rare template (gilded_chest, 20% @ chain 3)."""
+def test_v266_rare_chance_uses_full_multiplier():
+    """v2.6.6 success gives 2x rare (matches old chain-5). Compare high-rare
+    chest (gilded, 20% baseline) to low-rare chest (wooden, 1%) across
+    many trials -- gilded should produce many more uniques."""
     from container_system import _generate_loot_from_template
     random.seed(13)
-    def count_uniques(chain: int, n_trials: int = 100) -> int:
+    def count_uniques(template_id: str, n_trials: int = 100) -> int:
         uniques = 0
         for _ in range(n_trials):
-            c = _make_container('gilded_chest')
-            loot = _generate_loot_from_template(c, dungeon_level=70, chain=chain)
+            c = _make_container(template_id)
+            loot = _generate_loot_from_template(c, dungeon_level=70)
             uniques += sum(1 for it in loot if getattr(it, 'is_unique', False))
         return uniques
-    u_low  = count_uniques(1)
-    u_high = count_uniques(5)
-    assert u_high > u_low, (
-        f"chain 5 should produce more uniques than chain 1; got chain1={u_low}, chain5={u_high}"
-    )
+    u_gilded = count_uniques('gilded_chest')   # 20% baseline x 2 = 40% per pick
+    u_wooden = count_uniques('wooden_chest')   # 1%  baseline x 2 = 2%  per pick
+    assert u_gilded > u_wooden, \
+        f"gilded should produce many more uniques than wooden; got gilded={u_gilded}, wooden={u_wooden}"
+    assert u_gilded >= 20, f"gilded x100 trials should yield >= 20 uniques; got {u_gilded}"
+
+
+def test_v266_trap_pool_loads_and_has_all_5_tiers():
+    """The v2.6.6 chest_traps.json must load and cover T1-T5 with >=4 traps each."""
+    from container_system import _load_trap_pool
+    pool = _load_trap_pool()
+    for t in (1, 2, 3, 4, 5):
+        assert t in pool, f"trap tier {t} missing"
+        assert len(pool[t]) >= 4, f"trap tier {t} should have >= 4 variants for variety; got {len(pool[t])}"
+
+
+def test_v266_trap_tier_matches_chest_not_floor():
+    """Bug fix: trap selection is now keyed to CHEST tier, not floor tier.
+    A T1 wooden chest at deep floor 90 must still fire a T1 trap, not a T5."""
+    from container_system import pick_trap_for_chest, _load_trap_pool
+    random.seed(1)
+    c_wood = _make_container('wooden_chest')      # tier=1
+    c_hoard = _make_container('dragon_hoard')     # tier=5
+    # Sample many traps for each; verify they only come from the correct tier
+    t1_pool_msgs = {t['message'] for t in _load_trap_pool()[1]}
+    t5_pool_msgs = {t['message'] for t in _load_trap_pool()[5]}
+    for _ in range(30):
+        assert pick_trap_for_chest(c_wood)['message'] in t1_pool_msgs
+        assert pick_trap_for_chest(c_hoard)['message'] in t5_pool_msgs
 
 
 # ---------------------------------------------------------------------------
 # End-to-end balance simulation
 # ---------------------------------------------------------------------------
 
-def _simulate_run(seed: int, chain_median: int = 2) -> int:
-    """Simulate one 100-floor run. Returns total uniques acquired.
+def _simulate_run(seed: int, success_rate: float = 0.80) -> int:
+    """Simulate one 100-floor run under v2.6.6 lockpick. Returns total uniques.
 
     Models:
-      - 1.7 chests per floor (matches existing spawn cadence)
-      - Player's chain rung is sampled per chest around the median
-        (chain_median + rng.choice([-1, 0, 0, +1]) for a slight pull
-        toward the median). Chain 0 is treated as 1 for unique counting
-        since chain 0 = no loot anyway.
-        chain_median=2 reflects a realistic "competent but not perfect"
-        player who often answers two correct then misses on the third.
-      - Each chest rolls a template by floor band, then runs
-        _generate_loot_from_template at that chain rung
-      - Floor unique drops: 0.15% per room × 20 rooms per floor
-      - Boss fixed drops: 5 (added at end)
+      - ~1.96 chests per floor (guaranteed 1 + 0.55, 0.25, 0.11, 0.05)
+      - Player success rate per chest (default 0.80 = competent)
+      - On success: _generate_loot_from_template (full haul, 2x rare)
+      - On failure: no loot (trap fires but that's not a unique source)
+      - Floor unique drops: 0.15% per room x 20 rooms per floor
+      - Boss fixed drops: 5
     """
     from container_system import _generate_loot_from_template
     from items import load_chest_templates
     rng = random.Random(seed)
-    # Stash + restore random state so the loot gen uses our seeded RNG path
-    # via the module-level random (container_system uses `random` directly).
     state = random.getstate()
     random.seed(seed * 1009 + 7)
     tpls = load_chest_templates()
 
     uniques = 0
-    # Floor unique drop rate per room (matches dungeon.UNIQUE_DROP_CHANCE_PER_ROOM)
     FLOOR_UNIQUE_PCT = 0.0015
     ROOMS_PER_FLOOR  = 20
-    CHESTS_PER_FLOOR = 1.7
+    CHESTS_PER_FLOOR = 1.96
 
     for level in range(1, 101):
-        # Floor unique drops
         for _ in range(ROOMS_PER_FLOOR):
             if rng.random() < FLOOR_UNIQUE_PCT:
                 uniques += 1
-        # Chests on this floor
         n_chests_float = CHESTS_PER_FLOOR
         n_chests = int(n_chests_float) + (1 if rng.random() < (n_chests_float - int(n_chests_float)) else 0)
         from dungeon import _floor_band
@@ -268,65 +235,41 @@ def _simulate_run(seed: int, chain_median: int = 2) -> int:
                     chosen = entry
                     break
             tid, tdef, _ = chosen
-            # Build a stub container in-line (no JSON, no monsters)
             c = _make_container(tid)
-            # Sample chain rung around chain_median
-            chain = max(1, min(5, chain_median + rng.randint(-1, 1)))
-            loot = _generate_loot_from_template(c, dungeon_level=level, chain=chain)
+            # Success rate roll
+            if rng.random() > success_rate:
+                continue  # failed pick, no loot
+            loot = _generate_loot_from_template(c, dungeon_level=level)
             uniques += sum(1 for it in loot if getattr(it, 'is_unique', False))
-    # Boss fixed drops
     uniques += 5
 
     random.setstate(state)
     return uniques
 
 
-def test_simulated_uniques_per_run_target():
-    """5-run median uniques-per-100-floor should land in target band.
+def test_v266_simulated_uniques_per_run_target():
+    """5-run median uniques-per-100-floor under v2.6.6.
 
-    Spec target: ~17 uniques per 100-floor run.
-
-    Empirical curve (20-run medians):
-       chain_median=1 (novice):     ~13 uniques
-       chain_median=2 (competent):  ~23 uniques
-       chain_median=3 (skilled):    ~40 uniques
-       chain_median=4 (expert):     ~65 uniques
-
-    The spec's "17 uniques" target falls between novice and competent
-    players — which matches the user intent: chests are the reliable source
-    of uniques, with chain reached driving how much. Skilled players see
-    significantly more uniques because they consistently hit higher chain
-    rungs (2.0x rare mult at chain 5 vs 0.25x at chain 1).
-
-    This test uses chain_median=1 (the novice case) for the 12-22 band,
-    matching the spec's median target most closely. A more skilled player
-    legitimately exceeds it — see test_simulated_uniques_chain_3_skilled_player.
-    """
-    runs = [_simulate_run(seed=42 + i, chain_median=1) for i in range(5)]
+    v2.6.6 shift: no chain gradient. Success gives 2x rare (was 1x at chain-3);
+    failure gives nothing. Expected total shifts higher than pre-v2.6.6 for
+    competent players since the average expected value is (success_rate * 2x)
+    vs the old (avg chain-scaled rare mult). The band widens for the check
+    since v2.6.6 EV is more sensitive to success_rate."""
+    runs = [_simulate_run(seed=42 + i, success_rate=0.75) for i in range(5)]
     median = statistics.median(runs)
-    print(f"5-run uniques @ chain_median=1 (novice): {runs}, median={median}")
-    assert 12 <= median <= 22, (
-        f"median uniques per run was {median}; target band is 12-22 (centered ~17)\n"
-        f"runs: {runs}"
+    print(f"5-run uniques @ success_rate=0.75: {runs}, median={median}")
+    assert 15 <= median <= 60, (
+        f"median uniques per run was {median}; target band 15-60 for competent player"
     )
 
 
-def test_simulated_uniques_chain_3_skilled_player():
-    """A consistently chain-3 player still lands in a sensible band.
-
-    Documents that a more-skilled player gets more uniques (~30-50 range)
-    which is the intended reward for higher chain. Sanity-check on the
-    curve: chain-3 players should outpace chain-2 players."""
-    runs_2 = [_simulate_run(seed=42 + i, chain_median=2) for i in range(5)]
-    runs_3 = [_simulate_run(seed=42 + i, chain_median=3) for i in range(5)]
-    median_2 = statistics.median(runs_2)
-    median_3 = statistics.median(runs_3)
-    print(f"chain_median=2: median={median_2}; chain_median=3: median={median_3}")
-    assert median_3 > median_2, (
-        f"skilled player (chain 3) should outperform competent (chain 2); "
-        f"got {median_3} vs {median_2}"
-    )
-    # Should not be absurdly bigger — within 3x
-    assert median_3 < median_2 * 3, (
-        f"chain 3 should not be 3x chain 2 (currently {median_3} vs {median_2})"
-    )
+def test_v266_higher_success_rate_gives_more_uniques():
+    """A player with better Wisdom/timer/prep (higher success_rate) should
+    consistently earn more uniques -- sanity check on the reward curve."""
+    runs_low  = [_simulate_run(seed=42 + i, success_rate=0.50) for i in range(5)]
+    runs_high = [_simulate_run(seed=42 + i, success_rate=0.90) for i in range(5)]
+    med_low   = statistics.median(runs_low)
+    med_high  = statistics.median(runs_high)
+    print(f"success 0.50: median={med_low}; success 0.90: median={med_high}")
+    assert med_high > med_low, \
+        f"higher success rate should earn more uniques; got low={med_low}, high={med_high}"

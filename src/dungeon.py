@@ -1308,47 +1308,11 @@ def _floor_band(level: int) -> str:
     return 'L91_100'
 
 
-# A small per-tier trap pool — kept inline so the chest rebuild doesn't depend
-# on an external trap JSON. Damage and effect scale with floor depth.
-_CHEST_TRAPS_BY_TIER: dict[int, list[dict]] = {
-    1: [
-        {'type': 'needle',    'damage': '1d4', 'effect': 'poisoned', 'effect_duration': 5,
-         'message': 'A poisoned needle springs from the lock!'},
-        {'type': 'spring',    'damage': '1d6', 'effect': '',          'effect_duration': 0,
-         'message': 'A coiled spring smacks your hand!'},
-    ],
-    2: [
-        {'type': 'blade',     'damage': '2d4', 'effect': 'stunned',  'effect_duration': 4,
-         'message': 'Hidden blades slash your hand!'},
-        {'type': 'gas',       'damage': '1d6', 'effect': 'confused', 'effect_duration': 6,
-         'message': 'A puff of dazing gas billows out!'},
-    ],
-    3: [
-        {'type': 'shock',     'damage': '2d6', 'effect': 'stunned',  'effect_duration': 5,
-         'message': 'A bolt of electricity surges through you!'},
-        {'type': 'frost',     'damage': '2d6', 'effect': 'slowed',   'effect_duration': 6,
-         'message': 'A freezing mist clamps around you!'},
-    ],
-    4: [
-        {'type': 'curse',     'damage': '1d6', 'effect': 'confused', 'effect_duration': 8,
-         'message': 'Dark energy erupts from the lock!'},
-        {'type': 'fire',      'damage': '3d6', 'effect': 'blinded',  'effect_duration': 5,
-         'message': 'A gout of flame washes over you!'},
-    ],
-    5: [
-        {'type': 'fire',      'damage': '3d8', 'effect': 'blinded',  'effect_duration': 6,
-         'message': 'Flames erupt from the chest, searing you!'},
-        {'type': 'death',     'damage': '4d6', 'effect': 'paralyzed','effect_duration': 4,
-         'message': 'A killing rune flares — your limbs lock up!'},
-    ],
-}
-
-
-def _roll_trap_for_level(level: int, rng: random.Random) -> dict:
-    """Pick a trap dict appropriate for the given dungeon level."""
-    tier = max(1, min(5, (level - 1) // 20 + 1))
-    pool = _CHEST_TRAPS_BY_TIER.get(tier) or _CHEST_TRAPS_BY_TIER[1]
-    return dict(rng.choice(pool))
+# v2.6.6: chest traps live in data/chest_traps.json, keyed by CHEST tier (not
+# floor tier). Selection happens at FAILURE time via container_system.pick_trap_for_chest.
+# The inline _CHEST_TRAPS_BY_TIER dict and _roll_trap_for_level function were
+# retired (they scaled trap severity by floor, which meant a T1 wooden chest at
+# floor 50 fired a T3 shock trap -- wrong).
 
 
 def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
@@ -1468,15 +1432,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             return None
         weights = [w for _, _, w in _band_pool]
         tid, tdef, _ = rng.choices(_band_pool, weights=weights, k=1)[0]
-        # Build a Container instance from the template + per-spawn rolls
-        trap_chance = float(tdef.get('trap_chance', 0.0))
-        trapped     = rng.random() < trap_chance
-        # Trap details: pick a generic level-appropriate trap entry. Keep it
-        # simple — the existing trap dict format (damage / effect / message)
-        # is what _trigger_trap expects.
-        trap = None
-        if trapped:
-            trap = _roll_trap_for_level(level, rng)
+        # v2.6.6: trapped/trap_chance retired. Every failed pick fires a trap
+        # keyed to CHEST tier via container_system.pick_trap_for_chest, so the
+        # per-chest trap-roll at spawn is no longer needed.
         gold_range = tdef.get('gold_range', [0, 0])
         defn = {
             'id':           tid,
@@ -1488,9 +1446,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             'item_class':   'container',
             'tier':         int(tdef.get('tier', 1)),
             'quiz_tier':    int(tdef.get('quiz_tier', tdef.get('tier', 1))),
-            'quiz_threshold': max(2, int(tdef.get('quiz_tier', 1)) + 1),
-            'trapped':      trapped,
-            'trap':         trap,
+            'quiz_threshold': 1,   # v2.6.6: 1-Q threshold, tier drives difficulty
             'gold':         gold_range,
             'extra_item_chance': 0.40,
             'template_id':  tid,

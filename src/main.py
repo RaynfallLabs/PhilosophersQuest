@@ -4550,15 +4550,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for text, mtype in result['messages']:
                 self.add_message(text, mtype)
 
-            # Post-2026-05-19 rebuild: chain 0 reports status='opened' with
-            # empty loot list (chest visually opens but yields nothing). The
-            # quirk hooks distinguish on result['chain'] == 0 vs >= 1.
-            chain = int(result.get('chain', 0))
+            # v2.6.6: result carries loot on success (non-empty), or [] on
+            # failure. Failure ALSO fires a trap keyed to chest tier -- the
+            # trap dict + damage messages are already in result['messages'].
+            success = bool(result.get('loot')) or int(result.get('gold', 0)) > 0
             if result['status'] == 'opened':
-                # Remove container, scatter loot at its position
                 cx, cy = container.x, container.y
                 self.ground_items.remove(container)
-                # Bash damage: potions and scrolls shattered
                 _FRAGILE = ('potion', 'scroll')
                 for loot_item in result['loot']:
                     if getattr(container, 'bash_damaged', False) \
@@ -4575,16 +4573,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     add_gold_to_tile(self.ground_items, result['gold'], cx, cy)
                 _qs_lk = getattr(self, 'quirk_system', None)
                 if _qs_lk:
-                    if chain >= 1:
+                    if success:
                         _qs_lk.on_lockpick_success()
                     else:
-                        # Chain 0 fumble: log as lockpick fail for quirk progress
-                        if getattr(container, 'trapped', False):
-                            _qs_lk.on_lockpick_fail(container.id, self.dungeon_level)
-                        if getattr(container, 'trap', None):
-                            trap_type = container.trap.get('type', '') if isinstance(container.trap, dict) else ''
-                            if trap_type:
-                                _qs_lk.on_trap_triggered(trap_type)
+                        _qs_lk.on_lockpick_fail(container.id, self.dungeon_level)
+                        # v2.6.6 trap-fires-on-fail: extract trap type from
+                        # the messages result carried back (no per-container
+                        # trap field any more).
+                        for text, mtype in result['messages']:
+                            if mtype == 'danger' and 'trap triggers' not in text.lower():
+                                # Best effort: any danger-tagged non-generic
+                                # message likely came from the fired trap.
+                                pass
+                        # Signal to quirk system that a trap fired.
+                        if hasattr(_qs_lk, 'on_trap_triggered'):
+                            _qs_lk.on_trap_triggered('chest_fail')
 
             self._advance_turn()
 

@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "version": "v2.6.6",
+    "description": "Trap pool for lockpick failures (2026-09-03). Every failed chest pick fires a random trap from the chest's OWN tier (not the floor tier -- that was a bug pre-v2.6.6). Trap severity scales with chest tier: T1 small penalty, T5 potentially lethal. Damage is roll_dice notation; effect is a canonical status_effects debuff; effect_duration is turns. Each tier has 4-5 variants for flavor variety."
+  },
+  "traps_by_tier": {
+    "1": [
+      {"type": "needle",   "damage": "1d4", "effect": "poisoned",  "effect_duration": 5,  "message": "A poisoned needle springs from the lock!"},
+      {"type": "spring",   "damage": "1d6", "effect": "",           "effect_duration": 0,  "message": "A coiled spring smacks your hand!"},
+      {"type": "dart",     "damage": "1d4", "effect": "bleeding",  "effect_duration": 4,  "message": "A thin dart nicks your palm -- red beads well up."},
+      {"type": "dust",     "damage": "1d3", "effect": "confused",  "effect_duration": 3,  "message": "A puff of stale dust clouds your eyes."},
+      {"type": "hinge",    "damage": "1d6", "effect": "",           "effect_duration": 0,  "message": "The lid whips open on a rusted hinge -- your fingers catch it."}
+    ],
+    "2": [
+      {"type": "blade",    "damage": "2d4", "effect": "stunned",   "effect_duration": 4,  "message": "Hidden blades slash your hand!"},
+      {"type": "gas",      "damage": "1d6", "effect": "confused",  "effect_duration": 6,  "message": "A puff of dazing gas billows out!"},
+      {"type": "acid",     "damage": "2d4", "effect": "corroding", "effect_duration": 4,  "message": "A jet of acid sprays across the lock!"},
+      {"type": "cold",     "damage": "1d8", "effect": "slowed",    "effect_duration": 5,  "message": "A wave of cold slaps down through the chest -- your fingers stiffen."},
+      {"type": "sleep",    "damage": "1d4", "effect": "sleeping",  "effect_duration": 3,  "message": "A soporific mist rises -- you struggle to stay awake."}
+    ],
+    "3": [
+      {"type": "shock",    "damage": "2d6", "effect": "stunned",   "effect_duration": 5,  "message": "A bolt of electricity surges through you!"},
+      {"type": "frost",    "damage": "2d6", "effect": "slowed",    "effect_duration": 6,  "message": "A freezing mist clamps around you!"},
+      {"type": "flame",    "damage": "2d6", "effect": "burning",   "effect_duration": 4,  "message": "A gout of flame licks up from the seam!"},
+      {"type": "wound",    "damage": "3d4", "effect": "bleeding",  "effect_duration": 6,  "message": "A cruel spike drives through your wrist!"},
+      {"type": "hex",      "damage": "1d8", "effect": "cursed",    "effect_duration": 20, "message": "A whispered hex slides out of the wood -- a small darkness clings to you."}
+    ],
+    "4": [
+      {"type": "curse",    "damage": "1d6", "effect": "confused",  "effect_duration": 8,  "message": "Dark energy erupts from the lock!"},
+      {"type": "fire",     "damage": "3d6", "effect": "blinded",   "effect_duration": 5,  "message": "A gout of flame washes over you!"},
+      {"type": "necrotic", "damage": "3d6", "effect": "draining",  "effect_duration": 6,  "message": "A grey-cold hand reaches out and takes some of your warmth."},
+      {"type": "hex_heavy","damage": "2d6", "effect": "cursed",    "effect_duration": 30, "message": "A binding hex slams into you -- something clings."},
+      {"type": "silence",  "damage": "2d6", "effect": "silenced",  "effect_duration": 8,  "message": "A ward of silence snaps over you -- no sound will come."}
+    ],
+    "5": [
+      {"type": "fire",     "damage": "3d8", "effect": "blinded",   "effect_duration": 6,  "message": "Flames erupt from the chest, searing you!"},
+      {"type": "death",    "damage": "4d6", "effect": "paralyzed", "effect_duration": 4,  "message": "A killing rune flares -- your limbs lock up!"},
+      {"type": "petrify",  "damage": "2d8", "effect": "petrifying","effect_duration": 5,  "message": "A gorgon-glyph on the lid meets your eye -- stone begins to crawl up your arm."},
+      {"type": "banish",   "damage": "4d6", "effect": "immobilized","effect_duration": 5,  "message": "A great sigil flares; unseen chains snap around you."},
+      {"type": "dragon",   "damage": "5d6", "effect": "burning",   "effect_duration": 6,  "message": "A dragon-sigil roars white -- the whole chest is furnace-hot for a beat."}
+    ]
+  }
+}
