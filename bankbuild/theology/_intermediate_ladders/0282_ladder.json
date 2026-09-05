@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Irish myth tells of a supernatural people who arrived in Ireland long before the modern Irish, and who are the closest thing Irish tradition has to a family of gods. Their name means 'the people of the goddess' -- and the goddess whose name they carry is a mother-figure whose own story is almost entirely lost. What is the name of that mother-goddess?",
+      "choices": ["Danu", "Brigid", "Macha", "Aine"],
+      "answer": "Danu",
+      "context": "Danu (also called Anu) is the mother-goddess whose name the Tuatha De Danann ('the people of the goddess Danu') carry. Almost no story about Danu herself survives -- she is a name behind a name. Brigid is the poetry-and-smithcraft goddess inside the Tuatha De Danann. Macha is one of the three faces of the Morrigan. Aine is a summer sun-goddess of Munster. Source: Irish Myths, 'Who Are the Tuatha De Danann?' -- https://irishmyths.com/2023/11/15/tuatha-de-danann/",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The medieval Irish 'Book of Invasions' (Lebor Gabala Erenn) tells of SIX waves of people arriving in Ireland one after another. The fifth wave were the god-people -- the ones who later Irish tales say retreated into the fairy-mounds. Where in the sequence of six invasions do the god-people fall?",
+      "choices": ["fifth of six", "first of six", "third of six", "sixth of six"],
+      "answer": "fifth of six",
+      "context": "The Lebor Gabala Erenn lists six invasions of Ireland in order: Cessair, Partholon, Nemed, Fir Bolg, Tuatha De Danann, and the Milesians. The Tuatha De Danann are the fifth, the god-people; the Milesians are the sixth and final wave, the Gaels who took Ireland from them. Source: Wikipedia, 'Tuatha De Danann'; irishmyths.com.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The god-people of Danu arrived in Ireland by sea, but the Lebor Gabala Erenn says the sky went black for three days as they came, so that watchers on the shore could not see the sun. What was the source of the darkness that hid the sun for those three days?",
+      "choices": ["the smoke of their own ships burning on the beach", "a storm the Fomorians raised to stop them landing", "a plague of ravens the Morrigan sent before them", "a cloud of ash from a mountain in the north"],
+      "answer": "the smoke of their own ships burning on the beach",
+      "context": "The moment the Tuatha De Danann stepped ashore they set fire to every vessel that had carried them, so that they could never think of retreating. The smoke of the burning ships was what darkened the sky for three days. Source: Celtic Life International, 'The Tuatha de Danann'; Book of Invasions redaction on the fifth invasion.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Before the Tuatha De Danann came to Ireland they were trained in cities in the north of the world. One of those cities was FALIAS, and from Falias came a great stone that would cry out under the true king of Ireland. What is the name of that stone from Falias?",
+      "choices": ["the Stone of Fal", "the Lia Miach", "the Stone of Tara", "the Stone of Dagda"],
+      "answer": "the Stone of Fal",
+      "context": "The Stone of Fal (Lia Fail) came from Falias, one of the four northern cities where the Tuatha De Danann trained. It stood at Tara and cried out under the foot of the rightful king. The other three cities are Gorias (Spear of Lugh), Findias (Sword of Nuada), and Murias (Cauldron of the Dagda). 'Lia Miach' is invented; 'Stone of Tara' and 'Stone of Dagda' are not names of the Fal-stone. Source: Wikipedia, 'Four Treasures of the Tuatha De Danann'.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "From the northern city of GORIAS the Tuatha De Danann brought a weapon that was said never to miss its mark, and which no enemy who faced it could escape. To which god of the Tuatha did this weapon from Gorias belong?",
+      "choices": ["Lugh", "the Dagda", "Nuada", "Manannan"],
+      "answer": "Lugh",
+      "context": "The Spear of Gorias belonged to Lugh Lamhfhada -- Lugh Long-Arm, the sun-god and master of all arts. It is one of the four treasures the Tuatha brought from the four northern cities: the Stone of Fal from Falias, the Spear of Lugh from Gorias, the Sword of Nuada from Findias, and the Cauldron of the Dagda from Murias. Source: Wikipedia, 'Four Treasures of the Tuatha De Danann'.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The first king of the Tuatha De Danann in Ireland lost his hand fighting the Fir Bolg at the First Battle of Moytura, and by the old Irish law a mutilated man could not sit as king. His brothers made him a new hand out of one metal, and he was restored to the throne and given a new name from it. Out of what did his brothers make the hand that gave him his royal name?",
+      "choices": ["silver", "gold", "bronze", "iron"],
+      "answer": "silver",
+      "context": "Nuada lost his hand at the First Battle of Moytura against the Fir Bolg. Dian Cecht the healer-god crafted him a working hand of silver, and from that day he was called Nuada Airgetlam -- Nuada of the SILVER HAND. Later Miach, Dian Cecht's son, grew him a hand of living flesh, and Dian Cecht killed his own son in jealousy. Source: Timeless Myths, 'Celtic Gods and Goddesses'.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The chief god of the Tuatha De Danann has an epithet that simply calls him 'the good god' -- not 'good' in a moral sense but 'good AT everything'. He is a huge bearded figure who wields a great club (one end kills, the other end heals) and owns a bottomless cauldron of plenty. Which of the Tuatha bears the epithet 'the good god'?",
+      "choices": ["the Dagda", "Lugh Long-Arm", "Manannan mac Lir", "Aengus Og"],
+      "answer": "the Dagda",
+      "context": "The Dagda -- 'good god' in the sense of 'competent at every art' -- is chief of the Tuatha De Danann and owner of both the bottomless cauldron of Murias and the double-ended club. Lugh is the young sun-god and master of all arts, but the 'good god' epithet is not his. Manannan mac Lir is the sea-god who later assigns the fairy-mounds. Aengus is the god of love, and in one story tricks the Dagda out of his hall at Bru na Boinne. Source: Mythopedia, 'Dagda'.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Tuatha De Danann were themselves eventually overthrown in Ireland by the sixth and last wave of settlers in the Book of Invasions -- a people led by the poet Amergin, who calmed the sea with his verse so his people could land. What was that final wave called in the Book of Invasions?",
+      "choices": ["the Milesians", "the Fomorians", "the Nemedians", "the Partholonians"],
+      "answer": "the Milesians",
+      "context": "The Milesians (the 'sons of Mil'), led by the poet Amergin, were the sixth and final wave in the Book of Invasions. They are the ancestors of the historical Gaels of Ireland. The Fomorians were the monstrous sea-people the Tuatha had already beaten at the Second Battle of Moytura. The Nemedians and the followers of Partholon were earlier waves, all wiped out before the Tuatha arrived. Source: Wikipedia, 'Tuatha De Danann'.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When the Milesians beat the Tuatha De Danann, the poet Amergin was asked to divide Ireland between the two peoples. He divided it cleverly -- and by his division the Tuatha did not die, but were driven into a country that overlaps ours in space. What was the Tuatha De Danann's share of Ireland after Amergin's division?",
+      "choices": ["everything underground -- the halls beneath the hills", "everything to the west of the river Shannon", "everything covered by the sea at high tide", "everything inside the walls of the royal forts"],
+      "answer": "everything underground -- the halls beneath the hills",
+      "context": "Amergin gave the Milesians the portion of Ireland ABOVE ground and gave the Tuatha De Danann the portion BELOW ground. The god-people did not perish; they retreated INTO the hills and became the people who live inside the fairy-mounds. Source: Myth and Folklore Wiki; godsandmonsters.info, 'Sidhe'.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After the god-people were driven underground, it was the sea-god who took charge of distributing them among the grassy mounds of Ireland -- he gave Aengus the mound at Newgrange, the Dagda his own hall at Bru na Boinne, and Midir the mound of Bri Leith. Which of the Tuatha divided the fairy-mounds among the others?",
+      "choices": ["Manannan mac Lir", "Nuada of the Silver Hand", "Lugh Long-Arm", "Dian Cecht the healer"],
+      "answer": "Manannan mac Lir",
+      "context": "Manannan mac Lir, the sea-god, is said to have led the Tuatha into the sidhe (SHEE) mounds after the Milesian conquest and given each god a mound. He is also credited with raising the feth fiada, the magical mist that hides the mounds from human sight. Nuada by then had died at the Second Battle of Moytura. Lugh returned to the Otherworld with him. Dian Cecht is the healer, not the divider of mounds. Source: Wikipedia, 'Manannan mac Lir'.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After their defeat the Tuatha De Danann were called by a new Irish name, taken from the earth-mounds they now lived inside. That name -- Aos Si, meaning 'people of the mounds' -- becomes in English the name for one specific kind of being in later Irish story. Into what did the Tuatha De Danann turn, in later Irish tradition, once they lived beneath the hills?",
+      "choices": ["the fairy-folk of Ireland", "the ghosts of the drowned", "the giants of the western sea", "the wandering saints of the hedgerows"],
+      "answer": "the fairy-folk of Ireland",
+      "context": "The Aos Si ('people of the mounds', pronounced roughly ees shee) are the god-people in retreat -- and this is the origin of Ireland's fairy-folk. When later stories talk of the sidhe or the good people or the gentry of the hills, they are talking about the diminished Tuatha De Danann. The Christian scribes of the Book of Invasions preserved this by never quite killing the old gods. Source: godsandmonsters.info, 'Sidhe'; Sharon Wray, 'A Brief History of the Aos si'.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The war-goddess of the Tuatha De Danann is a shape-changing figure who appears as a crow or a raven above battlefields, offers prophecy of doom, and later tries to seduce Cuchulainn before his last stand. What is her name?",
+      "choices": ["the Morrigan", "Brigid", "Danu", "Etain"],
+      "answer": "the Morrigan",
+      "context": "The Morrigan ('great queen' or 'phantom queen') is the war-goddess and prophet of doom of the Tuatha De Danann, and is often described as a trio (with Badb and Macha, or Badb and Nemain). Brigid is the goddess of poetry, healing, and smithcraft. Danu is the silent mother-goddess. Etain is the heroine of the tale of Midir and Etain, not a war-goddess. Source: Timeless Myths, 'Celtic Gods and Goddesses'.",
+      "legend": true
+    }
+  ]
+}

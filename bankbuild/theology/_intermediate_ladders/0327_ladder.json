@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "As the Tuatha De Danann prepared for their great war against the Fomorians, the true king Nuada Silverhand did an unusual thing: he stepped off his own throne and put a younger champion in his place for the run-up to the battle. Who took Nuada's seat as war-leader?",
+      "choices": ["Lugh", "Ogma", "the Dagda", "Manannan"],
+      "answer": "Lugh",
+      "context": "Cath Maige Tuired (Elizabeth Gray trans.): Nuada rose up before Lugh Samildanach ('many-skilled') at the king's seat because a champion was needed to lead the preparations. Ogma is the god of eloquence; the Dagda is the club-and-cauldron chief; Manannan is the sea-god.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Nuada did not give up the throne to Lugh for good -- only for a fixed run of days before the battle, on the reasoning that 'it was easier that a king stand in for a champion than that a champion stand in for a king.' How many days did Nuada yield the throne?",
+      "choices": ["thirteen days", "seven days", "forty days", "one hundred days"],
+      "answer": "thirteen days",
+      "context": "Cath Maige Tuired: 'the king rose up before him till thirteen days had ended.' Seven, forty, and one hundred are all sacred numbers in other traditions (seven in Hebrew scripture, forty in the wilderness, one hundred in the Odyssey's suitors) but the Irish figure here is thirteen.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "On the eve of the great battle, the Dagda -- 'the good god' of the Tuatha De -- kept a tryst at the ford of the Unius with a Tuatha De goddess who promised him she would go herself against the Fomorian king Indech and 'take from him the blood of his heart and the kidneys of his valour.' Which goddess?",
+      "choices": ["the Morrigan", "Brigid", "Danu", "Boann"],
+      "answer": "the Morrigan",
+      "context": "Cath Maige Tuired: the Morrigan ('the great queen') met the Dagda at the ford of the Unius in Corann and pledged Indech's heart-blood. Brigid is the poetry-and-flame goddess of Kildare; Danu is the mother-goddess the Tuatha De are named for; Boann is the goddess of the River Boyne.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The war between the Tuatha De and the Fomorians was fought on a plain in County Sligo whose name means 'the plain of pillars' -- and this was the SECOND time a great battle had been fought there (the first was against the Fir Bolg). What is the plain called?",
+      "choices": ["Moytura", "Tara", "Tailtiu", "Emain Macha"],
+      "answer": "Moytura",
+      "context": "Cath Maige Tuired ('the battle of Moytura'): Mag Tuired in County Sligo. Tara is the seat of the High King in Meath; Tailtiu is where the Tuatha De later lose to the Milesians and where the Lughnasadh games are held; Emain Macha is the Ulster capital of Conchobar mac Nessa.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The battle went badly at first for the Tuatha De. Balor of the Evil Eye had his four attendants lift his poison eyelid on the battlefield, and the gaze cut down two of the Tuatha De together in one stroke -- the true king Nuada Silverhand and a fierce woman of the Morrigan-triad. Who fell beside Nuada?",
+      "choices": ["Macha", "Boann", "Etain", "Grainne"],
+      "answer": "Macha",
+      "context": "Cath Maige Tuired: 'Nuada Silverhand and Macha daughter of Ernmass fell by Balor grandson of Net.' Macha is one of the three war-goddesses of the Morrigan-triad (with the Morrigan and Badb). Boann is the Boyne-goddess; Etain is a wooing-tale swan-maiden; Grainne is Diarmuid's love in the Fenian cycle.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Lugh's own people had judged him too valuable to lose in the fighting. Behind the ranks a set number of warriors had been posted to KEEP HIM AWAY from the front line -- but Lugh slipped his guard and ran to the battle anyway. How many warriors had been set over him?",
+      "choices": ["nine", "three", "twelve", "twenty-one"],
+      "answer": "nine",
+      "context": "Cath Maige Tuired: 'his nine comrades keeping Lugh... then when the battle follows, Lugh escaped from the keeping in which he was.' Nine is a repeating Irish sacred number (the Nine Hazels of Segais, the nine worlds of Yggdrasil in Norse). Three, twelve, and twenty-one are the wrong counts.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Lugh reached the front he confronted his own grandfather Balor as Balor's poison eyelid was being lifted. Lugh loosed a single missile that drove the eye clean out the back of Balor's head and turned the deadly gaze back on the Fomorian ranks behind him. What weapon did Lugh use?",
+      "choices": ["a sling", "a spear", "a sword", "a bow"],
+      "answer": "a sling",
+      "context": "Cath Maige Tuired: 'Then Lugh cast a sling-stone at him, which carried the eye through his head.' Some later retellings substitute the Spear of Assal, one of the Four Treasures of the Tuatha De, but the primary text is explicit: a sling-stone. The turned gaze then destroyed the Fomorian rear ranks.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After the victory the Tuatha De found Bres (the deposed half-Fomorian former king) alive and captive. Instead of killing him they SPARED him -- but only on condition that he teach them a set of skills the Fomorians had guarded from them until then. What did Bres have to teach them?",
+      "choices": ["how to plough, sow, and reap", "how to smelt iron and forge weapons", "how to read the stars for war-omens", "how to sail the western ocean"],
+      "answer": "how to plough, sow, and reap",
+      "context": "Cath Maige Tuired: Bres bought his life by teaching the Tuatha De the agricultural cycle -- ploughing, sowing, and reaping. The tale is a mythic charter for the Tuatha De's transition from a warrior-god people to farmers. Iron-smelting, star-reading, and ocean-sailing are staples of other myth-cycles.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "With Nuada dead and the Fomorians broken, Lugh was made KING of the Tuatha De Danann in Nuada's place -- and his reign became the golden age of the Tuatha De in Ireland. How long did Lugh rule as king?",
+      "choices": ["forty years", "seven years", "one hundred years", "three hundred years"],
+      "answer": "forty years",
+      "context": "Irish tradition (Lebor Gabala Erenn and later synchronisms): Lugh reigned forty years over the Tuatha De after Moytura. Forty is the number of the wilderness in the Christian pillar (Moses, Elijah, Jesus) -- an interesting cross-pillar echo. Seven, one hundred, and three hundred are other sacred spans.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Lugh himself came to a bad end. He had killed the Dagda's son Cermait for adultery with his own wife, and Cermait's three sons (Mac Cuill, Mac Cecht, and Mac Greine) took their vengeance later, drowning him in a lake that took his name afterwards. What is that lake called?",
+      "choices": ["Loch Lugborta", "Loch Ness", "Loch Corrib", "Loch Foyle"],
+      "answer": "Loch Lugborta",
+      "context": "Irish tradition (recorded in short medieval fragments and preserved in Emerald-Isle and Mythopedia summaries): the sons of Cermait speared Lugh in the foot to disable his hero-feats, then drove him into the lake at Uisneach, drowned him, and the lake became Loch Lugborta ('the lake of Lugh's drowning'). Loch Ness is Scottish (a different tradition entirely); Loch Corrib and Loch Foyle are real Irish lakes without this legend.",
+      "legend": true
+    }
+  ]
+}

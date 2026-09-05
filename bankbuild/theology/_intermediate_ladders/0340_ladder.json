@@ -1,0 +1,52 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "One of the most-quoted lines in the whole Old Testament ends: 'but as for me and my house, we will serve the LORD.' It is spoken by an old warrior at the end of his life, gathering the tribes for a farewell speech. Which Israelite leader gives that speech?",
+      "choices": ["Joshua", "Samson", "Gideon", "Elijah"],
+      "answer": "Joshua",
+      "context": "Joshua 24:15 (KJV): 'And if it seem evil unto you to serve the LORD, choose you this day whom ye shall serve ... but as for me and my house, we will serve the LORD.' Samson pulled down the Philistine temple; Gideon fought Midian with 300 men and a trumpet-and-pitcher trick; Elijah confronted Ahab and Baal's prophets on Mount Carmel.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Joshua's farewell in Joshua 24 is not held just anywhere. He summons the elders, heads, judges, and officers of every tribe of Israel to one specific old covenant town in the hill country of Ephraim -- the same town where Abraham first pitched a tent and where Jacob later bought a parcel of ground for a hundred pieces of silver. Which town?",
+      "choices": ["Shechem", "Bethel", "Hebron", "Beersheba"],
+      "answer": "Shechem",
+      "context": "Joshua 24:1: Joshua 'gathered all the tribes of Israel to Shechem.' Shechem in the hill country of Ephraim is the town where Abraham built his first altar in Canaan (Genesis 12:6-7), and where Jacob bought the parcel of ground (Genesis 33:19). Bethel is where Jacob dreamed of the ladder; Hebron holds the tombs of the patriarchs; Beersheba is far to the south.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "As a witness to the promise the people just made, Joshua does not raise a statue or an altar. He rolls one plain object into place under an oak beside the sanctuary and says: 'Behold, this ... shall be a witness unto us; for it hath heard all the words of the LORD which he spake unto us.' What did he set up?",
+      "choices": ["a great stone", "a bronze pillar", "a wooden ark", "a mound of ashes"],
+      "answer": "a great stone",
+      "context": "Joshua 24:26-27 (KJV): 'And Joshua ... took a great stone, and set it up there under an oak, that was by the sanctuary of the LORD.' Bronze pillars stood outside Solomon's temple much later (Jachin and Boaz); the ark of the covenant was of wood overlaid with gold, but it is not this witness-stone; mounds of ashes belong to sacrificial altars, not to witness-monuments.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Long before the farewell at Shechem, Joshua had led the walk around Jericho. For six days a procession went around the city once a day, priests carrying rams' horn trumpets before the ark. On the seventh day the procession went around a specific number of times before the trumpets blew and the walls came down. How many times did they march around on the seventh day?",
+      "choices": ["seven", "three", "twelve", "forty"],
+      "answer": "seven",
+      "context": "Joshua 6: seven priests bear seven trumpets of rams' horns; the people march once a day for six days, and on the seventh day seven times around; then the priests blow a long blast, the people shout, and the wall falls down flat. Three days marks Jonah in the fish and the resurrection; twelve is the tribes and the apostles; forty is the wilderness years and Jesus's fast.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "During the battle against the Amorite alliance, Joshua stopped in front of his whole army and shouted a command at TWO things at once, so that the daylight would hold until Israel had finished the fight. He named the place under each one: one over Gibeon, one over the valley of Ajalon. What TWO things did he command to stand still?",
+      "choices": ["the sun and the moon", "the wind and the rain", "the fire and the smoke", "the eagle and the raven"],
+      "answer": "the sun and the moon",
+      "context": "Joshua 10:12-13 (KJV): 'Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon. And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies ... about a whole day.' The wind/rain miracle is Elijah on Carmel; a pillar of fire and cloud is Moses in the wilderness; the raven and eagle are Elijah's fed-by-ravens story and the eagle-imagery of Deuteronomy 32.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Joshua 24 closes with two burials -- one for the old warrior himself, one for a set of bones the Israelites had carried out of Egypt more than forty years earlier and had lugged all the way through the wilderness (Genesis 50:25). Whose bones were finally buried at Shechem, in the parcel Jacob had bought for a hundred pieces of silver?",
+      "choices": ["Joseph's", "Aaron's", "Moses's", "Jacob's"],
+      "answer": "Joseph's",
+      "context": "Joshua 24:32: 'And the bones of Joseph, which the children of Israel brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought ... for an hundred pieces of silver.' Aaron was buried on Mount Hor (Numbers 20); Moses on a mountain in Moab, in a grave no one knows (Deuteronomy 34); Jacob himself was carried back to the cave of Machpelah at Hebron (Genesis 50:13).",
+      "legend": false
+    }
+  ]
+}

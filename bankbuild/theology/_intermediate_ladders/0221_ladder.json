@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse story of Ragnarok, the sea rises up over Midgard, the wolf Fenrir breaks loose, and a great ship sails out of the east across the flooded world, carrying an army of giants and monsters to the last battle. What is the name of this ship?",
+      "choices": ["Naglfar", "Skidbladnir", "Ringhorn", "Mannigfual"],
+      "answer": "Naglfar",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapters 43 and 51; Voluspa stanza 50. Naglfar is the ship of the dead. Skidbladnir is Freyr's magical folding ship that always has a fair wind and can be folded into a pocket. Ringhorn is Balder's funeral-ship, which the giantess Hyrrokkin launches into the sea with a single push. Mannigfual is a giant ghost-ship of German North Sea sailor-legend, not Norse myth. Naglfar is the specific Ragnarok-ship.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Snorri Sturluson tells us that the Ragnarok-ship Naglfar is not built of oak or pine or any tree at all. Its planks are cut from a material harvested off the world's dead, one small piece at a time, for every generation since the beginning. What material is Naglfar built of?",
+      "choices": ["the fingernails and toenails of the dead", "the swords of every fallen warrior", "the golden coins of every buried king", "the black stones of the underworld"],
+      "answer": "the fingernails and toenails of the dead",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Every corpse in the nine worlds contributes its clippings; the ship has been slowly assembling itself out of the leavings of the world's funerals for as long as there have been funerals. Norse myth is full of dark images -- this is arguably the darkest.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Because of what the timbers of Naglfar are made from, Snorri gives his medieval Norse readers a plain moral instruction attached to the myth -- something they must actually DO, at every funeral, to slow the ship's completion. What does Snorri tell them to do?",
+      "choices": ["clip the nails of every corpse before burial", "cover every corpse's mouth with a coin", "burn every corpse instead of burying it", "lay every corpse with its head toward the east"],
+      "answer": "clip the nails of every corpse before burial",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51 (Brodeur translation): 'And there is this also to say concerning it, that any man who dies with untrimmed nails contributes materially to this ship's building -- both gods and men would fain the ship's completion be far off.' The other choices are real funerary practices from various cultures (Charon's obol, cremation, cardinal-direction burials), but none is Snorri's instruction. Cutting the dead's nails is the specific Norse practice.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri says that when Ragnarok comes, Naglfar breaks loose from its moorings on the flood, and a captain steps to the helm to steer it against the gods. In Snorri's version of the story, this captain is a frost-giant with a specific name. Who steers Naglfar in Snorri's account?",
+      "choices": ["Hrym", "Thrym", "Skrymir", "Suttung"],
+      "answer": "Hrym",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51; Voluspa stanza 50 ('Hrym steers from the east, the serpent writhes'). Hrym is the frost-giant helmsman. Thrym is the giant who once stole Mjolnir. Skrymir is the giant who tricked Thor with the illusion-glove in Utgard. Suttung is the giant who kept the Mead of Poetry in the mountain until Odin stole it. All four are real Norse giants -- Hrym is the specific captain of Naglfar.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri and the Voluspa disagree on one detail of Ragnarok: they name a DIFFERENT figure at the helm of Naglfar. In one verse tradition it is not the frost-giant Hrym at all but a certain trickster, coming with his own monstrous kin, who captains the ship. In this alternative Voluspa version, who steers Naglfar?",
+      "choices": ["Loki", "Odin", "Surtr", "Heimdall"],
+      "answer": "Loki",
+      "context": "Voluspa stanza 51; Snorri, Gylfaginning chapter 51. Snorri preserves both traditions and does not choose between them: Hrym is at the helm in his prose retelling, but the older skaldic verses have Loki captaining a ship of the dead out of the east with Fenrir's kin aboard. Odin dies at Ragnarok fighting Fenrir. Surtr leads the fire-giants from Muspelheim. Heimdall blows the horn from Bifrost. Loki is the specific alternative captain.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Voluspa specifies not just how Naglfar comes but from what direction it sails. Snorri quotes the same line: 'Hrym steers from the ___, the serpent writhes.' Fill in the direction Naglfar sails from at Ragnarok.",
+      "choices": ["east", "north", "west", "south"],
+      "answer": "east",
+      "context": "Voluspa stanzas 50-51; Snorri, Gylfaginning chapter 51. Naglfar sails from the east; the fire-giants under Surtr come from the south (from Muspelheim). North and west are not directions given for either muster. The east-origin is the specific Voluspa detail.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri says Naglfar is set afloat on a flood -- and the flood itself is caused by one of the Ragnarok-monsters, whose thrashing at the shore makes the ocean overflow onto Midgard. It is the same monster Thor is fated to fight and kill (before dying nine steps later of its poison). Which monster's coming ashore causes the sea to overflow and Naglfar to sail?",
+      "choices": ["Jormungandr", "Fenrir", "Garm", "Nidhogg"],
+      "answer": "Jormungandr",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Jormungandr the Midgard-Serpent is Thor's Ragnarok-opponent; when he releases his tail from his own mouth and lashes ashore, the sea overflows. Fenrir is the great wolf whom Odin fights. Garm is the hound at the gate of Hel who kills Tyr. Nidhogg is the dragon gnawing the world-tree's root. Jormungandr is the specific serpent Thor kills.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The crew of Naglfar is not made of ordinary warriors. Once its captain has steered it across the flood and it beaches on the plain where the last battle will be fought, the passengers march ashore in ranks that no earthly army has ever mustered. Who is Naglfar's crew?",
+      "choices": ["the dead, together with giants and monsters", "the sworn wolf-warriors of Odin", "the ghosts of the drowned sailors", "the spirits of dead kings alone"],
+      "answer": "the dead, together with giants and monsters",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Naglfar carries a general muster of the enemies of the gods -- the collected dead alongside frost-giants and monster-kin. The berserkers and ulfhednar (wolf-warriors) of Odin are LIVING warriors sworn to him in Valhalla, not passengers on Naglfar. Ghosts of the drowned belong to Ran's hall under the sea. Dead kings feast in Valhalla or in Freyja's hall Sessrumnir. Naglfar's crew is the specific mix of the dead and the giants.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Naglfar comes to shore at the plain where every doomed pairing in the Norse myths -- Odin against Fenrir, Thor against Jormungandr, Heimdall against Loki, Freyr against Surtr -- will meet. Snorri says this plain stretches a hundred leagues on every side. What is the name of the plain of the last battle?",
+      "choices": ["Vigrid", "Idavoll", "Folkvang", "Ginnungagap"],
+      "answer": "Vigrid",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51; Vafthrudnismal stanza 18 ('a hundred leagues on every side'). Vigrid is the battlefield of Ragnarok. Idavoll is the meadow where the gods held council and where the survivors will re-gather AFTER the battle. Folkvang is Freyja's meadow where she takes half of the slain. Ginnungagap is the primordial abyss between fire and ice from before creation. Vigrid is the specific final-battle plain.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Naglfar is not the only named ship in Norse myth. The god Freyr owns one made for him by the dwarf-smiths, the sons of Ivaldi -- it always has a fair wind at its back, and when he does not need it he folds it small enough to put in a pocket. What is the name of Freyr's folding ship?",
+      "choices": ["Skidbladnir", "Gungnir", "Mjolnir", "Draupnir"],
+      "answer": "Skidbladnir",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 43; Grimnismal stanza 43. Skidbladnir is Freyr's magic folding ship, made for him by the sons of Ivaldi -- the same dwarf-smiths who competed with Sindri and Brokkr in a wager that produced Odin's spear Gungnir, Thor's hammer Mjolnir, and Odin's dripping gold arm-ring Draupnir. All four are famous dwarf-forged treasures of the gods; the ship is Skidbladnir.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The etymology of Naglfar is disputed: most scholars read the first element as 'nail,' matching the myth's fingernail-and-toenail hull, but a minority reads the root differently to give a darker translation with the same eerie sound. What alternative meaning have some scholars offered for the name Naglfar?",
+      "choices": ["corpse-ship", "night-ship", "grief-ship", "shadow-ship"],
+      "answer": "corpse-ship",
+      "context": "Rudolf Simek, Dictionary of Northern Mythology (Nagl entry). Some scholars read the Old Norse element from a root related to 'corpse' rather than 'nail,' giving 'corpse-ship' -- a reading that fits the muster of the dead aboard but throws away the story's whole moral about clipping nails. 'Night-ship,' 'grief-ship,' and 'shadow-ship' are not proposed etymologies. Corpse-ship is the specific alternative.",
+      "legend": true
+    }
+  ]
+}

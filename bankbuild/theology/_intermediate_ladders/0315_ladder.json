@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse myth a great blood-stained hound sits howling at the gates of the underworld, held by chains until the end of the world sets him loose. What is his name?",
+      "choices": ["Garmr", "Fenrir", "Sleipnir", "Geri"],
+      "answer": "Garmr",
+      "context": "Garmr guards the entrance to Hel. His howling before the cave Gnipahellir is a repeated refrain in the Poetic Edda's Voluspa, sounding the approach of the end of the world (Voluspa 44, 49, 58). Fenrir is the great wolf who kills Odin; Sleipnir is Odin's eight-legged horse; Geri is one of Odin's two wolves at his throne.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Norse binding of the wolf Fenrir, one god steps forward and lays his hand in the wolf's jaws as a pledge of good faith, and loses it when the trick is sprung. Which god?",
+      "choices": ["Tyr", "Baldr", "Bragi", "Forseti"],
+      "answer": "Tyr",
+      "context": "Snorri's Gylfaginning 34 names Tyr as the only god brave enough to make the pledge. When Fenrir realised the ribbon Gleipnir would not break, he bit off Tyr's right hand. Baldr is Odin's shining son killed by mistletoe; Bragi is the god of poetry; Forseti is the god of justice at Glitnir.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At Ragnarok on the plain of Vigrid, most great duels leave a dead god and a dead monster; but Snorri names TWO pairings in which BOTH fighters die together. One pairing is a one-handed god against a howling hound at the gates of the underworld. Which pair is it?",
+      "choices": ["Tyr and Garmr", "Odin and Fenrir", "Thor and Jormungandr", "Freyr and Surtr"],
+      "answer": "Tyr and Garmr",
+      "context": "Snorri writes in Gylfaginning 51: Tyr and Garm shall fight together, and either be the other's slayer. Odin is swallowed by Fenrir (no mutual kill); Thor kills Jormungandr but dies after nine steps from the serpent's venom (not a mutual kill in the strict sense); Surtr burns Freyr but is not himself killed in the exchange.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The English weekday Tuesday takes its name from an Anglo-Saxon god. The Anglo-Saxon god behind Tuesday is the same figure the Norse called Tyr. What was his Anglo-Saxon name?",
+      "choices": ["Tiw", "Woden", "Thunor", "Frige"],
+      "answer": "Tiw",
+      "context": "Old English Tiwesdaeg means Tiw's Day, later worn down to Tuesday. Woden is the Anglo-Saxon Odin (Wednesday). Thunor is Thor (Thursday). Frige is Frigg (Friday).",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The Voluspa carries a grim refrain that Garm howls loud, the fetters shall break, the wolf shall run. What is the name of the cave in front of which Garm is standing when this refrain sounds?",
+      "choices": ["Gnipahellir", "Nastrond", "Helheim", "Muspell"],
+      "answer": "Gnipahellir",
+      "context": "Gnipahellir is the cave at the gate of Hel where Garmr is bound. Its name is often glossed as 'cave of the overhanging cliff'. Nastrond is the shore of corpses in Hel where oathbreakers wade in venom; Helheim is the underworld realm itself, not a cave; Muspell is the burning southern realm of Surt.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri names a second Ragnarok pair who kill each other on the same field: the watchman of the rainbow with his great horn, and the shape-shifting trickster who broke free of his bonds under the dripping serpent. Which pair?",
+      "choices": ["Loki and Heimdallr", "Loki and Thor", "Loki and Odin", "Loki and Vidar"],
+      "answer": "Loki and Heimdallr",
+      "context": "Snorri writes in Gylfaginning 51: Loki has battle with Heimdall, and each is the other's slayer. Thor's Ragnarok fight is with Jormungandr the world serpent; Odin's is with Fenrir the wolf; Vidar avenges Odin by killing Fenrir, and himself survives to see the new world.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri explains the Loki and Heimdallr grudge by a specific earlier scene: Loki stole a treasure and Heimdallr chased him, and the two fought in the shape of the same sea creature in the surf. Which treasure had Loki stolen?",
+      "choices": ["the necklace Brisingamen", "the apples of Idunn", "the ship Skidbladnir", "the ring Draupnir"],
+      "answer": "the necklace Brisingamen",
+      "context": "Snorri's Skaldskaparmal 8 records the tale, drawing on Ulf Uggason's poem Husdrapa: Loki stole Brisingamen from Freyja; Heimdallr pursued and both took the shape of seals to fight in the sea; Heimdallr won and returned the necklace. Idunn's apples keep the gods young; Skidbladnir is Freyr's folding ship; Draupnir is Odin's gold ring that drips eight copies every ninth night.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Norse binding of Fenrir depended on a ribbon the dwarves of Nidavellir made from six impossible things: the roots of a mountain, the sinews of a bear, the breath of a fish, the spit of a bird, the beard of a woman, and one more. What was the sixth?",
+      "choices": ["the sound of a cat's footsteps", "the shadow of a stone", "the taste of the sea", "the weight of a shadow"],
+      "answer": "the sound of a cat's footsteps",
+      "context": "Snorri's Gylfaginning 34 lists all six ingredients. The ribbon, called Gleipnir, was as soft as silk yet impossible to break. It was this ribbon Fenrir would not accept until Tyr laid his hand in the wolf's mouth as pledge.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the Loki and Heimdallr sea-fight over Freyja's stolen necklace, both gods took the shape of the same animal to grapple in the water. Which animal?",
+      "choices": ["a seal", "an otter", "a salmon", "a seagull"],
+      "answer": "a seal",
+      "context": "Snorri's Skaldskaparmal 8, quoting Ulf Uggason's Husdrapa, says the two took on the shape of seals for the fight. Otter-shape belongs to Loki's tale of Otr's ransom (the origin of the cursed hoard); salmon-shape is Loki's own disguise when the gods finally caught him after Baldr's death; seagull is not attested here.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Snorri's Skaldskaparmal preserves two kennings from the sea-fight over Freyja's necklace: Heimdallr is called the Seeker of Freyja's Necklace, and Loki is called by a matching kenning of his own. What is Loki's kenning from this tale?",
+      "choices": ["the Thief of Brisingamen", "the Wolf's Father", "the Binder of Sif", "the Rider of Sleipnir"],
+      "answer": "the Thief of Brisingamen",
+      "context": "Skaldskaparmal 16 records this kenning. Kennings compress a whole story into a title. Loki IS the Wolf's Father (Fenrir is his son) but that kenning comes from a different tale; Binder of Sif is not attested (Loki cut Sif's hair, he did not bind her); Sleipnir is Odin's horse and Loki is Sleipnir's mother by shape-shifting into a mare, not Sleipnir's rider.",
+      "legend": true
+    }
+  ]
+}

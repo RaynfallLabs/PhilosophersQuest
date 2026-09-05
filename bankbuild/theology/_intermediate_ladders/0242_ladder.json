@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "A country boy is raised alone in the wilds of Wales by his widowed mother. She keeps him deliberately ignorant of what knights are and what knighthood means -- because her husband and her elder sons were all killed as knights, and she cannot bear to lose him the same way. This boy will grow up to become the hero of the earliest Grail romance in any language. What is his name?",
+      "choices": ["Perceval", "Lancelot", "Gawain", "Tristan"],
+      "answer": "Perceval",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://en.wikipedia.org/wiki/Perceval,_the_Story_of_the_Grail. Perceval (Welsh Peredur, German Parzival) is the country-bred fool who grows into the Grail knight. Lancelot is Arthur's greatest knight, raised by the Lady of the Lake. Gawain is Arthur's nephew. Tristan is the hero of the Cornish love-story parallel to Arthur.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "One day the boy is playing in the Welsh forest when he sees five men riding through the trees in a way he has never seen a man before -- clad head to foot in shining metal, mounted on great warhorses, their armour blazing in the sun. Not knowing what he is looking at, he falls on his knees. What does Perceval, seeing five knights for the first time in his life, believe them to be?",
+      "choices": ["angels", "kings", "giants", "demons"],
+      "answer": "angels",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://en.wikipedia.org/wiki/Perceval,_the_Story_of_the_Grail. Perceval kneels because his mother has taught him only two things: pray to God when you see God's servants, and never harm a stranger. The shining armour convinces him he is looking at heavenly beings. Kings, giants, and demons are the other kinds of stranger a Welsh boy might imagine but he chooses angels.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The boy will not stay after seeing the five riders. He must follow them and become one of them. His mother begs him not to go, warns him that his father died so, warns him she cannot survive his going -- and then, when he rides away over the hill, she falls where she stands. In Chretien's poem, what happens to Perceval's mother the moment he leaves her for Arthur's court?",
+      "choices": ["she dies of grief", "she throws herself in the well", "she takes the veil at a convent", "she calls after him to be cursed"],
+      "answer": "she dies of grief",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://d.lib.rochester.edu/camelot-project/theme/perceval.html. She falls dead at the gate of her house as Perceval crests the hill. Later in the poem a hermit reveals to Perceval that his mother's death is a wound he still carries -- one of the reasons he fails at the Fisher King's castle. Perceval rides on without looking back, not yet knowing.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "After his knighting at Camelot, Perceval spends time with an older knight named Gornemant of Gorhaut, who takes him in and teaches him what a courtly knight owes his host and his lord. Gornemant gives him one particular piece of courtesy-advice that Perceval takes so seriously it will one day cost him the Grail. What did Gornemant teach Perceval NOT to do?",
+      "choices": ["ask idle questions", "draw his sword before dinner", "sing at another man's table", "speak of his mother in company"],
+      "answer": "ask idle questions",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://mcgoodwin.net/pages/otherbooks/ct_perceval.html. Gornemant tells Perceval that a proper knight does not chatter or pry -- silence at a stranger's table is a courtesy. The lesson is well-meant. When Perceval sees the great procession at the Fisher King's castle, he remembers Gornemant and holds his tongue. The rule Gornemant gave him is what ruins the world.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "One evening Perceval rides beside a river and sees a man in a small boat, holding a fishing line. The man on the boat invites him to lodge for the night at a nearby castle. When Perceval arrives, the same man is seated in the great hall on a couch, and Perceval sees only now that the man cannot stand -- he is wounded through the thighs by a wound that will not heal. What is the title Chretien de Troyes gives this man in the hall?",
+      "choices": ["the Fisher King", "the Maimed King", "the King of the Waste", "the King of the Grail"],
+      "answer": "the Fisher King",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://en.wikipedia.org/wiki/Fisher_King. Chretien names him simply the Fisher King (le Roi Pescheor) because fishing is the only pastime his wound permits. Later Grail writers add the titles Maimed King (Roi Mehaigne) and Grail King and split him into a father-and-son pair; Chretien's original has one wounded king who fishes.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As Perceval sits at supper with the wounded king a procession passes silently through the hall from one door to the other. At the head of it a young man carries a plain white weapon -- a lance -- and Perceval sees that from the tip of it, though there is no one wounded near, a single drop of something red falls constantly. What is falling from the tip of the lance in the procession?",
+      "choices": ["a drop of blood", "a spark of fire", "a tear of oil", "a bead of water"],
+      "answer": "a drop of blood",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://en.wikipedia.org/wiki/Perceval,_the_Story_of_the_Grail. The bleeding lance is the second wonder of the Grail procession alongside the graal itself. Later Grail writers identify it as the Lance of Longinus that pierced Jesus's side at the crucifixion; Chretien's original does not name its origin, only its wound.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Behind the young man with the bleeding lance walk two young men holding golden candelabra, and behind them a maiden holding the object that will give the whole cycle of stories its name. It is not yet a chalice -- Chretien de Troyes's Old French word 'graal' is a common word for a wide, shallow serving-dish. What does the maiden in Chretien's original poem carry through the hall?",
+      "choices": ["a wide serving-dish", "a golden chalice", "a silver crown", "a horn of ivory"],
+      "answer": "a wide serving-dish",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://en.wikipedia.org/wiki/Holy_Grail. In Chretien the graal is a jewelled platter that gives out a great light -- it is not yet a cup and not yet identified with the Last Supper. The identification of the Grail with the chalice used at the Last Supper is the addition of Robert de Boron in his Joseph d'Arimathie (c.1200) about twenty years later.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Perceval watches the procession pass. He is astonished by the bleeding lance, and by the maiden with the graal, and by the second maiden with a silver platter behind her. He wants to ask his host what any of it means. But he remembers Gornemant's rule and he holds his tongue and eats his supper in silence. What is the specific question about the graal that Perceval fails to ask?",
+      "choices": ["whom does the Grail serve", "who forged the Grail", "where was the Grail hidden", "when will the Grail return"],
+      "answer": "whom does the Grail serve",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://urthona.com/literature/the-unanswered-question-chretien-de-troyes-and-the-first-story-of-the-grail/. The unasked question is 'whom does the Grail serve?' -- and had he asked it, the wounded Fisher King (whom the Grail was in fact serving) would have been healed. The question is one of compassion, not curiosity; that is why it heals. When Perceval swallows the question to be polite, he swallows the whole cure.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the morning Perceval wakes to find the great castle utterly empty -- no servants, no host, no maidens, no wounded king. He puts on his armour alone, mounts his horse, and rides out over the drawbridge. As he passes it, the drawbridge does something behind him. He rides on into the forest and meets a weeping woman, who tells him what he has done. What does the drawbridge of the Fisher King's castle do the moment Perceval crosses it?",
+      "choices": ["slams up behind him", "sinks into the moat", "catches fire behind him", "turns to stone behind him"],
+      "answer": "slams up behind him",
+      "context": "Chretien de Troyes, Perceval, le Conte du Graal (c.1181-90); https://mcgoodwin.net/pages/otherbooks/ct_perceval.html. The drawbridge slaps up so sharply behind him that his horse just clears it. In the forest a maiden tells Perceval that had he asked the question, the wounded king would have been healed and his kingdom (the Waste Land) restored; his silence has doomed both to remain as they are. The chance has been given once and refused.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Chretien de Troyes never finishes the story. He dies around 1191 with Perceval's return to the Fisher King unwritten, and the poem breaks off in mid-adventure. It is left to two other writers a generation later to give the story an ending: an anonymous set of French 'Continuations' between 1200 and 1230, and a great German verse romance completed by a Bavarian knight around 1210. What is the title of the German knight's completed version of the story?",
+      "choices": ["Parzival", "Perlesvaus", "Le Morte d'Arthur", "Roman de Brut"],
+      "answer": "Parzival",
+      "context": "Wolfram von Eschenbach, Parzival (c.1210); https://en.wikipedia.org/wiki/Parzival. Wolfram's Parzival is a Middle High German verse romance that gives Perceval's return to the Grail castle and the healing of the Fisher King. Perlesvaus is a related but separate anonymous French Grail romance (c.1200-10). Le Morte d'Arthur is Malory's fifteenth-century English prose gathering of the whole cycle. Roman de Brut is Wace's Norman-French verse history of Arthur, without the Grail.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The story of Perceval also survives in an older Welsh telling that seems to preserve a version of the tale from before Chretien wrote it up in French verse. In the Welsh romance the country boy is called Peredur, and when he comes to the mysterious hall the procession he sees does NOT feature a graal at all -- instead of a serving-dish full of light, the young women carry something much bloodier through the hall. In the Welsh Peredur son of Efrawg, what do the maidens carry through the hall?",
+      "choices": ["a severed head on a platter", "a golden chalice full of wine", "a burning lamp of oil", "an ivory horn of a unicorn"],
+      "answer": "a severed head on a platter",
+      "context": "Peredur son of Efrawg, in the Mabinogion; https://en.wikipedia.org/wiki/Peredur_son_of_Efrawg. The Welsh Peredur has NO Grail question -- Peredur sees the head of a murdered kinsman on the platter and is meant later to avenge him. The Welsh version is probably a survival of an older Celtic vengeance-tale that Chretien Christianises into the Grail question. The Grail cycle grows out of the Welsh severed-head bowl.",
+      "legend": true
+    }
+  ]
+}

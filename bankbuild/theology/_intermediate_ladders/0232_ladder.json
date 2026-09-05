@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Arthurian stories King Arthur has a favourite city that serves as the seat of his court, the hall where his knights feast, and the place every completed quest is dedicated to. What is the name of Arthur's capital city?",
+      "choices": ["Camelot", "Tintagel", "Avalon", "Glastonbury"],
+      "answer": "Camelot",
+      "context": "Malory, Le Morte d'Arthur, passim; Wikipedia: Camelot. Tintagel is where Arthur was conceived by Uther Pendragon. Avalon is the enchanted island where the wounded Arthur is carried at the end. Glastonbury is a real Somerset abbey where medieval monks later claimed to have found Arthur's tomb.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The great piece of furniture at the centre of Arthur's hall is one of the most famous objects in Western myth, and its very design becomes the ordinary name of the whole fellowship of knights who sit at it. What is the shape of the famous table at Arthur's court?",
+      "choices": ["a round table with no head", "a long rectangular table", "a T-shaped high table", "a horseshoe-shaped table"],
+      "answer": "a round table with no head",
+      "context": "Wace, Roman de Brut (c.1155); Malory, Le Morte d'Arthur Book III ch.1. The round shape solves the problem of who sits highest -- there is no head. The long rectangular table with a raised end and the horseshoe are the ordinary real medieval hall shapes; the T-shape belongs to certain monastic refectories.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Every year at Camelot Arthur holds a great feast on one particular high Christian holiday. At this feast the whole fellowship of the Round Table gathers, and Arthur famously refuses to sit down to eat until he has heard of some wonder or adventure. Which feast day is the great yearly gathering of the Round Table at Camelot?",
+      "choices": ["Pentecost", "Christmas", "Easter", "All Saints' Day"],
+      "answer": "Pentecost",
+      "context": "Malory, Le Morte d'Arthur (throughout). Pentecost (Whitsunday, fifty days after Easter) is Arthur's great gathering day; it is at Pentecost that Galahad arrives and takes the Siege Perilous, and at Pentecost the Grail quest begins. Christmas is the feast of the Green Knight scene at Camelot in a different poem. Easter and All Saints' Day are important feasts but not Arthur's court-day.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Round Table is not Arthur's own invention. According to Malory (Book III chapter 1), it comes to Arthur as a wedding gift when he marries Guinevere -- passed to him by her father, the king of Cameliard. Who gives the Round Table to Arthur as Guinevere's dowry?",
+      "choices": ["King Leodegrance", "King Pellinore", "King Uriens", "King Bagdemagus"],
+      "answer": "King Leodegrance",
+      "context": "Malory, Le Morte d'Arthur Book III ch.1. Leodegrance is Guinevere's father and the king of Cameliard; he had the Table from Uther Pendragon. Pellinore is the king who broke Arthur's first sword. Uriens is Morgan le Fay's husband. Bagdemagus is the king of Gorre in Chretien's Lancelot.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Malory gives an exact seating capacity for the Round Table -- and says every seat around it has the name of the knight worthy to sit there written in gold letters. How many knights, in Malory's telling, does the Round Table seat?",
+      "choices": ["one hundred and fifty", "twelve", "twenty-four", "three hundred"],
+      "answer": "one hundred and fifty",
+      "context": "Malory, Le Morte d'Arthur Book III ch.1: Leodegrance sends the Table 'and a hundred knights' with it -- Arthur later fills the remaining seats. Twelve is the round number of Charlemagne's Twelve Peers of France, not Arthur's fellowship. Twenty-four fits the smaller Arthurian jousting-lists, not the Table itself. Three hundred is the count of Roman senators.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "One seat around the Round Table is always kept empty -- not out of respect for an absent knight, but because any knight who sits in it who is not perfectly worthy will die on the spot. Which seat at the Table carries this deadly reputation?",
+      "choices": ["the Siege Perilous", "the Chair of Merlin", "the Seat of Judgment", "the King's Bench"],
+      "answer": "the Siege Perilous",
+      "context": "Malory, Le Morte d'Arthur Book XIII ch.4; Vulgate Cycle 'Queste del Saint Graal' (c.1220). 'Siege' comes from Old French 'sege' meaning seat or throne; 'perilous' is the modern English word. The other three seat-names sound the part but are inventions -- Merlin has no chair of his own at the Round Table, and the other two are ordinary judicial terms.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In all the many years of the Round Table only ONE knight in the whole story is able to sit in the perilous seat and live. He arrives at Camelot on Pentecost, the letters of his own name appear on the empty seat, and he takes it. Who is the only knight to sit in the Siege Perilous?",
+      "choices": ["Galahad", "Percival", "Lancelot", "Gawain"],
+      "answer": "Galahad",
+      "context": "Malory, Le Morte d'Arthur Book XIII ch.4. Galahad, the son of Lancelot, is the pure knight who alone can occupy the seat and later achieves the Grail. Percival is one of the three Grail companions but has his own seat. Lancelot -- Galahad's father -- is too flawed by his love for Guinevere to sit there. Gawain is the great courtier but not the pure knight.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The story-reason Arthur has the Round Table made in the first place -- given in the twelfth-century Roman de Brut -- is not decoration or magic but a very practical piece of statecraft. His father Uther's court had suffered years of a specific ugly problem at every feast. What problem does Arthur design the Round Table to solve?",
+      "choices": ["barons quarrelling over who sits highest", "assassins hiding behind pillars in the hall", "spies overhearing counsel through open doors", "guests being poisoned at long high tables"],
+      "answer": "barons quarrelling over who sits highest",
+      "context": "Wace, Roman de Brut (c.1155): 'Arthur created the Round Table to prevent quarrels among his barons, none of whom would accept a lower place than the others.' Assassins, spies, and poisoners are all real medieval court-worries but the Round Table specifically solves the seating-rank problem.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Great Hall of Winchester Castle in England has, hanging on its wall, a real physical Round Table of oak -- eighteen feet across, weighing over a ton, painted with the names of Arthur's knights around a Tudor-rose centre. It is one of the most famous objects in English medieval studies. Which English king ordered the paintwork now on the Winchester Round Table?",
+      "choices": ["Henry VIII", "Edward I", "Richard the Lionheart", "Alfred the Great"],
+      "answer": "Henry VIII",
+      "context": "Wikipedia: Round Table. The oak table itself was built in about 1250-1280 (reign of Edward I) but was left plain. It was Henry VIII who ordered the surviving paintwork -- reportedly to impress the emperor Charles V during a state visit. Richard the Lionheart lived a century before the table was built; Alfred the Great five centuries before.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "In 1542 the antiquary John Leland rode through the west country and reported that the local people around a certain hillfort in Somerset believed the earthworks there marked the site of the real Camelot. Modern archaeologists dug there from 1966 to 1970 and found a major refortification from the right period, though no proof it was Arthur's. Which Somerset hill do the locals still call the site of Camelot?",
+      "choices": ["Cadbury Castle", "Glastonbury Tor", "Maiden Castle", "Silbury Hill"],
+      "answer": "Cadbury Castle",
+      "context": "Wikipedia: Camelot. John Leland recorded the Cadbury tradition in 1542; Leslie Alcock's 1966-1970 excavations found evidence of major refortification 'by a Brittonic ruler and his war band from c. 470' -- exactly the era of the historical Arthur, if there was one. Glastonbury Tor is nearby and famous but is a religious site. Maiden Castle is a huge Iron Age fort in Dorset. Silbury Hill is a neolithic mound in Wiltshire.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "When the fellowship of the Round Table finally breaks apart in the last books of Malory, the whole Arthurian order goes with it. The specific quarrel that shatters the Table starts with an accusation against Lancelot -- that he has been sleeping with Arthur's queen -- and it splits the knights into two warring parties. Which knight leads the party demanding Lancelot be punished?",
+      "choices": ["Sir Gawain", "Sir Percival", "Sir Bors", "Sir Kay"],
+      "answer": "Sir Gawain",
+      "context": "Malory, Books XX-XXI. Gawain leads the party demanding Lancelot's punishment after Lancelot kills Gawain's brothers Gareth and Gaheris in the rescue of Guinevere from the stake. Sir Bors is Lancelot's own kinsman and stays loyal to him. Percival has gone on the Grail quest. Kay has faded by the end of the book. The Gawain-Lancelot feud is what ends the Round Table.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, a rainbow bridge stretches from the world of humans up to the home of the gods. One god stands guard at its far end and lets no giant across. What is the name of the rainbow bridge?",
+      "choices": ["Bifrost", "Gjallarbru", "Yggdrasil", "Naglfar"],
+      "answer": "Bifrost",
+      "context": "Bifrost ('shimmering way' or 'trembling road') is the rainbow bridge in Snorri's Gylfaginning 13-15. Gjallarbru is the bridge over the river Gjoll on the road to Hel; Yggdrasil is the world-tree; Naglfar is the ship built from dead men's fingernails that carries the giants to Ragnarok.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The watchman who guards the far end of that rainbow bridge is one of the sons of Odin. He is called the 'white god' and is famous for his sharp senses. What is the watchman's name?",
+      "choices": ["Heimdallr", "Bragi", "Tyr", "Forseti"],
+      "answer": "Heimdallr",
+      "context": "Heimdallr (also spelled Heimdall) is described in Gylfaginning 27 as 'the whitest of the gods'; his gold teeth give him the alternate name Gullintanni ('gold-tooth'). Bragi is the god of poetry; Tyr is the one-handed war god; Forseti is a god of justice -- none of them stand watch.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri says the watchman-god was born in a very strange way. Where every other god has one mother, this god had a whole set of them who bore him together on the edge of the world. How many mothers did Heimdallr have?",
+      "choices": ["nine", "three", "seven", "twelve"],
+      "answer": "nine",
+      "context": "Gylfaginning 27 quotes the lost poem Heimdalargaldr: Heimdallr was born of nine sisters. Nine is the sacred Norse number and it appears again in Heimdallr's own story -- Odin's throne can see everything but Heimdallr's ears can catch things the throne cannot, and the number nine belongs to him personally.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The watchman-god is famous for two impossible feats of hearing. Snorri lists them together: he can hear one thing growing out in the fields, and he can hear another thing growing on the backs of animals in the pasture. What are the two growing things Heimdallr can hear?",
+      "choices": ["grass on the earth and wool on sheep", "wheat in the barn and feathers on hens", "roots under the ground and horns on cattle", "moss on the stones and scales on fish"],
+      "answer": "grass on the earth and wool on sheep",
+      "context": "Gylfaginning 27, word-for-word: 'he hears grass as it grows on the earth, wool as it grows on sheep, and all things that make more noise.' This is the detail every Norse kid remembers about Heimdallr -- his ears are that fine.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri adds a second superpower to explain why Heimdallr never misses a giant crossing the bridge. Even in the middle of the night, over a huge distance, he can do this as well as if it were noon. What can he do?",
+      "choices": ["see for a hundred leagues by day or night", "walk on air without weight", "hold his breath for a year and a day", "turn himself into any beast he has seen"],
+      "answer": "see for a hundred leagues by day or night",
+      "context": "Gylfaginning 27: Heimdallr 'sees a hundred leagues off just as clearly by night as by day.' Snorri also says he needs less sleep than a bird -- a watchman built for the job.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The watchman-god carries an instrument that will be sounded only once. It is kept hidden under one of the roots of the world-tree Yggdrasil, beside Mimir's well of wisdom. What is the instrument called?",
+      "choices": ["Gjallarhorn", "Olifant", "Gungnir", "Draupnir"],
+      "answer": "Gjallarhorn",
+      "context": "Gjallarhorn means 'Yelling Horn' or 'Hollering Horn'. Voluspa 27 and Gylfaginning 15 place it beside Mimir's well under Yggdrasil. Olifant is Roland's horn from the Frankish chansons (wrong pillar); Gungnir is Odin's spear; Draupnir is Odin's dripping gold ring.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the watchman finally lifts that horn to his lips and blows it, the sound will travel further than any horn in Norse story. Snorri says how far: it reaches through every last one of a specific number of worlds. Across how many worlds is Gjallarhorn's blast heard?",
+      "choices": ["all nine", "all seven", "all three", "all twelve"],
+      "answer": "all nine",
+      "context": "The Norse cosmos has nine worlds (Asgard, Midgard, Jotunheim, Alfheim, Svartalfheim, Vanaheim, Muspelheim, Niflheim, Helheim). Voluspa 46 says the horn's blast fills them all. Nine again -- the number that keeps returning around Heimdallr.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heimdallr blows that horn only once in the whole story of the world. The blast is the signal for one specific event to begin -- the moment the giants finally come across the bridge and the gods take up arms. What does the horn-blast announce?",
+      "choices": ["the beginning of Ragnarok", "the wedding of Freyja", "the return of Baldr from Hel", "the freeing of the wolf Fenrir"],
+      "answer": "the beginning of Ragnarok",
+      "context": "Voluspa 46 and Gylfaginning 51: at the first sight of the giants coming for Asgard, Heimdallr raises the horn and blows. Every Aesir hears it, every giant hears it, every warrior in Valhalla hears it and takes up his weapon. The freeing of Fenrir is an earlier link in the same chain, not the horn's signal.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "At Ragnarok itself Heimdallr does not fight a giant or a wolf. He goes out to meet an old personal enemy of his -- the one god who has been his opposite from the beginning, and the two of them kill each other on the field. Which god does Heimdallr die killing?",
+      "choices": ["Loki", "Freyr", "Bragi", "Hodr"],
+      "answer": "Loki",
+      "context": "Gylfaginning 51: 'Heimdallr and Loki shall meet and each shall slay the other.' The two have been enemies for ages -- in one older tale (Snorri's Skaldskaparmal) they fought in seal-form over Freyja's necklace Brisingamen. Freyr dies fighting Surt at Ragnarok; Hodr is already dead by then; Bragi has no death-scene.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heimdallr's own hall stands right at the top of the rainbow bridge, where the road from earth arrives at Asgard. Its name means 'Sky-Cliff'. What is the name of Heimdallr's hall?",
+      "choices": ["Himinbjorg", "Valhalla", "Bilskirnir", "Sessrumnir"],
+      "answer": "Himinbjorg",
+      "context": "Himinbjorg is listed in Grimnismal 13 and Gylfaginning 27. Valhalla is Odin's hall of slain warriors; Bilskirnir is Thor's; Sessrumnir is Freyja's. His horse there is called Gulltoppr ('Golden-Top').",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the poem Rigsthula the watchman-god goes walking on earth in disguise, under a different name. He visits three couples in three houses on three nights, and out of those visits three different social groups of humans are born. Under what name does Heimdallr do this?",
+      "choices": ["Rigr", "Grimnir", "Vegtamr", "Bolverkr"],
+      "answer": "Rigr",
+      "context": "Rigsthula ('the List of Rig') tells the story: the three couples produce the ancestors of the thralls, the karls (farmers), and the jarls (nobles). Grimnir, Vegtamr, and Bolverkr are all disguise-names Odin uses in other stories -- Heimdallr's own disguise-name is Rigr.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Before the great last battle, an older story shows Heimdallr and his enemy fighting over a stolen treasure of Freyja's -- a necklace so famous it is named. Both gods take the shape of the same sea-animal and wrestle for it on a rock in the ocean. What treasure of Freyja's are they fighting over?",
+      "choices": ["the necklace Brisingamen", "the ring Draupnir", "the golden boar Gullinbursti", "the falcon-cloak"],
+      "answer": "the necklace Brisingamen",
+      "context": "Snorri's Skaldskaparmal (and a lost skaldic poem, the Husdrapa) tells that Loki stole Brisingamen from Freyja; Heimdallr fought him in seal-form off Vagasker to get it back. Draupnir is Odin's ring; Gullinbursti is Freyr's boar; the falcon-cloak Freyja lends to other gods but it is not the Brisingamen theft.",
+      "legend": true
+    }
+  ]
+}

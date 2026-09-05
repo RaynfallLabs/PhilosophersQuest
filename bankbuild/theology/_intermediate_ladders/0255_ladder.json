@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Ulster Cycle of Irish myth, the greatest teacher of arms in the world is not a druid or a king but a warrior-woman who runs a martial school on a stormy island off the coast of Alba. She takes the boy-hero Cu Chulainn as her pupil. What is her name?",
+      "choices": ["Scathach", "Medb", "Deirdre", "The Morrigan"],
+      "answer": "Scathach",
+      "context": "Scathach's name comes from Old Irish scath, meaning 'shadow' or 'phantom' -- 'the Shadowy One'. Medb is the warrior-queen of Connacht (Ulster Cycle, but an opponent, not a teacher); Deirdre 'of the Sorrows' is a tragic beauty of the same cycle; the Morrigan is the war-goddess who watches over battle. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Scathach the warrior-woman keeps her school at a fortress called Dun Scaith ('the Fortress of Shadows'), traditionally set on one particular island off the west coast of Scotland. On which island did later tradition place her stronghold?",
+      "choices": ["The Isle of Skye", "The Isle of Iona", "The Isle of Man", "The Isle of Anglesey"],
+      "answer": "The Isle of Skye",
+      "context": "The ruins called Dun Sgathaich near Tarskavaig on the Sleat peninsula of Skye mark the mythological site. The folk-etymology holds that the Isle of Skye (an t-Eilean Sgitheanach in Scots Gaelic) takes its own name from Scathach. Iona is the monastery-island of Columba; Man is the sea-god Manannan's island; Anglesey (Ynys Mon) is a druid-heartland in Welsh tradition. Source: https://spookyscotland.net/scathach/",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Cu Chulainn crosses the sea to Alba to seek out Scathach because Forgall Manach, the father of the girl he wishes to marry, has set an impossible bride-price: no man can have his daughter's hand who has not first studied at the Fortress of Shadows. Which girl did Cu Chulainn wish to marry?",
+      "choices": ["Emer of the fair hair", "Grainne of the golden apples", "Niamh of the golden hair", "Deirdre of the sorrows"],
+      "answer": "Emer of the fair hair",
+      "context": "The story is told in Tochmarc Emire ('The Wooing of Emer'), one of the great foretales to the Tain. Grainne is the Fianna beauty who runs off with Diarmuid; Niamh carries Oisin to Tir na nOg; Deirdre is a doomed Ulster-Cycle heroine. Source: https://en.wikipedia.org/wiki/Tochmarc_Emire",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "To reach Scathach's fortress Cu Chulainn must first cross a bridge that only its rightful students can pass -- step onto one end and the middle rises up and pitches the walker off. What single leap does Cu Chulainn use to cross it in one bound?",
+      "choices": ["The salmon-leap", "The dragon-vault", "The eagle-stride", "The stag-bound"],
+      "answer": "The salmon-leap",
+      "context": "The salmon-leap (leim in bratain) is Scathach's signature technique: a running vault long enough to clear a bridge or a warrior's raised shield. Cu Chulainn will use it again years later at the Ford against Ferdiad. The other three names are invented parallels of the same shape. Source: https://spookyscotland.net/scathach/",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Inside Scathach's fortress Cu Chulainn is not the only star pupil. He trains alongside another young warrior who will one day become his sworn foster-brother in arms -- the two of them eating from the same dish and sleeping with their shields interlocked. What is the other pupil's name?",
+      "choices": ["Ferdiad mac Daman", "Conall Cernach", "Fionn mac Cumhaill", "Oisin the poet"],
+      "answer": "Ferdiad mac Daman",
+      "context": "Ferdiad is Cu Chulainn's dearest friend from their year at Scathach's school. Years later in the Tain the two will meet on opposite sides at the Ford -- three days of single combat that ends with Cu Chulainn killing Ferdiad and weeping over him. Conall Cernach is a fellow Ulster champion but trained elsewhere; Fionn and Oisin are heroes of the later Fenian Cycle, not the Ulster Cycle. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Scathach has one rival warrior-woman who wars against her in Alba -- described in the tale as the most dangerous fighter in the world, and in some versions Scathach's own sister. Cu Chulainn is sent out to fight her in single combat. What is her name?",
+      "choices": ["Aife", "Uathach", "Fand", "Boudicca"],
+      "answer": "Aife",
+      "context": "Aife and Scathach are named as daughters of Ard-Greimne of Lethra. Uathach is a warrior-woman of the same tale but not the rival. Fand is a sea-fairy of a different Cu Chulainn tale (The Sickbed of Cu Chulainn); Boudicca is a real historical Briton, not myth. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Facing Aife in single combat and evenly matched, Cu Chulainn wins by shouting a lie -- claiming that the one thing Aife prizes most in all the world has just been destroyed in front of her. What does he shout has fallen off a cliff?",
+      "choices": ["Her horses and her chariot", "Her father's tower", "Her sister Scathach", "Her own newborn son"],
+      "answer": "Her horses and her chariot",
+      "context": "In the moment her head whips round to look, Cu Chulainn seizes her by the throat and pins her. He spares her life on the condition that she call off her enmity with Scathach and bear him a son. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The son Cu Chulainn fathers on Aife at the end of that duel grows up in Alba without ever meeting his father. Years later he sails alone to Ireland and challenges the champions of Ulster; Cu Chulainn is sent to face him and kills him in single combat, only recognising him as his own son when it is too late. What is the son's name?",
+      "choices": ["Connla", "Cormac", "Lugaid", "Amergin"],
+      "answer": "Connla",
+      "context": "Connla comes to Ireland at age seven under a geis (a magical taboo) that forbids him to name himself. The tale of Aided Oenfhir Aife ('The Death of Aife's Only Son') is one of the most heartbreaking in the Ulster Cycle -- a Sohrab-and-Rustum tale a thousand years before Firdausi. Cormac, Lugaid, and Amergin are all real Ulster-Cycle names, none of them Aife's son. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Scathach's daughter is the one who first lets Cu Chulainn through the fortress gate; she takes him as a lover, and Cu Chulainn breaks her fingers by accident when he grabs the cup she offers him too hard. What is Scathach's daughter's name?",
+      "choices": ["Uathach", "Emer", "Sadhbh", "Blathnat"],
+      "answer": "Uathach",
+      "context": "Uathach ('the Spectral One' -- her name echoes her mother's Shadow-name) hands Cu Chulainn the welcoming cup on his first day; his warrior's grip crushes her fingers. Emer is his betrothed back in Ireland; Sadhbh is Fionn's doe-wife in the later Fenian Cycle; Blathnat is a queen of a different Ulster tale. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the end of the year and a day of training, Scathach gives Cu Chulainn a parting gift -- one deadly weapon she teaches to no other pupil. It is cast with the foot, not the hand, and once it enters a body it opens into barbs so many that it cannot be removed without cutting away all the surrounding flesh. What is the weapon's name?",
+      "choices": ["The Gae Bolg", "Excalibur the sword", "Gungnir the spear", "The Sword of Nuada"],
+      "answer": "The Gae Bolg",
+      "context": "The Gae Bolg -- 'belly-spear' or 'notched spear' -- is Cu Chulainn's signature weapon and the one he will use to kill his foster-brother Ferdiad at the Ford in the Tain. Excalibur is Arthur's British sword; Gungnir is Odin's Norse spear; the Sword of Nuada is one of the Four Treasures of the Tuatha De Danann. Source: https://en.wikipedia.org/wiki/Sc%C3%A1thach",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Scathach is not only a teacher of arms but a prophetess: at the end of Cu Chulainn's training she foretells his whole adult career, echoing what the druid Cathbad had told him as a boy. What two paired fates does she foresee for him?",
+      "choices": ["A short life but lasting fame", "A long reign as high king of Ireland", "A quiet old age far from battle", "A death and rebirth as a god"],
+      "answer": "A short life but lasting fame",
+      "context": "The paired prophecy -- short life, lasting fame -- is the shape of every classical heroic vita, from Achilles in the Iliad to Cu Chulainn in the Tain. Both sides of the deal are honoured: Cu Chulainn dies young, and his name has survived twelve centuries in every language of the Gaeltacht. Source: https://folklorefinder.uk/legends/scathach",
+      "legend": true
+    }
+  ]
+}

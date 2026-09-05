@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse mythology, the world does not end quietly. Almost every named Aesir god dies in one great final battle, the sky splits, and the sea rises to swallow the earth. What is the Norse name for this doom of the gods?",
+      "choices": ["Ragnarok", "Yggdrasil", "Valhalla", "Midgard"],
+      "answer": "Ragnarok",
+      "context": "Ragnarok is prophesied in the Voluspa (the opening poem of the Poetic Edda) and retold by Snorri Sturluson in Gylfaginning chapters 51-52. Yggdrasil is the world-tree at the centre of the nine worlds. Valhalla is Odin's warrior-hall in Asgard. Midgard is the middle earth where humans live. Ragnarok is the specific name for the ending.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The great ending of Norse myth does not come out of nothing. Snorri Sturluson says in Gylfaginning 51 that a monstrous winter comes first, sent as a warning-sign to the whole world -- snow blowing in from every direction, the sun giving no warmth, and no growing season to break it. What is the name of the winter that comes before Ragnarok?",
+      "choices": ["Fimbulvetr", "Skidbladnir", "Nastrond", "Muspelheim"],
+      "answer": "Fimbulvetr",
+      "context": "Snorri Gylfaginning 51: the winter is Fimbulvetr, the 'Great Winter' (Old Norse fimbul- 'mighty' + vetr 'winter'). Skidbladnir is the folding-ship of the god Freyr. Nastrond is the shore of corpses in Hel. Muspelheim is the fire-realm of Surt in the south. Fimbulvetr is the specific name of the winter, and Snorri names it plainly.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Great Winter that precedes Ragnarok is not just cold. Snorri says the snow blows in from every direction, the sun gives no warmth, and one very specific thing does not happen between the winters. How many winters does Fimbulvetr last, one after another with no summer between them?",
+      "choices": ["three", "seven", "nine", "forty"],
+      "answer": "three",
+      "context": "Snorri Gylfaginning 51 and Vafthrudnismal stanzas 44-45: three winters in a row with no summer between. The number nine is Norse for cosmology (nine worlds of Yggdrasil), forty is the Biblical wilderness number, seven has no place here. Three is the specific count in the Prose Edda, and it is what makes the winter unlivable -- no growing season means no food.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "During the Great Winter the food runs out and the sky stays grey. The Voluspa poem sums up what happens to human society in one of the most-quoted stanzas of Norse literature: 'Brothers will fight brothers and be their slayers; sisters' sons will violate the kinship-bond ... an axe-age, a sword-age, shields are cloven, a wind-age, a WOLF-age, before the world plunges.' What happens to human society during Fimbulvetr?",
+      "choices": ["kin murders kin", "the seas boil", "the mountains fall", "the giants march on Asgard"],
+      "answer": "kin murders kin",
+      "context": "Voluspa stanza 45 (Poetic Edda, Bellows translation): the specific horror is that starving families turn on each other -- brothers murder brothers, uncles kill nephews, sacred kinship-bonds break. The seas will boil later when Jormungandr rises. The mountains will fall in the final battle. The giants sailing to Asgard on Naglfar comes at the end. Kin-slaughter is what Fimbulvetr does to Midgard first.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the sky above the frozen earth, one very old chase finally ends. Since the beginning of the world, according to Snorri Gylfaginning 12, a wolf has run behind the sun's chariot trying to catch it. During Ragnarok the wolf finally succeeds. What does the sky-wolf do to the sun?",
+      "choices": ["swallows it", "shatters it", "sets fire to it", "buries it in the ocean"],
+      "answer": "swallows it",
+      "context": "Gylfaginning 12 and 51: the wolf catches the sun-chariot at last and swallows the sun whole. He does not shatter, burn, or drown it. Norse eschatology is precise on this -- the sun goes DOWN a wolf's throat, and the stars go out. The image is meant to be simple and terrifying to a child listening at a hearth.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The wolf that swallows the sun has a name in the Prose Edda: it means 'treachery' in Old Norse. What is this sky-wolf called?",
+      "choices": ["Skoll", "Fenrir", "Garmr", "Managarmr"],
+      "answer": "Skoll",
+      "context": "Gylfaginning 12: the wolf is named Skoll, meaning 'treachery.' Fenrir is a different much larger wolf -- the one who bites off Tyr's hand and eventually kills Odin himself. Garmr is the hound at the gate of Hel. Managarmr ('Moon-hound') is a variant name given by some sources. Skoll is the specific name Snorri gives the sun-chaser.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Skoll has a brother-wolf who has been running behind the moon-chariot since the beginning of the world. During Ragnarok this second wolf catches his prey the same way Skoll catches the sun. His name means 'hatred' in Old Norse. What does the wolf Hati do?",
+      "choices": ["swallows the moon", "swallows the stars", "swallows the winds", "swallows the rainbow-bridge"],
+      "answer": "swallows the moon",
+      "context": "Gylfaginning 12 and 51: Hati (whose full name is Hati Hrodvitnisson) swallows the moon while his brother Skoll swallows the sun. The stars go out on their own, the winds are freed from the giants when the world burns, and the rainbow-bridge Bifrost is broken by Surt's fire-riders. Hati's specific task is the moon.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Only after the Great Winter, the kin-slaughter, and the swallowing of the sun and moon do the roosters crow and one of the gods lift a great horn to summon the Aesir to their final battle. Which god blows the horn that starts Ragnarok proper?",
+      "choices": ["Heimdallr", "Thor", "Bragi", "Forseti"],
+      "answer": "Heimdallr",
+      "context": "Voluspa stanzas 42-43 and Gylfaginning 51: Heimdallr, the watchman of the rainbow-bridge Bifrost, lifts the Gjallarhorn and blows it. Thor rides out to fight the Midgard-serpent when he hears it. Bragi is the god of poetry. Forseti is the god of justice. The horn is specifically Heimdallr's, and its blast is the summons.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the poem Vafthrudnismal Odin visits a giant and asks who, if anyone, will survive the Great Winter that ends the world. The giant Vafthrudnir answers that two people -- a man and a woman -- will live through it by hiding in a forest called Hoddmimir's holt, and will come out afterwards to repopulate the earth. What are the names of the two survivors of Fimbulvetr?",
+      "choices": ["Lif and Lifthrasir", "Ask and Embla", "Njord and Skadi", "Sigyn and Vali"],
+      "answer": "Lif and Lifthrasir",
+      "context": "Vafthrudnismal stanzas 44-45: the survivors are Lif ('Life') and Lifthrasir ('Life-yearner'), who shelter in the wood called Hoddmimir's holt through the winter and step out into the new world. Ask and Embla are the first humans, made by Odin and his brothers at the beginning of the world -- a different pair. Njord and Skadi are a Vanir god and a giantess couple. Sigyn is Loki's faithful wife and Vali her son. Lif and Lifthrasir are the specific after-winter pair.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Just before Heimdallr lifts the Gjallarhorn to summon the gods, the Voluspa says three roosters crow at the same moment across the three worlds -- one in Asgard on the world-tree, one among the giants, and one down in the halls of the dead. What is the name of the golden-combed rooster whose crowing wakes Odin's warriors in Asgard?",
+      "choices": ["Gullinkambi", "Fjalar", "Vidofnir", "Chanticleer"],
+      "answer": "Gullinkambi",
+      "context": "Voluspa stanzas 42-43: Gullinkambi ('Golden-comb') wakes the warriors in Odin's Valhalla. Fjalar is the red rooster who wakes the giants in Jotunheim. A third un-named rooster (called only 'Hel's rooster') crows in the halls of the dead. Vidofnir is a different mythical bird sitting in the branches of Mimameid. Chanticleer is the rooster of Chaucer's Nun's Priest's Tale, not a Norse creature. Gullinkambi is the specific Asgard rooster.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Some modern historians of climate believe the Norse Fimbulwinter tradition may preserve the memory of a real catastrophe -- a stretch of years when Scandinavian harvests failed under a dim grey sky and the summers grew as cold as winters. Which real event have scholars linked to the origin of the Fimbulvetr story?",
+      "choices": ["the sky-darkening of AD 536", "the Little Ice Age of the 1600s", "the freeze that ended the Vikings' Greenland colony", "the winter Charlemagne died"],
+      "answer": "the sky-darkening of AD 536",
+      "context": "In AD 536 a massive volcanic eruption (probably in Iceland or Central America) darkened the sky over Europe for months and dropped Scandinavian temperatures for years afterwards. Tree-ring evidence shows sustained cold from about 536 to 550. The Little Ice Age is a much later and slower cooling. The Greenland colony collapse is 15th century. Charlemagne died in 814. The AD 536 event lines up with the Norse Fimbulvetr tradition and is the leading scholarly candidate for its origin.",
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "After the Tuatha De god Nuada lost his hand in battle and had to give up the throne (Irish law forbade a blemished king), the Tuatha De chose a new king known as the handsomest man of his generation. He was called 'the Beautiful.' What was his name?",
+      "choices": ["Bres", "Ogma", "Dian Cecht", "Manannan"],
+      "answer": "Bres",
+      "context": "Cath Maige Tuired sec 14-24: Bres (Bres mac Elathan) was elected king of the Tuatha De after Nuada stepped down, chosen partly for his looks and partly for his half-Fomorian blood, which was meant to make peace with the enemy. Ogma is the god of eloquence; Dian Cecht is the god of healing (who later replaces Nuada's hand with a silver one); Manannan is the sea-god.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Bres was chosen partly for a political reason -- his blood was half Tuatha De and half something else, a peace-offering to Ireland's oldest enemies. His mother was the Tuatha De goddess Eriu; his father was a prince of which other people?",
+      "choices": ["the Fomorians", "the Milesians", "the Fir Bolg", "the Danaans"],
+      "answer": "the Fomorians",
+      "context": "Cath Maige Tuired sec 14: Bres's father was Elatha, a Fomorian prince (the Fomorians were the sea-raiders and monstrous elder-race of Irish myth, ruled by Balor of the Evil Eye). The Milesians are the human ancestors of the modern Irish who arrive AFTER the Tuatha De; the Fir Bolg are an earlier people the Tuatha De defeated at the FIRST Battle of Moytura; 'the Danaans' is another name for the Tuatha De themselves.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Under Bres's rule the Fomorians began to impose crushing tribute on the Tuatha De -- so heavy that the gods themselves had to work the fields like slaves. What menial job was the Dagda, chief of the Tuatha De, forced to do?",
+      "choices": ["dig trenches around forts", "shovel out the cattle-byres", "grind grain at the millstone", "sweep the king's hall"],
+      "answer": "dig trenches around forts",
+      "context": "Cath Maige Tuired sec 25: under Bres's tyranny the Dagda ('the good god,' chief of the Tuatha De and owner of the club, the harp, and the cauldron of plenty) was forced to dig ditches and trenches around forts like a common labourer -- an especial humiliation for a god of abundance. Ogma was the one made to carry firewood; grinding grain and sweeping the hall are jobs from other tales.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The same tyranny fell on Ogma, the Tuatha De god of eloquence and later credited with inventing the ogham script of straight strokes cut on the edges of standing-stones. What menial labour was Ogma made to do under Bres?",
+      "choices": ["carry firewood on his back", "haul stones from the quarry", "grind grain at the millstone", "sweep the king's hall"],
+      "answer": "carry firewood on his back",
+      "context": "Cath Maige Tuired sec 25: Ogma the eloquent, inventor of ogham writing, was set to carry firewood like a slave -- the humiliation is exactly parallel to the Dagda's ditch-digging in the previous rung, which is why the pairing has bite. Ogham is the earliest known Irish alphabet, straight strokes cut on the edges of standing-stones, still readable at Ballintaggart and other Munster sites.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Old Irish kingship rested on one great obligation above all: a king must give food, drink, and gifts freely to any guest, and above all to poets. Bres broke this obligation. When a Tuatha De poet arrived at his hall for a night's stay, what was he served for dinner?",
+      "choices": ["three dry cakes and no meat or ale", "a single slice of raw pork", "a bowl of watered barley porridge", "nothing but a cup of cold water"],
+      "answer": "three dry cakes and no meat or ale",
+      "context": "Cath Maige Tuired sec 39: Bres housed the poet in a small dark room and had him served three small dry cakes on a plate -- no meat, no butter, no ale. For an Irish king of the heroic age this was a shocking insult; hospitality (Irish oigidecht) was the king's first sacred duty.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The insulted poet left Bres's hall the next morning, walked out onto the hillside, and did something with his voice that no bard in Ireland had ever done before. What did he compose?",
+      "choices": ["the first satire ever made in Ireland", "the first battle-hymn ever sung in Ireland", "the first curse ever cast in Ireland", "the first lament ever wept in Ireland"],
+      "answer": "the first satire ever made in Ireland",
+      "context": "Cath Maige Tuired sec 39 and the medieval Irish tradition on satire: Cairpre's poem against Bres is said to be the first satire (Irish aer) ever composed in Ireland. Satire in old Irish law was so feared that satirists had legal protection and named damages; the story of Bres is the mythic charter for that whole power.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The poet who spoke that first satire against Bres, and who becomes the archetype of the Irish satirist-poet whose word could kill or unking, has his own name in the tale. Who is he?",
+      "choices": ["Cairpre mac Etaine", "Amergin mac Miled", "Fintan mac Bochra", "Sencha mac Ailella"],
+      "answer": "Cairpre mac Etaine",
+      "context": "Cath Maige Tuired sec 39: Cairpre (Coirpre) mac Etaine is the Tuatha De poet who fires the first satire. Amergin mac Miled is the poet of the Milesian invasion, who chants the great 'I am the wind on the sea' poem when the Milesians land. Fintan mac Bochra is the ancient memory-keeper who survived Noah's flood in Ireland (mythic tradition). Sencha mac Ailella is the wise judge of the Ulster Cycle.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The instant the satire was spoken, something appeared on Bres's face that Irish law refused to accept in a king. It was the same category of unfitness that had put Nuada off the throne when he lost his hand. What broke out on Bres?",
+      "choices": ["red boils", "leprosy", "black scars", "open wounds"],
+      "answer": "red boils",
+      "context": "Cath Maige Tuired: at Cairpre's word red boils sprang up on Bres's face. Old Irish law required a king to be bodily perfect -- ainmech ('a blemish') of any kind was disqualifying, which is why Nuada had to step down for his lost hand. Bres was deposed on the spot: the first Irish king brought down by a poem.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The satire that dethroned Bres survives in the Irish sources. It begins by naming four things his hall did not provide -- food quickly on a dish, a cow's milk, a man's dwelling at night, and one more absence that is the whole point of the insult against him. What is the fourth thing his hall lacked?",
+      "choices": ["means to entertain a bardic company", "a fire at the hearth", "a bed for a stranger", "a cup for a friend"],
+      "answer": "means to entertain a bardic company",
+      "context": "Cairpre's satire (Cath Maige Tuired sec 39, trans. Elizabeth Gray): 'Without food quickly on a dish, without a cow's milk on which a calf grows, without a man's dwelling under gloom of night, without means to entertain a bardic company -- let that be Bres's condition.' The whole point is the poet's own mistreatment: the king who refused the bard his due is cursed to lose everything else too.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Bres was deposed but not destroyed. He fled to his Fomorian father and returned with an army for the great final reckoning of the Tuatha De against the Fomorians. Which battle did his return bring on?",
+      "choices": ["the second Battle of Moytura", "the Battle of Tailtiu", "the Battle of the Boyne", "the Battle of Clontarf"],
+      "answer": "the second Battle of Moytura",
+      "context": "Cath Maige Tuired ('the Battle of Moytura') is the great mythological battle in which Lugh of the Long Arm kills his own grandfather Balor by putting a sling-stone through his evil eye and the Tuatha De drive the Fomorians into the sea for good. The Battle of Tailtiu is where the Tuatha De are later defeated by the incoming Milesians. The Battle of the Boyne (1690) and the Battle of Clontarf (1014) are HISTORICAL battles, not mythic.",
+      "legend": true
+    }
+  ]
+}

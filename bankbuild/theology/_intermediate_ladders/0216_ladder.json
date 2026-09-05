@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Volsunga Saga is a 13th-century Icelandic prose retelling of a much older Germanic legend-cycle. It is the direct ancestor of a famous 19th-century opera cycle by a German composer, whose Ring, dragon, and hero named Siegfried all come straight out of the saga's later chapters. Which opera cycle is descended from the Volsunga Saga?",
+      "choices": ["Wagner's Ring of the Nibelung", "Verdi's Aida", "Mozart's Magic Flute", "Puccini's Turandot"],
+      "answer": "Wagner's Ring of the Nibelung",
+      "context": "Volsunga Saga (Wikipedia); Gram (Wikipedia). Wagner's four-opera Ring of the Nibelung (Das Rheingold, Die Walkure, Siegfried, Gotterdammerung, 1869-1876) rewrites the Volsunga cycle -- Wagner's Siegfried is the saga's Sigurd, Wagner's Nothung is the saga's Gram, Wagner's Wotan is the saga's Odin. Aida is set in ancient Egypt. The Magic Flute is an 18th-century singspiel. Turandot is set in ancient China. The Ring is the specific descendant.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The hall of King Volsung is unlike any other hall in Norse legend: something huge and alive stands in the middle of the floor, with branches spreading up through the roof-beams and roots gripping the packed earth of the hall itself. What sort of thing is the Barnstokk that stands in the middle of Volsung's hall?",
+      "choices": ["a living tree", "an iron altar", "a stone throne", "a bronze cauldron"],
+      "answer": "a living tree",
+      "context": "Volsunga Saga chapter 3; Barnstokkr (Wikipedia). The Barnstokk is a great oak whose trunk stands in the hall and whose branches spread up through the roof; it is the visible symbol of the Volsung line. Iron altars, stone thrones, and bronze cauldrons appear in other Germanic hall-descriptions but not here. The tree is what makes this hall famous.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "During the wedding-feast in Volsung's hall the doors swing open and an old man walks in. He is very tall, wrapped in a dark hooded cloak, and has one very unusual thing about his face -- the same feature that in every other Norse story marks Odin travelling in disguise. What is unusual about the stranger's face?",
+      "choices": ["he has only one eye", "he has a raven on his shoulder", "he has a golden beard", "his face is bandaged"],
+      "answer": "he has only one eye",
+      "context": "Volsunga Saga chapter 3; Barnstokkr (Wikipedia). The stranger is Odin in his wanderer-disguise; the saga does not name him, but the single eye and the broad hat are the reader's cue. The raven-on-shoulder image is Odin in his high-god form, not his travelling disguise. A golden beard belongs to Thor. A bandaged face belongs to no Norse figure. The one eye is the specific tell.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The one-eyed stranger walks straight across Volsung's hall to the great tree in the middle. He draws a sword from under his cloak and does one thing to it before he leaves. What does the stranger do with the sword?",
+      "choices": ["he drives it into the trunk up to the hilt", "he lays it across the hearth-stones", "he hangs it from the highest branch", "he thrusts it through the roof"],
+      "answer": "he drives it into the trunk up to the hilt",
+      "context": "Volsunga Saga chapter 3 (Morris translation): the stranger walks to the tree and drives the sword into it up to the hilt. Laying the sword across the fire, hanging it high, or throwing it through the roof are not the story -- the sword goes INTO the living wood. This is the moment the saga is famous for.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After driving the sword into the tree the stranger turns to the hall and speaks his one condition, then walks out and is never seen leaving. What does he say the sword will be worth to the person who can pull it free?",
+      "choices": ["he shall never bear a better sword", "he shall be king of the North", "he shall never die of iron", "he shall marry Signy Volsungsdottir"],
+      "answer": "he shall never bear a better sword",
+      "context": "Volsunga Saga chapter 3: the stranger says whoever pulls the sword shall have it as a gift and 'shall never bear in hand a better sword.' The offer is not a crown, not immortality, not a bride -- it is that specific weapon. Kingship of the North is nowhere promised. 'Never die of iron' is Balder's mother's charm, not this scene. Marriage to Signy is already being celebrated at this very feast.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once the one-eyed stranger has left the hall, one guest after another walks up to the tree and tries to pull the sword out of the trunk. The Gothic king who is marrying into the family tries; Volsung himself tries. Nobody in the hall can move it. Who finally puts one hand on the hilt and pulls the sword out 'as though it had lain loose for him'?",
+      "choices": ["Sigmund", "Siggeir", "Sinfjotli", "Regin"],
+      "answer": "Sigmund",
+      "context": "Volsunga Saga chapter 3 (Morris translation): Sigmund walks up after every other man has failed and draws the blade with one hand. Siggeir is the Gothic bridegroom whose failed attempt sets up the humiliation. Sinfjotli is a son Sigmund fathers much later, in the werewolf chapters. Regin is the dwarf-smith who reforges the sword for Sigmund's son Sigurd in later chapters. Sigmund is the one at Barnstokk.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The sword that Sigmund pulls out of the Barnstokk tree is one of the most famous weapons in all Germanic legend. Its Old Norse name means 'wrath' or 'fierce.' Wagner, a thousand years later in Die Walkure, renames the same blade Nothung -- 'need' -- but the saga uses a different one-syllable name. What is the saga's name for this sword?",
+      "choices": ["Gram", "Balmung", "Tyrfing", "Gungnir"],
+      "answer": "Gram",
+      "context": "Volsunga Saga chapters 3, 14-15; Gram (Wikipedia). The saga's name is Gram. Balmung is the same sword's name in the Middle High German Nibelungenlied (a parallel medieval retelling). Nothung ('need') is Wagner's opera-name for the same blade -- a common test pitfall. Tyrfing is the cursed family sword of Hervor in Hervarar Saga. Gungnir is Odin's spear, not a sword.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As soon as Sigmund draws the sword from the trunk, the Gothic bridegroom Siggeir is consumed with envy and offers Sigmund three times the weight of the blade in gold for it on the spot. Sigmund gives a reply that guarantees a blood-feud. What does Sigmund do with Siggeir's offer?",
+      "choices": ["refuses and shames him for asking", "accepts and hands the sword over", "accepts on condition Siggeir doubles the price", "asks Volsung to decide for him"],
+      "answer": "refuses and shames him for asking",
+      "context": "Volsunga Saga chapter 3: Sigmund refuses and tells Siggeir he could have taken the sword himself if he had been worthy -- a public insult in front of the whole hall. He does not sell, does not bargain, and does not defer to his father. This insult is what turns Siggeir into an enemy and triggers the burning of Volsung's hall that follows in chapter 5.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Barnstokk scene sits at the head of a long chain of disaster. Siggeir goes home nursing the insult and invites the Volsungs to a return-feast where he ambushes them. King Volsung himself is killed and his sons are taken prisoner. Generations later a young hero named Sigurd will reforge Sigmund's shattered sword and use it for the deed the whole cycle is remembered for. What does Sigurd finally do with the reforged Gram?",
+      "choices": ["kills the dragon Fafnir", "hangs it in Valhalla", "trades it for the Rhine gold", "throws it into the sea"],
+      "answer": "kills the dragon Fafnir",
+      "context": "Volsunga Saga chapters 14-19; Gram (Wikipedia). Sigurd, Sigmund's son by his second wife Hjordis, has the smith Regin reforge the shards of Gram and drives the blade up to the hilt into the belly of the dragon Fafnir at Gnitaheid -- the moment that gives the whole Volsunga cycle its name. Hanging in Valhalla, trading for Rhine gold, or throwing it into the sea are all endings of OTHER swords in other stories. Fafnir is what Gram is remembered for killing.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Norse Barnstokk story of a lone hero pulling a sword from something no other man can move is often paired with a much later scene from a completely different tradition -- one where a boy pulls a sword out of a different kind of thing standing in a courtyard, and by doing so proves he is the rightful king. Which later medieval scene do scholars name as the cousin-story of Sigmund's Barnstokk?",
+      "choices": ["Arthur pulling Caliburn from the stone", "Roland breaking Durendal on the rocks", "Perceval seeing the Grail-procession", "Beowulf tearing off Grendel's arm"],
+      "answer": "Arthur pulling Caliburn from the stone",
+      "context": "Gram (Wikipedia); comparative Germanic-Arthurian scholarship (Byock introduction, Saga of the Volsungs, Penguin 1999). Arthur pulling the sword from the stone (Malory, Le Morte d'Arthur book 1; earlier in Geoffrey of Monmouth and Robert de Boron) is the classic Western sword-in-something scene; the Norse Barnstokk episode is its clearest ancestor. Roland shattering Durendal on the Pyrenees rocks is a different weapon-scene from the Chanson de Roland. Perceval and the Grail-procession is Chretien de Troyes. Beowulf tearing off Grendel's arm is a wrestling scene. Arthur is the specific parallel.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The bride whose wedding is being celebrated in the great hall the night the sword appears in the tree is not the daughter of a foreign king but Volsung's own daughter, Sigmund's sister. She will become one of the darkest figures in the saga. What is her name?",
+      "choices": ["Signy", "Sigrid", "Gudrun", "Brynhild"],
+      "answer": "Signy",
+      "context": "Volsunga Saga chapters 2-8. Signy is Sigmund's sister, married against her will to Siggeir at this feast; after Siggeir massacres the Volsungs she will engineer his own death and Sigmund's revenge. Sigrid is a name from other sagas. Gudrun is the woman Sigmund's son Sigurd will marry generations later. Brynhild is the valkyrie Sigurd wakes on Hindarfjall.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The name of the great tree in Volsung's hall is not a random word. Old Norse Barnstokk breaks into two parts: barn (a common Norse word) plus stokk ('trunk' or 'stock'). What does the first half of the word barn mean in Old Norse?",
+      "choices": ["child", "iron", "raven", "north"],
+      "answer": "child",
+      "context": "Barnstokkr (Wikipedia); Old Norse dictionaries (Cleasby-Vigfusson). Old Norse barn means 'child' (the same word survives in modern Scandinavian languages -- barn is still 'child' in Swedish, Norwegian, and Danish today). So Barnstokk means 'child-trunk' or 'family-trunk' -- the tree stands in the hall as the visible symbol of the Volsung line. Iron in Old Norse is jarn; raven is hrafn; north is nordr. Barn is the specific meaning here.",
+      "legend": false
+    }
+  ]
+}

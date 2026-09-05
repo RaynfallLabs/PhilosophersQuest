@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Before any of the six waves of settlers arrived in Ireland, a dark race already lived on the rocky islands and coasts and made war on every incoming people -- the primordial enemies of Partholon, Nemed, and finally the Tuatha De Danann. What are they called?",
+      "choices": ["the Fomorians", "the Fir Bolg", "the Milesians", "the Danaans"],
+      "answer": "the Fomorians",
+      "context": "The Fomorians (Old Irish Fomoire) are Ireland's ancient monstrous race in the Book of Invasions. The Fir Bolg are the fourth wave of settlers (defeated by the Tuatha De at the First Battle of Moytura); the Milesians are the human sixth wave who displace the Tuatha De; 'the Danaans' is another name for the Tuatha De themselves.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Fomorians took their headquarters on a small island off the coast of County Donegal in the far northwest of Ireland -- the same island where Balor of the Evil Eye built his crystal tower and locked his daughter Ethlinn away. Which island?",
+      "choices": ["Tory Island", "the Isle of Man", "Skellig Michael", "Iona"],
+      "answer": "Tory Island",
+      "context": "Tory Island (Irish Toraigh) off Donegal is the traditional Fomorian stronghold and Balor's fortress. The Isle of Man is the seat of the sea-god Manannan mac Lir; Skellig Michael off Kerry is an early Christian monastic site; Iona off Scotland is Columba's monastery.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Book of Invasions describes the Fomorians as MISSHAPEN sea-monster people. In the most common description a Fomorian warrior has only one of each of three body parts a whole man would have two of. Which three?",
+      "choices": ["one eye, one arm, one leg", "one hand, one foot, one ear", "one shoulder, one hip, one knee", "one lip, one nostril, one tooth"],
+      "answer": "one eye, one arm, one leg",
+      "context": "Wikipedia and Book of Invasions tradition: many Fomorians in the primary tales have one eye, one arm, and one leg -- a mirror-image of the Irish blemish-taboo that put Nuada off the throne when he lost a single hand. Some Fomorians are also given human bodies with goat heads.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Fomorian name FOMOIRE breaks into 'fo' (meaning 'under') plus a second element scholars still argue about. On one reading the second half means 'sea'; on the other it means 'demon' or 'phantom'. What does the first half, 'fo', mean?",
+      "choices": ["under", "over", "against", "beyond"],
+      "answer": "under",
+      "context": "Old Irish 'fo' = 'under', giving readings 'under-sea ones' (fo + mor/mur) or 'under-demons' (fo + a word for phantom/demon). The name itself carries the sense of something OLDER than the surface world -- a primal race from below. 'Over', 'against', and 'beyond' are the wrong prefixes.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Under the Fomorian chief Conand, who ruled from his tower on Tory Island, the third wave of Irish settlers (the people of Nemed) were forced to hand over a crushing tribute every year on the eve of Samhain (November 1). What fraction of their children and grain did they have to give?",
+      "choices": ["two-thirds", "one-half", "one-tenth", "nine-tenths"],
+      "answer": "two-thirds",
+      "context": "The Book of Invasions and the Conand-mythology tradition: the Nemedians paid two-thirds of their children, grain, and cattle to Conand's Tower on Tory Island every Samhain. The tribute is the mythic charter for Samhain as the sinister half of the Celtic year. One-half, one-tenth, and nine-tenths are the wrong fractions.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Nemedians eventually rose against Conand's tribute, stormed his tower on Tory Island, and were nearly wiped out in the counter-attack -- only a tiny remnant survived the Fomorian reprisal to leave Ireland. How many Nemedian survivors are named in tradition?",
+      "choices": ["thirty", "three hundred", "a thousand", "twelve"],
+      "answer": "thirty",
+      "context": "The Book of Invasions: after the storming of Conand's Tower and the Fomorian counter-attack, only thirty Nemedians survived, and they fled Ireland in different directions -- the ancestors, in tradition, of the Fir Bolg and (through Britain) of the Tuatha De themselves.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Two of the greatest Tuatha De heroes were themselves HALF-FOMORIAN by blood -- born from a mixed union between Tuatha and Fomorian. Bres, the deposed king, was one. Which other famous Tuatha De hero also had a Fomorian mother (Ethniu, Balor's daughter)?",
+      "choices": ["Lugh", "the Dagda", "Ogma", "Nuada"],
+      "answer": "Lugh",
+      "context": "Lugh's father Cian was Tuatha De and his mother Ethniu was Balor of the Evil Eye's daughter, locked in the crystal tower on Tory Island. So the young champion who kills Balor at Moytura is killing his own grandfather. Bres, the Dagda, Ogma, and Nuada are all full Tuatha De by ancestry -- only Bres and Lugh have the mixed line.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The pattern of the Tuatha De vs the Fomorians -- young order-bringing gods overthrowing an older race of primordial giants -- has close cousins in other pillars of Western myth. In NORSE myth, which race of primordial giants plays the same role?",
+      "choices": ["the Jotnar", "the Vanir", "the Einherjar", "the Alfar"],
+      "answer": "the Jotnar",
+      "context": "The Jotnar (frost-giants and fire-giants of Jotunheim, Muspelheim, and elsewhere) are the Norse structural parallel to the Fomorians -- an older, wilder race the Aesir must fight and eventually die against at Ragnarok. The Vanir are a second god-family the Aesir reconcile with; the Einherjar are Odin's dead warrior host in Valhalla; the Alfar are the elves.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The war between the Tuatha De and the Fomorians ended in one climactic battle in County Sligo where Lugh killed his grandfather Balor with a sling-stone and the Fomorian host was broken and driven into the sea forever. Which battle?",
+      "choices": ["the Second Battle of Moytura", "the Battle of the Boyne", "the Battle of Tailtiu", "the Battle of Clontarf"],
+      "answer": "the Second Battle of Moytura",
+      "context": "Cath Maige Tuired ('the battle of the plain of pillars') is the great mythological showdown that ends the Fomorian threat. The FIRST Battle of Moytura was Tuatha De vs Fir Bolg (where Nuada lost his hand). The Battle of Tailtiu is where the Tuatha De later fall to the Milesians; the Battle of the Boyne (1690) and Clontarf (1014) are historical Irish battles, not mythic.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Traditional Aran Islanders credited the Fomorians with raising the great stone forts that still stand on the sea-cliffs of the largest Aran island -- rings of drystone wall on the very edge of the ocean, hundreds of feet above the waves. Which fort is the most famous of these Fomorian-attributed ruins?",
+      "choices": ["Dun Aengus", "Dun Aluinne", "Cashel of the Kings", "the Grianan of Aileach"],
+      "answer": "Dun Aengus",
+      "context": "Dun Aengus (Dun Aonghasa) on Inishmore in the Aran Islands is a semicircle of drystone rampart on a cliff-edge 300 feet above the Atlantic; local tradition assigns it to the Fomorians, though archaeology dates it to the Iron Age. Dun Aluinne is an inland ringfort; the Cashel of the Kings is the seat of the kings of Munster; the Grianan of Aileach is a hilltop ringfort near Derry.",
+      "legend": true
+    }
+  ]
+}

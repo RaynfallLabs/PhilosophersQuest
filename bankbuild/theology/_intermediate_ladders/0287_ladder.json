@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Robin Hood and his band of outlaws famously live hidden in the trees of one great English forest, in the county of Nottingham in the middle of the country. In WHICH forest is the greenwood band hidden?",
+      "choices": ["Sherwood Forest", "the New Forest", "the Forest of Arden", "Epping Forest"],
+      "answer": "Sherwood Forest",
+      "context": "Sherwood Forest in Nottinghamshire is the ballad-home of the Merry Men (with an alternate northern haunt at Barnsdale in Yorkshire). The New Forest was William the Conqueror's Hampshire hunting reserve; the Forest of Arden is Shakespeare's setting in As You Like It; Epping Forest lies east of London. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "So as not to be seen by foresters and the Sheriff's men when they move under the trees, Robin and the Merry Men all dress in a distinctive dyed woollen cloth, named for the English town whose weavers produced it. What COLOUR of cloth is the band's uniform?",
+      "choices": ["Lincoln green", "Kendal red", "Burgundy black", "Coventry blue"],
+      "answer": "Lincoln green",
+      "context": "'Lincoln green' was a woollen cloth dyed with woad and weld in the city of Lincoln -- famous enough that Chaucer and the ballads name it. Kendal green (a duller cloth) also existed but is a different tradition. The other three colour-names here are invented for parity. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Robin Hood's signature WEAPON in the ballads is the same weapon that had won two of the most famous English victories of the previous century -- Crecy in 1346 and Agincourt in 1415. What weapon does Robin carry across his back in the medieval ballads?",
+      "choices": ["the English longbow", "the Norman crossbow", "the two-handed sword", "the peasant's flail"],
+      "answer": "the English longbow",
+      "context": "The English longbow -- yew, six feet long, drawn with a 100-pound pull -- was the folk-hero weapon of Robin's own generation of readers. At Crecy and Agincourt English longbowmen shattered the French armoured cavalry; every English yeoman by law had to practice at the butts. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The medieval ballads are careful to place Robin in a specific SOCIAL CLASS: not a peasant tied to a lord's land, not a knight of gentle birth, but somewhere in the free middle -- a commoner who could own his own land and bear arms. What is Robin's ballad-rank called?",
+      "choices": ["a yeoman", "a serf", "a squire", "a franklin"],
+      "answer": "a yeoman",
+      "context": "The Gest of Robyn Hode calls Robin a 'gode yeman' (good yeoman) in its opening lines -- a free commoner of the middling English sort. A serf was bound to the land under a lord; a squire was a knight-in-training of gentry rank; a franklin was a wealthy freeholder just below the gentry -- adjacent but not the ballad-word. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In the earliest surviving Robin Hood ballads the Merry Men are a much smaller band than the modern films show. Only THREE named companions of Robin appear in those earliest texts: Little John, Much the Miller's Son, and one third figure. Which of these named Robin-Hood characters IS in the earliest fifteenth-century ballads as the third companion?",
+      "choices": ["Will Scarlet", "Friar Tuck", "Alan-a-Dale", "Maid Marian"],
+      "answer": "Will Scarlet",
+      "context": "The three named early Merry Men are Little John, Much the Miller's Son, and Will Scarlet (spelled 'Scathelock' or 'Scarlok' in the fifteenth-century texts). Friar Tuck, Alan-a-Dale, and Maid Marian all join the tradition later. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Two figures everyone thinks of as part of Robin's core company are ABSENT from the earliest medieval ballads -- both arrived in the legend LATER, through May Day village games and stage plays before working their way into the printed story. WHICH two later joined the band?",
+      "choices": ["Maid Marian and Friar Tuck", "Little John and Will Scarlet", "Alan-a-Dale and Much the Miller", "King Richard and Prince John"],
+      "answer": "Maid Marian and Friar Tuck",
+      "context": "Maid Marian entered the tradition through the May Day games (originally as the queen of the May with a separate character called Robin), and Friar Tuck entered through Tudor stage plays; neither appears in the fifteenth-century ballads. Little John, Will Scarlet, Alan-a-Dale and Much the Miller ARE in the ballads. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The single most famous phrase attached to Robin Hood today is NOT in any of the medieval ballads at all -- it is a much LATER paraphrase from an eighteenth-century collection by Joseph Ritson (1795) and Howard Pyle's children's novel of 1883. Which slogan is the later invention?",
+      "choices": ["robs from the rich and gives to the poor", "steals from Norman and shares with Saxon", "takes from the king and gives to the church", "spoils the tax-man and clothes the widow"],
+      "answer": "robs from the rich and gives to the poor",
+      "context": "The 'rich-to-poor' formula is a Ritson / Howard Pyle nineteenth-century summary; the medieval ballads themselves show Robin lending money to distressed knights (Sir Richard at the Lee) and helping impoverished yeomen -- charity WITHIN his own class, not modern redistribution. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "The medieval ballads do NOT actually show Robin robbing rich strangers to hand loot to peasants. In the fifteenth-century Gest of Robyn Hode his charity is directed carefully at people of his OWN social class. WHICH group is Robin generous to in those medieval ballads?",
+      "choices": ["distressed knights and impoverished yeomen", "the widows and orphans of Nottingham", "the beggars of the London roads", "the villeins of the Sheriff's manors"],
+      "answer": "distressed knights and impoverished yeomen",
+      "context": "The great charity-episode of A Gest of Robyn Hode is Robin lending 400 pounds to Sir Richard at the Lee, a knight in danger of losing his lands to the Abbot of St Mary's. It is help WITHIN Robin's estate of society (yeomen and knights, both free ranks), not the modern class-warfare story. Source: en.wikipedia.org/wiki/A_Gest_of_Robyn_Hode.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Gest of Robyn Hode (Child 117), the great fifteenth-century poem, actually names the king in Robin's England only vaguely as 'Edward' -- some scholars argue Edward III. The now-familiar setting of Robin in the reign of RICHARD THE LIONHEART, opposed by an evil Prince John, is not in the medieval ballads at all -- it is a NOVELIST'S invention. Which novel by Sir Walter Scott first grafted the Richard / Prince John frame onto the Robin Hood story?",
+      "choices": ["Ivanhoe", "Waverley", "Kenilworth", "The Talisman"],
+      "answer": "Ivanhoe",
+      "context": "Sir Walter Scott's 1819 novel IVANHOE placed the Robin Hood story in the reign of Richard I (returning from crusade) with Prince John as villain; every twentieth-century film uses that Scott frame. Waverley (1814), Kenilworth (1821), and The Talisman (1825) are other Scott novels, all real, none of them the Robin one. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "A Gest of Robyn Hode -- the great fifteenth-century Robin poem, roughly 1,824 lines of ballad verse -- is not one continuous story but is broken by the poet into a specific number of long sections. What NAME does the Gest give to its sections?",
+      "choices": ["fyttes", "cantos", "gestes", "chansons"],
+      "answer": "fyttes",
+      "context": "The Gest is divided into EIGHT FYTTES (an old English word for a division of a long poem, related to 'fit' as in 'fitting together'). 'Canto' is Italian, from Dante and Ariosto; 'geste' is the whole-poem genre-name (as in 'chanson de geste'); 'chanson' is French for song. Source: en.wikipedia.org/wiki/A_Gest_of_Robyn_Hode.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "In the honest search for a real historical Robin Hood the trail runs cold: no proven historical original has ever been found. The name 'Robert Hod' does show up in thirteenth-century English court records, but scholars believe it appears there as a common label -- not as a real man's Christian name at all. What did 'Robert Hod' most likely FUNCTION AS in those court records?",
+      "choices": ["a stock label for any outlaw, like modern 'John Doe'", "a real given name shared by many Yorkshire men", "a court code-word meaning 'runaway serf'", "a Norman French insult meaning 'village thief'"],
+      "answer": "a stock label for any outlaw, like modern 'John Doe'",
+      "context": "Historians such as J. C. Holt argue that 'Robert Hod' (and 'Robynhod' as a surname) appears in thirteenth-century plea rolls as a stock label for any outlaw -- much as 'John Doe' does in modern American courts. The medieval usage may in fact draw ON the outlaw-legend rather than be its source. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The surname 'HOOD' looks like a nickname taken from the ballads, but etymologists say the direction of borrowing is probably the other way round -- the name 'Hood' comes first from a real English trade or garment, and the ballad-hero's surname was slotted in from there. What real everyday thing did the surname 'Hood' originally point to?",
+      "choices": ["the hood (headcovering) or the making of hoods", "the wooden hood over a blacksmith's forge", "the Old English word for a woodland spirit", "the hooded falcons of a lord's hunting party"],
+      "answer": "the hood (headcovering) or the making of hoods",
+      "context": "'Hood' is an occupational or descriptive surname from medieval English -- either a maker of hoods (like 'Baker', 'Fletcher') or a man known for wearing one. The ballad-hero certainly wears a hood; whether the outlaw is named FROM the garment or the garment happens to match the name, the surname predates and is independent of the ballads. Source: en.wikipedia.org/wiki/Robin_Hood.",
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, one of the gods is often described walking the roads of Midgard disguised as an old man in a broad hat pulled down low, a grey-blue cloak, and a walking staff. He has only one eye, having traded the other long ago for a drink from Mimir's well. Which god is the wanderer in these tales?",
+      "choices": ["Odin", "Thor", "Freyr", "Heimdall"],
+      "answer": "Odin",
+      "context": "The one-eyed wanderer in the broad hat is Odin, All-Father of the Aesir. Thor is red-bearded and rides a goat-cart, never disguises himself as an old man. Freyr is the Vanir god of harvests. Heimdall is the golden guardian of the Bifrost bridge -- he stays at his post.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Norse people said that on stormy winter nights, especially in the twelve days after the winter solstice, you could sometimes hear a ghostly army thundering through the sky overhead -- hoofbeats, hounds baying, a spear-carrying rider leading a horde of the dead. What is this sky-riding host called in English?",
+      "choices": ["the Wild Hunt", "the Long March", "the Silver Chase", "the Grey Charge"],
+      "answer": "the Wild Hunt",
+      "context": "The Wild Hunt is the English name for the sky-riding host of the dead led by Odin -- Oskoreia in Scandinavia, Wutende Heer in Germany. The other three names are not real folklore terms. In the twelve nights of Yule, farmers latched their shutters and left offerings out for the riders passing overhead.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Grimnismal, a stranger in a broad hat and dark cloak arrives at the hall of King Geirroth of the Goths. The king suspects him of being a spy or a wizard and demands his name. The stranger refuses. Geirroth orders him seized and tortured to force him to speak. What form of torture does Geirroth use on the captive?",
+      "choices": ["seated between two roaring fires for eight nights", "hung upside-down from a rafter for a day", "tied to a stake and lashed at dawn", "sealed alive in a barrel of brine"],
+      "answer": "seated between two roaring fires for eight nights",
+      "context": "Geirroth sets the captive on a bench between two fires and leaves him there for eight nights, hoping thirst and heat will loosen his tongue. This is the setup for the entire Grimnismal -- the captive stays silent for eight days and then, on the ninth, begins to speak. In some translations the count is 'eight nights and into the ninth day'.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Norse folklore Odin does not ride the winter sky alone. He rides at the head of a ghostly procession -- riders, hounds, and the restless dead -- on his most famous mount. Which horse carries Odin through the sky in the Wild Hunt?",
+      "choices": ["Sleipnir", "Gullfaxi", "Grani", "Skinfaxi"],
+      "answer": "Sleipnir",
+      "context": "Sleipnir is Odin's eight-legged horse, born of Loki (who became a mare) and the giant stallion Svadilfari. Gullfaxi ('Golden-Mane') belonged to the giant Hrungnir and later to Thor's son Magni. Grani was Sigurd the dragonslayer's horse. Skinfaxi ('Shining-Mane') pulls the chariot of Day across the sky.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As the captive between the fires finally begins to speak in the Grimnismal, only one person in Geirroth's hall has shown him any mercy -- the king's own young son, who slipped between the fires with a full drinking-horn and gave him water. What is the boy's name?",
+      "choices": ["Agnar", "Vidar", "Baldr", "Sigmund"],
+      "answer": "Agnar",
+      "context": "Agnar is Geirroth's ten-year-old son, named after the king's own brother. Because he alone gave the captive drink, the stranger promises that Agnar will one day be lord of the Goths in his father's place -- a prophecy that comes true after Geirroth's death. Vidar is Odin's silent son who kills Fenrir at Ragnarok. Baldr is the shining son of Odin and Frigg. Sigmund is the Volsung hero, father of Sigurd.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Instead of giving his name, the captive between Geirroth's two fires begins to RECITE names -- and does not stop. He names himself Har the High, then Jafnhar Just-as-High, then Thridi the Third, then Grimnir the Masked, then Ganglari the Wanderer, then Bolverk the Ill-Worker, then Hangatyr the God-of-the-Hanged. Roughly how many names does he give before the king understands whom he has been torturing?",
+      "choices": ["about forty", "about nine", "about twelve", "about three"],
+      "answer": "about forty",
+      "context": "The captive recites over forty of his own names -- one of the longest name-catalogues in the Poetic Edda -- and only near the end does the king realise the stranger has been Odin himself all along, and that he has just spent eight nights torturing the All-Father in his own hall.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The captive whom Geirroth has finally recognised as Odin fixes him with his one eye. The king leaps up in horror to pull his guest from between the fires -- but he has been sitting with his sword resting hilt-up on his knees, and the moment he stands the blade falls. How does King Geirroth die?",
+      "choices": ["he stumbles onto his own falling sword and is impaled", "Odin stabs him with the spear Gungnir", "the fires leap out and burn him to ash", "his own hounds turn and tear him apart"],
+      "answer": "he stumbles onto his own falling sword and is impaled",
+      "context": "Grimnismal, closing prose: Geirroth's sword slips off his knee and falls hilt-down; when he lurches forward to help his captive, he trips and drives himself onto the point. Odin does not have to lift a hand -- he only had to be recognised. The moral (Norse-style) is that fate cannot be escaped: Odin had already chosen Geirroth's brother-in-name Agnar for the throne, and now the throne is empty.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Scandinavia the ghostly winter ride of the dead across the sky is not called the Wild Hunt -- it has an older native name meaning 'the Terrifying Ride', still used in Norwegian villages a thousand years after the conversion to Christianity. What is the Old Norse / Norwegian name for the Wild Hunt?",
+      "choices": ["the Oskoreia", "the Einherjar", "the Ragnarok", "the Landvaettir"],
+      "answer": "the Oskoreia",
+      "context": "Oskoreia (also spelled Oskorei, Oskorreid) means 'the Terrifying Ride' or 'the Thundering Host'. Another Norwegian name is Odensjakt, 'Odin's Hunt'. In German it is Das Wutende Heer, 'the Furious Army' (from Wodan, Odin's German name), and Die Wilde Jagd, 'the Wild Hunt', which the English name translates. The wrong choices are real Norse terms but different things: the Einherjar are Odin's chosen warriors in Valhalla waiting for Ragnarok, the Ragnarok is the doom of the gods itself, and the Landvaettir are the land-spirits who guard the ground.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Wild Hunt legend lived on across Europe for a thousand years after the Christian conversion, but the huntsman's identity changed by region. In Walter Map's 12th-century Latin chronicle, the leader is a legendary British king who visited the Otherworld, returned three hundred years later, and could never dismount from his horse. What is that king's name?",
+      "choices": ["Herla", "Arthur", "Herne", "Beowulf"],
+      "answer": "Herla",
+      "context": "King Herla, in Walter Map's De Nugis Curialium (c. 1180), feasts with a fairy king, rides home, and finds three centuries have passed; his court are dust, and he and his men are doomed to ride forever above the earth. The Old French word 'Herlequin' (later 'Harlequin') comes from his name. Arthur and Herne the Hunter ARE both named as Wild Hunt leaders in other sources (Gervase of Tilbury names Arthur; English folklore names Herne, dramatised in Shakespeare's Merry Wives of Windsor) -- but the Otherworld-and-three-centuries story is specifically Herla's. Beowulf is a Geatish hero of an entirely different Anglo-Saxon poem, not a Wild Hunt figure.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Odin's wanderer-image -- an old man with one eye, a broad hat pulled low, a long grey cloak, a walking-staff, and secret knowledge -- was directly borrowed by a 20th-century author who called the character he built from it 'an Odinic wanderer' in a 1946 letter. Which later fantasy figure did Odin's disguise most directly inspire?",
+      "choices": ["Gandalf the Grey, in Tolkien's Middle-earth", "Merlin, in the Arthurian romances", "Saruman the White, in Tolkien's Middle-earth", "Prospero, in Shakespeare's The Tempest"],
+      "answer": "Gandalf the Grey, in Tolkien's Middle-earth",
+      "context": "J. R. R. Tolkien, in a 1946 letter to Stanley Unwin, called Gandalf 'an Odinic wanderer' -- the broad hat, the staff, the grey cloak, the wide travels, the secret name-hoard. Merlin's roots are older and Celtic, not Norse. Saruman is Tolkien's fallen wizard, not the disguise-image. Prospero is a Shakespearean sorcerer with different roots.",
+      "legend": false
+    }
+  ]
+}

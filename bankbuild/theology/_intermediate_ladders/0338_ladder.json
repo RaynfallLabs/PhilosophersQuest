@@ -1,0 +1,83 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The day after John the Baptist first pointed him out at the Jordan, Jesus met a young man from Bethsaida -- the same fishing town as Peter and Andrew -- and called him with two words: 'Follow me.' Which of the Twelve was this?",
+      "choices": ["Philip", "Thomas", "Matthew", "Jude"],
+      "answer": "Philip",
+      "context": "John 1:43-44 KJV: 'The day following Jesus would go forth into Galilee, and findeth Philip, and saith unto him, Follow me. Now Philip was of Bethsaida, the city of Andrew and Peter.'",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Just after being called by Jesus, Philip ran to find a friend and told him excitedly, 'We have found him, of whom Moses in the law, and the prophets, did write -- Jesus of Nazareth, the son of Joseph.' What was the friend's name in John's gospel?",
+      "choices": ["Nathanael", "Thaddaeus", "Simeon", "Lazarus"],
+      "answer": "Nathanael",
+      "context": "John 1:45 KJV. John's gospel alone gives this recruiting scene, and John is the only gospel that uses the name Nathanael.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Philip's friend was not impressed at all with the news that a Messiah had turned up from a nowhere village in the hills. What was his sceptical one-liner in reply?",
+      "choices": [
+        "Can there any good thing come out of Nazareth?",
+        "Is not this the carpenter's son from up the road?",
+        "Who among the prophets ever came from Galilee?",
+        "Why hearken to a man of no name and no city?"
+      ],
+      "answer": "Can there any good thing come out of Nazareth?",
+      "context": "John 1:46 KJV. Nazareth was a small, undistinguished village in the Galilean hills. Nathanael's opening line reads as the friendly sneer of a man from a slightly better-known town at the news that his neighbour has produced a prophet.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Philip did not argue with his friend's Nazareth jibe. Instead he gave a three-word invitation that has become one of the most-quoted lines in the whole gospel of John. What did Philip say?",
+      "choices": ["Come and see", "Follow me now", "Watch and pray", "Ask and receive"],
+      "answer": "Come and see",
+      "context": "John 1:46 KJV. The phrase is often preached as a model of quiet witness -- no dispute, no proof, just an invitation to look.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "As the sceptical friend walked up, Jesus greeted him with a compliment from across the way: 'Behold an Israelite indeed, in whom is no...' -- what?",
+      "choices": ["Guile", "Fear", "Fault", "Doubt"],
+      "answer": "Guile",
+      "context": "John 1:47 KJV. 'Guile' means deceit or cunning -- Jesus is calling him a straightforward, honest man. Given his blunt Nazareth remark a moment before, the reader has just seen the trait for themselves.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Startled that this stranger seemed to know him, Nathanael asked, 'Whence knowest thou me?' Jesus answered that he had seen him before Philip ever fetched him -- in a particular spot. Where does Jesus say he saw Nathanael?",
+      "choices": [
+        "Under the fig tree",
+        "Down at the water's edge",
+        "Beside the winepress",
+        "Up on the threshing floor"
+      ],
+      "answer": "Under the fig tree",
+      "context": "John 1:48 KJV: 'Before that Philip called thee, when thou wast under the fig tree, I saw thee.' The fig tree in Jewish tradition was a place of study and prayer -- 'every man under his vine and under his fig tree' (Micah 4:4).",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Won over on the spot by that one detail, Nathanael answered Jesus with a two-part confession -- naming him both a son and a king. What was his declaration?",
+      "choices": [
+        "Rabbi, thou art the Son of God; thou art the King of Israel",
+        "My Lord and my God, blessed art thou among prophets",
+        "Thou art the Christ, the Son of the living God",
+        "Hosanna to the Son of David; blessed is he that cometh"
+      ],
+      "answer": "Rabbi, thou art the Son of God; thou art the King of Israel",
+      "context": "John 1:49 KJV. Compare Peter's later confession at Caesarea Philippi (Matthew 16:16) -- Nathanael's has the same substance but comes on his very first meeting.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Three of the four gospels never mention Nathanael by name at all -- but they do list a disciple always paired with Philip in the roll of the Twelve, whom later Christian tradition identifies as the same man. What is Nathanael's name in Matthew, Mark, and Luke?",
+      "choices": ["Bartholomew", "Thaddaeus", "Simon the Zealot", "Matthias"],
+      "answer": "Bartholomew",
+      "context": "Matthew 10:3, Mark 3:18, Luke 6:14. 'Bartholomew' is a patronymic -- Bar-Tolmai, 'son of Talmai' -- a family name rather than a given one, which is why tradition reads Nathanael Bar-Tolmai as a single man with a first name plus a surname.",
+      "legend": true
+    }
+  ]
+}

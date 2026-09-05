@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Arthurian legends, one knight is Arthur's foster-brother: they grew up together in the same household believing they were natural brothers, before the sword-in-the-stone revealed Arthur's true parentage. What is the foster-brother's name?",
+      "choices": ["Sir Kay", "Sir Bedivere", "Sir Lancelot", "Sir Gawain"],
+      "answer": "Sir Kay",
+      "context": "Sir Kay (Welsh Cei, French Ke) is the son of Sir Ector, in whose house Merlin had hidden the infant Arthur. Bedivere is Kay's close companion but not Arthur's foster-brother; Lancelot is fostered by the Lady of the Lake, not Arthur; Gawain is Arthur's blood nephew, not foster-brother.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In Malory Book I, on the day the sword-in-the-stone was pulled, Sir Kay and young Arthur rode to a New Year's tournament in London with Kay's father. What was the father's name, the knight in whose house Arthur had been secretly fostered from infancy?",
+      "choices": ["Sir Ector", "Sir Bors", "Sir Uwain", "Sir Kynon"],
+      "answer": "Sir Ector",
+      "context": "Merlin gave the infant Arthur to Sir Ector to raise, so no one would know he was Uther's son. Sir Bors is one of the Grail knights; Sir Uwain is Morgan le Fay's son; Sir Kynon is a companion of Owain in the Welsh tradition.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Kay's court office is the reason Gareth-in-disguise ends up scrubbing pots for a year: it puts Kay in charge of who gets fed at Arthur's tables and how the household is run. Malory calls Kay by this office as often as by his name. What is the office?",
+      "choices": ["seneschal", "marshal", "chamberlain", "constable"],
+      "answer": "seneschal",
+      "context": "The seneschal ran the king's household, feasts, and dining hall; Kay is 'Sir Kay the Seneschal' throughout Malory. The marshal ran the stables and tournaments; the chamberlain ran the king's private rooms and bedchamber; the constable commanded the king's soldiers in the field.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In Malory Book I, the sword-in-the-stone episode happens partly because Kay forgot something on the day of the New Year's tournament in London and sent Arthur back to fetch it. What had Kay left behind at the family's lodging?",
+      "choices": ["his sword", "his shield", "his helm", "his lance"],
+      "answer": "his sword",
+      "context": "Kay realised only on the way to the tournament that he was unarmed with a blade. Arthur rode back, found the inn locked, saw the sword standing in the stone in a nearby churchyard, and pulled it out to bring to Kay. A knight might arrive at a tournament without a spare shield or helm and borrow; a sword was harder to borrow at short notice.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Arthur returned from the locked lodging carrying the sword he had pulled from the stone, Kay recognised it and briefly tried to claim credit for the deed himself. Who forced Kay to admit the truth about who had actually drawn the sword?",
+      "choices": ["Sir Ector", "Merlin", "the Archbishop of Canterbury", "the Lady of the Lake"],
+      "answer": "Sir Ector",
+      "context": "Malory Book I. Ector had Kay lay hand on holy relics and swear how he had come by the sword; Kay confessed, and Ector then had Arthur put the sword back in the stone and pull it out again in front of him. Merlin arranged the sword-test but was not present at this exact moment; the Archbishop presided at the churchyard trials that followed; the Lady of the Lake gives Excalibur later, a different sword.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Kay's defining trait in Malory's Round Table stories is his sharp tongue. Which of the following knights did Kay famously mock and put in the kitchen for a whole year under a scornful nickname, before that knight rode out and proved himself?",
+      "choices": ["Gareth of Orkney", "Bors de Ganis", "Tristan of Lyonesse", "Percival of Wales"],
+      "answer": "Gareth of Orkney",
+      "context": "Malory Book VII. Kay named the disguised Gareth 'Beaumains' ('Fair-Hands') and set him scrubbing pots for a year. In Chretien de Troyes Kay also mocks the young Perceval when he first arrives at court, but Percival is not the knight Kay puts in the kitchen for a year in Malory; Bors and Tristan arrive at court fully known as noble.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the old Welsh tale Culhwch and Olwen (about 1100), Kay is called Cei and is a magical warrior, not just a sharp-tongued seneschal. Cei can hold his breath underwater for a striking stretch of time. How long?",
+      "choices": ["nine days and nine nights", "three days and three nights", "one full moon", "seven tides"],
+      "answer": "nine days and nine nights",
+      "context": "Culhwch and Olwen names several magical powers Cei has: nine days without breath, nine days without sleep, and the ability to grow as tall as the tallest tree in the forest. Nine is a number of mythic completion in the Welsh tradition (as in the Nine Witches of Gloucester).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Culhwch and Olwen gives Cei another magical power alongside his nine-day breath and sleeplessness: on the coldest wettest days, his own body becomes useful to his cold companions. In what way?",
+      "choices": ["the heat of his hand keeps them warm and dry", "his breath drives away the storm-clouds", "his footfalls dry the mud beneath him", "his sword-arm melts the ice on the road"],
+      "answer": "the heat of his hand keeps them warm and dry",
+      "context": "The Welsh text says: 'when it would be raining hardest, whatever he held in his hand would be dry for a fist-length all around, because of the greatness of his passion; and when his companions were coldest he would be fuel to kindle their fire.'",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the Welsh Arthurian tradition, two warriors are Arthur's chief companions long before Lancelot arrives in the later French romances. Kay (Cei) is one of the two. Who is the other?",
+      "choices": ["Bedwyr", "Owain", "Peredur", "Geraint"],
+      "answer": "Bedwyr",
+      "context": "Bedwyr (later Bedivere in French and English) is Kay's constant companion in Culhwch and Olwen and other early Welsh tales; the pair are Arthur's inner circle. Owain (later Yvain), Peredur (later Perceval), and Geraint all belong to the Welsh corpus of Arthurian heroes but are protagonists of their own separate tales, not Arthur's paired inner companions.",
+      "legend": true
+    }
+  ]
+}

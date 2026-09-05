@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Snorri Sturluson's Skaldskaparmal, the strongest of all the giants has a stone heart, a stone head, a stone shield -- his whole body is made of rock. What is the name of this stone-giant who takes on Thor?",
+      "choices": ["Hrungnir", "Thrym", "Geirrod", "Utgardaloki"],
+      "answer": "Hrungnir",
+      "context": "Snorri, Skaldskaparmal 17. Hrungnir is the stone-giant Thor duels. Thrym is the giant who stole Mjolnir and demanded Freyja as a wife (Thor recovered it in a bridal veil). Geirrod is the giant Thor visits with only Grid's iron gloves. Utgardaloki is the illusionist-giant of the giant-city.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The stone-giant Hrungnir was proud above all of his horse -- so proud that he raced it against Odin's own eight-legged horse Sleipnir, with each rider wagering his own head on the outcome. What is the name of Hrungnir's horse?",
+      "choices": ["Gullfaxi", "Blodughofi", "Skinfaxi", "Hrimfaxi"],
+      "answer": "Gullfaxi",
+      "context": "Snorri, Skaldskaparmal 17. Gullfaxi means 'Golden-Mane' (Old Norse gull = gold, faxi = mane). Blodughofi is Freyr's horse; Skinfaxi ('Shining-Mane') pulls the day; Hrimfaxi ('Frost-Mane') pulls the night. Odin let Hrungnir into Asgard because of the race -- and Hrungnir got drunk and started boasting.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Drunk on Odin's mead in Asgard, Hrungnir began to boast very badly: he would kill all the gods, carry Valhalla back to Jotunheim, and take home two goddesses as trophies. Which two goddesses did Hrungnir say he would drown in his own drinking?",
+      "choices": ["Freyja and Sif", "Frigg and Idunn", "Skadi and Nanna", "Hel and Gerd"],
+      "answer": "Freyja and Sif",
+      "context": "Snorri, Skaldskaparmal 17. Freyja is the great goddess of love and gold; Sif is Thor's golden-haired wife. Frigg is Odin's wife; Idunn keeps the apples of youth; Skadi is a ski-goddess; Nanna is Baldr's wife; Hel rules the dead; Gerd is Freyr's wife. Threatening Sif specifically was threatening Thor -- Thor got called home from the east to fight.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Because Hrungnir had been under Odin's hospitality, Thor could not just kill him -- Thor had to challenge him to a formal duel on giant-ground. The giants, terrified of losing their strongest, decided to build Hrungnir a bodyguard. What was Hrungnir's bodyguard made of?",
+      "choices": ["clay", "ice", "iron", "wood"],
+      "answer": "clay",
+      "context": "Snorri, Skaldskaparmal 17. The giants raised a huge man-shape out of clay -- nine leagues tall and three leagues wide -- called Mokkurkalfi ('Mist-Calf'). They needed a heart big enough to fit inside him, but the only heart they could get was a mare's heart, and it was too timid.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The giants stuffed the huge clay bodyguard Mokkurkalfi with a heart -- but they could only find a mare's heart, and it was the wrong size and the wrong nerve. What did the mare's heart cause the clay bodyguard to do when Thor came into view?",
+      "choices": ["tremble helplessly and wet the ground beneath him", "sing a mourning song for the mare", "turn and run east into the mountains", "call out to Odin for mercy"],
+      "answer": "tremble helplessly and wet the ground beneath him",
+      "context": "Snorri, Skaldskaparmal 17. The mare's heart made Mokkurkalfi shake with terror at the sight of Thor -- Snorri says he wet the ground where he stood. Thor's servant Thialfi ran him through easily, and the clay-giant fell 'with little glory'. The real duel was Thor against Hrungnir alone.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Thor's swift servant Thialfi ran ahead of the thunder-god to the duelling ground and shouted a lie across at Hrungnir about which direction Thor was coming from. What did Thialfi tell Hrungnir?",
+      "choices": ["that Thor was coming up from under the ground", "that Thor was coming down out of the sun", "that Thor was coming inside a false giant", "that Thor was coming riding on a wolf"],
+      "answer": "that Thor was coming up from under the ground",
+      "context": "Snorri, Skaldskaparmal 17. Thialfi lied so that Hrungnir, panicked and thinking Thor would strike upward at his legs, made a fatal choice about his shield. Hrungnir laid his stone shield flat on the ground and stood on top of it -- leaving his body wide open when Thor actually came over the horizon overhead.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Believing Thialfi's lie, Hrungnir made an odd, defensive move with his stone shield -- a move that cost him the fight. What did Hrungnir do with his stone shield?",
+      "choices": ["laid it on the ground and stood on top of it", "raised it high above his head", "hung it from a branch to be a decoy", "melted it down for extra stone armour"],
+      "answer": "laid it on the ground and stood on top of it",
+      "context": "Snorri, Skaldskaparmal 17. Hrungnir stood on his own shield -- and when Thor came riding over the horizon in thunder, the giant had nothing between his chest and the sky. Both fighters threw their weapons at the same instant.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Thor threw Mjolnir, Hrungnir threw his whetstone -- and the two weapons met in mid-air. Mjolnir shattered the whetstone. The stone fragments fell across the earth, but ONE large shard did not fall to earth. Where did that one shard end up?",
+      "choices": ["lodged in Thor's forehead", "buried in Sleipnir's flank", "sunk into Yggdrasil's trunk", "sealed inside Mjolnir's head"],
+      "answer": "lodged in Thor's forehead",
+      "context": "Snorri, Skaldskaparmal 17. One large shard drove straight into Thor's forehead and stuck there. The rest of the whetstone fell to earth in pieces -- and Snorri says every whetstone in the world afterwards is a piece of Hrungnir's stone. Meanwhile Mjolnir kept flying and split Hrungnir's stone head.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Hrungnir fell dead, but his enormous stone leg fell across Thor's neck and pinned the god to the ground; even Thor could not shift it, and none of the other gods could either. Who finally lifted Hrungnir's leg off Thor?",
+      "choices": ["Thor's three-year-old son Magni", "Thor's servant Thialfi", "Thor's wife Sif", "Thor's son Modi"],
+      "answer": "Thor's three-year-old son Magni",
+      "context": "Snorri, Skaldskaparmal 17. Magni ('Mighty'), Thor's three-year-old son by the giantess Jarnsaxa, was the only one strong enough to lift the leg. Thor rewarded him with Hrungnir's horse Gullfaxi -- which Odin later grumbled at, saying such a horse should have gone to him, not to a boy.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Thor went home from the duel with the whetstone-shard still stuck in his forehead. A wise-woman was called in to sing charms over the wound so the shard would loosen and slip out. What was the name of the wise-woman who came to sing the charm?",
+      "choices": ["Groa", "Angrboda", "Sigyn", "Hyndla"],
+      "answer": "Groa",
+      "context": "Snorri, Skaldskaparmal 17. Groa (Old Norse for 'to grow / to heal') was a volva -- a Norse seeress. Angrboda is Loki's giantess wife and mother of Fenrir, Jormungand, and Hel; Sigyn is Loki's other wife who holds the bowl over him under the serpent; Hyndla is the seeress of the Hyndluljod. When Groa began to chant, Thor felt the shard move.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "As Groa chanted, Thor -- meaning to reward her with joyous news -- began telling her that he had lately met her long-lost husband Aurvandil and carried him home in a basket across the icy river Elivagar. One of Aurvandil's toes had stuck out of the basket and frozen off. What did Thor say he did with the frozen toe?",
+      "choices": ["threw it up into the sky as a star", "buried it under Yggdrasil's roots", "gave it to the ravens to eat", "set it on Aurvandil's mantel for luck"],
+      "answer": "threw it up into the sky as a star",
+      "context": "Snorri, Skaldskaparmal 17. Thor threw the frozen toe up into the sky, where Snorri says it still shines as the star called Aurvandil's Toe (Aurvandilsta). Later commentators have guessed the star was Rigel in Orion, or the Morning Star, or Alcor -- Snorri does not fix it. But the news of her husband's rescue overcame Groa: she forgot the words of the charm, and the shard stayed in Thor's forehead forever after.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the trickster Loki lives among the Aesir gods in Asgard, but Snorri opens Loki's genealogy by pointing out that Loki is not one of the Aesir by blood at all. What race are Loki's mother and father, according to Snorri's Prose Edda?",
+      "choices": ["giants", "elves", "dwarves", "Vanir"],
+      "answer": "giants",
+      "context": "Snorri, Gylfaginning 33: Loki's father is the giant Farbauti ('cruel-striker', a poetic name for lightning) and his mother is the giantess Laufey (also called Nal, 'needle'). This giant-blood plus Asgard-oath split is why the gods keep having to punish and forgive him rather than execute him outright. The Vanir are the other tribe of gods (Njord, Freyr, Freyja); the elves and dwarves are separate races again.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Poetic Edda poem Lokasenna, Loki walks uninvited into the sea-god Aegir's feast. Odin at once tells the other gods to bring a cup for Loki as well, and reminds them why he cannot be turned away. What bond does Odin invoke to make Loki welcome at the table?",
+      "choices": ["Odin and Loki are sworn brothers", "Odin is Loki's father", "Loki once saved Odin's life at sea", "Loki is married to Odin's daughter"],
+      "answer": "Odin and Loki are sworn brothers",
+      "context": "Lokasenna 9: Odin says he will not drink at the feast unless a cup is brought for Loki as well, because he and Loki once mingled their blood as sworn brothers. This oath -- an Aesir king and a giant-born trickster bound as brothers -- is the crack in Asgard through which everything Loki does gets in.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri gives Loki two Asgard brothers by oath alongside his sworn-brother Odin -- shadowy figures who are named only in the genealogy and never get their own stories. What are the names of Loki's two brothers as listed by Snorri?",
+      "choices": ["Helblindi and Byleistr", "Vili and Ve", "Baugi and Suttung", "Fjalar and Galar"],
+      "answer": "Helblindi and Byleistr",
+      "context": "Snorri, Gylfaginning 33: Loki's brothers are named Helblindi and Byleistr. Vili and Ve are Odin's two brothers. Baugi and Suttung are the giant brothers in the Mead of Poetry story. Fjalar and Galar are the two dwarves who murdered Kvasir.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Loki keeps a household in Asgard with a wife who bears him two sons named Narfi (or Nari) and Vali. Snorri names her only a few times, but her one great scene -- standing bowl-in-hand above her bound husband -- makes her one of the tenderest figures in Norse myth. What is the name of Loki's Asgard wife?",
+      "choices": ["Sigyn", "Angrboda", "Skadi", "Idunn"],
+      "answer": "Sigyn",
+      "context": "Snorri, Gylfaginning 33 (household), Gylfaginning 50 (the bowl-scene): Sigyn is Loki's Asgard wife and mother of Narfi and Vali. Angrboda is Loki's giantess-lover in Jotunheim, mother of Fenrir, Jormungandr, and Hel. Skadi is the giantess-goddess who fastens the snake over Loki's face. Idunn is the keeper of the golden apples.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In Jotunheim Loki has a second household, with a giantess who bears him three children -- children so dangerous that Odin himself will one day throw them out of Asgard when they are still young. Who is the giantess who bears Loki's three monstrous children?",
+      "choices": ["Angrboda", "Gunnlod", "Gerd", "Skadi"],
+      "answer": "Angrboda",
+      "context": "Snorri, Gylfaginning 34: Angrboda ('the boder of sorrows') bears Loki's three monster-children in Jotunheim. Gunnlod is the giant's daughter who guards the Mead of Poetry. Gerd is the giantess Freyr courts. Skadi is the huntress-giantess who becomes a goddess by marriage.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki and the giantess Angrboda produce three children between them -- and Snorri says the three are so dreadful that Odin has each one dealt with separately, sending one down to Niflheim to rule the dead, casting one into the sea, and having one bound. What are the three children Loki fathers on Angrboda?",
+      "choices": ["Fenrir the wolf, Jormungandr the serpent, and Hel", "Sigurd, Fafnir, and Regin", "Helblindi, Byleistr, and Vali", "Skoll, Hati, and Garm"],
+      "answer": "Fenrir the wolf, Jormungandr the serpent, and Hel",
+      "context": "Snorri, Gylfaginning 34: the three are Fenrir the wolf, Jormungandr the Midgard-serpent, and Hel the queen of the dead. Sigurd, Fafnir, and Regin are the three central figures of the Volsung dragon-slaying cycle. Skoll, Hati, and Garm are other Norse monster-hounds/wolves (Skoll chases the sun, Hati chases the moon, Garm guards Hel-gate).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "At Ragnarok two of the great Aesir kings die at the jaws and fangs of two of Loki's own children -- one father-line producing the deaths of both. Odin is swallowed by Fenrir the wolf; Thor kills the second monster with his hammer Mjolnir but staggers only a few steps before dropping dead of its venom. How many steps does Thor take after killing Jormungandr before he falls?",
+      "choices": ["nine steps", "three steps", "seven steps", "twelve steps"],
+      "answer": "nine steps",
+      "context": "Snorri, Gylfaginning 51; Voluspa 56: Thor kills the world-serpent Jormungandr with Mjolnir and staggers nine steps before dropping dead of its venom. Nine is a repeatedly sacred number in Norse cosmology (nine worlds of Yggdrasil, Odin's nine nights hanging on the tree). Odin, meanwhile, is swallowed whole by Fenrir; his son Vidar avenges him by tearing the wolf's jaws apart.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The giant-mason who built the wall of Asgard on a wager was about to win the sun and the moon and the goddess Freyja for his fee. The gods forced Loki to sabotage the deal, and Loki lured away the mason's great stallion Svadilfari by turning himself into a mare. What was born of that horse-shape union with Svadilfari?",
+      "choices": ["the eight-legged horse Sleipnir", "the wolf Fenrir on his second birth", "the golden boar Gullinbursti", "the horse Blodughofi ridden by Freyr"],
+      "answer": "the eight-legged horse Sleipnir",
+      "context": "Snorri, Gylfaginning 42: Loki as a mare lured Svadilfari away for a night; some months later he returned to Asgard leading an eight-legged grey colt, Sleipnir, which he presented as a gift to Odin. Gullinbursti was forged for Freyr by the dwarves. Blodughofi ('bloody-hoof') is another of Freyr's horses.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The eight-legged colt Loki bore as a mare grows into the fastest horse in the nine worlds and becomes the personal steed of one particular god, who rides him between Asgard and the other worlds and down into Hel to ransom Baldr. Which god rides Sleipnir?",
+      "choices": ["Odin", "Thor", "Freyr", "Heimdall"],
+      "answer": "Odin",
+      "context": "Snorri, Gylfaginning 42; Baldrs draumar 2: Sleipnir is Odin's own steed. Thor drives a chariot pulled by the goats Tanngrisnir and Tanngnjostr. Freyr has the horse Blodughofi and the boar Gullinbursti. Heimdall rides Gulltopp. Snorri points out (Skaldskaparmal 23) that this means Odin's own horse's mother is the trickster Loki.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the flyting-poem Lokasenna, Loki hurls insults at every god in turn, and boasts about deeds even the gods find shameful. Among his boasts is one act that is almost unique in world myth -- a thing a male god almost never does anywhere else. What does Loki boast of doing that a male god almost never does?",
+      "choices": ["giving birth to children himself as a mare", "killing his own father", "eating the flesh of his own child", "marrying his own sister"],
+      "answer": "giving birth to children himself as a mare",
+      "context": "Lokasenna 23, 33: Loki boasts of having been a mare and of having borne children -- his mare-birth of Sleipnir is one of very few examples in world myth of a male deity literally giving birth. Cronus in Greek myth eats his own children; the Volsung brother-sister marriage of Sigmund and Signy is another Norse motif but belongs to the heroic cycle, not the gods.",
+      "legend": true
+    }
+  ]
+}

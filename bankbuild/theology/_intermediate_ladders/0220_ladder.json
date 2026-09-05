@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The greatest surviving poem in the Old English language tells of a young warrior who sails across the sea to kill a hall-monster and, decades later, dies fighting a dragon. What is the name of this poem?",
+      "choices": ["Beowulf", "The Wanderer", "The Seafarer", "The Dream of the Rood"],
+      "answer": "Beowulf",
+      "context": "Klaeber's Beowulf, 4th edition (University of Toronto Press). Beowulf is 3,182 alliterative lines long and is named for its hero. The Wanderer and The Seafarer are shorter Old English elegies about exile at sea. The Dream of the Rood is an Old English dream-vision in which the cross of the crucifixion speaks. All four are real Anglo-Saxon poems; Beowulf is the one with the hall-monster and the dragon.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The poem Beowulf opens in Denmark, at the court of an old king of a people called the Scyldings. He has built the greatest mead-hall in the north and gives out rings to his warriors after every feast. What is this Danish king's name?",
+      "choices": ["Hrothgar", "Hygelac", "Scyld", "Wiglaf"],
+      "answer": "Hrothgar",
+      "context": "Beowulf lines 78-83; Klaeber's Beowulf. Hrothgar is the king of the Danes at the story's start. Hygelac is Beowulf's own king back in Geatland. Scyld Scefing is the legendary founder of Hrothgar's dynasty, whose ship-burial opens the poem. Wiglaf is the young Geatish warrior who stands with Beowulf against the dragon at the end. Hrothgar is the specific host of the great hall.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "King Hrothgar builds the greatest mead-hall in the north and gives it a name that means 'the hart,' from the great pair of antlers mounted on its gables. What is the name of Hrothgar's hall?",
+      "choices": ["Heorot", "Valhalla", "Camelot", "Barnstokk"],
+      "answer": "Heorot",
+      "context": "Beowulf lines 78-83; Klaeber's Beowulf. Heorot ('the hart') is Hrothgar's antler-gabled hall. Valhalla is Odin's hall of slain warriors in Norse myth. Camelot is King Arthur's court in the Arthurian legends. Barnstokk is the tree that stands in the middle of King Volsung's hall in the Volsunga Saga. All four are famous halls, but only Heorot is Hrothgar's.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "For a long time Heorot is a hall of feasting and song, but soon it becomes a place of grief: a monster comes out of the marshes at night to break in and eat Hrothgar's sleeping warriors. What is the name of this monster?",
+      "choices": ["Grendel", "Fafnir", "the Nemean Lion", "the Balrog"],
+      "answer": "Grendel",
+      "context": "Beowulf lines 86-193; Klaeber's Beowulf. Grendel is the fen-monster who raids Heorot. Fafnir is the dragon Sigurd kills in the Volsunga Saga -- a different Germanic monster. The Nemean Lion is Hercules's first labour, from Greek myth. The Balrog is Tolkien's invention in The Lord of the Rings, drawn on Norse hints but not itself old. Grendel is the specific Heorot-raider.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The whole poem of Beowulf survives in ONE medieval manuscript, which was very nearly lost in a fire at Ashburnham House in London in 1731 -- the flames scorched its edges but the pages held. Under what shelfmark is this manuscript catalogued today?",
+      "choices": ["Cotton Vitellius A.xv", "Codex Sinaiticus", "the Book of Kells", "the Exeter Book"],
+      "answer": "Cotton Vitellius A.xv",
+      "context": "British Library manuscript description; Kiernan, Beowulf and the Beowulf Manuscript. Cotton Vitellius A.xv (also called the Nowell Codex) is the sole Beowulf manuscript. Codex Sinaiticus is a 4th-century Greek Bible in Saint Catherine's Monastery. The Book of Kells is an illuminated Latin gospel-book in Trinity College Dublin. The Exeter Book is another Old English poetry manuscript in Exeter Cathedral (it holds The Wanderer and The Seafarer, but NOT Beowulf). Cotton Vitellius A.xv is the specific Beowulf codex.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The Beowulf poet, writing in a Christianised Anglo-Saxon world, roots his fen-monster's ancestry in the book of Genesis rather than in the Norse giant-genealogies. From which biblical ancestor is Grendel said to descend, in one of the poem's few explicit Christian framings?",
+      "choices": ["Cain", "Nimrod", "Esau", "Ham"],
+      "answer": "Cain",
+      "context": "Beowulf lines 102-114; Klaeber's Beowulf. The poet traces Grendel to Cain, the first murderer -- the killing of Abel put a curse on Cain's line, and the poet imagines Grendel as a distant, monstrous descendant of that curse. Nimrod is the mighty hunter and would-be builder of Babel. Esau is Jacob's cheated elder brother. Ham is Noah's son whose descendants were cursed for the tent-vision. All four are real Genesis figures around whom cursed lineages were built in medieval commentary; Cain is the specific one the Beowulf poet chose.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Beowulf poet stresses that Hrothgar's own warriors are helpless against Grendel not because they lack courage but for a specific reason -- something about the monster that the poet returns to more than once. What does the poem say happens when Hrothgar's warriors try to strike Grendel with an ordinary blade?",
+      "choices": ["no sword can wound him at all", "his skin turns to iron in the fight", "he vanishes in mist before the blow", "he catches every blade in his teeth"],
+      "answer": "no sword can wound him at all",
+      "context": "Beowulf lines 801-805; Klaeber's Beowulf. The poet writes that Grendel had laid a charm on the edges of all weapons -- 'no sword could bite the sinner' in translation. He does not turn to iron, does not vanish, does not disarm his attackers by mouth. The point is that ordinary weapon-craft, however brave, is useless against this enemy; only bare-handed strength will do.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "News of Hrothgar's twelve years of grief reaches a young warrior across the sea at the court of King Hygelac. He is nephew and thane to Hygelac, and his people are a southern-Scandinavian nation whose name gives the hero his own byword. To which people does the young Beowulf belong?",
+      "choices": ["the Geats", "the Danes", "the Franks", "the Angles"],
+      "answer": "the Geats",
+      "context": "Beowulf lines 194-228; Klaeber's Beowulf. The Geats were a people of what is now southern Sweden. The Danes are Hrothgar's people, the ones being saved. The Franks are the Germanic people of continental Europe from whom France takes its name. The Angles are one of the two peoples (with the Saxons) who gave England its name and its language. The Geats are the specific nation of Beowulf and his fourteen thanes.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Beowulf chooses the best fighters he can find, boards a ship, and sails from Geatland to Denmark to help Hrothgar. The poet gives an exact count of the war-band that lands at Hrothgar's door. How many thanes does Beowulf bring with him besides himself?",
+      "choices": ["fourteen", "seven", "twelve", "thirty"],
+      "answer": "fourteen",
+      "context": "Beowulf lines 194-228; Klaeber's Beowulf. The poem names 'the sturdiest thane he could find' and gives a total of fifteen sea-crafty warriors -- Beowulf plus fourteen others. Seven, twelve, and thirty are round Germanic and biblical numbers (the seven sleepers, the twelve apostles, the thirty pieces of silver) but not the number Beowulf brings to Denmark. Fourteen is the specific count.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "On his first night in Heorot, Beowulf strips off his mail and lays aside his sword. He tells Hrothgar's court he will meet Grendel with no war-gear at all, because the monster fights unarmed and it would be no fair contest otherwise. What does Beowulf declare he will fight Grendel with?",
+      "choices": ["nothing but his bare hands", "only a spear and a shield", "a magic blade of the giants", "a torch of hall-fire alone"],
+      "answer": "nothing but his bare hands",
+      "context": "Beowulf lines 675-687; Klaeber's Beowulf. Beowulf's boast is that Grendel wields no sword, so he will match him hand to hand. He does not use a spear, does not carry a torch, and the giants' blade appears only LATER in the poem, in a different fight -- against Grendel's mother, under the water. Bare-handed is the specific vow of the first night in Heorot.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Grendel comes at dark, tears open the door of Heorot, and eats one of Beowulf's sleeping men. Then he reaches for Beowulf -- who is only pretending to sleep -- and finds a grip stronger than any he has ever felt. What does Beowulf do to Grendel in the fight that leaves the monster mortally wounded?",
+      "choices": ["tears his arm from its socket", "breaks his neck against a pillar", "throws him into the hearth-fire", "chokes him with a chain from the wall"],
+      "answer": "tears his arm from its socket",
+      "context": "Beowulf lines 710-836; Klaeber's Beowulf. In the wrestling in the dark, Beowulf holds Grendel's arm so hard that when the monster tries to pull free the arm rips from the shoulder; Grendel flees back to the fen to die. He is not broken against a pillar, not thrown into fire, not chained. The severed arm is hung as a trophy above Heorot's door the next morning.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Beowulf poem places Heorot at a specific location in Denmark that Danish tradition remembers as a real village on the island of Zealand. Archaeologists digging at that village in the 20th and 21st centuries uncovered the foundations of a huge Viking-age long-hall exactly where the poem places the king's seat. At what village in Zealand did they find these hall-foundations?",
+      "choices": ["Lejre", "Uppsala", "Jelling", "Ribe"],
+      "answer": "Lejre",
+      "context": "Tom Christensen, Lejre beyond the Legend (Roskilde Museum, 2015). At Lejre on Zealand, Danish archaeologists have excavated a series of massive 6th-11th century long-hall foundations that Danish tradition (from the medieval chronicler Saxo Grammaticus onward) identifies with the seat of the Scyldings. Uppsala is the ancient royal-cult centre of Sweden. Jelling is the site of Harald Bluetooth's rune-stones in Jutland. Ribe is Denmark's oldest surviving trading town. Lejre is the specific place where the hall-foundations were found.",
+      "legend": false
+    }
+  ]
+}

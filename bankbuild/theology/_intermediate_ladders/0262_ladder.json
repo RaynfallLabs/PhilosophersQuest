@@ -1,0 +1,134 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "On the north coast of County Antrim in Northern Ireland, some 40,000 hexagonal stone columns march down out of the cliff and into the sea in a broad, flat pavement wide enough to walk on. Tourists have visited it since the 17th century, and UNESCO added it to the World Heritage list in 1986. What is this famous stretch of basalt columns called?",
+   "choices": [
+    "the Giant's Causeway",
+    "the Devil's Staircase",
+    "the Cliffs of Moher",
+    "Skellig Michael"
+   ],
+   "answer": "the Giant's Causeway",
+   "context": "The Irish name is Clochan an Aifir. Geologically the columns are the top of a 60-million-year-old cooled lava flow. Wikipedia: Giant's Causeway.",
+   "legend": false
+  },
+  {
+   "tier": 1,
+   "stem": "In the folk-legend attached to the Antrim basalt columns, the pavement is not a lava flow at all -- it is the work of a single builder who tore up rocks and set them one against another all the way across the sea toward Scotland, so he could walk over dry-shod and fight a rival on the other shore. Which Irish hero does the folk-tale name as the builder?",
+   "choices": [
+    "Fionn mac Cumhaill",
+    "Cu Chulainn",
+    "Lugh Lamhfhada",
+    "Conall Cernach"
+   ],
+   "answer": "Fionn mac Cumhaill",
+   "context": "Cu Chulainn is the hero of the Ulster Cycle; Lugh is a Tuatha De Danann warrior; Conall Cernach is a foster-brother of Cu Chulainn. In the folk-tale of the causeway Fionn is treated as a full-sized giant, which drifts from the manuscript Fenian Cycle where he is a human-scale chief of the Fianna. Wikipedia: Giant's Causeway.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "In the folk-tale of the Antrim basalt columns, the reason Fionn mac Cumhaill builds his causeway across the sea in the first place is that a rival on the other shore has been shouting insults across the water for months, and Fionn wants to settle it in person. Where does the rival live, and what is his name?",
+   "choices": [
+    "in Scotland -- his name is Benandonner",
+    "in Wales -- his name is Bran the Blessed",
+    "in the Isle of Man -- his name is Manannan mac Lir",
+    "in Norway -- his name is Ymir"
+   ],
+   "answer": "in Scotland -- his name is Benandonner",
+   "context": "Benandonner (the Red Man) shouts across the North Channel; Fionn accepts the challenge and starts building. Bran the Blessed is Welsh; Manannan is Irish; Ymir is Norse. Wikipedia: Giant's Causeway.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Fionn mac Cumhaill has torn up rocks and built his causeway most of the way across the North Channel when he catches sight of his Scottish rival up close for the first time. He stops in mid-crossing, looks properly, and runs. What has he just realised?",
+   "choices": [
+    "the rival is far bigger than he is",
+    "the rival has been dead for a year",
+    "the rival's causeway is finished first",
+    "the rival is his own long-lost brother"
+   ],
+   "answer": "the rival is far bigger than he is",
+   "context": "Fionn had assumed he was the bigger giant; halfway across he sees the size of Benandonner and turns for home to think. Wikipedia: Giant's Causeway.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "Fionn has run home to Ireland with the Scottish giant close behind him, and he has no plan and no time. His clever wife -- usually named Oonagh, though some tellings call her Sadhbh -- takes charge, tells him to lie still and not speak a word, and prepares the household to greet the rival at the door. Under what identity is she going to pass Fionn off?",
+   "choices": [
+    "her infant son sleeping in the cradle",
+    "the family's dog-boy tending the hearth",
+    "a dead uncle laid out for the wake",
+    "a deaf servant sweeping the floor"
+   ],
+   "answer": "her infant son sleeping in the cradle",
+   "context": "The whole trick turns on the giant thinking he is looking at a baby. Wikipedia: Giant's Causeway.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "When Benandonner arrives at Fionn's door roaring for a fight, Fionn's wife greets him politely, says Fionn is out hunting, and sets the Scottish giant down for tea and fresh loaves while he waits. The loaves she serves him are not ordinary bread -- she has baked something hard inside each one that makes the giant crunch and grimace, and lets her boast about how tough the men of the house must be. What has she baked into the loaves?",
+   "choices": [
+    "iron cooking-plates",
+    "quicklime lumps",
+    "smashed river-stones",
+    "hot embers from the hearth"
+   ],
+   "answer": "iron cooking-plates",
+   "context": "In the folk-tale these are iron griddles or 'bakestones' baked right into the bread -- the whole point is that if the men here eat bread this hard, the father must be enormous. Cited in Irish Central and Irish Road Trip retellings.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "Benandonner, sitting in Fionn's kitchen with his teeth ringing from the griddle-bread, finally notices the enormous 'baby' asleep in the cradle by the fire. He stares. He does the arithmetic. Then he panics and runs. What arithmetic did he just do that sends him bolting for the door?",
+   "choices": [
+    "if the baby is this size, the father must be monstrous",
+    "if the baby is this loud, the neighbours will come",
+    "if the baby is this hungry, the food will not last",
+    "if the baby is this ugly, the mother must be his match"
+   ],
+   "answer": "if the baby is this size, the father must be monstrous",
+   "context": "That inference -- father-must-be-worse -- is the whole hinge of the trick. Wikipedia: Giant's Causeway.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "Benandonner has fled back onto the causeway toward Scotland with Fionn (he thinks) about to come out of the house after him. He does not just run. As he runs he does something specific to the stone pavement under his feet, and it is this action that the folk-tale uses to explain a real fact about the modern basalt columns. What does Benandonner do to the causeway as he flees?",
+   "choices": [
+    "he tears up the stones behind him as he goes",
+    "he sinks the middle spans under the sea",
+    "he sets fire to the wooden pilings",
+    "he calls a storm down to wash it away"
+   ],
+   "answer": "he tears up the stones behind him as he goes",
+   "context": "The tearing-up is the folk-tale's answer to why the real basalt formation survives only at the two ends of the crossing and not in the middle. Wikipedia: Giant's Causeway.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The Giant's Causeway is one end of a single 60-million-year-old lava flow that also surfaces at the other end of the same crossing -- on an uninhabited Scottish island in the Inner Hebrides, in a sea-cave famous for the eerie music that ocean-swells make when they roll into its hexagonal chamber. Which cave marks the Scottish end of the same lava flow?",
+   "choices": [
+    "Fingal's Cave on the isle of Staffa",
+    "Smoo Cave in Sutherland",
+    "St Ninian's Cave in Galloway",
+    "the Bone Caves of Assynt"
+   ],
+   "answer": "Fingal's Cave on the isle of Staffa",
+   "context": "The Gaelic name for Fingal's Cave is Uamh-Binn, 'the Melodious Cave', for the sound. 'Fingal' is James Macpherson's 18th-century romanticised name for Fionn -- the folklore of the causeway and the cave are the same story with two names. Wikipedia: Fingal's Cave.",
+   "legend": false
+  },
+  {
+   "tier": 5,
+   "stem": "The folk-legend of Fionn as the giant-builder of the Antrim causeway sits awkwardly against the older manuscript tradition of the Fenian Cycle, where the same hero appears -- but not the same size. In the manuscript Fenian Cycle, who is Fionn mac Cumhaill?",
+   "choices": [
+    "a human-scale warrior chief of the Fianna",
+    "a full-sized giant like the folk-tale version",
+    "a Christian saint who tamed the Fianna",
+    "a Tuatha De Danann god fostered to mortals"
+   ],
+   "answer": "a human-scale warrior chief of the Fianna",
+   "context": "The folk-tradition swells Fionn to giant scale to fit the causeway; the older manuscripts keep him human-scale as leader of the Fianna warrior-band. Wikipedia: Giant's Causeway; Fionn mac Cumhaill.",
+   "legend": true
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "On a bend of a river in County Meath, Irish farmers five thousand years ago raised a great round mound of white quartz and dark stone, with a passage running deep inside it. In Irish myth this mound was the palace of the Dagda, chief of the Tuatha De Danann. What is the modern name of this passage-tomb, older than the pyramids of Egypt?",
+      "choices": ["Newgrange", "Tara Hill", "Skellig Michael", "the Giant's Causeway"],
+      "answer": "Newgrange",
+      "context": "Bru na Boinne (the palace of the Boyne) is the ancient Irish name for the passage-tomb known today as Newgrange, in the bend of the River Boyne in County Meath. Tara Hill is the coronation seat of the High Kings, further inland. Skellig Michael is a monastic sea-crag off Kerry. The Giant's Causeway is a basalt shore in Antrim.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The great passage-tomb on the Boyne is famous partly for its age. Stone Age farmers built it before the first stone was set at Stonehenge and before the first block was cut for the Great Pyramid of Giza. Roughly how many years ago did Neolithic Ireland raise Newgrange?",
+      "choices": ["about 5,200 years ago", "about 2,000 years ago", "about 800 years ago", "about 12,000 years ago"],
+      "answer": "about 5,200 years ago",
+      "context": "Newgrange was constructed around 3200 BC, roughly 5,200 years ago -- older than the Great Pyramids of Giza by about six centuries and older than Stonehenge by more than a thousand years. Stone Age farmers, not Celts or Vikings, raised the mound; the Tuatha De story was attached to the site much later.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In Irish myth the Dagda, chief of the Tuatha De Danann, fell in love with a woman named Boann -- but she was already married to another god of the Tuatha De, Elcmar. To hide the affair the Dagda sent Elcmar off on an errand and cast a spell on the daylight. What did the Dagda's spell do to time while Elcmar was away?",
+      "choices": ["made a single day last nine months", "reversed the sun's course across the sky", "froze the moon at its full for a year", "sank the sun beneath the sea for a winter"],
+      "answer": "made a single day last nine months",
+      "context": "In the Old Irish tale Tochmarc Etaine and the fragment De Gabail in tSida, the Dagda enchanted the sun to stand still so that Elcmar would not notice time passing, and a single day lasted nine months. In that endless day Boann conceived their son Aengus and gave birth before Elcmar returned. Reversing the sun and freezing the moon are common in Greek myth (Atreus, Zeus with Alcmene) but are not the shape of this story.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "During that endless day the Dagda and Boann conceived a son, who was hidden away in fosterage before Elcmar returned. This boy grew up not knowing his father, and would one day trick the Dagda out of Newgrange itself. What is the name of the son of the Dagda and Boann?",
+      "choices": ["Aengus", "Bres", "Ogma", "Nuada"],
+      "answer": "Aengus",
+      "context": "Aengus (also spelled Oengus, or Aengus Og, 'the young Aengus') is the child of the Dagda and Boann. He is the god of love and youth in Irish myth, best known for the swan-maiden Caer, the dream-quest of Aisling Oenguso, and the Newgrange trick. Bres is the tyrant king of the Bres ladder; Ogma is the champion who invented the ogham alphabet; Nuada is the silver-handed first king.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Aengus grew up and learned who his father was, he came to the Dagda and asked for a portion of the earth like every other Tuatha De god. The Dagda gave him an answer that would set up the whole trick to come. What did the Dagda tell his son about the land of Ireland?",
+      "choices": ["all of it had already been divided; nothing was left", "only sea-floor was still unclaimed", "he would inherit only after the Dagda's death", "he must fight another god to win his share"],
+      "answer": "all of it had already been divided; nothing was left",
+      "context": "In De Gabail in tSida ('The Taking of the Fairy Mound'), the Dagda tells Aengus that all the sidhe mounds and lands of Ireland have already been distributed among the Tuatha De. There is no share left for the latecomer. That answer is what forces Aengus into wordplay to get any place of his own -- and the place he chooses is his father's own palace on the Boyne.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Advised in some tellings by Manannan mac Lir and in others by his foster-father Midir, Aengus went back to the Dagda with a very small-sounding request. He asked to stay in Bru na Boinne for one specific length of time, and the Dagda agreed to it as a small favour. What length of time did Aengus ask to borrow the palace for?",
+      "choices": ["for a day and a night", "for the length of a single feast", "until the next full moon", "from one harvest to the next"],
+      "answer": "for a day and a night",
+      "context": "In the Old Irish text, Aengus asks for the Bru 'la ocus aidche' -- literally 'a day and a night'. The Dagda, thinking his son wants only a brief visit, agrees. The whole trick will turn on the fact that this exact Old Irish phrase can be read two different ways.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When the day and night were up and the Dagda came to take Newgrange back, Aengus refused to leave. He pointed out that the phrase he had used, 'la ocus aidche', could also be read another way in Old Irish -- and once the Dagda had granted it in those words, the palace was his forever. Which second meaning of the phrase did Aengus claim?",
+      "choices": ["'day and night' -- meaning all days and all nights forever", "'a day for a night' -- meaning one hostage in exchange", "'day upon night' -- meaning until a solar eclipse", "'the day of a night' -- meaning until midwinter"],
+      "answer": "'day and night' -- meaning all days and all nights forever",
+      "context": "Old Irish 'la ocus aidche' with the definite article dropped can mean either 'a day and a night' (one span) or 'day and night' (all of them, always). Under early Irish law of the spoken word, once the Dagda had granted the request in those exact terms, the second reading stood. The Dagda was tricked out of his own palace by his son's grammar. This is one of the earliest Irish stories of the clever-son-outwitting-the-old-father motif.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Bru na Boinne is not the only great passage-tomb on that bend of the River Boyne. Two other giant Neolithic mounds of similar age stand within a few hundred metres of Newgrange and were built by the same Stone Age culture. What are the names of the two sister passage-tombs that make up the Bru na Boinne complex with Newgrange?",
+      "choices": ["Knowth and Dowth", "Tara and Uisneach", "Emain Macha and Cruachan", "Loughcrew and Carrowmore"],
+      "answer": "Knowth and Dowth",
+      "context": "Knowth (the largest by area, ringed with more carved stones than any monument in Western Europe) and Dowth (whose passages face the winter solstice sunset, not sunrise) are the two sister mounds of Newgrange on the Boyne bend. Tara and Uisneach are inland royal seats. Emain Macha and Cruachan are the royal centres of Ulster and Connacht. Loughcrew and Carrowmore are other Irish megalithic complexes elsewhere in the country.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "One morning of the year the Neolithic builders of Newgrange aligned everything for: at sunrise on the winter solstice around 21 December, the light enters through a small opening above the door called the roof-box, travels down the nineteen-metre passage, and illuminates the inner chamber. For roughly how long each solstice morning does the sunrise light stay in the chamber?",
+      "choices": ["about 17 minutes", "about 3 seconds", "about 2 hours", "about 8 hours"],
+      "answer": "about 17 minutes",
+      "context": "Beginning around 9 a.m. on the winter solstice, the rising sun enters the roof-box, runs down the passage, and lights the inner chamber for approximately 17 minutes before the beam withdraws. Because the chamber holds only a few dozen people, access on the solstice mornings is decided by a free annual lottery run by the Office of Public Works, and the sunrise is now broadcast live to the world.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Medieval Irish scribes attached the Aengus story to Newgrange centuries after the tomb was built, and readers of the Metrical Dindshenchas have long noticed how neatly the Aengus-trick echoes the tomb's most striking natural feature. Which specific feature of Newgrange does the myth of Aengus taking the Bru 'for day and night forever' most obviously mirror?",
+      "choices": ["the winter-solstice sunrise light entering the tomb chamber", "the ring of great kerbstones around the mound's base", "the spiral carvings on the entrance stone", "the white quartz facing of the outer wall"],
+      "answer": "the winter-solstice sunrise light entering the tomb chamber",
+      "context": "Neolithic Ireland built the monument around 3200 BC; medieval Ireland attached the myth. The story of a young god who took the Bru for 'day and night' forever mirrors the one moment of the year when the sun itself enters the tomb and lingers -- one reading of the story is that the light coming down the passage is Aengus receiving the palace, or the sun visiting the lover Boann inside the tomb-womb. The kerbstones, the spirals of the entrance stone, and the white quartz are all famous features of the site but are not what the myth turns on.",
+      "legend": true
+    }
+  ]
+}

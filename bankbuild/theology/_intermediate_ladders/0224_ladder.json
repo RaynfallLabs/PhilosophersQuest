@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse Volsunga Saga a young hero armed with his reforged father-sword is sent by his foster-father to kill a dragon coiled around a cursed hoard of gold on the moor called Gnitaheid. What is the name of this Norse dragon?",
+      "choices": ["Fafnir", "Nidhoggr", "Jormungandr", "Grendel"],
+      "answer": "Fafnir",
+      "context": "Volsunga Saga chapters 14 and 18; Fafnismal prose introduction. Fafnir is the dragon on Gnitaheid, once a man and the brother of the smith Regin. Nidhoggr is the dragon that gnaws the root of Yggdrasil in the underworld. Jormungandr is the Midgard-serpent that circles the world. Grendel is the man-shaped monster of Beowulf, not a dragon. Fafnir is the specific dragon Sigurd kills.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Fafnir is not a beast that has always been a dragon. He is described in the Volsunga Saga as being, in his earlier life, one particular kind of creature -- until greed drove him to transform himself. What was Fafnir before he became a dragon?",
+      "choices": ["a man", "an elf", "a giant", "a dwarf"],
+      "answer": "a man",
+      "context": "Volsunga Saga chapters 14 and 18. Fafnir was a man -- specifically the son of Hreidmar and the brother of Regin the smith and Otr the otter-shaped shape-shifter. When the family got the cursed hoard of Andvari's gold as compensation for Otr's killing, Fafnir killed his father, took all of the gold, and used a magic Helm of Awe to transform himself into a dragon so he could guard it alone. He is one of a small handful of dragons in world mythology who used to be human.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Fafnir the dragon has one battlefield weakness. His hide is so hard that no blade can pierce his back or his flanks -- and Regin tells Sigurd this before sending him out. Which part of Fafnir is soft enough for a sword to go into?",
+      "choices": ["his belly", "his throat", "his eye", "his tail"],
+      "answer": "his belly",
+      "context": "Volsunga Saga chapter 18; Fafnismal prose introduction. Only the underside of Fafnir's belly is unarmoured -- everywhere else his hide turns the blade. This is why the strategy has to be a strike from BELOW as the dragon passes overhead. Smaug in Tolkien -- whose weak underbelly is famously exposed by a single missing scale -- was directly borrowed from Fafnir.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Sigurd's foster-father has one plan for how his young charge is to kill Fafnir. Regin tells Sigurd to go to the dragon's game-trail before dawn and prepare one specific ambush for when Fafnir crawls out to the water. What is Regin's plan?",
+      "choices": ["dig a pit in the trail and stab upward as the dragon passes over", "drop a great stone from a cliff onto the dragon's spine", "loose a burning arrow between the dragon's eyes at dawn", "pour boiling oil down the mouth of the dragon's lair overnight"],
+      "answer": "dig a pit in the trail and stab upward as the dragon passes over",
+      "context": "Volsunga Saga chapter 18; Fafnismal prose introduction. The Norse dragon-killing method is the pit-and-upward-thrust -- Regin's plan is that Sigurd hide in a trench cut into the game-trail and drive the blade UP as the dragon's soft belly passes over his head. It has entered European folklore as the standard way to kill any large monster from below.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "While Sigurd is digging his pit on the trail, an old stranger appears -- one-eyed, in a wanderer's cloak -- and gives him a critical piece of advice that Regin left out. What does the old wanderer tell Sigurd to add to Regin's plan?",
+      "choices": ["dig extra pits alongside to catch the blood", "smear the sword with poison before the strike", "wait for the second dawn instead of the first", "call the dragon by his mortal name to freeze him"],
+      "answer": "dig extra pits alongside to catch the blood",
+      "context": "Volsunga Saga chapter 18. The one-eyed stranger is Odin himself. He warns Sigurd that a single pit will fill with the dragon's blood as Fafnir bleeds out overhead, and Sigurd would drown before he could climb out. The side-channels drain the flood away. This is one of a whole series of moments in the Volsunga Saga where Odin quietly intervenes in the Volsung line -- putting Gram in the tree at Signy's wedding, shattering it against Sigmund at the end, and now this.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The dawn comes and the dragon crawls out of his lair towards the water. The earth trembles as he goes, and one particular thing rolls out ahead of him along the trail -- one of Fafnir's dragon-weapons even before his teeth or his hide. What rolls out in front of Fafnir as he approaches the pit?",
+      "choices": ["a cloud of poison breath", "a wave of unnatural cold", "a peal of grinding song", "a shower of green sparks"],
+      "answer": "a cloud of poison breath",
+      "context": "Volsunga Saga chapter 18; Fafnismal 1. Fafnir's breath is described as poisonous -- rolling before him along the trail like a mist. The Norse do not always draw a hard line between snake-poison and dragon-fire; Fafnir is one of the venom-breathing dragons. Jormungandr the world-serpent kills Thor with the same kind of venom nine steps after Thor kills him.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As the dragon crawls directly over the pit, Sigurd drives the reforged sword upward to the hilt into Fafnir's one weak place. What is the name of the sword Sigurd uses to kill Fafnir?",
+      "choices": ["Gram", "Hrunting", "Durendal", "Tyrfing"],
+      "answer": "Gram",
+      "context": "Volsunga Saga chapter 18. Gram is the reforged sword of Sigurd's father Sigmund. Hrunting is the sword Unferth lends Beowulf in the fight with Grendel's mother. Durendal is Roland's sword at Roncesvalles -- an adjacent named blade from the Christian pillar. Tyrfing is the cursed dwarf-sword of the Hervarar saga. Gram is the specific sword that kills Fafnir.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Norse dragons do not simply die. They know all things at their death, and they use their last breath to speak with the man who has killed them. What is the name of the Poetic Edda poem that records the whole dying-speech of the dragon on Gnitaheid?",
+      "choices": ["Fafnismal", "Reginsmal", "Sigrdrifumal", "Vafthrudnismal"],
+      "answer": "Fafnismal",
+      "context": "Poetic Edda (Codex Regius); Carolyne Larrington translation. Fafnismal ('the sayings of Fafnir') is a dialogue-poem in which most of the verses are the dragon's dying words to Sigurd. Reginsmal ('the sayings of Regin') comes just before it in the manuscript and covers the smith's back-story. Sigrdrifumal is the awakening of the valkyrie Sigrdrifa. Vafthrudnismal is Odin's wisdom-contest with a different giant. The specific dying-speech poem is Fafnismal.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The dying dragon warns Sigurd of something very concrete about the treasure he has just won -- a warning that turns out to be exactly correct across the rest of the Volsunga Saga. What does Fafnir warn Sigurd about the gold?",
+      "choices": ["the cursed hoard will destroy him too", "the gold must be thrown back into the river", "the ring in the hoard commands nine armies", "the hoard belongs by right to the giants"],
+      "answer": "the cursed hoard will destroy him too",
+      "context": "Fafnismal stanzas 8-10 and 20-22. Fafnir tells Sigurd that Andvari's gold has destroyed everyone who has held it, and it will destroy him too. Every remaining chapter of the Volsunga Saga proves him right -- from Regin's plot to Brynhild's suicide to Sigurd's own murder in bed to the final destruction of the Nibelungs. The other three choices are plausible dragon-warnings from adjacent stories, but the specific Fafnismal warning is the curse-on-all-who-hold-it.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Fafnir gives Sigurd a SECOND warning as he dies, one that Sigurd will act on within the hour -- not about the treasure itself, but about the man who sent him here in the first place. What does Fafnir warn Sigurd about Regin?",
+      "choices": ["his own brother will betray him for the gold", "his old master has poisoned the sword-hilt", "his foster-father is really a giant in disguise", "his true father was killed by Regin long ago"],
+      "answer": "his own brother will betray him for the gold",
+      "context": "Fafnismal stanzas 22 and 31; Volsunga Saga chapter 19. Fafnir tells Sigurd that Regin -- Fafnir's own brother -- means to kill him for the hoard. In the very next chapter Sigurd tastes the dragon's blood, understands the speech of birds, and hears two nuthatches confirm exactly the same warning; he then beheads Regin with Gram before Regin can strike first. This is the moment the young hero shifts from foster-son to independent man.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The kill on Gnitaheid gives Sigurd the byname he carries for the rest of his life -- the byname the skalds use whenever they refer to him afterward in verse. What byname does Sigurd earn on the day he kills the dragon?",
+      "choices": ["Fafnisbani", "Volsungr", "Grani-rider", "Gullbrjotr"],
+      "answer": "Fafnisbani",
+      "context": "Volsunga Saga chapter 19; Fafnismal (title tradition). 'Fafnisbani' means 'Fafnir's-bane' or 'slayer of Fafnir' -- the standard skaldic epithet for Sigurd afterwards. Volsungr just means 'son of the Volsung line' (his family). Grani is the name of his horse (a descendant of Odin's Sleipnir), so 'Grani-rider' is a possible kenning but not his standard byname. Gullbrjotr ('gold-breaker') is a generic kenning for a generous king, not tied to Sigurd. Fafnisbani is the specific dragon-slaying byname.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Sigurd-Fafnir kill is not the only great Germanic dragon-slaying. Another Germanic hero -- from the Old English poem set among the Geats and the Danes -- meets his own dragon in his old age, kills it, and dies of the wounds. Who is the other Germanic hero-and-dragon of the same tradition?",
+      "choices": ["Beowulf", "Roland", "El Cid", "Cuchulainn"],
+      "answer": "Beowulf",
+      "context": "Beowulf lines 2200-2820. Beowulf is king of the Geats when a dragon wakes in a barrow and burns his hall; he kills the dragon with the help of the young Wiglaf but dies of the venom. The Sigurd-and-Beowulf dragon-fights are the two great Germanic dragon-slayings, deliberately paralleled -- one a young man from below, one an old king face-to-face. Roland dies at Roncesvalles fighting Saracens (no dragon). El Cid conquers Valencia (no dragon). Cuchulainn dies tied to a stone in Ireland (no dragon).",
+      "legend": true
+    }
+  ]
+}

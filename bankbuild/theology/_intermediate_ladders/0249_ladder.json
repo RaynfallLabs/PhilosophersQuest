@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the first quarter of the 1200s a Bavarian knight-poet sat down to retell, in Middle High German, an unfinished French Grail-poem by Chretien de Troyes. He turned it into an epic of about 25,000 rhymed lines that became the greatest German Arthurian romance. What was this Bavarian poet's name?",
+      "choices": ["Wolfram von Eschenbach", "Hartmann von Aue", "Gottfried von Strassburg", "Walther von der Vogelweide"],
+      "answer": "Wolfram von Eschenbach",
+      "context": "Wolfram von Eschenbach was a Bavarian knight who wrote around 1200-1210. Hartmann von Aue wrote Erec and Iwein; Gottfried von Strassburg wrote Tristan; Walther von der Vogelweide is the great Middle High German lyric poet. All four are real 13th-century German poets. Source: en.wikipedia.org/wiki/Parzival.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Wolfram von Eschenbach's huge Middle High German epic follows one young Arthurian knight, born to a father named Gahmuret and a mother named Herzeloyde ('heart's sorrow'), from birth all the way to the kingship of the Grail. What is this hero's name, and the name of Wolfram's poem?",
+      "choices": ["Parzival", "Erec", "Iwein", "Tristan"],
+      "answer": "Parzival",
+      "context": "Parzival is Wolfram's version of the French hero Perceval. Erec and Iwein are the two Arthurian heroes Hartmann von Aue wrote about; Tristan is the hero of Gottfried von Strassburg's rival epic. Source: en.wikipedia.org/wiki/Parzival.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The French Grail-poems -- Chretien de Troyes, Robert de Boron, and later Malory -- all describe the Holy Grail as some kind of vessel: a serving-dish, or the cup of the Last Supper. Wolfram's German Parzival describes it as something else entirely. In Wolfram's telling, what IS the Grail?",
+      "choices": ["a stone", "a golden platter", "a silver chalice", "a wooden bowl"],
+      "answer": "a stone",
+      "context": "This is the great difference between the two Grail traditions: French = a vessel, Wolfram = a stone. The French Grail is variously a serving-dish (Chretien), the cup that caught the blood at the Crucifixion (Robert de Boron), or the Last Supper cup (Malory). Wolfram alone makes it a stone. Source: astrallibrary.com/arthurian-mysteries-the-holy-grail-quest/lapsit-exillis.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Wolfram's Parzival the Grail-object is guarded at a mountain castle by an order of knights whose name deliberately echoes a real military order of Wolfram's own time, the one founded in Jerusalem after the First Crusade. What does Wolfram call his Grail-Knights?",
+      "choices": ["the Templeisen", "the Hospitallers", "the Teutonic Knights", "the Knights of Malta"],
+      "answer": "the Templeisen",
+      "context": "Templeisen is Wolfram's coined name, and scholars have read it for centuries as a nod to the Knights Templar (the Poor Knights of Christ and of the Temple of Solomon), founded in Jerusalem c.1119. The Hospitallers, the Teutonic Knights, and the later Knights of Malta are all real medieval military orders, but none of them are the Grail-Knights in Parzival. Source: scalar.usc.edu/works/mysteries-of-the-grail/munsalvasche.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Wolfram gives his Grail-stone a strange half-Latin name that scholars have argued over for eight centuries -- it may mean 'stone fallen from heaven,' or 'small stone,' or even the alchemists' philosopher's stone. What is the phrase Wolfram uses?",
+      "choices": ["lapsit exillis", "sanguis Christi", "corpus Domini", "aqua vitae"],
+      "answer": "lapsit exillis",
+      "context": "The reading is disputed: lapis ex caelis ('stone from the heavens'), lapis exilis ('small stone'), lapis elixir (the philosopher's stone), or lapis lapsus ex caelis ('stone fallen from the heavens') have all been proposed. Sanguis Christi ('blood of Christ'), corpus Domini ('body of the Lord'), and aqua vitae ('water of life') are real Latin liturgical or alchemical phrases, but not Wolfram's Grail-name. Source: astrallibrary.com/arthurian-mysteries-the-holy-grail-quest/lapsit-exillis.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In Wolfram's Parzival the Grail-stone did not originate on earth. According to the hermit Trevrizent, who tells Parzival the true story, the stone was carried down out of heaven by a specific company of angels. Which angels were those?",
+      "choices": ["the ones who stayed neutral in Lucifer's war", "the archangel Michael's warrior host", "the guardians of Eden's eastern gate", "the seraphim around the throne of God"],
+      "answer": "the ones who stayed neutral in Lucifer's war",
+      "context": "Wolfram's Grail is guarded by NEUTRAL angels -- a bold and strange invention, since medieval theology usually had NO neutral angels (Dante later flatly rejected the idea in Inferno III). It is one of the reasons Wolfram's poem was read as touched by heresy for centuries afterwards. Michael's host, the cherubim at Eden's gate (Genesis 3:24), and the seraphim around the throne (Isaiah 6) are all real biblical angelic groups, but none of them brought down the Grail in Wolfram. Source: premieretat.com/wolframs-parzival-the-esoteric-metaphysics-of-the-grail.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Wolfram's Grail-stone gives whoever LOOKS on it whatever food and drink they most desire, and preserves their youth. But once a year a small white bird descends from heaven and lays a Communion wafer upon the stone, and that wafer renews its power. On what day of the year does this happen?",
+      "choices": ["Good Friday", "Easter Sunday", "Christmas Eve", "Pentecost"],
+      "answer": "Good Friday",
+      "context": "Good Friday is the day the church remembers the Crucifixion, and Wolfram places the wafer-descent there for that reason. Easter Sunday, Christmas Eve, and Pentecost are all major days of the church year and would be natural guesses, but Wolfram specifies Good Friday. The bird is a white dove. Source: swordandcup.substack.com/p/the-grails-secret-origin-and-sacred.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Grail-stone has a further miraculous property Wolfram invents that nothing in the French tradition has: from time to time writing appears on it by itself, and once someone has read the writing, it fades away. What is the writing?",
+      "choices": ["the names of new Grail Knights", "the sins of the dying king", "the year of the world's ending", "the words of a hidden prayer"],
+      "answer": "the names of new Grail Knights",
+      "context": "Whenever a new knight is to be summoned to serve the Grail, his name appears on the stone; once someone has read it, the writing vanishes. The stone effectively RECRUITS its own knights. Robert Eisler and other 20th-century scholars pointed to the parallel with the alchemists' philosopher's stone; others compare it to the Book of Life in Revelation. Source: premieretat.com/wolframs-parzival-the-esoteric-metaphysics-of-the-grail.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Late in Wolfram's poem, Parzival at last returns to the Grail Castle and stands before the wounded Grail-King, his own uncle Anfortas. This time, unlike his first failed visit, he asks a single question -- and the question itself heals Anfortas and makes Parzival the new Grail-King. What does Parzival ask?",
+      "choices": ["'What ails you, uncle?'", "'Where is the Grail kept?'", "'Who wounded you, uncle?'", "'How may I serve God?'"],
+      "answer": "'What ails you, uncle?'",
+      "context": "Compassion is the whole moral engine of Wolfram's version: the young Parzival's first failure was that, taught to be a courteous knight, he stayed silent about his host's obvious pain. Years later he finally asks the compassionate question -- and that is what wins the Grail. The Middle High German is 'oeheim, waz wirret dier?' Source: en.wikipedia.org/wiki/Parzival.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Wolfram opens his Parzival with a startling backstory the French tradition never had: the hero's father Gahmuret went east and married the black African queen Belacane of Zazamanc. Their son -- Parzival's older half-brother -- is born with skin patched black and white, said to look like a magpie or a written-on parchment. What is this half-brother's name?",
+      "choices": ["Feirefiz", "Gawan", "Anfortas", "Trevrizent"],
+      "answer": "Feirefiz",
+      "context": "Feirefiz means 'piebald son' (from Old French 'vaire fiz'). He is one of the most striking figures in medieval European literature -- a black-and-white African-European Grail-knight, presented by Wolfram with full dignity. Gawan is Wolfram's version of the Arthurian Gawain; Anfortas is the wounded Grail King; Trevrizent is Parzival's hermit uncle. Source: en.wikipedia.org/wiki/Feirefiz.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the closing pages of Parzival, Feirefiz is baptised, marries the Grail-bearer Repanse de Schoye, and takes her east. Wolfram then makes their son the founder of a famous half-legendary Christian kingdom in the far East, beyond the Muslim world -- a kingdom medieval Europe spent centuries trying to find. Who is Feirefiz's son said to be?",
+      "choices": ["Prester John", "Charlemagne", "Saladin", "Baldwin of Jerusalem"],
+      "answer": "Prester John",
+      "context": "Prester John was a real medieval legend -- letters purporting to be from a great Christian king in India or Ethiopia circulated across Europe from the 1160s onward, and expeditions were actually sent to find him. Wolfram folds that legend into the Grail-story, tying the Grail lineage to the far East. Charlemagne, Saladin, and Baldwin of Jerusalem are real historical rulers of the crusading era, not sons of Feirefiz. Source: en.wikipedia.org/wiki/Feirefiz.",
+      "legend": true
+    }
+  ]
+}

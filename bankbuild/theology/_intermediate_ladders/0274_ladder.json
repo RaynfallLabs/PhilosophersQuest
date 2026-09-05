@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Irish myth the Tuatha De Danann came to Ireland from four northern cities, and the first king to lead them onto the island carried a burning blade called the Sword of Light -- once drawn from its sheath, no enemy could escape it. What is the name of that first king of the Tuatha De Danann?",
+      "choices": ["Nuada", "Lugh", "Bres", "Ogma"],
+      "answer": "Nuada",
+      "context": "Nuada was the first king of the Tuatha De Danann in Ireland. He carried Claiomh Solais, the Sword of Light, one of the Four Treasures brought from the city of Findias. Lugh and Bres come later in the story (Lugh becomes king after Nuada dies; Bres is the tyrant who rules while Nuada heals). Ogma is the great champion of the Tuatha De who invented the ogham alphabet, but he was never king.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Tuatha De Danann came from four northern cities, each of which sent one great treasure with them to Ireland. The first king Nuada carried a burning blade from one of those cities, and it became one of the Four Treasures of Ireland. Which name is given to Nuada's blade?",
+      "choices": ["the Sword of Light", "Gae Bolg", "the Spear of Lugh", "Excalibur"],
+      "answer": "the Sword of Light",
+      "context": "The Claiomh Solais, or Sword of Light, is Nuada's weapon from the city of Findias. It is one of the Four Treasures alongside the Dagda's Cauldron, the Spear of Lugh, and the Lia Fail (the Stone of Destiny). Gae Bolg is Cuchulainn's belly-spear from a later Ulster-cycle story. The Spear of Lugh is a different Treasure. Excalibur is Arthurian, not Irish.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At the First Battle of Moytura the Tuatha De met the Fir Bolg, who then held Ireland. The Fir Bolg champion Sreng stepped out and, with a single stroke of his sword, shore straight through Nuada's shield and hand together. Which limb did Sreng cut off with that stroke?",
+      "choices": ["Nuada's right arm", "Nuada's left leg", "Nuada's right foot", "Nuada's left ear"],
+      "answer": "Nuada's right arm",
+      "context": "In Cath Maige Tuired Cunga (the First Battle of Moytura) Sreng, the Fir Bolg champion, cut off Nuada's right arm at the shoulder with one blow. Nuada survived, but the wound would cost him his throne. Sreng was later offered Connacht as the Fir Bolg's share of Ireland after peace was made.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Nuada lived through the wound at Moytura, but the strict old law of Irish kingship then took his crown from him. What did that law require of any man who would sit on the throne of Ireland?",
+      "choices": ["that he be physically whole and unblemished", "that he be married with a living son", "that he be able to compose in verse", "that he have killed a wolf with his bare hands"],
+      "answer": "that he be physically whole and unblemished",
+      "context": "The Tuatha De held that no blemished or maimed man could be king of Ireland; a physical wound broke the sacred wholeness of the kingship. Because Nuada had lost a hand, however finely he was later re-made, the wound counted. Bres the Beautiful was chosen to reign in his place while Nuada healed.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "While Nuada healed, the healer-god Dian Cecht fashioned him a new arm to replace the one Sreng had taken. It was jointed so cleverly that every finger moved as freely as a hand of flesh. Out of what material did Dian Cecht craft Nuada's new arm?",
+      "choices": ["silver", "gold", "carved oak", "polished bronze"],
+      "answer": "silver",
+      "context": "Dian Cecht, aided by the wright Creidhne, crafted Nuada an arm of silver -- jointed so cunningly that each finger moved as freely as any hand of flesh. From that day Nuada is called Nuada Airgetlam, Nuada of the Silver Hand. But under the law of kingship even a silver arm was still a blemish, and Nuada still could not be king.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The silver arm was a marvel of craft, and yet under Irish law it was still not the same as flesh. From that new arm Nuada took a nickname that has stuck to him in every telling of the Tuatha De ever since. What is Nuada's most famous epithet?",
+      "choices": ["Silver-Hand (Airgetlam)", "Long-Arm (Lamhfhada)", "Silver-Tongue", "Fair-Face"],
+      "answer": "Silver-Hand (Airgetlam)",
+      "context": "Nuada Airgetlam -- Nuada of the Silver Hand or Silver Arm -- is the epithet from Dian Cecht's craft. Lamhfhada, 'Long-Arm', belongs to Lugh, the god who succeeds Nuada. Silver-Tongue is not an Irish epithet at all. Fair-Face is a common epithet for Bres (Bres was called 'the Beautiful' or 'the Fair').",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Dian Cecht was proud of the silver arm, but his son -- himself a greater physician -- would not leave things there. Working nine days and chanting 'joint against joint of it, sinew against sinew', the son took the silver arm off Nuada and grew back a living arm of flesh in its place. What is the name of Dian Cecht's son who healed Nuada with living flesh?",
+      "choices": ["Miach", "Ogma", "Goibniu", "Aengus"],
+      "answer": "Miach",
+      "context": "Cath Maige Tuired section 33 records the healing: Miach son of Dian Cecht set the arm to Nuada's shoulder and, over nine days of chant ('bone to bone, sinew to sinew'), grew back living flesh. Ogma is the champion who invented the ogham alphabet. Goibniu is the smith of the Tuatha De. Aengus is the young god of Newgrange -- a different son of a different father (the Dagda).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When the healer-god Dian Cecht saw that his son Miach had done better healing on Nuada's arm than he himself was capable of, jealousy flared and he turned on the young physician. What did Dian Cecht do to his own son next?",
+      "choices": ["struck him dead with four sword-blows to the head", "banished him beyond the western sea forever", "cursed him into the shape of a running wolf", "shut him alive in a hollow standing stone"],
+      "answer": "struck him dead with four sword-blows to the head",
+      "context": "Cath Maige Tuired records the killing in awful detail: the first stroke cut only skin, the second reached bone, the third pierced the brain-membrane, and the fourth killed Miach outright. It is one of the darker set-pieces in early Irish myth. The lupine curse is a Norse or Anglo-Saxon shape; hollow-stone imprisonment belongs to the Bres and Aoife stories.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Miach was buried, and from his grave grew a great many herbs -- one for every joint and sinew in the human body. His sister Airmed carefully laid them out in order on her cloak so that no healer would ever be without the knowledge of them. What exact number of herbs, in the Cath Maige Tuired reckoning, grew from Miach's grave?",
+      "choices": ["three hundred and sixty-five", "twelve", "one thousand", "seven"],
+      "answer": "three hundred and sixty-five",
+      "context": "Cath Maige Tuired: 365 herbs grew from Miach's grave, 'as many as his joints and fibres'. Airmed the sister spread her cloak on the ground and laid each herb in its right place so that later healers could know which one cured which joint. The number matches the days of the year and is one of the oldest 'herbal correspondence' images in Western myth.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The story of the herbs does not end with Airmed's cloak. Dian Cecht came to the grave, and what he did next is the Irish myth's answer for why every human physician is imperfect: no herbalist knows the whole herbal. What did Dian Cecht do to his daughter's cloak of ordered herbs?",
+      "choices": ["overturned it so the herbs mixed beyond sorting", "burned it and scattered the ashes to the sea", "sold it to the Fomorians for a boat", "buried it in the same grave as Miach"],
+      "answer": "overturned it so the herbs mixed beyond sorting",
+      "context": "Dian Cecht, still enraged that his son Miach and his daughter Airmed had surpassed him, overturned the cloak and mixed the 365 herbs past any hope of sorting. Cath Maige Tuired ends the episode with the line that no human physician after that knew the powers of every herb -- 'only Airmed remembers'. The mixing-of-the-herbs is Irish myth's folk-etiology for the limits of the healing craft.",
+      "legend": true
+    }
+  ]
+}

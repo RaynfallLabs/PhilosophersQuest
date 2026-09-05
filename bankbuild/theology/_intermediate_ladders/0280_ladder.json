@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Irish Book of Invasions the Tuatha De Danann lost their war with the Sons of Mil, and the two sides settled the island by a strange division. The Milesians got everything above ground -- the fields, the hills, the trees, the coasts. What did the Tuatha De get to keep?",
+      "choices": ["everything underground", "the northern half of the island", "the coasts and rivers", "the summer months only"],
+      "answer": "everything underground",
+      "context": "The classic division: Milesians took the surface, Tuatha De took the underground -- every hollow hill, every cairn, every mound. This is how the old gods became the fairy folk who live under Ireland. Source: en.wikipedia.org/wiki/Lebor_Gabala_Erenn; en.wikipedia.org/wiki/Aos_Si.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "After the Tuatha De Danann went underground into the hollow hills, later Irish tradition stopped calling them 'the Tuatha De' at all -- they became a new folk under a new name, the beings that English-speakers now just call 'the fairies' or 'the Good Folk.' Which of these is that Irish name?",
+      "choices": ["the Aos Si", "the Fianna", "the Fir Bolg", "the Sons of Mil"],
+      "answer": "the Aos Si",
+      "context": "AOS SI (pronounced roughly ees-shee, literally 'folk of the mounds') is the Irish name for the fairy folk -- the Tuatha De Danann in retreat underground. The Fianna are the roving warrior-band of Fionn mac Cumhaill; the Fir Bolg are the fourth wave in the Book of Invasions; the Sons of Mil are the Milesians (the modern Irish) themselves. Source: en.wikipedia.org/wiki/Aos_Si.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Irish word for one of the fairy-hills themselves -- the specific kind of earthwork under which an aos si god was said to have his kingdom, a word still in use in modern Irish and pronounced roughly like 'shee' -- was carried into English as one of these four. Which of them is that word?",
+      "choices": ["sidhe", "dun", "rath", "brugh"],
+      "answer": "sidhe",
+      "context": "SIDHE (spelled si in modern standardised Irish, pronounced shee) is both the fairy-mound itself and, by extension, the folk who live in it -- and the source of English 'banshee' (bean-sidhe, 'woman of the mound'). Dun and rath are Irish words for a ring-fort or hill-fort; brugh means 'mansion' or 'hostel' (as in Brugh na Boinne, the mansion on the Boyne, i.e. Newgrange). Source: en.wikipedia.org/wiki/Aos_Si.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One night of the year the barrier between the sidhe mounds and the world above is said to open, so that the aos si walk out and the ghosts of the dead walk in. Modern Ireland has inherited that same night, and much of the world now keeps its distant descendant on the eve of it as HALLOWEEN. Which old Irish festival is this?",
+      "choices": ["Samhain", "Bealtaine", "Lughnasadh", "Imbolc"],
+      "answer": "Samhain",
+      "context": "SAMHAIN (November 1) is the direct ancestor of Halloween -- the night the sidhe open. Bealtaine (May 1) opens summer; Lughnasadh (August 1) is the harvest festival; Imbolc (February 1) is spring's opening. Source: en.wikipedia.org/wiki/Samhain.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once the settlement with the Milesians was struck, one of the Tuatha De -- the sea-god, the one who links the visible world to the Otherworld across the water -- took charge of dividing the underground kingdom, handing out one mound to each of his fellow gods. Which of the Tuatha De divided the mounds?",
+      "choices": ["Manannan mac Lir", "Lugh Lamhfhada", "Nuada Silver-Arm", "Ogma"],
+      "answer": "Manannan mac Lir",
+      "context": "Manannan mac Lir ('son of the sea') took charge of assigning mounds and also raised the FETH FIADA -- a magical mist -- to hide the aos si from mortal eyes (as in Altram Tige Da Medar, the Fosterage of the House of the Two Vessels). Lugh, Nuada, and Ogma are all Tuatha De heroes but not the divider. Source: irishmyths.com/2025/08/27/god-map-fairy-mounds-tuath-de-danann.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The greatest of all the sidhe mounds is a giant grass-covered stone chamber above the River Boyne in County Meath, built five thousand years ago and still standing. In myth it was held by the Dagda but tricked away from him by his son Aengus Og; in the modern world it is a tourist site and a World Heritage monument. What is this mound called?",
+      "choices": ["Bru na Boinne", "Emain Macha", "Tara", "Skellig Michael"],
+      "answer": "Bru na Boinne",
+      "context": "BRU NA BOINNE ('the mansion on the Boyne'), better known as NEWGRANGE, is the great neolithic passage-tomb given in myth to Aengus Og. Emain Macha (Navan Fort) is the seat of the Ulster kings; Tara is the seat of the High Kings of Ireland; Skellig Michael is the sea-crag monastery in Kerry. Source: en.wikipedia.org/wiki/Newgrange; en.wikipedia.org/wiki/Aengus.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the story of Oisin the son of Fionn mac Cumhaill, Oisin rides off with the Otherworld princess Niamh and spends what he thinks is one long happy stay in the Land of Youth. When he finally rides back and his foot touches Irish soil again, he turns instantly into a withered old man and dies -- because he has been away for centuries, not weeks. How long, by the count of the story, had Oisin actually been gone?",
+      "choices": ["three hundred years", "seven days", "thirty years", "a thousand years"],
+      "answer": "three hundred years",
+      "context": "Oisin is gone THREE HUNDRED YEARS while it feels to him like a short stay; the classic 'time-in-fairyland' story. Time in the sidhe mounds and Tir na nOg does not run at the same rate as time above ground. Source: en.wikipedia.org/wiki/Oisin.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The undying country beneath and beyond the sidhe mounds carries several overlapping names in Irish story. One of them -- the name of the country Oisin rode away to with Niamh -- means literally 'the Land of Youth.' Which name is that?",
+      "choices": ["Tir na nOg", "Mag Mell", "Emain Ablach", "Tir Tairngire"],
+      "answer": "Tir na nOg",
+      "context": "TIR NA NOG ('Land of Youth') is Niamh's country in the Oisin story. Mag Mell is the 'Plain of Delights'; Emain Ablach is the 'Isle of Apples' (the western Otherworld island where Manannan mac Lir keeps his hall); Tir Tairngire is the 'Land of Promise.' All four names refer to overlapping regions of the same Otherworld. Source: en.wikipedia.org/wiki/Tir_na_nOg.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "One species of tree -- especially a solitary specimen standing alone in the middle of a field, unattached to any hedge or wood -- is sacred to the aos si in Irish folk-tradition, and farmers to this day will plough carefully around it rather than cut it down. Which tree is it?",
+      "choices": ["the hawthorn", "the yew", "the rowan", "the ash"],
+      "answer": "the hawthorn",
+      "context": "The lone HAWTHORN (whitethorn) is the classic fairy-tree; to cut one down is to invite the aos si's wrath. Yew is the graveyard tree of Ireland; rowan is planted against fairy mischief (a protection, not a mound); ash is one of the sacred five 'guardian trees' but not the specifically-fairy tree. Source: en.wikipedia.org/wiki/Aos_Si; en.wikipedia.org/wiki/Hawthorn.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In 1999 the route of a brand-new motorway in County Clare was actually altered around a single small hawthorn -- because the Irish folklorist Eddie Lenihan told the papers it was a rendezvous-point for the Kerry aos si on their way to fight the Connacht aos si, and the construction workers refused to touch it. The story made the international news and the tree still stands. What was the tree at?",
+      "choices": ["Latoon", "Tara", "Skellig", "Uisneach"],
+      "answer": "Latoon",
+      "context": "The LATOON FAIRY BUSH in County Clare -- a lone whitethorn on the route of the new M18 -- was spared in May 1999 after Lenihan's letter to the Irish Times went viral (CNN, BBC, New York Times all picked it up). Tara is the High Kings' hill in Meath; Skellig is the monastic sea-crag in Kerry; Uisneach is the mythic centre of Ireland. Source: en.wikipedia.org/wiki/Latoon_fairy_bush.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "One aos si descendant of the sidhe is a shape-shifter -- a trickster spirit whose favourite forms are a shaggy BLACK HORSE that will carry you off on a wild all-night ride, a hare, or a dark man. His name still survives in the English words 'pooka' and 'puck.' What is he called in Irish?",
+      "choices": ["Puca", "Leprechaun", "Dullahan", "Sluagh"],
+      "answer": "Puca",
+      "context": "The PUCA is the Irish shape-shifting sidhe -- Shakespeare's Puck is a distant English cousin. The Leprechaun (from LUCHORPAN, 'small body') is the sidhe cobbler with the hidden gold; the Dullahan is the headless horseman of Irish folklore; the Sluagh is the host of the restless dead. Source: en.wikipedia.org/wiki/Puca.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The little green-suited cobbler of Irish folklore -- the sidhe artisan who hammers away at a single shoe under a hedge and who, if you catch him and never take your eyes off him, must tell you where his gold is buried -- carries a name that comes from an Old Irish word meaning literally 'small body.' Which Old Irish word is that?",
+      "choices": ["Luchorpan", "Bean-Sidhe", "Cluricaun", "Fear-Gorta"],
+      "answer": "Luchorpan",
+      "context": "LUCHORPAN ('small body,' from lu 'small' + corp 'body') is the Old Irish root of LEPRECHAUN -- the shrunken sidhe cobbler of the modern folk-tale. Bean-Sidhe is the wailing woman ('woman of the mound'); Cluricaun is a related drunk-fairy of southern Irish folklore; Fear-Gorta is the 'man of hunger' spirit of the famine. Source: en.wikipedia.org/wiki/Leprechaun.",
+      "legend": true
+    }
+  ]
+}

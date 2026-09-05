@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the god of sunshine, good weather, harvest and peace is not one of the Aesir by birth. He belongs to the older tribe of gods who were traded to the Aesir as hostages after their war. Which tribe is he from?",
+      "choices": ["the Vanir", "the Aesir", "the Jotnar", "the Alfar"],
+      "answer": "the Vanir",
+      "context": "Freyr, his father Njord, and his sister Freyja are the three Vanir hostages who came to live in Asgard after the Aesir-Vanir war. The Jotnar are the giants (their enemies); the Alfar are the elves; the Aesir are the tribe he was given to, not the one he came from. Snorri, Gylfaginning 23-24.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Freyr's home in the nine worlds is a bright realm the gods gave him as a baby present when he cut his first tooth. Its name literally means 'Elf-Home'. What is the name of Freyr's realm?",
+      "choices": ["Alfheim", "Asgard", "Vanaheim", "Midgard"],
+      "answer": "Alfheim",
+      "context": "Grimnismal 5 in the Poetic Edda: 'Alfheim the gods to Frey gave in days of yore for a tooth-gift.' Asgard is the whole home of the Aesir; Vanaheim is where the Vanir came from; Midgard is the human world.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One afternoon Freyr sneaks onto a special high seat in Asgard that only two gods are supposed to use. From it a god can see into every world at once. Whose high seat has he climbed?",
+      "choices": ["Odin's seat Hlidskjalf", "Thor's chariot Skinfaxi", "Heimdall's watch-tower Himinbjorg", "Frigg's spinning stool Fensalir"],
+      "answer": "Odin's seat Hlidskjalf",
+      "context": "Only Odin and his wife Frigg are allowed to sit on Hlidskjalf. Freyr's trespass is what sets the whole Skirnismal story in motion. Skinfaxi is a horse, not a seat; Himinbjorg is Heimdall's hall, not a watching-seat; Fensalir is Frigg's hall.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Freyr comes home from the forbidden high seat unable to eat, unable to sleep, unable to speak. The gods finally send his own servant to find out what has happened to him. What is the servant's name?",
+      "choices": ["Skirnir", "Skidbladnir", "Skadi", "Skoll"],
+      "answer": "Skirnir",
+      "context": "Skirnir means 'the Shining One' and he is Freyr's messenger throughout Skirnismal. Skidbladnir is Freyr's magical ship (not a person); Skadi is Njord's giantess wife; Skoll is one of the wolves that chases the sun.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Off in Jotunheim, far to the north, a giant-girl steps out of her father's hall and reaches her arm up to open a door. The plain skin of that one arm shines so brightly that the sea and the sky light up all the way to Asgard. Freyr sees it from the high seat and falls silent. What is her name?",
+      "choices": ["Gerdr", "Gunnr", "Gefjun", "Grid"],
+      "answer": "Gerdr",
+      "context": "Gerdr is the daughter of the giant Gymir. Skirnismal stanzas 4-7 describe the bare-arm-shining moment; it is one of the most sudden coup-de-foudre scenes in Norse verse. Gunnr is a valkyrie; Gefjun is an Aesir goddess; Grid is another giantess but the mother of Vidar.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Skirnir agrees to ride to Jotunheim on Freyr's behalf, but he asks for two of his master's most prized possessions to make the trip. He needs Freyr's swift horse -- and Freyr's magical weapon that swings itself against giants. Freyr hands both over. What weapon did Freyr give up?",
+      "choices": ["a self-swinging sword", "the hammer Mjolnir", "the spear Gungnir", "the bow of Ullr"],
+      "answer": "a self-swinging sword",
+      "context": "Freyr's sword fought giants on its own 'if wise be he who wields it' (Skirnismal 8-9). Mjolnir belongs to Thor; Gungnir is Odin's spear; the bow belongs to the god Ullr. This handover is the whole hinge of Freyr's story -- the price he will pay comes much later.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Skirnir reaches Gerdr's hall, he first tries to buy her hand with treasure. He offers her a set of golden apples and then a very famous named dwarf-made object. Which of these dwarf-made treasures does Skirnir offer Gerdr?",
+      "choices": ["Draupnir", "Andvaranaut", "Sviagris", "Brisingamen"],
+      "answer": "Draupnir",
+      "context": "Draupnir is Odin's ring, dwarf-made, which drips eight matching golden rings every ninth night. Skirnir offers eleven apples and then Draupnir itself -- Gerdr refuses both, saying the Vanir have gold enough (Skirnismal 19-22). Andvaranaut is the cursed dragon-treasure ring from the Sigurd cycle; Sviagris is a Swedish royal ring (Hrolf Kraki's saga); Brisingamen is Freyja's necklace -- all real dwarf-made Norse treasures, but only Draupnir is the one Skirnir offers.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When gifts and drawn steel both fail to move Gerdr, Skirnir stops asking and starts cursing. He tells her exactly the kind of husband she will get instead if she keeps refusing -- a monstrous mate she cannot escape. What kind of husband does Skirnir promise her?",
+      "choices": ["a three-headed frost-giant", "a one-eyed dwarf", "a blind old sea-king", "a shape-changing wolf"],
+      "answer": "a three-headed frost-giant",
+      "context": "Skirnir's curse in Skirnismal 27-36 is one of the darkest passages in Norse poetry: Gerdr will pine forever, be mocked by gods and men, sit weeping under the giants' gate, and be married to a three-headed frost-giant she loathes. The threat, not the treasure, is what finally breaks her.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The curse works. Terrified, Gerdr names a time and place where she will meet Freyr and become his bride. She sets the meeting for a grove called Barri -- and she sets the wait at a specific number of nights that becomes famous in the poem. How many nights does she make Freyr wait?",
+      "choices": ["nine", "three", "seven", "twelve"],
+      "answer": "nine",
+      "context": "Nine is the sacred Norse number (nine worlds, Odin's nine nights on the tree, Heimdall's nine mothers). Gerdr's nine nights in the grove Barri produce Freyr's most famous line of verse -- see the next rung. Skirnismal 39-42.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Skirnir gets back to Asgard and tells Freyr the wait he has been given, Freyr answers with what is often called the most famous love-lament in the whole Poetic Edda. He compares one, two, and the full count of nights he must endure. What does Freyr cry out?",
+      "choices": ["Long is one night, longer are two; how can I endure three?", "How the days are shorter, how the nights are colder!", "The wolf runs at my heels and the sun goes down!", "The world is old and the gods grow weary!"],
+      "answer": "Long is one night, longer are two; how can I endure three?",
+      "context": "Skirnismal stanza 42, Freyr's lament. The Old Norse is 'Long er nott, langar 'ru tvaer, hve of threyjak thriar?' Everyone in Iceland who read the Edda knew this line -- it is the sound of a god counting the days like any lovesick teenager.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the end of the world, out of Muspelheim in the south, a fire-giant comes riding to burn the nine worlds. He carries a sword that shines brighter than the sun. Freyr rides out to meet him. What is the fire-giant's name?",
+      "choices": ["Surt", "Fenrir", "Jormungandr", "Hrym"],
+      "answer": "Surt",
+      "context": "Surt (Surtr, 'the Swart One') leads the fire-giants of Muspelheim at Ragnarok. Fenrir is the wolf that swallows Odin; Jormungandr is the world-serpent that fights Thor; Hrym is the giant who steers the ship Naglfar. Voluspa 52-53; Gylfaginning 51.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Freyr is the very first of the gods to fall at Ragnarok, and the reason lies all the way back in the Gerdr story. When he faces the fire-giant with the burning sword, Freyr is holding no sword of his own. Why is Freyr weaponless in his final fight?",
+      "choices": ["he gave his self-swinging sword to Skirnir and never got it back", "his sword was stolen by Loki the night before", "his sword had been forged of ice and melted in Surt's flames", "he threw his sword into Yggdrasil to save the tree"],
+      "answer": "he gave his self-swinging sword to Skirnir and never got it back",
+      "context": "This is why the Skirnismal handover is such a big deal in Norse myth: a god trades his weapon for a bride, and that one trade kills him at the end of the world. Snorri says it plainly in Gylfaginning 37 and again at 51 -- Freyr's absent sword is remembered as the price of Gerdr. Voluspa 53 shows Freyr falling first.",
+      "legend": true
+    }
+  ]
+}

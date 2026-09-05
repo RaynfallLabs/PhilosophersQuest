@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Fenian tales of Ireland, Fionn mac Cumhaill leads the warrior-band called the Fianna and hunts across Ireland with a great pack of hounds. Two of his hounds are his favourites, named in every Fenian tale, and they can outrun any deer and understand what he says to them. What are the two hounds called?",
+      "choices": ["Bran and Sceolang", "Cerberus and Orthrus", "Garmr and Fenrir", "Argus and Laelaps"],
+      "answer": "Bran and Sceolang",
+      "context": "Bran and Sceolang (Sceolan, Sgeolan) are Fionn's chief hunting hounds in the Fenian Cycle. Cerberus and Orthrus are the three-headed and two-headed guardian hounds of the Greek pillar (Hades and Geryon). Garmr is the hound at the gate of Hel and Fenrir the wolf who kills Odin in the Norse pillar. Argus is Odysseus's dog and Laelaps the Greek hound that always caught its prey.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Fionn mac Cumhaill's two favourite hunting hounds, Bran and Sceolang, ride at his stirrup on every chase. In the Fenian tales the two hounds are not only clever animals; they are Fionn's own KIN, closer to him than any other pair of dogs on earth. What kinship do they bear to him?",
+      "choices": ["they are his cousins", "they are his elder brothers", "they are his uncles", "they are his grandchildren"],
+      "answer": "they are his cousins",
+      "context": "Bran and Sceolang's mother, Uirne (also called Tuiren), was the sister of Fionn's own mother Muirne, which makes the hounds his first cousins. In a variant Uirne is Fionn's sister and the hounds are his nephew and niece, but the cousin-relation is the most common version. Fionn treats them accordingly.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Irish tale The Birth of Bran, the mother of Fionn's two great hounds is a woman of Ireland who was carrying twins in her womb when she was struck with a druid's rod and TRANSFORMED into a hound. She gave birth to her pups in that changed shape. What was her name?",
+      "choices": ["Uirne (also called Tuiren)", "Deirdre of the Sorrows", "Grainne of the elopement", "Emer, wife of Cu Chulainn"],
+      "answer": "Uirne (also called Tuiren)",
+      "context": "Uirne / Tuiren was married to Iollan of the Fianna. She was transformed while pregnant, hence her twin children were born as hounds. Deirdre is the tragic heroine of Longes mac nUislenn in the Ulster Cycle; Grainne elopes with Diarmuid from Fionn himself; Emer is Cu Chulainn's wife, also in the Ulster Cycle.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In The Birth of Bran, the woman who cursed Fionn's aunt with hound-shape while she was pregnant was not a witch or a warrior but a JEALOUS RIVAL: an earlier lover of the husband, come to punish the new wife who had replaced her. To what people did the jealous woman Uchtdealb belong?",
+      "choices": ["the Sidhe (the faery folk)", "the Fomorians (the sea-raiders)", "the Milesians (the sons of Mil)", "the Fir Bolg (the bag-men)"],
+      "answer": "the Sidhe (the faery folk)",
+      "context": "Uchtdealb (also spelled Uct Dealv) was a woman of the Sidhe, the faery folk, and had been the lover of Iollan before he married Tuiren. The Sidhe in Irish tradition are what the Tuatha De Danann became after their defeat, retreating into the hollow hills. The Fomorians are the older sea-monsters defeated at Mag Tuired; the Milesians are the ancestors of the modern Irish; the Fir Bolg are one of the older invader-peoples.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In The Birth of Bran, the jealous Uchtdealb of the Sidhe came to Fionn's aunt disguised as one of Fionn's own messengers. She lured her out of her husband's house alone into the woods, and struck her on the shoulder to change her shape. With what object did she strike the blow?",
+      "choices": ["a hazel rod", "a bronze sword", "a golden apple", "a spear of yew"],
+      "answer": "a hazel rod",
+      "context": "The hazel is the Irish tree of magic and wisdom (the hazels of Segais drop their nuts into the Salmon of Knowledge's pool); the druid's rod of transformation is characteristically hazel. A sword-stroke would have killed rather than transformed. The golden apple is a Greek pillar object (Atalanta, the Judgement of Paris). Yew is the tree of death in Irish tradition, not of shape-shifting.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After the jealous Uchtdealb had struck Uirne with a hazel rod and turned her into a hound, Fionn eventually found out what had happened and forced the woman of the Sidhe to break the enchantment. The mother was made a woman again. But her two whelps, Bran and Sceolang, stayed hounds for the rest of their lives. Why could the spell on them not be undone?",
+      "choices": ["they had been conceived and born entirely under the enchantment", "they had drunk from a faery well after birth", "they had been named by Fionn before their mother was freed", "the Sidhe queen had bound them separately with a golden collar"],
+      "answer": "they had been conceived and born entirely under the enchantment",
+      "context": "Uirne was already pregnant when she was transformed; the whelps were shaped as hounds from their first breath, and the enchantment could not be lifted from a body that had never known any other. It is the rule of shape-magic in the Fenian tales. The other three are inventions of the choices.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Bran and Sceolang are unlike any other hounds in the Fianna's kennels: Fionn speaks to them as to men, and they answer with looks and yelps that he reads as speech. What gift do the tales give them that ordinary hunting dogs lack?",
+      "choices": ["they understand human speech", "they can breathe underwater on the chase", "they can fly across a hunting-ground in three bounds", "they never sleep, day or night"],
+      "answer": "they understand human speech",
+      "context": "Because Bran and Sceolang carry HUMAN MINDS under their hound-shape (their mother having been a woman under the spell), they hear and understand what is said to them. Sleepless hounds are found in Norse tradition (Garmr) but not here; flight and underwater breath are the powers of horses of the Sidhe (Enbarr of Manannan), not of the Fenian hounds.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The shape-changing motif runs through Fionn mac Cumhaill's own family. Fionn's wife Sadhbh was herself enchanted into the form of a deer, and their son was born while she was in that shape. Fionn named the boy from what he found on the mountainside. What was the son called?",
+      "choices": ["Oisin, 'little fawn'", "Diarmuid, 'without envy'", "Caoilte, 'the swift one'", "Goll, 'the one-eyed'"],
+      "answer": "Oisin, 'little fawn'",
+      "context": "Oisin (pronounced oh-SHEEN) is Fionn's son by the deer-woman Sadhbh; the name means 'little deer / fawn' in Irish. He is the great poet of the Fianna and lives to ride with Niamh to Tir na nOg. Diarmuid ua Duibhne is the beautiful Fenian killed by the boar of Ben Bulben; Caoilte mac Ronain is Oisin's Fenian companion; Goll mac Morna is Fionn's one-eyed rival captain.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In one of the Fenian traditions, Sceolang met her death during a great hunt in the woods called the Chase of Thrush Glen. She and the pack were running down what strange quarry, half black and half white, when the chase ended in her death?",
+      "choices": ["an enchanted deer", "a wild boar with iron bristles", "a black horse with a red mane", "a giant hare"],
+      "answer": "an enchanted deer",
+      "context": "The half-black, half-white deer of the Chase of Thrush Glen was an enchanted creature, and Sceolang died in the chase. Enchanted deer run through many Fenian tales, echoing the shape of Fionn's own wife Sadhbh. The boar of Ben Bulben kills Diarmuid, not the hounds; the black horse with red mane is a horse-of-the-Sidhe motif but not the quarry here; a giant hare belongs to Welsh Mabinogi tales, not to Bran and Sceolang.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When one of Fionn's great hounds died, his grief was of the same heroic scale as a man losing a brother, not a huntsman losing a dog. In Lady Gregory's Gods and Fighting Men (1904) and the Fenian tradition she draws on, why is that grief so deep and unlike an ordinary huntsman's grief for an ordinary hound?",
+      "choices": ["because the hound was his own blood-kin under a spell", "because the hound had once saved him from a poisoned apple", "because the hound had died refusing to attack a Christian saint", "because the hound had been given him by Manannan mac Lir"],
+      "answer": "because the hound was his own blood-kin under a spell",
+      "context": "Bran and Sceolang were Fionn's cousins born under Uchtdealb's spell; to lose one was to lose a kinsman, not a beast. Lady Gregory's Gods and Fighting Men (1904) retells the Fenian cycle at length. Saint-refusing hounds appear in later Christian-Irish legend but not here; Manannan mac Lir gives horses and swords, not Fionn's hounds; the poisoned apple is a Greek and later folktale motif, not Fenian.",
+      "legend": true
+    }
+  ]
+}

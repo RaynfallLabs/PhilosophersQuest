@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "At the centre of the Norse cosmos stands a single enormous tree whose branches spread above all the worlds and whose roots reach down to three separate wells. Voluspa calls it 'a tall tree, showered with shining loam.' What is the name of this world-tree?",
+      "choices": ["Yggdrasil", "Bifrost", "Gjallarhorn", "Mjolnir"],
+      "answer": "Yggdrasil",
+      "context": "Voluspa 19; Gylfaginning 15-16. Yggdrasil is the axis of the nine worlds. Bifrost is the rainbow bridge between Asgard and Midgard; Gjallarhorn is Heimdall's horn that will sound at Ragnarok; Mjolnir is Thor's hammer.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Norse tradition is specific about what SPECIES of tree the world-tree is -- both Voluspa 19 and Gylfaginning 15 name it as one particular hardwood common in the northern forests. What kind of tree is the world-tree?",
+      "choices": ["an ash", "an oak", "a yew", "a birch"],
+      "answer": "an ash",
+      "context": "Voluspa 19 and Gylfaginning 15 both call the world-tree an ash. Zeus's sacred tree at Dodona was an oak; the yew was sacred to some Celtic sites; birch is the sacred tree of certain Siberian traditions. The Norse tree is an ash specifically.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The name of the Norse world-tree literally means 'Odin's horse'. Odin also has the by-name 'Ygg', which means 'the Terrible'. Why is the tree called Odin's horse?",
+      "choices": ["it was his gallows the night he hanged himself for the runes", "he tied his eight-legged horse to it every morning", "he rides its branches down from Asgard to Midgard", "its roots grew where his horse first pawed the earth"],
+      "answer": "it was his gallows the night he hanged himself for the runes",
+      "context": "The kenning 'gallows' = 'horse of the hanged' is a common Old Norse metaphor: a hanged man 'rides' the gallows. Odin hanged himself on the world-tree for nine nights, pierced with his own spear, and won the runes; the tree became Ygg's-horse ever after.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Norns sit at the bottom of Yggdrasil beside one of the three great wells the tree's roots drink from. This is the well where the fates of gods and men are spoken. What is the Norns' well called?",
+      "choices": ["Urd's well", "Mimir's well", "Hvergelmir", "Elivagar"],
+      "answer": "Urd's well",
+      "context": "Gylfaginning 15-16 and Voluspa 20. Urd's well feeds one of Yggdrasil's three roots and is where the three Norns -- Urd, Verdandi, and Skuld -- draw water to keep the tree alive. Mimir's well is where Odin traded his eye for wisdom; Hvergelmir bubbles in cold Niflheim; Elivagar is the name of the eleven ice-rivers, not a well.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the very top of Yggdrasil sits a huge unnamed eagle, wise and far-seeing over the nine worlds. Between the eagle's eyes perches a smaller bird that hears everything the eagle sees and reports it. What kind of bird sits between the eagle's eyes, and what is its name?",
+      "choices": ["a hawk called Vedrfolnir", "a raven called Muninn", "an owl called Vindsval", "a falcon called Valkyria"],
+      "answer": "a hawk called Vedrfolnir",
+      "context": "Gylfaginning 16. The hawk Vedrfolnir sits between the eyes of the topmost eagle. Muninn ('Memory') is one of Odin's two ravens; the others in the list are invented distractors shaped like real Norse names.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Four HARTS -- male deer -- pace round the branches of Yggdrasil, cropping the leaves and bark. Grimnismal names all four in a single verse. What are the four harts of Yggdrasil called?",
+      "choices": ["Dainn, Dvalinn, Duneyrr, Durathror", "Sleipnir, Grani, Gullfaxi, Hofvarpnir", "Skoll, Hati, Fenrir, Garm", "Odin, Vili, Ve, Bor"],
+      "answer": "Dainn, Dvalinn, Duneyrr, Durathror",
+      "context": "Grimnismal 33. The four hart-names all begin with D. Sleipnir/Grani/Gullfaxi/Hofvarpnir are famous horses (Odin's, Sigurd's, Gunnar's, Frigg's). Skoll/Hati/Fenrir/Garm are the four great wolves. Odin/Vili/Ve/Bor are Odin and his family.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the roof of Valhalla a she-goat named Heidrun stands eating leaves plucked from Yggdrasil's branches, and from her udder flows the endless supply of one particular drink for the warriors inside the hall. What comes from the udder of Heidrun?",
+      "choices": ["mead", "ale", "milk", "cider"],
+      "answer": "mead",
+      "context": "Grimnismal 25. Heidrun the goat gives mead, not milk, and the mead never runs out; the Einherjar in Valhalla drink from it forever. The other three are the drinks a real Norse hall might have poured -- but the goat on Valhalla's roof pours only mead.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Deep beneath the third root of Yggdrasil lies a serpent-dragon whose name means 'Malice-Striker'. Day and night he gnaws at the root, trying to bring the whole world-tree down. What is the dragon's name?",
+      "choices": ["Nidhogg", "Fafnir", "Jormungandr", "Fenrir"],
+      "answer": "Nidhogg",
+      "context": "Grimnismal 32 and Gylfaginning 16. Nidhogg gnaws at the root and, in Voluspa, also chews the corpses of oath-breakers in Hel. Fafnir is the dwarf-turned-dragon killed by Sigurd for the ring-hoard; Jormungandr is the Midgard Serpent that circles the sea; Fenrir is the wolf of Ragnarok.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri says the messenger who runs insults between the eagle at the top of Yggdrasil and the dragon at its root is not a solemn creature at all -- if he cannot remember the exact rude words each end gave him, he simply invents worse ones to keep the quarrel alive. What is this messenger's job, in one word?",
+      "choices": ["gossip", "herald", "watchman", "arbiter"],
+      "answer": "gossip",
+      "context": "Gylfaginning 16. Snorri makes the messenger a pure mischief-maker, sharpening the feud rather than reporting it fairly. A herald delivers proclamations faithfully; a watchman guards; an arbiter judges between disputants. Not this one -- he is a talebearer.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The squirrel who runs insults up and down Yggdrasil has a name that means 'Drill-Tooth' or 'Bore-Tooth' -- fitting for a rodent who chews his way through the tree between missions. What is his name?",
+      "choices": ["Ratatoskr", "Skoll", "Grani", "Hugin"],
+      "answer": "Ratatoskr",
+      "context": "Grimnismal 32; Gylfaginning 16. Ratatoskr's name breaks down as rata- ('boring, gnawing') + -toskr ('tusk, tooth'). Skoll is the wolf who chases the sun across the sky; Grani is Sigurd's grey horse; Hugin ('Thought') is one of Odin's two ravens.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Grimnismal 35 laments that Yggdrasil is beset on every side: a dragon gnaws its bottom root, harts strip its leaves, and the sides rot -- 'more troubles than men know afflict Yggdrasil'. Yet the tree does something at the end of the world that no other living thing manages. What does Yggdrasil do at Ragnarok?",
+      "choices": ["it survives the burning of the world", "it is uprooted by Surt's fire", "it is felled by Nidhogg at last", "it becomes the funeral pyre for the gods"],
+      "answer": "it survives the burning of the world",
+      "context": "Vafthrudnismal 45 and Voluspa. When Surt's fire sweeps everything, Yggdrasil alone endures -- and shelters the survivors inside it. It is the one thing that outlasts the end.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Vafthrudnismal 45 promises that after the fire of Ragnarok has swept the nine worlds, TWO humans -- one man and one woman -- will step out into the reborn earth to begin the human race again. What are the two survivors called?",
+      "choices": ["Lif and Lifthrasir", "Ask and Embla", "Sigurd and Brynhild", "Baldr and Nanna"],
+      "answer": "Lif and Lifthrasir",
+      "context": "Vafthrudnismal 45. Lif ('Life') and Lifthrasir ('Life-Yearner') are the two survivors who ride out the end inside the world-tree. Ask and Embla were the FIRST man and woman, carved from driftwood by Odin at the beginning; Sigurd and Brynhild are the doomed lovers of the Volsung cycle; Baldr and Nanna are the Aesir couple, Baldr slain before Ragnarok.",
+      "legend": true
+    }
+  ]
+}

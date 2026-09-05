@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse poem Thrymskvida, the thunder-god of the Aesir wakes one morning, gropes for the weapon he has always kept beside him, and finds only empty air. He shakes his beard so hard in fury that all Asgard hears it, and calls at once for Loki. What weapon has been stolen from the sleeping god?",
+      "choices": ["Mjolnir the hammer", "Gungnir the spear", "Tyrfing the sword", "Gram the sword"],
+      "answer": "Mjolnir the hammer",
+      "context": "Thrymskvida 1-2: Thor wakes to find his hammer gone. Gungnir is Odin's spear. Tyrfing is the cursed sword of the Hervarar Saga. Gram is the sword Sigurd will one day reforge from his father's broken blade to kill Fafnir.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Loki agrees to help Thor find the missing hammer, but he cannot travel to Jotunheim on his own two feet in time. He goes to the goddess Freyja and borrows one of her possessions so he can fly the whole way there. What did Loki borrow from Freyja to fly to the land of the giants?",
+      "choices": ["her falcon-feather cloak", "her golden chariot", "her boar Hildisvini", "her necklace Brisingamen"],
+      "answer": "her falcon-feather cloak",
+      "context": "Thrymskvida 3-5: Freyja lends Loki her feather-cloak (fjadrhamr) and he flies in falcon shape to Jotunheim. Freyja's boar Hildisvini and her necklace Brisingamen belong to her, but neither carries a passenger through the air. Her chariot is drawn by cats and stays on the ground.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Flying over Jotunheim in Freyja's cloak, Loki spots a giant sitting on a burial-mound braiding gold collars for his hunting dogs. The giant cheerfully admits he has taken Thor's hammer and hidden it away. What is the name of this giant king who stole Mjolnir?",
+      "choices": ["Thrym", "Hrungnir", "Skrymir", "Suttung"],
+      "answer": "Thrym",
+      "context": "Thrymskvida 6-7: the thief is Thrym, king of the frost-giants (thurs), who has the whole poem named after him. Hrungnir is the stone-headed giant Thor kills in single combat. Skrymir is the giant illusion Thor meets on the road to Utgard. Suttung is the giant who hides the Mead of Poetry inside a mountain.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The giant tells Loki that he will only give Mjolnir back if the Aesir send him Freyja as his bride. Meanwhile the hammer itself is safe -- Thrym has buried it far under the earth, deep enough that no god can just dig it up. How deep does the poem say Thrym buried Mjolnir?",
+      "choices": ["eight leagues down", "three leagues down", "twelve leagues down", "one league down"],
+      "answer": "eight leagues down",
+      "context": "Thrymskvida 8: Thrym boasts that Mjolnir is buried eight leagues (about eight miles) below the ground. The other depths are the sort of round numbers a listener might guess; the poem is exact about eight.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki brings the giant's demand back to Asgard: Freyja for the hammer. Freyja snorts with such rage at the thought of marrying Thrym that a piece of her most famous treasure physically bursts free of her in the force of her refusal. What named treasure is said in Thrymskvida to burst from Freyja in the moment of her fury?",
+      "choices": ["Brisingamen", "Draupnir", "Gungnir", "Andvaranaut"],
+      "answer": "Brisingamen",
+      "context": "Thrymskvida 13: Brisingamen, Freyja's dwarf-forged necklace, bursts from her at her snort of rage. Draupnir is Odin's arm-ring which drips eight new rings every ninth night. Gungnir is Odin's spear. Andvaranaut is the cursed ring of the Volsung cycle. Brisingamen is the only one of the four that belongs to Freyja.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Since Freyja will not go, the gods hold an assembly to plan another way. One of the Aesir proposes the plan that will actually work: dress Thor himself in a bride's clothes and send HIM to Jotunheim to marry Thrym. Which of the Aesir is said in Thrymskvida to propose the disguise?",
+      "choices": ["Heimdall", "Odin", "Bragi", "Tyr"],
+      "answer": "Heimdall",
+      "context": "Thrymskvida 15: Heimdall the watchman speaks up with the plan to disguise Thor. Odin is silent in this poem. Bragi is the god of poetry. Tyr will lose his hand in Fenrir's mouth. Heimdall alone proposes the bridal disguise.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the wedding-feast in Thrym's hall the veiled bride sits down at the table and, before anyone else has taken a bite, demolishes the food set for the whole wedding-party. The poet lists three separate things the bride eats and drinks alone -- a whole ox, a stack of salmon, and every vat of mead the giants can bring. How many salmon does the poem say the bride swallowed at the feast?",
+      "choices": ["eight salmon", "three salmon", "twelve salmon", "one salmon"],
+      "answer": "eight salmon",
+      "context": "Thrymskvida 24: the bride ate one ox and eight salmon and all the dainties meant for the women, and drained three vats of mead. The poet loves the number eight in Thrymskvida -- eight leagues to the buried hammer earlier, eight salmon on the plate here.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Thrym stares in astonishment at how much food the bride has just eaten. The 'maidservant' at the bride's side leans in and whispers a smooth lie in Thrym's ear to explain the appetite. What does Loki tell Thrym is the reason for the bride's hunger?",
+      "choices": ["she has fasted eight nights for eagerness", "she is carrying a giant's child already", "she has traveled through cold country", "she was raised in a hunter's hall"],
+      "answer": "she has fasted eight nights for eagerness",
+      "context": "Thrymskvida 26: Loki tells Thrym that Freyja was so eager for Jotunheim that she has not eaten for eight nights. The number matches Thrym's earlier boast that the hammer is buried eight leagues down; the poet loves the number eight in this poem.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Thrym leans in for the wedding kiss and reaches to lift the bridal veil to see the face beneath. He gets one look and springs back the length of the hall in terror. What did Thrym see under the veil that terrified him?",
+      "choices": ["the bride's blazing eyes", "the bride's iron beard", "the bride's calloused hands", "the bride's swollen fists"],
+      "answer": "the bride's blazing eyes",
+      "context": "Thrymskvida 27-28: Thrym recoils from Freyja's terrible eyes, which burn like fire. Loki covers again -- 'she has not slept for eight nights either, in her longing for Jotunheim.' The specific tell that gives Thor away in Thrym's own hall is his EYES, not his beard or his hands.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The wedding-feast is nearly over. Following the giants' custom, Thrym calls for the great hammer to be carried into the hall and set down on the bride's knees, so that the marriage may be hallowed by it. Where does Thrym have Mjolnir placed to bless the wedding?",
+      "choices": ["on the bride's lap", "at the bride's feet", "over the bride's head", "on the wedding altar"],
+      "answer": "on the bride's lap",
+      "context": "Thrymskvida 30: 'Bring in the hammer to hallow the bride; on the lap of the maiden let Mjolnir lie.' It is Thrym's own hand that delivers the weapon straight to Thor. Snorri's Prose Edda uses the same phrase 'hallow with the hammer' for a Norse wedding blessing -- Thrym thinks he is holding a proper giant wedding and it costs him his life.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The instant Mjolnir touches Thor's knees he throws off the veil, seizes the hammer, and begins the killing. The poem names the first giant to fall by name -- the giant who has just handed Thor the weapon of his own death. Who is the very first giant Thor kills in Thrym's hall?",
+      "choices": ["Thrym himself", "Thrym's sister", "Thrym's father", "Thrym's steward"],
+      "answer": "Thrym himself",
+      "context": "Thrymskvida 31-32: Thor kills Thrym first, then Thrym's sister who had been demanding a wedding-gift from the bride, then every giant in the hall. He walks home to Asgard with Mjolnir back in hand. Thrymskvida is one of the shortest poems of the Poetic Edda and one of the most beloved -- the thunder-god blushing in a bridal veil and eating an ox at his own wedding.",
+      "legend": true
+    }
+  ]
+}

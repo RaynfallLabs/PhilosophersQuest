@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Gospels a wealthy follower of Jesus goes to Pilate after the crucifixion, asks for the body, and buries it in his own new-cut rock tomb. What was this man's name?",
+      "choices": ["Joseph of Arimathea", "Simon of Cyrene", "Nicodemus of Jerusalem", "Lazarus of Bethany"],
+      "answer": "Joseph of Arimathea",
+      "context": "Matthew 27:57-60; Mark 15:43-46; Luke 23:50-53; John 19:38-42. Joseph of Arimathea, a rich member of the Sanhedrin and secret disciple, wraps Jesus in linen and lays him in his own tomb. Simon of Cyrene is the man forced to carry the cross. Nicodemus helps with the burial spices but not the tomb. Lazarus is the friend Jesus raised at Bethany.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Medieval French romances turned the Grail into the cup Jesus lifted at a Passover meal in an upper room in Jerusalem, the night before he was arrested. Which meal from the Gospels is this?",
+      "choices": ["the Last Supper", "the Feast of Tabernacles", "the Wedding at Cana", "the Feeding of the Five Thousand"],
+      "answer": "the Last Supper",
+      "context": "The Grail-as-cup identification (Robert de Boron, c.1200) points back to the Last Supper -- the Passover meal in the upper room, source of the Christian Eucharist. Cana is where Jesus turned water into wine; the Feeding of the Five Thousand is the loaves-and-fishes miracle; the Feast of Tabernacles is a Jewish harvest festival.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "A French poet writing around the year 1200 was the first to turn the mysterious 'graal' of Chretien's Perceval into a Christian relic: the very cup from the Last Supper. Which poet made this identification?",
+      "choices": ["Robert de Boron", "Chretien de Troyes", "Wolfram von Eschenbach", "Thomas Malory"],
+      "answer": "Robert de Boron",
+      "context": "Robert de Boron's verse Joseph d'Arimathie (c.1200) fused the Grail with the Eucharist cup for the first time. Chretien de Troyes wrote the earlier Perceval (c.1181-90) where the graal is only a serving-dish. Wolfram von Eschenbach's Parzival (c.1210) made it a stone from heaven instead. Thomas Malory, writing much later in the 1400s, took the cup version and put it into English.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Robert de Boron's poem the same cup from the upper-room supper turns up again at the crucifixion, held by Joseph of Arimathea below the cross. Joseph uses it to catch what the Roman soldier Longinus draws out with a lance-thrust into Jesus's side. What does the cup collect?",
+      "choices": ["drops of blood", "grains of frankincense", "a scrap of the shroud", "the crown of thorns"],
+      "answer": "drops of blood",
+      "context": "In Robert de Boron's Joseph d'Arimathie, Joseph catches the blood flowing from Jesus's side after the soldier's lance-thrust. The cup thus carries both the memory of the Last Supper wine and actual drops of blood -- twice hallowed. The shroud is Joseph's linen cloth, wrapping the body. The crown of thorns is a separate relic given to the mocking soldiers. Frankincense is one of the Magi's birth-gifts, not part of this scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In Robert de Boron's tale Joseph is thrown into prison right after the crucifixion. According to the legend, how many years did he sit in that cell before he was set free by the Emperor Vespasian?",
+      "choices": ["forty-two years", "seven years", "twelve years", "one hundred years"],
+      "answer": "forty-two years",
+      "context": "The legend places Joseph in prison for exactly forty-two years, fed each day by a wafer laid in the cup by a dove and by daily visits from the risen Jesus who taught him the 'secrets of the Grail'. Vespasian, later Roman emperor, hears of him and releases him. Seven, twelve, and a hundred are all round biblical numbers but not the one this story uses.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Released from the Roman prison, Joseph of Arimathea gathers his family and companions and sails west with the cup, eventually landing in a distant kingdom where he founds its first Christian community. In which land does the legend place his landing?",
+      "choices": ["Britain", "Egypt", "Spain", "Armenia"],
+      "answer": "Britain",
+      "context": "The Joseph-to-Britain journey is 12th-century French legend, first written down by Robert de Boron and expanded in the Vulgate Estoire del Saint Graal (c.1220). Egypt is where the Holy Family flees from Herod (a different story). Spain is where the apostle James is buried by legend (Santiago). Armenia was the first officially Christian kingdom historically, but not part of the Grail story.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the west of England, on a hill outside a small town, Joseph is said to have thrust his walking staff into the ground -- and by morning the staff had taken root and grown into a flowering thorn tree. In which town does the legend place his staff?",
+      "choices": ["Glastonbury", "Canterbury", "Winchester", "Tintagel"],
+      "answer": "Glastonbury",
+      "context": "The tree, called the Glastonbury Thorn, grew on Wearyall Hill until it was chopped down by Puritan soldiers in the 17th century; a successor stood there until it was vandalised in 2010, but cuttings survive. Canterbury is Becket's cathedral. Winchester is Alfred's royal city. Tintagel is Arthur's Cornish birthplace.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Glastonbury Thorn is not just legend -- the abbey really did grow a hawthorn that flowered TWICE a year, once in spring and once in a very particular season the Christian world already treated as holy. When does the second flowering come?",
+      "choices": ["at Christmas", "at Easter", "at midsummer", "at harvest"],
+      "answer": "at Christmas",
+      "context": "The tree, botanically Crataegus monogyna 'Biflora', really is a rare cultivar that blooms in midwinter as well as in spring -- the Christmas bloom is the source of the miracle-claim. To this day a flowering sprig from a surviving specimen is sent to the British monarch every Christmas. Easter, midsummer, and harvest all have Christian feasts but not the Glastonbury Thorn story.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Not every medieval poet agreed the Grail was a cup. Wolfram von Eschenbach's Parzival (c.1210) tells a totally different origin -- the Grail is not a vessel at all but something else, brought down from heaven. In Wolfram's version, what is the Grail?",
+      "choices": ["a stone fallen from heaven", "a mirror sent by the moon", "a book of the angels", "a lamp of living fire"],
+      "answer": "a stone fallen from heaven",
+      "context": "Wolfram calls his Grail 'lapsit exillis', usually read as garbled Latin for 'the stone that fell from heaven'. It gives off a light so bright the candles pale, and no one who has seen it can die within the week. Robert de Boron's cup-version was more popular in later English romance (Malory follows the cup); Wolfram's stone-version inspired Wagner's opera Parsifal.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the Grail cycle the cup is passed down Joseph's descendants -- a line of wounded kings who guard it at the castle of Corbenic. Each of them is crippled by a groin-wound and, unable to walk, spends his days in a small boat on the castle lake with a rod in his hand. What is this line of guardians called?",
+      "choices": ["the Fisher Kings", "the Nazarite Guardians", "the Marys of the Sea", "the Templar Wardens"],
+      "answer": "the Fisher Kings",
+      "context": "The Fisher King line, keepers of the Grail at Corbenic, waits generation after generation for the destined knight who will ask the right question and end the wound. Nazarites are Old Testament vow-keepers (Samson). 'Marys of the Sea' is a separate Provencal Grail-adjacent legend of Mary Magdalene landing in France. The Knights Templar were a real 12th-century order later fictionally attached to the Grail story.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The medieval abbey that promoted the Joseph-of-Arimathea legend was also the same abbey that made another very famous 'discovery' in the year 1191, right after a fire had burned down their treasury. What did the Glastonbury monks claim to have dug up in 1191?",
+      "choices": ["King Arthur's grave", "the True Cross", "the bones of Saint Peter", "the Ark of the Covenant"],
+      "answer": "King Arthur's grave",
+      "context": "In 1191, seven years after the great fire of 1184 gutted the abbey, the monks announced they had unearthed a lead cross reading 'Here lies buried the famous King Arthur on the Isle of Avalon' alongside a giant coffin. Modern historians treat it as a pious forgery to attract pilgrims and rebuilding funds -- both the Arthur claim and the Joseph claim served the abbey's income. The True Cross was 'found' by Helena, mother of Constantine. Saint Peter's bones are at the Vatican. The Ark has never been claimed by a Western monastery.",
+      "legend": false
+    }
+  ]
+}

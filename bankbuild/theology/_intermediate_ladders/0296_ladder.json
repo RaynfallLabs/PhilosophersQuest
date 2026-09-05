@@ -1,0 +1,82 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "After the rebellion of Korah in the wilderness, the tribes murmur again against Moses and against the priesthood. To settle the matter once and for all, Moses gathers a rod from each tribal chief and lays them up in the Tabernacle before the testimony overnight (Numbers 17). How many rods does he lay before the testimony?",
+      "choices": [
+        "twelve",
+        "seven",
+        "ten",
+        "forty"
+      ],
+      "answer": "twelve",
+      "context": "One rod for each of the twelve tribes of Israel. Numbers 17:2 -- 'Speak unto the children of Israel, and take of every one of them a rod according to the house of their fathers, of all their princes... twelve rods.' Source: Wikipedia, Aaron's rod; Numbers 17.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "When Moses goes into the Tent of the Testimony in the morning, only one of the tribal rods is alive -- it has budded, put forth blossoms, and even yielded ripe fruit overnight. The rod belongs to Aaron, Moses's brother, and shows that his tribe is the chosen priesthood. Which tribe of Israel does Aaron represent?",
+      "choices": [
+        "Levi",
+        "Judah",
+        "Benjamin",
+        "Reuben"
+      ],
+      "answer": "Levi",
+      "context": "Aaron is of the tribe of Levi (Numbers 17:8: 'the rod of Aaron for the house of Levi was budded'). The rod-test settles that the Levites, and not any other tribe, are the priestly line. Source: Wikipedia, Aaron's rod; Numbers 17.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The dead wooden staff of Aaron does not merely bud overnight in the Tabernacle -- it goes the whole way from bud to blossom to ripe fruit in one night. What fruit does Numbers 17:8 say the rod actually yields by morning?",
+      "choices": [
+        "almonds",
+        "figs",
+        "pomegranates",
+        "olives"
+      ],
+      "answer": "almonds",
+      "context": "Numbers 17:8 -- 'the rod of Aaron... was budded, and brought forth buds, and bloomed blossoms, and yielded almonds.' The almond tree is the earliest to bloom in the Holy Land, a fitting image of a first-fruits sign. Source: Bible Hub, Numbers 17:8.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "According to the Epistle to the Hebrews (9:4), the budded rod of Aaron was afterwards kept as a sacred relic inside the Ark of the Covenant, alongside two other objects preserved from the wilderness years. What are the two other objects?",
+      "choices": [
+        "the pot of manna and the tables of stone",
+        "the seven-branched menorah and the ephod",
+        "the incense censer and the breastplate",
+        "the scroll of the Law and the shewbread"
+      ],
+      "answer": "the pot of manna and the tables of stone",
+      "context": "Hebrews 9:4 lists 'the golden pot that had manna, and Aaron's rod that budded, and the tables of the covenant' inside the Ark. Later Jewish tradition disagrees on whether the pot and rod were literally in the Ark or beside it, but Hebrews puts them in. Source: Wikipedia, Aaron's rod; Hebrews 9:4.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Further along the wilderness journey, the people speak against God and Moses -- 'wherefore have ye brought us up out of Egypt to die in the wilderness?' (Numbers 21:5). In response, God sends a plague of biting creatures into the camp, and many die. What kind of creatures does God send?",
+      "choices": [
+        "fiery serpents",
+        "black locusts",
+        "swift hornets",
+        "gaunt wolves"
+      ],
+      "answer": "fiery serpents",
+      "context": "Numbers 21:6 -- 'the LORD sent fiery serpents among the people, and they bit the people; and much people of Israel died.' 'Fiery' probably refers to the burning venom of the bite. The people repent; Moses is told to make a bronze serpent on a pole, and any bitten man who looks at it lives. Source: Wikipedia, Nehushtan; Numbers 21.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Centuries after Moses set the bronze serpent on the pole in the wilderness, King Hezekiah of Judah walks into the temple and breaks the healing-relic in pieces, because the people had begun burning incense to it as an idol (2 Kings 18:4). Hezekiah gives the shattered thing a contemptuous nickname. What does he call it?",
+      "choices": [
+        "Nehushtan",
+        "Baal-zebub",
+        "Dagon",
+        "Molech"
+      ],
+      "answer": "Nehushtan",
+      "context": "2 Kings 18:4 -- 'he brake in pieces the brasen serpent that Moses had made... and he called it Nehushtan.' The name puns on the Hebrew nehoshet (brass) -- a merciless nickname meant to strip the object of the sacred aura Israel had wrongly given it. Baal-zebub, Dagon, and Molech are all real gods Israel encountered but were never nicknames for the serpent-pole. Source: Wikipedia, Nehushtan; 2 Kings 18.",
+      "legend": false
+    }
+  ]
+}

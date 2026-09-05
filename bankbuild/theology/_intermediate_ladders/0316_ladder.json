@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Malory's Le Morte d'Arthur, a tall handsome young man arrives at Camelot at Pentecost and refuses to give his name. Sir Kay the seneschal, scorning him, gives him a mocking French nickname meaning 'Fair-Hands' and puts him to work scrubbing pots. What was the nickname?",
+      "choices": ["Beaumains", "Le Bel Inconnu", "La Cote Male Taile", "Perceval le Gallois"],
+      "answer": "Beaumains",
+      "context": "Beaumains is Old French for 'fair hands' (beau + mains). Malory Book VII opens with the scene. Le Bel Inconnu ('the Fair Unknown') is a parallel French romance by Renaut de Beaujeu, not a name in Malory; La Cote Male Taile ('the badly cut coat') is another Round Table nickname, given by Kay to Sir Breunor; Perceval le Gallois ('Perceval the Welshman') is the Grail knight of Chretien de Troyes.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In Malory's Tale of Sir Gareth, the young man who took the kitchen nickname Beaumains asked King Arthur for three gifts on arrival. Which was his very first gift?",
+      "choices": ["food and shelter for a year", "a sword and a horse", "a place at the Round Table", "the hand of a lady of the court"],
+      "answer": "food and shelter for a year",
+      "context": "Malory Book VII. The other two gifts would be named a year later. His plan was to earn his knighthood without the advantage of anyone knowing his name. A sword and horse would have marked him as noble; a Round Table seat was not something asked as a gift; marriage came only at the tale's end, to Dame Lyonesse.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "After a year in the kitchens, Beaumains asked his second gift: the quest of a damsel who had arrived seeking a knight to rescue her besieged sister. What was the damsel's name?",
+      "choices": ["Lynette", "Elaine", "Nimue", "Enid"],
+      "answer": "Lynette",
+      "context": "Lynette (sometimes Lyonet) rode beside Beaumains all the way to the castle, mocking him from behind as a kitchen-boy who smelled of grease, until his deeds converted her mockery to admiration. Elaine of Astolat dies of unrequited love for Lancelot; Nimue is the Lady of the Lake figure who imprisons Merlin; Enid is the wife of Geraint in the parallel Welsh and French tales.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The damsel Lynette had come to Camelot seeking rescue for her sister, who was besieged in her own castle by a great enemy. What was the besieged sister's name?",
+      "choices": ["Lyonesse", "Guinevere", "Igraine", "Morgause"],
+      "answer": "Lyonesse",
+      "context": "Dame Lyonesse held Castle Perilous against the Red Knight of the Red Launds. Beaumains married her at the tale's end. Guinevere is Arthur's queen; Igraine is Arthur's mother; Morgause is Gareth's own mother (which he does not yet know he is proving himself to marry into).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the road to Castle Perilous, Beaumains fought and defeated in turn four knights known by the colours of their arms: the Black Knight Sir Percard, a Green Knight, a Red Knight, and one more, sending each defeated foe back to Arthur as prisoner. What colour was the fourth?",
+      "choices": ["the Blue Knight Sir Persaunt of Inde", "the White Knight Sir Balin the Savage", "the Golden Knight Sir Ector de Maris", "the Grey Knight Sir Palamedes"],
+      "answer": "the Blue Knight Sir Persaunt of Inde",
+      "context": "Malory Book VII. Persaunt's territory is called 'Inde', hence the deep blue of his arms. Sir Balin the Savage is a wholly different tragic knight (the Dolorous Stroke); Sir Ector de Maris is Lancelot's brother; Sir Palamedes is the Saracen knight of the Tristan cycle.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At Castle Perilous the besieger who had held Dame Lyonesse locked in her tower was a giant knight in red arms. The knight in red had done a shameful thing around his own pavilion, meant to intimidate any challenger who rode up: what?",
+      "choices": ["hanged nearly forty defeated knights by their necks from trees", "chained a lion at each of the four corners", "planted the ground with sharpened stakes and burning oil", "set his slain foes' heads on pikes along the palisade"],
+      "answer": "hanged nearly forty defeated knights by their necks from trees",
+      "context": "Malory Book VII. To be hanged by the neck was the most shameful death a knight could suffer, reserved for common criminals; the Red Knight had done it to nearly forty defeated foes as a warning and a boast. Beaumains cut the corpses down for honourable burial after the fight.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Beaumains fought the giant Red Knight of the Red Launds all day at Castle Perilous, spared his life on condition he yield at Camelot, and cut the hanged knights down for burial. What was the Red Knight's true name, later revealed?",
+      "choices": ["Sir Ironside", "Sir Turquine", "Sir Breunis Sans Pite", "Sir Marhaus"],
+      "answer": "Sir Ironside",
+      "context": "Malory Book VII. Ironside explained he had sworn to a former love, whose brother had been killed by Lancelot or Gawain, that he would kill any of Arthur's knights he could reach. Sir Turquine is a different giant who imprisoned dozens of Arthur's knights and was slain by Lancelot; Sir Breunis Sans Pite ('without pity') is another wandering villain; Sir Marhaus is the Irish champion killed by Tristan.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Beaumains finally revealed his true identity, he was named as the youngest son of a king; his father was the king whose sons Gawain, Agravain, Gaheris, and Mordred were also known at Arthur's court. What was his father's name and kingdom?",
+      "choices": ["King Lot of Orkney", "King Ban of Benoic", "King Pellinore of the Isles", "King Uriens of Gore"],
+      "answer": "King Lot of Orkney",
+      "context": "Malory Book VII closes with the revelation. Lot's queen was Morgause, half-sister to Arthur; this makes all four brothers Arthur's nephews. King Ban is Lancelot's father; King Pellinore is father of Perceval and Lamorak; King Uriens of Gore is husband of Morgan le Fay and father of Yvain.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Gareth's story in Malory Book VII belongs to a whole medieval subgenre with its own French name: an unknown hero of noble birth arrives at court, is mocked as lowborn, proves himself in a quest, and is revealed at the end. What is this motif called?",
+      "choices": ["the Fair Unknown", "the Dolorous Stroke", "the Waste Land", "the Loathly Lady"],
+      "answer": "the Fair Unknown",
+      "context": "In French, 'Le Bel Inconnu' (about 1200) by Renaut de Beaujeu is the classic example; Malory's Book VII is one of the English tradition's finest instances. The Dolorous Stroke is the wound of the Fisher King that lays waste the land; the Waste Land motif is the barren country that results; the Loathly Lady is the hag who becomes a beautiful woman if her husband treats her with respect (Chaucer's Wife of Bath's Tale).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Gareth's story ends happily with his marriage to Dame Lyonesse, but the later Round Table cycle turns the beloved young knight into the trigger of the fellowship's collapse. During whose rescue is Gareth accidentally killed by Sir Lancelot, turning his brother Gawain into Lancelot's mortal enemy?",
+      "choices": ["Queen Guinevere from the pyre", "King Arthur from the siege of Joyous Gard", "Dame Lyonesse from Castle Perilous", "Sir Bors from the dungeon of Sir Meliagrance"],
+      "answer": "Queen Guinevere from the pyre",
+      "context": "Malory Book XX. Arthur had condemned Guinevere to the pyre for adultery with Lancelot; Lancelot's rescue party cut a bloody path through the guards, unknowingly killing the unarmed Gareth (who was there only out of loyalty). Gawain, who had loved Gareth most of all his brothers, refused ever to make peace with Lancelot; his rage kept the two great captains fighting while Mordred took the throne.",
+      "legend": true
+    }
+  ]
+}

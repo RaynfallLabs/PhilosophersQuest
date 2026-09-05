@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "After his years as king of Athens, Theseus made a great sworn friendship with another king -- the king of the Lapiths of Thessaly. They swore to help each other find a wife worthy of a hero. What was the name of Theseus's sworn friend and fellow king?",
+      "choices": ["Pirithous", "Peleus", "Bellerophon", "Diomedes"],
+      "answer": "Pirithous",
+      "context": "Apollodorus, Epitome 1.23; Plutarch, Life of Theseus 30: Pirithous king of the Lapiths of Thessaly. Peleus is king of Phthia and father of Achilles; Bellerophon rides Pegasus; Diomedes fights at Troy in the Iliad. Their oath will end badly for both men.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The two sworn friends thought themselves worthy of daughters of Zeus. First they set out to help Theseus win his chosen wife -- a girl of Sparta so beautiful she would one day cause a war. Whom did Pirithous help Theseus carry off from Sparta?",
+      "choices": ["Helen", "Ariadne", "Medea", "Iphigenia"],
+      "answer": "Helen",
+      "context": "Apollodorus, Epitome 1.23; Plutarch, Life of Theseus 31: Theseus carried off Helen of Sparta while she was still a child and left her with his mother Aethra in Attica. Ariadne is the Cretan princess who gave Theseus the thread through the Labyrinth. Medea was a former wife of Aegeus. Iphigenia is Agamemnon's daughter.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Then it was Pirithous's turn to name a bride. He had lost his own first wife Hippodamia in the great brawl at his wedding-feast, and now he swore he would carry off a goddess -- one already married to another Olympian. Which goddess did Pirithous swear to carry off from her husband?",
+      "choices": ["Persephone", "Amphitrite", "Hera", "Aphrodite"],
+      "answer": "Persephone",
+      "context": "Apollodorus, Epitome 1.24; Diodorus Siculus 4.63: Pirithous set his sights on Persephone, wife of Hades and queen of the dead. Amphitrite is wife of Poseidon; Hera wife of Zeus; Aphrodite wife of Hephaestus (but lover of Ares) -- all married Olympian goddesses. Pirithous's first wife Hippodamia had been the woman a centaur tried to abduct at the wedding-feast, starting the great Lapith-vs-centaur brawl in Ovid's Metamorphoses 12.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Theseus was bound by his own oath to help his friend take a wife, however wild Pirithous's choice. So he went down with him. Where did the two friends enter the underworld to begin their descent?",
+      "choices": ["through a cave at Cape Tainaron", "through the crater of Mount Etna", "through a well at the oracle of Dodona", "through the sea-gate of the Bosporus"],
+      "answer": "through a cave at Cape Tainaron",
+      "context": "Pausanias, Description of Greece 3.25.4; Apollodorus, Epitome 1.24: the descent was at Cape Tainaron on the southern tip of the Peloponnese, one of the ancient Greek entrances to Hades. Aeneas descends by Cumae in Italy in Virgil; Odysseus reaches the shore of the dead across Ocean.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Hades, king of the underworld, did not meet the two friends with drawn weapons. He came out politely, welcomed them into his hall, and did one thing that seemed the kindest reception they could have hoped for. What did Hades do when Theseus and Pirithous arrived in his hall?",
+      "choices": ["offered them seats at his table", "poured them cups of dark wine", "sent for Persephone to greet them", "led them to the fires of Tartarus"],
+      "answer": "offered them seats at his table",
+      "context": "Apollodorus, Epitome 1.24: Hades welcomed the two friends and, on the pretence of a feast, invited them first to sit down. It was the trap.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The moment Theseus and Pirithous sat down on the offered seats they discovered that the seats themselves were the trap. Their bodies grew fast to the stone and they could not rise from the table. By what name are these seats known in the story?",
+      "choices": ["the Chairs of Forgetfulness", "the Thrones of Cerberus", "the Seats of Silence", "the Benches of the Judges"],
+      "answer": "the Chairs of Forgetfulness",
+      "context": "Apollodorus, Epitome 1.24: the seats were the Chairs of Forgetfulness -- thronoi lethes in Greek -- and the two heroes grew into the stone and were held there. Their memories faded and they forgot why they had come. Apollodorus is the only ancient source that names the chairs explicitly this way. Diodorus 4.63 tells the trap without the name.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Years went by with the two friends stuck in the underworld. Then another hero came down on his own errand -- on his twelfth labor, sent to fetch Cerberus, the three-headed guard-dog of Hades. He found Theseus and Pirithous still sitting there. Who was the hero on the twelfth labor who found them?",
+      "choices": ["Heracles", "Orpheus", "Aeneas", "Odysseus"],
+      "answer": "Heracles",
+      "context": "Apollodorus, Bibliotheca 2.5.12 and Epitome 1.24: Heracles descended on his twelfth labor for Cerberus and stumbled on the two trapped heroes. Orpheus went down for Eurydice; Aeneas for prophecy; Odysseus to summon the shades on the far shore of Ocean.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles gripped Theseus by the arm and tore him bodily off the Chair of Forgetfulness. So violent was the pull that some pieces of Theseus stayed behind on the stone. Athenians afterwards joked that this was why the men of Athens had a peculiar body-feature. Which part of Theseus did Heracles leave stuck to the chair?",
+      "choices": ["strips of his thighs", "chunks of his shoulders", "the calves of his legs", "the palms of his hands"],
+      "answer": "strips of his thighs",
+      "context": "Apollodorus, Epitome 1.24; scholia on Aristophanes, Knights 1368: pieces of Theseus's thighs stayed on the stone, and Athenian men afterwards were said to have unusually narrow thighs because of it -- a comic folk-etymology from the Athenian comic stage.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Heracles reached next for Pirithous, meaning to tear him free the same way. But the earth shook underfoot and Persephone herself forbade the rescue. Why was Pirithous refused release when Theseus had been allowed to go?",
+      "choices": ["Pirithous had planned the outrage against Persephone", "Pirithous had killed a suppliant in Hades", "Pirithous had refused Persephone's fruit", "Pirithous had cursed Cerberus at the gate"],
+      "answer": "Pirithous had planned the outrage against Persephone",
+      "context": "Diodorus Siculus 4.63; Apollodorus, Epitome 1.24: Persephone forbade Pirithous's release because he was the one who had conceived the plan to carry her off. Theseus had only come along in oath-loyalty to his friend. Pirithous is left stuck to the chair in Hades forever.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Theseus made it back to the upper world, but his long absence had broken his kingship in Athens. In the end he was driven into exile on an Aegean island, where the local king pretended to receive him as a guest and then pushed him off a cliff to his death. On what island was Theseus murdered in exile?",
+      "choices": ["Scyros", "Naxos", "Delos", "Aegina"],
+      "answer": "Scyros",
+      "context": "Plutarch, Life of Theseus 35: Theseus was killed on Scyros by King Lycomedes, who pushed him off a cliff. Naxos is where Theseus abandoned Ariadne; Delos is the sacred birth-island of Apollo and Artemis; Aegina is the island of Aeacus. Later the Athenian general Cimon recovered what were said to be Theseus's bones from Scyros in 475 BCE and brought them home to Athens.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "During the years Theseus was stuck in Hades, his stolen Spartan child-bride Helen sat in Attica in the keeping of his mother Aethra. Then two great warriors marched an army into Attica to recover their sister and take her home. Who were the brothers who invaded Attica to fetch Helen back?",
+      "choices": ["Castor and Pollux", "Menelaus and Agamemnon", "Ajax and Teucer", "Peleus and Telamon"],
+      "answer": "Castor and Pollux",
+      "context": "Herodotus, Histories 9.73; Apollodorus, Epitome 1.23: Helen's brothers Castor and Pollux, the Dioscuri, invaded Attica, freed Helen, and carried off Theseus's own mother Aethra as a captive-servant to Helen -- who was still with Helen years later in Homer's Iliad. Menelaus and Agamemnon are the Atreid brothers of the Trojan War; Ajax and Teucer are sons of Telamon.",
+      "legend": true
+    }
+  ]
+}

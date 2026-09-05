@@ -1,0 +1,108 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The hero Odysseus was gone from his island kingdom of Ithaca for twenty years -- ten fighting a famous war and ten struggling to sail home. Which war took the first ten years?",
+      "choices": [
+        "the Trojan War",
+        "the Persian War",
+        "the Punic War",
+        "the Peloponnesian War"
+      ],
+      "answer": "the Trojan War",
+      "context": "Odysseus spent ten years at Troy and another ten years wandering home across the sea. Book 17 of Homer's Odyssey shows him finally reaching Ithaca in disguise. Source: Wikipedia, Argos (dog).",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "When Odysseus at last lands on Ithaca, the goddess Athena hides who he is by changing his appearance. She turns the king of Ithaca into someone no one at the palace will notice. Into what does she disguise him?",
+      "choices": [
+        "an old beggar in rags",
+        "a bronze-armored warrior",
+        "a temple oracle",
+        "a merchant of Phoenicia"
+      ],
+      "answer": "an old beggar in rags",
+      "context": "Athena disguises Odysseus as an aged beggar so he can enter his own palace unrecognized and take the measure of the suitors before revealing himself. Source: greekmyths-greekmythology.com, Odysseus's Return to Ithaca.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The disguised Odysseus is led up from the harbor to his own palace by a loyal servant -- one who has kept his post on the far side of the island for twenty years, never joining the suitors. This servant does not recognize his beggar-master. Which servant is he?",
+      "choices": [
+        "Eumaeus",
+        "Melanthius",
+        "Medon",
+        "Theoclymenus"
+      ],
+      "answer": "Eumaeus",
+      "context": "Eumaeus the swineherd is one of the few Ithacans who stayed loyal to Odysseus's household. He leads the beggar-disguised Odysseus up to the palace without knowing who he is. Source: greekmyths-greekmythology.com, Odysseus's Return to Ithaca.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the very gate of Odysseus's palace, a neglected animal is lying outside -- too old and weak to stand, covered in ticks, forgotten. Odysseus had trained this animal as a puppy the year before he sailed for Troy, twenty years ago. What kind of animal is Argus?",
+      "choices": [
+        "a hunting dog",
+        "a chariot horse",
+        "a hooded falcon",
+        "a house cat"
+      ],
+      "answer": "a hunting dog",
+      "context": "Argus was raised by Odysseus as a hunting hound, trained for the rough terrain of Ithaca -- quick enough for deer, keen-nosed enough for hares and wild goats. Twenty years later he is old and unable to hunt. Source: Wikipedia, Argos (dog).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the outer gate of Odysseus's palace on Ithaca, an old creature named Argus has been left uncared-for in his last days. When the beggar-disguised Odysseus walks up, on what strange thing is Argus lying?",
+      "choices": [
+        "a heap of dung",
+        "a wooden pallet",
+        "a torn cloak",
+        "a stone step"
+      ],
+      "answer": "a heap of dung",
+      "context": "Homer places Argus on a pile of mule- and cattle-dung outside the palace door, piled up until servants can spread it on the fields (Odyssey 17.297-303, Lattimore). The image is Homer's whole point: the master's dog abandoned to the manure heap. Source: Wikipedia, Argos (dog).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As the beggar-disguised Odysseus passes through his own gate, the swineherd Eumaeus beside him does not recognize him, Penelope in the palace does not know he is home, and his old nurse Eurycleia has not seen him yet. But the old hound Argus, lying on the dung heap, knows his master at once. He is too weak from age to stand. What small thing does Argus do?",
+      "choices": [
+        "wags his tail",
+        "lifts a paw",
+        "opens his mouth",
+        "shakes his ears"
+      ],
+      "answer": "wags his tail",
+      "context": "Argus, too weak from age to stand, lifts his head, drops his ears, and wags his tail once. He is the first living thing on Ithaca to recognize the returned king. Source: Wikipedia, Argos (dog).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Odysseus sees his old hound recognize him but cannot answer -- if he goes to Argus openly, the swineherd walking beside him will know his master is home and the disguise is finished. What does Odysseus do instead as he passes?",
+      "choices": [
+        "wipes away a tear",
+        "whispers the dog's name",
+        "pats him on the head",
+        "whistles the old signal"
+      ],
+      "answer": "wipes away a tear",
+      "context": "Homer's line: Odysseus turns his face aside and secretly wipes away a tear so that Eumaeus will not see it, then walks on into the palace. He never openly acknowledges the dog. Source: Wikipedia, Argos (dog).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The instant Odysseus walks past him into the palace, the old hound Argus has held on for twenty years just long enough to see his master once. Then what happens to Argus?",
+      "choices": [
+        "he dies",
+        "he sleeps",
+        "he crawls after him",
+        "he barks once"
+      ],
+      "answer": "he dies",
+      "context": "Odyssey 17.326-327 (Lattimore): 'The doom of dark death now closed down over the dog Argos, when after nineteen years had gone by, he had seen Odysseus.' The recognition is the last thing he does. Source: Wikipedia, Argos (dog).",
+      "legend": true
+    }
+  ]
+}

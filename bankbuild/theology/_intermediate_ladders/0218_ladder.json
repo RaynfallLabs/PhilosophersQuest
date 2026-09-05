@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "After killing the dragon Fafnir and waking a warrior-woman on the flame-ringed mountain of Hindarfjall, the hero Sigurd rides south with a cursed hoard of gold. He comes to the great hall of a family called the Gjukungs, ruled by an old king on the Rhine. What is the name of this king?",
+      "choices": ["Gjuki", "Gunnar", "Regin", "Hrothgar"],
+      "answer": "Gjuki",
+      "context": "Volsunga Saga chapters 25-26 (Morris translation, Project Gutenberg); Byock, Saga of the Volsungs. King Gjuki is the father; the family are called the Gjukungs after him. Gunnar is Gjuki's SON, one of Sigurd's about-to-be blood-brothers. Regin is the dwarf-smith from the Fafnir chapters. Hrothgar is the king of Heorot in Beowulf, a different tradition. Gjuki is the specific host on the Rhine.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The old king Gjuki of the Rhine has a queen who is far more dangerous than he is: a powerful sorceress who knows how to brew charmed drinks and speaks spells over them. She will engineer every disaster in the second half of the Volsunga Saga. What is this queen's name?",
+      "choices": ["Grimhild", "Gudrun", "Brynhild", "Signy"],
+      "answer": "Grimhild",
+      "context": "Volsunga Saga chapters 25-30; Grimhild (Wikipedia). Grimhild is the queen and the schemer. Gudrun is her DAUGHTER, the woman she wants Sigurd to marry. Brynhild is the flame-ringed warrior-woman Sigurd has already sworn to. Signy is Sigmund's sister from the earlier generation. Grimhild is the specific mother-in-law here.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The queen of the Rhine sees at once that Sigurd is the greatest hero of the age, and she wants to bind him to her family through her only daughter. Her plan has one problem: Sigurd is already sworn to another woman, a valkyrie on a burning mountain. What is the name of Grimhild's daughter, the woman she wants Sigurd to marry instead?",
+      "choices": ["Gudrun", "Freyja", "Sigrid", "Signy"],
+      "answer": "Gudrun",
+      "context": "Volsunga Saga chapter 26. Gudrun is Grimhild's only daughter; the marriage-plot is her plot. Freyja is a Vanir goddess, not a Rhine princess. Sigrid is a name from later Norse historical sagas. Signy belongs to the earlier Volsung generation -- Sigmund's sister. Gudrun is the specific bride Grimhild picks.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "To break Sigurd's oath to the woman on the burning mountain, Grimhild brews something at the hearth-fire and hands it to Sigurd in a cup at the welcome-feast. Sigurd drinks it in one swallow. What does Grimhild hand him in the cup?",
+      "choices": ["a potion of forgetting", "a poison to weaken him", "an aged rune-wine", "a healing draught for his wounds"],
+      "answer": "a potion of forgetting",
+      "context": "Volsunga Saga chapter 26 (Morris translation): 'she gave to Sigurd a cup of mead wherein was a drug, that he should forget utterly Brynhild.' The potion does not poison him, does not weaken him, and does not heal him -- it erases one specific memory. This is the fork-point where everything begins to go wrong.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The potion Grimhild hands Sigurd is precisely targeted. He swallows it in one draught and it erases exactly one thing from his mind, leaving everything else -- his own name, his ancestry, the dragon he killed -- untouched. What does the drink make Sigurd forget?",
+      "choices": ["the woman he was already sworn to", "the way home to his mother", "the name of his own sword", "the treasure hoard he is carrying"],
+      "answer": "the woman he was already sworn to",
+      "context": "Volsunga Saga chapter 26 (Morris translation): the drink wipes only Brynhild from his memory -- the ring of fire, the runes she taught him, the oath he swore, the ring on her finger, everything about her. He still knows the way home, still knows his sword Gram, still knows the hoard he carries. The specificity is the horror of the drug: it erases exactly one person.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once Sigurd has drunk the memory-drug he goes through with the marriage Grimhild has arranged and takes a second oath at the same feast, with two of Gjuki's sons. What oath does Sigurd swear with Gjuki's sons Gunnar and Hogni after the wedding?",
+      "choices": ["blood-brotherhood", "vassal-service", "the oath of a Christian knight", "a truce until midsummer"],
+      "answer": "blood-brotherhood",
+      "context": "Volsunga Saga chapter 27. Sigurd, Gunnar, and Hogni mix their blood and swear to be brothers -- the strongest Norse bond outside kinship, and the same bond whose betrayal will get Sigurd murdered in his sleep by the third brother, Guttorm. Vassalage, Christian knighthood, and midsummer-truces belong to other medieval-romance traditions. Blood-brotherhood is the specific Norse oath.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Grimhild is not done. She next wants a bride for her son Gunnar, and the greatest match in the north is the same valkyrie Sigurd used to be sworn to -- who is still sitting on the mountain of Hindarfjall inside a ring of flame no ordinary man can cross. What is this valkyrie's name?",
+      "choices": ["Brynhild", "Sigrdrifa", "Freyja", "Idunn"],
+      "answer": "Brynhild",
+      "context": "Volsunga Saga chapters 22, 29-30; Byock, Saga of the Volsungs. Brynhild is the valkyrie on Hindarfjall (some sources give Sigrdrifa 'victory-driver' as her earlier name, but the Volsunga Saga uses Brynhild in these chapters). Freyja and Idunn are goddesses of Asgard, not sworn brides. Brynhild is the specific target of Grimhild's second plot.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sigurd and Gunnar ride together to Hindarfjall so Gunnar can cross the fire and claim the valkyrie as his bride. Gunnar first tries his own horse; it refuses the flames. He climbs onto Grani, Sigurd's horse, and tries again. What does Sigurd's horse do when Gunnar tries to ride him through the fire?",
+      "choices": ["stands still and will not move", "throws Gunnar off into the flames", "gallops back down the mountain", "leaps into the fire but is burned"],
+      "answer": "stands still and will not move",
+      "context": "Volsunga Saga chapter 29. Grani, a horse of Odin's stock, senses the rider is not Sigurd and refuses to take a single step; he does not throw, does not flee, does not burn. It is the horse's refusal -- an animal knowing the truth the woman on the mountain cannot see -- that forces Grimhild's next spell into action.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Grimhild has taught Sigurd and Gunnar a spell for exactly this moment. Sigurd sits on Grani a second time -- but not as himself. What has Grimhild's spell done to the two men so that Sigurd can cross the fire in Gunnar's place?",
+      "choices": ["Sigurd and Gunnar have swapped faces", "Sigurd is invisible under Gunnar's cloak", "Sigurd is asleep and Gunnar's ghost rides him", "Sigurd has been shrunk to Gunnar's size"],
+      "answer": "Sigurd and Gunnar have swapped faces",
+      "context": "Volsunga Saga chapter 29; Grimhild (Wikipedia). Grimhild's shape-swap spell exchanges the men's faces (and voices): Sigurd wears Gunnar's outward form, Gunnar wears Sigurd's. Invisibility, ghostly possession, and shrinking are Wagnerian and other-tradition ideas (Wagner in Gotterdammerung Act I uses the Tarnhelm, a magic helmet, instead of a spell). The Volsunga Saga is specific: it is a face-swap.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Wearing another man's face, Sigurd crosses the fire and spends three nights beside the valkyrie in her bed. He does not touch her -- he lays a token between them on the mattress that in every Norse saga means the same thing: no marriage-bed has been consummated. What does Sigurd lay between them for three nights?",
+      "choices": ["his sword Gram, unsheathed", "a rune-carved staff", "a fold of his own cloak", "a length of red silk"],
+      "answer": "his sword Gram, unsheathed",
+      "context": "Volsunga Saga chapter 29; scholarly notes to Byock's translation. The unsheathed sword between man and woman in bed is the stock Germanic sign of chastity between betrothed strangers; it appears in a dozen sagas and in Wagner. A rune-staff, a cloak, and a length of silk are romance-language tokens (chivalric and Provencal), not Norse. Gram is the specific token here.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On the third morning, before he rides back through the fire and swaps faces with Gunnar again, Sigurd takes one small object off the valkyrie's hand and puts a different ring in its place. The ring he takes is the same cursed gold circle that Andvari the dwarf originally lost, that Sigurd himself won from Fafnir's hoard, and that Sigurd had given to the valkyrie the first time they met. What is this ring called?",
+      "choices": ["Andvaranaut", "Draupnir", "Sviagris", "Sampo"],
+      "answer": "Andvaranaut",
+      "context": "Volsunga Saga chapters 14, 21, 29; Andvaranaut (Wikipedia). Andvaranaut ('Andvari's Gift') is the cursed dwarf-ring; Sigurd's theft of it back from Brynhild's hand is the moment that will make her, on discovery, want him dead. Draupnir is Odin's arm-ring that drips eight copies of itself every ninth night -- a different Norse ring. Sviagris is a Swedish royal ring. The Sampo is a Finnish artifact, not a ring. Andvaranaut is the specific one.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When the shape-swap ends and everyone is married to someone, the deception sits in the hall like a time-bomb. Later, when the valkyrie learns the truth, she demands Sigurd's death. Grimhild feeds one of her sons a stew of wolf-flesh and serpent-flesh to work him into a killing rage, and it is he who murders Sigurd in his own bed. Which of Grimhild's sons is the killer?",
+      "choices": ["Guttorm", "Bragi", "Balder", "Loki"],
+      "answer": "Guttorm",
+      "context": "Volsunga Saga chapter 32. Guttorm, the third Gjukung brother, is fed wolf-flesh and serpent-flesh by Grimhild until he is savage enough to stab his sworn brother-in-law in his sleep. Bragi is the Norse god of poetry, not a Gjukung. Balder is Odin's beloved son, killed by Loki's trick with mistletoe -- a different Norse story. Loki is the trickster-god, not a mortal Gjukung. Guttorm is the specific assassin.",
+      "legend": true
+    }
+  ]
+}

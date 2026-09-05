@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Early in Malory's Le Morte d'Arthur (Book I ch.24), the young Arthur rides out with Merlin and meets a very tall, very proud king on the road who challenges him to single combat. The two fight until Arthur's first sword -- the one he drew from the stone -- shatters in his hand. Which king breaks Arthur's first sword?",
+      "choices": ["King Pellinore", "King Uriens", "King Lot", "King Rience"],
+      "answer": "King Pellinore",
+      "context": "Malory, Book I ch.24. Pellinore is the questing knight who nearly kills the young Arthur in this duel until Merlin intervenes. Pellinore later becomes an ally and a companion of the Round Table. Uriens is Morgan le Fay's husband; Lot is Gawain's father; Rience is the giant northern king who demands the beards of eleven kings for his cloak.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Arthur and Merlin arrive at a still lake. Merlin points out to the young king a small dwelling in the middle of the water, where an enchantress makes her home. Malory says the place is 'richly beseen' but describes its ground as one very ordinary kind of stony feature. What does Merlin show Arthur in the middle of the lake?",
+      "choices": ["a low rock rising above the water", "a floating chapel of white marble", "a bridge of glass to the far shore", "a whirlpool that swallows passing ships"],
+      "answer": "a low rock rising above the water",
+      "context": "Malory, Book I ch.25: Merlin explains 'there is within that lake a rock, and thereon is as fair a place as any on earth, and richly beseen; and this damosel will come to you anon, and then speak ye fair to her that she will give you that sword.' The floating chapel belongs to certain later Grail tales; the glass bridge to Chretien's Lancelot; the whirlpool to the Greek Odyssey (Charybdis).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Standing at the water's edge with Merlin, Arthur sees something rise slowly out of the middle of the lake, bearing a bright sword aloft above the surface. Malory gives the moment in one of his most famous single lines. What does Arthur see rise from the water?",
+      "choices": ["an arm clothed in white samite", "a swan with a chain of gold", "a black barge draped in cloth", "a green head calling his name"],
+      "answer": "an arm clothed in white samite",
+      "context": "Malory, Book I ch.25 -- 'Arthur was ware of an arm clothed in white samite, that held a fair sword in that hand.' Samite is a heavy silk woven with gold or silver thread. The same words are used at the very end of the book (Book XXI ch.5) when the arm rises AGAIN to TAKE the sword back -- the story closing its own circle. The other three are real motifs from other tales (the swan with the gold chain is from the Lohengrin story; the black barge belongs to the end of Arthur's own tale; the green head calling a knight's name is from Sir Gawain and the Green Knight).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Merlin tells Arthur that the woman who holds the sword above the water and offers it to him is not a queen of any earthly kingdom but a lady of the water itself, whose title becomes one of the most famous in Arthurian myth. Who gives Excalibur to Arthur?",
+      "choices": ["the Lady of the Lake", "Morgan le Fay", "Queen Guinevere", "the Fisher King"],
+      "answer": "the Lady of the Lake",
+      "context": "Malory, Book I ch.25. The Lady of the Lake is Merlin's own teacher and rival. Morgan le Fay is Arthur's half-sister and later steals the scabbard. Guinevere becomes Arthur's queen but plays no part in giving him the sword. The Fisher King belongs to the later Grail cycle -- a wounded lord in a castle whose land is barren.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once Arthur takes the sword from the arm in white samite, Merlin tells him it has a famous name. The Vulgate Merlin (and Malory following it) glosses 'Excalibur' with an Old French phrase. In this medieval gloss, what does the name Excalibur mean?",
+      "choices": ["it cuts steel", "it drinks fire", "it never sleeps", "it seeks the king"],
+      "answer": "it cuts steel",
+      "context": "Wikipedia: Excalibur. The Vulgate Merlin says the name means 'cuts iron, steel, and wood' in French. Earlier the sword is called 'Caledfwlch' in Welsh ('hard-cleaver') and 'Caliburnus' in Geoffrey of Monmouth's Latin. The other three glosses sound heroic but are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Arthur rows out in a barge and takes both the sword and its scabbard from the arm in the water. Riding home, Merlin turns to the young king and asks him which of the two he likes better. Arthur says the sword. Merlin sharply corrects him -- and the reason is a magical property of the second object. What does Merlin say the scabbard's magic does for its wearer?",
+      "choices": ["stops all bleeding from any wound", "makes the wearer invisible in shadow", "warns of poison in wine", "returns any stroke to the striker"],
+      "answer": "stops all bleeding from any wound",
+      "context": "Malory, Book I ch.25 verbatim: 'the scabbard is worth ten of the swords, for whiles ye have the scabbard upon you, ye shall never lose no blood, be ye never so sore wounded.' The magic is bleed-prevention, not invisibility or reflection. Merlin's blunt lesson is that gear you can't see is often worth more than gear you can.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In that same speech Merlin uses a specific rule of thumb to tell Arthur just how much more valuable the scabbard is than the sword. The line is one of the most quoted single sentences in Malory's whole Excalibur scene. In Merlin's phrase, the scabbard is worth what?",
+      "choices": ["ten of the swords", "three of the swords", "a hundred horses", "a king's ransom"],
+      "answer": "ten of the swords",
+      "context": "Malory, Book I ch.25: 'the scabbard is worth ten of the swords.' A hundred horses and a king's ransom are the ordinary medieval measures of great value, but Merlin's exact rule of thumb is ten of the swords -- and that ratio is what makes losing the scabbard a catastrophe later.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Merlin's warning proves right. Later in Malory (Book IV ch.14), one of the great enchantresses of the court -- who plots against Arthur through much of the middle of the book -- steals the scabbard away from him while he sleeps and throws it into a deep lake, where no one can ever find it. Who steals and disposes of Excalibur's scabbard?",
+      "choices": ["Morgan le Fay", "the Lady of the Lake", "Nimue", "Queen Guinevere"],
+      "answer": "Morgan le Fay",
+      "context": "Malory, Book IV ch.14. Morgan le Fay is Arthur's half-sister and one of the great villains of the middle books; she steals the scabbard during her intrigue against him. The Lady of the Lake GAVE the scabbard in the first place. Nimue (also Viviane) is Merlin's sorceress-apprentice who traps him in a cave later. Guinevere is Arthur's queen, not his enemy.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Without the scabbard, Arthur can bleed again -- and at the final battle of Camlann he takes the mortal wound that ends his reign. He then orders the sword itself thrown back into a lake. His last surviving knight has to try three times before the arm in white samite rises to catch it and take Excalibur down beneath the water. Which knight throws Excalibur back on the third try?",
+      "choices": ["Sir Bedivere", "Sir Lancelot", "Sir Gawain", "Sir Kay"],
+      "answer": "Sir Bedivere",
+      "context": "Malory, Book XXI ch.5. Bedivere is the old one-handed veteran who is the last knight standing at Camlann; the arm in white samite catches the sword on his third throw. Lancelot has been in exile after his affair with Guinevere shattered the Round Table. Gawain has died of head wounds before Camlann. Kay -- Arthur's foster-brother -- is long dead by then.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Malory says that when the giver of Excalibur first offered the sword to Arthur, she made him promise her a gift in return, to be named later. In Book II she comes to Arthur's court to collect. She asks for a specific and terrible boon -- either the head of a certain knight or the head of a certain lady. Before Arthur can answer, the knight Sir Balin -- whose mother her family has wronged -- draws his sword and cuts her head off in the hall. What does she ask Arthur for as her gift?",
+      "choices": ["the head of one of the people at court", "the crown of Uther Pendragon", "the right hand of the Archbishop", "a year and a day in Arthur's bed"],
+      "answer": "the head of one of the people at court",
+      "context": "Malory, Book II ch.3. The Lady of the Lake collects her boon: she asks for either the head of Balin (who killed her brother) or the head of the woman who brought Balin's sword. Balin cuts her head off before Arthur can rule. The other three demands are common medieval fairy-boons -- a crown, a hand, a night -- but the Lady of the Lake's price is a head.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The oldest name for Arthur's sword is not Excalibur at all but a Welsh name meaning 'hard-cleaver', appearing in one of the earliest surviving Arthurian tales -- a story where the hero must complete forty impossible tasks to marry Olwen. What is the sword's oldest known name?",
+      "choices": ["Caledfwlch", "Caliburnus", "Escalibor", "Durendal"],
+      "answer": "Caledfwlch",
+      "context": "The Welsh tale 'Culhwch and Olwen' (c. late 11th-12th century) is the earliest surviving Arthurian story; Arthur's sword there is Caledfwlch (from 'caled' hard + 'bwlch' breach/cleft). Caliburnus is Geoffrey of Monmouth's later Latin form; Escalibor is the Old French of the twelfth century, from which English 'Excalibur' comes. Durendal belongs to a different hero -- Roland of the Chanson de Roland.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In Geoffrey of Monmouth's 'Historia Regum Britanniae' (about 1136) -- the book that put Arthur into European literature -- the sword is already famous and Geoffrey names the place it was made. In Geoffrey's Latin history, where was Caliburnus, the sword that would become Excalibur, forged?",
+      "choices": ["on the island of Avalon", "in the caves of Annwn", "on the anvil of the Dagda", "in Weyland's Cave in Wessex"],
+      "answer": "on the island of Avalon",
+      "context": "Wikipedia: Excalibur, from Geoffrey of Monmouth's Historia Regum Britanniae Book IX. Geoffrey says the sword 'was forged in Avalon.' Annwn is the Welsh otherworld from Culhwch and Olwen. The Dagda is the Irish father-god with his own great club. Weyland the Smith is the Anglo-Saxon smith-hero -- a real English legend, but not the maker of Excalibur.",
+      "legend": true
+    }
+  ]
+}

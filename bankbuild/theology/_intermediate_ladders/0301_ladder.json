@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Genevieve is born around the year 420 in a village a few miles west of the Roman town of Lutetia, which is the old Latin name for what will become one of the great capitals of Europe. In the story she will spend her life protecting that city and become its patron saint. Which city is it?",
+      "choices": ["Paris", "London", "Rome", "Cologne"],
+      "answer": "Paris",
+      "context": "Lutetia (Lutetia Parisiorum) was the Roman name for the town on the Ile de la Cite; it became Paris in the late Empire. Genevieve was born in the outlying village of Nanterre around 419-422. Source: en.wikipedia.org/wiki/Genevieve.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "When Genevieve is about seven years old a travelling bishop of Auxerre stops in her village on his way to Britain (he is going to argue against the Pelagian heresy there). He notices the child, recognises her seriousness, and consecrates her to God on the spot. What is the bishop's name?",
+      "choices": ["Germanus", "Athanasius", "Ambrose", "Boniface"],
+      "answer": "Germanus",
+      "context": "Germanus of Auxerre was a well-attested Gallo-Roman bishop who did travel to Britain to argue against the Pelagian heresy; his consecration of the child Genevieve at Nanterre is one of the earliest scenes in her Vita. Athanasius was in Alexandria a century earlier; Ambrose was bishop of Milan; Boniface was an eighth-century missionary. Source: en.wikipedia.org/wiki/Genevieve.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In the summer of 451 a huge army of Huns and Germans has crossed the Rhine, is burning cities across Gaul, and word has just reached Paris that its line of march will bring it straight through the city. The Parisians are packing their households onto carts to flee south. Which Hunnic overlord is leading the army?",
+      "choices": ["Attila", "Alaric", "Genseric", "Odoacer"],
+      "answer": "Attila",
+      "context": "Attila's western invasion of 451 is one of the best-attested events of late Roman history. Alaric was the Gothic king who sacked Rome in 410; Genseric was the Vandal king who sacked Rome in 455; Odoacer deposed the last Western emperor in 476. Source: britannica.com/biography/Saint-Genevieve.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "As the Parisians pack to flee, Genevieve -- then a consecrated woman in her early thirties -- steps into the panic and stops it. She gathers a very particular group of the city's people into the churches for many days of fasts, prayers and vigils, and tells them the city will be spared if they hold. Whom does she gather into the churches?",
+      "choices": ["the women of Paris", "the priests of Paris", "the Roman soldiers of the garrison", "the merchants of the guilds"],
+      "answer": "the women of Paris",
+      "context": "The Vita Genovefae is explicit that Genevieve organised the women of Paris into what modern historians call a 'prayer marathon'; her own explanation was that she was following the biblical models of Esther fasting in Persia and Judith praying before facing Holofernes. Source: britannica.com/biography/Saint-Genevieve.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Some of the men of Paris are furious at Genevieve for stopping the flight, and the Vita Genovefae says a group of them plotted to seize her and put her to death by a very particular method tied to the city itself. A messenger from the absent bishop arrived just in time to save her. How did they mean to kill her?",
+      "choices": ["drown her in the Seine", "burn her in the amphitheatre", "stone her outside the city gate", "starve her in a locked church"],
+      "answer": "drown her in the Seine",
+      "context": "The Vita Genovefae records the drowning plot; it was broken up when the archdeacon of Auxerre arrived from her old protector Germanus's see with a letter defending her. The Seine is the river that Paris straddles and is central to Genevieve's story throughout. Source: newadvent.org/cathen/06413f.htm.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Huns do turn aside from Paris. Attila's army wheels south, is intercepted, and is bloodily defeated at a great battle in the Champagne region of Gaul in 451. In the Roman-Visigothic army that beats him, one leader is the Roman general Aetius. Who is his royal ally on the battlefield?",
+      "choices": ["Theodoric, king of the Visigoths", "Clovis, king of the Franks", "Alaric, king of the Ostrogoths", "Gaiseric, king of the Vandals"],
+      "answer": "Theodoric, king of the Visigoths",
+      "context": "The battle is known as the Catalaunian Plains (or Chalons); Theodoric I of the Visigoths was killed leading his men. Clovis was born decades later; the Ostrogoths and Vandals were separate peoples not on that field. Parisians credited the deliverance to Genevieve's prayer marathon. Source: en.wikipedia.org/wiki/Genevieve.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "A generation after the Attila crisis, Paris is besieged again -- this time by the Frankish king Childeric, whose son Clovis will later convert to Christianity. Genevieve keeps the city alive by organising a convoy that runs the enemy's lines using the river. What did the convoy carry into the starving city?",
+      "choices": ["boatloads of grain", "cages of pigeons", "carts of gold coin", "cartloads of arrows"],
+      "answer": "boatloads of grain",
+      "context": "During Childeric's siege Genevieve is said to have led a boat convoy up the Seine to bring back grain and feed the city; the detail sits alongside the Attila story as the second great civic rescue. Source: en.wikipedia.org/wiki/Genevieve.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Genevieve dies aged over 80 and is buried on the hill above the Left Bank of Paris that still bears her name. Fourteen centuries later King Louis XV builds a great domed church to her there. In the French Revolution that church is stripped of its saints and turned into a secular temple for the great men of France. What is the building called today?",
+      "choices": ["the Pantheon", "the Louvre", "Notre-Dame", "Sainte-Chapelle"],
+      "answer": "the Pantheon",
+      "context": "The domed church of Sainte-Genevieve, designed by Jacques-Germain Soufflot 1758-1790, was rededicated by the Revolution in 1791 as the Pantheon to house the tombs of Mirabeau, Voltaire, Rousseau, Hugo and others. It still stands on the Montagne Sainte-Genevieve above the Sorbonne. Source: en.wikipedia.org/wiki/Abbey_of_Saint_Genevieve.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The Parisian custom of carrying Genevieve's relics in procession to protect the city outlasts the fifth century by a long way. In 885, when a huge fleet of Northern raiders lays siege to Paris and the city seems about to fall, the same relics are carried along the walls and the raiders finally withdraw. Which raiders were besieging Paris in 885?",
+      "choices": ["the Vikings", "the Magyars", "the Moors", "the Mongols"],
+      "answer": "the Vikings",
+      "context": "The 885-886 Viking siege of Paris was led by the Norse jarl Sigfred with hundreds of longships; the defence by Count Odo and Bishop Gozlin, with Genevieve's relics carried on the walls, became one of the founding stories of the Capetian monarchy. Magyars raided further east; the Moors were in Spain; the Mongols came four centuries later. Source: en.wikipedia.org/wiki/Genevieve.",
+      "legend": true
+    }
+  ]
+}

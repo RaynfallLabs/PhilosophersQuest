@@ -1,0 +1,134 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the ballads of Robin Hood, one royal officer sends his men into Sherwood again and again to catch Robin and hang the outlaws from the walls of his stone castle. Which town is that castle in?",
+      "choices": [
+        "Nottingham",
+        "York",
+        "Lincoln",
+        "Winchester"
+      ],
+      "answer": "Nottingham",
+      "context": "The Sheriff of Nottingham is Robin Hood's chief enemy across the whole cycle. Robin's greenwood may be Barnsdale or Sherwood depending on the ballad, but the Sheriff is always tied to Nottingham. Source: Wikipedia, Robin Hood and the Monk.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "A monk who had been robbed by Robin Hood spots him kneeling at prayer inside a Nottingham church and runs out to fetch the one man in the town powerful enough to put Robin in chains. What is that man's title?",
+      "choices": [
+        "the Sheriff",
+        "the Bishop",
+        "the Abbot",
+        "the Constable"
+      ],
+      "answer": "the Sheriff",
+      "context": "In Robin Hood and the Monk (Child 119, earliest surviving Robin Hood ballad, c.1450) the monk fetches the Sheriff, who captures Robin in the church. Little John and Much the Miller's Son later rescue him. Source: Wikipedia, Robin Hood and the Monk.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Sheriff of Nottingham is a very old English office -- older than the Robin Hood ballads by centuries. In each county he was the king's chief officer: he ran the county court, took the king's fines, and mustered the local militia. Which of these things was ALSO his job?",
+      "choices": [
+        "collecting the king's taxes",
+        "crowning the king",
+        "writing the king's laws",
+        "hearing the king's confession"
+      ],
+      "answer": "collecting the king's taxes",
+      "context": "The medieval sheriff was tax collector, judge, and militia-captain for his shire -- all in one office. Crowning was the archbishop's task, lawmaking the king-in-council's, confession the priest's. Source: Wikipedia, Sheriff of Nottingham (position).",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "A medieval English sheriff could 'farm' his taxes -- he paid a fixed sum owed to the Exchequer, and kept for himself whatever he squeezed above that. Because of this arrangement, being sheriff in the shires had one particular reputation in the countryside. Which one?",
+      "choices": [
+        "it was hated",
+        "it was holy",
+        "it was rare",
+        "it was poor"
+      ],
+      "answer": "it was hated",
+      "context": "Tax-farming is what made the medieval sheriff one of the most hated offices in the shires and gave rise to the Sheriff of Nottingham as a story-villain. Source: Wikipedia, Sheriff of Nottingham (position).",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "In A Gest of Robyn Hode, the Sheriff of Nottingham proclaims a grand contest at Nottingham as a trap to lure Robin out of hiding. Robin comes in disguise and wins it. What kind of contest is it?",
+      "choices": [
+        "a shoot with the bow",
+        "a wrestling match",
+        "a race on horseback",
+        "a fight with the sword"
+      ],
+      "answer": "a shoot with the bow",
+      "context": "In Fytte 5 of A Gest of Robyn Hode the Sheriff offers a prize arrow of gold and silver; Robin wins the shoot, is ambushed, Little John is wounded, and they take refuge at Sir Richard at the Lee's castle. Source: Wikipedia, A Gest of Robyn Hode.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The oldest Robin Hood ballads -- A Gest of Robyn Hode, Robin Hood and the Monk, Robin Hood and Guy of Gisborne -- put the Sheriff of Nottingham on the page over and over. But in those ballads, one thing about him is missing. What is missing?",
+      "choices": [
+        "a personal name",
+        "a wife",
+        "a horse",
+        "a sword"
+      ],
+      "answer": "a personal name",
+      "context": "The Sheriff is only 'the Sheriff' or 'the high Sheriff of Nottingham' in the earliest ballads -- no first name, no family name, no coat of arms. His villainy is his office. Later Victorian retellings invented names ('Sir Reginald', 'Sir Guy') that are not in the medieval texts. Source: Robbins Library, The Sheriff.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Robin Hood and the Monk, the Sheriff captures Robin at a church in Nottingham. The monk who betrayed Robin sets off to carry the news to the king. Little John and Much the Miller's Son ambush him on the road so word cannot spread. What do the two outlaws do to the monk and his young page-boy?",
+      "choices": [
+        "kill them both",
+        "tie them to a tree",
+        "steal their horses",
+        "lock them in a barn"
+      ],
+      "answer": "kill them both",
+      "context": "In Child 119, Little John kills the monk for betraying Robin and Much kills the page-boy so no one can spread word of the ambush. Little John then disguises himself as the monk and Much as the page and delivers the monk's letters to the king. Source: Wikipedia, Robin Hood and the Monk.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Robin Hood and Guy of Gisborne (Child 118), Robin kills the bounty-hunter Guy and puts on Guy's distinctive cloak -- a strange, shaggy garment cut from an animal's skin. What kind of skin is Guy's cloak made of?",
+      "choices": [
+        "a horse's hide",
+        "a bear's fur",
+        "a wolf's pelt",
+        "a stag's skin"
+      ],
+      "answer": "a horse's hide",
+      "context": "In Child 118, Guy of Gisborne wears a distinctive horse-hide cloak. After Robin kills Guy, he dons the horse-hide, disfigures Guy's face with his own bow-tip to hide the corpse's identity, and blows Guy's horn to signal a false victory to the Sheriff. Source: Wikipedia, Robin Hood and Guy of Gisborne.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Robin, wearing the dead Guy of Gisborne's shaggy horse-hide, blows Guy's horn. The Sheriff of Nottingham hears the signal, thinks his bounty-hunter has slain Robin at last, and rides over to see the head. Before the Sheriff can turn and flee, Robin kills him. With what weapon?",
+      "choices": [
+        "a longbow",
+        "a broadsword",
+        "a dagger",
+        "a battle-axe"
+      ],
+      "answer": "a longbow",
+      "context": "In Child 118 the Sheriff, deceived by the horse-hide and Guy's horn, rides up to Robin. Robin shoots him dead with the longbow before he can escape. This is the Sheriff's ballad-death. Source: Wikipedia, Robin Hood and Guy of Gisborne.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "One real man was High Sheriff of Nottinghamshire and Derbyshire in the years of King John. His brutality -- protection payments squeezed from Nottingham, wrongful seizures, threats of arson against those who would not pay -- was so notorious he was named by name in the 1215 Magna Carta, in a clause ordering him and his kin expelled from royal office. What was his name?",
+      "choices": [
+        "Philip Marc",
+        "Simon de Montfort",
+        "Hugh Despenser",
+        "Ranulf Blondeville"
+      ],
+      "answer": "Philip Marc",
+      "context": "Philip Marc, a Touraine-born supporter of King John, held Nottingham from 1208. Clause 50 of Magna Carta orders him, his brothers, and his nephew Geoffrey removed from office and out of England -- one of very few individuals singled out by name in the charter. He is probably the closest historical model behind the ballad villain. Source: Wikipedia, Philip Marc.",
+      "legend": false
+    }
+  ]
+}

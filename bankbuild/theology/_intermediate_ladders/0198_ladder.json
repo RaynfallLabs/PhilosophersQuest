@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the Aesir stay young because one goddess of Asgard keeps a wooden box of golden fruit and hands them around at every feast. The gods eat from her box; without it they would age like any mortal. What kind of fruit does this goddess keep in her box?",
+      "choices": ["apples", "pears", "figs", "pomegranates"],
+      "answer": "apples",
+      "context": "Snorri, Skaldskaparmal 1 and Gylfaginning 26: Idunn keeps a wooden box of golden apples that the Aesir eat to stay young. The pomegranate is Persephone's fruit in Greek myth; figs and pears belong to other traditions. Apples of immortality are one of only a handful of Norse-specific food-of-life motifs.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Norse pantheon, the goddess who keeps the fruit that keeps the Aesir young is married to another Aesir god -- the one whose whole job is verse-making, poems, and skald-song. What is her husband's name?",
+      "choices": ["Bragi", "Njord", "Tyr", "Heimdall"],
+      "answer": "Bragi",
+      "context": "Snorri, Gylfaginning 26: Idunn is the wife of Bragi, the god of poetry. Njord is the god of sea and wind (father of Freyr and Freyja). Tyr is the one-handed god of war-oaths. Heimdall watches Bifrost and will blow Gjallarhorn at Ragnarok.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin, Loki, and Hoenir are wandering the wilds. They kill an ox for supper and lay it in the coals, but the meat will not cook no matter how long the fire burns. A great eagle in a nearby oak calls down that the fire will only take the meat if the bird gets his share first. What does Loki do to the eagle in a rage?",
+      "choices": ["swings a pole at him", "throws stones at him", "shoots an arrow at him", "sets the oak on fire"],
+      "answer": "swings a pole at him",
+      "context": "Snorri, Skaldskaparmal 1: Loki swings a pole at the bird -- the pole sticks fast to the eagle and Loki's hands stick fast to the pole, and the eagle takes off dragging Loki through rocks and brambles until he begs for mercy. This is how the trap on Idunn begins.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The eagle in the oak is not really a bird at all -- he is a giant in feathered disguise, and once Loki is stuck to the pole and begging in the air, the giant names his price. What does the eagle demand in exchange for setting Loki down?",
+      "choices": ["Idunn and her box of fruit", "Freyja and her golden necklace", "Sif and her long hair", "Frigg and her ring of keys"],
+      "answer": "Idunn and her box of fruit",
+      "context": "Snorri, Skaldskaparmal 1: the eagle is the giant Thjazi, and his price is Idunn together with her apples -- if the Aesir lose her, they lose their immortality. Freyja's necklace is Brisingamen (a different story); Sif's hair is what Loki himself shaved off in another episode; Frigg keeps the household keys of Asgard but is not ransomed here.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "To pay off the giant's price, Loki tricks Idunn outside the walls of Asgard. He tells her something about a wood nearby that would make her curious enough to bring her precious box with her when she comes. What does Loki tell Idunn is waiting in the wood?",
+      "choices": ["fruit even finer than her own for her to compare", "a stag that Bragi has just brought down for her", "a spring whose water reflects the future", "a stone that hums when the Aesir walk past"],
+      "answer": "fruit even finer than her own for her to compare",
+      "context": "Snorri, Skaldskaparmal 1: Loki tells Idunn he has found apples in a wood that she must come and compare with hers, and she must bring her own so they can be set side by side. She comes out through the gate with her box in her arms, and the eagle-shaped Thjazi swoops from the sky, snatches her and it, and flies for Jotunheim.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the Prose Edda the giant who steals the box of youth-fruit from Asgard has a name and a mountain hall. He carries the goddess in his talons all the way home, and the Aesir will not know where to find her until Loki confesses. What is the name of this giant?",
+      "choices": ["Thjazi", "Suttung", "Thrym", "Hymir"],
+      "answer": "Thjazi",
+      "context": "Snorri, Skaldskaparmal 1: Thjazi (or Thiazi) carries Idunn to his hall Thrymheim in Jotunheim. Suttung is the giant who hoards the Mead of Poetry. Thrym is the giant who steals Mjolnir and demands Freyja as bride. Hymir is the giant whose cauldron the gods borrow for Aegir's ale-brewing.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Weeks pass and the box does not come back to Asgard. In Snorri's Prose Edda the effect is written straight into the bodies of the gods -- Bragi grows a grey beard, the goddesses wrinkle, Odin's shoulders begin to bend. The Aesir gather in council and quickly work out one thing about the day Idunn disappeared. What?",
+      "choices": ["Loki was the last one seen with her", "an eagle had circled Asgard for a week", "the box had been left standing empty", "she had spoken of going out alone"],
+      "answer": "Loki was the last one seen with her",
+      "context": "Snorri, Skaldskaparmal 1: the gods meet, ask each other what was last known of Idunn, and the last thing anyone saw was that she had gone out through the gate with Loki. They seize Loki and threaten him with death or torture until he agrees to bring her back.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "To fly north into Jotunheim after Idunn, Loki cannot go on his own feet -- he needs the shape of a bird. He borrows a set of feathered gear from another Aesir goddess. Which goddess owns the flying-plumage that Loki borrows?",
+      "choices": ["Freyja", "Frigg", "Nanna", "Skadi"],
+      "answer": "Freyja",
+      "context": "Snorri, Skaldskaparmal 1: Loki borrows Freyja's falcon (or hawk) plumage and flies as a falcon into Jotunheim. Freyja is the Vanir goddess who owns the necklace Brisingamen and this plumage. Frigg keeps the household of Asgard; Nanna is the wife of Baldr; Skadi (Thjazi's daughter) will not enter the story until after her father is dead.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Loki reaches Thrymheim while the giant is out fishing on the sea, and finds Idunn alone in the hall. To carry a full-grown goddess back to Asgard in a bird's claws he does not just grab her -- he changes her shape so she is small enough to fly with. What shape does Loki turn Idunn into for the journey home?",
+      "choices": ["a nut", "a leaf", "a spark", "a hair"],
+      "answer": "a nut",
+      "context": "Snorri, Skaldskaparmal 1: 'Loki turned her into the shape of a nut and grasped her in his claws and flew his utmost.' The nut-shape in the talons is one of the neatest small-and-hidden rescue-transformations in Norse myth, parallel to Zeus hiding Metis or Vishnu hiding worlds in a leaf.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The pursuing giant comes home, sees Idunn gone, takes eagle-shape and chases Loki across the sky. The Aesir on the walls of Asgard have prepared a trap for the moment the falcon crosses the wall ahead of the eagle. What have the gods heaped on top of the wall to spring on Thjazi?",
+      "choices": ["a pile of wood-shavings ready to light", "a net of chains ready to drop", "a rank of archers ready to loose", "a wall of shields ready to raise"],
+      "answer": "a pile of wood-shavings ready to light",
+      "context": "Snorri, Skaldskaparmal 1: the Aesir pile wood-shavings on the wall; the instant Loki-as-falcon crosses inside with Idunn in his claws, they light the pile, and Thjazi's eagle-feathers catch fire so he falls inside the walls of Asgard, where the gods kill him. His daughter Skadi comes armed for blood-price and is granted a husband chosen by his feet -- she picks the fairest pair thinking they are Baldr's, but they belong to Njord.",
+      "legend": true
+    }
+  ]
+}

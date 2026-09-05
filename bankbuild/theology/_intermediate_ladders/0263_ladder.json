@@ -1,0 +1,160 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "The Ulster Cycle names one hero above all -- a young warrior of twenty-seven trained on the Isle of Shadow, master of the belly-spear, and the only Ulsterman who fights on when the rest of the province lies helpless under a curse. He dies at the end of the cycle's death-tale, the Aided Con Culainn. Who is this hero?",
+   "choices": [
+    "Cu Chulainn",
+    "Conchobar mac Nessa",
+    "Fergus mac Roich",
+    "Fionn mac Cumhaill"
+   ],
+   "answer": "Cu Chulainn",
+   "context": "Conchobar and Fergus are kings of Ulster in the same cycle; Fionn belongs to the later Fenian Cycle. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 1,
+   "stem": "In the Aided Con Culainn ('The Death of Cu Chulainn'), the fatal war-band that closes in on the hero is drawn together by one western queen -- the same ruler whose great cattle-raid he had wrecked years before, and who has been waiting for revenge. Which queen raises the war-band?",
+   "choices": [
+    "Medb",
+    "Deirdre of the Sorrows",
+    "Grainne",
+    "Emer"
+   ],
+   "answer": "Medb",
+   "context": "Medb of Connacht had lost her champion Ferdiad and much of her army in the Tain Bo Cuailnge; she draws the sons of every man Cu Chulainn ever killed into one war-band. Emer is Cu Chulainn's own wife; Deirdre is from the Sons of Uisliu tale; Grainne belongs to the Fenian Cycle. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "The war-band Medb raises against Cu Chulainn has three factions, each with a personal reason to want the hero dead. One is a son avenging his father Cu Roi; another is Erc, avenging his father Cairbre Nia Fer. The third faction is not a warrior at all but the sorcerous grown offspring of a wizard Cu Chulainn had killed, working magic against him from the day they were born. Who is the third group?",
+   "choices": [
+    "the children of Cailitin",
+    "the sons of Uisliu",
+    "the daughters of the Morrigan",
+    "the Fomorian survivors of Mag Tuired"
+   ],
+   "answer": "the children of Cailitin",
+   "context": "Cu Chulainn had killed the wizard Cailitin; his widow bore posthumous children specifically trained in sorcery for revenge. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Cu Chulainn goes to his last fight already broken by a single trick the children of Cailitin have set for him on the road. An old crone by the wayside offers him a hospitality-meal, and by the ancient rule against refusing a host, he cannot say no. Under his geasa (personal taboos) he had sworn never to eat one meat in particular. What meat does the crone put in front of him?",
+   "choices": [
+    "dog-flesh",
+    "salmon of knowledge",
+    "black boar",
+    "raven cooked whole"
+   ],
+   "answer": "dog-flesh",
+   "context": "His name means 'the Hound of Culann' -- eating dog is his forbidden meat. Refusing hospitality is equally forbidden, so the crone traps him coming and going. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "In the fight itself Lugaid mac Con Roi has three magical spears, and a prophecy attached to each: each spear will fell a king. The first spear does not kill Cu Chulainn. It kills 'the king of chariot-drivers' -- Cu Chulainn's own charioteer, the man who has ridden with him since the boyhood-deeds. What is the charioteer's name?",
+   "choices": [
+    "Loeg mac Riangabra",
+    "Sualtam mac Roich",
+    "Bricriu mac Carbaid",
+    "Ibar mac Riangabra"
+   ],
+   "answer": "Loeg mac Riangabra",
+   "context": "Loeg had floated the Gae Bolg down the ford for Cu Chulainn in the fight with Ferdiad; the first of Lugaid's three prophesied spears takes him now. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "The second of Lugaid's three prophesied spears also fells a king, but not a human one. It strikes down 'the king of horses' -- Cu Chulainn's grey warhorse, who has drawn his chariot at every great battle. What is the horse's name?",
+   "choices": [
+    "the Grey of Macha",
+    "Sleipnir the Eight-Legged",
+    "the Black of Sainglenn",
+    "Enbarr of the Flowing Mane"
+   ],
+   "answer": "the Grey of Macha",
+   "context": "Liath Macha, 'the Grey of Macha', is the elder of Cu Chulainn's two chariot-horses (the Black of Sainglenn is the younger). Sleipnir is Odin's Norse horse; Enbarr is Manannan mac Lir's. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "Lugaid's third spear pierces Cu Chulainn through the belly and spills his innards. He stumbles to a nearby lough to drink and to wash the wound, and there he does something so signature that it becomes the single image the whole of Irish myth remembers him by. What does he do at the lough?",
+   "choices": [
+    "he ties himself upright to a standing stone with his own girdle",
+    "he lies down under his great shield to sleep it off",
+    "he wades out into the lough to let the current take him",
+    "he calls the war-goddess Morrigan to finish him off"
+   ],
+   "answer": "he ties himself upright to a standing stone with his own girdle",
+   "context": "He refuses to die on his back -- he will die facing his enemies on his feet. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "The stone Cu Chulainn ties himself to is a real granite pillar, about ten feet tall, that still stands today in a field in County Louth -- the field was long known locally as 'the Field of Slaughter'. What is the stone called?",
+   "choices": [
+    "Clochafarmore",
+    "the Lia Fail",
+    "the Blarney Stone",
+    "the Turoe Stone"
+   ],
+   "answer": "Clochafarmore",
+   "context": "Clochafarmore stands in Rathiddy Townland near Knockbridge, County Louth. The Lia Fail is the coronation stone at Tara; the Blarney Stone is in Cork; the Turoe Stone is a decorated La Tene pillar in Galway. Wikipedia: Aided Con Culainn; Voices from the Dawn.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "Cu Chulainn, tied upright and dying, keeps his sword in his hand. Medb's warriors stand off at a distance and will not come near him. For days they wait for the sign that he is truly dead -- the arrival of a specific bird on his shoulder, associated all through his life with the war-goddess who had offered herself to him and been refused. Which bird finally lands?",
+   "choices": [
+    "a raven",
+    "an eagle",
+    "a swan",
+    "a hooded crow"
+   ],
+   "answer": "a raven",
+   "context": "The raven is the Morrigan, the war-goddess in bird-form; her landing to drink his blood is the confirmation his enemies have been waiting for. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "With the raven on the shoulder confirming the death, the leader of the war-band finally dares approach the standing corpse and cut off the head. The dying hero's sword falls from his hand as the blade comes down and takes a specific price from the killer. Who is the killer, and what does he lose?",
+   "choices": [
+    "Lugaid mac Con Roi -- he loses his own hand",
+    "Erc mac Cairpre -- he loses his shield-arm",
+    "Cet mac Matach -- he loses his sword-arm",
+    "Ailill mac Mata -- he loses his chariot-horse"
+   ],
+   "answer": "Lugaid mac Con Roi -- he loses his own hand",
+   "context": "The falling sword severs Lugaid's hand -- one final blow from a corpse. Wikipedia: Lugaid mac Con Roi.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "Cu Chulainn's foster-brother tracks down the one-handed Lugaid to avenge the killing. To keep the fight fair he ties one of his own hands into his belt and fights Lugaid one-handed too. Even so he cannot finish it until his own horse takes a bite out of Lugaid's side. Who is the avenger?",
+   "choices": [
+    "Conall Cernach",
+    "Fergus mac Roich",
+    "Sualtam mac Roich",
+    "Cathbad the druid"
+   ],
+   "answer": "Conall Cernach",
+   "context": "Conall's fair-fight code -- matching Lugaid's missing hand -- is a standing image in the Ulster Cycle; the horse's bite is his own warhorse Dub-Sainglend. Wikipedia: Lugaid mac Con Roi.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The single image of Cu Chulainn tied upright to a stone with a raven on his shoulder became the memorial image of modern Irish independence -- a bronze of this exact scene, modelled from life by an Irish sculptor in 1911-12, was installed by order of Eamon de Valera as the official public memorial to one specific rising. In which building was the statue installed, and for which rising?",
+   "choices": [
+    "in Dublin's General Post Office, for the 1916 Easter Rising",
+    "in Kilmainham Gaol, for the 1798 Rebellion",
+    "in Dublin Castle, for the 1867 Fenian Rising",
+    "in Trinity College, for the 1803 Emmet Rising"
+   ],
+   "answer": "in Dublin's General Post Office, for the 1916 Easter Rising",
+   "context": "Oliver Sheppard's 'The Death of Cuchulain' was unveiled at the GPO in Easter Week 1935 as the official memorial to the 1916 Rising -- the GPO having been the rebels' headquarters. Wikipedia: Oliver Sheppard.",
+   "legend": false
+  }
+ ]
+}

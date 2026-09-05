@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Odin sits on his high seat in Asgard, but he cannot be in every corner of the world at once. To keep watch on all of Midgard he sends out two of the same kind of bird every dawn to fly the whole earth and come back at breakfast. What kind of bird does Odin send out?",
+      "choices": ["ravens", "eagles", "owls", "sparrows"],
+      "answer": "ravens",
+      "context": "Snorri's Gylfaginning 38 describes the two ravens flying from Odin's shoulders each dawn, ranging over the whole earth, and returning at the morning meal. Eagles belong to Thjazi and to the tree of Yggdrasil; owls do not carry this errand; sparrows are not Norse omen-birds.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Because those two birds fly for him every morning and bring back the world's news, Odin picks up an epithet -- a nickname that names him after them. What is that raven-epithet of Odin?",
+      "choices": ["Raven-God (Hrafnagud)", "One-Eye (Bolverkr)", "All-Father (Alfadr)", "Spear-Shaker (Geirvaldr)"],
+      "answer": "Raven-God (Hrafnagud)",
+      "context": "Gylfaginning 38 gives the epithet Hrafnagud, literally 'Raven-God', because of Huginn and Muninn. One-Eye and Bolverkr are also real Odin names but come from other stories (his losing an eye at Mimir's well; his stealing the mead of poetry). All-Father is his fatherhood-name.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The two ravens have names in the Old Norse texts, and the names are not decoration -- each one is a plain word for something inside a person's mind. Snorri says the birds stand for the two things a wise king needs. What do the two names mean?",
+      "choices": ["Thought and Memory", "Wisdom and Truth", "Sight and Sound", "Sun and Moon"],
+      "answer": "Thought and Memory",
+      "context": "Snorri, Gylfaginning 38: Huginn means 'Thought' (from Old Norse hugr) and Muninn means 'Memory' (from munr). Sight and Sound would fit the errand but is not what the names mean; Sun and Moon are the wolf-chased siblings Sol and Mani; Wisdom and Truth are unrelated abstractions.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Now match the meanings to the names. The bird whose name is Old Norse for 'Thought' -- what is he called?",
+      "choices": ["Huginn", "Muninn", "Geri", "Freki"],
+      "answer": "Huginn",
+      "context": "Huginn comes from hugr, 'thought, mind'. Muninn (from munr, 'memory') is the other raven. Geri and Freki are not birds at all -- they are Odin's two wolves who eat under his table in Valhalla (Grimnismal 19).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "And its partner. The bird whose name is Old Norse for 'Memory' -- what is he called?",
+      "choices": ["Muninn", "Huginn", "Geri", "Freki"],
+      "answer": "Muninn",
+      "context": "Muninn (from munr, 'memory'). Grimnismal 20 pairs the two: Huginn and Muninn go out over the earth every day. Geri ('Greedy') and Freki ('Ravenous') are the wolves, not the ravens -- easy to confuse because both pairs are Odin's animals.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Where does Odin sit to hear the birds' report when they come back? He does not stand out in the yard -- he keeps them in the same spot every morning, close enough to whisper into his ear. Where do Huginn and Muninn land to report?",
+      "choices": ["on Odin's shoulders", "in the branches of Yggdrasil", "on the roof of Valhalla", "at the foot of Odin's throne"],
+      "answer": "on Odin's shoulders",
+      "context": "Snorri, Gylfaginning 38: 'The ravens sit on his shoulders and say into his ear all the tidings which they see or hear.' The eagle in Yggdrasil is a different bird (unnamed, with the squirrel Ratatosk running messages up and down the trunk).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In one poem Odin himself, in disguise, admits he is a little worried each morning until the two ravens come home. Between the two of them there is one he says he fears losing more than the other. Which loss frightens Odin more?",
+      "choices": ["losing Muninn (memory)", "losing Huginn (thought)", "losing both equally", "losing neither -- he is only pretending to worry"],
+      "answer": "losing Muninn (memory)",
+      "context": "Grimnismal 20: 'For Hugin I fear lest he come not home, but I fear yet more for Munin.' Even the All-Father would rather lose his powers of thought than his hold on memory. This is one of the most quoted lines in Norse verse.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Odin keeps another pair of animals at his feet, this time inside his hall Valhalla. They eat everything set on his table while Odin himself lives on wine alone. What are those two animals?",
+      "choices": ["wolves", "hounds", "boars", "hawks"],
+      "answer": "wolves",
+      "context": "Grimnismal 19: 'Geri and Freki the war-glorious sates, the battle-hardened Father of Hosts; but on wine alone weapon-magnificent Odin ever lives.' The two wolves are the mirror-pair to the two ravens -- birds for what he knows, wolves for what he feeds. Boars belong to Freyr (Gullinbursti) and Freyja (Hildisvini).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The two wolves have names in Grimnismal 19, and like the ravens' names they are plain descriptive Old Norse words. One means 'Greedy' and the other means 'Ravenous'. What are the wolves called?",
+      "choices": ["Geri and Freki", "Skoll and Hati", "Fenrir and Garm", "Sleipnir and Gulltoppr"],
+      "answer": "Geri and Freki",
+      "context": "Geri = 'Greedy', Freki = 'Ravenous'. Skoll and Hati are the wolves that chase the sun and moon across the sky. Fenrir is the wolf who swallows Odin at Ragnarok; Garm is the hound at the gates of Hel. Sleipnir and Gulltoppr are horses -- Odin's and Heimdallr's.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Long before the Viking sagas were written down, Norse and Germanic warriors were already carving Odin with the two ravens. On 6th to 8th century helmet plates dug up in Sweden a helmeted figure appears with a spear -- and one bird flanking him on either side. At which two Swedish sites do those helmet plates come from?",
+      "choices": ["Vendel and Torslunda", "Uppsala and Lejre", "Gotland and Oland", "Birka and Hedeby"],
+      "answer": "Vendel and Torslunda",
+      "context": "The Vendel and Torslunda helmet plates (Sweden, ca. 550-800 AD) are among the oldest surviving pictures of the raven-flanked warrior; they show the two ravens beside Odin centuries before Snorri wrote the myths down. Uppsala was Odin's great temple site; the others are famous Viking trading and burial places, but not the plate sites.",
+      "legend": false
+    }
+  ]
+}

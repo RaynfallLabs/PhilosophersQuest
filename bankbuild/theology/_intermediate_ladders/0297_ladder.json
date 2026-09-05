@@ -1,0 +1,52 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Genesis, Sarah has waited years for a child of her own and cannot bear one. She hands her Egyptian handmaid Hagar to Abraham as a second wife so that he may have a son. Hagar bears the boy, and Abraham names him. What is the name of that first son?",
+      "choices": ["Ishmael", "Isaac", "Esau", "Jacob"],
+      "answer": "Ishmael",
+      "context": "Genesis 16:15 KJV: 'And Hagar bare Abram a son: and Abram called his son's name, which Hagar bare, Ishmael.' Isaac is the LATER son Sarah herself bears; Esau and Jacob are the grandsons of Isaac, two generations later.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Years after Ishmael's birth, Sarah bears her own son Isaac and demands the handmaid and her boy be cast out. Early in the morning Abraham puts two things on Hagar's shoulder and sends her into the wilderness. What two things does he give her?",
+      "choices": ["bread and a bottle of water", "a sack of grain and a lamb", "a mantle and a walking staff", "silver coins and a scroll"],
+      "answer": "bread and a bottle of water",
+      "context": "Genesis 21:14 KJV: 'And Abraham rose up early in the morning, and took bread, and a bottle of water, and gave it unto Hagar, putting it on her shoulder, and the child, and sent her away.' The narrator is deliberately spare: nothing else -- no gold, no beast to carry them, no escort.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "After Abraham sends her away, Hagar wanders lost with her boy in one particular wilderness of the Negev, where the water runs out. Genesis 21:14 names the region. Which wilderness is it?",
+      "choices": ["Beersheba", "Sinai", "Paran", "Moab"],
+      "answer": "Beersheba",
+      "context": "Genesis 21:14 KJV: 'she departed, and wandered in the wilderness of Beersheba.' Paran comes LATER in the story, after Ishmael grows up and settles there as an archer (Genesis 21:21). Sinai is where Moses receives the tablets, a generation later. Moab lies east of the Jordan, out of the picture.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The water is spent and Hagar cannot bear to watch the boy die of thirst. She lays him under a shrub and walks a specific distance away before she sits down to weep. Genesis 21:16 measures the distance in an ordinary hunter's unit. How far off does she sit?",
+      "choices": ["a bowshot", "a stone's throw", "a day's journey", "seven paces"],
+      "answer": "a bowshot",
+      "context": "Genesis 21:16 KJV: 'she went, and sat her down over against him a good way off, as it were a bowshot: for she said, Let me not see the death of the child.' A bowshot -- roughly two hundred yards -- is far enough that she cannot hear him, close enough that she is still with him. The stone's-throw measure belongs to Luke's Gethsemane scene; a day's journey belongs to Elijah under the juniper tree.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Hagar weeps, saying 'Let me not see the death of the child'. Then Genesis 21:19 says God opens her eyes and shows her something she had not seen before -- one specific object that saves the boy's life. What does she suddenly see?",
+      "choices": ["a well of water", "a raven bringing bread", "a stream running from a rock", "a stag standing in the thicket"],
+      "answer": "a well of water",
+      "context": "Genesis 21:19 KJV: 'And God opened her eyes, and she saw a well of water; and she went, and filled the bottle with water, and gave the lad drink.' The raven bringing bread belongs to Elijah at the brook Cherith; the stream from the rock belongs to Moses at Horeb -- both real other wilderness-miracles, both wrong for this scene.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Long before this second flight, Hagar had run from Sarai's harshness once already, met an angel by a spring on the way to Shur, and done something no other human being in the whole book of Genesis does. What did Hagar do at that first spring that is unique in Genesis?",
+      "choices": ["gave God a name", "wrote God a letter", "refused God a sacrifice", "wrestled God for a blessing"],
+      "answer": "gave God a name",
+      "context": "Genesis 16:13 KJV: 'And she called the name of the LORD that spake unto her, Thou God seest me.' In Hebrew: El-Roi -- 'God who sees me'. The well itself became known as Beer-lahai-roi, 'the well of the Living One who sees me'. Wrestling God for a blessing is Jacob at Peniel, a later Genesis story (Genesis 32). No one in Genesis writes God a letter, and refusing God a sacrifice does not fit the scene.",
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Old and worn out from a life in the greenwood, Robin Hood falls ill with a fever and rides to a Yorkshire nunnery to seek the standard medieval fever cure: opening a vein in the arm and draining off a measured amount of blood. What is this medieval medical treatment called?",
+      "choices": ["bleeding", "purging", "leeching", "trepanning"],
+      "answer": "bleeding",
+      "context": "Bleeding, or phlebotomy, was the routine medieval remedy for fevers and many other ailments -- practiced in monasteries and by barber-surgeons for centuries. Purging (forced vomiting or laxatives) and leeching (using leeches, a related bleeding-method) also existed. Trepanning is drilling a hole in the skull -- a real but different medieval surgery. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Yorkshire nunnery where Robin goes to be bled is a Cistercian house dedicated to the Virgin Mary and Saint James, founded in 1155 near Brighouse. In the ballads the killing-place always goes by one name. What is the priory called?",
+      "choices": ["Kirklees Priory", "Fountains Abbey", "Whitby Abbey", "Rievaulx Abbey"],
+      "answer": "Kirklees Priory",
+      "context": "Kirklees Priory was a small Cistercian nunnery in West Yorkshire near Brighouse. Fountains, Whitby, and Rievaulx are all real, famous Yorkshire monastic houses of the same era -- but only Kirklees carries the Robin Hood tradition. Source: en.wikipedia.org/wiki/Kirklees_Priory.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Robin arrives at the nunnery for his cure, the ballad reveals that the head nun who agrees to open his vein is not a stranger at all: she is a close BLOOD RELATIVE of Robin, one who has hated him in secret for years. What is her relationship to Robin?",
+      "choices": ["his cousin", "his sister", "his half-aunt", "his stepmother"],
+      "answer": "his cousin",
+      "context": "A Gest of Robyn Hode names the prioress of Kirklees as Robin's own cousin -- family blood, which sharpens the treachery. The ballad does not give her a personal name; she is only 'the prioress of Kirklees'. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In A Gest of Robyn Hode the prioress does not act quite alone: the closing lines name a second conspirator, a knight who is her secret lover and Robin's old enemy. Which of these named villains is the prioress's paramour in the Gest?",
+      "choices": ["Sir Roger of Doncaster", "the Sheriff of Nottingham", "the Bishop of Hereford", "the Abbot of Saint Mary's"],
+      "answer": "Sir Roger of Doncaster",
+      "context": "The final fitte of the Gest names Sir Roger of Doncaster (called 'Red Roger' in the A-version of Child Ballad 120) as the prioress's paramour and co-conspirator. The Sheriff of Nottingham, the Bishop of Hereford, and the Abbot of Saint Mary's are all real Robin Hood villains from other episodes -- adjacent enemies used honestly as distractors. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The prioress takes Robin to an upper chamber, opens the vein in his arm as if to draw off the usual measured cupful -- and then does something a real physician would never do. What is her act of TREACHERY, the thing that turns the cure into a killing?",
+      "choices": ["she locks him alone in the room and lets the blood keep draining", "she pours poison into the open cut", "she slips a small blade between his ribs while he sleeps", "she summons armed men through a hidden door"],
+      "answer": "she locks him alone in the room and lets the blood keep draining",
+      "context": "The prioress's method is precisely a botched cure disguised as medicine: she opens the vein, then leaves and locks the door so the blood drains out unchecked and Robin weakens toward death. In the A-version of the ballad her lover Red Roger later finishes the job with a sword-thrust, but the primary killing is by the slow-bleed itself. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Robin's second-in-command has been left waiting outside the priory walls. Growing too weak to shout, Robin lifts an old signal to his lips and blows it three times, each blast fainter than the last. What SIGNAL does the dying Robin sound to bring his lieutenant running?",
+      "choices": ["his hunting horn", "the priory bell", "a shepherd's whistle", "the war-drum"],
+      "answer": "his hunting horn",
+      "context": "In the B-text of Child Ballad 120 the failing horn-blasts -- three of them, each weaker -- carry from the upper window of the priory to Little John waiting outside; John hears the weakness in the call, knows something is wrong, and forces his way in. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Hearing the failing horn, Robin's second-in-command breaks the locks and finds him bleeding out on the bed. This same lieutenant is Robin's oldest companion, a huge man who first met him on a narrow bridge over a forest stream and fought him to a draw with quarterstaves. WHO is this lieutenant?",
+      "choices": ["Little John", "Will Scarlet", "Much the Miller's Son", "Alan-a-Dale"],
+      "answer": "Little John",
+      "context": "The quarterstaff-bridge meeting is one of the most famous scenes in the ballads: Little John (called 'Little' in ironic contrast to his size) knocks Robin off the bridge, they laugh, and John joins the band. He is the one who forces the priory door at the death-scene. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Standing over his dying master, the lieutenant begs one furious favour: leave to take Robin's men, ride back to the priory, and put its buildings to the torch in revenge. Robin refuses, giving one clear reason. What REASON does he give for forbidding the revenge?",
+      "choices": ["he has never harmed a woman in all his life", "the church would set a curse on any who burned it", "the nuns had done nothing wrong, only their head", "the fire would spread to the poor cottages nearby"],
+      "answer": "he has never harmed a woman in all his life",
+      "context": "In the ballad Robin says, in effect, that he has never harmed a woman in all his life 'nor man in woman's company' -- and forbids Little John to burn the priory even in revenge for his own murder. The moral point is heavy: even at the moment of his killing, Robin holds to his own rule. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Refusing revenge, Robin instead makes his lieutenant a strange last request. He asks for his BOW and a single arrow, has himself lifted to the priory window, and looses one final shot out into the park. What does Robin ask his lieutenant to do WITH THAT ARROW after it falls?",
+      "choices": ["dig his grave wherever the arrow lands", "carry the arrow back to Sherwood as a token", "return it point-first to the prioress", "hang it above the altar of the priory chapel"],
+      "answer": "dig his grave wherever the arrow lands",
+      "context": "This is the great ballad-image of Robin's death: the last arrow shot from the sickbed marks the outlaw's own grave. Little John finds it in Kirklees Park and buries Robin there, as Robin had asked. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Robin's last instructions do not stop with the grave-site: he also asks that certain of his belongings be laid in the grave WITH his body, each in a particular place. WHICH arrangement of his gear does the ballad prescribe?",
+      "choices": ["his sword at his head, his arrows at his feet, his bow at his side", "his cap on his chest, his horn on his shoulder, his knife in his hand", "his cloak spread over him and his belt around his waist", "his boots at the foot of the grave and his gloves under his head"],
+      "answer": "his sword at his head, his arrows at his feet, his bow at his side",
+      "context": "The ballad specifies the burial-arrangement almost as a warrior-code: sword at his head, arrows (with the bow at his side) at his feet, and (in some versions) a green sod under his head. It reads like the burial of a yeoman-hero out of Old English tradition. Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The ballad describes only where the arrow fell; but a real stone slab in West Yorkshire, in the park attached to the ruined priory, has been shown to visitors as Robin's grave for centuries. WHY is the inscription on that slab today almost impossible to read?",
+      "choices": ["souvenir hunters have chipped away pieces over the generations", "the priory monks scoured it clean at the Dissolution", "Victorian railway-builders resurfaced it as a paving-stone", "a fire in the eighteenth century blackened and cracked the face"],
+      "answer": "souvenir hunters have chipped away pieces over the generations",
+      "context": "The alleged grave in Kirklees Park has been pointed out as Robin's since at least the seventeenth century; visitors and pilgrims have chipped fragments from it for so many generations that the inscription is now almost gone. The slab itself is protected today. Source: en.wikipedia.org/wiki/Kirklees_Priory.",
+      "legend": false
+    }
+  ]
+}

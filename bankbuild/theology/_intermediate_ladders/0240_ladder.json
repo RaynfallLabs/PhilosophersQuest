@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Malory's Le Morte d'Arthur, the young King Arthur one night sleeps with a queen who is a guest at his court, not knowing that she is his own half-sister on his mother Igraine's side. She conceives a son by him that night. In Malory, who is the queen whose son by Arthur will one day bring the kingdom down?",
+      "choices": ["Morgause of Orkney", "Elaine of Astolat", "Guinevere of Cameliard", "Iseult of Ireland"],
+      "answer": "Morgause of Orkney",
+      "context": "Malory, Le Morte d'Arthur Book I ch.19-20 (Caxton 1485). Morgause is Igraine's daughter by her first husband Gorlois of Cornwall and thus Arthur's half-sister; she is married to King Lot of Orkney. Elaine of Astolat dies of unrequited love for Lancelot. Guinevere is Arthur's queen. Iseult belongs to the parallel Tristan cycle. In the older French Vulgate the mother of Mordred is Morgan le Fay -- also a half-sister -- and Malory's switch to Morgause is idiosyncratic.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The child born of Arthur's night with Morgause is a boy. He is raised in secret, comes to Arthur's court years later as a young knight, half-brother to Gawain, and is eventually seated with the fellowship of the Round Table. In Malory, what is the name of Arthur's son by Morgause?",
+      "choices": ["Mordred", "Galahad", "Bors", "Kay"],
+      "answer": "Mordred",
+      "context": "Malory, Le Morte d'Arthur Book I ch.27 and passim. Galahad is Lancelot's pure son by Elaine of Corbenic, the Grail-achiever. Bors is Lancelot's cousin, a Grail knight. Kay is Arthur's foster-brother and seneschal. Mordred is Arthur's own son by incest and the ruin of his reign.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Merlin tells Arthur that the child born of his night with Morgause will one day destroy his kingdom -- and adds that the child was born on May Day. Arthur, terrified, orders that ALL noble children born on May Day be gathered up. He puts them into a single ship and sends them out to sea to drown, hoping the prophesied child will die among them. In Malory (Book I ch.27), what happens to the infant Mordred aboard that ship?",
+      "choices": ["he is cast up alive on shore", "he is nursed to safety by a passing dolphin", "Merlin himself lifts him from the wreck", "Morgause hides him ashore before the ship sails"],
+      "answer": "he is cast up alive on shore",
+      "context": "Malory, Le Morte d'Arthur Book I ch.27. The ship wrecks and every other child drowns; the infant Mordred is thrown up alive on shore, is found by a good man, and is raised until age fourteen before being brought to court. Malory adapts the episode from the Post-Vulgate Suite du Merlin. Many of Arthur's lords are furious over the drowned children -- some blame Arthur, some blame Merlin.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Years later Guinevere's love for Lancelot is exposed at court and Lancelot flees across the Channel. Arthur pursues him with an army and lays siege to Lancelot's castle at Benwick in France. Arthur cannot leave Britain kingless while he is away, so he must appoint someone to hold the kingdom in his absence. In Malory Book XXI, whom does Arthur leave as regent of Britain when he crosses the Channel to besiege Lancelot?",
+      "choices": ["Mordred", "Gawain", "Kay", "Bedivere"],
+      "answer": "Mordred",
+      "context": "Malory Book XXI ch.1. Arthur trusts the regency to his own acknowledged son. Gawain is with Arthur on the campaign, driving him to press Lancelot for having killed Gawain's brothers Gareth and Gaheris. Kay and Bedivere are Arthur's oldest household knights but neither is the regent. Geoffrey of Monmouth's Historia Regum Britanniae Book XI (c.1136) is the first to make Mordred the treacherous regent -- an invention that becomes central to the whole later legend.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "With Arthur across the Channel, Mordred forges letters saying Arthur has been killed at Benwick, has himself crowned king in his father's place, and moves to take Guinevere -- Arthur's queen -- as his own wife by force. Guinevere refuses. In Malory Book XXI ch.1, where does Guinevere shut herself up to escape Mordred?",
+      "choices": ["the Tower of London", "the abbey at Amesbury", "the isle of Avalon", "the castle at Camelot"],
+      "answer": "the Tower of London",
+      "context": "Malory Book XXI ch.1. Guinevere pretends to consent, asks Mordred's leave to go to London for her wedding-clothes, and instead shuts herself up in the Tower of London stocked with provisions and men-at-arms. Amesbury is the nunnery she retires to at the very end of the story after Arthur's death. Avalon is where Arthur is carried on the barge. Camelot is Arthur's own court and would be Mordred's stronghold, not her refuge.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Arthur breaks off the siege of Lancelot at Benwick and races back across the Channel with his army to face his usurping son. The two armies meet on a plain in the west of Britain, placed in Cornwall in most later traditions and given as the year 537 by the earliest Welsh source. What is the name of the plain where Arthur and Mordred bring their armies to battle?",
+      "choices": ["Camlann", "Badon", "Roncesvalles", "Bosworth"],
+      "answer": "Camlann",
+      "context": "Malory Book XXI ch.3-4. Camlann is the name in Malory and in the earlier Welsh Annals under 537. Badon (Mons Badonicus) is Arthur's earlier victory in the Historia Brittonum, not his last battle. Roncesvalles is the pass where Roland's rearguard is destroyed in the Song of Roland (Western-medieval pillar) -- a parallel of a great order's last stand, but a different story. Bosworth is 1485, Richard III's death, real history not legend.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the morning of the battle at Camlann, both sides agree a truce. The two armies are drawn up facing each other in the heather while Arthur and Mordred meet in a tent to sign the treaty; each side is instructed that if a single sword is seen drawn, they are to charge. Then a knight in the ranks is stung on the foot by something in the heather and instinctively draws his sword to kill it. What stings the knight in Malory's account of that morning?",
+      "choices": ["an adder", "a hornet", "a scorpion", "a marsh viper"],
+      "answer": "an adder",
+      "context": "Malory Book XXI ch.4. The adder in the heather is Malory's own vivid detail. Both armies see the drawn blade, take it for the signal of treachery, and charge. In one instant a truce is broken by a snake and the whole day is set on fire. Hornets and scorpions belong to warmer traditions; the marsh viper is a real snake but not what Malory names.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The battle at Camlann lasts all day. By evening every knight of the Round Table on both sides is dead, and Arthur can see only two men standing beside him on the whole field -- his knights Sir Bedivere and Sir Lucan. Then across the field Arthur sees Mordred, alone, leaning on his sword among heaps of the dead. Arthur takes his spear and runs at him. What does Mordred do as Arthur drives the spear clean through his body?",
+      "choices": ["pulls himself up the spear shaft", "hurls his sword to break Arthur's helm", "falls back cursing Merlin's name", "kneels and calls for Morgause his mother"],
+      "answer": "pulls himself up the spear shaft",
+      "context": "Malory Book XXI ch.4. Arthur's spear goes clean through Mordred's body, but the dying Mordred grips the shaft with both hands and drags himself up it until he can reach his father, then strikes Arthur through the helm and the skull with his sword. Both men fall together. Malory gives this act the whole weight of the ending: the son will not let the father live, even at the cost of his own last moment.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Malory, once Mordred has dragged himself up the spear and struck Arthur through the helm, both father and son fall on the field of Camlann. Mordred is dead where he lies, but Arthur is not yet dead -- he is carried from the field by Sir Bedivere, mortally wounded, and taken to be laid on a barge. In Malory Book XXI, where is the barge said to be taking the dying Arthur?",
+      "choices": ["Avalon", "Camelot", "Glastonbury", "Cornwall"],
+      "answer": "Avalon",
+      "context": "Malory Book XXI ch.5. The three queens on the black barge tell Bedivere they are taking Arthur to the vale of Avalon to heal him of his grievous wound. Glastonbury is the site LATER identified with Avalon by the monks of Glastonbury Abbey (who claimed in 1191 to have found Arthur's tomb), but Malory's own text names Avalon. Camelot is Arthur's court, empty now. Cornwall is where Camlann is placed.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The oldest surviving reference to the battle where Arthur and Mordred fell is not Malory or Geoffrey of Monmouth -- it is a single bare line in a Latin chronicle compiled at St David's in Wales in the mid-10th century, listed under the year 537. That one line records only the strife of Camlann in which Arthur and Medraut fell. What is the name of that Latin chronicle?",
+      "choices": ["the Annales Cambriae", "the Historia Brittonum", "the Anglo-Saxon Chronicle", "Bede's Ecclesiastical History"],
+      "answer": "the Annales Cambriae",
+      "context": "Annales Cambriae (Welsh Annals), entry for the year 537: 'Gueith Camlann in qua Arthur et Medraut corruerunt' -- the strife of Camlann in which Arthur and Medraut fell. Medraut is the Welsh name for Mordred. The Historia Brittonum (c.828, attributed to Nennius) gives Arthur's twelve battles but not Camlann. The Anglo-Saxon Chronicle is the English royal chronicle and does not mention Arthur. Bede's Historia Ecclesiastica (731) mentions Badon but not Camlann.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The Welsh Annals under 537 record only the bare fact that Arthur and Medraut both fell at Camlann. The chronicle does NOT say that Medraut was Arthur's treacherous nephew or son, does NOT say they fought on opposite sides, does NOT say why they were there. Every detail of the treacherous-regent story -- Mordred forging the letter, seizing the crown, taking Guinevere -- is a later invention. Which writer is the first to turn Mordred into Arthur's treacherous regent?",
+      "choices": ["Geoffrey of Monmouth", "Chretien de Troyes", "Wolfram von Eschenbach", "Thomas Malory"],
+      "answer": "Geoffrey of Monmouth",
+      "context": "Geoffrey of Monmouth, Historia Regum Britanniae Book XI (c.1136). Geoffrey invents the treacherous-regent story a full six centuries after the annals' bare line; every later Arthurian writer builds on his invention. Chretien de Troyes (c.1170-90) writes the great courtly Arthurian romances but not the Camlann story. Wolfram von Eschenbach (c.1210) writes Parzival, the German Grail poem. Malory (Caxton 1485) is 350 years after Geoffrey and gathers the whole tradition into English prose.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The Camlann shape -- a great order's last stand in which friend and foe kill each other to the last man on a single day -- is not unique to Arthur. Two of the other great myth-cycles of Western Europe end the same way: the Norse tradition has Odin fall to Fenrir the wolf and Thor kill and be killed by Jormungand the world-serpent, and the Western-medieval Song of Roland has Charlemagne's rearguard destroyed in a mountain pass. What is the Norse name for the day the gods and giants kill each other to the last man?",
+      "choices": ["Ragnarok", "Fimbulwinter", "Yggdrasil", "Valhalla"],
+      "answer": "Ragnarok",
+      "context": "Ragnarok is the Norse doom of the gods, told in the Voluspa and in Snorri's Prose Edda: Odin falls to Fenrir, Thor and Jormungand kill each other, Surt burns the world. Fimbulwinter is the terrible three-year winter that comes BEFORE Ragnarok. Yggdrasil is the world-tree that shakes but does not fall. Valhalla is the hall of the slain gathered against that day. The Song of Roland's rearguard destroyed at Roncesvalles (778) is the Western-medieval pillar's version of the same last-battle shape.",
+      "legend": true
+    }
+  ]
+}

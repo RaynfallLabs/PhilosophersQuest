@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Bellerophon is the young Greek prince who tamed the winged horse Pegasus at a famous spring in his home city and rode him into battle against the Chimera. From which Greek city did Bellerophon come?",
+      "choices": ["Corinth", "Athens", "Argos", "Thebes"],
+      "answer": "Corinth",
+      "context": "Bellerophon was the grandson of Sisyphus and (in one tradition) son of Poseidon; his home city of Corinth commanded the isthmus between the Aegean and Ionian seas, and the Spring of Pirene where Pegasus came to drink was one of Corinth's landmarks. Source: en.wikipedia.org/wiki/Bellerophon; Homer, Iliad 6.152-155.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Bellerophon killed a man by accident and had to flee for purification to King Proetus of Tiryns. Proetus's wife tried to seduce him, and when he refused her, she went to her husband with a false story. Proetus would not break the guest-friendship code by killing a suppliant himself. What did he do instead?",
+      "choices": ["sent Bellerophon on with a sealed letter of death", "handed Bellerophon over to his brother-in-law's guards", "poisoned Bellerophon's wine that same night", "drove Bellerophon out into the sea in a chest"],
+      "answer": "sent Bellerophon on with a sealed letter of death",
+      "context": "Proetus sent Bellerophon to his father-in-law Iobates of Lycia carrying a sealed letter that ordered the bearer's execution -- the only reference to writing in the whole Iliad, called there 'baneful signs, deadly to look on.' The chest-on-the-sea is Perseus and Danae; poisoning-the-guest belongs to other stories; the brother-in-law's guards would still make Proetus the killer. Source: en.wikipedia.org/wiki/Bellerophon; Homer, Iliad 6.155-170.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "King Iobates of Lycia entertained Bellerophon for nine days as an honoured guest before he broke the seal and read what the letter demanded. Unwilling to kill a guest himself, he sent Bellerophon on an errand meant to be certain death -- against a monster that was ravaging his kingdom. What was the monster?",
+      "choices": ["the Chimera", "the Hydra of Lerna", "the Nemean Lion", "the Erymanthian Boar"],
+      "answer": "the Chimera",
+      "context": "The Chimera burned crops and cattle across Lycia; no man on foot could approach a fire-breathing beast, so Iobates counted the errand as good as a death-warrant. The Hydra, Nemean Lion, and Erymanthian Boar are all real Greek monsters, all faced by Heracles in the labors. Source: en.wikipedia.org/wiki/Bellerophon; Homer, Iliad 6.178-183.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The monster of Lycia was a single beast pieced out of three animals. A lion's head roared at the front, a serpent's tail lashed at the rear, and from her back sprang the head of a third creature. What was the third?",
+      "choices": ["a goat", "a bull", "a ram", "a boar"],
+      "answer": "a goat",
+      "context": "Hesiod's Theogony gives the classic three-part Chimera: lion in front, goat-head sprouting from the back, serpent behind, and fire from all three mouths. The word chimera in modern English -- any fanciful hybrid -- comes from this beast. Source: en.wikipedia.org/wiki/Chimera_(mythology); Hesiod, Theogony 319-325.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The seer Polyidus told Bellerophon there was only one way to fight a fire-breathing beast: from above. On his advice Bellerophon slept the night in a temple, and in a dream the goddess of that temple laid a gift beside him. When he woke it was really there. Whose temple was it?",
+      "choices": ["Athena's", "Hera's", "Artemis's", "Aphrodite's"],
+      "answer": "Athena's",
+      "context": "Athena, patron of clever heroes, gave Bellerophon a golden bridle in the dream; when he woke the bridle lay on the floor of her temple. Pindar sings this scene in the Thirteenth Olympian. Hera and Artemis play no part in this story; Aphrodite helps other heroes in other stories. Source: en.wikipedia.org/wiki/Bellerophon; Pindar, Olympian 13.63-92.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Bellerophon took the golden bridle from Athena's temple down to the Spring of Pirene at Corinth, where every morning a winged horse came to drink. He slipped the bridle over the horse's head and tamed him for the flight against the Chimera. What was the winged horse's name?",
+      "choices": ["Pegasus", "Arion", "Xanthus", "Balios"],
+      "answer": "Pegasus",
+      "context": "Pegasus was the winged horse born from Medusa's neck when Perseus beheaded her; he came to drink at Pirene, and Athena's bridle was the one thing that could tame him. Arion is Poseidon's black horse from the Adrastus stories; Xanthus and Balios are Achilles's mortal-born team from Iliad 19. Source: en.wikipedia.org/wiki/Pegasus; Pindar, Olympian 13.63-92.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Arrows glanced off the Chimera's burning hide and no ordinary spear-point could pierce her. Bellerophon fitted his spear with a lump of a particular metal at the tip, flew down from horseback, and drove the tipped spear straight into the monster's open mouth. Her own fire finished the job from inside. What metal was on the tip?",
+      "choices": ["lead", "bronze", "tin", "iron"],
+      "answer": "lead",
+      "context": "Lead melts at a lower temperature than any of the metals a Greek smith worked with; the lump ran molten down the Chimera's throat from her own fire and suffocated her -- Apollodorus's version, and the most famous killing-trick in Greek myth. Bronze is the standard weapon-metal (which she had already resisted); tin holds no shape as a point; iron would not have melted quickly enough. Source: en.wikipedia.org/wiki/Bellerophon; Apollodorus, Bibliotheca 2.3.2.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Bellerophon killed the Chimera, then the Solymi, then the Amazons -- every task Iobates set to finish him off. In his pride he tried one flight too many. He turned Pegasus's head straight up and drove toward the summit of Olympus, to sit among the gods. What did Zeus send to stop him?",
+      "choices": ["a gadfly to sting Pegasus in the flank", "an eagle to knock him from the horse's back", "a thunderbolt straight across the horse's path", "a north wind to freeze both wings at once"],
+      "answer": "a gadfly to sting Pegasus in the flank",
+      "context": "The gadfly's sting made Pegasus buck, and Bellerophon fell all the way back to earth. Homer says he lived on afterward 'hated by all the gods, wandering the Aleian Plain alone, eating out his heart.' The thunderbolt and eagle are Zeus's usual instruments; the humbling insect is the specific touch here -- the greatest hero brought down by a fly. Source: en.wikipedia.org/wiki/Bellerophon; Pindar, Isthmian 7.44-47; Homer, Iliad 6.200-202.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The winged horse went on without his rider. He flew up to Olympus alone, and Zeus kept him there, giving him a permanent job in the sky-god's own household. What task was Pegasus set to?",
+      "choices": ["to carry Zeus's thunderbolts", "to pull Helios's sun-chariot", "to guard the gates of Olympus", "to guide the souls of dead heroes"],
+      "answer": "to carry Zeus's thunderbolts",
+      "context": "Hesiod says Pegasus took up his station in the halls of Zeus, bringing thunder and lightning to the god at his command; he was later placed as the constellation Pegasus in the northern sky. The sun-chariot is Helios's own (or the boy Phaethon's disaster); the gate-guarding is the role of the Hecatoncheires; the soul-guiding belongs to Hermes. Source: en.wikipedia.org/wiki/Pegasus; Hesiod, Theogony 285.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Chimera was one of a whole brood of famous monsters born to the same monstrous parents. Her siblings were the Nemean Lion that Heracles strangled, the many-headed Hydra of Lerna, and the three-headed hound Cerberus. Who were the parents of this whole brood?",
+      "choices": ["Typhon and Echidna", "Uranus and Gaia", "Cronus and Rhea", "Nereus and Doris"],
+      "answer": "Typhon and Echidna",
+      "context": "Typhon, the storm-giant Zeus buried under Mount Etna, and Echidna, the half-woman half-serpent, produced the Nemean Lion, the Chimera, Cerberus, Orthrus, and the Lernaean Hydra between them. Uranus and Gaia are Sky and Earth; Cronus and Rhea are the Olympians' own parents; Nereus and Doris are the sea-parents of the fifty Nereids. Source: en.wikipedia.org/wiki/Chimera_(mythology); Hesiod, Theogony 306-325.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Meleager was a prince of the Greek kingdom of Calydon in Aetolia. When he was only seven days old, three grey women came into his mother's house and stood by the hearth-fire to speak his fate. Who were the three women at the newborn's fireside?",
+      "choices": ["the Moirai, the Fates", "the Erinyes, the Furies", "the Charites, the Graces", "the Nereids, the sea-daughters"],
+      "answer": "the Moirai, the Fates",
+      "context": "Apollodorus, Bibliotheca 1.8.2: the three Moirai -- Clotho, Lachesis, and Atropos -- came to the hearth and spoke the child's fate. The Erinyes punish blood-crimes; the Charites are attendants of Aphrodite; the Nereids are the fifty sea-daughters of Nereus.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The three Fates stood at the newborn Meleager's hearth and prophesied that his life was tied to a single ordinary thing already in the room -- burning right there in front of them. What did the Fates tie the baby's life to?",
+      "choices": ["a burning log on the hearth", "a candle at the bedside", "a lamp above the cradle", "a torch beside the door"],
+      "answer": "a burning log on the hearth",
+      "context": "Ovid, Metamorphoses 8.451-458; Apollodorus 1.8.2: the Fates declared that Meleager would live only as long as a particular firebrand -- a log then burning in the hearth -- was unburnt. A common Greek word for the log-brand is 'dalos'.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The moment the Fates finished speaking, Meleager's mother Althaea sprang up from her seat, ran to the hearth, and did one urgent thing to save her baby's life. What did Althaea do the instant the Fates were finished?",
+      "choices": ["snatched the log from the fire and hid it in a chest", "carried the baby out of the room and up the mountain", "sent a servant to the oracle at Delphi for counsel", "sacrificed a black lamb on the household altar"],
+      "answer": "snatched the log from the fire and hid it in a chest",
+      "context": "Ovid, Metamorphoses 8.457-461; Apollodorus 1.8.2: Althaea seized the burning log, doused the flames, and locked it away in a chest, where it stayed safe for years while Meleager grew into a man.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Years later Meleager's father, King Oeneus of Calydon, offered first-fruits sacrifices to all the gods after the harvest -- but he forgot one goddess. She sent a monstrous boar to ravage Calydon's orchards and kill its farmers. Which goddess did Oeneus fail to honor?",
+      "choices": ["Artemis", "Athena", "Hera", "Demeter"],
+      "answer": "Artemis",
+      "context": "Ovid, Metamorphoses 8.270-283; Apollodorus 1.8.2: Artemis, huntress and mistress of wild beasts, was passed over in the harvest sacrifice and in fury sent the giant boar. Athena is the war-goddess of Athens; Hera the queen of Olympus; Demeter the grain-mother -- none matches the Calydon story.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "To hunt the Calydonian Boar Meleager summoned the greatest heroes of Greece to Calydon -- Theseus, Jason, Castor and Pollux, Peleus, Telamon, his own uncles Toxeus and Plexippus. He also invited one hunter whose presence enraged the other men because she was a woman. Who was the woman Meleager invited to the hunt?",
+      "choices": ["Atalanta", "Antigone", "Andromache", "Iphigenia"],
+      "answer": "Atalanta",
+      "context": "Ovid, Metamorphoses 8.317-328; Apollodorus 1.8.2: Atalanta, the huntress raised by a she-bear and trained as an archer, was the only woman on the hunt. Meleager was in love with her. Antigone is the daughter of Oedipus; Andromache the wife of Hector; Iphigenia the daughter of Agamemnon.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The great hunt begins in a Calydonian thicket. Several hunters are gored or killed. Then one of the hunters strikes the boar behind the ear with an arrow and draws first blood. Whose arrow struck the Calydonian Boar first?",
+      "choices": ["Atalanta's arrow", "Jason's arrow", "Theseus's arrow", "Castor's arrow"],
+      "answer": "Atalanta's arrow",
+      "context": "Ovid, Metamorphoses 8.380-383; Apollodorus 1.8.2: Atalanta's arrow struck the boar behind the ear -- first blood in the greatest hunt of the age. Jason, Theseus, and Castor were all on the hunt and all failed to land the first strike.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Even so mighty a hunt was not without its own accidents. As the hunters closed on the wounded boar in the thicket, one great hunter -- the father-to-be of Achilles -- mis-threw his spear and killed a companion instead. Who was the hunter whose mis-thrown spear killed his own hunt-mate?",
+      "choices": ["Peleus", "Telamon", "Jason", "Pollux"],
+      "answer": "Peleus",
+      "context": "Apollodorus, Bibliotheca 1.8.2: Peleus of Phthia -- who would later marry the sea-goddess Thetis and father Achilles -- mis-threw his spear and killed his companion Eurytion in the confusion of the hunt. Telamon (father of Ajax), Jason, and Pollux were all on the hunt but not the killer.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As leader of the hunt Meleager had the right to award the boar's hide and tusks as trophy. He gave them not to himself and not to his uncles but to Atalanta, saying she had drawn first blood and had earned the prize. What did Meleager's uncles Toxeus and Plexippus do when they saw the trophy handed to a woman?",
+      "choices": ["tried to take the hide from Atalanta by force", "demanded a share of the tusks for themselves", "walked out of the hunt-feast in silence", "called on Artemis to judge between them"],
+      "answer": "tried to take the hide from Atalanta by force",
+      "context": "Ovid, Metamorphoses 8.435-444; Apollodorus 1.8.2: Toxeus and Plexippus, enraged at seeing the greatest hunt-prize in Greek memory given to a woman, tried to snatch the hide from Atalanta by force. What happened next set the tragedy in motion.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When his uncles Toxeus and Plexippus laid violent hands on Atalanta to take back the boar's hide, Meleager stepped in to defend her. What did Meleager do to his mother's two brothers in that moment?",
+      "choices": ["killed both of them on the spot", "wounded them and drove them out of the hall", "cursed them and left the feast", "swore an oath never to speak to them again"],
+      "answer": "killed both of them on the spot",
+      "context": "Ovid, Metamorphoses 8.435-444; Apollodorus 1.8.2: Meleager killed Toxeus and Plexippus defending Atalanta. His mother Althaea now had to choose between vengeance for her brothers and love for her son -- the choice that ends the story.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When Althaea learned that her son Meleager had killed her two brothers over Atalanta's prize, she went to the chest she had guarded for years, took out the log the Fates had spoken of at his cradle, and made her choice. What did Althaea do with the firebrand?",
+      "choices": ["threw it back onto the fire", "buried it in the garden", "carried it to a temple altar", "broke it in half over her knee"],
+      "answer": "threw it back onto the fire",
+      "context": "Ovid, Metamorphoses 8.460-525; Apollodorus 1.8.3: Althaea, torn between mother-love and blood-vengeance for her brothers, threw the firebrand back into the hearth. Ovid gives her a long anguished speech before she casts the log in.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Far away from his mother's hearth, Meleager was in perfect health when he suddenly felt his body catching alight from the inside as the firebrand crumbled to ash in the flames. His grieving sisters wept so long over him that they were turned into birds -- birds whose scientific genus is still named for Meleager today. What kind of birds did his sisters become?",
+      "choices": ["guineafowl", "swans", "nightingales", "ravens"],
+      "answer": "guineafowl",
+      "context": "Ovid, Metamorphoses 8.533-546: Meleager's weeping sisters were turned into guineafowl, called meleagrides in Greek. The bird's Latin scientific genus is still Meleagris today (which is also the genus of the wild turkey, named by Linnaeus by confusion with the true meleagris). Swans belong to Cygnus; nightingales to the Philomela story; ravens to Apollo.",
+      "legend": true
+    }
+  ]
+}

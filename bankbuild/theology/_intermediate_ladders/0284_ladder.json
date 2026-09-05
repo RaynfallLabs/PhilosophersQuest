@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The great Castilian hero of the eleventh-century Reconquista was born RODRIGO DIAZ in the village of Vivar near Burgos. He became so famous as a warrior that both his Christian countrymen and his Muslim enemies gave him the same nickname -- the one by which the whole world remembers him today. What is the nickname by which Rodrigo Diaz is remembered?",
+      "choices": ["El Cid", "El Conquistador", "El Rey", "El Caballero"],
+      "answer": "El Cid",
+      "context": "Rodrigo Diaz de Vivar (c. 1043-1099) is called El Cid ('the lord' -- see the next rung for the language it comes from). El Conquistador ('the conqueror') is the standard title given to the New World Spanish invaders of centuries later. El Rey means 'the king'; El Caballero means 'the knight' -- both generic titles, not his nickname. Source: Britannica, 'El Cid'.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The nickname 'El Cid' is not Spanish in origin at all. It comes from a word in the language of the very people Rodrigo Diaz spent his life fighting -- and it was his enemies who first gave him the title, meaning 'the lord'. From which language does 'El Cid' come?",
+      "choices": ["Arabic", "Latin", "Basque", "Greek"],
+      "answer": "Arabic",
+      "context": "'El Cid' comes from the Arabic al-sayyid (in the Andalusian dialect al-sidi), meaning 'the lord'. Muslim opponents and Mozarabs in his ranks used the honorific, and Christian Castilians adopted it after his conquest of Valencia in 1094. His Christian admirers gave him a SECOND title: 'El Campeador' -- 'the champion'. Source: Wikipedia, 'El Cid'.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The oldest surviving Castilian epic poem, the Cantar de Mio Cid (c. 1207), opens on Rodrigo Diaz weeping. He is weeping because his king has just unjustly ordered him into exile from all Castile on the whispers of enemies at court. Which king of Leon and Castile pronounces the exile that opens the poem?",
+      "choices": ["Alfonso VI", "Alfonso VII", "Sancho II", "Ferdinand I"],
+      "answer": "Alfonso VI",
+      "context": "Alfonso VI of Leon and Castile (r. 1065-1109) exiled the historical Rodrigo Diaz twice, in 1081 and 1089; the Cantar de Mio Cid conflates the two into one dramatic opening exile. Alfonso VII was Alfonso VI's grandson. Sancho II of Castile was Alfonso VI's brother, murdered before the story starts. Ferdinand I was Alfonso VI's father. Source: Poetry in Translation, El Cantar de mio Cid Part I; Britannica, 'El Cid'.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "As Rodrigo Diaz rides out from Vivar into exile at the opening of the Cantar, he leaves behind his wife DONA JIMENA and his two young daughters in a place of safety. Where does he leave his wife and daughters as he rides into exile?",
+      "choices": ["at the monastery of San Pedro de Cardena", "at the fortress of Simancas", "at the cathedral of Toledo", "at the coast of Valencia"],
+      "answer": "at the monastery of San Pedro de Cardena",
+      "context": "Cantar de Mio Cid I: the Cid leaves Dona Jimena and their daughters Elvira and Sol in the safe-keeping of the abbot at San Pedro de Cardena, near Burgos, before riding into exile. Simancas, Toledo, and Valencia all appear later in Alfonso VI's kingdom, but the parting scene is at San Pedro de Cardena. Source: Poetry in Translation, El Cantar de mio Cid Part I.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The exiled Rodrigo Diaz did not sulk in the wilderness. He had to feed the small band of men who followed him into exile, so he raised his sword for pay wherever it was wanted. The historical Cid was for a time in the pay of the Muslim EMIRS of which Iberian city, fighting for them against both Christians and other Muslims?",
+      "choices": ["Zaragoza", "Cordoba", "Granada", "Seville"],
+      "answer": "Zaragoza",
+      "context": "For years in his historical exile the Cid served the Muslim Banu Hud emirs of ZARAGOZA in the Ebro valley, campaigning for them against neighbouring Christian and Muslim powers alike. The Cantar tidies this into a purely Christian arc; the history is messier. Cordoba was by then a fading caliphate remnant, Granada and Seville were rival Taifa emirates the Cid did NOT serve. Source: Britannica, 'El Cid'.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "In the Cantar de Mio Cid, Rodrigo carries TWO named swords, and both are given the honour of a proper name of their own. One is called COLADA, won in battle from the Count of Barcelona. What is the name of the OTHER of the Cid's two swords, the one he won from the Moroccan king Bucar?",
+      "choices": ["Tizona", "Durandal", "Joyeuse", "Curtana"],
+      "answer": "Tizona",
+      "context": "The Cid's two named swords in the Cantar are COLADA (from the Count of Barcelona) and TIZONA (from king Bucar of Morocco). Durandal is Roland's sword; Joyeuse is Charlemagne's; Curtana is the English coronation sword of mercy -- all real named blades from other traditions. Source: Wikipedia, 'Tizona'.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The great victory the historical Cid is remembered for is his siege and capture of one of the richest cities in Muslim al-Andalus in 1094 -- a Mediterranean port he then ruled as his own kingdom until his death there in 1099. Which city did Rodrigo Diaz besiege and take in 1094?",
+      "choices": ["Valencia", "Toledo", "Cordoba", "Malaga"],
+      "answer": "Valencia",
+      "context": "The Cid took Valencia in 1094 after a long siege and ruled it as his own princedom until his death there in 1099. Toledo had already been taken by Alfonso VI in 1085. Cordoba fell to Ferdinand III much later, in 1236. Malaga was taken by the Catholic Monarchs at the very end of the Reconquista, in 1487. Source: Britannica, 'El Cid'.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "The third and last cantar of the Poem of My Cid centres not on more battles but on a wrong done to Rodrigo's two DAUGHTERS by their new husbands, the Infantes de Carrion. What did the Infantes do to the daughters that turns the whole final third of the poem?",
+      "choices": ["stripped, beat, and abandoned them in a forest", "poisoned them at a banquet in Carrion", "sold them into slavery in Africa", "shut them up in a convent at Leon"],
+      "answer": "stripped, beat, and abandoned them in a forest",
+      "context": "Cantar III: the Infantes de Carrion take Elvira and Sol into the oak-wood of Corpes, strip them, beat them mercilessly with their belts and spurs, and leave them for dead. It is a shocking scene by any age's standards. The daughters are rescued by their cousin Felez Munoz and the Cid demands justice from King Alfonso. Source: Poetry in Translation, El Cantar de mio Cid Part VI.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When the Cid learns what the Infantes de Carrion did to his daughters, he does NOT ride to Carrion to kill them. Instead he pursues them in a way that surprises modern readers -- he takes the whole case to the king. What kind of proceeding does the Cid bring against the Infantes to recover his gold and his two named swords Colada and Tizona?",
+      "choices": ["a lawsuit before the royal Cortes", "a night-raid on their family castle", "a duel to the death with their father", "a slander campaign in the courts of Europe"],
+      "answer": "a lawsuit before the royal Cortes",
+      "context": "Cantar III: the Cid sues the Infantes at the Cortes -- the royal high court -- which King Alfonso convenes at Toledo to hear the case. The Cid wins the swords back and the gold back through formal argument, and only AFTER the verdict does he set his champions to fight the Infantes in judicial single combat -- and beat them there too. This peaceful legal turn is one of the strangest and most modern-feeling passages in any medieval epic. Source: Poetry in Translation, El Cantar de mio Cid Part VI; miocid.wlu.edu.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the close of the Poem of My Cid, once the Infantes de Carrion are shamed and defeated, Alfonso VI arranges MUCH better second marriages for Rodrigo's two daughters. The poem says with pride that from these second marriages descend all the Christian kings of Spain thereafter. To the princes of which two Iberian kingdoms are Elvira and Sol re-married at the end of the poem?",
+      "choices": ["Navarre and Aragon", "Portugal and Leon", "Castile and Asturias", "Galicia and Catalonia"],
+      "answer": "Navarre and Aragon",
+      "context": "Cantar III's closing lines re-marry Elvira and Sol to the princes of Navarre and Aragon; the poem claims this is why 'today the kings of Spain descend from Mio Cid'. The other pairs are real Iberian kingdoms of the age but not the ones the poem names. Source: Poetry in Translation, El Cantar de mio Cid Part VI.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Museum of Burgos displays an eleventh-century sword long identified as one of Rodrigo Diaz's own two named blades. In 2007 the regional government of Castile and Leon paid 1.6 million euros to keep the blade in Spain and put it on public display, though academic historians still argue over whether it really was the Cid's. Which of the Cid's two swords is the Burgos blade venerated as?",
+      "choices": ["Tizona -- the one from king Bucar of Morocco", "Colada -- the one from the Count of Barcelona", "Tizona -- the one from the Count of Barcelona", "Colada -- the one from king Bucar of Morocco"],
+      "answer": "Tizona -- the one from king Bucar of Morocco",
+      "context": "The Burgos sword is TIZONA -- the sword won from king Bucar of Morocco. It is an eleventh-century blade the regional government bought in 2007 for 1.6 million euros. Its bill of ownership traces back through Spanish noble families but the identification with the Cid's actual sword is disputed by historians. Colada, the other of the Cid's two swords, was the one taken from the Count of Barcelona -- no surviving blade is claimed as Colada. Source: Wikipedia, 'Tizona'.",
+      "legend": false
+    }
+  ]
+}

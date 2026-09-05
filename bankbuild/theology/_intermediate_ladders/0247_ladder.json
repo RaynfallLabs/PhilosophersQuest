@@ -1,0 +1,88 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the old Cornish romance, a young knight of Lyonesse is sent by his uncle the King of Cornwall to sail to Ireland and bring back the Irish princess Iseult the Fair as a bride -- not for himself, but for his uncle. What is this young knight's name?", "choices": ["Tristan", "Lancelot", "Gawain", "Perceval"],
+      "answer": "Tristan",
+      "context": "The Tristan legend survives from Beroul (c.1170) and Thomas of Britain (c.1175). Lancelot is Arthur's champion and Guinevere's lover in Chretien and Malory. Gawain is Arthur's nephew. Perceval is the Grail knight. Only Tristan sails to Ireland for a bride.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The King of Cornwall who sends Tristan to Ireland to fetch a bride is Tristan's own uncle -- Tristan is his nephew and his champion. In the legend the whole tragedy turns on the fact that Tristan owes this king his loyalty. What is the king's name?", "choices": ["Mark", "Arthur", "Uther", "Ryence"],
+      "answer": "Mark",
+      "context": "King Mark of Cornwall, Tristan's uncle, is the wronged husband in the romance. Arthur is Britain's high king in the parallel cycle. Uther is Arthur's father, generations earlier. Ryence is a rival king in Malory's early books.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Iseult's mother the Queen of Ireland is anxious that her daughter should love her Cornish husband, an older man she has never met. On the day the ship sails, the queen brews something in a flask of gold and gives it to Iseult's maid Brangaine, telling her to serve it to the bride and groom on their wedding night in Cornwall. What is in the flask?", "choices": ["a love potion", "a sleeping draught", "a healing salve", "a truth-serum"],
+      "answer": "a love potion",
+      "context": "The queen's flask is a love potion meant for King Mark and his bride on their wedding night, so they will love one another forever. Sleeping draughts, salves and truth-serums are stock medieval story-devices but not what the queen sends.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "On the ship carrying Iseult from Ireland to Cornwall the summer weather is hot and the two young passengers are thirsty. Left alone below decks, they find the golden flask Brangaine has been guarding, uncap it, and drink from it together. What do they think they are drinking?", "choices": ["wine", "spring water", "medicine for seasickness", "the king's ale"],
+      "answer": "wine",
+      "context": "Tristan and Iseult mistake the flask for wine, share a cup, and are bound in love from that moment. Water, medicine and ale do not appear -- the mistake in the story is specifically wine.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In Beroul's Anglo-Norman verse (c.1170) the potion does its work but its magic runs out after a set span. Thomas of Britain's later, courtly version says the potion binds Tristan and Iseult forever. In Beroul, how long do the potion's effects last before wearing off?", "choices": ["three years", "one hundred days", "seven winters", "a single moon"],
+      "answer": "three years",
+      "context": "Beroul (c.1170) sets the potion's power at three years, after which the lovers can at last consider parting. Thomas of Britain and the courtly branch make the love last a lifetime. One hundred days, seven winters and a single moon are not attested spans.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Iseult marries King Mark of Cornwall as arranged, but the potion holds; she and Tristan meet in secret again and again, and at last are discovered. To escape Mark's court the lovers flee together into a great forest and live rough there, sleeping in bowers of tree-boughs and eating venison Tristan hunts. What is this forest called?", "choices": ["the Forest of Morois", "the Forest of Broceliande", "the Forest Perilous", "the Forest of Camelot"],
+      "answer": "the Forest of Morois",
+      "context": "The Forest of Morois is where Tristan and Iseult live in exile in Beroul and later versions. Broceliande is Merlin's enchanted wood in the Arthurian cycle. The Forest Perilous is a name for various dangerous woods. Camelot is a court, not a forest.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "King Mark, hunting alone, comes upon the woodland hut where Tristan and Iseult are sleeping in the heat of the day. Looking in, he sees at once something laid deliberately between their bodies -- a thing meant to be seen exactly this way. It is enough to make Mark believe they cannot be lovers, and he leaves them unharmed. What is the object lying between them?", "choices": ["Tristan's naked sword", "a wooden crucifix", "a burning candle", "the queen's veil"],
+      "answer": "Tristan's naked sword",
+      "context": "Beroul c.1170 and Malory Book IX: Tristan lays his own bare blade between them, and Mark reads it as a sign of chastity. A crucifix, a candle and the queen's veil are decorations from other medieval tales, not this famous scene.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Mark chooses to spare the sleeping lovers, but he leaves the hut with a small quiet signal that he was there. He does not touch either of them; he does not shout the camp awake. In Beroul, what does King Mark do before he slips back out into the trees?", "choices": ["he swaps his own sword for Tristan's on the bed", "he cuts a lock from Iseult's hair", "he sets his crown at Tristan's feet", "he stabs the hut's roof with an arrow"],
+      "answer": "he swaps his own sword for Tristan's on the bed",
+      "context": "Beroul c.1170: Mark exchanges his own sword for Tristan's and his ring for Iseult's, so when they wake they will know he came, saw, and forbore. The lock of hair, the laid-down crown and the pierced roof do not appear in the passage.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Years later, exiled from Cornwall, Tristan settles in Brittany and marries a second princess -- but he never loves her, and never forgets Iseult the Fair. The second wife is remembered in the legend for what her name says about her hands. What is she called?", "choices": ["Iseult of the White Hands", "Iseult of the Green Isle", "Iseult the Silent", "Iseult of Lyonesse"],
+      "answer": "Iseult of the White Hands",
+      "context": "Iseult of the White Hands (Isolde of Brittany) marries Tristan in the Brittany section of Thomas of Britain and Malory Book XII. The Green Isle, Silent, and Lyonesse epithets are not attached to this second Iseult.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Wounded and dying in Brittany, Tristan sends a messenger by ship for the ONLY healer who can save him -- Iseult the Fair, back in Cornwall. He tells the crew to raise sails of one colour on the return trip if she is coming, and sails of a different colour if she has refused him. Which colours does Tristan set for the two signals?", "choices": ["white for yes, black for no", "gold for yes, grey for no", "red for yes, blue for no", "green for yes, black for no"],
+      "answer": "white for yes, black for no",
+      "context": "Thomas of Britain c.1175: white sails if Iseult the Fair comes, black sails if she refuses. This same white/black-sails device is directly borrowed from the Greek myth of Theseus's father Aegeus.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The ship comes back over the water and Iseult the Fair is aboard, so the sails on the mast are white. Tristan's wife lies to him about the sails, telling him they are black. In the legend Tristan hears her words and, before Iseult the Fair can even step onto shore, he does one thing and one thing only. What does the dying Tristan do?", "choices": ["he dies of grief on the spot", "he calls for a priest and takes the sacrament", "he curses his wife with his last breath", "he crawls to the harbour to see for himself"],
+      "answer": "he dies of grief on the spot",
+      "context": "Thomas of Britain c.1175: Tristan hears the lie and dies at once of grief; Iseult the Fair steps off the ship, finds him already dead, lies down beside him and dies of grief also. Sacrament, curse and crawl-to-harbour appear in no early version.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The white-sail / black-sail signal Tristan sets from his sickbed did not begin with him. Centuries earlier a Greek hero sailed off to kill a monster and promised his old father he would change his ship's sails from black to white on the return if he lived -- forgot, kept the black sails up, and his watching father, seeing them, threw himself off the cliff. Which Greek hero's story is this?", "choices": ["Theseus", "Perseus", "Jason", "Bellerophon"],
+      "answer": "Theseus",
+      "context": "Theseus sailed from Athens to Crete to kill the Minotaur; his father Aegeus, watching from the cliff, saw the black sails still up and drowned himself in the sea now called the Aegean. Perseus, Jason and Bellerophon are Greek heroes but not the sail story.",
+      "legend": true
+    }
+  ]
+}

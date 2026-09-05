@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "For his third labor, King Eurystheus sent Heracles after a deer that lived on Mount Ceryneia. Two things about this deer set it apart from any ordinary hind. Its horns were gold. And its hooves were made of what?",
+      "choices": ["bronze", "iron", "silver", "flint"],
+      "answer": "bronze",
+      "context": "Gold horns and bronze hooves are the standard details for the Ceryneian Hind in Apollodorus and Callimachus; the striking metal-pairing is what marks her as a sacred beast. Iron is too late a metal for Bronze-Age myth; silver is Artemis's bow-metal; flint belongs to arrow-heads. Source: en.wikipedia.org/wiki/Ceryneian_hind; Apollodorus 2.5.3.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The gold-horned, bronze-hoofed deer of Mount Ceryneia was no ordinary animal. She had escaped long ago from the chariot-team of an Olympian goddess -- one of a set of magical sisters the goddess had yoked, and the only one to slip her harness. Which goddess did the hind belong to?",
+      "choices": ["Artemis", "Aphrodite", "Athena", "Demeter"],
+      "answer": "Artemis",
+      "context": "Callimachus's Hymn to Artemis names her as the owner of the golden-horned chariot-hinds; the escaped fifth became the labor of Heracles. Aphrodite's chariot is drawn by doves or sparrows; Athena's beast is the owl; Demeter's is the harvest-serpent. Source: en.wikipedia.org/wiki/Ceryneian_hind; Callimachus, Hymn to Artemis 100-112.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The third labor came with a rule the first two had not. Heracles had killed the Nemean Lion bare-handed and cauterised the Hydra's stumps with fire, but the Ceryneian Hind was sacred to a jealous goddess. What extra condition did Eurystheus set on Heracles this time?",
+      "choices": ["catch her alive and unharmed", "kill her without spilling blood", "return her before the next full moon", "prove her taken by his hand alone"],
+      "answer": "catch her alive and unharmed",
+      "context": "Because the hind was sacred to Artemis, killing her would have brought the goddess's wrath down on Heracles; the labor was set with the deliberate cruelty of demanding a live capture from a creature faster than any weapon. The blood-taboo, moon-deadline, and no-helper rule are shapes from other labor-stories (the no-helper rule ruined Heracles's Hydra and Augean labors). Source: en.wikipedia.org/wiki/Ceryneian_hind; Apollodorus 2.5.3.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Heracles could not use his club or his poisoned arrows on the hind, and she could outrun even an arrow. So the chase went on, and on -- across Greece, north through Thrace, into the far north and back. How long did the pursuit last in Apollodorus's telling?",
+      "choices": ["a whole year", "seven whole years", "the seven weeks of harvest", "the forty days of Lent"],
+      "answer": "a whole year",
+      "context": "Apollodorus says the pursuit lasted a full year, ending at the river Ladon in Arcadia (or on Mount Artemisius, or as far as the Hyperboreans in the far north, depending on the source). Seven-year is the Jacob-and-Rachel scale; the seven weeks of harvest and the forty days of Lent belong to the Christian pillar's ritual cycle, not the Greek. Source: en.wikipedia.org/wiki/Ceryneian_hind; Apollodorus 2.5.3; Pindar, Olympian 3.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The far-northern people whose land Heracles finally reached on the trail of the hind were, in Greek geography, a blessed race living at the edge of the world in perpetual sunshine, with Apollo visiting them each winter. What did the Greeks call them?",
+      "choices": ["the Hyperboreans", "the Cimmerians", "the Aethiopians", "the Lotus-eaters"],
+      "answer": "the Hyperboreans",
+      "context": "Hyperborea meant 'the land beyond Boreas', the north wind; Apollo wintered there each year, and Heracles is said to have chased the hind to their edge. The Cimmerians lived in perpetual fog and gloom (Odyssey 11); the Aethiopians in the far south; the Lotus-eaters on the Libyan coast in the Odyssey. Source: en.wikipedia.org/wiki/Hyperborea.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On the way back through Arcadia with the hind in his arms, Heracles was intercepted by two angry Olympians who demanded to know why he was carrying off a creature sacred to their family. One was Artemis herself. Who was with her?",
+      "choices": ["her brother Apollo", "her mother Leto", "her father Zeus", "her aunt Hera"],
+      "answer": "her brother Apollo",
+      "context": "Artemis and her twin brother Apollo confronted Heracles on the road; he explained that Eurystheus had set the labor and promised to return the hind alive, and the twins let him pass. Leto is their mother but does not travel with her adult children in the stories; Zeus is above such quarrels; Hera loathed Heracles and would not have helped Artemis. Source: en.wikipedia.org/wiki/Ceryneian_hind; Apollodorus 2.5.3.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles carried the hind alive into the courtyard at Mycenae and set her before Eurystheus. The king demanded she be kept in the royal menagerie for his amusement. Heracles had promised Artemis to return the beast, so he pulled a trick to keep both promises at once. What did he do?",
+      "choices": ["let her bolt free the instant Eurystheus had seen her", "handed her to a huntsman who let her escape overnight", "asked Eurystheus to fetch her himself and dropped the rope", "carried her back to Ceryneia during the king's afternoon meal"],
+      "answer": "let her bolt free the instant Eurystheus had seen her",
+      "context": "Heracles kept the letter of both promises: Eurystheus had 'received' the deer with his own eyes, and Artemis had her beast back alive and free. The other options are all thin variants of the same trick -- the classic version is the sudden release the moment the king's eyes were on her. Source: en.wikipedia.org/wiki/Ceryneian_hind.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Callimachus's Hymn to Artemis explains where the golden-horned hind came from in the first place. The goddess had once caught a whole set of these magical deer as a girl -- yoking most of them to her chariot-team, all but one, who escaped to Mount Ceryneia and became the future labor. How many did she catch in that hunt?",
+      "choices": ["five", "three", "seven", "twelve"],
+      "answer": "five",
+      "context": "Callimachus says Artemis caught five golden-horned hinds as a girl, yoked four to her chariot, and the fifth got away to Mount Ceryneia in the northern Peloponnese -- setting up Heracles's labor generations later. Three, seven, and twelve are the standard mythic small-numbers (three Graces, seven Pleiades, twelve Olympians), but the hinds are five. Source: en.wikipedia.org/wiki/Ceryneian_hind; Callimachus, Hymn to Artemis 100-112.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Ceryneian Hind is one of a small group of labors where Heracles was ordered to bring the beast home breathing rather than dead. In the standard list of twelve, which OTHER labor also required Heracles to bring the animal back alive?",
+      "choices": ["the Cretan Bull", "the Nemean Lion", "the Stymphalian Birds", "the Mares of Diomedes"],
+      "answer": "the Cretan Bull",
+      "context": "The Cretan Bull (labor seven) and the Erymanthian Boar (labor four) were both, like the Ceryneian Hind, live-capture labors. The Nemean Lion was strangled; the Stymphalian Birds shot out of the marsh; the Mares of Diomedes tamed only after Heracles fed their own master to them. Source: en.wikipedia.org/wiki/Labours_of_Hercules; Apollodorus 2.5.",
+      "legend": true
+    }
+  ]
+}

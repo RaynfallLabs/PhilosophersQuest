@@ -1,0 +1,160 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "One of the greatest goddesses of the Tuatha De Danann is a daughter of the Dagda. She is the patron of THREE crafts at once -- poetry, healing, and the making of weapons at the forge -- so the Irish call her by three matching titles: 'of the Poets', 'of the Healers', 'of the Smiths'. What is her name?",
+   "choices": [
+    "Brigid",
+    "Danu",
+    "Boann",
+    "the Morrigan"
+   ],
+   "answer": "Brigid",
+   "context": "Brigid is uniquely the goddess who owns all three crafts, and her name is thought to mean 'the Exalted One'. Danu is the mother-figure of the Tuatha De; Boann is the goddess of the River Boyne; the Morrigan is the war-and-crow goddess. Wikipedia: Brigid.",
+   "legend": true
+  },
+  {
+   "tier": 1,
+   "stem": "Brigid's sacred site in Ireland is a place in Leinster whose old Irish name -- Cill Dara -- means 'church of the oak'. The town still bears that name today, in an anglicised form. What is the town called?",
+   "choices": [
+    "Kildare",
+    "Killarney",
+    "Kilkenny",
+    "Kilcullen"
+   ],
+   "answer": "Kildare",
+   "context": "Cill Dara = Kildare, county town of County Kildare in Leinster. Killarney is in Kerry (a lake town); Kilkenny is a different Leinster town; Kilcullen is a village in Kildare county but not Brigid's shrine. Wikipedia: Kildare; Brigid of Kildare.",
+   "legend": false
+  },
+  {
+   "tier": 2,
+   "stem": "The 9th-century glossary Sanas Cormaic ('Cormac's Glossary') calls Brigid 'the goddess whom poets adored' -- and explains that she is really THREE sisters, all bearing the same name, one for each of her crafts. In Irish mythology this pattern of one-goddess-as-three appears again in which other figure?",
+   "choices": [
+    "the Morrigan",
+    "Danu",
+    "Boann",
+    "Aine of Munster"
+   ],
+   "answer": "the Morrigan",
+   "context": "The Morrigan is likewise a triple-goddess (Morrigan, Macha, and Badb, or in other lists Morrigan, Nemain, and Badb) -- a war-goddess made of three sisters. Danu, Boann, and Aine are single goddesses. Wikipedia: The Morrigan; Sanas Cormaic.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Brigid's festival is the great Irish quarter-day at the beginning of spring, when the ewes first begin to give milk. It falls on the first of February. What is the festival called?",
+   "choices": [
+    "Imbolc",
+    "Samhain",
+    "Beltane",
+    "Lughnasa"
+   ],
+   "answer": "Imbolc",
+   "context": "Imbolc (February 1) is the first of the four great Irish quarter-days. Samhain (November 1), Beltane (May 1), and Lughnasa (August 1) are the other three. Wikipedia: Imbolc.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "At Brigid's shrine in Cill Dara a fire was kept burning day and night -- a perpetual flame that never went out. It was tended in strict rotation by a fixed number of women, each keeping the flame for one night. How many women were on the rotation?",
+   "choices": [
+    "nineteen",
+    "twelve",
+    "seven",
+    "three"
+   ],
+   "answer": "nineteen",
+   "context": "The nineteen priestesses (and later nuns) each guarded the flame for one night; on the twentieth night Brigid herself was said to tend it. Gerald of Wales records the practice in the late 12th century. Wikipedia: Brigid of Kildare.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "On the eve of Brigid's day Irish families still make a small woven object from rushes -- a four-armed shape with a woven square at the centre -- and hang it above the front door of the house for protection through the year. What is it called?",
+   "choices": [
+    "a Brigid's cross",
+    "a Saint Patrick's knot",
+    "a Kildare wheel",
+    "a hazel wand"
+   ],
+   "answer": "a Brigid's cross",
+   "context": "The Brigid's cross is one of the most recognisable Irish folk-objects: rushes cut fresh on February 1, woven in a few minutes, hung above the threshold. Wikipedia: Brigid's cross.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "When Ireland converted to Christianity in the fifth and sixth centuries, the cult at Cill Dara did not disappear. A Christian saint took over the same site, the same shrine, the same perpetual flame, and the SAME nineteen-woman rotation -- and shares the goddess's name. Roughly WHEN did this saint live?",
+   "choices": [
+    "c. 451 to 525",
+    "c. 720 to 795",
+    "c. 1090 to 1160",
+    "c. 1315 to 1373"
+   ],
+   "answer": "c. 451 to 525",
+   "context": "St. Brigid of Kildare (c. 451-525) inherits both the site and the practice. The 14th-century date (c. 1315-1373) is a trap for Bridget of Sweden, a completely different figure often confused with the Irish saint. Wikipedia: Brigid of Kildare.",
+   "legend": false
+  },
+  {
+   "tier": 4,
+   "stem": "The perpetual flame at Kildare burned unbroken for centuries after the conversion. It was finally ordered PUT OUT in 1220, on the grounds that it was a pagan practice unfit for a Christian house. Who ordered it extinguished?",
+   "choices": [
+    "the Norman Archbishop of Dublin",
+    "the Abbot of Clonmacnoise",
+    "the last High King of Tara",
+    "the papal legate to Cashel"
+   ],
+   "answer": "the Norman Archbishop of Dublin",
+   "context": "Henry de Londres, the Norman Archbishop of Dublin, gave the order in 1220 after the Kildare nuns refused to admit male inspectors. The community relit the flame after his death; it survived until the Dissolution of the Monasteries under Henry VIII in the 1530s. Wikipedia: Henry de Londres; Brigid of Kildare.",
+   "legend": false
+  },
+  {
+   "tier": 4,
+   "stem": "The Kildare flame stayed out from the Dissolution of the Monasteries under Henry VIII in the 1530s until the late 20th century, when a community of nuns called the Brigidine Sisters formally re-lit it -- on Brigid's own feast day, February 1. In which year?",
+   "choices": [
+    "1993",
+    "1922",
+    "1966",
+    "2011"
+   ],
+   "answer": "1993",
+   "context": "Sr. Mary Teresa Cullen of the Brigidine Sisters relit the flame in Kildare town square on 1 February 1993. In 2006 President Mary McAleese lit a permanent public flame-sculpture from the same fire. Wikipedia: Brigid of Kildare; solasbhride.ie.",
+   "legend": false
+  },
+  {
+   "tier": 5,
+   "stem": "The 9th-century Old Irish life of St. Brigid -- Bethu Brigte -- records a startling detail that has scandalised some later church historians and puzzled others. When the bishop Mel is meant to consecrate Brigid as an abbess, he reads the wrong text over her by accident and ordains her instead as something no woman was supposed to be in that church. As WHAT does the Bethu Brigte say she was ordained?",
+   "choices": [
+    "a bishop",
+    "a hermit of the desert",
+    "a High King's druid",
+    "an abbot of a men's house"
+   ],
+   "answer": "a bishop",
+   "context": "Bethu Brigte, ch. 19: Mel reads the ordinal for a bishop over Brigid and refuses to withdraw it, saying the honour has come from God. Many scholars read the episode as the priestess-authority of the goddess absorbed into the saint. Wikipedia: Bethu Brigte; Brigid of Kildare.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The Lebor Gabala Erenn ('Book of Invasions') credits the goddess Brigid with a set of sacred animals -- specifically two named oxen, a 'king of boars' named Torc Triath, and a 'king of wethers' named Cirb. The story says all of these animals share ONE strange ability. What can they do?",
+   "choices": [
+    "cry out whenever plundering happens in Ireland",
+    "speak human speech on Samhain night",
+    "run faster than any wind",
+    "heal any wound they lick"
+   ],
+   "answer": "cry out whenever plundering happens in Ireland",
+   "context": "The Lebor Gabala reports that Brigid's beasts raise a cry across Ireland the moment any theft or raid is done -- a guardianship shared across her whole animal household. Wikipedia: Brigid.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The Kildare cult -- a hearth-fire kept burning day and night by an all-female college of tenders in strict rotation, at the shrine of a goddess -- has an almost exact parallel in the ancient Mediterranean, in a Roman college of virgin priestesses tending the flame of the goddess of the hearth. What were these Roman priestesses called?",
+   "choices": [
+    "the Vestal Virgins",
+    "the Sibyls of Cumae",
+    "the Bacchantes of Dionysus",
+    "the Pythia of Delphi"
+   ],
+   "answer": "the Vestal Virgins",
+   "context": "The Vestal Virgins of Rome kept the perpetual flame of Vesta at the Roman Forum. The Sibyls were prophetesses, the Bacchantes were the ecstatic followers of Dionysus, and the Pythia was the single oracular priestess at Delphi. The Brigid-Vesta parallel is one of the clearest Indo-European hearth-cult echoes. Wikipedia: Vestal Virgin.",
+   "legend": true
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the medieval Book of Invasions, six waves of settlers reach Ireland in turn -- Cessair, Partholon, Nemed, the Fir Bolg, the Tuatha De Danann, and one last people. This sixth and final wave sails in from Iberia and becomes the ancestors of the modern Irish Gaels. What is this last people called?",
+      "choices": ["the Milesians", "the Fomorians", "the Aos Si", "the Fianna"],
+      "answer": "the Milesians",
+      "context": "The Milesians -- sons of Mil Espaine, 'Mil of Spain' -- are the sixth and final wave in Lebor Gabala Erenn. The Fomorians are the sea-born enemies of the gods; the Aos Si are the fairy folk (in fact the Tuatha De renamed); the Fianna are the roving warrior-band of Fionn mac Cumhaill, centuries later. Source: en.wikipedia.org/wiki/Milesians_(Irish).",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Milesians who sailed into Ireland took their name from their leader, Mil Espaine, 'Mil of Spain.' The legendary geography of the medieval Irish sources places their launching-point in a specific corner of Iberia. Which region do the tales say they sailed from?",
+      "choices": ["Galicia in north-west Spain", "Sicily in the Mediterranean", "the coast of Egypt", "the mouth of the Danube"],
+      "answer": "Galicia in north-west Spain",
+      "context": "The tradition places the Milesian departure at Galicia, the north-western tip of Spain. Medieval Irish and Galician scholars both fostered the connection: a legendary tower of Breogan (grandfather of Mil) still gives its name to a real Roman lighthouse at A Coruna. Source: en.wikipedia.org/wiki/Milesians_(Irish).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "As the Milesians marched inland from the coast, three queens of the Tuatha De Danann came out to meet them, one after another. Each queen made the Milesian druid Amergin swear that Ireland would be named after her -- and Amergin promised each in turn. THREE queens. The three sisters are Eriu, Fodla, and one more. Who is she?",
+      "choices": ["Banba", "Brigid", "Danu", "the Morrigan"],
+      "answer": "Banba",
+      "context": "The three land-goddesses are Eriu, Banba, and Fodla -- all three still survive as poetic names for Ireland in Irish literature, but Eriu's name became Eire in daily speech. Brigid, Danu, and the Morrigan are three other great Tuatha De goddesses, each with her own domain (flame, ancestry, war) and her own ladder. Source: en.wikipedia.org/wiki/Milesians_(Irish).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Amergin promised each of the three Tuatha De queens that Ireland would be named after her -- but only ONE of the three names ended up on the tongues of the people, and it is still Ireland's Irish-language name today. Which queen's name became Eire?",
+      "choices": ["Eriu", "Fodla", "Banba", "Ernmas"],
+      "answer": "Eriu",
+      "context": "Eire, the official Irish-language name of the modern Republic of Ireland, descends directly from Eriu. Banba and Fodla survive in poetry and songs (the way Albion survives for Britain), but Eriu is the winner. Ernmas is the mother of the three queens in the genealogy. Source: en.wikipedia.org/wiki/%C3%89riu.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the Milesian ships came in sight of the Irish shore, the druids of the Tuatha De Danann worked their fiercest magic. A great storm blew up from the land against the invaders, howling out over the waves. How far back out to sea did the magic wind drive the Milesian fleet?",
+      "choices": ["nine waves", "three days' sail", "beyond the horizon", "back to the Spanish coast"],
+      "answer": "nine waves",
+      "context": "'Nine waves' is the ritual formula in the sources -- the exact distance beyond which the Tuatha De's magic could not reach. Once the Milesians were driven the nine waves out, only Amergin's counter-magic could bring them back. Nine is the great ritual number in Celtic and Norse myth alike. Source: en.wikipedia.org/wiki/Milesians_(Irish).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The chief druid and poet of the Milesians was the man who out-magicked the Tuatha De's wind and sang the Milesians onto the Irish shore. His epithet meant 'White-Kneed', and his name is preserved in the Book of Invasions and the Book of Leinster. Who was he?",
+      "choices": ["Amergin Gluingel", "Cathbad the Druid", "Mog Ruith the Blind", "Tuan mac Cairill"],
+      "answer": "Amergin Gluingel",
+      "context": "Amergin Gluingel ('white-kneed Amergin') is the founding poet of Irish tradition -- the man whose verse ends the age of the gods and opens the age of the Gaels. Cathbad is Conchobar's druid in the Ulster Cycle; Mog Ruith is the great blind sorcerer of Munster; Tuan mac Cairill is the ancient shape-changing witness who lived through all six invasions. Source: en.wikipedia.org/wiki/Amergin_Gl%C3%BAingel.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once Amergin's first poem had calmed the magic wind and the Milesian ships had come safely back to shore, Amergin stepped out onto the beach and chanted a second poem to claim the land itself. That second poem opens: 'I am a wind on the sea, I am a wave of the ocean, I am the roar of the sea, I am a stag of...' How many tines does the stag of the poem carry on its antlers?",
+      "choices": ["seven", "three", "nine", "twelve"],
+      "answer": "seven",
+      "context": "'I am a stag of seven tines' is the fixed formula in every surviving translation of the Song of Amergin. A tine is a point of an antler; seven tines is a magnificent, mature stag. Nine is the ritual number of the wind; three and twelve are the other ritual numbers of Irish myth. Source: en.wikipedia.org/wiki/Song_of_Amergin.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Amergin's landing-song rolls out a long chain of images -- the poet claiming himself into every part of the Irish natural world. One line names a fish famous in later Irish myth as the fish of wisdom (the same fish that will burn Fionn mac Cumhaill's thumb centuries later). In which watery place does Amergin say he is that fish?",
+      "choices": ["a pool", "the ocean", "a river", "the well of the sun"],
+      "answer": "a pool",
+      "context": "'I am a salmon in a pool' is the fixed line in the surviving translations. The salmon-of-wisdom motif runs all through Irish tradition -- the same fish appears in the Fenian Cycle as the Salmon of Knowledge that Fionn cooks and accidentally tastes, gaining all wisdom. The Song of Amergin is one of the oldest surviving pieces of writing in the Irish language, preserved in the Lebor Gabala Erenn and copied into the Book of Leinster. Source: en.wikipedia.org/wiki/Song_of_Amergin.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Milesians won the war against the Tuatha De Danann in battle -- but the sons of Mil were wise enough to know they had been fighting gods. They offered a settlement instead. The Milesians would keep one part of Ireland; the Tuatha De would keep another part. How was Ireland divided?",
+      "choices": ["Milesians take the surface, Tuatha De take the underground", "Milesians take the south, Tuatha De take the north", "Milesians take the coasts, Tuatha De take the mountains", "Milesians take the summer, Tuatha De take the winter"],
+      "answer": "Milesians take the surface, Tuatha De take the underground",
+      "context": "The famous division: the Milesians (the modern Irish) hold the visible land, sea, and sky; the Tuatha De hold every hollow-hill, fairy-fort, and sidhe mound beneath the ground. This is how the old gods became the fairy folk who live under Ireland. Source: en.wikipedia.org/wiki/Milesians_(Irish).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Tuatha De's most experienced god took charge of dividing the underground kingdoms among his people once the settlement was struck. He was the sea-god, and he gave each of his fellow gods one specific mound to hold as his own. Which of the Tuatha De divided the fairy hills?",
+      "choices": ["Manannan mac Lir", "the Dagda", "Lugh Lamhfhada", "Nuada Silver-Arm"],
+      "answer": "Manannan mac Lir",
+      "context": "Manannan mac Lir -- 'son of the sea' -- is the fitting divider, the god who links the visible world to the Otherworld across the water. The Dagda had been the chief of the Tuatha De, but by this point his son Aengus had already tricked him out of Newgrange (Bru na Boinne). Lugh and Nuada were both dead by the end of the war-cycle. Source: en.wikipedia.org/wiki/Manann%C3%A1n_mac_Lir.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Once the Tuatha De Danann had been driven down into the hollow hills to hold their fairy kingdoms, they took on a new collective name in Irish tradition -- the name by which they are still called in the folklore of modern Ireland, the name that eventually reaches English as 'the fairies' or 'the Good Folk.' What is the Irish name?",
+      "choices": ["the Aos Si", "the Fianna", "the Fomorians", "the Sons of Mil"],
+      "answer": "the Aos Si",
+      "context": "Aos Si ('people of the mounds', pronounced roughly 'ees-shee') is the Irish name for the fairy folk -- the Tuatha De after they went underground. The Fianna are the warrior-band of Fionn; the Fomorians are the older sea-enemies; the Sons of Mil are the Milesians themselves. Source: en.wikipedia.org/wiki/Aos_S%C3%AD.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The medieval Christian-Irish genealogists worked hard to fit the Milesians into biblical history. They traced the Milesian line back to a legendary ancestor who, they said, had shaped the Irish language itself out of the confusion of tongues that scattered the peoples of the earth. At which biblical site did this ancestor supposedly forge Irish?",
+      "choices": ["the Tower of Babel", "Mount Sinai", "the Garden of Eden", "the walls of Jericho"],
+      "answer": "the Tower of Babel",
+      "context": "The ancestor is Fenius Farsaid, and the medieval Irish schools claimed he selected the best features of each scattered language after Babel to forge Goidelic (Old Irish) -- one of the most confident syncretisms in medieval Christian-pagan history-writing. The other three sites are the other great biblical set-pieces, but none belongs to this legend. Source: en.wikipedia.org/wiki/F%C3%A9nius_Farsaid.",
+      "legend": true
+    }
+  ]
+}

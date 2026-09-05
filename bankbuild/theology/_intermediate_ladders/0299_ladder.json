@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Agatha is a young Christian noblewoman of a great Sicilian city, martyred by tradition in 251 CE. Her city keeps her white silk veil to this day and honors her every February with round pastries baked in her name. In which Sicilian city was Agatha martyred?",
+      "choices": ["Catania", "Syracuse", "Palermo", "Messina"],
+      "answer": "Catania",
+      "context": "Catania sits on the east coast of Sicily at the foot of Mount Etna. Syracuse is Sicily's other famous martyr-city (its own martyr is Lucia); Palermo and Messina are the western and northeastern great cities and are the home cities of other saints (Rosalia of Palermo, for instance) -- but Agatha is Catania's own.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Agatha is caught up in one of the great empire-wide crackdowns on Christians -- ordered by an emperor whose edict of 250 CE required every citizen to sacrifice publicly to the Roman gods and receive a certificate to prove it. Under which emperor was she killed?",
+      "choices": ["Decius", "Nero", "Diocletian", "Trajan"],
+      "answer": "Decius",
+      "context": "The Decian persecution of 250-251 CE was the first empire-wide required sacrifice -- refusing meant death. Nero's persecution (60s CE) was earlier and confined to Rome after the great fire; Diocletian's (303 CE) was later and worse; Trajan's early-second-century policy was much milder and case-by-case (see Pliny's famous letter).",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The Roman official who prosecutes Agatha wants her both for her family's wealth and for herself. When she refuses him, he becomes the villain of her whole Passio. What is the prefect's name?",
+      "choices": ["Quintianus", "Aspasius", "Rusticus", "Anullinus"],
+      "answer": "Quintianus",
+      "context": "Quintianus is the prefect of Sicily in the Passio Agathae. The three distractors are all real Roman officials who prosecuted OTHER famous early martyrs: Aspasius prosecuted Vincent of Saragossa, Rusticus was the prefect of Rome who condemned Justin Martyr, and Anullinus prosecuted Felix of Thibiuca in North Africa. Real names, wrong martyr.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Wanting Agatha broken before he tries her, Quintianus sends her not to a prison but to a house of ill fame run by a woman with nine equally corrupt daughters. For a whole month they fail to bend her. What is the name of the brothel-keeper?",
+      "choices": ["Aphrodisia", "Herodias", "Salome", "Livia"],
+      "answer": "Aphrodisia",
+      "context": "Aphrodisia -- her name openly evokes Aphrodite, the goddess of the trade -- is the madam in the Legenda Aurea's version. Herodias is the wife of Herod Antipas who calls for John the Baptist's head; Salome her daughter dances for it; Livia is the empress-wife of Augustus. Real ancient women, all wrong for a third-century Sicilian brothel.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The night after her worst torture, Agatha lies alone in her cell in agony. An old man appears at the door followed by a small boy, and the boy is carrying one object that lights the whole scene. What is the boy carrying?",
+      "choices": ["a lamp", "a censer", "a chalice", "a scroll"],
+      "answer": "a lamp",
+      "context": "Legenda Aurea, 'Saint Agatha': the old man is followed 'by a young man carrying a lamp'. The lamp is a stock hagiographic image -- a visitor bringing light into a martyr's cell. A censer would signal an incense-offering; a chalice belongs at the altar; a scroll would signal a reading. The lamp is the one that fits the scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The old man in the cell speaks to Agatha, refuses to leave until he has healed her wounds, and finally tells her exactly who he is -- one of the twelve apostles, come to her in prison the night before her death. Which apostle does he say he is?",
+      "choices": ["Peter", "Andrew", "John", "Paul"],
+      "answer": "Peter",
+      "context": "In the Passio the old man reveals himself as Saint Peter the apostle and heals her wounds so completely that when the jailers open the cell in the morning she is untouched. Andrew is Peter's own brother and was crucified on the X-cross of Patras; John lived to old age on Patmos; Paul is the great missionary beheaded on the Ostian Way. Real apostles all, but Peter is the visitor named in Agatha's Passio.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "For seventeen centuries the people of Catania have kept Agatha's white silk VEIL as her most precious relic. When lava rolls down toward the city, they carry the veil out in procession and hold it up in front of the advancing flow. Which volcano's eruptions has the veil been credited with halting?",
+      "choices": ["Etna", "Vesuvius", "Stromboli", "Vulcano"],
+      "answer": "Etna",
+      "context": "Etna, the great volcano of eastern Sicily, looms directly over Catania and has erupted dozens of times since Agatha's death. The tradition of carrying her veil against the lava is attested from 252 CE -- one year after her martyrdom. Vesuvius is on the mainland at Naples (the volcano that buried Pompeii); Stromboli and Vulcano are the two named Aeolian island volcanoes north of Sicily.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Bakers in Catania celebrate Agatha's feast on 5 February by making small round pastries called minni di Sant'Agata -- white-iced, each topped with a single candied cherry, and famous throughout Sicily. What creamy filling do the bakers pipe inside each pastry?",
+      "choices": ["ricotta", "custard", "marzipan", "chocolate"],
+      "answer": "ricotta",
+      "context": "Sweetened ricotta cheese is the classic Sicilian pastry filling (the same filling used in cannoli and cassata), and the minni di Sant'Agata are stuffed with it, iced snow-white, and finished with the cherry. Custard is the French/English standard; marzipan is another Sicilian classic but is usually shaped as fruit (frutta martorana); chocolate is not the traditional filling.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The most famous of all the veil-against-Etna processions happened in one specific year, when a lava flow reached the walls of the village of Nicolosi on the mountain's south flank -- and stopped there when the veil was carried out to meet it. In which year did the Nicolosi procession happen?",
+      "choices": ["1886", "1669", "1928", "1971"],
+      "answer": "1886",
+      "context": "The May 1886 eruption sent lava toward Nicolosi; the veil was carried out on 24 May and the flow is said to have halted at the village walls. The three distractors are all real major Etna eruptions -- 1669 buried much of Catania itself and reached the sea; 1928 destroyed the town of Mascali; 1971 destroyed the volcano observatory -- but the Nicolosi-veil story belongs to 1886.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Fenian Cycle of Irish myth tells of a great hero who becomes chief of the Fianna, the roving warrior-band that guards the High King. What is his name?",
+      "choices": ["Fionn mac Cumhaill", "Cu Chulainn", "Conaire Mor", "Oisin"],
+      "answer": "Fionn mac Cumhaill",
+      "context": "Fionn mac Cumhaill, anglicised 'Finn MacCool', is the central hero of the Fenian Cycle and captain of the Fianna. Cu Chulainn belongs to the older Ulster Cycle; Conaire Mor is a High King in the Cycles of the Kings; Oisin is Fionn's son. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Boyhood Deeds of Fionn, the boy who will grow up to captain the Fianna is hidden away in the forest of Sliabh Bladhma because a rival killed his father Cumhall at the Battle of Cnucha before he was born. Who is the rival who killed Cumhall and took command of the Fianna?",
+      "choices": ["Goll mac Morna", "Conn of the Hundred Battles", "Loegaire Buadach", "Diarmuid ua Duibhne"],
+      "answer": "Goll mac Morna",
+      "context": "Goll mac Morna led the rival clan Morna against Cumhall's clan Baiscne at Cnucha. He took the captaincy of the Fianna and would have killed the infant heir if he could find him. Later Goll and the grown Fionn reconcile and Goll serves under him. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "To hide the infant heir of Cumhall from the men of clan Morna, his mother gave him to two women who raised him in secret in the forest for years. One was a druidess, the other a warrior-woman. What was the boy's given name in those forest years, before he ever ate the salmon?",
+      "choices": ["Deimne", "Setanta", "Aengus", "Diarmuid"],
+      "answer": "Deimne",
+      "context": "The boy's birth-name was Deimne, meaning 'sureness' or 'certainty', a word that also names a young male deer. The druidess Bodhmall and the warrior-woman Liath Luachra raised him in Sliabh Bladhma. Setanta is Cu Chulainn's boyhood name from a different cycle. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When the boy Deimne was old enough to leave the forest, he was sent to a hut on the banks of the River Boyne to study with an old poet who had been fishing the same pool for years. What was that poet's name?",
+      "choices": ["Finnegas", "Amergin", "Cathbad", "Mog Ruith"],
+      "answer": "Finnegas",
+      "context": "Finnegas (Finn Eces, 'Finn the seer') lived by the Boyne teaching poetry and waiting for one particular fish. Amergin is the poet who chanted the Milesians ashore; Cathbad is the Ulster druid who prophesied over Cu Chulainn's cradle; Mog Ruith is a Munster wizard. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Finnegas had spent years by the Boyne trying to catch one particular fish, an unremarkable-looking salmon that would grant all the world's knowledge to whoever ate it. How had that ordinary salmon come by all the world's knowledge?",
+      "choices": ["By eating nine hazelnuts that fell from the trees of wisdom into the Well of Segais", "By swallowing a ring cast into the pool by the Dagda", "By drinking from the Cauldron of Rebirth at Bran's court", "By living a hundred years under the standing stone at Tara"],
+      "answer": "By eating nine hazelnuts that fell from the trees of wisdom into the Well of Segais",
+      "context": "In Irish tradition the hazel is the tree of knowledge just as the apple is the tree of knowledge in Genesis. Nine sacred hazels stood over the Well of Segais at the source of the Boyne; their nuts fell into the water and the salmon that ate them gained the wisdom. Source: https://en.wikipedia.org/wiki/Salmon_of_Knowledge",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the Boyhood Deeds of Fionn, Finnegas had waited by the river Boyne for one particular fish for a very long stretch of his life before he finally caught it. How many years had the old poet been fishing?",
+      "choices": ["Seven years", "Three years", "Twelve years", "Thirty years"],
+      "answer": "Seven years",
+      "context": "The tale specifies seven years: Finnegas had been fishing that one pool for seven full years for the Salmon of Wisdom before finally hooking it. That is why his rage at being cheated of the wisdom in the end is so bitter and his grace in giving it up so remarkable. Source: https://en.wikipedia.org/wiki/Salmon_of_Knowledge",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The day Finnegas finally lands the great salmon, he hands the fish to Deimne and gives him one strict order before going away to fetch something. What was Finnegas's order?",
+      "choices": ["Cook it but do not taste even a bite of the flesh", "Bury it under the hazel tree till nightfall", "Cast the hazelnuts back into the well first", "Bring it whole and uncooked to the elder-druid"],
+      "answer": "Cook it but do not taste even a bite of the flesh",
+      "context": "The prophecy said the wisdom would go to whoever FIRST tasted the salmon, not to whoever caught it. Finnegas trusted the boy to turn the fish over a fire without stealing so much as a crumb. Source: https://www.askaboutireland.ie/reading-room/life-society/irish-language-legends/the-salmon-of-knowledge/",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As the boy turned the great salmon on a rowan spit over the fire, a blister rose on the fish's skin. He pressed the blister down with his thumb to smooth the flesh, and a drop of hot juice burst onto him. What did the boy do next that, in that instant, transferred all the salmon's wisdom into him?",
+      "choices": ["He put the burnt thumb into his mouth", "He shook the burnt hand in the river to cool it", "He wiped the burnt thumb on the rowan spit", "He wrapped the burnt thumb in a strip of his tunic"],
+      "answer": "He put the burnt thumb into his mouth",
+      "context": "The tale turns on an instinct: burnt fingers go into a child's mouth. All the salmon's wisdom had gathered into that one drop of hot fat, and in the instant the boy sucked his thumb the wisdom passed into him rather than to the poet who had waited seven years for it. Source: https://en.wikipedia.org/wiki/Salmon_of_Knowledge",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Finnegas returned to the fire, saw the changed look on the boy's face, and asked whether he had tasted the salmon. When the boy told him about the burnt thumb, Finnegas did something remarkable rather than raging over the seven wasted years. What did the old poet do?",
+      "choices": ["Gave the whole fish to the boy and gave him a new name, Fionn", "Cast the boy out and forbade him ever to return to the Boyne", "Demanded the boy split all future wisdom equally with him", "Kept silent and never told the boy what he had eaten"],
+      "answer": "Gave the whole fish to the boy and gave him a new name, Fionn",
+      "context": "Finnegas said the salmon had chosen its own eater and the prophecy was for a boy named Fionn, not for himself. He gave the fish over and gave the boy the name he would carry for the rest of the tales: Fionn, 'the fair one'. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "For the rest of his life, whenever Fionn needed hidden knowledge, he put his thumb between his teeth and the answer came to him. The old Irish poets had a name for that gift of prophecy that came through the tooth. What did they call it?",
+      "choices": ["Teinm laida, the 'tooth of knowledge'", "Geis, a 'binding taboo'", "Ristrad, a 'battle-warping'", "Cetal, a 'poet's chant'"],
+      "answer": "Teinm laida, the 'tooth of knowledge'",
+      "context": "Teinm laida is one of three named forms of prophetic knowledge in early Irish tradition, alongside imbas forasnai ('great knowledge that illuminates') and dichetal do chennaib ('extempore incantation'). All four choices are real Old Irish poet-craft or warrior-craft terms. A geis is a personal taboo; ristrad is Cu Chulainn's warp-spasm; a cetal is a metrical chant. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The pattern of Fionn's story, a hero who gains second sight by accident from a burnt taste while cooking a magical creature for someone else, appears also in Norse myth. Which Norse hero tastes a drop of dragon-blood off his finger and suddenly understands the language of the birds?",
+      "choices": ["Sigurd, roasting Fafnir's heart for Regin", "Beowulf, cutting off Grendel's arm at Heorot", "Odin, hanging nine nights on Yggdrasil", "Thor, wrestling Elli in Utgard-Loki's hall"],
+      "answer": "Sigurd, roasting Fafnir's heart for Regin",
+      "context": "In the Volsunga Saga, Sigurd kills the dragon Fafnir and roasts the heart for the smith Regin. He burns his finger on the roasting heart, sucks it, and immediately hears the birds warning him that Regin means to murder him for the treasure. The 'accidental eater who gains second sight from a burnt taste' pattern is a shared Indo-European motif of Irish and Norse tradition. Source: https://en.wikipedia.org/wiki/Salmon_of_Knowledge",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The whole tale of Fionn's boyhood, the years hidden in the forest, the apprenticeship on the Boyne, and the burnt thumb, comes down to us from one Middle Irish text preserved in the Bodleian Library at Oxford. What is that text called?",
+      "choices": ["Macgnimartha Finn, 'The Boyhood Deeds of Fionn'", "Tain Bo Cuailnge, 'The Cattle Raid of Cooley'", "Lebor Gabala Erenn, 'The Book of Invasions'", "Cath Maige Tuired, 'The Battle of Moytura'"],
+      "answer": "Macgnimartha Finn, 'The Boyhood Deeds of Fionn'",
+      "context": "The Macgnimartha Finn is a Middle Irish text preserved in the Laud 610 manuscript at the Bodleian. It is the source for Fionn's forest upbringing and the salmon. The other three are real major Irish texts: the Tain is the Ulster-Cycle epic, the Lebor Gabala the mythological pseudo-history, the Cath Maige Tuired the Tuatha De Danann battle-tale. Source: https://en.wikipedia.org/wiki/The_Boyhood_Deeds_of_Fionn",
+      "legend": false
+    }
+  ]
+}

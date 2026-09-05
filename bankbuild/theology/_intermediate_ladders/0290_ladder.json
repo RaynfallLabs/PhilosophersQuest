@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The great warrior-hero of medieval Castile, Rodrigo Diaz de Vivar, is remembered across Spain by a shorter title given him by his Muslim opponents, an Arabic word meaning lord or master. What TITLE is he known by in every song and chronicle?",
+      "choices": ["the Cid", "the Caudillo", "the Alcalde", "the Adelantado"],
+      "answer": "the Cid",
+      "context": "'Cid' comes from Arabic 'sayyid' meaning lord -- a title of respect his Muslim opponents used, which stuck to him permanently in the Castilian tradition. Caudillo (leader), alcalde (mayor), and adelantado (frontier governor) are all real Spanish titles, but not his. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The Cid spent his last years ruling a great port city on the east coast of Spain that he had captured from Muslim hands and now held as his own principality. What CITY did the Cid hold at the end of his life?",
+      "choices": ["Valencia", "Toledo", "Cordoba", "Granada"],
+      "answer": "Valencia",
+      "context": "The Cid captured Valencia from its Muslim ruler in 1094 and ruled it as an independent principality until his death in 1099. Toledo had already fallen to King Alfonso VI of Castile in 1085; Cordoba and Granada remained in Muslim hands for centuries longer. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The Cid dies in his eastern-coast palace on 10 July 1099, worn out by decades of border-warfare -- but at that same moment a great enemy army is camped outside the walls of his city, threatening to take it back the moment the news of his death gets out. Which North African Berber empire is besieging him?",
+      "choices": ["the Almoravids", "the Almohads", "the Umayyads", "the Nasrids"],
+      "answer": "the Almoravids",
+      "context": "The Almoravids -- a Berber dynasty from what is now Morocco and Mauritania -- had crossed into Spain in 1086 and were the great new threat to Christian and independent principalities alike. The Almohads came a generation later; the Umayyads were the earlier caliphs of Cordoba; the Nasrids were the last Muslim dynasty of Granada. All real, only the Almoravids fit 1099. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The city inside its walls has one great hope of holding out: nobody outside must learn that the Cid is dead, or morale will collapse. The person who takes charge of the deception is the Cid's own WIFE, a Castilian noblewoman who has stood by him through his years of exile. What is HER NAME?",
+      "choices": ["Dona Jimena", "Dona Urraca", "Dona Berenguela", "Dona Constanza"],
+      "answer": "Dona Jimena",
+      "context": "Dona Jimena Diaz, a noblewoman of Asturias, was the Cid's wife; she took over the defence of Valencia in the days after his death. Urraca, Berenguela, and Constanza are all real names of medieval Castilian and Leonese queens or noblewomen -- adjacent, wrong. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "According to the legend told in the Estoria de Espana, Jimena's plan is to give the besiegers the sight of the Cid still leading his men. She has his body embalmed, dressed in full armour, and fixed in place so his enemies see him from a distance. WHERE is his corpse set?",
+      "choices": ["in the saddle of his warhorse", "high on the ramparts of the west gate", "on a tall gilded funeral cart", "at the prow of a river-galley"],
+      "answer": "in the saddle of his warhorse",
+      "context": "The image at the centre of the legend is the dead Cid upright in the saddle -- armour on, lance and shield in place, riding out through the city gate. Setting him on the walls, a cart, or a boat wouldn't produce the effect the story turns on: a warrior charging his enemies at full gallop, dead. Source: en.wikipedia.org/wiki/Babieca.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Cid's warhorse in the legend is one of the most famous named horses in all of Western tradition, praised in the Cantar de Mio Cid as a horse without equal. What is the Cid's horse called?",
+      "choices": ["Babieca", "Bucephalus", "Sleipnir", "Veillantif"],
+      "answer": "Babieca",
+      "context": "Babieca is the Cid's warhorse in the Cantar and every later chronicle. Bucephalus was Alexander the Great's warhorse; Sleipnir was Odin's eight-legged horse in Norse myth; Veillantif was Roland's horse in the Song of Roland -- all real named steeds of Western legend. Source: en.wikipedia.org/wiki/Babieca.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "At dawn the gates of Valencia open and the Cid's armoured corpse, upright in the saddle, gallops out at the head of the garrison. The besiegers look up and see him -- and their reaction, in the legend, is instant and total. WHAT DO the Almoravids do?",
+      "choices": ["they panic and rout, thousands drowning as they flee", "they meet him with a wall of spears and shields", "they surrender the whole camp on the spot", "they call up their own dead champions in answer"],
+      "answer": "they panic and rout, thousands drowning as they flee",
+      "context": "The legend has the Almoravids see the Cid still alive and charging, and break in terror; the chronicles describe them fleeing toward the Mediterranean and being drowned in their thousands trying to reach the ships. It is the great DEAD-HERO trope of Western legend. Source: en.wikipedia.org/wiki/Babieca.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After the victory the Cid's body is carried back west across Spain to a Benedictine monastery where his wife had waited during his exile years, and there entombed with all honour. WHICH monastery becomes the Cid's first resting place?",
+      "choices": ["San Pedro de Cardena", "Santo Domingo de Silos", "San Millan de la Cogolla", "Santa Maria de Ripoll"],
+      "answer": "San Pedro de Cardena",
+      "context": "San Pedro de Cardena, near Burgos, sheltered Jimena and the Cid's daughters during his years of exile from King Alfonso's court; the Cid was entombed there after Valencia fell. In the nineteenth century his remains were moved to Burgos Cathedral. Silos, San Millan, and Ripoll are all real, famous medieval Iberian monasteries. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The great dead-on-horseback story is one of the most-loved episodes in the whole Cid tradition -- but honest scholars point out that it does NOT appear in the earliest Cid work, the Cantar de Mio Cid itself; it enters the tradition only later, in a chronicle compiled at the court of King Alfonso X in the late thirteenth century. WHAT is that chronicle called?",
+      "choices": ["the Estoria de Espana", "the Poema de Fernan Gonzalez", "the Cronica Sarracina", "the Libro de Alexandre"],
+      "answer": "the Estoria de Espana",
+      "context": "Alfonso X of Castile, called Alfonso the Wise, sponsored a great vernacular history of Spain called the Estoria de Espana in the late thirteenth century; this is where the dead-on-horseback legend first appears in writing, roughly two centuries after the Cid's death. The other three works are all real medieval Iberian texts, none the source of this legend. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The chronicles love the legend, but the plain historical record of Valencia after 1099 tells a quieter, sadder story. Instead of the city surviving through the Cid's phantom charge, Jimena in fact held it for only about three years and then, unable to defend it any longer, did what?",
+      "choices": ["she abandoned the city and carried her husband's body west to Castile", "she was killed on the walls in a final Almoravid assault on the palace", "she surrendered the city to King Alfonso the Sixth as a Christian fief", "she turned the palace into a fortified nunnery and stayed to defend it"],
+      "answer": "she abandoned the city and carried her husband's body west to Castile",
+      "context": "History records that Jimena held Valencia until 1102 and then, unable to hold on longer against the Almoravids, evacuated the city (burning it as she left, according to some chronicles) and carried her husband's body west to Castile. The legendary phantom-charge belongs to story, not to what really happened. Source: en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    }
+  ]
+}

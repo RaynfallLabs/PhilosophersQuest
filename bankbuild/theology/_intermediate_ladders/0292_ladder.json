@@ -1,0 +1,134 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Robin Hood ballads, Robin's outlaw band living in the forest with him has a famous nickname. What are they called together?",
+      "choices": [
+        "the Merry Men",
+        "the Bold Company",
+        "the Sherwood Guard",
+        "the Greenwood Knights"
+      ],
+      "answer": "the Merry Men",
+      "context": "'Merry Men' is the traditional name for Robin Hood's outlaw band. The earliest ballads name a core of them individually: Little John, Will Scarlet, and Much the Miller's Son. Source: Wikipedia, Merry Men.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Two Merry Men are famous even to people who know almost nothing else about Robin Hood: a huge man taller than seven feet who fights with a wooden staff, and a jolly fighting friar. Which pair?",
+      "choices": [
+        "Little John and Friar Tuck",
+        "Guy of Gisborne and Prince John",
+        "Alan-a-Dale and Maid Marian",
+        "Will Scarlet and Sir Richard at the Lee"
+      ],
+      "answer": "Little John and Friar Tuck",
+      "context": "Little John and Friar Tuck are the most famous of the Merry Men, but the ballad-band is larger than that. The earliest ballads also name Will Scarlet and Much the Miller's Son alongside Robin and Little John; later broadsides bring in Alan-a-Dale. Source: Wikipedia, Merry Men.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One of Robin Hood's Merry Men in the earliest ballads is so small that a later ballad, Robin Hood and Queen Katherine, calls him 'Midge' instead of his usual name. Which of Robin's outlaws is this small companion?",
+      "choices": [
+        "Much the Miller's Son",
+        "Little John",
+        "Will Scathelock",
+        "Alan-a-Dale"
+      ],
+      "answer": "Much the Miller's Son",
+      "context": "Much the Miller's Son is one of Robin's three earliest ballad-companions (with Little John and Will Scarlet). In Robin Hood and Queen Katherine he is called Midge -- a name that suggests small stature and hints that Much was traditionally imagined as short. Source: Wikipedia, Much the Miller's Son.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Robin Hood and the Monk, a treacherous monk has led the Sheriff to capture Robin at prayer. Little John and Much the Miller's Son ambush the monk on the road with his young page-boy, so word of the ambush cannot spread. What do they do to the monk and the page?",
+      "choices": [
+        "kill them both",
+        "tie them to a tree",
+        "steal their horses",
+        "lock them in a barn"
+      ],
+      "answer": "kill them both",
+      "context": "In Child 119, Little John kills the monk for betraying Robin; Much kills the page-boy so no one can spread word. The two outlaws then disguise themselves as monk and page, deliver the monk's letters to the king, and use the king's own writ to spring Robin from prison. Source: Wikipedia, Robin Hood and the Monk.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Merry Men are famous for wearing one shared color, so they can move unseen through the trees of Sherwood. Which color?",
+      "choices": [
+        "Lincoln green",
+        "Cheapside blue",
+        "Norwich grey",
+        "Ipswich brown"
+      ],
+      "answer": "Lincoln green",
+      "context": "Lincoln green is the traditional woolen dye of the Merry Men, associated with the city of Lincoln and with woodland camouflage. One member of the band is the exception -- he stands out in bright cloth of a different color, which is why he has the nickname he does. Source: Wikipedia, Will Scarlet.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Will Scarlet is called the dandy of the Merry Men because, unlike the rest of Robin's band, he does not wear the woodland woolens. What does he wear instead?",
+      "choices": [
+        "red silk",
+        "black velvet",
+        "white linen",
+        "grey wool"
+      ],
+      "answer": "red silk",
+      "context": "Will Scarlet's distinctive red silk clothing (with a matching feathered hat in some tellings) is what gives him his 'Scarlet' nickname in the later tradition and marks him as the flamboyant member of the band. Source: Wikipedia, Will Scarlet.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the earliest surviving Robin Hood texts, Will Scarlet is not spelled 'Scarlet' at all -- the name he goes by in the fifteenth-century ballads sounds nothing like a color. Which older spelling is his real ballad-name?",
+      "choices": [
+        "Scathelock",
+        "Wolfshead",
+        "Greenmantle",
+        "Longshank"
+      ],
+      "answer": "Scathelock",
+      "context": "The earliest ballad spellings are Scathelock, Scarlock, Scadlock, and Shacklock. 'Scarlet' is a later phonetic drift, encouraged by his red silk clothing in the later tradition. Source: Wikipedia, Will Scarlet.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the ballad Robin Hood and Allen a Dale, a young man is weeping under an oak in Sherwood. He tells Robin that his beloved is being forced to marry a rich old knight in the morning. What is the young man's trade?",
+      "choices": [
+        "a wandering minstrel",
+        "a runaway monk",
+        "a poacher of deer",
+        "a village blacksmith"
+      ],
+      "answer": "a wandering minstrel",
+      "context": "Alan-a-Dale is a wandering minstrel who joins the Merry Men in Child 138. His beloved is being forced by her father to marry an old knight for money. Alan carries a lute or harp, which lets Robin's later disguise as a harper work. Source: Wikipedia, Robin Hood and Allan-a-Dale.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "On the wedding morning in Robin Hood and Allen a Dale, Robin walks into the church dressed as a harper and stops the marriage. The bishop refuses to marry Alan and his sweetheart, saying consent must be asked. Robin puts the bishop's cloak on one of his outlaws, who asks the consent question over and over until it counts. Which outlaw takes the bishop's place?",
+      "choices": [
+        "Little John",
+        "Friar Tuck",
+        "Will Scarlet",
+        "Much the Miller's Son"
+      ],
+      "answer": "Little John",
+      "context": "In Child 138 Robin robes Little John in the bishop's cloak; Little John asks the consent question seven times (in mockery of the bishop's 'three times' rule) and marries Alan-a-Dale to his sweetheart on the spot. Source: Wikipedia, Robin Hood and Allan-a-Dale.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Friar Tuck is one of the most beloved Merry Men in the modern imagination, but he is not present in the earliest fifteenth-century ballads at all. When he first shows up in the Robin Hood story, he comes in through a very different kind of performance. Which one?",
+      "choices": [
+        "the May-games",
+        "the crusade preachings",
+        "the pilgrim plays",
+        "the Christmas mummings"
+      ],
+      "answer": "the May-games",
+      "context": "Friar Tuck appears in a c.1475 play, Robyn Hod and the Shryff off Notyngham, and again in a 1560 May-games play. He probably comes into the Robin Hood tradition through the jovial-friar figure of English May-games and morris dances, not through the earliest ballads. Maid Marian arrives the same way, from the French Jeu de Robin et Marion and English May Day festivities. Source: Wikipedia, Friar Tuck.",
+      "legend": true
+    }
+  ]
+}

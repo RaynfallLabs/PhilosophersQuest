@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "For his eighth labor, King Eurystheus sent Heracles to a wild kingdom in the north to bring back a set of four horses no rope could hold. King Diomedes had been feeding travellers and shipwrecked strangers to them, and the taste had made them wild. What kind of animal were the horses of Diomedes?",
+      "choices": ["man-eaters", "fire-breathers", "winged racers", "sea-swimmers"],
+      "answer": "man-eaters",
+      "context": "Diomedes had trained them on human flesh, an outrage against every rule of Greek hospitality; that outrage is what makes the labor a punishment as well as a task. Fire-breathing belongs to Aeetes's bulls in Colchis; winged horses to Pegasus and to the horses of the Sun; sea-swimming to Poseidon's herds. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; Apollodorus 2.5.8.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The eighth labor took Heracles to the kingdom of Diomedes in the far north, up on a coast famous for its wild horses and its warlike tribes. In which country did King Diomedes rule?",
+      "choices": ["Thrace", "Colchis", "Thessaly", "Lydia"],
+      "answer": "Thrace",
+      "context": "Diomedes was king of the Bistonian people on the Thracian coast. This is NOT the Diomedes who fights at Troy in the Iliad -- that Diomedes is a Greek prince from Argos, on the other side of the Aegean. Colchis is where the Golden Fleece hangs; Thessaly is Achilles's country; Lydia is where Heracles later serves Queen Omphale. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; Apollodorus 2.5.8.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Hyginus preserves the names of Diomedes's four mares -- Podargos ('swift-foot'), Lampon ('shining'), Xanthos ('yellow'), and one more whose name simply meant 'terrible'. What was the fourth mare's name?",
+      "choices": ["Deinos", "Aithon", "Balios", "Phlegon"],
+      "answer": "Deinos",
+      "context": "The four names are Podargos, Lampon, Xanthos, and Deinos in Hyginus's Fabulae. Aithon ('blazing') is one of the sun-horses; Balios is one of Achilles's own horses at Troy (his brother is Xanthos, a different Xanthos); Phlegon is another sun-horse. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; Hyginus, Fabulae 30.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The horses of Diomedes were kept in a stable no rope would hold. What material were the chains and mangers made of, in the traditional telling?",
+      "choices": ["bronze", "iron", "silver", "hemp doubled ten times"],
+      "answer": "bronze",
+      "context": "Bronze chains to bronze mangers -- the hero-age metal, the same material as Talos and as Eurystheus's own hiding-jar. Iron is a later metal that mostly stays out of Bronze-Age myth. Silver has no strength in it. Doubled hemp is the shape of a distractor -- the whole point of the mares is that NO rope held them. Source: en.wikipedia.org/wiki/Mares_of_Diomedes.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Heracles did not sail alone to Thrace for the mares. He brought a small band of companions, and one of them was a young friend of his (some sources say his lover) whom he trusted enough to leave in charge of the captured horses while he went back to fight the king. What was the young man's name?",
+      "choices": ["Abderus", "Hylas", "Iolaus", "Philoctetes"],
+      "answer": "Abderus",
+      "context": "Abderus is the friend Heracles brings on this labor. Hylas was the boy who drowned when Heracles took him on the Argo (the nymphs pulled him into a spring). Iolaus is the nephew who helped with the Hydra and stays with Heracles for most of the labors -- so he is often confused with Abderus, but he SURVIVES this one. Philoctetes is much later, the boy who lights Heracles's funeral pyre. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; Apollodorus 2.5.8.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Heracles surprised the mares in the stable, broke the bronze chains, and drove them down to the shore. The king's own people, his tribe, came after him in force to take the horses back. What was the tribe called?",
+      "choices": ["the Bistones", "the Myrmidons", "the Amazons", "the Lapiths"],
+      "answer": "the Bistones",
+      "context": "The Bistones were Diomedes's Thracian people. The Myrmidons are Achilles's men from Phthia. The Amazons will be Heracles's ninth labor, for Hippolyta's belt. The Lapiths fought their own famous battle -- with the centaurs, at Pirithous's wedding. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; Apollodorus 2.5.8.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles ran back to the shore to fight the Bistones and killed King Diomedes in the battle. When he came back to the horses, though, the news was awful: his young friend was dead, torn apart and eaten by the very mares he had been guarding. In grief, Heracles founded a city on that coast in the friend's name. What city rose there?",
+      "choices": ["Abdera", "Byzantium", "Miletus", "Ephesus"],
+      "answer": "Abdera",
+      "context": "The real Greek colony of Abdera on the Thracian coast traced its founding-legend to this labor and to Heracles's grief for his friend. Abdera was later famous as the birthplace of the philosophers Democritus and Protagoras. Byzantium is the Bosphorus city (later Constantinople); Miletus and Ephesus are Ionian cities in Asia Minor. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; en.wikipedia.org/wiki/Abdera,_Thrace.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles's revenge on King Diomedes fit the tyrant's own crime with grim poetry. The king had fed his hospitality-guests to his own horses for years. What did Heracles do to Diomedes?",
+      "choices": ["fed him to the mares he had trained on human flesh", "chained him in his own iron manger to starve", "dragged him behind the tamed mares along the shore", "handed him over to the Bistones to be judged by his own people"],
+      "answer": "fed him to the mares he had trained on human flesh",
+      "context": "In Diodorus and Apollodorus, Heracles kills Diomedes and then throws the body to the horses. Once they had tasted their own master, the beasts became calm and controllable -- the horror ended the horror. It is the same shape as Perillos the bronze-smith roasted in his own hollow bull, or Haman hung on his own gallows in the Book of Esther: the tyrant destroyed by his own instrument. Source: en.wikipedia.org/wiki/Mares_of_Diomedes; Diodorus Siculus 4.15.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Thracian city Heracles founded in his lost friend's memory would grow into a real Greek town on the Aegean coast, and centuries later would produce two of the most famous philosophers of the classical age. One was the atomist who said the world was made of atoms and void. The other was the sophist who said 'Man is the measure of all things.' Who came from Abdera?",
+      "choices": ["Democritus and Protagoras", "Socrates and Plato", "Pythagoras and Empedocles", "Thales and Anaximander"],
+      "answer": "Democritus and Protagoras",
+      "context": "Democritus the atomist and Protagoras the sophist were both born at Abdera on the Thracian coast, the city Heracles founded for his eaten friend. Socrates and Plato are Athenians; Pythagoras founded his school at Croton in Italy; Thales and Anaximander are from Miletus in Ionia. So the labor's grief-note echoes forward into the beginning of Greek philosophy. Source: en.wikipedia.org/wiki/Abdera,_Thrace.",
+      "legend": false
+    }
+  ]
+}

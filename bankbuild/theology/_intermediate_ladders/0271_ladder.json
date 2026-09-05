@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Irish myth, one of the Tuatha De Danann rides the western sea in a cloak of mist that hides him from mortal eyes and ferries the souls of dead heroes to a paradise island of apple trees. What is his name?",
+      "choices": ["Manannan mac Lir", "Aengus Og", "Nuada Silver-Arm", "Dian Cecht"],
+      "answer": "Manannan mac Lir",
+      "context": "Manannan mac Lir (meaning 'Manannan son of Lir') rules the western sea and the otherworldly islands. His cloak of mist is called the feth fiada. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Irish sea-god Manannan mac Lir wraps himself in a special garment that no mortal can see through, one he can also throw over any of the Tuatha De to hide their sidhe mounds from human eyes. What is the garment?",
+      "choices": ["A cloak of mist", "A helmet of bronze", "A ring of gold", "A crown of oak leaves"],
+      "answer": "A cloak of mist",
+      "context": "The feth fiada is a mantle of mist that Manannan wears to move invisibly and to conceal the dwellings of the Tuatha De after their defeat by the Milesians. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One of Manannan mac Lir's three great treasures is a wonderful boat that carries its passenger anywhere across the sea. It needs no oars, no sails, and no wind at all: it simply KNOWS where you want to go. What is the boat called?",
+      "choices": ["Sguaba Tuinne, the Wave-Sweeper", "Skidbladnir, the Folded-Sail", "Naglfar, the Nail-Ship", "Argo, the Speaker of Oak"],
+      "answer": "Sguaba Tuinne, the Wave-Sweeper",
+      "context": "Sguaba Tuinne ('Wave-Sweeper') is Manannan's self-navigating boat. Lugh would later use it to sail to Ireland, and the sons of Tuireann were forced to borrow it in Oidheadh Chloinne Tuireann. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The second of Manannan mac Lir's three great treasures is a horse whose hooves strike the water and do not sink. It gallops across land and across sea alike, swifter than the naked wind of spring. What is the horse called?",
+      "choices": ["Enbarr", "Sleipnir", "Pegasus", "Bucephalus"],
+      "answer": "Enbarr",
+      "context": "Enbarr (Aonbharr, 'the One-Mane' or 'unrivalled mane') was Manannan's sea-crossing horse. Whoever rode her back could not be killed. She would later be lent to Lugh. Wikipedia, Enbarr.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Manannan mac Lir's third great treasure was a blade that no armor could turn aside, and whose point had a second, stranger power: when Manannan set the blade at a man's chest, that man could not tell a single lie. What is the sword called?",
+      "choices": ["Fragarach, the Answerer", "Excalibur, the sword of the stone", "Durendal, the peer of Roland", "Gae Bolg, the belly-spear"],
+      "answer": "Fragarach, the Answerer",
+      "context": "Fragarach ('the Answerer') sliced through any armor and compelled its target to answer any question truthfully. Manannan later gave it to Lugh, and it walked through the whole later mythology. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Manannan mac Lir did not keep his three great treasures for himself forever. He gave the Wave-Sweeper, Enbarr the horse, and the sword Fragarach as a gift to a young hero he had fostered. Who was the foster-son?",
+      "choices": ["Lugh Lamhfhada", "Cuchulainn of Ulster", "Fionn mac Cumhaill", "Diarmuid ua Duibhne"],
+      "answer": "Lugh Lamhfhada",
+      "context": "Manannan fostered Lugh in the otherworldly islands and armed him for the coming war with the Fomorians. Wikipedia, Enbarr; Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Manannan mac Lir rules a chain of paradise islands far out in the western sea, where dead heroes go and where nobody grows old. The first and most famous of these islands is called Emain Ablach. What does its name mean?",
+      "choices": ["Isle of Apples", "Plain of Delights", "Land of Promise", "Field of the Blessed"],
+      "answer": "Isle of Apples",
+      "context": "Emain Ablach ('Emhain of the Apples') is the paradise island of Manannan, filled with swans and yews and apple trees always in fruit. Wikipedia, Emain Ablach.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Two more of Manannan mac Lir's otherworldly realms have names that tell the visitor what to expect. One is called Mag Mell ('the Plain of Delights'); the other is called Tir Tairngire. What does Tir Tairngire mean?",
+      "choices": ["The Land of Promise", "The Field of Reeds", "The Shore of Shadows", "The Hall of Slain Kings"],
+      "answer": "The Land of Promise",
+      "context": "Manannan's three linked otherworldly realms are Emain Ablach (Isle of Apples), Mag Mell (Plain of Delights), and Tir Tairngire (Land of Promise). Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Manannan mac Lir's Emain Ablach means 'Isle of Apples' in Old Irish. Centuries later, a paradise island appears in the Arthurian romances that also means 'Isle of Apples' and that scholars trace directly back to Manannan's realm. What is the Arthurian island called?",
+      "choices": ["Avalon", "Camelot", "Lyonesse", "Sarras"],
+      "answer": "Avalon",
+      "context": "Avalon (Insula Avallonis in Geoffrey of Monmouth) shares its name and its whole picture with Emain Ablach: apple-orchard paradise where the wounded king is taken to be healed. Wikipedia, Emain Ablach.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After the Milesians defeated the Tuatha De Danann and drove them underground, Manannan mac Lir took charge of what remained. He allotted each surviving god a sidhe mound of their own and fed them all at an eternal banquet whose ale kept them young forever. What was that feast called?",
+      "choices": ["The Feast of Goibniu", "The Feast of Balor", "The Feast of Bran", "The Feast of Nuada"],
+      "answer": "The Feast of Goibniu",
+      "context": "The Feast of Goibniu (Fled Goibnenn) was the eternal banquet whose ale conferred everlasting youth on the Tuatha De after their retreat into the sidhe mounds. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "One island in the middle of the Irish Sea between Ireland, Scotland and England takes its name directly from Manannan mac Lir, the sea-god traditionally said to guard it under his cloak of mist. Which island is it?",
+      "choices": ["The Isle of Man", "The Isle of Iona", "The Isle of Skye", "The Isle of Anglesey"],
+      "answer": "The Isle of Man",
+      "context": "The Isle of Man (Ellan Vannin in Manx) takes its name from Manannan; local tradition still credits him with wrapping the island in sea mist to hide it from invaders. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Manannan mac Lir is one of very few Irish gods who crossed the sea into the mythology of Wales, where he appears in the Mabinogion under a name that echoes his own. What is his Welsh name?",
+      "choices": ["Manawydan fab Llyr", "Bran fab Llyr", "Pryderi fab Pwyll", "Gwydion fab Don"],
+      "answer": "Manawydan fab Llyr",
+      "context": "Manawydan fab Llyr ('son of Llyr') is the Welsh cognate of Manannan mac Lir; he appears in the Third Branch of the Mabinogion as brother of Bran the Blessed. Wikipedia, Manannan mac Lir.",
+      "legend": true
+    }
+  ]
+}

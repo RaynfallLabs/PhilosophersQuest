@@ -1,0 +1,147 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "In the Ulster Cycle a druid may lay a magical prohibition on a hero at birth or on any warrior later in life -- a single act the man must never do, on pain of ruin. Every hero has his own personalised set of these prohibitions, and cleverness in setting one against another is how enemies in the Irish tales bring a great warrior down. What is the Irish word for such a prohibition?",
+   "choices": [
+    "a geis",
+    "a fian",
+    "a fidchell",
+    "a filid"
+   ],
+   "answer": "a geis",
+   "context": "Plural geasa (roughly 'gaysh' / 'gaysha'). Fian = a warrior-band (compare fianna); fidchell = the Irish board game; filid = a poet. Wikipedia: Geis.",
+   "legend": true
+  },
+  {
+   "tier": 1,
+   "stem": "The champion of the Ulster Cycle takes his hero-name as a boy after killing the guard-dog of a smith and offering to serve as its replacement until a new hound can be raised. From then on he is called by a name that means 'the Hound' of that smith. Who is the hero?",
+   "choices": [
+    "Cu Chulainn",
+    "Conall Cernach",
+    "Fionn mac Cumhaill",
+    "Fergus mac Roich"
+   ],
+   "answer": "Cu Chulainn",
+   "context": "The smith was Culann; the name Cu Chulainn is literally 'the Hound of Culann'. Wikipedia: Cu Chulainn.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Cu Chulainn's two chief prohibitions are DELIBERATELY set to trap him: the first is that he must never refuse food offered to him at a hearth. The second reaches back to the story of how he got his hero-name -- because he is called 'the Hound of Culann', he must never eat the flesh of one particular animal. Which animal?",
+   "choices": [
+    "a dog",
+    "a boar",
+    "a raven",
+    "a salmon"
+   ],
+   "answer": "a dog",
+   "context": "To eat dog-flesh is to eat his own name, his own totem. Boar features in Diarmuid's death (a different cycle); the salmon of knowledge belongs to Fionn; the raven is the Morrigan's bird. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "In the Aided Con Culainn ('The Death of Cu Chulainn') the war-band closing in on the hero is joined by a set of sorcerous siblings -- posthumous children of a wizard Cu Chulainn had killed years before, raised specifically by their mother to be trained in the magic that could undo him. Which family?",
+   "choices": [
+    "the daughters of Cailitin",
+    "the sons of Uisliu",
+    "the children of Lir",
+    "the daughters of the Dagda"
+   ],
+   "answer": "the daughters of Cailitin",
+   "context": "Cailitin's widow bore his children after his death and trained them in sorcery for revenge. The sons of Uisliu belong to Deirdre's tale; the children of Lir were turned into swans; the Dagda's daughters are from a different cycle. Wikipedia: Aided Con Culainn.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "Riding to his last battle Cu Chulainn passes an open fire at the roadside. Three old crones -- each blind in the left eye -- are cooking there, and they call him over and offer him a share of what they are roasting. To refuse would break his hospitality-geis; to accept would break his other geis. What are they roasting on their spits of rowan?",
+   "choices": [
+    "a dog",
+    "a boar",
+    "a whole salmon",
+    "a black raven"
+   ],
+   "answer": "a dog",
+   "context": "The three hags are the daughters of Cailitin in disguise, working the trap the whole story has been building toward. Wikipedia: Aided Con Culainn; Seven Miles of Steel Thistles blog.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "Cu Chulainn accepts the meal from the three crones and takes the piece of roast meat in one hand. From that moment the strength drains out of the arm that held it, and out of the whole side of his body served by that arm. It is the side he will need most against the war-band waiting for him. Which side goes dead?",
+   "choices": [
+    "his left side, from shoulder to fingertip",
+    "his right side, from shoulder to fingertip",
+    "both arms at once",
+    "his sword-arm only"
+   ],
+   "answer": "his left side, from shoulder to fingertip",
+   "context": "He took the meat in his left hand; the whole left side goes. He also puts the bone down on his left thigh and the thigh is struck through too. Wikipedia: Aided Con Culainn; Steel Thistles.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "After Cu Chulainn eats with his left hand and his left arm goes dead, he sets the bone down somewhere on his own body -- and that body-part loses its strength too. He rides on to the last battle with TWO limbs already gone. Where does he put the bone down?",
+   "choices": [
+    "on his left thigh",
+    "on his right shoulder",
+    "on the crown of his head",
+    "under his left arm"
+   ],
+   "answer": "on his left thigh",
+   "context": "The thigh is struck through the way the arm was struck through -- a second breach of the dog-flesh geis by contact alone. Wikipedia: Aided Con Culainn; Steel Thistles.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "The Irish idea of a personalised, druid-laid magical prohibition has cousins in the other great heroic cultures. In Greek epic the corresponding word means an impersonal share of destiny apportioned to a mortal by the gods -- the same word used for Achilles's choice between a short glorious life and a long dim one. What is the Greek word?",
+   "choices": [
+    "moira",
+    "arete",
+    "hubris",
+    "kleos"
+   ],
+   "answer": "moira",
+   "context": "Norse wyrd is the parallel in that tradition. Arete = excellence; hubris = overreach; kleos = fame. Wikipedia: Moira; Geis.",
+   "legend": false
+  },
+  {
+   "tier": 4,
+   "stem": "Not every Irish hero brought down by his prohibitions belongs to the Ulster Cycle. The High King who dies in the tale Togail Bruidne Da Derga ('The Destruction of Da Derga's Hostel') has an unusually long list of geasa -- and on a single unlucky night a chain of unavoidable acts breaks EVERY ONE of them before he reaches the hostel where he will die. Who is the king?",
+   "choices": [
+    "Conaire Mor",
+    "Cormac mac Airt",
+    "Nuada Silver-Arm",
+    "Diarmait mac Cerbaill"
+   ],
+   "answer": "Conaire Mor",
+   "context": "Togail Bruidne Da Derga is one of the great tragic sagas of the Mythological Cycle. Cormac mac Airt is a later High King associated with wisdom-tales; Nuada is a Tuatha De Danann king; Diarmait mac Cerbaill is a historical-legendary king. Wikipedia: Togail Bruidne Da Derga.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The Fenian Cycle has its own famous geis-tale: a young warrior of the Fianna is placed under a compulsion he cannot refuse when a princess named Grainne, on the night of her betrothal-feast to Fionn mac Cumhaill, corners him and lays her geis upon him to run away with her instead. Which warrior does she trap?",
+   "choices": [
+    "Diarmuid ua Duibhne",
+    "Oisin son of Fionn",
+    "Caoilte mac Ronain",
+    "Goll mac Morna"
+   ],
+   "answer": "Diarmuid ua Duibhne",
+   "context": "The tale is Toraiocht Dhiarmada agus Ghrainne, 'The Pursuit of Diarmuid and Grainne'. Oisin is Fionn's son; Caoilte is Fionn's runner; Goll is Fionn's rival. Wikipedia: Toraiocht Dhiarmada agus Ghrainne.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The Aided Con Culainn survives in an Old Irish version preserved in a specific twelfth-century manuscript compiled at a Cistercian abbey in County Laois -- the same great codex that preserves much of the Ulster Cycle, the Fenian Cycle, and one of the two main recensions of the Tain Bo Cuailnge. Which manuscript?",
+   "choices": [
+    "the Book of Leinster",
+    "the Book of Kells",
+    "the Book of Ballymote",
+    "the Cathach of St Columba"
+   ],
+   "answer": "the Book of Leinster",
+   "context": "Lebor Laignech, compiled c.1160 at Terryglass/Oughaval. The Book of Kells is a gospel-book; Ballymote is a later (14th c.) codex; the Cathach is a 6th-c. psalter. Wikipedia: Aided Con Culainn; Book of Leinster.",
+   "legend": false
+  }
+ ]
+}

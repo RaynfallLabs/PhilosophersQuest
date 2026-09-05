@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Jesus tells a parable in Luke 16 about two men who die on the same day. One is a rich man dressed in purple and fine linen who feasts every day at his own table; the other is a poor beggar covered in sores who lies outside the rich man's gate hoping for the scraps that fall. What is the poor beggar's name?",
+      "choices": ["Lazarus", "Bartimaeus", "Nicodemus", "Zacchaeus"],
+      "answer": "Lazarus",
+      "context": "Luke 16:20 (KJV): 'a certain beggar named Lazarus, which was laid at his gate, full of sores.' This is the parable-Lazarus -- NOT the historical Lazarus of Bethany whom Jesus raises from the tomb in John 11. Bartimaeus was the blind beggar of Jericho; Nicodemus came to Jesus by night; Zacchaeus climbed the sycamore tree. Source: Luke 16:19-21 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "In the parable of the rich man and Lazarus, the poor beggar is not alone at the rich man's gate: an unclean animal from the street keeps him company, coming to lick his sores as he lies there. What animals does Luke's gospel say came?",
+      "choices": ["Dogs", "Vultures", "Ravens", "Jackals"],
+      "answer": "Dogs",
+      "context": "Luke 16:21 (KJV): 'moreover the dogs came and licked his sores.' The image doubles the horror of the rich man's neglect -- even street dogs pay Lazarus more mind than the master of the house. Source: Luke 16:19-21 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The rich man of Luke 16 has no name in the gospel text itself -- but medieval Christian tradition gave him one, taken directly from the Latin word for 'rich man' in the Vulgate translation. What is this traditional name?",
+      "choices": ["Dives", "Judas", "Ananias", "Herod"],
+      "answer": "Dives",
+      "context": "'Dives' is the Latin 'dives' meaning 'rich man' -- not a proper name in the Greek or in any manuscript, but the label stuck in medieval preaching and English literature. Ananias was Sapphira's husband (Acts 5), Judas the betrayer, Herod the king. Source: en.wikipedia.org/wiki/Rich_man_and_Lazarus.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The rich man of the parable dies and finds himself in torment in the place of the dead. He looks up across a great distance and sees the beggar Lazarus resting far away in the arms of a patriarch. In Luke's gospel, in whose 'bosom' is Lazarus said to rest?",
+      "choices": ["Abraham", "Moses", "David", "Elijah"],
+      "answer": "Abraham",
+      "context": "Luke 16:22 (KJV): 'the beggar died, and was carried by the angels into Abraham's bosom.' 'Abraham's bosom' is a Second-Temple Jewish image for the resting place of the righteous dead -- the beggar reclines at the great father's side like an honoured guest at a feast. Source: Luke 16:19-31 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "In torment across the great gulf, the rich man cries out to Abraham with one small, desperate request. He does not ask to be freed, or brought over. He only asks that the beggar Lazarus be sent to him to do one specific thing to give him a moment's ease. In Luke 16, what does the rich man ask Lazarus to do?",
+      "choices": ["Dip the tip of his finger in water and cool his tongue", "Say a single prayer to Abraham on his behalf", "Fetch a length of cloth to cover his burning eyes", "Lead him quietly across the gulf to the other side"],
+      "answer": "Dip the tip of his finger in water and cool his tongue",
+      "context": "Luke 16:24 (KJV): 'send Lazarus, that he may dip the tip of his finger in water, and cool my tongue; for I am tormented in this flame.' The horror of the image is the smallness of the request against the size of the refusal. Source: Luke 16:19-31 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Abraham refuses to send Lazarus with the drop of water, because -- he tells the rich man -- something has been set in place between the two sides of the dead that cannot be crossed by anyone from either direction. What image does Abraham use in Luke's gospel for this barrier?",
+      "choices": ["A great gulf fixed", "A wall of fire", "A veil torn in two", "A bronze door"],
+      "answer": "A great gulf fixed",
+      "context": "Luke 16:26 (KJV): 'between us and you there is a great gulf fixed: so that they which would pass from hence to you cannot; neither can they pass to us, that would come from thence.' Source: Luke 16:19-31 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "The rich man makes one last plea -- if Lazarus cannot help him, at least send him back from the dead to warn the rich man's five brothers, still alive, so they do not come to the same torment. Abraham gives one final, cutting reply, closing the parable. What does Abraham say?",
+      "choices": ["If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead", "Their fate is sealed already, and no messenger will change it", "Let each man come to his own end without your interference", "The living have their own path, and the dead have theirs"],
+      "answer": "If they hear not Moses and the prophets, neither will they be persuaded, though one rose from the dead",
+      "context": "Luke 16:31 (KJV). The line is the sharp point of the whole parable -- the warning that a miracle from the dead will not persuade those who refuse the ordinary voice of the scriptures they already have. Source: Luke 16:27-31 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "In Matthew 25 Jesus tells a very different afterlife scene, this one on a throne of glory at the end of the age. The Son of Man will gather all the nations before him and separate the good from the wicked as, the gospel says, a common working man separates one kind of animal in his flock from another. In Matthew's image, what is the pastoral job the judge is compared to?",
+      "choices": ["A shepherd dividing his sheep from the goats", "A farmer sifting the wheat from the tares", "A fisherman sorting the good fish from the bad", "A vintner picking the ripe grapes from the sour"],
+      "answer": "A shepherd dividing his sheep from the goats",
+      "context": "Matthew 25:32 (KJV): 'and he shall separate them one from another, as a shepherd divideth his sheep from the goats.' The sheep go to his right hand, the goats to his left. The wheat-and-tares (Matthew 13), the good and bad fish in the net (Matthew 13), and the labourers in the vineyard (Matthew 20) are separate parables. Source: Matthew 25:31-46 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "In Matthew 25 the king welcomes the sheep on his right with a great blessing, because -- he tells them -- when he was hungry they fed him, when he was thirsty they gave him drink, when he was naked they clothed him, when he was sick they visited him. The sheep are baffled and protest that they never saw the king in any such state. The king answers with the line the whole parable turns on: 'Inasmuch as ye have done it unto one of ______ of these my brethren, ye have done it unto me.' Fill in the missing word.",
+      "choices": ["The least", "The purest", "The eldest", "The greatest"],
+      "answer": "The least",
+      "context": "Matthew 25:40 (KJV): 'Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.' From this scene the medieval church drew the Seven Corporal Works of Mercy -- feed the hungry, give drink to the thirsty, clothe the naked, shelter the stranger, visit the sick, visit the imprisoned, and (added later from the Book of Tobit) bury the dead -- which shaped hospitals, hospices, and prison-visiting orders across centuries. Source: Matthew 25:31-46 (KJV); en.wikipedia.org/wiki/Corporal_works_of_mercy.",
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse Volsung cycle Sigurd is married to Gudrun; her brother Gunnar is married to Brynhild, who still believes it was Gunnar who crossed the ring of fire to wake her. One morning the two queens go to a river to wash their hair, and there they quarrel. What do the queens quarrel about?",
+      "choices": ["whose husband is the greater warrior", "which queen may bathe upstream", "which brother should sit on the high seat", "who owns the golden hoard of Fafnir"],
+      "answer": "whose husband is the greater warrior",
+      "context": "Volsunga Saga chapter 30: the argument at the river is a rivalry over the husbands' honour -- whose man is greater. The bathing-place quarrel is a folktale echo but not this scene's substance. The high-seat quarrel comes at Atli's court later. Fafnir's hoard is owned by Gjuki's sons jointly and is not what they dispute. It is the boast about husbands that starts the whole doom.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Brynhild boasts that her husband Gunnar is the greatest of men because he alone crossed the ring of fire around her mountain. Gudrun laughs and answers that Gunnar never crossed the fire -- Sigurd crossed it wearing Gunnar's face -- and to prove it she holds up a single object she says Sigurd took from Brynhild's own hand that morning. What object does Gudrun hold up as proof?",
+      "choices": ["a ring", "a lock of hair", "a broken helm", "a torn shift"],
+      "answer": "a ring",
+      "context": "Volsunga Saga ch. 30: Gudrun holds up the ring Andvaranaut, which Sigurd had taken from Brynhild's finger during the shape-swap night and given to Gudrun. The lock of hair belongs to a different Norse story (Sif's hair, cut by Loki). A broken helm and a torn shift are not in this scene. The ring is the object that makes the quarrel deadly, because Brynhild recognises it at once.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "After Gudrun's revelation at the river, Brynhild goes home to her hall, lies down on her bed, and does one specific thing that shocks the whole household for three whole days. What does Brynhild do for three days after learning she was tricked by Sigurd?",
+      "choices": ["refuses to speak", "weeps without stopping", "sharpens her sword in silence", "burns her wedding-gifts on the hearth"],
+      "answer": "refuses to speak",
+      "context": "Volsunga Saga ch. 30-31: Brynhild lies down and will not speak or eat for three days. In the saga her silence is more terrifying than shouting -- everyone in the hall knows something dreadful is coming. She does not weep openly, does not sharpen a blade, and does not burn her goods. The muteness is the specific detail the saga returns to.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Gunnar finally comes to Brynhild's bedside and asks what is wrong, she tells him plainly what she demands. What does Brynhild demand of Gunnar for Sigurd's deception?",
+      "choices": ["that Sigurd be killed", "that Sigurd be banished across the sea", "that Sigurd surrender Fafnir's gold", "that Sigurd swear a new oath in her presence"],
+      "answer": "that Sigurd be killed",
+      "context": "Volsunga Saga ch. 31: Brynhild tells Gunnar: 'Sigurd betrayed both of us. I want him dead, or I will die myself. Choose.' She does not ask for exile, for the gold, or for a fresh oath -- only for his death. The rest of the cycle turns on Gunnar's answer.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Brynhild has demanded Sigurd's death, but Gunnar and his brother Hogni cannot lift a hand against him. Years earlier, the three men had stood together, mingled a red thing from their own arms into the turned earth, and sworn a specific oath that now binds them. What oath had Gunnar, Hogni, and Sigurd sworn to each other?",
+      "choices": ["blood-brotherhood", "a marriage-alliance to Gudrun", "a joint quest for Andvari's gold", "loyalty to King Gjuki their father"],
+      "answer": "blood-brotherhood",
+      "context": "Volsunga Saga ch. 26-32: Sigurd, Gunnar, and Hogni had mingled blood from their arms in the earth and sworn foster-brotherhood -- Old Norse fostbraedralag. The marriage to Gudrun was a separate transaction. The quest for Andvari's gold was over long before Sigurd came to Gjuki's court. Loyalty to King Gjuki did not bar personal murder. The oath specifically forbade one of them to raise a hand against another, and that is why Gunnar must find someone else.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Gunnar and Hogni cannot kill Sigurd themselves without breaking their blood-oath. They turn instead to their younger half-brother, a man who is Gjuki's son but who never swore the blood-brotherhood with Sigurd. What is the name of the half-brother Gunnar and Hogni turn to?",
+      "choices": ["Guttorm", "Gjuki", "Grimhild", "Grani"],
+      "answer": "Guttorm",
+      "context": "Volsunga Saga ch. 32: the half-brother is Guttorm. Gjuki is the boys' dead father, the king. Grimhild is their mother, the sorceress who brewed the memory-drink that made Sigurd forget Brynhild. Grani is Sigurd's horse. Guttorm is the specific name of the young half-brother who never took the oath and can therefore do what his elder brothers cannot.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Guttorm is a boy, not a killer, and would not lift a sword against the greatest hero in the north on his own. To make him wild enough for the deed, his older brothers prepare a stew of two animals' flesh mixed with beer and feed it to him. What two kinds of flesh are cooked into the spell-stew fed to Guttorm?",
+      "choices": ["wolf and serpent", "raven and goat", "hare and salmon", "bear and stag"],
+      "answer": "wolf and serpent",
+      "context": "Volsunga Saga ch. 32: the stew is wolf-flesh mixed with serpent-flesh, boiled with beer. Raven and goat, hare and salmon, and bear and stag are all Norse animals but not this recipe. The saga calls the concoction geri-flesh -- one of the very few named magical foods in Norse myth, and the sole reason Guttorm is fierce enough that night to walk into the bedroom of Sigurd Fafnir-slayer with a drawn blade.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "That night Guttorm walks into Sigurd's bedroom. Gudrun is sleeping beside her husband. Guttorm drives a sword through Sigurd's chest in one blow. But Sigurd does not die at once -- he wakes to the death-blow, reaches beside the bed, seizes his own sword, and hurls it after the fleeing killer. What is the name of the sword Sigurd throws after Guttorm?",
+      "choices": ["Gram", "Tyrfing", "Hrunting", "Naegling"],
+      "answer": "Gram",
+      "context": "Volsunga Saga ch. 32: the sword is Gram, the blade Regin re-forged from Sigmund's shards and Sigurd used to kill Fafnir. Tyrfing is the cursed sword of the Hervarar saga. Hrunting is the sword Unferth lends Beowulf. Naegling is the sword that breaks in Beowulf's dragon-fight. Gram is Sigurd's sword through the whole cycle -- and now his dying weapon.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The thrown sword catches the fleeing Guttorm from behind and cleaves him clean through. The Volsunga Saga preserves the exact place on his body where Gram struck -- the point that decides whether one half of him falls forward into the hall and the other half falls backward into the bedroom. Where did Gram strike Guttorm?",
+      "choices": ["between the shoulders", "at the base of the skull", "through the heart from behind", "behind the knees"],
+      "answer": "between the shoulders",
+      "context": "Volsunga Saga ch. 32: Gram catches Guttorm between the shoulders and cuts him clean in two -- one half falling forward into the hall, one half falling backward into the bedroom where Sigurd lies dying. It is one of the most-remembered images in the whole saga.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The evening Sigurd dies, Brynhild does not weep. She stands in the hall, laughs once aloud, dresses herself in her finest clothes, takes up a sword, and stabs herself through the chest. Before she dies she asks a very specific favour of her people -- what does Brynhild ask them to do with her body?",
+      "choices": ["to burn her on Sigurd's funeral pyre", "to bury her at the foot of Hindarfjall", "to lay her in Freyja's temple at Uppsala", "to place her body back inside the ring of fire"],
+      "answer": "to burn her on Sigurd's funeral pyre",
+      "context": "Volsunga Saga ch. 33 and Sigurdarkvida hin skamma stanzas 49-71: Brynhild asks to be burned on the same pyre with Sigurd, and asks that the sword Gram be laid unsheathed between their bodies -- as it had lain between them on the shape-swap night when Sigurd first slept beside her wearing Gunnar's face. She is not buried at Hindarfjall, not sent to Uppsala, and not returned to the ring of fire. The pyre-with-sword-between-them is the specific request the saga preserves.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The death of Sigurd was retold across medieval Germanic literature and, in the 19th century, ended one of the most ambitious operas ever composed -- the fourth and final part of a four-opera cycle staged in 1876. What is the name of the opera in which Wagner tells this same murder-of-Siegfried scene?",
+      "choices": ["Gotterdammerung", "Siegfried", "Die Walkure", "Das Rheingold"],
+      "answer": "Gotterdammerung",
+      "context": "Gotterdammerung ('Twilight of the Gods'), 1876, is the fourth opera in Wagner's Der Ring des Nibelungen. Siegfried is the third opera, which ends with the wake-scene on Hindarfjall. Die Walkure is the second, and Das Rheingold is the first. All four together make up the Ring cycle -- and the murder Guttorm strikes here is the climax of Gotterdammerung.",
+      "legend": false
+    }
+  ]
+}

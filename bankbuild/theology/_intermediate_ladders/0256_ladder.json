@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The greatest hero of the Ulster Cycle of Irish myth is not born under the name he dies under. As a boy at Dun Dealgan (modern Dundalk) he is called something else -- a nephew of King Conchobar mac Nessa, born to Conchobar's sister Deichtine. What is his boyhood name?",
+      "choices": ["Setanta", "Fionn", "Oisin", "Diarmuid"],
+      "answer": "Setanta",
+      "context": "The boy Setanta will earn a new name later in a single afternoon at a smith's gate. Fionn, Oisin, and Diarmuid are the great heroes of the LATER Fenian Cycle, a different tradition; Setanta belongs to the earlier Ulster Cycle. Source: https://en.wikipedia.org/wiki/C%C3%BA_Chulainn",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "One evening the boy Setanta comes late along the road to a feast, walking alone. The feast is at the house of a craftsman named Culann, one of the most honoured men in Ulster. What is Culann's trade?",
+      "choices": ["A smith", "A druid", "A harper", "A weaver"],
+      "answer": "A smith",
+      "context": "Culann the smith is one of the great craftsmen of Ulster; his forge would have made the weapons of the king's warband. His name lives in Cu Chulainn's own -- 'the Hound of Culann' -- for what happens at his gate that night. Source: https://en.wikipedia.org/wiki/Culann",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "King Conchobar has forgotten to warn the smith that another guest is coming behind him, and the smith has already loosed his savage guard-beast to protect the forge for the night. What kind of animal is chained at the smith's gate?",
+      "choices": ["A war-hound", "A wild boar", "A bull", "A black horse"],
+      "answer": "A war-hound",
+      "context": "Culann's dog was an enormous chained war-hound, bred to kill wolves and men; it took three chains to hold him and it was said no other dog in Ireland could match him. Boars belong to the tale of Diarmuid; the bulls belong to the Cattle Raid; the black horse is Cu Chulainn's later chariot-horse, the Liath Macha. Source: https://en.wikipedia.org/wiki/Culann",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The chained war-hound at Culann's gate is loosed and charges the boy Setanta as he walks up the road. He has no sword, no spear, and no shield -- only what he carried from his afternoon's play with the boys of Emain Macha. What is in his hands?",
+      "choices": ["A hurling stick and ball", "A shepherd's sling and stone", "A carved wooden sword", "A hunting bow and arrow"],
+      "answer": "A hurling stick and ball",
+      "context": "The boy had been playing iomain -- hurling, the old Irish stick-and-ball game, still played today. His hurley (camán) and small hard leather ball (sliotar) are all he has when the hound comes. David has the sling in the Bible (Christian pillar). Source: https://www.irelandsmythsandlegends.com/the-story-of-setanta",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As the war-hound leaps for his throat, the boy Setanta strikes the small hard leather ball with the full swing of his stick. What does the ball do to the hound?",
+      "choices": ["Kills it, driven down its throat", "Snaps its front leg mid-leap", "Puts out both its yellow eyes", "Turns it aside from his gate"],
+      "answer": "Kills it, driven down its throat",
+      "context": "In the tale the ball goes down the throat with such force that in some versions it passes right through the dog. In others he then seizes the beast by the hind legs and dashes its head against a standing stone. Either way the hound is dead at his feet before the men at the feast come running out. Source: https://www.irelandsmythsandlegends.com/the-story-of-setanta",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The smith Culann steps out of his house, sees the dead beast, and grieves aloud -- the hound was his living defence, and no pup of the same stock can be trained to replace it in less than a year. The boy, still standing at the gate, makes him a serious offer. What does Setanta offer to do?",
+      "choices": ["Guard the smith's house himself in the hound's place", "Pay the smith the price of the hound in cattle", "Fight a champion in single combat to earn the smith's forgiveness", "Bring the smith the head of a wolf as recompense"],
+      "answer": "Guard the smith's house himself in the hound's place",
+      "context": "The boy kneels and offers to sit at the smith's gate every night in the hound's place until a new pup of the same line can be reared. This offer -- a boy taking on a war-dog's watch -- is what changes his name forever. Source: https://en.wikipedia.org/wiki/Culann",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Watching the boy make that offer, the druid Cathbad speaks the new name aloud -- and it sticks for the rest of the hero's life and for twelve centuries after. What is the new name Cathbad gives him?",
+      "choices": ["Cu Chulainn", "Fer Diad", "Conall Cernach", "Amergin the Bard"],
+      "answer": "Cu Chulainn",
+      "context": "Cu Chulainn means 'the Hound of Culann' -- the boy has become the smith's hound in fact and now in name. Fer Diad, Conall Cernach, and Amergin are all real Ulster-Cycle figures, but none of them is the boy at Culann's gate. Source: https://en.wikipedia.org/wiki/C%C3%BA_Chulainn",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "That same afternoon, before the incident at the gate, Cathbad the druid had been teaching his pupils outside Emain Macha and let fall a prophecy about any boy who took up arms as a warrior for the first time on that particular date. What twin fate did Cathbad foretell for such a boy?",
+      "choices": ["A short life but lasting fame", "A long reign and a peaceful death", "A wandering exile and a hidden grave", "A cursed madness and a silent tongue"],
+      "answer": "A short life but lasting fame",
+      "context": "The same paired-fate formula appears in Achilles's mother's prophecy in the Iliad (Greek pillar). In both traditions the hero KNOWS the deal and takes it anyway: fame for years, not years for the man. Source: https://en.wikipedia.org/wiki/C%C3%BA_Chulainn",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Overhearing Cathbad's prophecy, the seven-year-old boy runs to King Conchobar and demands to be given weapons that very day -- knowingly accepting the short life so he can claim the fame. What does the tale say the boy does the moment he hears the prophecy?",
+      "choices": ["Rushes to arm himself", "Runs back to his mother's house", "Falls silent for a full day", "Vows never to touch a weapon"],
+      "answer": "Rushes to arm himself",
+      "context": "He goes straight to Conchobar and asks for arms; the king gives him spear after spear until he finds a pair the boy cannot shatter with his grip. This is the first time in Irish myth we see the pattern that will define the hero: eyes open to the price, hands out for the sword. Source: https://en.wikipedia.org/wiki/C%C3%BA_Chulainn",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The tale of the hound of Culann is not a standalone story: it sits embedded in the great Ulster epic itself, told by exiled Ulstermen in the enemy queen's camp who are trying to explain to her exactly who this one boy is who has been stopping her army single-handed. Inside which epic is the Boyhood Deeds of Cu Chulainn nested as an inset tale?",
+      "choices": ["The Tain Bo Cuailnge", "The Book of Kells", "The Fenian Cycle", "The Voyage of Bran"],
+      "answer": "The Tain Bo Cuailnge",
+      "context": "The Macgnimrada Con Culaind ('The Boyhood Deeds of Cu Chulainn') is a set of inset tales that Fergus mac Roich, exiled from Ulster, narrates to Medb of Connacht inside the Tain. The Book of Kells is a Gospel manuscript, not a saga; the Fenian Cycle is a whole SEPARATE body of Irish myth about Fionn; the Voyage of Bran is an early Irish sea-tale of a different kind. Source: https://en.wikipedia.org/wiki/C%C3%BA_Chulainn",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the Ulster tradition Cu Chulainn has two fathers -- one mortal, one divine, a pattern the Irish repeat again and again for their great heroes. His mortal father is Sualtaim mac Roich, husband of Deichtine. Which of the gods is named as his divine father?",
+      "choices": ["Lugh Lamhfhada", "The Dagda", "Manannan mac Lir", "Nuada Silver-Arm"],
+      "answer": "Lugh Lamhfhada",
+      "context": "Lugh 'Long-Arm' (Lamhfhada) is the master-of-all-arts of the Tuatha De Danann and later comes down onto the battlefield to fight beside Cu Chulainn in the Tain. The Dagda is Lugh's father-in-law and lord of the cauldron; Manannan is the sea-god (father of Niamh); Nuada is the earlier king of the Tuatha with the silver arm. Source: https://en.wikipedia.org/wiki/C%C3%BA_Chulainn",
+      "legend": true
+    }
+  ]
+}

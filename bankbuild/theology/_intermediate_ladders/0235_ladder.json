@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "On New Year's Day at Camelot, King Arthur's court is at feast in the great hall when a huge stranger rides in on horseback. Everything about the man and the horse is one single startling colour -- his skin, his beard, his armour, and the horse under him are all the same shade. What colour is the strange rider who bursts into Arthur's court?",
+      "choices": ["green", "red", "black", "silver"],
+      "answer": "green",
+      "context": "Sir Gawain and the Green Knight, Fitt I lines 150-220. The Green Knight -- skin, beard, armour, and horse all green -- is one of the most striking single images in medieval literature. Red is the colour of a different Arthurian arrival (Galahad in his red armour at Pentecost); the Black Knight is a common romance figure; a silver rider is not a fixed medieval type.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The green stranger who rides into Camelot on New Year's Day is armed for the exchange he has come to propose. He holds two things at once as he stops before Arthur's high table -- a heavy weapon in one hand and a branch of an evergreen plant in the other, offered as a sign that he comes in peace. What weapon does the Green Knight carry?",
+      "choices": ["a great axe", "a long spear", "a broadsword", "a mace of iron"],
+      "answer": "a great axe",
+      "context": "Sir Gawain and the Green Knight, Fitt I lines 206-209. The Green Knight carries a huge axe in one hand and a bough of holly in the other -- the holly is the peace-sign, the axe is the game-piece. The whole story turns on which knight will use the axe on his neck. The spear, broadsword, and mace are the other standard knightly weapons of the poem's period but are not the tools of this particular game.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Green Knight proposes what he calls a Christmas game to Arthur's court. The rule is simple and terrible: any knight who takes up the axe may strike him one blow with it right now -- BUT that knight must swear on his honour to receive one return blow, at the Green Knight's hand, at a set time later. When must the return blow be given?",
+      "choices": ["a year and a day later", "on the very next dawn", "at the next Pentecost", "after seven summers"],
+      "answer": "a year and a day later",
+      "context": "Sir Gawain and the Green Knight, Fitt I. 'A year and a day' is the medieval formula for a full year's completion of an oath or a legal claim (used in English law of ownership, in fairy-tale, and here in the beheading game). The other three periods sound the part but do not match this poem.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The whole court is silent at the Green Knight's proposal. King Arthur himself starts to rise to take up the axe -- but his young nephew steps forward and asks his uncle's leave to take the game in the king's place. Which knight of the Round Table volunteers to strike the Green Knight?",
+      "choices": ["Sir Gawain", "Sir Lancelot", "Sir Percival", "Sir Kay"],
+      "answer": "Sir Gawain",
+      "context": "Sir Gawain and the Green Knight, Fitt I. Gawain -- son of King Lot of Orkney and Arthur's sister Morgause, and youngest of Arthur's chief knights -- takes the game to spare his uncle. Lancelot, Percival, and Kay are all present at the court in the wider Arthurian tradition but this poem makes Gawain its hero.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Gawain takes the axe and strikes off the Green Knight's head with a single stroke -- and something very strange then happens. The headless body does not fall. Instead it does one very deliberate thing before mounting its horse. What does the headless Green Knight do next?",
+      "choices": ["picks up its own severed head", "kneels and prays before the high altar", "sheds its green armour on the floor", "cuts off its own left hand at the wrist"],
+      "answer": "picks up its own severed head",
+      "context": "Sir Gawain and the Green Knight, Fitt I lines 435-459. The headless body walks calmly across the hall, lifts its own severed head from the flagstones by the hair, and mounts its horse. The head then OPENS ITS EYES and speaks aloud to Gawain from the Green Knight's own hand -- telling him to meet him a year hence.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Green Knight's severed head, held up in his own hand from horseback, opens its eyes and speaks to Gawain -- naming the place where Gawain must come, one year from that New Year's Day, to receive the return blow. What is the name of the meeting-place the Green Knight names?",
+      "choices": ["the Green Chapel", "the Perilous Ford", "the Waste Land", "Castle Adventurous"],
+      "answer": "the Green Chapel",
+      "context": "Sir Gawain and the Green Knight, Fitt I. The Green Chapel turns out to be no chapel at all but a low hollow mound with an opening in it in the northern wilderness -- an old barrow. The other three names sound the medieval-romance part (the Perilous Ford is a testing-place in Chretien, the Waste Land is the Grail-realm, Castle Adventurous is a Malory name) but the Green Knight names none of them.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "A year later Gawain rides north through the winter to keep his oath. On Christmas Eve he finds shelter in a fine castle in the wilds and is welcomed by its lord, a big red-faced hunter. The lord proposes a second game to fill the days until New Year's: while he goes out hunting each day, Gawain will rest at the castle, and each night the two men will exchange whatever each has won that day. What is the name of this lord?",
+      "choices": ["Bertilak", "Balin", "Bedivere", "Baudwin"],
+      "answer": "Bertilak",
+      "context": "Sir Gawain and the Green Knight, Fitt II-III. Sir Bertilak de Hautdesert is the lord of the castle. Balin is the tragic knight of the Dolorous Stroke in Malory. Bedivere is Arthur's last steward. Sir Baudwin of Britain is one of Arthur's Table but not this lord. The exchange-of-winnings game is Bertilak's own contribution.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "While Bertilak is out hunting each day, his own lady comes to Gawain's chamber and tries to seduce him. Gawain, courteous but resolved, refuses her bed but each night gives Bertilak the KISSES she pressed on him during the day. On the third day the lady also gives Gawain one particular gift -- and Gawain, terrified of the axe waiting for him tomorrow, keeps this gift secret and does NOT give it to Bertilak. What is the gift Gawain hides?",
+      "choices": ["a green girdle of silk", "a ring of red gold", "a phial of oil", "a lock of her hair"],
+      "answer": "a green girdle of silk",
+      "context": "Sir Gawain and the Green Knight, Fitt III. The lady swears the green silk girdle (a woven belt) will keep its wearer from being killed. Gawain, believing he will die at the axe tomorrow, wraps it around his waist under his armour and does NOT hand it to Bertilak that night. Rings and phials and locks of hair are the ordinary courtly-love gifts but the girdle is the one the poem uses.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On New Year's Day Gawain rides to the Green Chapel and finds the Green Knight sharpening the axe by a stream. Gawain bares his neck and kneels. The Green Knight swings the axe THREE times in all. The first swing he pulls up because Gawain flinched; the second he pulls up because Gawain kept still; only the third comes down. What does the third swing do to Gawain?",
+      "choices": ["nicks his neck and draws blood", "cuts off his ear on the left side", "breaks his collarbone but not the skin", "misses him entirely and on purpose"],
+      "answer": "nicks his neck and draws blood",
+      "context": "Sir Gawain and the Green Knight, Fitt IV lines 2260-2330. The third swing shaves the skin of Gawain's neck and just breaks it -- one small cut, one drop of blood. That single nick is the punishment for the one day Gawain hid the girdle from Bertilak. Had he kept the exchange bargain faithfully, the axe would have missed him entirely.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After the three swings the Green Knight reveals who he really is. The huge green stranger and Gawain's cheerful host of the last three days turn out to be the SAME man, transformed. He then names the enchantress who put him in green skin and sent him to Arthur's court in the first place, to test the honour of the whole Round Table. Who sent the Green Knight to Camelot?",
+      "choices": ["Morgan le Fay", "Nimue of the Lake", "Guinevere", "the Lady of the Lake"],
+      "answer": "Morgan le Fay",
+      "context": "Sir Gawain and the Green Knight, Fitt IV. Morgan le Fay -- Arthur's half-sister and a great mistress of enchantments -- shaped the whole scheme; Bertilak is her servant. The old woman Gawain saw beside the lady at the castle turns out to have been Morgan herself, watching in disguise. Nimue is Merlin's apprentice. Guinevere is Arthur's queen. The Lady of the Lake gave Excalibur.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Gawain rides back to Camelot in shame, wearing the silk girdle from the lady across his shoulder like a badge of the day he broke his oath. The court, however, does not shame him for it. Instead the whole fellowship of the Round Table takes up a matching sign of the same colour, to say that Gawain's failure and honesty stand for them all. What do the knights of Camelot begin to wear in Gawain's honour?",
+      "choices": ["a green sash across the shoulder", "a red cross on the breast", "a white feather in the helm", "a broken ring on the finger"],
+      "answer": "a green sash across the shoulder",
+      "context": "Sir Gawain and the Green Knight, Fitt IV closing lines. The knights adopt the green sash so Gawain will not stand alone in his mark of shame. The red cross on the breast belongs to the Crusader orders and to St George; the white feather is a much later English mark of cowardice; a broken ring is not this poem's sign.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Sir Gawain and the Green Knight survives in exactly ONE medieval manuscript, held today in the British Library. The same little book contains three other poems in the same Northwest Midlands dialect, all thought to be by the same unknown author -- Pearl, Cleanness, and Patience. What is the shelf-mark of that single manuscript?",
+      "choices": ["Cotton Nero A.x", "Cotton Vitellius A.xv", "Harley 2253", "Peterborough E.i"],
+      "answer": "Cotton Nero A.x",
+      "context": "The manuscript is British Library Cotton Nero A.x, from about 1400 -- part of the Cotton library named for its 17th-century collector Sir Robert Cotton, who catalogued his books by the bust of a Roman emperor that sat above each press. Cotton Vitellius A.xv holds the only manuscript of Beowulf. Harley 2253 holds many Middle English lyrics. Peterborough E.i is not a real Cotton shelf-mark. The anonymous author is called the 'Gawain-poet' or the 'Pearl-poet' after these poems.",
+      "legend": false
+    }
+  ]
+}

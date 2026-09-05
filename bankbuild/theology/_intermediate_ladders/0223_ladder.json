@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse Volsunga Saga, an old king dies in battle when his sword shatters against a stranger's spear -- and he tells his young wife to keep the pieces for their unborn son. What is the name of this shattered sword that will one day be reforged?",
+      "choices": ["Gram", "Tyrfing", "Skofnung", "Hrunting"],
+      "answer": "Gram",
+      "context": "Volsunga Saga chapters 11-12; 15. Gram is the great sword of the Volsung line -- pulled out of the tree Barnstokk by King Sigmund, shattered against Odin's spear, and reforged for Sigurd. Tyrfing is the cursed dwarf-sword of the Hervarar saga. Skofnung is the sword of the legendary Danish king Hrolf Kraki. Hrunting is the sword Unferth lends to Beowulf for the fight with Grendel's mother. All four are named hero-swords of the Germanic legend-cycle -- Gram is the specific reforged one.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The young hero who will inherit Gram grows up to become the greatest hero of the Norse legend-cycle -- the same hero the Germans call Siegfried, whose story Wagner set to music. What is the Norse name of Siegfried?",
+      "choices": ["Sigurd", "Sigmund", "Sinfjotli", "Signy"],
+      "answer": "Sigurd",
+      "context": "Volsunga Saga chapters 13-15. Sigurd (Old Norse) is Siegfried (German). Sigmund is Sigurd's father, the shattered-sword king. Sinfjotli is Sigmund's son by his own sister Signy, and Signy is Sigmund's twin sister. All four are Volsungs -- the specific dragon-slayer of the next generation is Sigurd.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In his last battle King Sigmund is winning easily until an old man in a hooded cloak with a broad-brimmed hat steps out of the battle-line and blocks his next stroke with the weapon he carries. What is the weapon that this old stranger uses to shatter Gram?",
+      "choices": ["a spear", "an axe", "a shield", "a longsword"],
+      "answer": "a spear",
+      "context": "Volsunga Saga chapter 11. The old man in the hooded cloak with a broad-brimmed hat is Odin himself in his wanderer's disguise, and the spear he carries is Gungnir -- the same spear he will one day take to Ragnarok. Sigmund's sword shatters against it. Sigmund has been Odin's favourite for a lifetime; the moment Odin turns up on the battlefield with the spear is the moment Sigmund knows the god's favour is spent.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the smithy at King Hjalprek's court, Sigurd is fostered by an old and cunning smith who has a secret purpose in raising him: a brother of his own who long ago transformed into a dragon and now guards a cursed hoard, and whom the smith wants Sigurd to kill. What is the name of Sigurd's foster-father?",
+      "choices": ["Regin", "Andvari", "Alberich", "Wayland"],
+      "answer": "Regin",
+      "context": "Volsunga Saga chapter 14; Reginsmal prose introduction. Regin is the smith-brother of the dragon Fafnir and the foster-father of Sigurd. Andvari is the dwarf whose gold-hoard Regin and Fafnir stole in the first place (the cursed treasure). Alberich is the Nibelung dwarf of Wagner's opera -- an adjacent figure in the German retellings, but the Norse foster-father is Regin. Wayland is the great smith of another Germanic saga (Volundarkvida).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the smithy, before Sigurd ever asks for his father's broken pieces, his foster-father makes him not one but two brand-new swords. Sigurd swings each new sword once against the smithy's anvil to test it. What happens each time?",
+      "choices": ["the sword shatters at the first blow", "the blade sticks fast in the iron", "the blade bends into a curve", "the sword rings out with a clear note"],
+      "answer": "the sword shatters at the first blow",
+      "context": "Volsunga Saga chapter 15. Regin makes Sigurd two brand-new swords in turn; each shatters against the anvil on the first swing. Only after those two failures does Sigurd go to his mother Hjordis and ask for the pieces of Gram.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After the two brand-new swords shatter against the anvil, Sigurd goes to his mother and asks her for the shards of the sword his father died holding. What is the name of Sigurd's mother, who gives him the pieces of Gram?",
+      "choices": ["Hjordis", "Signy", "Grimhild", "Brynhild"],
+      "answer": "Hjordis",
+      "context": "Volsunga Saga chapters 12 and 15. Hjordis is Sigmund's young wife, who caught the shards on the battlefield and carried them with her when she remarried. Signy is Sigmund's sister and mother of Sinfjotli. Grimhild is the queen of the Nibelungs who later gives Sigurd a drink of forgetfulness. Brynhild is the valkyrie he will one day awaken -- his fated love. Hjordis is the specific keeper of the shards.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The old smith takes the shards of the dead king's sword, melts them down, and hammers the metal out into a single new blade. When Sigurd swings the reforged blade against the smithy's anvil, what happens to the anvil?",
+      "choices": ["it is cloven in two down to its foundations", "it rings with a note heard for a league", "it glows red without being heated", "it splits into three equal pieces"],
+      "answer": "it is cloven in two down to its foundations",
+      "context": "Volsunga Saga chapter 15. The reforged Gram cleaves the anvil clean in two, down to the foundations -- exactly the reverse of the two brand-new swords that shattered against the same anvil earlier. The anvil-cleaving is a Germanic story-motif for 'this sword is not like the others'; Beowulf's sword Naegling gets a similar test in its own poem.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The anvil-cleaving is not the only proof Sigurd gives the reforged blade. In a second test he uses a lock of wool -- one of the softest things a Norse farmstead has -- to prove that the new sword is sharp as well as hard. What is the wool-test of Gram?",
+      "choices": ["the current floats a lock of wool onto the still blade and it parts in two", "a lock of wool is wound round the blade and set alight without singeing the metal", "a lock of wool is drawn along the edge and unravels into single threads", "a lock of wool is laid on the blade and burns without kindling a flame"],
+      "answer": "the current floats a lock of wool onto the still blade and it parts in two",
+      "context": "Volsunga Saga chapter 15. Sigurd holds Gram edge-up in the current of the river and throws a lock of wool into the water upstream; the wool drifts against the motionless blade and is cut in half by the flow. Between the anvil-cleaving and the wool-in-the-river, Gram is proven to be the sharpest and hardest sword in the North. Every fairy-tale about a magic sword that can 'cut a drifting hair on the wind' descends from this scene.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Centuries after the Volsunga Saga was set down, a German composer retold the reforging of the shattered sword as the climax of Act I of the middle opera of his four-opera cycle -- but he gave the sword a different name. What did Wagner call the reforged sword in his Ring cycle?",
+      "choices": ["Nothung", "Balmung", "Grimming", "Wittestein"],
+      "answer": "Nothung",
+      "context": "Richard Wagner, Siegfried, Act I (Der Ring des Nibelungen). Wagner renamed Gram as Nothung ('need-sword') and made the reforging-scene one of the most famous moments in the whole Ring cycle -- Siegfried hammers the shards on the anvil while singing 'Nothung! Nothung!' Balmung is what Siegfried's sword is called in the earlier Middle High German Nibelungenlied. Grimming and Wittestein are named swords in still-other German heroic poems. Wagner's name for it is Nothung.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "An English scholar-novelist writing in the twentieth century openly borrowed the shattered-and-reforged sword story for his own epic, in which a broken king's-sword is remade for the true heir on the eve of a great war. Who reworked Gram's story as the sword Anduril in his fantasy epic?",
+      "choices": ["J. R. R. Tolkien", "C. S. Lewis", "T. H. White", "William Morris"],
+      "answer": "J. R. R. Tolkien",
+      "context": "J. R. R. Tolkien, The Lord of the Rings; Tom Shippey, The Road to Middle-Earth. Tolkien was a professor of Anglo-Saxon and read the Volsunga Saga in the original -- Anduril, reforged from the shards of Narsil for Aragorn, is his deliberate homage to Gram reforged for Sigurd. C. S. Lewis wrote Narnia (no reforged sword). T. H. White retold Arthur (The Once and Future King). William Morris translated the Volsunga Saga into English in 1870 but did not write a fantasy epic of his own with a reforged sword. Tolkien is the specific borrower.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Old Norse noun that gives the sword Gram its name is a plain word for something a man in a saga is very often described as -- something that will come in useful on the way to the dragon. What does the Norse word 'gram' mean?",
+      "choices": ["wrath", "song", "gift", "oath"],
+      "answer": "wrath",
+      "context": "Volsunga Saga chapter 15; Cleasby-Vigfusson Icelandic-English Dictionary. Old Norse 'gramr' means angry or fierce, and as a noun means a wrathful man -- a king or warrior. Names like Skofnung (a rare word for a shave-tool), Tyrfing (of the Tervingi tribe), and Hrunting (from a root meaning 'thrust') are the sort of concrete names a Norse sword typically bore. Gram's name is 'wrath' -- fitting for the sword that killed the greatest dragon of the North.",
+      "legend": true
+    }
+  ]
+}

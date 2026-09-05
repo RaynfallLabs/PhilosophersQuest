@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the harvest-and-sunshine god of the Vanir owns a chariot pulled by a shining beast forged of solid gold. That god is Freyr, twin brother of Freyja. What animal draws Freyr's chariot?",
+      "choices": ["a boar", "a stag", "a bull", "a lion"],
+      "answer": "a boar",
+      "context": "Snorri, Skaldskaparmal 43 and Gylfaginning 49: Freyr's mount is a golden boar. Boars were sacred to Freyr in the Viking age -- warriors wore boar-crested helmets called hildisvin, and roast boar was offered at midwinter feasts in his honour. Freyja rides a chariot pulled by cats, and also has her own separate boar Hildisvini.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Freyr the god of harvest and sunshine belongs to a family of gods separate from Odin's family of the Aesir -- his people arrived in Asgard as hostages after the first war of the gods. Which family of gods does Freyr come from?",
+      "choices": ["the Vanir", "the Aesir", "the Jotnar", "the Alfar"],
+      "answer": "the Vanir",
+      "context": "Snorri, Gylfaginning 24: Freyr, his sister Freyja, and their father Njord are the three Vanir gods who came to live in Asgard after the Aesir-Vanir war. The Aesir are Odin's family. The Jotnar are the giants. The Alfar are the light-elves of Alfheim, which Freyr was given as a tooth-gift when he cut his first tooth.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Freyr's shining boar was forged in a wager between Loki and two dwarf brothers. One brother worked the anvil, the other pumped the bellows. Loki turned himself into a biting fly and stung the bellows-brother's hand, but the dwarf kept pumping. Which pair of dwarves made the golden boar?",
+      "choices": ["Sindri and Brokkr", "the Sons of Ivaldi", "Fjalar and Galar", "Nordri and Sudri"],
+      "answer": "Sindri and Brokkr",
+      "context": "Snorri, Skaldskaparmal 43: Sindri (also called Eitri) at the anvil, Brokkr at the bellows. The Sons of Ivaldi were a rival dwarf-team who made Odin's spear and Sif's golden hair. Fjalar and Galar are the two dwarves who murdered Kvasir to brew the Mead of Poetry. Nordri and Sudri are the two dwarves holding up the sky.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The two dwarves make the golden boar in a strange way: instead of gold and iron, they throw one specific animal skin into the forge-fire and pump the bellows until it grows into the finished beast. What did the dwarves throw into the fire to make Freyr's boar?",
+      "choices": ["a pigskin", "an ox-hide", "a wolfskin", "a bearskin"],
+      "answer": "a pigskin",
+      "context": "Snorri, Skaldskaparmal 43: Sindri 'laid a pigskin into the fire and ordered Brokkr to blow, and did not stop the work until he took out of the forge that which he had laid in -- a boar with mane and bristles of gold.' The image of a pigskin becoming a golden boar is one of Snorri's most vivid smithing scenes.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri says the marvellous thing about Freyr's boar is not just that it is gold, but that its very bristles shine so brightly that no night is ever dark where the boar runs. What did the golden bristles do for Freyr as he rode?",
+      "choices": ["they lit up the way like a lantern", "they whispered warnings of coming enemies", "they turned aside any spear-thrust", "they scattered gold coins as he rode"],
+      "answer": "they lit up the way like a lantern",
+      "context": "Snorri, Skaldskaparmal 43: the boar's mane shines so bright that 'no night or gloomy region could be so dark that there was not sufficient light where he went.' Freyr never rides in darkness. The boar carries its own daylight with it -- a wandering sun.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Freyr's golden boar has a second name besides the one meaning 'gold-bristled'. Snorri also calls it by a name that boasts about its dangerous tusks -- 'cutting-tusk' or 'fearsome tooth'. What is the second name of Freyr's boar?",
+      "choices": ["Slidrugtanni", "Hildisvini", "Saehrimnir", "Freki"],
+      "answer": "Slidrugtanni",
+      "context": "Snorri, Skaldskaparmal 43: the boar is called both Gullinbursti ('gold-bristled') and Slidrugtanni ('cutting-tusk'). Hildisvini ('battle-swine') is Freyja's separate boar. Saehrimnir is the boar cooked and eaten every night in Valhalla and reborn every morning. Freki is one of Odin's two wolves.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri says the golden boar can carry Freyr not only over the land but through two other elements just as fast as any horse -- faster, in fact, than any horse alive. Over which pair of elements can the boar run at full speed?",
+      "choices": ["sea and air", "fire and stone", "ice and cloud", "root and bone"],
+      "answer": "sea and air",
+      "context": "Snorri, Skaldskaparmal 43: Freyr's boar 'runs through the air and over the sea better than any horse.' The boar is one of the Norse cosmos's few land-sea-sky mounts, alongside Odin's eight-legged horse Sleipnir and Freyr's own folding ship Skidbladnir.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When the shining god Baldr is killed by a mistletoe dart and his body laid on the great ship Hringhorni to burn on the shore, the gods come from every direction to the funeral. Freyr rides down to the beach on his chariot, and Snorri names the beast pulling him at that funeral. What beast draws Freyr's chariot to Baldr's pyre?",
+      "choices": ["the golden boar Gullinbursti", "the eight-legged horse Sleipnir", "the ram of Thor's chariot", "the great cats of Freyja"],
+      "answer": "the golden boar Gullinbursti",
+      "context": "Snorri, Gylfaginning 49: 'Freyr drove in a chariot with the boar called Gullinbursti or Slidrugtanni.' Sleipnir is Odin's eight-legged horse. Thor's chariot is pulled by two goats, Tanngrisnir and Tanngnjostr. Freyja's chariot is drawn by two great cats. Baldr's funeral is where every family of the gods rolls out its signature mount.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At Ragnarok Freyr goes down fighting the fire-giant Surt, but Snorri says he fights weaponless -- he has no proper sword of his own to swing, because he gave it away years before to a messenger who won him a bride. To whom did Freyr trade away his self-swinging sword?",
+      "choices": ["his servant Skirnir", "his father Njord", "his sister Freyja", "the dwarf Brokkr"],
+      "answer": "his servant Skirnir",
+      "context": "Snorri, Gylfaginning 37 and 51: Freyr saw the giantess Gerd from Odin's high seat and fell in love. He sent his servant Skirnir south to woo her, paying him with the magical sword that fought giants on its own. At Ragnarok Freyr faces Surt bare-handed and dies -- one of the loudest 'name your price' regrets in Norse myth.",
+      "legend": true
+    }
+  ]
+}

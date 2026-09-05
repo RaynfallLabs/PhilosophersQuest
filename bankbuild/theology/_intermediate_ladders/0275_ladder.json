@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Irish myth a Tuatha De figure named Lir lost his first wife and married her sister to be a mother to his four small children. The new stepmother grew jealous of how much Lir loved the children and, striking them with a druid's rod on the edge of a lake, turned all four of them into something. Into what shape did the stepmother turn Lir's four children?",
+      "choices": ["swans", "hares", "stags", "seals"],
+      "answer": "swans",
+      "context": "This is the opening of Oidheadh Chlainne Lir ('The Fate of the Children of Lir'), one of the great tragic tales of medieval Ireland. Aoife, the second wife, transforms the four children at Loch Dairbhreach (Lake Derravaragh) in modern County Westmeath. Swans in Irish myth are almost always a shape of the enchanted or the mourning; this story is why the Irish will not shoot a swan to this day.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The daughter of Lir was the eldest of the four children and would spend nine hundred years as a swan protecting her three brothers. She is one of the most beloved figures in Irish myth, and the Oisin Kelly bronze in the Garden of Remembrance in Dublin shows her rising in swan-shape with her brothers beside her. What is the name of Lir's daughter?",
+      "choices": ["Fionnuala", "Deirdre", "Etain", "Grainne"],
+      "answer": "Fionnuala",
+      "context": "Fionnuala is the eldest child of Lir and Aoibh, sister to Aodh, Fiacra, and Conn. Deirdre is the sorrow-figure of the Ulster cycle (the Children of Uisneach). Etain is the swan-maiden of Tochmarc Etaine, a different tale. Grainne is the woman who elopes with Diarmuid in the Fionn cycle.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Lir's first wife had died bearing their children, and to comfort him and mother the little ones he married her sister. She started as a good stepmother, but jealousy of the children's place in Lir's heart grew in her until she took them out to the lake with a druid's rod. What is the name of the jealous stepmother-sister?",
+      "choices": ["Aoife", "Boann", "Medb", "Sadhbh"],
+      "answer": "Aoife",
+      "context": "Aoife (EE-fa) is the sister of Lir's dead first wife Aoibh. Boann is the goddess of the River Boyne, mother of Aengus. Medb is the queen of Connacht in the Ulster cycle Tain. Sadhbh is Fionn mac Cumhaill's deer-wife, mother of Oisin -- also a shape-shifting story, but a different one.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The druid's rod took away the children's human shape, but Aoife's power could not reach two other things -- two human gifts that stayed inside the swan-bodies for the whole length of the curse, so that Lir himself could still recognise his own children when he found them on the water. Which two human gifts did the four keep as swans?",
+      "choices": ["their voices and their minds", "their eyes and their tears", "their hands and their shadows", "their names and their scent"],
+      "answer": "their voices and their minds",
+      "context": "In every telling of Oidheadh Chlainne Lir the four kept human speech and human reason inside the swan-shape -- Fionnuala could still tell her father Lir what Aoife had done, and the four could still sing plaintive songs that were said to be the sweetest in Ireland. Only the bodies were changed.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The curse Aoife laid on the four children was not one wandering exile but a set number of them, and it lasted an enormous stretch of time -- so long that all who had known the children as children were dead many times over before it ended. How long in total did Aoife's curse last?",
+      "choices": ["nine hundred years", "one hundred years", "twelve years", "fifty years"],
+      "answer": "nine hundred years",
+      "context": "The curse lasted nine hundred years in total, divided into three periods of three hundred: first on the peaceful Lake Derravaragh in Westmeath; then on the cold Sea of Moyle between Ireland and Scotland; then on the wild Atlantic off the Isle of Inishglora in the west. Only after all nine centuries would the conditions of the curse's ending come together.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The second three-hundred-year exile was the hardest. The four had to leave the calm lake in Westmeath and fly to the sea-channel between Ireland and Scotland, the roughest of all Irish waters, where they were battered by storms and freezing spray. What is the name of that middle sea-exile?",
+      "choices": ["the Sea of Moyle", "the Bay of Bantry", "the Shannon Estuary", "Lough Neagh"],
+      "answer": "the Sea of Moyle",
+      "context": "Sruth na Maoile, the Sea of Moyle, is the narrow strait between the north-east coast of Antrim and the Mull of Kintyre in Scotland -- notorious for hard weather. Bantry Bay is in the far south-west of Ireland. The Shannon Estuary is the great western river-mouth. Lough Neagh is Ireland's largest inland lake. The middle exile is always specifically the Moyle.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On the Sea of Moyle the four suffered three centuries of cold and storm, and the eldest child did one thing for the three younger ones every hard night that has kept her the emblem of Irish sisterhood ever since. What did Fionnuala do for her three brothers on the freezing Moyle?",
+      "choices": ["sheltered them beneath her wings against the spray", "sang the psalms she remembered from Lir's hall", "led them south each night to warmer water", "wove a nest of driftwood to hold them together"],
+      "answer": "sheltered them beneath her wings against the spray",
+      "context": "In every version of the tale Fionnuala, the eldest, wraps her three brothers under her outstretched wings on the black nights of the Moyle, warming them against the freezing sea-spray. That single image -- the sister sheltering her brothers -- is the emotional heart of the tale and the reason the Oisin Kelly sculpture stands in the Garden of Remembrance in Dublin as an emblem of Irish sisterly and national protection.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The curse was not left open-ended. Aoife set two very specific conditions -- both had to come true in the same hour before the swan-shape would fall away. Which pair of conditions did Aoife lay for the curse to break?",
+      "choices": ["a woman of the south marries a man of the north, and Christian bells ring over Ireland", "the moon is full over the sea three nights running, and a swan is killed by an eagle", "a druid drinks from the well of Segais, and a stag is seen at dawn beside it", "the High King is crowned on the Tara stone, and a raven speaks aloud in his hall"],
+      "answer": "a woman of the south marries a man of the north, and Christian bells ring over Ireland",
+      "context": "The two conditions in the Aoife-curse: a woman of the south (Munster) must marry a man of the north (Connacht), and the bells of Christianity must sound across Ireland. Both come true at once when the hermit Mochaomhog rings his monastery-bells on the western island of Inishglora and news comes of the Munster-Connacht royal marriage. The curse breaks in the same hour.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When at last the bells of a hermit rang out on Inishglora and the curse broke, the four swans changed back into human shape on the shore. What kind of human bodies stood there in the moment the feathers fell away?",
+      "choices": ["ancient shrunken bodies, lean and bony", "young adults just as Lir had first known them", "little children the same age Aoife had cursed", "shining figures of light without weight"],
+      "answer": "ancient shrunken bodies, lean and bony",
+      "context": "The transformation back into human shape ages them all nine centuries in an instant: the swans' feathers fall off to reveal three lean, bony old men and one old woman. Mochaomhog baptises them in that last hour, and they die and are buried together, Fionnuala in the middle with her three brothers under her arms as she had sheltered them on the Sea of Moyle.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Medieval Irish tradition grouped 'The Fate of the Children of Lir' with two other tragic tales -- 'The Fate of the Children of Uisneach' (Deirdre) and 'The Fate of the Children of Tuireann' -- as a specific set of three. What is the name of that traditional set of three?",
+      "choices": ["the Three Sorrows of Storytelling", "the Three Chariots of Ulster", "the Three Ravens of the Morrigan", "the Three Cauldrons of Poetry"],
+      "answer": "the Three Sorrows of Storytelling",
+      "context": "Tri Truaighe na Scealaigheachta -- the Three Sorrows of Storytelling -- is the medieval Irish grouping of the three great tragic tales. The Cauldrons of Poesy is a real early Irish text on inspiration but a separate thing. The Ravens of the Morrigan is not a fixed group. The Three Chariots of Ulster is invented. Every Irish schoolchild for a century has been taught the Three Sorrows: Lir, Uisneach (Deirdre), Tuireann.",
+      "legend": false
+    }
+  ]
+}

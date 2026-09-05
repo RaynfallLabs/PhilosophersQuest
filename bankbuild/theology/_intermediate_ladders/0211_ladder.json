@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Long before the hero Sigurd was born, three Norse gods were travelling together through Midgard when they stopped to rest at a waterfall. One of the three was Odin himself. Another was Honir. Who was the third god of the travelling company, the one who would throw the stone that started all the trouble?",
+      "choices": ["Loki", "Thor", "Tyr", "Freyr"],
+      "answer": "Loki",
+      "context": "Volsunga Saga ch. 14 and Reginsmal prose: the three travellers are Odin, Honir, and Loki. Thor is off in Jotunheim in most of Snorri's tales; Tyr belongs to the Fenrir story; Freyr is a Vanir god who rarely walks with Odin. Loki is the trouble-starter in this cycle.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "At the foot of the waterfall Odin, Loki, and Honir spotted a small brown animal on the bank eating a salmon it had just caught. Loki picked up a stone and killed the creature with a single throw. What kind of animal did Loki kill at the waterfall?",
+      "choices": ["an otter", "a heron", "a beaver", "a fox"],
+      "answer": "an otter",
+      "context": "Volsunga Saga ch. 14: the animal is an otter. Herons, beavers, and foxes were all known creatures of Norse country, but the specific animal in this story is the otter -- because it was really a man in otter-shape, as the gods will discover that night.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The three gods skinned the otter, took the pelt with them, and stopped for the night at the house of a wizard. The wizard took one look at the pelt and burst into grief -- the animal Loki had killed was actually his own son, who fished in that river in otter-shape by day. What is the name of the wizard whose son Loki had killed?",
+      "choices": ["Hreidmar", "Andvari", "Mimir", "Volund"],
+      "answer": "Hreidmar",
+      "context": "Volsunga Saga ch. 14: the wizard is Hreidmar. His shape-shifting son is named Otr. Andvari is a different dwarf altogether, whose ring will enter the story soon. Mimir is the guardian of the well of wisdom. Volund is the smith-hero of his own Eddic poem.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Hreidmar's TWO SURVIVING SONS seized Odin, Loki, and Honir at the door and held them prisoner until a blood-price could be paid for their dead brother. Name the two brothers who seized the gods -- the pair whose names run through the whole Volsung cycle to come.",
+      "choices": ["Fafnir and Regin", "Sindri and Brokkr", "Fjalar and Galar", "Baldr and Hodr"],
+      "answer": "Fafnir and Regin",
+      "context": "Volsunga Saga ch. 14: Hreidmar's surviving sons are Fafnir and Regin. Sindri and Brokkr are the dwarves who forged Mjolnir; Fjalar and Galar murdered Kvasir for the Mead of Poetry; Baldr and Hodr are Odin's own sons in Asgard, not Hreidmar's.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Hreidmar named the ransom for his son's death, and it was one of the strangest weregild-prices in Norse legend. He did not ask for a weight of gold or a chest of it. He asked for exactly enough gold to do one specific thing to the otter's pelt. What did the gold have to do to the pelt to satisfy Hreidmar's price?",
+      "choices": ["stuff the pelt full and cover it inside and out", "line the outside of the pelt in a single layer", "match the weight of the pelt on a balance", "form a pile as tall as the pelt stretched upright"],
+      "answer": "stuff the pelt full and cover it inside and out",
+      "context": "Volsunga Saga ch. 14: Hreidmar's price was gold enough to fill the otter-pelt from the inside and cover it from the outside. It is not a weight-price or a height-price. That specific shape -- gold conforming to the dead son's body -- is what makes the scene so eerie, and what will trap Odin with the last of the ransom.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The gods sent Loki -- who had thrown the stone in the first place -- to find that much gold. Loki went to a waterfall where a dwarf lived alone in the pool below. He caught the dwarf and made him give up his whole treasure. What is the name of the dwarf whose gold Loki took?",
+      "choices": ["Andvari", "Alviss", "Alberich", "Sindri"],
+      "answer": "Andvari",
+      "context": "Volsunga Saga ch. 14: the dwarf is Andvari, and his hoard is the treasure of the whole Volsung cycle. Alviss is the all-wise dwarf whom Thor talks to death at dawn. Alberich is the name Wagner GAVE this same dwarf in Das Rheingold seven centuries later, but Andvari is his Norse name. Sindri forged Mjolnir with his brother Brokkr.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Loki came for the dwarf's gold, the dwarf tried to hide from him inside his own pool by turning himself into another animal that could disappear in the water. What form was Andvari in when Loki caught him at the waterfall?",
+      "choices": ["a fish", "a frog", "an eel", "a swan"],
+      "answer": "a fish",
+      "context": "Volsunga Saga ch. 14: Andvari was in the shape of a fish (a pike, in most tellings). Loki caught him in a net borrowed from the goddess Ran, who used the same net to drown drowning sailors. Frogs and eels and swans do not appear in the story.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Andvari surrendered his whole hoard to Loki, but he tried to keep back a single small band of gold, hoping Loki would not notice. Loki spotted it and took it too. This one ring has its own name in the Volsung cycle, and it is the ring that will destroy every person who ever owns it. By what name does Norse legend call that ring?",
+      "choices": ["Andvaranaut", "Draupnir", "the One Ring", "the Nibelung Ring"],
+      "answer": "Andvaranaut",
+      "context": "Volsunga Saga ch. 14 and Reginsmal prose: the ring is Andvaranaut, which means 'Andvari's gift.' Draupnir is Odin's arm-ring, which drips eight new rings every ninth night. The 'One Ring' is Tolkien's rename in The Lord of the Rings, and the 'Nibelung Ring' is Wagner's rename in Das Rheingold -- both directly inspired by Andvaranaut, but Andvaranaut is the Norse original.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As the ring left his hand, Andvari SPOKE ALOUD over it -- one of the most-quoted curse-lines in all Norse poetry (Reginsmal 4). He did not curse only the ring; he cursed the ring AND the whole hoard together. What did Andvari's curse promise would happen to whoever owned the ring?",
+      "choices": ["it would be the death of whoever owned it", "it would blind whoever looked at it", "it would turn whoever wore it into a slave", "it would burn whoever touched it to ashes"],
+      "answer": "it would be the death of whoever owned it",
+      "context": "Reginsmal 4: 'This ring, and all this gold with it, shall be the death of whoever owns it.' Andvari's curse-line is one of the most-quoted in Norse poetry. It is close enough to Tolkien's curse-language on the One Ring that scholars flag the influence -- Andvari's ring is a direct ancestor of Sauron's ring.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Loki brought the treasure back to Hreidmar and helped cover the otter-pelt with gold. Odin tried to keep Andvaranaut for himself, hidden in his fist. But Hreidmar walked around the pelt inspecting the payment and refused to accept the ransom because of ONE thing he could still see. What did Hreidmar see on the pelt that made him demand more gold?",
+      "choices": ["one otter-whisker still showing", "one otter-tooth still showing", "one otter-claw still showing", "one otter-eye still showing"],
+      "answer": "one otter-whisker still showing",
+      "context": "Volsunga Saga ch. 14: a single whisker of the otter-pelt was still visible above the gold. Hreidmar refused to release the gods until it was covered. Odin was forced to give up Andvaranaut to cover the last whisker -- and so the ring, and the curse, passed to Hreidmar.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The curse began working before the gods had even ridden out of the yard. That very same night the wizard Hreidmar was stabbed to death in his sleep, and one figure took the whole hoard alone and drove the surviving kin off empty-handed. Who killed Hreidmar the first night the cursed gold sat in his hall?",
+      "choices": ["his own son Fafnir in a rage", "his own son Regin in a rage", "the dwarf Andvari come for revenge", "the god Loki come back for the ring"],
+      "answer": "his own son Fafnir in a rage",
+      "context": "Volsunga Saga ch. 14 and Reginsmal prose: Fafnir murdered his own father in the night, drove Regin off, and took the whole treasure to himself. Regin will later plot twenty years of revenge. Andvari never leaves his waterfall. Loki does not come back for the ring -- he is out of the story once the ransom is paid. The curse claims its first life within a day of leaving Andvari's hand.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Fafnir carried the entire hoard -- ring included -- to a lonely heath called Gnitaheid and settled down there alone. Over years of guarding the treasure, gold-greed slowly changed him into something no god or man could kill without a plan. What did Fafnir gradually turn himself INTO to guard the cursed gold on Gnitaheid?",
+      "choices": ["a dragon", "a wolf", "a stone giant", "an eagle"],
+      "answer": "a dragon",
+      "context": "Volsunga Saga ch. 14: Fafnir became a dragon (in Old Norse ormr, sometimes translated 'serpent' or 'worm'). Wolves belong to Fenrir; stone giants to Hrungnir; the eagle at Gnitaheid is a different figure. Regin will spend twenty years plotting revenge and eventually foster the boy Sigurd, who will kill the dragon Fafnir with the sword Gram -- and take the cursed ring for himself, and die of it too.",
+      "legend": true
+    }
+  ]
+}

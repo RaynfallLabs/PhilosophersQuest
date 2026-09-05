@@ -1,0 +1,68 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the popular Robin Hood tradition, one noblewoman leaves her home and family to live with the outlaws in Sherwood Forest and becomes Robin's beloved. She has been played on stage and screen for centuries. What is her name?",
+      "choices": ["Maid Marian", "Lady Guinevere", "Nimue of the Lake", "Fair Rosamund"],
+      "answer": "Maid Marian",
+      "context": "Maid Marian is Robin Hood's sweetheart in the popular tradition. Guinevere belongs to the Arthur legend. Nimue is the Lady of the Lake in Arthur. Fair Rosamund was the historical mistress of Henry II -- often confused with Marian, but a separate figure.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Robin Hood's outlaw band lives in a single named English forest, and it is here that Maid Marian is said to join them. In which English forest is the whole outlaw band based?",
+      "choices": ["Sherwood Forest", "the New Forest", "the Forest of Dean", "Epping Forest"],
+      "answer": "Sherwood Forest",
+      "context": "Sherwood Forest in Nottinghamshire is the traditional home of the Merry Men. The New Forest was created by William the Conqueror. The Forest of Dean lies on the Welsh border. Epping Forest is in Essex, north-east of London.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Here is the surprise the modern films leave out. If you go back to the oldest Robin Hood ballads -- A Gest of Robyn Hode, Robin Hood and the Monk, Robin Hood and Guy of Gisborne -- and look for Maid Marian by name, how often does she appear in those three earliest ballads?",
+      "choices": ["not once", "in all three", "only in the Gest", "only in Guy of Gisborne"],
+      "answer": "not once",
+      "context": "Maid Marian is never mentioned in any of the earliest extant Robin Hood ballads. The only woman in the Gest is the villainous Prioress of Kirklees, who eventually causes Robin's death. Marian is a much later addition to the legend.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In A Gest of Robyn Hode -- the great early ballad, and the oldest long Robin Hood text -- exactly one woman appears with a role in the story, and she is not a beloved: she is the villainess who eventually causes Robin's death. Who is the only named woman in the Gest?",
+      "choices": ["the Prioress of Kirklees", "Maid Marian", "the Queen of the May", "the Sheriff's wife"],
+      "answer": "the Prioress of Kirklees",
+      "context": "In the Gest, the Prioress of Kirklees is the one woman with a role: she bleeds Robin to death under the pretence of a medicinal blood-letting. Marian does not appear at all in the Gest. The May-Queen belongs to the folk games. The Sheriff has no named wife in the ballads.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The character of Marian did not come out of the Robin Hood ballads at all. She came out of a completely different French tradition -- the pastourelle, a song-form about knights meeting shepherdesses -- and around 1283 a poet in Arras named her the shepherdess of a musical play that is called the first non-religious French musical drama. Who wrote that play?",
+      "choices": ["Adam de la Halle", "Chretien de Troyes", "Marie de France", "Wolfram von Eschenbach"],
+      "answer": "Adam de la Halle",
+      "context": "Adam de la Halle wrote Le Jeu de Robin et Marion around 1283, dramatizing the pastourelle where a shepherdess named Marion resists a knight and returns to her shepherd-lover Robin. Chretien wrote the Arthurian romances. Marie de France wrote the lais. Wolfram wrote Parzival.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The French pastoral of the shepherdess Marion and her lover Robin crossed the Channel and took root in one particular English folk festival, where a village crowned its own Marian and paired her with a Robin. Which yearly English festival adopted them as its King and Queen?",
+      "choices": ["the May-Day games", "the Twelfth-Night revels", "Michaelmas fair", "Plough Monday"],
+      "answer": "the May-Day games",
+      "context": "In the English May-Day games a village girl was crowned May Queen and called Marian, paired with a village boy playing Robin. Twelfth Night and Plough Monday had their own customs (the Lord of Misrule; the plough-blessing). Michaelmas was a rent day, not a Marian festival.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "For a long time the May-games Marian and the outlaw Robin Hood remained separate figures. In 1598 and 1601, one English playwright wrote a pair of plays -- The Downfall and The Death of Robert, Earl of Huntingdon -- that finally married Marian off to Robin, made her a full outlaw of Sherwood, and fixed the pair together in the way we know today. Who was that playwright?",
+      "choices": ["Anthony Munday", "Christopher Marlowe", "Ben Jonson", "Thomas Kyd"],
+      "answer": "Anthony Munday",
+      "context": "Anthony Munday's two plays (1598, 1601) established Marian as Robin's noble beloved and outlaw partner. In Munday's version her true name is Matilda; she takes 'Marian' on joining Robin in the greenwood. Marlowe wrote Faustus. Jonson wrote Volpone. Kyd wrote The Spanish Tragedy.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "There is a later Child Ballad (number 150) in which Marian, missing Robin, does something startling to find him: she goes into the forest herself, in disguise, and when she meets the outlaw hero not recognising him she duels him with a sword until he yields, only then revealing who she is. What disguise does Marian wear in Child 150 to enter Sherwood?",
+      "choices": ["a page-boy's clothes", "a nun's habit", "a beggar's rags", "a friar's robe"],
+      "answer": "a page-boy's clothes",
+      "context": "In 'Robin Hood and Maid Marian' (Child 150), Marian disguises as a young page and matches Robin sword for sword until he asks her mercy; then she reveals herself. The Elizabethan Marian was a fighting-woman on stage; the tradition of the girl-in-boy's-clothes is old and popular.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse Volsung cycle, the young hero Sigurd -- fresh from killing the dragon Fafnir and the smith Regin -- rides his horse Grani along a road the birds pointed him to, up a great mountain. From miles off he sees the mountain's crown ringed with a blaze so tall that no bird flies through it. What name does the Volsunga Saga give to this mountain?",
+      "choices": ["Hindarfjall", "Gnitaheid", "Bifrost", "Yggdrasil"],
+      "answer": "Hindarfjall",
+      "context": "Volsunga Saga chapter 21 and the prose introduction to the Poetic Edda's Sigrdrifumal: the mountain is Hindarfjall, meaning 'Hind Mountain.' Gnitaheid is the heath where Sigurd killed Fafnir the dragon in the previous story. Bifrost is the rainbow-bridge between Midgard and Asgard. Yggdrasil is the world-tree. Hindarfjall is the specific peak of this wake-scene.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Sigurd rides straight at the wall of flame ringing the mountaintop. Only one horse in all the north will leap through fire without flinching -- the horse Odin himself chose for Sigurd out of a whole herd of mountain stallions. What is the name of Sigurd's horse, the only one that carries him through the fire?",
+      "choices": ["Grani", "Sleipnir", "Gullfaxi", "Hofvarpnir"],
+      "answer": "Grani",
+      "context": "Volsunga Saga ch. 13-21: Grani is Sigurd's horse, chosen for him by Odin in disguise as an old man, and descended from Odin's own eight-legged steed Sleipnir. Sleipnir belongs to Odin, not Sigurd. Gullfaxi is the golden-maned horse of the giant Hrungnir, later given to Thor's son Magni. Hofvarpnir is the goddess Gna's horse. Grani leaps through Hindarfjall's fire because Sleipnir's blood is in him.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Grani leaps through the flames of Hindarfjall and Sigurd comes down on the other side unharmed. Inside the ring of fire he finds a hall, and inside the hall lies a figure in full war-armour, helm on the head, sword at the side. Sigurd bends to unlace the helm expecting to see a slain warrior's face. What does Sigurd find under the helm?",
+      "choices": ["a woman, sleeping", "a stone carving with no face", "the corpse of a dwarf-king", "a wolf curled in a heap"],
+      "answer": "a woman, sleeping",
+      "context": "Volsunga Saga ch. 21 and Sigrdrifumal prose 2-5: under the helm is a sleeping woman. The saga lingers on Sigurd's mistake -- he came expecting a dead warrior and found a living Valkyrie. There is no carving, no dwarf-corpse, and no wolf in the hall. The whole point of the scene is the shock of unlacing armour and finding a woman's face.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Sigurd finds the sleeping woman on Hindarfjall and cannot wake her by touch or by voice. Only when he takes his sword Gram and slits open the mail-coat 'as though cutting cloth,' the saga says, does she open her eyes. She sits up and speaks the first words: 'Who has broken the byrnie and waked me from long sleep?' What is her name?",
+      "choices": ["Brynhild", "Freyja", "Sigrun", "Skuld"],
+      "answer": "Brynhild",
+      "context": "Volsunga Saga ch. 21; Sigrdrifumal prose 5. She names herself Brynhild. Freyja is the Vanir goddess of love and battle who owns half of Valhalla's slain. Sigrun and Skuld are two other named Valkyries from the Norse corpus. Brynhild is the specific Valkyrie of this ladder.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The woman Sigurd has woken on Hindarfjall tells him she was not always mortal. She served Odin as one of the maidens who rode above the battlefield choosing which warriors would die and rise to Valhalla. What is the name for the class of maidens Brynhild once belonged to?",
+      "choices": ["Valkyrie", "Norn", "Disir", "Fylgja"],
+      "answer": "Valkyrie",
+      "context": "Volsunga Saga ch. 21 and Sigrdrifumal prose: Brynhild was one of the Valkyries, the 'choosers of the slain.' The Norns are the three fates at Yggdrasil's root who weave every life's thread. The Disir are ancestral female spirits protecting a family. The Fylgja is a personal follower-spirit in animal form. Valkyries are the battle-choosers -- Brynhild's specific role.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Brynhild tells Sigurd how she came to be sleeping on Hindarfjall. In her last battle Odin had already promised victory to an older king named Hjalmgunnar. Brynhild disobeyed and awarded the battle to a younger king instead. What is the name of the young king Brynhild wrongly gave victory to?",
+      "choices": ["Agnar", "Hrothgar", "Sigmund", "Helgi"],
+      "answer": "Agnar",
+      "context": "Volsunga Saga ch. 21; Sigrdrifumal prose 4: the young king is Agnar. Hrothgar is the Danish king in Beowulf. Sigmund is Sigurd's own father, a previous Volsung. Helgi is Sigurd's half-brother, hero of the Helgi lays. Agnar is the specific name in the Brynhild-punishment story.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "For giving victory to the wrong king, Odin came to Brynhild and punished her -- not with death, but with a single small object he pierced her with as she stood in her armour. The moment it touched her, she fell where she stood, and Odin swore she would not rise until a hero crossed the fire-wall to wake her. What did Odin pierce Brynhild with?",
+      "choices": ["a sleep-thorn", "a spear of yew", "a raven's feather", "a golden apple"],
+      "answer": "a sleep-thorn",
+      "context": "Volsunga Saga ch. 21; Sigrdrifumal prose 4: the object is the svefnthorn, the sleep-thorn -- a stock magic-sleep device that runs through later Icelandic folktale. The spear of yew (Gungnir) is Odin's usual weapon and kills, not sends into sleep. A raven's feather belongs to Odin's ravens Huginn and Muninn, message-birds not weapons. The golden apples are Idunn's youth-fruits. The sleep-thorn is the specific Norse motif that eventually descends into the Grimm brothers' Sleeping Beauty.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Once awake on Hindarfjall, Brynhild does not merely thank Sigurd. She sits with him on the mountain and gives him the great gift of her old Valkyrie learning -- the carvings she once used from Odin's own hand, which she teaches him now to cut into sword-hilts, cups, and ship-timbers for luck. What learning did Brynhild give Sigurd on the mountain?",
+      "choices": ["the runes", "the nine herbs", "the songs of the dead", "the shape-shifting arts"],
+      "answer": "the runes",
+      "context": "Sigrdrifumal stanzas 5-19 (the rune-catalogue): Brynhild teaches Sigurd victory-runes for the sword-hilt, ale-runes against poison in the cup, birth-runes for a woman in labour, mind-runes for wisdom, and speech-runes for eloquence -- a whole poem-inside-a-poem. The nine herbs is a charm from Anglo-Saxon leechcraft, a different tradition. Songs of the dead belong to Odin's necromancy in Baldrs draumar. Shape-shifting is the trade of Fafnir and Otter. Runes are the specific gift.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Before Sigurd rides away from Hindarfjall he and Brynhild plight their troth. Sigurd swears on the edge of his sword Gram that he will love no other woman, and puts a ring on her finger to seal the vow. That ring is not just any ring: it is the ring Sigurd took from Fafnir's hoard, the ring Loki wrung from a dwarf in a waterfall long before Sigurd was born. What is the name of the ring Sigurd gives Brynhild?",
+      "choices": ["Andvaranaut", "Draupnir", "Sviagris", "Nauthiz"],
+      "answer": "Andvaranaut",
+      "context": "Volsunga Saga ch. 21: the ring is Andvaranaut, the cursed dwarf-ring Loki took from Andvari to pay Otter's wergild. Draupnir is Odin's own ring, the one that drips eight gold copies every ninth night. Sviagris is the boar-ring of the Swedish Ynglings. Nauthiz is a letter of the Norse rune-alphabet, not an object. Andvaranaut is the ring that carries the curse into Brynhild's finger the moment Sigurd puts it on -- and that is why the doom of the whole cycle begins here.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Hindarfjall wake-scene of Sigurd and Brynhild became the climax of one of the most famous operas of the 19th century, staged in 1876 as the third part of a four-opera cycle. In the opera the hero is renamed Siegfried and the Valkyrie is renamed Brunnhilde. Who composed the opera whose Act III is Sigurd's climb through the fire to Brynhild?",
+      "choices": ["Richard Wagner", "Giuseppe Verdi", "Georges Bizet", "Modest Mussorgsky"],
+      "answer": "Richard Wagner",
+      "context": "The opera is Siegfried (1876), the third of Wagner's four-opera Ring cycle Der Ring des Nibelungen. Verdi wrote Italian operas (Aida, La Traviata). Bizet wrote Carmen. Mussorgsky wrote Boris Godunov. Wagner's ring-cycle is the reason so many modern audiences meet Brynhild first as Brunnhilde on a stage-mountain with a stage-fire.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The old poem Sigrdrifumal, which tells the Hindarfjall wake-scene in the Poetic Edda, breaks off in mid-sentence in the Codex Regius manuscript. What has happened to the manuscript at this point, forcing scholars to fill in the rest of Sigurd's story from the prose Volsunga Saga?",
+      "choices": ["a whole gathering of pages is missing", "a monk erased the vellum to reuse it", "the ink faded in a house-fire", "a page was cut out and sent abroad"],
+      "answer": "a whole gathering of pages is missing",
+      "context": "The Codex Regius of the Poetic Edda has a physical gap at this point -- an entire gathering (a folded set of vellum sheets) is lost. Editors call it 'the great lacuna.' There was no erasure and no fire; the leaves simply went missing before the codex was rebound. Because of the lacuna, everything between Sigurd leaving Hindarfjall and arriving at the Gjukungs' court has to be reconstructed from the later prose Volsunga Saga.",
+      "legend": false
+    }
+  ]
+}

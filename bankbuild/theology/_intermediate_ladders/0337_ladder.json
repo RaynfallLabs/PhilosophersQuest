@@ -1,0 +1,70 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Only one gospel gives any scene from Jesus's childhood after the Nativity. Luke tells how his parents took him with them to Jerusalem for a great feast they attended every year. Which feast?",
+      "choices": ["Passover", "Pentecost", "Hanukkah", "Purim"],
+      "answer": "Passover",
+      "context": "Luke 2:41 KJV: 'Now his parents went to Jerusalem every year at the feast of the passover.' Passover was one of the three pilgrim feasts Jewish families travelled to Jerusalem to keep.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Luke's scene of Jesus lost in Jerusalem gives one small detail about his age at the time -- the only such detail the gospels record between the manger and his adult ministry. How old was he?",
+      "choices": ["Twelve", "Seven", "Fifteen", "Nine"],
+      "answer": "Twelve",
+      "context": "Luke 2:42 KJV: 'And when he was twelve years old, they went up to Jerusalem after the custom of the feast.' Between this scene and Jesus's baptism as an adult, the gospels record nothing else -- the so-called 'hidden years.'",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "As the caravan of pilgrims left Jerusalem after the Passover, Mary and Joseph did not notice Jesus was missing. They had supposed he was walking with kinsmen and acquaintances. How long did they travel before they realised he was gone?",
+      "choices": ["A whole day's journey", "A single afternoon", "Three days", "Almost a week"],
+      "answer": "A whole day's journey",
+      "context": "Luke 2:44 KJV: 'they, supposing him to have been in the company, went a day's journey; and they sought him among their kinsfolk and acquaintance.' Pilgrim caravans travelled as extended clans, so a twelve-year-old walking with cousins would not have been noticed.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Having turned back to Jerusalem to look for their son, Mary and Joseph searched the city before at last finding him. According to Luke, how long did the search take?",
+      "choices": ["Three days", "One day", "A week", "A fortnight"],
+      "answer": "Three days",
+      "context": "Luke 2:46 KJV: 'And it came to pass, that after three days they found him in the temple, sitting in the midst of the doctors, both hearing them, and asking them questions.' The 'three days' echo has been noted by commentators alongside the later three days in the tomb.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "When Mary and Joseph at last found the boy after their long search back through Jerusalem, Luke says he was sitting in the middle of a group of the city's learned men -- both listening to them and asking them questions. Where in the city was he?",
+      "choices": ["In the Temple", "In the marketplace", "At the pool of Siloam", "On the Mount of Olives"],
+      "answer": "In the Temple",
+      "context": "Luke 2:46 KJV: 'they found him in the temple, sitting in the midst of the doctors.' The 'doctors' in the KJV are the teachers of the Law -- rabbis, not physicians.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Finding the boy at last, Mary spoke first -- a mother's half-scolding line to a child who had frightened her for days. Luke gives the words exactly. How does she begin?",
+      "choices": [
+        "Son, why hast thou thus dealt with us?",
+        "Child, thou art weary; come home with us now",
+        "Rejoice, for that which was lost is found again",
+        "How camest thou hither, when we bade thee stay?"
+      ],
+      "answer": "Son, why hast thou thus dealt with us?",
+      "context": "Luke 2:48 KJV: 'Son, why hast thou thus dealt with us? behold, thy father and I have sought thee sorrowing.' It is the only line the gospels give Mary in the whole scene -- direct, wounded, a mother's voice.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Jesus's answer to Mary in the Temple is the first line of speech any gospel records from him. He begins 'How is it that ye sought me?' -- and then explains why they should have known where to look. How does the sentence finish?",
+      "choices": [
+        "wist ye not that I must be about my Father's business?",
+        "know ye not that a prophet is without honour, save in his own country?",
+        "hath not the Lord chosen the weak things of the world?",
+        "have ye not read what David did, when he was hungered?"
+      ],
+      "answer": "wist ye not that I must be about my Father's business?",
+      "context": "Luke 2:49 KJV. 'Wist' is old English for 'knew.' These are the first recorded words of Jesus in any of the four gospels -- a twelve-year-old's answer to his frightened mother, setting up in one line the tension between his household and his mission.",
+      "legend": false
+    }
+  ]
+}

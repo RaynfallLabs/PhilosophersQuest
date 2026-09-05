@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse myth Odin the All-Father rides a great grey horse that can carry him between all the worlds, even down into the land of the dead. Snorri says this horse is stranger than any other horse ever born because of one feature of its body. What does Odin's horse have that no other horse has?",
+      "choices": ["eight legs instead of four", "wings folded along its ribs", "a single spiral horn", "a mane of living flame"],
+      "answer": "eight legs instead of four",
+      "context": "Gylfaginning 15: Snorri calls Odin's grey stallion the best of all horses, and says he has eight legs. Wings on horses belong to Greek myth (Pegasus). A single horn belongs to the medieval unicorn tradition. A mane of fire is a modern invention.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Prose Edda the greatest of all horses is a grey stallion with eight legs, ridden by the chief of the Norse gods. What is the name of this eight-legged horse?",
+      "choices": ["Sleipnir", "Grani", "Gullfaxi", "Hrimfaxi"],
+      "answer": "Sleipnir",
+      "context": "Gylfaginning 15: the horse is Sleipnir. Grani is the horse of the hero Sigurd (and, in the Volsunga saga, said to come from Sleipnir's own line). Gullfaxi is the golden-maned stallion Thor takes from the giant Hrungnir. Hrimfaxi is the horse of Night, whose bit-foam becomes the morning dew.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin's eight-legged horse Sleipnir was not born of two horses. His father was an ordinary stallion, but his mother was one of the gods, who had shape-shifted for the night into a beautiful mare. Which god was Sleipnir's mother?",
+      "choices": ["Loki", "Odin", "Heimdall", "Freyr"],
+      "answer": "Loki",
+      "context": "Gylfaginning 42: Loki turned himself into a mare during the affair of the Master Builder of Asgard, and later gave birth to Sleipnir. Odin becomes Sleipnir's rider, not his parent. Heimdall was born of nine mothers (waves of the sea). Freyr owns Skidbladnir and the boar Gullinbursti but is not linked to this birth.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Loki is famous for changing his shape whenever he needs to escape or trick someone. He appears in the sagas as a mare running past a stallion, as a salmon caught in his own net, as an old woman named Thokk who refuses to weep for Baldr, and as one more small biting creature in the smithy of Brokkr. What small creature did Loki turn into to sting the dwarf at the bellows?",
+      "choices": ["a fly", "a hornet", "a spider", "a beetle"],
+      "answer": "a fly",
+      "context": "Skaldskaparmal 43: Loki became a gadfly (fluga) to bite Brokkr while Sindri forged Mjolnir. Norse tradition names four shape-changes for him -- mare, salmon, old-woman Thokk, and fly -- not hornet or spider or beetle.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the story of the Wall of Asgard, a giant craftsman comes to build the gods' rampart in one winter, and he insists on being allowed to use his own stallion to haul the stones. His stallion turns out to be so strong that the wall is nearly finished on time -- until Loki, in mare-form, lures him off. What is the name of this stone-hauling stallion?",
+      "choices": ["Svadilfari", "Grani", "Blodughofi", "Falhofnir"],
+      "answer": "Svadilfari",
+      "context": "Gylfaginning 42: the builder's stallion is Svadilfari, and Snorri says the horse hauled twice as much stone as the builder himself. Grani is Sigurd's horse. Blodughofi (Bloody-Hoof) belongs to Freyr. Falhofnir is one of the horses of the Aesir listed in Grimnismal.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Baldr the Shining was killed and sent down to Hel, one god volunteered to ride the long road into the underworld and beg the queen of the dead for Baldr's return. That messenger needed a horse fast enough and sure-footed enough to make the journey and leap Hel's own gate. Whose horse did he borrow for the ride?",
+      "choices": ["Odin's", "Thor's", "Freyr's", "Balder's"],
+      "answer": "Odin's",
+      "context": "Gylfaginning 49: Hermod the god borrowed Sleipnir from Odin and rode nine nights down dark valleys to Hel's hall, where Sleipnir leapt clean over the gate. Thor drives goats (Tanngrisnir and Tanngnjostr). Freyr's horse is Blodughofi. Baldr is the corpse being fetched.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The mare-and-stallion night that produced Sleipnir was part of a much bigger crisis. The Aesir had promised the disguised giant a price so shocking that the whole point of Loki's sabotage was to keep the sky whole. What was the giant supposed to receive if he finished the wall on time?",
+      "choices": ["Freyja and the sun and the moon", "the mead of poetry and the sword of Freyr", "the ring Draupnir and the boar Gullinbursti", "the sacred well of Mimir"],
+      "answer": "Freyja and the sun and the moon",
+      "context": "Gylfaginning 42: the price was Freyja as bride plus the sun and the moon out of the sky. The Mead of Poetry is stolen by Odin in a separate story. Draupnir and Gullinbursti are dwarf-forged treasures. Mimir's well is Odin's own bargain, paid with an eye.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri says the mare that had lured Svadilfari away disappeared into the woods with him and did not come back that season. Many months later she returned to Asgard with the young Sleipnir at her side. Snorri names one specific colour for the newborn foal. What colour was Sleipnir at birth?",
+      "choices": ["grey", "black", "chestnut", "white"],
+      "answer": "grey",
+      "context": "Gylfaginning 42: the foal is described as grey (grar) -- the same colour Odin's horse carries in every attestation. Black and white horses appear in other Norse tales (Night's horse Hrimfaxi, Day's horse Skinfaxi), but Sleipnir is consistently the grey one.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the Poetic Edda poem Sigrdrifumal, the valkyrie Sigrdrifa lists the great places where magical runes have been carved: on Bragi's tongue, on the ear of a bear, on the sledge's strap-bands -- and on one particular part of Odin's horse. On what part of Sleipnir does the poem say the runes are carved?",
+      "choices": ["his teeth", "his mane", "his hooves", "his eyes"],
+      "answer": "his teeth",
+      "context": "Sigrdrifumal 15 (Poetic Edda): runes were carved on Sleipnir's teeth, on the bear's paw, on Bragi's tongue, on the wolf's claws, on the eagle's beak, and on the sledge's strap-bands, so that magic would be borne into the world in all these places.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "On the Baltic island of Gotland stands a carved picture-stone from the eighth century -- older than any surviving manuscript of the Eddas. In its upper panel a rider arrives at a hall to be greeted by a woman with a drinking horn, and the mount he rides on has eight legs. What is the name of the Gotland stone that carries this scene?",
+      "choices": ["Tjangvide", "Ramsund", "Altuna", "Hylestad"],
+      "answer": "Tjangvide",
+      "context": "The Tjangvide picture-stone (Gotland, c. 700-800 CE) is read as showing Odin arriving at Valhalla on Sleipnir -- the earliest surviving image of the eight-legged horse. Ramsund and Hylestad carry the Sigurd-and-Fafnir cycle. Altuna carries Thor fishing for Jormungand.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Scholars have offered several readings for why Odin's horse has eight legs. One influential reading, tied to the shamanic death-horse traditions of northern Eurasia, sees the eight legs not as a literal doubling of speed but as an image of a burden being carried. What burden is Sleipnir's eight-legged shape read as showing?",
+      "choices": ["four pallbearers carrying a coffin", "eight armed warriors flanking a king", "eight winds blowing in every direction", "eight roots of the world-tree Yggdrasil"],
+      "answer": "four pallbearers carrying a coffin",
+      "context": "The scholarly reading (H. R. Ellis Davidson and others): the eight legs are the four pairs of legs of four men carrying a coffin -- Sleipnir as a shamanic death-horse who carries the dead to the underworld, matching his role bearing Hermod to Hel. Winds and Yggdrasil's roots (three, not eight, in Gylfaginning) are separate cosmological images.",
+      "legend": false
+    }
+  ]
+}

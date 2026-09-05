@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, Loki has three monstrous children by the giantess Angrboda: the death-goddess Hel, a great serpent that will grow long enough to circle the whole world, and a third child that terrifies the Aesir most of all -- called Fenrir. What kind of creature is Fenrir?",
+      "choices": ["a wolf", "a bear", "a stag", "a boar"],
+      "answer": "a wolf",
+      "context": "Snorri, Gylfaginning 34: Fenrir (Old Norse Fenrisulfr, 'the Fenris-wolf') is the wolf-child of Loki and Angrboda. His siblings are Jormungand the world-serpent and Hel the death-goddess. Baldr's father Odin himself will fall to this wolf at Ragnarok.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "While Fenrir the wolf is still growing up in Asgard, every one of the Aesir is afraid to go near his cage -- except a single god of war, who alone will bring the wolf his meat. Which god was brave enough to feed Fenrir?",
+      "choices": ["Tyr", "Thor", "Baldr", "Heimdallr"],
+      "answer": "Tyr",
+      "context": "Snorri, Gylfaginning 34: 'Tyr had the courage to go to him and give him food.' Thor kills giants with Mjolnir but does not tend the wolf; Baldr is the shining son later killed by mistletoe; Heimdallr stands watch at Bifrost. Tyr's name gives us the English weekday Tuesday, 'Tyr's day'.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Aesir see Fenrir growing bigger every day and hold a council: they must bind him before he becomes too strong. They forge a first heavy iron chain and put it on him as a game -- but Fenrir breaks free at his very first kick. What was the name of that first failed chain?",
+      "choices": ["Leyding", "Draupnir", "Gjallarhorn", "Skidbladnir"],
+      "answer": "Leyding",
+      "context": "Snorri, Gylfaginning 34: 'Leyding he loosened at the first kick.' Draupnir is Odin's gold ring that drips eight new rings every ninth night; Gjallarhorn is the horn Heimdallr will blow at Ragnarok; Skidbladnir is Freyr's folding ship. Leyding is often anglicised as Loeding.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "After the first chain snaps, the smiths of the Aesir forge a second chain twice as strong and clap it on Fenrir. He strains once and shatters this one so hard its pieces fly far away across the plain. What was the second chain called?",
+      "choices": ["Dromi", "Gleipnir", "Gungnir", "Gelgja"],
+      "answer": "Dromi",
+      "context": "Snorri, Gylfaginning 34: 'Dromi was made half again as strong, and it broke apart so that the pieces flew far into the distance.' Gleipnir is the silken third fetter that actually holds. Gungnir is Odin's spear. Gelgja is the cord that later ties Gleipnir to a rock.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "With both iron chains in pieces, Odin sends a messenger down into the dark below the earth, to the world of the dwarves, and orders them to make a fetter no wolf can break. In which of the nine worlds do those dark smiths live?",
+      "choices": ["Svartalfheim", "Muspelheim", "Alfheim", "Jotunheim"],
+      "answer": "Svartalfheim",
+      "context": "Snorri, Gylfaginning 34: the messenger Skirnir goes down to Svartalfheim, the world of the 'dark elves' or dwarves, and commissions the fetter. Muspelheim is the fire-world of Surt; Alfheim is the shining home of the light-elves; Jotunheim is the giants' country.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The dwarves hand up a fetter that looks nothing like a chain -- it is smooth and soft as a silk ribbon, thin enough to wrap round a finger, and yet the strongest thing ever made. What is the name of this fetter the dwarves forged for Fenrir?",
+      "choices": ["Gleipnir", "Andvaranaut", "Tyrfing", "Hringhorni"],
+      "answer": "Gleipnir",
+      "context": "Snorri, Gylfaginning 34: Gleipnir means 'the ensnarer' or 'open one'. Andvaranaut is the cursed ring of the dwarf Andvari; Tyrfing is a cursed sword from a different saga; Hringhorni is Baldr's funeral ship. The ribbon was 'smooth and soft as a silken ribbon, yet strong and firm.'",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri lists the six impossible ingredients the dwarves used up making that ribbon. Cats have made no sound when they walk ever since. What ingredient of the ribbon does Snorri say the dwarves took from a cat?",
+      "choices": ["its footfall", "its whiskers", "its shadow", "its heartbeat"],
+      "answer": "its footfall",
+      "context": "Snorri, Gylfaginning 34: 'It was made of six things -- the sound of a cat's footfall, the beard of a woman, the roots of a mountain, the sinews of a bear, the breath of a fish, and the spittle of a bird.' Snorri says the dwarves used the sound of the cat's footfall UP in the fetter, which is why cats now make no sound on their paws.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Aesir row Fenrir out to a lonely island in the middle of a black lake to test this thin silk ribbon on him. Snorri gives the island a name -- the last place Fenrir will stand free. What is that island called?",
+      "choices": ["Lyngvi", "Hlidskjalf", "Bifrost", "Idavoll"],
+      "answer": "Lyngvi",
+      "context": "Snorri, Gylfaginning 34: the gods take Fenrir 'to a certain island called Lyngvi, in a lake called Amsvartnir.' Hlidskjalf is Odin's high seat; Bifrost is the rainbow bridge; Idavoll is the plain where the Aesir gather in Asgard.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Standing on the island, Fenrir sniffs the silk ribbon and smells the trick. He will only let the gods loop it round him on one condition, and Snorri says every one of the Aesir refuses to promise it -- except Tyr. What did the wolf demand as a pledge of good faith?",
+      "choices": ["a hand laid in his mouth", "a drop of blood from Odin's eye", "the horn Gjallarhorn as a bond", "one of Sif's golden hairs"],
+      "answer": "a hand laid in his mouth",
+      "context": "Snorri, Gylfaginning 34: Fenrir 'refused unless they would put a hand of one of them into his mouth as a pledge.' Every god refuses. Only Tyr steps forward and lays his right hand in the wolf's jaws so the binding can go ahead.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The gods loop the silk ribbon round Fenrir and pull tight. It only grows tighter the more he strains. Realising he has been cheated, the wolf snaps his jaws shut on the hand Tyr had put between his teeth. Which of Tyr's hands did Fenrir bite off?",
+      "choices": ["his right hand", "his left hand", "both his hands", "his sword-thumb"],
+      "answer": "his right hand",
+      "context": "Snorri, Gylfaginning 34: 'Then all laughed except Tyr; he lost his hand.' Snorri specifies Tyr placed his right hand in the wolf's mouth -- the sword-hand of a war-god, which makes the sacrifice all the sharper. From then on Tyr is the one-handed god.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Snorri says the joint where Fenrir bit through Tyr's arm gave a name in old Norse poetry -- a kenning still used for a certain part of the human body long after the gods stopped being worshipped. What did the old poets call the wrist?",
+      "choices": ["the wolf's-joint", "the raven's-notch", "the sword-mouth", "the ring-track"],
+      "answer": "the wolf's-joint",
+      "context": "Snorri, Gylfaginning 34: after Fenrir bites through Tyr's arm at the wrist, that joint 'is now called wolf's-joint' in the poets' kennings. It is one of the oldest surviving Norse etymologies -- a body-part named after a myth.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The gods do not stop with the ribbon. They drive a huge stone slab called Gjoll deep into the earth and pass Gleipnir through it, then anchor it with an even greater rock. They also wedge Fenrir's jaws open with a weapon so he cannot bite them shut again. What did the Aesir set upright in the wolf's mouth?",
+      "choices": ["a sword", "a spear", "an anvil", "a boulder"],
+      "answer": "a sword",
+      "context": "Snorri, Gylfaginning 34: 'Then they took a sword and thrust it into his mouth so that the hilt stood on the lower jaw and the point in the palate; that was his gag.' Fenrir's slaver, running over the blade, forms the river Van that flows from his mouth until Ragnarok breaks him free to swallow Odin.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The night Jesus is arrested and taken to the high priest's house for questioning, one of his closest disciples follows the arresting party 'afar off' and slips into the courtyard. The servants and guards there have kindled a fire against the cold, and he stands among them warming his hands. Which of the twelve is this disciple?",
+      "choices": ["Peter", "Andrew", "Thomas", "Philip"],
+      "answer": "Peter",
+      "context": "John 18:15-18 (KJV). Peter follows the arresting party into the high priest Caiaphas's courtyard. Andrew was Peter's brother; Thomas is the doubter of the Upper Room; Philip is the disciple who asks 'shew us the Father'. Source: en.wikipedia.org/wiki/Denial_of_Peter.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Earlier that same night, at the last supper, Jesus had turned to Peter with a specific and painful warning: before a farmyard sound is heard a certain number of times, Peter would deny him three times. What sound did Jesus name?",
+      "choices": ["A cock crowing", "A dog barking", "A trumpet blowing", "A donkey braying"],
+      "answer": "A cock crowing",
+      "context": "Mark 14:30 (KJV): 'Verily I say unto thee, that this day, even in this night, before the cock crow twice, thou shalt deny me thrice.' Peter had answered, 'though I should die with thee, I will not deny thee in any wise.' Source: Mark 14:30-31 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The gospel of John is careful to specify the exact kind of fire the servants and officers had kindled in the courtyard where Peter stood warming his hands. It is not a wood-fire or an oil lamp -- it is a particular sort of fire, named with a specific Greek word (anthrakia). What kind of fire was it?",
+      "choices": ["A charcoal fire", "A rushlight brazier", "A tar torch", "An olive-oil lamp"],
+      "answer": "A charcoal fire",
+      "context": "John 18:18 (KJV): 'the servants and officers stood there, who had made a fire of coals; for it was cold: and they warmed themselves.' The Greek word anthrakia -- 'charcoal fire' -- appears only twice in the whole New Testament, both times in John. Source: John 18:18 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The first person to look hard at Peter in the firelight and recognise him is, in Mark's gospel, the least powerful figure in the whole courtyard -- someone whose word, by the age's reckoning, ought not to matter at all. That person stares at Peter and says 'thou also wast with Jesus of Nazareth'. Who is the first accuser?",
+      "choices": ["A servant-girl of the high priest", "A soldier of the Temple guard", "A priest of the Sanhedrin", "A relative of Malchus"],
+      "answer": "A servant-girl of the high priest",
+      "context": "Mark 14:66-67 (KJV): 'there cometh one of the maids of the high priest: And when she saw Peter warming himself, she looked upon him, and said, And thou also wast with Jesus of Nazareth.' The gospel underlines the humiliation -- the great disciple is broken by the challenge of a serving-maid. Source: Mark 14:66-67 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Peter denies the servant-girl, then a second challenger, and then a third. At the third accusation the bystanders say what has been giving him away in the firelight all along -- a specific mark on him that a Jerusalem crowd could pick out at once. What was it?",
+      "choices": ["His Galilean accent", "His fisherman's cloak", "His calloused hands", "His northern beard"],
+      "answer": "His Galilean accent",
+      "context": "Matthew 26:73 (KJV): 'and after a while came unto him they that stood by, and said to Peter, Surely thou also art one of them; for thy speech bewrayeth thee.' Mark 14:70: 'thou art a Galilaean, and thy speech agreeth thereto.' Galilean speech to a Judean ear was as distinctive as a country twang in a capital city. Source: Matthew 26:73; Mark 14:70 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "By the third accusation Peter is frantic. Matthew records that he broke into something worse than plain denial -- language he would not otherwise have used -- to make the bystanders believe he had nothing to do with the man on trial inside. What does Matthew say Peter did at the third denial?",
+      "choices": ["Began to curse and to swear", "Struck a servant across the face", "Drew his knife on the accuser", "Fled the courtyard on the spot"],
+      "answer": "Began to curse and to swear",
+      "context": "Matthew 26:74 (KJV): 'Then began he to curse and to swear, saying, I know not the man. And immediately the cock crew.' The cursing here is not obscenity -- it is Peter calling down oaths on himself to prove he does not know Jesus. Source: Matthew 26:74 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Peter has just denied Jesus for the third time, cursing and swearing that he does not know the man. The cock crows -- and one gospel adds a single line that is not in the others, the moment that breaks Peter open. In LUKE's gospel alone, what does Jesus do at that instant?",
+      "choices": ["Turns and looks upon Peter across the courtyard", "Cries out Peter's name from the hall", "Sends John out to find Peter", "Falls silent in front of his accusers"],
+      "answer": "Turns and looks upon Peter across the courtyard",
+      "context": "Luke 22:61 (KJV): 'And the Lord turned, and looked upon Peter. And Peter remembered the word of the Lord... And Peter went out, and wept bitterly.' Only Luke gives us the crossed gaze. Source: Luke 22:61-62 (KJV).",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "John's gospel is careful about a small, specific detail that no other gospel mentions -- the KIND of fire Peter stood warming himself at during the denials. That word (anthrakia, charcoal fire) is used only twice in the whole New Testament, and both times in John. Where is the SECOND charcoal fire in John's gospel, deliberately echoing the first?",
+      "choices": ["On the beach where the risen Jesus cooks fish and restores Peter", "In the upper room where Jesus breathes on the disciples", "At the tomb where Mary Magdalene meets the gardener", "On the road to Emmaus where two disciples share a supper"],
+      "answer": "On the beach where the risen Jesus cooks fish and restores Peter",
+      "context": "John 21:9 (KJV): 'they saw a fire of coals there, and fish laid thereon, and bread.' At this second charcoal fire the risen Jesus asks Peter three times -- one for each denial -- 'lovest thou me?', and each time Peter answers 'yea, Lord'. Two charcoal fires, three denials answered by three affirmations: John's writer built the parallel on purpose. Source: John 21:9-17 (KJV).",
+      "legend": false
+    }
+  ]
+}

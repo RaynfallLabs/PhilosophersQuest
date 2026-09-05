@@ -1,0 +1,74 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Long before Arthur is born, a king of Britain sits at a great banquet at his court and sees the beautiful wife of one of his own dukes. He falls violently in love with her on the spot -- and the whole legend of Arthur begins because of it. What is this king's name?", "choices": ["Uther Pendragon", "Aurelius Ambrosius", "Vortigern", "Cadwallader"],
+      "answer": "Uther Pendragon",
+      "context": "Malory Book I ch.1-2 and Geoffrey of Monmouth Historia Book VIII: Uther Pendragon is Arthur's father. Aurelius Ambrosius is Uther's elder brother who ruled before him. Vortigern is the earlier king who brought the Saxons in. Cadwallader is a much later Welsh king. Only Uther falls for Igraine.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The woman King Uther Pendragon loves at the banquet is not free -- she is the wife of Gorlois, one of his own dukes. In the legend she is remembered as the mother of Arthur. What is her name?", "choices": ["Igraine", "Guinevere", "Morgan le Fay", "Nimue"],
+      "answer": "Igraine",
+      "context": "Igraine (Igerna in Geoffrey) is Arthur's mother, wife of Gorlois of Cornwall. Guinevere is Arthur's own queen a generation later. Morgan le Fay is Igraine's daughter and Arthur's half-sister. Nimue is the enchantress who traps Merlin. Only Igraine is Arthur's mother.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Igraine's husband sees how the king looks at her, he does not stay at court to argue. He carries her away from the banquet that very night and shuts her up in his safest castle -- a stronghold on a great crag cut off from the mainland by sea on almost every side. What is this fortress called?", "choices": ["Tintagel", "Camelot", "Camlann", "Astolat"],
+      "answer": "Tintagel",
+      "context": "Tintagel on the Cornish coast is Gorlois's stronghold in Geoffrey Historia VIII.19 and in Malory; it is also a real 5th-6th c. archaeological site. Camelot is Arthur's own court city, later. Camlann is the field of Arthur's last battle. Astolat is the town of Elaine the Lily Maid.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Sick with love and unable to force his way past the walls of Tintagel, King Uther Pendragon at last sends for the one man in Britain everyone knows can make impossible things happen. Uther begs this man for help. Who is he?", "choices": ["Merlin", "Sir Ector", "Sir Ulfius", "the Archbishop of Canterbury"],
+      "answer": "Merlin",
+      "context": "Merlin the mage is Uther's counsellor in Geoffrey and Malory. Sir Ector will be Arthur's foster-father. Sir Ulfius is one of Uther's knights who rides with him that night. The Archbishop of Canterbury does not enter the story until Uther is dead. Only Merlin bargains.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Merlin agrees to help Uther reach Igraine at Tintagel -- but sets a hard price. Merlin does not want gold, or land, or a favour at court. He wants ONE thing that will belong to Uther after that night, and Uther must swear an oath on it before Merlin will act. What does Merlin demand?", "choices": ["the child Uther will father that night", "the crown itself when Uther is dead", "the head of Duke Gorlois", "the fortress of Tintagel forever"],
+      "answer": "the child Uther will father that night",
+      "context": "Malory Book I ch.2: Merlin makes Uther swear that the child conceived that night shall be given to Merlin to be raised as he sees fit -- and that child is Arthur. The crown, Gorlois's head, and Tintagel are all things Uther could have offered but not what Merlin asks.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Uther swears the oath. Merlin then works his craft -- the strangest magic in the whole Arthur cycle. He does not open the gate of Tintagel, or fly Uther over the wall, or hide him behind a mist. He does something to Uther's own body so that the guards at the gate will let him ride straight in. What does Merlin do to the king?", "choices": ["changes his shape into the exact likeness of Duke Gorlois", "makes the king invisible from head to foot", "turns him into a great eagle", "gives him a face that no one can remember"],
+      "answer": "changes his shape into the exact likeness of Duke Gorlois",
+      "context": "Geoffrey Historia VIII.19 and Malory Book I ch.2: Merlin transforms Uther into the very shape of Gorlois -- beard, voice and armour -- so Igraine welcomes him as her own husband. Invisibility, eagle-shape and a forgettable face are stock magics elsewhere but not here.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Merlin does not stop at disguising the king. He also disguises the two knights who ride at Uther's side that night, changing them into the likenesses of Duke Gorlois's own two chief companions so the guards will not question them either. In Malory, one of these two changed knights is Sir Ulfius. Merlin himself takes the shape of the OTHER knight. Whose likeness does Merlin wear?", "choices": ["Sir Brastias", "Sir Bedivere", "Sir Kay", "Sir Lucan"],
+      "answer": "Sir Brastias",
+      "context": "Malory Book I ch.2: Sir Ulfius rides as Sir Jordanus, and Merlin himself takes the shape of Sir Brastias, Gorlois's chief knight. Bedivere, Kay and Lucan are famous later Round Table knights but do not appear in the Tintagel-night trick.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The disguise works: the guards at Tintagel open the gate, and the king in Gorlois's shape rides in and is welcomed by Igraine as her own husband home from war. That same night, miles away at his other castle of Dimilioc, the real Duke Gorlois leads a sortie out against the besieging army and is killed in the fighting. Word of his death does not reach Igraine until when?", "choices": ["dawn the next morning", "a full week later", "at the child's birth", "not until Uther marries her"],
+      "answer": "dawn the next morning",
+      "context": "Geoffrey Historia VIII.19: Gorlois falls in his sortie the same night; the messengers reach Tintagel at dawn. That is when Igraine begins to wonder how the man in her bed could have been her husband, since Gorlois was already dead. The other timings would collapse the whole story.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Merlin holds Uther to his oath. When the baby Arthur is born, the mage carries him out of Tintagel by a secret postern and delivers him to a trusted knight and his wife, to be raised as their own son in secret and never told he is a king's child. In Malory, what is the name of the knight who becomes Arthur's foster-father?", "choices": ["Sir Ector", "Sir Ulfius", "Sir Brastias", "Sir Kay"],
+      "answer": "Sir Ector",
+      "context": "Malory Book I ch.3: Arthur is delivered by Merlin to Sir Ector to be raised alongside Ector's own son Kay. Ulfius and Brastias were the two knights who rode with Uther and Merlin the disguise-night. Kay is Ector's son, Arthur's foster-brother, not the foster-father.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The whole Tintagel shape-change scene -- Merlin, the wife-in-the-castle, the king-turned-into-the-husband -- is not really old Celtic story. It first appears in a Latin history-book written by a Welsh cleric around 1136, whose Historia Regum Britanniae invented most of what later becomes Arthurian romance. Who is this 12th-century author?", "choices": ["Geoffrey of Monmouth", "Chretien de Troyes", "Wace of Jersey", "Layamon of Worcestershire"],
+      "answer": "Geoffrey of Monmouth",
+      "context": "Geoffrey of Monmouth's Historia Regum Britanniae (c.1136) invented the Tintagel-shape-change. Chretien de Troyes (c.1170s-80s) wrote the great French Arthurian romances a generation later. Wace and Layamon translated Geoffrey into French and English respectively.",
+      "legend": false
+    }
+  ]
+}

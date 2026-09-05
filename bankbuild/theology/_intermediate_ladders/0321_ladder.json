@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Ulster Cycle of Irish myth, one of the great foretales of the Tain is a courtship-story rather than a battle-tale: Cu Chulainn's own wooing of the young woman he chose above every daughter of Ireland. What is the tale called in Old Irish?",
+      "choices": ["Tochmarc Emire", "Longes mac nUislenn", "Serglige Con Culainn", "Aided Con Culainn"],
+      "answer": "Tochmarc Emire",
+      "context": "Tochmarc Emire means 'The Wooing of Emer' -- one of the great foretales of the Tain Bo Cuailnge. Longes mac nUislenn is 'The Exile of the Sons of Uisliu' (Deirdre's tale); Serglige Con Culainn is 'The Sickbed of Cu Chulainn' (the Fand tale); Aided Con Culainn is 'The Death of Cu Chulainn'. Source: https://en.wikipedia.org/wiki/Tochmarc_Emire",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Cu Chulainn's chosen bride was famous in every fort of Ulster for having something almost no other woman was said to possess -- a fixed set of six qualities named together as one. What is that famous set called in the Irish tradition?",
+      "choices": ["the six gifts of a woman", "the seven boasts of Ulster", "the four treasures of the Tuatha De", "the nine hostage-bonds"],
+      "answer": "the six gifts of a woman",
+      "context": "Emer alone was said to hold the six gifts: beauty, voice, sweet speech, wisdom, needlework, and chastity. The four treasures are the Tuatha De Danann talismans (Lia Fail, spear of Lugh, sword of Nuada, cauldron of the Dagda). The seven boasts and nine hostage-bonds are invented parallels. Source: https://en.wikipedia.org/wiki/Emer",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The six gifts said to belong to Emer alone are always listed together. Four of them are beauty, voice, wisdom, and chastity. Which of these was one of the OTHER TWO on the list?",
+      "choices": ["skill at needlework", "skill at horse-taming", "skill at prophecy", "skill at the sword"],
+      "answer": "skill at needlework",
+      "context": "The full six are beauty, voice, sweet speech, wisdom, needlework (embroidery), and chastity. Sweet speech is the sixth. Horse-taming is Cu Chulainn's boyhood-deed; prophecy is the druid's craft; the sword is not among a woman's traditional gifts in the medieval Irish list. Source: https://en.wikipedia.org/wiki/Emer",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Cu Chulainn rode to Emer's rampart to court her and found her working at embroidery among the other noblewomen. Rather than speak plainly he opened in one particular style, and she answered him in the same style, so that no one else in the company could follow a word of what they were saying. In what style did they conduct their courtship?",
+      "choices": ["in cryptic riddles", "in courtly song", "in a war-boast", "in silent gesture"],
+      "answer": "in cryptic riddles",
+      "context": "The riddle-dialogue is one of the most sophisticated passages in early Irish literature, written in a difficult archaic Old Irish that shows Emer as more verbally dexterous than Cu Chulainn -- she can spar mind-to-mind before hand-to-hand. Song-courtship belongs to later troubadour tradition; war-boasts are for feasts; silent gesture is a modern romance-motif. Source: https://en.wikipedia.org/wiki/Tochmarc_Emire",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Emer's father hated the match and did not want any Ulster warrior for a son-in-law. Rather than refuse Cu Chulainn to his face he DISGUISED HIMSELF, travelled to King Conchobar's court, and told the young hero that no warrior of his promise was complete without training abroad -- with the warrior-woman Scathach on the Isle of Shadow. What was the father's real hope in sending him?",
+      "choices": ["that Cu Chulainn would die on the perilous journey", "that Scathach would refuse him and shame him home", "that a rival hero would seize Emer while he was away", "that the sea-voyage would humble his pride"],
+      "answer": "that Cu Chulainn would die on the perilous journey",
+      "context": "The father-in-disguise trick is the whole engine of Tochmarc Emire and the reason Cu Chulainn ends up trained by Scathach. The father assumed he would never return; he did. Source: https://en.wikipedia.org/wiki/Tochmarc_Emire",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The father who set the Isle of Shadow trap for Cu Chulainn had a fort at Lusk in what is now north County Dublin. When the young warrior returned alive from a year's training with Scathach, he came straight back for the daughter. What was the name of the father who had tried to kill him?",
+      "choices": ["Forgall Manach", "Ailill mac Mata", "Daire mac Fiachna", "Sualtam mac Roich"],
+      "answer": "Forgall Manach",
+      "context": "Forgall Manach ('Forgall the Wily') was chief of Lusk. Ailill mac Mata is King Medb's husband at Cruachan; Daire mac Fiachna is the Ulster owner of the Brown Bull of Cooley; Sualtam mac Roich is Cu Chulainn's own mortal father. Source: https://en.wikipedia.org/wiki/Emer",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Cu Chulainn returned from Scathach he stormed the Wily One's fort at Lusk. Twenty-four of the fort's warriors fell in the fight; the girl was carried off and the treasure with her. But the master of the fort himself died in a way that had nothing to do with Cu Chulainn's sword. How did Forgall Manach die?",
+      "choices": ["he fell from the ramparts of his own fort trying to escape", "he choked on the poisoned cup he had prepared for the raider", "he drowned in the fort's own well hiding from the sack", "he was crushed by his own gate as he swung it shut"],
+      "answer": "he fell from the ramparts of his own fort trying to escape",
+      "context": "The trap-setter died by his own walls -- narrative justice the Irish sagas are fond of. The three wrong choices are invented parallels. Source: https://en.wikipedia.org/wiki/Tochmarc_Emire",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Long after the wooing, in the tale Serglige Con Culainn ('The Sickbed of Cu Chulainn'), Cu Chulainn fell into love with a woman of the sea-people -- the wife of Manannan mac Lir himself. Emer came to the meeting with a troop of women armed with knives, meaning to kill her rival. What did Emer do when she saw the strength of the fairy woman's love for Cu Chulainn?",
+      "choices": ["she decided to give her husband up to her", "she stabbed the fairy woman where she stood", "she cursed her husband and left the country", "she asked the druids to divide his years between them"],
+      "answer": "she decided to give her husband up to her",
+      "context": "Emer's magnanimity is the turn of the tale. Moved in return by Emer's magnanimity, the fairy woman decides not to take Cu Chulainn and returns to her own husband. The other three are invented parallels of the same shape. Source: https://en.wikipedia.org/wiki/Serglige_Con_Culainn",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The name of Cu Chulainn's fairy-lover in Serglige Con Culainn -- the woman Emer confronted with a troop of knife-armed noblewomen and then, seeing the strength of her love, decided to give her husband up to -- is one of the most famous names in the Ulster Cycle. What was the fairy woman called?",
+      "choices": ["Fand", "Aife", "Uathach", "Sadhbh"],
+      "answer": "Fand",
+      "context": "Fand is the sea-fairy of Serglige Con Culainn, wife of Manannan mac Lir. Aife is the warrior-queen who bore Cu Chulainn's son Connla; Uathach is Scathach's daughter; Sadhbh is Fionn's wife in the later Fenian Cycle (mother of Oisin). Source: https://en.wikipedia.org/wiki/Serglige_Con_Culainn",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the end of Serglige Con Culainn, once the sea-fairy has gone home, one god of the Tuatha De comes forward and does one specific act between Cu Chulainn and the woman he has just given up, so that the two will never see each other again in this world. Which god acts, and what does he do?",
+      "choices": ["Manannan mac Lir shakes his cloak between them", "Lugh Lamhfhada casts his spear between them", "the Dagda plays his harp until she forgets", "Aengus Og calls his four swans to carry her away"],
+      "answer": "Manannan mac Lir shakes his cloak between them",
+      "context": "Manannan mac Lir is the sea-god and the fairy woman's own husband; his shaken cloak (an-fharraige) is the sea itself set forever between Cu Chulainn and Fand. Cu Chulainn and Emer then drink a druid's potion of forgetting. Lugh's spear, the Dagda's harp, and Aengus's swans are all real Tuatha powers but do the wrong work. Source: https://en.wikipedia.org/wiki/Serglige_Con_Culainn",
+      "legend": true
+    }
+  ]
+}

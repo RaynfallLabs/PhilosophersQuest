@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The great chanson de geste of medieval France tells of a young knight fighting the last stand at a mountain pass. That knight is the favourite nephew of the King of the Franks, the same king who later ruled as the first Holy Roman Emperor. WHO is the king, the young knight's uncle?",
+      "choices": ["Charlemagne", "Clovis the Frank", "Louis the Pious", "Alfred the Great"],
+      "answer": "Charlemagne",
+      "context": "Charlemagne (Charles the Great, king of the Franks from 768 and Holy Roman Emperor from 800) is the uncle of Roland in the Song of Roland. Clovis was an earlier Frankish king; Louis the Pious was Charlemagne's son; Alfred the Great was an English king of a later century -- all real, none of them Roland's uncle. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Charlemagne's army is marching home from a long campaign in Spain and must cross the Pyrenees mountains through a narrow gorge that only a small unit can hold at a time. The pass where they cross gives its name to the whole disaster. WHAT is the pass called?",
+      "choices": ["Roncesvalles", "the Brenner Pass", "the Khyber Pass", "Thermopylae"],
+      "answer": "Roncesvalles",
+      "context": "Roncesvalles (French Roncevaux) is a real pass through the western Pyrenees between Spain and France. The Brenner is in the Alps; the Khyber is between Afghanistan and Pakistan; Thermopylae is in Greece -- all famous narrow passes of history, all wrong for this story. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "As the Frankish army files through the pass, Charlemagne gives his nephew command of a very specific unit: a small band of picked knights at the very TAIL of the marching column, whose job is to guard the rest of the army as they file through. What is this unit called?",
+      "choices": ["the rearguard", "the vanguard", "the honour guard", "the standard-bearers"],
+      "answer": "the rearguard",
+      "context": "The rearguard (arriere-garde) is the unit at the tail of a marching column, whose job is to shield the main body from attack from behind. The vanguard is the front unit; the honour guard is a ceremonial escort; the standard-bearers carry the flags. Only the rearguard fits Roland's command at Roncesvalles. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Roland's rearguard is one of a wider group of Charlemagne's most trusted paladins, a fixed number of them who ride with the emperor as his closest companions. What NUMBER of these paladins does the chanson name?",
+      "choices": ["twelve peers", "seven champions", "four knights", "twenty companions"],
+      "answer": "twelve peers",
+      "context": "The chanson gives Charlemagne twelve peers (douze pairs) -- Roland, Oliver, Turpin the Archbishop, Ganelon before his fall, and eight others. The number twelve echoes Christ's twelve apostles and the twelve knights of Arthur's later Round Table tradition. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The ambush at the pass is not bad luck; it is arranged from inside the Frankish army by one of Charlemagne's own barons, who has sold the rearguard's position and marching-time to the pagan enemy. In the chanson this traitor is Roland's own stepfather. WHAT is the traitor's name?",
+      "choices": ["Ganelon", "Pinabel", "Baligant", "Blancandrin"],
+      "answer": "Ganelon",
+      "context": "Ganelon is Roland's stepfather in the chanson. Nominated by Roland himself as messenger to King Marsile of Zaragoza, Ganelon takes it as a mortal insult and sells the rearguard's location for revenge. Pinabel is Ganelon's champion at the trial after the disaster; Baligant is a later Saracen emir; Blancandrin is Marsile's own envoy -- all real chanson figures, all wrong here. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Trapped in the pass by a Saracen host outnumbering them a hundred to one, Roland's best friend and fellow peer begs him three times to sound his great horn and call the emperor's army back before it is too late. WHO is the friend at Roland's shoulder pleading with him?",
+      "choices": ["Oliver", "Turpin", "Ogier the Dane", "Naimon"],
+      "answer": "Oliver",
+      "context": "Oliver, Roland's sworn brother-in-arms, is the voice of prudence in the chanson: he sees the odds, counts the Saracens from a hilltop, and begs Roland three times to blow the horn while there is still time. Turpin the Archbishop is a third peer on the field; Ogier the Dane and Naimon are other paladins of Charlemagne -- all real, wrong here. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Roland refuses his friend's plea three times, saying it would shame him to summon help before he had personally faced the enemy. Only after most of his men lie dead and he himself is wounded does he lift his great horn to his lips. What is Roland's horn called?",
+      "choices": ["Olifant", "Gjallarhorn", "Cornemuse", "Beaumont"],
+      "answer": "Olifant",
+      "context": "Olifant is Old French for 'elephant' -- the horn is carved from a great ivory tusk. Gjallarhorn is Heimdall's watch-horn in Norse myth, blown to wake the gods at Ragnarok; the other two names are French-sounding names chosen for parity, not real horns of the chanson. Source: en.wikipedia.org/wiki/Roland.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Roland at last sounds the horn, he blows it with such fury that a specific injury happens to his own body from the effort. What HAPPENS to him as he blows?",
+      "choices": ["the veins in his temples burst", "his throat tears open and bleeds", "the sword-cut in his side reopens", "his eyes fill with blood and he goes blind"],
+      "answer": "the veins in his temples burst",
+      "context": "The chanson makes the horn-blast a physical martyrdom: Roland winds Olifant so hard that the veins in his temples burst and blood runs down his face -- but Charlemagne, thirty leagues away, hears it and turns his army back. The dying king's nephew has broken his own body to bring the news, and it is still too late. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Alongside Olifant Roland fights with a named sword whose golden hilt, in the chanson, holds three sacred relics: a tooth of Saint Peter, blood of Saint Basil, and hair of Saint Denis. What is the sword called?",
+      "choices": ["Durendal", "Excalibur", "Joyeuse", "Tizona"],
+      "answer": "Durendal",
+      "context": "Durendal is Roland's sword in the chanson, said to be unbreakable and to hold the three relics named. Excalibur is Arthur's sword; Joyeuse is Charlemagne's own sword; Tizona is one of the Cid's two named swords -- all real named blades of Western legend, all wrong for Roland. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Even the archbishop of Charlemagne's court rides in the rearguard, a fighting bishop who cuts down dozens of the enemy with his own hand before falling at Roland's side. WHAT is the fighting archbishop's name?",
+      "choices": ["Turpin", "Anselm", "Adalhard", "Alcuin"],
+      "answer": "Turpin",
+      "context": "Archbishop Turpin is one of the twelve peers, a warrior-bishop who fights and dies beside Roland; both are found on the field by Charlemagne after the pass. Anselm of Canterbury, Adalhard of Corbie, and Alcuin of York are all real medieval churchmen, but not the fighting archbishop of the chanson. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Knowing he is finished, Roland drags himself to a slope, chooses his ground carefully, and lays himself down to die -- but he arranges his body in a very particular DIRECTION, so that Charlemagne when he arrives will read from the corpse how his nephew died. WHICH WAY is Roland lying when he dies?",
+      "choices": ["facing Spain, toward the enemy", "facing north, toward home", "flat on his back staring at the sky", "curled on his side with his face hidden"],
+      "answer": "facing Spain, toward the enemy",
+      "context": "Roland turns his face toward Spain and the enemy so that the emperor will see he died attacking and not in retreat. It is the last statement of the whole poem: a doomed warrior's body arranged like a signature. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Three centuries after the ambush, the chanson was famous enough in Norman France that a jongleur named Taillefer is said to have chanted the Song of Roland aloud to the Norman troops before one of the most decisive battles in English history, to give them courage. WHICH battle?",
+      "choices": ["Hastings in 1066", "Agincourt in 1415", "Bannockburn in 1314", "Poitiers in 732"],
+      "answer": "Hastings in 1066",
+      "context": "The chronicler Wace reports that Taillefer rode ahead of the Norman line at Hastings singing verses of the Song of Roland to inspire William the Conqueror's men. Agincourt, Bannockburn, and Poitiers are all real famous medieval battles, but Taillefer's chant belongs at Hastings. Source: en.wikipedia.org/wiki/The_Song_of_Roland.",
+      "legend": true
+    }
+  ]
+}

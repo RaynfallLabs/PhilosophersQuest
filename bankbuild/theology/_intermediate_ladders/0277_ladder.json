@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "When the Tuatha De Danann arrived in Ireland, the tales say they brought a sacred set of magical objects with them -- one from each of the northern cities of learning where their druid-teachers had trained them. In every medieval Irish source the set is counted exactly the same way. How many treasures do they bring?",
+      "choices": ["four", "seven", "nine", "twelve"],
+      "answer": "four",
+      "context": "The Four Treasures are one of the great numbered sets of Western myth, alongside the Norse dwarves' six treasures and the twelve Instruments of the Passion. Four is the ritual number of Irish myth -- four cities (Falias, Gorias, Findias, Murias), four teachers, four objects, and later four virtues of kingship attached to them. Source: en.wikipedia.org/wiki/Four_Treasures_of_the_Tuatha_D%C3%A9_Danann.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "On the Hill of Tara, the ancient inauguration-mound of the High Kings of Ireland, one of the Tuatha De's four treasures still stands in the open air today -- a rough grey pillar about five feet tall. Which of the treasures is it?",
+      "choices": ["the Lia Fail, the Stone of Destiny", "the Spear of Lugh", "the Sword of Nuada", "the Cauldron of the Dagda"],
+      "answer": "the Lia Fail, the Stone of Destiny",
+      "context": "Only the stone could plausibly still stand in the open after three thousand years, but the point is the Lia Fail is a REAL visible object at Tara today -- kids can go and touch it. Source: en.wikipedia.org/wiki/Lia_F%C3%A1il.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The Lia Fail on the Hill of Tara is not just a monument -- in the old tales it is a test. When a claimant to the High Kingship of Ireland stands upon it, the stone will do one particular thing if the claimant is the rightful king. If he is a pretender, silence. What does the stone do for the true king?",
+      "choices": ["It cries out with a loud shriek", "It splits in two beneath his feet", "It gives off a warm golden glow", "It sinks a hand's breadth into the ground"],
+      "answer": "It cries out with a loud shriek",
+      "context": "The Lia Fail's shriek beneath the rightful king is the founding motif of Irish sacred kingship: sovereignty is not chosen but recognised. The same motif is echoed in the Arthurian Sword in the Stone, and (say Scots tradition) survives in the coronation stone taken to Scone and later to Westminster. Source: en.wikipedia.org/wiki/Lia_F%C3%A1il.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One of the Four Treasures is a weapon so hungry for battle that it burns red-hot from its own thirst. Between fights, its wielder must plunge it into a cauldron of dark blood -- or milk -- to still it and cool it. It has never been beaten in any battle it was carried into, and no cast of it has ever missed. To whom does this weapon belong?",
+      "choices": ["Lugh Lamhfhada", "Nuada Silver-Arm", "the Dagda", "Manannan mac Lir"],
+      "answer": "Lugh Lamhfhada",
+      "context": "The Spear of Lugh is also called Gai Assail or Slea Bua ('the victory spear'), and it is the weapon Lugh will use to kill his grandfather Balor of the Evil Eye at the Second Battle of Moytura. Nuada owns the Sword of Light, the Dagda owns the club Lorg Mor and the cauldron, and Manannan owns his own sword Fragarach -- all real Tuatha De weapons, but none matches the never-missing thirsty spear. Source: morgynbard.com/post/the-gift-of-the-four-treasures.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Sword of Nuada, brought from one of the four northern cities, has a formal Irish name that means 'Sword of Light.' Its power is single and terrible: once its owner draws it from its sheath, no enemy in front of him can escape or run away. What is this sword called in Irish?",
+      "choices": ["the Claiomh Solais", "Fragarach", "Caladbolg", "the Gae Bolg"],
+      "answer": "the Claiomh Solais",
+      "context": "Claiomh Solais = 'Sword of Light.' Fragarach ('the Answerer') is Manannan mac Lir's sword, later given to Lugh; Caladbolg is the sword of Fergus mac Roich in the Ulster Cycle; the Gae Bolg is Cuchulainn's belly-spear -- honest adjacent-real distractors from the same Irish tradition. Source: en.wikipedia.org/wiki/Nuada_Airgetl%C3%A1m.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Cauldron of the Dagda was brought from the northern city of Murias. In Old Irish it is named for the fact that it never runs dry: no matter how many warriors dip their bowls into it, more food and drink well up to fill the space. What is its Irish name?",
+      "choices": ["the Coire Ansic", "the Cauldron of Ceridwen", "the Cauldron of Bran", "the Grail of Perceval"],
+      "answer": "the Coire Ansic",
+      "context": "Coire Ansic means literally 'the un-dry cauldron.' The Cauldron of Ceridwen and the Cauldron of Bran are the great magical cauldrons of the WELSH tradition -- adjacent real objects from a sister Celtic myth. The Grail is the later Christian romance vessel some scholars think descends from these Celtic cauldrons. Source: en.wikipedia.org/wiki/Four_Treasures_of_the_Tuatha_D%C3%A9_Danann.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Tuatha De brought each of their four treasures from a different northern city of learning: the Sword from Findias, the Cauldron from Murias, the Stone of Destiny from Falias. From which fourth city did they bring the Spear?",
+      "choices": ["Gorias", "Emain", "Uisneach", "Tara"],
+      "answer": "Gorias",
+      "context": "The four cities are always listed in the same order in the medieval sources: Falias (stone), Gorias (spear), Findias (sword), Murias (cauldron). Kids will guess the spear-and-sword pair swapped; the primary text keeps spear at Gorias and sword at Findias. Emain, Uisneach, and Tara are all real famous sites in Ireland, not otherworld cities. Source: en.wikipedia.org/wiki/Four_Treasures_of_the_Tuatha_D%C3%A9_Danann.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Cauldron of the Dagda has ONE promise attached to it in the medieval sources, and it is the fixed formula: no matter how many warriors gather around it and take from it, one thing never happens to any of them. What is it?",
+      "choices": ["No company ever went away from it unsatisfied", "No man who ate from it could ever be poisoned", "No warrior who tasted it could be killed by iron", "No woman who tasted it could bear a mortal child"],
+      "answer": "No company ever went away from it unsatisfied",
+      "context": "The formula, straight from Lebor Gabala Erenn and Cath Maige Tuired, is that no company ever leaves the cauldron unsatisfied. The other three would have been fine legendary powers, but none of them is the promise the sources carry. Source: en.wikipedia.org/wiki/Four_Treasures_of_the_Tuatha_D%C3%A9_Danann.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Each of the four northern cities the Tuatha De studied in had its own druid-teacher, and the medieval sources preserve all four teacher-names. Morfessa taught in Falias, Uiscias taught in Findias, Semias taught in Murias. Who taught in the city of Gorias, the city that gave up the Spear?",
+      "choices": ["Esras", "Amergin", "Cathbad", "Mog Ruith"],
+      "answer": "Esras",
+      "context": "The four teachers in the medieval formula: Morfessa, Esras, Uiscias, Semias -- obscure druid-masters whose names are preserved only in this one glossed passage. Amergin is the Milesian druid, Cathbad is Conchobar's druid in the Ulster Cycle, Mog Ruith is the great blind sorcerer of Munster -- three real druid-names of Irish tradition, but from other cycles. Source: en.wikipedia.org/wiki/Four_Treasures_of_the_Tuatha_D%C3%A9_Danann.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The 'stone that cries out under the true king' motif on the Hill of Tara did not stay in Ireland. Scottish tradition holds that a stone said to be the Lia Fail was carried east to be used at the coronation of Scottish kings at a certain abbey, and later carried again to England by Edward I to sit beneath the coronation chair of English monarchs at Westminster. What is this stone called in English?",
+      "choices": ["the Stone of Scone", "the Blarney Stone", "the Ogham Stone of Cashel", "the Coronation Slab of Tara"],
+      "answer": "the Stone of Scone",
+      "context": "The Stone of Scone (also called the Stone of Destiny) was taken by Edward I in 1296 and set beneath the wooden coronation chair at Westminster Abbey, where it stayed until 1996. Scots and Irish scholars have disputed for a thousand years whether it is really the Lia Fail. The Blarney Stone (Cork) is a totally different tradition; the other two names are inventions. Source: en.wikipedia.org/wiki/Stone_of_Scone.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Medieval Irish schoolmen matched each of the Four Treasures to one of the four virtues of a rightful king. The Lia Fail was matched with truth; the Sword with justice; the Cauldron with hospitality. Which virtue was matched with the Spear of Lugh?",
+      "choices": ["valour", "wisdom", "mercy", "chastity"],
+      "answer": "valour",
+      "context": "The virtue-set is the medieval Irish version of the four cardinal kingly virtues, mapped one-to-one onto the treasures: truth (stone), valour (spear), justice (sword), hospitality (cauldron). Wisdom is the classical fourth cardinal virtue in Greek and Christian tradition, but the Irish schools used valour in its place for the spear. Source: storyarchaeology.com/four-cities-four-teachers-four-treasures/.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Four Treasures do not just appear in a stray gloss -- they are named together in the opening passage of one of the two great Mythological-Cycle sagas of Ireland, the saga that also carries the porridge scene, the harp scene, and the killing of Balor. Which saga opens with the four cities and their treasures?",
+      "choices": ["Cath Maige Tuired ('The Second Battle of Moytura')", "the Tain Bo Cuailnge ('The Cattle Raid of Cooley')", "Togail Bruidne Da Derga ('The Destruction of Da Derga's Hostel')", "the Acallam na Senorach ('Colloquy of the Ancients')"],
+      "answer": "Cath Maige Tuired ('The Second Battle of Moytura')",
+      "context": "Cath Maige Tuired opens with the four cities and their gifts; the Tain is the Ulster Cycle war-epic (Cuchulainn's world); Togail Bruidne Da Derga is the tragic-king tale of Conaire Mor; the Acallam na Senorach is the huge Fionn-cycle framing dialogue between Oisin and St Patrick. Source: celt.ucc.ie/published/T300010.html.",
+      "legend": true
+    }
+  ]
+}

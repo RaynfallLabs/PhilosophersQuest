@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the last books of Malory's Le Morte d'Arthur, one young knight rides into Camelot on the feast of Pentecost in red armour, led by an old hermit, and takes an empty seat at the Round Table that had killed every other man who ever sat in it. In the story he is the pure knight who alone achieves the Holy Grail. What is his name?",
+      "choices": ["Galahad", "Percival", "Bors", "Lancelot"],
+      "answer": "Galahad",
+      "context": "Malory, Le Morte d'Arthur Book XIII ch.4. Galahad is the pure Grail-knight of the Vulgate Queste and Malory. Percival and Bors are his two Grail companions but only Galahad may sit in the Siege Perilous. Lancelot, his father, is the greatest fighter in the world but is barred from the Grail by his love for Guinevere.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Galahad, the young knight who takes the empty seat at Camelot and rides on to achieve the Holy Grail, is not born of a nobody -- his father is the most famous knight of the whole Round Table, though the father himself will fail the Grail quest. Who is Galahad's father?",
+      "choices": ["Sir Lancelot", "Sir Gawain", "Sir Bedivere", "Sir Tristan"],
+      "answer": "Sir Lancelot",
+      "context": "Malory, Le Morte d'Arthur Books XI-XVII. Galahad is the son of Sir Lancelot of the Lake and Elaine of Corbenic. Malory's telling makes Galahad the pure knight Lancelot cannot be -- Lancelot's love for Queen Guinevere is what bars him from achieving the Grail himself. Gawain, Bedivere, and Tristan are other great knights of the world of the romances but no kin of Galahad.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Galahad's mother is a young noblewoman named Elaine, daughter of the wounded lord who keeps the castle of Corbenic. She conceives Galahad in one night, having tricked Sir Lancelot into her bed by enchantment -- he had believed all night that he was with Queen Guinevere. Who is Galahad's mother?",
+      "choices": ["Elaine of Corbenic", "Elaine of Astolat", "Nimue of the Lake", "Morgan le Fay"],
+      "answer": "Elaine of Corbenic",
+      "context": "Malory, Le Morte d'Arthur Book XI. The enchantress Dame Brusen brought Lancelot a magic ring that made Elaine of Corbenic appear as Guinevere for the night. Elaine of Astolat is a DIFFERENT Elaine -- the tragic lily-maid who dies of love for Lancelot in a boat downstream to Camelot. Nimue is Merlin's sorceress-apprentice; Morgan le Fay is Arthur's half-sister and a great villain.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "On the same Pentecost day that Galahad arrives at Camelot, the court sees something new appear on the empty seat at the Round Table that had killed every knight who dared sit in it. Old gold lettering has vanished and fresh gold letters have taken its place. What do the new letters on the Siege Perilous say?",
+      "choices": ["This is the siege of Galahad, the haut prince", "This is the seat of Lancelot of the Lake", "Whoso sits herein shall die a shameful death", "The Grail shall come to this hall this very day"],
+      "answer": "This is the siege of Galahad, the haut prince",
+      "context": "Malory, Le Morte d'Arthur Book XIII ch.4. 'Siege' is Old French for seat or throne; 'haut prince' means high prince. The seat had been kept empty since Merlin made it, killing any impure knight who tried it. When Galahad enters the hall the old warning letters vanish and are replaced by his name -- the seat had been HIS all along.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the same Pentecost, a strange thing comes drifting up the river to Camelot. A great STONE floats on the water, with a bright sword driven through it; letters on the stone say only the best knight in the world shall draw it. Sir Lancelot tries first and fails; Sir Gawain tries and fails. Which knight then puts his hand to the sword and draws it easily?",
+      "choices": ["Galahad", "Percival", "Bors", "Bedivere"],
+      "answer": "Galahad",
+      "context": "Malory, Le Morte d'Arthur Book XIII ch.2. This floating stone with a sword is the SECOND sword-in-a-stone of the whole cycle -- Arthur drew the first as a boy to be crowned king of Britain; Galahad draws this one to be crowned king of holiness. Percival and Bors are the two knights who will go with him on the Grail quest, but the floating sword is Galahad's alone.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the Grail quest ends, only THREE knights of the whole fellowship of the Round Table actually achieve the Grail -- Galahad the pure, plus two others. Which two knights complete the Grail quest with Galahad?",
+      "choices": ["Percival and Bors", "Gawain and Lancelot", "Kay and Bedivere", "Tristan and Palamedes"],
+      "answer": "Percival and Bors",
+      "context": "Malory, Le Morte d'Arthur Book XVII. Percival and Bors are the two companions who ride the whole quest with Galahad and see the Grail at Corbenic. Gawain and Lancelot both attempt the quest and both fail. Kay and Bedivere are old household knights of Arthur. Tristan and Palamedes belong to a different romance-cycle -- the Tristan story of Cornwall.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The three Grail-knights ride at last to a castle where the wounded Fisher King rules -- the same castle where Galahad had been conceived. In its chapel they see the Grail uncovered before them. What is the name of the Fisher King's castle?",
+      "choices": ["Corbenic", "Camelot", "Joyous Gard", "Tintagel"],
+      "answer": "Corbenic",
+      "context": "Malory, Le Morte d'Arthur Book XVII; Vulgate Queste del Saint Graal. Corbenic is King Pelles's castle -- the same castle where Elaine tricked Lancelot and conceived Galahad. Camelot is Arthur's own city. Joyous Gard is Lancelot's personal castle. Tintagel is where Uther Pendragon fathered Arthur.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the Vulgate Queste's telling of what happens in the chapel at Corbenic, the Grail is uncovered and the three knights receive communion -- but it is not a priest who serves them. Someone else steps out of the Grail vessel and hands them the bread. Who serves the three knights communion from the Grail?",
+      "choices": ["Christ himself", "Joseph of Arimathea", "the Fisher King", "the archangel Michael"],
+      "answer": "Christ himself",
+      "context": "Vulgate Queste del Saint Graal c.1220. The scene is the mystical centre of the whole cycle -- Christ steps from the vessel and communicates the three knights with his own hand. Joseph of Arimathea is the figure who FIRST brought the Grail to Britain in the older backstory. The Fisher King is Corbenic's wounded lord. Michael is the warrior archangel of the Book of Revelation.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After the wonder at Corbenic, Galahad carries the Grail overseas to a mystical city where he is made king for one year. This city is sometimes placed in the East and is not on any real map. In what city does Galahad rule for a year before his death?",
+      "choices": ["Sarras", "Jerusalem", "Alexandria", "Constantinople"],
+      "answer": "Sarras",
+      "context": "Malory, Le Morte d'Arthur Book XVII ch.20-22. Sarras is a mystic city of the Grail cycle -- sometimes said to be in the Holy Land, sometimes further east, never really pinned down. Jerusalem, Alexandria, and Constantinople are the great real Christian cities of the eastern Mediterranean and would each have made an obvious choice -- the poet's use of a made-up name Sarras is deliberate.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "During Mass in Sarras, Galahad kneels before the Grail and beholds it directly -- and gets a wish he had asked for long before. Malory says the wonder is so great that a particular thing happens to him at that instant. What happens to Galahad at the moment he beholds the Grail directly?",
+      "choices": ["he dies of joy on the spot", "he goes blind for the rest of his life", "he is turned to stone in the chapel", "he is carried off in his sleep"],
+      "answer": "he dies of joy on the spot",
+      "context": "Malory, Le Morte d'Arthur Book XVII ch.22. Galahad had asked earlier that he might die at the moment of his greatest joy -- and here the wish is granted. The wonder of the uncovered Grail simply kills him; his soul is carried up by angels. Being blinded belongs to Saul of Tarsus on the road to Damascus; petrification belongs to Perseus's Medusa (Greek pillar); a sleeping abduction belongs to fairy-story.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the instant Galahad dies in the Mass at Sarras, and his soul goes up, something comes DOWN from above the altar and takes the Grail out of the world for good. Malory says no one ever sees it again. What comes down from heaven and takes the Grail?",
+      "choices": ["a hand", "a golden ladder", "a white dove", "a pillar of fire"],
+      "answer": "a hand",
+      "context": "Malory, Le Morte d'Arthur Book XVII ch.22. A single HAND reaches down from above the altar, takes the Grail and the holy spear with it, and is gone. This is the very end of the Grail on earth. The white dove belongs to the Grail's arrival scenes (and to the baptism of Jesus in the gospels); Jacob's ladder belongs to Genesis; the pillar of fire is Israel's guide out of Egypt in Exodus.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Only ONE of the three Grail-knights ever comes home to Camelot to tell the story of what happened at Sarras -- Galahad dies at the Mass, and Percival takes vows and dies a hermit not long after. Which knight rides back alone to Arthur's court and reports the end of the quest?",
+      "choices": ["Sir Bors", "Sir Gawain", "Sir Kay", "Sir Lancelot"],
+      "answer": "Sir Bors",
+      "context": "Malory, Le Morte d'Arthur Book XVII ch.23. Bors alone returns to Camelot and tells the whole tale -- he is the only Grail-witness left in Arthur's court, and later he stands with Lancelot in the war that ends the Round Table. Gawain, Kay, and Lancelot all attempted the quest and all failed to reach Corbenic.",
+      "legend": true
+    }
+  ]
+}

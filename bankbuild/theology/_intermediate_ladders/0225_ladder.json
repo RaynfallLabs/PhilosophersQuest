@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse Volsunga Saga the young hero has just killed the dragon on Gnitaheid. His foster-father Regin sits down beside him, cuts one specific organ out of the dragon, and hands it to Sigurd with orders to cook it over the open fire while Regin lies down to sleep in the grass. Which organ does Regin cut out and give Sigurd to roast?",
+      "choices": ["the heart", "the liver", "the tongue", "the eye"],
+      "answer": "the heart",
+      "context": "Volsunga Saga chapter 19; Fafnismal prose after stanza 31. Regin drinks the dragon's blood himself, cuts out Fafnir's heart, and tells Sigurd to cook it on a spit for him -- claiming he wants to eat it for the wisdom that comes with it. Then Regin lies down in the grass, exhausted, and falls asleep. In Norse dragon-lore the heart is the seat of the dragon's knowledge; the other organs carry no such magic.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The dragon's heart is roasting on a spit over the fire. Sigurd wants to check if it is cooked through, so he pokes it with one finger to test the meat. The blood inside is boiling hot and it scalds him. Which finger does Sigurd burn?",
+      "choices": ["his thumb", "his little finger", "his ring finger", "his palm"],
+      "answer": "his thumb",
+      "context": "Volsunga Saga chapter 19; Fafnismal prose after stanza 31. The scalded THUMB is a fixed detail of the story -- it is the thumb Sigurd tests with, and the thumb he then sticks in his mouth to cool it. The exact detail matters because the direct Celtic cousin of this story is Fionn mac Cumhaill and the Salmon of Knowledge, where Fionn burns his THUMB on the roasting salmon-skin and sucks it and gains all wisdom -- the same anatomical detail in a completely independent tradition.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Sigurd's thumb is scalded by the boiling dragon-blood. Without thinking he does the thing anyone does when they burn a finger -- he sticks the burned thumb in his mouth to cool it. The instant the dragon's blood touches his tongue a new power comes over him. What does Sigurd suddenly discover he can do?",
+      "choices": ["understand the speech of birds", "see events happening far away", "grow to twice a man's height", "call fire from an open hand"],
+      "answer": "understand the speech of birds",
+      "context": "Volsunga Saga chapter 19; Fafnismal prose after stanza 31. Dragon-blood confers the language of birds -- one of the oldest Germanic story-shapes, appearing in folktale all across northern Europe. Sigurd hears the chirping in the trees above his head resolve into voices talking about him. This is the folkloric-magic center of the whole saga, and the pivot to everything that follows.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the branches above the fire on Gnitaheid a small flock of birds is chattering about the young man on the ground. The first bird looks down at Sigurd tending the roasting heart and remarks that he would be a wiser lord if he did one specific thing with the heart on the spit -- instead of handing it over to sleeping Regin as ordered. What does the first bird say Sigurd should do?",
+      "choices": ["eat the heart himself", "throw the heart into the river", "burn the heart to ash", "bury the heart in the hoard"],
+      "answer": "eat the heart himself",
+      "context": "Fafnismal stanza 32. The whole point of the dragon-heart in Norse dragon-lore is that whoever eats it gains its wisdom. Regin claimed the heart for himself and Sigurd is dutifully cooking it for his foster-father, but the birds see the danger: the wisdom is going to the wrong man. Their first counsel is the simple one -- eat it yourself.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The birds' chatter above Sigurd's head turns from advice to warning. They tell him something specific about the man lying asleep in the grass beside him -- his foster-father, the smith who reforged Sigurd's sword and taught him the pit-and-thrust that just killed the dragon. What do the birds tell Sigurd that Regin is planning?",
+      "choices": ["to kill Sigurd for the treasure", "to lie to Sigurd about the sword", "to marry Sigurd's mother by force", "to sell Sigurd to the giants"],
+      "answer": "to kill Sigurd for the treasure",
+      "context": "Fafnismal stanzas 33-37; Volsunga Saga chapter 19. This is the piece of news that turns the whole saga. Regin has been a father-figure to Sigurd since childhood -- reforged Gram out of the shards of Sigmund's sword, sent him out to Gnitaheid, taught him the pit-plan. He is also the dragon's brother, and now that Fafnir is dead the whole cursed hoard passes by rights to Regin -- if Sigurd is out of the way. The dying Fafnir had already warned Sigurd of exactly this; the birds are the second warning, and the one Sigurd finally acts on.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Sigurd has heard the birds. He has heard the dying dragon. Regin lies asleep in the grass a few paces from the fire. Sigurd draws the sword Gram, walks over to his foster-father, and does one specific thing to him. What does Sigurd do to Regin?",
+      "choices": ["strikes off his head", "puts out his eyes", "binds his hands in iron", "burns him in the fire"],
+      "answer": "strikes off his head",
+      "context": "Volsunga Saga chapter 19; Fafnismal stanzas 39-40. Sigurd beheads Regin with a single stroke of Gram before Regin can wake up and strike first. The moment marks the young hero's shift from foster-son to independent man -- from taking orders from a tutor to acting on his own judgment. It is also the first killing Sigurd does without a tutor's plan, and the first killing that is unambiguously HIS choice.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sigurd loads the cursed hoard of Andvari's gold onto the back of his horse and mounts up to leave Gnitaheid. This particular horse was chosen for Sigurd years earlier by a one-eyed stranger in a wide hat -- Odin in disguise -- who drove a herd of horses into a river to test them; the foal that swam best came home with Sigurd. What is the name of this horse?",
+      "choices": ["Grani", "Sleipnir", "Gullfaxi", "Hrimfaxi"],
+      "answer": "Grani",
+      "context": "Volsunga Saga chapters 13 and 19. Grani is Sigurd's horse for the whole saga, descended by tradition from Odin's own eight-legged Sleipnir. Sleipnir is Odin's mount, not Sigurd's. Gullfaxi is the golden-maned horse Thor gives to Magni after the fight with Hrungnir. Hrimfaxi is the horse of Night whose foam is the morning dew. Grani is the specific horse of the Volsung cycle.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The chattering birds in the trees have one more piece of news for Sigurd. They tell him about a person he must go find -- someone lying asleep on a mountain called Hindarfjall, ringed by a wall of flame, waiting for a hero brave enough to ride through the fire and wake her. What kind of person is asleep on Hindarfjall?",
+      "choices": ["a Valkyrie", "a giantess", "a Norn", "an elf queen"],
+      "answer": "a Valkyrie",
+      "context": "Fafnismal stanzas 42-44. The sleeping figure is the Valkyrie who will be named Brynhild -- the birds send Sigurd toward her and the next act of the saga opens with him riding through the ring of fire. Valkyries in Norse myth are the choosers of the slain who serve Odin. A Norn is one of the three fates at the well of Urd. Giantesses and elf-queens are separate categories. The birds specifically name a Valkyrie.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sigurd rides off from Gnitaheid pointing his horse's head toward the mountain the birds named. What is the name of the mountain where the sleeping Valkyrie waits inside the wall of fire?",
+      "choices": ["Hindarfjall", "Hnitbjorg", "Idavoll", "Gnipahellir"],
+      "answer": "Hindarfjall",
+      "context": "Fafnismal stanzas 42-44; Volsunga Saga chapter 20. Hindarfjall (the deer-mountain) is the specific peak in the Volsung cycle. Hnitbjorg is the giant Suttungr's mountain where the Mead of Poetry is hidden. Idavoll is the plain where the gods gather in the new world after Ragnarok. Gnipahellir is the cave in front of which the hound Garmr howls. The bird-directed mountain is Hindarfjall.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "From the day he kills the dragon and beheads Regin, Sigurd carries a battle-name the skalds use for him for the rest of his life -- and for the rest of Norse and Germanic legend after him. Which byname does Sigurd earn on Gnitaheid?",
+      "choices": ["Fafnisbani", "Fenrisbani", "Volsungr", "Gramgjafi"],
+      "answer": "Fafnisbani",
+      "context": "Volsunga Saga chapter 19; Fafnismal title tradition. Fafnisbani means Fafnir's-Bane, slayer of Fafnir -- the standard skaldic epithet for Sigurd from this day on. Fenrisbani (Fenrir's-Bane) is a possible kenning for Vidar, who kills Fenrir at Ragnarok, not for Sigurd. Volsungr just means son of the Volsung line -- his family name, not his earned byname. Gramgjafi (giver of Gram) is not a standard epithet. Fafnisbani is the specific dragon-slaying byname.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The scene of the hero cooking magic food, burning his finger, sticking it in his mouth, and gaining supernatural wisdom is not unique to Sigurd and the dragon's heart. Another young hero in Celtic tradition burns his thumb on a magical fish roasting on a spit, sucks the thumb, and gains all the wisdom of the world. Who is the Celtic hero who burns his thumb on a magic fish?",
+      "choices": ["Fionn mac Cumhaill", "Cuchulainn", "Lugh Lamhfhada", "Diarmuid ua Duibhne"],
+      "answer": "Fionn mac Cumhaill",
+      "context": "Fenian Cycle, the Boyhood Deeds of Fionn. The fish is the Salmon of Knowledge, caught in the river Boyne by the poet Finnegas after seven years' waiting; young Fionn is set to cook it, burns his thumb on the crackling skin, sticks the thumb in his mouth, and from that day on gains all knowledge whenever he bites his thumb. Cuchulainn is the Ulster hero of the Tain, no salmon story. Lugh is the many-skilled god of the Tuatha De Danann. Diarmuid is the Fenian who dies on the boar of Ben Bulben. The salmon-and-thumb story belongs to Fionn. The Sigurd-and-Fionn parallel is one of comparative mythology's most striking cousin-motifs -- two totally separate traditions, the same magic story-shape.",
+      "legend": true
+    }
+  ]
+}

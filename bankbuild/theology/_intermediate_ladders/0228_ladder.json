@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse myth Ragnarok is the doom of the gods -- Odin swallowed by the wolf, Thor down beside the world-serpent, Surt burning the whole world with fire, and the sea rising to cover every land. But the Voluspa, the great seeress-poem of the Poetic Edda, does NOT stop there. In stanza 59 the seeress lifts her voice and says she sees something happen a second time. What does she see?",
+      "choices": ["a new earth rise from the sea, green anew", "a great feast set in Valhalla", "the ships of the dead sail out again", "the giants build a hall on the ash"],
+      "answer": "a new earth rise from the sea, green anew",
+      "context": "Voluspa 59 in the Poetic Edda: 'She sees rise up a second time earth from the ocean, green anew.' After Surt's fire and the drowning of the world, a new green earth surfaces from the flood -- the surprise of Norse eschatology is that the ending is also a beginning. The other three choices are real Norse motifs (Valhalla-feasting, Naglfar the ship of the dead, giants and their halls) but none is the second-rising of stanza 59.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Not everyone dies at Ragnarok. Two HUMANS hide themselves away from Surt's fire and live through the end of the world. From the two of them, all of the humans of the new green earth will descend. What is the man called?",
+      "choices": ["Lif", "Ask", "Bragi", "Baldr"],
+      "answer": "Lif",
+      "context": "Vafthrudnismal 45 and Snorri's Gylfaginning 53. The Old Norse name Lif means simply 'life, the life of the body.' Ask is the FIRST man of Norse myth (carved from an ash tree by Odin, Vili, and Ve at the beginning of the world) -- not the survivor at the end. Bragi is the god of poetry, an Aesir; Baldr is the beautiful god, a returning Aesir. The two Ragnarok-survivor humans are Lif and Lifthrasir.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The two Ragnarok-survivors are a pair. The man is Lif ('life'). His companion has an Old Norse name that is a plain expansion of the same word, and translators render it as 'life-lover,' 'life-yearner,' or 'stubborn one clinging to life.' What is the second survivor called?",
+      "choices": ["Lifthrasir", "Embla", "Nanna", "Idunn"],
+      "answer": "Lifthrasir",
+      "context": "Vafthrudnismal 45 and Gylfaginning 53. Lifthrasir is Old Norse Lif + thrasir, most often glossed 'lover of life.' Embla is the FIRST woman of Norse myth (carved from an elm at the beginning of the world by the same three gods who made Ask) -- not the survivor. Nanna is Baldr's wife who dies of grief on his pyre. Idunn is the Aesir goddess of the apples of youth.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Lif and Lifthrasir do not hide in a cave or a mountain to escape Surt's fire. They hide inside a specific KIND of place, and Norse scholars have long guessed this place is really another name for Yggdrasil, the world-tree itself. What kind of place do the two survivors hide inside?",
+      "choices": ["a wood", "a great cave", "a mountain hall", "a ship at sea"],
+      "answer": "a wood",
+      "context": "Vafthrudnismal 45. The place is named Hoddmimis holt, 'Mimir's-hoard-wood.' Because Mimir is the guardian of the well at the root of Yggdrasil, and holt means 'wood,' most scholars read Hoddmimis holt as a poetic name for Yggdrasil itself -- meaning that the humans of the new earth survive INSIDE the world-tree while the world burns around it. Deucalion and Pyrrha hid in a chest at sea in the Greek flood; Noah rode the Ark; the Norse survivors take shelter in the tree.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "For as long as they are hidden away in the wood, Lif and Lifthrasir have no bread and no meat -- they eat none of the food of Midgard. Vafthrudnismal 45 tells you what they DO live on while the world burns. What do the two survivors drink for food inside the wood?",
+      "choices": ["the morning dew", "the sap of the tree", "the milk of a hidden cow", "the honey the bees left"],
+      "answer": "the morning dew",
+      "context": "Vafthrudnismal 45. Their sustenance is morgindoggvar -- the morning dew. The image is that after the fire and the flood, the very first food of the new humanity is the drops that gather at dawn on the leaves of Yggdrasil itself. Audhumla the cow feeds the frost-giant Ymir at the world's BEGINNING, not its end; sap and hoarded honey belong to other Norse strands.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Not only humans survive Ragnarok. One specific god who had DIED before Ragnarok even began -- the beautiful son of Odin, killed by mistletoe long ago -- comes back OUT of Hel now that the old order has ended, and walks the new green earth. Which god returns from Hel?",
+      "choices": ["Baldr", "Tyr", "Heimdall", "Freyr"],
+      "answer": "Baldr",
+      "context": "Voluspa 62 and Gylfaginning 53. Baldr, killed before Ragnarok by the mistletoe-dart Loki guided into Hodr's hand, is held in Hel until the old world is gone. Then he returns, and his blind brother Hodr with him. Tyr has already died at Ragnarok fighting the hound Garm; Heimdall has killed Loki and died beside him; Freyr has fallen to the fire-giant Surt. Baldr is the returning one.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Voluspa 61 the surviving gods gather together on a grassy plain and sit down in the grass to talk of Odin's runes and of the world-serpent. This is the SAME plain where the Aesir first held their meetings in the world's youth -- so their end brings them back to where they started. What is this grassy plain called?",
+      "choices": ["Idavoll", "Vigrid", "Folkvangr", "Glasir"],
+      "answer": "Idavoll",
+      "context": "Voluspa 61 (and Voluspa 7, at the world's dawn). Idavoll is where the Aesir first raised their halls and forges in the beginning; and it is where the small band of surviving gods -- Baldr, Hodr, Vidarr, Vali, Modi, Magni, and Honir -- meet again after the fire. Vigrid is the OTHER plain, the battlefield of Ragnarok itself. Folkvangr is Freyja's field; Glasir is the golden-leaved grove outside Valhalla.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As the surviving gods sit talking on the grass of Idavoll, they reach down and find something in the grass that the Aesir had owned in the world's dawn and had lost somewhere in Asgard when the trouble started -- and here they are, on the fresh grass of the new world. What do the gods find lying in the grass at Idavoll?",
+      "choices": ["the golden gaming pieces", "the mead-vats of Odroerir", "the horn of Heimdall", "the spear Gungnir"],
+      "answer": "the golden gaming pieces",
+      "context": "Voluspa 61: 'In the grass shall the wondrous golden tables be found, which they possessed in ancient days.' In Old Norse, gullnar toflur -- the golden playing-pieces from the gods' board-game in the world's youth. It is one of the strangest and gentlest images in all of Norse myth: gods sitting in fresh grass after the end of the world, picking up the toys they had lost when they were young. Gungnir is Odin's spear (broken with him inside Fenrir's mouth at Ragnarok); Heimdall's Gjallarhorn has already been blown; Odroerir is the vat that held the Mead of Poetry, kept by Odin in Asgard. None of those three are found lying in the grass at Idavoll.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Thor is dead beside the world-serpent, but he leaves TWO SONS behind, and both of them survive Ragnarok. Vafthrudnismal 51 says Vidarr and Vali will inhabit the temples of the gods when Surt's fire is slaked, and that Thor's two sons will inherit one very specific thing from their father. What do Thor's sons Modi and Magni inherit?",
+      "choices": ["Thor's hammer Mjolnir", "Thor's iron chariot", "Thor's iron gauntlets", "Thor's belt of strength"],
+      "answer": "Thor's hammer Mjolnir",
+      "context": "Vafthrudnismal 51: 'Modi and Magni shall Mjollnir possess.' The two brothers -- Modi ('the wrathful,' Thor's son by Sif) and Magni ('the strong,' Thor's son by the giantess Jarnsaxa) -- carry the hammer forward into the new world. Thor's iron gauntlets (Jarngreipr), his iron chariot pulled by the goats Tanngrisnir and Tanngnjostr, and his belt of strength (Megingjord) are Thor's other named gear; the poem singles out MJOLNIR as the sons' inheritance.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In Voluspa 64 the seeress sees one MORE building rise on the new earth -- a hall she calls 'more beautiful than the sun, better than gold,' where the good will live forever. She gives this new hall a specific name. What is the new hall called?",
+      "choices": ["Gimle", "Valhalla", "Bilskirnir", "Sessrumnir"],
+      "answer": "Gimle",
+      "context": "Voluspa 64: 'She sees a hall standing, more beautiful than the sun, better than gold, at Gimle -- there shall the trustworthy troops dwell, and joy shall have for evermore.' Valhalla is Odin's OLD hall for the einherjar; it fell at Ragnarok. Bilskirnir is Thor's own hall in Thrudheim, also gone. Sessrumnir is Freyja's hall in Folkvangr. Gimle is the NEW hall of the new world.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Voluspa does not end on the golden hall Gimle. Its very last stanza (66) darkens the peace one more time. Out from Nidafjoll ('Moon-wane Hills') the seeress sees a great dark dragon come flying up over the plain, and he is CARRYING SOMETHING in his wings. What is Nidhoggr the dragon carrying as he flies up in the poem's final image?",
+      "choices": ["corpses", "black stones", "burning coals", "shards of Yggdrasil"],
+      "answer": "corpses",
+      "context": "Voluspa 66: 'Then comes there the dark dragon flying, the glittering serpent, up from Nidafjoll -- he bears in his feathers dead bodies as he flies over the plain, and now the seeress sinks.' Nidhoggr ('Spite-striker'), the same dragon who gnaws at Yggdrasil's root through the whole poem, flies up carrying corpses in his wings, and that is the last thing the seeress sees before her prophecy ends. Scholars are split on whether it is a last dark note or a strange redemption -- but corpses in the wings is what she sees.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Snorri Sturluson, in his thirteenth-century Prose Edda, retells most of the Voluspa's Ragnarok-ending in Gylfaginning 52-53. In Snorri's version too, the surviving gods gather on the plain of Idavoll and sit together in the grass. What is the FIRST specific subject Snorri says they talk about there, sitting on the grass?",
+      "choices": ["the runes and events of the past", "the road up to the new hall", "the ships that survived the flood", "the fate of the missing Aesir"],
+      "answer": "the runes and events of the past",
+      "context": "Gylfaginning 53. Snorri: the survivors 'come together and talk of things and remember their runes and speak of the events that had happened before, of the Midgard-Serpent and of the Fenris-Wolf.' In Snorri's telling the very first thing the new world does is REMEMBER -- the gods hand the memory of the old world down through their talk on the grass. It is what turns Ragnarok from an ending into a beginning.",
+      "legend": false
+    }
+  ]
+}

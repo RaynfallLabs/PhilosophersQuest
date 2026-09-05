@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the world hangs on the branches of one great ash tree that has three roots, one reaching to the frost-giants, one to Hel, and one to the gods. Under a hall by a well at the second root live the three fate-women who choose the life of every child born into the nine worlds. What is the name of that great world-tree?",
+      "choices": ["Yggdrasil", "Bifrost", "Gjallarbru", "Glasir"],
+      "answer": "Yggdrasil",
+      "context": "Yggdrasil is the great ash at the center of Norse cosmology, with three roots and nine worlds strung through its branches. Bifrost is the rainbow bridge to Asgard; Gjallarbru is the bridge over the river Gjoll to Hel; Glasir is the golden-leaved grove that stands before Valhalla's doors.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Beside the second root of the world-tree stands a well of water so holy that anything dipped into it comes out white. Beside the well live three maidens who set the fate of every child in the nine worlds. What are the three fate-women called in Norse myth?",
+      "choices": ["the Norns", "the Valkyries", "the Disir", "the Idisi"],
+      "answer": "the Norns",
+      "context": "The Norns are the fate-women. The Valkyries are the choosers-of-the-slain who carry warriors to Valhalla. The Disir are a broader class of protective female spirits. The Idisi are the Old High German equivalent, mentioned in the Merseburg Charms -- close cousins but a different name.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Voluspa 20 the three fate-women of Norse myth are named -- and their names are just three Old Norse words for three ordinary things a Norse-speaker used every day. The three words together mean 'Was', 'Being', and 'Shall-Be'. What are the three names?",
+      "choices": ["Urd, Verdandi, and Skuld", "Frigg, Freyja, and Sif", "Modi, Magni, and Vidar", "Nott, Dag, and Sol"],
+      "answer": "Urd, Verdandi, and Skuld",
+      "context": "Urd = 'was / has-become' (past); Verdandi = 'becoming / that-which-is' (present participle); Skuld = 'shall-be / debt-owed-to-the-future' (future). Frigg / Freyja / Sif are three Aesir goddesses. Modi / Magni / Vidar are three sons of the gods who survive Ragnarok. Nott / Dag / Sol are Night, Day, and Sun.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The well beside which the three Norse fate-women live takes its name from the eldest of the three. What is the well called in Old Norse?",
+      "choices": ["Urdarbrunnr", "Mimisbrunnr", "Hvergelmir", "Odroerir"],
+      "answer": "Urdarbrunnr",
+      "context": "Urdarbrunnr means 'Urd's well'. Mimisbrunnr is Mimir's well under the second root, where Odin pledged his eye for a drink. Hvergelmir is the seething cauldron-well of poisonous rivers under the third root. Odroerir is one of the three vessels holding the Mead of Poetry, not a well.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Voluspa 20 says the three Norns come out of their hall beside the well and set the life of every child born into the nine worlds. They do this with a knife and a piece of wood -- but not by writing on it in the modern sense. What do the Norns DO to the wood?",
+      "choices": ["they carve runes into it", "they burn a hole through it", "they float it out on the well", "they hang it from Yggdrasil's branch"],
+      "answer": "they carve runes into it",
+      "context": "Voluspa 20: the Norns 'scored' the wood -- carving the runes that decide fate. Later poets pictured them weaving threads on great looms and cutting them at death, but the older Poetic-Edda image is wood-carving. Once carved, the rune stands: no god, not even Odin, can un-carve it.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri in Gylfaginning 16 says the three Norns do one more chore every single morning to keep the world-tree from rotting -- a chore involving the water of their well and the white clay that lies around its edge. What do the Norns do to Yggdrasil each day?",
+      "choices": ["they pour well-water and white clay onto its roots", "they sing dawn-hymns over its trunk each morning", "they pluck the leaves the great eagle has spoiled", "they smear ash from the sacred fire on its bark"],
+      "answer": "they pour well-water and white clay onto its roots",
+      "context": "Gylfaginning 16: 'Every day the Norns take water from the well and take the clay that lies around it, and sprinkle it over the ash-tree so its branches shall not wither or decay.' The white slurry stains everything it touches -- and Snorri says that is why the film inside an eggshell and the film on a peeled apple are that milky-pale colour.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri Sturluson explains one small everyday marvel by pointing to what the three Norns do beside their well. He says the reason a peeled apple's skin and the film inside a chicken's egg are that milky-pale colour is because both were once dipped into that same water. What does Snorri say IS the origin of that white eggshell-lining film?",
+      "choices": ["the water of the Norns' well", "the breath of the fire-giant Surt", "the tears of the goddess Freyja for Od", "the milk of the cow Audhumla"],
+      "answer": "the water of the Norns' well",
+      "context": "Gylfaginning 16: the water of Urd's well is so holy that everything dipped in it comes out white as the film of an eggshell. Snorri uses the everyday egg-white membrane as a folk-etymology for the well's power. Surt's breath is the fire that ends Ragnarok. Freyja's tears for her lost husband Od are said to be red gold. Audhumla the primeval cow licked the ice to free the first god Buri and nursed the giant Ymir with her four rivers of milk -- a different creation-image.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Old Norse word for FATE is not one of the god-names but a special ancient noun meaning literally 'ancient-law' or 'primal-layer'. Voluspa 20 says this thing was laid down by the three Norns before the Aesir came into their power -- meaning even Odin acts inside a story someone else has already written. What is the Norse word for fate itself?",
+      "choices": ["orlog", "kismet", "wyrd", "moira"],
+      "answer": "orlog",
+      "context": "Orlog (Old Norse orlog / orlog / urlag) literally means 'primal-law' or 'that-which-was-laid-down-first' (or- 'ancient' + log 'law, layer'). It is above the gods. Wyrd is the Anglo-Saxon cousin word (same root as Urd). Moira is Greek. Kismet is Turkish / Arabic, medieval and Islamic, out of pillar.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The three great Norns at the well are not the only ones. Gylfaginning 15 says there are LESSER norns as well -- some kindly and some cruel -- who visit each newborn child in the hour after birth. Snorri says these attendant-norns are the reason for one very common human observation. Which observation does Snorri explain by lesser-norns?",
+      "choices": ["why some people have lifelong luck and others lifelong misfortune", "why twins share a birthday but not a single fate", "why a firstborn son inherits before his younger brothers", "why women in most families outlive their husbands"],
+      "answer": "why some people have lifelong luck and others lifelong misfortune",
+      "context": "Gylfaginning 15: 'When men meet great fortune it is the work of good norns. When men suffer misfortunes, that is the work of ill norns.' The Norse world has room for BOTH great fate (the three at the well) and small fate (each person's attendant norns). The other three options are real folk-observations but Snorri does not tie them to the norns.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Norse fate-triad has a direct sister-triad in Greek myth -- three fate-women whose names also mean stages of a life-thread: one who SPINS the thread, one who ALLOTS its length, and one who CUTS it. What is the Greek fate-triad called?",
+      "choices": ["the Moirai (Clotho, Lachesis, Atropos)", "the Charites (Aglaia, Euphrosyne, Thalia)", "the Erinyes (Alecto, Megaera, Tisiphone)", "the Hesperides (Aegle, Erytheia, Hesperia)"],
+      "answer": "the Moirai (Clotho, Lachesis, Atropos)",
+      "context": "The Moirai (Latin Parcae, English 'the Fates') are the Greek fate-triad -- Clotho spins the thread of a life, Lachesis measures it out, Atropos cuts it. The Charites are the three Graces of joy and beauty. The Erinyes (Roman Furies) are the three avengers of blood-guilt. The Hesperides are the three nymphs guarding the golden apples in the far west. The Norse Norns and Greek Moirai are one of the strongest fate-triad parallels across all Indo-European myth -- three women, past-present-future, above even the sky-god.",
+      "legend": true
+    }
+  ]
+}

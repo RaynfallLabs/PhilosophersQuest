@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The chief god of the Aesir in Norse myth is called the All-Father, lord of Asgard, master of poetry, war, and death. He is the father of Thor and the husband of Frigg. What is his name?",
+      "choices": ["Odin", "Baldr", "Heimdallr", "Njord"],
+      "answer": "Odin",
+      "context": "Snorri, Gylfaginning 20: Odin (Old Norse Odinn, English Woden) is the All-Father, chief of the Aesir. Baldr is his shining son slain by mistletoe; Heimdallr is the watchman at Bifrost; Njord is a Vanir god, father of Freyr and Freyja.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In every picture the Vikings and their storytellers left behind, Odin is missing something from his face -- one feature he traded away long before the sagas open, and it never comes back. What is Odin missing?",
+      "choices": ["an eye", "a hand", "a finger", "an ear"],
+      "answer": "an eye",
+      "context": "Odin is famously ONE-EYED. Tyr is the god who lost a hand (bitten off by the wolf Fenrir); Fionn mac Cumhaill lost a fingertip on the Salmon of Knowledge in the Irish tradition; no major Norse god loses an ear.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Beneath one of the three great roots of the world-tree Yggdrasil there is a well of water that grants wisdom to whoever drinks. It is guarded by an old and knowing giant. What is the name of that well and its guardian?",
+      "choices": ["Mimir's well", "Urd's well", "Hvergelmir", "Byrgir"],
+      "answer": "Mimir's well",
+      "context": "Snorri, Gylfaginning 15: under one of Yggdrasil's three roots (the one running toward the frost-giants) lies Mimir's well, whose water gives wisdom. Urd's well is under a DIFFERENT root and is where the three Norns shape fate. Hvergelmir is the roaring spring under the third root, in Niflheim. Byrgir is a well from a different myth (Bil and Hjuki).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The guardian drinks from his own well every morning, but not by cupping his hands -- he uses a named object to scoop the water, the very same object Heimdallr will one day blow to warn the gods of Ragnarok. What object does Mimir drink with?",
+      "choices": ["Gjallarhorn", "Draupnir", "Gungnir", "Mjolnir"],
+      "answer": "Gjallarhorn",
+      "context": "Snorri, Gylfaginning 15 and 51: Mimir 'drinks from the well out of the horn Gjallarhorn'; Heimdallr keeps the same horn and will sound it at the start of Ragnarok. Draupnir is Odin's dripping gold ring; Gungnir is Odin's spear; Mjolnir is Thor's hammer.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Odin comes to the well and asks for a drink. Mimir names his price at once: to taste the wisdom-water, the All-Father must leave one part of his own body behind in the well as a pledge. What did Mimir demand?",
+      "choices": ["one of Odin's eyes", "one of Odin's hands", "a lock of Odin's hair", "a tooth from Odin's mouth"],
+      "answer": "one of Odin's eyes",
+      "context": "Snorri, Gylfaginning 15: 'All-Father came there and asked to have a drink from the well, but he did not get it until he had given his eye as a pledge.' Odin plucked out his own eye and dropped it into the water; it is why he is called One-Eye (Bolverk and Grimnir are other names, but the missing eye comes from Mimir).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Voluspa opens with a seeress calling up her prophecy for Odin, and in one of the first stanzas she taunts him by saying she knows exactly where his lost eye is right now. In her line, where is Odin's eye?",
+      "choices": ["hidden at the bottom of Mimir's well", "held by a raven in Muspelheim", "swallowed by Fenrir the wolf", "traded again for the runes"],
+      "answer": "hidden at the bottom of Mimir's well",
+      "context": "Voluspa 28: the seeress says she knows where Odin's eye is hidden -- in Mimir's famous well -- and that Mimir drinks mead every morning from the All-Father's pledge. The point of the line is that the eye is STILL there, still owed, still working as collateral.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After the paying of the eye Odin picks up a new epithet -- a nickname he carries in the poems ever after, straight from the trade at the well. Which of these Odin-names comes from that story?",
+      "choices": ["One-Eye", "Hangatyr (God of the Hanged)", "Bolverk (the Ill-Worker)", "Har (the High)"],
+      "answer": "One-Eye",
+      "context": "The plain epithet One-Eye (Old Norse Baleygr and related forms) attaches to Odin from Mimir's well. Hangatyr comes from the self-hanging on Yggdrasil; Bolverk is the disguise he takes to steal the Mead of Poetry; Har (the High) is his throne-name in the Havamal.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the Ynglinga Saga, the war between the Aesir and the Vanir ends with an exchange of hostages -- and Mimir gets murdered on the Vanir side. Odin cannot get his adviser back alive, so he does something with the head. What does Odin do with Mimir's severed head?",
+      "choices": ["embalms it and sings spells so it will speak", "burns it on a longship pyre", "buries it beneath Mimir's own well", "grinds it up to salt the fields"],
+      "answer": "embalms it and sings spells so it will speak",
+      "context": "Snorri, Ynglinga Saga 4 and 7: Odin embalms Mimir's severed head with herbs (so it will not rot) and sings spells over it; the head then speaks to Odin and gives him counsel from many worlds. The trick of a talking severed head is one of the most singular images in the Norse corpus.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Odin is not called Odin in most of the poems -- he collects nicknames the way a warrior collects rings. One whole poem, the Grimnismal, is basically a catalogue of them. Roughly how many Odin-names have been counted in the Old Norse sources?",
+      "choices": ["more than 170", "exactly 12", "about 40", "just 3"],
+      "answer": "more than 170",
+      "context": "Modern scholars counting across the Grimnismal, the Prose Edda, and the skaldic verses have listed more than 170 distinct Odin-names -- Har the High, Jafnhar the Just-as-High, Third, Bolverk the Ill-Worker, Hangatyr the Hanged-One's God, Grimnir the Masked One, Gangleri the Wanderer, Herfather the Father of Hosts, and on and on.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Only one other member of the Aesir is allowed to sit beside Odin on his high seat, from which the two of them can look down and see everything happening in all nine worlds at once. Who shares that high seat with Odin?",
+      "choices": ["Frigg", "Freyja", "Sif", "Idunn"],
+      "answer": "Frigg",
+      "context": "Snorri, Gylfaginning 9 and Grimnismal prose preface: Frigg is Odin's wife and shares Hlidskjalf, the high seat from which all worlds can be seen. Freyja is a Vanir goddess and (in some sources) receives half the slain from every battlefield, but she does not sit on Hlidskjalf; Sif is Thor's wife (of the golden hair); Idunn keeps the apples of youth.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The seeress in the Voluspa also says who drinks from the well every single morning from the pledge Odin left in it. Mimir does not drink plain water -- she names the drink specifically. What does Mimir drink from the well each morning?",
+      "choices": ["mead", "ale", "milk", "blood"],
+      "answer": "mead",
+      "context": "Voluspa 28-29: 'Well I know, Odin, where you hid your eye -- in Mimir's famous well; Mimir drinks mead every morning from the Father of the Slain's pledge.' Mead (fermented honey drink) is the sacred liquor of the Norse gods generally -- see also the Mead of Poetry that Odin later steals from the giant Suttung, and the mead that the goat Heidrun's udder pours in Valhalla for the einherjar.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Beneath a different root of Yggdrasil lies a second well, and around it sit three sisters who spin and shape the fate of every living being. What is the well beneath that root called, and who are the three sisters?",
+      "choices": ["Urd's well, and the three Norns (Urd, Verdandi, Skuld)", "Hvergelmir, and the three Fates (Nona, Decuma, Morta)", "Mimir's well, and the three Graces", "the Well of Yggdrasil, and the three Valkyries"],
+      "answer": "Urd's well, and the three Norns (Urd, Verdandi, Skuld)",
+      "context": "Snorri, Gylfaginning 15: Urd's well lies beneath the root of Yggdrasil that runs toward Asgard; the three Norns -- Urd (Fate), Verdandi (Becoming), Skuld (Debt / What-Shall-Be) -- sit at its edge and shape the destinies of gods and men. The Fates (Parcae) are the Roman equivalent, not the Norse; the Graces are Greek; the Valkyries are Odin's shield-maidens, a separate order.",
+      "legend": true
+    }
+  ]
+}

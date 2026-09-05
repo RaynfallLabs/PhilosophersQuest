@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Prose Edda Loki once cut off the golden hair of Thor's wife as a prank, and to save his own life he went down to the dwarf-quarter to have new hair made. Loki's habit of bragging landed him in a much bigger scrape while he was there. What did Loki wager against the dwarves' craftsmanship?",
+      "choices": ["his own head", "his own eye", "his own tongue", "his own hand"],
+      "answer": "his own head",
+      "context": "Skaldskaparmal 43: Loki bet his own head that no other dwarves could match the Sons of Ivaldi. Odin gives an eye at Mimir's well. Tyr loses a hand in the wolf Fenrir's mouth. Bragi speaks with a rune-carved tongue but does not wager it. Loki is the head-wagerer.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Loki's boast about the Sons of Ivaldi was overheard in the smithy of a dwarf who refused to let his own brother be called second-best. That dwarf and his brother would soon accept the head-wager and forge three treasures of their own. What is the name of the dwarf-brother who took Loki's bet?",
+      "choices": ["Brokkr", "Alviss", "Andvari", "Regin"],
+      "answer": "Brokkr",
+      "context": "Skaldskaparmal 43: Brokkr took the wager on his brother's behalf. Alviss is the all-wise dwarf whom Thor keeps talking until sunrise turns him to stone. Andvari owns the cursed gold ring of the Volsung cycle. Regin fosters Sigurd and urges him to kill Fafnir. Only Brokkr bets against Loki.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Brokkr did not do the smithing himself. He worked alongside his brother, the master craftsman who stood at the anvil with the hammer, while Brokkr worked the bellows to keep the fire at just the right heat. What is the name of Brokkr's smith-brother?",
+      "choices": ["Sindri", "Ivaldi", "Dvalinn", "Fjalar"],
+      "answer": "Sindri",
+      "context": "Skaldskaparmal 43: Sindri (also called Eitri) is the master smith and Brokkr the bellows-worker. Ivaldi is the FATHER of the rival dwarves who made Sif's hair, Skidbladnir, and Gungnir. Dvalinn is a dwarf-name that appears in Volundarkvida and Havamal. Fjalar (with Galar) murdered Kvasir for the Mead of Poetry.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Loki knew that if the fire at Sindri's forge faltered for a single moment the metal would spoil. To try to spoil it he shape-shifted into a small biting thing and attacked the dwarf at the bellows. Snorri names Loki's new form as a stinging insect -- what insect did Loki become?",
+      "choices": ["a fly", "a wasp", "a mosquito", "a moth"],
+      "answer": "a fly",
+      "context": "Skaldskaparmal 43: Loki became a fly (fluga, sometimes translated 'gadfly'). Wasps and mosquitoes and moths do not appear in the tale. Loki's other famous shape-changes are the mare who bore Sleipnir, the salmon caught in his own net, and the old woman Thokk who refused to weep for Baldr.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The first treasure Sindri drew from the forge was not a hammer at all -- it was a living animal of pure gold, one that could run through air and water and light up the sky around it. Loki's fly bit Brokkr's hand while this piece was being made, but Brokkr never broke rhythm. What was Sindri's first treasure?",
+      "choices": ["the boar Gullinbursti", "the wolf Fenrir", "the goat Tanngrisnir", "the serpent Jormungandr"],
+      "answer": "the boar Gullinbursti",
+      "context": "Skaldskaparmal 43: the first treasure was Gullinbursti, the golden-bristled boar, given to Freyr. Fenrir the wolf is a child of Loki and Angrboda, not a dwarf-forged treasure. Tanngrisnir is one of the goats that pulls Thor's chariot. Jormungandr the world-serpent circles Midgard.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The second treasure to come out of the forge was a small piece of gold that would drop eight new copies of itself off its own body every ninth night, making its wearer richer forever. Loki's fly bit Brokkr's neck this time, but Brokkr kept pumping the bellows and the piece came out perfect. What is Sindri's second treasure called?",
+      "choices": ["Draupnir", "Andvaranaut", "Sviagris", "Brisingamen"],
+      "answer": "Draupnir",
+      "context": "Skaldskaparmal 43: Draupnir the golden arm-ring drips eight new rings of equal weight every ninth night, and passes to Odin. Andvaranaut is the cursed ring of the Volsung cycle. Sviagris is the pig-ring of the Swedish kings. Brisingamen is Freyja's famous neck-piece, not a ring at all.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the third and hardest treasure Loki gave up on Brokkr's hands and neck and struck the dwarf's face directly, biting him hard enough that blood flowed and he had to raise one hand for the space of a heartbeat to wipe it. Where did the fly bite Brokkr this final time?",
+      "choices": ["his eyelid", "his lip", "his ear", "his forehead"],
+      "answer": "his eyelid",
+      "context": "Skaldskaparmal 43: the third bite was on the eyelid; blood ran into Brokkr's eye and he lifted a hand to wipe it, breaking the bellows-rhythm for one moment. The lip, ear, and forehead do not appear in Snorri's version. That one flinch would have consequences.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Because Brokkr lifted his hand from the bellows for a single instant while making the third treasure, the piece came out of the forge with one defect that no amount of hammering could fix. Thor took it up anyway -- but he could never wield it the way a great warrior wields a normal weapon. What was wrong with the third treasure when it came off the anvil?",
+      "choices": ["the handle was too short to grip in two hands", "one face was cast from ordinary iron", "the head was too heavy to swing at all", "one side of the head was left unhardened"],
+      "answer": "the handle was too short to grip in two hands",
+      "context": "Skaldskaparmal 43: Mjolnir came out with a haft so short that Thor could only manage it one-handed, and needed the iron gauntlets Jarngreipr (and the belt Megingjord) to wield it at full strength. The other defects are plausible smith-faults but not the one Snorri names.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Brokkr and Sindri carried all six treasures -- the three from the Sons of Ivaldi and their own three -- up to Asgard, where the gods themselves would judge which pair had won the wager. Which three gods sat as judges of the treasures?",
+      "choices": ["Odin, Thor, and Freyr", "Odin, Baldr, and Heimdall", "Frigg, Freyja, and Idunn", "Tyr, Bragi, and Njord"],
+      "answer": "Odin, Thor, and Freyr",
+      "context": "Skaldskaparmal 43: Odin, Thor, and Freyr are the judges, one for each pair of Ivaldi/Sindri gifts (Odin gets Gungnir/Draupnir, Thor gets Sif's hair and Mjolnir, Freyr gets Skidbladnir and Gullinbursti). The other combinations are real gods but not the judging panel.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When the three judges announced their verdict on the six treasures, they picked one as finest of all -- flawed as it was -- because it was the best weapon the gods had ever been given against the giants. Which treasure did the judges name as the greatest of the six?",
+      "choices": ["Mjolnir the hammer", "Gungnir the spear", "Skidbladnir the ship", "Draupnir the ring"],
+      "answer": "Mjolnir the hammer",
+      "context": "Skaldskaparmal 43: the gods judged Mjolnir first among the six because no weapon would guard Asgard better against the frost-giants and mountain-giants. Gungnir the spear (from Ivaldi) is Odin's. Skidbladnir the folding ship (from Ivaldi) is Freyr's. Draupnir was Sindri's second piece.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Brokkr had won the wager, and by the terms of the bet Loki's head belonged to him. Loki dodged death by pointing to one word in the bargain -- he had bet a body-part, but not the joint that connected it to the rest of him. So Brokkr took a needle and thread and settled for punishing Loki's mouth instead. What did Brokkr do to Loki?",
+      "choices": ["sewed his lips shut", "cut out his tongue", "gagged him with iron", "branded his cheeks"],
+      "answer": "sewed his lips shut",
+      "context": "Skaldskaparmal 43: Loki argued that the neck was not part of the head he had wagered, so Brokkr could not behead him. In frustration Brokkr sewed Loki's lips shut with awl and thong to silence his boasting -- until Loki tore the stitches out. Cutting the tongue, iron gags, and branding do not appear in the tale.",
+      "legend": true
+    }
+  ]
+}

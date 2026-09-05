@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Arcadia a king wanted a son so badly that when his queen bore a daughter, he had the newborn carried up to Mount Parthenion and left there to die. The infant was Atalanta, who would grow up the greatest huntress in Greece. What creature, sacred to Artemis, found the baby and nursed her?",
+      "choices": ["a she-bear", "a she-wolf", "a hind of the woods", "an eagle of the crags"],
+      "answer": "a she-bear",
+      "context": "The she-bear was sacred to Artemis; her own cubs had been killed by hunters, and she suckled the exposed infant at the same teats before hunters found the wild girl and raised her. The she-wolf is the Roman story of Romulus and Remus; the hind belongs to Artemis's chariot-team; the eagle to Zeus. Source: en.wikipedia.org/wiki/Atalanta; Aelian, De Natura Animalium 13.1; Apollodorus 3.9.2.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Atalanta grew up in the wild, dedicated to Artemis and sworn to virginity, and she never missed her mark. When two centaurs came at her in the forest and when the great boar of Calydon burst through the beaters, one weapon killed for her both times. What did she hunt with?",
+      "choices": ["a bow and arrows", "a bronze-tipped spear", "a hunting-net", "a curved sickle-knife"],
+      "answer": "a bow and arrows",
+      "context": "Atalanta shot the centaurs Rhoecus and Hylaeus with the bow when they attacked her, and drew first blood on the Calydonian Boar with an arrow. The spear belongs to Meleager; the net to fishermen; the sickle-knife is Perseus's Harpe. Source: en.wikipedia.org/wiki/Atalanta.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The kings of Greece gathered to hunt the monstrous boar Artemis had sent against Calydon; Theseus of Athens rode in, Peleus of Phthia, Jason of Iolcus, and many others. Only one woman was let in among them. It was her arrow that struck the boar first, and Meleager honoured the shot by awarding her the hide. Who was she?",
+      "choices": ["Atalanta of Arcadia", "Antiope the Amazon queen", "Hippolyta of Themiscyra", "Camilla of the Volsci"],
+      "answer": "Atalanta of Arcadia",
+      "context": "Atalanta's arrow drew first blood on the Calydonian Boar; Meleager killed it with a spear and gave her the hide, which set off the fatal quarrel with his uncles. Antiope and Hippolyta are Amazon queens (both mixed up with Theseus in other tales); Camilla is Virgil's warrior-maiden in Italy, not a Greek. Source: en.wikipedia.org/wiki/Atalanta; Ovid, Metamorphoses 8.380-420.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Two centaurs, Rhoecus and Hylaeus, came upon the young Atalanta alone in the forest and tried to violate her. She did not run. What did she do to them?",
+      "choices": ["shot them both dead with her bow", "outran them into her father's town", "hid in a hollow tree until dawn", "called down Artemis to freeze them"],
+      "answer": "shot them both dead with her bow",
+      "context": "Atalanta killed both centaurs on the spot -- the same bow-skill that later drew first blood on the boar. Fleeing, hiding, or divine intervention are the story-shapes of other victims (Daphne fleeing Apollo, Callisto hidden and later transformed); Atalanta fought. Source: en.wikipedia.org/wiki/Atalanta; Apollodorus 3.9.2.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Her father recognized Atalanta as an adult and welcomed her back to his court, but he wanted her married. She agreed to one condition: any suitor must beat her in a footrace, and she was the fastest runner in Greece. What was the price of losing to her?",
+      "choices": ["the loser was put to death", "the loser was banished from Arcadia", "the loser served her father seven years", "the loser was branded on the cheek"],
+      "answer": "the loser was put to death",
+      "context": "Many young men tried the race and were executed as she overtook them; Atalanta expected the condition to keep her free. Banishment, servitude, and branding are other Greek shame-penalties (Cain-mark parallels), but the price at this race was the sword. Source: en.wikipedia.org/wiki/Atalanta; Ovid, Metamorphoses 10.560-600.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "A young man named Melanion watched the executions and knew he could not outrun Atalanta on his own legs. He went to a temple and prayed for help. Which goddess did he pray to?",
+      "choices": ["Aphrodite", "Athena", "Hera", "Demeter"],
+      "answer": "Aphrodite",
+      "context": "Aphrodite, goddess of desire, answered Melanion's prayer with a very specific gift for the race. Athena helps Bellerophon and Perseus with cleverness; Hera protects marriage from outside; Demeter's gifts are the harvest. Source: en.wikipedia.org/wiki/Atalanta; Ovid, Metamorphoses 10.640-660.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The goddess who answered Melanion's prayer gave him three shining things from the garden of the Hesperides, and told him to carry them into the race. Each time Atalanta drew alongside him, he was to throw one off to the side of the track. What were the three things?",
+      "choices": ["three golden apples", "three silver arrows", "three ivory dice", "three amber beads"],
+      "answer": "three golden apples",
+      "context": "The three golden apples came from the Hesperides' garden (or in some tellings from Aphrodite's own grove at Tamasus in Cyprus); Aphrodite made them so beautiful that Atalanta stopped to pick each one up, and by the third she was too far behind to catch him. The Hesperides' apples are the same tree Heracles fetched in his eleventh labor. Source: en.wikipedia.org/wiki/Atalanta; Ovid, Metamorphoses 10.644-680.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Melanion won the footrace by his trick, married Atalanta as the terms required, and then made a mistake that would ruin them both -- he forgot to thank the goddess who had given him the apples. In her anger she struck the couple with sudden desire inside a sacred precinct. What did she do to them for the sacrilege?",
+      "choices": ["turned them into a pair of lions", "turned them into a pair of stags", "turned them into a pair of stones", "turned them into a pair of stars"],
+      "answer": "turned them into a pair of lions",
+      "context": "Aphrodite made them lie together in a temple of Cybele (in Ovid), and for defiling the holy place the pair were transformed into lions and yoked to the chariot of Cybele, the Mother of the Gods, forever after. Stag-transformation is Actaeon's punishment from Artemis; stone is the fate of Niobe; stars belong to Callisto and Orion. Source: en.wikipedia.org/wiki/Atalanta; Ovid, Metamorphoses 10.681-707.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The two lions Melanion and Atalanta became were not left to wander -- Aphrodite yoked them to the chariot of the goddess whose sacred precinct they had defiled, and they drew that chariot through her processions ever after. Whose chariot did they pull?",
+      "choices": ["Cybele", "Demeter", "Hera", "Nemesis"],
+      "answer": "Cybele",
+      "context": "Ovid names the temple as Cybele's, and the lion-drawn chariot became her fixed image in Greek and Roman art -- the Mother of the Gods riding through her processions with two tame lions in the traces. Demeter's chariot is drawn by serpents or winged dragons; Hera's by peacocks; Nemesis's by griffins. Source: en.wikipedia.org/wiki/Atalanta; Ovid, Metamorphoses 10.698-707.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In some versions of the story Atalanta bore a son (by Meleager, in the tellings where they were lovers) before the footrace ever happened. That son grew up and joined the doomed expedition of the Seven who attacked Thebes and were destroyed at its gates. What was his name?",
+      "choices": ["Parthenopaeus", "Amphiaraus", "Tydeus of Calydon", "Polynices of Thebes"],
+      "answer": "Parthenopaeus",
+      "context": "Parthenopaeus ('son of a maiden' -- her disguise-name for him) rode with the Seven Against Thebes and was killed at the walls; his name preserves the version where Atalanta broke her vow to Artemis with Meleager. Amphiaraus, Tydeus, and Polynices are the other named leaders of the Seven. Source: en.wikipedia.org/wiki/Atalanta; Apollodorus 3.6.3.",
+      "legend": true
+    }
+  ]
+}

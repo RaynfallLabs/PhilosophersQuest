@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "After his father King Ban of Benwick dies of his wounds fleeing a burning castle, an infant is stolen from his mother's arms by a fairy who carries him down into her enchanted underwater realm and raises him there. He will grow up to be Arthur's greatest knight. Who is this fostered boy?",
+      "choices": ["Sir Lancelot", "Sir Gawain", "Sir Tristan", "Sir Percival"],
+      "answer": "Sir Lancelot",
+      "context": "Vulgate Cycle, Lancelot en prose (c.1215-30); Wikipedia: Lancelot. Ban of Benwick's castle Trebes falls to King Claudas of Gaul; Ban dies fleeing, and the Lady of the Lake abducts the infant. Gawain is King Lot's eldest son. Tristan is the tragic hero of the parallel Cornish story. Percival is the innocent Grail-knight of the forest.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The enchantress who fostered the boy taught him arms and letters and at last sent him out, still not knowing his own true name, to serve Arthur. He rode into Camelot with no device on his shield, no colour but plain white, and was announced only as the White Knight. By what title is his fairy foster-mother known?",
+      "choices": ["the Lady of the Lake", "Morgan le Fay", "Queen Igraine", "the Witch Ragnell"],
+      "answer": "the Lady of the Lake",
+      "context": "Vulgate Cycle; Wikipedia: Lady of the Lake. The Lady (called Viviane in French tradition, Nimue in Malory) raises him in her otherworld realm and sends him out as a nameless White Knight. Morgan le Fay is Arthur's half-sister and often his enemy. Igraine is Arthur's mother, not a foster. Ragnell is the loathly lady of Gawain's marriage tale.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The first surviving romance to make Lancelot the queen's lover was written by the French poet Chretien de Troyes between 1177 and 1181 at the request of Countess Marie of Champagne. Its title has puzzled readers ever since -- Chretien calls Lancelot the Knight of one specific low, degrading thing whose touch strips a knight of his honour. What is Lancelot called the Knight of in Chretien's title?",
+      "choices": ["the Cart", "the Green Chapel", "the Two Swords", "the Fountain"],
+      "answer": "the Cart",
+      "context": "Chretien de Troyes, Lancelot ou le Chevalier de la Charrette (c.1177-1181); Wikipedia: Lancelot, the Knight of the Cart. Lancelot climbs into a criminal's tumbrel -- a shame-cart used to haul the condemned to the gallows -- because it is the only way to follow Guinevere, kidnapped by Meleagant. 'Knight of the Green Chapel' is Gawain's poem; 'Knight of the Two Swords' is Balin's tale in Malory; 'Knight of the Fountain' is Yvain's -- three real Arthurian titles.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Chretien's romance the queen is carried off to the otherworldly realm of Gorre by Meleagant, son of King Bagdemagus, and Lancelot chases him. To cross the river at Gorre's border Lancelot must pull off his gauntlets, grip a razor-edged span with his bare hands, and crawl across bloodied to the elbows. What weapon is that crossing shaped from?",
+      "choices": ["a sword", "a spear", "an axe", "an arrow"],
+      "answer": "a sword",
+      "context": "Chretien de Troyes, Lancelot le Chevalier de la Charrette (c.1177-1181); Wikipedia: Lancelot, the Knight of the Cart. The 'Pont de l'Espee' is a single giant sword laid edge-up as a bridge, one of the two entrances into Gorre. A spear-bridge, axe-bridge, or arrow-bridge would each be a plausible medieval-romance ordeal but is not the one Chretien invents.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "A daughter of King Pelles of the Grail castle wants a child by Lancelot and enlists the sorceress Dame Brisen, who gives him drugged wine and gives the lady a ring of Guinevere's to fool him in the dark. He wakes in the morning next to the wrong woman; but the night has already given him the child who will grow up to be the one pure knight who can achieve the Grail. Who is Lancelot's son by this deception?",
+      "choices": ["Galahad", "Bors", "Perceval", "Mordred"],
+      "answer": "Galahad",
+      "context": "Malory, Le Morte d'Arthur Book XI; Wikipedia: Galahad, Elaine of Corbenic. Elaine of Corbenic is the mother; Galahad is the perfect knight who will alone see the Grail uncovered. Bors is Lancelot's cousin, also a Grail knight. Perceval finds the Grail castle first but does not achieve it. Mordred is Arthur's incest-son and the future usurper of Camelot.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The lady who deceived Lancelot at Corbenic follows him to Camelot months later and tricks him a second time; this time Guinevere finds them together, and the queen in a rage drives Lancelot from court with words he cannot bear. He runs from the palace, throws himself from a window, and disappears into the forest, forgotten. For how long does Lancelot wander mad in the wilderness before he is found again?",
+      "choices": ["two years", "forty days", "seven weeks", "twelve summers"],
+      "answer": "two years",
+      "context": "Malory, Le Morte d'Arthur Books XI-XII; Wikipedia: Lancelot. Malory gives the interval as two years (some earlier French versions say five); Lancelot is fed by hermits and shepherds and does not know his own name. Forty days is the biblical wilderness. Seven weeks and twelve summers are period-plausible distractors that Malory does not use.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The strong man broken by grief who runs unclothed and unrecognised into the woods is an old Celtic pattern before Lancelot ever lived it. The Irishman in Buile Suibhne takes to the treetops after a saint's curse and speaks in poems for a hundred years, and the Welsh wild-man of the Caledonian Forest in the sixth-century tradition gives his name to a later Arthurian mage. What is the name of that Welsh wild-man of the forest?",
+      "choices": ["Myrddin Wyllt", "Bran the Blessed", "Taliesin", "Culhwch"],
+      "answer": "Myrddin Wyllt",
+      "context": "Vita Merlini (Geoffrey of Monmouth, c.1150); Wikipedia: Merlin. Myrddin Wyllt (Wild Myrddin) is the mad prophet of Arfderydd, ancestor of the Arthurian court-mage. Bran the Blessed is a giant Welsh king whose severed head prophesies. Taliesin is the great bardic figure of Welsh tradition, not a wild man. Culhwch is the hero of the Welsh Arthurian tale Culhwch and Olwen.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After two years mad in the woods, Lancelot is found and brought to the Grail castle of King Pelles. The keepers set him to sleep on a bed in a chamber, and in the small hours of the night a covered Grail is carried past him, and its power cures his madness while he sleeps. Where has Lancelot been carried to be healed by the passing Grail (Malory Book XII ch.4)?",
+      "choices": ["Corbenic", "Joyous Gard", "Tintagel", "Camelot"],
+      "answer": "Corbenic",
+      "context": "Malory, Le Morte d'Arthur Book XII ch.4. Corbenic is the Grail castle ruled by King Pelles the Fisher King. Joyous Gard is Lancelot's own castle (formerly Dolorous Gard, renamed by him). Tintagel is where Arthur was conceived. Camelot is Arthur's city -- exactly the place Lancelot was banished from and cannot return to yet.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Once Guinevere has been sentenced to the pyre for the affair, Lancelot and his kinsmen storm the courtyard on horseback, cut through the guard, and ride her out. Malory has them take shelter first at a castle earlier in the book Lancelot had taken from a wicked lord and CHANGED THE NAME OF, so that its old miserable name would be buried and a happier one would sit over its gate. What is the happier name Lancelot gave his own stronghold?",
+      "choices": ["Joyous Gard", "Silver Keep", "Ban's Rest", "the Bright Tower"],
+      "answer": "Joyous Gard",
+      "context": "Malory, Le Morte d'Arthur Book XX. Lancelot renamed the fortress from 'Dolorous Gard' to 'Joyous Gard' after winning it. Arthur and Gawain besiege it after the rescue of Guinevere and cannot take it. Silver Keep, Ban's Rest, and the Bright Tower are the sort of names a hero might choose but are not the one Malory gives.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The tie between Lancelot and the lady who conceived Galahad is not the sort a knight breaks lightly. Long after the Grail quest, when Malory looks back on the girl who tricked Lancelot into her bed with Brisen's wine and the borrowed ring, and afterward brought the mad Lancelot to the Grail to be healed, he still names her by the castle her father ruled. What is the full name Malory gives Galahad's mother?",
+      "choices": ["Elaine of Corbenic", "Elaine of Astolat", "Elaine of Garlot", "Elaine of Benwick"],
+      "answer": "Elaine of Corbenic",
+      "context": "Malory, Le Morte d'Arthur Books XI-XII; Wikipedia: Elaine of Corbenic. Malory has several Elaines and this one is the daughter of King Pelles at the Grail castle Corbenic. Elaine of Astolat is the Fair Maid who dies of unrequited love for Lancelot in a barge floated to Camelot. Elaine of Garlot is Arthur's half-sister, wife of King Nentres. Elaine of Benwick is Lancelot's own mother, wife of King Ban.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the last chapter of Malory (Book XXI ch.13), Lancelot dies as a hermit at Glastonbury after Guinevere is gone. His companions find him in the morning laid out with a smile on his face. And one of the hermits with him, a former bishop of Canterbury, wakes laughing -- he has dreamed something he tells them at once. What does the bishop dream at Lancelot's death?",
+      "choices": ["angels lifting Lancelot to heaven", "the Grail carried up the aisle", "the Round Table reassembled", "the Lady of the Lake returning Excalibur"],
+      "answer": "angels lifting Lancelot to heaven",
+      "context": "Malory, Le Morte d'Arthur Book XXI ch.13; Wikisource. The bishop tells them: 'here was Sir Launcelot with me with more angels than ever I saw men in one day, and I saw the angels heave up Sir Launcelot unto heaven, and the gates of heaven opened against him.' The other three answers are all Arthurian endings this scene is NOT -- the Grail is Galahad's ending; the Round Table breaks and is not remade; Bedivere returns Excalibur at Arthur's death, not Lancelot's.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "For all the greatness Lancelot spent his life earning -- the White Knight who came out of the lake, the champion of the Sword Bridge, the man who broke thirteen ambushers to fight out of the queen's chamber -- Malory names one thing he could not do. The Grail passes veiled over him while he sleeps and heals his madness, but he never sees it uncovered. The one who does see it uncovered and achieves the Grail is his own son. What flaw kept Lancelot from the Grail he sired?",
+      "choices": ["he was not pure", "he was not brave", "he was not baptised", "he was not born noble"],
+      "answer": "he was not pure",
+      "context": "Malory, Le Morte d'Arthur Book XVII; Wikipedia: Lancelot. Lancelot's adultery with Guinevere is the impurity that shuts him out of the Grail-vision; Galahad the virgin achieves it. The other three are false of Lancelot: he is the bravest of Arthur's knights, he is a baptised Christian in Malory, and he is a king's son by birth. The tragedy is that his one flaw is the specific one the Grail tests.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Every gospel list of the Twelve Apostles ends the same way: two names paired together. The very last is Judas Iscariot, the betrayer. The second-to-last is a Simon -- not Peter, a different one -- carrying a nickname that placed him with a militant faction of first-century Judea. Which Simon is this?",
+      "choices": ["Simon the Zealot", "Simon Magus", "Simon of Cyrene", "Simon Bar-Jonah"],
+      "answer": "Simon the Zealot",
+      "context": "Matthew 10:4, Mark 3:18, Luke 6:15, and Acts 1:13 all name him Simon the Zealot (Greek Zelotes, from the Aramaic qanai, 'zealous'). Simon Magus is the sorcerer of Acts 8; Simon of Cyrene was the man pressed into carrying Jesus's cross; 'Simon Bar-Jonah' is Peter's given name (Jesus renames him Cephas / Peter, 'the Rock').",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The apostle named just before Simon the Zealot in the lists is another Judas -- Judas son of James, called by a SECOND name in Matthew and Mark so no one confuses him with the betrayer. That second name, later Latinised as 'Jude', is what the Western church still uses for him. What is that second name?",
+      "choices": ["Thaddaeus", "Barnabas", "Barabbas", "Bartimaeus"],
+      "answer": "Thaddaeus",
+      "context": "Matthew 10:3 and Mark 3:18 list him as Thaddaeus (also Lebbaeus in some manuscripts); later Latin usage flattens Thaddaeus to Jude (as in Saint Jude). Barnabas was Paul's traveling companion; Barabbas was the criminal released at Passover; Bartimaeus was the blind beggar Jesus healed at Jericho.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The name Simon carried -- 'Zealot' -- was not just a personality label in first-century Judea. It matched a real militant faction whose whole program was to drive one specific foreign power out of the Holy Land by force. That same faction leads the great revolt of AD 66-70 in Josephus's history. Which power were the Zealots fighting?",
+      "choices": ["Rome", "Persia", "Egypt", "Babylon"],
+      "answer": "Rome",
+      "context": "The Zealots were a militant Jewish party who wanted armed rebellion against Roman rule; Josephus (Jewish War) tracks them through the great revolt of 66-70 that ended with the destruction of the Temple. Whether Simon actually belonged to the party or was just personally zealous, the tag placed a former militant among former fishermen. Persia, Egypt, and Babylon were earlier occupiers, not first-century.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "John's gospel gives Thaddaeus a small but famous line at the Last Supper. John introduces him carefully: 'Judas' -- and then a two-word clarifier so nobody thinks he means the betrayer. Which two-word tag does John hang on him in John 14:22?",
+      "choices": ["not Iscariot", "the Zealot", "the Beloved", "the Twin"],
+      "answer": "not Iscariot",
+      "context": "John 14:22 (KJV): 'Judas saith unto him, NOT ISCARIOT, Lord, how is it that thou wilt manifest thyself unto us, and not unto the world?' John is bending over backwards to keep this Judas apart from Judas Iscariot. 'The Beloved' is John's own epithet for himself; 'the Twin' (Didymus) is Thomas's tag; 'the Zealot' belongs to the OTHER apostle in this pair, Simon.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The ancient historian Eusebius (Church History 1.13) tells a story he says he found in the royal archives of a Syrian city: the local king had heard of Jesus's healings, written him a letter, and been promised a disciple would come after Jesus's death. The disciple sent was Thaddaeus, whom Syrian tradition calls Addai. Which king was he sent to heal?",
+      "choices": ["Abgar of Edessa", "Herod of Judea", "Aretas of Nabatea", "Nebuchadnezzar of Babylon"],
+      "answer": "Abgar of Edessa",
+      "context": "Eusebius, Historia Ecclesiastica 1.13, preserves the correspondence between Jesus and King Abgar V of Edessa (a small kingdom in what is now southeastern Turkey); Thaddaeus (Addai in Syriac) is sent after the resurrection and heals him. Herod ruled during Jesus's ministry; Aretas IV of Nabatea was Herod Antipas's father-in-law; Nebuchadnezzar reigned six centuries earlier.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Western medieval tradition sends Simon and Thaddaeus travelling together as missionaries, and they die together in the same country -- put to death for their preaching by the local priests. In which country does that joint martyrdom take place?",
+      "choices": ["Persia", "Britain", "Ethiopia", "Spain"],
+      "answer": "Persia",
+      "context": "The 'Passion of Simon and Jude', a Western medieval Passion narrative, sends them together into Persia (some sources say Suanir) where both are killed. Britain is traditionally linked to Joseph of Arimathea; Ethiopia to Matthew (Matthew the Evangelist's traditional field); Spain to James the Greater, whose shrine is at Santiago de Compostela.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Christian art you can tell the twelve apostles apart at a glance because each one carries the instrument of his own martyrdom. Peter holds crossed keys (or an upside-down cross); Andrew holds his X-shaped cross; Bartholomew carries the knife he was flayed with. What object does Simon the Zealot hold in Western altarpieces?",
+      "choices": ["a saw", "a scallop shell", "a fishing net", "a lantern"],
+      "answer": "a saw",
+      "context": "Simon's medieval Passion says he was sawn in half at Suanir in Persia; his emblem is therefore a large carpenter's saw. The scallop shell is James the Greater's pilgrim badge (Santiago); a fishing net is Peter and Andrew (the fishermen); a lantern belongs to Judas Iscariot in Last-Supper cycles (or, in some traditions, to guards in the Garden of Gethsemane).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In Roman Catholic devotion Thaddaeus is now known as Saint Jude -- and he has become the patron of one very specific kind of prayer. The reason is embarrassing: for centuries almost no one prayed to him at all, because his name was too close to another apostle's, so people worried they were addressing the wrong Judas. What is Saint Jude now the patron of?",
+      "choices": ["lost or impossible causes", "safe travel by sea", "students taking exams", "finding a spouse"],
+      "answer": "lost or impossible causes",
+      "context": "Because 'Jude' (Judas son of James) was so easily confused with Judas Iscariot the betrayer, few Christians for centuries invoked him -- so tradition made him especially glad to help anyone who did. He became the patron of lost causes. Safe sea travel is Christopher (or Nicholas); students traditionally invoke Joseph of Cupertino or Thomas Aquinas; finding a spouse is Anthony of Padua (also lost objects).",
+      "legend": false
+    }
+  ]
+}

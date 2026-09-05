@@ -1,0 +1,108 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Merry Men in Sherwood Forest include a stout, jolly churchman in a friar's robe with a rope belt. Church law of the day forbade a friar from shedding blood, so friars were only supposed to fight with clubs. Friar Tuck cheerfully broke the rule. What weapon did he swing at Robin Hood the first time they met?",
+      "choices": [
+        "a sword",
+        "a mace",
+        "a longbow",
+        "a quarterstaff"
+      ],
+      "answer": "a sword",
+      "context": "Friar Tuck carries a sword throughout the ballad Robin Hood and the Curtal Friar (Child Ballad 123). Canon law technically restricted clerics to bludgeoning weapons -- the joke of Tuck is that he ignores this and fights like any yeoman. Source: Wikipedia, Robin Hood and the Curtal Friar.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the ballad Robin Hood and the Curtal Friar (Child Ballad 123), Will Scadlock tells Robin that a stout friar has beaten every man that came against him, and Robin sets out to find him. The friar lives at a real Yorkshire monastery, still standing today as a ruin. Which abbey does the ballad name?",
+      "choices": [
+        "Fountains Abbey",
+        "Rievaulx Abbey",
+        "Whitby Abbey",
+        "Byland Abbey"
+      ],
+      "answer": "Fountains Abbey",
+      "context": "The ballad places the friar at Fountains Abbey in Yorkshire -- a Cistercian house founded in 1132, dissolved by Henry VIII, and now a UNESCO ruin. All four choices are real Yorkshire abbeys of the same era. Source: Wikipedia, Robin Hood and the Curtal Friar.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Robin Hood first meets the fighting friar at a riverside, he draws his sword and forces the friar to carry him across the water on his back. The friar carries him in silence -- but halfway across, he gets his revenge. What does the friar do to Robin midstream?",
+      "choices": [
+        "dumps him into the water",
+        "sets his hounds on him",
+        "cuts his sword-belt away",
+        "throws him back to shore"
+      ],
+      "answer": "dumps him into the water",
+      "context": "In Robin Hood and the Curtal Friar, the friar dumps Robin into the river halfway across in payment for being made to carry him. Both men then draw swords in the shallows and fight until they are exhausted. Source: Wikipedia, Robin Hood and the Curtal Friar.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After Robin Hood and the fighting friar have fought with swords in the river until both are exhausted, Robin blows his horn to summon the Merry Men. The friar answers by whistling up a pack of his own beasts that had helped him guard his abbey. What kind of dogs come running out of the woods?",
+      "choices": [
+        "mastiffs",
+        "greyhounds",
+        "wolfhounds",
+        "boarhounds"
+      ],
+      "answer": "mastiffs",
+      "context": "The friar whistles up his pack of mastiffs -- massive English guard-dogs bred for war and estate defence. Robin's men come with bows; the friar's mastiffs come with teeth; neither side can beat the other. Source: Wikipedia, Robin Hood and the Curtal Friar; boldoutlaw.com, Friar Tuck.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the fight between Robin Hood's band and the fighting friar's dog-pack, the numbers on both sides are matched -- Robin's men against the friar's hounds, each side big enough to hold the other off. How many mastiffs does the traditional ballad-retelling say the friar whistles up?",
+      "choices": [
+        "fifty",
+        "twenty",
+        "one hundred",
+        "seven"
+      ],
+      "answer": "fifty",
+      "context": "The traditional ballad-retelling gives the friar fifty mastiffs, matched against Robin's Merry Men. In the later variant Little John shoots twenty of the dogs before Robin calls the truce. Source: boldoutlaw.com, Friar Tuck; Wikipedia, Robin Hood and the Curtal Friar.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The full title of Child Ballad 123 is Robin Hood and the Curtal Friar. The word 'curtal' comes from Old French 'curt', meaning short, and it describes the very thing that told a medieval villager at a glance what kind of monk this was. What did a 'curtal friar' wear that gave him the nickname?",
+      "choices": [
+        "a short robe",
+        "a black hood",
+        "a knotted belt",
+        "a shaved crown"
+      ],
+      "answer": "a short robe",
+      "context": "A curtal friar wore a short robe -- the mark of a mendicant on the move, walking preaching roads instead of staying cloistered like a black-robed Benedictine monk. All four choices were real marks of medieval clergy, but only the short robe gave the 'curtal' name. Source: Wikipedia, Robin Hood and the Curtal Friar.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Friar Tuck is not one of the original Merry Men. He is missing entirely from the earliest Robin Hood ballads. He joins the tradition only around 1475, first appearing as a character in what kind of medieval source?",
+      "choices": [
+        "a fragmentary play",
+        "a monastic chronicle",
+        "a knightly romance",
+        "a rhymed sermon"
+      ],
+      "answer": "a fragmentary play",
+      "context": "Friar Tuck first appears in a fragmentary text of a May Day play, Robin Hood and the Friar, dated around 1475. The Curtal Friar ballad (Child 123) was written down later. Little John, Will Scarlet, and Much the Miller's Son are in the earliest ballads; Tuck is a later arrival. Source: robinhoodlegend.com, Plays and the May Festivities.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Twice in 1417, royal writs from King Henry V demanded the arrest of an outlaw who called himself 'Frere Tuk' and led a band that murdered, robbed, and burned forest wardens' lodges across Surrey and Sussex. A 1429 letter later gave his real identity. In real life he was actually what?",
+      "choices": [
+        "a chaplain of Lindfield in Sussex",
+        "a friar of Fountains Abbey in Yorkshire",
+        "a hermit of the Weald of Sussex",
+        "a monk of Battle Abbey in Sussex"
+      ],
+      "answer": "a chaplain of Lindfield in Sussex",
+      "context": "The 1429 letter identifies the outlaw 'Frere Tuk' as Robert Stafford, chaplain of the village of Lindfield in Sussex. He was a real churchman who took up outlawry and borrowed a colourful nickname; the ballad-Tuck grew up on top of his memory. Source: boldoutlaw.com, The Search for a Real Robin Hood; Lindfield Life history articles.",
+      "legend": false
+    }
+  ]
+}

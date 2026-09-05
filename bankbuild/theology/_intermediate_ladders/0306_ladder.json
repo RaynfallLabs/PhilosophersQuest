@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "For his fourth labor, King Eurystheus sent Heracles into the wooded mountains of Arcadia to bring back alive a monstrous tusked beast that had been trampling the fields for years. On which mountain did the beast live?",
+      "choices": ["Erymanthos", "Olympus", "Pelion", "Cithaeron"],
+      "answer": "Erymanthos",
+      "context": "Apollodorus places the boar in the glens of Lampeia beside the marsh of Erymanthus on Mount Erymanthos in Arcadia. Olympus is the home of the gods; Pelion is Chiron's mountain in Thessaly; Cithaeron is where Heracles killed his first lion as a boy. Source: en.wikipedia.org/wiki/Erymanthian_Boar; Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The fourth labor came with an unusual rule. Heracles had killed the Nemean Lion with his bare hands and burned the Hydra's stumps with fire, but this time Eurystheus wanted the animal breathing. What was Heracles ordered to do with the Erymanthian beast?",
+      "choices": ["bring it back alive", "burn it in its own lair", "hang its hide on the palace wall", "drown it in the marsh at its feet"],
+      "answer": "bring it back alive",
+      "context": "The Erymanthian Boar is one of the live-capture labors, along with the Ceryneian Hind and the Cretan Bull. The other three options are shapes borrowed from real labors -- burning was the fate of the Hydra's stumps, hides went on the palace wall after the Nemean Lion, and drowning is the sort of fate Poseidon might inflict, not Eurystheus. Source: en.wikipedia.org/wiki/Erymanthian_Boar; Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "On the road to the boar, Heracles broke his journey at the cave of a wise centaur who set roasted meat before him but hesitated to open a jar of wine, saying it belonged to all the centaurs in common. What was the name of the friendly centaur who hosted him?",
+      "choices": ["Pholus", "Nessus", "Eurytion", "Rhoecus"],
+      "answer": "Pholus",
+      "context": "Pholus, the son of Silenus in Apollodorus, was one of the two civilised centaurs of Greek myth (Chiron the other). Nessus is the centaur Heracles kills later at the river-crossing with Deianira, whose poisoned shirt kills Heracles himself. Eurytion and Rhoecus are lesser centaurs of the wilder sort. Source: en.wikipedia.org/wiki/Pholus_(mythology); Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Heracles opened the shared wine-jar in Pholus's cave anyway. The fragrant smell drifted out and drew the other centaurs down the mountain armed with rocks and pine-trunks. What weapon did Heracles use to drive the enraged centaurs back?",
+      "choices": ["arrows dipped in the blood of the Hydra", "the jawbone of the Nemean Lion", "a torch snatched from Pholus's fire", "the club of olive-wood he cut on Helicon"],
+      "answer": "arrows dipped in the blood of the Hydra",
+      "context": "The venom Heracles had drawn from the Hydra in his second labor becomes the poison on every arrow he shoots for the rest of his life -- and eventually the poison Nessus's shirt uses to kill him. The club, the lion-hide and the torch are all real Heracles gear but the centaur-rout is arrow-work. Source: en.wikipedia.org/wiki/Pholus_(mythology); Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "One of the fleeing centaurs took refuge at the cave of the wise elder Chiron, tutor of Achilles and Jason. In the confusion Heracles fired one shot too many and the poisoned arrow struck Chiron himself. Chiron was immortal -- but the Hydra-poison meant he could not heal, only suffer. How did the story end his agony?",
+      "choices": ["Prometheus traded his own immortality with Chiron so Chiron could die", "Zeus struck Chiron with a thunderbolt as a mercy", "Apollo drew the poison out with a hymn of healing", "Chiron leapt from the cliffs of Pelion into the sea"],
+      "answer": "Prometheus traded his own immortality with Chiron so Chiron could die",
+      "context": "In one of the great cross-linked twists of Greek myth, Chiron's agony from the accidental arrow-wound is what frees Prometheus from the eagle -- Prometheus inherits Chiron's immortality and Chiron is allowed at last to die. Zeus later sets Chiron among the stars as the constellation Centaurus. Source: en.wikipedia.org/wiki/Chiron.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Chiron of Pelion was the wise centaur every Greek hero-story sends its boys to for training. Which of these was NOT among his famous pupils?",
+      "choices": ["Odysseus", "Achilles", "Jason", "Asclepius"],
+      "answer": "Odysseus",
+      "context": "Achilles, Jason of the Argonauts, and Asclepius the healer are all named as Chiron's pupils on Mount Pelion. Odysseus grew up on Ithaca; his teachers are his grandfather Autolycus and his own cunning. The Chiron-pupil roster is one of the tightest tutor-groups in myth. Source: en.wikipedia.org/wiki/Chiron.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The wine-jar fight had a second casualty besides Chiron. Pholus, the very host whose cave the brawl began in, was picking through the aftermath -- some say he was marvelling at the arrows, some that he was helping bury the dead. How did Pholus die?",
+      "choices": ["he dropped one of the poisoned arrows on his own foot", "the last centaur to flee turned and speared him", "he choked on the wine he had been forbidden to serve", "Heracles killed him by mistake in the twilight"],
+      "answer": "he dropped one of the poisoned arrows on his own foot",
+      "context": "In Apollodorus, Pholus draws an arrow from a dead centaur to examine it, wondering how so small a thing could kill so large a creature; it slips, falls point-first on his foot, and the Hydra-poison kills him almost at once. Heracles buries him where he lies. Source: en.wikipedia.org/wiki/Pholus_(mythology); Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles went on alone to hunt the boar. The trick of the labor was that the animal was too huge to bring in alive by ordinary fighting -- one swing of the club and he would have a dead beast, not a live one. Heracles chased the boar with shouts up the mountain until it was exhausted. What terrain finished the capture for him?",
+      "choices": ["deep snow at the summit", "a bog of thick reeds", "a narrow river gorge", "a pit trap the shepherds had dug"],
+      "answer": "deep snow at the summit",
+      "context": "Apollodorus has the boar driven uphill into deep snow, where it sinks belly-deep and can no longer move; Heracles then binds it in chains. The bog, the gorge and the pit trap are the shapes of other capture-stories in Greek myth (Bellerophon's traps, the Calydonian Boar hunt), not this one. Source: en.wikipedia.org/wiki/Erymanthian_Boar; Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Heracles hoisted the bound boar onto his shoulders and carried it into the courtyard at Mycenae. When Eurystheus looked out and saw his cousin coming with a live, chained monster over his head, the king lost his nerve completely. Where did Eurystheus hide?",
+      "choices": ["inside a great bronze jar sunk in the ground", "under his own throne with a cloak drawn over him", "in the treasury vault behind the double doors", "up in the watchtower with the archers"],
+      "answer": "inside a great bronze jar sunk in the ground",
+      "context": "The bronze pithos sunk into the palace floor became the king's favourite refuge whenever Heracles turned up with a live monster; he had first used it after the Nemean Lion. Eurystheus gave the rest of his orders through a herald called down through the jar's mouth. The scene is one of the most-painted Heracles moments on Greek vases. Source: en.wikipedia.org/wiki/Erymanthian_Boar; Apollodorus 2.5.4.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Chiron the wounded centaur was placed in the sky by Zeus after his death, so his story would not be forgotten. Which constellation did the Greeks name for him?",
+      "choices": ["Centaurus", "Ursa Major", "Orion", "Sagittarius"],
+      "answer": "Centaurus",
+      "context": "Zeus set Chiron among the stars as the constellation Centaurus after Prometheus inherited his immortality. Sagittarius the Archer is sometimes half-confused with Chiron (Sagittarius is another centaur-figure), but Chiron's own constellation is Centaurus, farther south in the sky. Ursa Major is Callisto and Orion is the giant hunter. Source: en.wikipedia.org/wiki/Chiron.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Uther Pendragon, King of Britain, has died leaving no acknowledged heir, and the barons are ready to fight each other for the crown. In Malory Book I, one adviser goes to the Archbishop of Canterbury and tells him to summon every lord in the land to London by Christmas, so that God can show a sign who should be the rightful king. Who is that adviser?", "choices": ["Merlin", "Sir Ector", "Sir Bedivere", "Sir Kay"],
+      "answer": "Merlin",
+      "context": "Malory Book I ch.5. Merlin is the counsellor at every hinge of the early Arthur story. Sir Ector will turn out to be Arthur's foster-father. Sir Bedivere is the knight who will one day return the sword to the lake. Sir Kay is Ector's son and Arthur's foster-brother.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The great lords of Britain have gathered in London for the feast, praying in the church for a sign of who should be king. When they come out, a great square block of marble has appeared in the yard beside the church, and set on top of it is a steel anvil with a fair sword driven through the anvil into the block. Around the blade, plain to see, are letters written in what colour?", "choices": ["gold", "silver", "black", "blood-red"],
+      "answer": "gold",
+      "context": "Malory Book I ch.5: 'letters there were written in gold about the sword.' Silver, black and blood-red letters do not appear on the sword; Malory names the letters gold and only gold.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The letters written in gold around the sword in the churchyard tell everyone exactly what the sword means. Malory gives the inscription almost word for word from Caxton's 1485 print. What do the gold letters say the puller of this sword shall be?", "choices": ["rightwise king born of all England", "chosen champion of the Round Table", "servant to the Archbishop of Canterbury", "sworn defender of the Holy Grail"],
+      "answer": "rightwise king born of all England",
+      "context": "Malory Book I ch.5, near-verbatim Caxton 1485: 'Whoso pulleth out this sword of this stone and anvil is rightwise king born of all England.' The Round Table, the Archbishop's service and the Grail defence are all real later Arthurian ideas but not what the inscription promises.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Every great baron and knight in England comes to the churchyard on Christmas morning and takes his turn trying to pull the sword out of the stone. In Malory, what happens when they pull?", "choices": ["not one of them can move the sword", "the sword cuts every hand that touches it", "the stone sinks into the ground when they touch it", "the sword shatters at the first strong pull"],
+      "answer": "not one of them can move the sword",
+      "context": "Malory Book I ch.5: 'not one of them all might stir the sword nor move it.' The sword hurts no hand, the stone stays put, and the sword does not break in this scene -- it will break much later in Arthur's own hand.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On New Year's Day the barons hold a great joust in a field near the churchyard to keep the young knights busy. A young squire named Arthur rides in the retinue of his elder foster-brother, a knight who has just realised he has left his own weapon behind at the inn. Arthur is sent back for it and finds the inn locked and empty. Whose forgotten weapon has Arthur ridden home to fetch?", "choices": ["Sir Kay's", "Sir Pellinore's", "Sir Bedivere's", "Sir Ulfius's"],
+      "answer": "Sir Kay's",
+      "context": "Malory Book I ch.5: Kay is Sir Ector's own son and Arthur's foster-brother. Pellinore will break Arthur's stone-sword much later. Bedivere is a later Round Table knight. Ulfius rode with Uther the night Arthur was conceived, not this scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Finding the inn locked, the young squire Arthur will not return to his foster-brother empty-handed. He remembers the sword he saw stuck in the stone in the churchyard, rides there alone, and takes hold of it. What does the sword do when Arthur puts his hand to it?", "choices": ["it slides out easily", "it burns his palm and holds fast", "it names him aloud in a great voice", "it will not move until he prays"],
+      "answer": "it slides out easily",
+      "context": "Malory Book I ch.5: Arthur 'pulled it out of the stone lightly and fiercely.' No burning hand, no speaking sword, no prayer -- Malory's Arthur simply lifts it out as if the stone had never held it.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Sir Kay sees the drawn sword in Arthur's hand he knows at once what it is, and hurries with it to his father Sir Ector, claiming to be the rightful king himself. Ector does not believe him and questions him hard. In Malory, what does Kay finally admit?", "choices": ["that his young brother Arthur brought him the sword", "that a stranger on the road handed it to him", "that he pulled a copy the Archbishop had made", "that Merlin had put it into his hand"],
+      "answer": "that his young brother Arthur brought him the sword",
+      "context": "Malory Book I ch.5: pressed by Ector, Kay confesses his younger foster-brother Arthur drew and brought the sword. The other three stories -- a road stranger, a copy, a gift from Merlin -- appear nowhere in the passage.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sir Ector takes Arthur back to the churchyard and makes the boy set the sword into the anvil again and pull it out a second time, to be sure. Ector himself tries, and cannot move it. Sir Kay tries, and cannot move it. Arthur draws it out again as easily as before. What do Ector and Kay do the instant Arthur holds the drawn sword?", "choices": ["they kneel to him", "they seize him and lock him in the church", "they ride at once for the coast", "they hide the sword under the altar"],
+      "answer": "they kneel to him",
+      "context": "Malory Book I ch.5: Ector and Kay kneel before Arthur, and Ector tells him that Uther Pendragon was Arthur's true father and that he, Ector, is only his foster-father. Weeping, Arthur begs Ector to remain his father in his heart.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The great barons refuse to accept the Christmas result and demand the sword-test be held again. In Malory the same test is set at three of the great feasts of the Christian year -- Candlemas, Easter, and finally the feast at which the commons at last cry that Arthur shall be king and put in no more delay. What is that third and final feast?", "choices": ["Pentecost", "Michaelmas", "All Hallows", "Epiphany"],
+      "answer": "Pentecost",
+      "context": "Malory Book I ch.5-7: Candlemas, Easter and Pentecost mark the three delayed tests. At Pentecost the commons cry 'we will have Arthur unto our king, we will put him no more in delay.' Michaelmas, All Hallows and Epiphany are real medieval feasts but not this sequence.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "To keep the sword from being stolen or moved between the failed attempts of the great lords, the Archbishop of Canterbury sets a guard on it day and night in the churchyard. In Malory, how large is this guard?", "choices": ["ten knights", "three bishops", "a full hundred squires", "one lone hermit"],
+      "answer": "ten knights",
+      "context": "Malory Book I ch.5: 'the Archbishop ordained ten knights, men of good fame, that they should watch the sword.' Three bishops, a hundred squires and a lone hermit do not appear in the passage.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Not long after Arthur is crowned, the sword he drew from the stone shatters in his own hand in single combat with a strong king he has ridden out to meet in Malory Book I ch.25. Merlin then leads Arthur to a lake, where a hand rises from the water holding a second and greater blade -- the sword every child now names 'Excalibur.' Whose sword-stroke breaks Arthur's first sword in that fight?", "choices": ["King Pellinore's", "King Lot's", "King Ryence's", "King Mark's"],
+      "answer": "King Pellinore's",
+      "context": "Malory Book I ch.25: Pellinore, whom Arthur meets at a fountain, breaks the stone-sword clean in two. Merlin then takes Arthur to the lake and Excalibur is given by the Lady of the Lake. Lot, Ryence and Mark are real Malory kings but not the sword-breaker here.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The sword-in-the-stone scene that everyone knows was not always part of Arthur's story. Geoffrey of Monmouth's Historia Regum Britanniae (c.1136) has no such test -- Arthur is simply crowned at fifteen as Uther's son. The whole stone-and-anvil episode was invented by a French poet writing around 1200 whose romance Merlin fed into Malory. Who is that French poet?", "choices": ["Robert de Boron", "Chretien de Troyes", "Marie de France", "Wace of Jersey"],
+      "answer": "Robert de Boron",
+      "context": "Robert de Boron's Merlin (c.1200) invented the stone-and-anvil test. Chretien de Troyes wrote the earlier Perceval and Lancelot romances, without the stone. Marie de France wrote the lais. Wace's Roman de Brut (c.1155) also predates and lacks the sword-test.",
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The best-loved of all the Aesir gods is a young man so fair and gentle that light itself shines from him -- the son of Odin the All-Father and the goddess Frigg. What is his name?",
+      "choices": ["Baldr", "Bragi", "Vidar", "Forseti"],
+      "answer": "Baldr",
+      "context": "Snorri, Gylfaginning 22 and 49: Baldr is the shining son of Odin and Frigg, the fairest and most gentle of the gods. Bragi is the god of poetry; Vidar is the silent god of vengeance; Forseti is Baldr's own son, god of justice. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Odin's shining son Baldr begins to have terrible dreams that keep waking him -- always the same subject. What do the dreams warn him about, in Snorri's Prose Edda?",
+      "choices": ["his own death", "a coming famine", "a rebellion of the giants", "the loss of the sun and moon"],
+      "answer": "his own death",
+      "context": "Snorri, Gylfaginning 49: Baldr's dreams of his coming death alarm both him and the whole hall of the Aesir. The famine, the giant-war, and the swallowing of the sun and moon all belong to the wider Ragnarok prophecy, not to Baldr's private dreams. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "To save her son Baldr, the goddess Frigg walks through all the nine worlds and takes a promise from every creature, every plant, every metal, every stone, and every sickness -- a promise not to harm him. What form does this promise take?",
+      "choices": ["an oath", "a bribe of gold", "a written contract", "a hostage taken from each"],
+      "answer": "an oath",
+      "context": "Snorri, Gylfaginning 49: Frigg secures a sworn oath from fire, water, iron and every other metal, stones, earth, trees, sicknesses, beasts, birds, poisons, and serpents -- not by gold or hostage but by oath alone. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Because everything in the world has sworn not to hurt Baldr, the gods invent a new game at their assemblies -- they hurl weapons at him and watch every one bounce off. Frigg missed just ONE small plant, growing on an oak east of Valhalla. What is the plant?",
+      "choices": ["mistletoe", "hemlock", "nightshade", "yew"],
+      "answer": "mistletoe",
+      "context": "Snorri names it mistilteinn -- the young mistletoe Frigg thought too small to bother swearing. In Old Norse mistletoe grows as a small parasite high on the branches of an oak. Hemlock, nightshade, and yew are all deadly plants but none appear in the Baldr story. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki, the trickster of Asgard, disguises himself as an old woman and visits Frigg at her hall. He gets her chatting and, by pretending only kindly interest, coaxes one dangerous piece of news out of her. What does Frigg let slip about her son Baldr?",
+      "choices": ["that one small plant was passed over unsworn", "that Baldr has hidden his heart in a stone", "that Odin has already agreed to sacrifice him", "that the whole game of throwing weapons is a lie"],
+      "answer": "that one small plant was passed over unsworn",
+      "context": "Snorri, Gylfaginning 49: Loki in old-woman disguise wonders aloud whether truly EVERYTHING swore -- and Frigg, unguarded, mentions the young mistletoe east of Valhalla. Loki goes straight there and cuts a sprig. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki cuts the young mistletoe and shapes it into a small dart. Then he walks up to a god standing alone at the edge of the weapon-throwing game and puts the dart into his hand, offering to guide his aim. WHICH god does Loki approach?",
+      "choices": ["Hodr, Baldr's blind brother", "Tyr, the god who fed the wolf Fenrir", "Heimdall, the watchman of the rainbow bridge", "Bragi, the god of poetry"],
+      "answer": "Hodr, Baldr's blind brother",
+      "context": "Snorri names the god as Hodr, blind and standing alone at the edge of the ring. Loki says (roughly): 'Do as the others do, honour Baldr with a throw -- I will guide your arm.' Tyr, Heimdall, and Bragi were not blind and are not part of this scene. Source: en.wikipedia.org/wiki/Hodr",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After Baldr falls dead with Loki's dart in him, the gods must send a rider down through the black roads into Hel to beg the queen of the dead for Baldr's return. Who is the rider they send, and on whose horse?",
+      "choices": ["Hermod on Odin's horse Sleipnir", "Thor on his own goat-cart", "Tyr on Freyr's ship Skidbladnir", "Bragi on foot with his harp"],
+      "answer": "Hermod on Odin's horse Sleipnir",
+      "context": "Snorri, Gylfaginning 49: Hermod (sometimes Hermod the Bold, a son of Odin) is chosen, and Odin lends him Sleipnir, the eight-legged horse. Thor's chariot is drawn by the goats Tanngrisnir and Tanngnjostr; Skidbladnir is Freyr's ship that folds up. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Hermod finds Baldr in the underworld, and Hel the queen agrees to release him -- but on one condition that must be met by EVERY living thing in all the worlds. What does Hel demand as her price?",
+      "choices": ["that every creature must weep for Baldr", "that every creature must sing his name", "that Odin himself must take Baldr's place", "that Frigg must give up her hall in Asgard"],
+      "answer": "that every creature must weep for Baldr",
+      "context": "Snorri, Gylfaginning 49: Hel says if all things in all the worlds -- living and dead -- will weep for Baldr, she will let him ride home. The Aesir send messengers to every corner of creation. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Every creature in the world weeps for Baldr -- except one. The messengers find her alone in a cave and she flatly refuses. She says only, 'Weep dry tears for Baldr's funeral; let Hel keep what she has.' What kind of being is she?",
+      "choices": ["a giantess", "a valkyrie", "an elf-queen", "a Norn of fate"],
+      "answer": "a giantess",
+      "context": "Snorri, Gylfaginning 49: the refuser is a giantess in a cave. The valkyries are Odin's shield-maidens; the elves live in Alfheim; the Norns spin fate at the well beneath Yggdrasil. Only a jotunn (giantess) fits the scene. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The one giantess who refuses to weep for Baldr, ensuring he stays in Hel, gives herself a bitterly ironic name -- an Old Norse word that literally means 'thanks'. What is her name?",
+      "choices": ["Thokk", "Skadi", "Gerd", "Angrboda"],
+      "answer": "Thokk",
+      "context": "Snorri, Gylfaginning 49: the giantess names herself Thokk ('thanks'). Snorri adds that most people believe Thokk was Loki in disguise, doing his last damage. Skadi is Njord's wife; Gerd is Freyr's wife; Angrboda is Loki's giantess-lover, mother of Fenrir and Hel. Source: en.wikipedia.org/wiki/Baldr",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Baldr's funeral ship is the greatest ship ever built, and the gods themselves cannot budge it down the rollers into the sea. They have to send for a giantess to launch it -- and she arrives riding a wolf bridled with live vipers. What is the name of the SHIP she launches?",
+      "choices": ["Hringhorni", "Skidbladnir", "Naglfar", "Sessrumnir"],
+      "answer": "Hringhorni",
+      "context": "Snorri, Gylfaginning 49: Baldr's ship is Hringhorni, the greatest of ships. The giantess Hyrrokkin comes riding her viper-bridled wolf and shoves the ship with such force that sparks fly and the earth shakes -- to Thor's fury. Skidbladnir is Freyr's folding ship; Naglfar is the nail-ship of the dead that sails at Ragnarok; Sessrumnir is Freyja's hall, not a ship. Source: en.wikipedia.org/wiki/Hringhorni",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After Ragnarok has burned down the old world and a new green earth has risen from the sea, Snorri says Baldr comes back up from Hel to rule the reborn world -- and he comes back with ONE companion, at peace with him at last. Who returns with Baldr from Hel?",
+      "choices": ["Hodr, his blind brother", "Loki, the trickster forgiven", "Nanna, his wife", "Odin his father, restored"],
+      "answer": "Hodr, his blind brother",
+      "context": "Snorri, Gylfaginning 53: after Ragnarok, Baldr and Hodr come back from Hel together, sit down with the surviving Aesir on the new grass, and speak of old things -- one of the loveliest post-apocalypse promises in Norse myth. Odin has been swallowed by Fenrir; Loki has been killed by Heimdall; Nanna died of grief and was burned with Baldr but is not named among the returned. Source: en.wikipedia.org/wiki/Hodr",
+      "legend": true
+    }
+  ]
+}

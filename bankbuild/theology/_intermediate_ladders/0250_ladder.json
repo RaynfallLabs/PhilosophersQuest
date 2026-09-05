@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Ulster Cycle, the greatest Irish warrior sails away as a young man to train in arms with a fearsome war-woman on an island called the Isle of Shadow. There he learns the deadly barbed spear called the Gae Bolg. Who is this Ulster warrior?",
+      "choices": ["Cu Chulainn", "Conall Cernach", "Ferghus mac Roich", "Conchobar mac Nessa"],
+      "answer": "Cu Chulainn",
+      "context": "Cu Chulainn ('the Hound of Culann') is the central hero of the Ulster Cycle. Conall Cernach is his foster-brother and Ulster's second-greatest warrior; Ferghus mac Roich is the exiled Ulster king; Conchobar mac Nessa is the reigning king of Ulster. All four are the great Ulstermen -- but the trip to the Isle of Shadow to learn from Scathach belongs to Cu Chulainn. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "During his training on the Isle of Shadow, Cu Chulainn defeats in single combat a rival warrior-queen whose lands lie next to Scathach's. He spares her life, and she bears him a son. What is this warrior-queen's name?",
+      "choices": ["Aife", "Emer", "Deirdre", "the Morrigan"],
+      "answer": "Aife",
+      "context": "Aife (also spelled Aoife) is the Scottish warrior-queen Cu Chulainn defeats and lies with for one night. Emer is Cu Chulainn's wife back in Ulster; Deirdre is the tragic heroine of a different Ulster tale; the Morrigan is the war-goddess who both loves and torments Cu Chulainn. All four are real Ulster-Cycle women, only one is the mother of his son. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Before Cu Chulainn sailed home from the Isle of Shadow, he left the pregnant Aife a small token of gold and told her that when their son's finger grew big enough to fit it, she should send the boy after him to Ireland. What was the token?",
+      "choices": ["a gold thumb-ring", "a gold brooch", "a gold torc", "a gold arm-band"],
+      "answer": "a gold thumb-ring",
+      "context": "The thumb-ring is the recognition-token that drives the whole tragedy: the size of the finger doubles as the age-test (the boy is old enough only when he fits it), and it is the ONLY way father and son will know each other. A brooch, a torc, and an arm-band are all real early-Irish gold ornaments -- but a fitted RING is what the story needs, and the story chooses. Source: en.wikipedia.org/wiki/Aided_Oenfhir_Aife.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Along with the ring, Cu Chulainn laid three commandments on the son he had never seen -- three unbreakable geasa meant to shape the boy into a great warrior. He must never turn back once he set out, and he must never refuse a challenge. What was the THIRD commandment?",
+      "choices": ["he must never give his name", "he must never draw first blood", "he must never sleep on the ground", "he must never eat the flesh of a hound"],
+      "answer": "he must never give his name",
+      "context": "The three geasa -- never turn back, never refuse, never name yourself -- are the whole engine of the disaster: they make it impossible for father and son to recognise each other in time. 'Never eat the flesh of a hound' is a REAL geis in Irish myth, but it is Cu Chulainn's OWN geis (his name means 'Hound'), not Connla's. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Seven years later a small boy sails alone across the sea and into an Ulster harbour, in a bronze boat with golden oars. As the boat comes into shore, the boy stands in it doing an astonishing feat with his slingshot on the birds overhead. What does he do to the birds?",
+      "choices": ["stuns them out of the sky and then revives them alive", "shoots them dead one after another", "calls them down onto his outstretched arm", "sets them on fire in mid-flight"],
+      "answer": "stuns them out of the sky and then revives them alive",
+      "context": "The bronze-boat-and-slingshot arrival is one of the most famous set-pieces in early Irish literature: the boy knocks birds unconscious with pebbles, revives them, sends them up, then does the same trick a second time with only his voice. The feat marks him as morally higher than the Ulster warriors who go down against him -- he could easily kill, and chooses not to. Source: ancienttexts.org/library/celtic/ctexts/aoife.html.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Ulstermen at the fort send champion after champion down to challenge the boy. Because of the geasa he will neither turn back nor give his name, and he beats every warrior sent against him. In one telling he knocks a champion off his feet with a slingstone and ties him up with his own shield-strap. Which Ulster warrior does he humiliate?",
+      "choices": ["Conall Cernach", "Ferghus mac Roich", "Laeg mac Riangabra", "Sencha mac Ailella"],
+      "answer": "Conall Cernach",
+      "context": "Conall Cernach is Ulster's second-greatest warrior after Cu Chulainn -- being beaten by a child is a shattering embarrassment for him. Ferghus mac Roich is the exiled ex-king; Laeg mac Riangabra is Cu Chulainn's charioteer; Sencha mac Ailella is Ulster's chief judge. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Word of the champion-slaying boy reaches Cu Chulainn at Dun Dealgan, and he sets out for the strand. His wife runs after him, catches him, and pleads with him NOT to go down -- she has heard the story and guessed who the child must be. What is her name?",
+      "choices": ["Emer", "Deirdre", "Fedelm", "Nes"],
+      "answer": "Emer",
+      "context": "Emer, daughter of Forgall Manach, is Cu Chulainn's wife -- famed as one of the six women of the perfect gifts. She reads the situation faster than he does, but he goes down anyway. Deirdre is the tragic heroine of a different Ulster tale (Longes mac nUislenn); Fedelm is a prophetess in the Tain; Nes is Conchobar's mother. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Father and son meet on the strand without knowing each other. They wrestle in the surf, and the boy -- trained in the same feats by his mother Aife, who learned them from Scathach -- begins to get the upper hand. Only then does Cu Chulainn call for the one weapon that can beat him. What weapon does he call for?",
+      "choices": ["the Gae Bolg", "the Caladbolg", "Fragarach", "the sword of Nuada"],
+      "answer": "the Gae Bolg",
+      "context": "The Gae Bolg ('spear of mortal pain') is the barbed belly-spear cast from the FOOT in the water, taught by Scathach ONLY to Cu Chulainn. It is the same weapon he later uses to kill his foster-brother Ferdiad in the Tain. Caladbolg is Ferghus mac Roich's sword; Fragarach ('the Answerer') belongs to Manannan mac Lir and later Lugh; the sword of Nuada is one of the Four Treasures of the Tuatha De Danann. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The barbed spear takes the boy in the belly and he falls dying in the surf. Only then, cradling the child in his arms, does Cu Chulainn see the little piece of gold on the child's finger and know what he has done. What did he see?",
+      "choices": ["the gold thumb-ring he had left with Aife", "the salmon-shaped brooch of the Tuatha De", "the gold torc of the kings of Ulster", "the raven-shaped pin of the Morrigan"],
+      "answer": "the gold thumb-ring he had left with Aife",
+      "context": "The ring closes the circle set up seven years earlier -- Cu Chulainn's own recognition-token is what tells him he has killed his own son. The salmon-brooch of the Tuatha, the Ulster kings' torc, and the Morrigan's raven-pin are all invented parallels drawn from the shape of Irish jewellery lore. Source: en.wikipedia.org/wiki/Aided_Oenfhir_Aife.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the closing scene Cu Chulainn carries the dying boy up the strand to the assembled Ulstermen and speaks his name for the first time in the story. What was the boy's name?",
+      "choices": ["Connla", "Cormac", "Conaire", "Crimthann"],
+      "answer": "Connla",
+      "context": "Connla (sometimes Conlaech or Connlach) is the only son of Aife. Cormac, Conaire, and Crimthann are three other well-known early-Irish male names -- Cormac mac Airt is the great high king; Conaire Mor is the hero of the Da Derga tale; Crimthann is an old name for Colum Cille. Source: en.wikipedia.org/wiki/Connla.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Irish tale of a father unknowingly killing his warrior son in single combat is not unique. Scholars point to two exact parallels from wholly separate traditions -- so exact that a common Indo-European origin has been proposed. One is the German Hildebrandslied (Hildebrand and Hadubrand). What is the other, from the Persian Shahnameh?",
+      "choices": ["Rustam and Sohrab", "Bahram and Bahman", "Kai Khosrow and Farud", "Iskandar and Dara"],
+      "answer": "Rustam and Sohrab",
+      "context": "In Ferdowsi's Shahnameh (c.1010), the Persian champion Rustam meets his son Sohrab in single combat without knowing him, kills him, and recognises him only from the arm-clasp Rustam himself had left with the mother. The pattern -- token, unrecognised son, father's fatal blow, too-late recognition -- matches Aided Oenfhir Aife almost beat-for-beat. Kai Khosrow, Farud, Bahram, and Iskandar (Alexander) are all major Shahnameh figures but not the father-son duel. Source: en.wikipedia.org/wiki/Aided_Oenfhir_Aife.",
+      "legend": true
+    }
+  ]
+}

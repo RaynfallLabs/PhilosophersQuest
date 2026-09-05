@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Loki the trickster is married to the goddess Sigyn in Asgard, but secretly he keeps a lover in Jotunheim, the land of the giants. She is a giantess whose very name is a warning -- it means 'she who brings grief'. What is her name?",
+      "choices": ["Angrboda", "Skadi", "Gerd", "Hyrrokkin"],
+      "answer": "Angrboda",
+      "context": "Snorri names her Angrboda in Gylfaginning 34 of the Prose Edda. Skadi is the giantess-bride of the sea-god Njord; Gerd is the giantess Freyr wins in Skirnismal; Hyrrokkin is the giantess who later launches Baldr's funeral ship. Source: en.wikipedia.org/wiki/Angrboda",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In Norse myth the trickster Loki fathers three monstrous children by the giantess Angrboda. One is a wolf. One is a huge serpent. And the third is a GIRL, cast down to rule the dead. What is her name?",
+      "choices": ["Hel", "Freyja", "Idunn", "Frigg"],
+      "answer": "Hel",
+      "context": "Snorri lists the three siblings in Gylfaginning 34: Fenrir the wolf, Jormungandr the serpent, and Hel the girl. Freyja is the Vanir love-goddess; Idunn keeps the apples that keep the gods young; Frigg is Odin's wife and Baldr's mother. Source: en.wikipedia.org/wiki/Hel_(mythological_being)",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri describes Loki's daughter Hel with a shocking body: one whole side of her face and body is the healthy pink of a living woman, and the OTHER side is something else entirely. What is the other side of Hel like, in Snorri's Gylfaginning 34?",
+      "choices": ["black as a corpse", "made of solid ice", "burning with red fire", "covered in raven feathers"],
+      "answer": "black as a corpse",
+      "context": "Snorri writes that Hel is 'half black and half flesh-coloured' -- the corpse-side and the living-side joined in one body. Ice belongs to the giant Ymir's origin; fire to the fire-giant Surt of Muspelheim; the raven is Odin's bird. Source: en.wikipedia.org/wiki/Hel_(mythological_being)",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Norse myth the giant wolf Fenrir is raised inside Asgard, right among the gods, because Odin thinks he can be controlled if kept close. But the wolf grows so fast and fierce that only ONE god will still walk up to feed him. Which god has the nerve?",
+      "choices": ["Tyr", "Thor", "Heimdall", "Bragi"],
+      "answer": "Tyr",
+      "context": "Snorri says only Tyr had the courage to give Fenrir food. Tyr later loses his hand when the gods trick the wolf into being bound. Thor is the thunderer; Heimdall is the watchman of the rainbow bridge; Bragi is the god of poetry. Source: en.wikipedia.org/wiki/Fenrir",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The middle child of Loki and Angrboda is a serpent. Odin throws him into the great ocean that goes all the way round the world of men. In that sea the serpent grows so long that he eventually wraps the whole world -- and does one memorable thing with his own body. What does he do?",
+      "choices": ["bites his own tail", "coils himself around Yggdrasil", "swallows the sunken sun each night", "sleeps with one eye always open"],
+      "answer": "bites his own tail",
+      "context": "In Gylfaginning the serpent grew so vast in the ocean around Midgard that he encircled the entire world and grasped his tail in his mouth. Because he lies in the sea round Midgard he is called the Midgard-Serpent or World-Serpent, Jormungandr. Source: en.wikipedia.org/wiki/Jormungandr",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Odin casts Loki's daughter Hel down into the misty world of Niflheim and gives her rule over one specific category of the dead. She does NOT receive the warriors slain in battle -- those go to Valhalla. Which dead does Hel receive instead?",
+      "choices": ["those who die of sickness or old age", "those drowned at sea", "those killed by their own kin", "those who die without a name"],
+      "answer": "those who die of sickness or old age",
+      "context": "Snorri, Gylfaginning 34: Odin gives Hel authority over all who die of sickness or old age. Warriors killed in battle are chosen by the valkyries for Odin's Valhalla and Freyja's Folkvangr. The drowned in later folklore belong to the sea-giantess Ran. Source: en.wikipedia.org/wiki/Hel_(mythological_being)",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki's serpent son Jormungandr grows so huge in the ocean that he wraps the whole earth of men and bites his own tail. Because of where he lies, Snorri gives him one plain descriptive name -- the same name Thor's fishermen use when they curse him. What is the name?",
+      "choices": ["the Midgard-Serpent", "the Nine-World-Wyrm", "the Ragnarok-Adder", "the Asgard-Coil"],
+      "answer": "the Midgard-Serpent",
+      "context": "Midgard is the Old Norse name for the middle-world of men, and because the serpent lies in the ocean round it, he is called the Midgard-Serpent (Jormungandr, the 'great beast'). The other three names are inventions -- no such names appear in the Eddas. Source: en.wikipedia.org/wiki/Jormungandr",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri gives Hel's underworld hall a full grim inventory in Gylfaginning 34: a dish called Hunger, a knife called Famine, a bed called Sick-Bed, and a threshold called Stumbling-Block. The HALL itself is also named, from a word meaning 'sprayed with damp'. What is Hel's hall called?",
+      "choices": ["Eljudnir", "Bilskirnir", "Valaskjalf", "Sessrumnir"],
+      "answer": "Eljudnir",
+      "context": "Snorri names the hall Eljudnir ('sprayed with damp / rain-damp'). Bilskirnir is Thor's own hall in Thrudheim; Valaskjalf is Odin's silver-roofed hall; Sessrumnir is Freyja's hall in Folkvangr. Every object in Eljudnir is a grim pun on death. Source: en.wikipedia.org/wiki/Hel_(mythological_being)",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Snorri's description of Hel's dreary underworld hall Eljudnir, even the household servants have punning names built around slowness. The manservant's name means 'slow-mover' and the maidservant's name means 'slow-goer'. What are the two servants called?",
+      "choices": ["Ganglati and Ganglot", "Huginn and Muninn", "Geri and Freki", "Skoll and Hati"],
+      "answer": "Ganglati and Ganglot",
+      "context": "Snorri, Gylfaginning 34: the servant is Ganglati and the maidservant Ganglot -- everything in Hel's hall moves as slowly as death itself. Huginn and Muninn are Odin's two ravens; Geri and Freki his two wolves; Skoll and Hati are Fenrir's OWN two wolf-sons who chase the sun and moon. Source: en.wikipedia.org/wiki/Hel_(mythological_being)",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At Ragnarok all three of Loki and Angrboda's children turn on the gods who tried to control them. The wolf Fenrir gets the biggest kill of all -- swallowing one god whole. Which god does Fenrir swallow at Ragnarok?",
+      "choices": ["Odin", "Thor", "Frey", "Heimdall"],
+      "answer": "Odin",
+      "context": "In Gylfaginning and Voluspa, Fenrir breaks loose at Ragnarok and swallows Odin the All-Father. Odin's son Vidar avenges him by tearing the wolf's jaws apart. Thor dies fighting Jormungandr; Frey falls to the fire-giant Surt; Heimdall and Loki kill each other. Source: en.wikipedia.org/wiki/Fenrir",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At Ragnarok, Loki's serpent-son Jormungandr faces Thor in the final battle. Thor swings Mjolnir and kills the world-serpent -- but he does not walk away. Snorri gives an exact count of the paces Thor takes before he falls dead of the serpent's venom. How many steps?",
+      "choices": ["nine steps", "three steps", "twelve steps", "a hundred steps"],
+      "answer": "nine steps",
+      "context": "Snorri, Gylfaginning: Thor kills the Midgard-Serpent, then walks nine paces from the body before the venom brings him down. The number nine runs everywhere in Norse myth -- nine worlds of Yggdrasil, Odin's nine nights on the tree, Draupnir's nine-night cycle. Source: en.wikipedia.org/wiki/Jormungandr",
+      "legend": true
+    }
+  ]
+}

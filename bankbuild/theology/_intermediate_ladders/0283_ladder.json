@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Song of Roland is the great French epic of the paladin Roland, nephew of Charlemagne, who dies at the pass of Roncesvalles. Throughout the poem Roland carries a single named sword that he treasures more than his own life. What is the name of Roland's sword?",
+      "choices": ["Durandal", "Joyeuse", "Tizona", "Excalibur"],
+      "answer": "Durandal",
+      "context": "Roland's sword in the Chanson de Roland is Durandal, called the sharpest blade in Charlemagne's army. Joyeuse is Charlemagne's OWN sword (a separate weapon in the same poem). Tizona is one of the two swords of El Cid. Excalibur is King Arthur's sword. Source: Wikipedia, 'Durendal'; Wikipedia, 'Song of Roland'.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Roland's sword Durandal is named for a quality the poem prizes above sharpness or speed. The word 'Durandal' comes from the Latin root DURARE. What does that root mean -- what quality is Durandal named for?",
+      "choices": ["to endure -- Durandal is 'the enduring one'", "to strike -- Durandal is 'the striking one'", "to shine -- Durandal is 'the shining one'", "to sing -- Durandal is 'the singing one'"],
+      "answer": "to endure -- Durandal is 'the enduring one'",
+      "context": "Durandal comes from the French 'dur' (hard) and Latin 'durare' (to endure), yielding 'the enduring one' or 'the hard one'. The name earns itself in the climax of the poem, when Roland tries to break the sword and cannot. Source: Wikipedia, 'Durendal'.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Roland's sword Durandal is also a portable RELIQUARY. Its hilt is described in the Chanson de Roland as being hollow, and packed inside the pommel are holy fragments taken from famous saints -- a piece of the Virgin Mary's robe among them. Which apostle's TOOTH is also named in the poem as sealed inside the hilt?",
+      "choices": ["Saint Peter", "Saint John", "Saint Thomas", "Saint Andrew"],
+      "answer": "Saint Peter",
+      "context": "Song of Roland, laisse 173: the hilt of Durandal holds a tooth of Saint PETER, the blood of Saint Basil, the hair of Saint Denis, and a scrap of the Virgin Mary's robe. Peter was the chief of the apostles for the medieval church, which is why his relic tops the collection. Source: Wikipedia, 'Durendal'.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Charlemagne himself, the emperor Roland serves, also carries a famous named sword in the Song of Roland -- a separate blade from his nephew's. Charlemagne's sword is called 'the joyful one'. What is the name of Charlemagne's sword?",
+      "choices": ["Joyeuse", "Curtana", "Notung", "Balmung"],
+      "answer": "Joyeuse",
+      "context": "Joyeuse ('the joyful one') is Charlemagne's own sword in the chanson tradition -- described as changing colour thirty times a day and shining like the sun. Curtana is the sword of mercy carried at English coronations. Notung and Balmung are two names for Sigurd's sword in the Volsung / Nibelung cycle. Source: Wikipedia, 'Joyeuse'.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the pass of Roncesvalles the rearguard of Charlemagne's army is broken. Roland lies dying, and he realises that his sword must not be captured by the enemy and turned against Christian knights. He tries to destroy it -- but he does not throw it into a river or bury it. What does the dying Roland do to try to destroy Durandal?",
+      "choices": ["smashes it against a great rock at his side", "throws it into a deep gorge below the pass", "buries it under a heap of the fallen", "sets it in the flames of a burning cart"],
+      "answer": "smashes it against a great rock at his side",
+      "context": "Song of Roland: with his last strength Roland brings Durandal down again and again on the rock beside him, meaning to shatter the blade so that no pagan hand can carry it home. Source: Medievalists.net, 'Roland's Sword Goes Missing'.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As the dying Roland strikes Durandal against the great rock at his side, something astonishing happens with every blow. The stone splits open under the blade -- and the blade itself does one thing that gives Roland's sword its whole legend. What does Durandal itself do as the rock cracks apart?",
+      "choices": ["remains whole in his hand", "sings out with a bell-like note", "runs bright with fresh blood", "changes colour with each strike"],
+      "answer": "remains whole in his hand",
+      "context": "The rock cracks and shatters. The sword does not. That is the moment Durandal earns its name of 'the enduring one': Roland cannot break it no matter how hard he tries. He gives up, hides it beneath his body, and dies. Source: Wikipedia, 'Durendal'; Song of Roland.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After Roland has failed to break Durandal and lies at the point of death, he does one last thing with the sword to keep it out of enemy hands before the pagans find his body. What is the last thing Roland does with Durandal?",
+      "choices": ["hides it beneath his body as he dies", "hurls it toward the horn Olifant", "buries it in the throat of the last enemy", "hands it to the archbishop Turpin"],
+      "answer": "hides it beneath his body as he dies",
+      "context": "Song of Roland: unable to break the sword, Roland lies down on top of it, hides it under his body, and dies with his face toward Spain so that Charlemagne will find him fallen forward, still on the attack. Turpin, the fighting archbishop, has already died beside him. Olifant is the horn Roland belatedly blew to summon Charlemagne's return. Source: Wikipedia, 'Song of Roland'.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "For nine centuries the pilgrimage town of Rocamadour in southern France displayed a sword called Durandal, wedged into a cliff face high above the ground. Local guides told pilgrims it had been miraculously carried there from the pass where Roland fell. In what year did the Rocamadour Durandal make world headlines by disappearing from that cliff?",
+      "choices": ["2024", "1954", "1848", "1789"],
+      "answer": "2024",
+      "context": "The sword said to be Durandal was chained into the rock at Rocamadour thirty-two feet off the ground for over 800 years, and vanished in June 2024. Historians never believed the Rocamadour blade was Roland's actual sword -- it dated from centuries after him -- but its theft made headlines because the LEGEND is one of the most-loved in France. Source: Smithsonian Magazine, 'Fabled Sword From Medieval French Folklore Disappears', 2024.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The cliff at Rocamadour carries a famous NOTCHED CLEFT in the rock, and French pilgrims since the middle ages have been shown it under a proper name -- 'la Breche de X', named for the paladin whose one desperate act on the field of Roncesvalles it is said to record. Whose 'breche' is the split in the rock called?",
+      "choices": ["Roland's", "Charlemagne's", "Turpin's", "Ganelon's"],
+      "answer": "Roland's",
+      "context": "The notched cleft in the Rocamadour cliff is called la Breche de Roland -- Roland's cleft -- and pilgrims have been told since the middle ages that this is the crack Roland made when he tried to shatter Durandal on the rock. Turpin is the fighting archbishop who dies at Roland's side. Ganelon is the traitor who betrayed the rearguard to the Saracens. Source: La Brujula Verde, 'The sword embedded in the rock of the precipice of Rocamadour'.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Later medieval legend gave Durandal a much older lineage than the Chanson de Roland alone allowed -- it named a hero of the ancient world as the sword's ORIGINAL owner, long before it passed through many hands and came at last to Roland. Which hero of the ancient world was said in these later legends to have wielded Durandal first?",
+      "choices": ["Hector of Troy", "Achilles the Greek", "Alexander of Macedon", "Aeneas the exile"],
+      "answer": "Hector of Troy",
+      "context": "In later chivalric tradition Durandal is said to have belonged to Hector of Troy first, and to have passed through a chain of owners across centuries before reaching Roland. This is a typical medieval move -- tying the great weapons of French chivalric myth back to the Trojan founding-legends of European kingship. Achilles carried the shield made by Hephaestus and (later) armour taken from Patroclus's corpse. Aeneas carried a shield forged by Vulcan. Source: Wikipedia, 'Durendal'.",
+      "legend": true
+    }
+  ]
+}

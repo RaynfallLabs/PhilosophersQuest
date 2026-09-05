@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse myth, one of the All-Father's greatest treasures is a heavy gold arm-ring that never stops making more gold rings. He wears it on his arm and it keeps his hall rich forever. Which god owns this ring?",
+      "choices": ["Odin", "Thor", "Freyr", "Tyr"],
+      "answer": "Odin",
+      "context": "The gold ring belongs to Odin the All-Father. Thor's own treasure is the hammer Mjolnir; Freyr's is the ship Skidbladnir and the golden boar Gullinbursti; Tyr has no famous named object -- he is remembered instead for the hand he lost to the wolf Fenrir. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The magical gold arm-ring worn by the chief of the Norse gods earns its name from what it does over and over -- gold falls off it in fresh rings like drops of water off a wet blade. The Old Norse name simply means 'the dripper'. What is the ring called?",
+      "choices": ["Draupnir", "Gungnir", "Andvaranaut", "Gjallarhorn"],
+      "answer": "Draupnir",
+      "context": "Old Norse Draupnir literally means 'the dripper'. Gungnir is Odin's spear; Andvaranaut is the cursed ring the dwarf Andvari gives up to Loki in the Volsung cycle; Gjallarhorn is Heimdall's warning-trumpet at the rainbow bridge. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin's ring Draupnir was made by two dwarf brothers in a wager Loki lost against them. One worked the anvil, the other pumped the bellows without stopping even when Loki (turned into a fly) bit his neck. What are the two brothers called?",
+      "choices": ["Sindri and Brokkr", "Fjalar and Galar", "Nordri and Sudri", "Nar and Nain"],
+      "answer": "Sindri and Brokkr",
+      "context": "Snorri, Skaldskaparmal 43: Sindri (also called Eitri) is at the anvil; Brokkr pumps the bellows. Fjalar and Galar are the dwarves who murdered Kvasir to brew the Mead of Poetry; the four dwarves Nordri, Sudri, Austri, Vestri hold up the sky; Nar and Nain are dead-dwarf names from the Voluspa catalogue. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The dwarf brothers Sindri and Brokkr made THREE great gifts in the wager against Loki. One was Draupnir, Odin's ring. Another was a golden boar. And the third became the single most famous object in all of Norse myth. What was the third gift?",
+      "choices": ["Mjolnir, Thor's hammer", "Gungnir, Odin's spear", "Sleipnir, Odin's horse", "Gleipnir, the wolf-chain"],
+      "answer": "Mjolnir, Thor's hammer",
+      "context": "Snorri, Skaldskaparmal 43: the three gifts are Draupnir (Odin's ring), Gullinbursti (Freyr's golden boar), and Mjolnir (Thor's hammer), which won the wager. Gungnir the spear and Sleipnir the eight-legged horse were made by the Sons of Ivaldi and by Loki respectively; Gleipnir the wolf-chain was made by different dwarves entirely. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The magic of Odin's ring Draupnir runs on a strict schedule -- new gold rings of equal weight fall from it at set intervals, forever. In Snorri's account, how often does the ring produce new rings, and how many at a time?",
+      "choices": ["eight rings every ninth night", "three rings every third dawn", "one ring every full moon", "twelve rings every winter solstice"],
+      "answer": "eight rings every ninth night",
+      "context": "Snorri, Skaldskaparmal 43: 'every ninth night there fell from it eight gold rings of equal weight.' The number nine echoes through Norse myth -- the nine worlds of Yggdrasil, Odin's nine nights hung on the tree, Thor's nine paces after killing the World-Serpent. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "During the great mourning after Baldr's death, Odin walks up to his dead son on the funeral ship Hringhorni and lays his own most precious object on the pyre with the body. WHICH of Odin's treasures does he put on Baldr's pyre?",
+      "choices": ["the ring Draupnir", "the spear Gungnir", "the raven Huginn", "the wolf-pelt cloak"],
+      "answer": "the ring Draupnir",
+      "context": "Snorri, Gylfaginning 49: Odin lays Draupnir on Baldr's pyre as the last gift. Gungnir the spear he keeps for himself; Huginn is his living raven, not a burnable object; there is no wolf-pelt cloak in the myth. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki lost the wager with Sindri and Brokkr and owed the dwarves his HEAD. He wriggled free on a technicality -- his neck, he pointed out, had not been part of the bet. Furious, the dwarf Brokkr instead did something else to Loki's face. What did Brokkr do?",
+      "choices": ["sewed Loki's lips shut with wire", "cut off Loki's beard at the chin", "branded Loki's cheek with the anvil", "poured molten gold in Loki's ear"],
+      "answer": "sewed Loki's lips shut with wire",
+      "context": "Snorri, Skaldskaparmal 43: Brokkr took an awl and thread and sewed Loki's lips shut with wire, silencing the trickster (at least until Loki ripped the thread out). No branding, beard-cutting, or gold-pouring appears in this scene. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Hermod rides Odin's horse Sleipnir down the black roads into Hel to try to ransom Baldr. Baldr cannot come, but he hands Hermod a single object to carry back up to Odin as proof that Hermod really did meet him in the underworld. What token does Baldr send?",
+      "choices": ["the ring Draupnir", "a lock of his own hair", "his sword hilt broken in half", "a ship-nail from Hringhorni"],
+      "answer": "the ring Draupnir",
+      "context": "Snorri, Gylfaginning 49: Baldr gives Hermod Draupnir -- the same ring Odin had laid on the pyre -- to carry back as an underworld token. The other objects are not in the story; the ring returning from Hel is one of the most poignant beats in the whole Prose Edda. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the Poetic Edda's Skirnismal, Freyr the fertility god falls in love with a giantess from Jotunheim and sends his servant Skirnir to woo her. Skirnir arrives with a bag of bribes, including Odin's dripping ring itself. Which giantess is Skirnir sent to?",
+      "choices": ["Gerd", "Skadi", "Angrboda", "Hyrrokkin"],
+      "answer": "Gerd",
+      "context": "Skirnismal 21-22: Skirnir offers Gerd eleven golden apples and Draupnir the dripping ring; she refuses gold and only yields under threat of a magic curse. Skadi is Njord's giantess-wife; Angrboda is Loki's giantess-lover, mother of Fenrir; Hyrrokkin is the giantess who launched Baldr's ship. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Norse court poets loved compact metaphors called kennings. Because Odin's ring never stops producing new rings of equal weight, one whole family of kennings uses the ring's name as shorthand -- 'dripper of Draupnir', 'drip of Draupnir', 'Draupnir's sweat'. What single thing do all three phrases MEAN?",
+      "choices": ["gold", "a king", "the sea", "a wound"],
+      "answer": "gold",
+      "context": "In skaldic poetry these Draupnir-kennings all stand for GOLD, because that is literally what the ring produces. Kings had their own kennings ('ring-giver' names the man, not the metal); the sea was called 'whale-road'; a wound was called 'sword's dew' or 'raven's drink'. Source: en.wikipedia.org/wiki/Draupnir",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The River Boyne in County Meath runs past the great mound of Newgrange and out to the Irish Sea. In Irish myth the river is the body of a Tuatha De Danann goddess who drowned at its source and became the water. Which goddess?",
+      "choices": ["Boann", "Brigid", "Danu", "Aine"],
+      "answer": "Boann",
+      "context": "Metrical Dindshenchas of Boann: Boann is the eponymous goddess of the River Boyne (Irish An Bhoinn). Brigid is the goddess of poetry, healing, and the smith-fire at Kildare; Danu is the mother-goddess of the Tuatha De Danann as a whole; Aine is a Munster sun-and-fertility goddess.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Boann's name comes from the Old Irish word bo-fhinn. What does it mean?",
+      "choices": ["the white cow", "the swift river", "the shining one", "the great queen"],
+      "answer": "the white cow",
+      "context": "Boann (Proto-Celtic Bou-vinda) means literally 'the white cow.' The cow is Ireland's oldest wealth-animal and the shape of many divine figures (Cu Chulainn's fights are all over a cattle-raid; the Morrigan appears as a heifer). 'The great queen' is the Morrigan; 'the shining one' is closer to Brigid.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At the mythic heart of Ireland stood a hidden well guarded by the Tuatha De god Nechtan and only three of his cup-bearers. It was the sacred source of wisdom and its waters were forbidden to all others. What was that well called?",
+      "choices": ["the Well of Segais", "the Well of Urd", "the Cauldron of Dagda", "the Spring of Aengus"],
+      "answer": "the Well of Segais",
+      "context": "Metrical Dindshenchas of Boann and Nechtan (mythology): the Well of Segais (also called Connla's Well) was the mythic source of the Boyne. Only Nechtan and his three cup-bearers could approach it. The Well of Urd is the Norse well beneath Yggdrasil where the Norns sit; the Cauldron of Dagda is a different Tuatha De treasure; the Spring of Aengus is not a named source.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Around the Well of Segais grew a ring of magical trees, and their nuts fell into the water and drifted downstream. These are the same trees whose nuts, dropping into a Munster pool, feed the Salmon of Knowledge in the Fionn mac Cumhaill story. What kind of trees are they?",
+      "choices": ["hazel trees", "oak trees", "rowan trees", "yew trees"],
+      "answer": "hazel trees",
+      "context": "The Well of Segais is ringed by hazel trees whose nuts carry wisdom -- they drop into the water, the salmon eat them, and any human who eats such a salmon gains the salmon's knowledge (Fionn burns his thumb on such a salmon and sucks it, gaining the gift). Oak, rowan, and yew are all sacred Irish trees but do not carry the wisdom-nut motif.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Boann was forbidden to approach the Well of Segais at all. She went anyway. What did she do at the well as an act of open defiance?",
+      "choices": ["walked three times around it counter-sunwise", "spoke a curse into the water", "cut down one of the hazel trees", "washed her hair in the source"],
+      "answer": "walked three times around it counter-sunwise",
+      "context": "Metrical Dindshenchas of Boann: Boann walked three times around the Well of Segais tuathal -- against the sun, counter-clockwise, which in Irish tradition is the direction of ill omen and of ritual challenge. Sun-wise (deiseal) is the direction of blessing; counter-sunwise is the direction of defiance and destruction.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The waters of Segais answered Boann's defiance immediately. They burst up out of the well and chased her down the plain of Meath, tearing her apart as they went. What THREE parts of her body did the flood strip away before drowning her?",
+      "choices": ["an arm, a leg, and an eye", "her hair, her hands, and her tongue", "her voice, her sight, and her memory", "her cloak, her sword, and her name"],
+      "answer": "an arm, a leg, and an eye",
+      "context": "Metrical Dindshenchas of Boann: the risen waters tore off Boann's arm, her leg, and her eye as they pursued her -- the classic Irish triple-blemish, the same body-perfection-broken that puts a king off the throne (Nuada's hand, Bres's boils). She drowned in the flood; the flood kept running and became the river.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The great neolithic passage-tomb complex on the north bank of Boann's river, five thousand years old and famous for its winter-solstice sunbeam, is named after her in Irish. Its name means 'palace of the river.' What is that name?",
+      "choices": ["Bru na Boinne", "Sidhe na Brogha", "Cnoc na Ri", "Tir na nOg"],
+      "answer": "Bru na Boinne",
+      "context": "Bru na Boinne means 'the palace of the Boyne' -- the whole complex of Newgrange, Knowth, and Dowth is named for Boann. In myth it is the home of the Dagda and of Boann's son Aengus. Sidhe na Brogha is a poetic variant name for a sidhe-mound; Cnoc na Ri means 'hill of the king'; Tir na nOg is 'the land of youth,' a separate Otherworld destination.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Boann's lover among the gods was the Dagda -- 'the good god,' chief of the Tuatha De -- and their child became one of the most beloved figures of Irish myth, later reckoned the god of love and youth, who owns Bru na Boinne. Who is that son?",
+      "choices": ["Aengus", "Lugh", "Ogma", "Manannan"],
+      "answer": "Aengus",
+      "context": "Aengus (Aengus Og, 'Aengus the Young') is the son of the Dagda and Boann. The Dagda made the sun stand still for nine months so Boann's husband would not notice the pregnancy: Aengus is thus born in the space of a day. Lugh is a later Tuatha De hero (grandson of Balor); Ogma is the god of eloquence and inventor of ogham writing; Manannan mac Lir is the sea-god.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Boann story is not the only Irish river-origin tale of exactly its shape. A second Tuatha De woman goes to a different forbidden well, is drowned by the risen waters in the same way, and becomes another famous Irish river -- the longest river in Ireland, in fact. What is her name?",
+      "choices": ["Sinann", "Etain", "Deirdre", "Grainne"],
+      "answer": "Sinann",
+      "context": "The Metrical Dindshenchas gives the parallel tale of Sinann: she approaches the Well of Connla (a second wisdom-well surrounded by nine hazels), the waters rise against her, drown her, and rush out to become the River Shannon -- Ireland's longest river. Etain is a swan-maiden of a wooing-tale; Deirdre is the tragic heroine of the Ulster Cycle; Grainne is Diarmuid's love in the Fenian Cycle.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Boann story survives in a whole medieval Irish genre of place-name origin-tales -- one for every hill, lake, ford, and river of importance, gathering the story of how each landmark got its name. What is that genre called?",
+      "choices": ["the Dindshenchas", "the Annals of the Four Masters", "the Fenian Cycle", "the Cath Maige Tuired"],
+      "answer": "the Dindshenchas",
+      "context": "The Dindshenchas ('lore of places') is the medieval Irish body of place-name origin-tales, preserved in prose and metrical (verse) forms in the Book of Leinster and other manuscripts. The Annals of the Four Masters is a much later (17th-century) chronicle of Irish history; the Fenian Cycle is the Fionn stories; the Cath Maige Tuired is one specific battle-tale, not a whole genre.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "King Arthur is dying after his last battle against Mordred at Camlann. He gives his most trusted surviving knight one last order: take Excalibur down to the water and throw it in. Which knight did Arthur send with the sword?",
+      "choices": ["Bedivere", "Gawain", "Kay", "Lucan"],
+      "answer": "Bedivere",
+      "context": "Sir Bedivere is Arthur's cupbearer and, by Malory Book XXI, the last living knight at his side. In the older Welsh tradition he is 'Bedwyr' and one of Arthur's earliest companions. Gawain has died earlier of a head-wound. Kay, Arthur's foster-brother, is long gone. Lucan the Butler is present at the last battle but dies of his wounds before Excalibur is returned.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Once the sword has been thrown back into the water, Arthur is too weak to walk. Bedivere carries him on his back down to the water's edge, where a strange craft is already floating, waiting. What kind of craft is waiting for the dying king?",
+      "choices": ["a small barge", "a war galley", "a river-raft", "a Viking longship"],
+      "answer": "a small barge",
+      "context": "Malory calls it 'a little barge' -- a flat, quiet ferry-boat, not a warship. The image is deliberately un-warlike: no oars, no sail, no crew of men. War-galleys and longships belong to campaign stories (Byzantine, Norse); rafts to river folktales. Arthur's ferry is a mystical, hearse-like craft.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The barge is not empty. It carries three queens and their attendants, all draped in one particular colour of hood, weeping as they wait. What colour do the ladies wear?",
+      "choices": ["black", "white", "scarlet", "green"],
+      "answer": "black",
+      "context": "Malory Book XXI ch.6: 'a little barge with many fair ladies in it, and among them all was a queen, and all they had black hoods, and all they wept and shrieked when they saw King Arthur'. Black is the mourning colour of the whole scene. White is the colour of the Grail knights; scarlet of the martyr; green of the fairy Otherworld -- all wrong for this cortege.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One of the three queens in the barge is Arthur's own HALF-SISTER -- and she is one of the great enemies of his reign, the very sorceress who once stole Excalibur's magic scabbard and later sent an assassin against him. Yet here she is weeping over him. Who is she?",
+      "choices": ["Morgan le Fay", "Guinevere", "Elaine of Astolat", "Nimue of the Lake"],
+      "answer": "Morgan le Fay",
+      "context": "Malory names the three queens as the Queen of Northgales, the Queen of the Waste Lands, and Morgan le Fay -- Arthur's half-sister by their mother Igraine. Morgan's presence on the barge is one of the deepest paradoxes in the Arthur story: enemy in life, mourner in death. Guinevere is Arthur's queen but has already retired to a nunnery. Elaine of Astolat is the lily-maid who died for love of Lancelot. Nimue is aboard too but as the chief Lady of the Lake, not as a queen.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The queens lift Arthur into the barge and lay him down in a very particular way -- not on a couch or a bier, but in an intimate posture that marks him as a child of the family being taken home. How is Arthur laid?",
+      "choices": ["with his head in a queen's lap", "seated upon a throne of oak", "wrapped in a knight's cloak", "chained to a mast of iron"],
+      "answer": "with his head in a queen's lap",
+      "context": "Malory Book XXI ch.6: 'they set them down, and in one of their laps King Arthur laid his head'. It's a pieta-like image, deliberately gentle. A throne would be a coronation; a cloak-wrapping a battle-death; a chained mast a captive's death -- none fit this scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As the barge draws out from the shore Arthur speaks a last order to Bedivere left standing in the reeds. He does not say he is going to his grave; he says he is going somewhere to be HEALED. To what place does Arthur say he is going?",
+      "choices": ["Avalon", "Camelot", "Tintagel", "Lyonesse"],
+      "answer": "Avalon",
+      "context": "Malory: 'I will into the vale of Avilion to heal me of my grievous wound.' Avalon (Old French Avilion, Welsh Ynys Afallon 'Isle of Apples') is a mythic island of healing first named by Geoffrey of Monmouth c.1136. Camelot is Arthur's court, already lost. Tintagel is his Cornish birthplace. Lyonesse is a sunken kingdom of the Tristan story, west of Cornwall.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The name Avalon comes from an older Welsh word that has nothing to do with knights or magic -- it names the fruit that grows on the island's trees. What does 'Avalon' mean in Welsh?",
+      "choices": ["Isle of Apples", "Isle of Mist", "Isle of the Dead", "Isle of the Swan"],
+      "answer": "Isle of Apples",
+      "context": "Geoffrey of Monmouth's Historia Regum Britanniae Book XI (c.1136) explains 'Insula Avallonis' from Welsh 'afal' (apple). Apples are the fruit of the Otherworld across Celtic mythology -- also seen in the Irish Emain Ablach, 'Emain of Apples'. Mist, the Dead, and the Swan all suit Otherworld islands in other traditions, but Avalon's name is specifically the apple-word.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The morning after the barge leaves, Bedivere wanders inland weeping and comes upon a hermit in a valley, digging a fresh grave beside his chapel. The hermit tells Bedivere how the grave came to be needed: at midnight a company of BLACK-HOODED LADIES came to his door bearing a body. What did the ladies ask the hermit to do?",
+      "choices": ["bury the body for them", "wake it for seven days", "burn it on a pyre", "carry it back to Camelot"],
+      "answer": "bury the body for them",
+      "context": "Malory Book XXI ch.7. The hermit does not know whose body it is. Waking the dead is not asked; a pyre would be pagan Norse or Greek, not Christian British; carrying it to Camelot would break the mystery. The whole point of the scene is that Arthur's death is uncertain -- a grave is dug, but no name is given.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Malory refuses to say plainly whether the buried body was Arthur's. In one of the most famous passages in the whole book he writes: 'yet some men say... that King Arthur is not dead, but'. How does the sentence continue?",
+      "choices": ["he shall come again", "he sleeps under the sea", "he walks with the Round Table", "he burns in a star"],
+      "answer": "he shall come again",
+      "context": "Malory Book XXI ch.7, near-verbatim: 'yet some men say in many parts of England that King Arthur is not dead, but had by the will of our Lord Jesu into another place; and men say that he shall come again, and he shall win the holy cross'. Malory refuses to give a verdict. The three wrong choices are made-up flourishes; Malory's line is specifically about RETURN, not undersea sleep or star-fire.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "According to Malory a Latin epitaph was carved on Arthur's supposed tomb, four short words that sum up the whole legend of a king who died-but-did-not-die. It reads 'Hic iacet Arthurus, rex quondam rexque futurus.' What do those last four Latin words mean in English?",
+      "choices": ["the once and future king", "the king who died at Camlann", "the king who healed the wound", "the king of the round table"],
+      "answer": "the once and future king",
+      "context": "Malory Book XXI ch.7. 'Rex quondam' = 'king in time past'; 'rexque futurus' = 'and king to come'. The line closes the whole Morte d'Arthur and gave T.H. White the title of his 1958 novel 'The Once and Future King'. The three wrong choices describe Arthur but do not translate the Latin.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Arthur is not the only hero in Western myth said to be SLEEPING under a mountain or hill, waiting to return when his people need him. Which Holy Roman Emperor was said to be asleep with his beard growing round a stone table inside a German mountain?",
+      "choices": ["Frederick Barbarossa", "Charles Martel", "Otto the Great", "Sigismund"],
+      "answer": "Frederick Barbarossa",
+      "context": "Frederick Barbarossa (1122-1190) sleeps in the Kyffhauser mountain, ravens circling above; his red beard has grown through the stone table around which he sits. Similar 'king in the mountain' legends attach to Ogier the Dane at Kronborg, King Sebastian of Portugal, and Fionn mac Cumhaill under the Irish hills. Charles Martel is the 8th-century hammer of the Franks. Otto the Great is 10th-century. Sigismund of Luxembourg was 15th-century Holy Roman emperor. Only Barbarossa carries the sleeping-in-mountain legend.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In 1191, seven years after their abbey was gutted by fire and while they were desperate to raise money to rebuild, the monks of Glastonbury Abbey announced they had DUG UP a very famous grave in their cemetery -- a lead cross with a Latin inscription and a giant coffin below. Whose grave did they claim to have found?",
+      "choices": ["King Arthur's", "Joseph of Arimathea's", "Saint Patrick's", "Merlin's"],
+      "answer": "King Arthur's",
+      "context": "The Glastonbury monks' 1191 discovery of a lead cross reading 'Here lies buried the famous King Arthur on the Isle of Avalon' is regarded by modern historians as a pious forgery -- perfectly timed to bring pilgrims and coin after the 1184 fire. The same abbey also promoted the legend that Joseph of Arimathea had come to Glastonbury with the Grail -- two miracles, both marketable. Patrick's burial is claimed at Downpatrick in Ireland. Merlin's grave has no such tourist site.",
+      "legend": false
+    }
+  ]
+}

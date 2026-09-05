@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the All-Father Odin, chief of the Aesir and lord of the slain in Valhalla, carries a signature weapon into every battle -- the same weapon he takes with him on his last ride out at Ragnarok. What kind of weapon does Odin carry?",
+      "choices": ["a spear", "a hammer", "an axe", "a bow"],
+      "answer": "a spear",
+      "context": "Snorri, Skaldskaparmal 43 and Gylfaginning 51: Odin's weapon is a spear (Gungnir). The hammer Mjolnir belongs to Thor; axes belong to warriors like the berserkers but not to a named god; the bow is Ullr's weapon. Every Odin-carving from the Viking age shows him with a spear.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Norse gods are split into two families that fought a war before the age of mortals: Odin's family that includes Thor and Baldr, and a second family of harvest and sea gods that includes Freyr and Freyja. Which family does Odin belong to?",
+      "choices": ["the Aesir", "the Vanir", "the Jotnar", "the einherjar"],
+      "answer": "the Aesir",
+      "context": "Snorri, Gylfaginning 20: Odin, Thor, Baldr, Tyr, and Frigg belong to the Aesir. The Vanir include Freyr, Freyja, and Njord. The Jotnar are the giants of Jotunheim. The einherjar are not a family at all but the chosen dead warriors who feast in Valhalla.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin's spear has its own name in Snorri, and every treasure of the Aesir carries its own name the way a king's sword did. What is the name of Odin's spear?",
+      "choices": ["Gungnir", "Mjolnir", "Draupnir", "Skidbladnir"],
+      "answer": "Gungnir",
+      "context": "Snorri, Skaldskaparmal 43: 'Odin has the spear called Gungnir.' The name is thought to mean 'the swaying one' or 'the trembler'. Mjolnir is Thor's returning hammer. Draupnir is Odin's dripping gold arm-ring. Skidbladnir is Freyr's folding ship that can hold every Aesir and still fit in a pocket.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin's spear was forged in a dwarf-workshop in Svartalfheim by a team of three brothers -- the same dwarf brothers who made a wig of spun gold for Sif after Loki had shaved her bald in the night. Which dwarf-team forged Odin's spear?",
+      "choices": ["the Sons of Ivaldi", "Sindri and Brokkr", "Fjalar and Galar", "the dwarves of Nidavellir"],
+      "answer": "the Sons of Ivaldi",
+      "context": "Snorri, Skaldskaparmal 43: Loki takes his commission to the Sons of Ivaldi, who forge Sif's replacement golden hair, Freyr's ship Skidbladnir, and Odin's spear. Sindri and Brokkr are the rival dwarf-team who then forge the ring Draupnir, the boar Gullinbursti, and the hammer Mjolnir. Fjalar and Galar are the killers of Kvasir.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri writes one line about Odin's spear that is quoted more than any other: he says the weapon does one specific thing that no other spear in Norse myth can do. In Snorri's line, what does the spear do once it has been thrown?",
+      "choices": ["it never stops in its thrust", "it returns to Odin's hand each time", "it splits into three points in flight", "it drinks the blood of the slain"],
+      "answer": "it never stops in its thrust",
+      "context": "Snorri, Skaldskaparmal 43: Odin's spear 'never stopped in its thrust' -- once thrown, no shield or wall stops it. The returning weapon is Thor's hammer Mjolnir. Three-pointed spears and blood-drinking weapons appear elsewhere in world myth but not with Odin's.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Voluspa, the seeress-poem of the Elder Edda, describes the very first war ever fought between the two families of gods. It opens with Odin doing one dramatic thing over the enemy army as a formal challenge -- a gesture that starts the war and dedicates the whole other side as his prize. What did Odin do?",
+      "choices": ["he hurled his spear over the enemy host", "he set fire to the enemy's shield-wall", "he called down eight ravens on their heads", "he blew the horn Gjallarhorn"],
+      "answer": "he hurled his spear over the enemy host",
+      "context": "Voluspa 24: 'Odin cast his spear, hurled it into the host' -- the opening act of the Aesir-Vanir war. In Norse tradition the flying spear over the heads of an army was a legal dedication of every man on the other side to Odin. Gjallarhorn is what Heimdallr will blow at the start of Ragnarok, not Odin's gesture.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The mythic spear-cast over an enemy host was not just an Elder-Edda story -- Viking-age captains imitated it before real land battles. According to the sagas, what was every man on the other side considered to be, once the spear had sailed over them?",
+      "choices": ["a promised sacrifice to Odin", "a paid mercenary of Thor", "a bondsman of the king", "an outlaw beyond the law"],
+      "answer": "a promised sacrifice to Odin",
+      "context": "Eyrbyggja saga and Styrbjarnar thattr both record the pre-battle spear-cast as a legal dedication of the enemy to Odin, imitating Voluspa 24. The men on the far side of the flying spear were then reckoned already-dead, already-owed. Old Norse law even had a term for this: they were 'given to Odin' before a blow had fallen.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the Sigrdrifumal, the valkyrie Sigrdrifa wakes on her mountain and teaches the young hero Sigurd a whole lesson in runes -- where power-runes are carved in the Norse world. She names one place on Odin's own gear where runes are carved. Where does Sigrdrifa say the runes are carved on Odin's spear?",
+      "choices": ["on its point", "on its shaft", "under its socket", "along its edge"],
+      "answer": "on its point",
+      "context": "Sigrdrifumal 17 (Poetic Edda): the valkyrie lists rune-places -- Odin's horse Sleipnir's teeth, the Norn Urd's tongue, the paws of a bear, Bragi's tongue, and 'on the point of Gungnir'. The runes on the point are what make the spear never miss.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Norse tradition held that an oath sworn on Odin's spear was the most binding oath there was -- break it, and doom would follow you. Because of this the Aesir themselves used the spear for one specific ceremonial purpose. What were sacred Norse promises sworn on?",
+      "choices": ["the point of Odin's spear", "the roots of Yggdrasil", "the blood of a black horse", "the ring of the temple altar"],
+      "answer": "the point of Odin's spear",
+      "context": "Norse oath-tradition holds that the spear-point of Gungnir was the highest bond. The temple oath-ring (used at Iceland's Thingvellir) and blood-of-a-horse sacrifices existed alongside, but only the spear-point carried the doom of Odin himself. Breaking such an oath meant giving yourself over as one of Odin's own.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the end of the world Odin himself rides at the head of the einherjar out of Valhalla, spear in hand, to face his oldest enemy. For all the never-missing power of the spear, Odin does not survive the fight. Which creature swallows Odin whole at Ragnarok?",
+      "choices": ["the wolf Fenrir", "the world-serpent Jormungand", "the fire-giant Surt", "the hound Garm"],
+      "answer": "the wolf Fenrir",
+      "context": "Snorri, Gylfaginning 51: 'Fenrir will swallow Odin, and that will be his death.' Jormungand is killed by Thor, who then dies of the serpent's venom nine paces away. Surt burns the whole world and kills Freyr. Garm and Tyr kill each other at the gates of Hel. Odin's son Vidar avenges his father by tearing Fenrir's jaws apart.",
+      "legend": true
+    }
+  ]
+}

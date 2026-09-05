@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Old English poem Beowulf, the hero has torn off the arm of a monster named Grendel and hung it in the rafters of the mead-hall Heorot as a trophy. That same night a second monster comes to Heorot for revenge. Whose child is the second monster?",
+      "choices": ["Grendel's mother", "Grendel's father", "Grendel's brother", "Grendel's cousin"],
+      "answer": "Grendel's mother",
+      "context": "Beowulf lines 1251-1309 (Klaeber edition). The second attacker is Grendel's mother; the poem never names her, describing her only as 'the mother of that terror' and 'the mere-woman.' Grendel has no father in the poem, no brother, no cousin -- only his mother, herself descended from Cain according to the poem's genealogy. She is the specific attacker on the second night.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The night she attacks Heorot the mother of Grendel takes two things away with her. She snatches Hrothgar's dearest counsellor, an old warrior named Aeschere -- and she also takes back a trophy the Danes had hung in the rafters. What does she take down from the rafters of Heorot?",
+      "choices": ["Grendel's arm", "her son's skull", "Beowulf's helmet", "Hrothgar's cloak"],
+      "answer": "Grendel's arm",
+      "context": "Beowulf lines 1294-1309. She takes back the arm Beowulf had torn from her son the night before, and she takes Aeschere as a hostage. Grendel's skull is not the trophy in the hall (Beowulf will bring it back himself in the next scene). Beowulf's helmet and Hrothgar's cloak do not appear in this raid. The arm is the specific trophy.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Hrothgar warns Beowulf about the dark tarn in the moors where the monsters live. To make plain how cursed the water is, he tells Beowulf about a hart -- a large stag -- that a pack of hounds chases to the very bank of the mere. What does the hart do at the water's edge rather than jump in?",
+      "choices": ["it turns back and lets the hounds take it", "it drinks and dies at once", "it swims across and escapes", "it hides in the frost-bitten trees"],
+      "answer": "it turns back and lets the hounds take it",
+      "context": "Beowulf lines 1368-1372 (Heaney translation): 'Though the heather-stepper harried by the hounds takes refuge in the wood, he will lose his life on the bank sooner than plunge in.' The stag would rather die of the hunt than touch the water. Drinking and dying, swimming across, or hiding in the trees are not the story -- the stag REFUSES the water. It is one of Old English poetry's most quoted horror-images.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Before Beowulf dives into the mere he is loaned a sword by one of Hrothgar's own men -- the same warrior who had earlier tried to shame Beowulf at the mead-bench with a story about a swimming-contest against a friend named Breca. Who lends Beowulf his sword?",
+      "choices": ["Unferth", "Aeschere", "Wiglaf", "Wealhtheow"],
+      "answer": "Unferth",
+      "context": "Beowulf lines 1455-1472 (Klaeber). Unferth, whose earlier taunt Beowulf had answered in full, now hands Beowulf his own sword as a peace-offering. Aeschere is Hrothgar's counsellor -- already dead in this scene, killed the previous night. Wiglaf is the young kinsman who will help Beowulf in the DRAGON fight fifty years later. Wealhtheow is Hrothgar's queen. Unferth is the sword-giver here.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The sword that Unferth lends Beowulf is a famous named blade. The poem says it had never failed the hand of any warrior who had carried it before. What is this sword called?",
+      "choices": ["Hrunting", "Naegling", "Durendal", "Tyrfing"],
+      "answer": "Hrunting",
+      "context": "Beowulf lines 1455-1472; Hrunting (Wikipedia). The sword is Hrunting, an heirloom of Unferth's family. Naegling is Beowulf's OWN sword, from the dragon-fight fifty years later at the end of the poem -- a common test pitfall. Durendal is Roland's sword in the Chanson de Roland, a completely different tradition. Tyrfing is Hervor's cursed family sword in Hervarar Saga. Hrunting is the specific loaner here.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Beowulf arms himself in mail and helmet and jumps into the black water of the mere. The poem is deliberately clear about how long it takes him just to REACH the bottom, and it is longer than any real dive by a man in armour could possibly last. How long does the poem say Beowulf spends swimming down through the water?",
+      "choices": ["the better part of a day", "the length of a slow hour", "the space of three heartbeats", "seven days and seven nights"],
+      "answer": "the better part of a day",
+      "context": "Beowulf lines 1490-1512; CliffsNotes and LitCharts summaries. The poem gives 'the space of a day' or 'nearly a day' -- physically impossible, which is the poem's point: the mere is a supernatural descent, not an ordinary lake. A slow hour is too short for the poem's cosmic scale. Three heartbeats belongs to boasting fighter-scenes elsewhere. Seven days is Noah-scale Biblical language. Nearly a day is the specific figure.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Beowulf finally reaches the bottom of the mere, Grendel's mother seizes him and drags him into her own hall -- a dry, roofed chamber lit by an unearthly light, at the bottom of the water. There he lifts the sword Unferth loaned him and swings it at her head. What happens to Hrunting when its edge strikes her neck?",
+      "choices": ["it bounces off without cutting", "it snaps in half", "it sticks fast in the bone", "it burns his hand"],
+      "answer": "it bounces off without cutting",
+      "context": "Beowulf lines 1518-1528 (Heaney translation). Hrunting, which had never failed any warrior before, bounces off her neck 'and could not bite' -- Beowulf casts it aside. Snapping in half is Roland's Durendal on the rocks (a different story). Sticking in bone is the trope of a lesser sword. Burning his hand is nowhere in Beowulf. The bounce is the specific detail, and its whole point is that ordinary named weapons cannot harm this creature.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "With Hrunting cast aside and the monster-woman grappling him, Beowulf's eye falls on the wall of the underwater hall. Hanging there is a huge weapon the poem describes as 'the work of giants, from the days before the flood, that no ordinary warrior could carry.' What does Beowulf do with the giant-forged sword?",
+      "choices": ["strikes off her head with one blow", "burns her body with it as a torch", "throws it up through the water to Hrothgar", "wedges it against the door to trap her"],
+      "answer": "strikes off her head with one blow",
+      "context": "Beowulf lines 1557-1569 (Klaeber and Heaney): Beowulf seizes the giant sword two-handed and takes her head off with a single stroke. He does not use it as a torch, does not throw it away, and does not use it as a barricade. Decapitation is the specific act and matches the arm-tearing of the first fight (a Grendel-kin dies by having a body-part removed).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The moment after Grendel's mother falls dead, Beowulf sees something else in the underwater hall: the body of Grendel himself, dead from the arm-wound Beowulf gave him the night before. Beowulf goes over and does one more thing to Grendel's corpse before he leaves. What does he do?",
+      "choices": ["strikes off the head as a trophy", "burns the body on the hall's floor", "buries it under the giant sword's blade", "cuts open the chest and takes the heart"],
+      "answer": "strikes off the head as a trophy",
+      "context": "Beowulf lines 1584-1590. Beowulf beheads Grendel's corpse as a trophy for Hrothgar; the head will need four men to carry back to Heorot on a spear-shaft. He does not burn, bury, or open the body. The double beheading (mother alive, son dead) is the specific pattern -- Grendel-kin are ended by losing heads and arms.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "As Beowulf stands over the two corpses, he notices something strange happening to the giant-forged sword in his hand: its blade begins to shrink, 'like an icicle when the Father lets go of the frost-fetters,' dissolving in the hot blood of the monsters. By the time he swims back to daylight, only ONE part of the weapon is left in his hand. Which part remains?",
+      "choices": ["the hilt", "the pommel", "the scabbard", "the point"],
+      "answer": "the hilt",
+      "context": "Beowulf lines 1605-1617 (Heaney translation); Hrunting (Wikipedia). The blade melts away in the monster-blood and only the hilt is left. The pommel is only the ornamented cap on top of the hilt; the scabbard is empty by the time Beowulf dives; the point melts first, not last. The hilt is what Beowulf carries back to Hrothgar and hands to him -- and it is one of Old English literature's most-quoted supernatural details.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Beowulf swims back up out of the mere he brings with him the melted sword's hilt and one huge trophy from the fight below. Back at Heorot, no single warrior can lift the trophy. How many of Beowulf's men are needed to carry it back to Heorot on a spear-shaft?",
+      "choices": ["four", "two", "seven", "twelve"],
+      "answer": "four",
+      "context": "Beowulf lines 1633-1639. Four of Beowulf's men are needed to carry Grendel's severed head back to Heorot, lashed to a spear-shaft between them. The number is precise and deliberate: it is the poet's way of driving home how monstrous the skull is. Two, seven, and twelve are common poetic numbers elsewhere but the poem is specific: four men, one head.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Beowulf is not a Dane. He has crossed the sea to Hrothgar's kingdom to fight the monster of the mere because Hrothgar had once done a favour for Beowulf's father. What people does Beowulf lead -- the tribe he sails home to when the whole adventure is over?",
+      "choices": ["the Geats", "the Frisians", "the Saxons", "the Suebi"],
+      "answer": "the Geats",
+      "context": "Beowulf lines 194-200, 1830-1839. Beowulf is a Geat, from the south of what is now Sweden; his uncle Hygelac is king of the Geats. The Frisians are a coastal North Sea people Beowulf raids much later. The Saxons are a different Germanic group (some settled England). The Suebi are a Central European tribe from Roman-era sources. The Geats are Beowulf's specific people.",
+      "legend": true
+    }
+  ]
+}

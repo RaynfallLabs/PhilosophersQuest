@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Among the Norse gods, one of the Vanir who came to live in Asgard is the god of harvest, sunshine, and good weather -- the god the farmers of Sweden and Norway prayed to for a peaceful year and a good crop. He owns a golden boar and a magic ship. What is the name of this god?",
+      "choices": ["Freyr", "Njord", "Tyr", "Bragi"],
+      "answer": "Freyr",
+      "context": "Snorri, Gylfaginning 24: Freyr is the god of harvest, sunshine and peaceful weather, and the most-worshipped of the Vanir in Viking-age Sweden. Njord is Freyr's father, the sea-god who governs the winds and the tides. Tyr is the one-handed war-god. Bragi is the god of skaldic poetry. Freyr's father Njord came to Asgard as a hostage after the Aesir-Vanir war and Freyr came with him.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One of Freyr's greatest possessions is a ship the dwarves made for him -- a ship that Snorri calls 'the best of all ships and the most skillfully made'. What is the name of Freyr's ship?",
+      "choices": ["Skidbladnir", "Naglfar", "Ringhorn", "Skoll"],
+      "answer": "Skidbladnir",
+      "context": "Snorri, Gylfaginning 43: Skidbladnir is Freyr's ship, praised by Snorri as 'the best of ships'. Naglfar is the dark counterpart -- the ship of dead men's nails that will carry the giants to Ragnarok. Ringhorn is the funeral ship of Baldr, launched with his body on it. Skoll is not a ship at all -- he is one of the two wolves that chase the sun across the sky.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri names the dwarf-craftsmen who forged Freyr's ship for him in Svartalfheim. It is the same family who spun out Sif's replacement hair of real gold in the previous errand. Which dwarf-family made Freyr's ship?",
+      "choices": ["the Sons of Ivaldi", "Brokkr and Sindri", "Fjalar and Galar", "Nordri and Sudri"],
+      "answer": "the Sons of Ivaldi",
+      "context": "Snorri, Skaldskaparmal 35 and 43: the Sons of Ivaldi are the three dwarf-brothers who made three treasures in one workshop session -- Sif's golden hair, Freyr's ship, and Odin's spear Gungnir. Brokkr and Sindri are the OTHER dwarf-smiths who make Mjolnir, Draupnir, and Gullinbursti in the second wager. Fjalar and Galar are the dwarves who murder Kvasir. Nordri and Sudri are two of the four sky-holding dwarves.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri describes Freyr's ship as roomy enough to hold, in full war-gear with their weapons at their sides, one particular set of passengers -- a set so large that no ordinary ship in the nine worlds could carry them. Who is Skidbladnir large enough to carry?",
+      "choices": ["all the gods of Asgard together", "the whole warrior-host of Valhalla", "a full army of the giants of Jotunheim", "the nine Valkyries with their horses"],
+      "answer": "all the gods of Asgard together",
+      "context": "Snorri, Gylfaginning 43: Skidbladnir is big enough to carry all the Aesir at once, in full war-gear with their weapons. Valhalla holds the einherjar (Odin's dead heroes) in the hundreds of thousands, and Skidbladnir does not carry them. There is no Norse story of a giant-army sailing in it, or of the Valkyries riding in it (the Valkyries ride horses through the air).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "For all its size, Skidbladnir has one property no other ship in the Norse stories has -- a property that means Freyr can carry it around when he is not sailing. Once the voyage is over, what can Freyr do with Skidbladnir?",
+      "choices": ["fold it up like a cloth and put it in a pouch", "shrink it down to the size of a walnut and swallow it", "leave it to sail itself home to Asgard", "turn it into a wooden staff that never breaks"],
+      "answer": "fold it up like a cloth and put it in a pouch",
+      "context": "Snorri, Gylfaginning 43 and Skaldskaparmal 35: because it is 'assembled from thin pieces of wood' (which is what the name Skidbladnir means), the ship can be folded flat like a cloth and slipped into a pouch small enough to carry in a pocket. Mjolnir is the item that shrinks small enough to fit inside a shirt, not Skidbladnir. The other two options are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Skidbladnir has a third marvellous property beside its size and its foldability -- a property that concerns what happens the instant Freyr raises the sail. The ship needs no oars, and cannot be becalmed. What happens as soon as Skidbladnir's sail goes up?",
+      "choices": ["a fair wind blows straight to Freyr's destination", "the sun rises to guide it by day and stars by night", "the sea calms flat as glass beneath the hull", "the ship moves faster than any horse in Asgard"],
+      "answer": "a fair wind blows straight to Freyr's destination",
+      "context": "Snorri, Gylfaginning 43: as soon as the sail is raised Skidbladnir catches a fair wind blowing straight to wherever Freyr wants to go. There is no need to row, and the ship cannot be becalmed. This is the property that makes Skidbladnir most enviable to seafaring Norse audiences -- a wind on demand.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Freyr's other great treasure from the same errand -- also made in Svartalfheim in the second wager by the dwarves Brokkr and Sindri -- is a live animal with bristles of gold that can pull a chariot through the air and across the sea, and whose gleaming coat lights up the darkest night. What creature is this second Freyr-treasure?",
+      "choices": ["a golden boar", "a golden ram", "a golden stag", "a golden hound"],
+      "answer": "a golden boar",
+      "context": "Snorri, Skaldskaparmal 35 and Gylfaginning 49: the boar is called Gullinbursti ('golden-bristled') or Slidrugtanni. Its glowing bristles light the darkest place. It pulls Freyr's chariot. Freyr rides it to Baldr's funeral. The Norse were pig-farmers and warriors -- for them the boar was a fitting mount for a harvest-god who was also a battle-god. The other three animals are not Freyr's mounts.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Skidbladnir has a dark opposite named in the same stanza of the Poetic Edda's Grimnismal -- another ship, held not by any god but by the people of the fire-giant Surt, growing steadily larger year by year toward a launch at the end of the world. It is built out of one substance in particular. What is the doom-ship of the giants built from?",
+      "choices": ["the untrimmed nails of the dead", "the bones of drowned sailors", "the timbers of Yggdrasil the world-tree", "the shields of fallen kings"],
+      "answer": "the untrimmed nails of the dead",
+      "context": "Snorri, Gylfaginning 43 and 51 and Poetic Edda, Voluspa 50: the doom-ship is Naglfar, built from the untrimmed fingernails and toenails of the dead. Snorri says that is why the old Norse custom was to trim a corpse's nails before burial -- so as not to hand any more wood to the ship that will bring the giants to Ragnarok. In the Grimnismal stanza the two ships stand together: 'Skidbladnir the best of ships is built for shining Freyr; but of ships Naglfar is the greatest, which Muspell's people own.'",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Snorri says Freyr owned a third great treasure alongside Skidbladnir and the golden boar -- a sword that would fight by itself in the hands of any wise wielder. Freyr does not have this sword at Ragnarok, because he gave it away in life for love, and pays for that gift with his death. To whom did Freyr give away his self-fighting sword?",
+      "choices": ["his messenger Skirnir, to win the giantess Gerd", "the fire-giant Surt, to buy peaceful weather", "his father Njord, as a wedding-day gift", "the goddess Freyja, his own twin sister"],
+      "answer": "his messenger Skirnir, to win the giantess Gerd",
+      "context": "Poetic Edda, Skirnismal, and Snorri, Gylfaginning 37 and 51: Freyr fell in love with the giantess Gerd from afar, and gave his self-fighting sword to his servant Skirnir as payment for going down to Jotunheim and winning her hand. At Ragnarok Freyr must fight Surt without his sword, and Surt kills him. Snorri names this as the price of Freyr's love. The other three options are inventions.",
+      "legend": true
+    }
+  ]
+}

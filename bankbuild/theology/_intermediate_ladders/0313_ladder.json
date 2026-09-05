@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Greek poet Hesiod wrote a long poem to his brother Perses on honest work and just judgment. Buried inside it is a myth of how the world grew worse across five ages, one after another. What is the name of the poem where Hesiod tells this myth?",
+      "choices": ["Works and Days", "Theogony", "Georgics", "Fasti"],
+      "answer": "Works and Days",
+      "context": "Hesiod, Works and Days 106-201. Theogony is Hesiod's OTHER long poem, about the birth of the gods. Georgics is Virgil's farming poem in Latin, centuries later. Fasti is Ovid's Roman calendar-poem. Hesiod's brother Perses had cheated him in a lawsuit; the poem is Hesiod's answer.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Hesiod's first age of mortals lived like gods -- no toil, no old age, no winter, feasting all their lives in perpetual spring. Which god was king of heaven in this happiest first age?",
+      "choices": ["Cronus", "Zeus", "Uranus", "Hades"],
+      "answer": "Cronus",
+      "context": "Hesiod, Works and Days 109-120. The first age was under Cronus, before Zeus overthrew him. Uranus is even earlier, the primal sky castrated by Cronus. Hades has always been king of the dead, never of heaven. When the golden race died out they did not go to Hades but became daimones -- benevolent spirits watching over the living.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The second age was named for a different metal, and its mortals had a strange lifespan: they lived a hundred years as little children under their mothers, and only a short foolish adulthood before dying. For what metal was this second age named?",
+      "choices": ["Silver", "Copper", "Tin", "Lead"],
+      "answer": "Silver",
+      "context": "Hesiod, Works and Days 127-142. The Silver race refused to sacrifice to the gods, and Zeus (now king in place of Cronus) buried them beneath the earth in anger at their impiety. The pattern of the metals -- gold, silver, and then bronze -- is a sequence of decline, each race worse than the last.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Hesiod says the third race, the Bronze Age race, had bronze weapons and bronze armour and bronze tools -- and one other thing made of bronze that no later people had. What else did the Bronze Age race have made of bronze?",
+      "choices": ["their houses", "their bread", "their horses", "their books"],
+      "answer": "their houses",
+      "context": "Hesiod, Works and Days 143-155. The bronze race even lived in bronze houses -- 'there was no black iron yet' in the world, Hesiod says. They were terrible warriors born from ash-trees, and destroyed themselves by their own violence, going down nameless into the dark house of Hades.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Hesiod's schema then does something surprising at the fourth age. Instead of continuing the metal pattern (gold, silver, bronze, and then some new metal), the FOURTH age has a name that breaks the pattern entirely. What is Hesiod's name for the fourth age?",
+      "choices": ["the Age of Heroes", "the Age of Copper", "the Age of Titans", "the Age of Sorrow"],
+      "answer": "the Age of Heroes",
+      "context": "Hesiod, Works and Days 156-165. The fourth age is the Age of Heroes -- more just and better than the bronze age before it. Hesiod inserted it because he was writing in a tradition that honoured the epic heroes (Achilles, Odysseus, Heracles) and had to find a place for them. This is why later poets (Ovid, Metamorphoses 1) drop it and give only four ages.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Hesiod names two specific wars in which the heroes of the fourth age died out. One was the war of the Seven Against Thebes. The other, more famous, is one Homer would later sing. What was the second war Hesiod names as the end of the Age of Heroes?",
+      "choices": ["the war at Troy", "the war of Persia", "the war of the Titans", "the war of the giants"],
+      "answer": "the war at Troy",
+      "context": "Hesiod, Works and Days 161-165: the heroes fought at Thebes and at Troy. The Persian war is a historical war of the fifth century BCE, far after Hesiod. The Titanomachy (war of the Titans) is Zeus vs the Titans, an age BEFORE mortals; the Gigantomachy (war of the giants) is the Olympians vs the giants, also before mortals. Achilles, Ajax, Odysseus, and the Argonauts all lived in the Age of Heroes.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When the heroes died, some went down to Hades, but Hesiod says the best of them were sent instead to a place at the edge of the world Ocean, where the fields give grain three times a year and Cronus is king again. What is Hesiod's name for that place?",
+      "choices": ["the Isles of the Blessed", "the Fields of Aaru", "the Groves of Persephone", "the Halls of Bragi"],
+      "answer": "the Isles of the Blessed",
+      "context": "Hesiod, Works and Days 166-173. The Isles of the Blessed lie at the edge of Ocean; there Cronus (dethroned by Zeus) reigns quietly and the earth yields three harvests a year. The Fields of Aaru are the Egyptian afterlife; Persephone rules the shades in Hades; the Halls of Bragi (or Valhalla) are Norse. Later Greeks called the same place the Elysian Fields.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Hesiod says he lives in the FIFTH and worst age -- his own present -- and he wishes he had died before it or been born after it. His fifth age is named for a hard, dull metal that was still new in his day. For what metal is Hesiod's fifth age named?",
+      "choices": ["Iron", "Steel", "Clay", "Ash"],
+      "answer": "Iron",
+      "context": "Hesiod, Works and Days 174-179. Iron is the fifth age, our own. Steel as a distinct alloy is not named by Hesiod; clay is Nebuchadnezzar's dream-statue in the biblical Book of Daniel; ash is the material of the Bronze race, born from ash-trees. Iron for Hesiod is the metal of toil and grief -- workaday, useful, ordinary, without splendour.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Hesiod ends the myth with a picture of the end of the Iron Age. Two goddesses -- one the personification of shame that holds a person back from wrong, the other of righteous indignation that falls upon a wrong-doer -- wrap their faces in white robes and leave the earth for Olympus. What are the names of these two departing goddesses?",
+      "choices": ["Aidos and Nemesis", "Themis and Dike", "Hera and Hebe", "Iris and Nike"],
+      "answer": "Aidos and Nemesis",
+      "context": "Hesiod, Works and Days 197-201. Aidos is reverence-that-restrains from within; Nemesis is righteous indignation from without. Themis and Dike are the older law and justice; Hera and Hebe are queen of gods and cupbearer; Iris and Nike are messenger and victory. When Aidos and Nemesis go, Hesiod says, mortals have no defence at all against evil.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Centuries after Hesiod, the Roman poet Ovid retold the ages of the world in the opening book of the Metamorphoses -- but he counted only FOUR ages instead of five. Which of Hesiod's five ages did Ovid drop out of the sequence?",
+      "choices": ["the Age of Heroes", "the Age of Gold", "the Age of Bronze", "the Age of Iron"],
+      "answer": "the Age of Heroes",
+      "context": "Ovid, Metamorphoses 1.89-150. Ovid kept the four metal ages -- gold, silver, bronze, iron -- but dropped Hesiod's inserted Age of Heroes, since he was telling a straight decline from paradise to violence. The biblical Book of Daniel 2.31-45 also has four (Nebuchadnezzar's dream-statue: gold head, silver breast, bronze belly, iron legs with feet of iron and clay). Only Hesiod has five.",
+      "legend": false
+    }
+  ]
+}

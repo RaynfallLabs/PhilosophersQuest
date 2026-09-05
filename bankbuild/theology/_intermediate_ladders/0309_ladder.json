@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The ninth of Heracles's twelve labors sent him far from Greece to the land of a tribe of warrior women beyond the Black Sea. What did King Eurystheus order him to bring back from their queen?",
+      "choices": ["her war-belt", "her golden bow", "her iron helm", "her painted shield"],
+      "answer": "her war-belt",
+      "context": "Apollodorus, Bibliotheca 2.5.9: Eurystheus set Heracles to fetch the girdle -- Greek 'zoster', a warrior's war-belt -- of Hippolyta, queen of the Amazons. Older English translations call it a 'girdle', which is why the labor keeps that name.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the ninth labor Heracles was sent to bring back the war-belt of the queen of the Amazons, a tribe of warrior women whose city stood on a river on the south coast of the Black Sea. What was the name of the Amazon queen who owned the war-belt?",
+      "choices": ["Hippolyta", "Andromache", "Cassandra", "Iphigenia"],
+      "answer": "Hippolyta",
+      "context": "Apollodorus, Bibliotheca 2.5.9: the queen was Hippolyta. Andromache is the Trojan wife of Hector; Cassandra the Trojan seer-daughter of Priam; Iphigenia the daughter of Agamemnon sacrificed at Aulis -- all real names from adjacent Greek stories.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Hippolyta's belt was not just a piece of armor -- it had been given to her by her own father, a great god of Olympus, as the token that she ruled the Amazons. Which Olympian was Hippolyta's father?",
+      "choices": ["Ares", "Zeus", "Poseidon", "Apollo"],
+      "answer": "Ares",
+      "context": "Apollodorus, Bibliotheca 2.5.9: Ares, god of war, fathered Hippolyta and gave her the belt in token of her supremacy over the Amazons. In myth the whole Amazon tribe descend from Ares.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Eurystheus, the king who set the labors, did not want Hippolyta's war-belt for himself. He wanted it as a present for a specific woman in his own household -- a priestess of Hera. Who did Eurystheus intend the belt for?",
+      "choices": ["his daughter Admete", "his wife Antimache", "his sister Sthenelaia", "his mother Nicippe"],
+      "answer": "his daughter Admete",
+      "context": "Apollodorus, Bibliotheca 2.5.9: the labor was set at the request of Admete, Eurystheus's daughter and a priestess of Hera. She wanted the Amazon queen's war-belt as a temple treasure.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Heracles sailed with a small band of companions to the Amazon city of Themiscyra, expecting a fight. Instead the queen came down to the shore, listened to his story, and made a choice no one in Greece had guessed she would make. What did Hippolyta do when she met Heracles?",
+      "choices": ["agreed to give him the war-belt willingly", "challenged him to single combat", "demanded he marry her first", "sent him to consult the Amazon oracle"],
+      "answer": "agreed to give him the war-belt willingly",
+      "context": "Apollodorus, Bibliotheca 2.5.9: Hippolyta was impressed by Heracles and agreed to hand the belt over peacefully. For one moment the ninth labor was a friendly diplomatic errand -- which is what makes what happens next so bitter.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Just as Hippolyta was about to hand over the war-belt in peace, a figure ran through the Amazon ranks in disguise, crying that Heracles was carrying the queen off by force. In the panic the Amazons armed and rushed the Greek ships. Who was the disguised troublemaker who started the battle?",
+      "choices": ["Hera in the shape of an Amazon", "Athena in the shape of an old woman", "Aphrodite in the shape of a priestess", "Artemis in the shape of a huntress"],
+      "answer": "Hera in the shape of an Amazon",
+      "context": "Apollodorus, Bibliotheca 2.5.9: Hera hated Heracles as the son of Zeus by a mortal, and she went down to the Amazons herself in Amazon-shape to spread the rumor that turned the peace into a slaughter. The scene is a mirror of Loki in disguise or the Morrigan in disguise -- a goddess as a story-mover.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The city of the Amazons, where Hippolyta welcomed Heracles and where Hera in disguise turned the peace into a battle, stood at the mouth of a river on the south coast of the Black Sea. What was the name of the river the Amazon capital stood on?",
+      "choices": ["the Thermodon", "the Styx", "the Scamander", "the Eurotas"],
+      "answer": "the Thermodon",
+      "context": "Apollodorus, Bibliotheca 2.5.9; Herodotus 4.110: the Amazon capital Themiscyra stood on the Thermodon on the south coast of the Black Sea. The Styx is an underworld river; the Scamander runs at Troy; the Eurotas runs at Sparta.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles saw the Amazon warriors charging the shore in arms and believed Hippolyta had betrayed him -- that the offer of the belt had been a trap. What did Heracles do to the queen who had welcomed him?",
+      "choices": ["killed her and took the belt from her body", "took her prisoner and dragged her aboard", "wounded her and left her on the shore", "spared her and fled without the belt"],
+      "answer": "killed her and took the belt from her body",
+      "context": "Apollodorus, Bibliotheca 2.5.9: believing Hippolyta had betrayed him, Heracles killed her, stripped the belt from her body, and fought his way back to the ships. Hera's disguise-and-rumor trick had turned a peaceful labor into the death of a queen who had done him no harm.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sailing home from the Amazons with Hippolyta's war-belt aboard, Heracles put in at Troy -- and found the king's daughter chained naked to a rock at the water's edge as a sacrifice to a sea-monster sent by Poseidon. Who was the Trojan princess Heracles found chained to the rock?",
+      "choices": ["Hesione", "Andromeda", "Iphigenia", "Chryseis"],
+      "answer": "Hesione",
+      "context": "Apollodorus, Bibliotheca 2.5.9: Hesione was the daughter of King Laomedon of Troy. Andromeda is the Ethiopian princess Perseus rescued (a very similar scene, different heroine). Iphigenia was sacrificed by her father Agamemnon at Aulis. Chryseis was Agamemnon's captive in the Iliad.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "King Laomedon of Troy had a habit of cheating his rescuers. He had cheated Poseidon over the building of the walls of Troy -- and when Heracles killed the sea-monster and freed Hesione, Laomedon cheated Heracles too by refusing the promised divine horses. Heracles came back later with an army and did what to Troy?",
+      "choices": ["sacked the city and killed Laomedon", "besieged the city and made a treaty", "burned the walls but spared the king", "carried off the temple treasures only"],
+      "answer": "sacked the city and killed Laomedon",
+      "context": "Apollodorus, Bibliotheca 2.6.4: Heracles returned with an army, breached the walls, killed Laomedon and all his sons except young Podarces (who was ransomed and renamed Priam -- the same Priam who would rule Troy in Homer's war). This is the FIRST sack of Troy, a generation before Achilles.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After sacking Troy the first time and killing King Laomedon, Heracles gave the rescued princess Hesione as a bride to the Greek friend who had been first over the walls in the fight. To which of his companions did Heracles give Hesione as bride?",
+      "choices": ["Telamon of Salamis", "Peleus of Phthia", "Nestor of Pylos", "Iolaus of Thebes"],
+      "answer": "Telamon of Salamis",
+      "context": "Apollodorus, Bibliotheca 2.6.4 and 3.12.7: Telamon of Salamis was first over the wall in the sack and received Hesione as his war-bride. Their son was Teucer the great archer of the Trojan War; Telamon's other son Ajax the Great was born to his wife Periboea. Peleus of Phthia (father of Achilles) was on the same expedition. Nestor and Iolaus are other companions of Heracles from the wider cycle.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Irish myth, a young warrior in a gold king's diadem came to the gates of Tara offering to fight for the Tuatha De against the Fomorians. He was the greatest of that people, part Tuatha De and part Fomorian, and would soon lead them to victory at the Second Battle of Moytura. What was this young warrior's name?",
+      "choices": ["Lugh", "Ogma", "Nuada", "Dagda"],
+      "answer": "Lugh",
+      "context": "Lugh Lamhfhada, grandson of the Fomorian tyrant Balor through his mother Ethniu, arrived at Tara during King Nuada's feast wearing a diadem and leading a company of warriors. Cath Maige Tuired (The Second Battle of Mag Tuired), CELT edition, sec. 53-55.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Irish myth of Lugh at Tara, the young stranger was stopped at the gate by a doorkeeper who told him: 'No one without an ART enters Tara.' What kind of place was Lugh trying to enter?",
+      "choices": ["The royal hall of the high king", "A quiet monastic library", "A wizard's mountain tower", "A Fomorian sea fortress"],
+      "answer": "The royal hall of the high king",
+      "context": "Tara in County Meath was the seat of the high kings of Ireland. In Cath Maige Tuired Lugh arrived during King Nuada's feast and had to prove a unique skill to be admitted. Cath Maige Tuired sec. 53-55.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At the gates of Tara the doorkeeper challenged the young Lugh with a single question, one every craftsman entering the royal hall had to answer. What was that question?",
+      "choices": ["What art do you practice?", "Where is your homeland?", "Who is your father?", "How many battles have you won?"],
+      "answer": "What art do you practice?",
+      "context": "'What art do you practice? For no one without an art enters Tara.' The rule turned the doorkeeper's post into a filter: Tara admitted skill, not birth. Cath Maige Tuired sec. 53.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Lugh's epithet SAMILDANACH, given to him after the doorkeeper scene at Tara, is one of the most famous titles in Irish myth. What does Samildanach mean?",
+      "choices": ["Equally skilled in all the arts", "Long-armed spearman of the sky", "Silver-handed prince of the mound", "Sea-crosser born under the wave"],
+      "answer": "Equally skilled in all the arts",
+      "context": "Samildanach is the honor Lugh earned at the gate by claiming every craft at once. His other epithet, Lamhfhada ('Long-Arm'), belongs to his skill with the spear. Cath Maige Tuired sec. 55; Wikipedia, Lugh.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the gate of Tara, Lugh said 'I am a WRIGHT' (a builder). The doorkeeper answered that Tara already had a wright and named him. Which of the Tuatha De was Tara's wright?",
+      "choices": ["Luchta", "Goibniu", "Credne", "Dian Cecht"],
+      "answer": "Luchta",
+      "context": "Luchta was the wright (carpenter) of the Tuatha De who made the shafts for their spears. Goibniu was the smith, Credne the brazier, Dian Cecht the physician. Cath Maige Tuired sec. 55.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the gate of Tara, Lugh said 'I am a SMITH'. The doorkeeper answered that Tara already had a smith by that trade, forger of the weapons that would arm the Tuatha De at Moytura. Which of the Tuatha De was Tara's smith?",
+      "choices": ["Goibniu", "Luchta", "Credne", "Ogma"],
+      "answer": "Goibniu",
+      "context": "Goibniu forged the spearheads and blades of the Tuatha De and lent his name to the eternal Feast of Goibniu whose ale kept the gods young. Cath Maige Tuired sec. 55.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the gate of Tara, Lugh said 'I am a PHYSICIAN'. The doorkeeper answered that Tara already had a physician by that trade, the healer who would restore the fallen at the Second Battle of Moytura. Which of the Tuatha De was Tara's physician?",
+      "choices": ["Dian Cecht", "Goibniu", "Credne", "Ogma"],
+      "answer": "Dian Cecht",
+      "context": "Dian Cecht was the healer-god of the Tuatha De and would tend the Well of Slaine to revive the wounded at Moytura. Cath Maige Tuired sec. 55.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the doorkeeper scene at Tara, Lugh named craft after craft, and each time was told that Tara already had someone for that work. What was the one killing question he finally put to the doorkeeper that opened the gate?",
+      "choices": ["'But have you one man who is ALL of these at once?'", "'But who among them was born of Balor?'", "'But which of them can outrun the wind?'", "'But which of them wears the diadem I wear?'"],
+      "answer": "'But have you one man who is ALL of these at once?'",
+      "context": "'Ask the king whether he has one man who possesses all these arts.' No craftsman inside could claim every trade Lugh had claimed; the doorkeeper ran to Nuada, who ordered the gate opened. Cath Maige Tuired sec. 55.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the doorkeeper scene, Lugh finally claimed to be a BRAZIER, a worker in brass. The doorkeeper answered that Tara already had a brazier, and named the smith-craftsman of the Tuatha De who worked in that softer metal. What was his name?",
+      "choices": ["Credne", "Luchta", "Goibniu", "Abcan"],
+      "answer": "Credne",
+      "context": "Credne Cerd was the brass-worker (cerd) of the Tuatha De, distinct from Goibniu the iron-smith. He would later forge the silver hand for Nuada. Cath Maige Tuired sec. 55.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Once Lugh was inside Tara's hall, King Nuada decided the young man's arrival was so important that he made a sacrifice no king had made before. What did Nuada do?",
+      "choices": ["He gave up his own throne to Lugh for thirteen days", "He handed Lugh the sword he had carried at Moytura", "He killed his own champion Ogma in single combat", "He burned the royal hall to purify it before battle"],
+      "answer": "He gave up his own throne to Lugh for thirteen days",
+      "context": "Nuada rose from his seat so Lugh could sit in it for thirteen days to plan the coming battle with the Fomorians. Cath Maige Tuired sec. 74: 'it was easier that a king should stand for a champion than that a champion stand for a king.'",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the Second Battle of Moytura, Lugh finally faced the Fomorian tyrant who was his own mother's father. The old giant opened his eye that killed all it looked upon. What did Lugh do to end him?",
+      "choices": ["Drove a sling-stone through the eye and out the back of his head", "Cut off his eyelid with the sword Fragarach", "Called Odin's ravens down to blind him first", "Fled seven fields and returned with a mirror"],
+      "answer": "Drove a sling-stone through the eye and out the back of his head",
+      "context": "At Moytura Lugh killed his grandfather Balor of the Evil Eye by driving a sling-stone through the poisonous eye as Balor's servants lifted its heavy lid. Wikipedia, Lugh (Second Battle of Mag Tuired).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "One of the four great festivals of the medieval Irish year is named for Lugh himself and still marks the beginning of harvest across Ireland on the first of August. What is this festival called?",
+      "choices": ["Lughnasadh", "Beltane", "Imbolc", "Samhain"],
+      "answer": "Lughnasadh",
+      "context": "Lughnasadh ('Lugh's assembly') is the harvest festival Lugh founded in honor of his foster-mother Tailtiu, who died clearing the plains of Ireland for planting. It survives as the August bank-holiday Lughnasa. Wikipedia, Lugh.",
+      "legend": true
+    }
+  ]
+}

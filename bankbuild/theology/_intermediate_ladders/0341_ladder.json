@@ -1,0 +1,68 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Heracles is set twelve labors by King Eurystheus, and most involve grappling with one huge beast. But the SIXTH labor is different: he is sent to clear out a whole FLOCK that has terrorised a Greek countryside. What kind of animal is this flock made of?",
+      "choices": ["birds", "wild pigs", "wolves", "goats"],
+      "answer": "birds",
+      "context": "The sixth labor targets the Stymphalian birds -- a whole flock of man-eating birds nesting in the marshes of Lake Stymphalia in Arcadia. Wild pigs recall the Erymanthian boar (a single beast, labor 4); wolves belong to no labor; goats to the Ceryneian hind's forest (a single deer, labor 3, not a flock).",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Which Greek hero, working through the famous set of twelve labors set by King Eurystheus, is sent to clear out the man-eating birds of Lake Stymphalia?",
+      "choices": ["Heracles", "Perseus", "Theseus", "Jason"],
+      "answer": "Heracles",
+      "context": "The Twelve Labors are Heracles's, imposed by King Eurystheus at Delphi's instruction. Perseus killed Medusa and rescued Andromeda; Theseus killed the Minotaur in the Cretan labyrinth; Jason led the Argonauts after the Golden Fleece -- and, later, was attacked by the SAME Stymphalian birds after they fled Heracles.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Stymphalian birds are not ordinary birds. Their beaks and feathers are made of one specific metal -- so hard the birds can shoot the feathers out like arrows -- and their droppings are poison. What metal are their beaks and feathers?",
+      "choices": ["bronze", "iron", "silver", "obsidian"],
+      "answer": "bronze",
+      "context": "Pausanias 8.22 and later mythographers describe the Stymphalian birds' beaks and feathers as bronze; the birds can loose the feathers like arrows, and their droppings poison crops. Iron is later than the mythic Bronze-Age setting; silver and obsidian belong to other traditions (obsidian is Aztec/Meso-American, out of lane).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Heracles arrives at the lake with his bow but cannot reach the flock: the birds refuse to fly, the reeds hide them, and the boggy ground will not carry his weight. He needs a way to make the whole flock take to the air at once. Which Olympian goddess appears to help him solve the problem?",
+      "choices": ["Athena", "Hera", "Aphrodite", "Demeter"],
+      "answer": "Athena",
+      "context": "Athena, the patron of most Greek heroes (Perseus, Odysseus, Bellerophon, Heracles himself), appears in the Stymphalian labor. Hera is Heracles's lifelong enemy who set the labors in motion by driving him mad; Aphrodite is the goddess of love (her interventions are Trojan-War romances); Demeter is grain and the seasons.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Athena gives Heracles a very specific tool for this labor -- not a bow, not a sword, not a shield. Whatever it is, it makes a terrific NOISE, and the noise is what breaks the birds out of the reeds. Which of these is the tool she hands him?",
+      "choices": ["a bronze rattle", "a golden net", "an ivory horn", "a silver mirror"],
+      "answer": "a bronze rattle",
+      "context": "Apollodorus and Diodorus Siculus name Athena's gift as bronze castanets, or krotala -- a rattle. Heracles climbs a nearby hill, clashes them, and the noise drives the whole flock into the sky at once. A golden net belongs to Hephaestus's trap for Ares and Aphrodite; an ivory horn evokes Roland's Olifant (out of lane); a silver mirror echoes Perseus's Medusa-shield.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The rattle Athena hands Heracles was made on Mount Olympus by one particular Olympian -- the lame smith-god who forges everything the gods need, from Zeus's thunderbolts to Achilles's armor. Which god forged the bronze rattle?",
+      "choices": ["Hephaestus", "Apollo", "Hermes", "Poseidon"],
+      "answer": "Hephaestus",
+      "context": "Hephaestus is the Olympian smith who forged Zeus's thunderbolts, Achilles's shield, and the bronze rattle for Heracles's sixth labor. Apollo's gifts are the lyre and prophecy; Hermes made the first lyre (from a tortoise-shell) and stole cattle; Poseidon carries the trident but does not forge.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Once the rattle drives the whole flock into the air, Heracles picks the birds off with his bow. His arrows are not ordinary -- they have been dipped in the venom of a monster he killed in an earlier labor, and a single scratch kills. Whose blood or venom coats those arrows?",
+      "choices": ["the Lernaean Hydra's", "the Nemean Lion's", "the Cretan Bull's", "the Erymanthian Boar's"],
+      "answer": "the Lernaean Hydra's",
+      "context": "In Labor 2, Heracles killed the many-headed Hydra of Lerna and dipped his arrows in its poisonous blood; those Hydra-tipped arrows recur across later labors -- Stymphalian birds, Geryon, the centaur Nessus, and finally Heracles's own death when Nessus's blood turns them against him. The Nemean Lion (labor 1) yielded a hide impervious to weapons, not venom; the Cretan Bull and the Erymanthian Boar were captured alive.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The birds Heracles does not kill scatter far, and generations later Jason's Argonauts run into them on a lonely island in the Black Sea. The Argonauts, warned by the seer Phineus, drive the birds off by copying Heracles's noise-trick -- but with the equipment they already have, clashing spears against shields. To which Olympian's island had the surviving flock fled (Apollonius Rhodius, Argonautica 2)?",
+      "choices": ["Ares's", "Hades's", "Dionysus's", "Hermes's"],
+      "answer": "Ares's",
+      "context": "Apollonius Rhodius, Argonautica 2.1030-1089: the surviving Stymphalian birds settle on the island of Ares (Aretias) in the Black Sea, where the birds are already sacred to the war-god; the Argonauts clash spears against shields to raise a wall of noise -- exactly Heracles's krotala trick reapplied. Hades has an underworld realm, no island; Dionysus's islands are Naxos and Chios (wine, not war); Hermes has no cult island of this kind.",
+      "legend": true
+    }
+  ]
+}

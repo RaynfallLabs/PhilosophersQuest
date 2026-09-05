@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the middle cantar of the Cantar de Mio Cid, after years of campaigning through the frontier lands of eastern Iberia in exile, Rodrigo Diaz -- the Cid -- draws his growing warband up before a great walled city on the Mediterranean coast and settles in to besiege it. Which city does he set out to take?",
+      "choices": ["Valencia", "Toledo", "Seville", "Zaragoza"],
+      "answer": "Valencia",
+      "context": "Valencia was the Cid's crowning conquest and the seat he ruled as an independent lord until his death in 1099. Toledo had already fallen to Alfonso VI in 1085; Seville was taken much later by Ferdinand III in 1248; Zaragoza fell to Alfonso the Battler in 1118. Source: Cantar de Mio Cid Part III (poetryintranslation.com); en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "The Cantar de Mio Cid tells us that the Cid rings the city on the coast and settles his men in for a long, patient blockade. The poem states plainly how long the warband penned the city in before it was starved into surrender: 'Know that for how many months he penned them there. When the tenth arrived, they were forced to yield.' Fill in the poem's number.",
+      "choices": ["Nine months", "Three months", "One year", "Two years"],
+      "answer": "Nine months",
+      "context": "The poem: 'Know that for nine months he penned them there. When the tenth arrived, they were forced to yield.' (Historically the siege lasted longer, from October 1092 to June 1094; the poem compresses it to nine.) Source: Cantar de Mio Cid Part III (poetryintranslation.com).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "All the years the Cid was in exile, campaigning across the frontier, his wife and two young daughters did not travel with him. The poem says he left them safe at a Castilian monastery just outside Burgos, where they waited out the war. Which monastery kept the Cid's family?",
+      "choices": ["San Pedro de Cardena", "Santo Domingo de Silos", "San Millan de la Cogolla", "Santa Maria de Ripoll"],
+      "answer": "San Pedro de Cardena",
+      "context": "San Pedro de Cardena, a Benedictine monastery just outside Burgos, sheltered Jimena and the daughters through the exile. The Cid himself was originally buried there before his tomb was moved to Burgos Cathedral. Source: Cantar de Mio Cid Parts I and III; en.wikipedia.org/wiki/El_Cid.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Cantar de Mio Cid, the Cid's wife is a great lady of Castile. Through all the years of exile she has kept the family together at a Castilian monastery while her husband fights his way across Iberia. What is her name in the poem?",
+      "choices": ["Dona Jimena", "Dona Urraca", "Dona Berenguela", "Dona Leonor"],
+      "answer": "Dona Jimena",
+      "context": "Dona Jimena Diaz was the historical Cid's real wife; the poem keeps her name. Urraca was Alfonso VI's daughter and later queen; Berenguela and Leonor are later Castilian queens. Source: Cantar de Mio Cid; en.wikipedia.org/wiki/El_Cid.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The starved city has surrendered. The Cid has sent Minaya Alvar Fanez back across Castile to fetch his wife and children from the monastery, and now they arrive at the newly-won city. The poem has the Cid meet them, mount them up, and lead them 'to the highest battlement' of the great fortress-palace. He wants them to see, in one view, the countless roofs of the city below and the sea beyond -- the home he has won for them. What is the fortress-palace in Valencia that he takes them up onto?",
+      "choices": ["The Alcazar", "The Alhambra", "The Alcazaba", "The Aljaferia"],
+      "answer": "The Alcazar",
+      "context": "The poem: 'My Cid made his way to the fortress beside them, And directed them to the highest battlement... Those beautiful eyes now gazed on all sides, They viewed the countless roofs of Valencia, And, in the opposite direction, beheld the sea.' The Alhambra is Granada's palace-fortress; the Alcazaba is Malaga's; the Aljaferia is Zaragoza's. Source: Cantar de Mio Cid Part IV.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Cid brings Dona Jimena and their two daughters up onto the highest battlement of the alcazar of Valencia. The girls stand there, staring out at the roofs of the city and the sea beyond, in the scene that gives the poem its middle cantar its most tender image. In the Cantar de Mio Cid, what are the two daughters' names?",
+      "choices": ["Elvira and Sol", "Cristina and Maria", "Urraca and Sancha", "Berenguela and Leonor"],
+      "answer": "Elvira and Sol",
+      "context": "The poem names them Dona Elvira and Dona Sol -- though the historical Cid's real daughters were called Cristina and Maria. The poet changed the names, and the poem's names are the ones that survived in Spanish story. Source: Cantar de Mio Cid Part IV; en.wikipedia.org/wiki/El_Cid.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "News of Valencia's fall crosses the strait to North Africa. In answer, a great Berber emir lands an enormous relief army on the Iberian coast and marches to retake the city. The Cid rides out to meet them on the plain of Cuarte outside Valencia, and shatters them so completely his men are rich for life. In the Cantar de Mio Cid, what is the name of the enemy king whose army the Cid breaks?",
+      "choices": ["Yusuf", "Tariq", "Abd al-Rahman", "Al-Mansur"],
+      "answer": "Yusuf",
+      "context": "The poem calls the enemy king Yusuf, matching the historical Almoravid emir Yusuf ibn Tashfin (though on the actual field the army was led by his nephew Muhammad ibn Tashfin, October 1094). Tariq ibn Ziyad crossed at Gibraltar in 711; Abd al-Rahman founded the Cordoba emirate; Al-Mansur was the Cordoban vizier of the tenth century. Source: Cantar de Mio Cid Part IV; en.wikipedia.org/wiki/Battle_of_Cuarte.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Cid has just broken the Moroccan relief army on the plain outside Valencia. The captured horses and gold from the enemy camp will make every one of his men rich for life. In the poem, the Cid picks the finest of his own share of the horses and sends them across Castile as a gift to the very king who had once exiled him, King Alfonso VI. How many horses does the poem have him send?",
+      "choices": ["Two hundred", "Thirty", "A thousand", "Twelve"],
+      "answer": "Two hundred",
+      "context": "The poem: 'And lead a full two hundred to King Alfonso.' This gift is the pivot of the poem's second cantar -- the beginning of the Cid's reconciliation with the king who banished him. Source: Cantar de Mio Cid Part IV.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "King Alfonso VI, softened by the Cid's gift and by the Cid's growing fame, arranges a match for the Cid's two daughters. He weds them to two princes of a great Leonese house -- a match the Cid himself is uneasy about, but which the king insists upon. The wedding is celebrated at the church of Santa Maria in Valencia, with feasting that lasts fifteen days. Whom does the poem have the daughters married to?",
+      "choices": ["The Infantes de Carrion", "The kings of Aragon", "The counts of Barcelona", "The lords of Navarre"],
+      "answer": "The Infantes de Carrion",
+      "context": "The Infantes (princes) of Carrion, Fernando and Diego, are the villains of the third cantar -- the marriage ends in the outrage at the oak-wood of Corpes, where they beat the daughters and abandon them, and the Cid takes his vengeance in the king's court. Source: Cantar de Mio Cid Parts III-IV.",
+      "legend": true
+    }
+  ]
+}

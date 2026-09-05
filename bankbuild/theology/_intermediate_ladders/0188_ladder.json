@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Norse Midgard Serpent is the great sea-monster that wraps the whole world -- so long he holds his own tail in his teeth. He was one of three monstrous children Loki fathered on the giantess Angrboda; the other two are Hel, the death-goddess, and Fenrir, the wolf. What is the Midgard Serpent's own name?",
+      "choices": ["Jormungandr", "Nidhogg", "Garm", "Fafnir"],
+      "answer": "Jormungandr",
+      "context": "Jormungandr is the world-encircling sea-serpent, the eternal enemy of Thor. Nidhogg is the dragon at Yggdrasil's third root, gnawing at the world-tree's root and chewing corpses in Hel. Garm is the great hound chained at the gates of Hel. Fafnir was a dwarf who turned into a dragon, killed by Sigurd the Volsung.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Norse stories one god above all others is the enemy of the Midgard Serpent. He has red hair and a red beard, drives a cart pulled by two goats, and wields the greatest hammer ever forged, Mjolnir. Which god is fated to fight the Serpent at Ragnarok?",
+      "choices": ["Thor", "Odin", "Tyr", "Freyr"],
+      "answer": "Thor",
+      "context": "Thor is the thunder-god, son of Odin and the earth-goddess Jord, wielder of the hammer Mjolnir and driver of the goats Tanngrisnir and Tanngnjostr. Odin is the All-Father who will fight Fenrir at Ragnarok, not the Serpent. Tyr will fight the hell-hound Garm. Freyr will fight the fire-giant Surt with an antler (having given up his sword for love of the giantess Gerd).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Thor goes to visit the giant Hymir on an errand: the sea-god Aegir has agreed to host a feast for all the Aesir, but he needs a cauldron big enough to brew ale for every god at once, and Hymir owns the only cauldron that huge. Hymir agrees to lend it -- but on one condition. What does Hymir make Thor do first?",
+      "choices": ["row out to sea and help catch enough fish for supper", "sing three drinking-songs before the whole hall", "wrestle Hymir's champion in the yard for a day", "drink from Hymir's great horn without a breath"],
+      "answer": "row out to sea and help catch enough fish for supper",
+      "context": "Hymiskvida and Gylfaginning 48: Hymir agrees to the loan only if Thor helps him catch enough fish to feed the household that night. The three wrong choices are real motifs from other Thor-among-the-giants stories -- the horn-drinking is Utgardaloki's contest (where the horn turns out to be the sea itself), and wrestling and drinking-song feats belong to other giant-halls.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Before the boat can go out Hymir tells Thor to fetch his own bait -- the giant will not spare any. Thor walks into Hymir's cattle-pasture, chooses the biggest black bull in the herd, and does one shocking thing to get his bait. What does Thor do to Hymir's biggest ox?",
+      "choices": ["rips its head off with his bare hands", "cuts a thick steak from its shoulder", "chases it into the sea and drowns it", "hurls Mjolnir at it and pulps the skull"],
+      "answer": "rips its head off with his bare hands",
+      "context": "Gylfaginning 48 and Hymiskvida: Thor walks up to the biggest black bull in the herd and tears the head off with his bare hands, then carries the head down to the boat as bait. Hymir, watching from the doorway, says nothing but goes very pale.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Once the boat is in the deep, the giant Hymir baits his own hook and gets to work. Even before Thor drops the ox-head bait for the Serpent, Hymir has already caught a very impressive haul on a single line -- enough to shame most mortal fishermen. In one pull of the line, what does Hymir bring up out of the water?",
+      "choices": ["two whales", "a sword of gold", "a chest of amber", "the god Aegir's shoe"],
+      "answer": "two whales",
+      "context": "Hymiskvida and Gylfaginning 48: Hymir hauls up two whales on one line before Thor even starts fishing. The detail is there to make what Thor does next look bigger by comparison -- Hymir is a giant catching whales, and Thor then rows PAST Hymir's ground to catch something bigger still. The other three options are all real Norse story-motifs (Sigmund pulls the sword from the tree; amber is Freyja's tears; Aegir hosts the feast) but not from this scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The biggest black bull in Hymir's herd -- the one whose head Thor takes for fish-bait -- is not just any ox. He has a name meaning 'Sky-Bellower' or 'Heaven-Bellower', in Old Norse. What is the ox's name?",
+      "choices": ["Himinhrjot", "Audhumla", "Sanngrid", "Saehrimnir"],
+      "answer": "Himinhrjot",
+      "context": "Himinhrjot means 'Heaven-Bellower' -- Old Norse himin ('sky, heaven') + hrjot- ('roarer, bellower'). Audhumla is the primeval cow who licked the ice to free the first god at the world's beginning. Sanngrid is a Valkyrie. Saehrimnir is the boar in Valhalla who is butchered every night and whole again every morning to feed the einherjar.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once Thor and Hymir push off in the boat, Thor takes the oars and rows far, far out -- past the safe fishing grounds, past every rock Hymir knows, past even the edge of the sunlit water. As the water grows black beneath the hull, Hymir goes pale. Why is the giant so frightened of how far Thor has rowed?",
+      "choices": ["they are now above the abyss where the Midgard Serpent lies coiled", "a great sea-storm is rising on the horizon", "they have crossed into the fishing-water of a rival giant clan", "the sun is setting and the boat cannot return before dark"],
+      "answer": "they are now above the abyss where the Midgard Serpent lies coiled",
+      "context": "Gylfaginning 48: Thor keeps rowing past the ground where Hymir once caught two whales at a haul, out into the deep where no giant fishes. Hymir demands they turn back; Thor refuses. The abyss below is the sea-trench where Jormungandr wraps the world -- and that is exactly where Thor wants to be.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Thor drops his baited hook into the deep, and the Midgard Serpent takes it. Thor braces his feet against the hull of the little boat to heave -- and puts so much of his god-strength into the pull that one shocking thing happens to the boat itself. What happens to the hull when Thor braces?",
+      "choices": ["his heels punch through the planks and he stands on the sea-floor", "the boat splits down the middle and both men fall in", "the mast snaps and drops across his shoulders", "the oars break in his hands like dry twigs"],
+      "answer": "his heels punch through the planks and he stands on the sea-floor",
+      "context": "Gylfaginning 48: Thor pulls so hard that his feet drive straight through the bottom of the boat, and he ends up bracing against the SEA-FLOOR itself as he heaves the serpent's head up out of the water. It is the most famous 'Thor's strength' image in the Prose Edda.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Thor heaves the Serpent up out of the water, he and Jormungandr come face to face across the surface -- god and monster staring at each other, the serpent's poison dripping from its jaws. Thor reaches for Mjolnir to strike the killing blow. But the fight is ruined before Thor can swing: someone in the boat cuts the fishing-line. Who cuts the line, and with what?",
+      "choices": ["Hymir, with his bait-knife", "Loki in disguise, with a bronze dagger", "Aegir, with a fish-spine", "Odin, with the spear Gungnir"],
+      "answer": "Hymir, with his bait-knife",
+      "context": "Gylfaginning 48: Hymir, terrified that the Serpent will drag them both to the bottom, panics and hacks the line with his fish-cleaning knife. The Serpent sinks back into the deep. Thor turns on Hymir in fury and knocks the giant overboard with a punch. In Snorri's version Hymir survives; in the Hymiskvida the ending is left open. Loki does not appear in this myth. Aegir is the polite sea-host waiting at home. Odin is not on the boat.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "This scene of Thor and Hymir fishing for the Serpent is not just written down in the Eddas -- it is one of the most-carved myth-scenes in Viking-age stone. A 10th-century cross-shaft fragment in an English churchyard shows Thor and Hymir sitting in a boat, an ox-head bait dangling on a line, and a serpent-mouth rising from the waves below. In which English county does this stone stand?",
+      "choices": ["Cumbria", "Yorkshire", "Northumberland", "Suffolk"],
+      "answer": "Cumbria",
+      "context": "The Gosforth Fishing Stone was found in the churchyard of St Mary's, Gosforth, in Cumbria in March 1882 by C. A. Parker, while he was measuring the taller Gosforth Cross beside it. It is a fragment of what was probably a second cross-shaft, from the first half of the 10th century -- Anglo-Norse, from a Viking-settled region of England. The Ilkley Cross, Rothbury Cross, and Sutton Hoo are all real English early-medieval sites but do not carry this scene.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The fishing scene is not carved on only one Viking-age stone. The same picture -- a boat, an ox-head bait, a serpent-mouth rising -- appears in England, on the Danish coast at Hordum, on the Swedish island of Gotland (the Ardre VIII stone), and on the Altuna stone in Uppland. Across the Viking world, from Ireland's edge to Sweden, the same scene keeps being carved. What does this wide cluster of carvings tell us about the story?",
+      "choices": ["it was one of the most-told Thor myths across the whole Viking world", "it was invented by a single 13th-century Icelandic writer", "it was a Christian parable retold in Norse costume", "it was a private legend told only inside Thor's cult"],
+      "answer": "it was one of the most-told Thor myths across the whole Viking world",
+      "context": "The Gosforth stone (Cumbria, c. 920), the Hordum stone (Denmark, c. 1000), the Ardre VIII stone (Gotland, c. 700s-800s), and the Altuna stone (Uppland, Sweden, c. 1050) all show a boat, an ox-head bait, and the Serpent -- across a thousand-mile spread of Viking-age carving, from Ireland's edge to Sweden. Snorri writing in 13th-century Iceland was recording a story already 400 years old in stone. This is one of the strongest cases we have that Snorri's Edda preserves genuinely old Norse myth, not medieval invention.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Thor and Jormungandr meet a second time -- and the second time will be their last. Voluspa 55 and 56 tell the end at Ragnarok, when every god fights his fated enemy. Thor kills the Midgard Serpent with Mjolnir -- but the Serpent has poisoned him. How far does Thor stagger before he dies of Jormungandr's venom?",
+      "choices": ["nine paces", "three paces", "twelve paces", "one pace"],
+      "answer": "nine paces",
+      "context": "Voluspa 55-56: Thor smites the Serpent, then 'steps nine paces from the coiled beast and falls'. Nine is the signature Norse number -- nine worlds, nine nights Odin hangs on the tree, nine paces for Thor. The number is not arbitrary. The Ragnarok scene ends the god-versus-monster contest that began in Hymir's boat: the same two opponents, the same god's hammer, but this time nobody cuts the line.",
+      "legend": true
+    }
+  ]
+}

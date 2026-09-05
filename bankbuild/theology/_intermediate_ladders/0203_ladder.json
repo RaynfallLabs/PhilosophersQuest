@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, the Aesir gods put up with the trickster Loki's pranks for a long time -- but at last they decide that this one is the crime he cannot come back from, and they set out to hunt him down. Which one death, above all his other tricks, finally turns the gods against Loki?",
+      "choices": ["the death of Baldr the Beautiful", "the theft of Sif's golden hair", "the birth of the eight-legged horse Sleipnir", "the sewing shut of his own mouth by the dwarves"],
+      "answer": "the death of Baldr the Beautiful",
+      "context": "Snorri, Gylfaginning 49-50: Loki tricks the blind god Hodr into throwing a mistletoe dart at the invulnerable Baldr, and Baldr dies. When Loki then prevents Baldr from being ransomed out of Hel, the gods resolve to catch him. His earlier tricks (Sif's hair, the mare-birth of Sleipnir, the stitched lips at the smithing-contest) had all been forgiven; the killing of Baldr is not.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Loki flees the wrath of the gods and hides in the mountains. He builds himself a house of a strange shape on top of a mountain -- built exactly the way it is so he can never be taken by surprise from any direction. What is unusual about the house Loki builds himself on the mountain?",
+      "choices": ["it has one door on each of its four sides", "it has no walls, only a roof of turf", "it stands upside down on a single pillar", "it is dug entirely into the earth with no roof"],
+      "answer": "it has one door on each of its four sides",
+      "context": "Snorri, Gylfaginning 50: Loki's house has four doors, one on each of the four sides, so he can watch the approach from every direction at once. It is a paranoid architecture -- the trickster's mind made into a building. The other three options are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "During the day Loki takes the shape of a fish and hides in a waterfall, catching food and watching for pursuers. Snorri names both the animal Loki becomes and the waterfall he swims in. What shape does Loki take by day, and in what waterfall does he hide?",
+      "choices": ["a salmon in the waterfall of Franang", "a pike in the waterfall of Andlang", "an eel in the waterfall of Elivagar", "a trout in the waterfall of Vimur"],
+      "answer": "a salmon in the waterfall of Franang",
+      "context": "Snorri, Gylfaginning 50: Loki becomes a salmon and hides in the waterfall of Franang ('the glistening'). The other three pair real Norse cosmological rivers/streams (Elivagar the primordial ice-rivers of Ginnungagap; Vimur the river Thor wades) with wrong fish -- the point is that only the salmon is named in the source, and salmon are the traditional wise-fish of Northern myth (compare Fionn's Salmon of Knowledge in Irish story).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Sitting by the fire in his four-door house one evening, Loki idly weaves something out of linen thread that no one in the nine worlds has ever seen or made before -- and by making it he invents the very tool the gods will use to catch him. What does Loki accidentally invent while sitting by his own fire?",
+      "choices": ["the fishing net", "the loom", "the bow and string", "the fish-hook"],
+      "answer": "the fishing net",
+      "context": "Snorri, Gylfaginning 50: Loki weaves the world's first fishing-net from linen thread. When he sees the gods coming he throws the half-made net into the fire -- but the ashes preserve the pattern, and the wise Kvasir (in one version) recognises it. The gods copy the pattern and use that first net to catch him at his own waterfall. It is a classic 'trickster caught by his own new tool' motif.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The gods, using the first fishing-net copied from the pattern in Loki's own ashes, drag it through the waterfall of Franang until at last one god -- the strongest -- reaches down with bare hands and catches the salmon Loki by one part of its body. Which god catches Loki, and by what part?",
+      "choices": ["Thor, by the tail", "Tyr, by the gills", "Heimdall, by the fin", "Vidar, by the belly"],
+      "answer": "Thor, by the tail",
+      "context": "Snorri, Gylfaginning 50: Thor grabs the salmon by the tail with his bare hands. Snorri adds an etiology -- this is the reason salmon are tapered narrow at the tail from that day on. Tyr is one-handed. Heimdall watches Bifrost. Vidar is Odin's silent avenger-son.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki and his Asgard wife Sigyn had two sons named Narfi (or Nari) and Vali. When the gods drag Loki into a cave to punish him, they do not kill the sons themselves -- they turn one brother into an animal, and force him to kill the other. What do the gods turn the surviving brother into to make him kill his own brother?",
+      "choices": ["a wolf", "a bear", "an eagle", "a boar"],
+      "answer": "a wolf",
+      "context": "Snorri, Gylfaginning 50 and the prose epilogue to Lokasenna: the gods turn Vali into a wolf, and he tears his brother Narfi (Nari) to pieces. The Loki-son called Vali here must not be confused with Odin's avenger-son Vali, who kills the blind god Hodr to avenge Baldr -- two different figures with the same name in Norse myth. The wolf is Norse myth's own recurring image of a family-killer (Fenrir will kill Odin at Ragnarok).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "With one son turned wolf and the other torn apart, the gods use the dead son's body to bind Loki himself. Snorri says they bind him to three flat stones -- one under his shoulders, one under his loins, one under his knees -- using something taken out of the murdered son that then hardens into iron. What do the gods use to bind Loki to the three stones?",
+      "choices": ["his son's entrails", "chains forged by Sindri", "a rope woven from a woman's beard", "the roots of Yggdrasil the world-tree"],
+      "answer": "his son's entrails",
+      "context": "Snorri, Gylfaginning 50 and the prose epilogue to Lokasenna: the gods use Narfi's entrails, which then harden into iron -- an unusually cruel detail even by Norse standards, and one Snorri does not soften. The 'rope from a woman's beard' distractor is a real Norse motif -- one of the six impossible things that go into Gleipnir, the fetter that binds the wolf Fenrir. Yggdrasil's roots are what hold the world together, not a bond for a captive.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Once Loki is bound to the three stones with the iron-hardened entrails, one giantess-goddess in particular steps forward to add her own cruelty to the punishment. She had lost her father Thjazi in an earlier story that Loki had helped kill him in, and now she takes her revenge. Who fastens the snake above Loki's face?",
+      "choices": ["Skadi", "Frigg", "Freyja", "Idunn"],
+      "answer": "Skadi",
+      "context": "Snorri, Gylfaginning 50: Skadi ('shadow') fastens a serpent above Loki's face so its venom will drip on him. Her father was the giant Thjazi, whom the gods had killed after Loki lured him into their fire-trap; Skadi had marched armed on Asgard for weregild and been made a goddess by marriage instead. This is her private revenge, finally, on the man behind her father's death. Frigg is Odin's wife; Freyja is the leader of the Vanir goddesses; Idunn keeps the golden apples.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Loki's wife Sigyn, faithful even to a bound and shameful husband, does not abandon him in the cave. She takes her place beside him and holds one small thing above his face day and night. What does Sigyn hold above the bound Loki's face to protect him?",
+      "choices": ["a wooden bowl to catch the venom", "a mirror to reflect the venom back", "a shroud to smother the snake", "her own cupped hands to gather the venom"],
+      "answer": "a wooden bowl to catch the venom",
+      "context": "Snorri, Gylfaginning 50 and the prose epilogue to Lokasenna: Sigyn holds a wooden bowl above her husband's face and catches the venom as it drips. The image of a wife standing over her criminal husband's centuries of torment is one of the tenderest in Norse myth -- and one of the earliest depictions of it survives in stone on the Gosforth Cross in Cumbria from around 900 CE, carved by a Christian mason who put it beside a Crucifixion scene.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "There is one moment when Sigyn's bowl cannot protect Loki -- when the bowl fills and she must turn away to empty it, and the snake's venom drips freely onto his face until she returns. In that instant Loki thrashes so hard in his iron bonds that the whole world shakes, and Snorri says that is what causes something we still feel today. What natural event, according to Snorri, is caused by Loki's thrashing?",
+      "choices": ["earthquakes", "thunderstorms", "tidal waves", "eclipses of the sun"],
+      "answer": "earthquakes",
+      "context": "Snorri, Gylfaginning 50: earthquakes are Loki thrashing in his iron bonds when the venom drips on him. Thor's chariot in the sky causes the sound of thunder, not earthquakes. Tidal waves belong to the sea-god Aegir. Eclipses in Norse myth are the wolves Skoll and Hati almost catching the sun and moon in the sky.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Loki remains bound in the cave with the snake above him and Sigyn beside him not for years but for ages -- until the day the whole cosmology comes apart. When the bonds finally break, Loki does not merely walk out of the cave. He goes down to the shore of the dead and sets sail at the head of a great grey ship carrying all the dishonoured dead to the last battle. What is the name of the ship Loki captains at Ragnarok?",
+      "choices": ["Naglfar", "Skidbladnir", "Ringhorn", "Naddoddr"],
+      "answer": "Naglfar",
+      "context": "Snorri, Gylfaginning 51 and Voluspa 51: Naglfar ('nail-ship') is built entirely from the untrimmed fingernails and toenails of the dead. Snorri warns that this is why the Norse cut their nails before burying a corpse -- to slow the ship's completion. Skidbladnir is Freyr's folding ship, the finest ship ever made. Ringhorn was Baldr's own funeral ship, launched with his body. Naddoddr is a wrong name (it belongs to a historical Norse sailor, not a mythic ship).",
+      "legend": true
+    }
+  ]
+}

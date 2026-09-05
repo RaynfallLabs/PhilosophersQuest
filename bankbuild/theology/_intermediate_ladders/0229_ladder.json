@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse myth Loki the trickster fathers three monstrous children on the giantess Angrboda. One is Hel, the half-corpse queen of the underworld. One is Fenrir, the wolf who will swallow Odin. The third is a great sea-monster whom Odin throws into the outer ocean that rings Midgard, where he grows so vast that he wraps the whole world and holds his own tail in his teeth. What is this world-serpent's name?",
+      "choices": ["Jormungandr", "Nidhoggr", "Fafnir", "Garmr"],
+      "answer": "Jormungandr",
+      "context": "Gylfaginning 34. Jormungandr (Old Norse for 'huge-monster' or 'earth-shaker') is the world-serpent, the Midgard-Serpent. Nidhoggr is the dragon who gnaws Yggdrasil's root and appears in Voluspa 66 flying with corpses in his wings. Fafnir is the dwarf-turned-dragon killed by the hero Sigurd in the Volsung strand. Garmr is the great hound chained at the gates of Hel who kills Tyr at Ragnarok.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Thor the thunder-god has met the world-serpent Jormungandr twice before their final meeting, and both times the fight ended without a winner. The FIRST time is at the hall of the giant-king Utgard-Loki. Thor is challenged to lift a huge grey CAT off the floor -- but the cat is really the world-serpent in disguise. How much of the cat does Thor manage to lift off the floor?",
+      "choices": ["one paw", "the whole cat", "the front half", "not a whisker"],
+      "answer": "one paw",
+      "context": "Gylfaginning 47. At Utgard-Loki's court Thor is tricked into an unwinnable challenge: the cat is Jormungandr in disguise and lifting the world-serpent off Midgard is impossible. Thor pours in every ounce of god-strength and manages exactly ONE paw off the floor. Utgard-Loki tells him afterwards that even that terrified the giants -- Thor came close to breaking the world in half by lifting the serpent that holds it.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The SECOND time Thor and Jormungandr meet, Thor is out on the open sea in a small boat with the giant Hymir, fishing. Thor drops a specific piece of bait over the side, and the world-serpent takes it -- but Hymir panics at the sight of the serpent's head rising out of the water and does something that ends the fight then and there. What does Hymir do?",
+      "choices": ["cuts the fishing line", "throws Thor's hammer overboard", "rows back to shore with all his strength", "cries out a giant-spell to blind Thor"],
+      "answer": "cuts the fishing line",
+      "context": "Gylfaginning 48 and the Eddic poem Hymiskvida. Hymir sees the world-serpent's head come up out of the sea beside the boat, drops his knife on the fishing-line, and cuts Thor's catch loose. The serpent sinks back into the deep with Thor's ox-head bait still in his mouth -- and Thor swings Mjolnir at Hymir's head in fury, but the giant dives overboard and swims for shore. The score between god and serpent is left unfinished for ages.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At Ragnarok the world-serpent releases his own tail out of his mouth for the first time in all the ages of the world, and he rises out of the ocean and comes ASHORE with the giants' host to meet the gods on the battlefield of Vigrid. What comes off the serpent AS he rises out of the sea, poisoning the air and the water?",
+      "choices": ["venom", "black smoke", "burning brine", "shed skin"],
+      "answer": "venom",
+      "context": "Voluspa 55 and Gylfaginning 51. Jormungandr sprays venom into the air and water as he uncoils from the ocean and comes ashore -- so much poison that the sea itself is polluted before the battle even begins. That poison in the air is what will kill Thor after he kills the serpent. Ragnarok's other cataclysms (Surt's fire, Naglfar the ship of nails, Fenrir's jaws) are all real motifs; the specific serpent-arrival detail is the venom.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the plain of Vigrid, Thor and the world-serpent finally close for the third and last time. Thor swings the weapon Mjolnir at Jormungandr's head -- and this time he does what he has never been able to do before. What does Thor do to Jormungandr with the hammer?",
+      "choices": ["crushes his head", "binds him with a chain", "hurls him back into the sea", "burns him to ashes"],
+      "answer": "crushes his head",
+      "context": "Voluspa 55-56 and Gylfaginning 51. Thor strikes with Mjolnir and CRUSHES the world-serpent's head -- the killing blow that the ox-head bait at sea and the cat-lift at Utgard-Loki both pointed toward. Binding, sea-return, and burning belong to other Norse fights (the wolf Fenrir was bound with the ribbon Gleipnir; Balder's body was set on the burning ship Hringhorni; nothing is 'thrown back into the sea' at Ragnarok because the sea itself has risen). The hammer to the head is the specific end.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Voluspa 56 does not call Thor by his own name in the killing-of-Jormungandr stanza. It calls him by a MATRONYMIC -- 'the son of Hlodyn,' where Hlodyn is a name for Thor's mother, the goddess of one very specific thing. Hlodyn is a name for the goddess of WHAT?",
+      "choices": ["the earth", "the sea", "night", "grain"],
+      "answer": "the earth",
+      "context": "Voluspa 56 in Bellows: 'Fares Hlodyn's son to fight the serpent.' Hlodyn (also Jord, also Fjorgyn) is Thor's mother, the goddess of the earth herself -- so at the moment Thor kills the serpent who wraps the earth, the poet calls him by his EARTH-mother's name. Nott (Night), Ran (sea), and Sif (Thor's wife, associated with grain and golden hair) are other Norse goddesses -- Hlodyn is specifically the earth.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Thor kills the world-serpent, but at the moment the hammer comes down, the poison the serpent had already breathed on him is already in his body. He staggers forward and walks a specific and famous number of paces from the dead serpent before he falls to the ground dead. How many paces does Thor walk?",
+      "choices": ["nine", "three", "seven", "twelve"],
+      "answer": "nine",
+      "context": "Gylfaginning 51: 'Nine paces will Fjorgyn's son [Thor] step, then fall to the earth dead, from the venom of the serpent.' Voluspa 56 says the same. The number is not incidental -- nine is one of Norse myth's sacred numbers (see the T5 rung on this ladder). The serpent's venom kills him, but only after he has walked away from the body he beat.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Thor is dead beside the world-serpent, but he leaves TWO SONS behind, and both survive Ragnarok. Vafthrudnismal 51 names them and gives them one very specific thing to inherit from their father, so that his weapon will still be in the new world. Which two of Thor's sons carry Mjolnir into the new world?",
+      "choices": ["Modi and Magni", "Vidarr and Vali", "Bragi and Hodr", "Njord and Freyr"],
+      "answer": "Modi and Magni",
+      "context": "Vafthrudnismal 51: 'Modi and Magni shall Mjollnir possess, when Vingnir is dead.' Modi is Thor's son by Sif (his name means 'the wrathful, the courageous'); Magni is Thor's son by the giantess Jarnsaxa (his name means 'the strong'). Vidarr and Vali are Odin's other sons, and they do survive Ragnarok too, but they inherit their father's HALLS, not Thor's hammer. Bragi and Hodr are gods but not Ragnarok inheritors. Njord and Freyr are Vanir gods and Freyr dies at Ragnarok to Surt.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Nine paces is not a random number in this scene. Norse myth uses NINE for its most sacred images throughout the Eddas -- the number is deliberately woven through the whole tradition. Which of these is ALSO explicitly counted as nine?",
+      "choices": ["the worlds held up by Yggdrasil", "the wolves that chase the sun", "the ravens that fly around Odin", "the strokes of Thor's hammer"],
+      "answer": "the worlds held up by Yggdrasil",
+      "context": "The world-tree Yggdrasil holds up NINE worlds -- Asgard, Midgard, Jotunheim, Alfheim, Svartalfheim, Vanaheim, Muspelheim, Niflheim, Helheim. Odin also hangs on Yggdrasil for nine nights to win the runes; Draupnir the ring drops eight new gold rings every ninth night; Thor walks nine paces to die. Only TWO wolves chase the sun and moon (Skoll and Hati); only TWO ravens fly around Odin (Huginn and Muninn); Thor's hammer-strokes aren't counted. Nine is the number of the worlds.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Snorri Sturluson's Prose Edda gives Thor's mother's name as Jord ('earth') most often, but in the Ragnarok-fight stanzas he also calls her by another patronymic. Snorri says Thor is 'son of Fjorgyn' in that scene. What tradition-parallel do modern Norse scholars notice between the Thor-and-Jormungandr Ragnarok fight and one other famous Germanic hero-fight?",
+      "choices": ["Beowulf dying of dragon-venom after killing his dragon", "Sigurd killing Fafnir and bathing in his blood", "Odin winning the runes on the world-tree", "Loki's punishment under the dripping snake"],
+      "answer": "Beowulf dying of dragon-venom after killing his dragon",
+      "context": "Modern Germanic scholarship (see e.g. Klaeber's edition of Beowulf) has long noticed that the pattern Thor-versus-Jormungandr and Beowulf-versus-the-dragon share a striking specific shape: an old hero, a serpent-dragon, a killing blow, and a venom-wound that kills the hero AFTER he wins. The parallel is one of the pieces of evidence used for a common Germanic 'dying dragon-slayer' pattern. Sigurd DOES kill Fafnir but bathes in the blood and lives on; Odin's runes-winning and Loki's snake-punishment are famous scenes but do NOT share the specific 'old hero dies of venom after killing dragon' pattern.",
+      "legend": false
+    }
+  ]
+}

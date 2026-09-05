@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the year 374 the church of the great imperial city of Milan is arguing over who should be their next bishop, and the meeting is about to turn violent. A Roman official walks in to keep order and address the crowd, because holding down civic peace is his day job. What office did Aurelius Ambrosius hold that morning?",
+      "choices": ["provincial governor", "cavalry commander", "chief tax collector", "captain of the city guard"],
+      "answer": "provincial governor",
+      "context": "Ambrose was consularis (Roman governor) of the province of Aemilia-Liguria, based at Milan. Keeping the peace at a disputed church meeting was ordinary business for a governor. Source: en.wikipedia.org/wiki/Ambrose.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Aurelius Ambrosius is the Roman governor of the northern Italian province of Aemilia-Liguria in the 370s. His seat of government is one of the most important cities of the Western Empire, and in his day it is often the emperor's own residence. From which city does Ambrose govern?",
+      "choices": ["Milan", "Ravenna", "Constantinople", "Antioch"],
+      "answer": "Milan",
+      "context": "Milan (Latin Mediolanum) was the working capital of the Western emperors in the late fourth century, before that role passed to Ravenna in 402. Ambrose's whole life plays out in and around this city. Source: en.wikipedia.org/wiki/Ambrose.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In 374 the Christians of Milan are bitterly split between two parties: one holds that Jesus is fully God alongside the Father, and one holds that Jesus is a great creature but not fully God. The party that says Jesus is fully God takes its name from a great church council held in Bithynia in 325. What are these Christians called?",
+      "choices": ["Nicene Christians", "Donatist Christians", "Pelagian Christians", "Marcionite Christians"],
+      "answer": "Nicene Christians",
+      "context": "The Council of Nicaea in 325 wrote the creed that says the Son is 'of one being with the Father'; the party that upheld it were the Nicenes. Donatists were a North African schism about lapsed clergy; Pelagians denied original sin; Marcionites had been suppressed a century earlier. Source: en.wikipedia.org/wiki/Ambrose.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The bishop of Milan whose death in 374 leaves the see empty is a man named Auxentius, who had held it for about twenty years. He belonged to the party that denied Jesus was fully God -- the party that the great Council of Nicaea in 325 had already condemned. To which party did Auxentius belong?",
+      "choices": ["the Arians", "the Nicenes", "the Novatians", "the Manichaeans"],
+      "answer": "the Arians",
+      "context": "The party was named for the Alexandrian priest Arius, whose teaching that Jesus was a great creature but not fully God was condemned at Nicaea in 325; Auxentius was one of the most powerful Arian bishops in the Western church. Novatians were rigorists about post-baptismal sin; Manichaeans were a separate dualist religion that Augustine had once belonged to. Source: en.wikipedia.org/wiki/Ambrose.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The Roman governor of Milan is halfway through his speech to the crowded church, telling both sides to keep the peace during the bishop's election, when a single voice cries out from the assembly, 'Ambrose for bishop!' -- and the whole packed church takes up the shout as one. Whose voice, in the traditional story, started it?",
+      "choices": ["a child in the crowd", "the outgoing bishop's deacon", "a soldier of the governor's guard", "the widow of the dead bishop"],
+      "answer": "a child in the crowd",
+      "context": "Paulinus's Vita Ambrosii records that a child's voice began the acclamation and the packed church took it up at once. The detail has been told the same way since Paulinus, Ambrose's own secretary, wrote the Life around 412. Source: blog.oup.com/2011/12/ambrose.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Horrified at being acclaimed bishop, Ambrose tries to slip out of Milan by night rather than accept the office. He rides for the country estate of a personal friend, hoping to be hidden there until the crowd forgets him. According to Paulinus, what did the friend do?",
+      "choices": ["refused to hide him and gave him back", "hid him for a month in a wine cellar", "took him on horseback into the Alps", "smuggled him aboard a ship for North Africa"],
+      "answer": "refused to hide him and gave him back",
+      "context": "Paulinus's Vita Ambrosii records that Ambrose fled at night to the country house of a friend, but the friend, once he learned what had happened, refused to conceal him and turned him back over. Source: blog.oup.com/2011/12/ambrose.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After Ambrose's attempted escape fails, he is still trying to refuse the bishopric -- he is a lawyer and a governor, not a churchman, and he has never even been baptised. He finally submits only when a letter arrives from a higher authority approving the crowd's acclamation. Whose letter forced him to accept?",
+      "choices": ["the emperor Gratian", "the emperor Julian", "the bishop of Rome Damasus", "the eastern emperor Valens"],
+      "answer": "the emperor Gratian",
+      "context": "Gratian was the Western Roman emperor in 374 and Ambrose's civil superior; his letter approving the acclamation ended Ambrose's resistance. Julian had died in Persia in 363; Damasus was the bishop of Rome but had no authority to command a Milanese governor; Valens ruled the East. Source: en.wikipedia.org/wiki/Ambrose.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Aemilia-Liguria's Roman governor is a lawyer from a Christian family who has never been baptised -- normal enough in 374, when Roman noblemen often waited for later life. Once he yields to the crowd he is baptised, then ordained through every intermediate church rank day by day, and finally consecrated bishop of Milan on 7 December 374. How long did the whole journey from unbaptised layman to consecrated bishop take?",
+      "choices": ["one week", "one year", "three days", "forty days"],
+      "answer": "one week",
+      "context": "Ambrose was baptised, ordained through the intermediate ranks day by day, and consecrated bishop of Milan all inside a single week, ending on 7 December 374; that date is still his feast day. Source: blog.oup.com/2011/12/ambrose.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "One family story about Ambrose's childhood was told for centuries: while he lay napping in his cradle a swarm of bees settled on his mouth and left honey on his lips without stinging him, taken as a sign his tongue would speak sweet words. Paulinus wrote it down long after the fact. Who was Paulinus's source for the cradle story?",
+      "choices": ["his elder sister Marcellina", "his old teacher Simplicianus", "the bishop Damasus of Rome", "the young Augustine of Hippo"],
+      "answer": "his elder sister Marcellina",
+      "context": "Paulinus, Ambrose's own deacon and secretary, wrote the Vita Ambrosii around 412 at Augustine's request; he says he got the family stories from Ambrose's older sister Marcellina, who had herself taken the veil from Pope Liberius in the 350s. Source: en.wikipedia.org/wiki/Saint_Marcellina.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Irish Book of Invasions, the Lebor Gabala Erenn, lists six waves of settlers who came to Ireland one after another. The very last wave were the Milesians, the ancestors of the modern Irish. But right before the Tuatha De Danann arrived, one older people held the whole island. Which people held Ireland in the wave just before the Tuatha De Danann?",
+      "choices": ["the Fir Bolg", "the Milesians", "the Fomorians", "the Danaans"],
+      "answer": "the Fir Bolg",
+      "context": "Lebor Gabala Erenn: the Fir Bolg are the fourth wave (after Cessair, Partholon, and Nemed), followed by the Tuatha De Danann as the fifth. The Milesians come sixth. The Fomorians are the monstrous sea-raiders, not a settler-wave. Danaans is a Greek term.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Fir Bolg were not a fresh people out of nowhere. They were descendants of an earlier wave of settlers who had been almost wiped out by Fomorian raids, reduced to a handful of survivors who fled the island. Whose descendants were the Fir Bolg?",
+      "choices": ["the Nemedians", "the Milesians", "the Tuatha De Danann", "the followers of Cessair"],
+      "answer": "the Nemedians",
+      "context": "Lebor Gabala Erenn: after Fomorian raids reduced the people of Nemed to a handful, the survivors scattered; the group that went to Greece became the Fir Bolg and returned. The Milesians come later. The Tuatha De Danann are the wave after. Cessair's people all drowned in the Flood.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The name 'Fir Bolg' is usually translated with two plain English words. The Irish word 'fir' just means 'men', and the second word 'bolg' means a leather sack or pouch. In plain English, then, the Fir Bolg are the 'MEN OF THE _____'?",
+      "choices": ["bags", "sea", "hills", "cauldron"],
+      "answer": "bags",
+      "context": "'Fir Bolg' is standardly translated 'men of bags' or 'bag-men' -- fir = men, bolg = bag/sack/belly. Some scholars link 'bolg' instead to the name Belgae, the Continental Celtic tribe that gave Belgium its name. The other options belong to other Irish mythic peoples.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The Lebor Gabala tells a folk-story to explain the odd name 'bag-men'. The Nemedian survivors ended up enslaved in a foreign land far to the south, forced by their masters to carry leather bags full of a certain heavy substance up onto rocky hilltops to make farmland there. What were the Fir Bolg forced to carry in the leather bags?",
+      "choices": ["earth", "seawater", "stones", "grain"],
+      "answer": "earth",
+      "context": "Lebor Gabala Erenn: the enslaved Nemedians were made to carry leather bags of earth up onto bare rocky hillsides to build soil for the crops of their masters. When they escaped they used the very same bags to stitch hide-boats and sailed home to Ireland. Hence 'men of bags'.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Book of Invasions names the foreign country where the Fir Bolg were enslaved and made to haul the earth-bags. It is the same country to which many of the scattered Nemedians had fled after the Fomorian raids. In which land were the Fir Bolg supposedly enslaved?",
+      "choices": ["Greece", "Egypt", "Spain", "Britain"],
+      "answer": "Greece",
+      "context": "Lebor Gabala Erenn: the Nemedian survivors went to Greece and were enslaved there for many generations before returning to Ireland as the Fir Bolg. Spain is where the Milesians (the sixth wave) are said to have come from. Egypt and Britain do not figure in this part of the tale.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once the Fir Bolg reached Ireland, their king Slainge mac Dela and his four brothers made the country's most lasting division. They cut the whole island into a set number of provinces, called coigeda ('fifths'), one for each brother. Into how many provinces did the Fir Bolg divide Ireland?",
+      "choices": ["five", "three", "four", "seven"],
+      "answer": "five",
+      "context": "The Fir Bolg divided Ireland into five coigeda: Ulster, Leinster, Munster, Connacht, and Mide (the sacred centre). The Irish word 'cuig' still means 'five' today. Modern Ireland has four provinces because Mide was gradually absorbed into Leinster in the medieval period.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Of the five Fir Bolg provinces, four still exist by name today -- Ulster in the north, Leinster in the east, Munster in the south, and Connacht in the west. The fifth was the sacred one at the centre of the island, absorbed into Leinster in the Middle Ages. What was the fifth Fir Bolg province called?",
+      "choices": ["Mide", "Tara", "Brega", "Uisneach"],
+      "answer": "Mide",
+      "context": "Mide (modern Meath) was the sacred central fifth, where the High King's seat at Tara stood. Tara is a hill within Mide, not a province. Brega and Uisneach are smaller sacred sites in the region, not the province itself. Meath survives in Ireland today as a county, not a province.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Tuatha De Danann arrived in Ireland concealed in dark clouds, and the two peoples met in a great battle on a plain in what is now County Mayo. In this battle the Fir Bolg champion Sreng, in a single sword-stroke, cut off the right hand of the Tuatha king Nuada. What is that battle called?",
+      "choices": ["the First Battle of Moytura", "the Battle of Clontarf", "the Second Battle of Moytura", "the Battle of Ventry"],
+      "answer": "the First Battle of Moytura",
+      "context": "The First Battle of Moytura (Cath Maige Tuired Cunga) was fought at Cong in County Mayo, where Sreng struck off Nuada's hand. Clontarf (1014) is history, not myth. The Second Battle of Moytura is later, against the Fomorians. Ventry is a battle of the Fianna cycle.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Fir Bolg lost the First Battle of Moytura, but the victorious Tuatha De Danann treated the defeated survivors with respect and offered them a single one of the five provinces to keep as their own for ever. The Fir Bolg chose the one on the far west of the island. Which province did the Fir Bolg keep?",
+      "choices": ["Connacht", "Ulster", "Leinster", "Munster"],
+      "answer": "Connacht",
+      "context": "The surviving Fir Bolg were granted their pick of the five provinces and chose Connacht, the west. In later legend many Connacht families proudly claim Fir Bolg ancestry -- the Fir Bolg do not vanish; they retreat west and quietly persist.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the great Ulster-cycle epic the Tain Bo Cuailnge, the western queen who leads the cattle-raid against Cuchulainn rules from a huge earthen fortress in Roscommon -- the ancient royal seat that had belonged to the Fir Bolg when Connacht was their province. Which Connacht queen rules from that old Fir Bolg royal seat at Cruachan?",
+      "choices": ["Medb", "Deirdre", "Macha", "Emer"],
+      "answer": "Medb",
+      "context": "Queen Medb (Maeve) of Connacht rules from Cruachan / Rath Croghan in Roscommon, on the site of the old Fir Bolg capital. Deirdre is the tragic heroine of the Sons of Uisnech. Macha is an earlier goddess-queen of Ulster. Emer is Cuchulainn's wife, not a Connacht queen.",
+      "legend": true
+    }
+  ]
+}

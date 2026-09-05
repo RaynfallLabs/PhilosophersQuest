@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In one popular Irish folk-tradition, the great warrior-chief of the Fianna does not have a death-tale at all. He is said to be lying inside a cave beneath an Irish hill, surrounded by all his sleeping warriors in full armour, waiting for the day Ireland needs him most. Which Irish warrior is this sleeping figure?",
+      "choices": ["Fionn mac Cumhaill", "Cu Chulainn", "Conall Cernach", "Lugh Lamhfhada"],
+      "answer": "Fionn mac Cumhaill",
+      "context": "Fionn mac Cumhaill leads the Fianna in the later Fenian Cycle. Cu Chulainn is the Ulster Cycle hero who has a very famous death-tale (tied upright to a standing stone). Conall Cernach is Cu Chulainn's foster-brother and avenger. Lugh Lamhfhada is a Tuatha De Danann warrior of an older cycle. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the folk-tale of the sleeping warriors of the Fianna, they lie in a great circle inside the cave, weapons at their sides, sleeping in full armour. In the middle of the circle one thing hangs -- the object that will wake them when the day comes. What hangs in the middle of the sleeping circle?",
+      "choices": ["a hunting horn", "a silver harp", "a druid's rod", "a crowned helmet"],
+      "answer": "a hunting horn",
+      "context": "The hunting horn of the Fianna hangs in the middle of the ring of sleepers. A silver harp belongs to the Dagda; a druid's rod is Cathbad's or Uchtdealb's; a crowned helmet belongs to no Fenian scene. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The hunting horn hanging in the middle of the sleeping Fianna in the cave has a name of its own in the Irish tradition, spoken in every retelling of the wake-and-return legend. What is the horn called?",
+      "choices": ["the Dord Fiann", "the Olifant of Roland", "the Gjallarhorn", "the Horn of Bran"],
+      "answer": "the Dord Fiann",
+      "context": "Dord Fiann means 'the horn (or humming-chant) of the Fianna' in Old Irish. The Olifant is Roland's ivory war-horn at Roncesvalles in the Western-medieval pillar. Gjallarhorn is Heimdall's horn on Bifrost in the Norse pillar. The Horn of Bran is a Welsh instrument. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Dord Fiann hanging over the sleeping Fianna must be sounded a specific number of times before the warriors will fully wake, rise, and ride out to defend Ireland. How many times must the horn be sounded?",
+      "choices": ["three times", "one time", "seven times", "nine times"],
+      "answer": "three times",
+      "context": "Three blasts of the Dord Fiann fully wake Fionn and the Fianna. The tale that turns on the exact number is coming up in the ladder. The other three counts belong to unrelated Irish and Norse rites (nine is the Norse ritual number). Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the folk-tale of the cave, a lone shepherd who had wandered inside by accident lifted down the Dord Fiann and blew it. He blew it ONCE. The Fianna in the circle stirred, half-rose on their elbows, opened their eyes. The shepherd panicked. What did the shepherd then do?",
+      "choices": ["dropped the horn and ran out of the cave", "blew the second blast at once and fled", "prayed aloud and asked their forgiveness", "cut a chip from Fionn's shield as a token"],
+      "answer": "dropped the horn and ran out of the cave",
+      "context": "The horn falls, the shepherd bolts, the Fianna are left only half-awake and sink back into sleep -- and they cry out that he has left them worse than he found them. It is the shape the whole tradition preserves. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As the Fianna, half-woken by the single blast on the Dord Fiann, sank back into their sleep, they cried out to the fleeing shepherd one bitter sentence -- the sentence the tale hangs on and by which folklorists know the story. What did the sinking warriors cry after him?",
+      "choices": ["you have left us worse than you found us", "the age of heroes has ended in shame", "the horn has broken faith with us", "we sleep now for a thousand years"],
+      "answer": "you have left us worse than you found us",
+      "context": "In Irish the sentence is 'Is measa a dfhag na mar a fuair' -- 'worse have you left us than as you found us'. It is the folk-formula that fixes the tale in memory. The other three are invented parallels of the same shape. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The manuscript FENIAN CYCLE holds Fionn to one scale, and the folk-tradition of the sleeping cave (and of the causeway-builder at Antrim) inflates him to another. In the older manuscript Fenian Cycle, what scale is Fionn mac Cumhaill?",
+      "choices": ["a human-scale warrior chief of the Fianna", "a full-sized giant like the folk-tale version", "a shape-shifting salmon of the Boyne", "a Tuatha De Danann god fostered to mortals"],
+      "answer": "a human-scale warrior chief of the Fianna",
+      "context": "The manuscripts hold Fionn human-scale as leader of the Fianna warrior-band. The folk-tradition swells him into a giant to fit the causeway and lays him down mountain-large under the hill to fit the sleeping cave. The salmon-of-the-Boyne story is Fionn burning his thumb on it, not being it. Source: https://en.wikipedia.org/wiki/Fionn_mac_Cumhaill",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Fenian sleeping-hero pattern is one of the widest folk-patterns in Europe. In another kingdom of Europe, a great king of the Britons is said to lie in a similar sleep on a mist-hidden island of apples, waiting to return -- and the Latin epitaph on his supposed tomb calls him rex quondam rexque futurus, 'the once and future king'. Who is this parallel figure in the Western-medieval pillar?",
+      "choices": ["King Arthur at Avalon", "Charlemagne at Aachen", "Alfred of Wessex at Athelney", "Beowulf at Heorot"],
+      "answer": "King Arthur at Avalon",
+      "context": "Arthur at Avalon is the parallel Malory refuses to resolve: 'yet some men say... that King Arthur is not dead, but... he shall come again' (Le Morte d'Arthur Book XXI). Charlemagne was buried at Aachen with elaborate ceremony; Alfred hid on Athelney but died at Winchester in 899; Beowulf was cremated on a headland. Only Arthur carries the sleeping-return legend. Source: https://en.wikipedia.org/wiki/King_in_the_mountain",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In 1760 a Scottish schoolmaster published what he claimed were 3rd-century Scottish Gaelic poems by 'Ossian son of Fingal' -- Fingal being the Scots-Gaelic form of Fionn. The publication swept Europe: Napoleon carried a copy on campaign; Goethe cited it in Werther. Later scholarship judged the work largely a forgery drawing freely on real oral Fenian tradition. Who was the schoolmaster?",
+      "choices": ["James Macpherson", "Sir Walter Scott", "Robert Burns", "Thomas the Rhymer"],
+      "answer": "James Macpherson",
+      "context": "James Macpherson (1736-1796) issued Fragments of Ancient Poetry in 1760 and Fingal in 1761-2. Walter Scott is 19th-century and knew the fake for what it was; Burns is the Ayrshire poet; Thomas the Rhymer is a 13th-century legendary Scots poet, not an 18th-century editor. Source: https://en.wikipedia.org/wiki/Ossian",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The Scottish form of Fionn -- FINGAL -- gave its name to a real sea-cave on an uninhabited island off the Inner Hebrides. In 1829 a German composer visited the cave, heard the ocean-swells roll into its hexagonal basalt chamber, and wrote an overture built around the sound he heard there. Which composer, and what is the overture called?",
+      "choices": ["Mendelssohn -- The Hebrides Overture", "Wagner -- The Flying Dutchman Overture", "Sibelius -- The Swan of Tuonela", "Berlioz -- The Corsair Overture"],
+      "answer": "Mendelssohn -- The Hebrides Overture",
+      "context": "Felix Mendelssohn visited Fingal's Cave on Staffa in August 1829 and completed The Hebrides Overture (Op. 26, sometimes called 'Fingal's Cave Overture') in 1830. Wagner's Flying Dutchman is a sea-legend but a different one; Sibelius's Swan of Tuonela is Finnish; Berlioz's Corsair is a Byron piece. Source: https://en.wikipedia.org/wiki/The_Hebrides_(overture)",
+      "legend": false
+    }
+  ]
+}

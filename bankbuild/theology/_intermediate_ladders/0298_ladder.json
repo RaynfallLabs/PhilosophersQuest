@@ -1,0 +1,52 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Fresh from the fall of Jericho, Joshua sends about three thousand men against the small city of Ai and expects an easy second win. The men are routed and Joshua 7:5 counts the Israelite dead by exact number. How many men die at Ai?",
+      "choices": ["thirty-six", "seventy", "six hundred", "twelve hundred"],
+      "answer": "thirty-six",
+      "context": "Joshua 7:5 KJV: 'And the men of Ai smote of them about thirty and six men.' Six hundred belongs to Samson's slaughter with the jawbone; seventy is a common biblical count (the seventy elders, the seventy nations); twelve hundred is a plausible battle-loss but not the number Joshua 7 records. The thirty-six is famously SMALL -- and that is the sting.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Told by God that Israel has sinned and someone has taken of the accursed thing from Jericho, Joshua brings all the tribes near by lot -- then families, households, and man by man -- until the lot falls on one specific person. Who does the lot fall on?",
+      "choices": ["Achan son of Carmi", "Nadab son of Aaron", "Korah son of Izhar", "Zimri son of Salu"],
+      "answer": "Achan son of Carmi",
+      "context": "Joshua 7:18 KJV: 'and Achan, the son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Judah, was taken.' Nadab is Aaron's son consumed by fire for offering strange incense; Korah leads the wilderness rebellion swallowed by the earth; Zimri son of Salu is pierced by Phinehas at Peor -- all three real biblical judgement-stories on other men.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Confessing before Joshua, Achan lists the three items he stole from the ruins of Jericho and hid under the earth in the midst of his tent: a goodly WHAT, two hundred shekels of silver, and a wedge of gold of fifty shekels weight?",
+      "choices": ["a Babylonish garment", "a Persian robe", "an Egyptian mantle", "a Philistine cloak"],
+      "answer": "a Babylonish garment",
+      "context": "Joshua 7:21 KJV: 'When I saw among the spoils a goodly Babylonish garment, and two hundred shekels of silver, and a wedge of gold of fifty shekels weight... I coveted them, and took them.' Persian robes, Egyptian mantles, and Philistine cloaks all appear elsewhere in the Bible as spoil-types, but Achan's specific loot is Babylonish -- a name that would have meant 'foreign luxury from far Mesopotamia' to the hearer.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "The second time Israel attacks Ai, Joshua hides an ambush of thirty thousand men behind the city, then draws the defenders out with a feigned flight. At the crucial moment God gives him a signal to trigger the ambush: 'Stretch out the WHAT that is in thy hand toward Ai' (Joshua 8:18)?",
+      "choices": ["spear", "sword", "staff", "rod"],
+      "answer": "spear",
+      "context": "Joshua 8:18 KJV: 'Stretch out the spear that is in thy hand toward Ai; for I will give it into thine hand. And Joshua stretched out the spear that he had in his hand toward the city.' Moses's stretched-out staff parts the Red Sea and defeats Amalek at Rephidim, and Aaron's rod buds in the tabernacle -- both are real staff-signals in scripture, but at Ai the sign is Joshua's spear.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Years after Ai, defending the men of Gibeon against five Amorite kings, Joshua speaks to God in front of all Israel and asks for something no one had ever asked. He commands: 'Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of ____' (Joshua 10:12). Which valley does he name for the moon?",
+      "choices": ["Ajalon", "Elah", "Sorek", "Kidron"],
+      "answer": "Ajalon",
+      "context": "Joshua 10:12 KJV: 'Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.' Elah is where David meets Goliath; Sorek is where Samson meets Delilah; Kidron is the brook Jesus crosses to Gethsemane -- all real biblical valleys, all wrong for this scene. Ajalon is the paired half of the sun-and-moon verse and the half people always forget.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Joshua 10:13 pauses after the sun-and-moon miracle to cite a source book for the verse -- an outside record now lost. Which book does Joshua 10:13 name as its source for the sun standing still?",
+      "choices": ["the book of Jasher", "the book of the Wars of the LORD", "the book of the Chronicles of the Kings", "the book of Enoch"],
+      "answer": "the book of Jasher",
+      "context": "Joshua 10:13 KJV: 'Is not this written in the book of Jasher? So the sun stood still in the midst of heaven.' The book of Jasher ('the Upright') is quoted twice in scripture (also 2 Samuel 1:18 for David's lament for Saul and Jonathan) and is now lost. The book of the Wars of the LORD is cited in Numbers 21; Chronicles-of-the-Kings is cited throughout Kings; Enoch is a later apocryphal book quoted in Jude.",
+      "legend": false
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Desiderius Erasmus, the most famous living scholar in Europe by the time he is fifty, is born around 1466 in the great Dutch port at the mouth of the Rhine -- a city whose name he added to his own so often that he is still often called by the pairing. In which city is he born?",
+      "choices": ["Rotterdam", "Basel", "Antwerp", "Amsterdam"],
+      "answer": "Rotterdam",
+      "context": "Erasmus of Rotterdam (Erasmus Roterodamus) was born there around 1466, the illegitimate son of a Dutch priest and his housekeeper; the pairing city+name became his personal brand for life. He would later die in Basel; Antwerp and Amsterdam were rival Dutch and Flemish ports. Source: en.wikipedia.org/wiki/Erasmus.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Orphaned by plague at 13, Erasmus is pushed by his guardians into an Augustinian monastery at Steyn where he takes vows in 1488 and is ordained priest in 1492. He chafes against the enclosed life and escapes into secretarial work in the wider world. What did he receive from the pope in 1517 to make his freedom permanent?",
+      "choices": ["a formal dispensation from his monastic vows", "an appointment as a papal ambassador", "a stipend from the College of Cardinals", "a professorship at the University of Rome"],
+      "answer": "a formal dispensation from his monastic vows",
+      "context": "Pope Leo X's 1517 dispensation released Erasmus from his obligation to wear the habit and live in a monastery -- a rare privilege that let him work as a free scholar for the rest of his life while remaining a Catholic priest. Source: en.wikipedia.org/wiki/Erasmus.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Erasmus writes his most famous satire in about a week, as the guest of a good friend at that friend's London house. The Latin title 'Encomium Moriae' has a second sense in Latin -- it also reads as a joke on the host's own Latinised surname. Whose name is being punned on?",
+      "choices": ["Thomas More", "John Colet", "William Warham", "John Fisher"],
+      "answer": "Thomas More",
+      "context": "More's surname was Latinised as Morus, and Moriae ('of Folly') doubles as 'of More'. Erasmus wrote the book in about a week at More's house in London in 1509. Colet, Warham and Fisher were all English scholarly friends of Erasmus in this period, but the pun is on More. Source: en.wikipedia.org/wiki/In_Praise_of_Folly.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "In 1516, printed at Basel by Johann Froben, Erasmus publishes the Novum Instrumentum. It is a book that had never been printed before in the history of Europe: the New Testament in its original language, with a fresh Latin translation of his own set alongside it. In which original language did Erasmus print it?",
+      "choices": ["Greek", "Hebrew", "Aramaic", "Coptic"],
+      "answer": "Greek",
+      "context": "The New Testament was written in Koine Greek in the first century; Erasmus's 1516 edition was the first ever put in print in the original. Hebrew is the language of most of the Old Testament; Aramaic was the everyday language of first-century Palestine but not of the New Testament writings; Coptic is a much later Egyptian translation. Source: en.wikipedia.org/wiki/Erasmus.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "In 1524 Erasmus finally breaks his long silence about Martin Luther. He publishes a short book attacking Luther's teaching that human beings have no genuine free choice in matters of salvation; Luther will reply in 1525 with a crushing book of his own. What did Erasmus title his 1524 attack?",
+      "choices": ["On Free Will", "On the Bondage of the Will", "On the Freedom of a Christian", "On Christian Doctrine"],
+      "answer": "On Free Will",
+      "context": "Erasmus's 'De Libero Arbitrio' (On Free Will, 1524) drew Luther's crushing 'De Servo Arbitrio' (On the Bondage of the Will, 1525) in reply; the exchange marks the final break between humanist reform-from-within and Protestant break-from-without. 'On the Freedom of a Christian' is a different, earlier Luther tract (1520); 'On Christian Doctrine' is Augustine, twelve centuries earlier. Source: en.wikipedia.org/wiki/Erasmus.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Asked about his responsibility for the Reformation, Erasmus is reported to have used a barnyard image: he had laid an egg, he said, and Luther had hatched it -- but with a sting in the follow-up. What did he say he had actually laid, in the fuller version of the quip?",
+      "choices": ["a hen's egg (and Luther hatched a very different bird)", "a golden egg (and Luther hatched a chick of straw)", "a serpent's egg (and Luther hatched a dove)", "a phoenix egg (and Luther hatched an owl)"],
+      "answer": "a hen's egg (and Luther hatched a very different bird)",
+      "context": "Erasmus's fuller version, quoted from a 1523 letter, said that he had laid a hen's egg but Luther had hatched a bird 'of quite different breed' -- his way of denying that his humanist reform-from-within had authorised Luther's Protestant break. Source: christianhistoryinstitute.org/magazine/article/ch-145-dyk-erasmus.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Erasmus, a Latinist all his working life whose Latin correspondence fills volumes, dies at Basel on 12 July 1536. His friend Beatus Rhenanus records that in his last words he slipped out of Latin altogether and cried out in his childhood tongue instead -- 'Dear God'. In which language did he say it?",
+      "choices": ["Dutch", "German", "French", "English"],
+      "answer": "Dutch",
+      "context": "Beatus Rhenanus reports Erasmus's dying words as 'Lieve God' -- 'Dear God' in Dutch, the language he had grown up with in Rotterdam and largely abandoned in adult life for Latin. German was the language of his printer's city Basel; French of the great university at Paris; English of his English friends. Source: en.wikipedia.org/wiki/Erasmus.",
+      "legend": true
+    }
+  ]
+}

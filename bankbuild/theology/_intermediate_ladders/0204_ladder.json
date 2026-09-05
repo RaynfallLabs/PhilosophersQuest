@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, Thor the thunder-god carries a single signature weapon that the Aesir gods count on above every other blade in Asgard when the giants of Jotunheim come down from the mountains. What is the weapon Thor carries?",
+      "choices": ["a war-hammer", "a two-handed axe", "a longbow", "a broad-headed spear"],
+      "answer": "a war-hammer",
+      "context": "Snorri, Gylfaginning 21 and Skaldskaparmal 43: Thor's weapon is Mjolnir, a war-hammer. Odin's weapon is the spear Gungnir; the god Ullr is the bowman of Asgard; Tyr carries a sword. The hammer is unique to Thor and is the single most famous weapon in Norse myth.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Thor's war-hammer has a proper name in the Norse stories -- the same name that turns up centuries later carved on Viking-age amulets worn around the neck. What is the name of Thor's hammer?",
+      "choices": ["Mjolnir", "Gungnir", "Draupnir", "Gram"],
+      "answer": "Mjolnir",
+      "context": "Snorri, Skaldskaparmal 43: the hammer is called Mjolnir. Gungnir is Odin's spear; Draupnir is Odin's self-multiplying gold arm-ring; Gram is the sword Sigurd uses to kill the dragon Fafnir. Around a thousand hammer-shaped amulets have been dug up across Viking-age Scandinavia.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Norse stories the two dwarf brothers who forge Mjolnir do the work as a wager against Loki. Snorri names one at the anvil and the other at the bellows. What are the names of the two smith-brothers who make Thor's hammer?",
+      "choices": ["Sindri and Brokkr", "Fjalar and Galar", "Baugi and Suttung", "Nordri and Sudri"],
+      "answer": "Sindri and Brokkr",
+      "context": "Snorri, Skaldskaparmal 43: Sindri (also called Eitri) stands at the anvil and his brother Brokkr works the bellows. Fjalar and Galar are the dwarves who murder the wise Kvasir. Baugi and Suttung are the giant brothers in the Mead of Poetry story. Nordri and Sudri are two of the four dwarves who hold up the sky. It is a common wrong answer to say the Sons of Ivaldi made Mjolnir -- the Sons of Ivaldi make Gungnir and Skidbladnir in the SAME wager, but not the hammer.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "As the two dwarves work at the forge, Loki turns himself into a biting fly and lands on the one working the bellows, hoping to spoil the wager. Snorri says the fly bites him three times, and only the third bite forces the dwarf to lift a hand from the bellows to wipe the blood away -- and that is why Mjolnir comes out with a defect. Where does the fly bite the dwarf the third time?",
+      "choices": ["on the eyelid", "on the neck", "on the arm", "on the ankle"],
+      "answer": "on the eyelid",
+      "context": "Snorri, Skaldskaparmal 43: the fly (Loki in disguise) bites Brokkr on the arm, then the neck, and finally on the eyelid, until the blood runs into his eye and he must raise a hand to wipe it. The bellows stop for a moment, and the hammer comes out with its one flaw. The eyelid bite is the one that matters -- Snorri names it as the decisive strike.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Sindri finally pulls the finished hammer out of the forge, everyone can see the defect that Loki's fly-biting caused. It is not a crack, not a warp, not a soft spot in the metal. What is wrong with Mjolnir as it comes off the anvil?",
+      "choices": ["the handle is too short", "the head is off-centre", "the striking face is dented", "the metal is cool to the touch"],
+      "answer": "the handle is too short",
+      "context": "Snorri, Skaldskaparmal 43: the shaft came out shorter than the dwarves had meant, because Brokkr had to stop pumping the bellows to wipe the blood from his eye. Snorri treats the short handle as the hammer's one flaw -- and the gods still judge it the finest of the six treasures.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri lists three marvellous properties Mjolnir has when Thor uses it. Two of them are that it will never miss its mark when thrown, and that it can be shrunk down small enough to hide inside Thor's shirt. What is the third property Snorri names?",
+      "choices": ["it always returns to Thor's hand", "it grows red-hot when giants are near", "it splits the earth wherever it lands", "it can be lifted by no one but Thor"],
+      "answer": "it always returns to Thor's hand",
+      "context": "Snorri, Skaldskaparmal 43: Thor's hammer will never miss the mark, will always fly back to his hand, and can be shrunk small enough to hide inside his shirt. The distractor 'can be lifted by no one but Thor' is a modern comic-book addition, not from Snorri; the belt Megingjord is what lets Thor lift it at full strength.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Because Mjolnir comes flying back through the air whenever Thor throws it, catching it barehanded would burn the skin off any god's palms. Snorri says Thor carries a second piece of gear made especially to catch the returning hammer safely. What is it?",
+      "choices": ["a pair of iron gauntlets", "a leather thong tied to the shaft", "a shield of hammered bronze", "a cloak lined with lead"],
+      "answer": "a pair of iron gauntlets",
+      "context": "Snorri, Gylfaginning 21: the iron gauntlets are named Jarngreipr ('iron-grippers'). Snorri says Thor 'must wear his gloves with his hammer.' There is no thong on Mjolnir's short shaft in Snorri; the shield and lead-lined cloak are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Beyond the iron gauntlets, Snorri names one more piece of gear Thor girds on to swing Mjolnir at full force -- a belt with a proper name that doubles his already godlike strength when he wears it. What is the name of Thor's strength-belt?",
+      "choices": ["Megingjord", "Gleipnir", "Draupnir", "Brisingamen"],
+      "answer": "Megingjord",
+      "context": "Snorri, Gylfaginning 21: Megingjord ('the belt of might') doubles Thor's strength when he girds it on -- and Thor, Snorri notes, was already the strongest of the Aesir. Gleipnir is the impossible fetter that binds the wolf Fenrir. Draupnir is Odin's self-multiplying arm-ring. Brisingamen is Freyja's necklace.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "One evening the giant Thrym steals Mjolnir out of Asgard and hides it eight leagues underground, and sends word that he will give it back only if Freyja is brought to him as bride. The gods refuse to give Freyja away -- so Heimdall proposes a trick, and Thor agrees to walk into Thrym's hall himself under the disguise. In what disguise does Thor go to Thrym's hall to recover the hammer?",
+      "choices": ["dressed as Freyja in a bridal veil", "dressed as a beggar with a broken staff", "dressed as a boy leading Freyja's cats", "dressed as the sea-god Njord in fisherman's cloth"],
+      "answer": "dressed as Freyja in a bridal veil",
+      "context": "Poetic Edda, Thrymskvida: Thor is dressed in Freyja's bridal veil and Brisingamen necklace, with Loki as his 'bridesmaid'. At the wedding-feast, when the hammer is finally laid in the 'bride's' lap 'to sanctify the bride', Thor throws off the veil, seizes Mjolnir, and kills Thrym and every giant in the hall. The whole poem is Norse myth's great comic set-piece.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the Norse religion of the Viking age, Mjolnir was not only a weapon in the stories but a tool in real ceremonies -- the ritual moment when a small hammer, or its symbol, was laid in the bride's lap and spoken over. At what ceremony was Mjolnir used to bless the participants?",
+      "choices": ["a wedding", "a coronation", "a naming of a newborn child", "the launching of a ship"],
+      "answer": "a wedding",
+      "context": "Poetic Edda, Thrymskvida stanza 30: the hammer is brought forth 'to sanctify the bride' by being laid in her lap. Snorri repeats the custom. Naming ceremonies for newborns used water-sprinkling (ausa vatni) rather than the hammer. Ship-launching used sacrifice. The wedding role of the hammer is why so many small hammer-shaped amulets have been dug up in Viking graves.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At Ragnarok, Thor meets his oldest enemy in single combat by the shore of the world-ocean -- the great serpent whose coils encircle the whole of Midgard. Thor kills the creature with a stroke of Mjolnir, but its dying venom kills him too. What is the name of the serpent Thor kills at Ragnarok?",
+      "choices": ["Jormungandr", "Fenrir", "Nidhogg", "Fafnir"],
+      "answer": "Jormungandr",
+      "context": "Snorri, Gylfaginning 51 and Poetic Edda, Voluspa 55-56: Jormungandr is the world-serpent, Loki's second monstrous child, whose body circles Midgard biting its own tail. Fenrir is the wolf who devours Odin. Nidhogg is the corpse-eating dragon at the root of Yggdrasil. Fafnir is the dragon Sigurd kills in the Volsung cycle.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After Thor kills the world-serpent at Ragnarok, he does not walk away from the fight. The serpent's venom is in his lungs, and the Voluspa gives the exact count of paces he manages to take from the corpse before he falls dead. How many steps does Thor walk before he dies?",
+      "choices": ["nine steps", "three steps", "seven steps", "twelve steps"],
+      "answer": "nine steps",
+      "context": "Poetic Edda, Voluspa 56 and Snorri, Gylfaginning 51: 'Nine paces fares the son of Fjorgyn, and, slain by the serpent, fearless he sinks.' Nine is a sacred number all through Norse myth -- Odin hangs nine nights on Yggdrasil, the world-tree has nine worlds, Heimdall has nine mothers. Three, seven and twelve are more commonly Christian and Greek sacred numbers.",
+      "legend": true
+    }
+  ]
+}

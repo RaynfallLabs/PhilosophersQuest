@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Ulster Cycle a supernatural woman comes to live secretly with a widowed farmer named Crunniuc, blesses his household with prosperity, and asks only that he never boast about her to strangers. Which figure of Irish myth is this woman?",
+      "choices": ["Macha", "Deirdre", "Emer", "Brigid"],
+      "answer": "Macha",
+      "context": "Macha is a supernatural woman of Ulster, variously called a goddess of the land or one of the three Morrigna sisters, who comes to live in secret with the widower Crunniuc mac Agnomain. Deirdre is the tragic heroine of a different Ulster tale; Emer is Cu Chulainn's wife; Brigid is a Tuatha De goddess of the flame. Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Irish tradition names three different figures called Macha, all of whom are sometimes conflated by medieval scribes. One is a Tuatha De Danann war-goddess killed by Balor at the Battle of Mag Tuired; one is the wife of Crunniuc whose curse falls on the Ulstermen; and the third is a warrior-queen who forced her enemies' sons to build the great fort of Emain Macha as her seat. What is this third Macha called?",
+      "choices": ["Macha Mong Ruad", "Macha of the White Arm", "Macha of the Nine Wounds", "Macha Cennfhindaig"],
+      "answer": "Macha Mong Ruad",
+      "context": "Macha Mong Ruad ('Macha of the Red Hair') is remembered in the medieval king-lists as the only woman ever crowned as sole High Queen of Ireland. After defeating her father's rival Dithorba, she captured his sons and forced them to build Emain Macha, tracing out its boundary with her brooch-pin. The other three choices are invented Irish-sounding parallels. Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One day the farmer Crunniuc rides out from home to the great fair at the assembly of the Ulster king Conchobar mac Nessa. When the royal chariot-team gallops past on the course, Crunniuc breaks his promise and boasts drunkenly. What does he boast that his wife can do?",
+      "choices": ["outrun the king's horses on foot", "grind more corn in a day than three servants", "spin a full cloak between dawn and noon", "carry the king's stone-anchor upon her shoulder"],
+      "answer": "outrun the king's horses on foot",
+      "context": "The horse-boast is the whole engine of the tragedy. Crunniuc's drunken bragging is reported straight to the king, who sends soldiers to fetch Macha. The other three feats are the sort of household boasts a rural Irish husband might have made, but only the running-race matches the story's cost. Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The king's messengers fetch Macha to the fair to make good on Crunniuc's boast. She pleads to be spared until after the child is born. Why does the assembly refuse her plea?",
+      "choices": ["she is heavily pregnant and very near her time", "she is a foreigner and owes tribute to the king", "she has been overheard singing a druid's curse", "she has come to the fair without a proper escort"],
+      "answer": "she is heavily pregnant and very near her time",
+      "context": "The horror of the scene is precisely that Macha is on the point of giving birth and the assembly forces her to run anyway. In some tellings her husband is threatened with execution if she does not race, in others she is dragged from her cabin by the king's men. Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Macha is forced to run the foot-race against the royal chariot-team. What happens as she crosses the finish line?",
+      "choices": ["she collapses in labour and delivers twins on the field", "she is trampled under the hooves of the king's team", "she runs on past the line and out of Ulster forever", "she throws herself on the king's spear in front of the crowd"],
+      "answer": "she collapses in labour and delivers twins on the field",
+      "context": "Macha wins the race and, in the same breath, delivers twins on the ground -- a boy named Fir ('True') and a girl named Fial ('Modest'). The double birth in front of the whole assembly is the moment that gives Emain Macha its name: 'the twins of Macha.' Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As she lies on the ground bleeding, Macha calls down a curse on every fighting man of Ulster within hearing. In the hour of the province's greatest need, she says, they shall be laid on their beds and suffer a particular sharp pain. What pain is it?",
+      "choices": ["the pangs of a woman in labour", "the fever that comes with the plague of the crows", "the palsy that seizes the sword-hand of the perjurer", "the thirst that no water in Ireland can slake"],
+      "answer": "the pangs of a woman in labour",
+      "context": "The Ulstermen must feel the same labour-pain Macha herself has just felt -- for five days and four nights (or five nights and four days, versions vary) whenever the province is invaded, and the curse binds nine generations. It is a wholly unique motif in world myth. Source: storyarchaeology.com/noinden-ulad-the-story-of-macha; en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The story of the horse-race and the curse is preserved in a short 8th-9th century saga tale attached to the great cycle of the cattle-raid. Its Irish title is Noinden Ulad. In English what is it usually called?",
+      "choices": ["'The Debility of the Ulstermen'", "'The Betrayal of the Ulstermen'", "'The Slumber of the Ulstermen'", "'The Lament of the Ulstermen'"],
+      "answer": "'The Debility of the Ulstermen'",
+      "context": "Noinden Ulad translates as 'The Debility of the Ulstermen' or 'The Nine Days' Pangs of the Ulstermen.' It is a remscela -- a fore-tale attached to the Tain Bo Cuailnge to explain WHY the Ulster warriors are helpless at the beginning of the great cattle-raid. Source: storyarchaeology.com/noinden-ulad-the-story-of-macha.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Generations later, Queen Medb of Connacht invades Ulster in the Tain Bo Cuailnge, driving her army across the border to seize the Brown Bull of Cooley. The Ulster fighting-men -- king, princes, and champions alike -- are helpless. Why can none of them fight?",
+      "choices": ["they are all bedridden by the curse Macha laid on their forefathers", "they are away at a great feast in Emain Macha and cannot be recalled", "they are bound by an oath of peace with Connacht that Conchobar refuses to break", "they have all been paralysed by a druid of Medb's court in advance of the war"],
+      "answer": "they are all bedridden by the curse Macha laid on their forefathers",
+      "context": "Macha's curse is the mythic pre-condition of the Tain: at the hour of Ulster's greatest need the whole fighting force is on its back in labour-pain, for nine generations, for five days and four nights at a stretch. It is what makes Cu Chulainn's one-man defence necessary and honourable. Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "One Ulster warrior alone is spared the curse and free to fight while every other man of the province lies in bed. He goes down to the border-fords single-handed and holds Medb's whole invading army back for weeks. Which warrior is this?",
+      "choices": ["Cu Chulainn", "Conall Cernach", "Ferghus mac Roich", "Loegaire Buadach"],
+      "answer": "Cu Chulainn",
+      "context": "Cu Chulainn is immune to Macha's curse -- in one version because he is only a boy of seventeen and has not come of fighting age with the men of Ulster, in another because he is half-divine as the son of the god Lugh. His single-handed defence of the fords is the central drama of the Tain. Conall, Loegaire, and the exiled Ferghus are all fully-grown Ulster champions -- all laid low by the curse. Source: storyarchaeology.com/noinden-ulad-the-story-of-macha.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Cu Chulainn's memory of Macha runs so deep that he names one of his own two chariot-horses in her honour, and the grey horse fights beside him at the fords of Ulster and finally mourns him at his death. What is this grey chariot-horse called?",
+      "choices": ["Liath Macha ('the Grey of Macha')", "Dubh Sainglenn ('the Black of Saingliu')", "Enbarr of the Flowing Mane", "Aonbharr, the horse of Manannan"],
+      "answer": "Liath Macha ('the Grey of Macha')",
+      "context": "Liath Macha and Dubh Sainglenn (the Black of Saingliu) are the two great chariot-horses of Cu Chulainn, and Liath Macha is the one named for the pregnant runner. When Cu Chulainn is dying, tied standing to a stone at his last stand, Liath Macha defends him with hoof and tooth and dies with him. Enbarr / Aonbharr is the sea-horse of the god Manannan mac Lir -- a different tradition. Source: en.wikipedia.org/wiki/Macha.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Macha's curse does not fall on the Ulstermen all at once and forever. It falls in bouts, each of a particular length, every time an army marches on the province. How long is a single bout of the debility said to last?",
+      "choices": ["five days and four nights", "one full turning of the moon", "a year and a day", "seven summers and seven winters"],
+      "answer": "five days and four nights",
+      "context": "Each bout of noinden Ulad lasts five days and four nights (or, in some manuscripts, five nights and four days -- the compilers disagree), and the curse binds nine generations of Ulster fighting-men. That the debility comes in short, sharp bouts -- and not as a permanent blight -- is what lets the province survive at all. Source: storyarchaeology.com/noinden-ulad-the-story-of-macha.",
+      "legend": true
+    }
+  ]
+}

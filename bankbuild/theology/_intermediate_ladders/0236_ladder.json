@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The queen of Arthur's Camelot, whose long secret love-affair with Sir Lancelot of the Lake finally shatters the Round Table, has a name that has passed into English from a Welsh original meaning roughly 'white phantom'. What is the name of Arthur's queen?",
+      "choices": ["Guinevere", "Isolde", "Morgause", "Nimue"],
+      "answer": "Guinevere",
+      "context": "Malory, Le Morte d'Arthur Books III-XXI; Wikipedia: Guinevere. The Welsh original is Gwenhwyfar -- 'gwen' (white) + 'hwyfar' (phantom, spirit). Isolde is the tragic queen of the parallel Tristan story in Cornwall. Morgause is Arthur's sister, mother of Gawain and Mordred. Nimue is the sorceress-apprentice of Merlin.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Arthur's queen is not the daughter of a nobody. Her father is the ruling king of the neighbouring realm of Cameliard, an ally of Arthur, and when she marries Arthur she brings with her one great gift that will define Arthur's fellowship for the rest of his reign. What does Arthur receive as Guinevere's dowry?",
+      "choices": ["the Round Table", "the sword Excalibur", "the crown of Uther Pendragon", "the horn of Bran the Blessed"],
+      "answer": "the Round Table",
+      "context": "Malory, Le Morte d'Arthur Book III ch.1. Guinevere's father King Leodegrance of Cameliard sends the Round Table to Arthur along with a hundred knights to sit at it. Excalibur was given to Arthur separately by the Lady of the Lake. Uther Pendragon's crown Arthur already held. The horn of Bran the Blessed is a treasure of Welsh myth (in Culhwch and Olwen) outside the Arthurian marriage story.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Guinevere and Arthur's greatest knight fall in love and become lovers in secret. Their affair is developed in the twelfth-century French romance by Chretien de Troyes called Lancelot, le Chevalier de la Charrette ('Lancelot, the Knight of the Cart'). Who is Guinevere's lover through nearly the whole Arthurian cycle?",
+      "choices": ["Sir Lancelot", "Sir Gawain", "Sir Tristan", "Sir Percival"],
+      "answer": "Sir Lancelot",
+      "context": "Chretien de Troyes, Lancelot ou le Chevalier de la Charrette (c.1177); Malory, Le Morte d'Arthur Books XVIII-XX. The 'cart' of Chretien's title is a cart of shame Lancelot rides in to reach the queen when she is kidnapped -- riding it costs him his knightly honour but proves his devotion. Sir Tristan is Isolde's lover in the parallel Cornish story; Gawain and Percival have no such affair.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The exposure of the affair is set off by two of Arthur's own kinsmen. One of them is Sir Agravaine, brother of Sir Gawain; the other is Arthur's nephew and future usurper, the son of Arthur's own half-sister. The two of them lie in wait outside the queen's chamber with twelve armed knights. Which knight, with Agravaine, sets the trap that exposes Lancelot and Guinevere?",
+      "choices": ["Sir Mordred", "Sir Gaheris", "Sir Gareth", "Sir Bors"],
+      "answer": "Sir Mordred",
+      "context": "Malory, Le Morte d'Arthur Book XX ch.2-4. Mordred is Arthur's illegitimate son by Arthur's own half-sister Morgause -- the future usurper of Camelot. Gaheris and Gareth are two more of Gawain's brothers (Agravaine, Gaheris, Gareth, and Gawain are the four sons of King Lot and Morgause). Sir Bors is Lancelot's kinsman and stays LOYAL to him.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Trapped inside the queen's own chamber and given no chance to explain, Sir Lancelot arms himself, throws open the door, and fights his way out through the ambush waiting in the corridor. When the fight is over one of the ambushers -- Sir Agravaine himself -- lies dead among the rest. How many knights in all does Lancelot kill on the way out of the queen's chamber?",
+      "choices": ["thirteen", "three", "twenty-four", "one hundred"],
+      "answer": "thirteen",
+      "context": "Malory, Le Morte d'Arthur Book XX ch.4. Malory gives the exact tally: Lancelot kills thirteen knights (including Agravaine himself) fighting his way out. Three would be the fair-fight number; twenty-four is a Round-Table capacity; a hundred is the number of Round-Table seats in Malory Book III ch.1 -- all wrong for this scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "With Lancelot escaped and the queen arrested for treason, Arthur is caught: by the law of his own kingdom the punishment for a queen's adultery is death. And so, with grief, Arthur himself must pass the sentence on his own wife. What is the sentence passed on Guinevere?",
+      "choices": ["to be burned at the stake", "to be beheaded on Tower Hill", "to be walled up in a nunnery", "to be drowned in a sack in the river"],
+      "answer": "to be burned at the stake",
+      "context": "Malory, Le Morte d'Arthur Book XX ch.7. Burning at the stake is the specific medieval punishment for a queen's adultery -- a form of high treason against the king. Beheading on Tower Hill is the Tudor-era punishment (Anne Boleyn, Catherine Howard). Being walled up alive is a late-legend punishment (Faust's mother). The sack-and-drowning is the ancient Roman poena cullei for parricides.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the pyre in the courtyard at Carlisle, Guinevere is led out to the fire by the guard. Malory names exactly what she is wearing -- a single simple undergarment, nothing else. What is Guinevere wearing at the stake?",
+      "choices": ["her smock", "her wedding gown", "her royal crown", "black mourning robes"],
+      "answer": "her smock",
+      "context": "Malory, Le Morte d'Arthur Book XX ch.8. The 'smock' is a plain linen undergarment (later called a shift or chemise) -- the medieval condemned wore a smock alone as a mark of stripped honour. Wedding gown, crown, and mourning-robes would each have signalled a different scene entirely; the smock is Malory's exact word.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "As the fire is being kindled, hoofbeats sound in the yard. Sir Lancelot and his kinsmen ride in at full charge, cut through the guard around the pyre, sweep the queen up onto Lancelot's horse, and ride out again. But in the melee Lancelot's own sword kills two of Arthur's household knights -- both of them unarmed, and both of them the younger brothers of his best friend at Camelot. Which two knights does Lancelot kill by mistake at the pyre?",
+      "choices": ["Sir Gareth and Sir Gaheris", "Sir Kay and Sir Bedivere", "Sir Percival and Sir Bors", "Sir Ector and Sir Balin"],
+      "answer": "Sir Gareth and Sir Gaheris",
+      "context": "Malory, Le Morte d'Arthur Book XX ch.8. Gareth (nicknamed Beaumains, 'fair hands') and Gaheris are two of Sir Gawain's four brothers; they had been on guard at the pyre unarmed because they honoured Lancelot too much to want to fight him. Kay and Bedivere are Arthur's oldest household. Percival and Bors are Grail-knights. Ector is Lancelot's brother; Balin is a tragic loner from earlier in the book.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The death of his two unarmed brothers at Lancelot's own hand turns Gawain -- who had loved Lancelot best of all the Round Table -- into Lancelot's implacable enemy. Gawain pushes King Arthur into open war against Lancelot and his kin. Lancelot flees overseas and stands siege in his own castle in France against Arthur's army. What is the name of Lancelot's castle where Arthur besieges him?",
+      "choices": ["Joyous Gard", "Corbenic", "Tintagel", "Camelot"],
+      "answer": "Joyous Gard",
+      "context": "Malory, Le Morte d'Arthur Book XX. Joyous Gard is Lancelot's own castle -- captured earlier in the book by Lancelot and renamed by him from 'Dolorous Gard'. Arthur and Gawain besiege it after the rescue of Guinevere and cannot take it; only Lancelot's withdrawal to France ends the siege. Corbenic is Pelles the Fisher King's castle (where Galahad was conceived). Tintagel is where Arthur was conceived. Camelot is Arthur's own city, not Lancelot's stronghold.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When it is all over -- Arthur dead of the wound at Camlann, Mordred killed by his own father, and Lancelot in exile -- Guinevere does not stay at court. She takes vows and enters a religious house in Wiltshire to live out her days in penance, and dies there as its abbess. Which abbey does Guinevere retire to at the end of the story?",
+      "choices": ["Amesbury", "Glastonbury", "Iona", "Whitby"],
+      "answer": "Amesbury",
+      "context": "Malory, Le Morte d'Arthur Book XXI ch.7. Amesbury Abbey in Wiltshire is a real Anglo-Saxon foundation (later a Benedictine nunnery); Malory places Guinevere there. Glastonbury is where Arthur's tomb was later claimed to be found. Iona is Columba's Scottish island monastery. Whitby is the great Northumbrian house of Hilda's synod.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the very last chapter of Malory, Sir Lancelot, hearing that Guinevere has become a nun, rides once more to her abbey -- hoping to take her out of it and away with him at last. The queen comes to hear he is at the gate. What does Guinevere do when Lancelot arrives at Amesbury for her?",
+      "choices": ["refuses to see him", "rides away with him", "asks him to take vows", "sends him her ring"],
+      "answer": "refuses to see him",
+      "context": "Malory, Le Morte d'Arthur Book XXI ch.9-10. Guinevere sends word from the cloister that she will not see Lancelot again in this life; she asks only that he pray for her soul. Lancelot rides away, takes his own vows at Glastonbury, and dies a hermit soon after -- the last scene of the book. The other three answers are all endings the poet might have chosen and did not.",
+      "legend": true
+    }
+  ]
+}

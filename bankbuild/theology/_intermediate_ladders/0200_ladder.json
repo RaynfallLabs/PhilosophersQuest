@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, one of the great banquet-hosts of the Aesir and Vanir is a sea-figure who brews ale in an enormous cauldron under the waves and invites the gods down to drink. Which Norse figure is this undersea host?",
+      "choices": ["the sea-giant Aegir", "the sea-god Njord", "the sea-serpent Jormungand", "the giant Utgarda-Loki"],
+      "answer": "the sea-giant Aegir",
+      "context": "Poetic Edda, Lokasenna prose introduction (and Hymiskvida): Aegir (also called Hler or Gymir) is the sea-giant who hosts the gods in his undersea hall. Njord is the Vanir god of the coast (father of Freyr and Freyja). Jormungand is the Midgard serpent Thor will fight at Ragnarok. Utgarda-Loki is the giant-king who tricks Thor in the eastern lands.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "When the undersea host throws his great feast for the Aesir and Vanir, one of the loudest gods is missing from the hall. He is far off in the east fighting trolls, and he will not arrive until the trouble is already well under way. Which god is absent when the feast begins?",
+      "choices": ["Thor", "Odin", "Freyr", "Bragi"],
+      "answer": "Thor",
+      "context": "Poetic Edda, Lokasenna prose introduction: Thor is away in the east fighting trolls when the feast starts. Odin is present and speaks in the first exchanges. Freyr and Bragi are among the gods insulted at the table. Thor's late arrival is what finally ends the poem.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The sea-host has two named serving-men working the hall that night. The gods praise the first for his skill with cup and platter, and jealousy rises in one uninvited guest. What is the name of the servant whose praise sets off the trouble?",
+      "choices": ["Fimafeng", "Eldir", "Skirnir", "Byggvir"],
+      "answer": "Fimafeng",
+      "context": "Poetic Edda, Lokasenna prose introduction: Aegir's two serving-men are Fimafeng and Eldir. The gods praise Fimafeng, and Loki kills him on the spot. Eldir is the second servant, who later meets Loki at the door when he tries to come back in. Skirnir is Freyr's messenger. Byggvir is Freyr's own servant, present at the feast and mocked by Loki later.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When the gods heap praise on Aegir's serving-man Fimafeng, one guest at the table cannot bear it and does something that gets him driven out of the hall at once. What does Loki do to Fimafeng in his fit of jealousy?",
+      "choices": ["kills him on the spot", "curses him with a stutter", "steals his silver platter", "turns him into a hare"],
+      "answer": "kills him on the spot",
+      "context": "Poetic Edda, Lokasenna prose introduction: Loki, in jealousy at the praise the servant gets, kills Fimafeng on the spot. The gods shake their shields, howl at him, and drive him out into the forest before returning to their drinking. Loki will not stay outside for long.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After being driven out of the hall, Loki comes back to the door and meets the second servant, Eldir. He demands to be seated with the gods again. The whole poem that follows the door-scene is one specific old Germanic verse-form -- a formal duel not of blades but of insults, one accusation at a time, moving down the hall. What is the name of that verse-form?",
+      "choices": ["a flyting", "a saga", "a rune-cast", "a nithing-pole"],
+      "answer": "a flyting",
+      "context": "Poetic Edda, Lokasenna: the poem is the great mythic exemplar of a flyting -- a formal verse-duel of insults. The same form appears in Beowulf when Unferth trades barbs with Beowulf at Heorot, and later in Scots poetry. A saga is a prose narrative; a rune-cast is a divination; a nithing-pole is a real cursing-post erected against an enemy.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once Loki is seated again at Aegir's hall, he turns on Odin and throws in his face an accusation about magic Odin practised on the island of Samsey. What is the shameful thing Loki says Odin did on Samsey?",
+      "choices": ["dressed as a woman to work seidr magic", "raised nine dead men to fight for him", "sold his other eye for a second sip", "murdered a sleeping king in his bed"],
+      "answer": "dressed as a woman to work seidr magic",
+      "context": "Poetic Edda, Lokasenna 24: Loki throws in Odin's face that on Samsey he beat a drum like a seeress and dressed as a woman to work seidr, a magic considered unmanly for a warrior. Odin does not really deny it -- he answers with an accusation about Loki's own strange forms (Loki once became a mare and bore Odin's own horse Sleipnir).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Loki does not spare Odin's wife either. He accuses Frigg to her face of having gone to bed with two of Odin's own kin while Odin was long away from Asgard. Which two brothers of Odin does Loki accuse Frigg of sleeping with?",
+      "choices": ["Vili and Ve", "Hoenir and Lodur", "Baldr and Hodr", "Bragi and Njord"],
+      "answer": "Vili and Ve",
+      "context": "Poetic Edda, Lokasenna 26: Loki accuses Frigg of having slept with Vili and Ve, Odin's brothers, while Odin was away. Snorri's Ynglinga saga 3 echoes the same charge. Hoenir and Lodur are Odin's companions in creation-stories; Baldr and Hodr are Frigg's own sons; Bragi and Njord are guests at the same feast, insulted separately.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Loki works his way down the benches of Aegir's hall. He does not spare Freyja either. He accuses her of the widest sexual shame he can invent -- but the sharpest point of his accusation is that among all her lovers she has also taken one specific member of her own family. Whom does Loki accuse Freyja of having slept with in her own family?",
+      "choices": ["her own brother Freyr", "her own father Njord", "her own son Hnoss", "her own husband Od"],
+      "answer": "her own brother Freyr",
+      "context": "Poetic Edda, Lokasenna 30, 32: Loki accuses Freyja of having slept with every one of the Aesir and specifically with her own brother Freyr. Sibling-marriage was normal among the Vanir before their peace with the Aesir (Njord had married his own sister in Vanaheim, per Ynglinga saga 4). Njord is her father; Hnoss is her daughter by Od, her own missing husband.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Loki has faced down every argument in the hall. Then the missing god finally strides in from the eastern road, still dusty from killing trolls. Loki turns to insult him too -- but this god does not answer with words. What does the arriving god do that ends the whole poem?",
+      "choices": ["raises Mjolnir over Loki's head", "sings a rune that seals Loki's mouth", "throws a spear across the hall", "sets fire to Loki's braid"],
+      "answer": "raises Mjolnir over Loki's head",
+      "context": "Poetic Edda, Lokasenna 57-63: Thor arrives, and Loki turns on him too; Thor answers not with argument but by raising his hammer Mjolnir and threatening to smash Loki's head. Loki, who has out-talked every god at the table, folds instantly at the hammer-shadow. The spear-throw is Odin's opening-of-war gesture (Voluspa 24); rune-magic is Odin's craft, not Thor's.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "As Loki finally leaves the hall he throws one parting curse at his host -- a curse that promises the sea-hall itself will not survive the age of the gods. What does Loki curse Aegir's hall with, on his way out?",
+      "choices": ["that it will burn", "that it will sink", "that it will freeze", "that it will crumble"],
+      "answer": "that it will burn",
+      "context": "Poetic Edda, Lokasenna 65: Loki curses Aegir's hall that fire shall take it -- a curse fulfilled at Ragnarok when Surt's flames burn the nine worlds. The prose ending of the poem then names Loki's own coming doom: he will be bound with his own son's guts under a serpent whose venom drips on his face until the world ends.",
+      "legend": true
+    }
+  ]
+}

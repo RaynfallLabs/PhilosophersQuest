@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Arthur has three older half-sisters, all daughters of his mother Igraine by her first husband Duke Gorlois of Cornwall, born before Igraine ever married Uther Pendragon. The most dangerous of the three is a sorceress who becomes Arthur's lifelong enemy at court and who is called in Old French Morgain la Fee -- Morgan the Fairy. What is her name in English?",
+      "choices": ["Morgan le Fay", "Nimue of the Lake", "Elaine of Astolat", "Iseult of Ireland"],
+      "answer": "Morgan le Fay",
+      "context": "Malory, Le Morte d'Arthur; https://en.wikipedia.org/wiki/Morgan_le_Fay. Her sisters are Morgause (mother of Gawain and, in Malory, of Mordred) and Elaine of Garlot -- a DIFFERENT Elaine from Elaine of Astolat, who dies of love for Lancelot. Nimue is the chief Lady of the Lake, Morgan's opposite -- she saves Arthur repeatedly from Morgan's plots. Iseult belongs to the parallel Tristan cycle.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Malory says that as a girl Morgan is put to school in a nunnery. There, instead of learning the psalms and the offices, she quietly studies something else -- the same dark art her enemies will one day accuse her of practising against Arthur. What does Malory say Morgan learned in the nunnery?",
+      "choices": ["necromancy", "herbal healing", "the harp", "Latin theology"],
+      "answer": "necromancy",
+      "context": "Malory, Le Morte d'Arthur Book I. Malory says plainly that Morgan learns 'so much necromancy' in the nunnery -- Old French/Middle English 'nigromancy' meaning sorcery, dark magic. Herbal healing is what a good nun would teach; the harp is the courtly art of a lady (Iseult and Tristan both play); Latin theology is what the sisters would openly teach. Only the necromancy is smuggled learning.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Morgan is grown, Arthur gives her in marriage against her will to a king of the north who fights loyally at Arthur's side in the early wars. Morgan hates the marriage, takes lovers at court, and eventually plots her husband's death as well as Arthur's. In Malory, who is the husband Arthur forces on Morgan?",
+      "choices": ["King Uriens of Gore", "King Lot of Orkney", "King Pellinore", "King Bagdemagus"],
+      "answer": "King Uriens of Gore",
+      "context": "Malory, Le Morte d'Arthur Book IV. Uriens of Gore is the father of Sir Ywain (Yvain), one of Arthur's Round Table knights. King Lot of Orkney is Morgan's SISTER Morgause's husband and the father of Gawain -- easily confused with Uriens because both are northern kings married to Igraine's daughters. Pellinore is the hunter of the Questing Beast. Bagdemagus is another northern king and Morgan does keep him at her court, but he is not her husband.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When the Lady of the Lake first gives Excalibur to Arthur she gives him TWO gifts, not one -- the sword itself, and the sword's SCABBARD. Merlin later tells Arthur that of the two the scabbard is the greater gift, worth ten of the sword. What does the scabbard do for whoever wears it, in Malory Book IV?",
+      "choices": ["prevents its wearer from bleeding", "makes its wearer invisible in battle", "turns aside every arrow in flight", "gives its wearer courage in fear"],
+      "answer": "prevents its wearer from bleeding",
+      "context": "Malory, Le Morte d'Arthur Book IV; https://en.wikipedia.org/wiki/Excalibur. Merlin says the wearer of the scabbard, however sore he is wounded, shall never bleed to death. The other three are the sort of magical property a legendary sheath COULD carry (Perseus's cap of invisibility, the arrow-turning shields of Homer, courage-gifts to cowards) but Malory keeps the gift specific to blood.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Morgan does the worst thing in Malory that can be done to Arthur short of killing him. She goes secretly to the strong-room where Excalibur is kept and takes the scabbard -- the one gift that keeps Arthur alive in battle. Arthur pursues her hard across the country. When Morgan sees she cannot outrun him, she rides to the edge of a body of water on the plain and, crying that whatever happens her brother shall not have it back, hurls the scabbard as far as she can into the water. What body of water does Morgan throw Excalibur's scabbard into?",
+      "choices": ["a lake", "a river", "the sea", "a mountain well"],
+      "answer": "a lake",
+      "context": "Malory, Le Morte d'Arthur Book IV; https://sacred-texts.com/neu/trt/trt09.htm. Morgan rides to the edge of a lake on the plain at the forest's edge and throws the scabbard far into the deep water where it sinks -- gone forever. From that day forward Arthur can bleed and die, and eventually will. The scabbard is never seen again.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Morgan later sends Arthur what looks like a peace-offering to make amends -- a magnificent mantle covered in jewels, sent to Camelot by one of her damsels. Arthur is about to put it on when Nimue the Lady of the Lake steps forward and whispers to him to make the messenger try it on FIRST. The damsel is forced to put on the cloak. In Malory Book IV ch.16, what happens to the messenger the moment the cloak touches her?",
+      "choices": ["she burns to a cinder", "she falls into a bewitched sleep", "she turns to stone standing there", "her tongue is struck dumb forever"],
+      "answer": "she burns to a cinder",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.16. The cloak has been enchanted to consume its wearer in fire; Nimue, who watches over Arthur, saves him at the last instant. The messenger burns to a cinder in front of the whole court. Sleep-curses, stone-curses, and dumbing-curses are the classic witch-gifts of a fairy-tale but not Morgan's here.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The great alliterative poem Sir Gawain and the Green Knight (Cotton Nero A.x, c.1400) tells how a huge green stranger rides into Camelot at the New Year's feast holding an axe, dares any knight to strike off his head if he may return the blow a year later, and leaves Gawain to keep the appointment. In the poem's final section (Fitt IV) the Green Knight -- revealed as Sir Bertilak of Hautdesert -- names the enchantress who sent him. Which sorceress is revealed as the woman behind the whole beheading-game?",
+      "choices": ["Morgan le Fay", "Nimue of the Lake", "Morgause of Orkney", "the queen of Ynys Witrin"],
+      "answer": "Morgan le Fay",
+      "context": "Sir Gawain and the Green Knight, Fitt IV; https://en.wikipedia.org/wiki/Sir_Gawain_and_the_Green_Knight. Bertilak reveals that the old woman Gawain has ignored at his host's castle is Morgan le Fay, and that she engineered the whole game to frighten Queen Guinevere to death. Nimue is Morgan's opposite, Arthur's protector. Morgause is Morgan's sister -- a DIFFERENT queen, Mordred's mother, murdered by her own son Gaheris in bed with Lamorak. Ynys Witrin (the Isle of Glass) is the Welsh name for Glastonbury.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Morgan and her lover Sir Accolon plot together to kill Arthur. Morgan uses her magic to switch Excalibur and its scabbard for cheap copies at court and slips the real sword to Accolon; Accolon then challenges Arthur to a duel expecting to face him weapon against weapon while Arthur wields the fake. In Malory Book IV, who intervenes at the last moment to knock the real Excalibur out of Accolon's hand and put it back into Arthur's?",
+      "choices": ["Nimue", "Bedivere", "Merlin", "Gawain"],
+      "answer": "Nimue",
+      "context": "Malory Book IV; https://en.wikipedia.org/wiki/Accolon. Nimue the Lady of the Lake attends the duel invisibly and, at the moment Accolon's blade is about to fall, uses her magic to jolt Excalibur out of his hand -- Arthur grabs it and wins. Bedivere and Gawain are Arthur's household knights, present at court but not sorcerers. Merlin is by this point already sealed under the stone by Nimue herself (Malory Book IV ch.1) and cannot help.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the very end of Malory (Book XXI ch.5), after Arthur is mortally wounded at Camlann, Sir Bedivere carries him down to the edge of a lake at nightfall. A dark barge appears on the water, poled by three queens all veiled in black hoods, and they receive the dying king aboard with great weeping. Arthur is laid down on the deck of the barge with his head in the lap of the queen at their head. In Malory, which of the three queens takes Arthur's head into her lap?",
+      "choices": ["Morgan le Fay", "Guinevere", "Igraine", "Nimue"],
+      "answer": "Morgan le Fay",
+      "context": "Malory, Le Morte d'Arthur Book XXI ch.5; https://kingarthur.fandom.com/wiki/Morgan_le_Fay. Morgan is the queen at the head of the barge; she takes his head in her lap and says only 'Ah, dear brother, why have ye tarried so long from me?' Guinevere is at the same moment shutting herself into the nunnery at Amesbury -- she and Arthur do not meet again in this life. Igraine is Arthur's mother and long dead by Camlann. Nimue is one of the other queens on the barge in some manuscripts but not the queen who cradles his head.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Morgan is not always the villain. In the very earliest surviving Arthurian text about her -- a Latin prose romance by Geoffrey of Monmouth written twenty years after his famous history of Britain -- she is the head of NINE magical sisters who rule the enchanted island where the wounded Arthur is carried to be healed. She is described there as the most beautiful of the nine, and as able to heal any wound. What is the title of Geoffrey of Monmouth's Latin poem about Merlin in which this earliest Morgan appears?",
+      "choices": ["Vita Merlini", "Historia Regum Britanniae", "Historia Brittonum", "Roman de Brut"],
+      "answer": "Vita Merlini",
+      "context": "Geoffrey of Monmouth, Vita Merlini (c.1150). The Vita Merlini gives the benign healer-Morgan of the Isle of Avalon; the malevolent Morgan is the invention of the later French Vulgate Cycle and of Malory. The Historia Regum Britanniae (c.1136) is Geoffrey's earlier prose history and does not name Morgan. The Historia Brittonum (c.828) is by Nennius, three centuries earlier. The Roman de Brut is Wace's Norman-French verse adaptation of Geoffrey.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Morgan and her sister Morgause are DIFFERENT women in Malory though many later retellings blur them into one. Both are Igraine's daughters by Gorlois; both are Arthur's half-sisters; both practise witchcraft; both have sons who trouble Arthur's court. In Malory, which infamous knight is the son of MORGAUSE (Morgan's sister), and NOT of Morgan?",
+      "choices": ["Mordred", "Accolon", "Bertilak", "Ywain"],
+      "answer": "Mordred",
+      "context": "Malory, Le Morte d'Arthur Book I ch.19-20. Malory's Mordred is Morgause's son by Arthur (born of Arthur's night with her in Book I). In the older French Vulgate tradition Mordred is Morgan's son by Arthur and Malory's switch is idiosyncratic -- the confusion between the two sisters starts in the medieval tradition itself. Accolon is Morgan's lover, not her son. Bertilak is Morgan's knightly tool in Sir Gawain and the Green Knight, not her son. Ywain is Morgan's son by her husband Uriens of Gore -- a real son of Morgan's, but a loyal knight of the Round Table, not the infamous one asked for.",
+      "legend": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Snorri's smithing-contest of the six treasures, two dwarf-brothers named Brokkr and Sindri compete against the dwarves called the Sons of Ivaldi. When the gods judge which of the six is finest, the winning object goes to the god who will carry it into every battle for the rest of Norse story. Which of the six do the gods judge the greatest?",
+      "choices": ["the hammer Mjolnir", "the spear Gungnir", "the ship Skidbladnir", "the ring Draupnir"],
+      "answer": "the hammer Mjolnir",
+      "context": "Snorri, Skaldskaparmal 43: the gods judge Mjolnir the greatest of the six treasures because it will defend Asgard from the giants. Gungnir (Odin's spear, never misses) and Skidbladnir (Freyr's ship, folds into a pocket) were the Sons of Ivaldi's treasures. Draupnir (Odin's gold ring that drips eight copies of itself every ninth night) was Sindri and Brokkr's, alongside Mjolnir and the golden boar Gullinbursti.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Loki had wagered on the outcome of the smithing-contest between the two dwarf teams -- and he had put up a very specific stake of his own body if he lost. When Brokkr wins the contest for the hammer, he comes forward to claim exactly what Loki had put up. What had Loki wagered against the dwarves' work?",
+      "choices": ["his head", "his eye", "his tongue", "his hand"],
+      "answer": "his head",
+      "context": "Snorri, Skaldskaparmal 43: Loki had wagered his head. Odin gave one eye for a drink from Mimir's well, and Tyr gave his hand to the wolf Fenrir. The tongue-cutting will come, in a way, later in the same scene -- but that is not what Loki wagered.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Loki, cornered by Brokkr and about to lose his life, first tries to talk his way out. He offers Brokkr a rich alternative in place of the forfeit, and when the dwarf refuses, Loki bolts. Only one god is fast enough to run him down and drag him back for the dwarf. Which god catches Loki and hands him back to Brokkr?",
+      "choices": ["Thor", "Heimdall", "Tyr", "Vidar"],
+      "answer": "Thor",
+      "context": "Snorri, Skaldskaparmal 43: Thor catches Loki and drags him back for the dwarf. Heimdall is the watchman at Bifrost. Tyr is the one-handed god of oaths. Vidar is Odin's silent avenger-son who will one day rip Fenrir's jaws apart. Note how ready Thor is to see Loki punished; he owes Brokkr a debt because the very reason Mjolnir's haft is too short is that Loki (as a fly) bit Brokkr's eyelid during the forging.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the last moment, Loki finds the loophole that will save his life. He agrees Brokkr may take what was wagered -- but he adds one lawyerly condition on the dwarf, pointing out the exact wording of the bet, that Brokkr cannot honour. What is the escape-clause Loki suddenly springs on Brokkr?",
+      "choices": ["Brokkr may not touch or damage any part of Loki's neck", "the wager expires at sunset that same day", "the head must be taken with a golden knife or not at all", "Brokkr must first name every one of the six treasures aloud"],
+      "answer": "Brokkr may not touch or damage any part of Loki's neck",
+      "context": "Snorri, Skaldskaparmal 43: Loki tells Brokkr he may have the head but may not touch the neck -- because the wager named the head only. Brokkr cannot cut off a head without cutting a neck, and the exact wording of the bet gives Loki the wriggle. The move is one of the earliest surviving Indo-European trickster escape-clauses; it echoes into medieval legal riddles (compare Shylock's pound of flesh but no blood in Merchant of Venice).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Cheated of the head by Loki's lawyer-talk, Brokkr is not willing to walk away with nothing. He decides on the next best thing: if he cannot cut off the head, he will at least silence the mouth that spoke the boast that started the whole business. What does Brokkr call for to do the job on Loki's face?",
+      "choices": ["an awl", "a knife", "a chisel", "a needle of bone"],
+      "answer": "an awl",
+      "context": "Snorri, Skaldskaparmal 43: Brokkr asks for an awl -- a leather-worker's iron punch used to pierce holes for stitching -- and sets to work on Loki's face. It is the standard dwarf-craftsman's tool, and Snorri's choice of it is a nice touch: the smiths punish the trickster with the tool of their own trade.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Brokkr's first attempt with his own awl fails -- the tool will not go through Loki's skin, however hard he presses. Snorri says Brokkr then wishes aloud for a very specific replacement, and the wish is granted at once. What does Brokkr wish for that finally punches through Loki's lip?",
+      "choices": ["his brother Sindri's sharper awl", "a spark from the forge of Muspelheim", "one of Thor's iron gloves", "the point of a giant's tooth"],
+      "answer": "his brother Sindri's sharper awl",
+      "context": "Snorri, Skaldskaparmal 43: Brokkr wishes for his brother Sindri's awl, which is sharper, and it appears at once and punches straight through. Sindri is the master-smith of the two brothers; Brokkr is his bellows-worker and hands. Even in this dark comic scene the older-brother-and-younger-brother rhythm of the dwarf pair is preserved.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "With the sharper awl at last punching holes through the trickster's flesh, Brokkr sews Loki's lips shut with a length of leather thong. The thong itself has a name in Snorri -- the only named awl-and-thong in Norse literature. What is the name Snorri gives the leather thong Brokkr uses to stitch Loki's mouth?",
+      "choices": ["Vartari", "Gleipnir", "Vidofnir", "Sviagris"],
+      "answer": "Vartari",
+      "context": "Snorri, Skaldskaparmal 43: the thong is called Vartari. Gleipnir is the ribbon-thin fetter that binds Fenrir the wolf (made from six impossible things -- a cat's footfall, a woman's beard, and so on). Vidofnir is the rooster on Yggdrasil's crown. Sviagris is the gold ring of the Yngling king Adils.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The scene closes with the trickster stitched up and delivered back to Asgard. Snorri does not leave Loki that way forever -- but he adds one grim note about what the mouth looks like after Loki tears the thong out of his own lips. What does Snorri say remains on Loki's face from that day on?",
+      "choices": ["the scars from the awl and thong", "a permanent stammer in his speech", "one lip that will not open properly", "a set of iron pins where the thong had been"],
+      "answer": "the scars from the awl and thong",
+      "context": "Snorri, Skaldskaparmal 43: Loki rips the leather thong out of his own lips and the scars remain. The image of a trickster whose face carries the record of every lie he has been silenced for is one of the sharpest character-details in Snorri -- one of the very few places the Prose Edda lingers on a physical mark left by punishment.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Before the wager even reached the head-forfeit, Loki had already tried to sabotage the forging itself. While Brokkr was working the bellows on the great hammer, Loki turned himself into a fly and bit Brokkr in one place hard enough to make blood run into his eye. Where did Loki-as-fly bite Brokkr during the forging of Mjolnir?",
+      "choices": ["on his eyelid", "on his lip", "on his ear", "on his heel"],
+      "answer": "on his eyelid",
+      "context": "Snorri, Skaldskaparmal 43: Loki as a fly bit Brokkr's eyelid during the third forging, and Brokkr took one hand off the bellows to wipe the blood away. That single moment of lost pressure is the reason (Snorri says) that Mjolnir's haft came out too short -- meaning even the flaw of the greatest hammer in the nine worlds is Loki's fault. Which makes Brokkr's later fury at the head-loophole richer still.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The whole smithing-contest that ended with Loki's stitched mouth had begun because Loki had cut off a goddess's beautiful long hair while she slept, and had been forced to find the dwarves who could replace it or die. Whose hair had Loki cut off in her sleep to trigger the whole affair?",
+      "choices": ["Sif's", "Freyja's", "Frigg's", "Idunn's"],
+      "answer": "Sif's",
+      "context": "Snorri, Skaldskaparmal 43: Loki cut off Sif's golden hair as a prank; Thor (Sif's husband) threatened to break every bone in Loki's body unless he brought her back real hair. Loki went to the Sons of Ivaldi, who spun the new hair from gold, and also produced Gungnir and Skidbladnir on the same visit. That is why Loki then goaded Brokkr and Sindri into a rival contest -- and how the whole six-treasures wager (and Loki's own head) came to be at stake.",
+      "legend": true
+    }
+  ]
+}

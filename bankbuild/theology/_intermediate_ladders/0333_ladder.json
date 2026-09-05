@@ -1,0 +1,95 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Jesus opens a short parable in Luke 15 with a shepherd who has a hundred sheep and finds that one has strayed. What does the shepherd do with the ninety-nine he still has?",
+      "choices": [
+        "Leaves them in the wilderness and goes after the one that is lost",
+        "Pens them safely in the fold and then goes home for the night",
+        "Sends a hired hand out after the missing one and stays himself",
+        "Calls his neighbours to help him watch the flock overnight"
+      ],
+      "answer": "Leaves them in the wilderness and goes after the one that is lost",
+      "context": "Luke 15:4 KJV: 'What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?' Source: KJV Luke 15.",
+      "legend": false
+    },
+    {
+      "tier": 1,
+      "stem": "Jesus tells a second little parable right after the lost sheep: a woman loses one small silver coin. How many coins did she have altogether before she lost the one?",
+      "choices": [
+        "Ten",
+        "Seven",
+        "Twelve",
+        "Thirty"
+      ],
+      "answer": "Ten",
+      "context": "Luke 15:8 KJV: 'Either what woman having ten pieces of silver, if she lose one piece, doth not light a candle, and sweep the house, and seek diligently till she find it?' The coins were drachmas -- Greek silver, each about a day's wages. Source: KJV Luke 15.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The shepherd in Luke 15 finds his one lost sheep out in the wilderness. Jesus describes exactly how he brings the animal back home again.",
+      "choices": [
+        "He lays it on his shoulders, rejoicing, and carries it home himself",
+        "He ties a rope round its neck and leads it back with his staff",
+        "He whistles for his sheepdog to drive it back to the fold",
+        "He signals for the other shepherds to help him drive it home"
+      ],
+      "answer": "He lays it on his shoulders, rejoicing, and carries it home himself",
+      "context": "Luke 15:5 KJV: 'And when he hath found it, he layeth it on his shoulders, rejoicing.' The image of a young man carrying a live lamb across his neck became the very first common picture of Jesus in Christian art. Source: KJV Luke 15.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "The woman in Luke 15 has lost one of her ten pieces of silver somewhere inside her house. Jesus names the two very ordinary things she does to hunt for it.",
+      "choices": [
+        "Lights a candle and sweeps the house",
+        "Wakes her husband and searches the storeroom",
+        "Turns out her chest and shakes out the bedding",
+        "Sends her servant girl outside to check the courtyard"
+      ],
+      "answer": "Lights a candle and sweeps the house",
+      "context": "Luke 15:8 KJV: '...doth not light a candle, and sweep the house, and seek diligently till she find it?' Village houses in first-century Galilee had small windows and packed-earth floors -- a coin in the dust really did need a lamp and a broom. Source: KJV Luke 15.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The shepherd in Luke 15 gets home with the sheep on his shoulders and calls his friends and neighbours together. Jesus gives the exact words he says to them.",
+      "choices": [
+        "'Rejoice with me; for I have found my sheep which was lost'",
+        "'Blessed be the Lord; he hath restored what was taken from me'",
+        "'Come, my friends, and eat with me; my flock is whole again'",
+        "'Give thanks to God, who hath spared the least of these'"
+      ],
+      "answer": "'Rejoice with me; for I have found my sheep which was lost'",
+      "context": "Luke 15:6 KJV. Two verses later the woman with the coin says almost the same line -- 'Rejoice with me; for I have found the piece which I had lost' (Luke 15:9). The near-identical wording deliberately pairs the two scenes. Source: KJV Luke 15.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The picture Jesus paints in Luke 15 of a young man walking home with a sheep draped across his shoulders became the very first common image of Jesus in Christian art. It was painted around AD 200 -- more than a century before Constantine -- on the ceiling of a burial chamber in Rome. In which Roman burial complex is that earliest painting?",
+      "choices": [
+        "The Catacomb of Priscilla",
+        "The Catacomb of San Callisto",
+        "The Catacomb of Domitilla",
+        "The Catacomb of San Sebastiano"
+      ],
+      "answer": "The Catacomb of Priscilla",
+      "context": "The 'Good Shepherd' fresco sits on the domed ceiling of the Cubiculum of the Veiled Woman in the Catacomb of Priscilla, on the Via Salaria in Rome, around AD 200. The pose deliberately echoes the older Greek statue-type of Hermes Kriophoros, Hermes the ram-bearer -- a shape a Roman viewer would already recognise. Source: Bible Odyssey, 'The Good Shepherd in the Catacomb of Priscilla'.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Jesus does not tell the twin parables of the lost sheep and the lost coin out of nowhere. Luke 15:2 gives the specific complaint he is answering, spoken by the Pharisees and scribes as they watched him at supper.",
+      "choices": [
+        "'This man receiveth sinners, and eateth with them'",
+        "'By what authority doest thou these things?'",
+        "'Master, we would see a sign from thee'",
+        "'Is it lawful to give tribute unto Caesar, or not?'"
+      ],
+      "answer": "'This man receiveth sinners, and eateth with them'",
+      "context": "Luke 15:2 KJV. The whole of Luke 15 -- lost sheep, lost coin, and the longer Prodigal Son that follows -- is Jesus's reply to that single murmured line. The ratio of loss tightens as he goes: one in a hundred, then one in ten, then one in two. Source: KJV Luke 15.",
+      "legend": false
+    }
+  ]
+}

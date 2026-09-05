@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In his old age the great wizard of Arthur's court falls in love with a beautiful young damsel of the Lady of the Lake's kin. He follows her wherever she goes like a lovesick fool, and cannot leave her side. He is Merlin. What is the young woman's name in Malory (Book IV chapter 1)?",
+      "choices": ["Nimue", "Igraine", "Enide", "Iseult"],
+      "answer": "Nimue",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.1 (Caxton 1485). Malory's spelling is Nimue (with variants Nenive, Niviene); the French Vulgate calls her Viviane. Igraine is Arthur's mother. Enide is the heroine of Chretien's Erec et Enide. Iseult is the queen of the parallel Tristan story.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The damsel does not love Merlin back. Malory says plainly that she is AFRAID of him because of what he was rumoured to be from birth -- a rumour rooted in the older origin story Robert de Boron had put in writing a century before Malory. According to Malory, what did the damsel think Merlin was?",
+      "choices": ["a devil's son", "a fairy child", "a Saxon spy", "a Roman priest"],
+      "answer": "a devil's son",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.1; Robert de Boron, Merlin (c.1200). Nimue's fear is rooted in de Boron's antichrist-plot origin story for Merlin. Fairy child, Saxon spy, and Roman priest are the sort of thing a distrusted stranger might be called in Arthur's Britain but not what Malory writes.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The damsel is afraid, but she is also clever. She uses Merlin's infatuation against him. Whenever she wants him gone from her, she promises she will love him better if he teaches her only ONE MORE secret -- and Merlin, wanting the promise, hands over another spell, and another, until she has them all. What does Merlin teach the damsel in return for her promises of love?",
+      "choices": ["the whole of his magic", "the geography of Britain", "the language of birds", "the names of the saints"],
+      "answer": "the whole of his magic",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.1. Merlin hands over his spells one by one, and Nimue collects the whole arsenal. The language of birds is Solomon's; naming saints is a monk's work; teaching Britain's geography is the sort of thing Merlin ALREADY tells Arthur (from prophecy). Only the magic is the fatal gift.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Merlin goes to Arthur before the whole thing begins and tells the king exactly how he is going to die -- shut up alive by a woman he will himself have taught magic to, and lost to Arthur when Arthur needs him most. Arthur begs him to stay away from the woman. What does Merlin do about the future he has already foreseen?",
+      "choices": ["walks into it anyway", "hides in the north until she dies", "sets Arthur to guard him at night", "burns his own spellbooks first"],
+      "answer": "walks into it anyway",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.1. Merlin warns Arthur of his own coming downfall in specific detail (a damsel of the Lady's kin, taught his spells, sealing him under a stone), and then goes to her regardless. In Malory the prophecy IS the tragedy: knowing what is coming does not free him from it. The other three actions are what a prudent wizard might do and Merlin refuses.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The pair travel together into Cornwall. In a lonely place Nimue points to a great slab of rock and asks Merlin to show her the wonder that lies underneath it. Merlin climbs down into the hollow beneath the slab; and while he is below, Nimue turns his own teaching against him. What does Nimue do with the spells Merlin taught her, once he is under the stone?",
+      "choices": ["seals him inside forever", "burns him to ash", "turns him into a hawk", "opens the sea to drown him"],
+      "answer": "seals him inside forever",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.1. Nimue uses one of the spells Merlin himself taught her to fix the slab over the hollow so it can never be lifted; Merlin is trapped inside, alive, and cannot get out. Burning, transformation, and drowning are the sort of witch-endings a folktale might use, but not Malory's.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Sealed in the hollow beneath the stone in Cornwall, the prophet does not die. He lies down there alive, still knowing the whole shape of the future, and passing knights in the years to come are said to hear a certain unmistakable sound coming up from under the rock. What can travellers hear from beneath the stone in the legend?",
+      "choices": ["a man's voice", "a hammer's blow", "a bell's ringing", "a sea's roaring"],
+      "answer": "a man's voice",
+      "context": "Malory, Le Morte d'Arthur Book IV ch.1; folklore of Cornwall. Merlin lies alive and calls out prophecies from beneath the rock. A hammer, bells, and the sea are the sort of Cornish sounds a traveller might hear near a real ruin, but the legend gives his voice.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The medieval traditions disagree on WHERE the trap happens. The French Vulgate Cycle moves it out of Cornwall and into a real forest in Brittany, still visited today for its Arthurian associations -- the Forest of Paimpont, on the road out of Rennes. What is the legendary name of that Breton forest?",
+      "choices": ["Broceliande", "Argonne", "Sherwood", "Ardennes"],
+      "answer": "Broceliande",
+      "context": "French Vulgate Cycle; Wikipedia: Broceliande; the Forest of Paimpont in Brittany is the real forest identified with Broceliande. Argonne is a French forest famous from WWI. Sherwood is Robin Hood's forest in Nottinghamshire. Ardennes is the Belgian-French forest of Chretien's Cliges and later of many wars.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The French Vulgate has Nimue -- called Viviane in the French -- love Merlin genuinely, and instead of sealing him inside a stone she encloses him in a strange prison of her own making. It has no walls a hand could feel and no roof, and yet Merlin cannot cross out of it. What is Viviane's prison of Merlin in the French Vulgate?",
+      "choices": ["a tower of air", "a ring of salt", "a cage of glass", "a room of shadows"],
+      "answer": "a tower of air",
+      "context": "French Vulgate Cycle; Wikipedia: Broceliande. Viviane's tour d'air is invisible and unbounded, and yet Merlin cannot pass out of it -- an image often taken to mean he is bound by his own consent. The other three are witch-prisons a French romance might have invented and did not.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Post-Vulgate Suite du Merlin (c.1230-40) gives a THIRD version of Merlin's trap. In this one Nimue does not use a slab, and she does not use an invisible tower; she catches him under a certain tree in Broceliande that Breton and Irish folklore alike name as a fairy tree, its French name aubepine. Under what tree does the Suite du Merlin trap Merlin?",
+      "choices": ["a hawthorn", "an oak", "a yew", "an elm"],
+      "answer": "a hawthorn",
+      "context": "Post-Vulgate Suite du Merlin (c.1230-40); Wikipedia: Broceliande. The hawthorn (French aubepine) is a fairy tree in Breton and Irish folklore alike; the Suite catches Merlin beneath one. Oak, yew, and elm are famous mythic trees (Zeus's oak, English churchyard yew, elm as death-tree) but not this trap.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After Merlin is gone, the damsel who trapped him does not vanish from Arthur's story. Malory has her step into a great enchantress-office of Arthur's realm -- the woman who had held it before Nimue was beheaded by the wandering Sir Balin at Arthur's own court in Book II, and Nimue takes up her title. She stays at Arthur's side as protector and adviser for the rest of his reign. What is Nimue's title after Merlin's fall?",
+      "choices": ["chief Lady of the Lake", "Queen of Camelot", "Abbess of Glastonbury", "Keeper of the Grail"],
+      "answer": "chief Lady of the Lake",
+      "context": "Malory, Le Morte d'Arthur Books IV-XXI; Wikipedia: Lady of the Lake. Nimue replaces the earlier Lady of the Lake (whom Balin beheaded at Arthur's court in Book II ch.3), becomes Arthur's protector, saves him from Morgan le Fay's poisoned mantle, rescues him from Accolon's stolen Excalibur, and is one of the queens on the barge to Avalon. Queen of Camelot is Guinevere; Abbess of Glastonbury is Guinevere at the end; Keeper of the Grail is King Pelles.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Victorian poet Alfred Tennyson retold the story of Merlin's trap in a poem published in 1859 as part of his long Arthurian cycle Idylls of the King. Tennyson changes the trap again: no stone, no tower of air, no hawthorn. Instead his Vivien waves her arms over the sleeping wizard and weaves her spell around the tree above him -- Tennyson's chosen tree is the great sacred tree of British antiquity, the tree of the druids. Under what tree does Tennyson's Vivien trap Merlin?",
+      "choices": ["an oak", "an apple", "a rowan", "a walnut"],
+      "answer": "an oak",
+      "context": "Alfred Tennyson, Idylls of the King, 'Merlin and Vivien' (1859). Tennyson's Vivien puts the sleeping Merlin inside a hollow oak. Tennyson favours the oak because it is the Druidic tree of British antiquity. Apple, rowan, and walnut are other significant British trees but not this poem's.",
+      "legend": false
+    }
+  ]
+}

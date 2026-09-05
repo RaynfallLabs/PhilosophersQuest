@@ -1,0 +1,147 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "The whole war of the Tain Bo Cuailnge is fought for ONE thing. The queen of Connacht discovers that her husband Ailill owns a magnificent white-horned bull she has no equal for in her own herd -- so she raises an army and marches on Ulster to steal a rival bull to match it. Who is the queen?",
+   "choices": [
+    "Medb",
+    "Deirdre of the Sorrows",
+    "Emer",
+    "Grainne"
+   ],
+   "answer": "Medb",
+   "context": "The pillow-talk of Medb and Ailill counting their possessions opens the Tain; the great bull is the one thing on which Ailill outmatches her. Emer is Cu Chulainn's wife; Deirdre is from a different Ulster tale; Grainne belongs to the later Fenian Cycle. Wikipedia: Tain Bo Cuailnge.",
+   "legend": true
+  },
+  {
+   "tier": 1,
+   "stem": "Ailill's great bull of Connacht is named for its most striking feature. The Old Irish name means simply 'the White-Horned'. What is it called?",
+   "choices": [
+    "Finnbennach",
+    "Donn Cuailnge",
+    "Liath Macha",
+    "Enbarr"
+   ],
+   "answer": "Finnbennach",
+   "context": "Finn = 'white/fair', bennach = 'horned'. Donn Cuailnge is the OTHER bull, from Ulster (the next rung). Liath Macha is Cu Chulainn's grey horse; Enbarr is Manannan's horse. Wikipedia: Donn Cuailnge.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "The bull Medb marches into Ulster to steal is the counterpart of Finnbennach -- a huge brown bull from the peninsula of Cooley, owned by an Ulster chieftain named Daire mac Fiachna. What is this bull's name?",
+   "choices": [
+    "Donn Cuailnge",
+    "Finnbennach",
+    "the Dun Cow of Cooley",
+    "the Salmon of Assaroe"
+   ],
+   "answer": "Donn Cuailnge",
+   "context": "Donn = 'brown/dark'; Cuailnge = 'of Cooley'. The 'Dun Cow' is a different Irish icon (and lends its name to the Lebor na hUidre manuscript); the Salmon of Assaroe is a wisdom-fish. Wikipedia: Donn Cuailnge.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "The two bulls are the last shape of a much older enmity. The tale De Chophur in da Muccida ('The Quarrel of the Two Pig-Keepers') tells how a pair of supernatural swineherds -- Friuch and Rucht -- transformed through many shapes fighting each other. Their final change before the bulls was into two of the same tiny thing, swallowed by two cows and reborn. What were they?",
+   "choices": [
+    "two worms",
+    "two salmon",
+    "two ravens",
+    "two hawthorn thorns"
+   ],
+   "answer": "two worms",
+   "context": "The cows that drank the worms then gave birth to Donn Cuailnge and Finnbennach. The Tain war is the LAST stage of this quarrel. Wikipedia: Donn Cuailnge; De Chophur in da Muccida.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "Cu Chulainn's single-handed defence of the ford collapses only when the men of Ulster finally rally, and even then Medb's raiders manage the one thing the whole war was FOR: they drive the brown bull off into Connacht. They bring him back to the royal seat of Medb and Ailill, where the two king-bulls are put in a single enclosure. What is the name of that royal seat?",
+   "choices": [
+    "Cruachan",
+    "Emain Macha",
+    "Tara",
+    "Dun Aengus"
+   ],
+   "answer": "Cruachan",
+   "context": "Cruachan (modern Rathcroghan, County Roscommon) is Medb and Ailill's capital. Emain Macha is the seat of Conchobar and the Ulstermen; Tara is the High King's seat; Dun Aengus is a stone fort on Inishmore. Wikipedia: Rathcroghan.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "The moment the two king-bulls see each other in the pen at Cruachan they attack, and the whole assembly comes out to watch. The fight does not stay at Cruachan. Instead it rages across the whole of Ireland, tearing up ground, bellowing so no one sleeps. How long does the combat last?",
+   "choices": [
+    "a full day and a full night",
+    "a single hour at sundown",
+    "three summers and three winters",
+    "the seven nights of a wake"
+   ],
+   "answer": "a full day and a full night",
+   "context": "Recension I closes with this all-Ireland running battle from noon to noon. The 'three summers and three winters' echoes older Indo-European fight-formulas but is not this text. Wikipedia: Tain Bo Cuailnge.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "In the morning the brown bull of Ulster emerges the winner. As he runs home to Cooley he carries something on his horns: what is left of Finnbennach, torn apart in the night. Along the way he drops pieces of the losing bull, and the tale claims that the Irish landscape itself keeps the memory -- each piece falling gives a landmark its name. Modern Athlone, on the river Shannon, is said in this tradition to be named for one such fallen piece. Which piece?",
+   "choices": [
+    "the loin",
+    "the liver",
+    "the shoulder",
+    "the shin"
+   ],
+   "answer": "the loin",
+   "context": "Ath Luain = 'Ford of the Loin'; the Old Irish luan is the loin or thigh, and the school-lore collection at Dúchas.ie preserves the tradition that the bull's loin-bone dropped there. Wikipedia: Donn Cuailnge; Dúchas.ie schools collection, Christian Brothers, Athlone.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "When the winning bull finally reaches his home country, he stops. He sets his back against a hill, gives a great bellow -- and does not walk away from the victory. What kills him?",
+   "choices": [
+    "his own heart bursts",
+    "Medb's men catch up and spear him",
+    "the Morrigan takes him in raven-form",
+    "he drowns fording the Boyne"
+   ],
+   "answer": "his own heart bursts",
+   "context": "The exertion, the fury, the grief for a rival -- the story leaves the exact cause unsettled; the heart simply bursts. Wikipedia: Donn Cuailnge.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The bleakness of the Tain's ending sits in one summary line. Medb and Ailill return to Cruachan, the Ulstermen return to Emain Macha, and Ferdiad lies dead at the ford. Cu Chulainn is spent. What became of the TWO BULLS the war was fought for?",
+   "choices": [
+    "both bulls are dead by the end of the tale",
+    "the Ulster bull lives and returns to Cooley alive",
+    "the Connacht bull lives and stays at Cruachan alive",
+    "both bulls survive but neither will ever breed again"
+   ],
+   "answer": "both bulls are dead by the end of the tale",
+   "context": "One bull ate the other, then died of the eating. The whole war produced NOTHING -- Medb goes home with less than she started with. Wikipedia: Tain Bo Cuailnge.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The ending of the Tain sits alongside two other great epics in world literature that refuse their heroes a clean victory. Which Greek epic does the Tain's ending most resemble -- an ending where the hero-city is not yet fallen but every listener knows what is coming, and the last note is a funeral for a warrior on the losing side?",
+   "choices": [
+    "the Iliad",
+    "the Odyssey",
+    "the Argonautica",
+    "the Theogony"
+   ],
+   "answer": "the Iliad",
+   "context": "The Iliad closes on Hector's funeral -- Troy still standing, Achilles doomed, the war unresolved. The Odyssey ends on a homecoming; the Argonautica on the fleece secured; the Theogony is a genealogy of the gods. Wikipedia: Iliad; Tain Bo Cuailnge.",
+   "legend": false
+  },
+  {
+   "tier": 5,
+   "stem": "The single greatest death Medb spent to prosecute the Tain was not one of her nameless spearmen but her own foster-brother and champion, a warrior of Fir Diad tribe sent against Cu Chulainn at the ford of Ath Fhirdiad. He fought Cu Chulainn for three days before falling to the belly-spear. Who was he?",
+   "choices": [
+    "Ferdiad mac Damain",
+    "Loegaire Buadach",
+    "Cet mac Matach",
+    "Conall Cernach"
+   ],
+   "answer": "Ferdiad mac Damain",
+   "context": "Ferdiad and Cu Chulainn were foster-brothers trained together by Scathach; Medb's demand that Ferdiad fight him is one of the Tain's most-quoted set-pieces. Loegaire and Conall are Ulster champions; Cet mac Matach is a Connacht warrior from a different tale. Wikipedia: Ferdiad.",
+   "legend": true
+  }
+ ]
+}

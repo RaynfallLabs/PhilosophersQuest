@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Fenian Cycle of Irish myth tells of the poet-warrior son of Fionn mac Cumhaill, the finest singer of the Fianna, whose name means 'little fawn' because his mother had been enchanted into a deer. What is that son's name?",
+      "choices": ["Oisin", "Oscar", "Diarmuid", "Caoilte"],
+      "answer": "Oisin",
+      "context": "Oisin (from os, 'deer', with the diminutive) is Fionn's son by Sadhbh, who had been cursed into doe-shape by the druid Fear Doirche. Oscar is Oisin's own son, Diarmuid and Caoilte are other Fianna warriors. Source: https://godsandmonsters.info/oisin/",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Fenian tale, Fionn's poet-son is carried away over the sea by a woman of the Sidhe to live on a distant island paradise from which few mortals ever return. What is the Irish name of that island?",
+      "choices": ["Tir na nOg", "Emain Ablach", "Mag Mell", "Ynys Wydryn"],
+      "answer": "Tir na nOg",
+      "context": "Tir na nOg means 'the Land of the Young': no one there grows old, the trees are always in flower and fruit at once, and no sickness comes. Emain Ablach, Mag Mell ('the plain of delight'), and Ynys Wydryn ('the isle of glass') are three other real Celtic Otherworld names, all cognate with Avalon in Arthurian legend. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "One morning as the Fianna hunted on the shore of a lake in Kerry, a woman rode up out of the sea on a white horse whose hooves never broke the surface of the waves. She named herself as the daughter of the sea-god Manannan mac Lir. What was her name?",
+      "choices": ["Niamh Chinn Oir", "Sadhbh", "Grainne", "Emer"],
+      "answer": "Niamh Chinn Oir",
+      "context": "Niamh Chinn Oir means 'Niamh of the Golden Head' (her hair fell to the horse's flank). Sadhbh is Oisin's own mother; Grainne is the woman Diarmuid runs away with; Emer is Cu Chulainn's wife (Ulster Cycle). Source: https://godsandmonsters.info/oisin/",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the tale of Oisin, Niamh's white horse carried the two of them off the sand at Loch Lein, out over the sea itself without breaking the surface of the water. In which direction did they ride to reach the Land of the Young?",
+      "choices": ["West, into the setting sun", "East, into the rising sun", "South, along the coast", "North, up the Irish ridge"],
+      "answer": "West, into the setting sun",
+      "context": "In Irish tradition the Otherworld is always west, across the sea: the same direction where the ancient Irish believed the sun went to die each night. This is why later medieval Irish voyage-tales, the immrama, always sail west toward the islands of the blessed. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The white horse that carried Oisin and Niamh over the sea to Tir na nOg is named in the tale. What was that horse's name?",
+      "choices": ["Embarr of the Flowing Mane", "Sleipnir the Eight-Legged", "Pegasus of the White Wings", "Liath Macha of the Grey Battle"],
+      "answer": "Embarr of the Flowing Mane",
+      "context": "Embarr (sometimes spelled Enbarr, meaning 'water-foam') belonged to the sea-god Manannan mac Lir before being lent to his daughter Niamh. Sleipnir is Odin's horse (Norse pillar); Pegasus is Bellerophon's (Greek pillar); Liath Macha is Cu Chulainn's chariot-horse from the Ulster Cycle. Source: https://godsandmonsters.info/oisin/",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Oisin lived in Tir na nOg with Niamh and their children for what felt to him like only a short stretch of years. How many years did he think had passed there before the homesickness for Ireland grew unbearable?",
+      "choices": ["Three years", "Seven years", "Twelve years", "One hundred years"],
+      "answer": "Three years",
+      "context": "In the Otherworld the time seemed to be only three years to Oisin. The bitter joke of the tale is that three years in Tir na nOg were three hundred years in Ireland: the whole Fianna had been dead for centuries while he lived what he thought was a short married idyll. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Oisin asked leave to ride back to Ireland and visit his father Fionn and the old Fianna, Niamh let him take the white horse but gave him one strict warning about what he must never let happen while he was there. What did she warn him?",
+      "choices": ["That his feet must never touch Irish soil", "That he must never look back over his shoulder", "That he must never speak his own name aloud", "That he must never eat any food grown on land"],
+      "answer": "That his feet must never touch Irish soil",
+      "context": "The warning is a fatal condition: as long as he stayed on horseback the Otherworld's timelessness would hold him, but the moment he touched Irish ground the three hundred years he had missed would fall on him. Compare Orpheus's warning not to look back at Eurydice, a Greek-pillar tale of the same shape. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Riding through Ireland on the white horse, Oisin found the country changed beyond recognition, Fionn centuries dead and the Fianna a legend not living men. Then he saw a group of men by the roadside working at something that was too heavy for them, and stopped to help. What were the men trying to do?",
+      "choices": ["Lift a great stone", "Ford a swollen river", "Push a cart out of the mud", "Fell an oak tree"],
+      "answer": "Lift a great stone",
+      "context": "The detail is one of the sharpest in the tale: three hundred years on, the men of Ireland are so much smaller and weaker than the Fianna were that a group of them together cannot budge a boulder Oisin can lean down from the saddle and move with one hand. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Leaning down from the saddle to help the men move the stone, Oisin's fatal moment comes not from a spear or from an enemy but from one small piece of tack that snaps under him. What breaks and sends him to the ground?",
+      "choices": ["The saddle-girth", "The bridle-strap", "The stirrup-leather", "The reins"],
+      "answer": "The saddle-girth",
+      "context": "The saddle-girth is the strap that runs under the horse's belly and holds the saddle on. When it broke, saddle and rider both slid sideways to the ground. The whole three hundred years poured into him the instant his foot touched the soil. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The moment Oisin's foot touched the Irish ground beside the fallen stone, the three centuries he had missed fell on him at once. What became of the young poet-warrior of the Fianna, right there by the roadside?",
+      "choices": ["He aged into a blind, withered old man", "He was turned into a doe like his mother", "He crumbled entirely to dust and blew away", "He was pulled back into the sea by Manannan mac Lir"],
+      "answer": "He aged into a blind, withered old man",
+      "context": "His back bent, his hair went white, his skin withered to parchment, his eyes went blind. The white horse Embarr galloped away riderless back over the waves to Tir na nOg. Oisin was left ancient and blind by the road. Source: https://irishgodsandgoddesses.net/myths/oisin-in-tir-na-nog/",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the frame-story of the Middle Irish text Acallam na Senorach, 'The Colloquy of the Ancients', a wandering Christian saint finds the aged Oisin by the roadside and questions him for months about the old pagan days of the Fianna. Which saint hears out the whole Fenian Cycle from Oisin's mouth?",
+      "choices": ["St Patrick", "St Brigid of Kildare", "St Columba of Iona", "St Brendan the Navigator"],
+      "answer": "St Patrick",
+      "context": "The Acallam na Senorach (c. 1200) uses Patrick as the sympathetic Christian listener to whom the last surviving pagan Fenian dictates the old warrior-tales before dying. Every other saint listed is a real early Irish saint. The device gave medieval Christian Ireland a way of preserving the pagan legends. Source: https://godsandmonsters.info/oisin/",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The tale of Oisin's ride to the Land of the Young was reshaped into a long English poem by an Irish poet who used it to launch his career in 1889. Which poet wrote The Wanderings of Oisin?",
+      "choices": ["W. B. Yeats", "James Joyce", "Seamus Heaney", "Patrick Kavanagh"],
+      "answer": "W. B. Yeats",
+      "context": "The Wanderings of Oisin (1889) was William Butler Yeats's first long poem and his announcement as an Irish national voice. He drew on Michael Comyn's Laoi Oisin ar Thir na nOg (c. 1750), itself set down from centuries of oral tradition. All four choices are real major Irish writers. Source: https://godsandmonsters.info/oisin/",
+      "legend": false
+    }
+  ]
+}

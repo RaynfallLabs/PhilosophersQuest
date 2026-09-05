@@ -1,0 +1,160 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "A young god of the Tuatha De Danann falls asleep and dreams of the most beautiful woman he has ever seen, standing at the foot of his bed. He reaches for her -- and she vanishes. She comes back every night for a full year. He is the love-and-youth god of the Irish, son of the Dagda and the river-goddess Boann, and his name means 'the Young Son'. Who is he?",
+   "choices": [
+    "Aengus",
+    "Lugh",
+    "Nuada",
+    "Manannan"
+   ],
+   "answer": "Aengus",
+   "context": "Aengus (also spelled Oengus), often called Aengus Og ('Young Aengus'), is the Tuatha De god of love and youth. Lugh is the sun-and-craft god; Nuada the Silver-Arm was king of the Tuatha De; Manannan mac Lir is the sea-god. Wikipedia: Aengus; Aislinge Oenguso.",
+   "legend": true
+  },
+  {
+   "tier": 1,
+   "stem": "Aengus's home in Ireland is a great mound on the River Boyne -- the oldest surviving monument in the country, older than the Egyptian pyramids by five hundred years. Modern archaeologists call the site Newgrange. What did the ancient Irish call it?",
+   "choices": [
+    "Bru na Boinne",
+    "Emain Macha",
+    "Tara",
+    "Dun Aengus"
+   ],
+   "answer": "Bru na Boinne",
+   "context": "Bru na Boinne means 'the Dwelling of the Boyne'. Emain Macha is the Ulster capital; Tara is the seat of the High King; Dun Aengus is a cliff-fort on Inishmore (unrelated despite the name). Wikipedia: Bru na Boinne.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Aengus falls so sick from the nightly dream of the vanishing woman that he cannot eat and will not speak. His mother Boann searches every hill and glen of Ireland for a year and cannot find the girl. His father the Dagda searches for another year -- nothing. In desperation they send for a third searcher, the king of the sidhe of Munster, and HE finds her after a third year. Who is this king?",
+   "choices": [
+    "Bodb Derg",
+    "Manannan mac Lir",
+    "Midir of Bri Leith",
+    "Elcmar of the Brug"
+   ],
+   "answer": "Bodb Derg",
+   "context": "Bodb Derg ('Bodb the Red') is king of the sidhe of Munster and later chosen king over all the Tuatha De after the Milesian conquest. Midir and Elcmar are other sidhe-lords; Manannan rules the sea-realm. Mythical Ireland: Aislinge Oengusso.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Wherever Aengus goes, four small creatures circle his head. The Irish poets say they are his kisses, turned by his own love-power into living things. What creatures follow him?",
+   "choices": [
+    "four birds",
+    "four white hounds",
+    "four salmon",
+    "four butterflies"
+   ],
+   "answer": "four birds",
+   "context": "The Dindsenchas records the four kiss-birds; a druid later traps them out of a tree. This is the root of a long strand in Irish poetry about love-as-birds. Wikipedia: Aengus.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "Bodb Derg finds the woman of the dream at last, on a lake in the west of Ireland where a strange company of women is gathered. She stands among one hundred and fifty of them, all chained in pairs by chains of the same metal. Only she -- the fairest -- wears a chain of a different metal, single around her neck. What metal marks her out?",
+   "choices": [
+    "gold",
+    "iron",
+    "bronze",
+    "copper"
+   ],
+   "answer": "gold",
+   "context": "The hundred-and-fifty are paired by silver; the fairest, Caer, is marked out by a single gold chain. Wikipedia: Caer Ibormeith.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "The lake where Bodb Derg finds the chained company of women has a name that sounds like a warning: it means 'the Lake of the Dragon's Mouth'. Where does the tale send Aengus to find her?",
+   "choices": [
+    "Loch Bel Dracon",
+    "Loch Neagh",
+    "Loch Derg",
+    "Loch Corrib"
+   ],
+   "answer": "Loch Bel Dracon",
+   "context": "Bel Dracon = 'dragon's mouth'. Loch Neagh, Loch Derg, and Loch Corrib are real Irish lakes, but the meeting takes place at Loch Bel Dracon specifically. Wikipedia: Caer Ibormeith.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "The name of the woman Aengus has been dreaming of turns out to mean 'Yew-Berry' -- the yew being the Irish tree of eternity, since it grew in graveyards and lived for centuries. Her father is Ethal Anbuail of Connacht. What is her name?",
+   "choices": [
+    "Caer Ibormeith",
+    "Deirdre of the Sorrows",
+    "Grainne of Diarmuid",
+    "Emer of Cuchulainn"
+   ],
+   "answer": "Caer Ibormeith",
+   "context": "Ibormeith = 'yew-berry'. Deirdre, Grainne, and Emer are other named heroines of Irish myth (Ulster Cycle and Fenian Cycle), all adjacent-real distractors. Wikipedia: Caer Ibormeith.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "When Aengus reaches Loch Bel Dracon to claim Caer, he finds she is not simply a woman. Every alternate year, on one day of the calendar, she and her one-hundred-and-fifty companions change shape -- for a full year they are neither girls nor human at all, but a company of chained birds on the water. On which day does the change come?",
+   "choices": [
+    "Samhain, the first of November",
+    "Beltane, the first of May",
+    "Imbolc, the first of February",
+    "Lughnasa, the first of August"
+   ],
+   "answer": "Samhain, the first of November",
+   "context": "Samhain is the Irish threshold between summer and winter and the classic moment for the veil between worlds to thin -- the natural day for a shape-change. Beltane, Imbolc, and Lughnasa are the other three great Irish quarter-days. Wikipedia: Caer Ibormeith.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "On Samhain morning Aengus stands at the edge of Loch Bel Dracon and calls to Caer among the flock on the water. She answers that she will come to him only on ONE condition -- something HE must do first, before she will leave the lake with him. What is the condition?",
+   "choices": [
+    "he must turn himself into a swan too",
+    "he must strike off her silver chain with his own sword",
+    "he must fast for three days and three nights",
+    "he must give up his home at Bru na Boinne"
+   ],
+   "answer": "he must turn himself into a swan too",
+   "context": "The condition is transformation, not payment or oath -- Aengus must MEET her in her other shape. He does, and joins her on the water. Wikipedia: Caer Ibormeith; Mythical Ireland: Aislinge Oengusso.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "The two swans lift off the water together, circle back to Bru na Boinne, and sing as they fly. The song is so sweet that everyone in Ireland who hears it is overcome. What does the singing do?",
+   "choices": [
+    "it puts all of Ireland to sleep for three days and three nights",
+    "it heals every wound in Ireland at once",
+    "it silences every other bird in Ireland for a year",
+    "it turns every lake in Ireland to gold at sunrise"
+   ],
+   "answer": "it puts all of Ireland to sleep for three days and three nights",
+   "context": "This is the closing image of Aislinge Oenguso: the swan-song lays the whole island under a three-day sleep. Wikipedia: Caer Ibormeith.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "Aengus does not INHERIT Bru na Boinne -- he TRICKS his father the Dagda out of it. The trick turns on the Old Irish phrase 'laa ocus aidche'. Aengus asks the Dagda if he can have the Bru for laa ocus aidche and the Dagda agrees. What does Aengus then argue the phrase actually means, and so keep the Bru forever?",
+   "choices": [
+    "'day and night' -- meaning all of time, forever",
+    "'a hundred summers' -- the span of an old man's life",
+    "'until the salmon return' -- the never-arriving day",
+    "'while the yew stands' -- meaning as long as the tree lives"
+   ],
+   "answer": "'day and night' -- meaning all of time, forever",
+   "context": "Old Irish has no indefinite article, so 'a day and a night' and 'day and night' are the same phrase. Aengus takes the second meaning and keeps the Bru. The trick is preserved in the Tochmarc Etaine, where the elder version has the Dagda helping Aengus play it on Elcmar. Wikipedia: Aengus.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "In 1899 the Irish poet W. B. Yeats wrote his most anthologised love poem in Aengus's voice -- a wandering man cutting a hazel wand, catching a silver trout that turns into 'a glimmering girl / With apple blossom in her hair', and searching for her thereafter through hollow and hilly lands. What is the poem called?",
+   "choices": [
+    "The Song of Wandering Aengus",
+    "The Stolen Child",
+    "The Wanderings of Oisin",
+    "The Lake Isle of Innisfree"
+   ],
+   "answer": "The Song of Wandering Aengus",
+   "context": "Yeats fused the Aislinge Oenguso with his own imagery of hazel and apple. The Stolen Child, The Wanderings of Oisin, and The Lake Isle of Innisfree are three of Yeats's other famous poems, all real. Wikipedia: The Song of Wandering Aengus.",
+   "legend": false
+  }
+ ]
+}

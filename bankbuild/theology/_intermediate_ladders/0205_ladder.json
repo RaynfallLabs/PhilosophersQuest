@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories, Thor the thunder-god has a wife who lives with him in Asgard and is famous among the gods for one particular beauty. Poets say no woman in the nine worlds has ever had hair like hers -- long and thick and golden, falling all the way to the ground. What is the name of Thor's wife?",
+      "choices": ["Sif", "Frigg", "Freyja", "Idunn"],
+      "answer": "Sif",
+      "context": "Snorri, Gylfaginning 31 and Skaldskaparmal 43: Sif is Thor's wife and is named for her extraordinary golden hair. Frigg is Odin's wife and queen of Asgard. Freyja is the Vanir goddess of love. Idunn is the goddess who keeps the golden apples of youth. Sif is also the mother of the god Ullr, the archer and skier of Asgard.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Loki the trickster comes upon Thor's wife one afternoon while she is fast asleep in her chamber. For no reason but mischief, he takes out a knife and does something to her that will start a whole chain of trouble in Asgard. What does Loki do to Sif while she is sleeping?",
+      "choices": ["shears her golden hair to the scalp", "steals a ring off her finger", "cuts the strap of her golden girdle", "carves a rune on her forehead"],
+      "answer": "shears her golden hair to the scalp",
+      "context": "Snorri, Skaldskaparmal 43: Loki simply cuts off all Sif's famous hair, leaving her scalp bare. Snorri gives no motive beyond mischief -- this is one of the purest examples of Loki being cruel because he can. The other three options are inventions built out of other Norse objects (golden rings, girdles, runes) that have nothing to do with this scene.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Thor comes home and finds his wife bald, he seizes Loki and threatens him with a specific violence unless Loki makes it right. What does Thor threaten to do to Loki?",
+      "choices": ["break every bone in his body", "hang him from the branches of Yggdrasil", "throw him into the sea for Jormungandr", "sew his lips shut with an awl"],
+      "answer": "break every bone in his body",
+      "context": "Snorri, Skaldskaparmal 43: Thor threatens to break every bone in Loki's body unless he brings back hair of real gold that will grow like living hair. 'Sew his lips shut with an awl' is a real Norse punishment for Loki -- but that one comes LATER in the same story, done by the dwarf Brokkr, not by Thor. The distractors for hanging and drowning are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Under threat from Thor, Loki hurries down into the underground world of the dark-elves and the master smiths, looking for craftsmen who can make hair of real gold. What is the name of this underground world of the dwarves?",
+      "choices": ["Svartalfheim", "Jotunheim", "Muspelheim", "Niflheim"],
+      "answer": "Svartalfheim",
+      "context": "Snorri, Gylfaginning 17: Svartalfheim ('the home of the black elves') is where the dwarves and dark-elves live, one of the nine worlds of Yggdrasil. Jotunheim is the giants' land. Muspelheim is the fire-world of the giant Surt. Niflheim is the primordial cold-mist world. All are real named worlds in Snorri; only Svartalfheim is the dwarves' home.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the underworld Loki goes to the workshop of a family of three dwarf-brothers who are the master smiths of Svartalfheim -- named in Snorri as the family who will make Sif's replacement hair. What is the collective name for these three dwarf smith-brothers?",
+      "choices": ["the Sons of Ivaldi", "the Sons of Muspell", "the Sons of Fjorgyn", "the Sons of Bor"],
+      "answer": "the Sons of Ivaldi",
+      "context": "Snorri, Skaldskaparmal 43: the Sons of Ivaldi are three dwarf-brothers who are the master smiths of the dark-elf world. The Sons of Muspell are the fire-giants who will ride out at Ragnarok. Fjorgyn is Thor's mother; her 'sons' would be Thor himself. The Sons of Bor are Odin, Vili and Ve -- the three gods who kill Ymir. The wrong answer many first-time readers give is 'Brokkr and Sindri' -- they are the OTHER dwarf-smiths who come next in the same story.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Sons of Ivaldi do not only make Sif a new fall of golden hair for Loki to carry home. In the same fire in the same workshop, they make two more marvels that Loki takes back to Asgard -- both of which end up as the signature possessions of other named gods. What are the two other treasures the Sons of Ivaldi make in the same session?",
+      "choices": ["the ship Skidbladnir and the spear Gungnir", "the hammer Mjolnir and the ring Draupnir", "the sword Gram and the necklace Brisingamen", "the boar Gullinbursti and the horse Sleipnir"],
+      "answer": "the ship Skidbladnir and the spear Gungnir",
+      "context": "Snorri, Skaldskaparmal 43: the Sons of Ivaldi make three treasures in one session -- Sif's golden hair, Freyr's folding ship Skidbladnir, and Odin's spear Gungnir. Mjolnir, Draupnir and Gullinbursti are made by the OTHER pair of dwarves, Brokkr and Sindri, in the wager that comes next. Gram is Sigurd's dragon-slaying sword. Brisingamen is Freyja's necklace. Sleipnir is Loki's own eight-legged son.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Loki hurries back to Asgard with the golden hair in his hand and lays it on Sif's bare scalp. Snorri gives one detail about what the hair does the moment it touches her head -- the detail that makes it not just a wig but a working replacement. What does the golden hair do the moment it touches Sif's head?",
+      "choices": ["takes root and grows as living hair", "burns cold as ice against the skin", "sings a low tone that only Sif can hear", "turns from gold to Sif's original blonde"],
+      "answer": "takes root and grows as living hair",
+      "context": "Snorri, Skaldskaparmal 43: the moment the golden hair touches Sif's scalp it takes root and begins to grow just like her real hair. This is the point of the whole errand -- Thor had specifically demanded hair that would grow. Snorri gives no other special properties; the other options are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On his way back out of the dwarf-halls with the three treasures, Loki cannot resist making a boast to two other dwarf smiths he passes -- the boast that the Sons of Ivaldi are the finest smiths in all the worlds. Those two other dwarves take it as a challenge, and the second wager begins. Which two dwarf-brothers does Loki's boast provoke into the second contest?",
+      "choices": ["Brokkr and Sindri", "Fjalar and Galar", "Baugi and Suttung", "Nordri and Sudri"],
+      "answer": "Brokkr and Sindri",
+      "context": "Snorri, Skaldskaparmal 43: Brokkr and Sindri (Sindri is sometimes called Eitri) take Loki's boast as a wager and set to work on three more treasures -- the boar Gullinbursti, the arm-ring Draupnir, and the hammer Mjolnir. Fjalar and Galar are the dwarves who murder Kvasir. Baugi and Suttung are giants in the Mead of Poetry story. Nordri and Sudri are two of the four sky-holding dwarves.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Loki loses the second wager (the judges rule Mjolnir the finest of all six treasures), and the forfeit is Loki's head. Loki wriggles out of the forfeit on the technicality that the wager did not include his neck, so his head cannot be removed. Brokkr the dwarf, cheated of his prize, settles for a lesser but still famous punishment. What does Brokkr do to Loki as a substitute for taking his head?",
+      "choices": ["sews his lips shut with an awl and a leather thong", "burns a rune into his forehead with a hot iron", "cuts off his tongue with the same knife Loki used on Sif", "chains him to a rock beneath Asgard for a year"],
+      "answer": "sews his lips shut with an awl and a leather thong",
+      "context": "Snorri, Skaldskaparmal 43: Brokkr takes an awl called Vartari and a leather thong and sews Loki's lips shut. Loki eventually tears the thong out. The whole cycle -- prank, wager, forfeit, sewing shut -- began with one bald head. 'Chained to a rock' is a real Norse Loki-punishment, but that one comes MUCH later, after the death of Baldr. The other two distractors are inventions.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Because of this story, Norse court-poets afterwards used a fixed poetic name-substitute -- a kenning -- for one particular thing, based on Sif's replacement hair. Whenever a skaldic poet wanted to refer to that thing indirectly, they would call it 'the hair of Sif'. What did the kenning 'the hair of Sif' mean in Norse poetry?",
+      "choices": ["gold", "wheat at harvest", "the light of dawn", "the wife of a warrior"],
+      "answer": "gold",
+      "context": "Snorri, Skaldskaparmal 39: the standard list of kennings for gold includes 'Sif's hair', because Sif's replacement hair was spun of real gold that grew on her head. 'Wheat at harvest' is the older grain-goddess reading some modern scholars give of Sif herself, but the kenning is for gold. Norse poets loved this kind of story-derived name -- 'Kvasir's blood' for poetry, 'the sea-king's ride' for a ship, 'Odin's storm' for a battle.",
+      "legend": true
+    }
+  ]
+}

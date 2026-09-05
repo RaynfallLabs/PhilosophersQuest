@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Prose Edda a stranger arrives at the hall of the Norse gods and offers to build them a great stone rampart -- one that no giant will ever be able to break through. Around which stronghold does the stranger offer to build his wall?",
+      "choices": ["Asgard", "Valhalla", "Midgard", "Jotunheim"],
+      "answer": "Asgard",
+      "context": "Gylfaginning 42: the stranger offers to build a rampart around Asgard, the home of the Aesir. Valhalla is Odin's hall inside Asgard, not the outer boundary. Midgard is the world of humans. Jotunheim is where the giants live -- what the wall is supposed to keep OUT.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The stranger who offered to build the wall around Asgard would not name any price in gold or silver. Instead he asked for one of the Aesir's own goddesses as his wife -- a shocking payment the gods almost refused outright. Which goddess did the builder demand as his bride?",
+      "choices": ["Freyja", "Frigg", "Sif", "Idunn"],
+      "answer": "Freyja",
+      "context": "Gylfaginning 42: the builder demanded Freyja the goddess of love. Frigg is Odin's wife. Sif is Thor's wife (the same Sif whose golden hair Loki cut off). Idunn keeps the apples of youth. On top of the goddess, the builder also demanded the sun and the moon.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The stranger's demand for Freyja alone was staggering, but he added a second and a third thing to his price -- two more prizes he would take home if he finished the wall on time. Alongside Freyja as his bride, what else did the builder ask for?",
+      "choices": ["the sun and the moon", "the sacred spear and the ship", "the golden apples and the mead", "the world-tree and the well"],
+      "answer": "the sun and the moon",
+      "context": "Gylfaginning 42: the builder demanded Freyja, plus the sun and the moon out of the sky. The spear Gungnir and the ship Skidbladnir are dwarf-forged gifts to the gods, not up for wager. Idunn's apples of youth and the Mead of Poetry are other treasures. Yggdrasil the world-tree and Mimir's well are cosmological features, not gifts to give.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Aesir were about to refuse the builder's shocking bargain when one of the gods argued them into taking it -- with the sly twist that the builder must do all the work single-handed, in one winter, or lose everything. Which of the gods talked the Aesir into the deal?",
+      "choices": ["Loki", "Odin", "Thor", "Heimdall"],
+      "answer": "Loki",
+      "context": "Gylfaginning 42: Loki talked the reluctant Aesir into accepting on the impossible-sounding terms. Odin presides but does not push the bargain. Thor is away in the east fighting trolls when the deal is struck. Heimdall watches Bifrost, not the bargaining table.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The builder agreed to the one-winter, no-helper terms on a single condition -- he must be allowed to use his own animal to haul the stones. Snorri says this beast turned out to do more of the wall-work than the builder himself did. What kind of animal did the builder bring with him?",
+      "choices": ["a stallion", "an ox", "a bear", "a giant boar"],
+      "answer": "a stallion",
+      "context": "Gylfaginning 42: the builder brought Svadilfari, a stallion whose stone-hauling did more work than his master. Oxen haul stones in many myths (Rome's plough, Ireland's cattle-raid) but not this one. Freyr's Gullinbursti is a boar, from the Brokkr wager. Bears do not appear in this tale.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Snorri tells us how close the builder was to winning. Working through winter with only his stallion, he had raised walls so high the giants could not have broken them, and only one part of the fortification was still unfinished when the deadline was almost on him. What was left to build with three days to go?",
+      "choices": ["the gateway", "the northern watchtower", "the inner keep", "the well inside the walls"],
+      "answer": "the gateway",
+      "context": "Gylfaginning 42: with three days before the first day of summer, only the gateway (the doorway through the wall) remained. Snorri does not describe watchtowers, a keep, or a well inside Asgard's outer wall; those are medieval castle features.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Seeing they were about to lose their goddess and the light of the sky, the Aesir did not politely renegotiate -- they turned on one of their own and threatened him with death unless he sabotaged the wall himself. Which god did the Aesir threaten to kill if he did not stop the builder?",
+      "choices": ["Loki", "Odin", "Baldr", "Freyr"],
+      "answer": "Loki",
+      "context": "Gylfaginning 42: because Loki was the one who had pushed the deal through, the Aesir threatened him with death unless he wrecked it. Odin is the chief but does not receive the threat. Baldr is the shining son, not yet dead in this story. Freyr is Freyja's brother and would be a victim, not a saboteur.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "To sabotage the wall Loki changed his shape and slipped out of the woods at the height of the last night's work. Whatever he had become, the sight of him was enough to make the builder's stallion snap his harness and chase off into the forest all night. What shape had Loki taken for this trick?",
+      "choices": ["a mare", "a wolf-bitch", "a swan", "a hare"],
+      "answer": "a mare",
+      "context": "Gylfaginning 42: Loki turned into a mare and lured Svadilfari away. He became a fly at Brokkr's bellows, a salmon at his capture, and the old woman Thokk at Baldr's funeral -- but never a wolf-bitch, swan, or hare. Months later the mare-form Loki gave birth to Sleipnir, the eight-legged foal.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When the sun rose and the wall stood unfinished, the builder saw he had been cheated of Freyja and the sky and flew into a rage -- and in his fury his disguise fell away. Snorri says he had never been the ordinary craftsman he pretended to be. What was the builder truly?",
+      "choices": ["a frost-giant", "a fire-dwarf", "a shapeshifting elf", "a dark sorcerer"],
+      "answer": "a frost-giant",
+      "context": "Gylfaginning 42: the builder was a hrimthurs, a frost-giant, in disguise. The dwarves live in Svartalfheim and forge (Brokkr, Sindri, the Sons of Ivaldi). Elves have their own realm (Alfheim) but do not appear in this bargain. Sorcerers are not a Norse category the tale uses.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The moment the builder revealed himself as a frost-giant, the gods no longer felt bound by any oath -- an oath to a giant, they said, was worth less than the sun and the moon. One of the Aesir, home just in time from a trip east fighting trolls, walked up and settled the whole matter with a single strike. Who killed the builder?",
+      "choices": ["Thor", "Odin", "Tyr", "Vidar"],
+      "answer": "Thor",
+      "context": "Gylfaginning 42: Thor came home from the east and paid the builder with a single hammer-blow that shattered his skull and sent him 'down to Niflhel.' Odin does not do the killing. Tyr fights Garm at Ragnarok. Vidar avenges Odin against Fenrir. Only Thor is the wall-story's executioner.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Thor came home and killed the disguised builder with one blow of a weapon so heavy that only he could lift it -- the same weapon the dwarves would soon forge with a shortened handle in the Brokkr-Sindri wager. With what did Thor crush the builder's skull?",
+      "choices": ["Mjolnir the hammer", "Gungnir the spear", "Durendal the sword", "Gae Bolg the belly-spear"],
+      "answer": "Mjolnir the hammer",
+      "context": "Gylfaginning 42: Thor used Mjolnir to shatter the builder's skull. Gungnir is Odin's spear. Durendal is Roland's sword from the Chanson de Roland (Western pillar). Gae Bolg is Cuchulainn's belly-spear from Irish myth (Celtic pillar) -- four real named weapons from four different traditions.",
+      "legend": true
+    }
+  ]
+}

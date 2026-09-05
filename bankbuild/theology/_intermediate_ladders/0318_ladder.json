@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Malory's Le Morte d'Arthur, King Arthur has a great round wooden table set up at Camelot where his chosen knights sit as equals, none at the head. On what high feast day of the year do these knights all ride in to Camelot to renew their vows together?",
+      "choices": ["Pentecost", "Christmas Day", "Easter Sunday", "All Hallows"],
+      "answer": "Pentecost",
+      "context": "Pentecost falls fifty days after Easter and was the high feast of the Round Table year in Malory. The knights gathered, feasted, and renewed the oath together; scribes recorded what each had done in the year past. Malory's Book III opens the pattern. Christmas and Easter were the two greatest feasts of the church year but did not have this special Round Table meaning; All Hallows (November 1) was a solemn feast for the dead, not for oath-renewal.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The chosen knights of King Arthur sit as equals at his great round table at Camelot. Malory says that at the high feast the fellowship of the Round Table was always kept full, at about how many seated knights in all?",
+      "choices": ["a hundred and fifty", "twelve", "forty", "three hundred"],
+      "answer": "a hundred and fifty",
+      "context": "Malory gives 150 as the count of the fellowship of the Round Table at its full strength (Book III). Twelve is the number of apostles in the Christian pillar and of the Peers of France in the Roland tradition; forty is a number of days (the flood, the wilderness); three hundred is closer to the personal retinue of a great earl.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Malory, each seat around the Round Table bore the name of the knight who was to sit there, written in gold letters that appeared of themselves. One seat was called the Siege Perilous and was left empty because anyone unworthy who sat in it would die. For what one knight was that seat reserved by Merlin's prophecy?",
+      "choices": ["Sir Galahad", "Sir Lancelot", "Sir Gawain", "Sir Kay"],
+      "answer": "Sir Galahad",
+      "context": "Galahad, Lancelot's pure son by Elaine, was the only knight who could safely sit in the Siege Perilous; his coming was foretold from the making of the table. Lancelot was the greatest in arms but flawed by his love for the queen. Gawain was Arthur's chief nephew and a great knight but hot-tempered. Kay was the seneschal, sharp-tongued and not of the highest chivalry.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At the high feast at Camelot, the fellowship of the Round Table renewed their vows together each year. In Malory's oath, the knights swore never to commit outrage or murder, always to flee treason, always to help ladies and widows, and never to take up battle in a wrongful quarrel. What else did the oath command about a defeated enemy?",
+      "choices": ["always to give mercy to any who asked mercy", "always to hang defeated foes as a warning to others", "always to hold captured knights for ransom", "always to demand a public confession before sparing life"],
+      "answer": "always to give mercy to any who asked mercy",
+      "context": "The mercy clause is the heart of the Pentecostal Oath: to spare any beaten foe who called for mercy, upon pain of forfeiture of his lordship and worship as an Arthurian knight. Hanging defeated foes was the crime of Malory's villains, such as the Red Knight of the Red Launds who had hanged nearly forty. Ransom was normal in real medieval war but was not written into the Round Table oath. Public confession is not there either.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In Malory's Le Morte d'Arthur, Arthur's whole fellowship rides out on one great collective quest that empties Camelot for years. Most of the knights fail and many die on the road. Only three return alive with the prize; which quest was it?",
+      "choices": ["the quest of the Holy Grail", "the quest of the White Hart", "the quest of the Green Chapel", "the quest of the Sangreal Beast"],
+      "answer": "the quest of the Holy Grail",
+      "context": "Malory Books XIII to XVII. Of the whole fellowship that rode out, only Galahad, Perceval, and Bors achieved the Grail; Galahad and Perceval died in the achieving, only Bors returned to Camelot to tell the tale. The White Hart is a briefer earlier quest (Book III). The Green Chapel is Sir Gawain and the Green Knight, a different English romance. The 'Sangreal Beast' is a made-up name; the beast Pellinore and Palamedes chase is the Questing Beast.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In Malory, the Round Table itself was not made by Arthur. It came to Camelot as part of the dowry when Arthur married Guinevere. Which of her family gave it, having had it in turn from Uther Pendragon?",
+      "choices": ["King Leodegrance of Cameliard", "King Pellinore of the Isles", "King Ban of Benoic", "King Uriens of Gore"],
+      "answer": "King Leodegrance of Cameliard",
+      "context": "Leodegrance was Guinevere's father; Uther had given him the table years before, and he sent it to Arthur along with a hundred knights to fill the seats. Pellinore was father to Perceval and Lamorak; Ban was Lancelot's father; Uriens was husband to Morgan le Fay and father of Yvain.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Malory's Book XX, the fellowship of the Round Table is broken not by an outside army but from within. What accusation, brought before Arthur by Agravaine and Mordred, forced the king to condemn Queen Guinevere to the pyre and set the fellowship at war with itself?",
+      "choices": ["that she had lain with Sir Lancelot", "that she had plotted with Morgan le Fay to poison the king", "that she had taken the treasury of Camelot in secret to Benoic", "that she had been born the daughter of a witch"],
+      "answer": "that she had lain with Sir Lancelot",
+      "context": "Agravaine and Mordred trapped Lancelot in the queen's chamber and forced the accusation into the open; by his own laws Arthur had to condemn her to burn. Morgan le Fay's poisoning schemes belong to earlier books and did not touch the queen. The Benoic treasury and witch-birth accusations are inventions and do not appear in Malory.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Lancelot rode in to rescue Queen Guinevere from the pyre, he cut a bloody path through the guards around the fire. Among the guards, unarmed and set there only out of loyalty to Arthur, were two of Sir Gawain's own brothers, whom Lancelot killed without knowing them. Their deaths turned Gawain into Lancelot's mortal enemy. Which two brothers were they?",
+      "choices": ["Gareth and Gaheris", "Agravaine and Mordred", "Bors and Ector", "Kay and Bedivere"],
+      "answer": "Gareth and Gaheris",
+      "context": "Gareth (the Fair Unknown Beaumains) had loved Lancelot most of all knights; his death broke Gawain's heart. Malory Book XX. Agravaine and Mordred were the accusers, not the guards. Bors and Ector were Lancelot's own cousins. Kay was the seneschal and Bedivere Arthur's cupbearer and dear companion; neither was killed here.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "While Arthur was across the sea in France, laying siege to Lancelot in the castle of Joyous Gard, one member of the Round Table seized the throne of Britain in Arthur's absence, forced a crown on his own head, and tried to marry Queen Guinevere. Arthur turned back to fight him at the last battle of Camlann, where both were mortally wounded and the fellowship destroyed. Who was the usurper?",
+      "choices": ["Sir Mordred", "Sir Agravaine", "Sir Palamedes", "Sir Meliagrance"],
+      "answer": "Sir Mordred",
+      "context": "In Malory, Mordred is Arthur's own son by his half-sister Morgause, and himself a knight of the Round Table. Camlann killed nearly every knight on both sides. Agravaine was already dead before Camlann, killed with Colgrevaunce in the ambush of Lancelot. Palamedes was the Saracen knight of the Grail cycle; Meliagrance was the earlier abductor of Guinevere killed by Lancelot.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After Camlann, only one knight of the Round Table remained with the dying Arthur on the shore. Arthur ordered him to throw Excalibur back into the water; a hand rose from the lake to catch it, and Arthur was carried away in a black barge to Avalon. Malory closes the book with the Latin epitaph said to be written on Arthur's tomb: what does it say?",
+      "choices": ["Here lies Arthur, the once and future king", "Here lies the last of the Britons", "Here rests the flower of chivalry", "Here sleeps the sword that broke"],
+      "answer": "Here lies Arthur, the once and future king",
+      "context": "Malory ends: 'HIC IACET ARTHURUS, REX QUONDAM REXQUE FUTURUS.' The 'once and future' promise is the tradition that Arthur is not truly dead but will return in Britain's greatest need; T.H. White's 'The Once and Future King' (1958) takes its title straight from this epitaph. The other three are invented for the choices.",
+      "legend": true
+    }
+  ]
+}

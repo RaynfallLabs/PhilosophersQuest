@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The longest single work of medieval Irish literature -- the central epic of the Ulster Cycle -- takes its name from something a queen goes to war to steal from her neighbour. What does the epic take its name from?",
+      "choices": ["A cattle raid", "A stolen bride", "A cursed sword", "A drowned harp"],
+      "answer": "A cattle raid",
+      "context": "Its full title is Tain Bo Cuailnge, 'The Cattle Raid of Cooley' -- a raid, not a battle, not a wooing, not a voyage. In cattle-based Iron Age Ireland a great bull was a walking treasury; stealing one was worth a war. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The whole plot of the epic is set in motion by an argument in one very specific place -- not a battlefield, not a throne-room, not a druid's grove. Where are the king and queen when the quarrel begins?",
+      "choices": ["In their royal bed at Cruachan", "On the walls of Emain Macha", "At the feast-hall of Tara", "By the ford at Ath Fhirdiad"],
+      "answer": "In their royal bed at Cruachan",
+      "context": "The opening scene is famous in world literature as the Pillow-Talk -- an entire war epic launched from a marital argument in bed. Cruachan (modern Rathcroghan in Co. Roscommon) was the royal seat of the kingdom of Connacht. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/1-the-pillow-talk/",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The queen who lies in the royal bed at Cruachan quarrelling with her husband is not a wife who fights from behind a curtain. She rides her own chariot, kills in single combat, and drives the war herself while her husband largely keeps to her shadow. What is her name?",
+      "choices": ["Medb", "Emer", "Deirdre", "Grainne"],
+      "answer": "Medb",
+      "context": "Medb (anglicised Maeve) of Connacht is one of the great warrior-queens of world myth -- her name is glossed 'she who intoxicates' and is cognate with the English word 'mead'. Emer is Cu Chulainn's wife (Ulster side); Deirdre is a tragic beauty; Grainne belongs to the later Fenian Cycle. Source: https://irishmyths.com/myths/cattle-raid-cooley-tain-bo-cuailnge/",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The king who lies beside Medb in the bed at Cruachan is her husband, king of the same province of Connacht. What is his name?",
+      "choices": ["Ailill", "Conchobar", "Fergus", "Cormac"],
+      "answer": "Ailill",
+      "context": "Ailill mac Mata is Medb's husband and consort-king; the Tain repeatedly makes clear that in this marriage Medb is the driving will. Conchobar mac Nessa is the king of ULSTER, the enemy in this war; Fergus mac Roich is an exiled Ulsterman who fights on Medb's side; Cormac is a later high-king of Ireland. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Lying awake in the royal bed, Medb and Ailill do a strange thing: they compare their possessions item by item -- gold, servants, weapons, jewellery, flocks, herds. To Medb's fury, the count comes out exactly equal on every single count except for one particular kind of possession. What is the one thing on which they are not equal?",
+      "choices": ["A bull", "A hound", "A harp", "A boat"],
+      "answer": "A bull",
+      "context": "Ailill has one bull in his herds so magnificent that Medb has no equal to it -- and this is the fact she cannot bear. The whole war of the Tain will be a woman's determination to match a single animal her husband owns. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The great bull that gives Ailill his advantage over Medb was NOT bought in from another kingdom. He was originally born in Medb's own herd. Why, according to the tale, did he leave her herd for Ailill's?",
+      "choices": ["He refused to be owned by a woman", "He was traded away in a game of fidchell", "He was stolen by raiders from Munster", "He was frightened off by a druid's curse"],
+      "answer": "He refused to be owned by a woman",
+      "context": "The bull's own defection is the sharpest twist of the pillow-talk: the animal himself judged that a queen was not a fit owner, and walked into the king's pasture. For Medb, sovereignty over Connacht was inseparable from being able to match her husband's wealth exactly. Fidchell is a real early-Irish board game. Source: https://loraobrien.ie/tain-bo-cuailgne-cattle-raid-of-cooley-a-beginners-guide/",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Ailill's magnificent bull -- born of Medb's herd, defected to his -- has a name in the Tain that describes his colouring. What is Ailill's white-horned bull called?",
+      "choices": ["Finnbennach", "Donn Cuailnge", "Sleipnir", "Bucephalus"],
+      "answer": "Finnbennach",
+      "context": "Finnbennach means 'the White-Horned' (finn white + bennach horned). The Donn Cuailnge is the OTHER great bull, the one Medb goes to war to get; Sleipnir is Odin's eight-legged horse (Norse pillar); Bucephalus is Alexander the Great's horse (history, not myth). Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Told that the only bull in Ireland that can match Ailill's is a great brown bull kept on the Cooley peninsula in Ulster, Medb sends messengers to lease him. The bull's owner is not a king or a lord but an ordinary farmer of the Cooley cattle-country. What is the farmer's name?",
+      "choices": ["Daire mac Fiachna", "Fergus mac Roich", "Cathbad the Druid", "Culann the Smith"],
+      "answer": "Daire mac Fiachna",
+      "context": "Daire mac Fiachna is a substantial farmer of the Cooley peninsula (modern Co. Louth). Fergus is a defector-warrior; Cathbad is the Ulster court druid; Culann is the smith from the boyhood-tale of Cu Chulainn -- all real Ulster figures who are NOT the bull's owner. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The great bull Medb sends messengers to lease from Daire in the Cooley peninsula is himself a named beast of the Ulster tradition, every bit as famous as Ailill's own bull. What is the Bull of Cooley called in the Tain?",
+      "choices": ["Donn Cuailnge", "Aonbharr", "Liath Macha", "Dubh Sainglenn"],
+      "answer": "Donn Cuailnge",
+      "context": "Donn Cuailnge means 'the Brown of Cooley' (donn brown + Cuailnge, the peninsula). Aonbharr ('one-mane') is the sea-god Manannan's horse; Liath Macha ('Grey of Macha') and Dubh Sainglenn are the two chariot-horses of Cu Chulainn -- real Ulster-Cycle beast-names that are not the Brown Bull. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Daire mac Fiachna agrees to lease the Brown Bull for a year for a fair price, and Medb's men are welcomed to a feast in his hall. The deal falls apart because of a single moment during that feast. What ruins Medb's negotiation?",
+      "choices": ["Her messengers boast, drunk, that they would take the bull by force if refused", "Her messengers demand the bull outright as a tribute rather than a lease", "Her messengers insult Daire's wife at the feast-table", "Her messengers offer Daire half the going price and no more"],
+      "answer": "Her messengers boast, drunk, that they would take the bull by force if refused",
+      "context": "Daire overhears the drunken boast, understands that Medb was never going to leave without the bull one way or another, and formally withdraws his consent. In doing so he gives Medb the pretext for war she needed. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Refused the Brown Bull by Daire mac Fiachna, Medb does not send a second embassy. She raises an army instead -- an army drawn from all the great territorial divisions of Ireland, welded together against Ulster alone. From how many of the provinces of Ireland is Medb's army raised?",
+      "choices": ["Four", "Two", "Seven", "Twelve"],
+      "answer": "Four",
+      "context": "Medb raises the army of the four provinces -- Connacht, Munster, Leinster, and even a body of exiled Ulstermen -- against Ulster itself. Ireland was traditionally divided into four kingdoms with a symbolic fifth (Meath) at the centre. Twelve is the Round Table number (Arthurian pillar); seven is the number of Ulster kings-in-training at Emain Macha. Source: https://en.wikipedia.org/wiki/T%C3%A1in_B%C3%B3_C%C3%BAailnge",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The great war of the Tain ends not with the death of Medb, not with the fall of Ulster, but with the two prize bulls of the epic meeting on the field of Cruachan itself -- fighting each other along the same route the raid had taken. Which bull wins the final duel?",
+      "choices": ["The Donn Cuailnge kills the Finnbennach", "The Finnbennach kills the Donn Cuailnge", "Both bulls die at the same instant", "Both bulls turn and refuse to fight"],
+      "answer": "The Donn Cuailnge kills the Finnbennach",
+      "context": "The Brown of Cooley gores the White-Horned to death and scatters pieces of him across the map of Ireland -- and then, exhausted, drops dead himself. The epic ends with both prize bulls dead in the mud and Medb no richer than the night of the pillow-talk. Source: https://irishmyths.com/myths/cattle-raid-cooley-tain-bo-cuailnge/",
+      "legend": true
+    }
+  ]
+}

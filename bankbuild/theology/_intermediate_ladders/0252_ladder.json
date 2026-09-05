@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The Tain Bo Cuailnge tells of a young Ulster champion who holds off Queen Medb's whole invading army by killing her champions one after another at river fords. What is his name?",
+      "choices": ["Cu Chulainn", "Fergus mac Roich", "Conall Cernach", "Fionn mac Cumhaill"],
+      "answer": "Cu Chulainn",
+      "context": "Cu Chulainn is the great hero of the Ulster Cycle and the sole defender of Ulster in the Tain, killing champion after champion at the fords to slow Medb's army. Source: https://en.wikipedia.org/wiki/Ferdiad",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "When Queen Medb of Connacht runs out of champions willing to face the young Ulster defender at the fords, she sends for one man from her own army who once trained beside him under the same warrior-woman on the Isle of Shadow. What is that champion's name?",
+      "choices": ["Ferdiad mac Damain", "Fergus mac Roich", "Cet mac Magach", "Nadcrantail"],
+      "answer": "Ferdiad mac Damain",
+      "context": "Ferdiad, son of Daman, of the Fir Domnann, is the only warrior in Medb's whole host who trained under Scathach beside Cu Chulainn and so knows every one of his feats. Source: https://en.wikipedia.org/wiki/Ferdiad",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Tain, Cu Chulainn and Ferdiad had been foster-brothers in arms, having eaten from the same dish and slept under the same shield while training together as boys. Who was the warrior-woman on the Isle of Shadow who taught them both?",
+      "choices": ["Scathach", "Aoife", "Uathach", "Medb"],
+      "answer": "Scathach",
+      "context": "Scathach ran a warrior-school on the Isle of Shadow (Dun Scaith) where the young men of Ulster were sent to learn feats of arms. Ferdiad and Cu Chulainn learned side by side. Source: https://en.wikipedia.org/wiki/Ferdiad",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Ferdiad flatly refuses to face his foster-brother at the ford. Queen Medb overcomes his refusal with a weapon no Connacht sword could match, one so feared in early Irish culture that it could raise three blisters on a warrior's face called Blame, Blemish and Disgrace. What does Medb turn on him?",
+      "choices": ["The satire of her filid", "The open command of Ailill", "The threat of exile", "A challenge to single combat"],
+      "answer": "The satire of her filid",
+      "context": "In early Irish culture the satire of the filid (the trained poets) was a genuine weapon: public verse could physically blister the face of the man it targeted, and to be so shamed was social death. Ferdiad chose to die by valour rather than by satire. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The two foster-brothers meet at the ford. On the first morning of their combat, from dawn until noon, they hurl one class of weapon at each other again and again and neither can draw blood. With what do they fight on that first day?",
+      "choices": ["Light casting-spears and darts", "Heavy smiting-swords", "Slings and stones", "War-axes"],
+      "answer": "Light casting-spears and darts",
+      "context": "The Tain lays out the four days as an escalating scale. Day one is small darts and light casting-spears from morning's early twilight till noon; each day the weapon grows heavier. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the ford in the Tain, at the end of each of the first three days of their combat, Cu Chulainn and Ferdiad lay down their arms, embrace, kiss three times, share food and healing herbs, and put their horses together in one paddock. What did their charioteers then do?",
+      "choices": ["Made one bed of rushes for the two of them", "Sent messengers between the two camps", "Kept watch in shifts through the night", "Sang the day's deeds aloud"],
+      "answer": "Made one bed of rushes for the two of them",
+      "context": "The two charioteers spread their cloaks and rushes together and made a single bed where the two enemies slept side by side, as fosterlings do. It is one of the most tender scenes in world epic and the emotional weight of what follows. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "At the end of the third day at the ford, the two foster-brothers turn away colder than before, and for the first time in three nights their charioteers do not lay one bed for them. What else does the Tain note is separated on that third night that had been shared on the first two?",
+      "choices": ["Their horses, kept in different paddocks", "Their weapons, laid on opposite banks", "Their charioteers, sent to their own camps", "Their wounds, wrapped without the other's herbs"],
+      "answer": "Their horses, kept in different paddocks",
+      "context": "The Tain marks the break by a string of absences: 'they parted without a kiss, a blessing or aught other sign of friendship... no healing or curing herbs were sent from Cuchulain to Ferdiad that night... their horses were not in the same paddock.' Both men know the fourth day will be a killing. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On the fourth day at the ford, Ferdiad has been raising his shield against Cu Chulainn's throws all morning. Cu Chulainn shouts down to his charioteer Loeg to bring the one weapon Scathach never taught the man on the far bank. Which weapon does he call for?",
+      "choices": ["The Gae Bolg", "Durendal", "Gungnir", "The spear of Lugh"],
+      "answer": "The Gae Bolg",
+      "context": "The Gae Bolg, the 'belly-spear', was the one feat Scathach taught to Cu Chulainn alone. Ferdiad had no defence against it because he had never learned it. Durendal is Roland's sword (Western-medieval pillar), Gungnir is Odin's spear (Norse pillar), the spear of Lugh is Tuatha De Danann. Source: https://en.wikipedia.org/wiki/Ferdiad",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Gae Bolg comes at Ferdiad from a place he cannot guard against with his high shield. In the Tain, Cu Chulainn does not throw it from his hand at all. From where does he launch it?",
+      "choices": ["From between the toes of his foot, in the water", "Overhand from the far bank", "From the back of his chariot", "Slung from a leather thong"],
+      "answer": "From between the toes of his foot, in the water",
+      "context": "The Tain is exact: 'with the stream it was made ready, and from between the fork of the foot it was cast.' Cu Chulainn stood in the river and kicked the barbed spear up at Ferdiad from underneath the shield-rim. It made the wound of a single spear on entry but opened into thirty barbs inside the body. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Ferdiad has fallen in the river. Rather than leave the body for the Connacht spoilers on the far side, Cu Chulainn crosses the ford, gathers his dead foster-brother in his two arms, and carries him back the other way. To which bank does he carry the body?",
+      "choices": ["North, onto the Ulster side", "South, onto the Connacht side", "Out onto a midstream stone", "Up onto a burial hill above the ford"],
+      "answer": "North, onto the Ulster side",
+      "context": "The Tain: 'Cuchulain hastened towards Ferdiad and clasped his two arms about him, and bore him with all his arms and his armour and his dress northwards over the ford, that so it should be with his face to the north of the ford the triumph took place and not to the west of the ford with the men of Erin.' Even in killing him, Cu Chulainn honours him as Ulster's. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Standing over the body of the man he has just killed, Cu Chulainn keens a long formal lament in the Tain. Which of these is a line from that keen?",
+      "choices": ["'Dear thine eye, blue-grey and clear; dear thy wisdom and thy speech.'", "'Weep for Baldr, whom Loki slew, till Ragnarok comes.'", "'Roland my brother, God have mercy on thy soul.'", "'Thy love to me was wonderful, passing the love of women.'"],
+      "answer": "'Dear thine eye, blue-grey and clear; dear thy wisdom and thy speech.'",
+      "context": "Cu Chulainn's lament runs long: 'Dear to me thy noble blush; dear thy comely, perfect form; dear thine eye, blue-grey and clear; dear thy wisdom and thy speech... Yesterday, a mountain's size; he is but a shade to-day.' The other three lines echo three real parallel warrior-laments from other pillars: Snorri's Baldr, the Chanson de Roland, and David over Jonathan in 2 Samuel 1:26. Source: https://mythopedia.com/library/tain-bo-cuailnge-dunn-1914/20-the-combat-of-ferdiad-and-cuchulain/",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The four-day combat between Cu Chulainn and his foster-brother is the emotional heart of the Tain Bo Cuailnge, and the river ford where they fought is still named for the man who died there. What is the modern Irish town on that ford?",
+      "choices": ["Ardee, in County Louth", "Armagh, in County Armagh", "Navan, in County Meath", "Tara, in County Meath"],
+      "answer": "Ardee, in County Louth",
+      "context": "The ford was called Ath Fir Diad, 'the Ford of Ferdiad', and the town that grew there kept the name: Ardee (Baile Atha Fhirdhia) in County Louth. Every other choice is a real Irish site of the Ulster Cycle era: Armagh the church seat, Navan the modern town near the royal fort of Emain Macha, and Tara the seat of the High King. Source: https://en.wikipedia.org/wiki/Ferdiad",
+      "legend": true
+    }
+  ]
+}

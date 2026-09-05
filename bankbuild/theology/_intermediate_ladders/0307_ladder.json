@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "For his seventh labor, King Eurystheus sent Heracles across the sea to bring back alive a magnificent white bull that was running wild through the fields and orchards. On which island was the bull loose?",
+      "choices": ["Crete", "Rhodes", "Naxos", "Cyprus"],
+      "answer": "Crete",
+      "context": "Apollodorus places the seventh labor on Crete, where the bull was uprooting crops and knocking down orchard walls. Rhodes is Helios's island; Naxos is where Theseus abandons Ariadne after Crete; Cyprus is Aphrodite's home. Source: en.wikipedia.org/wiki/Cretan_Bull; Apollodorus 2.5.7.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The white bull of Crete had not always been wild. Long before Heracles was sent for it, the beast had come out of the sea, as a sign from a god to King Minos that his rule of Crete was rightful. Which god sent the bull?",
+      "choices": ["Poseidon", "Zeus", "Apollo", "Hephaestus"],
+      "answer": "Poseidon",
+      "context": "Poseidon, god of the sea and of bulls and horses, sent the bull walking out of the surf as the sign that Minos held Crete by divine right. In return Minos had sworn to sacrifice the bull straight back to Poseidon. Zeus's own bull-form is the one that carried off Europa; Apollo's animals are the swan and the deer; Hephaestus is the smith of the gods. Source: en.wikipedia.org/wiki/Cretan_Bull; Apollodorus 3.1.3.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The trouble with the bull began before Heracles was born. Minos had sworn to sacrifice the sea-bull straight back to Poseidon in thanks for the sign. When the animal walked out of the surf, though, Minos saw how magnificent it was and could not bring himself to burn it. What did Minos do instead?",
+      "choices": ["substituted an ordinary bull from his own herd for the sacrifice", "sacrificed a hundred lesser bulls together in its place", "sent it in secret to be hidden in the mountain caves", "carved a wooden image of the bull and burned that"],
+      "answer": "substituted an ordinary bull from his own herd for the sacrifice",
+      "context": "Minos kept the sea-bull for himself and sent up a common bull from his own herd to the altar. Everything that follows -- Pasiphae's curse, the Minotaur, Heracles's labor, the Marathonian Bull, Theseus's early fame -- runs out of that one broken promise. Source: en.wikipedia.org/wiki/Cretan_Bull; Apollodorus 3.1.3-4.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Poseidon's anger at Minos's broken promise did not fall on the king. It fell instead on his wife, whom Aphrodite was told to curse. Who was the queen of Crete, cursed to fall in love with the white bull?",
+      "choices": ["Pasiphae", "Europa", "Ariadne", "Phaedra"],
+      "answer": "Pasiphae",
+      "context": "Pasiphae was daughter of the sun-god Helios and wife of Minos; Aphrodite laid the curse. Europa is the earlier bull-carried queen -- Zeus took her to Crete as a bull and she became Minos's mother. Ariadne and Phaedra are Pasiphae's own daughters, both later tied to Theseus. Source: en.wikipedia.org/wiki/Cretan_Bull; Apollodorus 3.1.4.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The child born to Queen Pasiphae from her union with the white sea-bull was one of the most famous monsters in Greek myth: a creature with the body of a man and the head of a bull, shut in a stone maze on Crete. What was he called?",
+      "choices": ["the Minotaur", "the Chimaera", "Cerberus", "Typhon"],
+      "answer": "the Minotaur",
+      "context": "The Minotaur -- literally 'Minos's bull' -- was locked in the Labyrinth built by Daedalus and fed on Athenian youths and maidens until Theseus killed him with Ariadne's thread. The Chimaera is Bellerophon's monster in Lycia; Cerberus is the three-headed dog of the underworld; Typhon is the storm-giant Zeus buried under Mount Etna. Source: en.wikipedia.org/wiki/Cretan_Bull; Apollodorus 3.1.4.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When Heracles arrived at the court of Minos for his seventh labor, he asked the king's help to capture the bull. Minos, still guilty about his old broken promise, would not lift a hand -- but he did not turn Heracles away either. What did Minos allow?",
+      "choices": ["Heracles could take the bull if he could capture it alone", "Heracles could take any bull EXCEPT the sea-bull", "Heracles must first be tested by wrestling on the palace grounds", "Heracles must pay a tribute of a hundred cattle for the beast"],
+      "answer": "Heracles could take the bull if he could capture it alone",
+      "context": "Minos gave permission and no help. Heracles did the capture single-handed, wrestling the bull to the ground bare-handed -- exactly the pose on the black-figure vases, arm hooked over the horn. Source: en.wikipedia.org/wiki/Cretan_Bull; Apollodorus 2.5.7.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heracles carried the captured bull back across the sea and dumped it in front of Eurystheus at Mycenae. Eurystheus tried to dedicate it, as he had tried before with Heracles's other live catches. To which goddess did he try to dedicate the bull, only to have her refuse the gift?",
+      "choices": ["Hera", "Athena", "Artemis", "Demeter"],
+      "answer": "Hera",
+      "context": "Hera hated Heracles from the day he was born -- he was Zeus's son by another woman, and his very name means 'glory of Hera' as a taunt at her. She refused every gift that came from him, and this bull was no exception; it was set loose. Athena is Heracles's usual patron among the gods; Artemis owns the Ceryneian Hind; Demeter has no quarrel with him. Source: en.wikipedia.org/wiki/Cretan_Bull.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Released from Mycenae, the bull did not stay penned. It wandered north out of the Peloponnese and across the isthmus into Attica, and settled on a broad plain by the sea that would become famous centuries later for a different battle. What plain did the bull haunt, so that it took a new name from the place?",
+      "choices": ["Marathon", "Thermopylae", "Salamis", "Chaeronea"],
+      "answer": "Marathon",
+      "context": "The bull was known ever after as the Marathonian Bull. Thermopylae is Leonidas's pass; Salamis is the sea-battle; Chaeronea is where Philip of Macedon crushed the last free Greeks. The plain of Marathon was famous first for this bull, and only later for the Persians. Source: en.wikipedia.org/wiki/Marathonian_Bull.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The bull Heracles had captured did not die by his hand. Years later, another young Greek hero -- one who would soon face this same bull's own son inside a maze -- tracked it down at Marathon and killed it, dragging it back to Athens to sacrifice. Who killed the Marathonian Bull?",
+      "choices": ["Theseus", "Perseus", "Bellerophon", "Meleager"],
+      "answer": "Theseus",
+      "context": "So the same bull walks through two hero-cycles: Heracles captures him as his seventh labor, and Theseus kills him at Marathon as one of Theseus's own early labors -- clearing the road, in a sense, to face the bull's own child the Minotaur in the Labyrinth. Perseus killed Medusa and Cetus; Bellerophon killed the Chimaera; Meleager led the hunt for a different boar, the Calydonian. Source: en.wikipedia.org/wiki/Marathonian_Bull.",
+      "legend": true
+    }
+  ]
+}

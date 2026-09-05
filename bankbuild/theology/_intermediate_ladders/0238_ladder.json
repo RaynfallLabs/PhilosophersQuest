@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "At the young Arthur's court an old white-bearded man in a long robe advises the king on every disaster before it comes, arranges Arthur's own conception and secret upbringing, and sets up the sword-in-the-stone test that would prove him rightful king. What is the wizard's name?",
+      "choices": ["Merlin", "Blaise", "Bedivere", "Bagdemagus"],
+      "answer": "Merlin",
+      "context": "Geoffrey of Monmouth, Historia Regum Britanniae (c.1136); Malory Books I-IV. The Latin name Merlinus comes from the Welsh Myrddin. Blaise is Merlin's own confessor and chronicler. Bedivere is Arthur's steward-knight who returns Excalibur. Bagdemagus is the king of Gorre in Chretien's Lancelot.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "When old King Uther Pendragon dies with no acknowledged heir and the barons of Britain gather to fight over the throne, the wizard sets a test in a churchyard: whichever man can draw a certain fixed weapon free from where it is set in an iron anvil will be the rightwise-born king of all England. The boy who draws it is Arthur. By what name is that test known?",
+      "choices": ["the sword in the stone", "the horn on the hearth", "the bridge of glass", "the burning bush"],
+      "answer": "the sword in the stone",
+      "context": "Malory, Le Morte d'Arthur Book I ch.5-6. Arthur draws the blade as squire to his foster-brother Kay at a tournament. The horn on the hearth is a chastity-test in Arthurian romance. The bridge of glass is a distractor. The burning bush is Moses at Sinai (Christian pillar).",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In Robert de Boron's poem Merlin (c.1195-1210), a council of demons plotted to breed their own answer to the child Jesus -- a child sired on a virtuous woman in her sleep to be born of a virgin and grow up to undo Christ's work. The mother tells her confessor, and the baby is baptised at birth; the plot fails. Who was that child meant to be?",
+      "choices": ["the antichrist", "the Fisher King", "the Wandering Jew", "the Green Man"],
+      "answer": "the antichrist",
+      "context": "Robert de Boron, Merlin (c.1195-1210); Wikipedia: Merlin (Robert de Boron poem). Because Jesus is the son of a virgin fathered by God, de Boron reasons, the demons must answer with a son of a virgin fathered by Satan. The Fisher King is the wounded Grail-guardian. The Wandering Jew is a medieval legend of a man cursed to walk until Christ returns. The Green Man is a foliate face in medieval carving.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The baby saved by his mother's baptism keeps the demonic legacy anyway -- perfect memory of everything ever done or spoken since the world began -- and God grants him a second and opposite gift in compensation, so the child will know the whole shape of history. In de Boron, what is that gift from God?",
+      "choices": ["prophecy", "flight", "healing", "immortality"],
+      "answer": "prophecy",
+      "context": "Robert de Boron, Merlin; Wikipedia: Merlin (Robert de Boron poem). The devils give him past-and-present; God gives him prophecy -- so Merlin sees what is coming as clearly as what has been. Flight and healing are common wizard-clichés but not de Boron's specific gift; bodily immortality is denied Merlin (he ends imprisoned, still alive).",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The confessor to whom Merlin's terrified mother tells her demonic pregnancy is not just a priest for that one night; he becomes the person Merlin himself later dictates his entire life story to, so the future can read it. Merlin's biography, in the tradition Robert de Boron invents, is a Latin chronicle written down by that confessor. Who is Merlin's confessor and chronicler?",
+      "choices": ["Blaise", "Bedivere", "Bors", "Bagdemagus"],
+      "answer": "Blaise",
+      "context": "Robert de Boron, Merlin (c.1200); Wikipedia: Merlin (Robert de Boron poem). Blaise is presented in de Boron as the author of the underlying Latin book that Merlin dictates. Bedivere is Arthur's steward-knight. Bors is Lancelot's cousin, a Grail knight. Bagdemagus is a king in Chretien's Lancelot. All four are period-plausible French forms.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Uther Pendragon has fallen in love with Igraine, wife of the Duke of Cornwall, and cannot come to her while her husband lives. The wizard offers a way. He gives Uther the outward SHAPE of Duke Gorlois; and that same night, while the real Gorlois is being killed in battle, Uther comes to Igraine as her husband. The child conceived that night is Arthur. Where does the wizard arrange the deception?",
+      "choices": ["Tintagel", "Camelot", "Carlisle", "Winchester"],
+      "answer": "Tintagel",
+      "context": "Geoffrey of Monmouth, Historia Regum Britanniae Book VIII; Malory Book I ch.1-2. Tintagel is Duke Gorlois's clifftop castle in Cornwall (still visitable today) where Igraine is guarded. Camelot is Arthur's own future capital. Carlisle is Arthur's northern seat in some romances. Winchester was later claimed as the site of the Round Table.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The wizard takes the newborn Arthur from Uther and Igraine and hides him: he carries the baby out of the palace and gives him to a good country knight to raise as his own, with the knight's own son as the boy's foster-brother. The boy will grow up thinking he is the knight's second child, never told he is king. What is the name of Arthur's foster-father?",
+      "choices": ["Sir Ector", "Sir Kay", "Sir Bors", "Sir Balin"],
+      "answer": "Sir Ector",
+      "context": "Malory Book I ch.3; Wikipedia: Sir Ector. Ector is the country knight; his son Kay grows up as Arthur's foster-brother and becomes Arthur's seneschal. Bors is Lancelot's cousin, not Arthur's foster-father. Balin is a tragic loner from Malory Book II.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Geoffrey of Monmouth's Historia Regum Britanniae (Book VIII), King Aurelius Ambrosius wants a great memorial for hundreds of British nobles massacred by the Saxon Hengist at Amesbury on Salisbury Plain. The wizard tells him of a stone ring built long ago by giants on Mount Killaraus in another country, and offers to move it across the sea. What monument does the wizard reassemble on Salisbury Plain?",
+      "choices": ["Stonehenge", "the White Tower", "the Round Table", "the Giants' Causeway"],
+      "answer": "Stonehenge",
+      "context": "Geoffrey of Monmouth, Historia Regum Britanniae Book VIII (c.1136); Wikipedia: Giant's Dance. The stones are called the Giants' Ring (or Giants' Dance) and Merlin's magic lifts them; Uther Pendragon leads the men who ship them. The White Tower is the Norman keep at the Tower of London. The Round Table is Arthur's fellowship. The Giants' Causeway is the real basalt formation on the Antrim coast (geography lane).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Geoffrey names the country the stone ring is dragged across the sea from, and gives it a specific mountain -- Mount Killaraus -- where the giants once set the ring down before Merlin comes for it. It is the same country the giants themselves are said to have carried the stones to long before, from Africa. Which country does Merlin bring Stonehenge from?",
+      "choices": ["Ireland", "Iceland", "Norway", "Brittany"],
+      "answer": "Ireland",
+      "context": "Geoffrey of Monmouth, Historia Book VIII; Wikipedia: Giant's Dance. Geoffrey names Mount Killaraus in Ireland; Waun Mawn in Pembrokeshire (Wales) is one modern candidate for a real dismantled circle behind the legend. Iceland has no Arthurian role. Norway is Beowulf's neighbour. Brittany is where Lancelot's father Ban is from.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the Welsh tradition older than Geoffrey of Monmouth, there is a SEPARATE mad-prophet figure -- a sixth-century wild-man of the Caledonian Forest who goes mad at the battle of Arfderydd, lives naked among the trees, and speaks in verse. Geoffrey wrote a second, later book about that wild-man (c.1150) and joined the two figures together into the single court-mage of the Historia. What is Geoffrey's second Merlin book called?",
+      "choices": ["Vita Merlini", "Historia Britonum", "Culhwch ac Olwen", "Book of Taliesin"],
+      "answer": "Vita Merlini",
+      "context": "Wikipedia: Geoffrey of Monmouth; Vita Merlini. Vita Merlini ('Life of Merlin', c.1150) is Geoffrey's Latin poem about Myrddin Wyllt. Historia Britonum is an older ninth-century Welsh Latin chronicle by pseudo-Nennius. Culhwch ac Olwen is an early Welsh Arthurian prose tale. The Book of Taliesin is a Welsh bardic manuscript.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "In Malory Book III, the young Arthur has just broken his first sword in single combat and stands weaponless. The wizard leads him to a lake in the wilderness; a woman's arm clothed in white samite rises from the water holding a great blade above the surface, and Merlin tells Arthur to row out in a small barge and take it. What is the name of the second sword the wizard leads Arthur to?",
+      "choices": ["Excalibur", "Durendal", "Tizona", "Gungnir"],
+      "answer": "Excalibur",
+      "context": "Malory, Le Morte d'Arthur Book I ch.25 (the second sword; the first was the sword-in-the-stone). The arm in white samite is the Lady of the Lake's. Durendal is Roland's sword (Chanson de Roland). Tizona is El Cid's sword. Gungnir is Odin's spear (Norse pillar).",
+      "legend": true
+    }
+  ]
+}

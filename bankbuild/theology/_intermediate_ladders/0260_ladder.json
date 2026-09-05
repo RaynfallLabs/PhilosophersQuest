@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Fenian Cycle of Irish myth a roving warrior-band lives in the wild forests of Ireland by season, sworn to defend the High King against foreign invaders in war and to hunt and feast in peace. Who leads this warrior-band?",
+      "choices": ["Fionn mac Cumhaill", "Cu Chulainn", "Nuada Silver-Arm", "Conaire Mor"],
+      "answer": "Fionn mac Cumhaill",
+      "context": "Fionn mac Cumhaill (anglicised Finn McCool) leads the Clann Baiscne of Leinster, the elite branch of the Fianna, in rivalry with Goll mac Morna's Clann Morna of Connacht. Cu Chulainn is the hero of the earlier Ulster Cycle -- a different tradition. Nuada Silver-Arm is a Tuatha De Danann king; Conaire Mor is a High King from the Ulster-period tale Togail Bruidne Da Derga. Source: en.wikipedia.org/wiki/Fianna.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Fionn mac Cumhaill's warrior-band takes its name from the Old Irish word for a small band of hunter-warriors. The same word gives 19th-century Irish nationalists their name a thousand years later. What is the band called in Irish?",
+      "choices": ["the Fianna", "the Aos Si", "the Tuatha De", "the Fomorians"],
+      "answer": "the Fianna",
+      "context": "The Fianna are the warrior-hunter bands of Gaelic Ireland; the 19th-century Fenian Brotherhood of Irish republicans took the name deliberately, borrowing the ancient association with sworn warrior loyalty. The Aos Si are the fairy-folk; the Tuatha De Danann are the old gods; the Fomorians are the sea-born enemies of the gods. Source: en.wikipedia.org/wiki/Fianna.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Fianna are not the king's regular soldiers. They live outside the ordinary property and marriage rules of tuath (clan) life. According to Geoffrey Keating's 17th-century account, they spend half the year in the wild hunting for their meat -- from Beltane (roughly May) until which other festival?",
+      "choices": ["Samhain (roughly November)", "Lughnasadh (early August)", "Imbolc (early February)", "the winter solstice at Newgrange"],
+      "answer": "Samhain (roughly November)",
+      "context": "The Fianna are seasonal: from Beltane to Samhain (about May to November) they must live in the wild by hunting; from Samhain to Beltane they are quartered on the nobility. Lughnasadh is the harvest festival of Lugh; Imbolc marks the start of spring; the Newgrange solstice is Neolithic (millennia older than the Fianna). Source: en.wikipedia.org/wiki/Fianna.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "No man could join Fionn's warrior-band without passing a set of ferociously specific entry-tests. The first was not a test of arms at all -- it was a test of memory, judged by a prime poet. What did the candidate have to prove he had learned?",
+      "choices": ["the twelve books of poetry", "the twelve labours of Hercules of Alba", "the twelve laws of the Brehon judges", "the twelve names of the sons of Mil"],
+      "answer": "the twelve books of poetry",
+      "context": "Standish O'Grady's Silva Gadelica (1892) records the entry-tests: 'not a man of them was taken till a prime poet, versed in the twelve books of poesy,' had heard him recite. The twelve books were the fili curriculum -- the memorised lore of the elite Irish poetic caste, whose knowledge overlapped with the warrior fian. Arms alone were never enough. Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The next entry-test is physical and brutal. The candidate is placed in a hole in the ground so deep it comes to the fold of his belt. He is given only two implements to defend himself. What are they?",
+      "choices": ["a shield and a fore-arm's length of hazel stick", "a bronze sword and a leather sling", "an iron helm and a wooden club", "a spear and a woollen cloak"],
+      "answer": "a shield and a fore-arm's length of hazel stick",
+      "context": "The pit-test forces the candidate to defend himself from the waist up while nine warriors cast spears at him. The hazel stick is not a weapon of offence -- it is a length just long enough to beat aside a hurled spear. Hazel is a symbolic wood in Irish tradition, associated with the Fianna's own hero Fionn (who burned his thumb on the Salmon of Knowledge cooked over hazel-wood). Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As the candidate stands buried to the belt in the pit with his shield and hazel stick, a number of warriors line up at some distance and hurl their spears at him all at once. If even one spear touches him, he fails. How many warriors, and from what distance?",
+      "choices": ["nine warriors from nine furrows' width away", "three warriors from three ridges away", "seven warriors from a single bow-shot", "twelve warriors from the length of a chariot-run"],
+      "answer": "nine warriors from nine furrows' width away",
+      "context": "Silva Gadelica gives the numbers: 'nine warriors, having nine spears, with a ten furrows' width betwixt them and him' -- the sources vary between nine and ten furrows, but nine warriors is fixed. Nine is a recurring sacred number in Irish story (the nine hazels of Segais, the nine daughters of Manannan). Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Fianna do not test for brute strength alone. In one running-trial the candidate is sent through a thick forest at full speed pursued by a war-band, with his hair carefully braided beforehand. What must survive the run intact?",
+      "choices": ["not a single braid of his hair may come loose in the branches", "not a drop of sweat may show on his brow", "not a bird may lift from the trees ahead of him", "not a leaf may fall from the boughs he passes under"],
+      "answer": "not a single braid of his hair may come loose in the branches",
+      "context": "The braided-hair test measures poise, silence, and control at speed: a runner who bulls through the wood loses his braids in the branches and fails. The same trial also disqualifies him if he cracks a dry stick underfoot or lets his weapons rattle in his hand -- three tests at once. Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the same forest run the candidate must also handle the branches themselves. He is required to leap any bough level with his brow, and to do one other thing without slowing his pace. What?",
+      "choices": ["stoop under any bough level with his knee", "shatter any branch level with his ribs", "sing a stave of poetry between each stride", "unstring and restring his bow one-handed"],
+      "answer": "stoop under any bough level with his knee",
+      "context": "Silva Gadelica lists it in a single breath: 'he jumped a stick level with his brow, and stooped to pass under one even with his knee.' The pair is not choose-one; both had to be performed, mid-run, without any drop in speed. The other choices are invented parallels for testing shape. Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Still in the forest run, at full pursuit, the candidate is required to perform one more feat that separates the Fianna from ordinary warriors: without breaking stride he must attend to his own injury. What must he do?",
+      "choices": ["pluck a thorn from his own foot without slowing", "bind a bleeding wrist one-handed while running", "shake the pine-needles out of his eyes without looking down", "swap the shield to the wounded arm on the run"],
+      "answer": "pluck a thorn from his own foot without slowing",
+      "context": "The thorn-in-the-foot test is the strangest and best-remembered detail of the Fianna tests: a runner in a Gaelic forest picks up thorns constantly, and the candidate must reach down at full speed, extract the thorn cleanly, and never lose a step. All three distractors are shaped from the same run but are not the sourced trial. Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Beyond the physical tests, one social requirement barred whole families of would-be Fianna forever. It was not birth or wealth. It was a matter of debt owed under the old law. What condition disqualified a candidate?",
+      "choices": ["his kin owed an unpaid blood-debt for a killing", "his father had ever refused a guest at his door", "his tuath had never gone to war under a High King", "he himself had not yet reached the age of eighteen"],
+      "answer": "his kin owed an unpaid blood-debt for a killing",
+      "context": "A blood-debt (an eric-fine still owed for a slaying) would follow a young man into the Fianna and pull his brothers into the feud if he were killed on service. The rule was strict: his relatives had to give securities that even if he were slain in the fian, no compensation would be claimed for him. Feuds could not be brought into the band. Source: psychemedia.github.io/finn-resources/entry-tests.html.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The full corpus of Fenian tales survives largely because two aged veterans of the Fianna outlive their band and, in the frame of a 12th-century text called the Colloquy of the Ancients, recite the old stories to a churchman newly arrived in Ireland. One of the two narrators is Fionn's own son, the poet Oisin. Who is the other -- Fionn's kinsman, remembered as the swift-footed of the Fianna?",
+      "choices": ["Caoilte mac Ronain", "Diarmuid Ua Duibhne", "Oscar mac Oisin", "Goll mac Morna"],
+      "answer": "Caoilte mac Ronain",
+      "context": "Caoilte mac Ronain co-narrates the Acallam na Senorach ('Colloquy of the Ancients,' c. 1200) with Oisin -- the longest surviving work of medieval Irish literature at some 8,000 lines. Diarmuid dies young at the boar-hunt of Ben Bulben; Oscar is Oisin's own son and dies at the Battle of Gabhra; Goll mac Morna is the leader of the rival Connacht Fianna, not Fionn's kinsman. Source: en.wikipedia.org/wiki/Acallam_na_Sen%C3%B3rach.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The churchman who listens to Oisin and Caoilte's tales in the Colloquy of the Ancients is portrayed with unexpected warmth. He is not shown as hostile to the old ways; he weeps at the passing of the Fianna, and gives orders that Caoilte's stories be written down and preserved. Which Irish saint is this listener?",
+      "choices": ["Saint Patrick", "Saint Columba (Colum Cille)", "Saint Kevin of Glendalough", "Saint Malachy of Armagh"],
+      "answer": "Saint Patrick",
+      "context": "The Acallam na Senorach frames Oisin and Caoilte as pagan warrior-survivors telling Patrick the old tales place by place across Ireland. Columba is the 6th-century founder of Iona; Kevin is the 6th-century hermit of the Wicklow mountains; Malachy is the 12th-century reformer of the Irish church. Patrick is the traditional 5th-century missionary and the only Irish saint the compiler could plausibly frame as contemporary with the last Fianna survivors. Source: en.wikipedia.org/wiki/Acallam_na_Sen%C3%B3rach.",
+      "legend": true
+    }
+  ]
+}

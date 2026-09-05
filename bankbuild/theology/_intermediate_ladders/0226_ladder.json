@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse cosmos hung on the branches of the world-tree Yggdrasil, one of the nine worlds sits at the FAR SOUTHERN edge, older than Asgard and older than the gods themselves. It is one of the two primal worlds that existed before creation. Which world is the southern primal one?",
+      "choices": ["Muspelheim", "Niflheim", "Jotunheim", "Svartalfheim"],
+      "answer": "Muspelheim",
+      "context": "Snorri, Gylfaginning 4 and 8. Muspelheim (also written Muspell) is the fiery southern world. Niflheim is its opposite -- the world of ice in the north -- the OTHER primal world. Jotunheim is the land of the giants. Svartalfheim is the underground realm of the dwarves. The two primal worlds are Muspelheim in the south and Niflheim in the north; the meeting of their fire and ice in the great void Ginnungagap is where creation begins.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The southern world of fire in Norse myth has a guardian who has stood at its border since before time began, waiting for one moment far in the future. He is a giant, and his Old Norse name means 'the black one' or 'the swart one' -- for the soot of the flames he lives in. What is his name?",
+      "choices": ["Surtr", "Ymir", "Hrym", "Thrym"],
+      "answer": "Surtr",
+      "context": "Snorri, Gylfaginning 4 and 51. Surtr (sometimes spelled Surt or Surtur) is the fire-giant of Muspelheim. Ymir is the primal frost-giant killed by Odin and his brothers to build the world. Hrym is the frost-giant who steers the ship Naglfar at Ragnarok. Thrym is the giant who steals Mjolnir. Surtr is the specific southern fire-giant.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The fire-giant Surtr sits at the border of Muspelheim carrying one particular weapon -- a weapon the Voluspa calls 'the sun of the battle-gods', which he will one day raise as the signal to ride out on the last battle. What does Surtr carry?",
+      "choices": ["a flaming sword", "a great iron spear", "a serpent-headed axe", "a horn-and-bow"],
+      "answer": "a flaming sword",
+      "context": "Snorri, Gylfaginning 4 and 51; Voluspa 52. Surtr's flaming sword is his signature. Gylfaginning says its light shines more brightly than the sun itself. Voluspa 52 calls it 'the sun of the battle-gods' -- one of the poem's most vivid kennings. Odin is the god with the spear (Gungnir); axes are common giant-weapons; the horn-and-bow is a hunter's kit. Surtr is the one specifically with the burning blade.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the horn Gjallarhorn is blown to announce Ragnarok, Surtr finally rides out from the south at the head of an army. The Voluspa gives this army a name -- they are all beings of fire, and their collective name is a possessive form of their world's name. What are Surtr's fire-army called?",
+      "choices": ["Muspell's sons", "Odin's einherjar", "Loki's brood", "Hel's household"],
+      "answer": "Muspell's sons",
+      "context": "Snorri, Gylfaginning 51; Voluspa 52. Muspellz-megir -- the sons of Muspell -- are Surtr's host of fire-giants. Odin's einherjar are his chosen slain in Valhalla, fighting FOR the gods. Loki's brood are Fenrir, Jormungandr, and Hel -- separate monsters. Hel's household are the dead, called up by the third rooster. The fire-army specifically are Muspell's sons.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "As Surtr and his fire-army cross the rainbow bridge from Muspelheim on their way to the last battle, one specific thing happens to the bridge under the weight of the fire-riders. What happens to Bifrost when Surtr rides across it?",
+      "choices": ["it shatters beneath them", "it turns to black glass", "it curls up and vanishes", "it drips molten into the sea"],
+      "answer": "it shatters beneath them",
+      "context": "Snorri, Gylfaginning 51. Bifrost -- the rainbow bridge from Midgard to Asgard, guarded by Heimdallr -- breaks apart under the burden of the fire-army. It is the first great destruction of Ragnarok: the road between the mortal world and the gods is gone before the battle even begins. The gods knew all along that Bifrost would break at Ragnarok -- that is why Heimdallr's horn is called Gjallarhorn ('the yelling horn') and stands ready at his post.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the plain of Vigrid where the last battle is fought, Surtr charges one particular god -- the Vanir god of fertility and sunshine, brother of Freyja. Which god does Surtr fight at Ragnarok?",
+      "choices": ["Freyr", "Tyr", "Njord", "Baldr"],
+      "answer": "Freyr",
+      "context": "Snorri, Gylfaginning 51; Voluspa 53. Freyr the fertility-god is Surtr's opponent. Tyr fights the hound Garmr (mutually killed). Njord is Freyr's father and does not fight in the Ragnarok scene. Baldr is already dead in Hel long before Ragnarok. Freyr is the specific god who meets Surtr.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Freyr charges Surtr on the plain of Vigrid, but he has to fight the fire-giant without his usual weapon. Long before Ragnarok Freyr had given his famous magic sword -- a sword that fought all by itself against giants -- to his messenger Skirnir. Why did Freyr give the sword away?",
+      "choices": ["as bride-price for the giantess Gerdr", "as a fee to the dwarves who forged Mjolnir", "as ransom for his sister Freyja", "as payment for the horse Blodughofi"],
+      "answer": "as bride-price for the giantess Gerdr",
+      "context": "Skirnismal; Snorri, Gylfaginning 37 and 51. Freyr saw the beautiful giantess Gerdr from Odin's high seat Hlidskjalf, fell instantly in love, and sent his servant Skirnir to woo her. Skirnir named his fee -- Freyr's magic self-swinging sword and his horse -- and Freyr paid without hesitation. The whole point of the story is that Freyr dies at Ragnarok BECAUSE HE WAS IN LOVE. The moral of the Norse: never give away your sword, even for a wife.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sword-less on the plain of Vigrid, Freyr meets Surtr's flaming blade with a much humbler weapon in his hand -- the same weapon he had once used to kill the giant Beli. What does Freyr fight Surtr with at Ragnarok?",
+      "choices": ["a stag's antler", "a wooden staff", "a fishing net", "his bare hands"],
+      "answer": "a stag's antler",
+      "context": "Snorri, Gylfaginning 37 and 51. Freyr's antler-weapon is one of the great melancholy details of Ragnarok -- the fertility-god of the sunshine going to meet the fire-giant with nothing more than a piece of a deer's horn. Snorri notes that Freyr had earlier killed the giant Beli with the antler alone, so it is not a joke weapon; but against Surtr's flaming sword it is not enough, and Freyr falls.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Of all the great Aesir and Vanir who die at Ragnarok, Freyr has the specific distinction of being one particular one. Which is he?",
+      "choices": ["the first great god to fall", "the last great god to fall", "the only god who leaves no body", "the only god slain by his own weapon"],
+      "answer": "the first great god to fall",
+      "context": "Snorri, Gylfaginning 51; Voluspa 53. Freyr falls first at Ragnarok -- before Odin is swallowed by Fenrir, before Thor kills Jormungandr and staggers nine steps and dies, before Tyr and Garmr end each other. The love-story that dropped his sword makes him also the first casualty of the last battle. But the fourth choice -- Freyr slain by his own weapon -- is a real motif from later tradition too: Surtr uses Freyr's own sword against him in some versions, so the fourth distractor is a live-and-plausible alternative.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "When the last god-vs-monster duel has ended and all the great figures lie dead on the plain of Vigrid, Surtr turns his flaming sword away from any single opponent and does the thing he was born to do. What does Surtr do to the world after the battle?",
+      "choices": ["flings fire in every direction", "drowns it under a great wave", "seals it inside a ring of ice", "rolls it up like a scroll"],
+      "answer": "flings fire in every direction",
+      "context": "Snorri, Gylfaginning 51; Voluspa 57. This is the actual END of the Norse world. Voluspa 57 says: 'the sun turns black, earth sinks in the sea, the bright stars fall from heaven; steam rises up round the world-tree, high flames leap up to heaven.' Surtr burns Midgard, Asgard, and Jotunheim all together; then the sea rises and drowns what is left. The drowning is the SECOND stage after the burning, so 'drowns it' as the distractor is close but wrong-in-order -- fire first, water second.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Norse world-fire has stayed alive in Icelandic folk-tradition long after the conversion. The volcanoes of Iceland have sometimes been called by a name that ties them directly back to Surtr's forge. What have Iceland's volcanoes been called?",
+      "choices": ["Surt's forges", "Loki's ovens", "Muspell's chimneys", "Fenrir's mouths"],
+      "answer": "Surt's forges",
+      "context": "Icelandic folk-tradition; the lava-cave Surtshellir on Iceland is a documented site named for Surtr, and the 1963 eruption that created the new Icelandic island Surtsey was named for the same fire-giant. Icelanders living on top of active volcanoes never entirely forgot the being at the southern edge of the world with the burning sword.",
+      "legend": true
+    }
+  ]
+}

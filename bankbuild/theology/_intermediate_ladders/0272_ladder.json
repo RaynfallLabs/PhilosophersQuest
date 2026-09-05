@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In one of the most intricate stories in all Irish myth, a Tuatha De god of the sidhe mound of Bri Leith fell in love with the most beautiful woman ever born in Ireland and married her. Who was this god?",
+      "choices": ["Midir", "Aengus", "Lugh", "Cuchulainn"],
+      "answer": "Midir",
+      "context": "Midir, son of the Dagda, lived in the sidhe mound of Bri Leith (Ardagh Hill in modern County Longford). Tochmarc Etaine ('The Wooing of Etain'), Yellow Book of Lecan; Wikipedia, Midir.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The beautiful woman that the Tuatha De god Midir brought home to his sidhe mound at Bri Leith had a name that Irish schoolchildren still learn. What was her name?",
+      "choices": ["Etain", "Deirdre", "Grainne", "Emer"],
+      "answer": "Etain",
+      "context": "Etain was said to be the most beautiful woman ever born in Ireland. Tochmarc Etaine ('The Wooing of Etain') part I; Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Midir brought his new bride Etain home to Bri Leith, he already had a first wife: a powerful druidess of the Tuatha De who was consumed with jealousy the moment she saw the newcomer. Who was the first wife?",
+      "choices": ["Fuamnach", "Boann", "Danu", "Aoife"],
+      "answer": "Fuamnach",
+      "context": "Fuamnach had been trained by the druid Bresal Etarlam and is described in the tale as 'intelligent, cunning, and versed in the knowledge and power of the Tuatha De Danann'. Wikipedia, Fuamnach.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The druidess Fuamnach struck Etain with a wand and worked a chain of transformations on her: first a pool of water, then a worm, and finally a tiny beautiful creature Etain would live as for centuries. What did Fuamnach turn Etain into last?",
+      "choices": ["A purple fly", "A white deer", "A silver salmon", "A grey wolf"],
+      "answer": "A purple fly",
+      "context": "The Old Irish text calls her cuil corcrai, a scarlet or purple fly. Even as a fly Etain was so beautiful that her wing-buzz was sweet music and her scent healed the sick. Wikipedia, Fuamnach.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After turning Etain into a purple fly, Fuamnach was not finished. She raised a great wind that carried the fly through the sky over Ireland, never letting her land. How long did the wind blow Etain around?",
+      "choices": ["Seven years", "One night", "Nine days", "A hundred years"],
+      "answer": "Seven years",
+      "context": "Fuamnach's storm blew Etain the fly for seven years without rest. In one version Etain then reached Aengus's protective bower before a second storm drove her onward. Wikipedia, Fuamnach.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The wind that Fuamnach raised finally carried the purple fly to a mortal hall, where Etain dropped into a golden cup on a woman's table. What happened next?",
+      "choices": ["The woman drank her down and later gave birth to Etain reborn", "A hound leapt to the table and swallowed her whole", "A druid caught her in a jar of honey", "A crow snatched her out and dropped her at Bri Leith"],
+      "answer": "The woman drank her down and later gave birth to Etain reborn",
+      "context": "The fly fell into the cup of the wife of a warrior named Etar; the woman drank without noticing, and nine months later gave birth to a girl who was Etain reborn, with no memory of her earlier life. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "By the time Etain was reborn as the daughter of Etar's wife and grew up, an enormous stretch of years had passed since her first birth. How long, according to Tochmarc Etaine?",
+      "choices": ["1,012 years", "40 years", "300 years", "9,000 years"],
+      "answer": "1,012 years",
+      "context": "Tochmarc Etaine sets the reborn Etain 1,012 years after her original marriage to Midir. This makes her one of the earliest recorded reincarnation stories in Western literature. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the second half of Tochmarc Etaine, the reborn Etain grows up in mortal Ireland and marries the High King at Tara. Which High King took her to wife?",
+      "choices": ["Eochaid Airem", "Conn of the Hundred Battles", "Cormac mac Airt", "Conchobar mac Nessa"],
+      "answer": "Eochaid Airem",
+      "context": "Eochaid Airem sat at Tara when the reborn Etain grew up and did not know that his queen had once been the wife of a Tuatha De god. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "To win Etain back from the High King Eochaid Airem, Midir came in disguise to Tara and challenged the king to a series of games at an Irish board game of thought and strategy. What was the board game called?",
+      "choices": ["Fidchell", "Brandubh", "Hnefatafl", "Tabula"],
+      "answer": "Fidchell",
+      "context": "Fidchell (Old Irish for 'wood-sense') was the great Irish chess-like game of kings. Midir's board was silver, its playing pieces gold, its corners jeweled. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Midir let Eochaid win the early games of fidchell and paid every prize the king demanded, mounds of horses and treasure. Then he asked for a single last game, this time HIS choice of prize, and this game he won. What was the prize Midir asked for?",
+      "choices": ["An embrace and a kiss from Etain", "The throne of Tara itself", "The sword of the high king", "The hostages of every province"],
+      "answer": "An embrace and a kiss from Etain",
+      "context": "Midir named a modest-sounding prize: one embrace, one kiss. Eochaid agreed, thinking to guard against it, and set the day a month later. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "On the day set for Midir's kiss, Eochaid Airem barred every door of Tara's hall with armed men. Midir simply appeared inside the hall, took Etain in his arms, and the pair vanished out of Tara. How did they leave?",
+      "choices": ["Flying up through the skylight as two swans", "Melting into the flames of the great hearth", "Riding out on Enbarr the sea-horse", "Sinking through the floor into the sidhe below"],
+      "answer": "Flying up through the skylight as two swans",
+      "context": "'The pair fly away through the skylight, turning into swans as they do so.' Eochaid dug up every sidhe mound in Ireland after them and never found her again. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The two swans that flew up through the skylight of Tara carrying Midir and Etain away were bound together in a single striking detail from the story. What linked the two swans?",
+      "choices": ["A chain of gold", "A red silk ribbon", "A ring of silver", "A cord of woven hair"],
+      "answer": "A chain of gold",
+      "context": "A chain of gold linked the two swans as they flew, a scene the Middle English romance Sir Orfeo (c. 1330) would later borrow and transfer to a British setting. Wikipedia, Tochmarc Etaine.",
+      "legend": true
+    }
+  ]
+}

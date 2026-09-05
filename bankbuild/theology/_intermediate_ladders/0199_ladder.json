@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse origin of poetry itself, the two families of gods -- the Aesir and the Vanir -- ended their long war by sealing peace in one shared act at a great vat. What did every god on both sides do into that vat to seal the truce?",
+      "choices": ["spat into it", "bled into it", "wept into it", "sang into it"],
+      "answer": "spat into it",
+      "context": "Snorri, Skaldskaparmal 5: the Aesir and Vanir sealed their peace by all spitting together into a vat. From that spittle grew the wise-man Kvasir. The oath-ring belongs to Icelandic Thing-law, not to this scene; blood-oaths and wine belong to other traditions.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "In the Norse peace-story of the Aesir-Vanir war, the spittle of every god in a shared vat took on a life of its own and grew into a full-grown man. He was said to be the wisest being that had ever lived -- no question could be put to him that he could not answer. What is his name?",
+      "choices": ["Kvasir", "Mimir", "Bragi", "Heimdall"],
+      "answer": "Kvasir",
+      "context": "Snorri, Skaldskaparmal 5: from the peace-vat spittle grew Kvasir, wisest of all beings. Mimir is the guardian of the well of wisdom whose severed head Odin keeps to counsel him. Bragi is the god of poetry. Heimdall is the watchman of Bifrost.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The wise-man Kvasir walked the worlds answering every question that was put to him, until he came at last to the hall of two dwarves who invited him inside as a guest. There they killed him. What are the names of the two dwarves who murdered Kvasir?",
+      "choices": ["Fjalar and Galar", "Sindri and Brokkr", "Nordri and Sudri", "Alviss and Andvari"],
+      "answer": "Fjalar and Galar",
+      "context": "Snorri, Skaldskaparmal 5: Fjalar and Galar invited Kvasir to their hall and killed him. Sindri and Brokkr are the dwarf-brothers who forged Mjolnir. Nordri and Sudri (with Austri and Vestri) hold up the four corners of the sky. Alviss is the all-wise dwarf trapped by Thor at daybreak; Andvari owns the cursed ring of the Volsung cycle.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Prose Edda the two dwarves do not just murder the wise-man for sport -- they drain his blood and mix it with something sweet, then brew the mixture into a drink so powerful that whoever tastes it becomes a poet and a wise-man on the spot. What do the dwarves mix Kvasir's blood with to make the drink?",
+      "choices": ["honey", "milk", "berries", "seawater"],
+      "answer": "honey",
+      "context": "Snorri, Skaldskaparmal 5: the dwarves drained the blood into two vats (Son and Bodn) and a kettle (Odrerir), mixed it with honey, and brewed a mead. Mead is the honey-fermented drink of the Norse hall; ale was made from grain. The dwarves later told the Aesir that Kvasir had 'choked on his own wisdom' because no one was clever enough to ask him a question.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The two dwarves who brewed the Mead soon killed another pair of guests -- the giant Gilling (they drowned him at sea) and then, when his wife would not stop weeping over his death, they killed her too. How did the dwarves kill Gilling's wife as she stood grieving in the doorway of their hall?",
+      "choices": ["dropped a millstone on her head from above the door", "poured boiling honey down her throat at the table", "loosed a wolf on her in the yard at dusk", "sealed her inside the hall and set fire to it"],
+      "answer": "dropped a millstone on her head from above the door",
+      "context": "Snorri, Skaldskaparmal 5: as Gilling's wife wailed in the doorway the dwarves climbed above the doorway and dropped a millstone on her head. Their laughter over this act is what brings the giant Suttung down on them for vengeance.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Gilling's son avenged his parents by seizing the two murdering dwarves and stranding them on a rock in the tide, where the water would rise and drown them. The dwarves bought their lives by handing him one thing. What did they give him in ransom for their lives?",
+      "choices": ["the Mead brewed from Kvasir's blood", "the millstone they had killed his mother with", "a chest of gold rings from the workshop", "the drill they used to bore into stone"],
+      "answer": "the Mead brewed from Kvasir's blood",
+      "context": "Snorri, Skaldskaparmal 5: the giant Suttung stranded Fjalar and Galar on a tidal skerry, and they bought back their lives with the Mead. He took it home to his mountain and set his own daughter to guard it -- and that is how the drink passed from dwarves into the hands of the giants.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The giant who ransomed the Mead from the dwarves hid it deep inside a mountain of his own and set one guardian to watch it in an inner chamber. Who did the giant Suttung set to guard the Mead inside the mountain Hnitbjorg?",
+      "choices": ["his daughter Gunnlod", "his brother Baugi", "his wife Angrboda", "his father Gilling"],
+      "answer": "his daughter Gunnlod",
+      "context": "Snorri, Skaldskaparmal 6: Suttung hid the Mead in the mountain Hnitbjorg and set his daughter Gunnlod to guard it. Baugi is Suttung's brother, whom Odin will use as his way in. Angrboda is Loki's giantess-lover (mother of Fenrir, Jormungand, and Hel) -- not Suttung's wife. Gilling is Suttung's own already-dead father.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Odin set out to steal the Mead disguised as a farm-labourer. He came to the fields of Suttung's brother and made himself so useful that nine slaves working there died in a quarrel over a single sharp thing he had brought with him. What did Odin bring that made the nine slaves kill each other in a scramble for it?",
+      "choices": ["a whetstone he had sharpened", "a silver ring he had promised", "a helmet he had worn in war", "a spear he had brought from Asgard"],
+      "answer": "a whetstone he had sharpened",
+      "context": "Snorri, Skaldskaparmal 6: Odin, calling himself Bolverk, arrived at Baugi's farm and outworked nine slaves, then offered to sharpen their scythes with a whetstone. When they saw how well it worked they all lunged for the stone at once; Odin threw it in the air and the nine cut each other's throats. This is how he manoeuvred Baugi into needing him.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The mountain that held the Mead had no door in it. To get Odin inside, Baugi bored a hole through the rock with a drill called Rati. Odin then had to slip through the drilled hole himself. What shape did Odin take to pass through the drill-hole into Suttung's mountain?",
+      "choices": ["a snake", "a mouse", "a moth", "a spark"],
+      "answer": "a snake",
+      "context": "Snorri, Skaldskaparmal 6: Odin turned himself into a snake and slithered through the hole Baugi had bored with the drill Rati. Baugi stabbed after him with the drill but missed. Inside the mountain Odin found Gunnlod alone.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Inside the mountain Odin spent three nights with the giant's daughter, and each night she granted him one sip from the vessels of Mead she was guarding. Odin took three sips in three nights. In three sips what exactly did he drink?",
+      "choices": ["all three vessels dry to the bottom", "one third of the smallest kettle", "the surface layer of each vessel", "half of the largest vat only"],
+      "answer": "all three vessels dry to the bottom",
+      "context": "Snorri, Skaldskaparmal 6: Gunnlod gave Odin one sip each of the three nights; in three sips he drained all three vessels (Son, Bodn, and Odrerir) to the last drop. Havamal 104-110 tells the same theft from Odin's own voice, and calls the sips the greatest bargain a woman ever gave.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "With every drop of the Mead swallowed and held inside him, Odin fled the mountain and raced for Asgard. Suttung woke, saw him going, and pursued in the same shape Odin himself had taken for the escape. What shape did both Odin and Suttung take for the chase across the sky?",
+      "choices": ["an eagle", "a raven", "a hawk", "a swan"],
+      "answer": "an eagle",
+      "context": "Snorri, Skaldskaparmal 6: both took eagle-shape for the pursuit. The Aesir on the walls saw Odin coming and put out great vats; he spat the Mead into them as he crossed. Suttung the eagle arrived just after, and the Aesir lit a fire on the wall that burned him to death. The story is carved on the Stora Hammars III picture-stone on Gotland from around 700 CE.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In his hurry to reach the vats with Suttung right behind him, Odin lost a portion of the Mead out the OTHER end of his body -- not into the vats. The Norse have a name for that spilled portion, and they say it explains something about the world of verse. What is the spilled Mead said to be?",
+      "choices": ["the share of the bad poets", "the drink of the fallen valkyries", "the tears of the giant's daughter", "the wine of the buried kings"],
+      "answer": "the share of the bad poets",
+      "context": "Snorri, Skaldskaparmal 6: what Odin lost out his rear end is called 'the share of the bad poets' and belongs to any hack-versifier who can pick it up. The good stuff Odin spat into the vats belongs to Asgard and to the true skalds. That is why 'Kvasir's blood' remains the standard kenning for poetry itself.",
+      "legend": true
+    }
+  ]
+}

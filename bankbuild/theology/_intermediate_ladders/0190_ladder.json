@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories one god does not ride a horse at all. He crosses the sky in a chariot pulled by two GOATS whose hooves strike sparks against the clouds. He is the red-bearded thunder-god with the hammer Mjolnir. Which god drives the goat-chariot?",
+      "choices": ["Thor", "Odin", "Freyr", "Baldr"],
+      "answer": "Thor",
+      "context": "Gylfaginning 21. Thor's chariot pulled by two goats is one of Snorri's most famous images. Odin rides the eight-legged horse Sleipnir; Freyr rides the golden boar Gullinbursti (or the ship Skidbladnir); Baldr has no famous mount.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Thor's chariot goats have names that BOTH begin with the same Old Norse word for 'tooth'. One is Tanngrisnir ('tooth-barer'). What is the other one called?",
+      "choices": ["Tanngnjostr", "Sleipnir", "Gullinbursti", "Hildisvini"],
+      "answer": "Tanngnjostr",
+      "context": "Gylfaginning 21. Tanngnjostr means 'tooth-grinder' or 'tooth-gnasher'. Sleipnir is Odin's eight-legged horse; Gullinbursti and Hildisvini are the golden boars ridden by Freyr and Freyja.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Thor's two chariot-goats have a miraculous property that lets the god feed himself and his companions on a long road without ever going hungry. What can Thor do with the goats every night and undo again every morning?",
+      "choices": ["slaughter and eat them, then wake them at dawn", "milk them for a river of ale each night", "shear their wool into a fresh cloak each night", "ride them one day and eat them the next"],
+      "answer": "slaughter and eat them, then wake them at dawn",
+      "context": "Gylfaginning 44. Thor slaughters the goats, roasts and eats the meat, then blesses the hides at dawn with Mjolnir. Provided every bone has been laid whole on the hide, the goats stand up alive and ready to be harnessed again.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The trick that resurrects Thor's eaten goats depends on one strict condition being kept overnight. If this condition is broken the goats still come back to life -- but they come back damaged. What is the condition?",
+      "choices": ["every bone must be laid whole on the hide", "no fire may touch the hide overnight", "the goats' names must not be spoken", "the meat must be finished before midnight"],
+      "answer": "every bone must be laid whole on the hide",
+      "context": "Gylfaginning 44. Thor gives strict instructions before dinner: eat all the meat you like, but every single bone goes intact on the hide. What comes back in the morning is exactly what was laid on the hide the night before -- damaged bones make a damaged goat.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "One night, travelling east into Jotunheim with Loki, Thor stops at a poor farmhouse. The peasants have nothing to feed the god's party, so Thor solves the problem himself by slaughtering both his own goats and roasting the meat over the family's fire. Who does he then invite to share the meal?",
+      "choices": ["the peasant family alongside him", "only Loki, apart from the others", "the farmer alone at his own table", "no one; the meat is for him"],
+      "answer": "the peasant family alongside him",
+      "context": "Gylfaginning 44. Thor turns the empty farmhouse into a feast: he brings the meat, the family brings the hearth. He gives them the same strict warning he always gives -- eat what you like, but leave every bone whole on the hide.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The farmer's son at that supper cannot bear to leave the sweetest thing in the goat untouched, and he does something to a leg-bone that will get his whole family in trouble by morning. What does the boy do with the bone?",
+      "choices": ["splits it with a knife to suck the marrow", "hides it in his tunic to gnaw later", "throws it to the dog under the table", "cracks it against the hearth-stone by accident"],
+      "answer": "splits it with a knife to suck the marrow",
+      "context": "Gylfaginning 44. The boy takes his knife to a thigh-bone and splits it lengthwise to get the marrow, then lays the split halves back on the hide with the rest of the bones. He thinks nobody will notice.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At dawn Thor walks out to the goat-hides, raises Mjolnir, and blesses them into life. Both goats stand up alive at the wave of the hammer. But one of them is not quite whole. What is wrong with the resurrected goat?",
+      "choices": ["it is lame in a hind leg", "one of its horns has snapped off", "it has lost the sight in one eye", "it will not answer to its name"],
+      "answer": "it is lame in a hind leg",
+      "context": "Gylfaginning 44. The split thigh-bone becomes a lame hind leg. The boy's midnight snack has broken a chariot-goat for good.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Seeing the goat step down lame, Thor's face goes so dark that Snorri says his brows dropped low over his eyes and his knuckles turned white on Mjolnir. The whole farm family throws itself to the floor and offers to pay any price to save their lives. What price does Thor take?",
+      "choices": ["their two children as his servants forever", "every animal in the farm's stables", "the farm and the fields it stands on", "seven years of the farmer's own labour"],
+      "answer": "their two children as his servants forever",
+      "context": "Gylfaginning 44. Thor forgoes destroying the family and takes their son and daughter as bond-servants. The exchange is stark: one goat-leg for two lives.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The two farm-children Thor takes into his service that morning are a brother and a sister. The BOY -- the one who split the bone -- will run at Thor's side across the giant-country and later run a losing race at Utgardaloki's court. What is the boy's name?",
+      "choices": ["Thialfi", "Bragi", "Ullr", "Vidar"],
+      "answer": "Thialfi",
+      "context": "Gylfaginning 44. Thialfi becomes Thor's fastest human servant, famed as the swiftest runner among men. Bragi is the god of poetry; Ullr is a god of the bow and skis; Vidar is Odin's silent, avenging son.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The girl Thor takes from the same farmhouse -- the sister of the boy who broke the goat-bone -- also enters the god's service that morning, and travels with the party into Jotunheim. What is the sister's name?",
+      "choices": ["Roskva", "Sif", "Idunn", "Skadi"],
+      "answer": "Roskva",
+      "context": "Gylfaginning 44. Roskva is named in the Prose Edda alongside her brother as the second of the two children given to Thor. Sif is Thor's own wife (of golden hair); Idunn keeps the apples of youth for the Aesir; Skadi is the giantess who married Njord after her father's death.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Prose Edda gives both of Thor's goats names built on the same tooth-word (tann-). Tanngnjostr means 'tooth-grinder'. What does the other name, Tanngrisnir, mean?",
+      "choices": ["tooth-barer", "tooth-gilded", "tooth-of-thunder", "tooth-of-the-mountain"],
+      "answer": "tooth-barer",
+      "context": "Gylfaginning 21. Tanngrisnir translates as 'tooth-barer' or 'snarler'; Tanngnjostr as 'tooth-grinder' or 'tooth-gnasher'. Both names put the goats' teeth front and centre, which fits creatures that pull the thunder-god's chariot through the sky.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The same boy who split the goat-bone at the farmhouse later runs a footrace at Utgardaloki's court and is beaten so badly by an opponent called Hugi that the loss becomes legendary. What does Hugi secretly turn out to be, once Utgardaloki lifts the illusion?",
+      "choices": ["Thought itself", "Wildfire itself", "The Sea itself", "The Wind itself"],
+      "answer": "Thought itself",
+      "context": "Gylfaginning 46-47. Hugi is the personification of Thought; nothing in any world can outrun thought, and Thialfi's defeat is no shame. In the same reveal Loki's eating opponent Logi is unmasked as Wildfire, and the horn Thor could not drain has its far end in the sea.",
+      "legend": true
+    }
+  ]
+}

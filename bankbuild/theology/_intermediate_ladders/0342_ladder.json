@@ -1,0 +1,68 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "On Olympus one god was known for the fury of the killing-field itself -- not the strategy of it, but the joy of the slaughter -- while Athena kept the craft of war. Which Olympian is the god of that furious, blood-loving side of war?",
+      "choices": ["Ares", "Apollo", "Hermes", "Hephaestus"],
+      "answer": "Ares",
+      "context": "Ares, son of Zeus and Hera, is the Olympian of war-fury and slaughter; Athena is his opposite, the goddess of war-craft. Apollo is archery, music, and prophecy. Hermes is the messenger. Hephaestus is the smith.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Ares almost never rode into battle alone. Two of his own sons went with him -- one named 'Terror' and the other named 'Fear' -- and a goddess called the sacker-of-cities kept pace with them. What are the names of the two sons who went beside him?",
+      "choices": ["Deimos and Phobos", "Castor and Pollux", "Kratos and Bia", "Hypnos and Thanatos"],
+      "answer": "Deimos and Phobos",
+      "context": "Hesiod names Deimos ('Terror') and Phobos ('Fear') as Ares's sons by Aphrodite; Enyo the sacker-of-cities also rides with them. Castor and Pollux are the Dioscuri twins. Kratos and Bia (Strength and Force) attend Zeus. Hypnos and Thanatos are Sleep and Death.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the fifth book of the Iliad, a mortal Greek hero speared Ares in the belly with the goddess Athena guiding his arm. The god of war fled back to Olympus wounded and bleeding, whimpering to his father. Which mortal hero was it who put a spear through the god of war?",
+      "choices": ["Diomedes", "Achilles", "Ajax", "Odysseus"],
+      "answer": "Diomedes",
+      "context": "Iliad 5.855-863: Diomedes, with Athena driving his spear, wounds Ares in the belly. Achilles never fights a god face-to-face like this. Ajax and Odysseus never wound one either. Diomedes's rampage in Book 5 is called the first great aristeia of the poem.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When the spear went into him, Ares let out a scream. Homer says his shout was as loud as a certain number of soldiers all crying out at once in the middle of a battle. In Iliad 5 the god's shout is compared to how many warriors shouting together?",
+      "choices": ["nine or ten thousand", "one hundred", "three hundred", "fifty thousand"],
+      "answer": "nine or ten thousand",
+      "context": "Iliad 5.859-863 (A.T. Murray): 'Then brazen Ares bellowed loud as nine thousand warriors or ten thousand cry in battle, when they join in the strife of the War-god.' Homer's simile is a shocking image -- a single god's howl equal to two full armies.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Bleeding from the spear-wound, Ares limped to Olympus and complained to his father Zeus that a mortal had done this to him. His own father answered him with contempt. In Iliad 5, what does Zeus say to his wounded son?",
+      "choices": ["that Ares is the most hateful of all the gods on Olympus", "that Ares must return to earth and be avenged", "that Ares is banished from Olympus forever", "that Ares will be given a new immortal army"],
+      "answer": "that Ares is the most hateful of all the gods on Olympus",
+      "context": "Iliad 5.889-891 (Murray): 'Most hateful to me art thou of all gods that hold Olympus, for ever is strife dear to thee and wars and fightings.' Zeus adds that he tolerates Ares only because Ares is his son by Hera, and that the wound was deserved.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Ares carried on an affair with Aphrodite, and the sun-god Helios saw them and told her husband. The husband, a lame smith, forged a nearly-invisible metal net, spread it over the bed, and caught the two lovers naked and tangled -- then called every god on Olympus to come and laugh. Who was the smith husband who trapped Ares and Aphrodite in the net?",
+      "choices": ["Hephaestus", "Prometheus", "Daedalus", "Poseidon"],
+      "answer": "Hephaestus",
+      "context": "Odyssey 8: Hephaestus, married to Aphrodite, forged a finely-knitted bronze net after Helios told him of the affair. He invited the male gods to see the trapped pair. Prometheus is a Titan smith of humankind, not Aphrodite's husband. Daedalus is a mortal Athenian craftsman. Poseidon was among the laughing witnesses.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Ares was not much loved among the Greeks themselves. His serious cult -- with altars, sacrifices, and reverence -- was strongest not in Athens or Sparta but among two rough peoples on the northern edge of the Greek world, one of whom set an iron sword upright in a mound and worshipped it as him. Which two peoples honoured Ares most?",
+      "choices": ["the Thracians and the Scythians", "the Egyptians and the Persians", "the Cretans and the Cypriots", "the Phoenicians and the Lydians"],
+      "answer": "the Thracians and the Scythians",
+      "context": "Herodotus records that the Scythians stuck an iron sword into a heaped altar and worshipped it as Ares, sacrificing one in every hundred war-captives to it. The Thracians in the north were his other main devotees. The Greek city-states themselves preferred Athena.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "There is a stone hill in Athens beside the Acropolis where, in the earliest days, the gods themselves are said to have gathered to try Ares for a killing -- he had slain a son of Poseidon named Halirrhothius for attacking his daughter Alcippe. The gods acquitted him. What is the Athenian hill called, whose name means 'Ares's Hill'?",
+      "choices": ["the Areopagus", "the Pnyx", "the Ceramicus", "the Lyceum"],
+      "answer": "the Areopagus",
+      "context": "The Areopagus ('Ares's Hill') just west of the Acropolis takes its name from this trial, called the first murder trial ever held. It later became the actual homicide court of Athens. The Pnyx was where the Assembly met. The Ceramicus was the potters' quarter and cemetery. The Lyceum was Aristotle's school.",
+      "legend": true
+    }
+  ]
+}

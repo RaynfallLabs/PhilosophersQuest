@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "A medieval Irish book, compiled in the 11th century out of much older poems and sagas, gives Ireland an origin story that a kid can count off on one hand plus a thumb: the island was settled in a series of successive waves, one after another, each one taking the land from the last. How many waves does the book count?",
+      "choices": ["six", "three", "twelve", "twenty"],
+      "answer": "six",
+      "context": "The book is the LEBOR GABALA ERENN, 'the Book of the Taking of Ireland,' and it counts six waves: Cessair, Partholon, Nemed, the Fir Bolg, the Tuatha De Danann, and the Milesians. Source: en.wikipedia.org/wiki/Lebor_Gabala_Erenn.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The medieval Irish 'Book of Invasions' opens with a first wave of settlers led by a granddaughter of Noah. She set sail with fifty women and only three men and reached Ireland forty days before the Flood, hoping to outrun the water. What was her name?",
+      "choices": ["Cessair", "Eriu", "Danu", "Boann"],
+      "answer": "Cessair",
+      "context": "CESSAIR is the leader of the first wave in the Book of Invasions -- fifty women, three men, one ship, forty days before the Flood. Every one of the fifty women is named in the manuscripts. Eriu is the Tuatha De queen whose name became Eire; Danu is the mother-goddess of the Tuatha De Danann; Boann is the goddess of the River Boyne. Source: en.wikipedia.org/wiki/Cessair.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Flood swallowed everyone in Cessair's fleet except a single man -- her own husband. He alone survived, according to the tale, by shape-shifting for the whole year of the Flood into one particular animal (and later lived on through all the other invasions as the eye-witness of Irish history). What did he shape-shift into first?",
+      "choices": ["a salmon", "an eagle", "a stag", "a wolf"],
+      "answer": "a salmon",
+      "context": "FINTAN MAC BOCHRA turned into a SALMON to survive the Flood -- the same salmon-of-wisdom motif that runs through Irish story into the Fenian Cycle. He later took the shapes of an eagle and a hawk (and finally a man again) to live on as witness through every wave of the six. Source: en.wikipedia.org/wiki/Fintan_mac_Bochra.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Book of Invasions gives Cessair's husband a proper name he keeps through his many centuries of shape-shifting. It is a name Irish tradition returns to again and again as 'the witness of all Ireland.' Which of these is it?",
+      "choices": ["Fintan mac Bochra", "Tuan mac Cairill", "Mog Ruith", "Amergin Gluingel"],
+      "answer": "Fintan mac Bochra",
+      "context": "FINTAN MAC BOCHRA is Cessair's husband who lives through all six invasions. Tuan mac Cairill is a parallel shape-changing witness from the wave of Partholon (with the same job); Mog Ruith is the great blind druid of Munster; Amergin Gluingel is the Milesian poet -- the man of the sixth wave, not the first. Source: en.wikipedia.org/wiki/Fintan_mac_Bochra.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The second wave of invaders reached Ireland roughly three hundred years after the Flood, led by a man whose name the medieval scribes give as Partholon. His people cleared new plains for farming and brought in the first cattle. Then, all in one week, they were wiped out to a man -- leaving only one shape-changing survivor, Tuan mac Cairill, to witness what came next. What killed them?",
+      "choices": ["a plague", "a great famine", "an earthquake", "a magical fire"],
+      "answer": "a plague",
+      "context": "Partholon's people are wiped out by a PLAGUE in one week, leaving only Tuan mac Cairill as a shape-changing sole survivor. Source: en.wikipedia.org/wiki/Partholon.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The fourth wave in the Book of Invasions carries a strange name in Irish -- FIR BOLG, which the medieval scribes explain with a legend: this people had been slaves overseas, forced by their masters to carry the raw material for building-work in leather bags on their backs, until they escaped and sailed home. Which material were they carrying?",
+      "choices": ["earth", "stone", "iron", "salt"],
+      "answer": "earth",
+      "context": "'FIR BOLG' means 'men of bags' -- the legend is that in Greece they were forced to carry earth in leather bags to fill in rocky ground before they broke free and returned to Ireland. Source: en.wikipedia.org/wiki/Fir_Bolg.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the Fir Bolg reached Ireland their five chieftains carved the island up into five kingdoms, and the names of four of those five are still on the map today as Ulster, Leinster, Munster, and Connacht. The fifth was the sacred middle kingdom that gave its name to a modern county still called by its Irish form. Which is that fifth province?",
+      "choices": ["Mide", "Ossory", "Breifne", "Thomond"],
+      "answer": "Mide",
+      "context": "MIDE ('the middle') is the fifth province of the Fir Bolg carve-up, surviving as the modern county name MEATH (an anglicisation of Mide). Ossory, Breifne, and Thomond are all real Irish sub-kingdoms of later medieval Ireland but not one of the original five provinces. Source: en.wikipedia.org/wiki/Meath; en.wikipedia.org/wiki/Fir_Bolg.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The fifth wave of the Book of Invasions -- the WAVE OF THE GODS, the Tuatha De Danann -- rolled in over Ireland in dark clouds of fog and beat the Fir Bolg in a great fight. That fight is one of the two great Battles of Moytura. Which one was it?",
+      "choices": ["the First Battle of Moytura", "the Second Battle of Moytura", "the Battle of Clontarf", "the Battle of Ventry"],
+      "answer": "the First Battle of Moytura",
+      "context": "The FIRST Battle of Moytura (Cath Maige Tuired Cunga) was Tuatha De against the Fir Bolg. The SECOND Battle of Moytura, later, was Tuatha De against the Fomorians. Clontarf (1014) is a historical battle -- Brian Boru against the Vikings. The Battle of Ventry is a Fenian-cycle tale of Fionn mac Cumhaill. Source: en.wikipedia.org/wiki/Cath_Maige_Tuired.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The sixth wave in the Book of Invasions -- the wave that STAYED, the wave the modern Irish descend from -- is named after its leader, whose own name doubles as an epithet: MIL of somewhere. From which land does Mil, the founder of the sixth wave, take his name?",
+      "choices": ["Spain", "Egypt", "Greece", "Sicily"],
+      "answer": "Spain",
+      "context": "MIL ESPAINE -- 'Mil of SPAIN' -- gives his name to the MILESIANS, the sixth wave. The medieval Irish schools placed the launching-point in Iberia (specifically Galicia in the north-west). Egypt, Greece, and Sicily are all launching-points for other, earlier waves in the same book (Partholon's people, for instance, are said to pass through Sicily and Greece). Source: en.wikipedia.org/wiki/Milesians_(Irish).",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The druid-poet of the Milesians, the man who sang the invaders onto Irish soil with a claiming-poem the Book of Invasions preserves in full, carries an unusual epithet in the manuscripts -- a nickname referring to a part of his own body. What does his epithet 'Gluingel' actually mean?",
+      "choices": ["white-kneed", "silver-armed", "swift-footed", "sharp-eyed"],
+      "answer": "white-kneed",
+      "context": "AMERGIN GLUINGEL -- 'White-Kneed Amergin' -- is the founding poet of Irish tradition. 'Silver-Armed' is Nuada (Nuada Airgetlam) of the Tuatha De; 'Swift-Footed' is a Homeric epithet (Achilles); 'Sharp-Eyed' is a general Celtic hero-epithet but not Amergin's. Source: en.wikipedia.org/wiki/Amergin_Gluingel.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Milesians won their war against the Tuatha De Danann in battle, but the sons of Mil knew they had been fighting gods and offered a settlement. Under it, the two peoples split Ireland in two, one taking the surface, the other retreating out of sight. Where did the Tuatha De go?",
+      "choices": ["underground into the hollow hills", "west into the sea", "into the northern mountains", "back to Iberia"],
+      "answer": "underground into the hollow hills",
+      "context": "The Tuatha De retreated UNDERGROUND into the sidhe mounds -- every hollow hill, fairy-fort, and cairn -- becoming the AOS SI, the fairy folk of later Irish tradition. The Milesians took the surface (the modern Irish). Source: en.wikipedia.org/wiki/Milesians_(Irish); en.wikipedia.org/wiki/Aos_Si.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Book of Invasions is a work of medieval CHRISTIAN-IRISH SYNCRETISM -- an anonymous monk-compiler in the 11th century trying to fit Ireland's older pagan cosmology, gods and all, into a wider world-history he already believed in. Which biblical framing is he trying to fit the whole thing inside?",
+      "choices": ["Genesis and the Flood", "the Exodus from Egypt", "the fall of Jerusalem", "the Book of Revelation"],
+      "answer": "Genesis and the Flood",
+      "context": "The compiler works from a GENESIS-and-FLOOD frame -- which is exactly why the first wave is a granddaughter of Noah trying to outrun the deluge. The whole scheme is designed to give Ireland an origin story to rival Rome and Israel. Exodus, the fall of Jerusalem, and Revelation are all later biblical events. Source: en.wikipedia.org/wiki/Lebor_Gabala_Erenn.",
+      "legend": true
+    }
+  ]
+}

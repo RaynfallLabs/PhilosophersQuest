@@ -1,0 +1,76 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse Poetic Edda poem Voluspa, the world is ready to end. Doom is not announced by thunder. It is announced by three ordinary animals at dawn -- one in Asgard, one in Jotunheim, one in Hel -- crying out at the same moment to wake their three worlds. What kind of animal signals the start of Ragnarok?",
+      "choices": ["a rooster", "a wolf", "a raven", "a goat"],
+      "answer": "a rooster",
+      "context": "Voluspa stanzas 42-43. Three roosters (Old Norse hani, cock) crow at one dawn -- one in Asgard for the gods, one in Jotunheim for the giants, one in Hel for the dead -- and everyone who hears them knows what it means. Ravens are Odin's messenger-birds (Huginn and Muninn); wolves swallow the sun and moon; the goats are Thor's Tanngrisnir and Tanngnjostr who pull his chariot. The specific dawn-birds of Ragnarok are roosters.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The rooster of Asgard sits on the roof of Valhalla and his crow wakes Odin and the einherjar -- Odin's chosen slain warriors -- so they can arm themselves for the last battle. His Old Norse name is a plain kenning meaning simply 'Golden-Comb'. What is the name of Asgard's rooster?",
+      "choices": ["Gullinkambi", "Vidofnir", "Fjalar", "Sotraudr"],
+      "answer": "Gullinkambi",
+      "context": "Voluspa stanza 43. Gullinkambi is gullinn ('golden') + kambr ('comb') -- a direct name-word for a rooster's sun-catching crest. Vidofnir is a rooster who sits at the top of the tree Mimameidr in a different Eddic poem (Fjolsvinnsmal), NOT the Ragnarok rooster. Fjalar is the Jotunheim rooster (a different one of the three). Sotraudr means 'soot-red' -- the Hel rooster is called by that adjective, not by any actual name.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The rooster of Jotunheim -- the land of the giants -- sits in a dark forest and crows to muster the giants' army against the gods. His Old Norse name means 'hider' or 'deceiver'. What is the name of the giants' rooster?",
+      "choices": ["Fjalar", "Vidofnir", "Salgofnir", "Vindsvalr"],
+      "answer": "Fjalar",
+      "context": "Voluspa stanza 42. Fjalar the rooster is one of Voluspa's eerier names -- a bird whose crowing HIDES the safety of the old world and DECEIVES no one about what is coming. Vidofnir is a completely different named rooster who sits atop the tree Mimameidr in the poem Fjolsvinnsmal -- not the Ragnarok rooster. Salgofnir ('hall-crower') is the rooster that wakes the einherjar of Valhalla in some skaldic verse -- again NOT the Jotunheim doom-rooster. Vindsvalr ('cold-wind') is the father of Winter in Vafthrudnismal -- a wintry-sounding Norse name that would fit a doom-rooster but is not one. Fjalar is the specific gallows-wood rooster. There is a completely separate Fjalar in Norse myth -- the murderous dwarf who killed the wise Kvasir to make the Mead of Poetry -- but the two Fjalars are unrelated; the name is simply reused.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Jotunheim rooster Fjalar sits in a specific named forest -- a dark wood whose Old Norse name means 'Gallows-Wood'. What is this forest called?",
+      "choices": ["Galgvidr", "Myrkvidr", "Jarnvidr", "Vidofnir"],
+      "answer": "Galgvidr",
+      "context": "Voluspa stanza 42. Galgvidr (galgi 'gallows' + vidr 'wood') is Fjalar's home. Myrkvidr ('Mirk-wood') is a different Norse forest, the border-wood between the world of men and the world of giants. Jarnvidr ('Iron-wood') is where the giantess who mothers the wolves of Ragnarok lives. Vidofnir is a rooster, not a forest. The specific gallows-wood is Galgvidr.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The rooster of the underworld halls of Hel is the strangest of the three. He has NO NAME in the Voluspa at all -- he is only described by his color, a single Old Norse adjective. What color is Hel's rooster?",
+      "choices": ["soot-red", "raven-black", "bone-white", "moon-pale"],
+      "answer": "soot-red",
+      "context": "Voluspa stanza 43. Sotraudr (sot 'soot' + raudr 'red') -- 'soot-red' -- is the whole description we get of the Hel rooster. He has no proper name, only that color. The nameless-ness is part of the horror: the roosters of Asgard and Jotunheim have names because their worlds have names; the dead in Hel have no such dignity, and neither does their bird.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Each of the three roosters crows to wake one specific group in his own world. The soot-red rooster of Hel down under the world wakes his own particular group for their part in Ragnarok. Whom does the Hel-rooster wake?",
+      "choices": ["the dead", "the dwarves", "the elves", "the Norns"],
+      "answer": "the dead",
+      "context": "Voluspa stanza 43. The whole point of the third rooster is that the DEAD have their own army at Ragnarok, and their own alarm-call. The dead sail on the ship Naglfar -- 'nail-ship' -- built from the untrimmed fingernails and toenails of the dead, steered by the frost-giant Hrym. Dwarves live in Svartalfheim, elves in Alfheim, Norns at the well of Urd -- none of them are wakened by the Hel-rooster.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Alongside the rooster Fjalar in the gallows-wood sits one specific giant-figure the Voluspa names -- a giant herdsman who cheerfully plays his harp on a burial mound as the world ends. What is this giant herdsman doing while Fjalar crows?",
+      "choices": ["playing a harp on a mound", "shouting warnings to Jotunheim", "sharpening a great iron sword", "counting the coming years of Ragnarok"],
+      "answer": "playing a harp on a mound",
+      "context": "Voluspa stanza 42. Eggther the giant herdsman sits on a mound and CHEERFULLY plays his harp as the end of the world begins. The Voluspa's poet is doing something specific with that image -- the doom of the gods is a celebration for the giants who have waited generations to overthrow them. The cheerful harp-music is one of the most chilling small notes in the whole poem.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Snorri Sturluson's Prose Edda (Gylfaginning) retells most of the Voluspa's Ragnarok scenes in prose, but he does NOT retell one particular scene. Scholars use this omission as one piece of evidence that the Voluspa is a genuinely older poem than Snorri's own thirteenth-century material. Which scene is missing from Snorri's Ragnarok?",
+      "choices": ["the three roosters at dawn", "Fenrir swallowing Odin", "Thor killing Jormungandr", "Surtr burning the world"],
+      "answer": "the three roosters at dawn",
+      "context": "Voluspa stanzas 42-43 vs. Snorri's Gylfaginning chapter 51. Snorri retells Fenrir eating Odin, Thor and the Midgard-serpent, and Surtr's fire -- but he does not include the three-roosters scene at all. It survives only in the Poetic Edda, which is one reason scholars (Larrington, Bellows) argue the Voluspa preserves genuinely older oral material Snorri either did not know or did not think fit his prose retelling.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In Scandinavian folk-tradition long after the conversion to Christianity, one particular kind of rooster crowing at an unusual hour was still considered very bad luck -- an echo of the three doom-cocks of Voluspa a thousand years later. What color of rooster was thought unlucky when it crowed at an odd hour?",
+      "choices": ["a black rooster", "a white rooster", "a golden rooster", "a spotted rooster"],
+      "answer": "a black rooster",
+      "context": "Scandinavian folk-belief. A black rooster crowing at midnight or another wrong hour kept its association with the underworld cock of Hel long after the Christianisation of Iceland and Scandinavia. The image of doom announced by a bird-cry survives in bits of the folk-tradition even now.",
+      "legend": true
+    }
+  ]
+}

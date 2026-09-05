@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Irish myth a shape-changing war-goddess of the Tuatha De Danann haunts battlefields and turns the tide of fighting by her presence; her name is glossed 'the Great Queen' or 'the Phantom Queen.' What is she called?",
+      "choices": ["the Morrigan", "Brigid", "Danu", "Aine"],
+      "answer": "the Morrigan",
+      "context": "The Morrigan (Old Irish Morrigu, from mor 'great' plus rigan 'queen,' with an older reading tying mor- to an Indo-European root for terror) is the great Irish war-goddess. Brigid is the Tuatha De goddess of poetry, healing, and the smith-fire at Kildare; Danu is the mother-goddess the whole Tuatha De are named after (Tuatha De Danann, 'peoples of Danu'); Aine is a sun-and-fertility goddess of Munster.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Cu Chulainn is a hero of which cycle of Irish myth -- the cattle-raid and border-war stories set in the ancient kingdom of Ulster?",
+      "choices": ["the Ulster Cycle", "the Mythological Cycle", "the Fenian Cycle", "the Cycle of the Kings"],
+      "answer": "the Ulster Cycle",
+      "context": "Irish tradition sorts its old stories into four cycles. The Ulster Cycle centres on Cu Chulainn, Conchobar, and the cattle-raid of Cooley (the Tain Bo Cuailnge). The Mythological Cycle holds the Tuatha De Danann and the battles of Moytura; the Fenian (or Ossianic) Cycle follows Fionn mac Cumhaill and the Fianna; the Cycle of the Kings gathers the tales of the historical high kings.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the Tain Bo Cuailnge the Morrigan comes to Cu Chulainn at the ford in her most beautiful young-woman shape, in the middle of the war he is holding off alone. She offers him two things together, one of them a gift no goddess offers lightly. What does she offer?",
+      "choices": ["her love and her aid in the fighting", "a magic spear and a golden shield", "a chariot and a team of horses", "a cauldron of healing and a druid's cloak"],
+      "answer": "her love and her aid in the fighting",
+      "context": "Tain Bo Cuailnge (Recension I, ed. O'Rahilly 1976): the Morrigan appears to Cu Chulainn as a beautiful young woman in royal dress and offers herself and her supernatural help against the army of Connacht. Lugh's spear, chariots and cauldrons belong to other Irish myths.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Cu Chulainn does not recognise the goddess at the ford. He is in the middle of holding the border alone and cannot afford a distraction, so he refuses her plainly. How does the Morrigan answer his refusal?",
+      "choices": ["she promises to oppose him in the fights to come", "she rides away in silence and never returns", "she laughs and offers him a second chance the next day", "she strikes him blind with a look"],
+      "answer": "she promises to oppose him in the fights to come",
+      "context": "Tain Bo Cuailnge: when the young warrior turns her down (he does not know she is a goddess), the Morrigan tells him that if he will not have her love he will have her hate -- she will hinder him herself in his next fights. The Tain then delivers exactly that in three animal-shape scenes.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the first of the three animal interferences, Cu Chulainn is fighting a champion in the middle of a river-ford. Something wraps itself around his feet in the water and nearly pulls him over. What shape has the Morrigan taken?",
+      "choices": ["an eel", "a salmon", "a great pike", "a water-snake"],
+      "answer": "an eel",
+      "context": "Tain Bo Cuailnge: the Morrigan takes the shape of an eel and coils around Cu Chulainn's feet in the ford. He stamps down and crushes her ribs on the river-stones. Salmon in Irish tradition belong to the Well of Segais and the Fionn story; there are no giant pikes and no water-snakes in this scene.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The second animal interference comes at Cu Chulainn from the bank -- a shaggy four-legged shape drives a herd of cattle at him mid-combat to break his line. He puts a sling-stone through the animal's eye. Which shape has the Morrigan taken this time?",
+      "choices": ["a she-wolf", "a wild boar", "a black bull", "a hunting hound"],
+      "answer": "a she-wolf",
+      "context": "Tain Bo Cuailnge: the Morrigan takes the form of a grey she-wolf and drives the enemy's cattle at Cu Chulainn from the shore. He hurls a stone from his sling and puts out one of her eyes. The wild boar is Diarmuid's death-beast; the black bull is the prize of the whole Tain (the Donn Cuailnge); a plain hunting hound is what his own name means but is not the wolf here.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the third interference the Morrigan takes an Otherworld animal-shape -- white with red ears, the classic Irish sign that a beast comes from beyond -- and charges at Cu Chulainn's opponent through the ford, leading a whole herd behind. He breaks its leg with a sling-stone before turning back to the man. What kind of creature is she this time?",
+      "choices": ["a heifer", "a mare", "a stag", "a hound"],
+      "answer": "a heifer",
+      "context": "Tain Bo Cuailnge: the Morrigan appears as a white heifer with red ears (white-with-red-ears is the Irish sign of an animal from the Otherworld, the same colouring as Arawn's hounds in the Welsh Mabinogion). Cu Chulainn breaks her leg with a sling-shot. There is no red-antlered stag or she-bear in this scene; Macha in another tale runs against horses.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "After the last of the fights Cu Chulainn passes an old woman at the roadside who is lame in one leg, blind in one eye, and has one arm crushed -- the exact three wounds he has just given the eel, the heifer, and the wolf. Whatever she is doing, when he takes her hospitality and blesses her three times, each blessing heals one of those wounds. What is she doing?",
+      "choices": ["milking a cow and offering him three drinks", "spinning wool and asking him to hold the thread", "washing bloody clothes in a stream", "carrying firewood and asking him to lift the bundle"],
+      "answer": "milking a cow and offering him three drinks",
+      "context": "Tain Bo Cuailnge: the old woman is the Morrigan in disguise, and she is milking a cow at the roadside. Cu Chulainn is thirsty and asks for a drink; she gives him three, and after each one he blesses her -- and each blessing heals one of the wounds he has just inflicted. Washing bloody clothes at a ford is Badb's Washer-at-the-Ford omen, a related but different scene; spinning and firewood belong elsewhere.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Morrigan is often named as one of a triad of Irish war-goddesses called the Morrigna. Two of her sisters are constant in the sources; a fourth figure sometimes replaces one of them. Who are her two constant sisters?",
+      "choices": ["Badb and Macha", "Brigid and Danu", "Aine and Etain", "Grainne and Deirdre"],
+      "answer": "Badb and Macha",
+      "context": "The Morrigan, Badb ('the crow'), and Macha make the classical Morrigna in the medieval Irish glossaries; Nemain ('frenzy') sometimes replaces Macha or joins as a fourth. Brigid and Danu are Tuatha De but not war-goddesses; Aine and Etain are goddesses of sun and love; Grainne and Deirdre are famous mortal women of the Fenian and Ulster cycles.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the very end of Cu Chulainn's life he is mortally wounded and ties himself upright to the standing stone Clochafarmore so he will die on his feet. His enemies wait at a distance -- they will not come close until they are sure he is dead. What sign finally tells them it is over?",
+      "choices": ["a crow lands on his shoulder", "his sword falls from his hand", "the sun sets behind the hill", "his war-horse gallops off riderless"],
+      "answer": "a crow lands on his shoulder",
+      "context": "Aided Con Culainn (the Death of Cu Chulainn): the hero binds himself to the pillar-stone at Clochafarmore in County Louth so that he will die standing. His enemies keep back until a crow -- the Morrigan in her death-form -- alights on his shoulder to drink his blood. Only then does Lugaid dare approach and take the head. His sword and horse (the Grey of Macha) both fall out of the story before this moment, but they are not the sign the enemies wait for.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Long before the Ulster Cycle the Morrigan already had a job among the older gods. At the second Battle of Moytura, the Cath Maige Tuired, she does something in the middle of the fight that turns the whole battle for the Tuatha De Danann against the Fomorians. What does she do?",
+      "choices": ["chants a poem that breaks the Fomorian line", "throws Balor's own eye back at him", "wakes the dead of the Tuatha De for one more charge", "opens the earth beneath the Fomorian king"],
+      "answer": "chants a poem that breaks the Fomorian line",
+      "context": "Cath Maige Tuired (the second Battle of Moytura): the Morrigan promises the Dagda on Samhain eve that she will aid the Tuatha De against the Fomorians, and during the battle she chants a poem -- 'kings rise up to the battle' -- and the Fomorians break and are driven into the sea. Balor's eye is put out by Lugh's sling-stone (a different rung); the dead are not raised; the earth-opening motif is not part of this fight.",
+      "legend": true
+    }
+  ]
+}

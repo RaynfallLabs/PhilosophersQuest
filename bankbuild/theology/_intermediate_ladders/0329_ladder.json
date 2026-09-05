@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Song of Roland, after Charlemagne hears Roland's dying horn-blast and rushes his army back to Roncesvalles, he arrives too late. The rearguard is dead on the mountainside -- Oliver, Archbishop Turpin, and the twelve peers with them. What is the name of the young hero who lay dead there?",
+      "choices": ["Roland", "Baligant", "Marsile", "Ganelon"],
+      "answer": "Roland",
+      "context": "The Song of Roland (Oxford Digby 23, c. 1100) centres on Roland, Charlemagne's nephew and leader of the rearguard. Baligant is the pagan emir who arrives later; Marsile is the Saracen king of Zaragoza who plotted the ambush; Ganelon is the Frankish traitor who sold Roland out and is judged in this closing section of the poem.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Charlemagne wept so hard over Roland's body that he tore at a specific part of his own head with his hands -- a gesture that recurs through the poem whenever he is overwhelmed by grief. What part of himself did the aged emperor tear?",
+      "choices": ["his beard", "his robes", "his crown", "his cheeks"],
+      "answer": "his beard",
+      "context": "Song of Roland Part VI (Turold, trans. Kline): 'Weeping freely, tore his beard again.' In the Frankish heroic idiom the beard is the seat of a man's honour -- Charlemagne's white beard is repeatedly mentioned, and tearing it is the deepest sign of grief. The robes and the crown are rank-signs, not grief-signs; 'cheeks' is not a heroic gesture in the chanson.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Charlemagne pursued the Saracen force that had killed Roland deep into Spain. He caught them at a great Spanish river and drove them into the water; the pagans drowned in the current as the Franks pressed them from behind. Which river?",
+      "choices": ["the Ebro", "the Rhine", "the Tagus", "the Loire"],
+      "answer": "the Ebro",
+      "context": "Song of Roland: the Saracens are driven into the Ebro, the largest river in northeast Spain, and drown. The Rhine and the Loire are French / German rivers; the Tagus is Spanish but runs through Toledo and Lisbon, far from Roland's Pyrenean setting.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "With the pursuit finished and Roland's body carried home, Charlemagne returned to his imperial capital in the north to bury the rearguard with honour and to try the man who had betrayed them. What is the name of that capital, where the historical Charlemagne is buried in an octagonal chapel he built around 800?",
+      "choices": ["Aachen", "Paris", "Reims", "Cologne"],
+      "answer": "Aachen",
+      "context": "Aachen (French Aix-la-Chapelle) was Charlemagne's capital and is still his burial place -- the octagonal Palatine Chapel he built there survives as the core of Aachen Cathedral. Paris was not yet a royal capital in Charlemagne's day; Reims is the coronation cathedral of later French kings; Cologne is a great medieval city but not Charlemagne's seat.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the trial in Charlemagne's hall the traitor's guilt was not decided by testimony alone. Frankish law let it be decided by a JUDICIAL DUEL: one champion for the accuser fighting one champion for the accused, God granting victory to the just side. Who was the champion who fought FOR Charlemagne, on Roland's side?",
+      "choices": ["Thierry", "Naimon", "Ogier", "Oliver"],
+      "answer": "Thierry",
+      "context": "Song of Roland laisses 273-291: Thierry, Roland's kinsman, argues that Ganelon's revenge is treason and offers his body against Ganelon's champion. Naimon is Charlemagne's wise old counsellor (already retired from the fighting); Ogier the Dane is another peer; Oliver is Roland's sworn brother, already dead at Roncesvalles.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Ganelon's own kinsman -- a large, fierce warrior who was reckoned the stronger man in the duel -- stepped forward to fight for him. God, however, granted the smaller man the victory. What was Ganelon's champion called?",
+      "choices": ["Pinabel", "Basan", "Marganice", "Blancandrin"],
+      "answer": "Pinabel",
+      "context": "Song of Roland: Pinabel of Sorence, Ganelon's kinsman, is the larger warrior; Thierry kills him by 'divine intervention' and Ganelon's guilt is proved. Basan is a Frankish envoy the Saracens killed earlier in the poem; Marganice is a Saracen who wounds Oliver; Blancandrin is Marsile's counsellor who first proposed the treachery.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Ganelon was executed by a method medieval French law reserved for the very worst treason -- the same method later used in 1610 on the assassin of King Henri IV. Each of his four limbs was tied to a separate animal, and the animals were driven off in four directions until his body was torn apart. What animals were used?",
+      "choices": ["horses", "oxen", "wolves", "boars"],
+      "answer": "horses",
+      "context": "Song of Roland laisses 288-289 (Turold): 'His sinews stretched until they snapped, and his limbs torn away' -- Ganelon is quartered by four horses driven off in four directions. The same punishment (ecartelement) was used on Francois Ravaillac after he stabbed Henri IV in 1610. Oxen were used as beasts of burden, not execution animals; wolves and boars would not be trained to run to command.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Charlemagne's vengeance did not stop with Ganelon himself. Ganelon's whole extended kin-group had backed Pinabel and been implicated in the treason; on the same day, Charlemagne had a large number of them HANGED. How many of Ganelon's kinsmen were hanged?",
+      "choices": ["thirty", "twelve", "three", "one hundred"],
+      "answer": "thirty",
+      "context": "Song of Roland: 'All those thirty kindred were swiftly hung.' The number is significant -- thirty pieces of silver in the Christian pillar, but also simply a large clan-remnant, marked as forfeit for their kinsman's treason. Twelve, three, and one hundred are wrong counts.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At the very end of the poem, as the aged Charlemagne prepares to sleep, an angel appears to him in a dream commanding him to ride out YET AGAIN to another war -- to aid King Vivien besieged by pagans at Imphe. Which angel brought the summons?",
+      "choices": ["Gabriel", "Michael", "Raphael", "Uriel"],
+      "answer": "Gabriel",
+      "context": "Song of Roland (final laisses): Saint Gabriel appears to Charlemagne with the summons to Imphe. Gabriel is the messenger-angel of the Christian tradition, associated in this poem with prophetic word to the emperor. Michael is the warrior-angel who judges souls; Raphael is the healer of the Book of Tobit; Uriel appears in later apocryphal tradition.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Charlemagne wept at the angel's summons and cried a single line in Old French that ends the whole poem on exhaustion rather than triumph -- 'Deus, si penuse est ma vie!' What does that famous last cry mean in English?",
+      "choices": ["God, how weary is my life", "God, how heavy is my sword", "God, receive my soul now", "God, curse this pagan land"],
+      "answer": "God, how weary is my life",
+      "context": "Song of Roland, closing laisse: 'Deus, si penuse est ma vie!' -- 'God, how weary (painful) is my life!' -- Charlemagne cannot rest, another war waits, and the poem closes on the emperor's exhaustion. The very last line of the manuscript is 'Ci falt la geste que Turoldus declinet' -- 'Here ends the tale that Turold rehearses.' The other options are dying-warrior lines but not the closing cry of the chanson.",
+      "legend": true
+    }
+  ]
+}

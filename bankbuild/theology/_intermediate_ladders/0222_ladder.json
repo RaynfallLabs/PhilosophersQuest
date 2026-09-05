@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse story of the last battle, a monstrous wolf breaks loose after ages of being bound, and races across the world to devour the All-Father Odin himself. What is the name of this wolf?",
+      "choices": ["Fenrir", "Garm", "Skoll", "Hati"],
+      "answer": "Fenrir",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51; Voluspa stanza 53. Fenrir is the great wolf who kills Odin at Ragnarok. Garm is a different Ragnarok-hound who guards the gate of Hel and kills Tyr. Skoll and Hati are Fenrir's OWN sons -- the two wolves who chase the sun and the moon across the sky and swallow them at Ragnarok. Fenrir is the specific killer of Odin.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Fenrir the great wolf was born to the trickster-god Loki and a giantess in Jotunheim. He has two full siblings equally famous in the Norse myths -- the great serpent that circles the world, and the queen who rules the dead. Who is the mother of Fenrir, Jormungandr, and Hel?",
+      "choices": ["Angrboda", "Sigyn", "Skadi", "Gerd"],
+      "answer": "Angrboda",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 34. Angrboda ('grief-bringer') is the giantess who bore Loki's three monstrous children -- Fenrir the wolf, Jormungandr the world-serpent, and Hel the death-queen. Sigyn is Loki's actual wife, who holds the bowl above his face as he lies bound under a snake dripping venom. Skadi is the giantess wife of Njord. Gerd is the giantess wife of Freyr. Angrboda is the specific mother of the three monsters.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When Fenrir was still a young wolf living in Asgard he was growing so fast that the gods were afraid to approach him. Only one god was brave enough to walk up to Fenrir every day and hand-feed him. Who was Fenrir's one keeper in Asgard?",
+      "choices": ["Tyr", "Bragi", "Vidarr", "Heimdall"],
+      "answer": "Tyr",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 34. Tyr alone had the courage to feed the growing wolf. Bragi is the god of poetry, Vidarr is the silent god who will one day avenge Odin, Heimdall is the watchman of Bifrost. Tyr is the specific keeper -- which is why, when the gods later tricked Fenrir into being bound, it was Tyr's hand the wolf bit off at the wrist.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The gods knew ordinary iron could not hold Fenrir, so they commissioned the dwarves of Svartalfheim to spin a silken ribbon out of six things that do not exist. It was called Gleipnir, and it is the ribbon that binds Fenrir to this day. Which of these was one of the six materials in Gleipnir?",
+      "choices": ["the footfall of a cat", "the tears of a swan", "the shadow of a mountain", "the song of a whale"],
+      "answer": "the footfall of a cat",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 34. The six materials of Gleipnir are the sound of a cat's footfall, a woman's beard, the roots of a mountain, the sinews of a bear, the breath of a fish, and the spittle of a bird. That is why (Snorri jokes) you no longer see any of those things in the world -- the dwarves used them all up. The other three choices are plausible-sounding but not on the list.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin's son who will one day step forward to avenge his father is one of the strangest of the Aesir: he almost never speaks a word, and Snorri names him the second-strongest of all the gods, after only Thor. What is the name of this silent son of Odin?",
+      "choices": ["Vidarr", "Vali", "Bragi", "Forseti"],
+      "answer": "Vidarr",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapters 29 and 51. Vidarr is the silent god, second-strongest of the Aesir after Thor. Vali is a different son of Odin -- born and grown in one day for the sole purpose of avenging Baldr, not Odin. Bragi is the god of poetry and eloquence (the opposite of silent). Forseti is the just-judging son of Baldr. Vidarr is the specific avenger of Odin.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the coming of Ragnarok the bindings of Gleipnir at last give way and Fenrir bursts loose. Snorri describes his jaws opening so far that one jaw touches heaven and the other drags on the ground, and something bursts from his eyes and nostrils as he runs. What comes from Fenrir's eyes and nose as he charges out onto the plain?",
+      "choices": ["fire", "smoke", "poison", "ice"],
+      "answer": "fire",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51: 'flames burst from his eyes and nostrils' as Fenrir runs. Poison is what the Midgard-serpent Jormungandr breathes over Thor a few lines later in the same passage, and what kills Thor nine steps after the serpent dies. Smoke and ice belong to other Ragnarok forces (Surtr's fire-smoke; the fimbulwinter). Fire is the specific detail Snorri gives Fenrir at the last battle.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "At the very end of the world Odin rides out to face the loose wolf in a golden helmet and mail-coat, carrying the spear that has always been his. What is the name of Odin's spear that he carries into his last battle?",
+      "choices": ["Gungnir", "Mjolnir", "Gram", "Gae Bolg"],
+      "answer": "Gungnir",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51; Skaldskaparmal 35. Gungnir is Odin's spear, forged by the sons of Ivaldi. Mjolnir is Thor's hammer, made by the dwarves Sindri and Brokkr. Gram is the sword of Sigurd. Gae Bolg is the belly-spear of the Irish hero Cuchulainn -- adjacent from another tradition. Gungnir is the specific spear Odin carries to his death.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the greatest single loss of the Norse pantheon, Fenrir does not merely bite or gore the All-Father. What does the wolf do to Odin at the last battle, as Voluspa and Snorri agree in the same words?",
+      "choices": ["swallows him whole", "tears out his one eye", "breaks his spear in two", "throws him from Sleipnir"],
+      "answer": "swallows him whole",
+      "context": "Voluspa stanza 53; Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Fenrir swallows Odin whole -- the All-Father, wisdom-god of a hundred and seventy names, the hanged god of the runes, goes down the wolf's throat. Odin's missing eye was long ago pledged to Mimir's well for wisdom. Sleipnir the eight-legged horse carries him to and from the battle. The wolf's specific killing of Odin is the swallowing.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The silent son who steps forward to avenge his father wears one very special piece of armour on one foot -- a thick-soled shoe that Snorri says has been in the making since the beginning of time, growing bit by bit for every generation. What is Vidarr's shoe made of?",
+      "choices": ["leather scraps trimmed from every boot", "iron bands worked by the sons of Ivaldi", "the scales of a fallen dragon", "the tanned hide of Fenrir's father"],
+      "answer": "leather scraps trimmed from every boot",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. The shoe is made of the strips of leather trimmed from the toes and heels of every boot ever made in the human world. It has been growing since the beginning of time and it must be thick enough to protect the foot that will one day step inside a wolf's mouth.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Snorri does not merely describe Vidarr's shoe in Gylfaginning -- he stops the narrative and gives his medieval Norse readers a plain instruction about what THEY must do at home, at their own workbenches, if they wish to help the Aesir at Ragnarok. What does Snorri tell every cobbler to do?",
+      "choices": ["throw away the trimmings from his own workbench", "keep the trimmings and place them in his grave", "burn the trimmings on a bonfire at midwinter", "hand the trimmings to his lord as tribute"],
+      "answer": "throw away the trimmings from his own workbench",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51: 'That shoe has been being made since the beginning of time. Any man who wishes to help the Aesir must throw away the strips of leather he cuts off the ends of his own boot when making it.' Discarded scraps drift somehow to Vidarr's foot -- the myth turns every cobbler in the medieval North into a small contributor to the vengeance of a god. The other three choices are plausible medieval practices, but only discarding the scraps is what Snorri asks.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Wearing that thick-soled shoe, Vidarr meets Fenrir on the plain of Vigrid at the last battle -- with the All-Father already gone down the wolf's throat. How does Vidarr kill Fenrir in Snorri's account?",
+      "choices": ["rips the wolf's mouth apart with his hands", "drives Gungnir through the wolf's heart", "hurls the wolf into the sea", "beheads the wolf with a great axe"],
+      "answer": "rips the wolf's mouth apart with his hands",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Vidarr plants his shod foot on Fenrir's lower jaw, grips the upper jaw with both hands, and tears the wolf's mouth apart, killing him. Odin's spear Gungnir is already lost inside the wolf; there is no beheading, no drowning. The specific act is a two-handed jaw-rending.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The world is not empty after the last battle. Snorri names a small handful of gods who walk out of Ragnarok alive to greet the new sun, and Vidarr is one of them. Which two of Thor's sons also survive to inherit their father's hammer Mjolnir on the far side of the fires?",
+      "choices": ["Modi and Magni", "Vali and Vidarr", "Baldr and Hodr", "Njord and Freyr"],
+      "answer": "Modi and Magni",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 53; Vafthrudnismal stanza 51. Modi ('the brave') and Magni ('the mighty') are the two sons of Thor who inherit Mjolnir after Ragnarok. Vali is a son of Odin and would double-count Vidarr as an answer. Baldr and Hodr return from Hel but are Odin's sons, not Thor's. Njord and Freyr are Vanir gods of the older war-and-peace treaty, not Thor's line. Modi and Magni are the specific hammer-heirs.",
+      "legend": true
+    }
+  ]
+}

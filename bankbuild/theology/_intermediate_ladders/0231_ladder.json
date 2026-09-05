@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Malory's Le Morte d'Arthur, the last battle of Arthur's reign is fought against his own son Mordred, on a bare field where nearly every knight on both sides is killed. Arthur himself is mortally wounded there. What is the name of the battle where the fellowship of the Round Table falls?",
+      "choices": ["Camlann", "Roncesvalles", "Badon", "Bosworth"],
+      "answer": "Camlann",
+      "context": "Malory, Le Morte d'Arthur Book XXI ch.4. Camlann is the final battle where Arthur meets Mordred; the two kill each other. Roncesvalles is Roland's last stand in the Chanson de Roland. Badon is the earlier historical victory of the Britons over the Saxons. Bosworth is the real 1485 English battle where Richard III fell.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "After Camlann only two knights are still alive around the mortally wounded Arthur. One is Sir Lucan the cupbearer. The other is an old veteran who has been Arthur's companion since almost the beginning of his reign. Which knight is the second man left standing at the king's side?",
+      "choices": ["Sir Bedivere", "Sir Gawain", "Sir Kay", "Sir Percival"],
+      "answer": "Sir Bedivere",
+      "context": "Malory, Book XXI ch.5. Bedivere is one of Arthur's earliest companions and is a one-handed veteran of many wars. Sir Gawain has died of head wounds already before Camlann. Sir Kay, Arthur's foster-brother, is long dead by the last battle. Sir Percival has ridden off long since on the Grail quest.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Arthur, weakening fast, calls Sir Lucan to help him stand. Lucan is himself badly wounded from the battle. He bends down to lift the heavy king, and one specific thing happens to Lucan in that moment that leaves Bedivere the only man on his feet. What happens to Sir Lucan when he tries to lift the king?",
+      "choices": ["his own wounds burst and he dies", "he is struck by a stray arrow", "he faints and cannot rise again", "he is dragged off by Mordred's men"],
+      "answer": "his own wounds burst and he dies",
+      "context": "Malory, Book XXI ch.5: 'the king swooped, and Sir Lucan fell in a swoon with the lift, that the part of his bowels fell out of his body, and therewith the noble knight's heart brast.' Lucan tears himself open on the strain and dies at the king's feet. Mordred is dead already. There is no stray arrow at this moment in the chapter.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Left alone with Bedivere by a wide water, the dying Arthur gives one last command about his famous sword. He tells the old knight: 'take thou Excalibur, my good sword, and go with it to yonder water side, and when thou comest there, I charge thee' do what?",
+      "choices": ["throw the sword into the water", "bury the sword beside my body", "carry the sword to Camelot", "break the sword across your knee"],
+      "answer": "throw the sword into the water",
+      "context": "Malory, Book XXI ch.5. Arthur commands Bedivere to cast Excalibur far out into the water and come back to report what he sees. The other three actions are all normal medieval last-sword traditions -- burial with the king, return to the capital, ceremonial breaking -- but Arthur's specific order is the throwing.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Bedivere walks down to the water carrying Excalibur, but when he looks at the pommel set with precious stones and the gold of the hilt, he thinks it a shame to lose so rich a thing. Instead of obeying the king, he hides the sword and goes back with a lie. Where does Bedivere hide Excalibur at the water's edge?",
+      "choices": ["under a tree", "in a hollow stone", "beneath his cloak", "in a fisherman's boat"],
+      "answer": "under a tree",
+      "context": "Malory, Book XXI ch.5. Bedivere lays Excalibur under a tree at the water's edge and comes back empty-handed. The other hiding places are the kind of detail a listener might supply, but the exact word Malory gives is 'under a tree'.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Bedivere comes back to the king and lies about what he saw at the water. Arthur, weakening but sharp, knows at once that no wonder happened -- because throwing Excalibur in should have produced a marvel -- and sends the knight back. What does Bedivere claim he saw on the first return?",
+      "choices": ["nothing but waves and winds", "a black barge on the far shore", "a red knight riding down the beach", "three queens weeping on the water"],
+      "answer": "nothing but waves and winds",
+      "context": "Malory, Book XXI ch.5: 'I saw nothing but waves and winds.' Because a proper obedience should have brought a wonder up from the water, Arthur knows it is a lie and sends Bedivere out again. The three queens in the black barge are the next scene of the chapter, not part of this first lie.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Bedivere goes back to the water a second time, looks again at the jewelled hilt, hides Excalibur again, and returns with another lie. The line Malory gives him this time is one of the most quoted single sentences in the whole Morte d'Arthur -- a rhythmic pair of Middle English verbs about the pale lapping of the mere. What does Bedivere say he saw on the second return?",
+      "choices": ["the waters wap and the waves wan", "the moon lay white upon the lake", "an island rose dark in the west", "a bell tolled from beneath the water"],
+      "answer": "the waters wap and the waves wan",
+      "context": "Malory, Book XXI ch.5 -- 'I saw nothing but the waters wap and the waves wan.' 'Wap' means lap; 'wan' means grow pale. The rhythmic Middle English line has been quoted and translated for five centuries. The other three lake-images sound the part but are not in the chapter.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "When Bedivere reports the pale waves the second time, Arthur turns on him in fury and gives one of the harshest speeches in the book. 'Ah traitor, untrue,' Arthur says, 'thou wouldest for my rich sword' do what?",
+      "choices": ["see me dead", "make thyself a king", "buy back thy lost hand", "shame the Round Table"],
+      "answer": "see me dead",
+      "context": "Malory, Book XXI ch.5: 'Ah traitor, untrue, who would have weened that thou that hast been to me so lief and dear... would betray me for the riches of the sword.' Arthur accuses Bedivere of choosing gold over loyalty, and threatens to kill him with his own hands if he lies a third time.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Shamed by the king's rebuke, Bedivere goes down to the water a third time. This time he winds one specific thing about the hilt so that the sword will fly cleanly from his hand, whirls the blade around his head, and hurls it as far out over the water as his strength will send. What does Bedivere wind about the hilt before the third throw?",
+      "choices": ["the sword's own girdle", "a scrap torn from his cloak", "a length of horse-rein", "a linen strip from his wound"],
+      "answer": "the sword's own girdle",
+      "context": "Malory, Book XXI ch.5 -- Bedivere 'bound the girdle about the hilts' before hurling Excalibur out over the water. The girdle is the sword-belt itself. It is a small practical detail easy to miss but it is Malory's own.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The moment Excalibur clears Bedivere's hand and touches the water on the third throw, a wonder rises up to meet it. Bedivere stands staring, then runs back to the king and tells him what he saw at last. What did Bedivere see rise from the water?",
+      "choices": ["an arm clothed in white samite", "a barge draped in black cloth", "a knight in red on a pale horse", "a swan with a chain of gold"],
+      "answer": "an arm clothed in white samite",
+      "context": "Malory, Book XXI ch.5: 'there came an arm and an hand above the water, and met it, and caught it, and so shook it thrice and brandished.' The arm is 'clothed in white samite' -- the same rich silk that clothed the arm which first GAVE Arthur the sword in Book I ch.25. The story closes its own circle. The black barge is the next scene of the chapter; the swan with the golden chain belongs to the Lohengrin story; the red-knight-on-a-pale-horse belongs to Perceval's road.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The arm that rises from the water catches Excalibur, and before it sinks beneath the surface the hand does one exact ceremonial motion with the sword. Malory names it with a precise verb and a precise number of times. What does the arm do with the sword before it vanishes into the water?",
+      "choices": ["shakes it thrice and brandishes it", "raises it in salute to the king", "breaks it once across its wrist", "lays it flat upon the water"],
+      "answer": "shakes it thrice and brandishes it",
+      "context": "Malory, Book XXI ch.5 -- the arm 'caught it, and so shook it thrice and brandished, and then vanished away the hand with the sword in the water.' The number three closes the whole scene: Bedivere's three trips to the water, and now the arm's three shakes of the returned sword before it sinks. The gesture is a farewell brandish -- neither a salute nor a break.",
+      "legend": true
+    }
+  ]
+}

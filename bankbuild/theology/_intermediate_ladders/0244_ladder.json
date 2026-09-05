@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Chretien de Troyes's Perceval a young knight comes at nightfall to a mysterious castle where a wounded king sits at supper. As the meal is served, a strange procession passes through the hall. Where is the young knight sitting when the procession begins?",
+      "choices": ["at the Fisher King's table", "at Camelot's Round Table", "at the throne of King Pelinore", "at the hearth of Merlin's tower"],
+      "answer": "at the Fisher King's table",
+      "context": "Perceval's evening at the Grail Castle -- Corbenic in later versions -- is the founding scene of the whole Grail cycle. Camelot's Round Table is Arthur's court, a different setting. King Pelinore is a hunter-knight of the Arthurian world, not the wounded Grail king. Merlin's tower belongs to the Merlin legends, not the Grail scene.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The wounded king who owns the Grail Castle cannot walk from an old blow to the thighs, so he spends his days out on the castle's lake in a small boat, a rod in his hand, waiting for a knight who will heal him. Storytellers gave him a title matching that pastime. What is his title?",
+      "choices": ["the Fisher King", "the Sword King", "the Silver King", "the Winter King"],
+      "answer": "the Fisher King",
+      "context": "The Fisher King's title comes from this very detail -- he cannot ride or hunt because of his wound, so he passes his time in a fishing-boat on his own lake. Malory names him King Pelles in Book XVII; the title 'Fisher King' is used across Chretien, the Vulgate cycle, and Malory.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The first thing to enter the supper hall in Chretien's procession is a young man carrying a weapon. It looks like an ordinary spear except for one uncanny detail -- from its tip, without stopping, a single drop keeps falling and running down the bearer's hand. What is falling from the tip?",
+      "choices": ["a drop of blood", "a drop of oil", "a drop of wax", "a drop of dew"],
+      "answer": "a drop of blood",
+      "context": "Chretien's opening image: 'a lance whose point was as pure white as snow, and from the point a drop of blood ran down the shaft'. The bleeding lance is one of the strangest images in medieval literature -- centuries of readers have argued what it means. Wax would drip from a candle; oil from a lamp; dew from a plant -- none from a spear-point.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "After the lance-bearer and the two candelabrum-boys come two maidens. The first bears the graal itself -- Chretien describes it as a wide shallow serving-dish of pure gold, set with precious stones, giving off a light so bright the candles pale. What does the second maiden carry?",
+      "choices": ["a silver platter", "a golden crown", "a horn of ivory", "a red cloak"],
+      "answer": "a silver platter",
+      "context": "Chretien's Old French: 'un tailleoir d'argent' -- a silver carving-platter. The four elements of the procession are lance, candelabra, graal, platter. Wolfram's Parzival gives a different set. The horn belongs to Roland's story (Olifant); a crown or cloak would suit a coronation, not the Grail procession.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the later Vulgate Queste and in Malory the bleeding weapon in the procession is identified as a real relic from the Passion story: the very shaft driven into Jesus's side by a Roman soldier at the crucifixion. By what name is this relic remembered?",
+      "choices": ["the Lance of Longinus", "the Sword of Peter", "the Nails of the Passion", "the Reed of the Sponge"],
+      "answer": "the Lance of Longinus",
+      "context": "The Christianising of Chretien's original: the anonymous bleeding lance becomes the Lance of Longinus, said to still bleed because it once tasted holy blood. Malory keeps this identification. The Sword of Peter is the one Peter drew in Gethsemane to cut off Malchus's ear. The Nails and the Reed are separate Passion relics.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The visiting knight must ASK a question as the procession passes -- the wound cannot heal until someone speaks. Perceval, warned by his tutor Gornemant never to ask idle questions of his host, chooses silence. What happens to the Fisher King's wound?",
+      "choices": ["it stays open", "it closes at once", "it turns to gold", "it moves to another king"],
+      "answer": "it stays open",
+      "context": "Perceval's silence at the Grail is the great failure of Chretien's poem. The wound stays open, the king stays crippled, and the land around Corbenic stays waste. The moral -- that courtesy misapplied can be worse than boldness -- runs through the whole Grail cycle. Chretien died before finishing the poem, and other writers took up the ending.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Fisher King's wound has a specific origin story. Long before Perceval's visit, a knight named Sir Balin was cornered inside a chapel at Corbenic, snatched the very Lance of Longinus off its wall, and drove it through the king's thighs. What name did later writers give this catastrophic blow?",
+      "choices": ["the Dolorous Stroke", "the Blow of Camlann", "the Wound of Uther", "the Stroke of Mordred"],
+      "answer": "the Dolorous Stroke",
+      "context": "The Dolorous Stroke, developed in the Vulgate Cycle and the Post-Vulgate Suite du Merlin, is the founding wound of the whole Grail geography. Balin acts in self-defence but the misuse of the holy lance breaks everything around him. Camlann is Arthur's final battle where Mordred deals HIS death-wound; Uther is Arthur's father with a different death; the Stroke of Mordred blurs those.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Sir Balin's blow with the holy lance did not only wound the Fisher King. In the Vulgate telling, three kingdoms all around Corbenic fell into a curse the moment the stroke landed. Fields went barren, streams dried, and cattle stopped bearing young. What is the name given to that cursed country?",
+      "choices": ["the Waste Land", "the Dark Wood", "the Sunken Marsh", "the Bitter Meadow"],
+      "answer": "the Waste Land",
+      "context": "The Waste Land motif -- a wounded king and a sterile kingdom bound together -- is the deepest myth-pattern in the Grail cycle. T.S. Eliot's 1922 poem 'The Waste Land' takes its central image directly from this motif via Jessie Weston's From Ritual to Romance. The Dark Wood is Dante's opening image; the Sunken Marsh belongs to Grendel country in Beowulf; the Bitter Meadow is invented.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In Chretien's original text there is one exact wording Perceval was supposed to speak as the shining dish passed him at supper. Every later Grail poet quotes it. What was the question Perceval failed to ask?",
+      "choices": ["Whom does the Grail serve?", "Where was the Grail forged?", "What kingdom does the king rule?", "Who wounded the king in the chapel?"],
+      "answer": "Whom does the Grail serve?",
+      "context": "Chretien's phrasing has echoed down eight centuries: the point is not to ask WHAT it is, but WHOM it feeds -- because inside the Grail Castle, unseen, the Grail is carrying a single wafer to the Fisher King's aged father, who has lived on that wafer for years. Perceval's silence keeps him from ever learning this. Later versions add the alternate 'What ails you, king?', but the served-whom question is Chretien's original.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In Malory Book XVII three knights of the Round Table achieve the Grail together -- Perceval, Bors, and one third -- but only ONE of them goes on to touch the Fisher King's wound with blood from the Lance and heal both king and Waste Land. Which knight heals the king?",
+      "choices": ["Galahad", "Lancelot", "Gawain", "Kay"],
+      "answer": "Galahad",
+      "context": "Malory Book XVII ch.21: Galahad, purest of the three, is the one who anoints the Fisher King's thighs with drops from the Lance -- king is healed, Waste Land restored. Lancelot is Galahad's father but too stained by his love for Guinevere to complete the quest. Gawain fails early. Kay never comes near the Grail. Galahad dies shortly after in ecstasy at the sight of the uncovered cup.",
+      "legend": true
+    }
+  ]
+}

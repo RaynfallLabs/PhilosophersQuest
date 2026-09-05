@@ -1,0 +1,84 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse myths a shining god stands on the arch of the rainbow that joins the world of humans to the world of the gods. His whole duty is to watch: no giant may cross without his seeing it first. Which Aesir god is this rainbow-bridge watchman?",
+      "choices": ["Heimdallr", "Bragi", "Forseti", "Vidar"],
+      "answer": "Heimdallr",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 27. Heimdallr is the watchman posted at the top of Bifrost. Bragi is the god of poetry who greets warriors in Valhalla. Forseti is the god of justice who holds court in Glitnir. Vidar is the silent son of Odin who avenges his father at Ragnarok. Heimdallr is the specific bridge-watcher.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The rainbow that Heimdallr the watchman guards is no ordinary rainbow: it is a burning three-coloured bridge that reaches from the earth of humans up to the wall of Asgard, and only the gods and Heimdallr may safely cross it. What is the name of this rainbow bridge?",
+      "choices": ["Bifrost", "Gjoll", "Yggdrasil", "Vigrid"],
+      "answer": "Bifrost",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 13 and 27. Bifrost is the burning rainbow-bridge to Asgard. Gjoll is a river that flows near the gates of Hel. Yggdrasil is the great World-Tree, not a bridge. Vigrid is the plain on which the gods and the fire-giants meet in battle at Ragnarok. Bifrost is the specific bridge.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Snorri makes the watchman on Bifrost the sharpest-sensed being in the nine worlds: he needs less sleep than a bird, he can see for a hundred leagues by day or night, and he can hear the wool grow on the sheep's back. What else, in Snorri's list, can Heimdallr hear growing?",
+      "choices": ["the grass on the earth", "the flames in Muspelheim", "the ice on the world-tree", "the roots of the mountains"],
+      "answer": "the grass on the earth",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 27. The paired image is 'he can hear the grass grow on the earth and the wool grow on the sheep's back' -- one from the soil, one from the animal, both silent to any other ear. The other choices are real Norse cosmology (Muspelheim's fires, the icy Nastrond, the roots of the mountains) but not from Snorri's grass-and-wool line.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Hung around the neck of the watchman on Bifrost is a great trumpet, kept when he is not carrying it beneath one of the roots of Yggdrasil, in Mimir's well. It has one purpose: to sound the muster at Ragnarok. What is this horn called?",
+      "choices": ["Gjallarhorn", "Draupnir", "Gungnir", "Skidbladnir"],
+      "answer": "Gjallarhorn",
+      "context": "Voluspa stanza 27; Snorri, Gylfaginning chapter 15. Gjallarhorn is 'the resounding horn' -- gjallar meaning 'yelling.' Draupnir is Odin's gold arm-ring that drips eight copies of itself every ninth night. Gungnir is Odin's spear, cut from a branch of Yggdrasil. Skidbladnir is Freyr's folding ship. Gjallarhorn is the specific trumpet.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the three roosters have crowed and the muster of Ragnarok is beginning, the watchman on Bifrost rises to his feet, lifts his great horn to his lips, and blows it as loud as he can. Voluspa says 'the ancient horn sounds high; Heimdall blows aloud, the horn is aloft.' Who hears this blast?",
+      "choices": ["every being in every one of the nine worlds", "only the gods gathered in Valhalla", "only the giants of Jotunheim", "only the sleeping dead in Hel"],
+      "answer": "every being in every one of the nine worlds",
+      "context": "Voluspa stanza 46; Snorri, Gylfaginning chapter 51. The blast reaches gods, giants, dwarves, elves, humans, and the dead alike -- the whole of the nine worlds knows in one instant that the last battle has begun. That universal reach is precisely why the horn is the alarm-signal of the end.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "After Heimdallr's horn blast reaches every world, the Aesir gather at once on a great plain to hold their last council. Meanwhile Odin rides off alone to a certain well beneath a root of the world-tree, where a severed head answers his questions. Whose head does Odin ride to consult one last time?",
+      "choices": ["Mimir", "Kvasir", "Ymir", "Vafthrudnir"],
+      "answer": "Mimir",
+      "context": "Voluspa stanza 46; Snorri, Gylfaginning chapter 51. Mimir's severed head, preserved by Odin with herbs and spells, sits beside the well of wisdom under Yggdrasil's root and speaks counsel to Odin. Kvasir is the wise man from whose blood the Mead of Poetry was brewed. Ymir is the primordial giant from whose body the world was made. Vafthrudnir is a giant Odin once out-riddled. Mimir is the specific counsellor.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Heimdallr is called 'the whitest of the gods,' and Snorri lists a strange nickname for him drawn from his own mouth: his teeth are made of pure metal. Which metal are Heimdallr's teeth said to be made of, giving him the nickname Gullintanni?",
+      "choices": ["gold", "silver", "bronze", "iron"],
+      "answer": "gold",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 27 and Skaldskaparmal. Gullintanni means 'golden-tooth.' A companion nickname, Hallinskidi, may refer to a curved ram's horn on his head or helmet. The other metals feature elsewhere in Norse cosmology (silver and iron for weapons, bronze for foreign trade) but none is attached to a god's teeth.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "One Poetic Edda poem tells the story of Heimdallr walking through Midgard among humans under a different name. Sleeping three nights each in three different farmhouses, he fathers the ancestors of the three classes of Norse society: thrall, farmer, and jarl. Under what alias does Heimdallr wander Midgard in this poem?",
+      "choices": ["Rig", "Grim", "Bolverk", "Ganglati"],
+      "answer": "Rig",
+      "context": "Rigsthula (Poetic Edda), whose title literally means 'the lay of Rig.' Heimdallr calls himself Rig ('king') as he walks among humans. Grim is one of Odin's many wandering names (from Grimnismal, 'the masked one'). Bolverk ('evil-worker') is another Odin alias, from the theft of the Mead of Poetry. Ganglati is a servant in the hall of Hel, not a wandering god. Rig is the specific alias Heimdallr uses.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The last thing the rainbow-bridge Bifrost will ever hear is Heimdallr's own horn-blast. The moment the muster begins, a great fire-giant rides up from Muspelheim with a flaming sword; he is the first to try Bifrost, and the bridge cannot bear him. Who is this fire-giant, whose crossing shatters the rainbow?",
+      "choices": ["Surtr", "Hrym", "Thrym", "Fenrir"],
+      "answer": "Surtr",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Surtr the fire-giant leads the host of Muspelheim, and Bifrost breaks beneath him into pieces as he crosses. Hrym captains the ship Naglfar in the flood; he does not ride the bridge. Thrym is the giant who stole Mjolnir long before Ragnarok. Fenrir is the great wolf who breaks his chain and swallows Odin -- but he comes at the muster on the plain, not by the bridge. Surtr is the specific bridge-breaker.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "At Ragnarok every great god of Asgard has a single monstrous opponent picked out for him: Odin faces Fenrir, Thor faces the World-Serpent, Freyr faces Surtr. Heimdallr the watchman has his own opposite number, whom he will kill and be killed by in the same duel. Whom does Heimdallr face and fall against at Ragnarok?",
+      "choices": ["Loki", "Hrym", "Garm", "Fenrir"],
+      "answer": "Loki",
+      "context": "Snorri Sturluson, Prose Edda, Gylfaginning chapter 51. Heimdallr the shining watchman and Loki the trickster kill each other in single combat at Ragnarok -- fitting, since Heimdallr guarded against exactly the kind of infiltration Loki was best at. Hrym captains Naglfar. Garm the hound of Hel and Tyr the god of oaths destroy each other. Fenrir is Odin's killer. Loki is the specific opposite of Heimdallr.",
+      "legend": true
+    }
+  ]
+}

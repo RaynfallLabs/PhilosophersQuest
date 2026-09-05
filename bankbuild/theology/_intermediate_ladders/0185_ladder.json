@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Odin had already paid one eye at Mimir's well for a taste of wisdom, but he was still hungry for a deeper knowledge -- the magical letter-signs that shape fate itself. What is the Norse name for those magical letter-signs?",
+      "choices": ["the runes", "the sagas", "the eddas", "the galdr"],
+      "answer": "the runes",
+      "context": "The RUNES are the Old Norse writing system (Elder Futhark, Younger Futhark), and in the myths they are also the raw shapes of fate that gods, elves, dwarves, and men learn from Odin. The sagas are the long Icelandic prose stories written down centuries later; the Eddas are the two main mythological compilations (Poetic and Prose); the galdr are the spoken magic-songs (Odin learns nine of THOSE at the same time as the runes, but they are different from the runes themselves).",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Odin does not find the runes in a book or receive them from a friend. To win them he goes to the world-tree in the middle of the nine worlds and uses it in a way no god had used it before. What is the name of that world-tree?",
+      "choices": ["Yggdrasil", "Bifrost", "Gjallarbru", "Glasir"],
+      "answer": "Yggdrasil",
+      "context": "Yggdrasil is the great ash tree at the center of Norse cosmology, with three roots and nine worlds strung through its branches. Bifrost is the rainbow bridge to Asgard; Gjallarbru is the bridge over the river Gjoll to Hel; Glasir is the golden-leaved grove that stands before Valhalla's doors.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin climbs the tree and, without any hand but his own, hangs himself from a branch by the neck. He then wounds himself in the side with his own weapon, so the sacrifice is complete. What weapon does Odin use to wound himself on Yggdrasil?",
+      "choices": ["his spear", "his sword", "his axe", "his knife"],
+      "answer": "his spear",
+      "context": "Havamal 138: Odin is 'wounded with a spear' -- his own spear Gungnir (made by the sons of Ivaldi, the same dwarf-team who lost the wager to Sindri and Brokkr in the Mjolnir story). Odin is not a swordsman in the myths; his weapon is always the spear.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Odin does not simply hang for a day. The Havamal, the poem where he tells this story in his own voice, gives the exact count -- and the number is a signature Norse number that also names the worlds of Yggdrasil. How long does Odin hang on the tree?",
+      "choices": ["nine nights", "three days", "seven weeks", "forty days"],
+      "answer": "nine nights",
+      "context": "Havamal 138: 'I know that I hanged on a windy tree nine long nights.' Nine is THE Norse number -- nine worlds strung on Yggdrasil, nine daughters of Aegir, nine mothers of Heimdallr. Three days is a common folk-tale number and also the count for Christ in the tomb; forty days is Christ in the wilderness and Moses on Sinai; seven weeks is unrelated.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "As Odin hangs from the tree, no one comes to help him. The Havamal spells out three specific things that are refused him -- and one of them is a very physical thing you would offer to a thirsty prisoner. Which of these did nobody give him during his nine nights?",
+      "choices": ["a drink from a horn", "a warm cloak", "an axe to cut himself down", "a message to Frigg"],
+      "answer": "a drink from a horn",
+      "context": "Havamal 138: nobody took him down, nobody fed him with bread, nobody gave him a drink from a horn. He hangs in the wind, thirsty and starving, until the runes come. The drinking-horn is the classic Norse offering to a guest or a suffering man -- being refused it is what makes the passage bite.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "In the poem Odin uses one four-word phrase to name whom the sacrifice is being made TO and whom it is being made BY -- and the answer to both is the same god. In English, the phrase is usually rendered as 'given to Odin, ___ ___ ___ ___'. What is the closing phrase?",
+      "choices": ["myself given to myself", "borne by the branches", "wounded by the spear", "counted by the winds"],
+      "answer": "myself given to myself",
+      "context": "Havamal 138: 'gefinn Odni, sjalfr sjalfum mer' -- 'given to Odin, myself given to myself.' This is one of the most-quoted lines in the whole Poetic Edda. It is what makes the hanging a self-sacrifice: the god is both priest and victim.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On the ninth night the ordeal breaks. Odin does one loud, physical thing at the very moment he seizes the runes and then falls back down from the tree. What does he do at the moment of the seizing?",
+      "choices": ["he screams", "he laughs", "he prays silently", "he sings a hymn"],
+      "answer": "he screams",
+      "context": "Havamal 139: on the ninth night Odin looked down, screamed out, and took up the runes -- then fell back from the tree. The scream is the release: the pain of nine nights and a spear-wound crashing at once into knowledge. There is no laughter, no prayer, no hymn in the passage.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The name of the world-tree, Yggdrasil, is not a random compound. It literally means 'the horse of X' -- and the X is one of Odin's own many nicknames. Whose horse is Yggdrasil?",
+      "choices": ["Ygg's ('the Terrible One's')", "Baldr's ('the Shining One's')", "Freyr's ('the Lord's')", "Njord's ('the Sea-Man's')"],
+      "answer": "Ygg's ('the Terrible One's')",
+      "context": "Ygg is one of Odin's names -- it means 'the Terrible' or 'the Awesome'. 'Horse of the hanged' is an Old Norse kenning for GALLOWS, and because Odin hangs himself from this tree, the tree becomes 'Ygg's horse' -- Ygg's gallows. So the very NAME of the world-tree carries this story inside it. Baldr, Freyr, and Njord are other Norse gods whose names never entered the tree's name.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Along with the runes Odin takes from the tree, the Havamal says he also learns 'nine mighty songs' -- charms he will use for the rest of his career, taught to him during the ordeal by a giant. What is the Old Norse word for those magic songs Odin learns?",
+      "choices": ["galdr", "seidr", "kenning", "flyting"],
+      "answer": "galdr",
+      "context": "Havamal 140-141: Odin learns nine mighty GALDR (magic-songs, spoken or chanted charms) from a giant during the ordeal. SEIDR is a different (and lower-status) kind of Norse magic, taught to Odin by Freyja. KENNING is a poetic metaphor ('whale-road' for sea), not a spell. FLYTING is a ritual verbal duel, not magic.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Havamal is a long Old Norse poem, and Odin himself is the speaker of much of it -- including this whole self-hanging passage. The title translates as 'Sayings of the ___', and the blank is one of Odin's plainest nicknames. What does 'Havamal' mean?",
+      "choices": ["Sayings of the High One", "Sayings of the Wanderer", "Sayings of the Hanged", "Sayings of the Wolf-Father"],
+      "answer": "Sayings of the High One",
+      "context": "Havamal = 'Sayings of Har', and Har ('the High') is Odin's throne-name. Gangleri ('the Wanderer') is another Odin-name he uses when he travels in disguise (see the Grimnismal frame). Hangatyr ('God of the Hanged') and various wolf-related names are also his, but the poem's title takes the 'High One' name specifically.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The self-hanging passage is preserved in one particular section of the Havamal -- eight stanzas long, numbered 138 through 145 in the standard modern edition. Scholars have given that block its own name, after the subject it treats. What is the name of that section of the Havamal?",
+      "choices": ["the Runatal", "the Loddfafnismal", "the Voluspa", "the Grottasongr"],
+      "answer": "the Runatal",
+      "context": "RUNATAL means 'rune-tally' or 'rune-reckoning' -- Havamal stanzas 138-145, the eight verses that recount the hanging, the taking of the runes, and the nine songs. The Loddfafnismal is another named section of the Havamal (a string of advice to a man called Loddfafnir). The Voluspa is a WHOLE DIFFERENT poem (the seeress's prophecy). The Grottasongr is another Poetic Edda poem (the mill-song).",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After Odin has the runes he does not keep them to himself. The Runatal names four different kinds of being who receive the runes from him and use them ever after. Which four groups get the runes?",
+      "choices": ["the Aesir, the elves, the dwarves, and mortal men", "the Aesir, the Vanir, the giants, and mortal men", "the einherjar, the Valkyries, the Norns, and the trolls", "the light-elves, the dark-elves, the frost-giants, and the fire-giants"],
+      "answer": "the Aesir, the elves, the dwarves, and mortal men",
+      "context": "Havamal 143 lists the four groups who receive the runes: the Aesir (Odin among them), the elves (through Dain the elf), the dwarves (through Dvalin the dwarf), and mortal men (through Odin himself, called Odroerir here). The Vanir and giants are notably NOT named as recipients -- the giants especially have their own separate wisdom-lore, and the runes come to gods and mortals through Odin's ordeal alone.",
+      "legend": true
+    }
+  ]
+}

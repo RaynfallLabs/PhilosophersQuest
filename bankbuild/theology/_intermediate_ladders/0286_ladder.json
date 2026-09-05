@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "Robin Hood's second-in-command in the Merry Men is a giant of a man -- the ballads say he stands seven feet tall and is the biggest fighter in the band. Everyone calls him 'Little John' as a joke. What is his ACTUAL birth-name, the one the joke inverts?",
+      "choices": ["John Little", "John Naylor", "John Miller", "John Scarlet"],
+      "answer": "John Little",
+      "context": "His true name in the seventeenth-century broadside 'Robin Hood and Little John' (Child 125) is JOHN LITTLE; the outlaws swap his first name and surname to make 'Little John' as an ironic nickname. 'Nailer' or 'Naylor' is given as his surname in some late versions -- adjacent but not the joke-inversion form. Miller and Scarlet belong to other Merry Men (Much the Miller's Son and Will Scarlet). Source: en.wikipedia.org/wiki/Little_John.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The joke behind the nickname 'Little John' is that the man is anything but little -- the ballads make a point of his enormous size. How TALL do the ballads say John Little stands?",
+      "choices": ["seven feet", "five feet", "eight feet", "nine feet"],
+      "answer": "seven feet",
+      "context": "The seventeenth-century broadside describes him as 'seven feet high, large-limbed, and fearsome to behold'; medieval Englishmen averaged about five foot seven, so a seven-foot man was a walking marvel. Source: en.wikipedia.org/wiki/Little_John.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The origin-story of how Little John joined the band is told in a seventeenth-century broadside ballad. Robin, walking alone through the forest, comes to a long narrow crossing over a stream and meets a stranger coming the other way -- neither will step aside. What kind of CROSSING are they standing on?",
+      "choices": ["a narrow bridge", "a fallen log", "a line of stepping-stones", "a shallow ford"],
+      "answer": "a narrow bridge",
+      "context": "Child Ballad 125 'Robin Hood and Little John': 'They happened to meet on a long narrow bridge / And neither of them would give way.' The bridge duel becomes iconic -- every later film and pantomime uses it. Source: en.wikipedia.org/wiki/Robin_Hood_and_Little_John.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The stranger on the bridge is armed with the poor man's fighting-weapon of the English commons -- cheap, two-handed, needing no gentry training and no royal license. Robin, who is carrying only his longbow, lays it down and goes into a thicket to cut a matching one of his own from a young oak, so that the fight will be fair. Which COMMONER'S WEAPON is the duel fought with?",
+      "choices": ["a quarterstaff", "a longbow", "a broadsword", "a wood-axe"],
+      "answer": "a quarterstaff",
+      "context": "The quarterstaff was the standard peasant and yeoman weapon of medieval and early-modern England -- a two-handed wooden stave about six to nine feet long. Robin's own bow is put aside so the stranger is not disadvantaged. Source: en.wikipedia.org/wiki/Robin_Hood_and_Little_John.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The two men trade blows 'thick and fast' on the narrow bridge. In the end, one of them lands a great stroke that sends the other tumbling off the bridge and into the water below. WHICH man wins the duel?",
+      "choices": ["the stranger knocks Robin into the brook", "Robin knocks the stranger into the brook", "the two men yield at the same moment", "the stranger yields and swims away"],
+      "answer": "the stranger knocks Robin into the brook",
+      "context": "Child 125: 'The blow it so bent his bones, / That he tumbled him into the brook.' The whole point of the story is that Robin -- the greatest outlaw in England -- is dunked in a stream by a total newcomer; that is why the man earns a place in the band. Source: boldoutlaw.com/rhbal/bal125.html.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Dripping and laughing, Robin wades out of the brook and summons his men to meet the stranger who has just bested him. What INSTRUMENT does he sound?",
+      "choices": ["a bugle-horn", "a wooden whistle", "a hunting drum", "a shepherd's pipe"],
+      "answer": "a bugle-horn",
+      "context": "The ballad: 'He blowd a loud blast on his fine bugle-horn.' The bugle-horn -- a curved cattle-horn with a mouthpiece -- is the standard summoning-signal of the Sherwood band. Source: en.wikipedia.org/wiki/Robin_Hood_and_Little_John.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "When the Merry Men arrive, one of them serves as 'godfather' in a mock baptism to give the stranger a new name in the band. He pours brook-water over the giant's head and announces the new name -- by INVERTING the man's first and last names. WHICH Merry Man performs the christening?",
+      "choices": ["William Stutely", "Much the Miller's Son", "Will Scarlet", "Alan-a-Dale"],
+      "answer": "William Stutely",
+      "context": "Child 125: 'William Stutely then said, this jocular blade / Shall be Godfather to him.' Stutely (also spelled Stukely or Stutley) is a Merry Man from several ballads. Much the Miller's Son, Will Scarlet, and Alan-a-Dale are all real named companions -- but the christening job in this ballad is Stutely's alone. Source: boldoutlaw.com/rhbal/bal125.html.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the great fifteenth-century poem 'A Gest of Robyn Hode' (Child 117), Little John pulls off a piece of espionage against the Sheriff of Nottingham -- he goes into service inside the Sheriff's own household as a disguised servant. What FALSE NAME does he give the Sheriff at the hiring?",
+      "choices": ["Reynold Greenleaf of Holderness", "Roger Blackthorn of Doncaster", "Peter Longbow of Barnsdale", "Simon Yeoman of Nottingham"],
+      "answer": "Reynold Greenleaf of Holderness",
+      "context": "A Gest of Robyn Hode, Fytte 3: 'Reynolde Grenelefe' is Little John's alias in the Sheriff's kitchens -- an in-joke, since 'green leaf' hints at the greenwood he has come from. Holderness is a real district of the East Riding of Yorkshire. Source: en.wikipedia.org/wiki/A_Gest_of_Robyn_Hode.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In A Gest of Robyn Hode, Little John carries Robin's message to an impoverished knight who has fallen into debt to the greedy Abbot of St Mary's Abbey. Robin lends the knight 400 pounds to redeem his lands. What is the KNIGHT'S name?",
+      "choices": ["Sir Richard at the Lee", "Sir Guy of Warwick", "Sir Kay of Camelot", "Sir Aymer de Valence"],
+      "answer": "Sir Richard at the Lee",
+      "context": "Fyttes 1-4 of the Gest turn on Robin's rescue of the poor knight Sir Richard at the Lee, who repays every penny with interest a year later. Sir Guy of Warwick is the hero of a different English romance; Sir Kay is Arthur's foster-brother; Aymer de Valence was a real Earl of Pembroke, unconnected. Source: en.wikipedia.org/wiki/A_Gest_of_Robyn_Hode.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "In the ballad of Robin's death at Kirklees Priory (Child 120), the prioress bleeds Robin to death by treachery. Little John smashes the priory doors to reach his old chief but is too late. From a window Robin looses his last arrow into the woods and gives Little John one final order about that arrow. What does he ask?",
+      "choices": ["bury me where the arrow falls", "burn this priory to the ground", "hunt down the prioress's lover", "hang me from the greenwood oak"],
+      "answer": "bury me where the arrow falls",
+      "context": "In the B-text of Child 120 'Robin Hood's Death', the dying Robin shoots one last shaft from the window and asks Little John to bury him on the spot where it lands. Robin explicitly REFUSES the burning of the priory -- 'I never hurt woman in all my life / Nor man in a woman's company.' Source: en.wikipedia.org/wiki/Robin_Hood%27s_Death.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "For centuries a Derbyshire churchyard has kept an unusually long grave-mound that local tradition points out as Little John's own burial place -- a modern tombstone still marks it. In WHICH English village is the traditional grave shown?",
+      "choices": ["Hathersage", "Barnsdale", "Loxley", "Kirklees"],
+      "answer": "Hathersage",
+      "context": "St Michael's churchyard in the village of HATHERSAGE, Derbyshire, has for centuries been shown to visitors as Little John's grave -- an over-long mound with a modern tombstone. There is no historical proof, but the tradition is old. Barnsdale is Robin's Yorkshire haunt; Loxley is the village some legends give as Robin's birthplace; Kirklees is where Robin died. Source: en.wikipedia.org/wiki/Little_John.",
+      "legend": true
+    }
+  ]
+}

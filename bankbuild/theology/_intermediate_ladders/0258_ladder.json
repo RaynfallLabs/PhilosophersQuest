@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Ulster Cycle a sharp-tongued poet is so hated for his mischief that when he throws a great feast the warriors will only agree to come if he sits apart in a separate raised gallery, so his poison-verses cannot reach them across the hall. Who is this Ulster poet?",
+      "choices": ["Bricriu mac Carbada", "Sencha mac Ailella", "Amairgen mac Ecit", "Ferghus mac Roich"],
+      "answer": "Bricriu mac Carbada",
+      "context": "Bricriu mac Carbada is the hospitaller (briugu) and troublemaker of Ulster, known for a satirist's tongue so vicious that his mere presence at the hearth started fights. The tale of the feast is called Fled Bricrenn ('Bricriu's Feast'). Sencha mac Ailella is Ulster's chief judge and peacemaker; Amairgen mac Ecit is Conall Cernach's father, another Ulster poet; Ferghus mac Roich is the exiled king. Source: en.wikipedia.org/wiki/Bricriu.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "At the great feast the host secretly whispers to three separate champions of Ulster that each of them alone deserves the Curadmir -- the best cut of the roast, given by right to the greatest warrior present. Predictably all three demand it at once and the hall erupts. What is the Curadmir also called in English?",
+      "choices": ["the Champion's Portion", "the Hero's Toast", "the King's Cup", "the Warrior's Wager"],
+      "answer": "the Champion's Portion",
+      "context": "The Curadmir, or Champion's Portion, was a real feature of early Irish feasting: the best cut of the roasted pig or ox was set aside by custom for the greatest warrior in the hall. Bricriu weaponises the custom by promising it privately to three men at once. Source: en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The three Ulster champions who each believe they have been promised the Champion's Portion at Bricriu's feast are the greatest three warriors of the province. Cu Chulainn is one, and Conall Cernach is another. Who is the third?",
+      "choices": ["Loegaire Buadach", "Cet mac Magach", "Fer Diad mac Damain", "Laeg mac Riangabra"],
+      "answer": "Loegaire Buadach",
+      "context": "Loegaire Buadach ('Loegaire the Victorious') is the third of the top-rank Ulster champions and the first to take up the beheading challenge later in the tale. Cet mac Magach is a Connacht champion; Fer Diad is Cu Chulainn's foster-brother from Connacht; Laeg mac Riangabra is Cu Chulainn's charioteer. Source: en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The quarrel over the Champion's Portion is so bitter that not only the three heroes but their wives fall to arguing over which of them deserves precedence at the door of the hall. What is this episode within Bricriu's Feast traditionally called?",
+      "choices": ["the Women's War of Words", "the Judgment of the Queens", "the Feast of the Three Wives", "the Battle at the Door"],
+      "answer": "the Women's War of Words",
+      "context": "The Women's War of Words (in Irish Briatharchath ban Ulad) is the wives' set-piece within Fled Bricrenn: Emer, Finnabair, and Fedelm each boast their husband's deeds. It is one of the earliest recorded flyting-contests in Western literature. Source: en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The dispute over the Champion's Portion cannot be settled. Contests of arms are held, kings are asked to judge, Cu Chulainn is repeatedly named the winner -- but the other two refuse the verdict. Then one night a great stranger enters the hall of Emain Macha and offers a strange bargain to the champions. What appearance does the stranger take?",
+      "choices": ["a huge rough herdsman (bachlach) with an axe", "an armoured Fomorian captain from the sea", "a druid of the Dagda in white robes", "a giant of the Fir Bolg in bronze mail"],
+      "answer": "a huge rough herdsman (bachlach) with an axe",
+      "context": "The Irish word bachlach means 'churl' or 'lout'; in the tale the shape-shifter chooses the form of a rough herdsman with a great axe -- the most unassuming shape possible, which makes the beheading trick land harder. The Fomorians are a race of old sea-enemies of the Tuatha De; the Fir Bolg are the pre-Tuatha rulers of Ireland; a druid would judge, not challenge with an axe. Source: oxfordreference.com Bachlach entry; en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The first champion to accept the bargain strikes at the giant with the axe and takes his head clean off in one blow. The next moment is what makes the tale unforgettable and gives the whole story-motif its name in medieval studies. What does the beheaded stranger do?",
+      "choices": ["picks up his own head, tucks it under his arm, and walks out of the hall", "grows a new head from the stump on the spot", "vanishes into a mist and leaves the axe standing upright in the floor", "turns into a raven and flies out through the smoke-hole"],
+      "answer": "picks up his own head, tucks it under his arm, and walks out of the hall",
+      "context": "The picked-up-head is the visual signature of what medievalists call the 'beheading game': proof that the challenger is otherworldly and the bargain will fall due. He returns the next morning, head restored, to collect the return blow. Six centuries later Sir Gawain and the Green Knight uses exactly the same beat. Source: en.wikipedia.org/wiki/Beheading_game; en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The giant returns to Emain Macha the next morning to collect the return blow. The champion who beheaded him the night before -- and had sworn to offer his own neck in the morning -- refuses the bargain and slips away. Which of the three champions was the first to flee?",
+      "choices": ["Loegaire Buadach", "Conall Cernach", "Cu Chulainn", "Bricriu himself"],
+      "answer": "Loegaire Buadach",
+      "context": "Loegaire is the first to try the challenge and the first to break his word; Conall takes the same bargain on the second night and likewise flees when the giant comes back with the axe. Only Cu Chulainn will keep faith. Source: en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "On the third night one champion takes the axe and beheads the giant herdsman, watches him carry his head out of the hall, and next morning WHEN THE GIANT RETURNS keeps his word -- stretches his own neck on the block without flinching and waits for the blow. Which of the three great Ulster champions is this?",
+      "choices": ["Cu Chulainn", "Conall Cernach", "Loegaire Buadach", "Fer Diad mac Damain"],
+      "answer": "Cu Chulainn",
+      "context": "The whole tale points at this moment: Cu Chulainn alone honours the exchange. Conall and Loegaire had both fled at first light. Fer Diad is not one of the three great Ulster champions -- he is Cu Chulainn's Connacht foster-brother, who will later fight him at the ford in the Tain. Source: en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "With Cu Chulainn's neck stretched on the block, the giant lifts the axe and swings three times. On the third stroke he lets the blade fall -- but he has TURNED IT IN HIS HAND so it does no wound. What part of the axe does he strike Cu Chulainn's neck with?",
+      "choices": ["the flat or blunt back of the blade", "the wooden handle just above the head", "the leather thong lashing the head to the shaft", "the pommel-stone at the butt of the shaft"],
+      "answer": "the flat or blunt back of the blade",
+      "context": "The turned axe is the mercy that pays out the bargain: Cu Chulainn keeps his word, the giant keeps his (a blow, not a killing), and honour is preserved on both sides. The 14th-century Sir Gawain and the Green Knight uses the same three-swing structure at the Green Chapel. Source: en.wikipedia.org/wiki/Sir_Gawain_and_the_Green_Knight; en.wikipedia.org/wiki/Fled_Bricrenn.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The giant then throws off his rough churl-disguise and reveals himself. He is no wandering herdsman but a warrior-king of Munster, come north in shape-shifting form to judge the dispute over the Champion's Portion once and for all. Who is he?",
+      "choices": ["Cu Roi mac Daire", "Ailill mac Mata", "Curoi's brother Cairbre", "Eogan mac Durthacht"],
+      "answer": "Cu Roi mac Daire",
+      "context": "Cu Roi mac Daire is the great warrior-king of the Clanna Dedad in Munster, famed as a shape-shifter and stern judge. Ailill mac Mata is the king of Connacht (Medb's husband); 'Cairbre' is a common name but no brother of Cu Roi acts in the tale; Eogan mac Durthacht is the Ulster warrior who killed the sons of Uisliu. Source: en.wikipedia.org/wiki/C%C3%BA_Ro%C3%AD.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The beheading-bargain from Fled Bricrenn -- a supernatural stranger who lets a hero cut off his head, then returns to collect the return blow -- is the earliest such story in world literature. Six centuries later an anonymous 14th-century English poet used the same plot beat-for-beat in an Arthurian romance. Which romance is that?",
+      "choices": ["Sir Gawain and the Green Knight", "Sir Thomas Malory's Le Morte d'Arthur", "Chretien de Troyes's Yvain", "Wolfram von Eschenbach's Parzival"],
+      "answer": "Sir Gawain and the Green Knight",
+      "context": "Sir Gawain and the Green Knight (late 14th c.) opens with a green-skinned stranger riding into Arthur's hall and offering exactly the bargain the bachlach offered in Ulster: strike me tonight, take yours in a year. Malory writes a century later and has no beheading-game; Chretien's Yvain is the lion-knight romance; Wolfram's Parzival is a Grail romance. Fled Bricrenn is the source Chretien de Troyes carried into French Arthurian tradition. Source: en.wikipedia.org/wiki/Beheading_game.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The mischief-maker who set the whole quarrel in motion does not survive his own cycle for long. In the final chapter of the Tain Bo Cuailnge the same Ulster poet is caught between two enormous rutting bulls at Cruachan and dies -- read by the tradition as poetic justice for a life of stirring fights. How does Bricriu mac Carbada die?",
+      "choices": ["trampled to death by the two bulls of the Tain", "poisoned by his own wife at the feasting-table", "beheaded by Cu Roi mac Daire in a return match", "starved after being locked into his own raised gallery"],
+      "answer": "trampled to death by the two bulls of the Tain",
+      "context": "The Brown Bull of Cooley and the White-Horned Bull of Ai fight to the death at Cruachan at the end of the Tain, and Bricriu -- who has come out to watch the sport he was so fond of stirring in others -- is caught between them and trampled. The Ulster tradition treats it as fitting. Source: en.wikipedia.org/wiki/Bricriu.",
+      "legend": true
+    }
+  ]
+}

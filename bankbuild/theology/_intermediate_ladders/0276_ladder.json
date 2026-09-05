@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Irish myth a huge, red-bearded, big-bellied god in a hooded cloak is the chief of the Tuatha De Danann. His people call him 'good' -- not because he is kindly, but because he is skilled at every craft: war, magic, poetry, husbandry, cooking. Which of these chief-gods is he?",
+      "choices": ["the Dagda", "Nuada Silver-Arm", "Lugh Lamhfhada", "Manannan mac Lir"],
+      "answer": "the Dagda",
+      "context": "The Dagda is the father-figure of the Tuatha De Danann -- his name means 'the good god' in the sense of 'good at everything.' Nuada Silver-Arm is the first king of the Tuatha De but loses the throne through his wound; Lugh Lamhfhada is Nuada's grandson, master of every art; Manannan mac Lir is the sea-god who later divides the fairy mounds among the Tuatha De. Source: en.wikipedia.org/wiki/The_Dagda.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The Dagda carries a great weapon so heavy that eight men together cannot lift it. He has to drag it behind him across the ground, and it leaves a furrow like a boundary-ditch through the earth wherever he walks. What Irish name do the tales give this dragged weapon?",
+      "choices": ["the Lorg Mor", "the Gae Bolg", "the Claiomh Solais", "the Gai Assail"],
+      "answer": "the Lorg Mor",
+      "context": "Lorg Mor means simply 'the great staff' in Old Irish. The Gae Bolg is Cuchulainn's belly-spear; the Claiomh Solais is the Sword of Light belonging to Nuada; the Gai Assail is Lugh's victory-spear -- three other famous Irish weapons, each from its own ladder. Source: en.wikipedia.org/wiki/The_Dagda; worldhistory.org/The_Dagda/.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Dagda's great club has one property that makes it unique among Irish weapons. It has two ends, and each end does the opposite thing to a man it strikes. The rough head kills any warrior dead on the spot. What does the smooth handle do?",
+      "choices": ["It brings the slain back to life", "It heals every wound on the wielder", "It makes the wielder invisible", "It calls thunder down on the field"],
+      "answer": "It brings the slain back to life",
+      "context": "Life and death in one weapon -- the Dagda can wipe out a rank of warriors with the head, then walk down the line and revive whichever ones he chooses with the handle. Source: en.wikipedia.org/wiki/The_Dagda.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The Dagda owns a great cauldron, brought from the northern city of Murias, and no company of warriors ever leaves it hungry. Every man draws out as much food as his hunger calls for, and the more the cauldron is emptied the more it fills. What is this cauldron called in Irish?",
+      "choices": ["the Coire Ansic", "the Cauldron of Ceridwen", "the Cauldron of Bran", "the Cauldron of Annwn"],
+      "answer": "the Coire Ansic",
+      "context": "Coire Ansic means 'the un-dry cauldron' in Old Irish. The Cauldrons of Ceridwen, Bran, and Annwn all belong to the WELSH branch of Celtic tradition -- honest distractors from a sister tradition, but not the Dagda's Irish cauldron. Source: en.wikipedia.org/wiki/Four_Treasures_of_the_Tuatha_D%C3%A9_Danann.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Dagda owns a magic harp of dark oak that will answer to no voice but his. After the Second Battle of Moytura the Fomorians steal it and carry it away to their feast-hall, hanging it on the wall. The Dagda walks in among the drinking Fomorians, calls the harp aloud by its two secret names, and the harp tears itself off the wall. What happens as it flies through the hall to his hand?",
+      "choices": ["It kills nine Fomorians on its flight", "It sings the Fomorians dead where they sit", "It turns to gold in mid-air", "It calls fire down onto the roof-beams"],
+      "answer": "It kills nine Fomorians on its flight",
+      "context": "The scene is Cath Maige Tuired sec 162. The Dagda calls 'Come Daur Da Bla, come Coir Cetharchair' and the harp answers, killing nine Fomorians as it flies past them. Only then does he play its three great strains. Source: celt.ucc.ie/published/T300010.html.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Once the Dagda has his harp back in his hand, he sits down among the beaten Fomorians and plays THREE great strains on it. The first is the Goltrai, the weeping strain -- no man hearing it can hold back tears. The third is the Suantrai, the sleeping strain -- everyone in earshot falls into a deep sleep. What is the middle strain, the second one, called?",
+      "choices": ["the Geantrai, the laughing strain", "the Ceoltrai, the sorrow-song", "the Fiantrai, the war-strain", "the Draoicht, the druid-strain"],
+      "answer": "the Geantrai, the laughing strain",
+      "context": "The three great strains of the Dagda's harp are Goltrai (weeping), Geantrai (laughing), and Suantrai (sleeping) -- fixed in Irish tradition as the Three Noble Strains of harp music down to the modern day. The other three names in the list are inventions on the same pattern. Source: en.wikipedia.org/wiki/Uaithne.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "The Dagda has many titles in the medieval Irish sources. One is Ruad Ro-fhessa ('the Lord of Great Knowledge'). Another is simply 'the Dagda.' A third names him after his fathering-role -- the same role Odin holds in the north. What is this third title?",
+      "choices": ["Eochaid Ollathair, 'the All-Father'", "Nuada Airgetlam, 'Silver-Arm'", "Lugh Lamhfhada, 'the Long-Armed'", "Manannan mac Lir, 'son of the sea'"],
+      "answer": "Eochaid Ollathair, 'the All-Father'",
+      "context": "Eochaid Ollathair means literally 'horseman, great father' -- the parallel to Odin's own title All-Father in the Norse pillar is precise. Nuada, Lugh, and Manannan are three other Tuatha De gods with their own titles and their own ladders in this bank. Source: en.wikipedia.org/wiki/The_Dagda.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In Cath Maige Tuired the Fomorians decide to humiliate the Dagda through his own hunger. They dig a great pit in the ground and pour into it eighty gallons of new milk, an equal weight of meal and fat, and whole herds of sheep, pigs, and goats boiled together. Then the Fomorian king Indech tells the Dagda he will be killed unless he eats every last drop. He picks up the ladle they set beside the pit. How big is this ladle?",
+      "choices": ["Big enough for a man and a woman to lie in the middle of it", "Big enough to carry the head of an ox in one scoop", "Big enough to bail a small boat with", "Big enough to serve nine warriors at once"],
+      "answer": "Big enough for a man and a woman to lie in the middle of it",
+      "context": "The line is preserved verbatim from Cath Maige Tuired sec 89: the ladle 'was big enough for a man and a woman to lie in the middle of it.' The Dagda eats the whole pit, and afterwards his belly is 'as big as a house cauldron' and the Fomorians laugh at him. The rude humour of the scene was kept intact by the Christian monk-copyists. Source: celt.ucc.ie/published/T300010.html.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The Dagda has a great hall in Ireland that he holds until his son Aengus tricks him out of it. Aengus comes to his father and asks for the hall 'for a day and a night'; when the Dagda agrees, Aengus turns the Old Irish phrase against him -- claiming it can also mean 'day and night forever.' Where is the Dagda's hall that Aengus takes from him?",
+      "choices": ["Bru na Boinne on the river Boyne", "Tara, the seat of the High Kings", "Emain Macha in Ulster", "the Hill of Uisneach in the midlands"],
+      "answer": "Bru na Boinne on the river Boyne",
+      "context": "Bru na Boinne ('the mansion of the Boyne') is the Newgrange passage-tomb complex on the north bank of the Boyne -- older than the Egyptian pyramids, and whose great chamber lights up at dawn on the winter solstice each year. Tara is the political seat, Emain Macha is the Ulster capital of the Red Branch, Uisneach is the mythic centre-point of Ireland. Source: en.wikipedia.org/wiki/The_Dagda.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The Dagda's harp is called Uaithne, but it will not fly to his hand unless he addresses it by BOTH of its two secret bynames, which are written down in Cath Maige Tuired. One name is Coir Cetharchair, 'Four-Angled Music.' What is the other?",
+      "choices": ["Daur Da Bla, 'Oak of Two Meadows'", "Uaithne Airgid, 'Silver Pillar'", "Sean-Ceol, 'the Old Music'", "Cruit Nuadat, 'Nuada's Harp'"],
+      "answer": "Daur Da Bla, 'Oak of Two Meadows'",
+      "context": "The two names are preserved together in Cath Maige Tuired sec 162: Daur Da Bla and Coir Cetharchair. The other three names are inventions on Irish-sounding patterns. The oak of the name matches the harp's dark oak wood; the 'four-angled' name is thought to describe the frame's shape. Source: en.wikipedia.org/wiki/Uaithne.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The night before the Second Battle of Moytura, the Dagda meets a woman washing bloody spoils at a ford on the river Unius. It is the feast of Samhain (the night when the walls between worlds grow thin), and the woman is one of the three great war-goddesses of Ireland. She lies with him at the ford, and in return she promises him the destruction of the Fomorian king. Which goddess is she?",
+      "choices": ["the Morrigan", "Brigid of Kildare", "Danu, mother of the Tuatha De", "Aine of Munster"],
+      "answer": "the Morrigan",
+      "context": "The tryst at the ford of the Unius on Samhain is one of the most famous scenes of Irish myth. The Morrigan is the war-goddess (or trinity of war-goddesses: Badb, Macha, Nemain); Brigid is the Dagda's daughter, goddess of the flame at Kildare; Danu is the ancestress the whole Tuatha De are named for; Aine is a sun-and-sovereignty goddess of Munster. Source: en.wikipedia.org/wiki/The_Dagda.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "After eating the Fomorians' mocking porridge and walking away with a belly 'as big as a house cauldron', the Dagda meets a young woman on the shore of Traigh Eabha. She satirises him in verse, blocks his way by turning into obstacles, and demands he carry her on his back. She turns out to be the daughter of an enemy king -- and the Dagda's later coupling with her is preserved in the same saga. Whose daughter is she?",
+      "choices": ["the daughter of the Fomorian king Indech", "the daughter of the Fir Bolg king Eochaid", "the daughter of the Milesian druid Amergin", "the daughter of the Ulster king Conchobar"],
+      "answer": "the daughter of the Fomorian king Indech",
+      "context": "Indech mac De Domnann is the Fomorian king who served the porridge, and it is his daughter the Dagda meets on the shore afterwards -- a wonderfully rude scene kept intact by the medieval monks. Eochaid, Amergin, and Conchobar belong to other cycles of Irish tradition. Source: celt.ucc.ie/published/T300010.html.",
+      "legend": true
+    }
+  ]
+}

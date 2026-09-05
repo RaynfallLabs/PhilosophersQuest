@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the Norse stories the thunder-god sets out east into the giant-country with the trickster Loki and a farm boy for company. He rides a chariot pulled by two goats and swings the greatest hammer ever forged, Mjolnir. Which god leads this journey to Utgard?",
+      "choices": ["Thor", "Odin", "Freyr", "Tyr"],
+      "answer": "Thor",
+      "context": "Gylfaginning 45. Thor is the son of Odin who fights giants and monsters; the Utgard journey is one of his most famous trips into Jotunheim. Odin travels in disguise as a wanderer, not by goat-chariot; Freyr rules Alfheim and rides a golden boar; Tyr is the one-handed god of oaths.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "On the first night of the journey east, Thor and his companions find what looks like a huge empty hall and crawl inside to sleep. At dawn they discover the 'hall' was actually part of a giant's clothing, dropped in the road. What had they slept inside?",
+      "choices": ["the thumb of a giant's glove", "the hood of a giant's cloak", "the toe of a giant's boot", "the sleeve of a giant's shirt"],
+      "answer": "the thumb of a giant's glove",
+      "context": "Gylfaginning 45. The 'hall' was the empty thumb of the glove of the sleeping giant Skrymir, whose snoring shook the ground. The other three items are the sort of thing you might expect a giant to drop; the glove-thumb is the specific detail in Snorri's Prose Edda.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "Thor and his party finally reach Utgard, a castle so gigantic that the front gate is barred with bars taller than a man. They cannot open it. What do they do to get inside?",
+      "choices": ["slip in sideways between the bars", "climb the wall on the north side", "shout until a guard opens a side door", "smash the lock off with Mjolnir"],
+      "answer": "slip in sideways between the bars",
+      "context": "Gylfaginning 46. The bars of Utgard's gate are so widely spaced that even Thor and his companions can walk through them sideways. It is the first hint that this castle is not what it seems: the king inside is scaling everything up to make his guests feel small.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "At the feast in Utgard, the king Utgardaloki says no one may sit at his table who cannot do some feat. Loki brags he can out-eat any man alive. Two long troughs of meat are set out, and Loki is matched against a man called Logi. Loki eats his meat clean to the bones -- but he loses. What did Logi do?",
+      "choices": ["ate the meat, the bones, AND the trough", "swallowed his trough in a single gulp", "finished before Loki had taken a bite", "ate a second trough while Loki chewed"],
+      "answer": "ate the meat, the bones, AND the trough",
+      "context": "Gylfaginning 46. Logi chews trough and all -- because Logi, as Utgardaloki reveals the next morning, is Wildfire itself, and fire consumes everything it touches.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The farm boy Thialfi, brought along on the journey because he can outrun any human, is challenged to a footrace against a boy called Hugi on the courtyard track. Three times they run; three times Thialfi loses so badly that by the time he crosses the finish line, Hugi is already doing something. What?",
+      "choices": ["coming back to meet him", "eating a second breakfast", "napping in the shade", "sharpening his shoes"],
+      "answer": "coming back to meet him",
+      "context": "Gylfaginning 46. Hugi finishes so fast that he has time to turn round and jog back before Thialfi arrives. Hugi turns out to be Thought itself, and nothing in any world can outrun thought.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Utgardaloki turns to Thor and offers a drinking test: here is a horn, and here at his court any real man drains it in one swallow, or at worst two, or three at the most shameful. Thor puts his lips to the rim and pulls, and pulls, and pulls a third time -- and the level has barely dropped. Why can Thor not empty the horn?",
+      "choices": ["its far end opens into the sea", "it is bottomless by enchantment", "the mead grows back as fast as he drinks", "the horn has no bottom at all"],
+      "answer": "its far end opens into the sea",
+      "context": "Gylfaginning 46-47. Utgardaloki reveals the trick the next morning: the horn was set with its lower end in the ocean, and the three great swallows Thor DID manage to draw actually lowered sea-level enough to create the tides we still see today.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Humiliated by the horn, Thor demands another test. Utgardaloki points to a large grey cat curled on the flagstones and tells him to lift it off the floor. Thor stoops, gets his arm under its belly, and heaves with all his god-strength. What is the most he can manage?",
+      "choices": ["one paw comes off the floor", "the cat sits upright but does not rise", "he raises the cat above his head", "the cat purrs and does not move at all"],
+      "answer": "one paw comes off the floor",
+      "context": "Gylfaginning 46. The cat merely arches its back until one paw lifts; Thor cannot get more than that. Utgardaloki explains the next morning that the grey cat was really Jormungandr, the world-encircling Midgard Serpent, and by lifting one paw Thor had nearly heaved the serpent off the earth.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Twice beaten and furious, Thor calls for a wrestling match against any man in Utgard's hall. Utgardaloki laughs and says no one there wants to fight the god at grips -- but perhaps his old nurse will oblige. The nurse hobbles out, and the harder Thor pulls, the firmer she stands. How does the wrestling end?",
+      "choices": ["Thor is brought down onto one knee", "Thor is thrown flat on his back", "Thor breaks free and storms out", "the nurse tosses him across the hall"],
+      "answer": "Thor is brought down onto one knee",
+      "context": "Gylfaginning 46. Utgardaloki calls the match. The old nurse's name is Elli, which in Old Norse means 'Old Age', and Utgardaloki later says no one has ever wrestled better with her than Thor did that day: 'none such has ever been, and none shall be, if he becomes so old as to abide Old Age, that she shall not cause him to fall.'",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The morning after the contests, Utgardaloki walks Thor's party out of the castle and finally tells the truth about what each opponent really was. The grey cat Thor had nearly lifted was not a cat at all. What was the cat?",
+      "choices": ["Jormungandr, the Midgard Serpent", "Fenrir, the wolf of Ragnarok", "Nidhogg, the dragon of Yggdrasil", "Garm, the hound of Hel"],
+      "answer": "Jormungandr, the Midgard Serpent",
+      "context": "Gylfaginning 47. The 'cat' was the world-serpent that circles the earth; by lifting one paw Thor had lifted the serpent's coil out of the ocean, an almost impossible feat. Fenrir will fight Odin at Ragnarok; Nidhogg gnaws at Yggdrasil's third root; Garm guards the gates of Hel.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "In the same reveal outside the castle, Utgardaloki explains that Thor's three great pulls at the drinking horn were not wasted after all -- they had done something visible to the whole world. What did Thor's three swallows actually accomplish?",
+      "choices": ["they created the tides in the sea", "they drained the biggest fjord dry", "they hollowed the sea-caves of Norway", "they froze the northern sea for winter"],
+      "answer": "they created the tides in the sea",
+      "context": "Gylfaginning 47. The lower end of the horn opened into the ocean itself; Thor's three great swallows drew sea-level down so far that the whole ocean has ebbed and flowed ever since. It is Snorri's mythic origin of the tides.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Utgardaloki then names the old nurse who had wrestled Thor to one knee, and admits it was the most astonishing feat of the visit -- because no living thing had ever come off that well against her. What did the nurse really personify?",
+      "choices": ["Old Age", "Winter", "The Sea", "Sleep"],
+      "answer": "Old Age",
+      "context": "Gylfaginning 47. The nurse Elli is Old Age herself. Utgardaloki tells Thor: no one has ever been who did not fall entirely to Elli in the end, if only he lived long enough to meet her; that Thor came down onto only one knee is a marvel. Elli appears in no other extant Norse source, only in this scene.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The reveal ends the story, and Thor, incandescent, spins on his heel and lifts Mjolnir to smash Utgardaloki where he stands. But when the hammer comes up there is nothing to swing at. What has happened to Utgardaloki, his castle, and everything in it?",
+      "choices": ["they have all vanished; only empty plain remains", "they have shrunk to the size of an anthill", "they have been swallowed by the earth", "they have been carried off in a fog-bank"],
+      "answer": "they have all vanished; only empty plain remains",
+      "context": "Gylfaginning 47. The whole illusion drops: castle, king, horn, cat, nurse, hall -- gone. Thor stands with Mjolnir raised over an empty grass plain. Utgardaloki, the reader learns, was Skrymir on the road as well; the three deep valleys Thor had left in a mountainside during the journey were where the giant had slipped a mountain between himself and Mjolnir while pretending to sleep.",
+      "legend": true
+    }
+  ]
+}

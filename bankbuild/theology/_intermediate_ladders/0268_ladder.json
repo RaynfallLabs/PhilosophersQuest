@@ -1,0 +1,160 @@
+{
+ "rungs": [
+  {
+   "tier": 1,
+   "stem": "In Irish myth the sea-monster people who lived in Ireland before the Tuatha De Danann arrived -- misshapen, often one-legged and one-eyed, and cruel -- were the enemies of every wave of settlers. Their king at the Second Battle of Moytura is the most terrible figure in the whole tradition. What are these sea-monster people called?",
+   "choices": [
+    "the Fomorians",
+    "the Milesians",
+    "the Fir Bolg",
+    "the Nemedians"
+   ],
+   "answer": "the Fomorians",
+   "context": "The Fomoire (Fomorians) precede the Tuatha De and are their great enemies. The Milesians (Gaels) come last and displace the Tuatha De; the Fir Bolg and the Nemedians are earlier settler-waves who lose to the Fomorians. Wikipedia: Fomorians.",
+   "legend": true
+  },
+  {
+   "tier": 1,
+   "stem": "The king of the Fomorians has ONE eye, and it is so poisonous that whatever it looks upon dies. The Irish call him 'of the Evil Eye' -- Balor na Suile Nimhe. What is his name?",
+   "choices": [
+    "Balor",
+    "Bres",
+    "Elatha",
+    "Indech"
+   ],
+   "answer": "Balor",
+   "context": "Balor is the Fomorian king and the most terrible figure of Irish myth. Bres is the half-Fomorian who briefly rules the Tuatha De; Elatha is Bres's father; Indech is another Fomorian chief. Wikipedia: Balor.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Balor was not born with the poisoned eye. When he was a boy, his father's druids were brewing a magic potion in a great cauldron. Balor peered in over the rim. What went into the eye that gave it its killing power?",
+   "choices": [
+    "the fumes rising off the druids' brew",
+    "a splash of hot blood from the cauldron",
+    "a curse spoken by a rival druid",
+    "the light of a comet reflected in the pot"
+   ],
+   "answer": "the fumes rising off the druids' brew",
+   "context": "The Cath Maige Tuired traces the origin: the fumes of the brew infected the eye and left it venomous ever after. Wikipedia: Balor.",
+   "legend": true
+  },
+  {
+   "tier": 2,
+   "stem": "Over the years Balor's eyelid grew so thick and heavy from the poison inside that Balor could no longer lift it alone. Whenever he needed the eye open on the battlefield, a team of warriors had to haul the lid up by a ring set into it, using hooks and ropes. How many warriors did it take?",
+   "choices": [
+    "four",
+    "two",
+    "seven",
+    "twelve"
+   ],
+   "answer": "four",
+   "context": "The Cath Maige Tuired and Donegal folk-tradition agree: four warriors, hauling by a ring in the lid. Wikipedia: Balor; Cath Maige Tuired.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "Once the four warriors had hauled Balor's eyelid up and the gaze fell on the enemy line, the effect was not a wound or a spell but something total. What happened to soldiers the open eye looked at?",
+   "choices": [
+    "whole armies fell dead where they stood",
+    "they were turned instantly to stone",
+    "they went blind on the spot but lived",
+    "they aged a hundred years in a heartbeat"
+   ],
+   "answer": "whole armies fell dead where they stood",
+   "context": "The gaze does not wound, does not petrify, does not blind -- it kills outright, at rank-scale. Wikipedia: Balor.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "A druid brings Balor a prophecy he never forgets: he will be killed one day, not by an enemy king, not by another Fomorian, but by ONE particular family relation. Who does the prophecy say will kill him?",
+   "choices": [
+    "his own grandson",
+    "his own brother",
+    "his own daughter",
+    "his own foster-son"
+   ],
+   "answer": "his own grandson",
+   "context": "The grandson-prophecy is the whole engine of the story: Balor's attempt to prevent it sets everything else in motion. It is a direct parallel to the Greek myth of Acrisius, killed by his grandson Perseus. Wikipedia: Balor.",
+   "legend": true
+  },
+  {
+   "tier": 3,
+   "stem": "To prevent the prophecy, Balor takes his only child -- his daughter Ethlinn -- and locks her away where no man can reach her. He puts her in a crystal tower on an island off the Donegal coast. Which island?",
+   "choices": [
+    "Tory Island",
+    "Skellig Michael",
+    "Inishmore",
+    "Rathlin Island"
+   ],
+   "answer": "Tory Island",
+   "context": "Tory Island (Toraigh) off the coast of Donegal is Balor's stronghold in every version of the tale. Skellig Michael is off Kerry, Inishmore is one of the Aran Islands, Rathlin is off Antrim -- all real Irish islands, none Balor's. Wikipedia: Balor; Tory Island.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "A young warrior of the Tuatha De reaches Ethlinn in the tower anyway, with the help of a druidess named Birog who ferries him across on a magic cloak. He is the father of the prophesied grandson. Who is he?",
+   "choices": [
+    "Cian mac Cainte",
+    "Ogma the Strong",
+    "Goibniu the Smith",
+    "Nuada Silver-Arm"
+   ],
+   "answer": "Cian mac Cainte",
+   "context": "Cian mac Cainte, son of Dian Cecht the healer, is the father of Lugh. Ogma, Goibniu, and Nuada are all major Tuatha De men and adjacent-real distractors. Wikipedia: Balor; Cian.",
+   "legend": true
+  },
+  {
+   "tier": 4,
+   "stem": "Ethlinn bears not one child but three -- triplets. Balor discovers them, wraps all three in a sheet, and orders them thrown into the sea to drown. Two of the babies drown. The third is caught by the sea-god of the Irish and carried away in secret to be fostered. Who saves the third baby?",
+   "choices": [
+    "Manannan mac Lir",
+    "the Morrigan",
+    "Aengus Og",
+    "the Dagda"
+   ],
+   "answer": "Manannan mac Lir",
+   "context": "Manannan mac Lir is the Irish sea-god; he catches the baby on the water and fosters him. The rescued child is Lugh. The Morrigan, Aengus, and the Dagda are other major Tuatha De figures. Wikipedia: Balor.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "Grandfather and grandson meet at last on the field of the Second Battle of Moytura. The four warriors bend to haul Balor's eyelid up, and the eye starts to open toward the Tuatha De line. Before the lid is fully raised, Lugh strikes. He is not close enough for spear-work. What weapon does he use?",
+   "choices": [
+    "a sling",
+    "a bow",
+    "a throwing-spear",
+    "a war-axe"
+   ],
+   "answer": "a sling",
+   "context": "Lugh casts a single sling-stone -- named in some medieval sources the Tathlum, a 'concrete-ball' made of enemy brains hardened with lime. The stone strikes the half-open eye before Balor can use it. Wikipedia: Balor; Cath Maige Tuired.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "Lugh's sling-stone hits Balor square in the opening eye and drives clean through the skull, bursting out at the back of his head. The eye is now turned round the wrong way -- and the poison gaze does what it was always going to do. WHO does it kill?",
+   "choices": [
+    "the Fomorian army behind Balor",
+    "the Tuatha De line in front of Balor",
+    "Balor's own daughter Ethlinn watching from the tower",
+    "no one -- the eye is destroyed by the stone"
+   ],
+   "answer": "the Fomorian army behind Balor",
+   "context": "This is the strangest and most memorable image in the whole battle: Balor's own gaze, turned backwards by the stone, kills the Fomorian ranks behind him. The prophecy is fulfilled and the Fomorians are broken forever. Wikipedia: Balor; Cath Maige Tuired.",
+   "legend": true
+  },
+  {
+   "tier": 5,
+   "stem": "The Balor story shares a striking pattern with a famous Greek myth: a king hears a prophecy that his own grandson will kill him, locks his daughter away in a tower so she cannot bear a child, and is killed by that grandson anyway. Which Greek grandfather does Balor mirror -- the one killed by Perseus?",
+   "choices": [
+    "Acrisius of Argos",
+    "Priam of Troy",
+    "Laius of Thebes",
+    "Peleus of Phthia"
+   ],
+   "answer": "Acrisius of Argos",
+   "context": "Acrisius locked away his daughter Danae for exactly the same prophecy; Perseus, born to Danae anyway, later killed Acrisius by accident with a discus. The Balor-Acrisius parallel is one of the strongest Indo-European myth-echoes between Ireland and Greece. Priam, Laius (Oedipus's father, a different prophecy), and Peleus (Achilles's father) are adjacent-real Greek kings. Wikipedia: Acrisius; Balor.",
+   "legend": true
+  }
+ ]
+}

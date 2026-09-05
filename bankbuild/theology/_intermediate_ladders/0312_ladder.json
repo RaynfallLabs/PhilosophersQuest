@@ -1,0 +1,92 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In the forests of Boeotia, a mountain nymph could no longer speak first. She could only wait for someone else to talk, then repeat their last words back. What was the name of the nymph cursed to only repeat what others said?",
+      "choices": ["Echo", "Daphne", "Calypso", "Arethusa"],
+      "answer": "Echo",
+      "context": "Ovid, Metamorphoses 3.359-401. Echo is an oread (mountain nymph). Daphne is the nymph turned into a laurel to escape Apollo; Calypso keeps Odysseus seven years on Ogygia; Arethusa is the nymph turned into a spring in Sicily to escape the river-god Alpheus. The English word 'echo' -- a repeating voice -- comes directly from her name.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "The nymph of Boeotia was cursed by a goddess she had helped Zeus deceive -- Echo used to distract this goddess with endless chatter while Zeus went off with the other nymphs. Which goddess punished Echo with the loss of her voice?",
+      "choices": ["Hera", "Artemis", "Demeter", "Athena"],
+      "answer": "Hera",
+      "context": "Ovid, Metamorphoses 3.359-369. In Ovid's Latin she is Juno, in the Greek tradition Hera. Artemis punishes hunters (Actaeon into a stag); Demeter mourns Persephone; Athena punished Arachne. Hera's specific punishment was fitted to the crime: Echo could no longer speak first, only repeat.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "There was a beautiful young hunter in the same Boeotian forest -- son of a river-god and a water-nymph -- so cold to every girl and boy who loved him that they all went away in tears. What was the name of this beautiful, cruel young hunter?",
+      "choices": ["Narcissus", "Adonis", "Hyacinthus", "Endymion"],
+      "answer": "Narcissus",
+      "context": "Ovid, Metamorphoses 3.339-350. His father was the river Cephissus, his mother the nymph Liriope. Adonis is the beautiful youth Aphrodite loved, killed by a boar; Hyacinthus is the youth Apollo killed by accident with a discus; Endymion is the shepherd the Moon loved in his sleep. The English word 'narcissism' -- love of self -- comes from Narcissus.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "When the beautiful boy was born, his mother Liriope carried him to the most famous blind seer of the age and asked whether her child would live to old age. The seer gave a strange, riddling answer that no one understood at the time. Who was the blind seer she asked?",
+      "choices": ["Tiresias", "Calchas", "Melampus", "Amphiaraus"],
+      "answer": "Tiresias",
+      "context": "Ovid, Metamorphoses 3.339-348. Tiresias is the blind Theban seer of the Odyssey and of Sophocles. Calchas is the Greek seer at Troy; Melampus is an earlier seer of Argos; Amphiaraus is the seer of the Seven Against Thebes. Tiresias's answer -- that the boy would live long only if he never came to know himself -- would prove exact.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Echo followed the beautiful hunter through the trees, longing to speak but unable to begin. He called out 'Is anyone here?' -- she called back 'Here!' -- 'Come!' 'Come!' -- 'Let us come together!' 'Let us come together!' She stepped out to embrace him -- and what did he say to her?",
+      "choices": ["'I would rather die than have you touch me'", "'Away, foul thing -- I have vowed to Artemis'", "'Speak first, or leave me in peace'", "'You are a shade -- return to the wood'"],
+      "answer": "'I would rather die than have you touch me'",
+      "context": "Ovid, Metamorphoses 3.379-392. Narcissus shoves Echo away with the words 'I would rather die than have you touch me' -- and she can only cry back the last words, then flee and hide her face in the leaves. She wastes away until only her voice is left.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "One of the boys Narcissus had rejected lifted his hands to the sky and prayed a specific prayer against him -- 'May he love as I have loved, and never win the loved one'. Which goddess heard the prayer and answered it?",
+      "choices": ["Nemesis", "Hecate", "Eris", "Ate"],
+      "answer": "Nemesis",
+      "context": "Ovid, Metamorphoses 3.404-406. Nemesis is the goddess of righteous retribution -- the punisher of pride. Hecate is the goddess of witchcraft and crossroads; Eris is strife (the golden apple at the wedding of Peleus); Ate is reckless folly. Nemesis's answer will fall on Narcissus at a clear pool in the woods.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "On a hot day, tired from the hunt, Narcissus knelt at a clear pool to drink. As he bent down he saw a beautiful face rising to meet him from the water -- and he did not realise one thing about that face. What did Narcissus fail to realise about the face in the pool?",
+      "choices": ["it was his own reflection", "it belonged to Echo underwater", "it was Nemesis in disguise", "it was the ghost of a rejected lover"],
+      "answer": "it was his own reflection",
+      "context": "Ovid, Metamorphoses 3.407-436. Narcissus falls in love with his own reflection without knowing what he is looking at -- and Nemesis's answer, and Tiresias's oracle, both come true in that instant.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Narcissus leaned down again and again -- tried to kiss the face and to embrace it -- but every time he touched the water something happened that made him weep. What happened each time Narcissus reached for the face in the pool?",
+      "choices": ["the water rippled and the arms in it dissolved at his touch", "a cold hand from the pool pushed his own hand away", "the face closed its eyes and turned aside from him", "a black fish rose up between them and hid the face"],
+      "answer": "the water rippled and the arms in it dissolved at his touch",
+      "context": "Ovid, Metamorphoses 3.427-436. Every reach broke the surface -- so the beautiful arms in the water reached back to him and dissolved the instant he touched them. Narcissus refused to leave the pool, unable to eat, unable to sleep, weeping for a body that vanished at his fingertips.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Narcissus lay dying at the pool day and night, unable to eat or leave. Echo -- still nothing but a voice -- watched him from the trees. When he cried out his last words to himself, what could she do?",
+      "choices": ["repeat his 'Alas!' and 'Farewell!' back to him", "step out at last and lay her hands on his face", "sing his mother Liriope to the pool", "call up Nemesis to break the curse"],
+      "answer": "repeat his 'Alas!' and 'Farewell!' back to him",
+      "context": "Ovid, Metamorphoses 3.494-501. Echo's curse still held -- she could not speak first, could not comfort him, could only give back the last words: 'Alas!' -- 'Alas!' -- 'Farewell!' -- 'Farewell!' Two doomed lovers, each stranded from the object of longing, one at the pool and one in the trees.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The nymphs came for the boy's body to burn it on a pyre, but where he had lain by the water they found no body at all -- only a small flower with white petals and a golden centre, growing at the edge of the pool. What is that flower still called?",
+      "choices": ["the narcissus", "the hyacinth", "the anemone", "the crocus"],
+      "answer": "the narcissus",
+      "context": "Ovid, Metamorphoses 3.509-510. The nymphs found only the flower we still call the narcissus. The hyacinth grew from the blood of Hyacinthus (Apollo's discus); the anemone from the blood of Adonis (the boar); the crocus from the youth Crocus who loved the nymph Smilax. Three flowers from three doomed loves; Narcissus's is the one that loved only itself.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The seer Tiresias had answered Liriope, when her son was a newborn, that the boy would live to old age only on ONE condition. Reading the oracle backwards from the pool, why did Narcissus die exactly BECAUSE the condition failed?",
+      "choices": ["at the pool he came to know himself in the reflection and could not bear it", "at the pool he lied about his own name and Nemesis struck him", "at the pool he cursed Hera and she withered his body", "at the pool he refused to name Echo and the gods took him"],
+      "answer": "at the pool he came to know himself in the reflection and could not bear it",
+      "context": "Ovid, Metamorphoses 3.463-473. Tiresias had said the boy would live long only 'if he never came to know himself' -- an oracle nobody understood. At the pool Narcissus finally recognised the face in the water as his own, and the recognition -- self-knowledge without self-love returned -- killed him. Both prophecy and Nemesis were paid in the same instant.",
+      "legend": true
+    }
+  ]
+}

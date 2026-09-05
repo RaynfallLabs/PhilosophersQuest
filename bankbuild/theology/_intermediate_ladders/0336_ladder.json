@@ -1,0 +1,78 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "The gospels say Jesus led a small group of his closest disciples up a high mountain, apart, to witness a strange vision-scene later called the Transfiguration. How many disciples did he take with him?",
+      "choices": ["Three", "Seven", "All Twelve", "Just one"],
+      "answer": "Three",
+      "context": "Peter, James, and John -- the same 'inner three' Jesus later takes deeper into the garden at Gethsemane and into the room where he raises Jairus's daughter (Matthew 17:1; Mark 5:37; Mark 14:33).",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "As the three disciples watched on the mountaintop, Jesus was transfigured before them. Matthew describes his face shining like the sun. What does Matthew say happened to his clothing?",
+      "choices": ["It became white as the light", "It fell away in golden flame", "It turned to woven fire", "It vanished, leaving him robed in cloud"],
+      "answer": "It became white as the light",
+      "context": "Matthew 17:2 KJV: 'his face did shine as the sun, and his raiment was white as the light.'",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "Peter, James, and John watched Jesus shine like the sun on the mountaintop and then saw two figures from centuries before -- famous names from the Hebrew Bible -- appear beside him and talk with him. Who were the two visitors?",
+      "choices": ["Moses and Elijah", "Abraham and Isaac", "David and Solomon", "Adam and Noah"],
+      "answer": "Moses and Elijah",
+      "context": "Matthew 17:3; Mark 9:4; Luke 9:30. Moses represents the Law and Elijah the prophets -- the two great Hebrew traditions standing together with Jesus.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Mark's account of the mountaintop vision reaches for a comparison to say how impossibly bright Jesus's clothing became. Mark says his garments turned 'exceeding white as snow' -- brighter than what earthly tradesman could ever bleach them?",
+      "choices": ["A fuller", "A dyer", "A potter", "A goldsmith"],
+      "answer": "A fuller",
+      "context": "Mark 9:3 KJV: 'so as no fuller on earth can white them.' A fuller was the ancient launderer who bleached and thickened wool cloth, often using stale urine as a whitener -- Mark's point is that no craftsman's whitening on earth could match this brightness.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "Overwhelmed on the mountaintop, Peter blurted a plan that would let them stay and hold the moment -- one small booth for Jesus, one for each of the two visitors. He said, 'Let us make here three...' -- what?",
+      "choices": ["Tabernacles", "Altars", "Fires", "Standards"],
+      "answer": "Tabernacles",
+      "context": "Matthew 17:4 KJV: 'let us make here three tabernacles; one for thee, and one for Moses, and one for Elias.' A tabernacle here means a temporary booth or tent -- an echo of the Feast of Tabernacles (Sukkot), when Jewish families build such booths outdoors.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Mark supplies a small aside to explain why Peter blurted out the odd suggestion of pitching three booths on the mountaintop. What does Mark say was the reason?",
+      "choices": [
+        "He wist not what to say; for they were sore afraid",
+        "He hoped to keep the vision from fading with the morning light",
+        "James and John had urged him to speak first",
+        "He remembered a prophecy that the just would dwell in tents"
+      ],
+      "answer": "He wist not what to say; for they were sore afraid",
+      "context": "Mark 9:6 KJV. 'Wist not' is old English for 'did not know.' Mark's own gospel is unflattering to Peter throughout, and this is one of the moments where Peter is shown at his most stammering.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "As Peter was still speaking, a bright cloud overshadowed the mountaintop and a voice came out of the cloud. Matthew records exactly what the voice said. What were the words?",
+      "choices": [
+        "This is my beloved Son, in whom I am well pleased; hear ye him",
+        "Blessed art thou, Simon Bar-jona: flesh and blood hath not revealed it unto thee",
+        "Fear not: for I am with thee, and will bless thee",
+        "Behold, I stand at the door, and knock"
+      ],
+      "answer": "This is my beloved Son, in whom I am well pleased; hear ye him",
+      "context": "Matthew 17:5 KJV. The same voice from heaven spoke almost identical words at Jesus's baptism (Matthew 3:17) -- but on the mountain 'hear ye him' is added, a direct command to the three disciples.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "The Greek verb that Matthew and Mark use for what happened to Jesus on the mountain -- 'was transfigured' -- is the same root that gives us an English word for a caterpillar's change into a butterfly. What English word?",
+      "choices": ["Metamorphosis", "Apocalypse", "Epiphany", "Eucharist"],
+      "answer": "Metamorphosis",
+      "context": "The Greek is metamorphothe (from meta-, 'change,' and morphe, 'form'). English 'metamorphosis' comes from the same root. Latin translations gave us 'transfiguration' -- across, plus figure -- but the underlying Greek is a word about changing shape.",
+      "legend": false
+    }
+  ]
+}

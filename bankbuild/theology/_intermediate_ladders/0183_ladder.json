@@ -1,0 +1,100 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In Norse myth the red-bearded god of thunder rides across the sky in a chariot pulled by two goats, and the flash of his weapon is what people down in Midgard see as lightning. What is that thunder-god's name?",
+      "choices": ["Thor", "Freyr", "Tyr", "Baldr"],
+      "answer": "Thor",
+      "context": "Snorri, Gylfaginning 21: Thor is the son of Odin and Jord (Earth), god of thunder, defender of Asgard and Midgard against the giants. Freyr is the harvest and fertility god; Tyr is the god of law and single combat (the one who lost a hand to Fenrir); Baldr is the shining god slain by mistletoe.",
+      "legend": true
+    },
+    {
+      "tier": 1,
+      "stem": "Thor's weapon is not a sword or a spear -- it is a short-handled tool for smashing, and no matter how far he throws it, it always flies back to his hand. What is this weapon called?",
+      "choices": ["Mjolnir", "Gungnir", "Gram", "Tyrfing"],
+      "answer": "Mjolnir",
+      "context": "Snorri, Gylfaginning 21 and Skaldskaparmal 43: Mjolnir ('crusher') is the returning hammer of Thor. Gungnir is Odin's spear; Gram is the sword Sigurd uses to kill the dragon Fafnir; Tyrfing is the cursed sword of the Volsung cycle.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The gods needed the hammer made, so the smith-work was given to two dwarf brothers. The elder put a pig-skin in the forge and told the younger to keep pumping the bellows and never stop, no matter what happened. What are the names of the two dwarf brothers who forged Mjolnir?",
+      "choices": ["Sindri and Brokkr", "Nordri and Sudri", "Fjalar and Galar", "Alviss and Andvari"],
+      "answer": "Sindri and Brokkr",
+      "context": "Snorri, Skaldskaparmal 43: Sindri (sometimes called Eitri) is the elder, Brokkr the younger who works the bellows. Fjalar and Galar are the dwarves who murder Kvasir to make the Mead of Poetry; Nordri and Sudri are two of the four dwarves holding up the sky; Alviss and Andvari are unrelated dwarves from other tales.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "The whole forging was really a bet. One of the Aesir had wagered his own head that a rival team of dwarves (the sons of Ivaldi) could out-craft Sindri and Brokkr, so he had good reason to want the pig-skin forging to fail. Which Aesir had bet his head against the two brothers?",
+      "choices": ["Loki", "Thor", "Odin", "Heimdallr"],
+      "answer": "Loki",
+      "context": "Skaldskaparmal 43: Loki set up the whole contest by boasting that the sons of Ivaldi were the finest smiths in the nine worlds, then wagered his own head that Sindri and Brokkr could not beat them. Thor is the customer for the hammer, not the gambler; Odin and Heimdallr are not in the wager.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "To sabotage the forging Loki changed shape and buzzed into the smithy, landing on Brokkr's skin as he pumped the bellows. Twice he bit and Brokkr held on. The third bite went between the eyes and drew blood, and Brokkr let go of the bellows for one heartbeat. What creature had Loki turned himself into?",
+      "choices": ["a fly", "a salmon", "a falcon", "a mare"],
+      "answer": "a fly",
+      "context": "Skaldskaparmal 43: Loki takes the shape of a gadfly (a horsefly) and bites Brokkr three times -- on the hand, on the neck, and finally between the eyes. The salmon-shape is his escape from the gods after Baldr's death; the falcon-cloak is Freyja's, which Loki borrows in the Thrymskvida; the mare is the shape he takes to lure away the giant's stallion and later gives birth to the eight-legged Sleipnir.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Because Brokkr flinched at that last sting, Mjolnir came out of the forge with a flaw -- not in the head, which was perfect, but in the shaft. Everything else about the hammer was beyond any smith in the nine worlds, but this one blemish stayed. What was wrong with Mjolnir when it came out of the fire?",
+      "choices": ["the handle was too short", "the head was cracked", "the striking face was uneven", "the metal was too soft"],
+      "answer": "the handle was too short",
+      "context": "Skaldskaparmal 43: because Brokkr let the bellows fall for one heartbeat on that third bite, the shaft of the hammer came out too short to be swung two-handed. The head itself was flawless -- would never miss its mark, would always return -- but Thor has had to wield a hammer with a stubby grip ever since.",
+      "legend": true
+    },
+    {
+      "tier": 3,
+      "stem": "Even with the short grip, the gods judged Mjolnir the finest of the six treasures made that day, so Loki had lost his wager and owed his head. He wriggled out with a lawyer's trick: the dwarves could have his head, but they could not touch one particular part of him, which had not been part of the bet. Which part of Loki was outside the bet?",
+      "choices": ["his neck", "his hair", "his eyes", "his hands"],
+      "answer": "his neck",
+      "context": "Skaldskaparmal 43: Loki argued that he had wagered his head, not his neck, and cutting off the head would necessarily damage the neck -- which was not on offer. The dwarves conceded the argument.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Cheated of Loki's head, Brokkr took an awl and a leather thong and stitched a different part of Loki shut in payment -- so Loki could not go on making mischief with words for a while. That thong has a name in the Prose Edda. What is the thong called?",
+      "choices": ["Vartari", "Gleipnir", "Draupnir", "Gjallarhorn"],
+      "answer": "Vartari",
+      "context": "Skaldskaparmal 43 names the thong Vartari. Brokkr sewed Loki's lips shut with it. Gleipnir is the ribbon-thin chain that binds Fenrir; Draupnir is Odin's dripping ring (made in the same forging session as Mjolnir); Gjallarhorn is the horn Heimdallr will blow at Ragnarok.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "The same pig-skin fire produced two other named treasures besides the hammer: a gold ring that drips eight matching rings every ninth night, and a golden boar that runs faster than any horse and lights the dark with its bristles. What are those two other Sindri-and-Brokkr treasures called?",
+      "choices": ["Draupnir and Gullinbursti", "Gungnir and Skidbladnir", "Andvaranaut and Freyr's sword", "Sif's hair and Brisingamen"],
+      "answer": "Draupnir and Gullinbursti",
+      "context": "Skaldskaparmal 43: Sindri and Brokkr produce Draupnir (Odin's dripping gold ring) and Gullinbursti (Freyr's golden boar) in the same session as Mjolnir -- three of the six treasures at the wager. Gungnir (Odin's spear) and Skidbladnir (Freyr's folding ship) are the OTHER three treasures, made by the rival dwarf-team, the sons of Ivaldi; Andvaranaut is Andvari's cursed ring from the Volsung cycle; Sif's hair (also from the sons of Ivaldi) and Brisingamen (Freyja's necklace, made by four different dwarves) are unrelated forgings.",
+      "legend": true
+    },
+    {
+      "tier": 4,
+      "stem": "Mjolnir is heavy enough that Thor cannot safely handle it bare-handed, so he wears an iron pair of gloves to grip the shaft, and he buckles on a special belt that doubles his strength before he swings. What are those two named pieces of Thor's gear?",
+      "choices": ["Jarngreipr and Megingjord", "Andhrimnir and Eldhrimnir", "Hlidskjalf and Valaskjalf", "Tanngrisnir and Tanngnjostr"],
+      "answer": "Jarngreipr and Megingjord",
+      "context": "Snorri, Gylfaginning 21: Jarngreipr ('iron gauntlets') and Megingjord ('strength-belt') are the two objects Thor needs in addition to Mjolnir. Tanngrisnir and Tanngnjostr are Thor's two goats that pull his chariot; Andhrimnir is Valhalla's cook (Eldhrimnir his cauldron); Hlidskjalf and Valaskjalf are Odin's high seat and his silver-roofed hall.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "Mjolnir in Norse myth is not only a weapon -- it also hallows. In Snorri's account of Baldr's funeral, when Baldr's body has been laid on his burning ship, Thor steps up and does one thing with Mjolnir over the pyre. What does he do with the hammer at Baldr's funeral?",
+      "choices": ["raises it to consecrate the pyre", "throws it at a passing giant", "smashes the mast of the ship", "hands it to Odin"],
+      "answer": "raises it to consecrate the pyre",
+      "context": "Snorri, Gylfaginning 49: at Baldr's funeral aboard the ship Hringhorni, Thor stands and raises Mjolnir to hallow the pyre. The scene shows Mjolnir as a sacred object -- it is used the same way over births, marriages, and funerals in the sagas, not just in battle. The giant Litr is kicked into the flames at the same funeral, but by Thor's foot, not the hammer.",
+      "legend": true
+    },
+    {
+      "tier": 5,
+      "stem": "The hallowing role is why so many small silver copies of Thor's hammer have been dug up out of Viking-age graves and hoards across Scandinavia and the British Isles -- worn on cords around the neck as everyday protection. Among all the different kinds of amulet the Vikings wore, where do these silver Mjolnir-pendants rank in the surviving archaeological record?",
+      "choices": ["the most-collected single pendant type from the Viking age", "the rarest -- only a few dozen survive", "found only inside Iceland", "found only in Christian-era graves after conversion"],
+      "answer": "the most-collected single pendant type from the Viking age",
+      "context": "British Museum and Nationalmuseet Copenhagen catalogues: silver Mjolnir-pendants are the most abundant single amulet type recovered from Viking-age burials and hoards (roughly 9th-11th centuries), found from Iceland to the Danelaw to Kievan Rus. Many were worn alongside crosses in the transition to Christianity -- direct evidence of the hallowing role Snorri describes.",
+      "legend": false
+    }
+  ]
+}

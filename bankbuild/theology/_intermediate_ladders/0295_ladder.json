@@ -1,0 +1,108 @@
+{
+  "rungs": [
+    {
+      "tier": 1,
+      "stem": "In A Gest of Robyn Hode (Child Ballad 117), the Sheriff of Nottingham announces a great archery contest in the town square, hoping Robin Hood will not be able to resist trying to win it. The prize is a single object every yeoman covets. What is the prize?",
+      "choices": [
+        "a silver arrow",
+        "a golden crown",
+        "a chest of coin",
+        "a jewelled bow"
+      ],
+      "answer": "a silver arrow",
+      "context": "The prize in the Sheriff's contest is a silver arrow. Silver-arrow archery contests were a real English town tradition and continued in some towns down to the eighteenth century -- the ballad is drawing on a genuine sporting custom. Source: World Archery, Legend of Robin Hood; A Gest of Robyn Hode.",
+      "legend": true
+    },
+    {
+      "tier": 2,
+      "stem": "In the medieval ballad A Gest of Robyn Hode, Robin comes to the Sheriff's contest in disguise and wins by shooting nearest the mark. The famous scene of Robin's second shot splitting the shaft of his rival's arrow -- the one already in the bullseye -- does not appear in any medieval ballad at all. In which nineteenth-century novel is that scene first written?",
+      "choices": [
+        "Ivanhoe",
+        "Waverley",
+        "Rob Roy",
+        "The Talisman"
+      ],
+      "answer": "Ivanhoe",
+      "context": "Sir Walter Scott wrote the arrow-splitting shot into Ivanhoe, published December 1819 (dated 1820), chapter 13. All four choices are real Scott novels, but only Ivanhoe carries the Robin Hood arrow scene. Source: Wikipedia, Ivanhoe.",
+      "legend": false
+    },
+    {
+      "tier": 2,
+      "stem": "In Sir Walter Scott's 1819 Robin Hood novel, a mysterious yeoman archer in Lincoln green appears at a great English tournament and out-shoots the finest bowmen in the field. The reader only gradually realises he is Robin Hood in disguise. What name does the yeoman give in the novel?",
+      "choices": [
+        "Locksley",
+        "Wilfred",
+        "Athelstane",
+        "Cedric"
+      ],
+      "answer": "Locksley",
+      "context": "Scott calls the disguised Robin 'Locksley' at the Ashby tournament, borrowing an older tradition (a c.1600 prose Life of Robin Hood names Locksley as Robin's birthplace). Wilfred, Athelstane, and Cedric are other main characters in Ivanhoe. Source: Wikipedia, Ivanhoe.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "At the tournament in Scott's novel, the disguised Robin Hood faces a rival archer -- the reigning champion of the field, a proud bowman whose grandfather is said to have shot at the Battle of Hastings. Robin splits this man's arrow down the shaft. What is the rival's name?",
+      "choices": [
+        "Hubert",
+        "Diccon",
+        "Malbete",
+        "Roger"
+      ],
+      "answer": "Hubert",
+      "context": "In Ivanhoe chapter 13, Locksley splits the arrow of Hubert, whose grandfather shot at Hastings. Splitting the arrow only ties the contest; Locksley then wins the tiebreaker with a second, harder shot at a still slenderer target. Source: Wikipedia, Ivanhoe.",
+      "legend": false
+    },
+    {
+      "tier": 3,
+      "stem": "The Robin Hood scholar Thomas Ohlgren argues that the whole arrow-splitting tradition arose from a simple misreading of the earliest ballads. In A Gest of Robyn Hode, Robin's most impressive contest shot was not an arrow at all -- it was splitting a slender target set up in front of the butts. What was that slender target?",
+      "choices": [
+        "a willow wand",
+        "a silver pin",
+        "a bull's horn",
+        "a hazel rod"
+      ],
+      "answer": "a willow wand",
+      "context": "In the medieval ballads Robin split a 'wand' -- a slim willow stick planted upright in front of the target. As colored targets came into fashion and readers forgot what a 'wand' was, later retellers substituted an opponent's arrow. All four choices are plausible slender targets, but the ballads specify willow. Source: Slate, Can you really split an arrow with an arrow?; A Gest of Robyn Hode.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "Modern competition archers occasionally shoot so tight a group that a second arrow lodges inside the hollow shaft of the first arrow already in the target. The shot is vanishingly rare -- Mythbusters only reproduced it with hollow bamboo arrows -- and has its own nickname. What do archers call it?",
+      "choices": [
+        "a Robin Hood",
+        "a Locksley",
+        "a Nottingham",
+        "a Sherwood"
+      ],
+      "answer": "a Robin Hood",
+      "context": "Archers universally call the trick shot 'a Robin Hood', in tribute to Scott's Ivanhoe scene. Genuine Robin Hoods happen every so often at modern indoor competitions and ruin the front arrow -- most clubs charge a fee to celebrate them. Source: TV Tropes, Splitting the Arrow; Slate on Merida and the Robin Hood shot.",
+      "legend": false
+    },
+    {
+      "tier": 4,
+      "stem": "In Scott's Robin Hood novel, the archery contest where the disguised outlaw splits his rival's arrow takes place at a great tournament in the English Midlands, presided over by Prince John while King Richard is absent on Crusade. The tournament grounds are a real place still standing today, ruined but visitable. Where does the tournament take place?",
+      "choices": [
+        "Ashby-de-la-Zouche",
+        "Kenilworth",
+        "Warwick",
+        "Nottingham"
+      ],
+      "answer": "Ashby-de-la-Zouche",
+      "context": "Scott sets the tournament at Ashby-de-la-Zouche in Leicestershire, whose castle keep still stands in ruin. Kenilworth, Warwick, and Nottingham are all real English tournament-era castles Scott might have chosen; he picked Ashby. Source: Wikipedia, Ivanhoe.",
+      "legend": false
+    },
+    {
+      "tier": 5,
+      "stem": "Because Sir Walter Scott's novel was one of the most-read books of the nineteenth century, the arrow-splitting scene became the iconic Robin Hood moment for the twentieth century. In the leading man's most famous role -- moustache, feathered cap, Lincoln green -- he stages the arrow-splitting shot in glorious Technicolor. Every later retelling copies it. Who was that leading man?",
+      "choices": [
+        "Errol Flynn",
+        "Douglas Fairbanks",
+        "Kevin Costner",
+        "Cary Elwes"
+      ],
+      "answer": "Errol Flynn",
+      "context": "Errol Flynn's The Adventures of Robin Hood (1938) staged the arrow-splitting shot in glorious Technicolor and became the template every later Robin Hood movie followed. Douglas Fairbanks had played Robin Hood in a silent 1922 film; Costner (1991) and Elwes (1993) came much later. Source: Slate, Can you really split an arrow with an arrow?; TV Tropes, Splitting the Arrow.",
+      "legend": false
+    }
+  ]
+}
