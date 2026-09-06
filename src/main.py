@@ -126,9 +126,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._lore_hint_chain: int       = 0
         self._lore_subject: str | None   = None
         self.identify_menu_items: list   = []
-        # Scroll-of-Identify (D2/D3, 2026-05-29): when set, the next pick
-        # in the identify menu jumps straight to id_level 5 + mastery
-        # instead of starting the philosophy quiz.
+        # Scroll-of-Identify (D2/D3, 2026-05-29; updated post identify-v3):
+        # when set, the next pick in the identify menu jumps straight to
+        # id_level 5 (fully identified) instead of starting the philosophy
+        # quiz. The old "+ mastery" step is gone -- masteries were removed
+        # in the 2026-08-06 identify-v3 redesign (commit 2778305).
         self._scroll_identify_pending: bool = False
         self._scroll_identify_blessed: bool = False
         self.cook_menu_items: list       = []
@@ -164,7 +166,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # One-cosmetic-per-item: per-run appearance map for the collapsed
         # ring/amulet types (one mundane look per functional type this game;
         # mirrors the _lore_levels per-run randomization). Keyed by the item's
-        # mastery_class (== canonical id for these); value is {'name','color'}.
+        # canonical id (formerly the mastery_class slug pre-identify-v3);
+        # value is {'name','color'}.
         self._appearance_map = self._roll_appearance_map()
         # Secret cow level state
         self._cow_poke_count: int = 0        # poke counter for the cow NPC
@@ -1726,15 +1729,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         b = self.secret_build or {}
 
         # -- Always: Philosopher's Shard ------------------------------------
-        # Mark a build-kit starting item as appropriately-known: uniques
-        # get id_level=3 (name + BUC + stats; lore + mastery still
-        # earnable via the philosophy chain). Commons jump straight to
-        # id_level=5 because their content is just "basic gear" — the
-        # identify menu's common-filter (`id_level >= 5`) then hides
-        # them so the kid isn't spamming threshold-mode IDs on a
-        # starting dagger. Per user feedback 2026-05-29: build-kit items
-        # were spawning at 4/5 or 5/5 due to the legacy property-set
-        # path raising id_level to 4 via the setter.
+        # Mark a build-kit starting item as fully-known: id_level=5. Post
+        # identify-v3 (2026-08-06, commit 2778305) the intermediate levels
+        # 1-4 are dead for new saves -- id_level is binary (0 unknown / 5
+        # identified) and the True Name view handles "type known but this
+        # copy's BUC hidden" at kit_visible_level=4 without needing a
+        # written id_level. Build-kit items belong to the player from turn
+        # one, so both type-knowledge and this copy's BUC start known.
         def _mark_starting_item_known(it):
             """Build-kit items arrive FULLY identified — the kid owns them,
             so type knowledge + this copy's BUC are both known from turn
@@ -3781,8 +3782,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _do_warning(self):
         """Warn if monsters are within 5 tiles when player has the warning effect.
 
-        class_acc_passive_radius (ring/amulet_of_warning): mastered class
-        extends the warning radius by +N tiles.
+        class_acc_passive_radius (ring/amulet_of_warning): the active passive
+        extends the warning radius by +N tiles. (Pre identify-v3 this was
+        gated by class-mastery unlock; masteries were removed 2026-08-06
+        and the passive now fires whenever the ring/amulet is equipped.)
         """
         if not self.player.has_effect('warning'):
             return
@@ -3802,8 +3805,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _do_searching(self):
         """Auto-reveal adjacent tiles, secret doors, and traps when player is searching.
 
-        class_acc_passive_radius (ring/amulet_of_searching): mastered class
-        extends the searching radius by +N tiles around the player.
+        class_acc_passive_radius (ring/amulet_of_searching): the active
+        passive extends the searching radius by +N tiles around the player.
+        (Pre identify-v3 this was gated by class-mastery unlock; masteries
+        were removed 2026-08-06 and the passive now fires whenever the
+        ring/amulet is equipped.)
         """
         if not self.player.has_effect('searching'):
             return
@@ -3824,7 +3830,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         trap['revealed'] = True
                         self.add_message(
                             f"Searching reveals a {trap['type'].replace('_', ' ')} trap!", 'success')
-        # Also reveal adjacent ambush monsters (radius scales with the mastery)
+        # Also reveal adjacent ambush monsters (radius same as tile-reveal above)
         for m in self.monsters:
             if (m.alive and m.ai_pattern == 'ambush'
                     and not getattr(m, '_aware', False)
@@ -6420,14 +6426,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     # ------------------------------------------------------------------
-    # Examine corpse  (escalator-chain philosophy quiz, 5-tier reveal)
+    # Examine corpse  (ONE philosophy question at corpse.id_tier)
     # ------------------------------------------------------------------
-    # Layers per chain rung:
-    #   1: name+symbol            (always known)
-    #   2: HP, AC, damage         (basic stats)
-    #   3: weaknesses, resists,   tags (family) -> propagates to kin
-    #   4: full lore text         (lore_identified property True)
-    #   5: family mastery unlock  (one blessing per family tag, idempotent)
+    # Post identify-v3 (2026-08-06, commit 2778305): one philosophy Q at
+    # the corpse's id_tier. Right = the monster type is fully identified
+    # PERMANENTLY (this corpse + every future spawn of the type via
+    # lore_known_monster_ids in game_combat._make_corpse). Wrong = the
+    # Shard's backlash stuns the kid for 10 turns.
+    # The old 5-tier escalator-chain reveal (with per-tier layers and a
+    # family-mastery unlock rung) is gone; id_level 5 is the only "known"
+    # state and family-mastery / MONSTER_FAMILY_BLESSINGS were deleted.
     # ------------------------------------------------------------------
 
     def _start_corpse_identify(self, corpse, after_advance_turn: bool = True):

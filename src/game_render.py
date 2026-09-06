@@ -50,6 +50,24 @@ from game_states import (
 )
 
 
+def _identify_status_label(id_level: int) -> str:
+    """Map an item's id_level to a human status string.
+
+    Post-2026-08-06 identify-v3 model: only 0 and 5 are actually written for
+    new saves (mastery-progression 1-4 was deleted; True Name view uses the
+    kit_visible_level helper to render a "type known" view at 4). Old saves
+    that predate the redesign may carry legacy intermediate values.
+    """
+    idl = int(id_level or 0)
+    if idl >= 5:
+        return "Identified"
+    if idl >= 4:
+        return "Type known (BUC / enchant hidden)"
+    if idl >= 1:
+        return "Partial (legacy save)"
+    return "Unknown"
+
+
 class RenderMixin:
     def _draw_mystery_approach(self):
         """Draw the mystery encounter overlay."""
@@ -809,9 +827,9 @@ class RenderMixin:
                     line_h=15, max_lines=2)
             try:
                 idl = self._kit_visible_level(item)
-                id_text = f"ID {idl}/5"
+                id_text = _identify_status_label(idl)
             except Exception:
-                id_text = "ID -"
+                id_text = "Unknown"
             meta = f"{getattr(item, 'item_class', 'item')}   {getattr(item, 'slot', getattr(item, 'item_class', 'item'))}   wt {getattr(item, 'weight', 0):g}   {id_text}"
             text(meta, font_tiny, FP.FADED_TEXT, r.x + 68, r.bottom - 15)
             y += pack_row_h
@@ -853,7 +871,7 @@ class RenderMixin:
                 visible = int(getattr(detail_item, 'id_level', 5))
             meta_rows = [
                 ("Weight", f"{getattr(detail_item, 'weight', 0):g}"),
-                ("ID", f"{visible}/5" if hasattr(detail_item, 'id_level') else "-"),
+                ("ID", _identify_status_label(visible) if hasattr(detail_item, 'id_level') else "-"),
             ]
             if hasattr(detail_item, 'buc'):
                 meta_rows.append(("BUC", getattr(detail_item, 'buc', 'uncursed') if getattr(detail_item, 'buc_known', False) else "?"))
@@ -2591,7 +2609,7 @@ class RenderMixin:
         idl = self._menu_item_level(item)
         if hasattr(item, 'identified') and idl < 3:
             cls = getattr(item, 'item_class', 'item').replace('_', ' ')
-            return f"{cls} | unidentified | ID {idl}/5"
+            return f"{cls} | unidentified"
         try:
             return self._get_item_stats_brief(item)
         except Exception:
@@ -2616,7 +2634,7 @@ class RenderMixin:
             lines += [
                 ("Unidentified appearance", FP.GOLD_BRIGHT, self.font_sm),
                 (un, FP.BODY_TEXT, self.font_sm),
-                (f"Study progress: {idl}/5", FP.FADED_TEXT, self.font_sm),
+                (f"Status: {_identify_status_label(idl)}", FP.FADED_TEXT, self.font_sm),
                 (f"Type: {cls}", FP.FADED_TEXT, self.font_sm),
                 (f"Weight: {getattr(item, 'weight', 0):.1f}", FP.FADED_TEXT, self.font_sm),
                 ("Hidden", FP.WARNING_TEXT, self.font_sm),
@@ -2682,17 +2700,45 @@ class RenderMixin:
         return lines
 
     def _menu_recipe_preview(self, recipe) -> str:
+        """One-line outcome preview for a recipe (post-v2.6.4 cook redesign).
+
+        Recipe carries `outcome_id` referencing data/items/cook_outcomes.json.
+        Legacy recipes with a `tier_outcomes` dict still render (dead in-repo
+        but old saves may keep them).
+        """
+        # v2.6.4 path: single outcome archetype via outcome_id
+        oid = recipe.get('outcome_id')
+        if oid:
+            try:
+                from food_system import _load_outcomes
+                o = _load_outcomes().get(oid) or {}
+            except Exception:
+                o = {}
+            if o:
+                bits = []
+                if o.get('sp'):            bits.append(f"+{o['sp']}SP")
+                if o.get('hp'):            bits.append(f"+{o['hp']}HP")
+                if o.get('max_hp_bonus'):  bits.append(f"+{o['max_hp_bonus']}maxHP")
+                if o.get('stat_grant'):
+                    stat = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
+                    bits.append(f"+{o['stat_grant']}{stat}")
+                if o.get('temp_power'):
+                    tp = str(o.get('temp_power') or '').replace('_', ' ').strip()
+                    dur = o.get('temp_duration')
+                    bits.append(f"{tp} {dur}t" if tp and dur else tp or 'temp buff')
+                if o.get('permanent_power'):
+                    bits.append('PERM')
+                tier = o.get('tier', '?')
+                return f"T{tier}: {'/'.join(bits)}" if bits else f"T{tier}"
+        # Legacy fallback (pre-v2.6.4 recipes with tier_outcomes dict)
         outcomes = recipe.get('tier_outcomes', {}) or {}
         parts = []
         for t in range(1, 6):
             o = outcomes.get(str(t), {}) or {}
             bits = []
-            if o.get('sp'):
-                bits.append(f"+{o['sp']}SP")
-            if o.get('hp'):
-                bits.append(f"+{o['hp']}HP")
-            if o.get('max_hp_bonus'):
-                bits.append(f"+{o['max_hp_bonus']}maxHP")
+            if o.get('sp'):            bits.append(f"+{o['sp']}SP")
+            if o.get('hp'):            bits.append(f"+{o['hp']}HP")
+            if o.get('max_hp_bonus'):  bits.append(f"+{o['max_hp_bonus']}maxHP")
             if o.get('stat_grant'):
                 stat = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
                 bits.append(f"+{o['stat_grant']}{stat}")
@@ -3129,7 +3175,7 @@ class RenderMixin:
         lines = [
             (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
             (f"Source: {self._kit_source_label(src)}", FP.FADED_TEXT, self.font_sm),
-            (f"Identity: {idl}/5", FP.CYAN_ACCENT, self.font_sm),
+            (f"Identity: {_identify_status_label(idl)}", FP.CYAN_ACCENT, self.font_sm),
             (f"Weight: {getattr(item, 'weight', 0):g}", FP.BODY_TEXT, self.font_sm),
         ]
         delta = self._equip_delta_str(item)
@@ -4442,8 +4488,35 @@ class RenderMixin:
             return s[:1].upper() + s[1:] if s else s
 
         def _format_tier_preview(recipe) -> str:
-            """One-line outcome preview per the 2026-05-31 redesign.
-            Shows what each tier delivers so the player knows the stakes."""
+            """One-line outcome preview (post-v2.6.4 cook redesign).
+
+            Reads `outcome_id` -> data/items/cook_outcomes.json. Legacy
+            `tier_outcomes` dict still supported for old-schema recipes.
+            """
+            oid = recipe.get('outcome_id')
+            if oid:
+                try:
+                    from food_system import _load_outcomes
+                    o = _load_outcomes().get(oid) or {}
+                except Exception:
+                    o = {}
+                if o:
+                    bits = []
+                    if o.get('sp'):           bits.append(f"+{o['sp']}SP")
+                    if o.get('hp'):           bits.append(f"+{o['hp']}HP")
+                    if o.get('max_hp_bonus'): bits.append(f"+{o['max_hp_bonus']}maxHP")
+                    if o.get('stat_grant'):
+                        s = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
+                        bits.append(f"+{o['stat_grant']}{s}")
+                    if o.get('temp_power'):
+                        tp = str(o.get('temp_power') or '').replace('_', ' ').strip()
+                        dur = o.get('temp_duration')
+                        bits.append(f"{tp} {dur}t" if tp and dur else tp or 'temp buff')
+                    if o.get('permanent_power'):
+                        bits.append('PERM')
+                    tier = o.get('tier', '?')
+                    return f"T{tier}: {'/'.join(bits)}" if bits else f"T{tier}"
+            # Legacy fallback (pre-v2.6.4 recipes)
             outcomes = recipe.get('tier_outcomes', {})
             if not outcomes:
                 return ""
@@ -4460,7 +4533,6 @@ class RenderMixin:
                     s = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
                     bits.append(f"+{o['stat_grant']}{s}")
                 if o.get('temp_power'):
-                    # Name the actual buff + its duration, not a bare "temp".
                     tp = (recipe.get('temp_power') or '').replace('_', ' ').strip()
                     dur = recipe.get('temp_duration')
                     label = tp or 'temp buff'
@@ -6430,7 +6502,7 @@ class RenderMixin:
     def _lore_item_identity_lines(self, item, id_level):
         lines = [
             (self._display_name(item), FP.GOLD_BRIGHT, get_font('heading', 20)),
-            (f"Identification: {id_level}/5", FP.CYAN_ACCENT, self.font_sm),
+            (f"Identification: {_identify_status_label(id_level)}", FP.CYAN_ACCENT, self.font_sm),
         ]
         unidentified = getattr(item, 'unidentified_name', '')
         if id_level < 1 and unidentified:
