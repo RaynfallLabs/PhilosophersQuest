@@ -121,70 +121,179 @@ def test_amnesia_helper_resets_id_level():
 
 
 # ---------------------------------------------------------------------------
-# D4 — Scroll of Heal escalator_chain mode
+# D4 — v2.10.0 scroll-system rebuild
+#
+# The original D4 tests locked in escalator_chain for Scroll of Heal.
+# v2.10.0 retired escalator_chain for scrolls: every scroll now has a
+# FIXED tier (1-5), fires ONE grammar question at that tier (threshold=1
+# for regular scrolls, threshold=3 for unique artifact scrolls only), and
+# tier drives both the quiz difficulty and the effect magnitude via
+# _apply_scroll_effect's _tstep. These tests were rewritten to lock in
+# the new contract.
 # ---------------------------------------------------------------------------
 
-def test_scroll_of_heal_json_uses_escalator_chain():
-    """scroll.json must declare scroll_of_heal as escalator_chain mode."""
+def test_heal_scrolls_have_tier_and_power():
+    """All non-unique heal scrolls must have `tier` + `power` (dice string)
+    fields -- power scales heal amount, tier scales quiz difficulty."""
     p = ROOT / "data" / "items" / "scroll.json"
     d = json.loads(p.read_text(encoding='utf-8'))
-    heal = d['scroll_of_heal']
-    assert heal.get('quiz_mode') == 'escalator_chain'
-    assert int(heal.get('max_chain', 0)) >= 5
+    heal_ids = [k for k, v in d.items() if v.get('effect') == 'heal']
+    assert heal_ids, "at least one heal scroll must exist"
+    for sid in heal_ids:
+        s = d[sid]
+        assert 'tier' in s, f"{sid} missing 'tier' field"
+        assert 1 <= int(s['tier']) <= 5, f"{sid} tier out of 1..5"
+        assert s.get('power'), f"{sid} missing dice string in 'power'"
 
 
-def test_scroll_class_reads_quiz_mode():
-    """items.Scroll must expose quiz_mode + max_chain fields."""
+def test_scroll_class_reads_tier_and_threshold():
+    """items.Scroll must expose the new v2.10.0 fields: tier + quiz_threshold
+    (default 1) + is_unique."""
     from items import Scroll
     s = Scroll({
-        'id': 'test_chain_scroll',
+        'id': 'test_scroll_t3',
         'name': 'test scroll', 'symbol': '?', 'color': [255, 255, 255],
-        'effect': 'heal', 'quiz_mode': 'escalator_chain', 'max_chain': 5,
+        'effect': 'heal', 'tier': 3, 'quiz_threshold': 1, 'power': '4d4',
     })
-    assert s.quiz_mode == 'escalator_chain'
-    assert s.max_chain == 5
+    assert s.tier == 3
+    assert s.quiz_threshold == 1
+    assert s.is_unique is False
 
-    # Backward compat: default mode is threshold.
+    # Unique artifact scroll: threshold 3.
     s2 = Scroll({
-        'id': 'test_plain_scroll',
-        'name': 'plain scroll', 'symbol': '?', 'color': [255, 255, 255],
-        'effect': 'mapping',
+        'id': 'test_unique_scroll',
+        'name': 'unique scroll', 'symbol': '?', 'color': [255, 255, 255],
+        'effect': 'dead_sea_map', 'tier': 5, 'quiz_threshold': 3,
+        'is_unique': True,
     })
-    assert s2.quiz_mode == 'threshold'
+    assert s2.tier == 5
+    assert s2.quiz_threshold == 3
+    assert s2.is_unique is True
+
+    # Back-compat: no tier, falls back to quiz_tier (or default 1).
+    s3 = Scroll({
+        'id': 'test_legacy_scroll',
+        'name': 'legacy', 'symbol': '?', 'color': [255, 255, 255],
+        'effect': 'mapping', 'quiz_tier': 2,
+    })
+    assert s3.tier == 2
+    assert s3.quiz_threshold == 1  # v2.10.0 default
 
 
-def test_apply_scroll_effect_scales_heal_by_chain():
-    """The 'heal' effect in _apply_scroll_effect must scale by chain when
-    quiz_mode == 'escalator_chain'."""
+def test_apply_scroll_effect_uses_tier_step():
+    """_apply_scroll_effect must derive _tstep from scroll.tier and no
+    longer accept a `chain` parameter (v2.10.0 retired chain-mode scrolls)."""
     from game_magic import MagicMixin
     src = inspect.getsource(MagicMixin._apply_scroll_effect)
-    assert '_SCROLL_HEAL_CHAIN_MULTS' in src, (
-        "Scroll of Heal must scale heal amount by chain tier per D4"
+    assert '_tstep' in src, (
+        "_apply_scroll_effect must derive _tstep from scroll.tier"
     )
-    # Make sure the chain parameter is in the signature.
+    # Make sure the chain parameter has been dropped from the signature.
     sig = inspect.signature(MagicMixin._apply_scroll_effect)
-    assert 'chain' in sig.parameters
+    assert 'chain' not in sig.parameters, (
+        "v2.10.0: _apply_scroll_effect must NOT accept a chain arg"
+    )
 
 
 def test_scroll_heal_chain_mults_table_is_monotonic():
-    """The chain multiplier table must be monotonically non-decreasing
-    (chain 5 must heal MORE than chain 1)."""
+    """The legacy chain-multiplier table is preserved as class data so it
+    remains inspectable, but it is no longer read by the scroll-read path
+    (heal magnitude is now baked into scroll.power per tier). Kept as a
+    monotonic sanity check on any residual use elsewhere."""
     from game_magic import MagicMixin
     mults = MagicMixin._SCROLL_HEAL_CHAIN_MULTS
     assert len(mults) >= 5
     for i in range(len(mults) - 1):
-        assert mults[i] <= mults[i + 1], (
-            f"_SCROLL_HEAL_CHAIN_MULTS must rise monotonically; "
-            f"index {i} ({mults[i]}) > index {i+1} ({mults[i+1]})"
-        )
-    # Chain 5 must be meaningfully bigger than chain 1.
+        assert mults[i] <= mults[i + 1]
     assert mults[-1] >= 2 * mults[0]
 
 
-def test_read_scroll_branches_on_quiz_mode():
-    """_read_scroll must dispatch to escalator_chain when scroll.quiz_mode
-    requests it."""
+def test_read_scroll_uses_threshold_mode():
+    """v2.10.0: _read_scroll must ALWAYS start a threshold quiz (chain-mode
+    retired). Tier comes from scroll.tier; threshold from scroll.quiz_threshold."""
     from game_magic import MagicMixin
     src = inspect.getsource(MagicMixin._read_scroll)
-    assert "escalator_chain" in src
-    assert "quiz_mode" in src
+    assert "mode='threshold'" in src, (
+        "v2.10.0: all scroll reads must use threshold mode"
+    )
+    # escalator_chain branch must be gone.
+    assert "mode='escalator_chain'" not in src, (
+        "v2.10.0: escalator_chain scroll branch must be retired"
+    )
+    assert "scroll.tier" in src or "getattr(scroll, 'tier'" in src, (
+        "v2.10.0: read tier must come from scroll.tier"
+    )
+
+
+def test_annihilate_scrolls_immune_boss_guard():
+    """v2.10.0 annihilate scrolls must exclude bosses / seal-demons /
+    huge (>500 max_hp) monsters -- same guard as genocide."""
+    from game_magic import MagicMixin
+    src = inspect.getsource(MagicMixin._apply_scroll_effect)
+    # Find the annihilate branch and verify the boss guard is in place.
+    ann_idx = src.find("elif effect == 'annihilate'")
+    assert ann_idx >= 0, "annihilate branch must exist"
+    # Everything up to the next elif in the annihilate block.
+    end_idx = src.find("elif effect ==", ann_idx + 20)
+    if end_idx < 0:
+        end_idx = len(src)
+    ann_block = src[ann_idx:end_idx]
+    assert "is_boss" in ann_block, "annihilate must guard against is_boss"
+    assert "is_seal_demon" in ann_block, "annihilate must guard against seal demons"
+    assert "500" in ann_block, "annihilate must have the 500-HP boss guard"
+
+
+def test_scroll_json_has_no_escalator_chain():
+    """v2.10.0: no scroll may declare quiz_mode: escalator_chain anymore."""
+    p = ROOT / "data" / "items" / "scroll.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    for sid, sdef in d.items():
+        assert sdef.get('quiz_mode', 'threshold') != 'escalator_chain', (
+            f"{sid} still uses retired escalator_chain mode"
+        )
+
+
+def test_dead_sea_scroll_is_unique_artifact():
+    """Dead Sea Scroll must be marked is_unique + min_level 9999 +
+    threshold 3 + tier 5."""
+    p = ROOT / "data" / "items" / "scroll.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    assert 'dead_sea_scroll' in d
+    dss = d['dead_sea_scroll']
+    assert dss.get('is_unique') is True
+    assert int(dss.get('min_level', 0)) == 9999
+    assert int(dss.get('tier', 0)) == 5
+    assert int(dss.get('quiz_threshold', 0)) == 3
+    assert dss.get('effect') == 'dead_sea_map'
+
+
+def test_book_of_thoth_is_consumable_artifact():
+    """Book of Thoth must be in spellbook.json marked is_unique +
+    is_consumable_artifact + min_level 9999 + threshold 3 + tier 5. It does
+    NOT teach a spell -- spell_id is intentionally empty so the artifact
+    goes through _read_book_of_thoth, not the learn-a-spell path."""
+    p = ROOT / "data" / "items" / "spellbook.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    assert 'book_of_thoth' in d, "Book of Thoth must be in spellbook.json"
+    bot = d['book_of_thoth']
+    assert bot.get('is_unique') is True
+    assert bot.get('is_consumable_artifact') is True
+    assert int(bot.get('min_level', 0)) == 9999
+    assert int(bot.get('quiz_tier', 0)) == 5
+    assert int(bot.get('quiz_threshold', 0)) == 3
+    # Consumable artifact -- fires effect on read, doesn't teach a spell.
+    assert not bot.get('spell_id'), (
+        "Book of Thoth must not have a spell_id (it fires an effect on read)"
+    )
+
+
+def test_learn_from_spellbook_routes_consumable_artifact():
+    """_learn_from_spellbook must route is_consumable_artifact books to
+    the Book-of-Thoth handler instead of the learn-a-spell path."""
+    from game_magic import MagicMixin
+    src = inspect.getsource(MagicMixin._learn_from_spellbook)
+    assert "is_consumable_artifact" in src
+    assert "_read_book_of_thoth" in src
+    assert hasattr(MagicMixin, '_read_book_of_thoth')
+    assert hasattr(MagicMixin, '_book_of_thoth_omniscience')
+    assert hasattr(MagicMixin, '_book_of_thoth_curse')

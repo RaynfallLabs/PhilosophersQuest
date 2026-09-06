@@ -37,6 +37,38 @@ _UNIQUE_SPRITE_FALLBACK = {
 # stand-in reads as "a cooking ingredient" far better than a punctuation glyph.
 _INGREDIENT_FALLBACK_SPRITE = 'prime_beef'
 
+# v2.10.0 scroll rebuild: ~75 tier-graded scroll variants share a small set
+# of EFFECTS (heal / mapping / identify / enchant_weapon / ...). Rather than
+# generate art for every tier variant, we map each new scroll id to a
+# representative sprite via effect-keyword matching -- so scroll_of_cure_wounds,
+# scroll_of_vigor, and scroll_of_rejuvenation all share scroll_of_heal.png.
+# Loaded lazily from scroll.json to avoid a hard dep on the data-loader path
+# during renderer import.
+_SCROLL_EFFECT_SPRITE = {
+    'heal':               'scroll_of_heal',
+    'mapping':            'scroll_of_mapping',
+    'identify':           'scroll_of_identify',
+    'enchant_weapon':     'scroll_of_enchant_weapon',
+    'enchant_armor':      'scroll_of_enchant_armor',
+    'enchant_accessory':  'scroll_of_enchant_accessory',
+    'enchant_item':       'scroll_of_enchantment',
+    'remove_curse':       'scroll_of_remove_curse',
+    'protection':         'scroll_of_protection',
+    'confuse_monsters':   'scroll_of_confuse_monsters',
+    'sleep_monsters':     'scroll_of_sleep',
+    'haste_self':         'scroll_of_haste',
+    'teleport_self':      'scroll_of_teleportation',
+    'charging':           'scroll_of_charging',
+    'full_light':         'scroll_of_light',
+    'earth':              'scroll_of_earth',
+    'annihilate':         'scroll_of_annihilation',
+    'genocide':           'scroll_of_genocide',
+    'time_stop_scroll':   'scroll_of_time_stop',
+    'great_power':        'scroll_of_great_power',
+    'dead_sea_map':       'scroll_of_mapping',  # Dead Sea Scroll shares mapping art
+}
+_SCROLL_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
+
 
 def _material_ids() -> list:
     global _MATERIAL_IDS
@@ -147,6 +179,32 @@ def _ingredient_ids() -> set:
     return _INGREDIENT_IDS
 
 
+def _scroll_effect_sprite(item_id: str) -> 'str | None':
+    """v2.10.0 fallback: a scroll id whose per-id art doesn't ship gets the
+    sprite of the canonical scroll for its EFFECT (heal / mapping / ...).
+    Reads data/items/scroll.json once, caches per id. Returns a full path or
+    None (None -> caller lets the outer resolver decide the next fallback).
+    """
+    if item_id in _SCROLL_ID_TO_SPRITE_CACHE:
+        return _SCROLL_ID_TO_SPRITE_CACHE[item_id]
+    resolved: 'str | None' = None
+    try:
+        import json
+        with open(data_path('data', 'items', 'scroll.json'),
+                  encoding='utf-8') as f:
+            scrolls = json.load(f)
+        sdef = scrolls.get(item_id)
+        if sdef:
+            eff = sdef.get('effect', '')
+            sprite_key = _SCROLL_EFFECT_SPRITE.get(eff)
+            if sprite_key:
+                resolved = _named_sprite(sprite_key)
+    except Exception:
+        resolved = None
+    _SCROLL_ID_TO_SPRITE_CACHE[item_id] = resolved
+    return resolved
+
+
 def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     """Filesystem path of the sprite to draw for `item_id`, or None.
 
@@ -178,6 +236,13 @@ def _resolve_item_sprite_path(item_id: str) -> 'str | None':
             return _representative_base_sprite(item_id[len(mat) + 1:])
     if item_id.startswith(('ring_', 'amulet_')):
         return _representative_accessory_sprite(item_id)
+    # v2.10.0: fall back to the effect-canonical scroll art for any
+    # scroll_of_* id that doesn't ship its own .png. Handles the ~55
+    # new tier-graded scroll variants added in the scroll-system rebuild.
+    if item_id.startswith('scroll_of_') or item_id == 'dead_sea_scroll':
+        hit = _scroll_effect_sprite(item_id)
+        if hit:
+            return hit
     return None
 
 # Map tile constants to sprite filenames (SECRET_DOOR looks like WALL)

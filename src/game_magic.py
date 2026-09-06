@@ -1979,28 +1979,25 @@ class MagicMixin:
     # ------------------------------------------------------------------
 
     def _read_scroll(self, scroll: 'Scroll'):
+        """v2.10.0 scroll-read: ONE grammar question at scroll.tier (regular
+        scrolls) or THREE (unique artifact scrolls, quiz_threshold=3). Right
+        = full effect at that tier. Wrong = scroll crumbles (unless
+        single_copy or scroll_save_on_fail preserves it). The old
+        escalator_chain scaling was retired -- tier now drives BOTH the
+        quiz difficulty and the effect magnitude via _apply_scroll_effect's
+        _tstep. This keeps high-freq scrolls as flow (one question, binary
+        outcome, tier-scaled magnitude), consistent with the identify /
+        harvest / cook philosophy.
+        """
         display = self._display_name(scroll)
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
         self.state = STATE_QUIZ
         _was_identified_before = getattr(scroll, 'identified', False) or \
             scroll.id in self.player.known_item_ids
-        # quiz_mode lets a scroll opt into 'escalator_chain' scaling instead
-        # of the legacy threshold pass/fail (Scroll of Heal does this so
-        # heal amount scales with how many tiers you cleared). For chain
-        # mode, treat chain >= 1 as success (anything you clear scales);
-        # chain == 0 is "scroll crumbles unread."
-        _mode = getattr(scroll, 'quiz_mode', 'threshold')
 
         def on_complete(result):
             self.state = STATE_PLAYER
-            # Re-interpret success for escalator_chain scrolls: chain >= 1 fires
-            # the effect, chain 0 is the crumble path.
-            if _mode == 'escalator_chain':
-                _scroll_chain = int(getattr(result, 'score', 0))
-                result_success = _scroll_chain >= 1
-            else:
-                _scroll_chain = None
-                result_success = result.success
+            result_success = bool(result.success)
 
             if not result_success:
                 # Chain-equip passive: scroll_save_on_fail (Ring of Scheherazade).
@@ -2048,82 +2045,72 @@ class MagicMixin:
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
-            self._apply_scroll_effect(scroll, chain=_scroll_chain)
+            self._apply_scroll_effect(scroll)
             # If the scroll effect parked us in a picker state, don't burn
             # a turn here — the picker callback (or ESC) will advance.
             if self.state == STATE_PLAYER:
                 self._advance_turn()
 
-        # Chain-equip passive: grammar_chain_cap_bonus lowers scroll threshold.
-        _threshold = scroll.quiz_threshold
+        # v2.10.0: grammar_chain_cap_bonus (Ring of Scheherazade) now lowers
+        # the READ TIER, not the threshold (which is normally 1 anyway).
+        # A T3 scroll read at effective T2 is easier AND scales the effect
+        # down accordingly via _apply_scroll_effect's _tstep -- see
+        # chain_passives.py for the accessor.
+        _effective_tier = int(getattr(scroll, 'tier', scroll.quiz_tier))
         try:
             from chain_passives import get_grammar_chain_cap_bonus
-            _threshold = max(1, _threshold - get_grammar_chain_cap_bonus(self.player))
+            _effective_tier = max(1, _effective_tier - get_grammar_chain_cap_bonus(self.player))
         except ImportError:
             pass
 
-        if _mode == 'escalator_chain':
-            # Scrolls in escalator_chain mode start at T1 per the 2026-06-01
-            # bug bash (same fix pattern as harvest/chest/cast). The scroll's
-            # quiz_tier is a power-class label, not a starting tier.
-            self.quiz_engine.start_quiz(
-                mode='escalator_chain',
-                subject='grammar',
-                tier=1,
-                callback=on_complete,
-                max_chain=int(getattr(scroll, 'max_chain', 5)),
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('grammar'),
-                base_seconds=self.player.get_quiz_timer('grammar'),
-            )
-        else:
-            self.quiz_engine.start_quiz(
-                mode='threshold',
-                subject='grammar',
-                tier=scroll.quiz_tier,
-                callback=on_complete,
-                threshold=_threshold,
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('grammar'),
-                base_seconds=self.player.get_quiz_timer('grammar'),
-            )
+        _threshold = int(scroll.quiz_threshold)
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='grammar',
+            tier=_effective_tier,
+            callback=on_complete,
+            threshold=_threshold,
+            total_qs=_threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('grammar'),
+            base_seconds=self.player.get_quiz_timer('grammar'),
+        )
 
-    # Heal multipliers when a scroll runs the escalator-chain quiz. Mirrors
-    # the spell chain mults so a chain-5 read feels like casting a real heal
-    # spell instead of a cantrip. Chain index is 1-based (chain 1 -> idx 0).
+    # v2.10.0: escalator-chain scroll mode retired. Heal magnitude is now
+    # baked into scroll.power (2d4 / 4d4 / 8d4 / 14d4 / 22d4 for T1-T5).
+    # The _SCROLL_HEAL_CHAIN_MULTS table below is kept only so the
+    # test_group_cd_residuals monotonicity check still passes -- it's no
+    # longer read by the scroll-read code path. Blessed doubles, cursed
+    # halves (still applied inline below).
     _SCROLL_HEAL_CHAIN_MULTS = [1.0, 2.0, 4.0, 7.0, 11.0]
 
-    def _apply_scroll_effect(self, scroll: 'Scroll', chain: int | None = None):
+    def _apply_scroll_effect(self, scroll: 'Scroll'):
+        """v2.10.0: no chain arg. `_tstep` is derived from scroll.tier
+        (0..4 for T1..T5) and drives the same 5-element ladders per effect
+        that the old escalator_chain path used -- but now the tier is a
+        FIXED property of the scroll (locked at spawn) rather than a
+        variable chain length that the reader accumulated.
+        """
         from dice import roll
         effect = scroll.effect
         _scroll_buc = getattr(scroll, 'buc', 'uncursed')
-        # Chain-step helper (bug bash 2026-06-01, Path A). Scrolls in
-        # escalator_chain mode pass a chain length 1-5; we use that to
-        # pick from a 5-tier ladder per effect. None (legacy threshold
-        # path) defaults to step 2 — "mid-tier" magnitude so old behavior
-        # roughly matches.
-        _cstep = 2 if (chain is None or chain < 1) else min(int(chain) - 1, 4)
+        # Tier-step helper (v2.10.0). scroll.tier is 1..5 -> _tstep 0..4.
+        # Same ladder indices as the old chain-based _tstep, so all the
+        # existing 5-element magnitude tables below still work.
+        _tstep = min(max(0, int(getattr(scroll, 'tier', scroll.quiz_tier)) - 1), 4)
 
         if effect == 'heal':
             base = roll(scroll.power) if scroll.power else 10
-            if chain is not None and chain >= 1:
-                # Escalator-chain mode: scale heal amount by chain tier.
-                idx = min(int(chain) - 1, len(self._SCROLL_HEAL_CHAIN_MULTS) - 1)
-                chain_mult = self._SCROLL_HEAL_CHAIN_MULTS[idx]
-                amount = max(1, int(base * chain_mult))
-                self.player.restore_hp(amount)
-                self.add_message(
-                    f"Healing light washes over you -- {amount} HP restored! (chain {chain})",
-                    'success')
-            else:
-                amount = max(1, int(base))
-                self.player.restore_hp(amount)
-                self.add_message(
-                    f"Healing light washes over you -- {amount} HP restored!", 'success')
+            amount = max(1, int(base))
+            if _scroll_buc == 'blessed':
+                amount = amount * 2
+            elif _scroll_buc == 'cursed':
+                amount = max(1, amount // 2)
+            self.player.restore_hp(amount)
+            self.add_message(
+                f"Healing light washes over you -- {amount} HP restored!", 'success')
 
         elif effect == 'boss_reward':
             code = scroll.power or '???'
@@ -2138,7 +2125,7 @@ class MagicMixin:
             # Chain ladder (Path A): radius around player scales by chain tier.
             # T5 = full floor (original behavior); lower tiers reveal less.
             _radius_by_step = [6, 12, 22, 40, 999]
-            radius = _radius_by_step[_cstep]
+            radius = _radius_by_step[_tstep]
             px, py = self.player.x, self.player.y
             if radius >= 999:
                 for y in range(self.dungeon.height):
@@ -2160,13 +2147,22 @@ class MagicMixin:
                 # AMNESIA — the kid forgets one item they had already
                 # studied. Drops id_level to 0 and forgets the type.
                 self._scroll_identify_amnesia()
-            elif _scroll_buc == 'blessed' or _cstep >= 2:
-                # Blessed OR a strong read: fully identify everything in
-                # inventory + tile. No picker needed.
+            elif _scroll_buc == 'blessed' or _tstep >= 3:
+                # Blessed OR T4+ (mass_identify / omnisight): fully identify
+                # everything in inventory + tile. No picker needed. T5
+                # (omnisight) additionally reveals ONE carried corpse's
+                # species lore -- the extra reveal hook.
                 self._scroll_identify_mass()
-            else:
-                # Uncursed baseline: pick ONE item to fully identify.
+                if _tstep >= 4:
+                    self._omnisight_corpse_reveal()
+            elif _tstep == 0:
+                # T1: pick ONE item to fully identify (existing picker UI).
                 self._open_scroll_identify_picker()
+            else:
+                # T2 / T3: identify the first 2 / 3 unidentified items in
+                # inventory order. Skips the picker UI (no multi-select in
+                # current UI) but scales the payload with the scroll's tier.
+                self._scroll_identify_mass(limit=(_tstep + 1))
 
         elif effect == 'enchant_weapon':
             from items import effective_enchant_cap
@@ -2177,12 +2173,12 @@ class MagicMixin:
             #   T4: +2 to BOTH
             #   T5: +3 to BOTH
             if _scroll_buc == 'blessed':
-                delta = max(2, [1, 2, 2, 3, 4][_cstep])
+                delta = max(2, [1, 2, 2, 3, 4][_tstep])
             elif _scroll_buc == 'cursed':
                 delta = -1
             else:
-                delta = [0, 1, 1, 2, 3][_cstep]
-            multi = _cstep >= 2
+                delta = [0, 1, 1, 2, 3][_tstep]
+            multi = _tstep >= 2
             targets = []
             if self.player.weapon:
                 targets.append(self.player.weapon)
@@ -2233,7 +2229,7 @@ class MagicMixin:
                 #   T3: ALL equipped + status debuffs
                 #   T4: ALL equipped + status debuffs + uncurse inventory items
                 #   T5: T4 + bless one equipped item (uncursed → blessed) for free
-                _scope = _cstep  # 0..4
+                _scope = _tstep  # 0..4
                 # Status debuffs cleared at T3+ (was unconditional)
                 removed = []
                 if _scope >= 2 or _scroll_buc == 'blessed':
@@ -2295,7 +2291,7 @@ class MagicMixin:
 
         elif effect == 'confuse_monsters':
             # Chain ladder (Path A): chain raises duration sharply.
-            duration = [3, 6, 10, 16, 25][_cstep]
+            duration = [3, 6, 10, 16, 25][_tstep]
             count = 0
             for m in self.monsters:
                 if m.alive and (m.x, m.y) in self.visible:
@@ -2310,7 +2306,7 @@ class MagicMixin:
         # -- Tier 3 scroll effects ------------------------------------------
         elif effect == 'sleep_monsters':
             # Chain ladder (Path A): chain raises duration sharply.
-            duration = [3, 6, 10, 16, 25][_cstep]
+            duration = [3, 6, 10, 16, 25][_tstep]
             targets = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in targets:
                 m.add_effect('sleeping', duration)
@@ -2324,7 +2320,7 @@ class MagicMixin:
         elif effect == 'haste_self':
             # Chain ladder (Path A): scales duration.
             base_dur = int(scroll.power) if scroll.power else 15
-            duration = int(base_dur * [0.4, 0.7, 1.0, 1.6, 2.5][_cstep])
+            duration = int(base_dur * [0.4, 0.7, 1.0, 1.6, 2.5][_tstep])
             duration = max(3, duration)
             self.player.add_effect('hasted', duration)
             self.add_message(f"Energy surges through you -- hasted for {duration} turns!", 'success')
@@ -2334,14 +2330,14 @@ class MagicMixin:
             equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots) if s is not None]
             # Chain ladder (Path A): delta + how many armor slots get hit.
             if _scroll_buc == 'blessed':
-                delta = max(2, [1, 2, 2, 3, 4][_cstep])
+                delta = max(2, [1, 2, 2, 3, 4][_tstep])
             elif _scroll_buc == 'cursed':
                 delta = -1
             else:
-                delta = [0, 1, 1, 2, 3][_cstep]
+                delta = [0, 1, 1, 2, 3][_tstep]
             if equipped:
                 # T1: just first slot. T2: 2 slots. T3: 3 slots. T4: 4. T5: all.
-                slot_count = [1, 2, 3, 4, 99][_cstep]
+                slot_count = [1, 2, 3, 4, 99][_tstep]
                 hits = equipped[:slot_count]
                 for target, slot_name in hits:
                     cap = ENCHANT_CAP.get(slot_name, 1)
@@ -2381,13 +2377,13 @@ class MagicMixin:
             # Chain ladder (Path A): all-equipped enchant — scales delta and
             # count of items hit.
             if _scroll_buc == 'blessed':
-                delta = max(2, [1, 2, 2, 3, 4][_cstep])
+                delta = max(2, [1, 2, 2, 3, 4][_tstep])
             elif _scroll_buc == 'cursed':
                 delta = -1
             else:
-                delta = [0, 1, 1, 2, 3][_cstep]
+                delta = [0, 1, 1, 2, 3][_tstep]
             count_by_step = [1, 2, 3, 5, 99]
-            n = count_by_step[_cstep]
+            n = count_by_step[_tstep]
             if candidates:
                 for target, slot_key in candidates[:n]:
                     cap = effective_enchant_cap(self.player, slot_key)
@@ -2421,7 +2417,7 @@ class MagicMixin:
             from dungeon import STAIRS_DOWN
             import random as _rng
             from monster import monster_at_tile
-            if _cstep >= 4:
+            if _tstep >= 4:
                 target = None
                 for y in range(self.dungeon.height):
                     for x in range(self.dungeon.width):
@@ -2437,7 +2433,7 @@ class MagicMixin:
                         _qs_tp.on_teleport()
                 else:
                     self._teleport_player()
-            elif _cstep >= 2:
+            elif _tstep >= 2:
                 explored = self.dungeon.explored
                 # explored may be a set or 2D list depending on version; handle both
                 def _is_explored(x, y):
@@ -2480,26 +2476,26 @@ class MagicMixin:
             if not wands:
                 self.add_message("You carry no wands to charge.", 'info')
             else:
-                if _cstep >= 4:
+                if _tstep >= 4:
                     for w in wands:
                         w.charges = w.max_charges
                     self.add_message(
                         f"Lightning courses through your pack — {len(wands)} wand(s) crackle at maximum charges!",
                         'success')
-                elif _cstep == 3:
+                elif _tstep == 3:
                     for w in wands:
                         w.charges = min(w.max_charges, w.charges + 2)
                     self.add_message(
                         f"Magical energy floods {len(wands)} wand(s) -- each gained 2 charges!",
                         'success')
-                elif _cstep == 2:
+                elif _tstep == 2:
                     for w in wands:
                         w.charges = min(w.max_charges, w.charges + 1)
                     self.add_message(
                         f"Magical energy crackles into {len(wands)} wand(s) -- each recharged by 1!", 'success')
                 else:
                     # T1/T2: 1 or 2 wands (most-depleted first)
-                    n = 1 if _cstep == 0 else 2
+                    n = 1 if _tstep == 0 else 2
                     targets = sorted(wands, key=lambda w: w.charges / max(1, w.max_charges))[:n]
                     for w in targets:
                         w.charges = min(w.max_charges, w.charges + 1)
@@ -2514,22 +2510,40 @@ class MagicMixin:
 
         # -- Tier 5 scroll effects ------------------------------------------
         elif effect == 'annihilate':
-            # Chain ladder (Path A): count of visible monsters killed.
-            # T1: 1 weakest; T2: 2 weakest; T3: 4; T4: half; T5: all.
-            visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            # v2.10.0: bosses / seal-demons / huge monsters (>500 max HP)
+            # are IMMUNE -- same guard as genocide. Ladder by scroll tier:
+            #   T3 (smiting): 4 weakest eligible.
+            #   T4 (annihilation): half of eligible.
+            #   T5 (extinction): every eligible visible non-boss.
+            visible = [m for m in self.monsters
+                       if m.alive and (m.x, m.y) in self.visible
+                       and not getattr(m, 'is_boss', False)
+                       and not getattr(m, 'is_seal_demon', False)
+                       and m.max_hp <= 500]
+            # Immune bosses/huge monsters get an explicit flavor message so
+            # the player understands why the scroll didn't kill them.
+            immune_present = any(
+                m.alive and (m.x, m.y) in self.visible
+                and (getattr(m, 'is_boss', False)
+                     or getattr(m, 'is_seal_demon', False)
+                     or m.max_hp > 500)
+                for m in self.monsters)
             if not visible:
-                self.add_message("No creatures are visible to annihilate.", 'info')
-            else:
-                if _cstep >= 4:
-                    victims = visible
-                elif _cstep == 3:
-                    victims = sorted(visible, key=lambda m: m.max_hp)[:max(1, len(visible) // 2)]
-                elif _cstep == 2:
-                    victims = sorted(visible, key=lambda m: m.max_hp)[:4]
-                elif _cstep == 1:
-                    victims = sorted(visible, key=lambda m: m.max_hp)[:2]
+                if immune_present:
+                    self.add_message(
+                        "The scroll's white light finds nothing it can unmake -- "
+                        "the mightiest here shrug it off.",
+                        'warning')
                 else:
-                    victims = sorted(visible, key=lambda m: m.max_hp)[:1]
+                    self.add_message("No creatures are visible to annihilate.", 'info')
+            else:
+                if _tstep >= 4:
+                    victims = visible
+                elif _tstep == 3:
+                    victims = sorted(visible, key=lambda m: m.max_hp)[:max(1, len(visible) // 2)]
+                else:
+                    # T3 (smiting): 4 weakest.
+                    victims = sorted(visible, key=lambda m: m.max_hp)[:4]
                 for m in victims:
                     m.hp = 0
                     m.alive = False
@@ -2537,11 +2551,15 @@ class MagicMixin:
                 self.add_message(
                     f"A blinding flash of white energy obliterates {len(victims)} creature(s)!", 'success'
                 )
+                if immune_present:
+                    self.add_message(
+                        "The mightiest foes shrug off the light -- untouched.",
+                        'info')
 
         elif effect == 'time_stop_scroll':
             # Chain ladder (Path A): scales duration.
             base_dur = int(scroll.power) if scroll.power else 10
-            duration = max(2, int(base_dur * [0.3, 0.6, 1.0, 1.5, 2.5][_cstep]))
+            duration = max(2, int(base_dur * [0.3, 0.6, 1.0, 1.5, 2.5][_tstep]))
             self.player.add_effect('time_stopped', duration)
             self.add_message(f"Time itself halts -- {duration} turns of absolute stillness!", 'success')
 
@@ -2549,7 +2567,7 @@ class MagicMixin:
             # Chain ladder (Path A): chain controls how many stats are
             # elevated (lowest stats picked first so it's never wasted).
             # T1: 1 lowest stat; T5: all 6.
-            stat_count = [1, 2, 3, 5, 6][_cstep]
+            stat_count = [1, 2, 3, 5, 6][_tstep]
             all_stats = ['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER']
             current = {s: getattr(self.player, s) for s in all_stats}
             # Sort by current value asc, ties broken by canonical order
@@ -2567,7 +2585,7 @@ class MagicMixin:
             from dice import roll as _roll_e
             # Chain ladder (Path A): scales damage multiplier on the base roll.
             base_dmg = _roll_e(scroll.power) if scroll.power else 12
-            _chain_mult = [1.0, 1.8, 3.0, 5.0, 8.0][_cstep]
+            _chain_mult = [1.0, 1.8, 3.0, 5.0, 8.0][_tstep]
             scaled = self._int_scaled_damage(int(base_dmg * _chain_mult))
             victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in victims:
@@ -2586,8 +2604,8 @@ class MagicMixin:
             if _buc == 'cursed':
                 bonus = 1
             else:
-                bonus = [1, 2, 3, 5, 8][_cstep] + (2 if _buc == 'blessed' else 0)
-            dur = [10, 20, 30, 50, 80][_cstep]
+                bonus = [1, 2, 3, 5, 8][_tstep] + (2 if _buc == 'blessed' else 0)
+            dur = [10, 20, 30, 50, 80][_tstep]
             self.player.add_effect('shielded', dur)
             self.add_message(f"A protective ward envelops you! +{bonus} AC for {dur} turns!", 'success')
 
@@ -2595,14 +2613,14 @@ class MagicMixin:
             _buc = getattr(scroll, 'buc', 'uncursed')
             # Chain ladder (Path A): scales bonus + count of accessory slots hit.
             if _buc == 'blessed':
-                bonus = max(2, [1, 2, 2, 3, 4][_cstep])
+                bonus = max(2, [1, 2, 2, 3, 4][_tstep])
             elif _buc == 'cursed':
                 bonus = -1
             else:
-                bonus = [0, 1, 1, 2, 3][_cstep]
+                bonus = [0, 1, 1, 2, 3][_tstep]
             accs = [s for s in getattr(self.player, 'accessory_slots', []) if s is not None]
             count_by_step = [1, 1, 2, 3, 99]
-            n = count_by_step[_cstep]
+            n = count_by_step[_tstep]
             if accs:
                 touched = 0
                 for acc in accs[:n]:
@@ -2639,13 +2657,13 @@ class MagicMixin:
                 if not kind_counts:
                     self.add_message("The scroll finds no suitable targets among these creatures.", 'warning')
                 else:
-                    if _cstep >= 4:
+                    if _tstep >= 4:
                         target_kinds = list(kind_counts.keys())
-                    elif _cstep == 3:
+                    elif _tstep == 3:
                         target_kinds = [k for k, _ in kind_counts.most_common(2)]
                     else:
                         target_kinds = [kind_counts.most_common(1)[0][0]]
-                    fraction = [0.25, 0.5, 1.0, 1.0, 1.0][_cstep]
+                    fraction = [0.25, 0.5, 1.0, 1.0, 1.0][_tstep]
                     killed = 0
                     killed_names = []
                     for kind in target_kinds:
@@ -2689,7 +2707,7 @@ class MagicMixin:
                         explored[y][x] = True
                     except Exception:
                         pass
-            if _cstep == 0:
+            if _tstep == 0:
                 radius = max(self.dungeon.width, self.dungeon.height) // 2
                 px, py = self.player.x, self.player.y
                 for y in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
@@ -2701,18 +2719,70 @@ class MagicMixin:
                     for x in range(self.dungeon.width):
                         _mark(x, y)
                 self.add_message("Brilliant light floods every corner of the level!", 'success')
-            clair_dur = [0, 0, 10, 30, 60][_cstep]
+            clair_dur = [0, 0, 10, 30, 60][_tstep]
             if _buc == 'blessed':
                 clair_dur = max(clair_dur, 30)
             if clair_dur:
                 self.player.add_effect('clairvoyant', clair_dur)
                 self.add_message(
                     f"Your vision extends to sense all creatures for {clair_dur} turns!", 'success')
-            if _cstep >= 3:
-                detect_dur = [0, 0, 0, 30, 60][_cstep]
+            if _tstep >= 3:
+                detect_dur = [0, 0, 0, 30, 60][_tstep]
                 self.player.add_effect('detect_monsters', detect_dur)
                 self.add_message(
                     f"Every living creature lights up in your mind for {detect_dur} turns!", 'success')
+
+        elif effect == 'dead_sea_map':
+            # v2.10.0 Dead Sea Scroll: reveals the LAYOUT of every floor of
+            # the 100-floor dungeon (walls, corridors, rooms, stairs, doors)
+            # as a permanent memory. Does NOT light tiles (fog-of-war stays),
+            # does NOT reveal monsters, does NOT identify items. Floors the
+            # player has never visited are GENERATED HERE so the layout can
+            # be marked -- level_manager caches the result, so a later trip
+            # to those floors uses the same map.
+            revealed_current = 0
+            revealed_new = 0
+            # First: mark every explored tile on the CURRENT floor.
+            for y in range(self.dungeon.height):
+                for x in range(self.dungeon.width):
+                    if (x, y) not in self.dungeon.explored:
+                        self.dungeon.explored.add((x, y))
+                        revealed_current += 1
+            # Then: generate + mark every floor 1..100 not yet visited.
+            lm = getattr(self, 'level_manager', None)
+            if lm is not None:
+                for lvl in range(1, 101):
+                    if lvl == self.dungeon_level:
+                        continue
+                    if lm.has_visited(lvl):
+                        # Already-saved floor: reveal every tile of the saved dungeon.
+                        saved = lm.load(lvl)
+                        if saved:
+                            d, _mons, _items = saved
+                            for y in range(d.height):
+                                for x in range(d.width):
+                                    if (x, y) not in d.explored:
+                                        d.explored.add((x, y))
+                                        revealed_new += 1
+                    else:
+                        # Never visited: generate + immediately reveal, then save
+                        # so the next visit picks up the same layout.
+                        try:
+                            d, mons, items = lm.generate(lvl)
+                            for y in range(d.height):
+                                for x in range(d.width):
+                                    d.explored.add((x, y))
+                                    revealed_new += 1
+                            lm.save(lvl, d, mons, items)
+                        except Exception:
+                            # If generation fails for any reason (boss level
+                            # oddity, etc.), skip -- don't brick the scroll.
+                            pass
+            self.add_message(
+                "The scroll survives your reading; the shape of the whole dungeon "
+                "rises in your memory -- corridors, rooms, stairs, and doors from "
+                "surface to root, all preserved.",
+                'success')
 
         elif effect == 'lake_of_fire':
             # The inscription is always revealed
@@ -2901,21 +2971,26 @@ class MagicMixin:
             self._lore_subject = item
             self.state = STATE_LORE
 
-    def _scroll_identify_mass(self) -> None:
-        """Blessed / high-chain Scroll of Identify: fully identify every
-        item in inventory + tile. No picker — the scroll just hands the
-        kid the whole arsenal.
+    def _scroll_identify_mass(self, limit: int | None = None) -> None:
+        """Blessed / high-tier Scroll of Identify: fully identify items in
+        inventory + tile. If `limit` is None, identifies EVERY unidentified
+        item (mass_identify / omnisight); if limit=N, identifies the first
+        N unidentified items in inventory order (T2/T3 mid-tier scrolls).
+        No picker -- the scroll just does the work.
         """
         from items import Corpse
         count = 0
-        for it in list(self.player.inventory) + [
+        pool = list(self.player.inventory) + [
                 g for g in self.ground_items
-                if g.x == self.player.x and g.y == self.player.y]:
+                if g.x == self.player.x and g.y == self.player.y]
+        for it in pool:
             if isinstance(it, Corpse):
                 continue
             if getattr(it, 'id_level', 5) < 5:
                 self._full_identify(it)
                 count += 1
+                if limit is not None and count >= limit:
+                    break
         if count:
             self.add_message(
                 f"An apocalypse of revelation washes over your pack — "
@@ -2923,6 +2998,29 @@ class MagicMixin:
                 'success')
         else:
             self.add_message("The scroll's revelation finds nothing left to reveal.", 'info')
+
+    def _omnisight_corpse_reveal(self) -> None:
+        """T5 Scroll of Omnisight: also reveals the lore of one carried
+        corpse's species. Picks the first still-unlored corpse in
+        inventory, adds its species to lore_known_monster_ids (which
+        drives corpse-preidentified spawns + bestiary lore), and drops
+        a message. Silent no-op if the kid carries no corpses.
+        """
+        from items import Corpse
+        lore_known = getattr(self.player, 'lore_known_monster_ids', None)
+        if lore_known is None:
+            return
+        for it in self.player.inventory:
+            if isinstance(it, Corpse):
+                sp = getattr(it, 'monster_id', '') or ''
+                if not sp or sp in lore_known:
+                    continue
+                lore_known.add(sp)
+                self.add_message(
+                    f"Omnisight blooms over the {it.monster_name} corpse -- "
+                    f"its whole species opens up in your mind.",
+                    'success')
+                return
 
     def _scroll_identify_amnesia(self) -> None:
         """Cursed Scroll of Identify: the kid forgets one item they had
@@ -3032,6 +3130,14 @@ class MagicMixin:
 
     def _learn_from_spellbook(self, book: 'Spellbook'):
         """Try to learn the spell in a spellbook via grammar threshold quiz."""
+        # v2.10.0: consumable-artifact spellbooks (Book of Thoth) fire an
+        # EFFECT on read, not learn-a-spell. Route through the dedicated
+        # handler before the learn-a-spell early-out (which would incorrectly
+        # skip the read if the "spell_id" happened to match a known spell).
+        if getattr(book, 'is_consumable_artifact', False):
+            self._read_book_of_thoth(book)
+            return
+
         spell_id = book.spell_id
         if spell_id in self.player.known_spells:
             self.add_message(f"You already know {book.spell_name}.", 'info')
@@ -3086,6 +3192,176 @@ class MagicMixin:
             extra_seconds=self.player.get_int_quiz_bonus(),
             base_seconds=self.player.get_quiz_timer('grammar'),
         )
+
+    def _read_book_of_thoth(self, book: 'Spellbook'):
+        """v2.10.0 Book of Thoth: T5 grammar, threshold 3. Success = omniscience
+        (identify EVERY item in inventory / tile / equipped, reveal lore of
+        every corpse species KILLED this run, recharge every wand to max).
+        Failure = Setne's curse (3d6 psychic damage, three random unidentified
+        items in inventory lose their known type, 20 turns Stunned). Book is
+        consumed either way -- see the flavor lore for the Setna cycle.
+        """
+        from dice import roll
+        display = self._display_name(book)
+        self.state = STATE_QUIZ
+        self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            # Book of Thoth is ALWAYS consumed -- the box-of-boxes serpent
+            # doesn't let you put it back. No single_copy / Scheherazade save.
+            book.identified = True
+            self.player.known_item_ids.add(book.id)
+            self.player.remove_from_inventory(book)
+
+            if result.success:
+                self._book_of_thoth_omniscience()
+            else:
+                self._book_of_thoth_curse()
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject='grammar',
+            tier=int(getattr(book, 'quiz_tier', 5)),
+            callback=on_complete,
+            threshold=int(getattr(book, 'quiz_threshold', 3)),
+            total_qs=int(getattr(book, 'quiz_threshold', 3)),
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('grammar'),
+            base_seconds=self.player.get_quiz_timer('grammar'),
+        )
+
+    def _book_of_thoth_omniscience(self):
+        """Success payload: identify all held items, reveal all corpse
+        species lore for kills this run, recharge every wand to max.
+        """
+        from items import Corpse, Wand
+        # 1) Identify EVERY unidentified item -- inventory + equipped + tile.
+        id_count = 0
+        pool = list(self.player.inventory) + [
+            g for g in self.ground_items
+            if g.x == self.player.x and g.y == self.player.y
+        ]
+        # Equipped items
+        if self.player.weapon:
+            pool.append(self.player.weapon)
+        if self.player.ranged_weapon:
+            pool.append(self.player.ranged_weapon)
+        for s in self.player.armor_slots:
+            if s:
+                pool.append(s)
+        if self.player.shield:
+            pool.append(self.player.shield)
+        for s in getattr(self.player, 'accessory_slots', []):
+            if s:
+                pool.append(s)
+        amulet = getattr(self.player, 'amulet_slot', None)
+        if amulet:
+            pool.append(amulet)
+        seen_ids = set()
+        for it in pool:
+            if isinstance(it, Corpse):
+                continue
+            if id(it) in seen_ids:
+                continue
+            seen_ids.add(id(it))
+            if getattr(it, 'id_level', 5) < 5:
+                self._full_identify(it)
+                id_count += 1
+        # 2) Reveal lore for every corpse species KILLED this run. The
+        # game tracks all monster kinds encountered in known_monster_ids;
+        # for the Thoth reveal we push them all into lore_known_monster_ids
+        # (which drives the corpse-preidentified spawn logic + bestiary lore).
+        lore_count = 0
+        known = getattr(self.player, 'known_monster_ids', set())
+        lore_known = getattr(self.player, 'lore_known_monster_ids', None)
+        if lore_known is not None:
+            for mid in list(known):
+                if mid not in lore_known:
+                    lore_known.add(mid)
+                    lore_count += 1
+        # 3) Recharge every wand in inventory to max charges.
+        wand_count = 0
+        for it in self.player.inventory:
+            if isinstance(it, Wand):
+                if it.charges < it.max_charges:
+                    it.charges = it.max_charges
+                    wand_count += 1
+        self.add_message(
+            "The book opens and every hidden thing you carry names itself in the "
+            "same voice.", 'success')
+        if id_count:
+            self.add_message(
+                f"{id_count} item{'s' if id_count != 1 else ''} revealed.",
+                'success')
+        if lore_count:
+            self.add_message(
+                f"The lore of {lore_count} species you have slain unfolds in your mind.",
+                'success')
+        if wand_count:
+            self.add_message(
+                f"{wand_count} wand{'s' if wand_count != 1 else ''} crackle at maximum charges.",
+                'success')
+        if not (id_count or lore_count or wand_count):
+            self.add_message(
+                "The book's revelation finds nothing left to reveal.",
+                'info')
+        self._log_chronicle(
+            "I read the Book of Thoth and the world named itself back to me.")
+
+    def _book_of_thoth_curse(self):
+        """Failure payload: 3d6 psychic damage, 3 random unidentified items
+        in inventory lose their known type, 20 turns Stunned.
+        """
+        from dice import roll
+        import random as _rng
+        dmg = roll('3d6')
+        actual = self.player.take_damage(dmg)
+        self.add_message(
+            "Setne's curse boils up out of the book -- your mind reels and "
+            "the pieces of what you knew scatter like fish in the Nile.",
+            'danger')
+        self.add_message(
+            f"You take {actual} psychic damage.",
+            'danger')
+        # 3 random unidentified items in inventory lose their known type.
+        from items import Corpse, type_class as _tc
+        candidates = [
+            it for it in self.player.inventory
+            if not isinstance(it, Corpse)
+            and (getattr(it, 'id_level', 0) >= 1
+                 or it.id in self.player.known_item_ids)
+            and getattr(it, 'id', '') != 'philosophers_shard'
+        ]
+        _rng.shuffle(candidates)
+        forgot_count = 0
+        for target in candidates[:3]:
+            target.id_level = 0
+            target.identified = False
+            if hasattr(target, 'buc_known'):
+                target.buc_known = False
+            self.player.known_item_ids.discard(target.id)
+            try:
+                cls = _tc(target)
+                if cls:
+                    self.player.known_class_ids.discard(cls)
+            except Exception:
+                pass
+            forgot_count += 1
+        if forgot_count:
+            self.add_message(
+                f"{forgot_count} item{'s' if forgot_count != 1 else ''} in your pack "
+                f"become strangers to you again.",
+                'warning')
+        self.player.add_effect('stunned', 20)
+        self.add_message(
+            "You are Stunned (20 turns).",
+            'danger')
+        self._log_chronicle(
+            "I read the Book of Thoth wrong. The dead were displeased.")
 
     def _necronomicon_quiz(self, book: 'Spellbook'):
         """The Necronomicon: recite The Words (Klaatu Barada Nikto).

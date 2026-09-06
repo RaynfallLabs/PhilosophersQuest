@@ -872,12 +872,20 @@ class Wand(Item):
 class Scroll(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
-        self.quiz_tier        = int(defn.get('quiz_tier', 1))
-        self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
-        # Quiz mode: default 'threshold' (pass/fail). Set to 'escalator_chain'
-        # to scale the scroll's effect by chain (e.g. Scroll of Heal).
+        # v2.10.0: `tier` is the authoritative difficulty/depth field. Falls
+        # back to quiz_tier for back-compat with pre-v2.10 data. Drives BOTH
+        # the grammar-quiz difficulty AND the spawn-depth ladder (peak_floor).
+        self.tier             = int(defn.get('tier', defn.get('quiz_tier', 1)))
+        # quiz_tier kept in sync with tier for any legacy caller still reading it.
+        self.quiz_tier        = int(defn.get('quiz_tier', self.tier))
+        # v2.10.0 default: 1 (single-question threshold). Unique artifact
+        # scrolls (Dead Sea Scroll) override to 3.
+        self.quiz_threshold   = int(defn.get('quiz_threshold', 1))
+        # v2.10.0: escalator_chain scroll mode retired. All scrolls are
+        # threshold now. quiz_mode kept only as a defensive default for any
+        # loader that still reads the field.
         self.quiz_mode        = defn.get('quiz_mode', 'threshold')
-        # max_chain only used when quiz_mode == 'escalator_chain'.
+        # max_chain kept for save-load back-compat but unused by v2.10 read path.
         self.max_chain        = int(defn.get('max_chain', 5))
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
@@ -888,6 +896,10 @@ class Scroll(Item):
         # Spawn-once quest scrolls: survive a failed read so the secret-victory
         # path is not bricked by a single bad grammar quiz.
         self.single_copy: bool = bool(defn.get('single_copy', False))
+        # v2.10.0: unique-artifact scrolls (Dead Sea Scroll) are pulled from
+        # bespoke drop channels, not the regular floor pool. See dungeon.py
+        # for how min_level: 9999 keeps them out of the standard spawn.
+        self.is_unique: bool = bool(defn.get('is_unique', False))
 
     @property
     def cursed(self) -> bool:
@@ -910,6 +922,12 @@ class Spellbook(Item):
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
+        # v2.10.0: unique-artifact flag (kept out of regular spawn pool via
+        # min_level: 9999) + consumable-artifact flag (routes through the
+        # Book-of-Thoth omniscience handler instead of the normal learn-a-spell
+        # path). See game_magic._learn_from_spellbook.
+        self.is_unique: bool               = bool(defn.get('is_unique', False))
+        self.is_consumable_artifact: bool  = bool(defn.get('is_consumable_artifact', False))
 
 
 class Artifact(Item):
