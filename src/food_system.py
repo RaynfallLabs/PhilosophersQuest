@@ -242,9 +242,30 @@ def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[st
     Right answer -> apply the referenced outcome (recovery + optional buff +
     optional +max HP + optional +stat + optional permanent_power). Wrong ->
     ingredients already consumed, one message, no reward.
+
+    Persephone's Descent quirk (`persephone_active`): even a ruined prep
+    still yields half the recovery (SP + HP only) -- "the seed still returns
+    from the dark". Buffs, +max HP, +stat, and permanent_power are lost.
     """
     meal_name = recipe.get('name', 'mysterious dish')
     if ruined:
+        if getattr(player, 'quirk_progress', {}).get('persephone_active'):
+            outcome_id = recipe.get('outcome_id')
+            outcome = _load_outcomes().get(outcome_id) or {}
+            sp = int(outcome.get('sp', 0)) // 2
+            hp = int(outcome.get('hp', 0)) // 2
+            msg = [f"You ruin the preparation of {meal_name}, "
+                   f"but Persephone's grace saves the seed."]
+            if sp > 0:
+                player.restore_sp(sp)
+            if hp > 0:
+                player.restore_hp(hp)
+            if sp > 0 or hp > 0:
+                bits = []
+                if sp > 0: bits.append(f"+{sp} SP")
+                if hp > 0: bits.append(f"+{hp} HP")
+                msg.append("You salvage what you can: " + ", ".join(bits) + ".")
+            return msg
         return [f"You ruin the preparation. The {meal_name} is wasted."]
     outcome_id = recipe.get('outcome_id')
     outcome = _load_outcomes().get(outcome_id)
