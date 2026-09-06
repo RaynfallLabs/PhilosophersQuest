@@ -23,8 +23,16 @@ sys.path.insert(0, str(ROOT / "src"))
 
 def test_no_question_stem_starts_lowercase():
     """Every question in every bank must start with an uppercase letter
-    (after any leading punctuation like quotation marks or parentheses)."""
+    (after any leading punctuation like quotation marks or parentheses).
+
+    Grammar exception: stems built around a QUOTED example sentence
+    (e.g. `"organize" vs "organise" -- which pattern applies?`) are
+    legitimate for a grammar bank -- the quoted phrase is data, not prose.
+    We accept a lowercase first letter if the ENTIRE opening chunk before
+    the first quote-close is bounded by quotes on both sides.
+    """
     bad = []
+    quoted_phrase = re.compile(r'^[\s]*[\'"][^\'"]{1,80}[\'"]')
     for f in sorted(os.listdir(ROOT / "data" / "questions")):
         if not f.endswith('.json'):
             continue
@@ -37,6 +45,9 @@ def test_no_question_stem_starts_lowercase():
                 continue
             m = re.match(r'^[\s"\'\(\[]*([a-zA-Z])', stem)
             if m and m.group(1).islower():
+                # Grammar-bank exception: stem opens with a bounded quoted phrase
+                if f == 'grammar.json' and quoted_phrase.match(stem):
+                    continue
                 bad.append(f"{f}: {stem[:80]!r}")
     assert not bad, (
         f"{len(bad)} question stems start with lowercase letters:\n"

@@ -25321,15 +25321,15 @@
  },
  {
   "tier": 4,
-  "question": "Douglas Irwin's 2011 book Peddling Protectionism is the standard modern history of one specific US tariff act. Which act?",
-  "answer": "The Smoot-Hawley Tariff Act",
+  "question": "A June 1930 US tariff act raised average tariffs on 20,000+ imported goods. One of the most-cited macroeconomic consequences: world trade collapsed by a specific percentage over 1929 to 1934. What was the approximate drop?",
+  "answer": "About 66 percent",
   "choices": [
-   "The Smoot-Hawley Tariff Act",
-   "The McKinley Tariff Act",
-   "The Dingley Tariff Act",
-   "The Wilson-Gorman Tariff Act"
+   "About 66 percent",
+   "About 15 percent",
+   "About 30 percent",
+   "About 85 percent"
   ],
-  "context": "Irwin's Peddling Protectionism (Princeton, 2011) is the definitive history of Smoot-Hawley and the trade-collapse that followed; his Free Trade Under Fire (Yale, multiple editions) applies the same reasoning to modern trade debates. Source: press.princeton.edu/books/peddling-protectionism."
+  "context": "World trade fell from roughly $5.3B (1929) to $1.8B (1934) -- about 66 percent. Douglas Irwin's Peddling Protectionism 2011 gives the standard modern account. Source: Grokipedia 'Smoot-Hawley Tariff Act' + Irwin 2011."
  },
  {
   "tier": 4,
@@ -25577,9 +25577,9 @@
   "answer": "TARP 2008 as precedent; SVB 2023 as institutionalization",
   "choices": [
    "TARP 2008 as precedent; SVB 2023 as institutionalization",
-   "Chrysler 1979 as precedent; TARP 2008 as reversal",
-   "LTCM 1998 as precedent; Chrysler 1979 as sequel",
-   "AIG 2008 as precedent; LTCM 1998 as sequel"
+   "Continental Illinois 1984 as precedent; Long-Term Capital 1998 as institutionalization",
+   "Penn Central 1970 as precedent; Chrysler 1979 as institutionalization",
+   "Franklin National 1974 as precedent; Continental Illinois 1984 as institutionalization"
   ],
   "context": "The 2008 TARP established that the federal government would rescue major-bank creditors; the 2023 SVB action made the rescue apply to any deposit at any bank the regulators later name systemic. The UNSEEN cost of 2008 is paid in the changed behavior visible in 2023. Source: mercatus.org/publications/svb-bailout-changed-behavior."
  },
@@ -26053,7 +26053,7 @@
  },
  {
   "tier": 4,
-  "question": "Thomas Sowell's Basic Economics rebrands Bastiat's 1850 seen/unseen move under a two-part label built around a single word repeated. Sowell says the bad economist stops at stage one. What is his term for what the good economist reaches?",
+  "question": "Thomas Sowell's Basic Economics rebrands Bastiat's 1850 seen/unseen move under a two-part label built on the same word repeated with different suffixes. The bad economist stops at the immediate effect; the good economist keeps asking 'and then what?' What phrase does Sowell teach for this second, deeper step?",
   "answer": "Stage-two thinking",
   "choices": [
    "Stage-two thinking",
@@ -31790,14 +31790,14 @@
  {
   "tier": 4,
   "question": "The Liberty Fund edition of Bastiat differs from the older FEE translations in a specific set of scholarly apparatus that lets a modern reader place each essay in context. Which set of features is characteristic?",
-  "answer": "Full introductions locating each essay in the French context, glossaries of French political figures, and modern translations restoring passages older editions had softened",
+  "answer": "French-context introductions, glossaries, and unsoftened translations",
   "choices": [
-   "Full introductions locating each essay in the French context, glossaries of French political figures, and modern translations restoring passages older editions had softened",
-   "Chapter-by-chapter mathematical proofs of every argument",
-   "Adjacent Chinese translations for every French passage",
-   "A comic-book version of each essay for younger readers"
+   "French-context introductions, glossaries, and unsoftened translations",
+   "Side-by-side French originals with facing-page literal English translations",
+   "Marginal cross-references to every Bastiat citation in Mises's Human Action",
+   "Chronological reordering of essays by date rather than by Bastiat's own thematic sequence"
   ],
-  "context": "The scholarly apparatus is what distinguishes a modern scholarly Collected Works from older enthusiast translations. The Liberty Fund edition provides tools for a serious 21st-century reader that the mid-century FEE editions could not. Source: grokipedia.com/page/Fr%C3%A9d%C3%A9ric_Bastiat."
+  "context": "The Liberty Fund Collected Works (7 volumes, 2011-) added scholarly apparatus the earlier FEE translations lacked: introductions locating each essay in 1840s French political context, glossaries of French figures, and modern translations that restored passages 19th-century English editions had toned down. Source: Grokipedia 'Frederic Bastiat' + Liberty Fund catalog."
  },
  {
   "tier": 5,
@@ -34593,7 +34593,7 @@
    "Bloodlands",
    "The Whisperers"
   ],
-  "context": "Robert Conquest's The Great Terror (Macmillan, 1968) was pioneering. A 1990 revised edition (Oxford UP) folded in the archival numbers. Conquest reportedly suggested titling the new edition 'I Told You So, You Fucking Fools'. Source: en.wikipedia.org/wiki/The_Great_Terror."
+  "context": "Robert Conquest's The Great Terror (Macmillan, 1968) was pioneering. A 1990 revised edition (Oxford UP) folded in the archival numbers. Conquest reportedly suggested titling the new edition 'I Told You So, You... Fools' (an expletive softened for a family bank). Source: en.wikipedia.org/wiki/The_Great_Terror."
  },
  {
   "tier": 3,
@@ -36566,12 +36566,12 @@
  {
   "tier": 3,
   "question": "Trygve Hoff's 1938 book surveyed the state of the calculation debate as of the late 1930s. Which literatures did it draw on?",
-  "answer": "The German-language literature (Mises 1920, Weber, German critics), the Anglo-American literature (Hayek 1935, Lange 1936-37), and Soviet planning experience",
+  "answer": "German, Anglo-American, and Soviet-planning sources together",
   "choices": [
-   "The German-language literature (Mises 1920, Weber, German critics), the Anglo-American literature (Hayek 1935, Lange 1936-37), and Soviet planning experience",
-   "Only the German-language Marxist literature",
-   "Only the Anglo-American Marshallian tradition",
-   "Only the French general-equilibrium school"
+   "German, Anglo-American, and Soviet-planning sources together",
+   "The German Marxist literature alone",
+   "The Anglo-American Marshallian tradition alone",
+   "The French general-equilibrium school alone"
   ],
   "context": "Hoff defended Mises against Oskar Lange in careful detail, marshalling the German, English, and Soviet evidence. The book was in a real sense the definitive 1938 statement of the Austrian side of the debate. Source: grokipedia.com/page/Trygve_Hoff."
  },
