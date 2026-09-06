@@ -248,7 +248,9 @@ class Renderer:
         self.view_origin_x = 0
         self.view_origin_y = 0
 
-        self._sym_font = pygame.font.SysFont('consolas', max(8, TILE_SIZE - 8), bold=True)
+        self._sym_font = pygame.font.SysFont(
+            'consolas,courier new,dejavu sans mono,liberation mono,noto mono,monospace',
+            max(8, TILE_SIZE - 8), bold=True)
         self._sprite_cache: dict[str, pygame.Surface | None] = {}
         self._item_sprite_cache: dict[str, pygame.Surface | None] = {}
         self._env_sprite_cache: dict[str, pygame.Surface | None] = {}
@@ -291,7 +293,9 @@ class Renderer:
 
         if ts != old_ts:
             font_size = max(8, ts - 2)
-            self._sym_font = pygame.font.SysFont('consolas', font_size, bold=True)
+            self._sym_font = pygame.font.SysFont(
+                'consolas,courier new,dejavu sans mono,liberation mono,noto mono,monospace',
+                font_size, bold=True)
             self._sprite_cache.clear()
             self._item_sprite_cache.clear()
             self._env_sprite_cache.clear()

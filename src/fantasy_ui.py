@@ -203,7 +203,18 @@ _ROLE_FILES = {
     'italic':  'IMFellEnglish-Italic.ttf',
 }
 
-_FALLBACK_FAMILIES = 'garamond,palatino linotype,palatino,georgia,book antiqua,times new roman,consolas'
+# Fallback serif chain when the bundled TTF fails: Windows fonts first, then
+# Linux (Liberation/DejaVu/Noto), then generic. macOS covered by Palatino/Georgia.
+_FALLBACK_FAMILIES = (
+    'garamond,palatino linotype,palatino,georgia,book antiqua,times new roman,'
+    'liberation serif,dejavu serif,noto serif,urw bookman l,serif,consolas'
+)
+
+# Monospace fallback for body/small/mono roles when Consolas isn't available.
+_MONO_FAMILIES = (
+    'consolas,courier new,'
+    'dejavu sans mono,liberation mono,noto mono,ubuntu mono,monospace'
+)
 
 # Unicode-capable font families for symbol/icon rendering (* o x Sum Omega * etc.)
 _SYMBOL_FAMILIES = 'segoe ui symbol,segoe ui emoji,noto sans symbols,dejavu sans,arial unicode ms,unifont'
@@ -230,8 +241,9 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
         # Unicode-capable font for rendering special characters (* o x Sum Omega * etc.)
         font = pygame.font.SysFont(_SYMBOL_FAMILIES, size, bold=bold)
     elif role in ('mono', 'body', 'small'):
-        # Use Consolas for all body/small roles -- crisp and highly readable
-        font = pygame.font.SysFont('consolas,courier new,monospace', size, bold=bold)
+        # Use Consolas for all body/small roles -- crisp and highly readable.
+        # Fallback chain covers Windows / macOS / Linux monospace families.
+        font = pygame.font.SysFont(_MONO_FAMILIES, size, bold=bold)
     else:
         fname = _ROLE_FILES.get(role, 'Cinzel-Variable.ttf')
         path  = os.path.join(_FONT_DIR, fname)
