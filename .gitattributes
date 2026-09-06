@@ -1,0 +1,6 @@
+# Force LF for files that run on Linux (bash scripts + AppImage metadata).
+# Without this, Git's autocrlf on Windows can corrupt them for the Linux CI runner.
+linux/AppRun         text eol=lf
+*.sh                 text eol=lf
+linux/*.desktop      text eol=lf
+.github/workflows/*  text eol=lf

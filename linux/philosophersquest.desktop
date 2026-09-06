@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Philosopher's Quest
+GenericName=Roguelike
+Comment=A knowledge-driven roguelike where quiz questions decide the outcome
+Exec=PhilosophersQuest
+Icon=philosophersquest
+Terminal=false
+Categories=Game;RolePlaying;LogicGame;
+Keywords=roguelike;quiz;dungeon;philosophy;
+StartupWMClass=PhilosophersQuest

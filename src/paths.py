@@ -41,14 +41,27 @@ def a_or_an(name: str) -> str:
 def save_dir() -> str:
     """Writable directory for save files.
 
-    Frozen  -> %APPDATA%\\PhilosophersQuest\\
-    Dev     -> project root (same behaviour as before)
+    Frozen Windows -> %APPDATA%\\PhilosophersQuest\\
+    Frozen Linux   -> $XDG_DATA_HOME/PhilosophersQuest/ or ~/.local/share/PhilosophersQuest/
+    Frozen macOS   -> ~/Library/Application Support/PhilosophersQuest/
+    Dev            -> project root (unchanged)
     """
     if getattr(sys, 'frozen', False):
-        base = os.path.join(
-            os.environ.get('APPDATA', os.path.expanduser('~')),
-            'PhilosophersQuest'
-        )
+        if sys.platform == 'win32':
+            base = os.path.join(
+                os.environ.get('APPDATA', os.path.expanduser('~')),
+                'PhilosophersQuest',
+            )
+        elif sys.platform == 'darwin':
+            base = os.path.join(
+                os.path.expanduser('~'),
+                'Library', 'Application Support', 'PhilosophersQuest',
+            )
+        else:  # linux / bsd / other unix
+            xdg = os.environ.get('XDG_DATA_HOME') or os.path.join(
+                os.path.expanduser('~'), '.local', 'share',
+            )
+            base = os.path.join(xdg, 'PhilosophersQuest')
     else:
         base = _root()
     os.makedirs(base, exist_ok=True)

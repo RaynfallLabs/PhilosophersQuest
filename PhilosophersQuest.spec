@@ -9,6 +9,7 @@ Saves, highscores, and crash reports go to %APPDATA%\PhilosophersQuest\
 """
 
 import os
+import sys
 
 block_cipher = None
 
@@ -87,7 +88,7 @@ exe = EXE(
     upx=True,
     console=False,          # windowed mode (no console)
     disable_windowed_traceback=False,
-    icon='assets/icon.ico' if os.path.exists('assets/icon.ico') else None,
+    icon=('assets/icon.ico' if sys.platform == 'win32' and os.path.exists('assets/icon.ico') else None),
 )
 
 coll = COLLECT(
