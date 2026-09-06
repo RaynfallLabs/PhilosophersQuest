@@ -934,11 +934,6 @@ class CombatMixin:
         self.quiz_title = f"INVOKING {display.upper()}  --  SCIENCE"
         self.state = STATE_QUIZ
         _was_identified = getattr(wand, 'identified', False) or wand.id in self.player.known_item_ids
-        # Magic missile rewards SCIENCE skill: it uses an escalator-chain quiz and
-        # fires one missile per chain link (1-5), like the magic-missile spell, so
-        # a strong answer is a barrage rather than one lame bolt. Other wands keep
-        # the threshold quiz (their power is baked into the wand's tier).
-        _is_chain_wand = (wand.effect == 'magic_missile')
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -948,20 +943,38 @@ class CombatMixin:
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified)
 
-            _chain = int(getattr(result, 'score', 0) or 0)
-            _fired = (_chain >= 1) if _is_chain_wand else result.success
-            if not _fired:
-                self.add_message("The wand fizzes and fails to fire.", 'warning')
+            # v2.11.0: charge consumed REGARDLESS of success. Fail = wasted zap.
+            wand.charges -= 1
+
+            if not result.success:
+                self.add_message(
+                    "The wand fizzes and fails to fire -- the charge is wasted.",
+                    'warning')
+                if wand.charges <= 0:
+                    self.add_message(
+                        "The wand crumbles to dust -- it is spent.", 'warning')
+                    self.player.remove_from_inventory(wand)
                 self._advance_turn()
                 return
 
-            wand.charges -= 1
-            self._wand_chain = _chain if _is_chain_wand else 0
+            # Cursed misfire (3% on TOP of the fail-consumes-charge rule)
+            import random as _rng_wand
+            if getattr(wand, 'buc', 'uncursed') == 'cursed' and _rng_wand.random() < 0.03:
+                self.add_message(
+                    "The cursed wand misfires! The charge is doubly wasted.",
+                    'warning')
+                if wand.charges <= 0:
+                    self.add_message(
+                        "The wand crumbles to dust -- it is spent.", 'warning')
+                    self.player.remove_from_inventory(wand)
+                self._advance_turn()
+                return
+
+            self._wand_chain = 0
             # Override auto-target with stored target
             self._wand_override_target = self._wand_target_monster
             self._apply_wand_effect(wand)
             self._wand_override_target = None
-            self._wand_chain = 0
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
@@ -969,27 +982,18 @@ class CombatMixin:
                 self.add_message(f"({wand.charges} charges remain)", 'info')
             self._advance_turn()
 
-        if _is_chain_wand:
-            # Escalator-chain (science), starts at T1 and ramps -- mirrors the spell.
-            self.quiz_engine.start_quiz(
-                mode='escalator_chain', subject='science', tier=1,
-                callback=on_complete, max_chain=5,
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('science'),
-                base_seconds=self.player.get_quiz_timer('science'),
-            )
-        else:
-            self.quiz_engine.start_quiz(
-                mode='threshold', subject='science', tier=wand.quiz_tier,
-                callback=on_complete, threshold=getattr(wand, 'quiz_threshold', 2),
-                wisdom=self.player.WIS,
-                timer_modifier=self.player.get_quiz_timer_modifier(),
-                extra_seconds=self.player.get_int_quiz_bonus() +
-                              self.player.get_quiz_extra_seconds('science'),
-                base_seconds=self.player.get_quiz_timer('science'),
-            )
+        # v2.11.0: All wands use threshold=1 at the wand's authoritative tier.
+        # Power is baked into wand.power per tier; no more chain-mode wands.
+        self.quiz_engine.start_quiz(
+            mode='threshold', subject='science',
+            tier=getattr(wand, 'tier', wand.quiz_tier),
+            callback=on_complete, threshold=1,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('science'),
+            base_seconds=self.player.get_quiz_timer('science'),
+        )
 
     def _confirm_power_target(self):
         """Confirm targeted power (e.g. Fire Breath)."""

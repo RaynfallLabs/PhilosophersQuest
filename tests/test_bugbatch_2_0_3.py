@@ -191,27 +191,30 @@ def test_chest_common_pool_excludes_monster_ingredients():
 # Bug 3 -- magic-missile WAND chain-scales (escalator-chain), not fixed bolt
 # ===========================================================================
 
-def test_magic_missile_wand_uses_escalator_chain_quiz():
-    """_confirm_wand_target must route magic_missile through the escalator-chain
-    science quiz and capture the chain on the game (reverting to a flat
-    threshold quiz reintroduces the lame single-bolt behavior)."""
+def test_magic_missile_wand_v2_11_0_uses_threshold_one():
+    """v2.11.0: _confirm_wand_target must NOT use escalator_chain for
+    magic_missile (or any wand) -- all wands are unified under the
+    threshold=1 single-question contract."""
     import game_combat
     src = inspect.getsource(game_combat.CombatMixin._confirm_wand_target)
-    assert 'escalator_chain' in src
-    assert 'magic_missile' in src
-    assert '_wand_chain' in src
+    assert 'escalator_chain' not in src, (
+        "v2.11.0 retired escalator_chain from wand zaps"
+    )
+    assert "mode='threshold'" in src
+    assert "threshold=1" in src
 
 
-def test_apply_wand_effect_magic_missile_scales_with_chain():
-    """The magic_missile effect must derive its missile count from the captured
-    chain (self._wand_chain), not solely from a fixed wand tier."""
+def test_apply_wand_effect_magic_missile_is_single_bolt_v2_11_0():
+    """v2.11.0: magic_missile fires ONE irresistible force-bolt per zap;
+    the chain-scaling missile-count mechanic (self._wand_chain) is retired."""
     import game_magic
     src = inspect.getsource(game_magic.MagicMixin._apply_wand_effect)
-    # locate the magic_missile branch and confirm it reads the chain
     idx = src.find("== 'magic_missile'")
     assert idx != -1, "magic_missile branch not found"
     window = src[idx:idx + 600]
-    assert '_wand_chain' in window, "missile count no longer scales with the chain"
+    assert '_wand_chain' not in window, (
+        "v2.11.0: magic_missile must not read the chain -- single-shot only"
+    )
 
 
 # ===========================================================================
@@ -427,7 +430,11 @@ def test_single_cook_consumes_exactly_one_ingredient():
     assert consumed == 1, f'single cook consumed {consumed} ingredients, expected 1'
 
 
-def test_magic_missile_wand_scales_missiles_with_chain():
+def test_magic_missile_wand_single_shot_v2_11_0():
+    """v2.11.0: magic missile wands fire ONE irresistible bolt per zap; the
+    chain-scaling missile-count mechanic was retired with the unified
+    threshold=1 wand contract. A successful zap must deal >0 damage; a
+    failed zap must consume the charge without dealing damage."""
     from items import load_items
     from monster import Monster
     import combat
@@ -440,7 +447,7 @@ def test_magic_missile_wand_scales_missiles_with_chain():
     combat._line_of_sight = lambda *a, **k: True
     g._advance_turn = lambda *a, **k: None
 
-    def fire(chain):
+    def fire(success):
         t = Monster({'id': 'd', 'name': 'd', 'symbol': 'd', 'color': [1, 1, 1],
                      'hp': 99999, 'min_level': 1, 'damage': '1d2'}, mx, my)
         g.monsters = [t]
@@ -452,18 +459,25 @@ def test_magic_missile_wand_scales_missiles_with_chain():
         g._confirm_wand_target()
 
         class R:
-            success = True
-        R.score = chain
+            pass
+        R.success = success
+        R.score = 1 if success else 0
         before = t.hp
+        charges_before = wand.charges
         cap['cb'](R())
-        return before - t.hp
+        return before - t.hp, charges_before - wand.charges
 
     try:
-        d1 = sum(fire(1) for _ in range(8))
-        d5 = sum(fire(5) for _ in range(8))
+        # Successful zap: deals damage AND consumes one charge.
+        dmg_hits = [fire(True) for _ in range(6)]
+        # Failed zap: NO damage but STILL consumes the charge (v2.11.0 rule).
+        dmg_fail, ch_fail = fire(False)
     finally:
         combat._line_of_sight = _orig_los
 
-    assert d1 > 0
-    # 5-chain fires 5x the missiles -> far more damage than a 1-chain bolt
-    assert d5 > d1 * 3, f'chain-5 damage ({d5}) should far exceed chain-1 ({d1})'
+    assert all(dmg > 0 for dmg, _ in dmg_hits), \
+        "successful magic-missile zap must deal damage"
+    assert all(ch == 1 for _, ch in dmg_hits), \
+        "successful zap must consume exactly one charge"
+    assert dmg_fail == 0, "failed zap must deal no damage"
+    assert ch_fail == 1, "v2.11.0: failed zap still consumes a charge"

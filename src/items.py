@@ -851,14 +851,24 @@ class Wand(Item):
             self.charges_max = max(1, self.charges_max - 1)
             self.charges     = max(1, self.charges - 1)
             self.max_charges = max(1, self.max_charges - 1)
-        self.quiz_tier        = int(defn.get('quiz_tier', 1))
-        self.quiz_threshold   = int(defn.get('quiz_threshold', 2))
+        # v2.11.0: `tier` is the authoritative difficulty/depth field. Falls
+        # back to quiz_tier for back-compat with pre-v2.11 data. Drives BOTH
+        # the science-quiz difficulty AND the spawn-depth ladder (peak_floor).
+        self.tier             = int(defn.get('tier', defn.get('quiz_tier', 1)))
+        # quiz_tier kept in sync with tier for any legacy caller still reading it.
+        self.quiz_tier        = int(defn.get('quiz_tier', self.tier))
+        # v2.11.0 default: 1 (single-question threshold). Fail-consumes-charge
+        # is enforced in _invoke_wand / _confirm_wand_target on_complete.
+        self.quiz_threshold   = int(defn.get('quiz_threshold', 1))
         self.effect           = defn.get('effect', '')
         self.power            = defn.get('power', '')
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('containerLootTier', defn.get('container_loot_tier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floorSpawnWeight', defn.get('floor_spawn_weight', {}))
+        # v2.11.0: unique-artifact flag (future-proofing; kept out of regular
+        # spawn pool via min_level: 9999, same pattern as scrolls/spellbooks).
+        self.is_unique: bool  = bool(defn.get('is_unique', False))
 
     @property
     def cursed(self) -> bool:

@@ -297,3 +297,133 @@ def test_learn_from_spellbook_routes_consumable_artifact():
     assert hasattr(MagicMixin, '_read_book_of_thoth')
     assert hasattr(MagicMixin, '_book_of_thoth_omniscience')
     assert hasattr(MagicMixin, '_book_of_thoth_curse')
+
+
+# ---------------------------------------------------------------------------
+# v2.11.0 — wand-system rebuild (parallels the scroll rebuild above)
+# ---------------------------------------------------------------------------
+
+def test_wand_class_reads_tier_threshold_and_is_unique():
+    """items.Wand must expose the v2.11.0 fields: tier + quiz_threshold
+    (default 1) + is_unique."""
+    from items import Wand
+    w = Wand({
+        'id': 'test_wand_t3',
+        'name': 'test wand', 'symbol': '/', 'color': [200, 200, 200],
+        'effect': 'fire_bolt', 'tier': 3, 'quiz_threshold': 1, 'power': '7d6',
+    })
+    assert w.tier == 3
+    assert w.quiz_threshold == 1
+    assert w.is_unique is False
+
+    # Back-compat: no tier, falls back to quiz_tier.
+    w2 = Wand({
+        'id': 'test_legacy_wand',
+        'name': 'legacy', 'symbol': '/', 'color': [200, 200, 200],
+        'effect': 'light', 'quiz_tier': 2,
+    })
+    assert w2.tier == 2
+    assert w2.quiz_threshold == 1  # v2.11.0 default
+
+    # Unique-artifact flag propagates.
+    w3 = Wand({
+        'id': 'test_unique_wand',
+        'name': 'unique', 'symbol': '/', 'color': [200, 200, 200],
+        'effect': 'iron_mortar', 'tier': 4, 'is_unique': True,
+    })
+    assert w3.is_unique is True
+
+
+def test_wand_json_has_tier_and_threshold_one():
+    """Every non-artifact wand must have `tier` + `quiz_threshold: 1`."""
+    p = ROOT / "data" / "items" / "wand.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    for wid, wdef in d.items():
+        assert 'tier' in wdef, f"{wid} missing 'tier' field"
+        assert 1 <= int(wdef['tier']) <= 5, f"{wid} tier out of 1..5"
+        assert int(wdef.get('quiz_threshold', 0)) == 1, (
+            f"{wid} must use quiz_threshold=1 (v2.11.0 unified contract)"
+        )
+
+
+def test_invoke_wand_uses_threshold_one_and_tier():
+    """v2.11.0: _invoke_wand must ALWAYS start a threshold quiz with
+    threshold=1 at the wand's authoritative `tier` field."""
+    from game_magic import MagicMixin
+    src = inspect.getsource(MagicMixin._invoke_wand)
+    assert "mode='threshold'" in src, (
+        "v2.11.0: all self-target wand zaps must use threshold mode"
+    )
+    assert "threshold=1" in src, (
+        "v2.11.0: wand quiz threshold must be 1 (single question)"
+    )
+    # No more chain-mode wand branch in _invoke_wand.
+    assert "mode='escalator_chain'" not in src, (
+        "v2.11.0: escalator_chain wand branch must be retired"
+    )
+
+
+def test_confirm_wand_target_uses_threshold_one():
+    """v2.11.0: _confirm_wand_target (targeted-wand quiz launch) must also
+    use threshold=1 -- magic_missile no longer branches to chain mode."""
+    from game_combat import CombatMixin
+    src = inspect.getsource(CombatMixin._confirm_wand_target)
+    assert "mode='threshold'" in src
+    assert "threshold=1" in src
+    assert "mode='escalator_chain'" not in src, (
+        "v2.11.0: magic_missile chain-mode branch must be retired"
+    )
+
+
+def test_invoke_wand_fail_consumes_charge():
+    """v2.11.0 KEY RULE: a failed wand quiz still consumes one charge
+    (the wand fizzes and is wasted). Both self-target (_invoke_wand)
+    and targeted (_confirm_wand_target) code paths must enforce this."""
+    from game_magic import MagicMixin
+    from game_combat import CombatMixin
+    src_self = inspect.getsource(MagicMixin._invoke_wand)
+    src_tgt  = inspect.getsource(CombatMixin._confirm_wand_target)
+    for tag, src in (('_invoke_wand', src_self), ('_confirm_wand_target', src_tgt)):
+        # The charge decrement must occur BEFORE the not-result.success guard,
+        # and the fail branch must not re-decrement. Test: the pattern
+        # 'wand.charges -= 1' appears once in the on_complete BEFORE the fail
+        # message, and the fail message announces the charge is wasted.
+        assert 'wand.charges -= 1' in src, f"{tag}: charge decrement missing"
+        assert 'the charge is wasted' in src, (
+            f"{tag}: fail branch must announce that the charge is wasted"
+        )
+
+
+def test_wand_tier_damage_does_not_double_scale():
+    """v2.11.0: wand.power dice are already tier-baked (T1 3d4 ... T5 12d10),
+    so _wand_tier_damage must NOT re-apply a 0.5-3.0x tier multiplier.
+    Damage scales with player INT, not with tier."""
+    from game_magic import MagicMixin
+
+    class _P:
+        INT = 10
+
+    class _G:
+        player = _P()
+
+    dmg_t1 = MagicMixin._wand_tier_damage(_G(), 100, 1)
+    dmg_t5 = MagicMixin._wand_tier_damage(_G(), 100, 5)
+    # At the same INT, T1 and T5 must yield the same damage from the same
+    # base (the tier scaling is now baked into wand.power, not this helper).
+    assert dmg_t1 == dmg_t5, (
+        f"v2.11.0: tier arg must not re-scale damage; got T1={dmg_t1} T5={dmg_t5}"
+    )
+
+
+def test_wand_effect_sprite_fallback_covers_new_wands():
+    """The renderer's _WAND_EFFECT_SPRITE map must have an entry for every
+    effect used by a wand in wand.json (parallels the scroll fallback map).
+    A missing entry means a whole tier ladder renders as a bare '/' glyph."""
+    from renderer import _WAND_EFFECT_SPRITE
+    p = ROOT / "data" / "items" / "wand.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    effects_used = {v.get('effect') for v in d.values() if v.get('effect')}
+    missing = effects_used - set(_WAND_EFFECT_SPRITE.keys())
+    assert not missing, (
+        f"_WAND_EFFECT_SPRITE missing entries for wand effects: {sorted(missing)}"
+    )

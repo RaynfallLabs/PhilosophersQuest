@@ -226,18 +226,29 @@ class MagicMixin:
             if _qs_wand:
                 _qs_wand.on_wand_zapped(wand.id, was_identified=_was_identified_before)
 
+            # v2.11.0: charge consumed REGARDLESS of success. Fail = wasted zap.
+            wand.charges -= 1
+
             if not result.success:
-                self.add_message("The wand fizzes and fails to fire.", 'warning')
+                self.add_message(
+                    "The wand fizzes and fails to fire -- the charge is wasted.",
+                    'warning')
+                if wand.charges <= 0:
+                    self.add_message(
+                        "The wand crumbles to dust -- it is spent.", 'warning')
+                    self.player.remove_from_inventory(wand)
                 self._advance_turn()
                 return
 
-            wand.charges -= 1
-            # Cursed wands: 3% chance to misfire (wastes charge, no effect)
+            # Cursed misfire (3% chance on TOP of the fail-consumes-charge rule)
             import random as _rng_wand
             if getattr(wand, 'buc', 'uncursed') == 'cursed' and _rng_wand.random() < 0.03:
-                self.add_message("The cursed wand misfires! The charge is wasted.", 'warning')
+                self.add_message(
+                    "The cursed wand misfires! The charge is doubly wasted.",
+                    'warning')
                 if wand.charges <= 0:
-                    self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
+                    self.add_message(
+                        "The wand crumbles to dust -- it is spent.", 'warning')
                     self.player.remove_from_inventory(wand)
                 self._advance_turn()
                 return
@@ -251,13 +262,14 @@ class MagicMixin:
                 )
             self._advance_turn()
 
-        # All wands use threshold quiz — power is baked into the wand's tier
+        # v2.11.0: All wands use threshold=1 (single science question at the
+        # wand's authoritative tier). Power is baked into the wand's tier.
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='science',
-            tier=wand.quiz_tier,
+            tier=getattr(wand, 'tier', wand.quiz_tier),
             callback=on_complete,
-            threshold=wand.quiz_threshold,
+            threshold=1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
@@ -278,10 +290,30 @@ class MagicMixin:
 
     _wand_tier_duration = staticmethod(wand_tier_duration)
 
+    def _wand_effect_duration(self, wand, default_base: int) -> int:
+        """v2.11.0: prefer the wand's authored duration in wand.power (plain
+        integer string, e.g. "5" / "30"), else fall back to the legacy
+        tier-scaled default. Keeps back-compat with any existing wand whose
+        power is a dice string or empty."""
+        pw = getattr(wand, 'power', '') or ''
+        if pw and 'd' not in pw:
+            try:
+                return max(1, int(pw))
+            except (TypeError, ValueError):
+                pass
+        return self._wand_tier_duration(default_base, getattr(wand, 'quiz_tier', 1))
+
     def _wand_tier_damage(self, base_dmg: int, tier: int) -> int:
-        """Scale wand damage by tier AND player INT."""
-        tier_mult = 0.5 + tier * 0.5  # T1=1.0, T3=2.0, T5=3.0
-        return max(1, int(base_dmg * tier_mult * (1.0 + self.player.INT * 0.1)))
+        """Scale wand damage by player INT.
+
+        v2.11.0: wand power dice are now tier-baked in wand.power (T1 ~3d4,
+        T5 ~12d10), so the old 0.5-3.0x tier multiplier would double-scale
+        the ladder into absurdity (12d10 * 3.0 * INT-bonus ~= instant-kill).
+        Kept the signature (tier arg unused) so every existing call site
+        stays compatible without a sweep. INT scaling stays -- knowing the
+        science still matters for magnitude.
+        """
+        return max(1, int(base_dmg * (1.0 + self.player.INT * 0.1)))
 
     def _apply_wand_effect(self, wand: 'Wand'):
         import random as _rng
@@ -342,7 +374,12 @@ class MagicMixin:
             )
 
         elif effect == 'light':
-            radius = 15
+            # v2.11.0: radius reads from wand.power (integer string) per tier.
+            # T1 candle ~4, T2 torch ~8; falls back to 15 for legacy wands.
+            try:
+                radius = int(wand.power) if wand.power else 15
+            except (TypeError, ValueError):
+                radius = 15
             px, py = self.player.x, self.player.y
             for dy in range(-radius, radius + 1):
                 for dx in range(-radius, radius + 1):
@@ -351,6 +388,86 @@ class MagicMixin:
                         if self.dungeon.in_bounds(nx, ny):
                             self.dungeon.explored.add((nx, ny))
             self.add_message("Brilliant light floods the area!", 'success')
+
+        elif effect == 'sunlight':
+            # v2.11.0 T4 wand_of_sunlight: reveal WHOLE floor + expose hidden
+            # (invisible) monsters for a stretch. Explored-map for everything;
+            # visible set gets every monster tile so you can see + target them.
+            for y in range(self.dungeon.height):
+                for x in range(self.dungeon.width):
+                    self.dungeon.explored.add((x, y))
+            revealed = 0
+            for m in self.monsters:
+                if m.alive:
+                    self.visible.add((m.x, m.y))
+                    # Strip invisibility if it was hiding this monster.
+                    if m.status_effects.pop('invisible', None) is not None:
+                        revealed += 1
+            self.add_message(
+                f"Blinding sunlight floods the floor! "
+                f"({revealed} hidden creature{'s' if revealed != 1 else ''} revealed)",
+                'success')
+
+        elif effect == 'secret_door_detection':
+            # v2.11.0 T2: reveal SECRET_DOOR tiles within sight radius.
+            from dungeon import SECRET_DOOR, DOOR
+            px, py = self.player.x, self.player.y
+            radius = max(4, int(getattr(self.player, 'get_sight_radius', lambda: 8)()))
+            found = 0
+            for dy in range(-radius, radius + 1):
+                for dx in range(-radius, radius + 1):
+                    if dx*dx + dy*dy > radius*radius:
+                        continue
+                    nx, ny = px + dx, py + dy
+                    if not self.dungeon.in_bounds(nx, ny):
+                        continue
+                    if self.dungeon.tiles[ny][nx] == SECRET_DOOR:
+                        self.dungeon.tiles[ny][nx] = DOOR
+                        self.dungeon.explored.add((nx, ny))
+                        found += 1
+            self._refresh_fov()
+            self.add_message(
+                f"Hidden passages shimmer into view! ({found} secret door{'s' if found != 1 else ''} revealed)"
+                if found else "The wand hums but finds no hidden passages nearby.",
+                'success' if found else 'info')
+
+        elif effect == 'opening':
+            # v2.11.0 T2: open every DOOR + unlock every Container in sight.
+            from dungeon import DOOR, FLOOR
+            opened = 0
+            unlocked = 0
+            for (x, y) in list(self.visible):
+                if not self.dungeon.in_bounds(x, y):
+                    continue
+                if self.dungeon.tiles[y][x] == DOOR:
+                    self.dungeon.tiles[y][x] = FLOOR
+                    opened += 1
+            for item in self.ground_items:
+                if isinstance(item, Container) and getattr(item, 'locked', False) \
+                        and (item.x, item.y) in self.visible:
+                    item.locked = False
+                    unlocked += 1
+            self._refresh_fov()
+            self.add_message(
+                f"Click! {opened} door{'s' if opened != 1 else ''} swing open"
+                f" and {unlocked} chest{'s' if unlocked != 1 else ''} unlock.",
+                'success' if (opened or unlocked) else 'info')
+
+        elif effect == 'probing':
+            # v2.11.0 T2: reveal target's HP + saves + resists.
+            target = getattr(self, '_wand_override_target', None) or self._nearest_visible_monster()
+            if target is None:
+                self.add_message("The wand hums but finds no target to probe.", 'info')
+            else:
+                hp_line = f"{target.name}: {target.hp}/{target.max_hp} HP"
+                resist_bits = []
+                for attr in ('fire_resist', 'cold_resist', 'lightning_resist',
+                             'acid_resist', 'poison_resist', 'magic_resist'):
+                    val = getattr(target, attr, 0)
+                    if val:
+                        resist_bits.append(f"{attr.replace('_resist','')}:{val}")
+                resist_line = (" [resist " + ", ".join(resist_bits) + "]") if resist_bits else ""
+                self.add_message(hp_line + resist_line, 'success')
 
         elif effect == 'create_monster':
             import json
@@ -398,7 +515,7 @@ class MagicMixin:
                 return
 
             if effect == 'sleep_monster':
-                dur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 8)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the sleep!", 'warning')
@@ -407,7 +524,7 @@ class MagicMixin:
                     self.add_message(f"The {target.name} slumps into a deep sleep! ({dur} turns)", 'success')
 
             elif effect == 'slow_monster':
-                dur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 8)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
@@ -416,7 +533,7 @@ class MagicMixin:
                     self.add_message(f"The {target.name} slows to a crawl! ({dur} turns)", 'success')
 
             elif effect == 'confuse_monster':
-                dur = self._wand_tier_duration(10, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 10)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the confusion!", 'warning')
@@ -425,7 +542,7 @@ class MagicMixin:
                     self.add_message(f"The {target.name} staggers in confusion! ({dur} turns)", 'success')
 
             elif effect == 'paralyze_monster':
-                dur = self._wand_tier_duration(6, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 6)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} resists the paralysis!", 'warning')
@@ -434,7 +551,7 @@ class MagicMixin:
                     self.add_message(f"The {target.name} is locked in place! ({dur} turns)", 'success')
 
             elif effect == 'blind_monster':
-                dur = self._wand_tier_duration(8, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 8)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the blindness!", 'warning')
@@ -525,31 +642,19 @@ class MagicMixin:
                     self._on_monster_killed(target)
 
             elif effect == 'magic_missile':
-                # Irresistible: bypasses all resistances. Missile COUNT = the
-                # science CHAIN achieved when zapped (1-5, set in
-                # _confirm_wand_target); falls back to wand tier for any non-chain
-                # invocation. Each missile is INT-scaled (like the magic-missile
-                # SPELL) with a flat base floor, so a single low-chain bolt still
-                # lands a real hit and a full 5-chain is a serious barrage.
-                _mm_chain = getattr(self, '_wand_chain', 0)
-                missiles = max(1, _mm_chain if _mm_chain else wand.quiz_tier)
-                total_dmg = 0
-                for _ in range(missiles):
-                    if not target.alive:
-                        break
-                    # Gentle flat INT bonus per missile; the barrage's power comes
-                    # from the missile COUNT (chain), not a 2-4x per-missile
-                    # multiplier (which over-scaled hard at high INT).
-                    base = (roll(wand.power) if wand.power else 4) + 2
-                    dmg = max(1, base + self.player.INT // 5)
-                    target.hp = max(0, target.hp - dmg)
-                    if target.hp == 0:
-                        target.alive = False
-                    total_dmg += dmg
+                # v2.11.0: single irresistible force-bolt per zap. Damage is
+                # baked into wand.power per tier (T1 2d4 -> T5 12d8) and gets
+                # a flat INT bonus. Chain-mode magic missile retired -- the
+                # spell of the same name still uses chain-scaling, but wands
+                # follow the unified threshold=1 contract now.
+                base = roll(wand.power) if wand.power else 4
+                dmg = max(1, base + self.player.INT // 5)
+                target.hp = max(0, target.hp - dmg)
+                if target.hp == 0:
+                    target.alive = False
                 self.add_message(
-                    f"{missiles} magic missile{'s' if missiles > 1 else ''} "
-                    f"unerringly strike{'s' if missiles == 1 else ''} the "
-                    f"{target.name} for {total_dmg} total damage!", 'success')
+                    f"A magic missile unerringly strikes the {target.name} "
+                    f"for {dmg} damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
 
@@ -614,11 +719,27 @@ class MagicMixin:
                         self.add_message("The wand misfires!", 'warning')
 
             elif effect == 'fear_monster':
+                # v2.11.0 T5 wand_of_panic_wave: 20-turn fear on EVERY visible
+                # non-boss monster (not just the primary target).
+                _is_panic_wave = (getattr(wand, 'id', '') == 'wand_of_panic_wave')
                 is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
-                if is_boss:
+                dur = self._wand_effect_duration(wand, 8)
+                if _is_panic_wave:
+                    hit = 0
+                    for m in self.monsters:
+                        if not m.alive or (m.x, m.y) not in self.visible:
+                            continue
+                        if getattr(m, 'is_boss', False) or m.max_hp > 500:
+                            continue
+                        m.add_effect('feared', dur)
+                        m.ai_pattern = 'cowardly'
+                        hit += 1
+                    self.add_message(
+                        f"A wave of panic sweeps the floor! ({hit} creature{'s' if hit != 1 else ''} flee for {dur} turns)",
+                        'success')
+                elif is_boss:
                     self.add_message(f"The {target.name} resists the fear!", 'warning')
                 else:
-                    dur = self._wand_tier_duration(8, wand.quiz_tier)
                     target.add_effect('feared', dur)
                     target.ai_pattern = 'cowardly'
                     self.add_message(f"The {target.name} turns and flees in terror! ({dur} turns)", 'success')
@@ -628,13 +749,13 @@ class MagicMixin:
                 if is_boss:
                     self.add_message(f"The {target.name} is far too willful to charm!", 'warning')
                 else:
-                    dur = self._wand_tier_duration(20, wand.quiz_tier)
+                    dur = self._wand_effect_duration(wand, 20)
                     target.add_effect('charmed', dur)
                     target.ai_pattern = 'sessile'
                     self.add_message(f"The {target.name} gazes at you with adoration. ({dur} turns)", 'success')
 
             elif effect == 'poison_monster':
-                dur = self._wand_tier_duration(12, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 12)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the poison!", 'warning')
@@ -643,7 +764,7 @@ class MagicMixin:
                     self.add_message(f"The {target.name} writhes as poison courses through it! ({dur} turns)", 'success')
 
             elif effect == 'disease_monster':
-                dur = self._wand_tier_duration(15, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 15)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the disease!", 'warning')
@@ -655,7 +776,7 @@ class MagicMixin:
                         self._on_monster_killed(target)
 
             elif effect == 'curse_monster':
-                dur = self._wand_tier_duration(20, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 20)
                 sdur = self._wand_tier_duration(8, wand.quiz_tier)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
@@ -712,7 +833,7 @@ class MagicMixin:
                         self._on_monster_killed(target)
 
             elif effect == 'weaken_monster':
-                dur = self._wand_tier_duration(15, wand.quiz_tier)
+                dur = self._wand_effect_duration(wand, 15)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"The {target.name} shrugs off the weakening magic!", 'warning')

@@ -69,6 +69,52 @@ _SCROLL_EFFECT_SPRITE = {
 }
 _SCROLL_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
 
+# v2.11.0 wand rebuild: ~90 tier-graded wand variants share a small set of
+# EFFECTS (fire_bolt / lightning_bolt / cold_bolt / heal / sleep_monster / ...).
+# Same shape as _SCROLL_EFFECT_SPRITE: each new wand id resolves to a
+# representative same-effect sprite via effect-keyword matching, so all fire
+# bolts (spark / bolt / fireball / storm / cataclysm) share wand_of_fire.png
+# without generating art for every tier variant. Loaded lazily from wand.json.
+_WAND_EFFECT_SPRITE = {
+    'fire_bolt':              'wand_of_fire',
+    'lightning_bolt':         'wand_of_lightning',
+    'cold_bolt':              'wand_of_frost',
+    'acid_spray':             'wand_of_acid',
+    'magic_missile':          'wand_of_magic_missile',
+    'striking':               'wand_of_striking',
+    'heal':                   'wand_of_healing',
+    'restore_body':           'wand_of_restore_body',
+    'sleep_monster':          'wand_of_sleep',
+    'slow_monster':           'wand_of_slow',
+    'confuse_monster':        'wand_of_confusion',
+    'paralyze_monster':       'wand_of_paralysis',
+    'fear_monster':           'wand_of_fear',
+    'blind_monster':          'wand_of_blindness',
+    'turn_undead':            'wand_of_turning',
+    'polymorph_monster':      'wand_of_polymorph',
+    'charm_monster':          'wand_of_charm_monster',
+    'light':                  'wand_of_light',
+    'sunlight':               'wand_of_light',
+    'wonder':                 'wand_of_wonder',
+    'digging':                'wand_of_digging',
+    'cancellation':           'wand_of_cancellation',
+    'drain_magic':            'wand_of_drain_magic',
+    'dispel_magic':           'wand_of_dispelling',
+    'teleport_monster':       'wand_of_teleport_monster',
+    'poison_monster':         'wand_of_poison',
+    'disease_monster':        'wand_of_disease',
+    'curse_monster':          'wand_of_curse',
+    'weaken_monster':         'wand_of_empowerment',
+    'secret_door_detection':  'wand_of_detect_treasure',
+    'opening':                'wand_of_locksmithing',
+    'probing':                'wand_of_detect_monster',
+    'death_ray':              'wand_of_death',
+    'disintegrate':           'wand_of_disintegration',
+    'drain_life':             'wand_of_drain_life',
+    'iron_mortar':            'iron_mortar_wand',
+}
+_WAND_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
+
 
 def _material_ids() -> list:
     global _MATERIAL_IDS
@@ -205,6 +251,31 @@ def _scroll_effect_sprite(item_id: str) -> 'str | None':
     return resolved
 
 
+def _wand_effect_sprite(item_id: str) -> 'str | None':
+    """v2.11.0 fallback: a wand id whose per-id art doesn't ship gets the
+    sprite of the canonical wand for its EFFECT. Same shape as
+    _scroll_effect_sprite -- reads data/items/wand.json once, caches per id.
+    """
+    if item_id in _WAND_ID_TO_SPRITE_CACHE:
+        return _WAND_ID_TO_SPRITE_CACHE[item_id]
+    resolved: 'str | None' = None
+    try:
+        import json
+        with open(data_path('data', 'items', 'wand.json'),
+                  encoding='utf-8') as f:
+            wands = json.load(f)
+        wdef = wands.get(item_id)
+        if wdef:
+            eff = wdef.get('effect', '')
+            sprite_key = _WAND_EFFECT_SPRITE.get(eff)
+            if sprite_key:
+                resolved = _named_sprite(sprite_key)
+    except Exception:
+        resolved = None
+    _WAND_ID_TO_SPRITE_CACHE[item_id] = resolved
+    return resolved
+
+
 def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     """Filesystem path of the sprite to draw for `item_id`, or None.
 
@@ -241,6 +312,13 @@ def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     # new tier-graded scroll variants added in the scroll-system rebuild.
     if item_id.startswith('scroll_of_') or item_id == 'dead_sea_scroll':
         hit = _scroll_effect_sprite(item_id)
+        if hit:
+            return hit
+    # v2.11.0: fall back to the effect-canonical wand art for any wand_of_*
+    # id that doesn't ship its own .png. Handles the ~90 tier-graded wand
+    # variants added in the wand-system rebuild.
+    if item_id.startswith('wand_of_'):
+        hit = _wand_effect_sprite(item_id)
         if hit:
             return hit
     return None
