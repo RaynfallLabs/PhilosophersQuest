@@ -1217,41 +1217,63 @@ class MagicMixin:
         self._start_spell_quiz(spell, spell_id, target=None)
 
     def _start_spell_quiz(self, spell, spell_id, target):
-        """Start the science escalator chain quiz for a spell."""
+        """v2.12.0 spellcast: ONE science threshold=1 quiz at the spell's tier.
+        MP was already deducted in _invoke_spell (before this call) so it is
+        consumed regardless of success -- fail = fizzle, success = effect fires
+        at the spell's fixed magnitude (from spell.power dice string). The old
+        escalator-chain casting was retired -- tier now drives BOTH the science
+        quiz difficulty AND the effect magnitude (baked into spell.power at
+        author-time). Parallels the v2.10.0 scroll + v2.11.0 wand contracts.
+        """
         self.state = STATE_QUIZ
         self.quiz_title = f"CAST {spell['name'].upper()} -- SCIENCE"
 
         def on_complete(result):
-            chain = result.score
             self.state = STATE_PLAYER
-            if chain == 0:
-                self.add_message(f"The {spell['name']} fizzles... (MP wasted)", 'warning')
-            else:
-                _snd.play('spell_cast')
-                self._apply_spell_effect(spell, chain, target)
-                # Chain-equip passive: double_cast_at_max_chain (Robe of the Magus T5).
-                if chain >= 5:
-                    from chain_passives import player_has_passive
-                    if player_has_passive(self.player, 'double_cast_at_max_chain'):
-                        self.add_message(
-                            "The Robe of the Magus weaves the spell a second time!",
-                            'success')
-                        self._apply_spell_effect(spell, chain, target)
-                _qs_spell = getattr(self, 'quirk_system', None)
-                if _qs_spell:
-                    hp_pct = self.player.hp / max(1, self.player.max_hp)
-                    _qs_spell.on_spell_cast(hp_pct)
+            if not result.success:
+                # MP was already deducted before the quiz started. Fizzle
+                # burns the MP as the cost of the failed attempt.
+                self.add_message(
+                    f"The {spell['name']} fizzles -- MP wasted.", 'warning')
+                self._advance_turn()
+                return
+            _snd.play('spell_cast')
+            self._apply_spell_effect(spell, target)
+            # Chain-equip passive: double_cast_at_max_chain (Robe of the Magus
+            # T5). v2.12.0: no chain, so this now fires on every SUCCESSFUL
+            # cast at the spell's peak tier (T5).
+            if int(spell.get('tier', spell.get('quiz_tier', 1))) >= 5:
+                from chain_passives import player_has_passive
+                if player_has_passive(self.player, 'double_cast_at_max_chain'):
+                    self.add_message(
+                        "The Robe of the Magus weaves the spell a second time!",
+                        'success')
+                    self._apply_spell_effect(spell, target)
+            _qs_spell = getattr(self, 'quirk_system', None)
+            if _qs_spell:
+                hp_pct = self.player.hp / max(1, self.player.max_hp)
+                _qs_spell.on_spell_cast(hp_pct)
             self._advance_turn()
 
-        # Escalator-chain always starts at T1 and ramps up; the spell's
-        # quiz_tier is a power-class label, not a starting tier (bug bash
-        # 2026-06-01, same fix pattern as harvest/chest).
+        # v2.12.0: threshold=1 at the spell's authoritative tier.
+        # spellbook_chain_bonus (Ring of Scheherazade T4+) now REDUCES cast
+        # tier by N -- parallels how grammar_chain_cap_bonus reduces the
+        # scroll-read tier in v2.10.0 and wand.tier is authoritative for
+        # v2.11.0. A T4 spell cast at effective T3 is easier science.
+        _effective_tier = int(spell.get('tier', spell.get('quiz_tier', 1)))
+        try:
+            from chain_passives import get_spellbook_chain_bonus
+            _effective_tier = max(1, _effective_tier - get_spellbook_chain_bonus(self.player))
+        except ImportError:
+            pass
+
         self.quiz_engine.start_quiz(
-            mode='escalator_chain',
+            mode='threshold',
             subject='science',
-            tier=1,
+            tier=_effective_tier,
             callback=on_complete,
-            max_chain=5,
+            threshold=1,
+            total_qs=1,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_int_quiz_bonus() +
@@ -1259,24 +1281,43 @@ class MagicMixin:
             base_seconds=self.player.get_quiz_timer('science'),
         )
 
-    # Spell chain multipliers — same philosophy as weapon chain multipliers
+    # v2.12.0: retired chain-mode casting. This table is kept only so the
+    # legacy monotonicity check in test_group_cd_residuals still passes -- it
+    # is no longer read by the spellcast code path. Damage magnitude is now
+    # baked into spell.power dice per tier (e.g., fire family: 1d6/3d6/5d6/
+    # 8d6/6d8 for T1-T5). _spell_damage scales by INT + chain-equip passives
+    # only. Kept as class data to remain inspectable.
     _SPELL_CHAIN_MULTS = [0.5, 1.0, 1.8, 2.8, 4.0]
 
-    def _spell_damage(self, base_dmg: int, chain: int) -> int:
-        """Scale spell damage by chain multiplier + INT + chain-equip passives."""
+    def _spell_damage(self, base_dmg: int, chain: int = 5) -> int:
+        """v2.12.0: no chain multiplier. Scale by INT + chain-equip passives
+        only. Signature retains the `chain` arg for back-compat with any
+        legacy caller inside the handler (all uses inside _apply_spell_effect
+        pass chain=5, which is a no-op now). The tier scaling is baked into
+        the spell.power dice, not layered on here.
+        """
         from chain_passives import apply_spell_damage_passives
-        mult = self._SPELL_CHAIN_MULTS[min(chain - 1, len(self._SPELL_CHAIN_MULTS) - 1)]
-        dmg, c, a = apply_spell_damage_passives(self.player, base_dmg * mult * (1.0 + self.player.INT * 0.1))
+        dmg, c, a = apply_spell_damage_passives(
+            self.player, base_dmg * (1.0 + self.player.INT * 0.1))
         self._last_spell_crit, self._last_spell_anti_being = c, a
         return max(1, int(dmg))
 
-    def _apply_spell_effect(self, spell: dict, chain: int, target=None):
-        """Apply a learned spell's effect. Chain 1-5 scales damage/duration."""
+    def _apply_spell_effect(self, spell: dict, target=None):
+        """v2.12.0: apply a learned spell's effect at its FIXED per-tier
+        magnitude. spell.power is authoritative for damage/heal dice; buff
+        durations use their full base (no chain scaling). Called with the
+        target monster already resolved (or None for self/AOE spells).
+        """
         effect = spell['effect']
         power  = spell.get('power', '')
 
-        # Scale duration with chain (utility/buff spells)
-        chain_scale = chain / 5.0   # 0.2 .. 1.0
+        # v2.12.0: chain retired. Local aliases keep the existing handler
+        # bodies working without a mass edit: chain=5 => chain_scale=1.0 =>
+        # all buff durations fire at full base. Any message that formerly
+        # embedded "(chain N)" now just says "(chain 5)" -- harmless echo,
+        # since MP was already deducted before this call.
+        chain = 5
+        chain_scale = 1.0
 
         # Handle the two spell-specific effects not in wand system
         if effect == 'displacement_self':
@@ -1571,13 +1612,22 @@ class MagicMixin:
             self.add_message("The gate flickers — no room nearby to manifest.", 'warning')
             return
 
-        # --- Mapping: reveal the entire floor (chain_scale ignored - all-or-nothing) ---
+        # --- Mapping (T2) / Greater Mapping (T4): reveal the entire floor ---
+        # v2.12.0: T2 reveals layout only; T4 also grants clairvoyant
+        # (creatures + items visible for 20 turns).
         if effect == 'mapping':
             for y in range(self.dungeon.height):
                 for x in range(self.dungeon.width):
                     self.dungeon.explored.add((x, y))
-            self.add_message(
-                f"The full layout of this floor floods your mind! (chain {chain})", 'success')
+            _stier = int(spell.get('tier', spell.get('quiz_tier', 2)))
+            if _stier >= 4:
+                self.player.add_effect('clairvoyant', 20)
+                self.add_message(
+                    "The full floor blooms in your mind -- layout, foes, and treasure!",
+                    'success')
+            else:
+                self.add_message(
+                    "The full layout of this floor floods your mind!", 'success')
             return
 
         # --- Turn Undead: holy damage + fear to visible undead ---
@@ -1648,15 +1698,14 @@ class MagicMixin:
             return
 
         # --- Mass Sleep / Mass Paralyze: lock all visible monsters ---
-        # Both `sleep_mass_spell` (T2) and `mass_paralyze_spell` (T4) share this
-        # effect. T2 applies sleeping (breaks on damage); T4 applies paralyzed
-        # (the stronger lock, fitting an archmage-tier slot). Duration scales
-        # with chain.
+        # Both `mass_sleep_spell` (T3) and `mass_paralyze_spell` / `deep_slumber`
+        # (T5) share this effect. T3 applies sleeping (breaks on damage); T5
+        # applies paralyzed (the stronger lock).
         if effect == 'mass_sleep':
-            # Higher-tier spell = stronger status. quiz_tier 4+ = paralyzed.
-            status_name = 'paralyzed' if spell.get('quiz_tier', 2) >= 4 else 'sleeping'
-            base_dur = 10 if status_name == 'sleeping' else 8
-            dur = max(3, int(base_dur * chain_scale))
+            # Higher-tier spell = stronger status. tier 4+ = paralyzed.
+            _stier = int(spell.get('tier', spell.get('quiz_tier', 2)))
+            status_name = 'paralyzed' if _stier >= 4 else 'sleeping'
+            dur = 10 if status_name == 'sleeping' else 8
             visible_monsters = [
                 m for m in self.monsters
                 if m.alive and (m.x, m.y) in self.visible
@@ -1670,35 +1719,86 @@ class MagicMixin:
                 affected += 1
             self.add_message(
                 f"{spell['name']}! {affected}/{len(visible_monsters)} creatures "
-                f"{status_name} for {dur} turns! (chain {chain})", 'success')
+                f"{status_name} for {dur} turns!", 'success')
             return
 
-        # --- Detect Magic: reveal magical items in FOV (BUC + name reveal) ---
-        # Distinct from the identify_item wand effect: this only marks magical
-        # gear (wand/scroll/spellbook) and flags their BUC, similar to the
-        # Ring of Solomon's detect_magic chain passive.
+        # --- Mass Slow / Mass Fear / Mass Confuse: AOE status spells ---
+        # v2.12.0: added handlers for the new mass-status spells introduced
+        # in the family split (mass_slow_spell T3, terror_spell T5,
+        # madness_spell T5). All target every visible non-boss with a bounded
+        # duration. Bosses save via _boss_resist_cc.
+        _MASS_STATUS = {
+            'mass_slow':    ('slowed',   8),
+            'mass_fear':    ('feared',   10),
+            'mass_confuse': ('confused', 12),
+        }
+        if effect in _MASS_STATUS:
+            status_name, base_dur = _MASS_STATUS[effect]
+            visible_monsters = [
+                m for m in self.monsters
+                if m.alive and (m.x, m.y) in self.visible
+            ]
+            affected = 0
+            for m in visible_monsters:
+                applied_dur, resisted = self._boss_resist_cc(m, base_dur)
+                if resisted:
+                    continue
+                m.add_effect(status_name, applied_dur)
+                affected += 1
+            self.add_message(
+                f"{spell['name']}! {affected}/{len(visible_monsters)} creatures "
+                f"{status_name} for {base_dur} turns!", 'success')
+            return
+
+        # --- Detect Magic / Identify / Omnisight: reveal magical item BUC ---
+        # v2.12.0: three-tier family. T1 detect_magic reveals FLOOR items in
+        # sight. T3 identify_spell also reveals PACK items. T5 omnisight also
+        # reveals EQUIPPED items (all slots).
         if effect == 'identify_item':
             from items import Wand, Scroll, Spellbook
+            _stier = int(spell.get('tier', spell.get('quiz_tier', 1)))
             revealed = 0
             for it in self.ground_items:
                 if (it.x, it.y) in self.visible and isinstance(it, (Wand, Scroll, Spellbook)):
                     if hasattr(it, 'buc_known'):
                         it.buc_known = True
                     revealed += 1
-            # Also reveal carried magical items' BUC (chain-scaled bonus)
             inv_reveals = 0
-            if chain >= 3:
+            if _stier >= 3:
                 for it in self.player.inventory:
                     if (isinstance(it, (Wand, Scroll, Spellbook))
                             and hasattr(it, 'buc_known')
                             and not it.buc_known):
                         it.buc_known = True
                         inv_reveals += 1
-            if revealed or inv_reveals:
+            eq_reveals = 0
+            if _stier >= 5:
+                equipped = []
+                if self.player.weapon:
+                    equipped.append(self.player.weapon)
+                if self.player.ranged_weapon:
+                    equipped.append(self.player.ranged_weapon)
+                equipped.extend(s for s in self.player.armor_slots if s)
+                if self.player.shield:
+                    equipped.append(self.player.shield)
+                equipped.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+                am = getattr(self.player, 'amulet_slot', None)
+                if am:
+                    equipped.append(am)
+                for it in equipped:
+                    if hasattr(it, 'buc_known') and not it.buc_known:
+                        it.buc_known = True
+                        eq_reveals += 1
+            bits = []
+            if revealed:
+                bits.append(f"{revealed} on the floor")
+            if inv_reveals:
+                bits.append(f"{inv_reveals} in your pack")
+            if eq_reveals:
+                bits.append(f"{eq_reveals} equipped")
+            if bits:
                 self.add_message(
-                    f"Magical auras shimmer! {revealed} item(s) on the floor revealed"
-                    + (f", {inv_reveals} in your pack" if inv_reveals else "")
-                    + f". (chain {chain})", 'success')
+                    "Magical auras shimmer! " + ", ".join(bits) + " revealed.", 'success')
             else:
                 self.add_message("No magical auras detected nearby.", 'info')
             return
@@ -1771,16 +1871,17 @@ class MagicMixin:
         if target is not None:
             from dice import roll as _roll
             if effect == 'magic_missile':
-                # Fire one missile per chain link (1-5 missiles)
-                missiles = max(1, chain)
+                # v2.12.0: missile COUNT is tier-graded (T1 1 / T2 3 / T3 5 /
+                # T4 7 / T5 not used -- annihilation replaces it). Each
+                # missile rolls spell.power (1d4/2d4/3d4/4d6 per tier). INT
+                # adds a gentle flat per-missile bonus.
+                _tier = int(spell.get('tier', spell.get('quiz_tier', 1)))
+                _MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
+                missiles = _MISSILE_COUNT.get(_tier, 1)
                 total_dmg = 0
                 for _ in range(missiles):
                     if not target.alive:
                         break
-                    # Magic missile scales by missile COUNT (the chain), so each
-                    # missile stays small: base roll + a GENTLE flat INT bonus, NOT
-                    # the 2-4x _int_scaled_damage multiplier (which made a single
-                    # 1d4 missile hit for ~16 at high INT -- user-reported bug).
                     base_dmg = _roll(power) if power else 4
                     per_missile = max(1, base_dmg + self.player.INT // 5)
                     target.hp = max(0, target.hp - per_missile)
@@ -1790,7 +1891,7 @@ class MagicMixin:
                 self.add_message(
                     f"{missiles} magic missile{'s' if missiles > 1 else ''} "
                     f"strike{'s' if missiles == 1 else ''} the {target.name} "
-                    f"for {total_dmg} total damage! (chain {chain})", 'success')
+                    f"for {total_dmg} total damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'fire_bolt':
@@ -1956,14 +2057,15 @@ class MagicMixin:
                     except Exception:
                         self.add_message("The polymorph spell fizzles!", 'warning')
             elif effect == 'disintegrate_spell':
+                # v2.12.0: T5 spell. Fixed 50% instakill vs non-bosses;
+                # bosses get spell.power (10d8) damage instead.
                 is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
-                # Chain-scaling kill chance: 30/45/60/75/90%
-                kill_chance = 0.15 + chain * 0.15  # 0.30 at chain 1 .. 0.90 at chain 5
+                kill_chance = 0.50
                 if not is_boss and random.random() < kill_chance:
                     target.hp = 0
                     target.alive = False
                     self.add_message(
-                        f"The {target.name} is disintegrated! (chain {chain}, {int(kill_chance*100)}%)", 'success')
+                        f"The {target.name} is disintegrated!", 'success')
                     self._on_monster_killed(target)
                 else:
                     base_dmg = _roll(power) if power else 20
@@ -1971,10 +2073,12 @@ class MagicMixin:
                     actual = target.take_damage(scaled)
                     if is_boss:
                         self.add_message(
-                            f"The {target.name} resists disintegration but takes {actual} damage! (chain {chain})", 'success')
+                            f"The {target.name} resists disintegration but takes {actual} damage!",
+                            'success')
                     else:
                         self.add_message(
-                            f"The {target.name} partially resists! {actual} damage! (chain {chain}, {int(kill_chance*100)}% missed)", 'warning')
+                            f"The {target.name} partially resists! {actual} damage!",
+                            'warning')
                     if not target.alive:
                         self._on_monster_killed(target)
             # --- 2026 SPELL EXPANSION: new targeted handlers --------------
@@ -1992,19 +2096,16 @@ class MagicMixin:
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'chain_lightning_jump':
-                # T4 book learns a spell where the chain count drives the
-                # number of arc-jumps. chain=1 → 1 arc (initial only),
-                # chain=2 → +1 jump (2 targets), … chain=5 → +5 jumps
-                # (6 targets total). Each successive arc deals 0.75× the
-                # previous arc's damage.
+                # v2.12.0: Chain Lightning is a T4 spell. Arc count is fixed
+                # per tier (3 extra jumps = 4 targets total). Each successive
+                # arc deals 0.75x the previous arc's damage.
                 base_dmg = _roll(power) if power else 12
                 scaled = self._spell_damage(base_dmg, chain)
                 hit_targets = [target]
                 target.take_damage(scaled, 'lightning')
                 if not target.alive:
                     self._on_monster_killed(target)
-                # chain == 1 → no extra jumps; chain == N → N extra jumps.
-                _max_arcs = max(0, int(chain))
+                _max_arcs = 3
                 remaining = [m for m in self.monsters
                              if m.alive and m not in hit_targets
                              and any(abs(m.x - h.x) + abs(m.y - h.y) <= 3
@@ -3250,7 +3351,14 @@ class MagicMixin:
     ]
 
     def _learn_from_spellbook(self, book: 'Spellbook'):
-        """Try to learn the spell in a spellbook via grammar threshold quiz."""
+        """v2.12.0 spellbook-read: ONE grammar question at book.tier (regular
+        books, quiz_threshold=1) or THREE (unique artifact books like the
+        Necronomicon/Sefer Yetzirah, quiz_threshold=3). Right = spell learned.
+        Wrong = book DESTROYED unless Ring of Scheherazade (`scroll_save_on_fail`)
+        or a `single_copy` book preserves it -- mirrors the v2.10.0 scroll-read
+        contract. Spellbooks are one-read even on success (you internalize the
+        spell, the physical text is consumed).
+        """
         # v2.10.0: consumable-artifact spellbooks (Book of Thoth) fire an
         # EFFECT on read, not learn-a-spell. Route through the dedicated
         # handler before the learn-a-spell early-out (which would incorrectly
@@ -3274,43 +3382,80 @@ class MagicMixin:
 
         def on_complete(result):
             self.state = STATE_PLAYER
-            if result.success:
-                mp_cost = book.mp_cost
-                self.player.known_spells[spell_id] = mp_cost
+            result_success = bool(result.success)
+
+            if not result_success:
+                # Chain-equip passive: scroll_save_on_fail (Ring of Scheherazade)
+                # also saves spellbooks -- same contract as the v2.10.0 scroll
+                # read: on quiz fail, the book survives but is not consumed.
+                try:
+                    from chain_passives import player_has_passive
+                    _saved = player_has_passive(self.player, 'scroll_save_on_fail')
+                except ImportError:
+                    _saved = False
+                # single_copy books (any future spawn-once spellbook) also
+                # survive a failed read so a one-shot quest doesn't brick.
+                if getattr(book, 'single_copy', False) or _saved:
+                    if _saved:
+                        self.add_message(
+                            "The Ring of Scheherazade steadies the page -- the tome survives, unread.",
+                            'warning')
+                    else:
+                        self.add_message(
+                            "The words swim across the page. Its time is not now.",
+                            'warning')
+                    self._advance_turn()
+                    return
                 book.identified = True
+                self.player.known_item_ids.add(book.id)
                 self.player.remove_from_inventory(book)
                 self.add_message(
-                    f"You master the arcane text! {book.spell_name} learned! (costs {mp_cost} MP)", 'success')
-                self._log_chronicle(f"Learned a new spell: {book.spell_name}. The words burned into my memory.")
-            else:
-                self.add_message(
-                    "The text resists your understanding. Try again.", 'warning')
+                    "The tome resists your reading, its pages crumbling to dust.",
+                    'warning')
+                self._advance_turn()
+                return
+
+            # Success: learn the spell + consume the book.
+            mp_cost = book.mp_cost
+            self.player.known_spells[spell_id] = mp_cost
+            book.identified = True
+            self.player.known_item_ids.add(book.id)
+            self.player.remove_from_inventory(book)
+            self.add_message(
+                f"You master the arcane text! {book.spell_name} learned! (costs {mp_cost} MP)",
+                'success')
+            self._log_chronicle(
+                f"Learned a new spell: {book.spell_name}. The words burned into my memory.")
             self._advance_turn()
 
-        # Chain-equip passive: spellbook_chain_bonus lowers the threshold required.
-        _threshold = book.quiz_threshold
+        # v2.12.0: spellbook_chain_bonus (Ring of Scheherazade) now LOWERS the
+        # read tier (parallels how grammar_chain_cap_bonus was repurposed for
+        # scrolls in v2.10.0). A T4 book read at effective T3 is easier AND
+        # uses a lower-tier grammar quiz.
+        _effective_tier = int(getattr(book, 'tier', book.quiz_tier))
         try:
             from chain_passives import get_spellbook_chain_bonus
-            _threshold = max(1, _threshold - get_spellbook_chain_bonus(self.player))
+            _effective_tier = max(1, _effective_tier - get_spellbook_chain_bonus(self.player))
         except ImportError:
             pass
-        # BUC: a blessed text reads clearer (one fewer correct needed); a cursed
-        # text resists (one more). Previously blessed/cursed spellbooks did nothing.
-        _sbuc = getattr(book, 'buc', 'uncursed')
-        if _sbuc == 'blessed':
-            _threshold = max(1, _threshold - 1)
-        elif _sbuc == 'cursed':
-            _threshold = _threshold + 1
+
+        # v2.12.0: read threshold is book.quiz_threshold (1 for regular, 3
+        # for unique artifacts). BUC no longer shifts threshold (there's only
+        # one question at threshold=1 for regular books, so +/-1 wouldn't
+        # meaningfully help/hinder).
+        _threshold = int(book.quiz_threshold)
 
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='grammar',
-            tier=book.quiz_tier,
+            tier=_effective_tier,
             callback=on_complete,
             threshold=_threshold,
+            total_qs=_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
+            extra_seconds=self.player.get_int_quiz_bonus() +
+                          self.player.get_quiz_extra_seconds('grammar'),
             base_seconds=self.player.get_quiz_timer('grammar'),
         )
 

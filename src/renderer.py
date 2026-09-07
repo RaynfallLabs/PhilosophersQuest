@@ -115,6 +115,55 @@ _WAND_EFFECT_SPRITE = {
 }
 _WAND_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
 
+# v2.12.0 spellbook rebuild: ~55 tier-graded spellbook variants share a
+# small set of FAMILIES (fire / cold / lightning / healing / force / ...).
+# Same shape as _SCROLL_EFFECT_SPRITE and _WAND_EFFECT_SPRITE: each new
+# spellbook id resolves to a representative same-family sprite via
+# spell_family keyword matching, so all fire spellbooks (spark / bolt /
+# fireball / meteor / cataclysm) share spellbook_fireball.png without
+# generating art for every tier variant. Loaded lazily from spellbook.json.
+_SPELLBOOK_FAMILY_SPRITE = {
+    'fire':               'spellbook_fireball',
+    'cold':               'spellbook_ice_storm',
+    'lightning':          'spellbook_lightning_bolt',
+    'force':              'spellbook_magic_missile',
+    'acid':               'spellbook_acid_arrow',
+    'healing':            'spellbook_heal',
+    'sleep':              'spellbook_sleep',
+    'slow':               'spellbook_slow',
+    'paralyze':           'spellbook_paralyze',
+    'fear':               'spellbook_fear',
+    'confuse':            'spellbook_confusion',
+    'buff_shield':        'spellbook_shield',
+    'haste':              'spellbook_haste',
+    'invisibility':       'spellbook_invisibility',
+    'displacement':       'spellbook_displacement',
+    'detect_magic':       'spellbook_detect_magic',
+    'detect_monsters':    'spellbook_detect',
+    'mapping':            'spellbook_mapping',
+    'teleport':           'spellbook_blink',
+    'teleport_away':      'spellbook_teleport_away',
+    'turn_undead':        'spellbook_turn_undead',
+    'polymorph':          'spellbook_polymorph',
+    'drain_life':         'spellbook_drain_life',
+    'light':              'spellbook_light',
+    'knock':              'spellbook_knock',
+    'cleanse':            'spellbook_cleanse',
+    'empower':            'spellbook_empower',
+    'levitate':           'spellbook_levitate',
+    'smite':              'spellbook_smite',
+    'dispel_magic':       'spellbook_dispel_magic',
+    'counterspell':       'spellbook_counterspell',
+    'summon':             'spellbook_summon_guardian',
+    'disintegrate':       'spellbook_disintegrate',
+    'power_word_kill':    'spellbook_power_word_kill',
+    'wish':               'spellbook_wish',
+    'imprisonment':       'spellbook_imprisonment',
+    'banishment':         'spellbook_banishment',
+    'army_of_darkness':   'spellbook_army_of_darkness',
+}
+_SPELLBOOK_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
+
 
 def _material_ids() -> list:
     global _MATERIAL_IDS
@@ -276,6 +325,39 @@ def _wand_effect_sprite(item_id: str) -> 'str | None':
     return resolved
 
 
+def _spellbook_family_sprite(item_id: str) -> 'str | None':
+    """v2.12.0 fallback: a spellbook id whose per-id art doesn't ship gets
+    the sprite of the canonical spellbook for its FAMILY. Reads
+    data/items/spellbook.json once, resolves the spell_id back to
+    spells.LEARNABLE_SPELLS to fetch spell_family, then looks up the
+    representative sprite from _SPELLBOOK_FAMILY_SPRITE. Cached per id.
+    """
+    if item_id in _SPELLBOOK_ID_TO_SPRITE_CACHE:
+        return _SPELLBOOK_ID_TO_SPRITE_CACHE[item_id]
+    resolved: 'str | None' = None
+    try:
+        import json
+        with open(data_path('data', 'items', 'spellbook.json'),
+                  encoding='utf-8') as f:
+            books = json.load(f)
+        bdef = books.get(item_id)
+        if bdef:
+            spell_id = bdef.get('spell_id', '')
+            if spell_id:
+                try:
+                    from spells import LEARNABLE_SPELLS
+                    family = LEARNABLE_SPELLS.get(spell_id, {}).get('spell_family', '')
+                    sprite_key = _SPELLBOOK_FAMILY_SPRITE.get(family)
+                    if sprite_key:
+                        resolved = _named_sprite(sprite_key)
+                except Exception:
+                    pass
+    except Exception:
+        resolved = None
+    _SPELLBOOK_ID_TO_SPRITE_CACHE[item_id] = resolved
+    return resolved
+
+
 def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     """Filesystem path of the sprite to draw for `item_id`, or None.
 
@@ -319,6 +401,13 @@ def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     # variants added in the wand-system rebuild.
     if item_id.startswith('wand_of_'):
         hit = _wand_effect_sprite(item_id)
+        if hit:
+            return hit
+    # v2.12.0: fall back to the family-canonical spellbook art for any
+    # spellbook_* id that doesn't ship its own .png. Handles the tier-graded
+    # spellbook variants added in the spellbook-system rebuild.
+    if item_id.startswith('spellbook_'):
+        hit = _spellbook_family_sprite(item_id)
         if hit:
             return hit
     return None

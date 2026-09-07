@@ -427,3 +427,113 @@ def test_wand_effect_sprite_fallback_covers_new_wands():
     assert not missing, (
         f"_WAND_EFFECT_SPRITE missing entries for wand effects: {sorted(missing)}"
     )
+
+
+# ---------------------------------------------------------------------------
+# v2.12.0 -- spellbook + spellcast system rebuild (parallels wand rebuild)
+# ---------------------------------------------------------------------------
+
+def test_spellbook_json_regular_uses_threshold_one():
+    """v2.12.0: every non-unique spellbook must have quiz_threshold=1."""
+    p = ROOT / "data" / "items" / "spellbook.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    for bid, bdef in d.items():
+        if bdef.get('is_unique'):
+            continue
+        assert int(bdef.get('quiz_threshold', 0)) == 1, (
+            f"{bid} must use quiz_threshold=1 (v2.12.0 unified contract)")
+
+
+def test_spellbook_json_has_tier_field():
+    """v2.12.0: every spellbook must declare a tier field."""
+    p = ROOT / "data" / "items" / "spellbook.json"
+    d = json.loads(p.read_text(encoding='utf-8'))
+    for bid, bdef in d.items():
+        assert 'tier' in bdef, f"{bid} missing 'tier' field"
+        assert 1 <= int(bdef['tier']) <= 5, f"{bid} tier out of 1..5"
+
+
+def test_start_spell_quiz_uses_threshold_one_science():
+    """v2.12.0: _start_spell_quiz must fire a threshold=1 science quiz."""
+    from game_magic import MagicMixin
+    src = inspect.getsource(MagicMixin._start_spell_quiz)
+    assert "mode='threshold'" in src
+    assert "threshold=1" in src
+    assert "subject='science'" in src
+    assert "mode='escalator_chain'" not in src, (
+        "v2.12.0: escalator_chain spell branch must be retired")
+
+
+def test_learn_from_spellbook_uses_threshold_grammar():
+    """v2.12.0: _learn_from_spellbook must fire a threshold grammar quiz."""
+    from game_magic import MagicMixin
+    src = inspect.getsource(MagicMixin._learn_from_spellbook)
+    assert "mode='threshold'" in src
+    assert "subject='grammar'" in src
+
+
+def test_learn_from_spellbook_read_fail_destroys_book():
+    """v2.12.0: fail branch removes book from inventory unless Ring of
+    Scheherazade (scroll_save_on_fail) or single_copy fires."""
+    from game_magic import MagicMixin
+    src = inspect.getsource(MagicMixin._learn_from_spellbook)
+    assert 'scroll_save_on_fail' in src
+    assert 'remove_from_inventory(book)' in src
+
+
+def test_apply_spell_effect_no_chain_arg():
+    """v2.12.0: _apply_spell_effect must NOT accept a chain arg (parallels
+    the v2.10.0 scroll rewrite)."""
+    from game_magic import MagicMixin
+    sig = inspect.signature(MagicMixin._apply_spell_effect)
+    assert 'chain' not in sig.parameters, (
+        "v2.12.0: _apply_spell_effect must NOT accept a chain arg")
+
+
+def test_spellbook_class_reads_tier():
+    """items.Spellbook must expose the v2.12.0 field: tier + default
+    quiz_threshold=1."""
+    from items import Spellbook
+    b = Spellbook({
+        'id': 'test_book',
+        'name': 'test', 'symbol': '+', 'color': [255, 255, 255],
+        'spell_id': 'heal_spell', 'spell_name': 'Heal',
+        'mp_cost': 10, 'tier': 3, 'quiz_threshold': 1,
+    })
+    assert b.tier == 3
+    assert b.quiz_threshold == 1
+    assert b.is_unique is False
+
+
+def test_multi_tier_spell_families_coexist():
+    """v2.12.0: reading Cure Wounds AND Heal both leave distinct entries in
+    known_spells (they are different spell_ids sharing spell_family='healing')."""
+    from spells import LEARNABLE_SPELLS
+    fam = 'healing'
+    healing = [sid for sid, s in LEARNABLE_SPELLS.items()
+               if s.get('spell_family') == fam]
+    # cure_light T1, cure_wounds T2, heal T3, greater_heal T4, resurrection T5
+    assert len(healing) >= 5, (
+        f"healing family must have 5 tier variants, got {healing}")
+    # Simulate learning both cure_wounds and heal simultaneously.
+    known: dict = {}
+    known['cure_wounds_spell'] = LEARNABLE_SPELLS['cure_wounds_spell']['mp_cost']
+    known['heal_spell'] = LEARNABLE_SPELLS['heal_spell']['mp_cost']
+    assert 'cure_wounds_spell' in known
+    assert 'heal_spell' in known
+    assert known['cure_wounds_spell'] != known['heal_spell']  # different MP
+
+
+def test_spellbook_family_sprite_fallback_covers_new_books():
+    """The renderer's _SPELLBOOK_FAMILY_SPRITE map must have an entry for
+    every non-signature spell_family used in LEARNABLE_SPELLS."""
+    from renderer import _SPELLBOOK_FAMILY_SPRITE
+    from spells import LEARNABLE_SPELLS
+    families_used = {
+        s['spell_family'] for sid, s in LEARNABLE_SPELLS.items()
+        if not sid.startswith(('sign_', 'elder_'))
+    }
+    missing = families_used - set(_SPELLBOOK_FAMILY_SPRITE.keys())
+    assert not missing, (
+        f"_SPELLBOOK_FAMILY_SPRITE missing entries for spell families: {sorted(missing)}"
+    )

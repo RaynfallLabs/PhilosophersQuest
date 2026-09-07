@@ -926,7 +926,15 @@ class Spellbook(Item):
         self.spell_id          = defn.get('spell_id', '')
         self.spell_name        = defn.get('spell_name', self.name)
         self.mp_cost           = int(defn.get('mp_cost', 5))
-        self.quiz_tier         = int(defn.get('quiz_tier', 1))
+        # v2.12.0: `tier` is the authoritative difficulty/depth field. Falls
+        # back to quiz_tier for back-compat with pre-v2.12 data. Drives BOTH
+        # the grammar-quiz difficulty on read AND the spawn-depth ladder.
+        self.tier              = int(defn.get('tier', defn.get('quiz_tier', 1)))
+        # quiz_tier kept in sync with tier for any legacy caller.
+        self.quiz_tier         = int(defn.get('quiz_tier', self.tier))
+        # v2.12.0 default: 1 (single grammar question to read/learn). Unique
+        # artifact books (necronomicon, sefer_yetzirah, book_of_thoth, ...)
+        # override to 3.
         self.quiz_threshold    = int(defn.get('quiz_threshold', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))

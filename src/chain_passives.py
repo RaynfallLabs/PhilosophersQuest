@@ -194,6 +194,11 @@ def get_grammar_chain_cap_bonus(player) -> int:
 
 
 def get_spellbook_chain_bonus(player) -> int:
+    """v2.12.0: this passive now REDUCES the cast tier by N (parallels how
+    `grammar_chain_cap_bonus` reduces the scroll-read tier in v2.10.0).
+    A T3 spell cast at effective T2 is easier AND uses a lower-tier science
+    quiz. Ring of Scheherazade (T4+) is the primary source of this passive.
+    """
     return int(sum_passive_values(player, 'spellbook_chain_bonus'))
 
 

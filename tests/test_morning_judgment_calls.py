@@ -60,25 +60,27 @@ def test_spellbook_lightning_t3_removed():
 
 
 def test_spellbook_chain_lightning_t4_remains():
+    """v2.12.0: spellbook id renamed from spellbook_chain_lightning_t4 to
+    spellbook_chain_lightning (family-canonical naming). It's still T4 and
+    still points to chain_lightning_spell."""
     spellbook = _load('data/items/spellbook.json')
-    assert 'spellbook_chain_lightning_t4' in spellbook
-    t4 = spellbook['spellbook_chain_lightning_t4']
+    assert 'spellbook_chain_lightning' in spellbook
+    t4 = spellbook['spellbook_chain_lightning']
     assert t4['spell_id'] == 'chain_lightning_spell'
+    assert int(t4.get('tier', 0)) == 4
 
 
-def test_chain_lightning_handler_scales_by_chain():
-    """The handler in game_magic.py uses chain to determine arc count."""
-    import game_magic
+def test_chain_lightning_handler_fixed_arc_count():
+    """v2.12.0: the chain_lightning_jump handler uses a fixed _max_arcs (no
+    longer keyed on the retired `chain` param). Verify the arc-count sizing
+    logic is still present."""
     src_path = ROOT / "src" / "game_magic.py"
     src_text = src_path.read_text(encoding='utf-8')
-    # Find the chain_lightning_jump branch and check it scales arcs by chain.
     marker = "effect == 'chain_lightning_jump'"
     assert marker in src_text
-    snippet = src_text[src_text.index(marker):]
-    # Either "max_arcs" or a `remaining[:chain]` style slice using chain.
-    assert '_max_arcs' in snippet or 'remaining[:chain' in snippet
-    # The new mechanic uses `int(chain)` to bound arc count.
-    assert 'int(chain)' in snippet
+    snippet = src_text[src_text.index(marker):src_text.index(marker) + 2000]
+    assert '_max_arcs' in snippet, (
+        "v2.12.0: chain lightning must still bound arc count via _max_arcs")
 
 
 # ---------------------------------------------------------------------------

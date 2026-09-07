@@ -121,9 +121,11 @@ def _spawn_visible_monster(g: _StubGame, **kwargs) -> Monster:
 
 
 def _cast(g: _StubGame, spell_id: str, chain: int = 5, target: Monster | None = None):
-    """Drive _apply_spell_effect directly with a chosen chain score."""
+    """v2.12.0: chain arg retained for back-compat with existing tests but
+    IGNORED -- _apply_spell_effect no longer accepts a chain parameter.
+    Magnitude is baked into spell.power dice per tier."""
     spell = LEARNABLE_SPELLS[spell_id]
-    g._apply_spell_effect(spell, chain, target)
+    g._apply_spell_effect(spell, target)
 
 
 # ---------------------------------------------------------------------------
@@ -244,9 +246,10 @@ def test_sleep_mass_spell_applies_sleeping_to_visible():
     m3 = _make_monster(kind='ogre', x=15, y=15)
     g.monsters.append(m3)   # NOT in visible
 
-    _cast(g, 'sleep_mass_spell', chain=5)
+    # v2.12.0: renamed from `sleep_mass_spell` to `mass_sleep_spell`.
+    _cast(g, 'mass_sleep_spell', chain=5)
 
-    # Mass Sleep (T2) applies the 'sleeping' status, not paralyzed
+    # Mass Sleep (T3) applies the 'sleeping' status, not paralyzed
     assert m1.has_effect('sleeping'), "Mass Sleep must apply 'sleeping' to visible"
     assert m2.has_effect('sleeping')
     assert not m3.has_effect('sleeping'), "off-screen monsters must be untouched"
