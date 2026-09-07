@@ -195,17 +195,15 @@ def test_apply_scroll_effect_uses_tier_step():
     )
 
 
-def test_scroll_heal_chain_mults_table_is_monotonic():
-    """The legacy chain-multiplier table is preserved as class data so it
-    remains inspectable, but it is no longer read by the scroll-read path
-    (heal magnitude is now baked into scroll.power per tier). Kept as a
-    monotonic sanity check on any residual use elsewhere."""
+def test_legacy_chain_mult_tables_are_deleted():
+    """v2.12.1 UI-rot sweep: _SCROLL_HEAL_CHAIN_MULTS and _SPELL_CHAIN_MULTS
+    were kept as historical no-op tables through v2.10.0 and v2.12.0. Now
+    that both scroll + spell effects are fully tier-baked into power dice,
+    the tables are removed. Lock in the deletion so they don't get
+    accidentally reintroduced."""
     from game_magic import MagicMixin
-    mults = MagicMixin._SCROLL_HEAL_CHAIN_MULTS
-    assert len(mults) >= 5
-    for i in range(len(mults) - 1):
-        assert mults[i] <= mults[i + 1]
-    assert mults[-1] >= 2 * mults[0]
+    assert not hasattr(MagicMixin, '_SCROLL_HEAL_CHAIN_MULTS')
+    assert not hasattr(MagicMixin, '_SPELL_CHAIN_MULTS')
 
 
 def test_read_scroll_uses_threshold_mode():

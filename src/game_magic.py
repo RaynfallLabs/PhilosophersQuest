@@ -5,7 +5,7 @@ inherits alongside :class:`game_render.RenderMixin`,
 :class:`game_menus.MenuMixin`, :class:`game_input.InputMixin`, and
 :class:`game_encounters.EncountersMixin`.  The mixin owns:
 
-  * Spell casting (learned spells via MP, science escalator-chain quiz):
+  * Spell casting (learned spells via MP, science threshold=1 quiz):
     ``_invoke_spell``, ``_start_spell_quiz``, ``_spell_damage``, and the
     large dispatcher ``_apply_spell_effect``.
   * Scroll reading (grammar threshold quiz): ``_read_scroll`` and the
@@ -64,7 +64,7 @@ if TYPE_CHECKING:
 class MagicMixin:
     """Spell, scroll, spellbook, wand, identification, and recall-lore actions.
 
-    Class-level state (``_SPELL_CHAIN_MULTS``, ``_NECRONOMICON_QUESTIONS``,
+    Class-level state (``_NECRONOMICON_QUESTIONS``,
     and the staticmethod alias ``_wand_tier_duration``) lives on the mixin
     so it stays co-located with the methods that consume it.
     """
@@ -645,7 +645,7 @@ class MagicMixin:
                 # v2.11.0: single irresistible force-bolt per zap. Damage is
                 # baked into wand.power per tier (T1 2d4 -> T5 12d8) and gets
                 # a flat INT bonus. Chain-mode magic missile retired -- the
-                # spell of the same name still uses chain-scaling, but wands
+                # spell of the same name is threshold=1 in v2.12.0; wands and spells
                 # follow the unified threshold=1 contract now.
                 base = roll(wand.power) if wand.power else 4
                 dmg = max(1, base + self.player.INT // 5)
@@ -1156,7 +1156,7 @@ class MagicMixin:
             self.add_message("The wand of wonder crackles with chaotic energy!", 'warning')
 
     # ------------------------------------------------------------------
-    # Spell menu  (m key -- learned spells, cast with science chain quiz)
+    # Spell menu  (m key -- learned spells, cast with one-Q science quiz)
     # ------------------------------------------------------------------
 
     def _invoke_spell(self, spell_id: str):
@@ -1239,12 +1239,12 @@ class MagicMixin:
                 return
             _snd.play('spell_cast')
             self._apply_spell_effect(spell, target)
-            # Chain-equip passive: double_cast_at_max_chain (Robe of the Magus
+            # Chain-equip passive: double_cast_at_peak_tier (Robe of the Magus
             # T5). v2.12.0: no chain, so this now fires on every SUCCESSFUL
             # cast at the spell's peak tier (T5).
             if int(spell.get('tier', spell.get('quiz_tier', 1))) >= 5:
                 from chain_passives import player_has_passive
-                if player_has_passive(self.player, 'double_cast_at_max_chain'):
+                if player_has_passive(self.player, 'double_cast_at_peak_tier'):
                     self.add_message(
                         "The Robe of the Magus weaves the spell a second time!",
                         'success')
@@ -1280,14 +1280,6 @@ class MagicMixin:
                           self.player.get_quiz_extra_seconds('science'),
             base_seconds=self.player.get_quiz_timer('science'),
         )
-
-    # v2.12.0: retired chain-mode casting. This table is kept only so the
-    # legacy monotonicity check in test_group_cd_residuals still passes -- it
-    # is no longer read by the spellcast code path. Damage magnitude is now
-    # baked into spell.power dice per tier (e.g., fire family: 1d6/3d6/5d6/
-    # 8d6/6d8 for T1-T5). _spell_damage scales by INT + chain-equip passives
-    # only. Kept as class data to remain inspectable.
-    _SPELL_CHAIN_MULTS = [0.5, 1.0, 1.8, 2.8, 4.0]
 
     def _spell_damage(self, base_dmg: int, chain: int = 5) -> int:
         """v2.12.0: no chain multiplier. Scale by INT + chain-equip passives
@@ -1338,7 +1330,7 @@ class MagicMixin:
                         self._on_monster_killed(m)
                     hit += 1
             self.add_message(
-                f"Ice Storm! {hit} monsters take {scaled} cold dmg (chain {chain})", 'success')
+                f"Ice Storm! {hit} monsters take {scaled} cold dmg", 'success')
             return
 
         if effect == 'mass_fire':
@@ -1353,7 +1345,7 @@ class MagicMixin:
                         self._on_monster_killed(m)
                     hit += 1
             self.add_message(
-                f"Fireball! {hit} monsters take {scaled} fire dmg (chain {chain})", 'success')
+                f"Fireball! {hit} monsters take {scaled} fire dmg", 'success')
             return
 
         if effect == 'knock_spell':
@@ -1367,7 +1359,7 @@ class MagicMixin:
                         best, best_d = item, d
             if best:
                 best.locked = False
-                self.add_message(f"Click! The {best.name} unlocks magically! (chain {chain})", 'success')
+                self.add_message(f"Click! The {best.name} unlocks magically!", 'success')
             else:
                 self.add_message("No locked containers nearby to open.", 'info')
             return
@@ -1377,7 +1369,7 @@ class MagicMixin:
             self.player.add_effect('clairvoyant', dur)
             count = sum(1 for m in self.monsters if m.alive)
             self.add_message(
-                f"Your senses expand -- {count} creatures revealed for {dur} turns! (chain {chain})", 'success')
+                f"Your senses expand -- {count} creatures revealed for {dur} turns!", 'success')
             return
 
         if effect == 'teleport_away_spell':
@@ -1394,13 +1386,13 @@ class MagicMixin:
                     nx, ny = random.choice(floors)
                     target_m.x, target_m.y = nx, ny
                     self.add_message(
-                        f"The {target_m.name} vanishes in a flash of light! (chain {chain})", 'success')
+                        f"The {target_m.name} vanishes in a flash of light!", 'success')
                 else:
                     self.add_message("The spell fizzles -- no safe destination found.", 'warning')
             else:
                 # No visible monsters — teleport self
                 self._teleport_player()
-                self.add_message(f"You teleport to a new location! (chain {chain})", 'success')
+                self.add_message(f"You teleport to a new location!", 'success')
             return
 
         # Scale extra_heal duration/amount
@@ -1409,7 +1401,7 @@ class MagicMixin:
             base = roll(power) if power else 8
             healed = self._spell_damage(base, chain)
             self.player.restore_hp(healed)
-            self.add_message(f"You are healed for {healed} HP! (chain {chain})", 'success')
+            self.add_message(f"You are healed for {healed} HP!", 'success')
             return
 
         # Army of Darkness: summon undead pet horde
@@ -1417,7 +1409,7 @@ class MagicMixin:
             count = max(3, int(5 * chain_scale))
             self._summon_undead_pets(count)
             self.add_message(
-                f"The dead rise to serve you! {count} undead minions summoned! (chain {chain})",
+                f"The dead rise to serve you! {count} undead minions summoned!",
                 'success')
             return
 
@@ -1458,7 +1450,7 @@ class MagicMixin:
                     pet._refresh_stats()
                     self.pets.append(pet)
                     self.add_message(
-                        f"{self._a_or_an(pet.name).capitalize()} materializes to guard you! (chain {chain})", 'success')
+                        f"{self._a_or_an(pet.name).capitalize()} materializes to guard you!", 'success')
                     return
             self.add_message("No room to summon a guardian.", 'warning')
             return
@@ -1477,7 +1469,7 @@ class MagicMixin:
                     kills += 1
             self.add_message(
                 f"A meteor crashes down! {len(visible_monsters)} creatures take {scaled} fire damage! "
-                f"({kills} slain, chain {chain})", 'success')
+                f"({kills} slain)", 'success')
             return
 
         # Time Freeze: freeze all monsters
@@ -1489,10 +1481,10 @@ class MagicMixin:
                     m.add_effect('paralyzed', dur)
                     count += 1
             self.add_message(
-                f"TIME FREEZES! {count} creatures locked in place for {dur} turns! (chain {chain})", 'success')
+                f"TIME FREEZES! {count} creatures locked in place for {dur} turns!", 'success')
             return
 
-        # Light spell: reveal tiles in a radius (chain scales radius)
+        # Light spell: reveal tiles in a radius (tier scales radius)
         if effect == 'light':
             base_radius = 15
             radius = max(5, int(base_radius * chain_scale))
@@ -1504,7 +1496,7 @@ class MagicMixin:
                         if self.dungeon.in_bounds(nx, ny):
                             self.dungeon.explored.add((nx, ny))
             self.add_message(
-                f"Brilliant light floods the area! (radius {radius}, chain {chain})", 'success')
+                f"Brilliant light floods the area! (radius {radius})", 'success')
             return
 
         # --- 2026 SPELL EXPANSION: new self/AOE handlers --------------------
@@ -1528,7 +1520,7 @@ class MagicMixin:
                     self._on_monster_killed(m)
                 hit += 1
             self.add_message(
-                f"A cone of cold blasts outward! {hit} creatures take {scaled} cold dmg + frozen! (chain {chain})", 'success')
+                f"A cone of cold blasts outward! {hit} creatures take {scaled} cold dmg + frozen!", 'success')
             return
 
         # Mass Polymorph — polymorph every visible monster
@@ -1545,7 +1537,7 @@ class MagicMixin:
                 m.speed = min(m.speed, 6)
                 count += 1
             self.add_message(
-                f"Mass Polymorph! {count} creatures become small animals! (chain {chain})", 'success')
+                f"Mass Polymorph! {count} creatures become small animals!", 'success')
             return
 
         # Meteor Swarm — multiple meteors, each hitting all visible
@@ -1566,7 +1558,7 @@ class MagicMixin:
                     hit += 1
                 total += hit
             self.add_message(
-                f"Meteor Swarm! {shots} meteors fall — {total} hits, {scaled_per} fire dmg each! (chain {chain})", 'success')
+                f"Meteor Swarm! {shots} meteors fall — {total} hits, {scaled_per} fire dmg each!", 'success')
             return
 
         # Storm of Vengeance — chain lightning to ALL visible monsters
@@ -1586,7 +1578,7 @@ class MagicMixin:
                     self._on_monster_killed(m)
                 hit += 1
             self.add_message(
-                f"Storm of Vengeance breaks overhead! {hit} creatures take {scaled} lightning + stun! (chain {chain})", 'success')
+                f"Storm of Vengeance breaks overhead! {hit} creatures take {scaled} lightning + stun!", 'success')
             return
 
         # Gate — summon a higher-tier guardian pet (boosted vs summon_guardian)
@@ -1607,7 +1599,7 @@ class MagicMixin:
                     self.pets.append(pet)
                     self.add_message(
                         f"A gate opens! {self._a_or_an(pet.name).capitalize()} (lv {pet.level}) "
-                        f"steps through to serve you! (chain {chain})", 'success')
+                        f"steps through to serve you!", 'success')
                     return
             self.add_message("The gate flickers — no room nearby to manifest.", 'warning')
             return
@@ -1654,7 +1646,7 @@ class MagicMixin:
                         self._on_monster_killed(m)
                 self.add_message(
                     f"Holy light blazes! {len(undead)} undead take {scaled} holy damage "
-                    f"and flee in terror! (chain {chain})", 'success')
+                    f"and flee in terror!", 'success')
             else:
                 self.add_message(
                     "Holy light flares but no undead are present.", 'info')
@@ -1694,7 +1686,7 @@ class MagicMixin:
             self.add_message(
                 f"ANNIHILATION! {slain} weakened creatures vaporized, "
                 f"{struck - slain if struck > slain else 0} more crippled. "
-                f"(threshold {int(threshold_pct*100)}%, chain {chain})", 'success')
+                f"(threshold {int(threshold_pct*100)}%)", 'success')
             return
 
         # --- Mass Sleep / Mass Paralyze: lock all visible monsters ---
@@ -1821,7 +1813,7 @@ class MagicMixin:
                 self.player.mp = self.player.max_mp
                 self.add_message(
                     "WISH GRANTED! You feel utterly whole -- "
-                    f"HP, SP, and MP restored! (chain {chain})",
+                    f"HP, SP, and MP restored!",
                     'success')
             elif kind == 'stat_bonus':
                 stat = random.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
@@ -1829,7 +1821,7 @@ class MagicMixin:
                 self.player.apply_stat_bonus(stat, 1)
                 self.add_message(
                     f"WISH GRANTED! {stat}: {old} -> {getattr(self.player, stat)} "
-                    f"(chain {chain})", 'success')
+                    f"", 'success')
             else:  # strong_buff
                 buff, dur, label = random.choice([
                     ('regenerating', 50, 'Regenerating'),
@@ -1840,7 +1832,7 @@ class MagicMixin:
                 ])
                 self.player.add_effect(buff, dur)
                 self.add_message(
-                    f"WISH GRANTED! {label} for {dur} turns! (chain {chain})", 'success')
+                    f"WISH GRANTED! {label} for {dur} turns!", 'success')
             return
 
         # Scale status durations for self-buff spells
@@ -1864,7 +1856,7 @@ class MagicMixin:
             dur = max(2, int(base_dur * chain_scale))
             self.player.add_effect(eff_name, dur)
             self.add_message(
-                f"{spell['name']} -- {eff_name} for {dur} turns! (chain {chain})", 'success')
+                f"{spell['name']} -- {eff_name} for {dur} turns!", 'success')
             return
 
         # Targeted spells -- handle directly so we use the pre-found target
@@ -1899,7 +1891,7 @@ class MagicMixin:
                 scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled, 'fire')
                 self.add_message(
-                    f"A bolt of fire strikes the {target.name} for {actual} damage! (chain {chain})", 'success')
+                    f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'lightning_bolt':
@@ -1922,36 +1914,36 @@ class MagicMixin:
                         self._on_monster_killed(lm)
                 if len(line_hits) > 1:
                     self.add_message(
-                        f"Lightning arcs through {len(line_hits)} creatures for {scaled} damage! (chain {chain})", 'success')
+                        f"Lightning arcs through {len(line_hits)} creatures for {scaled} damage!", 'success')
                 elif line_hits:
                     self.add_message(
-                        f"Lightning strikes the {line_hits[0].name} for {scaled} damage! (chain {chain})", 'success')
+                        f"Lightning strikes the {line_hits[0].name} for {scaled} damage!", 'success')
                 else:
                     self.add_message("The lightning dissipates harmlessly.", 'info')
             elif effect == 'sleep_monster':
                 dur = max(2, int(6 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the sleep! (chain {chain})", 'warning')
+                    self.add_message(f"The {target.name} shrugs off the sleep!", 'warning')
                 else:
                     target.add_effect('sleeping', dur)
-                    self.add_message(f"The {target.name} falls asleep for {dur} turns! (chain {chain})", 'success')
+                    self.add_message(f"The {target.name} falls asleep for {dur} turns!", 'success')
             elif effect == 'confuse_monster':
                 dur = max(2, int(10 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the confusion! (chain {chain})", 'warning')
+                    self.add_message(f"The {target.name} shrugs off the confusion!", 'warning')
                 else:
                     target.add_effect('confused', dur)
-                    self.add_message(f"The {target.name} is confused for {dur} turns! (chain {chain})", 'success')
+                    self.add_message(f"The {target.name} is confused for {dur} turns!", 'success')
             elif effect == 'paralyze_monster':
                 dur = max(2, int(8 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} resists the paralysis! (chain {chain})", 'warning')
+                    self.add_message(f"The {target.name} resists the paralysis!", 'warning')
                 else:
                     target.add_effect('paralyzed', dur)
-                    self.add_message(f"The {target.name} is paralyzed for {dur} turns! (chain {chain})", 'success')
+                    self.add_message(f"The {target.name} is paralyzed for {dur} turns!", 'success')
             elif effect == 'aard_blast':
                 base_dmg = _roll(power) if power else 10
                 scaled = self._spell_damage(base_dmg, chain)
@@ -1962,17 +1954,17 @@ class MagicMixin:
                     target.add_effect('stunned', stun)
                 self.add_message(
                     f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage"
-                    + (" and stuns it!" if not sr else "!") + f" (chain {chain})", 'success')
+                    + (" and stuns it!" if not sr else "!") + f"", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
                 dur = max(2, int(8 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the slowing magic! (chain {chain})", 'warning')
+                    self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
                 else:
                     target.add_effect('slowed', dur)
-                    self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
+                    self.add_message(f"The {target.name} is slowed for {dur} turns!", 'success')
             elif effect == 'teleport_self':
                 self._teleport_player()
                 self.add_message("The Elder Blood bends space around you!", 'success')
@@ -1983,17 +1975,17 @@ class MagicMixin:
                 if target.hp == 0:
                     target.alive = False
                 self.add_message(
-                    f"Holy fire smites the {target.name} for {scaled} damage! (chain {chain})", 'success')
+                    f"Holy fire smites the {target.name} for {scaled} damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster_spell':
                 dur = max(4, int(10 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the slowing magic! (chain {chain})", 'warning')
+                    self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
                 else:
                     target.add_effect('slowed', dur)
-                    self.add_message(f"The {target.name} is slowed for {dur} turns! (chain {chain})", 'success')
+                    self.add_message(f"The {target.name} is slowed for {dur} turns!", 'success')
             elif effect == 'acid_arrow':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
@@ -2005,7 +1997,7 @@ class MagicMixin:
                 self.add_message(
                     f"An acid arrow strikes the {target.name} for {actual} damage!"
                     + (f" Acid burns for {dot_dur} turns!" if not dot_resisted else " It resists the acid burn!")
-                    + f" (chain {chain})", 'success')
+                    + f"", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'drain_life_spell':
@@ -2014,7 +2006,7 @@ class MagicMixin:
                 actual = target.take_damage(scaled)
                 healed = self.player.restore_hp(actual)
                 self.add_message(
-                    f"You drain {actual} life from the {target.name} and heal {healed} HP! (chain {chain})", 'success')
+                    f"You drain {actual} life from the {target.name} and heal {healed} HP!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'fear_monster_spell':
@@ -2026,7 +2018,7 @@ class MagicMixin:
                     target.add_effect('feared', dur)
                     target.ai_pattern = 'cowardly'
                     self.add_message(
-                        f"The {target.name} turns and flees in terror for {dur} turns! (chain {chain})", 'success')
+                        f"The {target.name} turns and flees in terror for {dur} turns!", 'success')
             elif effect == 'polymorph_spell':
                 is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
                 if is_boss:
@@ -2053,7 +2045,7 @@ class MagicMixin:
                         idx = self.monsters.index(target)
                         self.monsters[idx] = new_m
                         self.add_message(
-                            f"The {old_name} warps into {self._a_or_an(new_m.name)}! (chain {chain})", 'success')
+                            f"The {old_name} warps into {self._a_or_an(new_m.name)}!", 'success')
                     except Exception:
                         self.add_message("The polymorph spell fizzles!", 'warning')
             elif effect == 'disintegrate_spell':
@@ -2092,7 +2084,7 @@ class MagicMixin:
                     dur, _ = self._boss_resist_cc(target, dur)
                     target.add_effect('slowed', dur)
                 self.add_message(
-                    f"Frost touch chills the {target.name} for {actual} cold dmg! (chain {chain})", 'success')
+                    f"Frost touch chills the {target.name} for {actual} cold dmg!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'chain_lightning_jump':
@@ -2119,7 +2111,7 @@ class MagicMixin:
                         self._on_monster_killed(_jm)
                     hit_targets.append(_jm)
                 self.add_message(
-                    f"Forked Lightning arcs through {len(hit_targets)} targets! (chain {chain})", 'success')
+                    f"Forked Lightning arcs through {len(hit_targets)} targets!", 'success')
             elif effect == 'banishment':
                 # Returns summoned/extraplanar entities — fey, demon, celestial, elemental
                 tags = set(getattr(target, 'tags', []))
@@ -2130,7 +2122,7 @@ class MagicMixin:
                     target.hp = 0
                     # No treasure / on_killed callback — banished, not slain
                     self.add_message(
-                        f"The {target.name} is banished back to its home plane! (chain {chain})", 'success')
+                        f"The {target.name} is banished back to its home plane!", 'success')
                 elif is_boss:
                     self.add_message(
                         f"The {target.name} is too anchored to this plane to banish.", 'warning')
@@ -2139,7 +2131,7 @@ class MagicMixin:
                     dur = max(2, int(4 * chain_scale))
                     target.add_effect('paralyzed', dur)
                     self.add_message(
-                        f"The {target.name} is a creature of this world — frozen in dread for {dur} turns instead. (chain {chain})", 'warning')
+                        f"The {target.name} is a creature of this world — frozen in dread for {dur} turns instead.", 'warning')
             elif effect == 'power_word_kill':
                 # Instakill if target HP at or below threshold; threshold scales
                 # with player INT and chain. Bosses immune.
@@ -2149,7 +2141,7 @@ class MagicMixin:
                     target.alive = False
                     target.hp = 0
                     self.add_message(
-                        f"POWER WORD: KILL! The {target.name} drops dead. (chain {chain}, threshold {threshold} HP)", 'success')
+                        f"POWER WORD: KILL! The {target.name} drops dead. (threshold {threshold} HP)", 'success')
                     self._on_monster_killed(target)
                 elif is_boss:
                     self.add_message(
@@ -2158,7 +2150,7 @@ class MagicMixin:
                 else:
                     self.add_message(
                         f"The {target.name} ({target.hp} HP) is too strong for the death-word "
-                        f"(threshold {threshold}). (chain {chain})", 'warning')
+                        f"(threshold {threshold}).", 'warning')
             elif effect == 'imprisonment':
                 # Very long paralyze — effectively removes target from combat
                 is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
@@ -2166,11 +2158,11 @@ class MagicMixin:
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(
-                        f"The {target.name} resists imprisonment! (chain {chain})", 'warning')
+                        f"The {target.name} resists imprisonment!", 'warning')
                 else:
                     target.add_effect('paralyzed', dur)
                     self.add_message(
-                        f"The {target.name} is sealed in arcane stone for {dur} turns! (chain {chain})", 'success')
+                        f"The {target.name} is sealed in arcane stone for {dur} turns!", 'success')
             elif effect == 'dispel_magic':
                 # Strip ALL buffs from target. Player-applied DoTs (poison, bleed,
                 # petrifying, burning) survive — those are the player's investment.
@@ -2182,7 +2174,7 @@ class MagicMixin:
                         stripped += 1
                 if stripped:
                     self.add_message(
-                        f"{stripped} enchantment(s) on the {target.name} are dispelled! (chain {chain})",
+                        f"{stripped} enchantment(s) on the {target.name} are dispelled!",
                         'success')
                 else:
                     self.add_message(
@@ -2192,7 +2184,7 @@ class MagicMixin:
                 from dice import roll as _r
                 scaled = max(1, int((_r(power) if power else 6) * chain_scale))
                 actual = target.take_damage(scaled)
-                self.add_message(f"The {effect.replace('_', ' ')} hits the {target.name} for {actual} dmg! (chain {chain})", 'success')
+                self.add_message(f"The {effect.replace('_', ' ')} hits the {target.name} for {actual} dmg!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
 
@@ -2299,14 +2291,6 @@ class MagicMixin:
                           self.player.get_quiz_extra_seconds('grammar'),
             base_seconds=self.player.get_quiz_timer('grammar'),
         )
-
-    # v2.10.0: escalator-chain scroll mode retired. Heal magnitude is now
-    # baked into scroll.power (2d4 / 4d4 / 8d4 / 14d4 / 22d4 for T1-T5).
-    # The _SCROLL_HEAL_CHAIN_MULTS table below is kept only so the
-    # test_group_cd_residuals monotonicity check still passes -- it's no
-    # longer read by the scroll-read code path. Blessed doubles, cursed
-    # halves (still applied inline below).
-    _SCROLL_HEAL_CHAIN_MULTS = [1.0, 2.0, 4.0, 7.0, 11.0]
 
     def _apply_scroll_effect(self, scroll: 'Scroll'):
         """v2.10.0: no chain arg. `_tstep` is derived from scroll.tier

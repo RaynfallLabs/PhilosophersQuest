@@ -644,7 +644,7 @@ _KNOWN_PASSIVES = (
     'aura_of_awe', 'back_attack_weakness', 'beautiful_ruin', 'command_undead',
     'cut_and_given', 'death_omen_mark', 'death_save_bonus',
     'demon_command_one_per_floor', 'detect_magic', 'doom_of_the_gods',
-    'double_cast_at_max_chain', 'dragon_blood_bath', 'fafnirs_glare',
+    'double_cast_at_peak_tier', 'dragon_blood_bath', 'fafnirs_glare',
     'first_hit_absorb', 'four_faces_360_fov', 'free_cast_once_per_floor',
     'free_escape_once_per_floor', 'free_move_every_10',
     'gorgoneion_petrify_on_hit', 'grammar_chain_cap_bonus', 'huginn_muninn',

@@ -593,7 +593,7 @@ def _find_recipe_for_ingredient(ingredient) -> dict | None:
     return None
 
 
-def cook_ingredient(player, ingredient, quiz_engine, on_complete, max_chain: int = 5):
+def cook_ingredient(player, ingredient, quiz_engine, on_complete):
     """Cook the ONE selected ingredient (the Single tab).
 
     The caller (`Game._cook_item`) has ALREADY removed that single ingredient
