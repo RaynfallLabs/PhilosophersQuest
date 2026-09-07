@@ -230,17 +230,18 @@ def test_every_trap_type_has_player_handler():
 
 
 # ---------------------------------------------------------------------------
-# Every PRAYERS entry has a per-prayer handler
+# Prayer registry cross-check RETIRED (v2.13.0, 2026-09-06).
+# The 9-prayer PRAYERS list was replaced with a single simple-prayer
+# quiz + Divine Intercession. See tests/test_prayer.py for the
+# replacement contract.
 # ---------------------------------------------------------------------------
 
-def test_every_prayer_has_a_handler():
+def test_v2_13_no_stale_prayer_registry():
+    """Guardrail: PRAYERS registry must NOT be reintroduced."""
     import game_divine
-    src = Path('src/game_divine.py').read_text(encoding='utf-8')
-    for prayer in game_divine.PRAYERS:
-        pid = prayer['id']
-        # Look for _prayer_<id> handler reference
-        handler = f"_prayer_{pid}"
-        assert handler in src, f"prayer {pid}: missing {handler} handler"
+    assert not hasattr(game_divine, 'PRAYERS'), (
+        "v2.13.0 retired PRAYERS -- do not reintroduce the 9-prayer picker"
+    )
 
 
 # ---------------------------------------------------------------------------

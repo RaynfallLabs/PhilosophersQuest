@@ -65,6 +65,9 @@ class Player:
         # Prayer system
         self.prayer_cooldown: int   = 0   # turns remaining until next prayer
         self.prayer_boon_count: int = 0   # permanent bonuses received (diminishing returns)
+        # v2.13.0: Divine Intercession is once-per-game. True once the player
+        # has invoked Shift+\ (whether it succeeded or the smite fell).
+        self.divine_intercession_used: bool = False
 
         # Recall Lore system
         self.recall_lore_cooldown: int = 0  # turns remaining until next lore recall
@@ -224,6 +227,10 @@ class Player:
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
         """Apply damage after immunity and resistance checks. Returns actual damage."""
         from status_effects import DAMAGE_IMMUNITY, SHIELD_IMMUNITY
+        # v2.13.0 Divine Intercession: 'invulnerable' status blocks ALL damage
+        # for its duration (10 turns from a successful intercession).
+        if self.has_effect('invulnerable'):
+            return 0
         # Full immunity via status effect
         immunity_effect = DAMAGE_IMMUNITY.get(damage_type)
         if immunity_effect and self.has_effect(immunity_effect):

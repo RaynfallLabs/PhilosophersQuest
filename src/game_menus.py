@@ -720,38 +720,6 @@ class MenuMixin:
         self._invoke_wand(self.wand_menu_items[idx])
 
     # ------------------------------------------------------------------
-    # Prayer menu  (pray key — theology quiz; see game_divine.PRAYERS)
-    # ------------------------------------------------------------------
-
-    def _prayer_menu_input(self, key: int):
-        """a-i selects a prayer; greyed-out (gate-failed / karma-refused)
-        prayers ignore input. ESC cancels."""
-        if key == pygame.K_ESCAPE:
-            self.state = STATE_PLAYER
-            return
-        items = getattr(self, '_prayer_menu_items', [])
-        if key in self._MENU_CURSOR_KEYS:
-            self._prayer_sel = self._move_menu_cursor(
-                getattr(self, '_prayer_sel', 0), key, len(items))
-            return
-        idx = None
-        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
-            idx = getattr(self, '_prayer_sel', 0)
-        elif pygame.K_a <= key <= pygame.K_z:
-            idx = key - pygame.K_a
-        if idx is None or idx >= len(items):
-            return
-        entry = items[idx]
-        if not entry['available']:
-            # Silent: greyed-out entries don't react. The reason is on screen.
-            return
-        prayer_id = entry['id']
-        # Clear menu state and start the quiz for the chosen prayer
-        self.state = STATE_PLAYER
-        self._prayer_menu_items = []
-        self._begin_specific_prayer(prayer_id)
-
-    # ------------------------------------------------------------------
     # Spell menu  (Z key)
     # ------------------------------------------------------------------
 
@@ -897,8 +865,8 @@ class MenuMixin:
         """Pick an item to identify — go straight to the one-question
         philosophy quiz at the item's id_tier.
 
-        Quick-BUC peeking lives on the altar D-press path
-        (_altar_buc_identify), not here.
+        Quick-BUC peeking is now a passive altar drop-reveal
+        (v2.13.0 game_divine._altar_drop_reveal), not a quiz.
 
         SCROLL-OF-IDENTIFY MODE: when `_scroll_identify_pending` is set, the
         menu was opened by a successful Scroll of Identify read; on select,

@@ -83,10 +83,14 @@ def test_dispel_only_clears_buffs_not_dots():
 # ---------------------------------------------------------------------------
 
 def test_show_prayer_verse_capped_at_5():
+    """v2.13.0: the simple-prayer resolver is the only caller of
+    ``_show_prayer_verse`` now; the L100 fall-through and the chain>0
+    success paths both clamp with ``min(chain, 5)``. The verse table
+    peaks at chain 5."""
     src = Path('src/game_divine.py').read_text(encoding='utf-8')
-    # Both callers should clamp to 5 now (the table's highest key).
-    assert 'min(effective, 5)' in src
-    assert 'min(chain, 5)' in src
+    assert 'min(chain, 5)' in src, (
+        "simple-prayer resolver must clamp the verse key to 5"
+    )
     # The old 'min(..., 8)' calls should be gone.
     assert 'min(effective, 8)' not in src
     assert 'min(chain, 8)' not in src

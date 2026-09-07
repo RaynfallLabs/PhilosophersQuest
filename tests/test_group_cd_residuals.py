@@ -32,38 +32,36 @@ sys.path.insert(0, str(ROOT / "src"))
 
 
 # ---------------------------------------------------------------------------
-# D1 — Altar-only Confiteor + new Benedictio prayer
+# D1 — RETIRED (v2.13.0, 2026-09-06).
+#
+# v2.13.0 replaced the whole 9-prayer picker (including Confiteor and
+# Benedictio) with:
+#   * Simple Prayer (\)        -- one theology escalator_chain, stacking
+#                                 SP/HP/MP/uncurse-or-bless/shielded.
+#   * Divine Intercession (Shift+\) -- one-per-run big-ask quiz.
+#   * Altar drop-reveal        -- passive karma-branched BUC reveal.
+#
+# All Confiteor/Benedictio-specific tests were removed; tests for the
+# new prayer + intercession + drop-reveal shapes live in test_prayer.py.
 # ---------------------------------------------------------------------------
 
-def test_prayer_registry_contains_benedictio():
-    """PRAYERS list now has 9 entries including Benedictio."""
-    from game_divine import PRAYERS
-    ids = [p['id'] for p in PRAYERS]
-    assert 'benedictio' in ids, "Benedictio prayer must be registered"
-    assert 'confiteor' in ids
-    assert len(PRAYERS) >= 9
-
-
-def test_confiteor_gate_requires_altar():
-    """Confiteor's gate now checks that the player stands on an ALTAR tile."""
-    from game_divine import PRAYERS
-    confiteor = next(p for p in PRAYERS if p['id'] == 'confiteor')
-    src = inspect.getsource(confiteor['gate'])
-    # The gate lambda must reference altar-checking AND cursed-worn checks.
-    assert '_on_altar' in src or 'ALTAR' in src, (
-        "Confiteor gate must require an altar tile per D1 2026-05-29"
+def test_v2_13_prayer_simplification_landed():
+    """Sanity: the retired hooks stay gone, the new hooks exist."""
+    import game_divine
+    assert not hasattr(game_divine, 'PRAYERS'), (
+        "v2.13.0: PRAYERS registry was retired"
     )
-    assert '_any_cursed_worn' in src
-
-
-def test_benedictio_handler_exists():
-    """DivineMixin must expose a _prayer_benedictio handler that returns
-    (messages, fired_full)."""
-    from game_divine import DivineMixin
-    assert hasattr(DivineMixin, '_prayer_benedictio')
-    sig = inspect.signature(DivineMixin._prayer_benedictio)
-    # (self, effective, raw_chain) -> tuple
-    assert list(sig.parameters)[1:] == ['effective', 'raw_chain']
+    assert not hasattr(game_divine.DivineMixin, '_prayer_benedictio')
+    assert not hasattr(game_divine.DivineMixin, '_prayer_confiteor')
+    # The new API surface:
+    for name in ('_altar_drop_reveal', '_resolve_simple_prayer',
+                 '_start_divine_intercession',
+                 '_confirm_divine_intercession',
+                 '_resolve_intercession_success',
+                 '_resolve_intercession_failure'):
+        assert hasattr(game_divine.DivineMixin, name), (
+            f"v2.13.0: missing new hook {name}"
+        )
 
 
 # ---------------------------------------------------------------------------

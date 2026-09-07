@@ -44,7 +44,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY, STATE_PET_NAME_INPUT,
+    STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT, STATE_ASCENSION,
 )
@@ -1730,8 +1730,8 @@ class RenderMixin:
             self._draw_scroll_menu()
         elif self.state == STATE_SPELL_MENU:
             self._draw_spell_menu()
-        elif self.state == STATE_PRAY:
-            self._draw_prayer_menu()
+        elif self.state == STATE_INTERCESSION_PROMPT:
+            self._draw_intercession_prompt()
         elif self.state == STATE_IDENTIFY_MENU:
             self._draw_identify_menu()
         elif self.state == STATE_PET_NAME_INPUT:
@@ -4219,88 +4219,52 @@ class RenderMixin:
             draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
         )
 
-    def _draw_prayer_menu(self):
-        """9 named prayers. Show lore description only (player extrapolates
-        intent). Greyed-out entries are gate-failed or karma-refused; the
-        reason is shown in italics on the detail line."""
-        entries = []
-        items = getattr(self, '_prayer_menu_items', [])
-        for i, entry in enumerate(items):
-            avail = entry['available']
-            detail = entry.get('lore', '')
-            if not avail and entry.get('gate_reason'):
-                detail = f"{entry['gate_reason']} - {detail}"
+    def _draw_intercession_prompt(self):
+        """v2.13.0: Y/N confirm popup for Divine Intercession. Terse,
+        heavy-lidded warning styling — this is the one big ask per run."""
+        from fantasy_ui import get_font
+        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 200))
+        self.screen.blit(overlay, (0, 0))
 
-            class _PrayerIcon:
-                def __init__(self2, color):
-                    self2.id = 'prayer_icon'
-                    self2.color = list(color)
-                    self2.symbol = '+'
+        bw, bh = 620, 260
+        bx = (layout.WINDOW_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
 
-            icon = _PrayerIcon((220, 220, 180) if avail else FP.PARCHMENT_DARK)
-            entries.append({
-                'name': entry['name'],
-                'detail': detail,
-                'key': self._menu_letter(i),
-                'icon': icon,
-                'name_color': FP.BODY_TEXT if avail else FP.WARNING_TEXT,
-                'detail_color': FP.BODY_TEXT if avail else FP.FADED_TEXT,
-                'badge': 'READY' if avail else 'LOCKED',
-                'badge_color': FP.SUCCESS_TEXT if avail else FP.WARNING_TEXT,
-            })
-        karma = getattr(self, 'karma', 0)
-        selected = self._menu_clamp_selection('_prayer_sel', len(entries))
-        self._draw_fast_picker_variant_b(
-            title="PRAYER",
-            entries=entries,
-            selected=selected,
-            subtitle=f"Karma: {karma:+d} | Theology quiz, escalator chain (max 8)",
-            hint="Up/Down: move   Enter or a-z: pray   ESC: cancel",
-            border_color=FP.GOLD,
-        )
-        return
-        entries = []
-        items = getattr(self, '_prayer_menu_items', [])
-        for i, entry in enumerate(items[:26]):
-            avail = entry['available']
-            name_color = FP.BODY_TEXT if avail else FP.WARNING_TEXT
-            detail = entry['lore']
-            if not avail and entry.get('gate_reason'):
-                detail = f"{entry['gate_reason']}  —  {entry['lore']}"
-            # Small icon: cross / chalice
-            class _PrayerIcon:
-                def __init__(self2, color):
-                    self2.id = 'prayer_icon'
-                    self2.color = list(color)
-                    self2.symbol = '+'
-            icon = _PrayerIcon((220, 220, 180) if avail else FP.PARCHMENT_DARK)
-            entries.append({
-                'name': entry['name'],
-                'detail': detail,
-                'key': self._LETTERS[i],
-                'icon': icon,
-                'name_color': name_color,
-                'detail_color': FP.BODY_TEXT if avail else FP.FADED_TEXT,
-            })
-        karma = getattr(self, 'karma', 0)
-        subtitle = f"Karma: {karma:+d}  |  Theology quiz, escalator chain (max 8)"
-        draw_menu(
-            self.screen,
-            title="PRAYER",
-            entries=entries,
-            scroll=getattr(self, '_prayer_scroll', 0),
-            subtitle=subtitle,
-            hint="a-h: select  |  ESC: cancel",
-            border_color=FP.GOLD,
-            max_width=820,
-            center_in=(layout.GAME_W, layout.WINDOW_H),
-            font_md=self.font_md,
-            font_sm=self.font_sm,
-            draw_icon_fn=lambda s, item, x, y: self._draw_menu_icon(item, x, y),
-            wrap_detail=True,  # prayer lore + gate_reason can run long;
-                               # wrap across multiple lines instead of
-                               # truncating with "..."
-        )
+        # Dark parchment with gold trim — divine, weighty.
+        pygame.draw.rect(self.screen, (16, 12, 6), (bx, by, bw, bh), border_radius=8)
+        pygame.draw.rect(self.screen, FP.GOLD, (bx, by, bw, bh), 3, border_radius=8)
+        pygame.draw.rect(self.screen, (110, 82, 20),
+                         (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
+
+        font_title = get_font('heading', 24)
+        font_body  = get_font('body', 18)
+        font_hint  = get_font('body', 13)
+
+        title_surf = font_title.render("DIVINE INTERCESSION", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title_surf,
+                         (bx + (bw - title_surf.get_width()) // 2, by + 24))
+
+        pygame.draw.line(self.screen, FP.GOLD,
+                         (bx + 32, by + 62), (bx + bw - 32, by + 62), 1)
+
+        lines = [
+            "Do you seek intercession from God? (y/n)",
+            "",
+            "One attempt per run.",
+            "Success asks much. Failure smites all.",
+        ]
+        y = by + 84
+        for line in lines:
+            surf = font_body.render(line, True, FP.BODY_TEXT)
+            self.screen.blit(surf, (bx + (bw - surf.get_width()) // 2, y))
+            y += font_body.get_height() + 6
+
+        hint = font_hint.render(
+            "Y: seek intercession  //  N or Esc: step back",
+            True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2,
+                                by + bh - 28))
 
     def _draw_scroll_menu(self):
         tab_items = self._get_scroll_tab_items()
@@ -8375,7 +8339,8 @@ class RenderMixin:
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
                 ("P", "Pick lock / disarm trap", FP.BODY_TEXT),
                 ("Y", "Merchant shop", FP.BODY_TEXT),
-                ("\\", "Pray at altar", FP.ARCANE_ACCENT),
+                ("\\", "Pray (theology chain)", FP.ARCANE_ACCENT),
+                ("Shift+\\", "Divine Intercession (1/run)", FP.ARCANE_ACCENT),
                 ("O", "Observe cursor", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),

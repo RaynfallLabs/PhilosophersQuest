@@ -4,13 +4,28 @@ This module defines :class:`DivineMixin`, which the real ``Game`` class
 inherits alongside the other mixins.  It owns the Game-side orchestration
 of:
 
-  * Altar BUC mechanics (``_altar_buc_upgrade``, ``_altar_buc_identify``).
+  * Simple prayer (``_start_pray``) -- one theology escalator_chain quiz,
+    stacking bonuses at chain 1..5, karma modifies magnitudes,
+    altar doubles them.
+  * Divine Intercession (``_start_divine_intercession``) -- once per game,
+    the "big ask": on-altar = escalator_chain(1); off-altar = threshold(5)
+    at T5. Success = full heal + invulnerable + random artifact. Failure =
+    all-worn cursed + blinded 100t.
+  * Altar drop-reveal (``_altar_drop_reveal``) -- karma-gated BUC reveal
+    with truthful positive-karma and deceptive negative-karma messages.
   * Named-god shrines (Ariadne, Athena, Odin) and the Fenrir-quest forge
     checks (``_check_gleipnir_forge``, ``_check_vidar_altar``).
-  * Prayer (``_start_pray``, ``_resolve_prayer``).
   * Fountain / grave / throne tile interactions and their resolutions.
   * Mystery-altar orchestration (``_find_adjacent_mystery_altar``,
     ``_start_observe``, ``_start_mystery``, ``_begin_mystery_challenge``).
+
+v2.13.0 (2026-09-06) SIMPLIFICATION:
+  - Removed: PRAYERS registry (9 named intercessions), 9 per-prayer
+    handlers, ``_begin_specific_prayer``, ``_resolve_specific_prayer``,
+    ``_altar_buc_upgrade``, ``_altar_buc_identify``, STATE_PRAY,
+    the prayer-picker menu.
+  - The "big ask" (BUC identify at altar) is now Divine Intercession,
+    bound to Shift+\\, one attempt per run.
 
 The pre-existing ``mystery_system`` module provides the data and reward
 logic for mystery altars; this mixin only drives the Game-state
@@ -28,65 +43,18 @@ import random
 import sound_system as _snd
 from dungeon import FLOOR, DOOR, ALTAR
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_TARGET, STATE_MYSTERY_APPROACH, STATE_PRAY,
+    STATE_PLAYER, STATE_QUIZ, STATE_TARGET, STATE_MYSTERY_APPROACH,
+    STATE_INTERCESSION_PROMPT,
 )
 
 
 # ----------------------------------------------------------------------------
-# Prayer registry: 8 named intercessions. Each has a lore-only description
-# (player extrapolates intent), an optional situational `gate`, a chain-tier
-# effect dispatcher in `_resolve_specific_prayer`, and an extra cooldown
-# bonus when chain-7/8 fires the strongest tier of the prayer.
-# `specialty` prayers refuse at karma <= -6 ("examine your conscience");
-# Pater Noster + Ave Maria + Confiteor are always available regardless.
+# Module-level helpers for altar / equipped-item introspection.
+# `_on_altar` is used by the drop-reveal + Divine-Intercession paths.
+# `_iter_equipped` centralises the "for every worn item, do X" loop that
+# both drop-reveal (locating cursed) and Divine Intercession failure
+# (smite: curse every worn item) need.
 # ----------------------------------------------------------------------------
-
-PRAYERS: list[dict] = [
-    {'id': 'pater_noster', 'name': 'Pater Noster',
-     'lore': 'The foundational prayer Christ taught his disciples. Universal.',
-     'specialty': False, 'cooldown_bonus_full': 0},
-    {'id': 'ave_maria', 'name': 'Ave Maria',
-     'lore': 'Intercession of the Mother of God; tradition invokes her in moments of mortal danger.',
-     'specialty': False, 'cooldown_bonus_full': 400},
-    {'id': 'memorare', 'name': 'Memorare',
-     'lore': 'The desperate prayer to Mary, said only when every other recourse has failed.',
-     'specialty': True, 'cooldown_bonus_full': 0,
-     'gate': lambda g: g.player.hp / max(1, g.player.max_hp) < 0.20,
-     'gate_reason': 'Said only at the brink — wait until you are gravely wounded.'},
-    {'id': 'saint_michael', 'name': 'Prayer to Saint Michael',
-     'lore': 'Invocation of the warrior archangel against the powers of darkness.',
-     'specialty': True, 'cooldown_bonus_full': 200,
-     'gate': lambda g: any(
-         m.alive and 'demon' in getattr(m, 'tags', []) and (m.x, m.y) in g.visible
-         for m in g.monsters),
-     'gate_reason': 'No demonic presence is in sight.'},
-    {'id': 'saint_raphael', 'name': 'Litany of Saint Raphael',
-     'lore': 'Invocation of the archangel of healing.',
-     'specialty': True, 'cooldown_bonus_full': 150},
-    {'id': 'saint_anthony', 'name': 'Litany of Saint Anthony',
-     'lore': 'Patron of lost things.',
-     'specialty': True, 'cooldown_bonus_full': 250,
-     'gate': lambda g: any(
-         not getattr(it, 'identified', True) for it in g.player.inventory),
-     'gate_reason': 'You carry nothing unknown.'},
-    {'id': 'anima_christi', 'name': 'Anima Christi',
-     'lore': 'Eucharistic prayer of consecration — the soul made one with Christ.',
-     'specialty': True, 'cooldown_bonus_full': 0,
-     'gate': lambda g: any(
-         m.alive and 'undead' in getattr(m, 'tags', []) and (m.x, m.y) in g.visible
-         for m in g.monsters),
-     'gate_reason': 'No undead are in sight.'},
-    {'id': 'confiteor', 'name': 'Confiteor',
-     'lore': 'The penitential rite — acknowledgment before grace. Spoken only at an altar.',
-     'specialty': False, 'cooldown_bonus_full': 0,
-     'gate': lambda g: _on_altar(g) and _any_cursed_worn(g.player),
-     'gate_reason': 'Speak this rite only at an altar — and only while bearing cursed gear.'},
-    {'id': 'benedictio', 'name': 'Benedictio',
-     'lore': 'The rite of blessing. Lay a worn or carried item upon the altar and beg consecration.',
-     'specialty': False, 'cooldown_bonus_full': 100,
-     'gate': lambda g: _on_altar(g) and _any_blessable_inventory(g.player),
-     'gate_reason': 'Stand at an altar with an unblessed item in hand.'},
-]
 
 
 def _on_altar(g) -> bool:
@@ -97,33 +65,26 @@ def _on_altar(g) -> bool:
         return False
 
 
-def _any_blessable_inventory(player) -> bool:
-    """True iff the player carries at least one BUC-bearing item that isn't blessed."""
-    for it in (player.inventory or []):
-        if hasattr(it, 'buc') and getattr(it, 'buc', '') != 'blessed':
-            return True
-    return False
-
-
-def _any_cursed_worn(player) -> bool:
-    """True if player has at least one worn/wielded cursed item."""
-    if player.weapon and getattr(player.weapon, 'buc', '') == 'cursed':
-        return True
-    if getattr(player, 'ranged_weapon', None) and getattr(player.ranged_weapon, 'buc', '') == 'cursed':
-        return True
-    if getattr(player, 'shield', None) and getattr(player.shield, 'buc', '') == 'cursed':
-        return True
-    for slot in (player.armor_slots or []):
-        if slot and getattr(slot, 'buc', '') == 'cursed':
-            return True
-    for acc in (getattr(player, 'accessory_slots', []) or []):
-        if acc and getattr(acc, 'buc', '') == 'cursed':
-            return True
-    if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'buc', '') == 'cursed':
-        return True
-    if getattr(player, 'belt_slot', None) and getattr(player.belt_slot, 'buc', '') == 'cursed':
-        return True
-    return False
+def _iter_equipped(player):
+    """Yield every currently-equipped item (weapon, ranged, shield, armor
+    slots, accessory slots, amulet, belt). Used by Divine Intercession
+    (smite path) and by simple-prayer chain-4 (find first worn cursed)."""
+    if getattr(player, 'weapon', None):
+        yield player.weapon
+    if getattr(player, 'ranged_weapon', None):
+        yield player.ranged_weapon
+    if getattr(player, 'shield', None):
+        yield player.shield
+    for slot in (getattr(player, 'armor_slots', None) or []):
+        if slot:
+            yield slot
+    for acc in (getattr(player, 'accessory_slots', None) or []):
+        if acc:
+            yield acc
+    if getattr(player, 'amulet_slot', None):
+        yield player.amulet_slot
+    if getattr(player, 'belt_slot', None):
+        yield player.belt_slot
 
 
 # Karma-tier verses (replaces the single Christian-only chain → verse table).
@@ -328,107 +289,66 @@ class DivineMixin:
         self.quiz_engine.start_quiz(**quiz_kwargs)
 
     # ------------------------------------------------------------------
-    # Altar BUC mechanics  (drop-on-altar bless / divine BUC status)
+    # Altar drop-reveal (v2.13.0)  — dropping an item on an ALTAR now
+    # REVEALS its BUC based on karma, with the reveal being TRUTHFUL at
+    # positive karma and DECEPTIVE at negative karma. Uncursed items
+    # produce no message either way. There is no quiz — the reveal is a
+    # passive divine action, not an intercession the player asks for.
+    # Positive-karma cursed items are also CONSUMED (the altar destroys
+    # the item and its curse). Called from ``_finish_drop`` in main.py.
     # ------------------------------------------------------------------
 
-    def _altar_buc_upgrade(self, item):
-        """Drop an item on an altar to attempt uncurse/bless via theology quiz."""
+    def _altar_drop_reveal(self, item):
+        """Handle the divine-reveal side effect of dropping ``item`` on an
+        ALTAR tile. Returns True if the item was CONSUMED by the altar
+        (positive-karma cursed → destroyed) so the caller can remove it
+        from ``ground_items``. Item mutation (buc_known) happens here.
+        """
+        # Items without a BUC field (quest items, gold, etc.) are silent.
+        if not hasattr(item, 'buc'):
+            return False
+        karma = int(getattr(self, 'karma', 0) or 0)
+        buc = getattr(item, 'buc', 'uncursed')
         display = self._display_name(item)
-        self.add_message(f"You place the {display} upon the altar...", 'info')
-        self.quiz_title = "ALTAR BLESSING -- THEOLOGY"
-        self.state = STATE_QUIZ
 
-        def on_complete(result):
-            self.state = STATE_PLAYER
-            chain = result.score
-            if chain == 0:
-                self.add_message("The altar remains cold and silent.", 'warning')
-            elif item.buc == 'cursed':
-                if chain >= 3:
-                    item.buc = 'blessed'
-                    item.buc_known = True
-                    self.add_message(
-                        f"Dark energy shatters — golden light suffuses the {display}! It is blessed!",
-                        'success')
-                else:
-                    item.buc = 'uncursed'
-                    item.buc_known = True
-                    self.add_message(
-                        f"The dark aura around the {display} dissipates! It is uncursed.",
-                        'success')
-            elif item.buc == 'uncursed':
-                if chain >= 3:
-                    item.buc = 'blessed'
-                    item.buc_known = True
-                    self.add_message(
-                        f"Golden light suffuses the {display}! It is blessed!",
-                        'success')
-                else:
-                    item.buc_known = True
-                    self.add_message(
-                        "The altar glows faintly but the blessing is insufficient.",
-                        'info')
-            self._advance_turn()
+        if karma == 0:
+            # Neutral: God gives no sign either way.
+            return False
 
-        self.quiz_engine.start_quiz(
-            mode='escalator_chain',
-            subject='theology',
-            tier=1,
-            callback=on_complete,
-            max_chain=5,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_quiz_extra_seconds('theology'),
-            base_seconds=self.player.get_quiz_timer('theology'),
-        )
-
-    def _altar_buc_identify(self):
-        """Stand on an altar and attempt to divine the BUC status of an item."""
-        # Gather items that have BUC but it's not yet known
-        candidates = [i for i in self.player.inventory
-                      if hasattr(i, 'buc') and not getattr(i, 'buc_known', False)]
-        if not candidates:
-            self.add_message("You kneel at the altar, but sense nothing to divine.", 'info')
-            return
-        # Use the first unidentified-BUC item (simple approach -- could add a menu later)
-        item = candidates[0]
-        display = self._display_name(item)
-        self.add_message(f"You place the {display} upon the altar and pray...", 'info')
-        self.quiz_title = "ALTAR DIVINATION  --  THEOLOGY"
-        self.state = STATE_QUIZ
-
-        def on_complete(result):
-            self.state = STATE_PLAYER
-            if result.success:
+        if karma > 0:
+            # Truthful reveal. Cursed items are consumed by the altar; the
+            # curse is lifted from the world. Blessed items have their BUC
+            # revealed and stay on the ground. Uncursed items are silent.
+            if buc == 'cursed':
+                self.add_message(
+                    f"The {display} is drawn into a black aura — the altar consumes it. "
+                    "The curse is lifted from the world.",
+                    'success')
+                return True   # caller removes from ground_items
+            if buc == 'blessed':
                 item.buc_known = True
-                _buc = item.buc
-                if _buc == 'blessed':
-                    self.add_message(
-                        f"The {display} glows with a warm golden light. It is blessed!", 'success'
-                    )
-                elif _buc == 'cursed':
-                    self.add_message(
-                        f"The {display} exudes a dark miasma. It is cursed!", 'warning'
-                    )
-                else:
-                    self.add_message(
-                        f"The {display} shows no special aura. It is uncursed.", 'info'
-                    )
-            else:
-                self.add_message("The altar remains silent. Your prayer goes unanswered.", 'warning')
-            self._advance_turn()
+                self.add_message(
+                    f"The {display} glows with a holy light — it is truly blessed.",
+                    'success')
+                return False
+            # uncursed → silent
+            return False
 
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='theology',
-            tier=1,
-            callback=on_complete,
-            threshold=1,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
-            base_seconds=self.player.get_quiz_timer('theology'),
-        )
+        # karma < 0: deceptive reveal — God does not help the wicked. The
+        # messages LIE. Real buc/buc_known are UNCHANGED so the player is
+        # tempted to trust a bad signal.
+        if buc == 'cursed':
+            self.add_message(
+                f"The {display} glows with a holy light — it must be blessed.",
+                'success')
+            return False
+        if buc == 'blessed':
+            self.add_message(
+                f"The {display} is drawn into a black aura — the altar consumes it.",
+                'warning')
+            return False
+        # uncursed → silent
+        return False
 
     # ------------------------------------------------------------------
     # Fountain
@@ -826,11 +746,27 @@ class DivineMixin:
             self.add_message("The ancient throne crumbles to dust.", 'info')
 
     # ------------------------------------------------------------------
-    # Prayer  (\ key -- theology escalator_chain quiz)
+    # Simple Prayer  (\ key -- theology escalator_chain quiz, one call)
     # ------------------------------------------------------------------
+    #
+    # v2.13.0 SIMPLIFICATION: the multi-prayer picker is gone. Pressing \\
+    # directly launches a theology escalator_chain quiz (max 5). Bonuses
+    # STACK at each chain tier:
+    #
+    #   chain >= 1 : restore SP  (~25% max)
+    #   chain >= 2 : + restore HP (~25% max)
+    #   chain >= 3 : + restore MP (~25% max)
+    #   chain >= 4 : + uncurse ONE worn cursed item, OR (if none worn cursed)
+    #                bless one random unblessed inventory item
+    #   chain >= 5 : + grant 'shielded' status for 20 turns (+3 AC)
+    #
+    # Karma modifies MAGNITUDES (not access) and is DOUBLED at altars.
+    # L100 holy fire is preserved (chain >= 1 at L100 altar still strips
+    # Abaddon's resistances for chain*2 turns).
+    # Karma-tiered verse still shows.
 
     def _start_pray(self):
-        """Open the prayer-selection menu (named intercessions).
+        """Launch simple prayer directly — theology escalator_chain, no menu.
         Cooldown-gated; L99 judgment altar still handled directly."""
         # Altar of the Last Judgment on L99: special one-time judgment
         if self.dungeon_level == 99:
@@ -850,57 +786,15 @@ class DivineMixin:
             )
             return
 
-        # Build the prayer menu — evaluate gates and karma refusals.
-        karma = getattr(self, 'karma', 0)
-        is_fallen = karma <= -6
-        is_damned = karma <= -10
-
-        # Damned: only Pater Noster is available.
-        # Fallen: specialty prayers refuse. Non-specialty + Confiteor stay.
-        items = []
-        for spec in PRAYERS:
-            entry = {
-                'id': spec['id'], 'name': spec['name'], 'lore': spec['lore'],
-                'specialty': spec.get('specialty', False),
-                'gate_reason': None,
-                'available': True,
-            }
-            # Situational gate
-            gate_fn = spec.get('gate')
-            if gate_fn is not None:
-                try:
-                    if not gate_fn(self):
-                        entry['available'] = False
-                        entry['gate_reason'] = spec.get('gate_reason', 'Not the right moment.')
-                except Exception:
-                    entry['available'] = False
-                    entry['gate_reason'] = 'Not the right moment.'
-            # Karma refusals
-            if entry['available']:
-                if is_damned and spec['id'] != 'pater_noster':
-                    entry['available'] = False
-                    entry['gate_reason'] = 'The Damned may speak only the Lord’s Prayer.'
-                elif is_fallen and entry['specialty']:
-                    entry['available'] = False
-                    entry['gate_reason'] = 'Examine your conscience.'
-            items.append(entry)
-
-        self._prayer_menu_items = items
-        self._prayer_sel = 0
-        self._at_altar = (self.dungeon.tiles[self.player.y][self.player.x] == ALTAR)
-        self.state = STATE_PRAY
-
-    def _begin_specific_prayer(self, prayer_id: str):
-        """After menu selection: start the theology escalator-chain quiz for
-        the chosen prayer; on completion dispatch to that prayer's handler."""
-        bonus_desc = " The altar amplifies your prayer." if self._at_altar else ""
-        self.add_message(f"You kneel and pray the {prayer_id.replace('_', ' ').title()}.{bonus_desc}", 'info')
-        self.quiz_title = f"PRAYER -- THEOLOGY ({prayer_id.replace('_', ' ').upper()})"
+        at_altar = _on_altar(self)
+        bonus_desc = " The altar amplifies your prayer." if at_altar else ""
+        self.add_message(f"You kneel and pray.{bonus_desc}", 'info')
+        self.quiz_title = "PRAYER -- THEOLOGY"
         self.state = STATE_QUIZ
 
         def on_complete(result):
             chain = result.score
-            self._resolve_specific_prayer(prayer_id, chain, self._at_altar)
+            self._resolve_simple_prayer(chain, at_altar)
             self.state = STATE_PLAYER
             _qs_pray = getattr(self, 'quirk_system', None)
             if _qs_pray and chain > 0:
@@ -920,26 +814,37 @@ class DivineMixin:
             base_seconds=self.player.get_quiz_timer('theology'),
         )
 
-    def _resolve_specific_prayer(self, prayer_id: str, chain: int, at_altar: bool = False):
-        """Dispatch by prayer_id. Each prayer scales effect by chain (1-8).
-        Saintly karma adds +1 effective chain (free amplification).
-        Powerful chain-7/8 outcomes extend the cooldown via cooldown_bonus_full."""
+    def _resolve_simple_prayer(self, chain: int, at_altar: bool = False):
+        """Apply the stacking simple-prayer bonuses.
+
+        - Each chain tier ADDS its bonus (they do not replace each other).
+        - Karma scales magnitudes; altar DOUBLES the karma delta (positive
+          AND negative). Chain-0 (or worse) plays the karma-tier silent-
+          heavens message.
+        - Cooldown = max(100, 100 + 25 * effective) where effective is
+          chain + (1 if at_altar else 0). Fisher King quirks halve.
+        - L100 altar preserves the holy-fire Abaddon-resist strip.
+        """
         if at_altar and not getattr(self, '_chronicle_first_prayer', False):
             self._chronicle_first_prayer = True
             self._log_chronicle("Prayed at an altar. Something listened. I felt it.")
 
         p = self.player
-        karma = getattr(self, 'karma', 0)
+        karma = int(getattr(self, 'karma', 0) or 0)
         karma_tier = _karma_tier(karma)
-        saintly_bonus = 1 if karma_tier == 'saintly' else 0
-        effective = chain + (1 if at_altar else 0) + saintly_bonus
+        effective = chain + (1 if at_altar else 0)
 
-        # L100 altar: holy fire strips Abaddon's resistances (any prayer triggers)
+        # L100 altar holy-fire strip — preserved from v2.12 behaviour.
         if self.dungeon_level == 100 and at_altar:
             pos = (p.x, p.y)
             if pos in self._l100_altars_used:
                 self.add_message("This altar's holy power has been spent.", 'info')
-            elif chain > 0:
+                # Still show a verse + set cooldown so the turn doesn't feel wasted.
+                self._show_prayer_verse(karma_tier, min(chain, 5))
+                p.prayer_cooldown = max(100, 100 + 25 * effective)
+                self._apply_prayer_cooldown_quirks()
+                return
+            if chain > 0:
                 turns = chain * 2
                 self.abaddon_resist_removed_turns += turns
                 abaddon = next((m for m in self.monsters
@@ -953,66 +858,120 @@ class DivineMixin:
                     self.add_message(
                         "Holy fire blazes forth but finds no target.", 'info')
                 self._l100_altars_used.add(pos)
-                self._show_prayer_verse(karma_tier, min(chain, 5))
-                p.prayer_cooldown = max(100, 80 + effective * 25)
-                return
-            else:
-                self.add_message("The heavens are silent.", 'info')
-                self._l100_altars_used.add(pos)
-                return
+                # Fall through so the stacking bonuses ALSO apply.
 
-        # Base cooldown — scales with how loudly the prayer was answered
-        p.prayer_cooldown = max(100, 80 + effective * 25)
+        # Cooldown baseline — set once, quirks halve at the end.
+        p.prayer_cooldown = max(100, 100 + 25 * effective)
 
-        if effective == 0:
-            # Heavens silent
+        if chain <= 0:
             if karma_tier == 'fallen':
                 self.add_message("The heavens are silent. Examine your conscience.", 'warning')
             else:
                 self.add_message("The heavens are silent.", 'info')
             self._apply_prayer_cooldown_quirks()
+            self._show_prayer_verse(karma_tier, 0 if karma_tier == 'fallen' else 1)
             return
 
-        # Prayer can freeze Death — desperate measure during the chase
-        if self.death_pursues and self.death_monster is not None:
-            freeze_turns = min(8, 3 + effective)
-            self.death_monster._frozen_turns = freeze_turns
-            self.add_message(
-                f"Holy light blazes! Death recoils, frozen for {freeze_turns} turns!", 'success')
-            self._log_chronicle(
-                f"Prayed while Death hunted me. It froze in place. {freeze_turns} turns. That's all I get.")
+        # Karma bonuses (base). At altar we DOUBLE the raw karma before applying.
+        karma_for_bonuses = karma * 2 if at_altar else karma
+        karma_bonus_sp   = max(-15, karma_for_bonuses)
+        karma_bonus_hp   = max(-15, karma_for_bonuses)
+        karma_bonus_mp   = max(-5,  karma_for_bonuses // 2)
+        karma_bonus_buff = max(-15, karma_for_bonuses * 3)
 
-        # Dispatch to per-prayer handler — each returns (messages, cooldown_bonus_full_fired)
-        dispatch = {
-            'pater_noster':   self._prayer_pater_noster,
-            'ave_maria':      self._prayer_ave_maria,
-            'memorare':       self._prayer_memorare,
-            'saint_michael':  self._prayer_saint_michael,
-            'saint_raphael':  self._prayer_saint_raphael,
-            'saint_anthony':  self._prayer_saint_anthony,
-            'anima_christi':  self._prayer_anima_christi,
-            'confiteor':      self._prayer_confiteor,
-            'benedictio':     self._prayer_benedictio,
-        }
-        handler = dispatch.get(prayer_id, self._prayer_pater_noster)
-        msgs, fired_full_effect = handler(effective, chain)
+        msgs: list[tuple[str, str]] = []
 
-        # Apply cooldown bonus if the prayer fired its strongest tier
-        if fired_full_effect:
-            spec = next((s for s in PRAYERS if s['id'] == prayer_id), None)
-            if spec:
-                p.prayer_cooldown += spec.get('cooldown_bonus_full', 0)
+        # ---- chain >= 1: SP restore ----
+        sp_amt = max(15, p.max_sp // 4) + karma_bonus_sp
+        if sp_amt > 0:
+            p.restore_sp(sp_amt)
+            msgs.append((f"Strength floods back into your limbs. (+{sp_amt} SP)", 'success'))
+        elif sp_amt < 0:
+            # Rare: negative karma so severe the "restore" nets a loss. Guard
+            # the SP floor at 0 and describe the failure honestly.
+            drain = min(p.sp, -sp_amt)
+            p.sp = max(0, p.sp - drain)
+            msgs.append((f"Your prayer is answered coldly — strength drains from you. (-{drain} SP)", 'warning'))
+
+        # ---- chain >= 2: HP restore ----
+        if chain >= 2:
+            hp_amt = max(15, p.max_hp // 4) + karma_bonus_hp
+            if hp_amt > 0:
+                gained = p.restore_hp(hp_amt)
+                if gained > 0:
+                    msgs.append((f"Warmth washes over your wounds. (+{gained} HP)", 'success'))
+                else:
+                    msgs.append(("Warmth washes over you, but your wounds refuse to close.", 'info'))
+            elif hp_amt < 0:
+                dmg = min(p.hp - 1, -hp_amt) if p.hp > 1 else 0
+                if dmg > 0:
+                    p.hp = max(1, p.hp - dmg)
+                    msgs.append((f"Divine coldness bites at you. (-{dmg} HP)", 'warning'))
+
+        # ---- chain >= 3: MP restore ----
+        if chain >= 3:
+            mp_amt = max(5, p.max_mp // 4) + karma_bonus_mp
+            if mp_amt > 0:
+                p.restore_mp(mp_amt)
+                msgs.append((f"Arcane wells refill within you. (+{mp_amt} MP)", 'success'))
+            elif mp_amt < 0:
+                drain = min(p.mp, -mp_amt)
+                p.mp = max(0, p.mp - drain)
+                msgs.append((f"The magic ebbs from you. (-{drain} MP)", 'warning'))
+
+        # ---- chain >= 4: uncurse OR bless ----
+        if chain >= 4:
+            # At karma <= -5 the gift is refused outright.
+            if karma <= -5:
+                msgs.append(("You offer a gift, but God turns away from it.", 'warning'))
+            else:
+                bless_count = 1 + max(0, karma // 3)
+                first_cursed = next(
+                    (it for it in _iter_equipped(p)
+                     if getattr(it, 'buc', '') == 'cursed'),
+                    None,
+                )
+                if first_cursed is not None:
+                    first_cursed.buc = 'uncursed'
+                    first_cursed.buc_known = True
+                    msgs.append(
+                        (f"The curse on your {getattr(first_cursed, 'name', 'gear')} is broken.",
+                         'success'))
+                else:
+                    candidates = [it for it in (p.inventory or [])
+                                  if hasattr(it, 'buc') and getattr(it, 'buc', '') != 'blessed']
+                    if candidates:
+                        chosen = random.sample(
+                            candidates, k=min(bless_count, len(candidates)))
+                        for it in chosen:
+                            it.buc = 'blessed'
+                            it.buc_known = True
+                        if len(chosen) == 1:
+                            msgs.append(
+                                (f"A holy light suffuses the {getattr(chosen[0], 'name', 'item')} in your pack.",
+                                 'success'))
+                        else:
+                            msgs.append(
+                                (f"A holy light suffuses {len(chosen)} items in your pack.",
+                                 'success'))
+                    else:
+                        msgs.append(("Every item you carry already bears a blessing.", 'info'))
+
+        # ---- chain >= 5: shielded buff ----
+        if chain >= 5:
+            duration = max(1, 20 + karma_bonus_buff)
+            p.add_effect('shielded', duration)
+            msgs.append(
+                (f"A translucent barrier settles around you. (shielded {duration}t)",
+                 'success'))
 
         self._apply_prayer_cooldown_quirks()
 
-        for m in msgs:
-            self.add_message(m, 'success')
+        for text, kind in msgs:
+            self.add_message(text, kind)
 
-        # Karma-tiered verse
-        # Cap verse lookup at chain 5 (the table's highest key); deeper
-        # effective values still grant mechanical bonuses but reuse the
-        # chain-5 verse for the player-visible flavor text.
-        self._show_prayer_verse(karma_tier, min(effective, 5))
+        # Karma-tiered verse. The table peaks at chain 5 (its highest key).
+        self._show_prayer_verse(karma_tier, min(chain, 5))
 
     def _apply_prayer_cooldown_quirks(self):
         """Fisher King quirks halve cooldown (stacking)."""
@@ -1031,339 +990,222 @@ class DivineMixin:
         self.add_message(f"  -- {citation}", 'info')
 
     # ------------------------------------------------------------------
-    # Per-prayer handlers — each returns (messages, fired_full_effect)
+    # Divine Intercession  (Shift+\ -- once per game, the "big ask")
     # ------------------------------------------------------------------
+    #
+    # NOT gated by prayer_cooldown. Gated by ``player.divine_intercession_used``
+    # — one attempt per RUN, success or failure. The Y/N prompt asks the
+    # player to confirm they want to spend their one intercession before
+    # any quiz launches. On confirmation:
+    #
+    #   On altar : escalator_chain theology tier 1 (max 5). Success needs
+    #              chain >= 1. Easier by design — the altar carries the
+    #              weight.
+    #   Off altar: threshold theology tier 5, threshold=5, total_qs=5 —
+    #              five T5 theology questions in a row, all must be right.
+    #
+    # Success -> full HP/MP/SP restore, all non-item debuffs cleared,
+    # ``invulnerable`` 10t, random unspawned Artifact placed at feet.
+    # Failure -> every equipped item cursed + buc_known True, ``blinded``
+    # 100t.
 
-    def _prayer_pater_noster(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """The Our Father — universal workhorse. 3 tiers based on effective
-        (chain + altar + saintly), with a 'perfect chain 5' extra reward."""
-        p = self.player
-        msgs = []
-        fired_full = False
-        if effective >= 5:
-            # Full HEAL + cleanse (the prayer's divine-restoration identity), but
-            # SP is a strong -- not total -- refill. Pater Noster used to fully
-            # restore SP, which scales with max_sp and so outran cooking (a flat
-            # 50-120) at depth; SP is now cooking's domain, prayer is HP/cleanse.
-            p.hp = p.max_hp
-            sp_gain = int(p.max_sp * 0.6)
-            p.sp = min(p.max_sp, p.sp + sp_gain)
-            bad = ['poisoned', 'paralyzed', 'confused', 'bleeding', 'blinded',
-                   'sleeping', 'slowed', 'weakened']
-            for e in bad:
-                p.status_effects.pop(e, None)
-            msgs.append(f"A warm light washes over you. Fully healed and cleansed! (+{sp_gain} SP)")
-            fired_full = True
-            # Perfect chain (raw 5): the rare permanent boon, up to 3 times per run
-            if raw_chain >= 5 and p.prayer_boon_count < 3:
-                p.apply_stat_bonus('WIS', 1)
-                p.prayer_boon_count += 1
-                msgs.append("Divine light fills you. Your wisdom is permanently increased! (WIS +1)")
-        elif effective >= 3:
-            sp_gain = int(p.max_sp * 0.35)
-            heal = p.max_hp // 3
-            p.sp = min(p.max_sp, p.sp + sp_gain)
-            p.hp = min(p.max_hp, p.hp + heal)
-            # Try to lift a major status
-            bad = ['poisoned', 'paralyzed', 'blinded']
-            removed = next((e for e in bad if p.has_effect(e)), None)
-            if removed:
-                p.status_effects.pop(removed, None)
-                msgs.append(f"Your spirit is renewed. (+{sp_gain} SP, +{heal} HP, lifted {removed})")
+    def _start_divine_intercession(self):
+        """Kick off the Y/N confirmation for Divine Intercession. Once-per-run
+        gate is checked HERE so a second press wastes no state."""
+        if getattr(self.player, 'divine_intercession_used', False):
+            self.add_message(
+                "You have already sought intercession this run. God's ear is not for spam.",
+                'warning')
+            return
+        # Enter the confirm-prompt state; rendering + input live in
+        # game_render / game_input.
+        self.state = STATE_INTERCESSION_PROMPT
+
+    def _confirm_divine_intercession(self, accept: bool):
+        """Y/N handler for Divine Intercession. ``accept`` False -> silent
+        cancel. ``accept`` True -> mark the run used and launch the quiz
+        (altar-easy or off-altar-hard). Called from game_input."""
+        if not accept:
+            self.state = STATE_PLAYER
+            self.add_message("You step back from the altar's edge.", 'info')
+            return
+        # Belt-and-braces: recheck the once-per-run gate.
+        if getattr(self.player, 'divine_intercession_used', False):
+            self.state = STATE_PLAYER
+            self.add_message(
+                "You have already sought intercession this run. God's ear is not for spam.",
+                'warning')
+            return
+        # LOCK the attempt now — even a bail-out via failed quiz counts.
+        self.player.divine_intercession_used = True
+
+        at_altar = _on_altar(self)
+        self.add_message(
+            "You raise your voice to Heaven and beg for intercession...",
+            'info')
+        self.quiz_title = "DIVINE INTERCESSION -- THEOLOGY"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            self.state = STATE_PLAYER
+            # For altar path (escalator_chain), success = chain >= 1.
+            # For off-altar (threshold=5), success = result.success.
+            if at_altar:
+                success = getattr(result, 'score', 0) >= 1
             else:
-                msgs.append(f"Your spirit is renewed. (+{sp_gain} SP, +{heal} HP)")
-        else:
-            sp_gain = p.max_sp // 10
-            p.sp = min(p.max_sp, p.sp + sp_gain)
-            msgs.append(f"A gentle comfort washes over you. (+{sp_gain} SP)")
-        return msgs, fired_full
-
-    def _prayer_ave_maria(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Hail Mary — Marian intercession. life_save granted at full."""
-        p = self.player
-        msgs = []
-        fired_full = False
-        if effective >= 5:
-            p.add_effect('shielded', 20)
-            p.add_effect('life_save', -1)   # one-shot revive
-            msgs.append("The Virgin's protection settles upon you — shielded, and one death is forgiven.")
-            fired_full = True
-        elif effective >= 3:
-            p.add_effect('shielded', 15)
-            msgs.append("Mary's grace surrounds you — shielded for 15 turns.")
-        else:
-            p.add_effect('shielded', 5)
-            msgs.append("A brief moment of protection — shielded for 5 turns.")
-        return msgs, fired_full
-
-    def _prayer_memorare(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """The desperate prayer to Mary — gated on HP < 20%.
-        Full effect: full heal + paralyze adjacent. No time_freeze."""
-        p = self.player
-        msgs = []
-        if effective >= 5:
-            p.hp = p.max_hp
-            paralyzed = 0
-            for m in self.monsters:
-                if not m.alive: continue
-                if abs(m.x - p.x) <= 1 and abs(m.y - p.y) <= 1:
-                    m.add_effect('paralyzed', 3)
-                    paralyzed += 1
-            msgs.append(f"Mary herself answers — full restoration; {paralyzed} foes paralyzed for 3 turns.")
-        elif effective >= 3:
-            heal = p.max_hp // 2
-            p.hp = min(p.max_hp, p.hp + heal)
-            slowed = 0
-            for m in self.monsters:
-                if not m.alive: continue
-                if abs(m.x - p.x) <= 1 and abs(m.y - p.y) <= 1:
-                    m.add_effect('slowed', 3)
-                    slowed += 1
-            msgs.append(f"A reprieve — {heal} HP restored; {slowed} adjacent foes slowed.")
-        else:
-            heal = p.max_hp // 4
-            p.hp = min(p.max_hp, p.hp + heal)
-            msgs.append(f"The Virgin grants a small breath — {heal} HP restored.")
-        return msgs, False
-
-    def _prayer_saint_michael(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Smite visible demons — scope grows with chain."""
-        p = self.player
-        msgs = []
-        fired_full = False
-        demons = [m for m in self.monsters
-                  if m.alive and 'demon' in getattr(m, 'tags', [])
-                  and (m.x, m.y) in self.visible]
-        if not demons:
-            msgs.append("The archangel's sword finds no demon to strike.")
-            return msgs, False
-        damage = max(1, p.INT * max(1, effective))
-        if effective >= 5:
-            targets = demons
-            fired_full = True
-        elif effective >= 3:
-            targets = sorted(demons, key=lambda m: m.hp)[:2]
-        else:
-            targets = [min(demons, key=lambda m: abs(m.x - p.x) + abs(m.y - p.y))]
-        kills = 0
-        for tgt in targets:
-            tgt.take_damage(damage, 'holy')
-            if not tgt.alive:
-                self._on_monster_killed(tgt)
-                kills += 1
-        msgs.append(f"Saint Michael's sword smites {len(targets)} demon(s) for {damage} holy damage each! ({kills} slain)")
-        return msgs, fired_full
-
-    def _prayer_saint_raphael(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Healing archangel — scope grows with chain."""
-        p = self.player
-        msgs = []
-        fired_full = False
-        cured = []
-        if effective >= 5:
-            for e in ['poisoned', 'paralyzed', 'confused', 'bleeding', 'blinded',
-                      'sleeping', 'slowed', 'weakened', 'cursed', 'diseased', 'burning']:
-                if p.has_effect(e):
-                    p.status_effects.pop(e, None)
-                    cured.append(e)
-            p.hp = p.max_hp
-            msgs.append("Raphael's healing flame: full restoration"
-                        + (f" + cured {', '.join(cured)}." if cured else "."))
-            fired_full = True
-        elif effective >= 3:
-            for e in ['poisoned', 'diseased', 'bleeding']:
-                if p.has_effect(e):
-                    p.status_effects.pop(e, None)
-                    cured.append(e)
-            heal = p.max_hp // 2
-            p.hp = min(p.max_hp, p.hp + heal)
-            msgs.append(f"Raphael steadies your wounds — {heal} HP restored"
-                        + (f", cured {', '.join(cured)}." if cured else "."))
-        else:
-            heal = p.max_hp // 5
-            p.hp = min(p.max_hp, p.hp + heal)
-            if p.has_effect('poisoned'):
-                p.status_effects.pop('poisoned', None)
-                cured.append('poisoned')
-            msgs.append(f"A small mercy — {heal} HP restored"
-                        + (f", cured {cured[0]}." if cured else "."))
-        return msgs, fired_full
-
-    def _prayer_saint_anthony(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Identify unknown items — count scales with chain."""
-        p = self.player
-        msgs = []
-        fired_full = False
-        unknown = [it for it in p.inventory if not getattr(it, 'identified', True)]
-        if not unknown:
-            return ["You carry nothing unknown."], False
-        if effective >= 5:
-            count = len(unknown)
-            fired_full = True
-        elif effective >= 3:
-            count = min(len(unknown), 3)
-        else:
-            count = min(len(unknown), 1)
-        for it in unknown[:count]:
-            it.identified = True
-            if hasattr(p, 'known_item_ids'):
-                p.known_item_ids.add(getattr(it, 'id', ''))
-        msgs.append(f"Saint Anthony reveals {count} hidden thing{'s' if count != 1 else ''} in your pack.")
-        return msgs, fired_full
-
-    def _prayer_anima_christi(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Paralyze nearby undead — scope grows with chain."""
-        p = self.player
-        msgs = []
-        fired_full = False
-        undead = [m for m in self.monsters
-                  if m.alive and 'undead' in getattr(m, 'tags', [])
-                  and (m.x, m.y) in self.visible]
-        if not undead:
-            return ["No undead respond to the Soul of Christ."], False
-        if effective >= 5:
-            targets = [m for m in undead if abs(m.x - p.x) <= 5 and abs(m.y - p.y) <= 5]
-            duration = 5
-            fired_full = True
-        elif effective >= 3:
-            targets = sorted(undead, key=lambda m: abs(m.x - p.x) + abs(m.y - p.y))[:2]
-            duration = 4
-        else:
-            targets = [min(undead, key=lambda m: abs(m.x - p.x) + abs(m.y - p.y))]
-            duration = 3
-        for tgt in targets:
-            tgt.add_effect('paralyzed', duration)
-        msgs.append(f"The Soul of Christ paralyzes {len(targets)} undead for {duration} turns.")
-        return msgs, fired_full
-
-    def _prayer_confiteor(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Uncurse worn cursed items — count scales with chain.
-        No karma effect (sin reduction explicitly out of scope)."""
-        p = self.player
-        cursed_items = []
-        for slot in (p.armor_slots or []):
-            if slot and getattr(slot, 'buc', '') == 'cursed':
-                cursed_items.append(slot)
-        if p.shield and getattr(p.shield, 'buc', '') == 'cursed':
-            cursed_items.append(p.shield)
-        if p.weapon and getattr(p.weapon, 'buc', '') == 'cursed':
-            cursed_items.append(p.weapon)
-        if getattr(p, 'ranged_weapon', None) and getattr(p.ranged_weapon, 'buc', '') == 'cursed':
-            cursed_items.append(p.ranged_weapon)
-        for acc in (getattr(p, 'accessory_slots', []) or []):
-            if acc and getattr(acc, 'buc', '') == 'cursed':
-                cursed_items.append(acc)
-        if getattr(p, 'amulet_slot', None) and getattr(p.amulet_slot, 'buc', '') == 'cursed':
-            cursed_items.append(p.amulet_slot)
-        if getattr(p, 'belt_slot', None) and getattr(p.belt_slot, 'buc', '') == 'cursed':
-            cursed_items.append(p.belt_slot)
-        if not cursed_items:
-            return ["You wear no cursed gear."], False
-        if effective >= 5:
-            n = len(cursed_items)
-            for it in cursed_items:
-                it.buc = 'uncursed'
-                it.buc_known = True
-            sp_gain = p.max_sp // 4
-            p.sp = min(p.max_sp, p.sp + sp_gain)
-            return [f"All {n} cursed items purified. (+{sp_gain} SP)"], True
-        elif effective >= 3:
-            n = min(len(cursed_items), 3)
-            for it in cursed_items[:n]:
-                it.buc = 'uncursed'
-                it.buc_known = True
-            return [f"{n} cursed item{'s' if n != 1 else ''} purified."], False
-        else:
-            it = cursed_items[0]
-            it.buc = 'uncursed'
-            it.buc_known = True
-            return [f"The curse on your {it.name} is broken."], False
-
-    def _prayer_benedictio(self, effective: int, raw_chain: int) -> tuple[list, bool]:
-        """Bless items at the altar — count + tier scales with chain.
-
-        Priority queue: worn cursed → worn uncursed → inventory cursed →
-        inventory uncursed. Cursed items are uncursed; uncursed items are
-        blessed. At full chain, BUC status of every remaining item in
-        inventory is revealed as a bonus.
-
-        Available only at altars (see PRAYERS gate); altar-only by design.
-        """
-        p = self.player
-        msgs = []
-        fired_full = False
-
-        worn_cursed: list = []
-        worn_unc: list = []
-        inv_cursed: list = []
-        inv_unc: list = []
-        worn_slots = []
-        for slot in (p.armor_slots or []):
-            if slot: worn_slots.append(slot)
-        if p.shield: worn_slots.append(p.shield)
-        if p.weapon: worn_slots.append(p.weapon)
-        if getattr(p, 'ranged_weapon', None): worn_slots.append(p.ranged_weapon)
-        for acc in (getattr(p, 'accessory_slots', []) or []):
-            if acc: worn_slots.append(acc)
-        if getattr(p, 'amulet_slot', None): worn_slots.append(p.amulet_slot)
-        if getattr(p, 'belt_slot', None): worn_slots.append(p.belt_slot)
-        for it in worn_slots:
-            buc = getattr(it, 'buc', None)
-            if buc == 'cursed':
-                worn_cursed.append(it)
-            elif buc == 'uncursed':
-                worn_unc.append(it)
-        for it in (p.inventory or []):
-            if not hasattr(it, 'buc'):
-                continue
-            buc = getattr(it, 'buc', None)
-            if buc == 'cursed':
-                inv_cursed.append(it)
-            elif buc == 'uncursed':
-                inv_unc.append(it)
-
-        queue = worn_cursed + worn_unc + inv_cursed + inv_unc
-        if not queue:
-            return ["Every item you carry already bears a blessing."], False
-
-        # Tier ladder: 1-2 → 1 item, 3-4 → 2 items, 5+ → 3 items.
-        if effective >= 5:
-            cap = 3
-            fired_full = True
-        elif effective >= 3:
-            cap = 2
-        else:
-            cap = 1
-
-        blessed_n = 0
-        purified_n = 0
-        for it in queue[:cap]:
-            buc = getattr(it, 'buc', None)
-            if buc == 'cursed':
-                it.buc = 'uncursed'
-                it.buc_known = True
-                purified_n += 1
+                success = bool(getattr(result, 'success', False))
+            if success:
+                self._resolve_intercession_success()
             else:
-                it.buc = 'blessed'
+                self._resolve_intercession_failure()
+            self._advance_turn()
+
+        if at_altar:
+            self.quiz_engine.start_quiz(
+                mode='escalator_chain',
+                subject='theology',
+                tier=1,
+                callback=on_complete,
+                max_chain=5,
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_quiz_extra_seconds('theology'),
+                base_seconds=self.player.get_quiz_timer('theology'),
+            )
+        else:
+            self.quiz_engine.start_quiz(
+                mode='threshold',
+                subject='theology',
+                tier=5,
+                callback=on_complete,
+                threshold=5,
+                total_qs=5,
+                wisdom=self.player.WIS,
+                timer_modifier=self.player.get_quiz_timer_modifier(),
+                extra_seconds=self.player.get_quiz_extra_seconds('theology'),
+                base_seconds=self.player.get_quiz_timer('theology'),
+            )
+
+    # Non-item debuffs cleared on successful intercession. In practice this
+    # is EVERY known debuff — the intent is "poisons flee, wounds close",
+    # not "except this cursed ring". Item-bound curse effects are on the
+    # ITEM, not in status_effects, so this iterates ALL active statuses in
+    # DEBUFFS.
+    def _resolve_intercession_success(self):
+        """Full-restore + invulnerable 10t + spawn random artifact at feet."""
+        p = self.player
+        p.hp = p.max_hp
+        p.mp = p.max_mp
+        p.sp = p.max_sp
+        # Clear every DEBUFF-registered status effect. Item-bound curse
+        # slots (if any exist) are stored on the item itself, not in
+        # status_effects, so this is safe.
+        try:
+            from status_effects import DEBUFFS
+            for eff in list(p.status_effects.keys()):
+                if eff in DEBUFFS:
+                    p.status_effects.pop(eff, None)
+        except ImportError:
+            pass
+        # Grant invulnerable for 10 turns.
+        p.add_effect('invulnerable', 10)
+        # Spawn artifact at player feet.
+        art_name = self._spawn_intercession_artifact(p.x, p.y)
+        if art_name:
+            self.add_message(
+                f"THE HEAVENS OPEN. God's grace pours over you — wounds close, "
+                f"poisons flee, and a {art_name} materializes at your feet, "
+                "gift from the Most High.",
+                'loot')
+            self._log_chronicle(
+                f"Sought divine intercession and was answered. Fully restored. "
+                f"God set a {art_name} at my feet."
+            )
+        else:
+            # No artifact could be found even from unique pool — should be
+            # extremely rare. Still announce the heal.
+            self.add_message(
+                "THE HEAVENS OPEN. God's grace pours over you — wounds close, "
+                "poisons flee, and a divine calm settles on you.",
+                'loot')
+            self._log_chronicle(
+                "Sought divine intercession and was answered. Fully restored. "
+                "No relic came — the Most High set peace at my feet instead."
+            )
+
+    def _resolve_intercession_failure(self):
+        """SMITE: curse every equipped item + blinded 100t."""
+        p = self.player
+        for it in _iter_equipped(p):
+            if hasattr(it, 'buc'):
+                it.buc = 'cursed'
                 it.buc_known = True
-                blessed_n += 1
+        p.add_effect('blinded', 100)
+        self.add_message(
+            "THE HEAVENS DARKEN. God strikes you for your arrogance — "
+            "your gear reeks of curse and your eyes go dark.",
+            'danger')
+        self._log_chronicle(
+            "Sought intercession without the merit. God smote me. "
+            "Everything I wore turned cursed. I could not see for a hundred turns."
+        )
 
-        parts = []
-        if blessed_n:
-            parts.append(f"{blessed_n} item{'s' if blessed_n != 1 else ''} blessed")
-        if purified_n:
-            parts.append(f"{purified_n} curse{'s' if purified_n != 1 else ''} purified")
-        msgs.append("The altar glows: " + ", ".join(parts) + ".")
+    def _spawn_intercession_artifact(self, px: int, py: int) -> str:
+        """Place a random UNSPAWNED Artifact at (px, py) and return its name.
 
-        # Full-tier bonus: reveal BUC on every remaining inventory item.
-        if fired_full:
-            revealed = 0
-            for it in (p.inventory or []):
-                if hasattr(it, 'buc') and not getattr(it, 'buc_known', False):
-                    it.buc_known = True
-                    revealed += 1
-            if revealed:
-                msgs.append(f"A second blaze of light reveals the aura of {revealed} more items.")
+        Prefers artifacts not currently on the map or in the player's
+        inventory (avoids duplicating a unique already in play). Falls back
+        to any is_unique item if the artifact pool is exhausted. Returns
+        the item name (for the announce/chronicle message) or '' on total
+        failure."""
+        from items import Artifact, load_items, copy_at
 
-        return msgs, fired_full
+        def _in_play(item_id: str) -> bool:
+            for g in getattr(self, 'ground_items', []) or []:
+                if getattr(g, 'id', '') == item_id:
+                    return True
+            for it in getattr(self.player, 'inventory', []) or []:
+                if getattr(it, 'id', '') == item_id:
+                    return True
+            for it in _iter_equipped(self.player):
+                if getattr(it, 'id', '') == item_id:
+                    return True
+            return False
 
+        # Primary pool: artifact.json entries not already in play.
+        try:
+            templates = load_items('artifact')
+        except (FileNotFoundError, Exception):
+            templates = []
+        pool = [t for t in templates if not _in_play(getattr(t, 'id', ''))]
+        if pool:
+            tpl = random.choice(pool)
+            inst = copy_at(tpl, px, py)
+            inst.identified = True
+            if hasattr(inst, 'buc'):
+                inst.buc = 'blessed'
+                inst.buc_known = True
+            self.ground_items.append(inst)
+            return getattr(inst, 'name', 'divine artifact')
+
+        # Fallback: any is_unique item across the main equippable classes.
+        fallback_pool: list = []
+        for cls in ('weapon', 'armor', 'shield', 'accessory'):
+            try:
+                fallback_pool.extend(
+                    t for t in load_items(cls)
+                    if getattr(t, 'is_unique', False)
+                    and not _in_play(getattr(t, 'id', ''))
+                )
+            except (FileNotFoundError, Exception):
+                pass
+        if fallback_pool:
+            tpl = random.choice(fallback_pool)
+            inst = copy_at(tpl, px, py)
+            inst.identified = True
+            if hasattr(inst, 'buc'):
+                inst.buc = 'blessed'
+                inst.buc_known = True
+            self.ground_items.append(inst)
+            return getattr(inst, 'name', 'divine relic')
+        return ''

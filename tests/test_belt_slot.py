@@ -149,13 +149,31 @@ def test_equip_menu_lists_belt_slot():
 
 
 def test_uncurse_scan_includes_belt():
-    """The Confiteor (uncurse) prayer must scan the belt slot for
-    cursed gear too, otherwise a cursed belt would be un-removable."""
-    import inspect
+    """v2.13.0: the simple-prayer chain-4 tier now uncurses the first
+    worn cursed item via ``_iter_equipped``. That helper MUST yield the
+    belt slot too, otherwise a cursed belt would never come off. This
+    was formerly the Confiteor prayer's job before the v2.13.0
+    simplification retired the 9-prayer picker."""
     import game_divine
-    src = inspect.getsource(game_divine)
-    # The scan code references belt_slot at the same level as amulet_slot
-    assert "belt_slot" in src, (
-        "uncurse scan in game_divine.py must inspect belt_slot for "
-        "cursed gear (mirror of amulet_slot handling)"
+
+    class _StubItem:
+        def __init__(self, name):
+            self.name = name
+
+    class _P:
+        weapon = None
+        ranged_weapon = None
+        shield = None
+        armor_slots = [None] * 8
+        accessory_slots = [None] * 4
+        amulet_slot = None
+        belt_slot = None
+
+    p = _P()
+    belt = _StubItem('girdle')
+    p.belt_slot = belt
+    yielded = list(game_divine._iter_equipped(p))
+    assert belt in yielded, (
+        "v2.13.0 _iter_equipped must yield belt_slot so a cursed belt "
+        "is reachable by the simple-prayer uncurse and by intercession-smite"
     )

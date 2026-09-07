@@ -93,6 +93,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'reflecting':         ('Reflecting',         (220, 220, 180), '50% chance to reflect monster status attacks'),
     'phasing':            ('Phasing',            (180, 180, 220), 'Can walk through walls'),
     'time_stopped':       ('Time Stop',          (245, 220, 100), 'Time is frozen -- monsters cannot act'),
+    'invulnerable':       ('Invulnerable',       (255, 240, 160), 'Divine grace — all incoming damage blocked'),
     # ---- Resistances (can be timed or permanent) ----
     'fire_resist':        ('Fire Resist',        (245, 130,  50), 'Immune to fire damage'),
     'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Immune to cold damage'),
@@ -120,6 +121,7 @@ BUFFS: frozenset = frozenset({
     'hasted', 'invisible', 'levitating', 'regenerating', 'telepathy',
     'warning', 'searching', 'clairvoyant', 'displacement', 'heroism', 'brilliance',
     'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped', 'blessed',
+    'invulnerable',
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
     'life_save', 'sustained', 'truesight', 'dark_vision', 'identify_sight', 'spell_turning',
@@ -307,6 +309,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'reflecting':     ('Your reflective aura fades.',            'info'),
     'phasing':        ('You feel solid again.',                  'info'),
     'time_stopped':   ('Time resumes its flow.',                 'info'),
+    'invulnerable':   ('The divine shield around you fades.',    'info'),
     'blessed':        ('The divine clarity fades.',              'info'),
     'feared':         ('Your fear subsides.',                    'info'),
     'charmed':        ('The charm over you breaks.',             'info'),

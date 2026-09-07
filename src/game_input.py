@@ -36,7 +36,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_PRAY, STATE_PET_NAME_INPUT,
+    STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT, STATE_ASCENSION,
 )
@@ -106,7 +106,7 @@ class InputMixin:
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
                               STATE_PET_MENU, STATE_ASCENSION,
-                              STATE_PRAY, STATE_JUDGMENT):
+                              STATE_INTERCESSION_PROMPT, STATE_JUDGMENT):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 if self.state == STATE_TARGET:
@@ -231,8 +231,8 @@ class InputMixin:
             self._quaff_menu_input(key)
         elif self.state == STATE_THROW_MENU:
             self._throw_menu_input(key)
-        elif self.state == STATE_PRAY:
-            self._prayer_menu_input(key)
+        elif self.state == STATE_INTERCESSION_PROMPT:
+            self._intercession_prompt_input(key)
         elif self.state == STATE_HELP:
             self._help_input(key)
         elif self.state == STATE_LORE:
@@ -407,7 +407,18 @@ class InputMixin:
             self._open_throw_menu()
             return
         if key == pygame.K_BACKSLASH:
-            self._start_pray()
+            # Shift+\ = Divine Intercession (once per run, big-ask theology
+            # quiz); plain \ = simple prayer. Some layouts don't fire
+            # K_BACKSLASH with SHIFT held, so we ALSO accept the '|' key
+            # further down (see the event.unicode branch in handle_event).
+            try:
+                mods = pygame.key.get_mods()
+            except pygame.error:
+                mods = 0
+            if mods & pygame.KMOD_SHIFT:
+                self._start_divine_intercession()
+            else:
+                self._start_pray()
             return
         if key == pygame.K_n:
             self._start_recall_lore()
@@ -439,10 +450,12 @@ class InputMixin:
             elif tile in (FOUNTAIN, GRAVE, THRONE):
                 self._interact_tile()
             elif tile == ALTAR:
-                # D = DROP, even on an altar. It used to auto-launch a theology
-                # quiz against the first unidentified item (_altar_buc_identify),
-                # which hijacked dropping. Altars are for PRAYER (the pray key,
-                # amplified here); dropping/unequipping stay friction-free.
+                # D = DROP, even on an altar. v2.13.0: dropping on an altar
+                # now triggers a passive BUC reveal (game_divine
+                # ._altar_drop_reveal): truthful at karma>0 (cursed items
+                # consumed), deceptive at karma<0, silent at karma==0.
+                # Prayer (\ / Shift+\) still fires theology quizzes; drop
+                # is friction-free.
                 self._open_drop_menu()
             else:
                 # Adjacent to Odin's Altar with items — allow drop for throw-over
@@ -948,6 +961,17 @@ class InputMixin:
         """Dismiss the judgment result overlay."""
         if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
+
+    # ------------------------------------------------------------------
+    # Divine Intercession Y/N confirm prompt (v2.13.0)
+    # ------------------------------------------------------------------
+
+    def _intercession_prompt_input(self, key: int):
+        """Y = launch the Divine Intercession quiz; N/ESC = silent cancel."""
+        if key == pygame.K_y:
+            self._confirm_divine_intercession(True)
+        elif key in (pygame.K_n, pygame.K_ESCAPE):
+            self._confirm_divine_intercession(False)
 
     # ------------------------------------------------------------------
     # Targeting cursor input

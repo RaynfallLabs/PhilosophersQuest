@@ -124,14 +124,18 @@ def test_draw_menu_icon_branch_uses_wrap_detail():
     )
 
 
-def test_prayer_menu_opts_into_wrap_detail():
-    """`_draw_prayer_menu` must pass `wrap_detail=True` so the lore
-    descriptions stop being chopped with '...'."""
+def test_prayer_menu_retired_v2_13():
+    """v2.13.0 (2026-09-06): the 9-prayer picker was removed; the
+    controller now launches a single theology quiz directly on \\
+    and a Y/N confirm popup on Shift+\\. There is no _draw_prayer_menu
+    anymore -- if this test ever fails as a KeyError/AttributeError it
+    likely means the old picker crept back in."""
     from game_render import RenderMixin
-    src = inspect.getsource(RenderMixin._draw_prayer_menu)
-    assert "wrap_detail=True" in src, (
-        "_draw_prayer_menu must opt into wrap_detail so prayer lore "
-        "isn't truncated mid-sentence"
+    assert not hasattr(RenderMixin, '_draw_prayer_menu'), (
+        "v2.13.0: _draw_prayer_menu must not be reintroduced"
+    )
+    assert hasattr(RenderMixin, '_draw_intercession_prompt'), (
+        "v2.13.0: _draw_intercession_prompt must exist"
     )
 
 

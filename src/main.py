@@ -6643,11 +6643,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if (px, py) == vidar_pos:
                 self._check_vidar_altar(px, py)
 
-        # --- BUC altar mechanic: drop item on altar to uncurse/bless ---
+        # --- v2.13.0 altar drop-reveal: karma-gated BUC reveal on drop ---
+        # Truthful at karma > 0 (cursed items are also consumed), deceptive
+        # at karma < 0 (God does not help the wicked), silent at karma == 0.
+        # Handled entirely in game_divine._altar_drop_reveal; no quiz.
         tile = self.dungeon.tiles[self.player.y][self.player.x]
-        if tile == ALTAR and hasattr(item, 'buc') and item.buc != 'blessed':
-            self._altar_buc_upgrade(item)
-            return  # quiz callback handles _advance_turn
+        if tile == ALTAR and hasattr(item, 'buc'):
+            consumed = self._altar_drop_reveal(item)
+            if consumed and item in self.ground_items:
+                self.ground_items.remove(item)
 
         self._advance_turn()
 

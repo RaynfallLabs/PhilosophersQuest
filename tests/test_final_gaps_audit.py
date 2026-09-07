@@ -246,34 +246,40 @@ def test_food_system_called_from_main_or_game_menus():
 
 
 # ---------------------------------------------------------------------------
-# 4. Prayer system
+# 4. Prayer system  (v2.13.0 SIMPLIFICATION, 2026-09-06)
 # ---------------------------------------------------------------------------
 
-EXPECTED_PRAYERS = {
-    'pater_noster', 'ave_maria', 'memorare', 'saint_michael',
-    'saint_raphael', 'saint_anthony', 'anima_christi',
-    'confiteor', 'benedictio',
-}
-
-
-def test_all_expected_prayers_have_handlers():
+def test_v2_13_simple_prayer_wired():
+    """Simple prayer (\\) launches a theology escalator_chain and resolves
+    via _resolve_simple_prayer."""
     src = _src('game_divine')
-    for pid in EXPECTED_PRAYERS:
-        assert f"_prayer_{pid}" in src, f"Prayer handler {pid} missing"
+    assert '_start_pray' in src
+    assert '_resolve_simple_prayer' in src
+    assert "subject='theology'" in src
 
 
-def test_prayer_dispatch_dict_complete():
+def test_v2_13_divine_intercession_wired():
+    """Shift+\\ launches Divine Intercession -- once-per-run big ask."""
     src = _src('game_divine')
-    for pid in EXPECTED_PRAYERS:
-        assert f"'{pid}':" in src, f"Prayer {pid} missing from dispatch dict"
+    assert '_start_divine_intercession' in src
+    assert '_confirm_divine_intercession' in src
+    assert '_resolve_intercession_success' in src
+    assert '_resolve_intercession_failure' in src
+    assert '_spawn_intercession_artifact' in src
+    assert 'divine_intercession_used' in src
 
 
-def test_confiteor_benedictio_altar_only_per_recent_rework():
-    """D1 user-fix 2026-05-26: confiteor + benedictio require altar."""
+def test_v2_13_altar_drop_reveal_wired():
+    """Drop-on-altar reveals BUC based on karma. The old chain-mode
+    altar quiz was retired — the only references left should be in the
+    module docstring's history note."""
     src = _src('game_divine')
-    # Both prayer handlers must exist
-    assert "_prayer_confiteor" in src
-    assert "_prayer_benedictio" in src
+    assert '_altar_drop_reveal' in src
+    # Old chain-mode BUC upgrade must be gone as a callable — the docstring
+    # can still reference the name for the "removed in v2.13" history note.
+    from game_divine import DivineMixin
+    assert not hasattr(DivineMixin, '_altar_buc_upgrade')
+    assert not hasattr(DivineMixin, '_altar_buc_identify')
 
 
 def test_prayer_cooldown_wired():
@@ -284,8 +290,9 @@ def test_prayer_cooldown_wired():
 def test_pray_input_key_wired():
     src = _src('game_input')
     assert "_start_pray" in src
-    # Pray key is K_BACKSLASH per game_input.py:380
+    # Both plain \\ and Shift+\\ route through K_BACKSLASH now.
     assert "K_BACKSLASH" in src
+    assert "_start_divine_intercession" in src
 
 
 def test_player_has_prayer_cooldown_field():
